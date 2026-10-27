@@ -41,3 +41,4 @@ import CCO.RawExact.Convolution
 import CCO.RawExact.PartialMaps
 import CCO.RawExact.PrivatePaths
 import CCO.RawExact.FineColours
+import CCO.RawExact.WordHellyBoundaries
