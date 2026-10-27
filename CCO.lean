@@ -39,3 +39,6 @@ import CCO.StrongExact.Examples
 import CCO.StrongExact.PathSupport
 import CCO.StrongExact.ExactConverse
 import CCO.StrongExact.TriangleFan
+import CCO.StrongExact.ProfileSemantics
+import CCO.StrongExact.PCConverse
+import CCO.StrongExact.CycleFanWords
