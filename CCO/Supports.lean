@@ -83,15 +83,19 @@ theorem invariant_iff_union_of_colours (R : TRel X i j)
       R = (fun x y => ∃ c : Option (S.Atom i j),
           c ∈ S.rawSupport R ∧ S.colour x y = c) := by
   intro hInv
-  rw [← S.rawSupport_represents_invariant R hInv hPair]
-  funext x y
-  apply propext
-  constructor
-  · intro h
-    exact ⟨S.colour x y, h, rfl⟩
-  · rintro ⟨c, hc, hcol⟩
-    change S.colour x y ∈ S.rawSupport R
-    rw [hcol]
-    exact hc
+  calc
+    R = S.representedSupport (S.rawSupport R) :=
+      (S.rawSupport_represents_invariant R hInv hPair).symm
+    _ = (fun x y => ∃ c : Option (S.Atom i j),
+          c ∈ S.rawSupport R ∧ S.colour x y = c) := by
+      funext x y
+      apply propext
+      constructor
+      · intro h
+        exact ⟨S.colour x y, h, rfl⟩
+      · rintro ⟨c, hc, hcol⟩
+        change S.colour x y ∈ S.rawSupport R
+        rw [hcol]
+        exact hc
 
 end CCO.AtomicSource
