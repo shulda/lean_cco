@@ -117,3 +117,80 @@ theorem nested_mixed_reduction
   exact ⟨hJKR.trans hSat.symm, hSat⟩
 
 end CCO.RawExact
+
+universe v w
+
+namespace CCO.RawExact
+
+section ActualSource
+
+variable {ι : Type v} {X : ι → Type w}
+variable (S : AtomicSource ι X)
+variable {G : Type*} [Group G] [∀ t : ι, MulAction G (X t)]
+
+/-- Actual-source C16 algebra, not merely an arbitrary pair-flip provider.
+The raw optional colour may be the real same-sort diagonal. -/
+theorem actual_mixed_join_of_homogeneous
+    (H : HomogeneousSource S G) {i : ι}
+    (E K : X i → X i → Prop)
+    (hE : RawSymmetric.EquivRel E)
+    (hK : RawSymmetric.EquivRel K)
+    (invE : ∀ (g : G) x y, E x y → E (g • x) (g • y))
+    (invK : ∀ (g : G) x y, K x y → K (g • x) (g • y))
+    (a : Option (S.Atom i i)) :
+    let J := RawSymmetric.compose E K
+    RawSymmetric.compose (RawSymmetric.compose E (S.rawAtomRel a)) K =
+      RawSymmetric.compose (RawSymmetric.compose J (S.rawAtomRel a)) J ∧
+    RawSymmetric.compose (RawSymmetric.compose J (S.rawAtomRel a)) J =
+      RawSymmetric.compose J (S.rawAtomRel a) ∧
+    RawSymmetric.compose J (S.rawAtomRel a) =
+      RawSymmetric.compose (S.rawAtomRel a) J := by
+  have hAtom : ∀ (g : G) x y,
+      S.rawAtomRel a x y → S.rawAtomRel a (g • x) (g • y) :=
+    S.rawAtomRel_invariant a (S.colourInvariant_of_homogeneous H)
+  exact mixed_join_reduction E K (S.rawAtomRel a)
+    hE hK invE invK hAtom (S.pair_flip_of_homogeneous H)
+
+/-- Actual-source C17 algebra. Its hypothesis J≤K is explicitly
+retained and includes the original identity quotient. -/
+theorem actual_nested_mixed_of_homogeneous
+    (H : HomogeneousSource S G) {i : ι}
+    (J K : X i → X i → Prop)
+    (hJ : RawSymmetric.EquivRel J)
+    (hK : RawSymmetric.EquivRel K)
+    (hJK : ∀ x y, J x y → K x y)
+    (invK : ∀ (g : G) x y, K x y → K (g • x) (g • y))
+    (a : Option (S.Atom i i)) :
+    RawSymmetric.compose (RawSymmetric.compose J (S.rawAtomRel a)) K =
+      RawSymmetric.compose (RawSymmetric.compose K (S.rawAtomRel a)) K ∧
+    RawSymmetric.compose (RawSymmetric.compose K (S.rawAtomRel a)) K =
+      RawSymmetric.compose (S.rawAtomRel a) K := by
+  have hAtom : ∀ (g : G) x y,
+      S.rawAtomRel a x y → S.rawAtomRel a (g • x) (g • y) :=
+    S.rawAtomRel_invariant a (S.colourInvariant_of_homogeneous H)
+  exact nested_mixed_reduction J K (S.rawAtomRel a)
+    hJ hK hJK invK hAtom (S.pair_flip_of_homogeneous H)
+
+/-- A genuine source-level consumer testing C17 at the logical identity
+quotient, for every optional original atom, including the real diagonal. -/
+theorem actual_identity_nested_of_homogeneous
+    (H : HomogeneousSource S G) {i : ι}
+    (K : X i → X i → Prop)
+    (hK : RawSymmetric.EquivRel K)
+    (invK : ∀ (g : G) x y, K x y → K (g • x) (g • y))
+    (a : Option (S.Atom i i)) :
+    RawSymmetric.compose
+      (RawSymmetric.compose (fun x y : X i => x = y) (S.rawAtomRel a)) K =
+      RawSymmetric.compose (S.rawAtomRel a) K := by
+  have hId : RawSymmetric.EquivRel (fun x y : X i => x = y) :=
+    ⟨(fun _ => rfl), (fun _ _ h => h.symm),
+     (fun _ _ _ hxy hyz => hxy.trans hyz)⟩
+  have hIdK : ∀ x y : X i, x = y → K x y := by
+    rintro x y rfl
+    exact hK.refl x
+  have hNested := S.actual_nested_mixed_of_homogeneous H
+    (fun x y : X i => x = y) K hId hK hIdK invK a
+  exact hNested.1.trans hNested.2
+
+end ActualSource
+end CCO.RawExact
