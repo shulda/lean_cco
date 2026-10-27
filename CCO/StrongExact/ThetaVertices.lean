@@ -113,9 +113,14 @@ def thetaVertices {i j : ι} (ws : List (PositiveWord S i j)) :
 theorem finite_thetaVertices {i j : ι}
     (ws : List (PositiveWord S i j)) :
     Finite (thetaVertices S ws) := by
+  classical
   letI (b : Fin ws.length) :
-      Finite (wordInterior S (ws.get b)) :=
-    finite_wordInterior S (ws.get b)
+      Fintype (wordInterior S (ws.get b)) := by
+    letI : Finite (wordInterior S (ws.get b)) :=
+      finite_wordInterior S (ws.get b)
+    exact Fintype.ofFinite _
+  change Finite (Bool ⊕
+    (Σ b : Fin ws.length, wordInterior S (ws.get b)))
   infer_instance
 
 /-- The original sort of a theta vertex, with both shared roots
@@ -175,7 +180,7 @@ theorem thetaBranchPosition_target {i j : ι}
   unfold thetaBranchPosition
   split_ifs with h0 h1
   · exact (h h0).elim
-  · rfl
+  · simp
   · exact (h1 rfl).elim
 
 /-- Every private interior maps to its uniquely tagged theta point. -/
@@ -188,7 +193,7 @@ theorem thetaBranchPosition_interior {i j : ι}
   split_ifs with h0 h1
   · exact (p.property.1 h0).elim
   · exact (p.property.2 h1).elim
-  · rfl
+  · simp [h1]
 
 /-- No typed sort changes when mapping a formal path into theta:
 only its literal same-sort root positions are identified. -/
@@ -198,16 +203,21 @@ theorem thetaBranchPosition_sort {i j : ι}
     thetaVertexSort S ws (thetaBranchPosition S ws b p) =
       wordPositionSort S (ws.get b) p := by
   classical
-  unfold thetaBranchPosition
-  split_ifs with h0 h1
+  by_cases h0 : p = wordSource S (ws.get b)
   · subst p
-    simpa only [thetaLeft_sort] using
-      (wordSource_sort S (ws.get b)).symm
-  · subst p
-    simp only [dif_pos h1]
-    simpa only [thetaRight_sort] using
-      (wordTarget_sort S (ws.get b)).symm
-  · simp only [dif_neg h1]
-    rfl
+    rw [thetaBranchPosition_source S ws b]
+    exact (wordSource_sort S (ws.get b)).symm.trans
+      (thetaLeft_sort S ws).symm |>.symm
+  · by_cases h1 : p = wordTarget S (ws.get b)
+    · subst p
+      rw [thetaBranchPosition_target S ws b]
+      simpa only [thetaRight_sort] using
+        (wordTarget_sort S (ws.get b)).symm
+    · have hp : thetaBranchPosition S ws b p =
+          (.inr ⟨b, ⟨p, h0, h1⟩⟩ :
+            thetaVertices S ws) := by
+        simp [thetaBranchPosition, h0, h1]
+      rw [hp]
+      rfl
 
 end CCO.StrongExact
