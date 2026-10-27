@@ -82,7 +82,7 @@ theorem otherTwo_ne (omit : Fin 3) :
 theorem otherTwo_covers (omit : Fin 3) (p : Fin 5)
     (h : p ≠ middle omit) :
     covered (otherTwo omit).1 (otherTwo omit).2 p := by
-  fin_cases omit <;> fin_cases p <;> decide
+  fin_cases omit <;> fin_cases p <;> simp_all [covered, otherTwo, middle]
 
 /-- The private path pair really respects EVERY allowed edge, with
 orientation checked via genuine symmetric same-sort atomic orbitals.

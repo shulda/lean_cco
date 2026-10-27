@@ -33,28 +33,36 @@ instance (p q : Fin 5) : Decidable (Adj p q) := inferInstanceAs
 
 /-- A cycle admits a path whose private middle is not visited.
 It is important that this is about *simple* cycles (injective f). -/
-def OmitsSomeMiddle {n : Nat} (f : Fin n ↪ Fin 5) : Prop :=
+def OmitsSomeMiddleFn {n : Nat} (f : Fin n → Fin 5) : Prop :=
   ∃ t : Fin 3, ∀ p : Fin n, f p ≠ middle t
 
+def OmitsSomeMiddle {n : Nat} (f : Fin n ↪ Fin 5) : Prop :=
+  OmitsSomeMiddleFn f
+
+/-- Enumerate all finite MAPS, rather than relying on a non-computable
+decider for the type of embeddings. Injectivity is checked explicitly. -/
 private theorem for_three :
-    ∀ f : Fin 3 ↪ Fin 5,
+    ∀ f : Fin 3 → Fin 5,
+      Function.Injective f →
       (∀ p : Fin 3,
         Adj (f p) (f (cyclicNext (by decide) p))) →
-        OmitsSomeMiddle f := by
+        OmitsSomeMiddleFn f := by
   decide
 
 private theorem for_four :
-    ∀ f : Fin 4 ↪ Fin 5,
+    ∀ f : Fin 4 → Fin 5,
+      Function.Injective f →
       (∀ p : Fin 4,
         Adj (f p) (f (cyclicNext (by decide) p))) →
-        OmitsSomeMiddle f := by
+        OmitsSomeMiddleFn f := by
   decide
 
 private theorem for_five :
-    ∀ f : Fin 5 ↪ Fin 5,
+    ∀ f : Fin 5 → Fin 5,
+      Function.Injective f →
       (∀ p : Fin 5,
         Adj (f p) (f (cyclicNext (by decide) p))) →
-        OmitsSomeMiddle f := by
+        OmitsSomeMiddleFn f := by
   decide
 
 /-- C06 cycle classification for the concrete three-by-two theta
@@ -67,14 +75,14 @@ theorem every_simple_cycle_omits_middle
       Adj (f p) (f (cyclicNext hpos p))) :
     OmitsSomeMiddle f := by
   have bound : n ≤ 5 := by
-    simpa using (Fintype.card_le_of_injective f.injective)
+    simpa using (Fintype.card_le_of_injective (fun p : Fin n => f p) f.injective)
   have hc : n = 3 ∨ n = 4 ∨ n = 5 := by omega
   rcases hc with h3 | h4 | h5
   · subst n
-    exact for_three f hedges
+    exact for_three (fun p => f p) f.injective hedges
   · subst n
-    exact for_four f hedges
+    exact for_four (fun p => f p) f.injective hedges
   · subst n
-    exact for_five f hedges
+    exact for_five (fun p => f p) f.injective hedges
 
 end CCO.RawExact.ThetaThree
