@@ -1,0 +1,117 @@
+
+\section{Distributive exact geometry and the quotient CRT}
+\label{sec:exact-crt}
+
+\begin{theorem}[Class Helly, distributivity and CRT]
+\label{thm:abstract-exact-crt}
+Let $X$ be nonempty and $\mathcal E$ a sublattice of equivalences
+on $X$ which pairwise commute under represented composition.  The
+following are equivalent:
+\begin{enumerate}
+\item $\mathcal E$ is distributive;
+\item every finite pairwise-intersecting family of classes of relations
+      from $\mathcal E$ has nonempty total intersection;
+\item for every finite nonempty family $E_1,\ldots,E_m\in\mathcal E$,
+      the natural map
+\[
+ X/\bigcap_i E_i\longrightarrow\prod_i X/E_i
+\]
+      identifies the source bijectively with the tuples whose images
+      agree in all quotients $X/(E_i\vee E_j)$.
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+Assume (2).  Given $xEy$ and $x(F\vee G)y$, write
+$xFzGy$, using commutativity so that $F\vee G=FG$.
+The classes $E[x],F[x],G[y]$ have pairwise intersections,
+witnessed respectively by $x,y,z$.  A common $w$ has
+$x(E\cap F)w(E\cap G)y$, proving the nontrivial inclusion of
+distributivity.  The opposite inclusion holds in every lattice.
+
+Assume (1) and induct on the number of pairwise-intersecting
+classes $E_i[x_i]$.  For the first $n-1$ choose a common point $z$.
+For each $i<n$, pairwise compatibility yields
+$z(E_i\vee E_n)x_n$.  Distributivity and finite induction give
+\[
+ \bigcap_{i<n}(E_i\vee E_n)
+       =\Bigl(\bigcap_{i<n}E_i\Bigr)\vee E_n.
+\]
+Commutativity again represents this join as composition.
+Choose $w$ with $z(\bigcap_{i<n}E_i)wE_nx_n$.
+Then $w$ belongs to all $n$ classes.  This proves (2),
+including repeated centres or relations.
+
+A tuple of quotient classes agrees in $X/(E_i\vee E_j)$ precisely
+when the corresponding $E_i$- and $E_j$-classes intersect, since
+$E_i\vee E_j=E_iE_j$.  Thus (2) gives a representative of every
+compatible tuple.  Two representatives determine the same tuple
+exactly when they are related by $\bigcap_iE_i$.  This is (3).
+Conversely (3) for each family gives (2) by the same equivalence.
+\end{proof}
+
+\begin{corollary}[Distributivity of the actual exact lattice]
+\label{lem:acf-exact-distributive}
+The finite lattice $\mathcal E_{\rm ex}(M)$ of invariant exact
+equivalences of a standing symmetric CCO source is distributive.
+It admits Birkhoff's representation $\mathcal E_{\rm ex}(M)
+\cong\operatorname{Down}(P)$, and every finite family of actual
+exact quotients satisfies the set-level full compatibility CRT.
+\end{corollary}
+\begin{proof}
+Exact meets and products are exact by
+Lemma~\ref{lem:exact-product}; their invariant equivalences
+commute because the named atomic orbitals are symmetric.
+Exact-ball Helly, Lemma~\ref{lem:exact-balls}, supplies
+condition (2) of the preceding theorem.  The rest follows.
+\end{proof}
+
+\begin{lemma}[Cofinality of selected meet-irreducible coordinates]
+\label{lem:foundational-MI-coordinate-cofinal}
+Let $\Lambda$ be a finite distributive lattice, let
+$J_1,\ldots,J_r\in\Lambda$ with $r\ge1$, and put
+$K=\bigwedge_{i=1}^rJ_i$. If $L$ is meet-irreducible
+and $K\le L$, then
+\[
+                        J_i\le L
+ \quad\text{for some }i\le r.
+ \tag{MI-C}\label{eq:foundational-MI-cofinal}
+\]
+Consequently, if $K$ is represented by a finite
+tuple of its chosen $J_i$ quotient coordinates,
+every represented proper meet-irreducible
+$L\ge K$ is an \emph{upward quotient image}
+of at least one of these coordinates.
+No SAP, CCO or Ramsey hypothesis is part
+of this finite lattice lemma.
+\end{lemma}
+\begin{proof}
+In a distributive lattice every meet-irreducible
+$L$ is meet-prime. Indeed if $x\wedge y\le L$,
+then by distributivity
+\[
+ L=(x\wedge y)\vee L
+   =(x\vee L)\wedge(y\vee L).
+\]
+Meet-irreducibility forces $x\vee L=L$
+or $y\vee L=L$, that is $x\le L$ or
+$y\le L$. Apply this repeatedly to
+$\bigwedge_iJ_i=K\le L$ to obtain
+\eqref{eq:foundational-MI-cofinal}.
+For represented invariant equivalences,
+an inclusion $J_i\le L$ induces the
+canonical upward quotient map
+$M/J_i\to M/L$, which realizes the
+second assertion.
+\end{proof}
+
+\begin{remark}[Three separate interfaces]
+The abstract CRT gives a \emph{set} of compatible tuples.
+Recovery of the original \emph{fine pair colours} from actual
+quotient colours, and simultaneous extension of finite real/owner
+partial isomorphisms, are different consequences of the represented
+A32 exact-sort geometry.  We never replace those conclusions by a
+bare assertion that the lattice is distributive.  Nor is the
+\emph{full} invariant-equivalence lattice claimed distributive:
+nonexact finite packet intervals need not lie in
+$\mathcal E_{\rm ex}(M)$.
+\end{remark}

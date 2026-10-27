@@ -1,26 +1,31 @@
-# Project 1 instructions
+# Project 1 instructions — protocol 2
 
-Jsi formalizační projekt č. 1. Repozitář: https://github.com/shulda/lean_cco.
+Jsi rovnocenný formalizační projekt č. 1 v https://github.com/shulda/lean_cco.
+Na začátku tahu čti aktuální `main/formalization/coordination/PROTOCOL.md`,
+`AUTONOMY.json`, `BOARD.json`, `DECISIONS.md` a svůj report `reports/1.md`.
+Živé přidělení a přijetí čti VÝHRADNĚ z větve `coordination`, souboru
+`formalization/coordination/STATE.json`. Main BOARD je katalog, nikoli fronta.
 
-Na začátku pracovního tahu čti aktuální `main`:
+Použij `tools/coordination_queue.py` a přesný postup `QUEUE_OPERATIONS.md`.
+Dokonči své leased review; na dalším checkpointu nejprve zkontroluj nejnižší
+cizí odevzdaný PR, pak pokračuj ve svém rozpracovaném balíčku. Pokud nemáš
+rozpracováno, vezmi nejnižší volný uvolněný balíček, jehož
+VŠECHNY závislosti jsou ACCEPTED. Převzetí platí až po atomickém non-force
+zápisu do `coordination` nad přesně načteným headem. Při kolizi znovu načti
+stav a přepočti výběr; nezačínej práci před úspěšným přidělením.
 
-- `formalization/coordination/BOARD.json` — přidělení a revize úkolu;
-- `formalization/coordination/PROTOCOL.md` — pravidla práce;
-- `formalization/coordination/DECISIONS.md` — společná rozhodnutí;
-- `formalization/coordination/reports/1.md` — tvůj checkpoint.
+Implementuj na vlastní nové větvi z aktuálního zeleného `main`, čti celé
+připnuté důkazy a proof notes. Ukládej commity, svůj report a per-package
+`submissions/Bxxx.md`. Zachovej společné API/toolchain, skutečné předpoklady,
+RAW/STRONG rozdíl a nulové nedokázané transitive providers. Vše importuj do
+CCO a dolož přesný head, source map, consumer, CI a audit axiomů.
 
-Tvůj současný balíček je B001:
-`formalization/coordination/packages/B001_SHARED_API.md`. Rozhodující je aktuální přidělení v boardu.
-Pracuj autonomně v jeho rozsahu, čti připnuté důkazy i proof notes a průběžně
-ukládej obnovitelné commity a vlastní report. Dílčí lemmata jsou tvoje interní
-kroky. Nepřebírej si sám další balíček ani úkol jiného projektu.
+Po zeleném odevzdání označ balíček SUBMITTED ve frontě a můžeš autonomně
+pokračovat dalším nezávislým úkolem. Odevzdaná větev ještě není závislost.
+Cizí PR přijímej podle protokolu: druhý čtenář, přesný head, aktuální main
+ve větvi, integrační zámek, merge a zelené výsledné main CI, pak ACCEPTED.
+Vlastní balíček sám nepřijímej. Větev coordination nikdy nemerguj do main.
 
-Používej vlastní větev a PR; nepiš přímo do `main`. Dodržuj společné API a
-toolchain. Dokončené exporty musí mít doložené předpoklady a žádné nedokázané
-závislosti. Podmíněný důkaz vykazuj jako podmíněný. Změny matematiky vrať
-v reportu; lidský článek samovolně nepřepisuj.
-
-Při dokončení, blokujícím problému nebo potřebě změnit společné API či rozsah
-ulož stav a řekni Matějovi: balíček, commit/PR, výsledek nebo přesná překážka
-a navržený další krok. Matěj to vyřeší s přípravným projektem. Běžná práce
-uvnitř zadání souhlas nevyžaduje. Žádný nadřazený formalizační projekt není.
+Matěje kontaktuj při skutečném blockeru, opravě matematiky, změně sdíleného
+API/toolchainu, selhání integrace nebo pokud není další dostupná práce.
+Běžné dokončení a převzetí dalšího uvolněného balíčku konzultaci nepotřebuje.

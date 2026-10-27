@@ -1,0 +1,917 @@
+{
+  "schema_version": 1,
+  "id": "parity_hasse",
+  "index_title": "Sparse graphs, original parity/Hasse and exact gate separation",
+  "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+  "status": "HUMAN_PROOF_EXPANDED_NOT_LEAN",
+  "scope": "Preparation for OTHER Lean projects. Seven source results: the full labelled sparse-graph proof, original SAP-free finite Hasse indices, independent relative exact separation and maximal exact gates. No Lean code.",
+  "scope_vocabulary": [
+    "finite_graphs",
+    "original_raw",
+    "original_cco",
+    "exact_supports",
+    "exact_gate",
+    "quotient_gate"
+  ],
+  "scope_explanation": "statement and proof. Hasse has no exact-Helly import; closure separation and maximal gates are independent consumers of RAW exact calculus.",
+  "assumptions": [
+    {
+      "id": "A01",
+      "name": "Actual original source",
+      "statement": "One inhabited transitive homogeneous complete finite symmetric binary source, with actual represented orbitals and semantic homomorphic CCO. No SAP, primitivity, NR2 or countability is used. Subclaims state when only elementary orbital algebra suffices."
+    },
+    {
+      "id": "A02",
+      "name": "Finite combinatorial foundation",
+      "statement": "Ordinary classical finite graph/probability reasoning, real exp/log inequalities and Archimedean integer choice. The lower-tail bound and sparse graph theorem are proved here, not imported as Erdős or Chernoff axioms."
+    }
+  ],
+  "imports": [
+    {
+      "id": "I01",
+      "name": "RAW exact product and support Helly",
+      "source_label": "lem:exact-product",
+      "statement": "Nonempty original equality-inclusive exact relations are product-closed and 2-Helly. In particular three pairwise-intersecting exact supports intersect. Heterogeneous ball Helly is not needed by this module.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "provider_module": "raw_exact"
+    }
+  ],
+  "source_files": [
+    {
+      "file": "sections/sparse_labelled_graphs.tex",
+      "git_blob": "c7db0b7169dd8ff4dcd5642469ac8fa42c2ef530"
+    },
+    {
+      "file": "sections/finite_relative_parity_exact_closure.tex",
+      "git_blob": "9f6983f96bae28d06466fcbf23f15e20a55f2686"
+    },
+    {
+      "file": "sections/exact_foundations/01_full_raw_exact_helly.tex",
+      "git_blob": "7cb28c86b4b296ddf865b6aff518cda1215cd491"
+    },
+    {
+      "file": "sections/simultaneous_typed_exact_quotients.tex",
+      "git_blob": "078017a03e1d6f62088fb17fb6e31bce4f6e8ef6"
+    },
+    {
+      "file": "sections/rigid_exact_groupoid_foundations.tex",
+      "git_blob": "fb231ec107f8c18b550c87d20ea2da9d86a2d735"
+    }
+  ],
+  "source_result_files": [
+    "sections/sparse_labelled_graphs.tex",
+    "sections/finite_relative_parity_exact_closure.tex"
+  ],
+  "definitions": [
+    {
+      "id": "D01",
+      "name": "Finite independent edge labels",
+      "statement": "For positive q,r,g and n>c=128rq log(q+1), independent unordered pairs carry 0 with probability 1-c/n and each positive label with probability c/(nr).",
+      "depends_on": [
+        "A02"
+      ],
+      "notes": "N01",
+      "source": {
+        "file": "sections/sparse_labelled_graphs.tex",
+        "anchor": "independently for each unordered"
+      }
+    },
+    {
+      "id": "D02",
+      "name": "Robust colouring-label counts",
+      "statement": "X(kappa,h) counts monochromatic pairs with the label h of their common vertex colour; mu is its expectation.",
+      "depends_on": [
+        "D01"
+      ],
+      "notes": "N01",
+      "source": {
+        "file": "sections/sparse_labelled_graphs.tex",
+        "anchor": "Fix a vertex colouring"
+      }
+    },
+    {
+      "id": "D03",
+      "name": "Original symmetric orbital source",
+      "statement": "One inhabited original transitive homogeneous finite complete symmetric binary source; finitely many actual pair orbitals including logical Id. The only direct semantic CCO application in this module is orbital bipartiteness; the separately imported RAW exact calculus has its own CCO proof. No SAP or countability is used.",
+      "depends_on": [
+        "A01"
+      ],
+      "notes": "N04",
+      "source": {
+        "file": "sections/finite_relative_parity_exact_closure.tex",
+        "anchor": "one actual"
+      }
+    },
+    {
+      "id": "D04",
+      "name": "Full invariant lattice and relative index",
+      "statement": "All actual invariant equivalences, ordered by inclusion. [F:E] counts E-classes in any F-class, uniformly by transitivity. Endpoints need not be exact.",
+      "depends_on": [
+        "D03"
+      ],
+      "notes": "N04",
+      "source": {
+        "file": "sections/finite_relative_parity_exact_closure.tex",
+        "anchor": "Let $E<F$"
+      }
+    },
+    {
+      "id": "D05",
+      "name": "RAW walk parity",
+      "statement": "Y_c, O_c are the even- and odd-walk relations of an old diversity atom; X_c is connectivity. Length zero is allowed in Y, with a later positive even-word representation.",
+      "depends_on": [
+        "D03"
+      ],
+      "notes": "N05",
+      "source": {
+        "file": "sections/finite_relative_parity_exact_closure.tex",
+        "anchor": "its graph is bipartite"
+      }
+    },
+    {
+      "id": "D06",
+      "name": "Original full exact relation",
+      "statement": "A nonempty relation expressible as a finite intersection of actual atomic word profiles; empty restrictions give Top, empty word Id. Nonempty refers to the evaluated result. ExEq is only the exact part of the full lattice.",
+      "depends_on": [
+        "D03"
+      ],
+      "notes": "N07",
+      "source": {
+        "file": "sections/finite_relative_parity_exact_closure.tex",
+        "anchor": "Write $\\operatorname{ExEq}(M)$"
+      }
+    },
+    {
+      "id": "D07",
+      "name": "K-relative powers and closure",
+      "statement": "For exact equivalence K and symmetric exact K-bisaturated A containing K, A^[0]=K and A^[n]=A^n for n>0; stable power is <A>.",
+      "depends_on": [
+        "D06"
+      ],
+      "notes": "N07",
+      "source": {
+        "file": "sections/finite_relative_parity_exact_closure.tex",
+        "anchor": "Set $A^{[0]}=B^{[0]}=K$"
+      }
+    },
+    {
+      "id": "D08",
+      "name": "Two-sheet source data",
+      "statement": "Invariant Y<X of relative index two; Y and O=X\\Y exact, but X need not be exact.",
+      "depends_on": [
+        "D04",
+        "D06"
+      ],
+      "notes": "N09",
+      "source": {
+        "file": "sections/finite_relative_parity_exact_closure.tex",
+        "anchor": "Let $Y<X$"
+      }
+    },
+    {
+      "id": "D09",
+      "name": "Maximal exact gate candidate",
+      "statement": "Inclusion-maximal exact equivalence K with Y<=K and K meet X=Y; F=K join X and t=K;O;K.",
+      "depends_on": [
+        "D08"
+      ],
+      "notes": "N09",
+      "source": {
+        "file": "sections/finite_relative_parity_exact_closure.tex",
+        "anchor": "inclusion-maximal full exact equivalence $K$"
+      }
+    },
+    {
+      "id": "D10",
+      "name": "Actual quotient and bridge",
+      "statement": "Let K be an actual full exact invariant equivalence. Use the original action on M/K with all actual quotient orbitals. A bridge R at K is nonempty, invariant and full exact and satisfies K;R=R and R;R^converse=K; quotient-object identity is K.",
+      "depends_on": [
+        "D06"
+      ],
+      "notes": "N10",
+      "source": {
+        "file": "sections/rigid_exact_groupoid_foundations.tex",
+        "anchor": "Given a full exact invariant equivalence"
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "name": "Colouring counts and mean",
+      "statement": "Same-colour pair count N>=(n²/q-n)/2>=n²/(4q) for n>=2q; requested labels give independent Bernoulli variables of parameter c/(nr), hence mu>=cn/(4rq).",
+      "depends_on": [
+        "D02"
+      ],
+      "notes": "N01",
+      "source_labels": [
+        "lem:sparse-labelled-graph"
+      ],
+      "scope": "finite_graphs",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C02",
+      "name": "Elementary exponential lower tail",
+      "statement": "E(exp(-X))<=(1-p/2)^N<=exp(-mu/2); Markov yields Pr(X<mu/4)<=exp(-mu/4). No Chernoff import.",
+      "depends_on": [
+        "C01"
+      ],
+      "notes": "N02",
+      "source_labels": [
+        "lem:sparse-labelled-graph"
+      ],
+      "scope": "finite_graphs",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C03",
+      "name": "Finite union and short cycles",
+      "statement": "Choose n by the four explicit N02 bounds. Simultaneous robust counts and at most 4B short cycles have positive probability; no independence between these two events is needed.",
+      "depends_on": [
+        "C02"
+      ],
+      "notes": "N02",
+      "source_labels": [
+        "lem:sparse-labelled-graph"
+      ],
+      "scope": "finite_graphs",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C04",
+      "name": "Deletion and labelled sparsity",
+      "statement": "Delete at most 4B edges, one per remaining original short cycle. Every robust count stays positive, implying the full q-colour/r-label property.",
+      "depends_on": [
+        "C03"
+      ],
+      "notes": "N03",
+      "source_labels": [
+        "lem:sparse-labelled-graph"
+      ],
+      "scope": "finite_graphs",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C05",
+      "name": "High chromatic girth and connected extraction",
+      "statement": "The r=1 case has no proper q-colouring; some connected component retains that property and girth>g. Do not claim component extraction preserves the r>1 labelled property.",
+      "depends_on": [
+        "C04"
+      ],
+      "notes": "N03",
+      "source_labels": [
+        "cor:high-girth-high-chromatic"
+      ],
+      "scope": "finite_graphs",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C06",
+      "name": "Original elementary RAW algebra",
+      "statement": "Atoms are actual pair orbitals; NONEMPTY invariant relations are serial/coserial. Invariant relations compose associatively and commute by symmetry of ALL orbitals. The full invariant-equivalence lattice is finite; joins are represented products. No exact Helly is used.",
+      "depends_on": [
+        "D04"
+      ],
+      "notes": "N04",
+      "source_labels": [
+        "thm:full-relative-Hasse"
+      ],
+      "scope": "original_raw",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C07",
+      "name": "Transposition with class bijection",
+      "statement": "For F=E join X and K=E meet X, [K,X] and [E,F] are order-isomorphic. Separately X[a]/K -> F[a]/E is a bijection, so [X:K]=[F:E].",
+      "depends_on": [
+        "C06"
+      ],
+      "notes": "N04",
+      "source_labels": [
+        "thm:full-relative-Hasse"
+      ],
+      "scope": "original_raw",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C08",
+      "name": "Index-two covers and finite chain indices",
+      "statement": "Relative index two gives a full-lattice cover. Transitivity gives uniform indices; finite containing indices make intermediate factors finite, and chain indices multiply.",
+      "depends_on": [
+        "C06",
+        "C07"
+      ],
+      "notes": "N04",
+      "source_labels": [
+        "thm:full-relative-Hasse"
+      ],
+      "scope": "original_raw",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C09",
+      "name": "Cycle homomorphism templates",
+      "statement": "Even cycles fold onto one edge. An odd cycle of length k>ell maps onto an old odd ell-cycle by adding (k-ell)/2 backtracks. These are homomorphisms, not embeddings.",
+      "depends_on": [
+        "D03"
+      ],
+      "notes": "N05",
+      "source_labels": [
+        "lem:ep-ap-orbital-parity"
+      ],
+      "scope": "original_cco",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C10",
+      "name": "Finite-relative orbital bipartiteness",
+      "statement": "For E<F of finite relative index n and old atom c<=F\\E, an odd cycle would give a connected high-chromatic graph all of whose cycles map to c. CCO then yields a forbidden proper n-colouring inside one F-class.",
+      "depends_on": [
+        "C05",
+        "C09",
+        "D04"
+      ],
+      "notes": "N05",
+      "source_labels": [
+        "lem:ep-ap-orbital-parity"
+      ],
+      "scope": "original_cco",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C11",
+      "name": "Positive even and odd profile stabilization",
+      "statement": "Seriality gives Id<=c²; parity chains stabilize in the finite support lattice. A common positive even threshold represents all even and odd walks by single positive RAW words.",
+      "depends_on": [
+        "C06",
+        "C10",
+        "D05"
+      ],
+      "notes": "N05",
+      "source_labels": [
+        "lem:ep-ap-orbital-parity"
+      ],
+      "scope": "original_cco",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C12",
+      "name": "Index-two connectivity seed",
+      "statement": "Y and O are nonempty exact profiles; Y<X=Y union O<=F has [X:Y]=2 and X not<=E. X need not be exact, Y need not contain E.",
+      "depends_on": [
+        "C11",
+        "C08"
+      ],
+      "notes": "N05",
+      "source_labels": [
+        "lem:ep-ap-orbital-parity"
+      ],
+      "scope": "original_cco",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C13",
+      "name": "Full finite-index Hasse cover induction",
+      "statement": "Induct on height of F. Transpose the index-two seed to K=E meet X; if K differs from Y, transpose distinct coatoms again to a cover with strictly smaller upper endpoint Y and the same finite index.",
+      "depends_on": [
+        "C12",
+        "C07",
+        "C08"
+      ],
+      "notes": "N06",
+      "source_labels": [
+        "thm:full-relative-Hasse"
+      ],
+      "scope": "original_cco",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C14",
+      "name": "All finite relative indices are powers of two",
+      "statement": "Multiply finite cover indices along a saturated interval chain. Equality E=F gives 1=2^0. No endpoint exactness is assumed.",
+      "depends_on": [
+        "C13",
+        "C08"
+      ],
+      "notes": "N06",
+      "source_labels": [
+        "thm:full-relative-Hasse"
+      ],
+      "scope": "original_cco",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C15",
+      "name": "Stable K-relative exact closures",
+      "statement": "Relative powers start at K, increase, remain exact and K-bisaturated, and stabilize to invariant exact equivalences.",
+      "depends_on": [
+        "D07",
+        "C06",
+        "I01"
+      ],
+      "notes": "N07",
+      "source_labels": [
+        "lem:ep-relative-K-closure"
+      ],
+      "scope": "exact_supports",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C16",
+      "name": "Least positive exponents and atom",
+      "statement": "A hypothetical common closure atom outside K gives least n>=1 for B and then least m>=1 for A.",
+      "depends_on": [
+        "C15"
+      ],
+      "notes": "N07",
+      "source_labels": [
+        "lem:ep-relative-K-closure"
+      ],
+      "scope": "exact_supports",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C17",
+      "name": "Minimality exclusion",
+      "statement": "The selected c is not in A^[m-1];B^[n-1]. Atomic Peirce plus closure equivalence handles b outside K; K-saturation handles b in K, including m=1,n=1.",
+      "depends_on": [
+        "C16",
+        "C06"
+      ],
+      "notes": "N07",
+      "source_labels": [
+        "lem:ep-relative-K-closure"
+      ],
+      "scope": "exact_supports",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C18",
+      "name": "Outer-saturated three-domain obstruction",
+      "statement": "T=A^[m-1];c;B^[n-1] is nonempty exact and K-bisaturated by its outer factors. It meets A and B but avoids K; a K-intersection would force Id<=T and violate C17.",
+      "depends_on": [
+        "C17",
+        "I01"
+      ],
+      "notes": "N08",
+      "source_labels": [
+        "lem:ep-relative-K-closure"
+      ],
+      "scope": "exact_supports",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C19",
+      "name": "Relative closure separation",
+      "statement": "The exact supports A,B,T violate three-domain RAW Helly unless <A> meet <B>=K. No ball Helly, Hasse or CRT is needed.",
+      "depends_on": [
+        "C18",
+        "I01"
+      ],
+      "notes": "N08",
+      "source_labels": [
+        "lem:ep-relative-K-closure"
+      ],
+      "scope": "exact_supports",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C20",
+      "name": "Identity separation",
+      "statement": "Specialize relative closure separation to K=Id; real equality is an exact word profile.",
+      "depends_on": [
+        "C19"
+      ],
+      "notes": "N08",
+      "source_labels": [
+        "cor:foundations-identity-separation"
+      ],
+      "scope": "exact_supports",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C21",
+      "name": "Two-sheet complement geometry",
+      "statement": "For invariant Y<X of index two, O;O=Y. Transposing K meet X=Y gives [K join X:K]=2.",
+      "depends_on": [
+        "D08",
+        "C07",
+        "C08"
+      ],
+      "notes": "N09",
+      "source_labels": [
+        "thm:foundational-maximal-parity-gate"
+      ],
+      "scope": "exact_gate",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C22",
+      "name": "Finite maximal exact candidate",
+      "statement": "The candidate set is finite and nonempty (contains Y), so an inclusion-maximal K exists.",
+      "depends_on": [
+        "D09",
+        "C06"
+      ],
+      "notes": "N09",
+      "source_labels": [
+        "thm:foundational-maximal-parity-gate"
+      ],
+      "scope": "exact_gate",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C23",
+      "name": "Exact gate and quotient involution",
+      "statement": "t=K;O;K is nonempty exact, K-bisaturated, F=K disjoint-union t, t;t=K. Only t/K is a fixed-point-free involution graph; t on real points need not be functional.",
+      "depends_on": [
+        "C21",
+        "C22",
+        "I01"
+      ],
+      "notes": "N09",
+      "source_labels": [
+        "thm:foundational-maximal-parity-gate"
+      ],
+      "scope": "exact_gate",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C24",
+      "name": "Original exact dominance",
+      "statement": "Every original exact equivalence Z>K contains t: Z meet X is Y or X; the former violates maximality, the latter gives O<=Z.",
+      "depends_on": [
+        "C22",
+        "C23"
+      ],
+      "notes": "N09",
+      "source_labels": [
+        "thm:foundational-maximal-parity-gate"
+      ],
+      "scope": "exact_gate",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C25",
+      "name": "Actual quotient exact pullback",
+      "statement": "Each actual quotient orbital pulls back to K;a;K, equality to K. Surjectivity and saturation give product pullback; words and finite intersections therefore preserve exactness under inverse image.",
+      "depends_on": [
+        "D10",
+        "C06",
+        "I01"
+      ],
+      "notes": "N10",
+      "source_labels": [
+        "thm:foundational-maximal-parity-gate"
+      ],
+      "scope": "quotient_gate",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C26",
+      "name": "Quotient dominance and nonidentity bridge",
+      "statement": "Pull back any nontrivial quotient exact equivalence, apply C24 and project. The gate equations already make t a nonidentity exact isotropy bridge; rigid character is a consumer, not an input.",
+      "depends_on": [
+        "C23",
+        "C24",
+        "C25"
+      ],
+      "notes": "N10",
+      "source_labels": [
+        "thm:foundational-maximal-parity-gate"
+      ],
+      "scope": "quotient_gate",
+      "status": "HUMAN_PROOF_EXPANDED"
+    }
+  ],
+  "exports": [
+    {
+      "source_label": "lem:sparse-labelled-graph",
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04"
+      ]
+    },
+    {
+      "source_label": "cor:high-girth-high-chromatic",
+      "claims": [
+        "C05"
+      ]
+    },
+    {
+      "source_label": "lem:ep-ap-orbital-parity",
+      "claims": [
+        "C09",
+        "C10",
+        "C11",
+        "C12"
+      ]
+    },
+    {
+      "source_label": "thm:full-relative-Hasse",
+      "claims": [
+        "C13",
+        "C14"
+      ]
+    },
+    {
+      "source_label": "lem:ep-relative-K-closure",
+      "claims": [
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19"
+      ]
+    },
+    {
+      "source_label": "cor:foundations-identity-separation",
+      "claims": [
+        "C20"
+      ]
+    },
+    {
+      "source_label": "thm:foundational-maximal-parity-gate",
+      "claims": [
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "T01",
+      "name": "Robust labelled sparse graphs",
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Prove the finite probability construction, explicit sufficient n bounds, bounded deletion and the connected one-label graph provider."
+    },
+    {
+      "id": "T02",
+      "name": "Original equivalence/index geometry",
+      "claims": [
+        "C06",
+        "C07",
+        "C08"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Prove original commutation, full-lattice transposition, the actual quotient-class bijection and finite relative index multiplication."
+    },
+    {
+      "id": "T03",
+      "name": "Orbital parity and full Hasse",
+      "claims": [
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14"
+      ],
+      "depends_on": [
+        "T01",
+        "T02"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Prove bipartiteness using homomorphic CCO, positive parity profiles and cover-height induction in the full invariant lattice."
+    },
+    {
+      "id": "T04",
+      "name": "Relative exact separation",
+      "claims": [
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20"
+      ],
+      "depends_on": [
+        "T02"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Use RAW exact products/three-set Helly; retain K as zeroth power and outer-factor saturation."
+    },
+    {
+      "id": "T05",
+      "name": "Original maximal exact gate",
+      "claims": [
+        "C21",
+        "C22",
+        "C23",
+        "C24"
+      ],
+      "depends_on": [
+        "T02"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Prove gate equations and dominance for all original exact Z>K, without exactness of X or separation/Hasse imports."
+    },
+    {
+      "id": "T06",
+      "name": "Quotient/bridge consumer",
+      "claims": [
+        "C25",
+        "C26"
+      ],
+      "depends_on": [
+        "T02",
+        "T05"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Prove actual quotient word pullback and dominant quotient involution; no general exact descent or rigid-character input."
+    }
+  ],
+  "controls": [
+    {
+      "id": "R01",
+      "check": "F2^3 full invariant subspace lattice: all finite relative indices, covers, class-bijection transpositions and a nondistributive M3 interval."
+    },
+    {
+      "id": "R02",
+      "check": "Triangle-free four-chromatic Mycielski C5 graph defeats finite K3 while every cycle maps to K3; missing CCO must not pass unnoticed."
+    },
+    {
+      "id": "R03",
+      "check": "Actual F2² translation supports show closure separation fails without exactness of the two supports A,B."
+    },
+    {
+      "id": "R04",
+      "check": "Two three-point sheets: nontrivial exact K, t²=K, three real successors per point, but a two-point quotient involution. This is an algebra control, not a CCO assertion."
+    },
+    {
+      "id": "R05",
+      "check": "Explicit sparse-graph n inequalities at q=r=1 and further small parameter values; even folds and odd-cycle backtrack lengths."
+    }
+  ],
+  "control_script": "tools/check_parity_hasse_controls.py",
+  "article_feedback": [
+    {
+      "id": "F01",
+      "kind": "WORDING_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/finite_relative_parity_exact_closure.tex",
+        "anchor": "by the Erd\\H{o}s"
+      },
+      "finding": "Connectedness is recovered by taking a high-chromatic component of the internal one-label sparse graph provider.",
+      "proposed_article_change": "Cite cor:high-girth-high-chromatic and optionally state connected-component extraction.",
+      "caller_effect": "No changed hypothesis or conclusion; representation and source-reading clarification only.",
+      "proof_claims": [
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10"
+      ]
+    },
+    {
+      "id": "F02",
+      "kind": "WORDING_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/finite_relative_parity_exact_closure.tex",
+        "anchor": "Dedekind interval transposition"
+      },
+      "finding": "Numerical relative index preservation uses the actual class bijection, not modularity alone.",
+      "proposed_article_change": "Optionally mention the quotient-class bijection when stating the transposition.",
+      "caller_effect": "No changed hypothesis or conclusion; representation and source-reading clarification only.",
+      "proof_claims": [
+        "C07",
+        "C13"
+      ]
+    },
+    {
+      "id": "F03",
+      "kind": "WORDING_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/finite_relative_parity_exact_closure.tex",
+        "anchor": "so it is a fixed-point-free involutive graph"
+      },
+      "finding": "The proof wording refers to t as a graph; the theorem correctly states that t/K is the graph. On original real points t can be nonfunctional.",
+      "proposed_article_change": "Write its quotient is a fixed-point-free involution graph.",
+      "caller_effect": "No changed hypothesis or conclusion; representation and source-reading clarification only.",
+      "proof_claims": [
+        "C23"
+      ]
+    },
+    {
+      "id": "F04",
+      "kind": "WORDING_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/finite_relative_parity_exact_closure.tex",
+        "anchor": "Set $A^{[0]}=B^{[0]}=K$"
+      },
+      "finding": "Relative powers at exponent zero must remain K in the m=1 or n=1 cases.",
+      "proposed_article_change": "No necessary article edit; keep expanded boundary cases only in proof notes.",
+      "caller_effect": "No changed hypothesis or conclusion; representation and source-reading clarification only.",
+      "proof_claims": [
+        "C15",
+        "C16",
+        "C17",
+        "C18"
+      ]
+    }
+  ],
+  "review": {
+    "date": "2026-10-27",
+    "method": "Two independent read-only model reviews of Hasse and closure/gate branches; an additional graph-probability review and parent synthesis. No independent human or Lean certificate.",
+    "required_mathematical_repairs_found": 0,
+    "remaining": "All probability, finite graph, index/lattice and represented-relation arguments still require Lean implementation. No compiled theorem names or compatibility are asserted."
+  },
+  "overview_mermaid": [
+    "flowchart TD",
+    "  G[\"Labelled sparse graphs\"] --> P[\"Orbital bipartiteness\"]",
+    "  E[\"Original equivalence/index algebra\"] --> P",
+    "  P --> H[\"Full Hasse covers\"]",
+    "  E --> H",
+    "  R[\"RAW exact products and support Helly\"] --> S[\"Relative separation\"]",
+    "  E --> S",
+    "  R --> T[\"Maximal exact gate\"]",
+    "  E --> T",
+    "  T --> Q[\"Actual quotient and bridge\"]",
+    "  R --> Q"
+  ],
+  "overview_notes": [
+    "Hasse has no exact-Helly input. Relative separation is not an input to maximal gates.",
+    "The rigid-character theorem consumes the bridge; it is not a provider."
+  ],
+  "dependency_firewalls": [
+    {
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05"
+      ],
+      "forbid": [
+        "A01",
+        "I01"
+      ]
+    },
+    {
+      "claims": [
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14"
+      ],
+      "forbid": [
+        "I01",
+        "D06",
+        "D07",
+        "D08",
+        "D09",
+        "D10"
+      ]
+    },
+    {
+      "claims": [
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26"
+      ],
+      "forbid": [
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20"
+      ]
+    }
+  ]
+}

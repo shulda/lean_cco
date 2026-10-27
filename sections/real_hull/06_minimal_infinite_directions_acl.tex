@@ -1,0 +1,271 @@
+\begin{lemma}[Exponential palette cost of minimal infinite directions]
+\label{lem:rh-direction-palette-bound}
+Let $F=\Sigma(\Id)$ be the greatest finite-class ORIGINAL invariant
+equivalence and let $E_1,\ldots,E_r$ list all minimal infinite
+ORIGINAL invariant equivalences (with $r=0$ if $M$ is finite).
+Here and in the next two corollaries we abbreviate
+$\mathcal D\setminus F=\{a\in\mathcal D:a\not\subseteq F\}$
+and
+$\mathcal D\cap F=\{a\in\mathcal D:a\subseteq F\}$
+as SETS OF ATOM NAMES, not literal set operations between
+binary relations and names.
+Then
+\[
+   2^r-1\le|\mathcal D\setminus F|,
+   \qquad
+   r\le\left\lfloor
+       \log_2\bigl(|\mathcal D\setminus F|+1\bigr)
+                         \right\rfloor.
+\]
+All the counted colours are distinct ACTUAL original diversity
+orbitals outside $F$; $F$ is NOT assumed exact.
+\end{lemma}
+\begin{proof}
+Let $\mathcal L$ be the finite distributive lattice of original
+FULL RAW exact equivalences, by
+\cref{lem:acf-exact-distributive}.  Let $K_{\mathrm{fin}}$
+be the join in $\mathcal L$ of ALL finite-class exact
+equivalences, including $\Id$.  This join has finite classes:
+the product of commuting finite-class equivalences has finite
+classes, and the finite exact lattice is closed under joins.
+Thus $K_{\mathrm{fin}}\le F$, but equality need not hold.
+
+Each $E_i$ is exact by \cref{prop:minimalcut}.  Put
+$A_i=K_{\mathrm{fin}}\vee E_i$ and, for
+$S\subseteq[r]$, put
+$A_S=K_{\mathrm{fin}}\vee\bigvee_{i\in S}E_i$, with
+$A_\varnothing=K_{\mathrm{fin}}$.
+For distinct $i,j$, the intersection $E_i\cap E_j$
+is a finite-class exact equivalence by minimality of the
+infinite $E_i$, hence is contained in $K_{\mathrm{fin}}$.
+Distributivity inside $\mathcal L$ gives
+\[
+ A_i\cap A_j=K_{\mathrm{fin}},\qquad
+ A_S\cap A_T=A_{S\cap T}\quad(S,T\subseteq[r]).
+\tag{PD}\label{eq:rh-direction-boolean}
+\]
+These equalities use only the exact sublattice, NOT the
+possibly nondistributive full invariant-equivalence lattice.
+
+For nonempty $S$ and $i\in S$, the $A_i$-classes are infinite,
+the $K_{\mathrm{fin}}$-classes are finite, and
+$A_i\cap A_{S\setminus\{i\}}=K_{\mathrm{fin}}$.
+Thus a single $A_i$-class contains infinitely many
+distinct $A_{S\setminus\{i\}}$-classes.  Therefore
+\[
+ [A_S:A_{S\setminus\{i\}}]=\infty.
+\]
+Likewise $[A_S:F\cap A_S]=\infty$, because the former
+has infinite classes and the latter has finite classes.
+
+Fix one real $x\in M$, put $G=\Aut(M)$, and for every
+original invariant equivalence $H$ write
+$G_H=\{g\in G:xH gx\}$.
+This is a subgroup, and for $H\le K$ the standard
+transitive $G$-set correspondence gives
+$[G_K:G_H]=[K:H]$.  Hence, INSIDE $G_{A_S}$,
+each of the finitely many subgroups
+$G_{A_{S\setminus\{i\}}}$ ($i\in S$) and
+$G_{F\cap A_S}$ has infinite index.  By B.~H.~Neumann's
+finite-coset-cover theorem~\cite{NeumannCover}, also used in
+\cref{lem:finite-action-avoidance}, their union cannot
+cover $G_{A_S}$.  Choose $g_S$ outside their union.
+The old colour $t_S=\col(x,g_Sx)$ lies in $A_S$,
+but not in $F$ or in any $A_{S\setminus\{i\}}$.
+
+If $S,T$ are distinct nonempty subsets, say
+$i\in S\setminus T$, a putative equality $t_S=t_T$
+would place this single old atom in
+$A_S\cap A_T=A_{S\cap T}\subseteq A_{S\setminus\{i\}}$,
+contrary to its choice.  When $S\subsetneq T$, reverse
+the roles.  Thus the $2^r-1$ nonempty subsets yield
+pairwise distinct original diversity colours outside $F$.
+\end{proof}
+
+\begin{corollary}[Bounded character of real algebraic closure]
+\label{cor:rh-acl-bounded-character}
+Let $E_1,\ldots,E_r$ list all inclusion-minimal ORIGINAL invariant
+equivalences with infinite real classes.  Then
+$r\le\lfloor\log_2(|\mathcal D\setminus F|+1)\rfloor\le|\mathcal D|$
+by \cref{lem:rh-direction-palette-bound}, and
+for every finite real $A\subseteq M$,
+\[
+   \operatorname{acl}_M(A)=
+   \bigcup_{\substack{B\subseteq A\\|B|\le r}}
+                 \operatorname{acl}_M(B).
+\]
+For $x\notin A$, this follows from the exact colour criterion
+\[
+ x\in\operatorname{acl}_M(A)
+ \quad\Longleftrightarrow\quad
+ \text{for every }i\le r\text{ some }a\in A
+ \text{ satisfies }E_i\nsubseteq
+       E_{\Gamma(\col(x,a))}.
+\]
+Here $\Gamma(p)=\langle\{p\}\rangle$ is the ORIGINAL generated
+equivalence support, not an exact quotient kernel.  If $M$ is
+finite then $r=0$ and $\operatorname{acl}_M(\varnothing)=M$.
+\end{corollary}
+\begin{proof}
+For $x\notin A$, set
+$J=\bigcap_{a\in A}\Gamma(\col(x,a))$, with empty intersection
+the universal support.  Since
+$xE_{\Gamma(\col(x,a))}a$ for each $a$, its actual $E_J$-class is
+\[
+ [x]_{E_J}=
+       \bigcap_{a\in A}[a]_{E_{\Gamma(\col(x,a))}}.
+\]
+If $x$ is algebraic over nonempty $A$, this class is finite by
+Theorem~\ref{thm:rh-hull}; the empty-base case follows from
+transitivity.  Conversely, if the class is finite, the orbit of
+$x$ under $\Aut(M/A)$ is contained in it: each automorphism
+fixing $A$ preserves the literal old spoke colours to every
+$a\in A$.  Thus $x$ is algebraic over $A$.
+Because the invariant-equivalence lattice is finite, $J$
+has infinite classes exactly when it contains some minimal
+infinite $E_i$.  Negating
+$E_i\le J=\bigcap_a\Gamma(\col(x,a))$ gives the displayed
+colour criterion.
+
+For each $x\in\operatorname{acl}_M(A)\setminus A$, choose one
+witness $a_i\in A$ excluding each $E_i$, and take the set $B$
+of these witnesses.  Then $|B|\le r$ and the same criterion
+gives $x\in\operatorname{acl}_M(B)$.  If $x\in A$ and $M$
+is infinite, $r\ge1$ and $B=\{x\}$ suffices.  If $M$ is
+finite all real points are algebraic over the empty set.
+Monotonicity proves the reverse inclusion.
+
+Finally let $F=\Sigma(\Id)$ be the greatest finite-class
+invariant equivalence.  Each $E_i$ contains some old
+diversity atom $t_i$ outside $F$, for otherwise it would
+have finite classes.  For $i\ne j$ the proper intersection
+$E_i\cap E_j$ has finite classes by minimality, hence lies
+below $F$.  Thus $t_i\ne t_j$, giving the injective bound
+$r\le|\mathcal D\setminus F|\le|\mathcal D|$.
+For a singleton parameter $\{a\}$, the already established
+colour criterion says
+$x\in\operatorname{acl}_M(a)$ if and only if
+$\Gamma(\col(x,a))\subseteq F$ for $x\ne a$,
+which is equivalent to $xFa$.
+Hence $\operatorname{acl}_M(a)=F[a]$.
+If $r=1$, the bounded-character formula consequently yields
+$\operatorname{acl}_M(A)=F[A]$ for every finite real $A$.
+This alternative short derivation does NOT prove that naming
+quotient owner imaginaries is harmless.
+\end{proof}
+
+\begin{corollary}[Polynomial growth and finite-packet bound for real algebraic closure]
+\label{cor:rh-acl-polynomial-growth}
+Assume $M$ is infinite and let $F=\Sigma(\Id)$.
+Write $f=|\mathcal D\cap F|$,
+$d_\infty=|\mathcal D\setminus F|$ and
+$c=|[x]_{E_F}|$, the constant finite size of any
+original $F$-class.  Then $c\le 2^f$, and for
+every finite real $A$ of size $n$,
+\[
+ |\operatorname{acl}_M(A)|
+ \le c\left(n+
+      \sum_{j=1}^{\min\{r,n\}}
+           \binom{n}{j}d_\infty^j\right),
+ \qquad
+ r\le\left\lfloor\log_2(d_\infty+1)\right\rfloor.
+\]
+In particular $|\operatorname{acl}_M(A)|=O_M(n^r)$.
+Moreover $\operatorname{acl}_M(A)$ is a union of COMPLETE
+original $F$-classes, and the number of those classes is at most
+$n+\sum_{j=1}^{\min\{r,n\}}\binom{n}{j}d_\infty^j$.
+If $F=\Id$, then
+$\operatorname{acl}_M(A)=\operatorname{dcl}_M(A)$
+for every finite REAL $A$, although this closure may
+strictly contain $A$.
+No analogous assertion for arbitrary imaginary sorts is made.
+\end{corollary}
+\begin{proof}
+The invariant $F$-classes are finite and transitive;
+\cref{cor:rh-class-2power} gives $c\le 2^f$.
+By \cref{thm:rh-globalise}, every finite realised
+complete one-point fibre over any finite real parameter
+set is ONE class of an original global finite-class
+equivalence $K\le F$, and so has size at most $c$.
+The finite $F$-closure $F[A]$ contains at most $cn$ points.
+
+For every $x\in\operatorname{acl}_M(A)\setminus F[A]$,
+\cref{cor:rh-acl-bounded-character} gives a nonempty
+$B\subseteq A$ with $|B|\le r$ and
+$x\in\operatorname{acl}_M(B)$.
+Since $x\notin F[A]$, every old spoke colour
+$\col(x,b)$ ($b\in B$) lies OUTSIDE $F$.
+For fixed $B$ of size $j$ there are at most
+$d_\infty^j$ such complete original spoke-colour
+tuples.  Each realised finite type fibre has
+size at most $c$ by globalisation, and distinct
+fibre types are disjoint.  Thus at most
+$c\,d_\infty^j$ such points are algebraic over
+$B$ outside $F[A]$.  Summing over the
+$\binom nj$ choices of $B$ and adding $F[A]$
+gives the displayed inequality, without presuming
+disjointness between closures from different bases.
+The sharp logarithmic upper bound on $r$ is
+\cref{lem:rh-direction-palette-bound}.
+The empty-$A$ case holds by infinite transitivity.
+If $x\in\operatorname{acl}_M(A)$ and $xFy$, then
+$y\in\operatorname{acl}_M(x)$, because the original $F$-class
+of $x$ is finite and definable over $x$.
+Transitivity of algebraicity gives
+$y\in\operatorname{acl}_M(A)$.
+Thus $\operatorname{acl}_M(A)$ is $F$-saturated;
+each of its $F$-classes has size $c$, and dividing
+the preceding cardinal bound by $c$ gives the packet count.
+
+If $F=\Id$, globalisation makes every finite
+one-point type fibre a singleton.  Its complete
+finite quantifier-free spoke formula over $A$
+then defines its unique realisation in $M$.
+Thus every algebraic real point over $A$ is
+definable; the converse is always true.
+\end{proof}
+
+\begin{example}[Sharp closure exponent in coordinate sources]
+\label{ex:rh-acl-polynomial-sharp}
+For each $r\ge2$ let $M_r=\mathbb N^r$ and name the symmetric
+diversity atom of distinct $x,y$ by the nonempty difference
+support $\{i:x_i\ne y_i\}\subseteq[r]$.  Its automorphism group
+is $\prod_{i=1}^r\operatorname{Sym}(\mathbb N)$: named atoms
+preserve each coordinate equality, while independent coordinate
+permutations preserve all atoms.  Thus it is homogeneous.
+Every triangle-legal complete diagram induces one equivalence
+relation of coordinate equality for each $i$; these can be
+realised independently on $\mathbb N$, and their meet is real
+identity because every specified diversity support is nonempty.
+Hence the age is triangle-defined and has AP.
+
+It also has semantic homomorphic CCO: an inconsistent
+coordinate equality/disequality specification has a specified
+inequality edge whose endpoints are connected by a path
+of equality edges in that coordinate.  A shortest such path
+together with the inequality edge is a specified simple
+cycle without a homomorphism.  If no such obstruction exists
+in any coordinate, assign different values to the finitely many
+equality components independently, giving a homomorphism of
+the entire partial diagram.
+
+Its invariant equivalences are exactly those allowing changes
+within a fixed set of coordinates: if an equivalence contains
+an atom with difference support $S$, a two-step path of that
+same atom (using a fresh third value in coordinate $i$)
+forces each singleton difference support $\{i\}$ for $i\in S$;
+single-coordinate steps then generate the whole corresponding
+coordinate-change equivalence.  Thus there are precisely $r$
+minimal infinite equivalences.  For
+$A_n=\{(k,\ldots,k):1\le k\le n\}$, the pointwise stabiliser fixes
+every tuple in $[n]^r$ and has infinite orbit on any tuple
+with a coordinate outside $[n]$.  Therefore
+\[
+ \operatorname{acl}_{M_r}(A_n)
+ =\operatorname{dcl}_{M_r}(A_n)=[n]^r,\qquad
+ |\operatorname{acl}_{M_r}(A_n)|=n^r.
+\]
+The polynomial exponent $r$ is therefore optimal even
+for definable closure.
+\end{example}
+

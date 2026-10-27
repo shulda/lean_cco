@@ -1,0 +1,1328 @@
+{
+  "schema_version": 1,
+  "id": "owner_action",
+  "index_title": "Finite owner providers and full fine-coloured fibre-product actions",
+  "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+  "status": "HUMAN_PROOF_EXPANDED_NOT_LEAN",
+  "scope": "Preparation for OTHER Lean projects. All three owner_master/01–03 results, both finite-base provider results and the selected prescribed-owner point lemma are expanded: six exports. The simultaneous owner master and rooted ACF induction remain separate consumers. Ordinary EPPA of the actual quotient source is an explicit conditional input, never a same-rank rooted ACF hypothesis.",
+  "scope_vocabulary": [
+    "finite_base",
+    "exact_lifting",
+    "finite_packets",
+    "owner_provider",
+    "point_action",
+    "fine_product",
+    "abstract_kernel",
+    "eppa_product",
+    "examples"
+  ],
+  "scope_explanation": "statement and proof. Generic finite-base, actual exact-source realization and abstract product-action branches have separate premises. No coherent lifts, group section, owner-naming homogeneity or arbitrary cross-colour permutation is assumed.",
+  "assumptions": [
+    {
+      "id": "A01",
+      "name": "Generic homogeneous relational source",
+      "statement": "For the finite-base branch X is homogeneous in a finite relational language. Its invariant quotient pi:X->T has kernel equality and all quotient pair colours recognizable as unions of the old fine pair colours on every finite induced substructure. This recognizability, rather than mere ambient invariance, ensures that finite induced automorphisms descend."
+    },
+    {
+      "id": "A02",
+      "name": "Ordinary EPPA input",
+      "statement": "Age(X), or Age(Q) in the actual owner-provider application, has ordinary EPPA. The witness is an age member and can be realized over the original finite set by homogeneity. No coherent EPPA or rooted ACF is supplied."
+    },
+    {
+      "id": "A03",
+      "name": "Symmetric original orbital framework",
+      "statement": "The actual source is nonempty, transitive, homogeneous, one-sort, finite complete binary with symmetric same-sort orbitals, including logical equality. Invariant relations are unions of the finitely many actual orbitals, and original invariant endorelations commute. This elementary framework alone does not assume CCO, countability or SAP."
+    },
+    {
+      "id": "A04",
+      "name": "Homomorphic CCO for exact geometry",
+      "statement": "The actual source satisfies semantic homomorphic CCO, and displayed owner/coordinate kernels are full RAW exact invariant equivalences. Used for actual exact joint lifting and fine-colour meet, not for elementary group-action arguments."
+    },
+    {
+      "id": "A05",
+      "name": "Countable actual source",
+      "statement": "Countability is retained for the currently prepared actual joint lifting theorem. Finite-base restriction with supplied ambient lifts, packet projection, product colour readout and the abstract action results do not use countability."
+    },
+    {
+      "id": "A06",
+      "name": "Finite-base request data",
+      "statement": "B is a finite induced quotient subset; A is finite and lies over B; finitely many compatible pairs (p,gamma), including empty-real requests if desired, are supplied. Each has one simultaneous ambient automorphism extending p and inducing gamma on EVERY b in B. This ambient-lift premise is not inferred from compatibility in an arbitrary quotient."
+    },
+    {
+      "id": "A07",
+      "name": "Actual owner-provider data",
+      "statement": "pi:Q->O is an actual full exact quotient of the standing source. B is finite, nonempty, induced and closed under the greatest finite-class invariant equivalence F_O; finite A is contained in pi^-1(B). The complete canonical quotient pair colours are retained."
+    },
+    {
+      "id": "A08",
+      "name": "Actual finite product data",
+      "statement": "E,J are actual full exact equivalences; K=E meet J, H=E join J. Finite induced D subset X/E and C subset X/J have the same induced image B subset X/H and both maps onto B are surjective. W is the FULL product D times_B C with its actual fine colours from X/K."
+    },
+    {
+      "id": "A09",
+      "name": "Abstract action input",
+      "statement": "Finite quotient systems D->O,C->O and D->T are surjective; W is the FULL SET fibre product D times_O C with its canonical coordinate maps. All induced full automorphism action homomorphisms are specified, and restriction IDENTIFIES Aut(W) with the matching-pair fibre product. No fine-colour source realization, action-surjectivity, kernel-transitivity, point prescription or nesting between T and O is assumed in this core input."
+    },
+    {
+      "id": "A10",
+      "name": "Optional nested-target input",
+      "statement": "Only for the second target, D->O factors through T, W_T=T times_O C is full and has its corresponding matching-pair automorphism identity. The canonical W->W_T is the displayed quotient map."
+    },
+    {
+      "id": "A11",
+      "name": "EPPA consumer input",
+      "statement": "Finite induced A_W subset W has actual coordinate images A_D,A_C. D extends every partial automorphism of A_D. C extends every partial automorphism of A_C with EVERY prescribed compatible delta in Aut(O). Projection kernels and quotient pair colours are old fine-colour unions on the sparse source, so its partial maps descend."
+    },
+    {
+      "id": "A12",
+      "name": "Elementary finite mathematics",
+      "statement": "Classical choices for finitely many requests, finite permutations and groups, elementary relational composition, orbit/stabilizer reasoning and finite products. No external EPPA theorem is proved or imported silently; ordinary EPPA is A02 or the explicitly stated finite consumer input A11."
+    },
+    {
+      "id": "A13",
+      "name": "First-factor prescribed T point input",
+      "statement": "Aut(D)->Aut(T) is onto and its kernel acts transitively on each D->T fibre. Used for the nonnested and nested kernel branches, not for the independent EPPA consumer."
+    },
+    {
+      "id": "A14",
+      "name": "Second-factor prescribed owner point input",
+      "statement": "For every x,y in C and EVERY delta in full Aut(O) carrying pi_C(x) to pi_C(y), there is h in Aut(C) inducing EXACTLY delta and sending x to y. Required for the nonnested target kernel branch, not for the nested target branch or independent EPPA clause."
+    },
+    {
+      "id": "A15",
+      "name": "Exact quotient for arbitrary finite-base requests",
+      "statement": "pi:Q->O is an actual full exact quotient in the complete canonical actual orbital language. For the fixed-base corollary B is ANY finite induced owner subset and A is finite over B; B may be empty and need not be F_O-closed. Nonemptiness and packet closedness belong only to A07 for the later finite owner provider."
+    }
+  ],
+  "imports": [
+    {
+      "id": "I01",
+      "name": "Nested mixed orbital factorization",
+      "source_label": "lem:nested-mixed",
+      "provider_module": "raw_exact",
+      "statement": "For Id<=E in the one-original-sort symmetric RAW algebra, Id;a;E=a;E=E;a;E, including the real diagonal. Thus the real/owner orbital depends only on the projected owner pair.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A03"
+      ]
+    },
+    {
+      "id": "I02",
+      "name": "Actual joint exact-sort lifting",
+      "source_label": "thm:typed-joint-exact-lifting",
+      "provider_module": "raw_exact",
+      "statement": "Every genuine finite partial isomorphism on the complete actual real/exact-sort orbital language is induced by ONE original ambient automorphism. The currently prepared provider retains countability. No global group section.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A03",
+        "A04",
+        "A05"
+      ]
+    },
+    {
+      "id": "I03",
+      "name": "Exact quotient fine-colour meet",
+      "source_label": "lem:exact-quotient-colour-meet",
+      "provider_module": "raw_exact",
+      "statement": "For full exact E,J and K=E meet J, (E;a;E) intersect (J;a;J)=K;a;K for EVERY original raw atom including equality. This recovers a fine quotient orbital from the two coordinate orbitals, but is not set-level tuple realization.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A03",
+        "A04"
+      ]
+    },
+    {
+      "id": "I04",
+      "name": "Prescribed-action point lifting criterion",
+      "source_label": "lem:prescribed-action-point-lifting",
+      "statement": "For an equivariant surjection from nonempty Y, a group map is onto with fibre-transitive kernel iff every compatible point pair admits every prescribed target group element. Nonempty is essential in the reverse implication. Already assigned as a shared B001 export; the elementary proof is recalled, not re-exported.",
+      "status": "HUMAN_SUPPORT_PROOF_NOT_LEAN",
+      "depends_on": [
+        "A12"
+      ]
+    },
+    {
+      "id": "I05",
+      "name": "Greatest finite packet construction",
+      "source_label": "lem:packetinterval",
+      "provider_module": "finite_packets",
+      "statement": "Reuse ONLY elementary finite_packets C03: finite-index coarsenings in the finite symmetric invariant-equivalence lattice are closed under finite joins, constructing Sigma(J); F=Sigma(Id) is greatest finite-class. No CCO, countability, exactness or full remaining packet-interval result is needed.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A03",
+        "A12"
+      ]
+    }
+  ],
+  "source_files": [
+    {
+      "file": "main.tex",
+      "git_blob": "df7370f12a248732db9723c3b3c02d4a05ee0eec"
+    },
+    {
+      "file": "sections/owner_master/01_ambient_owner_provider.tex",
+      "git_blob": "1b8b729d929d91d1dc7fa006f261d685be2b82b2"
+    },
+    {
+      "file": "sections/owner_master/02_full_fibreproduct_action.tex",
+      "git_blob": "f7f66f0f06dfbaabc716d35f95fccba11697d928"
+    },
+    {
+      "file": "sections/owner_master/03_owner_kernels_prescribed_actions.tex",
+      "git_blob": "45d16b4f4555acfc67c29167320390320e798ac4"
+    },
+    {
+      "file": "sections/exact_eppa_providers.tex",
+      "git_blob": "16445039b5b7bc8828657a677231cf6e0acbc6e2"
+    },
+    {
+      "file": "sections/rooted_mi/04_owner_point_and_finite_lift.tex",
+      "git_blob": "4d7533b499949f3e2c72a6f35413f5b7ab4d3210"
+    },
+    {
+      "file": "sections/exact_foundations/02_exact_quotient_orbital_geometry.tex",
+      "git_blob": "d462f2bfffcd67c1fa712ac516972ab18e073d44"
+    },
+    {
+      "file": "sections/exact_foundations/03_joint_exact_sort_lifting.tex",
+      "git_blob": "394e0db063a476c5c069384b3d3fa2ffd3c7471d"
+    },
+    {
+      "file": "sections/typed_invariant_quotient_transport.tex",
+      "git_blob": "3895b17d7d0176a74d6f69c39e4e22d9cdba5715"
+    },
+    {
+      "file": "sections/finite_packets.tex",
+      "git_blob": "dd3e608f03e7c5b1b1854a45de462859f8355143"
+    }
+  ],
+  "source_result_files": [
+    "sections/owner_master/01_ambient_owner_provider.tex",
+    "sections/owner_master/02_full_fibreproduct_action.tex",
+    "sections/owner_master/03_owner_kernels_prescribed_actions.tex",
+    "sections/exact_eppa_providers.tex"
+  ],
+  "additional_result_exports": [
+    "lem:acf-point-homogeneity"
+  ],
+  "definitions": [
+    {
+      "id": "D01",
+      "name": "Finite induced automorphisms and partial maps",
+      "statement": "A partial automorphism of a finite induced set is an induced isomorphism between two of its subsets, including the empty map. All relations, both binary directions and logical equality are respected.",
+      "depends_on": [
+        "A12"
+      ],
+      "notes": "N01",
+      "source": {
+        "file": "sections/exact_eppa_providers.tex",
+        "anchor": "partial automorphism"
+      }
+    },
+    {
+      "id": "D02",
+      "name": "Recognizable actual quotient restriction",
+      "statement": "For finite C and its quotient image, quotient equality and every quotient pair colour are determined by old fine colours, including coincident quotient coordinates. Hence every induced automorphism, and every partial map on a source subset, preserves the relevant kernel and descends onto its actual projected domain.",
+      "depends_on": [
+        "A12"
+      ],
+      "notes": "N01",
+      "source": {
+        "file": "sections/exact_eppa_providers.tex",
+        "anchor": "quotient pair colours"
+      }
+    },
+    {
+      "id": "D03",
+      "name": "Compatible prescribed-owner request",
+      "statement": "(p,gamma) consists of an old partial automorphism and gamma in Aut(B), with pi(p(x))=gamma(pi(x)) for every domain point. The gamma-component is prescribed on ALL of B, not merely owners met by p. Ambient lift is an additional premise in the generic branch.",
+      "depends_on": [
+        "D01",
+        "D02"
+      ],
+      "notes": "N01",
+      "source": {
+        "file": "sections/exact_eppa_providers.tex",
+        "anchor": "Empty-domain requirements"
+      }
+    },
+    {
+      "id": "D04",
+      "name": "Ordinary finite EPPA witness",
+      "statement": "A finite age member containing the given original finite structure, extending every one of its partial automorphisms; realize it as a finite induced actual subset over that structure using homogeneity. No coherent choice of the extensions.",
+      "depends_on": [
+        "A01",
+        "A02"
+      ],
+      "notes": "N01",
+      "source": {
+        "file": "sections/exact_eppa_providers.tex",
+        "anchor": "ordinary EPPA"
+      }
+    },
+    {
+      "id": "D05",
+      "name": "Greatest finite packet and full closure",
+      "statement": "F_Q is the largest finite-class Aut(Q)-invariant equivalence, not necessarily exact. F_Q[S] is the union of ENTIRE ambient F_Q-classes meeting S. F_O uses the full canonical owner-colour structure.",
+      "depends_on": [
+        "A03"
+      ],
+      "notes": "N03",
+      "source": {
+        "file": "sections/owner_master/01_ambient_owner_provider.tex",
+        "anchor": "F_Q=\\Sigma_Q"
+      }
+    },
+    {
+      "id": "D06",
+      "name": "Packet-closed seed above all owners",
+      "statement": "A^+=F_Q[A union S], with S containing an actual representative of EVERY owner in nonempty B. Thus A^+ is nonempty, finite, full-packet closed and has image B.",
+      "depends_on": [
+        "D05",
+        "A07"
+      ],
+      "notes": "N04",
+      "source": {
+        "file": "sections/owner_master/01_ambient_owner_provider.tex",
+        "anchor": "A^+=F_Q[A\\cup S]"
+      }
+    },
+    {
+      "id": "D07",
+      "name": "Generated finite motion orbit",
+      "statement": "D0 is the finite-base witness; D1=F_Q[D0]. Choose one ambient extension of each selected Aut(D0), restrict to D1, let G0 be the finite generated permutation group, and set D=G0 A^+. No selection is a group homomorphism.",
+      "depends_on": [
+        "D06"
+      ],
+      "notes": "N04",
+      "source": {
+        "file": "sections/owner_master/01_ambient_owner_provider.tex",
+        "anchor": "D=G_0 A^+"
+      }
+    },
+    {
+      "id": "D08",
+      "name": "Prescribed point property",
+      "statement": "For every x,y and EVERY target automorphism gamma with gamma(pi x)=pi y, there is a domain automorphism inducing exactly gamma and sending x to y. For the orbit-seed transfer this property is first required on all compatible singleton pairs in A0; A0 meets every domain automorphism orbit.",
+      "depends_on": [
+        "A12"
+      ],
+      "notes": "N05",
+      "source": {
+        "file": "sections/rooted_mi/04_owner_point_and_finite_lift.tex",
+        "anchor": "\\label{lem:acf-point-homogeneity}"
+      }
+    },
+    {
+      "id": "D09",
+      "name": "Full actual fibre product",
+      "statement": "W contains EVERY (d,c) whose actual owners agree, with induced fine colours from X/(E meet J). Quotient identification and fine-colour reconstruction are distinct assertions.",
+      "depends_on": [
+        "A08"
+      ],
+      "notes": "N06",
+      "source": {
+        "file": "sections/owner_master/02_full_fibreproduct_action.tex",
+        "anchor": "FULL finite"
+      }
+    },
+    {
+      "id": "D10",
+      "name": "Matching-pair automorphism group",
+      "statement": "Pairs (g,h) in Aut(D) times Aut(C) whose induced permutations on the entire common owner set agree. Multiplication and inverse are coordinatewise. The identification with Aut(W) must first be proved for actual fine colours or supplied explicitly.",
+      "depends_on": [
+        "A12"
+      ],
+      "notes": "N07",
+      "source": {
+        "file": "sections/owner_master/03_owner_kernels_prescribed_actions.tex",
+        "anchor": "\\Aut(D)\\times_{\\Aut(O)}"
+      }
+    },
+    {
+      "id": "D11",
+      "name": "Two distinct target systems",
+      "statement": "For target T alone, no T->O map is needed. For W_T=T times_O C, D->O must factor through T and W_T needs its own full-product group identity. All quotient maps are surjective.",
+      "depends_on": [
+        "A09"
+      ],
+      "notes": "N08",
+      "source": {
+        "file": "sections/owner_master/03_owner_kernels_prescribed_actions.tex",
+        "anchor": "need not be nested"
+      }
+    },
+    {
+      "id": "D12",
+      "name": "Sparse source coordinate partial maps",
+      "statement": "For a partial f on any induced A_W, its projected domain is pi_D(dom f), not necessarily all A_D. Recognizable kernels make the map well-defined and injective; recognizable quotient pair colours make it a genuine induced partial automorphism.",
+      "depends_on": [
+        "A11"
+      ],
+      "notes": "N10",
+      "source": {
+        "file": "sections/owner_master/03_owner_kernels_prescribed_actions.tex",
+        "anchor": "partial automorphisms of"
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "name": "Induced quotient actions are honest homomorphisms",
+      "statement": "For an actual finite induced quotient system with recognizable kernel and quotient colours, every domain automorphism descends uniquely to an automorphism of the image; restrictions give a group homomorphism. Sparse partial maps descend on their actual projected domain and range.",
+      "depends_on": [
+        "D02",
+        "A12"
+      ],
+      "notes": "N01",
+      "source_labels": [
+        "lem:finite-base"
+      ],
+      "scope": "finite_base",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C02",
+      "name": "One finite EPPA host for all supplied ambient requests",
+      "statement": "Choose representatives S of B together with A. For each supplied ambient lift g_i form A*=S union all g_i(S). A* is finite over B; ordinary EPPA gives one finite induced C containing A* with chosen beta_i extending g_i restricted to S. Homogeneity realizes C over A*. Empty request family and B empty are included.",
+      "depends_on": [
+        "D01",
+        "D03",
+        "D04",
+        "A06"
+      ],
+      "notes": "N01",
+      "source_labels": [
+        "lem:finite-base"
+      ],
+      "scope": "finite_base",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C03",
+      "name": "Restrict the EPPA host above the entire fixed base",
+      "statement": "W=C intersect pi^-1(B) contains A and projects onto all B. For x over b, recognizable kernel equality with s_b forces pi(beta_i x)=pi(beta_i s_b)=gamma_i(b); hence beta_i restricts to Aut(W), extending p_i and its exact gamma_i on all B. No coherence. If B is empty, W and A are empty.",
+      "depends_on": [
+        "C01",
+        "C02"
+      ],
+      "notes": "N01",
+      "source_labels": [
+        "lem:finite-base"
+      ],
+      "scope": "finite_base",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C04",
+      "name": "Compatibility gives a genuine complete joint map in the exact source",
+      "statement": "For an actual exact pi and compatible p,gamma on B, verify real-real and owner-owner orbitals, and use Id;a;E=E;a;E to verify EVERY mixed pair (x,c), including owner parameters c outside pi(dom p). Thus p union gamma is a genuine finite partial isomorphism in the complete joint orbital language. This is not true merely from compatibility for an arbitrary quotient.",
+      "depends_on": [
+        "D03",
+        "I01",
+        "A15"
+      ],
+      "notes": "N02",
+      "source_labels": [
+        "cor:fixed-base",
+        "lem:acf-owner-provider"
+      ],
+      "scope": "exact_lifting",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C05",
+      "name": "Actual exact finite-base lifting",
+      "statement": "Joint exact lifting supplies one ambient g for EACH request, including empty p with arbitrary gamma. Feed these g into C02–C03 to prove the exact fixed-base corollary. The actual source instance retains the provider countability premise; generic C03 does not.",
+      "depends_on": [
+        "C04",
+        "I02",
+        "C03"
+      ],
+      "notes": "N02",
+      "source_labels": [
+        "cor:fixed-base"
+      ],
+      "scope": "exact_lifting",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C06",
+      "name": "Instantiate the prepared greatest finite packets",
+      "statement": "Reuse I05 at Q and at its canonical owner structure O: both have a transitive action with finitely many symmetric named pair orbitals. The full Aut(O)-invariant lattice is therefore finite and symmetric, so the same elementary greatest-finite-class construction applies. F_Q and F_O are not required exact. This instantiates an existing foundational proof, rather than re-exporting it.",
+      "depends_on": [
+        "D05",
+        "A12",
+        "I05"
+      ],
+      "notes": "N03",
+      "source_labels": [
+        "lem:acf-owner-provider"
+      ],
+      "scope": "finite_packets",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C07",
+      "name": "Projection of a finite packet stays in an owner packet",
+      "statement": "For E=ker pi, the quotient (F_Q join E)/E has a finite class: every reached E-class meets the single finite F_Q[x], since F_Q;E is the join. Its pullback is an E-saturated old-orbital union, hence the quotient is invariant under FULL Aut(O), not merely the induced image. It lies below F_O. Therefore F_Q-closure of a finite set over F_O-closed B stays over B.",
+      "depends_on": [
+        "C06",
+        "D02",
+        "A07"
+      ],
+      "notes": "N03",
+      "source_labels": [
+        "lem:acf-owner-provider"
+      ],
+      "scope": "finite_packets",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C08",
+      "name": "Nonempty packet-closed seed projects onto B",
+      "statement": "Choose a representative for every b in B, take full F_Q-closure of A union those representatives. Packet projection gives finiteness and inclusion above B; representatives give image exactly B and nonemptiness.",
+      "depends_on": [
+        "D06",
+        "C07"
+      ],
+      "notes": "N04",
+      "source_labels": [
+        "lem:acf-owner-provider"
+      ],
+      "scope": "owner_provider",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C09",
+      "name": "All original partial and singleton requests share D0",
+      "statement": "There are finitely many partial automorphisms of finite A^+ and gamma in Aut(B). List ALL compatible pairs, including every empty-real and every compatible singleton request. Apply C05 to obtain D0 over precisely B extending all of them. Original partial maps on A are among these requests.",
+      "depends_on": [
+        "C08",
+        "C05"
+      ],
+      "notes": "N04",
+      "source_labels": [
+        "lem:acf-owner-provider"
+      ],
+      "scope": "owner_provider",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C10",
+      "name": "Full-packet enlargement retains each chosen action",
+      "statement": "D1=F_Q[D0] is finite and still above B. Each chosen Aut(D0) extends ambiently by original homogeneity; since D0 is setwise fixed and F_Q invariant, the extension preserves D1 and its full B action. Choose one extension per request and generate finite G0 inside Aut(D1).",
+      "depends_on": [
+        "C09",
+        "C07",
+        "A03"
+      ],
+      "notes": "N04",
+      "source_labels": [
+        "lem:acf-owner-provider"
+      ],
+      "scope": "owner_provider",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C11",
+      "name": "Finite orbit trimming preserves full packets and every request",
+      "statement": "D=G0 A^+ is finite induced, contains A^+, is G0-invariant and is a union of entire F_Q-classes, because every generator and every product preserves the finite induced F_Q relation. Its image is exactly B. Every selected request restricts to D with its real values and entire owner action. Each x in D is moved back into A^+ by a G0 element.",
+      "depends_on": [
+        "D07",
+        "C10",
+        "C08"
+      ],
+      "notes": "N04",
+      "source_labels": [
+        "lem:acf-owner-provider"
+      ],
+      "scope": "owner_provider",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C12",
+      "name": "Move any pair through an orbit-covering singleton seed",
+      "statement": "For a finite equivariant quotient D->B with induced owner homomorphism, nonempty A0 meeting every Aut(D)-orbit, and prescribed singleton lifting on ALL owner-compatible a,a prime in A0, choose g x=a, h y=a prime and lift rho(h) gamma rho(g)^-1 by k. Then h^-1 k g sends x to y and has owner component gamma. This is purely a group-action statement; its actual-source packet consequence is C30.",
+      "depends_on": [
+        "D08",
+        "A12"
+      ],
+      "notes": "N05",
+      "source_labels": [
+        "lem:acf-point-homogeneity"
+      ],
+      "scope": "point_action",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C13",
+      "name": "Finite owner provider with exact point lifting and kernel",
+      "statement": "Apply C12 with A0=A^+ and the motions retained in C11. All compatible singleton maps are real partial isomorphisms in the transitive one-sort setting. Obtain every prescribed point lift; by I04, Aut(D)->Aut(B) is onto and has fibre-transitive kernel. Together C08–C11 give finite induced, full-F_Q-closed D over exactly B and all original request extensions. Ordinary EPPA remains conditional.",
+      "depends_on": [
+        "C11",
+        "C12",
+        "I04",
+        "A03"
+      ],
+      "notes": "N05",
+      "source_labels": [
+        "lem:acf-owner-provider"
+      ],
+      "scope": "owner_provider",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C14",
+      "name": "Actual quotient gives the full set fibre product",
+      "statement": "For commuting equivalences E,J, a compatible E-class and J-class with equal H=E join J owner meet because E;J=H. Their intersection is exactly one K=E meet J class. Thus X/K bijects onto (X/E) times_(X/H) (X/J); finite full D,C product is an actual induced subset. This set-level statement alone has no colour conclusion.",
+      "depends_on": [
+        "D09",
+        "A03",
+        "A12"
+      ],
+      "notes": "N06",
+      "source_labels": [
+        "lem:acf-fibreproduct-aut"
+      ],
+      "scope": "fine_product",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C15",
+      "name": "Full product projections descend to both factors",
+      "statement": "Surjectivity D,C->B gives W->D,C onto. The coordinate kernels and coordinate pair colours are actual old-colour unions. Every Aut(W) therefore descends to g_D,g_C, and every Aut(D),Aut(C) descends to B. Resulting components agree on all B and determine the W-map uniquely.",
+      "depends_on": [
+        "C14",
+        "C01"
+      ],
+      "notes": "N06",
+      "source_labels": [
+        "lem:acf-fibreproduct-aut"
+      ],
+      "scope": "fine_product",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C16",
+      "name": "The two coordinate orbitals reconstruct one fine orbital",
+      "statement": "For two W points of K-quotient colour a_K, choose any old representative atom a. A compatible coordinate pair preserves E;a;E and J;a;J. By I03 their intersection is K;a;K, so the original fine quotient colour is preserved, including pairs with one or both coordinate diagonals.",
+      "depends_on": [
+        "C14",
+        "I03"
+      ],
+      "notes": "N07",
+      "source_labels": [
+        "lem:acf-fibreproduct-aut"
+      ],
+      "scope": "fine_product",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C17",
+      "name": "Natural full fine-coloured automorphism isomorphism",
+      "statement": "Every compatible pair (g_D,g_C) acts bijectively on FULL W, with inverse their coordinate inverses, and preserves fine colours by C16. Together C15 this gives an actual group isomorphism by restriction and union of coordinate maps. No SAP, cross-colour freedom or section is used.",
+      "depends_on": [
+        "C15",
+        "C16",
+        "D10"
+      ],
+      "notes": "N07",
+      "source_labels": [
+        "lem:acf-fibreproduct-aut"
+      ],
+      "scope": "fine_product",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C18",
+      "name": "Abstract matching-pair action is the only group input",
+      "statement": "With the actual group identity supplied explicitly, W has coordinatewise pair action, induced target T action via its D component, and all relevant quotient maps are equivariant. The following kernel proofs need only A09 and elementary actions, not C17 or source geometry as premises.",
+      "depends_on": [
+        "A09",
+        "D10",
+        "D11",
+        "A12"
+      ],
+      "notes": "N08",
+      "source_labels": [
+        "lem:acf-fibreproduct-owner-kernels"
+      ],
+      "scope": "abstract_kernel",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C19",
+      "name": "Prescribed point lifting to a nonnested target T",
+      "statement": "Given w=(d,x),w prime=(d prime,y) and eta in Aut(T) with matching T points, I04 supplies g in Aut(D) inducing eta and sending d to d prime. Let delta be its ACTUAL O-component. C point lifting supplies h with exact delta and h x=y. The matching pair (g,h) is an actual W automorphism, induces eta and sends w to w prime. No map T->O is used.",
+      "depends_on": [
+        "C18",
+        "I04",
+        "A13",
+        "A14"
+      ],
+      "notes": "N08",
+      "source_labels": [
+        "lem:acf-fibreproduct-owner-kernels"
+      ],
+      "scope": "abstract_kernel",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C20",
+      "name": "Onto action and fibre-transitive kernel over T",
+      "statement": "When W is nonempty, its projection to D and T is onto by fullness, and C19 plus I04 yields onto Aut(W)->Aut(T) and transitive kernel on each W->T fibre. Empty systems are supplied separately by C25.",
+      "depends_on": [
+        "C19",
+        "I04"
+      ],
+      "notes": "N08",
+      "source_labels": [
+        "lem:acf-fibreproduct-owner-kernels"
+      ],
+      "scope": "abstract_kernel",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C21",
+      "name": "Lift prescribed points and the ENTIRE nested target automorphism",
+      "statement": "When D->O factors through T, every (t,x) in W_T has a D-lift, so W->W_T is onto. A prescribed Aut(W_T) is a pair (eta,h); choose g lifting eta and d->d prime. Factorization makes the O-component of g equal that of h, so (g,h) lifts the entire prescribed target pair and the selected W point.",
+      "depends_on": [
+        "C18",
+        "A10",
+        "I04",
+        "A13"
+      ],
+      "notes": "N09",
+      "source_labels": [
+        "lem:acf-fibreproduct-owner-kernels"
+      ],
+      "scope": "abstract_kernel",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C22",
+      "name": "Nested product quotient has onto action and fibre kernel",
+      "statement": "For nonempty W, C21 and I04 prove onto Aut(W)->Aut(W_T) and fibre-transitive kernel, using the full target group identity, not an arbitrary coordinate presentation or a section. Empty case is C25.",
+      "depends_on": [
+        "C21",
+        "I04"
+      ],
+      "notes": "N09",
+      "source_labels": [
+        "lem:acf-fibreproduct-owner-kernels"
+      ],
+      "scope": "abstract_kernel",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C23",
+      "name": "Sparse original partial maps descend to genuine coordinate partial maps",
+      "statement": "For arbitrary f between induced subsets of A_W, coordinate-kernel preservation gives well-definedness; reflection of the kernel gives injectivity. Pick representatives for any pair of projected domain points; old fine-colour readout proves projected relation preservation and reflection. f_D and f_C agree on the owners represented in the original domain. No fullness of A_W is required.",
+      "depends_on": [
+        "D12",
+        "C01",
+        "A12"
+      ],
+      "notes": "N10",
+      "source_labels": [
+        "lem:acf-fibreproduct-owner-kernels"
+      ],
+      "scope": "eppa_product",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C24",
+      "name": "Extend a sparse original partial map with its exact resulting owner action",
+      "statement": "Extend f_D using ordinary finite EPPA in D, obtaining g and its ENTIRE O-component delta. Compatibility of f_D,f_C implies delta agrees with f_C on every represented old owner. Prescribed-owner EPPA in C gives h extending f_C with exactly delta. The assumed matching-pair identity gives Aut(W) extending the original f, hence ordinary EPPA for A_W. No independent choice or common section of owner motions.",
+      "depends_on": [
+        "C23",
+        "A09",
+        "A11"
+      ],
+      "notes": "N10",
+      "source_labels": [
+        "lem:acf-fibreproduct-owner-kernels"
+      ],
+      "scope": "eppa_product",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C25",
+      "name": "Empty quotient systems are trivial separately",
+      "statement": "If C is empty, its surjective image O is empty; since there are maps D->O and D->T with T an actual surjective quotient, D,T,W are empty. In the nested case W_T is empty as well. All actual automorphism groups are trivial, all displayed maps are onto, fibre statements are vacuous and EPPA of the empty source holds. Never use the nonempty action criterion here.",
+      "depends_on": [
+        "A09",
+        "A12"
+      ],
+      "notes": "N11",
+      "source_labels": [
+        "lem:acf-fibreproduct-owner-kernels"
+      ],
+      "scope": "abstract_kernel",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C26",
+      "name": "Assembled full-product kernel and EPPA export",
+      "statement": "Combine nonnested C20, optional nested C22 and C25. Under the separate A11 consumer input use C24, also valid for an empty original partial map. The EPPA proof uses the group identity but needs neither a section nor the T-kernel assertions themselves. Actual source C17 can discharge the identity independently.",
+      "depends_on": [
+        "C20",
+        "C22",
+        "C24",
+        "C25"
+      ],
+      "notes": "N11",
+      "source_labels": [
+        "lem:acf-fibreproduct-owner-kernels"
+      ],
+      "scope": "eppa_product",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C27",
+      "name": "Fullness is essential even when both projections are onto",
+      "statement": "In the difference-coloured F2^3 product with owner o and factor bits d,c, the subset d=c projects onto both factors but the compatible pair flipping only d sends it outside itself. Thus surjective projections plus set embedding do not replace the FULL product hypothesis. No claim that the subset satisfies the source product theorem.",
+      "depends_on": [
+        "A12"
+      ],
+      "notes": "N12",
+      "source_labels": [
+        "lem:acf-fibreproduct-aut"
+      ],
+      "scope": "examples",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C28",
+      "name": "Fullness alone does not replace fine-colour reconstruction",
+      "statement": "On a full finite coordinate product, add an extra binary relation distinguishing a pair moved by a compatible coordinate automorphism. The coordinate pair remains a bijection over owners but fails to preserve the added fine relation. This deliberately violates actual exact readout; it is not a CCO counterexample.",
+      "depends_on": [
+        "A12"
+      ],
+      "notes": "N12",
+      "source_labels": [
+        "lem:acf-fibreproduct-aut"
+      ],
+      "scope": "examples",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C29",
+      "name": "No section is needed but the C point premise is essential",
+      "statement": "The regular C4 action over its C2 quotient has fibre-transitive kernel and every prescribed point lift, yet no homomorphic section. Conversely D=F2^2 with full translations, O its first bit and T its second, together with C=F2^2 acted on only by first-bit translation, gives a matching-pair action onto T whose kernel cannot change the second C bit within a fibre. Thus an onto C owner action without its prescribed-point premise is insufficient. These are explicit finite ACTION controls, not unproved identifications with full automorphism groups.",
+      "depends_on": [
+        "A12"
+      ],
+      "notes": "N12",
+      "source_labels": [
+        "lem:acf-fibreproduct-owner-kernels"
+      ],
+      "scope": "examples",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C30",
+      "name": "Source packet consequence respects the finite domain",
+      "statement": "In an actual homogeneous source Q, any automorphism beta of finite induced D extends ambiently, hence preserves the restricted invariant F_Q relation. If beta x=y, then beta sends every subset of D intersect F_Q[x] into D intersect F_Q[y]. If D is full-F_Q-closed, these are entire ambient packets. This supplies the standalone point lemma packet sentence without adding source premises to the abstract conjugation C12.",
+      "depends_on": [
+        "C12",
+        "A03"
+      ],
+      "notes": "N05",
+      "source_labels": [
+        "lem:acf-point-homogeneity"
+      ],
+      "scope": "point_action",
+      "status": "HUMAN_PROOF_EXPANDED"
+    }
+  ],
+  "exports": [
+    {
+      "source_label": "lem:finite-base",
+      "claims": [
+        "C01",
+        "C02",
+        "C03"
+      ]
+    },
+    {
+      "source_label": "cor:fixed-base",
+      "claims": [
+        "C04",
+        "C05"
+      ]
+    },
+    {
+      "source_label": "lem:acf-point-homogeneity",
+      "claims": [
+        "C12",
+        "C30"
+      ]
+    },
+    {
+      "source_label": "lem:acf-owner-provider",
+      "claims": [
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13"
+      ]
+    },
+    {
+      "source_label": "lem:acf-fibreproduct-aut",
+      "claims": [
+        "C14",
+        "C15",
+        "C16",
+        "C17"
+      ]
+    },
+    {
+      "source_label": "lem:acf-fibreproduct-owner-kernels",
+      "claims": [
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26"
+      ]
+    }
+  ],
+  "auxiliary_exports": [
+    {
+      "source_label": "eq:acf-fibreproduct-aut",
+      "source": {
+        "file": "sections/owner_master/02_full_fibreproduct_action.tex",
+        "anchor": "\\label{eq:acf-fibreproduct-aut}"
+      },
+      "claims": [
+        "C15",
+        "C16",
+        "C17"
+      ]
+    },
+    {
+      "source_label": "eq:acf-fibreproduct-kernel-action",
+      "source": {
+        "file": "sections/owner_master/03_owner_kernels_prescribed_actions.tex",
+        "anchor": "\\label{eq:acf-fibreproduct-kernel-action}"
+      },
+      "claims": [
+        "C18",
+        "C19",
+        "C21",
+        "C24"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "T01",
+      "name": "Generic finite-base restriction and actual exact lifting",
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Prove generic EPPA restriction with supplied ambient lifts first; instantiate with the accepted actual joint-lifting provider, retaining countability only in that instance."
+    },
+    {
+      "id": "T02",
+      "name": "Packet-closed finite owner witness and prescribed points",
+      "claims": [
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C30"
+      ],
+      "depends_on": [
+        "T01"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Construct the largest finite packets, list all empty/singleton requests, close and orbit-trim, and derive prescribed point and kernel properties. Ordinary EPPA remains an explicit input."
+    },
+    {
+      "id": "T03",
+      "name": "Actual full fine-coloured product",
+      "claims": [
+        "C14",
+        "C15",
+        "C16",
+        "C17"
+      ],
+      "depends_on": [
+        "T01"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Separate commuting-equivalence set realization, quotient descent, equality-inclusive exact readout and natural automorphism isomorphism; do not import owner provider or countability."
+    },
+    {
+      "id": "T04",
+      "name": "Abstract nonnested/nested action and sparse EPPA consumers",
+      "claims": [
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26"
+      ],
+      "depends_on": [
+        "T01"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "With the actual group identity supplied, prove nonnested and nested point lifting, empty systems and sparse-source EPPA matching. This branch need not wait for T02/T03 proofs."
+    },
+    {
+      "id": "T05",
+      "name": "Premise countercontrols and nonsplit positive example",
+      "claims": [
+        "C27",
+        "C28",
+        "C29"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement actual finite relation/action models and distinguish deliberately violated premises from source counterexamples."
+    }
+  ],
+  "control_script": "tools/check_owner_action_controls.py",
+  "controls": [
+    {
+      "id": "R01",
+      "check": "Actual all-difference F2^3 automorphisms and full-product matching-pair equality, including diagonal coordinate colours."
+    },
+    {
+      "id": "R02",
+      "check": "Prescribed action and fibre kernel for nonnested T and nested W_T, plus genuinely empty systems."
+    },
+    {
+      "id": "R03",
+      "check": "Sparse original partial isometries, coordinate descent, ordinary first-factor extension and exact-owner second-factor extension."
+    },
+    {
+      "id": "R04",
+      "check": "Surjective but nonfull subset and extra unreconstructed fine relation both reject compatible coordinate pairs."
+    },
+    {
+      "id": "R05",
+      "check": "Nonsplit C4->C2 positive point lifting, and an onto owner action with missing fibre transitivity which fails the conclusion."
+    },
+    {
+      "id": "R06",
+      "check": "Generic finite-base restriction in the 48-automorphism finite pure-equivalence source; all eight original requests plus empty B and no-request cases."
+    },
+    {
+      "id": "R07",
+      "check": "All 512 seed-conjugation choices in the four-point wreath action preserve both selected point values and the exact owner component."
+    },
+    {
+      "id": "R08",
+      "check": "Six-point cyclic full-packet orbit trim; a one-point incomplete-packet seed demonstrates why the full seed closure is needed."
+    }
+  ],
+  "article_feedback_intro": "The scoped review found no required change to a numbered theorem conclusion. Record these proof/domain clarifications for the later human article pass; human TeX remains unchanged.",
+  "article_feedback": [
+    {
+      "id": "F01",
+      "kind": "PROOF_EXPANSION_OR_SCOPE_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/owner_master/01_ambient_owner_provider.tex",
+        "anchor": "has finite"
+      },
+      "finding": "The projected finite packet is invariant under FULL Aut(O) because its saturated pullback is an old-orbital union, not because every full owner automorphism has a global lift.",
+      "proposed_article_change": "State this local colour-union invariance explicitly.",
+      "caller_effect": "No numbered conclusion changes. The source owner master and later rooted consumers must retain these actual-colour and prescribed-owner contracts; the finite-domain clarification agrees with its packet-closed provider use.",
+      "proof_claims": [
+        "C06",
+        "C07"
+      ]
+    },
+    {
+      "id": "F02",
+      "kind": "PROOF_EXPANSION_OR_SCOPE_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/owner_master/01_ambient_owner_provider.tex",
+        "anchor": "There are finitely many compatible pairs"
+      },
+      "finding": "All compatible singleton and empty-real requests must be included before taking full-packet closure and the generated orbit. Chosen lifts need no coherence.",
+      "proposed_article_change": "Keep the full request list and D0/D1/D orbit construction together.",
+      "caller_effect": "No numbered conclusion changes. The source owner master and later rooted consumers must retain these actual-colour and prescribed-owner contracts; the finite-domain clarification agrees with its packet-closed provider use.",
+      "proof_claims": [
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C13"
+      ]
+    },
+    {
+      "id": "F03",
+      "kind": "PROOF_EXPANSION_OR_SCOPE_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/rooted_mi/04_owner_point_and_finite_lift.tex",
+        "anchor": "Consequently it sends any subset"
+      },
+      "finding": "The finite automorphism is defined only on D. Its packet consequence applies to subsets of D intersect F_Q[x]; the whole ambient packet is available when D is full-packet closed.",
+      "proposed_article_change": "Qualify the displayed packet consequence by its finite domain. This is a domain wording clarification.",
+      "caller_effect": "No numbered conclusion changes. The source owner master and later rooted consumers must retain these actual-colour and prescribed-owner contracts; the finite-domain clarification agrees with its packet-closed provider use.",
+      "proof_claims": [
+        "C12",
+        "C30"
+      ]
+    },
+    {
+      "id": "F04",
+      "kind": "PROOF_EXPANSION_OR_SCOPE_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/owner_master/02_full_fibreproduct_action.tex",
+        "anchor": "finite unions of named original atomic"
+      },
+      "finding": "Finite automorphisms descend because BOTH quotient equality and quotient pair colours are recognizable old-colour unions, not merely because the kernel is preserved. Logical quotient diagonals remain in the exact readout.",
+      "proposed_article_change": "Make quotient-colour descent explicit alongside kernel descent.",
+      "caller_effect": "No numbered conclusion changes. The source owner master and later rooted consumers must retain these actual-colour and prescribed-owner contracts; the finite-domain clarification agrees with its packet-closed provider use.",
+      "proof_claims": [
+        "C15",
+        "C16",
+        "C17"
+      ]
+    },
+    {
+      "id": "F05",
+      "kind": "PROOF_EXPANSION_OR_SCOPE_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/owner_master/03_owner_kernels_prescribed_actions.tex",
+        "anchor": "need not be nested"
+      },
+      "finding": "For target T, the actual O-action is chosen after lifting the prescribed T-motion and point pair; only the target T times_O C needs T->O and its own full-product identity.",
+      "proposed_article_change": "Retain the separate nonnested and nested action contracts in downstream M3 callers.",
+      "caller_effect": "No numbered conclusion changes. The source owner master and later rooted consumers must retain these actual-colour and prescribed-owner contracts; the finite-domain clarification agrees with its packet-closed provider use.",
+      "proof_claims": [
+        "C19",
+        "C20",
+        "C21",
+        "C22"
+      ]
+    },
+    {
+      "id": "F06",
+      "kind": "PROOF_EXPANSION_OR_SCOPE_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/owner_master/03_owner_kernels_prescribed_actions.tex",
+        "anchor": "ordinary\nEPPA"
+      },
+      "finding": "The sparse-source EPPA argument uses an explicit full group identity and exact-owner EPPA in C, but no D->T fibre-transitivity input. It also requires recognizable quotient colours for partial-map descent.",
+      "proposed_article_change": "Optionally split this reusable EPPA clause from the stronger kernel clause.",
+      "caller_effect": "No numbered conclusion changes. The source owner master and later rooted consumers must retain these actual-colour and prescribed-owner contracts; the finite-domain clarification agrees with its packet-closed provider use.",
+      "proof_claims": [
+        "C23",
+        "C24",
+        "C26"
+      ]
+    }
+  ],
+  "review": {
+    "date": "2026-10-27",
+    "method": "Independent source review of the finite owner-provider and full-product/action branches, parent synthesis and exhaustive finite relation/action controls. Not independent human certification or Lean proof.",
+    "required_mathematical_repairs_found": 0,
+    "remaining": "Receiving projects must implement the actual finite automorphism/quotient maps and source instantiations. Ordinary EPPA providers and the simultaneous master/rooted rank induction remain separate explicit obligations."
+  },
+  "overview_mermaid": [
+    "flowchart TD",
+    "  E[\"Ordinary EPPA and supplied lifts\"] --> F[\"Generic finite-base witness\"]",
+    "  J[\"Actual joint exact lifting\"] --> O[\"All owner requests\"]",
+    "  F --> O",
+    "  O --> P[\"Packet-closed finite owner provider\"]",
+    "  Q[\"Commuting equivalences\"] --> S[\"Actual full set product\"]",
+    "  R[\"Exact fine-colour readout\"] --> G[\"Full automorphism group identity\"]",
+    "  S --> G",
+    "  I[\"Supplied group identity\"] --> N[\"Nonnested target kernel\"]",
+    "  I --> T[\"Nested product target kernel\"]",
+    "  I --> C[\"Sparse-source EPPA matching\"]",
+    "  G -.-> I"
+  ],
+  "overview_notes": [
+    "The abstract kernel/EPPA branch takes the group identity as input; it does not need the actual source construction or the finite owner provider to be reproved.",
+    "The provider branch uses conditional ordinary EPPA plus accepted actual joint exact lifting, not a rooted ACF induction hypothesis.",
+    "No argument imports finite-kernel width-two, owner-naming homogeneity, phase seeds, SAP or a group section."
+  ],
+  "dependency_firewalls": [
+    {
+      "claims": [
+        "C01",
+        "C02",
+        "C03"
+      ],
+      "forbid": [
+        "A03",
+        "A04",
+        "A05",
+        "A07",
+        "I01",
+        "I02",
+        "I03",
+        "A15"
+      ]
+    },
+    {
+      "claims": [
+        "C06",
+        "C07"
+      ],
+      "forbid": [
+        "A02",
+        "A04",
+        "A05",
+        "I02",
+        "I03",
+        "C05"
+      ]
+    },
+    {
+      "claims": [
+        "C12"
+      ],
+      "forbid": [
+        "A02",
+        "A03",
+        "A04",
+        "A05",
+        "I01",
+        "I02",
+        "I03",
+        "C11"
+      ]
+    },
+    {
+      "claims": [
+        "C14",
+        "C15",
+        "C16",
+        "C17"
+      ],
+      "forbid": [
+        "A02",
+        "A05",
+        "A07",
+        "I02",
+        "C05",
+        "C13"
+      ]
+    },
+    {
+      "claims": [
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26"
+      ],
+      "forbid": [
+        "A02",
+        "A03",
+        "A04",
+        "A05",
+        "A07",
+        "I01",
+        "I02",
+        "I03",
+        "C13",
+        "C17"
+      ]
+    },
+    {
+      "claims": [
+        "C23",
+        "C24"
+      ],
+      "forbid": [
+        "A10",
+        "C19",
+        "C20",
+        "C21",
+        "C22"
+      ]
+    },
+    {
+      "claims": [
+        "C27",
+        "C28",
+        "C29"
+      ],
+      "forbid": [
+        "A02",
+        "A03",
+        "A04",
+        "A05",
+        "I02",
+        "I03"
+      ]
+    },
+    {
+      "claims": [
+        "C21",
+        "C22"
+      ],
+      "forbid": [
+        "A14",
+        "C19",
+        "C20"
+      ]
+    },
+    {
+      "claims": [
+        "C23",
+        "C24"
+      ],
+      "forbid": [
+        "A13",
+        "A14"
+      ]
+    },
+    {
+      "claims": [
+        "C04",
+        "C05"
+      ],
+      "forbid": [
+        "A07",
+        "C07",
+        "C08",
+        "C09",
+        "C13"
+      ]
+    }
+  ]
+}

@@ -18,7 +18,7 @@ import check_formalization_coordination as coordination
 
 
 ROOT = Path(__file__).resolve().parents[1]
-MODULES = ('raw_exact', 'strong_selectors', 'sir')
+MODULES = ('raw_exact', 'strong_selectors', 'parity_hasse', 'exact_crt', 'canonical_hull', 'real_closure', 'finite_packets', 'rigid_groupoid', 'finite_kernel', 'owner_action', 'sir')
 MANIFEST = 'HANDOFF_MANIFEST.json'
 
 
@@ -30,7 +30,8 @@ def collect(root):
              'tools/test_formalization_handoff.py',
              'tools/check_formalization_coordination.py',
              'tools/prepare_formalization_launch.py',
-             'tools/test_formalization_coordination.py'}
+             'tools/test_formalization_coordination.py', 'tools/coordination_queue.py',
+             'tools/test_coordination_queue.py'}
     board = json.loads((root / coordination.DIRECTORY / 'BOARD.json').read_text())
     coordination.validate(root, board)
     for path, content in coordination.generated(board).items():
@@ -61,13 +62,23 @@ def collect(root):
                 'modules': modules,
                 'coordination': {'phase': board['phase'],
                                  'repository': board['public_repository'],
-                                 'project': 1, 'package': 'B001', 'contract_revision': 1},
+                                 'project': 1, 'package': 'B001', 'contract_revision': 1,
+                                 'protocol_version': board['protocol_version'],
+                                 'allocation_authority': board.get('allocation_authority')},
                 'files': [{'path': path, 'bytes': len(data), 'sha256': hashlib.sha256(data).hexdigest()}
                           for path, data in files.items()],
                 'verification': ['python tools/build_formalization_handoff.py --verify .'] +
                                 [f'python tools/build_formalization_module.py --module {m} --check' for m in MODULES] +
                                 ['python tools/check_raw_exact_controls.py',
                                  'python tools/check_strong_selector_controls.py',
+                                 'python tools/check_parity_hasse_controls.py',
+                                 'python tools/check_exact_crt_controls.py',
+                                 'python tools/check_canonical_hull_controls.py',
+                                 'python tools/check_real_closure_controls.py',
+                                 'python tools/check_finite_packet_controls.py',
+                                 'python tools/check_rigid_groupoid_controls.py',
+                                 'python tools/check_finite_kernel_controls.py',
+                                 'python tools/check_owner_action_controls.py',
                                  'python tools/check_sir_controls.py',
                                  'python tools/check_formalization_coordination.py --check'],
                 'unexpanded_upstream': [dict(module=m['id'], **item) for m in modules

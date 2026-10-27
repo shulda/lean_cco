@@ -1,0 +1,64 @@
+\section{Finite-base lifting over a fixed quotient}
+This provider is used by the normalized MI construction and the ambient
+owner witness. The alternative ordinary-EPPA route is retained in the full working manuscript.
+
+\begin{lemma}[Finite-base restriction]\label{lem:finite-base}
+Let $X$ be homogeneous in a finite relational language, and let
+$\pi:X\to T$ be an invariant quotient whose quotient pair colours
+are determined by the fine pair colours. Assume $\Age(X)$ has
+ordinary EPPA. Fix finite $B\subseteq T$, $A\subseteq\pi^{-1}(B)$,
+and finitely many compatible requirements $(p,\gamma)$, where
+$p$ is a partial automorphism of $A$, $\gamma\in\Aut(B)$ and
+$\pi p=\gamma\pi$ on $\operatorname{dom}(p)$. Suppose each pair
+has a simultaneous ambient lift in $\Aut(X)$.
+Then a single finite $W\subseteq\pi^{-1}(B)$ containing $A$ has
+$\pi W=B$ and extends all requirements: for every pair $(p,\gamma)$
+there exists $\beta\in\Aut(W)$ extending $p$ and inducing $\gamma$
+on the entire $B$. Empty-domain requirements are included.
+\end{lemma}
+\begin{proof}
+Choose one representative $s_b\in\pi^{-1}(b)$ of each $b\in B$
+and a finite $S\subseteq\pi^{-1}(B)$ containing all these
+representatives and $A$. For each requirement choose an ambient
+automorphism $g_{p,\gamma}\in\Aut(X)$ extending $p$ and inducing
+$\gamma$ on $B$. Put
+\[
+ A^*=S\cup\bigcup_{(p,\gamma)}g_{p,\gamma}(S).
+\]
+This finite set still lies over $B$, and each restriction
+$g_{p,\gamma}|_S$ is a partial automorphism of its induced fine
+structure. Let $C\subseteq X$ be one finite EPPA witness for $A^*$,
+realised over $A^*$ by homogeneity, and choose
+$\beta_{p,\gamma}\in\Aut(C)$ extending $g_{p,\gamma}|_S$.
+Set $W=C\cap\pi^{-1}(B)$.
+
+For any $x\in W$ and $b=\pi(x)\in B$, the fine equivalence
+relation defining $\pi$ identifies $x$ with $s_b$, and its
+restriction to $C$ is preserved by $\beta_{p,\gamma}$. Therefore
+\[
+ \pi(\beta_{p,\gamma}x)
+ =\pi(\beta_{p,\gamma}s_b)
+ =\pi(g_{p,\gamma}s_b)=\gamma(b).
+\]
+Thus $\beta_{p,\gamma}$ maps $W$ into $W$. Since it is a
+permutation of finite $C$, this restriction maps $W$ onto $W$.
+It extends $p$ and induces $\gamma$ on all $B$.
+The witness $W$ is common to the finitely many requirements.
+No coherent assignment of the $\beta_{p,\gamma}$ is assumed.
+\end{proof}
+
+\begin{corollary}[Exact fixed-base lifting]\label{cor:fixed-base}
+For an actual exact quotient $\pi_E:X\to X/E$ with
+$\Age(X)$ having EPPA, all the compatible finite-base
+requirements of Lemma~\ref{lem:finite-base} have a common witness.
+\end{corollary}
+\begin{proof}
+The mixed orbital identity of Lemma~\ref{lem:nested-mixed},
+with the fine sort $J=\Id$ or any exact $J\le E$, shows directly
+that each compatible $p\cup\gamma$ is a partial isomorphism
+of the joint real/exact-sort language. Joint homogeneity
+(Theorem~\ref{thm:joint-exact}) supplies an ambient lift for each
+such request. Apply Lemma~\ref{lem:finite-base} to the finitely
+many pairs, including those with empty real domain.
+\end{proof}
+

@@ -1,0 +1,75 @@
+\section{Sparse labelled graphs}\label{sec:sparse-labelled-graphs}
+
+The following finite combinatorial statement has no CCO or model-theoretic
+hypothesis. Its one-label case supplies the graph used in the finite-fibre
+argument; its full form supplies the later reset construction.
+
+\begin{lemma}[Sparse labelled graph]\label{lem:sparse-labelled-graph}
+For all positive integers \(q,r,g\) there is a finite simple graph \(H\),
+whose edges are labelled by \(1,\ldots,r\), with girth greater than \(g\),
+such that every colouring
+\(\kappa:V(H)\to\{1,\ldots,q\}\) has a colour \(d\) with the following
+property: for every label \(i\leq r\), some edge labelled \(i\) has both
+endpoints coloured \(d\).
+\end{lemma}
+
+\begin{proof}
+We give the standard probabilistic sparsening argument because the labelled
+form will be used in the Ramsey reset argument. We may replace \(g\) by
+\(\max\{g,3\}\), so assume \(g\ge3\). Put
+\(c=128rq\log(q+1)\).  For sufficiently large \(n>c\), independently for each unordered
+pair of vertices choose no edge with probability \(1-c/n\), and otherwise
+choose one of the \(r\) labels uniformly.
+
+Fix a vertex colouring \(\kappa\) and a function
+\(h:\{1,\ldots,q\}\to\{1,\ldots,r\}\).  Let \(X_{\kappa,h}\) count pairs
+\(uv\) with \(\kappa(u)=\kappa(v)=d\) whose edge has label \(h(d)\).  If
+\(n\geq2q\), the number of same-colour pairs is at least \(n^2/(4q)\), so
+\[
+ \mu:=\mathbb E X_{\kappa,h}\geq \frac{cn}{4rq}.
+\]
+For this fixed pair \(\kappa,h\), the random variable \(X=X_{\kappa,h}\)
+is a sum of \(N\) independent Bernoulli variables with parameter
+\(p=c/(nr)\). Since \(e^{-1}\le1/2\),
+\[
+ \mathbb E e^{-X}=(1-p+pe^{-1})^N\le e^{-Np/2}=e^{-\mu/2}.
+\]
+Markov's inequality therefore gives the elementary lower-tail estimate
+\[
+ \Pr[X_{\kappa,h}<\mu/4]\le e^{\mu/4}\mathbb E e^{-X}
+ \le e^{-\mu/4}\le \exp\!\left(-\frac{cn}{16rq}\right).
+\]
+There are only \(q^n r^q\) choices of \((\kappa,h)\); our choice of \(c\)
+therefore makes, for all sufficiently large \(n\), the probability that
+\(X_{\kappa,h}\geq\mu/4\) simultaneously for all pairs
+\((\kappa,h)\) tend to one.
+
+On the other hand, the expected number of cycles of length at most \(g\) is
+at most the constant
+\[
+ B=\sum_{\ell=3}^{g}\frac{c^\ell}{2\ell}.
+\]
+By Markov's inequality the probability of more than \(4B\) short cycles
+is at most \(1/4\). Choose \(n\) so large that the preceding union-bound
+failure probability is less than \(1/4\) and \(cn/(16rq)>4B\). Thus with
+positive probability both the robust property holds and there are at most
+\(4B\) short cycles; moreover \(\mu/4>4B\) for every \(\kappa,h\).
+Choose such a graph, and delete one edge from every remaining cycle of length at
+most \(g\).  At most \(4B\) edges are deleted, so every
+\(X_{\kappa,h}\) remains positive, while the resulting graph has girth
+larger than \(g\).
+
+If the asserted labelled monochromatic property failed for a colouring
+\(\kappa\), then for every vertex colour \(d\) we could choose a label
+\(h(d)\) absent from the monochromatic \(d\)-edges.  This would give
+\(X_{\kappa,h}=0\), a contradiction.
+\end{proof}
+
+\begin{corollary}[High girth and chromatic number]\label{cor:high-girth-high-chromatic}
+For all positive integers \(q,g\), there is a finite simple graph of girth
+greater than \(g\) and chromatic number greater than \(q\).
+\end{corollary}
+\begin{proof}
+Apply \cref{lem:sparse-labelled-graph} with \(r=1\). A proper
+\(q\)-colouring would have no monochromatic edge, a contradiction.
+\end{proof}

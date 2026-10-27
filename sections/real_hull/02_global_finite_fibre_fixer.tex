@@ -1,0 +1,565 @@
+\subsection{Internal index-two covers become global packets}
+
+Fix a realised quantifier-free one-point type $q(x/A)$ over a nonempty
+finite \emph{complete real} base $A=\{a_1,\dots,a_n\}$, with finite
+fibre $Z=X_q$. Let $p_i=\col(x,a_i)$ and set
+\[
+ T=\bigcap_i A_{p_i}.
+\]
+The triangle-defined age implies that $T$ is precisely the diversity
+palette of the induced homogeneous structure on $Z$: every colour in
+$T$ can be realised by two new points over the entire complete base.
+We call $R\subseteq T$ \emph{exact for $Z$} if $R$ is a global
+equivalence support and every global $R$-class meeting $Z$ lies in $Z$.
+
+\begin{lemma}[Spoke fixedness]\label{lem:rh-spokefixed}
+If $R$ is exact for $Z$, every $p_i$ is $R$-fixed.
+\end{lemma}
+\begin{proof}
+Fix $x\in Z$ and let $r\in R$ and $s\in rp_i$.
+Peircean rotation in the ACTUAL represented RAW product gives
+$p_i\in rs$.  Anchor this legal configuration at the actual
+$p_i$-pair $(x,a_i)$.  If $s=1$, then $r=p_i$ and we may
+put $y=a_i$, obtaining $\col(x,y)=r$ and $ya_i=1$.
+If $s$ is diversity, triangle-definedness and old
+pair-homogeneity give a distinct real point $y$ such that
+$\col(x,y)=r$ and $\col(y,a_i)=s$.  Thus in both cases
+$y\in[x]_{E_R}\subseteq Z$ by exactness of $R$ for $Z$.
+The case $s=1$ would give $y=a_i\in Z$, impossible since
+$q(x/A)$ requires its new point to be distinct from every
+actual real parameter.  Hence $s$ is diversity.
+Since every $y\in Z$ has the same $p_i$-spoke
+to $a_i$, necessarily $s=p_i$. The additional
+identity factor in $R^+$ fixes $p_i$ literally,
+so $R^+p_i=\{p_i\}$ as claimed.
+In particular $p_i\notin R$, since otherwise
+$1\in p_ip_i\subseteq R^+p_i$, a contradiction.
+\end{proof}
+
+\begin{lemma}[Spoke-square localisation from the original relative separator]
+\label{lem:rh-spoke-square-localisation}
+Let $R\subseteq\mathcal D$ be an ORIGINAL global
+invariant equivalence diversity support and
+let $P\subseteq\mathcal D$ be a nonempty
+finite set of $R$-fixed diversity colours.
+Put $T=\bigcap_{p\in P}A_p$.
+If $c\in T$ and $A_c\cap T\subseteq R$, then
+\[
+              A_c\subseteq R,
+              \qquad pc=\{p\}\quad(p\in P).
+\]
+No globalisation of a finite one-point fibre is
+assumed here. The product is the original
+equality-inclusive represented RAW product.
+\end{lemma}
+\begin{proof}
+If $c\in R$, equivalence closure gives
+$A_c\subseteq R$, while $R$-fixedness
+gives $pc=\{p\}$ for all $p\in P$.
+Assume henceforth $c\notin R$.
+Choose an inclusion-minimal family of the
+square rows $A_c$ and $A_p$, $p\in P$,
+whose intersection is contained in $R$;
+one exists because $A_c\cap T\subseteq R$.
+It MUST contain $A_c$: the intersection
+of any subfamily consisting only of
+spoke rows contains $c\in T\setminus R$.
+
+If at least TWO spoke rows remain in this
+minimal family, omit one of them, say $A_p$.
+Minimality supplies an atom
+$x\notin R$ in the intersection of all
+remaining rows, so in particular
+$x\in A_c$ and
+$x\in(\bigcap_{A_b\text{ remaining}}A_b)\setminus R$.
+But $c\in A_p$ because $c\in T$.
+This contradicts the ORIGINAL
+square-avoidance
+\cref{lem:rh-collapse}(3), applied to
+the chosen minimal blocker with
+$b_i=p$ and $a=c\in A_p$.
+Consequently either $A_c\subseteq R$
+already, or the minimal family is
+$\{A_c,A_p\}$ for ONE $p\in P$.
+In the latter case $c\in A_p$ and
+$A_c\cap A_p\subseteq R$, so
+self-side collapse
+\cref{lem:rh-collapse}(2) yields
+$A_c\subseteq R$.
+Now for EVERY $p\in P$ we have
+$c\in A_p$ and
+$A_c\cap A_p\subseteq R$.
+A final application of
+\cref{lem:rh-collapse}(2) gives
+$pc=\{p\}$ simultaneously for all
+spokes, including repeated
+original atom names (duplicates
+may be deleted from $P$).
+All logical-identity branches are
+those already proved in
+\cref{lem:rh-collapse}; no
+synthetic STRONG identity was used.
+\end{proof}
+
+\begin{lemma}[Canonical spoke-fixer and direct finite-fibre globalisation]
+\label{lem:rh-direct-spoke-fixer}
+Let $A=\{a_1,\ldots,a_n\}\subseteq M$ be
+nonempty and COMPLETE, and let
+$q(x/A)$ be an ACTUAL realised
+one-point type with $x\notin A$.
+Write $p_i=\col(x,a_i)$,
+$P=\{p_i:1\le i\le n\}$, and
+$Z=X_q$, with its actual
+diversity palette
+$T=\bigcap_{p\in P}A_p$.
+Define the ORIGINAL spoke-fixer
+diversity support
+\[
+ R_P=\{d\in\mathcal D:
+                      pd=\{p\}\text{ for EVERY }p\in P\}.
+\]
+Then $R_P$ is a global invariant
+equivalence support, and EVERY
+$R_P$-class meeting $Z$ lies
+wholly in $Z$; in particular
+$R_P\subseteq T$.
+Moreover $R_P$ is the LARGEST
+global invariant equivalence
+support fixing all spoke colours
+in $P$.
+
+If the realised one-point fibre
+$Z$ is FINITE, then
+\[
+                        R_P=T,
+             \qquad Z=[x]_{E_{R_P}}
+                       \quad(x\in Z).
+\]
+The existence proof uses only ONE
+internal index-two Hasse cover,
+not a sequence of intermediate
+globalised equivalences.
+\end{lemma}
+\begin{proof}
+All products here are original
+RAW products with TRUE logical
+identity $1$. Let $d,e\in R_P$
+and take any actual RAW atom
+$f\in de$, possibly $f=1$.
+For every $p\in P$,
+\[
+ pf\subseteq p(de)=(pd)e=\{p\}e=\{p\}.
+\]
+The product $pf$ is nonempty by
+transitivity of the original
+one-sort structure (and $p1=p$
+when $f=1$), hence
+$pf=\{p\}$. Thus any diversity
+$f\in de$ belongs to $R_P$.
+Symmetry of ORIGINAL atom names
+and this composition closure
+show that $E_{R_P}=1\cup R_P$
+is an actual global invariant
+equivalence. If some other global
+invariant support $R$ has all
+$p\in P$ $R$-fixed, then
+$pd=\{p\}$ for every
+$d\in R$, hence $R\subseteq R_P$.
+
+Fix $z\in Z$, and let $y$ be
+$R_P$-related to $z$. For every
+anchor $a_i$, the actual
+triangle $a_i,z,y$ and
+$p_iR_P^+=\{p_i\}$ show
+$\col(y,a_i)=p_i$; if
+$y=a_i$, its logical-identity
+colour would contradict this
+diversity singleton.
+So $y\in Z$, proving
+EXACTNESS of $R_P$ for this
+realised one-point fibre.
+Every diversity atom $d\in R_P$
+has an actual neighbour from
+any fixed $z$ by original
+transitivity; this neighbour
+lies in $Z$. Since the
+original triangle-fullness
+argument identifies the
+actual diversity palette of
+$Z$ with $T$, we obtain
+$R_P\subseteq T$.
+
+Suppose now $Z$ is FINITE
+and $R_P\subsetneq T$.
+The induced $Z$ is finite,
+transitive, homogeneous
+and homomorphic-CCO by
+\cref{lem:fibreCCO}.
+The restriction of $E_{R_P}$
+to $Z$ is a PROPER invariant
+equivalence. Select ONE
+Hasse cover above it in the
+finite invariant-equivalence
+lattice of $Z$.
+By \cref{cor:hasse}, its
+relative index is exactly
+two. Let $C\subseteq
+T\setminus R_P$ be its
+nonempty diversity colour
+layer. For every $c\in C$
+the internal two-step
+$c;c$ has only $R_P$
+endpoints (or equality):
+two $c$-edges traverse
+the two classes of the
+index-two extension twice.
+
+We must transfer that
+INTERNAL square statement
+to the ORIGINAL $A_c$.
+For any $d\in A_c\cap T$,
+the original $(c,c,d)$
+triangle is legal.
+Adjoin THREE distinct new
+$q$-points over the SAME
+complete real anchor $A$,
+with that triangle among
+the new points.
+Every old--old--new triangle
+is copied from the realised
+$q$-type; every
+old--new--new triangle is
+legal because $c,d\in
+T=\bigcap_i A_{p_i}$;
+the three-new triangle is
+legal by $d\in A_c$.
+ORIGINAL triangle fullness
+and homogeneity therefore
+realise all three new points
+in the SAME actual fibre $Z$.
+The internal index-two
+statement forces $d\in R_P$.
+Thus
+\[
+                         A_c\cap T\subseteq R_P
+                       \qquad(c\in C).
+\]
+
+Every $p\in P$ is
+$R_P$-fixed: since the
+ORIGINAL RAW orbital
+relations are symmetric,
+their products commute, so
+\[
+       R_P^+p=pR_P^+=\{p\}
+\]
+by the very definition of
+$R_P$ (with the TRUE identity
+factor acting neutrally).
+Every $c\in C$ lies in $T$.
+Apply
+\cref{lem:rh-spoke-square-localisation}
+with $R=R_P$. It gives
+$pc=\{p\}$ for ALL $p\in P$,
+so $c\in R_P$ by definition,
+contradicting
+$C\subseteq T\setminus R_P$.
+Hence $R_P=T$.
+
+Finally every pair of
+distinct points of $Z$
+has original colour in
+$T=R_P$, so
+$Z\subseteq[x]_{E_{R_P}}$.
+The reverse inclusion is
+the proved exactness of
+$R_P$ for $Z$. Therefore
+$Z=[x]_{E_{R_P}}$, as
+claimed. If $Z$ has one
+point, then $T=R_P$ is
+empty and this is just
+the TRUE logical equality
+class, without an invented
+diversity identity.
+\end{proof}
+
+\begin{theorem}[Globalisation of finite real fibres]\label{thm:rh-globalise}
+Every finite realised one-point fibre $Z=X_q$ is exactly one class of
+a parameter-free invariant finite-class equivalence. More precisely,
+$T=\bigcap_i A_{p_i}$ is a global equivalence support. Every internal
+saturated chain from equality to the universal equivalence of $Z$
+globalises, with each successive global cover of index two.
+\end{theorem}
+\begin{proof}
+For a NONEMPTY finite real anchor $A$,
+\cref{lem:rh-direct-spoke-fixer}
+constructs the original global
+equivalence $E_T$ DIRECTLY:
+its diversity support is the
+canonical spoke-fixer $R_P=T$
+and the whole realised finite
+one-point fibre $Z$ is exactly
+ONE global $E_T$-class.
+In particular this existence
+proof uses only the ORIGINAL
+relative separator/square
+calculus and ONE index-two
+Hasse cover in $Z$; it never
+assumes that a proper
+intermediate internal fibre
+equivalence has already been
+globalised.
+
+For the further CHAIN claim,
+fix ANY internal invariant
+equivalence $V$ on $Z$.
+By its homogeneity, $V$ is a
+union of complete original
+fine-colour atom names
+$S\subseteq T$, together
+with true logical identity.
+The same original old atom
+union $H=\Id\cup S$ is a
+GLOBAL invariant equivalence:
+two successive $H$-edges
+lie inside ONE $E_T$-class,
+and original transitivity
+moves that class into $Z$,
+where internal $V$ is
+transitive. Thus the third
+original edge is also in
+$S$ or is true identity.
+Every atom of $S$ occurs
+within $Z$, so this is the
+UNIQUE global original
+equivalence lifting $V$;
+it is exact for $Z$
+because $H\le E_T$.
+Restriction and extension
+therefore identify the
+whole original interval
+$[\Id,E_T]$ with the full
+internal invariant-equivalence
+lattice of $Z$.
+This direct extension argument
+does NOT invoke the later
+block-interval theorem, whose
+more general proof is separate.
+In particular EVERY internal
+saturated Hasse chain
+globalises, independently
+of its choice, and each
+successive global cover has
+relative index two by
+\cref{cor:hasse} on finite $Z$.
+
+For $A=\varnothing$, if
+$M$ is infinite transitive
+there is no finite
+real one-point fibre.
+If $M$ is finite, $Z=M$,
+$T=\mathcal D$ is already
+the global universal
+equivalence support, and
+all internal Hasse covers
+have index two by
+\cref{cor:hasse}.
+\end{proof}
+
+
+\begin{corollary}[Spoke-set criterion and uniform sizes of realised one-point fibres]
+\label{cor:rh-fibre-spoke-set-uniformity}
+Let $P\subseteq\mathcal D$ be
+a nonempty finite set of
+old diversity colours realised
+as the SET of spokes of
+some one-point type over
+a finite nonempty COMPLETE
+original real base.
+Put
+\[
+       T_P=\bigcap_{p\in P}A_p,
+       \qquad
+       R_P=\{d\in\mathcal D:
+                            pd=\{p\}\ (p\in P)\}.
+\]
+For EVERY realised old
+one-point type $q(x/A)$
+with this same SET $P$ of
+distinct spoke colours,
+its real fibre $Z=X_q$
+satisfies
+\[
+ Z=[x]_{E_{R_P}}
+       \quad\Longleftrightarrow\quad
+                     T_P=R_P.
+\]
+Consequently
+\[
+ |Z|<\infty
+ \quad\Longleftrightarrow\quad
+ T_P=R_P\ \text{and}\ 
+              [E_{R_P}:\Id]<\infty.
+\]
+If ONE such realised type has
+finite fibre, EVERY realised
+one-point type with the same
+set $P$ has the SAME finite
+fibre cardinality
+$[E_{R_P}:\Id]$, which is a
+power of two. In fact these
+finite fibres are pairwise
+CONJUGATE under
+$\Aut(M)$, since they are
+classes of the SAME invariant
+equivalence in a transitive
+original structure. The
+statement does NOT say that
+every arbitrarily prescribed
+list of spokes is realisable
+or that the chosen
+automorphism must transport
+the anchor parameters.
+\end{corollary}
+\begin{proof}
+Original triangle fullness
+and homogeneity show that
+for ANY realised one-point
+type with this set $P$,
+the diversity palette of
+its fibre is EXACTLY $T_P$:
+realise each
+$d\in T_P$ by two new
+points with the same
+spokes over the SAME
+complete base, and
+use the anchor alignment.
+By
+\cref{lem:rh-direct-spoke-fixer},
+$R_P\subseteq T_P$ and
+each $E_{R_P}$-class
+meeting $Z$ lies wholly
+inside $Z$.
+
+If $T_P=R_P$, every pair
+of distinct points of $Z$
+has $E_{R_P}$-colour.
+Thus $Z$ lies in one
+$E_{R_P}$-class, and
+the preceding exactness
+gives equality.
+Conversely, if $Z$ is
+one such class, all
+its diversity colours
+belong to $R_P$.
+Since they are exactly
+$T_P$, equality follows.
+The finiteness equivalence
+is immediate. By original
+transitivity all classes
+of a global invariant
+equivalence have the SAME
+cardinality, and the
+sets $T_P,R_P$ depend
+only on the SET of spoke
+colour names, not the
+parameter configuration.
+If two fibres are whole
+$E_{R_P}$-classes, an
+original automorphism taking
+any point of the first to
+any point of the second
+takes the ENTIRE first class
+to the second one.
+If one such fibre is finite,
+\cref{lem:rh-direct-spoke-fixer}
+gives $T_P=R_P$; all
+others are therefore full
+$E_{R_P}$-classes of the
+same finite size.
+The two-power conclusion
+follows from
+\cref{cor:rh-class-2power};
+its proof is independent
+of this corollary and
+uses the finite CCO
+index-two theorem.
+\end{proof}
+
+\begin{example}[A nontrivial two-point spoke-fixer fibre]
+\label{ex:rh-direct-spoke-fixer-two-point}
+Let $I$ be countably infinite and let
+\[
+                    M=I\times\mathbb F_2\times\mathbb F_2 .
+\]
+Name the ORIGINAL symmetric diversity
+atom $q$ for points with the same
+$I$-block and first bit but opposite
+second bit; name $r$ when the
+$I$-block agrees but the FIRST bit
+differs, regardless of the second bit;
+name $b$ between different $I$-blocks.
+This original one-sort complete binary
+structure is homogeneous and has AP
+and semantic HOMOMORPHIC CCO.
+
+For CCO, in any finite partial diagram
+the specified non-$b$ edges force
+common $I$-blocks. An incompatible
+specified $b$ edge inside such a
+connected component gives a
+noncompletable SIMPLE cycle consisting
+of that $b$ edge and a non-$b$ path.
+Within one non-$b$ component, the
+first-bit constraints are
+$q$-edges of parity zero and
+$r$-edges of parity one; an
+inconsistent parity system gives a
+specified simple cycle with odd
+total parity. The second-bit
+constraints occur only on $q$-edges
+and require opposite bits; an
+inconsistent system gives an odd
+$q$-only simple cycle. Conversely,
+if every specified simple cycle
+homomorphically completes, none
+of these inconsistencies occurs.
+Solve the two parity systems
+and assign distinct fresh
+$I$-blocks to distinct non-$b$
+connected components. This produces
+one simultaneous colour-preserving
+homomorphism into $M$, proving
+semantic CCO. Homogeneity follows
+by permutations of the $I$-blocks,
+swapping the two first-bit parts
+and independently swapping the
+two second-bit values in each part.
+
+Here the ORIGINAL RAW products are
+\[
+                  rr=\{1,q\},
+                       \qquad rq=\{r\}.
+\]
+Fix any anchor $a=(i,0,0)$ and
+the realised one-point type
+$q_0(x/\{a\})$ requiring
+$\col(x,a)=r$.
+Its fibre is exactly
+\[
+        Z=\{(i,1,0),(i,1,1)\},
+\]
+whose original diversity palette
+is $T=A_r=\{q\}$. The canonical
+spoke-fixer for $P=\{r\}$ is
+$R_P=\{q\}$, since $rq=\{r\}$
+but $rr\ne\{r\}$ and $rb=\{b\}$.
+Thus the direct theorem gives the
+ACTUAL global $q$-matching class
+$Z=[(i,1,0)]_{E_{R_P}}$, with
+$|Z|=2$. This checks a NONSINGLETON
+finite real fibre, with no choice
+of an internal Hasse chain or
+an artificial RAW/STRONG identity.
+\end{example}
+

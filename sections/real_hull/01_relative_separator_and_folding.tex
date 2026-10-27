@@ -1,0 +1,150 @@
+\section{The canonical real algebraic hull from CCO}\label{sec:rawhull}
+
+We prove the exact real algebraic-hull statement needed below, using
+only AP, triangle-definedness, semantic homomorphic CCO and the index-two
+conclusion of Corollary~\ref{cor:hasse}.  In particular we do not apply a
+result to an arbitrary imaginary quotient. Throughout this section the
+original real orbitals and \emph{represented} (rather than formal)
+relation products are used.
+
+\subsection{Atomic supports and relative separator calculus}
+
+Let $\mathcal D$ be the diversity palette and write $1$ for the logical
+equality atom (not a new diversity colour). We write $ab$ for the
+support of the represented relational composition of the orbitals $a,b$,
+and extend products to unions. Products are associative, and they commute:
+indeed their converse is $ba$, while each invariant raw binary relation
+is a union of symmetric orbitals and hence is equal to its converse.
+A product $ab$ is nonempty whenever $a,b$ are realised: two prescribed
+edges with one endpoint in common can be amalgamated, possibly identifying
+the other two endpoints when $a=b$. For distinct diversity colours $a,b$
+there is no identity output, and
+\[
+ H(a,b)=ab=\{c\in\mathcal D:(a,b,c)\text{ is legal}\}.
+\]
+Put $A_a=(aa)\setminus\{1\}$. In particular $aa=\{1\}\cup A_a$.
+The Peircean symmetry used below says $c\in ab$ if and only if
+$a\in bc$ if and only if $b\in ac$ for diversity $a,b,c$.
+
+A \emph{global equivalence support} is a set $R\subseteq\mathcal D$
+such that $R^+=R\cup\{1\}$ is closed under represented composition.
+It then defines the invariant equivalence $E_R$. Conversely every
+invariant equivalence arises uniquely in this way, since the orbital
+language is complete and homogeneous.  Let $\langle X\rangle$ be the
+least global equivalence support containing $X$. For diversity colours
+$u,v$, write $u\sim_R v$ when $v\in R^+u$ and
+$\mathcal O_R(u)=(R^+u)\cap\mathcal D$. These orbits partition the diversity
+palette, by associativity and symmetry of $R^+$. A diversity colour $p$
+is \emph{$R$-fixed} if $R^+p=\{p\}$, which forces $p\notin R$.
+
+\begin{lemma}[Relative separator]\label{lem:rh-separator}
+Suppose $R$ is a global equivalence support and $P\subseteq\mathcal D$
+is finite with $\bigcap_{p\in P}A_p\subseteq R$. If $u,v$ belong to
+different $R$-orbits, then some $p\in P$ satisfies
+$H(p,u)\cap H(p,v)=\varnothing$.
+\end{lemma}
+\begin{proof}
+Suppose there is $d_p\in H(p,u)\cap H(p,v)$ for every $p\in P$.
+Here $u,v$ belong to distinct $R$-orbits, so $u\ne v$.
+No chosen $d_p$ is the identity: $1\in pu$ forces $p=u$
+and $1\in pv$ forces $p=v$, a contradiction.
+Thus every triangle below has three DISTINCT vertices.
+Start with distinct vertices $x,z$ of colour $u$. For each $p\in P$,
+form a triangle on $x,z,a_p$ whose $xa_p$-colour is $p$ and whose
+$za_p$-colour is $d_p$. Amalgamate these triangles over the \emph{same}
+complete edge $xz$ (using AP), obtaining one complete finite diagram
+$B_1$.  The vertices $a_p$ are distinct for distinct $p$, because their
+colours to $x$ are different. Let $A=B_1\setminus\{x\}$.
+
+Form a second extension $A\cup\{y\}$ by setting $ya_p=p$ and $yz=v$.
+All its triangles are legal: those through $z$ use
+$d_p\in H(p,v)$; those using two leaves have exactly the colours
+already realised about $x$ in $B_1$. Triangle-definedness supplies
+this extension.  Amalgamate $B_1$ and this second extension over
+\emph{all} of $A$. Since the colours to $z$ are $u\ne v$, the images of
+$x$ and $y$ are distinct. Their colour $e$ belongs to every $A_p$,
+hence belongs to $R$. The triangle $xyz$ now yields $v\in R^+u$,
+contrary to the choice of $u,v$. No strong amalgamation was used.
+\end{proof}
+
+\begin{lemma}[Rectangle criterion and orbit folding]\label{lem:rh-fold}
+For distinct diversity $u,v$ and any diversity $p$,
+\[
+ H(p,u)\cap H(p,v)\ne\varnothing
+ \quad\Longleftrightarrow\quad
+ A_p\cap H(u,v)\ne\varnothing.
+\]
+If $u\sim_R v$ and $t\in H(u,v)\setminus R$, there is
+$t'\in A_u\setminus R$ such that $t'\sim_R t$.
+\end{lemma}
+\begin{proof}
+For the first assertion, the forward direction is obtained by
+amalgamating two triangles with a shared edge of a common colour
+$d\in H(p,u)\cap H(p,v)$; the two free apexes remain distinct,
+since their prescribed colours $u,v$ differ. The resulting apex
+colour lies both in $A_p$ and in $H(u,v)$. For the reverse direction,
+start from an $e\in A_p\cap H(u,v)$, realise triangles $(p,p,e)$ and
+$(u,v,e)$ over the same $e$-edge and amalgamate. The resulting
+third colour belongs to both $H(p,u)$ and $H(p,v)$.
+
+For folding there is nothing to do if $u=v$, since
+$t\in H(u,u)=A_u$. Otherwise, $v\in R^+u$ and $u\ne v$, so the witnessing
+atom $s\in R^+$ cannot be equality. Peircean rotation
+gives $s\in R\cap H(u,v)$; fix such an $s$.
+Realise a triangle $xyz$ with $xy=u$, $xz=v$, $yz=t$, and
+amalgamate a second triangle along $xz$ with a new point $z'$ such
+that $xz'=u$ and $zz'=s$. The points $y,z'$ cannot be identified,
+since $yz=t\notin R$ but $zz'=s\in R$. Put $t'=yz'$.
+Triangles $xyz'$ and $yzz'$ show respectively $t'\in A_u$ and
+$t'\in R^+t$. If $t'$ were in $R$, the second triangle would force
+$t\in R$, contrary to the hypothesis. Hence $t'$ is as required.
+\end{proof}
+
+\begin{lemma}[Mixed orbit, self-side collapse, and square avoidance]
+\label{lem:rh-collapse}
+Let $R$ be an equivalence support and $p$ an $R$-fixed diversity colour.
+\begin{enumerate}
+\item If $a\ne p$ and $A_a\cap A_p\subseteq R$, then $ap$ is precisely
+one diversity $R$-orbit.
+\item If $c\in A_p$ and $A_c\cap A_p\subseteq R$, then
+$p c=\{p\}$ and $A_c\subseteq R$.
+\item Suppose $B=\{b_1,\dots,b_h\}$ is an inclusion-minimal finite
+family with $\bigcap_jA_{b_j}\subseteq R$. If $b_i=p$ is $R$-fixed,
+then, writing $S_i=(\bigcap_{j\ne i}A_{b_j})\setminus R$, one has
+$A_a\cap S_i=\varnothing$ for every $a\in A_p$.
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+For (1), $ap$ contains no identity (since $a\ne p$). It is
+$R$-saturated because $R^+(ap)=a(R^+p)=ap$. If $c,d\in ap$ lay in
+different $R$-orbits, the rows $a,p$ would both fail to separate them:
+this is witnessed by the same two legal triangles $(a,p,c)$ and
+$(a,p,d)$. The relative separator for $P=\{a,p\}$ gives a
+contradiction. Thus $ap$ is exactly one orbit.
+
+For (2), $c=p$ is impossible: it would imply $p\in R$, against
+$R$-fixedness. By (1), $pc$ is the full orbit of $p$, which is
+$\{p\}$, since $c\in A_p$ entails $p\in pc$. Associativity gives
+$p(cc)=(pc)c=\{p\}$. For any $x\in A_c$, $px$ is nonempty and
+contained in $\{p\}$, whence $x\in A_p$ by triangle symmetry;
+this contradicts $A_c\cap A_p\subseteq R$ if $x\notin R$.
+Thus $A_c\subseteq R$.
+
+For (3), minimality gives $S_i\ne\varnothing$ and
+$S_i\cap A_p=\varnothing$. Fix $x\in S_i$, $a\in A_p$ and suppose
+$x\in A_a$. From $a\in pp$, $x\in aa$ we have
+$x\in aa\subseteq(pp)a=p(pa)$ by the ACTUAL
+associative represented RAW product. Hence an atom
+$d\in pa$ exists with $x\in pd$; it may a priori
+be logical equality, which is treated separately below. If $d=1$, then $a=p$ and
+$x=p\in A_p\cap S_i$, impossible. If $d=p$, then
+$x\in A_p\cap S_i$, impossible. If $d\in R$, Peircean symmetry
+gives $a\in pd=\{p\}$, with the same contradiction. Thus
+$d\ne p$ and $d\notin R$. Both $p$ and every $b_j$ with $j\ne i$
+fail to separate $p,d$: for row $p$ use
+$a\in A_p\cap H(p,d)$, and for the other rows use
+$x\in A_{b_j}\cap H(p,d)$ and the rectangle criterion.
+The separator, applied to the complete blocker family $B$, therefore
+forces $p\sim_R d$. Since $p$ is fixed, $d=p$, contradiction.
+\end{proof}
+

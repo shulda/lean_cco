@@ -1,0 +1,163 @@
+\subsection{Relative pseudocomplements and looped descent}
+
+A diversity colour $r$ is \emph{looped} if the triangle $(r,r,r)$ is
+allowed, or equivalently $r\in A_r$. Write
+$L=\{r\in\mathcal D:r\in A_r\}$.
+
+\begin{lemma}[Fixed-family relative pseudocomplement]
+\label{lem:rh-pseudo}
+Let $R$ be a global equivalence support and let $P\subseteq\mathcal D$
+be a finite nonempty set of $R$-fixed colours. Put
+\[
+ S_P=\bigcap_{p\in P}A_p,
+ \qquad W_R(P)=\{a\in\mathcal D:A_a\cap S_P\subseteq R\}.
+\]
+Then $W_R(P)$ is a global equivalence support.
+\end{lemma}
+\begin{proof}
+First, $R\subseteq W_R(P)$, because the square of a colour belonging
+to a global equivalence support belongs to that support together with
+identity. Also $S_P\setminus R$ is saturated under the one-sided
+$R$-orbit relation. Indeed for each $R$-fixed $p\in P$,
+\[
+ R^+(pp)=(R^+p)p=pp.
+\]
+Because $1\in pp$, this also implies $R^+\subseteq pp$,
+so every atom of $R$ lies in $A_p$. If $t\in A_p\setminus R$
+and $t'\in R^+t$, then $t'\in pp$, while neither $t'=1$
+nor $t'\in R$ is possible: either would imply $t\in R^+$
+by symmetry and transitivity of the equivalence $R^+$.
+Thus $t'\in A_p\setminus R$. Intersecting over $p\in P$
+proves the required saturation of $S_P\setminus R$,
+including every equality-output edge case.
+
+We prove closure under products. Fix $a\in W_R(P)$ with $a\notin R$.
+Let $x\in A_a$, and suppose, seeking a contradiction,
+$t\in A_x\cap S_P\setminus R$. Associativity of $x\in aa$ and
+$t\in xx$ supplies an atom $d\in ax$ with $t\in ad$.
+If $d=1$, then the equality output in $ax$ forces $x=a$,
+and $t\in a1$ forces $t=a$.  Since $x=a\in A_a$ and
+$t=a\in S_P\setminus R$, this contradicts $a\in W_R(P)$.
+If $d=a$, then $t\in A_a\cap S_P\setminus R$ is already a
+contradiction. Thus $d$ is a diversity colour distinct from $a$.
+The row $a$ fails to separate $a,d$, witnessed by
+$x\in A_a\cap H(a,d)$. Each row $p\in P$ fails to separate
+$a,d$, witnessed by $t\in A_p\cap H(a,d)$. The relative
+separator applied to $\{a\}\cup P$ (whose square intersection
+lies in $R$) forces $a\sim_R d$. Orbit folding now applies to
+the distinct colours $a,d$ and $t\in H(a,d)\setminus R$;
+it yields a colour $t'\in A_a\cap S_P\setminus R$, again a
+contradiction.
+This proves $A_x\cap S_P\subseteq R$ for every $x\in A_a$.
+If instead $a\in R$, then $A_a\subseteq R\subseteq W_R(P)$,
+so diagonal closure also holds in that case.
+
+For mixed closure take distinct $a,b\in W_R(P)$ and
+$c\in H(a,b)=ab$. Assume $t\in A_c\cap S_P\setminus R$.
+Since $c\in ct$, associativity with $c\in ab$ produces an atom
+$d\in bt$ such that $c\in ad$. If $d=1$, then the equality
+output in $bt$ forces $b=t$, and $c\in a1$ forces $c=a$.
+Since $c=a\in ab$, Peircean rotation yields
+$b\in aa$, so the diversity atom $t=b$
+belongs to $A_a\cap S_P\setminus R$, contradicting
+$a\in W_R(P)$. If $d=b$, then $t\in A_b\cap S_P\setminus R$
+is already forbidden. Thus $d$ is a diversity colour distinct
+from $b$, as required by the rectangle criterion. The row $a$
+does not separate $b,d$: $c\in H(a,b)\cap H(a,d)$ witnesses
+this. The other rows $p\in P$ do not separate them either:
+$t\in A_p\cap H(b,d)$, so the rectangle criterion supplies an
+element of $H(p,b)\cap H(p,d)$. Relative separation for the
+blocker family $\{a\}\cup P$ forces $b\sim_R d$. Orbit folding,
+now applicable to the distinct colours $b,d$, gives a colour
+$t'\in A_b\setminus R$ in the orbit of $t$, and saturation of
+$S_P\setminus R$ puts $t'$ in $S_P\setminus R$, a contradiction.
+Hence $c\in W_R(P)$. Together with diagonal closure and the
+identity atom, this proves product closure of $W_R(P)^+$.
+\end{proof}
+
+\begin{lemma}[Carrier insertion]\label{lem:rh-carrier}
+Suppose $P\subseteq\mathcal D$ is a finite nonempty family of spoke
+colours and $b$ is an additional spoke colour; they can be jointly
+realised around one new point by AP. Put
+\[
+ S=\bigcap_{p\in P}A_p,\qquad C=S\cap A_b.
+\]
+If $r\in L\cap S\cap\langle A_b\rangle$, then
+$L\cap C\ne\varnothing$.
+\end{lemma}
+\begin{proof}
+If $b\in P$, then $C=S$ and the conclusion follows directly
+from the assumed $r\in L\cap S$; no extra anchor is needed.
+Hence assume $b\notin P$.
+Assume $L\cap C=\varnothing$. Choose a complete finite set of
+anchors realising the star with spoke colours $P\cup\{b\}$, and let
+$Z$ be the realised one-point fibre. Its diversity palette is EXACTLY
+$C$: if two points realise the same spoke type, every
+anchor--new--new triangle forces their mutual diversity
+colour into $A_p$ for each $p\in P$ and into $A_b$,
+so it lies in $C$. Conversely, for any diversity
+$c\in C$, adjoin two DISTINCT new points with
+identical prescribed $P\cup\{b\}$ spokes and
+mutual colour $c$ to the COMPLETE finite anchor
+diagram. Every triangle with two old anchors
+already occurs in the realised one-point star;
+each triangle with one old anchor is legal
+by $c\in A_p$ or $c\in A_b$; the two-new-point
+diagram has no three-new-point triangle.
+Triangle-definedness realises the complete
+diagram, and homogeneity aligns its anchor
+copy with the original one. Both new points
+then lie in $Z$ and realise $c$.
+In particular if $C=\varnothing$, the
+nonempty fibre $Z$ has precisely ONE point;
+the equality equivalence support
+$C=\varnothing$ is already global and exact
+for this singleton, so the globalisation
+theorem applies without an artificial
+nonempty-diversity hypothesis.
+The fibre is finite: if it were
+infinite, infinite Ramsey would give an infinite monochromatic
+triangle of some colour $c\in C\cap L$, contradicting the assumption.
+The globalisation theorem makes $C$ a global equivalence support
+exact for $Z$, and spoke fixedness makes all colours in $P$ $C$-fixed.
+Consequently $W_C(P)$ is a global equivalence support.
+By definition $A_b\cap S=C$, so $b\in W_C(P)$. The support
+$W_C(P)$ is closed and hence contains $\langle A_b\rangle$
+(because it contains $b$, it also contains $A_b$ and its generated
+support). Thus $r\in W_C(P)$. On the other hand,
+$r\in L\cap S\setminus C$ means
+$r\in A_r\cap S\setminus C$, exactly contradicting the defining
+condition for $r\in W_C(P)$.
+\end{proof}
+
+\begin{lemma}[Looped diagonal Helly]\label{lem:rh-loophelly}
+For every finite family of diversity colours $p_1,\dots,p_n$,
+\[
+ L\cap\bigcap_{i=1}^n\langle A_{p_i}\rangle\ne\varnothing
+ \quad\Longrightarrow\quad
+ L\cap\bigcap_{i=1}^n A_{p_i}\ne\varnothing.
+\]
+\end{lemma}
+\begin{proof}
+Remove duplicates and start with a looped colour $r_0$ in all
+$\langle A_{p_i}\rangle$. We process the rows in order, maintaining
+a looped colour $r_j$ that belongs directly to every already processed
+$A_{p_i}$ and belongs to every not-yet-processed generated support
+$\langle A_{p_k}\rangle$.
+
+If the current looped colour $r$ equals the next row $p_j$, that row
+is already satisfied because $r\in A_r$; keep $r$.
+Otherwise take as $P$ all previously processed rows together with
+the row $r$, removing duplicates. A finite star with these prescribed
+spoke colours and one further spoke $p_j$ is realisable: amalgamate
+the finitely many prescribed edges over their common central point,
+then use triangle-definedness. The current $r$ belongs to
+$L\cap\bigcap_{p\in P}A_p\cap\langle A_{p_j}\rangle$;
+the membership in $A_r$ is exactly why we included the extra row $r$.
+Carrier insertion yields a looped $r'$ satisfying every row in $P$
+and also $p_j$. Moreover $r'\in A_r$, so every generated equivalence
+support containing $r$ also contains $r'$. This preserves membership
+in all remaining $\langle A_{p_k}\rangle$. Repeat until all rows
+have been imposed. The resulting looped colour lies in every $A_{p_i}$.
+\end{proof}
+

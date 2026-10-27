@@ -1,0 +1,43 @@
+{
+  "protocol_version": 2,
+  "revision": 1,
+  "state_branch": "coordination",
+  "state_file": "formalization/coordination/STATE.json",
+  "registered_projects": [
+    1,
+    2
+  ],
+  "max_projects": 2,
+  "released_packages": [
+    "B002",
+    "B003",
+    "B004",
+    "B005",
+    "B006",
+    "B007",
+    "B008",
+    "B009",
+    "B010",
+    "B011",
+    "B012",
+    "B013",
+    "B014",
+    "B015",
+    "B016",
+    "B017",
+    "B018",
+    "B019"
+  ],
+  "coordinator_review_packages": [
+    "B001"
+  ],
+  "review_requires_different_project": true,
+  "submission_releases_implementation_slot": true,
+  "notes": [
+    "A claim always takes the lowest released AVAILABLE package with every prerequisite ACCEPTED in live state.",
+    "A submitted branch is not a dependency provider. Accepted means merged and green on main.",
+    "An idle worker reviews the lowest foreign submitted package before claiming new implementation work.",
+    "Project 1 and Project 2 are peers; register further IDs after a successful two-project integration.",
+    "No automatic lease expiry. Failures, source/API/toolchain changes and stale evidence go to the coordinator."
+  ]
+}

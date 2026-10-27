@@ -1,0 +1,114 @@
+\subsection{Even walks and the canonical finite algebraic hull}
+
+For a diversity colour $p$ put $\Gamma(p)=\langle\{p\}\rangle$ and
+$B(p)=\langle A_p\rangle$; these are invariant equivalence supports.
+The undirected graph of $p$-edges is connected on every
+$E_{\Gamma(p)}$-class, by the definition of generated equivalence.
+
+\begin{lemma}[Even-walk classes]\label{lem:rh-evenwalk}
+The $E_{B(p)}$-classes are precisely the even-$p$-walk connectivity
+classes within a $p$-component. Thus
+$[\Gamma(p):B(p)]\le2$. If $r\in L\cap\Gamma(p)$, then
+$r\in B(p)$.
+\end{lemma}
+\begin{proof}
+The endpoints of a two-edge $p$-walk are equal or have colour in
+$A_p$, and every colour in $A_p$ occurs as the endpoints of such a
+walk. Concatenating even walks therefore generates exactly
+$E_{B(p)}$. A connected undirected graph has one even-walk class
+unless it is bipartite, when it has exactly two classes.
+In the bipartite case, every edge within the odd part of the
+corresponding two-class quotient crosses its bipartition. An allowed
+triangle $(r,r,r)$ would be a three-cycle of such edges, impossible.
+Thus a looped colour cannot lie in the odd part
+$\Gamma(p)\setminus B(p)$.
+\end{proof}
+
+\begin{theorem}[Canonical algebraic hull for real points]
+\label{thm:rh-hull}
+Let $A=\{a_1,\dots,a_n\}\subseteq M$ be finite and
+$x\in\operatorname{acl}_M(A)\setminus A$. Put
+$p_i=\col(x,a_i)$, $k=\max\{1,|\mathcal D|\}$ and let
+$R_k(3)$ be the multicolour Ramsey number for a monochromatic
+triangle in a complete graph with $k$ edge colours. Then
+\[
+ \left|\bigcap_{i=1}^n[a_i]_{E_{\Gamma(p_i)}}\right|<R_k(3).
+\]
+In particular, the intersection is finite. The bound is uniform
+in $A$ and $x$. This statement uses no BBGTV or CFSG, only the
+standing hypotheses and the stated Erd\H{o}s and standard Ramsey
+theorems.
+\end{theorem}
+\begin{proof}
+The orbit $Z$ of $x$ over $A$ is a finite realised one-point fibre
+with palette $T=\bigcap_iA_{p_i}$. The set $T$ contains no looped
+colour, by the following explicit extension argument.
+If a diversity colour \(r\in T\) were looped,
+then for EVERY integer \(m\) the finite
+complete diagram on \(A\) plus \(m\) NEW
+distinct points \(x_1,\ldots,x_m\), assigning
+\(\col(x_j,a_i)=p_i\) for all \(i,j\)
+and \(\col(x_j,x_k)=r\) for \(j\ne k\),
+would have all triangles legal.
+Old--old--new triangles are copied
+from the realised one-point type of \(x\);
+old--new--new triangles are legal because
+\(r\in A_{p_i}\) for each \(i\);
+new--new--new triangles are legal because
+\(r\in L\). Triangle-definedness supplies
+an induced realisation, and homogeneity
+moves its OLD \(A\)-part back to the
+original fixed real \(A\).
+Every \(x_j\) then has the same complete
+one-point atomic type over \(A\) as \(x\),
+and hence lies in the orbit \(Z\).
+The diversity \(r\)-edges make all
+\(x_j\) distinct. Since \(m\) was
+arbitrary this contradicts FINITENESS
+of \(Z\). No SAP or abstract infinite
+Ramsey theorem is used at this step.
+
+Put $J_A=\bigcap_i\Gamma(p_i)$. If an $E_{J_A}$-class had at
+least $R_k(3)$ elements, finite multicolour Ramsey would give a
+monochromatic triangle on that class, in some colour
+$r\in L\cap J_A$. By Lemma~\ref{lem:rh-evenwalk},
+$r\in B(p_i)=\langle A_{p_i}\rangle$ for every $i$. Looped
+diagonal Helly would then give a looped colour in
+$\bigcap_i A_{p_i}=T$, a contradiction. Every $E_{J_A}$-class
+therefore has size strictly less than $R_k(3)$. Since $x$ and
+$a_i$ lie in the same $E_{\Gamma(p_i)}$-class for each $i$,
+the displayed intersection is exactly the $E_{J_A}$-class of
+$x$, with the asserted uniform bound.
+
+If $A=\varnothing$, transitivity gives no algebraic real point
+when $M$ is infinite. When $M$ is finite, its atomic colour graphs
+are bipartite by Lemma~\ref{lem:bip}, so $M$ contains no
+monochromatic triangle and $|M|<R_k(3)$ by finite Ramsey.
+If $x\in A$, equality alone gives a singleton hull. These conventions
+do not introduce an additional case of the theorem.
+\end{proof}
+
+
+\begin{corollary}[A two-power bound on canonical real hulls]
+\label{cor:rh-hull-2power}
+In the nontrivial case of Theorem~\ref{thm:rh-hull}, put
+$J=\bigcap_{a\in A}\Gamma(\col(x,a))$.  The canonical real hull
+$C=\bigcap_{a\in A}[a]_{E_{\Gamma(\col(x,a))}}$ satisfies
+\[
+       |C|=2^m\le 2^{|J|}\le 2^{|\mathcal D|}
+       \qquad\text{for some integer }m\ge0.
+\]
+The same assertion holds for $A=\varnothing$ and finite $M$, with
+$J=\mathcal D$ and $C=M$. This supplies an additional explicit bound
+and a two-power restriction for an already finite canonical hull;
+it does not replace the preceding proof of its finiteness.
+\end{corollary}
+\begin{proof}
+The intersection $J$ of global equivalence supports is a global
+equivalence support. As in Theorem~\ref{thm:rh-hull}, the displayed
+hull is exactly the $E_J$-class of $x$ and is finite. Apply
+Corollary~\ref{cor:rh-class-2power}. For an empty base with finite
+$M$, the universal support $\mathcal D$ has $M$ as its sole class.
+\end{proof}
+
+

@@ -204,10 +204,10 @@ named pair orbitals (and possibly equality), hence 0-definable in the
 original language. Apply the two-class obstruction without adding sheet
 names. Only the cover-index-two part of Hasse is needed for this step.
 
-The Hasse proof itself is NOT expanded by this module. Its provider uses
-the original orbital-parity theorem and the high-girth/high-chromatic
-graph input. Include its source snapshot and leave it as a named upstream
-proof obligation for the receiving project. No SAP, quotient CCO,
+The Hasse proof is expanded in the separate [parity/Hasse module](../parity_hasse/README.md),
+including the labelled sparse-graph construction, orbital parity and actual
+index-preserving transposition. It remains an explicit upstream Lean provider;
+this SIR module does not duplicate its proof. No SAP, quotient CCO,
 quotient homogeneity or exactness premise is silently substituted.
 
 ## N10: A direct relative-two-sheet model

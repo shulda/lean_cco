@@ -1,0 +1,88 @@
+\begin{lemma}[Automorphisms of a full exact fibre product]
+\label{lem:acf-fibreproduct-aut}
+Let \(X\) be a source in the standing one-sort symmetric
+homomorphic CCO setting, and let \(E,J\) be invariant full exact
+equivalences on \(X\). Put
+\(K=E\cap J\) and \(H=E\vee J\), and
+regard \(X/K\) as the ACTUAL fine-coloured
+fibre product
+\[
+       X/K=(X/E)\times_{X/H}(X/J).
+\]
+Let \(D\subseteq X/E\) and \(C\subseteq X/J\)
+be finite induced structures whose images
+in \(X/H\) are one and the same finite
+induced set \(B\), and assume both
+\(D\to B\), \(C\to B\) are surjective.
+Let \(W=D\times_B C\) be the FULL finite
+fibre product, with its original induced
+fine-colour structure from \(X/K\).
+Then restriction to the two coordinates
+gives a natural group isomorphism
+\[
+ \boxed{\qquad
+  \operatorname{Aut}(W)\cong
+  \operatorname{Aut}(D)
+       \times_{\operatorname{Aut}(B)}
+  \operatorname{Aut}(C).\qquad}
+\tag{FPA}\label{eq:acf-fibreproduct-aut}
+\]
+In particular, the formula concerns
+automorphisms of the FULL finite induced
+fibre product; it does not hold merely
+from a set-theoretic bijection for an
+arbitrary coloured subset of that product.
+\end{lemma}
+\begin{proof}
+The projections \(W\to D,C\) are onto,
+because every owner in \(B\) has a preimage
+in each coordinate. Their kernels are
+the restrictions of actual exact
+equivalences on \(X/K\), hence are
+finite unions of named original atomic
+colours. Consequently every automorphism
+of \(W\) induces well-defined
+automorphisms \(g_D,g_C\) of both
+coordinate images, and their restrictions
+to \(B\) agree. The pair determines the
+automorphism of \(W\), because the map
+\(W\to D\times C\) is injective.
+
+Conversely suppose \(g_D\) and \(g_C\)
+are automorphisms with the SAME induced
+action on the actual finite owner set
+\(B\). Their coordinatewise map sends
+each \((d,c)\in W\) to
+\((g_Dd,g_Cc)\in W\), since compatibility
+over \(B\) is preserved. It is a bijection
+of the full fibre product. To verify
+that it preserves the ORIGINAL fine
+binary orbitals, fix a pair of points
+of \(W\) of old \(K\)-quotient atomic
+colour \(a_K\). Choose an old atomic
+representative \(a\) of that block.
+Its two coordinate quotient orbitals
+pull back to \(E;a;E\) and \(J;a;J\).
+In the original symmetric RAW represented
+exact algebra,
+\[
+  (E;a;E)\cap(J;a;J)
+     =(E\cap J);a;(E\cap J)
+     =K;a;K ,
+\]
+by \cref{lem:exact-quotient-colour-meet}. Thus
+the two quotient binary orbitals
+determine EXACTLY the fine
+\(K\)-quotient binary orbital, even
+if one coordinate pair lies on its
+quotient diagonal. Both coordinate
+automorphisms preserve their
+respective orbitals, so their
+product map preserves the original
+fine atomic colour on \(W\).
+This proves \eqref{eq:acf-fibreproduct-aut}
+without assuming SAP, independent
+cross-colouring choices, or a
+group-theoretic section.
+\end{proof}
+

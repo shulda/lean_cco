@@ -88,6 +88,15 @@ def validate(root, module, declarations):
                     x['source_label'] for x in provider['exports']}:
                 raise ValueError(f'Imported provider module mismatch: {label}')
     claim_ids = {c['id'] for c in module['claims']}
+    auxiliary = {}
+    for item in module.get('auxiliary_exports', []):
+        label, source = item['source_label'], item['source']
+        check_anchor(source)
+        if (label in auxiliary or label in {e['source_label'] for e in module['exports']}
+                or source['anchor'] != '\\label{' + label + '}'
+                or not item['claims'] or not set(item['claims']) <= claim_ids):
+            raise ValueError('Invalid auxiliary source equation')
+        auxiliary[label] = source
     for item in module['definitions']:
         check_anchor(item['source'])
     for item in module['definitions'] + module['claims']:
@@ -99,7 +108,8 @@ def validate(root, module, declarations):
         if claim['scope'] not in module.get('scope_vocabulary', ['typed', 'one_original_sort']):
             raise ValueError('Missing typed/one-original-sort qualification')
         if not claim['source_labels'] or any(
-                label not in by_label or by_label[label]['file'] not in sources
+                (label not in by_label and label not in auxiliary)
+                or (by_label[label]['file'] if label in by_label else auxiliary[label]['file']) not in sources
                 for label in claim['source_labels']):
             raise ValueError(f'Unknown claim source label: {claim["id"]}')
     exports = [x['source_label'] for x in module['exports']]
@@ -109,6 +119,15 @@ def validate(root, module, declarations):
     expected = {d['id'] for d in declarations['declarations']
                 if d['file'] in result_files
                 and d['kind'] in RESULTS}
+    selected = module.get('additional_result_exports', [])
+    if len(selected) != len(set(selected)):
+        raise ValueError('Duplicate selected additional result')
+    for label in selected:
+        declaration = by_label.get(label)
+        if (declaration is None or declaration['file'] not in sources
+                or declaration['file'] in result_files or declaration['kind'] not in RESULTS):
+            raise ValueError('Unknown selected additional result')
+        expected.add(declaration['id'])
     if set(exports) != expected or len(exports) != len(set(exports)):
         raise ValueError('Source result export map is incomplete or duplicated')
     for export in module['exports']:
@@ -209,6 +228,17 @@ def render(module, order, by_label, raw):
         label = export['source_label']
         d = by_label[label]
         lines.append(f"| [`{label}`](../../{d['file']}#L{d['line']}) | {', '.join(export['claims'])} |")
+    if module.get('auxiliary_exports'):
+        lines += ['', 'Auxiliary source equations (not additional numbered results):', '']
+        for export in module['auxiliary_exports']:
+            source = export['source']
+            line = raw[source['file']].count('\n', 0, raw[source['file']].index(source['anchor'])) + 1
+            lines.append(f"- [`{export['source_label']}`](../../{source['file']}#L{line}): "
+                         + ', '.join(export['claims']))
+    if module.get('additional_result_exports'):
+        lines += ['', 'Full result coverage is asserted only for `source_result_files`.',
+                  'Selected additional results: ' + ', '.join(module['additional_result_exports']) + '.',
+                  'Other results in their provider source files are not claimed covered.', '']
     lines += ['', '## Internal implementation milestones', '',
               'These tasks are proof milestones inside larger project assignments;',
               'see the [peer-project allocation](../coordination/BOARD.md).', '',
@@ -221,9 +251,10 @@ def render(module, order, by_label, raw):
         lines += [f"- **{control['id']}.** {control['check']}"]
     lines += ['', f"Run `python {module.get('control_script', 'tools/check_raw_exact_controls.py')}` from the manuscript directory.",
               'The controls do not prove CCO or the general theorems.', '',
-              '## Return to the human articles', '',
-              'No required mathematical repair was found in this scoped pass. These',
-              'optional wording clarifications remain queued for a human article pass:', '']
+              '## Return to the human articles', '']
+    lines += ([module['article_feedback_intro'], ''] if module.get('article_feedback_intro') else
+              ['No required mathematical repair was found in this scoped pass. These',
+               'optional wording clarifications remain queued for a human article pass:', ''])
     for item in module['article_feedback']:
         s = item['source']
         ln = raw[s['file']].count('\n', 0, raw[s['file']].index(s['anchor'])) + 1
@@ -237,7 +268,7 @@ def render(module, order, by_label, raw):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--check', action='store_true')
-    parser.add_argument('--module', default='raw_exact', choices=['raw_exact', 'strong_selectors', 'sir'])
+    parser.add_argument('--module', default='raw_exact', choices=['raw_exact', 'strong_selectors', 'sir', 'parity_hasse', 'exact_crt', 'canonical_hull', 'real_closure', 'finite_packets', 'rigid_groupoid', 'finite_kernel', 'owner_action'])
     args = parser.parse_args()
     directory = Path('formalization') / args.module
     module = json.loads((ROOT / directory / 'module.json').read_text())

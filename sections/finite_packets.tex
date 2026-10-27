@@ -1,0 +1,409 @@
+\section{Finite-index packets and the first exact cut}\label{sec:packets}
+
+This section establishes the part of the finite-index geometry that does
+not require the subsequent conditional-bijection groupoid.  All
+relations below are actual invariant equivalences on the \emph{real}
+sort of $M$.  Write $\Lambda$ for their finite lattice.  It is finite
+because each member is a union of finitely many named raw atoms,
+including equality.  We order it by inclusion; consequently $J\le K$
+means that every $J$-class lies in a $K$-class.  For $J\le K$ let
+$[K:J]$ denote the (constant, by transitivity) number of $J$-classes
+contained in any $K$-class, possibly infinite.  Since all invariant
+binary relations commute, the join of two invariant equivalences is
+their represented product.
+
+\begin{definition}[Finite-index closure and packet core]\label{def:packetcore}
+For $J\in\Lambda$, let $\Sigma(J)$ be the greatest equivalence $K\ge J$
+for which $[K:J]$ is finite.  Let $F=\Sigma(\Id)$.  An atomic diversity
+colour $a$ is \emph{looped} if $(a,a,a)$ is an allowed triangle.  Write
+$\Gamma(a)$ for the least invariant equivalence containing $a$, and put
+\[
+\kappa(J)=\bigvee\{\Gamma(a): a\subseteq J,\ (a,a,a)
+                  \text{ is allowed}\},
+\]
+where an empty join is $\Id$.  Here and below $a\subseteq J$ means
+that the entire actual $a$-orbital belongs to the raw support of $J$.
+\end{definition}
+
+Existence of $\Sigma(J)$ needs explanation: if $K_1,K_2\ge J$
+have finite relative indices, their join $K_1K_2$ does too.  For each
+fixed $K_1$-class, a $K_2$-class meeting it contains at most
+$[K_2:J]$ distinct $J$-classes, while an alternating $K_1,K_2$-chain
+can be rearranged into a single $K_1$-step followed by a single
+$K_2$-step because the equivalences commute.  Thus
+$[K_1K_2:J]\le[K_1:J][K_2:J]$.  Joining the finite family of all
+finite-index coarsenings of $J$ gives $\Sigma(J)$.
+
+\begin{lemma}[Loop criterion]\label{lem:loopcrit}
+For invariant equivalences $J\le K$,
+\[
+ [K:J]<\infty\quad\Longleftrightarrow\quad
+ \text{no looped diversity atom lies in }K\setminus J.
+\]
+\end{lemma}
+\begin{proof}
+If a looped $a$ lies in $K\setminus J$, then for every $n$ the
+complete $a$-coloured graph on $n$ vertices belongs to $\Age(M)$:
+all of its triangles are $(a,a,a)$.  Its vertices belong to one
+$K$-class and to pairwise distinct $J$-classes.  Hence $[K:J]\ge n$
+for every $n$.  Conversely, if one $K$-class contains infinitely
+many $J$-classes, select an infinite family of representatives.
+The infinite Ramsey theorem provides a monochromatic triangle on
+three of them, in some colour $a$.  This colour is in $K\setminus J$
+and is looped because the triangle occurs in $M$.
+\end{proof}
+
+\begin{lemma}[Canonical packet interval and exact core]
+\label{lem:packetinterval}
+For every $J\in\Lambda$,
+\[
+ [J:\kappa(J)]<\infty,
+ \qquad \Sigma(\kappa(J))=\Sigma(J).
+\]
+The equivalences with finite-index closure $\Sigma(J)$ form precisely
+the interval $[\kappa(J),\Sigma(J)]$; in particular $\kappa(J)$ is its
+unique least element.  If $\kappa(J)>\Id$, then $\kappa(J)$ is an
+actual positive word profile, and hence an exact equivalence.
+\end{lemma}
+\begin{proof}
+Every looped colour of $J$ already belongs to $\kappa(J)$,
+so the relative index is finite by Lemma~\ref{lem:loopcrit}.
+If $J\le K$ has finite index, then the same lemma says that
+$J$ and $K$ contain exactly the same looped colours.  Therefore
+$\kappa(J)=\kappa(K)$, in particular for $K=\Sigma(J)$.
+The finite-index closures of $J$ and $\kappa(J)$ consequently
+coincide.  For any $L$ in their common packet one has
+$\kappa(L)=\kappa(J)$ and $L\le\Sigma(L)=\Sigma(J)$.
+Conversely, if $\kappa(J)\le L\le\Sigma(J)$, then
+$[\Sigma(J):L]$ is finite, and therefore $\Sigma(L)=\Sigma(J)$.
+
+To show exactness, fix a looped colour $a$.  Since the
+$(a,a,a)$ triangle is allowed, $a\subseteq a^2$.  Symmetry also
+gives $\Id\subseteq a^2$: every vertex has an $a$-neighbour by
+transitivity and nonemptiness of the orbital.  The even powers
+$a^{2m}$ therefore increase and, being unions of finitely many
+actual orbitals, eventually stabilize to some relation $R$.
+Associativity gives $R^2=R$; the relation is symmetric, contains
+$\Id$ and $a$, and is therefore precisely $\Gamma(a)$.
+Thus $\Gamma(a)$ is a positive word profile.  The finite join of
+these equivalences is their product; if the resulting core is
+nontrivial, at least one factor occurs and the product is again
+a positive word profile.
+\end{proof}
+
+An invariant equivalence is called \emph{infinite} if its classes
+are infinite.  If $M$ is infinite, the finite lattice $\Lambda$ has
+an inclusion-minimal infinite member (possibly $\Top$).  Fix such a
+member and denote it by $E$.  This is the \emph{minimal infinite cut}
+used below.  In particular we do \emph{not} require $E<\Sigma(E)$:
+that extra condition describes a different historical construction
+(the minimal elevated packet core) and need not hold in general.
+
+\begin{proposition}[Geometry below a minimal infinite cut]
+\label{prop:minimalcut}
+Let $E$ be an inclusion-minimal infinite invariant equivalence and
+$H=E\cap F$.  Then $E=\kappa(E)$ is exact, and every proper
+invariant equivalence $J<E$ has finite classes and lies in $H$.
+In particular
+\[
+ [\Id,E]=[\Id,H]\cup\{E\},
+\]
+and $E$ admits no proper finite-index refinement.  If
+$J<K\le E$ has finite index and $J<K$, then $K\le H$.
+The actual quotient $M/E$ is a homogeneous triangle-defined AP and
+semantic-homomorphic-CCO source in its binary orbital language.
+\end{proposition}
+\begin{proof}
+Lemma~\ref{lem:packetinterval} gives $[E:\kappa(E)]<\infty$.
+If the $\kappa(E)$-classes were finite, the $E$-classes would
+also be finite, contradiction.  Hence $\kappa(E)$ is infinite;
+minimality of $E$ yields $\kappa(E)=E$.  Exactness now follows
+from Lemma~\ref{lem:packetinterval}.
+For every $J<E$, minimality says that $J$ has finite classes.
+By maximality of $F=\Sigma(\Id)$, this implies $J\le F$ and
+therefore $J\le H$.  Conversely every $J\le H$ lies below $E$,
+proving the displayed interval formula.  If $J<E$ had finite
+index in $E$, its finite classes and the finite index would
+make the classes of $E$ finite.  Thus no proper finite-index
+refinement exists.  For a strict finite-index interval $J<K\le E$,
+we must have $K<E$ and hence $K\le H$.  Since $E$ is exact,
+the final quotient assertion is Theorem~\ref{thm:exact-sorts-source}.
+\end{proof}
+
+The next lemma handles intervals that cross the cut.  Its proof uses
+only commutation of the invariant equivalences and minimality of $E$;
+no assertion about the still-to-be-defined conditional groupoid is
+being assumed.
+
+\begin{lemma}[Relative finite-index identity]\label{lem:crossingindex}
+Let $E$ be as in Proposition~\ref{prop:minimalcut} and put $H=E\cap F$.
+If $J\le K$ and $[K:J]<\infty$, then
+\begin{align}
+ K\cap(E\vee J)&=K\cap(H\vee J),\label{eq:crossing-intersect}\\
+ [K:J]&=[E\vee K:E\vee J]\,[E\cap K:E\cap J].
+    \label{eq:crossing-index}
+\end{align}
+If $E\cap J<E\cap K$, then $E\cap K\le H$.
+For every $J$ one also has
+\begin{equation}\label{eq:sigma-crossing}
+ \Sigma(J)\cap(E\vee J)=J\vee H.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Write $I=E\cap J$ and $L=E\cap K$.  The map taking an
+$I$-class in a fixed $L$-class to its containing $J$-class
+shows $[L:I]\le[K:J]<\infty$.
+If $I<L$, then $L\ne E$ by the absence of a proper
+finite-index refinement of $E$.  Since every proper equivalence
+below $E$ has finite classes, $L\le F\cap E=H$.
+
+For commuting equivalences the modular identity
+$K\cap(E\vee J)=J\vee(E\cap K)$ holds when $J\le K$:
+a path of one $E$-step and one $J$-step connecting points
+already in the same $K$-class can be rerouted inside that
+$K$-class.  If $I=L$, then $L\le J$, so
+$J\vee(E\cap K)=J$.  Moreover $K\cap H\le E\cap K=L$.
+If $I<L$, then $L\le H$, so $K\cap H=L$.
+In both cases
+\[
+ J\vee(E\cap K)=J\vee(K\cap H)=K\cap(J\vee H),
+\]
+proving~\eqref{eq:crossing-intersect}.
+
+To count the classes, project the $J$-classes in one $K$-class
+to the $(E\vee J)$-classes in its $(E\vee K)$-class.  This
+projection is onto by permutability: a specified $(E\vee J)$-class
+inside the $(E\vee K)$-class of the chosen $K$-class contains
+an element of that $K$-class, by rearranging an $E$-then-$K$ path.
+Two $J$-classes inside that $K$-class project to the same point
+precisely when they are related by $K\cap(E\vee J)=J\vee L$.
+Within one $(J\vee L)$-class, its $J$-classes are in bijection
+with the $I$-classes in one $L$-class, using permutability
+and $I=J\cap L$.  Thus each fibre has cardinality $[L:I]$.
+This gives~\eqref{eq:crossing-index}, and all factors are finite.
+
+Finally use $K=\Sigma(J)$.  To justify $F\le\Sigma(J)$,
+observe that $F\vee J$ has finite index over $J$ (at most the
+finite size of an $F$-class), so $F\vee J\le\Sigma(J)$.
+Thus $H\le F\le\Sigma(J)$, 
+\eqref{eq:crossing-intersect} becomes
+$\Sigma(J)\cap(E\vee J)=\Sigma(J)\cap(H\vee J)=H\vee J$,
+which is~\eqref{eq:sigma-crossing}.
+\end{proof}
+
+\begin{remark}[Scope]\label{rem:packet-scope}
+The assertions above establish the packet bottom, the actual minimal infinite cut (which may equal $\Top$), and the lattice identities.  They \emph{do not} construct the
+conditional-bijection groupoid, prove relative real closure, or show
+that a mixed typed quotient is automatically a new transitive CCO
+source.  Those are separate obligations of the forthcoming chapters.
+\end{remark}
+
+\section{Finite exact regularization and the thin bottom}
+\label{sec:finite-regularization}
+An atomic diversity relation $a$ is \emph{thin} if for every
+$x\in M$ there is exactly one $y$ with $x\mathrel a y$.
+By transitivity its valency is independent of $x$.
+
+\begin{lemma}[Finite exact regularization]\label{lem:finite-regularization}
+Let $F=\Sigma(\Id)$, the greatest invariant equivalence with
+finite real classes.  There is an exact equivalence $H_0\le F$,
+with finite classes, such that all atomic relations lying below
+the induced equivalence $F/H_0$ on $M/H_0$ are thin.
+We may take $H_0=\Id$ if all atoms within $F$ are thin.
+If an atom within $F$ is nonthin, we may take $H_0>\Id$.
+\end{lemma}
+\begin{proof}
+List the finitely many actual atoms, including equality, whose
+supports lie in $F$: $a_0=\Id,a_1,\ldots,a_r$.
+Every $a_i^2$ contains $\Id$, since $a_i$ is symmetric and has
+a neighbour at every point.  Form the represented word profile
+$P=a_1^2\cdots a_r^2$, with $P=\Id$ if the list is empty.
+It is symmetric and contains $\Id$.  Consequently its powers
+$P,P^2,\ldots$ increase and eventually stabilize in the finite
+palette, say to $H_0=P^n=P^{n+1}$.
+Then $H_0^2=H_0$, so $H_0$ is reflexive, symmetric and transitive.
+Because $P\le F$ and $F$ is an equivalence, $H_0\le F$, hence its
+classes are finite.  As a represented word profile, $H_0$ is exact.
+Since $P$ contains each $a_i^2$, one has $a_i^2\le H_0$.
+
+The $H_0$-saturated pullback $H_0a_iH_0=H_0a_i$ is one
+actual atomic pair orbital of the exact quotient $M/H_0$
+(Theorem~\ref{thm:joint-exact}).  Its relational square is
+$H_0a_i^2H_0=H_0$ because $a_i^2\le H_0$ and $\Id\le a_i^2$.
+Thus the induced quotient orbital has square equal to the diagonal.
+If a nonempty symmetric binary orbital $b$ satisfies
+$b^2=\Id$, then any two $b$-neighbours of one vertex are equal;
+transitivity gives existence of a neighbour at every vertex.
+Hence $b$ is thin.  Every atom inside $F/H_0$ arises in this
+way from some $a_i$, proving the assertion.
+
+If all $a_i$ are thin, then $a_i^2=\Id$ and $P=\Id$, so
+$H_0=\Id$.  Conversely, if some $a_i$ is nonthin, two distinct
+$a_i$-neighbours of a point give a non-diagonal pair in
+$a_i^2\le H_0$, so $H_0>\Id$.
+\end{proof}
+
+\begin{lemma}[Geometric finite-exact-kernel normalisation]
+\label{lem:finite-exact-normalization-geometric}
+Let $M$ be the standing homogeneous symmetric triangle-defined
+AP+CCO source in its finite binary orbital language.  There is a
+finite chain of actual exact quotients
+\[
+              M=M_0\longrightarrow M_1\longrightarrow\cdots
+                 \longrightarrow M_m
+\]
+(where $m$ may be zero) such that each nontrivial step is the
+quotient of $M_i$ by a nonidentity invariant exact equivalence
+$K_i$ with finite real classes.  Each $M_i$ is again a homogeneous
+symmetric triangle-defined AP+CCO source.  The terminal source
+$M_m$ has no invariant finite-class exact equivalence strictly
+above $\Id$, and all its atomic orbitals contained in its
+greatest finite-class equivalence $F_m=\Sigma_{M_m}(\Id)$ are thin.
+\end{lemma}
+\begin{proof}
+If a nonidentity invariant finite-class exact equivalence $K$
+exists in the current source, take its actual exact quotient.
+By Theorem~\ref{thm:exact-sorts-source} the quotient retains all
+standing source properties.  Since $K>\Id$, some original
+diversity orbital becomes quotient equality, while each quotient
+orbital is a union of original orbital supports.  Thus the number
+of diversity orbitals strictly decreases, so only finitely many
+such steps are possible.  At the terminal source no nontrivial
+finite-class exact equivalence remains.  If an atomic orbital
+contained in its greatest finite-class equivalence $F_m$ were
+nonthin, Lemma~\ref{lem:finite-regularization} would produce a
+nonidentity exact equivalence with finite classes, contradiction.
+\end{proof}
+
+\begin{example}[A thin finite bottom with a nontrivial exact kernel]
+\label{ex:thin-not-exact-free}
+The stronger geometric reduction in Lemma~\ref{lem:finite-exact-normalization-geometric} is really
+necessary, even for a homogeneous triangle-defined AP+CCO source.
+Let $I,J$ be countably infinite, and consider
+$M=I\times J\times\{0,1\}$.  Name four diversity colours:
+\begin{itemize}
+\item $t$ between the two distinct points of one cell $(i,j)$;
+\item $r$ if the $I$-coordinates agree but the $J$-coordinates differ;
+\item $c$ if the $J$-coordinates agree but the $I$-coordinates differ;
+\item $b$ if both coordinates differ.
+\end{itemize}
+The final two-point coordinate is immaterial for $r,c,b$.
+The two equivalences given by equality of the $I$-coordinate and
+of the $J$-coordinate are determined by the unions
+$\Id\cup t\cup r$ and $\Id\cup t\cup c$ respectively.  Their
+intersection is $F=\Id\cup t$, with classes of size two, and all
+its atoms are thin.  The equivalences are exact: indeed $r^2$
+and $c^2$ are precisely these two equivalences, so
+$F=r^2\cap c^2$ is exact and nontrivial.
+
+For completeness, the structure is homogeneous.  A finite partial
+isomorphism induces partial bijections of the $I$- and $J$-index
+sets, extendible to permutations of the respective countable sets;
+within each occupied cell it induces a partial permutation of the
+two-element fibre, independently extendible to a full permutation.
+The age is triangle-defined: triangle constraints force the two
+coordinate equality relations to be equivalences, while the forbidden
+$t,t,t$ triangle enforces the bound of two points per cell.  Once
+these conditions hold, distinct coordinate names and a two-point
+labelling in each cell realise the complete finite diagram.  AP
+follows from homogeneity.
+
+The structure also has semantic homomorphic CCO.  For a partial
+edge-coloured diagram, each specified edge requires equality or
+inequality of the $I$-coordinates, and independently of the
+$J$-coordinates, according to its colour.  Such a system of
+constraints for either infinite coordinate fails precisely when a
+specified inequality edge is joined by a path of specified equality
+edges; a shortest such path plus the edge is a labelled simple cycle.
+After these coordinate constraints are satisfied, the specified
+$t$-edges are exactly the remaining requirements of different
+$\{0,1\}$-labels inside one cell.  They can be satisfied precisely
+when the $t$-edge graph is bipartite; an obstruction is an odd
+monochromatic $t$-cycle.  Thus any failure of a homomorphic
+completion is witnessed by a specified simple cycle, proving CCO.
+
+Fix the infinite exact equivalence $E$ of equality of the
+$I$-coordinate.  Between two distinct $E$-owners, the raw colour
+$c$ has conditional valency $2$, because it chooses one $J$-coordinate
+and either point of the target cell.  In particular
+\[
+                     E\cap c^2=F>\Id.
+\]
+This example refutes the shortcut ``$F$ thin, therefore there are no
+nonidentity finite exact kernels'', but is not a counterexample to
+EPPA.  The geometric reduction of Lemma~\ref{lem:finite-exact-normalization-geometric}
+permits the first quotient by the exact kernel $F$ in this example;
+the conditional-bijection argument then applies to the quotient.
+\end{example}
+
+\begin{lemma}[Elementary abelian translation group]
+\label{lem:thin-bottom}
+Assume every atom in $F$ is thin.  The atoms contained in $F$,
+including equality, form a group $G\cong (\mathbb Z/2\mathbb Z)^d$
+under represented relational composition.  For each $g\in G$
+let $q_g$ be its atom and $t_g(x)$ the unique point with
+$x\mathrel{q_g} t_g(x)$.  The $t_g$ are automorphisms of $M$,
+commute with $\Aut(M)$ and act regularly on each $F$-class.
+Moreover, for any original atomic colour $a$ the product $q_ga$
+is a single atom, denoted $g\cdot a$, and
+\begin{equation}\label{eq:thin-transport}
+ \col(t_gx,t_hy)=(g+h)\cdot\col(x,y)
+ \qquad(g,h\in G;\ x,y\in M),
+\end{equation}
+where equality is included among the possible colours.
+\end{lemma}
+\begin{proof}
+Because every orbital below $F$ is a thin symmetric relation,
+its unique-neighbour map $t_g$ is an involutive permutation.
+For any $\sigma\in\Aut(M)$, uniqueness gives
+$\sigma(t_gx)=t_g(\sigma x)$, so $t_g$ is equivariant.
+The composite $t_gt_h$ is an equivariant permutation whose graph
+is an invariant functional relation contained in $F$.  Such a
+graph is a union of atomic orbitals.  Because each atom is
+nonempty at every vertex, functionality forces precisely one
+atom, and therefore $t_gt_h=t_k$ for a uniquely determined $k$.
+This gives a finite group of commuting involutions with identity,
+so $G$ is elementary abelian.  Every point of an $F$-class is
+$t_gx$ for a unique $g$ by the atomic partition of that class.
+
+The equivariant bijection $(x,y)\mapsto(t_gx,y)$ takes a single
+$\Aut(M)$-orbital on ordered pairs bijectively to another one.
+Thus $q_ga$ is exactly one atomic orbital, written $g\cdot a$.
+Commutativity of invariant relational products gives the analogous
+statement for switching the second endpoint and proves
+\eqref{eq:thin-transport}.  Setting $h=g$ yields
+$\col(t_gx,t_gy)=\col(x,y)$ since $g+g=0$,
+so $t_g$ is an automorphism.  The equivariance already proved
+shows that it is central in $\Aut(M)$.
+\end{proof}
+
+\begin{corollary}[Lower interval after thin regularization]
+\label{cor:lower-subgroups}
+In the reduced source in which $F$ is thin, let $E$ be an
+inclusion-minimal infinite invariant equivalence and let
+$H=E\cap F$.  Identifying the thin atoms in $F$ with the group
+$G$ of Lemma~\ref{lem:thin-bottom}, the interval below $E$ is
+\[
+ [\Id,E]=\operatorname{Sub}(H)\cup\{E\}.
+\]
+Here $H$ is identified with a subgroup of $G$.
+\end{corollary}
+\begin{proof}
+An invariant relation below $F$ is a union of the graphs of
+translations $t_g$, and it is an equivalence exactly when its
+selected subset of $G$ is a subgroup (closed under product and
+inverse, containing the identity).  The equivalence $H\le F$
+therefore corresponds to a subgroup, again denoted $H$.
+Apply Proposition~\ref{prop:minimalcut}, which says that all proper
+invariant equivalences below $E$ lie below $H$.
+\end{proof}
+
+\begin{remark}[Scope of the finite bottom]
+\label{rem:finite-bottom-scope}
+The regular action in Lemma~\ref{lem:thin-bottom} is a statement
+about $F$-fibres in the \emph{actual} reduced homogeneous source.
+A quotient by an arbitrary nonexact equivalence or a freely
+selected system of packet origins need not inherit this action
+in a compatible mixed-sort language.  The conditional groupoid
+and the choice of all actual owners must be handled separately.
+\end{remark}

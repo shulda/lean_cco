@@ -1,0 +1,655 @@
+% A07: actual simultaneous full-exact quotients of different ORIGINAL named
+% transitive sorts. RAW typed represented identity-inclusive calculus, no SAP.
+% This is not the existing one-original-sort many-quotient joint automorphism
+% lifting theorem, and does not provide a section of automorphism groups.
+\section{Simultaneous exact quotients of original named sorts}
+\label{sec:typed-simultaneous-exact}
+
+We now allow a finite family $S$ of \emph{original named transitive}
+real sorts, rather than the one original sort used in
+\cref{sec:exact-crt}.  On each original sort the binary orbitals
+are symmetric; between different sorts they are paired by typed
+converse, and are not assumed self-converse.  This section uses the
+\emph{full represented identity-inclusive} typed algebra of
+\cref{thm:full-typed-exact-balls}, not the strong diversity calculus.
+It does \emph{not} require SAP of the original source, and exact
+quotients formed here need not have SAP themselves.
+
+\noindent The abstract typed invariant quotient-transport and return
+holonomy tools are now stated in the preceding foundational module,
+\cref{sec:foundational-typed-return-holonomy}. The present section
+adds the genuinely FULL RAW exact quotient-block calculus.
+
+For every $s\in S$, choose an invariant \emph{full exact}
+equivalence $E_s$ on the original sort $M_s$.  Put
+\[
+  Q_s=M_s/E_s,\qquad Q=\bigsqcup_{s\in S}Q_s,
+\]
+and name \emph{all actual} binary orbitals of the induced
+$\Aut(M)$ action, with quotient equality treated as logical
+identity.  This is a finite complete typed binary language.  In
+contrast to the one-original-sort construction
+$M_{\mathcal E}$, different $E_s$ act on genuinely distinct
+original sorts, and no functorial section of the full $\Aut(Q)$ action back
+to $\Aut(M)$ is asserted.  Individual finite partial quotient
+maps are separately handled by the common joint lifting theorem
+\cref{thm:typed-joint-exact-lifting}.
+
+\begin{lemma}[Full exact orbital blocks and compositions]
+\label{lem:typed-simultaneous-blocks}
+For every original atom $a:s\to t$, including logical equality
+when $s=t$, put
+\[
+ \langle a\rangle_{st}=E_s;\{a\};E_t.
+ \tag{TQ1}\label{eq:typed-exact-block}
+\]
+These nonempty full exact blocks partition the original typed
+atom palettes and are precisely the inverse images of the actual
+named pair orbitals on $Q_s\times Q_t$.  The inverse image of
+$\Id_{Q_s}$ is exactly $E_s$; every quotient diversity orbital
+on $Q_s^2$ pulls back to a block disjoint from $E_s$.
+
+For composable unions of quotient atomic orbitals $R:s\to t$
+and $T:t\to u$, write $\widetilde R,\widetilde T$ for their
+inverse images on original real points. Then
+\[
+ \widetilde{R;_Q T}
+ =\widetilde R;E_t;\widetilde T
+ =\widetilde R;\widetilde T.
+ \tag{TQ2}\label{eq:typed-exact-quotient-product}
+\]
+Typed converse and intersections commute with inverse image.
+Every nonempty full exact quotient menu pulls back to an original
+full exact menu, and every quotient atomic word profile has an
+original full exact inverse image.  The quotient full atomic
+word-profile families are $2$-Helly.
+\end{lemma}
+\begin{proof}
+Each block in \eqref{eq:typed-exact-block} is exact by
+\cref{thm:full-typed-exact-balls}(ii).  It is saturated under
+$E_s$ and $E_t$.  If an old atom $b$ occurs in the block of $a$,
+there are actual representatives of a $b$-edge related by
+$E_s,E_t$ to the endpoints of an $a$-edge.  Reversing those
+equivalence moves shows $a\in E_s;\{b\};E_t$.  Idempotence
+of $E_s,E_t$ then gives equality of the two blocks.  Thus blocks either coincide or are disjoint.
+To identify them with ACTUAL \(\Aut(M)\)-orbitals
+on quotient pairs, suppose
+\((X,Y)\in Q_s\times Q_t\) belongs to the
+block \(E_s;\{a\};E_t\). By definition
+it admits representatives \(x\in X,y\in Y\)
+with old atomic pair type \(a\).
+Indeed, if arbitrary representatives have
+some atom \(b\subseteq E_s;\{a\};E_t\),
+the witnessed \(E_s\)- and \(E_t\)-moves
+supply an actual \(a\)-pair in the SAME
+two quotient classes. Two quotient pairs
+belonging to this block therefore each
+admit an \(a\)-pair of representatives.
+Old homogeneity aligns those two actual
+complete ordered atomic two-point diagrams
+(and the identity pair when \(a=\Id\));
+its automorphism maps their respective
+quotient classes onto each other.
+Conversely old automorphisms preserve
+every saturated block. Hence these blocks
+are PRECISELY the named pair orbitals of
+the induced old action, without assuming
+an automorphism-lifting section of the
+possibly larger full quotient group.
+In particular quotient equality pulls back
+to \(E_s\), and a same-sort quotient
+diversity block cannot meet \(E_s\).
+
+For the quotient composition \(R;_Q T\),
+consider fixed old endpoint representatives
+\(x\in M_s,z\in M_u\).
+If \(([x]_{E_s},[z]_{E_u})\in R;_Q T\),
+there is an intermediate ACTUAL \(E_t\)-class
+\(Y\) with the two prescribed quotient orbital
+incidences. These incidences are witnessed by
+POSSIBLY DIFFERENT old points \(y_1,y_2\in Y\):
+\[
+    x\widetilde R y_1,\qquad
+    y_1 E_t y_2,\qquad
+    y_2\widetilde T z.
+\]
+Thus \((x,z)\in\widetilde R;E_t;\widetilde T\).
+Conversely any such old three-step walk projects
+to one intermediate class \(Y\), giving the
+quotient relational product. This establishes
+the FIRST equality in
+\eqref{eq:typed-exact-quotient-product}.
+Now \(\widetilde R;E_t=\widetilde R\)
+and \(E_t;\widetilde T=\widetilde T\)
+because these are inverse images of quotient
+relations, saturated at their endpoint classes.
+Therefore
+\(\widetilde R;E_t;\widetilde T
+=\widetilde R;\widetilde T\),
+which establishes the SECOND equality.
+No commutativity of differently typed arrows,
+SAP, or selection of coherent representatives
+for several quotient pairs was used.  Quotient words therefore lift to
+products of full exact blocks and hence to full exact menus;
+finite nonempty meets lift as meets.  Pairwise intersections of
+quotient word menus lift to pairwise intersections of full exact
+old menus, which have a common old atom by
+\cref{thm:full-typed-exact-balls}(i).  Its quotient block lies in
+every quotient word menu, proving $2$-Helly.
+\end{proof}
+
+\begin{lemma}[Exact descent in the symmetric one-original-sort case]
+\label{lem:one-original-sort-exact-descent}
+Suppose the initial source has exactly \emph{one
+original transitive sort}, with all old binary
+orbitals symmetric. Let $E$ be an invariant
+full exact equivalence and let $D$ be a
+nonempty old full exact invariant relation
+which is \emph{$E$-bisaturated}:
+\[
+                         E;D;E=D.
+\]
+Then its image $D/E$ in the actual quotient
+$M/E$ is a nonempty full exact relation
+of the quotient represented algebra.
+In particular, if $E\le K$ are original
+full exact equivalences, $K/E$ is a full
+exact quotient equivalence.
+
+This converse-to-pullback assertion uses
+\emph{one original symmetric sort}.
+It is not asserted for an arbitrary full
+exact cross-sort relation under mutually
+independent quotients of multiple original
+sorts.
+\end{lemma}
+\begin{proof}
+Choose an original exact presentation
+$D=\bigcap_{\alpha=1}^n P_\alpha$ by
+nonempty represented atomic word profiles.
+Since $D$ is nonempty, repeated exact
+finite-meet distributivity
+\cref{thm:full-typed-exact-balls}(ii)
+gives
+\[
+ D=E;D;E=\bigcap_\alpha(E;P_\alpha;E).
+ \tag{TQ5}\label{eq:one-sort-exact-descent}
+\]
+(When $n=0$, the relation is old top,
+and its quotient is top as well.)
+Write $P_\alpha=a_1;\cdots;a_m$ as
+a word of actual old orbitals, with
+$m=0$ denoting the equality word.
+Every old invariant relation is symmetric
+because every orbital is symmetric.
+Consequently its represented product
+with any other invariant relation
+commutes, and $E^2=E$. Hence
+\[
+ E;P_\alpha;E=
+ (E;a_1;E);\cdots;(E;a_m;E),
+\]
+with the empty word interpreted as
+$E$. Each $E;a_i;E$ is the inverse image
+of one actual quotient atomic orbital
+(including quotient equality if $a_i\subseteq E$).
+By the saturated quotient product identity
+\eqref{eq:typed-exact-quotient-product}, the
+relation $E;P_\alpha;E$ is the inverse image
+of the corresponding quotient \emph{word
+profile}. Its quotient image is therefore
+word-reachable. Intersecting these quotient
+words gives exactly $D/E$, since quotient
+inverse image commutes with arbitrary
+intersections of saturated relations.
+Thus $D/E$ is full exact.
+
+For $D=K\ge E$ the bisaturation
+$E;K;E=K$ is automatic, and its image
+is an equivalence by ordinary quotient
+semantics. This proves the final assertion.
+\end{proof}
+
+\begin{remark}[Why independent mixed-sort word descent needs care]
+\label{rem:mixed-word-projection-failure}
+The proof of
+\cref{lem:one-original-sort-exact-descent}
+cannot be repeated with independent kernels on
+different original sorts simply by projecting
+every factor of an old word. This failure occurs
+even in a homogeneous symmetric SAP+CCO example.
+
+Take three named sorts $A,B,C$, each consisting of
+two infinite pure clone fibres indexed by
+$p\in\mathbb F_2$. For any two distinct old
+vertices, name their original ordered sort pair
+and the bit $p_x+p_y$ (with typed converse).
+This source is homogeneous, SAP and homomorphic
+CCO: finite partial constraints are XOR
+equations whose inconsistency is witnessed by
+a nonzero labelled simple cycle; infinite clone
+fibres make every consistent system injectively
+realizable.
+
+The old mixed word $w=(0:A\to B,\ 0:B\to C)$
+has endpoint profile
+\[
+ P_w=\{(a,c):p_a+p_c=0\}.
+\]
+Now quotient the \emph{entire} original sort $B$
+by its top equivalence, keeping equality on
+$A$ and $C$. Each projected edge relation
+$0:A\to B/\Top$ and
+$0:B/\Top\to C$ is total, so their
+quotient word product is the \emph{full}
+$A\times C$ relation, strictly larger than
+the image of $P_w$. The intervening
+$E_B$-movement is the difference.
+
+In this particular example $P_w$ still
+descends as a named \emph{atomic} $A$--$C$
+quotient relation. Thus this is a
+counterexample to \emph{factorwise word
+descent}, not a claimed counterexample
+to every conceivable multi-sort exact
+descent statement. The safe general
+direction remains quotient exact $\Rightarrow$
+original exact pullback.
+\end{remark}
+
+\begin{lemma}[Private word-path cycle decomposition]
+\label{lem:typed-private-path-cycle}
+Let \(G\) be a finite simple partially coloured
+typed graph, with diversity atoms on its specified
+unordered edges. Replace each specified edge
+\(uv\) by finitely many formal typed paths between
+its marked endpoints, all internal vertices private
+to their chosen paths, deleting genuine equality
+factors by contracting them within each path.
+Assume that no resulting path has length zero,
+and that coincident length-one paths between
+one marked pair have the same old atomic colour
+and are merged.
+
+Then every specified simple cycle of the
+resulting raw graph either uses two different
+private paths above ONE edge of \(G\), or its
+successive marked vertices form a simple
+specified cycle of \(G\) and it traverses one
+private path above each edge of that cycle.
+A single length-one path is counted as one
+old edge, not as a parallel edge or a 2-cycle.
+\end{lemma}
+\begin{proof}
+An internal vertex of a private path has
+specified degree two and is not contained
+in any other private path. A simple cycle
+which enters a private path at an internal
+vertex must therefore traverse the whole
+path until its other marked endpoint.
+Likewise, a simple cycle consisting solely
+of internal vertices is impossible, because
+the private paths are individually simple
+and have two distinct marked endpoints.
+Consequently any simple cycle is a concatenation
+of complete private paths, and the marked
+vertices it visits are pairwise distinct
+except for its final return to the first.
+
+If it visits exactly two marked vertices,
+both traversed private paths have those
+endpoints. Since \(G\) has at most one
+specified edge on any unordered pair, they
+belong to the SAME specified edge of \(G\).
+If it visits at least three marked vertices,
+the consecutive pairs are distinct specified
+edges of \(G\), and the sequence gives
+a simple specified cycle there.
+The length-one merge excludes artificial
+parallel edges and 2-cycles.
+\end{proof}
+
+\begin{theorem}[Simultaneous full exact quotients preserve AP and CCO]
+\label{thm:typed-simultaneous-exact-quotients}
+Let $M$ be a countable homogeneous complete finite typed binary
+structure with a finite family of nonempty original transitive
+named sorts, symmetric same-sort orbitals, typed converse-paired
+cross-sort orbitals, and semantic \emph{homomorphic} simple-cycle
+CCO.  No SAP hypothesis is imposed.  For \emph{arbitrary and
+independent} full exact invariant equivalences $E_s$ on the
+original named sorts, the actual simultaneous quotient $Q$ above
+is homogeneous, has a triangle-defined age with AP and JEP,
+and satisfies semantic homomorphic simple-cycle CCO.
+
+Neither global lifting $\Aut(Q)\to\Aut(M)$ nor SAP of $Q$ is a
+conclusion; this theorem is not a formalisation of a coherent
+choice of fine representatives.
+\end{theorem}
+\begin{proof}
+\emph{Anchored triangle extension and homogeneity.}
+Consider any finite complete quotient diagram already realized
+by pairwise distinct elements $C_1,\ldots,C_n$ of $Q$, and
+prescribe one additional quotient vertex of sort $u$ whose
+binary orbital $R_j$ to each $C_j$ makes every displayed
+triangle a realized quotient triangle.  (For $n=0$ choose any element of the
+requested nonempty quotient sort. For $n=1$,
+transitivity of the \emph{original} named
+sort action makes each requested nonempty
+quotient pair orbital incident to the
+prescribed existing quotient centre; if
+the new sort equals its sort, a quotient
+diversity orbital supplies a different class.)  Choose arbitrary old real
+representatives $b_j\in C_j$, and let $D_j=\widetilde R_j$
+be the corresponding old nonempty full exact block from
+\cref{lem:typed-simultaneous-blocks}.
+
+For any two distinct quotient centres $C_j,C_k$, the proposed
+triangle occurs in $Q$, hence an actual pair of quotient
+centres with the same named orbital has a common new quotient
+neighbour of the required $R_j,R_k$ types.  Since the pair
+orbital is an \emph{actual $\Aut(M)$ orbit}, some old
+automorphism moves that centre pair to $(C_j,C_k)$.  Choose a
+real representative $z$ of the transported third quotient
+class.  Endpoint saturation makes $(z,b_j)\in D_j$ and
+$(z,b_k)\in D_k$ for the \emph{arbitrarily fixed} real
+representatives $b_j,b_k$.  Thus the two actual exact balls
+$B_{D_j}(b_j),B_{D_k}(b_k)$ meet.  By the heterogeneous exact
+ball Helly theorem \cref{thm:full-typed-exact-balls}(iii),
+all these balls have a common real point $z\in M_u$.
+Its $E_u$-class has precisely the prescribed pair orbitals to
+all $C_j$.  If $C_j$ has sort $u$, the requested orbital of a
+new \emph{distinct} quotient vertex is diversity, so
+$D_j\cap E_u=\varnothing$; therefore $[z]_{E_u}\ne C_j$.
+No quotient capacity or accidental collision is assumed away.
+
+This establishes a one-point extension over the \emph{actual}
+finite quotient base, not merely over some isomorphic copy.
+Induction realizes every finite complete typed atomic diagram
+whose triangles are all realized in $Q$, proving triangle
+fullness.  Homogeneity also follows directly from
+\cref{thm:typed-joint-exact-lifting}, applied to the exact
+quotients $E_s$ together with each original $\Id_s$.
+Here a finite partial isomorphism of the PURE
+quotient structure is regarded as a partial
+map of the LARGER joint structure on the
+EXACT SAME displayed quotient vertices
+ONLY: no arbitrary original real
+representatives are added to its domain,
+and no old fine pair colours between
+such arbitrary representatives are
+presupposed. Every pair relation on those
+displayed quotient vertices is literally
+the same ACTUAL original-$\Aut(M)$ quotient
+orbital in both signatures. Therefore
+the map is a finite partial isomorphism
+of the joint structure, to which the
+joint lifting theorem applies. Its lift
+is an individual $g\in\Aut(M)$ and
+induces the requested original quotient
+partial isomorphism. In particular the
+quotient age has AP and JEP.  Neither this finite local
+lifting nor the one-point extension constructs a group section.
+
+\emph{Homomorphic CCO, without an imported FullWord criterion.}
+Take any finite partially specified quotient diversity diagram
+whose every specified simple quotient cycle has a homomorphism
+into $Q$.  For each specified quotient pair orbital $R$, its
+old pullback $D=\widetilde R$ is a nonempty full exact
+intersection of represented atomic word profiles, by
+\cref{lem:typed-simultaneous-blocks}.  Replace the specified
+edge by private old paths spelling every word in one such
+presentation.  Delete logical equality factors inside the
+words.  No word can reduce entirely to old logical equality,
+because the pullback of a quotient \emph{diversity} orbital is
+disjoint from old logical equality.  Repeated length-one paths
+with the same endpoints impose the same old atom and are merged.
+
+By \cref{lem:typed-private-path-cycle}, each specified
+simple cycle of the resulting original typed partial diagram
+traverses either two private paths belonging to ONE quotient
+edge, or private paths projecting to a \emph{simple} specified
+quotient cycle. In the former case choose an arbitrary actual
+realization of that nonempty quotient pair orbital; in the
+latter choose the assumed quotient homomorphism of the
+\emph{entire indicated} simple quotient cycle. In both
+cases these choices provide one compatible quotient class
+for every marked formal vertex of the raw cycle; there is
+no need for a globally coherent choice of quotient images
+across DIFFERENT raw cycles.
+For each marked original variable choose an arbitrary old real
+representative of its quotient image.  Because every pullback
+block $E_s;\{a\};E_t$ is saturated, \emph{every} such pair of
+representatives satisfies each defining old word profile.
+Realize its private word paths independently.  This gives a
+homomorphism of the old simple cycle into $M$, even if the
+marked representatives of different quotient variables
+coincide.  Thus every specified old simple cycle is
+homomorphically completable.
+
+Semantic CCO of the original $M$ gives a homomorphism of the
+\emph{entire} expanded old partial diagram into $M$.  Each
+specified quotient edge's marked endpoint images satisfy
+all its defining full word profiles and hence belong to its
+exact pullback block.  Projecting marked vertices to their
+$E_s$-classes gives the required quotient homomorphic
+completion.  This proves quotient semantic CCO without SAP,
+without any quotient representative-lifting section, and
+without importing an independent typed FullWord$\Rightarrow$CCO
+theorem.
+\end{proof}
+
+\begin{corollary}[Typed full-exact quotient towers]
+\label{cor:typed-exact-quotient-towers}
+Suppose a finite sequence of homogeneous typed sources is
+obtained by simultaneously quotienting each current original
+named sort by arbitrary full exact invariant equivalences of
+its \emph{current} equality-inclusive represented algebra.
+If the initial source satisfies the hypotheses of
+\cref{thm:typed-simultaneous-exact-quotients}, so does every
+stage.  Furthermore, the composite of any finite number of
+these quotient stages is canonically isomorphic as a complete
+atomic binary structure to a single simultaneous quotient of
+the initial source by full exact invariant equivalences
+containing the earlier chosen kernels.  If a stage quotients
+some original sort by an equivalence properly above logical
+identity, the total number of typed diversity atomic orbitals
+(counting converse pairs consistently) strictly decreases.
+\end{corollary}
+\begin{proof}
+Each quotient stage is homogeneous, has named transitive
+sorts with same-sort symmetric atom orbitals and paired typed
+converses, and retains homomorphic CCO by the theorem.
+Therefore its hypotheses hold again at the next stage,
+without any SAP assumption on the quotient.
+
+For the direct-composite assertion, pull a current quotient
+full exact equivalence back through the previous quotient
+map.  By \eqref{eq:typed-exact-quotient-product}, every
+quotient atomic word profile pulls back to an original full
+exact menu; so a finite exact meet and in particular an
+exact equivalence pull back to a full exact invariant
+original relation containing the previous kernel.  For an
+original atom $a:s\to t$, double quotient saturation of its
+first block produces the block
+$H_s;\{a\};H_t$, where $H_s,H_t$ are the total pulled-back
+kernels.  This is precisely the old atomic orbital block of
+the direct quotient, including the equality orbital.
+Hence both quotient structures have identical underlying
+sets of classes and identical named binary atomic orbitals.
+No map on automorphism groups is constructed.  Every quotient
+atom is one nonempty union of prior original atom blocks, so
+distinct old diversity orbitals can only merge, never split.
+A nonidentity quotient kernel contains at least one nonidentity
+old same-sort atom, which becomes quotient equality; therefore
+the typed diversity rank strictly decreases.
+\end{proof}
+
+% A08. The finite whole-sort group statement uses only homogeneous
+% relational binarity. It must never be substituted for relative
+% pointwise-owner-kernel lifting of UNNAMED finite fibres.
+\subsection{Goursat constraints on entire finite named quotient sorts}
+
+The following basic lemma does \emph{not} need CCO, exactness,
+SAP, symmetry or transitivity. Its strength derives from the
+fact that the finite blocks are \emph{entire named sorts},
+not unnamed finite fibres over moving quotient owners.
+
+\begin{lemma}[Strong finite projection of entire named sorts]
+\label{lem:typed-finite-entire-axis-projection}
+Let $X$ be a homogeneous relational structure of arity at most
+two, with a collection of pairwise disjoint \emph{named} finite
+sorts $(P_i)_{i\in I}$. Other named sorts may be infinite.
+Put $\Gamma=\Aut(X)$,
+$R_i=\Aut(X\restriction P_i)$, and for $i\ne j$ let
+\[
+ P_{ij}=\operatorname{im}\bigl(
+   \Gamma\longrightarrow R_i\times R_j\bigr).
+\]
+Then for every finite $S\subseteq I$,
+\[
+ \boxed{\quad
+ \operatorname{im}\!\left(
+ \Gamma\longrightarrow\prod_{i\in S}R_i\right)
+ =\bigl\{(g_i)_{i\in S}:
+               (g_i,g_j)\in P_{ij}\quad(i\ne j)\bigr\}.
+ \quad}\tag{TQ3}\label{eq:typed-finite-strong-projection}
+\]
+In particular $\Gamma\to R_i$ is surjective and each
+$P_{ij}\le R_i\times R_j$ is a \emph{subdirect} subgroup.
+This is a statement about the \emph{full automorphism group of
+$X$}, not about the image of an earlier finer source action.
+\end{lemma}
+\begin{proof}
+Every automorphism of the induced finite $P_i$ extends to
+$X$ by homogeneity, so the coordinate images are all $R_i$.
+The left-to-right inclusion of \eqref{eq:typed-finite-strong-projection}
+is immediate. Conversely choose a tuple on the right.
+The union $g=\bigcup_{i\in S}g_i$ is a bijection of
+$P_S=\bigcup_{i\in S}P_i$, a \emph{finite} induced
+substructure. It preserves each named unary sort and all
+within-sort binary relations because $g_i\in R_i$.
+For any two different sorts $i,j\in S$, the
+condition $(g_i,g_j)\in P_{ij}$ supplies an actual
+$\gamma_{ij}\in\Gamma$ agreeing with $g$ on \emph{all}
+of $P_i\cup P_j$. Thus $g$ preserves every cross-sort
+binary atom. Since the language has arity at most two,
+there are no additional relation instances to check.
+Therefore $g$ is a finite partial automorphism of $X$.
+Homogeneity extends it to some $\gamma\in\Gamma$,
+giving the required tuple. This also covers $S=\varnothing$
+and singleton $S$.
+\end{proof}
+
+\begin{corollary}[Finite linear Goursat code and flat transport]
+\label{cor:typed-finite-linear-goursat}
+In \cref{lem:typed-finite-entire-axis-projection}, suppose
+each $R_i$ is, as an abstract group, an elementary
+abelian $2$-group $V_i=\mathbb F_2^{d_i}$.
+For each $i<j$ there exist finite vector spaces
+$W_{ij}$ and surjective linear maps
+$\pi_{ij}:V_i\to W_{ij}$ and
+$\rho_{ij}:V_j\to W_{ij}$ such that
+\[
+ P_{ij}=\{(x,y):\pi_{ij}(x)=\rho_{ij}(y)\}.
+\]
+On any finite $S$ form the linear parity-check map
+\[
+ \Phi_S:\bigoplus_{i\in S}V_i
+ \longrightarrow\bigoplus_{\{i,j\}\in[S]^2}W_{ij},
+ \quad
+ (\Phi_S(x))_{ij}=\pi_{ij}(x_i)+\rho_{ij}(x_j).
+\]
+The image of the actual full group $\Gamma$ on these
+entire sorts equals $\ker\Phi_S$; its cardinality is
+\[
+ 2^{\,\sum_{i\in S}d_i-\operatorname{rank}(\Phi_S)}.
+ \tag{TQ4}\label{eq:typed-finite-goursat-rank}
+\]
+More generally, if on three distinct entire finite
+named sorts the pair groups are graphs of isomorphisms
+$\theta_{ij}:R_i\to R_j$, these satisfy
+$\theta_{ik}=\theta_{jk}\circ\theta_{ij}$.
+\end{corollary}
+\begin{proof}
+Since each $P_{ij}$ is subdirect, its subgroup kernels
+$N_i=\{x:(x,0)\in P_{ij}\}$ and
+$N_j=\{y:(0,y)\in P_{ij}\}$ are vector subspaces.
+The condition $(x,y)\in P_{ij}$ identifies exactly
+the two quotient coordinates in
+$V_i/N_i\cong V_j/N_j$; this is the elementary
+abelian Goursat presentation. The strong finite
+projection equation \eqref{eq:typed-finite-strong-projection}
+is now exactly the system $\Phi_S(x)=0$.
+Rank--nullity gives \eqref{eq:typed-finite-goursat-rank}.
+For graph couplings, choose any $x\in R_i$, extend
+it by surjectivity of the full $\Gamma$ action to
+one global $\gamma$, and read its three coordinates.
+They simultaneously satisfy
+$\gamma_k=\theta_{ik}(x)$ and
+$\gamma_k=\theta_{jk}(\theta_{ij}(x))$.
+This holds for every $x$, proving flatness.
+\end{proof}
+
+\begin{corollary}[Finite entire axes after full exact quotient]
+\label{cor:typed-exact-finite-axis-goursat}
+In \cref{thm:typed-simultaneous-exact-quotients}, take
+any selection of ORIGINAL named sorts whose entire
+quotient sets $Q_s=M_s/E_s$ are finite. Their full
+canonical binary automorphism group $\Aut(Q)$ satisfies
+\eqref{eq:typed-finite-strong-projection}, and whenever
+its coordinate actions are elementary abelian it
+satisfies \eqref{eq:typed-finite-goursat-rank}.
+No original SAP is required.
+\end{corollary}
+\begin{proof}
+The theorem makes the \emph{actual binary quotient $Q$}
+homogeneous, in a finite arity-two named-sorted language.
+Apply the preceding two statements to its entire finite
+sorts. No assertion is made about the image of
+$\Aut(M)$ inside this possibly larger full $\Aut(Q)$.
+\end{proof}
+
+\begin{remark}[Sharp kernel and lifting firewall]
+\label{rem:typed-finite-goursat-kernel-scope}
+The three preceding statements concern \emph{entire finite
+named quotient sorts}. They cannot be applied to the
+\emph{pointwise owner kernel} acting on finite fibres above
+\emph{unnamed, moving} quotient owners. Naming all those
+owners as new constants can destroy homogeneity, so
+\cref{lem:typed-finite-entire-axis-projection} need not
+hold in the expanded language. The narrower one-original-sort
+finite-exact-fibre extension theorem is a genuine
+additional structural input, not a formal consequence here.
+
+A small two-original-sort phase control already disproves
+the naive stronger intrinsic-binding assertion even with SAP
+and CCO. Let two original sorts $U,V$ carry two $\mathbb F_2$
+phase classes with infinite pure clones, and name their
+cross XOR-difference. Their fine two-point phase quotient
+has full automorphism group the \emph{diagonal} $C_2$
+translation. Coarsen the $U$ quotient to a singleton but
+keep the $V$ phase quotient. The pointwise kernel of the
+map of these two fine/coarse quotient automorphism groups
+is trivial, although the intrinsic within-$U$ fibre
+automorphism group is $C_2$. Both the fine and coarse cuts
+are full exact. This does \emph{not} contradict strong
+projection for entire named sorts: the latter describes
+the \emph{full fine automorphism group} by its actual
+cross-sort pair orbitals, not its pointwise kernel.
+\end{remark}
+
+\begin{remark}[Scope: joint quotients versus global lifting]
+\label{rem:typed-simultaneous-exact-scope}
+The common theorem
+\cref{thm:typed-joint-exact-lifting} now supplies
+individual finite partial-isomorphism lifting for several
+exact quotients of each of several ORIGINAL named sorts.
+The historical one-original-sort \cref{thm:joint-exact}
+is its immediate special case.  The present theorem additionally
+proves full triangle-defined AP and \emph{homomorphic CCO} of
+the PURE quotient reduct, which does not follow merely from
+mixed joint lifting.  Neither theorem constructs a section
+of automorphism groups or a functorial choice of fine
+representatives.  Cross-sort orbitals are not assumed
+commutative and the original real source need not have SAP.
+\end{remark}
