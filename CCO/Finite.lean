@@ -161,9 +161,12 @@ theorem HomogeneousSource.extends_partial_iso
     ∃ g : G, ∀ p : ↥A.vertices,
       g • p.val = (e.toEmbedding p).val := by
   letI : Finite ↥A.vertices := A.finite_vertices.to_subtype
-  exact H.extends_finite_diagram
-    (fun p : ↥A.vertices => p.val)
-    (fun p : ↥A.vertices => (e.toEmbedding p).val)
-    (fun p q => e.preserves_colours p q)
+  let f : ↥A.vertices → Sigma X := fun p => p.val
+  let h : ↥A.vertices → Sigma X := fun p => (e.toEmbedding p).val
+  have hcol : ∀ p q, taggedColour S (f p) (f q) =
+      taggedColour S (h p) (h q) := by
+    intro p q
+    exact e.preserves_colours p q
+  exact H.extends_finite_diagram f h hcol
 
 end CCO
