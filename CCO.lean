@@ -43,3 +43,4 @@ import CCO.RawExact.PrivatePaths
 import CCO.RawExact.FineColours
 import CCO.RawExact.WordHellyBoundaries
 import CCO.RawExact.JointPoint
+import CCO.RawExact.MeetHelly
