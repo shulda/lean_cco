@@ -36,3 +36,4 @@ import CCO.StrongExact.Survivors
 import CCO.StrongExact.PrescribedBase
 import CCO.StrongExact.ExactMenus
 import CCO.StrongExact.Examples
+import CCO.StrongExact.PathSupport
