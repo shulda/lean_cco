@@ -85,6 +85,7 @@ theorem triangle_rotate_back {a : S.Atom i j} {b : S.Atom j k}
   refine ⟨x, y, z, hxy, ?_, hxz⟩
   have h : S.colour y z = some (S.conv (S.conv b)) :=
     (S.colour_swap z y (S.conv b)).mp hzy
+  change S.colour y z = some b
   simpa only [S.conv_invol] using h
 
 theorem triangle_reverse {a : S.Atom i j} {b : S.Atom j k}
