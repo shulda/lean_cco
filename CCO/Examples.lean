@@ -50,11 +50,11 @@ def trivialPalette : AtomicSource (Fin 2) (fun _ => Nat) where
     · have ht : (⟨j, y⟩ : U) = ⟨i, x⟩ := h.symm
       change exampleColour (i := i) (j := j) x y = some () ↔
         exampleColour (i := j) (j := i) y x = some ()
-      simp only [exampleColour, dif_pos h, dif_pos ht]
+      simp [exampleColour, h, ht]
     · have ht : (⟨j, y⟩ : U) ≠ ⟨i, x⟩ := Ne.symm h
       change exampleColour (i := i) (j := j) x y = some () ↔
         exampleColour (i := j) (j := i) y x = some ()
-      simp only [exampleColour, dif_neg h, dif_neg ht]
+      simp [exampleColour, h, ht]
   realized := by
     intro i j a
     cases a
@@ -66,7 +66,8 @@ def trivialPalette : AtomicSource (Fin 2) (fun _ => Nat) where
 theorem literal_diversity {i j : Fin 2} {x y : Nat} (h : x ≠ y) :
     trivialPalette.colour (i := i) (j := j) x y = some () := by
   have hn : (⟨i, x⟩ : U) ≠ ⟨j, y⟩ := tagged_ne_of_nat_ne h
-  simp [trivialPalette, exampleColour, hn]
+  change exampleColour (i := i) (j := j) x y = some ()
+  simp [exampleColour, hn]
 
 /-- Even when every sort tag repeats, the STRONG triangle has three
 different real vertices (0,1,2). -/
