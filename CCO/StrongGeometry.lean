@@ -5,7 +5,7 @@ import CCO.Atomic
 
 The two gluing properties are semantic intermediates, not axioms, and
 not themselves proved here from AgeSAP and finite homogeneity.
-They describe real three-/four-point amalgams and will be discharged
+They describe real three-point and four-point amalgams and will be discharged
 from the actual source's SAP in B001. Consequently all results taking
 these hypotheses are CONDITIONAL until that bridge is supplied.
 No RAW Helly, CCO, NR2, or selector premise occurs.
@@ -47,7 +47,7 @@ theorem some_colour_of_ne (x : X i) (y : X j)
     ∃ a : S.Atom i j, S.colour x y = some a := by
   cases hc : S.colour x y with
   | none => exact False.elim (h ((S.colour_none_iff x y).mp hc))
-  | some a => exact ⟨a, hc⟩
+  | some a => exact ⟨a, rfl⟩
 
 theorem product_nonempty_of_point_gluing
     (hPoint : S.RealPointGluing)
