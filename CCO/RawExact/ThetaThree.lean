@@ -41,13 +41,31 @@ def OmitsSomeMiddle {n : Nat} (f : Fin n ↪ Fin 5) : Prop :=
 
 /-- Enumerate all finite MAPS, rather than relying on a non-computable
 decider for the type of embeddings. Injectivity is checked explicitly. -/
+/-- Boolean root/middle bipartition; every theta edge flips sides. -/
+def rootFlag (p : Fin 5) : Bool :=
+  (p == 0) || (p == 1)
+
+theorem adj_root_ne (p q : Fin 5) (h : Adj p q) :
+    rootFlag p ≠ rootFlag q := by
+  fin_cases p <;> fin_cases q <;>
+    first | decide | (simp [Adj, middle] at h)
+
 private theorem for_three :
     ∀ f : Fin 3 → Fin 5,
       Function.Injective f →
       (∀ p : Fin 3,
         Adj (f p) (f (cyclicNext (by decide) p))) →
         OmitsSomeMiddleFn f := by
-  decide
+  intro f _ hedges
+  have odd3 : ∀ a b c : Bool,
+      a ≠ b → b ≠ c → c ≠ a → False := by decide
+  have h01 : rootFlag (f 0) ≠ rootFlag (f 1) := by
+    simpa [cyclicNext] using adj_root_ne _ _ (hedges 0)
+  have h12 : rootFlag (f 1) ≠ rootFlag (f 2) := by
+    simpa [cyclicNext] using adj_root_ne _ _ (hedges 1)
+  have h20 : rootFlag (f 2) ≠ rootFlag (f 0) := by
+    simpa [cyclicNext] using adj_root_ne _ _ (hedges 2)
+  exact False.elim (odd3 _ _ _ h01 h12 h20)
 
 private theorem for_four :
     ∀ f : Fin 4 → Fin 5,
@@ -63,7 +81,20 @@ private theorem for_five :
       (∀ p : Fin 5,
         Adj (f p) (f (cyclicNext (by decide) p))) →
         OmitsSomeMiddleFn f := by
-  decide
+  intro f _ hedges
+  have odd5 : ∀ a b c d e : Bool,
+      a ≠ b → b ≠ c → c ≠ d → d ≠ e → e ≠ a → False := by decide
+  have h01 : rootFlag (f 0) ≠ rootFlag (f 1) := by
+    simpa [cyclicNext] using adj_root_ne _ _ (hedges 0)
+  have h12 : rootFlag (f 1) ≠ rootFlag (f 2) := by
+    simpa [cyclicNext] using adj_root_ne _ _ (hedges 1)
+  have h23 : rootFlag (f 2) ≠ rootFlag (f 3) := by
+    simpa [cyclicNext] using adj_root_ne _ _ (hedges 2)
+  have h34 : rootFlag (f 3) ≠ rootFlag (f 4) := by
+    simpa [cyclicNext] using adj_root_ne _ _ (hedges 3)
+  have h40 : rootFlag (f 4) ≠ rootFlag (f 0) := by
+    simpa [cyclicNext] using adj_root_ne _ _ (hedges 4)
+  exact False.elim (odd5 _ _ _ _ _ h01 h12 h23 h34 h40)
 
 /-- C06 cycle classification for the concrete three-by-two theta
 graph. The general source C06 still needs arbitrary finite families
