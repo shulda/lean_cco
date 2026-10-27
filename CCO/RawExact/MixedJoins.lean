@@ -186,7 +186,7 @@ theorem actual_identity_nested_of_homogeneous
   have hIdK : ∀ x y : X i, x = y → K x y := by
     rintro x y rfl
     exact hK.refl x
-  have hNested := S.actual_nested_mixed_of_homogeneous H
+  have hNested := actual_nested_mixed_of_homogeneous S H
     (fun x y : X i => x = y) K hId hK hIdK invK a
   exact hNested.1.trans hNested.2
 
