@@ -113,6 +113,24 @@ def SemanticCCO (S : AtomicSource ι X) : Prop :=
     (∀ C : SimpleCycle D, CycleHom C) →
       _root_.Nonempty (DiagramHom D)
 
+/-- A precise semantic interface for strong amalgamation of the *actual*
+finite induced age. The two copies agree over the designated base and
+have no additional common points. SAP here is a hypothesis and cannot be
+inferred from homomorphic CCO or ordinary AP. -/
+structure AgeSAP : Prop where
+  strong_amalgamate : ∀ (C A B : FiniteInduced (X := X))
+      (eCA : InducedEmbedding S C A) (eCB : InducedEmbedding S C B),
+    ∃ (D : FiniteInduced (X := X))
+      (eAD : InducedEmbedding S A D)
+      (eBD : InducedEmbedding S B D),
+      (∀ c : ↥C.vertices,
+        eAD.toEmbedding (eCA.toEmbedding c) =
+          eBD.toEmbedding (eCB.toEmbedding c)) ∧
+      (∀ a : ↥A.vertices, ∀ b : ↥B.vertices,
+        eAD.toEmbedding a = eBD.toEmbedding b →
+          ∃ c : ↥C.vertices,
+            eCA.toEmbedding c = a ∧ eCB.toEmbedding c = b)
+
 /-- The actual finite-partial-isomorphism extension property for an
 ambient group of sort- and colour-preserving automorphisms. This is a
 source hypothesis, not an unproved axiom or a conclusion of CCO. -/
