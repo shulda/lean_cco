@@ -20,6 +20,7 @@ structure AtomicSource (ι : Type u) (X : ι → Type v) where
   nonemptySort : ∀ i, _root_.Nonempty (X i)
   conv : ∀ {i j}, Atom i j → Atom j i
   conv_invol : ∀ {i j} (a : Atom i j), conv (conv a) = a
+  symmetricLoop : ∀ {i} (a : Atom i i), conv a = a
   colour : ∀ {i j}, X i → X j → Option (Atom i j)
   colour_none_iff : ∀ {i j} (x : X i) (y : X j),
     colour x y = none ↔ (⟨i, x⟩ : Sigma X) = ⟨j, y⟩
