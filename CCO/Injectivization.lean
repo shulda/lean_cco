@@ -75,7 +75,7 @@ private theorem process_finset_of_SAP
             have hfv := hOld v hvx
             have hInRange : f'.image x ∈ Set.range f.image := by
               refine ⟨v, ?_⟩
-              exact heq.trans hfv
+              exact (heq.trans hfv).symm
             exact hNew (Or.inr hInRange)
         · obtain ⟨huZ, huUnique⟩ := hDone u huT
           have hux : u ≠ x := by
