@@ -2,7 +2,7 @@ import CCO.ActionBridge
 import CCO.AtomicPeirce
 
 /-!
-# Finite homogeneous source gives actual one-/two-point orbitals
+# Finite homogeneous source gives actual one-point and two-point orbitals
 
 A complete atomic *tuple* records the logical diagonal as `none`.
 Thus finite tuple homogeneity applies also when the two indexed slots
@@ -63,7 +63,7 @@ theorem pair_homogeneous_of_homogeneous
     intro a b
     cases a <;> cases b <;>
       simp [f, h, taggedColour, hxx, hxy, hrev, hyy]
-  obtain ⟨g, hg⟩ := H.extends_finite_diagram f h hpairs
+  obtain ⟨g, hg⟩ := H.extends_finite_diagram (V := Bool) f h hpairs
   refine ⟨g, ?_, ?_⟩
   · have htag : (⟨i, g • x⟩ : Sigma X) = ⟨i, x'⟩ := by
       simpa [f, h] using (hg false)
