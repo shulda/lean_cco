@@ -22,14 +22,11 @@ word witness. Each recursive atomic letter prepends its SOURCE point.
 The actual pair-colour along that letter is the witness' old atom. -/
 def realWalkTrace {i j : ι} {word : RawWord S i j}
     {x : X i} {z : X j}
-    (h : WordPath S word x z) : List (Sigma X) := by
-  induction h with
-  | nil x =>
-      exact [⟨_, x⟩]
-  | identity tail ih =>
-      exact ih
-  | atom a edge rest ih =>
-      exact ⟨_, x⟩ :: ih
+    (h : WordPath S word x z) : List (Sigma X) :=
+  match h with
+  | .nil x => [⟨_, x⟩]
+  | .identity tail => realWalkTrace S tail
+  | .atom a edge rest => ⟨_, x⟩ :: realWalkTrace S rest
 
 theorem realWalkTrace_length {i j : ι} {word : RawWord S i j}
     {x : X i} {z : X j} (h : WordPath S word x z) :
@@ -38,8 +35,8 @@ theorem realWalkTrace_length {i j : ι} {word : RawWord S i j}
   | nil x => rfl
   | identity tail ih => exact ih
   | atom a edge rest ih =>
-      simp only [realWalkTrace, List.length_cons, diversityLength, ih]
-      omega
+      simpa only [realWalkTrace, List.length_cons, diversityLength] using
+        congrArg Nat.succ ih
 
 theorem realWalkTrace_sorts {i j : ι} {word : RawWord S i j}
     {x : X i} {z : X j} (h : WordPath S word x z) :
