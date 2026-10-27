@@ -67,16 +67,24 @@ theorem wordTarget_sort {i j : ι} (w : PositiveWord S i j) :
 its path are distinct; their named sorts may nevertheless agree. -/
 theorem wordSource_ne_target {i j : ι} (w : PositiveWord S i j) :
     wordSource S w ≠ wordTarget S w := by
+  intro h
   cases w with
-  | single _ => decide
-  | cons _ _ => simp [wordSource, wordTarget]
+  | single _ =>
+      change (false : Bool) = true at h
+      cases h
+  | cons _ tail =>
+      change (none : Option (wordPositions S tail)) =
+        some (wordTarget S tail) at h
+      cases h
 
 /-- Formal word positions are finite independently of the sizes of
 their actual original-sort carriers. -/
 theorem finite_wordPositions {i j : ι} (w : PositiveWord S i j) :
     Finite (wordPositions S w) := by
   induction w with
-  | single _ => exact inferInstance
+  | single _ =>
+      change Finite Bool
+      infer_instance
   | cons _ tail ih =>
       change Finite (Option (wordPositions S tail))
       infer_instance
@@ -92,7 +100,8 @@ def wordInterior {i j : ι} (w : PositiveWord S i j) :
 theorem finite_wordInterior {i j : ι} (w : PositiveWord S i j) :
     Finite (wordInterior S w) := by
   letI : Finite (wordPositions S w) := finite_wordPositions S w
-  infer_instance
+  exact Finite.of_injective (fun p : wordInterior S w => p.val)
+    Subtype.val_injective
 
 /-- One shared pair of roots and a PRIVATE copy of every internal
 position of every profile word. The branch index prevents collisions
@@ -163,7 +172,11 @@ theorem thetaBranchPosition_target {i j : ι}
   classical
   have h : wordTarget S (ws.get b) ≠ wordSource S (ws.get b) :=
     (wordSource_ne_target S (ws.get b)).symm
-  simp [thetaBranchPosition, h]
+  unfold thetaBranchPosition
+  split_ifs with h0 h1
+  · exact (h h0).elim
+  · rfl
+  · exact (h1 rfl).elim
 
 /-- Every private interior maps to its uniquely tagged theta point. -/
 theorem thetaBranchPosition_interior {i j : ι}
@@ -171,7 +184,11 @@ theorem thetaBranchPosition_interior {i j : ι}
     (p : wordInterior S (ws.get b)) :
     thetaBranchPosition S ws b p.val = (.inr ⟨b, p⟩) := by
   classical
-  simp [thetaBranchPosition, p.property.1, p.property.2]
+  unfold thetaBranchPosition
+  split_ifs with h0 h1
+  · exact (p.property.1 h0).elim
+  · exact (p.property.2 h1).elim
+  · rfl
 
 /-- No typed sort changes when mapping a formal path into theta:
 only its literal same-sort root positions are identified. -/
@@ -187,8 +204,10 @@ theorem thetaBranchPosition_sort {i j : ι}
     simpa only [thetaLeft_sort] using
       (wordSource_sort S (ws.get b)).symm
   · subst p
+    simp only [dif_pos h1]
     simpa only [thetaRight_sort] using
       (wordTarget_sort S (ws.get b)).symm
-  · rfl
+  · simp only [dif_neg h1]
+    rfl
 
 end CCO.StrongExact
