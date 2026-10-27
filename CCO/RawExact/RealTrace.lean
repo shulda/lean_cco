@@ -15,12 +15,11 @@ universe u v w
 namespace CCO.RawExact
 
 variable {ι : Type u} {X : ι → Type v}
-variable (S : AtomicSource.{u,v,w} ι X)
-
 /-- Materialize the actual successive real points of one represented
 word witness. Each recursive atomic letter prepends its SOURCE point.
 The actual pair-colour along that letter is the witness' old atom. -/
-def realWalkTrace {i j : ι} {word : RawWord S i j}
+def realWalkTrace (S : AtomicSource.{u,v,w} ι X)
+    {i j : ι} {word : RawWord S i j}
     {x : X i} {z : X j}
     (h : WordPath S word x z) : List (Sigma X) :=
   match h with
@@ -28,23 +27,26 @@ def realWalkTrace {i j : ι} {word : RawWord S i j}
   | .identity tail => realWalkTrace S tail
   | .atom a edge rest => ⟨_, x⟩ :: realWalkTrace S rest
 
-theorem realWalkTrace_length {i j : ι} {word : RawWord S i j}
+theorem realWalkTrace_length (S : AtomicSource.{u,v,w} ι X)
+    {i j : ι} {word : RawWord S i j}
     {x : X i} {z : X j} (h : WordPath S word x z) :
     (realWalkTrace S h).length = diversityLength S word + 1 := by
   induction h with
   | nil x => rfl
-  | identity tail ih => exact ih
+  | identity tail ih => simpa only [realWalkTrace, diversityLength, wordSortTrace] using ih
   | atom a edge rest ih =>
       simpa only [realWalkTrace, List.length_cons, diversityLength] using
         congrArg Nat.succ ih
 
-theorem realWalkTrace_sorts {i j : ι} {word : RawWord S i j}
+theorem realWalkTrace_sorts (S : AtomicSource.{u,v,w} ι X)
+    {i j : ι} {word : RawWord S i j}
     {x : X i} {z : X j} (h : WordPath S word x z) :
     (realWalkTrace S h).map Sigma.fst = wordSortTrace S word := by
   induction h with
   | nil x => rfl
-  | identity tail ih => exact ih
+  | identity tail ih => simpa only [realWalkTrace, diversityLength, wordSortTrace] using ih
   | atom a edge rest ih =>
-      simp only [realWalkTrace, List.map_cons, wordSortTrace, ih]
+      simpa only [realWalkTrace, List.map_cons, wordSortTrace] using
+        congrArg (List.cons _) ih
 
 end CCO.RawExact
