@@ -46,7 +46,9 @@ theorem atomRel_ne {a : S.Atom i j} {x : X i} {y : X j}
     (⟨i, x⟩ : Sigma X) ≠ ⟨j, y⟩ := by
   intro heq
   have hn : S.colour x y = none := (S.colour_none_iff x y).2 heq
-  simp only [atomRel, hn, reduceCtorEq] at h
+  change S.colour x y = some a at h
+  rw [hn] at h
+  cases h
 
 theorem menuRel_ne {A : S.Menu i j} {x : X i} {y : X j}
     (h : S.menuRel A x y) :
