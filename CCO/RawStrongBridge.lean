@@ -32,7 +32,7 @@ theorem diversityGuard_menuRel (A : S.Menu i j) :
     have hca : c = a := by
       have h := hc.symm.trans hxy
       exact Option.some.inj h
-    exact hca ▸ ha
+    simpa only [hca] using ha
   · intro hc
     obtain ⟨x, y, hxy⟩ := S.realized c
     exact ⟨x, y, ⟨c, hc, hxy⟩, hxy⟩
@@ -73,7 +73,7 @@ theorem atomRel_as_menu (a : S.Atom i j) :
   apply propext
   constructor
   · intro h
-    exact ⟨a, Set.mem_singleton a, h⟩
+    exact ⟨a, by simp, h⟩
   · rintro ⟨b, hb, hc⟩
     have h : b = a := Set.mem_singleton_iff.mp hb
     simpa [h] using hc
