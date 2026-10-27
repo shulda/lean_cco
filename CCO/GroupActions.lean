@@ -147,7 +147,7 @@ theorem no_diversity_injective
       · rfl
     have h1 := hDiag x' (g • a) horb
     have h2 : x = g • a := hx
-    exact h1.trans h2.symm
+    exact h2.trans h1.symm
   · intro x y heq
     obtain ⟨g, hg⟩ := trans a x
     have hx : x = g • a := hg.symm
