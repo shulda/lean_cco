@@ -33,10 +33,10 @@ the union of all quotient pair orbits that it meets. Output orbitals are
 defined by the actual diagonal group action, not by a new colour axiom. -/
 theorem invariant_saturated_descends_to_orbits
     (τ : A → Q) (σ : B → R)
-    (equivτ : ∀ g x, τ (g • x) = g • τ x)
-    (equivσ : ∀ g y, σ (g • y) = g • σ y)
+    (equivτ : ∀ (g : G) (x : A), τ (g • x) = g • τ x)
+    (equivσ : ∀ (g : G) (y : B), σ (g • y) = g • σ y)
     (D : A → B → Prop)
-    (hInv : ∀ g x y, D x y → D (g • x) (g • y))
+    (hInv : ∀ (g : G) (x : A) (y : B), D x y → D (g • x) (g • y))
     (hSat : GroupActions.saturation τ σ D = D) :
     D = (fun u v => ∃ x y, D x y ∧
       GroupActions.pullback τ σ
