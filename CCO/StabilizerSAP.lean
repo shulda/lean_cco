@@ -50,7 +50,7 @@ theorem orbit_has_fresh_point_of_SAP
     inducedInclusion S B Ext hBExt
   let eBA : InducedEmbedding S B A :=
     inducedInclusion S B A hBA
-  have hxExt : x ∈ Ext.vertices := Set.mem_insert x B.vertices
+  have hxExt : x ∈ Ext.vertices := by simp [Ext]
   let xExt : ↥Ext.vertices := ⟨x, hxExt⟩
   have hxNew : ∀ c : ↥B.vertices, eBExt.toEmbedding c ≠ xExt := by
     intro c hc
