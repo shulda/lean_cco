@@ -22,6 +22,6 @@ theorem colourInvariant_of_homogeneous
     S.ColourInvariant (G := G) (i := i) (j := j) := by
   intro g x y
   have h := H.preserves_colours g (⟨i, x⟩ : Sigma X) (⟨j, y⟩ : Sigma X)
-  simpa only [taggedColour, Sigma.smul_mk, Sigma.mk.injEq, and_self] using h
+  simpa only [taggedColour, Sigma.smul_mk, Sigma.mk.injEq, heq_eq_eq, true_and] using h
 
 end CCO.AtomicSource
