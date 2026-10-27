@@ -1,0 +1,312 @@
+\begin{lemma}[SAP forces a common infinite invariant monolith]
+\label{lem:rh-sap-invariant-monolith}
+Let $M$ be an INFINITE transitive homogeneous structure
+with SAP, in a finite COMPLETE BINARY original language.
+No symmetry, CCO, distributivity or triangle constraints
+are needed. For any TWO nonidentity original invariant
+equivalences $E,F>\Id$, their actual intersection
+$E\cap F$ has INFINITE classes.
+
+Consequently the finite FULL invariant-equivalence lattice
+has a UNIQUE least nonidentity element $L>\Id$, whose
+classes are infinite. The greatest finite-class original
+equivalence is $F_{\mathrm{fin}}=\Id$; in the notation of
+\cref{cor:rh-acl-bounded-character} there is exactly
+ONE minimal infinite direction ($r=1$), including
+$L=\Top$ when the source is primitive.
+Moreover $\operatorname{acl}_M(A)=A$ for EVERY finite
+ORIGINAL REAL $A$. These SAP conclusions do NOT
+hold for AP-only sources such as $M_r=\mathbb N^r$.
+\end{lemma}
+\begin{proof}
+Fix an actual real $x$. Since $E,F$ are nonidentity
+and the original sort is TRANSITIVE,
+choose $y\ne x$ with $xEy$ and
+$z\ne x$ with $xFz$.
+The base $A=\{y,z\}$ is a COMPLETE induced original
+finite substructure (possibly one point if $y=z$),
+and $B=A\cup\{x\}$ is a complete extension with
+$x\notin A$.  For ANY positive integer $n$,
+iteratively STRONGLY amalgamate $n$ copies of $B$
+over the same labelled copy of $A$.
+There are pairwise distinct new real points
+$x_1,\ldots,x_n$, each satisfying
+$x_iEy$ and $x_iFz$. Consequently
+\[
+                 x_i\ (E\cap F)\ x_j
+                  \qquad(1\le i,j\le n).
+\]
+The finite amalgam embeds in $M$ by the age
+property; as $n$ was arbitrary, some
+$E\cap F$-class is infinite, and transitivity
+of the original sort makes ALL its classes
+infinite. In particular $E\cap F>\Id$.
+
+There are only FINITELY many original invariant
+equivalences, since each is a union of
+finitely many COMPLETE original pair orbitals.
+Iterating the preceding result shows that the
+intersection of ALL nonidentity invariant
+equivalences is still nonidentity.
+Call it $L$. Then $L$ is the UNIQUE least
+nonidentity invariant equivalence and has
+infinite classes. Every nonidentity invariant
+equivalence has infinite classes (take $E=F$),
+so the greatest finite-class original equivalence
+is exactly $\Id$. Thus the sole minimal infinite
+equivalence is $L$ and $r=1$.
+
+Finally fix a finite original real base $A$
+and a real point $u\notin A$.
+By repeatedly strongly amalgamating
+the COMPLETE extension $A\subseteq A\cup\{u\}$
+over the complete base $A$, then embedding
+the result into $M$ and aligning its base by
+homogeneity, we obtain arbitrarily many
+realizations of the COMPLETE old one-point
+type of $u$ over $A$. Homogeneity makes them
+one infinite $\Aut(M/A)$-orbit.
+Thus no off-base real is algebraic, and
+$\operatorname{acl}_M(A)=A$.
+\end{proof}
+
+\begin{corollary}[Infinite joint real fibre of all proper MI quotient coordinates]
+\label{cor:rh-sap-mi-joint-real-fibre}
+Let $M$ be an INFINITE transitive homogeneous
+finite COMPLETE BINARY original structure
+with SAP, with no symmetry or CCO assumption.
+Let $L>\Id$ be its unique least nonidentity
+ORIGINAL invariant equivalence from
+\cref{lem:rh-sap-invariant-monolith}.
+Let $\mathcal I^\times$ be the set of
+ALL proper NONIDENTITY meet-irreducible
+equivalences in the FULL original invariant
+lattice. (The original REAL identity is
+EXCLUDED, even if it is meet-irreducible.)
+With the empty meet interpreted as $\Top$,
+\[
+           \boxed{\quad
+                L=\bigcap_{J\in\mathcal I^\times}J.
+                 \quad}
+ \tag{MK}\label{eq:rh-sap-mi-meet}
+\]
+Thus the ACTUAL map on original real points
+\[
+          \Phi(x)=([x]_J)_{J\in\mathcal I^\times}
+\]
+has infinite real fibres:
+\[
+        \Phi^{-1}(\Phi(x))=[x]_L,\qquad
+        \left|\Aut(M/\Phi(x))\cdot x\right|
+                    =|[x]_L|=\infty.
+\]
+If $\mathcal I^\times=\varnothing$
+(the primitive case), then $L=\Top$,
+the empty tuple is fixed, and the sole
+fibre is all of $M$.  The statement
+concerns an ACTUALLY REALISED full tuple
+of MI quotient values, not an arbitrary
+tuple of classes. It does not assert
+SAP for a hidden language naming
+additional non-MI exact quotients.
+\end{corollary}
+\begin{proof}
+In any FINITE lattice, each element
+$X$ is the meet of all proper
+meet-irreducibles $J\ge X$.
+Indeed, for any $Y\nleq X$, choose
+a maximal $J\ge X$ with $Y\nleq J$.
+If $J=J_1\cap J_2$ with both
+$J_i>J$, maximality would imply
+$Y\le J_1,J_2$, hence $Y\le J$,
+a contradiction. Thus $J$ is
+meet-irreducible and separates
+$Y$ from $X$, proving the finite
+lattice identity without any
+distributivity hypothesis.
+
+Apply it to $X=L$.  Since $L$
+is the UNIQUE least nonidentity
+invariant equivalence, EVERY
+nonidentity invariant equivalence
+contains $L$. Consequently all
+proper meet-irreducibles above $L$
+are exactly $\mathcal I^\times$,
+and their meet is $L$.
+The finite lattice includes the
+primitive empty-list convention.
+
+Now $y$ has the SAME entire MI tuple
+as $x$ iff $xJy$ for every
+$J\in\mathcal I^\times$, equivalently
+$xLy$. Thus its fibre is $[x]_L$,
+which is infinite by
+\cref{lem:rh-sap-invariant-monolith}.
+The pointwise stabiliser of this
+tuple is the setwise stabiliser of
+$[x]_L$: an automorphism fixes all
+$J$-classes of $x$ iff its image
+of $x$ lies in their intersection.
+Original transitivity then makes
+this stabiliser TRANSITIVE on
+$[x]_L$, yielding the asserted
+infinite orbit. No REAL equality
+is represented by a positive
+diversity factor in this proof.
+\end{proof}
+
+\begin{corollary}[Infinite Helly intersections of proper original exact classes under SAP]
+\label{cor:rh-sap-infinite-exact-helly}
+Let $M$ be an infinite transitive homogeneous
+finite complete SYMMETRIC BINARY original
+structure with SAP and semantic
+HOMOMORPHIC CCO. Let
+$E_1,\ldots,E_m>\Id$ be any nonidentity
+FULL RAW exact original invariant
+equivalences on the SAME original
+real sort, and choose actual
+classes $C_i=[x_i]_{E_i}$.
+If all $C_i$ meet pairwise, then
+\[
+    \boxed{\quad\bigcap_{i=1}^m C_i
+                  \ \text{is INFINITE}.\quad}
+\]
+More precisely, with
+$L=\bigcap_{i=1}^m E_i$,
+the intersection is ONE entire
+$L$-class; $L>\Id$ and every
+$L$-class is infinite.
+If in addition the source is TERMINAL
+(full invariant-equivalence NR2), the
+result holds for ALL nonidentity
+original invariant equivalences:
+no separate exactness assumption is
+needed by
+\cref{lem:typed-terminal-all-equivalences-exact}.
+For $m=0$ the intersection is the
+whole infinite original sort.
+For an identity kernel the infinite-size
+conclusion is NOT asserted.
+
+In particular, in the terminal setting,
+a FULL tuple of proper nonidentity
+meet-irreducible original quotient
+classes is realised by an original
+REAL point if and only if the classes
+are PAIRWISE compatible. Whenever
+realised, their entire common
+real fibre is precisely one
+INFINITE class of the unique original
+SAP monolith $L$ by
+\cref{cor:rh-sap-mi-joint-real-fibre}.
+This is an original real-incidence
+statement and does NOT imply SAP
+after naming arbitrary NON-MI
+exact meet quotient sorts.
+\end{corollary}
+\begin{proof}
+For $m\ge1$, the actual classes
+$C_i=B_{E_i}(x_i)$ are FULL RAW exact
+balls, and pairwise intersection is
+the exact hypothesis of the old
+exact-ball $2$-Helly theorem
+\cref{thm:full-typed-exact-balls}(iii)
+on the single original sort.
+Hence choose $x\in\bigcap_i C_i$.
+Since $x\in C_i$, one has
+$C_i=[x]_{E_i}$ for EVERY $i$.
+Therefore
+\[
+               \bigcap_i C_i
+                    =[x]_{\bigcap_iE_i}.
+\]
+By \cref{lem:rh-sap-invariant-monolith},
+the intersection of FINITELY MANY
+nonidentity invariant equivalences
+remains nonidentity with infinite
+classes. Thus the displayed set
+is infinite, as claimed.
+When full NR2 is also assumed,
+\cref{lem:typed-terminal-all-equivalences-exact}
+shows every original invariant
+equivalence is FULL RAW exact;
+the same argument then applies
+to all nonidentity invariant
+equivalence classes.
+\end{proof}
+
+\begin{example}[Two-coordinate real algebraic corners]\label{ex:two-coordinate}
+The absolute real algebraic closure in the hull theorem need not be
+$F[A]$, even when the finite-class packet bottom $F$ is regular and
+thin.  Let $G=\mathbb F_2$ and take
+$M_*=\mathbb N\times\mathbb N\times G$.  For two distinct triples
+$(r,c,g)$ and $(r',c',g')$, name the fine colour by the three data
+$(\mathbf 1_{r=r'},\mathbf 1_{c=c'},g+g')$.  The only missing triple
+$(1,1,0)$ denotes equality, so the diversity palette has seven
+colours.  Every named colour is symmetric.
+
+This is a transitive homogeneous, triangle-defined AP source with
+semantic homomorphic CCO.  Indeed finite partial isomorphisms extend
+by independently permuting the two infinite coordinates and by a
+single translation of $G$.  In a complete diagram, legality of all
+triangles makes each coordinate-equality relation transitive and makes
+the prescribed $G$-differences a coboundary; the absent equality colour
+prevents two distinct vertices from receiving the same triple.  For a
+partial diagram, each specified edge imposes equality or inequality in
+each infinite coordinate and one $G$-difference.  Inconsistency of
+an equality/inequality system has an inequality edge joined by a path
+of equality edges; inconsistency of the $G$-differences has a cycle
+with nonzero total difference.  Each obstruction contains a specified
+simple cycle without a homomorphism.  Conversely, in the absence of
+such obstructions the equality components can be assigned distinct
+coordinate values and the $G$-differences integrated.  This proves
+semantic homomorphic CCO, not merely ordinary AP.
+
+Here $F$ consists of the two-point packets
+$\{(r,c,0),(r,c,1)\}$.  For
+$a=(0,1,0)$, $b=(1,0,0)$ and $x=(0,0,0)$, the two colours
+$\col(x,a)=(1,0,0)$ and $\col(x,b)=(0,1,0)$ determine $x$
+uniquely.  Hence
+\[
+ x\in\operatorname{dcl}_M(\{a,b\})\setminus F[\{a,b\}].
+\]
+The two infinite exact equivalences generated by these colours are,
+respectively, equality of the first coordinate and $G$-coordinate,
+and equality of the second coordinate and $G$-coordinate.  Their
+intersection is equality; the finite intersection in the hull theorem
+is exactly $\{x\}$.  Thus the full canonical-hull argument is genuinely
+stronger than closure under finite packets.  This example does not
+contradict the \emph{relative} owner-closure theorem below, where
+additional owner imaginaries are named.
+\end{example}
+
+
+\begin{remark}[The thin phase packet need not be exact]
+\label{rem:phase-thin-not-exact}
+In the same Cartesian phase model, the two-element packet
+$F[(r,c,g)]=\{(r,c,0),(r,c,1)\}$ is a raw invariant
+finite-class equivalence but is \emph{not} exact.  Indeed each
+raw atom specifies a fixed phase difference in $\mathbb F_2$.
+Consequently every nonempty atomic word profile has a single
+fixed endpoint phase difference, equal to the sum of the
+letters' phase differences.  An intersection of word profiles
+has the same property whenever it is nonempty.  The only exact
+support obtained from the empty defining family is $\Top$.
+Since the proper equivalence $F$ contains both equality
+(phase difference $0$) and the thin flip orbital (phase
+difference $1$), it is not exact.  The same parity argument
+excludes the invariant equivalences ``same row irrespective of
+phase'' and ``same column irrespective of phase'' from the
+proper exact supports.  This is a concrete reason for retaining
+\emph{exactness} in the quotient theorems; arbitrary raw invariant
+quotients are not interchangeable with exact quotients.
+\end{remark}
+
+\begin{remark}[Scope of the CCO substitution]
+The proof applies to the \emph{actual real} structure $M$ and its realised
+one-point fibres over finite real sets. It does not prove the stronger
+AP-only version of the hull theorem or assert CCO inheritance to arbitrary
+nonexact imaginary sorts. Corollary~\ref{cor:hasse}, rather than the
+finite-group classification used in the original AP-only proof, is the
+entire finite-cover input here.
+\end{remark}

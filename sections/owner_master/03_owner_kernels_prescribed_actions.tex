@@ -1,0 +1,144 @@
+\begin{lemma}[Full-fibre-product prescribed-owner kernels and EPPA]
+\label{lem:acf-fibreproduct-owner-kernels}
+Let $D\to O$ and $C\to O$
+be finite induced, SURJECTIVE
+actual exact quotient systems,
+and let $W=D\times_O C$ be
+their FULL induced fine-coloured
+fibre product. Assume the ACTUAL
+group identity
+\[
+   \Aut(W)=\Aut(D)\times_{\Aut(O)}
+                                \Aut(C)
+\tag{FK}\label{eq:acf-fibreproduct-kernel-action}
+\]
+from \cref{lem:acf-fibreproduct-aut}.
+Let $T$ be an actual quotient of $D$, with its induced
+automorphism action. The quotients $T$ and $O$ need not be nested.
+Assume:
+\begin{enumerate}[label=(\roman*)]
+\item $\Aut(D)\to\Aut(T)$
+is ONTO and its kernel acts
+TRANSITIVELY on each fibre
+of $D\to T$;
+\item $C$ has prescribed-owner
+point homogeneity: for ALL
+$x,y\in C$ and EVERY
+$\delta\in\Aut(O)$ with
+$\delta(\pi_Cx)=\pi_Cy$,
+there exists $h\in\Aut(C)$
+inducing EXACTLY $\delta$
+and satisfying $hx=y$.
+\end{enumerate}
+Then:
+\begin{enumerate}[label=(\alph*)]
+\item $\Aut(W)\to\Aut(T)$
+is ONTO and its kernel is
+TRANSITIVE on each fibre
+of $W\to T$;
+\item if the projection $D\to O$ factors through $T$ and
+$W_T=T\times_O C$
+is also a FULL induced
+actual exact fibre product
+with its corresponding
+automorphism-group identity,
+then $\Aut(W)\to\Aut(W_T)$
+is ONTO and its kernel is
+TRANSITIVE on every fibre
+of $W\to W_T$.
+\end{enumerate}
+In either case no group section
+is assumed.
+
+Moreover let $A_W\subseteq W$
+be an actual finite induced
+source whose quotient
+projections $A_D,A_C$
+are as displayed.
+Suppose $D$ has EPPA for
+$A_D$, and $C$ extends
+EVERY compatible partial
+automorphism of $A_C$
+with EVERY prescribed
+owner permutation
+$\delta\in\Aut(O)$.
+Then $W$ has ordinary
+EPPA for $A_W$, provided
+the two projection kernels
+and quotient atomic orbitals
+are ACTUAL invariant old
+fine-colour unions so that
+partial automorphisms of
+$A_W$ descend to genuine
+partial maps of $A_D,A_C$.
+\end{lemma}
+\begin{proof}
+If $C=\varnothing$, surjectivity gives $O=\varnothing$;
+the maps from $D$ and its quotient $T$ then force both to be empty.
+All displayed groups are trivial and the assertions follow.
+Assume henceforth that $C\ne\varnothing$.
+
+By \cref{lem:prescribed-action-point-lifting}, condition (i)
+is equivalent to prescribed-action point lifting for $D\to T$.
+We prove that same property for both displayed quotient maps of $W$;
+the lemma will then give their onto actions and fibre-transitive kernels.
+The full product $W$ projects onto $D$ and hence onto $T$;
+these sets are nonempty.
+
+For (a), fix $(d,x),(d',y)\in W$ and $\eta\in\Aut(T)$
+with $\eta(\pi_Td)=\pi_Td'$. Choose $g\in\Aut(D)$ inducing
+$\eta$ and sending $d$ to $d'$. Its induced $O$-action $\delta$
+satisfies $\delta(\pi_Cx)=\pi_Cy$. By (ii), choose
+$h\in\Aut(C)$ inducing exactly $\delta$ and sending $x$ to $y$.
+Then $(g,h)\in\Aut(W)$ by (FK), induces $\eta$ on $T$,
+and sends the first point to the second. This proves (a), without
+requiring a map $T\to O$.
+
+For (b), $W\to W_T$ is onto: a point $(t,x)\in W_T$ lifts
+by choosing $d$ above $t$, since the $O$-projection factors through $T$.
+Fix $(d,x),(d',y)\in W$ and an automorphism of $W_T$
+carrying their images to one another. By its assumed full-product
+group identity, that automorphism is a pair $(\eta,h)$ with
+$\eta\in\Aut(T)$, $h\in\Aut(C)$ and matching $O$-components.
+It satisfies $\eta(\pi_Td)=\pi_Td'$ and $hx=y$.
+Choose $g\in\Aut(D)$ inducing $\eta$ and sending $d$ to $d'$.
+Since $D\to O$ factors through $T$, its $O$-component equals
+that of $h$. Thus $(g,h)\in\Aut(W)$ lifts the given automorphism
+and carries the first point to the second. This proves (b).
+
+Finally fix any partial
+automorphism $f$ of
+the original source
+$A_W$. Its two
+coordinate projections
+$f_D,f_C$ are
+well-defined partial
+automorphisms of the
+projected induced sources
+by the ACTUAL named
+equivalence-kernel and
+quotient-colour hypothesis.
+Choose a $g\in\Aut(D)$
+extending $f_D$ by
+ordinary EPPA and write
+$\delta$ for its EXACT
+O-owner component.
+Both f-projections have
+identical action on the
+common old owner parameters
+over their original
+domains; hence
+$(f_C,\delta)$ is a
+compatible request.
+Choose $h\in\Aut(C)$
+extending $f_C$ with
+EXACT component $\delta$.
+The pair $(g,h)$
+acts as an automorphism
+of the FULL product W,
+by (FK), and extends
+the ORIGINAL f.
+No choice of a common
+owner section is made.
+\end{proof}
+

@@ -1,0 +1,389 @@
+% A10: common represented-full-exact rigid groupoid, AP/CCO no SAP.
+\section{Full exact functional correspondences and rigid groupoids}
+\label{sec:foundational-rigid-groupoid}
+
+Work in a homogeneous complete finite binary language with finitely
+many named, individually transitive original sorts, symmetric
+same-sort orbitals, and converse-paired mixed orbitals. Assume
+semantic homomorphic CCO, but not SAP. Products are \emph{actual
+represented} relational composition, including logical identity.
+Exact means full identity-inclusive typed word-exact as in
+\cref{thm:full-typed-exact-balls}.
+
+\begin{definition}[Full exact bridge]
+\label{def:foundational-exact-bridge}
+Given a full exact invariant equivalence $K_a$ on sort $a$,
+a \emph{bridge} to sort $b$ is a nonempty full exact relation
+$R:a\to b$ satisfying
+\[
+ K_aR=R,\qquad RR^\smile=K_a.
+ \tag{FB}\label{eq:exact-bridge}
+\]
+Its target kernel is $K_b=R^\smile R$.
+The identity of the quotient object $(a,K_a)$ is $K_a$,
+not necessarily original real equality.
+\end{definition}
+
+\begin{theorem}[Full exact rigid-bridge groupoid]
+\label{thm:foundational-rigid-groupoid}
+Starting with one $(a_*,K_*)$ and closing under bridges, converse
+and composition gives a \emph{finite connected groupoid} of
+full exact quotient-functional correspondences, with:
+\begin{enumerate}[label=(\roman*),leftmargin=*]
+\item the target kernel $K_b$ determined by $b$, independently
+of which bridge path was used;
+\item full exact arrows $R:a\to b$ with
+$K_aR=R=RK_b$, $RR^\smile=K_a$,
+$R^\smile R=K_b$, inducing actual equivariant bijections
+$M_a/K_a\to M_b/K_b$;
+\item elementary abelian $2$-groups as isotropy groups,
+with each nonempty hom-set a torsor under either endpoint group;
+\item freeness: two different arrows $a\to b$ cannot agree
+at even one quotient point.
+\end{enumerate}
+No finite-index parity pivot or distinguished phase is assumed.
+\end{theorem}
+\begin{proof}
+The relation $R^\smile R$ is symmetric, full exact by convolution,
+and reflexive by surjectivity of nonempty invariant $R$ on a
+transitive target sort. Since
+\[
+ (R^\smile R)^2=R^\smile K_aR=R^\smile R,\qquad
+ R(R^\smile R)=K_aR=R,
+\]
+it is an exact equivalence and $R$ is saturated at both ends.
+The two equations $RR^\smile=K_a$ and $R^\smile R=K_b$
+make the induced relation on quotient classes the graph of a
+total bijection; equivariance is automatic from invariance.
+
+If $R,S:a_*\to b$ have a common source kernel, the same-sort
+invariant relation $T=R^\smile S$ is symmetric. Therefore
+\[
+ R^\smile R=R^\smile SS^\smile R=TT^\smile
+          =T^\smile T=S^\smile RR^\smile S=S^\smile S .
+\]
+Thus targets agree. For composable bridges $R:a\to b$,
+$S:b\to c$, $(RS)(RS)^\smile
+=R(SS^\smile)R^\smile=RK_bR^\smile=K_a$,
+and exact convolution proves $RS$ is again a bridge.
+The converse is a bridge in the opposite direction.
+Only finitely many orbital supports occur, so the groupoid
+is finite.
+
+Every same-sort invariant relation equals its converse.
+An isotropy arrow is therefore self-inverse, and its square
+is $K_a$. A finite group of exponent two is elementary
+abelian. If $R,S:a\to b$, then $RS^\smile$ is an isotropy
+arrow sending $S$ to $R$, proving the torsor claim.
+Finally an isotropy equivariant permutation of transitive
+$M_a/K_a$ fixing a single quotient point fixes all points,
+so must equal $K_a$. Thus different arrows cannot agree
+at one point.
+\end{proof}
+
+\begin{lemma}[Transport of a dominant full exact involution]
+\label{lem:foundational-rigid-gate-transport}
+Let $\mathcal H$ be a rigid bridge groupoid as in
+\cref{thm:foundational-rigid-groupoid}, with distinguished object
+$(a_*,K_*)$ and a nonidentity isotropy arrow
+$t_*\in\mathcal H(a_*,a_*)$. Assume that every \emph{original}
+full exact invariant equivalence $Z_*>K_*$ on sort $a_*$
+contains $t_*$. For every reached object $(b,K_b)$ and every
+bridge $R:a_*\to b$ define
+\[
+                         t_b=R^\smile;t_*;R.
+\]
+Conjugation $Z_b\mapsto R;Z_b;R^\smile$ is an order
+isomorphism from the poset of original full exact invariant
+equivalences containing $K_b$ to the corresponding poset
+above $K_*$, with inverse $Z_*\mapsto R^\smile;Z_*;R$.
+Moreover $t_b$ is independent of $R$, is a nonidentity full exact
+isotropy arrow with $t_b;t_b=K_b$, and is contained in every
+\emph{original} full exact invariant equivalence $Z_b>K_b$.
+Consequently its quotient graph $\bar t_b$ is contained in every
+nonidentity \emph{full exact} equivalence on $M_b/K_b$.
+No assumption of SAP or descent of arbitrary old exact domains
+into quotient word-exact domains is needed.
+\end{lemma}
+\begin{proof}
+If $R,S:a_*\to b$ are bridges, put $h=S;R^\smile$, an
+isotropy arrow at $a_*$. Then $S=h;R$ and, since that isotropy
+group is elementary abelian $2$,
+\[
+ S^\smile;t_*;S=R^\smile;h^\smile;t_*;h;R
+                  =R^\smile;t_*;R.
+\]
+Composition and converse in the full exact bridge groupoid
+show that the latter is a full exact isotropy arrow at $b$;
+it is nonidentity because conjugation by the induced quotient
+bijection is injective, and its square is $K_b$.
+
+Now let $Z_b>K_b$ be any original full exact equivalence
+on sort $b$. The old relation
+\[
+                     Z_*=R;Z_b;R^\smile
+\]
+is nonempty full exact by represented convolution. It is a
+symmetric equivalence containing $K_*$: using
+$R^\smile R=K_b$, $RR^\smile=K_*$ and
+$K_b Z_b=Z_b=Z_b^2$, its square is itself.
+Moreover $Z_*>K_*$, because $R$ induces a bijection
+$M_{a_*}/K_*\to M_b/K_b$. More precisely, composition
+with $R^\smile,R$ sends every full exact equivalence above
+$K_*$ back to one above $K_b$ and is inverse to the first
+conjugation, since
+\[
+ R^\smile;(R;Z_b;R^\smile);R=K_b;Z_b;K_b=Z_b
+\]
+and likewise in the other direction. Both maps preserve
+inclusions, proving the asserted order isomorphism.
+By the assumed dominance of $t_*$,
+\[
+ t_b=R^\smile;t_*;R\subseteq
+ R^\smile;Z_*;R=K_b;Z_b;K_b=Z_b.
+\]
+Finally, for a full exact quotient equivalence
+$\bar Z_b>\Id_{b/K_b}$, the inverse image $Z_b$
+is an \emph{original} full exact equivalence strictly above
+$K_b$ by the full exact quotient-word pullback in
+\cref{lem:typed-simultaneous-blocks}. Applying the old-level
+claim and projecting gives $\bar t_b\subseteq\bar Z_b$.
+No reverse exact descent is invoked.
+\end{proof}
+
+\begin{lemma}[Exact bridges descend and lift across exact kernels]
+\label{lem:foundational-rigid-quotient-bridge}
+Let $E_a\le K_a$ and $E_b\le K_b$ be
+full exact invariant equivalences on two
+original named transitive sorts. Form their
+actual simultaneous full exact quotient
+$Q$ by $E_a,E_b$ (and any specified exact
+kernels on the remaining original sorts).
+Assume moreover that the projected
+relations
+\[
+ \bar K_a=K_a/E_a,\qquad \bar K_b=K_b/E_b
+\]
+are \emph{full exact equivalences in the
+quotient represented algebra}.
+Then the map $R\mapsto\bar R$ taking
+$E_a,E_b$-bisaturated original relations
+to their quotient relations is a bijection
+between the exact functional bridges
+$R:(a,K_a)\to(b,K_b)$ and the exact
+functional bridges
+$\bar R:(Q_a,\bar K_a)\to(Q_b,\bar K_b)$.
+It preserves converse and composition.
+In particular no extra rigid bridge appears
+in the quotient, and none disappears.
+
+The full-exactness of the \emph{projected
+gates} $\bar K_a,\bar K_b$ is an explicit
+hypothesis: the general typed quotient
+word-pullback theorem alone only proves
+exactness in the reverse direction.
+\end{lemma}
+\begin{proof}
+A $K_a,K_b$-saturated functional bridge
+$R$ is automatically $E_a,E_b$-bisaturated,
+and its quotient preserves the bridge
+equations by the actual quotient product
+formula
+\cref{lem:typed-simultaneous-blocks}.
+To verify \emph{quotient exactness},
+fix any old atomic colour $c\subseteq R$.
+The old equivariant quotient bijection
+$M_a/K_a\to M_b/K_b$ is transitive on
+its graph; hence all corresponding old
+pairs lie in
+\[
+                   R=K_a;\{c\};K_b.
+\]
+Indeed the orbital $c$ meets every
+corresponding pair of quotient $K$-classes,
+and saturation by $K_a,K_b$ fills the whole
+rectangular block. Passing to $Q$ gives
+\[
+             \bar R=\bar K_a;\bar c;\bar K_b,
+\]
+where $\bar c=E_a;\{c\};E_b$ is one
+named actual quotient orbital. Since
+$\bar K_a,\bar K_b$ and $\bar c$ are
+full exact, quotient exact convolution
+\cref{thm:full-typed-exact-balls}(ii)
+makes $\bar R$ full exact.
+
+Conversely, if $\bar R$ is a quotient
+full exact bridge, its old inverse image
+$R$ is original full exact by the
+quotient full-word pullback of
+\cref{lem:typed-simultaneous-blocks}.
+The quotient bridge equalities pull
+back to $RR^\smile=K_a$ and
+$R^\smile R=K_b$ using the saturated
+quotient product identity; $R$ is
+thus an original exact functional bridge.
+Inverse image and quotient are inverse
+on all endpoint-saturated relations.
+They commute with converse and with
+composition by the same quotient product
+formula. This establishes the bijection.
+\end{proof}
+
+\begin{lemma}[Affine exact rigid slices]
+\label{lem:foundational-rigid-affine}
+Let $D:a\to b$ be nonempty full exact and
+$K_a,K_b$-bisaturated, supported entirely on the union
+of the rigid arrows in a nonempty hom-set above.
+Then $D$ is a union of \emph{whole} rigid arrows; for
+some rigid arrow $d:a\to b$ and an exact subgroup
+$S\le\mathcal H(b,b)$ it has the form $D=dS$.
+Here $dS$ means the union of represented graphs of
+the composite arrows, not an individual original atom.
+\end{lemma}
+\begin{proof}
+The rigid arrow graph is one actual quotient orbital:
+the quotient source is transitive and the arrow equivariant.
+Distinct arrows are disjoint by freeness. Thus $D$,
+being invariant and bisaturated, is a union of whole arrows.
+Identify its nonempty support with a subset $A$ of the
+elementary abelian isotropy group using one arrow $d$.
+Translation by isotropy arrows preserves full exactness
+by convolution. Pairwise intersection of finitely many
+translates of $A$ becomes pairwise intersection of full
+exact relations; their Helly property
+\cref{thm:full-typed-exact-balls} supplies a common arrow.
+The affine-translate lemma
+\cref{lem:foundational-affine-translate-helly}
+makes $A$ a coset. Absorb its shift into $d$ so that
+$A=S$ is a subgroup. Since the represented product
+$D^\smile D$ is the union of the arrows in $S$,
+it is full exact; thus $S$ is an exact subgroup.
+\end{proof}
+
+\begin{lemma}[Rigid-product factorisation]
+\label{lem:foundational-rigid-factor}
+Suppose nonempty full exact $A:a\to b$ and $B:b\to c$
+satisfy $AB\subseteq R$ for one full exact bridge
+$R:a\to c$ from $(a,K_a)$. Then there are bridges
+$R_1:a\to b$, $R_2:b\to c$ with
+\[
+ A\subseteq R_1,\quad B\subseteq R_2,\quad R_1R_2=R.
+\]
+This uses represented seriality, not SAP.
+\end{lemma}
+\begin{proof}
+Every nonempty invariant relation on transitive source and
+target sorts is serial and surjective. In particular
+$\Id_b\subseteq BB^\smile$, whence
+\[
+ AA^\smile\subseteq ABB^\smile A^\smile
+                 \subseteq RR^\smile=K_a.
+\]
+Set $R_1=K_aA$. It is full exact and left saturated.
+The preceding inclusion gives $R_1R_1^\smile\subseteq K_a$;
+seriality of $A$ gives the reverse inclusion.
+Thus $R_1$ is a bridge; let $K_b=R_1^\smile R_1$.
+Because $R_1B\subseteq K_aR=R$, the full exact relation
+$B'=K_bB$ lies in $C=R_1^\smile R$, which is a
+bridge from $(b,K_b)$ to $c$.
+For any $(y,z)\in C$, surjectivity of $B'$ supplies
+$y'$ with $(y',z)\in B'\subseteq C$.
+Since $CC^\smile=K_b$, we have $yK_by'$,
+and $K_bB'=B'$ gives $(y,z)\in B'$.
+Hence $B'=C$. Put $R_2=C$.
+Finally $R_1R_2=R_1R_1^\smile R=K_aR=R$.
+\end{proof}
+
+\begin{theorem}[Binary groupoid characters and phase marking]
+\label{thm:foundational-rigid-character}
+Assume the groupoid of
+\cref{thm:foundational-rigid-groupoid}
+has a distinguished nonidentity isotropy arrow
+$t_*\in\mathcal H(a_*,a_*)$.
+There exists a functor
+$\chi:\mathcal H\to\mathbb F_2$
+with $\chi(t_*)=1$. Every object $b$ has a
+path-independent transported involution
+$t_b=R^\smile t_*R\ne K_b$, with $\chi(t_b)=1$.
+There is a global bit function on all reached quotient
+points satisfying
+\[
+       \lambda(Rq)=\lambda(q)+\chi(R).
+\]
+Rigid quotient pair orbitals have one forced phase
+difference; every nonrigid quotient pair orbital admits
+both phase differences by appropriate global choices.
+Thus the finite unary phase marking is reduct-surjective.
+This alone does \emph{not} imply AP, SAP or CCO of the
+marked age.
+\end{theorem}
+\begin{proof}
+Choose a linear character of the finite source isotropy
+$\mathbb F_2$-vector space taking $t_*$ to one.
+Choose bridges $B_b:a_*\to b$, with $B_{a_*}=K_*$.
+Every arrow $R:b\to c$ has a unique expression
+$B_b^\smile hB_c$ with source isotropy $h$.
+Set $\chi(R)=\chi_*(h)$; the torsor law makes it
+functorial. Any two paths to one object differ by
+isotropy conjugation, and that group is abelian,
+so transporting $t_*$ is path-independent, nontrivial,
+and has character one.
+
+The groupoid acts freely on the disjoint union of its
+quotient point sets. Choose one initial bit for each
+orbit and propagate by the displayed character equation.
+Freeness makes this well-defined. Each rigid arrow is
+one equivariant quotient orbital and fixes its pairwise
+phase difference. If a pair orbital is not rigid, its
+two endpoints belong to different groupoid orbits:
+otherwise some rigid arrow would carry one point to
+the other, and their actual quotient orbital would
+be exactly that rigid arrow. Initial bits on different
+orbits may be toggled independently, realizing both
+differences. Pulling back the global bits to all
+original real points gives the asserted markings.
+\end{proof}
+
+\begin{lemma}[Finite phase constraints extend by groupoid seeds]
+\label{lem:foundational-finite-phase-extension}
+Use a free action on quotient points of a finite connected
+rigid groupoid with a fixed character
+$\chi:\mathcal H\to\mathbb F_2$ as above. Let $F$ be any
+finite set of quotient points and let
+$\epsilon:F\to\mathbb F_2$ be prescribed bits.
+Then there is a \emph{global} phase marking $\lambda$
+satisfying
+\[
+ \lambda(Rq)=\lambda(q)+\chi(R)
+ \quad\text{for all rigid arrows $R$},
+ \qquad \lambda|_F=\epsilon ,
+\]
+if and only if, whenever $q,r\in F$ belong to the
+same rigid-groupoid orbit and $Rq=r$, one has
+\[
+             \epsilon(r)=\epsilon(q)+\chi(R).
+ \tag{FS}\label{eq:foundational-phase-seed-test}
+\]
+It suffices to check the prescribed bits pairwise; no
+additional higher-arity character holonomy condition is
+needed. This does \emph{not} imply a finite projection
+theorem for moving-owner pointwise kernels from
+\cref{thm:finite-fibre-kernel-csp}.
+\end{lemma}
+\begin{proof}
+Necessity follows from the defining character equation.
+For sufficiency, split the entire quotient-point universe
+into its groupoid orbits. On each orbit meeting $F$ choose
+one $q_0\in F$ and prescribe $\lambda(q_0)=\epsilon(q_0)$;
+on all other orbits choose an arbitrary seed.
+Define $\lambda(Rq_0)=\epsilon(q_0)+\chi(R)$.
+Freeness in
+\cref{thm:foundational-rigid-groupoid}
+makes the transporting arrow unique, and
+functoriality of $\chi$ proves every required
+equation. For any other $r\in F$ in that orbit,
+the pairwise condition \eqref{eq:foundational-phase-seed-test}
+gives the desired value $\epsilon(r)$.
+There are no constraints between different orbits.
+\end{proof}

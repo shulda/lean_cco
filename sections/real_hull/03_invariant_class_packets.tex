@@ -1,0 +1,330 @@
+\begin{lemma}[CCO inheritance by invariant equivalence classes]
+\label{lem:rh-class-inherits}
+Let $R\subseteq\mathcal D$ be a global equivalence support and $C$
+any class of $E_R$. In its induced language with diversity palette
+$R$, the structure on $C$ is transitive, homogeneous, triangle-defined,
+and satisfies semantic homomorphic CCO (whether $C$ is finite or
+infinite).
+\end{lemma}
+\begin{proof}
+The diversity colours occurring in $C$ are exactly $R$. The inclusion
+into $R$ holds because $C$ is an $E_R$-class. Conversely, for any
+$r\in R$, take an actual $r$-edge of $M$ and use transitivity to send
+its first endpoint to a fixed point of $C$; its second endpoint must
+then also belong to $C$. The same transitivity argument sends any
+point of $C$ to any other while preserving the whole class.
+
+Any nonempty finite partial isomorphism within $C$ extends by
+homogeneity of $M$ to an automorphism $g$ of $M$. Since it maps at
+least one point of $C$ to another point of $C$, invariance of $E_R$
+forces $g(C)=C$. The empty partial map extends by the identity.
+This proves homogeneity of $C$.
+
+A finite complete $R$-coloured graph all of whose triangles are legal
+in $C$ has all its triangles legal in $M$. Triangle-definedness of
+$M$ realizes it there. Every two realised vertices are $E_R$-related,
+so all lie in a single $E_R$-class. One ambient automorphism moves
+that class to $C$. Thus the induced age of $C$ is triangle-defined.
+
+Finally, let $P$ be a finite partial $R$-coloured diagram and suppose
+each specified simple cycle admits a homomorphism into $C$.
+The same cycles map to $M$, so raw semantic homomorphic CCO yields
+$f:P\to M$. Each connected component of the graph of specified
+edges is mapped entirely into one $E_R$-class: all its edge colours
+belong to $R$. By transitivity an ambient automorphism can move
+that image class to $C$. Apply a potentially different automorphism
+to each component and combine the maps. They agree with every
+specified edge because there are no specified edges between distinct
+components. This gives a homomorphism $P\to C$, proving semantic CCO.
+\end{proof}
+
+\begin{lemma}[Invariant equivalences below a class are exactly its internal equivalences]
+\label{lem:rh-invariant-class-interval}
+Let $E=E_R$ be ANY original
+$\Aut(M)$-invariant equivalence
+and let $C$ be ONE actual
+$E$-class. Restriction to $C$
+gives a lattice isomorphism
+\[
+ \{H:H\text{ an original
+ invariant equivalence on }M,\
+                 \Id\le H\le E\}
+ \ \xrightarrow[\ \cong\ ]{\ H\mapsto H|_C\ }\
+ \{\text{invariant equivalences
+                    of the induced }C\}.
+ \tag{CEI}\label{eq:rh-class-interval}
+\]
+Here the right side means
+invariance under the FULL
+$\Aut(C)$, not merely under a
+preselected subgroup of
+$\Aut(M)$.
+This statement needs original
+ONE-SORT homogeneous COMPLETE
+BINARY atomicity and
+transitivity, but neither CCO
+nor SAP nor finiteness of $C$.
+
+In particular, any internal
+invariant equivalence on a
+FINITE real one-point fibre $Z$
+has a UNIQUE original global
+invariant extension EXACT for
+$Z$, once the finite-fibre
+globalisation theorem has shown
+that $Z$ is ONE class of its
+global $E_T$. Thus the choice
+of a saturated internal Hasse
+chain in that theorem does not
+affect the final extension.
+\end{lemma}
+\begin{proof}
+By \cref{lem:rh-class-inherits},
+the induced structure on $C$
+is homogeneous and transitive
+with precisely the actual old
+diversity atom names $R$.
+For every $r\in R$, an old
+$r$-edge occurs in $C$:
+take any old $r$-edge and move
+its first endpoint to a chosen
+point of $C$ by original
+transitivity. Its other
+endpoint is then in $C$
+because $r\subseteq E$.
+Moreover each old $r$-atom
+restricted to $C$ is ONE
+$\Aut(C)$-orbital: two
+ordered $r$-pairs in $C$
+give a two-point partial
+isomorphism of $C$, which
+extends by its homogeneity.
+
+Let $V$ be ANY internal
+$\Aut(C)$-invariant
+equivalence. Its diversity
+support is therefore a union
+$T\subseteq R$ of ENTIRE
+original named fine atom
+sets, with actual logical
+equality separate. Extend
+it to the binary relation
+$H_T=\Id_M\cup\bigcup T$
+on all of $M$. This is
+clearly globally invariant,
+symmetric and reflexive,
+and is contained in $E$.
+For transitivity, if
+$xH_Ty$ and $yH_Tz$,
+all three points lie in ONE
+original $E$-class.
+Choose one original
+automorphism carrying $x$
+into $C$. Since it
+preserves $E$, it carries
+$y,z$ into that SAME $C$.
+Both corresponding edges
+belong to $V$ there,
+so internal transitivity
+forces the edge from
+the image of $x$ to the
+image of $z$ to belong
+to $V$. Its literal old
+colour is in $T$ or is
+logical equality. Hence
+$xH_Tz$, and $H_T$ is
+an original invariant
+equivalence below $E$.
+By construction
+$H_T|_C=V$.
+
+Conversely every original
+invariant $H\le E$
+restricts to an internal
+invariant equivalence,
+and EVERY old atom of
+$H$ occurs in $C$, so its
+global diversity support
+is uniquely recovered
+from $H|_C$. The two
+maps are therefore
+inverse order
+isomorphisms of the two
+finite equivalence
+lattices. An order
+isomorphism automatically
+preserves meets and joins;
+no assertion of
+DISTRIBUTIVITY is needed.
+
+Finally, for a finite
+one-point fibre $Z$,
+\cref{thm:rh-globalise}
+establishes $Z=[x]_{E_T}$.
+Every $H\le E_T$ has
+all its classes contained
+in $Z$ whenever they meet
+$Z$, so the unique lift
+from the preceding
+isomorphism is EXACT
+for $Z$. This conclusion
+is downstream of
+globalisation and not
+a substitute for proving
+the global existence of
+$E_T$.
+\end{proof}
+
+\begin{corollary}[Relative index two throughout finite original invariant intervals]
+\label{cor:rh-finite-invariant-interval-index-two}
+Let $E$ be an original
+invariant equivalence
+whose classes are FINITE.
+Then EVERY Hasse cover
+$H<K$ in the interval
+$[\Id,E]$ of ORIGINAL
+invariant equivalences
+has relative index
+\[
+                          [K:H]=2 .
+\]
+Consequently every
+$E$-class has size a
+power of two, and the
+interval $[\Id,E]$
+need NOT be
+distributive.
+\end{corollary}
+\begin{proof}
+Fix an $E$-class $C$.
+By \cref{lem:rh-class-inherits}
+it is a finite transitive
+homogeneous symmetric
+structure satisfying
+semantic homomorphic CCO.
+The lattice isomorphism
+\cref{lem:rh-invariant-class-interval}
+carries any original cover
+$H<K\le E$ to a Hasse cover
+of invariant equivalences
+on $C$. By
+\cref{cor:hasse} that
+internal cover has
+relative index two.
+The original relative
+index is the SAME number
+because each original
+$K$-class involved is
+contained in $C$ and
+all its $H$-classes are
+as well. Saturating a
+chain from $\Id$ to $E$
+gives the two-power
+class-size assertion.
+Nothing in the
+argument forces
+distributivity: finite
+elementary abelian
+regular $2$-groups
+already have
+nondistributive
+subgroup intervals.
+\end{proof}
+
+\begin{example}[A nondistributive finite invariant interval in a genuine CCO source]
+\label{ex:rh-finite-invariant-M3}
+Take the one-sort original
+homogeneous structure
+\[
+          M=I\times\mathbb F_2^2,
+\]
+where $I$ is countably
+infinite. For distinct
+$(i,u),(j,v)$ name one
+symmetric old atom $b$
+when $i\ne j$, and
+when $i=j$ name the
+three distinct atoms
+$a_w$ for
+$w=u+v\in\mathbb F_2^2
+                  \setminus\{0\}$.
+Its automorphism group
+permutes the $I$-blocks
+freely and independently
+translates each
+$\mathbb F_2^2$-block.
+The finite induced age
+has AP and semantic
+homomorphic CCO:
+the subgraph of specified
+$a_w$ edges is a
+group-labelled gain graph.
+Its colour requirements
+are soluble within each
+connected component iff
+the sum of labels around
+every specified simple
+cycle is zero.
+A specified $b$-edge
+between vertices in the
+SAME such component
+would form a forbidden
+simple cycle together with
+an $a_w$-path between
+its endpoints.
+Otherwise send different
+$a_w$-components to
+different $I$-blocks.
+This gives one simultaneous
+homomorphic completion.
+
+Let $E$ be the original
+invariant SAME-$I$-block
+equivalence. Its classes
+have four points and
+the interval $[\Id,E]$
+has exactly the THREE
+different subequivalences
+\[
+        \Id\cup a_w
+           \qquad
+       (0\ne w\in\mathbb F_2^2)
+\]
+between $\Id$ and $E$.
+They are pairwise
+incomparable and meet
+in $\Id$, while any two
+join to $E$. Hence
+$[\Id,E]$ is the
+nondistributive
+five-element diamond
+$M_3$, although EVERY
+Hasse cover has relative
+index two. This is an
+interval in the FULL
+ORIGINAL invariant
+equivalence lattice,
+not an assertion that
+all these relations
+belong to the much
+smaller FULL RAW exact
+equivalence lattice.
+\end{example}
+
+\begin{corollary}[Two-power size of finite invariant classes]
+\label{cor:rh-class-2power}
+If $C$ is a finite class of an invariant equivalence $E_R$, then
+\[
+             |C|=2^m\quad\text{for some }0\le m\le |R|.
+\]
+\end{corollary}
+\begin{proof}
+By Lemma~\ref{lem:rh-class-inherits}, $C$ is finite, transitive,
+and has semantic homomorphic CCO. In a saturated chain from equality
+to the universal equivalence on $C$, every Hasse cover has index two
+by Corollary~\ref{cor:hasse}. Thus $|C|=2^m$, where $m$ is the number
+of covers. Since $C$ is homogeneous, its nonidentity pair orbitals
+are precisely the colours in $R$. Each strict inclusion of invariant
+equivalences adds at least one such orbital. Hence $m\le |R|$.
+\end{proof}
+

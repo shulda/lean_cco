@@ -64,9 +64,9 @@
       "id": "I04",
       "name": "thm:full-relative-Hasse",
       "source_label": "thm:full-relative-Hasse",
-      "statement": "In the actual original one-sort transitive homogeneous finite complete symmetric binary CCO source, every finite-relative-index cover in the FULL invariant-equivalence lattice has index two. SAP and exactness are not required. Its proof is a separate upstream obligation, not expanded here. Consequently every finite relative index is a power of two.",
-      "status": "EXPLICIT_UPSTREAM_NOT_EXPANDED",
-      "provider_module": null
+      "statement": "In the actual original one-sort transitive homogeneous finite complete symmetric binary CCO source, every finite-relative-index cover in the FULL invariant-equivalence lattice has index two; every finite relative index is a power of two. No SAP or endpoint exactness. Provider parity_hasse now expands the sparse graph, parity and transposition/height proof; it remains unimplemented in Lean.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "provider_module": "parity_hasse"
     }
   ],
   "source_files": [
@@ -880,7 +880,7 @@
     "date": "2026-10-27",
     "method": "Parent proof expansion plus two independent model reviews of positive and boundary branches. No independent human or Lean certificate.",
     "required_mathematical_repairs_found": 0,
-    "remaining": "Receiving projects must compile and prove the interfaces and claims. Hasse is explicit upstream work; naturality and singleton conventions must not be weakened."
+    "remaining": "Receiving projects must compile and prove the interfaces and claims. Hasse now has the parity_hasse proof-preparation provider; no Lean provider is implemented. Naturality and singleton conventions must not be weakened."
   },
   "overview_mermaid": [
     "flowchart TD",
@@ -899,7 +899,7 @@
   ],
   "overview_notes": [
     "The conditional positive constructor needs no NR2/CCO beyond its supplied interfaces.",
-    "The negative branch retains an explicit unexpanded Hasse provider.",
+    "The negative branch retains the explicit human-expanded parity_hasse provider.",
     "The direct relative example violates NR2 and uses its own SIR proof."
   ],
   "dependency_firewalls": [

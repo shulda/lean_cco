@@ -1,0 +1,156 @@
+\section{CCO on realised one-point fibres}
+Let $A\subset M$ be a finite complete induced substructure and let
+$q(x/A)$ be a realised quantifier-free one-point type of a point not in
+$A$. Let $X_q$ be its set of realisations. By ultrahomogeneity, the
+pointwise stabiliser $\Aut(M)_{(A)}$ acts transitively on $X_q$.
+Write $a_u=\col(x,u)$ for $u\in A$ and any $x\in X_q$; this does not
+depend on the particular $x$. Equip $X_q$ with its actual induced
+pair-colour language, containing only those diversity colours that occur
+between distinct elements of $X_q$.
+
+\begin{lemma}[CCO inheritance on an actual fibre]\label{lem:fibreCCO}
+The induced structure on $X_q$ is homogeneous, triangle-defined and
+satisfies semantic homomorphic CCO.
+\end{lemma}
+\begin{proof}
+Every partial isomorphism of $X_q$ preserves the fixed colour $a_u$
+to each $u\in A$ for every one of its vertices. Adjoin the whole
+complete diagram of $A$ and its spokes to these vertices. By
+homogeneity of $M$, the map extends while fixing $A$, so the induced
+structure on $X_q$ is homogeneous.
+
+Every triangle-consistent finite complete graph using actual colours of
+$X_q$ extends to a complete graph on its vertices and $A$ by assigning
+all edges to $u\in A$ the constant colour $a_u$. Triangles with one
+new vertex and two anchors are realised by $q$; those with two new
+vertices and one anchor are realised because the edge colour occurs in
+$X_q$; and the triangles on three new vertices are legal by hypothesis.
+Triangle-definedness of $\Age(M)$ and homogeneity realise the resulting
+diagram over the actual fixed $A$. This proves triangle-definedness for
+$X_q$.
+
+Now let $P$ be a finite partial diagram in the induced palette of
+$X_q$, with every specified simple cycle mapping homomorphically into
+$X_q$. Adjoin one shared complete copy of $A$ and all spokes of the
+fixed type $q$ to form $P^+$. Every specified simple cycle of $P^+$
+is homomorphically realisable in $M$: this is clear for cycles entirely
+inside $P$ or $A$. A mixed cycle decomposes into maximal $P$-segments
+between consecutive anchor visits. Each $P$-segment has an endpoint-
+free colour-preserving walk in $X_q$, because each prescribed edge colour
+is realised at every point of $X_q$ by the transitivity of
+$\Aut(M)_{(A)}$. Realise the segments independently in $X_q$;
+all their ends have the required spokes to all anchors by definition
+of $q$. Since the source cycle is simple, distinct segments do not share
+non-anchor formal vertices and no inconsistent images are imposed.
+Therefore it maps to $M$.
+
+Semantic homomorphic CCO of $M$ yields a homomorphism $f:P^+\to M$.
+Its restriction to the complete diagram on $A$ is injective. By
+homogeneity postcompose with an automorphism taking the image of that
+copy to the actual $A$ pointwise. All images of vertices of $P$ then
+have the specified spokes and lie in $X_q$. Thus $P\to X_q$ is a
+homomorphism. No SAP or inheritance to arbitrary imaginary sorts was
+used.
+\end{proof}
+
+\section{Finite CCO structures have only binary Hasse covers}
+The required high-girth, high-chromatic graph is supplied by the internal
+Corollary~\ref{cor:high-girth-high-chromatic}, proved in the preceding section.
+Erd\H{o}s's theorem~\cite{Erdos1959} is cited for historical attribution.
+
+\begin{lemma}[Bipartiteness of each atom graph]\label{lem:bip}
+If $F$ is a finite symmetric complete atomic structure satisfying
+semantic homomorphic CCO, then for every diversity atom $a$, the
+simple graph $(F,a)$ is bipartite.
+\end{lemma}
+\begin{proof}
+Suppose an $a$-graph has a simple odd cycle of length $r$. Choose a
+finite graph $H$ of girth greater than $r$ and chromatic number greater
+than $|F|$ by Erd\H{o}s. Colour every edge of $H$ by $a$. Every
+specified simple cycle of length $m$ is homomorphically realisable in
+$F$: if $m$ is even, fold it onto one $a$-edge; if $m$ is odd, then
+$m>r$, and traverse the given $a$-cycle with $(m-r)/2$ additional
+backtracking excursions. CCO gives a colour-preserving homomorphism
+$H\to F$. Since $a$ is irreflexive, this is a proper vertex colouring
+of $H$ with at most $|F|$ colours, contradiction.
+\end{proof}
+
+\begin{corollary}\label{cor:twogroup}
+If $F$ is finite with semantic homomorphic CCO, then $\Aut(F)$ is a
+finite $2$-group.
+\end{corollary}
+\begin{proof}
+If $\Aut(F)$ had order divisible by an odd prime $p$, Cauchy's theorem
+would supply an automorphism $\sigma$ of order $p$. Choose $x$ moved by
+$\sigma$. Then $x,\sigma x,\ldots,\sigma^{p-1}x$ form a monochromatic
+odd cycle, as their successive pairs all have colour
+$\col(x,\sigma x)$. This contradicts Lemma~\ref{lem:bip}.
+\end{proof}
+
+For a transitive $G$-set $\Omega=G/G_x$, invariant equivalences are in
+inclusion-preserving correspondence with subgroups between $G_x$ and $G$.
+This correspondence does not require that the action be faithful.
+
+\begin{corollary}[Finite Hasse index two]\label{cor:hasse}
+If $F$ is finite, transitive and has semantic homomorphic CCO, then
+for any Hasse cover $U<V$ of invariant equivalences on $F$,
+$[V:U]=2$.
+\end{corollary}
+\begin{proof}
+Let $G=\Aut(F)$ and fix $x\in F$. Put
+\[
+ H_U=\{g\in G:(gx,x)\in U\},\qquad
+ H_V=\{g\in G:(gx,x)\in V\}.
+\]
+These are subgroups containing $G_x$. Their indices satisfy
+$[V:U]=[H_V:H_U]$. An intermediate subgroup strictly between $H_U$
+and $H_V$ would give an invariant equivalence strictly between $U$
+and $V$, contrary to the Hasse assumption. Hence $H_U$ is maximal in
+$H_V$. As $H_V$ is a finite $2$-group by
+Corollary~\ref{cor:twogroup}, this maximal subgroup has index $2$.
+\end{proof}
+
+\begin{remark}
+For a finite actual real one-point fibre $X_q$ over a finite complete
+real base $A$, Lemma~\ref{lem:fibreCCO} and
+Corollary~\ref{cor:hasse} yield the internal index-two property used
+by the later RAW-HULL proof. This statement does not give the AP-only
+finite Hasse-cover theorem of SYMAP, nor does it assert CCO for arbitrary
+nonexact quotients or tuple imaginaries.
+\end{remark}
+
+\begin{corollary}[Uniform local finiteness of real algebraic closure]
+\label{cor:fibre-uniform-acl}
+Let $d=|\mathcal D|$. For every nonempty finite real set
+$A\subseteq M$ of size $n$, all finite one-point fibres over $A$
+have cardinality $2^m$ for some $0\le m\le d$, and
+\[
+             |\operatorname{acl}_M(A)|\le n+d^n 2^d.
+\]
+In particular, real algebraic closure is locally finite with a
+bound depending only on $n$ and the named palette. If $A$ is empty,
+then $\operatorname{acl}_M(A)$ is empty for infinite $M$, while for
+finite $M$ its cardinality is a power of two at most $2^d$.
+\end{corollary}
+\begin{proof}
+Ultrahomogeneity identifies the orbit of a real point $x\notin A$
+under $\Aut(M)_{(A)}$ with its realised quantifier-free one-point
+fibre $X_q$ over $A$. For an algebraic $x$ this fibre is finite.
+By Lemma~\ref{lem:fibreCCO}, the induced structure on $X_q$ is
+finite, transitive, homogeneous and has semantic homomorphic CCO.
+Choose a saturated chain of invariant equivalences of $X_q$ from
+identity to the universal relation. Corollary~\ref{cor:hasse} says
+that every cover has index two, so $|X_q|=2^m$. Every strict step
+introduces at least one previously absent named diversity orbital
+of $X_q$, and $X_q$ has at most $d$ such orbitals. Thus $m\le d$.
+
+For a fixed complete real base of size $n$, the colours from a new
+point to the $n$ members of $A$ determine its quantifier-free type;
+there are at most $d^n$ such types. The algebraic closure is $A$
+together with the fibres of the types having finitely many
+realisations. Summing their sizes proves the bound. For $A=\varnothing$,
+transitivity makes $\operatorname{acl}_M(\varnothing)=\varnothing$
+when $M$ is infinite. If $M$ is finite, apply the same finite
+Hasse-chain argument to $M$ itself.
+\end{proof}
+

@@ -1,0 +1,905 @@
+{
+  "schema_version": 1,
+  "id": "exact_crt",
+  "index_title": "Exact CRT, finite lattice coordinates and guarded quotient descent",
+  "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+  "status": "HUMAN_PROOF_EXPANDED_NOT_LEAN",
+  "scope": "Preparation for OTHER Lean projects: five source results and two auxiliary equations. Abstract commuting-equivalence CRT and finite order arguments are separate from the actual CCO exact instance and guarded typed descent. No Lean code.",
+  "scope_vocabulary": [
+    "abstract_crt",
+    "finite_order",
+    "original_exact",
+    "typed_pullback",
+    "same_descent",
+    "typed_descent"
+  ],
+  "scope_explanation": "statement and proof. Set-level CRT, fine-colour readout and descent are distinct exports; no ambient automorphism lift or full-lattice distributivity is inferred.",
+  "assumptions": [
+    {
+      "id": "A01",
+      "name": "Abstract represented equivalences",
+      "statement": "Inhabited X and a sublattice of actual equivalences with pairwise represented commutation. Only finite families are considered; no ambient Id/Top membership, action, finiteness, SAP or CCO assumption."
+    },
+    {
+      "id": "A02",
+      "name": "Finite distributive order setting",
+      "statement": "Finite inhabited distributive lattice for Birkhoff and source MI lemma. The finite-list MI argument itself uses only distributivity. No CCO, group action or exactness."
+    },
+    {
+      "id": "A03",
+      "name": "Original one-sort source",
+      "statement": "Actual inhabited transitive homogeneous finite complete symmetric binary CCO source, original logical identity and represented RAW products. Exact equivalences are only a sublattice of the full invariant lattice. No SAP or Hasse input."
+    },
+    {
+      "id": "A04",
+      "name": "Typed original source",
+      "statement": "Actual homogeneous source with finitely many named inhabited individually transitive sorts, finite binary palettes, symmetric same-sort orbitals and cross-sort converse. Use the explicit full RAW exact provider; no SAP, NR2 or mixed-sort commutation."
+    }
+  ],
+  "imports": [
+    {
+      "id": "I01",
+      "name": "lem:exact-product",
+      "source_label": "lem:exact-product",
+      "statement": "Original RAW exact product closure and distribution over finite exact intersections with NONEMPTY RESULT. Same-sort actual composition, not STRONG multiplication.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "provider_module": "raw_exact"
+    },
+    {
+      "id": "I02",
+      "name": "lem:exact-balls",
+      "source_label": "lem:exact-balls",
+      "statement": "Original same-sort different-centre finite exact-ball Helly, including equality-bearing exact equivalence balls.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "provider_module": "raw_exact"
+    },
+    {
+      "id": "I03",
+      "name": "lem:exact-quotient-colour-meet",
+      "source_label": "lem:exact-quotient-colour-meet",
+      "statement": "For actual exact quotient kernels, the fine orbital block at the meet is the intersection of their coarse orbital blocks; equality atoms retained.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "provider_module": "raw_exact"
+    },
+    {
+      "id": "I04",
+      "name": "thm:full-typed-exact-balls",
+      "source_label": "thm:full-typed-exact-balls",
+      "statement": "Full typed equality-inclusive exact convolution, nonempty-result meet distributivity and serial/Top laws; no mixed-sort commutation is part of the contract.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "provider_module": "raw_exact"
+    }
+  ],
+  "source_files": [
+    {
+      "file": "sections/exact_lattice_crt.tex",
+      "git_blob": "5ead1d021abbc99c255c8a36ec87585cba3fbdc3"
+    },
+    {
+      "file": "sections/exact_gluing_geometry.tex",
+      "git_blob": "c98b468daef5d657d6470e3a14020b8b22cc3a3f"
+    },
+    {
+      "file": "sections/exact_foundations/01_full_raw_exact_helly.tex",
+      "git_blob": "7cb28c86b4b296ddf865b6aff518cda1215cd491"
+    },
+    {
+      "file": "sections/exact_foundations/02_exact_quotient_orbital_geometry.tex",
+      "git_blob": "d462f2bfffcd67c1fa712ac516972ab18e073d44"
+    },
+    {
+      "file": "sections/simultaneous_typed_exact_quotients.tex",
+      "git_blob": "078017a03e1d6f62088fb17fb6e31bce4f6e8ef6"
+    }
+  ],
+  "source_result_files": [
+    "sections/exact_lattice_crt.tex",
+    "sections/exact_gluing_geometry.tex"
+  ],
+  "definitions": [
+    {
+      "id": "D01",
+      "name": "Permuting equivalence sublattice",
+      "statement": "An inhabited X with a sublattice of actual equivalences closed under ambient binary meet/join; every pair permutes. Neither X nor the sublattice need be finite; ambient Id/Top need not belong.",
+      "depends_on": [
+        "A01"
+      ],
+      "notes": "N01",
+      "source": {
+        "file": "sections/exact_lattice_crt.tex",
+        "anchor": "Let $X$ be nonempty"
+      }
+    },
+    {
+      "id": "D02",
+      "name": "Finite class Helly",
+      "statement": "Every finite pairwise-intersecting family E_i[x_i] intersects. Repeated relations and centres are allowed; empty family means X.",
+      "depends_on": [
+        "D01"
+      ],
+      "notes": "N02",
+      "source": {
+        "file": "sections/exact_lattice_crt.tex",
+        "anchor": "every finite pairwise-intersecting family"
+      }
+    },
+    {
+      "id": "D03",
+      "name": "Finite compatible tuple CRT",
+      "statement": "For a finite nonempty list E_i, kernel K=meet E_i; tuples of X/E_i agree in each X/(E_i join E_j). The natural map from X/K is the object studied.",
+      "depends_on": [
+        "D01"
+      ],
+      "notes": "N03",
+      "source": {
+        "file": "sections/exact_lattice_crt.tex",
+        "anchor": "for every finite nonempty family"
+      }
+    },
+    {
+      "id": "D04",
+      "name": "Actual exact invariant lattice",
+      "statement": "All equality-inclusive word-exact invariant equivalences of the original one-sort finite symmetric CCO source; distinct from the full invariant lattice.",
+      "depends_on": [
+        "A03"
+      ],
+      "notes": "N05",
+      "source": {
+        "file": "sections/exact_lattice_crt.tex",
+        "anchor": "The finite lattice"
+      }
+    },
+    {
+      "id": "D05",
+      "name": "Finite Birkhoff poset",
+      "statement": "For a finite inhabited distributive lattice Lambda, P consists of NONZERO join-irreducibles with inherited order; Down(P) is its downset lattice.",
+      "depends_on": [
+        "A02"
+      ],
+      "notes": "N04",
+      "source": {
+        "file": "sections/exact_lattice_crt.tex",
+        "anchor": "It admits Birkhoff's representation"
+      }
+    },
+    {
+      "id": "D06",
+      "name": "Selected MI coordinates",
+      "statement": "A finite nonempty list J_i in a distributive lattice, K=meet J_i, and meet-irreducible L>=K. Properness of actual quotient coordinate L is separate; selected J_i need not themselves be MI.",
+      "depends_on": [
+        "A02"
+      ],
+      "notes": "N06",
+      "source": {
+        "file": "sections/exact_lattice_crt.tex",
+        "anchor": "Let $\\Lambda$ be a finite distributive lattice"
+      }
+    },
+    {
+      "id": "D07",
+      "name": "Actual quotients and two-factor fibre product",
+      "statement": "Actual quotients of equivalences on a common inhabited carrier. For E,J let K=E meet J and Q=E join J; use the natural maps X/E -> X/Q and X/J -> X/Q. Commutation is a separate premise of the two-factor bijection.",
+      "depends_on": [],
+      "notes": "N07",
+      "source": {
+        "file": "sections/exact_gluing_geometry.tex",
+        "anchor": "For an exact invariant equivalence"
+      }
+    },
+    {
+      "id": "D08",
+      "name": "Same-sort saturated source relation",
+      "statement": "Actual exact equivalence J and nonempty invariant exact Q>=J with J;Q;J=Q. Preserve the source containment hypothesis; never use it alone as a saturation proof for a general relation.",
+      "depends_on": [
+        "A03"
+      ],
+      "notes": "N09",
+      "source": {
+        "file": "sections/exact_gluing_geometry.tex",
+        "anchor": "Suppose $J$ is an invariant exact equivalence"
+      }
+    },
+    {
+      "id": "D09",
+      "name": "Typed original kernels and actual quotient colours",
+      "statement": "Named original transitive sorts and full RAW exact invariant kernels E_s on every visited sort. Name all actual quotient pair orbitals of the original group action.",
+      "depends_on": [
+        "A04"
+      ],
+      "notes": "N08",
+      "source": {
+        "file": "sections/exact_gluing_geometry.tex",
+        "anchor": "choose for every"
+      }
+    },
+    {
+      "id": "D10",
+      "name": "Presentation-local intertwining",
+      "statement": "Nonempty full exact D:s->t satisfies E_s;D;E_t=D and has a finite word presentation in which every occurring atom a:u->v obeys E_u;a=a;E_v. Empty restriction list means Top.",
+      "depends_on": [
+        "D09"
+      ],
+      "notes": "N10",
+      "source": {
+        "file": "sections/exact_gluing_geometry.tex",
+        "anchor": "every original atomic factor"
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "name": "Join/product and class compatibility",
+      "statement": "For permuting equivalences E,F, E join F=E;F. Classes E[x],F[y] meet iff x(E join F)y, equivalently their quotient images agree.",
+      "depends_on": [
+        "D01"
+      ],
+      "notes": "N01",
+      "source_labels": [
+        "thm:abstract-exact-crt"
+      ],
+      "scope": "abstract_crt",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C02",
+      "name": "Three-class Helly implies distributivity",
+      "statement": "The classes E[x],F[x],G[y] with xEy and xFzGy give E meet (F join G)<=(E meet F) join (E meet G); the reverse inclusion and dual law give distributivity.",
+      "depends_on": [
+        "C01",
+        "D02"
+      ],
+      "notes": "N02",
+      "source_labels": [
+        "thm:abstract-exact-crt"
+      ],
+      "scope": "abstract_crt",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C03",
+      "name": "Distributivity implies finite class Helly",
+      "statement": "Handle zero/one classes separately, then induct using the nonempty meet of the first n-1 equivalences and finite distributivity. No ambient Top member is required.",
+      "depends_on": [
+        "C01",
+        "D02"
+      ],
+      "notes": "N02",
+      "source_labels": [
+        "thm:abstract-exact-crt"
+      ],
+      "scope": "abstract_crt",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C04",
+      "name": "Natural coordinate map and exact kernel",
+      "statement": "For a finite nonempty list, [x]_K -> ([x]_Ei) is well-defined, injective and has compatible image. This uses no distributivity.",
+      "depends_on": [
+        "D03",
+        "C01"
+      ],
+      "notes": "N03",
+      "source_labels": [
+        "thm:abstract-exact-crt"
+      ],
+      "scope": "abstract_crt",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C05",
+      "name": "Compatibility is pairwise class intersection",
+      "statement": "Every compatible quotient tuple supplies pairwise-intersecting represented classes and conversely.",
+      "depends_on": [
+        "C01",
+        "D03"
+      ],
+      "notes": "N03",
+      "source_labels": [
+        "thm:abstract-exact-crt"
+      ],
+      "scope": "abstract_crt",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C06",
+      "name": "Helly gives finite CRT surjectivity",
+      "statement": "Finite class Helly supplies a real representative of each compatible tuple; with C04 this is a bijection onto the compatible locus.",
+      "depends_on": [
+        "C04",
+        "C05"
+      ],
+      "notes": "N03",
+      "source_labels": [
+        "thm:abstract-exact-crt"
+      ],
+      "scope": "abstract_crt",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C07",
+      "name": "Finite CRT gives class Helly",
+      "statement": "Surjectivity for every finite nonempty list gives nonempty-family class Helly. The empty family uses X inhabited; no infinite-family assertion follows.",
+      "depends_on": [
+        "C05",
+        "A01"
+      ],
+      "notes": "N03",
+      "source_labels": [
+        "thm:abstract-exact-crt"
+      ],
+      "scope": "abstract_crt",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C08",
+      "name": "Nonzero join-irreducibles are join-prime",
+      "statement": "In a distributive lattice p<=x join y implies p=(p meet x) join (p meet y), so join irreducibility gives a choice; finite joins follow, with empty join excluded by p nonzero.",
+      "depends_on": [
+        "D05"
+      ],
+      "notes": "N04",
+      "source_labels": [
+        "lem:acf-exact-distributive"
+      ],
+      "scope": "finite_order",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C09",
+      "name": "Finite join-irreducible decomposition",
+      "statement": "Induct below a in the finite lattice: bottom is the empty join, an irreducible is itself, and every other nonbottom a splits into two smaller elements.",
+      "depends_on": [
+        "D05"
+      ],
+      "notes": "N04",
+      "source_labels": [
+        "lem:acf-exact-distributive"
+      ],
+      "scope": "finite_order",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C10",
+      "name": "Birkhoff downset isomorphism",
+      "statement": "Phi(a)={p<=a} and Psi(D)=join D are inverse monotone maps by decomposition and finite join-primality. The one-element lattice uses P empty.",
+      "depends_on": [
+        "C08",
+        "C09"
+      ],
+      "notes": "N04",
+      "source_labels": [
+        "lem:acf-exact-distributive"
+      ],
+      "scope": "finite_order",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C11",
+      "name": "Exact equivalences form a finite bounded sublattice",
+      "statement": "Finite pair orbitals give finiteness; Id/Top are exact, meets contain Id, and exact convolution plus original commutation gives exact ambient joins.",
+      "depends_on": [
+        "D04",
+        "I01"
+      ],
+      "notes": "N05",
+      "source_labels": [
+        "lem:acf-exact-distributive"
+      ],
+      "scope": "original_exact",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C12",
+      "name": "Class Helly from exact balls",
+      "statement": "Classes of exact equivalences are actual exact balls at their respective centres, so different-centre exact-ball Helly applies. Support Helly alone is not the input.",
+      "depends_on": [
+        "D04",
+        "I02"
+      ],
+      "notes": "N05",
+      "source_labels": [
+        "lem:acf-exact-distributive"
+      ],
+      "scope": "original_exact",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C13",
+      "name": "Actual exact distributivity and finite CRT",
+      "statement": "Instantiate the abstract theorem using C11 and C12; the full invariant lattice is not asserted distributive.",
+      "depends_on": [
+        "C02",
+        "C03",
+        "C04",
+        "C06",
+        "C11",
+        "C12"
+      ],
+      "notes": "N05",
+      "source_labels": [
+        "lem:acf-exact-distributive"
+      ],
+      "scope": "original_exact",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C14",
+      "name": "Actual exact Birkhoff representation",
+      "statement": "Apply the internal finite Birkhoff proof to the exact lattice; no additional unexpanded external theorem is required.",
+      "depends_on": [
+        "C10",
+        "C13"
+      ],
+      "notes": "N05",
+      "source_labels": [
+        "lem:acf-exact-distributive"
+      ],
+      "scope": "original_exact",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C15",
+      "name": "Finite selected-MI cofinality",
+      "statement": "Distributivity makes binary meet-irreducibles meet-prime; finite nonempty-list induction gives meet J_i<=L => some J_i<=L.",
+      "depends_on": [
+        "D06"
+      ],
+      "notes": "N06",
+      "source_labels": [
+        "lem:foundational-MI-coordinate-cofinal"
+      ],
+      "scope": "finite_order",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C16",
+      "name": "Upward quotient-coordinate image",
+      "statement": "For an actual represented instance, inclusion J_i<=L gives the surjection X/J_i -> X/L. No fine-colour reconstruction or ambient lifting is inferred.",
+      "depends_on": [
+        "C15",
+        "D07"
+      ],
+      "notes": "N06",
+      "source_labels": [
+        "lem:foundational-MI-coordinate-cofinal"
+      ],
+      "scope": "abstract_crt",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C17",
+      "name": "Two-factor fibre-product set bijection",
+      "statement": "For any permuting E,J, X/(E meet J) maps bijectively to the fibre product over X/(E join J). No Helly/distributivity is needed for two factors.",
+      "depends_on": [
+        "C01",
+        "C04",
+        "D07"
+      ],
+      "notes": "N07",
+      "source_labels": [
+        "eq:fibreproduct"
+      ],
+      "scope": "abstract_crt",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C18",
+      "name": "Separate two-factor fine-colour readout",
+      "statement": "For actual exact E,J and original atom a including Id, (E meet J);a=(E;a) meet (J;a); same-sort commutation identifies these with actual saturated orbital blocks.",
+      "depends_on": [
+        "D04",
+        "I03"
+      ],
+      "notes": "N07",
+      "source_labels": [
+        "eq:colour-meet"
+      ],
+      "scope": "original_exact",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C19",
+      "name": "Actual typed orbital blocks and composition pullback",
+      "statement": "For an actual quotient orbital with representative atom a:u->v, its old inverse image is E_u;a;E_v. Quotient equality pulls back to E_u. This is a group-orbit witness calculation, not a homogeneity/lifting assumption on the quotient. Inverse image of composable quotient relations equals composition of their actual inverse images, by surjectivity of the intermediate quotient map. This elementary identity needs no exact-calculus provider.",
+      "depends_on": [
+        "D09"
+      ],
+      "notes": "N08",
+      "source_labels": [
+        "lem:typed-intertwining-exact-descent"
+      ],
+      "scope": "typed_pullback",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C20",
+      "name": "Full exact quotient pullback without intertwining",
+      "statement": "Surjectivity and saturation make inverse image commute with composition, retaining the genuine intermediate kernels. Atomic blocks, words and nonempty exact intersections pull back to full exact original relations.",
+      "depends_on": [
+        "C19",
+        "I04"
+      ],
+      "notes": "N08",
+      "source_labels": [
+        "lem:typed-intertwining-exact-descent"
+      ],
+      "scope": "typed_pullback",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C21",
+      "name": "Same-sort projected word identity",
+      "statement": "For an old word, original commutation moves J through its factors, so J;P_w;J equals the product of the saturated atomic blocks. Empty word has saturated value J.",
+      "depends_on": [
+        "D08",
+        "C19"
+      ],
+      "notes": "N09",
+      "source_labels": [
+        "lem:exact-descent"
+      ],
+      "scope": "same_descent",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C22",
+      "name": "Same-sort exact descent",
+      "statement": "For the nonempty saturated exact Q, exact meet-product distributivity writes Q as the intersection of its saturated word profiles, each a quotient-word pullback; hence Q/J is exact.",
+      "depends_on": [
+        "C21",
+        "I01"
+      ],
+      "notes": "N09",
+      "source_labels": [
+        "lem:exact-descent"
+      ],
+      "scope": "same_descent",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C23",
+      "name": "Intertwining removes intermediate kernels",
+      "statement": "The TI law for every factor in the chosen word allows its actual quotient-word pullback to equal E_s;P_w;E_t. No unrestricted mixed-sort commutation is used.",
+      "depends_on": [
+        "D10",
+        "C19"
+      ],
+      "notes": "N10",
+      "source_labels": [
+        "lem:typed-intertwining-exact-descent"
+      ],
+      "scope": "typed_descent",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C24",
+      "name": "Typed exact descent from a TI presentation",
+      "statement": "Endpoint saturation, nonempty-result typed exact convolution and C23 give an exact quotient-word presentation for D/(E_s,E_t), including empty words and empty restriction lists.",
+      "depends_on": [
+        "C23",
+        "I04"
+      ],
+      "notes": "N10",
+      "source_labels": [
+        "lem:typed-intertwining-exact-descent"
+      ],
+      "scope": "typed_descent",
+      "status": "HUMAN_PROOF_EXPANDED"
+    }
+  ],
+  "exports": [
+    {
+      "source_label": "thm:abstract-exact-crt",
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07"
+      ]
+    },
+    {
+      "source_label": "lem:acf-exact-distributive",
+      "claims": [
+        "C11",
+        "C12",
+        "C13",
+        "C14"
+      ]
+    },
+    {
+      "source_label": "lem:foundational-MI-coordinate-cofinal",
+      "claims": [
+        "C15",
+        "C16"
+      ]
+    },
+    {
+      "source_label": "lem:exact-descent",
+      "claims": [
+        "C20",
+        "C21",
+        "C22"
+      ]
+    },
+    {
+      "source_label": "lem:typed-intertwining-exact-descent",
+      "claims": [
+        "C19",
+        "C20",
+        "C23",
+        "C24"
+      ]
+    }
+  ],
+  "auxiliary_exports": [
+    {
+      "source_label": "eq:fibreproduct",
+      "claims": [
+        "C17"
+      ],
+      "source": {
+        "file": "sections/exact_gluing_geometry.tex",
+        "anchor": "\\label{eq:fibreproduct}"
+      }
+    },
+    {
+      "source_label": "eq:colour-meet",
+      "claims": [
+        "C18"
+      ],
+      "source": {
+        "file": "sections/exact_gluing_geometry.tex",
+        "anchor": "\\label{eq:colour-meet}"
+      }
+    }
+  ],
+  "tasks": [
+    {
+      "id": "T01",
+      "name": "Abstract finite CRT",
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C17"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Prove permuting-equivalence compatibility, Helly/distributivity equivalence, the finite tuple map and two-factor bijection without model-theoretic hypotheses."
+    },
+    {
+      "id": "T02",
+      "name": "Finite order representation and MI",
+      "claims": [
+        "C08",
+        "C09",
+        "C10",
+        "C15",
+        "C16"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Prove or reuse an exact finite Birkhoff contract; retain nonzero join-irreducibles and nonempty MI coordinate lists, then actual quotient maps."
+    },
+    {
+      "id": "T03",
+      "name": "Actual exact-lattice and colour instance",
+      "claims": [
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C18"
+      ],
+      "depends_on": [
+        "T01",
+        "T02"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Use distinct RAW products, exact-ball Helly and colour-readout imports; do not conflate the set CRT with pair-colour reconstruction."
+    },
+    {
+      "id": "T04",
+      "name": "Actual quotient blocks and pullback",
+      "claims": [
+        "C19",
+        "C20"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Prove original-action block inverse images and word/exact pullback, preserving intermediate kernels and quotient identity."
+    },
+    {
+      "id": "T05",
+      "name": "Same-sort and guarded typed descent",
+      "claims": [
+        "C21",
+        "C22",
+        "C23",
+        "C24"
+      ],
+      "depends_on": [
+        "T04"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Prove same-sort commutation and presentation-local typed intertwining routes; keep explicit endpoint saturation and empty-word/restriction cases."
+    }
+  ],
+  "controls": [
+    {
+      "id": "R01",
+      "check": "All equivalence pairs on a four-point set: two-factor compatibility surjectivity exactly tracks represented commutation."
+    },
+    {
+      "id": "R02",
+      "check": "Boolean coordinate CRT succeeds; F2² full M3 lattice defeats commutation-only CRT; a distributive noncommuting diamond defeats distributivity-only CRT."
+    },
+    {
+      "id": "R03",
+      "check": "Finite downset lattices: Birkhoff inverse maps and MI meet-primality, including the one-element lattice and empty-poset case."
+    },
+    {
+      "id": "R04",
+      "check": "Actual typed F2 source: endpoint saturation alone does not justify factorwise word projection; TI examples and quotient pullback retain their precise scope."
+    },
+    {
+      "id": "R05",
+      "check": "Nontrivial kernels distinguish quotient equality from real Id, empty-family ambient Top from a sublattice top, and containment from saturation of arbitrary relations."
+    }
+  ],
+  "control_script": "tools/check_exact_crt_controls.py",
+  "article_feedback": [
+    {
+      "id": "F01",
+      "kind": "WORDING_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/exact_lattice_crt.tex",
+        "anchor": "Let $X$ be nonempty"
+      },
+      "finding": "The abstract sublattice need not contain ambient Id/Top; CRT families are nonempty and finite.",
+      "proposed_article_change": "Optionally spell out binary-sublattice and finite-family conventions.",
+      "caller_effect": "No source hypothesis/conclusion changed; protects the separation of interfaces.",
+      "proof_claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07"
+      ]
+    },
+    {
+      "id": "F02",
+      "kind": "WORDING_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/exact_lattice_crt.tex",
+        "anchor": "It admits Birkhoff's representation"
+      },
+      "finding": "Birkhoff uses nonzero join-irreducibles, not necessarily atoms; source MI coordinates are a different notion.",
+      "proposed_article_change": "Keep the internal proof in preparation; name the poset when a human exposition needs it.",
+      "caller_effect": "No source hypothesis/conclusion changed; protects the separation of interfaces.",
+      "proof_claims": [
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14"
+      ]
+    },
+    {
+      "id": "F03",
+      "kind": "WORDING_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/exact_gluing_geometry.tex",
+        "anchor": "Suppose $J$ is an invariant exact equivalence"
+      },
+      "finding": "Q>=J does not replace explicit saturation for a general relation. The proof only needs nonempty exact saturated Q, but the source export retains containment.",
+      "proposed_article_change": "Optionally state the weaker general premise later; no required theorem repair.",
+      "caller_effect": "No source hypothesis/conclusion changed; protects the separation of interfaces.",
+      "proof_claims": [
+        "C21",
+        "C22"
+      ]
+    },
+    {
+      "id": "F04",
+      "kind": "WORDING_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/exact_gluing_geometry.tex",
+        "anchor": "every original atomic factor"
+      },
+      "finding": "Intertwining is local to a chosen presentation and each visited sort needs its own kernel. Endpoint saturation alone does not give the factorwise word identity.",
+      "proposed_article_change": "Retain the sufficient-criterion qualification; keep the diagnostic typed model in proof notes.",
+      "caller_effect": "No source hypothesis/conclusion changed; protects the separation of interfaces.",
+      "proof_claims": [
+        "C23",
+        "C24"
+      ]
+    }
+  ],
+  "review": {
+    "date": "2026-10-27",
+    "method": "Two independent read-only model reviews of the abstract CRT/order branch and actual gluing/descent branch, plus parent expansion and finite controls. No independent human or Lean certificate.",
+    "required_mathematical_repairs_found": 0,
+    "remaining": "All contracts still require Lean representations, proofs or checked library reuse. No compiled provider names are asserted."
+  },
+  "overview_mermaid": [
+    "flowchart TD",
+    "  A[\"Permuting equivalences\"] --> C[\"Finite class CRT\"]",
+    "  L[\"Finite distributive order\"] --> B[\"Birkhoff and MI\"]",
+    "  R[\"RAW products and exact balls\"] --> E[\"Actual exact lattice\"]",
+    "  C --> E",
+    "  B --> E",
+    "  Q[\"Actual quotient orbitals\"] --> P[\"Exact pullback\"]",
+    "  Q --> D[\"Guarded descent\"]",
+    "  R --> D"
+  ],
+  "overview_notes": [
+    "Two-factor set reconstruction needs only commutation; fine-colour recovery has a separate RAW provider.",
+    "No Hasse/parity or selector provider is used. Typed descent requires intertwining only in the chosen presentation; pullback does not."
+  ],
+  "dependency_firewalls": [
+    {
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C15",
+        "C16",
+        "C17"
+      ],
+      "forbid": [
+        "A03",
+        "A04",
+        "I01",
+        "I02",
+        "I03",
+        "I04"
+      ]
+    },
+    {
+      "claims": [
+        "C18"
+      ],
+      "forbid": [
+        "C02",
+        "C03",
+        "C06",
+        "C13"
+      ]
+    },
+    {
+      "claims": [
+        "C19",
+        "C20"
+      ],
+      "forbid": [
+        "D10",
+        "C23",
+        "C24"
+      ]
+    }
+  ]
+}

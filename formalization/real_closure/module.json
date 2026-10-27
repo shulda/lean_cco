@@ -1,0 +1,1280 @@
+{
+  "schema_version": 1,
+  "id": "real_closure",
+  "index_title": "Real algebraic closure bounds, SAP monolith and terminal original incidence",
+  "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+  "status": "HUMAN_PROOF_EXPANDED_NOT_LEAN",
+  "scope": "Preparation for OTHER Lean projects. Full real_hull/06 and /07 yield six numbered results; two selected terminal-word results bring the export total to eight. The coordinate and phase examples are expanded separately. No mathematical Lean implementation or new allocation is made. The palette-cost proof uses prepared CRT/class Helly instead of Neumann.",
+  "scope_vocabulary": [
+    "symmetric_elementary",
+    "ap_cco",
+    "exact_lattice",
+    "real_closure",
+    "examples",
+    "sap_elementary",
+    "finite_lattice",
+    "terminal_elementary",
+    "terminal_cco",
+    "sap_exact_helly"
+  ],
+  "scope_explanation": "statement and proof. SAP monolith/MI geometry does not require symmetry or CCO; terminal words require symmetry and full NR2 but no SAP or CCO.",
+  "assumptions": [
+    {
+      "id": "A01",
+      "name": "Elementary original source",
+      "statement": "Fix one inhabited named original real sort a in a possibly many-sorted ultrahomogeneous finite complete binary relational source. G is Aut of the WHOLE ambient source and acts transitively on a. The finite same-sort palette consists of actual G-pair orbitals, with logical equality separate. Relations and equivalences below are G-invariant on a. Finite induced same-sort partial isomorphisms extend ambiently by homogeneity; no extension of an arbitrary full automorphism of the sort reduct is assumed. The one-sort article is the special case."
+    },
+    {
+      "id": "A02",
+      "name": "Symmetric original pair orbitals",
+      "statement": "For the symmetric branches every same-sort original G-pair orbital on the fixed a is symmetric. This gives commutation of invariant endorelations, without SAP or CCO."
+    },
+    {
+      "id": "A03",
+      "name": "AP and original semantic homomorphic CCO",
+      "statement": "The original age has AP and finite partial diversity diagrams satisfy semantic homomorphic CCO. Use the exact named providers with these hypotheses; no arbitrary imaginary inheritance is assumed."
+    },
+    {
+      "id": "A04",
+      "name": "Age strong amalgamation",
+      "statement": "The actual original age has SAP over complete induced finite bases. This is independent of symmetry and CCO."
+    },
+    {
+      "id": "A05",
+      "name": "Full-lattice no relative index two",
+      "statement": "Optional terminal condition on the FULL lattice of G-invariant equivalences on the fixed named sort a: no relative-index-two interval. The stronger source no proper finite-index interval implies it. Never replace this full lattice by an exact sublattice or replace G by an unproved automorphism extension."
+    },
+    {
+      "id": "A06",
+      "name": "Elementary combinatorics and orbit definitions",
+      "statement": "Classical finite sets/cardinals, finite lattice maximality and finite pigeonhole; natural-number coordinate models and permutations. Algebraicity is finite pointwise-stabilizer orbit, identified with finite-formula algebraicity by the finite complete binary one-point formula. No Neumann or infinite Ramsey input is imported."
+    }
+  ],
+  "imports": [
+    {
+      "id": "I01",
+      "name": "thm:rh-hull",
+      "source_label": "thm:rh-hull",
+      "provider_module": "canonical_hull",
+      "statement": "A finite actual one-point orbit over a finite real base lies in a finite canonical intersection of original Gamma classes; conversely any such finite intersection contains the orbit. Empty base and on-base equality are handled separately.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01",
+        "A02",
+        "A03"
+      ]
+    },
+    {
+      "id": "I02",
+      "name": "thm:rh-globalise",
+      "source_label": "thm:rh-globalise",
+      "provider_module": "canonical_hull",
+      "statement": "A finite realised complete one-point fibre is one whole class of an original finite-class invariant equivalence. Uniqueness of internal lifts is only inside the relevant interval.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01",
+        "A02",
+        "A03"
+      ]
+    },
+    {
+      "id": "I03",
+      "name": "cor:rh-class-2power",
+      "source_label": "cor:rh-class-2power",
+      "provider_module": "canonical_hull",
+      "statement": "An original invariant class with f internal diversity atoms, if finite, has size a power of two at most 2^f.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01",
+        "A02",
+        "A03"
+      ]
+    },
+    {
+      "id": "I04",
+      "name": "lem:rh-evenwalk",
+      "source_label": "lem:rh-evenwalk",
+      "provider_module": "canonical_hull",
+      "statement": "Even connectivity of one symmetric diversity atom is represented by one positive even atomic word; it is Gamma(a) when a is looped.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01",
+        "A02"
+      ]
+    },
+    {
+      "id": "I05",
+      "name": "lem:acf-exact-distributive",
+      "source_label": "lem:acf-exact-distributive",
+      "provider_module": "exact_crt",
+      "statement": "The actual FULL RAW exact original equivalences form a finite distributive sublattice of the full invariant-equivalence lattice. Meets and joins agree with the full lattice; F need not belong to this sublattice.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01",
+        "A02",
+        "A03"
+      ]
+    },
+    {
+      "id": "I06",
+      "name": "thm:full-typed-exact-balls",
+      "source_label": "thm:full-typed-exact-balls",
+      "provider_module": "raw_exact",
+      "statement": "Finite pairwise-intersecting actual FULL RAW exact balls on one original sort have a common original real point. Different centres are allowed; no SAP is required.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01",
+        "A02",
+        "A03"
+      ]
+    },
+    {
+      "id": "I07",
+      "name": "lem:cco-triangle-fullness",
+      "source_label": "lem:cco-triangle-fullness",
+      "provider_module": null,
+      "statement": "Under age AP and original semantic homomorphic CCO, every finite complete triangle-legal original diagram belongs to the age.",
+      "status": "HUMAN_SUPPORT_PROOF_NOT_LEAN",
+      "depends_on": [
+        "A01",
+        "A02",
+        "A03"
+      ]
+    }
+  ],
+  "source_files": [
+    {
+      "file": "sections/real_hull/06_minimal_infinite_directions_acl.tex",
+      "git_blob": "4c01beca2f60acfa2d942714525173889bc5804f"
+    },
+    {
+      "file": "sections/real_hull/07_sap_mi_intersection_geometry.tex",
+      "git_blob": "7d681c9087c1d7f41ea65a834158daf456ee5fd2"
+    },
+    {
+      "file": "sections/terminal_invariant_raw_exact.tex",
+      "git_blob": "af0064c672f332049209e142a585bc62540954b4"
+    },
+    {
+      "file": "sections/real_hull/05_even_walk_canonical_hull.tex",
+      "git_blob": "40c459c5d2582ad92811ab62dcffbcb4456a8826"
+    },
+    {
+      "file": "sections/real_hull/02_global_finite_fibre_fixer.tex",
+      "git_blob": "61b51f223bb0bec1c0ae53c3f21d8c7336def669"
+    },
+    {
+      "file": "sections/real_hull/03_invariant_class_packets.tex",
+      "git_blob": "a0093ce4c6d0366a1060ae7678090be765884462"
+    },
+    {
+      "file": "sections/exact_lattice_crt.tex",
+      "git_blob": "5ead1d021abbc99c255c8a36ec87585cba3fbdc3"
+    },
+    {
+      "file": "sections/exact_foundations/01_full_raw_exact_helly.tex",
+      "git_blob": "7cb28c86b4b296ddf865b6aff518cda1215cd491"
+    },
+    {
+      "file": "sections/triangle_fullness.tex",
+      "git_blob": "d25f85dd267577d1af0c6ffb1245809892fe1dc0"
+    },
+    {
+      "file": "sections/finite_packets.tex",
+      "git_blob": "dd3e608f03e7c5b1b1854a45de462859f8355143"
+    }
+  ],
+  "source_result_files": [
+    "sections/real_hull/06_minimal_infinite_directions_acl.tex",
+    "sections/real_hull/07_sap_mi_intersection_geometry.tex"
+  ],
+  "additional_result_exports": [
+    "lem:typed-all-invariant-equivalences-raw-word",
+    "lem:typed-terminal-all-equivalences-exact"
+  ],
+  "definitions": [
+    {
+      "id": "D01",
+      "name": "Full original invariant lattice",
+      "statement": "All actual G-invariant equivalences on the fixed original sort a, ordered by relation inclusion; finitely many since each is a union of finitely many actual G-pair orbitals. Top and Id are actual universal relation and equality on a.",
+      "depends_on": [
+        "A01"
+      ],
+      "notes": "N01",
+      "source": {
+        "file": "sections/real_hull/07_sap_mi_intersection_geometry.tex",
+        "anchor": "FULL invariant-equivalence lattice"
+      }
+    },
+    {
+      "id": "D02",
+      "name": "Greatest finite-class packet F",
+      "statement": "F is the greatest full invariant equivalence whose real classes are finite, constructed in C02. It is not assumed RAW exact. f and d_infty count atom NAMES inside and outside F.",
+      "depends_on": [
+        "D01"
+      ],
+      "notes": "N01",
+      "source": {
+        "file": "sections/real_hull/06_minimal_infinite_directions_acl.tex",
+        "anchor": "greatest finite-class ORIGINAL invariant"
+      }
+    },
+    {
+      "id": "D03",
+      "name": "Minimal infinite directions",
+      "statement": "The distinct inclusion-minimal full invariant equivalences with infinite classes; r is their finite count. Empty list exactly when the transitive source is finite.",
+      "depends_on": [
+        "D01"
+      ],
+      "notes": "N01",
+      "source": {
+        "file": "sections/real_hull/06_minimal_infinite_directions_acl.tex",
+        "anchor": "minimal infinite"
+      }
+    },
+    {
+      "id": "D04",
+      "name": "Exact finite-class join Kfin",
+      "statement": "Join of all finite-class FULL RAW exact original equivalences, including Id; constructed inside the exact sublattice. It is at most F and equality is not presumed.",
+      "depends_on": [
+        "D01"
+      ],
+      "notes": "N01",
+      "source": {
+        "file": "sections/real_hull/06_minimal_infinite_directions_acl.tex",
+        "anchor": "K_{\\mathrm{fin}}"
+      }
+    },
+    {
+      "id": "D05",
+      "name": "Boolean direction joins",
+      "statement": "A_S=Kfin join all E_i for i in S; A_empty=Kfin. All these belong to the actual exact sublattice.",
+      "depends_on": [
+        "D03",
+        "D04"
+      ],
+      "notes": "N02",
+      "source": {
+        "file": "sections/real_hull/06_minimal_infinite_directions_acl.tex",
+        "anchor": "A_S="
+      }
+    },
+    {
+      "id": "D06",
+      "name": "Real algebraic and definable closure",
+      "statement": "For a finite real base A in a, acl_a(A) is the union of finite G_A-orbits on a and dcl_a(A) the fixed-point set. The finite complete one-point formula and ambient homogeneity identify these with ambient formula algebraicity/definability on this sort. No arbitrary sort-reduct automorphism lift is assumed.",
+      "depends_on": [
+        "A01"
+      ],
+      "notes": "N03",
+      "source": {
+        "file": "sections/real_hull/06_minimal_infinite_directions_acl.tex",
+        "anchor": "operatorname{acl}_M(A)"
+      }
+    },
+    {
+      "id": "D07",
+      "name": "Original Gamma connectivity",
+      "statement": "Gamma(p) is the full invariant equivalence generated by actual symmetric atom p, not automatically RAW word-exact.",
+      "depends_on": [
+        "A01",
+        "A02"
+      ],
+      "notes": "N01",
+      "source": {
+        "file": "sections/real_hull/06_minimal_infinite_directions_acl.tex",
+        "anchor": "\\Gamma(p)="
+      }
+    },
+    {
+      "id": "D08",
+      "name": "Finite closure polynomial",
+      "statement": "For infinite M, n=|A|, c is the uniform finite size of F-classes, f the number of internal atoms and d_infty the number outside F.",
+      "depends_on": [
+        "D02",
+        "D03"
+      ],
+      "notes": "N04",
+      "source": {
+        "file": "sections/real_hull/06_minimal_infinite_directions_acl.tex",
+        "anchor": "c=|[x]_{E_F}|"
+      }
+    },
+    {
+      "id": "D09",
+      "name": "SAP monolith",
+      "statement": "For infinite SAP M, the meet of all nonidentity full original invariant equivalences, including Top. Its nontriviality is proved, not assumed.",
+      "depends_on": [
+        "D01"
+      ],
+      "notes": "N06",
+      "source": {
+        "file": "sections/real_hull/07_sap_mi_intersection_geometry.tex",
+        "anchor": "UNIQUE least nonidentity"
+      }
+    },
+    {
+      "id": "D10",
+      "name": "Proper nonidentity full MI family",
+      "statement": "All proper meet-irreducibles in the full lattice except real Id, even when Id is meet-irreducible. Empty meet is Top. No distributivity is implicit.",
+      "depends_on": [
+        "D01"
+      ],
+      "notes": "N07",
+      "source": {
+        "file": "sections/real_hull/07_sap_mi_intersection_geometry.tex",
+        "anchor": "\\mathcal I^\\times"
+      }
+    },
+    {
+      "id": "D11",
+      "name": "Actual quotient tuple map",
+      "statement": "Phi(x) is the tuple of actual equivalence classes of x for all named proper nonidentity MI kernels. Only realised tuples are claimed to have fibres before a separate compatibility theorem.",
+      "depends_on": [
+        "D10"
+      ],
+      "notes": "N07",
+      "source": {
+        "file": "sections/real_hull/07_sap_mi_intersection_geometry.tex",
+        "anchor": "\\Phi(x)="
+      }
+    },
+    {
+      "id": "D12",
+      "name": "Terminal RAW atomic words",
+      "statement": "Empty atomic word represents actual Id; positive words are actual represented relation products including identity outputs. No STRONG identity atom is introduced.",
+      "depends_on": [
+        "D01",
+        "A05"
+      ],
+      "notes": "N08",
+      "source": {
+        "file": "sections/terminal_invariant_raw_exact.tex",
+        "anchor": "ACTUAL RAW empty"
+      }
+    },
+    {
+      "id": "D13",
+      "name": "Coordinate and phase sources",
+      "statement": "N^r with nonempty difference-support atoms; N^2 times F2 with two equality flags and phase difference. Finite snapshots are controls, not infinite SAP/CCO certificates.",
+      "depends_on": [
+        "A06"
+      ],
+      "notes": "N05",
+      "source": {
+        "file": "sections/real_hull/06_minimal_infinite_directions_acl.tex",
+        "anchor": "M_r="
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "name": "Finite full lattice and symmetric permutability",
+      "statement": "Every invariant original equivalence is a literal old-atom union; in the symmetric case invariant endorelations commute and equivalence composition is the full-lattice join.",
+      "depends_on": [
+        "D01",
+        "A02"
+      ],
+      "notes": "N01",
+      "source_labels": [
+        "lem:rh-direction-palette-bound"
+      ],
+      "scope": "symmetric_elementary",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C02",
+      "name": "Existence of greatest finite packet",
+      "statement": "Products of commuting finite-class invariant equivalences have finite classes, of size at most the product of their uniform class sizes. Join the finite family to obtain F, without asserting F exact.",
+      "depends_on": [
+        "C01",
+        "D02"
+      ],
+      "notes": "N01",
+      "source_labels": [
+        "lem:rh-direction-palette-bound"
+      ],
+      "scope": "symmetric_elementary",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C03",
+      "name": "Minimal infinite directions are word exact",
+      "statement": "A finite triangle Ramsey argument in an infinite E_i-class supplies a looped atom a within E_i. Triangle fullness makes arbitrarily large a-cliques, so Gamma(a) has infinite classes and minimality gives E_i=Gamma(a). The positive even-word provider makes this actual RAW exact. No quotient claim from prop:minimalcut is used.",
+      "depends_on": [
+        "C01",
+        "D03",
+        "D07",
+        "A06",
+        "I04",
+        "I07"
+      ],
+      "notes": "N01",
+      "source_labels": [
+        "lem:rh-direction-palette-bound"
+      ],
+      "scope": "ap_cco",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C04",
+      "name": "Finite exact bottom Kfin",
+      "statement": "Finite join of all finite-class exact equivalences is finite-class and exact by the exact sublattice law; Kfin<=F, with no equality assertion.",
+      "depends_on": [
+        "C01",
+        "C02",
+        "D04",
+        "I05"
+      ],
+      "notes": "N01",
+      "source_labels": [
+        "lem:rh-direction-palette-bound"
+      ],
+      "scope": "exact_lattice",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C05",
+      "name": "Boolean direction intersection identities",
+      "statement": "For distinct minimal infinite E_i,E_j their meet is finite and exact, hence below Kfin. Distributivity ONLY in the exact sublattice yields A_S meet A_T=A_(S intersect T), including empty subsets.",
+      "depends_on": [
+        "C03",
+        "C04",
+        "D05",
+        "I05"
+      ],
+      "notes": "N02",
+      "source_labels": [
+        "lem:rh-direction-palette-bound"
+      ],
+      "scope": "exact_lattice",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C06",
+      "name": "Every Boolean facet has infinite relative index",
+      "statement": "For nonempty S and i in S, A_i meet A_(S minus i)=Kfin. The infinite A_i-class modulo finite Kfin injects into facet classes in one A_S-class, giving infinite relative index.",
+      "depends_on": [
+        "C05"
+      ],
+      "notes": "N02",
+      "source_labels": [
+        "lem:rh-direction-palette-bound"
+      ],
+      "scope": "exact_lattice",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C07",
+      "name": "Facet-class CRT avoidance of nonexact F",
+      "statement": "Fix x and nonempty S. Select one actual A_(S minus i)-class in A_S[x] for each i, avoiding its class of x. For one i avoid all finitely many classes meeting F[x]. Facet pair joins equal A_S, so chosen classes pairwise meet; actual exact class Helly supplies y in all. Then y is outside F[x] and every facet class of x. Singleton S uses just one nonempty chosen class.",
+      "depends_on": [
+        "C06",
+        "C02",
+        "I06"
+      ],
+      "notes": "N02",
+      "source_labels": [
+        "lem:rh-direction-palette-bound"
+      ],
+      "scope": "exact_lattice",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C08",
+      "name": "Distinct outside-F atom for every nonempty subset",
+      "statement": "The actual old colour t_S=col(x,y_S) lies in A_S outside F and every deleted facet. Boolean meet identities imply t_S differ for distinct nonempty S. Thus 2^r-1<=d_infty, equivalently r<=floor(log2(d_infty+1)), including r=0.",
+      "depends_on": [
+        "C07",
+        "C05"
+      ],
+      "notes": "N02",
+      "source_labels": [
+        "lem:rh-direction-palette-bound"
+      ],
+      "scope": "exact_lattice",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C09",
+      "name": "Exact real algebraicity criterion",
+      "statement": "For x outside finite A, acl over A is equivalent to finiteness of the canonical Gamma-class intersection, hence to every minimal infinite direction being excluded by at least one spoke Gamma. Empty A is handled by transitivity, finite M separately. This criterion does not require exactness of Gamma.",
+      "depends_on": [
+        "D06",
+        "D03",
+        "D07",
+        "C01",
+        "I01"
+      ],
+      "notes": "N03",
+      "source_labels": [
+        "cor:rh-acl-bounded-character"
+      ],
+      "scope": "real_closure",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C10",
+      "name": "Bounded character with all boundary cases",
+      "statement": "Choose one parameter excluding each minimal infinite direction to obtain |B|<=r and acl(A)=union acl(B). For x in A use B={x} when M infinite (r>=1); if M finite r=0 and acl(empty)=M. Reverse inclusion is monotonicity. This formula alone needs no palette-cost CRT proof.",
+      "depends_on": [
+        "C09"
+      ],
+      "notes": "N03",
+      "source_labels": [
+        "cor:rh-acl-bounded-character"
+      ],
+      "scope": "real_closure",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C11",
+      "name": "Singleton closure and rank one",
+      "statement": "For x!=a, finite Gamma(col(x,a)) is equivalent to Gamma<=F, equivalently xFa. Hence acl(a)=F[a]; when r=1 bounded character gives acl(A)=F[A]. Also each minimal direction supplies a distinct outside-F atom, giving the elementary weaker r<=d_infty.",
+      "depends_on": [
+        "C09",
+        "C02",
+        "C10"
+      ],
+      "notes": "N03",
+      "source_labels": [
+        "cor:rh-acl-bounded-character"
+      ],
+      "scope": "real_closure",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C12",
+      "name": "Finite actual one-point fibres are bounded by c",
+      "statement": "Every finite realised one-point fibre is a whole original finite-class equivalence class, hence contained in an F-class and of size at most c. Parameter equalities are singleton cases.",
+      "depends_on": [
+        "I02",
+        "C02"
+      ],
+      "notes": "N04",
+      "source_labels": [
+        "cor:rh-acl-polynomial-growth"
+      ],
+      "scope": "real_closure",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C13",
+      "name": "Packet size bound",
+      "statement": "Each F-class is finite of constant size c<=2^f by the original finite-class bound, regardless of whether F is word exact.",
+      "depends_on": [
+        "C02",
+        "I03",
+        "D08"
+      ],
+      "notes": "N04",
+      "source_labels": [
+        "cor:rh-acl-polynomial-growth"
+      ],
+      "scope": "real_closure",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C14",
+      "name": "Polynomial algebraic closure bound",
+      "statement": "For infinite M and |A|=n, cover F[A] with at most cn points. Off F[A], bounded character supplies nonempty B of size j<=r; every spoke to B lies outside F, giving at most d_infty^j realised types, each finite fibre of size <=c. Summing yields c(n+sum_{j=1..min(r,n)} choose(n,j)d_infty^j) and O_M(n^r). Empty A gives zero.",
+      "depends_on": [
+        "C10",
+        "C12",
+        "C13",
+        "C08"
+      ],
+      "notes": "N04",
+      "source_labels": [
+        "cor:rh-acl-polynomial-growth"
+      ],
+      "scope": "real_closure",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C15",
+      "name": "Whole finite packets and packet count",
+      "statement": "If x is algebraic over A and xFy, the finite union of F-classes over the finite orbit of x contains the orbit of y, hence y is algebraic over A. Thus acl(A) is F-saturated, and dividing the finite point bound by positive c yields the stated packet count.",
+      "depends_on": [
+        "C14",
+        "C02"
+      ],
+      "notes": "N04",
+      "source_labels": [
+        "cor:rh-acl-polynomial-growth"
+      ],
+      "scope": "real_closure",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C16",
+      "name": "Real acl=dcl when F is identity",
+      "statement": "When F=Id, globalisation makes each finite actual one-point fibre a singleton. The finite complete quantifier-free spoke formula defines that unique off-base point; on-base equalities and the empty infinite base are separate. No imaginary-sort analogue is claimed.",
+      "depends_on": [
+        "C12",
+        "D06"
+      ],
+      "notes": "N04",
+      "source_labels": [
+        "cor:rh-acl-polynomial-growth"
+      ],
+      "scope": "real_closure",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C17",
+      "name": "Coordinate source satisfies the original hypotheses",
+      "statement": "For N^r named by difference supports, coordinate permutations extend finite isomorphisms; triangle-legal complete diagrams are independent coordinate equivalence partitions. In a partial diagram a failed coordinate constraint has an inequality edge plus a shortest equality path, a bad specified simple cycle. Thus the infinite source is AP, homogeneous and semantic CCO.",
+      "depends_on": [
+        "D13",
+        "A06"
+      ],
+      "notes": "N05",
+      "source_labels": [
+        "ex:rh-acl-polynomial-sharp"
+      ],
+      "scope": "examples",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C18",
+      "name": "Coordinate directions and sharp closure exponent",
+      "statement": "Using a fresh third coordinate value, two same-support edges force each singleton support. Hence all invariant equivalences permit changes in coordinate subsets and there are exactly r minimal infinite directions, 2^r-1 diversity atoms, F=Id. For the n-point diagonal base the finite-orbit/fixed-point set is [n]^r, so |acl|=|dcl|=n^r; for r>=2 the source fails SAP.",
+      "depends_on": [
+        "C17"
+      ],
+      "notes": "N05",
+      "source_labels": [
+        "ex:rh-acl-polynomial-sharp"
+      ],
+      "scope": "examples",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C19",
+      "name": "SAP gives infinite off-base stabilizer orbits",
+      "statement": "For an arbitrary finite complete real base A and u outside A, strongly amalgamate n labelled copies of A+u, embed and align the full base back to A. Homogeneity places n distinct new points in the same Aut(M/A)-orbit. Arbitrary n implies the one fixed orbit is infinite. No symmetry or CCO is used.",
+      "depends_on": [
+        "A01",
+        "A04",
+        "D06"
+      ],
+      "notes": "N06",
+      "source_labels": [
+        "lem:rh-sap-invariant-monolith"
+      ],
+      "scope": "sap_elementary",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C20",
+      "name": "Two nonidentity equivalences have infinite meet classes",
+      "statement": "At fixed x choose y!=x with xEy and z!=x with xFz. The infinite orbit of x over the complete anchor {y,z} lies in E[x] intersect F[x]. This proves the fixed meet class infinite; transitivity gives all classes. It also covers y=z.",
+      "depends_on": [
+        "C19",
+        "D01"
+      ],
+      "notes": "N06",
+      "source_labels": [
+        "lem:rh-sap-invariant-monolith"
+      ],
+      "scope": "sap_elementary",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C21",
+      "name": "Unique infinite SAP monolith and trivial real acl",
+      "statement": "For infinite M the finite full lattice has at least Top>Id. Repeated finite intersections of nonidentity members stay infinite by C20, giving their unique least nonidentity L. All nonidentity classes are infinite, Ffin=Id and the unique minimal infinite direction is L. C19 gives acl(A)=A for every finite real A.",
+      "depends_on": [
+        "C20",
+        "C19",
+        "D09"
+      ],
+      "notes": "N06",
+      "source_labels": [
+        "lem:rh-sap-invariant-monolith"
+      ],
+      "scope": "sap_elementary",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C22",
+      "name": "Finite-lattice MI reconstruction without distributivity",
+      "statement": "In any finite lattice, for Y not<=X choose maximal J>=X with Y not<=J. It is proper meet-irreducible; otherwise two strict factors above J both contain Y. Therefore X is the meet of all proper MI above it, including the empty Top case.",
+      "depends_on": [
+        "A06"
+      ],
+      "notes": "N07",
+      "source_labels": [
+        "cor:rh-sap-mi-joint-real-fibre"
+      ],
+      "scope": "finite_lattice",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C23",
+      "name": "Full nonidentity MI meet equals monolith",
+      "statement": "Every nonidentity original equivalence contains L, so C22 identifies the full proper nonidentity MI meet with L. The realised tuple map has Phi^-1(Phi(x))=L[x]. Primitive sources have empty tuple and one fibre M.",
+      "depends_on": [
+        "C21",
+        "C22",
+        "D10",
+        "D11"
+      ],
+      "notes": "N07",
+      "source_labels": [
+        "cor:rh-sap-mi-joint-real-fibre"
+      ],
+      "scope": "sap_elementary",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C24",
+      "name": "Tuple stabilizer is transitive on its infinite real fibre",
+      "statement": "An original automorphism fixes every MI class of x iff its image of x lies in L[x], iff it stabilizes that L-class setwise. Original transitivity supplies an automorphism taking x to each y in L[x], automatically in that stabilizer. The actual tuple orbit is exactly the infinite fibre; no section or arbitrary tuple realization is claimed.",
+      "depends_on": [
+        "C23",
+        "A01"
+      ],
+      "notes": "N07",
+      "source_labels": [
+        "cor:rh-sap-mi-joint-real-fibre"
+      ],
+      "scope": "sap_elementary",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C25",
+      "name": "No full index two implies nonbipartite atomic components",
+      "statement": "For a symmetric same-sort DIVERSITY atom t, even walks form an invariant equivalence within Gamma(t). If any connected component were bipartite, transitivity gives a full original invariant relative-index-two interval. Under A05 all components are therefore nonbipartite.",
+      "depends_on": [
+        "C01",
+        "D12"
+      ],
+      "notes": "N08",
+      "source_labels": [
+        "lem:typed-all-invariant-equivalences-raw-word"
+      ],
+      "scope": "terminal_elementary",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C26",
+      "name": "Uniform positive atomic powers",
+      "statement": "In a connected nonbipartite atomic component, every ordered pair, including equal endpoints, admits all sufficiently long walk lengths via an odd-cycle detour and two-step backtracks. Finitely many old pair orbitals in Gamma(a), each uniformly transported, give one N with a^n=Gamma(a) for every n>=N. No CCO or SAP is used.",
+      "depends_on": [
+        "C25",
+        "C01",
+        "A06"
+      ],
+      "notes": "N08",
+      "source_labels": [
+        "lem:typed-all-invariant-equivalences-raw-word"
+      ],
+      "scope": "terminal_elementary",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C27",
+      "name": "All full original equivalences are one RAW word",
+      "statement": "List the diversity atoms inside E. Their connectedness equivalences have positive word presentations by C26; their commuting product equals their join, which contains every E-atom and actual equality and hence is E. Concatenation gives one actual RAW word. E=Id uses the genuine empty word; singleton source is allowed.",
+      "depends_on": [
+        "C26",
+        "C01"
+      ],
+      "notes": "N08",
+      "source_labels": [
+        "lem:typed-all-invariant-equivalences-raw-word"
+      ],
+      "scope": "terminal_elementary",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C28",
+      "name": "Terminal full lattice is distributive under CCO",
+      "statement": "With actual symmetric original CCO hypotheses and A05, every full invariant equivalence is RAW exact by C27. The exact sublattice distributivity theorem then applies to the full lattice. The word part does not itself need SAP or CCO.",
+      "depends_on": [
+        "C27",
+        "I05"
+      ],
+      "notes": "N09",
+      "source_labels": [
+        "lem:typed-terminal-all-equivalences-exact"
+      ],
+      "scope": "terminal_cco",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C29",
+      "name": "Pairwise exact classes have one infinite common class",
+      "statement": "In infinite SAP symmetric CCO M, finite pairwise-intersecting actual exact nonidentity equivalence classes meet by exact-ball Helly. Any common point identifies their whole intersection with its class of the meet kernel; C20/C21 make it infinite. Empty family is all M; equality kernels are excluded.",
+      "depends_on": [
+        "I06",
+        "C20",
+        "C21"
+      ],
+      "notes": "N09",
+      "source_labels": [
+        "cor:rh-sap-infinite-exact-helly"
+      ],
+      "scope": "sap_exact_helly",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C30",
+      "name": "Terminal upgrade to all nonidentity classes",
+      "statement": "Under full NR2, C27 makes every original invariant equivalence RAW exact. Thus the same infinite intersection result applies to every pairwise-compatible finite nonidentity class family. This adds no hidden language or quotient SAP theorem.",
+      "depends_on": [
+        "C29",
+        "C27"
+      ],
+      "notes": "N09",
+      "source_labels": [
+        "cor:rh-sap-infinite-exact-helly"
+      ],
+      "scope": "sap_exact_helly",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C31",
+      "name": "Full MI compatibility iff realised, with infinite fibres",
+      "statement": "In the terminal source, all proper nonidentity MI classes are simultaneously realised exactly when pairwise compatible by C30. When realised, the kernel meet is the unique original monolith by C23 and the actual tuple stabilizer orbit is its whole infinite class by C24. The primitive empty tuple is included.",
+      "depends_on": [
+        "C30",
+        "C23",
+        "C24"
+      ],
+      "notes": "N09",
+      "source_labels": [
+        "cor:rh-sap-infinite-exact-helly"
+      ],
+      "scope": "sap_exact_helly",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C32",
+      "name": "Cartesian phase source is homogeneous AP and CCO",
+      "statement": "N^2 times F2 with equality flags and phase difference has coordinate-permutation times global-translation automorphisms. Triangle constraints enforce coordinate partitions and a phase coboundary. In partial diagrams a failed coordinate constraint or nonzero gain cycle contains a bad specified simple cycle; otherwise components receive fresh coordinates and gains integrate. This is an infinite source argument, not a finite-snapshot certificate.",
+      "depends_on": [
+        "A06"
+      ],
+      "notes": "N10",
+      "source_labels": [
+        "ex:two-coordinate"
+      ],
+      "scope": "examples",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C33",
+      "name": "Phase corners exceed packet closure",
+      "statement": "In the phase source F is the two-point packet of fixed row and column. The two source corner colours uniquely determine x outside F[{a,b}], so dcl({a,b}) and acl({a,b}) strictly exceed packet closure. Direct automorphism stabilizers show acl(A) is a union of complete packets, consistent with the general theorem.",
+      "depends_on": [
+        "C32"
+      ],
+      "notes": "N10",
+      "source_labels": [
+        "ex:two-coordinate"
+      ],
+      "scope": "examples",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C34",
+      "name": "Phase packet need not be RAW exact",
+      "statement": "Every nonempty atomic word has one fixed endpoint phase difference, the sum of its letters; every nonempty intersection of such profiles has that property. Empty word is phase-zero equality; empty restriction family is Top. The proper finite packet F contains equality and the phase flip, so it is not exact. The same applies to phase-forgetting row/column equivalences.",
+      "depends_on": [
+        "C32"
+      ],
+      "notes": "N10",
+      "source_labels": [
+        "rem:phase-thin-not-exact"
+      ],
+      "scope": "examples",
+      "status": "HUMAN_PROOF_EXPANDED"
+    }
+  ],
+  "exports": [
+    {
+      "source_label": "lem:rh-direction-palette-bound",
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08"
+      ]
+    },
+    {
+      "source_label": "cor:rh-acl-bounded-character",
+      "claims": [
+        "C09",
+        "C10",
+        "C11",
+        "C08"
+      ]
+    },
+    {
+      "source_label": "cor:rh-acl-polynomial-growth",
+      "claims": [
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16"
+      ]
+    },
+    {
+      "source_label": "lem:rh-sap-invariant-monolith",
+      "claims": [
+        "C19",
+        "C20",
+        "C21"
+      ]
+    },
+    {
+      "source_label": "cor:rh-sap-mi-joint-real-fibre",
+      "claims": [
+        "C22",
+        "C23",
+        "C24"
+      ]
+    },
+    {
+      "source_label": "cor:rh-sap-infinite-exact-helly",
+      "claims": [
+        "C29",
+        "C30",
+        "C31"
+      ]
+    },
+    {
+      "source_label": "lem:typed-all-invariant-equivalences-raw-word",
+      "claims": [
+        "C25",
+        "C26",
+        "C27"
+      ]
+    },
+    {
+      "source_label": "lem:typed-terminal-all-equivalences-exact",
+      "claims": [
+        "C27",
+        "C28"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "T01",
+      "name": "Minimal infinite cuts, Boolean directions and palette cost",
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement the exact quantified contracts and source mappings; preserve the dependency firewalls and all empty/finite/identity boundaries."
+    },
+    {
+      "id": "T02",
+      "name": "Real closure character and polynomial packet bounds",
+      "claims": [
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16"
+      ],
+      "depends_on": [
+        "T01"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement the exact quantified contracts and source mappings; preserve the dependency firewalls and all empty/finite/identity boundaries."
+    },
+    {
+      "id": "T03",
+      "name": "SAP monolith and full-lattice MI incidence",
+      "claims": [
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement the exact quantified contracts and source mappings; preserve the dependency firewalls and all empty/finite/identity boundaries."
+    },
+    {
+      "id": "T04",
+      "name": "CCO-free terminal words and full distributivity",
+      "claims": [
+        "C25",
+        "C26",
+        "C27",
+        "C28"
+      ],
+      "depends_on": [
+        "T01"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement the exact quantified contracts and source mappings; preserve the dependency firewalls and all empty/finite/identity boundaries."
+    },
+    {
+      "id": "T05",
+      "name": "Infinite exact Helly and terminal MI compatibility",
+      "claims": [
+        "C29",
+        "C30",
+        "C31"
+      ],
+      "depends_on": [
+        "T03",
+        "T04"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement the exact quantified contracts and source mappings; preserve the dependency firewalls and all empty/finite/identity boundaries."
+    },
+    {
+      "id": "T06",
+      "name": "Independent coordinate and Cartesian phase sources",
+      "claims": [
+        "C17",
+        "C18",
+        "C32",
+        "C33",
+        "C34"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement the exact quantified contracts and source mappings; preserve the dependency firewalls and all empty/finite/identity boundaries."
+    }
+  ],
+  "controls": [
+    {
+      "id": "R01",
+      "check": "Coordinate support equivalences, sharp n^r closures and the polynomial bound."
+    },
+    {
+      "id": "R02",
+      "check": "Actual phase-product atom algebra, finite packets and two-coordinate corners."
+    },
+    {
+      "id": "R03",
+      "check": "Full finite lattice monolith/MI reconstruction, including primitive empty lists."
+    },
+    {
+      "id": "R04",
+      "check": "Coordinate class compatibility and facet avoidance with finite forbidden sets."
+    },
+    {
+      "id": "R05",
+      "check": "Actual F3² direction-colour algebra: no index-two interval and all invariant equivalences are RAW words, but the full invariant lattice is nondistributive. No CCO is claimed."
+    }
+  ],
+  "control_script": "tools/check_real_closure_controls.py",
+  "article_feedback": [
+    {
+      "id": "F01",
+      "kind": "DEPENDENCY_REDUCTION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/real_hull/06_minimal_infinite_directions_acl.tex",
+        "anchor": "By B.~H.~Neumann's"
+      },
+      "finding": "Palette cost has a proof using the prepared exact class Helly, with one facet class avoiding the finite F-class. No Neumann theorem is needed for this result.",
+      "proposed_article_change": "Use the CRT proof or retain it as an alternative; F remains potentially nonexact.",
+      "caller_effect": "No source theorem conclusion changes; precise proof dependency and scope are recorded for the later human article.",
+      "proof_claims": [
+        "C07",
+        "C08"
+      ]
+    },
+    {
+      "id": "F02",
+      "kind": "DEPENDENCY_REDUCTION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/real_hull/06_minimal_infinite_directions_acl.tex",
+        "anchor": "Each $E_i$ is exact"
+      },
+      "finding": "Minimal infinite exactness needs only a looped atom in the infinite class, triangle fullness and its even-word connectivity, not the full packet/minimal-cut quotient theorem.",
+      "proposed_article_change": "State this selected elementary route to avoid importing later quotient geometry.",
+      "caller_effect": "No source theorem conclusion changes; precise proof dependency and scope are recorded for the later human article.",
+      "proof_claims": [
+        "C03"
+      ]
+    },
+    {
+      "id": "F03",
+      "kind": "PROOF_SCOPE_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/real_hull/07_sap_mi_intersection_geometry.tex",
+        "anchor": "some"
+      },
+      "finding": "Arbitrarily large finite amalgams must yield points in one fixed class, using base alignment and transitivity.",
+      "proposed_article_change": "Align each amalgam back to the fixed anchor, or invoke uniform class size before inferring infinite classes.",
+      "caller_effect": "No source theorem conclusion changes; precise proof dependency and scope are recorded for the later human article.",
+      "proof_claims": [
+        "C19",
+        "C20"
+      ]
+    },
+    {
+      "id": "F04",
+      "kind": "DEPENDENCY_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/real_hull/07_sap_mi_intersection_geometry.tex",
+        "anchor": "In any FINITE lattice"
+      },
+      "finding": "Full MI reconstruction uses finite maximal separation, without distributivity. The full-lattice family excludes real Id.",
+      "proposed_article_change": "Keep this elementary theorem distinct from distributive MI-primality.",
+      "caller_effect": "No source theorem conclusion changes; precise proof dependency and scope are recorded for the later human article.",
+      "proof_claims": [
+        "C22",
+        "C23"
+      ]
+    },
+    {
+      "id": "F05",
+      "kind": "SCOPE_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/terminal_invariant_raw_exact.tex",
+        "anchor": "Neither"
+      },
+      "finding": "Terminal word presentations are CCO/SAP-free, but full lattice distributivity and class Helly require CCO exact geometry.",
+      "proposed_article_change": "Keep separate providers and full original NR2; never infer hidden SAP from real incidence.",
+      "caller_effect": "No source theorem conclusion changes; precise proof dependency and scope are recorded for the later human article.",
+      "proof_claims": [
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C31"
+      ]
+    }
+  ],
+  "review": {
+    "date": "2026-10-27",
+    "method": "Independent source reviews of closure/palette and SAP/MI/terminal branches, parent synthesis and finite controls. No human or Lean certification.",
+    "required_mathematical_repairs_found": 0,
+    "remaining": "Receiving projects must implement the exact providers and all proofs. This module does not establish hidden/orphan-base SAP or arbitrary imaginary CCO."
+  },
+  "overview_mermaid": [
+    "flowchart TD",
+    "  E[\"Symmetric original support algebra\"] --> M[\"Minimal infinite exact directions\"]",
+    "  M --> B[\"Boolean exact joins\"]",
+    "  B --> P[\"CRT avoidance and palette cost\"]",
+    "  H[\"Canonical hull\"] --> A[\"Bounded real closure character\"]",
+    "  P --> G[\"Polynomial packet bounds\"]",
+    "  A --> G",
+    "  F[\"Finite fibre globalisation\"] --> G",
+    "  S[\"Original SAP\"] --> L[\"Infinite invariant monolith\"]",
+    "  L --> I[\"Full MI tuple fibres\"]",
+    "  N[\"Full NR2 and symmetric atoms\"] --> W[\"RAW word presentations\"]",
+    "  X[\"Exact class Helly\"] --> C[\"Infinite compatible incidence\"]",
+    "  L --> C",
+    "  W --> C",
+    "  I --> C"
+  ],
+  "overview_notes": [
+    "F need not be exact; only Kfin and Boolean direction joins use exact distributivity.",
+    "The SAP/MI branch and coordinate examples are independent of the closure/CRT branch.",
+    "Finite-lattice MI reconstruction does not use distributivity. No new Neumann or infinite Ramsey dependency is imported."
+  ],
+  "dependency_firewalls": [
+    {
+      "claims": [
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24"
+      ],
+      "forbid": [
+        "A02",
+        "A03",
+        "A05",
+        "I01",
+        "I02",
+        "I03",
+        "I04",
+        "I05",
+        "I06",
+        "I07"
+      ]
+    },
+    {
+      "claims": [
+        "C25",
+        "C26",
+        "C27"
+      ],
+      "forbid": [
+        "A03",
+        "A04",
+        "I01",
+        "I02",
+        "I03",
+        "I04",
+        "I05",
+        "I06",
+        "I07"
+      ]
+    },
+    {
+      "claims": [
+        "C09",
+        "C10"
+      ],
+      "forbid": [
+        "I05",
+        "I06",
+        "C07",
+        "C08"
+      ]
+    },
+    {
+      "claims": [
+        "C17",
+        "C18",
+        "C32",
+        "C33",
+        "C34"
+      ],
+      "forbid": [
+        "A01",
+        "A02",
+        "A03",
+        "A04",
+        "A05",
+        "I01",
+        "I02",
+        "I03",
+        "I04",
+        "I05",
+        "I06",
+        "I07"
+      ]
+    }
+  ]
+}

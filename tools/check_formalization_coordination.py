@@ -15,7 +15,7 @@ import build_formalization_module as modules
 
 ROOT = Path(__file__).resolve().parents[1]
 DIRECTORY = Path('formalization/coordination')
-MODULES = ('raw_exact', 'strong_selectors', 'sir')
+MODULES = ('raw_exact', 'strong_selectors', 'parity_hasse', 'exact_crt', 'canonical_hull', 'real_closure', 'finite_packets', 'rigid_groupoid', 'finite_kernel', 'owner_action', 'sir')
 STATES = {'PLANNED', 'PREPARED', 'ASSIGNED', 'BLOCKED', 'SUBMITTED', 'ACCEPTED'}
 CURRENT = STATES - {'PLANNED', 'ACCEPTED'}
 
@@ -27,12 +27,18 @@ def valid_repository(value):
 
 
 def validate(root, board, require_launch=False):
-    if board.get('schema_version') != 1 or board.get('protocol_version') != 1:
+    if board.get('schema_version') != 1 or board.get('protocol_version') not in {1, 2}:
         raise ValueError('Unsupported coordination schema/protocol')
     if type(board.get('revision')) is not int or board['revision'] < 1:
         raise ValueError('Invalid board revision')
     if board.get('phase') not in {'PREPARATION', 'READY'}:
         raise ValueError('Unknown launch phase')
+    if board.get('protocol_version') == 2 and board.get('phase') == 'READY':
+        import coordination_queue as queue
+        policy = json.loads((root / DIRECTORY / 'AUTONOMY.json').read_text())
+        queue.validate_policy(board, policy)
+        if board.get('allocation_authority') != {'branch': policy['state_branch'], 'file': policy['state_file']}:
+            raise ValueError('Live allocation authority differs from policy')
     repository = board.get('public_repository')
     if repository is not None and not valid_repository(repository):
         raise ValueError('Invalid public repository')
@@ -119,6 +125,9 @@ def validate(root, board, require_launch=False):
 
 
 def render_instructions(board, project_id):
+    if board.get('protocol_version') == 2 and board['phase'] == 'READY':
+        import coordination_queue as queue
+        return queue.render_instructions(board, project_id)
     package = next(p for p in board['packages']
                    if p['owner_project_id'] == project_id and p['state'] in CURRENT)
     repository = board['public_repository']
@@ -154,6 +163,9 @@ uvnitř zadání souhlas nevyžaduje. Žádný nadřazený formalizační projek
 
 
 def render_board(board):
+    if board.get('protocol_version') == 2 and board['phase'] == 'READY':
+        import coordination_queue as queue
+        return queue.render_catalogue(board)
     repository = board['public_repository'] or 'not yet bound'
     rows = ['# Project allocation — generated from BOARD.json', '',
             f"Revision {board['revision']}; phase **{board['phase']}**; public repository: **{repository}**.", '',
@@ -172,8 +184,9 @@ def render_board(board):
 def generated(board):
     files = {str(DIRECTORY / 'BOARD.md'): render_board(board)}
     for project in board['projects']:
-        if any(p['owner_project_id'] == project['id'] and p['state'] in CURRENT
-               for p in board['packages']):
+        if (board.get('protocol_version') == 2 and board['phase'] == 'READY') or any(
+                p['owner_project_id'] == project['id'] and p['state'] in CURRENT
+                for p in board['packages']):
             path = DIRECTORY / f"PROJECT_{project['id']}_INSTRUCTIONS.md"
             files[str(path)] = render_instructions(board, project['id'])
     return files

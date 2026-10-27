@@ -1,0 +1,1197 @@
+{
+  "schema_version": 1,
+  "id": "rigid_groupoid",
+  "index_title": "Actual exact bridges, rigid groupoids and finite phase seeds",
+  "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+  "status": "HUMAN_PROOF_EXPANDED_NOT_LEAN",
+  "scope": "Preparation for OTHER Lean projects. Seven full rigid-groupoid results plus the explicitly selected simultaneous-block and affine-translate-Helly providers give nine numbered exports and four auxiliary equations. Remaining results in the two provider files, owner masters and finite-fibre kernel projections are outside this module.",
+  "scope_vocabulary": [
+    "elementary",
+    "typed_quotient",
+    "exact_bridge",
+    "dominant_gate",
+    "quotient_bridge",
+    "finite_combinatorics",
+    "affine_slice",
+    "factorisation",
+    "abstract_phase",
+    "source_phase_instance"
+  ],
+  "scope_explanation": "statement and proof. Groupoid object identity is its kernel, typed projected gates retain explicit exactness, and free phase seeds do not establish hidden SAP or moving-owner finite projection.",
+  "assumptions": [
+    {
+      "id": "A01",
+      "name": "Actual typed orbital framework",
+      "statement": "Finitely many named inhabited individually transitive original sorts of one ambient action G, with finite actual pair-orbital palettes, same-sort symmetry and typed converse. Products are represented relational composition, including real equality. Atoms include logical equality only on loop sorts; never mixed-sort commutation."
+    },
+    {
+      "id": "A02",
+      "name": "Standing original RAW exact provider",
+      "statement": "For source instantiation use the standing countable homogeneous complete finite typed binary semantic-homomorphic-CCO source of I01, with its actual orbitals and full identity-inclusive word-exact menus. No SAP, NR2, finite-index parity pivot or preferred phase is assumed. Elementary action and abstract finite-group claims do not consume this premise."
+    },
+    {
+      "id": "A03",
+      "name": "Elementary finite groups and choices",
+      "statement": "Finite sets, elementary abelian 2-groups, finite subgroup/affine-subspace maximality, F2-linear characters and classical choice of one seed per point-action orbit. No compactness or finite-owner projection theorem is imported."
+    },
+    {
+      "id": "A04",
+      "name": "Abstract free finite connected groupoid action",
+      "statement": "Given a finite connected groupoid with a free action on disjoint nonempty object point sets. For the seed/marking lemmas a fixed functor chi to F2 is supplied as data D11, without any distinguished t* or exponent-two requirement. C09–C11 discharge this structural input for the source instance C31; it is not a new source axiom."
+    },
+    {
+      "id": "A05",
+      "name": "Exact projected gates for quotient bridge correspondence",
+      "statement": "For the bridge descent/lift theorem, E_a<=K_a and E_b<=K_b are original FULL RAW exact kernels and the projected K_a/E_a,K_b/E_b are FULL RAW exact in the quotient represented algebra. This is explicit extra information; upward exact word pullback alone does not imply it."
+    },
+    {
+      "id": "A06",
+      "name": "Original dominant involution",
+      "statement": "For dominant transport, a chosen nonidentity source isotropy t* is contained in every ORIGINAL full exact invariant equivalence strictly above K*. This is not dominance among all arbitrary quotient-invariant equivalences."
+    },
+    {
+      "id": "A07",
+      "name": "Nonzero elementary-abelian source isotropy for character construction",
+      "statement": "Only for C24–C26 and their source character instance, the root isotropy is finite elementary abelian and a distinguished NONIDENTITY t* is supplied. The seed-extension theorem C30 needs only the free groupoid action and an already given character, not this extra premise."
+    }
+  ],
+  "imports": [
+    {
+      "id": "I01",
+      "name": "thm:full-typed-exact-balls",
+      "source_label": "thm:full-typed-exact-balls",
+      "provider_module": "raw_exact",
+      "depends_on": [
+        "A01",
+        "A02"
+      ],
+      "statement": "Original FULL equality-inclusive RAW word/menu and exact-ball 2-Helly, exact convolution, converse and guarded meet closure. Nonempty invariant factors have nonempty compatible products. This is not STRONG diversity calculus. The quotient instance is established in C02–C05, not assumed from reverse descent.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I02",
+      "name": "lem:foundational-orbital-pullback",
+      "source_label": "lem:foundational-orbital-pullback",
+      "provider_module": null,
+      "depends_on": [
+        "A01"
+      ],
+      "statement": "For actual equivariant quotient maps, the inverse image of one quotient pair orbital is E_s;old atom;E_t. The quotient pair orbitals are those of the ORIGINAL ambient group action. No quotient automorphism section or CCO is needed for this elementary group-action statement.",
+      "status": "HUMAN_SUPPORT_PROOF_NOT_LEAN"
+    }
+  ],
+  "source_files": [
+    {
+      "file": "sections/rigid_exact_groupoid_foundations.tex",
+      "git_blob": "fb231ec107f8c18b550c87d20ea2da9d86a2d735"
+    },
+    {
+      "file": "sections/simultaneous_typed_exact_quotients.tex",
+      "git_blob": "078017a03e1d6f62088fb17fb6e31bce4f6e8ef6"
+    },
+    {
+      "file": "sections/finite_packet_kernel_constraints.tex",
+      "git_blob": "e47d0d2de416e03dd0207dc56a581088da78b74c"
+    },
+    {
+      "file": "sections/exact_foundations/01_full_raw_exact_helly.tex",
+      "git_blob": "7cb28c86b4b296ddf865b6aff518cda1215cd491"
+    },
+    {
+      "file": "sections/typed_invariant_quotient_transport.tex",
+      "git_blob": "3895b17d7d0176a74d6f69c39e4e22d9cdba5715"
+    }
+  ],
+  "source_result_files": [
+    "sections/rigid_exact_groupoid_foundations.tex"
+  ],
+  "additional_result_exports": [
+    "lem:typed-simultaneous-blocks",
+    "lem:foundational-affine-translate-helly"
+  ],
+  "definitions": [
+    {
+      "id": "D01",
+      "name": "FULL RAW exact relation",
+      "statement": "A nonempty finite intersection of actual typed atomic-word profiles; empty restriction family is Top, whereas the empty loop word is real Id.",
+      "depends_on": [
+        "A01"
+      ],
+      "notes": "N00",
+      "source": {
+        "file": "sections/rigid_exact_groupoid_foundations.tex",
+        "anchor": "Exact means full identity-inclusive"
+      }
+    },
+    {
+      "id": "D02",
+      "name": "Actual simultaneous quotient block",
+      "statement": "For exact E_s on each original named sort, Q_s=M_s/E_s with quotient pair orbitals under the old action G. Block of atom a is E_s;a;E_t and object equality pulls back to E_s.",
+      "depends_on": [
+        "A01",
+        "D01"
+      ],
+      "notes": "N00",
+      "source": {
+        "file": "sections/simultaneous_typed_exact_quotients.tex",
+        "anchor": "\\langle a\\rangle"
+      }
+    },
+    {
+      "id": "D03",
+      "name": "Full exact functional bridge",
+      "statement": "R:a->b is nonempty original full exact, K_a;R=R and R;R^converse=K_a. Its target is K_b=R^converse;R; object identity is K_a, not necessarily real equality.",
+      "depends_on": [
+        "D01"
+      ],
+      "notes": "N01",
+      "source": {
+        "file": "sections/rigid_exact_groupoid_foundations.tex",
+        "anchor": "K_aR=R"
+      }
+    },
+    {
+      "id": "D04",
+      "name": "Actual quotient bijection",
+      "statement": "A bridge induces an equivariant total bijection M_a/K_a -> M_b/K_b. Relations upstairs are whole kernel rectangles, not chosen point representatives.",
+      "depends_on": [
+        "D03"
+      ],
+      "notes": "N01",
+      "source": {
+        "file": "sections/rigid_exact_groupoid_foundations.tex",
+        "anchor": "inducing actual equivariant bijections"
+      }
+    },
+    {
+      "id": "D05",
+      "name": "Generated rigid groupoid",
+      "statement": "Starting from one object (a*,K*), close under all bridge arrows, converse and composition. A reached sort has one path-independent kernel; identities are the object kernels.",
+      "depends_on": [
+        "D03"
+      ],
+      "notes": "N02",
+      "source": {
+        "file": "sections/rigid_exact_groupoid_foundations.tex",
+        "anchor": "closing under bridges"
+      }
+    },
+    {
+      "id": "D06",
+      "name": "Isotropy and hom-set torsors",
+      "statement": "Same-object arrows form a finite group; each nonempty a->b hom-set is acted on freely and transitively by either endpoint isotropy group. Distinct arrows never agree on one quotient point.",
+      "depends_on": [
+        "D05"
+      ],
+      "notes": "N02",
+      "source": {
+        "file": "sections/rigid_exact_groupoid_foundations.tex",
+        "anchor": "elementary abelian"
+      }
+    },
+    {
+      "id": "D07",
+      "name": "Dominant original involution",
+      "statement": "Nonidentity source isotropy t* lies in every original full exact invariant equivalence Z*>K*. Transport uses R^converse;t*;R.",
+      "depends_on": [
+        "D05",
+        "A06"
+      ],
+      "notes": "N03",
+      "source": {
+        "file": "sections/rigid_exact_groupoid_foundations.tex",
+        "anchor": "Assume that every"
+      }
+    },
+    {
+      "id": "D08",
+      "name": "Projected exact gates",
+      "statement": "Under A05, quotient K-bars are assumed exact. Saturated old relations correspond to quotient relations, but arbitrary old exactness is not declared to descend.",
+      "depends_on": [
+        "D02",
+        "A05"
+      ],
+      "notes": "N04",
+      "source": {
+        "file": "sections/rigid_exact_groupoid_foundations.tex",
+        "anchor": "projected\nrelations"
+      }
+    },
+    {
+      "id": "D09",
+      "name": "Rigid affine slice",
+      "statement": "Nonempty exact bisaturated D supported on the union of arrows in a nonempty hom-set; dS means a UNION of represented graphs over subgroup S, not one original atom.",
+      "depends_on": [
+        "D05"
+      ],
+      "notes": "N05",
+      "source": {
+        "file": "sections/rigid_exact_groupoid_foundations.tex",
+        "anchor": "Here $dS$ means"
+      }
+    },
+    {
+      "id": "D10",
+      "name": "Product inside one rigid bridge",
+      "statement": "A:a->b and B:b->c are nonempty original full exact with AB contained in one bridge R:a->c. The intermediate gate is constructed, not arbitrarily prescribed.",
+      "depends_on": [
+        "D03"
+      ],
+      "notes": "N06",
+      "source": {
+        "file": "sections/rigid_exact_groupoid_foundations.tex",
+        "anchor": "satisfy $AB\\subseteq R$"
+      }
+    },
+    {
+      "id": "D11",
+      "name": "Groupoid character",
+      "statement": "A GIVEN functor chi from the abstract groupoid to the one-object additive group F2. Under the additional A07 premise C24–C25 construct one with chi(t*)=1. No distinguished involution is needed to state a fixed character or its seed law.",
+      "depends_on": [
+        "A04"
+      ],
+      "notes": "N07",
+      "source": {
+        "file": "sections/rigid_exact_groupoid_foundations.tex",
+        "anchor": "\\chi:\\mathcal H"
+      }
+    },
+    {
+      "id": "D12",
+      "name": "Global phase marking",
+      "statement": "A bit lambda on the disjoint union of reached quotient point sets satisfying lambda(Rq)=lambda(q)+chi(R). Free action permits one initial bit for each action orbit.",
+      "depends_on": [
+        "D11"
+      ],
+      "notes": "N07",
+      "source": {
+        "file": "sections/rigid_exact_groupoid_foundations.tex",
+        "anchor": "\\lambda(Rq)="
+      }
+    },
+    {
+      "id": "D13",
+      "name": "Finite prescribed phase seeds",
+      "statement": "For finite F of actual quotient points and epsilon:F->F2, compatibility means epsilon(r)=epsilon(q)+chi(R) for every same-action-orbit pair with Rq=r.",
+      "depends_on": [
+        "D12"
+      ],
+      "notes": "N08",
+      "source": {
+        "file": "sections/rigid_exact_groupoid_foundations.tex",
+        "anchor": "\\epsilon:F"
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "name": "Elementary actual seriality and same-sort symmetry",
+      "statement": "Every nonempty invariant typed relation is serial and coserial. Same-sort invariant relations equal their converses, so same-sort invariant products commute. Mixed arrows only obey typed converse reversal, not commutativity.",
+      "depends_on": [
+        "A01"
+      ],
+      "notes": "N01",
+      "source_labels": [
+        "thm:foundational-rigid-groupoid"
+      ],
+      "scope": "elementary",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C02",
+      "name": "Actual exact quotient orbital blocks",
+      "statement": "Blocks E_s;a;E_t are nonempty exact by original convolution and are actual quotient-orbital inverse images by I02. Coincident old atom blocks are equal; otherwise disjoint. Quotient equality pulls back to E_s and same-sort quotient diversity is disjoint from E_s. Include old real equality.",
+      "depends_on": [
+        "D02",
+        "C01",
+        "I01",
+        "I02"
+      ],
+      "notes": "N00",
+      "source_labels": [
+        "lem:typed-simultaneous-blocks"
+      ],
+      "scope": "typed_quotient",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C03",
+      "name": "Saturated quotient relation algebra",
+      "statement": "Inverse image bijects quotient relations with endpoint-bisaturated old relations; preserves intersections/converse and actual composition, with the intermediate E_t inserted then removed by saturation. Pullback of the empty quotient word is E_s, not old Id.",
+      "depends_on": [
+        "C02"
+      ],
+      "notes": "N00",
+      "source_labels": [
+        "lem:typed-simultaneous-blocks"
+      ],
+      "scope": "typed_quotient",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C04",
+      "name": "Upward FULL exact word pullback",
+      "statement": "Every quotient atomic word pulls back to a product of old exact blocks, or E_s for an empty word, hence is old full exact. Nonempty finite intersections pull back exact; Top uses the empty restriction convention. No reverse typed exact descent is asserted.",
+      "depends_on": [
+        "C03",
+        "I01"
+      ],
+      "notes": "N00",
+      "source_labels": [
+        "lem:typed-simultaneous-blocks"
+      ],
+      "scope": "typed_quotient",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C05",
+      "name": "Quotient word Helly and exact convolution",
+      "statement": "Pairwise-intersecting quotient word profiles pull back to pairwise-intersecting old exact menus, hence meet by I01. Quotient exact menus inherit Helly by flattening. Reinstantiate the two-Helly/actual-Peirce proof of RAW convolution on the finite quotient orbital action, proving quotient exact convolution without inferring reverse exact descent from old pullback exactness.",
+      "depends_on": [
+        "C04",
+        "C01",
+        "I01"
+      ],
+      "notes": "N00",
+      "source_labels": [
+        "lem:typed-simultaneous-blocks"
+      ],
+      "scope": "typed_quotient",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C06",
+      "name": "Bridge target kernel and saturation",
+      "statement": "For a bridge R, R^converse;R is a nonempty reflexive symmetric exact equivalence by coseriality and exact convolution. Its square equals itself; K_a;R=R=R;K_b and both functional bridge equations hold.",
+      "depends_on": [
+        "D03",
+        "C01",
+        "I01"
+      ],
+      "notes": "N01",
+      "source_labels": [
+        "thm:foundational-rigid-groupoid"
+      ],
+      "scope": "exact_bridge",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C07",
+      "name": "Bridge gives an actual equivariant quotient bijection",
+      "statement": "The saturated relation descends to a total single-valued bijection of actual kernel classes, with converse inverse, by RR^converse=K_a and R^converseR=K_b. Invariance gives equivariance. No original point map or section is chosen.",
+      "depends_on": [
+        "C06",
+        "D04"
+      ],
+      "notes": "N01",
+      "source_labels": [
+        "thm:foundational-rigid-groupoid"
+      ],
+      "scope": "exact_bridge",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C08",
+      "name": "Target kernel is independent of the path",
+      "statement": "If R,S have common source K_a and target sort b, T=R^converse;S is same-sort and symmetric. Then TT^converse=T^converseT identifies R^converseR with S^converseS. Apply to composites from the distinguished object; no mixed-sort symmetry is used.",
+      "depends_on": [
+        "C06",
+        "C01"
+      ],
+      "notes": "N02",
+      "source_labels": [
+        "thm:foundational-rigid-groupoid"
+      ],
+      "scope": "exact_bridge",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C09",
+      "name": "Finite connected groupoid closure",
+      "statement": "Converse and compatible composition preserve exact bridges; identities are K_a. C08 makes one reached object per named sort, and finitely many old orbital supports give finitely many arrows. The closure is connected through the start.",
+      "depends_on": [
+        "C06",
+        "C08",
+        "I01",
+        "D05"
+      ],
+      "notes": "N02",
+      "source_labels": [
+        "thm:foundational-rigid-groupoid"
+      ],
+      "scope": "exact_bridge",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C10",
+      "name": "Elementary abelian isotropy",
+      "statement": "A same-sort invariant arrow is its converse, hence self-inverse relative to K_a. Isotropy is a finite group of exponent two, so it is elementary abelian. No finite-index parity theorem is used.",
+      "depends_on": [
+        "C09",
+        "C01",
+        "A03"
+      ],
+      "notes": "N02",
+      "source_labels": [
+        "thm:foundational-rigid-groupoid"
+      ],
+      "scope": "exact_bridge",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C11",
+      "name": "Torsors and free actual point action",
+      "statement": "For two a->b arrows, composition with the inverse gives the unique endpoint isotropy translating one to the other. An equivariant permutation of a transitive quotient set fixing one point fixes all, hence is identity. Thus distinct arrows cannot agree at one quotient point; actions on disjoint object point sets are free.",
+      "depends_on": [
+        "C07",
+        "C09",
+        "C10"
+      ],
+      "notes": "N02",
+      "source_labels": [
+        "thm:foundational-rigid-groupoid"
+      ],
+      "scope": "exact_bridge",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C12",
+      "name": "Conjugation is an exact-equivalence interval isomorphism",
+      "statement": "For bridge R, Z_b -> R;Z_b;R^converse and the inverse conjugation preserve original full exact equivalences above the endpoint kernels, including strictness. Kernel saturation, actual bridge identities and convolution prove the two maps inverse. The posets here are original relations.",
+      "depends_on": [
+        "C09",
+        "I01"
+      ],
+      "notes": "N03",
+      "source_labels": [
+        "lem:foundational-rigid-gate-transport"
+      ],
+      "scope": "dominant_gate",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C13",
+      "name": "Dominant involution transports independently of bridge",
+      "statement": "Bridges differ by source isotropy and this group is abelian, so R^converse;t*;R is path independent, nonidentity, square K_b and exact. Dominance transports via C12 to every ORIGINAL exact Z_b>K_b.",
+      "depends_on": [
+        "C10",
+        "C11",
+        "C12",
+        "D07"
+      ],
+      "notes": "N03",
+      "source_labels": [
+        "lem:foundational-rigid-gate-transport"
+      ],
+      "scope": "dominant_gate",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C14",
+      "name": "Dominance on exact quotient equivalences uses only pullback",
+      "statement": "A nonidentity full exact quotient equivalence pulls back by C04 to an original exact equivalence strictly above K_b. Apply C13 and project. This direction invokes no arbitrary old-to-quotient exact descent.",
+      "depends_on": [
+        "C13",
+        "C04"
+      ],
+      "notes": "N03",
+      "source_labels": [
+        "lem:foundational-rigid-gate-transport"
+      ],
+      "scope": "dominant_gate",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C15",
+      "name": "Functional bridge has a one-atom rectangular presentation",
+      "statement": "Choose ANY old actual atom c within R, including logical identity when applicable. The induced quotient bijection has a transitive graph, so R=K_a;c;K_b. A bridge is automatically E_a,E_b-bisaturated whenever E endpoints refine K endpoints.",
+      "depends_on": [
+        "C07",
+        "C02",
+        "D02"
+      ],
+      "notes": "N04",
+      "source_labels": [
+        "lem:foundational-rigid-quotient-bridge"
+      ],
+      "scope": "quotient_bridge",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C16",
+      "name": "Bridge descends exactly when projected gates are supplied exact",
+      "statement": "The quotient image satisfies the bridge equations by C03. From C15 it equals Kbar_a;cbar;Kbar_b, with one named actual quotient atom cbar. A05 and C05 quotient convolution make it exact. This is a bridge-specific proof, not arbitrary typed exact descent.",
+      "depends_on": [
+        "C15",
+        "C03",
+        "C05",
+        "A05"
+      ],
+      "notes": "N04",
+      "source_labels": [
+        "lem:foundational-rigid-quotient-bridge"
+      ],
+      "scope": "quotient_bridge",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C17",
+      "name": "Quotient exact bridge lifts by inverse image",
+      "statement": "A quotient full exact bridge has an old exact inverse image by C04. Pulling back both bridge equations and saturation through C03 gives original kernels K_a,K_b and a full exact old functional bridge.",
+      "depends_on": [
+        "C04",
+        "C03",
+        "D08"
+      ],
+      "notes": "N04",
+      "source_labels": [
+        "lem:foundational-rigid-quotient-bridge"
+      ],
+      "scope": "quotient_bridge",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C18",
+      "name": "Exact bridge correspondence is a groupoid isomorphism",
+      "statement": "Image/inverse image are inverse on endpoint-saturated relations and preserve converse and all compositions for compatible choices of exact kernels on the original named sorts. C16/C17 restrict this to the exact functional bridges. No extra bridge appears or disappears under these projected-gate hypotheses.",
+      "depends_on": [
+        "C16",
+        "C17",
+        "C03"
+      ],
+      "notes": "N04",
+      "source_labels": [
+        "lem:foundational-rigid-quotient-bridge"
+      ],
+      "scope": "quotient_bridge",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C19",
+      "name": "Finite translate-Helly subset is an affine coset",
+      "statement": "Assume V is a finite elementary abelian 2-group, A is a NONEMPTY subset, and EVERY finite pairwise-intersecting family of translates A+v has nonempty total intersection. Choose a largest-dimensional affine subspace lying in A and translate it to K<=A. If a lies in A outside K, W=K+<a> is contained in A+A. The translates A+w for w in W meet pairwise; the stated translate-Helly assumption gives z+W<=A, contradicting maximal dimension. Thus A is an affine coset of a subgroup.",
+      "depends_on": [
+        "A03"
+      ],
+      "notes": "N05",
+      "source_labels": [
+        "lem:foundational-affine-translate-helly"
+      ],
+      "scope": "finite_combinatorics",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C20",
+      "name": "Bisaturated invariant rigid slice contains whole arrows",
+      "statement": "Each rigid arrow is one actual quotient pair orbital because its equivariant graph is transitive. Distinct arrows are disjoint by C11. Invariant bisaturated D supported on their union is therefore a union of entire arrows; identify its support with a nonempty isotropy subset.",
+      "depends_on": [
+        "D09",
+        "C07",
+        "C11"
+      ],
+      "notes": "N05",
+      "source_labels": [
+        "lem:foundational-rigid-affine"
+      ],
+      "scope": "affine_slice",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C21",
+      "name": "Exact rigid slices are affine exact subgroup cosets",
+      "statement": "Translate D by isotropy arrows; exact convolution preserves exactness and old exact-menu Helly makes every pairwise-intersecting translate family have common arrow support. Apply C19, absorb its shift into d and write D=dS. The represented D^converse;D is exactly the union of S arrows and is exact, proving exactness of the subgroup relation.",
+      "depends_on": [
+        "C20",
+        "C19",
+        "I01"
+      ],
+      "notes": "N05",
+      "source_labels": [
+        "lem:foundational-rigid-affine"
+      ],
+      "scope": "affine_slice",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C22",
+      "name": "First factor rigidification",
+      "statement": "If nonempty exact A,B have AB<=R, then Id_b<=BB^converse and AA^converse<=RR^converse=K_a. Put R1=K_a;A. Exactness, saturation and the reverse inclusion from seriality make R1 a bridge, with CONSTRUCTED intermediate kernel K_b=R1^converse;R1.",
+      "depends_on": [
+        "D10",
+        "C01",
+        "C06",
+        "I01"
+      ],
+      "notes": "N06",
+      "source_labels": [
+        "lem:foundational-rigid-factor"
+      ],
+      "scope": "factorisation",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C23",
+      "name": "Second factor fills its containing bridge",
+      "statement": "R1;B<=R implies Bprime=K_b;B lies in bridge C=R1^converse;R. Coseriality of Bprime and left K_b-saturation force Bprime=C point by point. Set R2=C to get A<=R1, B<=R2 and R1;R2=R. If sort b was already reached, C08 identifies its gate.",
+      "depends_on": [
+        "C22",
+        "C09",
+        "C08",
+        "C01"
+      ],
+      "notes": "N06",
+      "source_labels": [
+        "lem:foundational-rigid-factor"
+      ],
+      "scope": "factorisation",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C24",
+      "name": "Linear character detects a nonzero involution",
+      "statement": "In the finite elementary abelian source isotropy, extend t* to a basis and take its coordinate functional, giving chi_*(t*)=1. This is pure finite algebra under A04.",
+      "depends_on": [
+        "A04",
+        "A07",
+        "A03"
+      ],
+      "notes": "N07",
+      "source_labels": [
+        "thm:foundational-rigid-character"
+      ],
+      "scope": "abstract_phase",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C25",
+      "name": "Extend the character to the connected groupoid",
+      "statement": "Choose connectors B_b from the distinguished object. Every R:b->c has unique expression B_b^converse;h;B_c; set chi(R)=chi_*(h). Connector cancellation proves chi(RS)=chi(R)+chi(S), and identities have bit zero.",
+      "depends_on": [
+        "C24"
+      ],
+      "notes": "N07",
+      "source_labels": [
+        "thm:foundational-rigid-character"
+      ],
+      "scope": "abstract_phase",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C26",
+      "name": "Transported involutions have character one",
+      "statement": "For any connector R, t_b=R^converse;t*;R is independent of R by abelian isotropy. It is nonidentity and chi(t_b)=1. No dominance premise is needed for this character statement.",
+      "depends_on": [
+        "C25",
+        "A04"
+      ],
+      "notes": "N07",
+      "source_labels": [
+        "thm:foundational-rigid-character"
+      ],
+      "scope": "abstract_phase",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C27",
+      "name": "Global phase markings from free action orbit seeds",
+      "statement": "Choose one quotient point and initial bit in each free groupoid-action orbit. The unique arrow from the seed to any point propagates its bit by chi, giving one global lambda satisfying every arrow equation. No compactness or source group section is used.",
+      "depends_on": [
+        "A04",
+        "A03",
+        "D12"
+      ],
+      "notes": "N07",
+      "source_labels": [
+        "thm:foundational-rigid-character"
+      ],
+      "scope": "abstract_phase",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C28",
+      "name": "Pointwise rigid and nonrigid phase alternatives",
+      "statement": "For any two abstract action points q,r, if Rq=r for an arrow R their phase difference is forced to chi(R). If no such arrow exists they lie in different action orbits, and independent orbit seeds realise both phase differences across suitable global markings. Actual source-orbital classification is proved separately in C31.",
+      "depends_on": [
+        "C27",
+        "A04"
+      ],
+      "notes": "N07",
+      "source_labels": [
+        "thm:foundational-rigid-character"
+      ],
+      "scope": "abstract_phase",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C29",
+      "name": "Finite restrictions of global markings",
+      "statement": "A global phase marking restricts to every finite set of abstract action points. Pulling it back along any given source-to-quotient maps supplies unary markings of finite source sets in the source instance C31. This existence alone gives no AP, SAP, CCO or moving-owner projection theorem.",
+      "depends_on": [
+        "C27",
+        "C28"
+      ],
+      "notes": "N07",
+      "source_labels": [
+        "thm:foundational-rigid-character"
+      ],
+      "scope": "abstract_phase",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C30",
+      "name": "Finite seed extension iff pairwise free-orbit equations",
+      "statement": "For finite prescribed epsilon, a global character-compatible lambda extends it iff every same-action-orbit pair has the required chi difference. Necessity is immediate. For sufficiency choose a prescribed point as seed in each orbit meeting the finite set and arbitrary seeds elsewhere; pairwise tests ensure all prescribed values. Empty/singleton sets are included.",
+      "depends_on": [
+        "C27",
+        "D13"
+      ],
+      "notes": "N08",
+      "source_labels": [
+        "lem:foundational-finite-phase-extension"
+      ],
+      "scope": "abstract_phase",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C31",
+      "name": "Instantiate phase construction on the actual rigid groupoid",
+      "statement": "C09–C11 supply the finite connected free action of A04 and the elementary-abelian isotropy part of A07; the distinguished nonidentity t* remains an explicit source input. Each actual rigid graph is one original-action quotient orbital; an orbital meeting it is that graph. Any other actual orbital has endpoints in different groupoid action orbits, so C28 applies. C24–C30 then give source characters, global markings, reduct-surjectivity and finite-seed exports, without a preferred phase or higher owner-kernel projection claim.",
+      "depends_on": [
+        "C09",
+        "C10",
+        "C11",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30"
+      ],
+      "notes": "N08",
+      "source_labels": [
+        "thm:foundational-rigid-character"
+      ],
+      "scope": "source_phase_instance",
+      "status": "HUMAN_PROOF_EXPANDED"
+    }
+  ],
+  "exports": [
+    {
+      "source_label": "lem:typed-simultaneous-blocks",
+      "claims": [
+        "C02",
+        "C03",
+        "C04",
+        "C05"
+      ]
+    },
+    {
+      "source_label": "thm:foundational-rigid-groupoid",
+      "claims": [
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11"
+      ]
+    },
+    {
+      "source_label": "lem:foundational-rigid-gate-transport",
+      "claims": [
+        "C12",
+        "C13",
+        "C14"
+      ]
+    },
+    {
+      "source_label": "lem:foundational-rigid-quotient-bridge",
+      "claims": [
+        "C15",
+        "C16",
+        "C17",
+        "C18"
+      ]
+    },
+    {
+      "source_label": "lem:foundational-affine-translate-helly",
+      "claims": [
+        "C19"
+      ]
+    },
+    {
+      "source_label": "lem:foundational-rigid-affine",
+      "claims": [
+        "C20",
+        "C21"
+      ]
+    },
+    {
+      "source_label": "lem:foundational-rigid-factor",
+      "claims": [
+        "C22",
+        "C23"
+      ]
+    },
+    {
+      "source_label": "thm:foundational-rigid-character",
+      "claims": [
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C31"
+      ]
+    },
+    {
+      "source_label": "lem:foundational-finite-phase-extension",
+      "claims": [
+        "C30"
+      ]
+    }
+  ],
+  "auxiliary_exports": [
+    {
+      "source_label": "eq:exact-bridge",
+      "source": {
+        "file": "sections/rigid_exact_groupoid_foundations.tex",
+        "anchor": "\\label{eq:exact-bridge}"
+      },
+      "claims": [
+        "C06"
+      ]
+    },
+    {
+      "source_label": "eq:foundational-phase-seed-test",
+      "source": {
+        "file": "sections/rigid_exact_groupoid_foundations.tex",
+        "anchor": "\\label{eq:foundational-phase-seed-test}"
+      },
+      "claims": [
+        "C30"
+      ]
+    },
+    {
+      "source_label": "eq:typed-exact-block",
+      "source": {
+        "file": "sections/simultaneous_typed_exact_quotients.tex",
+        "anchor": "\\label{eq:typed-exact-block}"
+      },
+      "claims": [
+        "C02"
+      ]
+    },
+    {
+      "source_label": "eq:typed-exact-quotient-product",
+      "source": {
+        "file": "sections/simultaneous_typed_exact_quotients.tex",
+        "anchor": "\\label{eq:typed-exact-quotient-product}"
+      },
+      "claims": [
+        "C03"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "T01",
+      "name": "Actual typed quotient blocks and exact calculus",
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement the precise actual-relation/groupoid contracts and export mapping. Keep object equality distinct from real Id, quotient projected exactness explicit, and abstract phase construction independent of source/owner projection claims."
+    },
+    {
+      "id": "T02",
+      "name": "Bridge kernels and finite rigid groupoid",
+      "claims": [
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11"
+      ],
+      "depends_on": [
+        "T01"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement the precise actual-relation/groupoid contracts and export mapping. Keep object equality distinct from real Id, quotient projected exactness explicit, and abstract phase construction independent of source/owner projection claims."
+    },
+    {
+      "id": "T03",
+      "name": "Dominant involution and guarded quotient correspondence",
+      "claims": [
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18"
+      ],
+      "depends_on": [
+        "T01",
+        "T02"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement the precise actual-relation/groupoid contracts and export mapping. Keep object equality distinct from real Id, quotient projected exactness explicit, and abstract phase construction independent of source/owner projection claims."
+    },
+    {
+      "id": "T04",
+      "name": "Affine slices and rigid-product factorisation",
+      "claims": [
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23"
+      ],
+      "depends_on": [
+        "T01",
+        "T02"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement the precise actual-relation/groupoid contracts and export mapping. Keep object equality distinct from real Id, quotient projected exactness explicit, and abstract phase construction independent of source/owner projection claims."
+    },
+    {
+      "id": "T05",
+      "name": "Abstract characters and finite phase seeds",
+      "claims": [
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement the precise actual-relation/groupoid contracts and export mapping. Keep object equality distinct from real Id, quotient projected exactness explicit, and abstract phase construction independent of source/owner projection claims."
+    },
+    {
+      "id": "T06",
+      "name": "Actual source phase instantiation",
+      "claims": [
+        "C31"
+      ],
+      "depends_on": [
+        "T02",
+        "T05"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement the precise actual-relation/groupoid contracts and export mapping. Keep object equality distinct from real Id, quotient projected exactness explicit, and abstract phase construction independent of source/owner projection claims."
+    }
+  ],
+  "controls": [
+    {
+      "id": "R01",
+      "check": "Actual kernel rectangles, quotient bijections, bridge composition and torsor/freeness."
+    },
+    {
+      "id": "R02",
+      "check": "Affine translate-Helly sets in small F2-spaces and exact-slice support boundaries."
+    },
+    {
+      "id": "R03",
+      "check": "Product factorisation and quotient bridge transport as actual relation laws, with exactness assumptions kept explicit."
+    },
+    {
+      "id": "R04",
+      "check": "Groupoid characters, independent orbit seeds and finite prescribed-bit compatibility."
+    }
+  ],
+  "control_script": "tools/check_rigid_groupoid_controls.py",
+  "article_feedback": [
+    {
+      "id": "F01",
+      "kind": "PROOF_OR_SCOPE_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/rigid_exact_groupoid_foundations.tex",
+        "anchor": "Its target kernel"
+      },
+      "finding": "Object identity is its quotient kernel, possibly larger than real identity; target kernel uniqueness uses only SAME-SORT symmetry.",
+      "proposed_article_change": "Keep object equality and logical equality visibly distinct.",
+      "caller_effect": "No source theorem conclusion changes; exactness direction, object typing and downstream scope are clarified.",
+      "proof_claims": [
+        "C06",
+        "C08",
+        "C09"
+      ]
+    },
+    {
+      "id": "F02",
+      "kind": "PROOF_OR_SCOPE_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/rigid_exact_groupoid_foundations.tex",
+        "anchor": "projected\ngates"
+      },
+      "finding": "Exactness of projected endpoint gates is an explicit premise for typed quotient bridge exactness; it is not reverse typed descent.",
+      "proposed_article_change": "Retain that premise and the bridge-specific one-atom rectangle argument.",
+      "caller_effect": "No source theorem conclusion changes; exactness direction, object typing and downstream scope are clarified.",
+      "proof_claims": [
+        "C15",
+        "C16",
+        "C18"
+      ]
+    },
+    {
+      "id": "F03",
+      "kind": "PROOF_OR_SCOPE_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/rigid_exact_groupoid_foundations.tex",
+        "anchor": "Translation by isotropy"
+      },
+      "finding": "Affine slice Helly concerns old exact relation intersections and whole quotient-arrow supports, not arbitrary subsets of points.",
+      "proposed_article_change": "State the whole-arrow step and finite translate-Helly lemma before the coset deduction.",
+      "caller_effect": "No source theorem conclusion changes; exactness direction, object typing and downstream scope are clarified.",
+      "proof_claims": [
+        "C19",
+        "C20",
+        "C21"
+      ]
+    },
+    {
+      "id": "F04",
+      "kind": "PROOF_OR_SCOPE_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/rigid_exact_groupoid_foundations.tex",
+        "anchor": "let $K_b="
+      },
+      "finding": "Product factorisation constructs its intermediate gate from R1, rather than taking an arbitrary named kernel.",
+      "proposed_article_change": "Retain this construction and only afterwards use target-kernel uniqueness.",
+      "caller_effect": "No source theorem conclusion changes; exactness direction, object typing and downstream scope are clarified.",
+      "proof_claims": [
+        "C22",
+        "C23"
+      ]
+    },
+    {
+      "id": "F05",
+      "kind": "PROOF_OR_SCOPE_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/rigid_exact_groupoid_foundations.tex",
+        "anchor": "This alone does"
+      },
+      "finding": "Phase seeds control a free finite groupoid action. They do not establish AP, SAP, CCO or finite moving-owner kernel projections.",
+      "proposed_article_change": "Keep those later obligations explicitly separate in the human phase-marking section.",
+      "caller_effect": "No source theorem conclusion changes; exactness direction, object typing and downstream scope are clarified.",
+      "proof_claims": [
+        "C29",
+        "C30",
+        "C31"
+      ]
+    }
+  ],
+  "review": {
+    "date": "2026-10-27",
+    "method": "Separate source reviews of bridge/quotient and affine/phase branches, parent synthesis and finite controls. No human or Lean certification.",
+    "required_mathematical_repairs_found": 0,
+    "remaining": "Implement exact calculus and all groupoid proofs in receiving Lean projects. Projected-gate exactness is an explicit premise; actual owner/kernel finite projection remains future work."
+  },
+  "overview_mermaid": [
+    "flowchart TD",
+    "  R[\"Original RAW exact calculus\"] --> Q[\"Actual quotient blocks and words\"]",
+    "  R --> B[\"Functional bridge kernels\"]",
+    "  B --> G[\"Finite rigid groupoid\"]",
+    "  G --> D[\"Dominant gate transport\"]",
+    "  Q --> J[\"Guarded quotient bridge correspondence\"]",
+    "  G --> J",
+    "  H[\"Finite translate Helly\"] --> A[\"Affine rigid slices\"]",
+    "  G --> A",
+    "  R --> A",
+    "  G --> F[\"Rigid-product factorisation\"]",
+    "  C[\"Abstract free groupoid action\"] --> P[\"Binary characters and phase seeds\"]",
+    "  G --> I[\"Source phase instantiation\"]",
+    "  P --> I"
+  ],
+  "overview_notes": [
+    "No SAP, NR2, Hasse pivot or preferred phase is imported.",
+    "Typed quotient bridge descent requires the projected gates themselves to be exact.",
+    "Abstract phase/finite seed arguments use no CCO; the source instance supplies the free action."
+  ],
+  "dependency_firewalls": [
+    {
+      "claims": [
+        "C01",
+        "C19"
+      ],
+      "forbid": [
+        "A02",
+        "A04",
+        "A05",
+        "A06",
+        "I01",
+        "I02",
+        "A07"
+      ]
+    },
+    {
+      "claims": [
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30"
+      ],
+      "forbid": [
+        "A01",
+        "A02",
+        "A05",
+        "A06",
+        "I01",
+        "I02",
+        "C06",
+        "C09"
+      ]
+    },
+    {
+      "claims": [
+        "C02",
+        "C03",
+        "C04",
+        "C05"
+      ],
+      "forbid": [
+        "A05",
+        "A06",
+        "C15",
+        "C16",
+        "C17",
+        "C18"
+      ]
+    },
+    {
+      "claims": [
+        "C27",
+        "C28",
+        "C29",
+        "C30"
+      ],
+      "forbid": [
+        "A07",
+        "C24",
+        "C25",
+        "C26"
+      ]
+    }
+  ]
+}

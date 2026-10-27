@@ -1,25 +1,35 @@
-# CCO formalization — launch snapshot
+# CCO formalization
 
-Destination: https://github.com/shulda/lean_cco; receiving Project 1, package B001.
-Read the [Project 1 instructions](formalization/coordination/PROJECT_1_INSTRUCTIONS.md),
-[assignment board](formalization/coordination/BOARD.md),
-[protocol](formalization/coordination/PROTOCOL.md) and
-[B001 assignment](formalization/coordination/packages/B001_SHARED_API.md).
-The coordinator supplied the initial Lean/CI scaffold; see [BOOTSTRAP.md](BOOTSTRAP.md)
-for exact pins and build/cache/audit policy. Project 1 implements the shared
-mathematical API and proofs. The smoke theorem certifies infrastructure only.
-No source-paper theorem is formalized yet.
-For resuming the coordinating preparation project, read
-`formalization/coordination/COORDINATOR_RUNBOOK.md`.
+Lean proofs for the CCO manuscript, with source-linked mathematical work
+packages and equal-status receiving projects. Lean 4.34.1 and mathlib
+`d13f23b723b8a846827a245b89c10fc7d3f11612` are pinned.
 
-Before implementation run the Python preflight listed in `HANDOFF_MANIFEST.json`.
-The board assigns B001 to Project 1; implementation has not started.
-Consult [Actions](https://github.com/shulda/lean_cco/actions) for actual build
-results. Source files are a focused pinned
-snapshot, not a complete compilable human article.
+B001 — shared represented API, SAP geometry and a finite-span consumer —
+is [accepted](formalization/coordination/acceptance/B001.md). All public
+modules are imported by `CCO.lean` and checked by Lean CI with a transitive
+axiom allowlist. This does not claim formalization of the entire manuscript.
 
-The full hash manifest records the initial snapshot. Verify it before the
-first edits; later legitimate board/report/README changes need not match
-those initial hashes. Ongoing validation uses module source pins, the
-coordination checker and the actual Lean build. Never replace a running
-repository with a newly staged initial snapshot.
+Read [protocol 2](formalization/coordination/PROTOCOL.md),
+[release permissions](formalization/coordination/AUTONOMY.json),
+[package catalogue](formalization/coordination/BOARD.md) and
+[queue operations](formalization/coordination/QUEUE_OPERATIONS.md).
+The ONLY live allocation/review/acceptance state is on branch `coordination`,
+file `formalization/coordination/STATE.json`. Main BOARD is a mathematical
+catalogue/initial checkpoint, not live ownership.
+
+[Project 1 instructions](formalization/coordination/PROJECT_1_INSTRUCTIONS.md)
+and [Project 2 instructions](formalization/coordination/PROJECT_2_INSTRUCTIONS.md)
+allow autonomous lowest-ready claims and peer review/integration. A submitted
+branch is not a dependency: accepted results are merged and green on main.
+The preparation project resolves source, breaking-API and toolchain changes.
+
+Module [proof notes](formalization/README.md) contain pinned source contracts
+and DAGs for eleven prepared modules. B002–B019 are substantial assignments;
+module tasks and individual lemmas are internal milestones. The source
+snapshot is focused, not the complete typeset human article.
+
+`HANDOFF_MANIFEST.json` records only the original launch snapshot. Ordinary
+report/code/coordination changes legitimately differ from it. Ongoing work
+uses current source pins, catalogue/queue checks, Lean build and axiom audit.
+Never regenerate an old manifest to hide mathematical source changes, or
+replace this live repository with a new initial staging snapshot.

@@ -1,0 +1,264 @@
+% A08. General moving-owner finite-fibre kernel and its hidden projections.
+% Source-audited from A110/A111, no SAP, CCO, exactness or homogeneity
+% unless explicitly mentioned. The entire finite named-sort case is the
+% stronger local extension corollary, not a general binding=fibre assertion.
+\section{Finite packet kernels as binary constraint systems}
+\label{sec:finite-kernel-csp}
+
+The next results are purely about automorphism groups of
+\emph{binary relational structures}; no CCO or exactness
+hypothesis is needed. Let $X$ be a countable structure in a
+relational language of arity at most two, and let $F$ be an
+$\Aut(X)$-invariant equivalence partition of its \emph{entire}
+universe into finite classes $\mathcal C$. These classes may
+be \emph{unnamed} and may move under automorphisms.
+Write
+\[
+ \Gamma=\Aut(X),\qquad
+ N=\ker\bigl(\Gamma\to\operatorname{Sym}(\mathcal C)\bigr).
+\]
+For $C\in\mathcal C$ put $H_C=\Aut(X\restriction C)$.
+For distinct $C,D$ let $H_{CD}\le H_C\times H_D$
+be the group of those pairs of fibre permutations whose
+union preserves \emph{every} induced binary relation
+on $C\cup D$ while fixing each fibre separately.
+These pair groups need \emph{not} be subdirect.
+
+For finite $S\subseteq\mathcal C$ set
+\[
+ \operatorname{Sol}(S)=
+ \{(h_C)_{C\in S}\in\prod_{C\in S}H_C:
+      (h_C,h_D)\in H_{CD}\ \text{for every }C\ne D\}.
+\]
+
+\begin{lemma}[Finite elementary-$2$ translate Helly is affine]
+\label{lem:foundational-affine-translate-helly}
+Let $V$ be a finite elementary abelian $2$-group and
+$\varnothing\ne A\subseteq V$. Suppose every finite family
+of pairwise-intersecting translates $A+v$ has nonempty
+total intersection. Then $A$ is an affine coset of a
+subgroup of $V$.
+\end{lemma}
+\begin{proof}
+Translate $A$ so that a linear subspace $K\le V$
+of maximum dimension contained in an affine
+translate of $A$ now satisfies $K\subseteq A$.
+If $A\ne K$, take $a\in A\setminus K$
+and let $W=K+\langle a\rangle$.
+For $u,v\in W$ we have
+$u+v\in K\cup(a+K)\subseteq A+A$:
+every $k\in K$ is $0+k$, and every
+$a+k$ is the sum of the indicated two
+elements of $A$. Therefore all translates
+$\{A+w:w\in W\}$ meet pairwise.
+Their assumed common point $z$ satisfies
+$z+w\in A$ for every $w\in W$, so
+$z+W\subseteq A$. This contradicts the
+maximal dimension of the affine subspace
+chosen at the start, since
+$\dim W=\dim K+1$. Thus $A=K$
+up to the first translation.
+\end{proof}
+
+\begin{theorem}[Exact binary finite-fibre kernel and compact projection]
+\label{thm:finite-fibre-kernel-csp}
+The full pointwise-owner kernel is
+\[
+ \boxed{\quad N=
+   \{(h_C)_{C\in\mathcal C}\in\prod_CH_C:
+             (h_C,h_D)\in H_{CD}\ \forall C\ne D\}.
+   \quad}\tag{FC1}\label{eq:finite-kernel-binary}
+\]
+For every finite $S\subseteq\mathcal C$ and tuple
+$g\in\prod_{C\in S}H_C$,
+\[
+ \boxed{\quad
+ g\in\operatorname{pr}_S(N)
+ \Longleftrightarrow
+ \text{for every finite }T\supseteq S
+ \text{ there is }h\in\operatorname{Sol}(T)
+ \text{ with }h|_S=g.
+ \quad}\tag{FC2}\label{eq:finite-kernel-projection}
+\]
+In particular the actual binding groups
+$B_C=\operatorname{pr}_C(N)$ and actual pair images
+$P_{CD}=\operatorname{pr}_{C,D}(N)\le B_C\times B_D$
+satisfy
+\[
+ N=\{(b_C)\in\prod_CB_C:
+                (b_C,b_D)\in P_{CD}\ \forall C\ne D\}.
+ \tag{FC3}\label{eq:finite-kernel-actual-pairs}
+\]
+Every $P_{CD}$ is subdirect over $B_C,B_D$, but
+$B_C$ may be strictly smaller than $H_C$, and
+\emph{finite} projections $\operatorname{pr}_S(N)$
+need not equal the solution set of just the pairs
+within $S$.
+\end{theorem}
+\begin{proof}
+Each $n\in N$ restricts to $H_C$ on every fibre,
+and to $H_{CD}$ on every pair. Conversely any
+global family on the right side of \eqref{eq:finite-kernel-binary}
+assembles to a bijection of all points. It preserves
+every unary relation within a fibre and every binary
+relation either within a single fibre or between
+two fibres; arity at most two exhausts the atomic
+relations. Its inverse preserves the same relations,
+so it is an automorphism fixing every fibre setwise.
+This proves \eqref{eq:finite-kernel-binary}.
+
+The forward direction of \eqref{eq:finite-kernel-projection}
+is restriction. Conversely enumerate the countably many
+fibres and choose a nested finite exhaustion $T_n$
+containing $S$. For each $n$ take the finite set
+of solutions on $T_n$ whose restriction to $S$
+equals $g$. These levels are all nonempty by
+hypothesis, and each is finite because each $H_C$
+is finite. Connect a solution on $T_{n+1}$
+to its restriction on $T_n$. The resulting
+infinite finitely branching tree has a branch
+by K\"onig's lemma. The union assignment
+satisfies every pair constraint, hence lies in
+$N$ by \eqref{eq:finite-kernel-binary}, and extends
+$g$. The case of finitely many fibres is direct.
+
+If all coordinate and pair restrictions are taken
+from actual $N$, the right side of
+\eqref{eq:finite-kernel-actual-pairs} is contained
+in the right side of \eqref{eq:finite-kernel-binary},
+because $P_{CD}\subseteq H_{CD}$. Thus it lies
+in $N$; the reverse inclusion is immediate.
+The actual pair groups are subdirect by definition
+of $B_C$. The absence of a stronger finite
+projection statement is essential: elimination
+of unselected fibres may impose constraints
+involving three or more surviving fibres.
+\end{proof}
+
+\begin{corollary}[Relative homogeneity removes hidden projections]
+\label{cor:finite-kernel-relative-homogeneity}
+Let $X^{\mathrm{own}}$ expand $X$ by naming
+\emph{every} finite $F$-class $C$ with its own
+unary predicate. If $X^{\mathrm{own}}$ is
+homogeneous, then for every finite $S$,
+\[
+             \operatorname{pr}_S(N)
+                         =\operatorname{Sol}(S).
+ \tag{FC4}\label{eq:finite-kernel-strong-projection}
+\]
+Consequently $B_C=H_C$ and $P_{CD}=H_{CD}$.
+\end{corollary}
+\begin{proof}
+An assignment in $\operatorname{Sol}(S)$
+is a finite induced partial isomorphism
+on $\bigcup_{C\in S}C$, by the same binary
+checks as above. It also preserves all
+named owner predicates. Homogeneity of
+$X^{\mathrm{own}}$ extends it to an
+automorphism fixing every $F$-class setwise,
+that is, an element of $N$. The opposite
+inclusion is immediate. Singleton and
+two-fibre cases give the remaining claims.
+\end{proof}
+
+\begin{theorem}[Linear dual invariant for elementary abelian kernels]
+\label{thm:finite-kernel-linear-width-two}
+Assume every intrinsic finite fibre motion group
+$H_C$ is elementary abelian, written as a finite
+$\mathbb F_2$-vector space $V_C$. Let
+\[
+ D=\bigoplus_{C\in\mathcal C}V_C^*
+\]
+be the space of finitely supported linear tests,
+and let $R\le D$ be the span of all linear
+equations defining the actual local pair
+subgroups $H_{CD}$ (unary equations are
+allowed as tests supported on one coordinate).
+Then
+\[
+ N=R^\perp\subseteq\prod_CV_C,\qquad
+ \operatorname{Ann}(\operatorname{pr}_S N)=
+                       R\cap D_S
+ \tag{FC5}\label{eq:finite-kernel-dual}
+\]
+for every finite $S$, where
+$D_S=\bigoplus_{C\in S}V_C^*$. In particular
+\[
+ \operatorname{pr}_S(N)
+ =\{x\in\prod_{C\in S}B_C:
+     (x_C,x_D)\in P_{CD}\quad(C\ne D)\}
+\]
+holds precisely when
+\[
+ R\cap D_S=
+ \operatorname{span}\{
+        R\cap D_T:T\subseteq S,\ |T|\le2\}.
+ \tag{FC6}\label{eq:finite-kernel-width-two}
+\]
+The condition on the right concerns
+\emph{projected finite motions}, not the
+global pair-CSP representation, which always
+holds.
+\end{theorem}
+\begin{proof}
+A subgroup of a finite elementary abelian
+product is the kernel of its annihilator
+linear tests. Thus each $H_{CD}$ is cut out
+by rows supported on $C,D$, and
+\eqref{eq:finite-kernel-binary} gives
+$N=R^\perp$. For an arbitrary linear subspace
+$R\le D$, its annihilator in the full product
+has annihilator exactly $R$:
+if $\ell\notin R$, extend a linear functional
+on $D/R$ separating $\ell+R$; since
+$\operatorname{Hom}(D,\mathbb F_2)
+ \cong\prod_CV_C^{**}\cong\prod_CV_C$,
+that functional is evaluation against one
+actual product tuple in $R^\perp$.
+The annihilator of $\operatorname{pr}_S N$
+inside $D_S$ is therefore exactly $R\cap D_S$,
+proving \eqref{eq:finite-kernel-dual}.
+
+The one- and two-coordinate marginal conditions
+on $S$ have as annihilator the span in
+\eqref{eq:finite-kernel-width-two}, since the
+annihilator of $\operatorname{pr}_T N$ is
+$R\cap D_T$. Finite-dimensional duality on
+$D_S$ now gives the stated if-and-only-if
+criterion. This is not a claim that eliminating
+other fibres cannot create a width-three row.
+\end{proof}
+
+\begin{remark}[The hidden-parity obstruction and exact-owner firewall]
+\label{rem:finite-kernel-hidden-parity}
+The finite group in four named phase sets
+$A=B=C=\mathbb F_2$, $D=\mathbb F_2^2$
+defined by shifts $(u,v,u+v,(u,v))$ has
+unrestricted two-coordinate marginals on
+$A,B,C$, but its three-coordinate
+projection satisfies $a+b+c=0$. Hence the
+width-two criterion \eqref{eq:finite-kernel-width-two}
+fails on $S=\{A,B,C\}$: elimination of $D$
+creates a genuinely width-three parity check.
+Its complete canonical binary orbital structure
+is \emph{not homogeneous}, since the
+nonextendible triple of flips is a finite
+partial binary isomorphism. This is a sharp
+general countercontrol, not an exact CCO
+counterexample.
+
+The stronger finite projection
+\eqref{eq:finite-kernel-strong-projection}
+holds automatically for a union of \emph{entire
+finite named sorts} in a homogeneous binary
+structure, as in
+\cref{lem:typed-finite-entire-axis-projection}.
+It does \emph{not} follow merely by naming
+moving owner classes in an already homogeneous
+source. Even homogeneous SAP+CCO multi-original-sort
+full-exact covers may have strictly smaller
+pointwise owner binding groups than the intrinsic
+fibre groups under asymmetric cuts. Nor does the
+full quotient binary group necessarily equal the
+image of the old finer real automorphism group.
+\end{remark}

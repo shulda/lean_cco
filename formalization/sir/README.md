@@ -31,7 +31,7 @@ not new axioms or claims of compiled imports.
 | I01: [`lem:typed-exact-products`](../../sections/typed_strong_domains.tex#L311) | Original tagged strong exact menus contain all singleton atoms and Top, are closed under converse, compatible products and meets with NONEMPTY RESULT. Use actual triangle semantics, SAP associativity/monotonicity and Top absorption from the same strong algebra. No RAW identity. Composition by every nonempty exact factor distributes over finite exact meets with NONEMPTY EVALUATION. | HUMAN_EXPANDED_NOT_LEAN |
 | I02: [`thm:typed-HS`](../../sections/typed_hereditary_selectors.tex#L407) | One conservative converse-compatible original joint selector preserving ALL THREE PC coordinates and survivor heredity. NR2/CCO are used to produce this provider, not repeated premises of the conditional SIR constructor. | HUMAN_EXPANDED_NOT_LEAN |
 | I03: [`lem:cco-triangle-fullness`](../../sections/triangle_fullness.tex#L2) | An actual finite complete binary diagram whose induced subdiagrams on at most three vertices lie in a hereditary AP+semantic-CCO age lies in that age. The same fan proof preserves named sorts. The source snapshot and short support proof are included. | HUMAN_SUPPORT_PROOF_NOT_LEAN |
-| I04: [`thm:full-relative-Hasse`](../../sections/finite_relative_parity_exact_closure.tex#L59) | In the actual original one-sort transitive homogeneous finite complete symmetric binary CCO source, every finite-relative-index cover in the FULL invariant-equivalence lattice has index two. SAP and exactness are not required. Its proof is a separate upstream obligation, not expanded here. Consequently every finite relative index is a power of two. | EXPLICIT_UPSTREAM_NOT_EXPANDED |
+| I04: [`thm:full-relative-Hasse`](../../sections/finite_relative_parity_exact_closure.tex#L59) | In the actual original one-sort transitive homogeneous finite complete symmetric binary CCO source, every finite-relative-index cover in the FULL invariant-equivalence lattice has index two; every finite relative index is a power of two. No SAP or endpoint exactness. Provider parity_hasse now expands the sparse graph, parity and transposition/height proof; it remains unimplemented in Lean. | HUMAN_EXPANDED_NOT_LEAN |
 
 ## Definitions
 
@@ -114,7 +114,7 @@ flowchart TD
 ```
 
 The conditional positive constructor needs no NR2/CCO beyond its supplied interfaces.
-The negative branch retains an explicit unexpanded Hasse provider.
+The negative branch retains the explicit human-expanded parity_hasse provider.
 The direct relative example violates NR2 and uses its own SIR proof.
 
 ## Article exports

@@ -1,0 +1,225 @@
+\begin{lemma}[Prescribed owner action on one point]
+\label{lem:acf-point-homogeneity}
+Let \(D\subseteq Q\) be a finite induced structure whose image
+under an invariant owner quotient is a finite set \(B\), and
+suppose every automorphism of \(D\) induces an automorphism of \(B\).
+Suppose every point of \(D\) is moved into the original
+nonempty \(A_0\subseteq D\) by some relative
+automorphism, and every compatible singleton request
+\(a\mapsto a'\) on original points \(a,a'\in A_0\),
+with \emph{every} prescribed compatible
+\(\gamma\in\Aut(B)\), extends in \(D\).
+Then for arbitrary \(x,y\in D\) and
+\(\gamma\in\Aut(B)\) with
+\(\gamma(\operatorname{own}(x))=\operatorname{own}(y)\),
+there exists \(\beta\in\Aut(D)\) inducing precisely
+\(\gamma\) and sending \(x\) to \(y\).
+Consequently it sends any subset of \(F_Q[x]\)
+into \(F_Q[y]\).
+\end{lemma}
+\begin{proof}
+Choose \(g,h\in\Aut(D)\) with
+\(g(x)=a\in A_0\) and \(h(y)=a'\in A_0\).
+The required owner component on an automorphism
+taking \(a\) to \(a'\) is
+\(\operatorname{own}(h)\gamma
+          \operatorname{own}(g)^{-1}\).
+It is compatible with \(a\mapsto a'\).
+Extend this singleton request by \(k\), with
+that exact component.  Then \(h^{-1}kg\)
+does the job.  Invariance of \(F_Q\) gives
+the packet conclusion.
+\end{proof}
+
+\begin{lemma}[Finite exact reconstruction preserves a root]
+\label{lem:acf-finite-lift}
+Let \(K\) be a finite-class \emph{exact} invariant
+equivalence of a standing source \(Q\), and write
+\(\pi:Q\to\overline Q=Q/K\).
+For any finite real \(A_0\) one has
+\begin{equation}\label{eq:acf-finite-acl}
+ \operatorname{acl}_Q(A_0)=
+ \pi^{-1}\bigl(\operatorname{acl}_{\overline Q}(\pi A_0)\bigr).
+\end{equation}
+The strong closed-\(S_Q\) hypothesis descends to
+\(\overline Q\) for the full-matrix palette
+\[
+ \overline S=\{q\in\mathcal D(\overline Q):
+                    \Lambda_K(q)\subseteq S_Q\},
+\]
+where \(\Lambda_K(q)\) denotes the set of original fine
+colours occurring in full \(K\times K\) cross matrices over \(q\).
+For nonempty \(A_0\), if \(\overline D\) is an ordinary EPPA
+witness with rooted \(\overline S\)-ACF over \(\pi(A_0)\),
+then \(D=\pi^{-1}(\overline D)\) is an ordinary EPPA witness
+with rooted \(S_Q\)-ACF over \(A_0\).
+
+For the following STRONGER RELATIVE
+assertion, assume explicitly that the
+original owner quotient is an ACTUAL
+invariant FULL EXACT quotient \(Q/H\).
+Its corresponding coarse owner quotient
+after factoring out \(K\) is
+\[
+ \overline Q/\overline H=Q/(K\vee H),
+ \qquad \overline H=(K\vee H)/K .
+\]
+Suppose a finite relative rooted ACF
+witness \(\overline D\) for \(\pi(A_0)\), with safe palette
+\(\overline S\), is available in \(\overline Q\) over a finite
+coarse owner set
+\(\overline B\subseteq Q/(K\vee H)\).
+Let \(B\subseteq Q/H\) be the
+\emph{complete finite inverse owner
+packet} over \(\overline B\), and suppose
+the induced map
+\(\Aut(B)\to\Aut(\overline B)\) is
+surjective with kernel transitive on
+each owner-cover fibre. Then
+\(D=\pi^{-1}(\overline D)\) is a rooted
+relative ACF witness over \(B\) for
+\(A_0\), with all compatible source
+requests and rooted targets preserved.
+The explicit exactness of \(H\)
+is needed here to invoke joint
+exact-sort homogeneity; no claim is
+made for an arbitrary nonexact owner
+quotient under these hypotheses alone.
+\end{lemma}
+\begin{proof}
+We prove the algebraic-closure identity
+\eqref{eq:acf-finite-acl} with both directions
+and with the stabiliser groups distinguished.
+Let \(x\in Q\) and \(\bar x=\pi(x)\).
+If \(\bar x\in\operatorname{acl}_{\bar Q}(\pi A_0)\),
+its orbit under \(\Aut(\bar Q/\pi A_0)\)
+is finite. The image of \(\Aut(Q/A_0)\)
+acts on \(\bar Q\) inside this pointwise
+stabiliser; therefore the \(\Aut(Q/A_0)\)
+orbit of \(x\) lies in finitely many
+\(K\)-classes, each finite by hypothesis.
+Thus \(x\in\operatorname{acl}_Q(A_0)\).
+
+Conversely suppose
+\(\bar x\notin\operatorname{acl}_{\bar Q}(\pi A_0)\).
+There are infinitely many DISTINCT
+quotient classes \(\bar x'\) in its orbit
+under \(\Aut(\bar Q/\pi A_0)\).
+For each such \(\bar x'\), the finite
+joint sort map fixing EACH actual
+real point of \(A_0\), fixing the
+named \(K\)-classes of \(\pi A_0\),
+and sending the ONE additional
+\(K\)-class \(\bar x\) to \(\bar x'\)
+is a partial isomorphism of the
+actual real/\(K\)-quotient binary
+language: its within-quotient
+orbitals are preserved by the chosen
+quotient automorphism, the real
+diagram on \(A_0\) is fixed, and
+EVERY mixed orbital between a real
+point \(a\in A_0\) and \(\bar x\)
+depends only on
+\((\pi(a),\bar x)\), by
+\cref{lem:nested-mixed}.
+The case \(\bar x\in\pi A_0\)
+is excluded by its infinite orbit.
+Joint exact-sort homogeneity
+\cref{thm:joint-exact} extends this
+finite map to some automorphism of
+\(Q\) fixing \(A_0\) pointwise and
+sending \(\bar x\) to \(\bar x'\).
+These infinitely many target
+\(K\)-classes force an infinite
+\(\Aut(Q/A_0)\) orbit of the
+actual point \(x\). Hence
+\(x\notin\operatorname{acl}_Q(A_0)\).
+This proves \eqref{eq:acf-finite-acl}
+without presuming a section
+\(\Aut(\bar Q)\to\Aut(Q)\).
+
+For safety, lift closed quotient factors to
+\emph{full finite} \(K\)-preimages, apply the
+original strong closed-\(S_Q\) amalgamation, and
+project back.  The preimages are full
+\(K\)-classes, so a real strong amalgam cannot
+identify two distinct off-base \(K\)-classes;
+all entries of each new cross matrix are safe.
+
+Both witness assertions use the same finite joint-map lifting
+observation. Suppose \(\overline\beta\in\Aut(\overline D)\)
+and \(p_0\) is a finite original partial isomorphism with domain
+and range in \(D=\pi^{-1}(\overline D)\), satisfying
+\(\pi p_0=\overline\beta\pi\) on its domain. The union of
+\(p_0\) and \(\overline\beta\) on all named \(K\)-classes
+of \(\overline D\) is a partial isomorphism of the joint
+real/\(K\)-quotient language. Indeed, within-sort orbitals are
+preserved by the two maps, and every mixed orbital factors
+through the \(K\)-projection by \cref{lem:nested-mixed}.
+Thus \cref{thm:joint-exact} gives an ambient lift preserving
+\(D\) setwise and extending \(p_0\).
+
+In the relative situation, the owner image of \(D\) is exactly
+\(B\): every \(K\)-class with \((K\vee H)\)-owner \(c\)
+meets every \(H\)-class in \(c\), by \(K;H=K\vee H\), and
+\(\overline D\) projects onto \(\overline B\). The same lifting
+observation allows an additional prescribed
+\(\gamma\in\Aut(B)\), provided it agrees with \(p_0\) on
+real owners and induces the same coarse owner action as
+\(\overline\beta\). To check the enlarged joint map, mixed
+real/\(H\) pairs use \cref{lem:nested-mixed}; mixed
+\(K\)/\(H\) pairs use \cref{lem:acf-mixed-exact-join}, namely
+\[
+                  K;a;H=(K\vee H);a.
+\]
+Their pair orbit is determined by the common quotient
+\(Q/(K\vee H)\), where the two actions agree. Hence
+\cref{thm:joint-exact} also lifts this enlarged finite map,
+with its exact prescribed action on all of \(B\).
+No global section of quotient automorphism groups is used.
+
+For source extension, project the original partial map \(p\)
+to \(\overline p\), extend it in \(\overline D\), and apply
+the preceding observation with \(p_0=p\). In the relative case,
+use the quotient witness extension with the coarse action
+induced by the prescribed \(\gamma\). This proves ordinary EPPA
+and its stated relative version on the same full preimage \(D\).
+
+For rooted transport, an original unsafe clique \(Z\) projects
+to an \(\overline S\)-unsafe set of distinct \(K\)-classes:
+any original unsafe edge between different classes witnesses
+that their full cross matrix is not contained in \(S_Q\).
+A singleton projection is unsafe vacuously. Choose a quotient
+rooted automorphism \(\overline\alpha\) carrying \(\pi(Z)\)
+into \(\operatorname{acl}_{\overline Q}(\pi A_0)\) and taking
+\(\pi(z)\) to \(\pi(a)\) for one actual \(a\in A_0\).
+Without owners, the lifting observation with \(p_0:z\mapsto a\)
+already gives the required automorphism of \(D\).
+
+In the relative case let \(\overline\gamma\) be the coarse
+owner component of \(\overline\alpha\). By
+\cref{lem:prescribed-action-point-lifting}, the onto owner action
+with fibre-transitive kernel supplies a lift
+\(\gamma\in\Aut(B)\) of \(\overline\gamma\) satisfying
+\(\gamma(H[z])=H[a]\). Apply
+the enlarged lifting observation to
+\(\overline\alpha,\gamma,z\mapsto a\).
+In either case the resulting automorphism sends the selected
+root literally to \(a\), and its whole clique into
+\[
+ \pi^{-1}\bigl(\operatorname{acl}_{\overline Q}(\pi A_0)\bigr)
+                  =\operatorname{acl}_Q(A_0)
+\]
+by \eqref{eq:acf-finite-acl}. No independently chosen
+permutations of finite \(K\)-fibres are required.
+\end{proof}
+
+\begin{remark}[The finite owner hypotheses]
+The finite owner-packet and kernel-transitivity
+hypotheses in Lemma~\ref{lem:acf-finite-lift}
+are substantial.  They will be furnished
+simultaneously for all canonical MI factors by
+the finite exact-quotient master below, rather
+than by choosing incompatible finite owner
+sets independently.
+\end{remark}

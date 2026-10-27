@@ -1,0 +1,117 @@
+\section{Actual exact fibre products and quotient descent}
+For an exact invariant equivalence $E$ the quotient projection is
+$\pi_E:M\to M/E$. If $E,J$ are two such equivalences, their meet
+$K=E\cap J$ and join $Q=E\vee J=EJ$ are exact: intersection is part of
+the definition and product closure follows from
+Lemma~\ref{lem:exact-product}. The map
+\begin{equation}\label{eq:fibreproduct}
+ M/K\longrightarrow (M/E)\times_{M/Q}(M/J),\qquad
+ [x]_K\longmapsto([x]_E,[x]_J)
+\end{equation}
+is a bijection. Injectivity is immediate. Surjectivity says that
+an $E$-class and a $J$-class contained in the same $Q$-class
+intersect, which holds by $Q=EJ$. The fine colour of a pair
+is recovered by the formula
+\begin{equation}\label{eq:colour-meet}
+ Ka=Ea\cap Ja
+\end{equation}
+for every original atomic support $a$, including equality.
+This is the two-coordinate case of
+\cref{lem:exact-quotient-colour-meet}, using $EaE=Ea$ and similarly
+for $J,K$.
+The typed quotient structure therefore remembers all fine pair
+orbits of $M/K$.
+
+\begin{lemma}[Exactness descends through exact quotients]
+\label{lem:exact-descent}
+Suppose $J$ is an invariant exact equivalence and $Q\ge J$ is
+an invariant $J$-saturated exact relation (in particular an exact
+equivalence). Then its induced relation $Q/J$ on $M/J$ is exact in
+the actual quotient orbital language. Conversely the pullback of
+every quotient word profile is a represented exact relation on $M$.
+\end{lemma}
+\begin{proof}
+Write $Q=\bigcap_iP_i$ with represented word profiles $P_i$.
+As $Q=JQJ$, distributivity of exact products over nonempty exact
+intersections (Lemma~\ref{lem:exact-product}) gives
+\[
+ Q=J\left(\bigcap_iP_i\right)J
+  =\bigcap_iJP_iJ.
+\]
+For an original word $P_i=a_1\cdots a_k$, the relation
+$JP_iJ=Ja_1J\cdots Ja_kJ$ is the pullback of the actual word
+of quotient atomic orbitals $\overline{a_1}\cdots\overline{a_k}$;
+the intervening $J$ factors can be inserted because $J^2=J$
+and all represented invariant products commute. Hence each
+$JP_iJ/J$ is a quotient word profile, and their intersection is
+precisely $Q/J$. The converse follows by pulling back each named
+quotient orbital $JaJ$, taking represented products and finite
+intersections. Identity and $\Top$ obey the same conventions.
+\end{proof}
+
+
+\begin{lemma}[Typed exact descent under intertwining kernels]
+\label{lem:typed-intertwining-exact-descent}
+Let $N$ be a typed original source as in
+\cref{thm:full-typed-exact-balls}, and choose for every
+original named sort $s$ a full RAW exact invariant
+equivalence $E_s$.  Let $D:s\to t$ be a nonempty FULL
+exact original relation such that $E_s;D;E_t=D$.
+Suppose $D$ has a finite word presentation
+$D=\bigcap_{\alpha=1}^m P_{w_\alpha}$, allowing $m=0$
+(the typed top), and that every original atomic factor
+$a:u\to v$ occurring in these words satisfies
+\[
+                       E_u;a=a;E_v.
+ \tag{TI}\label{eq:typed-intertwining}
+\]
+Then the induced relation $D/(E_s,E_t)$ on the actual
+quotient sorts $N_s/E_s$, $N_t/E_t$ is FULL exact in
+their complete binary orbital language.  Conversely,
+the old inverse image of every quotient FULL exact
+relation is original FULL exact without assuming (TI).
+This is a sufficient typed descent criterion, not an
+assertion of unrestricted factorwise mixed-sort descent.
+\end{lemma}
+\begin{proof}
+Write $w=a_1;\cdots;a_k$ with intermediate original
+sorts $s=s_0,\ldots,s_k=t$.  The inverse image of
+the corresponding actual quotient-orbital word is,
+by the actual orbit-block calculation of
+\cref{lem:typed-simultaneous-blocks},
+\[
+ E_{s_0};a_1;E_{s_1};a_2;\cdots;a_k;E_{s_k}.
+\]
+By (TI), $a_i;E_{s_i}=E_{s_{i-1}};a_i$.
+Associativity and $E_{s_i}^2=E_{s_i}$ remove each
+intermediate equivalence factor, so this expression is
+exactly $E_s;P_w;E_t$.  The identity-only empty word
+pulls back to $E_s$, and the empty list of word
+restrictions presents the quotient top.
+
+Using the ACTUAL full exact convolution and nonempty
+meet distributivity of \cref{thm:full-typed-exact-balls}(ii),
+\[
+ D=E_s;\Bigl(\bigcap_\alpha P_{w_\alpha}\Bigr);E_t
+       =\bigcap_\alpha(E_s;P_{w_\alpha};E_t).
+\]
+Every relation on the right is endpoint-saturated and
+is the pullback of ONE quotient word by the previous
+paragraph.  Inverse image preserves arbitrary
+intersections of such saturated relations, hence
+$D/(E_s,E_t)$ is an intersection of actual quotient
+words and is FULL exact.  For $m=0$, both sides are
+top, by the serial/top absorption law.
+
+Conversely, each ACTUAL quotient atomic pair orbital
+pulls back to a block $E_u;a;E_v$ for some original
+atomic $a:u\to v$; quotient identity pulls back to
+$E_u$.  Each block is nonempty FULL exact by original
+word exactness and exact convolution.  The old pullback
+of any quotient word is a product of such blocks,
+therefore FULL exact, with genuine intermediate
+$E$-factors retained.  The inverse image of a
+nonempty finite meet of quotient words is their
+nonempty full exact intersection.  No mixed-sort
+commutation was used in this converse direction.
+\end{proof}
