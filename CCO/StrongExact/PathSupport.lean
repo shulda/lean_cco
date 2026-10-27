@@ -11,7 +11,7 @@ simple formal path satisfies these conditions; the theorem in fact
 covers this slightly wider family of endpoint-separated walks.
 
 This is a purely algebraic consequence of the all-third-vertex
-strong PC update and B001 strong product associativity. There is no
+strong PC update and B001 typed product monotonicity. There is no
 RAW equality identity and no SAP/CCO assumption in the abstract
 stable-network induction.
 -/
@@ -41,13 +41,13 @@ namespace SpecifiedPath
 variable {D}
 
 /-- The first and last formal vertices are different at every length. -/
-def endpoints_ne {x y : V} : D.SpecifiedPath x y → x ≠ y
+def endpoints_ne {x y : V} : SpecifiedPath D x y → x ≠ y
   | .edge hxy _ _ => hxy
   | .cons _ hxz _ _ _ => hxz
 
 /-- The actual typed positive word, never an empty or identity word. -/
 def word {x y : V} :
-    D.SpecifiedPath x y →
+    SpecifiedPath D x y →
       PositiveWord S (D.vertexSort x) (D.vertexSort y)
   | .edge _ a _ => .single a
   | .cons _ _ a _ tail => .cons a (word tail)
@@ -58,7 +58,7 @@ positive path. No extra product exactness or CCO hypothesis is used. -/
 theorem stable_subset_profile
     (N : Network D) (hStable : Stable D N)
     (hInit : Refines D N (initial D))
-    {x y : V} (p : D.SpecifiedPath x y) :
+    {x y : V} (p : SpecifiedPath D x y) :
     N ⟨x, y, p.endpoints_ne⟩ ⊆ PositiveWord.profile S p.word := by
   induction p with
   | edge hxy a ha =>
@@ -107,7 +107,7 @@ theorem fixedNetwork_refines_initial :
 /-- C11 finite fixed-point corollary: every fixed survivor atom belongs
 to every specified path profile, with all intermediate sorts retained. -/
 theorem fixedNetwork_subset_path_profile {x y : V}
-    (p : D.SpecifiedPath x y) :
+    (p : SpecifiedPath D x y) :
     (fixedNetwork D) ⟨x, y, p.endpoints_ne⟩ ⊆
       PositiveWord.profile S p.word :=
   p.stable_subset_profile (fixedNetwork D)
