@@ -46,7 +46,7 @@ private theorem process_finset_of_SAP
       · intro s hs
         rfl
       · intro u hu
-        exact False.elim (Finset.not_mem_empty u hu)
+        simp at hu
   | @insert x T hnot ih =>
       have hTS' : ∀ u ∈ T, u ∉ S₀ := by
         intro u hu
@@ -65,16 +65,18 @@ private theorem process_finset_of_SAP
           f'.image s = f.image s := hOld s hsx
           _ = f₀.image s := hPin s hs
       · intro u hu
-        rcases Finset.mem_insert.mp hu with rfl | huT
+        rcases Finset.mem_insert.mp hu with hux | huT
+        · subst u
         · constructor
-          · exact (Set.not_mem_union.mp hNew).1
+          · intro hxZ
+            exact hNew (Or.inl hxZ)
           · intro v hxv heq
             have hvx : v ≠ x := Ne.symm hxv
             have hfv := hOld v hvx
             have hInRange : f'.image x ∈ Set.range f.image := by
               refine ⟨v, ?_⟩
               exact heq.trans hfv
-            exact (Set.not_mem_union.mp hNew).2 hInRange
+            exact hNew (Or.inr hInRange)
         · obtain ⟨huZ, huUnique⟩ := hDone u huT
           have hux : u ≠ x := by
             intro hux
@@ -89,8 +91,8 @@ private theorem process_finset_of_SAP
             · subst v
               have hInRange : f'.image x ∈ Set.range f.image := by
                 refine ⟨u, ?_⟩
-                exact heq.symm.trans hfu
-              exact (Set.not_mem_union.mp hNew).2 hInRange
+                exact hfu.symm.trans heq
+              exact hNew (Or.inr hInRange)
             · have hfv := hOld v hvx
               have hEq : f.image u = f.image v := by
                 calc
