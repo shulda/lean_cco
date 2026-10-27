@@ -1,4 +1,4 @@
-import CCO.StrongExact.PCNetwork
+import CCO.StrongExact.FinitePC
 
 /-!
 # STRONG survivor domains and all-coordinate triangle consistency
@@ -105,5 +105,14 @@ theorem survivorNetwork_refines_iterate (n : Nat) :
     (D.survivorNetwork) (StrongPC.initial D)
     D.survivorNetwork_stable
     D.survivorNetwork_refines_initial n
+
+
+/-- The actual whole-diagram survivor network sits inside the greatest
+finite PC fixed point, even though the reverse inclusion is not yet
+known without C07–C12 exactness and path semantics. -/
+theorem survivorNetwork_refines_fixedNetwork :
+    StrongPC.Refines D D.survivorNetwork (StrongPC.fixedNetwork D) :=
+  StrongPC.fixedNetwork_greatest D (D.survivorNetwork)
+    D.survivorNetwork_stable D.survivorNetwork_refines_initial
 
 end CCO.PartialDiagram

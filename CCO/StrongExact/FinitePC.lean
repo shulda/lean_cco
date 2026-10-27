@@ -89,4 +89,24 @@ theorem fixedNetwork_greatest (M : Network D)
   stable_refines_iterate D M (initial D)
     hStable hInside (fixedIndex D)
 
+
+/-- Every actual injective completion supplies a survivor in the
+canonical finite PC fixed point; this uses the same literal old fine
+colour on each off-diagonal pair at every stage. -/
+theorem fixedNetwork_supports_completion (f : DiagramHom D)
+    (hf : f.IsInjective) :
+    SupportsCompletion D (fixedNetwork D) f :=
+  supports_all_iterates D f hf (fixedIndex D)
+
+/-- In particular, the stable Boolean network never develops an empty
+domain if the displayed diagram already has an injective completion. -/
+theorem fixedNetwork_nonempty_of_completion (f : DiagramHom D)
+    (hf : f.IsInjective) (p : DistinctPair V) :
+    (fixedNetwork D p).Nonempty := by
+  have hne : f.image p.src ≠ f.image p.dst :=
+    fun he => p.ne (hf he)
+  obtain ⟨a, ha⟩ :=
+    S.some_colour_of_ne (f.point p.src) (f.point p.dst) hne
+  exact ⟨a, fixedNetwork_supports_completion D f hf p a ha⟩
+
 end CCO.StrongPC
