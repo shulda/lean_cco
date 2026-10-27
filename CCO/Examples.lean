@@ -50,11 +50,11 @@ def trivialPalette : AtomicSource (Fin 2) (fun _ => Nat) where
     · have ht : (⟨j, y⟩ : U) = ⟨i, x⟩ := h.symm
       change exampleColour (i := i) (j := j) x y = some () ↔
         exampleColour (i := j) (j := i) y x = some ()
-      simp [exampleColour, h, ht]
+      simp only [exampleColour, if_pos h, if_pos ht]
     · have ht : (⟨j, y⟩ : U) ≠ ⟨i, x⟩ := Ne.symm h
       change exampleColour (i := i) (j := j) x y = some () ↔
         exampleColour (i := j) (j := i) y x = some ()
-      simp [exampleColour, h, ht]
+      simp only [exampleColour, if_neg h, if_neg ht]
   realized := by
     intro i j a
     cases a
