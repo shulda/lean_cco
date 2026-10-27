@@ -23,3 +23,4 @@ import CCO.SAPPoint
 import CCO.StabilizerSAP
 import CCO.DiagramAction
 import CCO.SpanEmbedding
+import CCO.SAPEdge
