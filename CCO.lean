@@ -48,3 +48,4 @@ import CCO.RawExact.ConvolutionFromHelly
 import CCO.RawExact.ActualMixedMaps
 import CCO.RawExact.Distribution
 import CCO.RawExact.ThetaThree
+import CCO.RawExact.ThetaThreeColours
