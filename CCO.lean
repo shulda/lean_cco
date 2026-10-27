@@ -54,3 +54,4 @@ import CCO.RawExact.AtomicExact
 import CCO.RawExact.AtomicFans
 import CCO.RawExact.ExactSaturations
 import CCO.RawExact.CyclicIndex
+import CCO.RawExact.CycleIncidence
