@@ -190,4 +190,67 @@ theorem loop_powers_three_of_gluing
   intro x hx
   exact hmono (S.supported_fork_of_gluing hPoint hEdge c P hx)
 
+
+/-!
+## Typed support of all three PC coordinates
+
+This is only the elementary Boolean triangle-support predicate and its
+cyclic/Peirce permutations. It does NOT assert PC fixed-point exactness,
+strong CCO, selectors or any completeness theorem. Those belong to B003.
+-/
+
+/-- All-coordinate support of a typed triangle menu triple. -/
+def PC (A : S.Menu i j) (B : S.Menu j k) (C : S.Menu i k) : Prop :=
+  C ⊆ S.product A B ∧
+  A ⊆ S.product C (S.opposite B) ∧
+  B ⊆ S.product (S.opposite A) C
+
+/-- Rotate the supported output to the first coordinate. This is a
+direct consequence of actual triangle reversal, without SAP. -/
+theorem pc_rotate_output_first (A : S.Menu i j)
+    (B : S.Menu j k) (C : S.Menu i k) :
+    S.PC A B C ↔ S.PC C (S.opposite B) A := by
+  constructor
+  · rintro ⟨hC, hA, hB⟩
+    refine ⟨hA, ?_, ?_⟩
+    · simpa only [S.opposite_opposite] using hC
+    · intro d hd
+      have h : S.conv d ∈ S.product (S.opposite A) C := hB hd
+      have hop : d ∈ S.opposite (S.product (S.opposite A) C) := h
+      rw [S.product_opposite, S.opposite_opposite] at hop
+      exact hop
+  · rintro ⟨hA, hC, hOppB⟩
+    refine ⟨?_, hA, ?_⟩
+    · simpa only [S.opposite_opposite] using hC
+    · intro b hb
+      have h : S.conv b ∈ S.product (S.opposite C) A :=
+        hOppB (S.mem_opposite hb)
+      have hop : b ∈ S.opposite (S.product (S.opposite C) A) := h
+      rw [S.product_opposite, S.opposite_opposite] at hop
+      exact hop
+
+/-- Rotate the supported output to the second coordinate, maintaining
+the true ordered sort-pair tags of all three menus. -/
+theorem pc_rotate_output_second (A : S.Menu i j)
+    (B : S.Menu j k) (C : S.Menu i k) :
+    S.PC A B C ↔ S.PC (S.opposite A) C B := by
+  constructor
+  · rintro ⟨hC, hA, hB⟩
+    refine ⟨hB, ?_, ?_⟩
+    · intro d hd
+      have h : S.conv d ∈ S.product C (S.opposite B) := hA hd
+      have hop : d ∈ S.opposite (S.product C (S.opposite B)) := h
+      rw [S.product_opposite, S.opposite_opposite] at hop
+      exact hop
+    · simpa only [S.opposite_opposite] using hC
+  · rintro ⟨hB, hOppA, hC⟩
+    refine ⟨?_, ?_, hB⟩
+    · simpa only [S.opposite_opposite] using hC
+    · intro a ha
+      have h : S.conv a ∈ S.product B (S.opposite C) :=
+        hOppA (S.mem_opposite ha)
+      have hop : a ∈ S.opposite (S.product B (S.opposite C)) := h
+      rw [S.product_opposite, S.opposite_opposite] at hop
+      exact hop
+
 end CCO.AtomicSource
