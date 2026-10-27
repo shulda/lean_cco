@@ -4,6 +4,7 @@ import CCO.RawWords
 import CCO.Atomic
 import CCO.StrongGeometry
 import CCO.Supports
+import CCO.AtomicPeirce
 import CCO.Finite
 import CCO.BasePaths
 import CCO.GroupActions
