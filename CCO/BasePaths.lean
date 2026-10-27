@@ -137,8 +137,12 @@ def menu : S.Menu i j :=
 
 theorem empty_base (A : S.ActualSpan (i := i) (j := j) Empty) :
     A.menu = Set.univ := by
-  change S.domain A.edges = Set.univ
-  exact S.domain_empty
+  ext a
+  constructor
+  · intro _
+    trivial
+  · intro _ c
+    exact c.elim
 
 /-- Flip the actual finite span, including the literal converse edges. -/
 def reverse : S.ActualSpan (i := j) (j := i) C where
