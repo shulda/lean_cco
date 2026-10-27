@@ -56,20 +56,23 @@ theorem pair_homogeneous_of_homogeneous
     calc
       S.colour y y = none := (S.colour_none_iff y y).mpr rfl
       _ = S.colour y' y' := ((S.colour_none_iff y' y').mpr rfl).symm
-  let f : Bool → Sigma X := fun b => if b then ⟨j, y⟩ else ⟨i, x⟩
-  let h : Bool → Sigma X := fun b => if b then ⟨j, y'⟩ else ⟨i, x'⟩
-  have hpairs : ∀ a b : Bool,
+  let f : ULift.{max u v} Bool → Sigma X :=
+    fun b => if b.down then ⟨j, y⟩ else ⟨i, x⟩
+  let h : ULift.{max u v} Bool → Sigma X :=
+    fun b => if b.down then ⟨j, y'⟩ else ⟨i, x'⟩
+  have hpairs : ∀ a b : ULift.{max u v} Bool,
       taggedColour S (f a) (f b) = taggedColour S (h a) (h b) := by
-    intro a b
+    intro ⟨a⟩ ⟨b⟩
     cases a <;> cases b <;>
       simp [f, h, taggedColour, hxx, hxy, hrev, hyy]
-  obtain ⟨g, hg⟩ := H.extends_finite_diagram (V := Bool) f h hpairs
+  obtain ⟨g, hg⟩ :=
+    H.extends_finite_diagram (V := ULift.{max u v} Bool) f h hpairs
   refine ⟨g, ?_, ?_⟩
   · have htag : (⟨i, g • x⟩ : Sigma X) = ⟨i, x'⟩ := by
-      simpa [f, h] using (hg false)
+      simpa [f, h] using (hg ⟨false⟩)
     simpa only [Sigma.mk.injEq, heq_eq_eq, true_and] using htag
   · have htag : (⟨j, g • y⟩ : Sigma X) = ⟨j, y'⟩ := by
-      simpa [f, h] using (hg true)
+      simpa [f, h] using (hg ⟨true⟩)
     simpa only [Sigma.mk.injEq, heq_eq_eq, true_and] using htag
 
 /-- In particular the named original group action is transitive on
