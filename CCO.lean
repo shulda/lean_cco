@@ -52,3 +52,5 @@ import CCO.StrongExact.ExactDistribution
 import CCO.StrongExact.ExactClosure
 import CCO.StrongExact.PathCycleSupport
 import CCO.StrongExact.FinitePathBounds
+import CCO.StrongExact.PrescribedPathWitness
+import CCO.StrongExact.ThetaVertices
