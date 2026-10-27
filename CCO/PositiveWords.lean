@@ -11,8 +11,10 @@ artificial identity letter, and its strongly typed profile uses the
 three-distinct-point product, not RAW composition. Its represented
 predicate is equality-inclusive and can have real diagonal outputs.
 
-The word append laws are proved for arbitrary repeated named sorts.
-This module supplies the algebraic half of the B001 positive-word bridge.
+The word append laws and the full guarded RAW/STRONG correspondence are
+proved for arbitrary repeated named sorts. The full proof uses a stronger
+closed-word invariant and SAP supported-fork absorption, while the separate
+finite-diagram injectivization API is available in GuardedEndpoints.
 -/
 
 universe u v w
@@ -123,8 +125,9 @@ theorem single_guard (a : S.Atom i j) :
   rw [S.atomRel_as_menu, S.diversityGuard_menuRel]
 
 /-- At length two, guarded RAW composition equals the actual STRONG
-triangle product without any SAP assumption. For longer words the
-additional finite-diagram injectivization theorem is required. -/
+triangle product without any SAP assumption. For longer words, a
+possible diagonal output at the intermediate stage requires SAP;
+the general guarded correspondence is proved below. -/
 theorem two_letter_guard (a : S.Atom i j) (b : S.Atom j k) :
     S.diversityGuard (represented S (.cons a (.single b))) =
       profile S (.cons a (.single b)) := by
