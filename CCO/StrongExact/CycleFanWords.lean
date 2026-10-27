@@ -68,6 +68,8 @@ theorem represented_fan_endpoint
         S.triangle_fan_step_of_homogeneous H a b c
           htri x y hxy
       refine ⟨x, z, ?_, hxz⟩
+      change PositiveWord.represented S
+        (PositiveWord.append S (word S fan) (.single b)) x z
       rw [PositiveWord.represented_append S]
       exact ⟨y, hwalk, hyz⟩
 
