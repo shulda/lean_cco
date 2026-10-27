@@ -42,7 +42,7 @@ The finite diagram may repeat named sorts arbitrarily. -/
 theorem PartialDiagram.strongCompletion_iff_cycles_of_SAP_CCO
     {G : Type*} [Group G] [∀ i : ι, MulAction G (X i)]
     (H : HomogeneousSource S G) (sap : AgeSAP S)
-    (cco : SemanticCCO.{u, v, w, z} S) (D : PartialDiagram S V) :
+    (cco : SemanticCCO.{u, v, z, w} S) (D : PartialDiagram S V) :
     D.HasStrongCompletion ↔ ∀ C : SimpleCycle D, CycleHom C := by
   constructor
   · rintro ⟨f, _⟩ C
