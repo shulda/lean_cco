@@ -96,8 +96,6 @@ namespace CCO.RawSymmetric
 variable {A : Type*} {G : Type*}
 variable [Group G] [MulAction G A]
 
-abbrev Rel := A → A → Prop
-
 /-- The ambient group can flip *every* ordered pair of the same original
 sort. A homogeneous symmetric atomic colouring yields this property. -/
 def PairFlip : Prop :=
@@ -106,12 +104,12 @@ def PairFlip : Prop :=
 
 /-- Equivalence is stated as a property of an *actual* binary relation.
 This avoids implicitly restricting to the represented exact sublattice. -/
-structure EquivRel (R : Rel) : Prop where
-  refl : ∀ x, R x x
-  symm : ∀ x y, R x y → R y x
-  trans : ∀ x y z, R x y → R y z → R x z
+structure EquivRel (R : A → A → Prop) : Prop where
+  refl : ∀ x : A, R x x
+  symm : ∀ x y : A, R x y → R y x
+  trans : ∀ x y z : A, R x y → R y z → R x z
 
-theorem invariant_commute (R S : Rel)
+theorem invariant_commute (R S : A → A → Prop)
     (hR : ∀ (g : G) x y, R x y → R (g • x) (g • y))
     (hS : ∀ (g : G) x y, S x y → S (g • x) (g • y))
     (hflip : PairFlip (G := G) (A := A)) :
@@ -147,7 +145,7 @@ theorem invariant_commute (R S : Rel)
 /-- The product of two invariant equivalences is their join: in addition
 to being an equivalence, it contains both and is below every equivalence
 containing both. -/
-theorem comp_equivalences_is_join (E F : Rel)
+theorem comp_equivalences_is_join (E F : A → A → Prop)
     (hE : EquivRel E) (hF : EquivRel F)
     (invE : ∀ (g : G) x y, E x y → E (g • x) (g • y))
     (invF : ∀ (g : G) x y, F x y → F (g • x) (g • y))
