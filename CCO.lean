@@ -27,3 +27,4 @@ import CCO.SAPEdge
 import CCO.DiagramMove
 import CCO.DiagramNeighbours
 import CCO.Injectivization
+import CCO.GuardedEndpoints
