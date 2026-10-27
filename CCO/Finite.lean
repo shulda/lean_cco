@@ -117,7 +117,7 @@ def SemanticCCO (S : AtomicSource ι X) : Prop :=
 finite induced age. The two copies agree over the designated base and
 have no additional common points. SAP here is a hypothesis and cannot be
 inferred from homomorphic CCO or ordinary AP. -/
-structure AgeSAP : Prop where
+structure AgeSAP (S : AtomicSource ι X) : Prop where
   strong_amalgamate : ∀ (C A B : FiniteInduced (X := X))
       (eCA : InducedEmbedding S C A) (eCB : InducedEmbedding S C B),
     ∃ (D : FiniteInduced (X := X))
@@ -134,7 +134,7 @@ structure AgeSAP : Prop where
 /-- The actual finite-partial-isomorphism extension property for an
 ambient group of sort- and colour-preserving automorphisms. This is a
 source hypothesis, not an unproved axiom or a conclusion of CCO. -/
-structure HomogeneousSource (G : Type t) [Group G]
+structure HomogeneousSource (S : AtomicSource ι X) (G : Type t) [Group G]
     [MulAction G (Sigma X)] : Prop where
   preserves_sort : ∀ (g : G) (p : Sigma X), (g • p).1 = p.1
   preserves_colours : ∀ (g : G) (p q : Sigma X),
