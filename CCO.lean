@@ -66,3 +66,7 @@ import CCO.RawExact.IdentityBalls
 
 import CCO.RawExact.RealTrace
 import CCO.RawExact.DistinctCentres
+
+import CCO.RawExact.ActualCentreDiagram
+import CCO.RawExact.AtomicStepTrace
+import CCO.RawExact.ZeroWordBoundary
