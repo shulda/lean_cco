@@ -57,7 +57,7 @@ def trivialPalette : AtomicSource (Fin 2) (fun _ => Nat) where
     refine ⟨0, 1, ?_⟩
     have hn : (⟨i, (0 : Nat)⟩ : U) ≠ ⟨j, (1 : Nat)⟩ :=
       tagged_ne_of_nat_ne (by omega)
-    simp [trivialPalette, exampleColour, hn]
+    simp [exampleColour, hn]
 
 theorem literal_diversity {i j : Fin 2} {x y : Nat} (h : x ≠ y) :
     trivialPalette.colour (i := i) (j := j) x y = some () := by
