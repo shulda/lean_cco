@@ -144,7 +144,7 @@ theorem no_diversity_injective
       refine ⟨g, ?_, ?_⟩
       · rw [← equivτ g a, ← hx]
         exact heq
-      · rfl
+      · exact (equivσ g a).symm
     have h1 := hDiag x' (g • a) horb
     have h2 : x = g • a := hx
     exact h2.trans h1.symm
@@ -153,7 +153,7 @@ theorem no_diversity_injective
     have hx : x = g • a := hg.symm
     have horb : orbital (G := G) (τ a) (σ a) (τ (g • a)) (σ y) := by
       refine ⟨g, ?_, ?_⟩
-      · rfl
+      · exact (equivτ g a).symm
       · rw [← equivσ g a, ← hx]
         exact heq
     have h1 := hDiag (g • a) y horb
