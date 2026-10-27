@@ -39,13 +39,13 @@ theorem orbit_has_fresh_point_of_SAP
   }
   have hBExt : B.vertices ⊆ Ext.vertices := by
     intro b hb
-    exact Set.mem_insert_of_mem hb
+    exact Set.mem_insert_iff.mpr (Or.inr hb)
   have hBA : B.vertices ⊆ A.vertices := by
     intro b hb
-    exact Set.mem_insert_of_mem (Or.inl hb)
+    exact Set.mem_insert_iff.mpr (Or.inr (Or.inl hb))
   have hFA : F ⊆ A.vertices := by
     intro b hb
-    exact Set.mem_insert_of_mem (Or.inr hb)
+    exact Set.mem_insert_iff.mpr (Or.inr (Or.inr hb))
   let eBExt : InducedEmbedding S B Ext :=
     inducedInclusion S B Ext hBExt
   let eBA : InducedEmbedding S B A :=
@@ -62,7 +62,7 @@ theorem orbit_has_fresh_point_of_SAP
   obtain ⟨D, eExtD, eAD, hBase, hFresh⟩ :=
     AgeSAP.amalgamate_avoiding_old_point S sap B Ext A eBExt eBA xExt hxNew
   obtain ⟨g, hg⟩ :=
-    HomogeneousSource.extends_partial_iso S H A D eAD
+    HomogeneousSource.extends_partial_iso H A D eAD
   let xOut : Sigma X := (eExtD.toEmbedding xExt).val
   let y : Sigma X := g⁻¹ • xOut
   have hMove : g • y = xOut := by
