@@ -39,8 +39,6 @@ def OmitsSomeMiddleFn {n : Nat} (f : Fin n → Fin 5) : Prop :=
 def OmitsSomeMiddle {n : Nat} (f : Fin n ↪ Fin 5) : Prop :=
   OmitsSomeMiddleFn f
 
-/-- Enumerate all finite MAPS, rather than relying on a non-computable
-decider for the type of embeddings. Injectivity is checked explicitly. -/
 /-- Boolean root/middle bipartition; every theta edge flips sides. -/
 def rootFlag (p : Fin 5) : Bool :=
   (p == 0) || (p == 1)
@@ -121,7 +119,9 @@ private theorem for_five :
         OmitsSomeMiddleFn f := by
   intro f _ hedges
   have odd5 : ∀ a b c d e : Bool,
-      a ≠ b → b ≠ c → c ≠ d → d ≠ e → e ≠ a → False := by decide
+      a ≠ b → b ≠ c → c ≠ d → d ≠ e → e ≠ a → False := by
+    intro a b c d e h1 h2 h3 h4 h5
+    cases a <;> cases b <;> cases c <;> cases d <;> cases e <;> simp_all
   have h01 : rootFlag (f 0) ≠ rootFlag (f 1) := by
     simpa [cyclicNext] using adj_root_ne _ _ (hedges 0)
   have h12 : rootFlag (f 1) ≠ rootFlag (f 2) := by
