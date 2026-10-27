@@ -37,3 +37,6 @@ import CCO.RawExact.Saturation
 import CCO.RawExact.QuotientRequests
 import CCO.RawExact.QuotientDescent
 import CCO.RawExact.Convolution
+
+import CCO.RawExact.PartialMaps
+import CCO.RawExact.PrivatePaths
