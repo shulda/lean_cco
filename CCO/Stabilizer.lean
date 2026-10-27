@@ -51,7 +51,7 @@ theorem orbitOver_fixed_base (B : Set (Sigma X)) (x : Sigma X)
   constructor
   · rintro ⟨g, hg, hgy⟩
     have hfix := (mem_pointwiseStabilizer B g).mp hg x hx
-    exact Set.mem_singleton_iff.mpr (hgy ▸ hfix.symm)
+    exact Set.mem_singleton_iff.mpr (hgy.symm.trans hfix)
   · intro hy
     have hyx : y = x := Set.mem_singleton_iff.mp hy
     subst y
@@ -71,8 +71,8 @@ theorem orbitOver_disjoint_base (B : Set (Sigma X)) (x : Sigma X)
     simp only [inv_smul_smul] at h h'
     calc
       x = g⁻¹ • y := h
-      _ = y := h'
-  exact hx (hyx ▸ hB)
+      _ = y := h'.symm
+  exact hx (hyx.symm ▸ hB)
 
 /-- The elementary fixed-set monotonicity used when a neighbour-image
 base grows during an injectivization recursion. -/
