@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 2,
-  "revision": 1,
+  "revision": 2,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -24,8 +24,16 @@
       }
     },
     "B002": {
-      "state": "AVAILABLE",
-      "owner_project_id": null
+      "state": "IN_PROGRESS",
+      "owner_project_id": 1,
+      "claim_revision": 2,
+      "base_main_sha": "7527172215da51d21180a3c5dc624ce54e2869ee",
+      "base_ci": {
+        "run_id": 40537553541,
+        "head_sha": "7527172215da51d21180a3c5dc624ce54e2869ee",
+        "conclusion": "success",
+        "axiom_audit": "allowlist"
+      }
     },
     "B003": {
       "state": "AVAILABLE",
@@ -103,6 +111,12 @@
       "project_id": 0,
       "event": "bootstrap_after_B001_acceptance",
       "package_id": "B001"
+    },
+    {
+      "revision": 2,
+      "project_id": 1,
+      "event": "claim",
+      "package_id": "B002"
     }
   ]
 }
