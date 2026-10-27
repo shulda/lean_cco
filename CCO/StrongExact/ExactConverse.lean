@@ -25,7 +25,7 @@ variable {i j : ι}
 /-- Reverse the actual typed order and converse every diversity letter. -/
 def reverseWord : PositiveWord S i j → PositiveWord S j i
   | .single a => .single (S.conv a)
-  | .cons a tail => PositiveWord.append S (reverseWord S tail)
+  | .cons a tail => PositiveWord.append S (reverseWord tail)
       (.single (S.conv a))
 
 private theorem singleton_opposite (a : S.Atom i j) :

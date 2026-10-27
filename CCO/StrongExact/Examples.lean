@@ -72,7 +72,7 @@ example : StrongPC.Stable toyDiagram (StrongPC.fixedNetwork toyDiagram) :=
 first and last points have the SAME named sort while the internal
 point has a different named sort. No true diagonal factor occurs. -/
 def toyTwoEdgePath : StrongPC.SpecifiedPath toyDiagram 0 2 :=
-  .cons (by decide) (by decide) () (by rfl)
+  .cons (y := (1 : Fin 3)) (by decide) (by decide) () (by rfl)
     (.edge (by decide) () (by rfl))
 
 /-- Genuine dependent-typed downstream C11 consumer, not just a
