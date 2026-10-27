@@ -109,9 +109,12 @@ theorem convolutionBound_subset_product_of_wordHelly
       (List.mem_append.mpr
         (Or.inr (List.mem_map.mpr ⟨v, hv, rfl⟩)))
   let extra : PositiveWord S j k := .cons (S.conv a) (.single z)
-  have hExtra : (PositiveWord.profile S extra).Nonempty :=
-    S.product_nonempty_of_point_gluing hPoint
-      ⟨S.conv a, by simp⟩ ⟨z, by simp⟩
+  have hExtra : (PositiveWord.profile S extra).Nonempty := by
+    change (S.product ({S.conv a} : S.Menu j i)
+      ({z} : S.Menu i k)).Nonempty
+    exact S.product_nonempty_of_point_gluing hPoint
+      ⟨S.conv a, Set.mem_singleton_iff.mpr rfl⟩
+      ⟨z, Set.mem_singleton_iff.mpr rfl⟩
   have hMeetExtra (v : PositiveWord S j k) (hv : v ∈ vs) :
       (PositiveWord.profile S v ∩
         PositiveWord.profile S extra).Nonempty := by
@@ -129,8 +132,14 @@ theorem convolutionBound_subset_product_of_wordHelly
       rcases ht with ⟨x, t, y, hxt, hty, hxy⟩
       exact ⟨y, x, t, (S.colour_swap x y a).mp hxy, hxt,
         (S.colour_swap t y b').mp hty⟩
-    exact ⟨S.conv b', hbIn,
-      ⟨S.conv a, by simp, z, by simp, htri⟩⟩
+    have hBelongs : S.conv b' ∈ S.product
+        ({S.conv a} : S.Menu j i) ({z} : S.Menu i k) :=
+      ⟨S.conv a, Set.mem_singleton_iff.mpr rfl,
+        z, Set.mem_singleton_iff.mpr rfl, htri⟩
+    refine ⟨S.conv b', hbIn, ?_⟩
+    change S.conv b' ∈ S.product
+      ({S.conv a} : S.Menu j i) ({z} : S.Menu i k)
+    exact hBelongs
   let second : List (PositiveWord S j k) := vs ++ [extra]
   have hPairs2 : ∀ p ∈ second, ∀ q ∈ second,
       (PositiveWord.profile S p ∩
