@@ -52,7 +52,7 @@ theorem inducedInclusion_val
     (A B : FiniteInduced (X := X))
     (hAB : A.vertices ⊆ B.vertices)
     (p : ↥A.vertices) :
-    (inducedInclusion S A B hAB).toEmbedding p |>.val = p.val := by
+    ((inducedInclusion S A B hAB).toEmbedding p).val = p.val := by
   rfl
 
 /-- An induced embedding never collapses two old real points, even when
