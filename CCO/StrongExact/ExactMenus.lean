@@ -40,14 +40,39 @@ theorem present_append
     (as bs : List (PositiveWord S i j)) :
     present S (as ++ bs) = present S as ∩ present S bs := by
   ext a
-  simp [present, List.mem_append, forall_or]
+  change (∀ t, t ∈ as ++ bs → a ∈ PositiveWord.profile S t) ↔
+    ((∀ t, t ∈ as → a ∈ PositiveWord.profile S t) ∧
+      (∀ t, t ∈ bs → a ∈ PositiveWord.profile S t))
+  constructor
+  · intro h
+    constructor
+    · intro t ht
+      exact h t (List.mem_append.mpr (Or.inl ht))
+    · intro t ht
+      exact h t (List.mem_append.mpr (Or.inr ht))
+  · rintro ⟨ha, hb⟩ t ht
+    rcases List.mem_append.mp ht with hta | htb
+    · exact ha t hta
+    · exact hb t htb
 
 theorem present_cons
     (w : PositiveWord S i j) (ws : List (PositiveWord S i j)) :
     present S (w :: ws) =
       PositiveWord.profile S w ∩ present S ws := by
   ext a
-  simp [present, List.mem_cons, forall_or]
+  change (∀ t, t ∈ w :: ws → a ∈ PositiveWord.profile S t) ↔
+    (a ∈ PositiveWord.profile S w ∧
+      ∀ t, t ∈ ws → a ∈ PositiveWord.profile S t)
+  constructor
+  · intro h
+    refine ⟨h w (by simp), ?_⟩
+    intro t ht
+    exact h t (by simp [ht])
+  · rintro ⟨hw, hws⟩ t ht
+    rcases List.mem_cons.mp ht with hEq | hRest
+    · subst t
+      exact hw
+    · exact hws t hRest
 
 /-- Every actual atomic diversity singleton is exact, even when its
 source and target sorts coincide; no identity colour is introduced. -/

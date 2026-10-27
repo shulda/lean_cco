@@ -55,7 +55,7 @@ theorem toy_survives (n : Nat) (x y : Fin 3) (hxy : x ≠ y) :
     intro he
     exact hxy (Fin.ext he))
 
-/-- On the concrete cross-/same-sort triangle, all three full
+/-- On the concrete cross-sort and same-sort triangle, all three full
 survivor domains satisfy the literal all-coordinate PC condition. -/
 example : S.PC
     (toyDiagram.survivor 0 1 (by decide))
