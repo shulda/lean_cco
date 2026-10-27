@@ -27,9 +27,9 @@ variable (S : AtomicSource.{u, v, a} ι X)
 left/right endpoints; a cons letter adds one new source before
 the previous line. -/
 def wordPositions {i j : ι} :
-    PositiveWord S i j → Type (max u (max v a))
+    PositiveWord S i j → Type
   | .single _ => Bool
-  | .cons _ tail => Option (wordPositions S tail)
+  | .cons _ tail => Option (wordPositions tail)
 
 /-- The literal first formal position of a positive word. -/
 def wordSource {i j : ι} :
@@ -41,16 +41,16 @@ def wordSource {i j : ι} :
 def wordTarget {i j : ι} :
     (w : PositiveWord S i j) → wordPositions S w
   | .single _ => true
-  | .cons _ tail => some (wordTarget S tail)
+  | .cons _ tail => some (wordTarget tail)
 
 /-- The genuinely typed named sort of every formal position. -/
 def wordPositionSort {i j : ι} :
     (w : PositiveWord S i j) → wordPositions S w → ι
-  | .single _ => fun b => if b then j else i
+  | .single _ => fun b => cond b j i
   | .cons _ tail => fun p =>
       match p with
       | none => i
-      | some q => wordPositionSort S tail q
+      | some q => wordPositionSort tail q
 
 theorem wordSource_sort {i j : ι} (w : PositiveWord S i j) :
     wordPositionSort S w (wordSource S w) = i := by
@@ -85,7 +85,7 @@ theorem finite_wordPositions {i j : ι} (w : PositiveWord S i j) :
 has any interior vertices; endpoints cannot be identified with one
 another or with private interiors. -/
 def wordInterior {i j : ι} (w : PositiveWord S i j) :
-    Type (max u (max v a)) :=
+    Type :=
   {p : wordPositions S w //
     p ≠ wordSource S w ∧ p ≠ wordTarget S w}
 
@@ -98,7 +98,7 @@ theorem finite_wordInterior {i j : ι} (w : PositiveWord S i j) :
 position of every profile word. The branch index prevents collisions
 of interiors even for syntactically identical positive words. -/
 def thetaVertices {i j : ι} (ws : List (PositiveWord S i j)) :
-    Type (max u (max v a)) :=
+    Type :=
   Bool ⊕ (Σ b : Fin ws.length, wordInterior S (ws.get b))
 
 theorem finite_thetaVertices {i j : ι}
@@ -127,7 +127,8 @@ def thetaRight {i j : ι} (ws : List (PositiveWord S i j)) :
 theorem thetaLeft_ne_right {i j : ι}
     (ws : List (PositiveWord S i j)) :
     thetaLeft S ws ≠ thetaRight S ws := by
-  simp [thetaLeft, thetaRight]
+  intro h
+  cases h
 
 theorem thetaLeft_sort {i j : ι}
     (ws : List (PositiveWord S i j)) :
@@ -142,21 +143,24 @@ endpoints with the global theta roots. Every other position retains
 a private (branch index, interior position) tag. -/
 noncomputable def thetaBranchPosition {i j : ι}
     (ws : List (PositiveWord S i j)) (b : Fin ws.length)
-    (p : wordPositions S (ws.get b)) : thetaVertices S ws :=
-  if h0 : p = wordSource S (ws.get b) then thetaLeft S ws
-  else if h1 : p = wordTarget S (ws.get b) then thetaRight S ws
-  else .inr ⟨b, ⟨p, h0, h1⟩⟩
+    (p : wordPositions S (ws.get b)) : thetaVertices S ws := by
+  classical
+  exact if h0 : p = wordSource S (ws.get b) then thetaLeft S ws
+    else if h1 : p = wordTarget S (ws.get b) then thetaRight S ws
+    else .inr ⟨b, ⟨p, h0, h1⟩⟩
 
 theorem thetaBranchPosition_source {i j : ι}
     (ws : List (PositiveWord S i j)) (b : Fin ws.length) :
     thetaBranchPosition S ws b (wordSource S (ws.get b)) =
       thetaLeft S ws := by
+  classical
   simp [thetaBranchPosition]
 
 theorem thetaBranchPosition_target {i j : ι}
     (ws : List (PositiveWord S i j)) (b : Fin ws.length) :
     thetaBranchPosition S ws b (wordTarget S (ws.get b)) =
       thetaRight S ws := by
+  classical
   have h : wordTarget S (ws.get b) ≠ wordSource S (ws.get b) :=
     (wordSource_ne_target S (ws.get b)).symm
   simp [thetaBranchPosition, h]
@@ -166,6 +170,7 @@ theorem thetaBranchPosition_interior {i j : ι}
     (ws : List (PositiveWord S i j)) (b : Fin ws.length)
     (p : wordInterior S (ws.get b)) :
     thetaBranchPosition S ws b p.val = (.inr ⟨b, p⟩) := by
+  classical
   simp [thetaBranchPosition, p.property.1, p.property.2]
 
 /-- No typed sort changes when mapping a formal path into theta:
@@ -175,6 +180,7 @@ theorem thetaBranchPosition_sort {i j : ι}
     (p : wordPositions S (ws.get b)) :
     thetaVertexSort S ws (thetaBranchPosition S ws b p) =
       wordPositionSort S (ws.get b) p := by
+  classical
   unfold thetaBranchPosition
   split_ifs with h0 h1
   · subst p
