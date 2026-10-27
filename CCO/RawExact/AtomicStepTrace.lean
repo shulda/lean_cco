@@ -41,7 +41,6 @@ theorem rawAtomicSteps_length {i j : ι} (word : RawWord S i j) :
   | identity tail ih => exact ih
   | atom a tail ih =>
       simp only [rawAtomicSteps, List.length_cons, diversityLength, ih]
-      omega
 
 /-- Word equality erasure keeps the exact diversity label sequence;
 it is not an instruction to erase identity OUTPUTS of positive walks. -/
