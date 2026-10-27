@@ -64,7 +64,7 @@ theorem stable_subset_profile
   | edge hxy a ha =>
       intro c hc
       have h := hInit ⟨_, _, hxy⟩ hc
-      change c ∈ D.initial ⟨_, _, hxy⟩ at h
+      change c ∈ initial D ⟨_, _, hxy⟩ at h
       simp only [initial, ha, Set.mem_singleton_iff] at h
       change c ∈ ({a} : S.Menu _ _)
       exact h
