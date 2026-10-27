@@ -48,6 +48,7 @@ def exactIdentityAtom (i : ι) : NonemptyExact S i i := by
 
 theorem exactIdentityAtom_relation (i : ι) :
     evaluate S (exactIdentityAtom S i).words = TRel.ident X i := by
+  change evaluate S [RawWord.nil i] = TRel.ident X i
   rw [evaluate_single S]
   rfl
 
@@ -67,6 +68,7 @@ theorem exactIdentityAtom_is_optional_none (i : ι) :
   · intro h
     have hs : (⟨i, x⟩ : Sigma X) = ⟨i, y⟩ :=
       (S.colour_none_iff x y).mp h
+    change x = y
     simpa only [Sigma.mk.injEq, heq_eq_eq, true_and] using hs
 
 end CCO.RawExact
