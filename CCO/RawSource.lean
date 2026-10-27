@@ -28,6 +28,49 @@ theorem invariant_support_representation_of_homogeneous
   S.rawSupport_represents_invariant R hInv
     (S.pair_homogeneous_of_homogeneous H)
 
+/-- Homogeneity of the actual source makes every nonempty invariant
+typed relation serial on the whole named original source sort. -/
+theorem raw_serial_of_homogeneous
+    (H : HomogeneousSource S G) {i j : ι}
+    (R : TRel X i j)
+    (hNonempty : TRel.Nonempty R)
+    (hInv : TRel.Invariant (G := G) R) :
+    TRel.Serial R :=
+  TRel.invariant_serial (G := G) R
+    (S.original_sort_transitive_of_homogeneous H i) hInv hNonempty
+
+/-- Dual seriality is independent of quotient homogeneity. -/
+theorem raw_coserial_of_homogeneous
+    (H : HomogeneousSource S G) {i j : ι}
+    (R : TRel X i j)
+    (hNonempty : TRel.Nonempty R)
+    (hInv : TRel.Invariant (G := G) R) :
+    TRel.Coserial R :=
+  TRel.invariant_coserial (G := G) R
+    (S.original_sort_transitive_of_homogeneous H j) hInv hNonempty
+
+/-- Compatible nonempty invariant relations have a nonempty actual
+RAW composite, independently of CCO or exactness. -/
+theorem raw_nonempty_comp_of_homogeneous
+    (H : HomogeneousSource S G) {i j k : ι}
+    (R : TRel X i j) (T : TRel X j k)
+    (hR : TRel.Nonempty R) (hT : TRel.Nonempty T)
+    (hInvT : TRel.Invariant (G := G) T) :
+    TRel.Nonempty (TRel.comp R T) :=
+  TRel.comp_nonempty_invariant (G := G) R T hR hT hInvT
+    (S.original_sort_transitive_of_homogeneous H j)
+
+/-- Same-sort invariant relations commute without any additional
+pair-flip provider: symmetry is part of the actual fine colouring. -/
+theorem same_sort_commute_of_homogeneous
+    (H : HomogeneousSource S G) {i : ι}
+    (R T : X i → X i → Prop)
+    (invR : ∀ (g : G) x y, R x y → R (g • x) (g • y))
+    (invT : ∀ (g : G) x y, T x y → T (g • x) (g • y)) :
+    RawSymmetric.compose R T = RawSymmetric.compose T R :=
+  RawSymmetric.invariant_commute R T invR invT
+    (S.pair_flip_of_homogeneous H)
+
 /-- Typed atomic Peirce for the *actual* original fine-colour atoms.
 Even the real equality atom `none` is covered on loop sorts when
 it actually occurs. The quantified `hcReal` is needed to prevent
