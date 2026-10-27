@@ -29,12 +29,12 @@ structure FiniteInduced where
 
 /-- A finite induced embedding preserves all old literal atoms, including
 the real diagonal, not merely the currently specified diversity edges. -/
-structure InducedEmbedding (A B : FiniteInduced S) where
+structure InducedEmbedding (A B : FiniteInduced (X := X)) where
   toEmbedding : (↥A.vertices) ↪ (↥B.vertices)
   preserves_sort : ∀ p, ((toEmbedding p).val).1 = (p.val).1
   preserves_colours : ∀ p q,
-    S.taggedColour p.val q.val =
-      S.taggedColour (toEmbedding p).val (toEmbedding q).val
+    taggedColour S p.val q.val =
+      taggedColour S (toEmbedding p).val (toEmbedding q).val
 
 /-- Finite partial labelled simple diagrams. Only distinct formal vertices
 can have edges, and `none` signifies a missing constraint. -/
@@ -73,8 +73,8 @@ def PartialDiagram.IsComplete (D : PartialDiagram S V) : Prop :=
       D.edge x y h = some a
 
 structure CompleteDiagram (V : Type z) where
-  partial : PartialDiagram S V
-  complete : partial.IsComplete
+  diagram : PartialDiagram S V
+  complete : diagram.IsComplete
 
 /-- Cyclic successor of a nonempty finite ordinal. -/
 def cyclicNext {n : Nat} (hn : 0 < n) (p : Fin n) : Fin n :=
@@ -120,8 +120,8 @@ structure HomogeneousSource (G : Type t) [Group G]
     [MulAction G (Sigma X)] : Prop where
   preserves_sort : ∀ (g : G) (p : Sigma X), (g • p).1 = p.1
   preserves_colours : ∀ (g : G) (p q : Sigma X),
-    S.taggedColour (g • p) (g • q) = S.taggedColour p q
-  extends_partial_iso : ∀ (A B : FiniteInduced S)
+    taggedColour S (g • p) (g • q) = taggedColour S p q
+  extends_partial_iso : ∀ (A B : FiniteInduced (X := X))
       (e : InducedEmbedding S A B),
     Function.Surjective e.toEmbedding →
       ∃ g : G, ∀ p : ↥A.vertices, g • p.val = (e.toEmbedding p).val
