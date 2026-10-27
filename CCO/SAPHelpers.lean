@@ -65,7 +65,7 @@ theorem AgeSAP.amalgamate_avoiding_old_point (hSAP : AgeSAP S)
       (∀ b : ↥B.vertices,
         eAD.toEmbedding a ≠ eBD.toEmbedding b) := by
   obtain ⟨D, eAD, eBD, hbase, hoverlap⟩ :=
-    hSAP.amalgamate_exact_overlap S C A B eCA eCB
+    AgeSAP.amalgamate_exact_overlap S hSAP C A B eCA eCB
   refine ⟨D, eAD, eBD, hbase, ?_⟩
   intro b heq
   obtain ⟨c, hca, _⟩ := (hoverlap a b).mp heq
