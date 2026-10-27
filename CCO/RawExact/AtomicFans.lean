@@ -166,7 +166,9 @@ theorem atomic_fan_helly_of_cycle_checks
       some (atoms t) := f.preserves_edge none (some t) hNe (atoms t) hEdge
   have hInv := S.colourInvariant_of_homogeneous H g
     (f.point none) (f.point (some t))
-  rw [hg t] at hInv
-  exact hInv.trans hRoot
+  have hCentres := congrArg
+    (fun y : X (centreSort t) => S.colour (g • f.point none) y) (hg t)
+  change S.colour (g • f.point none) (centres t) = some (atoms t)
+  exact hCentres.symm.trans (hInv.trans hRoot)
 
 end CCO.RawExact
