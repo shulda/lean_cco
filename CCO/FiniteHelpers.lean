@@ -37,7 +37,7 @@ def inducedInclusion
     inj' := by
       intro p q hpq
       apply Subtype.ext
-      exact congrArg Subtype.val hpq
+      exact congrArg (fun r : ↥B.vertices => r.val) hpq
   }
   preserves_sort := by
     intro p
