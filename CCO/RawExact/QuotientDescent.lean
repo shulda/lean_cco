@@ -20,14 +20,13 @@ variable [MulAction G Q] [MulAction G R]
 theorem kernel_saturation_transfer
     (τ : A → Q) (σ : B → R)
     (D : A → B → Prop)
-    (hSat : saturate (GroupActions.kernel τ) D
-      (GroupActions.kernel σ) = D)
+    (hSat : GroupActions.saturation τ σ D = D)
     (x : A) (y : B) (u : A) (v : B)
     (hxy : D x y)
     (hx : τ x = τ u) (hy : σ y = σ v) :
     D u v := by
   rw [← hSat]
-  exact ⟨y, ⟨x, hx.symm, hxy⟩, hy⟩
+  exact ⟨x, y, hx.symm, hxy, hy⟩
 
 /-- C14 actual-orbital descent: the original RAW relation is precisely
 the union of all quotient pair orbits that it meets. Output orbitals are
@@ -38,8 +37,7 @@ theorem invariant_saturated_descends_to_orbits
     (equivσ : ∀ g y, σ (g • y) = g • σ y)
     (D : A → B → Prop)
     (hInv : ∀ g x y, D x y → D (g • x) (g • y))
-    (hSat : saturate (GroupActions.kernel τ) D
-      (GroupActions.kernel σ) = D) :
+    (hSat : GroupActions.saturation τ σ D = D) :
     D = (fun u v => ∃ x y, D x y ∧
       GroupActions.pullback τ σ
         (GroupActions.orbital (G := G) (τ x) (σ y)) u v) := by
@@ -59,23 +57,22 @@ This is independent of quotient equivariance and needs no chosen section. -/
 theorem output_orbit_kernel_saturated
     (τ : A → Q) (σ : B → R)
     (a : A) (b : B) :
-    saturate (GroupActions.kernel τ)
+    GroupActions.saturation τ σ
       (GroupActions.pullback τ σ
         (GroupActions.orbital (G := G) (τ a) (σ b)))
-      (GroupActions.kernel σ) =
-      GroupActions.pullback τ σ
+      = GroupActions.pullback τ σ
         (GroupActions.orbital (G := G) (τ a) (σ b)) := by
   funext x y
   apply propext
   constructor
-  · rintro ⟨v, ⟨u, hu, horb⟩, hv⟩
+  · rintro ⟨u, v, hu, horb, hv⟩
     change τ x = τ u at hu
     change σ v = σ y at hv
     change GroupActions.orbital (G := G) (τ a) (σ b) (τ x) (σ y)
     rw [hu, ← hv]
     exact horb
   · intro horb
-    exact ⟨y, ⟨x, rfl, horb⟩, rfl⟩
+    exact ⟨x, y, rfl, horb, rfl⟩
 
 end QuotientDescent
 end CCO.RawExact
