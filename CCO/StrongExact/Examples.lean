@@ -2,6 +2,7 @@ import CCO.Examples
 import CCO.StrongExact.FinitePC
 import CCO.StrongExact.Survivors
 import CCO.StrongExact.PathSupport
+import CCO.StrongExact.TwoRoots
 
 /-!
 # Concrete STRONG PC regression: 0 -> 1 -> 0 and same-sort repetition
@@ -81,5 +82,24 @@ theorem toy_two_edge_supported :
     StrongPC.fixedNetwork toyDiagram ⟨0, 2, by decide⟩ ⊆
       PositiveWord.profile S toyTwoEdgePath.word :=
   StrongPC.fixedNetwork_subset_path_profile toyDiagram toyTwoEdgePath
+
+
+/-- Two bare distinct roots with sorts 0 and 1 and no specified
+old edge. This case must give diversity Top, never RAW equality. -/
+def toyBareRoots : PartialDiagram S (Fin 2) where
+  finite_type := inferInstance
+  vertexSort := fun v => if v = 0 then 0 else 1
+  edge := fun _ _ _ => none
+  edge_reverse := by
+    intro x y h a
+    simp
+
+/-- Canonical two-root PC domains retain original unrecorded Top. -/
+example :
+    StrongPC.fixedNetwork toyBareRoots
+      ⟨(0 : Fin 2), (1 : Fin 2), by decide⟩ =
+    (Set.univ : S.Menu (0 : Fin 2) (1 : Fin 2)) := by
+  rw [StrongPC.fixedNetwork_two_roots toyBareRoots]
+  rfl
 
 end CCO.StrongExact.Examples
