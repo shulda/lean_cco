@@ -20,6 +20,14 @@ theorem cyclicNext_injective {n : Nat} (hn : 0 < n) :
   have hq := q.isLt
   have heq := congrArg Fin.val hpq
   change (p.val + 1) % n = (q.val + 1) % n at heq
-  omega
+  have hmod (r : Fin n) :
+      (r.val + 1) % n =
+        if r.val + 1 = n then 0 else r.val + 1 := by
+    by_cases h : r.val + 1 = n
+    · rw [if_pos h, h, Nat.mod_self]
+    · have hlt : r.val + 1 < n := by omega
+      rw [if_neg h, Nat.mod_eq_of_lt hlt]
+  rw [hmod p, hmod q] at heq
+  split_ifs at heq <;> omega
 
 end CCO.RawExact
