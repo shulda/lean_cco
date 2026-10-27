@@ -50,7 +50,9 @@ theorem orbit_has_fresh_point_of_SAP
     inducedInclusion S B Ext hBExt
   let eBA : InducedEmbedding S B A :=
     inducedInclusion S B A hBA
-  have hxExt : x ∈ Ext.vertices := by simp [Ext]
+  have hxExt : x ∈ Ext.vertices := by
+    change x ∈ Set.insert x B.vertices
+    exact Set.mem_insert_iff.mpr (Or.inl rfl)
   let xExt : ↥Ext.vertices := ⟨x, hxExt⟩
   have hxNew : ∀ c : ↥B.vertices, eBExt.toEmbedding c ≠ xExt := by
     intro c hc
@@ -107,7 +109,10 @@ theorem orbit_has_fresh_point_of_SAP
     have ha := H.preserves_colours g⁻¹ xOut (eExtD.toEmbedding bExt).val
     have hvalue : taggedColour S y b =
         taggedColour S xOut (eExtD.toEmbedding bExt).val := by
-      simpa only [y, hCommon b hb] using ha
+      have hbEq : g⁻¹ • (eExtD.toEmbedding bExt).val = b :=
+        hCommon b hb
+      rw [hbEq] at ha
+      exact ha
     exact hp.trans hvalue.symm
   have hRight : ∀ b ∈ B.vertices,
       taggedColour S b x = taggedColour S b y := by
