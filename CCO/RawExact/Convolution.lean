@@ -63,7 +63,7 @@ theorem presentation_invariant_of_homogeneous
     {i j : ι} (P : Presentation S i j) :
     TRel.Invariant (G := G) (evaluate S P) := by
   intro g x y hxy word hw
-  exact (S.word_invariant_of_homogeneous H word)
+  exact (word_invariant_of_homogeneous S H word)
     g x y (hxy word hw)
 
 /-- A nonempty actual exact product gives a *nonempty word-pair menu*.
@@ -79,8 +79,8 @@ theorem pairWords_nonempty_of_homogeneous
     S.raw_nonempty_comp_of_homogeneous H
       (evaluate S D.words) (evaluate S F.words)
       D.nonempty F.nonempty
-      (S.presentation_invariant_of_homogeneous H F.words)
-  exact ⟨x, z, S.comp_subset_pairWords D.words F.words x z hcomp⟩
+      (presentation_invariant_of_homogeneous S H F.words)
+  exact ⟨x, z, comp_subset_pairWords S D.words F.words x z hcomp⟩
 
 /-- Both genuine empty-presentation boundaries of C09 use only actual
 original-sort transitivity and explicitly witnessed nonempty factors. -/
@@ -93,7 +93,7 @@ theorem empty_left_convolution
   rw [evaluate_nil S]
   exact S.raw_top_comp_of_homogeneous H
     (evaluate S F.words) F.nonempty
-    (S.presentation_invariant_of_homogeneous H F.words)
+    (presentation_invariant_of_homogeneous S H F.words)
 
 theorem empty_right_convolution
     {G : Type*} [Group G] [∀ i : ι, MulAction G (X i)]
@@ -104,7 +104,7 @@ theorem empty_right_convolution
   rw [evaluate_nil S]
   exact TRel.comp_top_invariant (G := G)
     (evaluate S D.words) D.nonempty
-    (S.presentation_invariant_of_homogeneous H D.words)
+    (presentation_invariant_of_homogeneous S H D.words)
     (S.original_sort_transitive_of_homogeneous H i)
 
 end CCO.RawExact
