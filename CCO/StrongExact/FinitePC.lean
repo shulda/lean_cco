@@ -22,7 +22,7 @@ variable (D : PartialDiagram S V)
 
 /-- The off-diagonal pair type is finite because the formal vertex
 set is finite. A pair's inequality witness is proof-irrelevant. -/
-theorem finite_distinctPair : Finite (DistinctPair V) := by
+theorem finite_distinctPair (D : PartialDiagram S V) : Finite (DistinctPair V) := by
   letI : Finite V := D.finite_type
   let emb : DistinctPair V → V × V := fun p => (p.src, p.dst)
   have hi : Function.Injective emb := by
