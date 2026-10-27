@@ -49,3 +49,6 @@ import CCO.RawExact.ActualMixedMaps
 import CCO.RawExact.Distribution
 import CCO.RawExact.ThetaThree
 import CCO.RawExact.ThetaThreeColours
+
+import CCO.RawExact.AtomicExact
+import CCO.RawExact.AtomicFans
