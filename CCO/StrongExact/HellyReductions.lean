@@ -40,10 +40,8 @@ theorem wordsOfExact_spec {A : S.Menu i j}
     (h : Exact S A) :
     A = present S (wordsOfExact S A) := by
   classical
-  unfold wordsOfExact
-  split_ifs with hA
-  · exact Classical.choose_spec hA.2
-  · exact False.elim (hA h)
+  simpa only [wordsOfExact, dif_pos h] using
+    (Classical.choose_spec h.2)
 
 /-- C07's exact-menu 2-Helly consequence, CONDITIONAL only on
 positive word 2-Helly. This is not counted as a completed C07 source
