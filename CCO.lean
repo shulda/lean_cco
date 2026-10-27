@@ -2,6 +2,7 @@ import CCO.Infrastructure
 import CCO.TypedRelation
 import CCO.RawWords
 import CCO.Atomic
+import CCO.Supports
 import CCO.Finite
 import CCO.GroupActions
 import CCO.RawOrbitals
