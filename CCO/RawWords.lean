@@ -101,7 +101,7 @@ theorem relation_reverse (w : RawWord S i j) :
       change TRel.comp (TRel.converse (relation S tail))
         (TRel.comp (S.atomRel (S.conv a)) (TRel.ident X _)) =
           TRel.converse (TRel.comp (S.atomRel a) (relation S tail))
-      rw [TRel.comp_ident, S.atomRel_flip]
+      rw [TRel.comp_ident, atomRel_flip S]
       exact (TRel.converse_comp (S.atomRel a) (relation S tail)).symm
 
 theorem empty_word_is_identity (i : ι) :
