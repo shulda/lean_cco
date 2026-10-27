@@ -49,3 +49,4 @@ import CCO.StrongExact.PCSoundness
 import CCO.StrongExact.TwoRoots
 import CCO.StrongExact.HellyReductions
 import CCO.StrongExact.ExactDistribution
+import CCO.StrongExact.ExactClosure
