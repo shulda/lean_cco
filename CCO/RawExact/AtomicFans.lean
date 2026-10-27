@@ -6,7 +6,7 @@ import CCO.PairHomogeneity
 
 This is an actual finite typed fan: one formal target root, finitely many
 distinct actual centres, all the literal complete centre pair colours,
-and specified diversity edges from root to each centre. The last step
+and specified diversity edges before root after each centre. The last step
 of the source's exact-ball Helly proof is unconditional GIVEN the
 semantic-CCO cycle checks for the fan. The cycle checks themselves
 remain an explicit and currently unproved C12 obligation; this module
@@ -28,25 +28,25 @@ theorem align_actual_centres
     (H : HomogeneousSource S G)
     {I : Type (max u v)} [Finite I]
     (sort : I → ι)
-    (from to : ∀ t : I, X (sort t))
+    (before after : ∀ t : I, X (sort t))
     (hColour : ∀ p q : I,
-      S.colour (from p) (from q) = S.colour (to p) (to q)) :
-    ∃ g : G, ∀ t : I, g • from t = to t := by
-  let f : I → Sigma X := fun p => ⟨sort p, from p⟩
-  let h : I → Sigma X := fun p => ⟨sort p, to p⟩
+      S.colour (before p) (before q) = S.colour (after p) (after q)) :
+    ∃ g : G, ∀ t : I, g • before t = after t := by
+  let f : I → Sigma X := fun p => ⟨sort p, before p⟩
+  let h : I → Sigma X := fun p => ⟨sort p, after p⟩
   have hPairs : ∀ p q : I,
       taggedColour S (f p) (f q) = taggedColour S (h p) (h q) := by
     intro p q
     change
-      (⟨sort p, sort q, S.colour (from p) (from q)⟩ :
+      (⟨sort p, sort q, S.colour (before p) (before q)⟩ :
         Σ a : ι, Σ b : ι, Option (S.Atom a b)) =
-      (⟨sort p, sort q, S.colour (to p) (to q)⟩ :
+      (⟨sort p, sort q, S.colour (after p) (after q)⟩ :
         Σ a : ι, Σ b : ι, Option (S.Atom a b))
     rw [hColour p q]
   obtain ⟨g, hg⟩ := H.extends_finite_diagram f h hPairs
   refine ⟨g, ?_⟩
   intro p
-  have hp : (⟨sort p, g • from p⟩ : Sigma X) = ⟨sort p, to p⟩ := by
+  have hp : (⟨sort p, g • before p⟩ : Sigma X) = ⟨sort p, after p⟩ := by
     simpa [f, h] using hg p
   simpa only [Sigma.mk.injEq, heq_eq_eq, true_and] using hp
 
@@ -87,7 +87,7 @@ def atomicFan {I : Type (max u v)} [Finite I]
             · intro h
               have ha : S.conv (atoms t) = S.conv c := Option.some.inj h
               have hconv := congrArg (fun a => S.conv a) ha
-              simpa only [S.conv_invol] using hconv
+              exact congrArg Option.some (by simpa only [S.conv_invol] using hconv)
     | some t =>
         cases q with
         | none =>
@@ -97,11 +97,11 @@ def atomicFan {I : Type (max u v)} [Finite I]
             · intro h
               have ha : S.conv (atoms t) = c := Option.some.inj h
               have hconv := congrArg (fun a => S.conv a) ha
-              simpa only [S.conv_invol] using hconv
+              exact congrArg Option.some (by simpa only [S.conv_invol] using hconv)
             · intro h
               have ha : atoms t = S.conv c := Option.some.inj h
               have hconv := congrArg (fun a => S.conv a) ha
-              simpa only [S.conv_invol] using hconv
+              exact congrArg Option.some (by simpa only [S.conv_invol] using hconv)
         | some z =>
             change S.colour (centres t) (centres z) = some c ↔
               S.colour (centres z) (centres t) = some (S.conv c)
@@ -134,11 +134,11 @@ theorem atomic_fan_helly_of_cycle_checks
     intro p q
     by_cases hpq : p = q
     · subst q
-      calc
-        S.colour (f.point (some p)) (f.point (some p)) = none :=
-          (S.colour_none_iff _ _).mpr rfl
-        _ = S.colour (centres p) (centres p) :=
-          ((S.colour_none_iff _ _).mpr rfl).symm
+      have hLeft : S.colour (f.point (some p)) (f.point (some p)) = none :=
+        (S.colour_none_iff _ _).mpr rfl
+      have hRight : S.colour (centres p) (centres p) = none :=
+        (S.colour_none_iff _ _).mpr rfl
+      exact hLeft.trans hRight.symm
     · have hDifferent : (⟨centreSort p, centres p⟩ : Sigma X) ≠
           ⟨centreSort q, centres q⟩ := by
         intro h
@@ -154,7 +154,7 @@ theorem atomic_fan_helly_of_cycle_checks
             change S.colour (centres p) (centres q) = some c
             exact hAtom
           have hImage := f.preserves_edge (some p) (some q) hSome c hEdge
-          exact hImage.trans hAtom.symm
+          exact hImage
   obtain ⟨g, hg⟩ :=
     align_actual_centres S H centreSort
       (fun t => f.point (some t)) centres hCentreColour
