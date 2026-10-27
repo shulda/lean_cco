@@ -1,4 +1,5 @@
 import CCO.StrongExact.CycleCompletion
+import CCO.StrongGeometry
 
 /-!
 # Finite, typed, off-diagonal STRONG path-consistency networks
