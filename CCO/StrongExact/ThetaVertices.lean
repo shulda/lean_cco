@@ -189,13 +189,14 @@ theorem thetaBranchPosition_interior {i j : ι}
     (p : wordInterior S (ws.get b)) :
     thetaBranchPosition S ws b p.val = (.inr ⟨b, p⟩) := by
   classical
-  unfold thetaBranchPosition
-  split_ifs with h0 h1
-  · exact (p.property.1 h0).elim
-  · exact (p.property.2 h1).elim
-  · split_ifs with h2
-    · exact (p.property.2 h2).elim
-    · rfl
+  change (if h0 : p.val = wordSource S (ws.get b) then
+      thetaLeft S ws
+    else if h1 : p.val = wordTarget S (ws.get b) then
+      thetaRight S ws
+    else (.inr ⟨b, ⟨p.val, h0, h1⟩⟩ : thetaVertices S ws)) =
+      (.inr ⟨b, p⟩ : thetaVertices S ws)
+  rw [dif_neg p.property.1, dif_neg p.property.2]
+  rfl
 
 /-- No typed sort changes when mapping a formal path into theta:
 only its literal same-sort root positions are identified. -/
@@ -215,11 +216,11 @@ theorem thetaBranchPosition_sort {i j : ι}
       rw [thetaBranchPosition_target S ws b]
       simpa only [thetaRight_sort] using
         (wordTarget_sort S (ws.get b)).symm
-    · let private : wordInterior S (ws.get b) := ⟨p, h0, h1⟩
+    · let inner : wordInterior S (ws.get b) := ⟨p, h0, h1⟩
       change thetaVertexSort S ws
-          (thetaBranchPosition S ws b private.val) =
-        wordPositionSort S (ws.get b) private.val
-      rw [thetaBranchPosition_interior S ws b private]
+          (thetaBranchPosition S ws b inner.val) =
+        wordPositionSort S (ws.get b) inner.val
+      rw [thetaBranchPosition_interior S ws b inner]
       rfl
 
 end CCO.StrongExact
