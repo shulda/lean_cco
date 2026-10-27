@@ -12,7 +12,7 @@ image as a subset.
 
 universe u v w z t
 
-namespace CCO.BasePaths
+namespace CCO.AtomicSource
 
 variable {ι : Type u} {X : ι → Type v}
 variable (S : AtomicSource ι X) {i j : ι}
@@ -184,4 +184,4 @@ theorem menu_preserved {C : Type z} {D : Type t}
     A.menu = B.menu :=
   S.domain_natural f.baseMap f.baseOnto A.edges B.edges f.preservesOldEdges
 
-end CCO.BasePaths
+end CCO.AtomicSource
