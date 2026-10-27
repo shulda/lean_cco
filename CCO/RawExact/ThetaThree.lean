@@ -118,10 +118,14 @@ private theorem for_five :
         Adj (f p) (f (cyclicNext (by decide) p))) →
         OmitsSomeMiddleFn f := by
   intro f _ hedges
+  have flip_twice : ∀ a b c : Bool,
+      a ≠ b → b ≠ c → a = c := by decide
   have odd5 : ∀ a b c d e : Bool,
       a ≠ b → b ≠ c → c ≠ d → d ≠ e → e ≠ a → False := by
-    intro a b c d e h1 h2 h3 h4 h5
-    cases a <;> cases b <;> cases c <;> cases d <;> cases e <;> simp_all
+    intro a b c d e hab hbc hcd hde hea
+    have hac : a = c := flip_twice a b c hab hbc
+    have hce : c = e := flip_twice c d e hcd hde
+    exact hea (hac.trans hce).symm
   have h01 : rootFlag (f 0) ≠ rootFlag (f 1) := by
     simpa [cyclicNext] using adj_root_ne _ _ (hedges 0)
   have h12 : rootFlag (f 1) ≠ rootFlag (f 2) := by
