@@ -1,4 +1,5 @@
-import CCO
+import CCO.BasePaths
+import CCO.RawWords
 
 /-!
 # Concrete same-sort and cross-sort checks for the shared API
@@ -19,6 +20,9 @@ private theorem tagged_ne_of_nat_ne {i j : Fin 2} {x y : Nat}
   intro hxy
   exact h (congrArg (fun p : U => p.2) hxy)
 
+private def exampleColour {i j : Fin 2} (x y : Nat) : Option Unit :=
+  if (⟨i, x⟩ : U) = ⟨j, y⟩ then none else some ()
+
 def trivialPalette : AtomicSource (Fin 2) (fun _ => Nat) where
   Atom := fun _ _ => Unit
   finiteSort := inferInstance
@@ -33,33 +37,32 @@ def trivialPalette : AtomicSource (Fin 2) (fun _ => Nat) where
     intro i a
     cases a
     rfl
-  colour := fun {i j} x y =>
-    if (⟨i, x⟩ : U) = ⟨j, y⟩ then none else some ()
+  colour := fun {i j} x y => exampleColour (i := i) (j := j) x y
   colour_none_iff := by
     intro i j x y
     by_cases h : (⟨i, x⟩ : U) = ⟨j, y⟩
-    · simp [h]
-    · simp [h]
+    · simp [exampleColour, h]
+    · simp [exampleColour, h]
   colour_swap := by
     intro i j x y a
     cases a
     by_cases h : (⟨i, x⟩ : U) = ⟨j, y⟩
     · have ht : (⟨j, y⟩ : U) = ⟨i, x⟩ := h.symm
-      simp [trivialPalette, h, ht]
+      simp [exampleColour, h, ht]
     · have ht : (⟨j, y⟩ : U) ≠ ⟨i, x⟩ := Ne.symm h
-      simp [trivialPalette, h, ht]
+      simp [exampleColour, h, ht]
   realized := by
     intro i j a
     cases a
     refine ⟨0, 1, ?_⟩
     have hn : (⟨i, (0 : Nat)⟩ : U) ≠ ⟨j, (1 : Nat)⟩ :=
       tagged_ne_of_nat_ne (by omega)
-    simp [trivialPalette, hn]
+    simp [trivialPalette, exampleColour, hn]
 
 theorem literal_diversity {i j : Fin 2} {x y : Nat} (h : x ≠ y) :
     trivialPalette.colour (i := i) (j := j) x y = some () := by
   have hn : (⟨i, x⟩ : U) ≠ ⟨j, y⟩ := tagged_ne_of_nat_ne h
-  simp [trivialPalette, hn]
+  simp [trivialPalette, exampleColour, hn]
 
 /-- Even when every sort tag repeats, the STRONG triangle has three
 different real vertices (0,1,2). -/
