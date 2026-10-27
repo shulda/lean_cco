@@ -33,3 +33,6 @@ import CCO.StrongExact.CycleCompletion
 import CCO.StrongExact.PCNetwork
 import CCO.StrongExact.FinitePC
 import CCO.StrongExact.Survivors
+import CCO.StrongExact.PrescribedBase
+import CCO.StrongExact.ExactMenus
+import CCO.StrongExact.Examples
