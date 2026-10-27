@@ -189,14 +189,11 @@ theorem thetaBranchPosition_interior {i j : ι}
     (p : wordInterior S (ws.get b)) :
     thetaBranchPosition S ws b p.val = (.inr ⟨b, p⟩) := by
   classical
-  change (if h0 : p.val = wordSource S (ws.get b) then
-      thetaLeft S ws
-    else if h1 : p.val = wordTarget S (ws.get b) then
-      thetaRight S ws
-    else (.inr ⟨b, ⟨p.val, h0, h1⟩⟩ : thetaVertices S ws)) =
-      (.inr ⟨b, p⟩ : thetaVertices S ws)
-  rw [dif_neg p.property.1, dif_neg p.property.2]
-  rfl
+  unfold thetaBranchPosition
+  split_ifs with h0 h1
+  · exact (p.property.1 h0).elim
+  · exact (p.property.2 h1).elim
+  · split_ifs <;> simp_all
 
 /-- No typed sort changes when mapping a formal path into theta:
 only its literal same-sort root positions are identified. -/
