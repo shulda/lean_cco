@@ -23,9 +23,9 @@ variable (S : AtomicSource.{u, v, w} ι X)
 variable {i j : ι}
 
 /-- Reverse the actual typed order and converse every diversity letter. -/
-def reverseWord : PositiveWord S i j → PositiveWord S j i
+def reverseWord {i j : ι} : PositiveWord S i j → PositiveWord S j i
   | .single a => .single (S.conv a)
-  | .cons a tail => PositiveWord.append S (reverseWord tail)
+  | .cons a tail => PositiveWord.append S (reverseWord S tail)
       (.single (S.conv a))
 
 private theorem singleton_opposite (a : S.Atom i j) :
@@ -49,6 +49,7 @@ theorem profile_reverse_of_gluing
       S.opposite (PositiveWord.profile S w) := by
   induction w with
   | single a =>
+      change ({S.conv a} : S.Menu _ _) = S.opposite ({a} : S.Menu _ _)
       exact singleton_opposite S a
   | cons a tail ih =>
       change PositiveWord.profile S
