@@ -75,7 +75,12 @@ theorem specified_triangle_legal_of_nonempty_fixedNetwork
     D hxz c hc (hNonempty ⟨x, z, hxz⟩)
   have hPC := fixedNetwork_PC D hxy hyz hxz
   rw [hA, hB, hC] at hPC
-  obtain ⟨a', ha', b', hb', htri⟩ := hPC.1 (by simp)
+  have hcSupported : c ∈ S.product
+      ({a} : S.Menu (D.vertexSort x) (D.vertexSort y))
+      ({b} : S.Menu (D.vertexSort y) (D.vertexSort z)) :=
+    hPC.1 (show c ∈ ({c} :
+      S.Menu (D.vertexSort x) (D.vertexSort z)) by simp)
+  obtain ⟨a', ha', b', hb', htri⟩ := hcSupported
   have hEqA : a' = a := Set.mem_singleton_iff.mp ha'
   have hEqB : b' = b := Set.mem_singleton_iff.mp hb'
   subst a'

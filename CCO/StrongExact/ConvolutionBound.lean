@@ -49,8 +49,15 @@ theorem product_present_subset_convolutionBound
     S.product (present S ws) (present S vs) ⊆
       convolutionBound S ws vs := by
   intro c hc w hw v hv
-  exact S.product_mono
-    (fun _ ha => ha w hw) (fun _ hb => hb v hv) hc
+  have hLeft : present S ws ⊆ PositiveWord.profile S w := by
+    intro a ha
+    change ∀ q ∈ ws, a ∈ PositiveWord.profile S q at ha
+    exact ha w hw
+  have hRight : present S vs ⊆ PositiveWord.profile S v := by
+    intro b hb
+    change ∀ q ∈ vs, b ∈ PositiveWord.profile S q at hb
+    exact hb v hv
+  exact S.product_mono hLeft hRight hc
 
 /-- Literal presentation of the convolution upper bound. B001
 strong associativity under SAP proves the required profile-concatenation
