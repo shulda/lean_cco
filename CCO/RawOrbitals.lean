@@ -96,6 +96,10 @@ namespace CCO.RawSymmetric
 variable {A : Type*} {G : Type*}
 variable [Group G] [MulAction G A]
 
+/-- Actual same-sort represented relational composition. -/
+def compose (R S : A → A → Prop) : A → A → Prop :=
+  fun x y => ∃ z, R x z ∧ S z y
+
 /-- The ambient group can flip *every* ordered pair of the same original
 sort. A homogeneous symmetric atomic colouring yields this property. -/
 def PairFlip : Prop :=
@@ -113,9 +117,9 @@ theorem invariant_commute (R S : A → A → Prop)
     (hR : ∀ (g : G) x y, R x y → R (g • x) (g • y))
     (hS : ∀ (g : G) x y, S x y → S (g • x) (g • y))
     (hflip : PairFlip (G := G) (A := A)) :
-    TRel.comp R S = TRel.comp S R := by
-  have hProd : ∀ (g : G) x y, TRel.comp R S x y →
-      TRel.comp R S (g • x) (g • y) := by
+    compose R S = compose S R := by
+  have hProd : ∀ (g : G) x y, compose R S x y →
+      compose R S (g • x) (g • y) := by
     rintro g x y ⟨z, hxz, hzy⟩
     exact ⟨g • z, hR g x z hxz, hS g z y hzy⟩
   have hSymR : ∀ x y, R x y → R y x := by
@@ -126,8 +130,8 @@ theorem invariant_commute (R S : A → A → Prop)
     intro x y hxy
     obtain ⟨g, hgx, hgy⟩ := hflip x y
     simpa only [hgx, hgy] using hS g x y hxy
-  have hSymProd : ∀ x y, TRel.comp R S x y →
-      TRel.comp R S y x := by
+  have hSymProd : ∀ x y, compose R S x y →
+      compose R S y x := by
     intro x y hxy
     obtain ⟨g, hgx, hgy⟩ := hflip x y
     simpa only [hgx, hgy] using hProd g x y hxy
@@ -136,9 +140,9 @@ theorem invariant_commute (R S : A → A → Prop)
   constructor
   · intro h
     obtain ⟨z, hyz, hzx⟩ := hSymProd x y h
-    exact ⟨z, hSymS y z hyz, hSymR z x hzx⟩
+    exact ⟨z, hSymS z x hzx, hSymR y z hyz⟩
   · rintro ⟨z, hxz, hzy⟩
-    have hyx : TRel.comp R S y x :=
+    have hyx : compose R S y x :=
       ⟨z, hSymR z y hzy, hSymS x z hxz⟩
     exact hSymProd y x hyx
 
@@ -150,26 +154,26 @@ theorem comp_equivalences_is_join (E F : A → A → Prop)
     (invE : ∀ (g : G) x y, E x y → E (g • x) (g • y))
     (invF : ∀ (g : G) x y, F x y → F (g • x) (g • y))
     (hflip : PairFlip (G := G) (A := A)) :
-    EquivRel (TRel.comp E F) ∧
-      (∀ x y, E x y → TRel.comp E F x y) ∧
-      (∀ x y, F x y → TRel.comp E F x y) ∧
-      (∀ H : Rel, EquivRel H →
+    EquivRel (compose E F) ∧
+      (∀ x y, E x y → compose E F x y) ∧
+      (∀ x y, F x y → compose E F x y) ∧
+      (∀ H : A → A → Prop, EquivRel H →
         (∀ x y, E x y → H x y) →
         (∀ x y, F x y → H x y) →
-        ∀ x y, TRel.comp E F x y → H x y) := by
+        ∀ x y, compose E F x y → H x y) := by
   have hComm := invariant_commute E F invE invF hflip
   constructor
   · refine ⟨?_, ?_, ?_⟩
     · intro x
       exact ⟨x, hE.refl x, hF.refl x⟩
     · rintro x y ⟨z, hxz, hzy⟩
-      have hswap : TRel.comp F E y x :=
+      have hswap : compose F E y x :=
         ⟨z, hF.symm z y hzy, hE.symm x z hxz⟩
       rw [hComm]
       exact hswap
     · rintro x y z ⟨u, hxu, huy⟩ ⟨v, hyv, hvz⟩
-      have huv : TRel.comp F E u v := ⟨y, huy, hyv⟩
-      rw [hComm] at huv
+      have huv : compose F E u v := ⟨y, huy, hyv⟩
+      rw [← hComm] at huv
       obtain ⟨w, huw, hwv⟩ := huv
       exact ⟨w, hE.trans x u w hxu huw, hF.trans w v z hwv hvz⟩
   constructor
