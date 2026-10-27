@@ -194,6 +194,8 @@ theorem thetaBranchPosition_interior {i j : ι}
   · exact (p.property.1 h0).elim
   · exact (p.property.2 h1).elim
   · split_ifs <;> simp_all
+    cases p
+    rfl
 
 /-- No typed sort changes when mapping a formal path into theta:
 only its literal same-sort root positions are identified. -/
