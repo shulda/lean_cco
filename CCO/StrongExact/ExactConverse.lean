@@ -45,7 +45,7 @@ private theorem singleton_opposite (a : S.Atom i j) :
 Only real edge gluing is assumed, never RAW identity multiplication. -/
 theorem profile_reverse_of_gluing
     (hEdge : S.RealEdgeGluing) (w : PositiveWord S i j) :
-    PositiveWord.profile S (reverseWord w) =
+    PositiveWord.profile S (reverseWord S w) =
       S.opposite (PositiveWord.profile S w) := by
   induction w with
   | single a =>
@@ -53,13 +53,13 @@ theorem profile_reverse_of_gluing
       exact singleton_opposite S a
   | cons a tail ih =>
       change PositiveWord.profile S
-          (PositiveWord.append S (reverseWord tail)
+          (PositiveWord.append S (reverseWord S tail)
             (.single (S.conv a))) =
         S.opposite (S.product ({a} : S.Menu _ _)
           (PositiveWord.profile S tail))
       rw [PositiveWord.profile_append S hEdge
-        (reverseWord tail) (.single (S.conv a))]
-      change S.product (PositiveWord.profile S (reverseWord tail))
+        (reverseWord S tail) (.single (S.conv a))]
+      change S.product (PositiveWord.profile S (reverseWord S tail))
           ({S.conv a} : S.Menu _ _) =
         S.opposite (S.product ({a} : S.Menu _ _)
           (PositiveWord.profile S tail))
@@ -72,10 +72,10 @@ theorem opposite_present_of_gluing
     (hEdge : S.RealEdgeGluing)
     (ws : List (PositiveWord S i j)) :
     S.opposite (present S ws) =
-      present S (ws.map (reverseWord)) := by
+      present S (ws.map (reverseWord S)) := by
   ext b
   change (∀ w ∈ ws, S.conv b ∈ PositiveWord.profile S w) ↔
-    (∀ w ∈ ws.map (reverseWord),
+    (∀ w ∈ ws.map (reverseWord S),
       b ∈ PositiveWord.profile S w)
   constructor
   · intro hb w hw
@@ -86,8 +86,8 @@ theorem opposite_present_of_gluing
     rw [← profile_reverse_of_gluing S hEdge v] at hOpp
     exact hOpp
   · intro hb w hw
-    have hv : b ∈ PositiveWord.profile S (reverseWord w) :=
-      hb (reverseWord w) (List.mem_map.mpr ⟨w, hw, rfl⟩)
+    have hv : b ∈ PositiveWord.profile S (reverseWord S w) :=
+      hb (reverseWord S w) (List.mem_map.mpr ⟨w, hw, rfl⟩)
     rw [profile_reverse_of_gluing S hEdge w] at hv
     exact hv
 
@@ -98,7 +98,7 @@ theorem exact_opposite_of_gluing
     (hA : Exact S A) : Exact S (S.opposite A) := by
   obtain ⟨⟨a, ha⟩, ws, hws⟩ := hA
   refine ⟨⟨S.conv a, S.mem_opposite ha⟩,
-    ⟨ws.map (reverseWord), ?_⟩⟩
+    ⟨ws.map (reverseWord S), ?_⟩⟩
   rw [hws]
   exact opposite_present_of_gluing S hEdge ws
 
