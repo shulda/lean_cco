@@ -60,3 +60,7 @@ import CCO.StrongExact.ThetaDisjoint
 import CCO.StrongExact.ThetaInteriors
 import CCO.StrongExact.ThetaReduction
 import CCO.StrongExact.ThetaLineEdges
+import CCO.StrongExact.ThetaLineRank
+import CCO.StrongExact.ThetaBranchInjective
+import CCO.StrongExact.ThetaEdgeDistinct
+import CCO.StrongExact.ThetaArcs
