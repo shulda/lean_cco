@@ -18,7 +18,7 @@ variable (S : AtomicSource ι X)
 variable {G : Type*} [Group G] [∀ i : ι, MulAction G (X i)]
 
 theorem colourInvariant_of_homogeneous
-    (H : HomogeneousSource S G) {i j : ι} :
+    (H : HomogeneousSource (S := S) G) {i j : ι} :
     S.ColourInvariant (G := G) (i := i) (j := j) := by
   intro g x y
   have h := H.preserves_colours g (⟨i, x⟩ : Sigma X) (⟨j, y⟩ : Sigma X)
