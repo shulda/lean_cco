@@ -1,0 +1,129 @@
+import CCO.Atomic
+
+/-!
+# Finite real diagrams, embeddings, cycles, and semantic interfaces
+
+`FiniteInduced` is a genuinely complete induced **real** substructure:
+the entire colour on every pair is inherited from the actual source.
+`PartialDiagram` separately represents a finite list of diversity
+constraints.  Missing edges do not assert inequality and may be collapsed
+by a `DiagramHom`.  The CCO interface counts simple cycles of length at
+least three only, never parallel edges or invented diagonal edges.
+-/
+
+universe u v w z t
+
+namespace CCO
+
+variable {ι : Type u} {X : ι → Type v}
+variable (S : AtomicSource ι X)
+
+/-- Sort-pair tags are retained in the type of the colour. -/
+def taggedColour (p q : Sigma X) :
+    (Σ i : ι, Σ j : ι, Option (S.Atom i j)) :=
+  ⟨p.1, q.1, S.colour p.2 q.2⟩
+
+structure FiniteInduced where
+  vertices : Set (Sigma X)
+  finite_vertices : vertices.Finite
+
+/-- A finite induced embedding preserves all old literal atoms, including
+the real diagonal, not merely the currently specified diversity edges. -/
+structure InducedEmbedding (A B : FiniteInduced S) where
+  toEmbedding : (↥A.vertices) ↪ (↥B.vertices)
+  preserves_sort : ∀ p, ((toEmbedding p).val).1 = (p.val).1
+  preserves_colours : ∀ p q,
+    S.taggedColour p.val q.val =
+      S.taggedColour (toEmbedding p).val (toEmbedding q).val
+
+/-- Finite partial labelled simple diagrams. Only distinct formal vertices
+can have edges, and `none` signifies a missing constraint. -/
+structure PartialDiagram (V : Type z) where
+  finite_type : Finite V
+  vertexSort : V → ι
+  edge : ∀ (x y : V), x ≠ y →
+    Option (S.Atom (vertexSort x) (vertexSort y))
+  edge_reverse : ∀ (x y : V) (h : x ≠ y)
+      (a : S.Atom (vertexSort x) (vertexSort y)),
+    edge x y h = some a ↔ edge y x h.symm = some (S.conv a)
+
+variable {S} {V : Type z}
+
+/-- Homomorphism into the actual source: no injectivity assumption.
+Only recorded edges need be preserved, and these are irreflexive. -/
+structure DiagramHom (D : PartialDiagram S V) where
+  point : ∀ x : V, X (D.vertexSort x)
+  preserves_edge : ∀ (x y : V) (h : x ≠ y)
+      (a : S.Atom (D.vertexSort x) (D.vertexSort y)),
+    D.edge x y h = some a → S.colour (point x) (point y) = some a
+
+def DiagramHom.image {D : PartialDiagram S V} (f : DiagramHom D)
+    (x : V) : Sigma X :=
+  ⟨D.vertexSort x, f.point x⟩
+
+/-- An injective realization, unlike an unrestricted homomorphism, separates
+all formal vertices, including vertices with the same named sort. -/
+def DiagramHom.IsInjective {D : PartialDiagram S V}
+    (f : DiagramHom D) : Prop :=
+  Function.Injective f.image
+
+def PartialDiagram.IsComplete (D : PartialDiagram S V) : Prop :=
+  ∀ (x y : V) (h : x ≠ y),
+    ∃ a : S.Atom (D.vertexSort x) (D.vertexSort y),
+      D.edge x y h = some a
+
+structure CompleteDiagram (V : Type z) where
+  partial : PartialDiagram S V
+  complete : partial.IsComplete
+
+/-- Cyclic successor of a nonempty finite ordinal. -/
+def cyclicNext {n : Nat} (hn : 0 < n) (p : Fin n) : Fin n :=
+  ⟨(p.val + 1) % n, Nat.mod_lt _ hn⟩
+
+/-- A genuine simple cycle: no repeated formal vertices, at least three
+vertices, and every edge of the cycle is a specified diversity edge.
+The redundant adjacent-distinctness field exposes the proof required by
+the partial-diagram edge API. -/
+structure SimpleCycle (D : PartialDiagram S V) where
+  length : Nat
+  length_ge_three : 3 ≤ length
+  length_pos : 0 < length
+  vertices : Fin length ↪ V
+  next_ne : ∀ p, vertices p ≠ vertices (cyclicNext length_pos p)
+  specified : ∀ p,
+    ∃ a : S.Atom (D.vertexSort (vertices p))
+        (D.vertexSort (vertices (cyclicNext length_pos p))),
+      D.edge (vertices p) (vertices (cyclicNext length_pos p))
+        (next_ne p) = some a
+
+/-- A cycle homomorphism may collide non-adjacent vertices. -/
+def CycleHom {D : PartialDiagram S V} (C : SimpleCycle D) : Prop :=
+  ∃ point : ∀ p : Fin C.length, X (D.vertexSort (C.vertices p)),
+    ∀ (p : Fin C.length)
+        (a : S.Atom (D.vertexSort (C.vertices p))
+          (D.vertexSort (C.vertices (cyclicNext C.length_pos p)))),
+      D.edge (C.vertices p) (C.vertices (cyclicNext C.length_pos p))
+          (C.next_ne p) = some a →
+        S.colour (point p) (point (cyclicNext C.length_pos p)) = some a
+
+/-- Homomorphic simple-cycle completion (CCO). This is *only* an
+interface here. There is no CCO completion theorem in B001. -/
+def SemanticCCO (S : AtomicSource ι X) : Prop :=
+  ∀ (V : Type z) (D : PartialDiagram S V),
+    (∀ C : SimpleCycle D, CycleHom C) →
+      _root_.Nonempty (DiagramHom D)
+
+/-- The actual finite-partial-isomorphism extension property for an
+ambient group of sort- and colour-preserving automorphisms. This is a
+source hypothesis, not an unproved axiom or a conclusion of CCO. -/
+structure HomogeneousSource (G : Type t) [Group G]
+    [MulAction G (Sigma X)] : Prop where
+  preserves_sort : ∀ (g : G) (p : Sigma X), (g • p).1 = p.1
+  preserves_colours : ∀ (g : G) (p q : Sigma X),
+    S.taggedColour (g • p) (g • q) = S.taggedColour p q
+  extends_partial_iso : ∀ (A B : FiniteInduced S)
+      (e : InducedEmbedding S A B),
+    Function.Surjective e.toEmbedding →
+      ∃ g : G, ∀ p : ↥A.vertices, g • p.val = (e.toEmbedding p).val
+
+end CCO
