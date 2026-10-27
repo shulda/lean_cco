@@ -57,3 +57,4 @@ import CCO.RawExact.CyclicIndex
 import CCO.RawExact.CycleIncidence
 import CCO.RawExact.AtomicFanCycles
 import CCO.RawExact.AtomicFanDuplicates
+import CCO.RawExact.WordHellyFromBalls
