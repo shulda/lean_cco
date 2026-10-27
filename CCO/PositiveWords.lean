@@ -79,7 +79,7 @@ theorem represented_append (w : PositiveWord S i j)
           (represented S (append S rest v)) =
         TRel.comp (TRel.comp (S.atomRel a) (represented S rest))
           (represented S v)
-      rw [ih, TRel.comp_assoc]
+      rw [ih v, TRel.comp_assoc]
 
 theorem profile_append (hEdge : S.RealEdgeGluing)
     (w : PositiveWord S i j) (v : PositiveWord S j k) :
@@ -90,7 +90,7 @@ theorem profile_append (hEdge : S.RealEdgeGluing)
   | cons a rest ih =>
       change S.product {a} (profile S (append S rest v)) =
         S.product (S.product {a} (profile S rest)) (profile S v)
-      rw [ih, S.product_assoc_of_edge_gluing hEdge]
+      rw [ih v, S.product_assoc_of_edge_gluing hEdge]
 
 theorem profile_append_of_SAP
     {G : Type*} [Group G] [∀ p : ι, MulAction G (X p)]
