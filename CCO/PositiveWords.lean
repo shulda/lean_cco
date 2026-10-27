@@ -194,7 +194,8 @@ private theorem guard_and_diagonal_absorption_of_SAP
     (∀ (e : j = i) (x : X i),
       represented S w x (e.symm ▸ x) →
       ∀ {k : ι} (A : S.Menu k i),
-        A ⊆ S.product A (e ▸ profile S w)) := by
+        A ⊆ S.product A
+          (Eq.ndrec (motive := fun t : ι => S.Menu i t) (profile S w) e)) := by
   have hPoint := S.realPointGluing_of_SAP H sap
   have hEdge := S.realEdgeGluing_of_SAP H sap
   induction w with
