@@ -63,3 +63,6 @@ import CCO.RawExact.PathSkeleton
 
 import CCO.RawExact.SortTrace
 import CCO.RawExact.IdentityBalls
+
+import CCO.RawExact.RealTrace
+import CCO.RawExact.DistinctCentres

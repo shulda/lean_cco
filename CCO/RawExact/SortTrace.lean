@@ -36,7 +36,6 @@ theorem wordSortTrace_length {i j : ι}
   | identity tail ih => exact ih
   | atom a tail ih =>
       simp only [wordSortTrace, List.length_cons, diversityLength, ih]
-      omega
 
 /-- Typed original-sort coordinate of a finite private-path position.
 Unlike a fake equality edge, an identity letter leaves this index
