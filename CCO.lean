@@ -4,6 +4,7 @@ import CCO.RawWords
 import CCO.Atomic
 import CCO.Supports
 import CCO.Finite
+import CCO.BasePaths
 import CCO.GroupActions
 import CCO.RawOrbitals
 import CCO.GroupQuotient
