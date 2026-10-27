@@ -25,3 +25,4 @@ import CCO.DiagramAction
 import CCO.SpanEmbedding
 import CCO.SAPEdge
 import CCO.DiagramMove
+import CCO.DiagramNeighbours
