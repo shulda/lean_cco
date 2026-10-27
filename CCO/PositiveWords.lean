@@ -289,5 +289,83 @@ theorem diversityGuard_rawWord_eq_profile_of_SAP
   rw [← represented_toRawWord S w]
   exact diversityGuard_represented_eq_profile_of_SAP S H sap w
 
+
+/-!
+## Identity-letter normalization for arbitrary RAW words
+
+The RAW language permits both a true empty loop word and interspersed
+logical identity steps. Every RAW word is either still literal equality
+(after deleting all identities) or has a positive diversity-word
+representative. No diagonal OUTPUT of a positive word is discarded.
+-/
+
+/-- Deleting identity letters has only two possible outcomes: the real
+same-sort identity relation, or the represented relation of a genuinely
+positive typed diversity word. The two terminal sort tags remain literal. -/
+theorem raw_relation_identity_or_positive
+    (w : RawWord S i j) :
+    ((i = j) ∧
+      ∀ (x : X i) (y : X j),
+        RawWord.relation S w x y ↔
+          (⟨i, x⟩ : Sigma X) = ⟨j, y⟩) ∨
+    ∃ p : PositiveWord S i j,
+      RawWord.relation S w = represented S p := by
+  induction w with
+  | nil s =>
+      left
+      constructor
+      · rfl
+      · intro x y
+        change x = y ↔ (⟨s, x⟩ : Sigma X) = ⟨s, y⟩
+        simp only [Sigma.mk.injEq, heq_eq_eq, true_and]
+  | identity tail ih =>
+      exact ih
+  | atom a tail ih =>
+      right
+      rcases ih with ⟨hSort, hIdent⟩ | ⟨p, hp⟩
+      · cases hSort
+        have hTail : RawWord.relation S tail = TRel.ident X _ := by
+          funext x y
+          apply propext
+          have h := hIdent x y
+          simpa only [Sigma.mk.injEq, heq_eq_eq, true_and] using h
+        refine ⟨.single a, ?_⟩
+        change TRel.comp (S.atomRel a) (RawWord.relation S tail) =
+          S.atomRel a
+        rw [hTail]
+        exact TRel.comp_ident (S.atomRel a)
+      · refine ⟨.cons a p, ?_⟩
+        change TRel.comp (S.atomRel a) (RawWord.relation S tail) =
+          TRel.comp (S.atomRel a) (represented S p)
+        rw [hp]
+
+/-- Arbitrary equality-containing RAW words have either an empty
+diversity guard (the true identity case) or exactly the STRONG profile
+of some positive diversity word. This states the normalization firewall
+without pretending a positive closed walk lacks real diagonal outputs. -/
+theorem raw_guard_empty_or_positive_profile_of_SAP
+    {G : Type*} [Group G] [∀ p : ι, MulAction G (X p)]
+    (H : HomogeneousSource S G) (sap : AgeSAP S)
+    (w : RawWord S i j) :
+    S.diversityGuard (RawWord.relation S w) =
+        (∅ : S.Menu i j) ∨
+      ∃ p : PositiveWord S i j,
+        S.diversityGuard (RawWord.relation S w) = profile S p := by
+  rcases raw_relation_identity_or_positive S w with
+    ⟨hSort, hIdent⟩ | ⟨p, hPositive⟩
+  · cases hSort
+    have hRel : RawWord.relation S w = TRel.ident X i := by
+      funext x y
+      apply propext
+      have h := hIdent x y
+      simpa only [Sigma.mk.injEq, heq_eq_eq, true_and] using h
+    left
+    rw [hRel]
+    exact S.diversityGuard_ident i
+  · right
+    refine ⟨p, ?_⟩
+    rw [hPositive]
+    exact diversityGuard_represented_eq_profile_of_SAP S H sap p
+
 end PositiveWord
 end CCO
