@@ -28,3 +28,4 @@ import CCO.DiagramMove
 import CCO.DiagramNeighbours
 import CCO.Injectivization
 import CCO.GuardedEndpoints
+import CCO.PositiveWords
