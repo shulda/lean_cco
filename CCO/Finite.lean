@@ -167,6 +167,6 @@ theorem HomogeneousSource.extends_partial_iso
       taggedColour S (h p) (h q) := by
     intro p q
     exact e.preserves_colours p q
-  exact H.extends_finite_diagram f h hcol
+  exact H.extends_finite_diagram (V := ↥A.vertices) f h hcol
 
 end CCO
