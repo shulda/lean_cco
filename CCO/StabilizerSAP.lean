@@ -124,7 +124,10 @@ theorem orbit_has_fresh_point_of_SAP
     have ha := H.preserves_colours g⁻¹ (eExtD.toEmbedding bExt).val xOut
     have hvalue : taggedColour S b y =
         taggedColour S (eExtD.toEmbedding bExt).val xOut := by
-      simpa only [y, hCommon b hb] using ha
+      have hbEq : g⁻¹ • (eExtD.toEmbedding bExt).val = b :=
+        hCommon b hb
+      rw [hbEq] at ha
+      simpa only [y] using ha
     exact hp.trans hvalue.symm
   have hType : SameTypeOver S B x y := ⟨hSelf, hLeft, hRight⟩
   exact ⟨y, sameTypeOver_orbit S H B x y hType, hAvoid⟩
