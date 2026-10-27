@@ -103,11 +103,17 @@ theorem realEdgeGluing_of_SAP
   obtain ⟨z₁, hz₁⟩ := tagged_exists_of_sort (X := X) outZ k hSortZ
   obtain ⟨t₁, ht₁⟩ := tagged_exists_of_sort (X := X) outT l hSortT
   have hxAgree : eLD.toEmbedding xl = eRD.toEmbedding xr := by
-    simpa only [eBL, eBR, inducedInclusion] using
-      (hAgree (⟨px, hpxBase⟩ : ↥Base.vertices))
+    have h := hAgree (⟨px, hpxBase⟩ : ↥Base.vertices)
+    have hEL : eBL.toEmbedding (⟨px, hpxBase⟩ : ↥Base.vertices) = xl := rfl
+    have hER : eBR.toEmbedding (⟨px, hpxBase⟩ : ↥Base.vertices) = xr := rfl
+    rw [hEL, hER] at h
+    exact h
   have hzAgree : eLD.toEmbedding zl = eRD.toEmbedding zr := by
-    simpa only [eBL, eBR, inducedInclusion] using
-      (hAgree (⟨pz, hpzBase⟩ : ↥Base.vertices))
+    have h := hAgree (⟨pz, hpzBase⟩ : ↥Base.vertices)
+    have hEL : eBL.toEmbedding (⟨pz, hpzBase⟩ : ↥Base.vertices) = zl := rfl
+    have hER : eBR.toEmbedding (⟨pz, hpzBase⟩ : ↥Base.vertices) = zr := rfl
+    rw [hEL, hER] at h
+    exact h
   have hOutputXY : S.colour x₁ y₁ = some a := by
     have hc := eLD.preserves_colours xl yl
     change taggedColour S px py = taggedColour S outX outY at hc
