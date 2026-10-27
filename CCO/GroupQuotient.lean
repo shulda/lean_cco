@@ -109,7 +109,8 @@ theorem kernel_is_equality_iff_injective (τ : A → Q) :
     exact (h x y).mp hxy
   · intro h x y
     constructor
-    · exact h
+    · intro hxy
+      exact h hxy
     · intro hxy
       exact congrArg τ hxy
 
