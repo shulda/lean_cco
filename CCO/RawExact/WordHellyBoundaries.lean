@@ -41,8 +41,8 @@ theorem word_helly_two {i j : ι}
   obtain ⟨x, z, hp, hq⟩ := h
   refine ⟨x, z, ?_⟩
   intro w hw
-  simp only [List.mem_cons, List.mem_singleton] at hw
-  rcases hw with hwp | hwq
+  have hw' : w = p ∨ w = q := by simpa using hw
+  rcases hw' with hwp | hwq
   · subst w
     exact hp
   · subst w
