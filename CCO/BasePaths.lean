@@ -126,6 +126,7 @@ structure ActualSpan (C : Type z) where
 
 namespace ActualSpan
 
+variable {C : Type z}
 variable {S} (A : S.ActualSpan (i := i) (j := j) C)
 
 def edges (c : C) : S.TwoStep i j :=
