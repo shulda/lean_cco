@@ -87,9 +87,17 @@ theorem heterogeneous_atomic_ball_helly_with_repeats_of_CCO
     have hf : fibre a = fibre b := by
       unfold fibre
       rw [hab]
+    have hInA : (fibre b).min' (hfibre b) ∈ fibre a := by
+      rw [hf]
+      exact Finset.min'_mem _ _
+    have hInB : (fibre a).min' (hfibre a) ∈ fibre b := by
+      rw [← hf]
+      exact Finset.min'_mem _ _
     change (fibre a).min' (hfibre a) =
       (fibre b).min' (hfibre b)
-    rw [hf]
+    exact le_antisymm
+      (Finset.min'_le _ _ hInA)
+      (Finset.min'_le _ _ hInB)
   have hrep_idem (t : I) : rep (rep t) = rep t :=
     hrep_const (rep t) t (hrep_tagged t)
   let J : Type (max u v) := { t : I // rep t = t }
