@@ -131,8 +131,11 @@ theorem injectivize_of_SAP
           _ = f₀.image v := hFixed v hv
       · have hvT : v ∈ T := by
           simp [T, hv]
-        exact (hDone v hvT).2 u (by intro h; exact hv (h ▸ hu))
-          hEq.symm |>.elim
+        have hvu : v ≠ u := by
+          intro heq
+          subst v
+          exact hv hu
+        exact False.elim ((hDone v hvT).2 u hvu hEq.symm)
     · have huT : u ∈ T := by
         simp [T, hu]
       by_contra huv
