@@ -122,7 +122,7 @@ all three have one common actual endpoint pair. Only the source's
 SemanticCCO is required; no SAP, quotient or fake STRONG identity. -/
 theorem three_two_step_word_helly
     (a b : Fin 3 → S.Atom i i)
-    (cco : SemanticCCO.{u,v,w,0} S)
+    (cco : SemanticCCO.{u,v,0,w} S)
     (hPair : ∀ t u : Fin 3, t ≠ u →
       ∃ x z yt yu : X i,
         S.atomRel (a t) x yt ∧ S.atomRel (b t) yt z ∧
