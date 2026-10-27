@@ -144,7 +144,7 @@ structure HomogeneousSource (S : AtomicSource ι X) (G : Type t) [Group G]
   is the usual induced-partial-isomorphism homogeneity phrased without
   arbitrary enumerations of finite substructures. Real equality is
   encoded by the optional diagonal and hence collisions are respected. -/
-  extends_finite_diagram : ∀ {V : Type z} [Finite V]
+  extends_finite_diagram : ∀ {V : Type (max u v)} [Finite V]
       (f h : V → Sigma X),
     (∀ v w, taggedColour S (f v) (f w) =
       taggedColour S (h v) (h w)) →
