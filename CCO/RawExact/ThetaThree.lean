@@ -73,7 +73,45 @@ private theorem for_four :
       (∀ p : Fin 4,
         Adj (f p) (f (cyclicNext (by decide) p))) →
         OmitsSomeMiddleFn f := by
-  decide
+  intro f _ hedges
+  have toggle2 : ∀ a b c : Bool, a ≠ b → b ≠ c → a = c := by decide
+  have two_miss : ∀ v w : Fin 5,
+      ∃ t : Fin 3, v ≠ middle t ∧ w ≠ middle t := by decide
+  have roots_not_mid : ∀ v : Fin 5, ∀ t : Fin 3,
+      rootFlag v = true → v ≠ middle t := by decide
+  have h01 : rootFlag (f 0) ≠ rootFlag (f 1) := by
+    simpa [cyclicNext] using adj_root_ne _ _ (hedges 0)
+  have h12 : rootFlag (f 1) ≠ rootFlag (f 2) := by
+    simpa [cyclicNext] using adj_root_ne _ _ (hedges 1)
+  have h23 : rootFlag (f 2) ≠ rootFlag (f 3) := by
+    simpa [cyclicNext] using adj_root_ne _ _ (hedges 2)
+  have h02 : rootFlag (f 0) = rootFlag (f 2) :=
+    toggle2 _ _ _ h01 h12
+  have h13 : rootFlag (f 1) = rootFlag (f 3) :=
+    toggle2 _ _ _ h12 h23
+  by_cases h0 : rootFlag (f 0) = true
+  · have h2 : rootFlag (f 2) = true := h02.symm.trans h0
+    obtain ⟨t, ht1, ht3⟩ := two_miss (f 1) (f 3)
+    refine ⟨t, ?_⟩
+    intro p
+    fin_cases p
+    · exact roots_not_mid (f 0) t h0
+    · exact ht1
+    · exact roots_not_mid (f 2) t h2
+    · exact ht3
+  · have h0false : rootFlag (f 0) = false := by
+      cases h : rootFlag (f 0) <;> simp_all
+    have h1true : rootFlag (f 1) = true := by
+      cases h : rootFlag (f 1) <;> simp_all
+    have h3true : rootFlag (f 3) = true := h13.symm.trans h1true
+    obtain ⟨t, ht0, ht2⟩ := two_miss (f 0) (f 2)
+    refine ⟨t, ?_⟩
+    intro p
+    fin_cases p
+    · exact ht0
+    · exact roots_not_mid (f 1) t h1true
+    · exact ht2
+    · exact roots_not_mid (f 3) t h3true
 
 private theorem for_five :
     ∀ f : Fin 5 → Fin 5,
