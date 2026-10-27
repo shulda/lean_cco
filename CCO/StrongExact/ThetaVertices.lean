@@ -206,8 +206,8 @@ theorem thetaBranchPosition_sort {i j : ι}
   by_cases h0 : p = wordSource S (ws.get b)
   · subst p
     rw [thetaBranchPosition_source S ws b]
-    exact (wordSource_sort S (ws.get b)).symm.trans
-      (thetaLeft_sort S ws).symm |>.symm
+    rw [thetaLeft_sort S ws]
+    exact (wordSource_sort S (ws.get b)).symm
   · by_cases h1 : p = wordTarget S (ws.get b)
     · subst p
       rw [thetaBranchPosition_target S ws b]
