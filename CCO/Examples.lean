@@ -48,9 +48,13 @@ def trivialPalette : AtomicSource (Fin 2) (fun _ => Nat) where
     cases a
     by_cases h : (⟨i, x⟩ : U) = ⟨j, y⟩
     · have ht : (⟨j, y⟩ : U) = ⟨i, x⟩ := h.symm
-      simp [exampleColour, h, ht]
+      change exampleColour (i := i) (j := j) x y = some () ↔
+        exampleColour (i := j) (j := i) y x = some ()
+      simp only [exampleColour, dif_pos h, dif_pos ht]
     · have ht : (⟨j, y⟩ : U) ≠ ⟨i, x⟩ := Ne.symm h
-      simp [exampleColour, h, ht]
+      change exampleColour (i := i) (j := j) x y = some () ↔
+        exampleColour (i := j) (j := i) y x = some ()
+      simp only [exampleColour, dif_neg h, dif_neg ht]
   realized := by
     intro i j a
     cases a
@@ -75,13 +79,13 @@ theorem universal_triangle {i j k : Fin 2} :
 example : () ∈ trivialPalette.product
     ({()} : trivialPalette.Menu (0 : Fin 2) (0 : Fin 2))
     ({()} : trivialPalette.Menu (0 : Fin 2) (0 : Fin 2)) := by
-  exact ⟨(), by simp, (), by simp, universal_triangle⟩
+  exact ⟨(), by rfl, (), by rfl, universal_triangle⟩
 
 /-- Genuinely typed cross-sort product 0 -> 1 -> 0. -/
 example : () ∈ trivialPalette.product
     ({()} : trivialPalette.Menu (0 : Fin 2) (1 : Fin 2))
     ({()} : trivialPalette.Menu (1 : Fin 2) (0 : Fin 2)) := by
-  exact ⟨(), by simp, (), by simp, universal_triangle⟩
+  exact ⟨(), by rfl, (), by rfl, universal_triangle⟩
 
 /-- Logical equality is not the single STRONG diversity atom. -/
 example : ¬ trivialPalette.atomRel (i := (0 : Fin 2)) (j := (0 : Fin 2))
