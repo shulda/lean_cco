@@ -112,7 +112,7 @@ theorem orbit_has_fresh_point_of_SAP
       have hbEq : g⁻¹ • (eExtD.toEmbedding bExt).val = b :=
         hCommon b hb
       rw [hbEq] at ha
-      exact ha
+      simpa only [y] using ha
     exact hp.trans hvalue.symm
   have hRight : ∀ b ∈ B.vertices,
       taggedColour S b x = taggedColour S b y := by
