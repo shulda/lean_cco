@@ -28,6 +28,24 @@ theorem invariant_support_representation_of_homogeneous
   S.rawSupport_represents_invariant R hInv
     (S.pair_homogeneous_of_homogeneous H)
 
+/-- RAW C01: a nonempty invariant represented relation contains an
+entire *actual* ordered-pair atomic orbit, including the genuine diagonal
+when that is the chosen pair. Its source colour is necessarily realized. -/
+theorem raw_contains_uniform_atom_of_homogeneous
+    (H : HomogeneousSource S G) {i j : ι}
+    (R : TRel X i j) (hR : TRel.Nonempty R)
+    (hInv : TRel.Invariant (G := G) R) :
+    ∃ c : Option (S.Atom i j),
+      (∃ x y, S.colour x y = c) ∧
+      ∀ x y, S.colour x y = c → R x y := by
+  obtain ⟨a, b, hab⟩ := hR
+  refine ⟨S.colour a b, ⟨a, b, rfl⟩, ?_⟩
+  intro x y hcol
+  obtain ⟨g, hgx, hgy⟩ :=
+    (S.pair_homogeneous_of_homogeneous H)
+      a x b y hcol.symm
+  simpa only [hgx, hgy] using hInv g a b hab
+
 /-- Homogeneity of the actual source makes every nonempty invariant
 typed relation serial on the whole named original source sort. -/
 theorem raw_serial_of_homogeneous
