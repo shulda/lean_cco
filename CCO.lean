@@ -59,3 +59,4 @@ import CCO.StrongExact.SmallHelly
 import CCO.StrongExact.ThetaDisjoint
 import CCO.StrongExact.ThetaInteriors
 import CCO.StrongExact.ThetaReduction
+import CCO.StrongExact.ThetaLineEdges

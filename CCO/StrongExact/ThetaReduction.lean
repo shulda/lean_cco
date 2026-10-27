@@ -1,4 +1,5 @@
 import CCO.StrongExact.DirectBranches
+import CCO.StrongExact.SmallHelly
 import CCO.StrongExact.PrescribedPathWitness
 import CCO.StrongExact.CycleCompletion
 
@@ -157,5 +158,60 @@ theorem wordHelly_of_longThetaProvider
     exact (positive_profile_iff_represented S H sap word a).2
       ⟨f.point (thetaLeft S ws),
         f.point (thetaRight S ws), hWords f word hw, ha⟩
+
+
+/-- Minimal hard-case provider: ONLY pairwise-compatible families
+containing at least THREE long positive words require constructing
+a genuine theta graph. All smaller families and all families with
+a direct one-letter branch are covered without semantic CCO. -/
+def HardThetaProvider : Prop :=
+  ∀ {i j : ι} (ws : List (PositiveWord S i j)),
+    PairwiseWordProfiles S ws →
+    3 ≤ ws.length →
+    (∀ a : S.Atom i j,
+      (PositiveWord.single a : PositiveWord S i j) ∉ ws) →
+      ∃ T : ThetaEdges S ws,
+        (∀ C : SimpleCycle (T.toDiagram), CycleHom C) ∧
+          T.RepresentsWords
+
+/-- The full C07 2-Helly source statement follows from the concrete
+theta graph provider in ONLY the genuinely hard case of at least three
+branches, none of them single-edge. This reduction is conditional,
+and the provider is NEVER exported as an unconditional theorem. -/
+theorem wordHelly_of_hardThetaProvider
+    {G : Type*} [Group G] [∀ q : ι, MulAction G (X q)]
+    (H : HomogeneousSource S G) (sap : AgeSAP S)
+    (cco : SemanticCCO.{u,v,0,w} S)
+    (provider : HardThetaProvider S) :
+    WordHelly S := by
+  intro i j ws hPair
+  by_cases hSmall : ws.length ≤ 2
+  · exact wordHelly_at_most_two_of_SAP S H sap ws hSmall hPair
+  · by_cases hDirect : ∃ a : S.Atom i j,
+        (PositiveWord.single a : PositiveWord S i j) ∈ ws
+    · obtain ⟨a, ha⟩ := hDirect
+      exact wordHelly_of_direct_branch S ws hPair a ha
+    · have hAtLeast : 3 ≤ ws.length := by omega
+      have hLong : ∀ a : S.Atom i j,
+          (PositiveWord.single a : PositiveWord S i j) ∉ ws := by
+        intro a ha
+        exact hDirect ⟨a, ha⟩
+      obtain ⟨T, hCycles, hWords⟩ := provider ws hPair hAtLeast hLong
+      have hStrong : (T.toDiagram).HasStrongCompletion :=
+        (PartialDiagram.strongCompletion_iff_cycles_of_SAP_CCO
+          H sap cco (T.toDiagram)).2 hCycles
+      obtain ⟨f, hf⟩ := hStrong
+      have hRootNe : f.image (thetaLeft S ws) ≠
+          f.image (thetaRight S ws) := by
+        intro he
+        exact (thetaLeft_ne_right S ws) (hf he)
+      obtain ⟨a, ha⟩ := S.some_colour_of_ne
+        (f.point (thetaLeft S ws)) (f.point (thetaRight S ws))
+        hRootNe
+      refine ⟨a, ?_⟩
+      intro word hw
+      exact (positive_profile_iff_represented S H sap word a).2
+        ⟨f.point (thetaLeft S ws),
+          f.point (thetaRight S ws), hWords f word hw, ha⟩
 
 end CCO.StrongExact
