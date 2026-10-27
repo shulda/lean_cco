@@ -9,13 +9,13 @@ exact word-presentability is not needed. Partial-map compatibility and
 the later ambient lifting theorem are separate obligations.
 -/
 
-universe u
+universe u v w
 
 namespace CCO.RawExact
 
 open RawSymmetric
 
-variable {A G : Type u} [Group G] [MulAction G A]
+variable {A : Type u} {G : Type v} [Group G] [MulAction G A]
 
 theorem raw_comp_assoc (P Q R : A → A → Prop) :
     compose (compose P Q) R = compose P (compose Q R) := by
@@ -117,8 +117,6 @@ theorem nested_mixed_reduction
   exact ⟨hJKR.trans hSat.symm, hSat⟩
 
 end CCO.RawExact
-
-universe v w
 
 namespace CCO.RawExact
 
