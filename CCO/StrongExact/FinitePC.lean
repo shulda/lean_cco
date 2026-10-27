@@ -43,7 +43,7 @@ the proof uses B001's *actual* finite atom palettes, not a finite
 approximation to the original source. -/
 theorem finite_network : Finite (Network D) := by
   classical
-  letI : Finite (DistinctPair V) := D.finite_distinctPair
+  letI : Finite (DistinctPair V) := finite_distinctPair D
   haveI (p : DistinctPair V) :
       Fintype (S.Atom (D.vertexSort p.src) (D.vertexSort p.dst)) :=
     S.finiteAtom _ _
@@ -57,11 +57,11 @@ a genuine fixed point, not just a Post-fixed refinement. -/
 theorem iterate_stabilizes (N : Network D) :
     ∃ n : Nat, Stable D (iterate D N n) := by
   classical
-  letI : Finite (Network D) := D.finite_network
+  letI : Finite (Network D) := finite_network D
   have hAnti : Antitone (iterate D N) := by
     apply antitone_nat_of_succ_le
     intro n
-    exact D.iterate_succ_refines N n
+    exact iterate_succ_refines D N n
   obtain ⟨n, hconst⟩ := WellFoundedLT.antitone_chain_condition hAnti
   refine ⟨n, ?_⟩
   intro p
@@ -72,21 +72,21 @@ theorem iterate_stabilizes (N : Network D) :
 /-- An actual finite PC limit, defined by selecting one verified
 stabilization index. Its value is independent of the chosen index. -/
 noncomputable def fixedIndex : Nat :=
-  Classical.choose (D.iterate_stabilizes (initial D))
+  Classical.choose (iterate_stabilizes D (initial D))
 
 noncomputable def fixedNetwork : Network D :=
-  iterate D (initial D) (D.fixedIndex)
+  iterate D (initial D) (fixedIndex D)
 
-theorem fixedNetwork_stable : Stable D (D.fixedNetwork) :=
-  Classical.choose_spec (D.iterate_stabilizes (initial D))
+theorem fixedNetwork_stable : Stable D (fixedNetwork D) :=
+  Classical.choose_spec (iterate_stabilizes D (initial D))
 
 /-- Greatest fixed point of STRONG PC pruning inside the initial network.
 The statement allows empty domains and arbitrary repeated sort names. -/
 theorem fixedNetwork_greatest (M : Network D)
     (hStable : Stable D M)
     (hInside : Refines D M (initial D)) :
-    Refines D M (D.fixedNetwork) :=
-  D.stable_refines_iterate M (initial D)
-    hStable hInside (D.fixedIndex)
+    Refines D M (fixedNetwork D) :=
+  stable_refines_iterate D M (initial D)
+    hStable hInside (fixedIndex D)
 
 end CCO.StrongPC
