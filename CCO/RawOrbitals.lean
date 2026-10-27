@@ -83,17 +83,11 @@ theorem actual_orbital_peirce
     obtain ⟨h, rfl, rfl⟩ := horb
     exact invProd h a c hbase
 
-theorem peirce_rotation (R : TRel X i j) (B : TRel X j k)
+theorem comp_peirce_witness (R : TRel X i j) (B : TRel X j k)
     (x : X i) (z : X k) :
-    comp R B x z ↔
-      ∃ y, R x y ∧ comp (fun a b => a = z ∧ b = z)
-        (converse B) z y := by
-  constructor
-  · rintro ⟨y, hr, hb⟩
-    exact ⟨y, hr, z, ⟨rfl,rfl⟩, hb⟩
-  · rintro ⟨y, hr, w, ⟨hwz, hwz'⟩, hb⟩
-    subst w
-    exact ⟨y, hr, hb⟩
+    comp R B x z ↔ ∃ y, R x y ∧ converse B z y :=
+  Iff.rfl
+
 
 end CCO.TRel
 
@@ -109,13 +103,6 @@ sort. A homogeneous symmetric atomic colouring yields this property. -/
 def PairFlip : Prop :=
   ∀ x y : A, ∃ g : G, g • x = y ∧ g • y = x
 
-theorem invariant_symmetric (R : Rel)
-    (hR : TRel.Invariant (G := G) (X := fun _ : Unit => A) R)
-    (hflip : PairFlip (G := G) (A := A)) :
-    ∀ x y, R x y → R y x := by
-  intro x y hxy
-  obtain ⟨g, hgx, hgy⟩ := hflip x y
-  simpa only [hgx, hgy] using hR g x y hxy
 
 /-- Equivalence is stated as a property of an *actual* binary relation.
 This avoids implicitly restricting to the represented exact sublattice. -/
@@ -178,7 +165,10 @@ theorem comp_equivalences_is_join (E F : Rel)
     · intro x
       exact ⟨x, hE.refl x, hF.refl x⟩
     · rintro x y ⟨z, hxz, hzy⟩
-      exact ⟨z, hE.symm x z hxz, hF.symm z y hzy⟩ |>.elim
+      have hswap : TRel.comp F E y x :=
+        ⟨z, hF.symm z y hzy, hE.symm x z hxz⟩
+      rw [hComm]
+      exact hswap
     · rintro x y z ⟨u, hxu, huy⟩ ⟨v, hyv, hvz⟩
       have huv : TRel.comp F E u v := ⟨y, huy, hyv⟩
       rw [hComm] at huv
