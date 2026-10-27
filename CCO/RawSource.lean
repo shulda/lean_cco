@@ -89,6 +89,35 @@ theorem raw_atomic_peirce_of_homogeneous
     (S.colourInvariant_of_homogeneous H)
     (S.pair_homogeneous_of_homogeneous H) hInvB
 
+/-- The full invariant-left-factor version of RAW C03. Here the left
+relation A need not itself be one atom: for an ACTUALLY REALIZED output
+atomic colour c, one compositional witness propagates along its entire
+original pair orbit. Both input factors remain equality-inclusive RAW
+relations, and no SAP, CCO, or exactness is required. -/
+theorem raw_invariant_peirce_of_homogeneous
+    (H : HomogeneousSource S G) {i j k : ι}
+    (A : TRel X i j) (c : Option (S.Atom i k))
+    (B : TRel X j k)
+    (hcReal : ∃ x : X i, ∃ z : X k, S.colour x z = c)
+    (hInvA : TRel.Invariant (G := G) A)
+    (hInvB : TRel.Invariant (G := G) B) :
+    (∀ x z, S.rawAtomRel c x z →
+      TRel.comp A B x z) ↔
+      ∃ x y, A x y ∧
+        TRel.comp (S.rawAtomRel c) (TRel.converse B) x y := by
+  constructor
+  · intro h
+    obtain ⟨x, z, hxz⟩ := hcReal
+    obtain ⟨y, hxy, hyz⟩ := h x z hxz
+    exact ⟨x, y, hxy, z, hxz, hyz⟩
+  · rintro ⟨x, y, hxy, z, hxz, hyz⟩ x' z' hx'z'
+    obtain ⟨g, hgx, hgz⟩ :=
+      (S.pair_homogeneous_of_homogeneous H)
+        x x' z z' (hxz.trans hx'z'.symm)
+    refine ⟨g • y, ?_, ?_⟩
+    · simpa only [hgx] using hInvA g x y hxy
+    · simpa only [hgz] using hInvB g y z hyz
+
 /-- Correctly typed and genuinely RAW Top absorption, proved from
 original-sort transitivity rather than any CCO premise. -/
 theorem raw_top_comp_of_homogeneous
