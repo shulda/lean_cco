@@ -44,6 +44,7 @@ silently assuming a colour-table completion axiom. -/
 theorem realPointGluing_of_SAP
     (H : HomogeneousSource S G) (sap : AgeSAP S) :
     S.RealPointGluing := by
+  classical
   intro i j k a b
   obtain ⟨x, y, hxy⟩ := S.realized a
   obtain ⟨y', z, hyz'⟩ := S.realized b
@@ -108,8 +109,11 @@ theorem realPointGluing_of_SAP
   obtain ⟨y₁, hy₁⟩ := tagged_exists_of_sort (X := X) outY j hOutSortY
   obtain ⟨z₁, hz₁⟩ := tagged_exists_of_sort (X := X) outZ k hOutSortZ
   have hyAgree : eLD.toEmbedding yl = eRD.toEmbedding yr := by
-    simpa only [eBL, eBR, inducedInclusion] using
-      (hAgree (⟨py, hyBase⟩ : ↥Base.vertices))
+    have h := hAgree (⟨py, hyBase⟩ : ↥Base.vertices)
+    have hEL : eBL.toEmbedding (⟨py, hyBase⟩ : ↥Base.vertices) = yl := rfl
+    have hER : eBR.toEmbedding (⟨py, hyBase⟩ : ↥Base.vertices) = yr := rfl
+    rw [hEL, hER] at h
+    exact h
   have hOutputXY : S.colour x₁ y₁ = some a := by
     have hc := eLD.preserves_colours xl yl
     change taggedColour S px py = taggedColour S outX outY at hc
