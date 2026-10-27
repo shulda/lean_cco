@@ -54,7 +54,7 @@ theorem wordPath_iff_relation {i j : ι}
     (word : RawWord S i j) (x : X i) (z : X j) :
     Nonempty (WordPath S word x z) ↔
       RawWord.relation S word x z := by
-  induction word generalizing x z with
+  induction word with
   | nil i =>
       constructor
       · rintro ⟨p⟩
@@ -103,8 +103,9 @@ theorem privatePaths_iff_evaluate {i j : ι}
             intro w hw
             have hmem : w = word ∨ w ∈ tail := by
               simpa only [List.mem_cons] using hw
-            rcases hmem with rfl | hTail
-            · exact (wordPath_iff_relation S word x z).mp ⟨pHead⟩
+            rcases hmem with hEq | hTail
+            · subst w
+              exact (wordPath_iff_relation S word x z).mp ⟨pHead⟩
             · exact (ih.mp ⟨pTail⟩) w hTail
       · intro h
         obtain ⟨pHead⟩ := (wordPath_iff_relation S word x z).mpr
