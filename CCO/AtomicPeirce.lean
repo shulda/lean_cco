@@ -89,12 +89,12 @@ theorem pair_flip_of_pair_homogeneous
           (S.colour_none_iff x y).mp hc
         have hrev : S.colour y x = none :=
           (S.colour_none_iff y x).mpr htag.symm
-        exact hc.trans hrev.symm
+        exact hrev.symm
     | some a =>
         have hrev : S.colour y x = some (S.conv a) :=
           (S.colour_swap x y a).mp hc
         rw [S.symmetricLoop a] at hrev
-        exact hc.trans hrev.symm
+        exact hrev.symm
   exact hPair x y y x hcol
 
 end PairFlip
