@@ -54,3 +54,7 @@ import CCO.StrongExact.PathCycleSupport
 import CCO.StrongExact.FinitePathBounds
 import CCO.StrongExact.PrescribedPathWitness
 import CCO.StrongExact.ThetaVertices
+import CCO.StrongExact.DirectBranches
+import CCO.StrongExact.SmallHelly
+import CCO.StrongExact.ThetaDisjoint
+import CCO.StrongExact.ThetaInteriors
