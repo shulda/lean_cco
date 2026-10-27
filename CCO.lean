@@ -3,6 +3,7 @@ import CCO.TypedRelation
 import CCO.RawWords
 import CCO.Atomic
 import CCO.StrongGeometry
+import CCO.RawStrongBridge
 import CCO.Supports
 import CCO.AtomicPeirce
 import CCO.Finite
