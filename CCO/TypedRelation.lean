@@ -118,7 +118,7 @@ variable {G : Type*} [Group G]
 variable [MulAction G (X i)] [MulAction G (X j)]
 
 def Invariant (R : TRel X i j) : Prop :=
-  ∀ g x y, R x y → R (g • x) (g • y)
+  ∀ (g : G) x y, R x y → R (g • x) (g • y)
 
 theorem invariant_serial (R : TRel X i j)
     (trans : ∀ a b : X i, ∃ g : G, g • a = b)
