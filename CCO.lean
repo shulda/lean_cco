@@ -29,3 +29,6 @@ import CCO.DiagramNeighbours
 import CCO.Injectivization
 import CCO.GuardedEndpoints
 import CCO.PositiveWords
+
+import CCO.RawExact.Presentations
+import CCO.RawExact.Balls
