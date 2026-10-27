@@ -139,9 +139,31 @@ structure HomogeneousSource (G : Type t) [Group G]
   preserves_sort : ∀ (g : G) (p : Sigma X), (g • p).1 = p.1
   preserves_colours : ∀ (g : G) (p q : Sigma X),
     taggedColour S (g • p) (g • q) = taggedColour S p q
-  extends_partial_iso : ∀ (A B : FiniteInduced (X := X))
-      (e : InducedEmbedding S A B),
-    Function.Surjective e.toEmbedding →
-      ∃ g : G, ∀ p : ↥A.vertices, g • p.val = (e.toEmbedding p).val
+  /-- All finite complete typed tuples, including repeated real values,
+  extend when every ordered pair retains its full atomic colour. This
+  is the usual induced-partial-isomorphism homogeneity phrased without
+  arbitrary enumerations of finite substructures. Real equality is
+  encoded by the optional diagonal and hence collisions are respected. -/
+  extends_finite_diagram : ∀ {V : Type z} [Finite V]
+      (f h : V → Sigma X),
+    (∀ v w, taggedColour S (f v) (f w) =
+      taggedColour S (h v) (h w)) →
+    ∃ g : G, ∀ v, g • f v = h v
+
+/-- The tuple form of finite homogeneity supplies the traditional finite
+induced-embedding extension theorem; surjectivity onto a displayed
+codomain is not needed, since its finite image is itself induced. -/
+theorem HomogeneousSource.extends_partial_iso
+    {G : Type t} [Group G] [MulAction G (Sigma X)]
+    (H : HomogeneousSource S G)
+    (A B : FiniteInduced (X := X))
+    (e : InducedEmbedding S A B) :
+    ∃ g : G, ∀ p : ↥A.vertices,
+      g • p.val = (e.toEmbedding p).val := by
+  letI : Finite ↥A.vertices := A.finite_vertices.to_subtype
+  exact H.extends_finite_diagram
+    (fun p : ↥A.vertices => p.val)
+    (fun p : ↥A.vertices => (e.toEmbedding p).val)
+    (fun p q => e.preserves_colours p q)
 
 end CCO
