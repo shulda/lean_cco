@@ -37,3 +37,5 @@ import CCO.StrongExact.PrescribedBase
 import CCO.StrongExact.ExactMenus
 import CCO.StrongExact.Examples
 import CCO.StrongExact.PathSupport
+import CCO.StrongExact.ExactConverse
+import CCO.StrongExact.TriangleFan

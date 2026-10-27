@@ -1,6 +1,7 @@
 import CCO.Examples
 import CCO.StrongExact.FinitePC
 import CCO.StrongExact.Survivors
+import CCO.StrongExact.PathSupport
 
 /-!
 # Concrete STRONG PC regression: 0 -> 1 -> 0 and same-sort repetition
@@ -66,5 +67,19 @@ example : S.PC
 /-- The finite canonical PC refinement is genuinely stable. -/
 example : StrongPC.Stable toyDiagram (StrongPC.fixedNetwork toyDiagram) :=
   StrongPC.fixedNetwork_stable toyDiagram
+
+/-- Concrete specified two-edge positive path 0→1→2, whose
+first and last points have the SAME named sort while the internal
+point has a different named sort. No true diagonal factor occurs. -/
+def toyTwoEdgePath : StrongPC.SpecifiedPath toyDiagram 0 2 :=
+  .cons (by decide) (by decide) () (by rfl)
+    (.edge (by decide) () (by rfl))
+
+/-- Genuine dependent-typed downstream C11 consumer, not just a
+syntactically well-typed definition of an untested lemma. -/
+theorem toy_two_edge_supported :
+    StrongPC.fixedNetwork toyDiagram ⟨0, 2, by decide⟩ ⊆
+      PositiveWord.profile S toyTwoEdgePath.word :=
+  StrongPC.fixedNetwork_subset_path_profile toyDiagram toyTwoEdgePath
 
 end CCO.StrongExact.Examples
