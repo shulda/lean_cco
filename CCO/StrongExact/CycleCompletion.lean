@@ -12,12 +12,12 @@ the equality-inclusive RAW represented multiplication.
 No new gluing, completion, or automorphism provider is postulated here.
 -/
 
-universe u v w
+universe u v w z
 
 namespace CCO
 
 variable {ι : Type u} {X : ι → Type v}
-variable {S : AtomicSource ι X} {V : Type w}
+variable {S : AtomicSource.{u, v, w} ι X} {V : Type z}
 
 /-- An actual injective realization of the whole finite specified diversity
 diagram, giving an induced complete old source diagram on its distinct image
@@ -42,7 +42,7 @@ The finite diagram may repeat named sorts arbitrarily. -/
 theorem PartialDiagram.strongCompletion_iff_cycles_of_SAP_CCO
     {G : Type*} [Group G] [∀ i : ι, MulAction G (X i)]
     (H : HomogeneousSource S G) (sap : AgeSAP S)
-    (cco : SemanticCCO S) (D : PartialDiagram S V) :
+    (cco : SemanticCCO.{u, v, w, z} S) (D : PartialDiagram S V) :
     D.HasStrongCompletion ↔ ∀ C : SimpleCycle D, CycleHom C := by
   constructor
   · rintro ⟨f, _⟩ C
