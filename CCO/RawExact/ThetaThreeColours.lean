@@ -70,19 +70,19 @@ def covered (t u : Fin 3) (p : Fin 5) : Prop :=
   p = 0 ∨ p = 1 ∨ p = middle t ∨ p = middle u
 
 /-- For each omitted middle, enumerate the other two distinct paths. -/
-def otherTwo (omit : Fin 3) : Fin 3 × Fin 3 :=
-  if omit = 0 then (1, 2)
-  else if omit = 1 then (0, 2)
+def otherTwo (excluded : Fin 3) : Fin 3 × Fin 3 :=
+  if excluded = 0 then (1, 2)
+  else if excluded = 1 then (0, 2)
   else (0, 1)
 
-theorem otherTwo_ne (omit : Fin 3) :
-    (otherTwo omit).1 ≠ (otherTwo omit).2 := by
-  fin_cases omit <;> decide
+theorem otherTwo_ne (excluded : Fin 3) :
+    (otherTwo excluded).1 ≠ (otherTwo excluded).2 := by
+  fin_cases excluded <;> decide
 
-theorem otherTwo_covers (omit : Fin 3) (p : Fin 5)
-    (h : p ≠ middle omit) :
-    covered (otherTwo omit).1 (otherTwo omit).2 p := by
-  fin_cases omit <;> fin_cases p <;> simp_all [covered, otherTwo, middle]
+theorem otherTwo_covers (excluded : Fin 3) (p : Fin 5)
+    (h : p ≠ middle excluded) :
+    covered (otherTwo excluded).1 (otherTwo excluded).2 p := by
+  fin_cases excluded <;> fin_cases p <;> simp_all [covered, otherTwo, middle]
 
 /-- The private path pair really respects EVERY allowed edge, with
 orientation checked via genuine symmetric same-sort atomic orbitals.
@@ -122,7 +122,7 @@ all three have one common actual endpoint pair. Only the source's
 SemanticCCO is required; no SAP, quotient or fake STRONG identity. -/
 theorem three_two_step_word_helly
     (a b : Fin 3 → S.Atom i i)
-    (cco : SemanticCCO S)
+    (cco : SemanticCCO.{u,v,w,0} S)
     (hPair : ∀ t u : Fin 3, t ≠ u →
       ∃ x z yt yu : X i,
         S.atomRel (a t) x yt ∧ S.atomRel (b t) yt z ∧
