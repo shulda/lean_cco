@@ -1,0 +1,967 @@
+{
+  "schema_version": 1,
+  "id": "sir",
+  "index_title": "SIR: selected amalgams and original-language boundary results",
+  "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+  "status": "HUMAN_PROOF_EXPANDED_NOT_LEAN",
+  "scope": "Preparation for OTHER Lean projects, covering all eight SIR results. The positive conditional constructor, source instantiation, negative finite-global theorem and direct relative example have separate interfaces. No Lean code is created here.",
+  "scope_vocabulary": [
+    "finite_sets",
+    "positive_conditional",
+    "positive_source",
+    "negative_one_sort",
+    "relative_two_sheet"
+  ],
+  "scope_explanation": "statement and proof in a receiving project. Positive provider instantiation, negative Hasse import and direct relative model must remain separate.",
+  "assumptions": [
+    {
+      "id": "A01",
+      "name": "Positive source and conditional-interface interpretation",
+      "statement": "Actual homogeneous complete finite binary RELATIONAL source on finitely many inhabited, individually transitive named sorts; same-sort diversity atoms are symmetric and cross-sort atoms have correctly typed converses. Its actual age has SAP. The conditional constructor additionally takes explicit parameters in A04. For C14 ONLY add semantic CCO and FULL sortwise NR2 to derive those parameters via I01–I03; no countability is used by the constructor."
+    },
+    {
+      "id": "A02",
+      "name": "Separate negative original one-sort setting",
+      "statement": "Actual one-sort transitive homogeneous complete finite named symmetric diversity language with logical equality, and semantic CCO for the Hasse application. Invariant equivalences are original and 0-definable via finite orbitals. No sheet names, SAP or quotient CCO is assumed."
+    },
+    {
+      "id": "A03",
+      "name": "Direct relative example setting",
+      "statement": "Uniform countable carrier ℕ×Bool×ℕ with only the old diversity atoms e,d,n named. Parent and sheet coordinates are construction data, not language names; this branch violates NR2."
+    },
+    {
+      "id": "A04",
+      "name": "Explicit conditional constructor parameters",
+      "statement": "For C02–C13, SUPPLY an original strong exact calculus with its laws, one joint hereditary all-PC selector h on that system, and triangle fullness of the actual age. These are parameters of the conditional theorem, not new source axioms. C14 discharges them using the actual source theorems I01–I03."
+    }
+  ],
+  "imports": [
+    {
+      "id": "I01",
+      "name": "lem:typed-exact-products",
+      "source_label": "lem:typed-exact-products",
+      "statement": "Original tagged strong exact menus contain all singleton atoms and Top, are closed under converse, compatible products and meets with NONEMPTY RESULT. Use actual triangle semantics, SAP associativity/monotonicity and Top absorption from the same strong algebra. No RAW identity. Composition by every nonempty exact factor distributes over finite exact meets with NONEMPTY EVALUATION.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "provider_module": "strong_selectors"
+    },
+    {
+      "id": "I02",
+      "name": "thm:typed-HS",
+      "source_label": "thm:typed-HS",
+      "statement": "One conservative converse-compatible original joint selector preserving ALL THREE PC coordinates and survivor heredity. NR2/CCO are used to produce this provider, not repeated premises of the conditional SIR constructor.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "provider_module": "strong_selectors"
+    },
+    {
+      "id": "I03",
+      "name": "lem:cco-triangle-fullness",
+      "source_label": "lem:cco-triangle-fullness",
+      "statement": "An actual finite complete binary diagram whose induced subdiagrams on at most three vertices lie in a hereditary AP+semantic-CCO age lies in that age. The same fan proof preserves named sorts. The source snapshot and short support proof are included.",
+      "status": "HUMAN_SUPPORT_PROOF_NOT_LEAN",
+      "provider_module": null
+    },
+    {
+      "id": "I04",
+      "name": "thm:full-relative-Hasse",
+      "source_label": "thm:full-relative-Hasse",
+      "statement": "In the actual original one-sort transitive homogeneous finite complete symmetric binary CCO source, every finite-relative-index cover in the FULL invariant-equivalence lattice has index two. SAP and exactness are not required. Its proof is a separate upstream obligation, not expanded here. Consequently every finite relative index is a power of two.",
+      "status": "EXPLICIT_UPSTREAM_NOT_EXPANDED",
+      "provider_module": null
+    }
+  ],
+  "source_files": [
+    {
+      "file": "sections/stationary_independence_from_HS.tex",
+      "git_blob": "76fb33afc16e5772b74ce76dac6b3bb4776377be"
+    },
+    {
+      "file": "sections/stationary_independence_scope.tex",
+      "git_blob": "4b01269755936a728965e5df5dfb4e1e91e02cd3"
+    },
+    {
+      "file": "sections/typed_strong_domains.tex",
+      "git_blob": "75d584069ce802c62d66104a852a3649fc082f1d"
+    },
+    {
+      "file": "sections/typed_hereditary_selectors.tex",
+      "git_blob": "35b4013ad3c9886c7641f924202a1491464c126a"
+    },
+    {
+      "file": "sections/triangle_fullness.tex",
+      "git_blob": "d25f85dd267577d1af0c6ffb1245809892fe1dc0"
+    },
+    {
+      "file": "sections/finite_relative_parity_exact_closure.tex",
+      "git_blob": "9f6983f96bae28d06466fcbf23f15e20a55f2686"
+    }
+  ],
+  "source_result_files": [
+    "sections/stationary_independence_from_HS.tex",
+    "sections/stationary_independence_scope.tex"
+  ],
+  "definitions": [
+    {
+      "id": "D01",
+      "name": "SIR and pointwise finite types",
+      "statement": "Invariant ternary relation on finite real sets, including empty base, satisfying symmetry, existence of independent copies, restriction/base monotonicity, both transitivity directions and stationarity for prescribed finite isomorphisms fixing named parameters pointwise.",
+      "depends_on": [],
+      "notes": "N01",
+      "source": {
+        "file": "sections/stationary_independence_scope.tex",
+        "anchor": "A stationary independence relation"
+      }
+    },
+    {
+      "id": "D02",
+      "name": "Base normalization and disjoint span",
+      "statement": "For arbitrary A,B,C evaluate (A∪C,B∪C,C). Their intersection is exactly C iff A∩B⊆C. A formal span has disjoint copies outside its displayed common base.",
+      "depends_on": [
+        "D01"
+      ],
+      "notes": "N01",
+      "source": {
+        "file": "sections/stationary_independence_from_HS.tex",
+        "anchor": "For arbitrary finite real subsets"
+      }
+    },
+    {
+      "id": "D03",
+      "name": "Base-path menu",
+      "statement": "For distinct cross endpoints a,b outside C, D_C(a,b)=⋂c∈C({col(a,c)}*{col(c,b)}); C=∅ gives the typed diversity Top.",
+      "depends_on": [
+        "D02",
+        "D11"
+      ],
+      "notes": "N02",
+      "source": {
+        "file": "sections/stationary_independence_from_HS.tex",
+        "anchor": "\\emph{exact base-path menu}"
+      }
+    },
+    {
+      "id": "D04",
+      "name": "Selected amalgam",
+      "statement": "Keep the two input induced structures and put col(a,b)=h(D_C(a,b)) on each cross pair of their literal disjoint union over C, for one joint selector h.",
+      "depends_on": [
+        "D03",
+        "D12"
+      ],
+      "notes": "N03",
+      "source": {
+        "file": "sections/stationary_independence_from_HS.tex",
+        "anchor": "There is one finite complete amalgam"
+      }
+    },
+    {
+      "id": "D05",
+      "name": "Selected independence",
+      "statement": "A↓^h_C B iff A∩B⊆C and all cross atoms on A\\C × B\\C equal h(D_C); normalize sides by adjoining C.",
+      "depends_on": [
+        "D04"
+      ],
+      "notes": "N05",
+      "source": {
+        "file": "sections/stationary_independence_from_HS.tex",
+        "anchor": "\\tag{SIR-I}"
+      }
+    },
+    {
+      "id": "D06",
+      "name": "Onto-base span embedding",
+      "statement": "Factor embeddings agree on C and their common base map takes C ONTO the entire designated target base C′. Factor embeddings may add other vertices. This is the naturality scope, not arbitrary base enlargement.",
+      "depends_on": [
+        "D02"
+      ],
+      "notes": "N04",
+      "source": {
+        "file": "sections/stationary_independence_from_HS.tex",
+        "anchor": "is natural under embeddings"
+      }
+    },
+    {
+      "id": "D07",
+      "name": "Full invariant-equivalence intervals",
+      "statement": "All actual Aut(M)-invariant equivalences ordered by inclusion. A finite-index E gives a finite interval [E,Top]; invariant relations are 0-definable in the standing finite atomic source.",
+      "depends_on": [
+        "A02"
+      ],
+      "notes": "N09",
+      "source": {
+        "file": "sections/stationary_independence_scope.tex",
+        "anchor": "Take a saturated finite chain"
+      }
+    },
+    {
+      "id": "D08",
+      "name": "Uniform relative-two-sheet source",
+      "statement": "U=ℕ×{0,1}×ℕ, F equal parent coordinate, E equal parent and sheet, only diversity e=E\\Id, d=F\\E, n=Top\\F named. No parent/sheet constants or unary names.",
+      "depends_on": [
+        "A03"
+      ],
+      "notes": "N10",
+      "source": {
+        "file": "sections/stationary_independence_scope.tex",
+        "anchor": "Take infinitely many"
+      }
+    },
+    {
+      "id": "D09",
+      "name": "Relative-parent independence",
+      "statement": "Disjointness outside C and no F-class disjoint from C meets both A\\C and B\\C. Finite represented parents may exhibit at most two sheets.",
+      "depends_on": [
+        "D08"
+      ],
+      "notes": "N11",
+      "source": {
+        "file": "sections/stationary_independence_scope.tex",
+        "anchor": "\\tag{SIR-F}"
+      }
+    },
+    {
+      "id": "D10",
+      "name": "Global class-swap obstruction data",
+      "statement": "Invariant two-class E; finite B meeting both classes; σ∈Aut(M) preserves B setwise and swaps the classes. Singleton existence, invariance and empty-base stationarity contradict these data.",
+      "depends_on": [
+        "A02"
+      ],
+      "notes": "N09",
+      "source": {
+        "file": "sections/stationary_independence_scope.tex",
+        "anchor": "Choose \\(a_0,a_1\\)"
+      }
+    },
+    {
+      "id": "D11",
+      "name": "Supplied exact-calculus interface",
+      "statement": "Conditional parameter: tagged original exact families with singletons and Top, converse, nonempty-result meets, associative monotone actual strong product, Top absorption and nonempty exact meet-distribution. Its actual source provider is I01, applied only in C14.",
+      "depends_on": [
+        "A04"
+      ],
+      "notes": "N01",
+      "source": {
+        "file": "sections/typed_strong_domains.tex",
+        "anchor": "Every $\\mathcal H_{ij}$"
+      }
+    },
+    {
+      "id": "D12",
+      "name": "Supplied joint-selector interface",
+      "statement": "Conditional parameter: one h on the supplied exact system, conservative, converse-compatible, preserving all PC coordinates and survivor heredity. Its actual source provider is I02, applied only in C14.",
+      "depends_on": [
+        "A04",
+        "D11"
+      ],
+      "notes": "N01",
+      "source": {
+        "file": "sections/typed_hereditary_selectors.tex",
+        "anchor": "hereditary selector} (HS)"
+      }
+    },
+    {
+      "id": "D13",
+      "name": "Supplied triangle-fullness interface",
+      "statement": "Conditional parameter: each finite complete typed diagram with all induced subdiagrams on at most three vertices in the actual age itself belongs to that age. I03 proves this parameter under AP+CCO for C14.",
+      "depends_on": [
+        "A04"
+      ],
+      "notes": "N03",
+      "source": {
+        "file": "sections/triangle_fullness.tex",
+        "anchor": "all induced substructures"
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "name": "Normalize overlaps before strong menus",
+      "scope": "finite_sets",
+      "statement": "Adjoining C to both sides turns the overlap condition into A∩B⊆C. Under this overlap condition, cross endpoints are distinct and outside the base; empty sides give no cross obligations.",
+      "depends_on": [
+        "D02"
+      ],
+      "notes": "N01",
+      "source_labels": [
+        "thm:sir-HS-positive"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C02",
+      "name": "Base-path exactness and nonemptiness",
+      "scope": "positive_conditional",
+      "statement": "For an actual induced disjoint span, every base-path menu is nonempty original exact; an SAP amalgam supplies one cross atom in every factor, and empty base gives Top.",
+      "depends_on": [
+        "C01",
+        "D03",
+        "A01",
+        "D11"
+      ],
+      "notes": "N02",
+      "source_labels": [
+        "lem:sir-free-span-PC"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C03",
+      "name": "All-coordinate free-span PC",
+      "scope": "positive_conditional",
+      "statement": "The complete network with old singleton domains and cross base-path domains satisfies ALL THREE PC inclusions on every distinct triple. Two-left/one-right inclusions use exact distribution; the literal coordinate uses an SAP witness.",
+      "depends_on": [
+        "C02",
+        "D11"
+      ],
+      "notes": "N02",
+      "source_labels": [
+        "lem:sir-free-span-PC"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C04",
+      "name": "Selected amalgam and precise naturality",
+      "scope": "positive_conditional",
+      "statement": "Applying one HS to the free-span network yields a complete actual age amalgam. It is converse symmetric and natural under factor embeddings whose base map is ONTO the entire target base. Triangle fullness is an explicit interface.",
+      "depends_on": [
+        "C03",
+        "D04",
+        "D06",
+        "D12",
+        "D13"
+      ],
+      "notes": "N03",
+      "source_labels": [
+        "prop:sir-HS-amalgam"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C05",
+      "name": "Automorphism invariance and symmetry",
+      "scope": "positive_conditional",
+      "statement": "Selected independence is invariant under the actual named-language automorphisms and symmetric, using tagged-menu equality and typed converse.",
+      "depends_on": [
+        "D05",
+        "C01",
+        "D12"
+      ],
+      "notes": "N05",
+      "source_labels": [
+        "thm:sir-HS-positive"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C06",
+      "name": "Existence over a fixed real copy",
+      "scope": "positive_conditional",
+      "statement": "An independent copy of each finite type over C is realized over a prescribed actual B∪C: construct a selected formal amalgam, embed its age structure, and align B∪C by homogeneity.",
+      "depends_on": [
+        "C04",
+        "A01"
+      ],
+      "notes": "N05",
+      "source_labels": [
+        "thm:sir-HS-positive"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C07",
+      "name": "Restriction monotonicity",
+      "scope": "positive_conditional",
+      "statement": "Restricting either independent side preserves overlap and all remaining cross equalities; base monotonicity will follow separately from forward transitivity.",
+      "depends_on": [
+        "D05"
+      ],
+      "notes": "N05",
+      "source_labels": [
+        "thm:sir-HS-positive"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C08",
+      "name": "Base enlargement identity",
+      "scope": "finite_sets",
+      "statement": "For DISTINCT endpoints a,d outside B∪C, D_(B∪C)(a,d)=D_C(a,d)∩⋂b∈B\\C({col(a,b)}*{col(b,d)}). All contributing vertices are distinct.",
+      "depends_on": [
+        "D03",
+        "C01"
+      ],
+      "notes": "N06",
+      "source_labels": [
+        "thm:sir-HS-positive"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C09",
+      "name": "Forward transitivity by actual survivors",
+      "scope": "positive_conditional",
+      "statement": "A↓_C(B∪D) implies A↓_C B and A↓_(B∪C)D. The actual old selected atom survives each new constraint, and h heredity fixes its enlarged-base value.",
+      "depends_on": [
+        "C08",
+        "C07",
+        "D12",
+        "D11"
+      ],
+      "notes": "N06",
+      "source_labels": [
+        "thm:sir-HS-positive"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C10",
+      "name": "Reverse hypotheses give original-base disjointness",
+      "scope": "finite_sets",
+      "statement": "From A↓_C B and A↓_(B∪C)D obtain A∩B⊆C and A∩D⊆B∪C, hence A∩(B∪D)⊆C. This validates the free-span application before the target independence is proved.",
+      "depends_on": [
+        "C01",
+        "D05"
+      ],
+      "notes": "N07",
+      "source_labels": [
+        "thm:sir-HS-positive"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C11",
+      "name": "Reverse transitivity by PC and heredity",
+      "scope": "positive_conditional",
+      "statement": "For q=h(D_C(a,d)), apply h to D_C(a,b),{col(b,d)},D_C(a,d) in the free span. Its PC support puts q in every added base constraint; heredity and the second independence assumption give col(a,d)=q. Together with C10 this proves reverse transitivity.",
+      "depends_on": [
+        "C10",
+        "C03",
+        "C08",
+        "D12",
+        "D11"
+      ],
+      "notes": "N07",
+      "source_labels": [
+        "thm:sir-HS-positive"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C12",
+      "name": "Stationarity for each prescribed finite map",
+      "scope": "positive_conditional",
+      "statement": "Any induced f:A∪C≅A′∪C fixing C pointwise, with both sides independent from B over C, extends together with id_(B∪C) to an induced union isomorphism and then an automorphism fixing B∪C pointwise.",
+      "depends_on": [
+        "C01",
+        "D05",
+        "A01",
+        "D12"
+      ],
+      "notes": "N08",
+      "source_labels": [
+        "thm:sir-HS-positive"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C13",
+      "name": "Conditional selected-amalgam SIR",
+      "scope": "positive_conditional",
+      "statement": "The actual SAP homogeneous binary source with supplied original exact-calculus, triangle-fullness and HS interfaces has the displayed SIR on all finite real sets. CCO, NR2 and countability are not used again once those providers are supplied.",
+      "depends_on": [
+        "C05",
+        "C06",
+        "C07",
+        "C09",
+        "C11",
+        "C12"
+      ],
+      "notes": "N08",
+      "source_labels": [
+        "thm:sir-HS-positive"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C14",
+      "name": "Source headline instantiation",
+      "scope": "positive_source",
+      "statement": "Under actual named-sort SAP+CCO and FULL sortwise NR2, I01/I02/I03 supply the conditional constructor. The one-sort stronger no-finite-relative-index premise implies NR2. Includes empty bases and no EPPA/Ramsey inputs. This instantiation discharges the explicit conditional parameters A04; they are not extra hypotheses of the source headline.",
+      "depends_on": [
+        "A01",
+        "I01",
+        "I02",
+        "I03",
+        "C13"
+      ],
+      "notes": "N08",
+      "source_labels": [
+        "thm:sir-no-finite-cover"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C15",
+      "name": "Obtain the standing global class swap",
+      "scope": "negative_one_sort",
+      "statement": "Two representatives in different classes have identical singleton diagrams in the standing transitive complete symmetric diversity language; swapping their two-point diagram extends by homogeneity and swaps the classes.",
+      "depends_on": [
+        "D10",
+        "A02"
+      ],
+      "notes": "N09",
+      "source_labels": [
+        "lem:sir-global-two"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C16",
+      "name": "Two-class original-language obstruction",
+      "scope": "negative_one_sort",
+      "statement": "The class swap and singleton existence give two independent singletons of the same empty-base type whose E-types over the POINTWISE named representative pair differ. Invariance plus stationarity is contradictory.",
+      "depends_on": [
+        "C15",
+        "D01"
+      ],
+      "notes": "N09",
+      "source_labels": [
+        "lem:sir-global-two"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C17",
+      "name": "Finite global interval and original definability",
+      "scope": "negative_one_sort",
+      "statement": "Above finite-global-index E the full invariant interval is finite. Choose maximal proper F below Top; it is a full-lattice cover. Finite actual pair orbitals make F 0-definable in the original language.",
+      "depends_on": [
+        "D07",
+        "A02"
+      ],
+      "notes": "N09",
+      "source_labels": [
+        "thm:sir-finite-global-no"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C18",
+      "name": "Local full relative Hasse corollary",
+      "scope": "negative_one_sort",
+      "statement": "Apply the explicit upstream full-relative-Hasse provider, including nonexact invariant equivalences, to obtain index two for finite covers and power-of-two finite relative indices. This does not reprove that provider.",
+      "depends_on": [
+        "I04"
+      ],
+      "notes": "N09",
+      "source_labels": [
+        "lem:sir-Hasse-two"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C19",
+      "name": "Finite global quotient obstruction",
+      "scope": "negative_one_sort",
+      "statement": "The last full-lattice cover F≺Top above E has [Top:F]=2 by Hasse; original definability plus C16 excludes a real one-sort SIR with empty-base existence/stationarity.",
+      "depends_on": [
+        "C17",
+        "C18",
+        "C16"
+      ],
+      "notes": "N09",
+      "source_labels": [
+        "thm:sir-finite-global-no"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C20",
+      "name": "Direct two-sheet actual source, homogeneity and SAP",
+      "scope": "relative_two_sheet",
+      "statement": "The model ℕ×Bool×ℕ in only e,d,n is transitive homogeneous and has SAP. Its finite age has nested E≤F with at most two represented sheets per parent; off-base real points remain distinct. Its full invariant-equivalence lattice is Id<E<F<Top, and every proper global index is infinite.",
+      "depends_on": [
+        "D08"
+      ],
+      "notes": "N10",
+      "source_labels": [
+        "prop:sir-relative-positive"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C21",
+      "name": "Direct signed-component CCO",
+      "scope": "relative_two_sheet",
+      "statement": "A parity inconsistency or an n-edge within one e/d component yields a forbidden specified simple cycle. Otherwise fresh parents, sheet parity and distinct fibre points realize the diagram. No HS or NR2 provider is used.",
+      "depends_on": [
+        "C20"
+      ],
+      "notes": "N10",
+      "source_labels": [
+        "prop:sir-relative-positive"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C22",
+      "name": "Direct independence basic properties and existence",
+      "scope": "relative_two_sheet",
+      "statement": "The parent-based relation is unchanged by base normalization, invariant and symmetric; independent copies use fresh unanchored parents and fresh real fibre points in anchored parents.",
+      "depends_on": [
+        "D09",
+        "C20"
+      ],
+      "notes": "N11",
+      "source_labels": [
+        "prop:sir-relative-positive"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C23",
+      "name": "Direct parent-based monotonicity and transitivity",
+      "scope": "relative_two_sheet",
+      "statement": "Containment of set differences gives restriction and forward base monotonicity. In reverse transitivity, an unanchored common parent cannot meet B, so would violate independence at B∪C. Equality overlaps are handled separately.",
+      "depends_on": [
+        "C22"
+      ],
+      "notes": "N11",
+      "source_labels": [
+        "prop:sir-relative-positive"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C24",
+      "name": "Direct pointwise stationarity",
+      "scope": "relative_two_sheet",
+      "statement": "Unanchored cross pairs have atom n; in anchored parents, two sheets determine E(a,b) from equal truth values of E(a,c),E(b,c), including BOTH FALSE. The prescribed union map extends by homogeneity; empty-base cross atoms are all n.",
+      "depends_on": [
+        "C20",
+        "C22"
+      ],
+      "notes": "N11",
+      "source_labels": [
+        "prop:sir-relative-positive"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C25",
+      "name": "Positive relative-index-two SIR example",
+      "scope": "relative_two_sheet",
+      "statement": "The original real e,d,n source has SAP, CCO, infinite E-fibres, [F:E]=2 and the direct SIR. It violates NR2 and is proved independently of the sufficient NR2/HS route.",
+      "depends_on": [
+        "C21",
+        "C22",
+        "C23",
+        "C24"
+      ],
+      "notes": "N11",
+      "source_labels": [
+        "prop:sir-relative-positive"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    }
+  ],
+  "exports": [
+    {
+      "source_label": "thm:sir-no-finite-cover",
+      "claims": [
+        "C14"
+      ]
+    },
+    {
+      "source_label": "lem:sir-free-span-PC",
+      "claims": [
+        "C02",
+        "C03"
+      ]
+    },
+    {
+      "source_label": "prop:sir-HS-amalgam",
+      "claims": [
+        "C04"
+      ]
+    },
+    {
+      "source_label": "thm:sir-HS-positive",
+      "claims": [
+        "C13"
+      ]
+    },
+    {
+      "source_label": "lem:sir-global-two",
+      "claims": [
+        "C16"
+      ]
+    },
+    {
+      "source_label": "lem:sir-Hasse-two",
+      "claims": [
+        "C18"
+      ]
+    },
+    {
+      "source_label": "thm:sir-finite-global-no",
+      "claims": [
+        "C19"
+      ]
+    },
+    {
+      "source_label": "prop:sir-relative-positive",
+      "claims": [
+        "C25"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "T01",
+      "name": "Finite sets and free-span exact PC",
+      "depends_on": [],
+      "claims": [
+        "C01",
+        "C02",
+        "C03"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Choose finite-set/embedding types and prove normalized overlap obligations, exact menus and all-coordinate free-span PC against the supplied D11 exact-calculus interface. Apply actual source provider I01 only in C14."
+    },
+    {
+      "id": "T02",
+      "name": "Selected amalgam and basic independence",
+      "depends_on": [
+        "T01"
+      ],
+      "claims": [
+        "C04",
+        "C05",
+        "C06",
+        "C07"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Use supplied HS and triangle-fullness interfaces; prove onto-base naturality and existence over a fixed actual copy."
+    },
+    {
+      "id": "T03",
+      "name": "Both transitivity directions",
+      "depends_on": [
+        "T01",
+        "T02"
+      ],
+      "claims": [
+        "C08",
+        "C09",
+        "C10",
+        "C11"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Formalize base splitting, overlap normalization, every surviving constraint and both uses of heredity. Include empty-base cases."
+    },
+    {
+      "id": "T04",
+      "name": "Pointwise stationarity and source instantiation",
+      "depends_on": [
+        "T02",
+        "T03"
+      ],
+      "claims": [
+        "C12",
+        "C13",
+        "C14"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Prove the prescribed-map stationarity theorem and conditional SIR constructor first; instantiate only after the actual source providers are proved."
+    },
+    {
+      "id": "T05",
+      "name": "Original-language negative branch",
+      "depends_on": [],
+      "claims": [
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Prove the class-swap obstruction, finite interval and definability. Keep Hasse as an explicit provider until proved; no unnamed sheets or quotient substitutions."
+    },
+    {
+      "id": "T06",
+      "name": "Direct relative-two-sheet example",
+      "depends_on": [],
+      "claims": [
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement the uniform countable model, finite age/SAP, signed-cycle CCO and direct SIR. Do not invoke NR2 or HS."
+    }
+  ],
+  "controls": [
+    {
+      "id": "R01",
+      "check": "Finite ultrametric selected menus and all finite-set overlaps: symmetry, restriction, both transitivity directions and base normalization."
+    },
+    {
+      "id": "R02",
+      "check": "Selected disjoint-span amalgams and pointwise stationarity for prescribed finite maps, including empty bases."
+    },
+    {
+      "id": "R03",
+      "check": "Concrete relative-two-sheet model: direct parent-based transitivity and stationarity; no NR2/HS invocation."
+    },
+    {
+      "id": "R04",
+      "check": "Ultrametric larger-base counterexample: cross3 over empty base changes to cross1 over a new base point. Naturality requires an onto-base map."
+    },
+    {
+      "id": "R05",
+      "check": "Global two-sheet swap distinguishes types over a POINTWISE named pair although the pair is preserved setwise."
+    }
+  ],
+  "control_script": "tools/check_sir_controls.py",
+  "article_feedback": [
+    {
+      "id": "F01",
+      "kind": "SCOPE_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/stationary_independence_from_HS.tex",
+        "anchor": "is natural under embeddings"
+      },
+      "finding": "Naturality is valid when the base map is ONTO the entire designated target base. A nonsurjective base map can change the selected colour, even for ultrametrics.",
+      "proposed_article_change": "Clarify the phrase embeddings of the entire span by explicitly requiring its base map to be onto; retain the existing warning about base enlargement.",
+      "caller_effect": "Preserves intended standing source/base conventions; explicitly rules out a false detached or broader interpretation.",
+      "proof_claims": [
+        "C04"
+      ]
+    },
+    {
+      "id": "F02",
+      "kind": "SCOPE_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/stationary_independence_scope.tex",
+        "anchor": "If a homogeneous one-sorted symmetric binary"
+      },
+      "finding": "The isolated global-two lemma uses identical singleton diagrams/transitivity from the standing irreflexive-colour source. Arbitrary symmetric binary diagonal sheet predicates do not supply its swap.",
+      "proposed_article_change": "State the standing transitivity/singleton premise explicitly when detaching the lemma; alternatively export the abstract class-swap obstruction.",
+      "caller_effect": "Preserves intended standing source/base conventions; explicitly rules out a false detached or broader interpretation.",
+      "proof_claims": [
+        "C15",
+        "C16"
+      ]
+    },
+    {
+      "id": "F03",
+      "kind": "SCOPE_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/stationary_independence_from_HS.tex",
+        "anchor": "Suppose \\(A\\equiv_C A'\\)"
+      },
+      "finding": "Stationarity fixes named parameters pointwise and the proof extends each prescribed finite base-fixing map. Setwise parameter preservation is insufficient.",
+      "proposed_article_change": "Optionally state the stronger prescribed-map formulation in the formalization-facing interface, leaving the human type notation concise.",
+      "caller_effect": "Preserves intended standing source/base conventions; explicitly rules out a false detached or broader interpretation.",
+      "proof_claims": [
+        "C12"
+      ]
+    }
+  ],
+  "review": {
+    "date": "2026-10-27",
+    "method": "Parent proof expansion plus two independent model reviews of positive and boundary branches. No independent human or Lean certificate.",
+    "required_mathematical_repairs_found": 0,
+    "remaining": "Receiving projects must compile and prove the interfaces and claims. Hasse is explicit upstream work; naturality and singleton conventions must not be weakened."
+  },
+  "overview_mermaid": [
+    "flowchart TD",
+    "  E[\"Strong exact calculus and SAP\"] --> P[\"Free-span PC\"]",
+    "  P --> A[\"HS-selected actual amalgam\"]",
+    "  T[\"Triangle fullness\"] --> A",
+    "  A --> X[\"Existence and symmetry\"]",
+    "  P --> R[\"Transitivity with heredity\"]",
+    "  A --> S[\"Pointwise stationarity\"]",
+    "  X --> H[\"Positive SIR constructor\"]",
+    "  R --> H",
+    "  S --> H",
+    "  F[\"Full relative Hasse\"] --> N[\"Finite-global obstruction\"]",
+    "  W[\"Original class swap\"] --> N",
+    "  M[\"Direct relative two-sheet model\"] --> D[\"Separate direct SIR example\"]"
+  ],
+  "overview_notes": [
+    "The conditional positive constructor needs no NR2/CCO beyond its supplied interfaces.",
+    "The negative branch retains an explicit unexpanded Hasse provider.",
+    "The direct relative example violates NR2 and uses its own SIR proof."
+  ],
+  "dependency_firewalls": [
+    {
+      "claims": [
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19"
+      ],
+      "forbid": [
+        "A01",
+        "I01",
+        "I02",
+        "I03",
+        "A04"
+      ]
+    },
+    {
+      "claims": [
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25"
+      ],
+      "forbid": [
+        "A01",
+        "A02",
+        "I01",
+        "I02",
+        "I03",
+        "I04",
+        "A04"
+      ]
+    },
+    {
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13"
+      ],
+      "forbid": [
+        "I01",
+        "I02",
+        "I03",
+        "I04",
+        "A02",
+        "A03"
+      ]
+    }
+  ]
+}

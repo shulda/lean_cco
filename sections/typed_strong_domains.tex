@@ -1,0 +1,429 @@
+\section{Strong typed exact domains on the primitive transversal}
+\label{sec:typed-strong}
+
+Throughout this section $U$ is the \emph{one fixed} joint primitive
+transversal obtained in Theorem~\ref{thm:joint-transversal}.  Its
+finite set of \emph{named} sorts is $I$; in the later EPPA application
+these are actual chosen $E$-owners.  Write $L_{ij}$ for the nonempty
+finite palette of atomic colours on \emph{distinct} points of sorts
+$i,j$.  For $i=j$ the logical diagonal is \emph{not} an element of
+$L_{ii}$.  The converse $a\mapsto\bar a$ sends $L_{ij}$ to $L_{ji}$;
+all colours in $L_{ii}$ are self-converse.  Every atomic typed triangle
+means a triangle on three \emph{pairwise distinct} real points, even
+when two or three of the sort labels coincide.  In this section the
+symbols $*,\bar A$ always refer to this \emph{strong} typed algebra,
+not to raw equality-inclusive relational multiplication in $M$.
+
+The algebraic arguments below use only finite named transitive
+sorts, the symmetric complete typed diversity triangle table,
+SAP and semantic homomorphic CCO; they do \emph{not} use
+primitivity of $U$ or (NR2). Consequently the exact-domain
+Helly and finite-meet product results apply to any later
+terminal unary-labelled source with those same properties,
+\emph{provided} one keeps the strong off-diagonal guard
+and does not substitute the equality-inclusive raw product.
+
+For nonempty $A\subseteq L_{ij}$ and $B\subseteq L_{jk}$ define
+\[
+ A*B=\{c\in L_{ik}:\exists a\in A\,\exists b\in B\;
+      (a,b,c)\text{ is a legal typed triangle of types }(i,j,k)\}.
+\]
+One may also use the empty subset as a temporary Boolean-algebra
+zero, but it is never an exact menu.  All products with compatible
+nonempty factors are nonempty: strongly amalgamate the two specified
+edges over their common endpoint.  By gluing two witnessing triangles
+along their common \emph{complete} edge with SAP, with distinct new
+endpoints, one obtains
+\begin{equation}\label{eq:strong-assoc}
+ (A*B)*C=A*(B*C).
+\end{equation}
+Rotating a legal triangle gives the typed Peirce equivalences
+\begin{equation}\label{eq:typed-peirce}
+ c\in a*b\ \Longleftrightarrow\ a\in c*\bar b
+ \ \Longleftrightarrow\ b\in\bar a*c.
+\end{equation}
+All of these identities remain true for repeated sort labels; they
+never insert an equality edge between distinct formal vertices.
+
+\begin{lemma}[Typed Set-Pasch from original strong amalgamation]
+\label{lem:typed-set-pasch}
+In any finite complete typed binary SAP source as above,
+including the later terminal original-sort source, let
+$i,j,k,\ell$ be named sorts, possibly repeated, and let
+$A\subseteq L_{ij}$,
+$B\subseteq L_{jk}$, $C\subseteq L_{i\ell}$,
+$D\subseteq L_{\ell k}$ be nonempty diversity
+menus.  Then
+\[
+ (A*B)\cap(C*D)\ne\varnothing
+ \quad\Longrightarrow\quad
+ (\bar A*C)\cap(B*\bar D)\ne\varnothing.
+\]
+No exactness, primitivity, CCO, or identity atom is
+required; every displayed product is the genuine STRONG
+diversity product between pairwise distinct points.
+\end{lemma}
+\begin{proof}
+Choose a real old $i$--$k$ edge of an atomic colour
+$c\in(A*B)\cap(C*D)$.  The two memberships give a
+legal old typed triangle $(i,j,k)$ over this edge,
+with $i$--$j$ colour in $A$ and $j$--$k$ colour
+in $B$, and another legal triangle $(i,\ell,k)$
+over the SAME complete $i$--$k$ edge, with
+$i$--$\ell$ colour in $C$ and $\ell$--$k$
+colour in $D$.  Source SAP amalgamates these
+two complete triangles over the whole common edge.
+Their two off-base vertices are distinct, even if
+$j=\ell$ or other sort labels repeat.  The actual
+$j$--$\ell$ diversity atom $e$ on those two vertices
+belongs to both $\bar A*C$ (through the old
+$i$-vertex) and $B*\bar D$ (through the old
+$k$-vertex), proving the required intersection.
+\end{proof}
+
+A \emph{positive typed word} is a nonempty sequence of compatible
+atomic diversity colours, with arbitrary intermediate sorts.  Its
+\emph{strong profile} is its iterated product under $*$; by SAP this
+is exactly the set of colours obtainable between the distinct
+endpoints of an injectively realised labelled path.  Set
+$\mathcal P_{ij}$ to be the collection of these nonempty profiles,
+including the full typed top $L_{ij}$ (the empty list of restrictions).
+The \emph{strong exact-domain family} is
+\begin{equation}\label{eq:typed-H-definition}
+ \mathcal H_{ij}=\left\{\bigcap_{r=1}^m P_r\ne\varnothing:
+     P_r\in\mathcal P_{ij},\ m\ge0\right\},
+ \qquad\bigcap\varnothing=L_{ij}.
+\end{equation}
+The family of menus is always \emph{tagged} by $(i,j)$; a subset
+of $L_{ij}$ is not silently identified with an equal-looking subset
+of $L_{k\ell}$.
+
+The description agrees with the guarded \emph{ordinary} path-generated
+family used in endpoint semantics.  Here the guard discards equality
+and keeps only colours between two distinct formal terminals.  The
+next lemma justifies the passage from a represented word, which may
+identify nonadjacent path vertices, to a fully injective strong path;
+this passage uses SAP of $U$, not SAP of the original raw source $M$.
+In particular an empty word or a word consisting only of identity
+factors has no guarded diversity survivor and is not inserted as an
+artificial strong menu.  Nonempty finite meets commute with this fixed
+diversity guard.  Consequently $\mathcal H_{ij}$ is exactly the strong
+guard-slice $\mathrm{SEnd}(i,j)$ of the represented endpoint family,
+not its artificial unital envelope.
+
+\begin{remark}[The off-diagonal identity firewall]
+\label{rem:typed-identity-firewall}
+Some ordinary endpoint formalisms adjoin an artificial identity atom
+$1_i$ to the loop palette and close under unital products and meets.
+The resulting \emph{unital envelope} $\mathrm{OEnd}(i,i)$ need not equal
+\eqref{eq:typed-H-definition}.  Its menu $\{1_i\}$ can be artificial
+on a pair of distinct formal vertices.  Our $\mathcal H_{ii}$ is the
+\emph{strong} family $\mathrm{SEnd}(i,i)$: it consists exclusively of
+nonempty \emph{diversity} menus, with no freely adjoined equality.
+In particular no equality survivor appears in the arguments below.
+For example, a single-sort class with only one diversity colour
+$f$ has strong off-diagonal family $\{\{f\}\}$, while its formal
+unital envelope also contains the artificial singleton $\{1_i\}$.
+\end{remark}
+
+\begin{lemma}[Injectivising typed homomorphisms over fixed roots]
+\label{lem:typed-injectivisation}
+For this lemma, let $U$ be any homogeneous complete binary relational
+structure on named sorts whose age has SAP. No CCO, primitivity or
+relative-index assumption is required.
+Let $P$ be any finite partial diagram on the named sorts of $U$, with
+only diversity atoms on specified edges.  Let $f:P\to U$ be a
+colour- and sort-preserving homomorphism, and let $S\subseteq V(P)$
+be a set of designated vertices on which $f$ is injective.  For any
+finite $Z\subseteq U\setminus f(S)$ there is an \emph{injective}
+colour- and sort-preserving homomorphism $f':P\to U$ such that
+$f'|_S=f|_S$ and $f'(V(P)\setminus S)\cap Z=\varnothing$.
+
+In particular, for every positive typed word $w$ of diversity atoms,
+its represented endpoint relation on \emph{distinct} vertices has
+exactly the strong word profile of $w$.  If a represented word includes
+identity factors, they may be deleted first; an all-identity word has
+an empty diversity guard.  Thus represented multiplication followed
+by restriction to a diversity pair palette and strong multiplication
+agree on the positive words used in this section.
+\end{lemma}
+\begin{proof}
+First fix any finite complete induced substructure $B\subset U$ and
+$v\in U\setminus B$.  Strong amalgamation gives, for every $n$, a
+finite amalgam of $n$ copies of $B\cup\{v\}$ over $B$, with the $n$
+new points distinct.  Embed it into $U$, then use homogeneity to
+identify its copy of $B$ with the prescribed $B$.  Thus
+$|\Aut(U/B)\cdot v|$ is infinite.  The argument preserves unary sort
+labels, including when the labels of two formal vertices coincide.
+
+Process the finitely many vertices $x\in V(P)\setminus S$ one by one.
+Let $B_x$ be the set of the \emph{current} images of vertices joined
+to $x$ by a displayed edge.  Since every displayed edge is a
+diversity atom, $f(x)\notin B_x$ at that stage.  Its orbit under
+$\Aut(U/B_x)$ is infinite, so choose a point of that orbit outside
+$Z$ and outside the entire current finite image of $P$ (and, in
+particular, outside the fixed image of $S$).  Replace only the image
+of the formal vertex $x$ by this point.  All its displayed edge
+colours are preserved because their other endpoints are fixed by
+the chosen automorphism; all other displayed edges remain unchanged.
+The sort of $x$ is also preserved.  The new image of $x$ is distinct
+from every other current image, and this property persists as later
+vertices are treated.  After all non-designated vertices have been
+processed, the resulting map is injective, fixes $S$ and avoids $Z$
+outside $S$.
+
+For the word assertion, take any represented realisation of $w$
+between two distinct endpoints of the indicated sorts.  Regard the
+successive occurrences along the walk as separate formal path
+vertices, even if some were sent to the same real point by the
+original realisation.  Apply the first assertion with the two
+endpoints as $S$.  Their colour is unchanged, and all path vertices
+become distinct.  The reverse inclusion follows by forgetting
+injectivity.  Logical equality factors may be contracted without
+changing the represented endpoints; an all-identity word supplies
+only the diagonal, which is excluded by the strong diversity guard.
+\end{proof}
+
+\begin{lemma}[SAP-upgraded semantic CCO cycle criterion]
+\label{lem:typed-strong-cycle-completion}
+Let $U$ be a homogeneous finite-complete named-sorted binary
+RELATIONAL structure whose old finite age has SAP and semantic
+HOMOMORPHIC CCO. Let $P$ be a finite typed partial diagram in
+which every specified pair has ONE legal old DIVERSITY atomic
+colour (with its correctly typed converse); all other pairs
+are unrecorded. Then $P$ has an INJECTIVE colour-preserving
+completion on its original formal vertex set if and only if
+EVERY specified simple cycle of $P$ has a colour-preserving
+HOMOMORPHISM to $U$.
+
+If $P$ contains a prescribed complete old base $D$, the
+injective completion can fix one prescribed actual copy
+of $D$. No artificial STRONG identity edges, higher-arity
+constraints or partial functions are included.
+\end{lemma}
+\begin{proof}
+An injective completion restricts to a homomorphism on
+every specified cycle. Conversely, if every specified
+cycle is homomorphically realisable, semantic HOMOMORPHIC
+CCO gives ONE colour-preserving homomorphism $f:P\to U$;
+it need not be injective. Since all specified pair labels
+are genuine irreflexive DIVERSITY atoms, the SAP
+injectivisation lemma
+\cref{lem:typed-injectivisation} applies to $f$, fixing
+any already embedded complete old base $D$, and makes
+ALL formal vertices distinct while preserving EVERY
+specified typed atomic edge. If a prescribed copy of
+$D$ is to be fixed, first use old finite-diagram
+homogeneity to align $f(D)$ with it: $f|_D$ is an
+induced embedding because $D$ is complete and all its
+off-diagonal labels are irreflexive.
+
+The finite induced complete old diagram on the
+distinct image points is the desired injective
+completion. In particular, by CONTRAPOSITION, absence
+of an injective completion forces ONE specified simple
+cycle with no colour-preserving homomorphism. This
+last inference would be false for merely AP sources:
+the repeated-vertex positive word in the following
+example has a homomorphic but no injective realisation.
+\end{proof}
+
+\begin{example}[The strong guard needs SAP]
+\label{ex:typed-walk-SAP-sharp}
+The distinction above is real without SAP, even for a symmetric
+triangle-defined homogeneous CCO source.  In the four-point
+translation structure $\mathbb F_2^2$ of
+Example~\ref{ex:exact-ball-sharp}, choose distinct nonzero
+$d,e\in\mathbb F_2^2$ and consider the positive diversity word
+$w=(a_d,a_d,a_e)$.  Its represented relation between distinct
+endpoints is the diversity atom $a_e$: the only walk starting at
+$x$ is $x,x+d,x,x+e$.  But this walk repeats its first vertex at
+the third position, and no injective realisation of this labelled
+path exists.  Thus the guarded represented profile is nonempty
+while the corresponding strong profile is empty.  The original
+four-point age has AP but not SAP, since two copies of the unique
+$a_d$-neighbour of a vertex cannot be strongly amalgamated over
+that vertex.  This is \emph{not} a counterexample to the strong
+typed calculus, which is invoked only after the full-owner
+transversal has been shown to have SAP.
+\end{example}
+
+\begin{lemma}[Strong typed theta semantics and $2$-Helly]
+\label{lem:typed-helly}
+For fixed $(i,j)$, every finite pairwise-intersecting family of
+positive typed word profiles has nonempty total intersection.
+Consequently every finite pairwise-intersecting family in
+$\mathcal H_{ij}$ has nonempty total intersection; a nonempty
+intersection of exact menus is exact.  Moreover every
+$D\in\mathcal H_{ij}$ is exactly the set of possible atomic colours
+between two distinct roots of types $(i,j)$ in a finite strongly
+completable typed path diagram.
+\end{lemma}
+\begin{proof}
+For each positive profile $P_r$ choose an actual atomic word defining
+it, and connect two \emph{distinct formal roots} of sorts $(i,j)$ by
+pairwise internally disjoint paths carrying those words. Before taking the
+specified graph, MERGE all duplicate length-one branches: every
+length-one profile is one atomic singleton, and pairwise intersection
+forces all such singleton atoms to agree. Thus there is at most ONE
+literal specified edge between the two roots, rather than parallel
+edges or a fictitious two-cycle. If the sole direct atomic
+edge is the ONLY root-to-root path in the presentation, the
+resulting graph has no specified cycle and its old atom is
+already legal; if any longer private path is also present,
+the direct edge and that path form a genuine cycle.
+Every remaining simple specified cycle is the union
+of two different private root-to-root paths (possibly ONE direct
+edge together with a longer private path).  The two path profiles meet, so
+its edges can be realised by an injective path pair: choose a common
+endpoint colour and apply SAP to realise the internal vertices
+without identifications.  Thus every simple cycle admits a typed
+homomorphism to $U$.  Semantic homomorphic CCO of $U$ completes the
+whole theta homomorphically.  The two \emph{formal} roots need not
+have distinct images under this particular homomorphism: CCO alone
+makes no such promise.
+
+Apply Lemma~\ref{lem:typed-injectivisation} with $S$ consisting
+of just \emph{one} root.  Its image stays fixed, but the other root
+and all internal vertices are separated, giving a fully injective
+completion.  The now-distinct roots have a colour belonging to every
+$P_r$.  The use of a one-root pinned set, rather than a two-root
+pinned set, is essential when the original CCO map coalesces the
+roots.  Only SAP of this \emph{typed} source is used to separate them.
+
+For exact domains, flatten each meet presentation into its list of
+positive word profiles.  If two exact menus intersect, every profile
+of the first intersects every profile of the second.  Together with
+the nonempty individual meets, the combined profile list is
+pairwise intersecting, so the preceding argument applies.  Empty
+lists present the top and introduce no condition.
+
+To prove the semantic exactness assertion, take a theta presenting
+$D=\bigcap_rP_r$, with the bare-root diagram for $D=L_{ij}$.
+Every strong realisation gives a root colour in $D$.  Conversely fix
+any atom $d\in D$, add the direct root edge labelled $d$, and repeat
+the CCO+SAP theta argument: every newly created cycle consists of
+the direct edge and one compatible branch.  Thus $d$ is attained.
+There is no identity-quotient case because the roots are required
+to remain distinct and all $d$ belong to diversity palettes.
+\end{proof}
+
+\begin{lemma}[Exact products and finite-meet distributivity]
+\label{lem:typed-exact-products}
+Every $\mathcal H_{ij}$ contains every singleton atom and its typed
+top, is closed under converse and nonempty intersections, and the
+family $\mathcal H$ is closed under compatible strong products.
+More precisely, for presentations
+$A=\bigcap_{r}P_r\in\mathcal H_{ij}$,
+$B=\bigcap_{s}Q_s\in\mathcal H_{jk}$, one has
+\begin{equation}\label{eq:typed-exact-product}
+ A*B=\bigcap_{r,s}(P_r*Q_s),
+\end{equation}
+with the usual convention that a typed top imposes no restriction.
+For a finite nonempty exact meet $B=\bigcap_sB_s$,
+\begin{equation}\label{eq:typed-distrib}
+ A*B=\bigcap_s(A*B_s),\qquad
+ B*Q=\bigcap_s(B_s*Q)
+\end{equation}
+for every compatible exact $A,Q$.  All displayed products and the
+nonempty intersections on the right belong to the indicated exact
+families.
+\end{lemma}
+\begin{proof}
+Only the reverse inclusion in \eqref{eq:typed-exact-product} requires
+proof.  Let $z$ lie in every $P_r*Q_s$.  First suppose the two
+presentations are nonempty.  Choose an atom $b\in B$; by SAP and
+Peirce, $z*\bar{\{b\}}$ is nonempty and lies in every
+$z*\bar Q_s$.  Thus the profiles $z*\bar Q_s$ meet pairwise,
+and the $P_r$ meet pairwise because $A$ is nonempty.  Each cross
+intersection $P_r\cap(z*\bar Q_s)$ is nonempty by
+$z\in P_r*Q_s$.  The $2$-Helly lemma yields
+\[
+ a\in A\cap\bigcap_s(z*\bar Q_s).
+\]
+Now $Q_s\cap(\bar{\{a\}}*\{z\})\ne\varnothing$
+for every $s$, while the $Q_s$ share the nonempty menu $B$.
+A second application of $2$-Helly gives
+$b'\in B\cap(\bar{\{a\}}*\{z\})$, so $z\in a*b'\subseteq A*B$.
+The other inclusion follows from monotonicity.  Concatenations
+$P_r*Q_s$ are positive word profiles.  When one presentation is empty, use the bare typed top as one
+explicit factor in the argument above.  This causes no difficulty:
+for all nonempty $P\subseteq L_{jk}$, SAP gives
+$L_{ij}*P=L_{ik}$ by amalgamating any chosen $(i,k)$-edge
+with a $(j,k)$-edge labelled by an atom of $P$ over its
+common $k$-endpoint.  The analogous right-absorption formula
+holds by converse.  Thus the empty-presentation convention
+agrees with the same product formula.
+
+To prove \eqref{eq:typed-distrib}, expand the exact left multiplier
+into its defining positive profiles and use
+\eqref{eq:typed-exact-product} twice: both sides are the intersection
+of precisely the products of those profiles with the profiles
+presenting the $B_s$.  The right-hand identity is symmetric.
+No distribution law is asserted for arbitrary, not necessarily
+exact, subsets of a palette.
+\end{proof}
+
+For $A\in\mathcal H_{ij}$, $B\in\mathcal H_{jk}$ and
+$C\in\mathcal H_{ik}$ write
+\begin{equation}\label{eq:typed-PC}
+ \mathrm{PC}_{ijk}(A,B,C)\quad\Longleftrightarrow\quad
+ C\subseteq A*B,\quad
+ A\subseteq C*\bar B,\quad
+ B\subseteq\bar A*C.
+\end{equation}
+It requires a legal support triple for \emph{every atom in every
+coordinate}.  It is stronger than the existence of one legal triple
+inside $A\times B\times C$.  We retain \emph{every} instance,
+including repeated sort labels and repeated exact menu variables.
+The three conditions transform into one another by Peirce rotation
+and converse: in particular
+\begin{equation}\label{eq:typed-PC-rotation}
+ \mathrm{PC}(A,B,C)\Longleftrightarrow
+ \mathrm{PC}(C,\bar B,A)\Longleftrightarrow
+ \mathrm{PC}(\bar A,C,B),
+\end{equation}
+where the endpoint sorts of each rotated triple follow from the
+original $(i,j,k)$.
+
+\begin{lemma}[Exact triple occurrence]\label{lem:typed-triple-occurrence}
+Three menus $A\in\mathcal H_{ij}$, $B\in\mathcal H_{jk}$,
+$C\in\mathcal H_{ik}$ occur simultaneously as the \emph{exact
+strong} endpoint domains of three distinct designated vertices in
+a finite completable typed partial diagram if and only if
+$\mathrm{PC}_{ijk}(A,B,C)$.
+\end{lemma}
+\begin{proof}
+Necessity: if an exact survivor $a\in A$ is realised on the first
+pair, its completion has some $b\in B,c\in C$ and those three atoms
+form a legal triangle.  Apply the same argument to each coordinate.
+
+Sufficiency: take internally disjoint theta gadgets for the three
+menus, one between each pair of three distinct roots of types
+$i,j,k$, even if those sort labels coincide. As in
+\cref{lem:typed-helly}, merge any duplicate length-one atomic
+branches within each root pair; their colours agree since each
+menu is nonempty. There are no artificial parallel-edge
+two-cycles. Every genuine simple specified cycle lies within
+one two-root gadget (and traverses two DIFFERENT branches),
+or traverses one branch on each of the three sides.
+The first kind is strongly completable by exact-domain
+nonemptiness.  For the second, choose any supported legal atomic
+triple in $A\times B\times C$; its atoms belong to \emph{every}
+branch profile on the corresponding side, so its three labelled
+branches can be realised over that terminal triangle by SAP.
+Hence all cycles are homomorphically completable.  CCO supplies a
+homomorphism, potentially identifying distinct formal roots; apply
+Lemma~\ref{lem:typed-injectivisation} with $S=\varnothing$ to obtain
+a strong completion of the whole partial diagram.  None of its three
+root images is assumed distinct before this final splitting.
+
+Finally, fix any prescribed atom $a$ of one of the three menus.
+The appropriate one of the three PC inclusions supplies a supported
+legal atomic triangle $(a,b,c)$ with $b\in B,c\in C$.
+Add all three corresponding root-edge constraints to the theta
+diagram; the preceding cycle argument still applies.  Thus every
+atom is feasible on its own designated side.  Since a theta gadget
+already restricts that side to its specified intersection, each
+exact strong endpoint domain equals the prescribed menu.
+\end{proof}

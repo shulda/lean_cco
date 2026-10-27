@@ -1,0 +1,247 @@
+% SIR01: sharply scoped results; no general positive SIR theorem claimed.
+\section{Stationary independence: finite quotient obstructions and a relative control}
+\label{sec:sir-scope}
+
+A stationary independence relation (SIR) on finite real
+vertex sets is an automorphism-invariant ternary
+relation \(A\downarrow_C B\) satisfying symmetry,
+existence, monotonicity, transitivity and
+\emph{stationarity}. We use in particular
+\[
+ A\equiv_C A',\quad A\downarrow_C B,\quad
+ A'\downarrow_C B\quad\Longrightarrow\quad
+ A\equiv_{BC}A'.
+ \tag{SIR}\label{eq:sir-stationarity}
+\]
+The sets \(B,C\) in a type such as
+\(\equiv_{BC}\) are \emph{named} parameter sets.
+The following theorem makes no assertion about
+SIR on imaginary sorts or on an expanded
+language naming finite sheets.
+
+\begin{lemma}[A global two-class obstruction]
+\label{lem:sir-global-two}
+If a homogeneous one-sorted symmetric binary
+structure \(M\) has a \(0\)-definable
+equivalence \(E\) with exactly two classes,
+then no SIR on the original real language
+satisfies existence and stationarity
+over the empty base.
+\end{lemma}
+\begin{proof}
+Choose \(a_0,a_1\) from the two different
+\(E\)-classes and put \(B=\{a_0,a_1\}\).
+Because every binary relation is symmetric,
+the transposition of these two points is a
+partial isomorphism. Homogeneity extends it
+to an automorphism \(\sigma\) with
+\(\sigma(B)=B\), interchanging the two
+entire \(E\)-classes.
+
+Existence yields a singleton \(x\) with
+\(x\downarrow_\varnothing B\).
+Invariance gives
+\(\sigma x\downarrow_\varnothing B\).
+The two singletons have the same type
+over the empty base. Stationarity
+\eqref{eq:sir-stationarity} therefore
+gives \(x\equiv_B\sigma x\).
+But exactly one of \(E(x,a_0),E(x,a_1)\)
+holds, and the automorphism \(\sigma\)
+interchanges the two values. The types
+over the \emph{named} pair \(B\)
+are different, contradiction.
+\end{proof}
+
+\begin{lemma}[Finite relative Hasse index two]
+\label{lem:sir-Hasse-two}
+In a transitive homogeneous symmetric binary source with
+semantic homomorphic CCO, every finite-index cover
+$E\prec F$ in the \emph{full} invariant-equivalence lattice
+has relative index two; hence all finite relative indices
+are powers of two.
+\end{lemma}
+\begin{proof}
+Apply the AP-only original one-sort theorem
+\cref{thm:full-relative-Hasse} from Foundations.
+It includes nonexact invariant equivalences and does not
+assume SAP.
+\end{proof}
+
+\begin{theorem}[Finite global quotients obstruct original one-sorted SIR]
+\label{thm:sir-finite-global-no}
+Let \(M\) be one-sorted, transitive,
+homogeneous, complete finite named
+symmetric binary with homomorphic semantic
+CCO. If some proper invariant equivalence
+\(E<\Top\) has finite global index
+\([\Top:E]\), then \(M\) has \emph{no}
+SIR on its original real one-sort language
+with existence/stationarity over
+the empty base.
+\end{theorem}
+\begin{proof}
+Take a saturated finite chain from
+\(E\) to \(\Top\). Its last cover
+\(F\prec\Top\) has finite relative
+index two by
+\cref{lem:sir-Hasse-two}.
+Thus \(F\) has exactly two
+\(0\)-definable global classes.
+Apply \cref{lem:sir-global-two}.
+\end{proof}
+
+A \emph{relative} two-sheet cover over
+infinitely many parent classes is
+different. It need not prevent SIR,
+even on the original one-sort age.
+
+\begin{proposition}[Positive relative two-sheet example]
+\label{prop:sir-relative-positive}
+There is a homogeneous one-sort finite
+symmetric binary SAP+homomorphic-CCO
+structure with invariant \(E<F\),
+\([F:E]=2\), and infinite \(E\)-classes,
+whose original real language admits SIR.
+\end{proposition}
+\begin{proof}
+Take infinitely many \(F\)-classes,
+each partitioned into exactly two
+infinite \(E\)-classes, without further
+structure. Name old diversity atoms
+\(e=E\setminus\Id\),
+\(d=F\setminus E\),
+\(n=\Top\setminus F\).
+The age is homogeneous and has SAP:
+partial maps on represented parent
+classes and their two unlabeled
+sheets extend using fresh classes and
+infinite point fibres. Homomorphic
+CCO has a direct cycle test:
+\(e,d\) edges force the same parent
+class with parity \(0,1\);
+\(n\) edges force distinct parents.
+Any inconsistent \(e/d\) parity
+is witnessed by a specified simple
+cycle; an \(n\)-edge within an
+\(e/d\)-connected component completes
+a forbidden cycle with a shortest
+\(e/d\)-path. If neither occurs,
+use a fresh parent class per
+component, solve the parity constraints,
+and choose distinct vertices of
+the required infinite \(E\)-fibres.
+
+For finite real sets \(A,B,C\), declare
+\[
+ A\downarrow_C B
+ \ \Longleftrightarrow\
+ (A\setminus C)\cap(B\setminus C)=\varnothing
+ \ \text{ and }\ 
+ \begin{gathered}
+ \text{no \(F\)-class disjoint from \(C\)}\\
+ \text{meets both \(A\setminus C\) and \(B\setminus C\).}
+ \end{gathered}
+ \tag{SIR-F}\label{eq:sir-F-indep}
+\]
+Existence follows by choosing fresh
+\(F\)-classes for the new parent
+classes of \(A\) and disjoint
+real points in the represented ones.
+Invariance and symmetry are immediate.
+For monotonicity, if
+\(A\downarrow_C(B\cup D)\),
+then \(A\downarrow_C B\) is
+immediate. If an \(F\)-class
+disjoint from \(B\cup C\)
+met both \(A\setminus(B\cup C)\)
+and \(D\setminus(B\cup C)\),
+it would be disjoint from \(C\)
+and meet both \(A\setminus C\)
+and \((B\cup D)\setminus C\),
+contrary to the hypothesis.
+The same containment argument
+excludes an intersection outside
+the larger base. Hence also
+\(A\downarrow_{B\cup C}D\).
+
+Conversely suppose
+\(A\downarrow_C B\) and
+\(A\downarrow_{B\cup C}D\).
+An intersection of
+\(A\setminus C\) with
+\(D\setminus C\) cannot lie
+in \(B\), by the first
+independence condition, and
+outside \(B\cup C\) it is
+excluded by the second.
+If an \(F\)-class disjoint
+from \(C\) met both
+\(A\setminus C\) and
+\(D\setminus C\), it could
+not meet \(B\setminus C\)
+by the first condition.
+It is therefore disjoint
+from \(B\cup C\), contrary
+to the second condition.
+Together these give
+\(A\downarrow_C(B\cup D)\),
+which is transitivity.
+
+For stationarity let
+\(A\equiv_C A'\) and assume
+both independent from \(B\) over \(C\).
+A cross pair between \(A\setminus C\)
+and \(B\setminus C\) belongs to
+different \(F\)-classes unless
+their common \(F\)-class already
+meets \(C\). In the latter case
+choose a parameter \(c\in C\)
+from this class. Because there
+are exactly two \(E\)-classes
+inside each \(F\)-class, whether
+the cross pair is \(E\)-related
+is uniquely determined by the
+two truth values \(E(a,c)\)
+and \(E(b,c)\).
+Thus all cross binary atoms are
+determined by the types over
+\(C\). The map \(A\cong_C A'\)
+therefore extends over the
+identity on \(B\), proving
+\(A\equiv_{BC}A'\).
+\end{proof}
+
+\begin{remark}[SIR status and nonclaims]
+\label{rem:sir-status}
+\cref{thm:sir-finite-global-no}
+is a general \emph{negative} result
+on the original real language,
+not a positive SIR classification.
+The positive relative-two-sheet
+example shows finite \emph{relative}
+index is not by itself an obstruction.
+A finite global quotient can be
+oriented by unary marks; the
+resulting expansion may have an SIR
+even though the original reduct
+provably has none.
+The historical primitive Q8 control
+has prioritized independence without
+genuine shortest-path POCS, so one
+must never promote POCS to a necessary
+CCO or SIR hypothesis.
+
+The general claim that every
+terminal symmetric CCO age has SIR
+is \emph{not} proved here.
+A plausible positive route is a
+hereditary support-consistent
+exact-domain selector with correctly
+controlled algebraic closure, but
+its stationary/transitivity
+verification remains a separate
+mathematical obligation.
+Neither Ramsey+EP nor ordinary
+EPPA implies an SIR automatically.
+\end{remark}

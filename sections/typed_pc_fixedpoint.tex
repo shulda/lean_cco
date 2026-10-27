@@ -1,0 +1,164 @@
+% C4 canonical STRONG typed PC fixed-point calculus, in the ORIGINAL SAP+CCO setting.
+% Not the AP-only equality-inclusive RAW exact calculus.
+\section{Strong typed path-consistency fixed-point semantics}
+\label{sec:typed-PC-fixedpoint}
+
+Let $U$ be a homogeneous finite-complete binary RELATIONAL structure
+with finitely many named transitive sorts, same-sort symmetric
+diversity atoms, correctly typed converses, visible SAP and
+semantic HOMOMORPHIC CCO. For each ordered sort pair $(a,b)$
+write $\Rch^{ab}$ for its nonempty positive typed STRONG
+word profiles and $\mathcal H_{ab}$ for their nonempty
+finite intersections (including typed top), as in
+\cref{lem:typed-helly,lem:typed-exact-products}.
+Only DISTINCT formal vertices and real DIVERSITY atoms
+occur in the positive graph; the logical identity
+is NOT a colour in its path-consistency domains.
+
+For a finite old atomic typed partial graph $G$, on
+each ordered pair of DISTINCT formal vertices $x,y$
+initialise $D^0_G(x,y)$ to the specified singleton
+atom when present, and to the full diversity palette
+$L_{ab}$ otherwise, where $a,b$ are the
+respective named sorts of $x,y$. Iterate
+\[
+ D^{n+1}_G(x,y)=D^n_G(x,y)\cap
+ \bigcap_{z\in G\setminus\{x,y\}}
+       \bigl(D^n_G(x,z)*D^n_G(z,y)\bigr),
+\]
+with actual STRONG typed product $*$ and
+correct typed converse. The finite decreasing
+sequence stabilises at $D^\infty_G$.
+
+\begin{lemma}[Typed strong PC walk formula]
+\label{lem:typed-PC-walk-formula}
+Assume every $D^\infty_G(x,y)$ is NONEMPTY.
+Then for each pair of distinct source vertices
+\[
+ \boxed{D^\infty_G(x,y)=
+  \bigcap\{\Prof(w_P):P\text{ a specified SIMPLE
+   }x\text{--}y\text{ path of }G\}.}
+\]
+The empty family gives the full typed diversity palette.
+Every path word uses its ACTUAL typed intermediate sorts.
+\end{lemma}
+\begin{proof}
+Call the right-hand side $A(x,y)$. The stable PC
+inclusions propagate along any specified simple path,
+so $D^\infty_G(x,y)\subseteq A(x,y)$.
+
+We show every specified simple OLD cycle of $G$
+has a typed colour-preserving HOMOMORPHISM.
+Remove one specified cycle edge $xy=t$.
+The remaining edges form a specified simple path
+$P$, so $t\in D^\infty_G(x,y)\subseteq\Prof(w_P)$:
+the first membership holds because the nonempty
+fixed domain on a specified old atom is exactly
+$\{t\}$. The STRONG profile supplies an injective
+path realisation with distinct endpoints carrying
+the old atom $t$. Hence the cycle is completable.
+
+Take any $c\in A(x,y)$. Insert the old edge
+$xy=c$, unless it is already specified with that
+same atom. All previous specified cycles have
+the preceding colour-preserving homomorphisms;
+every newly specified simple cycle consists
+of the new edge plus ONE old simple $x$--$y$
+path whose profile contains $c$. By
+\cref{lem:typed-strong-cycle-completion},
+the augmented network has a FINITE INJECTIVE
+typed completion in the original SAP+CCO age.
+
+Fix a third formal vertex $z\ne x,y$.
+The completion's OLD fine colours $a$ on
+$xz$ and $b$ on $zy$ belong to $A(x,z)$
+and $A(z,y)$ respectively, since that same
+completion realises all their specified paths.
+The vertices $x,z,y$ are DISTINCT by strong
+completion, so $c\in a*b$, proving
+\[
+ A(x,y)\subseteq A(x,z)*A(z,y).
+\]
+The initial displayed edges also constrain $A$
+correctly, since their one-edge path is included.
+Thus $A$ is a stable refinement of $D^0_G$.
+The iterative fixed point is the GREATEST stable
+refinement, so $A\subseteq D^\infty_G$.
+Both inclusions prove the formula. Neither SAP-free
+RAW equality outcomes nor arbitrary nonexact menus
+were silently inserted.
+\end{proof}
+
+\begin{lemma}[Canonical typed exact fixed-point domains]
+\label{lem:typed-PC-fixedpoint-exact}
+Let $\Dat^{ab}$ consist of all NONEMPTY
+$D^\infty_G(x,y)$ where $x,y$ are DISTINCT
+formal vertices of sorts $(a,b)$ in some
+finite strongly completable old partial graph.
+Then
+\[
+ \boxed{\Dat^{ab}=\mathcal H_{ab}
+ =\{\bigcap\mathcal F:
+     \mathcal F\subseteq\Rch^{ab}\text{ finite},
+     \ \bigcap\mathcal F\ne\varnothing\}.}
+\]
+Every finite pairwise-intersecting family in
+one $\Dat^{ab}$ has nonempty intersection.
+For three distinct root vertices of sorts
+$a,b,c$, domains $A\in\Dat^{ab}$,
+$B\in\Dat^{bc}$ and $C\in\Dat^{ac}$
+occur simultaneously as their three PC
+fixed-point domains in a finite strongly
+completable old typed partial graph if and
+only if
+\[
+ C\subseteq A*B,\quad
+ A\subseteq C*\bar B,\quad
+ B\subseteq\bar A*C.
+\]
+This is a theorem in the STRONG diversity-only
+SAP calculus, not a claim about AP-only RAW
+identity-inclusive words.
+\end{lemma}
+\begin{proof}
+By the preceding typed walk formula, every
+$D^\infty_G(x,y)$ of a strongly completable
+diagram is an intersection of finitely many
+typed positive word profiles; the old completed
+source provides an actual survivor, so it lies
+in $\mathcal H_{ab}$.
+
+Conversely let $D=\bigcap_iP_i$ be any
+nonempty exact typed strong menu. The standard
+private-theta construction of
+\cref{lem:typed-helly}, on two DISTINCT
+old roots of the designated sorts, gives
+one strongly completable diagram whose
+specified simple root--root paths are exactly
+the defining private branches. The empty-list
+case is the bare-root diagram. Its PC fixed
+domain equals $D$ by the typed walk formula.
+Exact-menu $2$-Helly is
+\cref{lem:typed-helly}.
+
+Necessity of the three displayed inclusions
+is immediate from the stable PC triangle
+updates. For sufficiency use the THREE theta
+gadgets from \cref{lem:typed-triple-occurrence}.
+Their union has one strongly completable
+diagram with three distinct roots. For each
+root pair, every specified simple path is
+either ONE branch of its own theta or the
+concatenation of one branch on EACH of the
+other two triangle sides. For instance the
+$x$--$y$ domain is, by the typed walk formula
+and nonempty strong product distributivity
+\cref{lem:typed-exact-products},
+\[
+ A\cap(C*\bar B)=A
+\]
+by the second displayed support inclusion.
+The same argument holds cyclically.
+Thus the PC fixed point at each of the
+three pairs is EXACTLY its requested menu.
+\end{proof}

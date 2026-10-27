@@ -1,0 +1,36 @@
+
+\begin{lemma}[AP and semantic homomorphic CCO imply triangle fullness]
+\label{lem:cco-triangle-fullness}
+Let $\mathcal K$ be a hereditary class of finite complete atomic
+binary-coloured structures with AP and semantic homomorphic CCO.  If
+all induced substructures of a finite complete $A$ on at most three
+vertices belong to $\mathcal K$, then $A\in\mathcal K$.
+\end{lemma}
+\begin{proof}
+Consider a specified simple cycle $v_0v_1\cdots v_{m-1}v_0$
+of the complete diagram $A$, $m\ge3$.  The triangles
+$A|\{v_0,v_i,v_{i+1}\}$ are in $\mathcal K$ for $1\le i\le m-2$.
+Starting with the first triangle, amalgamate the next triangle over
+the already realised \emph{complete} edge $v_0v_i$, inductively.
+Each triangle specifies its next cycle edge and the next chord to
+$v_0$.  AP is sufficient: a new formal vertex may be identified with
+an earlier non-neighbour along the cycle.  Thus the final amalgam
+receives a colour-preserving \emph{homomorphism} of this cycle,
+including the closing edge.  No injectivity of this cycle map is
+needed or asserted.
+
+Every simple cycle of $A$ is therefore homomorphically realisable.
+Semantic CCO yields a colour-preserving homomorphism of the whole
+complete $A$ into a member of $\mathcal K$.  This map is injective,
+since each distinct pair of $A$ bears an irreflexive diversity colour,
+and it is an induced embedding because all pairs have exactly one
+named atom.  Heredity gives $A\in\mathcal K$.
+The at-most-three-point premise also handles the boundary cases.
+\end{proof}
+\begin{remark}
+The lemma does not claim that a \emph{partial} triangle-consistent
+diagram completes.  It uses the actual chord colours of the
+\emph{complete} input in the cycle-fan amalgams.  In our homogeneous
+source AP is automatic, so triangle-definedness is a consequence of
+semantic homomorphic CCO, not an extra substantive assumption.
+\end{remark}

@@ -1,0 +1,269 @@
+% C3 foundational module. This is an ORIGINAL invariant-group-action result.
+% It has no dependency on terminal Ramsey, typed strong profiles or SAP.
+\section{Invariant typed quotient transport and canonical return holonomy}
+\label{sec:foundational-typed-return-holonomy}
+
+\paragraph{Invariant typed quotient transport (foundational).}
+The next lemma needs only original named transitivity and invariance of
+the represented binary relation; neither SAP nor CCO nor exactness
+of that relation is required. We write $1_a$ for the FULL universal
+same-sort relation, as distinct from logical identity $\Id_a$.
+Transport preserves the interval of ALL invariant equivalences.
+Whether a transported invariant equivalence is also FULL RAW exact
+is a separate assertion and is not inferred from interval transport.
+
+\begin{lemma}[Typed quotient transport]\label{lem:typed-quotient-transport}
+Let \(R\) be a nonempty invariant binary relation from a named original transitive sort \(a\) to a named original transitive sort \(b\), and let \(E\) be an invariant equivalence on sort \(a\). Suppose
+\[
+ RR^{\smile}\subseteq E.
+\tag{QT1}\label{eq:typed-transport-kernel}
+\]
+For \(y\in b\), let \(\lambda_{R,E}(y)\) be the \(E\)-class of any
+\(x\) with \(xRy\), and put
+\[
+ E^R=R^{\smile}ER.
+\]
+Then \(\lambda_{R,E}\) is well defined, \(E^R\) is a definable equivalence,
+and \(R\) induces a bijection
+\[
+ q_{R,E}:a/E\longrightarrow b/E^R.
+\]
+Transport by this bijection is a lattice isomorphism
+\[
+ [E,1_a]\longrightarrow [E^R,1_b],
+ \qquad H\longmapsto H^R=R^{\smile}HR.
+\tag{QT2}\label{eq:typed-transport-lattice}
+\]
+It respects composition of composable relations for actual composable nonempty invariant typed relations whenever the displayed kernel hypotheses hold. In particular,
+meet-irreducibility is preserved by transport.
+An ADDITIONAL noncollapse conclusion under visible SAP
+may hold in appropriate terminal sources, but is NOT part
+of this general invariant quotient-transport assertion.
+\end{lemma}
+
+\begin{proof}
+Since the original endpoint sorts are transitive,
+the nonempty invariant relation $R$ is total and
+surjective. For $y\in b$ its nonempty set of
+$R$-predecessors lies in ONE $E$-class, because
+$RR^\smile\subseteq E$. This gives a surjective
+equivariant map $\lambda_{R,E}:b\to a/E$.
+For any $y,y'\in b$,
+\[
+ \lambda_{R,E}(y)=\lambda_{R,E}(y')
+  \quad\Longleftrightarrow\quad
+             y(R^\smile;E;R)y',
+\]
+since any two predecessors of either point
+are already $E$-equivalent. Hence $E^R$
+is precisely the kernel of $\lambda_{R,E}$;
+the quotient map induced by $\lambda_{R,E}$
+is a bijection $b/E^R\to a/E$, whose inverse
+is the displayed $q_{R,E}:a/E\to b/E^R$.
+
+For any invariant $H\ge E$ on $a$, the
+condition $y(R^\smile;H;R)y'$ holds exactly
+when $\lambda_{R,E}(y)$ and
+$\lambda_{R,E}(y')$ are $H/E$-equivalent.
+Thus conjugation gives the full interval
+isomorphism and preserves covers and
+meet-irreducibles. If $R:a\to b$, $S:b\to c$ satisfy
+the corresponding two quotient kernel
+conditions and $F=E^R$, uniqueness of
+the E-class of each $(R;S)$-predecessor
+gives directly
+\[
+ q_{R;S,E}=q_{S,F}\circ q_{R,E},
+ \qquad E^{R;S}=F^S.
+\]
+Thus composable transports respect their
+actual RAW relational composition.
+No mixed-sort commutativity is assumed.
+\end{proof}
+
+\begin{lemma}[Canonical invariant typed return and identity holonomy]\label{lem:foundational-typed-return-holonomy}
+Let \(P_1,\ldots,P_n\) be a nonempty finite composable sequence
+of nonempty invariant represented relations between named transitive
+original sorts, from \(a_0\) back to \(a_0\), and suppose
+\[
+ P_1\cdots P_n\subseteq E_0
+\]
+for a definable equivalence \(E_0\) on \(a_0\).  Put
+\(R_i=P_1\cdots P_i\).  Then every prefix transports \(E_0\) to a definable
+equivalence \(E_i\) on the intermediate sort, every factor is
+quotient-functional between consecutive transported quotients, and the whole
+loop has identity holonomy on \(a_0/E_0\).  The same conclusion holds
+simultaneously for EVERY invariant equivalence \(J\supseteq E_0\).
+No representation of the transported \(J_i\) by named FULL RAW exact
+quotient sorts is asserted.
+\end{lemma}
+
+\begin{proof}
+We make the quotient labels at EVERY intermediate position
+CANONICAL; this avoids choosing unrelated transport charts.
+Write \(a_i\) for the original real sort after \(P_i\),
+with \(a_n=a_0\), and put
+\[
+ R_0=\Id_{a_0},\quad
+ R_i=P_1;\cdots;P_i,\qquad
+ S_i=P_{i+1};\cdots;P_n,\quad S_n=\Id_{a_0}.
+\]
+All products here are ACTUAL equality-inclusive RAW represented
+relations. Since the \(P_i\) are nonempty invariant relations between
+TRANSITIVE named original sorts, they and all composable prefixes
+and suffixes are serial and co-serial.
+
+For each \(i\) and real \(y\in a_i\), choose ANY predecessor
+\(x\in a_0\) with \(xR_i y\), and define
+\[
+             \lambda_i(y)=[x]_{E_0}\in a_0/E_0.
+\]
+The value is independent of \(x\): if also \(x'R_i y\),
+choose a suffix witness \(z\) with \(yS_i z\).
+Then \(xR_nz\) and \(x'R_nz\), and the hypothesis
+\(R_n\subseteq E_0\) gives \(xE_0zE_0x'\).
+Co-seriality supplies a predecessor for every \(y\);
+seriality of \(R_i\) shows that every \(E_0\)-class
+occurs as some value of \(\lambda_i\).
+In particular this is ONE onto original quotient labelling,
+not an independent choice at each edge.
+
+Put \(E_i=\ker(\lambda_i)\). The witness characterization
+gives the literal equality of invariant ORIGINAL equivalences
+\[
+                 E_i=R_i^{\smile};E_0;R_i .
+\]
+Thus the preceding typed quotient-transport lemma applies to
+each prefix \(R_i\), including all repeated original sorts.
+For any actual \(yP_i z\), choose \(xR_{i-1}y\).
+Then \(xR_i z\), so
+\[
+                   \lambda_{i-1}(y)=\lambda_i(z).
+\]
+It follows directly that \(P_iP_i^{\smile}\subseteq E_{i-1}\)
+and \(P_i^{\smile};E_{i-1};P_i=E_i\).
+The induced quotient map
+\(q_i:a_{i-1}/E_{i-1}\to a_i/E_i\)
+is therefore a BIJECTION.  More precisely, the
+bijections \(\bar\lambda_i:a_i/E_i\to a_0/E_0\)
+induced by \(\lambda_i\) satisfy
+\[
+           q_i=\bar\lambda_i^{-1}\circ\bar\lambda_{i-1}.
+\]
+At the start \(\lambda_0(x)=[x]_{E_0}\), since \(R_0=\Id\).
+At the end every predecessor \(xR_ny\) satisfies
+\(xE_0y\) by the whole-word hypothesis, so
+\(\lambda_n(y)=[y]_{E_0}\) on the SAME endpoint sort.
+Hence
+\[
+            q_n\circ\cdots\circ q_1
+               =\bar\lambda_n^{-1}\circ\bar\lambda_0
+               =\operatorname{id}_{a_0/E_0}.
+\]
+This proves IDENTITY holonomy without selecting a
+groupoid section, an origin system, or a quotient chart.
+
+Finally, for EVERY equivalence \(J\supseteq E_0\),
+compose all the preceding labels with the canonical
+projection \(a_0/E_0\to a_0/J\).
+The new canonical kernels are SIMULTANEOUSLY
+\[
+              J_i=R_i^{\smile};J;R_i,
+\]
+and the same edge and end-of-return identities hold on
+\(a_0/J\).
+All these kernels and maps are ACTUAL invariant quotient objects.
+This abstract conclusion uses neither SAP nor the represented exact
+lattice, and does not claim that any intermediate \(J_i\) is a
+named unary-coordinate sort of a later expansion.
+\end{proof}
+
+\paragraph{Prescribed quotient actions on points.}
+The following elementary action criterion will be used for the finite
+owner systems, independently of any exactness or completion hypothesis.
+
+\begin{lemma}[Prescribed-action point lifting]
+\label{lem:prescribed-action-point-lifting}
+Let $K$ act on a nonempty set $Y$, let $\Gamma$ act on $B$, and
+let $\rho:K\to\Gamma$ be a homomorphism. Suppose $\pi:Y\to B$
+is a surjection with $\pi(ky)=\rho(k)\pi(y)$. The following are
+equivalent:
+\begin{enumerate}[label=(\roman*)]
+\item $\rho$ is onto and $\ker\rho$ is transitive on each fibre
+      of $\pi$;
+\item for every $x,y\in Y$ and every $\gamma\in\Gamma$ with
+      $\gamma\pi(x)=\pi(y)$, some $k\in K$ satisfies
+      $\rho(k)=\gamma$ and $kx=y$.
+\end{enumerate}
+Neither action is required to be faithful, and no group section is
+assumed.
+\end{lemma}
+\begin{proof}
+Assume (i). Lift $\gamma$ to $k_0\in K$. The points $k_0x,y$
+lie in the same $\pi$-fibre, so some $h\in\ker\rho$ sends
+$k_0x$ to $y$. Then $k=hk_0$ satisfies (ii).
+Conversely, for any $\gamma\in\Gamma$ choose $x\in Y$ and,
+by surjectivity, $y$ above $\gamma\pi(x)$. Condition (ii)
+provides a lift of $\gamma$, so $\rho$ is onto. Taking
+$\gamma=1$ in (ii) gives transitivity of $\ker\rho$ on each
+fibre. Nonemptiness is used when choosing $x$.
+\end{proof}
+
+\paragraph{Orbital pullbacks and the real diagonal.}
+The following group-action statement separates representative saturation
+from any claim about positive words or STRONG reachability.
+
+\begin{lemma}[Orbital pullbacks through equivariant quotient maps]
+\label{lem:foundational-orbital-pullback}
+Let $G$ act transitively on nonempty named root sorts $A,B$, which
+are either the same sort or disjoint. Let $\tau:A\to Q$ and
+$\sigma:B\to R$ be equivariant surjections to $G$-sets, with kernels
+$J=\ker\tau$ and $K=\ker\sigma$. For a nonempty $G$-orbital
+$\Theta\subseteq Q\times R$, put
+\[
+ P_\Theta=\{(x,y)\in A\times B:(\tau(x),\sigma(y))\in\Theta\},
+ \qquad D_{A,B}=\{(x,y)\in A\times B:x\ne y\}.
+\]
+For any $(x_0,y_0)\in P_\Theta$, let $O=G\cdot(x_0,y_0)$.
+Then, with actual equality-inclusive relational composition,
+\[
+                  P_\Theta=J;O;K.
+\]
+Thus whenever a distinct-root witness is available, the diversity
+pullback is exactly $(J;O;K)\cap D_{A,B}$ for its root orbital $O$.
+The nonempty diversity pullbacks partition $D_{A,B}$ and induce a
+partition of the set of its root $G$-orbitals.
+
+The diversity pullback is empty if and only if $A=B$,
+$J=K=\Id_A$, and
+\[
+                \Theta=\{(\tau(x),\sigma(x)):x\in A\}.
+\]
+Hence at most one output orbital has empty diversity pullback. In
+this case both maps are equivariant bijections and the missing
+diversity comes from the same original root, even if $Q,R$ are
+different output sorts. No homogeneity, SAP, CCO or word-realisation
+assumption is needed.
+\end{lemma}
+\begin{proof}
+Surjectivity makes $P_\Theta$ nonempty. If $(x,y)\in P_\Theta$,
+some $g\in G$ sends $(\tau(x_0),\sigma(y_0))$ to
+$(\tau(x),\sigma(y))$. Equivariance gives
+$x\,J\,gx_0$ and $gy_0\,K\,y$, so $(x,y)\in J;O;K$.
+Conversely changing the two representatives of a pair in $O$ within
+its $J$- and $K$-classes leaves its output values unchanged. Those
+values lie in $\Theta$, proving the equality. Equivariance assigns
+each root orbital to exactly one output orbital. The asserted
+partitions follow by restricting to the invariant set $D_{A,B}$.
+
+If $P_\Theta$ has no distinct-root pair, its nonemptiness forces
+$A=B$, and it contains some $(x,x)$. If $J\ne\Id_A$, transitivity
+makes every $J$-class have at least two elements. Choose $x'\ne x$
+with $x'Jx$; then $(x',x)\in P_\Theta$, a contradiction. The same
+argument applies to $K$, so both kernels are identity. Transitivity
+now makes the displayed same-point graph exactly the output orbital
+of $(\tau(x),\sigma(x))$, hence exactly $\Theta$. Conversely, for
+injective $\tau,\sigma$ the preimage of this graph consists precisely
+of the diagonal of $A$. The graph is uniquely determined by the two
+maps, proving uniqueness of the empty-diversity exception.
+\end{proof}

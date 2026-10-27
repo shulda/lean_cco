@@ -1,0 +1,470 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=27mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,microtype,hyperref}
+\usepackage{mathrsfs,enumitem,booktabs,array,xcolor,cleveref}
+\hypersetup{hidelinks}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\col}{\operatorname{col}}
+\newcommand{\Age}{\operatorname{Age}}
+\newcommand{\EPPA}{\operatorname{EPPA}}
+\newcommand{\Id}{\mathrm{Id}}
+\newcommand{\Top}{\mathrm{Top}}
+
+% Internal, editable original-source Ramsey proof stack (historical V27).
+\newtheorem{claim}[theorem]{Claim}
+\theoremstyle{definition}
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{construction}[theorem]{Construction}
+\theoremstyle{remark}
+\newtheorem{warning}[theorem]{Warning}
+\crefname{assumption}{Assumption}{Assumptions}
+\providecommand{\K}{\mathcal K}
+\providecommand{\M}{\mathbb M}
+\providecommand{\Hid}{\mathcal H_{\mathrm{coord}}}
+\providecommand{\Hidstar}{\mathcal H_{\mathrm{coord}}^{*}}
+\providecommand{\Hidord}{\mathcal H_{\mathrm{coord}}^{*,<}}
+\providecommand{\HidH}{\mathcal H_{\mathrm{coord},\mathcal H}}
+\providecommand{\HidordH}{\mathcal H_{\mathrm{coord},\mathcal H}^{*,<}}
+\providecommand{\Kcoord}{\mathcal K_{\mathrm{coord}}}
+\providecommand{\Dat}{\mathscr D_{\mathrm{at}}}
+\providecommand{\Rch}{\mathscr R}
+\providecommand{\Rel}{\mathscr T}
+\providecommand{\Prof}{\operatorname{Prof}}
+\providecommand{\Aut}{\operatorname{Aut}}
+\providecommand{\Emb}{\operatorname{Emb}}
+\providecommand{\cl}{\operatorname{cl}}
+\providecommand{\acl}{\operatorname{acl}}
+\providecommand{\Age}{\operatorname{Age}}
+\providecommand{\Her}{\operatorname{Her}}
+\providecommand{\supp}{\operatorname{supp}}
+\providecommand{\Comp}{\operatorname{Comp}}
+\providecommand{\Add}{\operatorname{Add}}
+\providecommand{\id}{\operatorname{id}}
+\providecommand{\meet}{\wedge}
+\providecommand{\join}{\vee}
+\providecommand{\restr}{\mathbin{\upharpoonright}}
+\providecommand{\eq}{\mathrm{eq}}
+\providecommand{\coord}{\mathrm{coord}}
+\providecommand{\topel}{\mathbf 1}
+\providecommand{\botel}{\mathbf 0}
+\providecommand{\starprod}{\mathbin\star}
+\providecommand{\set}[1]{\left\{#1\right\}}
+\providecommand{\abs}[1]{\left|#1\right|}
+\providecommand{\angles}[1]{\left\langle#1\right\rangle}
+\providecommand{\Cell}{\operatorname{Cell}}
+\providecommand{\Sh}{\operatorname{Sh}}
+\providecommand{\Bl}{\operatorname{Bl}}
+
+\title{Exact geometry and rooted EPPA\\\large Ramsey expansions with the expansion property for symmetric CCO structures\\
+\large Consolidated working proof draft}
+\author{Cycle-constrainedness project\\\normalsize Internal research draft --- source-relative proofs}
+\date{26 October 2026 --- mathematical interface consolidation}
+\begin{document}
+\maketitle
+\begin{abstract}
+We consider transitive homogeneous structures in a finite complete
+atomic symmetric binary language whose ages have AP/JEP and semantic
+homomorphic cycle completion (CCO).  Our main \emph{working candidate}
+strengthens ordinary EPPA: for any palette \(S\) admitting strong
+amalgamation on finite \emph{real algebraically closed} spans and
+any nonempty finite \(A_0\subseteq M\), a single finite ordinary
+EPPA witness \(W\) contains \(\operatorname{acl}_M(A_0)\) and allows
+every non-\(S\) clique to be moved by an automorphism into this
+closure, with any selected root moved into \(A_0\) itself.
+This is rooted automorphism-transport closure-relative
+\(S\)-clique faithfulness (rooted ACF); it does not assert
+ordinary unclosed SAP or coherent EPPA.
+
+The proof uses one diversity-rank induction with ordered
+rooted, ordinary, and finite-master phases; ordinary EPPA
+is the full-palette consequence of the strengthened theorem.  The strengthening uses the
+A32 canonical algebraic-hull and exact-sort calculus, concentration
+of unsafe pairs in correspondence classes, unary-closure MI
+quotients and full-support safe palettes, relative rooted
+HKN/R07 witnesses, and a Birkhoff fibre induction producing a
+simultaneous finite master for all exact owner quotients.
+The final rooted gluing handles arbitrary numbers of minimal
+infinite directions, unequal owner joins, and finite exact kernels.
+All essential in-house proof steps are incorporated below.
+
+Part~I also proves a full identity-aware typed exact calculus and
+homogeneity, ordinary AP and homomorphic CCO for simultaneous full
+exact quotients of several independently named original sorts,
+without requiring SAP. This auxiliary foundational extension does
+not assert lifting of quotient automorphisms or broaden the
+one-original-sort EPPA/Ramsey headline.
+
+A separate Part~III proves a finite-language precompact Ramsey expansion
+by pure-clone SAPification, safe finite-index unary splitting and a
+functorial readout from compatible meet-irreducible imaginary coordinate
+tuples. The needed unpublished SAP/CCO Ramsey inputs and the pure-clone
+lemma are included in the internal technical appendices of this manuscript,
+with the published Hubi\v{c}ka--Ne\v{s}et\v{r}il finite-model and
+locally finite Ramsey theorems as external inputs. The Ramsey proof does
+not invoke the EPPA witness construction.
+
+A separate Part~IV proves, relative to the represented exact/phase/quotient
+source calculus, that \emph{every genuine terminal maximal-exact-character
+unary tower has an automatically core terminal type table}. More strongly,
+any distinct terminal labels are joined by an original bipartite atom,
+which cannot occur on a terminal diagonal. Exact trace-product
+identities and canonical original gate lifts give quotient commutation;
+a diversity-rank induction treats identity and nonidentity gates
+separately. The resulting full, \emph{unfiltered} terminal unary
+expansion has the expansion property by simultaneous singleton Ramsey
+comparison. Transition-synchronised subquotient orders and the full
+compatible-MI-tuple readout then yield a finite unary/binary
+Ramsey expansion \emph{with} the expansion property.
+No minimum-image core retraction is used.
+
+Part~V proves that every transitive homogeneous symmetric
+SAP+homomorphic-CCO source with \emph{no finite relative index
+between distinct invariant equivalence relations} has a
+stationary independence relation on all finite real sets,
+including over the empty base. In fact only (NR2) is needed
+in each actual named sort. The proof constructs a canonical
+strong amalgam from the Part~I joint hereditary selector on
+strong exact base-path domains and verifies both directions
+of transitivity and stationarity. We separately record the
+finite-global-quotient obstruction and a relative index-two
+positive control. This SIR conclusion is \emph{not} asserted
+for a general AP-only original reduct; nor is SAP inferred
+merely from absence of finite relative indices.
+
+These are working human-text proofs, not Lean-certified results. The
+main statements concern one original sort and do not assert coherent
+EPPA. Their distinct hypotheses and provider dependencies are collected
+in the scope section; local theorem interfaces specify the inputs needed
+by each construction.
+\end{abstract}
+\tableofcontents
+\section{Setting and semantic cycle completion}
+\begin{definition}
+A \emph{complete atomic symmetric binary language} consists of a finite
+set $\mathcal D$ of irreflexive symmetric binary relation symbols, each
+with its own name, in addition to logical equality. In any finite
+structure under consideration, each pair of distinct vertices has
+exactly one colour $a\in\mathcal D$. A \emph{triangle table} specifies
+which colour triples occur on three distinct vertices. A \emph{triangle-defined
+age} contains exactly the finite complete colourings whose every
+three-vertex substructure is allowed by the table.
+\end{definition}
+
+A \emph{partial diagram} assigns a colour from $\mathcal D$ to some pairs
+of distinct formal vertices, with no relation imposed on the other pairs.
+A colour-preserving \emph{homomorphism} into a complete structure $M$ maps
+vertices to vertices and preserves every assigned colour. It need not be
+injective: vertices not joined by a specified edge may be identified.
+Every specified simple cycle is interpreted as the partial diagram
+consisting of the edges on that cycle.
+
+\begin{definition}[Semantic homomorphic CCO]
+A class $\mathcal K=\Age(M)$ has \emph{semantic homomorphic CCO} if every
+finite partial diagram $P$ with the property that each of its specified
+simple cycles admits a colour-preserving homomorphism into $M$ itself
+admits a colour-preserving homomorphism $P\to M$.
+\end{definition}
+
+The \emph{amalgamation property} (AP) requires an amalgam of any two
+embeddings over a common finite structure; \emph{strong} amalgamation
+(SAP) additionally requires that the two images meet exactly in the image
+of their common domain. We never assume SAP of the original age.
+
+\begin{definition}[Ordinary EPPA]
+A class of finite structures has the \emph{extension property for partial
+automorphisms} if for every $A$ in the class there is a finite $B$ in
+the class containing $A$ such that \emph{every} isomorphism between
+induced substructures of $A$ extends to an automorphism of $B$.
+One common $B$ must work for all such maps. No coherent choice of these
+extensions is required.
+\end{definition}
+
+Theorem~\ref{thm:main-rooted-acf} will be proved by a common,
+phased induction.  At each diversity rank the rooted statement
+precedes its ordinary EPPA consequence, which in turn supplies the
+ordinary local providers needed for the finite owner master.
+The two roles of protected rooted witnesses and unprotected
+owner masters remain distinct.  The earlier independently reviewed
+ordinary EPPA induction is retained as an archival comparison
+source, but is not invoked in the main phased proof.
+
+\section*{Reading routes}
+\addcontentsline{toc}{section}{Reading routes}
+Each route starts at its headline statement and follows the principal
+construction. The cited providers state the foundational inputs needed
+at each step.
+
+\paragraph{Rooted ACF and ordinary EPPA.}
+Start with \cref{thm:main-rooted-acf,thm:main-ordinary-eppa} and the
+phase order $P_n<O_n<U_n$ in \cref{sec:global-phased-induction}.
+The rank step \cref{lem:acf-rank-step} uses the normalized relative MI
+witness \cref{lem:acf-relative-mi-normal} as its direct construction.
+Its fine-owner ordinary EPPA providers and joint owner master
+\cref{thm:acf-owner-master} are invoked only on strict lower-rank exact
+quotients; finite exact kernels are restored by \cref{lem:acf-finite-lift}.
+The MI construction uses the HKN/R07 reservoir and its
+all-row correction actions. Ordinary EPPA is the full-palette
+specialization of rooted ACF; the owner-master phase at the same rank
+comes afterwards.
+
+\paragraph{Ramsey expansions.}
+Start with \cref{thm:ramsey-general-ap} and the pure-clone cover
+\cref{thm:internal-clone-sap}. Safe splitting and finite-cover elimination
+lead to the terminal theorem \cref{thm:internal-ramsey-terminal}.
+For that theorem, follow the direct hidden-SAP proof
+\cref{thm:typed-hidden-sap}, the qualified bounded-obstruction result
+\cref{cor:typed-bounded-hidden}, actual hidden irreducibility and direct HN
+transfer \cref{lem:typed-terminal-hidden-irreducible,thm:typed-direct-irreducible-unary-HN}, and
+\cref{lem:typed-finite-ordered-real-readout}.
+The final AP transfer restricts the ordered clone hidden class to its
+unary-closed pure-imaginary sorts, then reads compatible MI tuples using
+\cref{thm:ramsey-tuple-readout,lem:ramsey-template-bijection}.
+The older safe-splitting and sparse-graph/pruning results in the appendix
+remain inputs to this route. The second proof of hidden SAP is an
+alternative representative-synchronization construction.
+
+\paragraph{Expansion property.}
+Read \cref{thm:ep-unfiltered-main} together with the Ramsey route.
+The additional chain is exact trace product and quotient commutation,
+automatic core of the genuine terminal labels, the simultaneous-singleton
+criterion, synchronized subquotient orders, and same-host full-code EP
+transfer. These are
+\cref{thm:ep-trace-product,thm:ep-quotient-tower,thm:ep-automatic-core,thm:ep-finite-core-criterion,thm:ep-terminal-orders,lem:ep-tuple-transfer}.
+The AP-only character-completion provider supplies the exact-quotient
+tower; the relative EP steps compose by
+\cref{lem:foundational-relative-EP-composition}.
+
+\paragraph{Stationary independence.}
+Read \cref{thm:sir-no-finite-cover} through the strong typed selector
+\cref{thm:typed-HS}, then the base-path PC calculation, selected amalgam
+and stationarity verification
+\cref{lem:sir-free-span-PC,prop:sir-HS-amalgam,thm:sir-HS-positive}.
+This route assumes actual real SAP and sortwise NR2. The finite-global-
+quotient obstruction and relative-index-two control are separate
+boundary results in \cref{sec:sir-scope}.
+
+\input{sections/triangle_fullness.tex}
+\section*{Part I. Foundations, exact geometry, and completion}
+\addcontentsline{toc}{section}{Part I. Foundations, exact geometry, and completion}
+\input{sections/sparse_labelled_graphs.tex}
+\input{sections/cco_finite_fibres.tex}
+\input{sections/exact_geometry.tex}
+\input{sections/finite_orbit_avoidance.tex}
+\input{sections/unary_fresh_frame_sap.tex}
+\input{sections/foundational_sap_collision_unfolding.tex}
+\input{sections/finite_packet_kernel_constraints.tex}
+\input{sections/typed_invariant_quotient_transport.tex}
+\input{sections/simultaneous_typed_exact_quotients.tex}
+\input{sections/rigid_exact_groupoid_foundations.tex}
+\input{sections/finite_relative_parity_exact_closure.tex}
+\input{sections/ep_safe_ap_character_completion.tex}
+\input{sections/exact_lattice_crt.tex}
+\input{sections/terminal_invariant_raw_exact.tex}
+\input{sections/exact_gluing_geometry.tex}
+\input{sections/finite_packets.tex}
+\input{sections/anchored_relative_completion.tex}
+\input{sections/cco_raw_hull.tex}
+\input{sections/harmless_exact_owners.tex}
+\input{sections/global_correspondence.tex}
+\input{sections/direct_owner_closure.tex}
+\input{sections/owner_transversal_direct.tex}
+\input{sections/finite_locality.tex}
+\input{sections/binary_unary_irreducible_local_cover.tex}
+\input{sections/unary_hn_transfer.tex}
+\input{sections/typed_strong_domains.tex}
+\input{sections/profile_completion_from_helly.tex}
+\input{sections/typed_pc_fixedpoint.tex}
+\input{sections/terminal_strong_powers.tex}
+\input{sections/typed_hereditary_selectors.tex}
+\input{sections/safe_trace_selector.tex}
+\input{sections/owner_covariant_readings.tex}
+\input{sections/rooted_acf_geometry.tex}
+\input{sections/maximal_exact_cores.tex}
+
+\input{sections/full_code_tuple_ep_transfer.tex}
+\input{sections/reset_midpoint_order_ep.tex}
+\section*{Part II. Finite witnesses and the phased EPPA induction}
+\addcontentsline{toc}{section}{Part II. Finite witnesses and the phased EPPA induction}
+\input{sections/exact_eppa_providers.tex}
+\input{sections/hkn_packet_reservoir.tex}
+\input{sections/full_rows_pc_decoder.tex}
+\input{sections/orbit_safe_packet_completion.tex}
+\input{sections/rooted_acf_relative_mi.tex}
+\input{sections/rooted_acf_master.tex}
+\input{sections/rooted_acf_main.tex}
+\input{sections/unified_induction.tex}
+
+\section*{Part III. Ramsey expansions via compatible imaginaries}
+\addcontentsline{toc}{section}{Part III. Ramsey expansions via compatible imaginaries}
+\input{sections/ramsey_ap_from_clones.tex}
+
+\section*{Part IV. Automatic terminal core and expansion property}
+\addcontentsline{toc}{section}{Part IV. Automatic terminal core and expansion property}
+\input{sections/expansion_property_exact_geometry.tex}
+\input{sections/expansion_property_automatic_core.tex}
+\input{sections/expansion_property_unfiltered.tex}
+
+\section*{Part V. Stationary independence without finite relative covers (SAP case)}
+\addcontentsline{toc}{section}{Part V. Stationary independence without finite relative covers (SAP case)}
+\input{sections/stationary_independence_from_HS.tex}
+\input{sections/stationary_independence_scope.tex}
+
+\section{Scope, proof dependencies, and audit status}
+Theorem~\ref{thm:main-rooted-acf} is the new headline
+working candidate.  Ordinary EPPA is the full-palette
+Corollary~\ref{thm:main-ordinary-eppa}.  The owner-master
+theorem is conditional on ordinary EPPA for all actual exact
+quotients and is invoked only at smaller ranks during the
+rooted phase.  This is an explicit noncircular phase order.  The target in the general AP-not-SAP case is
+\(\operatorname{acl}_M(A_0)\), and the strong \(S\)-hypothesis is
+only on algebraically closed finite amalgamation spans.
+
+The new algebraic and finite owner arguments are stated with
+their proofs.  The most delicate inherited part is the
+\(\Gamma\)-safe completion of unrecorded HKN/R07 packet matrices
+and preservation of all full-row correction automorphisms
+under the fixed-named-sort hereditary selector and
+path-consistency decoder.  The CCO-specific canonical real-hull
+theorem, global correspondence, exact pseudocomplement calculus,
+and relative MI construction are also load-bearing.
+No AP-only classification theorem, BBGTV/CFSG assertion, or
+standalone external FOUND result is used.
+
+The Ramsey theorem in Part~III uses the internal SAPification and
+hidden-structure construction, independently of the EPPA witnesses.
+The separate \cref{thm:ep-automatic-core,thm:ep-unfiltered-main}
+establish automatic core and the expansion property for the
+\emph{unfiltered} terminal construction. Its dependency chain is
+\cref{thm:ep-trace-product,thm:ep-quotient-tower,thm:ep-automatic-core,thm:ep-finite-core-criterion,thm:ep-terminal-orders,lem:ep-tuple-transfer}.
+The AP-only character completion and its termination are provided in
+Part~I by \cref{sec:ep-ap-only-safe-character,lem:exact-character-rank-drop};
+they do not import the later SAP-specific terminalisation. The final
+order and tuple arguments use the Ramsey provider, not EPPA.
+
+The main positive SIR conclusion of Part~V is
+\cref{thm:sir-no-finite-cover}: SAP+homomorphic CCO and no
+proper finite relative-index equivalence interval imply
+stationary independence on every finite real base (including
+the empty base). The stronger named-sort result requires
+only (NR2) and has its construction and detailed proof in
+\cref{lem:sir-free-span-PC,prop:sir-HS-amalgam,thm:sir-HS-positive}.
+These statements use the \emph{full invariant-equivalence
+lattice}, rather than merely the exact sublattice, and the
+strong/SAP rather than equality-inclusive AP-only endpoint
+calculus. The latter does not support this proof directly,
+as shown by \cref{rem:sir-HS-AP-firewall}.
+For context, \cref{thm:sir-finite-global-no} excludes SIR on
+the original one-sort reduct with a finite global quotient;
+\cref{prop:sir-relative-positive} shows that a relative
+index-two packet need not prevent SIR. These are boundary
+controls, not a general SIR classification. No SIR is
+inferred from Ramsey+EP or EPPA.
+No minimality of the expansion language, coherent EPPA, general
+multi-original-sort theorem, or non-CCO extension is asserted.
+
+The manuscript records human proofs with explicit imported hypotheses;
+none is claimed to be Lean-certified. The current task is to improve
+these interfaces and their proofs so that modules can be formalized
+independently. Formalization of a module need not wait for a separate
+whole-manuscript human audit. The evolving audit findings and remaining
+obligations are recorded in the accompanying continuity document.
+
+% Historical final-page enlargement suppressed: appendix now follows.
+
+
+\appendix
+\section*{Internal Ramsey proof sources: scope and editorial status}
+\addcontentsline{toc}{section}{Appendix: internal Ramsey proof sources}
+The preceding AP Ramsey chapter is not conditional on the availability of
+an unpublished outside document: the two non-published source inputs, A108
+pure-clone SAPification and the Ramsey portion of the former V27 referee
+draft, are reproduced as editable proof sections below. Their proofs use
+only the published combinatorial theorems cited in the bibliography and
+internal exact/CCO lemmas. The preferred extraction retains the standing source contracts, actual
+quotient notation, and the typed proof route. Shared sparse-graph and
+profile-Helly completion arguments are proved once in Foundations.
+The complete 296-page source before this cleanup is preserved in the
+accompanying source archive; older one-sort and alternative proofs are
+not premises of the preferred route.
+
+For the preferred Ramsey route, use the direct unary-algebraic-closure
+proof of \cref{thm:typed-hidden-sap}, followed by the qualified bounded
+obstruction, actual hidden irreducibility, direct HN transfer and full-code
+readout. The sparse labelled graph, safe splitting, factorization-forest
+pruning and finite-cover elimination remain live support. The typed
+compression proof invokes the factorization-forest theorem directly.
+Historical one-sort, representative-synchronization and ordinary-EPPA
+alternatives remain preserved in the source archive.
+\input{sections/ramsey_clone_sap.tex}
+\input{sections/ramsey_v27_core.tex}
+
+
+
+\begin{thebibliography}{9}
+\small
+\bibitem{Erdos1959}
+P.~Erd\H{o}s, \emph{Graph theory and probability},
+Canadian Journal of Mathematics \textbf{11} (1959), 34--38,
+\href{https://doi.org/10.4153/CJM-1959-003-9}{doi:10.4153/CJM-1959-003-9}.
+The required existence statement is proved internally in
+\cref{cor:high-girth-high-chromatic}, as the one-label case of
+\cref{lem:sparse-labelled-graph}. This entry records attribution.
+
+\bibitem{HKN}
+J.~Hubi\v{c}ka, M.~Kone\v{c}n\'y, and J.~Ne\v{s}et\v{r}il,
+\emph{All those EPPA classes (Strengthenings of the
+Herwig--Lascar theorem)},
+\href{https://arxiv.org/abs/1902.03855}{arXiv:1902.03855},
+Theorems~1.1--1.2.  We use their finite-language form allowing
+unary functions, a permutation group of the language, irreducible
+structure faithfulness and prescribed finite tree-amalgam locality.
+
+\bibitem{Neumann1954}
+B.~H.~Neumann, \emph{Groups covered by finitely many cosets},
+Publicationes Mathematicae Debrecen \textbf{3} (1954), 227--242.
+We use the finite-coset covering theorem: a group cannot be the
+union of finitely many cosets of infinite-index subgroups.
+
+\bibitem{V27-Ramsey}
+\emph{Symmetric CCO: completions, Ramsey expansions and EPPA},
+internal V27 referee draft (August 2026), especially safe finite-index
+splits, typed hidden SAP/bounded obstructions, and terminal Ramsey theorem.
+The necessary source-level Ramsey proof is reproduced, editable, in
+the technical appendices; this entry records its historical provenance.
+
+\bibitem{HN-Ramsey}
+J.~Hubi\v{c}ka and J.~Ne\v{s}et\v{r}il,
+\emph{All those Ramsey classes (Ramsey classes with closures and
+forbidden homomorphisms)}, Advances in Mathematics \textbf{356}
+(2019), 106791.  The ambient finite-model Ramsey and locally finite
+Ramsey-subclass theorems are applied directly in the included technical
+appendix.
+
+\bibitem{Braunfeld}
+S.~Braunfeld, \emph{Ramsey expansions of $\Lambda$-ultrametric
+spaces}, arXiv:1710.01193 (2017; revised and subsequently published).
+Theorem 7.11 concerns the generic $\Lambda$-ultrametric
+\emph{reduct}; the fine-coloured expansion property is proved
+separately by the actual V27 relative-reset and tuple-support arguments,
+not by this reduct theorem.
+
+\bibitem{Kufleitner}
+M.~Kufleitner, \emph{A proof of the factorization forest theorem},
+arXiv:0710.5130 (2007).
+\bibitem{ErdosGirthChromatic}
+P.~Erd\H{o}s, \emph{Graph theory and probability},
+Canad. J. Math. 11 (1959), 34--38.
+\bibitem{NeumannCover}
+B.~H. Neumann, \emph{Groups covered by permutable subsets},
+J. London Math. Soc. 29 (1954), 236--248.
+
+\end{thebibliography}
+\end{document}

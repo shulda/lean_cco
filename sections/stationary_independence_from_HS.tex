@@ -1,0 +1,558 @@
+% SIR02, 19 October 2026. Positive SAP+NR2 SIR from the joint
+% hereditary selector, with the full three-PC and transitivity audit.
+% This is NOT a theorem about arbitrary AP-not-SAP original reducts.
+\section{Stationary independence with no finite relative equivalence covers}
+\label{sec:sir-selector}
+
+\begin{theorem}[SIR in the no-finite-cover-index SAP case]
+\label{thm:sir-no-finite-cover}
+Let \(M\) be a countable transitive homogeneous structure in a
+finite complete atomic symmetric binary language. Suppose
+\(\Age(M)\) has strong amalgamation (SAP) and semantic
+homomorphic simple-cycle CCO. Assume that for every pair
+\(E<F\) of \(\Aut(M)\)-invariant equivalence relations,
+the relative index
+\[
+       [F:E]=\#\{E\text{-classes contained in one }F\text{-class}\}
+\]
+is infinite. Then \(M\) admits an \(\Aut(M)\)-invariant
+\emph{stationary independence relation on all finite real sets},
+including independence over the empty base.
+
+In fact, the same conclusion holds for a finite-sorted,
+named-sort homogeneous symmetric SAP+CCO structure as soon as
+every named sort satisfies \emph{(NR2)}: no proper invariant
+equivalence interval of relative index two. The independence
+is given explicitly by the selected strong exact base-path
+domains in \eqref{eq:sir-base-domain}--\eqref{eq:sir-independence}.
+\end{theorem}
+\begin{proof}
+The no-finite-relative-index hypothesis, taken in the
+\emph{full lattice} of invariant equivalences (not merely
+its exact sublattice), implies (NR2) on the one sort.
+Apply the joint hereditary selector theorem
+\cref{thm:typed-HS}; the source has the required strong
+typed exact-domain calculus because it has SAP and CCO.
+The selected-amalgam construction and the complete
+verification of the SIR axioms are given below in
+\cref{lem:sir-free-span-PC,prop:sir-HS-amalgam,thm:sir-HS-positive}.
+The named-sorted assertion is precisely the (NR2)
+hypothesis of those results; automorphisms preserve
+all named sort tags.
+\end{proof}
+
+\begin{remark}[Precise boundary of the result]
+\label{rem:sir-positive-boundary}
+The hypothesis is a prohibition of \emph{finite relative
+indices between any two distinct invariant equivalences};
+it is not just the absence of a finite \emph{global}
+quotient. We assume SAP of the actual age on the
+\emph{real} vertices; AP and CCO alone do not imply SAP,
+even without finite relative indices. In the stronger
+named-sorted version, only (NR2) is needed and it
+is checked inside \emph{each named sort}, while the
+language keeps those unary sort names. The theorem
+does not assert a SIR on an unlabelled reduct obtained
+by forgetting the sort names or on a general AP-only
+exact quotient. Nor does it use the Ramsey, expansion
+property or EPPA conclusions of the manuscript.
+\end{remark}
+
+Here we work in the \emph{strong} typed setting of
+\cref{sec:typed-strong,sec:typed-selectors}, not in the
+raw equality-inclusive AP-only quotient calculus.
+Let \(U\) be the homogeneous limit of a finite-sorted
+complete atomic symmetric binary triangle Fra\"iss\'e
+class with SAP and semantic homomorphic CCO.
+Assume (NR2): no named sort has a proper
+invariant-equivalence interval of relative index two.
+A stronger no-finite-relative-index hypothesis
+certainly implies (NR2). By
+\cref{thm:typed-HS} there is one
+\emph{joint hereditary selector}
+\[
+ h_{ij}:\mathcal H_{ij}\longrightarrow L_{ij}
+\]
+on the original \emph{strong diversity} exact families,
+such that \(h(D)\in D\), \(h(\bar D)=\overline{h(D)}\),
+and \(h\) preserves \emph{all three} typed PC inclusions.
+In addition,
+\[
+ E\subseteq D,\qquad h(D)\in E
+       \quad\Longrightarrow\quad h(E)=h(D).
+ \tag{HS}\label{eq:sir-HS}
+\]
+No equivariance under an arbitrary permutation
+of \emph{sort names} is required: the actual
+language automorphisms preserve the named sorts
+and old atomic relation symbols.
+
+For finite complete induced \(A,B\) with a
+common induced substructure \(C\), first take
+disjoint formal copies over \(C\), so
+\(A\cap B=C\). For \(a\in A\setminus C\)
+and \(b\in B\setminus C\) define the
+\emph{exact base-path menu}
+\[
+ D_C(a,b)=
+ \begin{cases}
+ L_{\operatorname{sort}(a),\operatorname{sort}(b)},
+       &C=\varnothing,\\[1mm]
+ \displaystyle\bigcap_{c\in C}
+ \left(
+ \{\col(a,c)\}*\{\col(c,b)\}
+ \right), &C\ne\varnothing .
+ \end{cases}
+ \tag{SIR-D}\label{eq:sir-base-domain}
+\]
+All products in this section are \emph{strong}
+typed products of diversity atoms. Since
+\(a,b\notin C\), every displayed edge to \(C\)
+is a genuine diversity edge, even if its
+endpoint sort labels happen to coincide.
+
+\begin{lemma}[The strong free-span domain network is PC]
+\label{lem:sir-free-span-PC}
+Every \(D_C(a,b)\) is a nonempty member of the
+original strong exact family
+\(\mathcal H_{\operatorname{sort}(a),\operatorname{sort}(b)}\).
+Put singleton literal domains on all pairs
+inside \(A\) or \(B\), and \(D_C(a,b)\)
+on the cross pairs. Every triple of
+\emph{distinct} vertices of \(A\cup B\)
+satisfies all three typed PC inclusions
+\eqref{eq:typed-PC}. In particular, this
+claim also holds for the empty base.
+\end{lemma}
+\begin{proof}
+Each factor in \eqref{eq:sir-base-domain}
+is a product of atomic singleton exact
+menus and therefore is exact. Strongly
+amalgamate \(A,B\) over \(C\) using SAP.
+Every actual cross edge in that amalgam
+belongs to \emph{all} displayed factors,
+by the triangles through \(C\), so the
+intersection is nonempty and exact.
+For an empty base the top is exact.
+
+Triangles entirely within \(A\) or
+within \(B\) are literal legal triangles.
+For \(a\in A\setminus C\),
+\(b\in B\setminus C\), and
+\(c\in C\), write
+\(u=\col(a,c)\), \(v=\col(c,b)\),
+\(D=D_C(a,b)\). By its definition,
+\(D\subseteq\{u\}*\{v\}\).
+The other two PC inclusions hold because
+\emph{some} chosen strong amalgam
+realises a cross atom \(d\in D\)
+and the triangle \(u,v,d\).
+All singleton coordinates are
+therefore supported.
+
+For the only other mixed triangle
+type take \(a,a'\in A\setminus C\),
+\(b\in B\setminus C\), and let
+\(p=\col(a,a')\).
+In the old triangle \(a,a',c\),
+\(\col(a,c)\in\{p\}*\{\col(a',c)\}\)
+for every \(c\in C\).
+Associativity and finite-meet
+distributivity for the
+\emph{nonempty exact} menus give
+\[
+\begin{split}
+ D_C(a,b)
+ &\subseteq
+ \bigcap_{c\in C}
+ \bigl(\{p\}*
+       (\{\col(a',c)\}*\{\col(c,b)\})\bigr)\\
+ &=\{p\}*D_C(a',b).
+\end{split}
+ \tag{SIR-PC1}\label{eq:sir-PC-first}
+\]
+The reverse-support inclusion is
+\[
+   D_C(a',b)\subseteq\{\bar p\}*D_C(a,b),
+\]
+proved by interchanging \(a,a'\) and
+taking the \emph{typed converse}.
+The converse cannot be omitted
+when \(a,a'\) have different
+named sorts.
+Finally a strong amalgam witnesses
+two actual cross colours
+\(d\in D_C(a,b)\) and
+\(d'\in D_C(a',b)\) with
+\(p\in\{d\}*\{\bar d'\}\);
+hence \(p\) belongs to the
+appropriately typed product of
+the two cross domains. These
+are exactly all three PC
+coordinates. The analogous case
+with two vertices of \(B\setminus C\)
+follows by converse and symmetry.
+
+If \(C=\varnothing\), the same
+argument uses the \emph{strong}
+top absorption identity
+\(\{p\}*L=L\), proved using SAP
+in \cref{lem:typed-exact-products};
+the third coordinate is again
+witnessed by a strong amalgam.
+Repeated \emph{sort labels} cause
+no change: all actual vertices of
+a mixed triple remain distinct.
+\end{proof}
+
+\begin{proposition}[Canonical strong independent amalgam]
+\label{prop:sir-HS-amalgam}
+There is one finite complete amalgam
+\(A\otimes_C^h B\) on the literal
+disjoint union over \(C\), agreeing
+with the two input structures and
+assigning
+\[
+          \col(a,b)=h(D_C(a,b))
+       \quad(a\in A\setminus C,\ b\in B\setminus C).
+ \tag{SIR-A}\label{eq:sir-HS-amalgam}
+\]
+It lies in \(\Age(U)\).
+It depends only on the two
+complete finite structures and
+their \emph{named} common base
+\(C\), is natural under embeddings
+of the ENTIRE SPAN that preserve
+that specified common base as
+the exact intersection of the
+two factors, commutes with
+converse symmetry, and uses
+no linear ordering of vertices.
+We do NOT claim that enlarging
+the base from \(C\) to
+\(C'\supsetneq C\) leaves the
+selected cross colour unchanged:
+the exact base-path menu can
+shrink. Its behaviour under
+base enlargement is precisely
+the survivor-heredity calculation
+in the transitivity proof below.
+\end{proposition}
+\begin{proof}
+The selector fixes each atomic
+singleton and preserves all
+typed PC triples by
+\cref{thm:typed-HS}.
+Apply it to the network of
+\cref{lem:sir-free-span-PC}.
+All three singleton output domains
+on a triple form a legal atomic
+triangle; all old triangles and
+literal input pair atoms are fixed.
+The resulting complete labelled
+structure is triangle-legal,
+hence belongs to the
+triangle-defined age of \(U\).
+Converses of new cross colours
+agree by converse compatibility.
+The exact menu \eqref{eq:sir-base-domain}
+is defined solely from the two
+finite input types and \(C\);
+no arbitrary choice of a strong
+amalgam used in the preceding
+\emph{existence proof} enters the
+resulting output. Its formula
+commutes with embeddings of the
+input span.
+\end{proof}
+
+For arbitrary finite real subsets
+\(A,B,C\subseteq U\), interpret
+\(A\downarrow_C^h B\) by first
+adjoining \(C\) to both sides.
+For convenience suppose
+\(C\subseteq A\cap B\). Define
+\[
+ A\downarrow_C^h B
+ \quad\Longleftrightarrow\quad
+ A\cap B=C\quad\text{and}\quad
+ \col(a,b)=h(D_C(a,b))
+ \quad(a\in A\setminus C,\ b\in B\setminus C).
+ \tag{SIR-I}\label{eq:sir-independence}
+\]
+When applying this notation to
+\(A,B,C\) without either inclusion,
+use \((A\cup C)\downarrow_C^h(B\cup C)\).
+
+\begin{theorem}[The hereditary selected amalgam is stationary]
+\label{thm:sir-HS-positive}
+Under the hypotheses of
+\cref{thm:typed-HS}, the relation
+\(\downarrow^h\) from
+\eqref{eq:sir-independence} is an
+\emph{Aut-invariant stationary independence
+relation on finite real vertex sets}.
+It satisfies symmetry, existence,
+monotonicity, both directions of
+transitivity, and stationarity.
+Consequently every finite-sorted
+symmetric complete atomic SAP+
+homomorphic-CCO class with no proper
+finite-relative-index invariant
+equivalence cover admits a SIR.
+In particular, any named terminal SAP source
+constructed in Part~III with homomorphic CCO
+and (NR2) in each of its actual named sorts
+satisfies this theorem. This is conditional
+on the terminal \emph{age itself} having SAP;
+neither terminality nor reasonable unary
+expansion alone is being used to infer SAP.
+\end{theorem}
+\begin{proof}
+\emph{Invariance and symmetry.}
+Atomic pair colours and the named
+sort tags are preserved by old
+automorphisms. Hence the exact
+menus \(D_C(a,b)\), and their
+fixed named selector values, are
+invariant. The identity
+\(D_C(b,a)=\overline{D_C(a,b)}\),
+together with converse compatibility
+of \(h\), gives symmetry.
+
+\emph{Existence.}
+For finite \(A,B,C\) with the
+same prescribed induced base
+\(C\), first take a formal
+copy of \(A\) over \(C\) disjoint
+from \(B\) outside \(C\).
+Use \cref{prop:sir-HS-amalgam}
+to construct the finite
+complete canonical strong amalgam.
+It belongs to the age, and the
+Fra\"iss\'e extension property
+realises it over the
+\emph{fixed} actual copy of \(B\)
+inside \(U\). Its image of the
+formal \(A\)-copy is independent
+from \(B\) over \(C\) and has
+the required type over \(C\).
+No condition of algebraically
+closed base is being hidden;
+SAP supplies the literal strong
+amalgam on these real vertices.
+
+\emph{Monotonicity.}
+Dropping vertices from one
+independent side keeps each
+remaining cross equality
+\eqref{eq:sir-independence}
+unchanged. More generally,
+the forward direction of
+transitivity below also proves
+the standard base-monotonicity
+axiom.
+
+\emph{Transitivity.}
+We verify, with the standard
+identification of subsets with
+their unions with the base,
+\[
+ A\downarrow_C^h(B\cup D)
+ \quad\Longleftrightarrow\quad
+ \bigl(A\downarrow_C^h B
+       \ \text{and}\
+       A\downarrow_{B\cup C}^h D\bigr).
+ \tag{SIR-T}\label{eq:sir-transitivity}
+\]
+Suppose the left side holds.
+The first right conjunct is
+monotonicity. Take new vertices
+\(a\in A\setminus(B\cup C)\),
+\(d\in D\setminus(B\cup C)\).
+The exact menu over the enlarged
+base is
+\[
+ D_{B\cup C}(a,d)=
+ D_C(a,d)\cap
+ \bigcap_{b\in B\setminus C}
+ (\{\col(a,b)\}*\{\col(b,d)\}).
+ \tag{SIR-B}\label{eq:sir-base-extension}
+\]
+The actual triangle through
+each \(b\) contains
+\(\col(a,d)=h(D_C(a,d))\);
+hence this selected atom lies
+in the nonempty exact
+\(D_{B\cup C}(a,d)\).
+By survivor heredity
+\eqref{eq:sir-HS},
+\[
+ h(D_{B\cup C}(a,d))
+       =h(D_C(a,d))=\col(a,d).
+\]
+Thus \(A\downarrow_{B\cup C}^h D\).
+
+Conversely suppose both right
+conjuncts hold. The disjointness
+conditions imply that no pair
+from \(A\setminus C\) and
+\((B\cup D)\setminus C\)
+is literally the same vertex.
+The required cross colours
+to \(B\) are already selected.
+For \(a\in A\setminus C\)
+and \(d\in D\setminus(B\cup C)\),
+let \(q=h(D_C(a,d))\).
+For every \(b\in B\setminus C\)
+the triple of exact/literal
+domains
+\[
+  D_C(a,b),\
+  \{\col(b,d)\},\
+  D_C(a,d)
+\]
+satisfies all three PC
+conditions by
+\cref{lem:sir-free-span-PC},
+now applied to the left side
+\(A\) and the right finite
+structure \(B\cup D\) over
+\(C\). Applying the joint
+selector gives
+\[
+ q\in
+   \{h(D_C(a,b))\}*
+   \{\col(b,d)\}
+ = \{\col(a,b)\}*
+   \{\col(b,d)\},
+\]
+where the last equality is
+\(A\downarrow_C^h B\).
+For \(b\in C\) the same
+membership follows directly
+from the definition of
+\(D_C(a,d)\). Consequently
+\(q\) belongs to EACH of the
+original strong base-path
+constraints defining
+\(D_{B\cup C}(a,d)\).
+This simultaneously proves
+that the enlarged-base exact
+menu is NONEMPTY and that
+\[
+  q\in D_{B\cup C}(a,d)
+                  \subseteq D_C(a,d).
+\]
+The hypotheses of survivor
+heredity
+\eqref{eq:sir-HS} are therefore
+met, and they give
+\(h(D_{B\cup C}(a,d))=q\).
+No arbitrary selector choice
+was recomputed after changing
+the base.
+By the other right conjunct,
+\(\col(a,d)=h(D_{B\cup C}(a,d))=q\).
+This proves all cross colours
+needed for the left side.
+The argument uses \emph{both}
+full PC preservation and
+heredity; either property alone
+would not justify transitivity.
+
+\emph{Stationarity.}
+Suppose \(A\equiv_C A'\),
+and both are independent
+from \(B\) over \(C\).
+The isomorphism \(A\cong_C A'\)
+preserves each colour
+\(\col(a,c)\), while the
+named set \(B\) fixes
+each \(\col(c,b)\). Therefore
+\[
+ D_C(a,b)=D_C(a',b)
+\]
+for corresponding cross
+pairs, with identical tagged
+endpoint sorts. Their selected
+cross atoms are the same
+\(h(D_C)\). Thus the given
+isomorphism together with
+the identity on \(B\) is
+a finite induced isomorphism
+\(AB\cong_B A'B\).
+Homogeneity extends it,
+showing \(A\equiv_{BC}A'\).
+The statement includes the
+empty base and the full
+unary sort language.
+\end{proof}
+
+\begin{remark}[Why SAP cannot be deleted from this argument]
+\label{rem:sir-HS-AP-firewall}
+The positive theorem applies to
+the \emph{SAP} no-finite-cover
+source, not automatically to
+the original AP-only
+class from Part~IV. A homogeneous
+symmetric binary homomorphic-CCO
+source can have \emph{no}
+finite-relative-index invariant
+equivalence cover and nevertheless
+fail SAP.
+
+Indeed let \(M=I\times J\) for
+infinite pure sets \(I,J\).
+Name exactly the three symmetric
+diversity colours: same \(I\)
+coordinate, same \(J\) coordinate,
+and different in both.
+This source is homogeneous,
+with invariant equivalence lattice
+\(\{\Id,E_I,E_J,\Top\}\);
+all proper cover indices are
+infinite. Homomorphic CCO holds:
+an inconsistency in the row
+coordinate is precisely a
+specified row-disequality edge
+closing a path of forced row
+equalities; likewise for columns.
+Such a contradictory path
+plus edge is a noncompletable
+specified simple cycle.
+If no such contradiction occurs,
+choose independent new row
+values for row-equality components
+and column values for
+column-equality components,
+giving a homomorphic completion.
+But SAP fails: over two
+opposite corners
+\((i_0,j_0),(i_1,j_1)\)
+with both coordinates different,
+the cell \((i_0,j_1)\)
+is the \emph{unique} point
+simultaneously in the first
+row and second column.
+Two copies of that one-point
+extension cannot remain disjoint
+in any amalgam over the
+two original corners.
+
+The selector theorem
+\cref{thm:typed-HS} uses
+\emph{strong} products and
+strong exact domains in an
+SAP language. One cannot
+replace them by equality-inclusive
+AP products or infer SIR
+on the original grid merely
+from \eqref{eq:sir-HS-amalgam}.
+A separate closure-aware
+or compatible-imaginary
+interpretation is required
+for the general AP-only
+case. No negative SIR claim
+about this grid is being made.
+\end{remark}

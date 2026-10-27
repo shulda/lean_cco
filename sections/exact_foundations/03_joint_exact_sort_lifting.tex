@@ -1,0 +1,221 @@
+\begin{theorem}[Typed joint lifting for finitely many original exact quotients]
+\label{thm:typed-joint-exact-lifting}
+Let $N$ be a countable homogeneous finite complete typed binary
+structure satisfying the hypotheses of
+\cref{thm:full-typed-exact-balls}.  For each original named
+transitive sort $s$, choose finitely many invariant \emph{full exact}
+equivalences $J$ on $N_s$, with $\Id_s$ included.
+Form the many-sorted structure $N_{\mathcal J}$ whose sorts are
+all the $N_s/J$ (identifying $N_s/\Id_s$ with the original real
+sort $N_s$) and whose binary relations name \emph{all actual}
+$\Aut(N)$-pair orbitals between the indicated sorts.
+Then every finite partial isomorphism of $N_{\mathcal J}$ is
+induced by an automorphism of the original $N$, acting on its
+actual quotient classes.  No functorial choice of such lifts or
+group-theoretic section is asserted.
+\end{theorem}
+\begin{proof}
+Fix one finite partial isomorphism $f$ of the displayed joint
+binary structure.  We show how to extend it by any original real
+point $x\in N_u$ not yet in its domain.  Enumerate its finitely
+many current parameters as $d_1,\ldots,d_n$, where
+$d_i\in N_{t_i}/J_i$; original real parameters are the case
+$J_i=\Id_{t_i}$.  For each $i$ choose an original representative
+$c_i\in N_{t_i}$ of $d_i$, and let
+$a_i:u\to t_i$ be the actual original atomic pair orbital of
+$(x,c_i)$, allowing logical equality.  Put
+$D_i=a_i;J_i\subseteq N_u\times N_{t_i}$.
+This is a nonempty full exact represented relation by
+\cref{thm:full-typed-exact-balls}(ii), and is $J_i$-saturated
+on the right.  Moreover $D_i$ is precisely the old inverse
+image of the mixed $\Aut(N)$-orbital of $(x,d_i)$:
+any such pair is transported by an original automorphism;
+conversely if $(y,b)\in a_i;J_i$, some $c\,J_i\,b$ has
+original pair orbital $a_i$ with $y$, and original pair
+homogeneity moves $(x,c_i)$ to $(y,c)$, hence sends $d_i$
+to $[b]_{J_i}$.  This also covers $J_i=\Id$ and true
+identity $a_i=\Id_u$.
+
+Choose arbitrary old representatives $b_i$ of the target
+parameters $f(d_i)$.  The required images of $x$ are the
+actual full-exact balls
+$B_{D_i}(b_i)=\{y\in N_u:(y,b_i)\in D_i\}$.
+For every pair $i,j$, preservation by $f$ of the COMPLETE
+named $\Aut(N)$-orbital of $(d_i,d_j)$ gives some original
+automorphism $g_{ij}$ sending these two source quotient
+parameters simultaneously to $(f(d_i),f(d_j))$.  The point
+$g_{ij}(x)$ satisfies both corresponding mixed orbital
+requirements.  Since each $D_i$ is $J_i$-saturated, it lies
+in $B_{D_i}(b_i)\cap B_{D_j}(b_j)$, independently of the
+chosen representatives.  Thus these balls meet pairwise.
+For $n=1$ each nonempty invariant relation is serial at its
+old centre; for $n=0$ simply take a point of nonempty $N_u$.
+In all cases the heterogeneous RAW exact-ball Helly statement
+\cref{thm:full-typed-exact-balls}(iii) supplies one
+$y\in\bigcap_i B_{D_i}(b_i)$ (with the just mentioned
+conventions for $n<2$).  The map $f\cup\{x\mapsto y\}$ is
+a partial isomorphism of $N_{\mathcal J}$.  In particular,
+if an original real $z$ of sort $u$ is already in the domain,
+its distinct-vertex atomic pair orbital with $x$ forces
+$y\ne f(z)$; no collision of old real points is introduced.
+
+The same argument applies to inverse partial isomorphisms.
+Alternate these extensions forward and backward through the
+countably many original real points of every named sort.
+The limiting map on the original real universe preserves and
+reflects every original atomic pair orbital, and is a
+sort-preserving bijection, hence an automorphism $g\in\Aut(N)$.
+For an initially prescribed quotient parameter $d=[c]_J$,
+the actual mixed pair orbital of $(c,d)$ records precisely
+that $c$ belongs to $d$.  When the old real representative
+$c$ is eventually added, preservation of this mixed orbit
+forces $[g(c)]_J=f(d)$.  Therefore $g$ induces the full
+original partial map $f$ on every original or quotient sort.
+\end{proof}
+
+\begin{corollary}[Equivariant unary enrichment preserves joint exact lifting]
+\label{cor:typed-joint-exact-equivariant-unary}
+In the setting of
+\cref{thm:typed-joint-exact-lifting}, add any
+finite family of ACTUAL $\Aut(N)$-equivariant
+unary functions between the already named
+original real or exact quotient sorts.
+The resulting many-sorted structure is
+ultrahomogeneous: EVERY finite partial
+isomorphism of its finite functionally
+closed induced substructures extends to
+an automorphism INDUCED BY ONE original
+$g\in\Aut(N)$.
+
+This applies to actually defined
+old-real quotient projections, upward
+maps of represented quotient classes,
+and mixed-original-sort named quotient
+transports whenever their two actual
+quotient sorts occur in the chosen list.
+It does NOT imply SAP for the resulting
+hereditary unary-closed age, nor permit
+naming arbitrary NONEXACT quotient sorts.
+\end{corollary}
+\begin{proof}
+Forget all added unary functions in
+the given finite partial isomorphism,
+but retain EXACTLY the same finite
+displayed vertices on each sort; no
+unconstrained original real
+representatives are added. This is
+a finite partial isomorphism in
+the FULL canonical binary orbital
+reduct. By
+\cref{thm:typed-joint-exact-lifting},
+some ONE $g\in\Aut(N)$ extends the
+displayed map simultaneously on ALL
+actual original/quotient sorts.
+Every added unary function $\tau$
+is equivariant, so
+$g(\tau(q))=\tau(g(q))$
+for every actual quotient vertex q.
+Thus the SAME ambient g preserves
+the complete expanded language.
+Its restriction extends the original
+finite functionally closed map.
+No section or coherent choice of g
+for different partial isomorphisms
+is claimed.
+\end{proof}
+
+\begin{theorem}[Joint homogeneity of all exact quotient sorts]
+\label{thm:joint-exact}
+Every finite binary partial isomorphism of $M_{\mathcal E}$ is induced
+by an automorphism of $M$. This statement concerns arbitrary finite
+collections of real and exact imaginary elements \emph{simultaneously}.
+\end{theorem}
+\begin{proof}
+Apply \cref{thm:typed-joint-exact-lifting} with the single original
+sort $M$ and the chosen finite family $\mathcal E$ of its actual
+invariant exact equivalences (including $\Id$). The mixed
+pair-orbital language is exactly that of $M_{\mathcal E}$ by its
+definition. The general typed theorem gives the simultaneous ambient
+lift, without an additional SAP assumption.
+
+For reference, the former one-sort pairwise-ball calculation is the
+following identity for the original symmetric RAW orbitals $a_i,a_j$
+and invariant exact equivalences $J_i,J_j$, where $R_i=a_i;J_i$:
+\[
+ J_i;a_i;a_j;J_j
+       =(a_i;J_i);(a_j;J_j)
+       =R_i;R_j=R_i^\smile;R_j.
+ \tag{JE-PB}\label{eq:joint-exact-pairwise-balls}
+\]
+This uses original one-sort symmetry and RAW commutativity; the typed
+proof of \cref{thm:typed-joint-exact-lifting} instead obtains the needed
+pairwise intersections by direct old automorphism transport and makes
+no corresponding commutativity assumption for mixed sorts.
+\end{proof}
+
+By Lemma~\ref{lem:nested-mixed} and
+Theorem~\ref{thm:joint-exact}, compatible finite real and
+exact-owner requests (including owner actions on a whole finite owner
+set) admit simultaneous ambient lifts.
+
+\begin{theorem}[Triangle fullness, AP and CCO of exact sorts]
+\label{thm:exact-sorts-source}
+The many-sorted age $\Age(M_{\mathcal E})$ is described by its legal
+typed binary triangles, has AP, and satisfies semantic homomorphic
+CCO. In particular every individual actual exact quotient, in its
+named binary orbital language, inherits the standing source
+properties (with any relevant transitivity checked in that sort).
+\end{theorem}
+\begin{proof}
+For triangle fullness, inductively realize a complete legal typed
+diagram. Suppose classes $d_i\in M/J_i$ with real representatives
+$y_i$ already realize its first $m-1$ vertices, and the next vertex
+has sort $M/K$ with prescribed pullbacks $R_i=Ka_iJ_i$.
+Legality of each triangle supplies an actual triple of quotient
+classes with the required three pair orbitals.  Its real
+representatives witness that the pair orbital of $(d_i,d_j)$
+meets $R_iR_j$.  This product is $J_i$-saturated on its left
+and $J_j$-saturated on its right (indeed
+$R_iR_j=J_i a_i K a_j J_j$).  Since a typed pair orbital has
+full inverse image $J_i c_{ij}J_j$, the \emph{whole} pair orbital
+of $(d_i,d_j)$ is contained in $R_iR_j$, independently of the
+representatives $y_i,y_j$ chosen for the previously realized
+classes. The exact balls $R_i[y_i]$ intersect pairwise and
+Lemma~\ref{lem:exact-balls} supplies $y$; then $y/K$ realizes the
+new typed element. Named same-sort diversity prevents unwanted
+identification. Joint homogeneity, Theorem~\ref{thm:joint-exact},
+relocates the embedding to fix a prescribed induced subdiagram;
+this also supplies AP.
+
+For typed semantic CCO, first present the pullback of each
+specified typed edge orbital as an intersection of represented
+word profiles, and replace each edge by private word paths for
+those profiles.  Paths from distinct edges share only their marked
+endpoints; duplicate length-one edges of the same colour are
+merged.  Identity factors in words are deleted.  Since a
+specified typed edge between distinct elements has pullback not
+contained in $\Id$, its presentation does not include an empty
+word; equality is handled as logical equality, not as a new edge.
+
+Every simple cycle of this raw path diagram traverses whole
+private paths, because their internal vertices have degree two.
+If it visits exactly two marked vertices, it uses two paths
+replacing the same typed edge.  If it visits at least three, the
+sequence of marked vertices projects to a specified simple cycle
+of the original typed diagram.  In the first case the typed
+orbital is nonempty; in the second it is homomorphically
+realizable by hypothesis.  In either case the complete raw cycle
+is homomorphically realizable by
+Lemma~\ref{lem:exact-cycle-lift}.  No independent, coherent choice
+of representatives around a cycle is needed: $JaK$-saturation
+makes \emph{every} choice of representatives work.
+
+Raw semantic homomorphic CCO therefore completes the expanded
+partial diagram.  Each word path then forces the pair of its
+marked endpoints into the corresponding profile; intersecting
+them recovers exactly the specified typed orbital.  Projecting
+the marked images to their quotient sorts consequently yields a
+typed homomorphism of the original partial diagram.  This proves
+semantic CCO for the actual many-sorted age, without assuming
+SAP or pre-existing typed CCO.
+\end{proof}

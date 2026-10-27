@@ -1,0 +1,882 @@
+{
+  "schema_version": 1,
+  "id": "raw_exact",
+  "title": "RAW exact calculus and actual joint quotient lifting",
+  "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+  "status": "HUMAN_PROOF_EXPANDED_NOT_LEAN",
+  "scope": "A bounded Foundations I module, not the whole foundations or any application. One-original-sort specializations are marked explicitly. No Lean code or compiled provider imports.",
+  "assumptions": [
+    {
+      "id": "A01",
+      "name": "Original represented typed CCO source",
+      "statement": "Source homogeneity, named original-sort transitivity, finite complete binary language and semantic homomorphic CCO are explicit premises, not consequences of the sidecar graph. Standard classical finite/countable reasoning is used. No external EPPA, Ramsey, factorization-forest or coset-cover theorem is imported."
+    }
+  ],
+  "source_files": [
+    {
+      "file": "main.tex",
+      "git_blob": "df7370f12a248732db9723c3b3c02d4a05ee0eec"
+    },
+    {
+      "file": "sections/exact_foundations/01_full_raw_exact_helly.tex",
+      "git_blob": "7cb28c86b4b296ddf865b6aff518cda1215cd491"
+    },
+    {
+      "file": "sections/exact_foundations/02_exact_quotient_orbital_geometry.tex",
+      "git_blob": "d462f2bfffcd67c1fa712ac516972ab18e073d44"
+    },
+    {
+      "file": "sections/exact_foundations/03_joint_exact_sort_lifting.tex",
+      "git_blob": "394e0db063a476c5c069384b3d3fa2ffd3c7471d"
+    }
+  ],
+  "definitions": [
+    {
+      "id": "D01",
+      "name": "Typed source",
+      "statement": "Finite named inhabited sorts; countable total universe; finite complete binary relational language; homogeneous original source and transitive original sorts; symmetric same-sort diversity and converse-paired cross-sort atoms; typed semantic homomorphic CCO. No SAP or infinitude assumption.",
+      "depends_on": [
+        "A01"
+      ],
+      "notes": "N01",
+      "source": {
+        "file": "sections/exact_foundations/01_full_raw_exact_helly.tex",
+        "anchor": "The following common statement also applies"
+      }
+    },
+    {
+      "id": "D02",
+      "name": "Invariant represented relation and atom",
+      "statement": "A typed relation is an actual subset of N_i × N_j. Invariant means preserved by every original automorphism. An atom is one actual ordered-pair orbit, including logical Id_i on loop sorts.",
+      "depends_on": [
+        "D01"
+      ],
+      "notes": "N01",
+      "source": {
+        "file": "sections/exact_foundations/01_full_raw_exact_helly.tex",
+        "anchor": "A \\emph{raw support}"
+      }
+    },
+    {
+      "id": "D03",
+      "name": "Represented composition and converse",
+      "statement": "(R;S)(x,z) iff ∃y, R(x,y) ∧ S(y,z); Rᵒᵖ(y,x) iff R(x,y). Witnesses may repeat endpoints. Top_ij=N_i×N_j.",
+      "depends_on": [
+        "D02"
+      ],
+      "notes": "N01",
+      "source": {
+        "file": "sections/exact_foundations/01_full_raw_exact_helly.tex",
+        "anchor": "The product $RS$ is the represented"
+      }
+    },
+    {
+      "id": "D04",
+      "name": "Typed word and profile",
+      "statement": "A finite typed composable atomic word evaluates to its actual walk endpoint relation. The empty word exists only at one sort and evaluates to logical Id.",
+      "depends_on": [
+        "D03"
+      ],
+      "notes": "N02",
+      "source": {
+        "file": "sections/exact_foundations/01_full_raw_exact_helly.tex",
+        "anchor": "A \\emph{word profile}"
+      }
+    },
+    {
+      "id": "D05",
+      "name": "Exact presentation and nonempty exact relation",
+      "statement": "A finite list of same-endpoint typed words evaluates to the intersection of their profiles. Empty list evaluates to typed Top. A nonempty exact relation includes a proof that this evaluation is nonempty; meet closure requires nonempty RESULT.",
+      "depends_on": [
+        "D04"
+      ],
+      "notes": "N02",
+      "source": {
+        "file": "sections/exact_foundations/01_full_raw_exact_helly.tex",
+        "anchor": "A \\emph{nonempty exact relation}"
+      }
+    },
+    {
+      "id": "D06",
+      "name": "Typed partial diagram and CCO",
+      "statement": "A finite simple typed graph with one specified diversity atom per specified edge. Cycle tests are homomorphisms of each specified simple cycle. CCO supplies a homomorphism of the whole diagram; unspecified pairs may collapse.",
+      "depends_on": [
+        "D02"
+      ],
+      "notes": "N02",
+      "source": {
+        "file": "main.tex",
+        "anchor": "A \\emph{partial diagram}"
+      }
+    },
+    {
+      "id": "D07",
+      "name": "Exact ball",
+      "statement": "For D:u→t and b∈N_t, B_D(b)={z∈N_u : D(z,b)}. A family may repeat the same centre value under different constraints.",
+      "depends_on": [
+        "D05"
+      ],
+      "notes": "N05",
+      "source": {
+        "file": "sections/exact_foundations/01_full_raw_exact_helly.tex",
+        "anchor": "Fix a target original sort"
+      }
+    },
+    {
+      "id": "D08",
+      "name": "Actual quotient family",
+      "statement": "For each original sort s choose finitely many actual invariant full exact equivalences J, including Id_s. Sorts N_s/J are tagged actual quotient carriers; N_s/Id_s is identified with N_s.",
+      "depends_on": [
+        "D05"
+      ],
+      "notes": "N06",
+      "source": {
+        "file": "sections/exact_foundations/03_joint_exact_sort_lifting.tex",
+        "anchor": "For each original named"
+      }
+    },
+    {
+      "id": "D09",
+      "name": "Full quotient orbital language",
+      "statement": "Name every actual Aut(N) ordered-pair orbit between chosen quotient sorts. Logical equality remains logical, and each same-sort diagonal is retained in pair-orbit bookkeeping.",
+      "depends_on": [
+        "D08"
+      ],
+      "notes": "N06",
+      "source": {
+        "file": "sections/exact_foundations/03_joint_exact_sort_lifting.tex",
+        "anchor": "whose binary relations name"
+      }
+    },
+    {
+      "id": "D10",
+      "name": "Finite joint partial isomorphism",
+      "statement": "A sort-preserving injective finite partial map of the tagged displayed sorts preserving all their binary orbitals; domains need not include real representatives of displayed classes.",
+      "depends_on": [
+        "D09"
+      ],
+      "notes": "N07",
+      "source": {
+        "file": "sections/exact_foundations/03_joint_exact_sort_lifting.tex",
+        "anchor": "Fix one finite partial isomorphism"
+      }
+    },
+    {
+      "id": "D11",
+      "name": "Actual equivariant unary enrichment",
+      "statement": "A finite family of actual unary functions between already displayed sorts satisfying τ(gq)=gτ(q) for every original g∈Aut(N). The source corollary uses finite functionally closed domains.",
+      "depends_on": [
+        "D10"
+      ],
+      "notes": "N08",
+      "source": {
+        "file": "sections/exact_foundations/03_joint_exact_sort_lifting.tex",
+        "anchor": "add any"
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "name": "Orbital uniformity and seriality",
+      "scope": "typed",
+      "statement": "Every nonempty invariant typed relation contains an atom and is serial and coserial at EVERY endpoint point. Named atoms equal actual pair orbits.",
+      "depends_on": [
+        "D02"
+      ],
+      "notes": "N01",
+      "source_labels": [
+        "thm:full-typed-exact-balls"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C02",
+      "name": "Typed relation algebra and top",
+      "scope": "typed",
+      "statement": "Composition is associative, invariant and monotone, reverses under converse and has logical identities as units. Compatible nonempty invariant products are nonempty. Typed Top absorbs every compatible nonempty invariant factor.",
+      "depends_on": [
+        "D03",
+        "C01"
+      ],
+      "notes": "N01",
+      "source_labels": [
+        "thm:full-typed-exact-balls"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C03",
+      "name": "Atomic typed Peirce",
+      "scope": "typed",
+      "statement": "For atoms a:i→j and c:i→k and invariant B:j→k: c⊆a;B iff a∩(c;Bᵒᵖ)≠∅. More generally replace a by an invariant A.",
+      "depends_on": [
+        "C01",
+        "C02"
+      ],
+      "notes": "N01",
+      "source_labels": [
+        "thm:full-typed-exact-balls"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C04",
+      "name": "Original symmetric commutation and equivalence joins",
+      "scope": "one_original_sort",
+      "statement": "All original invariant binary relations commute. For invariant equivalences E,H, E;H=E∨H. This statement does not assert mixed-original-sort commutativity.",
+      "depends_on": [
+        "C01",
+        "C02"
+      ],
+      "notes": "N01",
+      "source_labels": [
+        "lem:acf-mixed-exact-join"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C05",
+      "name": "Word evaluation and equality normalization",
+      "scope": "typed",
+      "statement": "Profile evaluation equals word-walk existence; deleting identity letters preserves it; empty word gives Id; concatenation gives composition; reversed converse word gives converse.",
+      "depends_on": [
+        "D04",
+        "C02"
+      ],
+      "notes": "N02",
+      "source_labels": [
+        "thm:full-typed-exact-balls"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C06",
+      "name": "Theta construction and cycle witnesses",
+      "scope": "typed",
+      "statement": "For finitely many nonempty pairwise-intersecting profiles presented by reduced words of positive length and one endpoint type, build private paths, merge equal direct edges, and show every simple cycle is two private paths with a homomorphism into N.",
+      "depends_on": [
+        "D06",
+        "C01",
+        "C05"
+      ],
+      "notes": "N03",
+      "source_labels": [
+        "thm:full-typed-exact-balls"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C07",
+      "name": "Word-profile Helly",
+      "scope": "typed",
+      "statement": "Every finite pairwise-intersecting family of nonempty same-endpoint word profiles has nonempty total intersection; the empty family evaluates to inhabited Top.",
+      "depends_on": [
+        "C06",
+        "D01"
+      ],
+      "notes": "N03",
+      "source_labels": [
+        "thm:full-typed-exact-balls"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C08",
+      "name": "Exact Helly and presentation closure",
+      "scope": "typed",
+      "statement": "Flatten presentations to obtain 2-Helly for nonempty exact menus; reversal gives converse closure; concatenating lists gives closure under meets with nonempty result.",
+      "depends_on": [
+        "D05",
+        "C05",
+        "C07"
+      ],
+      "notes": "N03",
+      "source_labels": [
+        "thm:full-typed-exact-balls"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C09",
+      "name": "Exact convolution",
+      "scope": "typed",
+      "statement": "For nonempty D=⋂α Pα:i→j and F=⋂β Qβ:j→k, D;F=⋂αβ(Pα;Qβ). Empty restriction lists are treated by top absorption. The product is nonempty and exact.",
+      "depends_on": [
+        "C01",
+        "C02",
+        "C03",
+        "C05",
+        "C07"
+      ],
+      "notes": "N04",
+      "source_labels": [
+        "thm:full-typed-exact-balls"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C10",
+      "name": "Nonempty-result meet distribution and saturation",
+      "scope": "typed",
+      "statement": "Composition by a fixed NONEMPTY EXACT factor distributes in either argument over finite exact meets whose result is nonempty. For exact equivalences E,H and D=⋂r Dr≠∅, E;D;H=⋂r(E;Dr;H), including the empty list/top case.",
+      "depends_on": [
+        "C08",
+        "C09"
+      ],
+      "notes": "N04",
+      "source_labels": [
+        "thm:full-typed-exact-balls",
+        "lem:full-typed-exact-saturation"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C11",
+      "name": "Ball pair criterion",
+      "scope": "typed",
+      "statement": "For arbitrary typed D:u→t,F:u→s and actual centres b,c, B_D(b)∩B_F(c)≠∅ iff (b,c)∈Dᵒᵖ;F.",
+      "depends_on": [
+        "D07",
+        "C02"
+      ],
+      "notes": "N05",
+      "source_labels": [
+        "thm:full-typed-exact-balls"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C12",
+      "name": "Anchored fan construction and cycle witnesses",
+      "scope": "typed",
+      "statement": "After handling reduced-empty-word identity restrictions directly, a finite pairwise-intersecting exact-ball family has a valid private-path diagram with a complete actual centre diagram; each cycle has a homomorphism, including same-menu and repeated-centre cases.",
+      "depends_on": [
+        "D06",
+        "D07",
+        "C01",
+        "C05"
+      ],
+      "notes": "N05",
+      "source_labels": [
+        "thm:full-typed-exact-balls"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C13",
+      "name": "Heterogeneous exact-ball Helly",
+      "scope": "typed",
+      "statement": "Every finite pairwise-intersecting family of nonempty exact balls with one target original sort and arbitrary original centre sorts has a common point, including empty/singleton families and repeated centres. CCO plus homogeneity aligns its complete centre diagram.",
+      "depends_on": [
+        "C12",
+        "C01",
+        "D01"
+      ],
+      "notes": "N05",
+      "source_labels": [
+        "thm:full-typed-exact-balls"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C14",
+      "name": "Actual quotient orbital pullback and saturation",
+      "scope": "typed",
+      "statement": "The pullback of the actual pair orbit of ([x]_J,[y]_K), for original atom a=orb(x,y), is J;a;K; it is saturated and invariant. For exact J,K it is nonempty exact. Invariant saturated relations descend to unions of quotient pair orbits.",
+      "depends_on": [
+        "D08",
+        "D09",
+        "C01",
+        "C02",
+        "C09"
+      ],
+      "notes": "N06",
+      "source_labels": [
+        "lem:exact-cycle-lift",
+        "thm:typed-joint-exact-lifting"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C15",
+      "name": "Fine-colour reconstruction",
+      "scope": "one_original_sort",
+      "statement": "For m≥1 exact equivalences E_i and K=⋂i E_i, ⋂i(E_i;a;E_i)=K;a;K for every original atom a including Id. The K pair orbit is determined by projected E_i pair orbits. No arbitrary tuple realization is asserted.",
+      "depends_on": [
+        "C04",
+        "C10",
+        "C14"
+      ],
+      "notes": "N06",
+      "source_labels": [
+        "lem:exact-quotient-colour-meet"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C16",
+      "name": "Mixed join reduction",
+      "scope": "one_original_sort",
+      "statement": "For exact invariant E,H with J=E∨H, E;a;H=J;a;J=J;a. Two within-sort partial maps preserve mixed orbitals if ONE partial isomorphism on their common J-quotient covers both projected domains and agrees with both. The algebra itself needs no exactness.",
+      "depends_on": [
+        "C04",
+        "C14"
+      ],
+      "notes": "N06",
+      "source_labels": [
+        "lem:acf-mixed-exact-join"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C17",
+      "name": "Nested mixed reduction",
+      "scope": "one_original_sort",
+      "statement": "If J≤K, J;a;K=K;a;K=a;K. A J-partial map p and K-partial map γ preserve all mixed orbitals if every projected J-domain point lies in dom(γ) and π(p(q))=γ(π(q)) for each q∈dom(p).",
+      "depends_on": [
+        "C16"
+      ],
+      "notes": "N06",
+      "source_labels": [
+        "lem:nested-mixed"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C18",
+      "name": "Representative-independent cycle expansion",
+      "scope": "one_original_sort",
+      "statement": "Given a typed cycle homomorphism (or an instance of one nonempty edge orbital), every choice of real marked representatives admits all private word walks for the corresponding edge pullbacks simultaneously.",
+      "depends_on": [
+        "C05",
+        "C14"
+      ],
+      "notes": "N10",
+      "source_labels": [
+        "lem:exact-cycle-lift"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C19",
+      "name": "Real-to-quotient request relation",
+      "scope": "typed",
+      "statement": "For x∈N_u, d=[c]_J and a=orb(x,c), D=a;J is the full pullback of orb(x,d), nonempty full exact and right J-saturated; every target representative gives the same orbital constraint.",
+      "depends_on": [
+        "C14",
+        "D10"
+      ],
+      "notes": "N07",
+      "source_labels": [
+        "thm:typed-joint-exact-lifting"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C20",
+      "name": "Finite joint one-real-point extension",
+      "scope": "typed",
+      "statement": "Every finite joint partial isomorphism can be extended to include any original real point in its domain, preserving all pair orbitals and injectivity; use pairwise ambient orbit transport and exact-ball Helly.",
+      "depends_on": [
+        "C19",
+        "C13",
+        "C01",
+        "D10"
+      ],
+      "notes": "N07",
+      "source_labels": [
+        "thm:typed-joint-exact-lifting"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C21",
+      "name": "Back-and-forth with quotient anchors",
+      "scope": "typed",
+      "statement": "Alternating C20 for a map and its inverse over all original real points yields one original automorphism inducing the whole initial finite joint partial isomorphism. Class membership orbitals anchor the initially displayed quotient parameters.",
+      "depends_on": [
+        "C20",
+        "C14",
+        "D01"
+      ],
+      "notes": "N08",
+      "source_labels": [
+        "thm:typed-joint-exact-lifting"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C22",
+      "name": "Equivariant unary enrichment",
+      "scope": "typed",
+      "statement": "Every isomorphism of finite functionally closed induced substructures of the actual equivariant unary enrichment extends to one induced original automorphism.",
+      "depends_on": [
+        "C21",
+        "D11"
+      ],
+      "notes": "N08",
+      "source_labels": [
+        "cor:typed-joint-exact-equivariant-unary"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C23",
+      "name": "One-sort joint specialization",
+      "scope": "one_original_sort",
+      "statement": "Every finite joint partial isomorphism of the chosen real/exact quotient sorts is induced by one original automorphism, without SAP or a coherent choice of lifts.",
+      "depends_on": [
+        "C21"
+      ],
+      "notes": "N08",
+      "source_labels": [
+        "thm:joint-exact"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C24",
+      "name": "Triangle fullness of actual exact quotient age",
+      "scope": "one_original_sort",
+      "statement": "Every finite complete typed diagram whose induced diagrams on at most three vertices are in the actual quotient age is realized there. Use invariant saturated products to transfer triangle witnesses to previously chosen representatives and ball Helly to add a class.",
+      "depends_on": [
+        "C14",
+        "C11",
+        "C13"
+      ],
+      "notes": "N09",
+      "source_labels": [
+        "thm:exact-sorts-source"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C25",
+      "name": "AP of actual quotient age",
+      "scope": "one_original_sort",
+      "statement": "Align two finite quotient-age embeddings over their common induced base using joint homogeneity, then take their finite induced union. Identifications outside the base are permitted.",
+      "depends_on": [
+        "C23"
+      ],
+      "notes": "N09",
+      "source_labels": [
+        "thm:exact-sorts-source"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C26",
+      "name": "Private-path quotient cycle classification",
+      "scope": "one_original_sort",
+      "statement": "Replace typed edges by exact word paths, discard top presentations, suppress identity letters, exclude identity-only edge restrictions and merge equal direct edges. Each raw simple cycle is two paths for one edge or projects to a specified simple typed cycle.",
+      "depends_on": [
+        "C05",
+        "C14",
+        "D06"
+      ],
+      "notes": "N10",
+      "source_labels": [
+        "thm:exact-sorts-source"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C27",
+      "name": "Semantic CCO of actual quotient age",
+      "scope": "one_original_sort",
+      "statement": "Cycle witnesses from C18 and C26 permit original CCO to complete the expanded diagram; projecting marked images gives a typed quotient homomorphism.",
+      "depends_on": [
+        "C18",
+        "C26",
+        "D01"
+      ],
+      "notes": "N10",
+      "source_labels": [
+        "thm:exact-sorts-source"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C28",
+      "name": "Inherited single-quotient source properties",
+      "scope": "one_original_sort",
+      "statement": "Each actual exact quotient is countable, nonempty and transitive with finite complete symmetric orbital language; joint homogeneity, C24, C25 and C27 supply homogeneity, triangle fullness, AP and semantic CCO.",
+      "depends_on": [
+        "C14",
+        "C23",
+        "C24",
+        "C25",
+        "C27"
+      ],
+      "notes": "N09",
+      "source_labels": [
+        "thm:exact-sorts-source"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    }
+  ],
+  "exports": [
+    {
+      "source_label": "thm:full-typed-exact-balls",
+      "claims": [
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C13"
+      ]
+    },
+    {
+      "source_label": "lem:full-typed-exact-saturation",
+      "claims": [
+        "C10"
+      ]
+    },
+    {
+      "source_label": "lem:exact-product",
+      "claims": [
+        "C07",
+        "C08",
+        "C09",
+        "C10"
+      ]
+    },
+    {
+      "source_label": "lem:exact-balls",
+      "claims": [
+        "C11",
+        "C13"
+      ]
+    },
+    {
+      "source_label": "lem:exact-quotient-colour-meet",
+      "claims": [
+        "C15"
+      ]
+    },
+    {
+      "source_label": "lem:exact-cycle-lift",
+      "claims": [
+        "C18"
+      ]
+    },
+    {
+      "source_label": "lem:acf-mixed-exact-join",
+      "claims": [
+        "C16"
+      ]
+    },
+    {
+      "source_label": "lem:nested-mixed",
+      "claims": [
+        "C17"
+      ]
+    },
+    {
+      "source_label": "thm:typed-joint-exact-lifting",
+      "claims": [
+        "C21"
+      ]
+    },
+    {
+      "source_label": "cor:typed-joint-exact-equivariant-unary",
+      "claims": [
+        "C22"
+      ]
+    },
+    {
+      "source_label": "thm:joint-exact",
+      "claims": [
+        "C23"
+      ]
+    },
+    {
+      "source_label": "thm:exact-sorts-source",
+      "claims": [
+        "C24",
+        "C25",
+        "C27",
+        "C28"
+      ]
+    }
+  ],
+  "controls": [
+    {
+      "id": "R01",
+      "check": "Represented four-point F2² translation source: exact product closure, nonempty-result meet distribution, exact-menu Helly and exact-ball Helly."
+    },
+    {
+      "id": "R02",
+      "check": "Invariant nonexact three-ball counterexample; empty-result saturation counterexample; invalid nonempty-indexed meet closure."
+    },
+    {
+      "id": "R03",
+      "check": "Two tagged copies of a three-point set: typed converse orientation and heterogeneous ball criterion. An algebra control, not a CCO assertion."
+    },
+    {
+      "id": "R04",
+      "check": "Three nonexact line quotients of the F2² translation source admit a joint binary orbital automorphism with no ambient original lift."
+    },
+    {
+      "id": "R05",
+      "check": "Finite 3×3 grid: exact coordinate equivalences are represented squares, and their pair orbitals reconstruct the fine colour. No CCO assertion about this finite grid."
+    }
+  ],
+  "tasks": [
+    {
+      "id": "T01",
+      "name": "Represented relations and typed words",
+      "depends_on": [],
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Choose and compile typed carriers, invariant pair relations, atom-support correspondence and exact presentations."
+    },
+    {
+      "id": "T02",
+      "name": "Finite private-path combinatorics",
+      "depends_on": [
+        "T01"
+      ],
+      "claims": [
+        "C06",
+        "C12"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement simple finite graph paths with private interiors, duplicate direct-edge merging and generic theta/fan/cycle classification templates. Quotient instantiations belong to T06."
+    },
+    {
+      "id": "T03",
+      "name": "RAW exact calculus",
+      "depends_on": [
+        "T01",
+        "T02"
+      ],
+      "claims": [
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C13"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Formalize semantic CCO uses and nonempty-result distribution; do not take Helly as an extra source axiom."
+    },
+    {
+      "id": "T04",
+      "name": "Actual quotient orbital geometry",
+      "depends_on": [
+        "T01",
+        "T03"
+      ],
+      "claims": [
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C19"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement actual quotient actions and orbital pullbacks; prove colour reconstruction and mixed joins independently of joint homogeneity."
+    },
+    {
+      "id": "T05",
+      "name": "Joint finite-map lifting",
+      "depends_on": [
+        "T03",
+        "T04"
+      ],
+      "claims": [
+        "C20",
+        "C21",
+        "C22",
+        "C23"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement the finite joint extension and countable back-and-forth with the persistent quotient anchors."
+    },
+    {
+      "id": "T06",
+      "name": "Quotient-age inheritance",
+      "depends_on": [
+        "T02",
+        "T03",
+        "T04",
+        "T05"
+      ],
+      "claims": [
+        "C18",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Assemble triangle fullness, AP and semantic CCO, retaining their separate proof routes."
+    }
+  ],
+  "article_feedback": [
+    {
+      "id": "F01",
+      "kind": "WORDING_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/exact_foundations/01_full_raw_exact_helly.tex",
+        "anchor": "the latter is closed under"
+      },
+      "finding": "Read nonempty meets as meets with nonempty result, not merely a nonempty index set.",
+      "proposed_article_change": "Replace by closed under meets with nonempty intersection if the surrounding notation does not already make this explicit.",
+      "caller_effect": "No mathematical change: product and saturation proofs already require nonempty evaluated intersections.",
+      "proof_claims": [
+        "C08",
+        "C10"
+      ]
+    },
+    {
+      "id": "F02",
+      "kind": "WORDING_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/exact_foundations/03_joint_exact_sort_lifting.tex",
+        "anchor": "This product is $J_i$-saturated"
+      },
+      "finding": "Propagation from one witnessed representative pair to an entire quotient pair orbit uses invariance together with saturation. Both hold for the product.",
+      "proposed_article_change": "Optionally add invariant before saturated in the triangle-fullness proof.",
+      "caller_effect": "No strengthened hypothesis or changed conclusion.",
+      "proof_claims": [
+        "C14",
+        "C24"
+      ]
+    },
+    {
+      "id": "F03",
+      "kind": "WORDING_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/exact_foundations/03_joint_exact_sort_lifting.tex",
+        "anchor": "For triangle fullness, inductively realize"
+      },
+      "finding": "Legal finite complete typed diagrams must include legal subdiagrams on at most three vertices, covering 0/1/2-vertex boundary cases.",
+      "proposed_article_change": "State the at-most-three-vertices convention once in the human setting if needed.",
+      "caller_effect": "No change to the age or any caller.",
+      "proof_claims": [
+        "C24"
+      ]
+    }
+  ],
+  "review": {
+    "date": "2026-10-26",
+    "method": "Parent mathematical expansion plus two independent read-only model reviews of RAW and quotient/lifting branches. Not an independent human certificate or Lean proof.",
+    "required_mathematical_repairs_found": 0,
+    "remaining": "Finite graph constructions, quotient encodings and countable back-and-forth still have to be implemented and proved in Lean; no library API compatibility has been compiled."
+  }
+}

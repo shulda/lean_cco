@@ -1,0 +1,53 @@
+name: Lean CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate mathematical preparation and project allocation
+        run: |
+          python3 -m unittest discover -s tools -p 'test_*.py' -q
+          python3 tools/build_formalization_module.py --module raw_exact --check
+          python3 tools/build_formalization_module.py --module strong_selectors --check
+          python3 tools/build_formalization_module.py --module sir --check
+          python3 tools/check_formalization_coordination.py --check --require-launch
+          python3 tools/check_raw_exact_controls.py
+          python3 tools/check_strong_selector_controls.py
+          python3 tools/check_sir_controls.py
+
+      # Cache the toolchain, not multi-gigabyte per-commit .lake workspaces.
+      - name: Cache Lean toolchain
+        uses: actions/cache@v5
+        with:
+          path: ~/.elan/toolchains
+          key: lean-toolchain-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('lean-toolchain') }}
+
+      # Download the complete matching precompiled Mathlib snapshot. A partial
+      # cache can leave thousands of dependencies to compile on the runner.
+      - name: Build and audit Lean project
+        uses: leanprover/lean-action@f061402b660e0c34644504b324e830f2991d4865 # v1.6.1
+        with:
+          auto-config: false
+          build: true
+          use-github-cache: false
+          use-mathlib-cache: true
+          axiom-audit: true
+          axiom-audit-root: CCO
+          axiom-audit-allow: propext,Classical.choice,Quot.sound

@@ -1,0 +1,226 @@
+% A04. General SAP-free original orbital parity, full-lattice Hasse covers,
+% and relative-K exact closure separation. Moved here from later chapters;
+% theorem labels retained for downstream references. 20 October 2026.
+\section{Finite relative indices and separation of exact equivalences}
+\label{sec:foundations-relative-parity}
+
+We use the original, equality-inclusive represented exact algebra of
+\cref{lem:exact-product}. Throughout this section $M$ is one actual
+transitive homogeneous complete finite symmetric binary source with
+semantic homomorphic CCO; \emph{SAP is not assumed}. All invariant binary
+relations commute under represented composition: their products are
+invariant and symmetric, and taking converses reverses the factors.
+Write $\operatorname{ExEq}(M)$ for the full exact equivalences; ordinary
+invariant equivalences need not be exact. Every relation called $K$ below
+is an actual equivalence on the original real sort, not a formal identity
+of a quotient palette.
+
+\begin{lemma}[Finite-relative orbital parity without SAP]
+\label{lem:ep-ap-orbital-parity}
+Let $E<F$ be arbitrary invariant equivalences on $M$ with finite
+relative index $n=[F:E]$. For every old diversity atom
+$c\subseteq F\setminus E$, its graph is bipartite. Its even- and
+odd-walk relations $Y_c,O_c$ are represented by stabilized positive
+atomic-word profiles; $Y_c$ is a full exact equivalence, and
+\[
+ Y_c<X_c=Y_c\cup O_c\le F,
+ \qquad [X_c:Y_c]=2.
+\]
+\end{lemma}
+\begin{proof}
+Suppose the $c$-graph contains an odd cycle of length $\ell$.
+Choose a connected finite graph $G$ of girth greater than $\ell$
+and chromatic number greater than $n$, by the Erd\H{o}s
+high-girth/high-chromatic theorem. Label all its edges by $c$.
+Every specified simple cycle of $G$ has a colour-preserving
+homomorphism into the old $c$-graph: an even cycle folds onto one
+$c$-edge, while any odd cycle (necessarily of length greater than
+$\ell$) traverses the old odd $\ell$-cycle with two-step
+backtracks. Semantic CCO therefore yields a homomorphism $G\to M$.
+Since $G$ is connected and $c\subseteq F$, its image lies in a
+single $F$-class. Since $c\cap E=\varnothing$, adjacent vertices
+map to different $E$-classes. Their $n$ classes give a proper
+$n$-colouring of $G$, a contradiction.
+
+By transitivity every real vertex has a $c$-neighbour. Inserting
+one two-edge backtrack in a represented $c$-walk shows
+$c^j\subseteq c^{j+2}$. Finiteness of the old orbital palette
+makes the even and odd power chains stabilize. The stable even
+word profile is exactly the even-walk relation $Y_c$, and the
+stable odd profile is $O_c$; repeated intermediate real vertices
+are allowed by the represented multiplication convention.
+Every nonempty connected component of a bipartite $c$-graph
+has exactly two parity classes. Hence $Y_c$ is an equivalence,
+$X_c=Y_c\cup O_c$ is its connectivity equivalence, and their
+relative index is two. The stabilized even positive word is
+full exact, without an injectivity or SAP assumption.
+\end{proof}
+
+\begin{theorem}[Finite Hasse indices in the full invariant lattice]
+\label{thm:full-relative-Hasse}
+Every finite-relative-index cover $E\prec F$ in the \emph{full}
+lattice of invariant equivalences of $M$ has $[F:E]=2$.
+Consequently every finite relative index $[F:E]$ (not necessarily
+covering) is a power of two.
+\end{theorem}
+\begin{proof}
+There are finitely many invariant equivalences, since they are
+unions of finitely many orbitals. They permute under represented
+composition, so the lattice is modular. Induct on the height of
+the upper endpoint $F$. Choose an old atom
+$c\subseteq F\setminus E$ and apply
+\cref{lem:ep-ap-orbital-parity} to obtain
+$Y_c\prec X_c\le F$ with $[X_c:Y_c]=2$ and $X_c\not\le E$.
+Since $E\prec F$, we have $E\vee X_c=F$. Put $K=E\wedge X_c$.
+Dedekind interval transposition for permuting equivalences gives
+\[
+ K\prec X_c,\qquad [X_c:K]=[F:E].
+\]
+If $K=Y_c$ the index is two. Otherwise $K,Y_c$ are distinct
+coatoms of $X_c$, so $K\vee Y_c=X_c$. Put $L=K\wedge Y_c$.
+A second transposition gives
+\[
+ L\prec Y_c,\qquad [Y_c:L]=[X_c:K]=[F:E].
+\]
+Since $Y_c<X_c\le F$, the upper endpoint $Y_c$ has smaller
+height than $F$, and the induction hypothesis makes this index
+two. For any finite $[F:E]$, multiply the indices along a
+saturated chain between $E$ and $F$.
+\end{proof}
+
+\begin{lemma}[Relative exact closure separation]
+\label{lem:ep-relative-K-closure}
+Let $K$ be a full exact invariant equivalence on $M$. Let
+$A,B$ be nonempty symmetric full exact $K$-bisaturated relations
+containing $K$, and suppose $A\cap B=K$. Their stabilized
+represented equivalence closures satisfy
+\[
+ \boxed{\langle A\rangle\cap\langle B\rangle=K.}
+ \tag{S2}\label{eq:ep-relative-K-closure}
+\]
+Here $\langle A\rangle$ denotes the stable power of $A$;
+this convention includes $K$ as the zeroth power.
+\end{lemma}
+\begin{proof}
+Set $A^{[0]}=B^{[0]}=K$ and use ordinary represented powers
+for positive exponents. Since $K\subseteq A,B$ and both relations
+are $K$-bisaturated, the powers form increasing chains of
+symmetric full exact $K$-bisaturated relations. They stabilize
+to full exact equivalences. Suppose an old atom outside $K$
+belongs to both stable closures. Choose the least $n\ge1$ for
+which $(B^{[n]}\cap\langle A\rangle)\setminus K$ is nonempty,
+choose an old atom $c$ in that difference, and the least
+$m\ge1$ such that $c\in A^{[m]}$.
+We claim
+\[
+ c\notin A^{[m-1]};B^{[n-1]}.
+ \tag{S3}\label{eq:ep-minimal-c}
+\]
+Otherwise write $c\in a;b$ for atoms
+$a\in A^{[m-1]}$, $b\in B^{[n-1]}$. Peircean transfer gives
+$b\in a^\smile;c\subseteq\langle A\rangle$. If $b\notin K$,
+this contradicts minimality of $n$; if $b\in K$, then
+$K$-saturation puts $c\in A^{[m-1]}$, contradicting
+minimality of $m$.
+
+Set $T=A^{[m-1]};\{c\};B^{[n-1]}$. Full exact product
+closure makes $T$ nonempty exact and $K$-bisaturated. By
+Peircean rotation of $c\in A^{[m-1]};A$ and
+$c\in B;B^{[n-1]}$, the relation $T$ meets both $A$ and $B$.
+If $T\cap K$ were nonempty, invariance and $K$-bisaturation
+would give $\Id\subseteq T$, which by symmetry and
+Peircean rotation would yield
+$c\in A^{[m-1]};B^{[n-1]}$, contrary to the claim.
+Thus $A,B,T$ are nonempty exact domains meeting pairwise,
+but $A\cap B\cap T=\varnothing$, contrary to full exact
+$2$-Helly, \cref{lem:exact-product}.
+\end{proof}
+
+\begin{corollary}[Separation at the old logical identity]
+\label{cor:foundations-identity-separation}
+For full exact symmetric $A,B$ containing $\Id$ and with
+$A\cap B=\Id$, their exact equivalence closures intersect in
+$\Id$. This is the case $K=\Id$ of
+\cref{lem:ep-relative-K-closure}.
+\end{corollary}
+
+\begin{theorem}[Maximal exact parity gate and its source involution]
+\label{thm:foundational-maximal-parity-gate}
+Let $Y<X$ be actual invariant same-sort equivalences in the
+original homogeneous symmetric AP+homomorphic-CCO source,
+with $[X:Y]=2$. Assume $Y$ and the \emph{odd relation}
+$O=X\setminus Y$ are full exact. The equivalence $X$
+itself need \emph{not} be full exact. Choose an
+inclusion-maximal full exact equivalence $K$ satisfying
+\[
+             Y\le K,\qquad K\cap X=Y.
+\]
+Then, writing $F=K\vee X$ and $t=K;O;K$,
+\[
+             [F:K]=2,\qquad
+             F=K\mathbin{\dot\cup}t,\qquad
+             t;t=K.
+\]
+The relation $t$ is nonempty, full exact and $K$-bisaturated;
+its image $\bar t=t/K$ is the graph of an equivariant
+fixed-point-free involution of $M/K$.
+More strongly, \emph{every original full exact
+equivalence} $Z>K$ contains the entire
+old relation $t$. In particular every full
+exact quotient equivalence
+$\bar Z>\Id_{M/K}$ contains $\bar t$.
+The first assertion does not require any
+converse exact-descent theorem.
+Thus the original source object with kernel $K$ has the
+distinguished nonidentity exact isotropy arrow required by
+\cref{thm:foundational-rigid-character}.
+No SAP is required.
+\end{theorem}
+\begin{proof}
+Existence of maximal $K$ follows from finiteness
+of the invariant-equivalence lattice; the initial
+choice $K=Y$ is admissible and full exact.
+All invariant equivalences permute under represented
+composition because same-sort orbital relations
+are symmetric. Dedekind transposition gives
+$K\prec K\vee X$ and $[F:K]=[X:Y]=2$.
+Since $Y\le K$ and $X=Y\cup O$,
+\[
+ F=KX=K\cup KO=K\cup KOK=K\cup t.
+\]
+The unions are disjoint: an edge in $t\cap K$
+would force an $O$-edge inside one $K$-class,
+contradicting $O\cap K=\varnothing$.
+Full exactness of $K,O$ and exact convolution
+make $t$ full exact. Because every $F$-class
+contains exactly two $K$-classes, $t$ is
+the unique matching between those classes,
+so it is a fixed-point-free involutive graph
+and $t^2=K$ as represented relations.
+
+First take \emph{any original} full exact
+invariant equivalence $Z>K$. If
+$Z\cap X$ contains an old atom of $O$,
+then $Z\cap X$ is an equivalence strictly
+above $Y$, and since $[X:Y]=2$ it equals
+$X$. Thus $O\subseteq Z$ and
+$t=K;O;K\subseteq Z$. Otherwise
+$Z\cap X=Y$, which contradicts
+maximality of $K$. Hence the entire
+relation $t$ belongs to every original
+full exact equivalence strictly above $K$.
+
+Now take any nontrivial full exact quotient
+equivalence $\bar Z$ on $M/K$. Its old
+inverse image $Z$ is original full exact
+by the typed exact quotient word-pullback
+\cref{lem:typed-simultaneous-blocks}, and
+$Z>K$. The preceding \emph{old-level}
+claim gives $t\subseteq Z$, so
+$\bar t\subseteq\bar Z$. Importantly,
+no step requires descent of an arbitrarily
+transported old exact relation to the
+quotient. The relation $t$ is a bridge by
+\cref{def:foundational-exact-bridge} with
+source and target kernel $K$.
+\end{proof}

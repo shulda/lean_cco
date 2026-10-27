@@ -1,0 +1,370 @@
+{
+  "format_version": 1,
+  "purpose": "Mathematical preparation and work orders for separate receiving Lean projects; no Lean proof or compiled provider API.",
+  "layout": "Extract to a dedicated directory; paths are relative to its manuscript snapshot root. Not a complete typeset article checkout.",
+  "modules": [
+    {
+      "id": "raw_exact",
+      "definitions": 11,
+      "claims": 28,
+      "source_exports": 12,
+      "tasks": 6,
+      "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+      "imports": [],
+      "proof_status": "HUMAN_PROOF_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "strong_selectors",
+      "definitions": 12,
+      "claims": 27,
+      "source_exports": 15,
+      "tasks": 6,
+      "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+      "imports": [],
+      "proof_status": "HUMAN_PROOF_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "sir",
+      "definitions": 13,
+      "claims": 25,
+      "source_exports": 8,
+      "tasks": 6,
+      "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+      "imports": [
+        {
+          "id": "I01",
+          "name": "lem:typed-exact-products",
+          "source_label": "lem:typed-exact-products",
+          "statement": "Original tagged strong exact menus contain all singleton atoms and Top, are closed under converse, compatible products and meets with NONEMPTY RESULT. Use actual triangle semantics, SAP associativity/monotonicity and Top absorption from the same strong algebra. No RAW identity. Composition by every nonempty exact factor distributes over finite exact meets with NONEMPTY EVALUATION.",
+          "status": "HUMAN_EXPANDED_NOT_LEAN",
+          "provider_module": "strong_selectors"
+        },
+        {
+          "id": "I02",
+          "name": "thm:typed-HS",
+          "source_label": "thm:typed-HS",
+          "statement": "One conservative converse-compatible original joint selector preserving ALL THREE PC coordinates and survivor heredity. NR2/CCO are used to produce this provider, not repeated premises of the conditional SIR constructor.",
+          "status": "HUMAN_EXPANDED_NOT_LEAN",
+          "provider_module": "strong_selectors"
+        },
+        {
+          "id": "I03",
+          "name": "lem:cco-triangle-fullness",
+          "source_label": "lem:cco-triangle-fullness",
+          "statement": "An actual finite complete binary diagram whose induced subdiagrams on at most three vertices lie in a hereditary AP+semantic-CCO age lies in that age. The same fan proof preserves named sorts. The source snapshot and short support proof are included.",
+          "status": "HUMAN_SUPPORT_PROOF_NOT_LEAN",
+          "provider_module": null
+        },
+        {
+          "id": "I04",
+          "name": "thm:full-relative-Hasse",
+          "source_label": "thm:full-relative-Hasse",
+          "statement": "In the actual original one-sort transitive homogeneous finite complete symmetric binary CCO source, every finite-relative-index cover in the FULL invariant-equivalence lattice has index two. SAP and exactness are not required. Its proof is a separate upstream obligation, not expanded here. Consequently every finite relative index is a power of two.",
+          "status": "EXPLICIT_UPSTREAM_NOT_EXPANDED",
+          "provider_module": null
+        }
+      ],
+      "proof_status": "HUMAN_PROOF_EXPANDED_NOT_LEAN"
+    }
+  ],
+  "coordination": {
+    "phase": "READY",
+    "repository": "shulda/lean_cco",
+    "project": 1,
+    "package": "B001",
+    "contract_revision": 1
+  },
+  "files": [
+    {
+      "path": ".github/workflows/lean.yml",
+      "bytes": 1852,
+      "sha256": "78ae9624d75e431c410c0236c7964f407ed7e28024ebdfd8d0e2ab5990b08dcd"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 30,
+      "sha256": "ca669ca2607a2c3dc5d78636dc38e9d74d89632b11efa08133ba06a7fc52ccc2"
+    },
+    {
+      "path": "BOOTSTRAP.md",
+      "bytes": 2431,
+      "sha256": "ae59f213bfab379e8251937cdd9f88718b7d1b0989a0791fd8cbeb36a0dff4fa"
+    },
+    {
+      "path": "CCO/Infrastructure.lean",
+      "bytes": 284,
+      "sha256": "a9ca6c614d2c975f5955c5585af4f5d428e627890abab8fce612f35d7c3f6633"
+    },
+    {
+      "path": "CCO.lean",
+      "bytes": 26,
+      "sha256": "6ca5d04dcc1f550ac0933c3f4f5dd7d1025cdbecfdbb74a74290989ceac5574e"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1460,
+      "sha256": "9a2a3915dc3ed2d98ead210ea8b5ce71820c9faea5b035980845b4ccbe91eb97"
+    },
+    {
+      "path": "catalogue/declarations.json",
+      "bytes": 890448,
+      "sha256": "f39656d2efa9a94ad4c6e1651b054b72162e9c0a3ab8d9c791efd027da3a8dcc"
+    },
+    {
+      "path": "formalization/HANDOFF.md",
+      "bytes": 7461,
+      "sha256": "f380f8295b954ab00ca35e42d351841e436c8d047468ecf29b89e86acbd9d86b"
+    },
+    {
+      "path": "formalization/README.md",
+      "bytes": 5283,
+      "sha256": "0b9f4eaaaeb07a5c72fb3bd87bbc736f1cdeccc2638773bfdfea38c731c94b1a"
+    },
+    {
+      "path": "formalization/coordination/BOARD.json",
+      "bytes": 5589,
+      "sha256": "05daf69f7ebffb6f3f14c6c242effcefe67f578d1eaf0198a1e1f177ff331a99"
+    },
+    {
+      "path": "formalization/coordination/BOARD.md",
+      "bytes": 1635,
+      "sha256": "42c8a22203abd5fd0d1eab4ba4556638c869442b1ce5ac9edb7be659cd3ca7b4"
+    },
+    {
+      "path": "formalization/coordination/COORDINATOR_RUNBOOK.md",
+      "bytes": 7228,
+      "sha256": "33ad4647bfd094c4c43ff4d479e653c694692f3af572809c49417e49f3bfdd02"
+    },
+    {
+      "path": "formalization/coordination/DECISIONS.md",
+      "bytes": 1849,
+      "sha256": "aeeaf38d665f34762b7879f73eb8149ab7e161ddb41cd090972734a590e2939b"
+    },
+    {
+      "path": "formalization/coordination/PROJECT_1_INSTRUCTIONS.md",
+      "bytes": 1507,
+      "sha256": "b5cff7ef9fc3340e21911f0eb39f88c1c9348fbfb219e10b73813e4bba26391a"
+    },
+    {
+      "path": "formalization/coordination/PROTOCOL.md",
+      "bytes": 6283,
+      "sha256": "712f0b2c053e229b6ac8848131c8e1f2c31c9007e3b812722563e52a67335f01"
+    },
+    {
+      "path": "formalization/coordination/README.md",
+      "bytes": 5248,
+      "sha256": "72b8070685c71baa9433cf0bbda9dcad734679a07b60e2ebcb912aaf637d4afd"
+    },
+    {
+      "path": "formalization/coordination/packages/B001_SHARED_API.md",
+      "bytes": 12885,
+      "sha256": "4696d860e24346b7b0688419ebef09f6b8453b78f4297428223545247bd16971"
+    },
+    {
+      "path": "formalization/coordination/packages/PLANNED.md",
+      "bytes": 2672,
+      "sha256": "421adb8228d031ac3a090620ed0edf9e2693abfaba761c512e5dbeb323d076e6"
+    },
+    {
+      "path": "formalization/coordination/reports/1.md",
+      "bytes": 808,
+      "sha256": "79f692a37944f99ad8a4d539da117d7e50173192f496a094de19bc751c533108"
+    },
+    {
+      "path": "formalization/raw_exact/PROOF_NOTES.md",
+      "bytes": 20842,
+      "sha256": "fb36085c600396fe823c928a6da8340e39ebb3ea827a191b00473f4427433e14"
+    },
+    {
+      "path": "formalization/raw_exact/README.md",
+      "bytes": 14142,
+      "sha256": "27074ba567698af8f67e68c6a4f3a9c0c68800529e48d3652d0b8e280b6da1a2"
+    },
+    {
+      "path": "formalization/raw_exact/module.json",
+      "bytes": 29505,
+      "sha256": "2ca3fa3cd0b25f3f2aced1bee7aa9747d6ea9dedc89ebcc23beaf991ab85ee02"
+    },
+    {
+      "path": "formalization/sir/PROOF_NOTES.md",
+      "bytes": 15603,
+      "sha256": "80df79ec08bb6ebb5f673009bf277a505bed5cd51ffff56cc7e087cd85dc8b9b"
+    },
+    {
+      "path": "formalization/sir/README.md",
+      "bytes": 17341,
+      "sha256": "4f2241b9ba391555013499274c739bc2d934510498dcea9f3f5a1b073c0d8fd5"
+    },
+    {
+      "path": "formalization/sir/module.json",
+      "bytes": 34683,
+      "sha256": "32dd593e29093e5e0ad90aab2814d675385d1887b72a63b5c98e5d10cff09359"
+    },
+    {
+      "path": "formalization/strong_selectors/PROOF_NOTES.md",
+      "bytes": 20717,
+      "sha256": "d4c7d29a6f0dd0a040ed26f363d559801226f9619dec6e99bfe09a56bd5f3e03"
+    },
+    {
+      "path": "formalization/strong_selectors/README.md",
+      "bytes": 14873,
+      "sha256": "6ed8bf81a8d5ed1bff954df51623fe3e050f6c4a4ba7a2bd80aa1b1f75a7e11e"
+    },
+    {
+      "path": "formalization/strong_selectors/module.json",
+      "bytes": 31710,
+      "sha256": "895e41a8b00e74b113f6bc240fec76ea34466bea9a1436ce829ac9176901ca88"
+    },
+    {
+      "path": "lake-manifest.json",
+      "bytes": 3504,
+      "sha256": "1aa837d974c8cfc4f4bccab1910931ceb92ff3a93034d895776c382076794e09"
+    },
+    {
+      "path": "lakefile.toml",
+      "bytes": 276,
+      "sha256": "564e4229bffc852bda1dc36f2fa92637d5887719154361331e10d4b658c534b4"
+    },
+    {
+      "path": "lean-toolchain",
+      "bytes": 25,
+      "sha256": "d5edba4e4b8faad9c1baeadb265716d20d03be4d1a2647dc5e35b0c0325bea7b"
+    },
+    {
+      "path": "main.tex",
+      "bytes": 23838,
+      "sha256": "59b39a46d9fa872749b9cc8abb1e3658af2b52033f0142ae0455c29d836beade"
+    },
+    {
+      "path": "sections/exact_foundations/01_full_raw_exact_helly.tex",
+      "bytes": 14993,
+      "sha256": "03c847e8bfd52d000ac56ada1b7eed230cd05f1100f62bbd8d2675b3b6b56db8"
+    },
+    {
+      "path": "sections/exact_foundations/02_exact_quotient_orbital_geometry.tex",
+      "bytes": 7919,
+      "sha256": "acc4354684822f214aac21d558877f3e4119f812f0c7f902a6ffd89d8afcf7e0"
+    },
+    {
+      "path": "sections/exact_foundations/03_joint_exact_sort_lifting.tex",
+      "bytes": 10454,
+      "sha256": "cb5da1ded3466bade78147c7d1342e3fee603d7f651819a6a7d678b5e2176080"
+    },
+    {
+      "path": "sections/finite_relative_parity_exact_closure.tex",
+      "bytes": 9580,
+      "sha256": "8ac8de37271b3def934c69908193f6ea732d7015b63acbfee13ebc83eeda2b2b"
+    },
+    {
+      "path": "sections/stationary_independence_from_HS.tex",
+      "bytes": 16455,
+      "sha256": "9db2c6c07cfb0cc46a9469a46208624b27e13dd69f8376387d8aa06f67f66bbe"
+    },
+    {
+      "path": "sections/stationary_independence_scope.tex",
+      "bytes": 7557,
+      "sha256": "a9932a2bc57e263702a7d716fac7dd4bf4d5021929af4999d7840539accc3eac"
+    },
+    {
+      "path": "sections/triangle_fullness.tex",
+      "bytes": 1868,
+      "sha256": "80b7f35665c9e8b5dee1615cf62b975f0bf7b4561c40a0fa11dd8adf5d0039f4"
+    },
+    {
+      "path": "sections/typed_hereditary_selectors.tex",
+      "bytes": 19564,
+      "sha256": "455b938680b30bc361c40f466340663ee8f8b5ed6fb58e29f11f25aa22bd95db"
+    },
+    {
+      "path": "sections/typed_invariant_quotient_transport.tex",
+      "bytes": 11154,
+      "sha256": "6adbae3368dc8ec980c1dd7c58cff429e05a5ddfc886f85b67d20f169a910f87"
+    },
+    {
+      "path": "sections/typed_pc_fixedpoint.tex",
+      "bytes": 6018,
+      "sha256": "42d7bef3bbc9d2ac82284865f432fb77843ff896259cb4b1bcf14aebe5ed0714"
+    },
+    {
+      "path": "sections/typed_strong_domains.tex",
+      "bytes": 21685,
+      "sha256": "6706f74206d539dad6a6c137364c7cd6e97a134122652eda93f55c5b6539045f"
+    },
+    {
+      "path": "tools/build_formalization_handoff.py",
+      "bytes": 6956,
+      "sha256": "bf2af696c98c93d5361c6e07464931337cd48944bb9a3ae6af2fbaf0c400b45b"
+    },
+    {
+      "path": "tools/build_formalization_module.py",
+      "bytes": 14178,
+      "sha256": "faf44b81176a7d2e492c3273a6509fb1bc0840403deed5a75768f0f35abe5815"
+    },
+    {
+      "path": "tools/check_formalization_coordination.py",
+      "bytes": 10249,
+      "sha256": "a45099f3d4a8d261c66c75f477578dec88db4b91659036bc7e1e3982092fb94e"
+    },
+    {
+      "path": "tools/check_raw_exact_controls.py",
+      "bytes": 5857,
+      "sha256": "d8a1a715ab10f14b4007d1c6a7ab6989ba9991c87cff426b6c3d801df494eaf1"
+    },
+    {
+      "path": "tools/check_sir_controls.py",
+      "bytes": 6733,
+      "sha256": "104716621297f080768c14b10cb15560afb580c655a2c59fc1ebaed8cd8c2313"
+    },
+    {
+      "path": "tools/check_strong_selector_controls.py",
+      "bytes": 10011,
+      "sha256": "e44e3a0962724110c7b015457ec3ffc755cc4a70207305df8155dbcd069fe890"
+    },
+    {
+      "path": "tools/prepare_formalization_launch.py",
+      "bytes": 4403,
+      "sha256": "3a3e7052b0d58145a4f74187589a6ed0f4fcfd808aaea62235c039f0cc52ce55"
+    },
+    {
+      "path": "tools/test_formalization_coordination.py",
+      "bytes": 6408,
+      "sha256": "c3404f6f726c22d6ee2bfcf0b5cc5d65d7678d887631ee99caf98c40f08b8b73"
+    },
+    {
+      "path": "tools/test_formalization_handoff.py",
+      "bytes": 1603,
+      "sha256": "423661a0e712f822819b41a32d5cfcabec4a34915bd442c53633ec406bfad9fe"
+    },
+    {
+      "path": "tools/test_formalization_module.py",
+      "bytes": 4303,
+      "sha256": "910ea28199dc76bbc96e8ab57de39514a0594672c34759e9dce90ad786a34adf"
+    }
+  ],
+  "verification": [
+    "python tools/build_formalization_handoff.py --verify .",
+    "python tools/build_formalization_module.py --module raw_exact --check",
+    "python tools/build_formalization_module.py --module strong_selectors --check",
+    "python tools/build_formalization_module.py --module sir --check",
+    "python tools/check_raw_exact_controls.py",
+    "python tools/check_strong_selector_controls.py",
+    "python tools/check_sir_controls.py",
+    "python tools/check_formalization_coordination.py --check --require-launch"
+  ],
+  "unexpanded_upstream": [
+    {
+      "module": "sir",
+      "id": "I04",
+      "name": "thm:full-relative-Hasse",
+      "source_label": "thm:full-relative-Hasse",
+      "statement": "In the actual original one-sort transitive homogeneous finite complete symmetric binary CCO source, every finite-relative-index cover in the FULL invariant-equivalence lattice has index two. SAP and exactness are not required. Its proof is a separate upstream obligation, not expanded here. Consequently every finite relative index is a power of two.",
+      "status": "EXPLICIT_UPSTREAM_NOT_EXPANDED",
+      "provider_module": null
+    }
+  ],
+  "bootstrap": {
+    "lean": "leanprover/lean4:v4.34.1",
+    "mathlib": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+    "proof_status": "INFRASTRUCTURE_ONLY_NO_SOURCE_EXPORTS"
+  }
+}

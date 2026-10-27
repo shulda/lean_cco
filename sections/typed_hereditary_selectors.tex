@@ -1,0 +1,448 @@
+\section{Joint hereditary selectors by finite descending filters}
+\label{sec:typed-selectors}
+
+We continue with the original (\emph{not} a contracted image)
+strong exact families $\mathcal H_{ij}$ from
+Section~\ref{sec:typed-strong}.  At no point do we declare a new
+product on an intermediate image of a selector.  The hypotheses of
+this section are precisely finite named symmetric typed palettes,
+SAP, semantic homomorphic CCO, and
+\begin{equation}\label{eq:NR2}
+ (\mathrm{NR2})\qquad
+ \text{no named sort admits a proper relative-index-two pair of}
+ \text{ invariant equivalences}.
+\end{equation}
+The primitive named sorts of $U$ satisfy (NR2) by
+Theorem~\ref{thm:joint-transversal}; nevertheless we spell out its
+\emph{only} use in the proof.
+
+\begin{definition}[Joint pruning maps]
+\label{def:joint-pruning}
+A \emph{joint hereditary pruning} $R$ assigns to every exact
+$D\in\mathcal H_{ij}$ a nonempty (possibly nonexact) subset
+$R_{ij}(D)\subseteq D$.  It is \emph{converse-compatible} if
+$R_{ji}(\bar D)=\overline{R_{ij}(D)}$; it \emph{preserves PC} if
+all three inclusions in \eqref{eq:typed-PC} hold for its three
+outputs whenever they hold for the input; and it has \emph{survivor
+heredity} if
+\begin{equation}\label{eq:typed-survivor}
+ E\subseteq D,\quad E\cap R(D)\ne\varnothing
+ \quad\Longrightarrow\quad R(E)=E\cap R(D)
+\end{equation}
+whenever $D,E\in\mathcal H_{ij}$.  An \emph{exact contraction} is
+such a map with each output in $\mathcal H_{ij}$.  A \emph{joint
+hereditary selector} (HS) is a singleton-valued joint hereditary
+pruning; write $R(D)=\{h_{ij}(D)\}$.
+
+The implication \eqref{eq:typed-survivor} is an additional axiom:
+conservativity, converse and triangle legality alone do not imply
+it.  In the proof below every intermediate map is an exact
+contraction and hence its output belongs to the \emph{original}
+$\mathcal H$, while the final selector chooses atomic elements.
+\end{definition}
+
+\begin{definition}[Original multiplication-closed filters]
+\label{def:typed-filter}
+A \emph{current family} $\mathcal J=(\mathcal J_{ij})$ is a
+converse-closed subfamily of $\mathcal H$ containing all singleton
+atomic menus and downward closed \emph{relative to the original exact
+family}: if $D\in\mathcal J_{ij}$ and
+$E\in\mathcal H_{ij}$ with $\varnothing\ne E\subseteq D$,
+then $E\in\mathcal J_{ij}$.  A \emph{filter family}
+$\mathfrak F=(\mathfrak F_{ij})$ is a (possibly empty) tagged
+subfamily of the \emph{original} exact menus, closed under converse
+and all compatible left and right products by members of
+$\mathcal H$.  Its \emph{relative visibility} on $\mathcal J$ is
+\begin{equation}\label{eq:relative-visibility}
+ \begin{gathered}
+ D\in\mathcal J_{ij},\quad A,B\in\mathfrak F_{ij},
+ \quad A\cap D\ne\varnothing,\ B\cap D\ne\varnothing\\
+ \Longrightarrow A\cap B\ne\varnothing.
+ \end{gathered}
+\end{equation}
+Given such a filter, define the gate on $D\in\mathcal J_{ij}$ by
+\begin{equation}\label{eq:typed-gate}
+ \mathcal G(D)=D\cap\bigcap\{A\in\mathfrak F_{ij}:
+                                    A\cap D\ne\varnothing\}.
+\end{equation}
+The empty active list leaves $D$ unchanged; no intersections of
+menus from different hom-palettes are formed.
+\end{definition}
+
+\begin{lemma}[The bilateral-support implication]
+\label{lem:typed-bilateral}
+Suppose $\mathfrak F$ is multiplication/converse closed and has
+relative visibility on $\mathcal J$.  For
+$D\in\mathcal J_{ij}$, $E\in\mathcal J_{kj}$ and a fixed
+$P\in\mathcal H_{ik}$, assume the two \emph{original} inclusions
+\begin{equation}\label{eq:typed-bilateral-assumption}
+ D\subseteq P*E,\qquad E\subseteq\bar P*D.
+\end{equation}
+Then the gate from \eqref{eq:typed-gate} preserves both:
+\begin{equation}\label{eq:typed-bilateral-conclusion}
+ \mathcal G(D)\subseteq P*\mathcal G(E),\qquad
+ \mathcal G(E)\subseteq\bar P*\mathcal G(D).
+\end{equation}
+The symmetric assertion for a fixed \emph{right} factor follows by
+converse.  There is no assumption that $P$ belongs to the current
+family $\mathcal J$.
+\end{lemma}
+\begin{proof}
+Consider any filter $A\in\mathfrak F_{kj}$ active on $E$.
+Choose $e\in A\cap E$.  The second inclusion in
+\eqref{eq:typed-bilateral-assumption} gives a supported
+$p\in P,d\in D$ with $e\in\bar p*d$, equivalently
+$d\in p*e$.  Therefore $P*A\in\mathfrak F_{ij}$ is active
+on $D$.  By definition of the gate,
+$\mathcal G(D)\subseteq P*A$ for every such active $A$, and also
+$\mathcal G(D)\subseteq D\subseteq P*E$.  Distributivity
+\eqref{eq:typed-distrib} yields
+\[
+ \mathcal G(D)\subseteq
+ (P*E)\cap\bigcap_{A\text{ active on }E}(P*A)
+ =P*\biggl(E\cap\bigcap_{A\text{ active on }E}A\biggr)
+ =P*\mathcal G(E).
+\]
+This includes an empty active list, with the evident top convention.
+Interchanging $D,E$ and replacing $P$ with $\bar P$ proves the
+second inclusion.  The argument with a fixed right factor is its
+converse.  Every product used here is the original strong exact
+product from Section~\ref{sec:typed-strong}.
+\end{proof}
+
+\begin{lemma}[All three PC coordinates survive one gate]
+\label{lem:typed-all-PC}
+Let $\mathcal J,\mathfrak F$ satisfy the hypotheses of
+Definition~\ref{def:typed-filter} and
+\eqref{eq:relative-visibility}.  Then the gate $\mathcal G$
+of \eqref{eq:typed-gate} has nonempty exact outputs, commutes with
+converse, satisfies survivor heredity and preserves
+\emph{all three} support inclusions in every typed PC triple.
+The statement includes $i=j$, $j=k$, $i=k$ and coinciding source
+menus; no injectivity assumption on the variables denoting menus
+is made.
+\end{lemma}
+\begin{proof}
+For a fixed $D$ the active filters together with $D$ form a
+pairwise-intersecting list by visibility.  Exact $2$-Helly
+(Lemma~\ref{lem:typed-helly}) makes their intersection nonempty;
+exact-meet closure places $\mathcal G(D)$ in $\mathcal H$ and
+$\mathcal J$.  Conversely oriented active lists are exchanged by
+bar, so $\mathcal G(\bar D)=\overline{\mathcal G(D)}$.
+
+If $E\subseteq D$ and $E\cap\mathcal G(D)\ne\varnothing$, every
+filter active on $D$ meets $E$; conversely every filter active on
+$E$ is active on $D$.  Their active lists coincide.  Hence
+\[
+ \mathcal G(E)=E\cap\mathcal G(D),
+\]
+proving survivor heredity, including the equality and singleton
+cases.
+
+It remains to verify the \emph{first} PC inclusion; the other two
+then follow by applying the same proof to the two converse/Peirce
+rotations \eqref{eq:typed-PC-rotation}.
+Let $\mathrm{PC}_{ijk}(A,B,C)$ and fix an \emph{arbitrary}
+$c\in\mathcal G(C)$.  The fixed bilateral and right-support
+implications of Lemma~\ref{lem:typed-bilateral}, applied to the
+original PC inclusions, give
+\[
+ c\in A*\mathcal G(B),\qquad c\in\mathcal G(A)*B.
+\]
+In the \emph{original} exact families set
+\[
+ A_c=A\cap(\{c\}*\bar B),\qquad
+ B_c=B\cap(\bar A*\{c\}).
+\]
+Both are nonempty exact submenus: the displayed memberships give
+respectively an atom in $A_c\cap\mathcal G(A)$ and in
+$B_c\cap\mathcal G(B)$.  They belong to $\mathcal J$ by its
+downward closure, and survivor heredity gives
+\begin{equation}\label{eq:typed-PC-restrictions}
+ \mathcal G(A_c)=A_c\cap\mathcal G(A),\qquad
+ \mathcal G(B_c)=B_c\cap\mathcal G(B).
+\end{equation}
+We now check \emph{both} sides of a fresh bilateral-support
+condition with the singleton \emph{fixed multiplier} $\{c\}$.
+By exact distributivity and the duplication inclusion
+$X\subseteq\{c\}*\bar{\{c\}}*X$ (proved by using SAP for a
+single supported fork and then applying Peirce),
+\[
+ \{c\}*\overline{B_c}
+  =(\{c\}*\bar B)\cap
+    (\{c\}*\bar{\{c\}}*A)
+ \supseteq A_c.
+\]
+For the other direction, apply the same distributivity and
+duplication to $\overline{B_c}=\bar B\cap
+(\bar{\{c\}}*A)$:
+\[
+ \bar{\{c\}}*A_c
+  =(\bar{\{c\}}*A)\cap
+    (\bar{\{c\}}*\{c\}*\bar B)
+ \supseteq\overline{B_c}.
+\]
+Thus $A_c\subseteq\{c\}*\overline{B_c}$ and
+$\overline{B_c}\subseteq\bar{\{c\}}*A_c$.
+Lemma~\ref{lem:typed-bilateral} applied to the pair
+$(A_c,\overline{B_c})$ gives
+\[
+ \mathcal G(A_c)\subseteq\{c\}*\mathcal G(\overline{B_c}).
+\]
+Choose any $a\in\mathcal G(A_c)$, which is nonempty.  The last
+inclusion gives $b\in\mathcal G(B_c)$ with
+$c\in a*b$ by Peirce.  The containment
+\eqref{eq:typed-PC-restrictions} implies
+$a\in\mathcal G(A)$ and $b\in\mathcal G(B)$.
+Consequently $c\in\mathcal G(A)*\mathcal G(B)$.
+Since $c$ was arbitrary,
+\[
+ \mathcal G(C)\subseteq\mathcal G(A)*\mathcal G(B).
+\]
+The two rotated PC triples establish the inclusions for
+$\mathcal G(A)$ and $\mathcal G(B)$.  The argument never assumes
+that the menus or any of their endpoint sorts are different.
+\end{proof}
+
+\begin{lemma}[Image, composition and strict contraction]
+\label{lem:typed-gate-image}
+Under the preceding hypotheses, $\mathcal G$ fixes its image
+pointwise; that image is a converse-closed downward subfamily of the
+\emph{original} $\mathcal H$ and contains all atomic singletons.
+Successive gates compose to exact conservative converse-compatible
+PC-preserving maps with survivor heredity.  If some
+$A\in\mathfrak F_{ij}$ has
+$\varnothing\ne A\cap D\subsetneq D$ for a current menu
+$D\in\mathcal J_{ij}$, then $\mathcal G(D)\subsetneq D$.
+\end{lemma}
+\begin{proof}
+For any original exact $E\subseteq\mathcal G(D)$, survivor
+heredity gives $\mathcal G(E)=E$.  In particular
+$\mathcal G(\mathcal G(D))=\mathcal G(D)$; the image is exactly
+the fixed family and is downward.  Atomic singletons remain fixed by
+conservativity and nonemptiness.  Converse compatibility was proved
+above.
+
+For consecutive gates $G_1,G_2$, let $E\subseteq D$ meet
+$G_2(G_1(D))$.  Then $G_1(E)=E\cap G_1(D)$ and this menu meets
+$G_2(G_1(D))$.  Heredity of $G_2$ yields
+\[
+ G_2(G_1(E))=G_1(E)\cap G_2(G_1(D))
+               =E\cap G_2(G_1(D)).
+\]
+Converse compatibility and PC preservation compose as well.
+Finally an active proper trace occurs among the intersected filters
+in \eqref{eq:typed-gate}, so it strictly reduces $D$.
+\end{proof}
+
+\begin{lemma}[Self-converse loop stabilization from (NR2)]
+\label{lem:typed-loop-stable}
+For every nonempty loop exact menu $P\in\mathcal H_{ii}$,
+there exists $N$ such that $P^{*n}=P^{*(n+1)}$ for all $n\ge N$.
+This is not a claim that the stable menu is the entire palette
+$L_{ii}$.
+\end{lemma}
+\begin{proof}
+All loop subsets are self-converse, so the product of two loop
+menus commutes:
+$P*Q=\overline{P*Q}=\bar Q*\bar P=Q*P$.
+For any nonempty loop subset $P$, SAP and Peirce give the
+\emph{duplication} $P\subseteq P^{*3}$: choose an auxiliary
+$p\in P$, complete a fork witnessing $x\in p*(\bar p*x)$
+for each $x\in P$.  Thus the even powers
+$P^{*2}\subseteq P^{*4}\subseteq\cdots$ eventually stabilize
+in the finite palette $L_{ii}$.  Write the stable even menu as $J$
+and the stable odd menu as $O$.  Associativity and eventual
+stability give
+\begin{equation}\label{eq:even-odd}
+ J*J=J,\quad J*O=O,\quad O*O=J,\quad P\subseteq O.
+\end{equation}
+For every $t\in J$ we have $J*\{t\}=J$:
+the inclusion $\subseteq$ is closure under $J*J=J$;
+for $r\in J$ take $u\in r*t$ by SAP and rotate the triple to
+obtain $r\in u*t$ with $u\in J$.  If $J\cap O$ contains $t$,
+then
+$J=J*t\subseteq J*O=O$, and
+$O=J*O\subseteq O*O=J$,
+so $J=O$.  Otherwise the two nonempty disjoint loop menus
+$J,O$ yield invariant equivalences
+\[
+ R=\Delta_i\cup J\quad\text{and}\quad
+ S=\Delta_i\cup J\cup O
+\]
+on the named sort $i$, closed under triangle composition by
+\eqref{eq:even-odd}.  For each point $x$, the $O$-neighbours
+form precisely one other $R$-class: any two such neighbours
+are $J$-related by $O*O=J$, and an $O$-neighbour exists by
+realisation/transitivity.  Hence $[S:R]=2$, contradicting (NR2).
+Therefore $J=O$ and all sufficiently high consecutive powers of
+$P$ are equal.
+\end{proof}
+
+\begin{lemma}[Parallel-menu separation]
+\label{lem:typed-no-return}
+For any exact seed $C\in\mathcal H_{ab}$ let
+$\mathfrak F(C)$ be the smallest \emph{tagged} family of original
+exact menus containing $C$, closed under converse and all
+compatible left/right multiplication by \emph{original} exact
+menus.  If $A,B\in\mathcal H_{ij}$ are parallel menus and
+$\mathfrak F(A)=\mathfrak F(B)$, then $A=B$.
+\end{lemma}
+\begin{proof}
+Every menu generated from $C$ can be written in one of the two
+normal forms
+$P*C*Q$ or $P*\bar C*Q$, with outside multipliers
+possibly \emph{absent}.  This follows by induction from the
+closure rule and associativity; the two orientations are exchanged
+by converse.  An absent multiplier means the identity \emph{action}
+on menus, not an equality atom or an empty-word menu.
+
+Suppose a generated menu $B\in\mathfrak F(A)$ has the \emph{same
+ordered} endpoints $(i,j)$ as $A$.  A representation
+$P*A*Q$ then has loop multipliers $P\in\mathcal H_{ii}$,
+$Q\in\mathcal H_{jj}$, or absent actions.  If $i=j$, every loop
+menu is self-converse and the reverse-oriented representation also
+has this form.  If $i\ne j$, a representation
+$P*\bar A*Q$ returning to $(i,j)$ has both
+$P,Q\in\mathcal H_{ij}$, and neither is absent.  The loop
+palettes are self-converse, so
+\begin{equation}\label{eq:parallel-switch}
+ P*\bar A=\overline{P*\bar A}=A*\bar P,
+\end{equation}
+and hence $P*\bar A*Q=A*(\bar P*Q)$; the latter right
+multiplier is a loop menu of sort $j$.  Thus every oriented return
+has the form $L*A*R$ with loop or absent multipliers.
+
+Equal generated families supply two such returns
+$T(A)=B$ and $V(B)=A$, where
+$T(X)=L*X*R$ and $V(X)=P*X*Q$ on $\mathcal H_{ij}$.
+They commute, because all relevant loop multipliers commute
+inside their own endpoint palettes; no cross-arrow permutation is
+used.  By Lemma~\ref{lem:typed-loop-stable} there exists $n>0$
+with $T^n=T^{n+1}$ as maps, using an identity action for any
+absent multiplier.  Since $VT(A)=A$, commutativity gives
+$V^nT^n(A)=A$.  Therefore
+\[
+ B=T(A)=T\,V^nT^n(A)
+       =V^nT^{n+1}(A)=V^nT^n(A)=A.
+\]
+This proves the assertion.  In particular the proof never uses the
+ill-typed product of two cross-sort arrows $C*C$.
+\end{proof}
+
+\begin{lemma}[Gate iteration from pure-tag no-return]
+\label{lem:typed-pure-action-gate-engine}
+Let $\Lambda$ be a finite group permuting the named sorts of the
+original strong exact typed system $\mathcal H$.  Assume this is a
+\emph{pure tag action}: it fixes literal original fine-colour names
+and transports all legal atomic triangles, converse, exact menus
+and typed strong multiplication to the relabelled sort signatures.
+For an original exact seed $C$, let $\mathfrak F_\Lambda(C)$
+be the smallest family of \emph{original tagged exact menus}
+containing $C$ and closed under converse, compatible left and
+right multiplication by arbitrary original exact menus, and the
+$\Lambda$ action.  Suppose that for every seed $C$ and every
+parallel $A,B\in\mathfrak F_\Lambda(C)$,
+\[
+ \mathfrak F_\Lambda(A)=\mathfrak F_\Lambda(B)
+      \quad\Longrightarrow\quad A=B
+\]
+as literal subsets of their original fine-colour palette.
+Then the whole original $\mathcal H$ admits one joint
+singleton-valued hereditary selector preserving converse and
+all three PC inclusions, and satisfying
+\[
+ h_{\lambda i,\lambda j}(D)=h_{ij}(D)
+ \quad(\lambda\in\Lambda,\ D\in\mathcal H_{ij}),
+\]
+where the same literal menu $D$ is regarded in the relabelled
+palette by the pure action.  The conclusion does not assert
+covariance under an action which permutes actual fine-colour names.
+\end{lemma}
+\begin{proof}
+Start with the original full current family $\mathcal J=\mathcal H$,
+which is downward, converse-closed, $\Lambda$-invariant and
+contains every tagged atomic singleton.  If a nonsingleton menu
+remains, an atomic singleton $C\subsetneq D$ is a seed with a
+nonempty proper trace on the current menu $D$.  Among all
+\emph{original} exact seeds having a nonempty proper current trace,
+choose $C$ minimizing the finite number $|\mathfrak F_\Lambda(C)|$.
+
+We check relative visibility.  If it fails, there are a current
+$D'$ and parallel $A,B\in\mathfrak F_\Lambda(C)$ with
+$A\cap D'\ne\varnothing$, $B\cap D'\ne\varnothing$ but
+$A\cap B=\varnothing$.  Then each of $A,B$ is itself a seed
+with a nonempty proper trace on $D'$, since the other one meets
+$D'$ disjointly.  Closure under all original generators implies
+$\mathfrak F_\Lambda(A),\mathfrak F_\Lambda(B)
+\subseteq\mathfrak F_\Lambda(C)$.  If both inclusions were
+equalities, the no-return hypothesis would force $A=B$, a
+contradiction.  Thus one of the two viable seeds generates a
+\emph{strictly} smaller family, contrary to minimality.
+
+Apply the original gate \eqref{eq:typed-gate} to
+$\mathfrak F_\Lambda(C)$.  By
+\cref{lem:typed-all-PC,lem:typed-gate-image}, its output is a
+nonempty exact, downward current family containing every tagged
+singleton, and it preserves converse, survivor heredity and all
+three typed PC coordinates.  A proper trace forces strict
+contraction.  Because the generated family and current family
+are $\Lambda$-invariant and $\Lambda$ fixes actual atom names,
+the active filter lists are carried bijectively to those for the
+relabelled menu; hence the gate itself is $\Lambda$-covariant.
+Its image is therefore again a $\Lambda$-invariant current family.
+
+Iterate until no nonsingleton menu remains.  The number of tagged
+original exact menus in the current family decreases strictly,
+so after at most
+$\sum_{i,j}|\mathcal H_{ij}|-\sum_{i,j}|L_{ij}|$
+proper gates the process terminates.  Composition retains
+converse, PC, survivor heredity and $\Lambda$ covariance by
+\cref{lem:typed-gate-image}.  Since the terminal exact menus are
+atomic singletons, the composite map is the asserted selector.
+The choice of seeds is finite and need not be $\Lambda$-invariant:
+each whole $\Lambda$-closed generated family is used by its gate.
+\end{proof}
+
+\begin{theorem}[Existence of a joint hereditary selector]
+\label{thm:typed-HS}
+Let $\mathcal K$ be any finite-sorted symmetric complete atomic
+binary triangle Fra\"iss\'e class with SAP, semantic homomorphic
+CCO, and (NR2) on every named sort.  Its full strong exact family
+$\mathcal H=(\mathcal H_{ij})$ admits a joint hereditary selector
+$h$: it chooses $h_{ij}(D)\in D$, commutes with converse, preserves
+all typed PC triples, and satisfies
+\begin{equation}\label{eq:HS-heredity}
+ E\subseteq D,\ h_{ij}(D)\in E\quad\Longrightarrow\quad
+ h_{ij}(E)=h_{ij}(D).
+\end{equation}
+No common identification of the palettes $L_{ij}$ is required.
+In particular this theorem applies to the actual joint primitive
+transversal from Theorem~\ref{thm:joint-transversal}.
+\end{theorem}
+\begin{proof}
+Apply the general gate-iteration lemma
+\cref{lem:typed-pure-action-gate-engine} with the \emph{trivial}
+tag group $\Lambda=\{1\}$.  Its generated family
+$\mathfrak F_\Lambda(C)$ is exactly the original
+$\mathfrak F(C)$ generated family used in
+Lemma~\ref{lem:typed-no-return}; that same lemma
+supplies its required no-return implication.  Thus all hypotheses
+of the common gate mechanism hold under the present strong
+exact/NR2 assumptions, and its singleton output has the
+required PC, converse and survivor-heredity properties.
+No covariance under any nontrivial type permutation is claimed.
+\end{proof}
+
+\begin{remark}[Scope of the selector theorem]
+\label{rem:typed-selector-scope}
+The theorem establishes \emph{one joint selector} for the fixed
+\emph{named} typed source and supports all three PC coordinates,
+including parallel or repeated menus and sort labels.  It does
+\emph{not} imply that the selector is covariant under an arbitrary
+permutation of owner names, even if such a permutation preserves all
+atomic triangle tables.  The additional pure-owner action and its
+covariant selector descent are treated separately in the next
+construction chapter; they cannot be obtained by naively averaging
+selectors over a group.
+\end{remark}

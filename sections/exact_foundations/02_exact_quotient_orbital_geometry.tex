@@ -1,0 +1,173 @@
+\begin{definition}[Actual exact quotient sorts]
+Let $\mathcal E$ be a finite family of invariant \emph{exact}
+equivalence relations, including $\Id$. The many-sorted expansion
+$M_{\mathcal E}$ has one formal sort $M/J$ for each
+$J\in\mathcal E$, with all actual binary orbits under
+$\Aut(M)$ named on each ordered pair of sorts. The real sort is
+$M/\Id$. For $J,K\in\mathcal E$ and a raw atom $a$ represented
+by a pair of classes, the inverse image of that typed pair orbit
+in $M^2$ is $JaK$; these saturated relations partition $M^2$.
+\end{definition}
+
+\begin{lemma}[Fine colours from finitely many exact quotients]
+\label{lem:exact-quotient-colour-meet}
+In the one-original-sort setting of
+\cref{thm:full-typed-exact-balls}, let $E_1,\ldots,E_m$, $m\ge1$,
+be invariant full exact equivalences on $M$, and put
+$K=\bigcap_i E_i$. For every original raw atomic orbital $a$,
+including logical equality,
+\[
+             \bigcap_{i=1}^m E_i;a;E_i=K;a;K.
+\]
+Consequently the actual pair orbital of two $K$-classes is
+determined by the pair orbitals of all their $E_i$-projections.
+This includes coincident quotient coordinates; when $K=\Id$,
+it recovers the original fine colour. No assertion that arbitrary
+compatible tuples are realised is part of this lemma.
+\end{lemma}
+\begin{proof}
+The intersection $K$ is full exact and nonempty, since it contains
+$\Id$, and $a$ is a one-letter exact profile. All original invariant
+relations commute, and equivalences are idempotent. Thus
+$E_i;a;E_i=E_i;a$ and $K;a;K=K;a$, while the nonempty exact
+meet-product law of \cref{thm:full-typed-exact-balls}(ii) gives
+\[
+          K;a=\Bigl(\bigcap_iE_i\Bigr);a
+              =\bigcap_i(E_i;a).
+\]
+Every saturation here contains $a$, so all displayed intersections
+are nonempty. By the definition of the actual quotient orbital
+language, $E_i;a;E_i$ and $K;a;K$ are the pullbacks of the
+respective quotient pair orbitals. Choose an original representative
+atom $a$ of the first $K$-quotient pair. Representatives of any
+other $K$-quotient pair with the same projected orbitals belong to
+every $E_i;a;E_i$, hence to $K;a;K$, giving the same fine quotient
+orbital. The argument uses
+RAW relations throughout, so logical diagonals are retained.
+\end{proof}
+
+
+\begin{lemma}[Representative-independent lifting of exact-sort cycles]
+\label{lem:exact-cycle-lift}
+Let $C$ be a specified simple cycle of a finite partial diagram in
+$M_{\mathcal E}$, and suppose it has a typed homomorphism into
+$M_{\mathcal E}$.  For each typed edge $uv$, choose a finite
+word-profile presentation of the inverse image of its named pair
+orbital and replace that edge by private raw paths spelling its
+words.  Then the expanded raw diagram has a homomorphism into
+$M$, even after arbitrary representatives of the images of all the
+marked quotient vertices have been fixed.  The same conclusion
+holds for two private paths representing the same nonempty typed
+pair orbital.  Identity factors inside words are suppressed.  An empty-word
+condition means logical equality of its real endpoints and is
+handled by their identification; for a legal edge between distinct
+typed vertices its nonempty orbital pullback cannot be contained in
+$\Id$, so this case does not arise during the CCO expansion.
+\end{lemma}
+\begin{proof}
+If the marked vertices $u,v$ have sorts $M/J$ and $M/K$ and the
+edge orbital is represented by a raw atom $a$, its full inverse
+image is $JaK$.  It is exact by Lemma~\ref{lem:exact-product}.
+More importantly, it is \emph{saturated}: once the two quotient
+classes belong to that typed orbital, every pair of their real
+representatives belongs to $JaK$.  More precisely, choose \emph{some} representatives $x,y$
+of the two classes with raw colour $a$, as supplied by the
+realised typed pair orbit.  For arbitrary other representatives
+$r_u\mathrel Jx$ and $r_v\mathrel Ky$, the witnessed pair
+$(x,y)\in a$ gives $(r_u,r_v)\in JaK$ by relational
+composition.  We do \emph{not} assert that $(r_u,r_v)$ itself
+has raw colour $a$.  Since $JaK$ equals the exact intersection
+of the chosen word profiles, the fixed representatives
+$r_u,r_v$ satisfy \emph{every} profile in that presentation.
+Each private word path can be mapped to $M$ with endpoints
+$r_u,r_v$ by the definition of a represented word product.
+Since all path interiors are private, these maps agree on their
+only intersections, the marked vertices.  This gives the required
+homomorphism simultaneously on the entire expanded typed cycle.
+For two paths belonging to a single edge, choose any instance of
+its nonempty actual pair orbital and apply the same argument.
+A zero-length word forces equality of its real endpoints.
+In the applications to legal typed partial diagrams, an edge
+between distinct typed elements does not have $\Id$ as its full
+pullback, so no such word occurs in an edge presentation.
+\end{proof}
+
+\begin{lemma}[Mixed exact-sort orbitals factor through their join]
+\label{lem:acf-mixed-exact-join}
+Let \(E,H\) be TWO arbitrary invariant full exact
+equivalences of the ACTUAL original one-sort
+symmetric homogeneous source \(M\), possibly
+incomparable, and put \(J=E\vee H\).
+For any old raw atomic orbital \(a\), including
+logical equality, the inverse image of the
+actual mixed pair orbital on
+\((M/E)\times(M/H)\) represented by \(a\)
+is
+\[
+ \boxed{\quad
+       E;a;H=J;a;J=J;a=a;J.
+       \quad}
+\tag{MEJ}\label{eq:acf-mixed-exact-join}
+\]
+Thus the mixed orbital of an \(E\)-class
+and an \(H\)-class depends ONLY on the
+orbital of their projected pair in the
+COMMON quotient \(M/J\). In particular,
+if finite partial automorphisms of sets
+of \(E\)- and \(H\)-classes induce the
+SAME partial automorphism on their
+common \(J\)-quotient and separately
+preserve the within-sort pair orbitals,
+then their union preserves ALL mixed
+binary orbitals of these two exact sorts.
+The statement concerns a JOINT finite
+partial isomorphism and does not claim
+a global group-theoretic section.
+\end{lemma}
+\begin{proof}
+Original invariant relations commute, since they and their
+represented products are symmetric. Hence $E;H=E\vee H=J$,
+and idempotence gives
+\[
+ E;a;H=E;H;a=J;a=J;a;J=a;J.
+\]
+By the definition of actual quotient sorts, $J;a;J$ is the
+pullback of one pair orbital of $M/J$. The displayed identity
+therefore proves the claimed reduction to that quotient.
+Compatible partial maps preserve these projected pair orbitals,
+and hence all mixed orbitals. This argument uses only invariance
+of the equivalences and symmetry of the original orbitals;
+exactness is needed for the separate simultaneous ambient-lifting
+theorem, \cref{thm:joint-exact}.
+\end{proof}
+
+\begin{lemma}[Nested exact-sort mixed orbit collapse]
+\label{lem:nested-mixed}
+Let $J\le K$ be invariant exact equivalences of the actual real
+source, including the case $J=\Id$, and let $a$ be any actual raw
+atom (possibly equality).  The inverse image of the mixed pair
+orbital from $M/J$ to $M/K$ represented by $a$ is
+\[
+          JaK=KaK=aK.
+\]
+Consequently the mixed pair orbit of $([x]_J,d)$, with
+$d\in M/K$, is determined solely by the pair orbit of
+$([x]_K,d)$ in $M/K$.  More generally, let $p$ be a finite partial
+isomorphism of $M/J$ and $\gamma$ a finite partial isomorphism
+of $M/K$, with $[x]_K$ in the domain of $\gamma$ whenever
+$[x]_J$ lies in the domain of $p$.  If
+\[
+             \pi_{J,K}(p([x]_J))
+                 =\gamma(\pi_{J,K}([x]_J))
+\]
+for each such $[x]_J$, then the union of $p$ and $\gamma$ is a
+partial isomorphism of the joint two-sort orbital structure.
+\end{lemma}
+\begin{proof}
+Apply \cref{lem:acf-mixed-exact-join} with $J\vee K=K$.
+For a mixed pair $([x]_J,d)$ in the domain of $p\cup\gamma$,
+its orbit is therefore determined by $([x]_K,d)$. Both of these
+$K$-classes lie in the domain of $\gamma$, whose action agrees
+with that induced by $p$ at $[x]_K$. Thus the mixed orbital is
+preserved. Same-sort orbitals are preserved by the two given maps.
+\end{proof}

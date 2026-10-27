@@ -1,0 +1,928 @@
+{
+  "schema_version": 1,
+  "id": "strong_selectors",
+  "title": "STRONG exact calculus, finite PC and hereditary selectors",
+  "index_title": "STRONG exact calculus, finite PC and hereditary selectors",
+  "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+  "status": "HUMAN_PROOF_EXPANDED_NOT_LEAN",
+  "scope": "Bounded Foundations III module ending at named-sort HS. SIR, safe augmented EPPA readings and terminal pure-power applications remain separate. The RAW exact module is not a theorem prerequisite.",
+  "scope_vocabulary": [
+    "finite_boolean",
+    "SAP",
+    "SAP+CCO",
+    "SAP+NR2",
+    "SAP+CCO+NR2",
+    "conditional_pure_action"
+  ],
+  "scope_explanation": "statement and proof. Scope records whether SAP, CCO and full sortwise NR2 are used; the pure-tag engine retains its explicit no-return premise.",
+  "assumptions": [
+    {
+      "id": "A01",
+      "name": "Actual homogeneous named-sorted SAP source",
+      "statement": "Finite complete binary relational language on finite inhabited named transitive sorts, symmetric loop diversity atoms and correctly typed converses; actual homogeneous source whose finite age has SAP. Logical equality is separate. Triangle-definedness, countability and primitivity are unnecessary for the local arguments."
+    },
+    {
+      "id": "A02",
+      "name": "Additional semantic homomorphic CCO",
+      "statement": "For the CCO branches only, every finite specified typed diversity diagram whose specified simple cycles map homomorphically to the actual source itself maps homomorphically there."
+    },
+    {
+      "id": "A03",
+      "name": "Additional FULL original sortwise NR2",
+      "statement": "For the loop-stabilization/no-return and unconditional HS route, each named original sort has no relative-index-two interval in its FULL invariant equivalence lattice."
+    }
+  ],
+  "source_files": [
+    {
+      "file": "sections/typed_strong_domains.tex",
+      "git_blob": "75d584069ce802c62d66104a852a3649fc082f1d"
+    },
+    {
+      "file": "sections/typed_pc_fixedpoint.tex",
+      "git_blob": "796c74460c724023281e2d916d9ddb2e9eb70f07"
+    },
+    {
+      "file": "sections/typed_hereditary_selectors.tex",
+      "git_blob": "35b4013ad3c9886c7641f924202a1491464c126a"
+    }
+  ],
+  "source_result_files": [
+    "sections/typed_strong_domains.tex",
+    "sections/typed_pc_fixedpoint.tex",
+    "sections/typed_hereditary_selectors.tex"
+  ],
+  "definitions": [
+    {
+      "id": "D01",
+      "name": "Actual named-sorted SAP source",
+      "statement": "An actual homogeneous complete finite binary RELATIONAL source on finitely many inhabited transitive named sorts. Same-sort diversity atoms are symmetric; cross-sort atoms have typed converses. Its actual finite age has SAP.",
+      "depends_on": [
+        "A01"
+      ],
+      "notes": "N01",
+      "source": {
+        "file": "sections/typed_strong_domains.tex",
+        "anchor": "The algebraic arguments below use only"
+      }
+    },
+    {
+      "id": "D02",
+      "name": "Diversity palettes and strong triangles",
+      "statement": "L_ij is the finite nonempty set of actual atoms on DISTINCT vertices of types i,j. Logical equality is never an element of L_ii. Every legal triangle uses three distinct real vertices.",
+      "depends_on": [
+        "D01"
+      ],
+      "notes": "N01",
+      "source": {
+        "file": "sections/typed_strong_domains.tex",
+        "anchor": "Write $L_{ij}$"
+      }
+    },
+    {
+      "id": "D03",
+      "name": "Boolean strong product",
+      "statement": "A*B is the set of output diversity atoms of actual legal typed triangles with inputs in A,B. Empty Boolean subsets are allowed temporarily but are not exact menus.",
+      "depends_on": [
+        "D02"
+      ],
+      "notes": "N03",
+      "source": {
+        "file": "sections/typed_strong_domains.tex",
+        "anchor": "For nonempty $A"
+      }
+    },
+    {
+      "id": "D04",
+      "name": "Positive word profile",
+      "statement": "A nonempty composable atomic diversity word evaluates by strong products. Its formal path vertices are distinct. Absent multipliers later mean identity ACTIONS, not empty-word menus.",
+      "depends_on": [
+        "D03"
+      ],
+      "notes": "N03",
+      "source": {
+        "file": "sections/typed_strong_domains.tex",
+        "anchor": "A \\emph{positive typed word}"
+      }
+    },
+    {
+      "id": "D05",
+      "name": "Original strong exact family",
+      "statement": "Nonempty evaluated finite intersections of positive word profiles; the empty restriction list gives diversity Top. Discard adjoined Top restrictions before choosing actual defining words. Menus remain tagged by ordered endpoints.",
+      "depends_on": [
+        "D04"
+      ],
+      "notes": "N04",
+      "source": {
+        "file": "sections/typed_strong_domains.tex",
+        "anchor": "The \\emph{strong exact-domain family}"
+      }
+    },
+    {
+      "id": "D06",
+      "name": "All-coordinate PC",
+      "statement": "For A:i→j, B:j→k, C:i→k, PC means C⊆A*B, A⊆C*B̄, B⊆Ā*C. Menu variables and sorts may repeat, but root vertices are distinct.",
+      "depends_on": [
+        "D05"
+      ],
+      "notes": "N05",
+      "source": {
+        "file": "sections/typed_strong_domains.tex",
+        "anchor": "\\mathrm{PC}_{ijk}(A,B,C)"
+      }
+    },
+    {
+      "id": "D07",
+      "name": "Finite PC iteration",
+      "statement": "On ordered DISTINCT vertex pairs initialize specified diversity edges to singletons and unrecorded pairs to typed Top. Repeatedly intersect with all strong two-step products through distinct third vertices; Boolean zero may occur.",
+      "depends_on": [
+        "D03"
+      ],
+      "notes": "N06",
+      "source": {
+        "file": "sections/typed_pc_fixedpoint.tex",
+        "anchor": "For a finite old atomic typed partial graph"
+      }
+    },
+    {
+      "id": "D08",
+      "name": "Joint pruning, exact contraction and HS",
+      "statement": "Pruning outputs nonempty subsets, is conservative, converse-compatible and preserves all PC triples. Survivor heredity means E⊆D and E∩R(D)≠∅ imply R(E)=E∩R(D). An exact contraction stays in original H; HS outputs atomic singletons.",
+      "depends_on": [
+        "D05",
+        "D06"
+      ],
+      "notes": "N08",
+      "source": {
+        "file": "sections/typed_hereditary_selectors.tex",
+        "anchor": "A \\emph{joint hereditary pruning}"
+      }
+    },
+    {
+      "id": "D09",
+      "name": "Current family",
+      "statement": "A tagged converse-closed subfamily J of ORIGINAL H, containing every atomic singleton and downward closed among original nonempty exact submenus. No multiplication closure is assumed.",
+      "depends_on": [
+        "D05"
+      ],
+      "notes": "N08",
+      "source": {
+        "file": "sections/typed_hereditary_selectors.tex",
+        "anchor": "A \\emph{current family}"
+      }
+    },
+    {
+      "id": "D10",
+      "name": "Visible filter and gate",
+      "statement": "A tagged original exact family F closed under converse and left/right multiplication by arbitrary original exact menus. Visibility: parallel F-menus meeting a current D intersect each other. G(D)=D intersect all F-menus meeting D. Empty active list leaves D fixed.",
+      "depends_on": [
+        "D09"
+      ],
+      "notes": "N08",
+      "source": {
+        "file": "sections/typed_hereditary_selectors.tex",
+        "anchor": "A \\emph{filter family}"
+      }
+    },
+    {
+      "id": "D11",
+      "name": "Full original sortwise NR2",
+      "statement": "No named original sort admits invariant equivalences R<S with exactly two R-classes in one S-class. These are ALL actual invariant equivalences, not just exact ones.",
+      "depends_on": [
+        "D01",
+        "A03"
+      ],
+      "notes": "N11",
+      "source": {
+        "file": "sections/typed_hereditary_selectors.tex",
+        "anchor": "no named sort admits a proper relative-index-two"
+      }
+    },
+    {
+      "id": "D12",
+      "name": "Generated families and pure tag action",
+      "statement": "F(C) closes a seed under original multiplication and converse. A finite pure tag group Λ fixes literal fine-colour names and transports sort signatures, legal triangles, converse, original exact menus and multiplication. F_Λ(C) also closes under Λ. Conditional no-return is: for every C and parallel A,B∈F_Λ(C), F_Λ(A)=F_Λ(B) implies A=B. It is not inferred for an arbitrary nontrivial action.",
+      "depends_on": [
+        "D10"
+      ],
+      "notes": "N13",
+      "source": {
+        "file": "sections/typed_hereditary_selectors.tex",
+        "anchor": "Let $\\Lambda$ be a finite group"
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "name": "Boolean triangle algebra",
+      "scope": "finite_boolean",
+      "statement": "Strong products are monotone, union-preserving, converse-reversing and satisfy correctly typed atomic Peirce. PC rotations follow from triangle permutation.",
+      "depends_on": [
+        "D03"
+      ],
+      "notes": "N03",
+      "source_labels": [
+        "lem:typed-exact-products"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C02",
+      "name": "SAP strong algebra and Set-Pasch",
+      "scope": "SAP",
+      "statement": "Compatible nonempty products are nonempty, strong composition is associative, Top absorbs nonempty factors, and Set-Pasch holds by SAP gluing over complete points/edges. Loop menus commute.",
+      "depends_on": [
+        "C01",
+        "A01"
+      ],
+      "notes": "N03",
+      "source_labels": [
+        "lem:typed-set-pasch",
+        "lem:typed-exact-products"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C03",
+      "name": "Supported-fork duplication",
+      "scope": "SAP",
+      "statement": "For an atom c:i→k and any X:i→j, X⊆{c}*{c̄}*X. In particular every nonempty loop P satisfies P⊆P³.",
+      "depends_on": [
+        "C02"
+      ],
+      "notes": "N03",
+      "source_labels": [
+        "lem:typed-all-PC",
+        "lem:typed-loop-stable"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C04",
+      "name": "Infinite stabilizer orbits",
+      "scope": "SAP",
+      "statement": "Every point outside a finite complete real base has infinitely many images under its pointwise stabilizer, by arbitrarily many SAP copies and finite homogeneity.",
+      "depends_on": [
+        "D01"
+      ],
+      "notes": "N02",
+      "source_labels": [
+        "lem:typed-injectivisation"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C05",
+      "name": "Injectivization and guarded word equivalence",
+      "scope": "SAP",
+      "statement": "Any finite diversity homomorphism can be made injective, fixing an already injective designated set and avoiding a finite forbidden set outside it. Positive strong profiles equal represented word profiles guarded to distinct endpoints after deleting identity letters.",
+      "depends_on": [
+        "C04",
+        "C02",
+        "D04"
+      ],
+      "notes": "N02",
+      "source_labels": [
+        "lem:typed-injectivisation"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C06",
+      "name": "Strong cycle completion with fixed complete base",
+      "scope": "SAP+CCO",
+      "statement": "A finite typed diversity diagram has an injective completion iff every specified simple cycle has a homomorphism. Any prescribed complete old base can be fixed after homogeneity alignment.",
+      "depends_on": [
+        "C05",
+        "A02"
+      ],
+      "notes": "N04",
+      "source_labels": [
+        "lem:typed-strong-cycle-completion"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C07",
+      "name": "Theta Helly and exact endpoint semantics",
+      "scope": "SAP+CCO",
+      "statement": "Merged private-path theta diagrams give positive-profile and exact-menu 2-Helly, converse/nonempty-result meet closure, and realization of every atom of a presented exact menu. Use a single pinned root if a CCO map merges roots.",
+      "depends_on": [
+        "D05",
+        "C02",
+        "C05",
+        "C06"
+      ],
+      "notes": "N04",
+      "source_labels": [
+        "lem:typed-helly"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C08",
+      "name": "Exact strong convolution and distribution",
+      "scope": "SAP+CCO",
+      "statement": "For nonempty exact A=⋂r P_r,B=⋂s Q_s, A*B=⋂rs(P_r*Q_s), including empty-list Top. Nonempty exact factors distribute over exact meets with NONEMPTY EVALUATION. All products remain in original H.",
+      "depends_on": [
+        "C01",
+        "C02",
+        "C07"
+      ],
+      "notes": "N05",
+      "source_labels": [
+        "lem:typed-exact-products"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C09",
+      "name": "Three-root exact occurrence iff PC",
+      "scope": "SAP+CCO",
+      "statement": "Three menus occur as their full endpoint survivor domains at three distinct roots iff all three PC support inclusions hold. Use three private theta gadgets and prescribed supported root triples.",
+      "depends_on": [
+        "D06",
+        "C06",
+        "C07"
+      ],
+      "notes": "N05",
+      "source_labels": [
+        "lem:typed-triple-occurrence"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C10",
+      "name": "Finite PC greatestness and survivor induction",
+      "scope": "finite_boolean",
+      "statement": "The finite monotone decreasing Boolean iteration terminates at the greatest stable refinement of its initial network. Every atomic assignment from an injective completion survives every update.",
+      "depends_on": [
+        "D07",
+        "C01"
+      ],
+      "notes": "N06",
+      "source_labels": [
+        "lem:typed-PC-walk-formula"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C11",
+      "name": "Stable support propagates along simple paths",
+      "scope": "SAP",
+      "statement": "A stable refinement of the initial network of G is included on each endpoint pair in the strong profile of every specified simple path, by induction and associativity.",
+      "depends_on": [
+        "C10",
+        "C02"
+      ],
+      "notes": "N06",
+      "source_labels": [
+        "lem:typed-PC-walk-formula"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C12",
+      "name": "PC simple-path formula",
+      "scope": "SAP+CCO",
+      "statement": "If every fixed domain is nonempty, D∞(x,y) equals the intersection of all specified simple x–y path profiles, with empty family Top. Each surviving atom extends to an injective completion of the whole graph.",
+      "depends_on": [
+        "C11",
+        "C06",
+        "C10",
+        "C05"
+      ],
+      "notes": "N06",
+      "source_labels": [
+        "lem:typed-PC-walk-formula"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C13",
+      "name": "Canonical exact PC domains and triples",
+      "scope": "SAP+CCO",
+      "statement": "Nonempty fixed domains of strongly completable diagrams equal original H. Three such domains occur simultaneously at three distinct roots iff PC; the theta path formula and exact distribution give the requested domains exactly.",
+      "depends_on": [
+        "C10",
+        "C12",
+        "C07",
+        "C08",
+        "C09"
+      ],
+      "notes": "N07",
+      "source_labels": [
+        "lem:typed-PC-fixedpoint-exact"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C14",
+      "name": "Visible gate basic properties",
+      "scope": "SAP+CCO",
+      "statement": "Visibility plus exact Helly makes G(D) nonempty original exact and current; active-list transport gives converse; equal active lists on surviving E⊆D give G(E)=E∩G(D). This preliminary lemma precedes bilateral support.",
+      "depends_on": [
+        "D08",
+        "D09",
+        "D10",
+        "C07"
+      ],
+      "notes": "N08",
+      "source_labels": [
+        "lem:typed-all-PC",
+        "lem:typed-bilateral"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C15",
+      "name": "Bilateral support preservation",
+      "scope": "SAP+CCO",
+      "statement": "If D⊆P*E and E⊆P̄*D, a visible gate preserves both inclusions with the SAME original exact P. P need not be current. Converse gives the right-factor version.",
+      "depends_on": [
+        "C14",
+        "C08",
+        "C01"
+      ],
+      "notes": "N09",
+      "source_labels": [
+        "lem:typed-bilateral"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C16",
+      "name": "Supported restricted menus for each surviving atom",
+      "scope": "SAP+CCO",
+      "statement": "For PC(A,B,C) and c∈G(C), original exact A_c=A∩({c}*B̄), B_c=B∩(Ā*{c}) meet G(A),G(B). Heredity identifies their gates, and duplication/distribution give A_c⊆{c}*B̄_c and B̄_c⊆{c̄}*A_c.",
+      "depends_on": [
+        "C15",
+        "C14",
+        "C03",
+        "C08",
+        "D06"
+      ],
+      "notes": "N09",
+      "source_labels": [
+        "lem:typed-all-PC"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C17",
+      "name": "All three PC coordinates survive a gate",
+      "scope": "SAP+CCO",
+      "statement": "Bilateral support on restricted menus yields every c∈G(C) in G(A)*G(B); both typed rotations give the other two support inclusions, even for repeated menus/sort labels.",
+      "depends_on": [
+        "C16",
+        "C15",
+        "C01"
+      ],
+      "notes": "N09",
+      "source_labels": [
+        "lem:typed-all-PC"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C18",
+      "name": "Gate image, composition and strict measure",
+      "scope": "SAP+CCO",
+      "statement": "The gate image equals its fixed family, is downward and converse closed, and contains all singletons. Consecutive gates on successive images retain heredity, PC and converse. A proper active trace removes a menu from the image and strictly decreases its cardinality.",
+      "depends_on": [
+        "C14",
+        "C17"
+      ],
+      "notes": "N10",
+      "source_labels": [
+        "lem:typed-gate-image"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C19",
+      "name": "Stable even and odd loop powers",
+      "scope": "SAP",
+      "statement": "For nonempty loop P, Pⁿ⊆Pⁿ⁺² for positive n≥1; there is no zeroth strong menu power. Finiteness gives stable even J and odd O satisfying J²=J, JO=O, O²=J, P⊆O.",
+      "depends_on": [
+        "C03",
+        "C02"
+      ],
+      "notes": "N11",
+      "source_labels": [
+        "lem:typed-loop-stable"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C20",
+      "name": "Disjoint parity gives a full invariant index-two interval",
+      "scope": "SAP+NR2",
+      "statement": "If J,O from C19 intersect they are equal; otherwise R=Id∪J and S=Id∪J∪O are actual invariant equivalences and [S:R]=2, contradicting full sortwise NR2. Equality cases and existence/closure of the second R-class are explicit.",
+      "depends_on": [
+        "C19",
+        "D11",
+        "C02"
+      ],
+      "notes": "N11",
+      "source_labels": [
+        "lem:typed-loop-stable"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C21",
+      "name": "Consecutive loop-power stabilization",
+      "scope": "SAP+NR2",
+      "statement": "Under full sortwise NR2, every nonempty loop exact P has Pⁿ=Pⁿ⁺¹ for all sufficiently large n. The stable menu need not be Top; no CCO is used in this power argument.",
+      "depends_on": [
+        "C20"
+      ],
+      "notes": "N11",
+      "source_labels": [
+        "lem:typed-loop-stable"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C22",
+      "name": "Generated-family normal forms",
+      "scope": "SAP+CCO",
+      "statement": "Every original product/converse-generated menu has form P*C*Q or P*C̄*Q, with absent outside multipliers interpreted as identity actions. H-product closure justifies exactness.",
+      "depends_on": [
+        "D12",
+        "C02",
+        "C08"
+      ],
+      "notes": "N12",
+      "source_labels": [
+        "lem:typed-no-return"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C23",
+      "name": "Parallel return transformations",
+      "scope": "SAP+CCO",
+      "statement": "For parallel returns, same-orientation outside multipliers are loops; reverse returns reduce using self-converse loop P*C̄=C*P̄. Returning maps T(X)=L*X*R commute through loop factors only.",
+      "depends_on": [
+        "C22",
+        "C02"
+      ],
+      "notes": "N12",
+      "source_labels": [
+        "lem:typed-no-return"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C24",
+      "name": "Parallel no-return under NR2",
+      "scope": "SAP+CCO+NR2",
+      "statement": "If two parallel original exact menus generate the same converse/product family, they are equal. Commuting return maps and uniform eventual loop-power stabilization give T(A)=A.",
+      "depends_on": [
+        "C23",
+        "C21"
+      ],
+      "notes": "N12",
+      "source_labels": [
+        "lem:typed-no-return"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C25",
+      "name": "Minimal viable generated family is visible",
+      "scope": "conditional_pure_action",
+      "statement": "ASSUMING the pure-action generated no-return premise, a viable seed with minimum generated-family cardinality has relative visibility: a failure would yield a viable strictly smaller generated family.",
+      "depends_on": [
+        "D12",
+        "D09",
+        "C08"
+      ],
+      "notes": "N13",
+      "source_labels": [
+        "lem:typed-pure-action-gate-engine"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C26",
+      "name": "Finite pure-tag gate engine",
+      "scope": "conditional_pure_action",
+      "statement": "Under its explicit pure tag action and generated no-return premise, start at Λ-invariant J₀=H and iterate visible gates on ORIGINAL exact current families. Each strictly decreases the number of menus, has Λ-invariant domain/image, preserves covariance and all contraction properties, and terminates in singletons within the stated menu-count bound.",
+      "depends_on": [
+        "C25",
+        "C18",
+        "C08"
+      ],
+      "notes": "N13",
+      "source_labels": [
+        "lem:typed-pure-action-gate-engine"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C27",
+      "name": "Joint hereditary selector for named sorts",
+      "scope": "SAP+CCO+NR2",
+      "statement": "Use the trivial tag group in C26; C24 supplies its no-return premise. Obtain one conservative converse-compatible selector preserving all PC coordinates and survivor heredity, without arbitrary fine-colour covariance or safe-reading conclusions.",
+      "depends_on": [
+        "C26",
+        "C24"
+      ],
+      "notes": "N13",
+      "source_labels": [
+        "thm:typed-HS"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    }
+  ],
+  "exports": [
+    {
+      "source_label": "lem:typed-set-pasch",
+      "claims": [
+        "C02"
+      ]
+    },
+    {
+      "source_label": "lem:typed-injectivisation",
+      "claims": [
+        "C04",
+        "C05"
+      ]
+    },
+    {
+      "source_label": "lem:typed-strong-cycle-completion",
+      "claims": [
+        "C06"
+      ]
+    },
+    {
+      "source_label": "lem:typed-helly",
+      "claims": [
+        "C07"
+      ]
+    },
+    {
+      "source_label": "lem:typed-exact-products",
+      "claims": [
+        "C08"
+      ]
+    },
+    {
+      "source_label": "lem:typed-triple-occurrence",
+      "claims": [
+        "C09"
+      ]
+    },
+    {
+      "source_label": "lem:typed-PC-walk-formula",
+      "claims": [
+        "C12"
+      ]
+    },
+    {
+      "source_label": "lem:typed-PC-fixedpoint-exact",
+      "claims": [
+        "C13"
+      ]
+    },
+    {
+      "source_label": "lem:typed-bilateral",
+      "claims": [
+        "C15"
+      ]
+    },
+    {
+      "source_label": "lem:typed-all-PC",
+      "claims": [
+        "C14",
+        "C17"
+      ]
+    },
+    {
+      "source_label": "lem:typed-gate-image",
+      "claims": [
+        "C18"
+      ]
+    },
+    {
+      "source_label": "lem:typed-loop-stable",
+      "claims": [
+        "C21"
+      ]
+    },
+    {
+      "source_label": "lem:typed-no-return",
+      "claims": [
+        "C24"
+      ]
+    },
+    {
+      "source_label": "lem:typed-pure-action-gate-engine",
+      "claims": [
+        "C26"
+      ]
+    },
+    {
+      "source_label": "thm:typed-HS",
+      "claims": [
+        "C27"
+      ]
+    }
+  ],
+  "controls": [
+    {
+      "id": "R01",
+      "check": "F2² translation AP+CCO source without SAP: strong product can be empty/nonassociative, and represented positive walks need not be injective."
+    },
+    {
+      "id": "R02",
+      "check": "Three-level ultrametric palette with two named sorts: exact products, all-coordinate PC, pure-tag visible gates, image/heredity and finite selector descent."
+    },
+    {
+      "id": "R03",
+      "check": "A two-block equivalence palette has alternating loop powers and no PC-preserving selector on Top; NR2 is necessary here."
+    },
+    {
+      "id": "R04",
+      "check": "Swapping literal colours of a free two-colour palette admits no invariant singleton choice on Top; pure-tag scope cannot be replaced by arbitrary colour covariance."
+    },
+    {
+      "id": "R05",
+      "check": "Exhaust all 4096 four-vertex partial diagrams in a three-level ultrametric palette: PC fixed survivors equal actual completion survivors and all simple-path intersections."
+    }
+  ],
+  "control_script": "tools/check_strong_selector_controls.py",
+  "tasks": [
+    {
+      "id": "T01",
+      "name": "Strong algebra and SAP injectivization",
+      "depends_on": [],
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Compile typed diversity products and prove SAP gluing, stabilizer orbit infinitude, injectivization and the guarded positive-word equivalence."
+    },
+    {
+      "id": "T02",
+      "name": "Strong CCO and exact menus",
+      "depends_on": [
+        "T01"
+      ],
+      "claims": [
+        "C06",
+        "C07",
+        "C08",
+        "C09"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Prove private-theta and three-root graph classifications, exact Helly/convolution and full survivor semantics."
+    },
+    {
+      "id": "T03",
+      "name": "Finite PC semantics",
+      "depends_on": [
+        "T01",
+        "T02"
+      ],
+      "claims": [
+        "C10",
+        "C11",
+        "C12",
+        "C13"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement finite Boolean iteration, greatest stable refinement, completion-survivor induction and exact simple-path semantics."
+    },
+    {
+      "id": "T04",
+      "name": "Visible gate calculus",
+      "depends_on": [
+        "T01",
+        "T02"
+      ],
+      "claims": [
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Prove gate basic properties BEFORE bilateral preservation, then all-PC, image and composition on successive original exact current families."
+    },
+    {
+      "id": "T05",
+      "name": "NR2 and original no-return",
+      "depends_on": [
+        "T01",
+        "T02"
+      ],
+      "claims": [
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement stable power thresholds and actual invariant equivalences of relative index two; prove typed normal forms and no-return."
+    },
+    {
+      "id": "T06",
+      "name": "Descending gate engine and HS",
+      "depends_on": [
+        "T04",
+        "T05"
+      ],
+      "claims": [
+        "C25",
+        "C26",
+        "C27"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement minimum viable seed and finite strict descent; keep nontrivial pure-action no-return conditional, and discharge it for the trivial action."
+    }
+  ],
+  "article_feedback": [
+    {
+      "id": "F01",
+      "kind": "WORDING_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/typed_strong_domains.tex",
+        "anchor": "including the full typed top"
+      },
+      "finding": "Top is adjoined to the profile family even when it has no positive-word presentation.",
+      "proposed_article_change": "Optionally say to discard Top restrictions before choosing one positive word for each profile.",
+      "caller_effect": "No mathematical hypothesis or conclusion changes. This is a local explanation/order clarification.",
+      "proof_claims": [
+        "C07",
+        "C08"
+      ]
+    },
+    {
+      "id": "F02",
+      "kind": "WORDING_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/typed_strong_domains.tex",
+        "anchor": "For a finite nonempty exact meet"
+      },
+      "finding": "Nonempty exact meet means nonempty evaluated intersection, not just a nonempty indexing set.",
+      "proposed_article_change": "Use meet with nonempty intersection if the convention needs reiterating.",
+      "caller_effect": "No mathematical hypothesis or conclusion changes. This is a local explanation/order clarification.",
+      "proof_claims": [
+        "C08"
+      ]
+    },
+    {
+      "id": "F03",
+      "kind": "WORDING_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/typed_hereditary_selectors.tex",
+        "anchor": "Consider any filter $A"
+      },
+      "finding": "Bilateral support uses nonempty exactness of the gate, proved independently in the opening part of the next lemma.",
+      "proposed_article_change": "Optionally move that short well-definedness observation before bilateral support, without adding a new numbered theorem.",
+      "caller_effect": "No mathematical hypothesis or conclusion changes. This is a local explanation/order clarification.",
+      "proof_claims": [
+        "C14",
+        "C15"
+      ]
+    }
+  ],
+  "review": {
+    "date": "2026-10-26",
+    "method": "Parent proof expansion and independent read-only model reviews of strong/PC and selector branches. Not independent human or Lean certification.",
+    "required_mathematical_repairs_found": 0,
+    "remaining": "Implement actual SAP gluing, finite graph constructions, invariant quotient parity and gate iteration in Lean; no compiled Lean interface or imports yet."
+  },
+  "overview_mermaid": [
+    "flowchart TD",
+    "  S[\"SAP strong algebra and injectivization\"] --> H[\"CCO theta Helly and exact products\"]",
+    "  S --> P[\"Finite PC semantics\"]",
+    "  H --> P",
+    "  H --> G[\"Visible gates and all-PC preservation\"]",
+    "  S --> N[\"NR2 loop stabilization\"]",
+    "  H --> R[\"Original typed return forms\"]",
+    "  N --> R",
+    "  G --> E[\"Conditional pure-tag gate engine\"]",
+    "  E --> X[\"Named-sort hereditary selector\"]",
+    "  R --> X"
+  ],
+  "overview_notes": [
+    "The finite PC formula is a separate export and is not needed to prove the gate engine.",
+    "The engine is conditional on its generated no-return premise for a nontrivial pure action.",
+    "Full sortwise NR2 supplies no-return for the trivial action used by the final HS theorem."
+  ]
+}

@@ -1,0 +1,352 @@
+\section{Represented exact relations and exact quotient sorts}
+We work throughout this section with an actual countable transitive
+homogeneous $M$ with triangle-defined $\Age(M)$ and semantic
+homomorphic CCO; no SAP is assumed. Let $\Id$ and $\Top$ denote,
+respectively, equality and the universal binary relation on $M$.
+A \emph{raw support} is a union of actual binary atomic relations,
+possibly including equality. The product $RS$ is the represented
+relational product $\{(x,z):\exists y\;xRy\wedge ySz\}$, not a freely
+declared Boolean-table operation. Every invariant binary relation is a union of orbital relations,
+and every such orbital is symmetric (by homogeneity and symmetry of
+all named colours).  Products remain invariant, so $RS$ is
+symmetric.  Taking converses gives $(RS)^{-1}=SR$, hence $RS=SR$. For atomic supports $a,b,c$, the
+\emph{Peirce rotations} are the elementary equivalences
+\[
+ c\subseteq ab\ \Longleftrightarrow\ a\subseteq cb
+ \ \Longleftrightarrow\ b\subseteq ac,
+\]
+obtained by permuting the three vertices of a witnessed triangle.
+
+A \emph{word profile} is the represented product of a finite word of
+atomic relations, with the empty word interpreted as $\Id$.
+A \emph{nonempty exact relation} is a nonempty finite intersection of
+such profiles; the intersection of an empty family is $\Top$.
+For exact equivalence relations we use the actual quotient structure
+of $M$, not a formal quotient of an abstract colour algebra.
+
+\begin{theorem}[Full typed exact calculus and heterogeneous ball Helly]
+\label{thm:full-typed-exact-balls}
+The following common statement also applies when the original source
+has several \emph{named}, individually transitive sorts. Let $N$ be a
+countable homogeneous structure in a finite complete atomic binary
+language whose same-sort
+colours are symmetric and whose cross-sort colours come in typed
+converse pairs. Assume semantic homomorphic CCO; SAP is \emph{not}
+required. In this theorem products are the \emph{actual represented}
+relations, and the palette for a loop sort includes its logical
+identity atom.
+
+For each ordered original sort pair $(i,j)$, let
+$\mathcal W_{ij}$ consist of the nonempty represented atomic word
+profiles, with intermediate sorts arbitrary, and let
+$\mathcal H^{\rm full}_{ij}$ consist of their nonempty finite
+intersections, including the full typed top as the empty intersection.
+Then:
+\begin{enumerate}[label=(\roman*),leftmargin=*]
+\item The family $\mathcal W_{ij}$ is $2$-Helly. So is
+$\mathcal H^{\rm full}_{ij}$; the latter is closed under
+nonempty meets and typed converse.
+\item For nonempty $D=\bigcap_\alpha P_\alpha$ and
+$F=\bigcap_\beta Q_\beta$ of matching types,
+\[
+  D;F=\bigcap_{\alpha,\beta}(P_\alpha;Q_\beta),
+\]
+with a typed top treated as an empty list of restrictions. The
+product is nonempty and full exact, and products distribute over
+nonempty finite exact meets in either argument.
+\item Fix a target original sort $u$. For actual centres
+$b_1,\ldots,b_n$ in \emph{arbitrary} named sorts $t_i$ and
+nonempty $D_i\in\mathcal H^{\rm full}_{u,t_i}$, put
+\[
+  B_{D_i}(b_i)=\{z\in N_u:(z,b_i)\in D_i\}.
+\]
+If these balls intersect pairwise, then all of them intersect;
+repeated centres and identity-bearing menus are permitted. In
+particular, their pairwise-intersection test is
+\[
+ B_{D_i}(b_i)\cap B_{D_j}(b_j)\ne\varnothing
+ \quad\Longleftrightarrow\quad
+ (b_i,b_j)\in\bar D_i;D_j.
+\]
+\end{enumerate}
+These are full (identity-aware) statements, \emph{not} assertions
+about the strong diversity-only guarded product on distinct points.
+\end{theorem}
+\begin{proof}
+\emph{Word Helly.} For each of finitely many typed words between
+sorts $i,j$, delete genuine equality factors, and attach a private
+path spelling the remaining diversity colours between two formal
+terminal vertices. If one word is empty, its profile is the
+ACTUAL old logical identity of the common loop sort.
+Pairwise intersection forces that identity atom to
+belong to every other represented word profile, so
+the total intersection contains the identity and
+the assertion follows, without attaching any
+zero-length path to two distinct formal endpoints.
+Otherwise any repeated length-one paths between
+the two common terminals impose the same atomic
+colour: singleton atomic profiles with nonempty
+intersection must be identical. Merge these
+duplicate specified edges, avoiding artificial
+parallel edges and 2-cycles.
+Every specified simple cycle in the resulting theta
+consists of two different private paths with the same
+two marked terminals. By pairwise intersection their
+full endpoint profiles share an old atomic output
+\(c\), possibly logical identity. For each path,
+\(c\) belongs to its ACTUAL represented relational
+product, so a word walk exists with endpoints
+forming a \(c\)-pair. If \(c\ne\Id\), old
+pair homogeneity moves both walks to the SAME
+chosen actual ordered \(c\)-pair; if \(c=\Id\),
+both walks may be based at one chosen actual
+point of the appropriate loop sort. Their
+private interiors may be mapped independently,
+so the simple cycle has an old homomorphism.
+Semantic homomorphic CCO now completes the
+entire theta, possibly identifying its two
+formal terminals. Its actual endpoint atom,
+including the identity case, belongs to
+EVERY original word profile. Neither SAP nor
+injectivity of the internal word witnesses
+is required. Flattening
+finite meet presentations gives $2$-Helly for full exact menus.
+The converse and meet assertions follow by reversing words and
+combining their defining lists.
+
+\emph{Exact convolution.} Peircean rotation for actual typed
+relations, with the required converses, says that an atom
+$c:i\to k$ belongs to $A;B$ iff
+$A\cap(\{c\};\bar B)\ne\varnothing$. Suppose
+$c\in P_\alpha;Q_\beta$ for every pair of defining words.
+The word profiles $P_\alpha$ meet pairwise because their
+intersection $D$ is nonempty. For every $\beta$ the profile
+$\{c\};\bar Q_\beta$ is a word product; these meet pairwise,
+since for a fixed $b\in F$ the nonempty product
+$\{c\};\{\bar b\}$ belongs to all of them. Every cross
+intersection is nonempty by typed Peirce. Word Helly therefore
+gives
+\[
+ a\in D\cap\bigcap_\beta(\{c\};\bar Q_\beta).
+\]
+Now every $Q_\beta$ meets the single word profile
+$\{\bar a\};\{c\}$. Apply word Helly again, using the
+nonempty common intersection $F$ of the $Q_\beta$, to get
+$b\in F$ with $c\in a;b$. Hence $c\in D;F$. The opposite
+inclusion is monotonicity. All the products of defining words
+are represented word profiles.
+
+If one defining family is empty, the corresponding typed top
+is absorbing under composition with any nonempty invariant
+relation of compatible sorts: fix an arbitrary output atomic
+pair and use transitivity of the intermediate original sort to
+place a witness of the nonempty other factor over its appropriate
+endpoint. This also covers a logical-identity output. Thus the
+same formula, interpreted with the top convention, applies. The
+finite-meet distributivity identities follow by flattening the
+word presentations. All the products are nonempty by transitivity
+of the participating original sorts.
+
+\emph{Exact balls.} If a $D_i$ is the singleton identity relation
+of sort $u$, pairwise ball intersection says its centre itself
+belongs to every other ball, proving the claim. A general
+nonempty menu containing an empty-word restriction is just this
+case. Discard all unrestricted top menus. For each remaining
+word in each presentation of $D_i$, attach a private typed
+path from a new formal vertex $z$ of sort $u$ to the actual
+centre $b_i$. Keep the complete atomic diagram on the distinct
+centres; repeated centres are represented by the same vertex.
+A nonempty invariant typed relation \(D_i:u\to t_i\)
+is serial at EVERY actual centre \(b_i\in N_{t_i}\),
+by transitivity of its target original named sort.
+Thus each individual ball is nonempty.
+Consider two length-one constraints from \(z\)
+to the SAME old centre point \(b_i=b_j\).
+When they come from the same exact menu,
+a witness in its nonempty ball satisfies
+both constituent word profiles. When they
+come from different menus, a witness in the
+assumed pairwise intersection of those two
+balls satisfies both. Since each length-one
+profile is a SINGLE old atomic relation,
+the two atoms must be equal. Merge these
+duplicate edges rather than retaining
+an artificial parallel-edge cycle.
+Repeated centre values are represented by
+ONE formal old centre vertex, not two
+different vertices.
+
+A specified simple cycle avoiding \(z\) is a cycle
+in the ACTUAL complete centre diagram. Every simple
+cycle containing \(z\) traverses two different
+private paths and a route in the COMPLETE
+actual old-centre diagram between their
+attached centres. This route may be EMPTY
+if the two paths attach to the SAME old
+centre vertex; otherwise it is a positive
+path of old recorded centre--centre atoms.
+The private path interiors are disjoint,
+so the cycle needs no further artificial
+compatibility assumption. Suppose the two private paths belong to the
+menus \(D_i,D_j\) at actual centres \(b_i,b_j\),
+which MAY be the same old point. Choose a
+real witness \(w\) in
+\(B_{D_i}(b_i)\cap B_{D_j}(b_j)\).
+For \(i\ne j\) this is nonempty by the
+hypothesis of PAIRWISE ball intersection,
+even when \(b_i=b_j\). For \(i=j\) it
+is the one nonempty ball, by seriality.
+In particular, if two DIFFERENT menus share
+one centre, it would be incorrect to choose
+an arbitrary witness of only one of them.
+Since \(D_i\) and \(D_j\) lie in EVERY word
+of their respective exact presentations,
+there exist actual word walks from \(w\)
+to the selected centre endpoint for EACH
+chosen private path. Map the private
+interiors independently, fixing \(w\) and
+the ACTUAL old centre points; all old
+centre-route edges retain their prescribed
+atomic colours. This proves a homomorphism
+of the chosen simple cycle, including
+repeated-centre and identity-output cases.
+Semantic CCO completes the entire diagram.
+
+The centre images form a genuine induced
+embedding: each pair of DISTINCT old centres
+has its ACTUAL specified irreflexive atomic
+edge, so they cannot be identified.
+Homogeneity of the original finite typed
+centre diagram moves these images back
+to the prescribed actual centres. The image
+of \(z\) then belongs to every required
+full exact ball. It may equal one centre
+when the exact relation permits the actual
+identity; no artificial equality-labelled
+diversity edge was introduced. The displayed pairwise criterion follows directly
+from typed relational composition and converse.
+\end{proof}
+
+\begin{lemma}[Full typed exact saturation commutes with nonempty meets]
+\label{lem:full-typed-exact-saturation}
+Let $a,b$ be named transitive original sorts.
+Let $E_a$ and $E_b$ be full exact invariant
+equivalences on them, and let
+$D_1,\ldots,D_m\subseteq L_{ab}$ be
+nonempty full exact typed relations with
+\[
+                    D=\bigcap_{i=1}^mD_i\ne\varnothing.
+\]
+All products are \emph{actual represented},
+including equality on same-sort endpoint types.
+Then
+\[
+ \boxed{\quad
+ E_a;D;E_b=\bigcap_{i=1}^m(E_a;D_i;E_b).
+ \quad}\tag{ES}\label{eq:foundational-exact-saturation}
+\]
+In particular the right-hand side is a
+nonempty full exact relation. For an
+empty index family take $D=L_{ab}$;
+both sides are the full typed top.
+
+The nonempty-intersection assumption is
+essential: no preservation of arbitrary
+empty exact intersections is asserted.
+\end{lemma}
+\begin{proof}
+For a nonempty family, apply twice the
+nonempty exact finite-meet distributivity
+from \cref{thm:full-typed-exact-balls}(ii).
+First, with fixed exact nonempty $E_a$,
+\[
+ E_a;\Bigl(\bigcap_iD_i\Bigr)
+     =\bigcap_i(E_a;D_i).
+\]
+Each displayed factor and the intersection
+are nonempty full exact by that same theorem.
+Now compose on the right with $E_b$ and
+apply the distributivity once again:
+\[
+ \Bigl(\bigcap_iE_a;D_i\Bigr);E_b
+     =\bigcap_i(E_a;D_i;E_b).
+\]
+This argument respects the ordered
+sorts and converse symbols and does not
+use commutativity of mixed arrows.
+For the empty family both sides are
+the top relation since composition of
+typed top with any nonempty invariant
+relation of compatible transitive
+sorts is top.
+\end{proof}
+
+\begin{lemma}[Word-profile Helly and exact product calculus]
+\label{lem:exact-product}
+For nonempty word profiles $P_1,\dots,P_m$ whose pairwise
+intersections are nonempty, the total intersection is nonempty.
+Consequently the nonempty exact supports enjoy the same $2$-Helly
+property (flatten all their word presentations: pairwise
+intersection of the exact supports implies pairwise intersection
+of every selected pair of words) and are closed under product; more precisely, if
+$E=\bigcap_iP_i\ne\varnothing$ and
+$F=\bigcap_jQ_j\ne\varnothing$, then
+\[
+ E\,a=\bigcap_i(P_i a),\qquad
+ EF=\bigcap_{i,j}(P_iQ_j),
+\]
+where $a$ is an atomic relation and the empty defining families
+receive their evident $\Top$ convention.
+\end{lemma}
+\begin{proof}
+Apply \cref{thm:full-typed-exact-balls}(i),(ii) to its
+single-original-sort case. Here same-sort converse is trivial,
+so the full typed Peirce law becomes the symmetric relation
+identities displayed above. Equality outputs are retained in
+these raw products.
+\end{proof}
+
+For an exact relation $R$ and a real point $x$, set
+$R[x]=\{y:yRx\}$.
+\begin{lemma}[Exact-ball Helly with different centres]\label{lem:exact-balls}
+Let $x_1,\dots,x_m\in M$ and let $R_1,\dots,R_m$ be exact relations.
+If $R_i[x_i]\cap R_j[x_j]\ne\varnothing$ for every $i,j$, then
+$\bigcap_iR_i[x_i]\ne\varnothing$. Moreover
+\[
+ R_i[x_i]\cap R_j[x_j]\ne\varnothing
+ \quad\Longleftrightarrow\quad
+ (x_i,x_j)\in R_iR_j.
+\]
+\end{lemma}
+\begin{proof}
+This is \cref{thm:full-typed-exact-balls}(iii) with one
+original named sort. Symmetry makes $\bar R_i=R_i$, so the
+typed pairwise criterion becomes $(x_i,x_j)\in R_iR_j$.
+\end{proof}
+
+
+\begin{example}[Why exactness is essential for ball Helly]
+\label{ex:exact-ball-sharp}
+Let $V=\mathbb F_2^2$, and for every nonzero $\delta\in V$ name the
+symmetric diversity colour $a_\delta(x,y)$ given by $y-x=\delta$.
+The resulting four-point structure is transitive and homogeneous:
+all finite partial colour isomorphisms are restrictions of
+translations.  Its age is triangle-defined (the three differences
+around each legal triangle sum to zero), has AP, and has semantic
+homomorphic CCO: a labelled partial graph maps to $V$ precisely
+when the edge differences sum to zero on every specified cycle.
+Choose independent $e_1,e_2\in V$ and put
+\[
+ A_1=\Id\cup a_{e_1},\qquad A_2=\Id\cup a_{e_2},
+ \qquad A_3=a_{e_1}\cup a_{e_2}.
+\]
+The three balls with common centre $0$ are respectively
+$\{0,e_1\}$, $\{0,e_2\}$, and $\{e_1,e_2\}$.
+They intersect pairwise but have empty total intersection.
+These supports are invariant, but are \emph{not} exact: every
+word profile is one difference atom (including $\Id$), so every
+nonempty exact support is either one atom or $\Top$.
+Thus Lemma~\ref{lem:exact-balls} cannot be applied to arbitrary
+invariant supports in place of exact ones.
+\end{example}
+
