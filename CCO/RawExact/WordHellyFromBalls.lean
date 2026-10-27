@@ -69,4 +69,21 @@ theorem wordProfileHelly_of_exactBallHelly
   rw [← ht]
   exact hSingle
 
+/-- C08 as an explicit downstream consumer: pairwise nonempty
+finite exact menus satisfy the full finite Helly conclusion after
+the source C13 ball-Helly provider is discharged. No second
+Helly assumption is introduced. -/
+theorem exactMenuHelly_of_exactBallHelly
+    {G : Type*} [Group G] [∀ t : ι, MulAction G (X t)]
+    (H : HomogeneousSource S G)
+    (hHelly : HeterogeneousExactBallHelly S)
+    {i j : ι} (D : List (NonemptyExact S i j))
+    (hPair : ∀ d, d ∈ D → ∀ e, e ∈ D → d ≠ e →
+      TRel.Nonempty (fun x y =>
+        evaluate S d.words x y ∧ evaluate S e.words x y)) :
+    TRel.Nonempty (fun x y => ∀ d, d ∈ D →
+      evaluate S d.words x y) :=
+  exact_menu_helly_of_word_helly S
+    (wordProfileHelly_of_exactBallHelly S H hHelly) D hPair
+
 end CCO.RawExact
