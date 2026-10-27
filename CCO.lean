@@ -17,3 +17,4 @@ import CCO.Stabilizer
 import CCO.PairHomogeneity
 import CCO.FiniteHelpers
 import CCO.RawSource
+import CCO.StabilizerHomogeneity
