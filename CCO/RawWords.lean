@@ -13,7 +13,7 @@ universe u v w
 namespace CCO
 
 inductive RawLetter {ι : Type u} {X : ι → Type v}
-    (S : AtomicSource ι X) : ι → ι → Type w where
+    (S : AtomicSource ι X) : ι → ι → Type (max u w) where
   | equality (i : ι) : RawLetter S i i
   | diversity {i j : ι} (a : S.Atom i j) : RawLetter S i j
 
