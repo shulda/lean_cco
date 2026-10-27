@@ -28,13 +28,13 @@ variable {ι : Type u} {X : ι → Type v}
 variable (S : AtomicSource ι X)
 variable {i j k : ι}
 
-def relation : RawWord S i j → TRel X i j
+def relation {i j : ι} : RawWord S i j → TRel X i j
   | .nil i => TRel.ident X i
   | .identity tail => relation tail
   | .atom a tail => TRel.comp (S.atomRel a) (relation tail)
 
 /-- Equality steps are deleted, rather than mistaken for diversity atoms. -/
-def eraseEquality : RawWord S i j → RawWord S i j
+def eraseEquality {i j : ι} : RawWord S i j → RawWord S i j
   | .nil i => .nil i
   | .identity tail => eraseEquality tail
   | .atom a tail => .atom a (eraseEquality tail)
@@ -49,7 +49,7 @@ theorem relation_eraseEquality (w : RawWord S i j) :
         TRel.comp (S.atomRel a) (relation S tail)
       rw [ih]
 
-def append : RawWord S i j → RawWord S j k → RawWord S i k
+def append {i j k : ι} : RawWord S i j → RawWord S j k → RawWord S i k
   | .nil _, v => v
   | .identity tail, v => .identity (append tail v)
   | .atom a tail, v => .atom a (append tail v)
@@ -79,7 +79,7 @@ theorem atomRel_flip (a : S.Atom i j) :
   exact (S.colour_swap x y a).symm
 
 /-- Reversal may erase identity letters, which do not affect the profile. -/
-def reverse : RawWord S i j → RawWord S j i
+def reverse {i j : ι} : RawWord S i j → RawWord S j i
   | .nil i => .nil i
   | .identity tail => reverse tail
   | .atom a tail =>
