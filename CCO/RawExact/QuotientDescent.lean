@@ -54,13 +54,10 @@ theorem invariant_saturated_descends_to_orbits
     · exact (equivτ g x).trans hτ
     · exact (equivσ g y).trans hσ
 
-/-- An actual orbit pullback itself has the two kernel closure laws.
-This is a downstream consumer of B001's exact orbit-pullback theorem and
-our C14 saturation calculus. -/
+/-- A pulled-back output orbital is automatically fibre-kernel saturated.
+This is independent of quotient equivariance and needs no chosen section. -/
 theorem output_orbit_kernel_saturated
     (τ : A → Q) (σ : B → R)
-    (equivτ : ∀ g x, τ (g • x) = g • τ x)
-    (equivσ : ∀ g y, σ (g • y) = g • σ y)
     (a : A) (b : B) :
     saturate (GroupActions.kernel τ)
       (GroupActions.pullback τ σ
@@ -68,32 +65,17 @@ theorem output_orbit_kernel_saturated
       (GroupActions.kernel σ) =
       GroupActions.pullback τ σ
         (GroupActions.orbital (G := G) (τ a) (σ b)) := by
-  have hJ : RawSymmetric.EquivRel (GroupActions.kernel τ) :=
-    kernel_equiv τ
-  have hK : RawSymmetric.EquivRel (GroupActions.kernel σ) :=
-    kernel_equiv σ
-  have hOrbit := (equivariant_orbit_pullback τ σ equivτ equivσ a b)
-  rw [hOrbit]
-  change saturate (GroupActions.kernel τ)
-      (saturate (GroupActions.kernel τ)
-        (GroupActions.orbital (G := G) a b)
-        (GroupActions.kernel σ))
-      (GroupActions.kernel σ) =
-    saturate (GroupActions.kernel τ)
-      (GroupActions.orbital (G := G) a b)
-      (GroupActions.kernel σ)
-  have hLeft := (saturate_idempotent
-    (GroupActions.kernel τ)
-    (GroupActions.orbital (G := G) a b)
-    (GroupActions.kernel σ) hJ hK).1
-  have hRight := (saturate_idempotent
-    (GroupActions.kernel τ)
-    (GroupActions.orbital (G := G) a b)
-    (GroupActions.kernel σ) hJ hK).2
-  unfold saturate
-  rw [TRel.comp_assoc]
-  rw [hLeft]
-  exact hRight
+  funext x y
+  apply propext
+  constructor
+  · rintro ⟨v, ⟨u, hu, horb⟩, hv⟩
+    change τ x = τ u at hu
+    change σ v = σ y at hv
+    change GroupActions.orbital (G := G) (τ a) (σ b) (τ x) (σ y)
+    rw [hu, ← hv]
+    exact horb
+  · intro horb
+    exact ⟨y, ⟨x, rfl, horb⟩, rfl⟩
 
 end QuotientDescent
 end CCO.RawExact
