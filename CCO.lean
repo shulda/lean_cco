@@ -26,3 +26,4 @@ import CCO.SpanEmbedding
 import CCO.SAPEdge
 import CCO.DiagramMove
 import CCO.DiagramNeighbours
+import CCO.Injectivization
