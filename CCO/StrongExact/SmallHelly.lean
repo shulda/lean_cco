@@ -44,10 +44,14 @@ theorem two_positive_present_nonempty
   obtain ⟨a, ha, hb⟩ := hpq
   refine ⟨a, ?_⟩
   intro v hv
-  simp only [List.mem_cons, List.mem_singleton] at hv
-  rcases hv with rfl | rfl
-  · exact ha
-  · exact hb
+  have hcases : v = p ∨ v = q := by
+    simpa only [List.mem_cons, List.mem_singleton,
+      List.not_mem_nil, or_false] using hv
+  rcases hcases with hp | hq
+  · subst v
+    exact ha
+  · subst v
+    exact hb
 
 /-- Genuine C07 up to TWO positive restrictions. The hard arbitrary
 size extension is precisely the pending CCO private-theta proof. -/
