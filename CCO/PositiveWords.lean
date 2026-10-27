@@ -327,6 +327,7 @@ theorem raw_relation_identity_or_positive
         have hTail : RawWord.relation S tail = TRel.ident X _ := by
           funext x y
           apply propext
+          change RawWord.relation S tail x y ↔ x = y
           have h := hIdent x y
           simpa only [Sigma.mk.injEq, heq_eq_eq, true_and] using h
         refine ⟨.single a, ?_⟩
@@ -357,6 +358,7 @@ theorem raw_guard_empty_or_positive_profile_of_SAP
     have hRel : RawWord.relation S w = TRel.ident X i := by
       funext x y
       apply propext
+      change RawWord.relation S w x y ↔ x = y
       have h := hIdent x y
       simpa only [Sigma.mk.injEq, heq_eq_eq, true_and] using h
     left
