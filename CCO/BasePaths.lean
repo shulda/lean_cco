@@ -135,6 +135,51 @@ def edges (c : C) : S.TwoStep i j :=
 def menu : S.Menu i j :=
   S.domain A.edges
 
+/-- The actual tagged vertices of the designated common base. Distinct
+formal base indices denote different real vertices by baseInjective. -/
+def baseVertices : Set (Sigma X) :=
+  Set.range (fun c : C => (⟨A.baseSort c, A.point c⟩ : Sigma X))
+
+/-- Minimal actual left factor of the finite span. -/
+def leftFactorVertices : Set (Sigma X) :=
+  Set.insert (⟨i, A.left⟩ : Sigma X) A.baseVertices
+
+/-- Minimal actual right factor of the finite span. -/
+def rightFactorVertices : Set (Sigma X) :=
+  Set.insert (⟨j, A.right⟩ : Sigma X) A.baseVertices
+
+theorem baseVertices_finite : A.baseVertices.Finite := by
+  letI : Finite C := A.finiteBase
+  exact Set.finite_range _
+
+/-- The finite displayed base does not accidentally include the left
+endpoint, even when its named sort matches a base sort. -/
+theorem leftRoot_not_base :
+    (⟨i, A.left⟩ : Sigma X) ∉ A.baseVertices := by
+  rintro ⟨c, hc⟩
+  exact (S.atomRel_ne (A.leftColour c)) hc.symm
+
+theorem rightRoot_not_base :
+    (⟨j, A.right⟩ : Sigma X) ∉ A.baseVertices := by
+  rintro ⟨c, hc⟩
+  exact (S.atomRel_ne (A.rightColour c)) hc
+
+/-- The two minimal ACTUAL factors intersect exactly in the displayed
+base, not merely in a subset of it. This is true independently of
+whether the two endpoint sort labels coincide. -/
+theorem factor_intersection :
+    A.leftFactorVertices ∩ A.rightFactorVertices = A.baseVertices := by
+  ext p
+  constructor
+  · rintro ⟨hl, hr⟩
+    rcases (Set.mem_insert_iff.mp hl) with hleft | hbase
+    · rcases (Set.mem_insert_iff.mp hr) with hright | hbase
+      · exact False.elim (A.distinctRoots (hleft.symm.trans hright))
+      · exact hbase
+    · exact hbase
+  · intro hb
+    exact ⟨Set.mem_insert_of_mem hb, Set.mem_insert_of_mem hb⟩
+
 theorem empty_base (A : S.ActualSpan (i := i) (j := j) Empty) :
     A.menu = Set.univ := by
   ext a
