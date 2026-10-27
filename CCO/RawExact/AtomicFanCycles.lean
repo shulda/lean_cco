@@ -32,9 +32,52 @@ def fanPoint {I : Type (max u v)} [Finite I]
   | none => x
   | some t => centres t
 
+/-- A genuine atomic fan's point assignment preserves an individual
+specified edge as soon as the two possible root orientations are
+covered. Splitting on the *formal Option vertices*, rather than on a
+dependent cycle-expression, keeps all sort indices definitional. -/
+theorem fanPoint_preserves_edge
+    {I : Type (max u v)} [Finite I]
+    (root : ι) (sort : I → ι)
+    (centres : ∀ t : I, X (sort t))
+    (atoms : ∀ t : I, S.Atom root (sort t))
+    (x : X root) (p q : Option I) (hpq : p ≠ q)
+    (c : S.Atom
+      ((atomicFan S root sort centres atoms).vertexSort p)
+      ((atomicFan S root sort centres atoms).vertexSort q))
+    (hc : (atomicFan S root sort centres atoms).edge p q hpq = some c)
+    (hLeft : ∀ t : I, p = none → q = some t →
+      S.atomRel (atoms t) x (centres t))
+    (hRight : ∀ t : I, p = some t → q = none →
+      S.atomRel (atoms t) x (centres t)) :
+    S.colour (fanPoint S root sort centres atoms x p)
+      (fanPoint S root sort centres atoms x q) = some c := by
+  cases p with
+  | none =>
+      cases q with
+      | none => exact False.elim (hpq rfl)
+      | some t =>
+          have hAtom := hLeft t rfl rfl
+          change some (atoms t) = some c at hc
+          change S.colour x (centres t) = some c
+          exact hAtom.trans hc
+  | some t =>
+      cases q with
+      | none =>
+          have hAtom := hRight t rfl rfl
+          have hRev : S.colour (centres t) x =
+              some (S.conv (atoms t)) :=
+            (S.colour_swap x (centres t) (atoms t)).mp hAtom
+          change some (S.conv (atoms t)) = some c at hc
+          change S.colour (centres t) x = some c
+          exact hRev.trans hc
+      | some s =>
+          change S.colour (centres t) (centres s) = some c at hc
+          exact hc
+
 /-- The literal atomic star is locally cycle-realizable whenever every
 pair of its spokes has an ACTUAL simultaneous real-root witness.
-In particular no original SAP or assumed Helly conclusion is used. -/
+No original SAP or assumed Helly conclusion is used. -/
 theorem atomicFan_cycleHom_of_pairwise
     {I : Type (max u v)} [Finite I]
     (root : ι) (sort : I → ι)
@@ -68,47 +111,31 @@ theorem atomicFan_cycleHom_of_pairwise
         obtain ⟨x, hxA, hxB⟩ := hPair a b
         refine ⟨fun p => fanPoint S root sort centres atoms x (C.vertices p), ?_⟩
         intro p c hc
-        cases hp : C.vertices p with
-        | none =>
-          have hpe : p = p0 := hOnlyRoot p hp
+        apply fanPoint_preserves_edge S root sort centres atoms x
+          (C.vertices p) (C.vertices (cyclicNext C.length_pos p))
+          (C.next_ne p) c hc
+        · intro t hp hq
+          have heq : p = p0 := hOnlyRoot p hp
           subst p
-          have hColour : atoms a = c := by
-            simpa [atomicFan, hp0, hNext] using hc
-          have hResult : S.colour x (centres a) = some c := by
-            simpa only [hColour] using hxA
-          simpa [fanPoint, hp0, hNext] using hResult
-        | some k =>
-          cases hq : C.vertices (cyclicNext C.length_pos p) with
-          | none =>
-            have hpe : p = prev := hOnlyIncoming p hq
-            subst p
-            have hColour : S.conv (atoms b) = c := by
-              simpa [atomicFan, hPrev, hprev, hp0] using hc
-            have hRev : S.colour (centres b) x = some (S.conv (atoms b)) :=
-              (S.colour_swap x (centres b) (atoms b)).mp hxB
-            have hResult : S.colour (centres b) x = some c := by
-              simpa only [hColour] using hRev
-            simpa [fanPoint, hPrev, hprev, hp0] using hResult
-          | some j =>
-            have hCentre : S.colour (centres k) (centres j) = some c := by
-              simpa [atomicFan, hp, hq] using hc
-            simpa [fanPoint, hp, hq] using hCentre
+          have ht : a = t := Option.some.inj (hNext.symm.trans hq)
+          subst t
+          exact hxA
+        · intro t hp hq
+          have heq : p = prev := hOnlyIncoming p hq
+          subst p
+          have ht : b = t := Option.some.inj (hPrev.symm.trans hp)
+          subst t
+          exact hxB
   · obtain ⟨arbitrary⟩ := S.nonemptySort root
     refine ⟨fun p => fanPoint S root sort centres atoms arbitrary (C.vertices p), ?_⟩
     intro p c hc
-    have hpNonroot : C.vertices p ≠ none :=
-      fun hh => hRoot ⟨p, hh⟩
-    have hqNonroot : C.vertices (cyclicNext C.length_pos p) ≠ none :=
-      fun hh => hRoot ⟨cyclicNext C.length_pos p, hh⟩
-    cases hp : C.vertices p with
-    | none => exact False.elim (hpNonroot hp)
-    | some k =>
-      cases hq : C.vertices (cyclicNext C.length_pos p) with
-      | none => exact False.elim (hqNonroot hq)
-      | some j =>
-        have hCentre : S.colour (centres k) (centres j) = some c := by
-          simpa [atomicFan, hp, hq] using hc
-        simpa [fanPoint, hp, hq] using hCentre
+    apply fanPoint_preserves_edge S root sort centres atoms arbitrary
+      (C.vertices p) (C.vertices (cyclicNext C.length_pos p))
+      (C.next_ne p) c hc
+    · intro t hp _
+      exact False.elim (hRoot ⟨p, hp⟩)
+    · intro t _ hq
+      exact False.elim (hRoot ⟨cyclicNext C.length_pos p, hq⟩)
 
 /-- A genuine CCO-to-Helly theorem for every FINITE family of
 single-atom balls with pairwise intersection and distinct actual
