@@ -116,6 +116,8 @@ theorem preservesOldEdges (c : C) :
 /-- Natural base-path domain equality under induced embeddings of BOTH
 factors, provided their common-base map is onto the exact target base.
 No assertion about the cross-root atom or about SIR is made. -/
+include F
+
 theorem menu_preserved :
     A.menu = B.menu := by
   exact S.menu_preserved A B
