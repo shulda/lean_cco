@@ -32,3 +32,4 @@ import CCO.PositiveWords
 
 import CCO.RawExact.Presentations
 import CCO.RawExact.Balls
+import CCO.RawExact.MixedJoins
