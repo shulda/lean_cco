@@ -50,7 +50,7 @@ theorem thetaBranchPosition_injective
     · exfalso
       rw [hp0, thetaBranchPosition_source S ws b,
         ← htq, thetaBranchPosition_interior S ws b tq] at he
-      exact (thetaLeft_ne_private S ws b tq) he
+      cases he
   · rcases hCases q with hq0 | hq1 | ⟨tq, htq⟩
     · exfalso
       rw [hp1, thetaBranchPosition_target S ws b,
@@ -60,16 +60,16 @@ theorem thetaBranchPosition_injective
     · exfalso
       rw [hp1, thetaBranchPosition_target S ws b,
         ← htq, thetaBranchPosition_interior S ws b tq] at he
-      exact (thetaRight_ne_private S ws b tq) he
+      cases he
   · rcases hCases q with hq0 | hq1 | ⟨tq, htq⟩
     · exfalso
       rw [← htp, thetaBranchPosition_interior S ws b tp,
         hq0, thetaBranchPosition_source S ws b] at he
-      exact (thetaLeft_ne_private S ws b tp) he.symm
+      cases he
     · exfalso
       rw [← htp, thetaBranchPosition_interior S ws b tp,
         hq1, thetaBranchPosition_target S ws b] at he
-      exact (thetaRight_ne_private S ws b tp) he.symm
+      cases he
     · rw [← htp, thetaBranchPosition_interior S ws b tp,
         ← htq, thetaBranchPosition_interior S ws b tq] at he
       have hSig :

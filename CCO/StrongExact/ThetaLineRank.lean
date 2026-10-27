@@ -51,12 +51,15 @@ theorem wordEdge_rank_step {i j : ι}
   | cons a tail ih =>
       cases e with
       | inl _ =>
-          rfl
+          change 1 + wordPositionRank S tail (wordSource S tail) =
+            0 + 1
+          rw [wordSource_rank_zero S tail]
       | inr e =>
           change 1 + wordPositionRank S tail
             (wordEdgeTarget S tail e) =
             (1 + wordPositionRank S tail
               (wordEdgeSource S tail e)) + 1
+          rw [ih e]
           omega
 
 /-- A literal positive word edge is strictly forward in the ranked
@@ -80,7 +83,8 @@ theorem wordPositionRank_injective {i j : ι}
   induction word with
   | single a =>
       intro p q h
-      cases p <;> cases q <;> simp_all [wordPositionRank]
+      cases p <;> cases q <;> try rfl
+      all_goals simp [wordPositionRank] at h
   | cons a tail ih =>
       intro p q h
       cases p with
