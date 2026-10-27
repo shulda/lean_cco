@@ -54,11 +54,11 @@ def wordEdgeAtom {i j : ι} :
         (wordPositionSort S w (wordEdgeSource S w e))
         (wordPositionSort S w (wordEdgeTarget S w e))
   | .single b, _ => b
-  | .cons b tail, .inl _ => by
+  | .cons b tail, Sum.inl _ => by
       change S.Atom i (wordPositionSort S tail (wordSource S tail))
       rw [wordSource_sort S tail]
       exact b
-  | .cons _ tail, .inr e => wordEdgeAtom tail e
+  | .cons _ tail, Sum.inr e => wordEdgeAtom tail e
 
 theorem finite_wordEdgeIndex {i j : ι}
     (w : PositiveWord S i j) : Finite (wordEdgeIndex S w) := by
