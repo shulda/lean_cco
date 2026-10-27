@@ -42,7 +42,7 @@ namespace TriangleFan
 /-- Every fan is a positive diversity word from root to last vertex;
 no equality can be an edge, though represented intermediate walks
 may repeat nonadjacent real vertices. -/
-def word {a : S.Atom i j} :
+def word {j : ι} {a : S.Atom i j} :
     TriangleFan S i a → PositiveWord S i j
   | .first a => .single a
   | .next fan b _ _ => PositiveWord.append S (word fan) (.single b)
@@ -56,7 +56,7 @@ theorem represented_fan_endpoint
     (H : HomogeneousSource S G)
     {a : S.Atom i j} (fan : TriangleFan S i a) :
     ∃ x : X i, ∃ y : X j,
-      PositiveWord.represented S (word fan) x y ∧
+      PositiveWord.represented S (word S fan) x y ∧
         S.colour x y = some a := by
   induction fan with
   | first a =>
