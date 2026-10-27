@@ -93,8 +93,8 @@ of the two *actual* fibre kernels with one actual original orbital.
 No invented quotient atom or choice of representative is used. -/
 theorem orbital_pullback
     (τ : A → Q) (σ : C → R)
-    (equivτ : ∀ g x, τ (g • x) = g • τ x)
-    (equivσ : ∀ g y, σ (g • y) = g • σ y)
+    (equivτ : ∀ (g : G) x, τ (g • x) = g • τ x)
+    (equivσ : ∀ (g : G) y, σ (g • y) = g • σ y)
     (a : A) (b : C) :
     pullback τ σ (orbital (G := G) (τ a) (σ b)) =
       saturation τ σ (orbital (G := G) a b) := by
@@ -125,8 +125,8 @@ theorem no_diversity_injective
     {A Q R : Type*} [MulAction G A]
     [MulAction G Q] [MulAction G R]
     (τ : A → Q) (σ : A → R)
-    (equivτ : ∀ g x, τ (g • x) = g • τ x)
-    (equivσ : ∀ g x, σ (g • x) = g • σ x)
+    (equivτ : ∀ (g : G) x, τ (g • x) = g • τ x)
+    (equivσ : ∀ (g : G) x, σ (g • x) = g • σ x)
     (trans : ∀ x y : A, ∃ g : G, g • x = y)
     (a b : A)
     (hDiag : ∀ x y : A,
