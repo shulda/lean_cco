@@ -178,7 +178,10 @@ theorem factor_intersection :
       · exact hbase
     · exact hbase
   · intro hb
-    exact ⟨Set.mem_insert_of_mem hb, Set.mem_insert_of_mem hb⟩
+    change p ∈ Set.insert (⟨i, A.left⟩ : Sigma X) A.baseVertices ∧
+      p ∈ Set.insert (⟨j, A.right⟩ : Sigma X) A.baseVertices
+    exact ⟨Set.mem_insert_iff.mpr (Or.inr hb),
+      Set.mem_insert_iff.mpr (Or.inr hb)⟩
 
 theorem empty_base (A : S.ActualSpan (i := i) (j := j) Empty) :
     A.menu = Set.univ := by
