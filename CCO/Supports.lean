@@ -26,7 +26,7 @@ def ColourInvariant : Prop :=
   ∀ (g : G) (x : X i) (y : X j),
     S.colour (g • x) (g • y) = S.colour x y
 
-/-- Complete 1-/2-point homogeneity on these named original sorts. -/
+/-- Complete one- and two-point homogeneity on these named original sorts. -/
 def PairHomogeneous : Prop :=
   ∀ (x x' : X i) (y y' : X j),
     S.colour x y = S.colour x' y' →
