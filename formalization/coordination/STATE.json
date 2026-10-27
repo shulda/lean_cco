@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "protocol_version": 2,
+  "revision": 1,
+  "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+  "packages": {
+    "B001": {
+      "state": "ACCEPTED",
+      "owner_project_id": 1,
+      "head_sha": "a1a709a0807fa59e7422ee79e95816c7ecd1fd45",
+      "pr_number": 1,
+      "accepted_commit": "34b7f1b055788dcf1c134f07fd6a89c123189a82",
+      "main_ci": {
+        "run_id": 40533022306,
+        "head_sha": "34b7f1b055788dcf1c134f07fd6a89c123189a82",
+        "conclusion": "success",
+        "axiom_audit": "allowlist"
+      },
+      "review": {
+        "project_id": 0,
+        "head_sha": "a1a709a0807fa59e7422ee79e95816c7ecd1fd45",
+        "approved": true,
+        "summary": "Preparation project checked the actual source quantifiers, all RAW/STRONG providers, finite-span consumer and exact-head plus integrated-main build/axiom audits."
+      }
+    },
+    "B002": {
+      "state": "AVAILABLE",
+      "owner_project_id": null
+    },
+    "B003": {
+      "state": "AVAILABLE",
+      "owner_project_id": null
+    },
+    "B004": {
+      "state": "AVAILABLE",
+      "owner_project_id": null
+    },
+    "B005": {
+      "state": "AVAILABLE",
+      "owner_project_id": null
+    },
+    "B006": {
+      "state": "AVAILABLE",
+      "owner_project_id": null
+    },
+    "B007": {
+      "state": "AVAILABLE",
+      "owner_project_id": null
+    },
+    "B008": {
+      "state": "AVAILABLE",
+      "owner_project_id": null
+    },
+    "B009": {
+      "state": "AVAILABLE",
+      "owner_project_id": null
+    },
+    "B010": {
+      "state": "AVAILABLE",
+      "owner_project_id": null
+    },
+    "B011": {
+      "state": "AVAILABLE",
+      "owner_project_id": null
+    },
+    "B012": {
+      "state": "AVAILABLE",
+      "owner_project_id": null
+    },
+    "B013": {
+      "state": "AVAILABLE",
+      "owner_project_id": null
+    },
+    "B014": {
+      "state": "AVAILABLE",
+      "owner_project_id": null
+    },
+    "B015": {
+      "state": "AVAILABLE",
+      "owner_project_id": null
+    },
+    "B016": {
+      "state": "AVAILABLE",
+      "owner_project_id": null
+    },
+    "B017": {
+      "state": "AVAILABLE",
+      "owner_project_id": null
+    },
+    "B018": {
+      "state": "AVAILABLE",
+      "owner_project_id": null
+    },
+    "B019": {
+      "state": "AVAILABLE",
+      "owner_project_id": null
+    }
+  },
+  "integration_lock": null,
+  "history": [
+    {
+      "revision": 1,
+      "project_id": 0,
+      "event": "bootstrap_after_B001_acceptance",
+      "package_id": "B001"
+    }
+  ]
+}
