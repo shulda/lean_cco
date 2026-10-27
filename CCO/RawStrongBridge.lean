@@ -64,7 +64,7 @@ theorem diversityGuard_ident (i : ι) :
     rw [hn] at hc
     cases hc
   · intro ha
-    exact False.elim (Set.not_mem_empty a ha)
+    exact False.elim (by simpa using ha)
 
 /-- The one-atom RAW predicate is diversity-only, not literal equality. -/
 theorem atomRel_as_menu (a : S.Atom i j) :
@@ -76,6 +76,7 @@ theorem atomRel_as_menu (a : S.Atom i j) :
     exact ⟨a, by simp, h⟩
   · rintro ⟨b, hb, hc⟩
     have h : b = a := Set.mem_singleton_iff.mp hb
-    simpa [h] using hc
+    change S.colour x y = some a
+    simpa only [h] using hc
 
 end CCO.AtomicSource
