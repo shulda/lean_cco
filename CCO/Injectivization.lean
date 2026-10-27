@@ -67,7 +67,7 @@ private theorem process_finset_of_SAP
       · intro u hu
         rcases Finset.mem_insert.mp hu with hux | huT
         · subst u
-        · constructor
+          constructor
           · intro hxZ
             exact hNew (Or.inl hxZ)
           · intro v hxv heq
