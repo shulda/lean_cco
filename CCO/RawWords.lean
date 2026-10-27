@@ -64,12 +64,12 @@ theorem relation_append (u : RawWord S i j) (v : RawWord S j k) :
   | identity tail ih =>
       change relation S (append S tail v) =
         TRel.comp (relation S tail) (relation S v)
-      exact ih
+      exact ih v
   | atom a tail ih =>
       change TRel.comp (S.atomRel a) (relation S (append S tail v)) =
         TRel.comp (TRel.comp (S.atomRel a) (relation S tail))
           (relation S v)
-      rw [ih, TRel.comp_assoc]
+      rw [ih v, TRel.comp_assoc]
 
 theorem atomRel_flip (a : S.Atom i j) :
     S.atomRel (S.conv a) = TRel.converse (S.atomRel a) := by
@@ -97,7 +97,7 @@ theorem relation_reverse (w : RawWord S i j) :
       change relation S (append S (reverse S tail)
           (.atom (S.conv a) (.nil _))) =
         TRel.converse (TRel.comp (S.atomRel a) (relation S tail))
-      rw [S.relation_append, ih]
+      rw [relation_append S, ih]
       change TRel.comp (TRel.converse (relation S tail))
         (TRel.comp (S.atomRel (S.conv a)) (TRel.ident X _)) =
           TRel.converse (TRel.comp (S.atomRel a) (relation S tail))
