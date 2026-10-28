@@ -1,5 +1,6 @@
 import CCO.RawExact.FanSortCompatibility
 import CCO.RawExact.ActualWordStepColour
+import CCO.RawExact.PathLocalDegree
 import Mathlib.Tactic
 
 /-!
