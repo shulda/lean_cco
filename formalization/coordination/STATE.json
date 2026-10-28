@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "protocol_version": 2,
-  "revision": 5,
+  "protocol_version": 3,
+  "revision": 6,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -25,7 +25,7 @@
     },
     "B002": {
       "state": "IN_PROGRESS",
-      "owner_project_id": 1,
+      "owner_project_id": 3,
       "claim_revision": 2,
       "base_main_sha": "7527172215da51d21180a3c5dc624ce54e2869ee",
       "base_ci": {
@@ -33,11 +33,62 @@
         "head_sha": "7527172215da51d21180a3c5dc624ce54e2869ee",
         "conclusion": "success",
         "axiom_audit": "allowlist"
-      }
+      },
+      "handoff_history": [
+        {
+          "package_id": "B002",
+          "previous_owner_project_id": 1,
+          "branch": "project1/B002-raw-exact",
+          "pr_number": 3,
+          "head_sha": "85878128003ace4d4e63d2a42a1cbcb596857308",
+          "observed_ci": {
+            "head_sha": "85878128003ace4d4e63d2a42a1cbcb596857308",
+            "run_id": 40665192487,
+            "conclusion": "failure",
+            "axiom_audit": "not_run_after_build_failure"
+          },
+          "last_green_checkpoint": {
+            "head_sha": "5254d3a5f2455c97710aa554c884052ac84cd257",
+            "ci": {
+              "head_sha": "5254d3a5f2455c97710aa554c884052ac84cd257",
+              "run_id": 40664176515,
+              "conclusion": "success",
+              "axiom_audit": "allowlist"
+            }
+          },
+          "summary": "Original project 1 stopped by user confirmation; all 170 existing commits and newer WIP preserved. Last green ancestor has 1386 audited CCO declarations; current WIP retains inherited three-module proof failures."
+        }
+      ],
+      "original_author_project_ids": [
+        1
+      ],
+      "author_actor_ids": [
+        "legacy-project-1",
+        "root"
+      ],
+      "branch": "project1/B002-raw-exact",
+      "head_sha": "85878128003ace4d4e63d2a42a1cbcb596857308",
+      "pr_number": 3,
+      "observed_ci": {
+        "head_sha": "85878128003ace4d4e63d2a42a1cbcb596857308",
+        "run_id": 40665192487,
+        "conclusion": "failure",
+        "axiom_audit": "not_run_after_build_failure"
+      },
+      "last_green_checkpoint": {
+        "head_sha": "5254d3a5f2455c97710aa554c884052ac84cd257",
+        "ci": {
+          "head_sha": "5254d3a5f2455c97710aa554c884052ac84cd257",
+          "run_id": 40664176515,
+          "conclusion": "success",
+          "axiom_audit": "allowlist"
+        }
+      },
+      "handoff_revision": 6
     },
     "B003": {
       "state": "IN_PROGRESS",
-      "owner_project_id": 2,
+      "owner_project_id": 3,
       "claim_revision": 3,
       "base_main_sha": "7527172215da51d21180a3c5dc624ce54e2869ee",
       "base_ci": {
@@ -45,7 +96,58 @@
         "head_sha": "7527172215da51d21180a3c5dc624ce54e2869ee",
         "conclusion": "success",
         "axiom_audit": "allowlist"
-      }
+      },
+      "handoff_history": [
+        {
+          "package_id": "B003",
+          "previous_owner_project_id": 2,
+          "branch": "p2-b003-strong-exact",
+          "pr_number": 4,
+          "head_sha": "f140b2caf36d912f9d60f84727ba7674b8b7205a",
+          "observed_ci": {
+            "head_sha": "f140b2caf36d912f9d60f84727ba7674b8b7205a",
+            "run_id": 40668681157,
+            "conclusion": "success",
+            "axiom_audit": "allowlist"
+          },
+          "last_green_checkpoint": {
+            "head_sha": "f140b2caf36d912f9d60f84727ba7674b8b7205a",
+            "ci": {
+              "head_sha": "f140b2caf36d912f9d60f84727ba7674b8b7205a",
+              "run_id": 40668681157,
+              "conclusion": "success",
+              "axiom_audit": "allowlist"
+            }
+          },
+          "summary": "Original project 2 stopped by user confirmation; entire branch and original authorship preserved. Green head audits1464 declarations but package remains IN_PROGRESS; original project 2 is never used as a non-author reviewer."
+        }
+      ],
+      "original_author_project_ids": [
+        2
+      ],
+      "author_actor_ids": [
+        "legacy-project-2",
+        "root"
+      ],
+      "branch": "p2-b003-strong-exact",
+      "head_sha": "f140b2caf36d912f9d60f84727ba7674b8b7205a",
+      "pr_number": 4,
+      "observed_ci": {
+        "head_sha": "f140b2caf36d912f9d60f84727ba7674b8b7205a",
+        "run_id": 40668681157,
+        "conclusion": "success",
+        "axiom_audit": "allowlist"
+      },
+      "last_green_checkpoint": {
+        "head_sha": "f140b2caf36d912f9d60f84727ba7674b8b7205a",
+        "ci": {
+          "head_sha": "f140b2caf36d912f9d60f84727ba7674b8b7205a",
+          "run_id": 40668681157,
+          "conclusion": "success",
+          "axiom_audit": "allowlist"
+        }
+      },
+      "handoff_revision": 6
     },
     "B004": {
       "state": "AVAILABLE",
@@ -185,6 +287,65 @@
           "axiom_audit": "allowlist"
         }
       }
+    },
+    {
+      "revision": 6,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "handoff",
+      "package_id": null,
+      "details": {
+        "actor_id": "root",
+        "previous_projects_stopped": true,
+        "transfers": [
+          {
+            "package_id": "B002",
+            "previous_owner_project_id": 1,
+            "branch": "project1/B002-raw-exact",
+            "pr_number": 3,
+            "head_sha": "85878128003ace4d4e63d2a42a1cbcb596857308",
+            "observed_ci": {
+              "head_sha": "85878128003ace4d4e63d2a42a1cbcb596857308",
+              "run_id": 40665192487,
+              "conclusion": "failure",
+              "axiom_audit": "not_run_after_build_failure"
+            },
+            "last_green_checkpoint": {
+              "head_sha": "5254d3a5f2455c97710aa554c884052ac84cd257",
+              "ci": {
+                "head_sha": "5254d3a5f2455c97710aa554c884052ac84cd257",
+                "run_id": 40664176515,
+                "conclusion": "success",
+                "axiom_audit": "allowlist"
+              }
+            },
+            "summary": "Original project 1 stopped by user confirmation; all 170 existing commits and newer WIP preserved. Last green ancestor has 1386 audited CCO declarations; current WIP retains inherited three-module proof failures."
+          },
+          {
+            "package_id": "B003",
+            "previous_owner_project_id": 2,
+            "branch": "p2-b003-strong-exact",
+            "pr_number": 4,
+            "head_sha": "f140b2caf36d912f9d60f84727ba7674b8b7205a",
+            "observed_ci": {
+              "head_sha": "f140b2caf36d912f9d60f84727ba7674b8b7205a",
+              "run_id": 40668681157,
+              "conclusion": "success",
+              "axiom_audit": "allowlist"
+            },
+            "last_green_checkpoint": {
+              "head_sha": "f140b2caf36d912f9d60f84727ba7674b8b7205a",
+              "ci": {
+                "head_sha": "f140b2caf36d912f9d60f84727ba7674b8b7205a",
+                "run_id": 40668681157,
+                "conclusion": "success",
+                "axiom_audit": "allowlist"
+              }
+            },
+            "summary": "Original project 2 stopped by user confirmation; entire branch and original authorship preserved. Green head audits1464 declarations but package remains IN_PROGRESS; original project 2 is never used as a non-author reviewer."
+          }
+        ]
+      }
     }
   ],
   "infrastructure_integrations": [
@@ -225,5 +386,6 @@
         "axiom_audit": "allowlist"
       }
     }
-  ]
+  ],
+  "policy_revision": 2
 }
