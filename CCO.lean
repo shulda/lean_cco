@@ -80,3 +80,6 @@ import CCO.RawExact.WordOccurrences
 import CCO.RawExact.ZeroWordHelly
 
 import CCO.RawExact.SaturationDistribution
+
+import CCO.RawExact.WalkGeometry
+import CCO.RawExact.PrivateFanVertices
