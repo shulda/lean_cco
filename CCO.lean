@@ -114,3 +114,5 @@ import CCO.RawExact.ActualWordStepColour
 import CCO.RawExact.PairedWalkColourTransport
 import CCO.RawExact.FanCentreBoundary
 import CCO.RawExact.FanSimpleGraph
+
+import CCO.RawExact.ReducedDirectWords
