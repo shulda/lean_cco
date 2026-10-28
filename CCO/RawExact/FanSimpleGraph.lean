@@ -31,10 +31,10 @@ def privateFanSimpleGraph
     (centres : ∀ t : I, X (sort t)) :
     SimpleGraph (PrivateFanVertex S D centres) where
   Adj := privateFanAdjacent S D centres
-  symm := by
+  symm.symm := by
     intro v w h
     exact (privateFanAdjacent_symm S D centres v w).mp h
-  loopless := by
+  loopless.irrefl := by
     intro v
     exact privateFanAdjacent_irrefl S D centres v
 

@@ -95,7 +95,7 @@ theorem privateFan_centre_path_edges_are_last_steps
       v = privateFanAtWordPosition S D centres o p := by
   obtain ⟨o, p, q, hpq, hv, hc⟩ := hAdj
   obtain ⟨_, hq, hCentre⟩ :=
-    privateFanAt_old_centre_only_at_finish S D centres o q c hc
+    privateFanAt_old_centre_only_at_finish S D centres o q c hc.symm
   exact ⟨o, p, q, hq, hCentre, hpq, hv⟩
 
 end CCO.RawExact
