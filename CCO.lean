@@ -120,3 +120,5 @@ import CCO.RawExact.ReducedDirectWords
 import CCO.RawExact.FanReferenceEdges
 
 import CCO.RawExact.FanTerminalIncidence
+
+import CCO.RawExact.FanEdgeOverlaps
