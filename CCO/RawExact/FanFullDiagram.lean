@@ -47,6 +47,16 @@ theorem option_map_actual_converse_some_iff
         have hReverse := congrArg (fun x => S.conv x) h
         simpa only [S.conv_invol] using hReverse
 
+
+/-- Conversely, the old typed converse of an option atom is equal
+to `some a` precisely when the original option is `some (conv a)`.
+This isolates dependent-option simplification from the full fan diagram. -/
+theorem option_map_actual_converse_reverse_some_iff
+    {i j : ι} (o : Option (S.Atom i j)) (a : S.Atom j i) :
+    o.map S.conv = some a ↔ o = some (S.conv a) := by
+  simpa only [S.conv_invol] using
+    (option_map_actual_converse_some_iff S o (S.conv a)).symm
+
 /-- A fixed old atom choice on each root spoke and the original
 colours on all other edges give one source-typed partial edge map.
 The `p ≠ q` proof prevents an artificial diagonal edge. -/
@@ -99,11 +109,8 @@ noncomputable def privateFanFullDiagram
         | inl qq =>
           cases qq with
           | none =>
-            have h :=
-              (option_map_actual_converse_some_iff S
-                (privateFanRootSelectedAtom S H D centres (.inl (some c)))
-                (S.conv a)).symm
-            simpa only [privateFanFullEdge, S.conv_invol] using h
+            exact option_map_actual_converse_reverse_some_iff S
+              (privateFanRootSelectedAtom S H D centres (.inl (some c))) a
           | some d =>
             exact (privateFanPuncturedDiagram S H D centres).edge_reverse
               (.inl (some c)) (.inl (some d)) hpq a
@@ -115,11 +122,8 @@ noncomputable def privateFanFullDiagram
       | inl qq =>
         cases qq with
         | none =>
-          have h :=
-            (option_map_actual_converse_some_iff S
-              (privateFanRootSelectedAtom S H D centres (.inr pp))
-              (S.conv a)).symm
-          simpa only [privateFanFullEdge, S.conv_invol] using h
+          exact option_map_actual_converse_reverse_some_iff S
+            (privateFanRootSelectedAtom S H D centres (.inr pp)) a
         | some c =>
           exact (privateFanPuncturedDiagram S H D centres).edge_reverse
             (.inr pp) (.inl (some c)) hpq a

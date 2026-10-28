@@ -119,7 +119,6 @@ theorem privateFanPuncturedDiagram_support_iff
       else none) = some a at ha
     split_ifs at ha with h
     · exact h
-    · cases ha
   · rintro ⟨hv, hw, hAdj⟩
     have hSome : ∃ a : S.Atom (privateFanSort S D centres v)
         (privateFanSort S D centres w),
