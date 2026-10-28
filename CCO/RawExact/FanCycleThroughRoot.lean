@@ -59,12 +59,28 @@ theorem privateFanFull_cycle_through_root
       ∃ a : S.Atom root (privateFanSort S D centres (C.vertices nxt)),
         (privateFanFullDiagram S H D centres).edge
           R (C.vertices nxt) hNext = some a := by
-    simpa only [R, nxt, hp0, privateFanSort_root] using C.specified p0
+    have hSpec := C.specified p0
+    change ∃ a : S.Atom
+        (privateFanSort S D centres (C.vertices p0))
+        (privateFanSort S D centres (C.vertices nxt)),
+      (privateFanFullDiagram S H D centres).edge
+        (C.vertices p0) (C.vertices nxt) (C.next_ne p0) = some a at hSpec
+    rw [hp0] at hSpec
+    simpa only [R, nxt, privateFanSort_root] using hSpec
   have hInSpec :
       ∃ a : S.Atom (privateFanSort S D centres (C.vertices prev)) root,
         (privateFanFullDiagram S H D centres).edge
           (C.vertices prev) R hPrev.symm = some a := by
-    simpa only [R, hprev, hp0, privateFanSort_root] using C.specified prev
+    have hSpec := C.specified prev
+    change ∃ a : S.Atom
+        (privateFanSort S D centres (C.vertices prev))
+        (privateFanSort S D centres
+          (C.vertices (cyclicNext C.length_pos prev))),
+      (privateFanFullDiagram S H D centres).edge
+        (C.vertices prev) (C.vertices (cyclicNext C.length_pos prev))
+          (C.next_ne prev) = some a at hSpec
+    rw [hprev, hp0] at hSpec
+    simpa only [R, privateFanSort_root] using hSpec
   obtain ⟨aOut, hOut⟩ := hOutSpec
   obtain ⟨aIn, hIn⟩ := hInSpec
   have hInReverse :
@@ -82,27 +98,42 @@ theorem privateFanFull_cycle_through_root
     have hReverse :=
       (S.colour_swap (point R) (point (C.vertices prev)) (S.conv aIn)).mp
         hInColourReverse
-    simpa only [S.conv_invol] using hReverse
+    rw [S.conv_invol aIn] at hReverse
+    exact hReverse
+  have hOutFullColour :
+      S.colour (point R) (point (C.vertices nxt)) =
+        (privateFanFullDiagram S H D centres).edge
+          R (C.vertices nxt) hNext :=
+    hOutColour.trans hOut.symm
+  have hIncomingFullColour :
+      S.colour (point (C.vertices prev)) (point R) =
+        (privateFanFullDiagram S H D centres).edge
+          (C.vertices prev) R hPrev.symm :=
+    hIncomingColour.trans hIn.symm
   refine ⟨fun p => point (C.vertices p), ?_⟩
   intro p a ha
   by_cases hFirst : p = p0
   · subst p
-    have hOther :
+    have hColFull :
+        S.colour (point (C.vertices p0))
+          (point (C.vertices (cyclicNext C.length_pos p0))) =
         (privateFanFullDiagram S H D centres).edge
-          R (C.vertices nxt) hNext = some a := by
-      simpa only [R, nxt, hp0, privateFanSort_root] using ha
-    have hEq : aOut = a := Option.some.inj (hOut.symm.trans hOther)
-    rw [← hEq]
-    simpa only [R, nxt, hp0] using hOutColour
+          (C.vertices p0)
+          (C.vertices (cyclicNext C.length_pos p0))
+          (C.next_ne p0) := by
+      simpa only [R, nxt, hp0] using hOutFullColour
+    exact hColFull.trans ha
   · by_cases hLast : p = prev
     · subst p
-      have hOther :
+      have hColFull :
+          S.colour (point (C.vertices prev))
+            (point (C.vertices (cyclicNext C.length_pos prev))) =
           (privateFanFullDiagram S H D centres).edge
-            (C.vertices prev) R hPrev.symm = some a := by
-        simpa only [R, hprev, hp0, privateFanSort_root] using ha
-      have hEq : aIn = a := Option.some.inj (hIn.symm.trans hOther)
-      rw [← hEq]
-      simpa only [R, hprev, hp0] using hIncomingColour
+            (C.vertices prev)
+            (C.vertices (cyclicNext C.length_pos prev))
+            (C.next_ne prev) := by
+        simpa only [R, hprev, hp0] using hIncomingFullColour
+      exact hColFull.trans ha
     · have hAway :=
         cycle_edges_away_from_root_except_two C R p0 hp0
           prev hprev p hFirst hLast
