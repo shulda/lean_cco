@@ -515,6 +515,25 @@ import CCO.RigidGroupoid.Geometry.RootedGroupoid
 import CCO.RigidGroupoid.Geometry.Source
 import CCO.RigidGroupoid.Geometry.Transport
 
+import CCO.Owners.Product.ActionConsumers
+import CCO.Owners.Product.Boundary
+import CCO.Owners.Product.Controls.Fullness
+import CCO.Owners.Product.Controls.MissingPoint
+import CCO.Owners.Product.Controls.NoSection
+import CCO.Owners.Product.Descent
+import CCO.Owners.Product.Empty
+import CCO.Owners.Product.FullAutomorphisms
+import CCO.Owners.Product.FullGeometry
+import CCO.Owners.Product.Induced
+import CCO.Owners.Product.KernelConsumers
+import CCO.Owners.Product.Matching
+import CCO.Owners.Product.Nested
+import CCO.Owners.Product.Orbitals
+import CCO.Owners.Product.Source
+import CCO.Owners.Product.SourceGeometry
+import CCO.Owners.Product.SparseDescent
+import CCO.Owners.Product.SparseEPPA
+import CCO.Owners.Product.SparseTransport
 import CCO.RealHull.Canonical.Carrier
 import CCO.RealHull.Canonical.EvenWalk
 import CCO.RealHull.Canonical.Hull
