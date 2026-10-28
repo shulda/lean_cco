@@ -67,3 +67,6 @@ import CCO.StrongExact.ThetaArcs
 import CCO.StrongExact.ThetaArcClosure
 import CCO.StrongExact.ThetaLongEdges
 import CCO.StrongExact.ThetaArcWitness
+import CCO.StrongExact.ThetaLineRankExtra
+import CCO.StrongExact.ThetaNoRootArc
+import CCO.StrongExact.ThetaSameBranchUnique
