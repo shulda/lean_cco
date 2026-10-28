@@ -110,3 +110,7 @@ import CCO.RawExact.PathEndpointEdges
 import CCO.RawExact.FanRootIncidence
 import CCO.RawExact.WalkColourIndependence
 import CCO.RawExact.ActualWordStepColour
+
+import CCO.RawExact.PairedWalkColourTransport
+import CCO.RawExact.FanCentreBoundary
+import CCO.RawExact.FanSimpleGraph
