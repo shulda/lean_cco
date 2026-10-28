@@ -1,5 +1,6 @@
 import CCO.Stabilizer
 import CCO.Finite
+import Mathlib.Data.Fintype.Option
 
 /-!
 # Pointwise stabilizer orbits from finite complete homogeneity

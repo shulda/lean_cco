@@ -1,5 +1,6 @@
 import CCO.DiagramMove
 import CCO.StabilizerSAP
+import Mathlib.Data.Set.Finite.Range
 
 /-!
 # The actual neighbour-image stabilizer base for one-vertex repair
