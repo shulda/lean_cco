@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 31,
+  "revision": 32,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -245,6 +245,7 @@
       "author_actor_ids": [
         "/root/b006_parity",
         "/root/b006_parity/sparse_graphs",
+        "/root/b006_parity/sparse_graphs/numeric_bounds",
         "/root/b006_sir",
         "root"
       ],
@@ -939,6 +940,20 @@
           "/root/b006_parity",
           "/root/b006_parity/sparse_graphs",
           "/root/b006_sir"
+        ],
+        "actor_id": "root"
+      }
+    },
+    {
+      "revision": 32,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "record_authorship",
+      "package_id": "B006",
+      "details": {
+        "package_id": "B006",
+        "author_actor_ids": [
+          "/root/b006_parity/sparse_graphs/numeric_bounds"
         ],
         "actor_id": "root"
       }
