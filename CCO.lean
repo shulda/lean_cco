@@ -365,3 +365,16 @@ import CCO.ParityHasse.Sparse.GraphLaw
 import CCO.ParityHasse.Sparse.LabelLaw
 import CCO.ParityHasse.Sparse.Labelled
 import CCO.ParityHasse.Sparse.Statements
+
+import CCO.ParityHasse.Relative.Algebra
+import CCO.ParityHasse.Relative.Exact
+import CCO.ParityHasse.Relative.Examples
+import CCO.ParityHasse.Relative.Gate
+import CCO.ParityHasse.Relative.NamedQuotient
+import CCO.ParityHasse.Relative.Powers
+import CCO.ParityHasse.Relative.QuotientGate
+import CCO.ParityHasse.Relative.QuotientGraph
+import CCO.ParityHasse.Relative.QuotientWords
+import CCO.ParityHasse.Relative.Separation
+import CCO.ParityHasse.Relative.Source
+import CCO.ParityHasse.Relative.TwoSheet
