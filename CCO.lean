@@ -79,3 +79,7 @@ import CCO.StrongExact.ThetaWordLineReadout
 import CCO.StrongExact.ThetaPrivateIncidence
 import CCO.StrongExact.ThetaPrivateDegree
 import CCO.StrongExact.ThetaPrivateConnectivity
+import CCO.StrongExact.ThetaCyclicIndex
+import CCO.StrongExact.ThetaPrivateRankReadout
+import CCO.StrongExact.ThetaCycleLocal
+import CCO.StrongExact.ThetaCycleContainsRoot
