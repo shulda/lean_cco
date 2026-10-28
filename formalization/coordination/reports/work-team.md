@@ -1,3 +1,25 @@
+# Work team — current resumable checkpoint
+
+Protocol 3 is deployed; coordination STATE revision 15 is live, both original claims are owned by Work team project 3 and IN_PROGRESS. Original authors, heads, last-green checkpoints, history and both original PRs are retained. No batch is claimed complete by a green checkpoint. No B006/B017 or third slot has been claimed.
+
+Current green main: `2ccbbed4ef354a4af8a175ae5e3e9421b8a8c448`, CI `40686003111`: 57 tests, 775 build jobs, 647 declarations within the unchanged axiom allowlist. Protocol migration PR6, targeted-import PR5 and actual-root/project-cache PR7 are merged and their resulting-main checks recorded. Sole integration lock is currently free.
+
+Public B002 PR3 remains `0f366f0a539c020a7a80f822a830f6db25c11ffa`, exact CI40680003645 green; public B003 PR4 remains `555951c6a4c51d0842252fdebc142e422127788f`, exact CI40680013056 green. These are older partial checkpoints. Newer local work is preserved on resumable branches, not falsely attributed to those CI runs.
+
+B003 whole source candidate `fca251bb81247352c5ccc4503ea399405c30b014` includes all C06–C13 and the independent generic arbitrary hereditary-class ordinary-AP+CCO triangle-fullness theorem. Fresh independent full control: 1037 jobs, 57 tests, 2069 declarations in allowlist, 157 source modules root-imported, 158 actual artifact parts consistent, explicit import CCO/API/axiom checks. A second truly fresh non-author wrote report-only commit4efc0b3. Source map/report update `bcfc90c2aa14d780e1220b8af3659c7098270a71` adds those reports and changes no Lean. Exact remote publication/review/integration remain pending.
+
+B002 C27 canonical actual quotient SemanticCCO is proved without menu/positivity/representation/cycle providers in `26940eea052cd7941540fb664c159a0a34b1a1dc` (1011 jobs/2055-declaration audit). Literal C26 classification in `e36515f65a13c6bdfc912ebd6990520143ea11c7` states TWO DISTINCT WHOLE private occurrences with exact all-vertex AND all-traversed-edge supports or a genuine marked projection (1019/2190). C28 actual source property record and literal singleton quotient specialization are implemented in `435d928`; assembly `e6f2b6f` includes all these histories, source map and shared-type consumer. Final whole-root build and two non-author controls remain gates.
+
+Cross-batch compatibility found duplicate public CCO.AgeAP declarations. Pure evidence-type extraction PR8 head `c89ac89e61127529497eba829d750e8d49098991` equals local `5ff0881ee48d74823350a2820ac37c5bdd488d29` tree. It moves no source theorem. Both package consumers drop only the duplicate declaration and import the identical shared type; original proof bodies remain unchanged. Fresh joint whole-batch import/build compatibility is being tested separately. PR8 exact CI40693031426/review/main integration pending.
+
+Local pinned Lean4.34.1/Lake5.0.0 is usable. Shared pinned dependencies avoid unavailable repeated installation. Cached root build measured1.310s; checking a new small file importing CCO measured1.900s; latest green main CI elapsed105s including setup/tests/audit. These are distinct scopes, not a claim that a clean full rebuild is80x faster. Exact-head/main CI remains mandatory.
+
+Cache limitation under investigation: a control checkout with copied baseline CCO artifacts produced normal Lake success and output-byte/trace consistency while the imported root still omitted a new AgeAP type. Fresh no-CCO-artifact checks pass. The reviewer retained this witness and the original cache author is investigating actual input/closure validity; no stale semantic audit is accepted as evidence for a new source tree.
+
+All source pins/contracts/toolchain/manifest and accepted-dependency rules remain unchanged. Fresh resumed implementation identities were appended via STATE event15; reviewers have authored no implementation. The registered independent_review actor retains actual identity /root/independent_review; the separate fresh full controls retain their own identities as corroboration.
+
+## Historical checkpoint (superseded)
+
 # Work team — current formalization checkpoint
 
 Updated 28 October 2026. Source pin remains `490c3f36d85db5a0b3ced0598e6c431825254ec5`; mathematical contracts/DAG/toolchain/manifest are unchanged. This report is operational; only coordination STATE supplies live claims and acceptance.
