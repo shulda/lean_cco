@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 14,
+  "revision": 15,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -63,8 +63,12 @@
         1
       ],
       "author_actor_ids": [
+        "/root/protocol_migration",
         "/root/raw_fan",
+        "/root/raw_fan_resume",
         "/root/raw_quotient",
+        "/root/raw_quotient_resume",
+        "/root/raw_theta_resume",
         "/root/runtime_imports",
         "legacy-project-1",
         "root"
@@ -534,6 +538,23 @@
           "conclusion": "success",
           "axiom_audit": "allowlist"
         }
+      }
+    },
+    {
+      "revision": 15,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "record_authorship",
+      "package_id": "B002",
+      "details": {
+        "package_id": "B002",
+        "author_actor_ids": [
+          "/root/protocol_migration",
+          "/root/raw_fan_resume",
+          "/root/raw_quotient_resume",
+          "/root/raw_theta_resume"
+        ],
+        "actor_id": "root"
       }
     }
   ],
