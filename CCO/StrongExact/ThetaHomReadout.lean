@@ -35,6 +35,17 @@ private theorem colour_cast_both
   cases ht
   simpa using hxy
 
+/-- Equality transports for the two independently typed endpoints
+commute: the only difference is the order of two genuine sort casts. -/
+private theorem atom_cast_swap
+    {s t s' t' : ι}
+    (hs : s = s') (ht : t = t') (a : S.Atom s' t') :
+    (hs.symm ▸ (ht.symm ▸ a)) =
+      (ht.symm ▸ (hs.symm ▸ a)) := by
+  cases hs
+  cases ht
+  rfl
+
 /-- The private theta edge atom really is the twice-transported
 ORIGINAL letter. The source already established the sort equalities
 for each formal position. -/
@@ -47,7 +58,16 @@ private theorem thetaBranchEdgeAtom_eq_cast
         ((thetaBranchPosition_sort S ws b
           (wordEdgeTarget S (ws.get b) e)).symm ▸
           wordEdgeAtom S (ws.get b) e) := by
-  rfl
+  let hs := thetaBranchPosition_sort S ws b
+    (wordEdgeSource S (ws.get b) e)
+  let ht := thetaBranchPosition_sort S ws b
+    (wordEdgeTarget S (ws.get b) e)
+  first
+  | rfl
+  | change (ht.symm ▸ (hs.symm ▸ wordEdgeAtom S (ws.get b) e)) =
+      (hs.symm ▸ (ht.symm ▸ wordEdgeAtom S (ws.get b) e))
+    exact (atom_cast_swap S hs ht (wordEdgeAtom S (ws.get b) e)).symm
+  | simp [thetaBranchEdgeAtom]
 
 /-- Each occurrence of a long positive word is represented by
 the endpoints of any genuine theta-diagram homomorphism. -/
@@ -92,13 +112,15 @@ theorem thetaDiagramHom_represented_branch
   have hWord :=
     represented_of_literal_word_line S (ws.get b) point hEdges
   have hStart :
-      ((wordSource_sort S (ws.get b)) ▸
-        point (wordSource S (ws.get b))) =
+      (show X i from
+        (wordSource_sort S (ws.get b)) ▸
+          point (wordSource S (ws.get b))) =
         f.point (thetaLeft S ws) := by
     simp [point, thetaBranchPosition_source, wordSource_sort, thetaLeft_sort]
   have hEnd :
-      ((wordTarget_sort S (ws.get b)) ▸
-        point (wordTarget S (ws.get b))) =
+      (show X j from
+        (wordTarget_sort S (ws.get b)) ▸
+          point (wordTarget S (ws.get b))) =
         f.point (thetaRight S ws) := by
     simp [point, thetaBranchPosition_target, wordTarget_sort, thetaRight_sort]
   rw [hStart,hEnd] at hWord
