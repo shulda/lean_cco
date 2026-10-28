@@ -91,3 +91,5 @@ import CCO.RawExact.PathEndpoints
 import CCO.RawExact.PrivateFanAdjacency
 
 import CCO.RawExact.PrivateFanSimple
+
+import CCO.RawExact.PathLocalDegree
