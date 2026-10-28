@@ -514,3 +514,12 @@ import CCO.RigidGroupoid.Geometry.QuotientDominance
 import CCO.RigidGroupoid.Geometry.RootedGroupoid
 import CCO.RigidGroupoid.Geometry.Source
 import CCO.RigidGroupoid.Geometry.Transport
+import CCO.RealHull.Canonical.Carrier
+import CCO.RealHull.Canonical.EvenWalk
+import CCO.RealHull.Canonical.Hull
+import CCO.RealHull.Canonical.Loopless
+import CCO.RealHull.Canonical.PositiveEven
+import CCO.RealHull.Canonical.Pseudocomplement
+import CCO.RealHull.Canonical.RamseySubset
+import CCO.RealHull.Canonical.Source
+import CCO.RealHull.Canonical.Star
