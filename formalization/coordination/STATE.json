@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 79,
+  "revision": 80,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -463,7 +463,7 @@
       }
     },
     "B009": {
-      "state": "INTEGRATING",
+      "state": "ACCEPTED",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b009_fibres",
@@ -503,6 +503,13 @@
           "report_path": "formalization/coordination/reviews/B009-final.md"
         },
         "summary": "Actual independent_review approves complete canonical_hull C01–24: explicit finite triangle Ramsey proves finiteness before Nat.card bounds; actual whole-anchor fibre H and arbitrary-universe CCO, serial mixed-cycle closure and complete anchor alignment; original optional-identity RAW support, mixed/self collapse, minimum blocker localisation precede genuine full internal Hasse/index-two square transfer and canonical fixer globalisation. Every true actual source provider closes, including singleton equality, empty anchors, old-colour sharp power bound and actual full-Aut class/fibre relative interval, arbitrary families and chains AFTER class existence. No hidden SAP, word exactness, globalisation or internal interval lift premise. Registered actual nonauthor personally read36modules once and exact unchanged nonroot B015/B009 union treea5adf85; all root imports483. Exact publichead7d3c9815 CI40740760714/job123001404545 personally read67tests/2601jobs/6478 standard-three axiom audit/483 actual parts AND483 current SOURCE modules before/after. Source/contract/toolchain/manifest unchanged; whole substantive provenance/source findings in B009-final.md."
+      },
+      "accepted_commit": "2d0f6d3bd6e4eff4dabb1efd15fdcf8e390e56ea",
+      "main_ci": {
+        "head_sha": "2d0f6d3bd6e4eff4dabb1efd15fdcf8e390e56ea",
+        "run_id": 40743163500,
+        "conclusion": "success",
+        "axiom_audit": "allowlist"
       }
     },
     "B010": {
@@ -608,13 +615,7 @@
       "owner_project_id": null
     }
   },
-  "integration_lock": {
-    "kind": "package",
-    "package_id": "B009",
-    "actor_id": "root",
-    "base_main_sha": "4180b8e12c37b0419bbc40220f64cfbdc68679b9",
-    "head_sha": "7d3c98155fdfecdc3f8f35ef9735c02836bc9340"
-  },
+  "integration_lock": null,
   "history": [
     {
       "revision": 1,
@@ -2140,6 +2141,24 @@
         "ci": {
           "head_sha": "7d3c98155fdfecdc3f8f35ef9735c02836bc9340",
           "run_id": 40740760714,
+          "conclusion": "success",
+          "axiom_audit": "allowlist"
+        },
+        "actor_id": "root"
+      }
+    },
+    {
+      "revision": 80,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "accept",
+      "package_id": "B009",
+      "details": {
+        "package_id": "B009",
+        "integration_commit": "2d0f6d3bd6e4eff4dabb1efd15fdcf8e390e56ea",
+        "main_ci": {
+          "head_sha": "2d0f6d3bd6e4eff4dabb1efd15fdcf8e390e56ea",
+          "run_id": 40743163500,
           "conclusion": "success",
           "axiom_audit": "allowlist"
         },
