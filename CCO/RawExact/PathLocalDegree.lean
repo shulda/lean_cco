@@ -44,7 +44,6 @@ theorem pathInterior_exactly_two_neighbours {i j : ι}
   · dsimp [before]
     omega
   · dsimp [after]
-    omega
   · intro hEq
     have hVal := congrArg Fin.val hEq
     dsimp [before, after] at hVal

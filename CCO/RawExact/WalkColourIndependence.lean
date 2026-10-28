@@ -49,7 +49,10 @@ theorem sameEdgeColours_of_certificates
       cases h' with
       | step x' y' a' edge' rest' =>
           constructor
-          · simp [SameEdgeColours, taggedColour, edge, edge']
+          · change S.colour x y = S.colour x' y'
+            change S.colour x y = some a at edge
+            change S.colour x' y' = some a at edge'
+            exact edge.trans edge'.symm
           · exact ih rest'
 
 /-- Direct consumer for two independent actual OLD realizations

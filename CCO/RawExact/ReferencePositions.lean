@@ -77,7 +77,8 @@ theorem referencePointAt_sort
     rw [List.getElem?_eq_getElem (by
       simpa only [List.length_map] using hReal)] at hNat
     rw [List.getElem?_eq_getElem hSort] at hNat
-    simpa only [List.getElem_map] using hNat
-  simpa only [referencePointAt, pathSortAt, w] using hAt
+    exact Option.some.inj (by
+      simpa only [List.getElem_map] using hNat)
+  simpa only [referencePointAt, pathSortAt, List.get_eq_getElem] using hAt
 
 end CCO.RawExact
