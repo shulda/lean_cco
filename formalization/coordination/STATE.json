@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 83,
+  "revision": 84,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -586,7 +586,7 @@
       "owner_project_id": null
     },
     "B017": {
-      "state": "REVIEWING",
+      "state": "INTEGRATING",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b009_inheritance",
@@ -637,7 +637,13 @@
       "owner_project_id": null
     }
   },
-  "integration_lock": null,
+  "integration_lock": {
+    "kind": "package",
+    "package_id": "B017",
+    "actor_id": "root",
+    "base_main_sha": "2d0f6d3bd6e4eff4dabb1efd15fdcf8e390e56ea",
+    "head_sha": "e31639914c818e9153603cd9db44d3dd737341b8"
+  },
   "history": [
     {
       "revision": 1,
@@ -2236,6 +2242,26 @@
         "head_sha": "e31639914c818e9153603cd9db44d3dd737341b8",
         "summary": "Actual nonauthor whole-source approval covers finite_kernel C01–22: literal FULL Aut arbitrary unary/directed binary source inclloops, actual finite owner partition/kernel, original pointwise patching isomorphism and true globally subdirect marginal reconstruction; SAME finite tuple/EVERY finite extension explicit maximum finite failure bound and recursive continuation, no external compactness/coherent premise. Owner-named H is exact separate additional hypothesis. Actual F2intrinsic groups yield true nonsubdirect localpair rows, one-vector countable separation without Zorn, explicit finite bidual and fullproduct dual, literal zeroextension/restricted annihilators, true singleton+pair marginal width-two iff and actual globalmotion source consumers. Named whole finite axes use original H on ENTIRE selected union with arbitrary infinite complement; actual Goursat canonicalquotients, actual image=checkkernel and finiteimage rank-nullity, flat graph transport from one global lift. Actual four-shift parity and actual homogeneous rightregularS3/movingowners controls prove stated failure boundaries. All source providers closed, empty/zero/singletoncases included; no CCO/SAP/exactness/stronger premise or unaccepted sibling theorem. One whole32personalread plus only ONE consumerimportdelta and finaldocs; exact public e316 tree df4f equals reviewed union515modules. Exact successful CI/audit evidence personally verified in durable B017-final.md; source/contracts/manifest/toolchain/acceptedAPIs unchanged.",
         "actor_id": "independent_review"
+      }
+    },
+    {
+      "revision": 84,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "start_integration",
+      "package_id": "B017",
+      "details": {
+        "package_id": "B017",
+        "head_sha": "e31639914c818e9153603cd9db44d3dd737341b8",
+        "base_main_sha": "2d0f6d3bd6e4eff4dabb1efd15fdcf8e390e56ea",
+        "head_contains_main": true,
+        "ci": {
+          "head_sha": "e31639914c818e9153603cd9db44d3dd737341b8",
+          "run_id": 40743687228,
+          "conclusion": "success",
+          "axiom_audit": "allowlist"
+        },
+        "actor_id": "root"
       }
     }
   ],
