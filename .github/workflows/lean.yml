@@ -39,15 +39,42 @@ jobs:
           path: ~/.elan/toolchains
           key: lean-toolchain-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('lean-toolchain') }}
 
-      # Download the complete matching precompiled Mathlib snapshot. A partial
-      # cache can leave thousands of dependencies to compile on the runner.
+      - name: Install pinned Lean and Lake
+        uses: leanprover/lean-action@f061402b660e0c34644504b324e830f2991d4865 # v1.6.1
+        with:
+          auto-config: false
+          build: false
+          test: false
+          lint: false
+          use-github-cache: false
+          use-mathlib-cache: false
+
+      # Follow all CCO edges first. The pinned Mathlib cache command filters
+      # CCO imports, so `cache get CCO.lean` cannot discover these roots.
+      - name: Download targeted Mathlib cache
+        shell: bash
+        run: |
+          python3 tools/mathlib_cache_roots.py --reject-broad > /tmp/cco-mathlib-roots.txt
+          mapfile -t roots < /tmp/cco-mathlib-roots.txt
+          lake exe cache get "${roots[@]}"
+
+      # Reuse project artifacts only. Lake checks source/dependency traces;
+      # a restored cache never replaces the build or the transitive audit.
+      - name: Cache incremental CCO build
+        uses: actions/cache@v5
+        with:
+          path: .lake/build
+          key: cco-project-build-v1-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('lean-toolchain', 'lake-manifest.json', 'lakefile.toml') }}-${{ github.sha }}
+          restore-keys: |
+            cco-project-build-v1-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('lean-toolchain', 'lake-manifest.json', 'lakefile.toml') }}-
+
       - name: Build and audit Lean project
         uses: leanprover/lean-action@f061402b660e0c34644504b324e830f2991d4865 # v1.6.1
         with:
           auto-config: false
           build: true
           use-github-cache: false
-          use-mathlib-cache: true
+          use-mathlib-cache: false
           axiom-audit: true
           axiom-audit-root: CCO
           axiom-audit-allow: propext,Classical.choice,Quot.sound
