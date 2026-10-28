@@ -160,3 +160,5 @@ import CCO.RawExact.FanNoRootCycles
 import CCO.RawExact.FanTwoRootSpokes
 import CCO.RawExact.FanCycleThroughRoot
 import CCO.RawExact.FanAllCycles
+
+import CCO.RawExact.CycleEdgeTransport
