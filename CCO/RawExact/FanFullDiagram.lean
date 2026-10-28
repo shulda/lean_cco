@@ -39,7 +39,7 @@ theorem option_map_actual_converse_some_iff
   | none =>
       simp
   | some b =>
-      change b = a ↔ S.conv b = S.conv a
+      simp only [Option.map_some, Option.some.injEq]
       constructor
       · rintro rfl
         rfl
@@ -103,7 +103,7 @@ noncomputable def privateFanFullDiagram
               (option_map_actual_converse_some_iff S
                 (privateFanRootSelectedAtom S H D centres (.inl (some c)))
                 (S.conv a)).symm
-            simpa only [S.conv_invol] using h
+            simpa only [privateFanFullEdge, S.conv_invol] using h
           | some d =>
             exact (privateFanPuncturedDiagram S H D centres).edge_reverse
               (.inl (some c)) (.inl (some d)) hpq a
@@ -119,7 +119,7 @@ noncomputable def privateFanFullDiagram
             (option_map_actual_converse_some_iff S
               (privateFanRootSelectedAtom S H D centres (.inr pp))
               (S.conv a)).symm
-          simpa only [S.conv_invol] using h
+          simpa only [privateFanFullEdge, S.conv_invol] using h
         | some c =>
           exact (privateFanPuncturedDiagram S H D centres).edge_reverse
             (.inr pp) (.inl (some c)) hpq a

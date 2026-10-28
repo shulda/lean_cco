@@ -61,7 +61,7 @@ theorem privateFan_punctured_old_centre_edge_has_atom
   | none =>
       exact False.elim (hDifferent hColour)
   | some a =>
-      exact ⟨a, hColour⟩
+      exact ⟨a, rfl⟩
 
 /-- Every private-word edge not incident with the formal root
 has a literal diversity colour under the same one point map. -/
@@ -108,6 +108,7 @@ theorem privateFanPuncturedDiagram_support_iff
         (privateFanSort S D centres w),
       (privateFanPuncturedDiagram S H D centres).edge v w hvw = some a) ↔
       privateFanPuncturedAdjacent S D centres v w := by
+  classical
   constructor
   · rintro ⟨a, ha⟩
     unfold privateFanPuncturedDiagram at ha
