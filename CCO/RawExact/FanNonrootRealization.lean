@@ -53,12 +53,14 @@ theorem privateFanNonrootReference_sort
     (v : PrivateFanVertex S D centres) :
     (privateFanNonrootReference S H D centres v).1 =
       privateFanSort S D centres v := by
-  rcases v with (.inl oc | .inr op)
-  · cases oc with
-    | none => rfl
-    | some c => rfl
-  · rcases op with ⟨o, p⟩
-    exact referencePointAt_sort S H D centres o p.1
+  cases v with
+  | inl oc =>
+      cases oc with
+      | none => rfl
+      | some c => rfl
+  | inr op =>
+      rcases op with ⟨o, p⟩
+      exact referencePointAt_sort S H D centres o p.1
 
 /-- The value of every marked centre is its literal actual
 tagged original real point, including repeated occurrences. -/

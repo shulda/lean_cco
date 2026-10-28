@@ -40,8 +40,9 @@ variable (B : TypedAtomEdgeData S V sort)
 /-- A purely local, noncomputable selection of an already-proved
 unique edge label. A missing edge has value `none`, NOT an identity atom. -/
 noncomputable def edge (p q : V) :
-    Option (S.Atom (sort p) (sort q)) :=
-  if h : ∃ a : S.Atom (sort p) (sort q), B.label p q a then
+    Option (S.Atom (sort p) (sort q)) := by
+  classical
+  exact if h : ∃ a : S.Atom (sort p) (sort q), B.label p q a then
     some (Classical.choose h)
   else
     none
