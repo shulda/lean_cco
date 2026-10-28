@@ -46,7 +46,7 @@ theorem paired_private_walks_match_reference_colours
           (realWalkTrace S wp) ∧
         SameEdgeColours S
           (realWalkTrace S (referenceOccurrenceWalk S H D centres q).2)
-          (realWalkTrace S wq)) := by
+          (realWalkTrace S wq) := by
   obtain ⟨⟨x, wp, wq⟩⟩ :=
     pair_private_walks_of_pairwise_balls S D centres hPair p q
   refine ⟨x, wp, wq, ?_, ?_⟩
