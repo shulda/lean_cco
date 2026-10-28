@@ -50,11 +50,16 @@ theorem privateFanNonrootTypedPoint_tag
        privateFanNonrootTypedPoint S H D centres v⟩ : Sigma X) =
       privateFanNonrootReference S H D centres v := by
   unfold privateFanNonrootTypedPoint
-  generalize hp : privateFanNonrootReference S H D centres v = p
-  have hs : p.1 = privateFanSort S D centres v := by
-    simpa only [← hp] using privateFanNonrootReference_sort S H D centres v
-  cases hs
-  rfl
+  have cast_roundtrip (p : Sigma X) (s : ι) (h : p.1 = s) :
+      (⟨s, h ▸ p.2⟩ : Sigma X) = p := by
+    cases p with
+    | mk i x =>
+        cases h
+        rfl
+  exact cast_roundtrip
+    (privateFanNonrootReference S H D centres v)
+    (privateFanSort S D centres v)
+    (privateFanNonrootReference_sort S H D centres v)
 
 /-- Only genuinely present formal fan edges away from the root
 are retained. In particular no new extra edges arise between
@@ -92,13 +97,15 @@ noncomputable def privateFanPuncturedDiagram
     PartialDiagram S (PrivateFanVertex S D centres) where
   finite_type := privateFanVertex_finite S D centres
   vertexSort := privateFanSort S D centres
-  edge := fun v w _ =>
-    if h : privateFanPuncturedAdjacent S D centres v w then
+  edge := fun v w _ => by
+    classical
+    exact if h : privateFanPuncturedAdjacent S D centres v w then
       S.colour (privateFanNonrootTypedPoint S H D centres v)
         (privateFanNonrootTypedPoint S H D centres w)
     else
       none
   edge_reverse := by
+    classical
     intro v w hvw a
     change
       (if h : privateFanPuncturedAdjacent S D centres v w then
@@ -131,6 +138,7 @@ noncomputable def privateFanPuncturedDiagram_realization
     DiagramHom (privateFanPuncturedDiagram S H D centres) where
   point := privateFanNonrootTypedPoint S H D centres
   preserves_edge := by
+    classical
     intro v w hvw a ha
     change
       (if h : privateFanPuncturedAdjacent S D centres v w then
