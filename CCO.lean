@@ -76,3 +76,6 @@ import CCO.StrongExact.ThetaAdjacency
 import CCO.StrongExact.ThetaEdgesBuild
 import CCO.StrongExact.ThetaGraphBridge
 import CCO.StrongExact.ThetaWordLineReadout
+import CCO.StrongExact.ThetaPrivateIncidence
+import CCO.StrongExact.ThetaPrivateDegree
+import CCO.StrongExact.ThetaPrivateConnectivity
