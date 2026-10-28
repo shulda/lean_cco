@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 90,
+  "revision": 91,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -675,6 +675,8 @@
       "state": "IN_PROGRESS",
       "owner_project_id": 3,
       "author_actor_ids": [
+        "/root/b019_product",
+        "/root/b019_product/controls",
         "root"
       ],
       "original_author_project_ids": [
@@ -2440,6 +2442,21 @@
         "author_actor_ids": [
           "/root/b016_phase",
           "/root/b016_phase/abstract_markings"
+        ],
+        "actor_id": "root"
+      }
+    },
+    {
+      "revision": 91,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "record_authorship",
+      "package_id": "B019",
+      "details": {
+        "package_id": "B019",
+        "author_actor_ids": [
+          "/root/b019_product",
+          "/root/b019_product/controls"
         ],
         "actor_id": "root"
       }
