@@ -74,3 +74,5 @@ import CCO.RawExact.ZeroWordBoundary
 import CCO.RawExact.LabelledRealTrace
 
 import CCO.RawExact.DirectEdgeMerging
+
+import CCO.RawExact.WordOccurrences
