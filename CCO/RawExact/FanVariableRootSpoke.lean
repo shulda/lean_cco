@@ -104,6 +104,17 @@ theorem privateFanVariable_root_spoke_atom_of_occurrence
         (privateFanVariableTypedPoint S D centres choice xRoot v)⟩ :
       Σ i : ι, Σ j : ι, Option (S.Atom i j)) =
     ⟨root, privateFanSort S D centres v, some a⟩ at hEncoded
-  simpa only [Sigma.mk.injEq, heq_eq_eq, true_and] using hEncoded
+  have hAtom :
+      S.colour
+        (privateFanVariableTypedPoint S D centres choice xRoot
+          (privateFanRoot S D centres))
+        (privateFanVariableTypedPoint S D centres choice xRoot v) =
+        some a := by
+    simpa only [Sigma.mk.injEq, heq_eq_eq, true_and] using hEncoded
+  change S.colour
+    (privateFanVariableTypedPoint S D centres choice xRoot
+      (privateFanRoot S D centres))
+    (privateFanVariableTypedPoint S D centres choice xRoot v) = some a
+  exact hAtom
 
 end CCO.RawExact

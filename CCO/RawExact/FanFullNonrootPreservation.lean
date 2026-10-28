@@ -56,7 +56,7 @@ theorem privateFanVariable_preserves_full_nonroot_edge
     exact ha
   have hAdj : privateFanAdjacent S D centres v w :=
     ((privateFanPuncturedDiagram_support_iff S H D centres
-      v w hvw).mp ⟨a, hPunct⟩).2
+      v w hvw).mp ⟨a, hPunct⟩).2.2
   have hOldColour :
       S.colour
         (privateFanNonrootTypedPoint S H D centres v)
