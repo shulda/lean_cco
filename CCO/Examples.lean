@@ -1,5 +1,6 @@
 import CCO.BasePaths
 import CCO.RawWords
+import Lean.Elab.Tactic.Omega
 
 /-!
 # Concrete same-sort and cross-sort checks for the shared API

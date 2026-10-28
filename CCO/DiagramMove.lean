@@ -1,4 +1,5 @@
 import CCO.DiagramAction
+import Mathlib.Logic.Function.Basic
 
 /-!
 # Local one-vertex surgery on a specified diversity diagram

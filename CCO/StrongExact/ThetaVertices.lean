@@ -1,3 +1,5 @@
+import Mathlib.Basic.Finite.Sigma
+import Mathlib.Basic.Finite.Sum
 import CCO.PositiveWords
 import CCO.StrongExact.ExactMenus
 

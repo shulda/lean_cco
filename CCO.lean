@@ -128,3 +128,8 @@ import CCO.StrongExact.ThetaCycleAdvanceAddition
 import CCO.StrongExact.ThetaCycleAdvanceReturn
 import CCO.StrongExact.ThetaCycleTwoArcIndexCover
 import CCO.StrongExact.ThetaCycleTwoLiteralLines
+import CCO.StrongExact.ThetaPairLineMap
+import CCO.StrongExact.ThetaCycleHom
+import CCO.StrongExact.SourceExactCalculus
+import CCO.StrongExact.ThetaFamilySemantics
+import CCO.StrongExact.ExactEndpointSemantics

@@ -1,3 +1,5 @@
+import Mathlib.Basic.Finite.Prod
+import Mathlib.Data.Fintype.Powerset
 import CCO.StrongExact.PCNetwork
 import Mathlib.Order.OrderIsoNat
 

@@ -1,57 +1,69 @@
-# Coordinator restart — protocol 2
+# Coordinator restart — protocol 3
 
-Read actual current GitHub state, not historical chat summaries or old
-attachments. Public repo is <https://github.com/shulda/lean_cco>.
+Public repository: <https://github.com/shulda/lean_cco>. Read current main
+PROTOCOL.md, AUTONOMY.json, BOARD.json, DECISIONS.md, QUEUE_OPERATIONS.md,
+this runbook, actual package contracts, source notes and reports. Fetch the
+coordination ref and read STATE at that exact SHA. It is the only live ledger;
+BOARD is the mathematical catalogue. Read actual PR heads, diffs and CI logs;
+a green branch or stale PR description does not complete a contract.
 
-1. Read current main `formalization/coordination/PROTOCOL.md`,
-   `AUTONOMY.json`, `BOARD.json`, `DECISIONS.md`, this runbook and the
-   exact-ref STATE on branch `coordination`. Main BOARD is the mathematical
-   catalogue; STATE is the ONLY live allocation/review/acceptance record.
-2. Read active reports/PRs at their actual heads and inspect exact CI logs.
-   Submitted, integrated and accepted are distinct. A worker may already
-   own another independent package while an older submission awaits review.
-3. B001 is accepted at `34b7f1b055788dcf1c134f07fd6a89c123189a82`, reviewed
-   head a1a709a, successful main run 40533022306. Its source map and feedback
-   are in `acceptance/B001.md` and `submissions/B001.md`. Recheck subsequent
-   accepted records in STATE; these startup SHAs do not certify newer heads.
-4. In private `shulda/cycle_constrainedness`, branch
-   `cco-sym/consolidated-r45-20261017`, path
-   `cco-symmetric-eppa/papers/consolidated_working`, read
-   `COORDINATOR_START_HERE.md`, CURRENT_STATUS and actual module/source proofs.
-   Human source pin remains 490c3f36; no source theorem repair was required
-   for B001. Next preparation is owner_master/04, then rooted consumers.
+The author confirmed original projects 1/2 stopped on 28 October 2026 and
+explicitly authorized one Work team and the one-time queue migration. Project
+3 (`cco-work-team`) owns work; root coordinates/implements/integrates. The
+separate `independent_review` role is an actual non-author reader, including
+with respect to original code, not the stopped project 2 under a new name.
+Preserve all original authors and record all actual new contributor identities.
 
-The author explicitly replaced version 1's mandatory stop-and-ask after
-completion. Eighteen B002–B019 contracts are released through AUTONOMY,
-with accepted-dependency and lowest-number rules. Projects 1 and 2 are
-registered; the author must update Project 1's pasted instructions to v2.
-Other projects do Lean; this preparation project specifies mathematics,
-keeps contracts/DAG/feedback current and resolves exceptions.
+Default capacity is two unresolved batches team-wide, including submissions,
+reviews, integration, repairs and blockers. Complete and repair first. A third
+requires a concrete independently active implementer and disjoint work plan,
+anchored to the two current batch heads in a durable independence report.
+No speculative B006/B017 claims. Every dependency must be ACCEPTED on actual
+main with verified resulting-main CI and axiom audit.
 
-Peers may review and integrate each other's PRs. Authors cannot accept
-own packages. All claim/review/acceptance writes use the documented exact
-coordination parent/ref, `force=false`, and retry from fresh state on a
-collision. All main integrations honor the single queue lock, exact reviewed
-head, current-main ancestry and green resulting main axiom audit. Keep a
-merged-main failure locked and unaccepted; repair explicitly. No automatic
-lease expiry, background monitor or cross-project message service exists.
+Migration order: independently review/test protocol policy/queue/instructions;
+serialize deployment under the same single infrastructure lock as any merge;
+require exact-head PR CI/audit and green resulting main. Then one atomic
+handoff event records both B002/B003, former owners, branch/PR/current heads,
+actual observed CI and last green checkpoint, without losing newer WIP or
+old claim/base/history. Current v2 STATE stays readable during deployment;
+only migration and infrastructure-lock events may modify it. Never reset STATE,
+merge coordination into main, or sync private preparation BOARD over public.
 
-Before a policy/source/registry change, coordinate a queue pause with active
-workers or use the integration lock; do not let workers use conflicting
-permission revisions. Publish concrete reviewed contracts before releasing
-the corresponding IDs. Breaking APIs, theorem repair and toolchain updates
-remain coordinator gates. Register project 3/4 only after successful actual
-two-project integration. Routine next work does not need Matěj's approval.
+Handoff heads (re-read before event): B002 project1/B002-raw-exact PR #3 at
+85878128003ace4d4e63d2a42a1cbcb596857308, CI 40665192487 failed; preserve
+last green 5254d3a5f2455c97710aa554c884052ac84cd257 (CI 40664176515).
+B003 p2-b003-strong-exact PR #4 at f140b2caf36d912f9d60f84727ba7674b8b7205a,
+CI 40668681157 passed. These are startup evidence, not certification of a newer
+head. Source pin remains 490c3f36d85db5a0b3ced0598e6c431825254ec5.
 
-Private PREPARATION boards remain templates; do not sync them over the public
-catalogue, STATE, numbered reports or Lean. The legacy initial manifest is
-not an ongoing change prohibition; use source pins, current catalogue/queue
-validation and actual Lean build instead. Do not regenerate an old manifest
-to hide source changes. Never rerun launch staging over a running repo.
+PR #5 infra/targeted-mathlib-imports at df2dbc4cb3391f74c289dd677a233932e9ab4bd8
+passed CI 40673696215 (647 declarations). Read its current diff/logs. Preserve
+it; do not write a competing shared foundation patch. Check against BOTH WIP
+branches, adding missing imports to consumers. Separate B002's original proof
+failures from import regressions. After valid independent review and green
+checks, integrate automatically under the same lock. Then target remaining
+tactic imports and actual external Mathlib cache roots plus incremental CCO
+cache; retain exact transitive audit and pinned toolchain/manifest.
 
-The private checkout may have synthetic history and only selected upstream
-files. Publish only verified changed blobs on the full actual remote base
-tree, verify the entire tree and update ref against the expected head.
-Private commits use `[skip ci]`; never enable private paid Actions. Do not
-modify other completed Lean repositories. Git-backed work needs no second
-copy in another storage system.
+For every routine integration: current main must be an ancestor of approved
+exact PR head; take sole CAS lock, re-read refs, merge with expected head and
+history preserved, require resulting-main build/audit, then accept/finish.
+Head changes require fresh review/CI. If already merged main fails, keep lock
+and checkpoint failure for preparation; do not clear dependencies or reset.
+Other independent ongoing work continues during CI. No background monitor or
+cross-project messaging is installed by this protocol.
+
+B001 remains ACCEPTED at 34b7f1b055788dcf1c134f07fd6a89c123189a82
+(main run 40533022306). Its exact historical record is immutable and narrowly
+exempted from new provenance fields. New records require actual actor identity,
+authorship and substantive independent exact-head report. All external facts
+must be verified in reality; the offline queue checks shape and consistency.
+
+Return genuine mathematical gaps, accepted API/source/toolchain changes and
+unresolved integration failure to preparation. Routine implementation and
+approved integration need no additional author permission. Preserve resumable
+commits and current exact-head reports before stopping. Git-backed items do
+not need a second storage copy. Do not regenerate old launch manifests or
+rerun initial staging over a running repository. Private preparation continues
+in shulda/cycle_constrainedness; never enable its paid Actions.

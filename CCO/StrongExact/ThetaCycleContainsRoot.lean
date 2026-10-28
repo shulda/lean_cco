@@ -1,3 +1,4 @@
+import Mathlib.Data.Finset.Max
 import CCO.StrongExact.ThetaCycleLocal
 import CCO.StrongExact.ThetaPrivateRankReadout
 import CCO.StrongExact.ThetaPrivateConnectivity
