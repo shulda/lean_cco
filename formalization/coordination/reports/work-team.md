@@ -1,3 +1,55 @@
+# Completed handoff, both batches and cache integration — STATE27
+
+Current green main: `647b1b76cc075dce477974b74293eb9370ff9b5d`.
+Actual push CI40703611084/job122869707415 passes **67 tests**, **1211 build jobs**,
+the complete **3657-declaration** official transitive allowlist audit, and
+**317 actual olean parts / 317 current source modules** before and after audit.
+The merge tree7db06ece exactly equals independently reviewed PR9 headce93b92c.
+The single integration lock is free; all requested work is complete.
+
+| Item | Accepted/integrated evidence |
+|---|---|
+| B003, original PR4 | Exact non-author-approved head d1ea335, history-preserving main68322c7, actual mainCI40695882842:57/1037/2069/158. ACCEPTED at STATE20. All C06–C13 plus genuinely generic ordinary-AP+class-CCO triangle fullness discharged. |
+| B002, original PR3 | Exact non-author-approved head70d56cf, history-preserving main4206ff7, actual mainCI40697932819:57/1211/3657/317. ACCEPTED at STATE25. All C06–C28 providers discharged, including literal whole-path C06/C26, actual C27/C28, and repaired independent vertex-universe exports. |
+| Work team policy | Protocol3 deployed through PR6, atomic BOTH-claim handoff6, default2 unresolved batches, actual non-author identities, accepted-dependency rule/CAS/one lock/exact-head+main audit preserved. |
+| Imports/cache | Existing PR5 targeted imports merged after both WIP consumer tests; 41 tactic umbrellas removed at consumers. PR7 targeted external roots and byte checks integrated; PR9 actual source-closure/alias checks and one bounded clean fallback now integrated with exact head and main checks. |
+| Final infrastructure | PR9 approved by actual /root/independent_review, corroborated by fresh /root/full_control_resume with its true identity. Lock26, merge647b1b7, green actualmain40703611084, finish27. Healthy final CI did not need fallback; controlled positive/negative recovery evidence remains separately scoped. |
+
+The original branches remain present:
+`project1/B002-raw-exact` at70d56cf and `p2-b003-strong-exact` atd1ea335.
+Both original handoff heads85878128/f140b2ca remain ancestors of finalmain,
+as does the original B002 green checkpoint5254d3a5. All original authorship,
+claim revisions, handoff observations and newer WIP are retained; no reset or
+private BOARD replacement occurred. Source pin490c3f36d85db5a0b3ced0598e6c431825254ec5,
+mathematical contracts, accepted B001 API, toolchain and manifest are unchanged.
+No B006/B017, backup reservation or third claim was made.
+
+Final actual non-author reports are `reviews/B002-final-70d56cf.md`,
+`reviews/B003-final-d1ea335.md`, `reviews/source-closure-cache-guard.md` and
+`reports/cache-closure-full-control-20261028.md` on this coordination branch.
+The latter reports retain the rejected infrastructure checkpoints, original
+unchanged failure witnesses, failed ordinary recovery, successful bounded
+recoveries and the unproved initial cause. The guard verifies material
+source inputs/import closure/output consistency; it is not a proof-body
+regeneration oracle. Persistent recovery failure stops before a successful
+audit. Fresh mathematical builds/API consumers and actual exact-head/main
+audits independently establish the accepted proof source.
+
+Pinned local Lean4.34.1/Lake5.0.0 is usable. On the full current project with
+artifact cache disabled, a new small file importing CCO took **2.042s** and
+a repeated rehashed1211-job build **1.925s**. Full CI includes setup, targeted
+Mathlib download, tests/build/official audit and takes minutes (last math
+integration about5.5min; final infrastructure about1.5min). Current traversal
+finds31 genuine external Mathlib roots; all requested caches use these roots,
+not `cache get CCO.lean`. Local Lean is the development loop; CI remains the
+mandatory exact integration gate.
+
+Source maps on main now record actual acceptance while retaining earlier
+chronology. Only coordination STATE is live authority; main BOARD remains
+the mathematical catalogue. Final main checkout is clean.
+
+## Earlier checkpoint history
+
 # Both preserved batches accepted — STATE25
 
 B002 and B003 are FULLY ACCEPTED. B003 exacthead d1ea335 merged as main68322c7 (mainCI40695882842:57tests/1037jobs/2069allowlist/158parts); B002 exacthead70d56cf merged preserving history as current greenmain4206ff772cc3ee334fe530b55dbb0afe8174dfd4 (mainCI40697932819:57tests/1211jobs/FULL3657allowlist/317parts). Both actual merge trees equal their exact reviewed heads. Registered actual nonauthor /root/independent_review personally approved complete source contracts and independently checked both actual resulting-main runs. Separate fresh controls retain their own identities and finding/repair history. Original authors, heads/PRs, all WIP/last-green history, source pin490c3f36 and contracts remain unchanged. The sole lock is free; no backup or third claim was made.
