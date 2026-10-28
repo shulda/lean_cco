@@ -92,3 +92,5 @@ import CCO.StrongExact.ThetaHomReadout
 import CCO.StrongExact.ThetaPointLine
 import CCO.StrongExact.ThetaPointEnds
 import CCO.StrongExact.ThetaWholeReadout
+import CCO.StrongExact.ThetaCycleRootNeighbors
+import CCO.StrongExact.ThetaCycleCompatibility
