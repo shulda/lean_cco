@@ -1,3 +1,15 @@
+# Both preserved batches accepted — STATE25
+
+B002 and B003 are FULLY ACCEPTED. B003 exacthead d1ea335 merged as main68322c7 (mainCI40695882842:57tests/1037jobs/2069allowlist/158parts); B002 exacthead70d56cf merged preserving history as current greenmain4206ff772cc3ee334fe530b55dbb0afe8174dfd4 (mainCI40697932819:57tests/1211jobs/FULL3657allowlist/317parts). Both actual merge trees equal their exact reviewed heads. Registered actual nonauthor /root/independent_review personally approved complete source contracts and independently checked both actual resulting-main runs. Separate fresh controls retain their own identities and finding/repair history. Original authors, heads/PRs, all WIP/last-green history, source pin490c3f36 and contracts remain unchanged. The sole lock is free; no backup or third claim was made.
+
+Final reviews, including actual main verification, are reviews/B002-final-70d56cf.md and reviews/B003-final-d1ea335.md on this coordination branch. Source maps are on main at formalization/coordination/submissions/B002.md and B003.md; status summaries there are being reconciled in the separate infrastructure PR with no proof changes. STATE is the sole acceptance authority; public BOARD remains the mathematical catalogue.
+
+Only separate cache hardening remains. Independent testing found and preserved a consistent-byte/current-sourcehash stale-root snapshot. Source import headers and module search paths are now checked against the pinned parser/actual olean headers, complete closure before/after audit, and all actual source-reachable descriptors must be hashed even through symlinked directories. A second fresh control caught a nested-directory enumeration gap; old163/285 infrastructure approval is withdrawn pending the corrected finite source-trace enumeration. Failed ordinary root recovery is recorded candidly; a bounded successful changed strategy is not claimed universal. The final workflow will use one zero-CCO-generated-artifact fallback only if the incremental post-build closure fails; packages, sources and unrelated cache remain. No mathematical acceptance relies on this faulty old copied root: both full source candidates and resulting-main CI have verified actual complete closure/audit counts.
+
+Local pinned compiler works. Development checks measured1.310s cached root and1.900s new small import-CCO file; complete CI includes setup/download/tests/build/audit and took several minutes. Current source traversal identifies31 actual external Mathlib roots and only targeted tactic imports. The local loop is substantially faster; exact-head/main CI and audit remain final gates.
+
+## Earlier checkpoint history
+
 # Work team — current coordination checkpoint
 
 B003 is ACCEPTED at STATE revision20. Exact reviewed head d1ea335256cb543e670580a2f2da712a76ca01d0 was merged preserving history as main68322c7b9196eaaad4abdc7f074e93bba64bfedb; actual resulting-main CI40695882842 passes57 tests,1037 jobs, full2069-declaration standard-three audit and158 actual artifact parts. Formal nonauthor report reviews/B003-final-d1ea335.md is published on this branch. No old project author was reused as reviewer.

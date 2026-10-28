@@ -120,3 +120,22 @@ false positive was independently reported and fixed separately. It changes
 no mathematical source or this concrete fresh full-root/consumer/audit
 evidence. Resulting main MUST retain the full3657 audit/root coverage before
 this package becomes ACCEPTED under the sole integration lock.
+
+## Resulting main and live acceptance independently verified
+
+I fetched resulting main
+`4206ff772cc3ee334fe530b55dbb0afe8174dfd4`: tree
+`3ca8c336f387218fd9d762a3cbf9d49b8182224b` is exactly the approved tree;
+parents are accepted main68322c7b and exact approved70d56cf. The actual
+push-run40697932819 explicitly reports that main SHA, completed success,
+with job122849596540 checking57 tests, normal1211 jobs, official3657
+three-axiom audit and317 actual output parts. The GitHub convenience
+commit-workflow query is PR-only here; I verified the PUSH run directly
+instead of inferring main status from that empty query.
+
+Fresh live coordination STATE revision25 records BOTH B002 and B003
+ACCEPTED, B002 at4206ff77 with this exact main CI, lock null and unchanged
+source pin. The original handoff/last-green history and contributor IDs
+are preserved. The B002 approval names registered actor independent_review,
+actual identity /root/independent_review, with its substantive non-author
+report; it does not rename an author or the auxiliary fresh reader.

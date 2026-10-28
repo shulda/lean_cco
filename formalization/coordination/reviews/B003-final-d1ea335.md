@@ -109,3 +109,13 @@ the new source and audits the expected full2069 closure. These concrete
 fresh root/API/audit checks establish this reviewed mathematical head.
 Any cache hardening is separate infrastructure work; resulting main MUST
 retain this full2069 audit/root coverage before B003 is accepted.
+
+## Resulting main independently verified
+
+The exact approved tree was integrated as main
+`68322c7b9196eaaad4abdc7f074e93bba64bfedb`. I fetched its actual push-run
+40695882842/job122842398185 logs: checkout683, 57 tests, 1037 jobs,
+official2069 three-axiom audit and158 actual output parts. Live STATE now
+records B003 ACCEPTED at that commit, with the genuine non-author review
+identity preserved. Its unchanged source is also present in the subsequently
+verified complete B002+B003 main4206ff77.
