@@ -514,6 +514,7 @@ import CCO.RigidGroupoid.Geometry.QuotientDominance
 import CCO.RigidGroupoid.Geometry.RootedGroupoid
 import CCO.RigidGroupoid.Geometry.Source
 import CCO.RigidGroupoid.Geometry.Transport
+
 import CCO.RealHull.Canonical.Carrier
 import CCO.RealHull.Canonical.EvenWalk
 import CCO.RealHull.Canonical.Hull
@@ -523,3 +524,18 @@ import CCO.RealHull.Canonical.Pseudocomplement
 import CCO.RealHull.Canonical.RamseySubset
 import CCO.RealHull.Canonical.Source
 import CCO.RealHull.Canonical.Star
+import CCO.RigidGroupoid.Phase.AbstractCharacter
+import CCO.RigidGroupoid.Phase.AbstractMarkings
+import CCO.RigidGroupoid.Phase.AbstractSeeds
+import CCO.RigidGroupoid.Phase.ActualOrbitals
+import CCO.RigidGroupoid.Phase.ActualPhase
+import CCO.RigidGroupoid.Phase.AffineHelly
+import CCO.RigidGroupoid.Phase.AffineSlice
+import CCO.RigidGroupoid.Phase.CosetRelations
+import CCO.RigidGroupoid.Phase.ExactFamilyHelly
+import CCO.RigidGroupoid.Phase.Factorisation
+import CCO.RigidGroupoid.Phase.RigidSupport
+import CCO.RigidGroupoid.Phase.RootPhase
+import CCO.RigidGroupoid.Phase.SliceConsumer
+import CCO.RigidGroupoid.Phase.SourceCharacter
+import CCO.RigidGroupoid.Phase.TranslatedHelly
