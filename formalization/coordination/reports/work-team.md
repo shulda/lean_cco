@@ -39,7 +39,7 @@ Pinned local Lean4.34.1/Lake5.0.0 is usable. On the full current project with
 artifact cache disabled, a new small file importing CCO took **2.042s** and
 a repeated rehashed1211-job build **1.925s**. Full CI includes setup, targeted
 Mathlib download, tests/build/official audit and takes minutes (last math
-integration about5.5min; final infrastructure about1.5min). Current traversal
+integration about5.5min; final infrastructure about2min). Current traversal
 finds31 genuine external Mathlib roots; all requested caches use these roots,
 not `cache get CCO.lean`. Local Lean is the development loop; CI remains the
 mandatory exact integration gate.
