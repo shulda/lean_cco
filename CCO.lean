@@ -127,3 +127,5 @@ import CCO.RawExact.FanDirectCoincidence
 import CCO.RawExact.FanDirectColourConsistency
 
 import CCO.RawExact.RealTraceEndpoints
+
+import CCO.RawExact.FanDirectReferenceColour
