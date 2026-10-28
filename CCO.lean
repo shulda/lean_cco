@@ -105,3 +105,6 @@ import CCO.StrongExact.ThetaCycleBranchTags
 import CCO.StrongExact.ThetaCycleRootFreeSegment
 import CCO.StrongExact.ThetaCycleIndexCover
 import CCO.StrongExact.ThetaCycleIndexInjectivity
+import CCO.StrongExact.ThetaCycleRootDistance
+import CCO.StrongExact.ThetaCycleAdvanceShift
+import CCO.StrongExact.ThetaCycleFirstArc

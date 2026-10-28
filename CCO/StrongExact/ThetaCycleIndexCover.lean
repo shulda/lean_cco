@@ -25,7 +25,6 @@ theorem thetaCycleAdvance_val {n : Nat} (hn : 0 < n)
         (p.val + (k + 1)) % n
       rw [ih, Nat.mod_add_mod]
       congr 1
-      omega
 
 /-- Any position on the finite cycle is reached after a forward
 run of fewer than the number of cycle vertices. -/
