@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 24,
+  "revision": 25,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -24,7 +24,7 @@
       }
     },
     "B002": {
-      "state": "INTEGRATING",
+      "state": "ACCEPTED",
       "owner_project_id": 3,
       "claim_revision": 2,
       "base_main_sha": "7527172215da51d21180a3c5dc624ce54e2869ee",
@@ -112,6 +112,13 @@
           "report_path": "formalization/coordination/reviews/B002-final-70d56cf.md"
         },
         "summary": "Actual registered non-author /root/independent_review personally approves FULL RAW C06–C28 at exact70d56cf, including literal two-WHOLE-path vertex+edge C06/C26 classification, actual Helly C13, original automorphism/global quotient C20–23, genuine actual C24/AP/C27/C28 providers and repaired independent-z triangle/CCO property fields/full/singleton consumers. No SAP, hidden quotient representation/completion/section or named-group limit assumption. Own combined1211/3657/317/public316imports and higher-universe consumers pass; second genuinely fresh reviewer retains actual identity and finding/repair history. Exact remote40696694928 has identical reviewed tree/current ACCEPTED main ancestry,57tests/1211jobs/3657allowlist/317parts. Durable B002-final-70d56cf.md records full source and exact evidence."
+      },
+      "accepted_commit": "4206ff772cc3ee334fe530b55dbb0afe8174dfd4",
+      "main_ci": {
+        "head_sha": "4206ff772cc3ee334fe530b55dbb0afe8174dfd4",
+        "run_id": 40697932819,
+        "conclusion": "success",
+        "axiom_audit": "allowlist"
       }
     },
     "B003": {
@@ -273,13 +280,7 @@
       "owner_project_id": null
     }
   },
-  "integration_lock": {
-    "kind": "package",
-    "package_id": "B002",
-    "actor_id": "root",
-    "base_main_sha": "68322c7b9196eaaad4abdc7f074e93bba64bfedb",
-    "head_sha": "70d56cf20d8da4474629fc46b8ec548310838e17"
-  },
+  "integration_lock": null,
   "history": [
     {
       "revision": 1,
@@ -764,6 +765,24 @@
         "ci": {
           "head_sha": "70d56cf20d8da4474629fc46b8ec548310838e17",
           "run_id": 40696694928,
+          "conclusion": "success",
+          "axiom_audit": "allowlist"
+        },
+        "actor_id": "root"
+      }
+    },
+    {
+      "revision": 25,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "accept",
+      "package_id": "B002",
+      "details": {
+        "package_id": "B002",
+        "integration_commit": "4206ff772cc3ee334fe530b55dbb0afe8174dfd4",
+        "main_ci": {
+          "head_sha": "4206ff772cc3ee334fe530b55dbb0afe8174dfd4",
+          "run_id": 40697932819,
           "conclusion": "success",
           "axiom_audit": "allowlist"
         },
