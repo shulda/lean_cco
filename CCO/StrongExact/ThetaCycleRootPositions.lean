@@ -76,6 +76,6 @@ theorem thetaCycle_nonroot_is_private
   | inr z =>
       cases z with
       | mk b t =>
-          exact ⟨b,t,hr⟩
+          exact ⟨b,t,rfl⟩
 
 end CCO.StrongExact
