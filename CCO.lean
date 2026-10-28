@@ -162,3 +162,12 @@ import CCO.RawExact.FanCycleThroughRoot
 import CCO.RawExact.FanAllCycles
 
 import CCO.RawExact.CycleEdgeTransport
+
+import CCO.RawExact.FanCCOCompletion
+import CCO.RawExact.FanCentreColours
+import CCO.RawExact.WalkCertificateTransport
+import CCO.RawExact.CertifiedTraceToWord
+import CCO.RawExact.WalkColourReconstruction
+import CCO.RawExact.WalkColourAtAllIndices
+import CCO.RawExact.FanHomWordTrace
+import CCO.RawExact.FanHomTraceEndpoints
