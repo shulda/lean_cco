@@ -94,19 +94,17 @@ theorem thetaCycle_left_arc_rank_matches_distance
             cyclicNext C.length_pos
               (thetaCycleAdvance C.length_pos p (n + 1)) =
             thetaCycleAdvance C.length_pos p ((n + 1) + 1) := rfl
+        have hNextPrivate :
+            C.vertices (cyclicNext C.length_pos
+              (thetaCycleAdvance C.length_pos p (n + 1))) =
+              (.inr ⟨b,u⟩ : thetaVertices S ws) := by
+          rw [hNextIndex]
+          exact hu
         have hPosEq : r = u.val := by
           apply (thetaBranchPosition_injective S ws b)
-          calc
-            thetaBranchPosition S ws b r =
-                C.vertices (cyclicNext C.length_pos
-                  (thetaCycleAdvance C.length_pos p (n + 1))) :=
-                    hNext.symm
-            _ = C.vertices
-                (thetaCycleAdvance C.length_pos p ((n + 1) + 1)) := by
-                  rw [hNextIndex]
-            _ = (.inr ⟨b,u⟩ : thetaVertices S ws) := hu
-            _ = thetaBranchPosition S ws b u.val :=
-              (thetaBranchPosition_interior S ws b u).symm
+          exact hNext.symm.trans
+            (hNextPrivate.trans
+              (thetaBranchPosition_interior S ws b u).symm)
         have hRankU :
             wordPositionRank S (ws.get b) u.val = (n + 1) + 1 := by
           rw [hPosEq] at hRankNext
