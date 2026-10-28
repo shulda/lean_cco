@@ -85,10 +85,11 @@ vertex pair; no atomic value is fabricated for absent edges. -/
 noncomputable def thetaArcAtChoice
     (ws : List (PositiveWord S i j))
     (x y : thetaVertices S ws) :
-    Option (ThetaArcAt S ws x y) :=
-  if h : Nonempty (ThetaArcAt S ws x y)
-  then some (Classical.choice h)
-  else none
+    Option (ThetaArcAt S ws x y) := by
+  classical
+  exact if h : Nonempty (ThetaArcAt S ws x y)
+    then some (Classical.choice h)
+    else none
 
 theorem thetaArcAtChoice_eq_some
     (ws : List (PositiveWord S i j))
