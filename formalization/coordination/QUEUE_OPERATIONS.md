@@ -30,6 +30,7 @@ record failure; it is not successful submission evidence.
 | `claim` | `base_main_sha`, `base_ci` | Lowest released AVAILABLE package, every dependency ACCEPTED, capacity below two; no pending repairs. |
 | `claim_third` | claim fields plus `independent_active_work: true`, substantive `summary`, `implementation_actor_id`, `active_work_items`, `independence_report_path`, `existing_batches` | Exceptional third genuinely independent active batch; no fourth. |
 | `repair` | `base_main_sha`, `base_ci` | Lowest requested repair, preserving authorship. |
+| `checkpoint` | Current `head_sha`, existing `pr_number`, `observed_ci` with exact head/run and `conclusion` success or failure | Owned unleased IN_PROGRESS work only; preserve state, claim, authorship, branch and last green checkpoint; update WIP tracking without submission or another claim. |
 | `record_authorship` | `author_actor_ids` | Append actual contributors; never erase original authors or use review-only actor to implement. |
 | `submit` | exact `head_sha`, `pr_number`, `ci`, `report_path` = submissions/Bxxx.md (full repository path) | Complete contract only; submission still occupies a slot and clears old review. |
 | `review` | exact `head_sha`, `independence` below | Separate actual non-author control leases lowest eligible submission. |
@@ -39,6 +40,11 @@ record failure; it is not successful submission evidence.
 | `cancel_integration` | `pr_not_merged: true` | Pre-merge cancellation only; clears approval. |
 | `accept` | actual `integration_commit`, successful `main_ci` | Green resulting-main audit releases lock/dependencies. |
 | `block` | precise `reason` | Preserve lock on merged-main failure; unresolved batch still counts. |
+
+Use `checkpoint` after inspecting a completed WIP CI run to keep current heads
+honest while proofs remain open. It does not certify contract completion,
+release capacity, authorize review or create a new claim. It rejects submitted,
+leased or integrating work and changes of an existing PR number.
 
 For `claim_third`, `existing_batches` must describe exactly both current active
 batches, each with `package_id`, exact current `head_sha`, nonempty `work_items`

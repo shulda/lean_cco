@@ -70,7 +70,9 @@ CI and independent work, without repeating unchanged long failed attempts.
 
 Keep resumable commits, current reports and per-package `submissions/Bxxx.md`:
 source-to-Lean map, actual hypotheses, every open provider, consumer, exact head,
-CI/audit and feedback. Record every actual contributor with `record_authorship`
+CI/audit and feedback. Publish moving owned IN_PROGRESS WIP heads and actual
+success/failure CI with `checkpoint`, preserving claim/provenance and the
+existing PR; this is not submission and releases no slot. Record every actual contributor with `record_authorship`
 before submission. Preserve legacy-project-1/2 authorship through handoff.
 SUBMITTED requires complete contract discharge and successful exact-head CI
 and audit; green alone never completes a batch. Refreshing a head clears review.

@@ -357,6 +357,21 @@ def transition(registry, policy, state, project, event, data):
         package.update(state='IN_PROGRESS', claim_revision=state['revision'] + 1,
                        base_main_sha=data['base_main_sha'], base_ci=data['base_ci'])
         package.pop('review', None)
+    elif event == 'checkpoint':
+        actor_role(policy, project, data, 'implement')
+        require(package and package['owner_project_id'] == project
+                and package['state'] == 'IN_PROGRESS',
+                'Only the owner can checkpoint unleased IN_PROGRESS work')
+        require(sha(data.get('head_sha')) and type(data.get('pr_number')) is int
+                and data['pr_number'] > 0, 'Checkpoint needs the actual WIP PR and exact head')
+        require(package.get('pr_number', data['pr_number']) == data['pr_number'],
+                'Checkpoint preserves the existing WIP PR')
+        observed = data.get('observed_ci', {})
+        require(observed.get('head_sha') == data['head_sha'] and type(observed.get('run_id')) is int
+                and observed['run_id'] > 0 and observed.get('conclusion') in {'success', 'failure'},
+                'Checkpoint needs observed success/failure CI at the exact WIP head')
+        package.update(head_sha=data['head_sha'], pr_number=data['pr_number'],
+                       observed_ci=deepcopy(observed), checkpoint_revision=state['revision'] + 1)
     elif event == 'record_authorship':
         actor_role(policy, project, data, 'coordinate')
         require(package and package['state'] == 'IN_PROGRESS', 'Record contributors before submission')

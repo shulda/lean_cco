@@ -221,6 +221,42 @@ class QueueTests(unittest.TestCase):
                 'observed_ci': {'head_sha': str(owner) * 40, 'run_id': 5, 'conclusion': 'failure'},
                 'last_green_checkpoint': {'head_sha': 'a' * 40, 'ci': ci()}}
 
+    def test_checkpoint_preserves_work_state_claim_authorship_and_last_green(self):
+        s = self.step(self.legacy, 'handoff', previous_projects_stopped=True,
+                      transfers=[self.transfer('B002', 1), self.transfer('B003', 2)])
+        old = deepcopy(s['packages']['B002'])
+        for conclusion in ['failure', 'success']:
+            s = self.step(s, 'checkpoint', package_id='B002', head_sha='d' * 40, pr_number=3,
+                          observed_ci={'head_sha': 'd' * 40, 'run_id': 123, 'conclusion': conclusion})
+            p = s['packages']['B002']
+            self.assertEqual(p['state'], 'IN_PROGRESS')
+            self.assertEqual(p['head_sha'], 'd' * 40)
+            self.assertEqual(p['observed_ci']['conclusion'], conclusion)
+            for key in ['claim_revision', 'base_main_sha', 'base_ci', 'author_actor_ids',
+                        'original_author_project_ids', 'handoff_history', 'last_green_checkpoint', 'branch']:
+                self.assertEqual(p[key], old[key])
+        self.assertEqual(s['history'][-1]['event'], 'checkpoint')
+        self.assertEqual(len(q.active_packages(s)), 2)
+
+    def test_checkpoint_rejects_nonowner_or_leased_work_and_wrong_pr_or_ci(self):
+        for state in [self.submit(self.claim()), self.reviewed(), self.integrating()]:
+            with self.assertRaisesRegex(ValueError, 'unleased IN_PROGRESS'):
+                self.step(state, 'checkpoint', package_id='B002', head_sha='d' * 40, pr_number=3,
+                          observed_ci={'head_sha': 'd' * 40, 'run_id': 123, 'conclusion': 'failure'})
+        with self.assertRaisesRegex(ValueError, 'not authorized'):
+            q.transition(self.registry, self.policy, self.claim(), 2, 'checkpoint',
+                         {'actor_id': 'root', 'package_id': 'B002'})
+        s = self.step(self.claim(), 'checkpoint', package_id='B002', head_sha='d' * 40, pr_number=3,
+                      observed_ci={'head_sha': 'd' * 40, 'run_id': 123, 'conclusion': 'failure'})
+        with self.assertRaisesRegex(ValueError, 'preserves the existing WIP PR'):
+            self.step(s, 'checkpoint', package_id='B002', head_sha='d' * 40, pr_number=99,
+                      observed_ci={'head_sha': 'd' * 40, 'run_id': 123, 'conclusion': 'failure'})
+        for observed in [{'head_sha': 'c' * 40, 'run_id': 123, 'conclusion': 'failure'},
+                         {'head_sha': 'd' * 40, 'run_id': 123, 'conclusion': 'pending'}]:
+            with self.assertRaisesRegex(ValueError, 'exact WIP head'):
+                self.step(s, 'checkpoint', package_id='B002', head_sha='d' * 40, pr_number=3,
+                          observed_ci=observed)
+
     def test_atomic_handoff_preserves_claim_history_wip_and_original_authorship(self):
         s = self.step(self.legacy, 'handoff', previous_projects_stopped=True,
                       transfers=[self.transfer('B002', 1), self.transfer('B003', 2)])
