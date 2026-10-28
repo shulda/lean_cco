@@ -51,10 +51,33 @@ theorem referencePointAt_sort
     (p : PathPosition S (occurrenceWord S D o)) :
     (referencePointAt S H D centres o p).1 =
       pathSortAt S (occurrenceWord S D o) p := by
-  have hsort := realWalkTrace_sorts S
-    (referenceOccurrenceWalk S H D centres o).2
-  unfold referencePointAt pathSortAt
-  rw [← hsort]
-  simp
+  let w := (referenceOccurrenceWalk S H D centres o).2
+  have hsort : (realWalkTrace S w).map Sigma.fst =
+      wordSortTrace S (occurrenceWord S D o) :=
+    realWalkTrace_sorts S w
+  have hRealLen : (realWalkTrace S w).length =
+      diversityLength S (occurrenceWord S D o) + 1 :=
+    realWalkTrace_length S w
+  have hReal : p.val < (realWalkTrace S w).length := by
+    rw [hRealLen]
+    exact p.isLt
+  have hSort : p.val <
+      (wordSortTrace S (occurrenceWord S D o)).length := by
+    rw [wordSortTrace_length S (occurrenceWord S D o)]
+    exact p.isLt
+  -- Use Nat-indexed optional lookup to rewrite the two lists without
+  -- an ill-typed dependent rewrite of the Fin bound proof.
+  have hNat :
+      ((realWalkTrace S w).map Sigma.fst)[p.val]? =
+      (wordSortTrace S (occurrenceWord S D o))[p.val]? :=
+    congrArg (fun l : List ι => l[p.val]?) hsort
+  have hAt :
+      ((realWalkTrace S w)[p.val]'hReal).1 =
+      (wordSortTrace S (occurrenceWord S D o))[p.val]'hSort := by
+    rw [List.getElem?_eq_getElem (by
+      simpa only [List.length_map] using hReal)] at hNat
+    rw [List.getElem?_eq_getElem hSort] at hNat
+    simpa only [List.getElem_map] using hNat
+  simpa only [referencePointAt, pathSortAt, w] using hAt
 
 end CCO.RawExact
