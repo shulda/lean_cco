@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 7,
+  "revision": 8,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -129,6 +129,9 @@
         2
       ],
       "author_actor_ids": [
+        "/root/protocol_migration",
+        "/root/runtime_imports",
+        "/root/strong_bridge",
         "legacy-project-2",
         "root"
       ],
@@ -363,6 +366,22 @@
           "/root/raw_fan",
           "/root/raw_quotient",
           "/root/runtime_imports"
+        ]
+      }
+    },
+    {
+      "revision": 8,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "record_authorship",
+      "package_id": "B003",
+      "details": {
+        "actor_id": "root",
+        "package_id": "B003",
+        "author_actor_ids": [
+          "/root/strong_bridge",
+          "/root/runtime_imports",
+          "/root/protocol_migration"
         ]
       }
     }
