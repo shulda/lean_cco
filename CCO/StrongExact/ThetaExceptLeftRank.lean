@@ -82,7 +82,7 @@ theorem thetaExceptLeftRank_of_branch
   by_cases hTarget : q = wordTarget S (ws.get b)
   · subst q
     rw [thetaBranchPosition_target S ws b]
-    simp [thetaExceptLeftRank]
+    simp [thetaExceptLeftRank, thetaRight]
   · by_cases hSource : q = wordSource S (ws.get b)
     · subst q
       exact False.elim (hLeft (thetaBranchPosition_source S ws b))
