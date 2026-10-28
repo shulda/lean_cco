@@ -60,18 +60,26 @@ theorem privateFanFull_cycle_through_root
       ∃ a : S.Atom root (privateFanSort S D centres (C.vertices nxt)),
         (privateFanFullDiagram S H D centres).edge
           R (C.vertices nxt) hNext = some a := by
-    simpa only [R, privateFanSort_root] using
-      (simpleCycle_specified_at_vertices C p0
-        R (C.vertices nxt) hp0 rfl hNext)
+    change ∃ a : S.Atom
+        ((privateFanFullDiagram S H D centres).vertexSort R)
+        ((privateFanFullDiagram S H D centres).vertexSort (C.vertices nxt)),
+      (privateFanFullDiagram S H D centres).edge
+        R (C.vertices nxt) hNext = some a
+    exact simpleCycle_specified_at_vertices C p0
+      R (C.vertices nxt) hp0 rfl hNext
   have hInSpec :
       ∃ a : S.Atom (privateFanSort S D centres (C.vertices prev)) root,
         (privateFanFullDiagram S H D centres).edge
           (C.vertices prev) R hPrev.symm = some a := by
     have hToRoot : C.vertices (cyclicNext C.length_pos prev) = R :=
       (congrArg C.vertices hprev).trans hp0
-    simpa only [R, privateFanSort_root] using
-      (simpleCycle_specified_at_vertices C prev
-        (C.vertices prev) R rfl hToRoot hPrev.symm)
+    change ∃ a : S.Atom
+        ((privateFanFullDiagram S H D centres).vertexSort (C.vertices prev))
+        ((privateFanFullDiagram S H D centres).vertexSort R),
+      (privateFanFullDiagram S H D centres).edge
+        (C.vertices prev) R hPrev.symm = some a
+    exact simpleCycle_specified_at_vertices C prev
+      (C.vertices prev) R rfl hToRoot hPrev.symm
   obtain ⟨aOut, hOut⟩ := hOutSpec
   obtain ⟨aIn, hIn⟩ := hInSpec
   have hInReverse :
