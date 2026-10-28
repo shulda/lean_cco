@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 75,
+  "revision": 76,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -463,7 +463,7 @@
       }
     },
     "B009": {
-      "state": "IN_PROGRESS",
+      "state": "SUBMITTED",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b009_fibres",
@@ -481,7 +481,16 @@
         "run_id": 40730446748,
         "conclusion": "success",
         "axiom_audit": "allowlist"
-      }
+      },
+      "head_sha": "7d3c98155fdfecdc3f8f35ef9735c02836bc9340",
+      "pr_number": 16,
+      "ci": {
+        "head_sha": "7d3c98155fdfecdc3f8f35ef9735c02836bc9340",
+        "run_id": 40740760714,
+        "conclusion": "success",
+        "axiom_audit": "allowlist"
+      },
+      "report_path": "formalization/coordination/submissions/B009.md"
     },
     "B010": {
       "state": "AVAILABLE",
@@ -2044,6 +2053,26 @@
           "conclusion": "success",
           "axiom_audit": "allowlist"
         },
+        "actor_id": "root"
+      }
+    },
+    {
+      "revision": 76,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "submit",
+      "package_id": "B009",
+      "details": {
+        "package_id": "B009",
+        "head_sha": "7d3c98155fdfecdc3f8f35ef9735c02836bc9340",
+        "pr_number": 16,
+        "ci": {
+          "head_sha": "7d3c98155fdfecdc3f8f35ef9735c02836bc9340",
+          "run_id": 40740760714,
+          "conclusion": "success",
+          "axiom_audit": "allowlist"
+        },
+        "report_path": "formalization/coordination/submissions/B009.md",
         "actor_id": "root"
       }
     }
