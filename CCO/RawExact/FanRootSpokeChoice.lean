@@ -76,8 +76,9 @@ noncomputable def privateFanRootSelectedAtom
     (D : ∀ t : I, NonemptyExact S root (sort t))
     (centres : ∀ t : I, X (sort t))
     (v : PrivateFanVertex S D centres) :
-    Option (S.Atom root (privateFanSort S D centres v)) :=
-  if h : ∃ a, privateFanRootSpokeCandidate S H D centres v a then
+    Option (S.Atom root (privateFanSort S D centres v)) := by
+  classical
+  exact if h : ∃ a, privateFanRootSpokeCandidate S H D centres v a then
     some (Classical.choose h)
   else
     none
@@ -134,21 +135,25 @@ theorem privateFanRootSelectedAtom_ne_none_iff
     privateFanRootSelectedAtom S H D centres v ≠ none ↔
       privateFanAdjacent S D centres
         (privateFanRoot S D centres) v := by
+  classical
   constructor
   · intro hSome
-    unfold privateFanRootSelectedAtom at hSome
-    split_ifs at hSome with hExists
+    by_cases hExists :
+        ∃ a, privateFanRootSpokeCandidate S H D centres v a
     · obtain ⟨a, ha⟩ := hExists
       exact privateFan_root_spoke_candidate_implies_adjacent
         S H D centres v a ha
-    · exact False.elim (hSome rfl)
+    · have hNone : privateFanRootSelectedAtom S H D centres v = none := by
+        unfold privateFanRootSelectedAtom
+        simp [hExists]
+      exact False.elim (hSome hNone)
   · intro hGraph
     obtain ⟨a, ha⟩ :=
       privateFan_root_spoke_candidate_exists S H D centres v hGraph
-    have hExists : ∃ b, privateFanRootSpokeCandidate S H D centres v b :=
+    have hExists :
+        ∃ b, privateFanRootSpokeCandidate S H D centres v b :=
       ⟨a, ha⟩
     unfold privateFanRootSelectedAtom
-    rw [dif_pos hExists]
-    simp
+    simp [hExists]
 
 end CCO.RawExact

@@ -125,6 +125,7 @@ noncomputable def privateFanPuncturedDiagram
         intro hBack
         exact h ((privateFanPuncturedAdjacent_symm S D centres w v).mp hBack)
       simp only [dif_neg h, dif_neg hRev]
+      simp
 
 /-- The reference point assignment is a genuine old
 `DiagramHom` of the punctured diagram. This is an UNCONDITIONAL
@@ -147,6 +148,5 @@ noncomputable def privateFanPuncturedDiagram_realization
       else none) = some a at ha
     split_ifs at ha with h
     · exact ha
-    · cases ha
 
 end CCO.RawExact
