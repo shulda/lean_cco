@@ -1,6 +1,7 @@
 import CCO.RawExact.FanTwoRootSpokes
 import CCO.RawExact.FanFullNonrootPreservation
 import CCO.RawExact.FanTwoRootCycleEdges
+import CCO.RawExact.CycleEdgeTransport
 import Mathlib.Tactic
 
 /-!
@@ -59,28 +60,18 @@ theorem privateFanFull_cycle_through_root
       ∃ a : S.Atom root (privateFanSort S D centres (C.vertices nxt)),
         (privateFanFullDiagram S H D centres).edge
           R (C.vertices nxt) hNext = some a := by
-    have hSpec := C.specified p0
-    change ∃ a : S.Atom
-        (privateFanSort S D centres (C.vertices p0))
-        (privateFanSort S D centres (C.vertices nxt)),
-      (privateFanFullDiagram S H D centres).edge
-        (C.vertices p0) (C.vertices nxt) (C.next_ne p0) = some a at hSpec
-    rw [hp0] at hSpec
-    simpa only [R, nxt, privateFanSort_root] using hSpec
+    simpa only [R, privateFanSort_root] using
+      (simpleCycle_specified_at_vertices C p0
+        R (C.vertices nxt) hp0 rfl hNext)
   have hInSpec :
       ∃ a : S.Atom (privateFanSort S D centres (C.vertices prev)) root,
         (privateFanFullDiagram S H D centres).edge
           (C.vertices prev) R hPrev.symm = some a := by
-    have hSpec := C.specified prev
-    change ∃ a : S.Atom
-        (privateFanSort S D centres (C.vertices prev))
-        (privateFanSort S D centres
-          (C.vertices (cyclicNext C.length_pos prev))),
-      (privateFanFullDiagram S H D centres).edge
-        (C.vertices prev) (C.vertices (cyclicNext C.length_pos prev))
-          (C.next_ne prev) = some a at hSpec
-    rw [hprev, hp0] at hSpec
-    simpa only [R, privateFanSort_root] using hSpec
+    have hToRoot : C.vertices (cyclicNext C.length_pos prev) = R :=
+      (congrArg C.vertices hprev).trans hp0
+    simpa only [R, privateFanSort_root] using
+      (simpleCycle_specified_at_vertices C prev
+        (C.vertices prev) R rfl hToRoot hPrev.symm)
   obtain ⟨aOut, hOut⟩ := hOutSpec
   obtain ⟨aIn, hIn⟩ := hInSpec
   have hInReverse :
@@ -94,12 +85,9 @@ theorem privateFanFull_cycle_through_root
       hNext hPrev aOut (S.conv aIn) hOut hInReverse
   let point := privateFanVariableTypedPoint S D centres choice x
   have hIncomingColour :
-      S.colour (point (C.vertices prev)) (point R) = some aIn := by
-    have hReverse :=
-      (S.colour_swap (point R) (point (C.vertices prev)) (S.conv aIn)).mp
-        hInColourReverse
-    rw [S.conv_invol aIn] at hReverse
-    exact hReverse
+      S.colour (point (C.vertices prev)) (point R) = some aIn :=
+    (S.colour_swap (point (C.vertices prev)) (point R) aIn).mpr
+      hInColourReverse
   have hOutFullColour :
       S.colour (point R) (point (C.vertices nxt)) =
         (privateFanFullDiagram S H D centres).edge
@@ -114,26 +102,16 @@ theorem privateFanFull_cycle_through_root
   intro p a ha
   by_cases hFirst : p = p0
   · subst p
-    have hColFull :
-        S.colour (point (C.vertices p0))
-          (point (C.vertices (cyclicNext C.length_pos p0))) =
-        (privateFanFullDiagram S H D centres).edge
-          (C.vertices p0)
-          (C.vertices (cyclicNext C.length_pos p0))
-          (C.next_ne p0) := by
-      simpa only [R, nxt, hp0] using hOutFullColour
-    exact hColFull.trans ha
+    exact simpleCycle_preserve_at_vertices C p0
+      R (C.vertices nxt) hp0 rfl hNext
+      point hOutFullColour a ha
   · by_cases hLast : p = prev
     · subst p
-      have hColFull :
-          S.colour (point (C.vertices prev))
-            (point (C.vertices (cyclicNext C.length_pos prev))) =
-          (privateFanFullDiagram S H D centres).edge
-            (C.vertices prev)
-            (C.vertices (cyclicNext C.length_pos prev))
-            (C.next_ne prev) := by
-        simpa only [R, hprev, hp0] using hIncomingFullColour
-      exact hColFull.trans ha
+      have hToRoot : C.vertices (cyclicNext C.length_pos prev) = R :=
+        (congrArg C.vertices hprev).trans hp0
+      exact simpleCycle_preserve_at_vertices C prev
+        (C.vertices prev) R rfl hToRoot hPrev.symm
+        point hIncomingFullColour a ha
     · have hAway :=
         cycle_edges_away_from_root_except_two C R p0 hp0
           prev hprev p hFirst hLast
