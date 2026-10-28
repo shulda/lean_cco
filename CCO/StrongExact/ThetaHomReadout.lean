@@ -32,15 +32,17 @@ private theorem colour_cast_both
   cases ht
   simpa using hxy
 
-/-- The two chained dependent sort casts cancel on two formal
-positions identified as the SAME vertex, even when their equality
-proofs were constructed by unrelated reductions. -/
-private theorem cast_at_equal_vertex
+private theorem cast_eq_mp {s t : ι} (h : s = t) (x : X s) :
+    (h ▸ x) = Eq.mp (congrArg X h) x := by
+  cases h
+  rfl
+
+private theorem cast_at_equal_vertex_mp
     {α : Type a} (sort : α → ι)
     (point : ∀ x : α, X (sort x))
     {x y : α} {t : ι}
     (hxy : x = y) (hs : sort x = t) (ht : t = sort y) :
-    ht ▸ (hs ▸ point x) = point y := by
+    Eq.mp (congrArg X ht) (hs ▸ point x) = point y := by
   cases hxy
   cases hs
   cases ht
