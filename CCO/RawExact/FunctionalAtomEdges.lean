@@ -51,7 +51,7 @@ noncomputable def edge (p q : V) :
 choice adds no new relation, and functional uniqueness is essential. -/
 theorem edge_some_iff (p q : V)
     (a : S.Atom (sort p) (sort q)) :
-    B.edge p q = some a ↔ B.label p q a := by
+    edge S B p q = some a ↔ B.label p q a := by
   classical
   unfold edge
   by_cases h : ∃ b : S.Atom (sort p) (sort q), B.label p q b
@@ -79,20 +79,20 @@ typed diversity palette, without extra mathematical assumptions. -/
 noncomputable def toPartialDiagram [Finite V] : PartialDiagram S V where
   finite_type := inferInstance
   vertexSort := sort
-  edge := fun p q _ => B.edge p q
+  edge := fun p q _ => edge S B p q
   edge_reverse := by
     intro p q hpq a
-    exact (B.edge_some_iff p q a).trans
+    exact (edge_some_iff S B p q a).trans
       ((B.converse p q a).trans
-        (B.edge_some_iff q p (S.conv a)).symm)
+        (edge_some_iff S B q p (S.conv a)).symm)
 
 /-- Public consumer: the edge of the actual finite diagram is
 present with a precisely given atom iff it was genuinely specified. -/
 theorem toPartialDiagram_edge_some_iff [Finite V]
     (p q : V) (hpq : p ≠ q)
     (a : S.Atom (sort p) (sort q)) :
-    (B.toPartialDiagram).edge p q hpq = some a ↔ B.label p q a :=
-  B.edge_some_iff p q a
+    (toPartialDiagram S B).edge p q hpq = some a ↔ B.label p q a :=
+  edge_some_iff S B p q a
 
 end TypedAtomEdgeData
 
@@ -119,8 +119,8 @@ theorem actualPointAtomEdgeData_correct
     (point : ∀ p : V, X (sort p))
     (p q : V) (hpq : p ≠ q)
     (a : S.Atom (sort p) (sort q)) :
-    ((actualPointAtomEdgeData S sort point).toPartialDiagram).edge p q hpq =
+    (TypedAtomEdgeData.toPartialDiagram S (actualPointAtomEdgeData S sort point)).edge p q hpq =
       some a ↔ S.colour (point p) (point q) = some a :=
-  (actualPointAtomEdgeData S sort point).toPartialDiagram_edge_some_iff p q hpq a
+  TypedAtomEdgeData.toPartialDiagram_edge_some_iff S (actualPointAtomEdgeData S sort point) p q hpq a
 
 end CCO.RawExact
