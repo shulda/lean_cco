@@ -128,5 +128,57 @@ in the project cache. The workflow uses the existing pinned lean-action to
 install the toolchain, retrieves the discovered external roots, restores
 compatible project outputs, and invokes the pinned build plus audit action.
 No clean full-rebuild, remote cache hit or throughput claim is made until
-that changed workflow passes CI. Python tests: all 48 pass on this branch;
+that changed workflow passes CI. Python tests: all 53 pass on this branch;
 workflow YAML syntax and retained audit settings were checked locally.
+
+## Changed-source restore tests and output consistency guard
+
+All of these bounded local checks used actual `import CCO; #check` probes,
+not just a Lake success message:
+
+| Experiment | Result |
+|---|---|
+| Add a public module/root import, then restore OLD PR #5 build archive | New module and root rebuilt; new export available. |
+| Change an existing child module, leaving root source unchanged, then restore OLD outputs | Changed child/root rebuilt; new child export available. |
+| Restore OLD archive in a separate worktree; change both root imports and an existing child | Both exports available; official audit sees 649 declarations, versus baseline 647. |
+| Deliberately pair CURRENT traces with OLD root and child olean bytes | Ordinary Lake build succeeds, but both new exports are absent. |
+| Run consistency repair, then build in a fresh shell invocation | Exactly the two inconsistent modules are invalidated/rebuilt; both exports return; official audit sees 649, and all 33 olean parts match their trace descriptors. |
+
+The last case deterministically reproduces the failure mechanism reported
+by the parallel workers. The initial formation of their inconsistent copy
+was not established; neither mtime nor path precedence is asserted as its
+cause. The effective project `LEAN_PATH` and captured compiler paths were
+checked. No Lake system CAS directory was present during this reproduction,
+so CAS artifact preference is not claimed as the established local cause.
+One nested Python orchestration did not expose repair to its following
+build; the independently repeated repair and subsequent fresh shell build
+verified the stated successful result. The workflow uses separate steps.
+
+Pinned Lake's `Build/Common.lean` checks matching input traces and output
+existence, without rehashing output bytes (`checkHashUpToDate'`). Therefore
+an inconsistent manual snapshot is not certified merely by rerunning Lake.
+`tools/verify_project_cache.py` calls the tiny toolchain-only Lean helper
+`project_cache_hashes.lean`, which uses the exact pinned
+`Lake.computeFileHash` on actual bytes, ignoring `.hash` sidecars. It compares
+all root and child CCO olean parts with each trace's output descriptors.
+Malformed metadata, missing outputs and mismatches invalidate only that
+module's generated library/IR/hash/trace files. Consistent children remain
+untouched. This is the existing Lake consistency hash, not a new security
+claim or proof assumption. Five additional tests cover root/child detection,
+missing/malformed outputs, path-safe descriptor rejection, and preservation
+of valid modules and source files. All 53 Python tests pass locally.
+
+The workflow repairs inconsistent outputs after cache restore and checks
+consistency again after the official build/audit. It sets the supported
+`LAKE_RESTORE_ARTIFACTS=true`: external plain `lake env` tools load legacy
+build-directory outputs, while a configured Lake CAS can otherwise use
+preferred internal paths. The output consistency guard remains necessary
+because Lake's `restoreArtifact` keeps an existing local file without
+comparing its bytes. No CAS data is added to the project-cache archive.
+
+These checks supersede the earlier proposed unconditional root-only delete
+guard. They preserve valid project incrementality and detect stale child
+exports as well as stale roots. A green new exact-head remote workflow is
+still required; no remote cache hit or throughput result is inferred from
+these local experiments. The temporary probe sources are not part of this
+change or its mathematical exports.
