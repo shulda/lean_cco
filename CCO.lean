@@ -116,3 +116,5 @@ import CCO.RawExact.FanCentreBoundary
 import CCO.RawExact.FanSimpleGraph
 
 import CCO.RawExact.ReducedDirectWords
+
+import CCO.RawExact.FanReferenceEdges
