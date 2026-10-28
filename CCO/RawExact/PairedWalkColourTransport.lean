@@ -38,9 +38,9 @@ theorem paired_private_walks_match_reference_colours
       (ball (evaluate S (D p).words) (centres p) ∩
         ball (evaluate S (D q).words) (centres q)).Nonempty)
     (p q : WordOccurrence S D) :
-    Nonempty (Σ x : X root,
-      Σ wp : WordPath S (occurrenceWord S D p) x (centres p.1),
-      Σ wq : WordPath S (occurrenceWord S D q) x (centres q.1),
+    ∃ x : X root,
+      ∃ wp : WordPath S (occurrenceWord S D p) x (centres p.1),
+      ∃ wq : WordPath S (occurrenceWord S D q) x (centres q.1),
         SameEdgeColours S
           (realWalkTrace S (referenceOccurrenceWalk S H D centres p).2)
           (realWalkTrace S wp) ∧
@@ -49,7 +49,7 @@ theorem paired_private_walks_match_reference_colours
           (realWalkTrace S wq)) := by
   obtain ⟨⟨x, wp, wq⟩⟩ :=
     pair_private_walks_of_pairwise_balls S D centres hPair p q
-  refine ⟨⟨x, wp, wq, ?_, ?_⟩⟩
+  refine ⟨x, wp, wq, ?_, ?_⟩
   · exact sameEdgeColours_of_wordPaths S (occurrenceWord S D p)
       (referenceOccurrenceWalk S H D centres p).2 wp
   · exact sameEdgeColours_of_wordPaths S (occurrenceWord S D q)
