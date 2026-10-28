@@ -38,8 +38,9 @@ theorem sameBranchArc_unique
     (hSrc : arc₁.src = arc₂.src)
     (hDst : arc₁.dst = arc₂.dst) :
     arc₁ = arc₂ := by
-  obtain ⟨e, he | he⟩ := he
-  obtain ⟨f, hf | hf⟩ := hf
+  rcases he with ⟨e, he⟩
+  rcases hf with ⟨f, hf⟩
+  rcases he with he | he <;> rcases hf with hf | hf
   · have h : thetaBranchEdgeSource S ws b e =
           thetaBranchEdgeSource S ws b f := by
       simpa [he, hf, thetaForwardArc] using hSrc
