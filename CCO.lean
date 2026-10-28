@@ -83,3 +83,7 @@ import CCO.RawExact.SaturationDistribution
 
 import CCO.RawExact.WalkGeometry
 import CCO.RawExact.PrivateFanVertices
+
+import CCO.RawExact.PrivateFanGluing
+import CCO.RawExact.TypedChain
+import CCO.RawExact.PathEndpoints
