@@ -78,12 +78,14 @@ theorem choose_fan_walks_with_two_common_roots
       · subst o
         exact ⟨x, wq⟩
       · exact referenceOccurrenceWalk S H D centres o
-  refine ⟨x, choice, ?_, ?_⟩
-  · dsimp [choice]
+  have hAtP : (choice p).1 = x := by
+    dsimp [choice]
     simp
+  refine ⟨x, choice, hAtP, ?_⟩
+  by_cases hpq : q = p
+  · rw [hpq]
+    exact hAtP
   · dsimp [choice]
-    by_cases hpq : q = p
-    · simp [hpq]
-    · simp [hpq]
+    simp [hpq]
 
 end CCO.RawExact
