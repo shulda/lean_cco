@@ -182,3 +182,162 @@ exports as well as stale roots. A green new exact-head remote workflow is
 still required; no remote cache hit or throughput result is inferred from
 these local experiments. The temporary probe sources are not part of this
 change or its mathematical exports.
+
+
+## Semantic source-closure verification after the AgeAP witness
+
+The independent reviewer preserved checkout
+`5ff0881ee48d74823350a2820ac37c5bdd488d29` in `cco-review-ageap` after copying
+an earlier `.lake/build`. Its ordinary pinned build reported 776 successful
+jobs and current root inputs, but the audit saw only the old 647 declarations.
+Direct `import CCO.AgeAP` succeeded; `import CCO; #check CCO.AgeAP` failed.
+The source listed `CCO.AgeAP`; the actual root olean, ilean import list and
+C output still had the earlier closure. The old output-descriptor guard
+correctly checked 33 byte-consistent parts and therefore could not detect it.
+
+The root source input hash was independently recomputed with pinned
+`Lake.Hash.ofText` and **matched** its current trace input,
+`480033033fea0674`. The stale root olean SHA-256 was
+`73e6933ae60ab4b9ad258006611831a4c804d1f854e15ffd4df18e26e0a7bccd`;
+its descriptor `7edbbffa0b49d8a0.olean` correctly described those stale bytes.
+The setup JSON included the correct new AgeAP artifact, and effective
+resolution selected this worktree's root. Source-hash or output-hash checks
+alone consequently do not establish current import coverage.
+
+`project_cache_metadata.lean` now uses the pinned compiler's own
+`Lean.parseImports'` and `Lean.readModuleData`, without importing CCO artifacts,
+to follow every current source-reachable CCO module and compare its complete
+actual compiled import records, including implicit imports, order, flags and
+module mode. It also computes current source hashes independently of sidecars.
+The guard checks these against the source input in each trace, allowing old
+absolute worktree prefixes but requiring the same source-relative filename.
+It initializes the same search path as the official auditor and requires
+`Lean.findOLean` to resolve to the exact checked artifact, preventing a different
+worktree or package artifact from shadowing it. The existing actual-byte
+checks against every olean partition descriptor remain in force.
+
+Before a build, absent cold-cache modules require no repair. After a build,
+`--require-complete` requires an artifact and valid source trace for **every**
+module in the current root source closure. A missing, unreadable, differently
+resolved or differently imported module makes the job fail; repair removes
+only that module's generated library/IR outputs. An existing module with a
+changed body but unchanged imports is invalidated when its source trace hash
+is old. These checks verify source-input and import-closure consistency; they
+do not independently re-elaborate a proof body to prove that an arbitrarily
+fabricated current-input trace corresponds to those bytes. The normal pinned
+compiler build and the transitive axiom audit remain mandatory.
+
+The workflow now separates compilation from auditing: repair, build, require
+the complete current source closure, then run the pinned official audit with
+the unchanged standard three-axiom allowlist. Reading the exact pinned
+lean-action `action.yml` and `scripts/run_axiom_audit.sh` confirmed that the
+audit script itself also invokes `lake build`, even with action `build: false`.
+A final complete-closure check therefore follows that action as well.
+
+Focused verification:
+
+- The untouched independent witness is rejected with exit 1 specifically
+  because the root's compiled imports differ from its current source header;
+  all other current modules remain accepted. Its source and outputs were not
+  repaired or rebuilt during this read-only verification.
+- A controlled changed-child fixture added a new AgeAP import and a public
+  declaration to `CCO.Examples`, retained the old valid output descriptors and
+  old compiled bytes, and updated only the source-input hash to the current
+  source. The old guard passed all 33 parts; the new guard rejected exactly
+  `CCO/Examples.trace` for a compiled-import mismatch. Repair removed only its
+  eight generated outputs and preserved the other children. The subsequent
+  ordinary build completed 776 jobs; actual `import CCO` exposed both AgeAP
+  and the new child declaration, and the official audit counted 655
+  declarations (654 AgeAP base plus the new declaration), all allowed.
+  The final guard accepted all 33 current modules and their olean parts.
+- Five focused unit tests cover consistent-descriptor stale root/child headers,
+  changed-body source inputs, cold versus required-complete closure, moved
+  worktree prefixes/import flags, and audit-path shadowing. All 58 tests pass
+  on this infrastructure source base. The guard also accepted all 158
+  source modules and olean parts in the independently fresh B003 checkout
+  `4efc0b3f4d8bd1197c3fd4dad3154901ae446e7a`.
+
+The initiating cause of the observed stale-output snapshot remains unproved.
+No claim is made that CAS, source hashing, the pinned compiler, or the copy
+operation itself caused it. A separate fresh copy followed by ordinary build
+and passive file-operation logging produced correct new outputs; ptrace-based
+tracing was unavailable in this environment. Neither that successful build
+nor a same-tree warm build is represented as explaining the preserved
+failure. Remote workflow execution and review of the final integration head
+are still required before deployment.
+
+The independent combined RAW review exposed legitimate symlinked child
+artifacts: the logical current-worktree path and its shared target identify
+the same artifact. The audit-resolution comparison now resolves **both** paths.
+A real-filesystem symlink regression accepts the logical path and its same
+target alias, while rejecting a genuinely different artifact. All 59 tests
+pass; the read-only complete check accepts all 317 modules/parts at reviewed
+combined head `f01319ed98795f1e68b68a218a95c47459c8b2ab`, and still rejects the
+unchanged original AgeAP witness for the root compiled-import mismatch.
+
+## Directory aliases and one bounded clean-build fallback
+
+A second independent control demonstrated an actual byte-check omission:
+with the nested `CCO/StrongExact` output directory aliased to another
+location, the old recursive scan checked only 33 olean parts even though
+canonical metadata followed all 158 current source modules. Appending one
+byte to the aliased Examples olean was then accepted. This is distinct from
+the previously fixed equality comparison for individual file symlinks.
+
+The guard now obtains canonical source metadata first and adds every exact
+source-reachable trace path to the descriptor/byte check. It does not enable
+recursive symlink following. The independent real fixture, including a
+nested directory alias and a self-loop inside its target, now checks all
+158 parts and rejects precisely the changed Examples descriptor. Normal
+valid directory and individual-file aliases remain accepted.
+
+Partial invalidation also checks both library and IR parent directories.
+Unlinking a child through an aliased directory would mutate the external
+target, so that case discards only this build's generated CCO namespace
+instead, without traversing the aliases. Ordinary module invalidation stays
+selective. Real filesystem tests cover both library and IR aliases; their
+external output files survive repair. The common discard helper preserves
+all sources, packages and non-CCO build outputs, including sentinels, and
+unlinks directory symlinks without following them.
+
+The independent preserved AgeAP repair copy confirmed a recovery limit:
+removing one root module's eight outputs and then running a normal 776-job
+build could still leave the old root, with AgeAP unavailable. The complete
+new guard rejected it again before any successful audit. Disabling Lake's
+artifact cache and rehashing is not claimed to universally repair that case
+or to identify its initiating cause. A separate successful bounded variant
+also exists; those observations must not be conflated.
+
+The workflow now uses `LAKE_ARTIFACT_CACHE=false` and explicit
+`lake --rehash build`, while retaining the GitHub project artifact archive
+and targeted dependency cache. If, and only if, the complete post-build
+check fails, it discards the generated CCO namespace, builds once from zero
+CCO artifacts, and requires the complete check again before the official
+audit. There is no recovery loop. The official audit and final complete
+check remain mandatory. A failed clean rebuild or check fails the job.
+
+The independent AgeAP clean fallback discarded ten generated namespace
+files/trees, built 776 jobs, exposed AgeAP through `import CCO`, passed both
+33-module/part checks around the official 654-declaration audit, and retained
+the standard three-axiom allowlist. This is positive evidence for the bounded
+clean fallback, separate from the failed incremental repair. The full local
+infrastructure test suite has 63 passing tests on this source base.
+If a namespace parent below the selected build boundary (`lib`, `lib/lean`
+or `ir`) is itself aliased, clearing rejects before any deletion. A real
+parent-alias test verifies external outputs remain untouched for all three
+cases; namespace and deeper aliases are safely unlinked as described above.
+
+Full accepted-source fallback validation used main
+`4206ff772cc3ee334fe530b55dbb0afe8174dfd4` in a separate worktree, copying the
+preserved combined snapshot whose root still exposed only B003's 157 direct
+imports. The complete guard rejected its root header. The actual fallback
+then discarded ten generated files/trees, verified zero remaining CCO
+artifacts with sources and Mathlib packages intact, and completed a fresh
+1211-job build. Both complete checks around the official audit accepted all
+317 source modules and olean parts; the audit counted all 3657 declarations
+with only the unchanged standard axioms. Actual `import CCO` checks exposed
+AgeAP, the RAW general exact-ball Helly theorem, the actual canonical
+quotient source properties, the STRONG genuine simple-path formula and
+canonical exact-menu equivalence. This is the tested bounded recovery; no
+universal repair or initiating-cause claim is inferred from it. Original
+failure witnesses were not modified.

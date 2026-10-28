@@ -22,6 +22,9 @@ jobs:
       # External checks load legacy build-directory oleans, so materialize
       # outputs even if Lake can use a content-addressed artifact internally.
       LAKE_RESTORE_ARTIFACTS: "true"
+      # Reuse the validated project archive without a second artifact-cache
+      # restoration path; changed-source recovery also rehashes all inputs.
+      LAKE_ARTIFACT_CACHE: "false"
     steps:
       - uses: actions/checkout@v4
 
@@ -73,20 +76,39 @@ jobs:
             cco-project-build-v1-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('lean-toolchain', 'lake-manifest.json', 'lakefile.toml') }}-
 
       # Detect inconsistent manual/cached snapshots by hashing actual CCO
-      # olean bytes against trace outputs, preserving every consistent child.
+      # olean bytes, source inputs and compiled import headers. Preserve valid children.
       - name: Repair inconsistent project artifacts
         run: python3 tools/verify_project_cache.py --repair
 
-      - name: Build and audit Lean project
+      - name: Build Lean project with actual input hashes
+        run: lake --rehash build
+
+      - name: Verify complete current source closure before audit
+        shell: bash
+        run: |
+          set -euo pipefail
+          if ! python3 tools/verify_project_cache.py --require-complete; then
+            # One different recovery: discard project outputs, retain all
+            # dependency caches, then rebuild with no copied CCO artifacts.
+            python3 tools/clear_project_cache.py
+            lake --rehash build
+            python3 tools/verify_project_cache.py --require-complete
+          fi
+
+      - name: Audit the verified current source closure
         uses: leanprover/lean-action@f061402b660e0c34644504b324e830f2991d4865 # v1.6.1
         with:
           auto-config: false
-          build: true
+          build: false
+          test: false
+          lint: false
           use-github-cache: false
           use-mathlib-cache: false
           axiom-audit: true
           axiom-audit-root: CCO
           axiom-audit-allow: propext,Classical.choice,Quot.sound
 
-      - name: Verify materialized project artifacts
-        run: python3 tools/verify_project_cache.py
+      # The pinned audit script also calls `lake build`. Check again after it
+      # so the final job cannot pass with a changed or older root closure.
+      - name: Verify final audited project artifacts
+        run: python3 tools/verify_project_cache.py --require-complete
