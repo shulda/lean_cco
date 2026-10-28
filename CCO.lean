@@ -101,3 +101,5 @@ import CCO.RawExact.FanInteriorIsolation
 import CCO.RawExact.FanDegreeTwo
 
 import CCO.RawExact.ReferencePositions
+
+import CCO.RawExact.CertifiedWalkChain
