@@ -89,7 +89,6 @@ theorem thetaCycle_right_arc_all_positions
           wordPositionRank S (ws.get b) (wordTarget S (ws.get b)) -
               wordPositionRank S (ws.get b) t.val = m := by
         dsimp only [m]
-        rfl
       rw [hRankDiff]
       exact ht.trans (thetaBranchPosition_interior S ws b t).symm
 

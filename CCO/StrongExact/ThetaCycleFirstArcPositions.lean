@@ -81,7 +81,6 @@ theorem thetaCycle_left_arc_all_positions
         change wordPositionRank S (ws.get b) z =
           wordPositionRank S (ws.get b) t.val
         rw [hRank]
-        rfl
       subst z
       rw [hRank]
       exact ht.trans (thetaBranchPosition_interior S ws b t).symm
