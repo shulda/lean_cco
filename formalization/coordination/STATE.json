@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 62,
+  "revision": 63,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -265,7 +265,7 @@
       }
     },
     "B005": {
-      "state": "INTEGRATING",
+      "state": "ACCEPTED",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b005_positive",
@@ -305,6 +305,13 @@
           "report_path": "formalization/coordination/reviews/B005-final.md"
         },
         "summary": "Actual registered non-author /root/independent_review personally approves complete C01–14/C20–25 at exact3c12a886: literal original exact base menus and ALL-three-coordinate free-span PC, ONE joint HS selected age amalgam with actual whole-base factor naturality, fixed-real-copy existence, arbitrary-overlap normalization/restriction and BOTH transitivity directions by actual survivors/PC/heredity, and EVERY prescribed pointwise finite map stationarity. Conditional interfaces remain honest; source H+SAP+CCO+full sortwise OriginalNR2 genuinely discharges them, with correct stronger no-finite-relative corollary. Independent original e,d,n Nat×Bool×Nat source has actual full-Aut H/SAP/full invariant chain/infinite global quotients, direct SIR including both-false anchored sheets, actual [F:E]=2/infinite fibres/NR2failure. Direct CCO is genuinely proved from specified SIMPLE cycles, signed closed-walk induction, shortest-path n-edge contradiction and explicit finite component/sheet/distinct-fibre realization in every formal universe; no HS/NR2/provider in direct route. Real combined Example and boundary consumers close all obligations. Exact frozen nonroot source/root-only429module union personally verified; actual CI40728375790/job122957677327 passes67tests/2437jobs/5649standard3audit/429actualbytes AND429SOURCE pre/post. Current accepted main9a982 is direct ancestor. One whole source review, durable actual identity report B005-final.md; no stronger premises or missing provider."
+      },
+      "accepted_commit": "7169a805d337110e6dad4e6d0636e950b31f157d",
+      "main_ci": {
+        "head_sha": "7169a805d337110e6dad4e6d0636e950b31f157d",
+        "run_id": 40730446748,
+        "conclusion": "success",
+        "axiom_audit": "allowlist"
       }
     },
     "B006": {
@@ -500,13 +507,7 @@
       "owner_project_id": null
     }
   },
-  "integration_lock": {
-    "kind": "package",
-    "package_id": "B005",
-    "actor_id": "root",
-    "base_main_sha": "9a982de95eb9bc5b89c5182f71ea9fd55ea93ac6",
-    "head_sha": "3c12a8869d5071884485a1a12a9de0071d4576d3"
-  },
+  "integration_lock": null,
   "history": [
     {
       "revision": 1,
@@ -1704,6 +1705,24 @@
         "ci": {
           "head_sha": "3c12a8869d5071884485a1a12a9de0071d4576d3",
           "run_id": 40728375790,
+          "conclusion": "success",
+          "axiom_audit": "allowlist"
+        },
+        "actor_id": "root"
+      }
+    },
+    {
+      "revision": 63,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "accept",
+      "package_id": "B005",
+      "details": {
+        "package_id": "B005",
+        "integration_commit": "7169a805d337110e6dad4e6d0636e950b31f157d",
+        "main_ci": {
+          "head_sha": "7169a805d337110e6dad4e6d0636e950b31f157d",
+          "run_id": 40730446748,
           "conclusion": "success",
           "axiom_audit": "allowlist"
         },
