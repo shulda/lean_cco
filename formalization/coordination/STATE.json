@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 59,
+  "revision": 60,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -265,7 +265,7 @@
       }
     },
     "B005": {
-      "state": "SUBMITTED",
+      "state": "REVIEWING",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b005_positive",
@@ -292,7 +292,19 @@
         "conclusion": "success",
         "axiom_audit": "allowlist"
       },
-      "report_path": "formalization/coordination/submissions/B005.md"
+      "report_path": "formalization/coordination/submissions/B005.md",
+      "review": {
+        "project_id": 3,
+        "actor_id": "independent_review",
+        "head_sha": "3c12a8869d5071884485a1a12a9de0071d4576d3",
+        "approved": false,
+        "independence": {
+          "identity": "/root/independent_review",
+          "non_author": true,
+          "summary": "Actual separate registered control-only reviewer authored no B005 production source, tests or design, including both independent positive branches and every helper. It personally read the whole pinned C01–14/C20–25 source/API/provider/consumer DAG once, verified exact frozen-source union and actual public CI, with no repeated author builds or additional reviewer.",
+          "report_path": "formalization/coordination/reviews/B005-final.md"
+        }
+      }
     },
     "B006": {
       "state": "ACCEPTED",
@@ -1638,6 +1650,24 @@
         },
         "report_path": "formalization/coordination/submissions/B005.md",
         "actor_id": "root"
+      }
+    },
+    {
+      "revision": 60,
+      "project_id": 3,
+      "actor_id": "independent_review",
+      "event": "review",
+      "package_id": "B005",
+      "details": {
+        "package_id": "B005",
+        "head_sha": "3c12a8869d5071884485a1a12a9de0071d4576d3",
+        "independence": {
+          "identity": "/root/independent_review",
+          "non_author": true,
+          "summary": "Actual separate registered control-only reviewer authored no B005 production source, tests or design, including both independent positive branches and every helper. It personally read the whole pinned C01–14/C20–25 source/API/provider/consumer DAG once, verified exact frozen-source union and actual public CI, with no repeated author builds or additional reviewer.",
+          "report_path": "formalization/coordination/reviews/B005-final.md"
+        },
+        "actor_id": "independent_review"
       }
     }
   ],
