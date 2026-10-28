@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 2,
-  "revision": 3,
+  "revision": 4,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -112,7 +112,36 @@
       "owner_project_id": null
     }
   },
-  "integration_lock": null,
+  "integration_lock": {
+    "kind": "infrastructure",
+    "actor_id": "root",
+    "head_sha": "137f4ee8d557175593044495a93deface508fb4a",
+    "base_main_sha": "7527172215da51d21180a3c5dc624ce54e2869ee",
+    "pr_number": 6,
+    "review": {
+      "actor_id": "independent_review",
+      "head_sha": "137f4ee8d557175593044495a93deface508fb4a",
+      "approved": true,
+      "summary": "Fresh control-only reviewer /root/independent_review read all policy, queue, validator, tests and instructions; authored none of this implementation. Independently reran48 tests and adversarial acceptance/provenance/lock checks, verified unchanged full mathematical contracts/DAG/source pin, preserved v2 state, genuine nonauthor provenance and single CAS/infra lock. Exact remote tree equals reviewed source and CI40677368778 builds8956 jobs and audits647 CCO declarations within allowlist.",
+      "independence": {
+        "identity": "/root/independent_review",
+        "non_author": true,
+        "summary": "Reviewer is an actual fresh control-only agent. It wrote none of the production policy, queue, tests or mathematical code, including all original project1/project2 work; its participation consists solely of independent review and findings.",
+        "report_path": "formalization/coordination/reviews/work-team-v3.md"
+      }
+    },
+    "ci": {
+      "head_sha": "137f4ee8d557175593044495a93deface508fb4a",
+      "run_id": 40677368778,
+      "conclusion": "success",
+      "axiom_audit": "allowlist"
+    },
+    "author_actor_ids": [
+      "root",
+      "/root/protocol_migration"
+    ],
+    "original_author_project_ids": []
+  },
   "history": [
     {
       "revision": 1,
@@ -131,6 +160,43 @@
       "project_id": 2,
       "event": "claim",
       "package_id": "B003"
+    },
+    {
+      "revision": 4,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "start_infrastructure",
+      "package_id": null,
+      "details": {
+        "actor_id": "root",
+        "pr_number": 6,
+        "head_sha": "137f4ee8d557175593044495a93deface508fb4a",
+        "base_main_sha": "7527172215da51d21180a3c5dc624ce54e2869ee",
+        "head_contains_main": true,
+        "ci": {
+          "head_sha": "137f4ee8d557175593044495a93deface508fb4a",
+          "run_id": 40677368778,
+          "conclusion": "success",
+          "axiom_audit": "allowlist"
+        },
+        "author_actor_ids": [
+          "root",
+          "/root/protocol_migration"
+        ],
+        "original_author_project_ids": [],
+        "review": {
+          "actor_id": "independent_review",
+          "head_sha": "137f4ee8d557175593044495a93deface508fb4a",
+          "approved": true,
+          "summary": "Fresh control-only reviewer /root/independent_review read all policy, queue, validator, tests and instructions; authored none of this implementation. Independently reran48 tests and adversarial acceptance/provenance/lock checks, verified unchanged full mathematical contracts/DAG/source pin, preserved v2 state, genuine nonauthor provenance and single CAS/infra lock. Exact remote tree equals reviewed source and CI40677368778 builds8956 jobs and audits647 CCO declarations within allowlist.",
+          "independence": {
+            "identity": "/root/independent_review",
+            "non_author": true,
+            "summary": "Reviewer is an actual fresh control-only agent. It wrote none of the production policy, queue, tests or mathematical code, including all original project1/project2 work; its participation consists solely of independent review and findings.",
+            "report_path": "formalization/coordination/reviews/work-team-v3.md"
+          }
+        }
+      }
     }
   ]
 }
