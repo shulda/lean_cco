@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 93,
+  "revision": 94,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -544,13 +544,14 @@
         "project_id": 3,
         "actor_id": "independent_review",
         "head_sha": "e566c97756057745e868369ca004d0db237731f1",
-        "approved": false,
+        "approved": true,
         "independence": {
           "identity": "/root/independent_review",
           "non_author": true,
           "summary": "Actual registered independent reviewer authored none of the entire B010 production code, tests, helpers or implementation design; it personally reviewed all9newmodules and pinned original proofs once, then only finaldocs and exact public-head CI without duplicate author builds or reviewer helpers.",
           "report_path": "formalization/coordination/reviews/B010-final.md"
-        }
+        },
+        "summary": "Actual nonauthor whole C25–36 source approval: original optional-equality RAW fixedfamily saturation and pseudocomplement square/mixed closure retain every equality/d=a boundary; actual complete carrier star gives finitefibre by finite source Ramsey BEFORE globalisation, genuine carrier insertion and diagonal Helly retain EXTRAcurrentlooped row. Actual p-connectivity/evenwalk equivalences and quotient index≤2, loopedodd-sheet obstruction, POSITIVE EVEN profiles stabilize with true wordrepresentatives; Gamma never assumed RAW exact. Arbitraryactual loopedcliques over SAMEwholeanchor exclude loops fromfinitefibre without Ramsey/SAP/globalisation. EVERYwholecanonicalJclass is provedfiniteBEFORE Nat.card via noembedding/Ramsey; displayedanchoredhull equalsJclass andcontainsactualstabilizerorbit, notonepointfibre. Source algebraicOrbit→finitefibre→hull, converse, emptybasewholeM andactualequalitysingleton allproved; sharp2powerbound appliedonlyafterfiniteness witholdJatomembedding. All actualproviders/consumers closed. Onepersonalwhole9read plusdocsonlyfreeze83a9/exactpublice566treeF396/directaccepted7cc and successfulCIverified in B010-final.md; source/contracts/manifest/toolchain/acceptedAPIs unchanged."
       }
     },
     "B011": {
@@ -2517,6 +2518,19 @@
           "summary": "Actual registered independent reviewer authored none of the entire B010 production code, tests, helpers or implementation design; it personally reviewed all9newmodules and pinned original proofs once, then only finaldocs and exact public-head CI without duplicate author builds or reviewer helpers.",
           "report_path": "formalization/coordination/reviews/B010-final.md"
         },
+        "actor_id": "independent_review"
+      }
+    },
+    {
+      "revision": 94,
+      "project_id": 3,
+      "actor_id": "independent_review",
+      "event": "approve",
+      "package_id": "B010",
+      "details": {
+        "package_id": "B010",
+        "head_sha": "e566c97756057745e868369ca004d0db237731f1",
+        "summary": "Actual nonauthor whole C25–36 source approval: original optional-equality RAW fixedfamily saturation and pseudocomplement square/mixed closure retain every equality/d=a boundary; actual complete carrier star gives finitefibre by finite source Ramsey BEFORE globalisation, genuine carrier insertion and diagonal Helly retain EXTRAcurrentlooped row. Actual p-connectivity/evenwalk equivalences and quotient index≤2, loopedodd-sheet obstruction, POSITIVE EVEN profiles stabilize with true wordrepresentatives; Gamma never assumed RAW exact. Arbitraryactual loopedcliques over SAMEwholeanchor exclude loops fromfinitefibre without Ramsey/SAP/globalisation. EVERYwholecanonicalJclass is provedfiniteBEFORE Nat.card via noembedding/Ramsey; displayedanchoredhull equalsJclass andcontainsactualstabilizerorbit, notonepointfibre. Source algebraicOrbit→finitefibre→hull, converse, emptybasewholeM andactualequalitysingleton allproved; sharp2powerbound appliedonlyafterfiniteness witholdJatomembedding. All actualproviders/consumers closed. Onepersonalwhole9read plusdocsonlyfreeze83a9/exactpublice566treeF396/directaccepted7cc and successfulCIverified in B010-final.md; source/contracts/manifest/toolchain/acceptedAPIs unchanged.",
         "actor_id": "independent_review"
       }
     }
