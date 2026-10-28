@@ -95,3 +95,5 @@ import CCO.RawExact.PrivateFanSimple
 import CCO.RawExact.PathLocalDegree
 
 import CCO.RawExact.OccurrenceRealizations
+
+import CCO.RawExact.FanInteriorIsolation
