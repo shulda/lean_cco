@@ -46,7 +46,9 @@ theorem thetaCycle_left_neighbor_branches_distinct
     have hAtRoot : thetaAdjacent S ws
         (C.vertices prev) (C.vertices p) := by
       simpa only [prev, cyclicNext_prev] using he
-    simpa only [hPrev,hp] using hAtRoot
+    change thetaAdjacent S ws (C.vertices (cyclicPrev C.length_pos p)) (C.vertices p) at hAtRoot
+    rw [hPrev, hp] at hAtRoot
+    exact hAtRoot
   have hRankT := thetaPrivate_adj_left_rank_one S ws b t hNextAdj
   have hRankU := thetaPrivate_adj_left_rank_one S ws b u hPrevAdj
   have hSamePos : t = u := by
@@ -55,7 +57,7 @@ theorem thetaCycle_left_neighbor_branches_distinct
     exact hRankT.trans hRankU.symm
   have hCyclePair : C.vertices (cyclicNext C.length_pos p) =
       C.vertices (cyclicPrev C.length_pos p) := by
-    simpa only [hNext,hPrev,hSamePos]
+    simpa only [hNext,hPrev,hSamePos, eq_self]
   have hIndex := C.vertices.injective hCyclePair
   exact (cyclicPrev_ne_next C.length_ge_three p) hIndex.symm
 
