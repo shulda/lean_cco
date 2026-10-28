@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 25,
+  "revision": 26,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -280,7 +280,36 @@
       "owner_project_id": null
     }
   },
-  "integration_lock": null,
+  "integration_lock": {
+    "kind": "infrastructure",
+    "actor_id": "root",
+    "head_sha": "ce93b92c70a36195979263e9fd578943edc53214",
+    "base_main_sha": "4206ff772cc3ee334fe530b55dbb0afe8174dfd4",
+    "pr_number": 9,
+    "review": {
+      "actor_id": "independent_review",
+      "head_sha": "ce93b92c70a36195979263e9fd578943edc53214",
+      "approved": true,
+      "summary": "Actual registered non-author /root/independent_review personally approves exact ce93 source after reading all final header/hash/path/finite-trace/alias-safe-clear and one-bounded-fallback code, tests and workflow. The nested-directory false negative and valid-symlink false positive were repaired and independently checked; previous approvals, failed recoveries and unproved initiating cause remain explicit. Actual fresh /root/full_control_resume corroboration27a retains its true identity. Exact remote40701695826 verifies67tests/1211jobs/3657 standard-three audit with317 actual byteparts AND317 current source modules before/after; synthetic merge tree equals current accepted-main420+exactce93. Healthy CI did not exercise fallback; actual controlled positive/negative fallback evidence is separately scoped. No CCO proof/contract/source pin/toolchain/policy changes.",
+      "independence": {
+        "identity": "/root/independent_review",
+        "non_author": true,
+        "summary": "Actual separate control-only reviewer wrote none of the cache helper, validator, tests, workflow, clear implementation, status updates or original mathematical code. It reported and independently verified defects and fixes, personally reviewed this exact source/CI, and retained the distinct fresh reader identity rather than relabelling an author.",
+        "report_path": "formalization/coordination/reviews/source-closure-cache-guard.md"
+      }
+    },
+    "ci": {
+      "head_sha": "ce93b92c70a36195979263e9fd578943edc53214",
+      "run_id": 40701695826,
+      "conclusion": "success",
+      "axiom_audit": "allowlist"
+    },
+    "author_actor_ids": [
+      "root",
+      "/root/runtime_imports"
+    ],
+    "original_author_project_ids": []
+  },
   "history": [
     {
       "revision": 1,
@@ -785,6 +814,43 @@
           "run_id": 40697932819,
           "conclusion": "success",
           "axiom_audit": "allowlist"
+        },
+        "actor_id": "root"
+      }
+    },
+    {
+      "revision": 26,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "start_infrastructure",
+      "package_id": null,
+      "details": {
+        "pr_number": 9,
+        "head_sha": "ce93b92c70a36195979263e9fd578943edc53214",
+        "base_main_sha": "4206ff772cc3ee334fe530b55dbb0afe8174dfd4",
+        "head_contains_main": true,
+        "ci": {
+          "head_sha": "ce93b92c70a36195979263e9fd578943edc53214",
+          "run_id": 40701695826,
+          "conclusion": "success",
+          "axiom_audit": "allowlist"
+        },
+        "author_actor_ids": [
+          "root",
+          "/root/runtime_imports"
+        ],
+        "original_author_project_ids": [],
+        "review": {
+          "actor_id": "independent_review",
+          "head_sha": "ce93b92c70a36195979263e9fd578943edc53214",
+          "approved": true,
+          "summary": "Actual registered non-author /root/independent_review personally approves exact ce93 source after reading all final header/hash/path/finite-trace/alias-safe-clear and one-bounded-fallback code, tests and workflow. The nested-directory false negative and valid-symlink false positive were repaired and independently checked; previous approvals, failed recoveries and unproved initiating cause remain explicit. Actual fresh /root/full_control_resume corroboration27a retains its true identity. Exact remote40701695826 verifies67tests/1211jobs/3657 standard-three audit with317 actual byteparts AND317 current source modules before/after; synthetic merge tree equals current accepted-main420+exactce93. Healthy CI did not exercise fallback; actual controlled positive/negative fallback evidence is separately scoped. No CCO proof/contract/source pin/toolchain/policy changes.",
+          "independence": {
+            "identity": "/root/independent_review",
+            "non_author": true,
+            "summary": "Actual separate control-only reviewer wrote none of the cache helper, validator, tests, workflow, clear implementation, status updates or original mathematical code. It reported and independently verified defects and fixes, personally reviewed this exact source/CI, and retained the distinct fresh reader identity rather than relabelling an author.",
+            "report_path": "formalization/coordination/reviews/source-closure-cache-guard.md"
+          }
         },
         "actor_id": "root"
       }
