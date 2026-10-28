@@ -89,3 +89,5 @@ import CCO.RawExact.TypedChain
 import CCO.RawExact.PathEndpoints
 
 import CCO.RawExact.PrivateFanAdjacency
+
+import CCO.RawExact.PrivateFanSimple
