@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 118,
+  "revision": 119,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -562,7 +562,7 @@
       }
     },
     "B011": {
-      "state": "SUBMITTED",
+      "state": "REVIEWING",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b010_canonical",
@@ -590,7 +590,19 @@
         "conclusion": "success",
         "axiom_audit": "allowlist"
       },
-      "report_path": "formalization/coordination/submissions/B011.md"
+      "report_path": "formalization/coordination/submissions/B011.md",
+      "review": {
+        "project_id": 3,
+        "actor_id": "independent_review",
+        "head_sha": "6f3e5799a7732c56ec26273e7a85863af694dea7",
+        "approved": false,
+        "independence": {
+          "identity": "/root/independent_review",
+          "non_author": true,
+          "summary": "The actual registered independent reviewer authored none of complete B011 production source/tests/helpers or implementation design. It personally read all34 frozen modules and pinned proofs once, N00 typed ambient scope and all25claims, then only final docs/exact public CI. No reviewer build or helper, and no author was renamed.",
+          "report_path": "formalization/coordination/reviews/B011-final.md"
+        }
+      }
     },
     "B012": {
       "state": "AVAILABLE",
@@ -3088,6 +3100,24 @@
         },
         "report_path": "formalization/coordination/submissions/B011.md",
         "actor_id": "root"
+      }
+    },
+    {
+      "revision": 119,
+      "project_id": 3,
+      "actor_id": "independent_review",
+      "event": "review",
+      "package_id": "B011",
+      "details": {
+        "package_id": "B011",
+        "head_sha": "6f3e5799a7732c56ec26273e7a85863af694dea7",
+        "independence": {
+          "identity": "/root/independent_review",
+          "non_author": true,
+          "summary": "The actual registered independent reviewer authored none of complete B011 production source/tests/helpers or implementation design. It personally read all34 frozen modules and pinned proofs once, N00 typed ambient scope and all25claims, then only final docs/exact public CI. No reviewer build or helper, and no author was renamed.",
+          "report_path": "formalization/coordination/reviews/B011-final.md"
+        },
+        "actor_id": "independent_review"
       }
     }
   ],
