@@ -78,8 +78,14 @@ theorem reference_one_step_forward_fingerprint
       forwardRequestFingerprint S
         (⟨taggedCentre sort centres o.1, a⟩ : AtomicBallRequest S root) := by
   have hColour := reference_one_step_old_atom S H D centres o a ha
-  simp [referencePointAt_start_value, referencePointAt_finish_value,
-    taggedColour, forwardRequestFingerprint, taggedCentre, hColour]
+  rw [referencePointAt_start_value S H D centres o,
+    referencePointAt_finish_value S H D centres o]
+  change (⟨root, sort o.1,
+    S.colour (referenceOccurrenceWalk S H D centres o).1
+      (centres o.1)⟩ :
+        Σ i : ι, Σ j : ι, Option (S.Atom i j)) =
+    ⟨root, sort o.1, some a⟩
+  rw [hColour]
 
 /-- The same fingerprint on the reversed formal direct spoke
 uses only the TRUE original typed converse atom. -/
@@ -105,8 +111,14 @@ theorem reference_one_step_reverse_fingerprint
       (referenceOccurrenceWalk S H D centres o).1 =
       some (S.conv a) :=
     (S.colour_swap _ _ a).mp hColour
-  simp [referencePointAt_start_value, referencePointAt_finish_value,
-    taggedColour, reverseRequestFingerprint, taggedCentre, hReverse]
+  rw [referencePointAt_finish_value S H D centres o,
+    referencePointAt_start_value S H D centres o]
+  change (⟨sort o.1, root,
+    S.colour (centres o.1)
+      (referenceOccurrenceWalk S H D centres o).1⟩ :
+        Σ i : ι, Σ j : ι, Option (S.Atom i j)) =
+    ⟨sort o.1, root, some (S.conv a)⟩
+  rw [hReverse]
 
 /-- Two direct one-edge word occurrences ending at the same tagged
 actual centre have equal FULL original edge-colour fingerprints,
