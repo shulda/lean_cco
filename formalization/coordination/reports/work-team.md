@@ -1,138 +1,49 @@
-# Completed handoff, both batches and cache integration — STATE27
+# B004 and B006 completed — STATE42
 
-Current green main: `647b1b76cc075dce477974b74293eb9370ff9b5d`.
-Actual push CI40703611084/job122869707415 passes **67 tests**, **1211 build jobs**,
-the complete **3657-declaration** official transitive allowlist audit, and
-**317 actual olean parts / 317 current source modules** before and after audit.
-The merge tree7db06ece exactly equals independently reviewed PR9 headce93b92c.
-The single integration lock is free; all requested work is complete.
+Current green main: `21381f6095d3b2787e3e248e5ea244180a66f06f`.
+Actual push CI40719464681/job122926075148 passes67 tests,2371 jobs,
+the FULL4709-declaration standard-three axiom audit, and368 actual olean parts /
+368 current source modules before and after audit. Main tree8bae2ed exactly
+equals approved PR11 headfeee80c. Both requested batches are ACCEPTED and the
+sole integration lock is free. No further batch is claimed.
 
-| Item | Accepted/integrated evidence |
-|---|---|
-| B003, original PR4 | Exact non-author-approved head d1ea335, history-preserving main68322c7, actual mainCI40695882842:57/1037/2069/158. ACCEPTED at STATE20. All C06–C13 plus genuinely generic ordinary-AP+class-CCO triangle fullness discharged. |
-| B002, original PR3 | Exact non-author-approved head70d56cf, history-preserving main4206ff7, actual mainCI40697932819:57/1211/3657/317. ACCEPTED at STATE25. All C06–C28 providers discharged, including literal whole-path C06/C26, actual C27/C28, and repaired independent vertex-universe exports. |
-| Work team policy | Protocol3 deployed through PR6, atomic BOTH-claim handoff6, default2 unresolved batches, actual non-author identities, accepted-dependency rule/CAS/one lock/exact-head+main audit preserved. |
-| Imports/cache | Existing PR5 targeted imports merged after both WIP consumer tests; 41 tactic umbrellas removed at consumers. PR7 targeted external roots and byte checks integrated; PR9 actual source-closure/alias checks and one bounded clean fallback now integrated with exact head and main checks. |
-| Final infrastructure | PR9 approved by actual /root/independent_review, corroborated by fresh /root/full_control_resume with its true identity. Lock26, merge647b1b7, green actualmain40703611084, finish27. Healthy final CI did not need fallback; controlled positive/negative recovery evidence remains separately scoped. |
+| Batch | Full completed contract | Exact acceptance evidence |
+|---|---|---|
+| B004 / PR10 | STRONG C14–C27: actual gates/all-three-PC/heredity, positive loop powers/full original NR2/no-return, actual pure-tag visible-gate chains and exact count bound; genuine H+SAP+CCO+NR2 hereditary selector and geometric triangle consumer. C26 retains only its intended explicit pure-action no-return premise. | Head dfe8734/treeb03ce4f equals frozen19cf2d2. Main0264357, CI40718497888:67/1340/4115/335. ACCEPTED at STATE37. |
+| B006 / PR11 | Sparse C01–C05 proved by actual finite probability/elementary exponential Markov/union/2ℓ expectation/deletion; full invariant relative classes/index algebra/orbital parity/Hasse/powers-of-two C06–C14; SIR C15–C19 pointwise named-base negative source result. All graph/Hasse source providers discharged. No SAP/countability/exact-Helly theorem needed for Hasse, no Erdős/Chernoff axiom. | Source bodies equal frozenf112240(math7d87c299); final headfeee80c/tree8bae2ed adds only accepted B004 base/root import union. CI40718690808 and actual main21381f6 CI40719464681:67/2371/4709/368. ACCEPTED at STATE42. |
 
-The original branches remain present:
-`project1/B002-raw-exact` at70d56cf and `p2-b003-strong-exact` atd1ea335.
-Both original handoff heads85878128/f140b2ca remain ancestors of finalmain,
-as does the original B002 green checkpoint5254d3a5. All original authorship,
-claim revisions, handoff observations and newer WIP are retained; no reset or
-private BOARD replacement occurred. Source pin490c3f36d85db5a0b3ced0598e6c431825254ec5,
-mathematical contracts, accepted B001 API, toolchain and manifest are unchanged.
-No B006/B017, backup reservation or third claim was made.
+Ownership was claimed against fresh green647b1b7 at revisions28/29, following
+lowest eligible ready packages B004 then B006 (B005 needed unaccepted B004).
+Actual contributors were recorded at30/31/32, including the nested sparse
+numeric helper. Original accepted B001–B003 records/history are preserved.
+Source490c3f36d85db5a0b3ced0598e6c431825254ec5, contracts, toolchain,
+manifest, public BOARD catalogue and protocol3 remain unchanged.
 
-Final actual non-author reports are `reviews/B002-final-70d56cf.md`,
-`reviews/B003-final-d1ea335.md`, `reviews/source-closure-cache-guard.md` and
-`reports/cache-closure-full-control-20261028.md` on this coordination branch.
-The latter reports retain the rejected infrastructure checkpoints, original
-unchanged failure witnesses, failed ordinary recovery, successful bounded
-recoveries and the unproved initial cause. The guard verifies material
-source inputs/import closure/output consistency; it is not a proof-body
-regeneration oracle. Persistent recovery failure stops before a successful
-audit. Fresh mathematical builds/API consumers and actual exact-head/main
-audits independently establish the accepted proof source.
+## Reduced checking followed the author's instruction
 
-Pinned local Lean4.34.1/Lake5.0.0 is usable. On the full current project with
-artifact cache disabled, a new small file importing CCO took **2.042s** and
-a repeated rehashed1211-job build **1.925s**. Full CI includes setup, targeted
-Mathlib download, tests/build/official audit and takes minutes (last math
-integration about5.5min; final infrastructure about2min). Current traversal
-finds31 genuine external Mathlib roots; all requested caches use these roots,
-not `cache get CCO.lean`. Local Lean is the development loop; CI remains the
-mandatory exact integration gate.
+Each implementer owned its changed-module compilation and debugging end to end.
+Root implemented disjoint mathematical helpers (actual class transposition,
+Hasse induction/power chains, typed contraction composition and finite gate
+descent) rather than rebuilding others' checkpoints. Each complete batch had
+ONE owner end build/audit and ONE personal whole-source non-author review by
+actual /root/independent_review. No extra reviewers or repeated author builds
+were commissioned. Formal review reused the already-read unchanged source and
+checked only final source/doc/root-union deltas plus exact CI logs. Exact PR and
+actual resulting-main CI/audit gates, CAS and sole lock were retained.
 
-Source maps on main now record actual acceptance while retaining earlier
-chronology. Only coordination STATE is live authority; main BOARD remains
-the mathematical catalogue. Final main checkout is clean.
+No new cache, organization, policy or protocol PR was introduced in this round.
+Only mathematical PR10/11 were published. B006 remote CI was overlapped with
+B004 main verification; its source uses no B004 selector theorem, and integration
+waited until B004 main was verified and ACCEPTED. No stale-main extra CI was needed.
 
-## Earlier checkpoint history
+## Durable source maps and controls
 
-# Both preserved batches accepted — STATE25
-
-B002 and B003 are FULLY ACCEPTED. B003 exacthead d1ea335 merged as main68322c7 (mainCI40695882842:57tests/1037jobs/2069allowlist/158parts); B002 exacthead70d56cf merged preserving history as current greenmain4206ff772cc3ee334fe530b55dbb0afe8174dfd4 (mainCI40697932819:57tests/1211jobs/FULL3657allowlist/317parts). Both actual merge trees equal their exact reviewed heads. Registered actual nonauthor /root/independent_review personally approved complete source contracts and independently checked both actual resulting-main runs. Separate fresh controls retain their own identities and finding/repair history. Original authors, heads/PRs, all WIP/last-green history, source pin490c3f36 and contracts remain unchanged. The sole lock is free; no backup or third claim was made.
-
-Final reviews, including actual main verification, are reviews/B002-final-70d56cf.md and reviews/B003-final-d1ea335.md on this coordination branch. Source maps are on main at formalization/coordination/submissions/B002.md and B003.md; status summaries there are being reconciled in the separate infrastructure PR with no proof changes. STATE is the sole acceptance authority; public BOARD remains the mathematical catalogue.
-
-Only separate cache hardening remains. Independent testing found and preserved a consistent-byte/current-sourcehash stale-root snapshot. Source import headers and module search paths are now checked against the pinned parser/actual olean headers, complete closure before/after audit, and all actual source-reachable descriptors must be hashed even through symlinked directories. A second fresh control caught a nested-directory enumeration gap; old163/285 infrastructure approval is withdrawn pending the corrected finite source-trace enumeration. Failed ordinary root recovery is recorded candidly; a bounded successful changed strategy is not claimed universal. The final workflow will use one zero-CCO-generated-artifact fallback only if the incremental post-build closure fails; packages, sources and unrelated cache remain. No mathematical acceptance relies on this faulty old copied root: both full source candidates and resulting-main CI have verified actual complete closure/audit counts.
-
-Local pinned compiler works. Development checks measured1.310s cached root and1.900s new small import-CCO file; complete CI includes setup/download/tests/build/audit and took several minutes. Current source traversal identifies31 actual external Mathlib roots and only targeted tactic imports. The local loop is substantially faster; exact-head/main CI and audit remain final gates.
-
-## Earlier checkpoint history
-
-# Work team — current coordination checkpoint
-
-B003 is ACCEPTED at STATE revision20. Exact reviewed head d1ea335256cb543e670580a2f2da712a76ca01d0 was merged preserving history as main68322c7b9196eaaad4abdc7f074e93bba64bfedb; actual resulting-main CI40695882842 passes57 tests,1037 jobs, full2069-declaration standard-three audit and158 actual artifact parts. Formal nonauthor report reviews/B003-final-d1ea335.md is published on this branch. No old project author was reused as reviewer.
-
-B002 is SUBMITTED at STATE revision21. Final head70d56cf20d8da4474629fc46b8ec548310838e17, tree3ca8c336f387218fd9d762a3cbf9d49b8182224b, equals fresh combined f01319e. It preserves the original branch, both original checkpoints/authorship and current ACCEPTED main683 as ancestry. Exact remote CI40696694928 is green:57 tests,1211 jobs, complete3657-declaration allowlist audit,317 actual output parts. Synthetic merge has the SAME tree and current-main parent. Complete mathematical source C06–C28 is implemented; formal exact-head approval/integration/resulting-main gates remain.
-
-The actual nonauthor whole review found a public C24/C28 universe restriction at75094 even though the underlying induction was already fully general. Repair1d3cc59 preserves the old theorem, exports triangle_fullness_general with independent formal vertex universe and generalizes BOTH triangle and CCO SourceProperties fields/full/singleton exports. A second entirely fresh independent reader forced ULift.{v+1}(Fin n), passed1023/2245/192 and retained the original pending finding plus repair in report-only chainf6→6c→abed. Canonical reviewer personally checked combined1211/3657/317/public316imports and higher-universe consumers; final remote approval is being recorded.
-
-Pure type PR8 is closed as superseded: its IDENTICAL ordinary CCO.AgeAP evidence type and consumer adaptation were reviewed and integrated inside the complete B003 batch, not as an unfinished theorem or extra integration. Both original H→AP proof bodies remain in their package modules. No source contract, pin, toolchain, manifest or accepted API changed.
-
-Additional cache hardening is separate infrastructure, not mathematical acceptance evidence: original consistent-byte/current-sourcehash stale-root witness remains untouched. New pinned Lean source/header checks detect it, require complete actual CCO import closure before and after official audit, validate source input hashes and actual audit search paths, and preserve byte checks. Controlled stale-child repair and legitimate symlink resolution regressions pass. Current infrastructure candidate285da06 on acceptedmain683 passes63 full tests and complete158-module/part check; final combined-main review/CI/integration remain pending. The original generation cause is explicitly unproved.
-
-Protocol3, default2 unresolved active batches, strict accepted dependencies, actual identities, exact CAS and single shared integration lock remain in force. STATE is the only live acceptance ledger. No B006/B017/third claim was made. B002 remains the only unresolved batch; current lock is free.
-
-Local pinned Lean4.34.1/Lake5.0.0 works. Cached repeat build1.310s and a new small import-CCO file1.900s were measured; CI includes setup, targeted external Mathlib cache, full tests/build and axiom audit (the earlier baseline main105s, complete source runs about2–3minutes). Thus local Lean is the development loop, exact remote CI the integration gate. The current complete source discovers31 actual external Mathlib roots; cache get CCO.lean is not used as an arbitrary CCO import traversal.
-
-## Earlier checkpoint history
-
-# Work team — current resumable checkpoint
-
-Protocol 3 is deployed; coordination STATE revision 15 is live, both original claims are owned by Work team project 3 and IN_PROGRESS. Original authors, heads, last-green checkpoints, history and both original PRs are retained. No batch is claimed complete by a green checkpoint. No B006/B017 or third slot has been claimed.
-
-Current green main: `2ccbbed4ef354a4af8a175ae5e3e9421b8a8c448`, CI `40686003111`: 57 tests, 775 build jobs, 647 declarations within the unchanged axiom allowlist. Protocol migration PR6, targeted-import PR5 and actual-root/project-cache PR7 are merged and their resulting-main checks recorded. Sole integration lock is currently free.
-
-Public B002 PR3 remains `0f366f0a539c020a7a80f822a830f6db25c11ffa`, exact CI40680003645 green; public B003 PR4 remains `555951c6a4c51d0842252fdebc142e422127788f`, exact CI40680013056 green. These are older partial checkpoints. Newer local work is preserved on resumable branches, not falsely attributed to those CI runs.
-
-B003 whole source candidate `fca251bb81247352c5ccc4503ea399405c30b014` includes all C06–C13 and the independent generic arbitrary hereditary-class ordinary-AP+CCO triangle-fullness theorem. Fresh independent full control: 1037 jobs, 57 tests, 2069 declarations in allowlist, 157 source modules root-imported, 158 actual artifact parts consistent, explicit import CCO/API/axiom checks. A second truly fresh non-author wrote report-only commit4efc0b3. Source map/report update `bcfc90c2aa14d780e1220b8af3659c7098270a71` adds those reports and changes no Lean. Exact remote publication/review/integration remain pending.
-
-B002 C27 canonical actual quotient SemanticCCO is proved without menu/positivity/representation/cycle providers in `26940eea052cd7941540fb664c159a0a34b1a1dc` (1011 jobs/2055-declaration audit). Literal C26 classification in `e36515f65a13c6bdfc912ebd6990520143ea11c7` states TWO DISTINCT WHOLE private occurrences with exact all-vertex AND all-traversed-edge supports or a genuine marked projection (1019/2190). C28 actual source property record and literal singleton quotient specialization are implemented in `435d928`; assembly `e6f2b6f` includes all these histories, source map and shared-type consumer. Final whole-root build and two non-author controls remain gates.
-
-Cross-batch compatibility found duplicate public CCO.AgeAP declarations. Pure evidence-type extraction PR8 head `c89ac89e61127529497eba829d750e8d49098991` equals local `5ff0881ee48d74823350a2820ac37c5bdd488d29` tree. It moves no source theorem. Both package consumers drop only the duplicate declaration and import the identical shared type; original proof bodies remain unchanged. Fresh joint whole-batch import/build compatibility is being tested separately. PR8 exact CI40693031426/review/main integration pending.
-
-Local pinned Lean4.34.1/Lake5.0.0 is usable. Shared pinned dependencies avoid unavailable repeated installation. Cached root build measured1.310s; checking a new small file importing CCO measured1.900s; latest green main CI elapsed105s including setup/tests/audit. These are distinct scopes, not a claim that a clean full rebuild is80x faster. Exact-head/main CI remains mandatory.
-
-Cache limitation under investigation: a control checkout with copied baseline CCO artifacts produced normal Lake success and output-byte/trace consistency while the imported root still omitted a new AgeAP type. Fresh no-CCO-artifact checks pass. The reviewer retained this witness and the original cache author is investigating actual input/closure validity; no stale semantic audit is accepted as evidence for a new source tree.
-
-All source pins/contracts/toolchain/manifest and accepted-dependency rules remain unchanged. Fresh resumed implementation identities were appended via STATE event15; reviewers have authored no implementation. The registered independent_review actor retains actual identity /root/independent_review; the separate fresh full controls retain their own identities as corroboration.
-
-## Historical checkpoint (superseded)
-
-# Work team — current formalization checkpoint
-
-Updated 28 October 2026. Source pin remains `490c3f36d85db5a0b3ced0598e6c431825254ec5`; mathematical contracts/DAG/toolchain/manifest are unchanged. This report is operational; only coordination STATE supplies live claims and acceptance.
-
-## Public integration and claims
-
-- Main `268681538a669cd68442f3200ac682f570e7143e` is GREEN: run40679698989, 775 build jobs and647-declaration transitive allowlist audit. Existing PR5 targeted imports was merged with history preserved after actual B002/B003 consumer compatibility checks; its lock is released.
-- Protocol3 PR6 merged as `97211488e4ac166a4b0650953363a0c3cb7614f5`, exact-head run40677368778 and resulting-main run40678346544 both GREEN (647 declarations). Policy/validator/tests/instructions support two unresolved active batches by default, documented genuinely independent third activity, actual non-author control, one CAS ledger and one package/infrastructure integration lock.
-- STATE revision10 at coordination `fc5f648f77b3f707f4e3a719da763e366c7825bd` has B002 and B003 IN_PROGRESS, ownerteam3, integration_lock null. Atomic handoff occurred in revision6 (`a035e4733442846bf1094fb0bbb8154a32bb7f56`), preserving original project1/project2 authorship, claim revisions2/3, bases, branches, heads/PRs/CI/green checkpoints/history. Actual takeover contributors were appended in revisions7/8. Neither mathematical batch is SUBMITTED or ACCEPTED. No backup batch is claimed.
-- B002 PR3 current remote `0f366f0a539c020a7a80f822a830f6db25c11ffa`, CI40680003645 pending. It preserves original85878128 and currentmain26868153 as parents; tree1af17e82 equals local6e16e8a. Original lastgreen5254d3a5/run40664176515 remains in handoff history.
-- B003 PR4 current remote `555951c6a4c51d0842252fdebc142e422127788f`, CI40680013056 pending. It preserves originalf140b2ca and main26868153; tree8868a6b6 equals local56c6d555. Original greenf140/run40668681157 remains preserved. Never reuse the original project2 author as its reviewer.
-
-## Proved source checkpoints and exact limits
-
-B002 current public source has genuine arbitrary heterogeneous finite exact-ball Helly C13 from H+SemanticCCO, including identity/repeated-centre/empty boundaries; C07–C10 source consumers; actual orbital/request exactness; finite joint extension and countable back-and-forth yielding a real original colour automorphism and globally induced quotient maps (C20–C23). No limit-in-arbitrary-G assumption, SAP or quotient section. Local full981 build and independently rerun official module-origin audit1544 pass standard3. Remaining public obligations include literal whole-theta two-path classification C06, C14–C19 source wrappers, C24–C28 actual quotient age/CCO. New LOCAL successor579ffa0384e57f4cd09775fe1b098f667f1b1fa4 adds source C14–C19, legitimate finiteG realignment and actual C24 trianglefullness; full986 build/audit1583 passed, review/publication pending.
-
-B003 current public source genuinely closes actual CycleHom→ThetaCycleCompatibility→HardThetaProvider→WordHelly and original exact calculus C08. Full C07 endpoint semantics uses the SAME finite diagram for every presented atom, H+SAP only once an atom is given. Independent full1014 build/official audit1521 passes standard3. New LOCAL C09 three-root iffPC with full survivor domains and separate PC→actual completion source result are compiled and being combined/reviewed; fresh root explicit checks/audit1701 include the new C09. C12 exact simple-path formula and arbitrary chosen-survivor extension, C13 canonical-domain packaging remain open. Actual-age AP+CCO trianglefullness is proved (ordinary AP, complete input, noH/SAP core), but the broader pinned arbitrary hereditary-class K lemma is STILL OPEN; a faithful generic class implementation is active. Do not substitute the actual-age specialization for that generic export.
-
-## Active work allocation
-
-- `/root/raw_fan`: B002 actual quotient private expansion/cycle classification and CCO C26/C27; coordinates canonical quotient sorts with raw_quotient. C06 construction/CycleHom exists, literal complete two-path classification stays open.
-- `/root/raw_quotient`: B002 C25/C28 actual quotient source packaging/canonical Finset(SetoidA) family; C24 compiled locally. Pinned module.json scopes C26–C28 to one_original_sort; C21 retains mixed original sorts. Canonical identity must identify Id with original sort, not assume nonduplication/zero-word exclusion.
-- `/root/strong_bridge`: B003 C09 three-root exact survivor semantics, combining independently checked PC milestones; source C13 wrappers after C12.
-- `/root/runtime_imports`: B003 chosen-survivor/augmentation/simple-path C12; also validates project cache materialization and minimal root guard.
-- `/root/protocol_migration`: B003 generic hereditary-class trianglefullness from actual class heredity/AP/semanticCCO. C06 classification analysis paused behind this source obligation.
-- `/root/independent_review`: genuine fresh control-only reader, authored none of reviewed production/mathematical code. Exact changed-head reviews, source/provider/consumer checks and fresh audits remain mandatory before full submission/integration.
-
-## Runtime/cache and next integration
-
-Exact local Lean4.34.1 commit5045d0056413266e57c625dcd7c365b10e377c52 and Lake5.0.0 run against pinnedmanifest. PATH is `/workspace/scratch/6b2f11185e14/runtime/lean-4.34.1-linux/bin`; local LD_PRELOAD adapter proc_self_compat.so repairs only missing process `/proc/PID/exe` lookup, leaves binary unchanged. Official audit pinned46024e005996495c65ef609368e11ab39c4222e3. Small warm TypedRelation build349 targets succeeds under1s. Serialize Mathlib cache downloads (localprocess IDs collide).
-
-PR7 `infra/targeted-project-cache` head8c16d9791e8052ef31aa2ee5342576831557d1c1 tests actual external-root discovery and project-only .lake/build reuse;52 Python tests pass. Currentmain closure has12 externalroots/32 modules; repairedWIP snapshots20 roots before newerquotient imports. Full audit unchanged. HOLD PR7 integration pending changed-root/changed-child archive-restore tests, new minimal fresh-root materialization guard b13504c and independent exact-head review/CI. Same-tree archive2.1MiB restore alone does not validate changed-head caching. Copied cross-worktree root artifacts twice appeared stale despite Lake success; deleting ONLY generated rootCCO trace/olean/ilean artifacts and rebuilding explicitly exposed new source exports. All affected mathematical checkpoints were freshly checked/audited afterward. Current public PR3/4 workflow has no projectartifactcache, so remote CI builds fresh.
-
-Next: inspect exact PR3/4 CI/audits and checkpoint each without submission; review/publish new real proof leaves; finish cache guard/tests/review and integrate PR7 under same lock with resultingmain audit; refresh WIP heads to newmain after any integration. Keep all public modules rooted in CCO.lean and all completed-export dependencies within propext/Classical.choice/Quot.sound. Do not clear a merged-main failure lock or release dependent batches prematurely.
+- Main: formalization/coordination/submissions/B004.md and B006.md.
+- Main reports: work-cco-B004-selectors.md, B004-loop-NR2, work-B006-source-complete.md,
+  work-B006-sparse.md.
+- This coordination branch: reviews/B004-final.md (report-only b207ed8) and
+  reviews/B006-final.md (report-only b3b04a6), actual registered non-author
+  identity retained and no implementation/test authorship.
+- STATE is the only live authority. Current checkout is clean at final main.
+- Earlier completed B002/B003 and cache/policy handoff are preserved in the
+  previous work-team.md history, e.g. coordination commitaba01d503c7d458c5986aa8445db5a62e983036d.
