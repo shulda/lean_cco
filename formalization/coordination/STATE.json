@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 33,
+  "revision": 34,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -216,7 +216,7 @@
       }
     },
     "B004": {
-      "state": "SUBMITTED",
+      "state": "REVIEWING",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b004_selectors",
@@ -242,7 +242,19 @@
         "conclusion": "success",
         "axiom_audit": "allowlist"
       },
-      "report_path": "formalization/coordination/submissions/B004.md"
+      "report_path": "formalization/coordination/submissions/B004.md",
+      "review": {
+        "project_id": 3,
+        "actor_id": "independent_review",
+        "head_sha": "dfe873427e63a8c85399c2a2528c24b86cb36f4a",
+        "approved": false,
+        "independence": {
+          "identity": "/root/independent_review",
+          "non_author": true,
+          "summary": "Actual separate reviewer authored no B004 production source, tests or design. It personally reviewed the whole pinned C14–27 source/API/provider/consumer chain once, then anchored final frozen source and successful exact remote CI; it neither relabelled an author nor repeated authors' full builds.",
+          "report_path": "formalization/coordination/reviews/B004-final.md"
+        }
+      }
     },
     "B005": {
       "state": "AVAILABLE",
@@ -985,6 +997,24 @@
         },
         "report_path": "formalization/coordination/submissions/B004.md",
         "actor_id": "root"
+      }
+    },
+    {
+      "revision": 34,
+      "project_id": 3,
+      "actor_id": "independent_review",
+      "event": "review",
+      "package_id": "B004",
+      "details": {
+        "package_id": "B004",
+        "head_sha": "dfe873427e63a8c85399c2a2528c24b86cb36f4a",
+        "independence": {
+          "identity": "/root/independent_review",
+          "non_author": true,
+          "summary": "Actual separate reviewer authored no B004 production source, tests or design. It personally reviewed the whole pinned C14–27 source/API/provider/consumer chain once, then anchored final frozen source and successful exact remote CI; it neither relabelled an author nor repeated authors' full builds.",
+          "report_path": "formalization/coordination/reviews/B004-final.md"
+        },
+        "actor_id": "independent_review"
       }
     }
   ],
