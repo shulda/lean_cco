@@ -105,3 +105,8 @@ import CCO.RawExact.ReferencePositions
 import CCO.RawExact.CertifiedWalkChain
 
 import CCO.RawExact.FanSortCompatibility
+
+import CCO.RawExact.PathEndpointEdges
+import CCO.RawExact.FanRootIncidence
+import CCO.RawExact.WalkColourIndependence
+import CCO.RawExact.ActualWordStepColour
