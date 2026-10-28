@@ -558,3 +558,15 @@ import CCO.RigidGroupoid.Phase.RootPhase
 import CCO.RigidGroupoid.Phase.SliceConsumer
 import CCO.RigidGroupoid.Phase.SourceCharacter
 import CCO.RigidGroupoid.Phase.TranslatedHelly
+import CCO.FinitePackets.Geometry.Basic
+import CCO.FinitePackets.Geometry.Lattice
+import CCO.FinitePackets.Geometry.RelativeIndices
+import CCO.FinitePackets.Geometry.Sigma
+import CCO.FinitePackets.Geometry.CoreWords
+import CCO.FinitePackets.Geometry.LoopCriterion
+import CCO.FinitePackets.Geometry.PacketCore
+import CCO.FinitePackets.Geometry.MinimalCutBasic
+import CCO.FinitePackets.Geometry.CutCrossing
+import CCO.FinitePackets.Geometry.CrossProjection
+import CCO.FinitePackets.Geometry.ExactCutSource
+import CCO.FinitePackets.Geometry.Consumers
