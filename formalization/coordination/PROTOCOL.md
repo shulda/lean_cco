@@ -1,106 +1,114 @@
-# Peer Lean projects — protocol 2
+# One Work team — protocol 3
 
-This protocol replaces version 1's mandatory author-mediated allocation and
-acceptance. The author approved autonomous lowest-ready claims and peer PR
-integration on 27 October 2026. Projects remain equal-status peers. The
-preparation project maintains mathematical contracts and resolves exceptions;
-it is not a permanent master formalizer.
+The author confirmed both original formalization projects stopped and authorized
+this migration on 28 October 2026. One Work team (project 3, coordinator actor
+`root`) takes over completion of B002 and B003, preserving both branches,
+original authorship, history and all newer WIP. Original project IDs 1 and 2
+are historical identities; they are not independent active review workers.
+The preparation project continues to prepare mathematical batches.
 
-## Authority
+## Authority and deployment
 
-On `main`, `BOARD.json` is the package catalogue: exact claims, source pins,
-contract revisions and the dependency DAG. Its state/owner fields are a
-bootstrap checkpoint for legacy staging checks, NOT live assignments.
-`AUTONOMY.json` says which packages are released, which project IDs exist,
-and which reviews require the coordinator. Only the coordinator changes
-these permissions, source contracts, shared breaking APIs or the toolchain.
+Current main `BOARD.json` is the mathematical catalogue: exact package claims,
+source pin, contracts and accepted-dependency DAG. Its allocation fields remain
+a historical bootstrap checkpoint. `AUTONOMY.json` defines the Work team,
+roles and limits. Only `coordination:formalization/coordination/STATE.json`
+is live ownership/review/acceptance. Read it at an exact observed ref. Never
+merge that branch into main or replace public BOARD/STATE from private templates.
 
-The ONLY live ownership/review/acceptance record is
-`coordination:formalization/coordination/STATE.json` in the same repository.
-It contains durable claims, submissions, review leases, accepted integration
-commits and one integration lock. Do not merge this branch into `main` or
-copy its old source tree over a work branch. Read code, contracts and policy
-from current `main`; read STATE from the `coordination` ref.
+Source remains `490c3f36d85db5a0b3ced0598e6c431825254ec5`. This organizational
+migration changes no mathematical contract, accepted API, source or toolchain.
+The author's express authorization permits the coordinator to deploy it without
+another permission request. Existing v2 STATE remains readable, but allows only
+the authorized atomic handoff and infrastructure serialization until migrated.
+A fresh non-author reviewer checks the policy diff and tests before deployment.
 
-## Autonomous next work
+Publish reviewed policy to main under the sole integration lock, validate its
+exact PR head and resulting main CI/audit, then atomically hand off BOTH live
+claims in one `handoff` event against the observed coordination parent. Keep
+claim revisions, bases, original authors, branch/PR/head, actual CI status,
+last green checkpoint and old history. A failing WIP head is preserved alongside
+its green checkpoint, never reset to it. The event is not a SUBMITTED assertion.
 
-At each active turn fetch the current policy, catalogue, live state, your
-checkpoint, and relevant PR heads/CI. Finish any leased review. At the next active checkpoint, review the lowest
-eligible foreign submission before resuming an IN_PROGRESS implementation;
-this prevents a prerequisite PR waiting through another whole package. If
-there is no implementation or review to resume, claim the numerically lowest released AVAILABLE
-package whose EVERY prerequisite is ACCEPTED. `tools/coordination_queue.py`
-computes this selection and validates state transitions.
+## Work selection and capacity
 
-A claim is effective only after a successful atomic publication against the
-EXACT observed coordination parent/ref with `force=false`. Two concurrent
-candidates may both propose B002; only one non-force child can become the
-ref head. The loser reloads and recomputes, e.g. now B003. Never reuse a
-rejected proposal, force-update, overwrite state, or start speculatively.
-One project has at most one IN_PROGRESS implementation and one review lease.
-Claims do not expire automatically when a chat is idle or crashes.
+The default is **two active batches for the whole Work team**. Every unresolved
+claimed batch counts, including IN_PROGRESS, SUBMITTED, REVIEWING, INTEGRATING,
+CHANGES_REQUESTED and BLOCKED. Submission does not release a batch slot.
+Repairs and completion take priority. Do not accumulate backup claims while
+waiting for one CI run; continue independent work inside current batches.
 
-Use a new project/package branch from the current GREEN `main`. A completed
-SUBMITTED package releases its author's implementation slot: the author may
-claim another independent eligible package without consultation. A submitted,
-reviewed or merely green feature branch supplies NO accepted prerequisite.
-Do not build dependent work on unmerged sibling branches. After acceptance,
-new work sees the proofs naturally by starting from updated `main`.
+A third active batch is exceptional: first verify every prerequisite ACCEPTED
+on current main, then record a concrete disjoint work plan, actual implementing
+actor, work items and why the work can be active independently of both current
+batches. `claim_third` records this durable evidence. A third slot is not an
+idle reservation. Four unresolved batches are never allowed. B006/B017 are
+backups only after this fresh eligibility/capacity check; do not preclaim them.
 
-## Mathematical work and submission
+New claims select the lowest released AVAILABLE dependency-ready number.
+Submitted, approved or green sibling branches never supply prerequisites.
+New implementations start from current green main after effective CAS claim.
+Existing handoff branches retain their history. Claims do not auto-expire.
+`tools/coordination_queue.py` validates proposals; it cannot verify truth of
+external evidence. An effective event requires exact-parent non-force CAS.
+On collision reload policy, state and actual heads, then recompute; never force,
+reparent an old proposal, overwrite history or speculate before ownership.
 
-Read actual pinned source proofs AND notes, not only claim names. Use the
-accepted API and retain exact hypotheses. RAW equality differs from STRONG
-diversity; AP/SAP/CCO/NR2 and actual quotient actions are distinct premises.
-A conditional provider theorem is not a source instance until its provider
-is proved. No sorry/admit/sorryAx or unapproved mathematical axiom may occur
-in a completed export's transitive dependency closure.
+## Proofs, reports and authorship
 
-Keep resumable commits and `reports/ID.md`; each package also needs a durable
-`submissions/Bxxx.md` with its exact source-to-Lean map, actual hypotheses,
-conditional provider status, consumer, validation evidence and feedback.
-Import ALL public modules in `CCO.lean`. Before SUBMITTED require successful
-CI and the transitive CCO axiom allowlist on the exact PR head. Submit or
-refresh the actual head in live STATE; refreshing invalidates an older review.
-Routine local helpers/fixes need no coordinator approval.
+Read actual pinned source proofs, notes, package contracts and Lean signatures.
+Keep exact quantifiers and RAW/STRONG, AP/SAP/CCO/NR2 and actual quotient-action
+distinctions. A conditional provider is not a discharged source instance.
+No sorry/admit/sorryAx, new mathematical axiom or disguised stronger premise
+may complete a contract. Import all public modules from CCO.lean; retain the
+transitive allowlist audit (propext, Classical.choice, Quot.sound).
 
-## Peer review and integration
+Use targeted Mathlib and tactic imports in consumers. Respect pinned toolchain
+and manifest. Build small increments; investigate actual external Mathlib roots
+before targeted cache requests. Record concrete network failures and use remote
+CI and independent work, without repeating unchanged long failed attempts.
 
-A different numbered project, or the coordinator, claims the lowest eligible
-submitted PR for review. An author cannot accept their own package. A worker
-may review another package while its own implementation is in progress.
-The reviewer checks the actual Lean signatures and source quantifiers,
-all provider discharge paths, root import closure, a meaningful consumer,
-and exact-head build/axiom evidence. A green job alone does not establish
-that the theorem expresses the intended mathematics. Record a substantive
-review summary anchored to the precise head in STATE. Request changes there
-if needed; the author repairs and refreshes the submission.
+Keep resumable commits, current reports and per-package `submissions/Bxxx.md`:
+source-to-Lean map, actual hypotheses, every open provider, consumer, exact head,
+CI/audit and feedback. Record every actual contributor with `record_authorship`
+before submission. Preserve legacy-project-1/2 authorship through handoff.
+SUBMITTED requires complete contract discharge and successful exact-head CI
+and audit; green alone never completes a batch. Refreshing a head clears review.
 
-For integration, acquire the single STATE integration lock, check the current
-main commit, and ensure that commit is an ancestor of the reviewed PR head.
-If main moved, merge/update main into the PR, resolve conflicts, review the
-changed head and rerun its CI. Never silently use an older green run for a
-new head. Under the lock merge only the approved exact head (expected-head
-SHA), preserving Git history. All projects/coordinator honor this lock.
+## Separate non-author control and automatic integration
 
-Wait for a successful build AND axiom audit on the resulting main commit.
-Only then atomically mark ACCEPTED with that integration commit and CI run,
-and release the lock. This releases dependent packages. If integration CI
-fails, keep the lock and package unaccepted, checkpoint the exact failure,
-and tell Matěj/coordinator. Never certify, force-reset or roll back others'
-work just to clear the queue. Other already-running independent work can
-continue; new claims wait for verified main during integration.
+The `independent_review` actor is a separate review-only agent with its actual
+identity recorded in AUTONOMY. It must have written none of the complete batch,
+including earlier projects' implementation, and must not participate in its
+implementation decisions. Different IDs, agents or role labels alone do not
+establish this. A former project 2 author cannot review B003 by renaming itself.
+The checker compares contributor identities and original author projects, and
+requires a durable actual-identity/non-authorship report. These assertions must
+also be checked in reality; the validator cannot certify human provenance.
+If the reviewer contributes code, obtain a genuinely fresh non-author reviewer
+and update policy/provenance; do not erase authorship to reuse its approval.
+Only immutable previously ACCEPTED records retain their pre-v3 review format.
 
-## Exceptions and scaling
+Review the whole package against pinned source, real signatures, all provider
+discharge paths, imports, consumer and exact-head CI/audit. Record a substantive
+review and its report for that SHA. Reject missing providers; repairs take
+priority. A review-only agent may control either batch in the same Work team.
 
-Mathematical gaps/counterexamples, changes to an accepted shared signature,
-toolchain/source changes, failed integration, exhausted eligible work or
-permission problems go to Matěj/coordinator. Ordinary completion and the
-next released claim do not. Notifications are in the active chat; there is
-no automatic background monitor or required private cross-project messaging.
+After valid independent approval, the coordinator performs routine integration
+automatically. Acquire the **single** STATE integration lock (packages and
+infrastructure share it), check current main is an ancestor of the approved
+exact head, and re-read both refs before merging with expected-head SHA and
+history preserved. If main/head moves, update branch, review the resulting
+head and rerun its CI; old green evidence cannot certify it. A pre-merge race
+may cancel the lock only with explicit evidence the PR was not merged.
 
-Projects 1 and 2 are initially registered. Further IDs follow a successful
-two-project integration checkpoint. Eighteen packages B002–B019 are released
-conditionally on their accepted dependencies; the whitelist can pause a
-specific seam without stopping unrelated work. The complete procedure and
-CAS tool arguments are in [QUEUE_OPERATIONS.md](QUEUE_OPERATIONS.md).
+Wait for green build AND axiom audit on the actual resulting main SHA. Only
+then ACCEPTED releases dependencies and the lock. Infrastructure completion
+records the same main evidence. A merged-main failure keeps the lock and
+package unaccepted; checkpoint the precise failure and return it to the
+preparation project. Independent existing work continues. Never force-reset,
+roll back others' work or certify a failure to clear the queue.
+
+Mathematical gaps, source/toolchain changes, accepted breaking APIs and
+unresolved integration failure return to the preparation project. Ordinary
+implementation difficulty, repairs and approved integration are autonomous.

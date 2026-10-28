@@ -117,7 +117,7 @@ class CoordinationTests(unittest.TestCase):
         core = board['packages'][0]
         core['state'], core['owner_project_id'], core['accepted_commit'] = 'ACCEPTED', 1, 'b' * 40
         self.assertEqual(coordination.validate(coordination.ROOT, board, True), {1: 'B002', 2: 'B003'})
-        self.assertIn('STATE.json' if board['protocol_version'] == 2 else 'balíček je B003',
+        self.assertIn('STATE.json' if board['protocol_version'] in {2, 3} else 'balíček je B003',
                       coordination.render_instructions(board, 2))
 
 

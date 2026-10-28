@@ -45,3 +45,11 @@ the original.
 | D014 | Main BOARD is the contract catalogue; AUTONOMY is the release policy; coordination-branch STATE is the only live assignment/review/acceptance authority. Do not merge the ledger branch into main. | Replaces the old main-board live-allocation convention. |
 | D015 | A submitted worker may take another independent package. A different project/coordinator reviews the source/API/providers/consumer; all merges serialize, and acceptance needs green resulting main CI/audit. | Author requested autonomous progress and peer integration. |
 | D016 | Initially register projects 1 and 2. Release B002–B019 subject to accepted dependencies; larger parallelism follows a successful two-project integration checkpoint. Source/theorem, breaking API and toolchain changes remain coordinator decisions. | Concrete release policy in AUTONOMY.json. |
+
+## One Work team — supersedes organizational parts of D013/D015/D016
+
+| ID | Decision | State |
+|---|---|---|
+| D017 | Original formalization projects 1/2 stopped; one Work team (project 3) takes both claims without resetting WIP, original authorship, current heads, PRs or ledger history. | Explicit author authorization, 28 October 2026; protocol 3. |
+| D018 | Two unresolved active batches by default; all claimed states count. Third only for concrete independent active work, fresh accepted dependencies and durable current-head evidence. Repairs/completion have priority. | Author-approved organizational migration. |
+| D019 | Separate actual non-author review role, with original/new authorship and stable identity checks; project renaming is insufficient. After valid independent exact-head approval, integrate automatically using one lock for math and infrastructure, exact PR CI/audit and green resulting main before acceptance. | Author-approved; mathematical contracts/source/toolchain unchanged. |

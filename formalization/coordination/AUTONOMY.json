@@ -1,13 +1,17 @@
 {
-  "protocol_version": 2,
-  "revision": 1,
+  "protocol_version": 3,
+  "revision": 2,
   "state_branch": "coordination",
   "state_file": "formalization/coordination/STATE.json",
   "registered_projects": [
     1,
-    2
+    2,
+    3
   ],
-  "max_projects": 2,
+  "team_project_id": 3,
+  "team_name": "cco-work-team",
+  "default_active_batches": 2,
+  "maximum_active_batches": 3,
   "released_packages": [
     "B002",
     "B003",
@@ -31,13 +35,51 @@
   "coordinator_review_packages": [
     "B001"
   ],
-  "review_requires_different_project": true,
-  "submission_releases_implementation_slot": true,
+  "review_requires_non_author": true,
+  "submission_releases_implementation_slot": false,
+  "actors": {
+    "root": {
+      "identity": "/root",
+      "roles": [
+        "coordinate",
+        "implement",
+        "integrate"
+      ],
+      "historical_author_projects": []
+    },
+    "independent_review": {
+      "identity": "/root/independent_review",
+      "roles": [
+        "review",
+        "integrate"
+      ],
+      "historical_author_projects": []
+    },
+    "legacy-project-1": {
+      "identity": "stopped-original-formalization-project-1",
+      "roles": [],
+      "historical_author_projects": [
+        1
+      ]
+    },
+    "legacy-project-2": {
+      "identity": "stopped-original-formalization-project-2",
+      "roles": [],
+      "historical_author_projects": [
+        2
+      ]
+    }
+  },
   "notes": [
-    "A claim always takes the lowest released AVAILABLE package with every prerequisite ACCEPTED in live state.",
-    "A submitted branch is not a dependency provider. Accepted means merged and green on main.",
-    "An idle worker reviews the lowest foreign submitted package before claiming new implementation work.",
-    "Project 1 and Project 2 are peers; register further IDs after a successful two-project integration.",
-    "No automatic lease expiry. Failures, source/API/toolchain changes and stale evidence go to the coordinator."
-  ]
+    "One Work team owns implementations; original project IDs are historical authorship, not extra workers.",
+    "Every unresolved claimed batch, including submission, review, integration, requested repair or blocker, occupies a team slot.",
+    "Two active batches are the default; a third requires a durable concrete independence exception and actual active work.",
+    "Repairs and completion have priority. Do not claim backups speculatively or build on unaccepted dependencies.",
+    "The reviewer must actually be a non-author of the complete package, including original implementation; role labels or a new ID do not establish independence.",
+    "After substantive independent exact-head approval, integrate automatically under the sole lock, with exact-head CI/audit and green resulting main CI/audit.",
+    "Existing v2 state is read-only except the authorized one-time handoff and infrastructure locking during deployment."
+  ],
+  "legacy_accepted_records": {
+    "B001": "bd99297a86920f4719bc4f089858f8736dbd9324f28dcef7ff430a51799857c9"
+  }
 }

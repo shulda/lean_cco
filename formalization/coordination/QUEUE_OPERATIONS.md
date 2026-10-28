@@ -1,104 +1,69 @@
-# Queue operations — protocol 2
+# Queue operations — protocol 3
 
-These steps use the connected GitHub tools or an equivalent Git client. The
-Python helper is deliberately offline: a proposed JSON file is NOT a claim.
-All external facts (PR heads, ancestry, CI and review content) must be read
-from GitHub and checked; the helper validates their shape and consistency,
-not their truth. No GitHub token or secret is required in a file.
-
-## Read one consistent state
-
-1. Fetch `main` ref, current `AUTONOMY.json`, `BOARD.json`, `PROTOCOL.md`
-   and your report. Fetch the `coordination` ref and remember SHA **S**.
-2. Read `formalization/coordination/STATE.json` at that EXACT **S**, not by
-   a later moving branch URL. Save it locally as `/tmp/cco-state.json`.
-3. Run `python tools/coordination_queue.py --state /tmp/cco-state.json
-   --project ID`. It returns resume, resume_review, repair, review, claim,
-   or wait. Finish a leased review; at the next checkpoint take the lowest foreign
-   submission before resuming implementation. Claim new implementation
-   only when neither is pending. Never skip a lower
-   available dependency-ready number or invent project IDs.
-
-The queue helper runs from the current main source checkout. The catalogue
-and permissions it reads are main files; only the live state comes from S.
-On CAS failure fetch current main policy too before recomputing.
-
-## Publish exactly one transition atomically
-
-Prepare an event payload in a temporary JSON file. Run:
+Read current main policy/catalogue/protocol/runbook and actual reports/PRs/CI.
+Fetch coordination head **S**, and STATE at that exact SHA. The Python helper
+is offline: a proposal is neither a claim nor certification of evidence.
 
 ```bash
-python tools/coordination_queue.py --state /tmp/cco-state.json --project ID \
+python tools/coordination_queue.py --state /tmp/cco-state.json --project 3 --actor root
+python tools/coordination_queue.py --state /tmp/cco-state.json --project 3 --actor independent_review
+python tools/coordination_queue.py --state /tmp/cco-state.json --project 3 --actor root \
   --event EVENT --data /tmp/cco-event.json --output /tmp/cco-next-state.json
 ```
 
-Then use the GitHub connector in this order:
+Publish exactly one transition: create a blob containing proposed STATE;
+create a tree from **S**'s actual full tree replacing ONLY STATE; create a
+commit with parent **S**; update coordination using `expected_sha=S` and
+`force=false`. Re-read and verify the resulting event/revision. On stale CAS,
+reload current policy, STATE and external heads, then recompute. Never force,
+reset, reparent a failed proposal or replace the ledger's source tree.
 
-1. `create_blob` for exactly the proposed STATE text. Read commit **S** to
-   obtain its actual tree **T**.
-2. `create_tree(base_tree_sha=T)` replacing ONLY
-   `formalization/coordination/STATE.json`. Do not use a new incomplete
-   source tree or mutate main/source files in this transition.
-3. `create_commit(parent_sha=S, tree_sha=NEW_TREE)`.
-4. `update_ref(branch_name="coordination", sha=NEW_COMMIT,
-   expected_sha=S, force=false)`.
-5. Re-read the ref/state. Verify the intended claim/review and its
-   `claim_revision`. Only a successful non-force publication gives you
-   ownership. A failed/stale update requires reload and recomputation;
-   never force, reparent an old proposal or reuse its old package choice.
+Every event supplies `actor_id` (CLI defaults to `--actor`) and package events
+supply `package_id`. SHAs are full forty-character hex. Success CI is
+`{"run_id": N, "head_sha": SHA, "conclusion": "success", "axiom_audit": "allowlist"}`
+after inspecting actual exact-SHA logs. `observed_ci` for WIP handoff may
+record failure; it is not successful submission evidence.
 
-Concurrent commits with the same parent cannot both advance a non-force
-ref: after the first, the other is not a descendant. The expected SHA also
-rejects stale publication. All other state changes use the same procedure,
-so claims, submissions, reviews and integration locks serialize together.
-Commit messages should identify project, event and package. There is no
-lease expiry or issue-comment locking protocol. Main CI is not run for
-these coordination-only commits.
-
-## Event payloads
-
-Every event includes `package_id`. SHAs are full forty-character hex strings.
-A CI record is `{"run_id": NUMBER, "head_sha": SHA,
-"conclusion": "success", "axiom_audit": "allowlist"}` after inspecting
-the actual run/log on that exact commit. Do not invent a successful audit.
-
-| Event | Additional fields | Effect |
+| Event | Required data in addition to actor/package | Meaning |
 |---|---|---|
-| `claim` | `base_main_sha`, `base_ci` | Claim the lowest released eligible package from current green main. |
-| `repair` | `base_main_sha`, `base_ci` | Resume your lowest requested repair before new implementation. |
-| `submit` | `pr_number`, `head_sha`, `ci`, `report_path` = `formalization/coordination/submissions/Bxxx.md` | Submit/refresh an owned unlocked package; invalidate any previous review; author may claim independent next work. |
-| `review` | exact submitted `head_sha` | Lease the lowest foreign submission; project 0 denotes the coordinator. |
-| `refresh_review` | new `head_sha`, new `ci` | Leased reviewer records a base-update/new head; approval is cleared. Review it again. |
-| `approve` | `head_sha`, substantive `summary` | Record source/API/provider/consumer review on that exact head. |
-| `request_changes` | `head_sha`, substantive `summary` | Return the package for repair; preserve its owner. |
-| `start_integration` | `head_sha`, `base_main_sha`, `head_contains_main: true`, `ci` | Acquire the global integration lock after approved exact-head review and green CI. |
-| `cancel_integration` | `pr_not_merged: true` | Cancel only a pre-merge integration, e.g. a base race; clear approval and recheck. |
-| `accept` | `integration_commit`, `main_ci` | After actual merge and green main audit, record ACCEPTED and release the lock. |
-| `block` | `reason` | Checkpoint a genuine blocker; merged-main failures retain the integration lock. |
+| `handoff` | `previous_projects_stopped: true`, `transfers` containing exactly B002/B003 with `previous_owner_project_id`, `branch`, `pr_number`, current `head_sha`, `observed_ci`, `last_green_checkpoint: {head_sha, ci}` | One-time v2→v3 atomic transfer after policy deployment; preserve original authors, existing claim/base/history and WIP. |
+| `claim` | `base_main_sha`, `base_ci` | Lowest released AVAILABLE package, every dependency ACCEPTED, capacity below two; no pending repairs. |
+| `claim_third` | claim fields plus `independent_active_work: true`, substantive `summary`, `implementation_actor_id`, `active_work_items`, `independence_report_path`, `existing_batches` | Exceptional third genuinely independent active batch; no fourth. |
+| `repair` | `base_main_sha`, `base_ci` | Lowest requested repair, preserving authorship. |
+| `record_authorship` | `author_actor_ids` | Append actual contributors; never erase original authors or use review-only actor to implement. |
+| `submit` | exact `head_sha`, `pr_number`, `ci`, `report_path` = submissions/Bxxx.md (full repository path) | Complete contract only; submission still occupies a slot and clears old review. |
+| `review` | exact `head_sha`, `independence` below | Separate actual non-author control leases lowest eligible submission. |
+| `refresh_review` | new `head_sha`, new `ci` | Preserve non-author provenance, clear approval and review new head again. |
+| `approve` / `request_changes` | exact `head_sha`, substantive `summary` | Compare source/signatures/providers/consumer/evidence on whole package. |
+| `start_integration` | approved `head_sha`, `base_main_sha`, `head_contains_main: true`, `ci` | Coordinator/integrator takes sole lock after independent approval. |
+| `cancel_integration` | `pr_not_merged: true` | Pre-merge cancellation only; clears approval. |
+| `accept` | actual `integration_commit`, successful `main_ci` | Green resulting-main audit releases lock/dependencies. |
+| `block` | precise `reason` | Preserve lock on merged-main failure; unresolved batch still counts. |
 
-## Review and integration sequence
+For `claim_third`, `existing_batches` must describe exactly both current active
+batches, each with `package_id`, exact current `head_sha`, nonempty `work_items`
+and `implementation_actor_ids`. Third-batch work items and its actual dedicated
+implementer must be disjoint. The durable `independence_report_path` under reports/
+explains file/API and resource independence against those anchored allocations.
+The helper checks consistency; the coordinator verifies these facts in reality.
 
-Review the actual source statements and Lean proof dependencies, not only
-names and axiom counts. The author may not accept their own package. A
-coordinator-only package cannot be taken for peer acceptance. A reviewer
-may also have an independent implementation in progress.
+`independence` is `{"identity": "/root/independent_review", "non_author": true,
+"summary": "actual substantive independence explanation (at least 80 characters)",
+"report_path": "formalization/coordination/reviews/NAME.md"}`. The report must
+identify the actual reader and establish no implementation/authorship or design
+participation in this complete package, including historical work. A renamed
+old author is not independent. All actual authors must remain in provenance.
 
-Bring current main into the PR first, review the resulting head and wait
-for its exact green CI. Then publish `start_integration` and recheck that
-main is still the recorded base and PR is still the recorded approved head.
-If the base changed before obtaining the lock, cancel BEFORE merging, update
-the branch and repeat review/CI. The real merge tool uses expected PR head;
-all math and coordinator merges obey the global lock, so main remains
-stable between this check and merge. Do not merge source branches based on
-an older successful run.
+Infrastructure/policy PRs use this same lock via `start_infrastructure`:
+`pr_number`, `head_sha`, `base_main_sha`, `head_contains_main: true`, successful
+`ci`, `author_actor_ids`, `original_author_project_ids`, and `review` containing
+`actor_id`, exact `head_sha`, `approved: true`, substantive `summary` and the
+above `independence`. `finish_infrastructure` needs actual `integration_commit`
+and successful `main_ci`; `cancel_infrastructure` needs `pr_not_merged: true`.
+A failed resulting main is kept locked, with a durable failure checkpoint.
+These operations work during the v2→v3 deployment without resetting STATE.
 
-Merge the PR with history preserved. Read the merge SHA from GitHub; wait
-for the push CI on that SHA to succeed including the CCO transitive audit.
-Then publish `accept`. Keep the lock on a merged-main failure and tell
-Matěj; a coordinator repair is needed. Never release dependencies based
-only on PR CI, a branch name, an unmerged commit or a report's assertion.
-
-Submissions and peer review records persist in STATE and Git history. The
-numbered report may move to a later package; `submissions/Bxxx.md` and its
-exact reviewed commit remain the durable package record. No background
-monitor or automatic message to another project is installed.
+Before any actual merge, re-read main/PR and lock; merge with expected head and
+history preserved. If either ref moved, update main into the branch, review
+changed SHA, rerun CI, and reacquire the lock. After actual merge inspect the
+push CI and transitive axiom audit at the resulting main commit before finishing.

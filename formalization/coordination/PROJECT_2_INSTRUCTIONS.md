@@ -1,31 +1,36 @@
-# Project 2 instructions — protocol 2
+# Work team instructions — protocol 3 (historical project 2)
 
-Jsi rovnocenný formalizační projekt č. 2 v https://github.com/shulda/lean_cco.
-Na začátku tahu čti aktuální `main/formalization/coordination/PROTOCOL.md`,
-`AUTONOMY.json`, `BOARD.json`, `DECISIONS.md` a svůj report `reports/2.md`.
-Živé přidělení a přijetí čti VÝHRADNĚ z větve `coordination`, souboru
-`formalization/coordination/STATE.json`. Main BOARD je katalog, nikoli fronta.
+Repozitář: https://github.com/shulda/lean_cco. Původní projekty
+1 a 2 jsou zastavené; jejich ID a autorství zůstávají v historii. Jeden Work
+tým (project 3) koordinuje a dokončuje obě převzaté větve bez resetu WIP.
 
-Použij `tools/coordination_queue.py` a přesný postup `QUEUE_OPERATIONS.md`.
-Dokonči své leased review; na dalším checkpointu nejprve zkontroluj nejnižší
-cizí odevzdaný PR, pak pokračuj ve svém rozpracovaném balíčku. Pokud nemáš
-rozpracováno, vezmi nejnižší volný uvolněný balíček, jehož
-VŠECHNY závislosti jsou ACCEPTED. Převzetí platí až po atomickém non-force
-zápisu do `coordination` nad přesně načteným headem. Při kolizi znovu načti
-stav a přepočti výběr; nezačínej práci před úspěšným přidělením.
+Na začátku čti čerstvý main: PROTOCOL.md, AUTONOMY.json, BOARD.json, runbook,
+kontrakty, skutečný kód a reporty. Živé claimy/review/přijetí čti VÝHRADNĚ
+z přesného headu coordination:formalization/coordination/STATE.json.
+BOARD je katalog. Používej coordination_queue.py a QUEUE_OPERATIONS.md;
+zápisy jsou účinné až po non-force CAS nad přesně načteným rodičem.
 
-Implementuj na vlastní nové větvi z aktuálního zeleného `main`, čti celé
-připnuté důkazy a proof notes. Ukládej commity, svůj report a per-package
-`submissions/Bxxx.md`. Zachovej společné API/toolchain, skutečné předpoklady,
-RAW/STRONG rozdíl a nulové nedokázané transitive providers. Vše importuj do
-CCO a dolož přesný head, source map, consumer, CI a audit axiomů.
+Standardně drž dva aktivní batche v celém týmu. SUBMITTED, REVIEWING,
+INTEGRATING, CHANGES_REQUESTED i BLOCKED stále zabírají slot. Opravy a dokončení
+mají přednost. Třetí batch potřebuje zaznamenanou konkrétní nezávislou aktivní
+práci; žádné předběžné hromadění záloh. Všechny závislosti musí být ACCEPTED.
 
-Po zeleném odevzdání označ balíček SUBMITTED ve frontě a můžeš autonomně
-pokračovat dalším nezávislým úkolem. Odevzdaná větev ještě není závislost.
-Cizí PR přijímej podle protokolu: druhý čtenář, přesný head, aktuální main
-ve větvi, integrační zámek, merge a zelené výsledné main CI, pak ACCEPTED.
-Vlastní balíček sám nepřijímej. Větev coordination nikdy nemerguj do main.
+Čti původní připnuté důkazy i skutečné Lean signatury. Zachovej přesné
+kvantifikátory, RAW/STRONG a AP/SAP/CCO. Podmíněný provider není source instance.
+Žádné sorry/admit, nové axiomy ani zesílení hypotéz. Veřejné moduly importuj
+do CCO.lean. Importuj konkrétní potřebné Mathlib moduly a taktiky; chybějící
+import patří konzumentovi. Používej připnutý toolchain/manifest, malé inkrementy
+a přesný transitive axiom audit. Ukládej commity a aktuální per-package report.
 
-Matěje kontaktuj při skutečném blockeru, opravě matematiky, změně sdíleného
-API/toolchainu, selhání integrace nebo pokud není další dostupná práce.
-Běžné dokončení a převzetí dalšího uvolněného balíčku konzultaci nepotřebuje.
+Celý batch kontroluje skutečně neautorský kontrolní agent. Jiné ID ani
+přejmenování původního autora nezávislost nedokazuje. Zaznamenej všechny
+původní i nové autory a skutečnou identitu, neautorství a samostatný report
+reviewera. Review porovná původní zdroj, hypotézy, všechny provider discharge,
+consumer a CI/audit přesného SHA. Kontrolní role nesmí psát implementaci.
+
+Po oprávněném nezávislém schválení integruj automaticky: jediný integrační
+zámek i pro infrastrukturu, čerstvý main jako předek, schválený přesný PR head
+se zeleným CI/auditem; potom merge se zachováním historie a zelený výsledný
+main před ACCEPTED. Změna headu ruší schválení. Při selhání merged-main drž
+zámek a vrať konkrétní problém přípravnému projektu. Větev coordination nikdy
+nemerguj do main. Otevřené důkazy neoznačuj za dokončené.
