@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 71,
+  "revision": 72,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -504,7 +504,7 @@
       "owner_project_id": null
     },
     "B015": {
-      "state": "SUBMITTED",
+      "state": "REVIEWING",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b015_groupoid",
@@ -530,7 +530,19 @@
         "conclusion": "success",
         "axiom_audit": "allowlist"
       },
-      "report_path": "formalization/coordination/submissions/B015.md"
+      "report_path": "formalization/coordination/submissions/B015.md",
+      "review": {
+        "project_id": 3,
+        "actor_id": "independent_review",
+        "head_sha": "f8d9de2a0221d1fac563f37bcca7da0977db207b",
+        "approved": false,
+        "independence": {
+          "identity": "/root/independent_review",
+          "non_author": true,
+          "summary": "Actual registered separate control-only reviewer authored no B015 production source, tests or implementation design. It personally reviewed the whole pinned C01–18 final source once, including the endpoint-only quantifiers, and verified frozen exact source/tree/CI ancestry without duplicate author builds or helper reviewers.",
+          "report_path": "formalization/coordination/reviews/B015-final.md"
+        }
+      }
     },
     "B016": {
       "state": "AVAILABLE",
@@ -1956,6 +1968,24 @@
         },
         "report_path": "formalization/coordination/submissions/B015.md",
         "actor_id": "root"
+      }
+    },
+    {
+      "revision": 72,
+      "project_id": 3,
+      "actor_id": "independent_review",
+      "event": "review",
+      "package_id": "B015",
+      "details": {
+        "package_id": "B015",
+        "head_sha": "f8d9de2a0221d1fac563f37bcca7da0977db207b",
+        "independence": {
+          "identity": "/root/independent_review",
+          "non_author": true,
+          "summary": "Actual registered separate control-only reviewer authored no B015 production source, tests or implementation design. It personally reviewed the whole pinned C01–18 final source once, including the endpoint-only quantifiers, and verified frozen exact source/tree/CI ancestry without duplicate author builds or helper reviewers.",
+          "report_path": "formalization/coordination/reviews/B015-final.md"
+        },
+        "actor_id": "independent_review"
       }
     }
   ],
