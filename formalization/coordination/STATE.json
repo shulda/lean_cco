@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 65,
+  "revision": 66,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -523,8 +523,22 @@
       "owner_project_id": null
     },
     "B017": {
-      "state": "AVAILABLE",
-      "owner_project_id": null
+      "state": "IN_PROGRESS",
+      "owner_project_id": 3,
+      "author_actor_ids": [
+        "root"
+      ],
+      "original_author_project_ids": [
+        3
+      ],
+      "claim_revision": 66,
+      "base_main_sha": "7169a805d337110e6dad4e6d0636e950b31f157d",
+      "base_ci": {
+        "head_sha": "7169a805d337110e6dad4e6d0636e950b31f157d",
+        "run_id": 40730446748,
+        "conclusion": "success",
+        "axiom_audit": "allowlist"
+      }
     },
     "B018": {
       "state": "AVAILABLE",
@@ -1792,6 +1806,55 @@
         },
         "actor_id": "root"
       }
+    },
+    {
+      "revision": 66,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "claim_third",
+      "package_id": "B017",
+      "details": {
+        "package_id": "B017",
+        "base_main_sha": "7169a805d337110e6dad4e6d0636e950b31f157d",
+        "base_ci": {
+          "head_sha": "7169a805d337110e6dad4e6d0636e950b31f157d",
+          "run_id": 40730446748,
+          "conclusion": "success",
+          "axiom_audit": "allowlist"
+        },
+        "independent_active_work": true,
+        "summary": "Dedicated live implementer /root/b017_kernel immediately starts genuine binary finite-fibre kernel patching, compact projections and finite-dual/named-axis consumers in CCO/FiniteKernel, disjoint from B009 actual-fibre globalisation and B015 rigid quotient bridges. All prerequisites are already ACCEPTED on main; separate worktrees and build owners require no sibling WIP theorem.",
+        "implementation_actor_id": "/root/b017_kernel",
+        "active_work_items": [
+          "CCO/FiniteKernel/ actual binary patching and compact projection",
+          "CCO/FiniteKernel/ dual width-two named axes and countermodels"
+        ],
+        "independence_report_path": "formalization/coordination/reports/B017-third-active-independence.md",
+        "existing_batches": [
+          {
+            "package_id": "B009",
+            "head_sha": "7169a805d337110e6dad4e6d0636e950b31f157d",
+            "work_items": [
+              "CCO/RealHull/Geometry/ actual fibres and full class intervals"
+            ],
+            "implementation_actor_ids": [
+              "/root/b009_fibres",
+              "/root/b009_fibres/class_intervals"
+            ]
+          },
+          {
+            "package_id": "B015",
+            "head_sha": "7169a805d337110e6dad4e6d0636e950b31f157d",
+            "work_items": [
+              "CCO/RigidGroupoid/Geometry/ quotient algebra and rigid bridges"
+            ],
+            "implementation_actor_ids": [
+              "/root/b015_groupoid"
+            ]
+          }
+        ],
+        "actor_id": "root"
+      }
     }
   ],
   "infrastructure_integrations": [
@@ -1949,38 +2012,38 @@
   ],
   "policy_revision": 2,
   "third_batch_exception": {
-    "package_id": "B008",
+    "package_id": "B017",
     "independent_active_work": true,
-    "summary": "Dedicated live implementer /root/b008_crt now starts abstract finite CRT/Birkhoff and actual exact quotient descent in CCO/ExactCRT, disjoint from B005 selected SIR/direct model and B007 relative closure/maximal gates; all prerequisites already ACCEPTED on main, separate compilation resources and no sibling API dependence.",
+    "summary": "Dedicated live implementer /root/b017_kernel immediately starts genuine binary finite-fibre kernel patching, compact projections and finite-dual/named-axis consumers in CCO/FiniteKernel, disjoint from B009 actual-fibre globalisation and B015 rigid quotient bridges. All prerequisites are already ACCEPTED on main; separate worktrees and build owners require no sibling WIP theorem.",
     "active_work_items": [
-      "CCO/ExactCRT/ abstract CRT and Birkhoff",
-      "CCO/ExactCRT/ actual exact lattice and guarded quotient descent"
+      "CCO/FiniteKernel/ actual binary patching and compact projection",
+      "CCO/FiniteKernel/ dual width-two named axes and countermodels"
     ],
-    "implementation_actor_id": "/root/b008_crt",
-    "independence_report_path": "formalization/coordination/reports/B008-third-active-independence.md",
+    "implementation_actor_id": "/root/b017_kernel",
+    "independence_report_path": "formalization/coordination/reports/B017-third-active-independence.md",
     "existing_batches": [
       {
-        "package_id": "B005",
-        "head_sha": "21381f6095d3b2787e3e248e5ea244180a66f06f",
+        "package_id": "B009",
+        "head_sha": "7169a805d337110e6dad4e6d0636e950b31f157d",
         "work_items": [
-          "CCO/SIR/Positive/ selected SIR and direct two-sheet model"
+          "CCO/RealHull/Geometry/ actual fibres and full class intervals"
         ],
         "implementation_actor_ids": [
-          "/root/b005_positive",
-          "/root/b005_positive/direct_model"
+          "/root/b009_fibres",
+          "/root/b009_fibres/class_intervals"
         ]
       },
       {
-        "package_id": "B007",
-        "head_sha": "21381f6095d3b2787e3e248e5ea244180a66f06f",
+        "package_id": "B015",
+        "head_sha": "7169a805d337110e6dad4e6d0636e950b31f157d",
         "work_items": [
-          "CCO/ParityHasse/Relative/ closure separation and maximal gates"
+          "CCO/RigidGroupoid/Geometry/ quotient algebra and rigid bridges"
         ],
         "implementation_actor_ids": [
-          "/root/b007_relative"
+          "/root/b015_groupoid"
         ]
       }
     ],
-    "revision": 45
+    "revision": 66
   }
 }
