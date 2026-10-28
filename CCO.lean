@@ -118,3 +118,5 @@ import CCO.RawExact.FanSimpleGraph
 import CCO.RawExact.ReducedDirectWords
 
 import CCO.RawExact.FanReferenceEdges
+
+import CCO.RawExact.FanTerminalIncidence
