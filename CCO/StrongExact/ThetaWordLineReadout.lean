@@ -56,6 +56,8 @@ theorem represented_of_literal_word_line {i j : ι}
         (wordSource_sort S tail) ▸ tailPoint (wordSource S tail)
       have hFirst : S.colour (point none) mid = some a := by
         have h := hedges (.inl PUnit.unit)
+        have hSort := wordSource_sort S tail
+        cases hSort
         simpa [mid, tailPoint, wordEdgeSource,
           wordEdgeTarget, wordEdgeAtom] using h
       change ∃ y : X _, S.colour (point none) y = some a ∧
