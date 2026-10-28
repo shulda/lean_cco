@@ -28,13 +28,15 @@ structure LiteralLine (word : PositiveWord S i j) (x : X i) (y : X j) where
   source : (wordSource_sort S word) ▸ point (wordSource S word) = x
   target : (wordTarget_sort S word) ▸ point (wordTarget S word) = y
 
-theorem LiteralLine.of_represented
+noncomputable def LiteralLine.of_represented
     (word : PositiveWord S i j) (x : X i) (y : X j)
     (h : PositiveWord.represented S word x y) :
     LiteralLine S word x y := by
-  obtain ⟨point, hEdges, hSource, hTarget⟩ :=
-    literal_word_line_of_represented S word x y h
-  exact ⟨point, hEdges, hSource, hTarget⟩
+  classical
+  let hw := literal_word_line_of_represented S word x y h
+  let point := Classical.choose hw
+  have hSpec := Classical.choose_spec hw
+  exact ⟨point, hSpec.1, hSpec.2.1, hSpec.2.2⟩
 
 /-- A common atomic survivor produces TWO actual original-colour
 word-line witnesses with LITERALLY the same endpoint real points.
