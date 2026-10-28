@@ -1,7 +1,10 @@
+Warning: truncated output (original token count: 25291)
+Total output lines: 2313
+
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 77,
+  "revision": 78,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -495,13 +498,14 @@
         "project_id": 3,
         "actor_id": "independent_review",
         "head_sha": "7d3c98155fdfecdc3f8f35ef9735c02836bc9340",
-        "approved": false,
+        "approved": true,
         "independence": {
           "identity": "/root/independent_review",
           "non_author": true,
           "summary": "Actual separate registered reviewer personally read all 36 complete B009 public modules and pinned proofs, wrote none of the production code/tests/helpers or implementation design, and checked exact unchanged final union and successful public-head CI without duplicate author builds.",
           "report_path": "formalization/coordination/reviews/B009-final.md"
-        }
+        },
+        "summary": "Actual independent_review approves complete canonical_hull C01–24: explicit finite triangle Ramsey proves finiteness before Nat.card bounds; actual whole-anchor fibre H and arbitrary-universe CCO, serial mixed-cycle closure and complete anchor alignment; original optional-identity RAW support, mixed/self collapse, minimum blocker localisation precede genuine full internal Hasse/index-two square transfer and canonical fixer globalisation. Every true actual source provider closes, including singleton equality, empty anchors, old-colour sharp power bound and actual full-Aut class/fibre relative interval, arbitrary families and chains AFTER class existence. No hidden SAP, word exactness, globalisation or internal interval lift premise. Registered actual nonauthor personally read36modules once and exact unchanged nonroot B015/B009 union treea5adf85; all root imports483. Exact publichead7d3c9815 CI40740760714/job123001404545 personally read67tests/2601jobs/6478 standard-three axiom audit/483 actual parts AND483 current SOURCE modules before/after. Source/contract/toolchain/manifest unchanged; whole substantive provenance/source findings in B009-final.md."
       }
     },
     "B010": {
@@ -1074,44 +1078,7 @@
       "details": {
         "package_id": "B002",
         "head_sha": "70d56cf20d8da4474629fc46b8ec548310838e17",
-        "summary": "Actual registered non-author /root/independent_review personally approves FULL RAW C06–C28 at exact70d56cf, including literal two-WHOLE-path vertex+edge C06/C26 classification, actual Helly C13, original automorphism/global quotient C20–23, genuine actual C24/AP/C27/C28 providers and repaired independent-z triangle/CCO property fields/full/singleton consumers. No SAP, hidden quotient representation/completion/section or named-group limit assumption. Own combined1211/3657/317/public316imports and higher-universe consumers pass; second genuinely fresh reviewer retains actual identity and finding/repair history. Exact remote40696694928 has identical reviewed tree/current ACCEPTED main ancestry,57tests/1211jobs/3657allowlist/317parts. Durable B002-final-70d56cf.md records full source and exact evidence.",
-        "actor_id": "independent_review"
-      }
-    },
-    {
-      "revision": 24,
-      "project_id": 3,
-      "actor_id": "root",
-      "event": "start_integration",
-      "package_id": "B002",
-      "details": {
-        "package_id": "B002",
-        "head_sha": "70d56cf20d8da4474629fc46b8ec548310838e17",
-        "base_main_sha": "68322c7b9196eaaad4abdc7f074e93bba64bfedb",
-        "head_contains_main": true,
-        "ci": {
-          "head_sha": "70d56cf20d8da4474629fc46b8ec548310838e17",
-          "run_id": 40696694928,
-          "conclusion": "success",
-          "axiom_audit": "allowlist"
-        },
-        "actor_id": "root"
-      }
-    },
-    {
-      "revision": 25,
-      "project_id": 3,
-      "actor_id": "root",
-      "event": "accept",
-      "package_id": "B002",
-      "details": {
-        "package_id": "B002",
-        "integration_commit": "4206ff772cc3ee334fe530b55dbb0afe8174dfd4",
-        "main_ci": {
-          "head_sha": "4206ff772cc3ee334fe530b55dbb0afe8174dfd4",
-          "run_id": 40697932819,
-          "conclusion": "success",
-          "axiom_audit": "allowlist"
+        "summary": "Actual registered non-author /root/independent_review personally approves FULL RAW C06–C28 at exact70d56cf, including literal two-WHOLE-path vertex+edge C06/C26 classification, actual Helly C13, original automorphism/global quotient C20–23, genuine actual C24/AP/C27/C28 providers and repaired independent-z triangle/CCO property fields/full/singleton consumers. No SAP, hidden quotient representation/completion/section or named-group limit assumption. Own combined1211/3657/317/public316imports and higher-universe consumers pass; second genuinely fresh reviewer retains actual identity and finding/repair history. Exact remote40696694928 has identical reviewed tree/current ACCEPTED main ancestry,57tests/1211jobs/3657allowlist/317pa…291 tokens truncated…": "allowlist"
         },
         "actor_id": "root"
       }
@@ -2103,6 +2070,19 @@
           "summary": "Actual separate registered reviewer personally read all 36 complete B009 public modules and pinned proofs, wrote none of the production code/tests/helpers or implementation design, and checked exact unchanged final union and successful public-head CI without duplicate author builds.",
           "report_path": "formalization/coordination/reviews/B009-final.md"
         },
+        "actor_id": "independent_review"
+      }
+    },
+    {
+      "revision": 78,
+      "project_id": 3,
+      "actor_id": "independent_review",
+      "event": "approve",
+      "package_id": "B009",
+      "details": {
+        "package_id": "B009",
+        "head_sha": "7d3c98155fdfecdc3f8f35ef9735c02836bc9340",
+        "summary": "Actual independent_review approves complete canonical_hull C01–24: explicit finite triangle Ramsey proves finiteness before Nat.card bounds; actual whole-anchor fibre H and arbitrary-universe CCO, serial mixed-cycle closure and complete anchor alignment; original optional-identity RAW support, mixed/self collapse, minimum blocker localisation precede genuine full internal Hasse/index-two square transfer and canonical fixer globalisation. Every true actual source provider closes, including singleton equality, empty anchors, old-colour sharp power bound and actual full-Aut class/fibre relative interval, arbitrary families and chains AFTER class existence. No hidden SAP, word exactness, globalisation or internal interval lift premise. Registered actual nonauthor personally read36modules once and exact unchanged nonroot B015/B009 union treea5adf85; all root imports483. Exact publichead7d3c9815 CI40740760714/job123001404545 personally read67tests/2601jobs/6478 standard-three axiom audit/483 actual parts AND483 current SOURCE modules before/after. Source/contract/toolchain/manifest unchanged; whole substantive provenance/source findings in B009-final.md.",
         "actor_id": "independent_review"
       }
     }
