@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 30,
+  "revision": 31,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -243,6 +243,9 @@
       "state": "IN_PROGRESS",
       "owner_project_id": 3,
       "author_actor_ids": [
+        "/root/b006_parity",
+        "/root/b006_parity/sparse_graphs",
+        "/root/b006_sir",
         "root"
       ],
       "original_author_project_ids": [
@@ -920,6 +923,22 @@
         "author_actor_ids": [
           "/root/b004_selectors",
           "/root/b004_selectors/loop_nr2"
+        ],
+        "actor_id": "root"
+      }
+    },
+    {
+      "revision": 31,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "record_authorship",
+      "package_id": "B006",
+      "details": {
+        "package_id": "B006",
+        "author_actor_ids": [
+          "/root/b006_parity",
+          "/root/b006_parity/sparse_graphs",
+          "/root/b006_sir"
         ],
         "actor_id": "root"
       }
