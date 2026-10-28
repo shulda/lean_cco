@@ -76,6 +76,6 @@ theorem thetaCycle_private_continues_down
   rcases hDirections with hForward | hBackward
   · have hrDown := hForward.2
     omega
-  · exact ⟨q,hNext,hBackward.1⟩
+  · exact ⟨q,hNext,hBackward.1.symm⟩
 
 end CCO.StrongExact

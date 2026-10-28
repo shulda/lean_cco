@@ -101,3 +101,4 @@ import CCO.StrongExact.ThetaCycleRightBranchSplit
 import CCO.StrongExact.ThetaCyclePrivateStep
 import CCO.StrongExact.ThetaCycleOrientation
 import CCO.StrongExact.ThetaCyclicIndexInverse
+import CCO.StrongExact.ThetaCycleBranchTags
