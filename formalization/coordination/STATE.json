@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 103,
+  "revision": 104,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -744,7 +744,7 @@
       "owner_project_id": null
     },
     "B019": {
-      "state": "SUBMITTED",
+      "state": "REVIEWING",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b019_product",
@@ -770,7 +770,19 @@
         "conclusion": "success",
         "axiom_audit": "allowlist"
       },
-      "report_path": "formalization/coordination/submissions/B019.md"
+      "report_path": "formalization/coordination/submissions/B019.md",
+      "review": {
+        "project_id": 3,
+        "actor_id": "independent_review",
+        "head_sha": "0b0257a6cd20ed984660238068e11dc5364aacbe",
+        "approved": false,
+        "independence": {
+          "identity": "/root/independent_review",
+          "non_author": true,
+          "summary": "Actual registered independent reviewer authored none of the complete B019 production source/tests/helpers or implementation design. It personally read all19modules and pinned source proofs once, finaldocs-only delta, one exact content union and successful public-head CI/audit; no reviewer build or helper.",
+          "report_path": "formalization/coordination/reviews/B019-final.md"
+        }
+      }
     }
   },
   "integration_lock": null,
@@ -2756,6 +2768,24 @@
         },
         "report_path": "formalization/coordination/submissions/B019.md",
         "actor_id": "root"
+      }
+    },
+    {
+      "revision": 104,
+      "project_id": 3,
+      "actor_id": "independent_review",
+      "event": "review",
+      "package_id": "B019",
+      "details": {
+        "package_id": "B019",
+        "head_sha": "0b0257a6cd20ed984660238068e11dc5364aacbe",
+        "independence": {
+          "identity": "/root/independent_review",
+          "non_author": true,
+          "summary": "Actual registered independent reviewer authored none of the complete B019 production source/tests/helpers or implementation design. It personally read all19modules and pinned source proofs once, finaldocs-only delta, one exact content union and successful public-head CI/audit; no reviewer build or helper.",
+          "report_path": "formalization/coordination/reviews/B019-final.md"
+        },
+        "actor_id": "independent_review"
       }
     }
   ],
