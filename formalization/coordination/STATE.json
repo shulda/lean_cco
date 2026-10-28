@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 57,
+  "revision": 58,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -385,7 +385,7 @@
       }
     },
     "B008": {
-      "state": "INTEGRATING",
+      "state": "ACCEPTED",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b008_crt",
@@ -424,6 +424,13 @@
           "report_path": "formalization/coordination/reviews/B008-final.md"
         },
         "summary": "Actual registered non-author /root/independent_review personally approves full C01–24 at exact ef2e641: abstract permuting-equivalence CRT with all empty/nonempty and class-compatibility boundaries, exact finite distributive/Birkhoff lattice instantiated from different-centre RAW exact BALL Helly, separate fine-colour equation, actual typed quotient AtomicSource/orbit/equality/kernel/RawWord full exact pullback, same-sort descent and genuine chosen-presentation typed TI descent with every intermediate kernel retained before its guard. Matching pinned Birkhoff theorem and literal coordinate maps checked; full invariant distributivity and unguarded mixed-sort TI are never asserted. No hidden quotient homogeneity/lifting/provider or stronger premise. Exact public tree is independently verified frozen B007+B008 union, all nonroot files identical and397 total root modules. CI40727115848 personally checked67tests/2403jobs/5213standard3audit/397actualbytes AND397SOURCE pre/post; current accepted main3a91 ancestor. One full source review, durable actual-identity report B008-final.md."
+      },
+      "accepted_commit": "9a982de95eb9bc5b89c5182f71ea9fd55ea93ac6",
+      "main_ci": {
+        "head_sha": "9a982de95eb9bc5b89c5182f71ea9fd55ea93ac6",
+        "run_id": 40728363284,
+        "conclusion": "success",
+        "axiom_audit": "allowlist"
       }
     },
     "B009": {
@@ -471,13 +478,7 @@
       "owner_project_id": null
     }
   },
-  "integration_lock": {
-    "kind": "package",
-    "package_id": "B008",
-    "actor_id": "root",
-    "base_main_sha": "3a91b5da4006bd9ecc6805061d3942cd63ea7007",
-    "head_sha": "ef2e641b453a0fa2e4816680b4f99f87e4bd23a6"
-  },
+  "integration_lock": null,
   "history": [
     {
       "revision": 1,
@@ -1586,6 +1587,24 @@
         "ci": {
           "head_sha": "ef2e641b453a0fa2e4816680b4f99f87e4bd23a6",
           "run_id": 40727115848,
+          "conclusion": "success",
+          "axiom_audit": "allowlist"
+        },
+        "actor_id": "root"
+      }
+    },
+    {
+      "revision": 58,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "accept",
+      "package_id": "B008",
+      "details": {
+        "package_id": "B008",
+        "integration_commit": "9a982de95eb9bc5b89c5182f71ea9fd55ea93ac6",
+        "main_ci": {
+          "head_sha": "9a982de95eb9bc5b89c5182f71ea9fd55ea93ac6",
+          "run_id": 40728363284,
           "conclusion": "success",
           "axiom_audit": "allowlist"
         },
