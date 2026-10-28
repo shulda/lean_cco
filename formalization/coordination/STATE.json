@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 6,
+  "revision": 7,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -63,6 +63,9 @@
         1
       ],
       "author_actor_ids": [
+        "/root/raw_fan",
+        "/root/raw_quotient",
+        "/root/runtime_imports",
         "legacy-project-1",
         "root"
       ],
@@ -344,6 +347,22 @@
             },
             "summary": "Original project 2 stopped by user confirmation; entire branch and original authorship preserved. Green head audits1464 declarations but package remains IN_PROGRESS; original project 2 is never used as a non-author reviewer."
           }
+        ]
+      }
+    },
+    {
+      "revision": 7,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "record_authorship",
+      "package_id": "B002",
+      "details": {
+        "actor_id": "root",
+        "package_id": "B002",
+        "author_actor_ids": [
+          "/root/raw_fan",
+          "/root/raw_quotient",
+          "/root/runtime_imports"
         ]
       }
     }
