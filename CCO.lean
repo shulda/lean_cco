@@ -96,3 +96,8 @@ import CCO.StrongExact.ThetaCycleRootNeighbors
 import CCO.StrongExact.ThetaCycleCompatibility
 import CCO.StrongExact.ThetaPrivateLeftRank
 import CCO.StrongExact.ThetaCycleBranchSplit
+import CCO.StrongExact.ThetaPrivateRightRank
+import CCO.StrongExact.ThetaCycleRightBranchSplit
+import CCO.StrongExact.ThetaCyclePrivateStep
+import CCO.StrongExact.ThetaCycleOrientation
+import CCO.StrongExact.ThetaCyclicIndexInverse

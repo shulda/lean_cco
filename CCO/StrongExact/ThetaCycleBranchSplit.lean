@@ -57,7 +57,7 @@ theorem thetaCycle_left_neighbor_branches_distinct
     exact hRankT.trans hRankU.symm
   have hCyclePair : C.vertices (cyclicNext C.length_pos p) =
       C.vertices (cyclicPrev C.length_pos p) := by
-    simpa only [hNext,hPrev,hSamePos, eq_self]
+    rw [hNext, hPrev, hSamePos]
   have hIndex := C.vertices.injective hCyclePair
   exact (cyclicPrev_ne_next C.length_ge_three p) hIndex.symm
 
