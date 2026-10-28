@@ -65,12 +65,17 @@ theorem represented_of_literal_word_line {i j : ι}
         (wordSource_sort S tail) ▸ tailPoint (wordSource S tail)
       have hFirst : S.colour (point none) mid = some a := by
         have h := hedges (.inl PUnit.unit)
+        have hAtom :
+            wordEdgeAtom S (.cons a tail) (.inl PUnit.unit) =
+              ((wordSource_sort S tail).symm ▸ a) := by
+          cases wordSource_sort S tail
+          rfl
         have hTyped :
             S.colour (point none)
               (tailPoint (wordSource S tail)) =
               some ((wordSource_sort S tail).symm ▸ a) := by
-          simpa [tailPoint, wordEdgeSource,
-            wordEdgeTarget, wordEdgeAtom, id_eq] using h
+          simpa only [tailPoint, wordEdgeSource,
+            wordEdgeTarget, hAtom] using h
         exact colour_cast_second S (wordSource_sort S tail) a
           (point none) (tailPoint (wordSource S tail)) hTyped
       change ∃ y : X _, S.colour (point none) y = some a ∧
