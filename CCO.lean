@@ -125,3 +125,5 @@ import CCO.RawExact.FanEdgeOverlaps
 
 import CCO.RawExact.FanDirectCoincidence
 import CCO.RawExact.FanDirectColourConsistency
+
+import CCO.RawExact.RealTraceEndpoints
