@@ -74,3 +74,5 @@ import CCO.StrongExact.ThetaCrossBranchEdges
 import CCO.StrongExact.ThetaArcUnique
 import CCO.StrongExact.ThetaAdjacency
 import CCO.StrongExact.ThetaEdgesBuild
+import CCO.StrongExact.ThetaGraphBridge
+import CCO.StrongExact.ThetaWordLineReadout
