@@ -1,6 +1,6 @@
 # B002 — complete source candidate, not yet accepted
 
-28 October 2026. Proof-source merge `e6f2b6f` preserves all original
+28 October 2026. Proof-source merge `e6f2b6f` and the subsequent C24/C28 export-universe repair preserve all original
 project 1 history, the original failed handoff and newer WIP, plus the
 independent proof branches and the current policy/cache main. Existing
 PR #3 and public claim identity remain unchanged. This report records
@@ -12,6 +12,30 @@ No mathematical contract, Lean toolchain or manifest pin was changed.
 The current claim-by-claim C06–C28 map, actual hypotheses and provider
 discharges are at the top of `submissions/B002.md`. Older reports and
 the preserved chronology below that map are historical checkpoints.
+
+## Independent export-universe correction
+
+The previous source checkpoint `75094c6e924f15f5b03782fd8a082f1008104bd0`
+passed a 2,244-declaration audit but independent whole-control review
+correctly identified an export restriction: canonical `triangle_fullness`
+and `SourceProperties.triangles` used formal vertices in the original
+carrier universe. The underlying proved
+`actual_quotient_triangle_fullness_of_CCO` already had arbitrary independent
+`V : Type r`; its original finite induction needed no new reindexing or
+mathematical premise. `triangle_fullness_general` now instantiates that
+existing general proof and preserves the old specialization. The
+`SourceProperties` triangle and CCO fields, `source_properties` and the
+actual `singleton_source_properties` export now have an explicit
+independent universe z. This repairs the exported quantifiers, not the
+source contract. The final post-repair root audit has 2,245 declarations.
+
+Five fresh `import CCO` consumer proofs checked: arbitrary finite
+`V : Type z` directly without countability; the full property record's
+triangle field at that independent universe; actual `ULift.{z} (Fin n)`
+formal vertices; the single ACTUAL quotient record at the independent
+universe; and the property record's universe-z semantic CCO field. No
+universe equality, quotient provider or stronger source CCO premise was
+assumed. Exact printed signatures show independent levels v and z.
 
 ## Final source seams
 
@@ -37,7 +61,7 @@ the preserved chronology below that map are historical checkpoints.
   assembles finite sorts, nonempty carriers, countability of the whole
   tagged family, named-sort transitivity, actual pair-orbital colour
   equivalence, finite homogeneity, actual triangle fullness, ordinary AP
-  and semantic CCO. The finite complete converse/symmetric orbital
+  and semantic CCO. Triangle and CCO formal vertices have an independent arbitrary universe z. The finite complete converse/symmetric orbital
   language is the actual constructed `AtomicSource`, not a supplied
   colour table. Its `source_properties` theorem uses original
   countability, H + CCO and actual full-exact canonical setoid data only.
@@ -76,7 +100,9 @@ Pinned Lean 4.34.1/Lake and the unchanged pinned package graph:
 - Fresh `import CCO` checks: **34 principal public source APIs**, including
   actual C06 and C26 whole-path classifications, C13, every C14–C23 source
   consumer, C24/AP, universe-general C27 and the full/singleton C28 record.
-- Official transitive module-origin audit: **2,244 CCO declarations**,
+  The five additional independent-universe consumer proofs above passed
+  after the C24/C28 export correction.
+- Official transitive module-origin audit: **2,245 CCO declarations**,
   all within `propext`, `Classical.choice`, `Quot.sound`. Explicit
   `#print axioms` on C21, C26 and both complete C28 exports agrees.
 - Project cache materialization guard: **192 actual olean parts**

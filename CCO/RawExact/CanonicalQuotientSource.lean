@@ -12,7 +12,7 @@ properties are constructed from the original assumptions and actual
 full-exact relation data. No duplicate identity copies are introduced.
 -/
 
-universe v w t
+universe v w t z
 
 namespace CCO.RawExact.CanonicalQuotients
 
@@ -80,6 +80,27 @@ theorem triangle_fullness (H : HomogeneousSource S G)
     {family : Finset (Setoid A)} (E : ExactData S family) :
     letI : ∀ k : Index family, MulAction G (Carrier k) := action S H E
     ∀ {V : Type v} [Finite V] (D : ActualOrbitalDiagram G (fun k : Index family => Carrier k) V),
+      D.TrianglesLegal →
+      ∃ point : ∀ p, Carrier (D.sort p),
+        (∀ p q, D.relation p q (point p) (point q)) ∧
+        Function.Injective (fun p => (⟨D.sort p, point p⟩ : Sigma (fun k : Index family => Carrier k))) := by
+  let : ∀ k : Index family, MulAction G (Carrier k) := action S H E
+  intro V _ D hTriangles
+  exact actual_quotient_triangle_fullness_of_CCO S H cco (fun k : Index family => Carrier k)
+    (fun _ => ()) projection projection_surjective
+    (equivariant_projection S H E) E.exact (exact_kernel S E) D hTriangles
+
+
+/-- The full C24 source quantifiers: finite formal vertex types live in
+an arbitrary universe independent of the original carrier. The proved
+underlying finite induction is already universe-general, so no new
+provider or stronger original CCO premise is required. The original
+`triangle_fullness` specialization is retained above. -/
+theorem triangle_fullness_general (H : HomogeneousSource S G)
+    (cco : SemanticCCO.{0,v,v,w} S)
+    {family : Finset (Setoid A)} (E : ExactData S family) :
+    letI : ∀ k : Index family, MulAction G (Carrier k) := action S H E
+    ∀ {V : Type z} [Finite V] (D : ActualOrbitalDiagram G (fun k : Index family => Carrier k) V),
       D.TrianglesLegal →
       ∃ point : ∀ p, Carrier (D.sort p),
         (∀ p q, D.relation p q (point p) (point q)) ∧

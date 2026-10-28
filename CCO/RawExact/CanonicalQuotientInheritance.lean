@@ -11,7 +11,7 @@ real points by its literal projection equation; no general quotient
 section or coherent choice of lifts is asserted.
 -/
 
-universe v w t
+universe v w t z
 
 namespace CCO.RawExact.CanonicalQuotients
 
@@ -40,7 +40,8 @@ variable {G : Type t} [Group G] [MulAction G A]
 
 /-- The full C28 source-property record for the concrete ACTUAL
 canonical quotient source. Its finite complete symmetric orbital
-language is carried by `source S H E` itself. -/
+language is carried by `source S H E` itself. Formal vertex types for
+triangle fullness and CCO have an independent arbitrary universe. -/
 structure SourceProperties (H : HomogeneousSource S G)
     {family : Finset (Setoid A)} (E : ExactData S family) : Prop where
   finite_sorts : Finite (Index family)
@@ -60,24 +61,24 @@ structure SourceProperties (H : HomogeneousSource S G)
     HomogeneousSource (source S H E) G
   triangles :
     letI : ∀ k : Index family, MulAction G (Carrier k) := action S H E
-    ∀ {V : Type v} [Finite V]
+    ∀ {V : Type z} [Finite V]
       (D : ActualOrbitalDiagram G (fun k : Index family => Carrier k) V),
       D.TrianglesLegal →
       ∃ point : ∀ p, Carrier (D.sort p),
         (∀ p q, D.relation p q (point p) (point q)) ∧
         Function.Injective (fun p => (⟨D.sort p, point p⟩ : Sigma (fun k : Index family => Carrier k)))
   amalgamation : AgeAP (source S H E)
-  cycles : SemanticCCO.{v,v,v,v} (source S H E)
+  cycles : SemanticCCO.{v,v,z,v} (source S H E)
 
 /-- C28 complete actual source inheritance. Every component is supplied
 by a proved source theorem; no abstract source/property provider remains. -/
 theorem source_properties [Countable A]
     (H : HomogeneousSource S G) (cco : SemanticCCO.{0,v,v,w} S)
-    {family : Finset (Setoid A)} (E : ExactData S family) : SourceProperties S H E := by
+    {family : Finset (Setoid A)} (E : ExactData S family) : SourceProperties.{v,w,t,z} S H E := by
   refine ⟨inferInstance, nonempty_carrier S, countable_tagged family,
     transitive_carrier S H E, source_colour_eq_iff_orbital S H E,
     homogeneous S H cco E,
-    triangle_fullness S H cco E, ageAP S H cco E, semanticCCO S H cco E⟩
+    triangle_fullness_general S H cco E, ageAP S H cco E, semanticCCO S H cco E⟩
 
 /-- The single canonical index for a chosen actual equivalence. -/
 def singletonIndex (J : Setoid A) : Index ({J} : Finset (Setoid A)) :=
@@ -107,7 +108,7 @@ The sole source sort is `singletonIndex J`, whose carrier is Quotient J. -/
 theorem singleton_source_properties [Countable A]
     (H : HomogeneousSource S G) (cco : SemanticCCO.{0,v,v,w} S)
     (J : Setoid A) (B : NonemptyExact S () ()) (hB : evaluate S B.words = J.r) :
-    SourceProperties S H (singletonData S J B hB) :=
+    SourceProperties.{v,w,t,z} S H (singletonData S J B hB) :=
   source_properties S H cco (singletonData S J B hB)
 
 end CCO.RawExact.CanonicalQuotients
