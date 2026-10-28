@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 120,
+  "revision": 121,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -562,7 +562,7 @@
       }
     },
     "B011": {
-      "state": "REVIEWING",
+      "state": "INTEGRATING",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b010_canonical",
@@ -864,7 +864,13 @@
       }
     }
   },
-  "integration_lock": null,
+  "integration_lock": {
+    "kind": "package",
+    "package_id": "B011",
+    "actor_id": "root",
+    "base_main_sha": "fbe6d8bf3f4d76d4d55361cfdfb4732582276c91",
+    "head_sha": "6f3e5799a7732c56ec26273e7a85863af694dea7"
+  },
   "history": [
     {
       "revision": 1,
@@ -3132,6 +3138,26 @@
         "head_sha": "6f3e5799a7732c56ec26273e7a85863af694dea7",
         "summary": "Actual nonauthor approves all25 real_closure claims plus N00. Literal same-sort atoms, SAME ambient G/ULift extension, actual CCO restriction/fullColourEqiso/typed word lift/ambient closure consumers; no reduct-aut extension premise. F is literal ACCEPTED B013 Sigma(bottom). Minimal-infinite directions are actually positive-word exact via finite Ramsey and real cliques; exact Boolean facets/real infinite relative classes, finite-point NONEXACT-F avoidance and different-centre B008 Helly supply genuine old-atom witness injection and palette/log bound. Actual canonical-class algebraicity/bounded character/singleton/rankone/globalised finite fibre bounds, unique finite spoke formula, F-saturation, point polynomial/wholepacket quotient counts/divisibility and BigO are proved; infinite r>=1 and finiteM/r0 constant cases separated. General TYPED terminal positive powers/allfullE RAWwords are CCO-free under explicit FULL NR2; only subsequent distributivity uses CCO. Both actual INFINITE Nat^I/Nat2Bool sources have FULLAut/H/actualAgeAP/arbitrary-universe semanticCCO; complete lattice/direction/grid/sharpness/nonSAP and phase corners/nonexactF-row-col with empty menu/word boundaries done. No stronger premise/open provider. ONEwhole34 personalread, 10sourcepins and ONLY2final5176docs/tree2499/public6f3/currentacceptedfbe6 checked. CI40764875134/job123086201603 personallyread67tests/2839jobs/8679standard-three/604actualbytesANDSOURCEprepost. Actual B013accepted117/mainCI40762703852 green/ledgervalid/locknil; complete substantive actual-identity report B011-final.md.",
         "actor_id": "independent_review"
+      }
+    },
+    {
+      "revision": 121,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "start_integration",
+      "package_id": "B011",
+      "details": {
+        "package_id": "B011",
+        "head_sha": "6f3e5799a7732c56ec26273e7a85863af694dea7",
+        "base_main_sha": "fbe6d8bf3f4d76d4d55361cfdfb4732582276c91",
+        "head_contains_main": true,
+        "ci": {
+          "head_sha": "6f3e5799a7732c56ec26273e7a85863af694dea7",
+          "run_id": 40764875134,
+          "conclusion": "success",
+          "axiom_audit": "allowlist"
+        },
+        "actor_id": "root"
       }
     }
   ],
