@@ -19,6 +19,15 @@ namespace CCO.StrongExact
 variable {ι : Type u} {X : ι → Type v}
 variable (S : AtomicSource.{u,v,w} ι X)
 
+/-- Transport a genuine old diversity atom and its endpoint together
+across a typed equality. There is no identity or quotient atom. -/
+private theorem colour_cast_second {i j k : ι}
+    (h : k = j) (a : S.Atom i j) (x : X i) (y : X k)
+    (hc : S.colour x y = some (h.symm ▸ a)) :
+    S.colour x (h ▸ y) = some a := by
+  cases h
+  simpa using hc
+
 /-- Every finite real point sequence respecting all actual original
 diversity letters is a witness of the equality-inclusive represented
 word relation at its two literal real terminals. The word itself is
@@ -56,10 +65,14 @@ theorem represented_of_literal_word_line {i j : ι}
         (wordSource_sort S tail) ▸ tailPoint (wordSource S tail)
       have hFirst : S.colour (point none) mid = some a := by
         have h := hedges (.inl PUnit.unit)
-        have hSort := wordSource_sort S tail
-        cases hSort
-        simpa [mid, tailPoint, wordEdgeSource,
-          wordEdgeTarget, wordEdgeAtom] using h
+        have hTyped :
+            S.colour (point none)
+              (tailPoint (wordSource S tail)) =
+              some ((wordSource_sort S tail).symm ▸ a) := by
+          simpa [tailPoint, wordEdgeSource,
+            wordEdgeTarget, wordEdgeAtom] using h
+        exact colour_cast_second S (wordSource_sort S tail) a
+          (point none) (tailPoint (wordSource S tail)) hTyped
       change ∃ y : X _, S.colour (point none) y = some a ∧
         PositiveWord.represented S tail y
           ((wordTarget_sort S tail) ▸ tailPoint (wordTarget S tail))
