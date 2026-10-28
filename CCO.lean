@@ -129,3 +129,7 @@ import CCO.RawExact.FanDirectColourConsistency
 import CCO.RawExact.RealTraceEndpoints
 
 import CCO.RawExact.FanDirectReferenceColour
+
+import CCO.RawExact.FunctionalAtomEdges
+import CCO.RawExact.FanNonrootRealization
+import CCO.RawExact.FanPuncturedDiagram
