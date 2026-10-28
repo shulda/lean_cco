@@ -104,8 +104,10 @@ parts. The author wrote this repair; I only reviewed and exercised it.
   symlink loops.
 - Cold missing modules require no pre-build repair. `--require-complete`
   requires every current source-reachable module and its trace after the build.
-  Targeted invalidation removes generated library/IR outputs for the identified
-  module and preserves source files and consistent siblings.
+  In an ordinary owned directory, targeted invalidation removes the identified
+  module's generated library/IR outputs and preserves consistent siblings.
+  Aliased directory cases use the safe whole-namespace clearing described above;
+  source files and external alias targets remain preserved.
 - Workflow ordering is repair, actual-input-hash compiler build,
   complete-closure guard, pinned official audit, final complete-closure guard.
   The revised workflow has one bounded clean-project-output fallback when the
