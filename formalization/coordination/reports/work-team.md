@@ -1,3 +1,21 @@
+# Work team — current coordination checkpoint
+
+B003 is ACCEPTED at STATE revision20. Exact reviewed head d1ea335256cb543e670580a2f2da712a76ca01d0 was merged preserving history as main68322c7b9196eaaad4abdc7f074e93bba64bfedb; actual resulting-main CI40695882842 passes57 tests,1037 jobs, full2069-declaration standard-three audit and158 actual artifact parts. Formal nonauthor report reviews/B003-final-d1ea335.md is published on this branch. No old project author was reused as reviewer.
+
+B002 is SUBMITTED at STATE revision21. Final head70d56cf20d8da4474629fc46b8ec548310838e17, tree3ca8c336f387218fd9d762a3cbf9d49b8182224b, equals fresh combined f01319e. It preserves the original branch, both original checkpoints/authorship and current ACCEPTED main683 as ancestry. Exact remote CI40696694928 is green:57 tests,1211 jobs, complete3657-declaration allowlist audit,317 actual output parts. Synthetic merge has the SAME tree and current-main parent. Complete mathematical source C06–C28 is implemented; formal exact-head approval/integration/resulting-main gates remain.
+
+The actual nonauthor whole review found a public C24/C28 universe restriction at75094 even though the underlying induction was already fully general. Repair1d3cc59 preserves the old theorem, exports triangle_fullness_general with independent formal vertex universe and generalizes BOTH triangle and CCO SourceProperties fields/full/singleton exports. A second entirely fresh independent reader forced ULift.{v+1}(Fin n), passed1023/2245/192 and retained the original pending finding plus repair in report-only chainf6→6c→abed. Canonical reviewer personally checked combined1211/3657/317/public316imports and higher-universe consumers; final remote approval is being recorded.
+
+Pure type PR8 is closed as superseded: its IDENTICAL ordinary CCO.AgeAP evidence type and consumer adaptation were reviewed and integrated inside the complete B003 batch, not as an unfinished theorem or extra integration. Both original H→AP proof bodies remain in their package modules. No source contract, pin, toolchain, manifest or accepted API changed.
+
+Additional cache hardening is separate infrastructure, not mathematical acceptance evidence: original consistent-byte/current-sourcehash stale-root witness remains untouched. New pinned Lean source/header checks detect it, require complete actual CCO import closure before and after official audit, validate source input hashes and actual audit search paths, and preserve byte checks. Controlled stale-child repair and legitimate symlink resolution regressions pass. Current infrastructure candidate285da06 on acceptedmain683 passes63 full tests and complete158-module/part check; final combined-main review/CI/integration remain pending. The original generation cause is explicitly unproved.
+
+Protocol3, default2 unresolved active batches, strict accepted dependencies, actual identities, exact CAS and single shared integration lock remain in force. STATE is the only live acceptance ledger. No B006/B017/third claim was made. B002 remains the only unresolved batch; current lock is free.
+
+Local pinned Lean4.34.1/Lake5.0.0 works. Cached repeat build1.310s and a new small import-CCO file1.900s were measured; CI includes setup, targeted external Mathlib cache, full tests/build and axiom audit (the earlier baseline main105s, complete source runs about2–3minutes). Thus local Lean is the development loop, exact remote CI the integration gate. The current complete source discovers31 actual external Mathlib roots; cache get CCO.lean is not used as an arbitrary CCO import traversal.
+
+## Earlier checkpoint history
+
 # Work team — current resumable checkpoint
 
 Protocol 3 is deployed; coordination STATE revision 15 is live, both original claims are owned by Work team project 3 and IN_PROGRESS. Original authors, heads, last-green checkpoints, history and both original PRs are retained. No batch is claimed complete by a green checkpoint. No B006/B017 or third slot has been claimed.
