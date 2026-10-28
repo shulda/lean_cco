@@ -60,8 +60,7 @@ theorem thetaArcs_reverse_closed
   obtain ⟨candidate, hCandidate, hMember⟩ :=
     List.mem_flatMap.mp hBranch
   have hCases : arc = candidate ∨ arc = candidate.reverse := by
-    simpa only [List.mem_cons, List.mem_singleton, or_false]
-      using hMember
+    simpa using hMember
   apply List.mem_flatMap.mpr
   refine ⟨b, hb, ?_⟩
   apply List.mem_flatMap.mpr
