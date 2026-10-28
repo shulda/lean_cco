@@ -113,14 +113,17 @@ noncomputable def thetaBranchEdgeAtom {i j : ι}
     (e : wordEdgeIndex S (ws.get b)) :
     S.Atom
       (thetaVertexSort S ws (thetaBranchEdgeSource S ws b e))
-      (thetaVertexSort S ws (thetaBranchEdgeTarget S ws b e)) := by
-  change S.Atom
-    (thetaVertexSort S ws
-      (thetaBranchPosition S ws b (wordEdgeSource S (ws.get b) e)))
-    (thetaVertexSort S ws
-      (thetaBranchPosition S ws b (wordEdgeTarget S (ws.get b) e)))
-  rw [thetaBranchPosition_sort S ws b (wordEdgeSource S (ws.get b) e)]
-  rw [thetaBranchPosition_sort S ws b (wordEdgeTarget S (ws.get b) e)]
-  exact wordEdgeAtom S (ws.get b) e
+      (thetaVertexSort S ws (thetaBranchEdgeTarget S ws b e)) :=
+  (thetaBranchPosition_sort S ws b (wordEdgeSource S (ws.get b) e)).symm ▸
+    ((thetaBranchPosition_sort S ws b (wordEdgeTarget S (ws.get b) e)).symm ▸
+      wordEdgeAtom S (ws.get b) e)
+
+theorem thetaBranchEdgeAtom_cast {i j : ι}
+    (ws : List (PositiveWord S i j)) (b : Fin ws.length)
+    (e : wordEdgeIndex S (ws.get b)) :
+    thetaBranchEdgeAtom S ws b e =
+      (thetaBranchPosition_sort S ws b (wordEdgeSource S (ws.get b) e)).symm ▸
+      ((thetaBranchPosition_sort S ws b (wordEdgeTarget S (ws.get b) e)).symm ▸
+        wordEdgeAtom S (ws.get b) e) := rfl
 
 end CCO.StrongExact
