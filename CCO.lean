@@ -155,3 +155,8 @@ import CCO.RawExact.FanVariableNonrootColour
 import CCO.RawExact.FanFullNonrootPreservation
 import CCO.RawExact.FanVariableRootSpoke
 import CCO.RawExact.FanTwoRootCycleEdges
+
+import CCO.RawExact.FanNoRootCycles
+import CCO.RawExact.FanTwoRootSpokes
+import CCO.RawExact.FanCycleThroughRoot
+import CCO.RawExact.FanAllCycles
