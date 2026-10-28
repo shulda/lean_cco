@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 81,
+  "revision": 82,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -586,7 +586,7 @@
       "owner_project_id": null
     },
     "B017": {
-      "state": "SUBMITTED",
+      "state": "REVIEWING",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b009_inheritance",
@@ -613,7 +613,19 @@
         "conclusion": "success",
         "axiom_audit": "allowlist"
       },
-      "report_path": "formalization/coordination/submissions/B017.md"
+      "report_path": "formalization/coordination/submissions/B017.md",
+      "review": {
+        "project_id": 3,
+        "actor_id": "independent_review",
+        "head_sha": "e31639914c818e9153603cd9db44d3dd737341b8",
+        "approved": false,
+        "independence": {
+          "identity": "/root/independent_review",
+          "non_author": true,
+          "summary": "Actual registered separate reviewer authored none of complete B017 source, production tests/helpers or implementation design. It personally read all32public modules and both pinned source proofs once, then only the one consumer-import delta, final docs, exact frozen content union and public-head CI/audit.",
+          "report_path": "formalization/coordination/reviews/B017-final.md"
+        }
+      }
     },
     "B018": {
       "state": "AVAILABLE",
@@ -2192,6 +2204,24 @@
         },
         "report_path": "formalization/coordination/submissions/B017.md",
         "actor_id": "root"
+      }
+    },
+    {
+      "revision": 82,
+      "project_id": 3,
+      "actor_id": "independent_review",
+      "event": "review",
+      "package_id": "B017",
+      "details": {
+        "package_id": "B017",
+        "head_sha": "e31639914c818e9153603cd9db44d3dd737341b8",
+        "independence": {
+          "identity": "/root/independent_review",
+          "non_author": true,
+          "summary": "Actual registered separate reviewer authored none of complete B017 source, production tests/helpers or implementation design. It personally read all32public modules and both pinned source proofs once, then only the one consumer-import delta, final docs, exact frozen content union and public-head CI/audit.",
+          "report_path": "formalization/coordination/reviews/B017-final.md"
+        },
+        "actor_id": "independent_review"
       }
     }
   ],
