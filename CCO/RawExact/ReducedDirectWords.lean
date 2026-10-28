@@ -1,4 +1,5 @@
 import CCO.RawExact.DirectEdgeMerging
+import CCO.RawExact.PathSkeleton
 import CCO.RawExact.WordOccurrences
 import Mathlib.Tactic
 
@@ -37,14 +38,14 @@ theorem zero_diversity_length_same_sort {i j : ι}
       simp only [diversityLength] at h
       omega
 
-theorem erase_zero_length_nil {i : ι}
-    (word : RawWord S i i) :
+theorem erase_zero_length_heq_nil {i j : ι}
+    (word : RawWord S i j) :
     diversityLength S word = 0 →
-      RawWord.eraseEquality S word = .nil i := by
+      HEq (RawWord.eraseEquality S word) (.nil i : RawWord S i i) := by
   induction word with
   | nil i =>
       intro _
-      rfl
+      exact HEq.rfl
   | identity tail ih =>
       exact ih
   | atom a tail ih =>
@@ -74,7 +75,8 @@ theorem erase_one_length_atom {i j : ι}
         omega
       have hEq := zero_diversity_length_same_sort S tail hTail
       cases hEq
-      have hNil := erase_zero_length_nil S tail hTail
+      have hNil : RawWord.eraseEquality S tail = .nil _ :=
+        eq_of_heq (erase_zero_length_heq_nil S tail hTail)
       refine ⟨a, ?_⟩
       simpa only [RawWord.eraseEquality, hNil]
 
