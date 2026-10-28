@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 21,
+  "revision": 22,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -24,7 +24,7 @@
       }
     },
     "B002": {
-      "state": "SUBMITTED",
+      "state": "REVIEWING",
       "owner_project_id": 3,
       "claim_revision": 2,
       "base_main_sha": "7527172215da51d21180a3c5dc624ce54e2869ee",
@@ -99,7 +99,19 @@
         "conclusion": "success",
         "axiom_audit": "allowlist"
       },
-      "report_path": "formalization/coordination/submissions/B002.md"
+      "report_path": "formalization/coordination/submissions/B002.md",
+      "review": {
+        "project_id": 3,
+        "actor_id": "independent_review",
+        "head_sha": "70d56cf20d8da4474629fc46b8ec548310838e17",
+        "approved": false,
+        "independence": {
+          "identity": "/root/independent_review",
+          "non_author": true,
+          "summary": "Registered control-only reviewer authored none of the original project 1 or Work-team Lean proofs, production code/tests or policy. It personally checked the entire C06–C28 source/provider/quantifier/consumer DAG, found and verified repair of the arbitrary-vertex-universe export seam, and checked exact remote CI while retaining the true second fresh reviewer identity.",
+          "report_path": "formalization/coordination/reviews/B002-final-70d56cf.md"
+        }
+      }
     },
     "B003": {
       "state": "ACCEPTED",
@@ -698,6 +710,24 @@
           "axiom_audit": "allowlist"
         },
         "actor_id": "root"
+      }
+    },
+    {
+      "revision": 22,
+      "project_id": 3,
+      "actor_id": "independent_review",
+      "event": "review",
+      "package_id": "B002",
+      "details": {
+        "package_id": "B002",
+        "head_sha": "70d56cf20d8da4474629fc46b8ec548310838e17",
+        "independence": {
+          "identity": "/root/independent_review",
+          "non_author": true,
+          "summary": "Registered control-only reviewer authored none of the original project 1 or Work-team Lean proofs, production code/tests or policy. It personally checked the entire C06–C28 source/provider/quantifier/consumer DAG, found and verified repair of the arbitrary-vertex-universe export seam, and checked exact remote CI while retaining the true second fresh reviewer identity.",
+          "report_path": "formalization/coordination/reviews/B002-final-70d56cf.md"
+        },
+        "actor_id": "independent_review"
       }
     }
   ],
