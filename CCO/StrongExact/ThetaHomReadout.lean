@@ -107,7 +107,7 @@ theorem thetaDiagramHom_represented_branch
         f.point (thetaBranchPosition S ws b
           (wordSource S (ws.get b)))) =
       f.point (thetaLeft S ws)
-    exact cast_at_equal_vertex S (thetaVertexSort S ws) f.point
+    exact cast_at_equal_vertex (thetaVertexSort S ws) f.point
       (thetaBranchPosition_source S ws b)
       (thetaBranchPosition_sort S ws b
         (wordSource S (ws.get b)))
@@ -122,7 +122,7 @@ theorem thetaDiagramHom_represented_branch
         f.point (thetaBranchPosition S ws b
           (wordTarget S (ws.get b)))) =
       f.point (thetaRight S ws)
-    exact cast_at_equal_vertex S (thetaVertexSort S ws) f.point
+    exact cast_at_equal_vertex (thetaVertexSort S ws) f.point
       (thetaBranchPosition_target S ws b)
       (thetaBranchPosition_sort S ws b
         (wordTarget S (ws.get b)))
