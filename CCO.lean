@@ -127,3 +127,4 @@ import CCO.StrongExact.ThetaCompatibleLines
 import CCO.StrongExact.ThetaCycleAdvanceAddition
 import CCO.StrongExact.ThetaCycleAdvanceReturn
 import CCO.StrongExact.ThetaCycleTwoArcIndexCover
+import CCO.StrongExact.ThetaCycleTwoLiteralLines
