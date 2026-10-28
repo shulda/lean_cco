@@ -1,4 +1,4 @@
-# Package catalogue — protocol 2
+# Package catalogue — protocol 3
 
 **Live allocation and acceptance:** branch `coordination`,
 `formalization/coordination/STATE.json`. This main-branch table is a
