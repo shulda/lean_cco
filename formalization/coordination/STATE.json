@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 109,
+  "revision": 110,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -590,6 +590,7 @@
       "state": "IN_PROGRESS",
       "owner_project_id": 3,
       "author_actor_ids": [
+        "/root/b009_fibres",
         "root"
       ],
       "original_author_project_ids": [
@@ -2894,6 +2895,20 @@
           "/root/b010_canonical",
           "/root/b010_canonical/even_walk",
           "/root/b010_canonical/coordinate_examples"
+        ],
+        "actor_id": "root"
+      }
+    },
+    {
+      "revision": 110,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "record_authorship",
+      "package_id": "B013",
+      "details": {
+        "package_id": "B013",
+        "author_actor_ids": [
+          "/root/b009_fibres"
         ],
         "actor_id": "root"
       }
