@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 13,
+  "revision": 14,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -222,36 +222,7 @@
       "owner_project_id": null
     }
   },
-  "integration_lock": {
-    "kind": "infrastructure",
-    "actor_id": "root",
-    "head_sha": "46eff13536816a02123a6abbd8e09a5ac6438e6a",
-    "base_main_sha": "268681538a669cd68442f3200ac682f570e7143e",
-    "pr_number": 7,
-    "review": {
-      "actor_id": "independent_review",
-      "head_sha": "46eff13536816a02123a6abbd8e09a5ac6438e6a",
-      "approved": true,
-      "summary": "Fresh actual nonauthor control independently reviewed actual external-root traversal, pinned output hashing of all CCO root/child olean parts, bounded stale-module invalidation, materialization and pre/post audit workflow. Source tree equals reviewed current-main0eb; 57 remote tests pass. Actual changed-root/child/cross-worktree and deterministic current-trace stale-output recovery were examined without claiming original copy cause proved. Remote40684208315 verifies real earlier-key cache restore,32 consistent parts before/after,775-job build and unchanged647-declaration allowlist audit; synthetic tree equals exact14845e20.",
-      "independence": {
-        "identity": "/root/independent_review",
-        "non_author": true,
-        "summary": "Fresh control-only reviewer wrote none of the cache workflow, parser, hash helper, validation/repair code, tests or mathematical implementation. Its involvement was independent code/source review and adversarial checks; implementation authors made every change.",
-        "report_path": "formalization/coordination/reviews/incremental-cache-guard.md"
-      }
-    },
-    "ci": {
-      "head_sha": "46eff13536816a02123a6abbd8e09a5ac6438e6a",
-      "run_id": 40684208315,
-      "conclusion": "success",
-      "axiom_audit": "allowlist"
-    },
-    "author_actor_ids": [
-      "root",
-      "/root/runtime_imports"
-    ],
-    "original_author_project_ids": []
-  },
+  "integration_lock": null,
   "history": [
     {
       "revision": 1,
@@ -547,6 +518,23 @@
           }
         }
       }
+    },
+    {
+      "revision": 14,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "finish_infrastructure",
+      "package_id": null,
+      "details": {
+        "actor_id": "root",
+        "integration_commit": "2ccbbed4ef354a4af8a175ae5e3e9421b8a8c448",
+        "main_ci": {
+          "head_sha": "2ccbbed4ef354a4af8a175ae5e3e9421b8a8c448",
+          "run_id": 40686003111,
+          "conclusion": "success",
+          "axiom_audit": "allowlist"
+        }
+      }
     }
   ],
   "infrastructure_integrations": [
@@ -623,6 +611,43 @@
       "main_ci": {
         "head_sha": "268681538a669cd68442f3200ac682f570e7143e",
         "run_id": 40679698989,
+        "conclusion": "success",
+        "axiom_audit": "allowlist"
+      }
+    },
+    {
+      "kind": "infrastructure",
+      "actor_id": "root",
+      "head_sha": "46eff13536816a02123a6abbd8e09a5ac6438e6a",
+      "base_main_sha": "268681538a669cd68442f3200ac682f570e7143e",
+      "pr_number": 7,
+      "review": {
+        "actor_id": "independent_review",
+        "head_sha": "46eff13536816a02123a6abbd8e09a5ac6438e6a",
+        "approved": true,
+        "summary": "Fresh actual nonauthor control independently reviewed actual external-root traversal, pinned output hashing of all CCO root/child olean parts, bounded stale-module invalidation, materialization and pre/post audit workflow. Source tree equals reviewed current-main0eb; 57 remote tests pass. Actual changed-root/child/cross-worktree and deterministic current-trace stale-output recovery were examined without claiming original copy cause proved. Remote40684208315 verifies real earlier-key cache restore,32 consistent parts before/after,775-job build and unchanged647-declaration allowlist audit; synthetic tree equals exact14845e20.",
+        "independence": {
+          "identity": "/root/independent_review",
+          "non_author": true,
+          "summary": "Fresh control-only reviewer wrote none of the cache workflow, parser, hash helper, validation/repair code, tests or mathematical implementation. Its involvement was independent code/source review and adversarial checks; implementation authors made every change.",
+          "report_path": "formalization/coordination/reviews/incremental-cache-guard.md"
+        }
+      },
+      "ci": {
+        "head_sha": "46eff13536816a02123a6abbd8e09a5ac6438e6a",
+        "run_id": 40684208315,
+        "conclusion": "success",
+        "axiom_audit": "allowlist"
+      },
+      "author_actor_ids": [
+        "root",
+        "/root/runtime_imports"
+      ],
+      "original_author_project_ids": [],
+      "integration_commit": "2ccbbed4ef354a4af8a175ae5e3e9421b8a8c448",
+      "main_ci": {
+        "head_sha": "2ccbbed4ef354a4af8a175ae5e3e9421b8a8c448",
+        "run_id": 40686003111,
         "conclusion": "success",
         "axiom_audit": "allowlist"
       }
