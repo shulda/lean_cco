@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 41,
+  "revision": 42,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -269,7 +269,7 @@
       "owner_project_id": null
     },
     "B006": {
-      "state": "INTEGRATING",
+      "state": "ACCEPTED",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b006_parity",
@@ -310,6 +310,13 @@
           "report_path": "formalization/coordination/reviews/B006-final.md"
         },
         "summary": "Personally approved full exact feee80c C01–14/SIR C15–19: elementary finite probability/Laplace/Markov and real sparse graph existence, actual full invariant equivalences and real quotient-class transposition/indices, actual CCO orbital bipartiteness and positive RAW parity seed, full nonexact Hasse induction and all finite indices power-two, original definability and POINTWISE named-base SIR obstruction. All graph/Hasse providers genuinely discharged from final H+CCO source exports; no SAP/countability/Helly/Erdos/Chernoff axiom. Exact remote40718690808 verifies67/2371/4709standard3/368bytes+SOURCE; synthetic tree equals frozen union and current ACCEPTED main026 ancestry. One whole source review and no repeated author build."
+      },
+      "accepted_commit": "21381f6095d3b2787e3e248e5ea244180a66f06f",
+      "main_ci": {
+        "head_sha": "21381f6095d3b2787e3e248e5ea244180a66f06f",
+        "run_id": 40719464681,
+        "conclusion": "success",
+        "axiom_audit": "allowlist"
       }
     },
     "B007": {
@@ -365,13 +372,7 @@
       "owner_project_id": null
     }
   },
-  "integration_lock": {
-    "kind": "package",
-    "package_id": "B006",
-    "actor_id": "root",
-    "base_main_sha": "02643571e6f49b3f5833ac34ce7c1820a38b8d36",
-    "head_sha": "feee80c97272576a0c1fa83800e50e916f916f27"
-  },
+  "integration_lock": null,
   "history": [
     {
       "revision": 1,
@@ -1169,6 +1170,24 @@
         "ci": {
           "head_sha": "feee80c97272576a0c1fa83800e50e916f916f27",
           "run_id": 40718690808,
+          "conclusion": "success",
+          "axiom_audit": "allowlist"
+        },
+        "actor_id": "root"
+      }
+    },
+    {
+      "revision": 42,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "accept",
+      "package_id": "B006",
+      "details": {
+        "package_id": "B006",
+        "integration_commit": "21381f6095d3b2787e3e248e5ea244180a66f06f",
+        "main_ci": {
+          "head_sha": "21381f6095d3b2787e3e248e5ea244180a66f06f",
+          "run_id": 40719464681,
           "conclusion": "success",
           "axiom_audit": "allowlist"
         },
