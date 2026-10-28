@@ -1,4 +1,6 @@
 import CCO.DiagramNeighbours
+import Mathlib.Data.Finset.Filter
+import Mathlib.Data.Fintype.EquivFin
 
 /-!
 # SAP injectivization of finite partial diversity-diagram homomorphisms

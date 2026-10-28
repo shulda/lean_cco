@@ -1,4 +1,7 @@
 import CCO.TypedRelation
+import Mathlib.Data.Fintype.Basic
+import Mathlib.Data.Set.Lattice
+import Mathlib.Tactic.Ext
 
 /-!
 # Actual finite atomic colourings and diversity menus
