@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 9,
+  "revision": 10,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -220,39 +220,7 @@
       "owner_project_id": null
     }
   },
-  "integration_lock": {
-    "kind": "infrastructure",
-    "actor_id": "root",
-    "head_sha": "6f8609c4b1f168a48ce67bc920d1a2813a1709cb",
-    "base_main_sha": "97211488e4ac166a4b0650953363a0c3cb7614f5",
-    "pr_number": 5,
-    "review": {
-      "actor_id": "independent_review",
-      "head_sha": "6f8609c4b1f168a48ce67bc920d1a2813a1709cb",
-      "approved": true,
-      "summary": "Fresh actual non-author control compared all31 shared CCO module bodies excluding imports, original and refreshed10-file diffs and source/toolchain/manifest/root closure. Independently checked B003 compatibility full1009 build/audit1464 and B002 exact inherited-error comparison after45 consumer imports/41 umbrella cleanup. Refreshed remote head6f8609c4 has currentmain972 ancestor; syntheticCI tree equals exact50e81bde; run40678651642 passes48tests,775jobs and647-declaration allowlist audit. No mathematical package completion inferred.",
-      "independence": {
-        "identity": "/root/independent_review",
-        "non_author": true,
-        "summary": "The actual fresh control-only reviewer authored none of PR5, the original project1/project2 implementation, consumer import fixes or reviewed mathematical proofs. It independently inspected code, bodies, exact refs, source fidelity and CI/audit; no renamed old author is reused.",
-        "report_path": "formalization/coordination/reviews/targeted-imports.md"
-      }
-    },
-    "ci": {
-      "head_sha": "6f8609c4b1f168a48ce67bc920d1a2813a1709cb",
-      "run_id": 40678651642,
-      "conclusion": "success",
-      "axiom_audit": "allowlist"
-    },
-    "author_actor_ids": [
-      "source-preparation-project",
-      "root",
-      "/root/runtime_imports"
-    ],
-    "original_author_project_ids": [
-      0
-    ]
-  },
+  "integration_lock": null,
   "history": [
     {
       "revision": 1,
@@ -456,6 +424,23 @@
           }
         }
       }
+    },
+    {
+      "revision": 10,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "finish_infrastructure",
+      "package_id": null,
+      "details": {
+        "actor_id": "root",
+        "integration_commit": "268681538a669cd68442f3200ac682f570e7143e",
+        "main_ci": {
+          "head_sha": "268681538a669cd68442f3200ac682f570e7143e",
+          "run_id": 40679698989,
+          "conclusion": "success",
+          "axiom_audit": "allowlist"
+        }
+      }
     }
   ],
   "infrastructure_integrations": [
@@ -492,6 +477,46 @@
       "main_ci": {
         "head_sha": "97211488e4ac166a4b0650953363a0c3cb7614f5",
         "run_id": 40678346544,
+        "conclusion": "success",
+        "axiom_audit": "allowlist"
+      }
+    },
+    {
+      "kind": "infrastructure",
+      "actor_id": "root",
+      "head_sha": "6f8609c4b1f168a48ce67bc920d1a2813a1709cb",
+      "base_main_sha": "97211488e4ac166a4b0650953363a0c3cb7614f5",
+      "pr_number": 5,
+      "review": {
+        "actor_id": "independent_review",
+        "head_sha": "6f8609c4b1f168a48ce67bc920d1a2813a1709cb",
+        "approved": true,
+        "summary": "Fresh actual non-author control compared all31 shared CCO module bodies excluding imports, original and refreshed10-file diffs and source/toolchain/manifest/root closure. Independently checked B003 compatibility full1009 build/audit1464 and B002 exact inherited-error comparison after45 consumer imports/41 umbrella cleanup. Refreshed remote head6f8609c4 has currentmain972 ancestor; syntheticCI tree equals exact50e81bde; run40678651642 passes48tests,775jobs and647-declaration allowlist audit. No mathematical package completion inferred.",
+        "independence": {
+          "identity": "/root/independent_review",
+          "non_author": true,
+          "summary": "The actual fresh control-only reviewer authored none of PR5, the original project1/project2 implementation, consumer import fixes or reviewed mathematical proofs. It independently inspected code, bodies, exact refs, source fidelity and CI/audit; no renamed old author is reused.",
+          "report_path": "formalization/coordination/reviews/targeted-imports.md"
+        }
+      },
+      "ci": {
+        "head_sha": "6f8609c4b1f168a48ce67bc920d1a2813a1709cb",
+        "run_id": 40678651642,
+        "conclusion": "success",
+        "axiom_audit": "allowlist"
+      },
+      "author_actor_ids": [
+        "source-preparation-project",
+        "root",
+        "/root/runtime_imports"
+      ],
+      "original_author_project_ids": [
+        0
+      ],
+      "integration_commit": "268681538a669cd68442f3200ac682f570e7143e",
+      "main_ci": {
+        "head_sha": "268681538a669cd68442f3200ac682f570e7143e",
+        "run_id": 40679698989,
         "conclusion": "success",
         "axiom_audit": "allowlist"
       }
