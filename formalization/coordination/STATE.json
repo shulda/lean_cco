@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 52,
+  "revision": 53,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -337,7 +337,7 @@
       }
     },
     "B007": {
-      "state": "INTEGRATING",
+      "state": "ACCEPTED",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b007_relative",
@@ -375,6 +375,13 @@
           "report_path": "formalization/coordination/reviews/B007-final.md"
         },
         "summary": "Actual registered non-author /root/independent_review personally approves whole C15–26 at exact7e2d10d: genuine K-zero stable exact closures and least positive witnesses, outer-factor saturation and three-domain RAW support Helly separation including m=n=1; independent full original index-two/maximal exact gate geometry and all original exact dominance; literal actual quotient AtomicSource/RawWords full exact pullback, fixed-point-free equivariant single-orbital involution and every nonidentity quotient exact equivalence dominance, with genuine original bridge/source consumers. Real t nonfunctionality remains explicit. No Hasse/CRT/ball Helly substitute or remaining provider/stronger premise. Exact remote40726006377 verifies67tests/2383jobs/5010standard3audit/380actualbytes AND380SOURCE pre/post. Final tree8cb995 equals reviewed owner0f20/current accepted213 ancestry. One whole source review; durable B007-final.md records actual identity and evidence."
+      },
+      "accepted_commit": "3a91b5da4006bd9ecc6805061d3942cd63ea7007",
+      "main_ci": {
+        "head_sha": "3a91b5da4006bd9ecc6805061d3942cd63ea7007",
+        "run_id": 40727101886,
+        "conclusion": "success",
+        "axiom_audit": "allowlist"
       }
     },
     "B008": {
@@ -442,13 +449,7 @@
       "owner_project_id": null
     }
   },
-  "integration_lock": {
-    "kind": "package",
-    "package_id": "B007",
-    "actor_id": "root",
-    "base_main_sha": "21381f6095d3b2787e3e248e5ea244180a66f06f",
-    "head_sha": "7e2d10d94ce2cee6c25d1f9b9dd6616554cd4fee"
-  },
+  "integration_lock": null,
   "history": [
     {
       "revision": 1,
@@ -1468,6 +1469,24 @@
         "ci": {
           "head_sha": "7e2d10d94ce2cee6c25d1f9b9dd6616554cd4fee",
           "run_id": 40726006377,
+          "conclusion": "success",
+          "axiom_audit": "allowlist"
+        },
+        "actor_id": "root"
+      }
+    },
+    {
+      "revision": 53,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "accept",
+      "package_id": "B007",
+      "details": {
+        "package_id": "B007",
+        "integration_commit": "3a91b5da4006bd9ecc6805061d3942cd63ea7007",
+        "main_ci": {
+          "head_sha": "3a91b5da4006bd9ecc6805061d3942cd63ea7007",
+          "run_id": 40727101886,
           "conclusion": "success",
           "axiom_audit": "allowlist"
         },
