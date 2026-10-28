@@ -1,5 +1,4 @@
 import CCO.Finite
-import Mathlib.Tactic.Omega
 
 /-!
 # Finite genuine simple-cycle index predecessors

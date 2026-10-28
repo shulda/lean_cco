@@ -26,13 +26,12 @@ theorem thetaBranchPosition_eq_private_rank
       (.inr ⟨c,p⟩ : thetaVertices S ws)) :
     b = c ∧ wordPositionRank S (ws.get b) q =
       wordPositionRank S (ws.get c) p.val := by
+  have hpos : thetaBranchPosition S ws c p.val =
+      thetaBranchPosition S ws b q := by
+    rw [thetaBranchPosition_interior S ws c p]
+    exact he.symm
   have hcb : c = b :=
-    private_embedded_position_same_branch S ws c b p q (by
-      calc
-        thetaBranchPosition S ws c p.val =
-            (.inr ⟨c,p⟩ : thetaVertices S ws) :=
-          thetaBranchPosition_interior S ws c p
-        _ = thetaBranchPosition S ws b q := he.symm)
+    private_embedded_position_same_branch S ws c b p q hpos
   subst c
   have hq : q = p.val :=
     (thetaBranchPosition_injective S ws b)
