@@ -133,3 +133,11 @@ import CCO.RawExact.FanDirectReferenceColour
 import CCO.RawExact.FunctionalAtomEdges
 import CCO.RawExact.FanNonrootRealization
 import CCO.RawExact.FanPuncturedDiagram
+
+import CCO.RawExact.FanRootSpokeUniqueness
+import CCO.RawExact.FanRootSpokeExistence
+import CCO.RawExact.FanRootSpokeChoice
+import CCO.RawExact.FanPuncturedSupport
+import CCO.RawExact.FanFullDiagram
+import CCO.RawExact.FanCycleAvoidance
+import CCO.RawExact.WalkColourAtIndex
