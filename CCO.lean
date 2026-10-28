@@ -366,6 +366,23 @@ import CCO.ParityHasse.Sparse.LabelLaw
 import CCO.ParityHasse.Sparse.Labelled
 import CCO.ParityHasse.Sparse.Statements
 
+import CCO.ExactCRT.AbstractCRT
+import CCO.ExactCRT.AbstractCoordinates
+import CCO.ExactCRT.AbstractFibreProduct
+import CCO.ExactCRT.AbstractHelly
+import CCO.ExactCRT.AbstractRelations
+import CCO.ExactCRT.CanonicalTypedQuotients
+import CCO.ExactCRT.Descent
+import CCO.ExactCRT.ExactLattice
+import CCO.ExactCRT.ExactWordDistribution
+import CCO.ExactCRT.FineColourReadout
+import CCO.ExactCRT.FiniteOrder
+import CCO.ExactCRT.Intertwining
+import CCO.ExactCRT.ProjectedWords
+import CCO.ExactCRT.SameSortDescent
+import CCO.ExactCRT.SourceLattice
+import CCO.ExactCRT.TypedPalette
+import CCO.ExactCRT.TypedPullback
 import CCO.ParityHasse.Relative.Algebra
 import CCO.ParityHasse.Relative.Exact
 import CCO.ParityHasse.Relative.Examples
