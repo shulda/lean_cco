@@ -103,3 +103,5 @@ import CCO.RawExact.FanDegreeTwo
 import CCO.RawExact.ReferencePositions
 
 import CCO.RawExact.CertifiedWalkChain
+
+import CCO.RawExact.FanSortCompatibility
