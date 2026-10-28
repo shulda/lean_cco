@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 51,
+  "revision": 52,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -337,7 +337,7 @@
       }
     },
     "B007": {
-      "state": "REVIEWING",
+      "state": "INTEGRATING",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b007_relative",
@@ -442,7 +442,13 @@
       "owner_project_id": null
     }
   },
-  "integration_lock": null,
+  "integration_lock": {
+    "kind": "package",
+    "package_id": "B007",
+    "actor_id": "root",
+    "base_main_sha": "21381f6095d3b2787e3e248e5ea244180a66f06f",
+    "head_sha": "7e2d10d94ce2cee6c25d1f9b9dd6616554cd4fee"
+  },
   "history": [
     {
       "revision": 1,
@@ -1446,6 +1452,26 @@
         "head_sha": "7e2d10d94ce2cee6c25d1f9b9dd6616554cd4fee",
         "summary": "Actual registered non-author /root/independent_review personally approves whole C15–26 at exact7e2d10d: genuine K-zero stable exact closures and least positive witnesses, outer-factor saturation and three-domain RAW support Helly separation including m=n=1; independent full original index-two/maximal exact gate geometry and all original exact dominance; literal actual quotient AtomicSource/RawWords full exact pullback, fixed-point-free equivariant single-orbital involution and every nonidentity quotient exact equivalence dominance, with genuine original bridge/source consumers. Real t nonfunctionality remains explicit. No Hasse/CRT/ball Helly substitute or remaining provider/stronger premise. Exact remote40726006377 verifies67tests/2383jobs/5010standard3audit/380actualbytes AND380SOURCE pre/post. Final tree8cb995 equals reviewed owner0f20/current accepted213 ancestry. One whole source review; durable B007-final.md records actual identity and evidence.",
         "actor_id": "independent_review"
+      }
+    },
+    {
+      "revision": 52,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "start_integration",
+      "package_id": "B007",
+      "details": {
+        "package_id": "B007",
+        "head_sha": "7e2d10d94ce2cee6c25d1f9b9dd6616554cd4fee",
+        "base_main_sha": "21381f6095d3b2787e3e248e5ea244180a66f06f",
+        "head_contains_main": true,
+        "ci": {
+          "head_sha": "7e2d10d94ce2cee6c25d1f9b9dd6616554cd4fee",
+          "run_id": 40726006377,
+          "conclusion": "success",
+          "axiom_audit": "allowlist"
+        },
+        "actor_id": "root"
       }
     }
   ],
