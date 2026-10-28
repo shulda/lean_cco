@@ -56,7 +56,6 @@ theorem pathInterior_exactly_two_neighbours {i j : ι}
   · change p.val + 1 = after.val ∨ after.val + 1 = p.val
     left
     dsimp [after]
-    omega
   · intro q hAdj
     change p.val + 1 = q.val ∨ q.val + 1 = p.val at hAdj
     rcases hAdj with hPlus | hMinus
