@@ -59,16 +59,13 @@ theorem realWalkTrace_certified {i j : ι}
       (realWalkTrace S h) (rawAtomicSteps S word) := by
   induction h with
   | nil x =>
-      exact TypedWalkCertificate.singleton S (⟨_, x⟩ : Sigma X)
+      exact TypedWalkCertificate.singleton (⟨_, x⟩ : Sigma X)
   | identity tail ih =>
       simpa only [realWalkTrace, rawAtomicSteps] using ih
   | atom a edge rest ih =>
       obtain ⟨pts, hpts⟩ := realWalkTrace_cons S rest
       rw [hpts] at ih
-      change TypedWalkCertificate S
-        ((⟨_, x⟩ : Sigma X) :: realWalkTrace S rest)
-        ((⟨_, _, a⟩ : TypedAtomicStep S) :: rawAtomicSteps S tail)
-      rw [hpts]
-      exact TypedWalkCertificate.step S x _ a edge ih
+      simpa only [realWalkTrace, rawAtomicSteps, hpts] using
+        (TypedWalkCertificate.step x _ a edge ih)
 
 end CCO.RawExact
