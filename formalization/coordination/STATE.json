@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 100,
+  "revision": 101,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -627,7 +627,7 @@
       }
     },
     "B016": {
-      "state": "INTEGRATING",
+      "state": "ACCEPTED",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b016_phase",
@@ -666,6 +666,13 @@
           "report_path": "formalization/coordination/reviews/B016-final.md"
         },
         "summary": "Actual registered nonauthor personally approves rigid_groupoid C19–31: independent finite maximal AFFINE subgroup cardinality and explicit K-union-(a+K) contradiction proves C19 with no relational premise; actual whole-arrow rigid support, unique isotropy torsor coefficients and OLD exact-menu support Helly discharge translateHelly. Affine coset D-converse;D equals actual subgroup arrow UNION and is proved FULL RAW exact. Factorisation constructs first bridge/intermediate gate and fills second via represented coseriality, with no already-reached middle assumption. Independent abstract characters/connectors/transports/free orbit global markings/finite seeds C24–30 retain exact premises, empty/singleton sourcebits and equality consistency. Actual C31 supplies reached free functor, finite F2 isotropy, root detecting character with explicit t-star only as required, actual original-action quotient orbital classification and both GLOBAL phase alternatives, realpoint pullback/reductsurjectivity/seed consumer; original rootkernel cast preserves exact represented relation. No marked AP/SAP/CCO, section, preferred phase or moving-owner projection provider. Every source obligation/consumer closes. ONE whole15read plus ONLY final0256docs, exact B010/B016 nonroot union/root539/public350890tree23362 and successful exact CI personally verified in B016-final.md; source/contracts/acceptedAPI/toolchain/manifest unchanged."
+      },
+      "accepted_commit": "df02e734b6245aad006487a0a2071caaabe69524",
+      "main_ci": {
+        "head_sha": "df02e734b6245aad006487a0a2071caaabe69524",
+        "run_id": 40754567438,
+        "conclusion": "success",
+        "axiom_audit": "allowlist"
       }
     },
     "B017": {
@@ -743,13 +750,7 @@
       }
     }
   },
-  "integration_lock": {
-    "kind": "package",
-    "package_id": "B016",
-    "actor_id": "root",
-    "base_main_sha": "dd6ddf721e39b3e618409ebc8ecb82aed4bc1e00",
-    "head_sha": "350890e595797c53cb857a60dd5bd75d8f6c956f"
-  },
+  "integration_lock": null,
   "history": [
     {
       "revision": 1,
@@ -2672,6 +2673,24 @@
         "ci": {
           "head_sha": "350890e595797c53cb857a60dd5bd75d8f6c956f",
           "run_id": 40752963088,
+          "conclusion": "success",
+          "axiom_audit": "allowlist"
+        },
+        "actor_id": "root"
+      }
+    },
+    {
+      "revision": 101,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "accept",
+      "package_id": "B016",
+      "details": {
+        "package_id": "B016",
+        "integration_commit": "df02e734b6245aad006487a0a2071caaabe69524",
+        "main_ci": {
+          "head_sha": "df02e734b6245aad006487a0a2071caaabe69524",
+          "run_id": 40754567438,
           "conclusion": "success",
           "axiom_audit": "allowlist"
         },
