@@ -86,5 +86,76 @@ theorem thetaCycle_right_next_private
     exact thetaAdjacent_no_root_pair S ws hLong hBad
   exact thetaVertex_private_of_ne_roots S ws (C.vertices q)
     hNotLeft hNotRight
+/-- The cyclic predecessor of the left root is also a private
+word vertex. The old specified edge is read in reverse orientation. -/
+theorem thetaCycle_left_prev_private
+    (ws : List (PositiveWord S i j))
+    (hLong : ∀ a : S.Atom i j,
+      (PositiveWord.single a : PositiveWord S i j) ∉ ws)
+    (C : SimpleCycle ((thetaEdgesOfLong S ws hLong).toDiagram))
+    (p : Fin C.length)
+    (hp : C.vertices p = thetaLeft S ws) :
+    ∃ b : Fin ws.length, ∃ t : wordInterior S (ws.get b),
+      C.vertices (cyclicPrev C.length_pos p) =
+        (.inr ⟨b,t⟩ : thetaVertices S ws) := by
+  let prev := cyclicPrev C.length_pos p
+  have hAdj : thetaAdjacent S ws (C.vertices prev) (C.vertices p) := by
+    have he := (thetaEdgesOfLong_edge_iff_arc S ws hLong
+      (C.vertices prev) (C.vertices (cyclicNext C.length_pos prev))
+      (C.next_ne prev)).mp (C.specified prev)
+    simpa only [prev, cyclicNext_prev] using he
+  have hNotLeft : C.vertices prev ≠ thetaLeft S ws := by
+    intro h
+    apply C.next_ne prev
+    calc
+      C.vertices prev = thetaLeft S ws := h
+      _ = C.vertices p := hp.symm
+      _ = C.vertices (cyclicNext C.length_pos prev) := by
+        simp only [prev, cyclicNext_prev]
+  have hNotRight : C.vertices prev ≠ thetaRight S ws := by
+    intro h
+    have hBad : thetaAdjacent S ws (thetaLeft S ws)
+        (thetaRight S ws) := by
+      apply thetaAdjacent_symmetric S ws
+      simpa only [h, hp] using hAdj
+    exact thetaAdjacent_no_root_pair S ws hLong hBad
+  exact thetaVertex_private_of_ne_roots S ws (C.vertices prev)
+    hNotLeft hNotRight
+
+/-- Symmetrically, a simple cycle cannot enter the right root
+directly from the other root. -/
+theorem thetaCycle_right_prev_private
+    (ws : List (PositiveWord S i j))
+    (hLong : ∀ a : S.Atom i j,
+      (PositiveWord.single a : PositiveWord S i j) ∉ ws)
+    (C : SimpleCycle ((thetaEdgesOfLong S ws hLong).toDiagram))
+    (p : Fin C.length)
+    (hp : C.vertices p = thetaRight S ws) :
+    ∃ b : Fin ws.length, ∃ t : wordInterior S (ws.get b),
+      C.vertices (cyclicPrev C.length_pos p) =
+        (.inr ⟨b,t⟩ : thetaVertices S ws) := by
+  let prev := cyclicPrev C.length_pos p
+  have hAdj : thetaAdjacent S ws (C.vertices prev) (C.vertices p) := by
+    have he := (thetaEdgesOfLong_edge_iff_arc S ws hLong
+      (C.vertices prev) (C.vertices (cyclicNext C.length_pos prev))
+      (C.next_ne prev)).mp (C.specified prev)
+    simpa only [prev, cyclicNext_prev] using he
+  have hNotRight : C.vertices prev ≠ thetaRight S ws := by
+    intro h
+    apply C.next_ne prev
+    calc
+      C.vertices prev = thetaRight S ws := h
+      _ = C.vertices p := hp.symm
+      _ = C.vertices (cyclicNext C.length_pos prev) := by
+        simp only [prev, cyclicNext_prev]
+  have hNotLeft : C.vertices prev ≠ thetaLeft S ws := by
+    intro h
+    have hBad : thetaAdjacent S ws (thetaLeft S ws)
+        (thetaRight S ws) := by
+      simpa only [h, hp] using hAdj
+    exact thetaAdjacent_no_root_pair S ws hLong hBad
+  exact thetaVertex_private_of_ne_roots S ws (C.vertices prev)
+    hNotLeft hNotRight
+
 
 end CCO.StrongExact
