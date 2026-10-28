@@ -1,5 +1,6 @@
 import CCO.RawExact.AtomicFanDuplicates
 import CCO.RawExact.AtomicExact
+import CCO.RawExact.DistinctCentres
 
 /-!
 # B002 C12: genuinely merge duplicate private length-one edges
