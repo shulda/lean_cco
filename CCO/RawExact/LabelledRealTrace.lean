@@ -66,6 +66,6 @@ theorem realWalkTrace_certified {i j : ι}
       obtain ⟨pts, hpts⟩ := realWalkTrace_cons S rest
       rw [hpts] at ih
       simpa only [realWalkTrace, rawAtomicSteps, hpts] using
-        (TypedWalkCertificate.step x _ a edge ih)
+        (TypedWalkCertificate.step _ _ a edge ih)
 
 end CCO.RawExact
