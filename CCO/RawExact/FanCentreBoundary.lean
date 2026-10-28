@@ -98,4 +98,65 @@ theorem privateFan_centre_path_edges_are_last_steps
     privateFanAt_old_centre_only_at_finish S D centres o q c hc.symm
   exact ⟨o, p, q, hq, hCentre, hpq, hv⟩
 
+/-- In the actual PRIVATE fan the global root is adjacent to a
+marked centre exactly when some listed reduced word occurrence has
+ONE genuine diversity edge to that actual tagged centre. Identity
+letters do not produce spurious direct edges. The statement is valid
+with repeated centre values and repeated occurrences. -/
+theorem privateFan_root_centre_adjacent_iff_direct
+    (D : ∀ t : I, NonemptyExact S root (sort t))
+    (centres : ∀ t : I, X (sort t))
+    (c : DistinctCentres sort centres) :
+    privateFanAdjacent S D centres
+      (privateFanRoot S D centres)
+      (privateFanCentre S D centres c) ↔
+    ∃ o : WordOccurrence S D,
+      toDistinctCentre sort centres o.1 = c ∧
+      diversityLength S (occurrenceWord S D o) = 1 := by
+  constructor
+  · intro hAdj
+    obtain ⟨o, q, hq, hv⟩ :=
+      privateFan_root_edges_are_first_steps S D centres
+        (privateFanCentre S D centres c) hAdj
+    obtain ⟨_, hFinish, hc⟩ :=
+      privateFanAt_old_centre_only_at_finish S D centres o q c hv.symm
+    refine ⟨o, hc, ?_⟩
+    have hVal := congrArg Fin.val hFinish
+    change q.val = diversityLength S (occurrenceWord S D o) at hVal
+    omega
+  · rintro ⟨o, hc, hLength⟩
+    have hPositive : 0 < diversityLength S (occurrenceWord S D o) := by
+      omega
+    have hPath : pathAdjacent S (occurrenceWord S D o)
+        (pathStart S (occurrenceWord S D o))
+        (pathFinish S (occurrenceWord S D o)) :=
+      (pathAdjacent_endpoints_iff_single_atom S
+        (occurrenceWord S D o)).mpr hLength
+    have hGraph := privateFan_path_edge S D centres o
+      (pathStart S (occurrenceWord S D o))
+      (pathFinish S (occurrenceWord S D o)) hPath
+    rw [privateFanAt_start S D centres o,
+      privateFanAt_finish S D centres o hPositive, hc] at hGraph
+    exact hGraph
+
+/-- The old marked-centre subgraph remains a COMPLETE simple graph:
+centre--centre edges exist precisely for different actual tagged
+points. No private-word artefact can create a self-edge. -/
+theorem privateFan_centre_centre_adjacent_iff_ne
+    (D : ∀ t : I, NonemptyExact S root (sort t))
+    (centres : ∀ t : I, X (sort t))
+    (c d : DistinctCentres sort centres) :
+    privateFanAdjacent S D centres
+      (privateFanCentre S D centres c)
+      (privateFanCentre S D centres d) ↔ c ≠ d := by
+  constructor
+  · intro hAdj
+    intro hEq
+    subst d
+    exact privateFanAdjacent_irrefl S D centres
+      (privateFanCentre S D centres c) hAdj
+  · intro hNe
+    exact privateFan_centres_adjacent S D centres c d hNe
+
+
 end CCO.RawExact
