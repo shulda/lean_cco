@@ -83,3 +83,5 @@ import CCO.StrongExact.ThetaCyclicIndex
 import CCO.StrongExact.ThetaPrivateRankReadout
 import CCO.StrongExact.ThetaCycleLocal
 import CCO.StrongExact.ThetaCycleContainsRoot
+import CCO.StrongExact.ThetaExceptRightRank
+import CCO.StrongExact.ThetaCycleContainsRight
