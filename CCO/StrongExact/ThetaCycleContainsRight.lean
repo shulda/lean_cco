@@ -52,7 +52,8 @@ theorem thetaCycle_contains_right
         | true =>
             exact False.elim ((hNoRight p) (by simpa only [thetaRight] using hp))
     | inr x =>
-        exact ⟨x.1,x.2,hp⟩
+        refine ⟨x.1, x.2, ?_⟩
+        simpa only [Prod.mk.eta] using hp
   have hSomePrivate : ∃ p : Fin C.length,
       ∃ b : Fin ws.length, ∃ inner : wordInterior S (ws.get b),
         C.vertices p = (.inr ⟨b,inner⟩ : thetaVertices S ws) := by
@@ -81,6 +82,7 @@ theorem thetaCycle_contains_right
   have hpLeft : C.vertices p ≠ thetaLeft S ws := by
     intro hp
     have hr : Rank p = 0 := by
+      change thetaExceptRightRank S ws (C.vertices p) = 0
       rw [hp]
       rfl
     omega
