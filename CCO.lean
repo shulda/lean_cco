@@ -70,3 +70,5 @@ import CCO.RawExact.DistinctCentres
 import CCO.RawExact.ActualCentreDiagram
 import CCO.RawExact.AtomicStepTrace
 import CCO.RawExact.ZeroWordBoundary
+
+import CCO.RawExact.LabelledRealTrace
