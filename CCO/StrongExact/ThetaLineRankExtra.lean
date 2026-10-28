@@ -1,4 +1,5 @@
 import CCO.StrongExact.ThetaLineRank
+import CCO.StrongExact.ThetaBranchInjective
 
 /-!
 # C07: uniqueness and orientation of private positive-word letters
