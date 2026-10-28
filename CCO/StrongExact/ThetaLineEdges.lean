@@ -56,10 +56,7 @@ def wordEdgeAtom {i j : ι} :
   | .single b, _ => b
   | .cons b tail, e =>
       match e with
-      | .inl _ => by
-          change S.Atom i (wordPositionSort S tail (wordSource S tail))
-          rw [wordSource_sort S tail]
-          exact b
+      | .inl _ => (wordSource_sort S tail).symm ▸ b
       | .inr e => wordEdgeAtom tail e
 
 theorem finite_wordEdgeIndex {i j : ι}
