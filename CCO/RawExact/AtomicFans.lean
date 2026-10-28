@@ -1,3 +1,4 @@
+import Mathlib.Data.Fintype.Option
 import CCO.RawExact.Balls
 import CCO.PairHomogeneity
 

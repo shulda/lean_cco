@@ -1,6 +1,5 @@
 import CCO.RawExact.RealTraceEndpoints
 import CCO.RawExact.ReducedDirectWords
-import Mathlib.Tactic
 
 /-!
 # B002 C12: actual original atomic fingerprints on direct private spokes

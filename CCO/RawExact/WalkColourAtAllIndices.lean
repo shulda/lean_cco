@@ -1,5 +1,5 @@
 import CCO.RawExact.WalkColourIndependence
-import Mathlib.Tactic
+import Lean.Elab.Tactic.Omega
 
 /-!
 # B002 C13: recover complete edge-colour equivalence from indexed comparisons

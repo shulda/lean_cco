@@ -1,7 +1,7 @@
 import CCO.RawExact.FanVariableReference
 import CCO.RawExact.WalkColourAtIndex
 import CCO.RawExact.TaggedColourConverse
-import Mathlib.Tactic
+import Lean.Elab.Tactic.Omega
 
 /-!
 # B002 C12: changing a RAW word walk preserves every old path-edge atom

@@ -1,7 +1,6 @@
 import CCO.RawExact.FanTerminalIncidence
 import CCO.RawExact.FanInteriorIsolation
 import CCO.RawExact.PathEndpointEdges
-import Mathlib.Tactic
 
 /-!
 # B002 C12: overlaps between distinct private RAW word occurrences

@@ -1,6 +1,6 @@
 import CCO.RawExact.FanDirectReferenceColour
 import CCO.RawExact.FanDirectColourConsistency
-import Mathlib.Tactic
+import Lean.Elab.Tactic.Omega
 
 /-!
 # B002 C12: uniqueness of all typed root-spoke original atom labels

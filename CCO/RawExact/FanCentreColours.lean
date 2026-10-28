@@ -1,6 +1,5 @@
 import CCO.RawExact.FanFullEdgeSemantics
 import CCO.RawExact.AtomicFans
-import Mathlib.Tactic
 
 /-!
 # B002 C13: the full private fan really keeps the old centre diagram
@@ -36,10 +35,7 @@ theorem privateFanNonrootTypedPoint_centre
     privateFanNonrootTypedPoint S H D centres
       (privateFanCentre S D centres c) =
         distinctCentrePoint sort centres c := by
-  have hTag := privateFanNonrootTypedPoint_tag S H D centres
-    (privateFanCentre S D centres c)
-  rw [privateFanNonrootReference_centre S H D centres c] at hTag
-  simpa only [Sigma.mk.injEq, heq_eq_eq, true_and] using hTag
+  rfl
 
 /-- Every distinct actual marked-centre pair has exactly its
 original old atomic colour in the FULL, not merely punctured,
@@ -54,10 +50,11 @@ theorem privateFanFull_centre_edge_original
     (privateFanFullDiagram S H D centres).edge
       (privateFanCentre S D centres c)
       (privateFanCentre S D centres d)
-      (privateFanCentre_injective S D centres).ne hcd =
+      ((privateFanCentre_injective S D centres).ne hcd) =
         S.colour
           (distinctCentrePoint sort centres c)
           (distinctCentrePoint sort centres d) := by
+  classical
   have hv : privateFanCentre S D centres c ≠
       privateFanRoot S D centres := by
     exact (privateFanRoot_ne_centre S D centres c).symm
@@ -85,9 +82,10 @@ theorem privateFanFull_centre_edge_original
       S.colour
         (distinctCentrePoint sort centres c)
         (distinctCentrePoint sort centres d)
-  rw [dif_pos hPunct,
+  rw [dite_eq_left hPunct,
     privateFanNonrootTypedPoint_centre S H D centres c,
     privateFanNonrootTypedPoint_centre S H D centres d]
+  rfl
 
 /-- Any source homomorphism of the FULL private fan sends the
 actual marked-centre tuple to one with ALL the same genuine old

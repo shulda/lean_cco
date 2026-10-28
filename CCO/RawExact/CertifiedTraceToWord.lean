@@ -1,6 +1,5 @@
 import CCO.RawExact.LabelledRealTrace
 import CCO.RawExact.TypedChain
-import Mathlib.Tactic
 
 /-!
 # B002 RAW C12/C13: recover a genuine represented word from a certified trace

@@ -1,3 +1,4 @@
+import Mathlib.Data.Fintype.Sum
 import CCO.RawExact.JointPoint
 import CCO.RawExact.Convolution
 

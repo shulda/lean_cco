@@ -1,4 +1,5 @@
 import CCO.Atomic
+import Mathlib.Data.Set.Finite.Basic
 
 /-!
 # Finite real diagrams, embeddings, cycles, and semantic interfaces

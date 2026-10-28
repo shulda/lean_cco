@@ -1,7 +1,7 @@
 import CCO.RawExact.PrivateFanGluing
 import CCO.RawExact.ReferencePositions
 import CCO.RawExact.PathEndpoints
-import Mathlib.Tactic
+import Lean.Elab.Tactic.Omega
 
 /-!
 # B002 C12: original-sort compatibility of glued private fan paths

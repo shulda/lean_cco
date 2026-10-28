@@ -1,5 +1,5 @@
 import CCO.RawExact.FanNonrootRealization
-import Mathlib.Tactic
+import Mathlib.Tactic.SplitIfs
 
 /-!
 # B002 C12: one correctly coloured partial diagram off the formal root

@@ -1,6 +1,6 @@
 import CCO.RawExact.RealTraceEndpoints
 import CCO.RawExact.FanReferenceEdges
-import Mathlib.Tactic
+import Lean.Elab.Tactic.Omega
 
 /-!
 # B002 C12: indexed real points of arbitrary RAW word witnesses

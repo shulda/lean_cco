@@ -1,5 +1,4 @@
 import CCO.RawExact.FanVariableReference
-import Mathlib.Tactic
 
 /-!
 # B002 C12: type-safe original point assignment for any selected RAW walks

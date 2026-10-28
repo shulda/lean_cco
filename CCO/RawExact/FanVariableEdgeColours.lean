@@ -1,7 +1,7 @@
 import CCO.RawExact.FanVariableReference
 import CCO.RawExact.WalkReferenceColourTransport
 import CCO.RawExact.FanNonrootRealization
-import Mathlib.Tactic
+import Lean.Elab.Tactic.Omega
 
 /-!
 # B002 C12: reference colours survive replacing just two RAW private walks

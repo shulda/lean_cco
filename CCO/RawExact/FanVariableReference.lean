@@ -1,6 +1,6 @@
 import CCO.RawExact.FanTwoWalkReplacement
 import CCO.RawExact.FanNonrootRealization
-import Mathlib.Tactic
+import Lean.Elab.Tactic.Omega
 
 /-!
 # B002 C12: actual old-point map from arbitrary per-occurrence RAW walks

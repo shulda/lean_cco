@@ -1,5 +1,4 @@
 import CCO.RawExact.CycleIncidence
-import Mathlib.Tactic
 
 /-!
 # B002 C12: exactly two simple-cycle edges may meet one selected root

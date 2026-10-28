@@ -1,6 +1,5 @@
 import CCO.RawExact.FanVariableEdgeColours
 import CCO.RawExact.FanPuncturedSupport
-import Mathlib.Tactic
 
 /-!
 # B002 C12: all nonroot private-fan edges retain their original colours

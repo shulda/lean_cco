@@ -1,5 +1,5 @@
 import CCO.RawExact.WalkColourIndependence
-import Mathlib.Tactic
+import Lean.Elab.Tactic.Omega
 
 /-!
 # B002 C12: pointwise original atomic-colour invariance of RAW word walks

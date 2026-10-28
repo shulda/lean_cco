@@ -1,7 +1,7 @@
 import CCO.RawExact.FanSortCompatibility
 import CCO.RawExact.ActualWordStepColour
 import CCO.RawExact.PathLocalDegree
-import Mathlib.Tactic
+import Lean.Elab.Tactic.Omega
 
 /-!
 # B002 C12: every formal private word edge has a genuine old source colour

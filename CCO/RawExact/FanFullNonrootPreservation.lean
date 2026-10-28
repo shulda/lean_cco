@@ -1,7 +1,6 @@
 import CCO.RawExact.FanVariableNonrootColour
 import CCO.RawExact.FanVariableTypedPoint
 import CCO.RawExact.FanFullEdgeSemantics
-import Mathlib.Tactic
 
 /-!
 # B002 C12: all full-fan edges away from root survive arbitrary RAW-walk swaps

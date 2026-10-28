@@ -1,5 +1,5 @@
 import CCO.RawExact.FanRootSpokeExistence
-import Mathlib.Tactic
+import Lean.Elab.Tactic.Omega
 
 /-!
 # B002 C12: canonical selection of the unique real root-spoke atom

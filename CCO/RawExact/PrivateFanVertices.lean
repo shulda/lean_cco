@@ -1,3 +1,4 @@
+import Mathlib.Basic.Finite.Sum
 import CCO.RawExact.WordOccurrences
 import CCO.RawExact.SortTrace
 import CCO.RawExact.DistinctCentres

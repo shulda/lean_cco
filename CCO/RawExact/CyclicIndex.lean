@@ -1,5 +1,6 @@
 import CCO.Finite
-import Mathlib.Tactic
+import Lean.Elab.Tactic.Omega
+import Mathlib.Tactic.SplitIfs
 
 /-!
 # Finite cycle successor geometry for RAW anchored fans

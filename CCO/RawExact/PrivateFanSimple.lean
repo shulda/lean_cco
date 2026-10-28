@@ -1,5 +1,4 @@
 import CCO.RawExact.PrivateFanAdjacency
-import Mathlib.Tactic
 
 /-!
 # B002 C12: the private-word fan graph is actually SIMPLE

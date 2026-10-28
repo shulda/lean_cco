@@ -1,6 +1,6 @@
 import CCO.RawExact.ReferencePositions
 import CCO.RawExact.RealTrace
-import Mathlib.Tactic
+import Lean.Elab.Tactic.Omega
 
 /-!
 # B002 C12: actual endpoints of independently selected real RAW walks

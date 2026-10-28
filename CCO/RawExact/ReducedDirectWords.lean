@@ -1,7 +1,7 @@
 import CCO.RawExact.DirectEdgeMerging
 import CCO.RawExact.PathSkeleton
 import CCO.RawExact.WordOccurrences
-import Mathlib.Tactic
+import Lean.Elab.Tactic.Omega
 
 /-!
 # B002 C12: arbitrary identity-bearing one-edge RAW word restrictions

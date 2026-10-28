@@ -1,6 +1,6 @@
 import CCO.RawExact.FanHomWordTrace
 import CCO.RawExact.RealTraceEndpoints
-import Mathlib.Tactic
+import Lean.Elab.Tactic.Omega
 
 /-!
 # B002 C13: literal original endpoints of completed private-fan word traces
@@ -35,8 +35,8 @@ theorem privateFanHomWordTrace_start
       (⟨root, f.point (privateFanRoot S D centres)⟩ : Sigma X) := by
   have hAt := privateFanHomWordTrace_get S H D centres f o
     (pathStart S (occurrenceWord S D o))
-  simpa only [pathStart, privateFanAt_start S D centres o,
-    privateFanSort_root S D centres] using hAt
+  rw [privateFanAt_start S D centres o] at hAt
+  simpa only [pathStart, privateFanSort_root S D centres] using hAt
 
 theorem privateFanHomWordTrace_finish
     {G : Type*} [Group G] [∀ t : ι, MulAction G (X t)]
@@ -48,8 +48,7 @@ theorem privateFanHomWordTrace_finish
     (f : DiagramHom (privateFanFullDiagram S H D centres))
     (o : WordOccurrence S D)
     (hPos : 0 < diversityLength S (occurrenceWord S D o)) :
-    (privateFanHomWordTrace S H D centres f o)
-      [diversityLength S (occurrenceWord S D o)]'(by
+    (privateFanHomWordTrace S H D centres f o)[diversityLength S (occurrenceWord S D o)]'(by
         rw [privateFanHomWordTrace_length S H D centres f o]
         omega) =
       (⟨sort o.1,

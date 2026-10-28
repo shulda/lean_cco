@@ -1,6 +1,5 @@
 import CCO.RawExact.FanFullDiagram
 import CCO.RawExact.FanPuncturedSupport
-import Mathlib.Tactic
 
 /-!
 # B002 C12: exact root/nonroot edge semantics of the FULL private fan

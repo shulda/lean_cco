@@ -1,7 +1,6 @@
 import CCO.RawExact.FanVariableTypedPoint
 import CCO.RawExact.FanVariableEdgeColours
 import CCO.RawExact.FanFullEdgeSemantics
-import Mathlib.Tactic
 
 /-!
 # B002 C12: the chosen two RAW walks realize their original root spokes

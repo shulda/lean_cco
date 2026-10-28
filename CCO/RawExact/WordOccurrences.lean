@@ -1,7 +1,7 @@
+import Mathlib.Basic.Finite.Sigma
 import CCO.RawExact.DistinctCentres
 import CCO.RawExact.PrivatePaths
 import CCO.RawExact.Balls
-import Mathlib.Tactic
 
 /-!
 # B002 C12: every private RAW word occurrence in a finite exact-ball fan

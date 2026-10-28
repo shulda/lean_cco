@@ -1,5 +1,4 @@
 import CCO.RawExact.PrivateFanVertices
-import Mathlib.Tactic
 
 /-!
 # B002 C12: glue each actual RAW word path to the ONE fan root and

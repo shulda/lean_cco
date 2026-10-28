@@ -1,5 +1,5 @@
 import CCO.RawExact.FanEdgeOverlaps
-import Mathlib.Tactic
+import Lean.Elab.Tactic.Omega
 
 /-!
 # B002 C12: two coincident direct spokes attach to the same actual old centre

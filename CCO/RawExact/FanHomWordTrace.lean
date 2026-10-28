@@ -1,6 +1,5 @@
 import CCO.RawExact.FanFullDiagram
 import CCO.RawExact.FanSortCompatibility
-import Mathlib.Tactic
 
 /-!
 # B002 C13: actual old point trace of one completed RAW private word
@@ -97,8 +96,9 @@ theorem privateFanHomWordTrace_sorts
   rw [privateFanHomWordTrace, List.map_ofFn]
   simp only [Function.comp_def]
   simp_rw [hSort]
-  simpa only [pathSortAt, wordSortTrace_length S
-      (occurrenceWord S D o), List.get_eq_getElem] using
-    (List.ofFn_getElem (xs := wordSortTrace S (occurrenceWord S D o)))
+  apply List.ext_getElem
+  · simp only [List.length_ofFn, wordSortTrace_length]
+  · intro k hk hk'
+    simp only [List.getElem_ofFn, pathSortAt, List.get_eq_getElem]
 
 end CCO.RawExact

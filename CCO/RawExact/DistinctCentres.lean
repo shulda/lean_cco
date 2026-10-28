@@ -1,3 +1,4 @@
+import Mathlib.Data.Set.Finite.Range
 import CCO.RawExact.AtomicFans
 
 /-!

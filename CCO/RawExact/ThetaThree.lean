@@ -1,5 +1,6 @@
 import CCO.Finite
-import Mathlib.Tactic
+import Lean.Elab.Tactic.Omega
+import Mathlib.Tactic.FinCases
 
 /-!
 # B002 C06: finite theta skeleton, first nontrivial graph case

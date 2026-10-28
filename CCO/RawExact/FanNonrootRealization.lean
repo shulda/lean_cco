@@ -1,7 +1,7 @@
 import CCO.RawExact.FanReferenceEdges
 import CCO.RawExact.RealTraceEndpoints
 import CCO.RawExact.FanTerminalIncidence
-import Mathlib.Tactic
+import Lean.Elab.Tactic.Omega
 
 /-!
 # B002 C12: genuine old realization of the private fan *minus its root*

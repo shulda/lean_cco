@@ -1,5 +1,5 @@
 import CCO.RawExact.PrivatePaths
-import Mathlib.Tactic
+import Lean.Elab.Tactic.Omega
 
 /-!
 # B002 C12/C26: finite skeletons of genuine RAW word paths

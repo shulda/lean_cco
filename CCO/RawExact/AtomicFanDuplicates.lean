@@ -1,5 +1,5 @@
+import Mathlib.Data.Finset.Max
 import CCO.RawExact.AtomicFanCycles
-import Mathlib.Tactic
 
 /-!
 # B002 C13: eliminate repeated centres in atomic RAW ball families

@@ -1,6 +1,5 @@
 import CCO.RawExact.WordPathPositions
 import CCO.RawExact.OccurrenceRealizations
-import Mathlib.Tactic
 
 /-!
 # B002 C12: alter only TWO reference RAW walks at one common old root

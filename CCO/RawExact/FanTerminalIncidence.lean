@@ -1,6 +1,6 @@
 import CCO.RawExact.FanCentreBoundary
 import CCO.RawExact.FanDegreeTwo
-import Mathlib.Tactic
+import Lean.Elab.Tactic.Omega
 
 /-!
 # B002 C12: complete terminal incidence for private fan interiors

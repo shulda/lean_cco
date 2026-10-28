@@ -1,7 +1,7 @@
 import CCO.RawExact.FanRootSpokeUniqueness
 import CCO.RawExact.FanRootIncidence
 import CCO.RawExact.FanReferenceEdges
-import Mathlib.Tactic
+import Lean.Elab.Tactic.Omega
 
 /-!
 # B002 C12: every genuine formal root spoke has an old atomic label

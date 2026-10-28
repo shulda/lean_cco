@@ -1,5 +1,4 @@
 import CCO.RawExact.WalkColourIndependence
-import Mathlib.Tactic
 
 /-!
 # B002 C13: certified RAW word walks survive old-colour-preserving maps
@@ -41,9 +40,7 @@ theorem typedWalkCertificate_of_same_colours
           | nil =>
               exact TypedWalkCertificate.singleton q
           | cons r tail =>
-              simp only [List.map_cons, List.map_nil,
-                List.cons.injEq] at hSort
-              cases hSort
+              cases hSame
   | step x y a edge rest ih =>
       cases points' with
       | nil =>
@@ -70,6 +67,6 @@ theorem typedWalkCertificate_of_same_colours
                 exact hEdgeColour.symm.trans edge
               have hTailSort := (List.cons.inj hSort).2
               exact TypedWalkCertificate.step x' y' a hEdge'
-                (ih _ hSame.2 hTailSort)
+                (ih hSame.2 hTailSort)
 
 end CCO.RawExact

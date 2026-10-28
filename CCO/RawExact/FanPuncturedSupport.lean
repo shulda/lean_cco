@@ -1,6 +1,6 @@
 import CCO.RawExact.FanPuncturedDiagram
 import CCO.RawExact.FanNonrootRealization
-import Mathlib.Tactic
+import Mathlib.Tactic.SplitIfs
 
 /-!
 # B002 C12: exact support of the actual private-fan punctured diagram

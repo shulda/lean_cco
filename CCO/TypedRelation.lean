@@ -1,4 +1,4 @@
-import Mathlib
+import Mathlib.Algebra.Group.Action.Basic
 
 /-!
 # Equality-inclusive typed represented relations

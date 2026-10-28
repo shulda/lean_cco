@@ -1,6 +1,5 @@
 import CCO.RawExact.FanRootSpokeChoice
 import CCO.RawExact.FanPuncturedDiagram
-import Mathlib.Tactic
 
 /-!
 # B002 C12: one actual original-atom labelled private fan

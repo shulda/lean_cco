@@ -2,7 +2,6 @@ import CCO.RawExact.FanTwoRootSpokes
 import CCO.RawExact.FanFullNonrootPreservation
 import CCO.RawExact.FanTwoRootCycleEdges
 import CCO.RawExact.CycleEdgeTransport
-import Mathlib.Tactic
 
 /-!
 # B002 C12: a cycle through the real full-fan root uses only TWO walks
