@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 55,
+  "revision": 56,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -416,13 +416,14 @@
         "project_id": 3,
         "actor_id": "independent_review",
         "head_sha": "ef2e641b453a0fa2e4816680b4f99f87e4bd23a6",
-        "approved": false,
+        "approved": true,
         "independence": {
           "identity": "/root/independent_review",
           "non_author": true,
           "summary": "Actual separate registered control-only reviewer authored none of this batch's production source, tests or implementation design. It personally read all C01–24 modules against the pinned source once, verified the exact frozen-source union and public CI, and neither repeated author builds nor delegated another review.",
           "report_path": "formalization/coordination/reviews/B008-final.md"
-        }
+        },
+        "summary": "Actual registered non-author /root/independent_review personally approves full C01–24 at exact ef2e641: abstract permuting-equivalence CRT with all empty/nonempty and class-compatibility boundaries, exact finite distributive/Birkhoff lattice instantiated from different-centre RAW exact BALL Helly, separate fine-colour equation, actual typed quotient AtomicSource/orbit/equality/kernel/RawWord full exact pullback, same-sort descent and genuine chosen-presentation typed TI descent with every intermediate kernel retained before its guard. Matching pinned Birkhoff theorem and literal coordinate maps checked; full invariant distributivity and unguarded mixed-sort TI are never asserted. No hidden quotient homogeneity/lifting/provider or stronger premise. Exact public tree is independently verified frozen B007+B008 union, all nonroot files identical and397 total root modules. CI40727115848 personally checked67tests/2403jobs/5213standard3audit/397actualbytes AND397SOURCE pre/post; current accepted main3a91 ancestor. One full source review, durable actual-identity report B008-final.md."
       }
     },
     "B009": {
@@ -1549,6 +1550,19 @@
           "summary": "Actual separate registered control-only reviewer authored none of this batch's production source, tests or implementation design. It personally read all C01–24 modules against the pinned source once, verified the exact frozen-source union and public CI, and neither repeated author builds nor delegated another review.",
           "report_path": "formalization/coordination/reviews/B008-final.md"
         },
+        "actor_id": "independent_review"
+      }
+    },
+    {
+      "revision": 56,
+      "project_id": 3,
+      "actor_id": "independent_review",
+      "event": "approve",
+      "package_id": "B008",
+      "details": {
+        "package_id": "B008",
+        "head_sha": "ef2e641b453a0fa2e4816680b4f99f87e4bd23a6",
+        "summary": "Actual registered non-author /root/independent_review personally approves full C01–24 at exact ef2e641: abstract permuting-equivalence CRT with all empty/nonempty and class-compatibility boundaries, exact finite distributive/Birkhoff lattice instantiated from different-centre RAW exact BALL Helly, separate fine-colour equation, actual typed quotient AtomicSource/orbit/equality/kernel/RawWord full exact pullback, same-sort descent and genuine chosen-presentation typed TI descent with every intermediate kernel retained before its guard. Matching pinned Birkhoff theorem and literal coordinate maps checked; full invariant distributivity and unguarded mixed-sort TI are never asserted. No hidden quotient homogeneity/lifting/provider or stronger premise. Exact public tree is independently verified frozen B007+B008 union, all nonroot files identical and397 total root modules. CI40727115848 personally checked67tests/2403jobs/5213standard3audit/397actualbytes AND397SOURCE pre/post; current accepted main3a91 ancestor. One full source review, durable actual-identity report B008-final.md.",
         "actor_id": "independent_review"
       }
     }
