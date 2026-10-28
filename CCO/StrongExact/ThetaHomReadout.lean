@@ -21,7 +21,7 @@ variable {i j : ι}
 
 /-- Retype BOTH actual real endpoints and their old diversity atom
 using exactly the same two original named-sort equalities. -/
-private theorem colour_cast_both
+theorem colour_cast_both
     {s t s' t' : ι}
     (hs : s = s') (ht : t = t')
     (a : S.Atom s' t') (x : X s) (y : X t)
@@ -32,12 +32,12 @@ private theorem colour_cast_both
   cases ht
   simpa using hxy
 
-private theorem cast_eq_mp {s t : ι} (h : s = t) (x : X s) :
+theorem cast_eq_mp {s t : ι} (h : s = t) (x : X s) :
     (h ▸ x) = Eq.mp (congrArg X h) x := by
   cases h
   rfl
 
-private theorem cast_at_equal_vertex_mp
+theorem cast_at_equal_vertex_mp
     {α : Type a} (sort : α → ι)
     (point : ∀ x : α, X (sort x))
     {x y : α} {t : ι}

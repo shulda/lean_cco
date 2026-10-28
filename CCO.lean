@@ -89,3 +89,6 @@ import CCO.StrongExact.ThetaExceptLeftRank
 import CCO.StrongExact.ThetaCycleContainsLeft
 import CCO.StrongExact.ThetaCycleRootPositions
 import CCO.StrongExact.ThetaHomReadout
+import CCO.StrongExact.ThetaPointLine
+import CCO.StrongExact.ThetaPointEnds
+import CCO.StrongExact.ThetaWholeReadout
