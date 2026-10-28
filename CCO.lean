@@ -141,3 +141,8 @@ import CCO.RawExact.FanPuncturedSupport
 import CCO.RawExact.FanFullDiagram
 import CCO.RawExact.FanCycleAvoidance
 import CCO.RawExact.WalkColourAtIndex
+
+import CCO.RawExact.WordPathPositions
+import CCO.RawExact.FanTwoWalkReplacement
+import CCO.RawExact.FanVariableReference
+import CCO.RawExact.TaggedColourConverse
