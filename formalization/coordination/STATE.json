@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 116,
+  "revision": 117,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -588,7 +588,7 @@
       "owner_project_id": null
     },
     "B013": {
-      "state": "INTEGRATING",
+      "state": "ACCEPTED",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b009_fibres",
@@ -627,6 +627,13 @@
           "report_path": "formalization/coordination/reviews/B013-final.md"
         },
         "summary": "Actual independent nonauthor approves complete finite_packetsC01–18: REAL RelativeClass maps and guarded finite towers/transposition/restriction/join bounds; arbitrary-E naturalprojection onto, literal kernelD and actualfibre/class bijections with uniform meet-index count/generalfinitefactorisation, no cut premise. Sigma isactualgreatestfinite-indexcoarsening with allfiniteguards beforeNat.card and wholepacket=[core,Sigma], full lattice onlymodular withnoendpoint exactness. Relative-loopcriterion usesfiniteRamsey andactualoriginalH+CCOcliques withoutSAP/infiniteRamsey. CoreliteralpositiveRAWword/nontrivialcase andemptycoreliteralemptyword correctlyseparate. Minimalinfinitecut equalswordexactcore, wholelowerinterval/no properfinite-index refinement andC16equality/strictcases/C18crossing retainminimality. SeparateC13actualCOUNTABLEquotient sourcepropertiesinstantiateacceptedB002singletonData withcarrierQuotientE, ETopsingletonconsumer; noabstractprovider orquotientH/CCOassumedfromindexalgebra. Allsourceproviders/boundaryconsumers closed. ONEwhole12source read, all5pins/final2aeONLY2docs and exact public21f tree890498/directaccepted0cb checked; CI40761677730/job123074953324 personallyread67tests/2805jobs/8059standard-three/570actualbytesANDSOURCEprepost. DurableB013-final.md actualidentity/sourcefindings; contracts/source/toolchain/manifest/acceptedAPIsunchanged."
+      },
+      "accepted_commit": "fbe6d8bf3f4d76d4d55361cfdfb4732582276c91",
+      "main_ci": {
+        "head_sha": "fbe6d8bf3f4d76d4d55361cfdfb4732582276c91",
+        "run_id": 40762703852,
+        "conclusion": "success",
+        "axiom_audit": "allowlist"
       }
     },
     "B014": {
@@ -835,13 +842,7 @@
       }
     }
   },
-  "integration_lock": {
-    "kind": "package",
-    "package_id": "B013",
-    "actor_id": "root",
-    "base_main_sha": "0cbeb4e47cf3f7997214ee5c3dd25f8f0fda3a94",
-    "head_sha": "21f464a827ea8c2a3a6d4f603109a59a49077963"
-  },
+  "integration_lock": null,
   "history": [
     {
       "revision": 1,
@@ -3036,6 +3037,24 @@
         "ci": {
           "head_sha": "21f464a827ea8c2a3a6d4f603109a59a49077963",
           "run_id": 40761677730,
+          "conclusion": "success",
+          "axiom_audit": "allowlist"
+        },
+        "actor_id": "root"
+      }
+    },
+    {
+      "revision": 117,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "accept",
+      "package_id": "B013",
+      "details": {
+        "package_id": "B013",
+        "integration_commit": "fbe6d8bf3f4d76d4d55361cfdfb4732582276c91",
+        "main_ci": {
+          "head_sha": "fbe6d8bf3f4d76d4d55361cfdfb4732582276c91",
+          "run_id": 40762703852,
           "conclusion": "success",
           "axiom_audit": "allowlist"
         },
