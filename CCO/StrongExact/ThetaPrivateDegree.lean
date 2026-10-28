@@ -88,6 +88,10 @@ theorem thetaPrivate_no_three_distinct_neighbors
     obtain ⟨qy',qz,hqy',hqz,hup2 | hdown2⟩ :=
       thetaPrivate_distinct_neighbor_directions S ws b p y z hy hz hyz
     · obtain ⟨hyUp,hzDown⟩ := hup2
+      have hSameY : qy = qy' :=
+        (thetaBranchPosition_injective S ws b)
+          (hqy.symm.trans hqy')
+      subst qy'
       omega
     · obtain ⟨hyDown',hzUp⟩ := hdown2
       have hRank : wordPositionRank S (ws.get b) qx =
@@ -101,6 +105,10 @@ theorem thetaPrivate_no_three_distinct_neighbors
           wordPositionRank S (ws.get b) qz := by omega
       exact hxz (private_neighbor_eq_of_same_rank S ws b hqx hqz hRank)
     · obtain ⟨hyDown,hzUp⟩ := hdown2
+      have hSameY : qy = qy' :=
+        (thetaBranchPosition_injective S ws b)
+          (hqy.symm.trans hqy')
+      subst qy'
       omega
 
 end CCO.StrongExact
