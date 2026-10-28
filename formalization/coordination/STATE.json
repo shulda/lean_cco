@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 29,
+  "revision": 30,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -219,6 +219,8 @@
       "state": "IN_PROGRESS",
       "owner_project_id": 3,
       "author_actor_ids": [
+        "/root/b004_selectors",
+        "/root/b004_selectors/loop_nr2",
         "root"
       ],
       "original_author_project_ids": [
@@ -904,6 +906,21 @@
           "conclusion": "success",
           "axiom_audit": "allowlist"
         },
+        "actor_id": "root"
+      }
+    },
+    {
+      "revision": 30,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "record_authorship",
+      "package_id": "B004",
+      "details": {
+        "package_id": "B004",
+        "author_actor_ids": [
+          "/root/b004_selectors",
+          "/root/b004_selectors/loop_nr2"
+        ],
         "actor_id": "root"
       }
     }
