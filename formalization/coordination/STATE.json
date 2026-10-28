@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 105,
+  "revision": 106,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -744,7 +744,7 @@
       "owner_project_id": null
     },
     "B019": {
-      "state": "REVIEWING",
+      "state": "INTEGRATING",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b019_product",
@@ -786,7 +786,13 @@
       }
     }
   },
-  "integration_lock": null,
+  "integration_lock": {
+    "kind": "package",
+    "package_id": "B019",
+    "actor_id": "root",
+    "base_main_sha": "df02e734b6245aad006487a0a2071caaabe69524",
+    "head_sha": "0b0257a6cd20ed984660238068e11dc5364aacbe"
+  },
   "history": [
     {
       "revision": 1,
@@ -2800,6 +2806,26 @@
         "head_sha": "0b0257a6cd20ed984660238068e11dc5364aacbe",
         "summary": "Actual nonauthor approves ALL owner_action C14–29 at exact0b0257a6: actual commuting quotients FULLsetfibreproduct and real B002finecolour meet includingeverycoordinate diagonal, naturaldescent and FULL fine-coloured automorphism matching isomorphism; literaloriginalinducedquotientsubset group/point equivalence proved. Nonnested prescribed ENTIREtargeteta and actualENTIREowner delta preserved; nested transfer retains bothactualgroup andpointaction identities andENTIREtargetpair, factorizationderivesownercomponent withnoCpointpremise. SparseARBITRARYoriginaldomains descend bykernelreflection/welldefinedness/injection andactualfinecolourreadout; ordinaryDextension suppliesENTIREdelta and prescribedC EPPA agrees onALLowners, nohiddenTcondition/section. Actual source targetkernel/EPPA consumers retain precise A13/A14/extension inputs and returnactualsourceautomorphisms. Emptyactualquotientchains/autgroups/EPPA separatelyproved. ConcreteC27nonfull/C28fine-readoutcontrols and explicitlyabstractC4no-section/missingCpoint actionsallreal. No openactualsourceprovider/strongerpremise/CCOcounterclaim. Onewhole19personalread, finalb709docsonly/exact558moduleuniontreec237, publicCI40754736284/job123050529996 personallyread67tests/2793jobs/7906standardthree/558actualbytesANDSOURCEprepost. Actualparentdf02B016ACCEPTED101/mainCI40754567438green, ledger102valid/locknil; durable B019-final.md recordsallfindings.",
         "actor_id": "independent_review"
+      }
+    },
+    {
+      "revision": 106,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "start_integration",
+      "package_id": "B019",
+      "details": {
+        "package_id": "B019",
+        "head_sha": "0b0257a6cd20ed984660238068e11dc5364aacbe",
+        "base_main_sha": "df02e734b6245aad006487a0a2071caaabe69524",
+        "head_contains_main": true,
+        "ci": {
+          "head_sha": "0b0257a6cd20ed984660238068e11dc5364aacbe",
+          "run_id": 40754736284,
+          "conclusion": "success",
+          "axiom_audit": "allowlist"
+        },
+        "actor_id": "root"
       }
     }
   ],
