@@ -67,9 +67,11 @@ theorem thetaArc_endpoints_on_branch
   obtain ⟨b, e, he | he⟩ := thetaArc_exists_edge S ws arc h
   · exact ⟨b, e, Or.inl ⟨congrArg ThetaArc.src he,
       congrArg ThetaArc.dst he⟩⟩
-  · exact ⟨b, e, Or.inr ⟨by simpa [ThetaArc.reverse] using
-        congrArg ThetaArc.src he,
-      by simpa [ThetaArc.reverse] using congrArg ThetaArc.dst he⟩⟩
+  · refine ⟨b, e, Or.inr ⟨?_, ?_⟩⟩
+    · simpa [ThetaArc.reverse, thetaForwardArc] using
+        (congrArg ThetaArc.src he)
+    · simpa [ThetaArc.reverse, thetaForwardArc] using
+        (congrArg ThetaArc.dst he)
 
 /-- A private interior point can lie in a different branch's embedded
 formal line only when the indices agree. It cannot masquerade as
