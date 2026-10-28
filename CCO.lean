@@ -108,3 +108,5 @@ import CCO.StrongExact.ThetaCycleIndexInjectivity
 import CCO.StrongExact.ThetaCycleRootDistance
 import CCO.StrongExact.ThetaCycleAdvanceShift
 import CCO.StrongExact.ThetaCycleFirstArc
+import CCO.StrongExact.ThetaCycleSecondArc
+import CCO.StrongExact.ThetaCycleTwoArcs
