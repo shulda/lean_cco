@@ -12,8 +12,14 @@ Reviewed exact local checkpoint:
 policy main `97211488e4ac166a4b0650953363a0c3cb7614f5` and changes no Lean
 file relative to the endpoint checkpoint.
 
-**Disposition: exact source checkpoint approved.** Actual refreshed remote
-head CI/audit and complete package review remain separate requirements.
+**Disposition: exact source checkpoint approved.** I independently fetched
+public PR4 head555951c6a4c51d0842252fdebc142e422127788f and verified tree
+8868a6b69561d686b024680702e17593e1a2bfa3 equals reviewed local56c6d555.
+Run40680013056/job122788040064 passes48tests,1014buildjobs and audit1521
+with only the standard three axioms. The synthetic CI merge
+07da647f03084751739da7c5b2680415192dcdbd has that identical tree, independently
+confirmed from its remote Git object. Complete package review remains
+separate; this green partial checkpoint stays IN_PROGRESS.
 
 I read both additive modules ThetaFamilySemantics and ExactEndpointSemantics,
 the root imports, current source map, the existing literal-word/readout,

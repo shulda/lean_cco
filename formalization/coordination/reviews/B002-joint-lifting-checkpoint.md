@@ -9,7 +9,11 @@ Reviewed exact local combined checkpoint
 PR #3 head `0f366f0a539c020a7a80f822a830f6db25c11ffa` and verified its
 Git tree `1af17e825b9dec489304798f6ddd6902f3b6e86f` equals the reviewed local
 checkpoint tree exactly. Its parents preserve original handed-off head
-85878128 and current main 26868153. No remote CI result is inferred here.
+85878128 and current main 26868153. I then independently verified run
+40680003645/job122788007847: 48 tests, 981 build jobs and official audit1544
+all pass the standard three-axiom allowlist. Synthetic CI merge
+366d847354efb8fc4f654bc7d30c703f2514516c has exactly the same remote Git
+tree as public0f366f0a, so this is exact-content evidence for that head.
 
 **Disposition: source checkpoint approved for C20-C23 and the combined
 previously reviewed C13/C07-C10 source exports.** This is not whole B002

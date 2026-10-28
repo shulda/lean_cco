@@ -69,3 +69,14 @@ No quantitative throughput claim follows from one run.
 **Disposition: exact remote head46eff135 is approved for single-lock
 infrastructure integration.** Preserve the sole CAS integration lock and
 verify resulting main exact CI/audit before releasing it.
+
+## Resulting main verified
+
+Independently fetched resulting main commit
+`2ccbbed4ef354a4af8a175ae5e3e9421b8a8c448`, with the same tree
+`14845e20e6b98ad03bd9ef89b6734865d4a5ec3e` and parents main26868153 and
+approved46eff135. Actual run40686003111/job122808396451 logs check out
+that exact main SHA, pass 57 tests and the normal 775-job build, run the
+unchanged official 647-declaration standard-three audit, and verify all
+32 materialized output parts after audit. This completes the required
+resulting-main build/audit evidence for this infrastructure change.
