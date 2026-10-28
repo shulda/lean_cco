@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 16,
+  "revision": 17,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -95,7 +95,7 @@
       "checkpoint_revision": 11
     },
     "B003": {
-      "state": "SUBMITTED",
+      "state": "REVIEWING",
       "owner_project_id": 3,
       "claim_revision": 3,
       "base_main_sha": "7527172215da51d21180a3c5dc624ce54e2869ee",
@@ -166,7 +166,19 @@
         "conclusion": "success",
         "axiom_audit": "allowlist"
       },
-      "report_path": "formalization/coordination/submissions/B003.md"
+      "report_path": "formalization/coordination/submissions/B003.md",
+      "review": {
+        "project_id": 3,
+        "actor_id": "independent_review",
+        "head_sha": "d1ea335256cb543e670580a2f2da712a76ca01d0",
+        "approved": false,
+        "independence": {
+          "identity": "/root/independent_review",
+          "non_author": true,
+          "summary": "The actual registered control-only reviewer authored none of the original project 2 or Work-team Lean proofs, production tests, policy or implementation. It personally inspected the entire source contract/provider/consumer DAG and exact-head CI, and separately retained the fresh corroborating reader's true identity.",
+          "report_path": "formalization/coordination/reviews/B003-final-d1ea335.md"
+        }
+      }
     },
     "B004": {
       "state": "AVAILABLE",
@@ -582,6 +594,24 @@
           "axiom_audit": "allowlist"
         },
         "actor_id": "root"
+      }
+    },
+    {
+      "revision": 17,
+      "project_id": 3,
+      "actor_id": "independent_review",
+      "event": "review",
+      "package_id": "B003",
+      "details": {
+        "package_id": "B003",
+        "head_sha": "d1ea335256cb543e670580a2f2da712a76ca01d0",
+        "independence": {
+          "identity": "/root/independent_review",
+          "non_author": true,
+          "summary": "The actual registered control-only reviewer authored none of the original project 2 or Work-team Lean proofs, production tests, policy or implementation. It personally inspected the entire source contract/provider/consumer DAG and exact-head CI, and separately retained the fresh corroborating reader's true identity.",
+          "report_path": "formalization/coordination/reviews/B003-final-d1ea335.md"
+        },
+        "actor_id": "independent_review"
       }
     }
   ],
