@@ -53,7 +53,7 @@ theorem thetaCycle_contains_root
             exact False.elim ((hNoRoot p).1 (by simpa [thetaLeft] using hp))
         | true =>
             exact False.elim ((hNoRoot p).2 (by simpa [thetaRight] using hp))
-    | inr x => exact ⟨x,hp⟩
+    | inr x => exact ⟨x,rfl⟩
   let priv (p : Fin C.length) : PrivateThetaVertex S ws :=
     Classical.choose (hPrivate p)
   have hPrivVal (p : Fin C.length) :
