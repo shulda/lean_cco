@@ -122,3 +122,8 @@ import CCO.StrongExact.ThetaCycleFirstArcPositions
 import CCO.StrongExact.ThetaCycleRightArcPositions
 import CCO.StrongExact.ThetaCycleFirstArcLetters
 import CCO.StrongExact.ThetaCycleRightArcLetters
+import CCO.StrongExact.ThetaWordLineWitness
+import CCO.StrongExact.ThetaCompatibleLines
+import CCO.StrongExact.ThetaCycleAdvanceAddition
+import CCO.StrongExact.ThetaCycleAdvanceReturn
+import CCO.StrongExact.ThetaCycleTwoArcIndexCover
