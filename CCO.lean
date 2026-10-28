@@ -118,3 +118,7 @@ import CCO.StrongExact.ThetaCycleRightArcRank
 import CCO.StrongExact.ThetaCycleFirstArcLength
 import CCO.StrongExact.ThetaCycleRightArcLength
 import CCO.StrongExact.ThetaWordRankCoverage
+import CCO.StrongExact.ThetaCycleFirstArcPositions
+import CCO.StrongExact.ThetaCycleRightArcPositions
+import CCO.StrongExact.ThetaCycleFirstArcLetters
+import CCO.StrongExact.ThetaCycleRightArcLetters
