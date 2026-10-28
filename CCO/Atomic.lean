@@ -1,6 +1,6 @@
 import CCO.TypedRelation
 import Mathlib.Data.Fintype.Basic
-import Mathlib.Data.Set.Lattice
+import Mathlib.Data.Set.Lattice.Bounded
 import Mathlib.Tactic.Ext
 
 /-!

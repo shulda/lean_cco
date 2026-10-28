@@ -1,5 +1,5 @@
 import CCO.Atomic
-import Mathlib.Data.Set.Finite.Basic
+import Mathlib.Data.Set.Finite.Range
 
 /-!
 # Independent consumer: finite base-path STRONG menus
