@@ -44,9 +44,11 @@ theorem privateFanInterior_exactly_two_neighbours
         v = privateFanAtWordPosition S D centres o before ∨
         v = privateFanAtWordPosition S D centres o after) := by
   have hStart : 0 < p.1.val := by
+    have hpNonzero : p.1.val ≠ 0 := p.property.1
     omega
   have hFinish : p.1.val < diversityLength S (occurrenceWord S D o) := by
     have hpLt := p.1.isLt
+    have hpNeEnd := p.property.2
     omega
   obtain ⟨before, after, _, _, hDistinct, hBefore, hAfter, hOnly⟩ :=
     pathInterior_exactly_two_neighbours S
