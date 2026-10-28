@@ -70,7 +70,7 @@ theorem represented_of_literal_word_line {i j : ι}
               (tailPoint (wordSource S tail)) =
               some ((wordSource_sort S tail).symm ▸ a) := by
           simpa [tailPoint, wordEdgeSource,
-            wordEdgeTarget, wordEdgeAtom] using h
+            wordEdgeTarget, wordEdgeAtom, id_eq] using h
         exact colour_cast_second S (wordSource_sort S tail) a
           (point none) (tailPoint (wordSource S tail)) hTyped
       change ∃ y : X _, S.colour (point none) y = some a ∧
