@@ -146,3 +146,12 @@ import CCO.RawExact.WordPathPositions
 import CCO.RawExact.FanTwoWalkReplacement
 import CCO.RawExact.FanVariableReference
 import CCO.RawExact.TaggedColourConverse
+
+import CCO.RawExact.WalkReferenceColourTransport
+import CCO.RawExact.FanVariableTypedPoint
+import CCO.RawExact.FanVariableEdgeColours
+import CCO.RawExact.FanFullEdgeSemantics
+import CCO.RawExact.FanVariableNonrootColour
+import CCO.RawExact.FanFullNonrootPreservation
+import CCO.RawExact.FanVariableRootSpoke
+import CCO.RawExact.FanTwoRootCycleEdges
