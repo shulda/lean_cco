@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 44,
+  "revision": 45,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -352,8 +352,22 @@
       }
     },
     "B008": {
-      "state": "AVAILABLE",
-      "owner_project_id": null
+      "state": "IN_PROGRESS",
+      "owner_project_id": 3,
+      "author_actor_ids": [
+        "root"
+      ],
+      "original_author_project_ids": [
+        3
+      ],
+      "claim_revision": 45,
+      "base_main_sha": "21381f6095d3b2787e3e248e5ea244180a66f06f",
+      "base_ci": {
+        "head_sha": "21381f6095d3b2787e3e248e5ea244180a66f06f",
+        "run_id": 40719464681,
+        "conclusion": "success",
+        "axiom_audit": "allowlist"
+      }
     },
     "B009": {
       "state": "AVAILABLE",
@@ -1257,6 +1271,55 @@
         },
         "actor_id": "root"
       }
+    },
+    {
+      "revision": 45,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "claim_third",
+      "package_id": "B008",
+      "details": {
+        "package_id": "B008",
+        "base_main_sha": "21381f6095d3b2787e3e248e5ea244180a66f06f",
+        "base_ci": {
+          "head_sha": "21381f6095d3b2787e3e248e5ea244180a66f06f",
+          "run_id": 40719464681,
+          "conclusion": "success",
+          "axiom_audit": "allowlist"
+        },
+        "independent_active_work": true,
+        "summary": "Dedicated live implementer /root/b008_crt now starts abstract finite CRT/Birkhoff and actual exact quotient descent in CCO/ExactCRT, disjoint from B005 selected SIR/direct model and B007 relative closure/maximal gates; all prerequisites already ACCEPTED on main, separate compilation resources and no sibling API dependence.",
+        "implementation_actor_id": "/root/b008_crt",
+        "active_work_items": [
+          "CCO/ExactCRT/ abstract CRT and Birkhoff",
+          "CCO/ExactCRT/ actual exact lattice and guarded quotient descent"
+        ],
+        "independence_report_path": "formalization/coordination/reports/B008-third-active-independence.md",
+        "existing_batches": [
+          {
+            "package_id": "B005",
+            "head_sha": "21381f6095d3b2787e3e248e5ea244180a66f06f",
+            "work_items": [
+              "CCO/SIR/Positive/ selected SIR and direct two-sheet model"
+            ],
+            "implementation_actor_ids": [
+              "/root/b005_positive",
+              "/root/b005_positive/direct_model"
+            ]
+          },
+          {
+            "package_id": "B007",
+            "head_sha": "21381f6095d3b2787e3e248e5ea244180a66f06f",
+            "work_items": [
+              "CCO/ParityHasse/Relative/ closure separation and maximal gates"
+            ],
+            "implementation_actor_ids": [
+              "/root/b007_relative"
+            ]
+          }
+        ],
+        "actor_id": "root"
+      }
     }
   ],
   "infrastructure_integrations": [
@@ -1412,5 +1475,40 @@
       }
     }
   ],
-  "policy_revision": 2
+  "policy_revision": 2,
+  "third_batch_exception": {
+    "package_id": "B008",
+    "independent_active_work": true,
+    "summary": "Dedicated live implementer /root/b008_crt now starts abstract finite CRT/Birkhoff and actual exact quotient descent in CCO/ExactCRT, disjoint from B005 selected SIR/direct model and B007 relative closure/maximal gates; all prerequisites already ACCEPTED on main, separate compilation resources and no sibling API dependence.",
+    "active_work_items": [
+      "CCO/ExactCRT/ abstract CRT and Birkhoff",
+      "CCO/ExactCRT/ actual exact lattice and guarded quotient descent"
+    ],
+    "implementation_actor_id": "/root/b008_crt",
+    "independence_report_path": "formalization/coordination/reports/B008-third-active-independence.md",
+    "existing_batches": [
+      {
+        "package_id": "B005",
+        "head_sha": "21381f6095d3b2787e3e248e5ea244180a66f06f",
+        "work_items": [
+          "CCO/SIR/Positive/ selected SIR and direct two-sheet model"
+        ],
+        "implementation_actor_ids": [
+          "/root/b005_positive",
+          "/root/b005_positive/direct_model"
+        ]
+      },
+      {
+        "package_id": "B007",
+        "head_sha": "21381f6095d3b2787e3e248e5ea244180a66f06f",
+        "work_items": [
+          "CCO/ParityHasse/Relative/ closure separation and maximal gates"
+        ],
+        "implementation_actor_ids": [
+          "/root/b007_relative"
+        ]
+      }
+    ],
+    "revision": 45
+  }
 }
