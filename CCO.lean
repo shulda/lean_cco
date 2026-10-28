@@ -122,3 +122,6 @@ import CCO.RawExact.FanReferenceEdges
 import CCO.RawExact.FanTerminalIncidence
 
 import CCO.RawExact.FanEdgeOverlaps
+
+import CCO.RawExact.FanDirectCoincidence
+import CCO.RawExact.FanDirectColourConsistency
