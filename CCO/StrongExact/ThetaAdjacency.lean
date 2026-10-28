@@ -53,9 +53,11 @@ def thetaSimpleGraph (ws : List (PositiveWord S i j)) :
     SimpleGraph (thetaVertices S ws) where
   Adj := thetaAdjacent S ws
   symm := by
+    constructor
     intro x y h
     exact thetaAdjacent_symmetric S ws h
   loopless := by
+    constructor
     intro x h
     exact thetaAdjacent_irreflexive S ws x h
 
