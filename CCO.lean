@@ -103,3 +103,5 @@ import CCO.StrongExact.ThetaCycleOrientation
 import CCO.StrongExact.ThetaCyclicIndexInverse
 import CCO.StrongExact.ThetaCycleBranchTags
 import CCO.StrongExact.ThetaCycleRootFreeSegment
+import CCO.StrongExact.ThetaCycleIndexCover
+import CCO.StrongExact.ThetaCycleIndexInjectivity

@@ -67,7 +67,7 @@ theorem thetaCycle_rootfree_forward_same_branch
     ∃ u : wordInterior S (ws.get b),
       C.vertices (thetaCycleAdvance C.length_pos start k) =
         (.inr ⟨b,u⟩ : thetaVertices S ws) := by
-  induction k generalizing hAvoid with
+  induction k with
   | zero =>
       exact ⟨t, by simpa only [thetaCycleAdvance] using hStart⟩
   | succ k ih =>
