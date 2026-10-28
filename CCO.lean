@@ -87,3 +87,5 @@ import CCO.RawExact.PrivateFanVertices
 import CCO.RawExact.PrivateFanGluing
 import CCO.RawExact.TypedChain
 import CCO.RawExact.PathEndpoints
+
+import CCO.RawExact.PrivateFanAdjacency
