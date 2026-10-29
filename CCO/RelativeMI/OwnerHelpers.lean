@@ -110,6 +110,7 @@ def ownerHelper : Finset N := by
   classical
   exact Finset.univ.biUnion (fun q : OwnerOrbitIndex S H R U hU => namedPacketFinset S H R U {ownerOrigin S H R U q.out})
 
+omit [Infinite M] in
 theorem ownerHelper_closed : PacketClosed S H R U (ownerHelper S H R U hU) := by
   classical
   intro x hx y hxy
@@ -117,6 +118,7 @@ theorem ownerHelper_closed : PacketClosed S H R U (ownerHelper S H R U hU) := by
   exact Finset.mem_biUnion.mpr ⟨q,Finset.mem_univ _,
     packetClosed_namedPacketFinset S H R U _ x hx y hxy⟩
 
+omit [Infinite M] in
 theorem ownerHelper_covers (s : ↥U) :
     ∃ x ∈ ownerHelper S H R U hU, ownerLabel S H R U x = s := by
   classical
