@@ -1,0 +1,1675 @@
+{
+  "schema_version": 1,
+  "id": "safe_readings",
+  "index_title": "Augmented safe selectors and independent rectangular readings",
+  "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+  "status": "HUMAN_EXPANDED_NOT_LEAN",
+  "scope": "B026 prepares all six safe-trace results, all four pure-owner/readings results and ONLY locality-absorb/locality-positive. The finite-menu gate proof is explicitly extracted and instantiated on augmented traces; original and augmented exact families remain distinct. Given strong S-amalgamation, actual age membership and endpoint actions are explicit. No reservoir, locality-bound, normalized MI or global EPPA theorem is exported.",
+  "scope_vocabulary": [
+    "SAP",
+    "SAP_primitive",
+    "strong_S",
+    "SAP_CCO",
+    "SAP_CCO_strong_S",
+    "finite_menu_algebra",
+    "primitive_pure_owner",
+    "finite_thin_action",
+    "actual_source_instance"
+  ],
+  "scope_explanation": "statement and proof. Primitive saturation, pure owner covariance, supplied strong-S spans and actual thin endpoint transport have separate dependency branches.",
+  "control_script": "tools/check_safe_readings_controls.py",
+  "assumptions": [
+    {
+      "id": "A01",
+      "name": "Actual homogeneous symmetric-original typed SAP source",
+      "statement": "Finite nonempty diversity palettes P_st on finitely many inhabited owner sorts, interpreted in an actual homogeneous binary source whose finite age has SAP. Literal old fine names come from a symmetric ORIGINAL structure: typed converse reverses owner tags and fixes every underlying name. Equality is never a diversity atom; triangle formal vertices remain distinct even for repeated sorts. Semantic CCO, primitivity and triangle-defined age membership are supplied separately only where used."
+    },
+    {
+      "id": "A02",
+      "name": "GIVEN all-span strong safe amalgamation",
+      "statement": "For the safe branch only, S_st is nonempty, typed converse-compatible and pure-Gamma-covariant, and strongly S-amalgamates EVERY finite COMPLETE typed span, including empty base. This is supplied before recolouring/selectors and is not inferred from their completion conclusion."
+    },
+    {
+      "id": "A03",
+      "name": "Finite pure owner language action",
+      "statement": "Gamma is a finite group acting on owner tags, fixing every literal original fine-colour name, preserving legal typed triangles, converse, products and original exact menus. BOTH Gamma and typed converse fix the underlying old names. No free or faithful action, atom permutations, independent pairwise selector choices or lifting section is assumed."
+    },
+    {
+      "id": "A04",
+      "name": "Actual central thin endpoint transport",
+      "statement": "For moving readings, G is finite elementary abelian of exponent two. A switch at an endpoint acts bijectively on owners and literal colours, preserves the complete legal triangle table and original exact menus. Vertex switches (r,q,p) send (a,b,c) to ((r+q)a,(q+p)b,(r+p)c). Diagonal owner action rho(G) lies in Gamma and commutes with Gamma; rho may be nonfaithful. These are actual B025 inflation/thin-bottom data, not a new action on arbitrary safe matrices."
+    },
+    {
+      "id": "A05",
+      "name": "Additional typed semantic homomorphic CCO",
+      "statement": "For original exact-menu/PC and their consumers, every finite specified typed diversity diagram whose specified simple cycles map homomorphically to the actual source itself maps there. SAP injectivization remains a separate source argument; neither primitive-loop fullness nor arbitrary-subset absorption uses CCO."
+    },
+    {
+      "id": "A06",
+      "name": "Additional primitive individual sorts",
+      "statement": "For loop saturation and no-positive-return, every named individual sort of the actual source has no proper nontrivial invariant equivalence. The interpreted relation Delta_t union J may be used here, with no equality colour added to strong composition."
+    },
+    {
+      "id": "A07",
+      "name": "Actual triangle-defined age bridge",
+      "statement": "For the canonical same-vertex completion conclusion, every finite complete owner-typed fine colouring whose triangles are legal belongs to the actual source age. B025 C34 supplies this bridge in the concrete full-owner instance. It is not assumed for an arbitrary age merely because its triangles are legal."
+    }
+  ],
+  "imports": [
+    {
+      "id": "I01",
+      "name": "Actual SAP strong algebra",
+      "source_label": "lem:typed-set-pasch",
+      "statement": "Reuse associative arbitrary-subset products, nonempty compatible products, full-palette absorption and Set-Pasch. No CCO or NR2 is used by this support.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01"
+      ],
+      "provider_module": "strong_selectors",
+      "provider_claims": [
+        "C02"
+      ]
+    },
+    {
+      "id": "I02",
+      "name": "Actual positive-path witnesses",
+      "source_label": "lem:typed-injectivisation",
+      "statement": "Positive word profiles are realized by individually injective actual paths over a prescribed complete root edge; auxiliary witnesses can be glued without treating equality as diversity.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01"
+      ],
+      "provider_module": "strong_selectors",
+      "provider_claims": [
+        "C04",
+        "C05"
+      ]
+    },
+    {
+      "id": "I03",
+      "name": "Original exact finite Helly",
+      "source_label": "lem:typed-helly",
+      "statement": "Finite pairwise-intersecting ORIGINAL strong exact menus have nonempty common intersection; singleton and genuine full Top cases included.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01",
+        "A05"
+      ],
+      "provider_module": "strong_selectors",
+      "provider_claims": [
+        "C07"
+      ]
+    },
+    {
+      "id": "I04",
+      "name": "Original exact algebra and atomic triangle support",
+      "source_label": "lem:typed-exact-products",
+      "statement": "Original exact singleton/product/converse/nonempty-meet closure and distribution ONLY at a NONEMPTY evaluated meet. Atomic Boolean Peirce is separately reused from the proved support, not strengthened theorem conclusion.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01",
+        "A05"
+      ],
+      "provider_module": "strong_selectors",
+      "provider_claims": [
+        "C08"
+      ],
+      "provider_support_claims": [
+        "C01"
+      ],
+      "provider_support_usage": "Extract the existing standalone Boolean triangle-definition proof C01 (ancestor of selected C08), retaining actual typed triangle premises; it is not inferred as a new conclusion of C08."
+    },
+    {
+      "id": "I05",
+      "name": "Original greatest-PC exact domains",
+      "source_label": "lem:typed-PC-fixedpoint-exact",
+      "statement": "Nonempty final greatest-PC domains are ORIGINAL exact. Reuse finite greatestness/certificate survival as explicit proved support.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01",
+        "A05"
+      ],
+      "provider_module": "strong_selectors",
+      "provider_claims": [
+        "C13"
+      ],
+      "provider_support_claims": [
+        "C10"
+      ],
+      "provider_support_usage": "Extract the finite monotone iteration and completion-survivor induction C10, a proved ancestor of selected C13; keep original PC initialization and all three-coordinate semantics."
+    },
+    {
+      "id": "I06",
+      "name": "Actual cycle-to-injective-completion bridge",
+      "source_label": "lem:typed-strong-cycle-completion",
+      "statement": "Source CCO plus SAP gives injective completion from realizable specified cycles, with complete-base preservation. The alternative actual-age membership proof uses B025 triangle-definedness.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01",
+        "A05"
+      ],
+      "provider_module": "strong_selectors",
+      "provider_claims": [
+        "C06"
+      ]
+    },
+    {
+      "id": "I07",
+      "name": "Original bilateral gate proof template",
+      "source_label": "lem:typed-bilateral",
+      "statement": "Original-H bilateral support proof is reused only as a template. C19 proves its finite-K version on explicit K axioms; safe traces are never declared original exact.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01",
+        "A05"
+      ],
+      "provider_module": "strong_selectors",
+      "provider_claims": [
+        "C15"
+      ]
+    },
+    {
+      "id": "I08",
+      "name": "Original gate basic/PC proof templates and fork support",
+      "source_label": "lem:typed-all-PC",
+      "statement": "Original-H gate nonemptiness and all-PC proof, plus separately selected supported-fork and supported-restriction proofs. C18-C21 explicitly prove the K instance.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01",
+        "A05"
+      ],
+      "provider_module": "strong_selectors",
+      "provider_claims": [
+        "C14",
+        "C17"
+      ],
+      "provider_support_claims": [
+        "C03",
+        "C16"
+      ],
+      "provider_support_usage": "Extract proved ancestors C03 (actual SAP-supported-fork duplication, arbitrary subsets) and C16 (original supported-menu restriction proof). Transport the latter explicitly under K closure/distribution; do not select them as direct exports or assert safe traces belong to original H."
+    },
+    {
+      "id": "I09",
+      "name": "Original gate image/composition proof template",
+      "source_label": "lem:typed-gate-image",
+      "statement": "Idempotence, fixed-image/downwardness, hereditary composition and strict contraction proof is explicitly repeated on K in C22.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01",
+        "A05"
+      ],
+      "provider_module": "strong_selectors",
+      "provider_claims": [
+        "C18"
+      ]
+    },
+    {
+      "id": "I10",
+      "name": "Conditional ORIGINAL pure-action engine",
+      "source_label": "lem:typed-pure-action-gate-engine",
+      "statement": "ORIGINAL-H joint singleton engine with explicit parallel generated-family separation premise. C17 discharges it; C23 separately repeats minimal-seed visibility for K.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01",
+        "A03",
+        "A05"
+      ],
+      "provider_module": "strong_selectors",
+      "provider_claims": [
+        "C26"
+      ],
+      "provider_support_claims": [
+        "C25"
+      ],
+      "provider_support_usage": "Extract the existing minimum viable seed/visibility proof C25, a proved ancestor of selected C26. Its finite-family argument is repeated for K; no original-H quantified theorem is instantiated outside its domain."
+    },
+    {
+      "id": "I11",
+      "name": "Actual full-owner primitive transversal and inflation",
+      "source_label": "thm:joint-transversal",
+      "statement": "Under the existing B025 standing normalized actual-source/finite G-closed owner hypotheses, reuse named-owner homogeneity/pure Gamma, triangle-defined actual origin age, typed SAP, primitivity and phase-aligned full inflation. Countability belongs to this actual source construction; no global raw-SAP option or ordinary EPPA premise is added. This concrete provider supplies the A01/A05/A06/A07 source properties and pure owner action under its unchanged normalized-source hypotheses.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [],
+      "provider_module": "owner_transversal",
+      "provider_claims": [
+        "C24",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40",
+        "C41",
+        "C44",
+        "C45",
+        "C46"
+      ]
+    },
+    {
+      "id": "I12",
+      "name": "Actual thin translation group",
+      "source_label": "lem:thin-bottom",
+      "statement": "Central elementary abelian G and literal law col(t_g x,t_h y)=(g+h)col(x,y); actual owner stabilizers may be nontrivial. Use distinct real packets for independent endpoint transport.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [],
+      "provider_module": "finite_packets",
+      "provider_claims": [
+        "C26",
+        "C27",
+        "C28"
+      ]
+    }
+  ],
+  "definitions": [
+    {
+      "id": "D01",
+      "name": "Typed actual diversity menus",
+      "statement": "P_st consists of realized literal non-F fine atoms on distinct owner-typed vertices; a menu carries ordered tags even if its underlying raw-colour subset agrees with another menu.",
+      "depends_on": [
+        "A01"
+      ],
+      "notes": "N01",
+      "source": {
+        "file": "sections/finite_locality.tex",
+        "anchor": "\\label{lem:locality-absorb}"
+      }
+    },
+    {
+      "id": "D02",
+      "name": "Original exact family and all-coordinate PC",
+      "statement": "H_st comprises nonempty finite meets of positive typed atomic word profiles; empty restriction list is genuine diversity Top. PC(D_st,A_tu,P_su) means P subset D*A, D subset P*bar A, A subset bar D*P.",
+      "depends_on": [
+        "D01",
+        "I03",
+        "I04"
+      ],
+      "notes": "N01",
+      "source": {
+        "file": "sections/typed_strong_domains.tex",
+        "anchor": "\\label{lem:typed-exact-products}"
+      }
+    },
+    {
+      "id": "D03",
+      "name": "Given safe palette and complete spans",
+      "statement": "S satisfies A02 for all finite complete typed spans. Strongness keeps the two off-base vertices distinct even over empty base.",
+      "depends_on": [
+        "A02",
+        "D01"
+      ],
+      "notes": "N01",
+      "source": {
+        "file": "sections/safe_trace_selector.tex",
+        "anchor": "\\label{lem:one-edge-safe-recolour}"
+      }
+    },
+    {
+      "id": "D04",
+      "name": "Augmented family K",
+      "statement": "K_st=H_st union {D intersect S_st: D in H_st, D intersect S_st nonempty}. These are evaluated subsets, not original exact menus by fiat; exclude empty evaluated sets.",
+      "depends_on": [
+        "D02",
+        "D03"
+      ],
+      "notes": "N03",
+      "source": {
+        "file": "sections/safe_trace_selector.tex",
+        "anchor": "\\label{lem:augmented-safe-algebra}"
+      }
+    },
+    {
+      "id": "D05",
+      "name": "Skeleton and trace flag",
+      "statement": "X=D_X intersect S^epsilon with D_X original exact, epsilon in {0,1}, S^0=P_st, S^1=S_st and X nonempty. Presentations need not be unique; S^0 is a full palette, not an equality menu.",
+      "depends_on": [
+        "D04"
+      ],
+      "notes": "N03",
+      "source": {
+        "file": "sections/safe_trace_selector.tex",
+        "anchor": "\\label{lem:augmented-safe-skeleton-calculus}"
+      }
+    },
+    {
+      "id": "D06",
+      "name": "Arbitrary loop subsets and strong powers",
+      "statement": "For nonempty W subset P_tt, W^n is the n-fold positive STRONG product; no exactness/profile premise. m=|P_tt| and m0=max_t m. Actual diagonal is only added when interpreting an invariant equivalence.",
+      "depends_on": [
+        "D01",
+        "I01"
+      ],
+      "notes": "N02",
+      "source": {
+        "file": "sections/finite_locality.tex",
+        "anchor": "\\label{lem:locality-positive}"
+      }
+    },
+    {
+      "id": "D07",
+      "name": "Pure owner action and literal-name converse",
+      "statement": "Gamma relabels owner tags, fixes literal names, and commutes with typed converse. Its stabilizers may be nontrivial; same-sort symmetry alone would not imply literal cross-sort converse invariance.",
+      "depends_on": [
+        "A03",
+        "D01"
+      ],
+      "notes": "N06",
+      "source": {
+        "file": "sections/owner_covariant_readings.tex",
+        "anchor": "\\label{lem:covariant-no-return}"
+      }
+    },
+    {
+      "id": "D08",
+      "name": "Generated tagged families and positive provenance",
+      "statement": "For a finite typed menu family Q (original H or augmented K), F_Gamma(C) closes C under all compatible Q-products, converse and Gamma. A generation path records absent/present outside multipliers in L*(gamma X)^epsilon*R; absent means identity ACTION only.",
+      "depends_on": [
+        "D01",
+        "D07"
+      ],
+      "notes": "N06",
+      "source": {
+        "file": "sections/owner_covariant_readings.tex",
+        "anchor": "\\label{lem:covariant-no-return}"
+      }
+    },
+    {
+      "id": "D09",
+      "name": "Abstract finite-menu gate instance",
+      "statement": "Q is a finite typed subfamily of actual palettes containing all singletons and Top, closed under converse, products and NONEMPTY meets, with 2-Helly and NONEMPTY-result product/meet distribution. A current J is Q-downward/converse/Gamma closed with all singletons. A filter F is closed under all Q-multipliers, converse and Gamma and is relatively visible on J. Gate G(D)=D intersect all parallel F menus meeting D, empty active list leaving D unchanged. These are per-instance algebraic hypotheses; Q need not be original H. The ambient Q itself is Gamma-invariant: Gamma bijects Q_st onto Q_gamma(s),gamma(t), preserving products and converse; generation therefore remains within Q.",
+      "depends_on": [
+        "D08"
+      ],
+      "notes": "N05",
+      "source": {
+        "file": "sections/typed_hereditary_selectors.tex",
+        "anchor": "\\label{def:typed-filter}"
+      }
+    },
+    {
+      "id": "D10",
+      "name": "Joint hereditary selector",
+      "statement": "Conservative singleton-valued map on a tagged family, compatible with converse, preserving all three PC inclusions and survivor heredity E subset D and h(D) in E implies h(E)=h(D). Pure owner covariance is h_gamma(s),gamma(t)(D)=h_st(D).",
+      "depends_on": [
+        "D01",
+        "D07"
+      ],
+      "notes": "N01",
+      "source": {
+        "file": "sections/typed_hereditary_selectors.tex",
+        "anchor": "\\label{def:joint-pruning}"
+      }
+    },
+    {
+      "id": "D11",
+      "name": "Safe retraction on ALL K",
+      "statement": "T(D)=D intersect S when that trace is nonempty, otherwise T(D)=D, for EVERY D in K, including already traced menus.",
+      "depends_on": [
+        "D04"
+      ],
+      "notes": "N07",
+      "source": {
+        "file": "sections/safe_trace_selector.tex",
+        "anchor": "\\label{lem:augmented-safe-algebra}"
+      }
+    },
+    {
+      "id": "D12",
+      "name": "Actual thin switches",
+      "statement": "For g in G, g sends D_st to (gD)_(gs),t and also (gD)_s,(gt); the owner action need not be faithful. Independent vertex switches preserve typed triangle tables; diagonal G fixes literal colours.",
+      "depends_on": [
+        "A04",
+        "D01"
+      ],
+      "notes": "N09",
+      "source": {
+        "file": "sections/owner_covariant_readings.tex",
+        "anchor": "\\label{eq:shifted-reading}"
+      }
+    },
+    {
+      "id": "D13",
+      "name": "Moved-type reading",
+      "statement": "h^g_st(D)=g h_(gs),t(gD) on ORIGINAL exact D. The moved input type is essential. g is its own inverse.",
+      "depends_on": [
+        "D10",
+        "D12"
+      ],
+      "notes": "N09",
+      "source": {
+        "file": "sections/owner_covariant_readings.tex",
+        "anchor": "\\label{eq:shifted-reading}"
+      }
+    },
+    {
+      "id": "D14",
+      "name": "Finite recorded diagram and greatest PC",
+      "statement": "Finite formal vertices with owner tags and at most one literal diversity record on each unordered pair, coherent under converse. Records initialize singleton domains and holes Top; all distinct-third-vertex PC updates have a canonical greatest fixed refinement. An injective actual completion is an explicit premise of the safe consumer.",
+      "depends_on": [
+        "D01"
+      ],
+      "notes": "N08",
+      "source": {
+        "file": "sections/safe_trace_selector.tex",
+        "anchor": "\\label{lem:safe-global-completion}"
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "name": "Arbitrary-subset full absorption",
+      "scope": "SAP",
+      "statement": "For all s,t,u and nonempty atomic subsets A subset P_st, B subset P_tu, A*P_tu=P_su and P_st*B=P_su. This reuses I01, not a new primitivity/CCO argument.",
+      "depends_on": [
+        "D01",
+        "I01"
+      ],
+      "notes": "N02",
+      "source_labels": [
+        "lem:locality-absorb"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C02",
+      "name": "Symmetric loop duplication",
+      "scope": "SAP",
+      "statement": "Every nonempty W subset P_tt satisfies W subset W^3. For each a in W strongly glue two realized two-a triangles over the complete third edge; the resulting four-cycle witnesses a in a*a*a.",
+      "depends_on": [
+        "D06",
+        "I01"
+      ],
+      "notes": "N02",
+      "source_labels": [
+        "lem:locality-positive"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C03",
+      "name": "Increasing even loop powers",
+      "scope": "SAP",
+      "statement": "E_k=W^(2k), k>=1, is an increasing sequence of nonempty subsets. Any adjacent equality propagates to all later even powers by associativity; stable J satisfies J*J=J.",
+      "depends_on": [
+        "C02",
+        "I01"
+      ],
+      "notes": "N02",
+      "source_labels": [
+        "lem:locality-positive"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C04",
+      "name": "Actual equivalence and primitivity",
+      "scope": "SAP_primitive",
+      "statement": "A nonempty stable symmetric J defines the ACTUAL invariant equivalence Delta_t union J. Equality appears only in this interpreted relation, never in strong multiplication. Primitivity forces J=P_tt.",
+      "depends_on": [
+        "C03",
+        "A01",
+        "A06"
+      ],
+      "notes": "N02",
+      "source_labels": [
+        "lem:locality-positive"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C05",
+      "name": "Uniform arbitrary-subset loop fullness",
+      "scope": "SAP_primitive",
+      "statement": "For EVERY nonempty, possibly NONEXACT W subset P_tt, W^(2|P_tt|)=P_tt and W^n=P_tt for every n>=2|P_tt|, including |P_tt|=1. In particular original exact loop menus eventually fill.",
+      "depends_on": [
+        "C01",
+        "C03",
+        "C04"
+      ],
+      "notes": "N02",
+      "source_labels": [
+        "lem:locality-positive",
+        "lem:covariant-loop-full"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C06",
+      "name": "One-edge same-vertex safe recolouring",
+      "scope": "strong_S",
+      "statement": "For every finite complete legal typed C and distinct x,y, strong-S-amalgamate C-x and C-y over C-{x,y}, then restrict to their images. This changes ONLY xy to a safe colour, fixes all owners and includes the two-vertex/empty-base case.",
+      "depends_on": [
+        "D03"
+      ],
+      "notes": "N03",
+      "source_labels": [
+        "lem:one-edge-safe-recolour"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C07",
+      "name": "Long witness presentation of nonsingleton exact menus",
+      "scope": "SAP_CCO",
+      "statement": "A nonsingleton D in original H has a finite meet presentation whose every word has at least two diversity letters, after discarding Top restrictions. Realize all paths individually injectively over ONE complete d-root edge and amalgamate their complete structures there; no path edge is the root edge.",
+      "depends_on": [
+        "D02",
+        "I02",
+        "I04"
+      ],
+      "notes": "N03",
+      "source_labels": [
+        "lem:safe-trace-product"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C08",
+      "name": "Safe traces and unsafe singleton exception",
+      "scope": "SAP_CCO_strong_S",
+      "statement": "Every nonsingleton original exact D meets its typed S. A singleton {d} meets S exactly when d in S. Recolour the common root edge of C07; all defining paths persist. Empty Top presentation is included.",
+      "depends_on": [
+        "C06",
+        "C07"
+      ],
+      "notes": "N03",
+      "source_labels": [
+        "lem:safe-trace-product"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C09",
+      "name": "Arbitrary-multiplier trace identity",
+      "scope": "SAP_CCO_strong_S",
+      "statement": "If D in original H meets S, then (D intersect S)*E=D*E for EVERY compatible nonempty atomic subset E, not necessarily exact or augmented. Hold the two other edges of a witness triangle fixed while recolouring the D-root edge. The matching left identity follows by converse.",
+      "depends_on": [
+        "C06",
+        "C07",
+        "C08",
+        "I04"
+      ],
+      "notes": "N03",
+      "source_labels": [
+        "lem:safe-trace-product"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C10",
+      "name": "Two-trace augmented products",
+      "scope": "SAP_CCO_strong_S",
+      "statement": "For any nonempty augmented X=D_X intersect S^e and Y=D_Y intersect S^f, X*Y=D_X*D_Y in ORIGINAL H. Remove the two traces successively using C09 with the other arbitrary nonempty augmented subset; no unique skeleton is needed.",
+      "depends_on": [
+        "D05",
+        "C09",
+        "I04"
+      ],
+      "notes": "N03",
+      "source_labels": [
+        "lem:augmented-safe-skeleton-calculus"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C11",
+      "name": "Augmented meet and nonempty distribution",
+      "scope": "SAP_CCO_strong_S",
+      "statement": "For nonempty evaluated finite intersections, intersect X_i=(intersect D_Xi) intersect S^(max e_i). Empty indexing list gives Top separately. If Y intersect Z is nonempty, X*(Y intersect Z)=(X*Y) intersect(X*Z), and likewise on the other side. Empty evaluated meets stay excluded.",
+      "depends_on": [
+        "C10",
+        "I04"
+      ],
+      "notes": "N03",
+      "source_labels": [
+        "lem:augmented-safe-skeleton-calculus"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C12",
+      "name": "Augmented converse and owner covariance",
+      "scope": "SAP_CCO_strong_S",
+      "statement": "K is finite, contains all singletons and genuine Top, and is closed under products, nonempty meets, typed converse and pure Gamma. S covariance/converse gives transported trace presentations without changing literal names.",
+      "depends_on": [
+        "D04",
+        "C10",
+        "C11",
+        "A03"
+      ],
+      "notes": "N03",
+      "source_labels": [
+        "lem:augmented-safe-algebra"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C13",
+      "name": "Augmented finite 2-Helly",
+      "scope": "SAP_CCO_strong_S",
+      "statement": "Every finite pairwise-intersecting parallel list of K menus has common atom. Use original skeleton Helly; a singleton skeleton forces its atom into every actual augmented menu. Otherwise recolour all simultaneous long-path witnesses once; empty list gives inhabited Top.",
+      "depends_on": [
+        "C06",
+        "C07",
+        "C11",
+        "I03"
+      ],
+      "notes": "N04",
+      "source_labels": [
+        "lem:augmented-safe-algebra"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C14",
+      "name": "Typed positive-provenance return normal form",
+      "scope": "primitive_pure_owner",
+      "statement": "Any generation path transforms X as L*(gamma X)^epsilon*R, with each outside factor absent or a nonempty positive product of generators. Multiplication, Gamma transport, converse and associativity never erase the present bit. Clearing Gamma/converse in q=2|Gamma| repetitions of a typed return gives P*X*Q with endpoint loop subsets; some multiplier is present if any multiplication occurred.",
+      "depends_on": [
+        "D08",
+        "I01"
+      ],
+      "notes": "N06",
+      "source_labels": [
+        "lem:covariant-no-return"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C15",
+      "name": "Uniform full return transformation",
+      "scope": "primitive_pure_owner",
+      "statement": "With m0=max_t|P_tt|, every typed return transformation T containing a positive outside factor satisfies T^(4|Gamma|m0)(D)=P_st for EVERY nonempty parallel atomic subset D. Present endpoint loop multipliers fill after 2m0 further powers; absent factors remain identity actions.",
+      "depends_on": [
+        "C14",
+        "C05",
+        "C01"
+      ],
+      "notes": "N06",
+      "source_labels": [
+        "lem:covariant-no-return"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C16",
+      "name": "No positive return through proper menus",
+      "scope": "primitive_pure_owner",
+      "statement": "No generation closed walk through proper D can use multiplication, since a fixed D under T contradicts C15. Full menus cannot reach proper menus. This applies to original or augmented generators, since C05 handles arbitrary subsets.",
+      "depends_on": [
+        "C15",
+        "C01"
+      ],
+      "notes": "N06",
+      "source_labels": [
+        "lem:covariant-no-return",
+        "lem:augmented-safe-algebra"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C17",
+      "name": "Parallel generated-family separation",
+      "scope": "primitive_pure_owner",
+      "statement": "If parallel menus A,B generate the same Gamma/converse/product-closed family, then A=B as literal subsets. Concatenate paths A to B to A; for proper A no multiplication occurs, and BOTH remaining owner relabellings and typed converse fix literal names. Full case follows from absorption.",
+      "depends_on": [
+        "C16",
+        "D07"
+      ],
+      "notes": "N06",
+      "source_labels": [
+        "lem:covariant-no-return",
+        "lem:augmented-safe-algebra"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C18",
+      "name": "Finite-K gate well-definedness and heredity",
+      "scope": "finite_menu_algebra",
+      "statement": "For EVERY per-instance Q,J,F satisfying D09, gate G(D) is nonempty, belongs Q and J, is conservative, converse/Gamma compatible and survivor-hereditary. Visibility gives a pairwise-intersecting active list; 2-Helly and meet closure give outputs. No original-H membership is asserted for Q.",
+      "depends_on": [
+        "D09",
+        "I08"
+      ],
+      "notes": "N05",
+      "source_labels": [
+        "lem:augmented-safe-algebra"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C19",
+      "name": "Finite-K bilateral support",
+      "scope": "finite_menu_algebra",
+      "statement": "For D in J_ij,E in J_kj and fixed P in Q_ik, if D subset P*E and E subset bar P*D then G(D) subset P*G(E) and G(E) subset bar P*G(D). P need not be current. Active A on E makes P*A active on D; distribute over the already NONEMPTY gated E intersection. Fixed-right analogue follows by converse.",
+      "depends_on": [
+        "C18",
+        "I07"
+      ],
+      "notes": "N05",
+      "source_labels": [
+        "lem:augmented-safe-algebra"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C20",
+      "name": "Augmented/current supported restrictions",
+      "scope": "finite_menu_algebra",
+      "statement": "For PC(A,B,C) and c in G(C), A_c=A intersect({c}*bar B), B_c=B intersect(bar A*{c}) are nonempty Q-current submenus meeting G(A),G(B). Heredity restricts G there. Actual SAP duplication and nonempty distribution give A_c subset {c}*bar B_c and bar B_c subset bar{c}*A_c.",
+      "depends_on": [
+        "C19",
+        "I08",
+        "I04"
+      ],
+      "notes": "N05",
+      "source_labels": [
+        "lem:augmented-safe-algebra"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C21",
+      "name": "All three PC coordinates for finite-K gates",
+      "scope": "finite_menu_algebra",
+      "statement": "For every PC triple of current Q menus, G(C) subset G(A)*G(B) and both rotated inclusions hold. For each c use C20 and bilateral support with fixed {c}; choose a in nonempty G(A_c), get b in G(B_c), then Peirce. Coinciding menu variables and owner labels are allowed.",
+      "depends_on": [
+        "C20",
+        "C19",
+        "I04"
+      ],
+      "notes": "N05",
+      "source_labels": [
+        "lem:augmented-safe-algebra"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C22",
+      "name": "Finite-K gate fixed image and composition",
+      "scope": "finite_menu_algebra",
+      "statement": "G is idempotent; its image is exactly its fixed current family, remains Q-downward/converse/Gamma closed and contains all singletons. Successive gates compose with survivor heredity/all-PC. An active proper trace strictly contracts its current menu and removes that menu from the image.",
+      "depends_on": [
+        "C18",
+        "C21",
+        "I09"
+      ],
+      "notes": "N05",
+      "source_labels": [
+        "lem:augmented-safe-algebra"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C23",
+      "name": "Minimal viable seed is visible",
+      "scope": "primitive_pure_owner",
+      "statement": "For a finite Q instance with C17 separation, choose a viable seed minimizing |F_Gamma(C)|. Disjoint parallel active A,B on one current D are themselves viable and generate subfamilies. If both subfamilies have full size, separation forces A=B; otherwise a smaller viable family contradicts minimality. The Gamma-closed gate is therefore visible.",
+      "depends_on": [
+        "D09",
+        "C17",
+        "I10"
+      ],
+      "notes": "N07",
+      "source_labels": [
+        "lem:augmented-safe-algebra"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C24",
+      "name": "ORIGINAL pure-owner covariant HS",
+      "scope": "primitive_pure_owner",
+      "statement": "On original H, I10 applies with no-return discharged by C17. It produces ONE joint hereditary singleton selector preserving converse, all three PC coordinates and h_gamma(s),gamma(t)(D)=h_st(D). No S or independently selected orbit choices.",
+      "depends_on": [
+        "D10",
+        "I10",
+        "C17"
+      ],
+      "notes": "N09",
+      "source_labels": [
+        "thm:covariant-HS"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C25",
+      "name": "Augmented pure-owner HS by explicit transport",
+      "scope": "SAP_CCO_strong_S",
+      "statement": "Instantiate D09 with Q=K using C10-C13, actual triangle Peirce and SAP fork support. C18-C23 then give successive proper Gamma-closed gates and terminate at singleton menus. This explicitly proves the K version; the original-H theorem is not applied to safe traces.",
+      "depends_on": [
+        "C12",
+        "C13",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23"
+      ],
+      "notes": "N07",
+      "source_labels": [
+        "lem:augmented-safe-algebra"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C26",
+      "name": "Safe T on the entire augmented family",
+      "scope": "SAP_CCO_strong_S",
+      "statement": "T:K to K is conservative, idempotent, converse/Gamma compatible and survivor-hereditary. A changed input must be original exact, since traced inputs already lie in S. For all compatible K menus D,E, T(D)*T(E)=D*E by successive arbitrary-multiplier trace removal. Hence T preserves all three PC coordinates.",
+      "depends_on": [
+        "D11",
+        "C09",
+        "C12"
+      ],
+      "notes": "N07",
+      "source_labels": [
+        "lem:augmented-safe-algebra"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C27",
+      "name": "One joint safe augmented selector",
+      "scope": "SAP_CCO_strong_S",
+      "statement": "With h0 obtained by C25, h_S=h0 composed with T is joint hereditary, conservative, converse/Gamma compatible and all-PC. If D meets S then h_S(D) lies in D intersect S. Survivor heredity composes through T; it is not inferred solely from conservativity.",
+      "depends_on": [
+        "C25",
+        "C26"
+      ],
+      "notes": "N07",
+      "source_labels": [
+        "lem:augmented-safe-algebra"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C28",
+      "name": "Each proper covariant gate removes an orbit",
+      "scope": "SAP_CCO_strong_S",
+      "statement": "The current image after a proper gate is its fixed family. If G(D) proper subset D, every Gamma translate of D is absent from that image. Thus each proper gate removes a whole orbit of tagged nonsingleton menus; later images stay nested.",
+      "depends_on": [
+        "C22",
+        "C25"
+      ],
+      "notes": "N07",
+      "source_labels": [
+        "cor:augmented-gamma-orbit-gate-bound"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C29",
+      "name": "Finite orbit gate bound",
+      "scope": "SAP_CCO_strong_S",
+      "statement": "After T at most N_Gamma=|Gamma\\{(s,t,D):D in K_st, |D|>=2}| proper gates suffice. N_Gamma<=sum_st(|K_st|-|P_st|)<=sum_st(2|H_st|-|P_st|). Count each distinct evaluated menu once, including duplicate skeleton presentations.",
+      "depends_on": [
+        "C26",
+        "C28"
+      ],
+      "notes": "N07",
+      "source_labels": [
+        "cor:augmented-gamma-orbit-gate-bound"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C30",
+      "name": "Nonfree pure action is harmless",
+      "scope": "SAP_CCO_strong_S",
+      "statement": "The gate/orbit proof requires neither free owner action nor faithful action on tags. A stabilizer fixes literal atoms and an invariant menu orbit can have size one. Atom-permuting stabilizers and directed cross-sort converse are outside this theorem.",
+      "depends_on": [
+        "C17",
+        "C28",
+        "A03"
+      ],
+      "notes": "N07",
+      "source_labels": [
+        "cor:augmented-gamma-orbit-gate-bound"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C31",
+      "name": "Existential safe completion certificate",
+      "scope": "strong_S",
+      "statement": "For every finite recorded diagram D14 with one injective actual completion, successive C06 recolourings of its ORIGINAL holes give a same-formal-vertex, same-owner completion, fixed on all records and safe on all holes. Empty/singleton vertex sets are vacuous. No equivariant certificate is chosen.",
+      "depends_on": [
+        "D14",
+        "C06"
+      ],
+      "notes": "N08",
+      "source_labels": [
+        "lem:safe-global-completion"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C32",
+      "name": "Greatest original PC retains safe survivors",
+      "scope": "SAP_CCO_strong_S",
+      "statement": "Every edge atom of C31 survives every PC update by its actual legal triangles. Hence every final original domain is nonempty, and every hole domain meets S. I05 gives ORIGINAL exactness and finite greatestness; zero/one/two-vertex cases retain their literal initial domains.",
+      "depends_on": [
+        "C31",
+        "I05"
+      ],
+      "notes": "N08",
+      "source_labels": [
+        "lem:safe-global-completion"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C33",
+      "name": "Canonical pure-owner equivariant safe completion",
+      "scope": "SAP_CCO_strong_S",
+      "statement": "Apply h_S to C32 domains. Records remain singleton, holes are safe, and all triangles are legal. Actual triangle-defined age membership (A07, with B025 C34 supplying its concrete instance) gives same-vertex injective realizability; alternatively establish all cycle witnesses then use I06. Greatestness and h_S covariance preserve every structural pure-Gamma automorphism simultaneously.",
+      "depends_on": [
+        "C32",
+        "C27",
+        "I06",
+        "A07"
+      ],
+      "notes": "N08",
+      "source_labels": [
+        "lem:safe-global-completion"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C34",
+      "name": "Supplied endpoint transport of original exact menus",
+      "scope": "finite_thin_action",
+      "statement": "Under supplied A04, independent switches biject the typed triangle table and strong products. Switching only one path endpoint gives gD in H_(gs),t and H_s,(gt), with exact converse/intersection/Top transport. This abstract calculation assumes the endpoint laws; their actual B025 distinct-F-packet justification is part of C40, not a hidden countability premise here.",
+      "depends_on": [
+        "D12",
+        "I04",
+        "A04"
+      ],
+      "notes": "N09",
+      "source_labels": [
+        "prop:moving-readings"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C35",
+      "name": "Conservation, heredity, converse and pure covariance of readings",
+      "scope": "finite_thin_action",
+      "statement": "Each h^g is conservative and individually survivor-hereditary on original H. Diagonal rho(g) in Gamma gives h_(gs),t(gD)=h_s,(gt)(gD), hence converse compatibility. Gamma commutation with rho(G) gives pure-Gamma covariance of each reading. Owner action may be nonfaithful.",
+      "depends_on": [
+        "D13",
+        "C24",
+        "C34",
+        "A04"
+      ],
+      "notes": "N09",
+      "source_labels": [
+        "prop:moving-readings"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C36",
+      "name": "Moved-type switching identity",
+      "scope": "finite_thin_action",
+      "statement": "For all u,v in G and original exact D_st, h^(u+v)_(vs),t(vD)=v h^u_st(D). Expand definition, cancel v+v=0, and retain the moved first type us. No unshifted or frame-relative selector is substituted.",
+      "depends_on": [
+        "C35",
+        "A04"
+      ],
+      "notes": "N09",
+      "source_labels": [
+        "prop:moving-readings"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C37",
+      "name": "Bilateral original refinement and independent support",
+      "scope": "finite_thin_action",
+      "statement": "If original exact D_st,A_tu,P_su satisfy D subset P*bar A and A subset bar D*P, then Pprime=P intersect(D*A) is nonempty original exact and PC(D,A,Pprime). Peirce, SAP duplication and nonempty distribution check BOTH missing coordinates. For arbitrary independent g,k, switching the two outer endpoints, applying h and undoing switches proves P intersect(h^g(D)*h^k(A)) nonempty.",
+      "depends_on": [
+        "C24",
+        "C34",
+        "C35",
+        "I04",
+        "I08"
+      ],
+      "notes": "N09",
+      "source_labels": [
+        "prop:moving-readings"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C38",
+      "name": "Fixed selected third colour and hereditary restrictions",
+      "scope": "finite_thin_action",
+      "statement": "For PC(D,A,P), independently select a=h^g(D),b=h^k(A),c=h^ell(P). Apply C37 to (bar D,P,A) and (P,bar A,D) to retain these specific a,c and b,c. Then Dprime=D intersect({c}*bar A), Aprime=A intersect(bar D*{c}) contain a,b, are original exact, and satisfy both c-support inclusions. Individual heredity keeps their selected a,b.",
+      "depends_on": [
+        "C37",
+        "C35",
+        "I04"
+      ],
+      "notes": "N09",
+      "source_labels": [
+        "prop:moving-readings"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C39",
+      "name": "Fully independent rectangular legal triangle",
+      "scope": "finite_thin_action",
+      "statement": "For EVERY original PC triple and ALL independently chosen g,k,ell in G, T(h^g_st(D),h^k_tu(A),h^ell_su(P)). Apply C37 to (Dprime,Aprime,{c}). No relation g+k=ell is imposed. Repeated owner labels/menu variables are allowed; the three formal triangle vertices remain distinct.",
+      "depends_on": [
+        "C38",
+        "C37"
+      ],
+      "notes": "N09",
+      "source_labels": [
+        "prop:moving-readings"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C40",
+      "name": "Actual owner-transversal specialization",
+      "scope": "actual_source_instance",
+      "statement": "Under the existing I11/I12 normalized-source hypotheses and the chosen Gamma containing rho(G), B025 supplies the actual homogeneous triangle-defined primitive owner source and literal pure-owner action, and thin-bottom supplies central endpoint transport. C24/C35-C39 therefore apply to the actual source without a lifting section, an equivariant origin choice, S, a reservoir or any EPPA hypothesis. Current countability is retained ONLY by this supplied actual construction.",
+      "depends_on": [
+        "I11",
+        "I12",
+        "C24",
+        "C35",
+        "C39"
+      ],
+      "notes": "N09",
+      "source_labels": [
+        "prop:moving-readings"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    }
+  ],
+  "source_files": [
+    {
+      "file": "sections/finite_locality.tex",
+      "git_blob": "758a8169efc94b48d8d3ee6ff8320db89ccab47a",
+      "bytes": 6614
+    },
+    {
+      "file": "sections/finite_packets.tex",
+      "git_blob": "dd3e608f03e7c5b1b1854a45de462859f8355143",
+      "bytes": 19875
+    },
+    {
+      "file": "sections/owner_covariant_readings.tex",
+      "git_blob": "486cc2bdb93734c3f255e7be260d47f4e7986d49",
+      "bytes": 14428
+    },
+    {
+      "file": "sections/owner_transversal_direct.tex",
+      "git_blob": "3c0effbc63c31000bbe3d88be59616b67efd7364",
+      "bytes": 13019
+    },
+    {
+      "file": "sections/safe_trace_selector.tex",
+      "git_blob": "e7cb7a29e244dea361d6a6a7198fec35c5e9992b",
+      "bytes": 23887
+    },
+    {
+      "file": "sections/typed_hereditary_selectors.tex",
+      "git_blob": "35b4013ad3c9886c7641f924202a1491464c126a",
+      "bytes": 19564
+    },
+    {
+      "file": "sections/typed_pc_fixedpoint.tex",
+      "git_blob": "796c74460c724023281e2d916d9ddb2e9eb70f07",
+      "bytes": 6018
+    },
+    {
+      "file": "sections/typed_strong_domains.tex",
+      "git_blob": "75d584069ce802c62d66104a852a3649fc082f1d",
+      "bytes": 21685
+    }
+  ],
+  "source_result_files": [
+    "sections/safe_trace_selector.tex",
+    "sections/owner_covariant_readings.tex"
+  ],
+  "additional_result_exports": [
+    "lem:locality-absorb",
+    "lem:locality-positive"
+  ],
+  "exports": [
+    {
+      "source_label": "lem:locality-absorb",
+      "claims": [
+        "C01"
+      ]
+    },
+    {
+      "source_label": "lem:locality-positive",
+      "claims": [
+        "C02",
+        "C03",
+        "C04",
+        "C05"
+      ]
+    },
+    {
+      "source_label": "lem:one-edge-safe-recolour",
+      "claims": [
+        "C06"
+      ]
+    },
+    {
+      "source_label": "lem:safe-trace-product",
+      "claims": [
+        "C07",
+        "C08",
+        "C09"
+      ]
+    },
+    {
+      "source_label": "lem:augmented-safe-skeleton-calculus",
+      "claims": [
+        "C10",
+        "C11"
+      ]
+    },
+    {
+      "source_label": "lem:augmented-safe-algebra",
+      "claims": [
+        "C12",
+        "C13",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C25",
+        "C26",
+        "C27"
+      ]
+    },
+    {
+      "source_label": "cor:augmented-gamma-orbit-gate-bound",
+      "claims": [
+        "C28",
+        "C29",
+        "C30"
+      ]
+    },
+    {
+      "source_label": "lem:safe-global-completion",
+      "claims": [
+        "C31",
+        "C32",
+        "C33"
+      ]
+    },
+    {
+      "source_label": "lem:covariant-loop-full",
+      "claims": [
+        "C01",
+        "C05"
+      ]
+    },
+    {
+      "source_label": "lem:covariant-no-return",
+      "claims": [
+        "C14",
+        "C15",
+        "C16",
+        "C17"
+      ]
+    },
+    {
+      "source_label": "thm:covariant-HS",
+      "claims": [
+        "C24"
+      ]
+    },
+    {
+      "source_label": "prop:moving-readings",
+      "claims": [
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40"
+      ]
+    }
+  ],
+  "auxiliary_exports": [
+    {
+      "source_label": "eq:augmented-skeleton-product",
+      "source": {
+        "file": "sections/safe_trace_selector.tex",
+        "anchor": "\\label{eq:augmented-skeleton-product}"
+      },
+      "claims": [
+        "C10"
+      ]
+    },
+    {
+      "source_label": "eq:augmented-skeleton-meet",
+      "source": {
+        "file": "sections/safe_trace_selector.tex",
+        "anchor": "\\label{eq:augmented-skeleton-meet}"
+      },
+      "claims": [
+        "C11"
+      ]
+    },
+    {
+      "source_label": "eq:augmented-skeleton-distrib",
+      "source": {
+        "file": "sections/safe_trace_selector.tex",
+        "anchor": "\\label{eq:augmented-skeleton-distrib}"
+      },
+      "claims": [
+        "C11"
+      ]
+    },
+    {
+      "source_label": "eq:covariant-HS",
+      "source": {
+        "file": "sections/owner_covariant_readings.tex",
+        "anchor": "\\label{eq:covariant-HS}"
+      },
+      "claims": [
+        "C24"
+      ]
+    },
+    {
+      "source_label": "eq:shifted-reading",
+      "source": {
+        "file": "sections/owner_covariant_readings.tex",
+        "anchor": "\\label{eq:shifted-reading}"
+      },
+      "claims": [
+        "C34",
+        "C35"
+      ]
+    },
+    {
+      "source_label": "eq:reading-switch",
+      "source": {
+        "file": "sections/owner_covariant_readings.tex",
+        "anchor": "\\label{eq:reading-switch}"
+      },
+      "claims": [
+        "C36"
+      ]
+    },
+    {
+      "source_label": "eq:reading-bilateral",
+      "source": {
+        "file": "sections/owner_covariant_readings.tex",
+        "anchor": "\\label{eq:reading-bilateral}"
+      },
+      "claims": [
+        "C37"
+      ]
+    },
+    {
+      "source_label": "eq:reading-rectangular",
+      "source": {
+        "file": "sections/owner_covariant_readings.tex",
+        "anchor": "\\label{eq:reading-rectangular}"
+      },
+      "claims": [
+        "C38",
+        "C39"
+      ]
+    }
+  ],
+  "dependency_firewalls": [
+    {
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C24",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40"
+      ],
+      "forbid": [
+        "A02",
+        "D03",
+        "D04",
+        "D05",
+        "D11",
+        "C06",
+        "C08",
+        "C09",
+        "C25",
+        "C26",
+        "C27",
+        "C31",
+        "C33"
+      ]
+    },
+    {
+      "claims": [
+        "C06",
+        "C31"
+      ],
+      "forbid": [
+        "C13",
+        "C24",
+        "C25",
+        "C27",
+        "C33",
+        "A04"
+      ]
+    },
+    {
+      "claims": [
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22"
+      ],
+      "forbid": [
+        "C24",
+        "C25",
+        "C27",
+        "C33",
+        "A04"
+      ]
+    },
+    {
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C14",
+        "C15",
+        "C16",
+        "C17"
+      ],
+      "forbid": [
+        "A05",
+        "A07",
+        "I03",
+        "I04",
+        "I05",
+        "I06",
+        "I07",
+        "I08",
+        "I09",
+        "I10"
+      ]
+    },
+    {
+      "claims": [
+        "C01",
+        "C02",
+        "C03"
+      ],
+      "forbid": [
+        "A06"
+      ]
+    },
+    {
+      "claims": [
+        "C06",
+        "C31"
+      ],
+      "forbid": [
+        "A05",
+        "A06",
+        "A07"
+      ]
+    },
+    {
+      "claims": [
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39"
+      ],
+      "forbid": [
+        "I11",
+        "I12",
+        "C40"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "T01",
+      "name": "Uniform primitive arbitrary-subset powers",
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Compile the exact quantified claims, discharge all listed actual-source providers and import public declarations into the Lean root; preserve explicit scope and meaningful consumer. Uniform primitive arbitrary-subset powers."
+    },
+    {
+      "id": "T02",
+      "name": "Safe trace and augmented skeleton/Helly",
+      "claims": [
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Compile the exact quantified claims, discharge all listed actual-source providers and import public declarations into the Lean root; preserve explicit scope and meaningful consumer. Safe trace and augmented skeleton/Helly."
+    },
+    {
+      "id": "T03",
+      "name": "Typed return and original covariant selector",
+      "claims": [
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C24"
+      ],
+      "depends_on": [
+        "T01"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Compile the exact quantified claims, discharge all listed actual-source providers and import public declarations into the Lean root; preserve explicit scope and meaningful consumer. Typed return and original covariant selector."
+    },
+    {
+      "id": "T04",
+      "name": "Explicit finite-menu gate transport",
+      "claims": [
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Compile the exact quantified claims, discharge all listed actual-source providers and import public declarations into the Lean root; preserve explicit scope and meaningful consumer. Explicit finite-menu gate transport."
+    },
+    {
+      "id": "T05",
+      "name": "Augmented safe selector and orbit bound",
+      "claims": [
+        "C23",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30"
+      ],
+      "depends_on": [
+        "T02",
+        "T03",
+        "T04"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Compile the exact quantified claims, discharge all listed actual-source providers and import public declarations into the Lean root; preserve explicit scope and meaningful consumer. Augmented safe selector and orbit bound."
+    },
+    {
+      "id": "T06",
+      "name": "Safe certificate and canonical completion",
+      "claims": [
+        "C31",
+        "C32",
+        "C33"
+      ],
+      "depends_on": [
+        "T02",
+        "T05"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Compile the exact quantified claims, discharge all listed actual-source providers and import public declarations into the Lean root; preserve explicit scope and meaningful consumer. Safe certificate and canonical completion."
+    },
+    {
+      "id": "T07",
+      "name": "Independent rectangular readings",
+      "claims": [
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40"
+      ],
+      "depends_on": [
+        "T03"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Compile the exact quantified claims, discharge all listed actual-source providers and import public declarations into the Lean root; preserve explicit scope and meaningful consumer. Independent rectangular readings."
+    }
+  ],
+  "overview_mermaid": [
+    "flowchart TD",
+    "  P[\"Primitive powers and pure owner returns\"] --> O[\"Original covariant selector\"]",
+    "  S[\"Given strong safe spans\"] --> K[\"Augmented skeleton and Helly\"]",
+    "  K --> A[\"Explicit finite-menu gates\"]",
+    "  P --> A",
+    "  A --> C[\"Safe canonical completion\"]",
+    "  O --> R[\"Independent rectangular readings\"]",
+    "  G[\"Actual thin endpoint switches\"] --> R"
+  ],
+  "overview_notes": [
+    "Source proof DAG only. The original/readings branch has no strong-S, safe-completion, reservoir, normalized-MI or ordinary-EPPA dependency. The construction of S and full interpacket orbit safety remain external to this unit."
+  ],
+  "controls": [
+    {
+      "id": "K01",
+      "check": "Bounded represented menu/loop controls include arbitrary NONEXACT subsets and reject empty-meet distribution; diagnostic only."
+    },
+    {
+      "id": "K02",
+      "check": "Moved endpoint types, independent G^3 readings and nonfaithful owner actions; pure atom-swap/directed-converse obstructions remain negative scope controls."
+    },
+    {
+      "id": "K03",
+      "check": "Finite safe retraction, all-coordinate PC and same-vertex one-edge recolouring in the explicit four-colour table. The script does not certify the general gate construction, canonical completion or infinite source hypotheses."
+    }
+  ],
+  "article_feedback": [
+    {
+      "id": "F01",
+      "kind": "FORMALIZATION_DETAIL",
+      "status": "NO_HUMAN_CHANGE_REQUIRED",
+      "source": {
+        "file": "sections/safe_trace_selector.tex",
+        "anchor": "\\label{lem:augmented-safe-algebra}"
+      },
+      "finding": "Original gate theorem statements quantify ORIGINAL H. The K finite-menu extraction and nonempty supported restrictions are now proved explicitly in notes, with support selected separately from direct exports.",
+      "proposed_article_change": "None required in the current actual source scope; preserve this extra proof expansion in sidecar notes.",
+      "caller_effect": "No statement/source pin or public accepted API changes.",
+      "proof_claims": [
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C25"
+      ]
+    },
+    {
+      "id": "F02",
+      "kind": "FORMALIZATION_DETAIL",
+      "status": "NO_HUMAN_CHANGE_REQUIRED",
+      "source": {
+        "file": "sections/safe_trace_selector.tex",
+        "anchor": "\\label{lem:safe-global-completion}"
+      },
+      "finding": "A legal complete triangle colouring belongs to the actual U_B age by the existing B025 C34 bridge, or by a separate all-cycle CCO/SAP argument. Bare triangle legality in an arbitrary age is insufficient.",
+      "proposed_article_change": "None required: make the existing actual-source age bridge explicit in the receiving contract.",
+      "caller_effect": "Consumer retains a genuine injective certificate and given all-span strong-S premise; no reservoir or unconditional EPPA is inferred.",
+      "proof_claims": [
+        "C31",
+        "C32",
+        "C33"
+      ]
+    }
+  ],
+  "review": {
+    "date": "2026-10-28",
+    "source_unchanged": true,
+    "unexpanded_provider_labels": [],
+    "source_signature_repairs": 0,
+    "proof_status": "Two bounded source/proof reviews plus explicit contract assembly. Human proof expansions, not Lean compilation, source-hypothesis certification or global EPPA audit.",
+    "independent_final_reviews": [
+      "Augmented safe trace/algebra/gate transport source and contract review",
+      "Actual endpoint transport, independent rectangular readings and safe-completion age bridge review"
+    ],
+    "metadata_refinements": [
+      "Separate validated provider_support_claims select proved transitive support, not new direct export claims.",
+      "Uniform loop powers range over arbitrary nonempty subsets, including nonexact menus.",
+      "Every safe span premise includes empty base.",
+      "Typed converse fixes literal old names in addition to Gamma.",
+      "Original rectangular readings do not depend on S.",
+      "Only locality-absorb/locality-positive are selected from finite_locality.tex.",
+      "SAP source, semantic CCO, primitive individual sorts and triangle-defined actual-age bridge are separate A01/A05/A06/A07 premises, with no-CCO locality/return and pure strong-S-certificate DAG firewalls.",
+      "Final contract audit: Q itself is Gamma-invariant before generating F_Gamma(C).",
+      "Final contract audit: abstract endpoint laws and readings do not import countable concrete B025 providers; these enter only C40."
+    ]
+  }
+}

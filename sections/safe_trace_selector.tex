@@ -1,0 +1,707 @@
+
+\section{Safe traces and the selector interface}
+\label{sec:safe-traces}
+
+The original selector, Theorem~\ref{thm:typed-HS}, selects
+an atom from an \emph{original} strong exact menu.
+A nonempty trace $D\cap S$ of an exact menu by a safe palette
+$S$ need not be a member of that original family.  We state
+explicitly the additional finite-algebra argument needed by
+rooted clique-faithful completion.  These claims are in the
+\emph{pure owner-language action} setting: $\Gamma$ permutes
+owner names but fixes every literal fine atomic colour.
+The endpoint thin-$G$ switching of Section~\ref{sec:full-rows}
+is handled separately by the rectangular moving-readings laws.
+
+\begin{lemma}[One-edge recolouring from strong $S$-amalgamation]
+\label{lem:one-edge-safe-recolour}
+Let $C$ be any finite \emph{complete} typed structure in a
+hereditary class with strong $S$-amalgamation of all finite
+typed spans.  For any two distinct vertices $x,y\in C$,
+there exists a complete typed structure $C'$ on the
+\emph{same vertex set and with the same owner labels},
+which agrees with $C$ on every pair other than $xy$
+and has $\col_{C'}(x,y)\in S_{\operatorname{own}(x),\operatorname{own}(y)}$.
+\end{lemma}
+\begin{proof}
+Strongly $S$-amalgamate the two complete factors
+$C\setminus\{x\}$ and $C\setminus\{y\}$ over their complete
+common part $C\setminus\{x,y\}$.  Their off-base parts are
+precisely the singleton vertices $y$ and $x$, respectively;
+strongness keeps them distinct and makes their new cross edge
+safe.  Restrict the amalgam to the two factor images and identify
+these images with the original vertex set.  All other pairs and
+all owner predicates were already present in one factor and so
+are unchanged.  The case of a two-point $C$ has empty base
+and is included.
+\end{proof}
+
+\begin{lemma}[Safe traces and arbitrary-multiplier product identity]
+\label{lem:safe-trace-product}
+Let $U$ be the primitive, typed, SAP and CCO transversal,
+with a nonempty pure-$\Gamma$-covariant palette
+$S_{st}\subseteq L_{st}$ which \emph{strongly}
+$S$-amalgamates every finite typed span.
+For every nonempty original strong exact menu $D\in\mathcal H_{st}$,
+the trace $D\cap S_{st}$ is nonempty unless $D$ is
+an atomic singleton outside $S_{st}$.  Whenever
+$D\cap S_{st}\ne\varnothing$, for every nonempty
+\emph{arbitrary atomic subset} $E\subseteq L_{tu}$, not
+necessarily original exact, one has
+\[
+          (D\cap S_{st})*E=D*E,
+\]
+and likewise on the left with matching types.
+\end{lemma}
+\begin{proof}
+If $D$ is an atomic singleton $\{d\}$, its trace is
+nonempty precisely when $d\in S$, and in this case the
+product identity is tautological.  Otherwise any finite
+meet presentation of $D$ uses only profiles of positive
+paths of length at least two (or the empty family presenting
+full top), since a length-one profile would make $D$
+an atomic singleton.
+
+Fix a realised root edge $xy=d\in D$.  For each profile in
+a chosen finite meet presentation of $D$, choose an injective
+path witness whose endpoints have colour $d$.  Amalgamate
+these complete finite path structures over their common
+\emph{complete} root edge $xy$ by AP.  Paths may overlap
+outside the roots, but each individual path remains injective.
+Apply Lemma~\ref{lem:one-edge-safe-recolour} to this
+complete structure: the root edge changes to some
+$d'\in S$ while every path witness remains valid.  Thus
+$d'\in D\cap S$.  The empty presentation of the top
+menu is handled by choosing any legal root edge first.
+
+For the product identity, choose any $c\in D*E$, realised
+by a triangle $xy=d\in D$, $yz=e\in E$, $xz=c$.
+Amalgamate all chosen path witnesses for $D$ with this
+triangle over its complete root edge $xy$.  Recolour only
+that edge by Lemma~\ref{lem:one-edge-safe-recolour},
+fixing $xz=c$, $yz=e$ and every path edge.  The new
+root colour $d'\in S$ still belongs to $D$, so the
+same triangle proves $c\in(D\cap S)*E$.
+The reverse inclusion is monotonicity.  Crucially the
+argument never presents $E$ by paths: it works for an
+arbitrary nonempty atomic subset.  Converse yields the
+left identity.
+\end{proof}
+
+\begin{lemma}[Explicit skeleton calculus for augmented safe traces]
+\label{lem:augmented-safe-skeleton-calculus}
+Work in the finite original
+typed strong exact family
+$\mathcal H$ of
+\cref{lem:safe-trace-product}.
+For each actual typed
+hom-palette $L_{st}$,
+put $S^0_{st}=L_{st}$
+(the genuine FULL
+DIVERSITY palette)
+and $S^1_{st}=S_{st}$.
+Write any nonempty
+augmented typed menu
+$X\subseteq L_{st}$ in
+the form
+\[
+        X=D_X\cap S^\epsilon_{st},
+ \qquad
+ \epsilon\in\{0,1\},
+\]
+where $D_X$ belongs to the
+ORIGINAL exact family and
+the displayed menu is
+nonempty; for $\epsilon=0$,
+this means literally $X=D_X$.
+This representation need
+not be unique. For any
+compatible augmented
+$X,Y$ with chosen original
+skeletons $D_X,D_Y$,
+\[
+                       X*Y=D_X*D_Y
+                  \in\mathcal H.
+\tag{AS1}\label{eq:augmented-skeleton-product}
+\]
+For any NONEMPTY finite
+intersection of parallel
+augmented menus,
+\[
+  \bigcap_{i=1}^m X_i
+   =\left(\bigcap_{i=1}^m D_{X_i}\right)
+             \cap S^{\max_i\epsilon_i},
+\tag{AS2}\label{eq:augmented-skeleton-meet}
+\]
+which is again one of
+the displayed nonempty
+augmented menus. In
+particular for all
+compatible augmented
+$X,Y,Z$ with
+$Y\cap Z\ne\varnothing$,
+both right- and left-
+multiplication preserve
+this nonempty meet:
+\[
+       X*(Y\cap Z)
+          =(X*Y)\cap(X*Z).
+\tag{AS3}\label{eq:augmented-skeleton-distrib}
+\]
+No identity or FALSE
+distributivity over EMPTY
+exact intersections is
+being introduced by
+$S^0$; it is only a
+NOTATIONAL absent-trace
+flag. Converse transports
+these formulas to reversed
+sorts because $S$ is
+converse-compatible.
+\end{lemma}
+\begin{proof}
+If neither factor is
+traced, (AS1) is
+tautological. If exactly
+one is traced, the
+arbitrary-nonempty-multiplier
+identity of
+\cref{lem:safe-trace-product}
+removes that safe trace
+without changing the
+strong product. If
+BOTH are traced, first
+remove the trace in X
+with multiplier Y, which
+is an arbitrary NONEMPTY
+atomic subset, and then
+remove the trace in Y
+with multiplier $D_X$.
+Both applications are
+type-compatible and
+give $X*Y=D_X*D_Y$.
+
+Formula (AS2) is an
+ordinary SET intersection
+identity: all $S$ factors
+are the SAME fixed safe
+palette of the parallel
+typed hom-set, so either
+one safe trace survives
+or none occurs. The
+underlying
+$\bigcap_iD_{X_i}$
+is a nonempty ORIGINAL
+exact meet because
+$\bigcap_iX_i\ne
+\varnothing$; when
+a trace is present,
+the resulting safe
+intersection is
+nonempty by assumption.
+This establishes closure
+under nonempty meets
+WITHOUT asserting the
+same for empty meets.
+
+For (AS3), choose
+skeletons $D_X,D_Y,D_Z$
+and let
+$D_{YZ}=D_Y\cap D_Z$,
+which is nonempty and
+ORIGINAL exact by (AS2).
+Apply (AS1) to the
+nonempty augmented meet
+$Y\cap Z$:
+\[
+ X*(Y\cap Z)
+      =D_X*(D_Y\cap D_Z).
+\]
+Original full strong
+exact meet-product
+distributivity yields
+\[
+ D_X*(D_Y\cap D_Z)
+    =(D_X*D_Y)
+          \cap(D_X*D_Z).
+\]
+Each product on the
+right equals its
+corresponding augmented
+product by (AS1).
+Converse gives the
+other multiplication
+direction, with the
+ACTUAL original typed
+endpoint labels.
+No uniqueness of the
+chosen skeleton
+representation was used.
+\end{proof}
+
+\begin{lemma}[Augmented safe-domain algebra]
+\label{lem:augmented-safe-algebra}
+Under the preceding hypotheses, the nonempty augmented
+families
+\[
+ \widehat{\mathcal H}_{st}=\mathcal H_{st}\cup
+ \{D\cap S_{st}:D\in\mathcal H_{st},\ D\cap S_{st}\ne\varnothing\}
+\]
+are finite, closed under nonempty meets, strong products and
+converse, satisfy nonempty Helly and meet-product
+distributivity, and are pure-$\Gamma$-covariant.
+They admit a joint hereditary singleton selector which,
+when precomposed with the safe trace whenever that trace
+is nonempty, chooses from $S_{st}$ for every such menu.
+\end{lemma}
+\begin{proof}
+The precise augmented-product,
+nonempty-meet and typed
+meet-distributivity identities
+are established independently
+in
+\cref{lem:augmented-safe-skeleton-calculus}.
+In particular every product
+of two augmented menus is
+the ORIGINAL exact product
+of any two chosen original
+skeletons; if both factors
+carry safe traces, the first
+trace-removal uses an
+ARBITRARY atomic-subset
+multiplier, not a
+nonjustified exactness
+assumption on the second
+trace. Empty exact
+intersections remain EMPTY
+and are never silently
+adjoined to the family.
+
+For Helly, take a pairwise-intersecting finite list
+of augmented menus, and replace every trace by its underlying
+original exact menu.  The resulting list is pairwise
+intersecting, so original exact 2-Helly gives a common atom
+$d$.  If no listed menu is a safe trace, this already
+settles the claim.  If one of the underlying original
+menus is an atomic singleton $\{e\}$, then the atom $e=d$
+is common to every augmented menu; because at least one
+listed menu is a safe trace, this atom already lies in $S$.
+Otherwise every original menu in the list has a finite
+meet presentation by paths of length at least two, with
+full top represented by the empty list.  Amalgamate all
+these path witnesses simultaneously over the complete
+root edge $xy=d$.  A single application of the
+one-edge recolouring lemma changes $d$ to some
+$d'\in S$ while leaving all path edges untouched.
+Therefore $d'$ belongs to every underlying exact menu
+and to every listed safe trace.  This proves augmented
+2-Helly, including repeated sorts and empty presentation
+lists, without any equality-edge convention.
+
+For completeness we give the additional *pure-$\Gamma$*
+descent argument, rather than invoking the noncovariant selector
+theorem and implicitly assuming covariance.    The common primitive-loop saturation theorem
+\cref{lem:locality-positive} applies to EVERY nonempty subset
+$W\subseteq P_{tt}$, even when $W$ is an augmented safe trace
+rather than an original exact or word-represented menu.  Thus
+$W^{*n}=P_{tt}$ for all sufficiently large $n$.  Its proof
+uses only symmetry, SAP and primitivity.  Full absorption of
+compatible nonempty augmented factors follows directly from
+\cref{lem:locality-absorb}; neither claim needs an adjoined
+identity atom.
+
+For an augmented seed $C$, let $\mathfrak F_\Gamma(C)$ be its
+finite tagged family generated by pure owner $\Gamma$ actions,
+converse and all compatible positive left/right multiplications
+by the $\widehat{\mathcal H}$ menus.  A path in this generation
+graph has a normal form $L*(\gamma C)^\varepsilon*R$, with
+outside factors possibly absent but otherwise nonempty
+\emph{positive} menus.  Multiplying, taking converse and applying
+a language relabelling never erases a positive factor: there is
+no equality operation introduced into the strong diversity
+algebra.  A positive closed return through a proper menu $D$
+would, after an even multiple of the finite order of $\gamma$,
+induce $D=P*D*Q$ with at least one positive loop multiplier.
+Iterating and using the preceding full-power saturation makes
+the right side equal to the full tagged palette, a contradiction.
+In particular if parallel augmented menus generate the same
+$\Gamma$-closed family, there are return paths between them,
+none involving multiplication.  Only relabelling and converse
+remain, which preserve the underlying literal symmetric raw
+colour names, hence the parallel menus are equal.
+
+Now run the descending-filter construction with the
+$\Gamma$-closed generated families $\mathfrak F_\Gamma(C)$,
+not the noncovariant original filters. The gate proofs
+\cref{lem:typed-bilateral,lem:typed-all-PC,lem:typed-gate-image}
+apply to $\widehat{\mathcal H}$ ON THEIR ACTUAL
+ALGEBRAIC HYPOTHESES, rather than by silently
+declaring every safe trace an original exact menu:
+the augmented finite menus have all atomic singletons,
+nonempty meet closure and $2$-Helly (proved above);
+the skeleton calculus
+\cref{lem:augmented-safe-skeleton-calculus}
+supplies strong products, converse and
+NONEMPTY meet-product distributivity.
+The typed Peirce rotations and the strong
+SAP duplication inclusions are unchanged
+because these concern actual fine-colour
+triangles, not membership in a skeleton.
+Thus the bilateral gate and all three
+PC gate coordinates are legitimate in
+the AUGMENTED family.
+
+Choose a seed $C$ having a proper
+nonempty trace on some current menu and
+minimising $|\mathfrak F_\Gamma(C)|$.
+If relative visibility failed, there
+would be PARALLEL augmented
+$A,B\in\mathfrak F_\Gamma(C)$ active
+on the SAME current menu but with
+$A\cap B=\varnothing$.
+Each of $A$ and $B$ is then itself
+a viable seed with a proper nonempty
+current trace, while
+$\mathfrak F_\Gamma(A)$ and
+$\mathfrak F_\Gamma(B)$ are
+SUBFAMILIES of
+$\mathfrak F_\Gamma(C)$.
+If both had the same cardinality,
+their generated families would be
+equal to $\mathfrak F_\Gamma(C)$;
+parallel no-positive-return separation
+would give $A=B$, a contradiction.
+Hence one seed has a STRICTLY
+smaller generated family, contradicting
+minimality. This proves relative
+visibility with ALL quantifiers in
+the augmented setting, including
+repeated sort labels and nonfree
+$\Gamma$-stabilisers.
+
+Its gate is nonempty by augmented Helly,
+is PC-preserving in all three positions
+by the transferred bilateral/Peirce
+proof, and respects converse and
+survivor heredity. It is
+\emph{$\Gamma$-covariant}, because the
+ENTIRE active filter family was closed
+under $\Gamma$ before the gate was taken;
+one never chooses separately inside
+different owner orbits.
+Each proper gate strictly decreases the finite family of tagged
+menus while keeping all atomic singleton menus.  Iteration
+terminates at a joint pure-$\Gamma$-covariant hereditary
+singleton selector on $\widehat{\mathcal H}$.  This is the
+specific augmented instance of the no-positive-return and
+gate mechanism in Theorem~\ref{thm:covariant-HS}; it does
+not follow from Theorem~\ref{thm:typed-HS} alone.
+Finally define the conservative safe
+pre-gate ON THE ENTIRE AUGMENTED FAMILY,
+not only on its original exact skeleton:
+\[
+ T(D)=\begin{cases}
+    D\cap S_{st},&D\cap S_{st}\ne\varnothing,\\
+    D,&D\cap S_{st}=\varnothing
+      \end{cases}
+      \qquad(D\in\widehat{\mathcal H}_{st}).
+\]
+It is well-defined in the augmented family,
+and is idempotent. For ANY compatible
+nonempty AUGMENTED menus $D,E$ one has
+\[
+                         T(D)*T(E)=D*E.
+\]
+Indeed a factor which changes under $T$
+must be an ORIGINAL exact menu: an
+already traced augmented menu lies wholly
+in $S$. Remove its safe trace using
+\cref{lem:safe-trace-product}, whose
+other multiplier is permitted to be
+ANY nonempty atomic subset, including an
+augmented trace. If BOTH factors change,
+remove the two traces successively,
+using the opposite-sided version for
+the second one. If neither changes the
+identity is tautological. Thus the
+displayed product identity holds on
+ALL of $\widehat{\mathcal H}$, not only
+on $\mathcal H$.
+
+Consequently for EVERY augmented
+typed PC triple, each of the three
+input menus shrinks under $T$ while
+the products on the right of EVERY
+rotated PC inclusion remain literally
+unchanged. Hence $T$ preserves all
+three inclusions. It commutes with
+typed converse because $S$ is
+converse-compatible, and with the
+pure owner $\Gamma$-action because
+$S$ is $\Gamma$-covariant.
+Finally, if nonempty augmented
+$E\subseteq D$ meets $T(D)$,
+then $T(E)=E\cap T(D)$:
+if $D\cap S\ne\varnothing$, the
+hypothesis implies $E\cap S\ne
+\varnothing$, so both traces are
+nonempty and the equality is direct;
+if $D\cap S=\varnothing$, also
+$E\cap S=\varnothing$ and both are
+unchanged. This proves survivor
+heredity on the whole augmented
+domain, including repeated sorts,
+nonfree owner stabilisers and
+identical source menu variables.
+
+Let $h_0$ be the singleton selector obtained by the descending gates.
+The promised safe selector is explicitly
+\[
+                         h_S(D)=h_0(T(D)).
+\]
+Both factors preserve converse, pure-$\Gamma$ covariance and all three
+PC inclusions. Survivor heredity also composes: a surviving output
+belongs to $T(D)$, so first apply heredity of $T$ and then of $h_0$.
+Finally $h_S(D)\in T(D)\subseteq D$, and whenever $D$ meets $S$,
+its value lies in $D\cap S$.
+\end{proof}
+
+\begin{corollary}[Finite orbit bound for the augmented pure-owner gate iteration]
+\label{cor:augmented-gamma-orbit-gate-bound}
+Under the hypotheses of
+\cref{lem:augmented-safe-algebra},
+put
+\[
+ \mathscr M_{\ge2}
+  =\{(s,t,D):D\in\widehat{\mathcal H}_{st},
+                         \ |D|\ge2\},
+ \qquad
+ N_\Gamma=|\Gamma\backslash\mathscr M_{\ge2}|.
+\]
+After the conservative pre-gate $T$,
+at most $N_\Gamma$ PROPER
+$\Gamma$-closed descending filter
+gates are needed to obtain one joint
+pure-$\Gamma$-covariant
+hereditary singleton selector.
+In particular
+\[
+ N_\Gamma\le
+ \sum_{s,t}\bigl(
+       |\widehat{\mathcal H}_{st}|
+                   -|L_{st}|\bigr)
+ \le\sum_{s,t}
+              (2|\mathcal H_{st}|-|L_{st}|).
+\]
+No free action on the owner sorts
+or on the tagged menus is required.
+In fact an owner-tag stabiliser acts
+trivially on each literal original
+symmetric fine atom name.
+\end{corollary}
+\begin{proof}
+At each stage the current family
+$\mathcal J$ of NONEMPTY augmented
+menus is $\Gamma$-invariant, is
+downward closed relative to the
+original augmented family, and
+contains every tagged atomic
+singleton. The generated filter
+is first CLOSED under the ENTIRE
+$\Gamma$ action. Its gate
+$\mathcal G$ is consequently
+$\Gamma$-covariant. The ORIGINAL
+gate-image proof
+\cref{lem:typed-gate-image}
+applies because, as explicitly
+checked in the preceding augmented
+lemma, all its nonempty-meet,
+Helly, distributivity, Peirce
+and bilateral-support premises
+hold in $\widehat{\mathcal H}$.
+In particular survivor heredity
+gives
+$\mathcal G(\mathcal G(D))=\mathcal G(D)$:
+apply it with $E=\mathcal G(D)$,
+an AUGMENTED menu contained in D.
+Thus the image family
+$\mathcal G(\mathcal J)$ is EXACTLY
+the family of fixed menus, is again
+downward and $\Gamma$-invariant,
+and contains all atomic singletons.
+
+If $\mathcal J$ still contains a
+nonsingleton $D$, one atomic
+singleton $C\subsetneq D$ has a
+proper nonempty current trace,
+so the minimal generated-filter
+procedure of
+\cref{lem:typed-pure-action-gate-engine}
+produces a gate with
+$\mathcal G(D')\subsetneq D'$
+for SOME nonsingleton $D'$
+(possibly different from $D$).
+Since $\mathcal G$ is
+IDEMPOTENT, $D'$ is NOT in its
+image. For every $\gamma\in\Gamma$,
+\[
+ \mathcal G(\gamma D')
+       =\gamma\mathcal G(D')
+                         \subsetneq\gamma D',
+\]
+so the ENTIRE $\Gamma$-orbit of
+$D'$ is absent from the image
+family. In particular the number
+of represented $\Gamma$-orbits
+of nonsingleton menus decreases
+strictly after each proper gate.
+At most $N_\Gamma$ gates therefore
+reach a family consisting only of
+atomic singleton menus. All gates
+preserve converse, the THREE PC
+inclusions and survivor heredity,
+so their composite after $T$
+is the desired selector.
+
+The cardinality bound counts
+each original exact menu at most
+once and each nonempty safe trace
+at most once more; every tagged
+atomic singleton belongs to
+$\mathcal H_{st}$. The action
+need not be free: a menu fixed
+by a nontrivial stabiliser is
+simply an orbit of size one.
+In the ACTUAL symmetric-original
+source both $\Gamma$ and typed
+converse fix the underlying
+original literal fine atom names,
+so stabilisers introduce no
+atom-level fixed-point obstruction.
+\end{proof}
+
+\begin{remark}[Why pure owner covariance cannot be replaced by atom permutations]
+\label{rem:augmented-safe-pure-gamma-essential}
+The $\Gamma$-action used in
+\cref{lem:augmented-safe-algebra}
+permutes only the ACTUAL
+owner SORT TAGS and fixes
+every literal original
+fine atomic colour name.
+This is essential for the
+no-positive-return gate
+argument and cannot be
+weakened to an arbitrary
+$\Gamma$-permutation of
+fine atomic colour names.
+
+Indeed consider only the
+ABSTRACT finite selection
+problem on one
+two-element atom set
+$L=\{a,b\}$, with
+$\Gamma=C_2$ interchanging
+a and b and with the
+$\Gamma$-invariant
+menu $D=L$.
+A conservative
+$\Gamma$-covariant
+singleton selector
+would satisfy
+\[
+                  \gamma(h(D))
+                    =h(\gamma D)=h(D)
+\]
+for the nontrivial
+$\gamma$. No atom of D
+is fixed by $\gamma$,
+so such a selector is
+IMPOSSIBLE. This is
+an obstruction to the
+proposed STRONGER
+abstract selector scope,
+not an assertion that
+these toy data form
+an actual homogeneous
+CCO structure.
+
+In the actual
+full-owner transversal,
+the simultaneous owner
+permutation is realised
+by an ambient original
+automorphism and fixes
+the literal old fine
+atom names. The
+unilateral thin-$G$
+switch instead moves
+both endpoint tags and
+colour names and is
+handled by the SEPARATE
+moving-reading
+\cref{prop:moving-readings}.
+\end{remark}
+
+\begin{lemma}[Safe completion from an injective certificate]
+\label{lem:safe-global-completion}
+In the primitive owner-typed SAP source with strong $S$-amalgamation,
+let $P$ be a finite partial diagram with an injective completion
+and at most one recorded literal atomic colour per pair.
+There exists an injective \emph{same-vertex} completion in which
+every originally unrecorded pair receives a colour in its
+corresponding typed $S$ palette.
+Moreover, if $P$ admits a structural pure-$\Gamma$ action,
+the greatest nonempty strong-PC fixed family followed by the
+augmented hereditary selector produces one legal complete
+colouring preserving all these automorphisms and filling
+all originally unrecorded pairs in $S$.
+\end{lemma}
+\begin{proof}
+Start with any legal complete injective colouring on
+the given finite vertex set.  Apply the one-edge recolouring
+lemma successively to every originally unrecorded pair.
+Each application changes only the selected pair and
+retains all other pairs, including previous safe choices
+and all original literal records.  It produces a complete
+legal structure with the same owner labels, with every
+original hole filled in $S$.
+
+The latter complete colouring witnesses nonemptiness of
+every domain in the greatest oriented strong-PC process:
+its chosen atom survives every update because its triangles
+remain legal.  It also witnesses that the final domain of
+\emph{each originally unrecorded pair} meets $S$.
+The augmented hereditary selector of
+Lemma~\ref{lem:augmented-safe-algebra} therefore chooses
+an $S$ atom at each such final domain, while preserving
+original singleton records.  Its full-three-PC property
+makes every resulting coloured triangle legal.
+The family of final domains is canonical as the greatest
+common fixed point, hence the pure-$\Gamma$ action
+preserves it.  The selector is pure-$\Gamma$-covariant,
+so the resulting fine colouring preserves every requested
+structural pure-$\Gamma$ automorphism.
+\end{proof}
+
+\begin{remark}[The actual nontrivial packet interface]
+\label{rem:safe-gauge-firewall}
+For nontrivial thin $G$, the safety condition must be checked
+for \emph{entire interpacket matrices}, under every unilateral
+thin translation.  This orbit-safe full-matrix palette is
+not automatically invariant under a new action on the
+\emph{literal} raw colour names.  The selected reading
+$h^u_{st}$ is obtained from the pure owner selector using the
+original rectangular switching construction of
+Proposition~\ref{prop:moving-readings}.  Its compatibility
+with the $G$ endpoint switch is a \emph{separate}
+requirement; it cannot be deduced merely by replacing the
+pure $\Gamma$ action by an action permuting raw colours.
+For the actual residual full-owner source, this packet-safe instance
+is supplied by \cref{lem:orbit-safe-strong,lem:orbit-safe-all-row-interface}.
+The first uses absolute real closure and full-owner closed SAP; the second
+uses the injective full-row completion certificate from
+\cref{lem:R07-W-completable}, with no equivariance requirement on that
+certificate. Its rooted use is explicit in
+\cref{lem:acf-relative-mi-normal}. These named provider hypotheses remain
+part of the source-relative verification of the global theorem.
+\end{remark}

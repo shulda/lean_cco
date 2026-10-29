@@ -8,6 +8,104 @@ import build_formalization_module as module
 
 
 class ModuleTests(unittest.TestCase):
+    def _safe_import_fixture(self):
+        config = json.loads((module.ROOT / 'formalization/safe_readings/module.json').read_text())
+        decls = json.loads((module.ROOT / 'catalogue/declarations.json').read_text())
+        return config, decls
+
+    def _validate_with_strong_provider(self, config, declarations, provider):
+        path = module.ROOT / 'formalization/strong_selectors/module.json'
+        original = module.Path.read_text
+        def read_text(file, *args, **kwargs):
+            return json.dumps(provider) if file == path else original(file, *args, **kwargs)
+        with patch.object(module.Path, 'read_text', new=read_text):
+            return module.validate(module.ROOT, config, declarations)
+
+    def test_internal_support_is_visible_without_broadening_the_export(self):
+        config, decls = self._safe_import_fixture()
+        order, labels, raw = module.validate(module.ROOT, config, decls)
+        text = module.render(config, order, labels, raw)
+        provider = json.loads((module.ROOT / 'formalization/strong_selectors/module.json').read_text())
+        for item in config['imports']:
+            if 'provider_support_claims' in item:
+                exported = next(e for e in provider['exports'] if e['source_label'] == item['source_label'])
+                self.assertTrue(set(item['provider_claims']) <= set(exported['claims']))
+                self.assertFalse(set(item['provider_support_claims']) & set(item['provider_claims']))
+                self.assertIn(item['id'] + ' internal proof support', text)
+                self.assertIn(item['provider_support_usage'], text)
+        self.assertIn('not additional\nconclusions of the named exported theorem', text)
+
+    def test_internal_support_rejects_unexported_or_invalid_selected_claims(self):
+        config, decls = self._safe_import_fixture()
+        for selected in [None, [], ['C08', 'C08'], ['C01'], ['C99'], 'C08']:
+            bad = deepcopy(config)
+            next(i for i in bad['imports'] if i['id'] == 'I04')['provider_claims'] = selected
+            with self.subTest(selected=selected), self.assertRaisesRegex(ValueError, 'selected export'):
+                module.validate(module.ROOT, bad, decls)
+
+    def test_internal_support_is_strict_proved_transitive_claim_support(self):
+        config, decls = self._safe_import_fixture()
+        for support in [None, [], ['C01', 'C01'], ['C08'], ['C26'], ['A01'], ['C99'], 'C01']:
+            bad = deepcopy(config)
+            next(i for i in bad['imports'] if i['id'] == 'I04')['provider_support_claims'] = support
+            with self.subTest(support=support), self.assertRaisesRegex(ValueError, 'Internal proof support'):
+                module.validate(module.ROOT, bad, decls)
+
+    def test_internal_support_requires_usage_and_cannot_inherit_a_provider(self):
+        config, decls = self._safe_import_fixture()
+        for usage in [None, '', '  ', []]:
+            bad = deepcopy(config)
+            next(i for i in bad['imports'] if i['id'] == 'I04')['provider_support_usage'] = usage
+            with self.subTest(usage=usage), self.assertRaises(ValueError):
+                module.validate(module.ROOT, bad, decls)
+        for before in [True, False]:
+            bad = deepcopy(config)
+            unbound = deepcopy(next(i for i in bad['imports'] if i['id'] == 'I04'))
+            unbound.update(id='I13', provider_module=None)
+            bad['imports'].insert(0 if before else len(bad['imports']), unbound)
+            with self.subTest(before=before), self.assertRaisesRegex(ValueError, 'pinned provider'):
+                module.validate(module.ROOT, bad, decls)
+        bad = deepcopy(config)
+        next(i for i in bad['imports'] if i['id'] == 'I04').pop('provider_support_claims')
+        with self.assertRaises(ValueError):
+            module.validate(module.ROOT, bad, decls)
+
+    def test_internal_support_rejects_graph_status_and_export_provenance_failures(self):
+        config, decls = self._safe_import_fixture()
+        provider = json.loads((module.ROOT / 'formalization/strong_selectors/module.json').read_text())
+        variants = []
+        for deps in [[], ['C08'], ['C99']]:
+            bad = deepcopy(provider)
+            next(c for c in bad['claims'] if c['id'] == 'C08')['depends_on'] = deps
+            variants.append(bad)
+        bad = deepcopy(provider)
+        next(c for c in bad['claims'] if c['id'] == 'C01')['status'] = 'LEAN_PROVED'
+        variants.append(bad)
+        bad = deepcopy(provider)
+        bad['source_commit'] = '0' * 40
+        variants.append(bad)
+        bad = deepcopy(provider)
+        bad['exports'].append(deepcopy(next(e for e in bad['exports']
+            if e['source_label'] == 'lem:typed-exact-products')))
+        variants.append(bad)
+        bad = deepcopy(provider)
+        bad['source_files'][0]['git_blob'] = '0' * 40
+        variants.append(bad)
+        for i, bad in enumerate(variants):
+            with self.subTest(variant=i), self.assertRaises(ValueError):
+                self._validate_with_strong_provider(config, decls, bad)
+
+    def test_direct_owner_closure_keeps_countability_and_normalization_firewalls(self):
+        config = json.loads((module.ROOT / 'formalization/direct_owner_closure/module.json').read_text())
+        decls = json.loads((module.ROOT / 'catalogue/declarations.json').read_text())
+        module.validate(module.ROOT, config, decls)
+        self.assertEqual(len(config['exports']), 1)
+        for claim, forbidden in [('C05', 'A08'), ('C08', 'I07'), ('C18', 'C24'), ('C22', 'A05')]:
+            bad = deepcopy(config)
+            next(c for c in bad['claims'] if c['id'] == claim)['depends_on'].append(forbidden)
+            with self.subTest(claim=claim, forbidden=forbidden), self.assertRaisesRegex(ValueError, 'firewall'):
+                module.validate(module.ROOT, bad, decls)
+
     def _mi_import_fixture(self):
         config = json.loads((module.ROOT / 'formalization/mi_geometry/module.json').read_text())
         declarations = json.loads((module.ROOT / 'catalogue/declarations.json').read_text())

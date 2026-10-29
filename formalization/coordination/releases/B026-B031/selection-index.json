@@ -1,0 +1,56 @@
+{
+  "head": "c66c883bdfb30991745b987ea4c1a75a189ddbb4",
+  "private_board_revision": 43,
+  "private_package_count": 59,
+  "public_main": "def25037dfa278001a41732eadae694448f38426",
+  "public_state_revision": 200,
+  "selected": [
+    "B026",
+    "B031"
+  ],
+  "selected_modules": [
+    "safe_readings",
+    "direct_owner_closure"
+  ],
+  "provider_modules": [
+    "canonical_hull",
+    "finite_packets",
+    "owner_transversal",
+    "raw_exact",
+    "strong_selectors"
+  ],
+  "source_record_count": 28,
+  "payload_file_count": 14,
+  "new_source_files": [
+    "sections/direct_owner_closure.tex",
+    "sections/finite_locality.tex",
+    "sections/owner_covariant_readings.tex",
+    "sections/safe_trace_selector.tex"
+  ],
+  "selected_details": {
+    "safe_readings": {
+      "definitions": 14,
+      "claims": 40,
+      "exports": 12,
+      "auxiliary_exports": 8,
+      "tasks": 7,
+      "source_files": 8,
+      "control": "tools/check_safe_readings_controls.py"
+    },
+    "direct_owner_closure": {
+      "definitions": 8,
+      "claims": 25,
+      "exports": 1,
+      "auxiliary_exports": 0,
+      "tasks": 6,
+      "source_files": 6,
+      "control": "tools/check_direct_owner_closure_controls.py"
+    }
+  },
+  "no_external_inputs_in_selected": true,
+  "first_external_gate": "B027, AFTER B026 accepted; HKN1.1/1.2 adapter+dependency build reuse",
+  "future_cache_note": "formalization/EXTERNAL_PROVIDER_BUILD_CACHE.md",
+  "mathematical_metadata_unchanged": true,
+  "production_validator_unchanged": true,
+  "public_state_unchanged": true
+}

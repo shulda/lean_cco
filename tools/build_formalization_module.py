@@ -41,6 +41,35 @@ def topological_order(nodes):
     return ordered
 
 
+def validate_provider_support(provider, item, exported):
+    """Check internal human proof provenance, without creating theorem exports."""
+    support = item.get('provider_support_claims')
+    usage = item.get('provider_support_usage')
+    selected = item.get('provider_claims', exported)
+    claims = {c['id']: c for c in provider['claims']}
+    def nonempty_ids(values):
+        return (isinstance(values, list) and bool(values)
+                and all(isinstance(c, str) for c in values)
+                and len(values) == len(set(values)))
+    if (not nonempty_ids(exported) or not set(exported) <= claims.keys()
+            or not nonempty_ids(selected) or not set(selected) <= set(exported)):
+        raise ValueError('Internal proof support requires valid selected export claims')
+    if not nonempty_ids(support) or not isinstance(usage, str) or not usage.strip():
+        raise ValueError('Internal proof support requires unique nonempty claims and explicit usage')
+    nodes = (provider['assumptions'] + provider.get('external_providers', [])
+             + provider.get('imports', []) + provider['definitions'] + provider['claims'])
+    by_id = {n['id']: n for n in nodes}
+    ancestors = {}
+    for ident in topological_order(nodes):
+        deps = by_id[ident].get('depends_on', [])
+        ancestors[ident] = set(deps).union(*(ancestors[d] for d in deps))
+    eligible = set().union(*(ancestors[c] for c in selected)) & claims.keys()
+    if (not set(support) <= eligible or set(support) & set(selected)
+            or any(claims[c]['status'] != 'HUMAN_PROOF_EXPANDED' for c in support)):
+        raise ValueError('Internal proof support must be proved strict claim ancestors')
+    return [claims[c] for c in support]
+
+
 def validate(root, module, declarations):
     sources = {x['file']: x for x in module['source_files']}
     if len(sources) != len(module['source_files']):
@@ -76,8 +105,13 @@ def validate(root, module, declarations):
         if any(ancestors[c] & set(firewall['forbid']) for c in firewall['claims']):
             raise ValueError('Dependency firewall crossed')
     catalogue_labels = set(by_label)
+    catalogue_sources = dict(by_label)
     for item in imports:
         label = item['source_label']
+        has_internal_support = ('provider_support_claims' in item
+                                or 'provider_support_usage' in item)
+        if has_internal_support and not item.get('provider_module'):
+            raise ValueError('Internal proof support requires a pinned provider module')
         auxiliary_import = label not in catalogue_labels
         if auxiliary_import and not item.get('provider_module'):
             raise ValueError(f'Unknown imported source without pinned auxiliary provider: {label}')
@@ -120,6 +154,30 @@ def validate(root, module, declarations):
             if provider['source_commit'] != module['source_commit'] or label not in {
                     x['source_label'] for x in exports}:
                 raise ValueError(f'Imported provider module mismatch: {label}')
+            if has_internal_support:
+                matching = [e for e in exports if e['source_label'] == label]
+                if len(matching) != 1:
+                    raise ValueError('Internal proof support requires a unique provider export')
+                support_claims = validate_provider_support(provider, item, matching[0]['claims'])
+                # Bind the named result AND every extracted claim's own source.
+                # The immutable catalogue is separate from synthetic auxiliary imports.
+                labels = {label}.union(*(set(c['source_labels']) for c in support_claims))
+                for support_label in labels:
+                    source = catalogue_sources.get(support_label)
+                    if source is None:
+                        aux = [e for e in provider.get('auxiliary_exports', [])
+                               if e['source_label'] == support_label]
+                        if len(aux) != 1:
+                            raise ValueError('Unknown internal proof support source')
+                        source = aux[0]['source']
+                        check_anchor(source)
+                        if source['anchor'] != '\\label{' + support_label + '}':
+                            raise ValueError('Invalid internal proof support source anchor')
+                    file = source['file']
+                    provider_sources = [s for s in provider['source_files'] if s['file'] == file]
+                    if (file not in sources or len(provider_sources) != 1
+                            or provider_sources[0]['git_blob'] != sources[file]['git_blob']):
+                        raise ValueError('Internal proof support source fingerprint mismatch')
     claim_ids = {c['id'] for c in module['claims']}
     auxiliary = {}
     for item in module.get('auxiliary_exports', []):
@@ -214,6 +272,13 @@ def render(module, order, by_label, raw):
             source = by_label[item['source_label']]
             lines.append(f"| {item['id']}: [`{item['source_label']}`](../../{source['file']}#L{source['line']}) | {item['statement']} | {item['status']} |")
         lines += ['']
+        for item in module['imports']:
+            if 'provider_support_claims' in item:
+                lines += [f"**{item['id']} internal proof support:** "
+                          f"{', '.join(item['provider_support_claims'])} in "
+                          f"`{item['provider_module']}`. {item['provider_support_usage']}", '',
+                          'These are separately extracted proved support claims, not additional',
+                          'conclusions of the named exported theorem.', '']
     lines += ['## Definitions', '',
               '| ID | Definition | Exact meaning | Source |', '|---|---|---|---|']
     for item in module['definitions']:
@@ -301,7 +366,7 @@ def render(module, order, by_label, raw):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--check', action='store_true')
-    parser.add_argument('--module', default='raw_exact', choices=['raw_exact', 'strong_selectors', 'sir', 'parity_hasse', 'exact_crt', 'canonical_hull', 'real_closure', 'finite_packets', 'rigid_groupoid', 'finite_kernel', 'owner_action', 'owner_master', 'joint_owner', 'acl_owner_geometry', 'finite_lift', 'mi_geometry', 'owner_transversal'])
+    parser.add_argument('--module', default='raw_exact', choices=['raw_exact', 'strong_selectors', 'sir', 'parity_hasse', 'exact_crt', 'canonical_hull', 'real_closure', 'finite_packets', 'rigid_groupoid', 'finite_kernel', 'owner_action', 'owner_master', 'joint_owner', 'acl_owner_geometry', 'finite_lift', 'mi_geometry', 'owner_transversal', 'safe_readings', 'direct_owner_closure'])
     args = parser.parse_args()
     directory = Path('formalization') / args.module
     module = json.loads((ROOT / directory / 'module.json').read_text())

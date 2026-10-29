@@ -1,0 +1,360 @@
+\section{Pure owner covariance and moving endpoint readings}
+\label{sec:covariant-owner}
+We work in the full-owner primitive transversal $U_B$
+from Theorem~\ref{thm:joint-transversal}, with
+$B\subseteq M/E$ finite and $G$-invariant,
+$N_B=\pi_E^{-1}(B)$, the thin group $G$, and
+a chosen subgroup $\Gamma\le\Aut(B)$ acting purely on owner tags.
+For the moving readings below, assume that $\Gamma$ contains the
+owner action of every global thin translation in $G$; the action
+on owners need not be faithful. The default choice is $\Aut(B)$,
+but proper subgroups will be needed when a further owner quotient
+must be preserved.
+Its finite sorted strong exact families are
+$\mathcal H_{st}$, with palettes $P_{st}=L_{st}\setminus F$.
+The arguments below use only finite sorted primitive SAP,
+strong typed CCO, and the pure owner action; they do not
+require a root frame or a general conditional groupoid.
+
+\begin{lemma}[Primitive loop saturation]\label{lem:covariant-loop-full}
+In the full-owner transversal, for every nonempty loop exact
+menu $W\in\mathcal H_{ss}$ one has
+$W^{*n}=P_{ss}$ for all sufficiently large $n$.  Every compatible
+nonempty exact menu absorbs a full palette on either side.
+\end{lemma}
+\begin{proof}
+The universal primitive-loop lemma
+\cref{lem:locality-positive} applies to the nonempty subset
+$W\subseteq P_{ss}$ without requiring it to be original
+exact.  Thus $W^{*n}=P_{ss}$ eventually.  The two-sided
+full-palette absorption for every nonempty compatible menu,
+including nonexact menus, is exactly
+\cref{lem:locality-absorb}.  Both conclusions therefore
+hold in the full-owner primitive transversal without another
+proof of stabilization or a separate root-frame argument.
+\end{proof}
+
+Call a nonempty tagged menu \emph{proper} if it is not its full
+pair palette.  For an original strong exact menu $C$, define
+$\mathfrak F_\Gamma(C)$ to be the least finite family of
+original exact tagged menus containing $C$ and closed under
+converse, compatible left and right multiplication by \emph{all}
+original exact menus, and the pure owner action $\Gamma$.
+An absent multiplication factor is only an identity operation,
+not an adjoined equality menu in the strong loop palette.
+
+\begin{lemma}[No positive return through a proper menu]
+\label{lem:covariant-no-return}
+A directed closed walk in this generation graph through a
+proper menu cannot use a multiplication move.  If two parallel
+menus generate the same $\Gamma$-closed family, then they are
+equal as actual raw-colour subsets.
+
+More quantitatively, put
+$m_0=\max_t|P_{tt}|\ge1$.
+If a closed-word transformation $T$ has a genuine
+nonempty positive outside multiplier, then
+$T^{4|\Gamma|m_0}(D)=P_{st}$ for EVERY nonempty
+parallel atomic menu $D\subseteq P_{st}$.
+Here all compositions are STRONG and the exponent
+counts iterations of $T$, not edges in an HKN reservoir.
+\end{lemma}
+\begin{proof}
+Associate to each path its transformation of the distinguished
+input menu.  By associativity of strong multiplication, by converse
+reversing products, and by transporting factors under $\Gamma$,
+every return to its initial pair of sorts has the normal form
+\[
+       T(X)=L*(\gamma X)^\varepsilon*R,
+\]
+where $\gamma\in\Gamma$, $\varepsilon$ denotes either the
+original or the converse orientation, and each outside factor is
+a nonempty original exact menu or is absent.  These factors have
+the actual type labels forced by the path.  If the walk uses a
+multiplication, at least one positive factor remains.  More
+explicitly, each elementary multiplication contributes a
+\emph{nonempty positive} typed profile to an outside word.
+Pure owner relabelling merely transports the profile, while
+converse reverses the order and exchanges the two outside words.
+Associativity concatenates such words; by SAP their strong products
+are nonempty.  Thus no normal-form rewrite can erase the last
+positive outside factor or interpret it as an artificial identity.
+
+Take a positive even multiple $m$ of the order of $\gamma$.
+Upon composing $T$ with itself $m$ times, the central action
+on $X$ becomes the identity, and the returning operation is
+$T^m(X)=P*X*Q$ with loop multipliers at the original endpoints,
+possibly absent, and with at least one nonempty loop multiplier.
+At least one of these loop factors is present if the original
+walk had a multiplication move: repetition, transport, converse and
+positive concatenation preserve the existence of a positive outside
+word.  These are genuine loop exact menus; all such products are
+nonempty by SAP.  For an EXPLICIT uniform iteration bound, take
+$q=2|\Gamma|$: this clears the single global pure
+$\gamma$ and the possible converse in EVERY such return,
+so $T^q(X)=P*X*Q$ for a pair of original-endpoint
+loop multipliers, at least one of them nonempty positive.
+Now iterate this transformation $k=2m_0$ more times.
+By the uniform primitive loop-power bound
+\cref{lem:locality-positive}, each PRESENT multiplier
+$P^{*k}$ or $Q^{*k}$ is the full typed loop palette
+at its endpoint sort.  Hence
+\[
+       T^{4|\Gamma|m_0}(D)
+         = P^{*k}*D*Q^{*k}=P_{st}
+\]
+for every nonempty $D\subseteq P_{st}$, omitting
+any absent multiplier as an IDENTITY ACTION only.
+Full-palette absorption
+\cref{lem:locality-absorb} proves the final equality.
+If $T(D)=D$ for a PROPER D, this quantitative
+conclusion is a contradiction.  Neither a synthetic
+STRONG equality atom nor an invariant choice of HKN
+packet origins entered the argument.
+
+In particular a full palette cannot reach a proper one, by
+absorption.  If parallel menus $A,B$ generate the same family,
+there are paths $A\to B$ and $B\to A$.  If $A$ is proper,
+their concatenation is a closed walk and contains no
+multiplication.  Only pure type permutations and converse
+remain; these fix the underlying raw atom names, so parallel
+$A,B$ are equal.  The full case is immediate.
+\end{proof}
+
+\begin{remark}[Pure-tag covariance still needs symmetric RAW fine names]
+\label{rem:covariant-converse-symmetry-firewall}
+The final PARALLEL-menu step of
+\cref{lem:covariant-no-return}
+uses a stronger fact than
+the condition that $\Gamma$
+fixes fine-colour symbols:
+in the ACTUAL owner transversal
+all old fine atoms come from one
+SYMMETRIC original binary structure.
+Consequently taking typed converse
+reverses the endpoint OWNER TAGS
+but fixes the LITERAL underlying
+old fine-colour name. Pure
+$\Gamma$-relabelling likewise
+fixes that name. A closed
+sequence consisting solely of
+these operations cannot change
+a menu of parallel literal
+fine-colour names.
+
+This is FALSE in an arbitrary
+ASYMMETRIC typed language,
+even with SAP and CCO.
+For a concrete negative
+scope check, take two infinite
+named sorts $U,V$, one
+unconstrained symmetric
+same-sort diversity atom
+and two cross-sort DIRECTED
+diversity atoms $a,b$ whose
+typed converse interchanges
+$a$ and $b$. Permit EVERY
+consistent complete coloured
+diagram (all typed atomic
+triangles are legal).
+The resulting random two-sort
+age has free SAP and semantic
+homomorphic CCO. Let
+$\Gamma=C_2$ exchange $U,V$
+while keeping the literal
+directed atom names $a,b$.
+On the cross-sort full menu
+$D=\{a,b\}$, pure covariance
+would give
+\[
+       h_{VU}(D)=h_{UV}(D),
+\]
+whereas converse compatibility
+would give
+\[
+       h_{VU}(D)=\overline{h_{UV}(D)}.
+\]
+Neither $a$ nor $b$ is
+self-converse, so no such
+covariant singleton selector
+exists. Equivalently the
+parallel singleton menus
+$\{a\}_{UV}$ and $\{b\}_{UV}$
+generate the same
+$\Gamma$-and-converse-closed
+family WITHOUT any positive
+multiplication; parallel-menu
+separation is genuinely false.
+
+Our ACTUAL symmetric-original
+scope excludes this example.
+One must NOT export the
+present $\Gamma$-selector
+argument to directed or
+asymmetric original atoms
+without an additional
+converse-invariance criterion.
+\end{remark}
+
+\begin{theorem}[Pure-owner covariant joint hereditary selector]
+\label{thm:covariant-HS}
+The full strong exact menu families of $U_B$ admit one joint
+hereditary selector $h$ preserving converse, all three PC
+coordinates, and survivor heredity, and satisfying
+\begin{equation}\label{eq:covariant-HS}
+        h_{\gamma s,\gamma t}(D)=h_{st}(D)
+       \qquad(\gamma\in\Gamma).
+\end{equation}
+\end{theorem}
+\begin{proof}
+The actual pure owner group $\Gamma$ permutes only
+owner tags and fixes the literal fine-colour names.  It therefore
+preserves the original exact-menu families, typed strong products,
+converse and all legal triangle tables, as required by
+\cref{lem:typed-pure-action-gate-engine}.  The
+$\Gamma$-closed family in that lemma is precisely
+$\mathfrak F_\Gamma(C)$ defined above.
+Lemma~\ref{lem:covariant-no-return} supplies the required
+no-return implication for parallel generated menus.
+Consequently the common finite gate iteration produces a joint
+hereditary singleton selector which preserves converse and all
+three PC coordinates and whose gates commute with the pure
+$\Gamma$-action.  This is exactly
+\eqref{eq:covariant-HS}; no independent selection on different
+owner pairs or averaging of selectors is involved.
+\end{proof}
+
+\section{Moving endpoint types and independent packet readings}
+\label{sec:moving-readings}
+
+For every $g\in G$, switching only the first endpoint of a fine
+raw edge translates its owner $s$ to $gs$ and its colour $a$ to
+$ga$, where $ga$ denotes the named thin translation action on
+raw colours.  By the thin transport law, these operations send
+legal triangles to legal triangles.  They preserve strong word
+profiles, nonempty finite meets and the strong typed family:
+\[
+        D_{st}\longmapsto (gD)_{gs,t}.
+\]
+There is an analogous switch at the second endpoint.  Switching
+both endpoints by the same $g$ fixes \emph{every raw fine colour}
+and is the language action on types given by the diagonal
+translation in $\Gamma$.  Define
+\begin{equation}\label{eq:shifted-reading}
+         h^g_{st}(D)=g\,h_{gs,t}(gD)
+         \qquad(g\in G,\ D\in\mathcal H_{st}).
+\end{equation}
+It is crucial to change the endpoint type in evaluating $h$;
+the unshifted expression $g\,h_{st}(gD)$ is generally ill-typed.
+
+\begin{proposition}[Moving-type rectangular readings]
+\label{prop:moving-readings}
+The families $h^g$ are conservative, survivor-hereditary and
+converse-compatible, are pure-owner $\Gamma$-covariant, and
+obey the switching identity
+\begin{equation}\label{eq:reading-switch}
+    h^{u+v}_{vs,t}(vD)=v\,h^u_{st}(D).
+\end{equation}
+Moreover, if $D\in\mathcal H_{st}$, $A\in\mathcal H_{tu}$,
+$P\in\mathcal H_{su}$ form a PC triple, then for
+\emph{independently} chosen $g,k,\ell\in G$ their selections
+form a legal fine-colour triangle:
+\begin{equation}\label{eq:reading-rectangular}
+   T\bigl(h^g_{st}(D),h^k_{tu}(A),h^\ell_{su}(P)\bigr).
+\end{equation}
+No distinctness of the sort labels is assumed.  The three
+formal vertices of the triangle remain distinct even when their
+owner labels coincide.
+\end{proposition}
+\begin{proof}
+Conservativity and survivor heredity follow by transporting
+$h$ across an endpoint translation, which bijectively preserves
+inclusion of exact menus.  Since switching both endpoints by
+$g$ fixes fine colours and the diagonal type action lies in
+$\Gamma$, covariance~\eqref{eq:covariant-HS} gives
+\[
+ h_{gs,t}(gD)=h_{s,gt}(gD).
+\]
+Together with converse compatibility of $h$ this proves
+converse compatibility of each $h^g$.  Any $\gamma\in\Gamma$
+commutes with $G$ on the owners, so the same covariance formula
+gives $\Gamma$-covariance of the readings.  The switching
+identity is a direct calculation using exponent two:
+\[
+ h^{u+v}_{vs,t}(vD)
+ =(u+v)h_{us,t}(uD)=v\,h^u_{st}(D).
+\]
+
+We first prove an auxiliary \emph{bilateral-support} statement:
+if original exact menus $D_{st},A_{tu},P_{su}$ satisfy
+\[
+ D\subseteq P*\bar A,\qquad A\subseteq\bar D*P,
+\]
+then for every $g,k\in G$ one has
+\begin{equation}\label{eq:reading-bilateral}
+ P\cap\bigl(h^g(D)*h^k(A)\bigr)\ne\varnothing.
+\end{equation}
+Indeed $P'=P\cap(D*A)$ is nonempty exact.  For nonemptiness,
+choose $d\in D$.  The inclusion $D\subseteq P*\bar A$ gives
+$p\in P$ and $a\in A$ with $d\in p*\bar a$, hence
+$p\in d*a\subseteq D*A$.  Nonempty exact intersections are exact
+by Lemma~\ref{lem:typed-exact-products}.
+
+We check the other two PC coordinates explicitly.  Strong SAP gives
+the duplication inclusions
+\[
+ D\subseteq(D*A)*\bar A,\qquad
+ A\subseteq\bar D*(D*A):
+\]
+for an arbitrary atom on either indicated side, attach an edge
+with any atom of the other nonempty menu at a fresh third vertex.
+Distributivity for the \emph{original exact} menus gives
+\[
+\begin{aligned}
+ P'*\bar A
+  &=(P*\bar A)\cap((D*A)*\bar A)\supseteq D,\\
+ \bar D*P'
+  &=(\bar D*P)\cap(\bar D*(D*A))\supseteq A.
+\end{aligned}
+\]
+Together with $P'\subseteq D*A$, this is precisely
+$\mathrm{PC}(D,A,P')$.  Switching its two outer endpoints by $g,k$
+produces the PC triple
+$(gD,kA,(g+k)P')$ of new sorts $(gs,t,ku)$.
+The joint selector $h$ chooses a legal triangle for these menus.
+Switching the outer endpoints back gives~\eqref{eq:reading-bilateral},
+using the equality of the left and right shifted readings.
+
+For a PC triple $(D,A,P)$ fix independently
+$a=h^g(D)$, $b=h^k(A)$, $c=h^\ell(P)$.
+Apply~\eqref{eq:reading-bilateral} to the Peirce rotation
+with selected sides $(D,P)$ to obtain a triangle with \emph{these
+particular} $a,c$ and some third colour in $A$; thus
+$a\in\{c\}*\bar A$.  Similarly, applying it to $(A,P)$
+gives $b\in\bar D*\{c\}$.
+Consequently the exact nonempty traces
+\[
+ D'=D\cap(\{c\}*\bar A),\qquad
+ A'=A\cap(\bar D*\{c\})
+\]
+contain respectively $a,b$.  Survivor heredity for the
+\emph{individual readings} gives $h^g(D')=a$ and
+$h^k(A')=b$.  Every colour in $D'$ has a partner in $A'$
+forming a legal triangle with $c$, and conversely; hence
+$D'\subseteq\{c\}*\overline{A'}$ and
+$A'\subseteq\overline{D'}*\{c\}$.
+Apply~\eqref{eq:reading-bilateral} to $(D',A',\{c\})$.
+Its conclusion is that the selected $a,b,c$ themselves form a
+legal triangle, proving~\eqref{eq:reading-rectangular}.
+\end{proof}
+
+\begin{remark}[Scope of the action and the reading]
+The theorem uses only the pure $\Gamma$-action on the \emph{full}
+owner set $B$.  It does not assert equivariant frames on the
+previously chosen root representatives $S_0$.  There is no
+invariant singleton hypothesis for a diagonal colour and no
+independent choice of selectors for separate type pairs.
+The independent shifts in~\eqref{eq:reading-rectangular} are
+essential later for three distinct valuations to decode a legal
+triangle.
+\end{remark}
