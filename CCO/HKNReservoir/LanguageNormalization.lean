@@ -3,7 +3,7 @@ import AllThoseEPPA.TreeLikeFullAAmalgamation
 import AllThoseEPPA.TreeLikeAmalgamRelabel
 import AllThoseEPPA.Irreducible
 
-universe u v w
+universe u v w a b c
 namespace CCO.HKNReservoir
 open AllThoseEPPA
 variable {L : Language.{u}} {Γ : Type w} [Group Γ] (act : L.Action Γ)
@@ -98,5 +98,38 @@ theorem normalize_local_tree {A : Structure L V} {P : Structure L V} {D : Struct
       (Homomorphism.normalize f).lang = 1 ∧
       Structure.Homomorphism.IsHomomorphismEmbedding act (Homomorphism.normalize f) :=
   ⟨⟨T.relabelTarget f.lang⁻¹⟩,Homomorphism.normalize_lang f,Homomorphism.normalize_homomorphismEmbedding f hf⟩
+
+section LiteralPieces
+variable {B : Type a} {K : Type b} {Atom : Type c} (tag : Γ →* Equiv.Perm B)
+variable {D : Data B K Atom V} {E : Structure (Signature B K Atom) W}
+
+/-- C13: after ONE global normalization, owner names on every embedded
+piece are literal before any actual protected-base alignment. -/
+theorem literal_piece_owner (f : Structure.Homomorphism (action tag) (encode D) E)
+    (S : Set V) (hf : Structure.Homomorphism.IsEmbeddingOn (action tag) f S) (hl : f.lang=1)
+    (b : B) (x : V) (hx : x ∈ S) :
+    E.rel (.owner b) (fun _ => f x) ↔ D.owner x=b := by
+  have h := hf.2.1 (.owner b) (fun _ => x) (fun _ => hx)
+  simpa only [action_owner,hl,map_one,Equiv.Perm.one_apply,encode_owner,Function.comp_def] using h
+
+theorem literal_piece_fine (f : Structure.Homomorphism (action tag) (encode D) E)
+    (S : Set V) (hf : Structure.Homomorphism.IsEmbeddingOn (action tag) f S)
+    (a : Atom) (x y : V) (hx : x ∈ S) (hy : y ∈ S) :
+    E.rel (.fine a) (![f x,f y]) ↔ D.fine a x y := by
+  have h := hf.2.1 (.fine a) (![x,y]) (by intro i; fin_cases i <;> assumption)
+  have he : f.toFun ∘ ![x,y] = ![f x,f y] := by funext i; fin_cases i <;> rfl
+  rw [he] at h
+  simpa only [action_fine,encode_fine,Matrix.cons_val_zero,Matrix.cons_val_one] using h
+
+/-- The exact full value-set equation survives on the protected piece;
+homomorphism inclusion alone would not establish this conclusion. -/
+theorem literal_piece_function (f : Structure.Homomorphism (action tag) (encode D) E)
+    (S : Set V) (hf : Structure.Homomorphism.IsEmbeddingOn (action tag) f S)
+    (k : K) (x : V) (hx : x ∈ S) :
+    E.func (.translate k) (fun _ => f x) = {f (D.move k x)} := by
+  have h := hf.2.2 (.translate k) (fun _ => x) (fun _ => hx)
+  change f.toFun '' {D.move k x} = E.func (.translate k) (fun _ => f x) at h
+  simpa only [Set.image_singleton] using h.symm
+end LiteralPieces
 
 end CCO.HKNReservoir

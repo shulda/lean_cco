@@ -120,6 +120,24 @@ def partialOfBijOn [Nonempty V] (D : Data B K Atom V) (γ : Γ) (f : V → V)
       change f '' {D.move k (xs 0)} = {D.move k (f (xs 0))}
       rw [Set.image_singleton,hm k (xs 0) (hxs 0)]
 
+/-- The whole symbol inventory is finite, not just each arity fibre. -/
+def relationSymbolsEquiv : (Σ n, Rel B K Atom n) ≃ B ⊕ Atom where
+  toFun | ⟨_,.owner b⟩ => Sum.inl b | ⟨_,.fine a⟩ => Sum.inr a
+  invFun | Sum.inl b => ⟨1,.owner b⟩ | Sum.inr a => ⟨2,.fine a⟩
+  left_inv := by rintro ⟨_,R⟩; cases R <;> rfl
+  right_inv := by intro x; cases x <;> rfl
+
+def functionSymbolsEquiv : (Σ n, Func B K Atom n) ≃ K where
+  toFun | ⟨_,.translate k⟩ => k
+  invFun k := ⟨1,.translate k⟩
+  left_inv := by rintro ⟨_,F⟩; cases F; rfl
+  right_inv _ := rfl
+
+theorem finite_signature [Finite B] [Finite K] [Finite Atom] :
+    Finite (Σ n, Rel B K Atom n) ∧ Finite (Σ n, Func B K Atom n) :=
+  ⟨Finite.of_injective (relationSymbolsEquiv (B:=B) (K:=K) (Atom:=Atom)).toFun (relationSymbolsEquiv).injective,
+    Finite.of_injective (functionSymbolsEquiv (B:=B) (K:=K) (Atom:=Atom)).toFun (functionSymbolsEquiv).injective⟩
+
 section ActualSource
 open ParityHasse.Original RealHull.Geometry RealClosure.Bounds
 open OwnerTransversal
@@ -127,6 +145,13 @@ variable {M : Type v} (S : AtomicSource.{0,v,w} Unit (fun _ => M))
 variable {G : Type z} [Group G] [MulAction G M] (H : HomogeneousSource S G)
 variable [Countable M] [DecidableEq M] [Infinite M] (R : ResidualData S H)
 variable (B : Finset (Owner S H R)) (hB : PacketInvariant S H R B)
+
+theorem source_finite_signature :
+    Finite (Σ n, Rel ↥B (ResidualData.PacketGroup S H) (S.Atom () ()) n) ∧
+      Finite (Σ n, Func ↥B (ResidualData.PacketGroup S H) (S.Atom () ()) n) := by
+  letI := S.finiteAtom () ()
+  letI := FinitePackets.Normalization.translation_finite S (finitePacket S H) H (R.packet_thin S H)
+  exact finite_signature
 
 /-- Completeness of the actual named source discharges irreducibility
 of every closed finite source, including a single full packet. -/
