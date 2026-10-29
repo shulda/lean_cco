@@ -140,6 +140,22 @@ theorem fixedNetwork_natural (hInitial : T.networkIso (initial D) = initial E) :
     rw [hm] at hGreatest
     exact hGreatest
 
+/-- Initial covariance reduces to the actual record/hole equation. In
+particular an absent edge, including equal-index distinct clones, stays Top. -/
+theorem initial_natural_of_edges
+    (hEdges : ∀ p : DistinctPair V,
+      E.edge (σ p.src) (σ p.dst) (fun h => p.ne (σ.injective h)) =
+        (D.edge p.src p.dst p.ne).map (T.atom p)) :
+    T.networkIso (initial D) = initial E := by
+  funext q
+  obtain ⟨p,rfl⟩ := (pairEquiv σ).surjective q
+  rw [T.networkIso_apply]
+  simp only [initial, pairEquiv, Equiv.coe_fn_mk]
+  rw [hEdges p]
+  cases D.edge p.src p.dst p.ne with
+  | none => exact Set.image_univ.trans (T.atom p).surjective.range_eq
+  | some a => exact Set.image_singleton
+
 theorem converse_natural (N : Network D) (hN : ConverseClosed D N) :
     ConverseClosed E (T.networkIso N) := by
   intro q

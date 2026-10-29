@@ -239,4 +239,41 @@ theorem fair_limit_fixedNetwork (schedule : Nat → Option (Constraint V))
     · exact hGreatest _ (fixedNetwork_stable D) (fixedNetwork_refines_initial D)
   exact ⟨n, fun m hm => (hConst m hm).trans heq⟩
 
+/-- Fair update orders have the same limit for every starting network,
+not merely the singleton/top network attached to a diagram. -/
+theorem fair_limits_equal (N : Network D)
+    (schedule₁ schedule₂ : Nat → Option (Constraint V))
+    (h₁ : Fair schedule₁) (h₂ : Fair schedule₂) :
+    ∃ n m, (∀ k, n ≤ k → trajectory D N schedule₁ k = trajectory D N schedule₁ n) ∧
+      (∀ k, m ≤ k → trajectory D N schedule₂ k = trajectory D N schedule₂ m) ∧
+      trajectory D N schedule₁ n = trajectory D N schedule₂ m := by
+  obtain ⟨n, hn, hc₁, hg₁⟩ := fair_stabilizes D N schedule₁ h₁
+  obtain ⟨m, hm, hc₂, hg₂⟩ := fair_stabilizes D N schedule₂ h₂
+  refine ⟨n,m,hc₁,hc₂,le_antisymm ?_ ?_⟩
+  · exact hg₂ _ hn (trajectory_refines_initial D N schedule₁ n)
+  · exact hg₁ _ hm (trajectory_refines_initial D N schedule₂ m)
+
+/-- The actual completion is used only to prove nonemptiness. Original
+exactness follows from the already proved source SAP/CCO calculus. -/
+structure PCCompletionData : Prop where
+  nonempty : ∀ p : DistinctPair V, (fixedNetwork D p).Nonempty
+  exact : ∀ p : DistinctPair V, StrongExact.Exact S (fixedNetwork D p)
+  pc : ∀ x y z (hxy : x ≠ y) (hyz : y ≠ z) (hxz : x ≠ z),
+    S.PC (fixedNetwork D ⟨x,y,hxy⟩) (fixedNetwork D ⟨y,z,hyz⟩) (fixedNetwork D ⟨x,z,hxz⟩)
+  specified : ∀ x y (hxy : x ≠ y) (a : S.Atom (D.vertexSort x) (D.vertexSort y)),
+    D.edge x y hxy = some a → fixedNetwork D ⟨x,y,hxy⟩ = {a}
+
+theorem pcCompletionData_of_strongCompletion
+    {G : Type*} [Group G] [∀ i, MulAction G (X i)]
+    (H : HomogeneousSource S G) (sap : AgeSAP S)
+    (cco : SemanticCCO.{u,v,0,w} S) (hD : D.HasStrongCompletion) : PCCompletionData D := by
+  obtain ⟨f,hf⟩ := hD
+  have hn := fixedNetwork_nonempty_of_completion D f hf
+  exact {
+    nonempty := hn
+    exact := fixedNetwork_exact_of_nonempty D H sap cco hn
+    pc := fun _ _ _ hxy hyz hxz => fixedNetwork_PC D hxy hyz hxz
+    specified := fun _ _ hxy a ha =>
+      fixedNetwork_eq_specified_singleton_of_nonempty D hxy a ha (hn _) }
+
 end CCO.FullRows
