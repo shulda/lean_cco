@@ -94,5 +94,49 @@ theorem paletteEquiv_label (g h : ResidualData.PacketGroup S H) {b c : ↥B}
       switchColour S (finitePacket S H) (g*h) (some a.val) :=
   (palette_move S H R B hB g h a).choose_spec
 
+@[simp] theorem moveOwner_one (b : ↥B) : moveOwner S H R B hB 1 b = b := by
+  letI := packetOwnerSetAction S H R B hB
+  exact one_smul _ _
+
+def paletteCongr {b c b' c' : ↥B} (hb : b=b') (hc : c=c') :
+    Palette S H R B b c ≃ Palette S H R B b' c' := by
+  cases hb; cases hc; exact Equiv.refl _
+
+@[simp] theorem paletteCongr_val {b c b' c' : ↥B} (hb : b=b') (hc : c=c')
+    (a : Palette S H R B b c) : (paletteCongr S H R B hb hc a).val = a.val := by
+  cases hb; cases hc; rfl
+
+/-- Unilateral palette equivalences keep the OTHER owner literally fixed. -/
+def leftEquiv (g : ResidualData.PacketGroup S H) (b c : ↥B) :
+    Palette S H R B b c ≃ Palette S H R B (moveOwner S H R B hB g b) c :=
+  (paletteEquiv S H R B hB g 1 b c).trans
+    (paletteCongr S H R B rfl (moveOwner_one S H R B hB c))
+
+def rightEquiv (g : ResidualData.PacketGroup S H) (b c : ↥B) :
+    Palette S H R B b c ≃ Palette S H R B b (moveOwner S H R B hB g c) :=
+  (paletteEquiv S H R B hB 1 g b c).trans
+    (paletteCongr S H R B (moveOwner_one S H R B hB b) rfl)
+
+theorem leftEquiv_label (g : ResidualData.PacketGroup S H) {b c : ↥B} (a : Palette S H R B b c) :
+    (some (leftEquiv S H R B hB g b c a).val : FullColour S) =
+      switchColour S (finitePacket S H) g (some a.val) := by
+  dsimp only [leftEquiv,Equiv.trans_apply]
+  rw [paletteCongr_val,paletteEquiv_label,mul_one]
+
+theorem rightEquiv_label (g : ResidualData.PacketGroup S H) {b c : ↥B} (a : Palette S H R B b c) :
+    (some (rightEquiv S H R B hB g b c a).val : FullColour S) =
+      switchColour S (finitePacket S H) g (some a.val) := by
+  dsimp only [rightEquiv,Equiv.trans_apply]
+  rw [paletteCongr_val,paletteEquiv_label,one_mul]
+
+def ownerHom : ResidualData.PacketGroup S H →* Equiv.Perm ↥B := by
+  letI := packetOwnerSetAction S H R B hB
+  exact MulAction.toPermHom _ _
+
+def switchHom : ResidualData.PacketGroup S H →* Equiv.Perm (FullColour S) where
+  toFun := switchColourPerm S (finitePacket S H) H (R.packet_thin S H)
+  map_one' := Equiv.ext (switchColour_one S (finitePacket S H))
+  map_mul' g h := Equiv.ext (switchColour_mul S (finitePacket S H) H g h)
+
 end
 end CCO.SafeReadings.TransversalGauge
