@@ -17,7 +17,7 @@ variable {M : Type v} (S : AtomicSource.{0,v,w} Unit (fun _ => M))
 variable {G : Type t} [Group G] [MulAction G M] (H : HomogeneousSource S G)
 variable (J : ColourEq S ()) (A0 : Finset M) (B : Finset (Coarse S H J))
 variable (overA0 : ∀ x : ↥A0, coarseOwner S H J x.val ∈ B)
-local instance : MulAction G (Coarse S H J) := originalQuotientAction S H J
+local instance orbitWitnessCoarseAction : MulAction G (Coarse S H J) := originalQuotientAction S H J
 
 /-- Singleton sets are unsafe vacuously; equality is not a new atom. -/
 def UnsafeSet {V : Type z} (real : V → M) (safe : Set (S.Atom () ())) (Z : Set V) : Prop :=

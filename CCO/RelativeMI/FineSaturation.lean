@@ -15,8 +15,8 @@ variable {M : Type v} (S : AtomicSource.{0,v,w} Unit (fun _ => M))
 variable {G : Type t} [Group G] [MulAction G M] (H : HomogeneousSource S G)
 variable [Countable M] [DecidableEq M] (R : ResidualData S H)
 variable (J : ColourEq S ())
-local instance : MulAction G (Owner S H R) := originalQuotientAction S H R.E
-local instance : MulAction G (Coarse S H J) := originalQuotientAction S H J
+local instance fineSaturationFineAction : MulAction G (Owner S H R) := originalQuotientAction S H R.E
+local instance fineSaturationCoarseAction : MulAction G (Coarse S H J) := originalQuotientAction S H J
 
 /-- This is commutation with ORIGINAL motions, before any assertion
 about the full finite owner automorphism group. -/

@@ -16,8 +16,8 @@ variable {G : Type t} [Group G] [MulAction G M] (H : HomogeneousSource S G)
 variable [Countable M] [DecidableEq M] (R : ResidualData S H)
 variable (J : ColourEq S ()) (A0 : Finset M) (B : Finset (Coarse S H J))
 variable (overA0 : ∀ x : ↥A0, coarseOwner S H J x.val ∈ B) (hEJ : R.E ≤ J)
-local instance : MulAction G (Owner S H R) := originalQuotientAction S H R.E
-local instance : MulAction G (Coarse S H J) := originalQuotientAction S H J
+local instance compatibleGroupFineAction : MulAction G (Owner S H R) := originalQuotientAction S H R.E
+local instance compatibleGroupCoarseAction : MulAction G (Coarse S H J) := originalQuotientAction S H J
 
 namespace FineStage
 variable (F : FineStage S H R J A0 B overA0 hEJ)

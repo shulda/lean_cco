@@ -25,8 +25,8 @@ variable (J : ColourEq S ())
 parameters. Its elements are literally the actual coarse quotient classes. -/
 abbrev Coarse (_H₀ : HomogeneousSource S G) (J₀ : ColourEq S ()) : Type v := Quotient J₀.val
 
-local instance : MulAction G (Owner S H R) := originalQuotientAction S H R.E
-local instance : MulAction G (Coarse S H J) := originalQuotientAction S H J
+local instance fineOwnersFineAction : MulAction G (Owner S H R) := originalQuotientAction S H R.E
+local instance fineOwnersCoarseAction : MulAction G (Coarse S H J) := originalQuotientAction S H J
 
 def coarseOwner (x : M) : Coarse S H J := Quotient.mk'' x
 
