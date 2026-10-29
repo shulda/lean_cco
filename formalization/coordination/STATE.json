@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 258,
+  "revision": 259,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -1615,6 +1615,8 @@
       "author_actor_ids": [
         "/root/b023_mi",
         "/root/b024_source_rows",
+        "/root/b025_transversal",
+        "/root/b025_transversal/countable_limit",
         "/root/external12",
         "root"
       ],
@@ -6688,6 +6690,25 @@
         "package_id": "B034",
         "author_actor_ids": [
           "root",
+          "/root/b025_transversal",
+          "/root/b025_transversal/countable_limit"
+        ]
+      }
+    },
+    {
+      "revision": 259,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "record_authorship",
+      "package_id": "B028",
+      "details": {
+        "actor_id": "root",
+        "package_id": "B028",
+        "author_actor_ids": [
+          "root",
+          "/root/b023_mi",
+          "/root/external12",
+          "/root/b024_source_rows",
           "/root/b025_transversal",
           "/root/b025_transversal/countable_limit"
         ]
