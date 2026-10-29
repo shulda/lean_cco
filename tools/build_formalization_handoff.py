@@ -18,7 +18,7 @@ import check_formalization_coordination as coordination
 
 
 ROOT = Path(__file__).resolve().parents[1]
-MODULES = ('raw_exact', 'strong_selectors', 'parity_hasse', 'exact_crt', 'canonical_hull', 'real_closure', 'finite_packets', 'rigid_groupoid', 'finite_kernel', 'owner_action', 'sir', 'owner_master', 'joint_owner', 'acl_owner_geometry', 'finite_lift', 'mi_geometry', 'owner_transversal')
+MODULES = ('raw_exact', 'strong_selectors', 'parity_hasse', 'exact_crt', 'canonical_hull', 'real_closure', 'finite_packets', 'rigid_groupoid', 'finite_kernel', 'owner_action', 'sir', 'owner_master', 'joint_owner', 'acl_owner_geometry', 'finite_lift', 'mi_geometry', 'owner_transversal', 'safe_readings', 'direct_owner_closure')
 MANIFEST = 'HANDOFF_MANIFEST.json'
 
 
@@ -85,6 +85,8 @@ def collect(root):
                                  'python tools/check_finite_lift_controls.py',
                                  'python tools/check_mi_geometry_controls.py',
                                  'python tools/check_owner_transversal_controls.py',
+                                 'python tools/check_safe_readings_controls.py',
+                                 'python tools/check_direct_owner_closure_controls.py',
                                  'python tools/check_sir_controls.py',
                                  'python tools/check_formalization_coordination.py --check'],
                 'unexpanded_upstream': [dict(module=m['id'], **item) for m in modules

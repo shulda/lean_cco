@@ -1,0 +1,134 @@
+{
+  "preparation_head": "c66c883bdfb30991745b987ea4c1a75a189ddbb4",
+  "source_pin": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+  "accepted_base": "def25037dfa278001a41732eadae694448f38426",
+  "python_tests": 98,
+  "module_checks": [
+    "raw_exact",
+    "strong_selectors",
+    "parity_hasse",
+    "exact_crt",
+    "canonical_hull",
+    "real_closure",
+    "finite_packets",
+    "rigid_groupoid",
+    "finite_kernel",
+    "owner_action",
+    "sir",
+    "owner_master",
+    "joint_owner",
+    "acl_owner_geometry",
+    "finite_lift",
+    "mi_geometry",
+    "owner_transversal",
+    "safe_readings",
+    "direct_owner_closure"
+  ],
+  "controls": {
+    "safe_readings": {
+      "augmented_menus": 9,
+      "counts": {
+        "all_skeleton_products": 196,
+        "arbitrary_multiplier_identities": 1215,
+        "bilateral_support_tests": 16064,
+        "complete_diagrams_examined": 4164,
+        "negative_directed_converse_scope": 1,
+        "negative_empty_distribution": 1,
+        "negative_imprimitive_uniform_power": 1,
+        "negative_unilateral_safety_invariance": 1,
+        "negative_unmoved_endpoint_typing": 32,
+        "no_g_plus_k_equals_ell_assumption": 15936,
+        "nonempty_distribution": 513,
+        "nonexact_loop_subsets": 7,
+        "nonfaithful_Gamma_covariance": 256,
+        "nontrivial_PC_selector_triples": 712,
+        "pairwise_intersecting_augmented_families": 92,
+        "positive_return_normal_forms": 17280,
+        "rectangular_independent_shift_triples": 31872,
+        "repeated_owner_triangle_tests": 31872,
+        "safe_single_edge_recolourings": 21946,
+        "subset_associativity": 3375,
+        "switching_identities": 128,
+        "typed_readings": 64,
+        "uniform_loop_powers": 45
+      },
+      "limits": "No infinite-source, actual finite-kernel, SAP/CCO/primitivity, HKN or EPPA certification.",
+      "original_exact_menus": 8,
+      "scope": "bounded finite typed triangle-table/action diagnostics",
+      "seconds": 0.693,
+      "status": "PASS"
+    },
+    "direct_owner_closure": {
+      "counts": {
+        "G_invariant_owner_unions": 16,
+        "empty_owner_unions": 6,
+        "empty_real_inputs": 104,
+        "finite_acl_empty_warning_witnesses": 98,
+        "finite_packet_models": 6,
+        "finite_packet_upper_orbit_bounds": 6507,
+        "negative_group_equality": 1,
+        "negative_partial_packet_unions": 6,
+        "negative_reversed_orbit_inclusion": 1,
+        "owner_subset_saturation_checks": 104,
+        "parameter_orbit_inclusions": 14611,
+        "restricted_literal_thin_translations": 40,
+        "restriction_subgroup_inclusions": 104
+      },
+      "limits": "Finite real acl(empty) is the whole finite structure. No infinite unary acl, harmless-owner naming, standing homogeneity, CCO, EPPA or HKN adapter is certified.",
+      "scope": "bounded orbit-restriction, named-owner and whole-packet diagnostics",
+      "seconds": 0.121,
+      "status": "PASS",
+      "witnesses": {
+        "partial_packet": {
+          "B": [
+            [
+              0,
+              0
+            ]
+          ],
+          "a": [
+            0,
+            0,
+            0
+          ],
+          "missing_F_point": [
+            0,
+            0,
+            1
+          ]
+        },
+        "strict_ambient_image": {
+          "ambient_fixed_orbit": [
+            4
+          ],
+          "ambient_restriction_group_order": 8,
+          "fixed_real_A": [
+            0
+          ],
+          "full_induced_fixed_orbit": [
+            2,
+            4,
+            6
+          ],
+          "full_induced_group_order": 24,
+          "model": "C8 graph; structural countercheck outside standing-source hypotheses",
+          "named_owner": [
+            0,
+            2,
+            4,
+            6
+          ],
+          "point": 4
+        }
+      }
+    }
+  },
+  "baseline": {
+    "modules": 839,
+    "olean_parts": 839,
+    "incremental_target": "CCO.OwnerTransversal.Inflation",
+    "jobs": 2421,
+    "local_audit_repeated": false
+  },
+  "limits": "Preparation/code provenance checks and bounded controls only. No new Lean proof or completed batch certification; exact release/main CI, genuine independent approval and atomic promotion still required."
+}

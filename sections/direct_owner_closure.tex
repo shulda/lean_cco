@@ -1,0 +1,49 @@
+
+\begin{lemma}[Direct unary real closure and harmless actual owners]
+\label{lem:consolidated-unary-closure}
+Suppose $M$ is infinite, with unique minimal infinite invariant
+equivalence $E$, and let $F=\Sigma(\Id)$ be its greatest finite-class
+equivalence.  Then for every finite real $A$,
+\[
+                  \operatorname{acl}_M(A)=F[A].
+\]
+Naming finitely many actual $E$-owner classes does not enlarge
+real algebraic closure.  Hence in an owner-named union $N_B$
+over any finite $G$-invariant owner set $B$ of a fully normalised
+source, real closure is precisely $F[-]$.
+\end{lemma}
+\begin{proof}
+The inclusion $F[A]\subseteq\operatorname{acl}_M(A)$ holds
+because $F$ has finite, definable classes.  Conversely, take
+$x\notin F[A]$.  For every $a\in A$, the actual invariant
+equivalence $\Gamma(\col(x,a))$ has infinite classes: if it
+had finite classes, it would lie below the maximal finite-class
+invariant equivalence $F$, contradicting $x\notin F[a]$.
+Since $E$ is the unique minimal infinite invariant equivalence,
+it lies in every such $\Gamma(\col(x,a))$.  Consequently
+\[
+ E[x]\subseteq
+ \bigcap_{a\in A}[a]_{\Gamma(\col(x,a))}.
+\]
+The left side is infinite.  The contrapositive of the
+canonical real-hull theorem \cref{thm:rh-hull} gives
+$x\notin\operatorname{acl}_M(A)$.  For $A=\varnothing$,
+there are no algebraic real points because $M$ is infinite and
+transitive.  Thus $\operatorname{acl}_M(A)=F[A]$.
+
+Since $E$ contains the unique minimal infinite direction,
+\cref{lem:acf-harmless-owners} shows that naming any finite
+collection $B$ of actual $E$-classes leaves the same real
+algebraic closure over $A$.
+
+The owner union $N_B$ is invariant under automorphisms fixing
+all named owners, and is homogeneous by joint real/imaginary
+exact-sort homogeneity.  If $B$ is $G$-invariant, then
+$F[A]\subseteq N_B$ whenever $A\subseteq N_B$; it is
+$A$-definable there using the literal finite thin translations.
+For $x\in N_B\setminus F[A]$, the preceding harmless-owner
+statement makes its orbit under $\Aut(M/A,B)$ infinite.
+This group preserves $N_B$ and restricts to a subgroup of
+$\Aut(N_B/A)$, so $x$ is not algebraic in $N_B$ over $A$.
+Hence $\operatorname{acl}_{N_B}(A)=F[A]$ as claimed.
+\end{proof}

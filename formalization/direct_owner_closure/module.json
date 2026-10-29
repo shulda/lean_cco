@@ -1,0 +1,1016 @@
+{
+  "schema_version": 1,
+  "id": "direct_owner_closure",
+  "index_title": "Direct unary real closure, individually named owners and induced unions",
+  "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+  "status": "HUMAN_EXPANDED_NOT_LEAN",
+  "scope": "Private B031: exactly ONE remaining Foundations II result. Expand the older direct canonical-hull proof of acl_M(A)=F[A], its harmless finite actual E-owner naming, and acl in a G-invariant full owner union. The specialized forward harmless proof is REPEATED LOCALLY to avoid silently deleting countability from the broader packaged B022 type. Main closure branches use no countability, finite-exact normalization except for thin translations, SAP, EPPA, rooted theorem or HKN. Countability and actual joint lifting belong ONLY to separate ancillary owner-named homogeneity. F and Gamma need not be exact; the unique minimal INFINITE E is retained throughout. B025 already uses its independent shorter B012 unary proof and is not assigned a new dependency here.",
+  "scope_vocabulary": [
+    "real_closure",
+    "named_owner_closure",
+    "thin_definability",
+    "union_closure",
+    "ancillary_homogeneity",
+    "scoped_assembly"
+  ],
+  "scope_explanation": "statement and proof. Original real closure, finite imaginary parameters, full-packet union definability and optional countable homogeneity have separate premise branches.",
+  "control_script": "tools/check_direct_owner_closure_controls.py",
+  "assumptions": [
+    {
+      "id": "A01",
+      "name": "Infinite actual homogeneous real source",
+      "statement": "M is INFINITE nonempty transitive homogeneous in a FINITE complete symmetric binary language of actual equality-inclusive pair orbitals. Invariant binary relations are unions of these atom names and commute. Real acl means finite orbit under FULL Aut(M/A). Neither countability nor real SAP is part of this premise."
+    },
+    {
+      "id": "A02",
+      "name": "Standing AP and semantic homomorphic CCO",
+      "statement": "Retain age AP and semantic homomorphic CCO for the prepared canonical real-hull, packet and actual exact-sort providers. The canonical finite hull contract, rather than an unsupported converse type criterion, is used. No EPPA, safe palette or normalized construction is assumed."
+    },
+    {
+      "id": "A03",
+      "name": "Unique minimal infinite direction in FULL invariant lattice",
+      "statement": "E is the UNIQUE inclusion-minimal invariant equivalence with infinite real classes in the FULL finite invariant-equivalence lattice. It need not be a unique minimal nonidentity equivalence. Greatest finite F may be NONEXACT and intersect E nontrivially. Normalization alone does not replace this uniqueness premise."
+    },
+    {
+      "id": "A04",
+      "name": "Finite original real parameter set",
+      "statement": "A is any finite real subset of M, possibly empty. In the owner-union conclusion A is additionally contained in N_B; no original real representatives of the named imaginary owner classes are fixed as parameters."
+    },
+    {
+      "id": "A05",
+      "name": "Optional finite-exact-normalized source",
+      "statement": "ONLY for the thin-function/owner-union branch, M has no nonidentity finite-class FULL RAW EXACT invariant equivalence. This yields thin F atoms; thinness is not assumed to imply normalization. Unique minimal infinite E from A03 is still required."
+    },
+    {
+      "id": "A06",
+      "name": "Finitely many actual owners named individually",
+      "statement": "B is any FINITE set of ACTUAL E-equivalence classes of M, possibly empty. Each member is named individually as an imaginary parameter or unary owner predicate. B is not a chosen set of real representatives and is not merely preserved setwise."
+    },
+    {
+      "id": "A07",
+      "name": "Optional entire thin-owner invariant set",
+      "statement": "ONLY in the normalized owner-union branch B is invariant under the induced action of the full finite thin group G on M/E. The real G action is regular on F-packets; its owner action may be nonfaithful or nonfree. No full Aut(B), EPPA, packet closure in M/E or group section is assumed."
+    },
+    {
+      "id": "A08",
+      "name": "Optional current joint-lifting countability",
+      "statement": "ONLY for the ancillary N_B homogeneity branch retain countability from the existing RAW joint-exact lifting API. None of the three closure conclusions invokes that API or this assumption."
+    }
+  ],
+  "imports": [
+    {
+      "id": "I01",
+      "name": "Greatest finite-class packet relation",
+      "source_label": "lem:packetinterval",
+      "statement": "Select ONLY finite_packets C03: finite-index coarsenings in the finite commuting equivalence lattice are finite-join closed, constructing F=Sigma(Id). F is a definable union of original atom names, reflexive and finite-class; no exactness of F is supplied.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "provider_module": "finite_packets",
+      "provider_claims": [
+        "C03"
+      ],
+      "depends_on": [
+        "A01"
+      ]
+    },
+    {
+      "id": "I02",
+      "name": "Finite canonical real hull",
+      "source_label": "thm:rh-hull",
+      "statement": "Select canonical_hull C34: if x is algebraic over finite real A and x notin A, its anchored intersection of Gamma(col(x,a)) classes is FINITE. Only this implication and its contrapositive are used; Gamma need not be exact. The source AP/CCO scope is retained.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "provider_module": "canonical_hull",
+      "provider_claims": [
+        "C34"
+      ],
+      "depends_on": [
+        "A01",
+        "A02"
+      ]
+    },
+    {
+      "id": "I03",
+      "name": "Nonthin packets construct a forbidden finite exact kernel",
+      "source_label": "lem:finite-regularization",
+      "statement": "Select ONLY C22: a nonthin F atom yields a NONIDENTITY finite-class FULL RAW EXACT kernel by the explicit finite-regularization powers. Contradict A05 LOCALLY to prove thin F. Do not import the countability-bundled normalization chain C24/C25.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "provider_module": "finite_packets",
+      "provider_claims": [
+        "C22"
+      ],
+      "depends_on": [
+        "A01",
+        "A02"
+      ]
+    },
+    {
+      "id": "I04",
+      "name": "Literal finite thin translations",
+      "source_label": "lem:thin-bottom",
+      "statement": "Under an EXPLICIT thin-F hypothesis, C26-C28 give one total 0-definable unique-neighbour map t_g per F atom including Id, their finite elementary abelian group, regularity on each real F-packet and original-global automorphism/centrality. A t_g may permute individually named owners and is NOT thereby an automorphism of owner-named N_B.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "provider_module": "finite_packets",
+      "provider_claims": [
+        "C26",
+        "C27",
+        "C28"
+      ],
+      "depends_on": [
+        "A01"
+      ]
+    },
+    {
+      "id": "I05",
+      "name": "Minimal infinite E is actual full exact",
+      "source_label": "prop:minimalcut",
+      "statement": "Select C11/C12: in the standing source E=kappa(E) is actual full RAW exact. Its quotient-source inheritance and EPPA are not needed. This exactness is used ONLY in the optional mixed-map/joint-lifting branch, not in the direct closure proof.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "provider_module": "finite_packets",
+      "provider_claims": [
+        "C11",
+        "C12"
+      ],
+      "depends_on": [
+        "A01",
+        "A02",
+        "A03"
+      ]
+    },
+    {
+      "id": "I06",
+      "name": "Mixed real/exact-owner orbital recognition",
+      "source_label": "lem:nested-mixed",
+      "statement": "RAW C17 for Id<=E: Id;a;E=a;E=E;a;E, including actual equality. The actual real/owner orbital is determined by the quotient pair orbital, so an owner-preserving real map plus identity on ALL B preserves every mixed pair.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "provider_module": "raw_exact",
+      "provider_claims": [
+        "C17"
+      ],
+      "depends_on": [
+        "A01",
+        "A02",
+        "A08",
+        "I05"
+      ]
+    },
+    {
+      "id": "I07",
+      "name": "ONE finite real/exact-sort lift",
+      "source_label": "thm:joint-exact",
+      "statement": "RAW C23: a genuine finite joint original-real/full-exact-owner partial isomorphism is induced by ONE ambient original automorphism. Keep the current countability scope A08; no global action section or surjectivity of full restriction groups is assumed.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "provider_module": "raw_exact",
+      "provider_claims": [
+        "C23"
+      ],
+      "depends_on": [
+        "A01",
+        "A02",
+        "A08",
+        "I05"
+      ]
+    }
+  ],
+  "reused_proof_patterns": [
+    {
+      "source_label": "lem:acf-harmless-owners",
+      "provider_module": "acl_owner_geometry",
+      "provider_claims": [
+        "C28",
+        "C29",
+        "C30"
+      ],
+      "source": {
+        "file": "sections/harmless_exact_owners.tex",
+        "anchor": "\\label{lem:acf-harmless-owners}"
+      },
+      "usage": "The current packaged provider bundles countability. C08-C13/N04 repeat its FORWARD good-real-representative proof specialized to the unique E; this explicit local proof has no joint lift or countability use. This is proof provenance, NOT an imported theorem with silently weakened premises. Reverse necessity C31-C32 is not used."
+    }
+  ],
+  "definitions": [
+    {
+      "id": "D01",
+      "name": "Actual F and its finite hull",
+      "statement": "F=Sigma(Id) is the greatest finite-class invariant equivalence; F[A]=union_(a in A)F[a]. It is finite for finite A, includes A and is A-definable. Empty A gives the empty union.",
+      "depends_on": [
+        "I01",
+        "A04"
+      ],
+      "notes": "N01",
+      "source": {
+        "file": "sections/direct_owner_closure.tex",
+        "anchor": "\\label{lem:consolidated-unary-closure}"
+      }
+    },
+    {
+      "id": "D02",
+      "name": "Canonical Gamma and anchored intersection",
+      "statement": "For genuine diversity atom p, Gamma(p) is the least ACTUAL invariant equivalence containing p, possibly NONEXACT. For x outside A define J_A=meet_(a in A)Gamma(col(x,a)); its x-class equals the intersection of the displayed a-classes. Empty meet is Top.",
+      "depends_on": [
+        "A01"
+      ],
+      "notes": "N02",
+      "source": {
+        "file": "sections/direct_owner_closure.tex",
+        "anchor": "\\label{lem:consolidated-unary-closure}"
+      }
+    },
+    {
+      "id": "D03",
+      "name": "Three different stabilizer actions",
+      "statement": "G_A=FULL Aut(M/A), H_A,B=Aut(M/A, EACH actual E-class in B), and K_A=FULL Aut(N_B/A) in the induced owner-named language. H is an ambient subgroup; its RESTRICTION IMAGE is a subgroup of K, but need not be equal to K or faithful.",
+      "depends_on": [
+        "A01",
+        "A04",
+        "A06"
+      ],
+      "notes": "N03",
+      "source": {
+        "file": "sections/direct_owner_closure.tex",
+        "anchor": "\\label{lem:consolidated-unary-closure}"
+      }
+    },
+    {
+      "id": "D04",
+      "name": "Full induced owner union and its exact language",
+      "statement": "N_B=pi_E^-1(B) is the ENTIRE union of named E-classes, with all literal old fine colours and one predicate for EACH owner. Only definitional expansions by existing thin graphs/functions are allowed, not arbitrary new predicates that destroy the restriction action. B empty gives the empty carrier, treated separately from nonempty source APIs.",
+      "depends_on": [
+        "A01",
+        "A03",
+        "A06"
+      ],
+      "notes": "N03",
+      "source": {
+        "file": "sections/direct_owner_closure.tex",
+        "anchor": "\\label{lem:consolidated-unary-closure}"
+      }
+    },
+    {
+      "id": "D05",
+      "name": "Bad colours for one infinite E-class",
+      "statement": "For the specialized harmless argument, p is bad when E intersect(p;p) is contained in F. For any E-class C and fixed x, all p-neighbours in C then lie in one finite F-packet. Actual p;p includes equality.",
+      "depends_on": [
+        "A01",
+        "A03",
+        "I01"
+      ],
+      "notes": "N04",
+      "source": {
+        "file": "sections/direct_owner_closure.tex",
+        "anchor": "\\label{lem:consolidated-unary-closure}"
+      }
+    },
+    {
+      "id": "D06",
+      "name": "Literal thin group and induced owner action",
+      "statement": "Under A05, G is the finite group of maps t_g from I04, including identity; F[a]={t_g(a):g in G}. Each original-global t_g preserves E and hence acts on actual M/E. Owner action is allowed nonfaithful; no origins in packets are chosen.",
+      "depends_on": [
+        "A05",
+        "I04"
+      ],
+      "notes": "N05",
+      "source": {
+        "file": "sections/direct_owner_closure.tex",
+        "anchor": "\\label{lem:consolidated-unary-closure}"
+      }
+    },
+    {
+      "id": "D07",
+      "name": "Total definable functions versus named automorphisms",
+      "statement": "On G-invariant N_B every t_g restricts to a TOTAL 0-definable function by its unique original colour graph. It may permute B owner predicates, so function definability does not place it in Aut(N_B) with all owners individually named.",
+      "depends_on": [
+        "D04",
+        "D06",
+        "A07"
+      ],
+      "notes": "N05",
+      "source": {
+        "file": "sections/direct_owner_closure.tex",
+        "anchor": "\\label{lem:consolidated-unary-closure}"
+      }
+    },
+    {
+      "id": "D08",
+      "name": "Actual owner-extended finite map",
+      "statement": "For the ancillary homogeneity proof p is an owner-preserving finite original fine-colour partial isomorphism on N_B. Extend p by identity on the ENTIRE actual quotient set B, merging duplicate actual owner values. Mixed real/owner pairs require I06 before I07 may be applied.",
+      "depends_on": [
+        "D04",
+        "I05"
+      ],
+      "notes": "N07",
+      "source": {
+        "file": "sections/direct_owner_closure.tex",
+        "anchor": "\\label{lem:consolidated-unary-closure}"
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "name": "Finite definable packets give the lower real inclusion",
+      "statement": "For each finite A, F[A] is finite and A-definable by the finite union of actual F colour names. Every full ambient automorphism fixing A preserves this finite set. Hence F[A] subset acl_M(A), with no exactness or normalization of F.",
+      "depends_on": [
+        "D01",
+        "A01"
+      ],
+      "notes": "N01",
+      "scope": "real_closure",
+      "source_labels": [
+        "lem:consolidated-unary-closure"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C02",
+      "name": "Empty real base has no algebraic point",
+      "statement": "For A empty, transitivity makes every Aut(M)-orbit all of INFINITE M. Therefore acl_M(empty)=empty=F[empty].",
+      "depends_on": [
+        "A01",
+        "D01"
+      ],
+      "notes": "N01",
+      "scope": "real_closure",
+      "source_labels": [
+        "lem:consolidated-unary-closure"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C03",
+      "name": "An outside-packet point has only genuine diversity spokes",
+      "statement": "If x notin F[A], reflexivity of F implies x notin A; for every a in A the colour p_a=col(x,a) is a genuine diversity atom, and x Gamma(p_a) a. No Gamma(Id) substitution is needed.",
+      "depends_on": [
+        "D01",
+        "D02",
+        "A04"
+      ],
+      "notes": "N02",
+      "scope": "real_closure",
+      "source_labels": [
+        "lem:consolidated-unary-closure"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C04",
+      "name": "Every spoke equivalence is infinite-class",
+      "statement": "If Gamma(p_a) had finite classes, greatest-finite maximality gives Gamma(p_a)<=F, so xFa, contrary to C03. Thus every spoke equivalence has infinite classes even when it is not exact.",
+      "depends_on": [
+        "C03",
+        "I01"
+      ],
+      "notes": "N02",
+      "scope": "real_closure",
+      "source_labels": [
+        "lem:consolidated-unary-closure"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C05",
+      "name": "The SAME unique E lies in every spoke",
+      "statement": "Every infinite invariant equivalence in the finite full lattice contains a minimal infinite member; by A03 it must be E. Consequently E[x] lies in every a-class Gamma(p_a), so the entire canonical intersection is infinite. For A empty the intersection is M.",
+      "depends_on": [
+        "C04",
+        "A03",
+        "D02"
+      ],
+      "notes": "N02",
+      "scope": "real_closure",
+      "source_labels": [
+        "lem:consolidated-unary-closure"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C06",
+      "name": "Canonical hull contrapositive excludes outside points",
+      "statement": "For nonempty finite A and x notin F[A], C03 permits I02 and C05 makes the canonical hull infinite. Therefore x cannot be algebraic over A. Only algebraic=>finite-hull is contraposed; no converse is invented.",
+      "depends_on": [
+        "C03",
+        "C05",
+        "I02"
+      ],
+      "notes": "N02",
+      "scope": "real_closure",
+      "source_labels": [
+        "lem:consolidated-unary-closure"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C07",
+      "name": "Direct unary real closure for EVERY finite A",
+      "statement": "C01/C06 give acl_M(A)=F[A] for nonempty finite A; C02 handles empty A. No finite-exact normalization, owner parameters, countability, SAP, EPPA, NR2 or joint lifting enters this branch.",
+      "depends_on": [
+        "C01",
+        "C02",
+        "C06"
+      ],
+      "notes": "N02",
+      "scope": "real_closure",
+      "source_labels": [
+        "lem:consolidated-unary-closure"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C08",
+      "name": "Naming owners retains the finite lower closure",
+      "statement": "Adding actual named owner parameters only shrinks the ambient stabilizer. Thus the finite G_A orbit of any point in F[A] stays finite under H_A,B; F[A] subset acl_M^eq(A union B) intersect M.",
+      "depends_on": [
+        "C01",
+        "D03"
+      ],
+      "notes": "N03",
+      "scope": "named_owner_closure",
+      "source_labels": [
+        "lem:consolidated-unary-closure"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C09",
+      "name": "Every bad-colour neighbour set is finite",
+      "statement": "For a bad p and each named E-class C, two p-neighbours b,bprime of x inside C lie in E and in p;p by symmetry. Hence bFbprime. This whole neighbour set is contained in ONE finite F-class. There are only finitely many old atomic colours.",
+      "depends_on": [
+        "D05",
+        "I01",
+        "A01",
+        "A06"
+      ],
+      "notes": "N04",
+      "scope": "named_owner_closure",
+      "source_labels": [
+        "lem:consolidated-unary-closure"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C10",
+      "name": "Choose genuine good representatives for ALL finite owners",
+      "statement": "For EACH actual C in finite B, remove the finite union of bad-colour neighbour sets from its INFINITE E-class and also remove {x}. Choose one real b_C outside. Then p_C=col(x,b_C) is genuine diversity and is not bad. This choice does NOT assert real representatives are named parameters.",
+      "depends_on": [
+        "C09",
+        "A03",
+        "A06"
+      ],
+      "notes": "N04",
+      "scope": "named_owner_closure",
+      "source_labels": [
+        "lem:consolidated-unary-closure"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C11",
+      "name": "Good representative spokes contain E",
+      "statement": "For each chosen p_C, E intersect(p_C;p_C) is not contained in F. The invariant equivalence E intersect Gamma(p_C) contains it and cannot be finite-class, since all finite-class equivalences lie below F. Minimality of infinite E forces E<=Gamma(p_C). Gamma need not be exact.",
+      "depends_on": [
+        "C10",
+        "D02",
+        "I01",
+        "A03"
+      ],
+      "notes": "N04",
+      "scope": "named_owner_closure",
+      "source_labels": [
+        "lem:consolidated-unary-closure"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C12",
+      "name": "An infinite hull survives the added REAL representatives",
+      "statement": "For x notin F[A], C05 and C11 put the SAME infinite E[x] in every spoke class for finite A union {b_C}. C03 and the explicit b_C!=x make all spokes diversity. The contrapositive I02 gives x notin acl_M(A union {b_C}). Empty A and B are included; the wholly empty case uses C02.",
+      "depends_on": [
+        "C05",
+        "C10",
+        "C11",
+        "I02",
+        "C02"
+      ],
+      "notes": "N04",
+      "scope": "named_owner_closure",
+      "source_labels": [
+        "lem:consolidated-unary-closure"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C13",
+      "name": "Finite actual owner naming is harmless for REAL acl",
+      "statement": "Each actual C is definable from b_C, so Aut(M/A,{b_C}) is a subgroup of H_A,B. The C12 infinite point orbit under this smaller group is contained in the H orbit, making the latter infinite. Thus no x outside F[A] becomes algebraic over the named imaginary owners. With C08, acl_M^eq(A union B) intersect M=F[A]=acl_M(A). This local specialized proof, unlike the broader packaged harmless type, uses no countability.",
+      "depends_on": [
+        "C12",
+        "C08",
+        "C07",
+        "D03"
+      ],
+      "notes": "N04",
+      "scope": "named_owner_closure",
+      "source_labels": [
+        "lem:consolidated-unary-closure"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C14",
+      "name": "Normalized packets supply the finite literal G",
+      "statement": "If any F atom were nonthin, I03 C22 would construct a nonidentity finite-class full exact kernel, contradicting A05. Thus F is thin, and I04 supplies finite elementary abelian G, unique-neighbour 0-definable maps and regular real F-packet action. Each t_g is an ORIGINAL-global automorphism central under Aut(M); it need not fix individually named owner classes.",
+      "depends_on": [
+        "A05",
+        "I03",
+        "I04"
+      ],
+      "notes": "N05",
+      "scope": "thin_definability",
+      "source_labels": [
+        "lem:consolidated-unary-closure"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C15",
+      "name": "Thin translations induce a genuine possibly nonfaithful owner action",
+      "statement": "Because each t_g preserves every original fine colour and E is a union of such colours, E-related points have E-related images. Thus t_g acts on actual E-classes. This owner action may have a kernel even though the real action is packet-regular.",
+      "depends_on": [
+        "C14",
+        "A03",
+        "D06"
+      ],
+      "notes": "N05",
+      "scope": "thin_definability",
+      "source_labels": [
+        "lem:consolidated-unary-closure"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C16",
+      "name": "G-invariant B is exactly full-F saturation of its entire union",
+      "statement": "If B is G-invariant, every a in N_B and every g satisfy t_g(a) in N_B, hence F[a] subset N_B. Conversely, if N_B contains every F-packet of its points, choose a above any b in B; every g b is then the owner of t_g(a) in N_B, so g b lies in B. Includes empty B.",
+      "depends_on": [
+        "C15",
+        "D04",
+        "A07"
+      ],
+      "notes": "N05",
+      "scope": "thin_definability",
+      "source_labels": [
+        "lem:consolidated-unary-closure"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C17",
+      "name": "Finite packet hull is definable INSIDE the induced union",
+      "statement": "For A subset N_B, C16 makes each literal t_g total on N_B. Thus EACH value t_g(a) is individually A-definable by a total unique-neighbour function, and F[A]={t_g(a):g in G,a in A} is their finite union. In particular F[A] subset dcl_N(A) subset acl_N(A). The t_g need not be in Aut(N_B).",
+      "depends_on": [
+        "C14",
+        "C16",
+        "D07",
+        "A04"
+      ],
+      "notes": "N05",
+      "scope": "union_closure",
+      "source_labels": [
+        "lem:consolidated-unary-closure"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C18",
+      "name": "Ambient named stabilizer has a restriction IMAGE subgroup",
+      "statement": "Every h in H_A,B fixes EACH owner, preserves the entire N_B, old fine colours and the definable thin graphs. Its restriction is in FULL Aut(N_B/A). These restrictions form a subgroup. Their point orbit of x is exactly its ambient H orbit, but restriction need not be injective or surjective onto the full group.",
+      "depends_on": [
+        "D03",
+        "D04",
+        "C16",
+        "C14"
+      ],
+      "notes": "N06",
+      "scope": "union_closure",
+      "source_labels": [
+        "lem:consolidated-unary-closure"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C19",
+      "name": "Outside-packet points keep infinite induced-union orbits",
+      "statement": "For x in N_B outside F[A], C13 says its ambient H_A,B orbit is infinite. By C18 it lies wholly in N_B and in the FULL Aut(N_B/A) orbit of x, which is therefore infinite. Thus x is not algebraic in the induced union. Homogeneity and joint lifting are not used.",
+      "depends_on": [
+        "C13",
+        "C18"
+      ],
+      "notes": "N06",
+      "scope": "union_closure",
+      "source_labels": [
+        "lem:consolidated-unary-closure"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C20",
+      "name": "Exact real acl of the G-invariant owner union",
+      "statement": "For every finite A subset N_B, combine C17/C19: acl_N_B(A)=F[A]=acl_M^eq(A union B) intersect N_B. This is closure in the FULL owner-named induced structure, not a selected subgroup definition. Unique minimal infinite E and normalization/G-invariance have distinct roles.",
+      "depends_on": [
+        "C17",
+        "C19",
+        "C13"
+      ],
+      "notes": "N06",
+      "scope": "union_closure",
+      "source_labels": [
+        "lem:consolidated-unary-closure"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C21",
+      "name": "Empty bases, empty owner unions and closed packet unions",
+      "statement": "If A empty then all three closure sets in C20 are empty. If B empty, N_B is empty and A must be empty, so the result is direct set equality outside any nonempty-source API. Every finite full-F union C subset N_B is absolutely closed there because F[C]=C. No closure-containing rooted empty witness is claimed.",
+      "depends_on": [
+        "C20",
+        "C02",
+        "D04"
+      ],
+      "notes": "N06",
+      "scope": "union_closure",
+      "source_labels": [
+        "lem:consolidated-unary-closure"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C22",
+      "name": "Check EVERY mixed pair in the ancillary joint request",
+      "statement": "For finite owner-preserving p in N_B, p union Id_B preserves real-real colours, all owner-owner colours and, by I06, each mixed real/owner orbital. On each real domain point pi_E(p(x))=pi_E(x), and identity fixes ALL B, including nonincident owner classes. Thus this is a genuine finite joint partial isomorphism.",
+      "depends_on": [
+        "D08",
+        "I05",
+        "I06"
+      ],
+      "notes": "N07",
+      "scope": "ancillary_homogeneity",
+      "source_labels": [
+        "lem:consolidated-unary-closure"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C23",
+      "name": "One countable joint lift preserves the whole owner union",
+      "statement": "Under optional A08, I07 lifts C22 to one ORIGINAL ambient automorphism fixing EACH member of B. It preserves N_B, so its restriction extends the given p in the owner-named induced language. No global section or full-group restriction surjectivity is inferred.",
+      "depends_on": [
+        "C22",
+        "I07",
+        "D04"
+      ],
+      "notes": "N07",
+      "scope": "ancillary_homogeneity",
+      "source_labels": [
+        "lem:consolidated-unary-closure"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C24",
+      "name": "Separate ancillary owner-named homogeneity",
+      "statement": "For nonempty B, C23 extends every finite owner-preserving induced partial isomorphism, proving the owner-named union homogeneous in the current countable API scope. Empty B is direct. This proof is independent of the acl_N computation C17-C21 and does not require normalized packets or G-invariance for the pure induced language.",
+      "depends_on": [
+        "C23",
+        "D04"
+      ],
+      "notes": "N07",
+      "scope": "ancillary_homogeneity",
+      "source_labels": [
+        "lem:consolidated-unary-closure"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C25",
+      "name": "Consolidated unary closure with branch-scoped hypotheses",
+      "statement": "C07 gives the original direct real equality; C13 gives harmless finite actual E-owner naming; C20 gives the induced-union equality under the ADDITIONAL normalized/G-invariant union hypotheses. Optional countable homogeneity C24 is separate support, not a premise of these equalities. This is exactly ONE new source export, not a duplicate of B012 or B025 and not an EPPA/HKN theorem.",
+      "depends_on": [
+        "C07",
+        "C13",
+        "C20",
+        "C21"
+      ],
+      "notes": "N08",
+      "scope": "scoped_assembly",
+      "source_labels": [
+        "lem:consolidated-unary-closure"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    }
+  ],
+  "source_result_files": [
+    "sections/direct_owner_closure.tex"
+  ],
+  "exports": [
+    {
+      "source_label": "lem:consolidated-unary-closure",
+      "claims": [
+        "C07",
+        "C13",
+        "C20",
+        "C25"
+      ]
+    }
+  ],
+  "auxiliary_exports": [],
+  "source_files": [
+    {
+      "file": "sections/direct_owner_closure.tex",
+      "git_blob": "a4249938c53d20cd208d68dcd013c5c6d12a5ffd"
+    },
+    {
+      "file": "sections/exact_foundations/02_exact_quotient_orbital_geometry.tex",
+      "git_blob": "d462f2bfffcd67c1fa712ac516972ab18e073d44"
+    },
+    {
+      "file": "sections/exact_foundations/03_joint_exact_sort_lifting.tex",
+      "git_blob": "394e0db063a476c5c069384b3d3fa2ffd3c7471d"
+    },
+    {
+      "file": "sections/finite_packets.tex",
+      "git_blob": "dd3e608f03e7c5b1b1854a45de462859f8355143"
+    },
+    {
+      "file": "sections/harmless_exact_owners.tex",
+      "git_blob": "f2259434387184b1fbf24edf099da5e12be33024"
+    },
+    {
+      "file": "sections/real_hull/05_even_walk_canonical_hull.tex",
+      "git_blob": "40c459c5d2582ad92811ab62dcffbcb4456a8826"
+    }
+  ],
+  "dependency_firewalls": [
+    {
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07"
+      ],
+      "forbid": [
+        "A05",
+        "A06",
+        "A07",
+        "A08",
+        "I03",
+        "I04",
+        "I05",
+        "I06",
+        "I07",
+        "C24"
+      ]
+    },
+    {
+      "claims": [
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13"
+      ],
+      "forbid": [
+        "A05",
+        "A07",
+        "A08",
+        "I03",
+        "I04",
+        "I05",
+        "I06",
+        "I07",
+        "C24"
+      ]
+    },
+    {
+      "claims": [
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21"
+      ],
+      "forbid": [
+        "A08",
+        "I05",
+        "I06",
+        "I07",
+        "C22",
+        "C23",
+        "C24"
+      ]
+    },
+    {
+      "claims": [
+        "C22",
+        "C23",
+        "C24"
+      ],
+      "forbid": [
+        "A05",
+        "A07",
+        "I03",
+        "I04",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "T01",
+      "name": "Finite packets and direct canonical real hull",
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement exact finite-orbit and actual imaginary parameter contracts. Keep F/Gamma possibly nonexact, unique minimal infinite E explicit, t_g definability distinct from named automorphisms, and restriction IMAGE distinct from full induced group. Main closure must remain independent of homogeneity and countability. Do not introduce EPPA/HKN or a B025 dependency."
+    },
+    {
+      "id": "T02",
+      "name": "Local forward harmless proof with actual imaginary owners",
+      "claims": [
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13"
+      ],
+      "depends_on": [
+        "T01"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement exact finite-orbit and actual imaginary parameter contracts. Keep F/Gamma possibly nonexact, unique minimal infinite E explicit, t_g definability distinct from named automorphisms, and restriction IMAGE distinct from full induced group. Main closure must remain independent of homogeneity and countability. Do not introduce EPPA/HKN or a B025 dependency."
+    },
+    {
+      "id": "T03",
+      "name": "Thin maps and entire full-packet owner saturation",
+      "claims": [
+        "C14",
+        "C15",
+        "C16",
+        "C17"
+      ],
+      "depends_on": [
+        "T01"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement exact finite-orbit and actual imaginary parameter contracts. Keep F/Gamma possibly nonexact, unique minimal infinite E explicit, t_g definability distinct from named automorphisms, and restriction IMAGE distinct from full induced group. Main closure must remain independent of homogeneity and countability. Do not introduce EPPA/HKN or a B025 dependency."
+    },
+    {
+      "id": "T04",
+      "name": "Restriction-image orbit argument and empty cases",
+      "claims": [
+        "C18",
+        "C19",
+        "C20",
+        "C21"
+      ],
+      "depends_on": [
+        "T01",
+        "T02",
+        "T03"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement exact finite-orbit and actual imaginary parameter contracts. Keep F/Gamma possibly nonexact, unique minimal infinite E explicit, t_g definability distinct from named automorphisms, and restriction IMAGE distinct from full induced group. Main closure must remain independent of homogeneity and countability. Do not introduce EPPA/HKN or a B025 dependency."
+    },
+    {
+      "id": "T05",
+      "name": "Separate mixed-map and joint-lift homogeneity",
+      "claims": [
+        "C22",
+        "C23",
+        "C24"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement exact finite-orbit and actual imaginary parameter contracts. Keep F/Gamma possibly nonexact, unique minimal infinite E explicit, t_g definability distinct from named automorphisms, and restriction IMAGE distinct from full induced group. Main closure must remain independent of homogeneity and countability. Do not introduce EPPA/HKN or a B025 dependency."
+    },
+    {
+      "id": "T06",
+      "name": "Scoped source export and receiving consumer",
+      "claims": [
+        "C25"
+      ],
+      "depends_on": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement exact finite-orbit and actual imaginary parameter contracts. Keep F/Gamma possibly nonexact, unique minimal infinite E explicit, t_g definability distinct from named automorphisms, and restriction IMAGE distinct from full induced group. Main closure must remain independent of homogeneity and countability. Do not introduce EPPA/HKN or a B025 dependency."
+    }
+  ],
+  "overview_mermaid": [
+    "flowchart TD",
+    "  F[\"Finite definable F\"] --> R[\"Direct unary real acl\"]",
+    "  H[\"Finite canonical hull\"] --> R",
+    "  E[\"Unique infinite E\"] --> R",
+    "  R --> B[\"Finite actual owner names\"]",
+    "  H --> B",
+    "  N[\"Normalized thin packets\"] --> G[\"Total maps on G-invariant union\"]",
+    "  G --> D[\"Finite internal definability\"]",
+    "  B --> O[\"Infinite restriction-image orbits\"]",
+    "  D --> C[\"Induced-union real acl\"]",
+    "  O --> C",
+    "  J[\"Mixed pairs plus countable joint lift\"] --> A[\"Separate homogeneity\"]"
+  ],
+  "overview_notes": [
+    "Gamma and F belong to the FULL invariant-equivalence lattice and need not be exact.",
+    "The specialized forward harmless proof is locally expanded; the broader countable provider type is not silently weakened.",
+    "A thin t_g can permute individually named owner predicates; definability is sufficient and named automorphism membership is not asserted.",
+    "The restriction image is a subgroup with the same point orbit as the ambient stabilizer. Neither injectivity nor surjectivity of restriction is needed.",
+    "B025 already uses its independent B012 route. This package completes one frozen Foundations II result without changing that dependency DAG."
+  ],
+  "controls": [
+    {
+      "id": "K01",
+      "check": "Bounded finite permutation orbit containment and restriction image checks, including nonfaithful restriction and strict subgroup/full-group differences."
+    },
+    {
+      "id": "K02",
+      "check": "Finite literal translation saturation, G-invariant owner sets, total definable function readouts and counterexamples to partial-packet unions/named-automorphism assumptions. These finite tests do not prove infinite acl, CCO or canonical hulls."
+    }
+  ],
+  "article_feedback": [
+    {
+      "id": "F01",
+      "kind": "DEPENDENCY_OR_SCOPE_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/direct_owner_closure.tex",
+        "anchor": "The owner union"
+      },
+      "finding": "The acl_N argument needs only the restriction IMAGE of the ambient individually named-owner stabilizer, not joint lifting or homogeneity of N_B. The latter is a separate statement requiring a full mixed-orbit check before joint lifting.",
+      "proposed_article_change": "Move the homogeneity sentence after the acl argument and spell out p union Id on ALL named owners for the optional homogeneity proof.",
+      "caller_effect": "No hypothesis added to any closure conclusion. The actual countable RAW homogeneity API remains scoped separately.",
+      "proof_claims": [
+        "C18",
+        "C19",
+        "C20",
+        "C22",
+        "C23",
+        "C24"
+      ]
+    },
+    {
+      "id": "F02",
+      "kind": "DEPENDENCY_OR_SCOPE_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/direct_owner_closure.tex",
+        "anchor": "literal finite thin translations"
+      },
+      "finding": "The t_g are total 0-definable functions on a G-invariant union, but may move individually named owner predicates. They need not be automorphisms of the owner-named structure. Full normalization alone also does not replace unique minimal infinite E.",
+      "proposed_article_change": "Specify definability/totality and retain the one-direction hypothesis in the union clause; do not use named automorphism membership of t_g.",
+      "caller_effect": "Clarifies exactly why G invariance and unique E are retained.",
+      "proof_claims": [
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C20"
+      ]
+    }
+  ],
+  "review": {
+    "date": "2026-10-28",
+    "source_unchanged": true,
+    "source_signature_repairs": 0,
+    "unexpanded_provider_labels": [],
+    "proof_status": "HUMAN_EXPANDED_NOT_LEAN; one direct closure source result only. No EPPA or global certification.",
+    "independent_reviews": [
+      "Direct real hull and actual harmless-owner hypotheses audit",
+      "Named owner language, restriction-image action and total thin-definability audit"
+    ],
+    "boundaries": [
+      "No countability-free compiled RAW joint API is claimed.",
+      "No core closure theorem is conditioned on homogeneity of N_B.",
+      "Finite diagnostics do not model real acl by an arbitrary finite group orbit."
+    ]
+  }
+}

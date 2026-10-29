@@ -1,0 +1,145 @@
+\section{A finite bad-cycle bound on the primitive transversal}
+\label{sec:finite-locality}
+
+This part uses only the finitely many typed palettes of
+Theorem~\ref{thm:joint-transversal}, SAP, and primitivity of each
+individual sort. Write $P_{st}$ for the full pair palette and $*$
+for strong endpoint composition: intermediate points must be distinct
+from the endpoints and from one another in a realised finite path.
+SAP allows us to replace repeated auxiliary points by fresh copies
+while fixing their complete specified neighbourhoods. Consequently
+strong products are associative and profiles of positive typed paths
+can be computed one edge at a time. Nonempty compatible profiles have
+nonempty products; every realised atomic neighbour set is infinite.
+
+\begin{lemma}[Absorption by a full typed palette]
+\label{lem:locality-absorb}
+For every triple of owner sorts $s,t,u$, and every nonempty
+atomic subsets $A\subseteq P_{st}$, $B\subseteq P_{tu}$,
+not necessarily original exact menus, one has
+\[
+ A*P_{tu}=P_{su},\qquad P_{st}*B=P_{su}.
+\]
+In particular $A*P_{tt}=P_{st}$ and
+$P_{st}*a=P_{su}$ for any atom $a\in P_{tu}$.
+\end{lemma}
+\begin{proof}
+For the first equality, fix any target atom $c\in P_{su}$
+and some $a\in A$.  Strongly amalgamate a realised $a$-edge
+of sorts $(s,t)$ and a realised $c$-edge of sorts $(s,u)$
+over their common $s$-endpoint.  The other endpoints remain
+distinct, even if $t=u$, and their actual atom belongs to
+$P_{tu}$.  This witnesses $c\in A*P_{tu}$.
+For the second equality, fix any $c\in P_{su}$ and $b\in B$.
+Strongly amalgamate a realised $c$-edge of sorts $(s,u)$
+and a realised $b$-edge of sorts $(t,u)$ over the common
+$u$-endpoint; their new $(s,t)$-edge lies in $P_{st}$ and
+witnesses $c\in P_{st}*B$.  The reverse containments in
+both cases are immediate from typing.  The two displayed
+special cases follow by taking $u=t$ in the first formula
+and $B=\{a\}$ in the second.
+\end{proof}
+
+\begin{lemma}[Every nonempty primitive loop palette eventually fills]
+\label{lem:locality-positive}
+On a primitive named sort $t$, let $\varnothing\ne W\subseteq
+P_{tt}$ be an arbitrary atomic subset, with no assumption that
+$W$ is an original exact menu or a represented word profile.
+Put $m=|P_{tt}|\ge1$. Then
+\[
+                 W^{*2m}=P_{tt}
+       \quad\text{and}\quad
+                 W^{*n}=P_{tt}\quad(n\ge2m).
+\]
+Thus the eventual-fullness exponent is UNIFORM in the
+nonempty atomic subset $W$, and the statement does not
+merely assert eventual stabilization of its powers.
+\end{lemma}
+\begin{proof}
+All original same-sort atomic orbitals on $t$ are symmetric,
+so $W=\bar W$ and every $W^{*n}$ is symmetric.  For each
+$a\in W$ choose a realised legal triangle with two $a$-edges,
+whose third edge has some actual colour $b\in a*a$.
+Strongly amalgamate two copies of this triangle over their
+complete $b$-edge.  The off-base vertices stay distinct,
+giving four distinct vertices on an $a$-coloured four-cycle.
+Three consecutive $a$-edges thus realise the remaining $a$-edge
+between the endpoints, and $a\in W^{*3}$.  Hence
+$W\subseteq W^{*3}$ for arbitrary nonempty $W$, not just
+word profiles.
+
+Therefore the even powers
+$E_k=W^{*2k}$ form an increasing chain of nonempty
+subsets of the $m$-atom palette $P_{tt}$.
+If $E_k=E_{k+1}$ for some $k$, all subsequent even
+powers agree with $J=E_k$ by associativity, hence
+$J*J=J$.  The symmetric invariant relation
+$\Delta_t\cup J$ is then an ACTUAL equivalence:
+the equality atom is added only in this interpreted
+binary relation, never as a factor of the strong
+off-diagonal product.  Since $J$ is nonempty,
+primitivity forces $J=P_{tt}$.
+
+Now consider $E_1,\ldots,E_m$.  If no adjacent
+equality occurs, these are $m$ STRICTLY increasing
+nonempty subsets of an $m$-element palette, so
+$|E_m|\ge m$ and $E_m=P_{tt}$.
+If any adjacent equality occurs, its stabilized
+$J$ was already the full palette, and hence
+$E_m=P_{tt}$ as well.  Thus in ALL cases
+$W^{*2m}=P_{tt}$, including $m=1$.
+By the full-palette absorption lemma
+\cref{lem:locality-absorb},
+multiplying the full profile by ANY nonempty
+$W$ preserves fullness, so every higher power is
+also full.  This proves the claimed explicit
+uniform exponent without any STRONG identity atom.
+\end{proof}
+
+For a fixed starting sort $s$ define the \emph{proper-profile
+automaton} to have states $(t,D)$, where
+$\varnothing\ne D\subsetneq P_{st}$ is the profile of some positive
+typed path, and edges
+$(t,D)\to(u,D*a)$ whenever $a\in P_{tu}$ and the new profile
+is again nonempty and proper. Full profiles are absorbing by
+Lemma~\ref{lem:locality-absorb} and are omitted.
+
+\begin{theorem}[Bounded cycle-obstruction locality]
+\label{thm:locality-bound}
+The proper-profile automaton is acyclic. There is an integer $\ell$
+such that every positive typed word longer than $\ell$ has its full
+endpoint palette as profile. One may take
+\[
+ \ell\le\max_s\sum_t(2^{|P_{st}|}-2).
+\]
+Every noncompletable simple typed cycle has length at most
+$b=\max\{3,\ell+1\}$. In particular, by semantic homomorphic CCO,
+a finite typed partial diagram can be completed whenever all its
+specified cycles of length at most $b$ admit a typed completion.
+\end{theorem}
+\begin{proof}
+Suppose a proper state $(t,D)$ recurs along a nonempty path through
+the automaton. Let $W\subseteq P_{tt}$ be the positive closed-word
+profile of this path. Then $D*W=D$. By associativity,
+$D*W^{*n}=D$ for all $n$. By
+Lemma~\ref{lem:locality-positive} the profile $W^{*n}$ is
+$P_{tt}$ for sufficiently large $n$. But
+$D*P_{tt}=P_{st}$ by Lemma~\ref{lem:locality-absorb}, contrary to
+the properness of $D$. Therefore no state can repeat; a positive
+path visiting proper states has at most the displayed number of
+states. Once a full state is reached, its profile remains full.
+This proves the word bound.
+
+For a typed simple cycle of $m$ vertices, remove its closing edge.
+The remaining path has length $m-1$; the specified cycle has a
+homomorphic completion exactly when the closing-edge colour belongs
+to that path's strong endpoint profile. The strong product computes
+this profile with all auxiliary vertices distinct by SAP. If
+$m-1>\ell$, the profile is full, so the cycle is always completable.
+Thus any bad cycle has length at most $\ell+1$, and taking a maximum
+with $3$ handles the conventional lower length bound for a simple
+cycle. By typed semantic homomorphic CCO of the transversal, checking
+all the cycles up to $b$ suffices for a completion of the full partial
+diagram. The bound is chosen separately for each fixed finite owner
+palette and need not be uniform over all quotient witnesses.
+\end{proof}

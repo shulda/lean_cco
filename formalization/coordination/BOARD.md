@@ -31,6 +31,8 @@ mathematical catalogue/initial checkpoint, not current ownership.
 | B029: Finite exact reconstruction with the original selected root | B001, B002 | [B029](../../formalization/coordination/packages/B029.md) |
 | B023: Maximal exact MI factors and one-sided full-support safety | B022 | [B023](../../formalization/coordination/packages/B023.md) |
 | B025: Anchored owner completion and full-owner primitive transversal | B022 | [B025](../../formalization/coordination/packages/B025.md) |
+| B026: Safe traces, covariant selectors and rectangular moving readings | B003, B004, B014, B025 | [B026](../../formalization/coordination/packages/B026.md) |
+| B031: Direct unary real closure and harmless actual owners | B002, B010, B013, B014 | [B031](../../formalization/coordination/packages/B031.md) |
 
 Autonomous release permissions are in [AUTONOMY.json](AUTONOMY.json).
 Use [QUEUE_OPERATIONS.md](QUEUE_OPERATIONS.md) to claim or review work.
