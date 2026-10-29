@@ -1,0 +1,1140 @@
+{
+  "schema_version": 1,
+  "protocol_version": 3,
+  "revision": 14,
+  "date": "2026-10-28",
+  "phase": "READY",
+  "public_repository": "shulda/lean_cco",
+  "default_branch": "main",
+  "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+  "source_files": [
+    {
+      "file": "main.tex",
+      "git_blob": "df7370f12a248732db9723c3b3c02d4a05ee0eec"
+    },
+    {
+      "file": "sections/exact_foundations/01_full_raw_exact_helly.tex",
+      "git_blob": "7cb28c86b4b296ddf865b6aff518cda1215cd491"
+    },
+    {
+      "file": "sections/typed_strong_domains.tex",
+      "git_blob": "75d584069ce802c62d66104a852a3649fc082f1d"
+    },
+    {
+      "file": "sections/typed_invariant_quotient_transport.tex",
+      "git_blob": "3895b17d7d0176a74d6f69c39e4e22d9cdba5715"
+    },
+    {
+      "file": "sections/stationary_independence_from_HS.tex",
+      "git_blob": "76fb33afc16e5772b74ce76dac6b3bb4776377be"
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "state": "WAITING"
+    },
+    {
+      "id": 2,
+      "state": "RESERVED"
+    },
+    {
+      "id": 3,
+      "state": "WAITING"
+    }
+  ],
+  "packages": [
+    {
+      "id": "B001",
+      "name": "Shared API and SAP geometry",
+      "scope": "Representations; RAW elementary calculus; actual quotient pullbacks; strong SAP geometry and a consumer",
+      "contract_revision": 1,
+      "state": "ACCEPTED",
+      "owner_project_id": 1,
+      "depends_on": [],
+      "spec_file": "formalization/coordination/packages/B001_SHARED_API.md",
+      "claims": {
+        "raw_exact": [
+          "C01",
+          "C02",
+          "C03",
+          "C04",
+          "C05"
+        ],
+        "strong_selectors": [
+          "C01",
+          "C02",
+          "C03",
+          "C04",
+          "C05"
+        ]
+      },
+      "additional_source_exports": [
+        "lem:prescribed-action-point-lifting",
+        "lem:foundational-orbital-pullback"
+      ],
+      "accepted_commit": "34b7f1b055788dcf1c134f07fd6a89c123189a82"
+    },
+    {
+      "id": "B002",
+      "name": "RAW exact geometry and lifting",
+      "scope": "RAW C06–C28, all remaining current RAW claims",
+      "contract_revision": 1,
+      "state": "PLANNED",
+      "owner_project_id": null,
+      "depends_on": [
+        "B001"
+      ],
+      "spec_file": "formalization/coordination/packages/B002.md",
+      "claims": {
+        "raw_exact": [
+          "C06",
+          "C07",
+          "C08",
+          "C09",
+          "C10",
+          "C11",
+          "C12",
+          "C13",
+          "C14",
+          "C15",
+          "C16",
+          "C17",
+          "C18",
+          "C19",
+          "C20",
+          "C21",
+          "C22",
+          "C23",
+          "C24",
+          "C25",
+          "C26",
+          "C27",
+          "C28"
+        ]
+      },
+      "additional_source_exports": [],
+      "accepted_commit": null
+    },
+    {
+      "id": "B003",
+      "name": "STRONG exact calculus and PC",
+      "scope": "STRONG C06–C13 plus independent AP+CCO triangle fullness",
+      "contract_revision": 1,
+      "state": "PLANNED",
+      "owner_project_id": null,
+      "depends_on": [
+        "B001"
+      ],
+      "spec_file": "formalization/coordination/packages/B003.md",
+      "claims": {
+        "strong_selectors": [
+          "C06",
+          "C07",
+          "C08",
+          "C09",
+          "C10",
+          "C11",
+          "C12",
+          "C13"
+        ]
+      },
+      "additional_source_exports": [
+        "lem:cco-triangle-fullness"
+      ],
+      "accepted_commit": null
+    },
+    {
+      "id": "B004",
+      "name": "Gates, NR2 and selectors",
+      "scope": "STRONG C14–C27; exact calculus prerequisite, no PC fixed-point theorem dependency",
+      "contract_revision": 1,
+      "state": "PLANNED",
+      "owner_project_id": null,
+      "depends_on": [
+        "B003"
+      ],
+      "spec_file": "formalization/coordination/packages/B004.md",
+      "claims": {
+        "strong_selectors": [
+          "C14",
+          "C15",
+          "C16",
+          "C17",
+          "C18",
+          "C19",
+          "C20",
+          "C21",
+          "C22",
+          "C23",
+          "C24",
+          "C25",
+          "C26",
+          "C27"
+        ]
+      },
+      "additional_source_exports": [],
+      "accepted_commit": null
+    },
+    {
+      "id": "B005",
+      "name": "Positive SIR and direct relative example",
+      "scope": "SIR C01–C14 and C20–C25; constructor/instance and direct model kept separate",
+      "contract_revision": 1,
+      "state": "PLANNED",
+      "owner_project_id": null,
+      "depends_on": [
+        "B003",
+        "B004"
+      ],
+      "spec_file": "formalization/coordination/packages/B005.md",
+      "claims": {
+        "sir": [
+          "C01",
+          "C02",
+          "C03",
+          "C04",
+          "C05",
+          "C06",
+          "C07",
+          "C08",
+          "C09",
+          "C10",
+          "C11",
+          "C12",
+          "C13",
+          "C14",
+          "C20",
+          "C21",
+          "C22",
+          "C23",
+          "C24",
+          "C25"
+        ]
+      },
+      "additional_source_exports": [],
+      "accepted_commit": null
+    },
+    {
+      "id": "B006",
+      "name": "Parity/Hasse and finite-global obstruction",
+      "scope": "Sparse graphs, original parity/Hasse and SIR C15–C19; human proof preparation expanded, Lean work unassigned",
+      "contract_revision": 1,
+      "state": "PLANNED",
+      "owner_project_id": null,
+      "depends_on": [
+        "B001"
+      ],
+      "spec_file": "formalization/coordination/packages/B006.md",
+      "claims": {
+        "sir": [
+          "C15",
+          "C16",
+          "C17",
+          "C18",
+          "C19"
+        ],
+        "parity_hasse": [
+          "C01",
+          "C02",
+          "C03",
+          "C04",
+          "C05",
+          "C06",
+          "C07",
+          "C08",
+          "C09",
+          "C10",
+          "C11",
+          "C12",
+          "C13",
+          "C14"
+        ]
+      },
+      "additional_source_exports": [],
+      "accepted_commit": null
+    },
+    {
+      "id": "B007",
+      "name": "Exact closure separation and maximal gates",
+      "scope": "Parity module C15–C26; RAW exact consumers independent of Hasse theorem",
+      "contract_revision": 1,
+      "state": "PLANNED",
+      "owner_project_id": null,
+      "depends_on": [
+        "B002",
+        "B006"
+      ],
+      "spec_file": "formalization/coordination/packages/B007.md",
+      "claims": {
+        "parity_hasse": [
+          "C15",
+          "C16",
+          "C17",
+          "C18",
+          "C19",
+          "C20",
+          "C21",
+          "C22",
+          "C23",
+          "C24",
+          "C25",
+          "C26"
+        ]
+      },
+      "additional_source_exports": [],
+      "accepted_commit": null
+    },
+    {
+      "id": "B008",
+      "name": "Exact CRT, lattice coordinates and guarded descent",
+      "scope": "Exact CRT C01–C24, with abstract order/CRT independent of the actual RAW instance; five results and two auxiliary equations",
+      "contract_revision": 1,
+      "state": "PLANNED",
+      "owner_project_id": null,
+      "depends_on": [
+        "B002"
+      ],
+      "spec_file": "formalization/coordination/packages/B008.md",
+      "claims": {
+        "exact_crt": [
+          "C01",
+          "C02",
+          "C03",
+          "C04",
+          "C05",
+          "C06",
+          "C07",
+          "C08",
+          "C09",
+          "C10",
+          "C11",
+          "C12",
+          "C13",
+          "C14",
+          "C15",
+          "C16",
+          "C17",
+          "C18",
+          "C19",
+          "C20",
+          "C21",
+          "C22",
+          "C23",
+          "C24"
+        ]
+      },
+      "additional_source_exports": [],
+      "accepted_commit": null
+    },
+    {
+      "id": "B009",
+      "name": "Actual finite fibres and invariant classes",
+      "scope": "Canonical hull C01–C24: elementary source geometry, direct finite-fibre globalisation and full class intervals",
+      "contract_revision": 1,
+      "state": "PLANNED",
+      "owner_project_id": null,
+      "depends_on": [
+        "B003",
+        "B006"
+      ],
+      "spec_file": "formalization/coordination/packages/B009.md",
+      "claims": {
+        "canonical_hull": [
+          "C01",
+          "C02",
+          "C03",
+          "C04",
+          "C05",
+          "C06",
+          "C07",
+          "C08",
+          "C09",
+          "C10",
+          "C11",
+          "C12",
+          "C13",
+          "C14",
+          "C15",
+          "C16",
+          "C17",
+          "C18",
+          "C19",
+          "C20",
+          "C21",
+          "C22",
+          "C23",
+          "C24"
+        ]
+      },
+      "additional_source_exports": [],
+      "accepted_commit": null
+    },
+    {
+      "id": "B010",
+      "name": "Looped carrier and canonical real hull",
+      "scope": "Canonical hull C25–C36: pseudocomplement, carrier/looped Helly, Ramsey finiteness and two-power bounds",
+      "contract_revision": 1,
+      "state": "PLANNED",
+      "owner_project_id": null,
+      "depends_on": [
+        "B009"
+      ],
+      "spec_file": "formalization/coordination/packages/B010.md",
+      "claims": {
+        "canonical_hull": [
+          "C25",
+          "C26",
+          "C27",
+          "C28",
+          "C29",
+          "C30",
+          "C31",
+          "C32",
+          "C33",
+          "C34",
+          "C35",
+          "C36"
+        ]
+      },
+      "additional_source_exports": [],
+      "accepted_commit": null
+    },
+    {
+      "id": "B011",
+      "name": "Real closure bounds and terminal RAW words",
+      "scope": "Real closure C01–C18, C25–C28 and C32–C34: palette cost via actual CRT, polynomial finite-packet bounds, CCO-free terminal word presentations and independent examples",
+      "contract_revision": 1,
+      "state": "PLANNED",
+      "owner_project_id": null,
+      "depends_on": [
+        "B008",
+        "B010"
+      ],
+      "spec_file": "formalization/coordination/packages/B011.md",
+      "claims": {
+        "real_closure": [
+          "C01",
+          "C02",
+          "C03",
+          "C04",
+          "C05",
+          "C06",
+          "C07",
+          "C08",
+          "C09",
+          "C10",
+          "C11",
+          "C12",
+          "C13",
+          "C14",
+          "C15",
+          "C16",
+          "C17",
+          "C18",
+          "C25",
+          "C26",
+          "C27",
+          "C28",
+          "C32",
+          "C33",
+          "C34"
+        ]
+      },
+      "additional_source_exports": [],
+      "accepted_commit": null
+    },
+    {
+      "id": "B012",
+      "name": "SAP monolith and infinite real MI incidence",
+      "scope": "Real closure C19–C24 and C29–C31: nonsymmetric SAP geometry, full nondistributive MI reconstruction and the exact/terminal Helly consumers",
+      "contract_revision": 1,
+      "state": "PLANNED",
+      "owner_project_id": null,
+      "depends_on": [
+        "B001",
+        "B002",
+        "B011"
+      ],
+      "spec_file": "formalization/coordination/packages/B012.md",
+      "claims": {
+        "real_closure": [
+          "C19",
+          "C20",
+          "C21",
+          "C22",
+          "C23",
+          "C24",
+          "C29",
+          "C30",
+          "C31"
+        ]
+      },
+      "additional_source_exports": [],
+      "accepted_commit": null
+    },
+    {
+      "id": "B013",
+      "name": "Finite-index packets and minimal-cut crossings",
+      "scope": "Finite packets C01–C18: actual index algebra, Sigma/core intervals, minimal infinite exact cut and separate quotient-source instance",
+      "contract_revision": 1,
+      "state": "PLANNED",
+      "owner_project_id": null,
+      "depends_on": [
+        "B002",
+        "B010"
+      ],
+      "spec_file": "formalization/coordination/packages/B013.md",
+      "claims": {
+        "finite_packets": [
+          "C01",
+          "C02",
+          "C03",
+          "C04",
+          "C05",
+          "C06",
+          "C07",
+          "C08",
+          "C09",
+          "C10",
+          "C11",
+          "C12",
+          "C13",
+          "C14",
+          "C15",
+          "C16",
+          "C17",
+          "C18"
+        ]
+      },
+      "additional_source_exports": [],
+      "accepted_commit": null
+    },
+    {
+      "id": "B014",
+      "name": "Finite exact normalization and thin translation groups",
+      "scope": "Finite packets C19–C31: square regularization, palette-decreasing exact-source normalization, thin transport group, lower subgroup interval and twin-cell countercontrol",
+      "contract_revision": 1,
+      "state": "PLANNED",
+      "owner_project_id": null,
+      "depends_on": [
+        "B013"
+      ],
+      "spec_file": "formalization/coordination/packages/B014.md",
+      "claims": {
+        "finite_packets": [
+          "C19",
+          "C20",
+          "C21",
+          "C22",
+          "C23",
+          "C24",
+          "C25",
+          "C26",
+          "C27",
+          "C28",
+          "C29",
+          "C30",
+          "C31"
+        ]
+      },
+      "additional_source_exports": [],
+      "accepted_commit": null
+    },
+    {
+      "id": "B015",
+      "name": "Actual typed quotient blocks and rigid bridge geometry",
+      "scope": "Rigid groupoid C01–C18: full exact quotient blocks/words, kernel-unique finite rigid groupoid, dominant transport and explicit projected-gate bridge correspondence",
+      "contract_revision": 1,
+      "state": "PLANNED",
+      "owner_project_id": null,
+      "depends_on": [
+        "B002"
+      ],
+      "spec_file": "formalization/coordination/packages/B015.md",
+      "claims": {
+        "rigid_groupoid": [
+          "C01",
+          "C02",
+          "C03",
+          "C04",
+          "C05",
+          "C06",
+          "C07",
+          "C08",
+          "C09",
+          "C10",
+          "C11",
+          "C12",
+          "C13",
+          "C14",
+          "C15",
+          "C16",
+          "C17",
+          "C18"
+        ]
+      },
+      "additional_source_exports": [],
+      "accepted_commit": null
+    },
+    {
+      "id": "B016",
+      "name": "Affine rigid slices, product factorisation and finite phase seeds",
+      "scope": "Rigid groupoid C19–C31: independent affine translate-Helly, exact rigid cosets, rigid factorisation, abstract characters/seeds and actual source phase instance",
+      "contract_revision": 1,
+      "state": "PLANNED",
+      "owner_project_id": null,
+      "depends_on": [
+        "B015"
+      ],
+      "spec_file": "formalization/coordination/packages/B016.md",
+      "claims": {
+        "rigid_groupoid": [
+          "C19",
+          "C20",
+          "C21",
+          "C22",
+          "C23",
+          "C24",
+          "C25",
+          "C26",
+          "C27",
+          "C28",
+          "C29",
+          "C30",
+          "C31"
+        ]
+      },
+      "additional_source_exports": [],
+      "accepted_commit": null
+    },
+    {
+      "id": "B017",
+      "name": "Finite-fibre kernels, hidden projections and entire named axes",
+      "scope": "Finite kernel C01–C22: actual binary patching, countable compact projection, intrinsic/actual motion groups, exact dual width-two criterion, entire named-axis Goursat/rank consumers and genuine countermodels",
+      "contract_revision": 1,
+      "state": "PLANNED",
+      "owner_project_id": null,
+      "depends_on": [
+        "B001"
+      ],
+      "spec_file": "formalization/coordination/packages/B017.md",
+      "claims": {
+        "finite_kernel": [
+          "C01",
+          "C02",
+          "C03",
+          "C04",
+          "C05",
+          "C06",
+          "C07",
+          "C08",
+          "C09",
+          "C10",
+          "C11",
+          "C12",
+          "C13",
+          "C14",
+          "C15",
+          "C16",
+          "C17",
+          "C18",
+          "C19",
+          "C20",
+          "C21",
+          "C22"
+        ]
+      },
+      "additional_source_exports": [],
+      "accepted_commit": null
+    },
+    {
+      "id": "B018",
+      "name": "Finite-base and packet-closed owner providers",
+      "scope": "Generic finite-base EPPA restriction, actual exact ambient lifts, all prescribed owner requests, full-packet orbit trim and arbitrary point lifting",
+      "contract_revision": 1,
+      "state": "PLANNED",
+      "owner_project_id": null,
+      "depends_on": [
+        "B002",
+        "B013"
+      ],
+      "spec_file": "formalization/coordination/packages/B018.md",
+      "claims": {
+        "owner_action": [
+          "C01",
+          "C02",
+          "C03",
+          "C04",
+          "C05",
+          "C06",
+          "C07",
+          "C08",
+          "C09",
+          "C10",
+          "C11",
+          "C12",
+          "C13",
+          "C30"
+        ]
+      },
+      "additional_source_exports": [],
+      "accepted_commit": null
+    },
+    {
+      "id": "B019",
+      "name": "Full fine-coloured products and prescribed kernel actions",
+      "scope": "Actual fine-colour product automorphism isomorphism; independent abstract nonnested/nested target kernels and sparse-source prescribed-owner EPPA",
+      "contract_revision": 1,
+      "state": "PLANNED",
+      "owner_project_id": null,
+      "depends_on": [
+        "B002"
+      ],
+      "spec_file": "formalization/coordination/packages/B019.md",
+      "claims": {
+        "owner_action": [
+          "C14",
+          "C15",
+          "C16",
+          "C17",
+          "C18",
+          "C19",
+          "C20",
+          "C21",
+          "C22",
+          "C23",
+          "C24",
+          "C25",
+          "C26",
+          "C27",
+          "C28",
+          "C29"
+        ]
+      },
+      "additional_source_exports": [],
+      "accepted_commit": null
+    },
+    {
+      "id": "B020",
+      "name": "Simultaneous finite exact-owner master",
+      "scope": "owner_master C01–C26; coherent onto upset diagrams, all-family CRT and conditional actual M1–M4 source assembly",
+      "contract_revision": 1,
+      "state": "PLANNED",
+      "owner_project_id": null,
+      "depends_on": [
+        "B008",
+        "B018",
+        "B019"
+      ],
+      "spec_file": "formalization/coordination/packages/B020.md",
+      "claims": {
+        "owner_master": [
+          "C01",
+          "C02",
+          "C03",
+          "C04",
+          "C05",
+          "C06",
+          "C07",
+          "C08",
+          "C09",
+          "C10",
+          "C11",
+          "C12",
+          "C13",
+          "C14",
+          "C15",
+          "C16",
+          "C17",
+          "C18",
+          "C19",
+          "C20",
+          "C21",
+          "C22",
+          "C23",
+          "C24",
+          "C25",
+          "C26"
+        ]
+      },
+      "additional_source_exports": [],
+      "accepted_commit": null
+    },
+    {
+      "id": "B021",
+      "name": "Joint-owner full tuple actions and sparse EPPA",
+      "scope": "joint_owner C01–C27; actual full finite tuple/group assembly, independent sparse EPPA and conditional given-exceptional-map support",
+      "contract_revision": 1,
+      "state": "PLANNED",
+      "owner_project_id": null,
+      "depends_on": [
+        "B002",
+        "B008"
+      ],
+      "spec_file": "formalization/coordination/packages/B021.md",
+      "claims": {
+        "joint_owner": [
+          "C01",
+          "C02",
+          "C03",
+          "C04",
+          "C05",
+          "C06",
+          "C07",
+          "C08",
+          "C09",
+          "C10",
+          "C11",
+          "C12",
+          "C13",
+          "C14",
+          "C15",
+          "C16",
+          "C17",
+          "C18",
+          "C19",
+          "C20",
+          "C21",
+          "C22",
+          "C23",
+          "C24",
+          "C25",
+          "C26",
+          "C27"
+        ]
+      },
+      "additional_source_exports": [],
+      "accepted_commit": null
+    },
+    {
+      "id": "B022",
+      "name": "Real closure, harmless owners and correspondence coordinates",
+      "scope": "acl_owner_geometry C01–C35; complete pinned source exports with branch-specific hypotheses and internal milestones",
+      "contract_revision": 1,
+      "state": "PLANNED",
+      "owner_project_id": null,
+      "depends_on": [
+        "B002",
+        "B008",
+        "B010",
+        "B011",
+        "B013",
+        "B014"
+      ],
+      "spec_file": "formalization/coordination/packages/B022.md",
+      "claims": {
+        "acl_owner_geometry": [
+          "C01",
+          "C02",
+          "C03",
+          "C04",
+          "C05",
+          "C06",
+          "C07",
+          "C08",
+          "C09",
+          "C10",
+          "C11",
+          "C12",
+          "C13",
+          "C14",
+          "C15",
+          "C16",
+          "C17",
+          "C18",
+          "C19",
+          "C20",
+          "C21",
+          "C22",
+          "C23",
+          "C24",
+          "C25",
+          "C26",
+          "C27",
+          "C28",
+          "C29",
+          "C30",
+          "C31",
+          "C32",
+          "C33",
+          "C34",
+          "C35"
+        ]
+      },
+      "additional_source_exports": [],
+      "accepted_commit": null
+    },
+    {
+      "id": "B029",
+      "name": "Finite exact reconstruction with the original selected root",
+      "scope": "finite_lift local claims; one new source result and finite-acl identity, full-matrix safe descent, ordinary full-preimage witness and separately qualified stronger relative owner transfer",
+      "contract_revision": 1,
+      "state": "PLANNED",
+      "owner_project_id": null,
+      "depends_on": [
+        "B001",
+        "B002"
+      ],
+      "spec_file": "formalization/coordination/packages/B029.md",
+      "claims": {
+        "finite_lift": [
+          "C01",
+          "C02",
+          "C03",
+          "C04",
+          "C05",
+          "C06",
+          "C07",
+          "C08",
+          "C09",
+          "C10",
+          "C11",
+          "C12",
+          "C13",
+          "C14",
+          "C15",
+          "C16",
+          "C17",
+          "C18",
+          "C19",
+          "C20",
+          "C21",
+          "C22",
+          "C23",
+          "C24",
+          "C25",
+          "C26",
+          "C27"
+        ]
+      },
+      "additional_source_exports": [],
+      "accepted_commit": null
+    },
+    {
+      "id": "B023",
+      "name": "Maximal exact MI factors and one-sided full-support safety",
+      "scope": "mi_geometry C01–C31; complete pinned source exports with branch-specific hypotheses and internal milestones",
+      "contract_revision": 1,
+      "state": "PLANNED",
+      "owner_project_id": null,
+      "depends_on": [
+        "B022"
+      ],
+      "spec_file": "formalization/coordination/packages/B023.md",
+      "claims": {
+        "mi_geometry": [
+          "C01",
+          "C02",
+          "C03",
+          "C04",
+          "C05",
+          "C06",
+          "C07",
+          "C08",
+          "C09",
+          "C10",
+          "C11",
+          "C12",
+          "C13",
+          "C14",
+          "C15",
+          "C16",
+          "C17",
+          "C18",
+          "C19",
+          "C20",
+          "C21",
+          "C22",
+          "C23",
+          "C24",
+          "C25",
+          "C26",
+          "C27",
+          "C28",
+          "C29",
+          "C30",
+          "C31"
+        ]
+      },
+      "additional_source_exports": [],
+      "accepted_commit": null
+    },
+    {
+      "id": "B025",
+      "name": "Anchored owner completion and full-owner primitive transversal",
+      "scope": "owner_transversal C01–C47; 12 full source exports, optional SAP and conditional EPPA branches explicit; internal countable construction",
+      "contract_revision": 1,
+      "state": "PLANNED",
+      "owner_project_id": null,
+      "depends_on": [
+        "B022"
+      ],
+      "spec_file": "formalization/coordination/packages/B025.md",
+      "claims": {
+        "owner_transversal": [
+          "C01",
+          "C02",
+          "C03",
+          "C04",
+          "C05",
+          "C06",
+          "C07",
+          "C08",
+          "C09",
+          "C10",
+          "C11",
+          "C12",
+          "C13",
+          "C14",
+          "C15",
+          "C16",
+          "C17",
+          "C18",
+          "C19",
+          "C20",
+          "C21",
+          "C22",
+          "C23",
+          "C24",
+          "C25",
+          "C26",
+          "C27",
+          "C28",
+          "C29",
+          "C30",
+          "C31",
+          "C32",
+          "C33",
+          "C34",
+          "C35",
+          "C36",
+          "C37",
+          "C38",
+          "C39",
+          "C40",
+          "C41",
+          "C42",
+          "C43",
+          "C44",
+          "C45",
+          "C46",
+          "C47"
+        ]
+      },
+      "additional_source_exports": [],
+      "accepted_commit": null
+    },
+    {
+      "id": "B026",
+      "name": "Safe traces, covariant selectors and rectangular moving readings",
+      "scope": "safe_readings C01–C40; twelve source results, explicit augmented finite-menu gates, independent readings and only the first two finite-locality providers",
+      "contract_revision": 1,
+      "state": "PLANNED",
+      "owner_project_id": null,
+      "depends_on": [
+        "B003",
+        "B004",
+        "B014",
+        "B025"
+      ],
+      "spec_file": "formalization/coordination/packages/B026.md",
+      "claims": {
+        "safe_readings": [
+          "C01",
+          "C02",
+          "C03",
+          "C04",
+          "C05",
+          "C06",
+          "C07",
+          "C08",
+          "C09",
+          "C10",
+          "C11",
+          "C12",
+          "C13",
+          "C14",
+          "C15",
+          "C16",
+          "C17",
+          "C18",
+          "C19",
+          "C20",
+          "C21",
+          "C22",
+          "C23",
+          "C24",
+          "C25",
+          "C26",
+          "C27",
+          "C28",
+          "C29",
+          "C30",
+          "C31",
+          "C32",
+          "C33",
+          "C34",
+          "C35",
+          "C36",
+          "C37",
+          "C38",
+          "C39",
+          "C40"
+        ]
+      },
+      "additional_source_exports": [],
+      "accepted_commit": null
+    },
+    {
+      "id": "B031",
+      "name": "Direct unary real closure and harmless actual owners",
+      "scope": "direct_owner_closure C01-C25; ONE new Foundations II result, countability-free real/named/induced-union closure and separately scoped countable owner-named homogeneity; literal thin functions need not fix named owners",
+      "contract_revision": 1,
+      "state": "PLANNED",
+      "owner_project_id": null,
+      "depends_on": [
+        "B002",
+        "B010",
+        "B013",
+        "B014"
+      ],
+      "spec_file": "formalization/coordination/packages/B031.md",
+      "claims": {
+        "direct_owner_closure": [
+          "C01",
+          "C02",
+          "C03",
+          "C04",
+          "C05",
+          "C06",
+          "C07",
+          "C08",
+          "C09",
+          "C10",
+          "C11",
+          "C12",
+          "C13",
+          "C14",
+          "C15",
+          "C16",
+          "C17",
+          "C18",
+          "C19",
+          "C20",
+          "C21",
+          "C22",
+          "C23",
+          "C24",
+          "C25"
+        ]
+      },
+      "additional_source_exports": [],
+      "accepted_commit": null
+    }
+  ],
+  "allocation_authority": {
+    "branch": "coordination",
+    "file": "formalization/coordination/STATE.json"
+  }
+}

@@ -1,0 +1,1371 @@
+{
+  "schema_version": 1,
+  "id": "hkn_reservoir",
+  "index_title": "Finite bad-cycle locality and a completable structural HKN reservoir",
+  "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+  "status": "HUMAN_EXPANDED_NOT_LEAN",
+  "scope": "B027 expands exactly seven new source results: the finite bad-cycle bound and six HKN packet-reservoir results. B025 supplies collision/origin completion and B026 supplies absorption/primitive powers. HKN 1.1/1.2 remain explicitly published external providers; their existing Lean declarations are identified read-only, while the CCO representation/normalization adapter is NOT compiled. No safe selector, valued second HKN stage, normalized MI or ordinary EPPA theorem is proved here.",
+  "scope_vocabulary": [
+    "SAP_primitive",
+    "SAP_primitive_CCO",
+    "actual_closed_SAP",
+    "finite_unary_structure",
+    "finite_Gamma_maps",
+    "local_HKN_plus_actual_source",
+    "published_HKN_plus_actual_source"
+  ],
+  "scope_explanation": "statement and proof. Finite HKN representation, typed SAP/primitivity/CCO, actual named-owner closure/homogeneity and closed SAP are separate premises.",
+  "control_script": "tools/check_hkn_reservoir_controls.py",
+  "assumptions": [
+    {
+      "id": "A01",
+      "name": "Actual finite typed SAP triangle algebra",
+      "statement": "The origin source has finitely many nonempty diversity palettes P_st, actual homogeneous typed triangle semantics, symmetric original same-sort atoms and SAP. Strong positive products are associative/nonempty and SAP injectivization fixes prescribed complete endpoint edges. Equality is not a strong atom. No CCO or primitivity is part of this premise."
+    },
+    {
+      "id": "A02",
+      "name": "Primitive individual owner sorts",
+      "statement": "Every individual named sort of the origin source is primitive. Together with A01 this gives B026 uniform fullness for every nonempty loop subset, not only exact/word-profile subsets."
+    },
+    {
+      "id": "A03",
+      "name": "Typed semantic homomorphic CCO",
+      "statement": "A finite partial origin diagram maps to the actual typed source whenever every specified simple typed cycle does. This is used only for whole-diagram completion after the cycle checks, not for the acyclic proper-profile bound."
+    },
+    {
+      "id": "A04",
+      "name": "Actual residual named-owner source and thin data",
+      "statement": "N_B=pi_E^{-1}(B) is the actual residual named-owner source with R_E=F, finite nonempty G-closed actual owner set B, regular full F-packets, acl_N(X)=F[X], named-owner homogeneity, and separate compatible ambient lifts for every allowed gamma. G is the actual finite elementary abelian thin group; its named translations are total, commute with owner-preserving automorphisms and obey the literal full fine-matrix law. Retain the existing B025 normalization/exact-owner/countability hypotheses for this supplied actual instance; no section Gamma->Aut(N_B) or original raw SAP is assumed."
+    },
+    {
+      "id": "A05",
+      "name": "Closed SAP in the actual named-owner age",
+      "statement": "Finite complete actual full-packet structures strongly amalgamate over finite complete full-packet closed bases in N_B, including empty base. This closed SAP is distinct from raw SAP of the original real source and from transversal SAP A01."
+    },
+    {
+      "id": "A06",
+      "name": "Finite HKN signature and pure owner language group",
+      "statement": "Use finitely many unary owner predicates O_b, binary original fine atom relations R_a and unary set-valued function symbols t_g. Actual source functions have singleton outputs. Finite Gamma permutes ONLY owner predicate symbols and fixes all fine atom and function names, preserving symbol kind/arity. The unrestricted HKN output is not assumed to have owner exclusivity, total functions, singleton outputs or group equations. There are no nullary functions."
+    },
+    {
+      "id": "A07",
+      "name": "Finite complete full-packet source and compatible requests",
+      "statement": "A is a finite NONEMPTY complete actual full-packet substructure of N_B, closed under all t_g. The finite request set consists of pairs (gamma,p) of compatible original fine-colour partial maps of A and their entire prescribed owner language components. G-saturation is performed on both domain/range. Every empty-real-domain component (gamma,empty) is retained. The identity embedding of A into a normalized witness is a structural convention proved below, not an extra assumption on HKN output. Each p is a PARTIAL ISOMORPHISM of the original complete fine-colour relational reduct: a bijection between induced finite substructures with domain and range inside A, preserving and reflecting every original fine colour, and own(p(x))=gamma own(x) for each domain point. Its inverse is therefore a genuine partial isomorphism; t_g-closedness is obtained by subsequent G-saturation."
+    }
+  ],
+  "imports": [
+    {
+      "id": "I01",
+      "name": "Arbitrary-subset full-palette absorption",
+      "source_label": "lem:locality-absorb",
+      "statement": "For all compatible nonempty atomic subsets, multiplication by a full palette gives the full endpoint palette. Reuse B026 C01; no new proof/export of this lemma.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01"
+      ],
+      "provider_module": "safe_readings",
+      "provider_claims": [
+        "C01"
+      ]
+    },
+    {
+      "id": "I02",
+      "name": "Uniform primitive loop fullness",
+      "source_label": "lem:locality-positive",
+      "statement": "For every nonempty possibly NONEXACT W subset P_tt, W^(2|P_tt|)=P_tt and every later power is full. Reuse B026 C02-C05, requiring SAP and primitivity only.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01",
+        "A02"
+      ],
+      "provider_module": "safe_readings",
+      "provider_claims": [
+        "C02",
+        "C03",
+        "C04",
+        "C05"
+      ]
+    },
+    {
+      "id": "I03",
+      "name": "Actual named closure and owner homogeneity",
+      "source_label": "thm:relative-real-closure",
+      "statement": "Under unchanged B025 residual hypotheses, acl_N(X)=F[X], finite full-packet unions are closed, and every compatible finite named-owner map/entire owner language action has an actual original lift. Separate lifts suffice.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A04"
+      ],
+      "provider_module": "owner_transversal",
+      "provider_claims": [
+        "C22",
+        "C23",
+        "C24"
+      ]
+    },
+    {
+      "id": "I04",
+      "name": "Closed-packet strong amalgamation",
+      "source_label": "cor:relative-closed-sap",
+      "statement": "Reuse B025 C26 over complete packet-closed bases; alignment and finite-action avoidance are already proved there. No full-real raw SAP is imported.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A04",
+        "A05"
+      ],
+      "provider_module": "owner_transversal",
+      "provider_claims": [
+        "C26"
+      ]
+    },
+    {
+      "id": "I05",
+      "name": "Protected packet-collision separation",
+      "source_label": "lem:packet-collision",
+      "statement": "An owner/function/record-preserving map of literal regular packets, injective on each packet and embedded on a complete protected base, can be made globally injective by separating only unrecorded collisions. Preserve every entire recorded neighbour matrix and the protected base; absence of records is not reflected.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A04"
+      ],
+      "provider_module": "owner_transversal",
+      "provider_claims": [
+        "C27",
+        "C28",
+        "C29"
+      ]
+    },
+    {
+      "id": "I06",
+      "name": "Origin inflation and actual base alignment",
+      "source_label": "lem:packet-origins",
+      "statement": "Origins in distinct actual packets with prescribed owners and every recorded origin colour lift by t_g o_i -> t_g e_i to a full packet completion. Actual homogeneity aligns a complete source base. Owner labels alone do not determine a phase.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A04"
+      ],
+      "provider_module": "owner_transversal",
+      "provider_claims": [
+        "C30",
+        "C34",
+        "C24",
+        "C46"
+      ]
+    },
+    {
+      "id": "I07",
+      "name": "Actual primitive full-owner transversal and packet-separated CCO",
+      "source_label": "thm:joint-transversal",
+      "statement": "Reuse B025 actual typed origin palettes/age, SAP, primitive sorts, semantic CCO and its packet-separated injective completion conclusion, plus full inflation identification with N_B. Canonical provider label is thm:joint-transversal, not the unexported alias lem:full-owner-transversal. Existing countability stays in this actual source construction.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A04"
+      ],
+      "provider_module": "owner_transversal",
+      "provider_claims": [
+        "C24",
+        "C31",
+        "C33",
+        "C34",
+        "C35",
+        "C41",
+        "C44",
+        "C46"
+      ]
+    },
+    {
+      "id": "I08",
+      "name": "Actual regular thin group and colour transport",
+      "source_label": "lem:thin-bottom",
+      "statement": "Reuse the total regular G action and literal fine-colour law col(t_g x,t_h y)=(g+h)col(x,y), centrality and possibly nonfaithful owner action.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A04"
+      ],
+      "provider_module": "finite_packets",
+      "provider_claims": [
+        "C26",
+        "C27",
+        "C28"
+      ]
+    },
+    {
+      "id": "I09",
+      "name": "Recorded matrix identity",
+      "source_label": "eq:packet-matrix",
+      "statement": "Import B025 matrix equation for origin inflation; it is not a new B027 auxiliary export.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A04"
+      ],
+      "provider_module": "owner_transversal",
+      "provider_claims": [
+        "C30"
+      ]
+    },
+    {
+      "id": "I10",
+      "name": "SAP path injectivization fixing a complete edge",
+      "source_label": "lem:typed-injectivisation",
+      "statement": "A realized positive atomic path can be made injective on formal vertices while its complete actual endpoint edge stays fixed. Used to compare homomorphic cycles with strong profiles; no CCO premise.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01"
+      ],
+      "provider_module": "strong_selectors",
+      "provider_claims": [
+        "C04",
+        "C05"
+      ]
+    }
+  ],
+  "external_providers": [
+    {
+      "id": "E01",
+      "name": "Unrestricted faithful HKN EPPA",
+      "statement": "HKN v4 Theorem 1.1: for a relation/unary-set-function language with an arity/type-preserving Gamma_L and finite A whose relabel orbit is finite, obtain a finite coherent irreducible-structure-faithful Gamma_L EPPA witness W along a distinguished Gamma embedding of A. The witness is unrestricted; no current packet/owner axioms follow without local faithfulness arguments.",
+      "status": "PUBLISHED_THEOREM_LOCAL_BRIDGE_PENDING",
+      "source_url": "https://arxiv.org/html/1902.03855v4",
+      "source_version": "1902.03855v4",
+      "theorem": "1.1",
+      "depends_on": [
+        "A06",
+        "D02"
+      ],
+      "lean_reference": {
+        "repository": "shulda/lean_all_those_eppa_classes",
+        "commit": "cd358cde844d5419fd43f30c441511927e09142f",
+        "module": "AllThoseEPPA.MainTheorems",
+        "declarations": [
+          "AllThoseEPPA.MainTheorems.unrestrictedFaithfulCoherentEPPA"
+        ],
+        "bridge_status": "NOT_BOUND_TO_CCO_ENCODING",
+        "lean_version": "v4.34.1",
+        "mathlib_commit": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+        "source_file": "AllThoseEPPA/MainTheorems.lean"
+      }
+    },
+    {
+      "id": "E02",
+      "name": "Restricted local-tree HKN EPPA",
+      "statement": "HKN v4 Theorem 1.2: for finite IRREDUCIBLE A, ANY finite EPPA witness W for A, and integer n>=1, obtain a finite irreducible-structure-faithful EPPA witness B0 for A, a Gamma-homomorphism-embedding B0->W, and for EVERY induced functionally CLOSED C<=B0 with |C|<=n one Gamma-homomorphism-embedding C->D into a finite tree amalgamation of FULL Gamma_L-isomorphic A-copies. Coherence transfers if W is coherent. Local maps have one global language component and need not be globally injective.",
+      "status": "PUBLISHED_THEOREM_LOCAL_BRIDGE_PENDING",
+      "source_url": "https://arxiv.org/html/1902.03855v4",
+      "source_version": "1902.03855v4",
+      "theorem": "1.2",
+      "depends_on": [
+        "A06",
+        "D02",
+        "D03",
+        "E01"
+      ],
+      "lean_reference": {
+        "repository": "shulda/lean_all_those_eppa_classes",
+        "commit": "cd358cde844d5419fd43f30c441511927e09142f",
+        "module": "AllThoseEPPA.MainTheorems",
+        "declarations": [
+          "AllThoseEPPA.MainTheorems.restrictedLocallyTreeLikeEPPA"
+        ],
+        "bridge_status": "NOT_BOUND_TO_CCO_ENCODING",
+        "lean_version": "v4.34.1",
+        "mathlib_commit": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+        "source_file": "AllThoseEPPA/MainTheorems.lean"
+      }
+    }
+  ],
+  "definitions": [
+    {
+      "id": "D01",
+      "name": "Proper-profile automaton",
+      "statement": "For each starting sort s, states are (t,D) with empty!=D proper subset P_st a positive-word profile. Append a genuine atomic letter only when the resulting profile remains proper. No empty-word state is adjoined; full profiles are absorbing.",
+      "depends_on": [
+        "A01",
+        "I01"
+      ],
+      "notes": "N01",
+      "source": {
+        "file": "sections/finite_locality.tex",
+        "anchor": "\\label{thm:locality-bound}"
+      }
+    },
+    {
+      "id": "D02",
+      "name": "Finite HKN source encoding",
+      "statement": "The concrete A uses O_b, R_a and singleton-valued unary t_g. Gamma changes only owner symbols. Completeness makes A irreducible; finiteness gives a finite relabel orbit. Arbitrary external output still has general set-valued unary outputs.",
+      "depends_on": [
+        "A06",
+        "A07"
+      ],
+      "notes": "N02",
+      "source": {
+        "file": "sections/hkn_packet_reservoir.tex",
+        "anchor": "\\label{thm:completable-reservoir}"
+      }
+    },
+    {
+      "id": "D03",
+      "name": "Closed substructures and irreducibility",
+      "statement": "A substructure contains complete unary function-value sets of every point. Irreducible means it has no free decomposition into two proper CLOSED substructures. A generated closure may be irreducible even when its generating singleton is not closed.",
+      "depends_on": [
+        "A06"
+      ],
+      "notes": "N04",
+      "source": {
+        "file": "sections/hkn_packet_reservoir.tex",
+        "anchor": "\\label{lem:hkn-irreducible-packet-control}"
+      }
+    },
+    {
+      "id": "D04",
+      "name": "Literal regular full packet",
+      "statement": "An input packet is a |G|-element t_g orbit with total singleton outputs, t_0=id, t_g t_h=t_(g+h), free regular orbit and exactly one owner at each point. For arbitrary HKN output these properties must be proved from closed-piece faithfulness.",
+      "depends_on": [
+        "A06"
+      ],
+      "notes": "N04",
+      "source": {
+        "file": "sections/hkn_packet_reservoir.tex",
+        "anchor": "\\label{lem:hkn-irreducible-packet-control}"
+      }
+    },
+    {
+      "id": "D05",
+      "name": "All-or-nothing recorded packet matrices",
+      "statement": "For distinct packets choose origins o_i. A recorded pair has exactly the full nonthin matrix col(t_g o_i,t_h o_j)=(g+h)c_ij, with c_ij outside F. An unrecorded pair has NO interpacket fine records. This is a condition on local input diagrams, recovered later for B0.",
+      "depends_on": [
+        "D04"
+      ],
+      "notes": "N04",
+      "source": {
+        "file": "sections/hkn_packet_reservoir.tex",
+        "anchor": "\\label{lem:packet-origins}"
+      }
+    },
+    {
+      "id": "D06",
+      "name": "Protected complete packet base",
+      "statement": "A_* is a designated COMPLETE full-packet substructure whose map is already an induced embedding into its prescribed actual copy in N_B. The base can be empty. It is not merely a partial recorded subdiagram.",
+      "depends_on": [
+        "D04",
+        "D05"
+      ],
+      "notes": "N06",
+      "source": {
+        "file": "sections/hkn_packet_reservoir.tex",
+        "anchor": "\\label{lem:hkn-local-tree-packet-injectivisation}"
+      }
+    },
+    {
+      "id": "D07",
+      "name": "Permitted free tree amalgam",
+      "statement": "A finite tree amalgamation of FULL Gamma-relabelled A copies in the unary-function category. Overlaps are actual closed substructures of source copies, with matching literal owner/function/colour data. Relabels may differ between copies, while a morphism has just one global language component.",
+      "depends_on": [
+        "D02",
+        "D03"
+      ],
+      "notes": "N03",
+      "source": {
+        "file": "sections/hkn_packet_reservoir.tex",
+        "anchor": "\\label{lem:packet-tree-realisation}"
+      }
+    },
+    {
+      "id": "D08",
+      "name": "HKN homomorphism-embedding",
+      "statement": "A pair (gamma,f_V) with one global language action, relational homomorphism conditions and unary-output inclusion globally, whose restriction to EVERY closed irreducible source substructure is an embedding. Such restrictions reflect relations and preserve WHOLE function-value sets by equality; global injectivity is not assumed.",
+      "depends_on": [
+        "A06",
+        "D03"
+      ],
+      "notes": "N04",
+      "source": {
+        "file": "sections/hkn_packet_reservoir.tex",
+        "anchor": "\\label{lem:hkn-irreducible-packet-control}"
+      }
+    },
+    {
+      "id": "D09",
+      "name": "Finite word/cycle bounds",
+      "statement": "N_s=sum_t(2^|P_st|-2), ell=max_s N_s and b=max(3,ell+1), calculated after the finite owner set/palettes are fixed. A sharper longest proper-prefix bound is optional; there is no uniformity claim across quotient witnesses.",
+      "depends_on": [
+        "D01"
+      ],
+      "notes": "N01",
+      "source": {
+        "file": "sections/finite_locality.tex",
+        "anchor": "\\label{thm:locality-bound}"
+      }
+    },
+    {
+      "id": "D10",
+      "name": "Actual-vertex locality parameter",
+      "statement": "The numerical HKN parameter is n=b|G|>=1, chosen before the unrestricted witness is constructed. G is the given nonempty finite group and b>=3. This definition assumes NO regularity or matrix axioms for HKN output. The later C18/D11 proof computes k|G| for closed diagrams only AFTER packet recovery or under explicitly supplied regular input-packet premises.",
+      "depends_on": [
+        "A06",
+        "D09"
+      ],
+      "notes": "N07",
+      "source": {
+        "file": "sections/hkn_packet_reservoir.tex",
+        "anchor": "\\label{lem:hkn-chord-complete-short-cycle}"
+      }
+    },
+    {
+      "id": "D11",
+      "name": "Origin partial diagram",
+      "statement": "Choose one arbitrary origin o_i in each literal packet and its actual owner beta_i. Record c_ij precisely on recorded packet pairs. No equivariant or canonical choice of origins is required; inflation uses both actual origin owners AND recorded fine colours.",
+      "depends_on": [
+        "D04",
+        "D05"
+      ],
+      "notes": "N08",
+      "source": {
+        "file": "sections/hkn_packet_reservoir.tex",
+        "anchor": "\\label{lem:packet-origins}"
+      }
+    },
+    {
+      "id": "D12",
+      "name": "Requests and distinguished source embedding",
+      "statement": "A request is the pair (gamma,p), keeping gamma even for p empty. A distinguished Gamma embedding psi=(lambda,psi_V):A->W need not initially be a literal inclusion; exact requested components are recovered by global lambda^-1 relabelling and vertex renaming. Each p is a PARTIAL ISOMORPHISM of the original complete fine-colour relational reduct: a bijection between induced finite substructures with domain and range inside A, preserving and reflecting every original fine colour, and own(p(x))=gamma own(x) for each domain point. Its inverse is therefore a genuine partial isomorphism; t_g-closedness is obtained by subsequent G-saturation.",
+      "depends_on": [
+        "D02"
+      ],
+      "notes": "N02",
+      "source": {
+        "file": "sections/hkn_packet_reservoir.tex",
+        "anchor": "\\label{thm:completable-reservoir}"
+      }
+    },
+    {
+      "id": "D13",
+      "name": "Structural reservoir versus completion certificate",
+      "statement": "B0 retains its partial records and Gamma automorphisms. An injective completion is only a record-preserving same-vertex complete actual colouring in N_B; it does NOT reflect record absence and is not required equivariant.",
+      "depends_on": [
+        "D04",
+        "D05",
+        "A04"
+      ],
+      "notes": "N09",
+      "source": {
+        "file": "sections/hkn_packet_reservoir.tex",
+        "anchor": "\\label{thm:completable-reservoir}"
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "name": "Proper-profile automaton is acyclic",
+      "scope": "SAP_primitive",
+      "statement": "A repeated state (t,D) gives a nonempty loop profile W with D*W=D. By associativity and I02, D*W^r eventually equals D*P_tt=P_st, contradicting properness. Full states remain full; no equality/empty-word menu is used.",
+      "depends_on": [
+        "D01",
+        "I01",
+        "I02"
+      ],
+      "notes": "N01",
+      "source_labels": [
+        "thm:locality-bound"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C02",
+      "name": "Positive-prefix count and uniform finite word bound",
+      "scope": "SAP_primitive",
+      "statement": "A positive r-letter word with proper final profile has r proper prefix states at positions 1..r. C01 forbids repetition, so r<=N_s. Thus every word longer than ell=max_s N_s is full. No index-zero empty-word state is counted; singleton palettes yield ell=0.",
+      "depends_on": [
+        "C01",
+        "D09"
+      ],
+      "notes": "N01",
+      "source_labels": [
+        "thm:locality-bound"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C03",
+      "name": "Strong cycle criterion and coarse bad-cycle bound",
+      "scope": "SAP_primitive",
+      "statement": "For any specified simple m-cycle (m>=3), its closing diversity atom belongs to the strong (m-1)-letter path profile iff the cycle maps to the actual source. The reverse implication uses SAP injectivization fixing its complete endpoint edge. Hence cycles of length>b=max(3,ell+1) always complete. Repeated owner sorts do not identify formal vertices.",
+      "depends_on": [
+        "C02",
+        "I10"
+      ],
+      "notes": "N01",
+      "source_labels": [
+        "thm:locality-bound"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C04",
+      "name": "Bounded short-cycle test plus semantic CCO",
+      "scope": "SAP_primitive_CCO",
+      "statement": "For EVERY finite partial typed origin diagram P of arbitrary finite size: if each specified simple cycle C in P with |C|<=b maps to the source, all longer specified cycles map by C03. Semantic CCO A03 then gives a homomorphic completion of the WHOLE P. The bound restricts cycle length, NOT the size of P. Injective packet-separated realization is a separate I07 provider.",
+      "depends_on": [
+        "C03",
+        "A03"
+      ],
+      "notes": "N01",
+      "source_labels": [
+        "thm:locality-bound"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C05",
+      "name": "Every permitted source relabel is actual",
+      "scope": "actual_closed_SAP",
+      "statement": "Each Gamma relabelled complete source copy A has an actual realization in N_B by one separately chosen compatible ambient owner lift. Fine colours and every t_g remain fixed; no section or simultaneous coherent choices are required.",
+      "depends_on": [
+        "D02",
+        "I03",
+        "I08"
+      ],
+      "notes": "N03",
+      "source_labels": [
+        "lem:packet-tree-realisation"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C06",
+      "name": "Tree attachment overlaps are complete closed packet bases",
+      "scope": "actual_closed_SAP",
+      "statement": "An overlap is closed under all unary t_g and lies in a complete source copy. Thus it is a union of entire regular packets, complete in its displayed fine language and F[S]=S in actual N_B. The old and new actual structures agree literally on that base.",
+      "depends_on": [
+        "D07",
+        "I03",
+        "D04"
+      ],
+      "notes": "N03",
+      "source_labels": [
+        "lem:packet-tree-realisation"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C07",
+      "name": "Finite complete-realization tree induction",
+      "scope": "actual_closed_SAP",
+      "statement": "Maintain a complete induced actual realization of all old tree vertices. Align a new source copy on the complete closed overlap by named-owner homogeneity, use I04 closed SAP without new identifications, and embed the resulting finite actual amalgam back over the old complete realization. Extra unspecified colours impose no record constraint. Iterate finitely.",
+      "depends_on": [
+        "C05",
+        "C06",
+        "I04",
+        "I03"
+      ],
+      "notes": "N03",
+      "source_labels": [
+        "lem:packet-tree-realisation"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C08",
+      "name": "Whole-tree injective realization with protected source node",
+      "scope": "actual_closed_SAP",
+      "statement": "The whole tree has an injective owner/function/record-preserving realization in N_B, induced on every complete source copy. Rooting at any designated already-realized source node keeps it pointwise fixed throughout C07. Absence of unrecorded cross relations is not reflected.",
+      "depends_on": [
+        "C07"
+      ],
+      "notes": "N03",
+      "source_labels": [
+        "lem:packet-tree-realisation"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C09",
+      "name": "Full packets are irreducible closed structures",
+      "scope": "finite_unary_structure",
+      "statement": "A regular packet is generated by any point. A free split into closed parts must place its generator and hence all its unary closure in one side, so no proper free split exists. This statement uses whole packets, not allegedly closed generating singletons.",
+      "depends_on": [
+        "D03",
+        "D04"
+      ],
+      "notes": "N04",
+      "source_labels": [
+        "lem:hkn-irreducible-packet-control"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C10",
+      "name": "Recorded two-packet unions are irreducible",
+      "scope": "finite_unary_structure",
+      "statement": "For ANY two disjoint CLOSED regular packets with AT LEAST ONE recorded fine edge joining them, their entire induced union is irreducible. Unary closure forces each packet into one side of a purported free split, and the one cross edge forces both into the same side. NO matrix completeness, all-or-nothing record condition or nonthin cross-colour premise is assumed. Two unrecorded packets need not be irreducible.",
+      "depends_on": [
+        "C09",
+        "D04"
+      ],
+      "notes": "N04",
+      "source_labels": [
+        "lem:hkn-irreducible-packet-control"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C11",
+      "name": "Local homomorphism-embeddings preserve entire recorded pieces",
+      "scope": "finite_Gamma_maps",
+      "statement": "For any HKN homomorphism-embedding f of a packet diagram, restrictions to each full packet and each recorded two-packet union are embeddings. They are injective with equality of entire unary outputs and reflect all recorded fine relations, with the SAME global language component. Global injectivity on unrecorded packets is not concluded.",
+      "depends_on": [
+        "D08",
+        "C09",
+        "C10"
+      ],
+      "notes": "N04",
+      "source_labels": [
+        "lem:hkn-irreducible-packet-control"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C12",
+      "name": "One global target language normalization",
+      "scope": "finite_Gamma_maps",
+      "statement": "For f=(gamma,f_V):P->D, compose with (gamma^-1,id):D->gamma^-1 D. This produces (id,f_V), still a homomorphism-embedding. The SAME global relabel is applied to every tree node and overlap, so the new target remains a permitted tree and every irreducible restriction remains embedded.",
+      "depends_on": [
+        "D07",
+        "D08"
+      ],
+      "notes": "N05",
+      "source_labels": [
+        "lem:hkn-global-language-normalisation"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C13",
+      "name": "Literal protected data before actual alignment",
+      "scope": "finite_Gamma_maps",
+      "statement": "After C12 the source owner predicates, fine atoms and full function equations are literal on every embedded piece, in particular a protected complete source base. No independent per-copy relabels or later relabelling after base alignment are used.",
+      "depends_on": [
+        "C12",
+        "D06"
+      ],
+      "notes": "N05",
+      "source_labels": [
+        "lem:hkn-global-language-normalisation"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C14",
+      "name": "An irreducible tree piece lies in one source node",
+      "scope": "finite_unary_structure",
+      "statement": "By finite tree induction (the content of HKN Observation 9.3), every irreducible CLOSED substructure of a free tree amalgam is contained in one FULL constituent source copy. For each split, a piece meeting both off-overlap sides would split freely; recurse on the containing side. A protected complete base remains irreducible under an embedding.",
+      "depends_on": [
+        "D07",
+        "D03"
+      ],
+      "notes": "N06",
+      "source_labels": [
+        "lem:hkn-local-tree-packet-injectivisation"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C15",
+      "name": "Normalized local tree map gives actual packetwise map",
+      "scope": "local_HKN_plus_actual_source",
+      "statement": "Normalize a given local f:P->D by C12. If a complete A_* is protected, C14 puts f(A_*) in one source node; realize that node and align the induced named-owner image with prescribed A_* by I03. Apply C08 with the WHOLE chosen node fixed. Then q=j f preserves literal owners/functions/records and is injective on each packet and recorded pair by C11.",
+      "depends_on": [
+        "C08",
+        "C11",
+        "C13",
+        "C14",
+        "I03"
+      ],
+      "notes": "N06",
+      "source_labels": [
+        "lem:hkn-local-tree-packet-injectivisation"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C16",
+      "name": "Apply existing protected collision provider",
+      "scope": "local_HKN_plus_actual_source",
+      "statement": "Every q-packet is a full actual F-class by total regular functions. Recorded non-F cross edges force distinct image classes, and A_* is already induced. These are exactly I05 hypotheses, so separate only unrecorded packet collisions while fixing A_* and all recorded matrices. No new proof/export of collision separation is introduced.",
+      "depends_on": [
+        "C15",
+        "I05"
+      ],
+      "notes": "N06",
+      "source_labels": [
+        "lem:hkn-local-tree-packet-injectivisation"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C17",
+      "name": "Same-vertex injective local packet completion",
+      "scope": "local_HKN_plus_actual_source",
+      "statement": "Pull the complete actual structure back along the injective map from C16 to P's ORIGINAL formal vertices. All k packets occupy distinct actual F-classes, every old record and every owner/function value is retained, and the protected base is pointwise fixed. This is a completion, not reflection of record absence.",
+      "depends_on": [
+        "C16",
+        "D13"
+      ],
+      "notes": "N06",
+      "source_labels": [
+        "lem:hkn-local-tree-packet-injectivisation"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C18",
+      "name": "Closed short-cycle size and chord retention",
+      "scope": "finite_unary_structure",
+      "statement": "For k DISTINCT packet indices, closure of their selected origins is exactly k disjoint |G|-packets, hence k|G| vertices. The induced CLOSED partial structure contains EVERY recorded chord and its entire matrix, not just the cycle edges. The k unclosed origins are not an HKN source substructure in general.",
+      "depends_on": [
+        "D10",
+        "D11"
+      ],
+      "notes": "N07",
+      "source_labels": [
+        "lem:hkn-chord-complete-short-cycle"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C19",
+      "name": "One local tree map completes all induced short-cycle records",
+      "scope": "local_HKN_plus_actual_source",
+      "statement": "If the stated HKN locality property holds for every closed induced substructure of size<=n and k|G|<=n, apply it ONCE to C18's full induced packet structure. C17 gives one injective same-vertex completion of all its records/chords. Its origins lie in the actual origin age through I07, yielding the selected typed cycle completion.",
+      "depends_on": [
+        "C18",
+        "C17",
+        "I07"
+      ],
+      "notes": "N07",
+      "source_labels": [
+        "lem:hkn-chord-complete-short-cycle"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C20",
+      "name": "G-saturation of compatible original partial requests",
+      "scope": "published_HKN_plus_actual_source",
+      "statement": "For every compatible request (gamma,p) in A, define p_hat(t_g x)=t_g p(x). Thin relations of original domain points make this well-defined, and the same argument for p inverse gives injectivity. Thin colour transport and Gamma/G compatibility preserve all records, actual owners and functions. Saturated domains/ranges are closed full-packet substructures of A.",
+      "depends_on": [
+        "D12",
+        "I08",
+        "I03"
+      ],
+      "notes": "N02",
+      "source_labels": [
+        "thm:completable-reservoir"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C21",
+      "name": "Finite source orbit, irreducibility and all empty requests",
+      "scope": "finite_unary_structure",
+      "statement": "The finite signature/pure Gamma action gives finite relabel orbit of A. Complete A is irreducible, including one-packet degeneracies. Requests form a finite set. Because the signature has no nullary functions, empty is closed and EVERY (gamma,empty) is a genuine partial Gamma-automorphism; retain its language component.",
+      "depends_on": [
+        "D02",
+        "D03",
+        "D12"
+      ],
+      "notes": "N02",
+      "source_labels": [
+        "thm:completable-reservoir"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C22",
+      "name": "First external faithful witness along an exact source copy",
+      "scope": "published_HKN_plus_actual_source",
+      "statement": "Apply E01 to A. If its distinguished embedding has component lambda, globally relabel the output by lambda^-1 and rename vertices to make A literal. Extension squares then retain EXACT requested gamma rather than lambda gamma lambda^-1. Faithfulness and any structural conclusions transport across this isomorphism.",
+      "depends_on": [
+        "E01",
+        "C20",
+        "C21"
+      ],
+      "notes": "N02",
+      "source_labels": [
+        "thm:completable-reservoir"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C23",
+      "name": "Second external local-tree witness at actual-vertex threshold",
+      "scope": "published_HKN_plus_actual_source",
+      "statement": "Choose n=b|G|>=1 and apply E02 to the irreducible A and finite EPPA witness W from C22. Obtain a finite faithful EPPA witness B0, its map to W, and the quantified local tree property on every induced CLOSED C of size<=n. Normalize its distinguished source embedding globally as in C22; local trees stay permitted relabelled A trees and all requested gamma components remain exact. No packet axioms or global injectivity are assumed yet.",
+      "depends_on": [
+        "E02",
+        "C22",
+        "C21",
+        "D10"
+      ],
+      "notes": "N02",
+      "source_labels": [
+        "thm:completable-reservoir"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C24",
+      "name": "Every closed one-generated piece is faithful and irreducible",
+      "scope": "finite_unary_structure",
+      "statement": "In an unrestricted finite unary output, Cl(v) is irreducible: a closed free-split side containing v contains every unary descendant. Irreducible faithfulness of B0 therefore sends the WHOLE CLOSED Cl(v) by one Gamma automorphism into literal A as an induced closed substructure. A singleton {v} need not itself be closed.",
+      "depends_on": [
+        "C23",
+        "D03"
+      ],
+      "notes": "N08",
+      "source_labels": [
+        "thm:completable-reservoir"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C25",
+      "name": "Recover regular packet partition and owner exclusivity",
+      "scope": "published_HKN_plus_actual_source",
+      "statement": "Equality of full function-value sets in C24 transfers total singleton t_g, the group equations, regular freeness and exactly |G| points from the source packet. Generated images equal the packet generated by the source image point. Hence closures partition B0 into disjoint regular packets, recover all internal thin relations, and each point has exactly ONE actual owner predicate via its faithful CLOSED PACKET.",
+      "depends_on": [
+        "C24",
+        "D02",
+        "D04"
+      ],
+      "notes": "N08",
+      "source_labels": [
+        "thm:completable-reservoir"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C26",
+      "name": "Recover all-or-nothing complete nonthin matrices",
+      "scope": "published_HKN_plus_actual_source",
+      "statement": "If any fine edge joins two different recovered packets, their union is irreducible by C10 and faithful into A. Their source images are distinct packets, so reflection forces every |G|^2 cross entry, exactly one original nonthin colour per pair, the actual matrix law and all matching owners/functions. A pair with no edge remains unrecorded; no thin cross record or contradictory/missing entry survives.",
+      "depends_on": [
+        "C25",
+        "C10",
+        "C23",
+        "I08"
+      ],
+      "notes": "N08",
+      "source_labels": [
+        "thm:completable-reservoir"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C27",
+      "name": "All short specified origin cycles complete",
+      "scope": "published_HKN_plus_actual_source",
+      "statement": "Choose arbitrary origins in recovered B0 packets. Each specified simple origin cycle with k<=b closes to k|G|<=n vertices, so C23 supplies C19's local map on the full induced packet diagram, INCLUDING all chords. Its selected typed cycle has an actual completion.",
+      "depends_on": [
+        "C23",
+        "C25",
+        "C26",
+        "C19"
+      ],
+      "notes": "N09",
+      "source_labels": [
+        "thm:completable-reservoir"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C28",
+      "name": "Every specified origin cycle completes",
+      "scope": "published_HKN_plus_actual_source",
+      "statement": "All short cycles complete by C27; all longer cycles complete by C03. Thus EVERY specified simple cycle of the WHOLE origin partial diagram has a typed homomorphic completion. This statement does not yet assert whole-diagram completion.",
+      "depends_on": [
+        "C27",
+        "C03"
+      ],
+      "notes": "N09",
+      "source_labels": [
+        "thm:completable-reservoir"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C29",
+      "name": "Whole-origin packet-separated injective completion",
+      "scope": "published_HKN_plus_actual_source",
+      "statement": "Use semantic typed CCO A03 and I07's already proved packet-separated completion of the actual origin source on C28. Obtain one completion of ALL origins in distinct actual packets, with their prescribed owners and every recorded origin colour. This is independent of HKN automorphism equivariance.",
+      "depends_on": [
+        "C28",
+        "A03",
+        "I07"
+      ],
+      "notes": "N09",
+      "source_labels": [
+        "thm:completable-reservoir"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C30",
+      "name": "Restore all packets and fix the designated actual A",
+      "scope": "published_HKN_plus_actual_source",
+      "statement": "Apply I06/I09 inflation to C29's origins, preserving all unary equations and matrices. Its complete source A image is an induced actual named-owner copy. I03 extends the inverse finite isomorphism and aligns the entire completion pointwise with prescribed A, without recovering phases from owner labels alone.",
+      "depends_on": [
+        "C29",
+        "I06",
+        "I09",
+        "I03"
+      ],
+      "notes": "N09",
+      "source_labels": [
+        "thm:completable-reservoir"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C31",
+      "name": "Retain the structural partial reservoir contract",
+      "scope": "published_HKN_plus_actual_source",
+      "statement": "The finite B0 from C23 has the recovered packets/owners/matrices, all requested structural Gamma extensions, an injective completion C0 in N_B fixing A by C30, and its original HKN irreducible faithfulness. C0 remains an existence certificate: do not permanently fill B0 holes, require invariant completion colours, or alter B0's partial-structure automorphisms.",
+      "depends_on": [
+        "C23",
+        "C25",
+        "C26",
+        "C30",
+        "D13"
+      ],
+      "notes": "N09",
+      "source_labels": [
+        "thm:completable-reservoir"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    }
+  ],
+  "source_result_files": [],
+  "additional_result_exports": [
+    "thm:locality-bound",
+    "thm:completable-reservoir",
+    "lem:packet-tree-realisation",
+    "lem:hkn-irreducible-packet-control",
+    "lem:hkn-global-language-normalisation",
+    "lem:hkn-local-tree-packet-injectivisation",
+    "lem:hkn-chord-complete-short-cycle"
+  ],
+  "exports": [
+    {
+      "source_label": "thm:locality-bound",
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04"
+      ]
+    },
+    {
+      "source_label": "thm:completable-reservoir",
+      "claims": [
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31"
+      ]
+    },
+    {
+      "source_label": "lem:packet-tree-realisation",
+      "claims": [
+        "C05",
+        "C06",
+        "C07",
+        "C08"
+      ]
+    },
+    {
+      "source_label": "lem:hkn-irreducible-packet-control",
+      "claims": [
+        "C09",
+        "C10",
+        "C11"
+      ]
+    },
+    {
+      "source_label": "lem:hkn-global-language-normalisation",
+      "claims": [
+        "C12",
+        "C13"
+      ]
+    },
+    {
+      "source_label": "lem:hkn-local-tree-packet-injectivisation",
+      "claims": [
+        "C14",
+        "C15",
+        "C16",
+        "C17"
+      ]
+    },
+    {
+      "source_label": "lem:hkn-chord-complete-short-cycle",
+      "claims": [
+        "C18",
+        "C19"
+      ]
+    }
+  ],
+  "auxiliary_exports": [
+    {
+      "source_label": "eq:hkn-global-language-normalisation",
+      "source": {
+        "file": "sections/hkn_packet_reservoir.tex",
+        "anchor": "\\label{eq:hkn-global-language-normalisation}"
+      },
+      "claims": [
+        "C12",
+        "C13"
+      ]
+    }
+  ],
+  "source_files": [
+    {
+      "file": "sections/finite_locality.tex",
+      "git_blob": "758a8169efc94b48d8d3ee6ff8320db89ccab47a"
+    },
+    {
+      "file": "sections/finite_packets.tex",
+      "git_blob": "dd3e608f03e7c5b1b1854a45de462859f8355143"
+    },
+    {
+      "file": "sections/hkn_packet_reservoir.tex",
+      "git_blob": "cdef46b3ee64bcac4513f5406a20593b758dc58d"
+    },
+    {
+      "file": "sections/owner_transversal_direct.tex",
+      "git_blob": "3c0effbc63c31000bbe3d88be59616b67efd7364"
+    },
+    {
+      "file": "sections/typed_strong_domains.tex",
+      "git_blob": "75d584069ce802c62d66104a852a3649fc082f1d"
+    }
+  ],
+  "dependency_firewalls": [
+    {
+      "claims": [
+        "C01",
+        "C02",
+        "C03"
+      ],
+      "forbid": [
+        "A03",
+        "A04",
+        "A05",
+        "A06",
+        "A07",
+        "E01",
+        "E02",
+        "I03",
+        "I04",
+        "I05",
+        "I06",
+        "I07",
+        "I08",
+        "I09"
+      ]
+    },
+    {
+      "claims": [
+        "C04"
+      ],
+      "forbid": [
+        "A04",
+        "A05",
+        "A06",
+        "A07",
+        "E01",
+        "E02",
+        "I03",
+        "I04",
+        "I05",
+        "I06",
+        "I07",
+        "I08",
+        "I09"
+      ]
+    },
+    {
+      "claims": [
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19"
+      ],
+      "forbid": [
+        "E01",
+        "E02",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31"
+      ]
+    },
+    {
+      "claims": [
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14"
+      ],
+      "forbid": [
+        "A01",
+        "A02",
+        "A03",
+        "A04",
+        "A05",
+        "I01",
+        "I02",
+        "I03",
+        "I04",
+        "I05",
+        "I06",
+        "I07",
+        "I08",
+        "I09",
+        "I10"
+      ]
+    },
+    {
+      "claims": [
+        "C10",
+        "C24",
+        "C25",
+        "C26"
+      ],
+      "forbid": [
+        "D05",
+        "C27"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "T01",
+      "name": "Finite proper-profile and short-cycle bound",
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement the exact local claims and genuine consumers with all listed source contracts. Retain identity-language protected-base alignment, complete function outputs, and distinction between records and completion colours."
+    },
+    {
+      "id": "T02",
+      "name": "Actual closed-packet tree realization",
+      "claims": [
+        "C05",
+        "C06",
+        "C07",
+        "C08"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement the exact local claims and genuine consumers with all listed source contracts. Retain identity-language protected-base alignment, complete function outputs, and distinction between records and completion colours."
+    },
+    {
+      "id": "T03",
+      "name": "Irreducible pieces and global language normalization",
+      "claims": [
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement the exact local claims and genuine consumers with all listed source contracts. Retain identity-language protected-base alignment, complete function outputs, and distinction between records and completion colours."
+    },
+    {
+      "id": "T04",
+      "name": "Local protected injective packet completion",
+      "claims": [
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19"
+      ],
+      "depends_on": [
+        "T02",
+        "T03"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement the exact local claims and genuine consumers with all listed source contracts. Retain identity-language protected-base alignment, complete function outputs, and distinction between records and completion colours."
+    },
+    {
+      "id": "T05",
+      "name": "External theorem representation and requests",
+      "claims": [
+        "C20",
+        "C21",
+        "C22",
+        "C23"
+      ],
+      "depends_on": [
+        "T01"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement the exact local claims and genuine consumers with all listed source contracts. Adapt the pinned EXISTING AllThoseEPPA.MainTheorems declarations to this CCO representation; prove function-value/Gamma/distingushed-copy normalization interfaces; do not reprove HKN or add axioms."
+    },
+    {
+      "id": "T06",
+      "name": "Faithful packet/owner/matrix recovery",
+      "claims": [
+        "C24",
+        "C25",
+        "C26"
+      ],
+      "depends_on": [
+        "T03",
+        "T05"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement the exact local claims and genuine consumers with all listed source contracts. Retain identity-language protected-base alignment, complete function outputs, and distinction between records and completion colours."
+    },
+    {
+      "id": "T07",
+      "name": "Whole reservoir completion and certificate firewall",
+      "claims": [
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31"
+      ],
+      "depends_on": [
+        "T01",
+        "T04",
+        "T05",
+        "T06"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement the exact local claims and genuine consumers with all listed source contracts. Retain identity-language protected-base alignment, complete function outputs, and distinction between records and completion colours."
+    }
+  ],
+  "overview_mermaid": [
+    "flowchart TD",
+    "  L[\"Primitive loop powers\"] --> B[\"Finite bad-cycle bound\"]",
+    "  E[\"Published HKN 1.1 and 1.2\"] --> H[\"Faithful partial reservoir\"]",
+    "  H --> P[\"Regular packets and matrices\"]",
+    "  T[\"Closed-SAP tree realization\"] --> I[\"Local injective completions\"]",
+    "  P --> I",
+    "  B --> C[\"Whole origin CCO completion\"]",
+    "  I --> C",
+    "  C --> R[\"Packet restoration fixing A\"]"
+  ],
+  "overview_notes": [
+    "External HKN nodes are published theorem providers with local encoding adapters pending, not human-expanded local claims or new axioms. All finite completion colours stay outside the structural reservoir records. No S, safe selector, ordinary EPPA or rank assembly premise occurs."
+  ],
+  "controls": [
+    {
+      "id": "K01",
+      "check": "Bounded proper-profile automata and actual literal cycle completions, including ell=0, the strict word bound and a sharp ell=2/b=3 witness. Finite diagnostics do not prove primitivity or CCO."
+    },
+    {
+      "id": "K02",
+      "check": "Regular C2/C2^2 unary closures, induced matrix reflection, allowed unrecorded packet collapse, full chord-complete k|G| locality domains and S3 global language normalization, including empty-domain components."
+    },
+    {
+      "id": "K03",
+      "check": "Bounded collision-potential patching preserves complete protected bases, even when an unrecorded collision target is protected; this table diagnostic does not prove infinite avoidance/closed SAP or HKN."
+    }
+  ],
+  "article_feedback": [
+    {
+      "id": "F01",
+      "kind": "WORDING_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/hkn_packet_reservoir.tex",
+        "anchor": "The source has exactly one owner predicate"
+      },
+      "finding": "The owner-exclusivity step says singleton irreducible faithfulness, but {v} need not be closed under unary t_g when |G|>1. The actual proof uses its faithful ONE-GENERATED CLOSED PACKET.",
+      "proposed_article_change": "Replace the loose singleton phrase by faithfulness of each one-generated closed packet, as made explicit in C24/C25. The theorem statement is unchanged.",
+      "caller_effect": "No changed premise/conclusion or source repin; packet recovery already requires the whole closed function-value structure.",
+      "proof_claims": [
+        "C24",
+        "C25"
+      ]
+    },
+    {
+      "id": "F02",
+      "kind": "FORMALIZATION_DETAIL",
+      "status": "NO_HUMAN_CHANGE_REQUIRED",
+      "source": {
+        "file": "sections/hkn_packet_reservoir.tex",
+        "anchor": "\\label{thm:completable-reservoir}"
+      },
+      "finding": "General HKN providers may use a distinguished Gamma embedding psi=(lambda,psi_V). Exact requested language components need global lambda^-1 normalization and literal source-copy renaming.",
+      "proposed_article_change": "None required: the local source works with literal A inclusion. Preserve this representation/extension-square proof in receiving notes.",
+      "caller_effect": "No external theorem or CCO source statement changes; the compiled CCO adapter remains a visible implementation task.",
+      "proof_claims": [
+        "C22",
+        "C23"
+      ]
+    }
+  ],
+  "review": {
+    "date": "2026-10-28",
+    "source_unchanged": true,
+    "source_signature_repairs": 0,
+    "unexpanded_provider_labels": [],
+    "proof_status": "All seven local source results expanded relative to two named published HKN theorem contracts and already prepared B025/B026 providers. No Lean CCO adapter, new HKN proof, global EPPA theorem or source-hypothesis certification is asserted.",
+    "independent_final_reviews": [
+      "Local closed-SAP/tree/packet/locality completion audit",
+      "Primary-source HKN v4 theorem/definition/application and existing Lean API audit"
+    ],
+    "external_bridges_pending": [
+      "E01 current-CCO finite relational/unary-set-function representation adapter",
+      "E02 current-CCO closed induced local-substructure/tree-copy and distinguished-embedding normalization adapter"
+    ],
+    "metadata_refinements": [
+      "Owner uniqueness is transferred on one-generated CLOSED packets, never assumed closed singletons.",
+      "E02 retains ANY supplied finite old EPPA witness and the actual vertex bound.",
+      "Locality profiles/counting need SAP+primitive, not CCO or safe S.",
+      "Only whole induced packet closures with ALL chords are local HKN inputs.",
+      "Only an existential injective completion C0 is added, never structural hole colours.",
+      "Final audit: C10 uses just ONE cross edge and no pre-existing full-matrix assumption; C26 can therefore recover matrices without circularity.",
+      "Final audit: original p is explicitly a partial isomorphism of induced fine-colour reducts, with prescribed owner gamma and invertible vertex map.",
+      "Final audit: numerical D10 parameter is independent of D05 packet-matrix input; C23/C24–26 do not pre-assume the output axioms they recover. Actual source matrix law uses I08, not a generic inflation condition."
+    ]
+  }
+}

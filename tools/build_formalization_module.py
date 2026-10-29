@@ -9,6 +9,7 @@ import argparse
 import hashlib
 import json
 from pathlib import Path
+import re
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -70,6 +71,55 @@ def validate_provider_support(provider, item, exported):
     return [claims[c] for c in support]
 
 
+def validate_external_providers(module):
+    """Validate explicit pending external inputs, never compiled local proofs.
+
+    Only the published, versioned arXiv-provider shape currently needed by
+    B027 is supported. Activating a compiled adapter requires a separate
+    reviewed contract/implementation change, not a metadata status shortcut.
+    """
+    providers = module.get('external_providers', [])
+    if not isinstance(providers, list):
+        raise ValueError('External providers must be an explicit list')
+    for item in providers:
+        if not isinstance(item, dict) or item.get('status') != 'PUBLISHED_THEOREM_LOCAL_BRIDGE_PENDING':
+            raise ValueError('External theorem status must retain local bridge obligation')
+        if (not isinstance(item.get('id'), str) or not re.fullmatch(r'E[0-9]{2}', item['id'])
+                or any(not isinstance(item.get(key), str) or not item[key].strip()
+                       for key in ['name', 'statement', 'source_version', 'theorem'])
+                or not re.fullmatch(r'[0-9]{4}\.[0-9]{4,5}v[1-9][0-9]*', item['source_version'])
+                or not re.fullmatch(r'[1-9][0-9]*(?:\.[0-9]+)*', item['theorem'])):
+            raise ValueError('External theorem requires a versioned precise contract')
+        if (not isinstance(item.get('depends_on'), list)
+                or any(not isinstance(dep, str) or not dep for dep in item['depends_on'])
+                or len(item['depends_on']) != len(set(item['depends_on']))):
+            raise ValueError('External theorem requires explicit unique dependencies')
+        if item.get('source_url') not in {
+                f'https://arxiv.org/html/{item["source_version"]}',
+                f'https://arxiv.org/abs/{item["source_version"]}'}:
+            raise ValueError('External theorem requires its versioned primary source URL')
+        ref = item.get('lean_reference')
+        if ref is not None:
+            qualified = r'[A-Za-z_][A-Za-z0-9_]*(?:\.[A-Za-z_][A-Za-z0-9_]*)+'
+            if (not isinstance(ref, dict)
+                    or not isinstance(ref.get('repository'), str)
+                    or not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9_.-]*/[A-Za-z0-9][A-Za-z0-9_.-]*', ref['repository'])
+                    or any(not isinstance(ref.get(key), str)
+                           or not re.fullmatch(r'[0-9a-f]{40}', ref[key])
+                           for key in ['commit', 'mathlib_commit'])
+                    or not isinstance(ref.get('module'), str)
+                    or not re.fullmatch(qualified, ref['module'])
+                    or ref.get('source_file') != ref['module'].replace('.', '/') + '.lean'
+                    or not isinstance(ref.get('lean_version'), str)
+                    or not re.fullmatch(r'v[0-9]+\.[0-9]+\.[0-9]+(?:-rc[0-9]+)?', ref['lean_version'])
+                    or ref.get('bridge_status') != 'NOT_BOUND_TO_CCO_ENCODING'
+                    or not isinstance(ref.get('declarations'), list) or not ref['declarations']
+                    or any(not isinstance(name, str) or not re.fullmatch(qualified, name)
+                           for name in ref['declarations'])
+                    or len(ref['declarations']) != len(set(ref['declarations']))):
+                raise ValueError('Existing Lean reference must be pinned and retain encoding bridge')
+
+
 def validate(root, module, declarations):
     sources = {x['file']: x for x in module['source_files']}
     if len(sources) != len(module['source_files']):
@@ -92,7 +142,9 @@ def validate(root, module, declarations):
     directory = Path('formalization') / module['id']
     notes = (root / directory / 'PROOF_NOTES.md').read_text()
     imports = module.get('imports', [])
-    nodes = module['assumptions'] + imports + module['definitions'] + module['claims']
+    validate_external_providers(module)
+    nodes = (module['assumptions'] + module.get('external_providers', []) + imports
+             + module['definitions'] + module['claims'])
     order = topological_order(nodes)
     ancestors = {}
     by_node = {n['id']: n for n in nodes}
@@ -112,7 +164,10 @@ def validate(root, module, declarations):
                                 or 'provider_support_usage' in item)
         if has_internal_support and not item.get('provider_module'):
             raise ValueError('Internal proof support requires a pinned provider module')
-        auxiliary_import = label not in catalogue_labels
+        # An equation may already occur as a secondary label inside a
+        # catalogued numbered theorem. It still needs the same pinned
+        # auxiliary-export checks, rather than a broader provider escape.
+        auxiliary_import = label not in catalogue_labels or label.startswith('eq:')
         if auxiliary_import and not item.get('provider_module'):
             raise ValueError(f'Unknown imported source without pinned auxiliary provider: {label}')
         if auxiliary_import and item.get('provider_module'):
@@ -141,8 +196,9 @@ def validate(root, module, declarations):
                 raise ValueError(f'Imported auxiliary support claims mismatch: {label}')
             if label in by_label and by_label[label]['file'] != source['file']:
                 raise ValueError(f'Ambiguous imported auxiliary source: {label}')
-            by_label[label] = {'id': label, 'kind': 'equation', 'file': source['file'],
-                'line': raw[source['file']].count('\n', 0, raw[source['file']].index(source['anchor'])) + 1}
+            if label not in catalogue_labels:
+                by_label[label] = {'id': label, 'kind': 'equation', 'file': source['file'],
+                    'line': raw[source['file']].count('\n', 0, raw[source['file']].index(source['anchor'])) + 1}
         if label not in by_label or by_label[label]['file'] not in sources:
             raise ValueError(f'Unknown imported source declaration: {label}')
         if item['status'] not in {'HUMAN_EXPANDED_NOT_LEAN', 'EXPLICIT_UPSTREAM_NOT_EXPANDED',
@@ -263,6 +319,19 @@ def render(module, order, by_label, raw):
     ]
     for item in module['assumptions']:
         lines += [f"**{item['id']}: {item['name']}.** {item['statement']}", '']
+    if module.get('external_providers'):
+        lines += ['## Published external theorem providers', '',
+                  'These inputs are not new local proof claims or compiled CCO imports.',
+                  'Existing Lean APIs still require the explicit representation bridge.', '']
+        for item in module['external_providers']:
+            lines += [f"**{item['id']}: {item['name']}.** {item['statement']}", '',
+                      f"[Primary source, {item['source_version']}, {item['theorem']}]({item['source_url']}). "
+                      f"Status: `{item['status']}`.", '']
+            if item.get('lean_reference'):
+                ref = item['lean_reference']
+                lines += [f"Existing Lean: `{ref['repository']}` at `{ref['commit']}`, "
+                          f"module `{ref['module']}`; declarations " + ', '.join(f'`{d}`' for d in ref['declarations']) + '.', '',
+                          'The adapter to the current CCO encoding remains a receiving-project obligation.', '']
     if module.get('imports'):
         lines += ['## Imported theorem contracts', '',
                   'These are named provider obligations for the receiving Lean project,',
@@ -366,7 +435,7 @@ def render(module, order, by_label, raw):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--check', action='store_true')
-    parser.add_argument('--module', default='raw_exact', choices=['raw_exact', 'strong_selectors', 'sir', 'parity_hasse', 'exact_crt', 'canonical_hull', 'real_closure', 'finite_packets', 'rigid_groupoid', 'finite_kernel', 'owner_action', 'owner_master', 'joint_owner', 'acl_owner_geometry', 'finite_lift', 'mi_geometry', 'owner_transversal', 'safe_readings', 'direct_owner_closure'])
+    parser.add_argument('--module', default='raw_exact', choices=['raw_exact', 'strong_selectors', 'sir', 'parity_hasse', 'exact_crt', 'canonical_hull', 'real_closure', 'finite_packets', 'rigid_groupoid', 'finite_kernel', 'owner_action', 'owner_master', 'joint_owner', 'acl_owner_geometry', 'finite_lift', 'mi_geometry', 'owner_transversal', 'safe_readings', 'direct_owner_closure', 'hkn_reservoir', 'terminal_powers'])
     args = parser.parse_args()
     directory = Path('formalization') / args.module
     module = json.loads((ROOT / directory / 'module.json').read_text())

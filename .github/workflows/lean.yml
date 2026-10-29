@@ -31,7 +31,7 @@ jobs:
       - name: Validate mathematical preparation and project allocation
         run: |
           python3 -m unittest discover -s tools -p 'test_*.py' -q
-          for module in raw_exact strong_selectors parity_hasse exact_crt canonical_hull real_closure finite_packets rigid_groupoid finite_kernel owner_action sir owner_master joint_owner acl_owner_geometry finite_lift mi_geometry owner_transversal safe_readings direct_owner_closure; do
+          for module in raw_exact strong_selectors parity_hasse exact_crt canonical_hull real_closure finite_packets rigid_groupoid finite_kernel owner_action sir owner_master joint_owner acl_owner_geometry finite_lift mi_geometry owner_transversal safe_readings direct_owner_closure hkn_reservoir terminal_powers; do
             python3 tools/build_formalization_module.py --module "$module" --check
           done
           python3 tools/check_formalization_coordination.py --check --require-launch

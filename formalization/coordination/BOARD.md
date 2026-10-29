@@ -33,6 +33,8 @@ mathematical catalogue/initial checkpoint, not current ownership.
 | B025: Anchored owner completion and full-owner primitive transversal | B022 | [B025](../../formalization/coordination/packages/B025.md) |
 | B026: Safe traces, covariant selectors and rectangular moving readings | B003, B004, B014, B025 | [B026](../../formalization/coordination/packages/B026.md) |
 | B031: Direct unary real closure and harmless actual owners | B002, B010, B013, B014 | [B031](../../formalization/coordination/packages/B031.md) |
+| B027: Completable HKN packet reservoir and finite cycle locality | B014, B025, B026 | [B027](../../formalization/coordination/packages/B027.md) |
+| B032: Typed terminal same-sort pure-power saturation without CCO | B001, B011 | [B032](../../formalization/coordination/packages/B032.md) |
 
 Autonomous release permissions are in [AUTONOMY.json](AUTONOMY.json).
 Use [QUEUE_OPERATIONS.md](QUEUE_OPERATIONS.md) to claim or review work.
