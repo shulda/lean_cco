@@ -39,6 +39,19 @@ theorem packetClosed_iff_closure (C : Finset (NamedCarrier S H R B)) :
   · intro h x hx y hxy
     exact h ⟨x.val,(mem_realBase S H R B C x).mpr hx,hxy⟩
 
+theorem subset_namedPacketFinset (A : Finset (NamedCarrier S H R B)) :
+    A ⊆ namedPacketFinset S H R B A := by
+  intro a ha
+  exact (mem_namedPacketFinset S H R B A a).mpr
+    ⟨a.val,(mem_realBase S H R B A a).mpr ha,(finitePacket S H).val.refl _⟩
+
+theorem packetClosed_namedPacketFinset (A : Finset (NamedCarrier S H R B)) :
+    PacketClosed S H R B (namedPacketFinset S H R B A) := by
+  intro x hx y hxy
+  obtain ⟨a,ha,hax⟩ := (mem_namedPacketFinset S H R B A x).mp hx
+  exact (mem_namedPacketFinset S H R B A y).mpr
+    ⟨a,ha,(finitePacket S H).val.trans hax hxy⟩
+
 theorem fixed_orbit_eq (C : Finset (NamedCarrier S H R B))
     (x : NamedCarrier S H R B) :
     MulAction.orbit (baseFixers S H R B C) x =

@@ -96,6 +96,20 @@ def namedPacketClosure (B : Finset (Owner S H R))
     (A : Finset (NamedCarrier S H R B)) : Set (NamedCarrier S H R B) :=
   {x | x.val ∈ packetClosure S H (realBase S H R B A)}
 
+theorem namedPacketClosure_finite (B : Finset (Owner S H R))
+    (A : Finset (NamedCarrier S H R B)) : (namedPacketClosure S H R B A).Finite := by
+  apply (packetClosure_finite S H (realBase S H R B A)).preimage
+  exact Subtype.val_injective.injOn
+
+def namedPacketFinset (B : Finset (Owner S H R))
+    (A : Finset (NamedCarrier S H R B)) : Finset (NamedCarrier S H R B) :=
+  (namedPacketClosure_finite S H R B A).toFinset
+
+@[simp] theorem mem_namedPacketFinset (B : Finset (Owner S H R))
+    (A : Finset (NamedCarrier S H R B)) (x : NamedCarrier S H R B) :
+    x ∈ namedPacketFinset S H R B A ↔ x ∈ namedPacketClosure S H R B A :=
+  Set.Finite.mem_toFinset _
+
 /-- C23: a packet-invariant owner collection contains every real point
 of each packet meeting it. -/
 theorem packet_mem_named (B : Finset (Owner S H R)) (hB : PacketInvariant S H R B)
