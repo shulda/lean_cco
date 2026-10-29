@@ -118,3 +118,14 @@ independent approval, single-lock integration and green actual resulting-main
 CI/audit remain required before ACCEPTED. The coordinator retains those roles;
 this local source-complete report does not perform or claim those future
 public transitions.
+
+## Integration union
+
+After the frozen local pipeline and its independent source review, this branch
+merges actual B024 main `e10afddd47439af3d1eeb714397871eabc282f58` for integration.
+Every B033 mathematical module is byte-for-byte unchanged from the recorded
+freeze. The root additionally retains the 25 B024 modules already on main;
+B024 supplies no premise or imported theorem to `CCO.ProfileHelly`.
+Exact public-head CI/audit validates the combined 992-module CCO closure and
+the unchanged 269-module provider. No duplicate local whole build or audit
+is claimed for this integration-only union.
