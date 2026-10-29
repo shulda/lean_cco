@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 130,
+  "revision": 131,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -613,7 +613,7 @@
       }
     },
     "B012": {
-      "state": "SUBMITTED",
+      "state": "REVIEWING",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b012_sap",
@@ -638,7 +638,19 @@
         "conclusion": "success",
         "axiom_audit": "allowlist"
       },
-      "report_path": "formalization/coordination/submissions/B012.md"
+      "report_path": "formalization/coordination/submissions/B012.md",
+      "review": {
+        "project_id": 3,
+        "actor_id": "independent_review",
+        "head_sha": "b180eccace343d9fe76dac1d9064e4f2c29ca5e8",
+        "approved": false,
+        "independence": {
+          "identity": "/root/independent_review",
+          "non_author": true,
+          "summary": "Actual registered review-only reader authored and designed none of complete B012, including root C22 or all earlier code; personally read all eight frozen modules and only final actual deltas, source contracts/providers/consumers and exact PR CI logs.",
+          "report_path": "formalization/coordination/reviews/B012-final.md"
+        }
+      }
     },
     "B013": {
       "state": "ACCEPTED",
@@ -3399,6 +3411,24 @@
         },
         "report_path": "formalization/coordination/submissions/B012.md",
         "actor_id": "root"
+      }
+    },
+    {
+      "revision": 131,
+      "project_id": 3,
+      "actor_id": "independent_review",
+      "event": "review",
+      "package_id": "B012",
+      "details": {
+        "package_id": "B012",
+        "head_sha": "b180eccace343d9fe76dac1d9064e4f2c29ca5e8",
+        "independence": {
+          "identity": "/root/independent_review",
+          "non_author": true,
+          "summary": "Actual registered review-only reader authored and designed none of complete B012, including root C22 or all earlier code; personally read all eight frozen modules and only final actual deltas, source contracts/providers/consumers and exact PR CI logs.",
+          "report_path": "formalization/coordination/reviews/B012-final.md"
+        },
+        "actor_id": "independent_review"
       }
     }
   ],
