@@ -97,7 +97,8 @@ theorem exists_other_direction (hcount : 2 ≤ directionCount S) (D : Direction 
   letI : Subsingleton (Direction S) := ⟨fun E F => (hall E).symm.trans (hall F)⟩
   letI : Nonempty (Direction S) := ⟨D⟩
   have he : directionCount S = 1 := Nat.card_unique
-  exact Nat.not_succ_le_self 1 (he ▸ hcount)
+  have hbad : 2 ≤ 1 := by simpa only [he] using hcount
+  exact Nat.not_succ_le_self 1 hbad
 
 /-- C16: at r>=2 each original core is an infinite nonidentity exact
 kernel and its ACTUAL quotient strictly reduces the diversity palette. -/
