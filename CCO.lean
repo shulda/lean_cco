@@ -950,6 +950,33 @@ import CCO.HKNReservoir.TreeSupport
 import CCO.HKNReservoir.TypedOrigins
 import CCO.HKNReservoir.WholeOrigins
 
+-- B024: one fixed full-row decoder, all legal lifts and rooted packet controls.
+import CCO.FullRows.Consumer
+import CCO.FullRows.DecodedAge
+import CCO.FullRows.DecodedStructure
+import CCO.FullRows.Defs
+import CCO.FullRows.ExplicitDecoder
+import CCO.FullRows.FixedDecoder
+import CCO.FullRows.GaugeNatural
+import CCO.FullRows.GlobalThin
+import CCO.FullRows.OrbitTrim
+import CCO.FullRows.OwnerLanguage
+import CCO.FullRows.PCNetwork
+import CCO.FullRows.ReadingMatrix
+import CCO.FullRows.RecordedDecoder
+import CCO.FullRows.ReservoirCoordinates
+import CCO.FullRows.RowCertificate
+import CCO.FullRows.RowCompatibility
+import CCO.FullRows.RowDomainNaturality
+import CCO.FullRows.RowObstructions
+import CCO.FullRows.Rows
+import CCO.FullRows.SemilinearImage
+import CCO.FullRows.SourceRows
+import CCO.FullRows.StructuralCoordinates
+import CCO.FullRows.UniversalLifts
+import CCO.FullRows.VertexDomains
+import CCO.FullRows.ZeroRowRequests
+
 import CCO.ProfileHelly.Boundaries
 import CCO.ProfileHelly.Completion
 import CCO.ProfileHelly.Consumer
