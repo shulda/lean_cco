@@ -75,5 +75,17 @@ theorem liftedSource_nonempty (C : Finset N) (hC : sourceSeed S H R U A0 ⊆ C)
     ⟨x,hx,(finitePacket S H).val.refl _⟩
   exact ⟨a.val,a.property⟩
 
+theorem liftedSource_safe_cross (C : Finset N) (safe : Set (S.Atom () ()))
+    (hSafe : ∀ a ∈ C, a ∉ sourceSeed S H R U A0 → ∀ b ∈ C,
+      ¬ finitePacket S H a.val b.val → ∃ d ∈ safe, col S a.val b.val = some d) :
+    ∀ a : liftedSource S H R U C,
+      a.val.down.val ∉ RealClosure.Bounds.packetClosure S H A0 →
+      ∀ b : liftedSource S H R U C,
+        ¬ finitePacket S H a.val.down.val b.val.down.val →
+          ∃ d ∈ safe, col S a.val.down.val b.val.down.val = some d := by
+  intro a ha b hab
+  exact hSafe a.val.down a.property
+    (fun hm => ha ((mem_sourceSeed S H R U A0 a.val.down).mp hm)) b.val.down b.property hab
+
 end
 end CCO.RelativeMI
