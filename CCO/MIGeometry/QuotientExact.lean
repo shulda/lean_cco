@@ -14,6 +14,25 @@ variable (cco : SemanticCCO.{0,v,0,w} S)
 variable (K : ColourEq S ()) (B : NonemptyExact S () ())
 variable (hB : evaluate S B.words = K.val.r)
 
+@[simp] theorem quotientPullback_bot :
+    quotientPullback S H K ⊥ = K := by
+  apply ColourEq.ext
+  intro x y
+  exact Quotient.eq
+
+theorem quotientPullback_injective : Function.Injective (quotientPullback S H K) := by
+  intro E F h
+  apply ColourEq.ext
+  intro q r
+  induction q using Quotient.inductionOn with | _ x =>
+    induction r using Quotient.inductionOn with | _ y =>
+      change quotientPullback S H K E x y ↔ quotientPullback S H K F x y
+      rw [h]
+
+@[simp] theorem quotientPullback_quotientColourEq (E : ColourEq S ()) (hKE : K ≤ E) :
+    quotientPullback S H K (quotientColourEq S H K E hKE) = E :=
+  congrArg Subtype.val ((quotientColourInterval S H K).symm_apply_apply ⟨E,hKE⟩)
+
 include cco B hB in
 /-- A quotient exact equivalence has an original exact pullback, including
 nil words, whose pullback is K rather than real equality. -/
