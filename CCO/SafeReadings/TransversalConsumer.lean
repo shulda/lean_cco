@@ -56,6 +56,8 @@ theorem safe_completion_and_readings
     (hP : Exact (source S H R B) P) (hPC : (source S H R B).PC L M P) :
     letI := thinCommGroup S H R
     ∃ h : SelectorOn (source S H R B) (augmentedFamily (source S H R B) safe),
+      h.Covariant (subgroupAction S H R B hB Δ)
+        (augmentedFamily_invariant (source S H R B) safe (subgroupAction S H R B hB Δ) hSafe) ∧
       let E := subgroupEndpointGauge S H R B hB Δ hΔ
       let C := canonicalDiagram (source S H R B) (canonical_homogeneous S H R B)
         (ageSAP S H R B) (semanticCCO S H R B) D hComp h
@@ -65,14 +67,31 @@ theorem safe_completion_and_readings
         ∃ a ∈ safe (D.vertexSort x) (D.vertexSort y), C.diagram.edge x y hxy = some a) ∧
       (Nat.card V ≤ 2 → fixedNetwork D = initial D) ∧
       (source S H R B).Triangle (reading E (h.original _) g L hL)
-        (reading E (h.original _) k M hM) (reading E (h.original _) l P hP) := by
+        (reading E (h.original _) k M hM) (reading E (h.original _) l P hP) ∧
+      (∀ (σ : V ≃ V) (γ : Δ),
+        (∀ x, D.vertexSort (σ x) = (subgroupAction S H R B hB Δ).tag γ (D.vertexSort x)) →
+        (∀ p : DistinctPair V,
+          (subgroupAction S H R B hB Δ).act γ ⟨D.vertexSort p.src,D.vertexSort p.dst,initial D p⟩ =
+            ⟨D.vertexSort (σ p.src),D.vertexSort (σ p.dst),initial D (mapPair σ p)⟩) →
+        ∀ p : DistinctPair V,
+          (canonicalAtom (source S H R B) (canonical_homogeneous S H R B)
+            (ageSAP S H R B) (semanticCCO S H R B) D hComp h (mapPair σ p)).val =
+          (canonicalAtom (source S H R B) (canonical_homogeneous S H R B)
+            (ageSAP S H R B) (semanticCCO S H R B) D hComp h p).val) := by
   letI := thinCommGroup S H R
   obtain ⟨h,hCov,hSafe'⟩ := exists_safe_selector S H R B hB Δ safe hs hSafe
-  exact ⟨h,completion_and_independent_readings (source S H R B) (canonical_homogeneous S H R B)
+  refine ⟨h,hCov,?_⟩
+  have hBoth := completion_and_independent_readings (source S H R B) (canonical_homogeneous S H R B)
     (ageSAP S H R B) (semanticCCO S H R B) hs (actual_triangle_age S H R B)
     (subgroupAction S H R B hB Δ) _ h hCov hSafe' D hComp
     (subgroupEndpointGauge S H R B hB Δ hΔ) (subgroup_literalConverse S H R B hB Δ)
-    g k l L M P hL hM hP hPC⟩
+    g k l L M P hL hM hP hPC
+  rcases hBoth with ⟨hAge,hRecords,hHoles,hSmall,hTriangle⟩
+  refine ⟨hAge,hRecords,hHoles,hSmall,hTriangle,?_⟩
+  intro σ γ hSort hInitial p
+  exact Option.some.inj (canonicalAtom_covariant_initial (source S H R B)
+    (canonical_homogeneous S H R B) (ageSAP S H R B) (semanticCCO S H R B) D hComp h
+    (subgroupAction S H R B hB Δ) _ hCov σ γ hSort hInitial p)
 
 end
 end CCO.SafeReadings.TransversalConsumer

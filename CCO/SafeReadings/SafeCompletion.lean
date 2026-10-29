@@ -2,6 +2,7 @@ import CCO.SafeReadings.SafeRetraction
 import CCO.SafeReadings.SafeCertificate
 import CCO.StrongExact.PCExactness
 import CCO.StrongExact.PCConverse
+import CCO.SafeReadings.PCNatural
 
 /-! A safe certificate supplies survivors, not an equivariant choice.
 The final colouring uses the canonical greatest PC network and ONE joint
@@ -136,5 +137,21 @@ theorem canonicalAtom_covariant {Λ : Type t} [Group Λ] {N : Type r}
   exact (congrReading _ _ _
     (Or.inl (fixedNetwork_exact_of_strongCompletion D H sap cco hComp _))
     (hNetwork p)).symm.trans hh
+
+/-- The structural input concerns the ORIGINAL records/holes, rather
+than assuming covariance of the final network. Naturality is proved for
+the SAME actual greatest-PC construction and ALL its intermediate menus. -/
+theorem canonicalAtom_covariant_initial {Λ : Type t} [Group Λ] {N : Type r}
+    (A : PureTagAction S Λ N) (hInv : A.Invariant (augmentedFamily S safe))
+    (hCov : h.Covariant A hInv) (σ : V ≃ V) (g : Λ)
+    (hSort : ∀ x, D.vertexSort (σ x) = A.tag g (D.vertexSort x))
+    (hInitial : ∀ p : DistinctPair V,
+      A.act g ⟨D.vertexSort p.src,D.vertexSort p.dst,initial D p⟩ =
+        ⟨D.vertexSort (σ p.src),D.vertexSort (σ p.dst),initial D (mapPair σ p)⟩)
+    (p : DistinctPair V) :
+    A.label (canonicalAtom S H sap cco D hComp h (mapPair σ p)) =
+      A.label (canonicalAtom S H sap cco D hComp h p) :=
+  canonicalAtom_covariant S H sap cco D hComp h A hInv hCov σ g
+    (fixedNetwork_covariant S D σ A g hSort hInitial) p
 
 end CCO.SafeReadings
