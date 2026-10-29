@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 225,
+  "revision": 226,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -1413,6 +1413,7 @@
         "/root/b023_mi",
         "/root/b023_mi/finite_gates",
         "/root/b023_mi/moving_readings",
+        "/root/b025_transversal",
         "/root/external12",
         "root"
       ],
@@ -5785,6 +5786,20 @@
       "package_id": "B032",
       "details": {
         "package_id": "B032",
+        "author_actor_ids": [
+          "/root/b025_transversal"
+        ],
+        "actor_id": "root"
+      }
+    },
+    {
+      "revision": 226,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "record_authorship",
+      "package_id": "B027",
+      "details": {
+        "package_id": "B027",
         "author_actor_ids": [
           "/root/b025_transversal"
         ],
