@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 218,
+  "revision": 219,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -1305,7 +1305,7 @@
       }
     },
     "B026": {
-      "state": "INTEGRATING",
+      "state": "ACCEPTED",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b023_mi",
@@ -1348,6 +1348,13 @@
           "report_path": "formalization/coordination/reviews/B026-final.md"
         },
         "summary": "Actual nonauthor /root/independent_review approves exact PR37 f39ad483b02e218e894e4a6a040ad1d778b37195/treeb79f269a after ONE full47-module/6103-line read of all40claims/12results/8aux: strong ALL-complete-span safe amalgamation, genuine arbitrary-multiplier traces and augmented Helly/distribution, positive provenance and literal same-operator4cardGamma*rawMax iteration bound, generic-Q finite/orbit descent and actual no-return, all independent moved readings/repeated owners, initial-to-SAME canonicalPC-to-selected-label covariance for ALL maps simultaneously. Actual typed U source/H/SAP/CCO/full primitivity/pure group/subgroup/endpoint gauge and actual triangle-age providers are constructed from accepted B025 APIs, with no opaque premise, rawSAP, origin section, faithful owner action or external EPPA. SAME safe selector consumer/old records/literal0,1,2 boundaries checked. Only2MD after423696a freeze. Exact CI40872856922/job123444093806 PASS98tests/3158jobs/13486std3/894actualparts AND CURRENT SOURCE PREPOST; pinned source/contracts/accepted bodies/toolchain unchanged. Actual7authors preserved. Report-only approval b2559617d817f7cb3b319da08e27548b7c231957."
+      },
+      "accepted_commit": "5038154d2634f23dc745eea1227ac760afec7737",
+      "main_ci": {
+        "run_id": 40873556068,
+        "head_sha": "5038154d2634f23dc745eea1227ac760afec7737",
+        "conclusion": "success",
+        "axiom_audit": "allowlist"
       }
     },
     "B031": {
@@ -1400,13 +1407,7 @@
       }
     }
   },
-  "integration_lock": {
-    "kind": "package",
-    "package_id": "B026",
-    "actor_id": "root",
-    "base_main_sha": "6d8d2c9fdcef7849b20239dea19c33f089070239",
-    "head_sha": "f39ad483b02e218e894e4a6a040ad1d778b37195"
-  },
+  "integration_lock": null,
   "history": [
     {
       "revision": 1,
@@ -5574,6 +5575,24 @@
         "ci": {
           "run_id": 40872856922,
           "head_sha": "f39ad483b02e218e894e4a6a040ad1d778b37195",
+          "conclusion": "success",
+          "axiom_audit": "allowlist"
+        },
+        "actor_id": "root"
+      }
+    },
+    {
+      "revision": 219,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "accept",
+      "package_id": "B026",
+      "details": {
+        "package_id": "B026",
+        "integration_commit": "5038154d2634f23dc745eea1227ac760afec7737",
+        "main_ci": {
+          "run_id": 40873556068,
+          "head_sha": "5038154d2634f23dc745eea1227ac760afec7737",
           "conclusion": "success",
           "axiom_audit": "allowlist"
         },
