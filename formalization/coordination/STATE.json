@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 201,
+  "revision": 202,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -1303,54 +1303,17 @@
         "conclusion": "success",
         "axiom_audit": "allowlist"
       }
+    },
+    "B026": {
+      "state": "AVAILABLE",
+      "owner_project_id": null
+    },
+    "B031": {
+      "state": "AVAILABLE",
+      "owner_project_id": null
     }
   },
-  "integration_lock": {
-    "kind": "infrastructure",
-    "actor_id": "root",
-    "head_sha": "9a08c999b3831da8e24d9d11e0ec988a1d792d48",
-    "base_main_sha": "def25037dfa278001a41732eadae694448f38426",
-    "pr_number": 35,
-    "review": {
-      "actor_id": "independent_review",
-      "head_sha": "9a08c999b3831da8e24d9d11e0ec988a1d792d48",
-      "approved": true,
-      "summary": "Actual nonauthor /root/independent_review approves exact9a08c999/treea9625c84 after whole29-file publication/65claim contracts/source/provider/validator/control read. Internal support is proved strict ancestry, not expanded theorem export; hardened auxiliary path retained. Countability-free closure and all-complete-span safe-trace/independent-reading scopes preserved. Both actual receipt/index provenance findings author-fixed, all28source/14payload records independently matched490c/c66. ExactCI40865114621/job123417793935 passes98tests/3103jobs/12466std3/839actualpartsANDcurrentSOURCE prepost. All25oldrows/roles/2/3limits/pins/fourmanifestdigests preserved; no newLean/dependency/toolchain/cache mechanism.",
-      "independence": {
-        "identity": "/root/independent_review",
-        "non_author": true,
-        "summary": "Actual same registered review-only actor personally read complete publication, source contracts and code, then only author repair deltas and exact public CI. It authored and designed none of the original preparation, extraction, implementation, tests or repairs, used no helper reviewers and performed no duplicate Lean build/audit.",
-        "report_path": "formalization/coordination/reviews/B026-B031-registry-publication.md"
-      }
-    },
-    "ci": {
-      "run_id": 40865114621,
-      "head_sha": "9a08c999b3831da8e24d9d11e0ec988a1d792d48",
-      "conclusion": "success",
-      "axiom_audit": "allowlist"
-    },
-    "author_actor_ids": [
-      "root",
-      "source-preparation-project",
-      "/root/frontier11",
-      "/root/b023_mi",
-      "/root/b025_transversal"
-    ],
-    "original_author_project_ids": [
-      0,
-      3
-    ],
-    "registry_promotion": {
-      "package_ids": [
-        "B026",
-        "B031"
-      ],
-      "previous_registry_sha256": "c2d3df01ea3fdd7fadcf84e7161371c7bac69c65007c47a7a8848dd7fcf3b9aa",
-      "previous_policy_sha256": "57421d89a06865115c5b56bde3c3bcd99d221715230f3957208ce0876e148c8c",
-      "registry_sha256": "e0d2444f91a25a3a40068f07e29ca7e3dcdee02e9e6d3e1297eae6a4cfb4b2bf",
-      "policy_sha256": "47359256526bb915b6e665597841d3a61b586d80458605a5479874fb475a3898"
-    }
-  },
+  "integration_lock": null,
   "history": [
     {
       "revision": 1,
@@ -5220,6 +5183,38 @@
           "policy_sha256": "47359256526bb915b6e665597841d3a61b586d80458605a5479874fb475a3898"
         }
       }
+    },
+    {
+      "revision": 202,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "promote_registry",
+      "package_id": null,
+      "details": {
+        "actor_id": "root",
+        "head_sha": "9a08c999b3831da8e24d9d11e0ec988a1d792d48",
+        "package_ids": [
+          "B026",
+          "B031"
+        ],
+        "integration_commit": "1f9306fb5e23358f610596520595939b1013b5de",
+        "main_ci": {
+          "run_id": 40865853242,
+          "head_sha": "1f9306fb5e23358f610596520595939b1013b5de",
+          "conclusion": "success",
+          "axiom_audit": "allowlist"
+        },
+        "registry_promotion": {
+          "package_ids": [
+            "B026",
+            "B031"
+          ],
+          "previous_registry_sha256": "c2d3df01ea3fdd7fadcf84e7161371c7bac69c65007c47a7a8848dd7fcf3b9aa",
+          "previous_policy_sha256": "57421d89a06865115c5b56bde3c3bcd99d221715230f3957208ce0876e148c8c",
+          "registry_sha256": "e0d2444f91a25a3a40068f07e29ca7e3dcdee02e9e6d3e1297eae6a4cfb4b2bf",
+          "policy_sha256": "47359256526bb915b6e665597841d3a61b586d80458605a5479874fb475a3898"
+        }
+      }
     }
   ],
   "infrastructure_integrations": [
@@ -5528,9 +5523,62 @@
         "conclusion": "success",
         "axiom_audit": "allowlist"
       }
+    },
+    {
+      "kind": "infrastructure",
+      "actor_id": "root",
+      "head_sha": "9a08c999b3831da8e24d9d11e0ec988a1d792d48",
+      "base_main_sha": "def25037dfa278001a41732eadae694448f38426",
+      "pr_number": 35,
+      "review": {
+        "actor_id": "independent_review",
+        "head_sha": "9a08c999b3831da8e24d9d11e0ec988a1d792d48",
+        "approved": true,
+        "summary": "Actual nonauthor /root/independent_review approves exact9a08c999/treea9625c84 after whole29-file publication/65claim contracts/source/provider/validator/control read. Internal support is proved strict ancestry, not expanded theorem export; hardened auxiliary path retained. Countability-free closure and all-complete-span safe-trace/independent-reading scopes preserved. Both actual receipt/index provenance findings author-fixed, all28source/14payload records independently matched490c/c66. ExactCI40865114621/job123417793935 passes98tests/3103jobs/12466std3/839actualpartsANDcurrentSOURCE prepost. All25oldrows/roles/2/3limits/pins/fourmanifestdigests preserved; no newLean/dependency/toolchain/cache mechanism.",
+        "independence": {
+          "identity": "/root/independent_review",
+          "non_author": true,
+          "summary": "Actual same registered review-only actor personally read complete publication, source contracts and code, then only author repair deltas and exact public CI. It authored and designed none of the original preparation, extraction, implementation, tests or repairs, used no helper reviewers and performed no duplicate Lean build/audit.",
+          "report_path": "formalization/coordination/reviews/B026-B031-registry-publication.md"
+        }
+      },
+      "ci": {
+        "run_id": 40865114621,
+        "head_sha": "9a08c999b3831da8e24d9d11e0ec988a1d792d48",
+        "conclusion": "success",
+        "axiom_audit": "allowlist"
+      },
+      "author_actor_ids": [
+        "root",
+        "source-preparation-project",
+        "/root/frontier11",
+        "/root/b023_mi",
+        "/root/b025_transversal"
+      ],
+      "original_author_project_ids": [
+        0,
+        3
+      ],
+      "registry_promotion": {
+        "package_ids": [
+          "B026",
+          "B031"
+        ],
+        "previous_registry_sha256": "c2d3df01ea3fdd7fadcf84e7161371c7bac69c65007c47a7a8848dd7fcf3b9aa",
+        "previous_policy_sha256": "57421d89a06865115c5b56bde3c3bcd99d221715230f3957208ce0876e148c8c",
+        "registry_sha256": "e0d2444f91a25a3a40068f07e29ca7e3dcdee02e9e6d3e1297eae6a4cfb4b2bf",
+        "policy_sha256": "47359256526bb915b6e665597841d3a61b586d80458605a5479874fb475a3898"
+      },
+      "integration_commit": "1f9306fb5e23358f610596520595939b1013b5de",
+      "main_ci": {
+        "run_id": 40865853242,
+        "head_sha": "1f9306fb5e23358f610596520595939b1013b5de",
+        "conclusion": "success",
+        "axiom_audit": "allowlist"
+      }
     }
   ],
-  "policy_revision": 5,
+  "policy_revision": 6,
   "third_batch_exception": {
     "package_id": "B018",
     "independent_active_work": true,
