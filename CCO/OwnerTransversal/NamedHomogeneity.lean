@@ -1,5 +1,5 @@
 import CCO.OwnerTransversal.NamedSource
-import CCO.OwnerTransversal.TypedLifting
+import CCO.OwnerTransversal.ExactOwnerLifting
 
 /-! Joint real/owner lifting is used only after the named-closure orbit
 argument.  Every displayed owner is retained, even if no real-domain
@@ -26,7 +26,7 @@ theorem residual_joint_lifting {I : Type z} [Finite I] {J : Type r} [Finite J]
       q' j = owner S H R (target i)) :
     letI := originalQuotientAction S H R.E
     ∃ g : G, (∀ i, g • source i = target i) ∧ (∀ j, g • q j = q' j) :=
-  finite_real_owner_lifting S H R.cco R.E R.exact source target q q' hReal hOwners hCover
+  actual_joint_real_owner_lifting S H R.cco R.E R.exact source target q q' hReal hOwners hCover
 
 /-- The full actual named-owner induced structure is homogeneous.  Empty
 real domains and empty owner collections are included. -/
