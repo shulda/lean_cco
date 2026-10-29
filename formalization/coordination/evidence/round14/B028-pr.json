@@ -1,0 +1,92 @@
+{
+  "run_id": 40950381124,
+  "head_sha": "2f0ce8d1977de862752481da694d80f1ff10199b",
+  "conclusion": "success",
+  "axiom_audit": "allowlist",
+  "job_id": 123716613595,
+  "tests": 121,
+  "declarations": 17155,
+  "modules": 1045,
+  "provider_guards": [
+    {
+      "parts": 269,
+      "source": 269,
+      "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+    },
+    {
+      "parts": 269,
+      "source": 269,
+      "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+    },
+    {
+      "parts": 269,
+      "source": 269,
+      "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+    },
+    {
+      "parts": 269,
+      "source": 269,
+      "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+    }
+  ],
+  "fresh_cco_modules": [
+    "CCO.RelativeMI.AnchoredSafe",
+    "CCO.RelativeMI.CompatibleGroup",
+    "CCO.RelativeMI.Consumer",
+    "CCO.RelativeMI.DecodedAge",
+    "CCO.RelativeMI.DecodedImage",
+    "CCO.RelativeMI.DecodedStructure",
+    "CCO.RelativeMI.ExplicitDecoder",
+    "CCO.RelativeMI.FaithfulTransport",
+    "CCO.RelativeMI.FineOwners",
+    "CCO.RelativeMI.FineSaturation",
+    "CCO.RelativeMI.FixedDecoder",
+    "CCO.RelativeMI.FixedWitness",
+    "CCO.RelativeMI.GlobalThin",
+    "CCO.RelativeMI.InflatedSpans",
+    "CCO.RelativeMI.LocalWitness",
+    "CCO.RelativeMI.NormalizedSource",
+    "CCO.RelativeMI.OrbitSafe",
+    "CCO.RelativeMI.OrbitWitness",
+    "CCO.RelativeMI.OwnerHelpers",
+    "CCO.RelativeMI.OwnerLanguage",
+    "CCO.RelativeMI.Padding",
+    "CCO.RelativeMI.PaddingExclusion",
+    "CCO.RelativeMI.ParametricReadings",
+    "CCO.RelativeMI.RecordedDecoder",
+    "CCO.RelativeMI.RecordedPackets",
+    "CCO.RelativeMI.SafePaddingNative",
+    "CCO.RelativeMI.SafeRows",
+    "CCO.RelativeMI.SafeSelector",
+    "CCO.RelativeMI.SequentialUse",
+    "CCO.RelativeMI.SourceContext",
+    "CCO.RelativeMI.SourceRequests",
+    "CCO.RelativeMI.SourceRows",
+    "CCO.RelativeMI.SourceSeed",
+    "CCO.RelativeMI.UniversalLifts"
+  ],
+  "fresh_provider_modules": [],
+  "provider_cache_lines": [
+    "2026-10-29T20:37:02.3784832Z cco-eppa-dependency-v1-a2a8f96056850ededd7ac1bab447f1d923dedf7797b54c6479a3be9638b55e41",
+    "2026-10-29T20:37:29.8709401Z   key: cco-eppa-dependency-v1-a2a8f96056850ededd7ac1bab447f1d923dedf7797b54c6479a3be9638b55e41",
+    "2026-10-29T20:37:30.2868497Z Cache hit for: cco-eppa-dependency-v1-a2a8f96056850ededd7ac1bab447f1d923dedf7797b54c6479a3be9638b55e41",
+    "2026-10-29T20:37:32.4887006Z Cache restored from key: cco-eppa-dependency-v1-a2a8f96056850ededd7ac1bab447f1d923dedf7797b54c6479a3be9638b55e41",
+    "2026-10-29T20:39:32.7667791Z Cache hit occurred on the primary key cco-eppa-dependency-v1-a2a8f96056850ededd7ac1bab447f1d923dedf7797b54c6479a3be9638b55e41, not saving cache."
+  ],
+  "build_jobs": [
+    1330,
+    3584,
+    3584
+  ],
+  "guards": [
+    {
+      "parts": 1045,
+      "source": 1045
+    },
+    {
+      "parts": 1045,
+      "source": 1045
+    }
+  ],
+  "url": "https://github.com/shulda/lean_cco/actions/runs/40950381124"
+}
