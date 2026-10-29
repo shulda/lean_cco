@@ -1,0 +1,83 @@
+{
+  "run_id": 40928590992,
+  "head_sha": "e10afddd47439af3d1eeb714397871eabc282f58",
+  "conclusion": "success",
+  "axiom_audit": "allowlist",
+  "job_id": 123640661966,
+  "tests": 121,
+  "declarations": 15198,
+  "modules": 965,
+  "provider_guards": [
+    {
+      "parts": 269,
+      "source": 269,
+      "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+    },
+    {
+      "parts": 269,
+      "source": 269,
+      "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+    },
+    {
+      "parts": 269,
+      "source": 269,
+      "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+    },
+    {
+      "parts": 269,
+      "source": 269,
+      "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+    }
+  ],
+  "fresh_cco_modules": [
+    "CCO.FullRows.Consumer",
+    "CCO.FullRows.DecodedAge",
+    "CCO.FullRows.DecodedStructure",
+    "CCO.FullRows.Defs",
+    "CCO.FullRows.ExplicitDecoder",
+    "CCO.FullRows.FixedDecoder",
+    "CCO.FullRows.GaugeNatural",
+    "CCO.FullRows.GlobalThin",
+    "CCO.FullRows.OrbitTrim",
+    "CCO.FullRows.OwnerLanguage",
+    "CCO.FullRows.PCNetwork",
+    "CCO.FullRows.ReadingMatrix",
+    "CCO.FullRows.RecordedDecoder",
+    "CCO.FullRows.ReservoirCoordinates",
+    "CCO.FullRows.RowCertificate",
+    "CCO.FullRows.RowCompatibility",
+    "CCO.FullRows.RowDomainNaturality",
+    "CCO.FullRows.RowObstructions",
+    "CCO.FullRows.Rows",
+    "CCO.FullRows.SemilinearImage",
+    "CCO.FullRows.SourceRows",
+    "CCO.FullRows.StructuralCoordinates",
+    "CCO.FullRows.UniversalLifts",
+    "CCO.FullRows.VertexDomains",
+    "CCO.FullRows.ZeroRowRequests"
+  ],
+  "fresh_provider_modules": [],
+  "provider_cache_lines": [
+    "2026-10-29T18:13:29.0217446Z cco-eppa-dependency-v1-a2a8f96056850ededd7ac1bab447f1d923dedf7797b54c6479a3be9638b55e41",
+    "2026-10-29T18:13:47.1955321Z   key: cco-eppa-dependency-v1-a2a8f96056850ededd7ac1bab447f1d923dedf7797b54c6479a3be9638b55e41",
+    "2026-10-29T18:13:47.4140153Z Cache hit for: cco-eppa-dependency-v1-a2a8f96056850ededd7ac1bab447f1d923dedf7797b54c6479a3be9638b55e41",
+    "2026-10-29T18:13:48.4895689Z Cache restored from key: cco-eppa-dependency-v1-a2a8f96056850ededd7ac1bab447f1d923dedf7797b54c6479a3be9638b55e41",
+    "2026-10-29T18:15:04.7590296Z Cache hit occurred on the primary key cco-eppa-dependency-v1-a2a8f96056850ededd7ac1bab447f1d923dedf7797b54c6479a3be9638b55e41, not saving cache."
+  ],
+  "build_jobs": [
+    1330,
+    3503,
+    3503
+  ],
+  "guards": [
+    {
+      "parts": 965,
+      "source": 965
+    },
+    {
+      "parts": 965,
+      "source": 965
+    }
+  ],
+  "url": "https://github.com/shulda/lean_cco/actions/runs/40928590992"
+}

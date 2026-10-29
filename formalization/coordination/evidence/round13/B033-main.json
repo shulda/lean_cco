@@ -1,0 +1,85 @@
+{
+  "run_id": 40929727601,
+  "head_sha": "9eda6084a7f841d9845f29ca03e63fbbae371b08",
+  "conclusion": "success",
+  "axiom_audit": "allowlist",
+  "job_id": 123644647165,
+  "tests": 121,
+  "declarations": 15725,
+  "modules": 992,
+  "provider_guards": [
+    {
+      "parts": 269,
+      "source": 269,
+      "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+    },
+    {
+      "parts": 269,
+      "source": 269,
+      "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+    },
+    {
+      "parts": 269,
+      "source": 269,
+      "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+    },
+    {
+      "parts": 269,
+      "source": 269,
+      "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+    }
+  ],
+  "fresh_cco_modules": [
+    "CCO.ProfileHelly.Boundaries",
+    "CCO.ProfileHelly.Completion",
+    "CCO.ProfileHelly.Consumer",
+    "CCO.ProfileHelly.CyclicAlgebra",
+    "CCO.ProfileHelly.EdgeCompletion",
+    "CCO.ProfileHelly.EdgeCycles",
+    "CCO.ProfileHelly.EdgeWalks",
+    "CCO.ProfileHelly.EmbeddingImages",
+    "CCO.ProfileHelly.Embeddings",
+    "CCO.ProfileHelly.Fill",
+    "CCO.ProfileHelly.FillPaths",
+    "CCO.ProfileHelly.Forks",
+    "CCO.ProfileHelly.FreeAmalgam",
+    "CCO.ProfileHelly.FreeAmalgamCycles",
+    "CCO.ProfileHelly.FreeAmalgamFan",
+    "CCO.ProfileHelly.MissingPairs",
+    "CCO.ProfileHelly.MixedCycles",
+    "CCO.ProfileHelly.Network",
+    "CCO.ProfileHelly.PathIntersections",
+    "CCO.ProfileHelly.Paths",
+    "CCO.ProfileHelly.Properties",
+    "CCO.ProfileHelly.SemanticCycles",
+    "CCO.ProfileHelly.Semantics",
+    "CCO.ProfileHelly.SpanCompletion",
+    "CCO.ProfileHelly.Table",
+    "CCO.ProfileHelly.Theorem",
+    "CCO.ProfileHelly.Words"
+  ],
+  "fresh_provider_modules": [],
+  "provider_cache_lines": [
+    "2026-10-29T18:20:58.2872177Z cco-eppa-dependency-v1-a2a8f96056850ededd7ac1bab447f1d923dedf7797b54c6479a3be9638b55e41",
+    "2026-10-29T18:21:22.5328406Z   key: cco-eppa-dependency-v1-a2a8f96056850ededd7ac1bab447f1d923dedf7797b54c6479a3be9638b55e41",
+    "2026-10-29T18:21:22.7725978Z Cache hit for: cco-eppa-dependency-v1-a2a8f96056850ededd7ac1bab447f1d923dedf7797b54c6479a3be9638b55e41",
+    "2026-10-29T18:21:23.4728705Z Cache restored from key: cco-eppa-dependency-v1-a2a8f96056850ededd7ac1bab447f1d923dedf7797b54c6479a3be9638b55e41",
+    "2026-10-29T18:22:24.0936513Z Cache hit occurred on the primary key cco-eppa-dependency-v1-a2a8f96056850ededd7ac1bab447f1d923dedf7797b54c6479a3be9638b55e41, not saving cache."
+  ],
+  "build_jobs": [
+    1330,
+    3531,
+    3531
+  ],
+  "guards": [
+    {
+      "parts": 992,
+      "source": 992
+    },
+    {
+      "parts": 992,
+      "source": 992
+    }
+  ],
+  "url": "https://github.com/shulda/lean_cco/actions/runs/40929727601"
+}
