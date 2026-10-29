@@ -28,6 +28,6 @@ theorem distinct_forks {T : Table.{u,v} ι} (laws : TableLaws T) : DistinctForks
 
 /-- The source optional fork premise belongs only to the SAP clause. -/
 def ProfileHellyConverse (T : Table.{u,v} ι) : Prop :=
-  SemanticCCO.{u,v,z} T ∧ (DistinctForks T → StrongAmalgamation.{u,v,z} T)
+  SemanticHomCCO.{u,v,z} T ∧ (DistinctForks T → StrongAmalgamation.{u,v,z} T)
 
 end CCO.ProfileHelly

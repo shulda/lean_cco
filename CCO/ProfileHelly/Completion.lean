@@ -7,6 +7,16 @@ universe u v z
 namespace CCO.ProfileHelly
 variable {ι : Type u} {T : Table.{u,v} ι}
 
+/-- Ordinary semantic completion allows collisions of nonadjacent points
+and a different finite FULL allowed target. -/
+def Network.Completable {V : Type z} {sort : V → ι} (D : Network T sort) : Prop :=
+  ∃ (W : Type z) (_ : Finite W) (targetSort : W → ι) (N : CompleteNetwork T targetSort),
+    Nonempty (D.Hom N.toNetwork)
+
+def SemanticHomCCO (T : Table.{u,v} ι) : Prop :=
+  ∀ (V : Type z) [Finite V] (sort : V → ι) (D : Network T sort),
+    D.SemanticCycles ↔ D.Completable
+
 def SemanticCCO (T : Table.{u,v} ι) : Prop :=
   ∀ (V : Type z) [Finite V] (sort : V → ι) (D : Network T sort),
     D.SemanticCycles ↔ ∃ N : CompleteNetwork T sort, D.Extends N.toNetwork
@@ -19,6 +29,18 @@ theorem profile_helly_cco (laws : TableLaws T) (helly : Word.Helly (T := T)) :
     exact D.complete_of_algebraic laws helly (D.algebraic_of_semanticCycles laws cycles)
   · rintro ⟨N,hN⟩
     exact D.semanticCycles_of_hom N (Network.Hom.ofExtends D N.toNetwork hN)
+
+/-- C22--C24: actual semantic CCO for arbitrary finite homomorphic targets.
+The same-vertex constructor above proves a stronger sufficient conclusion. -/
+theorem profile_helly_semantic (laws : TableLaws T) (helly : Word.Helly (T := T)) :
+    SemanticHomCCO.{u,v,z} T := by
+  intro V hV sort D
+  constructor
+  · intro cycles
+    obtain ⟨N,hN⟩ := (profile_helly_cco laws helly V sort D).mp cycles
+    exact ⟨V,hV,sort,N,⟨Network.Hom.ofExtends D N.toNetwork hN⟩⟩
+  · rintro ⟨W,hW,targetSort,N,⟨f⟩⟩
+    exact D.semanticCycles_of_hom N f
 
 namespace Network
 variable {V : Type z} [Finite V] {sort : V → ι} (D : Network T sort)
