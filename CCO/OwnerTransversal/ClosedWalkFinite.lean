@@ -6,6 +6,15 @@ namespace CCO.OwnerTransversal
 
 variable {M : Type v}
 
+theorem product_le_saturatedProduct (E : Setoid M) (rs : List (Relation M)) :
+    ∀ x y, relationProduct (rs.map (ownerSaturate E)) x y →
+      saturatedProduct E rs x y := by
+  induction rs with
+  | nil => intro x y h; exact h ▸ E.refl x
+  | cons R rs ih =>
+      rintro x y ⟨z,hxz,hzy⟩
+      exact ⟨z,hxz,ih z y hzy⟩
+
 /-- A represented finite product records every intermediate point. -/
 theorem product_ofFn_iff (n : Nat) (R : Fin n → Relation M) (x y : M) :
     relationProduct (List.ofFn R) x y ↔
@@ -62,5 +71,27 @@ theorem cyclic_points_of_product {n : Nat} (hn : 0 < n)
       apply Fin.ext
       simp only [Fin.val_succ, Fin.val_castSucc, cyclicNext, Nat.mod_eq_of_lt hklt]
   simpa only [heq] using hq k
+
+/-- Conversely literal cyclic points witness the represented diagonal. -/
+theorem product_of_cyclic_points {n : Nat} (hn : 0 < n)
+    (R : Fin n → Relation M) (p : Fin n → M)
+    (h : ∀ k, R k (p k) (p (cyclicNext hn k))) :
+    relationProduct (List.ofFn R) (p ⟨0,hn⟩) (p ⟨0,hn⟩) := by
+  let q : Fin (n+1) → M := fun k => p ⟨k.val % n,Nat.mod_lt _ hn⟩
+  apply (product_ofFn_iff n R _ _).mpr
+  refine ⟨q,?_,?_,?_⟩
+  · apply congrArg p
+    apply Fin.ext
+    simp only [q, Fin.val_zero, Nat.zero_mod]
+  · apply congrArg p
+    apply Fin.ext
+    simp only [q, Fin.val_last, Nat.mod_self]
+  · intro k
+    have hl : q k.castSucc = p k := by
+      apply congrArg p
+      exact Fin.ext (Nat.mod_eq_of_lt k.isLt)
+    have hr : q k.succ = p (cyclicNext hn k) := rfl
+    rw [hl,hr]
+    exact h k
 
 end CCO.OwnerTransversal

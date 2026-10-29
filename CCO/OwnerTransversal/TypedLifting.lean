@@ -2,7 +2,7 @@ import CCO.OwnerTransversal.ClosedWalk
 import CCO.RawExact.QuotientFiniteHomogeneity
 import CCO.RawExact.ActualNestedMaps
 import CCO.FinitePackets.Normalization.QuotientThin
-import CCO.RawExact.CanonicalQuotientInheritance
+import CCO.RawExact.DiagramReindex
 
 /-! Finite real maps with their ENTIRE recorded exact-owner component.
 Mixed pairs are checked by the actual nested-orbital theorem before the
