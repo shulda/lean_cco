@@ -75,7 +75,7 @@ iterations, independently of exactness of that input or its outside factors. -/
 theorem sandwich_iterate_full (H : HomogeneousSource S G)
     (primitive : SortwisePrimitive S) (point : S.RealPointGluing) (edge : S.RealEdgeGluing)
     (L : PositiveOutside S i i) (R : PositiveOutside S j j)
-    (hpos : L.positive || R.positive = true)
+    (hpos : (L.positive || R.positive) = true)
     (m0 : Nat) (hm0 : 0 < m0)
     (hi : Nat.card (S.Atom i i) ≤ m0) (hj : Nat.card (S.Atom j j) ≤ m0)
     (D : S.Menu i j) (hD : D.Nonempty) :
