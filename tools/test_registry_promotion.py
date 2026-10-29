@@ -135,6 +135,49 @@ class RegistryPromotionTests(unittest.TestCase):
                 with self.assertRaises(ValueError):
                     self.manifest_for(registry=registry)
 
+    def test_later_release_can_fill_number_gap_without_reordering_history(self):
+        first = self.promote()
+        registry, policy = deepcopy((self.registry, self.policy))
+        row = deepcopy(registry['packages'][-1])
+        row.update(id='B100', name='Previously held independent package',
+                   depends_on=['B001'],
+                   spec_file='formalization/coordination/packages/B100.md',
+                   claims={'later_test_geometry': ['C01']})
+        registry['packages'].append(row)
+        policy['revision'] += 1
+        policy['released_packages'].append('B100')
+        manifest = q.registry_promotion_manifest(
+            self.registry, self.policy, registry, policy)
+        locked = q.transition(self.registry, self.policy, first, 3,
+            'start_infrastructure', {
+                'actor_id': 'root', 'head_sha': 'f' * 40,
+                'base_main_sha': 'e' * 40, 'head_contains_main': True,
+                'ci': ci('f' * 40), 'pr_number': 28,
+                'author_actor_ids': ['root'], 'original_author_project_ids': [],
+                'registry_promotion': manifest,
+                'review': {'actor_id': 'independent_review', 'head_sha': 'f' * 40,
+                           'approved': True, 'summary': SUMMARY,
+                           'independence': independence()}})
+        result = q.promote_registry(self.registry, self.policy, registry, policy,
+            locked, 3, {'actor_id': 'root', 'head_sha': 'f' * 40,
+                       'package_ids': ['B100'], 'integration_commit': 'a' * 40,
+                       'main_ci': ci('a' * 40, run=29)})
+        self.assertEqual(registry['packages'][:-1], self.registry['packages'])
+        self.assertEqual(result['history'][:-1], locked['history'])
+        for ident, record in first['packages'].items():
+            self.assertEqual(result['packages'][ident], record, ident)
+        self.assertEqual(result['packages']['B100'],
+                         {'state': 'AVAILABLE', 'owner_project_id': None})
+        self.assertIsNone(result['integration_lock'])
+        q.validate_state(registry, policy, result)
+
+    def test_each_release_keeps_its_new_ids_in_order(self):
+        registry, policy = deepcopy((self.registry, self.policy))
+        registry['packages'][-2:] = reversed(registry['packages'][-2:])
+        policy['released_packages'][-2:] = reversed(policy['released_packages'][-2:])
+        with self.assertRaises(ValueError):
+            self.manifest_for(registry=registry, policy=policy)
+
     def test_catalogue_source_and_unrelated_metadata_cannot_change(self):
         for key, value in [('source_commit', 'f' * 40),
                            ('public_repository', 'other/repository'),

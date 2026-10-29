@@ -1,0 +1,72 @@
+\section{The global correspondence cut}\label{sec:correspondence-cut}
+
+The preceding conditional groupoid was defined between \emph{fixed}
+owner pairs.  For the induction we must first remove all residual
+functional correspondences which are not already global thin
+translations.  Define the actual raw invariant relation
+\begin{equation}\label{eq:global-correspondence}
+ R_E=\bigcup\{a:\ a\text{ is a raw atomic orbital, including
+ equality, and }E\cap a^2=\Id\}.
+\end{equation}
+This is a relation on \emph{all real points} of $M$, not a relation
+in one preselected owner restriction.  For the geometric claims below we work in a source with no
+nonidentity invariant finite-class exact equivalence, as supplied
+by Lemma~\ref{lem:finite-exact-normalization-geometric}.
+
+\begin{lemma}[Correspondence equivalence and gluing dichotomy]
+\label{lem:global-correspondence}
+Assume $M$ has no invariant finite-class exact equivalence
+strictly above $\Id$, and let $E$ be a nonidentity exact
+invariant equivalence of $M$.  The support $R_E$ is an invariant equivalence containing $F$,
+and $E\cap R_E=H=E\cap F$.  If $R_E\ne F$, then there is a
+nonidentity infinite exact invariant equivalence $C$ such that
+$E\cap C=\Id$.  Both actual exact quotients $M/E$ and
+$M/C$ have strictly fewer original diversity orbitals.
+No EPPA hypothesis is used in this structural dichotomy.
+\end{lemma}
+\begin{proof}
+The relation $R_E$ is reflexive and symmetric.  Every thin
+translation orbital $t_g$ belongs to it because $t_g^2=\Id$;
+therefore $F\subseteq R_E$.  If an atom $a$ lies below $E$,
+its square is also below $E$.  The condition
+$E\cap a^2=\Id$ then says $a^2=\Id$, so $a$ is a global thin
+involution and lies in $F$.  Hence $E\cap R_E=H$.
+
+For transitivity, let $a,b\subseteq R_E$, and realise
+$x\mathrel a y\mathrel b z$ with outer atom $c\subseteq ab$.
+An $a$-neighbour of a fixed point in a prescribed $E$-class
+is unique: any two such neighbours are $E\cap a^2$-related,
+hence equal.  The analogous uniqueness holds for $b$.
+Suppose $x'Ex$ and $\col(x',z)=c$.  In the actual joint
+real/$E$-owner expansion, the finite partial map
+$x\mapsto x'$, $z\mapsto z$, fixing the $E$-classes
+of $x,y,z$ setwise, is a partial isomorphism: its real
+pair colour is unchanged and all mixed real/owner pair
+orbitals depend only on the relevant quotient owner types
+(by the exact-sort colour saturation calculus).
+Theorem~\ref{thm:joint-exact} extends it to an ambient
+automorphism $g$.  Because $g(z)=z$, $g(E[y])=E[y]$ and
+$g(y)$ is a $b$-neighbour of $z$, uniqueness forces
+$g(y)=y$.  Now $x'=g(x)$ and $x$ are $a$-neighbours
+of the same $y$ in one $E$-class, so $x'=x$.
+This proves $E\cap c^2=\Id$ for each $c\subseteq ab$;
+thus $R_E$ is transitive without using a composition
+law for the general conditional-bijection groupoid.
+
+If $R_E$ has finite classes, the maximality of $F$ gives
+$R_E=F$.  Otherwise let $C=\kappa(R_E)$, the canonical packet
+core of Definition~\ref{def:packetcore}.  The canonical core
+lemma~\ref{lem:packetinterval} makes $[R_E:C]$ finite, so $C$
+has infinite classes; in particular $C>\Id$.  It is exact by
+the same lemma.  The exact equivalence $E\cap C$ lies below
+$E\cap R_E=H$, hence has finite classes.  The explicit finite-exact-normalisation hypothesis
+forces $E\cap C=\Id$.
+Since $E$ and $C$ are distinct nontrivial exact
+equivalences with identity meet, the actual fibre-product
+reconstruction of Section~\ref{sec:exact-crt} applies.  Each nontrivial equivalence collapses at least one
+fine diversity atom into quotient equality; a quotient orbital
+is a union of original orbitals, so its number of nonidentity
+atomic colours is strictly smaller.  This is the claimed
+palette-decreasing induction step.
+\end{proof}
+
