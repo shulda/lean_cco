@@ -604,3 +604,45 @@ import CCO.RealClosure.Bounds.TerminalParity
 import CCO.RealClosure.Bounds.TerminalWords
 import CCO.RealClosure.Bounds.TypedSource
 import CCO.RealClosure.Bounds.WeakPalette
+
+import CCO.FinitePackets.Normalization.ColourTransport
+
+import CCO.FinitePackets.Normalization.Consumers
+
+import CCO.FinitePackets.Normalization.DescentChain
+
+import CCO.FinitePackets.Normalization.DescentSource
+
+import CCO.FinitePackets.Normalization.ElementaryAbelian
+
+import CCO.FinitePackets.Normalization.Examples.TwinCCO
+
+import CCO.FinitePackets.Normalization.Examples.TwinConsumer
+
+import CCO.FinitePackets.Normalization.Examples.TwinExact
+
+import CCO.FinitePackets.Normalization.Examples.TwinPackets
+
+import CCO.FinitePackets.Normalization.Examples.TwinQuotient
+
+import CCO.FinitePackets.Normalization.Examples.TwinSource
+
+import CCO.FinitePackets.Normalization.MinimalCutSubgroups
+
+import CCO.FinitePackets.Normalization.PaletteDescent
+
+import CCO.FinitePackets.Normalization.QuotientThin
+
+import CCO.FinitePackets.Normalization.SquareKernel
+
+import CCO.FinitePackets.Normalization.SubgroupInterval
+
+import CCO.FinitePackets.Normalization.TerminalThin
+
+import CCO.FinitePackets.Normalization.ThinBasic
+
+import CCO.FinitePackets.Normalization.ThinConsumers
+
+import CCO.FinitePackets.Normalization.Translations
+
+import CCO.FinitePackets.Normalization.SquarePowers
