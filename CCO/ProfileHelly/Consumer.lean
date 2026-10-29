@@ -28,7 +28,7 @@ theorem three_factor_amalgam (laws : TableLaws T) (helly : Word.Helly (T := T))
   have sap : StrongAmalgamation.{u,v,z} T := (source_providers laws helly).2.2
   obtain ⟨W₁,finite₁,sort₁,N₁,l₁,r₁,comm₁,cross₁⟩ :=
     sap A L M sortA sortL sortM B C D f g
-  letI : Finite W₁ := finite₁
+  let : Finite W₁ := finite₁
   obtain ⟨W₂,finite₂,sort₂,N₂,j,k,comm₂,cross₂⟩ :=
     sap A W₁ R sortA sort₁ sortR B N₁ E (l₁.comp f) h
   refine ⟨W₂,finite₂,sort₂,N₂,j.comp l₁,j.comp r₁,k,?_,?_,?_,?_,?_⟩
