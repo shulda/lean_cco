@@ -71,6 +71,7 @@ theorem thinPerm_involutive (c : FullColour S) (hc : ThinColour S c) :
 variable {G : Type t} [Group G] [MulAction G M]
 variable (H : HomogeneousSource S G)
 
+include H in
 theorem thinPerm_equivariant (c : FullColour S) (hc : ThinColour S c)
     (g : G) (x : M) : thinPerm S c hc (g • x) = g • thinPerm S c hc x := by
   change thinNeighbour S c hc (g • x) = g • thinPerm S c hc x
