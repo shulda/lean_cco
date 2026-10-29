@@ -36,4 +36,21 @@ theorem triangle_independent_switch (hConv : LiteralConverse S A) (g k l : K)
     ((E.triangle_left g (E.right k a) (E.left k b) c).trans
       (E.triangle_right l (E.left g (E.right k a)) (E.left k b) (E.left g c)))
 
+/-- Strong products transport at both outer endpoints. -/
+theorem outer_product (g l : K) {i j m : ι} (D : S.Menu i j) (F : S.Menu j m) :
+    E.leftMenu g (E.rightMenu l (S.product D F)) =
+      S.product (E.leftMenu g D) (E.rightMenu l F) := by
+  rw [E.rightMenu_product,E.leftMenu_product]
+
+/-- A switch at the common vertex cancels from the strong product,
+including arbitrary, possibly nonexact, menus. -/
+theorem middle_product (hConv : LiteralConverse S A) (k : K) {i j m : ι}
+    (D : S.Menu i j) (F : S.Menu j m) :
+    S.product (E.rightMenu k D) (E.leftMenu k F) = S.product D F := by
+  apply Set.Subset.antisymm
+  · rintro c ⟨_,⟨a,ha,rfl⟩,_,⟨b,hb,rfl⟩,ht⟩
+    exact ⟨a,ha,b,hb,(triangle_middle E hConv k a b c).mpr ht⟩
+  · rintro c ⟨a,ha,b,hb,ht⟩
+    exact ⟨E.right k a,⟨a,ha,rfl⟩,E.left k b,⟨b,hb,rfl⟩,(triangle_middle E hConv k a b c).mp ht⟩
+
 end CCO.SafeReadings
