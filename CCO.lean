@@ -791,6 +791,7 @@ import CCO.MIGeometry.Spectrum
 import CCO.MIGeometry.SurvivingDirections
 import CCO.MIGeometry.UnaryFactors
 
+import CCO.OwnerTransversal.AlignedPacketCharts
 import CCO.OwnerTransversal.AnchoredCaps
 import CCO.OwnerTransversal.AnchoredCompletion
 import CCO.OwnerTransversal.AnchoredFrame
@@ -807,6 +808,12 @@ import CCO.OwnerTransversal.Consumers
 import CCO.OwnerTransversal.CountableAge
 import CCO.OwnerTransversal.CountableColourLanguage
 import CCO.OwnerTransversal.ExactOwnerLifting
+import CCO.OwnerTransversal.FullPacketConsumer
+import CCO.OwnerTransversal.Inflation
+import CCO.OwnerTransversal.InflationBasic
+import CCO.OwnerTransversal.InflationExtension
+import CCO.OwnerTransversal.InflationLanguage
+import CCO.OwnerTransversal.InflationRealization
 import CCO.OwnerTransversal.NamedHomogeneity
 import CCO.OwnerTransversal.NamedSource
 import CCO.OwnerTransversal.OriginRepair
@@ -816,10 +823,15 @@ import CCO.OwnerTransversal.PacketCharts
 import CCO.OwnerTransversal.PacketCompletion
 import CCO.OwnerTransversal.PacketCoordinates
 import CCO.OwnerTransversal.PacketImages
+import CCO.OwnerTransversal.PacketLanguage
+import CCO.OwnerTransversal.PrescribedActions
 import CCO.OwnerTransversal.Primitivity
+import CCO.OwnerTransversal.ReachableSource
 import CCO.OwnerTransversal.SourceData
+import CCO.OwnerTransversal.SourcePacketCharts
 import CCO.OwnerTransversal.TransversalAge
 import CCO.OwnerTransversal.TransversalCompletion
+import CCO.OwnerTransversal.TransversalExtension
 import CCO.OwnerTransversal.TransversalInfinite
 import CCO.OwnerTransversal.TransversalInstance
 import CCO.OwnerTransversal.TransversalModel
