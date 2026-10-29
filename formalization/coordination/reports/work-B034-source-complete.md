@@ -38,7 +38,7 @@ completeness from function totality. `DiagramIso.refl` identifies the actual
 singleton structure with itself as a K member, keeping all relation/domain
 data. No isomorphism-closure assumption on an arbitrary K is inserted.
 
-`Consumer.local_hn_readout` uses the HN-derived totality in the local theorem,
+`CCO.UnarySupport.local_hn_readout` uses the HN-derived totality in the local theorem,
 constructs actual restriction embeddings with the original point map, and
 retains full admissibility and the conditional closure bound. This is a use
 of both discharged results, rather than a conditional restatement with an
@@ -76,8 +76,8 @@ was not accepted as audit certification.
 | Source/config pins and whitespace | Unchanged vs actual4398 base, `git diff --check` PASS |
 
 The audit is the official executable at
-`46024e005996495c65ef609368e11ab39c4222e3`, on the repository's exact Lean/Lake
-4.34.1 environment and manifest. It ran through `lake env` with root CCO and
+`46024e005996495c65ef609368e11ab39c4222e3`, on the repository's pinned Lean
+4.34.1 toolchain, bundled Lake and exact manifest. It ran through `lake env` with root CCO and
 allowlist `propext,Classical.choice,Quot.sound`, after the successful complete
 PRE guards. This is +476 declarations over the accepted release's 15,725.
 The unchanged external EPPA pin is
