@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 265,
+  "revision": 266,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -1610,7 +1610,7 @@
       }
     },
     "B028": {
-      "state": "SUBMITTED",
+      "state": "REVIEWING",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b023_mi",
@@ -1639,7 +1639,19 @@
         "conclusion": "success",
         "axiom_audit": "allowlist"
       },
-      "report_path": "formalization/coordination/submissions/B028.md"
+      "report_path": "formalization/coordination/submissions/B028.md",
+      "review": {
+        "project_id": 3,
+        "actor_id": "independent_review",
+        "head_sha": "2f0ce8d1977de862752481da694d80f1ff10199b",
+        "approved": false,
+        "independence": {
+          "identity": "/root/independent_review",
+          "non_author": true,
+          "summary": "Actual registered review-only agent personally read every one of the complete34 mathematical modules and real same-witness consumer against all42 claims and pinned source, then ONLY the final two Markdown files and exact public CI. It authored or designed NONE of the complete batch, source preparation, helper, infrastructure, repair, tests or consumer; all six real contributors remain recorded. No helper or duplicate build/audit/test was used.",
+          "report_path": "formalization/coordination/reviews/B028-final.md"
+        }
+      }
     },
     "B030": {
       "state": "AVAILABLE",
@@ -6859,6 +6871,24 @@
           "axiom_audit": "allowlist"
         },
         "report_path": "formalization/coordination/submissions/B028.md"
+      }
+    },
+    {
+      "revision": 266,
+      "project_id": 3,
+      "actor_id": "independent_review",
+      "event": "review",
+      "package_id": "B028",
+      "details": {
+        "actor_id": "independent_review",
+        "package_id": "B028",
+        "head_sha": "2f0ce8d1977de862752481da694d80f1ff10199b",
+        "independence": {
+          "identity": "/root/independent_review",
+          "non_author": true,
+          "summary": "Actual registered review-only agent personally read every one of the complete34 mathematical modules and real same-witness consumer against all42 claims and pinned source, then ONLY the final two Markdown files and exact public CI. It authored or designed NONE of the complete batch, source preparation, helper, infrastructure, repair, tests or consumer; all six real contributors remain recorded. No helper or duplicate build/audit/test was used.",
+          "report_path": "formalization/coordination/reviews/B028-final.md"
+        }
       }
     }
   ],
