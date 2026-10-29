@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 140,
+  "revision": 141,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -909,7 +909,7 @@
       }
     },
     "B018": {
-      "state": "SUBMITTED",
+      "state": "REVIEWING",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b018_owners",
@@ -934,7 +934,19 @@
         "conclusion": "success",
         "axiom_audit": "allowlist"
       },
-      "report_path": "formalization/coordination/submissions/B018.md"
+      "report_path": "formalization/coordination/submissions/B018.md",
+      "review": {
+        "project_id": 3,
+        "actor_id": "independent_review",
+        "head_sha": "4a65302a22e0f9926a20468ae5a6a6d9494f4f73",
+        "approved": false,
+        "independence": {
+          "identity": "/root/independent_review",
+          "non_author": true,
+          "summary": "Actual registered nonauthor authored/designed none of B018 or any root/helper code, including historical implementation. Personally read all19 original modules once, then only four actual all-arity scope repair modules, final docs/accepted-main union and exact public CI logs; no reviewer build or helper.",
+          "report_path": "formalization/coordination/reviews/B018-final.md"
+        }
+      }
     },
     "B019": {
       "state": "ACCEPTED",
@@ -3635,6 +3647,24 @@
         },
         "report_path": "formalization/coordination/submissions/B018.md",
         "actor_id": "root"
+      }
+    },
+    {
+      "revision": 141,
+      "project_id": 3,
+      "actor_id": "independent_review",
+      "event": "review",
+      "package_id": "B018",
+      "details": {
+        "package_id": "B018",
+        "head_sha": "4a65302a22e0f9926a20468ae5a6a6d9494f4f73",
+        "independence": {
+          "identity": "/root/independent_review",
+          "non_author": true,
+          "summary": "Actual registered nonauthor authored/designed none of B018 or any root/helper code, including historical implementation. Personally read all19 original modules once, then only four actual all-arity scope repair modules, final docs/accepted-main union and exact public CI logs; no reviewer build or helper.",
+          "report_path": "formalization/coordination/reviews/B018-final.md"
+        },
+        "actor_id": "independent_review"
       }
     }
   ],
