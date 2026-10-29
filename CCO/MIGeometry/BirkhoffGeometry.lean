@@ -1,4 +1,4 @@
-import CCO.MIGeometry.Pseudocomplements
+import CCO.MIGeometry.SelectedNormalization
 import CCO.MIGeometry.Ancestors
 
 /-! The exhaustive finite-poset ancestor theorem instantiated in the
@@ -95,6 +95,28 @@ theorem hat_birkhoff_core (normalized : NoFiniteExactKernel S) (D : Direction S)
         exact hn (by rw [← he]; exact inf_le_left))
     exact Subtype.ext (congrArg (fun e : ExactL S H cco => e.val) (ha.2 _ hlt))
 
+/-- Birkhoff transports every actual finite exact-family meet literally. -/
+theorem exactFamilyMeet_birkhoff {I : Type*} [Finite I] (E : I → ExactL S H cco) :
+    ExactCRT.exactBirkhoff S H (semanticCCO_change_universe S cco) ()
+      ⟨(colourFamilyMeet S (fun i => exactColour S H cco (E i))).val,
+        colourFamilyMeet_exact S (fun i => exactColour S H cco (E i)) (fun i => (E i).property)⟩ =
+      ⨅ i, ExactCRT.exactBirkhoff S H (semanticCCO_change_universe S cco) () (E i) := by
+  apply SetLike.ext
+  intro p
+  simp only [LowerSet.mem_iInf_iff,ExactCRT.mem_exactBirkhoff]
+  change (∀ ⦃x y⦄, p.val.val x y → ∀ i, (E i).val x y) ↔
+    ∀ i ⦃x y⦄, p.val.val x y → (E i).val x y
+  exact ⟨fun h i _ _ hxy => h hxy i,fun h _ _ hxy i => h i hxy⟩
+
+/-- The selected kernel is P minus the union of the selected minimum
+upsets, including every selected index and no others. -/
+theorem selectedHat_birkhoff (normalized : NoFiniteExactKernel S) (I : Set (Direction S)) :
+    ExactCRT.exactBirkhoff S H (semanticCCO_change_universe S cco) ()
+      ⟨(selectedHat S H cco I).val,selectedHat_exact S H cco I⟩ =
+      ⨅ D : I, (sourceMinima S H cco normalized).core D.val := by
+  have hh := exactFamilyMeet_birkhoff S H cco (fun D : I => hatExact S H cco D.val)
+  simpa only [hat_birkhoff_core S H cco normalized,selectedHat,hat] using hh
+
 /-- Actual exact joint-owner relations obtained through the proved source
 Birkhoff equivalence. The pointwise ancestor formulas remain available by
 applying the literal order isomorphism. -/
@@ -136,6 +158,37 @@ theorem ownerExact_JOG (normalized : NoFiniteExactKernel S)
   rw [e.map_sup,e.map_sup]
   rw [ownerExact_birkhoff,ownerExact_birkhoff,hat_birkhoff_core,hat_birkhoff_core]
   exact (sourceMinima S H cco normalized).owner_sup_owner D E hne
+
+/-- The abstract ancestor owner is the advertised actual intersection of
+ALL pairwise joins against the other maximal cores. -/
+theorem ownerExact_pairwiseMeet (normalized : NoFiniteExactKernel S) (D : Direction S) :
+    exactColour S H cco (ownerExact S H cco normalized D) =
+      colourFamilyMeet S (fun E : {E : Direction S // E ≠ D} =>
+        ColourEq.join S H (hat S H cco D) (hat S H cco E.val)) := by
+  let e := ExactCRT.exactBirkhoff S H (semanticCCO_change_universe S cco) ()
+  let E := fun j : {E : Direction S // E ≠ D} => hatExact S H cco D ⊔ hatExact S H cco j.val
+  let A : ExactL S H cco :=
+    ⟨(colourFamilyMeet S (fun j => exactColour S H cco (E j))).val,
+      colourFamilyMeet_exact S (fun j => exactColour S H cco (E j)) (fun j => (E j).property)⟩
+  have hh : e A = (sourceMinima S H cco normalized).owner D := by
+    rw [exactFamilyMeet_birkhoff S H cco E]
+    apply SetLike.ext
+    intro p
+    simp only [LowerSet.mem_iInf_iff,Ancestors.Minima.owner]
+    change (∀ j, p ∈ e (E j)) ↔ ∀ j, j ≠ D → p ∈ (sourceMinima S H cco normalized).join D j
+    have hj (j : {E : Direction S // E ≠ D}) :
+        e (E j) = (sourceMinima S H cco normalized).join D j.val := by
+      rw [show e (E j) = e (hatExact S H cco D) ⊔ e (hatExact S H cco j.val) from e.map_sup _ _]
+      rw [hat_birkhoff_core,hat_birkhoff_core]
+      rfl
+    simp_rw [hj]
+    exact ⟨fun h j hj => h ⟨j,hj⟩,fun h j => h j.val j.property⟩
+  have he : A = ownerExact S H cco normalized D :=
+    e.injective (hh.trans (ownerExact_birkhoff S H cco normalized D).symm)
+  apply ColourEq.ext
+  intro x y
+  change (ownerExact S H cco normalized D).val x y ↔ A.val x y
+  exact (Iff.of_eq (congrArg (fun z : ExactL S H cco => z.val.r x y) he)).symm
 
 theorem owners_meet_jointOwner (normalized : NoFiniteExactKernel S) :
     colourFamilyMeet S (fun D => exactColour S H cco (ownerExact S H cco normalized D)) =

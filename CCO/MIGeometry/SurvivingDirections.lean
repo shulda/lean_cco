@@ -140,4 +140,41 @@ theorem selected_direction_iff (normalized : NoFiniteExactKernel S)
   · rintro ⟨D,rfl⟩
     exact survivingEq_isDirection S H cco normalized I D.val D.property
 
+/-- Distinct selected original directions remain distinct in the quotient. -/
+theorem survivingEq_injective (normalized : NoFiniteExactKernel S)
+    (I : Set (Direction S)) : Function.Injective (fun D : I => survivingEq S H cco I D.val) := by
+  letI := ColourEq.lattice S H (i := ())
+  intro D E he
+  by_contra hn
+  have hde : D.val ≠ E.val := fun hh => hn (Subtype.ext hh)
+  have hp : ColourEq.join S H D.val.val (selectedHat S H cco I) =
+      ColourEq.join S H E.val.val (selectedHat S H cco I) := by
+    have hh := congrArg (quotientPullback S H (selectedHat S H cco I)) he
+    simpa only [survivingEq,quotientPullback_quotientColourEq] using hh
+  have hED : ColourEq.join S H E.val.val (selectedHat S H cco I) ≤ hat S H cco D.val :=
+    sup_le (direction_le_hat_other S H cco normalized D.val E.val hde)
+      (selectedHat_le S H cco I D.val D.property)
+  have hDhat : D.val.val ≤ hat S H cco D.val :=
+    (show D.val.val ≤ ColourEq.join S H D.val.val (selectedHat S H cco I) from le_sup_left).trans (hp ▸ hED)
+  have hz : D.val.val = ⊥ := by
+    rw [← hat_disjoint S H cco normalized D.val]
+    exact (inf_eq_right.mpr hDhat).symm
+  exact D.val.property.1 (hz ▸ finiteClasses_bot S)
+
+/-- A complete bijection, with no repetition or omitted FULL directions. -/
+noncomputable def selectedDirectionsEquiv (normalized : NoFiniteExactKernel S)
+    (I : Set (Direction S)) :
+    I ≃ Direction (actualQuotientSource S H (selectedHat S H cco I)) :=
+  Equiv.ofBijective (fun D => ⟨survivingEq S H cco I D.val,
+    survivingEq_isDirection S H cco normalized I D.val D.property⟩) ⟨
+      fun _ _ h => survivingEq_injective S H cco normalized I (congrArg Subtype.val h),
+      fun E => by
+        obtain ⟨D,hD⟩ := selected_direction_exhaustive S H cco normalized I E
+        exact ⟨D,Subtype.ext hD.symm⟩⟩
+
+theorem selected_directionCount (normalized : NoFiniteExactKernel S)
+    (I : Set (Direction S)) :
+    directionCount (actualQuotientSource S H (selectedHat S H cco I)) = Nat.card I :=
+  (Nat.card_congr (selectedDirectionsEquiv S H cco normalized I)).symm
+
 end CCO.MIGeometry
