@@ -97,5 +97,34 @@ theorem origin_closures_distinct {i j : PacketIndex E} (hij : i ≠ j) :
   exact hij ((packet_origin tag D E hLocal hD i).symm.trans
     ((Quotient.sound he).trans (packet_origin tag D E hLocal hD j)))
 
+
+theorem origin_mem_closure (x : W) : origin tag D E hLocal hD (packet E x) ∈ E.closureAtSet x := by
+  have hc := (packet_eq E _ _).mp (packet_origin tag D E hLocal hD (packet E x))
+  exact hc ▸ E.mem_closureAtSet (origin tag D E hLocal hD (packet E x))
+
+theorem origin_injective : Function.Injective (origin tag D E hLocal hD) := by
+  intro i j he
+  exact (packet_origin tag D E hLocal hD i).symm.trans
+    ((congrArg (packet E) he).trans (packet_origin tag D E hLocal hD j))
+
+/-- Any recorded cross edge forces a record on the chosen origins of the
+SAME two packets, by exact reflection of their whole closed union. -/
+theorem origin_record_of_record (hFine : FineData D) (x y : W) (a : Atom)
+    (ha : E.rel (.fine a) (![x,y])) (hne : packet E x ≠ packet E y) :
+    ∃ c, originEdge tag D E hLocal hD (packet E x) (packet E y) = some c := by
+  let ox := origin tag D E hLocal hD (packet E x)
+  let oy := origin tag D E hLocal hD (packet E y)
+  let p : pairSet E x y := ⟨ox,Or.inl (origin_mem_closure tag D E hLocal hD x)⟩
+  let q : pairSet E x y := ⟨oy,Or.inr (origin_mem_closure tag D E hLocal hD y)⟩
+  let e := pairEmbedding tag D E hLocal x y a ha
+  have ho : ox ≠ oy := fun he => hne (origin_injective tag D E hLocal hD he)
+  have he : e p ≠ e q := fun h => ho (congrArg Subtype.val (e.injective h))
+  obtain ⟨c,hc⟩ := hFine.complete (e p) (e q) he
+  exact ⟨c,(originEdge_some tag D E hLocal hD hFine _ _ c).mpr
+    ((embedding_fine tag D E (pair_closed E x y) e c p q).mpr hc)⟩
+
+instance finite_packetIndex [Finite W] : Finite (PacketIndex E) :=
+  Finite.of_surjective (packet E) Quotient.mk_surjective
+
 end PacketRecovery
 end CCO.HKNReservoir

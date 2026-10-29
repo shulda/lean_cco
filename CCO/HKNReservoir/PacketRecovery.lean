@@ -78,6 +78,16 @@ theorem embedding_move {P : Set W} (hP : E.IsClosed P)
   rw [embedding_func_image tag D E hP e k x] at h
   exact h
 
+/-- Restricting the unrestricted structure does not alter any recovered
+translation on its closed carrier. Both choices are fixed by exact values. -/
+theorem induced_move (P : Set W) (hP : E.IsClosed P)
+    (hLocalP : LocallyInSource tag (encode D) (E.induce P hP)) (k : K) (x : P) :
+    (move tag D (E.induce P hP) hLocalP k x).val = move tag D E hLocal k x.val := by
+  have hm := move_mem tag D (E.induce P hP) hLocalP k x
+  change (move tag D (E.induce P hP) hLocalP k x).val ∈ E.func (.translate k) (fun _ => x.val) at hm
+  rw [func_value tag D E hLocal] at hm
+  exact hm
+
 variable (hD : RegularData D)
 
 include hD in
@@ -164,6 +174,12 @@ theorem owner_iff (x : W) (b : B) : E.rel (.owner b) (fun _ => x) ↔ owner tag 
   change D.owner (e x₀) = tag e.lang b ↔ E.rel (.owner b) (fun _ => x) at he
   rw [← he]
   exact ((tag e.lang).symm_apply_eq).symm
+
+theorem embedding_owner {P : Set W} (hP : E.IsClosed P)
+    (e : Structure.Embedding (HKNReservoir.action tag) (E.induce P hP) (encode D)) (x : P) :
+    D.owner (e x) = tag e.lang (owner tag D E hLocal x.val) :=
+  (e.map_rel_iff (.owner (owner tag D E hLocal x.val)) (fun _ => x)).mpr
+    ((owner_iff tag D E hLocal x.val _).mpr rfl)
 
 /-- Every output point has exactly ONE actual owner relation. -/
 theorem unique_owner (hLocal : LocallyInSource tag (encode D) E) (x : W) : ∃! b : B, E.rel (.owner b) (fun _ => x) := by

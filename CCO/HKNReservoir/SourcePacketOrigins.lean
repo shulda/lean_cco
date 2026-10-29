@@ -110,6 +110,31 @@ theorem sourceOriginPalette (i j : PacketRecovery.PacketIndex E) (a : S.Atom () 
   exact named_pair_palette S H R B a (f (e p).val).down (f (e q).val).down hox' hoy' hcol
     ((sourceOriginPattern S H R B hB Δ A hA E hLocal).nonthin i j a ha)
 
+/-- The recovered real action has the ACTUAL possibly nonfaithful owner
+translation, using centrality of every allowed owner-language component. -/
+theorem recovered_owner_move (g : ResidualData.PacketGroup S H) (x : Z) :
+    PacketRecovery.owner (sourceTag S H R B Δ) (finiteSourceData S H R B hB A hA) E hLocal
+      (PacketRecovery.move (sourceTag S H R B Δ) (finiteSourceData S H R B hB A hA) E hLocal g x) =
+    SafeReadings.TransversalGauge.moveOwner S H R B hB g
+      (PacketRecovery.owner (sourceTag S H R B Δ) (finiteSourceData S H R B hB A hA) E hLocal x) := by
+  let tag := sourceTag S H R B Δ
+  let D := finiteSourceData S H R B hB A hA
+  let hP : E.IsClosed (E.closureAtSet x) := E.isClosed_closureSet {x}
+  let e := PacketRecovery.closureEmbedding tag D E hLocal x
+  let p : E.closureAtSet x := ⟨x,E.mem_closureAtSet x⟩
+  let pg : E.closureAtSet x := ⟨PacketRecovery.move tag D E hLocal g x,
+    PacketRecovery.move_closed tag D E hLocal hP g p.property⟩
+  have hx := PacketRecovery.embedding_owner tag D E hLocal hP e p
+  have hg := PacketRecovery.embedding_owner tag D E hLocal hP e pg
+  apply (tag e.lang).injective
+  calc
+    _ = D.owner (e pg) := hg.symm
+    _ = D.owner (D.move g (e p)) := congrArg D.owner (PacketRecovery.embedding_move tag D E hLocal hP e g p)
+    _ = SafeReadings.TransversalGauge.moveOwner S H R B hB g (D.owner (e p)) := rfl
+    _ = SafeReadings.TransversalGauge.moveOwner S H R B hB g (tag e.lang (PacketRecovery.owner tag D E hLocal x)) :=
+      congrArg (SafeReadings.TransversalGauge.moveOwner S H R B hB g) hx
+    _ = _ := (SafeReadings.TransversalPure.commute S H R B hB e.lang.val g _).symm
+
 /-- Recover the origin object directly from ACTUAL HKN faithfulness. -/
 def faithfulOriginPattern
     (ψ : Structure.Embedding (sourceAction S H R B Δ) (encode (finiteSourceData S H R B hB A hA)) E)
