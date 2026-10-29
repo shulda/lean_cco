@@ -97,6 +97,7 @@ theorem closed_disjoint_copy (C A L : Finset (NamedCarrier S H R B))
   · exact ((hfix a hac).symm.trans he) ▸ hac
   · exact False.elim (havoid a ha hac l hl he)
 
+omit [Infinite M] in
 /-- Packet-closed finite induced sets are preserved by every named
 automorphism; this uses the full original colour table. -/
 theorem packetClosed_image (A : Finset (NamedCarrier S H R B))
@@ -111,6 +112,7 @@ theorem packetClosed_image (A : Finset (NamedCarrier S H R B))
     ((finitePacket S H).property a.val (f.val.symm y).val (f.val a).val y.val hcol.symm).mpr hxy
   exact Finset.mem_image.mpr ⟨f.val.symm y,hA a ha (f.val.symm y) hF,Equiv.apply_symm_apply _ _⟩
 
+omit [Infinite M] in
 theorem packetClosed_union (A L : Finset (NamedCarrier S H R B))
     (hA : PacketClosed S H R B A) (hL : PacketClosed S H R B L) :
     PacketClosed S H R B (A ∪ L) := by

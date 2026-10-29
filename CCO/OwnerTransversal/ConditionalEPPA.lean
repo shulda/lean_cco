@@ -1,4 +1,5 @@
 import CCO.OwnerTransversal.TypedLifting
+import CCO.OwnerTransversal.ClosedWalk
 import CCO.Owners.Product.SparseDescent
 import CCO.Owners.Provider.FiniteBase
 import CCO.Owners.Provider.ExactLift
@@ -91,6 +92,18 @@ theorem conditional_eppa_transfer [Countable M]
     exact (congrArg Subtype.val hp).symm.trans hh.symm
   obtain ⟨beta,hbeta,_⟩ := hext p gamma compatible
   exact ⟨beta,hbeta⟩
+
+/-- The reachable-word source form discharges exactness internally.
+Only the two explicitly separate EPPA assumptions remain. -/
+theorem conditional_eppa_transfer_of_word [Countable M]
+    (cco : SemanticCCO.{0,v,0,w} S) (word : RawWord S () ())
+    (hword : RawWord.relation S word = E.val.r)
+    (quotientEPPA : letI := originalQuotientAction S H E
+      OrdinaryEPPA G (Quotient E.val))
+    (typedEPPA : ∀ B : Set (Quotient E.val), B.Finite → GammaEPPA S H E B) :
+    OrdinaryEPPA G M :=
+  conditional_eppa_transfer S H E cco (exact_of_represented_word S E word hword)
+    quotientEPPA typedEPPA
 
 end
 end CCO.OwnerTransversal

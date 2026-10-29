@@ -31,6 +31,7 @@ variable {P : OriginPattern S H R V} (f : OriginMap S H R B P)
 def neighbours (x : V) : Finset (NamedCarrier S H R B) :=
   (Finset.univ.filter (fun y => P.edge x y ≠ none)).image f.point
 
+omit [DecidableEq V] in
 theorem outside_neighbour_closure (x : V) :
     f.point x ∉ namedPacketClosure S H R B (f.neighbours x) := by
   rintro ⟨a,ha,hax⟩
@@ -114,6 +115,7 @@ def collisionPairs : Finset (V × V) := by
 def PacketSeparated : Prop :=
   ∀ x y, x ≠ y → ¬ finitePacket S H (f.point x).val (f.point y).val
 
+omit [Infinite M] in
 /-- Ordered colliding formal packet pairs strictly decrease after one
 off-anchor repair.  Recorded absence imposes no extra condition. -/
 theorem repair_decreases (x z : V) (hxz : x ≠ z)
@@ -157,7 +159,7 @@ theorem separate (f : OriginMap S H R B P) (A : Finset V)
   by_cases hgood : f.PacketSeparated
   · exact ⟨f,fun _ _ => rfl,hgood⟩
   · have hbad : ∃ x y, x ≠ y ∧ finitePacket S H (f.point x).val (f.point y).val := by
-      simp only [PacketSeparated,not_forall,not_imp,not_not] at hgood
+      simp only [PacketSeparated,not_forall,not_not] at hgood
       obtain ⟨x,y,hne,hF⟩ := hgood
       exact ⟨x,y,hne,hF⟩
     obtain ⟨x,z,hxA,hxz,hF⟩ : ∃ x z, x ∉ A ∧ x ≠ z ∧
