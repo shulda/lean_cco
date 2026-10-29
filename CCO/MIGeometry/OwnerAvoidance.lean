@@ -1,6 +1,7 @@
 import CCO.AclOwners.HarmlessFullAut
 import CCO.AclOwners.Avoidance
 import CCO.AclOwners.ClosedAmalgamation
+import CCO.MIGeometry.ActionClosure
 
 /-! One simultaneous avoidance move fixing every named owner. Harmlessness
 is stated for the full source automorphism group and transported only on
@@ -119,5 +120,50 @@ theorem harmless_owner_map_avoidance (K : ColourEq S ()) (harmless : FullHarmles
   have ho := (kernel _ _).mp he
   rw [equiv,hr] at ho
   exact ho
+
+/-- C17: place both extensions over the original closed base, preserving
+all actual owner labels and making their literal intersections the base.
+The recipient helper need not be closed for this placement lemma. -/
+theorem harmless_owner_map_two_placements (K : ColourEq S ()) (harmless : FullHarmless S K)
+    {O : Type q} [MulAction G O] (owner : M → O)
+    (surj : Function.Surjective owner)
+    (equiv : ∀ (g : G) x, owner (g • x) = g • owner x)
+    (kernel : ∀ x y, K x y ↔ owner x = owner y)
+    {I : Type z} [Finite I] (q : I → O)
+    [DecidableEq M] (A D L R : Finset M) (closed : Closed G A) :
+    ∃ l r : G, (∀ a ∈ A, l • a = a) ∧ (∀ a ∈ A, r • a = a) ∧
+      (∀ i, l • q i = q i) ∧ (∀ i, r • q i = q i) ∧
+      (∀ x ∈ L, x ∉ A → l • x ∉ D) ∧
+      (∀ y ∈ R, y ∉ A → r • y ∉ D) ∧
+      (∀ x ∈ L, ∀ y ∈ R, l • x = r • y ↔ x = y ∧ x ∈ A) := by
+  classical
+  obtain ⟨l,hl,hlq,havoidL⟩ := harmless_owner_map_avoidance S H K harmless owner surj equiv kernel
+    q A L (D \ A) closed
+  obtain ⟨r,hr,hrq,havoidR⟩ := harmless_owner_map_avoidance S H K harmless owner surj equiv kernel
+    q A R ((D \ A) ∪ (L.image (fun x => l • x) \ A)) closed
+  have offL (x : M) (hx : x ∈ L) (hxA : x ∉ A) : l • x ∉ D := by
+    intro hD
+    have hA : l • x ∉ A := fun h => hxA ((smul_mem_iff_of_fixes l A hl x).mp h)
+    exact havoidL x hx hxA (l • x) (Finset.mem_sdiff.mpr ⟨hD,hA⟩) rfl
+  have offR (y : M) (hy : y ∈ R) (hyA : y ∉ A) : r • y ∉ D := by
+    intro hD
+    have hA : r • y ∉ A := fun h => hyA ((smul_mem_iff_of_fixes r A hr y).mp h)
+    exact havoidR y hy hyA (r • y)
+      (Finset.mem_union_left _ (Finset.mem_sdiff.mpr ⟨hD,hA⟩)) rfl
+  refine ⟨l,r,hl,hr,hlq,hrq,offL,offR,?_⟩
+  intro x hx y hy
+  constructor
+  · intro he
+    have hyA : y ∈ A := by
+      by_contra hn
+      have hyA' : r • y ∉ A := fun h => hn ((smul_mem_iff_of_fixes r A hr y).mp h)
+      apply havoidR y hy hn (r • y) (Finset.mem_union_right _ (Finset.mem_sdiff.mpr
+        ⟨Finset.mem_image.mpr ⟨x,hx,he⟩,hyA'⟩))
+      rfl
+    have hxA : x ∈ A := (smul_mem_iff_of_fixes l A hl x).mp (by rw [he,hr y hyA]; exact hyA)
+    rw [hl x hxA,hr y hyA] at he
+    exact ⟨he,hxA⟩
+  · rintro ⟨he,hxA⟩
+    rw [hl x hxA,hr y (he ▸ hxA),he]
 
 end CCO.MIGeometry
