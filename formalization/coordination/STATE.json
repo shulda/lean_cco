@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 169,
+  "revision": 170,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -1110,6 +1110,8 @@
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b022_acl",
+        "/root/b022_acl/harmless",
+        "/root/b022_acl/quotient_closure",
         "root"
       ],
       "original_author_project_ids": [
@@ -4381,6 +4383,21 @@
         "author_actor_ids": [
           "root",
           "/root/b029_finite"
+        ],
+        "actor_id": "root"
+      }
+    },
+    {
+      "revision": 170,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "record_authorship",
+      "package_id": "B022",
+      "details": {
+        "package_id": "B022",
+        "author_actor_ids": [
+          "/root/b022_acl/quotient_closure",
+          "/root/b022_acl/harmless"
         ],
         "actor_id": "root"
       }
