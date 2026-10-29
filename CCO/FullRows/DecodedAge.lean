@@ -35,6 +35,12 @@ def decodedColour (x y : Vertex I K) : FullColour S := by
     switchColour S (finitePacket S H) (x.2*y.2)
       (some (originAtom S H R B hB Δ hΔ A hA E hLocal c ⟨x.1,y.1,h⟩).val)
 
+theorem decodedColour_internal (x y : Vertex I K) (hxy : x.1 = y.1) :
+    decodedColour S H R B hB Δ hΔ A hA E hLocal c x y =
+      switchColour S (finitePacket S H) (x.2*y.2) none := by
+  classical
+  exact dif_pos hxy
+
 def decodedOriginHom : DiagramHom D :=
   (decodedOrigins_strongCompletion S H R B hB Δ hΔ A hA E hLocal c).choose
 
