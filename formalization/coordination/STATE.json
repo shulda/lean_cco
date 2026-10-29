@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 207,
+  "revision": 208,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -1331,6 +1331,7 @@
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b025_transversal",
+        "/root/b025_transversal/ancillary_homogeneity",
         "root"
       ],
       "original_author_project_ids": [
@@ -5327,6 +5328,20 @@
           "/root/b023_mi/positive_returns",
           "/root/b023_mi/finite_gates",
           "/root/b023_mi/moving_readings"
+        ],
+        "actor_id": "root"
+      }
+    },
+    {
+      "revision": 208,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "record_authorship",
+      "package_id": "B031",
+      "details": {
+        "package_id": "B031",
+        "author_actor_ids": [
+          "/root/b025_transversal/ancillary_homogeneity"
         ],
         "actor_id": "root"
       }
