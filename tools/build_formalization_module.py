@@ -79,6 +79,8 @@ def validate(root, module, declarations):
     for item in imports:
         label = item['source_label']
         auxiliary_import = label not in catalogue_labels
+        if auxiliary_import and not item.get('provider_module'):
+            raise ValueError(f'Unknown imported source without pinned auxiliary provider: {label}')
         if auxiliary_import and item.get('provider_module'):
             provider = json.loads((root / 'formalization' / item['provider_module'] / 'module.json').read_text())
             matching = [x for x in provider['exports'] + provider.get('auxiliary_exports', [])

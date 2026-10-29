@@ -50,7 +50,9 @@ literal source label/anchor and explicit nonempty unique support claims; and
 uses that verified source location for the generated link. Missing,
 ambiguous, mismatched or fabricated imports are rejected. Existing numbered
 declaration checks are retained. No other private helper features or external
-provider interfaces are copied. Four regressions bring87 tests to91.
+provider interfaces are copied. Five regressions bring87 tests to92. An order-sensitive duplicate-import
+regression also verifies that earlier resolution cannot authorize a later
+providerless import of the same auxiliary label.
 
 Both module/source/index checks and the MI, owner-transversal and existing
 ACL companion finite controls pass. These diagnostics certify no infinite

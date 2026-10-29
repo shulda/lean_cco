@@ -2,7 +2,7 @@
   "mathematical_source": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "base_main": "3c49b18fddb528ea0da2a8cf2cbba5be5f16b9ad",
   "auxiliary_import_capability": "IMPLEMENTED_AND_TESTED; numbered imports unchanged",
-  "python_tests": 91,
+  "python_tests": 92,
   "module_checks": {
     "mi_geometry": "PASS12definitions31claims7exports4aux4tasks",
     "owner_transversal": "PASS15definitions47claims12exports3aux6tasks"
@@ -10,5 +10,6 @@
   "generated_README": "both byte exact",
   "public_old_registry_rows_preserved": 23,
   "no_Lean_or_existing_TeX_or_toolchain_changes": true,
-  "finite_controls": "PASS: receiving runs of MI, owner-transversal and accepted ACL companion controls; finite diagnostics only"
+  "finite_controls": "PASS: receiving runs of MI, owner-transversal and accepted ACL companion controls; finite diagnostics only",
+  "review_repair": "Every auxiliary import independently requires its named provider; earlier synthetic label registration cannot authorize a providerless later import. Both orderings covered."
 }

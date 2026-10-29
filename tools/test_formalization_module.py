@@ -40,6 +40,18 @@ class ModuleTests(unittest.TestCase):
             next(i for i in bad['imports'] if i['id'] == 'I18')['provider_claims'] = support
             with self.subTest(support=support), self.assertRaisesRegex(ValueError, 'support claims'):
                 module.validate(module.ROOT, bad, declarations)
+
+    def test_auxiliary_provider_binding_cannot_be_inherited_from_an_earlier_import(self):
+        config, declarations = self._mi_import_fixture()
+        unbound = deepcopy(next(i for i in config['imports'] if i['id'] == 'I18'))
+        unbound.update(id='I19', provider_module=None)
+        unbound.pop('provider_claims')
+        for before in [False, True]:
+            bad = deepcopy(config)
+            bad['imports'].insert(0 if before else len(bad['imports']), deepcopy(unbound))
+            with self.subTest(unbound_before_valid=before), self.assertRaisesRegex(
+                    ValueError, 'Unknown imported source without pinned auxiliary provider'):
+                module.validate(module.ROOT, bad, declarations)
         for key, value in [('source_label', 'eq:missing'), ('provider_module', None)]:
             bad = deepcopy(config)
             next(i for i in bad['imports'] if i['id'] == 'I18')[key] = value
