@@ -99,6 +99,22 @@ theorem translation_preserves_colour (e : Translation S F G) (x y : M) :
     col S (e.val x) (e.val y) = col S x y := by
   rw [two_endpoint_transport S F H hthin,translation_square S F H hthin,switchColour_one]
 
+/-- The group operation on the literal old F-atoms IS their represented
+relational product, rather than an unrelated group on the same finite set. -/
+theorem thin_atoms_multiply (e f : Translation S F G) :
+    prod S {translationColour S F (G := G) e} {translationColour S F (G := G) f} =
+      {translationColour S F (G := G) (e*f)} := by
+  let x := Classical.choice (S.nonemptySort ())
+  have hfe : f.val (e.val x) = (e*f).val x :=
+    congrArg (fun p : Translation S F G => p.val x) (translation_comm S F H hthin f e)
+  have hm : translationColour S F (G := G) (e*f) ∈
+      prod S {translationColour S F (G := G) e} {translationColour S F (G := G) f} :=
+    ⟨x,e.val x,f.val (e.val x),translationColour_at S F H e x,
+      translationColour_at S F H f (e.val x),
+      (congrArg (col S x) hfe).trans (translationColour_at S F H (e*f) x)⟩
+  rw [thin_atom_product S F H hthin] at hm ⊢
+  exact congrArg Set.singleton (Set.mem_singleton_iff.mp hm).symm
+
 /-- This is the accepted FULL orbital automorphism type, on the original M. -/
 def translationAut (e : Translation S F G) : CCO.Owners.Product.OrbitalAut G M id := by
   refine ⟨e.val,(CCO.Owners.Product.mem_orbitalAut_iff e.val).mpr ?_⟩
