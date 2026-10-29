@@ -1,0 +1,243 @@
+\begin{lemma}[Full-support safety under a harmless exact split]
+\label{lem:acf-quotient-safety}
+Suppose exact $C,K$ satisfy $C\cap K=\Id$ and put
+$J=C\vee K$, $Y=M/C$, $X=M/K$, $T=M/J$.
+Suppose naming finite actual $T$-owner sets does not enlarge
+\emph{real algebraic closure in $Y$}.  If the original palette
+$S$ strongly amalgamates finite real-acl-closed spans, then
+\[
+ S_Y=\{q\in\mathcal D(Y):
+       \text{every original fine lift of }q\text{ lies in }S\}
+\]
+strongly amalgamates finite real-acl-closed spans in $Y$,
+with every distinct projected unsafe original pair remaining unsafe.
+\emph{No harmlessness assumption in the opposite factor $X$ is
+required for this conclusion.} Symmetrically, harmlessness only in
+$X$ suffices for $S_X$. In particular if both owner cuts are
+harmless, both full-support palettes are strongly safe.
+\end{lemma}
+\begin{proof}
+We give the \(Y\)-argument, without assuming
+owner harmlessness in the complementary
+\(X\)-factor. Start with an arbitrary
+span \(A\to L,R\) of FINITE ABSOLUTELY
+acl-closed induced structures in \(Y\),
+and realise its common base \(A\)
+literally in the homogeneous \(Y\).
+Choose a finite NONEMPTY absolutely
+\(\operatorname{acl}_T\)-closed owner set
+\(B\subseteq T\) containing the \(T\)-owner
+images of \(L\) and \(R\).
+For example, take the algebraic closure
+of those finitely many owner images
+and, if both factors are EMPTY, add
+one arbitrarily chosen actual $T$-owner
+before closing. Such a point exists
+because the original source and every
+actual quotient sort are NONEMPTY.
+This set is finite by oligomorphy.
+The extra arbitrary owner in the
+empty-span case is only a finite
+COMMON helper parameter, not an
+added vertex of the original span.
+
+In \(X\) construct an actual finite
+ABSOLUTELY acl-closed
+\(P\subseteq X\) projecting onto
+EXACTLY \(B\), whose COMPLETE atomic
+pair table contains every realised
+\(X\)-orbital over EACH ORDERED pair
+of actual owners \(t,t'\in B\).
+There are only finitely many named
+\(X\)-orbitals and finitely many
+ordered pairs of owners. For each
+incidence \(b\) realised over
+\((t,t')\), choose finite actual
+witnesses \(p_b,p_b'\); in particular
+include an \(X\)-diagonal witness
+for each \(t=t'\) and at least one
+point over every \(t\in B\).
+Let \(P\) be the real algebraic
+closure in \(X\) of their union.
+It remains finite by oligomorphy.
+Its owner image is precisely \(B\):
+the witnesses already project
+onto every \(t\in B\), and
+\cref{lem:acf-acl-projects-exact}
+applied to the ACTUAL exact
+quotient \(X\to T\) says that
+the owner of ANY newly algebraic
+\(X\)-point lies in
+\(\operatorname{acl}_T(B)=B\).
+No owner harmlessness in \(X\)
+or global section of
+\(\Aut(T)\) into \(\Aut(X)\)
+was used.
+
+Next construct the COMMON \(Y\)-helper.
+Choose finitely many actual \(Y\)-points
+over all owners in \(B\), adjoin them
+to \(A\), and take their absolute
+real algebraic closure \(D\).
+Its owner projection is again
+precisely \(B\), by
+\cref{lem:acf-acl-projects-exact}
+for \(Y\to T\) and because
+the chosen starting set already
+represents every owner in \(B\).
+It is finite, absolutely
+acl-closed and contains \(A\).
+Apply the direct finite
+owner-anchored avoidance
+\cref{lem:acf-harmless-owner-avoidance}
+to the two extensions
+$A\subseteq L,R$,
+first avoiding $D\setminus A$
+for L, then avoiding
+$(D\setminus A)\cup
+(L\setminus A)$ for R,
+all inside the ACTUAL
+homogeneous Y.
+This uses precisely
+harmlessness of the
+finite named owner set B
+and original absolute
+acl-closure of A.
+It gives copies with
+their literal original
+owner labels preserved
+and with intersections
+$L\cap D=R\cap D=L\cap R=A$.
+The two factors have
+not yet been assumed
+to be closed over
+the newly chosen helper
+D; their absolute
+closures are taken next.
+
+Take absolute real acl after
+adjoining \(D\) to each such
+factor, obtaining acl-closed
+extensions \(\widehat L,\widehat R\)
+of \(D\), containing the copies
+of \(L,R\) respectively. Apply
+the ordinary closed strong
+amalgamation obtained by
+finite-coset avoidance over
+the ABSOLUTELY closed common
+base \(D\): replace one entire
+\(\widehat R\) by an isomorphic
+copy over \(D\), disjoint from
+\(\widehat L\) outside \(D\).
+Because \(D\) contains a real
+point representing EVERY owner
+of \(B\), an automorphism
+fixing \(D\) fixes \(B\)
+pointwise; the copy retains
+all original owner labels.
+The original \(L,R\) factors
+therefore have intersection
+EXACTLY \(A\), and the two
+larger closed factors have
+intersection EXACTLY \(D\).
+Every one of \(D,\widehat L,
+\widehat R\) is a finite
+absolute acl-closed structure
+projecting onto precisely \(B\).
+This is the needed owner-complete
+padding; no independent quotient
+representatives will be chosen
+after the subsequent \(S\)-amalgamation.
+
+The rectangular structures
+\(D\times_B P\), \(\widehat L\times_B P\)
+and \(\widehat R\times_B P\)
+are finite ACTUAL induced substructures
+of \(M\), by the full exact CRT.
+They are absolutely acl-closed by
+\cref{lem:acf-finite-exact-closed-preimages,%
+lem:acf-rectangle-acl}:
+each of \(D,\widehat L,\widehat R\)
+is ABSOLUTELY acl-closed in \(Y\)
+and \(P\) is ABSOLUTELY acl-closed
+in \(X\); the actual complementary
+exact kernels have MEET equality.
+All factors project ONTO the same
+finite owner set \(B\), so their
+full CRT rectangles are genuinely
+defined. The fact that \(B\) is
+itself acl-closed was needed
+EARLIER to keep the algebraic
+closures of the selected helper
+points over precisely B; it is
+NOT required by rectangle-closure
+once the two coordinate factors
+are already absolutely closed.
+This closure argument uses
+\emph{joint finite exact-sort lifts},
+not an unproved global section
+on automorphism groups or an
+unverified coordinatewise acl formula.
+Strongly $S$-amalgamate the latter two over the former.
+We verify that the opposite $X$-coordinates remain
+\emph{fixed across the two factor embeddings}, rather than
+assuming independent quotient representatives can be matched
+after amalgamation.  For each $t\in B$ choose
+$d_t\in D$ of owner $t$ (the helper $D$ meets every owner).
+For every $p\in P$ of owner $t$, the base rectangle contains
+$(d_t,p)$.  In the left rectangle each $(\ell,p)$ of the
+same owner is $K$-equivalent to $(d_t,p)$; the same is true
+of $(r,p)$ in the right rectangle.  These $K$-relations
+are preserved by the two embeddings into the strong
+amalgam.  Thus the two sides use the \emph{same actual
+$X$-class} indexed by $p$, witnessed by their common
+base point $(d_t,p)$.  Every cross pair
+$(\ell,p),(r,p')$ consequently has the $X$-pair type
+of the original $p,p'\in P$; the amalgam cannot
+silently alter or independently reidentify this
+opposite-coordinate type.
+
+Their projected $Y$ copies form a strong amalgam:
+if off-base quotient points from opposite factors
+coincided, pairing each with the same $P$-point would
+identify two distinct original real points, contrary to
+strongness; $C\cap K=\Id$ ensures that equal coordinate
+pairs are equal real points.
+
+Fix an arbitrary NEW cross \(Y\)-edge
+\(yy'\) of the projected strong amalgam
+and let \(q=\col_Y(y,y')\).
+The two endpoints have actual \(T\)-owners
+\(t,t'\in B\), even when \(t=t'\).
+The complete complementary-owner-pair
+spectrum lemma
+\cref{lem:acf-complementary-spectrum}
+says that varying \((p,p')\in P^2\)
+with those EXACT owners realizes
+EVERY old fine atomic colour \(a\)
+over \(q\) among the old pairs
+\[
+                    (y,p),(y',p')
+\]
+in the FULL old rectangular factors.
+Their two points lie outside the
+common old rectangle on OPPOSITE
+sides, so the strong \(S\)-amalgamation
+assigns \(a\in S\) to each such
+realized pair. Consequently ALL
+fine lifts of \(q\) lie in \(S\),
+hence \(q\in S_Y\).
+This is the full-matrix condition,
+not a weaker assertion that some
+representatives give one safe
+old colour. Restricting the
+projected amalgam to the original
+\(Y\)-factor images gives the
+required strong \(S_Y\)-amalgam.  If a distinct projected unsafe
+original pair had an $S_Y$ colour, every fine lift, including
+its actual fine colour, would lie in $S$, contradiction.
+The corresponding argument with $X$ as the recipient is obtained
+by exchanging $C,K$, and only then requires owner harmlessness
+in $X$.
+\end{proof}
+

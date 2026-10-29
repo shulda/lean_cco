@@ -1,0 +1,333 @@
+\section{The residual full-owner primitive transversal, directly}
+\label{sec:primitive-transversal}
+\label{sec:consolidated-owner}
+
+We work after removal of nonidentity finite-class exact kernels,
+with a minimal infinite exact $E$ satisfying the \emph{residual}
+condition $R_E=F=\Sigma(\Id)$.  The finite regular thin
+translation group is $G\cong C_2^d$, and $H=E\cap F$ is its
+subgroup preserving an actual $E$-owner.  Let
+$B\subseteq M/E$ be a nonempty finite $G$-invariant induced
+owner substructure.  Put $N_B=\pi_E^{-1}(B)$, with all these
+actual owners named, and $\Gamma=\Aut(B)$ in its actual
+quotient orbital language.  No root frame or selected section
+is assumed.
+
+\begin{theorem}[Residual real closure over named owners]
+\label{thm:relative-real-closure}
+For every finite $A\subseteq N_B$ one has
+\begin{equation}\label{eq:full-owner-acl}
+ \operatorname{acl}_{N_B}(A)=
+ \operatorname{acl}^{\rm eq}_{M}(A\cup B)\cap N_B=F[A].
+\end{equation}
+Moreover $F[A]$ is definable in $N_B$ from $A$ via the
+literal named thin neighbour translations.
+\end{theorem}
+\begin{proof}
+Since $R_E=F$, $E$ is the \emph{unique} minimal
+infinite invariant equivalence: for a distinct minimal
+$E'$, the exact correspondence calculation gives
+$E'\subseteq R_E=F$, impossible for infinite $E'$.
+There is now a SHORT second source route
+to the crucial real closure equality:
+\cref{cor:rh-acl-bounded-character}
+proves, from the original canonical real
+hull and full invariant lattice, that
+when the number of minimal infinite
+directions is ONE, real algebraic
+closure has character one and
+$\operatorname{acl}_M(\{a\})=F[a]$.
+Consequently
+$\operatorname{acl}_M(A)=F[A]$
+for every finite real $A$, including
+the empty-base convention in this
+infinite transitive source.
+The earlier direct real-hull argument
+\cref{lem:consolidated-unary-closure}
+is an independent older route, not a
+further assumption needed here.  By the harmless-owner
+criterion, Lemma~\ref{lem:acf-harmless-owners}, naming
+any finite set of $E$-classes leaves this real closure
+unchanged.  Every $t_g$ is a named 0-definable functional
+thin edge, so $F[A]$ is definable over $A$ and stays in
+$N_B$ by the $G$-invariance of $B$.
+
+To compute real algebraic closure in the owner-named
+structure, no joint lifting or homogeneity of $N_B$
+is needed. Let
+$G_{A,B}=\Aut(M/A,B)$, with $B$ treated as the
+ACTUAL finite tuple/set of named original exact
+$E$-quotient imaginary classes. Every element
+of $G_{A,B}$ preserves the union $N_B$, all
+literal original fine colours, every named
+owner predicate and every $t_g$. Hence restriction
+gives a subgroup of $\Aut(N_B/A)$.
+For $x\in N_B\setminus F[A]$,
+the equality $\operatorname{acl}_M(A)=F[A]$
+and the harmless-owner lemma show that
+$x\notin\operatorname{acl}^{\rm eq}_M(A\cup B)$.
+Its $G_{A,B}$-orbit is therefore INFINITE,
+lies entirely in $N_B$, and is contained
+in its $\Aut(N_B/A)$-orbit. Thus
+$x\notin\operatorname{acl}_{N_B}(A)$.
+Conversely each point of $F[A]$ is a value
+of one of the finite named total thin
+translations $t_g$ on some $a\in A$,
+hence is definable over $A$ in $N_B$.
+This proves both displayed algebraic-closure
+equalities, including $A=\varnothing$.
+
+SEPARATELY, the owner-named union $N_B$
+is homogeneous, but this requires one
+MIXED-ORBIT check before joint lifting.
+For an original fine atom $a$ and the
+same-sort invariant exact owner kernel
+$E$, original symmetry makes all
+invariant represented relations commute,
+so
+\[
+              \Id;a;E=a;E=E;a;E .
+\]
+By \cref{lem:nested-mixed}, the mixed
+ACTUAL $\Aut(M)$-orbital of one REAL
+point $x$ and an $E$-owner class $C$
+therefore depends ONLY on the quotient
+pair orbital of $([x]_E,C)$, not on
+which representative $x$ was chosen
+inside its owner class. Thus every
+finite owner-preserving fine-colour
+partial isomorphism of $N_B$,
+extended by the identity on ALL
+the finite named $E$-classes $B$,
+really is a finite partial
+isomorphism of the joint
+original REAL/EXACT E-sort language.
+Joint lifting
+\cref{thm:typed-joint-exact-lifting}
+now supplies one ambient
+automorphism fixing $B$.
+The resulting automorphism preserves
+$N_B$, and its restriction extends the
+original finite owner-named map.
+This extra homogeneity statement is used
+in subsequent owner-frame constructions,
+but is NOT a prerequisite for the preceding
+stabiliser-orbit algebraicity argument.
+No group-theoretic section has been assumed.
+\end{proof}
+
+\begin{lemma}[Finite avoidance over a full-packet closed owner base]
+\label{lem:relative-finite-avoidance}
+Let $C\subseteq A\subseteq N_B$ be finite full-$F$-closed
+induced structures, and let $Z\subseteq N_B\setminus C$ be finite.
+There exists an owner-preserving $g\in\Aut(N_B/C)$ with
+\[
+                   g(A\setminus C)\cap Z=\varnothing.
+\]
+\end{lemma}
+\begin{proof}
+Take the point action of $K=\Aut(N_B/C)$ on $N_B$.
+Every $a\in A\setminus C$ has an infinite $K$-orbit,
+since $C=F[C]=\operatorname{acl}_{N_B}(C)$ by
+\cref{thm:relative-real-closure}.  Apply
+\cref{lem:finite-action-avoidance} to the finite moving
+set $A\setminus C$ and the finite forbidden set $Z$.
+The resulting $g\in K$ fixes $C$ and moves the ENTIRE
+finite off-base set simultaneously as required.
+\end{proof}
+
+\begin{corollary}[Strong amalgamation of full packets]
+\label{cor:relative-closed-sap}
+The finite induced owner-typed structures in $N_B$ that
+are closed under $F$ strongly amalgamate over their
+full-$F$-packet closed common bases, with output again
+full-packet closed.
+\end{corollary}
+\begin{proof}
+For a finite full-$F$-closed base $A$, every point of
+an extension outside $A$ has infinite orbit under the
+automorphisms fixing $A$ and all named owners, by the
+preceding theorem.  Apply the finite-coset avoidance
+lemma to move all finitely many off-base points of one
+factor away from those of the other, simultaneously.
+Take the induced union and then its finite $F$-closure;
+this closure does not identify any distinct old points or
+leave $N_B$, since $F$ is a named finite packet relation.
+The two old factor images intersect exactly in $A$.
+\end{proof}
+
+\begin{theorem}[The all-owner primitive transversal]
+\label{thm:joint-transversal}
+\label{lem:full-owner-transversal}
+Let $\mathcal U_B$ comprise finite owner-typed diagrams
+realised in $N_B$ on vertices from pairwise distinct
+full $F$-packets.  Its pair palettes are
+\[
+          P_{st}=L_{st}\setminus F\qquad(s,t\in B),
+\]
+with only diversity colours between distinct formal points,
+even for repeated owner names.  Then $\mathcal U_B$ is
+triangle-defined, has JEP and SAP, and satisfies semantic
+homomorphic CCO with injective packet-separated completions.
+Every individual owner sort is primitive.  The Fra\"isse
+limit $U_B$ recovers $N_B$ under full $G$-packet inflation:
+\begin{equation}\label{eq:full-owner-inflation}
+ \operatorname{own}(x,g)=g\operatorname{own}(x),\qquad
+ \col((x,g),(y,h))=(g+h)\col(x,y)\quad(x\ne y).
+\end{equation}
+The group $\Gamma=\Aut(B)$ permutes only the owner tags
+and fixes the literal raw fine-colour names.
+\end{theorem}
+\begin{proof}
+Any partial transversal diagram whose specified cycles
+have typed realisations has a raw homomorphic completion
+by semantic CCO of $M$.  Each typed edge is compatible
+with its prescribed actual quotient-owner pair orbital.
+Anchored relative completion,
+Theorem~\ref{thm:anchored-relative}, restores all prescribed
+$E$-owners.  The resulting homomorphism may identify
+unjoined formal vertices or place them in one $F$-packet.
+Resolve collisions one point at a time: if $x$ has a
+specified neighbour set $C$ (images of those neighbours),
+all its displayed edge colours lie outside $F$, so the
+image of $x$ is not in $F[C]$.  By~\eqref{eq:full-owner-acl}
+its owner-preserving orbit over $C$ is infinite and hence
+meets infinitely many $F$-packets.  Move only the image
+of $x$ into a packet disjoint from the finitely many
+currently used packets, preserving all specified incident
+colours and the actual owner label.  A complete protected
+base is fixed by moving only the colliding off-base point.
+After finitely many steps the map is packetwise injective.
+
+Every finite complete triangle-legal typed diagram admits
+a raw embedding by triangle fullness of $M$, and the
+anchored theorem then puts it over the prescribed owners.
+The same packet separation makes it a member of
+$\mathcal U_B$, proving triangle-definedness.  To strongly
+amalgamate transversal diagrams, inflate both to their
+entire full $G$-packets, apply the preceding closed-SAP
+corollary and select one representative of every packet.
+The same works over the empty base, proving JEP.
+The usual Fra\"isse theorem gives the homogeneous $U_B$.
+
+We check primitivity of each named owner sort.  Suppose
+$D\subsetneq P_{ss}=E\setminus H$ is the nonempty
+diversity support of a nontrivial invariant equivalence
+on owner sort $s$.  Then $D*D\subseteq D$ in the strong
+SAP algebra of distinct transversal vertices.
+For $g\in H$, if $D\cap gD\ne\varnothing$, choose
+$a,ga\in D$.  Given any $b\in D$, choose
+$c\in a*b$; SAP makes this nonempty, and $c\in D$.
+Translate the first endpoint of the triangle to obtain
+$(ga,b,gc)$; hence $gc\in D$.  Translate instead its
+third endpoint to obtain $(a,gb,gc)$; hence $gb\in D$.
+Therefore $gD\subseteq D$, and involutivity gives equality.
+Thus $H_D=\{g\in H:gD=D\}$ is a subgroup.
+Every product of two $D$-atoms outside $H$ lies in $D$;
+if it produces a thin $t_g$ then $D\cap gD\ne\varnothing$,
+so $g\in H_D$.  The raw relation
+\[
+               \Id\cup\{t_g:g\in H_D\}\cup D
+\]
+is consequently an invariant equivalence contained in $E$.
+Here the invariance concerns the ORIGINAL
+\(\Aut(M)\) action, not only the named-owner
+sort action: \(D\) is a union of LITERAL old
+fine atomic orbitals and each \(t_g\) is an old
+globally named thin orbital. Thus this RAW
+relation is a uniform old-colour union on all
+of \(M\), with NO chosen owner section.
+It is also globally an EQUIVALENCE:
+any pair of consecutive related edges
+lies inside one actual \(E\)-class.
+Transitivity of \(M\) moves that class
+to the chosen owner \(s\), where the
+preceding thin/nonthin product check
+established closure under composition.
+All these checks are in the original
+old fine-colour language; they do not
+postulate a new named local relation.
+
+It has INFINITE classes already by
+the SAP of the OWN transversal,
+without another appeal to the
+canonical real-hull theorem.
+Indeed choose a genuinely realised
+\(D\)-edge \(xy\) on the single named
+owner sort \(s\). For every
+integer \(n\ge1\), strongly
+amalgamate \(n\) copies of this
+COMPLETE two-point transversal
+diagram over the SAME singleton
+\(x\). SAP preserves every
+\(D\)-edge from \(x\) and gives
+\(n\) pairwise DISTINCT
+\(D\)-neighbours \(y_1,\ldots,y_n\),
+lying in distinct full \(F\)-packets.
+The resulting finite diagram
+is in the already established
+age \(\mathcal U_B\); by the
+DEFINITION of that age it has
+an ACTUAL realisation in \(N_B\),
+and therefore in original \(M\).
+All these \(D\)-neighbours lie
+in ONE class of the displayed
+original global equivalence,
+because each original \(D\)-edge
+belongs to its named diversity
+support. Thus for every \(n\)
+some original global class has
+at least \(n+1\) points.
+Original transitivity of \(M\)
+makes all classes of an
+\(\Aut(M)\)-invariant equivalence
+equipotent, so EVERY such class
+is infinite. This argument
+does not require a FIXED
+owner-preserving real embedding
+of the infinite transversal,
+nor identify arbitrary
+unrecorded pair colours.
+
+Since \(E\) is the unique
+minimal infinite invariant
+equivalence in this residual
+source and the original
+invariant-equivalence lattice
+is FINITE, every invariant
+equivalence with infinite
+classes contains \(E\).
+The displayed equivalence
+is contained in \(E\);
+hence it equals \(E\).
+On the original owner sort,
+its nonthin diversity part
+is \(D\), while that of \(E\)
+is \(E\setminus F\).
+Thus equality forces
+\(D=E\setminus H\),
+contradicting properness.
+
+Finally, complete finite $G$-packet diagrams in $N_B$
+and full inflations of finite $\mathcal U_B$ diagrams
+have the same induced fine colours, by the thin transport
+law.  For any finite full-packet embedding and extension,
+choose origins on its packets, apply the Fra\"isse
+extension property to the resulting transversal map,
+and recover every packet point by its unique $G$-translation
+from that origin.  This preserves all fine matrices and
+owner labels, with no equivariant choice of origins.
+Thus the inflated generic is homogeneous with the same age
+as the homogeneous $N_B$, proving the claimed isomorphism.
+The pure $\Gamma$ language action comes from ambient exact
+owner homogeneity and preserves every literal raw colour.
+\end{proof}
+
+\begin{remark}
+The theorem supplies exactly the typed SAP, primitivity,
+closed packet completion and owner $\Gamma$ actions used by
+the selector/HKN construction.  The more general conditional
+bijection groupoid and root frame geometry remain available in
+the original R45 sources but are not premises of the
+consolidated residual construction.
+\end{remark}

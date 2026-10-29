@@ -1,0 +1,326 @@
+\begin{lemma}[Complete complementary owner-pair spectrum]
+\label{lem:acf-complementary-spectrum}
+Keep the complementary exact quotients
+\(Y=M/C\), \(X=M/K\), \(T=M/(C\vee K)\)
+with \(C\cap K=\Id\). Let
+\(B\subseteq T\) be a finite induced
+set of ACTUAL owner classes, and let
+\(P\subseteq X\) be a finite induced
+structure projecting ONTO \(B\).
+Assume \(P\) contains, for EVERY
+ordered owner pair \((t,t')\in B^2\)
+and every ACTUAL \(X\)-atomic orbital
+\(b\) realized between some two
+\(X\)-points above exactly \(t,t'\),
+a pair \(p,p'\in P\) with owners
+\(t,t'\) and orbital \(b\).
+The diagonal \(b=\Id_X\) is included
+when the two owner labels agree.
+
+Let \(y,y'\in Y\) be ACTUAL DISTINCT
+quotient points, with owners
+\(t,t'\in B\), and let
+\(q=\col_Y(y,y')\). Then as \(p,p'\)
+range over all \(P\)-points with
+owners \(t,t'\), the pairwise old
+fine colours of the CRT points
+\[
+               (y,p),\ (y',p')
+                   \quad\in M
+\]
+include EVERY original fine atomic
+colour \(a\) lying over the quotient
+orbital \(q\) (that is,
+\(a\subseteq C;q;C\), using the
+actual saturated old pullback).
+In particular no individual
+\(C\)-representative or \(K\)-representative
+choice is assumed to realize all fine
+colours at once.
+\end{lemma}
+\begin{proof}
+Fix an old atomic fine colour
+\(a\subseteq\widetilde q\), where
+\(\widetilde q=C;a;C\) is the old
+pullback of \(q\).
+Choose a real \(a\)-edge
+\(u,v\) whose \(Y\)-quotient
+pair has orbital \(q\).
+The pair of \(T\)-owners
+\((\pi_J(u),\pi_J(v))\), with
+\(J=C\vee K\), has the same
+actual \(T\)-pair orbital as
+\((t,t')\), because both are
+projections of a \(q\)-edge.
+The \(T\)-orbital is defined by
+the old \(\Aut(M)\) action, so
+an OLD automorphism moves
+those two owner classes to
+\(t,t'\) simultaneously.
+Applying it to \(u,v\)
+produces an actual \(a\)-edge
+\(u_1,v_1\) with owners
+exactly \(t,t'\).
+
+Let \(b\) be the \(X\)-orbital
+of \((\pi_Ku_1,\pi_Kv_1)\).
+The hypothesis on \(P\)
+supplies \(p,p'\in P\)
+with precisely those owners
+and orbital \(b\).
+By the exact CRT, the tuples
+\((y,p)\) and \((y',p')\)
+are ACTUAL real points of \(M\).
+Their \(Y\)-pair orbital is
+\(q\), and their \(X\)-pair
+orbital is \(b\), exactly as
+for \(u_1,v_1\). Since
+the old fine-colour pullbacks
+of those two orbital blocks
+intersect in one actual atom
+by \eqref{eq:colour-meet},
+the old fine colour between
+the tuples is \(a\).
+The points are distinct because
+\(y\ne y'\); this argument
+also covers the case \(p=p'\)
+of an \(X\)-diagonal pair.
+\end{proof}
+
+\begin{remark}[An opposite-coordinate diagonal is a genuine fine lift]
+\label{rem:acf-opposite-diagonal-fine-lift}
+In \cref{lem:acf-complementary-spectrum}
+the two \(Y\)-coordinates \(y\ne y'\)
+need NOT have distinct
+\(X\)-coordinates \(p,p'\).
+Equality \(p=p'\) is one of the
+ACTUAL RAW \(X\)-pair orbitals
+that must occur in the single
+complementary helper spectrum.
+
+For example take the original
+Cartesian-phase source
+\(M_*=\mathbb N^2\times\mathbb F_2\)
+of \cref{ex:two-coordinate}.
+Its EXACT row-and-phase and
+column-and-phase kernels
+\(C,K\) have
+\(C\cap K=\Id\), while its
+finite two-point phase packet
+bottom \(F\) is NONEXACT.
+Fix different rows \(r\ne r'\),
+one column \(c\) and one phase
+\(g\). The distinct old real
+points \((r,c,g)\),
+\((r',c,g)\) have DIFFERENT
+\(Y=M_*/C\)-coordinates
+but the SAME \(X=M_*/K\)
+coordinate. Their old fine
+diversity atom is thus
+witnessed over the ACTUAL
+\(X\)-DIAGONAL pair \(p=p'\).
+Discarding diagonal \(X\)
+orbital witnesses because
+the original real endpoints
+are distinct would omit
+a genuine fine lift and
+invalidate full-support
+\(S_Y\)-safety. No exactness
+of the unrelated finite
+bottom \(F\) is used.
+\end{remark}
+
+\begin{example}[A non-Boolean actual exact owner split with diagonal lifts]
+\label{ex:acf-nonboolean-phase-safety}
+In the ACTUAL Cartesian-phase
+homogeneous AP+semantic-CCO
+source $M_*=\mathbb N^2\times\mathbb F_2$
+of \cref{ex:two-coordinate},
+the named fine atomic colour
+of two distinct points
+$(r,c,g),(r',c',g')$
+records exactly
+$\mathbf 1_{r=r'}$,
+$\mathbf 1_{c=c'}$
+and $g+g'$.
+Let $C$ be SAME ROW AND
+SAME PHASE, and $K$ SAME
+COLUMN AND SAME PHASE.
+Then $C,K$ are FULL RAW exact,
+$C\cap K=\Id$ and
+$J=C\vee K$ is SAME PHASE,
+strictly below $\Top$.
+Indeed the old atomic row-edge
+with zero phase difference
+has represented square
+exactly $C$, and similarly
+the column-edge square is
+$K$; their RAW product is J.
+
+The ORIGINAL FULL RAW exact
+invariant-equivalence lattice
+is the genuinely NONBOOLEAN
+five-element distributive
+lattice
+\[
+          \Id<C,K<J<\Top,
+ \qquad C\not\le K,\quad
+        K\not\le C.
+\]
+Every nonempty old atomic
+word forces ONE endpoint
+phase difference, so every
+PROPER full RAW exact
+equivalence, which must
+contain real equality,
+preserves phase.
+Within each phase layer,
+the invariance and
+transitivity of an
+equivalence on the
+Cartesian grid give
+ONLY equality, same row,
+same column, or the
+whole phase layer:
+if an equivalence relates
+a pair differing in BOTH
+coordinates, its
+two-edge compositions
+generate row and column
+pairs; if it contains
+both row and column
+differences, their
+composition generates
+every pair.
+
+Here $Y=M_*/C$ has
+points $(r,g)$,
+$X=M_*/K$ has
+points $(c,g)$, and
+$T=M_*/J$ has the
+TWO phase owners $g$.
+Consider the ORIGINAL
+diversity safe palette
+$S=\{a\in\mathcal D(M_*):
+                       a\not\subseteq F\}$,
+where $F$ is the
+two-point thin
+same-$(r,c)$ packet
+equivalence. This is
+a SET OF OLD DIVERSITY
+ATOM NAMES, not a
+set-theoretic difference
+between a palette and a
+binary relation. Thus
+S consists precisely
+of old fine diversity
+atoms for which
+$r\ne r'$ OR $c\ne c'$.
+It has strong closed
+amalgamation. In fact
+every finite nonempty
+absolutely acl-closed
+real set is a COMPLETE
+rectangle $R_0\times
+C_0\times\mathbb F_2$:
+the original
+\(\Aut(M_*)=
+ \operatorname{Sym}(\mathbb N)
+ \times\operatorname{Sym}(\mathbb N)
+ \times\mathbb F_2\)
+stabiliser fixes the
+finitely named rows and
+columns, and every
+corner of the resulting
+rectangle has finite
+orbit. To strongly
+amalgamate closed spans,
+rename all row coordinates
+new to the two sides
+disjointly, and do
+likewise with all new
+column coordinates;
+all new cross pairs
+then have at least
+one different coordinate,
+so their literal old
+fine colour lies in S.
+For the empty base,
+choose disjoint finite
+row and column sets
+for the two factors.
+
+The FULL-support
+projected safe palette
+on $Y$ is
+\[
+ S_Y=\{\,q\in\mathcal D(Y):
+       \text{the two }Y\text{-points
+       have DIFFERENT rows}\,\}.
+\]
+For different rows,
+EVERY old fine lift
+belongs to S; for equal
+rows the two distinct
+$Y$-points have opposite
+phases and the lift with
+the SAME column is the
+unsafe thin phase flip.
+This $S_Y$ strongly
+amalgamates finite
+absolutely closed
+$Y$-rectangles
+$R_0\times\mathbb F_2$,
+by making all newly
+introduced row values
+disjoint.
+
+The common owner set
+$B=T=\mathbb F_2$
+is nonempty and
+absolutely acl-closed.
+Take finite sets of
+rows $R_0$ and columns
+$C_0$, and the FULL
+acl-closed complementary
+helper
+$P=C_0\times\mathbb F_2$
+in X. The full rectangle
+$D\times_B P$ for
+$D=R_0\times\mathbb F_2$
+is exactly
+$R_0\times C_0\times
+\mathbb F_2$, independently
+acl-closed by
+\cref{lem:acf-finite-exact-closed-preimages}.
+
+Finally take $r\ne r'$
+with one common
+phase $g$ and fix a
+column c. The DISTINCT
+old points
+$(r,c,g),(r',c,g)$
+have different $Y$-classes
+but IDENTICAL $X$-classes
+$p=p'=(c,g)$. Their
+old atom $(0,1,0)$
+can be witnessed among
+the helper lifts ONLY
+using this ACTUAL
+X-diagonal orbital.
+Discarding diagonal
+X witnesses would
+therefore destroy the
+full fine-lift spectrum
+\cref{lem:acf-complementary-spectrum},
+even though original
+real endpoints are
+distinct. This is a
+NONBOOLEAN exact-lattice
+test, not an assumption
+that the two quotient
+coordinates are independent
+or that original
+$M_*$ has SAP.
+\end{example}
+

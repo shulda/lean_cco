@@ -1,0 +1,615 @@
+\section{A completable structural HKN reservoir}\label{sec:hkn-reservoir}
+
+This is the only use of the published HKN theorems in the structural
+stage.  We use the versions for finite languages with unary
+functions and an action $\Gamma$ permuting language symbols.  HKN~\cite{HKN}
+Theorem~1.1 supplies an irreducible-structure-faithful EPPA witness;
+HKN Theorem~1.2, for an irreducible finite source $A$ and an
+integer $n$, supplies a further such witness $B_0$ in which each
+substructure on at most $n$ vertices has a homomorphism-embedding
+into a free tree amalgam of $\Gamma$-relabelled copies of $A$.
+For clarity, the maps in the HKN conclusions are permitted to have
+one global language component, as in the published $\Gamma_L$
+formalism.  No completeness, owner exclusivity, or bijective
+function axioms are assumed of the unrestricted HKN output;
+they will be recovered below from irreducible faithfulness.
+
+Remain in the full-owner residual setting
+$N=\pi_E^{-1}(B)$, $R_E=F$, with a chosen subgroup
+$\Gamma\le\Aut(B)$ acting only on owner names, and with
+$\operatorname{acl}_N(X)=F[X]$ and the full-owner transversal
+$U_B$ from Lemma~\ref{lem:full-owner-transversal}.
+Fix a finite nonempty \emph{complete full-packet} substructure
+$A\subseteq N$; all its $G$-orbits are included.  Every
+requested partial automorphism of the original source, together
+with its compatible owner action $\gamma\in\Gamma$, extends to
+a partial automorphism of $A$ with the same language component:
+saturate its real domain and range by $G$ and use the thin
+transport law.  For an empty real-domain request there is no
+saturation to make; the language component remains $\gamma$.
+The finite list of all such compatible requests is independent of
+the subsequent completion choices.
+
+Let $b=\max\{3,\ell+1\}$ be the bad-cycle bound from
+Theorem~\ref{thm:locality-bound}, calculated \emph{after} the
+finite owner set $B$ has been fixed.  It depends only on the
+finite typed palette, and no uniform bound across different
+quotient witnesses is needed.
+
+\begin{theorem}[Completable HKN packet reservoir]
+\label{thm:completable-reservoir}
+There exists a finite $\Gamma$-structure $B_0\supseteq A$, in the
+language of named owner predicates, original fine binary colours
+and unary functions $t_g$ ($g\in G$), such that:
+\begin{enumerate}
+\item every point belongs to a unique literal regular full
+      $G$-packet, with exactly one owner label at each point;
+\item each requested partial map of $A$ with its compatible owner
+      language component $\gamma\in\Gamma$ extends to a
+      $\Gamma$-automorphism of $B_0$;
+\item each pair of distinct packets has either a complete recorded
+      fine matrix of colours outside $F$, or no recorded interpacket
+      edges;
+\item the entire partial structure $B_0$ has an actual
+      \emph{injective} completion $C_0$ in $N$ fixing $A$;
+\item every irreducible substructure of $B_0$ is carried into
+      $A$ by one $\Gamma$-automorphism of the partial structure
+      $B_0$ (irreducible-structure faithfulness).
+\end{enumerate}
+No compatibility of the choice $C_0$ with the $\Gamma$-action is
+required.  In particular, the missing interpacket edges of $B_0$
+are \emph{not} filled in permanently before the later valuation
+construction.
+\end{theorem}
+
+\begin{remark}[Exact HKN scope]
+HKN Theorem~1.2 controls the $\Gamma$-structure on at most
+$n$ \emph{vertices}, so the locality parameter is
+$b|G|$, not just $b$.  Irreducible structure faithfulness
+controls functional closure and the all-or-nothing recorded
+matrices.  Neither of these alone implies completion in the
+CCO source; completion additionally uses closed SAP, the
+origin-transversal reduction, and finite bad-cycle locality.
+The result is ordinary structural $\Gamma$-EPPA at this stage;
+coherence is not used and no second valued HKN application is
+assumed.
+\end{remark}
+
+The full-row construction in \cref{sec:full-rows} uses this reservoir
+contract. The remaining subsections prove it: first the packet-completion
+tools in the named-owner source, then the local HKN maps, and finally
+the assembly of $B_0$.
+
+\subsection{Packet completion in the named-owner source}
+
+\begin{lemma}[Collision separation for recorded packet diagrams]
+\label{lem:packet-collision}
+Let $P$ be a finite partial diagram consisting of literal disjoint
+regular full $G$-packets, with exactly one actual owner label at
+each point, total functions $t_g$ within each packet, and only
+complete fine interpacket matrices in colours outside $F$ as
+records.  Suppose there is an owner-preserving, packetwise injective
+homomorphism $q:P\to N$ respecting all the records, and let $A_\ast$
+be a specified complete full-packet base on which $q$ is already
+an induced embedding.  It can be modified to an \emph{injective
+completion} in $N$ of the displayed partial diagram, with all
+distinct packets separated, while fixing $q|_{A_\ast}$.
+The base may be empty.  Here ``completion'' adds colours to
+unrecorded pairs; this is not an HKN embedding reflecting their
+absence.
+\end{lemma}
+\begin{proof}
+If the images of two distinct packets collide in the same
+$F$-packet, move one packet $\Pi$ which is not in the protected
+complete base.  Let $S$ be the finite set of \emph{entire images of
+the recorded neighbouring packets}, and fix all named actual
+owners.  Since each edge from $\Pi$ to those neighbours has colour
+outside $F$, its origin image $q(o_\Pi)$ lies outside
+$C=F[S]=\operatorname{acl}_N(S)$.  In this residual case the
+full-$F$-packet closure $F[\cdot]$ is the actual named groupoid
+closure.  Therefore $C\cup F[q(o_\Pi)]$ is a finite closed
+extension of the finite closed set $C$, with disjoint new packet.
+Apply Lemma~\ref{lem:relative-finite-avoidance} in $N$, taking
+the finite forbidden set $Z$ to consist of \emph{all} other
+currently used packet images outside $C$ (and, if desired, the
+old image of $\Pi$ itself).  The lemma supplies an owner-preserving
+automorphism fixing $C$ pointwise which sends the whole image
+packet of $\Pi$ away from $Z$.  Replace only the vertex images
+in $\Pi$ by their images under this automorphism.  All $t_g$
+commute with owner-preserving automorphisms, so every packet
+function equation and recorded fine matrix to the fixed neighbouring
+packets survives.  No unrecorded pair imposes a condition.
+At least one packet in every collision lies outside $A_\ast$,
+because $q|_{A_\ast}$ is already embedded.  The replacement separates
+$\Pi$ from \emph{every} other used packet: images in $C$ cannot
+collide with it because its new image is disjoint from $C$, and
+images outside $C$ are in the forbidden set $Z$.  Thus the number
+of unordered colliding packet pairs strictly decreases, and no new
+collision is introduced.  The finite process terminates with an
+injective record-preserving completion.  In particular, we
+never fix an unrecorded collision target during a move.
+\end{proof}
+
+\begin{lemma}[Origin-transversal reduction]
+\label{lem:packet-origins}
+Choose an origin $o_i$ for each full packet $\Pi_i$ in such a
+diagram and put $\beta_i=\operatorname{own}(o_i)\in B$.  For each
+recorded pair let $c_{ij}=\col(o_i,o_j)\notin F$; the whole
+matrix is required to be
+\begin{equation}\label{eq:packet-matrix}
+ \col(t_g o_i,t_h o_j)=(g+h)c_{ij}\qquad(g,h\in G).
+\end{equation}
+Form a partial typed diagram on the indices $i$, with sort
+$\beta_i$ and edge $c_{ij}$ exactly for recorded packet pairs.
+An injective typed completion of this \emph{origin transversal}
+in $U_B$ lifts to an injective completion of the entire recorded
+packet diagram in $N$, preserving a complete embedded source base
+up to its unique named-owner isomorphism.
+\end{lemma}
+\begin{proof}
+For a completion $e(i)$ of the origins in distinct full
+$F$-packets, set
+$\widehat e(t_g o_i)=t_g e(i)$.  This is well-defined and
+injective, has the prescribed owner labels
+$g\beta_i$, and preserves every record by
+\eqref{eq:packet-matrix} and the thin transport law.
+There are no other recorded interpacket relations.  The complete
+source substructure is recovered as an induced complete
+substructure; its image is moved to the prescribed copy by joint
+homogeneity of the actual named owner sorts
+(Theorem~\ref{thm:exact-sorts-source}).
+\end{proof}
+
+\begin{lemma}[Realisation of tree amalgams over complete packet bases]
+\label{lem:packet-tree-realisation}
+Let $D$ be a finite free tree amalgam of copies of $A$ with
+independently permitted $\Gamma$-relabelled owner predicates and
+unchanged function symbols $t_g$.  There is an injective map
+$\iota:D\to N$ preserving every displayed relation, owner predicate
+and unary function, and restricting to an induced embedding on each
+complete source copy.  If a designated source copy has already been
+realised in $N$, its image may be kept fixed.
+\end{lemma}
+\begin{proof}
+Each $\Gamma$-relabelled copy of $A$ belongs to the actual named-owner
+age of $N$: realise its language permutation by the ambient owner
+lift, which fixes fine-colour names and commutes with all $t_g$.
+By the definition of a substructure for the HKN unary-function
+language, an overlap in a free amalgam is closed under every $t_g$.
+Since the copies are regular full packets and the $t_g$ are total,
+that overlap is a union of whole $G$-packets.  Hence it is closed
+under the actual relative algebraic closure
+$\operatorname{acl}_N(S)=F[S]$ from~\eqref{eq:full-owner-acl}.
+
+Build the finite tree one free amalgamation at a time.  Realise its
+first source copy in $N$, respecting a prescribed copy if given.
+Inductively, keep a \emph{complete} induced realisation of the finite
+full-packet structure already constructed; only the relations
+specified by the tree need be retained.  To attach a further source
+copy over the displayed common substructure $S$, use named-owner
+homogeneity to realise that copy with its overlap on the already
+chosen image of $S$.  The two complete finite packet structures
+have a common closed full-packet base $S$.  Closed SAP
+(Corollary~\ref{cor:relative-closed-sap}) gives a strong amalgam in
+the actual named-owner age, with no new identifications.  Embed this
+finite amalgam back into $N$ over the existing complete realisation,
+using its homogeneous extension property.  Forget the incident
+fine colours that were not specified in the free tree amalgam.
+Iterating yields an injective homomorphism of the entire partial tree
+and an induced embedding on each complete source copy.  Different
+source copies may carry different $\Gamma$-relabelled owner names;
+the common overlap has the same \emph{actual} names on both sides,
+and no equivariant choice of origins or completions is involved.
+\end{proof}
+
+\subsection{Local HKN maps and injective packet completions}
+
+\begin{lemma}[What an HKN homomorphism-embedding preserves]
+\label{lem:hkn-irreducible-packet-control}
+Let $P$ be a finite unary-function-closed partial diagram made of
+literal disjoint regular full $G$-packets, with recorded interpacket
+edges only in complete fine matrices.  Let $f:P\to D$ be a
+$\Gamma$-homomorphism-embedding in the HKN sense, allowing its one
+global language component.  Then $f$ restricts to an embedding on
+\emph{each} full packet and on the union of \emph{each recorded pair}
+of distinct packets.  In particular, it preserves the entire
+specified function-value sets and all recorded fine edges on those
+substructures.  It need not be injective on the union of two
+\emph{unrecorded} packets.
+\end{lemma}
+\begin{proof}
+A single full packet is generated by any of its points under the
+unary functions $t_g$.  It is irreducible: any substructure
+containing a generator contains its whole packet, so it cannot
+split as a free amalgam of two proper substructures.  If two
+packets have a recorded edge between them, their union is also
+irreducible.  Indeed the unary closure forces each packet to be
+contained in one side of a purported free splitting, and the
+recorded cross-edge forces both packets into the same side.
+
+By the \emph{definition} of HKN homomorphism-embedding, its
+restriction to every irreducible substructure is an embedding;
+see HKN, Section~2.3.  Apply this to the packet and recorded-pair
+unions.  For unary set-valued functions, the embedding identity
+uses equality of the complete function-value sets, not merely
+inclusion.  The single global $\Gamma$-language component is the
+same on all these restrictions.  After composing with any
+injective record-preserving realisation into $N$, two recorded
+adjacent packets must also occupy different $F$-packets: a
+recorded cross-colour lies outside $F$, whereas every pair in
+one $F$-packet has colour in $F$.  No such conclusion about
+unrecorded pairs follows: their union can be a free amalgam over
+the empty substructure and need not be irreducible.
+\end{proof}
+
+\begin{lemma}[Global language normalisation for local HKN tree maps]
+\label{lem:hkn-global-language-normalisation}
+Let $P$ be any finite $\Gamma$-structure
+in the owner-language/packet signature
+and let $f=(\gamma,f_V):P\to D$ be a
+$\Gamma$-homomorphism-embedding, where
+$D$ is a free tree amalgamation of
+permitted $\Gamma$-relabelled copies
+of one complete full-packet source $A$.
+Here $\Gamma$ permutes ONLY owner
+predicate names, fixing all literal
+fine binary atoms and all named
+unary translations $t_g$.
+
+Then, after replacing the ENTIRE
+target $D$ by its ONE GLOBAL language
+relabel $D'=\gamma^{-1}D$, the same
+vertex map defines a
+homomorphism-embedding
+\[
+              f'=(\mathrm{id}_L,f_V):P\to D'.
+\tag{HLN}\label{eq:hkn-global-language-normalisation}
+\]
+The structure $D'$ remains a free
+tree amalgamation of permitted
+$\Gamma$-relabelled copies of $A$.
+Every source irreducible substructure
+on which $f$ was an embedding
+remains embedded by $f'$.
+In particular, a protected complete
+source copy has its ACTUAL original
+owner predicates, fine atom names
+and unary translation equations
+preserved literally BEFORE any
+tree realisation inside $N_B$.
+
+No choice of a separate language
+component on individual tree
+copies, nor a group-theoretic
+section $\Gamma\to\Aut(N_B)$, is
+involved in this normalisation.
+\end{lemma}
+\begin{proof}
+The relabelling morphism
+$(\gamma^{-1},\mathrm{id}_D):
+D\to\gamma^{-1}D$
+is an isomorphism of
+$\Gamma$-structures.
+Its composition with
+$f=(\gamma,f_V)$ is
+$(\mathrm{id}_L,f_V)$,
+which remains a
+homomorphism-embedding:
+an isomorphism preserves
+and reflects all relations,
+full unary function-value
+sets and irreducibility.
+Apply the SAME relabelling
+$\gamma^{-1}$ to every
+node/copy and every overlap
+of the original free tree
+construction. Free
+amalgamation commutes with
+global language relabelling,
+and every relabelled copy
+of A remains an allowed
+$\Gamma$-relabelled copy
+because $\Gamma$ is a group.
+Thus $D'$ is a tree
+amalgamation of the same
+permitted source copies,
+with unchanged underlying
+vertex incidence graph.
+On each embedded irreducible
+piece, the composite now has
+IDENTITY language component,
+as asserted. In particular,
+if a complete source subcopy
+must be protected, its actual
+named owner labels are not
+modified when matching its
+image to the prescribed
+copy in the owner-named
+ambient source.
+\end{proof}
+
+\begin{lemma}[Injectivisation of a local HKN tree packet map]
+\label{lem:hkn-local-tree-packet-injectivisation}
+Let \(P\) be a finite partial
+\(\Gamma\)-diagram on \(k\) distinct
+ACTUAL regular full \(G\)-packets,
+with exactly one owner label on
+each point, all unary
+\(t_g\)-functions total, and
+recorded interpacket relations
+consisting only of entire
+nonthin fine-colour matrices.
+Assume there exists a
+\(\Gamma\)-homomorphism-embedding
+\[
+        f:P\longrightarrow D,
+\]
+where \(D\) is a finite free
+tree amalgam of permitted
+\(\Gamma\)-relabelled copies of
+the same complete full-packet
+source \(A\). Then \(P\)
+admits an INJECTIVE
+record-preserving completion
+in \(N_B\) on its original
+finite vertex set, with
+all \(k\) packets occupying
+distinct actual \(F\)-classes.
+
+If \(P\) contains a designated
+complete full-packet copy
+\(A_\ast\) on which \(f\)
+restricts to an embedding,
+its image can be identified
+with the prescribed copy
+of \(A_\ast\subseteq N_B\)
+and kept pointwise fixed
+throughout injectivisation.
+No global injectivity of
+\(f\) is assumed.
+\end{lemma}
+\begin{proof}
+By \cref{lem:hkn-global-language-normalisation}, replace the target
+by one global $\gamma^{-1}$-relabel so that $f$ has identity language
+component. This preserves the permitted tree structure and makes all
+owner predicates literal before any protected-base alignment.
+
+If a complete $A_\ast$ is protected, its image under the normalised
+map is an irreducible substructure of the tree. It lies in one
+source copy by the irreducible-piece property of tree amalgamations
+\cite[Observation~9.3]{HKN}. Realise that source copy in $N_B$ and
+use named-owner homogeneity to align its induced full-packet
+substructure $f(A_\ast)$ with the prescribed $A_\ast$. Now
+\cref{lem:packet-tree-realisation}, with this whole source copy
+fixed, gives an injective realisation $j:D\to N_B$ of the tree.
+If no base is protected, apply that lemma directly.
+
+The composite $q=j\circ f$ preserves literal owners, all unary
+packet equations and every recorded matrix. By
+\cref{lem:hkn-irreducible-packet-control} it is injective on each
+packet and on each recorded two-packet union. Its restriction to
+$A_\ast$ is the prescribed induced embedding. Since all recorded
+cross colours lie outside $F$, these are the hypotheses of
+\cref{lem:packet-collision}. Applying that lemma gives an injective
+record-preserving $q':P\to N_B$ fixing the protected base; only
+unrecorded packet collisions are separated. Pull back the complete
+induced structure on $q'(P)$ to obtain the asserted same-vertex
+completion. No owner relabelling is performed after base alignment.
+\end{proof}
+
+\begin{lemma}[Chord-complete HKN locality on short origin cycles]
+\label{lem:hkn-chord-complete-short-cycle}
+Let \(P\) be a finite
+partially recorded actual
+regular full-\(G\)-packet
+diagram satisfying the
+three source conditions
+of
+\cref{lem:hkn-local-tree-packet-injectivisation}.
+Fix a simple SPECIFIED
+origin cycle with \(k\)
+DISTINCT actual packet
+indices
+\(p_1,\ldots,p_k\),
+and assume \(k|G|\le n\).
+Suppose the HKN locality
+condition of Theorem~1.2
+holds for EVERY
+functionally closed
+substructure of \(P\)
+with at most \(n\)
+actual vertices.
+Then the COMPLETE
+INDUCED partial packet
+diagram on the packets
+\(p_1,\ldots,p_k\)
+admits an injective
+same-vertex completion
+in \(N_B\), preserving
+ALL its recorded
+nonthin fine matrices,
+including EVERY recorded
+chord between
+nonconsecutive indices
+of the chosen cycle.
+In particular the
+cycle has an injective
+typed origin completion.
+\end{lemma}
+\begin{proof}
+Take the substructure
+\(P_C\) generated by the
+\(k\) listed origin
+vertices under all
+total \(t_g\)-functions.
+Since the actual
+packets are disjoint,
+\(P_C\) has precisely
+\(k|G|\le n\)
+vertices, and it is
+the FULL induced
+PARTIAL subdiagram on
+these packets. Every
+recorded chord belongs
+to \(P_C\), along with
+the entire
+\(G\times G\) fine
+matrix that it forces;
+none is discarded
+while singling out
+the chosen cycle.
+
+HKN locality therefore
+gives ONE
+\(\Gamma\)-homomorphism-
+embedding
+\(f:P_C\to D\) into
+one finite tree
+amalgamation of
+permitted owner-
+relabelled source
+copies. Apply
+\cref{lem:hkn-local-tree-packet-injectivisation}
+to the ENTIRE \(P_C\).
+Its output is
+a same-vertex
+injective completion
+of ALL the old
+recorded packet data
+on those \(k\)
+indices in \(N_B\).
+Restricting this
+completion to the
+\(k\) origin points
+realises the selected
+typed cycle.
+The proof never assumes
+that an arbitrary map
+of JUST its \(k\)
+unclosed origins is a
+valid HKN source
+substructure, and
+never drops an induced
+recorded chord.
+\end{proof}
+
+\begin{example}[Unrecorded packets can collapse under an HKN map]
+\label{ex:hkn-unrecorded-collapse}
+Take $G\cong C_2$ and three regular packets
+$\Pi_0,\Pi_1,\Pi_2$.  Record one complete nonthin matrix
+between $\Pi_0,\Pi_1$ and the same matrix between
+$\Pi_1,\Pi_2$, but no matrix between $\Pi_0,\Pi_2$.
+The map to a complete two-packet source which identifies
+$\Pi_0$ with $\Pi_2$ and fixes $\Pi_1$ is a
+homomorphism-embedding: all irreducible substructures lie in
+one packet or one recorded adjacent pair, on which the map is
+an embedding.  It is not globally injective.  In a source with
+infinitely many regular packets and the same nonthin matrix
+between distinct packets, the diagram nevertheless has an
+injective completion using three distinct packets.  This example
+separates the HKN definition from the later, genuinely injective
+completion step.
+\end{example}
+
+\subsection{Assembly of the reservoir}
+
+We now prove \cref{thm:completable-reservoir}.
+
+\begin{proof}
+The finite source $A$ is irreducible because it is a complete
+fine-colour diagram on its vertices. Its $\Gamma$-relabellings
+are realisable in $N$, by actual quotient-owner homogeneity
+and its fixed language action. The HKN language group acts
+ONLY on owner-predicate symbols, leaving the named fine
+binary atom symbols and unary $t_g$ symbols fixed.
+There are finitely many compatible requests, including
+EVERY empty-real-domain request with its specified
+$\gamma\in\Gamma$. The latter are genuine partial
+$\Gamma$-automorphisms of the empty substructure:
+the language component does not disappear when
+the real domain is empty.
+
+Invoke the unrestricted irreducible-faithful HKN EPPA
+construction and the HKN sparsening/local tree theorem,
+with $n\ge b|G|$. The resulting finite $\Gamma$-structure
+$B_0$ extends those language-component requests, is
+irreducible-structure faithful, and admits for EVERY
+substructure on at most $n$ actual vertices a
+$\Gamma$-homomorphism-embedding into a finite free
+tree amalgam of permitted relabelled source copies.
+This is a HKN homomorphism-embedding, NOT an
+injective completion of the whole $B_0$.
+The latter is the additional CCO task proved below.
+
+For $v\in B_0$ take its closure under the unary symbols
+$t_g$.  It is one-generated and therefore irreducible: a free
+splitting into two proper closed substructures would have to
+place its generator on one side and all its closure on that side.
+Irreducible faithfulness sends this closure by
+an automorphism of $B_0$ (with ONE global permitted
+language component) into the literal source copy
+$A\subseteq B_0$; hence its inverse transport
+is isomorphic to an induced functionally closed
+substructure of $A$. Here HKN EMBEDDINGS in a
+unary-functional language must preserve and REFLECT
+the entire function-value set. If $t_g$ were
+undefined or failed the full regular group equation
+on even one point of this generated closure, its
+image could not be an induced closed substructure
+of the original total-regular $G$-source $A$.
+Every nonempty substructure of $A$ closed under
+all $t_g$ is a union of WHOLE regular $G$-orbits,
+so the ONE-generated closure embeds as exactly
+one regular packet. Consequently each
+$t_g$ is total there and all group equations
+hold. The generated regular packets partition
+the universe of $B_0$: two one-generated
+closures are either identical or disjoint,
+because their group equations make every
+orbit of $G$ a partition class.
+The source has exactly one owner predicate
+per vertex, and the singleton irreducible
+faithfulness forces the same for every
+point of $B_0$.
+
+If one recorded fine edge joins two distinct generated packets,
+the union of the two function closures is irreducible: no free
+amalgam decomposition can separate the endpoints of that edge,
+and each full packet is itself irreducible.  By faithfulness it
+lies, after an automorphism of $B_0$, in a $\Gamma$-relabelling
+of $A$.  Hence every one of the $|G|^2$ fine edges of the
+interpacket matrix is present and agrees with
+\eqref{eq:packet-matrix}; these colours are all outside $F$.
+This proves the first three assertions, including the exact
+\emph{all-or-nothing} nature of recorded pairs.
+
+For every simple specified origin cycle on $k\le b$ distinct
+packet indices, apply \cref{lem:hkn-chord-complete-short-cycle}
+with $n\ge b|G|$. Its hypothesis concerns the full induced,
+functionally closed $k|G|$-vertex packet diagram, including every
+recorded chord, and is supplied by the HKN local tree property.
+The lemma gives an injective packet-separated completion of that
+short origin cycle in $U_B$; its language normalisation, closed
+SAP realisation and collision separation need not be repeated here.
+A simple origin cycle with more than $b$
+vertices is automatically completable by the bound of
+Theorem~\ref{thm:locality-bound}.  Therefore \emph{every}
+specified simple cycle of the complete origin partial diagram
+has a typed homomorphic completion.  Apply semantic homomorphic
+CCO to the origin partial diagram in $U_B$ and its injective
+completion assertion from Lemma~\ref{lem:full-owner-transversal}.
+This embeds its origins into distinct $G$-packets.
+Lemma~\ref{lem:packet-origins} now restores the complete thin
+packets and recorded matrices, yielding an injective completion
+$C_0$ of the whole $B_0$ inside $N$.  Its source copy $A$ is
+complete and, by actual named-owner homogeneity, can be aligned
+with the original designated $A$.
+
+Throughout, $B_0$ retains its \emph{original} partially recorded
+interpacket relations, its $\Gamma$-automorphisms and the
+irreducible-structure faithfulness supplied by HKN. This proves
+assertion (5) as well.  The
+embedding $C_0$ is only an existence certificate, so the
+construction never requires the arbitrarily supplied completion
+colours to be invariant under those automorphisms.
+\end{proof}

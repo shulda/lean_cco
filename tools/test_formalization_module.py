@@ -2,11 +2,101 @@
 from copy import deepcopy
 import json
 import unittest
+from unittest.mock import patch
 
 import build_formalization_module as module
 
 
 class ModuleTests(unittest.TestCase):
+    def _mi_import_fixture(self):
+        config = json.loads((module.ROOT / 'formalization/mi_geometry/module.json').read_text())
+        declarations = json.loads((module.ROOT / 'catalogue/declarations.json').read_text())
+        return config, declarations
+
+    def _validate_with_acl_provider(self, config, declarations, provider):
+        path = module.ROOT / 'formalization/acl_owner_geometry/module.json'
+        original = module.Path.read_text
+        def read_text(file, *args, **kwargs):
+            return json.dumps(provider) if file == path else original(file, *args, **kwargs)
+        with patch.object(module.Path, 'read_text', new=read_text):
+            return module.validate(module.ROOT, config, declarations)
+
+    def test_imported_auxiliary_equation_has_actual_source_link(self):
+        config, declarations = self._mi_import_fixture()
+        order, labels, raw = module.validate(module.ROOT, config, declarations)
+        imported = labels['eq:acf-closure-pullback']
+        self.assertEqual(imported['kind'], 'equation')
+        self.assertEqual(imported['file'], 'sections/rooted_acf_geometry.tex')
+        anchor = '\\label{eq:acf-closure-pullback}'
+        self.assertEqual(imported['line'], raw[imported['file']].count(
+            '\n', 0, raw[imported['file']].index(anchor)) + 1)
+        self.assertEqual(module.render(config, order, labels, raw),
+            (module.ROOT / 'formalization/mi_geometry/README.md').read_text())
+
+    def test_auxiliary_import_requires_explicit_exported_support(self):
+        config, declarations = self._mi_import_fixture()
+        for support in [None, [], ['C01'], ['C33'], ['C21', 'C21']]:
+            bad = deepcopy(config)
+            next(i for i in bad['imports'] if i['id'] == 'I18')['provider_claims'] = support
+            with self.subTest(support=support), self.assertRaisesRegex(ValueError, 'support claims'):
+                module.validate(module.ROOT, bad, declarations)
+
+    def test_auxiliary_provider_binding_cannot_be_inherited_from_an_earlier_import(self):
+        config, declarations = self._mi_import_fixture()
+        unbound = deepcopy(next(i for i in config['imports'] if i['id'] == 'I18'))
+        unbound.update(id='I19', provider_module=None)
+        unbound.pop('provider_claims')
+        for before in [False, True]:
+            bad = deepcopy(config)
+            bad['imports'].insert(0 if before else len(bad['imports']), deepcopy(unbound))
+            with self.subTest(unbound_before_valid=before), self.assertRaisesRegex(
+                    ValueError, 'Unknown imported source without pinned auxiliary provider'):
+                module.validate(module.ROOT, bad, declarations)
+        for key, value in [('source_label', 'eq:missing'), ('provider_module', None)]:
+            bad = deepcopy(config)
+            next(i for i in bad['imports'] if i['id'] == 'I18')[key] = value
+            with self.subTest(key=key), self.assertRaisesRegex(ValueError, 'Unknown imported source'):
+                module.validate(module.ROOT, bad, declarations)
+
+    def test_auxiliary_import_binds_both_source_fingerprints_and_literal_anchor(self):
+        config, declarations = self._mi_import_fixture()
+        provider = json.loads((module.ROOT / 'formalization/acl_owner_geometry/module.json').read_text())
+        variants = []
+        bad = deepcopy(provider)
+        bad['source_commit'] = '0' * 40
+        variants.append(bad)
+        bad = deepcopy(provider)
+        next(s for s in bad['source_files'] if s['file'] == 'sections/rooted_acf_geometry.tex')['git_blob'] = '0' * 40
+        variants.append(bad)
+        for source in [
+                {'file': 'sections/global_correspondence.tex', 'anchor': '\\label{eq:acf-closure-pullback}'},
+                {'file': 'sections/rooted_acf_geometry.tex', 'anchor': 'eq:acf-closure-pullback'}]:
+            bad = deepcopy(provider)
+            next(e for e in bad['auxiliary_exports'] if e['source_label'] == 'eq:acf-closure-pullback')['source'] = source
+            variants.append(bad)
+        for index, bad in enumerate(variants):
+            with self.subTest(variant=index), self.assertRaises(ValueError):
+                self._validate_with_acl_provider(config, declarations, bad)
+
+    def test_auxiliary_import_rejects_ambiguous_exports_and_fabricated_provider_claims(self):
+        config, declarations = self._mi_import_fixture()
+        provider = json.loads((module.ROOT / 'formalization/acl_owner_geometry/module.json').read_text())
+        export = next(e for e in provider['auxiliary_exports'] if e['source_label'] == 'eq:acf-closure-pullback')
+        variants = []
+        for destination in ['exports', 'auxiliary_exports']:
+            bad = deepcopy(provider)
+            bad[destination].append(deepcopy(export))
+            variants.append(bad)
+        bad = deepcopy(provider)
+        next(e for e in bad['auxiliary_exports'] if e['source_label'] == export['source_label'])['claims'] = ['C99']
+        variants.append(bad)
+        bad = deepcopy(provider)
+        bad['source_files'].append(deepcopy(next(s for s in bad['source_files'] if s['file'] == export['source']['file'])))
+        variants.append(bad)
+        for index, bad in enumerate(variants):
+            with self.subTest(variant=index), self.assertRaises(ValueError):
+                self._validate_with_acl_provider(config, declarations, bad)
+
     def test_owner_action_scope_and_premise_firewalls(self):
         config = json.loads((module.ROOT / 'formalization/owner_action/module.json').read_text())
         decls = json.loads((module.ROOT / 'catalogue/declarations.json').read_text())

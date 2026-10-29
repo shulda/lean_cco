@@ -1,6 +1,6 @@
 {
   "protocol_version": 3,
-  "revision": 4,
+  "revision": 5,
   "state_branch": "coordination",
   "state_file": "formalization/coordination/STATE.json",
   "registered_projects": [
@@ -34,7 +34,9 @@
     "B020",
     "B021",
     "B022",
-    "B029"
+    "B029",
+    "B023",
+    "B025"
   ],
   "coordinator_review_packages": [
     "B001"
