@@ -1,0 +1,1057 @@
+{
+  "schema_version": 1,
+  "id": "finite_lift",
+  "index_title": "Finite exact reconstruction with literal roots and conditional full-owner actions",
+  "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+  "status": "HUMAN_EXPANDED_NOT_LEAN",
+  "scope": "Private B029: exactly ONE new source result, finite exact rooted reconstruction, and its finite-acl identity. The earlier prescribed-owner point lemma is already prepared by B018 and is outside this new export; its unused context creates no module dependency. Closure, closed-safe descent and ordinary reconstruction precede and do not require the stronger relative owner hypotheses. One FULL finite K-preimage serves all source requests, unsafe cliques and selected roots. No EPPA(Q), normalized/thin F, general exactness of F, owner master, global group section or independent fibre permutations is assumed or concluded.",
+  "scope_vocabulary": [
+    "finite_exact",
+    "closure",
+    "safe_descent",
+    "finite_recognition",
+    "ordinary_witness",
+    "relative_owner",
+    "abstract_point"
+  ],
+  "scope_explanation": "statement and proof. The actual finite exact kernel, finite closure, given strong closed-safe palette, supplied ordinary quotient witness and stronger actual full-exact relative owner input have separate dependency branches.",
+  "control_script": "tools/check_finite_lift_controls.py",
+  "assumptions": [
+    {
+      "id": "A01",
+      "name": "Actual original symmetric binary source",
+      "statement": "Q is a nonempty transitive homogeneous structure in a FINITE complete symmetric binary language naming all actual equality-inclusive RAW pair orbitals. Invariant original endorelations commute and are unions of these fine atom names. Finite induced maps preserve these named relations. No SAP, safe palette, EPPA or finite-exact normalization is included."
+    },
+    {
+      "id": "A02",
+      "name": "Current actual exact-provider hypotheses",
+      "statement": "Q has semantic homomorphic CCO and the countability retained by the prepared RAW joint exact-sort lifting/source-inheritance providers. No ordinary EPPA theorem or coherent lift is supplied."
+    },
+    {
+      "id": "A03",
+      "name": "One actual finite-class full exact kernel",
+      "statement": "K is an ACTUAL invariant FULL RAW EXACT equivalence of Q, with finite real classes. K=Id is allowed; K need not be the greatest finite equivalence F_Q and no exactness of F_Q is assumed."
+    },
+    {
+      "id": "A04",
+      "name": "Finite real input",
+      "statement": "A0 is an arbitrary finite real subset of Q, possibly empty in the closure identity. Both rooted witness applications explicitly require A0 NONEMPTY."
+    },
+    {
+      "id": "A05",
+      "name": "Given original strong absolute closed-safe amalgamation",
+      "statement": "S_Q is a set of ORIGINAL diversity atom names such that every finite induced ABSOLUTELY acl_Q-closed span has a strong age amalgam with all new off-base cross edges in S_Q. The amalgam need not itself be closed. No raw SAP is assumed."
+    },
+    {
+      "id": "A06",
+      "name": "Supplied ordinary rooted quotient witness",
+      "statement": "For the ORDINARY branch A0 is NONEMPTY and barD is ONE finite induced subset of barQ=Q/K containing acl_barQ(pi_K A0), extending EVERY partial automorphism of pi_K A0, and having rooted barS-ACF over pi_K A0. This is a supplied finite witness, not an age-level EPPA premise on Q or a global rooted theorem."
+    },
+    {
+      "id": "A07",
+      "name": "Stronger actual full exact original owner",
+      "statement": "Only for the RELATIVE branch H is an ACTUAL invariant FULL RAW EXACT equivalence of Q. No nesting of K and H is required. Put J=K join H and barH=J/K, so the coarse owner source is T=Q/J."
+    },
+    {
+      "id": "A08",
+      "name": "Supplied relative witness and complete finite owner packet",
+      "statement": "For the RELATIVE branch A0 is NONEMPTY. barD is ONE finite induced relative rooted barS-ACF witness over pi_K A0; in particular it CONTAINS acl_barQ(pi_K A0). Its image under barH is exactly a finite induced barB subset Q/J. It extends EVERY compatible pair (barp,bargamma), including (empty,bargamma), for barp a partial automorphism of pi_K A0 and bargamma in FULL Aut(barB). Its rooted transports are relative automorphisms with their actual induced barB actions. B is the COMPLETE inverse image of barB under Q/H -> Q/J, in the actual canonical owner language. Finiteness of B is proved from finite K; no independent arbitrary finite owner subset may replace it."
+    },
+    {
+      "id": "A09",
+      "name": "Actual onto owner map and fibre-transitive kernel",
+      "statement": "Only for RELATIVE ROOT transport, the ACTUAL projection-equivariant homomorphism rho:FULL Aut(B)->FULL Aut(barB), induced on the ENTIRE complete B by Q/H -> Q/J, is onto and ker(rho) is transitive on each owner-cover fibre. The map itself and finite B are justified locally; onto/kernel-transitivity are substantive additional hypotheses, not consequences of K being finite exact."
+    }
+  ],
+  "imports": [
+    {
+      "id": "I01",
+      "name": "RAW exact products",
+      "source_label": "lem:exact-product",
+      "statement": "Nonempty RAW exact relations are closed under relational composition. In particular exact equivalences K,H have exact J=K;H=K join H; this uses the elementary commuting-equivalence identity, not distributivity of the full invariant lattice.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01",
+        "A02"
+      ],
+      "provider_module": "raw_exact",
+      "provider_claims": [
+        "C09"
+      ]
+    },
+    {
+      "id": "I02",
+      "name": "Mixed exact-sort join recognition",
+      "source_label": "lem:acf-mixed-exact-join",
+      "statement": "RAW C16: K;a;H=J;a;J=J;a=a;J for J=K join H and EVERY old atom a INCLUDING equality. Mixed K/H orbitals are determined by common J-quotient pair orbitals. Exactness is for ambient lifting, not the algebraic identity.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01",
+        "A02"
+      ],
+      "provider_module": "raw_exact",
+      "provider_claims": [
+        "C16"
+      ]
+    },
+    {
+      "id": "I03",
+      "name": "Nested real/quotient mixed recognition",
+      "source_label": "lem:nested-mixed",
+      "statement": "RAW C17: if E<=L are actual full exact kernels, E;a;L=L;a;L=a;L, including Id and equality. Real/owner orbitals factor through the displayed projection, provided the entire projected real domain is covered by the named owner map.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01",
+        "A02"
+      ],
+      "provider_module": "raw_exact",
+      "provider_claims": [
+        "C17"
+      ]
+    },
+    {
+      "id": "I04",
+      "name": "One ambient lift of a finite joint map",
+      "source_label": "thm:joint-exact",
+      "statement": "RAW C23: every genuine finite partial isomorphism of the actual real/full-exact quotient orbital language is induced by ONE original automorphism of Q. All displayed sort maps, mixed pairs and coincident-sort agreements must first be checked. No global section is inferred.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01",
+        "A02"
+      ],
+      "provider_module": "raw_exact",
+      "provider_claims": [
+        "C23"
+      ]
+    },
+    {
+      "id": "I05",
+      "name": "Actual exact quotient remains a standing source",
+      "source_label": "thm:exact-sorts-source",
+      "statement": "Select RAW C28: the actual exact quotient, with all old-Aut(Q) canonical pair orbitals named, is countable, nonempty, transitive and homogeneous in a finite complete symmetric binary language, with the inherited standing source properties. Its FULL automorphism group may exceed the original image; finite lifting does not require surjectivity of the full ambient group map.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01",
+        "A02"
+      ],
+      "provider_module": "raw_exact",
+      "provider_claims": [
+        "C28"
+      ]
+    },
+    {
+      "id": "I06",
+      "name": "Prescribed-action point criterion, shared support only",
+      "source_label": "lem:prescribed-action-point-lifting",
+      "statement": "Shared B001 support: an equivariant onto point map and a surjective group homomorphism with fibre-transitive kernel allow any compatible prescribed target action and point motion. The elementary one-lift plus kernel-correction proof is expanded locally. This is not a new B029 export or an invented B018 provider claim.",
+      "status": "HUMAN_SUPPORT_PROOF_NOT_LEAN",
+      "depends_on": []
+    }
+  ],
+  "definitions": [
+    {
+      "id": "D01",
+      "name": "Actual finite exact quotient",
+      "statement": "pi=pi_K:Q->barQ=Q/K; all canonical pair orbitals are actual old-Aut(Q) orbitals. For a representative old atom a the corresponding quotient pair predicate pulls back to K;a;K, a union of fine RAW atom names. K membership itself is such a union.",
+      "depends_on": [
+        "A01",
+        "A03"
+      ],
+      "notes": "N01",
+      "source": {
+        "file": "sections/rooted_mi/04_owner_point_and_finite_lift.tex",
+        "anchor": "\\label{lem:acf-finite-lift}"
+      }
+    },
+    {
+      "id": "D02",
+      "name": "Finite-orbit real closure and distinguished stabilizers",
+      "statement": "acl_Q(A) means points having finite orbit under FULL Aut(Q/A), while acl_barQ(pi A) uses FULL Aut(barQ/pi A). The image of Aut(Q/A) lies inside the latter stabilizer, but equality/surjectivity of these groups is NOT assumed.",
+      "depends_on": [
+        "A01",
+        "D01"
+      ],
+      "notes": "N02",
+      "source": {
+        "file": "sections/rooted_mi/04_owner_point_and_finite_lift.tex",
+        "anchor": "\\label{lem:acf-finite-lift}"
+      }
+    },
+    {
+      "id": "D03",
+      "name": "Uniform full-matrix safe quotient palette",
+      "statement": "For a diversity quotient atom q, Lambda_K(q) is the set of fine colours on C×Cprime for ANY actual distinct K-classes (C,Cprime) in q. Actual Aut(Q)-orbital transport makes this independent of the pair. barS={q:Lambda_K(q) subset S_Q}; one safe entry is insufficient.",
+      "depends_on": [
+        "D01",
+        "A05"
+      ],
+      "notes": "N03",
+      "source": {
+        "file": "sections/rooted_mi/04_owner_point_and_finite_lift.tex",
+        "anchor": "\\label{lem:acf-finite-lift}"
+      }
+    },
+    {
+      "id": "D04",
+      "name": "Full lifted closed span",
+      "statement": "A quotient closed span barL<-barC->barR is a span of finite ABSOLUTELY acl_barQ-closed induced structures. Lift its maps by finite K-sort joint ambient maps, take full finite K-preimages and retain abstract factor copies identified only on their full common base. Actual overlaps outside the base do not change this abstract span.",
+      "depends_on": [
+        "D01"
+      ],
+      "notes": "N03",
+      "source": {
+        "file": "sections/rooted_mi/04_owner_point_and_finite_lift.tex",
+        "anchor": "\\label{lem:acf-finite-lift}"
+      }
+    },
+    {
+      "id": "D05",
+      "name": "One full reconstructed finite set",
+      "statement": "For ANY finite induced Tbar subset barQ write D(Tbar)=pi^-1(Tbar), the ENTIRE finite K-preimage, with its original induced fine-coloured structure. No single representative per class, fibre chart or trimmed alternative is chosen.",
+      "depends_on": [
+        "D01"
+      ],
+      "notes": "N04",
+      "source": {
+        "file": "sections/rooted_mi/04_owner_point_and_finite_lift.tex",
+        "anchor": "\\label{lem:acf-finite-lift}"
+      }
+    },
+    {
+      "id": "D06",
+      "name": "Ordinary rooted finite witness contract",
+      "statement": "A finite induced W over nonempty A contains acl(A), extends every partial automorphism of A, and for each nonempty unsafe Z subset W and selected z in Z has one automorphism carrying Z into acl(A) and z literally into A. These extensions need not be coherent. A06 instantiates this contract in barQ.",
+      "depends_on": [
+        "A06"
+      ],
+      "notes": "N05",
+      "source": {
+        "file": "sections/rooted_mi/04_owner_point_and_finite_lift.tex",
+        "anchor": "\\label{lem:acf-finite-lift}"
+      }
+    },
+    {
+      "id": "D07",
+      "name": "Unsafe projection as a set of distinct classes",
+      "statement": "An S_Q-unsafe Z is nonempty and every edge between distinct points has colour outside S_Q. pi(Z) is a SET of distinct K-classes; internal K-edges disappear. A singleton image remains unsafe vacuously.",
+      "depends_on": [
+        "A05",
+        "D01"
+      ],
+      "notes": "N05",
+      "source": {
+        "file": "sections/rooted_mi/04_owner_point_and_finite_lift.tex",
+        "anchor": "\\label{lem:acf-finite-lift}"
+      }
+    },
+    {
+      "id": "D08",
+      "name": "Actual owner cover and common quotient",
+      "statement": "For relative H set J=K join H, T=Q/J and r:Q/H->T. Its fibres are collections of H-classes. Since K;H=J, every real K-class over c meets EVERY H-class in r^-1(c). This incidence, not independent fibre permutations, supplies owner completeness.",
+      "depends_on": [
+        "A07",
+        "D01"
+      ],
+      "notes": "N06",
+      "source": {
+        "file": "sections/rooted_mi/04_owner_point_and_finite_lift.tex",
+        "anchor": "\\label{lem:acf-finite-lift}"
+      }
+    },
+    {
+      "id": "D09",
+      "name": "Entire relative owner actions and requests",
+      "statement": "barD->barB is the supplied relative witness; B=r^-1(barB) is complete. A real request (p,gamma) has p:A0 partial original automorphism and gamma in FULL Aut(B), with pi_H p=gamma pi_H on dom(p), including every empty-real request. rho(gamma) is its ACTUAL induced entire barB action. Relative transports are automorphisms of the same D with their induced exact B actions.",
+      "depends_on": [
+        "A08",
+        "D08"
+      ],
+      "notes": "N07",
+      "source": {
+        "file": "sections/rooted_mi/04_owner_point_and_finite_lift.tex",
+        "anchor": "\\label{lem:acf-finite-lift}"
+      }
+    },
+    {
+      "id": "D10",
+      "name": "Finite joint-map and coincident-sort convention",
+      "statement": "All finite maps name their ENTIRE displayed quotient sets. When exact kernels coincide, identify their actual sorts and require the supplied maps to agree there. Id sort is the real sort; duplicate maps are merged. Compatibility proves agreement in K=Id,H=Id,K=H; common quotient Top is a singleton. No extra independent action on two copies of the same actual sort is allowed.",
+      "depends_on": [
+        "A01"
+      ],
+      "notes": "N01",
+      "source": {
+        "file": "sections/rooted_mi/04_owner_point_and_finite_lift.tex",
+        "anchor": "\\label{lem:acf-finite-lift}"
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "name": "Actual quotient source and finite closures",
+      "statement": "barQ inherits the actual standing source via I05. Finite real bases in Q and barQ have finite real acl by homogeneity in finite relational languages: finitely many point orbits, of which finitely many are finite. This does not require any S or witness.",
+      "depends_on": [
+        "D01",
+        "I05"
+      ],
+      "notes": "N01",
+      "scope": "closure",
+      "source_labels": [
+        "lem:acf-finite-lift"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C02",
+      "name": "Uniform finite K-fibres",
+      "statement": "There is a finite integer k>=1 such that EVERY K-class has k real points, by original transitivity. Hence pi^-1(Tbar) is finite for every finite Tbar, of size k|Tbar|, including the empty case.",
+      "depends_on": [
+        "A01",
+        "D01"
+      ],
+      "notes": "N02",
+      "scope": "closure",
+      "source_labels": [
+        "lem:acf-finite-lift"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C03",
+      "name": "Finite quotient orbit implies finite real orbit",
+      "statement": "For every finite A0 and x, if pi(x) has finite orbit under FULL Aut(barQ/pi A0), the Aut(Q/A0)-orbit of x lies in finitely many K-classes, each finite, and is finite. The original stabilizer image is used only as a subgroup.",
+      "depends_on": [
+        "A04",
+        "D02",
+        "C02"
+      ],
+      "notes": "N02",
+      "scope": "closure",
+      "source_labels": [
+        "lem:acf-finite-lift"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C04",
+      "name": "Finite joint request fixing EACH real parameter",
+      "statement": "If pi(x) has infinite full quotient-stabilizer orbit, then for EACH distinct target c in that orbit choose a quotient automorphism fixing pi A0 and sending pi(x) to c. Its restriction to pi A0 union {pi(x)}, together with identity on EACH actual a in A0, is a within-sort preserving finite map; pi(x) is not in pi A0.",
+      "depends_on": [
+        "A04",
+        "D02"
+      ],
+      "notes": "N02",
+      "scope": "closure",
+      "source_labels": [
+        "lem:acf-finite-lift"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C05",
+      "name": "Infinitely many joint lifts witness nonalgebraicity",
+      "statement": "In C04 every real/K mixed pair is preserved by I03 because all pi(a) are named and fixed. I04 lifts the finite map to an ambient automorphism fixing A0 POINTWISE. Distinct target K-classes give infinitely many images of x, proving pi(x) not algebraic => x not algebraic without any group section.",
+      "depends_on": [
+        "C04",
+        "I03",
+        "I04",
+        "D10"
+      ],
+      "notes": "N02",
+      "scope": "closure",
+      "source_labels": [
+        "lem:acf-finite-lift"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C06",
+      "name": "Two-sided finite exact algebraic-closure identity",
+      "statement": "For EVERY finite real A0, including empty, acl_Q(A0)=pi^-1(acl_barQ(pi A0)). Use C03 and the contrapositive of C05 with their DISTINCT pointwise stabilizers. Both sides are finite by C01/C02; no S, witness, owner H or normalization is used.",
+      "depends_on": [
+        "C01",
+        "C03",
+        "C05"
+      ],
+      "notes": "N02",
+      "scope": "closure",
+      "source_labels": [
+        "lem:acf-finite-lift",
+        "eq:acf-finite-acl"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C07",
+      "name": "Uniform full-matrix safety",
+      "statement": "For EVERY actual diversity quotient atom q, all actual class pairs in q have exactly the same fine colour support Lambda_K(q): one original automorphism transports their entire K×K matrices. Thus q in barS iff EVERY entry of EVERY such matrix is in S_Q. Quotient equality is excluded from barS.",
+      "depends_on": [
+        "D03",
+        "A01"
+      ],
+      "notes": "N03",
+      "scope": "safe_descent",
+      "source_labels": [
+        "lem:acf-finite-lift"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C08",
+      "name": "Lift the abstract closed span with consistent full base",
+      "statement": "For every finite absolutely closed quotient span, finite joint K-sort lifts give compatible ORIGINAL fine-coloured embeddings of its full finite K-preimages. These preimages are absolutely acl_Q-closed by C06. Retain abstract copies identified exactly on the full lifted base; accidental actual off-base overlap is irrelevant.",
+      "depends_on": [
+        "D04",
+        "C06",
+        "I04"
+      ],
+      "notes": "N03",
+      "scope": "safe_descent",
+      "source_labels": [
+        "lem:acf-finite-lift"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C09",
+      "name": "Strong real amalgam has full and separate K-class images",
+      "statement": "Apply A05 to the C08 span. Each induced real embedding extends ambiently by Q homogeneity, preserves K and sends every full k-point K-class ONTO an entire k-point K-class. Strong real intersection exactly at the lifted base therefore prevents new off-base K-class collisions in either factor or between factors.",
+      "depends_on": [
+        "C08",
+        "A05",
+        "A01",
+        "C02"
+      ],
+      "notes": "N03",
+      "scope": "safe_descent",
+      "source_labels": [
+        "lem:acf-finite-lift"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C10",
+      "name": "Strong closed full-matrix safety descends",
+      "statement": "Project the C09 amalgam to barQ. The projected embeddings are fine canonical quotient embeddings, form a STRONG amalgam over the original quotient base, and every new off-base class pair has its ENTIRE K×K matrix in S_Q. By C07 its quotient colour is in barS. No raw SAP or closedness of the resulting amalgam is asserted.",
+      "depends_on": [
+        "C09",
+        "C07"
+      ],
+      "notes": "N03",
+      "scope": "safe_descent",
+      "source_labels": [
+        "lem:acf-finite-lift"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C11",
+      "name": "Every finite original partial map descends recognizably",
+      "statement": "For every finite original partial isomorphism p, K as a union of fine atom names makes barp(pi x)=pi p(x) well-defined AND injective; its inverse gives the converse equivalence of K-membership. Each quotient orbital has fine-atom-union pullback K;a;K, so barp preserves EVERY canonical quotient colour, including equality.",
+      "depends_on": [
+        "D01",
+        "A01",
+        "D10"
+      ],
+      "notes": "N04",
+      "scope": "finite_recognition",
+      "source_labels": [
+        "lem:acf-finite-lift"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C12",
+      "name": "Every finite reconstructed automorphism descends",
+      "statement": "For every finite Tbar and D=pi^-1(Tbar), EVERY beta in FULL Aut(D) induces an automorphism of Tbar by C11. All classes occur, so this induced map is unique and composition-compatible. This is finite named-colour recognition, not the claim that all full quotient automorphisms lift globally.",
+      "depends_on": [
+        "D05",
+        "C11"
+      ],
+      "notes": "N04",
+      "scope": "finite_recognition",
+      "source_labels": [
+        "lem:acf-finite-lift"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C13",
+      "name": "One full preimage contains the actual closure",
+      "statement": "For any finite Tbar containing acl_barQ(pi A0), D=pi^-1(Tbar) is finite, K-saturated, contains A0 and acl_Q(A0), and is the SAME set for every request and root. It is absolutely acl_Q-closed IFF Tbar is absolutely acl_barQ-closed, by C06 applied to finite D and pi D=Tbar. Rooted witness input alone does NOT assert either full closedness.",
+      "depends_on": [
+        "D05",
+        "C06",
+        "C02"
+      ],
+      "notes": "N04",
+      "scope": "finite_recognition",
+      "source_labels": [
+        "lem:acf-finite-lift"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C14",
+      "name": "Two-sort finite lift on the ENTIRE quotient witness",
+      "statement": "For ANY finite Tbar, barbeta in Aut(Tbar), and original finite partial p0 within D=pi^-1(Tbar) satisfying pi p0=barbeta pi, p0 union barbeta on ALL Tbar preserves within-sort and every mixed pair by I03. I04 yields ONE ambient automorphism preserving D setwise, extending p0 and inducing EXACTLY barbeta on Tbar. Duplicate actual sorts are merged by D10.",
+      "depends_on": [
+        "D05",
+        "I03",
+        "I04",
+        "D10"
+      ],
+      "notes": "N04",
+      "scope": "finite_exact",
+      "source_labels": [
+        "lem:acf-finite-lift"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C15",
+      "name": "Ordinary source extensions on the same full witness",
+      "statement": "Under A06, EVERY original p:A0 partial automorphism projects by C11 to a partial automorphism of pi A0; extend it in the supplied barD and apply C14 with p0=p. Thus D=pi^-1(barD) is an ordinary EPPA witness for A0. This uses neither relative H nor owner onto/kernel hypotheses, and assumes no EPPA of Age(Q).",
+      "depends_on": [
+        "A06",
+        "D06",
+        "C11",
+        "C14"
+      ],
+      "notes": "N05",
+      "scope": "ordinary_witness",
+      "source_labels": [
+        "lem:acf-finite-lift"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C16",
+      "name": "Unsafe cliques project to unsafe distinct classes",
+      "statement": "For EVERY original unsafe Z in any full preimage, pi(Z) is nonempty and barS-unsafe: for each pair of DISTINCT image classes choose z,zprime in Z; their unsafe fine edge lies in that full cross matrix, excluding its quotient colour from barS. Same-class edges disappear; singleton projection is vacuously unsafe.",
+      "depends_on": [
+        "D07",
+        "C07"
+      ],
+      "notes": "N05",
+      "scope": "ordinary_witness",
+      "source_labels": [
+        "lem:acf-finite-lift"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C17",
+      "name": "Ordinary transport keeps the root literally in A0",
+      "statement": "Under A06, quotient rooted ACF sends pi Z into acl_barQ(pi A0) and the selected pi z to pi a for SOME ACTUAL a in A0. The singleton original map z->a is genuine by transitivity. C14 with this singleton gives one automorphism of the SAME D sending z LITERALLY to a; C06 puts the whole clique image in acl_Q(A0). No independently chosen K-fibre permutation is used.",
+      "depends_on": [
+        "A06",
+        "C16",
+        "C14",
+        "C06",
+        "A01"
+      ],
+      "notes": "N05",
+      "scope": "ordinary_witness",
+      "source_labels": [
+        "lem:acf-finite-lift"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C18",
+      "name": "Ordinary finite exact rooted reconstruction",
+      "statement": "For EVERY supplied ordinary quotient witness A06, the ONE D=pi^-1(barD) contains acl_Q(A0), extends every source partial automorphism and handles EVERY unsafe clique and selected root with literal target in A0. C10 separately establishes the quotient safe hypothesis when needed by its constructor. No relative owner input or master is needed.",
+      "depends_on": [
+        "C13",
+        "C15",
+        "C17"
+      ],
+      "notes": "N05",
+      "scope": "ordinary_witness",
+      "source_labels": [
+        "lem:acf-finite-lift"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C19",
+      "name": "Exact common quotient and finite complete owner cover",
+      "statement": "For full exact K,H, J=K;H=K join H is full exact. For each c in Q/J and ANY K-class C over c, K;H=J says C meets EVERY H-class above c. Hence there are at most k such H-classes, and the complete inverse owner set B over finite barB is finite. This is an actual incidence theorem, including equality atoms, not arbitrary tuple realization.",
+      "depends_on": [
+        "D08",
+        "I01",
+        "I02",
+        "C02"
+      ],
+      "notes": "N06",
+      "scope": "relative_owner",
+      "source_labels": [
+        "lem:acf-finite-lift"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C20",
+      "name": "Actual finite owner homomorphism and exact reconstructed image",
+      "statement": "Under A08, the H-image of D=pi^-1(barD) is EXACTLY complete B by C19 and barD->barB onto. H, J/H and all common-quotient pair colours are recognizable unions of canonical fine colours. Thus EVERY Aut(D) induces Aut(B); EVERY Aut(B) induces an ACTUAL projection-equivariant rho(gamma) in Aut(barB) on ENTIRE B, and rho is a group homomorphism. No surjectivity or kernel transitivity follows at this stage.",
+      "depends_on": [
+        "D09",
+        "C19",
+        "C11",
+        "D05"
+      ],
+      "notes": "N06",
+      "scope": "relative_owner",
+      "source_labels": [
+        "lem:acf-finite-lift"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C21",
+      "name": "Three-sort lift with exact ENTIRE owner action",
+      "statement": "For barbeta in Aut(barD) with induced bargamma on barB, gamma in Aut(B) with rho gamma=bargamma, and original partial p0 within D compatible with BOTH pi_K p0=barbeta pi_K and pi_H p0=gamma pi_H, the union on real points, ALL barD and ALL B is a genuine finite joint partial isomorphism. Real/K and real/H mixed pairs use I03; K/H pairs use K;a;H=J;a;J from I02, INCLUDING equality. I04 gives one automorphism of D extending p0 with EXACT barbeta and gamma. No owner kernel condition is needed.",
+      "depends_on": [
+        "C20",
+        "I02",
+        "I03",
+        "I04",
+        "D10"
+      ],
+      "notes": "N07",
+      "scope": "relative_owner",
+      "source_labels": [
+        "lem:acf-finite-lift"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C22",
+      "name": "Project every compatible relative source request",
+      "statement": "For EVERY original compatible (p,gamma) on A0 and ENTIRE B, barp from C11 is a quotient source partial map and is compatible with ACTUAL rho(gamma) on ENTIRE barB, since r pi_H=pi_J. This includes every (empty,gamma). A08 supplies an extension barbeta inducing EXACT rho(gamma).",
+      "depends_on": [
+        "D09",
+        "C11",
+        "C20",
+        "A08"
+      ],
+      "notes": "N07",
+      "scope": "relative_owner",
+      "source_labels": [
+        "lem:acf-finite-lift"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C23",
+      "name": "Relative source extensions need no owner-kernel hypothesis",
+      "statement": "Apply C21 to C22 with p0=p and the ALREADY prescribed gamma. Every compatible source request, including empty and singleton requests, extends in the SAME full D with exact action on ALL B. Neither onto rho nor transitivity of ker rho is used in this source-extension branch.",
+      "depends_on": [
+        "C22",
+        "C21"
+      ],
+      "notes": "N07",
+      "scope": "relative_owner",
+      "source_labels": [
+        "lem:acf-finite-lift"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C24",
+      "name": "Correct a prescribed owner lift at one actual owner",
+      "statement": "Under A09, for b,bprime in B and bargamma in Aut(barB) with bargamma r(b)=r(bprime), choose gamma0 lifting bargamma. Then gamma0 b and bprime lie in one actual owner-cover fibre; choose eta in ker rho sending the former to the latter. gamma=eta gamma0 has rho gamma=bargamma and gamma b=bprime. Nonfree/nonfaithful actions are allowed, and no section is chosen.",
+      "depends_on": [
+        "I06",
+        "A09",
+        "C20"
+      ],
+      "notes": "N08",
+      "scope": "abstract_point",
+      "source_labels": [
+        "lem:acf-finite-lift"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C25",
+      "name": "Relative root transport with literal real target",
+      "statement": "For EVERY unsafe Z subset D and selected z, A08 and C16 give relative baralpha sending pi Z into quotient closure and pi z to pi a for an actual a in A0, with coarse component bargamma. Since bargamma pi_J z=pi_J a, C24 chooses gamma with rho gamma=bargamma and gamma H[z]=H[a]. Apply C21 with p0:z->a. The resulting SAME-D automorphism has literal root a, exact entire B action gamma and whole clique image in acl_Q(A0) by C06.",
+      "depends_on": [
+        "A08",
+        "C16",
+        "C24",
+        "C21",
+        "C06",
+        "A01"
+      ],
+      "notes": "N08",
+      "scope": "relative_owner",
+      "source_labels": [
+        "lem:acf-finite-lift"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C26",
+      "name": "Stronger relative finite exact rooted reconstruction",
+      "statement": "Under A07-A09 and the standing finite exact data, the ONE full D projects onto exactly COMPLETE finite B, contains acl_Q(A0), extends ALL compatible source requests and has all relative rooted unsafe transports. Owner onto/kernel conditions are used ONLY in the latter. Arbitrary nonexact H or incomplete finite B is outside this theorem.",
+      "depends_on": [
+        "C13",
+        "C20",
+        "C23",
+        "C25"
+      ],
+      "notes": "N08",
+      "scope": "relative_owner",
+      "source_labels": [
+        "lem:acf-finite-lift"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C27",
+      "name": "Full finite-lift source theorem with scoped conclusions",
+      "statement": "Combine C06 (all finite A0 closure), C10 (given closed-S descends), C18 (nonempty ordinary reconstruction from supplied quotient witness), and C26 (separate stronger full-exact relative assertion). K=Id is allowed throughout; relative H=Id,K=H,J=Top are handled by actual-sort identification/compatibility. This is a HUMAN expansion of the source finite-lift lemma, not a global EPPA or Lean completion claim.",
+      "depends_on": [
+        "C06",
+        "C10",
+        "C18",
+        "C26"
+      ],
+      "notes": "N09",
+      "scope": "finite_exact",
+      "source_labels": [
+        "lem:acf-finite-lift"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    }
+  ],
+  "source_result_files": [],
+  "additional_result_exports": [
+    "lem:acf-finite-lift"
+  ],
+  "exports": [
+    {
+      "source_label": "lem:acf-finite-lift",
+      "claims": [
+        "C06",
+        "C10",
+        "C18",
+        "C26",
+        "C27"
+      ]
+    }
+  ],
+  "auxiliary_exports": [
+    {
+      "source_label": "eq:acf-finite-acl",
+      "source": {
+        "file": "sections/rooted_mi/04_owner_point_and_finite_lift.tex",
+        "anchor": "\\label{eq:acf-finite-acl}"
+      },
+      "claims": [
+        "C06"
+      ]
+    }
+  ],
+  "source_files": [
+    {
+      "file": "sections/rooted_mi/04_owner_point_and_finite_lift.tex",
+      "git_blob": "4d7533b499949f3e2c72a6f35413f5b7ab4d3210"
+    },
+    {
+      "file": "sections/exact_foundations/01_full_raw_exact_helly.tex",
+      "git_blob": "7cb28c86b4b296ddf865b6aff518cda1215cd491"
+    },
+    {
+      "file": "sections/exact_foundations/02_exact_quotient_orbital_geometry.tex",
+      "git_blob": "d462f2bfffcd67c1fa712ac516972ab18e073d44"
+    },
+    {
+      "file": "sections/exact_foundations/03_joint_exact_sort_lifting.tex",
+      "git_blob": "394e0db063a476c5c069384b3d3fa2ffd3c7471d"
+    },
+    {
+      "file": "sections/typed_invariant_quotient_transport.tex",
+      "git_blob": "3895b17d7d0176a74d6f69c39e4e22d9cdba5715"
+    }
+  ],
+  "dependency_firewalls": [
+    {
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06"
+      ],
+      "forbid": [
+        "A05",
+        "A06",
+        "A07",
+        "A08",
+        "A09",
+        "I06"
+      ]
+    },
+    {
+      "claims": [
+        "C07",
+        "C08",
+        "C09",
+        "C10"
+      ],
+      "forbid": [
+        "A06",
+        "A07",
+        "A08",
+        "A09",
+        "I06"
+      ]
+    },
+    {
+      "claims": [
+        "C11",
+        "C12",
+        "C13",
+        "C14"
+      ],
+      "forbid": [
+        "A05",
+        "A06",
+        "A07",
+        "A08",
+        "A09",
+        "I06"
+      ]
+    },
+    {
+      "claims": [
+        "C15",
+        "C16",
+        "C17",
+        "C18"
+      ],
+      "forbid": [
+        "A07",
+        "A08",
+        "A09",
+        "I06"
+      ]
+    },
+    {
+      "claims": [
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23"
+      ],
+      "forbid": [
+        "A06",
+        "A09",
+        "I06"
+      ]
+    },
+    {
+      "claims": [
+        "C24",
+        "C25",
+        "C26"
+      ],
+      "forbid": [
+        "A06"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "T01",
+      "name": "Finite quotient source and both closure directions",
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement exact quantified contracts using prepared providers. Preserve distinct pointwise stabilizers, full finite K-preimages, all matrix entries, actual whole-owner maps, duplicate-sort agreement and literal selected roots. Keep ordinary restoration independent of relative H/master and use owner onto/kernel only for relative root transport."
+    },
+    {
+      "id": "T02",
+      "name": "Abstract closed spans and full-matrix safe descent",
+      "claims": [
+        "C07",
+        "C08",
+        "C09",
+        "C10"
+      ],
+      "depends_on": [
+        "T01"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement exact quantified contracts using prepared providers. Preserve distinct pointwise stabilizers, full finite K-preimages, all matrix entries, actual whole-owner maps, duplicate-sort agreement and literal selected roots. Keep ordinary restoration independent of relative H/master and use owner onto/kernel only for relative root transport."
+    },
+    {
+      "id": "T03",
+      "name": "Finite recognition and entire two-sort lifts",
+      "claims": [
+        "C11",
+        "C12",
+        "C13",
+        "C14"
+      ],
+      "depends_on": [
+        "T01"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement exact quantified contracts using prepared providers. Preserve distinct pointwise stabilizers, full finite K-preimages, all matrix entries, actual whole-owner maps, duplicate-sort agreement and literal selected roots. Keep ordinary restoration independent of relative H/master and use owner onto/kernel only for relative root transport."
+    },
+    {
+      "id": "T04",
+      "name": "One ordinary full witness and literal roots",
+      "claims": [
+        "C15",
+        "C16",
+        "C17",
+        "C18"
+      ],
+      "depends_on": [
+        "T01",
+        "T02",
+        "T03"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement exact quantified contracts using prepared providers. Preserve distinct pointwise stabilizers, full finite K-preimages, all matrix entries, actual whole-owner maps, duplicate-sort agreement and literal selected roots. Keep ordinary restoration independent of relative H/master and use owner onto/kernel only for relative root transport."
+    },
+    {
+      "id": "T05",
+      "name": "Actual full owners and all relative source requests",
+      "claims": [
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23"
+      ],
+      "depends_on": [
+        "T01",
+        "T03"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement exact quantified contracts using prepared providers. Preserve distinct pointwise stabilizers, full finite K-preimages, all matrix entries, actual whole-owner maps, duplicate-sort agreement and literal selected roots. Keep ordinary restoration independent of relative H/master and use owner onto/kernel only for relative root transport."
+    },
+    {
+      "id": "T06",
+      "name": "Kernel root correction and scoped source assembly",
+      "claims": [
+        "C24",
+        "C25",
+        "C26",
+        "C27"
+      ],
+      "depends_on": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement exact quantified contracts using prepared providers. Preserve distinct pointwise stabilizers, full finite K-preimages, all matrix entries, actual whole-owner maps, duplicate-sort agreement and literal selected roots. Keep ordinary restoration independent of relative H/master and use owner onto/kernel only for relative root transport."
+    }
+  ],
+  "overview_mermaid": [
+    "flowchart TD",
+    "  K[\"Actual finite full-exact K\"] --> A[\"Two-sided finite acl identity\"]",
+    "  J[\"Finite joint exact maps\"] --> A",
+    "  A --> S[\"Full closed spans and safe matrices\"]",
+    "  A --> W[\"One full K-preimage witness\"]",
+    "  J --> W",
+    "  W --> O[\"Ordinary source extensions and literal roots\"]",
+    "  H[\"Actual exact H and complete B\"] --> R[\"Entire three-sort relative lifts\"]",
+    "  J --> R",
+    "  R --> E[\"All relative source requests\"]",
+    "  G[\"Onto owner map and fibre kernel\"] --> P[\"Relative literal roots\"]",
+    "  R --> P",
+    "  A --> P"
+  ],
+  "overview_notes": [
+    "Closure and absolute closed-safe descent do not assume a witness, owner H or owner kernel conditions.",
+    "Ordinary reconstruction uses one supplied quotient witness; the rank-restoration consumer needs only this nonrelative branch.",
+    "Relative source extension uses the already prescribed gamma; onto/kernel transitivity is used only to choose gamma for a rooted transport.",
+    "The already-prepared B018 point lemma is outside this module; shared B001 point lifting is support, not a new export. No source TeX, owner master or global EPPA proof is changed."
+  ],
+  "controls": [
+    {
+      "id": "K01",
+      "check": "Bounded finite group/action models for full finite preimages, distinct stabilizers, actual projection recognition and closure-orbit counting."
+    },
+    {
+      "id": "K02",
+      "check": "Bounded full-matrix safe descent, unsafe projection, literal-root lifting and owner kernel correction. Finite diagnostics do not certify infinite-source CCO, strong closed-S, joint exact homogeneity or global EPPA."
+    }
+  ],
+  "article_feedback": [
+    {
+      "id": "F01",
+      "kind": "DEPENDENCY_OR_SCOPE_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/rooted_mi/04_owner_point_and_finite_lift.tex",
+        "anchor": "For safety, lift closed quotient factors"
+      },
+      "finding": "Abstract quotient base embeddings require consistent full real base embeddings before strong closed-S is applied; a real strong amalgam projects strongly only after proving each finite full K-class image is full.",
+      "proposed_article_change": "Expand the finite K-sort lift of each base embedding, use abstract factor copies over the full base and state the equal finite-class-size argument.",
+      "caller_effect": "Proof expansion only; the source theorem hypotheses and conclusion are unchanged.",
+      "proof_claims": [
+        "C08",
+        "C09",
+        "C10"
+      ]
+    },
+    {
+      "id": "F02",
+      "kind": "DEPENDENCY_OR_SCOPE_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/rooted_mi/04_owner_point_and_finite_lift.tex",
+        "anchor": "For source extension, project the original partial map"
+      },
+      "finding": "Finite p and FULL Aut(D) descend because K and all quotient orbital pullbacks are recognizable unions of original fine colours. The stronger owner onto/kernel condition is unnecessary for source requests and is used only for relative rooted correction.",
+      "proposed_article_change": "Make finite recognizability and the two relative dependency branches explicit; retain actual FULL exact H and complete B.",
+      "caller_effect": "No extra EPPA(Q), finite F exactness, section or finite owner master is introduced.",
+      "proof_claims": [
+        "C11",
+        "C12",
+        "C20",
+        "C23",
+        "C24",
+        "C25"
+      ]
+    }
+  ],
+  "review": {
+    "date": "2026-10-28",
+    "source_unchanged": true,
+    "source_signature_repairs": 0,
+    "unexpanded_provider_labels": [],
+    "proof_status": "HUMAN_EXPANDED_NOT_LEAN; local exact provider/consumer expansion only. No compiled Lean imports, global rooted/ordinary EPPA certification or ordinary EPPA(Q) premise.",
+    "independent_reviews": [
+      "Closure/stabilizer, abstract-span/full-matrix, actual-owner and repeated-sort proof audit",
+      "Finite quotient recognition, scoped ordinary/relative requests and literal-root dependency audit"
+    ],
+    "boundaries": [
+      "Arbitrary reconstructed D is K-saturated and contains acl(A0); absolute closedness is conditional on barD closed.",
+      "K may be Id and need not be greatest finite F.",
+      "Stronger relative owner assumptions are not needed by the nonrelative finite-restoration rank consumer."
+    ]
+  }
+}

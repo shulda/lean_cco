@@ -63,8 +63,11 @@ def registry_promotion_manifest(previous_registry, previous_policy, registry, po
             and len(ids) == len(set(ids)), 'Duplicate or invalid catalogue package IDs')
     additions = rows[len(old):]
     added_ids = [p['id'] for p in additions]
-    require(added_ids == sorted(added_ids) and min(added_ids) > max(p['id'] for p in old),
-            'Append new package IDs in increasing catalogue order')
+    # Independent prepared work may be released before lower numbered packages.
+    # The complete old prefix and unique IDs above protect history; a numeric
+    # frontier would permanently prevent releasing those held packages later.
+    require(added_ids == sorted(added_ids),
+            'Append each release\'s new package IDs in increasing order')
     for p in additions:
         require(p.get('state') == 'PLANNED' and p.get('owner_project_id') is None
                 and p.get('accepted_commit') is None,

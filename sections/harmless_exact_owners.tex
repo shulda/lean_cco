@@ -1,0 +1,216 @@
+\section{Harmless quotient owners in the full invariant lattice}
+\label{sec:harmless-exact-owners}
+
+% C6: source-preserved, no change of theorem signature or proof.  This
+% general full-invariant-lattice statement is used both in the
+% single-minimal-infinite-cut reduction and in the maximal exact core
+% construction; it requires only the earlier real-hull theorem.
+\begin{lemma}[Harmless owners contain all minimal directions]
+\label{lem:acf-harmless-owners}
+In any standing infinite source, naming finitely many quotient
+classes of an invariant equivalence $H$ does not increase
+\emph{real} algebraic closure if and only if $H$ contains
+all inclusion-minimal infinite equivalences.  The same holds
+simultaneously for finitely many such sorts.
+\end{lemma}
+\begin{proof}
+We prove both directions, distinguishing
+the FULL invariant-equivalence lattice
+from its exact sublattice.
+
+First assume \(H\) contains ALL
+inclusion-minimal INFINITE invariant
+equivalences. Fix finite actual real
+\(A\), finitely many actual named
+\(H\)-classes \(C_1,\ldots,C_m\)
+(or finitely many such classes in
+several owner sorts, each owner kernel
+containing every minimal infinite
+equivalence), and a real point
+\(x\notin\operatorname{acl}_M(A)\).
+We show
+\[
+     x\notin
+     \operatorname{acl}_M(A,C_1,\ldots,C_m).
+\]
+
+For each \(a\in A\) put
+\(p_a=\col(x,a)\) (when \(x=a\),
+which cannot happen here, the
+equality relation would be used),
+and define the ACTUAL invariant
+equivalence
+\[
+       J_A=\bigcap_{a\in A}\Gamma(p_a).
+\]
+The class of \(x\) in this
+equivalence is
+\[
+       J_A[x]=
+       \bigcap_{a\in A}
+                   [a]_{\Gamma(p_a)},
+\]
+because \(x\Gamma(p_a)a\).
+If it were finite it would be
+a finite \(A\)-definable set
+containing \(x\), contradicting
+\(x\notin\operatorname{acl}(A)\).
+Thus \(J_A\) has infinite classes.
+The invariant-equivalence lattice
+is finite (unions of finitely many
+old atomic orbitals), so it contains
+some inclusion-minimal infinite
+equivalence \(E\le J_A\).
+We fix ONE such \(E\) for ALL
+owner classes to be named.
+
+For any named owner class \(C_j\)
+of a kernel \(H_j\ge E\), choose
+an \(E\)-class \(D_j\subseteq C_j\).
+It is infinite. Let \(F=\Sigma(\Id)\)
+be the greatest finite-class
+invariant equivalence of \(M\);
+all its classes are finite.
+Call an actual old atomic colour
+\(p\) BAD (for this \(E\)) when
+\(E\cap(p;p)\subseteq F\).
+For such \(p\), any two points
+\(b,b'\in p[x]\cap D_j\)
+are related both by \(E\) and
+by \(p;p\), hence by \(F\).
+Therefore this entire intersection,
+when nonempty, lies in ONE
+finite \(F\)-class. There are
+only finitely many old atomic
+colours, so the union of these
+bad neighbour sets meets
+\(D_j\) in finitely many points.
+Choose an actual real representative
+\(b_j\in D_j\) OUTSIDE that finite
+union AND outside the singleton
+\(\{x\}\). This extra exclusion
+is essential: \(x\) might itself
+lie in \(D_j\), and the subsequent
+\(p_j=\col(x,b_j)\) must be a
+genuine DIVERSITY atomic colour,
+not logical equality. Since
+\(D_j\) is infinite and only
+finitely many points are
+excluded, such \(b_j\) exists.
+Its genuine atomic diversity
+colour \(p_j=\col(x,b_j)\)
+is therefore not bad.
+
+For this good \(p_j\),
+\(E\cap(p_j;p_j)\nsubseteq F\).
+The relation \(E\cap\Gamma(p_j)\)
+is an invariant EQUIVALENCE,
+contains \(E\cap(p_j;p_j)\)
+and is therefore NOT a
+finite-class equivalence, since
+every finite-class invariant
+equivalence lies below \(F\).
+By minimality of the INFINITE
+\(E\), this intersection must
+be all of \(E\). Consequently
+\[
+       E\le\Gamma(\col(x,b_j))
+                    \quad(j=1,\ldots,m).
+\]
+Since \(E\le J_A\) as well,
+\[
+ E[x]\subseteq
+  \bigcap_{a\in A}[a]_{\Gamma(\col(x,a))}
+  \cap
+  \bigcap_{j=1}^m[b_j]_{\Gamma(\col(x,b_j))}.
+\tag{HO1}\label{eq:acf-harmless-hull}
+\]
+This intersection is INFINITE.
+If \(x\) were algebraic over
+\(A\) and the NAMED imaginary
+owner classes \(C_1,\ldots,C_m\),
+it would also be algebraic over
+\(A\cup\{b_1,\ldots,b_m\}\),
+because each \(C_j\) is definable
+from its chosen representative
+\(b_j\). The canonical real-hull
+theorem \cref{thm:rh-hull}
+would then force the displayed
+intersection to be FINITE,
+contrary to \eqref{eq:acf-harmless-hull}.
+This proves harmlessness of
+ANY finite collection of such
+owner classes simultaneously.
+
+Conversely suppose \(H\) omits
+some minimal infinite \(E\):
+\(E\nleq H\). The invariant
+intersection \(E\cap H\)
+is a proper equivalence below
+the minimal infinite \(E\),
+hence has FINITE real classes
+and lies below \(F\).
+Choose actual points \(x,u\)
+with \(uEx\) but \(u\not F x\),
+possible because \(E\) has
+infinite classes while \(F\)
+has finite classes. Then
+\[
+       E[u]\cap H[x]
+                =(E\cap H)[x]
+\]
+is a finite nonempty set,
+definable over the real point
+\(u\) and the imaginary class
+\(H[x]\), and contains \(x\).
+Thus \(x\in\operatorname{acl}
+(u,H[x])\). On the other hand
+\(\operatorname{acl}(u)=F[u]\).
+For clarity, this singleton
+identity has an elementary
+finite-orbital proof. Every
+\(F\)-class is finite and
+\(F[u]\) is \(u\)-definable,
+so \(F[u]\subseteq\operatorname{acl}(u)\).
+Conversely, if an atomic
+suborbit \(p[u]\) is finite,
+the symmetric orbital
+\(p\)-graph is LOCALLY FINITE,
+with all vertices having
+the same finite degree.
+Its connectedness equivalence
+\(\Gamma(p)\) is invariant
+and thus a union of FINITELY
+many actual old atomic
+orbitals. For each such
+orbital \(q\subseteq\Gamma(p)\),
+choose a single realised
+\(q\)-pair and a finite
+\(p\)-walk between its
+endpoints. Homogeneity on
+the OLD pair orbital \(q\)
+shows the same walk LENGTH
+works for every \(q\)-pair.
+Taking the maximum over
+finitely many \(q\)'s gives
+a UNIFORM finite diameter
+for every connected
+\(p\)-component. Local
+finiteness then makes every
+component FINITE. Thus
+\(\Gamma(p)\) is a finite-class
+invariant equivalence and
+hence lies below the
+greatest such \(F\).
+Every real algebraic
+single-point suborbit is
+a union of finitely many
+finite atomic suborbits,
+so it lies in \(F[u]\).
+Therefore
+\(\operatorname{acl}(u)=F[u]\),
+and \(x\notin\operatorname{acl}(u)\).
+Naming this one \(H\)-class
+increases real algebraicity,
+proving necessity.
+\end{proof}

@@ -1,0 +1,351 @@
+\section{Real algebraic closure and canonical safe coordinates}
+\label{sec:acf-geometry}
+
+Throughout the following foundational geometric sections, the standing
+symmetric binary AP and semantic homomorphic CCO hypotheses are in force.  We work in the
+\emph{original} complete symmetric binary language.  In particular, all
+colours, equivalences and quotients below are actual orbitals of the
+homogeneous structure, not independently chosen labels.
+
+For a finite real set \(A\subseteq M\), write
+\(\operatorname{acl}_M(A)\) for its real model-theoretic algebraic
+closure.  This set is finite by oligomorphy.  If \(S\subseteq
+\mathcal D(M)\), say that \(S\) has \emph{strong closed amalgamation}
+when every span of finite, induced, \(\operatorname{acl}_M\)-closed
+structures has a strong amalgam in \(\Age(M)\) whose cross edges
+between distinct vertices outside the common base have colours
+in \(S\).  We neither assume strong amalgamation of arbitrary,
+nonclosed finite structures nor require the amalgam itself to be
+closed (it can be closed subsequently).
+
+\begin{definition}[Rooted automorphism-transport ACF]
+\label{def:rooted-acf}
+For nonempty finite \(A_0\subseteq M\), a finite induced
+\(W\subseteq M\) has \emph{rooted \(S\)-ACF over \(A_0\)} if it
+contains \(\operatorname{acl}_M(A_0)\) and for every nonempty
+\(Z\subseteq W\) such that
+\(\col_W(x,y)\notin S\) whenever \(x,y\in Z\) are distinct,
+and every selected \(z\in Z\), there exists
+\(\alpha\in\Aut(W)\) satisfying
+\[
+ \alpha(Z)\subseteq\operatorname{acl}_M(A_0),
+ \qquad \alpha(z)\in A_0.
+\]
+We also call such a \(Z\) an \emph{unsafe clique}.  The definition
+requires one common \(W\) for all unsafe cliques, selected roots
+and partial automorphisms of \(A_0\); it does not assert coherent
+extensions.  In the AP-not-SAP situation the closure target is
+essential: \(\operatorname{acl}_M(A_0)\) cannot be replaced in
+general by \(A_0\).
+\end{definition}
+
+We first work in the \emph{finite-exact-normalised} case: no
+nonidentity exact invariant equivalence has finite real classes.
+Finite-exact normalisation will be used once in the common global
+induction; no global ordinary EPPA result is assumed here.  Let \(F=\Sigma(\Id)\).  It can be a nonidentity, nonexact
+thin packet equivalence, even in this normalised case.
+
+\begin{lemma}[Finite exact intersections vanish]
+\label{lem:acf-finite-exact-intersection}
+If \(E\) is an exact invariant equivalence and \(a\) an actual
+nonempty symmetric atomic orbital, then
+\[
+ E\cap a^2\subseteq F\quad\Longrightarrow\quad
+ E\cap a^2=\Id.
+\]
+\end{lemma}
+\begin{proof}
+The intersection \(D=E\cap a^2\) is an exact symmetric
+reflexive relation, by Lemma~\ref{lem:exact-product};
+reflexivity uses transitivity of \(M\) and nonemptiness and
+symmetry of \(a\).  If \(D\subseteq F\), its increasing positive
+powers stabilise, because there are only finitely many original
+orbitals.  The stable power is an exact invariant equivalence
+contained in \(F\); it has finite classes.  Normalisation makes
+it \(\Id\).  Since \(D\) is contained in its stable power,
+\(D=\Id\).
+\end{proof}
+
+Let \(E_1,\ldots,E_r\) enumerate \emph{all} inclusion-minimal
+infinite invariant equivalences.  By
+Proposition~\ref{prop:minimalcut}, they are exact.  Define the
+A32 correspondence relations
+\[
+ R_i=R_{E_i}
+  =\bigcup\{a:\ a\text{ an atomic support (including equality), }
+                         E_i\cap a^2=\Id\},
+ \qquad C_i=\kappa(R_i).
+ \tag{\(\star\)}\label{eq:acf-correspondence}
+\]
+Lemma~\ref{lem:global-correspondence} identifies every \(R_i\)
+as an invariant equivalence and gives
+\(F\le R_i\) and \(E_i\cap R_i=E_i\cap F\).
+Every \(C_i>\Id\) is an exact equivalence by
+Lemma~\ref{lem:packetinterval}, and
+\([R_i:C_i]<\infty\).
+
+\begin{lemma}[Concentration of unsafe pairs]
+\label{lem:acf-unsafe-concentration}
+Suppose \(S\) has strong closed amalgamation.  For any two
+distinct minimal infinite cuts \(E_i,E_j\),
+\[
+   \mathcal D(M)\setminus S\ \subseteq\ R_i\cup R_j
+   \quad\text{as unions of complete original orbitals}.
+\]
+Every finite unsafe clique is contained in one \(R_i\)-class
+or in one \(R_j\)-class.
+\end{lemma}
+\begin{proof}
+We first check an algebraicity test.  If \(xE_i u\) but
+\(x\not F u\), then for every real \(v\),
+\[
+  x\in\operatorname{acl}_M(u,v)
+             \quad\Longleftrightarrow\quad xR_i v.
+  \tag{\(\dagger\)}\label{eq:acf-anchor-test}
+\]
+For the forward direction, the colour \(b=\col(x,u)\)
+generates an infinite invariant equivalence inside the
+minimal infinite \(E_i\); hence \(\Gamma(b)=E_i\).
+The canonical real-hull theorem
+(Theorem~\ref{thm:rh-hull}) implies that
+\(E_i\cap\Gamma(\col(x,v))\) has finite classes, and thus is
+contained in \(F\).  In particular
+\(E_i\cap\col(x,v)^2\subseteq F\), which is \(\Id\) by
+Lemma~\ref{lem:acf-finite-exact-intersection}.  This gives
+\(xR_i v\).  The equality case \(x=v\) is immediate.
+Conversely if \(xR_i v\), every element of the
+\((u,v)\)-definable set
+\[
+       E_i[u]\cap\col(x,v)[v]
+\]
+is related to \(x\) by \(E_i\cap\col(x,v)^2=\Id\).
+The set therefore consists of the single point \(x\);
+in particular \(x\in\operatorname{acl}_M(u,v)\).
+This proves~\eqref{eq:acf-anchor-test}.
+
+Since \(E_i\cap E_j=\Id\) after normalisation (the meet
+is an exact finite-class equivalence), every atom below
+\(E_j\) has square below \(E_j\) and consequently belongs
+to \(R_i\).  Thus \(E_j\le R_i\), and symmetrically
+\(E_i\le R_j\).
+
+Suppose an actual unsafe pair \(x,y\) lies in neither
+\(R_i\) nor \(R_j\).  Choose \(u\in E_i[x]\setminus F[x]\)
+and \(v\in E_j[y]\setminus F[y]\).  Since \(vE_jy\),
+\(E_j\le R_i\), and \(x\not R_i y\), also \(x\not R_i v\).
+The test gives \(x\notin\operatorname{acl}_M(u,v)\).
+Likewise \(y\notin\operatorname{acl}_M(u,v)\).
+Strongly \(S\)-amalgamate the finite closed structures
+\(\operatorname{acl}_M(u,v,x)\) and
+\(\operatorname{acl}_M(u,v,y)\) over
+\(\operatorname{acl}_M(u,v)\).
+Write \(x',y'\) for their distinct
+off-base images and
+\(a=\col(x,y)\) for the ORIGINAL
+fine atomic colour, before amalgamation.
+The amalgam preserves the COMPLETE
+old pair colours from each
+selected point to BOTH named
+base points \(u,v\), not only the
+displayed \(E_i\)- and \(E_j\)-incidences.
+
+First \(x'E_i u\), while the old
+pair \((u,y')\) has the same
+colour as \((u,y)\).
+Since \(uE_i x\), that latter
+colour belongs to \(E_i;\{a\}\).
+Transitivity \(E_i;E_i=E_i\)
+therefore gives
+\[
+        \col(x',y')\in E_i;\{a\}.
+\]
+Independently the preserved
+old colour of \(x'v\) equals
+that of \(xv\), and \(vE_j y\),
+so \(\col(x',v)\in\{a\};E_j\).
+As \(vE_j y'\) and \(E_j\)
+is transitive, we obtain
+\[
+        \col(x',y')\in\{a\};E_j.
+\]
+Same-sort invariant relations
+commute in the ORIGINAL
+symmetric binary algebra, so
+the two restrictions give
+\[
+ \begin{aligned}
+ \col(x',y')&
+ \in (E_i;\{a\})\cap(E_j;\{a\})\\
+ &=(E_i\cap E_j);\{a\}
+   =\Id;\{a\}=\{a\},
+ \end{aligned}
+\]
+where the intersection equality
+is the FULL RAW exact meet-product
+distributivity
+(Lemma~\ref{lem:exact-product}),
+and \(E_i\cap E_j=\Id\)
+by finite-exact normalisation.
+Thus the new cross edge has the
+LITERAL original fine colour \(a\).
+Since it is a NEW off-base
+cross edge in an \(S\)-strong
+amalgam, this colour must lie in
+\(S\), contrary to the chosen
+unsafe pair.  Hence every unsafe pair lies in
+\(R_i\) or \(R_j\), and since these are unions of whole named
+orbitals the same is true atomwise.
+
+Finally, if every pair of a finite set is related by at least
+one of two equivalences \(R_i,R_j\), the elementary
+two-equivalence rook argument shows that the set lies
+entirely inside one equivalence class of one of them:
+a pair which is \(R_i\)-related but not \(R_j\)-related
+forces every other vertex into its \(R_i\)-class.
+\end{proof}
+
+\begin{lemma}[Canonical exact MI coordinates]
+\label{lem:acf-canonical-coordinates}
+If \(r\ge2\), all \(C_i\) are infinite nonidentity exact
+equivalences, and
+\[
+        \bigcap_iR_i=F,\qquad
+        \bigcap_iC_i=\Id.
+        \tag{\(\ddagger\)}\label{eq:acf-core-meets}
+\]
+For each \(i\), the actual exact quotient \(Q_i=M/C_i\)
+has a meet-irreducible largest finite-class equivalence
+\(F_i=R_i/C_i\), so
+\[
+     \operatorname{acl}_{Q_i}(U)=F_i[U]
+               \quad\text{for every finite }U\subseteq Q_i.
+               \tag{\(\heartsuit\)}\label{eq:acf-MI-closure}
+\]
+If \(S\) has strong closed amalgamation, every unsafe clique
+\(Z\) satisfies, for some index \(i_0\),
+\[
+   \pi_j(Z)\subseteq F_j[\pi_j(z)]
+              \quad(j\ne i_0,\ z\in Z).
+        \tag{\(\clubsuit\)}\label{eq:acf-one-free}
+\]
+\end{lemma}
+\begin{proof}
+The intersection \(H=\bigcap_iR_i\) contains \(F\).
+If it were strictly larger, it would have infinite classes
+by maximality of \(F\), and hence contain some minimal
+infinite \(E_j\).  But \(H\le R_j\) and
+\(E_j\cap R_j=E_j\cap F\) is finite-class.  Thus \(H=F\).
+The meet of the exact \(C_i\) is exact and contained in
+\(F\); by normalisation it is \(\Id\).
+
+For \(j\ne i\), \(E_j\le R_i\).  Since \(E_j\) is generated
+by looped atoms and is exact,
+\(E_j=\kappa(E_j)\le\kappa(R_i)=C_i\).  Thus \(C_i\)
+is infinite and nonidentity, and every \(Q_i\) is a
+strictly smaller original-language exact quotient.
+
+Put \(R=R_i\) and \(E=E_i\).  If an invariant equivalence
+\(D>R\), choose an atomic orbital \(a\subseteq D\setminus R\).
+Then \(E\cap a^2\ne\Id\).  If \(E\cap D<E\), minimality of
+the infinite \(E\) makes \(E\cap D\) finite-class, so
+\(E\cap a^2\subseteq F\), contradicting
+Lemma~\ref{lem:acf-finite-exact-intersection}.  Therefore
+\(E\le D\); the least strict coarsening of \(R\) is \(E\vee R\).
+Its relative index over \(R\) is infinite, since
+\(E\cap R=E\cap F\) has finite classes.  Thus
+\(\Sigma(R)=R\); Lemma~\ref{lem:packetinterval}
+gives \(\Sigma(C_i)=R_i\).  Passing to the actual
+exact quotient \(Q_i\), its greatest finite-class
+equivalence is \(R_i/C_i\), and the upper interval is
+meet-irreducible.  The unary-algebraicity assertion
+\eqref{eq:acf-MI-closure} is the MI case of the
+canonical real-hull criterion; equivalently it follows
+from the absence of a pair of transverse infinite
+directions in the quotient.
+
+For every pair \(i\ne j\), Lemma~\ref{lem:acf-unsafe-concentration}
+puts any unsafe clique wholly in an \(R_i\)-class or an
+\(R_j\)-class.  Therefore at most one index \(i_0\)
+can fail to contain the entire clique in a single
+\(R_i\)-class.  For \(j\ne i_0\), passage through \(C_j\)
+puts its projection into the finite \(R_j/C_j\) packet,
+giving~\eqref{eq:acf-one-free}.
+\end{proof}
+
+For later reference we record the precise
+closure pullback under FINITELY MANY
+full exact quotient projections with
+FINITE-CLASS common kernel. Let
+\(K_1,\ldots,K_m\) be actual invariant
+full exact equivalences and assume
+\[
+                     K=\bigcap_{j=1}^m K_j
+\]
+has FINITE real classes (in particular
+this holds for \(K=\Id\)).
+For every finite real \(A\),
+\begin{equation}\label{eq:acf-closure-pullback}
+ \operatorname{acl}_M(A)=
+ \bigcap_{j=1}^m
+ \pi_{K_j}^{-1}
+       \bigl(\operatorname{acl}_{M/K_j}(\pi_{K_j}A)\bigr).
+\end{equation}
+For the left-to-right inclusion,
+apply the exact quotient algebraic
+projection lemma
+\cref{lem:acf-acl-projects-exact}
+to EACH original quotient
+\(M\to M/K_j\): an algebraic
+real point has algebraic projected
+class. Conversely suppose the
+\(m\) quotient projections of
+\(x\) are all algebraic over
+their corresponding finite
+projected inputs. The
+\(\Aut(M/A)\)-orbit of \(x\)
+then projects into FINITELY
+many quotient classes in each
+of the \(m\) sources, hence
+into finitely many joint
+tuples of such classes.
+Each joint tuple corresponds
+to one \(K\)-class by actual
+exact CRT, and that class has
+FINITE size by hypothesis.
+Thus the orbit of \(x\)
+is finite, proving
+\(x\in\operatorname{acl}_M(A)\).
+
+The finite-class condition on
+\(\bigcap_jK_j\) is ESSENTIAL.
+For example in an infinite
+source taking only
+\(K_1=\Top\) makes the
+right-hand side all of \(M\),
+which cannot equal
+\(\operatorname{acl}_M(A)\)
+for finite \(A\).
+We therefore never apply
+\eqref{eq:acf-closure-pullback}
+to an arbitrary family
+of exact quotients without
+checking the common kernel.
+
+In particular, using \(K_i=C_i\),
+\[
+ \operatorname{acl}_M(A)=
+   \left\{x:
+     \pi_i(x)\in F_i[\pi_i(A)]
+                    \text{ for all }i\right\}
+ =\bigcap_iR_i[A].
+ \tag{\(\spadesuit\)}\label{eq:acf-closure-bands}
+\]
+
+\begin{remark}[Avoiding arbitrary quotient safety]
+The full-support safe-palette descent for the canonical
+normalised factors will be proved after selecting maximal
+exact cores in Lemma~\ref{lem:acf-quotient-safety} and
+Corollary~\ref{cor:acf-hat-factors}.  It relies on a
+\emph{harmless complementary exact split}.  The corresponding
+statement for an arbitrary infinite exact quotient is false.
+\end{remark}

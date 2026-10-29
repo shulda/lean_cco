@@ -1,0 +1,178 @@
+\section{Orbit avoidance and unary strong amalgamation}
+\label{sec:finite-orbit-avoidance}
+
+\subsection{Finite avoidance for group actions}
+
+\begin{lemma}[Finite-set orbit avoidance]
+\label{lem:finite-action-avoidance}
+Let $G$ be a group acting on a (possibly disjointly sorted)
+set $X$.  Suppose every point of a finite set $A\subseteq X$
+has an infinite $G$-orbit, and let $Z\subseteq X$ be any
+finite forbidden set.  Then there exists ONE $g\in G$ with
+\[
+                         g(A)\cap Z=\varnothing.
+\]
+The assertion includes $A=\varnothing$ or $Z=\varnothing$;
+no topology, model theory, or faithfulness of the action is
+required.
+\end{lemma}
+\begin{proof}
+For each $(a,z)\in A\times Z$, the set
+$T_{a,z}=\{g\in G:g(a)=z\}$ is either empty or a left
+coset of $G_a=\operatorname{Stab}_G(a)$.  Since the orbit
+$G\cdot a$ is infinite, $[G:G_a]$ is infinite.  Thus a
+finite union of the nonempty transporters $T_{a,z}$ cannot
+cover $G$, by B.~H.~Neumann's finite-coset-cover theorem
+\cite{NeumannCover}.  Any $g$ outside that union avoids all
+forbidden pairs simultaneously.  If the union is empty,
+use the identity of $G$.
+\end{proof}
+
+\subsection{Point-generated bases in a canonical coordinate expansion}
+
+\begin{lemma}[Point-generated SAP iff no off-closure coordinate algebraicity]
+\label{lem:typed-point-generated-sap-criterion}
+Let $M$ be a homogeneous complete structure on its original
+named real sorts.  Let $\widehat M$ be an ACTUAL canonical
+equivariant interpreted expansion by named unary coordinate
+maps and their finite compositions, with every hidden vertex
+some real-source unary-term value.  Assume every finite real
+$D$ has finite FULL point-generated unary closure
+$\widehat D$, and all hidden relations are interpreted
+canonically from $M$.  There are no extra zero-ary generators.
+
+The category of finite COMPLETE INDUCED point-generated hidden
+structures $\widehat P$ has SAP over its full point-generated
+common bases (including the empty base) if and only if
+\[
+ \text{for every finite real }D\subseteq M
+ \text{ and }u\in\widehat M\setminus\widehat D,\quad
+             |\Aut(M/D)\cdot u|=\infty.
+ \tag{PGO}\label{eq:typed-point-generated-sap-criterion}
+\]
+This criterion does NOT assert SAP over an arbitrary
+NON-point-generated hereditary hidden base with orphan vertices.
+It uses no CCO, symmetry or exact multiplication.
+\end{lemma}
+\begin{proof}
+Suppose first that the displayed orbit condition holds.  Align
+the original real copies of any common full point-generated
+base $\widehat D\subseteq\widehat P_1,\widehat P_2$
+inside $M$ by old homogeneity, and let
+$G=\Aut(M/D)$.  Since all unary coordinate maps are
+equivariant, $G$ fixes $\widehat D$ pointwise.
+Apply \cref{lem:finite-action-avoidance} to the $G$-action on
+$\widehat M$, with moving set
+$\widehat P_2\setminus\widehat D$ and forbidden set $\widehat P_1$.
+Every moving point has infinite orbit by the displayed hypothesis,
+so one $g\in G$ avoids the entire forbidden set simultaneously.
+Thus
+\[
+        \widehat P_1\cap g\widehat P_2=\widehat D.
+\]
+Take the COMPLETE induced original real structure on the
+union of the two aligned old real factors.  Its FULL
+point-generated hidden closure is precisely the union
+of the two hidden factors, because every named generating
+function is UNARY and both factors were already closed.
+Induced canonical relations and all unary functions are
+preserved in each old factor, so the union is a
+point-generated STRONG amalgam.
+
+Conversely suppose point-generated SAP and choose a real
+finite $D$ and a hidden $u\notin\widehat D$ with
+FINITE orbit of size $k$ under $\Aut(M/D)$.
+Choose a real $x$ and a named unary term $\tau$
+with $\tau(x)=u$, and let $\widehat P$ be the full
+finite point-generated structure of $D\cup\{x\}$.
+Repeatedly strongly amalgamate $k+1$ copies of
+$\widehat P$ over the SAME full $\widehat D$.
+They contain $k+1$ DISTINCT copies $u_j$ of
+$u$ in one full point-generated finite target.
+Embed that target into $\widehat M$ and use
+old homogeneity to identify its copy of the
+original real $D$ with the fixed $D$.
+For each $j$ its real generator $x_j$ has the
+same COMPLETE original one-point type over $D$
+as $x$, so old homogeneity supplies
+$g_j\in\Aut(M/D)$ taking $x$ to $x_j$.
+Equivariance gives
+$u_j=\tau(x_j)=g_j(\tau(x))=g_ju$.
+This contradicts the assumed $k$-element orbit.
+Therefore every off-closure hidden orbit is infinite.
+\end{proof}
+
+\subsection{The hereditary age of a homogeneous unary structure}
+
+\begin{lemma}[Hereditary SAP iff no algebraicity outside unary closure]
+\label{lem:unary-homogeneous-sap-criterion}
+Let $H$ be a countable HOMOGENEOUS many-sorted
+structure whose only named functions are UNARY
+(total on their specified source sorts), with no
+additional nullary generators.  Assume that
+the closure $\cl_H(T)$ of EVERY finite set
+under all named unary functions is finite.
+Then its age of finite induced functionally
+closed substructures has strong amalgamation
+if and only if, for EVERY finite $T\subseteq H$,
+\[
+             \operatorname{acl}_H(T)=\cl_H(T),
+ \tag{UA}\label{eq:unary-homogeneous-sap-criterion}
+\]
+where algebraicity is defined by finite
+orbits of the pointwise automorphism stabiliser.
+In that event also
+$\operatorname{dcl}_H(T)=\cl_H(T)$.
+This criterion applies to a HEREDITARY unary
+age; it is not restricted to point-generated
+objects or to purely relational reducts.
+\end{lemma}
+\begin{proof}
+Suppose first that the age has SAP.
+Fix a finite UNARY-CLOSED $A$ and $u\notin A$.
+Put $B=\cl_H(A\cup\{u\})$.
+For every positive integer $n$, repeatedly
+strongly amalgamate $n$ copies of $B$
+over ONE common copy of $A$. Embed
+the resulting finite closed structure
+into $H$, and use homogeneity to
+identify its copy of $A$ with the
+original actual $A$.  Every embedded
+copy of $B$ now defines a partial
+isomorphism fixing $A$ and sending
+$u$ to its own image $u_i$;
+homogeneity extends it to an
+automorphism fixing $A$.
+Strongness makes the $u_i$ pairwise
+DISTINCT, so $\Aut(H/A)\cdot u$
+is infinite.
+
+Conversely assume every hidden vertex
+outside each finite closed $A$
+has infinite $\Aut(H/A)$-orbit.
+For an arbitrary finite closed
+amalgamation span $A\hookrightarrow B_1,B_2$,
+homogeneity aligns its base copies
+inside $H$. Put $G=\Aut(H/A)$.
+Apply \cref{lem:finite-action-avoidance} to its action on $H$,
+with moving finite set $B_2\setminus A$ and forbidden finite set
+$B_1$. Each moving orbit is infinite by hypothesis, so one $g\in G$
+avoids $B_1$ on all of $B_2\setminus A$, while fixing $A$ pointwise.
+Thus $B_1\cap gB_2=A$. The finite
+INDUCED hidden union belongs to
+the age and is UNARY-CLOSED, since
+each factor is closed and no function
+takes two inputs from opposite factors.
+It is a STRONG amalgam.
+
+Finally the pointwise stabilisers
+of finite $T$ and of $\cl_H(T)$ coincide.
+All unary term values of $T$ are
+fixed by $\Aut(H/T)$, and
+$\cl_H(T)\subseteq\operatorname{dcl}_H(T)
+\subseteq\operatorname{acl}_H(T)$.
+The preceding orbit condition for
+finite closed sets gives the reverse
+inclusion and the equivalence
+with \eqref{eq:unary-homogeneous-sap-criterion}.
+\end{proof}

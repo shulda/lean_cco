@@ -27,6 +27,8 @@ mathematical catalogue/initial checkpoint, not current ownership.
 | B019: Full fine-coloured products and prescribed kernel actions | B002 | [B019](../../formalization/coordination/packages/B019.md) |
 | B020: Simultaneous finite exact-owner master | B008, B018, B019 | [B020](../../formalization/coordination/packages/B020.md) |
 | B021: Joint-owner full tuple actions and sparse EPPA | B002, B008 | [B021](../../formalization/coordination/packages/B021.md) |
+| B022: Real closure, harmless owners and correspondence coordinates | B002, B008, B010, B011, B013, B014 | [B022](../../formalization/coordination/packages/B022.md) |
+| B029: Finite exact reconstruction with the original selected root | B001, B002 | [B029](../../formalization/coordination/packages/B029.md) |
 
 Autonomous release permissions are in [AUTONOMY.json](AUTONOMY.json).
 Use [QUEUE_OPERATIONS.md](QUEUE_OPERATIONS.md) to claim or review work.

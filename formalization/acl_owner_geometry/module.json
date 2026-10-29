@@ -1,0 +1,1619 @@
+{
+  "schema_version": 1,
+  "id": "acl_owner_geometry",
+  "index_title": "Real closure, harmless owners and original correspondence coordinates",
+  "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+  "status": "HUMAN_EXPANDED_NOT_LEAN",
+  "scope": "Preparation for OTHER Lean projects. General exact algebraicity projection/finite closed preimages, harmless full invariant owner parameters, original normalized correspondence coordinates and internally proved finite-action avoidance. No maximal-core safe descent, rooted construction or EPPA is imported.",
+  "scope_vocabulary": [
+    "actual_source",
+    "abstract_group",
+    "abstract_lattice",
+    "finite_fibre",
+    "diagnostic"
+  ],
+  "scope_explanation": "statement and proof. Abstract avoidance/full quotient intervals, source closure, normalized correspondence and palette-conditional concentration have distinct premises.",
+  "assumptions": [
+    {
+      "id": "A01",
+      "name": "Current actual source",
+      "statement": "M is a nonempty countable transitive homogeneous source in a FINITE complete symmetric binary language with semantic homomorphic CCO and equality-inclusive RAW orbitals. Countability is retained from the packaged joint-lifting provider. No SAP or EPPA is assumed."
+    },
+    {
+      "id": "A02",
+      "name": "Infinite-source branch",
+      "statement": "For correspondence coordinates and harmless-owner criteria M is infinite. Finite-class packets F may be nonidentity and NONEXACT. The quotient projection and full-preimage closure lemmas do not need the infinite-source restriction."
+    },
+    {
+      "id": "A03",
+      "name": "Finite-exact normalization only where required",
+      "statement": "The actual source has no nonidentity invariant finite-class FULL RAW EXACT equivalence. This is used for finite-exact intersection, correspondence gluing and original canonical coordinates, not the general harmless-owner or quotient-closure branches."
+    },
+    {
+      "id": "A04",
+      "name": "Complete minimal-direction list",
+      "statement": "E_1,...,E_r enumerate ALL distinct inclusion-minimal infinite invariant equivalences of the current original source. They are exact by the prepared minimal-cut provider. Canonical multi-coordinate conclusions require r>=2; no arbitrary subset may replace this complete list."
+    },
+    {
+      "id": "A05",
+      "name": "Strong closed safe palette",
+      "statement": "S is a set of ORIGINAL diversity atom names with strong amalgamation of finite ABSOLUTELY real-acl-closed induced spans, with each new off-base cross edge in S. Used only by unsafe concentration and its clique consequence, not structural correspondence, closure or harmless-owner criteria."
+    },
+    {
+      "id": "A06",
+      "name": "Finite common kernel family",
+      "statement": "There is a finite indexed family of equivalences K_i on the original carrier with common kernel K=meet_i K_i having finite real classes. For the algebraicity/source claims they are actual FULL RAW EXACT invariant equivalences of M; the pure finite-fibre cardinality argument uses only the stated kernel property. No compatible-tuple or onto finite projection hypothesis is supplied."
+    },
+    {
+      "id": "A07",
+      "name": "Absolutely closed finite quotient targets",
+      "statement": "Each D_i is finite and ABSOLUTELY acl-closed in the actual quotient M/K_i. Full inverse images are intersected in M. For the rectangle instance C meet K=Id and both actual coordinate targets project onto the same finite nonempty owner B; B itself need not be acl-closed."
+    },
+    {
+      "id": "A08",
+      "name": "Abstract action and finite moving request",
+      "statement": "For the generic avoidance result G is any group acting on a set, A and Z are finite, and EVERY a in A has infinite G-orbit. Empty A/Z and nonfaithful actions are allowed. No topology, model theory or source geometry is needed."
+    },
+    {
+      "id": "A09",
+      "name": "Real finite-orbit algebraicity",
+      "statement": "Use real acl as finite orbits of the full pointwise automorphism stabilizer; owner classes are actual quotient imaginaries fixed individually. In the current countable homogeneous finite language, finite real bases have finite acl. Monotonicity, finite-base idempotence and transitivity follow from stabilizer finite-index arguments recalled in N00, not an extra constructional provider."
+    },
+    {
+      "id": "A10",
+      "name": "Generic commuting equivalence lattice for unary transfer",
+      "statement": "For C19 only, a transitive action has a finite lattice of commuting invariant equivalences and a greatest finite-class F; F has a UNIQUE least strict coarsening D. All relevant relative indices are uniform. No exactness, normalization, CCO, countability or safe palette is assumed in this bridge."
+    },
+    {
+      "id": "A11",
+      "name": "Generic canonical quotient language",
+      "statement": "For C35 only, G acts transitively on a nonempty set, K is G-invariant, and the quotient language names ALL actual old-G pair orbitals. The full automorphism group of this named quotient may be larger than the G image. No global surjectivity or group section is assumed."
+    }
+  ],
+  "imports": [
+    {
+      "id": "I01",
+      "name": "RAW exact products and nonempty meets",
+      "source_label": "lem:exact-product",
+      "provider_module": "raw_exact",
+      "statement": "Reuse exact RAW multiplication and nonempty meet-product distribution, including identity words, and symmetry-based original commutation. No STRONG/NR2 step.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "provider_claims": [
+        "C07",
+        "C08",
+        "C09",
+        "C10"
+      ],
+      "depends_on": [
+        "A01"
+      ]
+    },
+    {
+      "id": "I02",
+      "name": "One original automorphism for a finite joint map",
+      "source_label": "thm:joint-exact",
+      "provider_module": "raw_exact",
+      "statement": "Every finite genuine joint real/exact-sort partial isomorphism extends to ONE original automorphism. Retain the current countability premise; no global quotient automorphism section.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "provider_claims": [
+        "C23"
+      ],
+      "depends_on": [
+        "A01"
+      ]
+    },
+    {
+      "id": "I03",
+      "name": "Nested mixed pair colours",
+      "source_label": "lem:nested-mixed",
+      "provider_module": "raw_exact",
+      "statement": "For real/actual exact owner, the mixed pair orbital depends only on the projected owner pair, including quotient diagonals. This validates fixed-real/moving-owner and moving-real/fixed-owner finite requests.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "provider_claims": [
+        "C17"
+      ],
+      "depends_on": [
+        "A01"
+      ]
+    },
+    {
+      "id": "I04",
+      "name": "Actual quotient standing-source inheritance",
+      "source_label": "thm:exact-sorts-source",
+      "provider_module": "raw_exact",
+      "statement": "Every actual exact quotient retains the standing source in its complete old-group canonical orbital language. Full quotient invariant transport is C35. Strict diversity-rank decrease is proved locally in C10/C16 by counting orbital blocks; it is not attributed to an unexported rank clause of this provider.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01"
+      ]
+    },
+    {
+      "id": "I05",
+      "name": "Canonical original real hull",
+      "source_label": "thm:rh-hull",
+      "provider_module": "canonical_hull",
+      "statement": "For x outside finite nonempty real A, x is algebraic iff the actual intersection of Gamma(col(x,a)) classes through a is finite; Gamma is the FULL generated invariant equivalence, not necessarily exact. Empty parameters are treated separately.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01"
+      ]
+    },
+    {
+      "id": "I06",
+      "name": "Singleton and one-direction real closure",
+      "source_label": "cor:rh-acl-bounded-character",
+      "provider_module": "real_closure",
+      "statement": "Reuse specifically C11: acl(a)=F[a] and, for an infinite actual source with ONE minimal infinite invariant direction, acl(A)=F[A] for every finite real A. This does NOT imply harmlessness of named owner imaginaries.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "provider_claims": [
+        "C11"
+      ],
+      "depends_on": [
+        "A01"
+      ]
+    },
+    {
+      "id": "I07",
+      "name": "Packets, cores and finite-index calculus",
+      "source_label": "lem:packetinterval",
+      "provider_module": "finite_packets",
+      "statement": "Reuse elementary finite-index Sigma/F construction, monotone canonical kappa cores, finite [R:kappa(R)], Sigma(kappa(R))=Sigma(R), and actual word exactness of every core including empty-word Id. No exactness or distributivity of F is inferred.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01"
+      ]
+    },
+    {
+      "id": "I08",
+      "name": "Relative index transposition",
+      "source_label": "lem:crossingindex",
+      "provider_module": "finite_packets",
+      "statement": "Reuse C02 finite towers, restriction inequalities and [A join B:B]=[A:A meet B] for commuting invariant equivalences; do not rely on cardinal division for infinite classes.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "provider_claims": [
+        "C02"
+      ],
+      "depends_on": [
+        "A01"
+      ]
+    },
+    {
+      "id": "I09",
+      "name": "Actual minimal infinite cuts are exact",
+      "source_label": "prop:minimalcut",
+      "provider_module": "finite_packets",
+      "statement": "Every inclusion-minimal infinite invariant equivalence is its nontrivial exact packet core, with no proper infinite refinement. Keep the FULL invariant lattice separate from its exact sublattice.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01"
+      ]
+    },
+    {
+      "id": "I10",
+      "name": "Finite-square regularizer in a normalized source",
+      "source_label": "lem:finite-regularization",
+      "provider_module": "finite_packets",
+      "statement": "Reuse ONLY finite_packets C19/C22: the stabilized product of all F-atom squares is a finite-class exact H0 containing every such square. Current normalization forces H0=Id, hence every F atom has square Id. No thin-bottom conclusion is inferred from a theorem that merely assumes thinness.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01",
+        "A03"
+      ],
+      "provider_claims": [
+        "C19",
+        "C22"
+      ]
+    },
+    {
+      "id": "I11",
+      "name": "Actual finite-family set CRT",
+      "source_label": "thm:abstract-exact-crt",
+      "provider_module": "exact_crt",
+      "statement": "Use only the two-coordinate commuting-equivalence realization for a full rectangle with C meet K=Id. General finite-kernel closure pullback below does not require compatible tuple surjectivity.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01"
+      ]
+    },
+    {
+      "id": "I12",
+      "name": "Actual exact lattice for rectangle realization",
+      "source_label": "lem:acf-exact-distributive",
+      "provider_module": "exact_crt",
+      "statement": "The actual exact equivalences form a commuting distributive lattice, discharging I11 for the rectangle. The FULL invariant lattice is not asserted distributive.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01"
+      ]
+    },
+    {
+      "id": "I13",
+      "name": "Actual same-sort mixed orbital identity",
+      "source_label": "lem:acf-mixed-exact-join",
+      "provider_module": "raw_exact",
+      "statement": "For original exact C,K and old atom a, C;a;K=(C join K);a;(C join K). This is separate from rectangle closure and no global group section is asserted.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "provider_claims": [
+        "C16"
+      ],
+      "depends_on": [
+        "A01"
+      ]
+    }
+  ],
+  "source_files": [
+    {
+      "file": "sections/rooted_acf_geometry.tex",
+      "git_blob": "4910a41d44909e4b01d48c03a3e9a1116b37ea23"
+    },
+    {
+      "file": "sections/global_correspondence.tex",
+      "git_blob": "e18ca9d9d14f275a660a6358c45394891a2f46c0"
+    },
+    {
+      "file": "sections/harmless_exact_owners.tex",
+      "git_blob": "f2259434387184b1fbf24edf099da5e12be33024"
+    },
+    {
+      "file": "sections/maximal_cores/01_maximal_hat_normalisation.tex",
+      "git_blob": "248cc19427c0ad7114022238ca086a9eccc47a3f"
+    },
+    {
+      "file": "sections/finite_orbit_avoidance.tex",
+      "git_blob": "290ab3ae54ade87fc4693b0c17955a9e319efd9b"
+    },
+    {
+      "file": "sections/exact_foundations/01_full_raw_exact_helly.tex",
+      "git_blob": "7cb28c86b4b296ddf865b6aff518cda1215cd491"
+    },
+    {
+      "file": "sections/exact_foundations/02_exact_quotient_orbital_geometry.tex",
+      "git_blob": "d462f2bfffcd67c1fa712ac516972ab18e073d44"
+    },
+    {
+      "file": "sections/exact_foundations/03_joint_exact_sort_lifting.tex",
+      "git_blob": "394e0db063a476c5c069384b3d3fa2ffd3c7471d"
+    },
+    {
+      "file": "sections/real_hull/05_even_walk_canonical_hull.tex",
+      "git_blob": "40c459c5d2582ad92811ab62dcffbcb4456a8826"
+    },
+    {
+      "file": "sections/real_hull/06_minimal_infinite_directions_acl.tex",
+      "git_blob": "4c01beca2f60acfa2d942714525173889bc5804f"
+    },
+    {
+      "file": "sections/finite_packets.tex",
+      "git_blob": "dd3e608f03e7c5b1b1854a45de462859f8355143"
+    },
+    {
+      "file": "sections/exact_lattice_crt.tex",
+      "git_blob": "5ead1d021abbc99c255c8a36ec87585cba3fbdc3"
+    }
+  ],
+  "source_result_files": [
+    "sections/rooted_acf_geometry.tex",
+    "sections/global_correspondence.tex",
+    "sections/harmless_exact_owners.tex"
+  ],
+  "additional_result_exports": [
+    "lem:finite-action-avoidance",
+    "lem:acf-acl-projects-exact",
+    "lem:acf-finite-exact-closed-preimages",
+    "lem:acf-rectangle-acl"
+  ],
+  "definitions": [
+    {
+      "id": "D01",
+      "name": "Full finite packet and generated equivalence",
+      "statement": "F=Sigma(Id) is the greatest finite-class invariant equivalence, possibly nonexact. Gamma(a) is generated by the actual symmetric orbital a.",
+      "source": {
+        "file": "sections/harmless_exact_owners.tex",
+        "anchor": "greatest finite-class"
+      },
+      "notes": "N01",
+      "depends_on": [
+        "A01",
+        "I07"
+      ]
+    },
+    {
+      "id": "D02",
+      "name": "Finite-exact normalized support",
+      "statement": "No nonidentity FULL RAW exact invariant equivalence has finite classes; this does not force F=Id.",
+      "source": {
+        "file": "sections/rooted_acf_geometry.tex",
+        "anchor": "finite-exact-normalised"
+      },
+      "notes": "N02",
+      "depends_on": [
+        "A03"
+      ]
+    },
+    {
+      "id": "D03",
+      "name": "Global correspondence cut",
+      "statement": "For a GIVEN NONIDENTITY actual exact invariant EQUIVALENCE E, R_E is the union of ALL actual RAW atoms a, including equality, for which E meet a squared=Id. It is defined on the whole original carrier.",
+      "source": {
+        "file": "sections/global_correspondence.tex",
+        "anchor": "\\label{eq:global-correspondence}"
+      },
+      "notes": "N03",
+      "depends_on": [
+        "A01",
+        "A03"
+      ]
+    },
+    {
+      "id": "D04",
+      "name": "Original nonmaximal packet cores",
+      "statement": "For the complete E_i list set R_i=R_(E_i) and C_i=kappa(R_i). These symbols are NOT redefined by later maximal pseudocomplements hat C_i.",
+      "source": {
+        "file": "sections/rooted_acf_geometry.tex",
+        "anchor": "\\label{eq:acf-correspondence}"
+      },
+      "notes": "N04",
+      "depends_on": [
+        "D03",
+        "A04",
+        "I07"
+      ]
+    },
+    {
+      "id": "D05",
+      "name": "Strong closed unsafe clique",
+      "statement": "An unsafe clique is a finite set all of whose DISTINCT pairs have old atom outside S. Strong closed amalgamation is an input about absolutely closed spans, not arbitrary finite SAP.",
+      "source": {
+        "file": "sections/rooted_acf_geometry.tex",
+        "anchor": "Suppose \\(S\\) has strong closed amalgamation."
+      },
+      "notes": "N04",
+      "depends_on": [
+        "A05"
+      ]
+    },
+    {
+      "id": "D06",
+      "name": "Full inverse-image intersection",
+      "statement": "W=intersection_i pi_(K_i)^(-1)(D_i); its joint quotient-map fibres are K-classes. No independent coordinate surjectivity is assumed.",
+      "source": {
+        "file": "sections/maximal_cores/01_maximal_hat_normalisation.tex",
+        "anchor": "\\label{eq:acf-finite-exact-closed-preimages}"
+      },
+      "notes": "N06",
+      "depends_on": [
+        "A06",
+        "A07"
+      ]
+    },
+    {
+      "id": "D07",
+      "name": "Harmless actual owner classes",
+      "statement": "A full invariant owner kernel H is harmless if adding any finite collection of its actual classes as imaginary parameters does not change real acl over any finite real A. Mixed finite owner sorts are included.",
+      "source": {
+        "file": "sections/harmless_exact_owners.tex",
+        "anchor": "simultaneously for finitely many such sorts"
+      },
+      "notes": "N07",
+      "depends_on": [
+        "A01",
+        "A09"
+      ]
+    },
+    {
+      "id": "D08",
+      "name": "Bad neighbour colour for one minimal direction",
+      "statement": "For a chosen infinite minimal E, p is bad if E meet p squared subset F. In one E-class its p-neighbours of x lie in a single finite F-class.",
+      "source": {
+        "file": "sections/harmless_exact_owners.tex",
+        "anchor": "Call an actual old atomic colour"
+      },
+      "notes": "N07",
+      "depends_on": [
+        "D01"
+      ]
+    },
+    {
+      "id": "D09",
+      "name": "Canonical tuple closure target",
+      "statement": "For finite real A and exact K_i with finite common kernel, membership in real acl(A) is equivalent to every quotient coordinate being algebraic over its projected input.",
+      "source": {
+        "file": "sections/rooted_acf_geometry.tex",
+        "anchor": "\\label{eq:acf-closure-pullback}"
+      },
+      "notes": "N06",
+      "depends_on": [
+        "A06",
+        "A09"
+      ]
+    },
+    {
+      "id": "D10",
+      "name": "Virtual containment preorder",
+      "statement": "For subgroups U,V of a group, U preceq V iff [U:U meet V] is finite. Mutual virtual containment is commensurability; choose maximal CLASSES in this finite preorder.",
+      "source": {
+        "file": "sections/finite_orbit_avoidance.tex",
+        "anchor": "finite union of the nonempty transporters"
+      },
+      "notes": "N08",
+      "depends_on": []
+    },
+    {
+      "id": "D11",
+      "name": "Finite transporter obstruction",
+      "statement": "For a group action request (a,z), {g:g(a)=z} is empty or one LEFT coset of the point stabilizer. Infinite a-orbit means that stabilizer has infinite index.",
+      "source": {
+        "file": "sections/finite_orbit_avoidance.tex",
+        "anchor": "T_{a,z}"
+      },
+      "notes": "N08",
+      "depends_on": [
+        "A08"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "name": "Virtual containment is a preorder",
+      "statement": "Restriction of finite subgroup indices and the tower formula prove transitivity of preceq; mutual preceq is an equivalence relation. In a finite list of subgroup types, its quotient preorder has a maximal class.",
+      "depends_on": [
+        "D10"
+      ],
+      "notes": "N08",
+      "source_labels": [
+        "lem:finite-action-avoidance"
+      ],
+      "scope": "abstract_group",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C02",
+      "name": "Finite coset-cover theorem proved internally",
+      "statement": "A group cannot be covered by finitely many left cosets of infinite-index subgroups. Induct on distinct subgroup types: choose a maximal preceq class H, enlarge all commensurable-type cosets to finitely many H cosets, choose a disjoint further H coset, and intersect the remaining cover to cover H by fewer infinite-index subgroup types. No external Neumann theorem is assumed.",
+      "depends_on": [
+        "C01"
+      ],
+      "notes": "N08",
+      "source_labels": [
+        "lem:finite-action-avoidance"
+      ],
+      "scope": "abstract_group",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C03",
+      "name": "One motion avoids every finite forbidden pair",
+      "statement": "Each nonempty transporter is a left coset of an infinite-index stabilizer by A08. C02 prevents their finite union from covering G, so choose one g outside; it moves the entire finite A away from Z. Empty requests use identity.",
+      "depends_on": [
+        "C02",
+        "D11"
+      ],
+      "notes": "N08",
+      "source_labels": [
+        "lem:finite-action-avoidance"
+      ],
+      "scope": "abstract_group",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C04",
+      "name": "Exact reflexive finite support is identity after normalization",
+      "statement": "For an actual FULL RAW exact invariant EQUIVALENCE E and a nonempty symmetric actual atom a, ASSUME D=E meet a squared is contained in F. D is exact and reflexive by I01. Its increasing positive powers stabilize to an exact equivalence inside F; A03 forces that stable equivalence and hence D to be Id.",
+      "depends_on": [
+        "A01",
+        "A03",
+        "D01",
+        "I01"
+      ],
+      "notes": "N02",
+      "source_labels": [
+        "lem:acf-finite-exact-intersection"
+      ],
+      "scope": "actual_source",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C05",
+      "name": "The global cut contains identity and all finite packets",
+      "statement": "R_E is invariant/reflexive/symmetric. Every thin F atom squares to Id by I10, so F subset R_E, with no exactness assertion about F.",
+      "depends_on": [
+        "A01",
+        "A03",
+        "D03",
+        "I10"
+      ],
+      "notes": "N03",
+      "source_labels": [
+        "lem:global-correspondence"
+      ],
+      "scope": "actual_source",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C06",
+      "name": "Only finite thin E edges belong to the cut",
+      "statement": "If a subset E is an R_E atom then a squared subset E and E meet a squared=Id imply a squared=Id. It is a thin involution and belongs to F. Thus E meet R_E=E meet F.",
+      "depends_on": [
+        "C05",
+        "D03",
+        "I10"
+      ],
+      "notes": "N03",
+      "source_labels": [
+        "lem:global-correspondence"
+      ],
+      "scope": "actual_source",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C07",
+      "name": "Each cut colour is functional into a fixed E class",
+      "statement": "If a subset R_E, two a-neighbours of the same point lying in one E-class are E meet a squared-related and hence equal. Include the equality-atom case.",
+      "depends_on": [
+        "D03"
+      ],
+      "notes": "N03",
+      "source_labels": [
+        "lem:global-correspondence"
+      ],
+      "scope": "actual_source",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C08",
+      "name": "The finite real and fixed-owner request is genuine",
+      "statement": "For actual x a y b z and x prime E x with col(x prime,z)=col(x,z), the map x->x prime,z->z fixing all E-classes of x,y,z is a finite partial isomorphism in the actual joint language by I03. Degenerate x=z gives the identity target automatically; no inconsistent noninjective request is formed.",
+      "depends_on": [
+        "A01",
+        "D03",
+        "I03"
+      ],
+      "notes": "N03",
+      "source_labels": [
+        "lem:global-correspondence"
+      ],
+      "scope": "actual_source",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C09",
+      "name": "Joint exact lifting makes the global cut transitive",
+      "statement": "Lift C08 by I02. Fixed z and fixed E[y] plus b-functionality force g(y)=y; a-functionality then forces g(x)=x. Thus each outer colour c in a;b is functional in every E-class, equivalently E meet c squared=Id, so R_E is an equivalence.",
+      "depends_on": [
+        "C07",
+        "C08",
+        "I02"
+      ],
+      "notes": "N03",
+      "source_labels": [
+        "lem:global-correspondence"
+      ],
+      "scope": "actual_source",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C10",
+      "name": "Structural gluing dichotomy without EPPA",
+      "statement": "If R_E is finite-class, greatest F gives R_E=F. Otherwise C=kappa(R_E) is infinite nonidentity exact with finite [R_E:C]. E meet C is exact finite-class, hence Id by normalization. Actual nonidentity quotient inheritance gives strict diversity-rank decrease for M/E and M/C.",
+      "depends_on": [
+        "C05",
+        "C06",
+        "C09",
+        "I07",
+        "I04",
+        "A03"
+      ],
+      "notes": "N03",
+      "source_labels": [
+        "lem:global-correspondence"
+      ],
+      "scope": "actual_source",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C11",
+      "name": "Two-anchor algebraicity test",
+      "statement": "If x E_i u but not x F u, then Gamma(col(x,u))=E_i by minimality. I05 gives x in acl(u,v) iff x R_i v: the forward finite meet is reduced to Id by C04; the reverse defines x uniquely in E_i[u] intersect col(x,v)[v]. Treat x=v directly.",
+      "depends_on": [
+        "A01",
+        "A02",
+        "A04",
+        "C04",
+        "D04",
+        "I05"
+      ],
+      "notes": "N04",
+      "source_labels": [
+        "lem:acf-unsafe-concentration"
+      ],
+      "scope": "actual_source",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C12",
+      "name": "Different minimal directions lie in opposite correspondences",
+      "statement": "For i!=j, E_i meet E_j is exact finite-class and hence Id. Each atom inside E_j squares inside E_j and thus lies in R_i. Consequently E_j<=R_i and E_i<=R_j.",
+      "depends_on": [
+        "A03",
+        "A04",
+        "D04",
+        "I09"
+      ],
+      "notes": "N04",
+      "source_labels": [
+        "lem:acf-unsafe-concentration"
+      ],
+      "scope": "actual_source",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C13",
+      "name": "An unsafe pair cannot evade both correspondences",
+      "statement": "For an unsafe x,y outside R_i,R_j choose u in E_i[x] outside F[x] and v in E_j[y] outside F[y]. C11 places both x,y outside acl(u,v). Strongly S-amalgamate their closed extensions over that base. Preserved fine spokes plus RAW meet-product distribution force the new cross edge to have its LITERAL old unsafe atom, contradiction.",
+      "depends_on": [
+        "C11",
+        "C12",
+        "A05",
+        "A09",
+        "I01",
+        "C09"
+      ],
+      "notes": "N04",
+      "source_labels": [
+        "lem:acf-unsafe-concentration"
+      ],
+      "scope": "actual_source",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C14",
+      "name": "Two-equivalence rook lemma and exceptional cliques",
+      "statement": "If every pair of a finite set is related by one of two equivalences, the whole set lies in one equivalence class of one of them. Apply C13 to every pair of minimal-direction indices: an unsafe clique is unconcentrated in at most one R_i. Empty/singleton cliques cause no failure.",
+      "depends_on": [
+        "C13"
+      ],
+      "notes": "N04",
+      "source_labels": [
+        "lem:acf-unsafe-concentration"
+      ],
+      "scope": "actual_source",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C15",
+      "name": "All correspondences meet at F and all original cores at Id",
+      "statement": "Every R_i contains F. If intersection_i R_i had infinite classes it would contain a minimal infinite E_j, contrary to E_j meet R_j finite. Hence that intersection is F. The exact meet of C_i=kappa(R_i) lies in F and equals Id by normalization. The E_i list must be exhaustive.",
+      "depends_on": [
+        "C05",
+        "C06",
+        "C09",
+        "A02",
+        "A03",
+        "A04",
+        "D04",
+        "I07"
+      ],
+      "notes": "N05",
+      "source_labels": [
+        "lem:acf-canonical-coordinates"
+      ],
+      "scope": "actual_source",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C16",
+      "name": "Original cores contain every other minimal direction",
+      "statement": "For j!=i, E_j<=R_i and E_j=kappa(E_j) by I09, so monotonicity gives E_j<=C_i. Thus C_i is infinite nonidentity for r>=2; E_i meet C_i=Id by C06/normalization. Each Q_i is actual, infinite and strictly smaller.",
+      "depends_on": [
+        "C12",
+        "C06",
+        "A03",
+        "D04",
+        "I07",
+        "I09",
+        "I04",
+        "C09"
+      ],
+      "notes": "N05",
+      "source_labels": [
+        "lem:acf-canonical-coordinates"
+      ],
+      "scope": "actual_source",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C17",
+      "name": "Correspondence has one least strict coarsening",
+      "statement": "If an invariant D>R_i contains an atom a outside R_i, E_i meet a squared!=Id. If E_i meet D were proper in E_i it would have finite classes, contradicting C04. Therefore E_i<=D, so E_i join R_i is least above R_i. Its index over R_i is infinite by transposition and finite E_i meet R_i. Thus Sigma(R_i)=R_i.",
+      "depends_on": [
+        "C04",
+        "C06",
+        "A04",
+        "D04",
+        "I08",
+        "C09"
+      ],
+      "notes": "N05",
+      "source_labels": [
+        "lem:acf-canonical-coordinates"
+      ],
+      "scope": "actual_source",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C18",
+      "name": "Original quotient finite bottom and upper interval",
+      "statement": "Packet finite index gives Sigma(C_i)=Sigma(R_i)=R_i. C35 identifies the FULL invariant quotient interval, so F_i=R_i/C_i is exactly the greatest finite-class equivalence of Q_i and has one least strict coarsening. No normalization of the old-core quotient is asserted.",
+      "depends_on": [
+        "C17",
+        "C35",
+        "I07",
+        "I04",
+        "D04"
+      ],
+      "notes": "N05",
+      "source_labels": [
+        "lem:acf-canonical-coordinates"
+      ],
+      "scope": "actual_source",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C19",
+      "name": "A meet-irreducible finite bottom has one minimal infinite direction",
+      "statement": "Under A10 let D be least above finite F. Each minimal infinite U has D<=U join F and [U join F:U] finite. Then D meet U is infinite, forcing U<=D and D=U join F. Distinct such U,V would have finite meet but [U:U meet V]=[U join V:V] finite since U join V<=V join F=D, contradiction.",
+      "depends_on": [
+        "A10"
+      ],
+      "notes": "N05",
+      "source_labels": [
+        "lem:acf-canonical-coordinates"
+      ],
+      "scope": "abstract_lattice",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C20",
+      "name": "Canonical old-core unary targets and clique projections",
+      "statement": "Instantiate C19 with C18 and reuse I06 for acl_(Q_i)(A)=F_i[A]. C14 gives that every unsafe clique has all but at most one projection in a single finite F_j packet, conditional on the separate A05 palette input. These are the actual source canonical-coordinate conclusions.",
+      "depends_on": [
+        "C14",
+        "C15",
+        "C16",
+        "C18",
+        "C19",
+        "I06"
+      ],
+      "notes": "N05",
+      "source_labels": [
+        "lem:acf-canonical-coordinates"
+      ],
+      "scope": "actual_source",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C21",
+      "name": "Actual exact quotient images of algebraic real points are algebraic",
+      "statement": "If t=pi_E(x) has infinite full Aut(T/pi_E A) orbit, each finite owner motion fixing pi_E A can be joined to identity on A by I03, and I02 lifts it fixing A. The resulting x images have infinitely many distinct E-owners. Contrapositive gives pi_E(acl_M A) subset acl_T(pi_E A). No global group section.",
+      "depends_on": [
+        "A01",
+        "A09",
+        "I02",
+        "I03"
+      ],
+      "notes": "N06",
+      "source_labels": [
+        "lem:acf-acl-projects-exact"
+      ],
+      "scope": "actual_source",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C22",
+      "name": "Finite common kernel recovers real algebraicity from coordinates",
+      "statement": "If every pi_i(x) is algebraic over pi_i(A), its orbit under Aut(M/A) has only finitely many possible coordinate tuples. Each actual tuple fibre is one finite K-class, so the original orbit is finite. This uses no ambient CRT surjectivity or compatibility assumption.",
+      "depends_on": [
+        "A06",
+        "A09"
+      ],
+      "notes": "N06",
+      "source_labels": [
+        "lem:acf-acl-projects-exact"
+      ],
+      "scope": "actual_source",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C23",
+      "name": "General finite-meet real closure pullback",
+      "statement": "Apply C21 separately to all actual K_i for the forward inclusion and C22 for the reverse. Thus acl_M(A)=intersection_i pi_i^{-1}(acl_(M/K_i)(pi_i A)). Empty families, when allowed, force M finite by finite-class Top and satisfy the same formula.",
+      "depends_on": [
+        "C21",
+        "C22",
+        "D09"
+      ],
+      "notes": "N06",
+      "source_labels": [
+        "lem:acf-acl-projects-exact"
+      ],
+      "scope": "actual_source",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C24",
+      "name": "Full inverse-image intersection is finite",
+      "statement": "The simultaneous map to product_i D_i has finite image on W, and each fibre is one finite K-class. Therefore W is finite, without onto marginal projections or full compatible tuples.",
+      "depends_on": [
+        "A06",
+        "A07",
+        "D06"
+      ],
+      "notes": "N06",
+      "source_labels": [
+        "lem:acf-finite-exact-closed-preimages"
+      ],
+      "scope": "finite_fibre",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C25",
+      "name": "That intersection is absolutely acl-closed",
+      "statement": "For x in acl_M(W), C21 sends every pi_i(x) into acl(pi_i W) subset acl(D_i)=D_i. Thus x is in every inverse image and in W. Reverse inclusion is tautological. Source asks W nonempty; no closure of a common owner is needed.",
+      "depends_on": [
+        "C21",
+        "C24",
+        "A07",
+        "A09"
+      ],
+      "notes": "N06",
+      "source_labels": [
+        "lem:acf-finite-exact-closed-preimages"
+      ],
+      "scope": "actual_source",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C26",
+      "name": "Full complementary rectangle inherits absolute closure",
+      "statement": "For C meet K=Id, actual I11/I12 CRT identifies D times_B P with pi_C^{-1}(D) intersect pi_K^{-1}(P). C24/C25 give finite absolute closure. Both factors are absolutely closed; B is arbitrary finite nonempty with the stated onto images and need not itself be closed or harmless.",
+      "depends_on": [
+        "C24",
+        "C25",
+        "I11",
+        "I12",
+        "A07"
+      ],
+      "notes": "N06",
+      "source_labels": [
+        "lem:acf-rectangle-acl"
+      ],
+      "scope": "actual_source",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C27",
+      "name": "Mixed rectangle orbit identity remains a separate interface",
+      "statement": "For every old atom a, original commutation gives C;a;K=(C join K);a;(C join K). Reuse I13; this is not an additional assumption for the independent C25 closure proof.",
+      "depends_on": [
+        "I13"
+      ],
+      "notes": "N06",
+      "source_labels": [
+        "lem:acf-rectangle-acl"
+      ],
+      "scope": "actual_source",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C28",
+      "name": "Choose one minimal direction for all added owner names",
+      "statement": "If x is not algebraic over real A, its canonical intersection J_A=meet_a Gamma(col(x,a)) has infinite classes (else its class defines a finite A-set). Choose one minimal infinite E<=J_A. If every named owner kernel contains ALL minimal infinite directions, this SAME E lies below all of them.",
+      "depends_on": [
+        "A01",
+        "A02",
+        "A04",
+        "A09",
+        "D07",
+        "I05"
+      ],
+      "notes": "N07",
+      "source_labels": [
+        "lem:acf-harmless-owners"
+      ],
+      "scope": "actual_source",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C29",
+      "name": "Good actual representatives avoid only finite bad fibres",
+      "statement": "In an infinite E-class inside each named owner class, each bad colour p contributes at most one finite F-class of neighbours of x. There are finitely many colours. Choose b_j outside that finite union AND outside {x}; its genuine diversity colour p_j is good, forcing E<=Gamma(p_j) by minimality.",
+      "depends_on": [
+        "C28",
+        "D08",
+        "D01"
+      ],
+      "notes": "N07",
+      "source_labels": [
+        "lem:acf-harmless-owners"
+      ],
+      "scope": "actual_source",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C30",
+      "name": "Harmlessness for every finite collection of owner sorts",
+      "statement": "The chosen E-class through x lies in all Gamma spoke classes for A and the b_j, making their intersection infinite. I05 prevents x being algebraic over those real representatives. Since their owner classes are definable from them, x is not algebraic over A and the added owner imaginaries. Handles empty A and zero owner names separately.",
+      "depends_on": [
+        "C29",
+        "I05",
+        "A09"
+      ],
+      "notes": "N07",
+      "source_labels": [
+        "lem:acf-harmless-owners"
+      ],
+      "scope": "actual_source",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C31",
+      "name": "Missing one minimal direction creates new real algebraicity",
+      "statement": "If E is minimal infinite and E not<=H, E meet H has finite classes. Choose x E u but not x F u. The finite nonempty set E[u] intersect H[x] makes x algebraic over u and the one owner H[x], while I06 gives acl(u)=F[u], excluding x.",
+      "depends_on": [
+        "A01",
+        "A02",
+        "A04",
+        "I06",
+        "D07",
+        "I07"
+      ],
+      "notes": "N07",
+      "source_labels": [
+        "lem:acf-harmless-owners"
+      ],
+      "scope": "actual_source",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C32",
+      "name": "Full harmless-owner iff criterion",
+      "statement": "Combine C30 and C31: a full invariant owner kernel is harmless iff it contains EVERY minimal infinite direction, simultaneously for finite collections of sorts. This branch does not assume finite-exact normalization, exactness of those owner kernels, or a strong safe palette.",
+      "depends_on": [
+        "C30",
+        "C31"
+      ],
+      "notes": "N07",
+      "source_labels": [
+        "lem:acf-harmless-owners"
+      ],
+      "scope": "actual_source",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C33",
+      "name": "Old-core closure bands",
+      "statement": "For r>=2 the cores meet Id by C15 and their quotient finite bottoms are C18. C19/I06 give unary closure without using unsafe-clique premises; substitute into C23. The inverse image of F_i[pi_i A] is exactly R_i[A], giving the source closure-band formula.",
+      "depends_on": [
+        "C15",
+        "C16",
+        "C18",
+        "C19",
+        "I06",
+        "C23"
+      ],
+      "notes": "N06",
+      "source_labels": [
+        "lem:acf-canonical-coordinates"
+      ],
+      "scope": "actual_source",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C34",
+      "name": "Finite diagnostics do not certify source geometry",
+      "statement": "Rook, finite actual quotient/action and Cartesian-phase pair-table controls test the named interfaces; they do not prove CCO, infinite-orbit avoidance, real acl, all exactness or EPPA for arbitrary sources.",
+      "depends_on": [
+        "A11"
+      ],
+      "notes": "N09",
+      "source_labels": [
+        "lem:global-correspondence"
+      ],
+      "scope": "diagnostic",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C35",
+      "name": "Canonical quotients transport the FULL invariant interval",
+      "statement": "For A11, old G and full Aut of the complete named quotient have the SAME pair orbitals: old G is transitive inside each named orbit and full Aut preserves its name. Thus full invariant equivalences are exactly old-G invariant equivalences, bijecting with the original interval above K via pullback; finite relative indices are literal class counts. No global lifting of full quotient automorphisms follows.",
+      "depends_on": [
+        "A11"
+      ],
+      "notes": "N01",
+      "source_labels": [
+        "lem:global-correspondence"
+      ],
+      "scope": "abstract_lattice",
+      "status": "HUMAN_PROOF_EXPANDED"
+    }
+  ],
+  "exports": [
+    {
+      "source_label": "lem:finite-action-avoidance",
+      "claims": [
+        "C01",
+        "C02",
+        "C03"
+      ]
+    },
+    {
+      "source_label": "lem:acf-finite-exact-intersection",
+      "claims": [
+        "C04"
+      ]
+    },
+    {
+      "source_label": "lem:global-correspondence",
+      "claims": [
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C35"
+      ]
+    },
+    {
+      "source_label": "lem:acf-unsafe-concentration",
+      "claims": [
+        "C11",
+        "C12",
+        "C13",
+        "C14"
+      ]
+    },
+    {
+      "source_label": "lem:acf-canonical-coordinates",
+      "claims": [
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C33",
+        "C35"
+      ]
+    },
+    {
+      "source_label": "lem:acf-acl-projects-exact",
+      "claims": [
+        "C21"
+      ]
+    },
+    {
+      "source_label": "lem:acf-finite-exact-closed-preimages",
+      "claims": [
+        "C24",
+        "C25"
+      ]
+    },
+    {
+      "source_label": "lem:acf-rectangle-acl",
+      "claims": [
+        "C26",
+        "C27"
+      ]
+    },
+    {
+      "source_label": "lem:acf-harmless-owners",
+      "claims": [
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32"
+      ]
+    }
+  ],
+  "auxiliary_exports": [
+    {
+      "source_label": "eq:global-correspondence",
+      "source": {
+        "file": "sections/global_correspondence.tex",
+        "anchor": "\\label{eq:global-correspondence}"
+      },
+      "claims": [
+        "C05",
+        "C06",
+        "C09"
+      ]
+    },
+    {
+      "source_label": "eq:acf-correspondence",
+      "source": {
+        "file": "sections/rooted_acf_geometry.tex",
+        "anchor": "\\label{eq:acf-correspondence}"
+      },
+      "claims": [
+        "C05",
+        "C06",
+        "C09",
+        "C15"
+      ]
+    },
+    {
+      "source_label": "eq:acf-anchor-test",
+      "source": {
+        "file": "sections/rooted_acf_geometry.tex",
+        "anchor": "\\label{eq:acf-anchor-test}"
+      },
+      "claims": [
+        "C11"
+      ]
+    },
+    {
+      "source_label": "eq:acf-core-meets",
+      "source": {
+        "file": "sections/rooted_acf_geometry.tex",
+        "anchor": "\\label{eq:acf-core-meets}"
+      },
+      "claims": [
+        "C15"
+      ]
+    },
+    {
+      "source_label": "eq:acf-MI-closure",
+      "source": {
+        "file": "sections/rooted_acf_geometry.tex",
+        "anchor": "\\label{eq:acf-MI-closure}"
+      },
+      "claims": [
+        "C18",
+        "C19",
+        "C20"
+      ]
+    },
+    {
+      "source_label": "eq:acf-one-free",
+      "source": {
+        "file": "sections/rooted_acf_geometry.tex",
+        "anchor": "\\label{eq:acf-one-free}"
+      },
+      "claims": [
+        "C14",
+        "C20"
+      ]
+    },
+    {
+      "source_label": "eq:acf-closure-pullback",
+      "source": {
+        "file": "sections/rooted_acf_geometry.tex",
+        "anchor": "\\label{eq:acf-closure-pullback}"
+      },
+      "claims": [
+        "C21",
+        "C22",
+        "C23"
+      ]
+    },
+    {
+      "source_label": "eq:acf-closure-bands",
+      "source": {
+        "file": "sections/rooted_acf_geometry.tex",
+        "anchor": "\\label{eq:acf-closure-bands}"
+      },
+      "claims": [
+        "C33"
+      ]
+    },
+    {
+      "source_label": "eq:acf-acl-projects-exact",
+      "source": {
+        "file": "sections/maximal_cores/01_maximal_hat_normalisation.tex",
+        "anchor": "\\label{eq:acf-acl-projects-exact}"
+      },
+      "claims": [
+        "C21"
+      ]
+    },
+    {
+      "source_label": "eq:acf-finite-exact-closed-preimages",
+      "source": {
+        "file": "sections/maximal_cores/01_maximal_hat_normalisation.tex",
+        "anchor": "\\label{eq:acf-finite-exact-closed-preimages}"
+      },
+      "claims": [
+        "C24",
+        "C25"
+      ]
+    },
+    {
+      "source_label": "eq:acf-rectangle-mixed-orbit",
+      "source": {
+        "file": "sections/maximal_cores/01_maximal_hat_normalisation.tex",
+        "anchor": "\\label{eq:acf-rectangle-mixed-orbit}"
+      },
+      "claims": [
+        "C27"
+      ]
+    },
+    {
+      "source_label": "eq:acf-harmless-hull",
+      "source": {
+        "file": "sections/harmless_exact_owners.tex",
+        "anchor": "\\label{eq:acf-harmless-hull}"
+      },
+      "claims": [
+        "C28",
+        "C29",
+        "C30"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "T01",
+      "name": "Abstract avoidance and canonical full quotient intervals",
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C35"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Reuse proved group/index/coset-cover library APIs when their exact receiving-toolchain contracts fit; otherwise formalize the supplied internal finite subgroup-type proof. No unproved external premise. Prove the full invariant quotient interval without a global section."
+    },
+    {
+      "id": "T02",
+      "name": "Normalized correspondence and original coordinate geometry",
+      "claims": [
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20"
+      ],
+      "depends_on": [
+        "T01"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Retain exact-equivalence types, source normalization and exhaustive minimal directions; distinguish structural and conditional unsafe-clique conclusions."
+    },
+    {
+      "id": "T03",
+      "name": "Exact algebraicity projection and finite closed preimages",
+      "claims": [
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C33"
+      ],
+      "depends_on": [
+        "T01",
+        "T02"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Prove APJ from finite joint lifts, general finite-kernel closure pullback and absolute rectangle closure with arbitrary finite owner B."
+    },
+    {
+      "id": "T04",
+      "name": "Harmless imaginary owners and premise controls",
+      "claims": [
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C34"
+      ],
+      "depends_on": [
+        "T01"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Prove both directions for full invariant owner kernels and every finite mixed collection; no normalization or safe palette is needed."
+    }
+  ],
+  "control_script": "tools/check_acl_owner_controls.py",
+  "controls": [
+    {
+      "id": "R01",
+      "check": "Exhaustive finite equivalence rook and all-pair family concentration tests, with a deliberate three-equivalence union failure."
+    },
+    {
+      "id": "R02",
+      "check": "Actual finite quotient kernels, canonical pair colours and finite-fibre intersections; no finite computation is described as model-theoretic acl certification."
+    },
+    {
+      "id": "R03",
+      "check": "Cartesian-phase full fine-lift pair tables include opposite-coordinate diagonals; existentially safe projected colours differ from full support."
+    }
+  ],
+  "article_feedback": [
+    {
+      "id": "F01",
+      "kind": "PROOF_EXPANSION_OR_SCOPE_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/rooted_acf_geometry.tex",
+        "anchor": "The finite-class condition on"
+      },
+      "finding": "Reverse finite-kernel acl reconstruction uses only finite coordinate-orbit ranges and finite joint fibres; CRT surjectivity is unnecessary.",
+      "proposed_article_change": "Cite APJ once and retain a general finite-fibre converse, separating it from compatible tuple realization.",
+      "caller_effect": "No human TeX or numbered conclusion is changed; later maximal-core/safe/rooted consumers can reuse the precise general contracts.",
+      "proof_claims": [
+        "C21",
+        "C22",
+        "C23"
+      ]
+    },
+    {
+      "id": "F02",
+      "kind": "PROOF_EXPANSION_OR_SCOPE_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/maximal_cores/01_maximal_hat_normalisation.tex",
+        "anchor": "it need NOT be absolutely"
+      },
+      "finding": "Rectangle closure needs absolutely closed coordinate factors but no acl-closed or harmless common owner.",
+      "proposed_article_change": "Keep this weaker closure contract separate from helper padding in safe descent.",
+      "caller_effect": "No human TeX or numbered conclusion is changed; later maximal-core/safe/rooted consumers can reuse the precise general contracts.",
+      "proof_claims": [
+        "C24",
+        "C25",
+        "C26"
+      ]
+    },
+    {
+      "id": "F03",
+      "kind": "PROOF_EXPANSION_OR_SCOPE_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/global_correspondence.tex",
+        "anchor": "For transitivity"
+      },
+      "finding": "Global correspondence uses a finite exact-sort map, not a global quotient group lift; handle equality/degenerate endpoints before spelling a map.",
+      "proposed_article_change": "Make the fixed-middle finite-lift argument explicit and reuse common quotient recognition.",
+      "caller_effect": "No human TeX or numbered conclusion is changed; later maximal-core/safe/rooted consumers can reuse the precise general contracts.",
+      "proof_claims": [
+        "C07",
+        "C08",
+        "C09"
+      ]
+    },
+    {
+      "id": "F04",
+      "kind": "PROOF_EXPANSION_OR_SCOPE_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/harmless_exact_owners.tex",
+        "anchor": "outside the singleton"
+      },
+      "finding": "Good representative choices must exclude x itself so the hull theorem uses genuine diversity spokes.",
+      "proposed_article_change": "Retain this finite exclusion and the simultaneous SAME minimal direction for all named owner classes.",
+      "caller_effect": "No human TeX or numbered conclusion is changed; later maximal-core/safe/rooted consumers can reuse the precise general contracts.",
+      "proof_claims": [
+        "C28",
+        "C29",
+        "C30"
+      ]
+    },
+    {
+      "id": "F05",
+      "kind": "PROOF_EXPANSION_OR_SCOPE_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/finite_orbit_avoidance.tex",
+        "anchor": "finite union of the nonempty transporters"
+      },
+      "finding": "The previously external Neumann step has a short internal finite-subgroup-type induction.",
+      "proposed_article_change": "A future self-contained article appendix can include the proof or retain the citation; Lean no longer needs an unproved external assumption.",
+      "caller_effect": "No human TeX or numbered conclusion is changed; later maximal-core/safe/rooted consumers can reuse the precise general contracts.",
+      "proof_claims": [
+        "C01",
+        "C02",
+        "C03"
+      ]
+    },
+    {
+      "id": "F06",
+      "kind": "PROOF_EXPANSION_OR_SCOPE_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/rooted_acf_geometry.tex",
+        "anchor": "The unary-algebraicity assertion"
+      },
+      "finding": "Old core quotients need not be normalized. The bridge from a finite meet-irreducible bottom to a unique minimal infinite direction uses finite-index transposition.",
+      "proposed_article_change": "Expose that bridge before using the already prepared one-direction closure theorem.",
+      "caller_effect": "No human TeX or numbered conclusion is changed; later maximal-core/safe/rooted consumers can reuse the precise general contracts.",
+      "proof_claims": [
+        "C17",
+        "C18",
+        "C19",
+        "C20"
+      ]
+    }
+  ],
+  "review": {
+    "date": "2026-10-27",
+    "method": "Independent normalization, safety and import-boundary model audits; independent internal coset-cover proof review; parent proof synthesis and finite diagnostics. Not independent human or Lean certification.",
+    "remaining": "Receiving projects implement actual group, invariant quotient, finite-orbit acl and source instantiations. Maximal cores and one-sided safety are separate consumers; normalized relative MI and global EPPA remain source-relative."
+  },
+  "overview_mermaid": [
+    "flowchart TD",
+    "  G[\"Internal coset-cover and avoidance\"] --> A[\"Owner-fixed placement consumer\"]",
+    "  Q[\"Finite joint exact lifts\"] --> P[\"Algebraicity projection\"]",
+    "  P --> C[\"Finite-kernel and rectangle closure\"]",
+    "  R[\"Real hull and packet providers\"] --> H[\"Harmless owner criterion\"]",
+    "  Q --> X[\"Global correspondence\"]",
+    "  X --> K[\"Original MI coordinates\"]",
+    "  R --> K"
+  ],
+  "overview_notes": [
+    "The next module imports these general results; no reverse maximal-core dependency is introduced by the physical source order. APJ is selected from maximal_cores/01 here before its independent normalization results are packaged. The coset-cover proof is internal, not an assumed external axiom."
+  ],
+  "dependency_firewalls": [
+    {
+      "claims": [
+        "C01",
+        "C02",
+        "C03"
+      ],
+      "forbid": [
+        "A01",
+        "A02",
+        "A03",
+        "A04",
+        "A05",
+        "A06",
+        "A07",
+        "A09",
+        "A10",
+        "A11",
+        "I01",
+        "I02",
+        "I03",
+        "I04",
+        "I05",
+        "I06",
+        "I07",
+        "I08",
+        "I09",
+        "I10",
+        "I11",
+        "I12",
+        "I13"
+      ]
+    },
+    {
+      "claims": [
+        "C19",
+        "C35"
+      ],
+      "forbid": [
+        "A01",
+        "A02",
+        "A03",
+        "A04",
+        "A05",
+        "A06",
+        "A07",
+        "A09",
+        "I01",
+        "I02",
+        "I03",
+        "I04",
+        "I05",
+        "I06",
+        "I07",
+        "I08",
+        "I09",
+        "I10",
+        "I11",
+        "I12",
+        "I13"
+      ]
+    },
+    {
+      "claims": [
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27"
+      ],
+      "forbid": [
+        "A02",
+        "A03",
+        "A04",
+        "A05",
+        "I10",
+        "C04",
+        "C05",
+        "C09",
+        "C13",
+        "C14",
+        "C20",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32"
+      ]
+    },
+    {
+      "claims": [
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32"
+      ],
+      "forbid": [
+        "A03",
+        "A05",
+        "I10",
+        "C04",
+        "C05",
+        "C09",
+        "C13",
+        "C14",
+        "C20"
+      ]
+    },
+    {
+      "claims": [
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C33"
+      ],
+      "forbid": [
+        "A05",
+        "C13",
+        "C14",
+        "C20"
+      ]
+    },
+    {
+      "claims": [
+        "C25"
+      ],
+      "forbid": [
+        "I11",
+        "I12",
+        "C26",
+        "C27"
+      ]
+    }
+  ]
+}

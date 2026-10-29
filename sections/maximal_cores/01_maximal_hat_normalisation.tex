@@ -1,0 +1,387 @@
+\section{Maximal exact pseudocomplements and normalised MI factors}
+\label{sec:acf-maximal-cores}
+
+This section replaces repeated normalisations of the nonmaximal
+packet cores $C_i=\kappa(R_i)$ by one intrinsic exact-lattice
+construction.  We \emph{do not redefine} those earlier cores.
+Work in the original infinite finite-exact-normalised source
+and let $E_1,\ldots,E_r$ be all minimal infinite invariant
+relations and $R_i=R_{E_i}$ their A32 correspondences.
+Put
+\begin{equation}\label{eq:hat-cores}
+ \widehat C_i=\bigvee\{H:\ H\text{ is an invariant exact
+ equivalence and }H\subseteq R_i\}.
+\end{equation}
+These are exact equivalences, possibly strictly larger
+than the older $C_i=\kappa(R_i)$.  The old cores retain
+that notation throughout this manuscript.
+
+\begin{lemma}[Exact pseudocomplement]
+\label{lem:acf-hat-pseudocomplement}
+For invariant exact $H$ one has
+\[
+         H\subseteq R_i
+       \quad\Longleftrightarrow\quad H\cap E_i=\Id.
+\]
+The $\widehat C_i$ are the exact-lattice pseudocomplements of
+the distinct atoms $E_i$.  They contain $E_j$ for $j\ne i$,
+are disjoint from $E_i$, and satisfy $\bigcap_i\widehat C_i=\Id$.
+\end{lemma}
+\begin{proof}
+If $H\subseteq R_i$, its exact meet with $E_i$ lies in
+$E_i\cap R_i\subseteq F$.  Normalisation forbids a nontrivial
+finite-class exact equivalence, so this meet is $\Id$.
+Conversely, if $H\cap E_i=\Id$, then for every actual
+atomic colour $a\subseteq H$ its represented square satisfies
+$a^2\subseteq H$, whence $E_i\cap a^2=\Id$; thus $a\subseteq R_i$.
+This proves both directions and maximality in~\eqref{eq:hat-cores}.
+For $i\ne j$, the earlier correspondence concentration
+lemma gives $E_j\subseteq R_i$.  Since $E_j$ is exact,
+$E_j\subseteq\widehat C_i$.  Finally $\bigcap_i\widehat C_i$
+is exact and lies in $\bigcap_iR_i=F$, so is $\Id$.
+\end{proof}
+
+\begin{lemma}[No new finite exact kernels]
+\label{lem:acf-hat-normalised}
+For each nonempty $I\subseteq\{1,\ldots,r\}$ put
+$K_I=\bigcap_{i\in I}\widehat C_i$.
+Every actual quotient $M/K_I$ has no nonidentity finite-class
+exact equivalence.  Its minimal infinite directions are exactly
+$(E_i\vee K_I)/K_I$, $i\in I$.
+In particular for $r\ge2$ each
+$Q_i=M/\widehat C_i$ is a strict, normalised source with
+one minimal infinite direction, finite bottom
+$F_i=R_i/\widehat C_i$, and
+\[
+       \operatorname{acl}_{Q_i}(A)=F_i[A].
+\]
+\end{lemma}
+\begin{proof}
+If an exact quotient equivalence $H/K_I$ were a nonidentity
+finite-class relation, then $H>K_I$ would be exact with
+$[H:K_I]<\infty$.  For each $i\in I$ we have
+$E_i\cap K_I=\Id$.  Each class of the exact meet
+$E_i\cap H$ therefore injects into the finite set of
+$K_I$-classes contained in its $H$-class.  Hence this exact
+meet has finite classes and must equal $\Id$.
+The pseudocomplement lemma yields
+$H\subseteq\widehat C_i$ for every $i\in I$, so
+$H\subseteq K_I$, a contradiction.
+
+For the directions, by the finite distributive-lattice
+representation of Corollary~\ref{lem:acf-exact-distributive},
+each $E_i$ is an atom of the exact lattice, and every
+nonidentity exact equivalence contains one of these atoms.
+In $\operatorname{Down}(P)$ let $p_i$ be its minimal point
+representing $E_i$.  Then $\widehat C_i$ corresponds to
+$P\setminus\uparrow p_i$, so the upper interval above $K_I$
+is the downset lattice of $\bigcup_{i\in I}\uparrow p_i$.
+Its distinct minimal points are exactly the $p_i$, $i\in I$.
+Thus the minimal nontrivial exact quotients are the displayed
+ones.  By the A32 minimal-cut theorem and the just-proved
+absence of finite exact quotients, they are precisely the
+minimal infinite invariant equivalences of $M/K_I$.
+
+For \(I=\{i\}\) this gives the
+one-direction quotient.
+Recall from the original packet-core and
+global correspondence results that
+\[
+      C_i=\kappa(R_i),\qquad
+      [R_i:C_i]<\infty,\qquad
+      \Sigma(C_i)=R_i .
+\]
+Since
+\(C_i\le\widehat C_i\le R_i\),
+both relative indices
+\([R_i:\widehat C_i]\) and
+\([\widehat C_i:C_i]\)
+are finite. We claim that
+\(\Sigma(\widehat C_i)=R_i\).
+The inclusion \(R_i\le\Sigma(\widehat C_i)\)
+holds because \(R_i/\widehat C_i\)
+is finite-class. Conversely if
+\(H\ge\widehat C_i\) is ANY invariant
+equivalence with finite
+\([H:\widehat C_i]\), the nested
+index identity gives
+\[
+ [H:C_i]=[H:\widehat C_i]
+                 [\widehat C_i:C_i]
+                     <\infty .
+\]
+Thus \(H\le\Sigma(C_i)=R_i\),
+proving \(\Sigma(\widehat C_i)=R_i\).
+Quotienting by \(\widehat C_i\)
+therefore makes
+\[
+                  F_i=R_i/\widehat C_i
+\]
+EXACTLY the greatest finite-class
+equivalence of \(Q_i\), even if
+\(\widehat C_i>C_i\).
+The one-direction real-hull formula
+\cref{lem:consolidated-unary-closure}
+now gives \(\operatorname{acl}_{Q_i}(A)
+=F_i[A]\).
+This step uses genuine finite relative
+indices, NOT an unproved inclusion of
+an arbitrary nonexact packet interval
+in the exact lattice.
+\end{proof}
+
+% C6: the general real-algebraicity and harmless quotient-owner criterion
+% now occurs immediately after the canonical real-hull theorem.
+
+
+\begin{lemma}[Projection of algebraicity through an exact quotient]
+\label{lem:acf-acl-projects-exact}
+Let \(Q\) be any standing countable
+homogeneous transitive finite complete
+symmetric binary AP+homomorphic-CCO
+source, let \(E\) be one of its ACTUAL
+invariant FULL EXACT equivalences,
+and write \(\pi:Q\to T=Q/E\).
+For every finite real \(A\subseteq Q\),
+\[
+ \boxed{\qquad
+ \pi\bigl(\operatorname{acl}_Q(A)\bigr)
+       \subseteq
+       \operatorname{acl}_{T}(\pi A).
+ \qquad}
+\tag{APJ}\label{eq:acf-acl-projects-exact}
+\]
+The reverse inclusion after taking
+full preimages is NOT claimed when
+\(E\) has infinite classes.
+\end{lemma}
+\begin{proof}
+It suffices to prove the
+contrapositive for an actual
+real point \(x\in Q\).
+Suppose its quotient owner
+\(t=\pi(x)\) has INFINITE orbit
+under \(\Aut(T/\pi A)\).
+Choose infinitely many distinct
+orbit images \(t_n\) of \(t\).
+For each \(n\), consider
+the finite JOINT real/\(E\)-quotient
+sort partial map fixing EACH
+real point of \(A\), fixing
+EACH named quotient class
+in \(\pi A\), and sending
+the one additional quotient
+class \(t\) to \(t_n\).
+Inside the real sort
+nothing moves. Inside the
+quotient sort this is a
+partial isomorphism because
+\(t,t_n\) belong to the
+same orbit over \(\pi A\).
+For every mixed pair
+\((a,t)\) with \(a\in A\),
+the mixed orbital is
+determined entirely by
+the pair orbital
+\((\pi(a),t)\), by
+\cref{lem:nested-mixed}.
+That orbital is unchanged.
+Thus the displayed map is
+a finite partial isomorphism
+of the ACTUAL joint exact
+sort structure. By
+\cref{thm:joint-exact}
+it extends to an automorphism
+of \(Q\) fixing \(A\)
+pointwise and moving \(t\)
+to \(t_n\).
+The corresponding images
+of \(x\) belong to
+infinitely many distinct
+\(E\)-classes, so its
+\(\Aut(Q/A)\)-orbit is
+infinite. Therefore
+\(x\notin\operatorname{acl}_Q(A)\).
+This proves \eqref{eq:acf-acl-projects-exact}
+without asserting any quotient
+automorphism section.
+\end{proof}
+
+\begin{lemma}[Finite intersection of absolutely closed exact quotient preimages]
+\label{lem:acf-finite-exact-closed-preimages}
+Let $M$ be a standing homogeneous
+finite-complete symmetric binary
+source satisfying original semantic
+homomorphic CCO. Let
+$E_1,\ldots,E_m$ be ACTUAL
+invariant FULL EXACT
+equivalences on $M$ whose
+common meet
+$K=\bigcap_{i=1}^m E_i$
+has FINITE original real
+classes. For each i let
+$D_i\subseteq M/E_i$ be
+a finite induced ABSOLUTELY
+real-algebraically-closed
+set. Then any NONEMPTY
+intersection of FULL
+original inverse images
+\[
+          W=\bigcap_{i=1}^m
+                  \pi_{E_i}^{-1}(D_i)
+\tag{FPCL}\label{eq:acf-finite-exact-closed-preimages}
+\]
+is FINITE and
+$\operatorname{acl}_M(W)=W$.
+
+No pairwise-compatible owner
+tuple assumption, surjectivity
+$\pi_{E_i}(W)=D_i$, or
+algebraic closure of a
+common owner quotient is
+needed for this assertion.
+The finite-class hypothesis
+on the common kernel is
+essential for FINITENESS.
+\end{lemma}
+\begin{proof}
+The simultaneous quotient
+map
+\[
+     \pi=(\pi_{E_1},\ldots,
+               \pi_{E_m}):
+               M\longrightarrow
+                  \prod_i M/E_i
+\]
+has fibres precisely the
+actual $K$-classes, which
+are finite by hypothesis.
+Since $\pi(W)\subseteq
+\prod_iD_i$ is finite,
+$W$ is a finite union of
+finite $K$-classes.
+
+Now fix
+$x\in\operatorname{acl}_M(W)$.
+For EVERY i, apply the
+original algebraicity
+projection theorem
+\cref{lem:acf-acl-projects-exact}
+to the ACTUAL full exact
+quotient $\pi_{E_i}$ and
+the finite original REAL
+parameter base W:
+\[
+  \pi_{E_i}(x)\in
+  \operatorname{acl}_{M/E_i}
+             (\pi_{E_i}(W))
+ \subseteq
+  \operatorname{acl}_{M/E_i}(D_i)
+              =D_i .
+\]
+Consequently x lies in
+EVERY inverse image in
+\eqref{eq:acf-finite-exact-closed-preimages},
+so $x\in W$. The reverse
+inclusion $W\subseteq
+\operatorname{acl}_M(W)$
+is tautological. This
+proves absolute closure.
+
+The argument uses NO
+automorphism section from
+individual quotient groups
+to $\Aut(M)$: only the
+already established finite
+parameter algebraicity
+projection implication
+for each ACTUAL exact
+quotient is invoked.
+\end{proof}
+
+\begin{lemma}[Absolute acl closure of a full exact rectangle]
+\label{lem:acf-rectangle-acl}
+Let \(C,K\) be original full exact invariant
+equivalences of one homogeneous transitive
+symmetric binary source, with \(C\cap K=\Id\),
+and set \(J=C\vee K\), \(Y=M/C\),
+\(X=M/K\), \(T=M/J\). Let \(B\subseteq T\)
+be any finite, induced, NONEMPTY owner set;
+it need NOT be absolutely
+$\operatorname{acl}_T$-closed for THIS
+rectangle-closure assertion.
+Suppose \(D\subseteq Y\) and \(P\subseteq X\)
+are finite, induced, ABSOLUTELY real-acl-closed
+in their respective ambient quotient sources,
+and each projects ONTO precisely \(B\).
+Then their FULL rectangle
+\[
+       R=D\times_B P
+       =\{(d,p):d\in D,\ p\in P,\
+                     \pi_T(d)=\pi_T(p)\}
+\]
+is a finite induced, absolutely
+real-acl-closed subset of the ACTUAL
+original \(M\), via the exact CRT
+bijection \(M\cong Y\times_T X\).
+No harmlessness assumption on B
+in EITHER quotient factor is needed
+for this particular closure assertion.
+The stronger closure assumption
+$\operatorname{acl}_T(B)=B$
+appearing later in the
+safe-quotient DESCENT proof
+is used THERE to control the
+projections of auxiliary
+helper closures; it is not
+part of the present lemma.
+\end{lemma}
+\begin{proof}
+The ACTUAL exact CRT
+for commuting invariant
+equivalences with
+$C\cap K=\Id$ identifies
+the FULL rectangle
+with exactly
+\[
+       R=\pi_C^{-1}(D)
+                     \cap\pi_K^{-1}(P).
+\]
+Since the common kernel
+$C\cap K=\Id$ has
+singleton original real
+classes, apply the
+independent
+\cref{lem:acf-finite-exact-closed-preimages}
+with $(E_1,E_2)=(C,K)$
+and $(D_1,D_2)=(D,P)$.
+It follows immediately
+that R is finite and
+$\operatorname{acl}_M(R)=R$.
+
+For reference, the ORIGINAL
+same-sort mixed-orbital
+identity underlying the
+older, longer stabilizer
+proof remains valid:
+for every actual old
+fine atomic colour $a$,
+\[
+       C;a;K
+             =a;(C\vee K)
+             =J;a;J.
+\tag{RAC}\label{eq:acf-rectangle-mixed-orbit}
+\]
+This follows from
+commutation of original
+invariant symmetric RAW
+relations and $C;K=C\vee K$.
+It is also the independent
+mixed-colour interface
+for the full-rectangle
+safe-spectrum argument;
+it is NOT needed to
+repeat a three-case
+algebraic-orbit proof here.
+\end{proof}
+
