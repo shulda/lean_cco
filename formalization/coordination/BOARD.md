@@ -29,6 +29,8 @@ mathematical catalogue/initial checkpoint, not current ownership.
 | B021: Joint-owner full tuple actions and sparse EPPA | B002, B008 | [B021](../../formalization/coordination/packages/B021.md) |
 | B022: Real closure, harmless owners and correspondence coordinates | B002, B008, B010, B011, B013, B014 | [B022](../../formalization/coordination/packages/B022.md) |
 | B029: Finite exact reconstruction with the original selected root | B001, B002 | [B029](../../formalization/coordination/packages/B029.md) |
+| B023: Maximal exact MI factors and one-sided full-support safety | B022 | [B023](../../formalization/coordination/packages/B023.md) |
+| B025: Anchored owner completion and full-owner primitive transversal | B022 | [B025](../../formalization/coordination/packages/B025.md) |
 
 Autonomous release permissions are in [AUTONOMY.json](AUTONOMY.json).
 Use [QUEUE_OPERATIONS.md](QUEUE_OPERATIONS.md) to claim or review work.

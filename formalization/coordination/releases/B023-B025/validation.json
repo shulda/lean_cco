@@ -1,0 +1,101 @@
+{
+  "preparation_commit": "4d66b3b104011db803e7d1ef503bb9bf52d6e01b",
+  "source_pin": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+  "public_base": "3c49b18fddb528ea0da2a8cf2cbba5be5f16b9ad",
+  "verified_files": 29,
+  "new_files": 17,
+  "new_source_files": 7,
+  "existing_provider_sources": 12,
+  "distinct_source_files": 19,
+  "all_blob_ids_and_sizes_exact": true,
+  "all_tex_matches_immutable_pin": true,
+  "all_existing_public_sources_byte_identical": true,
+  "public_files_modified": false,
+  "module_checks_current_public_validator": [
+    {
+      "module": "mi_geometry",
+      "definitions": 12,
+      "claims": 31,
+      "exports": 7,
+      "auxiliary_exports": 4,
+      "tasks": 4,
+      "source_files": 15,
+      "metadata_valid": false,
+      "error": "Unknown imported source declaration: eq:acf-closure-pullback"
+    },
+    {
+      "module": "owner_transversal",
+      "definitions": 15,
+      "claims": 47,
+      "exports": 12,
+      "auxiliary_exports": 3,
+      "tasks": 6,
+      "source_files": 11,
+      "metadata_valid": true,
+      "readme_exact": true
+    }
+  ],
+  "module_checks_with_minimal_aux_import_capability": [
+    {
+      "module": "mi_geometry",
+      "metadata_valid": true,
+      "readme_exact": true,
+      "definitions": 12,
+      "claims": 31,
+      "exports": 7,
+      "auxiliary_exports": 4,
+      "tasks": 4,
+      "source_files": 15
+    },
+    {
+      "module": "owner_transversal",
+      "metadata_valid": true,
+      "readme_exact": true,
+      "definitions": 15,
+      "claims": 47,
+      "exports": 12,
+      "auxiliary_exports": 3,
+      "tasks": 6,
+      "source_files": 11
+    }
+  ],
+  "receiving_validator_requirement": {
+    "status": "REQUIRED_BEFORE_RELEASE; root implements reviewed production code/tests",
+    "module": "mi_geometry",
+    "import_id": "I18",
+    "source_label": "eq:acf-closure-pullback",
+    "provider_module": "acl_owner_geometry",
+    "provider_claims": [
+      "C21",
+      "C22",
+      "C23"
+    ],
+    "source_file": "sections/rooted_acf_geometry.tex",
+    "anchor": "\\label{eq:acf-closure-pullback}",
+    "kind": "already accepted source-fingerprinted auxiliary equation, not a new source theorem",
+    "temporary_minimal_feature_preflight": "PASS metadata and byte-exact README on both modules; 5 malformed-support/missing-label negatives rejected",
+    "preflight_script": "test-minimal-aux-import.py"
+  },
+  "finite_controls": [
+    {
+      "script": "tools/check_mi_geometry_controls.py",
+      "exit_code": 0,
+      "log": "mi-controls.log",
+      "scope": "243 labelled posets and24 partitions n0..4, exhaustive downsets/root selections/partition triples, negative incomplete minima and nonexact finite-class boundary"
+    },
+    {
+      "script": "tools/check_owner_transversal_controls.py",
+      "exit_code": 0,
+      "log": "transversal-controls.log",
+      "scope": "allF2subgroups dimensions0..2, fullowner structuredpacketactions, actualphase/matrix/collision/cap controls"
+    },
+    {
+      "script": "tools/check_acl_owner_controls.py",
+      "exit_code": 0,
+      "log": "acl-controls.log",
+      "scope": "already accepted companion control explicitly required by B023; no modified script staged"
+    }
+  ],
+  "limits": "Preparation diagnostics only. No Lean implementation or actual-source theorem certification; no public writes or live claims. Conditional safety/SAP/EPPA and internal countable construction retain their actual premises.",
+  "receiving_tool_note": "Add exactly mi_geometry/owner_transversal modulechoices+coordination/handoffMODULES+CIloop and the narrow source-fingerprinted auxiliary-import feature; no unrelated private helper features, external/HKN bindings, BOARD template, STATE, roles, limits or protocol copied."
+}

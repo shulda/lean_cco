@@ -1,0 +1,1837 @@
+{
+  "schema_version": 1,
+  "id": "owner_transversal",
+  "index_title": "Anchored owner completion and the full-owner primitive transversal",
+  "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+  "status": "HUMAN_EXPANDED_NOT_LEAN",
+  "scope": "Preparation for OTHER Lean projects. Expand actual anchored completion, joint caps, finite named-owner sources and CONDITIONAL EPPA transfer; then residual named-owner closure, closed SAP, packet separation, primitive transversal and full inflation. Countable extension/back-and-forth construction is internal, not an unproved Fraisse import. Full-real SAP appears ONLY in the optional generic anchored injectivity branches. No safe selector, HKN reservoir, normalized relative MI or global EPPA is proved.",
+  "scope_vocabulary": [
+    "actual_source",
+    "generic_finite",
+    "countable_age",
+    "diagnostic"
+  ],
+  "scope_explanation": "statement and proof. General anchored, optional raw-SAP, residual closed-packet and generic countable-age branches have separate hypotheses.",
+  "control_script": "tools/check_owner_transversal_controls.py",
+  "assumptions": [
+    {
+      "id": "A01",
+      "name": "Actual symmetric CCO source",
+      "statement": "M is a nonempty COUNTABLE transitive homogeneous source in a FINITE complete symmetric binary language with actual equality-inclusive RAW orbitals and semantic homomorphic CCO. Retain the current RAW provider scope. No full-real SAP, EPPA, safe palette, NR2 or HKN theorem is assumed."
+    },
+    {
+      "id": "A02",
+      "name": "Actual general owner equivalence",
+      "statement": "For the general owner-walk branch E is ANY actual invariant equivalence, including Id. Quotient points are actual E-classes and orbital caps are actual represented pullbacks E;a;E. All original invariant relations commute by symmetry. No reachability, infinitude or SAP is used by the saturated closed-walk assertion itself."
+    },
+    {
+      "id": "A03",
+      "name": "Reachable nonidentity owner for anchored completion",
+      "statement": "For the generic anchored branch E>Id has a supplied POSITIVE represented atomic word; deleting equality letters leaves at least TWO diversity letters, since E is reflexive and not Id. Local raw-completion, edge-compatible assignment and complete-anchor data are quantified separately for each theorem/application. In the residual branch minimal-cut word exactness I10 CONSTRUCTS the required word; it is not a further unproved residual hypothesis."
+    },
+    {
+      "id": "A04",
+      "name": "Optional original SAP and infinite owner classes",
+      "statement": "ONLY the optional injective generic anchored/typed-age clauses assume SAP of the ORIGINAL real age and infinite E-classes. Owner representatives can then be chosen outside each finite real base and the point being moved. Residual packet separation and transversal SAP use their own closed-base argument without this hypothesis."
+    },
+    {
+      "id": "A05",
+      "name": "Residual normalized one-direction source",
+      "statement": "For the residual branch M is infinite and finite-exact-normalized. E is an actual inclusion-minimal infinite exact invariant equivalence and R_E=F, where F is the GREATEST finite-class invariant equivalence. G is the actual regular thin group supplied by normalization/thin providers, H=E meet F its owner stabilizer. B is a finite NONEMPTY G-invariant actual E-owner set and N_B=pi_E^{-1}(B), with EVERY B owner named individually. F need not be exact; G on owners need not be faithful."
+    },
+    {
+      "id": "A06",
+      "name": "Explicit conditional EPPA inputs",
+      "statement": "ONLY the transfer theorem assumes ordinary EPPA of Age(M/E) and, for EVERY finite actual owner set B, Gamma_B-EPPA of the ACTUAL named-owner age with Gamma_B=FULL Aut(B), fixing every literal old fine colour. The latter means ONE common finite typed witness extending ALL compatible requests (including empty real domain) with their ENTIRE owner component. No current-rank ordinary EPPA follows without these inputs."
+    },
+    {
+      "id": "A07",
+      "name": "Independent countable-age construction",
+      "statement": "For the generic limit construction K is any nonempty hereditary class of finite structures in a FINITE relational owner/colour signature, with countably many finite charts and JEP/AP. Use all finite embedding-extension requests, enumerated fairly, to construct an at-most-countable homogeneous structure with age K. SAP is not required for that generic construction; the actual transversal instance already has SAP and unbounded sizes."
+    },
+    {
+      "id": "A08",
+      "name": "Independent finite packet coordinates",
+      "statement": "For the generic inflation identity G is a finite group acting freely and transitively on each real packet; origins give bijective coordinates t_g o_i. Actual owner labels are equivariant, fine cross matrices obey col(t_g o_i,t_h o_j)=(g+h)c_ij in the elementary abelian 2 instance. Distinct origins in distinct target packets give an injective map on full inflations. No infinite source, acl or amalgamation is asserted by this finite datum."
+    }
+  ],
+  "imports": [
+    {
+      "id": "I01",
+      "name": "Actual source triangle fullness and quotient inheritance",
+      "source_label": "thm:exact-sorts-source",
+      "statement": "For EVERY supplied ACTUAL EXACT kernel J (including Id), reuse the RAW quotient-source triangle fullness and homogeneity in its complete old-group orbital language. Specializing to E requires an exactness proof; reachability A03 supplies one in C17. Typed owner realization is proved here by the anchored argument; it is not inferred from untyped triangles alone.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01"
+      ],
+      "provider_module": "raw_exact",
+      "provider_claims": [
+        "C24",
+        "C25",
+        "C28"
+      ]
+    },
+    {
+      "id": "I02",
+      "name": "Shared actual quotient orbital pullback",
+      "source_label": "lem:foundational-orbital-pullback",
+      "statement": "Already assigned with shared B001: the pullback of the old-group orbital of an actual quotient pair is kernel;old atom;kernel. The argument is an elementary equivariant quotient action law, independent of source SAP/CCO.",
+      "status": "HUMAN_SUPPORT_PROOF_NOT_LEAN",
+      "depends_on": [
+        "A01",
+        "A02"
+      ]
+    },
+    {
+      "id": "I03",
+      "name": "Nested mixed pair recognition",
+      "source_label": "lem:nested-mixed",
+      "statement": "For Id<=E, every real/E-owner mixed pair orbital depends only on the projected E-owner pair, including diagonal incidences. This validates a real partial map together with the ENTIRE prescribed B owner action. Used in the separate residual homogeneity branch, not the orbit proof of acl_N.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01"
+      ],
+      "provider_module": "raw_exact",
+      "provider_claims": [
+        "C17"
+      ]
+    },
+    {
+      "id": "I04",
+      "name": "One original automorphism for finite joint exact-sort maps",
+      "source_label": "thm:joint-exact",
+      "statement": "Every genuine finite joint real/exact-owner partial isomorphism extends to ONE original automorphism, retaining current countability. No global lifting section or coherent choice of automorphisms.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01"
+      ],
+      "provider_module": "raw_exact",
+      "provider_claims": [
+        "C23"
+      ]
+    },
+    {
+      "id": "I05",
+      "name": "One-direction absolute real unary closure",
+      "source_label": "cor:rh-acl-bounded-character",
+      "statement": "For an infinite actual source with ONE minimal infinite invariant direction, acl_M(A)=F[A] for every finite real A, including the empty convention; acl(a)=F[a]. Harmless owner parameters are supplied separately.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01"
+      ],
+      "provider_module": "real_closure",
+      "provider_claims": [
+        "C11"
+      ]
+    },
+    {
+      "id": "I06",
+      "name": "Harmless owner naming in the full invariant lattice",
+      "source_label": "lem:acf-harmless-owners",
+      "statement": "An invariant owner kernel is harmless iff it contains ALL minimal infinite directions; simultaneously naming any finite family of such actual classes leaves real acl unchanged. Kernels need not be exact and no normalization/S hypothesis is used by this imported criterion.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01"
+      ],
+      "provider_module": "acl_owner_geometry",
+      "provider_claims": [
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32"
+      ]
+    },
+    {
+      "id": "I07",
+      "name": "Other minimal directions lie in the correspondence cut",
+      "source_label": "lem:acf-unsafe-concentration",
+      "statement": "Reuse ONLY structural support C12: in a normalized source distinct minimal infinite E,E_prime have exact meet Id and E_prime<=R_E. Despite the source export name, this support uses NO strong safe palette or unsafe-clique argument.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01",
+        "A05"
+      ],
+      "provider_module": "acl_owner_geometry",
+      "provider_claims": [
+        "C12"
+      ]
+    },
+    {
+      "id": "I08",
+      "name": "Simultaneous finite action avoidance",
+      "source_label": "lem:finite-action-avoidance",
+      "statement": "For any group action, a finite moving set whose points have infinite orbits can be moved simultaneously away from any finite forbidden set. Includes empty moving/forbidden sets; the finite-coset-cover proof is prepared internally, or use a compatible proved library API.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [],
+      "provider_module": "acl_owner_geometry",
+      "provider_claims": [
+        "C01",
+        "C02",
+        "C03"
+      ]
+    },
+    {
+      "id": "I09",
+      "name": "Actual normalized thin packet action",
+      "source_label": "lem:thin-bottom",
+      "statement": "Given thin F the literal maps t_g are central original automorphisms, form an elementary abelian 2-group and act regularly on full real packets. They fix raw fine names under diagonal translation and obey the full cross-matrix law. Owner stabilizers may be nontrivial.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01",
+        "A05"
+      ],
+      "provider_module": "finite_packets",
+      "provider_claims": [
+        "C26",
+        "C27",
+        "C28"
+      ]
+    },
+    {
+      "id": "I10",
+      "name": "Minimal infinite exact direction has a positive word",
+      "source_label": "prop:minimalcut",
+      "statement": "Every minimal infinite invariant equivalence equals its nonidentity exact canonical packet core, hence has a represented POSITIVE atomic word. This supplies the reachable owner word for residual uses of the general anchored theorem.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01",
+        "A05"
+      ],
+      "provider_module": "finite_packets",
+      "provider_claims": [
+        "C11",
+        "C12",
+        "C13"
+      ]
+    },
+    {
+      "id": "I11",
+      "name": "Normalized F is thin without a converse assumption",
+      "source_label": "lem:finite-exact-normalization-geometric",
+      "statement": "No nonidentity finite-class exact equivalence implies all F-atoms thin. Thin F alone does not imply finite-exact normalization and is never substituted for it.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01",
+        "A05"
+      ],
+      "provider_module": "finite_packets",
+      "provider_claims": [
+        "C25"
+      ]
+    }
+  ],
+  "definitions": [
+    {
+      "id": "D01",
+      "name": "Reachable owner word",
+      "statement": "E is evaluated by a positive represented RAW word, with identity letters deleted for private paths; E>Id ensures a nonempty diversity word remains.",
+      "source": {
+        "file": "sections/anchored_relative_completion.tex",
+        "anchor": "Suppose $E$ is reachable."
+      },
+      "notes": "N03",
+      "depends_on": [
+        "A03"
+      ]
+    },
+    {
+      "id": "D02",
+      "name": "Partial raw diagram and protected complete anchor",
+      "statement": "Distinct formal vertices carry at most one specified diversity atom on each pair; absent edges impose no condition. A is complete and embedded by j, never an arbitrary sparse protected diagram. In each anchored application supply a raw homomorphism of P, a D03 edge-compatible lambda and the complete-anchor embedding j with pi j=lambda on A.",
+      "source": {
+        "file": "sections/anchored_relative_completion.tex",
+        "anchor": "A finite raw \\emph{partial edge-coloured diagram}"
+      },
+      "notes": "N01",
+      "depends_on": [
+        "A01",
+        "A03",
+        "D03"
+      ]
+    },
+    {
+      "id": "D03",
+      "name": "Actual owner assignment and orbital cap",
+      "statement": "lambda maps formal vertices to actual E-classes and is edge-compatible iff each a-edge has its assigned owner pair in E;a;E. Equal owners do not identify vertices.",
+      "source": {
+        "file": "sections/anchored_relative_completion.tex",
+        "anchor": "A \\emph{quotient assignment}"
+      },
+      "notes": "N02",
+      "depends_on": [
+        "A02",
+        "I02"
+      ]
+    },
+    {
+      "id": "D04",
+      "name": "Complete anchor T and private E paths",
+      "statement": "T is the actual complete induced diagram on j(A) plus one representative of every owner used by lambda; it intersects P exactly on A. Each x outside A gets one private E-word path to its owner representative.",
+      "source": {
+        "file": "sections/anchored_relative_completion.tex",
+        "anchor": "Add these representatives to $j(A)$"
+      },
+      "notes": "N03",
+      "depends_on": [
+        "D01",
+        "D02",
+        "D03"
+      ]
+    },
+    {
+      "id": "D05",
+      "name": "Homomorphic and injective cap spectra",
+      "statement": "D_xy is the raw colour spectrum over all homomorphic completions; Id is treated by identifying formal vertices and proving lambda descends. The injective variant uses diversity atoms and optional A04.",
+      "source": {
+        "file": "sections/anchored_relative_completion.tex",
+        "anchor": "\\label{cor:relative-cap}"
+      },
+      "notes": "N05",
+      "depends_on": [
+        "D02",
+        "D03"
+      ]
+    },
+    {
+      "id": "D06",
+      "name": "Prescribed language-action requests",
+      "statement": "Gamma_B=FULL Aut(B) permutes owner predicate names and fixes ALL literal raw binary colours. A request (p,gamma) includes the entire gamma even when dom p is empty.",
+      "source": {
+        "file": "sections/anchored_relative_completion.tex",
+        "anchor": "\\label{def:gamma-eppa}"
+      },
+      "notes": "N06",
+      "depends_on": [
+        "A01"
+      ]
+    },
+    {
+      "id": "D07",
+      "name": "Residual full-owner source",
+      "statement": "N_B=pi_E^{-1}(B), EVERY owner in B named pointwise, with finite full real packets F and actual translations G; H=E meet F is the stabilizer of an owner under G.",
+      "source": {
+        "file": "sections/owner_transversal_direct.tex",
+        "anchor": "Put $N_B=\\pi_E^{-1}(B)$"
+      },
+      "notes": "N08",
+      "depends_on": [
+        "A05"
+      ]
+    },
+    {
+      "id": "D08",
+      "name": "Orbit comparison for named-owner closure",
+      "statement": "Aut(M/A,B) means all finite named actual E-classes fixed individually. Its restriction is a subgroup of Aut(N_B/A); infinite restriction orbits suffice to exclude algebraicity without first proving N_B homogeneous.",
+      "source": {
+        "file": "sections/owner_transversal_direct.tex",
+        "anchor": "Let\n$G_{A,B}=\\Aut(M/A,B)$"
+      },
+      "notes": "N08",
+      "depends_on": [
+        "D07"
+      ]
+    },
+    {
+      "id": "D09",
+      "name": "Full-packet closed finite spans",
+      "statement": "C=F[C] is a union of whole finite packets, equivalently the residual real closure later proved. Abstract embeddings are aligned in N_B by named-owner homogeneity before avoidance.",
+      "source": {
+        "file": "sections/owner_transversal_direct.tex",
+        "anchor": "\\label{cor:relative-closed-sap}"
+      },
+      "notes": "N10",
+      "depends_on": [
+        "D07"
+      ]
+    },
+    {
+      "id": "D10",
+      "name": "Literal partial packet diagram",
+      "statement": "P is a finite disjoint union of whole regular G-packets with total t_g and unique actual owner labels. A pair of packets is either unrecorded or carries its complete fine non-F matrix.",
+      "source": {
+        "file": "sections/hkn_packet_reservoir.tex",
+        "anchor": "\\label{lem:packet-collision}"
+      },
+      "notes": "N11",
+      "depends_on": [
+        "A05",
+        "I09"
+      ]
+    },
+    {
+      "id": "D11",
+      "name": "Collision potential",
+      "statement": "Count unordered distinct formal packets whose current images are the SAME actual F-packet. Protected complete packet bases have no internal collision.",
+      "source": {
+        "file": "sections/hkn_packet_reservoir.tex",
+        "anchor": "the number\nof unordered colliding packet pairs"
+      },
+      "notes": "N11",
+      "depends_on": [
+        "D10"
+      ]
+    },
+    {
+      "id": "D12",
+      "name": "Actual origin transversal age",
+      "statement": "Ucal_B consists of finite owner-typed origin diagrams realized in N_B in pairwise DISTINCT F-packets. P_st=L_st minus F consists only of diversity colours even at repeated owner labels.",
+      "source": {
+        "file": "sections/owner_transversal_direct.tex",
+        "anchor": "Let $\\mathcal U_B$ comprise"
+      },
+      "notes": "N12",
+      "depends_on": [
+        "D07"
+      ]
+    },
+    {
+      "id": "D13",
+      "name": "Primitive-sort support and thin stabilizer",
+      "statement": "For a possible proper nonempty same-owner diversity support D closed under strong triangle products, H_D={g in H:gD=D}; its original RAW extension is Id union {t_g:g in H_D} union D.",
+      "source": {
+        "file": "sections/owner_transversal_direct.tex",
+        "anchor": "Thus $H_D=\\{g\\in H:gD=D\\}$"
+      },
+      "notes": "N13",
+      "depends_on": [
+        "D12",
+        "I09"
+      ]
+    },
+    {
+      "id": "D14",
+      "name": "Full packet inflation",
+      "statement": "Infl(U) has points (u,g), owner g own(u), internal regular G colours and cross colour (g+h)col(u,v). A packet origin must be chosen in accordance with a supplied embedding, not merely its owner label.",
+      "source": {
+        "file": "sections/owner_transversal_direct.tex",
+        "anchor": "\\label{eq:full-owner-inflation}"
+      },
+      "notes": "N14",
+      "depends_on": [
+        "A08"
+      ]
+    },
+    {
+      "id": "D15",
+      "name": "Fair countable extension requests",
+      "statement": "Enumerate finite charts in K and all finite embedding-extension requests fairly over the growing chain. The union realizes every finite extension request; homogeneity follows by ordinary alternating back-and-forth.",
+      "source": {
+        "file": "sections/owner_transversal_direct.tex",
+        "anchor": "The usual Fra\\\"isse theorem"
+      },
+      "notes": "N14",
+      "depends_on": [
+        "A07"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "name": "Represented RAW symmetric algebra and actual caps",
+      "statement": "Use shared B001 word/relational semantics: invariant products are invariant, all original invariant relations are symmetric, so R;S=(R;S)^op=S;R. E^2=E; actual quotient pair pullbacks are E;a;E. No SAP, reachability, residual normalization or STRONG product is used.",
+      "depends_on": [
+        "A01",
+        "A02",
+        "I02"
+      ],
+      "notes": "N02",
+      "source_labels": [
+        "lem:anchored-closed-walk"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "actual_source"
+    },
+    {
+      "id": "C02",
+      "name": "Saturated closed owner walk forces the real diagonal",
+      "statement": "For a cyclic sequence of actual E-classes compatible with factors each raw atomic or E, and at least one E factor, saturating all factors gives EWE. Choose arbitrary actual representatives with equal final/initial point. Commutation and the existing E factor give EWE=W; one loop plus transitivity yields Id<=W.",
+      "depends_on": [
+        "C01",
+        "D03"
+      ],
+      "notes": "N02",
+      "source_labels": [
+        "lem:anchored-closed-walk"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "actual_source"
+    },
+    {
+      "id": "C03",
+      "name": "Positive expansion of closed owner walks",
+      "statement": "For ANY positive atomic word representing E (including E=Id), replace each E factor of a witnessed W-loop by its word witnesses, obtaining a homomorphism of the prescribed closed raw word. This represented-walk assertion needs no E>Id or diversity-only graph assumption; only the later private-path augmentation deletes identity letters and uses E>Id.",
+      "depends_on": [
+        "C02"
+      ],
+      "notes": "N02",
+      "source_labels": [
+        "lem:anchored-closed-walk"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "actual_source"
+    },
+    {
+      "id": "C04",
+      "name": "Align a raw completion and its complete protected anchor",
+      "statement": "Restrict the given raw homomorphism to complete A; diversity makes it an embedding. Homogeneity postcomposes it to agree with j. The map on P and identity on complete T now agree on A and define ONE homomorphism on P union_A T, so cycles using no private path are realized even when they alternate through A.",
+      "depends_on": [
+        "A01",
+        "D02",
+        "D04"
+      ],
+      "notes": "N03",
+      "source_labels": [
+        "thm:anchored-relative"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "actual_source"
+    },
+    {
+      "id": "C05",
+      "name": "Build one simple augmented diagram with private owner paths",
+      "statement": "Choose representatives for all lambda owners, reusing embedded A points where appropriate; retain actual complete T. Attach fresh-interior paths spelling the supplied nonempty E diversity word from each unanchored x to its owner representative. The reduced E diversity word has length at least TWO: E is reflexive, a single diversity atom is irreflexive, and an empty word would be Id. Fresh private interiors therefore prevent conflicts with old edges even if a terminal representative is reused from A.",
+      "depends_on": [
+        "D04"
+      ],
+      "notes": "N03",
+      "source_labels": [
+        "thm:anchored-relative"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "actual_source"
+    },
+    {
+      "id": "C06",
+      "name": "Classify and realize every specified augmented simple cycle",
+      "statement": "A cycle without private paths is C04. Any cycle meeting a private path traverses it entirely; collapse each used path to an E factor. Its marked owner walk is compatible by lambda and actual T, so C02/C03 give a raw cycle homomorphism. Private interiors have degree two; the impossible length-one E case is excluded in C05.",
+      "depends_on": [
+        "C03",
+        "C04",
+        "C05"
+      ],
+      "notes": "N03",
+      "source_labels": [
+        "thm:anchored-relative"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "actual_source"
+    },
+    {
+      "id": "C07",
+      "name": "Anchored completion with the entire prescribed owner assignment",
+      "statement": "Semantic CCO applied once to the augmentation gives a homomorphism. Complete T embeds; homogeneity aligns it to its original actual copy. Each E path forces pi f=lambda and the restriction extends j. This basic/fixed-complete-base theorem uses no original SAP or infinite fibres.",
+      "depends_on": [
+        "C06",
+        "A01"
+      ],
+      "notes": "N03",
+      "source_labels": [
+        "thm:anchored-relative"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "actual_source"
+    },
+    {
+      "id": "C08",
+      "name": "Optional raw-SAP infinite orbit even after finitely many owner names",
+      "statement": "Under A04, any v outside a finite real C has infinite orbit over C by arbitrarily many strong copies of its one-point extension and homogeneity. Choose each of finitely many owner representatives OUTSIDE C union {v}; the enlarged finite real base still omits v, and its point stabilizer fixes all named owners. Thus the orbit over C plus owners is infinite.",
+      "depends_on": [
+        "A01",
+        "A04",
+        "A02"
+      ],
+      "notes": "N04",
+      "source_labels": [
+        "thm:anchored-relative"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "actual_source"
+    },
+    {
+      "id": "C09",
+      "name": "Optional anchored injectivity by moving one formal image",
+      "statement": "Under A04, for a collision choose x outside the protected complete anchor; its displayed-neighbour image set C omits f(x). C08 lets one replace ONLY f(x) by a same-owner point outside the entire current image. All incident records and protected images survive; the collision count decreases. Never fix an unjoined anchor collision target during the move.",
+      "depends_on": [
+        "C07",
+        "C08"
+      ],
+      "notes": "N04",
+      "source_labels": [
+        "thm:anchored-relative"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "actual_source"
+    },
+    {
+      "id": "C10",
+      "name": "One unspecified diversity edge has exactly the capped spectrum",
+      "statement": "A possible raw diversity atom compatible with its prescribed actual owner pair can be added as an edge and C07 applied. Conversely every owner-respecting completion gives an atom in the raw spectrum and its cap. A single common capped completion exists by applying C07 to the original diagram.",
+      "depends_on": [
+        "D05",
+        "C07"
+      ],
+      "notes": "N05",
+      "source_labels": [
+        "cor:relative-cap"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "actual_source"
+    },
+    {
+      "id": "C11",
+      "name": "Equality in a homomorphic cap is treated by a quotient diagram",
+      "statement": "If Id lies in the raw spectrum and actual cap, a witnessing raw completion identifies x,y and pi compatibility forces lambda(x)=lambda(y). Identify those formal vertices. The witness excludes irreflexive loops and conflicting prescribed colours, and lambda descends. Apply C07 to that valid quotient diagram, then pull back. The source optional injective diversity case is supplied separately by C09 in the export map.",
+      "depends_on": [
+        "C10"
+      ],
+      "notes": "N05",
+      "source_labels": [
+        "cor:relative-cap"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "actual_source"
+    },
+    {
+      "id": "C12",
+      "name": "Joint owner caps are equivalent to cycles of the WHOLE augmented diagram",
+      "statement": "For simultaneously added diversity edges, necessity follows from a joint completion. Conversely edge compatibility and raw cycle consistency of the whole P_S give a raw homomorphism by CCO, then C07 imposes all owners and the protected complete anchor. The source optional injective case is supplied separately by C09 in the export map. Individual nonempty edge caps alone do not suffice.",
+      "depends_on": [
+        "C07",
+        "A01"
+      ],
+      "notes": "N05",
+      "source_labels": [
+        "prop:joint-owner-caps"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "actual_source"
+    },
+    {
+      "id": "C13",
+      "name": "Extend any compatible real map with an entire finite owner permutation",
+      "statement": "For finite actual B and (p,gamma), add one representative of every B owner to a complete finite C containing dom p. The assignment gamma pi on C is edge-compatible by actual quotient orbitals. C07 extends p to an embedding of complete C, then original homogeneity gives one ambient automorphism inducing gamma on ALL B, including when dom p is empty.",
+      "depends_on": [
+        "C07",
+        "D06",
+        "I02"
+      ],
+      "notes": "N06",
+      "source_labels": [
+        "prop:anchored-typed-source"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "actual_source"
+    },
+    {
+      "id": "C14",
+      "name": "Generic named-owner homogeneity and AP",
+      "statement": "Take gamma=Id in C13 to extend every finite owner-preserving partial isomorphism of N_B. Its age has AP by aligning actual finite embeddings and taking an induced union. If B is empty, N_B is empty and the age/extension conclusions are handled directly.",
+      "depends_on": [
+        "C13"
+      ],
+      "notes": "N06",
+      "source_labels": [
+        "prop:anchored-typed-source"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "actual_source"
+    },
+    {
+      "id": "C15",
+      "name": "Generic named-owner age is triangle-defined and semantic typed CCO",
+      "statement": "Untyped triangle-legal complete diagrams are realized by I01; C07 restores their actual edge-compatible owners. A typed cycle-consistent partial diagram first has a raw CCO homomorphism, then C07 forces all owners. Repeated owner labels do not identify formal vertices.",
+      "depends_on": [
+        "C07",
+        "I01",
+        "A01"
+      ],
+      "notes": "N06",
+      "source_labels": [
+        "prop:anchored-typed-source"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "actual_source"
+    },
+    {
+      "id": "C16",
+      "name": "Optional named-owner SAP from actual raw SAP",
+      "statement": "Under A04, an abstract typed span is first raw strongly amalgamated; its prescribed owner assignment is edge-compatible on displayed edges. Apply C09 anchored on the common complete base to obtain a typed strong amalgam. This optional branch is NOT used to establish the residual packet-closed transversal.",
+      "depends_on": [
+        "C09",
+        "A04"
+      ],
+      "notes": "N06",
+      "source_labels": [
+        "prop:anchored-typed-source"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "actual_source"
+    },
+    {
+      "id": "C17",
+      "name": "Real partial maps induce quotient partial maps with recognizable colours",
+      "statement": "A finite real partial automorphism preserves E and all actual quotient orbital pullbacks, which are old raw unions by I02. Hence it induces a well-defined injective partial isomorphism on pi(A), with domain pi(dom p). A quotient EPPA witness can be realized as an actual finite B containing pi(A) using quotient homogeneity I01 after the reachable word A03 proves E is an ACTUAL EXACT kernel.",
+      "depends_on": [
+        "A01",
+        "A02",
+        "I01",
+        "I02",
+        "A03"
+      ],
+      "notes": "N07",
+      "source_labels": [
+        "thm:relative-transfer"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "actual_source"
+    },
+    {
+      "id": "C18",
+      "name": "Conditional transfer uses ONE common language-action witness",
+      "statement": "Under A06 choose a quotient witness B and for every real p choose gamma_p in FULL Aut(B) extending C17. All (p,gamma_p) are legal requests of the SAME typed source A. The assumed ONE Gamma_B-EPPA witness extends all of them; its raw reduct preserves every literal old colour and is an ordinary EPPA witness. No coherence or unconditional EPPA assertion follows.",
+      "depends_on": [
+        "C17",
+        "D06",
+        "A06"
+      ],
+      "notes": "N07",
+      "source_labels": [
+        "thm:relative-transfer"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "actual_source"
+    },
+    {
+      "id": "C19",
+      "name": "Residual cut makes E the unique minimal infinite direction",
+      "statement": "For any other minimal infinite E_prime, normalized structural support I07 gives E_prime<=R_E=F, contradicting its infinite classes. The finite full invariant lattice ensures every infinite invariant equivalence contains a minimal infinite direction. No safe S or original SAP is used.",
+      "depends_on": [
+        "A01",
+        "A05",
+        "I07"
+      ],
+      "notes": "N08",
+      "source_labels": [
+        "thm:relative-real-closure"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "actual_source"
+    },
+    {
+      "id": "C20",
+      "name": "Absolute unary real closure in the residual source",
+      "statement": "Apply I05 after C19: acl_M(A)=F[A] for every finite real A, including A empty in this infinite transitive source. This is the short existing canonical-hull route, not a second proof of the older unary-closure theorem.",
+      "depends_on": [
+        "C19",
+        "I05"
+      ],
+      "notes": "N08",
+      "source_labels": [
+        "thm:relative-real-closure"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "actual_source"
+    },
+    {
+      "id": "C21",
+      "name": "Naming the actual E-owners is harmless",
+      "statement": "E contains the now unique minimal infinite direction, so I06 implies acl_M^eq(A union B) intersect M=acl_M(A)=F[A]. B is a finite tuple of classes fixed INDIVIDUALLY, not merely a set preserved collectively.",
+      "depends_on": [
+        "C19",
+        "C20",
+        "I06"
+      ],
+      "notes": "N08",
+      "source_labels": [
+        "thm:relative-real-closure"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "actual_source"
+    },
+    {
+      "id": "C22",
+      "name": "Restriction orbits prove acl_N without new homogeneity",
+      "statement": "Aut(M/A,B) restricts into Aut(N_B/A). By C21 every x in N_B outside F[A] has infinite orbit under that subgroup, and therefore under Aut(N_B/A), excluding real algebraicity. The converse F[A] subset dcl_N(A) is by named thin translations. Thus acl_N(A)=acl_M^eq(A union B) intersect N_B=F[A].",
+      "depends_on": [
+        "C21",
+        "D08",
+        "I09",
+        "I11"
+      ],
+      "notes": "N08",
+      "source_labels": [
+        "thm:relative-real-closure"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "actual_source"
+    },
+    {
+      "id": "C23",
+      "name": "Definable full-packet closure stays inside the named union",
+      "statement": "F[A]={t_g a:g in G,a in A} is finite, definable from A, and contained in N_B because B is G-invariant. Includes empty A with empty closure, and every finite full-packet union is absolutely closed in N_B by C22.",
+      "depends_on": [
+        "C22",
+        "I09",
+        "I11"
+      ],
+      "notes": "N08",
+      "source_labels": [
+        "thm:relative-real-closure"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "actual_source"
+    },
+    {
+      "id": "C24",
+      "name": "Separate residual homogeneity and actual pure owner action",
+      "statement": "For any compatible fine-colour partial map p and gamma in FULL Aut(B), I03 makes p union gamma on ALL B a genuine finite joint partial isomorphism. I04 supplies one original automorphism; it preserves N_B and all t_g and extends the request. Identity gamma gives named-owner homogeneity and arbitrary gamma gives the pure language action. Each lift is chosen separately; no section.",
+      "depends_on": [
+        "A01",
+        "A05",
+        "I03",
+        "I04",
+        "I09",
+        "I11"
+      ],
+      "notes": "N09",
+      "source_labels": [
+        "thm:relative-real-closure"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "actual_source"
+    },
+    {
+      "id": "C25",
+      "name": "Finite avoidance over a full-packet closed owner base",
+      "statement": "For finite full-packet C subset A in N_B and finite Z outside C, C22 makes all points of A minus C have infinite Aut(N_B/C)-orbits. I08 moves the ENTIRE off-base finite set away from Z. Empty base, forbidden or moving set are allowed.",
+      "depends_on": [
+        "C22",
+        "I08"
+      ],
+      "notes": "N10",
+      "source_labels": [
+        "lem:relative-finite-avoidance"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "actual_source"
+    },
+    {
+      "id": "C26",
+      "name": "Residual full-packet closed SAP without raw SAP",
+      "statement": "First use C24 to align any abstract finite packet-closed span in N_B over its complete packet base. Apply C25 to move one entire off-base factor away from the other. Their induced union is a union of full packets (or close finitely by C23), retains owner names and has exactly the old base intersection. No A04 hypothesis is used.",
+      "depends_on": [
+        "C23",
+        "C24",
+        "C25"
+      ],
+      "notes": "N10",
+      "source_labels": [
+        "cor:relative-closed-sap"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "actual_source"
+    },
+    {
+      "id": "C27",
+      "name": "Packetwise images really are entire actual packets",
+      "statement": "A total t_g-preserving injective image of a literal regular G-packet in N_B equals the full actual F-packet of any image point. Thus two image packets are disjoint or identical; any recorded non-F pair forces distinct image packets. A protected complete packet base has distinct images.",
+      "depends_on": [
+        "D10",
+        "I09",
+        "I11"
+      ],
+      "notes": "N11",
+      "source_labels": [
+        "lem:packet-collision"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "actual_source"
+    },
+    {
+      "id": "C28",
+      "name": "One collision repair preserves every record and protected value",
+      "statement": "Choose a colliding formal packet outside the protected complete base. Let C be the union of ENTIRE images of its RECORDED neighbours; C is closed and disjoint from its current image packet. C25 moves that entire image packet away from all other used images outside C. Replace ONLY this formal packet map; records to fixed C, all t_g and owner labels survive. Unrecorded collision targets are not fixed during the ambient move.",
+      "depends_on": [
+        "C27",
+        "C25"
+      ],
+      "notes": "N11",
+      "source_labels": [
+        "lem:packet-collision"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "actual_source"
+    },
+    {
+      "id": "C29",
+      "name": "Finite packet-collision termination and injective completion",
+      "statement": "C28 eliminates all collisions involving the selected packet and creates none, so the number of unordered colliding packet pairs strictly drops. Iterate to zero, keeping the protected complete base pointwise and all records. Filling holes by the resulting actual fine colours is a completion, not an embedding reflecting absence of records.",
+      "depends_on": [
+        "C28",
+        "D11"
+      ],
+      "notes": "N11",
+      "source_labels": [
+        "lem:packet-collision"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "actual_source"
+    },
+    {
+      "id": "C30",
+      "name": "Generic origin coordinates lift every specified matrix",
+      "statement": "Under A08, target origins that lie in distinct packets, have the PRESCRIBED origin owner labels and realize EVERY recorded origin colour c_ij extend by t_g o_i -> t_g e_i to a well-defined injective packet map, preserving total functions, equivariant owners and every recorded matrix (g+h)c_ij. The coordinate formula determines its restriction to a complete source base; alignment to its specified actual copy is handled separately by C24.",
+      "depends_on": [
+        "A08",
+        "D14"
+      ],
+      "notes": "N14",
+      "source_labels": [
+        "lem:packet-origins"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "generic_finite"
+    },
+    {
+      "id": "C31",
+      "name": "Raw and anchored completion for transversal diagrams",
+      "statement": "A typed partial origin diagram with realizable typed cycles has a raw homomorphism by CCO. Its specified non-F edges are compatible with its actual owner labels. I10 supplies the positive owner word for the residual E, so instantiate C07 (not its raw-SAP option) to impose all actual owners and any protected complete base.",
+      "depends_on": [
+        "A01",
+        "A05",
+        "D12",
+        "I10",
+        "C07"
+      ],
+      "notes": "N12",
+      "source_labels": [
+        "thm:joint-transversal"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "actual_source"
+    },
+    {
+      "id": "C32",
+      "name": "Separate origin collisions using only displayed neighbours",
+      "statement": "If two formal origins share an image packet, move one outside the protected complete base. The image set C of ONLY its displayed neighbours has F-closure disjoint from its image, since all specified edges are non-F. By C22 that point has infinite owner-preserving orbit over C, hence meets infinitely many finite F-packets. Replace only that formal image by one outside every current image packet. Records, actual owner and protected images survive.",
+      "depends_on": [
+        "C31",
+        "C22",
+        "C23"
+      ],
+      "notes": "N12",
+      "source_labels": [
+        "thm:joint-transversal"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "actual_source"
+    },
+    {
+      "id": "C33",
+      "name": "Injective packet-separated transversal completions",
+      "statement": "C32 strictly decreases the finite packet-collision count and yields an injective completion on pairwise distinct F-packets, fixing the protected complete origin base. This supplies semantic typed homomorphic CCO together with its packet-separated completion conclusion, without original raw SAP.",
+      "depends_on": [
+        "C32"
+      ],
+      "notes": "N12",
+      "source_labels": [
+        "thm:joint-transversal"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "actual_source"
+    },
+    {
+      "id": "C34",
+      "name": "Triangle-defined actual transversal age and literal pair palettes",
+      "statement": "I01 first realizes any complete raw triangle-legal origin diagram. C07 with the word I10 restores its actual owners; C32 separates packets if needed (for complete non-F diagrams they are already distinct). Hence the actual origin age is triangle-defined with palettes exactly P_st=L_st minus F, for arbitrary repeated owner labels.",
+      "depends_on": [
+        "I01",
+        "I10",
+        "C07",
+        "C32",
+        "D12"
+      ],
+      "notes": "N12",
+      "source_labels": [
+        "thm:joint-transversal"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "actual_source"
+    },
+    {
+      "id": "C35",
+      "name": "Hereditary JEP/SAP for the actual transversal",
+      "statement": "Heredity is by restriction of actual origin realizations. Inflate both sides of an abstract transversal span to their whole packets, identifying the common-base inflations via their unique origin-translation coordinates. Apply C26 to that full-packet span; retain the chosen origin images. This yields strong typed amalgamation and, over empty base, JEP.",
+      "depends_on": [
+        "C26",
+        "C30",
+        "C34"
+      ],
+      "notes": "N12",
+      "source_labels": [
+        "thm:joint-transversal"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "actual_source"
+    },
+    {
+      "id": "C36",
+      "name": "Every nontrivial invariant equivalence gives a strong-closed diversity support",
+      "statement": "In a homogeneous realization of the actual origin age, its owner-s pair orbitals are exactly the literal fine colours P_ss. A proper nontrivial invariant equivalence therefore has a nonempty proper diversity support D with D*D subset D. Equivalently the following algebraic claims apply to ANY such D in the actual finite triangle palette.",
+      "depends_on": [
+        "C34",
+        "C35",
+        "D13"
+      ],
+      "notes": "N13",
+      "source_labels": [
+        "thm:joint-transversal"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "actual_source"
+    },
+    {
+      "id": "C37",
+      "name": "Overlapping thin translates force full D stability",
+      "statement": "If g in H and D intersect gD is nonempty, choose a,ga in D. For arbitrary b in D choose c in a*b, nonempty by transversal SAP. The translated triangles (ga,b,gc) and (a,gb,gc), with D closure and Peirce rotation, force gb in D. Thus gD=D.",
+      "depends_on": [
+        "C36",
+        "I09"
+      ],
+      "notes": "N13",
+      "source_labels": [
+        "thm:joint-transversal"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "actual_source"
+    },
+    {
+      "id": "C38",
+      "name": "The stabilizer H_D is a subgroup with correct mixed products",
+      "statement": "H_D contains 0 and is closed under sums because it stabilizes D; the thin action has exponent two. Its thin atoms multiply inside H_D, and thin/nonthin products preserve D by stability. No converse claim that every subgroup gives a new direction is used.",
+      "depends_on": [
+        "C37"
+      ],
+      "notes": "N13",
+      "source_labels": [
+        "thm:joint-transversal"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "actual_source"
+    },
+    {
+      "id": "C39",
+      "name": "The extension Id union thin H_D union D is a global RAW equivalence",
+      "statement": "For two D atoms, a raw product outside F is a 3-distinct-packet triangle, so its output lies in D. A thin output t_g forces b=g a for two D atoms, hence D intersect gD nonempty and g in H_D. Together with C38 this gives reflexive symmetric transitivity inside one named E-class. Move any original E-class to that class by ORIGINAL transitivity: the same literal old-colour union defines a GLOBAL invariant equivalence contained in E.",
+      "depends_on": [
+        "C38",
+        "I09",
+        "A01"
+      ],
+      "notes": "N13",
+      "source_labels": [
+        "thm:joint-transversal"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "actual_source"
+    },
+    {
+      "id": "C40",
+      "name": "This global equivalence has infinite classes from transversal SAP",
+      "statement": "Realize a genuine D-edge in the named owner sort. For every n strongly amalgamate n complete two-point copies over the same singleton using C35; they lie in the ACTUAL origin age and yield n distinct D-neighbours in distinct F-packets. Thus global C39 classes have unbounded finite size; ORIGINAL transitivity makes all classes infinite. No fixed infinite transversal embedding or full-real SAP is used.",
+      "depends_on": [
+        "C39",
+        "C35"
+      ],
+      "notes": "N13",
+      "source_labels": [
+        "thm:joint-transversal"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "actual_source"
+    },
+    {
+      "id": "C41",
+      "name": "Minimality of E proves primitivity of every owner sort",
+      "statement": "The global equivalence C39 is infinite by C40 and contained in the minimal infinite E, so equals E. Its nonthin support is therefore all P_ss, contradicting proper D. Every homogeneous realization of the actual origin age has primitive individual named owner sorts.",
+      "depends_on": [
+        "C40",
+        "A05"
+      ],
+      "notes": "N13",
+      "source_labels": [
+        "thm:joint-transversal"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "actual_source"
+    },
+    {
+      "id": "C42",
+      "name": "Enumerate finite charts and all finite extension requirements",
+      "statement": "Under A07, finite charts and embeddings form countably many requests. Construct a chain by fair finite rounds: extend an embedded finite A by any requested B in K using AP with the current finite stage, and use JEP to ensure every finite chart appears. This uses actual finite structures and injective maps, not merely pair tables.",
+      "depends_on": [
+        "A07",
+        "D15"
+      ],
+      "notes": "N14",
+      "source_labels": [
+        "thm:joint-transversal"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "countable_age"
+    },
+    {
+      "id": "C43",
+      "name": "Internal countable homogeneous limit from the extension property",
+      "statement": "The chain union has age K and realizes every finite embedding-extension request by fairness. Alternating extensions of finite partial isomorphisms over an enumeration gives homogeneity; the same argument gives uniqueness among at-most-countable structures with this age/extension property. This proves the needed Fraisse construction internally rather than assuming an external axiom.",
+      "depends_on": [
+        "C42"
+      ],
+      "notes": "N14",
+      "source_labels": [
+        "thm:joint-transversal"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "countable_age"
+    },
+    {
+      "id": "C44",
+      "name": "The actual transversal and its packet inflation have the right finite ages",
+      "statement": "Instantiate C42/C43 with C35 to obtain U_B; SAP and a nonempty owner sort give unbounded sizes and an infinite countable limit. Inflate each U point by G. Every finite full-packet diagram is an inflation of its chosen origins, and every finite origin diagram belongs to C34, so Infl(U_B) has EXACTLY the same finite full-packet age as N_B, with all original fine colours, actual owners and unary t_g.",
+      "depends_on": [
+        "C43",
+        "C35",
+        "C34",
+        "C30",
+        "D14",
+        "I09"
+      ],
+      "notes": "N14",
+      "source_labels": [
+        "thm:joint-transversal"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "actual_source"
+    },
+    {
+      "id": "C45",
+      "name": "Phase-aligned origin choices prove inflated closed extension",
+      "statement": "Given a full-packet embedding into Infl(U_B), choose each OLD source packet origin as the inverse image of the target coordinate-zero point (u,0); its real point preimage is unique even if owner stabilizers are nontrivial. Choose arbitrary origins only in NEW packets. The old origins now define a legitimate owner/fine-colour embedding into U_B. Its extension property extends all new origins, and C30 inflates to the required full-packet embedding. No global canonical or equivariant origin section is assumed.",
+      "depends_on": [
+        "C44",
+        "C43",
+        "C30"
+      ],
+      "notes": "N14",
+      "source_labels": [
+        "thm:joint-transversal"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "actual_source"
+    },
+    {
+      "id": "C46",
+      "name": "Closed back-and-forth identifies full inflation with N_B",
+      "statement": "N_B has the full-packet extension property by C24 and its actual age; Infl(U_B) has it by C45. Enumerate their countable real universes and alternate finite FULL-PACKET closed extensions, adding an entire G-packet whenever a point is missing. The union is an owner/fine-colour/t_g isomorphism. Homogeneity transfers, and the pure Gamma action from C24 fixes every literal fine name.",
+      "depends_on": [
+        "C45",
+        "C24",
+        "C23"
+      ],
+      "notes": "N14",
+      "source_labels": [
+        "thm:joint-transversal"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "actual_source"
+    },
+    {
+      "id": "C47",
+      "name": "Finite diagnostics do not certify the actual source theorems",
+      "statement": "Finite G/H packet actions, origin inflation/gauges and protected collision repairs test literal coordinate identities, stabilizers and preserved matrices. Equality-cap identification and Cartesian four-cycle controls test sharp logical boundaries. They prove no infinite acl, SAP, CCO, Fraisse, HKN or unconditional EPPA theorem.",
+      "depends_on": [
+        "A08"
+      ],
+      "notes": "N01",
+      "source_labels": [
+        "thm:joint-transversal"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "diagnostic"
+    }
+  ],
+  "exports": [
+    {
+      "source_label": "lem:anchored-closed-walk",
+      "claims": [
+        "C01",
+        "C02",
+        "C03"
+      ]
+    },
+    {
+      "source_label": "thm:anchored-relative",
+      "claims": [
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09"
+      ]
+    },
+    {
+      "source_label": "cor:relative-cap",
+      "claims": [
+        "C10",
+        "C11",
+        "C09"
+      ]
+    },
+    {
+      "source_label": "prop:joint-owner-caps",
+      "claims": [
+        "C12",
+        "C09"
+      ]
+    },
+    {
+      "source_label": "prop:anchored-typed-source",
+      "claims": [
+        "C13",
+        "C14",
+        "C15",
+        "C16"
+      ]
+    },
+    {
+      "source_label": "thm:relative-transfer",
+      "claims": [
+        "C17",
+        "C18"
+      ]
+    },
+    {
+      "source_label": "thm:relative-real-closure",
+      "claims": [
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24"
+      ]
+    },
+    {
+      "source_label": "lem:relative-finite-avoidance",
+      "claims": [
+        "C25"
+      ]
+    },
+    {
+      "source_label": "cor:relative-closed-sap",
+      "claims": [
+        "C26"
+      ]
+    },
+    {
+      "source_label": "thm:joint-transversal",
+      "claims": [
+        "C24",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40",
+        "C41",
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46"
+      ]
+    },
+    {
+      "source_label": "lem:packet-collision",
+      "claims": [
+        "C27",
+        "C28",
+        "C29"
+      ]
+    },
+    {
+      "source_label": "lem:packet-origins",
+      "claims": [
+        "C30",
+        "C34",
+        "C24",
+        "C46"
+      ]
+    }
+  ],
+  "source_result_files": [
+    "sections/anchored_relative_completion.tex",
+    "sections/owner_transversal_direct.tex"
+  ],
+  "additional_result_exports": [
+    "lem:packet-collision",
+    "lem:packet-origins"
+  ],
+  "auxiliary_exports": [
+    {
+      "source_label": "eq:full-owner-acl",
+      "source": {
+        "file": "sections/owner_transversal_direct.tex",
+        "anchor": "\\label{eq:full-owner-acl}"
+      },
+      "claims": [
+        "C20",
+        "C21",
+        "C22",
+        "C23"
+      ]
+    },
+    {
+      "source_label": "eq:full-owner-inflation",
+      "source": {
+        "file": "sections/owner_transversal_direct.tex",
+        "anchor": "\\label{eq:full-owner-inflation}"
+      },
+      "claims": [
+        "C30",
+        "C44",
+        "C45",
+        "C46"
+      ]
+    },
+    {
+      "source_label": "eq:packet-matrix",
+      "source": {
+        "file": "sections/hkn_packet_reservoir.tex",
+        "anchor": "\\label{eq:packet-matrix}"
+      },
+      "claims": [
+        "C30"
+      ]
+    }
+  ],
+  "source_files": [
+    {
+      "file": "sections/anchored_relative_completion.tex",
+      "git_blob": "cbf35690eb675210cf9c98bba7465bd4ad55c9a9",
+      "bytes": 18384
+    },
+    {
+      "file": "sections/exact_foundations/02_exact_quotient_orbital_geometry.tex",
+      "git_blob": "d462f2bfffcd67c1fa712ac516972ab18e073d44",
+      "bytes": 7919
+    },
+    {
+      "file": "sections/exact_foundations/03_joint_exact_sort_lifting.tex",
+      "git_blob": "394e0db063a476c5c069384b3d3fa2ffd3c7471d",
+      "bytes": 10454
+    },
+    {
+      "file": "sections/finite_orbit_avoidance.tex",
+      "git_blob": "290ab3ae54ade87fc4693b0c17955a9e319efd9b",
+      "bytes": 7097
+    },
+    {
+      "file": "sections/finite_packets.tex",
+      "git_blob": "dd3e608f03e7c5b1b1854a45de462859f8355143",
+      "bytes": 19875
+    },
+    {
+      "file": "sections/harmless_exact_owners.tex",
+      "git_blob": "f2259434387184b1fbf24edf099da5e12be33024",
+      "bytes": 6136
+    },
+    {
+      "file": "sections/hkn_packet_reservoir.tex",
+      "git_blob": "cdef46b3ee64bcac4513f5406a20593b758dc58d",
+      "bytes": 25522
+    },
+    {
+      "file": "sections/owner_transversal_direct.tex",
+      "git_blob": "3c0effbc63c31000bbe3d88be59616b67efd7364",
+      "bytes": 13019
+    },
+    {
+      "file": "sections/real_hull/06_minimal_infinite_directions_acl.tex",
+      "git_blob": "4c01beca2f60acfa2d942714525173889bc5804f",
+      "bytes": 11416
+    },
+    {
+      "file": "sections/rooted_acf_geometry.tex",
+      "git_blob": "4910a41d44909e4b01d48c03a3e9a1116b37ea23",
+      "bytes": 12710
+    },
+    {
+      "file": "sections/typed_invariant_quotient_transport.tex",
+      "git_blob": "3895b17d7d0176a74d6f69c39e4e22d9cdba5715",
+      "bytes": 11154
+    }
+  ],
+  "dependency_firewalls": [
+    {
+      "claims": [
+        "C01",
+        "C02"
+      ],
+      "forbid": [
+        "A03",
+        "A04",
+        "A05",
+        "A06",
+        "I03",
+        "I04",
+        "I05",
+        "I06",
+        "I07",
+        "I08",
+        "I09",
+        "I10",
+        "I11"
+      ]
+    },
+    {
+      "claims": [
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C10",
+        "C13",
+        "C14",
+        "C15",
+        "C17",
+        "C18",
+        "C11",
+        "C12"
+      ],
+      "forbid": [
+        "A04",
+        "A05",
+        "I05",
+        "I06",
+        "I07",
+        "I08",
+        "I09",
+        "I10",
+        "I11"
+      ]
+    },
+    {
+      "claims": [
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26"
+      ],
+      "forbid": [
+        "A03",
+        "A04",
+        "A06",
+        "C07",
+        "C09",
+        "C13",
+        "C16",
+        "C18"
+      ]
+    },
+    {
+      "claims": [
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23"
+      ],
+      "forbid": [
+        "I03",
+        "I04",
+        "C24"
+      ]
+    },
+    {
+      "claims": [
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40",
+        "C41",
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46"
+      ],
+      "forbid": [
+        "A04",
+        "A06",
+        "C09",
+        "C16",
+        "C18"
+      ]
+    },
+    {
+      "claims": [
+        "C30",
+        "C47"
+      ],
+      "forbid": [
+        "A01",
+        "A02",
+        "A03",
+        "A04",
+        "A05",
+        "A06",
+        "I01",
+        "I02",
+        "I03",
+        "I04",
+        "I05",
+        "I06",
+        "I07",
+        "I08",
+        "I09",
+        "I10",
+        "I11"
+      ]
+    },
+    {
+      "claims": [
+        "C42",
+        "C43"
+      ],
+      "forbid": [
+        "A01",
+        "A02",
+        "A03",
+        "A04",
+        "A05",
+        "A06",
+        "I01",
+        "I02",
+        "I03",
+        "I04",
+        "I05",
+        "I06",
+        "I07",
+        "I08",
+        "I09",
+        "I10",
+        "I11",
+        "C41"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "T01",
+      "name": "Reachable owners and protected anchored completion",
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Prove represented saturation, classify ALL augmented simple cycles and preserve a COMPLETE protected base. Optional raw-SAP injectivity is a separate branch and fixes only displayed neighbours during one-image repairs."
+    },
+    {
+      "id": "T02",
+      "name": "Caps, actual named-owner source and conditional transfer",
+      "claims": [
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18"
+      ],
+      "depends_on": [
+        "T01"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Handle Id spectra by an identified quotient diagram with descending lambda; joint caps use cycles of the whole augmented graph. Preserve ENTIRE prescribed owner actions, actual quotient recognizability and the explicit conditional EPPA inputs."
+    },
+    {
+      "id": "T03",
+      "name": "Residual named closure and full-packet closed SAP",
+      "claims": [
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Reuse prepared absolute unary closure and harmless owners. Compute acl_N by restriction orbits before proving new N homogeneity. Validate mixed pairs before joint lifting; align abstract closed spans before avoidance. No full-real SAP, safety or selector input."
+    },
+    {
+      "id": "T04",
+      "name": "Packet collision, actual transversal CCO and strong amalgamation",
+      "claims": [
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35"
+      ],
+      "depends_on": [
+        "T01",
+        "T03"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Preserve total packet functions and all non-F records while decreasing the full packet collision count. Fixed complete bases and unrecorded collisions are distinct. The reachable owner word comes from the prepared minimal-cut theorem. Prove actual typed age, CCO, triangle fullness and SAP without invoking optional raw SAP."
+    },
+    {
+      "id": "T05",
+      "name": "Primitive named owner sorts from original RAW relations",
+      "claims": [
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40",
+        "C41"
+      ],
+      "depends_on": [
+        "T04"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Prove H_D stability and ALL thin/nonthin raw-product cases, then use original transitivity for GLOBAL invariance/transitivity. Infinite classes follow from actual transversal SAP duplication, not full-real SAP or an unproved embedding of an infinite transversal."
+    },
+    {
+      "id": "T06",
+      "name": "Countable construction and phase-aligned full inflation",
+      "claims": [
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46",
+        "C47"
+      ],
+      "depends_on": [
+        "T04",
+        "T05"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Build the generic countable extension/back-and-forth theorem internally or reuse an equivalent proved library API. Choose old origins by real point preimages of target zero coordinates; owner labels alone do not determine the phase. Prove full-packet age equality and closed back-and-forth with N_B, retaining unary functions and all literal fine colours."
+    }
+  ],
+  "overview_mermaid": [
+    "flowchart TD",
+    "  A[\"Anchored actual-owner completion\"] --> C[\"Joint caps and typed sources\"]",
+    "  R[\"Prepared real closure and harmless owners\"] --> N[\"Named closure and closed SAP\"]",
+    "  A --> T[\"Actual packet-separated transversal\"]",
+    "  N --> T",
+    "  T --> P[\"Global RAW primitivity argument\"]",
+    "  T --> I[\"Countable construction and full inflation\"]",
+    "  P --> I",
+    "  C --> E[\"Conditional EPPA transfer\"]"
+  ],
+  "overview_notes": [
+    "The residual closed-packet branch never uses the optional full-real-SAP anchored injectivity theorem. Closure is proved before new named-owner homogeneity; the latter aligns abstract amalgamation spans. The countable construction is an internal generic branch, not an opaque external Fraisse obligation. Conditional EPPA transfer retains both assumed provider hypotheses."
+  ],
+  "controls": [
+    {
+      "id": "K01",
+      "check": "Finite G/H packet actions test regular real translations, nonfaithful owner stabilizers, full fine-matrix inflation and origin changes."
+    },
+    {
+      "id": "K02",
+      "check": "Literal partial packet maps exercise protected-base collision repairs that modify only one formal packet, preserve recorded matrices and do not fix an unrecorded collision target."
+    },
+    {
+      "id": "K03",
+      "check": "Finite individual-versus-joint owner caps include equality identification and the four-cycle obstruction; finite controls are not infinite source or CCO certifications."
+    }
+  ],
+  "article_feedback": [
+    {
+      "id": "F01",
+      "kind": "FORMALIZATION_DETAIL",
+      "source": {
+        "file": "sections/anchored_relative_completion.tex",
+        "anchor": "\\label{thm:anchored-relative}"
+      },
+      "proof_claims": [
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09"
+      ],
+      "finding": "The no-private-path cycle case uses ONE union homomorphism on P union_A T. Optional SAP orbit arguments choose each owner representative outside C union {v}.",
+      "proposed_article_change": "Keep these choices explicit in the later human proof; no source signature change is currently needed.",
+      "affected_callers": [
+        "prop:anchored-typed-source",
+        "thm:joint-transversal"
+      ]
+    },
+    {
+      "id": "F02",
+      "kind": "FORMALIZATION_DETAIL",
+      "source": {
+        "file": "sections/anchored_relative_completion.tex",
+        "anchor": "\\label{cor:relative-cap}"
+      },
+      "proof_claims": [
+        "C10",
+        "C11",
+        "C12"
+      ],
+      "finding": "Equality in a homomorphic single-edge cap needs a quotient formal diagram and a descending owner assignment. Joint capped spectra require ALL raw cycles, not a product of individual caps.",
+      "proposed_article_change": "Retain the equality convention and joint-cap warning; add details only to formalization notes.",
+      "affected_callers": [
+        "prop:joint-owner-caps"
+      ]
+    },
+    {
+      "id": "F03",
+      "kind": "FORMALIZATION_DETAIL",
+      "source": {
+        "file": "sections/owner_transversal_direct.tex",
+        "anchor": "\\label{eq:full-owner-acl}"
+      },
+      "proof_claims": [
+        "C22",
+        "C24",
+        "C26"
+      ],
+      "finding": "Restriction-orbit closure computation precedes and does not assume the NEW named-owner homogeneity proof. Abstract closed SAP subsequently uses that homogeneity to align embeddings.",
+      "proposed_article_change": "Preserve the existing separation of these proof steps when editing the human text.",
+      "affected_callers": [
+        "lem:packet-collision",
+        "thm:completable-reservoir"
+      ]
+    },
+    {
+      "id": "F04",
+      "kind": "PROOF_EXPANSION",
+      "source": {
+        "file": "sections/owner_transversal_direct.tex",
+        "anchor": "\\label{eq:full-owner-inflation}"
+      },
+      "proof_claims": [
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46"
+      ],
+      "finding": "A supplied full-packet embedding requires OLD origins chosen as real preimages of target coordinate-zero points. Arbitrary choices inferred only from owner labels fail with stabilizers. A countable extension/back-and-forth construction expands the Fraisse sentence.",
+      "proposed_article_change": "Add a short phase-aligned origin sentence to the human proof; keep the generic limit construction in formalization notes.",
+      "affected_callers": [
+        "thm:R07-relative-eppa",
+        "lem:packet-origins"
+      ]
+    },
+    {
+      "id": "F05",
+      "kind": "WORDING_PRECISION",
+      "source": {
+        "file": "sections/hkn_packet_reservoir.tex",
+        "anchor": "\\label{lem:packet-origins}"
+      },
+      "proof_claims": [
+        "C24",
+        "C30"
+      ],
+      "finding": "The induced source-base isomorphism is the specified coordinate map; an ambient automorphism extending it is not asserted unique.",
+      "proposed_article_change": "If revising this sentence, replace unique named-owner isomorphism by the prescribed named-owner base isomorphism.",
+      "affected_callers": [
+        "thm:completable-reservoir"
+      ]
+    },
+    {
+      "id": "F06",
+      "kind": "WORDING_PRECISION",
+      "source": {
+        "file": "sections/anchored_relative_completion.tex",
+        "anchor": "\\label{thm:anchored-relative}"
+      },
+      "proof_claims": [
+        "C09",
+        "C12",
+        "C16"
+      ],
+      "finding": "An injective map of a sparse partial diagram is an injective record-preserving completion; it need not reflect the absence of unspecified edges, as a literal embedding of the incomplete relational structure would.",
+      "proposed_article_change": "Say injective colour-preserving completion in the optional clause when distinguishing it from HKN homomorphism-embeddings.",
+      "affected_callers": [
+        "prop:anchored-typed-source",
+        "thm:joint-transversal"
+      ]
+    }
+  ],
+  "review": {
+    "date": "2026-10-27",
+    "source_unchanged": true,
+    "unexpanded_provider_labels": [],
+    "source_signature_repairs": 0,
+    "proof_status": "Local source proofs expanded with prepared imports and an internal countable construction; not Lean or unconditional EPPA certification.",
+    "independent_final_reviews": [
+      "Anchored completion/caps/conditional-transfer source and signature audit",
+      "Residual closure/global primitivity/countable phase-aligned inflation source audit"
+    ],
+    "metadata_refinements": [
+      "C03 covers arbitrary positive E word including E=Id",
+      "Basic cap/whole-cycle claims do not inherit optional raw SAP",
+      "Private nonidentity E word has at least two diversity letters",
+      "C30 target origins must preserve owners and all recorded origin colours",
+      "Quotient inheritance requires an actual exact kernel; C17 discharges E exactness by its reachable word",
+      "Local diagram hypotheses are per application, not extra global completion axioms"
+    ]
+  }
+}

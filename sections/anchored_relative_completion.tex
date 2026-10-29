@@ -1,0 +1,356 @@
+\section{Anchored relative completion over actual exact owners}
+\label{sec:anchored-relative}
+
+The conditional groupoid by itself does not give completions of
+parcels with prescribed owner labels.  We next prove the missing
+\emph{anchored} assertion without assuming SAP.  In this section
+$E$ is any nontrivial \emph{reachable} invariant equivalence, meaning
+$E=a_1\cdots a_m$ is a represented positive word profile.  It need
+not be minimal infinite until we invoke the previous chapter.
+Write $Q=M/E$ and $\pi:M\to Q$ for the actual quotient map, whose
+binary orbital language is the exact quotient language of
+Theorem~\ref{thm:exact-sorts-source}.  For a raw atom $a$, write
+$\overline a=EaE$ for the pullback of the corresponding quotient
+orbital support.  This may contain several actual fine raw atoms.
+
+A finite raw \emph{partial edge-coloured diagram} $P$ has distinct
+formal vertices and at most one specified diversity colour on each
+unordered pair.  A \emph{quotient assignment} for $P$ is a map
+$\lambda:V(P)\to Q$.  It is \emph{edge-compatible} if
+\[
+  xy\text{ is specified with colour }a
+  \quad\Longrightarrow\quad
+  (\lambda(x),\lambda(y))\in\overline a.
+\]
+The map $\lambda$ need not be injective; equal assigned quotient
+points mean equal \emph{owners}, not identification of real points.
+
+\begin{lemma}[Closed owner walks and saturated word products]
+\label{lem:anchored-closed-walk}
+Let $E$ be an invariant equivalence on the transitive real source
+$M$.  Let $W=w_1\cdots w_m$ be a represented product whose factors
+are raw atomic relations or the full relation $E$, and suppose at
+least one factor is $E$.  Suppose there are actual $E$-classes
+$X_0,\ldots,X_m=X_0$ such that for every atomic factor $w_i=a$
+there is an $a$-edge from $X_{i-1}$ to $X_i$, while for every
+factor $w_i=E$ one has $X_{i-1}=X_i$.  Then
+$\Id\subseteq W$.  If every $E$-factor is expanded as a
+positive word of raw atoms representing $E$, the expanded closed
+raw word admits a colour-preserving homomorphism to $M$.
+\end{lemma}
+\begin{proof}
+For a raw atomic factor put $C_i=EaE$ and for an $E$-factor put
+$C_i=E$.  Each $C_i$ is saturated in both variables under $E$.
+The stated owner compatibility means
+$X_{i-1}\times X_i\subseteq C_i$.  Choose arbitrary real points
+$u_i\in X_i$ with $u_m=u_0$.  Then
+\[
+ (u_0,u_0)\in C_1\cdots C_m=EWE.
+\]
+Here the equality is the represented relational-product identity:
+$E^2=E$, and all invariant binary relations commute because all
+raw orbitals are symmetric.  As $W$ already has an $E$-factor,
+$EWE=W$.  Thus $(u_0,u_0)\in W$.  The source is transitive and
+$W$ invariant, hence $\Id\subseteq W$.  The definition of the
+represented product now gives a closed walk with these prescribed
+factors.  If an $E$-factor arose from a positive raw word, expanding
+that segment supplies the corresponding raw path.
+\end{proof}
+
+\begin{theorem}[Anchored relative completion]
+\label{thm:anchored-relative}
+Suppose $E$ is reachable.  Let $P$ be a finite raw partial diagram
+admitting a colour-preserving homomorphism to $M$, and let
+$\lambda:V(P)\to Q$ be edge-compatible.  Then there is a
+colour-preserving homomorphism $f:P\to M$ with
+$\pi f=\lambda$.
+
+More precisely, if $A\subseteq V(P)$ induces a \emph{complete}
+raw substructure and $j:A\hookrightarrow M$ is an embedding with
+$\pi j=\lambda|_A$, then $f$ can be chosen to extend $j$.
+If moreover $\Age(M)$ has SAP and every $E$-class is infinite,
+$f$ can be chosen injective.  No SAP is assumed for the first two
+assertions.
+\end{theorem}
+\begin{proof}
+Fix the complete anchored substructure $A$ and its embedding $j$;
+for the unanchored case take $A=\varnothing$.  Since $P$ already has a
+homomorphism to $M$, its restriction to $A$ is an embedding (every
+distinct pair in $A$ has a specified diversity colour).  Homogeneity
+of $M$ lets us postcompose this homomorphism by an automorphism
+so that it agrees with $j$ on $A$.  Denote the resulting homomorphism
+by $f_0$.
+
+Let $B=\lambda(V(P))$, a finite set of actual $E$-owners.  For each
+$b\in B$ choose one real representative $u_b\in\pi^{-1}(b)$, using
+an already embedded point $j(a)$ if $b=\lambda(a)$ for some $a\in A$.
+Add these representatives to $j(A)$ and retain their complete
+\emph{actual} raw induced diagram $T$; its intersection with $P$
+consists precisely of the already anchored vertices $A$.  In the
+augmented partial graph $P\cup_A T$, for each $x\in P\setminus A$
+attach a private path from $x$ to $u_{\lambda(x)}$ whose edge-colour
+word represents $E$.  Since $E>\Id$, the chosen positive word may be taken
+to have only diversity atoms (delete any equality factors).
+All intermediate path vertices are fresh and are used by no other
+path; a one-edge word needs no intermediate vertex.
+
+We check that each specified simple cycle of this augmentation has
+a homomorphism to $M$.  A simple cycle containing no private path
+lies in $P\cup_A T$ and is realised by $f_0$ on $P$ and the identity
+on $T$, since they agree on the complete common substructure $A$.
+A cycle using a private path traverses that entire path, because
+its interior vertices have degree two.  Regard each such path as
+one factor $E$ of the represented cyclic word $W$, keeping all
+other specified edges as their original atomic factors.  Give each
+vertex of $P$ its prescribed quotient owner and each vertex of $T$
+its actual owner.  Along a private $E$-path the two endpoint owners
+are equal; along a specified edge of $P$ the owner pair belongs to
+$EaE$ by edge compatibility; and along an edge of $T$ this is
+true because the edge is actually present.  Thus the marked owner
+labels constitute a closed walk satisfying the hypotheses of
+Lemma~\ref{lem:anchored-closed-walk}.  That lemma gives
+$\Id\subseteq W$, so the specified cycle has a homomorphism to
+$M$, with the positive raw word for each private $E$-factor
+expanded again into its original path.  Notice that this does not
+assert that independently chosen representatives of the successive
+owners realize the individual raw colours: they only realize the
+$E$-saturated relations, and the displayed lemma performs the
+necessary synchronisation.
+
+Semantic homomorphic CCO applied to the whole augmented partial
+diagram gives a homomorphism to $M$.  Its restriction to the complete
+anchor diagram $T$ is an embedding.  By homogeneity we may
+postcompose by an ambient automorphism to make it the identity on
+$T$.  Each private path then forces the image of its initial real
+vertex $x$ to be $E$-related to $u_{\lambda(x)}$.  Hence the
+restriction $f$ to $P$ satisfies $\pi f=\lambda$ and fixes $A$.
+
+Now assume SAP and infinite $E$-classes.  We first justify the
+relative orbit property needed for collision removal.  For every
+finite real set $C$, SAP implies that any $v\notin C$ has infinite
+$\Aut(M/C)$-orbit: take arbitrarily many strong amalgams over $C$
+of the one-point extension $C\cup\{v\}$, embed the finite result in
+$M$, and use homogeneity to move $v$ between its copies while fixing
+$C$.  For finitely many infinite owners $B$, choose a real
+representative of each outside $C\cup\{v\}$.  Any automorphism fixing
+those representatives also fixes all the corresponding $E$-owners.
+Thus the orbit of $v$ over $C$ and the named owners $B$ remains
+infinite.
+
+If two formal vertices of $P$ have the same image under $f$, choose
+one such vertex $x\notin A$.  No displayed edge from $x$ meets a
+vertex with the same image, since every displayed edge has an
+irreflexive diversity colour.  Let $C$ be \emph{only} the finite set of images of displayed
+neighbours of $x$; it does not contain $f(x)$.  We must \emph{not}
+include all anchored vertices in $C$, because $f(x)$ might collide
+with an anchored vertex to which $x$ has no specified edge.
+The orbit of $f(x)$ over $C$ and all named owners $B$ is infinite.
+Choose a new member of this orbit outside the entire finite current
+image of $P$, and change \emph{only} the image of $x$ (rather than
+applying the corresponding automorphism to the whole diagram).
+The displayed colours, the prescribed owner $\lambda(x)$, and
+all images of $A$ are preserved.  This strictly decreases collisions.  Repeating finitely
+many times produces an injective $f$.
+\end{proof}
+
+\begin{corollary}[Exact caps of completion spectra]
+\label{cor:relative-cap}
+Let $D_{xy}$ be the set of possible raw colours on a currently
+unspecified pair $x,y$ in completions of a finite raw partial
+diagram $P$ in $M$, where the completions are allowed to be
+homomorphic (and equality is treated by identification).  Let
+$C_{xy}$ be the raw pullback of the unique actual quotient orbital
+from $\lambda(x)$ to $\lambda(y)$.  If $P$ has a raw completion
+and $\lambda$ is edge-compatible, then the colours possible on
+$x,y$ \emph{with the prescribed owner assignment} are exactly
+\[
+                         D_{xy}\cap C_{xy}.
+\]
+Moreover all quotient owner caps have a common completion.  Under
+SAP and infinite fibres the same holds for injective completions,
+with the diversity-colour interpretation.
+\end{corollary}
+\begin{proof}
+Necessity is immediate.  Given any $a\in D_{xy}\cap C_{xy}$,
+add the specified edge $xy=a$ to $P$.  By the definition of
+$D_{xy}$, the new partial diagram is raw-completable; by
+$a\in C_{xy}$ it remains edge-compatible with $\lambda$.
+Apply Theorem~\ref{thm:anchored-relative}.  Apply that theorem
+to the original $P$ to obtain one common capped completion.
+The injective statement uses its SAP clause.  Equality, if allowed
+in the homomorphic spectrum, is represented by identifying the
+corresponding formal vertices rather than by adding a diversity
+edge between them.
+\end{proof}
+
+
+\begin{proposition}[Joint exact owner caps are governed by the raw cycles]
+\label{prop:joint-owner-caps}
+Assume $E$ is reachable and retain an edge-compatible quotient
+assignment $\lambda$ for a finite raw partial diagram $P$.
+Let $S$ be any collection of its presently unspecified unordered
+pairs, and prescribe a diversity colour $a_{xy}$ on each pair
+$xy\in S$.  Write $P_S$ for the diagram with all these colours
+added simultaneously.  If a complete induced subdiagram
+$A\subseteq P$ is already embedded by $j:A\hookrightarrow M$
+with $\pi j=\lambda|_A$, retain that anchor (and otherwise take
+$A=\varnothing$).
+Then the following are equivalent:
+\begin{enumerate}
+\item There is a colour-preserving homomorphism
+$f:P_S\to M$ extending $j$ and satisfying $\pi f=\lambda$.
+\item Every newly prescribed $a_{xy}$ is compatible with the
+actual owner pair $(\lambda(x),\lambda(y))$, and every
+specified simple cycle of the \emph{whole augmented diagram}
+$P_S$ admits a raw colour-preserving homomorphism to $M$.
+\end{enumerate}
+Under the additional SAP and infinite-$E$-class hypotheses of
+Theorem~\ref{thm:anchored-relative}, ``homomorphism'' in (1)
+may be strengthened to ``embedding'' (for diversity constraints).
+Thus a product of the \emph{individual} capped edge spectra is
+in general only an upper bound on the joint completion spectrum;
+the remaining compatibility constraints are exactly those of raw
+semantic CCO, not an independent choice on each edge.
+\end{proposition}
+\begin{proof}
+Necessity follows by restricting the single realised diagram
+to its edges and cycles.  Conversely, (2) and semantic raw CCO
+give a colour-preserving homomorphism of $P_S$ to $M$.
+All displayed edges of $P_S$ are compatible with $\lambda$:
+this holds for the old edges by hypothesis and for the new
+edges by (2).  Apply the anchored relative completion theorem
+to $P_S$, with the same complete anchor $j$.  Its optional
+injectivity clause gives the final assertion.  No choice of
+independent edge completions or extra SAP is made in the basic
+implication.
+\end{proof}
+
+\begin{example}[A four-cycle blocks independently admissible caps]
+\label{ex:joint-cap-four-cycle}
+In the Cartesian phase model of Example~\ref{ex:two-coordinate},
+take $E$ to be equality of the row and phase coordinates;
+it is reachable, since the square of the colour
+$(\text{same row},\text{different column},\text{same phase})$
+is exactly $E$.  Let $x_0,x_1,x_2,x_3$ be formal vertices with
+four pairwise distinct prescribed row owners and the same
+phase.  Between two different row owners at the same phase,
+both the same-column colour $b$ and the different-column
+colour $d$ are individually possible.  Nevertheless the four prescriptions
+\[
+ x_0x_1=b,\qquad x_1x_2=b,\qquad
+ x_2x_3=b,\qquad x_3x_0=d
+\]
+have no common completion: the first three force all four
+column coordinates to agree, contradicting the last.  Every
+proper subfamily of these four constraints is realizable with
+the specified owners.  There is no specified triangle;
+the obstructing cycle has length four.  Thus owner-wise
+edge compatibility, nonempty individual capped spectra and
+checks confined to triangles cannot replace the cyclic
+condition in Proposition~\ref{prop:joint-owner-caps}.
+\end{example}
+
+\begin{proposition}[Actual finite-owner typed source]
+\label{prop:anchored-typed-source}
+For a finite actual induced quotient substructure $B\subseteq Q$,
+let $N_B$ be the raw induced structure on $\pi^{-1}(B)$ with one
+named unary owner predicate for each $b\in B$.  Then $N_B$ is
+homogeneous, and its finite complete structures are exactly the
+raw triangle-legal diagrams with owner assignments in $B$ that
+are edge-compatible with all prescribed raw colours.  Its age has
+AP and semantic typed homomorphic CCO.  If the original raw age
+has SAP and the $E$-classes are infinite, the typed age has SAP.
+
+Further, writing $\Gamma_B=\Aut(B)$, every finite raw partial
+isomorphism $p$ of $M$ whose domain and range lie in
+$\pi^{-1}(B)$ and for which a prescribed $\gamma\in\Gamma_B$
+satisfies $\pi\circ p=\gamma\circ\pi$ on its domain extends
+to an ambient automorphism of $M$ inducing $\gamma$ on the
+entire finite set of owners $B$.
+\end{proposition}
+\begin{proof}
+For the extension assertion, take a finite complete raw structure
+$C\subseteq\pi^{-1}(B)$ containing the domain of $p$ and one
+representative of every owner in $B$.  The assignment $\lambda=\gamma\circ\pi$
+on $C$ is edge-compatible: $\gamma$ preserves the actual quotient
+orbital of each pair, while each raw edge belongs to its quotient
+pullback.  The restriction of $p$ to its complete domain is a
+compatible anchored embedding.  Theorem~\ref{thm:anchored-relative}
+therefore gives a homomorphic completion of $C$ with precisely this
+quotient assignment and extending $p$.  Since $C$ is complete, it is
+an embedding.  Homogeneity extends it to an ambient automorphism,
+and the chosen representatives force its action on \emph{all} owners
+in $B$ to be $\gamma$.  Taking $\gamma=\mathrm{id}_B$ shows that
+every partial automorphism of the named unary expansion extends,
+hence $N_B$ is homogeneous.
+
+Every finite complete raw triangle-legal diagram embeds into $M$
+by the standing triangle-defined source hypothesis.  If its given
+owner assignment is edge-compatible, the anchored theorem re-embeds
+it into $N_B$.  This proves the description of its age, and AP
+follows from homogeneity.  A typed partial diagram with raw
+cycle-consistency has a raw homomorphic completion by semantic CCO,
+and the anchored theorem forces its owner assignment, proving typed
+CCO.  If raw SAP is available, the union of two finite typed
+diagrams over a common complete typed subdiagram is raw-completable
+by SAP; apply the injective anchored theorem to obtain a typed
+strong amalgam.
+\end{proof}
+
+\begin{definition}[Prescribed finite-language-action EPPA]
+\label{def:gamma-eppa}
+For $\Gamma_B=\Aut(B)$, each $\gamma\in\Gamma_B$ acts on the
+language of $N_B$ by sending the owner predicate $P_b$ to
+$P_{\gamma b}$ and fixing every original named binary raw colour.
+A \emph{$\Gamma_B$-partial automorphism} of a finite typed $A$
+is a pair $(p,\gamma)$ where $p$ is a partial bijection that
+preserves all raw colours and sends each typed vertex in $P_b$
+to a vertex in $P_{\gamma b}$.  A \emph{$\Gamma_B$-EPPA witness}
+for $A$ is a single finite typed extension $W$ in the same age
+such that every such pair extends to an automorphism of the
+\emph{language-action structure}: there is a bijection $\widehat p$
+of $W$ extending $p$, preserving raw colours and satisfying
+$\widehat p(P_b^W)=P_{\gamma b}^W$ for all $b$.  The choices
+for different pairs need not be coherent.  The typed age is closed
+under the indicated finite language action, since the
+actual quotient orbital caps are preserved by $\gamma$.
+\end{definition}
+
+\begin{theorem}[Conditional transfer of ordinary EPPA across $E$]
+\label{thm:relative-transfer}
+Suppose the exact quotient age $\Age(Q)$ has ordinary EPPA.
+Suppose, for every finite actual $B\subseteq Q$, the typed age
+$\Age(N_B)$ has $\Gamma_B$-EPPA for the finite language action
+which permutes its unary owner names by $\Gamma_B=\Aut(B)$
+and fixes \emph{each} original raw colour name.  Then
+$\Age(M)$ has ordinary EPPA.
+\end{theorem}
+\begin{proof}
+Let $A\subseteq M$ be finite.  Take one finite quotient EPPA
+witness $B\subseteq Q$ containing $\pi(A)$.  Every real partial
+automorphism $p$ of $A$ induces a partial isomorphism of the
+quotient image $\pi(A)$, because the exact relation $E$ and all
+its quotient orbitals are invariant raw unions.  Choose
+$\gamma_p\in\Aut(B)$ extending this induced partial map.
+Regard $A$ as a typed member of $\Age(N_B)$ with unary labels
+$\pi|_A$.  Each $(p,\gamma_p)$ is a legitimate language-group
+partial isomorphism of this typed input.  Take a \emph{single}
+finite $\Gamma_B$-EPPA witness which extends all such pairs.
+Forget the owner predicates.  The language action does not change
+any raw fine colour, so the reduct is a finite raw EPPA witness
+for $A$.  No coherent choice of the $\gamma_p$ is used.
+\end{proof}
+
+\begin{remark}[Scope]
+\label{rem:relative-scope}
+Theorem~\ref{thm:anchored-relative} uses only raw semantic
+homomorphic CCO, exact quotient geometry and triangle-definedness
+up to its final injectivity clause.  The stronger raw SAP assumption
+there is \emph{not} part of the standing main EPPA theorem; it is
+used only later for an actual \emph{closed} transversal which has
+independently been proved to admit strong amalgamation.  Likewise
+Theorem~\ref{thm:relative-transfer} is a conditional reduction, not
+a theorem asserting $\Gamma_B$-EPPA for arbitrary typed sources.
+The latter is constructed subsequently by the HKN/selector
+argument, with all mixed fine colours present.
+\end{remark}

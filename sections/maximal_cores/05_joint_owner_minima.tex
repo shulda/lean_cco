@@ -1,0 +1,200 @@
+\begin{lemma}[Intrinsic minimum-ancestor description of the joint owner cut]
+\label{lem:acf-joint-owner-minimum-ancestors}
+Let $\mathcal L$ be a FINITE
+distributive lattice, presented as
+$\operatorname{Down}(P)$ by
+Birkhoff's theorem. Suppose
+$P$ has $r\ge2$ distinct
+minimal points $p_1,\dots,p_r$.
+For $q\in P$ write
+\[
+    \operatorname{Anc}(q)=
+         \{\,i\in[r]:p_i\le q\,\}.
+\]
+This set is NONEMPTY for every
+$q\in P$. Let the maximal
+pseudocomplements of its exact
+atoms be
+\[
+ C_i=P\setminus\uparrow p_i
+       =\{q:i\notin\operatorname{Anc}(q)\}.
+\]
+Put $J_{ij}=C_i\vee C_j$,
+$H_i=\bigwedge_{j\ne i}J_{ij}$
+and $H_*=\bigwedge_{i<j}J_{ij}$.
+Under the literal downset
+representation these have
+the EXACT descriptions
+\[
+\begin{aligned}
+ J_{ij}
+    &=\{q:\{i,j\}\not\subseteq
+                     \operatorname{Anc}(q)\},\\
+ H_i
+    &=\{q:i\notin\operatorname{Anc}(q)
+                 \text{ OR }
+                 \operatorname{Anc}(q)=\{i\}\},\\
+ H_*
+    &=\{q:|\operatorname{Anc}(q)|=1\}.
+\end{aligned}
+\tag{MO}\label{eq:acf-joint-owner-minimum-ancestors}
+\]
+Consequently
+\[
+ H_*>0,\qquad
+ \bigwedge_iH_i=H_*,
+ \qquad H_i\vee H_j=J_{ij}
+                     \quad(i\ne j).
+\tag{MOR}\label{eq:acf-joint-owner-relations}
+\]
+The first inequality is STRICT
+and uses no original
+amalgamation: every atomic
+minimal point $p_i$ belongs
+to $H_*$. In the standing
+finite-exact-normalised AP+CCO
+source, take $C_i=\widehat C_i$,
+so the joint owner quotient
+$M/H_*$ is therefore an ACTUAL
+STRICT exact quotient (lower
+diversity rank) and the
+pairwise joins are precisely
+the common owner quotients
+used by finite exact CRT.
+This proof is pure finite
+distributive-lattice algebra;
+it does not assume independent
+coordinate factors or Boolean
+original orbit structure.
+\end{lemma}
+\begin{proof}
+An element $q$ belongs to
+the downset $C_i$ iff
+$q\not\ge p_i$, equivalently
+$i\notin\operatorname{Anc}(q)$.
+Joins and meets of downsets
+are LITERAL unions and
+intersections. Therefore
+$q\in C_i\vee C_j$ iff
+$i\notin\operatorname{Anc}(q)$
+or $j\notin\operatorname{Anc}(q)$,
+giving the first line.
+
+Likewise
+$q\in H_i$ iff for EVERY
+$j\ne i$, either
+$i\notin\operatorname{Anc}(q)$
+or $j\notin\operatorname{Anc}(q)$.
+If $i$ is absent this is
+automatic; if $i$ is
+present, it demands that
+NO other minimal ancestor
+be present. This is the
+second line.
+
+Finally $q\in H_*$ iff
+NO two distinct minimal
+ancestors belong to
+$\operatorname{Anc}(q)$.
+Every point of a finite
+poset lies above some
+minimal element, so
+$|\operatorname{Anc}(q)|\ge1$.
+This proves the third line.
+
+The equality
+$\bigwedge_iH_i=H_*$
+is immediate from the
+definitions or the ancestor
+criterion. For $i\ne j$,
+$q\notin H_i\vee H_j$
+iff BOTH i and j belong
+to $\operatorname{Anc}(q)$,
+which is exactly the
+condition $q\notin J_{ij}$.
+Thus $H_i\vee H_j=J_{ij}$.
+Each minimal point $p_i$
+has $\operatorname{Anc}(p_i)=\{i\}$,
+hence belongs to $H_*$.
+So $H_*>0$.
+
+In the original source,
+\cref{lem:acf-hat-pseudocomplement}
+identifies the actual exact
+$\widehat C_i$ with
+$P\setminus\uparrow p_i$,
+and the exact lattice is
+distributive. A nonidentity
+exact quotient collapses at
+least one original diversity
+atomic orbital to its
+quotient diagonal and hence
+strictly decreases original
+diversity rank. The owner
+cut $H_*$ contains every
+atom $E_i$, so is
+nonidentity, establishing
+the stated strict quotient.
+\end{proof}
+
+\begin{corollary}[Maximal cores give admissible simultaneous factors]
+\label{cor:acf-hat-factors}
+Assume $r\ge2$ and use $\widehat C_i$ as above.  Put
+\[
+ J_{ij}=\widehat C_i\vee\widehat C_j,\qquad
+ H_i=\bigcap_{j\ne i}J_{ij},\qquad
+ H_*=\bigcap_{i<j}J_{ij},\qquad
+ \Omega=M/H_*.
+\]
+Then $H_*>\Id$, $H_i\vee H_j=J_{ij}$ and
+$\bigcap_iH_i=H_*$, with their exact
+minimum-ancestor normal form supplied
+by \cref{lem:acf-joint-owner-minimum-ancestors}.
+The actual owner source $\Omega$
+is therefore a strict exact quotient.
+Every $Q_i=M/\widehat C_i$ has a global full-support
+strong closed safe palette as in
+Lemma~\ref{lem:acf-quotient-safety}; and every original
+unsafe clique has at most one projection not contained
+in a single finite $F_i$ packet.  Also
+\[
+ \operatorname{acl}_M(A)=
+ \bigcap_i\pi_{\widehat C_i}^{-1}
+          \bigl(F_i[\pi_{\widehat C_i}(A)]\bigr)
+ =\bigcap_iR_i[A].
+\]
+\end{corollary}
+\begin{proof}
+For each $k$, every $J_{ij}$ contains $E_k$:
+if $k=i$ use the other core, and if $k=j$ use the first;
+otherwise either suffices.  Thus
+$\Id<\bigvee_kE_k\subseteq H_*$.  Since
+$\widehat C_i\subseteq H_i$, the inclusion
+$J_{ij}\subseteq H_i\vee H_j$ follows, while the
+reverse inclusion follows from $H_i,H_j\subseteq J_{ij}$.
+The meet equality follows by distributing the finite
+intersection of the same pairwise joins.
+
+For fixed $i$, put $K=\bigcap_{j\ne i}\widehat C_j$,
+$J=\widehat C_i\vee K$.  The two complementary
+exact quotients have identity meet.  $J$ contains all
+minimal original $E_j$, so it is harmless in $M$ by
+Lemma~\ref{lem:acf-harmless-owners}.  In $Q_i$
+its kernel contains the sole minimal infinite direction;
+in the other factor $M/K$, Lemma~\ref{lem:acf-hat-normalised}
+identifies the remaining minimal directions, all of
+which are contained in this kernel.  Therefore the
+owner parameter is harmless in BOTH quotient factors.
+Apply Lemma~\ref{lem:acf-quotient-safety}.
+
+The unsafe-clique concentration is the previous
+pairwise $R_i,R_j$ theorem and is independent of the
+choice of exact core: for every $j$ other than the
+possible exceptional index, the whole clique lies
+in a single $R_j$-class, which projects to a finite
+$R_j/\widehat C_j$ packet.  Lastly, the $\widehat C_i$
+meet in $\Id$, and joint exact quotient homogeneity
+gives finite-meet acl reconstruction.  Use the unary
+formula in each $Q_i$, then take full inverse images;
+these are exactly the displayed $R_i[A]$.
+\end{proof}

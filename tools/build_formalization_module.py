@@ -75,8 +75,38 @@ def validate(root, module, declarations):
             raise ValueError('Unknown dependency firewall node')
         if any(ancestors[c] & set(firewall['forbid']) for c in firewall['claims']):
             raise ValueError('Dependency firewall crossed')
+    catalogue_labels = set(by_label)
     for item in imports:
         label = item['source_label']
+        auxiliary_import = label not in catalogue_labels
+        if auxiliary_import and item.get('provider_module'):
+            provider = json.loads((root / 'formalization' / item['provider_module'] / 'module.json').read_text())
+            matching = [x for x in provider['exports'] + provider.get('auxiliary_exports', [])
+                        if x['source_label'] == label]
+            if len(matching) != 1 or 'source' not in matching[0]:
+                raise ValueError(f'Unknown imported source or ambiguous auxiliary export: {label}')
+            export = matching[0]
+            source = export['source']
+            check_anchor(source)
+            provider_sources = [x for x in provider['source_files'] if x['file'] == source['file']]
+            if (provider['source_commit'] != module['source_commit']
+                    or len(provider_sources) != 1
+                    or provider_sources[0]['git_blob'] != sources[source['file']]['git_blob']
+                    or source['anchor'] != '\\label{' + label + '}'):
+                raise ValueError(f'Imported auxiliary source fingerprint mismatch: {label}')
+            selected = item.get('provider_claims')
+            support = export['claims']
+            provider_claims = {c['id'] for c in provider['claims']}
+            if (not isinstance(selected, list) or not selected
+                    or len(selected) != len(set(selected))
+                    or not support or len(support) != len(set(support))
+                    or not set(support) <= provider_claims
+                    or not set(selected) <= set(support)):
+                raise ValueError(f'Imported auxiliary support claims mismatch: {label}')
+            if label in by_label and by_label[label]['file'] != source['file']:
+                raise ValueError(f'Ambiguous imported auxiliary source: {label}')
+            by_label[label] = {'id': label, 'kind': 'equation', 'file': source['file'],
+                'line': raw[source['file']].count('\n', 0, raw[source['file']].index(source['anchor'])) + 1}
         if label not in by_label or by_label[label]['file'] not in sources:
             raise ValueError(f'Unknown imported source declaration: {label}')
         if item['status'] not in {'HUMAN_EXPANDED_NOT_LEAN', 'EXPLICIT_UPSTREAM_NOT_EXPANDED',
@@ -84,8 +114,9 @@ def validate(root, module, declarations):
             raise ValueError('Unexpected imported proof status')
         if item.get('provider_module'):
             provider = json.loads((root / 'formalization' / item['provider_module'] / 'module.json').read_text())
+            exports = provider['exports'] + (provider.get('auxiliary_exports', []) if auxiliary_import else [])
             if provider['source_commit'] != module['source_commit'] or label not in {
-                    x['source_label'] for x in provider['exports']}:
+                    x['source_label'] for x in exports}:
                 raise ValueError(f'Imported provider module mismatch: {label}')
     claim_ids = {c['id'] for c in module['claims']}
     auxiliary = {}
@@ -268,7 +299,7 @@ def render(module, order, by_label, raw):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--check', action='store_true')
-    parser.add_argument('--module', default='raw_exact', choices=['raw_exact', 'strong_selectors', 'sir', 'parity_hasse', 'exact_crt', 'canonical_hull', 'real_closure', 'finite_packets', 'rigid_groupoid', 'finite_kernel', 'owner_action', 'owner_master', 'joint_owner', 'acl_owner_geometry', 'finite_lift'])
+    parser.add_argument('--module', default='raw_exact', choices=['raw_exact', 'strong_selectors', 'sir', 'parity_hasse', 'exact_crt', 'canonical_hull', 'real_closure', 'finite_packets', 'rigid_groupoid', 'finite_kernel', 'owner_action', 'owner_master', 'joint_owner', 'acl_owner_geometry', 'finite_lift', 'mi_geometry', 'owner_transversal'])
     args = parser.parse_args()
     directory = Path('formalization') / args.module
     module = json.loads((ROOT / directory / 'module.json').read_text())

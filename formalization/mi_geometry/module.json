@@ -1,0 +1,1555 @@
+{
+  "schema_version": 1,
+  "id": "mi_geometry",
+  "index_title": "Maximal exact MI factors and one-sided full-support safety",
+  "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+  "status": "HUMAN_EXPANDED_NOT_LEAN",
+  "scope": "Preparation for OTHER Lean projects. Maximal exact pseudocomplements, all selected normalized quotients, full fine-lift spectrum, recipient-only harmless safe descent and minimum-ancestor strict joint owners. The source factor corollary has EXPLICIT inherited StrongClosedAmalgamation(M,S) on safety/clique clauses. No rooted MI/R07 or global EPPA construction is proved.",
+  "scope_vocabulary": [
+    "actual_source",
+    "finite_lattice",
+    "diagnostic"
+  ],
+  "scope_explanation": "statement and proof. Pure finite ancestors, normalized source geometry and palette-conditional safety are separate branches; signature clarifications are recorded in the feedback ledger.",
+  "assumptions": [
+    {
+      "id": "A01",
+      "name": "Current actual source",
+      "statement": "M is a nonempty countable transitive homogeneous source in a FINITE complete symmetric binary language with equality-inclusive RAW orbitals and semantic homomorphic CCO. Retain the current packaged RAW source scope. No original SAP, NR2, EPPA, owner master or rooted theorem is assumed."
+    },
+    {
+      "id": "A02",
+      "name": "Normalized complete-direction source branch",
+      "statement": "For maximal cores M is infinite and finite-exact-normalized. E_1,...,E_r enumerate ALL minimal infinite FULL invariant equivalences; their identification with exactly the atoms of the actual exact lattice is DERIVED in C05, not an additional premise. R_i are the established global correspondences and OLD C_i=kappa(R_i); do not rename the old cores as hat C_i. Nonempty selected I may be arbitrary; multi-factor claims require r>=2."
+    },
+    {
+      "id": "A03",
+      "name": "Actual exact lattice and quotient scope",
+      "statement": "Only the actual FULL RAW EXACT invariant equivalences form the commuting finite distributive lattice used for Birkhoff. Exact quotient interval/descent and source inheritance are imported explicitly. Full finite packet bottoms and harmless owner kernels are not asserted exact."
+    },
+    {
+      "id": "A04",
+      "name": "Pure ancestor theorem with exhaustive minima",
+      "statement": "For C24/C25, P is a finite poset whose ENTIRE minimal-element set is enumerated without repetitions as p_1,...,p_r, r>=2. Anc(q)={i:p_i<=q} is therefore nonempty. The pure lattice branch has no source or palette hypotheses."
+    },
+    {
+      "id": "A05",
+      "name": "Every nonempty selected-core meet",
+      "statement": "For the normalized quotient theorem, I is an arbitrary NONEMPTY subset of the complete direction indices; K_I=meet_(i in I) hat C_i. No omission of the maximal-pseudocomplement premise or replacement by arbitrary smaller cores is allowed."
+    },
+    {
+      "id": "A06",
+      "name": "General complementary exact split",
+      "statement": "For spectrum/one-sided safety, C,K are actual exact invariant equivalences with C meet K=Id; J=C join K, Y=M/C, X=M/K and T=M/J. The source need not be finite-exact-normalized for these general branches."
+    },
+    {
+      "id": "A07",
+      "name": "Harmless owner naming only in the recipient",
+      "statement": "For Y-directed avoidance/safety, adding any finite set of ACTUAL T-classes as imaginary parameters does not enlarge real acl in Y. No harmlessness in the opposite X-factor is assumed. Symmetric X-directed safety has the exchanged premise."
+    },
+    {
+      "id": "A08",
+      "name": "Original strong closed safe palette",
+      "statement": "S is an explicitly GIVEN set of ORIGINAL diversity atom names strongly amalgamating finite ABSOLUTELY real-acl-closed induced spans in M. All safety and unsafe-clique conclusions of the assembled factor corollary retain this premise; pure structure, normalization, owner strictness and acl formulas do not."
+    },
+    {
+      "id": "A09",
+      "name": "Given full ordered owner-pair spectrum",
+      "statement": "For the independent spectrum theorem, B is a finite set of actual T-owners, P subset X is finite induced and onto B, and for EACH ORDERED actual pair (t,t_prime) in B squared P realizes EVERY X-pair orbital possible above that exact pair, including X-diagonal when t=t_prime. Neither absolute closure nor harmlessness is needed for this supplied-spectrum consumer."
+    },
+    {
+      "id": "A10",
+      "name": "Arbitrary closed quotient span",
+      "statement": "For safety start with ANY span A->L,R of finite ABSOLUTELY real-acl-closed induced Y structures, allowing empty base/factors. Owner-complete helpers are constructed later; no closedness of the original owner image is assumed."
+    },
+    {
+      "id": "A11",
+      "name": "Closed owner helper input",
+      "statement": "For the helper construction lemma, B is a GIVEN finite NONEMPTY absolutely acl_T-closed actual owner set. This input is constructed in C14 for the safety application, not an extra preexisting helper or opposite-factor harmlessness premise."
+    }
+  ],
+  "imports": [
+    {
+      "id": "I01",
+      "name": "Global correspondence equivalences",
+      "source_label": "lem:global-correspondence",
+      "provider_module": "acl_owner_geometry",
+      "statement": "R_i are actual equivalences containing F with E_i meet R_i=E_i meet F; this import is structural and uses normalization, not a safe palette.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01",
+        "A02"
+      ]
+    },
+    {
+      "id": "I02",
+      "name": "Original cores and structural coordinate support",
+      "source_label": "lem:acf-canonical-coordinates",
+      "provider_module": "acl_owner_geometry",
+      "statement": "Reuse ONLY C15-C19/C35 supporting the original structural coordinate proof: all R_i meet F, old cores meet Id, other E_j<=C_i, finite [R_i:C_i], Sigma(C_i)=R_i and full quotient finite-bottom transport. The optional unsafe-clique branch is imported separately.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01",
+        "A02"
+      ],
+      "provider_claims": [
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C35"
+      ]
+    },
+    {
+      "id": "I03",
+      "name": "Exact distributivity and internal Birkhoff",
+      "source_label": "lem:acf-exact-distributive",
+      "provider_module": "exact_crt",
+      "statement": "Finite actual exact lattice is distributive with the already internally proved Birkhoff representation. Minimal exact atoms are the minimal points of P; no Booleanity is assumed.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01"
+      ]
+    },
+    {
+      "id": "I04",
+      "name": "Both directions of actual relative exact descent",
+      "source_label": "lem:exact-descent",
+      "provider_module": "exact_crt",
+      "statement": "For an actual exact K, H/K is full RAW exact iff its saturated original pullback H is full exact, and the exact quotient lattice is [K,Top]. Use only the one-original-sort branch.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01"
+      ]
+    },
+    {
+      "id": "I05",
+      "name": "Standing actual quotient-source inheritance",
+      "source_label": "thm:exact-sorts-source",
+      "provider_module": "raw_exact",
+      "statement": "Every actual exact quotient has the standing source properties in its canonical old-group orbital language. A one-point quotient is allowed. Strict diversity-rank decrease for nonidentity kernels is proved by the local orbital-block count in C03/C26, not assumed as an unexported clause of this provider.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01"
+      ]
+    },
+    {
+      "id": "I06",
+      "name": "Packet core and Sigma intervals",
+      "source_label": "lem:packetinterval",
+      "provider_module": "finite_packets",
+      "statement": "Reuse finite core/Sigma indices in the FULL invariant lattice, including Sigma(old C_i)=R_i from I02, and monotonicity of kappa. Neither R_i nor F_i must be exact.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01"
+      ]
+    },
+    {
+      "id": "I07",
+      "name": "Elementary relative index support",
+      "source_label": "lem:crossingindex",
+      "provider_module": "finite_packets",
+      "statement": "Reuse the explicitly exported support C02: class injection/restriction, commuting transposition and finite tower multiplication. The normalized quotient proof uses actual finite class counts, not infinite cardinal division.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01"
+      ],
+      "provider_claims": [
+        "C02"
+      ]
+    },
+    {
+      "id": "I08",
+      "name": "Minimal infinite equals exact core",
+      "source_label": "prop:minimalcut",
+      "provider_module": "finite_packets",
+      "statement": "In every inherited standing source every inclusion-minimal infinite full invariant equivalence is actual exact. In a finite-exact-normalized source it is precisely an atom of the exact lattice.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01"
+      ]
+    },
+    {
+      "id": "I09",
+      "name": "Existing one-direction absolute closure",
+      "source_label": "cor:rh-acl-bounded-character",
+      "provider_module": "real_closure",
+      "statement": "Reuse C11 singleton/one-minimal-direction closure: acl_Q(A)=F_Q[A] for finite real A when Q is infinite with exactly one minimal infinite direction. No owner-named-union closure is inferred.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01"
+      ],
+      "provider_claims": [
+        "C11"
+      ]
+    },
+    {
+      "id": "I10",
+      "name": "Foundational exact algebraicity projection",
+      "source_label": "lem:acf-acl-projects-exact",
+      "provider_module": "acl_owner_geometry",
+      "statement": "For each actual exact quotient pi, pi(acl(A)) subset acl(pi A), proved by finite joint lifts. This keeps helper closures over an absolutely closed owner B without harmlessness in the opposite factor.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01"
+      ]
+    },
+    {
+      "id": "I11",
+      "name": "Full closed inverse-image intersections",
+      "source_label": "lem:acf-finite-exact-closed-preimages",
+      "provider_module": "acl_owner_geometry",
+      "statement": "Finite absolutely closed quotient targets with finite common kernel give a finite absolutely closed intersection of FULL inverse images, without compatible tuples or marginal onto requirements.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01"
+      ]
+    },
+    {
+      "id": "I12",
+      "name": "Independent full rectangle closure",
+      "source_label": "lem:acf-rectangle-acl",
+      "provider_module": "acl_owner_geometry",
+      "statement": "Two absolutely closed coordinate factors and identity kernel meet give a finite absolutely closed full original rectangle. Common owner B need not be closed or harmless for this closure theorem.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01"
+      ]
+    },
+    {
+      "id": "I13",
+      "name": "Fine colours from actual complementary quotients",
+      "source_label": "lem:exact-quotient-colour-meet",
+      "provider_module": "raw_exact",
+      "statement": "Every original RAW pair colour, including coordinate equality cases, is determined by all exact quotient pair colours when the common kernel is Id. This is not a set-level CRT theorem.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01"
+      ],
+      "provider_claims": [
+        "C15"
+      ]
+    },
+    {
+      "id": "I14",
+      "name": "Actual full set CRT",
+      "source_label": "thm:abstract-exact-crt",
+      "provider_module": "exact_crt",
+      "statement": "Commuting distributive equivalence geometry realizes EVERY compatible two-coordinate tuple; with C meet K=Id it is one original point. Fine colours are handled separately by I13.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01",
+        "I03"
+      ]
+    },
+    {
+      "id": "I15",
+      "name": "Full invariant harmless-owner criterion",
+      "source_label": "lem:acf-harmless-owners",
+      "provider_module": "acl_owner_geometry",
+      "statement": "In an infinite standing source, finite naming of actual H-classes is harmless for real acl iff H contains ALL minimal infinite invariant directions. Applies simultaneously to finite owner sorts and to each actual inherited quotient.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01"
+      ]
+    },
+    {
+      "id": "I16",
+      "name": "Internally proved generic action avoidance",
+      "source_label": "lem:finite-action-avoidance",
+      "provider_module": "acl_owner_geometry",
+      "statement": "One group element moves a finite set of infinite-orbit points away from any finite forbidden set. The finite coset-cover theorem is proved internally in that module, so no external Neumann axiom is imported.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01"
+      ]
+    },
+    {
+      "id": "I17",
+      "name": "Unsafe concentration into old correspondences",
+      "source_label": "lem:acf-unsafe-concentration",
+      "provider_module": "acl_owner_geometry",
+      "statement": "Under original StrongClosedAmalgamation(M,S), every unsafe pair belongs to R_i or R_j for EACH index pair. Thus unsafe cliques are unconcentrated in at most one R_i. This is independent of which exact subcore of R_i is later chosen.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01",
+        "A02",
+        "A08"
+      ]
+    },
+    {
+      "id": "I18",
+      "name": "General finite-kernel real closure pullback",
+      "source_label": "eq:acf-closure-pullback",
+      "provider_module": "acl_owner_geometry",
+      "provider_claims": [
+        "C21",
+        "C22",
+        "C23"
+      ],
+      "statement": "Reuse the explicitly exported auxiliary equation: for ANY finite family of actual exact kernels with finite-class common meet, acl(A) equals the intersection of quotient acl preimages. This is not limited to the OLD packet-core family; source fingerprints and its proof claims are validated like numbered imports.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01"
+      ]
+    }
+  ],
+  "source_files": [
+    {
+      "file": "sections/maximal_cores/01_maximal_hat_normalisation.tex",
+      "git_blob": "248cc19427c0ad7114022238ca086a9eccc47a3f"
+    },
+    {
+      "file": "sections/maximal_cores/02_complementary_owner_spectrum.tex",
+      "git_blob": "107da12090f8210ae00c8884e8bfc7610ee5519c"
+    },
+    {
+      "file": "sections/maximal_cores/03_harmless_owner_avoidance.tex",
+      "git_blob": "5defd13f59a83307e78c52278c261233796f760f"
+    },
+    {
+      "file": "sections/maximal_cores/04_one_sided_full_safety.tex",
+      "git_blob": "90f620a8668fe71d235456695aea2c26d90a69d9"
+    },
+    {
+      "file": "sections/maximal_cores/05_joint_owner_minima.tex",
+      "git_blob": "1ee7537d574bdd2f5d071e248383eec1a4ff3e30"
+    },
+    {
+      "file": "sections/rooted_acf_geometry.tex",
+      "git_blob": "4910a41d44909e4b01d48c03a3e9a1116b37ea23"
+    },
+    {
+      "file": "sections/global_correspondence.tex",
+      "git_blob": "e18ca9d9d14f275a660a6358c45394891a2f46c0"
+    },
+    {
+      "file": "sections/harmless_exact_owners.tex",
+      "git_blob": "f2259434387184b1fbf24edf099da5e12be33024"
+    },
+    {
+      "file": "sections/finite_orbit_avoidance.tex",
+      "git_blob": "290ab3ae54ade87fc4693b0c17955a9e319efd9b"
+    },
+    {
+      "file": "sections/exact_foundations/02_exact_quotient_orbital_geometry.tex",
+      "git_blob": "d462f2bfffcd67c1fa712ac516972ab18e073d44"
+    },
+    {
+      "file": "sections/exact_foundations/03_joint_exact_sort_lifting.tex",
+      "git_blob": "394e0db063a476c5c069384b3d3fa2ffd3c7471d"
+    },
+    {
+      "file": "sections/exact_lattice_crt.tex",
+      "git_blob": "5ead1d021abbc99c255c8a36ec87585cba3fbdc3"
+    },
+    {
+      "file": "sections/exact_gluing_geometry.tex",
+      "git_blob": "c98b468daef5d657d6470e3a14020b8b22cc3a3f"
+    },
+    {
+      "file": "sections/finite_packets.tex",
+      "git_blob": "dd3e608f03e7c5b1b1854a45de462859f8355143"
+    },
+    {
+      "file": "sections/real_hull/06_minimal_infinite_directions_acl.tex",
+      "git_blob": "4c01beca2f60acfa2d942714525173889bc5804f"
+    }
+  ],
+  "source_result_files": [
+    "sections/maximal_cores/02_complementary_owner_spectrum.tex",
+    "sections/maximal_cores/03_harmless_owner_avoidance.tex",
+    "sections/maximal_cores/04_one_sided_full_safety.tex",
+    "sections/maximal_cores/05_joint_owner_minima.tex"
+  ],
+  "additional_result_exports": [
+    "lem:acf-hat-pseudocomplement",
+    "lem:acf-hat-normalised"
+  ],
+  "definitions": [
+    {
+      "id": "D01",
+      "name": "Maximal exact core without renaming old C_i",
+      "statement": "hat C_i=join{H:H an actual exact invariant EQUIVALENCE and H<=R_i}. This is the largest exact element inside the actual R_i equivalence; old C_i remains kappa(R_i).",
+      "source": {
+        "file": "sections/maximal_cores/01_maximal_hat_normalisation.tex",
+        "anchor": "\\label{eq:hat-cores}"
+      },
+      "notes": "N01",
+      "depends_on": [
+        "A02",
+        "A03"
+      ]
+    },
+    {
+      "id": "D02",
+      "name": "Selected-core kernel",
+      "statement": "K_I=meet_(i in I) hat C_i for each nonempty selected I; all directions of the resulting source must be identified, not only its singleton factors.",
+      "source": {
+        "file": "sections/maximal_cores/01_maximal_hat_normalisation.tex",
+        "anchor": "K_I=\\bigcap"
+      },
+      "notes": "N02",
+      "depends_on": [
+        "A05",
+        "D01"
+      ]
+    },
+    {
+      "id": "D03",
+      "name": "Pseudocomplement downsets",
+      "statement": "The exact atom E_i corresponds to minimal p_i of P; its maximal pseudocomplement corresponds to P minus up(p_i). The complete minimal set matters.",
+      "source": {
+        "file": "sections/maximal_cores/01_maximal_hat_normalisation.tex",
+        "anchor": "P\\setminus\\uparrow p_i"
+      },
+      "notes": "N02",
+      "depends_on": [
+        "D01",
+        "I03"
+      ]
+    },
+    {
+      "id": "D04",
+      "name": "Full-support projected safe palette",
+      "statement": "S_Y consists of Y DIVERSITY atoms q for which EVERY original fine lift of q belongs to S. Existence of one safe representative is insufficient; quotient diagonal is excluded.",
+      "source": {
+        "file": "sections/maximal_cores/04_one_sided_full_safety.tex",
+        "anchor": "S_Y="
+      },
+      "notes": "N03",
+      "depends_on": [
+        "A06"
+      ]
+    },
+    {
+      "id": "D05",
+      "name": "Complete ordered owner-pair spectrum",
+      "statement": "For every ordered actual owner pair (t,t_prime), P contains a pair in EVERY realizable X atomic orbital over exactly those owners, including the literal X diagonal when owners coincide.",
+      "source": {
+        "file": "sections/maximal_cores/02_complementary_owner_spectrum.tex",
+        "anchor": "for EVERY"
+      },
+      "notes": "N03",
+      "depends_on": [
+        "A06"
+      ]
+    },
+    {
+      "id": "D06",
+      "name": "Owner-complete closed helpers",
+      "statement": "Choose finite NONEMPTY acl_T-closed B. Construct absolutely closed P in X with complete spectrum and D in Y containing A; both project onto EXACTLY B by APJ.",
+      "source": {
+        "file": "sections/maximal_cores/04_one_sided_full_safety.tex",
+        "anchor": "COMMON \\(Y\\)-helper"
+      },
+      "notes": "N04",
+      "depends_on": [
+        "A10"
+      ]
+    },
+    {
+      "id": "D07",
+      "name": "Padded closed span over D",
+      "statement": "After owner-fixed placement of the original L,R away from D outside A, close L union D and R union D and realign the latter over D. Their full closures meet exactly in D while original factors meet in A.",
+      "source": {
+        "file": "sections/maximal_cores/04_one_sided_full_safety.tex",
+        "anchor": "\\widehat L"
+      },
+      "notes": "N05",
+      "depends_on": [
+        "D06"
+      ]
+    },
+    {
+      "id": "D08",
+      "name": "Common rectangle anchors",
+      "statement": "For each t in B choose d_t in D above t; the base contains (d_t,p) for EVERY p in P over t. It fixes the actual opposite X-class of every factor point (ell,p).",
+      "source": {
+        "file": "sections/maximal_cores/04_one_sided_full_safety.tex",
+        "anchor": "For each $t\\in B$ choose"
+      },
+      "notes": "N05",
+      "depends_on": [
+        "D07"
+      ]
+    },
+    {
+      "id": "D09",
+      "name": "Complete minimal ancestor set",
+      "statement": "For pure finite P with ALL minima p_i, Anc(q)={i:p_i<=q}; every q has a nonempty Anc set. A chosen proper subset of minima does not satisfy this contract.",
+      "source": {
+        "file": "sections/maximal_cores/05_joint_owner_minima.tex",
+        "anchor": "\\operatorname{Anc}(q)"
+      },
+      "notes": "N06",
+      "depends_on": [
+        "A04"
+      ]
+    },
+    {
+      "id": "D10",
+      "name": "Common-owner join cuts",
+      "statement": "J_ij=hat C_i join hat C_j; H_i=meet_(j!=i)J_ij; Hstar=meet_(i<j)J_ij. Hstar>Id gives a strict original quotient, which may be a singleton if Hstar=Top.",
+      "source": {
+        "file": "sections/maximal_cores/05_joint_owner_minima.tex",
+        "anchor": "H_*="
+      },
+      "notes": "N06",
+      "depends_on": [
+        "D09"
+      ]
+    },
+    {
+      "id": "D11",
+      "name": "Canonical complementary split for factor i",
+      "statement": "For r>=2 let K=meet_(j!=i)hat C_j and J=hat C_i join K. The split has identity meet; J contains all original minimal directions and all surviving directions in each factor.",
+      "source": {
+        "file": "sections/maximal_cores/05_joint_owner_minima.tex",
+        "anchor": "For fixed $i$, put $K="
+      },
+      "notes": "N07",
+      "depends_on": [
+        "D01",
+        "D02"
+      ]
+    },
+    {
+      "id": "D12",
+      "name": "Maximal-core real closure target",
+      "statement": "The target is intersection_i pi_(hat C_i)^(-1)(F_i[pi_(hat C_i)(A)])=intersection_i R_i[A]. It comes from exact finite-kernel closure pullback and established unary quotient closure.",
+      "source": {
+        "file": "sections/maximal_cores/05_joint_owner_minima.tex",
+        "anchor": "\\operatorname{acl}_M(A)="
+      },
+      "notes": "N07",
+      "depends_on": [
+        "D01"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "name": "Exact EQUIVALENCE pseudocomplement criterion",
+      "statement": "For an actual exact invariant EQUIVALENCE H, H<=R_i iff H meet E_i=Id. Forward use exactness and normalized finite E_i meet R_i; reverse use a squared<=H for every atom a<=H. The criterion is false for arbitrary exact binary H.",
+      "depends_on": [
+        "A01",
+        "A02",
+        "I01",
+        "D01"
+      ],
+      "notes": "N01",
+      "source_labels": [
+        "lem:acf-hat-pseudocomplement"
+      ],
+      "scope": "actual_source",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C02",
+      "name": "Greatest exact core and all other atoms",
+      "statement": "Finite joins of exact equivalences inside actual equivalence R_i remain there, so hat C_i is the maximum and exact pseudocomplement of E_i. For j!=i, E_j<=old C_i<=hat C_i. No distributivity of the full invariant lattice is assumed.",
+      "depends_on": [
+        "C01",
+        "I02",
+        "I03",
+        "D01"
+      ],
+      "notes": "N01",
+      "source_labels": [
+        "lem:acf-hat-pseudocomplement"
+      ],
+      "scope": "actual_source",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C03",
+      "name": "All maximal cores meet at identity; factors are strict",
+      "statement": "The exact meet of all hat C_i lies below meet R_i=F and hence is Id by normalization. For r>=2 each hat C_i contains another infinite E_j, so is nonidentity and its actual quotient has smaller rank. E_i meet hat C_i=Id makes that quotient infinite.",
+      "depends_on": [
+        "C02",
+        "A02",
+        "I02",
+        "I05"
+      ],
+      "notes": "N01",
+      "source_labels": [
+        "lem:acf-hat-pseudocomplement"
+      ],
+      "scope": "actual_source",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C04",
+      "name": "Selected-core quotients have no finite exact kernel",
+      "statement": "If H/K_I were a nonidentity finite-class exact quotient equivalence, I04 makes H original exact. For each i in I, E_i meet K_I=Id injects every E_i meet H class into the finite set of K_I classes in its H class. That exact meet is finite-class and hence Id. C01 forces H<=hat C_i for every i, contradiction H>K_I.",
+      "depends_on": [
+        "C01",
+        "A02",
+        "A05",
+        "I04",
+        "I07",
+        "D02"
+      ],
+      "notes": "N02",
+      "source_labels": [
+        "lem:acf-hat-normalised"
+      ],
+      "scope": "actual_source",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C05",
+      "name": "Exact atoms coincide with all minimal infinite directions",
+      "statement": "In any normalized standing source, a minimal infinite full invariant equivalence is exact by I08 and an exact atom by normalization/minimality. Conversely any exact atom is infinite and contains a minimal infinite equivalence, which is exact and hence equal to it. Apply this in the original and actual inherited normalized quotients.",
+      "depends_on": [
+        "A02",
+        "I08",
+        "I05",
+        "I04",
+        "C04"
+      ],
+      "notes": "N02",
+      "source_labels": [
+        "lem:acf-hat-normalised"
+      ],
+      "scope": "actual_source",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C06",
+      "name": "All selected quotient directions from the residual poset",
+      "statement": "In Down(P), K_I=P minus union_(i in I)up(p_i); its interval is Down of that union, whose minimal elements are exactly p_i for i in I. Thus every minimal infinite direction in M/K_I is (E_i join K_I)/K_I and there are no others. This uses both directions of exact descent and C05.",
+      "depends_on": [
+        "C02",
+        "C04",
+        "C05",
+        "I03",
+        "I04",
+        "D03"
+      ],
+      "notes": "N02",
+      "source_labels": [
+        "lem:acf-hat-normalised"
+      ],
+      "scope": "actual_source",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C07",
+      "name": "Finite relative indices preserve the original packet top",
+      "statement": "Old C_i<=hat C_i<=R_i and [R_i:old C_i] finite imply both intermediate indices finite. Every full invariant H>=hat C_i with finite [H:hat C_i] has finite [H:old C_i], hence H<=Sigma(old C_i)=R_i. Conversely R_i/hat C_i is finite-class, so Sigma(hat C_i)=R_i.",
+      "depends_on": [
+        "C02",
+        "I02",
+        "I06",
+        "I07"
+      ],
+      "notes": "N02",
+      "source_labels": [
+        "lem:acf-hat-normalised"
+      ],
+      "scope": "actual_source",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C08",
+      "name": "One-direction normalized factor has exactly unary real closure",
+      "statement": "For I={i}, C04/C06 give an actual normalized infinite source Q_i with one minimal infinite direction. Full invariant quotient transport in the foundational support plus C07 gives F_i=R_i/hat C_i as its greatest finite bottom. Reuse I09 for acl_(Q_i)(A)=F_i[A].",
+      "depends_on": [
+        "C03",
+        "C04",
+        "C06",
+        "C07",
+        "I02",
+        "I05",
+        "I09"
+      ],
+      "notes": "N02",
+      "source_labels": [
+        "lem:acf-hat-normalised"
+      ],
+      "scope": "actual_source",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C09",
+      "name": "Reuse independent algebraicity and rectangle closure",
+      "statement": "I10/I11/I12 provide actual quotient algebraicity, finite closed inverse-image intersections and full absolute rectangle closure independently of maximal cores and safe palettes. Do not infer that common owner B must be closed for rectangle closure itself.",
+      "depends_on": [
+        "I10",
+        "I11",
+        "I12"
+      ],
+      "notes": "N03",
+      "source_labels": [
+        "lem:acf-complementary-spectrum"
+      ],
+      "scope": "actual_source",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C10",
+      "name": "Choose a closed complete-spectrum helper without opposite harmlessness",
+      "statement": "For finite acl_T-closed B, choose actual X witnesses for each realizable orbital over each ordered owner pair, including a diagonal witness over every owner, and close their union. I10 keeps all new helper owners inside B, and the witnesses already cover B. No X harmlessness premise is used.",
+      "depends_on": [
+        "A01",
+        "A06",
+        "I05",
+        "I10",
+        "D05",
+        "A11"
+      ],
+      "notes": "N03",
+      "source_labels": [
+        "lem:acf-complementary-spectrum"
+      ],
+      "scope": "actual_source",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C11",
+      "name": "Every fine lift occurs at the specified Y pair",
+      "statement": "For distinct actual y,y_prime with quotient orbital q, choose a real a-edge for each fine lift a of q. Its owner pair is in the same OLD ambient group orbital as the given exact owners, so move it by an old automorphism to those owners. D05 supplies the matching X orbital in P; I14 realizes the two CRT points, and I13 recovers the exact old atom a, including p=p_prime.",
+      "depends_on": [
+        "A01",
+        "A06",
+        "A09",
+        "I13",
+        "I14",
+        "D05"
+      ],
+      "notes": "N03",
+      "source_labels": [
+        "lem:acf-complementary-spectrum"
+      ],
+      "scope": "actual_source",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C12",
+      "name": "Opposite-coordinate diagonal and phase counterchecks",
+      "statement": "For the specified Cartesian-phase pair action, distinct Y points can have the SAME X point, giving fine atom (0,1,0). Omitting that diagonal entry loses a genuine fine lift. The finite pair table also separates existential from full-support safety; no new general CCO/example certificate is claimed.",
+      "depends_on": [
+        "D04",
+        "D05"
+      ],
+      "notes": "N03",
+      "source_labels": [
+        "lem:acf-complementary-spectrum"
+      ],
+      "scope": "diagnostic",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C13",
+      "name": "Harmless fixed-owner finite avoidance",
+      "statement": "For an absolutely closed real base A in Y, every point of finite L minus A has infinite orbit under Aut(Y/A,B) by recipient harmlessness. I16 supplies one simultaneous motion avoiding any finite forbidden set, fixing A and EACH named owner. No closure of L is required for this avoidance statement.",
+      "depends_on": [
+        "A01",
+        "A06",
+        "A07",
+        "I16"
+      ],
+      "notes": "N04",
+      "source_labels": [
+        "lem:acf-harmless-owner-avoidance"
+      ],
+      "scope": "actual_source",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C14",
+      "name": "Choose a nonempty absolutely closed common owner set",
+      "statement": "For any A->L,R in A10, take acl_T of all their owner images and, if necessary, one arbitrary actual owner first. This is finite and NONEMPTY and includes all old owner images, even for the empty span. It adds a helper parameter, not a real span vertex.",
+      "depends_on": [
+        "A01",
+        "A06",
+        "A10",
+        "I05"
+      ],
+      "notes": "N04",
+      "source_labels": [
+        "lem:acf-quotient-safety"
+      ],
+      "scope": "actual_source",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C15",
+      "name": "Opposite helper has exactly all chosen owners",
+      "statement": "Apply C10 with B from C14. The full spectrum remains in its finite absolutely closed P, and APJ ensures pi_T(P)=B exactly. Opposite harmlessness is absent. C14 supplies the conditional helper input A11 and C10 produces the spectrum input A09 used by C11.",
+      "depends_on": [
+        "C10",
+        "C14",
+        "I10"
+      ],
+      "notes": "N04",
+      "source_labels": [
+        "lem:acf-quotient-safety"
+      ],
+      "scope": "actual_source",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C16",
+      "name": "Recipient helper is closed and owner-complete",
+      "statement": "Choose one actual Y point over every owner in B, adjoin A, and take finite absolute closure D. APJ and acl_T(B)=B give exact owner image B, while D contains A.",
+      "depends_on": [
+        "C14",
+        "A10",
+        "I10"
+      ],
+      "notes": "N04",
+      "source_labels": [
+        "lem:acf-quotient-safety"
+      ],
+      "scope": "actual_source",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C17",
+      "name": "Place original factors away from the helper and each other",
+      "statement": "Use C13 first on L avoiding D minus A, then on R avoiding D minus A and the chosen L minus A. Copies retain ALL original owner labels and satisfy L meet D=R meet D=L meet R=A.",
+      "depends_on": [
+        "C13",
+        "C16",
+        "A07",
+        "A10"
+      ],
+      "notes": "N05",
+      "source_labels": [
+        "lem:acf-quotient-safety"
+      ],
+      "scope": "actual_source",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C18",
+      "name": "Close over the helper and align larger factors strongly",
+      "statement": "Close L union D and R union D to finite absolutely closed hat L,hat R. APJ keeps owners in B. Every point outside closed D has infinite Aut(Y/D) orbit, so I16 realigns the entire hat R over D to meet hat L exactly in D. D represents every B-owner, so fixing D fixes all B labels. Original L,R still meet exactly in A.",
+      "depends_on": [
+        "C17",
+        "C16",
+        "I10",
+        "I16"
+      ],
+      "notes": "N05",
+      "source_labels": [
+        "lem:acf-quotient-safety"
+      ],
+      "scope": "actual_source",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C19",
+      "name": "The three full rectangles are legitimate closed old spans",
+      "statement": "I14 realizes D times_B P,hat L times_B P,hat R times_B P as actual original induced structures. I11/I12 make them finite absolutely closed with intersections exactly the base rectangle. They form a valid span for original strong closed S-amalgamation.",
+      "depends_on": [
+        "C18",
+        "C15",
+        "I11",
+        "I12",
+        "I14"
+      ],
+      "notes": "N05",
+      "source_labels": [
+        "lem:acf-quotient-safety"
+      ],
+      "scope": "actual_source",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C20",
+      "name": "Common anchors fix all opposite coordinates through the amalgam",
+      "statement": "Apply A08. For each p in P above t choose d_t in D; the shared base point (d_t,p) is K-related to every side point (ell,p). Preserved exact kernels force both factor embeddings to use the SAME actual X class p. Thus every cross X-pair orbital remains its original P orbital, without post-amalgamation choice of representatives.",
+      "depends_on": [
+        "C19",
+        "A08",
+        "D08"
+      ],
+      "notes": "N05",
+      "source_labels": [
+        "lem:acf-quotient-safety"
+      ],
+      "scope": "actual_source",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C21",
+      "name": "Projected copies form a strong Y amalgam",
+      "statement": "Projection respects fine quotient colours and gives embeddings of both padded Y factors. If off-base Y points coincided, combine each with the same anchored P point; equality of both C and K coordinates forces equality of original points, contradicting strongness. Restricting to the original factor images leaves intersection exactly A.",
+      "depends_on": [
+        "C20",
+        "A06",
+        "I13",
+        "I14"
+      ],
+      "notes": "N05",
+      "source_labels": [
+        "lem:acf-quotient-safety"
+      ],
+      "scope": "actual_source",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C22",
+      "name": "Every new projected cross colour has ALL fine lifts safe",
+      "statement": "Fix any new Y cross pair. C20 fixes its owner and opposite-coordinate pair types. Vary the COMPLETE spectrum P over those exact owners and apply C11: EVERY original fine lift of its q is realized across the two old off-base sides and hence lies in S by A08. Therefore q belongs to FULL-support S_Y.",
+      "depends_on": [
+        "C11",
+        "C20",
+        "C21",
+        "A08",
+        "D04"
+      ],
+      "notes": "N05",
+      "source_labels": [
+        "lem:acf-quotient-safety"
+      ],
+      "scope": "actual_source",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C23",
+      "name": "One-sided safety and retained unsafety with correct equality scope",
+      "statement": "C21/C22 give strong closed S_Y-amalgamation under harmlessness only in recipient Y. An original unsafe pair with DISTINCT Y projections stays outside S_Y because its actual fine colour is a lift; coincident projections are diagonal and are never diversity-safe. Do not claim arbitrary unsafe pairs remain distinct after projection.",
+      "depends_on": [
+        "C22",
+        "C21",
+        "D04"
+      ],
+      "notes": "N05",
+      "source_labels": [
+        "lem:acf-quotient-safety"
+      ],
+      "scope": "actual_source",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C24",
+      "name": "Complete minimum-ancestor descriptions",
+      "statement": "For ALL minimal p_i, C_i=P minus up(p_i) consists of q missing ancestor i. Membership in J_ij excludes having both i,j; H_i means i absent OR Anc(q)={i}; Hstar means |Anc(q)|=1. Exhaustiveness of minima is required for the last equivalence.",
+      "depends_on": [
+        "A04",
+        "D09"
+      ],
+      "notes": "N06",
+      "source_labels": [
+        "lem:acf-joint-owner-minimum-ancestors"
+      ],
+      "scope": "finite_lattice",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C25",
+      "name": "Pure lattice strict owner and JOG identities",
+      "statement": "Every minimal p_i has Anc={i}, so Hstar>bottom. The formulas give meet_i H_i=Hstar and H_i join H_j=J_ij for every i!=j. Hstar may equal Top, so the later strict quotient may be a singleton. No source, amalgamation, safe palette or EPPA is involved.",
+      "depends_on": [
+        "C24",
+        "D10"
+      ],
+      "notes": "N06",
+      "source_labels": [
+        "lem:acf-joint-owner-minimum-ancestors"
+      ],
+      "scope": "finite_lattice",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C26",
+      "name": "Actual joint owner is a strict exact quotient",
+      "statement": "Identify hat C_i with the downsets C_i by C02/I03, where minimal points enumerate all exact atoms C05. C25 yields actual Hstar>Id and exact JOG; I05 then gives a lower-diversity-rank owner source M/Hstar, including the singleton case.",
+      "depends_on": [
+        "C02",
+        "C05",
+        "C25",
+        "I03",
+        "I05"
+      ],
+      "notes": "N06",
+      "source_labels": [
+        "lem:acf-joint-owner-minimum-ancestors"
+      ],
+      "scope": "actual_source",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C27",
+      "name": "Canonical complementary owner cuts are harmless in both factors",
+      "statement": "For each i, K=meet_(j!=i)hat C_j has hat C_i meet K=Id. J=hat C_i join K contains all original E_j. C06 identifies all surviving directions in Q_i and M/K, each contained in the induced J kernel. I15 gives harmlessness separately in BOTH actual factors, though each directional safety theorem uses only one.",
+      "depends_on": [
+        "C03",
+        "C06",
+        "I05",
+        "I15",
+        "D11"
+      ],
+      "notes": "N07",
+      "source_labels": [
+        "cor:acf-hat-factors"
+      ],
+      "scope": "actual_source",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C28",
+      "name": "Canonical full safe palettes and one exceptional projection",
+      "statement": "Under EXPLICIT A08 instantiate C23 separately for each canonical recipient using C27. Each Q_i has its full-support strongly closed safe palette. I17 puts every unsafe clique inside one R_j class for all but at most one j; C07 turns those classes into finite F_j packets.",
+      "depends_on": [
+        "C23",
+        "C27",
+        "C07",
+        "I17",
+        "A08"
+      ],
+      "notes": "N07",
+      "source_labels": [
+        "cor:acf-hat-factors"
+      ],
+      "scope": "actual_source",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C29",
+      "name": "Maximal-core real closure pullback",
+      "statement": "All hat C_i meet Id. Reuse the foundational GENERAL finite-kernel closure identity I18, and use C08 unary closure in every normalized Q_i. Thus acl_M(A)=intersection_i pi_(hat C_i)^(-1)(F_i[pi_i A])=intersection_i R_i[A]. No palette premise is used.",
+      "depends_on": [
+        "C03",
+        "C08",
+        "I02",
+        "D12",
+        "I18"
+      ],
+      "notes": "N07",
+      "source_labels": [
+        "cor:acf-hat-factors"
+      ],
+      "scope": "actual_source",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C30",
+      "name": "Complete factor corollary with branch premises visible",
+      "statement": "Combine C26/C27/C28/C29: strict exact owner/JOG, normalized unary factors and closure are structural. The safe-palette and unsafe-clique conclusions are quantified ONLY for original S with A08. This explicitly restores the inherited premise in the standalone source contract, without altering the pinned human TeX.",
+      "depends_on": [
+        "C26",
+        "C27",
+        "C28",
+        "C29"
+      ],
+      "notes": "N07",
+      "source_labels": [
+        "cor:acf-hat-factors"
+      ],
+      "scope": "actual_source",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C31",
+      "name": "Finite controls retain the premise boundaries",
+      "statement": "Exhaustive finite posets/partitions verify pseudocomplement, selected intervals, ancestor/JOG and class-index calculations; deliberate missing-maximality/all-minima/distributivity and diagonal/full-support counterchecks isolate premise failures. They do not certify infinite-source normalization, harmlessness, real acl, global safety or EPPA.",
+      "depends_on": [
+        "A04"
+      ],
+      "notes": "N08",
+      "source_labels": [
+        "lem:acf-joint-owner-minimum-ancestors"
+      ],
+      "scope": "diagnostic",
+      "status": "HUMAN_PROOF_EXPANDED"
+    }
+  ],
+  "exports": [
+    {
+      "source_label": "lem:acf-hat-pseudocomplement",
+      "claims": [
+        "C01",
+        "C02",
+        "C03"
+      ]
+    },
+    {
+      "source_label": "lem:acf-hat-normalised",
+      "claims": [
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08"
+      ]
+    },
+    {
+      "source_label": "lem:acf-complementary-spectrum",
+      "claims": [
+        "C09",
+        "C10",
+        "C11"
+      ]
+    },
+    {
+      "source_label": "lem:acf-harmless-owner-avoidance",
+      "claims": [
+        "C13"
+      ]
+    },
+    {
+      "source_label": "lem:acf-quotient-safety",
+      "claims": [
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23"
+      ]
+    },
+    {
+      "source_label": "lem:acf-joint-owner-minimum-ancestors",
+      "claims": [
+        "C24",
+        "C25",
+        "C26"
+      ]
+    },
+    {
+      "source_label": "cor:acf-hat-factors",
+      "claims": [
+        "C27",
+        "C28",
+        "C29",
+        "C30"
+      ]
+    }
+  ],
+  "auxiliary_exports": [
+    {
+      "source_label": "eq:hat-cores",
+      "source": {
+        "file": "sections/maximal_cores/01_maximal_hat_normalisation.tex",
+        "anchor": "\\label{eq:hat-cores}"
+      },
+      "claims": [
+        "C01",
+        "C02",
+        "C03"
+      ]
+    },
+    {
+      "source_label": "eq:acf-harmless-owner-avoidance",
+      "source": {
+        "file": "sections/maximal_cores/03_harmless_owner_avoidance.tex",
+        "anchor": "\\label{eq:acf-harmless-owner-avoidance}"
+      },
+      "claims": [
+        "C13"
+      ]
+    },
+    {
+      "source_label": "eq:acf-joint-owner-minimum-ancestors",
+      "source": {
+        "file": "sections/maximal_cores/05_joint_owner_minima.tex",
+        "anchor": "\\label{eq:acf-joint-owner-minimum-ancestors}"
+      },
+      "claims": [
+        "C24"
+      ]
+    },
+    {
+      "source_label": "eq:acf-joint-owner-relations",
+      "source": {
+        "file": "sections/maximal_cores/05_joint_owner_minima.tex",
+        "anchor": "\\label{eq:acf-joint-owner-relations}"
+      },
+      "claims": [
+        "C25",
+        "C26"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "T01",
+      "name": "Maximal cores and every normalized selected quotient",
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Prove the exact-equivalence criterion, complete atom identification, all nonempty selected-core quotients and finite-index Sigma transport; keep palette assumptions out."
+    },
+    {
+      "id": "T02",
+      "name": "Full complementary spectrum and owner-fixed helpers",
+      "claims": [
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Reuse foundational closure/avoidance; include all ordered owner pairs and diagonals, and require harmlessness only in the recipient."
+    },
+    {
+      "id": "T03",
+      "name": "Closed rectangle padding and one-sided full-support safety",
+      "claims": [
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23"
+      ],
+      "depends_on": [
+        "T02"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Preserve common base/opposite coordinates through S-amalgamation; prove ALL fine lifts safe and retain the projected distinctness guard."
+    },
+    {
+      "id": "T04",
+      "name": "Minimum ancestors and simultaneous admissible factors",
+      "claims": [
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31"
+      ],
+      "depends_on": [
+        "T01",
+        "T03"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Prove pure exhaustive-minima formulas independently, then instantiate actual strict owner/JOG and palette-conditional factor conclusions; keep constructional MI providers outside."
+    }
+  ],
+  "control_script": "tools/check_mi_geometry_controls.py",
+  "controls": [
+    {
+      "id": "R01",
+      "check": "All 243 labelled posets through four points, all downsets and selected-root intervals, complete ancestor formulas and JOG, including non-Boolean shared-ancestor cases."
+    },
+    {
+      "id": "R02",
+      "check": "All finite partitions through four points test class injection and uniform nested index multiplication; infinite-source normalization is not certified by finite classes."
+    },
+    {
+      "id": "R03",
+      "check": "Nonmaximal cores, incomplete minimum lists, M3 nondistributivity, and finite-common-kernel boundaries are explicit negative controls."
+    },
+    {
+      "id": "R04",
+      "check": "The companion check_acl_owner_controls.py supplies the original rook and Cartesian-phase fine-spectrum/diagonal/full-support diagnostics used by the proof."
+    }
+  ],
+  "article_feedback": [
+    {
+      "id": "F01",
+      "kind": "SOURCE_SIGNATURE_PRECISION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/maximal_cores/01_maximal_hat_normalisation.tex",
+        "anchor": "For invariant exact $H$"
+      },
+      "finding": "The pseudocomplement criterion needs H to be an exact EQUIVALENCE; a bare exact diversity relation can have empty meet with E.",
+      "proposed_article_change": "Spell the equivalence type explicitly in the future human statement.",
+      "caller_effect": "Intended source applications retain their premises. No human TeX or source pin changes here; receiving signatures use explicit corrected/intended scope, and global rooted EPPA remains source-relative.",
+      "proof_claims": [
+        "C01"
+      ]
+    },
+    {
+      "id": "F02",
+      "kind": "SOURCE_SIGNATURE_PRECISION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/maximal_cores/05_joint_owner_minima.tex",
+        "anchor": "minimal points $p_1"
+      },
+      "finding": "The ancestor lemma requires p_i to enumerate ALL minima. A three-point antichain with only two named minima has an unrepresented point with empty Anc.",
+      "proposed_article_change": "State exhaustive enumeration before claiming Anc nonempty and the Hstar formula.",
+      "caller_effect": "Intended source applications retain their premises. No human TeX or source pin changes here; receiving signatures use explicit corrected/intended scope, and global rooted EPPA remains source-relative.",
+      "proof_claims": [
+        "C24",
+        "C25"
+      ]
+    },
+    {
+      "id": "F03",
+      "kind": "SOURCE_SIGNATURE_PRECISION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/maximal_cores/05_joint_owner_minima.tex",
+        "anchor": "Every $Q_i=M/"
+      },
+      "finding": "The safe-palette and unsafe-clique clauses depend on a GIVEN original palette S with strong closed amalgamation; structural clauses do not.",
+      "proposed_article_change": "Bind S and its hypothesis explicitly in a standalone corollary; retain unconditional structural clauses separately.",
+      "caller_effect": "Intended source applications retain their premises. No human TeX or source pin changes here; receiving signatures use explicit corrected/intended scope, and global rooted EPPA remains source-relative.",
+      "proof_claims": [
+        "C28",
+        "C30"
+      ]
+    },
+    {
+      "id": "F04",
+      "kind": "PROOF_EXPANSION_OR_SCOPE_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/maximal_cores/04_one_sided_full_safety.tex",
+        "anchor": "No harmlessness assumption"
+      },
+      "finding": "Only recipient-side harmlessness is needed. Opposite helper closure stays over B by APJ and acl_T(B)=B.",
+      "proposed_article_change": "Preserve this one-sided hypothesis and distinguish it from the sufficient both-factor canonical application.",
+      "caller_effect": "Intended source applications retain their premises. No human TeX or source pin changes here; receiving signatures use explicit corrected/intended scope, and global rooted EPPA remains source-relative.",
+      "proof_claims": [
+        "C10",
+        "C15",
+        "C23",
+        "C27"
+      ]
+    },
+    {
+      "id": "F05",
+      "kind": "PROOF_EXPANSION_OR_SCOPE_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/maximal_cores/04_one_sided_full_safety.tex",
+        "anchor": "For each $t\\in B$ choose"
+      },
+      "finding": "Shared base anchors keep the opposite coordinate classes and pair orbitals fixed through the original S-amalgamation.",
+      "proposed_article_change": "Keep the anchor argument adjacent to full fine-lift spectrum; do not choose representatives independently afterwards.",
+      "caller_effect": "Intended source applications retain their premises. No human TeX or source pin changes here; receiving signatures use explicit corrected/intended scope, and global rooted EPPA remains source-relative.",
+      "proof_claims": [
+        "C20",
+        "C21",
+        "C22"
+      ]
+    },
+    {
+      "id": "F06",
+      "kind": "PROOF_EXPANSION_OR_SCOPE_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/maximal_cores/02_complementary_owner_spectrum.tex",
+        "anchor": "The diagonal"
+      },
+      "finding": "An opposite-coordinate diagonal realizes genuine old diversity fine lifts when Y endpoints differ.",
+      "proposed_article_change": "Retain diagonal entries in every complete ordered owner-pair spectrum and separate full-support from existential safety.",
+      "caller_effect": "Intended source applications retain their premises. No human TeX or source pin changes here; receiving signatures use explicit corrected/intended scope, and global rooted EPPA remains source-relative.",
+      "proof_claims": [
+        "C11",
+        "C12",
+        "C22"
+      ]
+    },
+    {
+      "id": "F07",
+      "kind": "PROOF_EXPANSION_OR_SCOPE_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/maximal_cores/01_maximal_hat_normalisation.tex",
+        "anchor": "Every actual quotient"
+      },
+      "finding": "Normalization uses both directions of exact quotient interval transport and full source inheritance.",
+      "proposed_article_change": "Cite these providers explicitly rather than deriving a full invariant quotient statement from a chosen old automorphism subgroup.",
+      "caller_effect": "Intended source applications retain their premises. No human TeX or source pin changes here; receiving signatures use explicit corrected/intended scope, and global rooted EPPA remains source-relative.",
+      "proof_claims": [
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08"
+      ]
+    }
+  ],
+  "review": {
+    "date": "2026-10-27",
+    "method": "Independent normalization, one-sided safety and provider-boundary model audits, parent synthesis, exhaustive finite lattice/partition controls and companion fine-spectrum diagnostics. Not independent human or Lean certification.",
+    "required_source_signature_clarifications": 3,
+    "remaining": "Receiving projects implement exact quotient maps and real acl providers. Actual human signature edits remain queued with full source pin preserved. Normalized relative MI augmented selectors/reservoir/decoder and global EPPA remain source-relative."
+  },
+  "overview_mermaid": [
+    "flowchart TD",
+    "  F[\"General closure and harmless-owner foundation\"] --> N[\"Maximal cores and normalized factors\"]",
+    "  F --> P[\"Full ordered-owner spectrum and helpers\"]",
+    "  P --> S[\"One-sided full-support safety\"]",
+    "  A[\"Pure complete-minimum ancestor calculus\"] --> J[\"Strict exact joint owner and JOG\"]",
+    "  N --> J",
+    "  N --> C[\"Simultaneous factor contract\"]",
+    "  S --> C",
+    "  J --> C"
+  ],
+  "overview_notes": [
+    "StrongClosedAmalgamation(M,S) is consumed only by safety and unsafe-clique outputs. The pure ancestor theorem enumerates ALL minima; Hstar may be Top. General APJ/rectangle and group avoidance are proved once in the foundational module, preventing a physical-source-order cycle."
+  ],
+  "dependency_firewalls": [
+    {
+      "claims": [
+        "C24",
+        "C25",
+        "C31"
+      ],
+      "forbid": [
+        "A01",
+        "A02",
+        "A03",
+        "A05",
+        "A06",
+        "A07",
+        "A08",
+        "A09",
+        "A10",
+        "I01",
+        "I02",
+        "I03",
+        "I04",
+        "I05",
+        "I06",
+        "I07",
+        "I08",
+        "I09",
+        "I10",
+        "I11",
+        "I12",
+        "I13",
+        "I14",
+        "I15",
+        "I16",
+        "I17",
+        "A11",
+        "I18"
+      ]
+    },
+    {
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C29"
+      ],
+      "forbid": [
+        "A08",
+        "I17",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C28",
+        "C30"
+      ]
+    },
+    {
+      "claims": [
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23"
+      ],
+      "forbid": [
+        "A02",
+        "A03",
+        "I01",
+        "I02",
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30"
+      ]
+    },
+    {
+      "claims": [
+        "C10",
+        "C11",
+        "C12",
+        "C14",
+        "C15",
+        "C16"
+      ],
+      "forbid": [
+        "A07",
+        "A08",
+        "C13",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23"
+      ]
+    },
+    {
+      "claims": [
+        "C24",
+        "C25"
+      ],
+      "forbid": [
+        "I03",
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08"
+      ]
+    }
+  ],
+  "article_feedback_intro": "Three standalone source signatures need explicit intended premises: H is an exact EQUIVALENCE, p_i enumerate ALL minimal points, and safe/clique factor outputs assume a GIVEN strongly closed-amalgamating S. Omitting those qualifications admits the recorded counterexamples. Receiving contracts retain them explicitly; the pinned human TeX is unchanged and the editorial corrections remain queued. No unconditional strengthening is claimed."
+}

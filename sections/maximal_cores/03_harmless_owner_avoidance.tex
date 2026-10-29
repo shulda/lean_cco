@@ -1,0 +1,106 @@
+\begin{lemma}[Finite avoidance while fixing harmless quotient owners]
+\label{lem:acf-harmless-owner-avoidance}
+Let $Y$ be a homogeneous
+finite-complete ORIGINAL
+exact quotient source, let
+$T$ be one ACTUAL further
+invariant exact quotient,
+and let $B\subseteq T$
+be a finite set of ACTUAL
+quotient classes whose
+simultaneous naming does
+NOT enlarge real algebraic
+closure in Y.
+Let $A\subseteq Y$
+be finite and ABSOLUTELY
+acl-closed, and let
+$L\supseteq A$ be a finite
+induced extension in Y.
+For every finite
+$Z\subseteq Y\setminus A$,
+there is ONE
+\[
+             g\in\Aut(Y/A,B)
+\]
+such that
+\[
+                    g(L\setminus A)
+                                  \cap Z=\varnothing.
+\tag{OAV}\label{eq:acf-harmless-owner-avoidance}
+\]
+In particular, if every
+vertex of L projects into B,
+its ENTIRE owner assignment
+is retained pointwise
+under g. Two extensions
+$A\subseteq L,R$ may be
+placed sequentially over
+A with exactly their
+original owner names,
+with their off-base parts
+pairwise disjoint and
+disjoint from any
+specified finite helper
+outside A. No input
+closure of L or R is
+needed for this finite
+avoidance lemma, although
+the safe quotient descent
+will subsequently close
+the helper factors.
+\end{lemma}
+\begin{proof}
+For each $x\in L\setminus A$,
+the absolute acl-closure
+of A gives
+$x\notin\operatorname{acl}_Y(A)$.
+The harmless-owner
+hypothesis yields
+$x\notin
+ \operatorname{acl}^{\rm eq}_Y(A,B)$.
+By the finite-orbit
+characterisation of
+model-theoretic algebraic
+closure in this countable
+homogeneous structure,
+each $x$ has INFINITE
+orbit under
+$G=\Aut(Y/A,B)$.
+The finite-action
+avoidance lemma
+\cref{lem:finite-action-avoidance}
+applied to the finite
+moving set $L\setminus A$
+and finite forbidden set
+Z gives ONE $g\in G$
+moving ALL its points
+outside Z simultaneously.
+Every such g fixes A
+pointwise and fixes EACH
+named owner class in B
+as an imaginary parameter,
+so its restriction to
+L is the required
+literal owner-preserving
+fine-colour embedding.
+
+For two extensions first
+apply the assertion to L
+avoiding the finite
+helper outside A;
+then apply it to R
+avoiding both the helper
+and the chosen image of
+L outside A. Since each
+placement fixes A and
+all owner names, the
+resulting old factor
+images meet exactly
+in A, and have the same
+original owner tags.
+No assumption of a
+canonical owner section
+or SAP over an UNclosed
+owner base has entered.
+\end{proof}
+
