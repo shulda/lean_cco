@@ -1,4 +1,5 @@
 import CCO.SafeReadings.TransversalGauge
+import CCO.SafeReadings.TransversalCCO
 
 universe v w t
 namespace CCO.SafeReadings.TransversalGauge
@@ -66,6 +67,27 @@ theorem original_triangle_right (g : ResidualData.PacketGroup S H)
     · change col S x (g.val z) = some c
       rw [switchColour_right S (finitePacket S H) H g x z,hxz,hc,
         switchColour_involutive S (finitePacket S H) H (R.packet_thin S H)]
+
+variable (B : Finset (Owner S H R)) (hB : PacketInvariant S H R B)
+
+/-- Actual one-endpoint transport of the U triangle table. -/
+theorem triangle_left (g : ResidualData.PacketGroup S H) {i j k : ↥B}
+    (a : (source S H R B).Atom i j) (b : (source S H R B).Atom j k) (c : (source S H R B).Atom i k) :
+    (source S H R B).Triangle a b c ↔
+      (source S H R B).Triangle (leftEquiv S H R B hB g i j a) b (leftEquiv S H R B hB g i k c) :=
+  (source_triangle_iff_original S H R B a b c).trans
+    ((original_triangle_left S H R g a.val b.val c.val _ _
+      (leftEquiv_label S H R B hB g a) (leftEquiv_label S H R B hB g c)).trans
+      (source_triangle_iff_original S H R B _ _ _).symm)
+
+theorem triangle_right (g : ResidualData.PacketGroup S H) {i j k : ↥B}
+    (a : (source S H R B).Atom i j) (b : (source S H R B).Atom j k) (c : (source S H R B).Atom i k) :
+    (source S H R B).Triangle a b c ↔
+      (source S H R B).Triangle a (rightEquiv S H R B hB g j k b) (rightEquiv S H R B hB g i k c) :=
+  (source_triangle_iff_original S H R B a b c).trans
+    ((original_triangle_right S H R g a.val b.val c.val _ _
+      (rightEquiv_label S H R B hB g b) (rightEquiv_label S H R B hB g c)).trans
+      (source_triangle_iff_original S H R B _ _ _).symm)
 
 end
 end CCO.SafeReadings.TransversalGauge
