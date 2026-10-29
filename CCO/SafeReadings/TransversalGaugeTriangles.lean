@@ -8,6 +8,7 @@ open FinitePackets.Normalization OwnerTransversal TransversalAge TransversalSour
 variable {M : Type v} (S : AtomicSource.{0,v,w} Unit (fun _ => M))
 variable {G : Type t} [Group G] [MulAction G M] (H : HomogeneousSource S G)
 variable [Countable M] [DecidableEq M] [Infinite M] (R : ResidualData S H)
+include R
 
 /-- This is actual translation of the FIRST original real vertex,
 with all displayed literal old colours; no action on U is postulated. -/
