@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 164,
+  "revision": 165,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -1104,52 +1104,17 @@
         "conclusion": "success",
         "axiom_audit": "allowlist"
       }
+    },
+    "B022": {
+      "state": "AVAILABLE",
+      "owner_project_id": null
+    },
+    "B029": {
+      "state": "AVAILABLE",
+      "owner_project_id": null
     }
   },
-  "integration_lock": {
-    "kind": "infrastructure",
-    "actor_id": "root",
-    "head_sha": "d53a6dcbae93cbc559803a156300b59c79dbf7c0",
-    "base_main_sha": "0b86292b10447b2d4d4a10ac8e1bbdc17b6b650b",
-    "pr_number": 29,
-    "review": {
-      "actor_id": "independent_review",
-      "head_sha": "d53a6dcbae93cbc559803a156300b59c79dbf7c0",
-      "approved": true,
-      "summary": "Actual nonauthor /root/independent_review approves complete B022+B029 publication at exact d53a6dcb/tree6bf43b14 after full contracts, selected pinned source, every new control and complete registry code/tests delta. All21oldrows/metadata/source/roles/limits preserved; gap-safe addition retains strict prefix, uniqueness, per-release sorting, four bound snapshots, same sole lock and one atomic promotion. Exact40833655836 passes87tests/23catalogue/2946jobs/10716standard3/711actualpartsANDcurrentSOURCE prepost. No Lean/API/toolchain/STATE change or mathematical acceptance.",
-      "independence": {
-        "identity": "/root/independent_review",
-        "non_author": true,
-        "summary": "Actual registered review-only reader authored none of this publication, extraction, contracts, registry delta, tests or implementation/design. It personally reviewed the entire concrete source/contract/publication and exact public CI evidence without helper reviewers or duplicate builds.",
-        "report_path": "formalization/coordination/reviews/B022-B029-registry-publication.md"
-      }
-    },
-    "ci": {
-      "run_id": 40833655836,
-      "head_sha": "d53a6dcbae93cbc559803a156300b59c79dbf7c0",
-      "conclusion": "success",
-      "axiom_audit": "allowlist"
-    },
-    "author_actor_ids": [
-      "root",
-      "source-preparation-project",
-      "/root/frontier9"
-    ],
-    "original_author_project_ids": [
-      0,
-      3
-    ],
-    "registry_promotion": {
-      "package_ids": [
-        "B022",
-        "B029"
-      ],
-      "previous_registry_sha256": "c258eb6b98d64249c7edf9215c99ed1804cbb175b1976556f74b051e7d4e04ed",
-      "previous_policy_sha256": "5bce3ac0b69b44f4385644653e939cf481925c394fda14f73ea19a798a2f9a6f",
-      "registry_sha256": "7f6ca128e45182065c35e01ae406a00c1810b2dead19902dfd1ea1342f91259d",
-      "policy_sha256": "f140922657a8e9a15291037c589da22c83fd08f10d8491d64575ba3211bb09ae"
-    }
-  },
+  "integration_lock": null,
   "history": [
     {
       "revision": 1,
@@ -4291,6 +4256,38 @@
           "policy_sha256": "f140922657a8e9a15291037c589da22c83fd08f10d8491d64575ba3211bb09ae"
         }
       }
+    },
+    {
+      "revision": 165,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "promote_registry",
+      "package_id": null,
+      "details": {
+        "actor_id": "root",
+        "head_sha": "d53a6dcbae93cbc559803a156300b59c79dbf7c0",
+        "package_ids": [
+          "B022",
+          "B029"
+        ],
+        "integration_commit": "43c0bdd4f92b9a5697c5f64d1b9b63408c9f3832",
+        "main_ci": {
+          "run_id": 40834103950,
+          "head_sha": "43c0bdd4f92b9a5697c5f64d1b9b63408c9f3832",
+          "conclusion": "success",
+          "axiom_audit": "allowlist"
+        },
+        "registry_promotion": {
+          "package_ids": [
+            "B022",
+            "B029"
+          ],
+          "previous_registry_sha256": "c258eb6b98d64249c7edf9215c99ed1804cbb175b1976556f74b051e7d4e04ed",
+          "previous_policy_sha256": "5bce3ac0b69b44f4385644653e939cf481925c394fda14f73ea19a798a2f9a6f",
+          "registry_sha256": "7f6ca128e45182065c35e01ae406a00c1810b2dead19902dfd1ea1342f91259d",
+          "policy_sha256": "f140922657a8e9a15291037c589da22c83fd08f10d8491d64575ba3211bb09ae"
+        }
+      }
     }
   ],
   "infrastructure_integrations": [
@@ -4497,9 +4494,60 @@
         "conclusion": "success",
         "axiom_audit": "allowlist"
       }
+    },
+    {
+      "kind": "infrastructure",
+      "actor_id": "root",
+      "head_sha": "d53a6dcbae93cbc559803a156300b59c79dbf7c0",
+      "base_main_sha": "0b86292b10447b2d4d4a10ac8e1bbdc17b6b650b",
+      "pr_number": 29,
+      "review": {
+        "actor_id": "independent_review",
+        "head_sha": "d53a6dcbae93cbc559803a156300b59c79dbf7c0",
+        "approved": true,
+        "summary": "Actual nonauthor /root/independent_review approves complete B022+B029 publication at exact d53a6dcb/tree6bf43b14 after full contracts, selected pinned source, every new control and complete registry code/tests delta. All21oldrows/metadata/source/roles/limits preserved; gap-safe addition retains strict prefix, uniqueness, per-release sorting, four bound snapshots, same sole lock and one atomic promotion. Exact40833655836 passes87tests/23catalogue/2946jobs/10716standard3/711actualpartsANDcurrentSOURCE prepost. No Lean/API/toolchain/STATE change or mathematical acceptance.",
+        "independence": {
+          "identity": "/root/independent_review",
+          "non_author": true,
+          "summary": "Actual registered review-only reader authored none of this publication, extraction, contracts, registry delta, tests or implementation/design. It personally reviewed the entire concrete source/contract/publication and exact public CI evidence without helper reviewers or duplicate builds.",
+          "report_path": "formalization/coordination/reviews/B022-B029-registry-publication.md"
+        }
+      },
+      "ci": {
+        "run_id": 40833655836,
+        "head_sha": "d53a6dcbae93cbc559803a156300b59c79dbf7c0",
+        "conclusion": "success",
+        "axiom_audit": "allowlist"
+      },
+      "author_actor_ids": [
+        "root",
+        "source-preparation-project",
+        "/root/frontier9"
+      ],
+      "original_author_project_ids": [
+        0,
+        3
+      ],
+      "registry_promotion": {
+        "package_ids": [
+          "B022",
+          "B029"
+        ],
+        "previous_registry_sha256": "c258eb6b98d64249c7edf9215c99ed1804cbb175b1976556f74b051e7d4e04ed",
+        "previous_policy_sha256": "5bce3ac0b69b44f4385644653e939cf481925c394fda14f73ea19a798a2f9a6f",
+        "registry_sha256": "7f6ca128e45182065c35e01ae406a00c1810b2dead19902dfd1ea1342f91259d",
+        "policy_sha256": "f140922657a8e9a15291037c589da22c83fd08f10d8491d64575ba3211bb09ae"
+      },
+      "integration_commit": "43c0bdd4f92b9a5697c5f64d1b9b63408c9f3832",
+      "main_ci": {
+        "run_id": 40834103950,
+        "head_sha": "43c0bdd4f92b9a5697c5f64d1b9b63408c9f3832",
+        "conclusion": "success",
+        "axiom_audit": "allowlist"
+      }
     }
   ],
-  "policy_revision": 3,
+  "policy_revision": 4,
   "third_batch_exception": {
     "package_id": "B018",
     "independent_active_work": true,
