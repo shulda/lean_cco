@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 152,
+  "revision": 153,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -1012,6 +1012,7 @@
         "/root/b020_master",
         "/root/b020_master/finite_diagram",
         "/root/b020_master/quotient_bridge",
+        "/root/b020_old_actions",
         "root"
       ],
       "original_author_project_ids": [
@@ -3943,6 +3944,20 @@
         "package_id": "B020",
         "author_actor_ids": [
           "/root/b020_master/quotient_bridge"
+        ],
+        "actor_id": "root"
+      }
+    },
+    {
+      "revision": 153,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "record_authorship",
+      "package_id": "B020",
+      "details": {
+        "package_id": "B020",
+        "author_actor_ids": [
+          "/root/b020_old_actions"
         ],
         "actor_id": "root"
       }
