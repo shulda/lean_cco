@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 194,
+  "revision": 195,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -1205,7 +1205,7 @@
       }
     },
     "B023": {
-      "state": "INTEGRATING",
+      "state": "ACCEPTED",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b023_mi",
@@ -1244,6 +1244,13 @@
           "report_path": "formalization/coordination/reviews/B023-final.md"
         },
         "summary": "Actual nonauthor /root/independent_review approves exact4104aa4/treec84de5ab after whole C01–31 source/premise/provider/consumer review: BOTH exact quotient directions, exhaustive FULL surviving directions and ALL-minima Birkhoff bridge, actual nested APJ/closed owner padding and recipient-only FULL harmlessness safety, strict JOG/rank/closure bands and genuine closed-target consumer. Safety/clique original strong-closed-S premise remains explicit. Only2MD reports after freeze; valid scoped artifact-repair evidence distinguished from rejected initial audit. Exact CI40847498582/job123358491789 passes92tests/3025jobs/11560standard3/788actualpartsANDcurrentsource PREPOST. Source/toolchain/accepted APIs unchanged."
+      },
+      "accepted_commit": "99192554bec6022d3c5a6df1a444d609fd56a22e",
+      "main_ci": {
+        "run_id": 40848331575,
+        "head_sha": "99192554bec6022d3c5a6df1a444d609fd56a22e",
+        "conclusion": "success",
+        "axiom_audit": "allowlist"
       }
     },
     "B025": {
@@ -1269,13 +1276,7 @@
       }
     }
   },
-  "integration_lock": {
-    "kind": "package",
-    "package_id": "B023",
-    "actor_id": "root",
-    "base_main_sha": "ffd00f494e6bbcd18a80b6c56c0300b7b8115868",
-    "head_sha": "4104aa4dfb9ddf89eaf0ef6ca897638eda068ac3"
-  },
+  "integration_lock": null,
   "history": [
     {
       "revision": 1,
@@ -4980,6 +4981,24 @@
         "ci": {
           "run_id": 40847498582,
           "head_sha": "4104aa4dfb9ddf89eaf0ef6ca897638eda068ac3",
+          "conclusion": "success",
+          "axiom_audit": "allowlist"
+        },
+        "actor_id": "root"
+      }
+    },
+    {
+      "revision": 195,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "accept",
+      "package_id": "B023",
+      "details": {
+        "package_id": "B023",
+        "integration_commit": "99192554bec6022d3c5a6df1a444d609fd56a22e",
+        "main_ci": {
+          "run_id": 40848331575,
+          "head_sha": "99192554bec6022d3c5a6df1a444d609fd56a22e",
           "conclusion": "success",
           "axiom_audit": "allowlist"
         },
