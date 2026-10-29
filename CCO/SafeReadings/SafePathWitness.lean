@@ -59,10 +59,10 @@ theorem prescribed_injective_theta (H : HomogeneousSource S G) (sap : AgeSAP S)
   refine ⟨lines,g,hg,?_,?_⟩
   · have hh := hkeep (thetaLeft S ws) (by simp)
     change (⟨i,g.point (thetaLeft S ws)⟩ : Sigma X) = ⟨i,x⟩ at hh
-    simpa only [Sigma.mk.injEq,heq_eq_eq,true_and] using hh
+    exact eq_of_heq (Sigma.mk.inj hh).2
   · have hh := hkeep (thetaRight S ws) (by simp)
     change (⟨j,g.point (thetaRight S ws)⟩ : Sigma X) = ⟨j,y⟩ at hh
-    simpa only [Sigma.mk.injEq,heq_eq_eq,true_and] using hh
+    exact eq_of_heq (Sigma.mk.inj hh).2
 
 /-- Recolour a root edge whilst retaining ALL long path restrictions
 and ALL other colours in any prescribed finite set of actual real points. -/
@@ -127,11 +127,11 @@ theorem long_presentation_safe_modification
   have gl : g.point (thetaLeft S ws) = point l := by
     have hh := congrArg (fun p : U => (⟨p.val.1,point p⟩ : Sigma X)) hil
     change (⟨i,g.point (thetaLeft S ws)⟩ : Sigma X) = ⟨i,point l⟩ at hh
-    simpa only [Sigma.mk.injEq,heq_eq_eq,true_and] using hh
+    exact eq_of_heq (Sigma.mk.inj hh).2
   have gr : g.point (thetaRight S ws) = point r := by
     have hh := congrArg (fun p : U => (⟨p.val.1,point p⟩ : Sigma X)) hir
     change (⟨j,g.point (thetaRight S ws)⟩ : Sigma X) = ⟨j,point r⟩ at hh
-    simpa only [Sigma.mk.injEq,heq_eq_eq,true_and] using hh
+    exact eq_of_heq (Sigma.mk.inj hh).2
   have haWords : a ∈ present S ws := by
     intro word hw
     exact (positive_profile_iff_represented S H sap word a).mpr
