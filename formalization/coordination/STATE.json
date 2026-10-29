@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 253,
+  "revision": 254,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -1608,55 +1608,29 @@
         "conclusion": "success",
         "axiom_audit": "allowlist"
       }
+    },
+    "B028": {
+      "state": "AVAILABLE",
+      "owner_project_id": null
+    },
+    "B030": {
+      "state": "AVAILABLE",
+      "owner_project_id": null
+    },
+    "B034": {
+      "state": "AVAILABLE",
+      "owner_project_id": null
+    },
+    "B035": {
+      "state": "AVAILABLE",
+      "owner_project_id": null
+    },
+    "B036": {
+      "state": "AVAILABLE",
+      "owner_project_id": null
     }
   },
-  "integration_lock": {
-    "kind": "infrastructure",
-    "actor_id": "root",
-    "head_sha": "e617a5f8e9a551f4aee9a0187f3e881661daf56d",
-    "base_main_sha": "9eda6084a7f841d9845f29ca03e63fbbae371b08",
-    "pr_number": 44,
-    "review": {
-      "actor_id": "independent_review",
-      "head_sha": "e617a5f8e9a551f4aee9a0187f3e881661daf56d",
-      "approved": true,
-      "summary": "Actual nonauthor /root/independent_review approves exact PR44 e617a5/tree e535 after complete 47-file five-contract/222-claim publication read. Independently verified all 52 source records against actual 490c+dc5 Git trees, 33 exact preparation payloads with only five explicit protocol notices, all 31 old catalogue rows and metadata/policy permissions, byte-exact old snapshots and four canonical digests. B034 actual-K/nullary, B035 expanded-function-closure and B036 A14 conditional composition gates remain exact. Validator logic/tests/Lean/source/dependencies/cache unchanged. Personally inspected complete exact CI40934871245/job123662633015: 121 tests, 1330 provider +3531 CCO +3531 audit jobs, 15725 standard-three declarations, complete 992 current CCO source/actual parts and exact269 provider guards PRE/POST, zero rebuilt modules. Report-only commit033f08b1f4ed923ffd653c8018441adf4ab2e8fe.",
-      "independence": {
-        "identity": "/root/independent_review",
-        "non_author": true,
-        "summary": "The actual registered review-only agent authored or designed none of this complete publication, original preparation, extraction, controls, validator additions, receipts, tests or repairs. It personally read the complete source/contracts/publication delta and full exact public CI; no implementation helpers or duplicate test, build, audit or handoff were used.",
-        "report_path": "formalization/coordination/reviews/B028-B036-registry-publication.md"
-      }
-    },
-    "ci": {
-      "run_id": 40934871245,
-      "head_sha": "e617a5f8e9a551f4aee9a0187f3e881661daf56d",
-      "conclusion": "success",
-      "axiom_audit": "allowlist"
-    },
-    "author_actor_ids": [
-      "root",
-      "source-preparation-project",
-      "/root/frontier12"
-    ],
-    "original_author_project_ids": [
-      0,
-      3
-    ],
-    "registry_promotion": {
-      "package_ids": [
-        "B028",
-        "B030",
-        "B034",
-        "B035",
-        "B036"
-      ],
-      "previous_registry_sha256": "3cdb5e168b7a4132330c6c9b07523daed6483a7a0ec7781b216d76617fd79b44",
-      "previous_policy_sha256": "c0242b4803762019439d427b83db9c4bdb1f6975eab7b886b6bcacfa1ae7426a",
-      "registry_sha256": "c73431a9e2421ca58bc694d1e2fa9f807bf566baeb401f193dd1b90dd2be7bb5",
-      "policy_sha256": "62d5b611f1cae5df5f9ce4a4646391b21d6d7de29d5e905fd03e86d667a88718"
-    }
-  },
+  "integration_lock": null,
   "history": [
     {
       "revision": 1,
@@ -6578,6 +6552,44 @@
           "policy_sha256": "62d5b611f1cae5df5f9ce4a4646391b21d6d7de29d5e905fd03e86d667a88718"
         }
       }
+    },
+    {
+      "revision": 254,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "promote_registry",
+      "package_id": null,
+      "details": {
+        "actor_id": "root",
+        "head_sha": "e617a5f8e9a551f4aee9a0187f3e881661daf56d",
+        "package_ids": [
+          "B028",
+          "B030",
+          "B034",
+          "B035",
+          "B036"
+        ],
+        "integration_commit": "4398fb761667f08bf12443f53905f3e71e1523e2",
+        "main_ci": {
+          "run_id": 40936227117,
+          "head_sha": "4398fb761667f08bf12443f53905f3e71e1523e2",
+          "conclusion": "success",
+          "axiom_audit": "allowlist"
+        },
+        "registry_promotion": {
+          "package_ids": [
+            "B028",
+            "B030",
+            "B034",
+            "B035",
+            "B036"
+          ],
+          "previous_registry_sha256": "3cdb5e168b7a4132330c6c9b07523daed6483a7a0ec7781b216d76617fd79b44",
+          "previous_policy_sha256": "c0242b4803762019439d427b83db9c4bdb1f6975eab7b886b6bcacfa1ae7426a",
+          "registry_sha256": "c73431a9e2421ca58bc694d1e2fa9f807bf566baeb401f193dd1b90dd2be7bb5",
+          "policy_sha256": "62d5b611f1cae5df5f9ce4a4646391b21d6d7de29d5e905fd03e86d667a88718"
+        }
+      }
     }
   ],
   "infrastructure_integrations": [
@@ -7042,9 +7054,63 @@
         "conclusion": "success",
         "axiom_audit": "allowlist"
       }
+    },
+    {
+      "kind": "infrastructure",
+      "actor_id": "root",
+      "head_sha": "e617a5f8e9a551f4aee9a0187f3e881661daf56d",
+      "base_main_sha": "9eda6084a7f841d9845f29ca03e63fbbae371b08",
+      "pr_number": 44,
+      "review": {
+        "actor_id": "independent_review",
+        "head_sha": "e617a5f8e9a551f4aee9a0187f3e881661daf56d",
+        "approved": true,
+        "summary": "Actual nonauthor /root/independent_review approves exact PR44 e617a5/tree e535 after complete 47-file five-contract/222-claim publication read. Independently verified all 52 source records against actual 490c+dc5 Git trees, 33 exact preparation payloads with only five explicit protocol notices, all 31 old catalogue rows and metadata/policy permissions, byte-exact old snapshots and four canonical digests. B034 actual-K/nullary, B035 expanded-function-closure and B036 A14 conditional composition gates remain exact. Validator logic/tests/Lean/source/dependencies/cache unchanged. Personally inspected complete exact CI40934871245/job123662633015: 121 tests, 1330 provider +3531 CCO +3531 audit jobs, 15725 standard-three declarations, complete 992 current CCO source/actual parts and exact269 provider guards PRE/POST, zero rebuilt modules. Report-only commit033f08b1f4ed923ffd653c8018441adf4ab2e8fe.",
+        "independence": {
+          "identity": "/root/independent_review",
+          "non_author": true,
+          "summary": "The actual registered review-only agent authored or designed none of this complete publication, original preparation, extraction, controls, validator additions, receipts, tests or repairs. It personally read the complete source/contracts/publication delta and full exact public CI; no implementation helpers or duplicate test, build, audit or handoff were used.",
+          "report_path": "formalization/coordination/reviews/B028-B036-registry-publication.md"
+        }
+      },
+      "ci": {
+        "run_id": 40934871245,
+        "head_sha": "e617a5f8e9a551f4aee9a0187f3e881661daf56d",
+        "conclusion": "success",
+        "axiom_audit": "allowlist"
+      },
+      "author_actor_ids": [
+        "root",
+        "source-preparation-project",
+        "/root/frontier12"
+      ],
+      "original_author_project_ids": [
+        0,
+        3
+      ],
+      "registry_promotion": {
+        "package_ids": [
+          "B028",
+          "B030",
+          "B034",
+          "B035",
+          "B036"
+        ],
+        "previous_registry_sha256": "3cdb5e168b7a4132330c6c9b07523daed6483a7a0ec7781b216d76617fd79b44",
+        "previous_policy_sha256": "c0242b4803762019439d427b83db9c4bdb1f6975eab7b886b6bcacfa1ae7426a",
+        "registry_sha256": "c73431a9e2421ca58bc694d1e2fa9f807bf566baeb401f193dd1b90dd2be7bb5",
+        "policy_sha256": "62d5b611f1cae5df5f9ce4a4646391b21d6d7de29d5e905fd03e86d667a88718"
+      },
+      "integration_commit": "4398fb761667f08bf12443f53905f3e71e1523e2",
+      "main_ci": {
+        "run_id": 40936227117,
+        "head_sha": "4398fb761667f08bf12443f53905f3e71e1523e2",
+        "conclusion": "success",
+        "axiom_audit": "allowlist"
+      }
     }
   ],
-  "policy_revision": 8,
+  "policy_revision": 9,
   "third_batch_exception": {
     "package_id": "B018",
     "independent_active_work": true,
