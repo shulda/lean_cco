@@ -58,5 +58,14 @@ theorem exactPositions_subset_iff (E F : Exact S H cco) :
     simpa only [coordinateKernel_exactPositions] using coordinateKernel_antitone S H cco h
   · exact exactPositions_antitone S H cco
 
+theorem coordinateKernel_le_iff (V W : Finset (Position S H cco))
+    (hV : IsUpset V) (hW : IsUpset W) :
+    coordinateKernel S H cco V ≤ coordinateKernel S H cco W ↔ W ⊆ V := by
+  constructor
+  · intro h
+    simpa only [exactPositions_coordinateKernel S H cco V hV,
+      exactPositions_coordinateKernel S H cco W hW] using exactPositions_antitone S H cco h
+  · exact coordinateKernel_antitone S H cco
+
 end
 end CCO.Owners.Master
