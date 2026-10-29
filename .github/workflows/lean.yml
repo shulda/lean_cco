@@ -56,14 +56,39 @@ jobs:
           use-github-cache: false
           use-mathlib-cache: false
 
+      # Source/configuration identity is checked before any provider artifact
+      # is restored. This resolves the exact manifest without updating pins.
+      - name: Materialize pinned external EPPA package
+        run: lake env true
+
+      - name: Bind external EPPA dependency cache identity
+        id: eppa_key
+        run: python3 tools/verify_external_provider.py --cache-key --github-output --os "${{ runner.os }}" --arch "${{ runner.arch }}"
+
       # Follow all CCO edges first. The pinned Mathlib cache command filters
       # CCO imports, so `cache get CCO.lean` cannot discover these roots.
       - name: Download targeted Mathlib cache
         shell: bash
         run: |
-          python3 tools/mathlib_cache_roots.py --reject-broad > /tmp/cco-mathlib-roots.txt
+          python3 tools/mathlib_cache_roots.py --include-provider --reject-broad > /tmp/cco-mathlib-roots.txt
           mapfile -t roots < /tmp/cco-mathlib-roots.txt
           lake exe cache get "${roots[@]}"
+
+      # This fixed dependency key excludes the changing CCO commit. The
+      # complete provider output tree includes input traces and native parts.
+      - name: Cache compiled external EPPA provider
+        uses: actions/cache@v5
+        with:
+          path: .lake/packages/AllThoseEPPA/.lake/build
+          key: ${{ steps.eppa_key.outputs.key }}
+
+      - name: Build and verify pinned external EPPA facade
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 tools/verify_external_provider.py --repair
+          lake --rehash build +AllThoseEPPA.MainTheorems
+          python3 tools/verify_external_provider.py --require-complete
 
       # Reuse project artifacts only. Lake checks source/dependency traces;
       # a restored cache never replaces the build or the transitive audit.
@@ -94,6 +119,7 @@ jobs:
             lake --rehash build
             python3 tools/verify_project_cache.py --require-complete
           fi
+          python3 tools/verify_external_provider.py --require-complete
 
       - name: Audit the verified current source closure
         uses: leanprover/lean-action@f061402b660e0c34644504b324e830f2991d4865 # v1.6.1
@@ -111,4 +137,6 @@ jobs:
       # The pinned audit script also calls `lake build`. Check again after it
       # so the final job cannot pass with a changed or older root closure.
       - name: Verify final audited project artifacts
-        run: python3 tools/verify_project_cache.py --require-complete
+        run: |
+          python3 tools/verify_project_cache.py --require-complete
+          python3 tools/verify_external_provider.py --require-complete

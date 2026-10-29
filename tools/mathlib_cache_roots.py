@@ -11,6 +11,8 @@ import json
 from pathlib import Path
 import re
 
+from external_provider import materialized_provider
+
 # Namespaces accepted by Cache.IO.isPartOfMathlibCache at the manifest pin.
 CACHE_NAMESPACES = frozenset({
     'Mathlib', 'Batteries', 'BatteriesRecycling', 'Aesop', 'Cli',
@@ -68,27 +70,37 @@ def imports(source: str) -> list[str]:
     return result
 
 
-def cache_roots(project: Path, root: str = 'CCO') -> tuple[list[str], list[str]]:
+def cache_roots(project: Path, root: str = 'CCO', include_provider: bool = False) -> tuple[list[str], list[str]]:
     visited: set[str] = set()
     external: set[str] = set()
     pending = [root]
+    provider = None
+    if include_provider:
+        config, provider = materialized_provider(project)
+        pending.append(config['module'])
     while pending:
         module = pending.pop()
         if module in visited:
             continue
         visited.add(module)
-        path = project.joinpath(*module.split('.')).with_suffix('.lean')
+        namespace = module.split('.')[0]
+        if namespace == 'AllThoseEPPA':
+            if provider is None:
+                _, provider = materialized_provider(project)
+            path = provider.joinpath(*module.split('.')).with_suffix('.lean')
+        else:
+            path = project.joinpath(*module.split('.')).with_suffix('.lean')
         if not path.is_file():
             raise ValueError(f'missing project module {module}: {path}')
         for imported in imports(path.read_text(encoding='utf-8')):
             namespace = imported.split('.')[0]
-            if namespace == 'CCO':
+            if namespace in {'CCO', 'AllThoseEPPA'}:
                 pending.append(imported)
             elif namespace in CACHE_NAMESPACES:
                 external.add(imported)
             elif namespace not in {'Init', 'Lean', 'Std'}:
                 raise ValueError(f'unrecognized external import {imported} in {path}')
-    return sorted(external), sorted(visited)
+    return sorted(external), sorted(m for m in visited if m.split('.')[0] == 'CCO')
 
 
 def main() -> None:
@@ -97,9 +109,11 @@ def main() -> None:
     parser.add_argument('--root', default='CCO')
     parser.add_argument('--json', action='store_true')
     parser.add_argument('--reject-broad', action='store_true')
+    parser.add_argument('--include-provider', action='store_true',
+                        help='include the explicitly built pinned EPPA facade target')
     args = parser.parse_args()
     try:
-        roots, modules = cache_roots(args.project, args.root)
+        roots, modules = cache_roots(args.project, args.root, args.include_provider)
         if args.reject_broad and {'Mathlib', 'Mathlib.Tactic'} & set(roots):
             raise ValueError('broad Mathlib import in project closure')
         if not roots:
