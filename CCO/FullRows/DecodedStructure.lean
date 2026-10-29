@@ -1,4 +1,5 @@
 import CCO.FullRows.SourceRows
+import CCO.FullRows.UniversalLifts
 
 /-! The fixed literal decoder as an actual complete original-language
 structure. Its age embedding and its aligned embedding certify the SAME
@@ -118,5 +119,30 @@ theorem alignedDecodedEmbedding (j : Structure.Embedding act (encode D₀) E)
     fine := fun a x y => Iff.of_eq (congrArg (· = some a) (hc x y))
     move := fun g x => ULift.ext _ _ (hm g x) }
   exact ⟨e.toEmbedding,rfl,fun a => ULift.ext _ _ (hfix a)⟩
+
+/-- EVERY structural automorphism and EVERY legal correction induce an
+actual owner-language automorphism of this SAME complete decoded table. -/
+def decodedLiftAut (s₀ : Structure.Automorphism act E) (C : Matrix I K)
+    (hC : Legal (recordedPairs S H R B hB Δ A hA E hLocal) C) :
+    Structure.Automorphism act (encode (decodedData S H R B hB Δ hΔ A hA E hLocal c)) := by
+  letI := TransversalPure.thinCommGroup S H R
+  refine (ExactAut.mk (tag := tags)
+    (D := decodedData S H R B hB Δ hΔ A hA E hLocal c) s₀.lang
+    (rowVertexEquiv S H R B hB Δ A hA E hLocal s₀ C) ?_ ?_ ?_).toAutomorphism
+  · exact rowVertexEquiv_owner S H R B hB Δ A hA E hLocal s₀ C
+  · intro a x y
+    exact Iff.of_eq (congrArg (· = some a)
+      (decodedColour_lift S H R B hB Δ hΔ A hA E hLocal c s₀ C hC x y))
+  · exact lift_translate (rowStructural S H R B hB Δ A hA E hLocal s₀) C
+
+@[simp] theorem decodedLiftAut_lang (s₀ : Structure.Automorphism act E) (C : Matrix I K)
+    (hC : Legal (recordedPairs S H R B hB Δ A hA E hLocal) C) :
+    (decodedLiftAut S H R B hB Δ hΔ A hA E hLocal c s₀ C hC).lang = s₀.lang := rfl
+
+@[simp] theorem decodedLiftAut_apply (s₀ : Structure.Automorphism act E) (C : Matrix I K)
+    (hC : Legal (recordedPairs S H R B hB Δ A hA E hLocal) C) (x : Vertex I K) :
+    letI := TransversalPure.thinCommGroup S H R
+    decodedLiftAut S H R B hB Δ hΔ A hA E hLocal c s₀ C hC x =
+      lift (rowStructural S H R B hB Δ A hA E hLocal s₀) C x := rfl
 end
 end CCO.FullRows
