@@ -1,4 +1,6 @@
-import CCO.SafeReadings.TransversalSource
+import CCO.SafeReadings.SourcePrimitive
+import CCO.StrongExact.TriangleFullness
+import CCO.RawExact.DiagramReindex
 import CCO.OwnerTransversal.TransversalExtension
 import CCO.StrongExact.CycleCompletion
 
@@ -244,6 +246,24 @@ theorem semanticCCO : SemanticCCO.{v,0,0,w} (source S H R B) := by
     ∅ (by simp [RawRecords.CompleteOn]) j (by simp) (by simp) (by simp)
   obtain ⟨g,_⟩ := completion_of_origin_pattern S H R B D f hsep
   exact ⟨g⟩
+
+
+/-- The ACTUAL typed U age is triangle-defined on every finite formal
+vertex universe. Ordinary AP is derived from canonical full homogeneity;
+semantic CCO above was discharged through actual transversal completion. -/
+theorem triangle_completion {V : Type z} (D : PartialDiagram (source S H R B) V)
+    (hcomplete : D.IsComplete)
+    (htri : ∀ x y z (hxy : x ≠ y) (hyz : y ≠ z) (hxz : x ≠ z)
+      (a : (source S H R B).Atom (D.vertexSort x) (D.vertexSort y))
+      (b : (source S H R B).Atom (D.vertexSort y) (D.vertexSort z))
+      (c : (source S H R B).Atom (D.vertexSort x) (D.vertexSort z)),
+      D.edge x y hxy = some a → D.edge y z hyz = some b → D.edge x z hxz = some c →
+      (source S H R B).Triangle a b c) : D.HasStrongCompletion := by
+  let A : CompleteDiagram (S := source S H R B) V := ⟨D,hcomplete⟩
+  let ap := AtomicSource.ageAP_of_homogeneous (canonical_homogeneous S H R B)
+  have cycles := A.cycleHom_of_AP_triangles ap htri
+  obtain ⟨f⟩ := semanticCCO_change_universe (source S H R B) (semanticCCO S H R B) V D cycles
+  exact ⟨f,f.injective_of_complete hcomplete⟩
 
 end
 end CCO.SafeReadings.TransversalSource
