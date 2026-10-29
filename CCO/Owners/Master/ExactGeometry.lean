@@ -14,7 +14,7 @@ variable {A : Type v} (S : AtomicSource.{0,v,w} Unit (fun _ => A))
 variable {G : Type t} [Group G] [MulAction G A]
 variable (H : HomogeneousSource S G) (cco : SemanticCCO.{0,v,v,w} S)
 
-def exactAmbient : Diagram.Ambient (Position S H cco) where
+@[reducible] def exactAmbient : Diagram.Ambient (Position S H cco) where
   X := Coordinate S H cco
   r := coordinateMap S H cco
   r_id := coordinateMap_id S H cco
@@ -114,6 +114,42 @@ def stepGeometry (upU : IsUpset U) (next : Next U p)
     (stepGeometry S H cco upU next upV within hp).rC x =
       coordinateMap S H cco (Finset.subset_insert p (strictUpper p)) x :=
   kernelGeometry_rC S H cco _ _ _ _ _ _ _ x
+
+/-- The binary ambient square is the FULL actual pullback. This supplies
+the only geometric gluing input of the independent finite diagram step. -/
+theorem step_glue (upU : IsUpset U) (next : Next U p)
+    (upV : IsUpset V) (within : V ⊆ insert p U) (hp : p ∈ V)
+    (b : Coordinate S H cco (V.erase p))
+    (x : Coordinate S H cco (insert p (strictUpper p)))
+    (owner : coordinateMap S H cco (next_strictUpper_subset_erase upV hp) b =
+      coordinateMap S H cco (Finset.subset_insert p (strictUpper p)) x) :
+    ∃! y : Coordinate S H cco V,
+      coordinateMap S H cco (Finset.erase_subset p V) y = b ∧
+        coordinateMap S H cco (Finset.insert_subset hp
+          ((next_strictUpper_subset_erase upV hp).trans (Finset.erase_subset p V))) y = x := by
+  let P := stepGeometry S H cco upU next upV within hp
+  let pair : Product.Pullback P.rD P.rC := ⟨(b,x),by
+    simpa only [P,stepGeometry_rD,stepGeometry_rC] using owner⟩
+  let y := P.full.symm pair
+  have hyD : P.pD y = b := by
+    simpa only [y,Equiv.apply_symm_apply,pair] using (P.full_fst y).symm
+  have hyC : P.pC y = x := by
+    simpa only [y,Equiv.apply_symm_apply,pair] using (P.full_snd y).symm
+  refine ⟨y,?_,?_⟩
+  · exact ⟨(stepGeometry_pD S H cco upU next upV within hp y).symm.trans hyD,
+      (stepGeometry_pC S H cco upU next upV within hp y).symm.trans hyC⟩
+  · intro z hz
+    apply P.full.injective
+    apply Subtype.ext
+    apply Prod.ext
+    · calc
+        _ = P.pD z := P.full_fst z
+        _ = b := (stepGeometry_pD S H cco upU next upV within hp z).trans hz.1
+        _ = _ := hyD.symm.trans (P.full_fst y).symm
+    · calc
+        _ = P.pC z := P.full_snd z
+        _ = x := (stepGeometry_pC S H cco upU next upV within hp z).trans hz.2
+        _ = _ := hyC.symm.trans (P.full_snd y).symm
 
 end
 end CCO.Owners.Master
