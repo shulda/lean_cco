@@ -1,0 +1,61 @@
+{
+  "run_id": 40936227117,
+  "head_sha": "4398fb761667f08bf12443f53905f3e71e1523e2",
+  "conclusion": "success",
+  "axiom_audit": "allowlist",
+  "job_id": 123667357647,
+  "tests": 121,
+  "declarations": 15725,
+  "modules": 992,
+  "provider_guards": [
+    {
+      "parts": 269,
+      "source": 269,
+      "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+    },
+    {
+      "parts": 269,
+      "source": 269,
+      "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+    },
+    {
+      "parts": 269,
+      "source": 269,
+      "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+    },
+    {
+      "parts": 269,
+      "source": 269,
+      "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+    }
+  ],
+  "fresh_cco_modules": [],
+  "fresh_provider_modules": [],
+  "provider_cache_lines": [
+    "2026-10-29T19:02:45.1058026Z cco-eppa-dependency-v1-a2a8f96056850ededd7ac1bab447f1d923dedf7797b54c6479a3be9638b55e41",
+    "2026-10-29T19:03:11.7683568Z   key: cco-eppa-dependency-v1-a2a8f96056850ededd7ac1bab447f1d923dedf7797b54c6479a3be9638b55e41",
+    "2026-10-29T19:03:12.0551694Z Cache hit for: cco-eppa-dependency-v1-a2a8f96056850ededd7ac1bab447f1d923dedf7797b54c6479a3be9638b55e41",
+    "2026-10-29T19:03:13.1278211Z Cache restored from key: cco-eppa-dependency-v1-a2a8f96056850ededd7ac1bab447f1d923dedf7797b54c6479a3be9638b55e41",
+    "2026-10-29T19:03:55.7759568Z Cache hit occurred on the primary key cco-eppa-dependency-v1-a2a8f96056850ededd7ac1bab447f1d923dedf7797b54c6479a3be9638b55e41, not saving cache."
+  ],
+  "build_jobs": [
+    1330,
+    3531,
+    3531
+  ],
+  "guards": [
+    {
+      "parts": 992,
+      "source": 992
+    },
+    {
+      "parts": 992,
+      "source": 992
+    },
+    {
+      "parts": 992,
+      "source": 992
+    }
+  ],
+  "url": "https://github.com/shulda/lean_cco/actions/runs/40936227117"
+}
