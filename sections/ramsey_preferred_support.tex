@@ -1,0 +1,161 @@
+\section{Standing assumptions and exact quotient notation}
+\label{sec:internal-v27-premises}
+
+The source for the following construction is the SAP pure-clone cover of
+our original AP structure. Initially it has one transitive real sort;
+after safe unary splitting its realised unary types are treated as finitely
+many original transitive named sorts. The same-sort atomic relations are
+symmetric. Logical equality remains a genuine diagonal and is never added
+as a diversity colour between distinct formal real vertices.
+
+\begin{assumption}[General hypotheses]\label{ass:general}
+Throughout the binary core of the paper, unless a stronger assumption is
+explicitly invoked, we assume the following.
+\begin{enumerate}[label=(A\arabic*)]
+\item \label{A:finite} The typed atomic language is finite and complete, with paired converses
+      between different named sorts and symmetric atoms on each same-sort
+      palette; $\K$ is triangle constrained.
+\item \label{A:sap} $\K$ has the strong amalgamation property.
+\item \label{A:cco} $\K$ has semantic cycle constrainedness
+      $\mathrm{CCO}_{\mathrm{sem}}$: a finite atomic partial structure is
+      completable precisely when each of its specified simple cycles is
+      completable.  Equivalently, in the profile formulation developed in
+      \cref{sec:profiles}, the finite family of reachable path profiles is
+      $2$-Helly.
+\end{enumerate}
+\end{assumption}
+
+The following additional hypothesis is imposed only in terminal arguments.
+It is an output, not an input, of the finite-cover elimination below.
+
+\begin{assumption}[Terminal infinite-cover hypothesis]\label{ass:standing}
+In addition to Assumption~\ref{ass:general}, assume
+\begin{enumerate}[label=(A\arabic*),start=4]
+\item \label{A:cover} on EACH current named transitive real sort $M_a$, every strict
+      cover in its full lattice of invariant equivalence relations has
+      infinite relative index, including covers whose upper endpoint is
+      the universal equivalence on that sort.
+\end{enumerate}
+We call this the \emph{terminal} or \emph{sortwise infinite-cover branch}.
+\end{assumption}
+
+
+\subsection{Profiles and exact-domain notation}
+\label{sec:profiles}
+
+For current named sorts $a,b$, the symbol $L^{ab}$ denotes the finite
+palette of actual diversity atomic pair orbitals. A supported STRONG product
+uses distinct formal vertices; on singleton atomic inputs it is given by
+allowed typed triangles, and on unions it is extended by unions. We write
+$\Prof(w)$ for the endpoint profile of a nonempty typed word $w$, and
+$\Rch^{ab}$ for the finite family of its nonempty reachable profiles from
+$a$ to $b$. With one original sort we omit the endpoint superscripts.
+Associativity and the typed Set-Pasch law are the foundational results
+\cref{sec:typed-strong,lem:typed-set-pasch}; the SAP+CCO positive-profile
+Helly theorem is \cref{lem:typed-helly}.
+
+The family $\Dat^{ab}$ of nonempty exact STRONG PC domains is supplied by
+\cref{lem:typed-PC-fixedpoint-exact}: its members are precisely the
+nonempty finite intersections of typed reachable profiles, with the empty
+intersection interpreted as the full typed diversity palette. The typed
+module below recalls the explicit domain and support-consistency notation.
+These STRONG profiles and domains are distinct from FULL RAW exact relations,
+which include the logical diagonal when they are same-sort equivalences.
+
+\subsection{From profile Helly to completion}
+
+
+
+\subsection{Full invariant-equivalence notation}
+\label{sec:equivalences}
+
+Fix ONE current named transitive real sort, write $M=M_a$ and
+$L=L^{aa}$ in this subsection, and apply the notation separately
+to each current sort. For a palette \(X\subseteq L\), put
+\[
+ xE_Xy\quad\Longleftrightarrow\quad x=y\text{ or }
+ \operatorname{col}(x,y)\in X.
+\]
+Let
+\[
+ \Lambda=\set{X\subseteq L:E_X\text{ is an equivalence relation on }M}.
+\]
+Thus \(\varnothing\in\Lambda\) represents equality and \(L\in\Lambda\)
+represents the universal equivalence.  If \(X<Y\) in \(\Lambda\), write
+\([Y:X]\) for the number of \(E_X\)-classes inside an \(E_Y\)-class; this is
+independent of the chosen \(E_Y\)-class by homogeneity.
+
+\subsection{The palette--lattice interface}
+
+\begin{proposition}[All definable equivalences and their joins]
+\label{prop:lattice-interface}
+Every \(0\)-definable equivalence relation on \(M\) is uniquely of the form
+\(E_X\) for some \(X\in\Lambda\).  The set \(\Lambda\) is a finite lattice,
+ordered by inclusion, with
+\[
+ X\meet Y=X\cap Y,
+ \qquad
+ E_{X\join Y}=E_X\circ E_Y=E_Y\circ E_X.
+ \tag{JC}\label{eq:join-composition}
+\]
+\end{proposition}
+
+\begin{proof}
+Every \(0\)-definable relation is automorphism-invariant. By homogeneity,
+the pair orbits in the complete coloured language are precisely logical
+equality and the named diversity colours. Conversely, every union of these
+finitely many named pair orbits is \(0\)-definable.  This proves the first assertion and finiteness of
+\(\Lambda\).  Intersections give meets.
+
+It remains to prove permutability.  Suppose
+\(xE_XyE_Yz\).  The cases \(x=y\), \(y=z\), or \(x=z\) are immediate.  Otherwise let
+\[
+ a=\operatorname{col}(x,y)\in X,
+ \qquad b=\operatorname{col}(y,z)\in Y,
+ \qquad c=\operatorname{col}(x,z).
+\]
+The triangle \((a,b,c)\) is allowed.  Since the triangle relation is symmetric,
+the triangle with the two incident colours interchanged is also allowed.
+The one-point extension property of the Fra\"isse limit therefore gives a
+vertex \(w\) with
+\[
+ \operatorname{col}(x,w)=b,
+ \qquad
+ \operatorname{col}(w,z)=a.
+\]
+Thus \(xE_YwE_Xz\), proving
+\(E_X\circ E_Y=E_Y\circ E_X\).
+
+The composition of two commuting equivalence relations is again an
+equivalence relation: using relational multiplication,
+\[
+ (E_XE_Y)^2=E_X(E_YE_X)E_Y=E_X(E_XE_Y)E_Y=E_XE_Y.
+\]
+It contains both factors, and every equivalence containing both factors
+contains their composition.  Hence it is their join.  It is
+\(\Aut(\M)\)-invariant and therefore equals \(E_Z\) for a unique
+\(Z\in\Lambda\), which proves \eqref{eq:join-composition}.
+\end{proof}
+
+
+\subsection{Actual hidden structures and real representatives}
+
+The terminal hidden structure used below is the ACTUAL equivariant
+interpretation in the original real structure. It retains the real sorts,
+adds the represented proper meet-irreducible quotient sorts $B_{a,J}$,
+and names the projections $F_J:a\to B_{a,J}$ and the upward quotient maps.
+The typed module specifies the finite quotient-transition enrichment and
+its actual binary semantic-cylinder relations. Thus it specifies the
+complete hidden signature rather than adding arbitrary choices of
+representatives as part of a finite structure.
+
+For a finite set $D$ of actual real points, $D^{\coord}$ denotes its FULL
+point-generated closure under the named unary coordinate and transition
+functions. More generally $\cl_H(T)$ is the unary-functional closure of a
+finite set $T$ of actual hidden vertices. The hereditary hidden age consists
+of all finite induced unary-closed substructures of the actual hidden
+structure; these may include quotient vertices with no real representative
+in the finite substructure. In the one-sort notation, $\Kcoord$ denotes the
+point-generated coordinate expansions of the original finite real objects,
+and $\Hid=\Her(\Kcoord)$ their hereditary unary-closed envelope. No new
+algebraicity or amalgamation claim is assumed in this notation.

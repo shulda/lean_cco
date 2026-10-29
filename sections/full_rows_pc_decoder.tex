@@ -1,0 +1,647 @@
+\section{Full-row valuations and invariant path-consistency decoding}
+\label{sec:full-rows}
+
+We retain the \emph{actual} finite owner set $B$, the language group
+$\Gamma\le\Aut(B)$ containing the induced diagonal thin-owner action,
+the finite elementary abelian $2$-group $G$, the
+full-owner primitive typed source $U_B$, its strong exact menus
+$\mathcal H_{st}$ and the rectangular, pure-$\Gamma$-covariant
+readings $h^g_{st}$ from
+Proposition~\ref{prop:moving-readings}. The decoder below uses only
+the properties exported there: conservativity, survivor heredity,
+converse compatibility, pure-owner covariance, switching, and legal
+triangles for independently chosen readings on a PC triple.
+Any family satisfying this same contract can therefore be used,
+including the later orbit-safe readings. By
+Theorem~\ref{thm:completable-reservoir}, fix a \emph{single}
+finite structural $\Gamma$-EPPA reservoir $B_0$ for a finite
+nonempty complete full-$G$-packet source $A\subseteq N$ and for all
+the required compatible owner-action requests.  The partial reservoir
+has an injective completion in $N$, but its holes remain unrecorded.
+No equivariance is required of this chosen completion.
+
+Let $I$ be the finite set of \emph{structural} $G$-packets of $B_0$.
+Choose an origin in each such packet and write
+\[
+ B_0=\{(i,z):i\in I,\ z\in G\},\qquad
+ \operatorname{own}(i,z)=z\beta_i,
+ \qquad t_g(i,z)=(i,z+g).
+\]
+Here $\beta_i\in B$ is the actual $E$-owner of the chosen origin.
+The action of $G$ on $B$ need not be free; in particular the
+stabiliser $H=G\cap E$ is allowed to be nontrivial.  Nevertheless
+$G$ acts freely on every \emph{real} packet.  Write
+$\mathcal R\subseteq\binom I2$ for the recorded structural pairs.
+For $\{i,j\}\in\mathcal R$, all $|G|^2$ fine colours are recorded.
+A structural automorphism $s$ with owner-language component
+$\gamma\in\Gamma$ therefore has the unique coordinate form
+\begin{equation}\label{eq:R07-structural}
+ s(i,z)=(\sigma i,z+b_i),\qquad
+ \beta_{\sigma i}=b_i\gamma\beta_i,
+ \quad \sigma\in\operatorname{Sym}(I),\quad b_i\in G.
+\end{equation}
+The $b_i$ are determined by the \emph{real} image of the origin,
+not merely by the displayed owner equation; the latter does not
+uniquely determine them when $H\ne 1$.
+All coordinates in this section are additive, and $2g=0$ for $g\in G$.
+
+\subsection{Full-row universe, lifts and output}
+\label{subsec:R07-W}
+
+For each $i\in I$ and every function $f:I\to G$, take a fresh
+\emph{actual} full packet.  Its vertices are
+\begin{equation}\label{eq:R07-W}
+ W=\{(i,f,z): i\in I,\ f\in G^I,\ z\in G\},\qquad
+ t_g(i,f,z)=(i,f,z+g),\quad
+ \operatorname{own}(i,f,z)=z\beta_i.
+\end{equation}
+Thus the actual packet indices are $p=(i,f)$; the index $i$ by
+itself is not an actual packet of $W$.  In particular
+\begin{equation}\label{eq:R07-size}
+ |W|=|I|\,|G|^{|I|+1}.
+\end{equation}
+Define a partial, owner-typed diagram $W^\#$ by putting the
+actual thin colours within each packet $p=(i,f)$ and, for every
+recorded pair $\{i,j\}\in\mathcal R$ with $i\ne j$, copying the
+entire recorded fine matrix of $(i,j)$ between \emph{each} packet
+over $i$ and \emph{each} packet over $j$ via the structural projection
+\[
+ q:W^\#\longrightarrow B_0,\qquad q(i,f,z)=(i,z).
+\]
+There is no record between distinct actual packets over the same
+$i$, nor between packets over an unrecorded pair $\{i,j\}$.
+Embed the original source $A$ in the \emph{zero rows} $f=0$ of its
+structural indices.  Since $A$ is complete, its distinct packet
+indices are recorded in $B_0$.
+
+A correction matrix is any $C=(C_{ij})\in G^{I\times I}$ with
+\begin{equation}\label{eq:R07-correction}
+ C_{ij}+C_{ji}=0\qquad
+ \text{for every unrecorded }\{i,j\}\subseteq I,\ i\ne j.
+\end{equation}
+There is \emph{no} correction constraint on recorded pairs and
+none on $C_{ii}$.  Given a structural automorphism~\eqref{eq:R07-structural},
+set
+\begin{equation}\label{eq:R07-lift}
+ \alpha_C(i,f,z)=(\sigma i,f',z+b_i),\qquad
+ f'(\sigma j)=f(j)+C_{ij}+b_i\quad(j\in I).
+\end{equation}
+
+The construction below defines the PC domains $D_{xy}$ and the complete
+colouring $d$ in \eqref{eq:R07-decoding} on this fixed universe $W$.
+We state its output before proving the completion, row-compatibility and
+naturality properties used in the construction.
+
+\begin{theorem}[Relative owner $\Gamma$-EPPA]
+\label{thm:R07-relative-eppa}
+The colouring~\eqref{eq:R07-decoding}, together with its
+original full-packet structure, is a finite member of the
+actual owner-typed age of $N$, containing $A$ as an induced
+complete full-packet substructure. For \emph{every} structural
+$\Gamma$-automorphism $s$ of $B_0$ as in
+\eqref{eq:R07-structural} and \emph{every} matrix $C$ satisfying
+\eqref{eq:R07-correction}, the map $\alpha_C$ is a
+$\Gamma$-automorphism of this \emph{same} completed structure,
+with the owner-language component of $s$. It need not preserve
+the zero-row source setwise.
+
+For a prescribed source-extension request, choose $s$ extending
+its structural map and $C$ satisfying its zero-row conditions.
+Then $\alpha_C$ extends that request. Consequently every finite
+family of compatible relative requests over the fixed owner set
+$B$, including empty-real-domain requests, has one common finite
+$\Gamma$-EPPA witness.
+\end{theorem}
+
+\begin{remark}[Quantifiers, size, and scope of the argument]
+\label{rem:R07-scope}
+The finite construction uses one $B_0$, one full-row set $W$,
+one injective completion certificate for $W^\#$, one greatest
+strong-PC fixed family and one decoder.  Only afterwards are
+individual correction matrices chosen.  The size is exactly
+$|I|\,|G|^{|I|+1}$ and no uniform size bound across varying
+finite quotient witnesses is claimed.  We have not assumed
+$H=1$, equivariant packet origins, coherent EPPA, equality of PC
+menus with full solution spectra, or that HKN faithfulness alone
+gives a completable reservoir.  All the statements here depend
+on the preceding in-manuscript relative closure, full-owner
+transversal, typed gate and reading proofs, together with
+published HKN and the CCO-specific RAW-HULL route using Erd\H{o}s.
+\end{remark}
+
+\subsection{Completion certificate and compatible row requests}
+
+\begin{lemma}[Actual completion of every full-row clone]
+\label{lem:R07-W-completable}
+The finite partial diagram $W^\#$ has an injective completion
+in $N$ fixing the embedded complete source $A$.  The unrecorded
+fine colours of such a completion need not be invariant under
+any structural automorphism and will not be treated as records.
+\end{lemma}
+\begin{proof}
+Compose the structural projection $q$ with the injective completion
+$B_0\hookrightarrow C_0\subseteq N$ from
+\cref{thm:completable-reservoir}. This map preserves the owner names,
+all $t_g$ and every recorded fine matrix, and is injective on each
+actual packet. Its restriction to the zero-row source $A$ is the
+prescribed induced embedding. The only possible collisions are
+between distinct packets, since $q$ forgets their rows; all recorded
+interpacket colours lie outside $F$.
+These are exactly the hypotheses of \cref{lem:packet-collision},
+with protected base $A$. That lemma separates the packets without
+changing any record or the source embedding. The resulting completion
+is used only as an existence certificate. Restrict it to one origin in each
+actual packet. Since their image packets are pairwise distinct, the definition
+in \cref{lem:full-owner-transversal} gives an injective completion of this
+origin transversal in $\mathcal U_B$.
+\end{proof}
+
+\begin{lemma}[Exact finite compatibility criterion for prescribed full rows]
+\label{lem:R07-row-compatibility-iff}
+Fix one structural map
+$s(i,z)=(\sigma i,z+b_i)$ as in
+\eqref{eq:R07-structural}. For each $i\in I$
+let $T_i\subseteq G^I$ be a finite
+set of ACTUAL source rows, possibly
+empty. For each $f\in T_i$ prescribe
+one target row $r_{i,f}\in G^I$
+at structural index $\sigma i$.
+For $f\in T_i$ put
+\[
+ A_{i,f}(j)=r_{i,f}(\sigma j)+f(j)+b_i
+                  \qquad(j\in I).
+\tag{RC1}\label{eq:R07-row-compatibility-shift}
+\]
+There is ONE matrix $C$ satisfying
+\eqref{eq:R07-correction} such that
+$\alpha_C$ sends EACH requested
+ACTUAL packet $(i,f)$ to the
+packet $(\sigma i,r_{i,f})$ if
+and only if BOTH conditions hold:
+\begin{enumerate}[label=(\roman*)]
+\item for every $i$, the functions
+$A_{i,f}$ are identical over
+ALL $f\in T_i$ (denote this
+common function by $A_i$ when
+$T_i\ne\varnothing$);
+\item for every UNRECORDED pair
+of DISTINCT structural indices
+$\{i,j\}$ with
+$T_i,T_j\ne\varnothing$,
+\[
+                         A_i(j)=A_j(i).
+\tag{RC2}\label{eq:R07-row-compatibility-edge}
+\]
+\end{enumerate}
+When each touched index has
+ONE requested row and the
+touched indices form a
+recorded clique, both
+conditions are automatic.
+No condition is imposed
+on diagonal entries $C_{ii}$,
+nor on RECORDED off-diagonal
+pairs. The source rows and
+target rows are ACTUAL full
+functions on all of $I$,
+not owner-stabiliser cosets.
+\end{lemma}
+\begin{proof}
+For the requested image row
+of $(i,f)$, formula
+\eqref{eq:R07-lift} gives
+\[
+ r_{i,f}(\sigma j)
+       = f(j)+C_{ij}+b_i
+             \qquad(j\in I).
+\]
+Since $G$ has exponent two,
+this holds precisely when
+$C_{ij}=A_{i,f}(j)$ for
+ALL j. A SINGLE row of C
+works for every requested
+packet over index i exactly
+when (i) holds; all its
+entries are then forced to
+be $A_i(j)$. For an UNRECORDED
+distinct pair $\{i,j\}$ the
+only correction equation is
+$C_{ij}=C_{ji}$.
+If both indices are touched,
+this is exactly (RC2);
+hence (ii) is necessary.
+
+Conversely assign the entire
+row $C_{ij}=A_i(j)$ for
+every touched index i.
+Condition (i) makes these
+assignments consistent inside
+each row, and condition (ii)
+makes them compatible with
+ALL unrecorded constraints
+whose two endpoints are
+touched. For an unrecorded
+pair with exactly one touched
+endpoint set the other entry
+equal to its already forced
+value; with neither touched,
+choose both entries zero.
+Recorded off-diagonal entries
+and all diagonal entries
+have no additional equation
+and may be chosen freely
+unless already prescribed by
+a touched row. This constructs
+the required one matrix C.
+There is no constraint across
+two distinct actual packets
+of the SAME structural index
+except their compulsory
+common affine row translation,
+which is exactly (i).
+\end{proof}
+
+\begin{remark}[Sharp obstructions for independently forced rows]
+\label{rem:R07-row-conflict-controls}
+Even with $G=\mathbb F_2$,
+two different rows $f\ne f'$
+over the SAME structural index
+cannot both be sent to target
+zero rows by one $\alpha_C$:
+then the two functions in (RC1)
+differ by $f+f'$, violating
+condition (i). For two touched
+DISTINCT UNRECORDED indices
+$i,j$, choose source rows
+with $f_i(j)=1$, $f_j(i)=0$,
+target both zero, and $b_i=b_j=0$.
+This forces $C_{ij}=1$ and
+$C_{ji}=0$, contradicting
+\eqref{eq:R07-correction}.
+These failures explain why
+the later unsafe-clique
+argument first proves ONE
+touched ACTUAL packet over
+each structural index and
+a RECORDED clique on those
+indices, rather than choosing
+row corrections independently.
+\end{remark}
+
+\begin{lemma}[Full-row permutations and zero-row requests]
+\label{lem:R07-zero-row}
+For every $C$ satisfying~\eqref{eq:R07-correction},
+$\alpha_C$ is a permutation of $W$, commutes with every $t_g$,
+preserves all the recorded fine colours of $W^\#$ and induces
+$\gamma$ on its owner predicates.  Moreover, for every requested
+source map that has structural extension $s$, a matrix $C$ can be
+chosen such that $\alpha_C$ extends that map on the zero-row
+source.  This includes requests with empty real domain.
+\end{lemma}
+\begin{proof}
+For each fixed $i$, the assignment $f\mapsto f'$ permutes the
+coordinates by $\sigma$ and translates each coordinate by a
+constant; its inverse exists.  With $z\mapsto z+b_i$ this
+proves bijectivity.  It is visibly compatible with all $t_g$.
+The owner identity follows from~\eqref{eq:R07-structural}:
+\[
+ \operatorname{own}(\alpha_C(i,f,z))
+ =(z+b_i)\beta_{\sigma i}
+ =(z+b_i)(b_i\gamma\beta_i)=\gamma(z\beta_i).
+\]
+The projection $q$ intertwines $\alpha_C$ and $s$, and the
+recorded matrices are precisely pullbacks along $q$; hence all
+records are preserved for \emph{every} matrix $C$.
+
+For a source-extension request, each touched index has one requested
+row, namely the zero row, and its target is also the zero row.
+The criterion \cref{lem:R07-row-compatibility-iff} therefore forces
+\begin{equation}\label{eq:R07-forced-row}
+ C_{ij}=b_i\qquad\text{for every }j\in I
+\end{equation}
+on each touched $i$. The touched indices form a recorded clique
+because $A$ is complete, so the criterion supplies one legal matrix
+$C$ satisfying all these requests simultaneously. This also covers
+empty real domain, when no row is prescribed.
+\end{proof}
+
+\subsection{Strong PC on actual packets and gauge naturality}
+\label{subsec:R07-PC}
+
+Let
+\[
+ J=\{(i,f):i\in I,\ f\in G^I\}
+\]
+be the set of \emph{actual} full $G$-packets in $W$, and choose
+their origins $o_p=(i,f,0)$ of owner type $s_p=\beta_i$.
+For distinct $p=(i,f)$, $q=(j,k)$ in $J$, put
+\begin{equation}\label{eq:R07-initial-domain}
+ D^0_{pq}=\begin{cases}
+   \{c_{ij}\},&\{i,j\}\in\mathcal R\ (i\ne j),\\
+   P_{\beta_i\beta_j},&\text{otherwise},
+ \end{cases}
+\end{equation}
+where $c_{ij}=\col((i,0),(j,0))$ is the recorded origin
+colour of $B_0$, and $P_{st}$ is the full \emph{diversity}
+typed palette of $U_B$.  This includes $i=j$ with $f\ne k$:
+its initial domain is the full same-sort palette.
+Every $D^0_{pq}$ belongs to the corresponding strong exact family
+$\mathcal H_{s_ps_q}$ by
+Lemma~\ref{lem:typed-exact-products}.  The concrete completion
+from Lemma~\ref{lem:R07-W-completable} provides a compatible
+actual fine colour $d^*_{pq}$ in each domain and a legal typed
+triangle on every triple of \emph{distinct actual packets}.
+
+Run all oriented strong path-consistency updates, with converse
+symmetry maintained:
+\begin{equation}\label{eq:R07-PC}
+ D_{pq}\longleftarrow D_{pq}\cap(D_{pr}*D_{rq})
+ \quad(p,q,r\in J\text{ pairwise distinct}),
+ \qquad D_{qp}=\overline{D_{pq}}.
+\end{equation}
+
+\begin{lemma}[Canonical nonempty PC fixed family]
+\label{lem:R07-PC}
+The updates~\eqref{eq:R07-PC} terminate at a family
+$(D_{pq})_{p\ne q}$ of nonempty strong exact menus, independent
+of the fair order of updates.  The final family is
+path-consistent on every triple of distinct actual packets,
+and any prescribed singleton record remains unchanged.
+\end{lemma}
+\begin{proof}
+The current $d^*_{pq}$ survives every update: if
+$d^*_{pr}\in D_{pr}$ and $d^*_{rq}\in D_{rq}$, the actual
+triangle with the third recorded pair witnesses
+$d^*_{pq}\in D_{pr}*D_{rq}$.  Hence no update is empty.
+Exact-product closure and nonempty exact-meet closure from
+Lemma~\ref{lem:typed-exact-products} keep all domains strong
+exact.  There are finitely many packets, finitely many menus,
+and every update contracts a coordinate, so any fair schedule
+stabilises.  Its limit is a common fixed point of all the
+contracting updates and hence path-consistent.
+For order independence, let $E\le D^0$ be any other common
+fixed family of menus.  Initially $E\le D^0$ and it remains
+below the current family after each update: multiplication
+and intersection are monotone, and the fact that $E$ is fixed
+means $E_{pq}\subseteq E_{pr}*E_{rq}$.  The terminal family
+is thus the \emph{greatest} common fixed family below $D^0$.
+This characterisation does not assert equality with the full
+spectra of global completions.
+\end{proof}
+
+Choose independent origin shifts $\delta_p\in G$ for $p\in J$.
+Transport the endpoint types and domains by
+\begin{equation}\label{eq:R07-gauge}
+ s'_p=\delta_p s_p,\qquad
+ (S_\delta D)_{pq}=(\delta_p+\delta_q)D_{pq}.
+\end{equation}
+The notation $(g+h)D$ means the \emph{represented endpoint
+switch} of a typed menu: its endpoint types move separately as
+indicated, and the underlying fine-colour atoms obey the actual
+thin transport law.  In particular this is not a pure action
+of $\Gamma$ fixing the raw fine names.
+
+\begin{lemma}[PC gauge and pure-owner naturality]
+\label{lem:R07-PC-gauge}
+The greatest nonempty PC fixed family commutes with all the
+independent origin shifts~\eqref{eq:R07-gauge} and with any
+pure owner-language permutation $\gamma\in\Gamma$.  More
+precisely, for distinct $p,r,q$, typed menus $A_{pr},B_{rq}$ satisfy
+\begin{equation}\label{eq:R07-gauge-product}
+ ((\delta_p+\delta_r)A_{pr})*((\delta_r+\delta_q)B_{rq})
+ =(\delta_p+\delta_q)(A_{pr}*B_{rq}),
+\end{equation}
+with the \emph{moved endpoint owner types}; the same transport
+commutes with intersections and converse.
+\end{lemma}
+\begin{proof}
+An atom $c$ lies in $A_{pr}*B_{rq}$ exactly when there is
+an actual legal triangle of three \emph{distinct} points of the
+indicated owner sorts with its two sides in those menus and
+its third side $c$.  Apply $t_{\delta_p},t_{\delta_r},
+t_{\delta_q}$ independently to these witnesses, using the
+actual translation law on each edge.  This produces a triangle
+with colours on the left-hand side of~\eqref{eq:R07-gauge-product}.
+The inverse translations prove the reverse inclusion.
+The intermediate shift occurs in both incident edges and cancels
+because $G$ has exponent two.  The argument does not require
+distinct \emph{owner types}, only distinct actual points.
+The same bijective transport commutes with intersections and
+converses, so every PC update commutes with $S_\delta$.
+The greatest-fixed-family characterisation from
+Lemma~\ref{lem:R07-PC} gives naturality of the fixed point.
+A pure $\gamma\in\Gamma$ fixes all underlying fine-colour
+names and permutes only owner tags, realised by the ambient
+quotient-owner lift from
+Lemma~\ref{lem:full-owner-transversal}; it likewise commutes
+with products, meets and PC.
+\end{proof}
+
+For any vertices $x=(i,f,z)$, $y=(j,k,w)$ in \emph{distinct
+actual packets} $p=(i,f)$, $q=(j,k)$, define
+\begin{equation}\label{eq:R07-moving-domain}
+ D_{xy}=(z+w)D_{pq},\qquad
+ \operatorname{type}(D_{xy})=(z\beta_i,w\beta_j).
+\end{equation}
+This is a member of the relevant strong exact family and
+satisfies $D_{t_gx,y}=gD_{xy}$ with endpoint types moved.
+
+\begin{lemma}[Naturality under arbitrary full-row lifts]
+\label{lem:R07-domain-covariance}
+Let $\alpha_C$ be a map~\eqref{eq:R07-lift}, and denote by
+$\pi_C(p)=(\sigma i,f')$ its induced permutation of actual
+packets.  For all vertices $x,y$ in distinct actual packets,
+\begin{equation}\label{eq:R07-raw-domain-invariance}
+  D_{\alpha_Cx,\alpha_Cy}=D_{xy}
+\end{equation}
+as \emph{raw fine-colour sets}; their endpoint owner types
+are related by the pure permutation $\gamma$.
+\end{lemma}
+\begin{proof}
+Every structural record is preserved by $s$.
+The initial domain for $\pi_C(p),\pi_C(q)$ therefore equals
+\[
+ D^0_{\pi_C(p),\pi_C(q)}
+ =(b_i+b_j)\,\gamma(D^0_{pq}),
+\]
+where $\gamma$ acts only on the owner tags.  For a hole both
+sides are the full typed palette, and for a singleton record
+the equality is exactly the structural thin law.
+The PC-gauge and pure-$\Gamma$ naturality lemma gives the
+same identity for the terminal domains:
+\[
+ D_{\pi_C(p),\pi_C(q)}=(b_i+b_j)\,\gamma(D_{pq}).
+\]
+But $\alpha_C(o_p)=t_{b_i}(o_{\pi_C(p)})$, and likewise
+for $q$.  Hence for $x=t_zo_p$, $y=t_wo_q$ we have
+\begin{align*}
+ D_{\alpha_Cx,\alpha_Cy}
+  &=(z+b_i+w+b_j)D_{\pi_C(p),\pi_C(q)}\\
+  &=(z+w+b_i+b_j)(b_i+b_j)\,\gamma(D_{pq})\\
+  &=\gamma((z+w)D_{pq})=D_{xy}
+ \quad\text{as raw fine-colour sets}.
+\end{align*}
+The last equality means that $\gamma$ fixes colour names,
+not that it fixes the endpoint owner types.  No equivariant
+choice of packet origins is assumed.
+\end{proof}
+
+\subsection{Effective rows and verification of the decoder}
+\label{subsec:R07-decoder}
+
+For $x=(i,f,z)$ let its effective row be
+\begin{equation}\label{eq:R07-effective}
+ \chi_x(j)=z+f(j)\quad(j\in I).
+\end{equation}
+For $x$ above structural index $i$ and $y$ above index $j$,
+put
+\begin{equation}\label{eq:R07-reading-parameter}
+ u(x,y)=\chi_x(j)+\chi_y(i)\in G.
+\end{equation}
+This parameter is symmetric in $x,y$.
+For vertices $x,y$ in \emph{different actual packets} set
+\begin{equation}\label{eq:R07-decoding}
+  d(x,y)=
+ h^{u(x,y)}_{\operatorname{own}(x),\operatorname{own}(y)}(D_{xy}),
+\end{equation}
+and for vertices in the same actual packet use their original
+thin $G$-colour.  This defines a complete colouring of $W$ by
+actual named raw fine colours, once legality is established.
+
+We now prove \cref{thm:R07-relative-eppa} for this colouring.
+
+\begin{proof}
+For two distinct actual packets $p,q$, converse
+compatibility of the readings
+(Proposition~\ref{prop:moving-readings}) ensures
+$d(y,x)=\overline{d(x,y)}$.  Within a packet, the original
+thin colours are symmetric and satisfy their complete
+regular packet equations.
+
+For a triangle with vertices in \emph{three distinct actual}
+packets, the transported PC domains form an oriented strong
+PC triple by Lemma~\ref{lem:R07-PC-gauge}.  Proposition~
+\ref{prop:moving-readings} allows the three reading parameters
+$u(x,y)$, $u(y,z)$ and $u(x,z)$ to be chosen independently;
+thus the three decoded atoms form a legal fine-colour triangle.
+
+If the triangle has exactly two actual packets, say
+$x'=t_gx$ in packet $p$ and $y$ in packet $q\ne p$,
+then the thin transport law gives
+$D_{x'y}=gD_{xy}$, the owner of $x'$ is
+$g\operatorname{own}(x)$, and
+$u(x',y)=u(x,y)+g$.  The switching identity
+\eqref{eq:reading-switch} therefore says
+\[
+ d(x',y)=g\,d(x,y),
+\]
+which is exactly the triangle law forced by the thin edge
+$\col(x,x')=g$.  No assumption that the structural indices
+$i,j$ differ is needed.  A triangle wholly within one packet
+is an original $G$-packet triangle.  The age is triangle-defined,
+so all these checks place the complete finite structure in
+$\Age(N)$ with the assigned actual owner labels.
+
+On a recorded pair the initial domain was a singleton, and it
+remains that singleton by Lemma~\ref{lem:R07-PC}.
+In particular every pair of distinct source packets has its
+original recorded fine colour matrix.  The internal thin
+colours also remain original, so the zero-row embedding of $A$
+is an induced embedding.
+
+For the automorphism assertion compute, for
+$x=(i,f,z)$ and $j\in I$, using~\eqref{eq:R07-lift},
+\[
+ \chi_{\alpha_C x}(\sigma j)
+ =(z+b_i)+(f(j)+C_{ij}+b_i)
+ =\chi_x(j)+C_{ij}.
+\]
+For $x$ over index $i$ and $y$ over $j$ it follows that
+\begin{equation}\label{eq:R07-row-covariance}
+ u(\alpha_Cx,\alpha_Cy)=u(x,y)+C_{ij}+C_{ji}.
+\end{equation}
+The domains are invariant as raw colour sets by
+Lemma~\ref{lem:R07-domain-covariance}, and the owner types
+transform by $\gamma$.  For $i\ne j$ a recorded pair has a
+singleton domain, so the reading is forced independent of
+$u$ and no condition on $C_{ij}+C_{ji}$ is needed.  If
+$i\ne j$ is unrecorded,~\eqref{eq:R07-correction} makes
+that sum zero.  If $i=j$ but $x,y$ lie in different actual
+packets, its value is $2C_{ii}=0$, with \emph{no} diagonal
+constraint.  The pure-$\Gamma$ covariance of every $h^u$
+from Proposition~\ref{prop:moving-readings} therefore yields
+\[
+ d(\alpha_Cx,\alpha_Cy)=d(x,y)
+\]
+for all pairs of distinct actual packets.  Within a packet,
+$\alpha_C$ commutes with every named translation and hence
+preserves its thin colours.  It is bijective by
+Lemma~\ref{lem:R07-zero-row} and preserves all owner labels
+with the prescribed language component.  Thus it is a $\Gamma$-automorphism of the decoded complete witness
+for every structural $s$ and legal $C$. If $s$ is a chosen source
+extension, \cref{lem:R07-zero-row} supplies a legal $C$ for which
+this automorphism also has the prescribed values on the zero-row
+source.
+
+Finally the universe $W$, its PC fixed family and its
+completed fine colouring were chosen \emph{before} any of
+the correction matrices $C$ associated with the finitely
+many requests.  Consequently one and the same finite witness
+works for all of them, without a coherent choice of
+extensions.
+\end{proof}
+
+\begin{lemma}[Global diagonal thin translations survive the R07 decoder]
+\label{lem:R07-global-diagonal-thin}
+Let $\rho:G\to\Gamma$
+be the ACTUAL homomorphism
+induced by the original global
+thin translations on the
+finite $G$-invariant owner
+set $B$. The map $\rho$
+is NOT assumed injective:
+a nontrivial thin owner
+stabiliser $H$ may lie
+in its kernel.
+On the completed full-row
+R07 universe $W$ define,
+for every $g\in G$,
+\[
+          \widehat t_g(i,f,z)=(i,f,z+g).
+\tag{RDT}\label{eq:R07-global-diagonal-thin}
+\]
+Then $\widehat t_g$ is a
+$\Gamma$-automorphism of the
+SAME decoded COMPLETE finite
+structure, with owner-language
+component precisely $\rho(g)$,
+and fixes EVERY literal
+original fine binary
+colour, not just its palette.
+It preserves EACH actual
+full packet setwise and acts
+regularly on that packet.
+No freeness is asserted for
+the induced action of $G$
+on OWNER labels, whose
+stabiliser may be nontrivial.
+\end{lemma}
+\begin{proof}
+On the structural reservoir take $s_g(i,z)=(i,z+g)$ with
+owner component $\rho(g)$. This is a structural
+$\Gamma$-automorphism: it commutes with every $t_h$, preserves
+owner names through $\rho(g)$, and preserves each recorded matrix
+because simultaneous thin translation changes its fine atoms by
+$g+g=0$. It also preserves which packet pairs are recorded.
+In \eqref{eq:R07-structural} we therefore have
+$\sigma=\mathrm{id}_I$ and $b_i=g$ for every $i$.
+
+Choose the constant correction matrix $C_{ij}=g$. It satisfies
+\eqref{eq:R07-correction}, and its lift has
+$f'(j)=f(j)+g+g=f(j)$. Thus $\alpha_C=\widehat t_g$.
+The universal automorphism assertion of
+\cref{thm:R07-relative-eppa} now proves that this permutation
+preserves every literal decoded fine colour. Its action on each
+actual packet is the original regular $G$-action, while its owner
+component is exactly $\rho(g)$, which need not be faithful.
+\end{proof}

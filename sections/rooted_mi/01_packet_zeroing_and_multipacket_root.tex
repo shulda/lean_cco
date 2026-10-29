@@ -1,0 +1,126 @@
+\section{Rooted relative witnesses on unary-closure factors}
+\label{sec:acf-relative-mi}
+
+We next strengthen the \(\Gamma\)-relative R07 construction,
+without changing its valuation rows.  It is useful to keep
+separate the two sorts of requirements: an extension of a
+\emph{source partial map} may prescribe its owner permutation,
+whereas an automorphism transporting an unsafe clique is
+allowed to choose its owner component.  Rooting the latter
+transport is what will make the eventual components compatible.
+
+Let \(Q\) be an actual homogeneous exact quotient from the
+previous section whose greatest finite-class equivalence
+\(F_Q\) is meet-irreducible.  Its real algebraic closure is
+unary, \(\operatorname{acl}_Q(A)=F_Q[A]\).  Let
+\(H\) be an invariant exact owner equivalence containing
+the unique minimal infinite direction of \(Q\).
+For a finite induced \(B\subseteq Q/H\), write
+\(\Gamma_B=\Aut(B)\).
+A relative automorphism of a finite structure over \(B\)
+is a pair consisting of an original fine-colour
+automorphism and its induced \(\gamma\in\Gamma_B\).
+There is \emph{no} implicit splitting of the induced
+homomorphism onto \(\Gamma_B\).
+
+\begin{lemma}[Simultaneous full-row zeroing on a recorded packet clique]
+\label{lem:acf-recorded-row-zeroing}
+Use the R07 full-row packet universe
+\(W=\{(i,f,z):i\in I,\ f\in G^I,\ z\in G\}\)
+and a structural packet automorphism
+\(s(i,z)=(\sigma i,z+b_i)\).
+Let \(J\subseteq I\) be a set of DISTINCT
+structural indices such that EVERY two
+different indices of \(J\) are a
+RECORDED pair in \(\mathcal R\).
+For each \(i\in J\), specify one actual
+row \(f_i\in G^I\). Then some correction
+matrix \(C\in G^{I\times I}\) satisfies
+the R07 equations
+\(C_{ij}+C_{ji}=0\) on all UNRECORDED
+\(i\ne j\), and the associated
+automorphism \(\alpha_C\) sends
+\[
+     \{(i,f_i,z):z\in G\}
+        \quad\text{onto}\quad
+     \{(\sigma i,0,z):z\in G\}
+\]
+up to its fixed internal translation \(b_i\),
+SIMULTANEOUSLY for every \(i\in J\).
+This is a clique-transport correction,
+not an assertion that the automorphism
+also fixes all original zero-row source packets.
+\end{lemma}
+\begin{proof}
+Apply \cref{lem:R07-row-compatibility-iff} with
+\(T_i=\{f_i\}\) for \(i\in J\), \(T_i=\varnothing\)
+otherwise, and every requested target row equal to zero.
+Its first condition is automatic because at most one row is
+requested at each index. Its second is vacuous because no two
+touched indices form an unrecorded pair. It therefore supplies
+one legal correction matrix, with
+\(C_{ij}=f_i(j)+b_i\) on each selected row. The universal
+lift assertion of \cref{thm:R07-relative-eppa} makes the resulting
+\(\alpha_C\) an automorphism of the fixed decoder; it need not
+extend any separately prescribed source request.
+\end{proof}
+
+\begin{lemma}[Unsafe multi-packet cliques descend to the padded source]
+\label{lem:acf-multipacket-rooted-transport}
+Let \(A^+\) be a finite complete full-packet
+source obtained from \(F_Q[A_0]\) by adding
+padding packets with EVERY new cross matrix
+\(S_Q\)-safe, including all padding-to-original
+pairs. Build the finite R07 full-row decoder
+from a completable HKN structural reservoir
+\(B_0\supseteq A^+\), using the orbit-safe
+selector \(h_{S^G}\) on its originally
+unrecorded packet pairs.
+
+For every all-non-\(S_Q\) clique \(Z\)
+in the decoded finite witness that
+meets at least TWO distinct actual packets,
+there is one decoded \(\widetilde\Gamma\)-
+automorphism taking \(Z\) into
+\(F_Q[A_0]\). More precisely, its
+structural component moves all touched
+structural packet indices into those of
+the padded source \(A^+\), and one
+simultaneous full-row correction moves
+the selected actual packet of each such
+index into its zero row.
+\end{lemma}
+\begin{proof}
+By \cref{lem:orbit-safe-all-row-interface}, every originally
+unrecorded pair of distinct actual packets has an entirely
+\(S_Q\)-safe cross matrix, including two packets with the same
+structural index and different rows. Thus the unsafe clique
+\(Z\) meets at most one actual packet \((i,f_i)\) at each
+structural index \(i\), and its set \(J\) of touched indices
+is a recorded clique.
+
+The full structural packets on \(J\), together with their
+complete recorded cross matrices, form an irreducible
+substructure of \(B_0\): each packet is unary-generated,
+and recorded fine edges join every two packets.
+The irreducible-faithfulness conclusion of
+\cref{thm:completable-reservoir} supplies one structural
+\(\widetilde\Gamma\)-automorphism
+\(s(i,z)=(\sigma i,z+b_i)\) carrying this whole substructure
+into \(A^+\). Apply \cref{lem:acf-recorded-row-zeroing} to
+\(s\) and the rows \(f_i\), \(i\in J\). Its single legal
+correction sends every touched actual packet into the zero row
+over \(\sigma i\), so the resulting decoded automorphism
+\(\alpha_C\) carries \(Z\) into the literal copy of \(A^+\).
+
+This use of \(s\) concerns only the partial structural reservoir.
+It need not preserve a chosen completion of its holes; the
+universal lift assertion of \cref{thm:R07-relative-eppa}
+ensures that \(\alpha_C\) preserves the completed decoder and
+every original fine colour. Hence \(\alpha_C(Z)\) is still
+unsafe and still meets at least two actual packets. Any point
+in a padding packet would then have a safe edge to a point in
+another touched packet, by the padding hypothesis. This is
+impossible, so \(\alpha_C(Z)\subseteq F_Q[A_0]\).
+\end{proof}
+
