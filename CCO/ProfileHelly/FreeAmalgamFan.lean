@@ -87,4 +87,53 @@ theorem base_two_arcs (laws : TableLaws T) {y : V} (hxy : anchor ≠ y)
   ⟨F.readout laws p hxy hp a ha,F.readout laws q hxy hq a ha⟩
 
 end Fan
+
+/-- Move an anchor cut to an arbitrary pair of positive arcs. If the
+anchor lies internally on one arc, fan propagation on the other arc and
+set Peirce give the common atom. No semantic realization is introduced. -/
+theorem fan_intersection_at (laws : TableLaws T) {anchor x y : V}
+    (F : D.Fan anchor Set.univ) (hxy : x ≠ y) (p q : D.graph.Path x y)
+    (hd : Disjoint (D.internal p.val) (D.internal q.val))
+    (hp : anchor ∈ p.val.support) :
+    (D.pathProfile hxy p ∩ D.pathProfile hxy q).Nonempty := by
+  classical
+  by_cases hax : anchor = x
+  · subst anchor
+    obtain ⟨a,ha⟩ := F.edge y (Set.mem_univ _) hxy
+    exact ⟨a,F.readout laws p hxy (fun _ _ => Set.mem_univ _) a ha,
+      F.readout laws q hxy (fun _ _ => Set.mem_univ _) a ha⟩
+  by_cases hay : anchor = y
+  · subst anchor
+    obtain ⟨a,ha⟩ := F.edge x (Set.mem_univ _) hxy.symm
+    have hp' := F.readout laws ⟨p.val.reverse,p.property.reverse⟩ hxy.symm
+      (fun _ _ => Set.mem_univ _) a ha
+    have hq' := F.readout laws ⟨q.val.reverse,q.property.reverse⟩ hxy.symm
+      (fun _ _ => Set.mem_univ _) a ha
+    change a ∈ D.walkProfile p.val.reverse (D.reverse_not_nil p.val (Walk.not_nil_of_ne hxy)) at hp'
+    change a ∈ D.walkProfile q.val.reverse (D.reverse_not_nil q.val (Walk.not_nil_of_ne hxy)) at hq'
+    rw [D.walkProfile_reverse laws p.val (Walk.not_nil_of_ne hxy)] at hp'
+    rw [D.walkProfile_reverse laws q.val (Walk.not_nil_of_ne hxy)] at hq'
+    exact ⟨T.conv a,hp',hq'⟩
+  have hqAvoid : anchor ∉ q.val.support := by
+    intro hq
+    exact Finset.disjoint_left.mp hd
+      ((D.mem_internal p.val).mpr ⟨hp,hax,hay⟩)
+      ((D.mem_internal q.val).mpr ⟨hq,hax,hay⟩)
+  obtain ⟨a,ha⟩ := F.edge x (Set.mem_univ _) hax
+  obtain ⟨c,hc⟩ := F.edge y (Set.mem_univ _) hay
+  let pL := D.prefixPath p hp
+  let pR := D.suffixPath p hp
+  have hpL := F.readout laws ⟨pL.val.reverse,pL.property.reverse⟩ hax
+    (fun _ _ => Set.mem_univ _) a ha
+  change a ∈ D.walkProfile pL.val.reverse (D.reverse_not_nil pL.val (Walk.not_nil_of_ne (Ne.symm hax))) at hpL
+  rw [D.walkProfile_reverse laws pL.val (Walk.not_nil_of_ne (Ne.symm hax))] at hpL
+  have hpR := F.readout laws pR hay (fun _ _ => Set.mem_univ _) c hc
+  obtain ⟨a',ha',d,hdq,ht⟩ := F.run laws q.val (Walk.not_nil_of_ne hxy)
+    hqAvoid (fun _ _ => Set.mem_univ _) a c ha hc
+  have hae : a' = a := ha'
+  subst a'
+  refine ⟨d,?_,hdq⟩
+  rw [D.prefix_suffix_profile laws hxy (Ne.symm hax) hay p hp]
+  exact ⟨T.conv a,hpL,c,hpR,(T.peirce_right a d c).mp ht⟩
+
 end CCO.ProfileHelly.Network
