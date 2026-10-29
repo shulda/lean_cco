@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 234,
+  "revision": 235,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -1407,7 +1407,7 @@
       }
     },
     "B027": {
-      "state": "REVIEWING",
+      "state": "INTEGRATING",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b023_mi",
@@ -1500,7 +1500,13 @@
       }
     }
   },
-  "integration_lock": null,
+  "integration_lock": {
+    "kind": "package",
+    "package_id": "B027",
+    "actor_id": "root",
+    "base_main_sha": "ddf123247f043d9af6d8096ff652840196fe3a16",
+    "head_sha": "876ecec16ffa5486821c4bb8409d23c390c727bb"
+  },
   "history": [
     {
       "revision": 1,
@@ -5995,6 +6001,26 @@
         "head_sha": "876ecec16ffa5486821c4bb8409d23c390c727bb",
         "summary": "Actual nonauthor /root/independent_review approves exactPR40head876ecec16ffa5486821c4bb8409d23c390c727bb/tree1b5e631f afterONEwhole38module4582lineC01–31/7export/aux andproductioninfra read: positiveprefixEXACTell/ell0 andallcycleprofilecriterion; ACTUALE01/E02 viaCCOlanguage/morphism/fullclosedfunction-setbridge; globalBOTHdistinguishednormalizations/literalAplusNew/exactALLgammaEMPTYrequests; actualsourceG-saturation; arbitraryoutputfaithfulCLOSEDclosure→regularpackets/uniqueowners/ONE-edge matrixrecovery; actualclosedSAPstrongtree/injectivity/protectedwholebase; fullinducedkcardK/chords, WHOLEoriginCCO, acceptedcollision/inflation andactualbasealignment. C0existentialseparatefromunchangedB0records/auts; nohiddenprovider/section/rawSAP/equivariantcompletion. Exactproviderpin/toolchain9oldpins+10thpackage,269fullsource/blob/header/outputguards,defaultCCOguard,audit/cacheidentity reviewed. FinalONLY3MDcountcorrectionPASS. ExactCI40887696031/job123495724618 SUCCESS121tests/1330facade+3478CCOjobs/14430std3/940CCOANDsourcePREPOST/269providerANDsourcePREPOSTexactcd358; ALL940CCOincl38HKN+269providerindependentlycountedCOLDactualBuilt. Mainacceptedddf/tree/synthetic08e/pinsunchanged. Report-onlyapprovale6deaa903db7818efcfa18db9e93b53a2c2d063d.",
         "actor_id": "independent_review"
+      }
+    },
+    {
+      "revision": 235,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "start_integration",
+      "package_id": "B027",
+      "details": {
+        "package_id": "B027",
+        "head_sha": "876ecec16ffa5486821c4bb8409d23c390c727bb",
+        "base_main_sha": "ddf123247f043d9af6d8096ff652840196fe3a16",
+        "head_contains_main": true,
+        "ci": {
+          "run_id": 40887696031,
+          "head_sha": "876ecec16ffa5486821c4bb8409d23c390c727bb",
+          "conclusion": "success",
+          "axiom_audit": "allowlist"
+        },
+        "actor_id": "root"
       }
     }
   ],
