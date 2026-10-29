@@ -17,10 +17,13 @@ private structure ModuleMetadata where
 /-- Read source headers and actual olean headers without importing CCO artifacts.
 The compiler's own parser includes implicit imports and all import flags. -/
 def main (args : List String) : IO UInt32 := do
-  let [project, build] := args
-    | throw (IO.userError "expected project and build directories")
+  let (project, build, root) ← match args with
+    | [project, build] => pure (project, build, `CCO)
+    | [project, build, root] => pure (project, build, root.toName)
+    | _ => throw (IO.userError "expected project/build directories and optional root module")
   Lean.initSearchPath (← Lean.findSysroot)
-  let mut pending : List Lean.Name := [`CCO]
+  let namespaceRoot := root.getRoot
+  let mut pending : List Lean.Name := [root]
   let mut seen : Array Lean.Name := #[]
   let mut entries : Array ModuleMetadata := #[]
   while let some name := pending.head? do
@@ -32,7 +35,7 @@ def main (args : List String) : IO UInt32 := do
     let contents ← IO.FS.readFile source
     let header ← Lean.parseImports' contents source.toString
     for imp in header.imports do
-      if imp.module == `CCO || imp.module.getRoot == `CCO then
+      if imp.module == namespaceRoot || imp.module.getRoot == namespaceRoot then
         pending := imp.module :: pending
     let olean := System.FilePath.mk build / "lib/lean" / (relative ++ ".olean")
     let mut compiledImports := none

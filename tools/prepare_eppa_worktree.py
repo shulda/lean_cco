@@ -16,6 +16,11 @@ import shutil
 import subprocess
 
 
+def require(condition: bool, message: str) -> None:
+    if not condition:
+        raise ValueError(message)
+
+
 def git(path: Path, *args: str) -> str:
     return subprocess.check_output(['git', *args], cwd=path, text=True).strip()
 
@@ -23,7 +28,6 @@ def git(path: Path, *args: str) -> str:
 def prepare(project: Path, seed: Path, shared: Path) -> Path:
     config = json.loads((project / 'tools/external_provider.json').read_text())
     name, pin = config['package'], config['commit']
-    require = lambda condition, message: condition or (_ for _ in ()).throw(ValueError(message))
     require(git(seed, 'rev-parse', 'HEAD') == pin, 'Provider seed pin mismatch')
     require(git(seed, 'rev-parse', 'HEAD^{tree}') == config['tree'], 'Provider seed tree mismatch')
     require(not git(seed, 'status', '--porcelain', '--untracked-files=no'), 'Provider seed source changed')
