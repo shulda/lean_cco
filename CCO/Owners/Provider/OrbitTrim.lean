@@ -1,7 +1,7 @@
 import Mathlib.GroupTheory.GroupAction.Defs
 import Mathlib.Data.Set.Finite.Basic
 import Mathlib.Data.Set.Finite.Range
-import Mathlib.Data.Finite.Prod
+import Mathlib.Basic.Finite.Prod
 
 /-!
 # Orbit trimming preserves whole packets
