@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 162,
+  "revision": 163,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -1006,7 +1006,7 @@
       }
     },
     "B020": {
-      "state": "INTEGRATING",
+      "state": "ACCEPTED",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b020_master",
@@ -1047,6 +1047,13 @@
           "report_path": "formalization/coordination/reviews/B020-final.md"
         },
         "summary": "Actual registered nonauthor /root/independent_review personally approves FULL B020 C01-C26 at exact e612/tree6cfad after ONE complete35module/3601line mathematical read, all actual finite-diagram/source/quotient/packet/local-provider/M1-M4 discharges, distinct nonnestedOLD and fullNEW-target actions, honest allnested group maps and real onecarrier/ALLquotient export. Ordinary EPPA ALLactualexactquotients INCLUDINGId remains explicit legitimate contract input; no Stage/callback/master provider remains. Constructed SAMEwitness coordinate/ENTIREmotion consumer and actual singleton zeroEPPA emptyP close boundaries. Only2MDs/acceptedB021 additiveunion followed; all35proofs unchanged. All27sourcecheckpoints and exactunion ancestry preserved. Exact40830571723 passes85tests/2946jobs/10716std3/711actualpartsAND711currentSOURCEprepost. True wholebatch independence is documented, with no reviewer build or helpers."
+      },
+      "accepted_commit": "0b86292b10447b2d4d4a10ac8e1bbdc17b6b650b",
+      "main_ci": {
+        "run_id": 40831180372,
+        "head_sha": "0b86292b10447b2d4d4a10ac8e1bbdc17b6b650b",
+        "conclusion": "success",
+        "axiom_audit": "allowlist"
       }
     },
     "B021": {
@@ -1099,13 +1106,7 @@
       }
     }
   },
-  "integration_lock": {
-    "kind": "package",
-    "package_id": "B020",
-    "actor_id": "root",
-    "base_main_sha": "7e42a32257d7f6e99c94c550ef86ef2601844994",
-    "head_sha": "e612815143d5f67891f9a2ff2a926ef234ef0ad8"
-  },
+  "integration_lock": null,
   "history": [
     {
       "revision": 1,
@@ -4173,6 +4174,24 @@
         "ci": {
           "run_id": 40830571723,
           "head_sha": "e612815143d5f67891f9a2ff2a926ef234ef0ad8",
+          "conclusion": "success",
+          "axiom_audit": "allowlist"
+        },
+        "actor_id": "root"
+      }
+    },
+    {
+      "revision": 163,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "accept",
+      "package_id": "B020",
+      "details": {
+        "package_id": "B020",
+        "integration_commit": "0b86292b10447b2d4d4a10ac8e1bbdc17b6b650b",
+        "main_ci": {
+          "run_id": 40831180372,
+          "head_sha": "0b86292b10447b2d4d4a10ac8e1bbdc17b6b650b",
           "conclusion": "success",
           "axiom_audit": "allowlist"
         },
