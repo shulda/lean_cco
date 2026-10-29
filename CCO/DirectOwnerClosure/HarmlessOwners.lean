@@ -72,7 +72,7 @@ theorem exists_good_representative (E : ColourEq S ()) (hE : MinimalInfiniteCut 
     (Set.finite_singleton x).union (Set.finite_iUnion hf)
   have hclass : {b : M | E q.out b}.Infinite :=
     Set.infinite_coe_iff.mp (cut_actual_classes_infinite S H hE q.out)
-  obtain ⟨b,hb,hbout⟩ := hclass.diff hforbid |>.nonempty
+  obtain ⟨b,hb,hbout⟩ := hclass.sdiff hforbid |>.nonempty
   have hne : b ≠ x := by
     intro he
     exact hbout (Or.inl (Set.mem_singleton_iff.mpr he))

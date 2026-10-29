@@ -17,7 +17,7 @@ theorem packet_class_finite (x : M) : {y : M | packet S H x y}.Finite := by
 theorem packetHull_finite [DecidableEq M] (A : Finset M) : (packetHull S H A).Finite := by
   have he : packetHull S H A = ⋃ a ∈ (A : Set M), {y | packet S H a y} := by
     ext y
-    simp only [packetHull,Set.mem_setOf_eq,Set.mem_iUnion,Finset.mem_coe]
+    simp only [packetHull,Set.mem_ofPred_eq,Set.mem_iUnion,Finset.mem_coe]
     constructor <;> rintro ⟨a,ha,hy⟩ <;> exact ⟨a,ha,hy⟩
   rw [he]
   exact A.finite_toSet.biUnion (fun a _ => packet_class_finite S H a)

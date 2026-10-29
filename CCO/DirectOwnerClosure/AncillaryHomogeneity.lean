@@ -19,9 +19,9 @@ variable {G : Type t} [Group G] [MulAction G M] (H : HomogeneousSource S G)
 EVERY owner, including owners not incident with the real partial domain. -/
 theorem mixed_pair_of_owner_eq (E : ColourEq S ()) (x y : M)
     (hxy : owner S E x = owner S E y) (b : Owner S E) :
-    letI := originalQuotientAction S H E
+    let := originalQuotientAction S H E
     GroupActions.orbital (G := G) x b y b := by
-  letI := originalQuotientAction S H E
+  let := originalQuotientAction S H E
   apply (actual_nested_orbit_reduction_of_homogeneous S H
     (id : M → M) (Quotient.mk'' : M → Owner S E) Quotient.mk''
     Function.surjective_id Quotient.mk''_surjective
@@ -37,7 +37,7 @@ the FULL named language.  No countability or packet invariance is used. -/
 def restrict_motion (E : ColourEq S ()) (B : Finset (Owner S E)) (g : G)
     (hg : letI := originalQuotientAction S H E; ∀ b ∈ B, g • b = b) :
     NamedAut S E B := by
-  letI := originalQuotientAction S H E
+  let := originalQuotientAction S H E
   have ho (k : G) (x : M) : owner S E (k • x) = k • owner S E x := rfl
   have hginv (b : Owner S E) (hb : b ∈ B) : g⁻¹ • b = b :=
     (congrArg (fun z => g⁻¹ • z) (hg b hb).symm).trans (inv_smul_smul g b)
@@ -64,12 +64,12 @@ theorem joint_real_owner_fixing (cco : SemanticCCO.{0,v,0,w} S)
     (hReal : ∀ i j, col S (source i) (source j) = col S (target i) (target j))
     (hOwner : ∀ i, owner S E (source i) = owner S E (target i))
     (B : Finset (Owner S E)) :
-    letI := originalQuotientAction S H E
+    let := originalQuotientAction S H E
     ∃ g : G, (∀ i, g • source i = target i) ∧ (∀ b ∈ B, g • b = b) := by
   classical
-  letI := originalQuotientAction S H E
+  let := originalQuotientAction S H E
   let Q : Bool → Type v := fun b => if b then Owner S E else M
-  letI : ∀ b, MulAction G (Q b) := fun b => by
+  let : ∀ b, MulAction G (Q b) := fun b => by
     cases b <;> simp only [Q, Bool.false_eq_true, ↓reduceIte] <;> infer_instance
   let root : Bool → Unit := fun _ => ()
   let π : ∀ b, M → Q b := fun b => by
