@@ -7,6 +7,12 @@ variable {ι : Type u} {X : ι → Type v}
 variable (S : AtomicSource.{u,v,w} ι X)
 variable {Λ : Type z} [Group Λ] {N : Type t} {Q : Family S}
 
+theorem current_self (C : MenuCalculus S Q) : Current S Q Q where
+  member := Set.Subset.rfl
+  singleton := C.singleton
+  opposite := C.opposite
+  downward _ hE _ := hE
+
 theorem atomicFamily_subset {J : Family S} (hJ : Current S Q J) : atomicFamily S ⊆ J := by
   rintro ⟨i,j,D⟩ ⟨a,hD⟩
   change S.Atom i j at a
@@ -140,5 +146,15 @@ theorem selectorOfTerminal_covariant (A : PureTagAction S Λ N)
     selectorOfTerminal_singleton S hTerm R (A.act g D).2.2 (hQI g D hD),
     names_singleton S A,names_singleton S A] at h
   exact (Set.singleton_injective h).symm
+
+/-- The generic gate engine actually constructs the singleton reading. -/
+theorem exists_covariant_selector (C : MenuCalculus S Q)
+    (hPoint : S.RealPointGluing) (hEdge : S.RealEdgeGluing)
+    (A : PureTagAction S Λ N) (hQI : A.Invariant Q) (hNoReturn : NoReturn S Q A) :
+    ∃ h : SelectorOn S Q, h.Covariant A hQI := by
+  obtain ⟨K,_,_,hTerm,_,_,chain,hCov⟩ :=
+    pure_gate_iteration S C hPoint hEdge A hQI hNoReturn Q (current_self S C) hQI
+  exact ⟨selectorOfTerminal S hTerm (DescentChain.composite chain),
+    selectorOfTerminal_covariant S A hTerm (DescentChain.composite chain) hCov hQI⟩
 
 end CCO.SafeReadings
