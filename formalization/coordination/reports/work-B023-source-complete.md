@@ -6,7 +6,7 @@ and four auxiliary equations is implemented in 25 new public
 `CCO.lean`. Mathematical freeze
 `2ddbf61c980ccdc25bed5f4c97d446b7dd7d9f01`, tree
 `70d5fb4b41cd225eee2f6437b9d68d54717bdc5a`, starts from green released main
-`ffd00f494e6bbcd18a80b6c56c0300b7b8115868` after effective public claim184.
+`ffd00f494e6bbcd18a80b6c56c0300b7b8115868` after effective public claim 184.
 The coordinator's public mathematical freeze
 `1e0b89e3a535364f8098d0ad3feaa654cbfc9227` has that identical tree.
 
