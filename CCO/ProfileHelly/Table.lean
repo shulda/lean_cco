@@ -114,5 +114,11 @@ theorem return_square {i j k} (a : T.Atom i j) (c : T.Atom i k) :
     simpa only [T.conv_invol] using (T.peirce_right (T.conv a) c b).mp hh
   rw [h.associative]
   exact ⟨a,rfl,b,hb,hc⟩
+
+theorem return_square_right {i j k} (a : T.Atom i j) (b : T.Atom j k) :
+    a ∈ T.product {a} (T.product {b} {T.conv b}) := by
+  obtain ⟨c,hc⟩ := h.total a b
+  rw [← h.associative]
+  exact ⟨c,hc,T.conv b,rfl,(T.peirce_left a b c).mp ((T.product_singleton _ _ _).mp hc)⟩
 end TableLaws
 end CCO.ProfileHelly
