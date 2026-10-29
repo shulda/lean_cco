@@ -1,3 +1,4 @@
+import CCO.RelativeMI.InflatedSpans
 import CCO.RelativeMI.OwnerHelpers
 import CCO.RelativeMI.OrbitSafe
 import CCO.AclOwners.ClosedAmalgamation
@@ -232,5 +233,195 @@ theorem strongSafe_nonempty {ι : Type u} {X : ι → Type v}
   let b : ↥B.vertices := ⟨q,by simp [B]⟩
   apply nonempty_of_safePair S safe (l.preserves_sort a) (r.preserves_sort b)
   exact hs a b (fun c => False.elim c.property) (fun c => False.elim c.property)
+end
+end CCO.RelativeMI
+
+namespace CCO.RelativeMI
+noncomputable section
+open ParityHasse.Original RealHull.Geometry RealClosure.Bounds
+open FinitePackets.Normalization OwnerTransversal TransversalAge SafeReadings
+variable {M : Type v} (S : AtomicSource.{0,v,w} Unit (fun _ => M))
+variable {G : Type t} [Group G] [MulAction G M] (H : HomogeneousSource S G)
+variable [Countable M] [DecidableEq M] [Infinite M] (R : ResidualData S H)
+variable (U : Finset (Owner S H R)) (hU : PacketInvariant S H R U)
+variable (safe : Set (S.Atom () ()))
+local notation "K" => ResidualData.PacketGroup S H
+local notation "N" => NamedCarrier S H R U
+local notation "T" => TransversalSource.source S H R U
+local notation "V" => TransversalSource.Carrier S H R U
+local notation "tbl" => TransversalAge.limitTable S H R U
+
+omit [Infinite M] in
+private theorem moved_origins_separated {I : Type*}
+    (point : I × K → N)
+    (hm : ∀ x g h, point (x,g*h) = packetPoint S H R U hU g (point (x,h)))
+    (hinj : Function.Injective point) (f : NamedAut S H R U) :
+    ∀ x y, x ≠ y → ¬ finitePacket S H (f.val (point (x,1))).val
+      (f.val (point (y,1))).val := by
+  intro x y hxy
+  exact protected_origins_separated S H R U hU
+    (fun p => f.val (point p))
+    (fun x g h => (congrArg f.val (hm x g h)).trans
+      (namedAut_commutes S H R U hU f g (point (x,h)))) Set.univ
+    (fun _ _ _ _ he => hinj (f.val.injective he)) x (Set.mem_univ _) y (Set.mem_univ _) hxy
+
+
+include hU in
+/-- ALL finite complete typed spans acquire orbit-safe cross atoms by
+inflating the entire span, applying original closed-S amalgamation, and
+reading one separated origin chart back into the actual U. -/
+theorem orbitSafe_amalgamation
+    (hSafe : AclOwners.StrongClosedAmalgamation S G safe) :
+    StrongSafeAmalgamation T (orbitSafe S H R U hU safe) := by
+  classical
+  constructor
+  intro C A B ca cb
+  let : Finite ↥C.vertices := C.finite_vertices.to_subtype
+  let : Finite ↥A.vertices := A.finite_vertices.to_subtype
+  let : Finite ↥B.vertices := B.finite_vertices.to_subtype
+  let d := inflatedSpan S H R U hU C A B ca cb
+  obtain ⟨f,g,hFix,hStrong,hCross⟩ := packet_safe_motions S H R U hU safe hSafe
+    d.base d.left d.right d.base_closed d.left_closed d.right_closed
+    d.base_subset_left d.base_subset_right
+  let l : ↥A.vertices → N := fun a => f.val (d.leftOrigin a)
+  let r : ↥B.vertices → N := fun b => g.val (d.rightOrigin b)
+  have hl : Function.Injective l := by
+    intro a b he
+    exact congrArg Prod.fst (d.leftPoint_injective (f.val.injective he))
+  have hr : Function.Injective r := by
+    intro a b he
+    exact congrArg Prod.fst (d.rightPoint_injective (g.val.injective he))
+  have hlsep := moved_origins_separated S H R U hU d.leftPoint d.leftPoint_move
+    d.leftPoint_injective f
+  have hrsep := moved_origins_separated S H R U hU d.rightPoint d.rightPoint_move
+    d.rightPoint_injective g
+  have hcrossPacket (a : ↥A.vertices) (b : ↥B.vertices)
+      (hF : finitePacket S H (l a).val (r b).val) : l a = r b := by
+    obtain ⟨k,hk,_⟩ := translation_regular S (finitePacket S H) H (R.packet_thin S H)
+      (l a).val (r b).val hF
+    have he : f.val (d.leftPoint (a,k)) = g.val (d.rightPoint (b,1)) := by
+      rw [d.leftPoint_eq,namedAut_commutes]
+      exact Subtype.ext hk
+    have hh := (hStrong _ (d.leftPoint_mem a k) _ (d.rightPoint_mem b 1)).mp he
+    have hphase := ((d.point_cross a b k 1).mp hh.1).2
+    have he' : packetPoint S H R U hU k (l a) = r b := Subtype.ext hk
+    simpa only [hphase,packetPoint_one] using he'
+  let Q : Set N := Set.range l ∪ Set.range r
+  have hQ : Q.Finite := (Set.finite_range l).union (Set.finite_range r)
+  let : Finite ↥Q := hQ.to_subtype
+  have hsep : ∀ x y : ↥Q, x ≠ y → ¬ finitePacket S H x.val.val y.val.val := by
+    rintro ⟨x,hx⟩ ⟨y,hy⟩ hxy hF
+    apply hxy
+    apply Subtype.ext
+    rcases hx with ⟨a,rfl⟩ | ⟨a,rfl⟩ <;>
+      rcases hy with ⟨b,rfl⟩ | ⟨b,rfl⟩
+    · by_cases hab : a = b
+      · exact congrArg l hab
+      · exact False.elim (hlsep a b hab hF)
+    · exact hcrossPacket a b hF
+    · exact (hcrossPacket b a ((finitePacket S H).val.symm hF)).symm
+    · by_cases hab : a = b
+      · exact congrArg r hab
+      · exact False.elim (hrsep a b hab hF)
+  obtain ⟨u,huo,huc⟩ := embed_origins S H R U (fun x : ↥Q => x.val) hsep
+  let z : ↥Q ↪ Sigma V := {
+    toFun x := (TransversalSource.sigmaEquiv S H R U).symm (u x)
+    inj' := fun x y he => u.injective
+      ((TransversalSource.sigmaEquiv S H R U).symm.injective he) }
+  let ql (a : ↥A.vertices) : ↥Q := ⟨l a,Or.inl ⟨a,rfl⟩⟩
+  let qr (b : ↥B.vertices) : ↥Q := ⟨r b,Or.inr ⟨b,rfl⟩⟩
+  have hzo (x : ↥Q) : (z x).1 = ownerLabel S H R U x.val := huo x
+  have hzc (x y : ↥Q) : (tbl).colour (z x).2.val (z y).2.val =
+      col S x.val.val y.val.val := huc x y
+  have hlo (a : ↥A.vertices) : (z (ql a)).1 = a.val.1 :=
+    (hzo _).trans ((Subtype.ext (NamedAut.owner_fixed f _)).trans (d.leftOrigin_owner a))
+  have hro (b : ↥B.vertices) : (z (qr b)).1 = b.val.1 :=
+    (hzo _).trans ((Subtype.ext (NamedAut.owner_fixed g _)).trans (d.rightOrigin_owner b))
+  have hlc (a b : ↥A.vertices) :
+      (tbl).colour (z (ql a)).2.val (z (ql b)).2.val =
+        (tbl).colour a.val.2.val b.val.2.val :=
+    (hzc _ _).trans ((NamedAut.colour_fixed f _ _).trans (d.leftOrigin_colour a b))
+  have hrc (a b : ↥B.vertices) :
+      (tbl).colour (z (qr a)).2.val (z (qr b)).2.val =
+        (tbl).colour a.val.2.val b.val.2.val :=
+    (hzc _ _).trans ((NamedAut.colour_fixed g _ _).trans (d.rightOrigin_colour a b))
+  let D : FiniteInduced (X := V) := ⟨Set.range z,Set.finite_range z⟩
+  let e : InducedEmbedding T A D := {
+    toEmbedding := {
+      toFun a := ⟨z (ql a),⟨ql a,rfl⟩⟩
+      inj' := fun a b he => hl (congrArg Subtype.val
+        (z.injective (congrArg Subtype.val he))) }
+    preserves_sort := hlo
+    preserves_colours := fun a b => TransversalSource.tagged_eq S H R U
+      (hlo a).symm (hlo b).symm (hlc a b).symm }
+  let e' : InducedEmbedding T B D := {
+    toEmbedding := {
+      toFun a := ⟨z (qr a),⟨qr a,rfl⟩⟩
+      inj' := fun a b he => hr (congrArg Subtype.val
+        (z.injective (congrArg Subtype.val he))) }
+    preserves_sort := hro
+    preserves_colours := fun a b => TransversalSource.tagged_eq S H R U
+      (hro a).symm (hro b).symm (hrc a b).symm }
+  have hbase (c : ↥C.vertices) : l (ca.toEmbedding c) = r (cb.toEmbedding c) := by
+    change f.val (d.leftOrigin _) = g.val (d.rightOrigin _)
+    have hc := hFix (d.basePoint (c,1)) (d.basePoint_mem c 1)
+    exact hc.1.trans (hc.2.symm.trans (congrArg g.val (d.origin_commutes c)))
+  refine ⟨D,e,e',?_,?_,?_⟩
+  · intro c
+    apply Subtype.ext
+    apply congrArg z
+    exact Subtype.ext (hbase c)
+  · intro a b he
+    have he' : l a = r b := congrArg Subtype.val
+      (z.injective (congrArg Subtype.val he))
+    have hh := (hStrong _ (d.leftPoint_mem a 1) _ (d.rightPoint_mem b 1)).mp he'
+    exact ((d.point_cross a b 1 1).mp hh.1).1
+  · intro a b ha hb
+    change SafePair T (orbitSafe S H R U hU safe) (z (ql a)) (z (qr b))
+    have hmatrix (k : K) : ∃ c ∈ safe,
+        col S (packetPoint S H R U hU k (l a)).val (r b).val = some c := by
+      have hh := hCross (d.leftPoint (a,k)) (d.leftPoint_mem a k)
+        (d.leftPoint_offbase a ha k) (d.rightPoint (b,1)) (d.rightPoint_mem b 1)
+        (d.rightPoint_offbase b hb 1)
+      simpa only [d.leftPoint_eq,namedAut_commutes,InflatedSpan.rightOrigin,l,r] using hh
+    obtain ⟨c,hc,hcol⟩ := hmatrix 1
+    have hcraw : (tbl).colour (z (ql a)).2.val (z (qr b)).2.val = some c :=
+      (hzc _ _).trans (by simpa only [packetPoint_one] using hcol)
+    cases he : (T).colour (z (ql a)).2 (z (qr b)).2 with
+    | none =>
+      have hh := TransversalSource.colour_map S H R U (z (ql a)).2 (z (qr b)).2
+      change ((T).colour (z (ql a)).2 (z (qr b)).2).map Subtype.val = _ at hh
+      rw [he,hcraw] at hh
+      cases hh
+    | some atom =>
+      refine ⟨atom,?_,he⟩
+      intro k
+      obtain ⟨c,hc,hcol⟩ := hmatrix k
+      have hatom := (TransversalSource.colour_some_iff S H R U _ _ atom).mp he
+      have hraw : col S (l a).val (r b).val = some atom.val := (hzc _ _).symm.trans hatom
+      have hswitch := two_endpoint_transport S (finitePacket S H) H (R.packet_thin S H)
+        k 1 (l a).val (r b).val
+      rw [mul_one,hraw] at hswitch
+      have hname : (TransversalGauge.leftEquiv S H R U hU k _ _ atom).val = c := by
+        apply Option.some.inj
+        exact (TransversalGauge.leftEquiv_label S H R U hU k atom).trans
+          (hswitch.symm.trans (by
+            change col S (packetPoint S H R U hU k (l a)).val
+              (packetPoint S H R U hU 1 (r b)).val = some c
+            rw [packetPoint_one]
+            exact hcol))
+      rw [hname]
+      exact hc
+
+include hU in
+/-- The genuine orbit-safe system has no additional realization or
+nonemptiness premise and uses no diagonal-subgroup assumption. -/
+theorem orbitSafe_system
+    (hSafe : AclOwners.StrongClosedAmalgamation S G safe) :
+    SafeSystem T (orbitSafe S H R U hU safe) where
+  nonempty := strongSafe_nonempty T _ (orbitSafe_amalgamation S H R U hU safe hSafe)
+  opposite := orbitSafe_opposite S H R U hU safe
+  amalgamation := orbitSafe_amalgamation S H R U hU safe hSafe
+
 end
 end CCO.RelativeMI
