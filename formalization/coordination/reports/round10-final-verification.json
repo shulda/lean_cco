@@ -1,0 +1,120 @@
+{
+  "state_revision": 200,
+  "main": "def25037dfa278001a41732eadae694448f38426",
+  "main_tree": "6c45f28f5160d1e4be3899758f45e4d8e4a7bb06",
+  "accepted": 25,
+  "active": [],
+  "lock": null,
+  "claims": 78,
+  "new_modules": 76,
+  "new_lines": 9687,
+  "new_declarations": 1192,
+  "total_modules": 839,
+  "declarations": 12466,
+  "tests": 92,
+  "all_23_original_records_and_history_prefix_preserved": true,
+  "all_frozen_mathematical_source_and_accepted_root_prefix_preserved": true,
+  "source_pin": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+  "ci_evidence": [
+    {
+      "run_id": 40847498582,
+      "head_sha": "4104aa4dfb9ddf89eaf0ef6ca897638eda068ac3",
+      "conclusion": "success",
+      "axiom_audit": "allowlist",
+      "job_id": 123358491789,
+      "tests": 92,
+      "declarations": 11560,
+      "modules": 788,
+      "build_jobs": [
+        3025,
+        3025
+      ],
+      "guards": [
+        {
+          "parts": 788,
+          "source": 788
+        },
+        {
+          "parts": 788,
+          "source": 788
+        }
+      ],
+      "url": "https://github.com/shulda/lean_cco/actions/runs/40847498582"
+    },
+    {
+      "run_id": 40848331575,
+      "head_sha": "99192554bec6022d3c5a6df1a444d609fd56a22e",
+      "conclusion": "success",
+      "axiom_audit": "allowlist",
+      "job_id": 123361250590,
+      "tests": 92,
+      "declarations": 11560,
+      "modules": 788,
+      "build_jobs": [
+        3025,
+        3025
+      ],
+      "guards": [
+        {
+          "parts": 788,
+          "source": 788
+        },
+        {
+          "parts": 788,
+          "source": 788
+        }
+      ],
+      "url": "https://github.com/shulda/lean_cco/actions/runs/40848331575"
+    },
+    {
+      "run_id": 40853731818,
+      "head_sha": "002b17005996009056d5202fdf7890ccc0bc59df",
+      "conclusion": "success",
+      "axiom_audit": "allowlist",
+      "job_id": 123379349229,
+      "tests": 92,
+      "declarations": 12466,
+      "modules": 839,
+      "build_jobs": [
+        3103,
+        3103
+      ],
+      "guards": [
+        {
+          "parts": 839,
+          "source": 839
+        },
+        {
+          "parts": 839,
+          "source": 839
+        }
+      ],
+      "url": "https://github.com/shulda/lean_cco/actions/runs/40853731818"
+    },
+    {
+      "run_id": 40854666816,
+      "head_sha": "def25037dfa278001a41732eadae694448f38426",
+      "conclusion": "success",
+      "axiom_audit": "allowlist",
+      "job_id": 123382537305,
+      "tests": 92,
+      "declarations": 12466,
+      "modules": 839,
+      "build_jobs": [
+        3103,
+        3103
+      ],
+      "guards": [
+        {
+          "parts": 839,
+          "source": 839
+        },
+        {
+          "parts": 839,
+          "source": 839
+        }
+      ],
+      "url": "https://github.com/shulda/lean_cco/actions/runs/40854666816"
+    }
+  ]
+}
