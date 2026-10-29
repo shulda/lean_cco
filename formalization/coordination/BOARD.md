@@ -35,6 +35,8 @@ mathematical catalogue/initial checkpoint, not current ownership.
 | B031: Direct unary real closure and harmless actual owners | B002, B010, B013, B014 | [B031](../../formalization/coordination/packages/B031.md) |
 | B027: Completable HKN packet reservoir and finite cycle locality | B014, B025, B026 | [B027](../../formalization/coordination/packages/B027.md) |
 | B032: Typed terminal same-sort pure-power saturation without CCO | B001, B011 | [B032](../../formalization/coordination/packages/B032.md) |
+| B024: One fixed R07 full-row decoder and rooted packet controls | B002, B003, B014, B025, B026, B027 | [B024](../../formalization/coordination/packages/B024.md) |
+| B033: Positive profile Helly to fixed-vertex completion and SAP | — | [B033](../../formalization/coordination/packages/B033.md) |
 
 Autonomous release permissions are in [AUTONOMY.json](AUTONOMY.json).
 Use [QUEUE_OPERATIONS.md](QUEUE_OPERATIONS.md) to claim or review work.

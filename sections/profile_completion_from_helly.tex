@@ -1,0 +1,45 @@
+\section{Completion from positive profile Helly}\label{sec:profile-helly-completion}
+
+\begin{lemma}[Profile Helly converse]\label{lem:helly-to-cco}
+Let a finite symmetric typed atomic palette have a total associative Peircean
+product and a nonempty diversity palette for every permitted ordered
+pair of vertex sorts. Consider the FULL triangle-defined class of all complete atomic
+networks admitted by this table. If its reachable profiles are
+\(2\)-Helly, then this class satisfies semantic CCO. If, in
+addition, the required atomic forks are realisable by distinct
+vertices, then this full complete class has SAP.
+\end{lemma}
+
+\begin{proof}
+Let \(G\) be a finite atomic partial structure all of whose specified simple
+cycles are completable.  Fix two specified \(x\)-\(y\) paths.  Their endpoint
+profiles intersect.  Indeed, induct on the number of common internal vertices.
+Identical paths have the same nonempty profile. For distinct paths
+with no common internal vertex, their union is one specified simple cycle.  Otherwise split
+at a common internal vertex and concatenate colours chosen from the two smaller
+profile intersections.  Thus all specified \(x\)-\(y\) path profiles are
+pairwise intersecting.  By \(2\)-Helly they have a common colour \(c\). If there is no
+specified path, choose any colour from the nonempty endpoint palette.
+Assign \(c\) to one previously unspecified pair \(xy\).  Every new specified
+cycle using this edge has complementary path profile containing \(c\), hence is
+completable.  Iterating over the finitely many missing pairs gives a complete
+allowed network.  This is semantic CCO.
+
+For SAP, take the free partial amalgam of two complete factors over their common
+complete base.  A specified simple cycle meeting both factors alternates
+between factor-side segments whose endpoints lie in the base.  Contract every
+maximal factor-side segment to the actual base-edge colour between its
+endpoints; that colour belongs to the segment profile.  The contracted cycle
+is realised in the common base, so the original specified cycle is
+completable. Now apply the EXPLICIT edge-filling algorithm proved
+in the first paragraph to this free partial amalgam, keeping its
+entire disjoint-outside-the-base VERTEX SET fixed. Each step assigns
+one diversity atom to an UNRECORDED cross pair, never identifies
+vertices, and preserves simple-cycle compatibility. The final
+complete atomic network therefore belongs to the FULL
+triangle-defined class and is a STRONG amalgam.
+Merely knowing that an arbitrary partial graph has some possibly
+NONINJECTIVE homomorphism into a homogeneous structure would
+NOT imply SAP; the fixed-vertex completion from associative
+strong profiles and $2$-Helly is the essential extra argument.
+\end{proof}

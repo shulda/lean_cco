@@ -435,7 +435,7 @@ def render(module, order, by_label, raw):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--check', action='store_true')
-    parser.add_argument('--module', default='raw_exact', choices=['raw_exact', 'strong_selectors', 'sir', 'parity_hasse', 'exact_crt', 'canonical_hull', 'real_closure', 'finite_packets', 'rigid_groupoid', 'finite_kernel', 'owner_action', 'owner_master', 'joint_owner', 'acl_owner_geometry', 'finite_lift', 'mi_geometry', 'owner_transversal', 'safe_readings', 'direct_owner_closure', 'hkn_reservoir', 'terminal_powers'])
+    parser.add_argument('--module', default='raw_exact', choices=['raw_exact', 'strong_selectors', 'sir', 'parity_hasse', 'exact_crt', 'canonical_hull', 'real_closure', 'finite_packets', 'rigid_groupoid', 'finite_kernel', 'owner_action', 'owner_master', 'joint_owner', 'acl_owner_geometry', 'finite_lift', 'mi_geometry', 'owner_transversal', 'safe_readings', 'direct_owner_closure', 'hkn_reservoir', 'terminal_powers', 'full_rows', 'profile_helly'])
     args = parser.parse_args()
     directory = Path('formalization') / args.module
     module = json.loads((ROOT / directory / 'module.json').read_text())

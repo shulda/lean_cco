@@ -1,0 +1,1500 @@
+{
+  "schema_version": 1,
+  "id": "full_rows",
+  "index_title": "One fixed full-row R07 decoder and rooted packet controls",
+  "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+  "status": "HUMAN_EXPANDED_NOT_LEAN",
+  "scope": "Preparation for OTHER Lean projects. Expand the complete fixed-universe R07 decoder, exact simultaneous row compatibility, canonical PC/naturality, all legal lift automorphisms, global thin translations, recorded-clique zeroing, invariant packet trim and full-support language readout. The HKN reservoir is expanded in hkn_reservoir with explicit published HKN providers and a pending local Lean encoding bridge. There is no remaining unexpanded local constructor import. Rectangular readings are expanded in safe_readings; packet collision and the full-owner transversal are expanded in owner_transversal. This is not a proof of the normalized relative MI theorem, safe all-row constructor or global EPPA.",
+  "scope_vocabulary": [
+    "generic_finite",
+    "actual_source",
+    "finite_action",
+    "diagnostic"
+  ],
+  "scope_explanation": "statement and proof. Generic row arithmetic, finite PC and orbit-trim branches do not inherit the actual countable-source or HKN assumptions.",
+  "control_script": "tools/check_full_rows_controls.py",
+  "assumptions": [
+    {
+      "id": "A01",
+      "name": "Actual standing source",
+      "statement": "Q is a nonempty countable transitive homogeneous structure in a FINITE complete symmetric binary language, with actual equality-inclusive RAW orbitals and semantic homomorphic CCO. Actual triangle fullness is supplied by the existing RAW provider. Countability is retained in that packaged specialization, not imposed on abstract finite claims."
+    },
+    {
+      "id": "A02",
+      "name": "Actual residual thin-packet setting",
+      "statement": "For the actual R07 instance Q is infinite and has no nonidentity finite-class exact equivalence (as in the retained residual source context). F is the greatest finite-class invariant equivalence, its atoms are thin, G is the actual finite regular elementary abelian 2-group of thin translations, E is the actual unique minimal infinite exact direction and R_E=F. Work over N=pi_E^{-1}(B). Relative acl, named-owner SAP/transversal and injective packet separation are named upstream conclusions, not extra unnamed facts or fresh axioms."
+    },
+    {
+      "id": "A03",
+      "name": "Actual full fine-owner set and language action",
+      "statement": "B is a fixed finite G-invariant set of ACTUAL E-owner labels, and Gamma<=Aut(B) consists of genuine quotient automorphisms fixing literal original fine-colour names. Gamma contains the induced diagonal thin-owner image rho(G). That action need not be faithful or free. Every source request retains its ENTIRE prescribed language component, including empty real domain; the full nonempty source A is packet-closed."
+    },
+    {
+      "id": "A04",
+      "name": "Abstract finite row data",
+      "statement": "I is finite, G is a finite elementary abelian 2-group, R is a symmetric irreflexive recorded-pair graph on I. A structural packet map has sigma in Sym(I), b_i in G and s(i,z)=(sigma i,z+b_i). When owner or record preservation is asserted, supply the typed owners beta_i, commuting G/Gamma actions with beta_(sigma i)=b_i gamma(beta_i), and an actual record-preserving structural s. Neither equation on owners nor owner-stabilizer cosets determine the real b_i."
+    },
+    {
+      "id": "A05",
+      "name": "Finite typed triangle algebra for PC",
+      "statement": "Each ordered endpoint type has a finite palette, converse is bijective, and strong product is monotone in both arguments with triangle semantics. Original exact menus include full palettes and singletons, are closed under nonempty meets/products, and all genuine endpoint switches/pure language permutations bijectively preserve typed triangle witnesses, intersection and converse. The actual exact-menu closure is I03; abstract greatestness uses only finite monotone contraction. No PC-equals-global-spectrum claim is required."
+    },
+    {
+      "id": "A06",
+      "name": "Independent finite regular-packet action for trim",
+      "statement": "D0 is any finite complete original-language structure, F is a K-invariant packet equivalence, and G<=K<=Aut(D0) acts regularly on EVERY actual F-packet and preserves each packet setwise. A0 is a fixed nonempty subset. For the image formula pi:D0->B is K-equivariant. No CCO, source infinitude, EPPA, centrality, thin action on owners or full Aut(D0) equality is assumed."
+    },
+    {
+      "id": "A07",
+      "name": "Independent full-support semilinear group",
+      "statement": "U is a finite owner-label set, Gamma_tilde<=Sym(U), D0 realizes EVERY label in U, and semilinear automorphisms are pairs (gamma,alpha) satisfying own(alpha v)=gamma own(v) and preserving literal original fine colours. K is their underlying permutation IMAGE. Do not identify K with FULL Aut(D0), and do not assume that a later trim retains U support."
+    }
+  ],
+  "imports": [
+    {
+      "id": "I01",
+      "name": "One fixed completable structural HKN reservoir",
+      "source_label": "thm:completable-reservoir",
+      "statement": "For the fixed complete nonempty full-packet source A and ALL required compatible Gamma requests, supply ONE finite partial reservoir B0. Its packets are literal regular G-packets, every recorded pair has a complete non-F fine matrix and every other pair is a hole. B0 has one injective completion C0 in N fixing A, all requests extend structurally, and irreducible faithfulness is supplied for later consumers. No arbitrary completion is asserted invariant.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01",
+        "A02",
+        "A03"
+      ],
+      "provider_module": "hkn_reservoir",
+      "provider_claims": [
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31"
+      ]
+    },
+    {
+      "id": "I02",
+      "name": "Injective separation of packet collisions",
+      "source_label": "lem:packet-collision",
+      "statement": "A finite literal packet diagram with complete non-F recorded matrices and an owner-preserving packetwise injective homomorphism into N can be injectivized preserving all records and fixing a protected complete packet base. The base may be empty. This theorem uses relative closure/avoidance and must be proved, not replaced by arbitrary pointwise cloning.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01",
+        "A02",
+        "A03"
+      ],
+      "provider_module": "owner_transversal",
+      "provider_claims": [
+        "C27",
+        "C28",
+        "C29"
+      ]
+    },
+    {
+      "id": "I03",
+      "name": "Original exact strong-menu calculus",
+      "source_label": "lem:typed-exact-products",
+      "statement": "Nonempty original strong exact menus are closed under strong products and nonempty-result meets. For the actual owner transversal the typed source hypotheses are supplied by I04. Reuse C08, without adding equality to a same-sort diversity palette.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "I04"
+      ],
+      "provider_module": "strong_selectors",
+      "provider_claims": [
+        "C08"
+      ]
+    },
+    {
+      "id": "I04",
+      "name": "Actual full-owner primitive transversal and packet inflation",
+      "source_label": "thm:joint-transversal",
+      "statement": "The actual owner-typed transversal consists of origins in pairwise DISTINCT full F-packets; its palettes contain only non-F diversity colours, even for repeated owner labels. It is triangle-defined, SAP and CCO, with the actual pure Gamma action and full G-packet inflation recovering the named-owner age of N. The statement also supplies primitive sorts; this module does not reprove its closure/anchored-completion argument. Its inflation identifies N with the homogeneous named-owner source, allowing a realized finite zero-row source to be aligned with its specified actual copy.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01",
+        "A02",
+        "A03"
+      ],
+      "provider_module": "owner_transversal",
+      "provider_claims": [
+        "C24",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40",
+        "C41",
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46"
+      ]
+    },
+    {
+      "id": "I05",
+      "name": "One joint family of rectangular moving readings",
+      "source_label": "prop:moving-readings",
+      "statement": "Supply h^u_st on EVERY original exact menu: conservative, survivor-hereditary, converse compatible, pure-Gamma covariant, satisfying h^(u+v)_(vs,t)(vD)=v h^u_st(D), and yielding a legal triangle for INDEPENDENT parameters on the three coordinates of every PC triple. Endpoint types move separately. This contract is actually proved upstream from the covariant selector; it is not an independent choice of pair readings. Safe augmented readings can later implement the SAME contract.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "I04",
+        "I06"
+      ],
+      "provider_module": "safe_readings",
+      "provider_claims": [
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40"
+      ]
+    },
+    {
+      "id": "I06",
+      "name": "Actual thin translations and fine matrix law",
+      "source_label": "lem:thin-bottom",
+      "statement": "The actual thin maps form a central elementary abelian 2-group of original automorphisms, act regularly on real F-packets, and translate fine cross atoms by the sum of endpoint shifts. The induced action on owner labels may have a nontrivial stabilizer.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01",
+        "A02"
+      ],
+      "provider_module": "finite_packets",
+      "provider_claims": [
+        "C26",
+        "C27",
+        "C28"
+      ]
+    },
+    {
+      "id": "I07",
+      "name": "Actual RAW triangle-defined source",
+      "source_label": "thm:exact-sorts-source",
+      "statement": "Reuse selected RAW support C24/C28 for triangle fullness and actual source inheritance, including Id as an actual quotient when needed. Prescribed actual owner realizations and packet inflation still require I04; original untyped triangle fullness alone does not restore owner names.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01"
+      ],
+      "provider_module": "raw_exact",
+      "provider_claims": [
+        "C24",
+        "C28"
+      ]
+    }
+  ],
+  "definitions": [
+    {
+      "id": "D01",
+      "name": "Structural packets and full real offsets",
+      "statement": "Structural vertices are (i,z); b_i is the unique coordinate of s(i,0) in the packet sigma i. Record graph R concerns distinct STRUCTURAL indices.",
+      "source": {
+        "file": "sections/full_rows_pc_decoder.tex",
+        "anchor": "\\label{eq:R07-structural}"
+      },
+      "notes": "N01",
+      "depends_on": [
+        "A04"
+      ]
+    },
+    {
+      "id": "D02",
+      "name": "Actual full-row packets",
+      "statement": "Rows are ALL functions f:I->G; actual packets are p=(i,f), each with real vertices (i,f,z). Structural projection q forgets f, and the source occupies zero rows.",
+      "source": {
+        "file": "sections/full_rows_pc_decoder.tex",
+        "anchor": "\\label{eq:R07-W}"
+      },
+      "notes": "N02",
+      "depends_on": [
+        "A04"
+      ]
+    },
+    {
+      "id": "D03",
+      "name": "Legal correction and affine lift",
+      "statement": "C:I x I->G is legal iff C_ij=C_ji on DISTINCT UNRECORDED pairs only. alpha_C(i,f,z)=(sigma i,f_prime,z+b_i), f_prime(sigma j)=f(j)+C_ij+b_i.",
+      "source": {
+        "file": "sections/full_rows_pc_decoder.tex",
+        "anchor": "\\label{eq:R07-correction}"
+      },
+      "notes": "N03",
+      "depends_on": [
+        "D01",
+        "D02"
+      ]
+    },
+    {
+      "id": "D04",
+      "name": "Prescribed actual rows",
+      "statement": "T_i is any finite set of full source functions f and r_(i,f) is a full target row at sigma i. A_(i,f)(j)=r_(i,f)(sigma j)+f(j)+b_i; touched means T_i nonempty.",
+      "source": {
+        "file": "sections/full_rows_pc_decoder.tex",
+        "anchor": "\\label{eq:R07-row-compatibility-shift}"
+      },
+      "notes": "N03",
+      "depends_on": [
+        "D03"
+      ]
+    },
+    {
+      "id": "D05",
+      "name": "One initial actual-packet network",
+      "statement": "On distinct p=(i,f),q=(j,k), D0_pq is the recorded singleton if {i,j} in R, otherwise the full typed diversity palette. i=j with f!=k is a HOLE.",
+      "source": {
+        "file": "sections/full_rows_pc_decoder.tex",
+        "anchor": "\\label{eq:R07-initial-domain}"
+      },
+      "notes": "N05",
+      "depends_on": [
+        "D02",
+        "A05"
+      ]
+    },
+    {
+      "id": "D06",
+      "name": "Greatest strong-PC refinement",
+      "statement": "Run contracting updates D_pq<-D_pq intersect(D_pr*D_rq) for all pairwise distinct ACTUAL packets, with converse symmetry. Greatestness is in coordinatewise inclusion below the fixed D0.",
+      "source": {
+        "file": "sections/full_rows_pc_decoder.tex",
+        "anchor": "\\label{eq:R07-PC}"
+      },
+      "notes": "N05",
+      "depends_on": [
+        "D05"
+      ]
+    },
+    {
+      "id": "D07",
+      "name": "Independent origin gauge",
+      "statement": "For delta_p in G change types to delta_p s_p and transport edge menus by delta_p+delta_q. A pure language action instead fixes raw fine names.",
+      "source": {
+        "file": "sections/full_rows_pc_decoder.tex",
+        "anchor": "\\label{eq:R07-gauge}"
+      },
+      "notes": "N06",
+      "depends_on": [
+        "D06",
+        "A05"
+      ]
+    },
+    {
+      "id": "D08",
+      "name": "Vertex domains",
+      "statement": "For x=(i,f,z), y=(j,k,w) in DISTINCT actual packets, D_xy=(z+w)D_pq at types (z beta_i,w beta_j), which must be kept separately.",
+      "source": {
+        "file": "sections/full_rows_pc_decoder.tex",
+        "anchor": "\\label{eq:R07-moving-domain}"
+      },
+      "notes": "N07",
+      "depends_on": [
+        "D06",
+        "A04"
+      ]
+    },
+    {
+      "id": "D09",
+      "name": "Effective row and reading parameter",
+      "statement": "chi_x(j)=z+f(j); u(x,y)=chi_x(j)+chi_y(i), including i=j for distinct actual packets.",
+      "source": {
+        "file": "sections/full_rows_pc_decoder.tex",
+        "anchor": "\\label{eq:R07-effective}"
+      },
+      "notes": "N08",
+      "depends_on": [
+        "D02"
+      ]
+    },
+    {
+      "id": "D10",
+      "name": "Fixed fine decoder",
+      "statement": "Different actual packets get d(x,y)=h^u(x,y)_own(x),own(y)(D_xy); one packet keeps its original thin colours. Universe, menus and this colouring precede every chosen correction matrix.",
+      "source": {
+        "file": "sections/full_rows_pc_decoder.tex",
+        "anchor": "\\label{eq:R07-decoding}"
+      },
+      "notes": "N08",
+      "depends_on": [
+        "D08",
+        "D09",
+        "I05",
+        "C14"
+      ]
+    },
+    {
+      "id": "D11",
+      "name": "Invariant packet-orbit trim",
+      "statement": "F[A0] is the full packet union meeting A0 and D=union_(beta in K) beta(F[A0]). This is an induced substructure, not a choice of new cross colours.",
+      "source": {
+        "file": "sections/rooted_mi/02_packet_orbit_trim_and_owner_language.tex",
+        "anchor": "\\label{eq:acf-packet-orbit-trim}"
+      },
+      "notes": "N12",
+      "depends_on": [
+        "A06"
+      ]
+    },
+    {
+      "id": "D12",
+      "name": "Forgetful semilinear image",
+      "statement": "K is the image of the semilinear group under (gamma,alpha)->alpha, not the full untyped automorphism group. Recover gamma only when every U label is realized.",
+      "source": {
+        "file": "sections/rooted_mi/02_packet_orbit_trim_and_owner_language.tex",
+        "anchor": "\\label{eq:acf-full-owner-language-faithfulness}"
+      },
+      "notes": "N13",
+      "depends_on": [
+        "A07"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "name": "Real structural coordinates and unique offsets",
+      "statement": "Every t_g-equivariant structural packet permutation has a unique sigma and real b_i; owner compatibility is beta_(sigma i)=b_i gamma(beta_i). This equation alone can fail to determine b_i when owner stabilizers are nontrivial.",
+      "depends_on": [
+        "A04",
+        "D01"
+      ],
+      "notes": "N01",
+      "source_labels": [
+        "thm:R07-relative-eppa"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "generic_finite"
+    },
+    {
+      "id": "C02",
+      "name": "Finite full-row carrier and literal packet structure",
+      "statement": "W=I x G^I x G, with cardinality |I||G|^(|I|+1), disjoint actual packets (i,f), and q(i,f,z)=(i,z). I may be empty in this abstract assertion; actual source A is nonempty.",
+      "depends_on": [
+        "D02"
+      ],
+      "notes": "N02",
+      "source_labels": [
+        "thm:R07-relative-eppa"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "generic_finite"
+    },
+    {
+      "id": "C03",
+      "name": "Necessity of the exact simultaneous row criterion",
+      "statement": "If ONE LEGAL C sends every (i,f) to (sigma i,r_(i,f)), then for each touched i all A_(i,f) coincide as FULL functions A_i, and A_i(j)=A_j(i) on every unrecorded distinct pair of touched indices.",
+      "depends_on": [
+        "D04"
+      ],
+      "notes": "N03",
+      "source_labels": [
+        "lem:R07-row-compatibility-iff"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "generic_finite"
+    },
+    {
+      "id": "C04",
+      "name": "Sufficiency by completing all constrained matrix entries",
+      "statement": "The two C03 conditions are sufficient: prescribe every touched row as A_i, reflect its entries at untouched endpoints of unrecorded edges, set both untouched unrecorded entries zero, and fill remaining free entries. No diagonal or recorded-pair equation is introduced.",
+      "depends_on": [
+        "C03"
+      ],
+      "notes": "N03",
+      "source_labels": [
+        "lem:R07-row-compatibility-iff"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "generic_finite"
+    },
+    {
+      "id": "C05",
+      "name": "Sharp finite failures of independent zeroing",
+      "statement": "Two distinct rows over ONE index cannot both map to zero under a common affine row shift; distinct touched unrecorded indices with forced opposite entries 1 and 0 also obstruct a common C. Recorded clique and one-row-per-index hypotheses remove these obstructions.",
+      "depends_on": [
+        "D04",
+        "C03",
+        "C04"
+      ],
+      "notes": "N03",
+      "source_labels": [
+        "lem:R07-row-compatibility-iff"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "diagnostic"
+    },
+    {
+      "id": "C06",
+      "name": "Every affine full-row lift is a permutation",
+      "statement": "For every structural s and matrix C, the lift is bijective, commutes with all t_g and has the supplied Gamma owner component. Invert the coordinate permutation and translations; no legality constraint is needed for these conclusions.",
+      "depends_on": [
+        "C01",
+        "C02",
+        "D03"
+      ],
+      "notes": "N04",
+      "source_labels": [
+        "lem:R07-zero-row"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "generic_finite"
+    },
+    {
+      "id": "C07",
+      "name": "Every structural record survives every correction",
+      "statement": "q alpha_C=s q and records are exactly pullbacks of recorded structural matrices; hence every such record, including the internal thin packet structure, is preserved for any C. This is not yet preservation of decoded holes.",
+      "depends_on": [
+        "C06"
+      ],
+      "notes": "N04",
+      "source_labels": [
+        "lem:R07-zero-row"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "generic_finite"
+    },
+    {
+      "id": "C08",
+      "name": "Simultaneous zero-row source extensions including empties",
+      "statement": "If s extends a partial map of the complete zero-row source, each touched index requests zero->zero and forces C_ij=b_i for all j. Touched indices are a recorded clique, so C04 supplies one legal C; no touched row for the empty domain.",
+      "depends_on": [
+        "C04",
+        "C06",
+        "C07"
+      ],
+      "notes": "N04",
+      "source_labels": [
+        "lem:R07-zero-row"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "generic_finite"
+    },
+    {
+      "id": "C09",
+      "name": "Simultaneous zeroing of a recorded clique of actual rows",
+      "statement": "For distinct recorded-clique indices J with ONE actual row f_i at each, choose C_ij=f_i(j)+b_i on each touched row. C04 extends it legally; the affine lift sends these full packets to zero rows over sigma i. The source automorphism conclusion is assembled separately with C25 in the export map. No requirement to fix an unrelated zero-row source is made.",
+      "depends_on": [
+        "C04",
+        "C06"
+      ],
+      "notes": "N11",
+      "source_labels": [
+        "lem:acf-recorded-row-zeroing"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "generic_finite"
+    },
+    {
+      "id": "C10",
+      "name": "Injectivizing the row-forgetting completion map",
+      "statement": "The map W#->B0->C0 subset N is owner-preserving, commutes with all t_g, respects records and is injective within each actual packet; it is an induced embedding on the protected zero-row source A. Apply I02 to separate all row clones while preserving A and records.",
+      "depends_on": [
+        "A01",
+        "A02",
+        "A03",
+        "C02",
+        "I01",
+        "I02"
+      ],
+      "notes": "N02",
+      "source_labels": [
+        "lem:R07-W-completable"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "actual_source"
+    },
+    {
+      "id": "C11",
+      "name": "Injective origin certificate for the actual initial domains",
+      "statement": "Restrict the C10 completion to one origin of each actual packet. Its images occupy distinct F-packets, so I04 gives an injective typed-transversal completion. Its actual atomic colours lie in D05 and form legal triangles. The certificate need not be invariant under structural maps.",
+      "depends_on": [
+        "C10",
+        "D05",
+        "I04"
+      ],
+      "notes": "N02",
+      "source_labels": [
+        "lem:R07-W-completable"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "actual_source"
+    },
+    {
+      "id": "C12",
+      "name": "Every supplied atomic solution survives each PC update",
+      "statement": "For ANY finite initial network with a legal atomic assignment on all triples, induction keeps that assignment in every domain under every PC update. This is an implication from a supplied assignment, not a construction of it or equality of PC with all completions.",
+      "depends_on": [
+        "A05",
+        "D06"
+      ],
+      "notes": "N05",
+      "source_labels": [
+        "lem:R07-PC"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "generic_finite"
+    },
+    {
+      "id": "C13",
+      "name": "Finite termination and greatestness independent of fair order",
+      "statement": "Finite contracting updates stabilize under a fair schedule. Any common fixed refinement E<=D0 lies below every intermediate network by monotonicity, hence below the terminal network. Thus the final family is the greatest fixed refinement and independent of fair order, even before proving nonemptiness.",
+      "depends_on": [
+        "A05",
+        "D06"
+      ],
+      "notes": "N05",
+      "source_labels": [
+        "lem:R07-PC"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "generic_finite"
+    },
+    {
+      "id": "C14",
+      "name": "Actual terminal nonempty exact menus and unchanged singletons",
+      "statement": "C11 supplies the solution for C12, so no actual update becomes empty. I03 preserves exactness through products/nonempty meets. C13 yields PC on every distinct actual-packet triple; every original singleton is unchanged.",
+      "depends_on": [
+        "C11",
+        "C12",
+        "C13",
+        "I03"
+      ],
+      "notes": "N05",
+      "source_labels": [
+        "lem:R07-PC"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "actual_source"
+    },
+    {
+      "id": "C15",
+      "name": "Typed gauge product identity",
+      "statement": "Independent switches at p,r,q send A_pr*B_rq to ((delta_p+delta_r)A_pr)*((delta_r+delta_q)B_rq)=(delta_p+delta_q)(A_pr*B_rq), with endpoint types moved individually. Triangle-witness transport is bijective and the intermediate shift cancels. Converse/intersection also commute.",
+      "depends_on": [
+        "A05",
+        "D07"
+      ],
+      "notes": "N06",
+      "source_labels": [
+        "lem:R07-PC-gauge"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "generic_finite"
+    },
+    {
+      "id": "C16",
+      "name": "Gauge naturality of the greatest PC family",
+      "statement": "C15 conjugates every update and transports the initial network, so the greatest fixed refinement is transported by every independent endpoint gauge. This does not require a chosen completion certificate to be invariant.",
+      "depends_on": [
+        "C13",
+        "C15"
+      ],
+      "notes": "N06",
+      "source_labels": [
+        "lem:R07-PC-gauge"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "generic_finite"
+    },
+    {
+      "id": "C17",
+      "name": "Pure owner-language naturality of PC",
+      "statement": "Every pure Gamma type permutation preserves typed products/intersections/converse while fixing literal raw colour names, so it commutes with PC and its greatest fixed refinement. It is distinct from a gauge changing raw atoms.",
+      "depends_on": [
+        "A05",
+        "C13"
+      ],
+      "notes": "N06",
+      "source_labels": [
+        "lem:R07-PC-gauge"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "generic_finite"
+    },
+    {
+      "id": "C18",
+      "name": "Vertex-domain covariance under arbitrary full-row lifts",
+      "statement": "The initial networks satisfy D0_(pi_C p,pi_C q)=(b_i+b_j)gamma(D0_pq), for holes as well as records. C16/C17 give the same for terminal domains; translating vertices by z+b_i,w+b_j cancels the offsets and yields D_(alpha x,alpha y)=D_xy as raw sets, with types moved by gamma.",
+      "depends_on": [
+        "D08",
+        "C06",
+        "C07",
+        "C16",
+        "C17"
+      ],
+      "notes": "N07",
+      "source_labels": [
+        "lem:R07-domain-covariance"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "generic_finite"
+    },
+    {
+      "id": "C19",
+      "name": "Effective rows and symmetric reading parameter",
+      "statement": "u(x,y)=u(y,x). Under a single vertex translation t_g at one endpoint, the parameter changes by g, even for different actual packets above the same structural index.",
+      "depends_on": [
+        "D09"
+      ],
+      "notes": "N08",
+      "source_labels": [
+        "thm:R07-relative-eppa"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "generic_finite"
+    },
+    {
+      "id": "C20",
+      "name": "Decoder symmetry and full cross-matrix thin law",
+      "statement": "Converse compatibility of the SAME reading family makes decoded colours symmetric. Switching plus C19 yields d(t_g x,y)=g d(x,y) and the analogous second-endpoint law, with proper moved owner types. All full cross matrices are recovered from origin colours.",
+      "depends_on": [
+        "D10",
+        "C19",
+        "I05"
+      ],
+      "notes": "N08",
+      "source_labels": [
+        "thm:R07-relative-eppa"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "actual_source"
+    },
+    {
+      "id": "C21",
+      "name": "Legal three-actual-packet triangles",
+      "statement": "Gauge transport of the C14 PC family gives the PC triple at any three chosen vertices in distinct actual packets. Independent rectangular readings in I05 make the THREE independently computed u-values a legal fine-colour triangle.",
+      "depends_on": [
+        "C14",
+        "C16",
+        "D10",
+        "I05"
+      ],
+      "notes": "N08",
+      "source_labels": [
+        "thm:R07-relative-eppa"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "actual_source"
+    },
+    {
+      "id": "C22",
+      "name": "All remaining triangle cases",
+      "statement": "For exactly two actual packets, C20 is the triangle law forced by the thin edge between two vertices in one packet. One-packet triangles are original regular packet triangles. Structural indices need not differ.",
+      "depends_on": [
+        "C20",
+        "I06"
+      ],
+      "notes": "N08",
+      "source_labels": [
+        "thm:R07-relative-eppa"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "actual_source"
+    },
+    {
+      "id": "C23",
+      "name": "Actual owner-typed age membership and induced zero-row source",
+      "statement": "The decoded origin diagram is triangle-legal in the actual transversal, so I04 realizes it in distinct packets and its inflation recovers every decoded matrix by C20. I07 supplies original triangle fullness; owner realization still uses I04. C14/conservativity retain all source singleton matrices and original internal packets. Thus the fixed D0 belongs to Age(N) and contains A induced.",
+      "depends_on": [
+        "C20",
+        "C21",
+        "C22",
+        "C14",
+        "I04",
+        "I07"
+      ],
+      "notes": "N08",
+      "source_labels": [
+        "thm:R07-relative-eppa"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "actual_source"
+    },
+    {
+      "id": "C24",
+      "name": "Row covariance for every correction matrix",
+      "statement": "chi_(alpha_C x)(sigma j)=chi_x(j)+C_ij, hence u(alpha_C x,alpha_C y)=u(x,y)+C_ij+C_ji. For same structural index i=j the extra sum is 2 C_ii=0 without any diagonal constraint.",
+      "depends_on": [
+        "C06",
+        "D09"
+      ],
+      "notes": "N09",
+      "source_labels": [
+        "thm:R07-relative-eppa"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "generic_finite"
+    },
+    {
+      "id": "C25",
+      "name": "Every legal lift preserves this same decoded fine colouring",
+      "statement": "C18 preserves raw domains and changes types by gamma. For distinct unrecorded structural indices legality makes the C24 sum zero; for equal indices it cancels automatically; for recorded pairs conservativity on singleton domains makes the reading independent of u. Pure-Gamma covariance and thin preservation then make alpha_C an automorphism of the fixed complete D0 for EVERY structural s and EVERY legal C.",
+      "depends_on": [
+        "C23",
+        "C18",
+        "C24",
+        "I05",
+        "C07"
+      ],
+      "notes": "N09",
+      "source_labels": [
+        "thm:R07-relative-eppa"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "actual_source"
+    },
+    {
+      "id": "C26",
+      "name": "One finite relative witness for all prescribed source requests",
+      "statement": "Choose B0, W, a completion certificate, the greatest PC family and decoder BEFORE choosing requests-specific matrices. For each prescribed structural extension use C08, then C25. Every request, including empty-domain language permutations, extends with the ENTIRE specified Gamma component in ONE finite witness of size C02. No coherent assignment, section or preservation of an arbitrary completion is asserted.",
+      "depends_on": [
+        "C25",
+        "C08",
+        "I01",
+        "C02"
+      ],
+      "notes": "N09",
+      "source_labels": [
+        "thm:R07-relative-eppa"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "actual_source"
+    },
+    {
+      "id": "C27",
+      "name": "Global actual diagonal thin action survives unchanged",
+      "statement": "For each g choose structural sigma=Id,b_i=g and the constant matrix C_ij=g. It is legal and its affine row update is f_prime=f. C25 therefore gives the actual map (i,f,z)->(i,f,z+g) as a decoded automorphism with owner action rho(g), regular on every real packet, even when rho is nonfaithful.",
+      "depends_on": [
+        "C25",
+        "I06",
+        "A03"
+      ],
+      "notes": "N10",
+      "source_labels": [
+        "lem:R07-global-diagonal-thin"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "actual_source"
+    },
+    {
+      "id": "C28",
+      "name": "Generic invariant full-packet orbit trim",
+      "statement": "Under A06 the union D=K F[A0] is finite, induced, full-F-closed, contains F[A0] and is K-invariant. Every K element restricts to an automorphism of D. No transitivity on all D0, full Aut(D0) equality, or source-level geometry is needed.",
+      "depends_on": [
+        "A06",
+        "D11"
+      ],
+      "notes": "N12",
+      "source_labels": [
+        "lem:acf-invariant-packet-orbit-trim"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "finite_action"
+    },
+    {
+      "id": "C29",
+      "name": "Generic selected-root correction with one global translation",
+      "statement": "If nonempty Z subset D is in one F-packet, some beta inverse in K sends it into F[A0]. More generally GIVEN any delta in K carrying Z into F[A0], choose a in A0 in the packet of delta(z), then one g in G sends delta(z) to a and preserves ALL F[A0]. The restriction of g delta gives whole-clique transport plus selected root in A0.",
+      "depends_on": [
+        "C28"
+      ],
+      "notes": "N12",
+      "source_labels": [
+        "lem:acf-invariant-packet-orbit-trim"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "finite_action"
+    },
+    {
+      "id": "C30",
+      "name": "Exact owner image after trim",
+      "statement": "For any equivariant pi in A06, pi(D)=K pi(F[A0]). In particular K pi(A0)=B implies pi(D)=B. This does not imply full support for a larger fine-owner set U.",
+      "depends_on": [
+        "C28"
+      ],
+      "notes": "N12",
+      "source_labels": [
+        "lem:acf-invariant-packet-orbit-trim"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "finite_action"
+    },
+    {
+      "id": "C31",
+      "name": "Full owner support recovers the semilinear language component",
+      "statement": "Under A07 choose one realized v_s for every s in U. If two semilinear pairs have the same alpha, then gamma(s)=own(alpha v_s)=gamma_prime(s) for all s; Gamma_tilde<=Sym(U) makes gamma=gamma_prime. The forgetful homomorphism is an isomorphism ONTO ITS IMAGE K. With unrealized labels this can fail; it does not prove K=Aut(D0).",
+      "depends_on": [
+        "A07",
+        "D12"
+      ],
+      "notes": "N13",
+      "source_labels": [
+        "lem:acf-full-owner-language-faithfulness"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "finite_action"
+    },
+    {
+      "id": "C32",
+      "name": "Onto language action from all empty structural requests",
+      "statement": "Specialize C31 to the fixed decoder containing the full-support zero-row Aplus, and SUPPOSE the chosen reservoir extends EVERY empty-real-domain structural request (empty,gamma) for gamma in Gamma_tilde (not just an unspecified finite sublist). For every gamma in Gamma_tilde its empty-real-domain structural extension and C=0 give, by C25/C26, an automorphism with that language component. Thus K->Gamma_tilde is onto; an equivariant onto U->B with onto Gamma_tilde->Gamma_B gives onto K->Gamma_B. No faithful thin-owner action or section is needed.",
+      "depends_on": [
+        "C31",
+        "C26"
+      ],
+      "notes": "N13",
+      "source_labels": [
+        "lem:acf-full-owner-language-faithfulness"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "actual_source"
+    },
+    {
+      "id": "C33",
+      "name": "Finite controls and their exact scope",
+      "statement": "Finite row/matrix enumeration, lift arithmetic and represented relation-algebra PC controls test sharp constraints, same-index cancellation and greatestness. They do not certify infinite CCO, owner-typed closure, HKN applicability, the upstream selector, safety, normalized MI or global EPPA.",
+      "depends_on": [
+        "A04",
+        "A05"
+      ],
+      "notes": "N10",
+      "source_labels": [
+        "thm:R07-relative-eppa"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED",
+      "scope": "diagnostic"
+    }
+  ],
+  "exports": [
+    {
+      "source_label": "thm:R07-relative-eppa",
+      "claims": [
+        "C02",
+        "C06",
+        "C07",
+        "C08",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26"
+      ]
+    },
+    {
+      "source_label": "lem:R07-W-completable",
+      "claims": [
+        "C10",
+        "C11"
+      ]
+    },
+    {
+      "source_label": "lem:R07-row-compatibility-iff",
+      "claims": [
+        "C03",
+        "C04"
+      ]
+    },
+    {
+      "source_label": "lem:R07-zero-row",
+      "claims": [
+        "C06",
+        "C07",
+        "C08"
+      ]
+    },
+    {
+      "source_label": "lem:R07-PC",
+      "claims": [
+        "C12",
+        "C13",
+        "C14"
+      ]
+    },
+    {
+      "source_label": "lem:R07-PC-gauge",
+      "claims": [
+        "C15",
+        "C16",
+        "C17"
+      ]
+    },
+    {
+      "source_label": "lem:R07-domain-covariance",
+      "claims": [
+        "C18"
+      ]
+    },
+    {
+      "source_label": "lem:R07-global-diagonal-thin",
+      "claims": [
+        "C27"
+      ]
+    },
+    {
+      "source_label": "lem:acf-recorded-row-zeroing",
+      "claims": [
+        "C09",
+        "C25"
+      ]
+    },
+    {
+      "source_label": "lem:acf-invariant-packet-orbit-trim",
+      "claims": [
+        "C28",
+        "C29",
+        "C30"
+      ]
+    },
+    {
+      "source_label": "lem:acf-full-owner-language-faithfulness",
+      "claims": [
+        "C31",
+        "C32"
+      ]
+    }
+  ],
+  "source_result_files": [
+    "sections/full_rows_pc_decoder.tex",
+    "sections/rooted_mi/02_packet_orbit_trim_and_owner_language.tex"
+  ],
+  "additional_result_exports": [
+    "lem:acf-recorded-row-zeroing"
+  ],
+  "auxiliary_exports": [
+    {
+      "source_label": "eq:R07-structural",
+      "source": {
+        "file": "sections/full_rows_pc_decoder.tex",
+        "anchor": "\\label{eq:R07-structural}"
+      },
+      "claims": [
+        "C01"
+      ]
+    },
+    {
+      "source_label": "eq:R07-W",
+      "source": {
+        "file": "sections/full_rows_pc_decoder.tex",
+        "anchor": "\\label{eq:R07-W}"
+      },
+      "claims": [
+        "C02"
+      ]
+    },
+    {
+      "source_label": "eq:R07-size",
+      "source": {
+        "file": "sections/full_rows_pc_decoder.tex",
+        "anchor": "\\label{eq:R07-size}"
+      },
+      "claims": [
+        "C02"
+      ]
+    },
+    {
+      "source_label": "eq:R07-correction",
+      "source": {
+        "file": "sections/full_rows_pc_decoder.tex",
+        "anchor": "\\label{eq:R07-correction}"
+      },
+      "claims": [
+        "C03",
+        "C04"
+      ]
+    },
+    {
+      "source_label": "eq:R07-lift",
+      "source": {
+        "file": "sections/full_rows_pc_decoder.tex",
+        "anchor": "\\label{eq:R07-lift}"
+      },
+      "claims": [
+        "C06"
+      ]
+    },
+    {
+      "source_label": "eq:R07-row-compatibility-shift",
+      "source": {
+        "file": "sections/full_rows_pc_decoder.tex",
+        "anchor": "\\label{eq:R07-row-compatibility-shift}"
+      },
+      "claims": [
+        "C03",
+        "C04"
+      ]
+    },
+    {
+      "source_label": "eq:R07-row-compatibility-edge",
+      "source": {
+        "file": "sections/full_rows_pc_decoder.tex",
+        "anchor": "\\label{eq:R07-row-compatibility-edge}"
+      },
+      "claims": [
+        "C03",
+        "C04"
+      ]
+    },
+    {
+      "source_label": "eq:R07-PC",
+      "source": {
+        "file": "sections/full_rows_pc_decoder.tex",
+        "anchor": "\\label{eq:R07-PC}"
+      },
+      "claims": [
+        "C12",
+        "C13",
+        "C14"
+      ]
+    },
+    {
+      "source_label": "eq:R07-gauge-product",
+      "source": {
+        "file": "sections/full_rows_pc_decoder.tex",
+        "anchor": "\\label{eq:R07-gauge-product}"
+      },
+      "claims": [
+        "C15"
+      ]
+    },
+    {
+      "source_label": "eq:R07-raw-domain-invariance",
+      "source": {
+        "file": "sections/full_rows_pc_decoder.tex",
+        "anchor": "\\label{eq:R07-raw-domain-invariance}"
+      },
+      "claims": [
+        "C18"
+      ]
+    },
+    {
+      "source_label": "eq:R07-effective",
+      "source": {
+        "file": "sections/full_rows_pc_decoder.tex",
+        "anchor": "\\label{eq:R07-effective}"
+      },
+      "claims": [
+        "C19"
+      ]
+    },
+    {
+      "source_label": "eq:R07-reading-parameter",
+      "source": {
+        "file": "sections/full_rows_pc_decoder.tex",
+        "anchor": "\\label{eq:R07-reading-parameter}"
+      },
+      "claims": [
+        "C19"
+      ]
+    },
+    {
+      "source_label": "eq:R07-row-covariance",
+      "source": {
+        "file": "sections/full_rows_pc_decoder.tex",
+        "anchor": "\\label{eq:R07-row-covariance}"
+      },
+      "claims": [
+        "C24"
+      ]
+    },
+    {
+      "source_label": "eq:R07-global-diagonal-thin",
+      "source": {
+        "file": "sections/full_rows_pc_decoder.tex",
+        "anchor": "\\label{eq:R07-global-diagonal-thin}"
+      },
+      "claims": [
+        "C27"
+      ]
+    },
+    {
+      "source_label": "eq:acf-packet-orbit-trim",
+      "source": {
+        "file": "sections/rooted_mi/02_packet_orbit_trim_and_owner_language.tex",
+        "anchor": "\\label{eq:acf-packet-orbit-trim}"
+      },
+      "claims": [
+        "C28"
+      ]
+    },
+    {
+      "source_label": "eq:acf-packet-orbit-root",
+      "source": {
+        "file": "sections/rooted_mi/02_packet_orbit_trim_and_owner_language.tex",
+        "anchor": "\\label{eq:acf-packet-orbit-root}"
+      },
+      "claims": [
+        "C29"
+      ]
+    },
+    {
+      "source_label": "eq:acf-full-owner-language-faithfulness",
+      "source": {
+        "file": "sections/rooted_mi/02_packet_orbit_trim_and_owner_language.tex",
+        "anchor": "\\label{eq:acf-full-owner-language-faithfulness}"
+      },
+      "claims": [
+        "C31",
+        "C32"
+      ]
+    }
+  ],
+  "source_files": [
+    {
+      "file": "sections/exact_foundations/03_joint_exact_sort_lifting.tex",
+      "git_blob": "394e0db063a476c5c069384b3d3fa2ffd3c7471d",
+      "bytes": 10454
+    },
+    {
+      "file": "sections/finite_packets.tex",
+      "git_blob": "dd3e608f03e7c5b1b1854a45de462859f8355143",
+      "bytes": 19875
+    },
+    {
+      "file": "sections/full_rows_pc_decoder.tex",
+      "git_blob": "4142c3912669eda40fb5929be81fd9f9d8c6aa4d",
+      "bytes": 25695
+    },
+    {
+      "file": "sections/hkn_packet_reservoir.tex",
+      "git_blob": "cdef46b3ee64bcac4513f5406a20593b758dc58d",
+      "bytes": 25522
+    },
+    {
+      "file": "sections/owner_covariant_readings.tex",
+      "git_blob": "486cc2bdb93734c3f255e7be260d47f4e7986d49",
+      "bytes": 14428
+    },
+    {
+      "file": "sections/owner_transversal_direct.tex",
+      "git_blob": "3c0effbc63c31000bbe3d88be59616b67efd7364",
+      "bytes": 13019
+    },
+    {
+      "file": "sections/rooted_mi/01_packet_zeroing_and_multipacket_root.tex",
+      "git_blob": "d62415398565746e882f3cfc5b6c1926b5cc7d54",
+      "bytes": 5362
+    },
+    {
+      "file": "sections/rooted_mi/02_packet_orbit_trim_and_owner_language.tex",
+      "git_blob": "df7031076b312a6bd80954e319f3ce45a916550b",
+      "bytes": 4686
+    },
+    {
+      "file": "sections/typed_strong_domains.tex",
+      "git_blob": "75d584069ce802c62d66104a852a3649fc082f1d",
+      "bytes": 21685
+    }
+  ],
+  "dependency_firewalls": [
+    {
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C12",
+        "C13",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C24",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C33"
+      ],
+      "forbid": [
+        "A01",
+        "A02",
+        "A03",
+        "I01",
+        "I02",
+        "I03",
+        "I04",
+        "I05",
+        "I06",
+        "I07"
+      ]
+    },
+    {
+      "claims": [
+        "C28",
+        "C29",
+        "C30"
+      ],
+      "forbid": [
+        "A04",
+        "A05",
+        "A07",
+        "C25",
+        "C27",
+        "C31"
+      ]
+    },
+    {
+      "claims": [
+        "C31"
+      ],
+      "forbid": [
+        "A06",
+        "C26",
+        "C27",
+        "C28"
+      ]
+    },
+    {
+      "claims": [
+        "C10",
+        "C11",
+        "C14"
+      ],
+      "forbid": [
+        "I05",
+        "C25",
+        "C26"
+      ]
+    },
+    {
+      "claims": [
+        "C24"
+      ],
+      "forbid": [
+        "C14",
+        "I05"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "T01",
+      "name": "Actual rows, legal matrices and simultaneous constraints",
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Prove RC1/RC2 iff for full functions, including conflicting multiple rows, untouched/diagonal entries and empty requests. Separate bijections/record preservation from fine decoder automorphisms."
+    },
+    {
+      "id": "T02",
+      "name": "Completion certificate and greatest typed PC family",
+      "claims": [
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18"
+      ],
+      "depends_on": [
+        "T01"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Discharge named packet-collision/completable-reservoir/owner-transversal contracts using proved upstream APIs before claiming actual exports. Prove solution survival, greatestness and gauge/pure naturality without claiming PC equals global spectra."
+    },
+    {
+      "id": "T03",
+      "name": "One decoder and every universal lift",
+      "claims": [
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27"
+      ],
+      "depends_on": [
+        "T01",
+        "T02"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Use the ENTIRE joint rectangular reading contract and actual typed age to prove legality and all permitted automorphisms before choosing request matrices. Include same-structural-index distinct actual packets and constant diagonal thin translation."
+    },
+    {
+      "id": "T04",
+      "name": "Generic orbit trim and full-support semilinear readout",
+      "claims": [
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33"
+      ],
+      "depends_on": [
+        "T03"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Keep generic trim/support independent of source imports, preserve a selected original root by ONE global group element and assert isomorphism only onto K image. Empty structural requests give onto action on full-support D0; trimming need retain only the stated owner image."
+    }
+  ],
+  "overview_mermaid": [
+    "flowchart TD",
+    "  R[\"Full rows and simultaneous constraints\"] --> L[\"Every permitted affine lift\"]",
+    "  C[\"Explicit completion providers\"] --> P[\"Greatest typed PC and naturality\"]",
+    "  P --> D[\"One fixed fine decoder\"]",
+    "  L --> D",
+    "  H[\"Explicit rectangular readings\"] --> D",
+    "  D --> G[\"Global thin action and onto language\"]",
+    "  T[\"Generic packet orbit trim\"] --> K[\"Selected root and exact owner image\"]"
+  ],
+  "overview_notes": [
+    "Completion and readings remain explicit upstream proof obligations, not new axioms. The recorded-clique zeroing export combines generic row arithmetic with the independently proved universal decoder automorphism. Generic trim and full-support forgetful injectivity have no source dependencies. No unsafe multi-packet transport or complete normalized MI theorem is exported."
+  ],
+  "article_feedback": [
+    {
+      "id": "F01",
+      "kind": "FORMALIZATION_DETAIL",
+      "source": {
+        "file": "sections/full_rows_pc_decoder.tex",
+        "anchor": "\\label{eq:R07-W}"
+      },
+      "proof_claims": [
+        "C02",
+        "C11",
+        "C19",
+        "C24"
+      ],
+      "finding": "Keep structural i separate from actual packet (i,f). Distinct rows above the SAME i are holes and require no diagonal correction constraint; 2C_ii=0 handles their covariance.",
+      "proposed_article_change": "Keep this contract explicit in a later human edit; current TeX/source pin is unchanged.",
+      "affected_callers": [
+        "lem:acf-relative-mi-normal"
+      ]
+    },
+    {
+      "id": "F02",
+      "kind": "PROVIDER_BOUNDARY",
+      "source": {
+        "file": "sections/full_rows_pc_decoder.tex",
+        "anchor": "\\label{rem:R07-scope}"
+      },
+      "proof_claims": [
+        "C10",
+        "C11",
+        "C23",
+        "C26"
+      ],
+      "finding": "Retain named in-manuscript completion/transversal/reading providers plus published HKN applicability. Local decoder proof is fully expanded relative to those contracts; it does not certify their end-to-end construction or global EPPA.",
+      "proposed_article_change": "Keep this contract explicit in a later human edit; current TeX/source pin is unchanged.",
+      "affected_callers": [
+        "lem:acf-relative-mi-normal"
+      ]
+    },
+    {
+      "id": "F03",
+      "kind": "FORMALIZATION_DETAIL",
+      "source": {
+        "file": "sections/rooted_mi/02_packet_orbit_trim_and_owner_language.tex",
+        "anchor": "\\label{eq:acf-full-owner-language-faithfulness}"
+      },
+      "proof_claims": [
+        "C30",
+        "C31",
+        "C32"
+      ],
+      "finding": "The forgetful map identifies the semilinear group with its underlying IMAGE K, not FULL Aut(D0). Full U support is used before trim. After trim exact B support is sufficient and need not retain U-level faithfulness.",
+      "proposed_article_change": "Keep this contract explicit in a later human edit; current TeX/source pin is unchanged.",
+      "affected_callers": [
+        "lem:acf-relative-mi-normal"
+      ]
+    },
+    {
+      "id": "F04",
+      "kind": "EDITORIAL_SIMPLIFICATION",
+      "source": {
+        "file": "sections/rooted_mi/01_packet_zeroing_and_multipacket_root.tex",
+        "anchor": "\\label{lem:acf-recorded-row-zeroing}"
+      },
+      "proof_claims": [
+        "C04",
+        "C08",
+        "C09"
+      ],
+      "finding": "Source and clique corrections share one exact finite row-compatibility theorem; cite it once and preserve the different target conditions. A clique correction does not promise unrelated zero-row source fixing.",
+      "proposed_article_change": "Keep this contract explicit in a later human edit; current TeX/source pin is unchanged.",
+      "affected_callers": [
+        "lem:acf-relative-mi-normal"
+      ]
+    }
+  ],
+  "review": {
+    "date": "2026-10-28",
+    "source_unchanged": true,
+    "proof_status": "Local source proof expansions with explicit named upstream imports; not Lean or whole normalized-MI certification.",
+    "unexpanded_provider_labels": [],
+    "source_signature_repairs": 0,
+    "independent_final_reviews": [
+      "R07 source/export and completion/covariance review",
+      "MI provider/trim/support and exact-signature review"
+    ],
+    "metadata_refinements": [
+      "C03 explicitly requires legal C",
+      "C32 explicitly requires ALL empty Gamma_tilde requests",
+      "D10 requires established nonempty exact terminal menus C14",
+      "I04 states named-owner homogeneity used for optional literal source alignment",
+      "owner_transversal now supplies source-pinned packet collision and full-owner transversal/homogeneity",
+      "B026 supplies I05 rectangular readings without a safe-S or backwards decoder dependency; only reservoir I01 remains unexpanded.",
+      "B027 supplies I01 reservoir; published HKN providers and CCO encoding bridge remain explicit in its module/manifest. No global certification follows."
+    ]
+  },
+  "controls": [
+    {
+      "id": "K01",
+      "check": "Compare the full actual-row iff criterion against independently enumerated legal correction matrices over all F2 recorded graphs on 1..3 indices, including same-index conflicts and empty requests."
+    },
+    {
+      "id": "K02",
+      "check": "Check full-row lift bijections, q-intertwining, effective rows, same-index holes, transported fine records and true global diagonal action; include F2^2 and nonfaithful owner actions."
+    },
+    {
+      "id": "K03",
+      "check": "On represented finite relation triangles check solution survival, all candidate greatest fixed refinements, fair-schedule independence and endpoint gauge naturality. A non-CCO finite CSP has nonempty PC without global solutions."
+    }
+  ]
+}

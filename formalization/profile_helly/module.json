@@ -1,0 +1,1179 @@
+{
+  "schema_version": 1,
+  "id": "profile_helly",
+  "index_title": "Positive profile Helly to fixed-vertex completion and strong amalgamation",
+  "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+  "status": "HUMAN_EXPANDED_NOT_LEAN",
+  "scope": "Private B033: ONE Foundations III converse result. From an abstract finite typed nonempty-total associative Peircean triangle table and positive-profile 2-Helly, build a completion on the SAME finite formal vertex set, first under an ALGEBRAIC simple-cycle invariant. A direct guarded hom-walk/return-square argument translates semantic hom-cycle inputs, even with nonadjacent collisions, without assumed SAP/CCO. The full complete table class then gives semantic CCO and strong amalgamation of complete factors. Source optional distinct atomic-fork premise is preserved and locally realized under the intended nonempty totality/full-class interpretation. ALL palettes needed by input/amalgam pairs are nonempty; incompatible sort-cooccurrence restrictions are outside this fully supported typed statement. No actual homogeneous source, exactness, countability, EPPA or HKN is imported.",
+  "scope_vocabulary": [
+    "table_algebra",
+    "semantic_bridge",
+    "path_intersections",
+    "fixed_vertex_fill",
+    "semantic_CCO_conclusion",
+    "free_amalgam",
+    "SAP_conclusion",
+    "boundary"
+  ],
+  "scope_explanation": "statement and proof. Assumed table laws and profile Helly are separate from the derived algebraic-cycle constructor and derived CCO/SAP; no desired conclusion is a provider premise.",
+  "control_script": "tools/check_profile_helly_controls.py",
+  "assumptions": [
+    {
+      "id": "A01",
+      "name": "Finite fully supported typed diversity palettes",
+      "statement": "There are finitely many named sorts and finite NONEMPTY diversity palettes L_ij for EVERY pair of sorts that can occur together in an input or free amalgam, including repeated sorts. In this fully supported theorem all named pairs are permitted. Converse bijects L_ij with L_ji and is involutive; same-sort atoms are symmetric. Equality is not a diversity atom. Incompatible-sort languages require a separate cooccurrence gate and are not silently covered."
+    },
+    {
+      "id": "A02",
+      "name": "Nonempty-total associative Peircean triangle table",
+      "statement": "A typed allowed-triangle predicate, invariant under vertex permutations with appropriate converses, defines A*B as the union of allowed atomic outputs. EVERY composable pair of atoms has a NONEMPTY output; this is strong totality, not merely a Boolean operation allowed to return empty. Products are associative on typed menus and satisfy typed Peirce. Monotonicity, union extension and converse reversal follow from the table definition. No source amalgamation property is assumed."
+    },
+    {
+      "id": "A03",
+      "name": "FULL triangle-defined complete class",
+      "statement": "K is EXACTLY ALL finite complete typed atomic networks admitted by the table, with distinct formal vertices, actual converse labels and every distinct-vertex triangle legal. Empty/singleton/two-vertex allowed networks are included. There are no additional forbidden configurations, occupancy bounds, higher-arity conditions or selected proper subclasses. A homomorphism preserves sort and specified diversity labels, so adjacent vertices cannot collide; nonadjacent vertices may."
+    },
+    {
+      "id": "A04",
+      "name": "Finite positive-profile 2-Helly",
+      "statement": "For EVERY endpoint sort pair, every finite NONEMPTY family of profiles of positive typed diversity words with pairwise nonempty intersections has a common atom. Duplicate profiles are allowed. The empty path family is handled by choosing from the nonempty endpoint palette, not by inventing a zero-length strong word."
+    },
+    {
+      "id": "A05",
+      "name": "Finite partial constructor input",
+      "statement": "G has a finite fixed formal vertex set with named sorts and at most ONE specified old diversity atom on each unordered distinct pair, with typed converse on its reverse. Unspecified pairs remain unconstrained. The algorithm is universally quantified over such G. No cycle feasibility or global CCO/SAP is part of this data."
+    },
+    {
+      "id": "A06",
+      "name": "Optional complete factor span",
+      "statement": "For the SAP branch only, two finite complete K-networks L,R have embeddings of the same complete induced base B. Use abstract copies identified EXACTLY on B, disjoint outside B. Every new cross pair has a permitted nonempty palette by A01. Neither SAP nor an ambient homogeneous extension is assumed."
+    },
+    {
+      "id": "A07",
+      "name": "Optional source distinct-fork premise",
+      "statement": "For the source-scoped SAP clause retain the requirement that each needed pair of atomic edges incident at one vertex is realizable on THREE DISTINCT vertices. In the intended nonempty-total table/FULL-class setting C35 constructs this directly; it is never an assumption of the completion/CCO branch."
+    }
+  ],
+  "imports": [],
+  "definitions": [
+    {
+      "id": "D01",
+      "name": "Positive typed profiles",
+      "statement": "A positive word is a NONEMPTY finite composable sequence of diversity atoms. Prof(w) is its associative menu product, with singleton profile for length one. Every result retains its ordered endpoint sort tags. No identity atom or zero-length STRONG profile is adjoined.",
+      "depends_on": [
+        "A01",
+        "A02"
+      ],
+      "notes": "N01",
+      "source": {
+        "file": "sections/profile_completion_from_helly.tex",
+        "anchor": "\\label{lem:helly-to-cco}"
+      }
+    },
+    {
+      "id": "D02",
+      "name": "Converse and set Peirce",
+      "statement": "Reverse a positive word and converse its letters. For menus A:i->j,B:j->k,C:i->k, (A*B) intersects C iff A intersects C*bar(B), iff B intersects bar(A)*C. These are existential consequences of atomic triangle symmetry.",
+      "depends_on": [
+        "A02"
+      ],
+      "notes": "N01",
+      "source": {
+        "file": "sections/profile_completion_from_helly.tex",
+        "anchor": "\\label{lem:helly-to-cco}"
+      }
+    },
+    {
+      "id": "D03",
+      "name": "Allowed finite network walk",
+      "statement": "A homomorphic word walk is a sequence of points in one complete allowed N, with each successive edge bearing the prescribed diversity atom. Consecutive points differ but other occurrences may collide. All triangle statements concern actual DISTINCT points only.",
+      "depends_on": [
+        "A01",
+        "A03"
+      ],
+      "notes": "N02",
+      "source": {
+        "file": "sections/profile_completion_from_helly.tex",
+        "anchor": "\\label{lem:helly-to-cco}"
+      }
+    },
+    {
+      "id": "D04",
+      "name": "BOUND semantic cycle input predicate",
+      "statement": "CycleHom(G) says EVERY specified SIMPLE cycle of the current finite G has a homomorphism into SOME complete K-network, possibly different per cycle. This is a BOUND condition of the eventual implication, not a free assumption of global CCO. Nonadjacent cycle vertices may have the same image.",
+      "depends_on": [
+        "A03",
+        "A05"
+      ],
+      "notes": "N02",
+      "source": {
+        "file": "sections/profile_completion_from_helly.tex",
+        "anchor": "\\label{lem:helly-to-cco}"
+      }
+    },
+    {
+      "id": "D05",
+      "name": "ALGEBRAIC simple-cycle compatibility",
+      "statement": "For a specified simple cycle, one closing edge colour belongs to the profile of the oppositely oriented complementary positive path. C07-C08 show independence of the closing edge and equivalence with intersecting profiles of any two positive arcs with the same ordered terminals. ALG(G) means this for every specified simple cycle. It is NOT recursive completeability in K.",
+      "depends_on": [
+        "D01",
+        "D02",
+        "A05"
+      ],
+      "notes": "N03",
+      "source": {
+        "file": "sections/profile_completion_from_helly.tex",
+        "anchor": "\\label{lem:helly-to-cco}"
+      }
+    },
+    {
+      "id": "D06",
+      "name": "Finite simple path family for ANY distinct endpoint pair",
+      "statement": "For ANY distinct x,y, whether xy is recorded OR unrecorded, list ALL positive SIMPLE specified x->y paths on the current fixed vertex set; each has length at most |V|-1. Retain their positive profiles, possibly repeated. The list is finite. An empty list means no specified path and has its own palette-choice branch.",
+      "depends_on": [
+        "A05",
+        "D01"
+      ],
+      "notes": "N04",
+      "source": {
+        "file": "sections/profile_completion_from_helly.tex",
+        "anchor": "\\label{lem:helly-to-cco}"
+      }
+    },
+    {
+      "id": "D07",
+      "name": "Fixed-vertex completion state and measure",
+      "statement": "A state has EXACTLY the original formal vertex set, named sorts and specified edge colours extended so far. The invariant is ALG(G); measure is the number of still-unrecorded unordered distinct pairs. A step chooses one such pair, assigns one atom and its converse, and never identifies vertices.",
+      "depends_on": [
+        "A05",
+        "D05"
+      ],
+      "notes": "N05",
+      "source": {
+        "file": "sections/profile_completion_from_helly.tex",
+        "anchor": "\\label{lem:helly-to-cco}"
+      }
+    },
+    {
+      "id": "D08",
+      "name": "Free partial strong amalgam",
+      "statement": "The A06 abstract disjoint-outside-B union records all old L and R colours, which agree on the WHOLE complete B. Only off-base cross pairs are unrecorded. Factor embeddings are literal inclusions and induce intersection exactly B.",
+      "depends_on": [
+        "A06",
+        "A01"
+      ],
+      "notes": "N06",
+      "source": {
+        "file": "sections/profile_completion_from_helly.tex",
+        "anchor": "\\label{lem:helly-to-cco}"
+      }
+    },
+    {
+      "id": "D09",
+      "name": "Mixed simple-cycle base visits",
+      "statement": "Cut a mixed specified simple cycle at EVERY visit to B. The k base vertices are distinct, k>=2; every intervening positive segment lies in one factor and has no internal B vertex. k=2 contracts to a digon and is handled as two same-terminal paths, not a simple two-cycle.",
+      "depends_on": [
+        "D08"
+      ],
+      "notes": "N06",
+      "source": {
+        "file": "sections/profile_completion_from_helly.tex",
+        "anchor": "\\label{lem:helly-to-cco}"
+      }
+    },
+    {
+      "id": "D10",
+      "name": "Universal algebraic completer contract",
+      "statement": "For EVERY finite partial G, ALG(G) implies existence of a complete K-network on the SAME formal vertices extending EVERY recorded edge. This is a constructor conclusion proved by C21, not an assumed profile-realization or SAP law.",
+      "depends_on": [
+        "D05",
+        "D07",
+        "A03"
+      ],
+      "notes": "N05",
+      "source": {
+        "file": "sections/profile_completion_from_helly.tex",
+        "anchor": "\\label{lem:helly-to-cco}"
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "name": "All positive profiles are nonempty",
+      "statement": "Induct on positive word length. A singleton profile is nonempty; choose one atom from each nonempty composable factor, and strong totality supplies an output. Associativity identifies bracketing choices and the table gives monotonicity and converse reversal.",
+      "depends_on": [
+        "D01",
+        "A02"
+      ],
+      "notes": "N01",
+      "scope": "table_algebra",
+      "source_labels": [
+        "lem:helly-to-cco"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C02",
+      "name": "Set Peirce holds with the exact typed converses",
+      "statement": "Expand a nonempty intersection into a witnessing allowed atomic triangle. Permuting it gives the two converse-positioned witnesses in D02, and the reverse permutations prove the converse implications. No ambient SAP or semantic realizability is used.",
+      "depends_on": [
+        "D02"
+      ],
+      "notes": "N01",
+      "scope": "table_algebra",
+      "source_labels": [
+        "lem:helly-to-cco"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C03",
+      "name": "Return-square absorption for every output atom",
+      "statement": "For u:i->j and c:i->k choose b in bar(u)*{c} by nonempty totality. Peirce gives c in {u}*{b}, hence c in {u}*(bar(u)*{c})=({u}*bar(u))*{c}. This is typed absorption of a return square; it introduces no equality atom or STRONG identity.",
+      "depends_on": [
+        "A01",
+        "A02",
+        "C02"
+      ],
+      "notes": "N01",
+      "scope": "table_algebra",
+      "source_labels": [
+        "lem:helly-to-cco"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C04",
+      "name": "A positive closed hom-walk contains a return square",
+      "statement": "For a closed walk starting x --u--> z ... ->x, its tail has DISTINCT actual endpoints z,x. Once its shorter positive tail has guarded readout, bar(u) lies in its tail profile, so the closed profile contains {u}*bar(u). Every positive closed diversity walk has length at least two. This conditional support is used inside the length induction C05.",
+      "depends_on": [
+        "D03",
+        "C01"
+      ],
+      "notes": "N02",
+      "scope": "semantic_bridge",
+      "source_labels": [
+        "lem:helly-to-cco"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C05",
+      "name": "Guarded readout of colliding positive hom-walks",
+      "statement": "Strong-induct on walk length with DISTINCT actual endpoints. Length one is literal. If the penultimate point differs from the first, the shorter prefix reads out by induction and its actual three distinct points give a legal last triangle. If penultimate equals first, the positive prefix is closed, its shorter tail has distinct endpoints, C04 supplies a return square and C03 absorbs the last actual edge atom. Length-two degenerate prefix would be a diversity self-edge and is impossible. Thus actual endpoint colour lies in Prof(w) WITHOUT SAP or Helly, even with nonadjacent collisions.",
+      "depends_on": [
+        "D03",
+        "C02",
+        "C03",
+        "C04"
+      ],
+      "notes": "N02",
+      "scope": "semantic_bridge",
+      "source_labels": [
+        "lem:helly-to-cco"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C06",
+      "name": "Actual complete-network cycles give closing-edge algebra",
+      "statement": "A cycle occurring inside a complete allowed network has distinct adjacent endpoints at any chosen closing edge. Read the complementary positive walk with C05. Its endpoint atom is the converse closing label, giving the matching oriented membership test. This also applies after a homomorphism identifies other vertices.",
+      "depends_on": [
+        "C05",
+        "A03"
+      ],
+      "notes": "N02",
+      "scope": "semantic_bridge",
+      "source_labels": [
+        "lem:helly-to-cco"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C07",
+      "name": "Closing-edge compatibility rotates around a cycle",
+      "statement": "For cycle letters a0,...,a_last, write B for the nonempty middle profile. bar(a_last) in {a0}*B iff bar(a0) in B*{a_last} by C02. Associativity permits repeated rotations and reversing orientations uses converse. Thus one closing-edge test implies every such test, without zero profiles.",
+      "depends_on": [
+        "C02",
+        "C01",
+        "D05"
+      ],
+      "notes": "N03",
+      "scope": "table_algebra",
+      "source_labels": [
+        "lem:helly-to-cco"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C08",
+      "name": "Any two positive arcs have intersecting profiles",
+      "statement": "For same-terminal arcs P,Q around a simple cycle, if P has one edge a, the closing test is exactly a in Prof(Q). Otherwise P=a followed by positive Ptail. Its closing test says a in Prof(Q)*bar(Prof(Ptail)); C02 and associativity yield a common c in Prof(Q) intersect ({a}*Prof(Ptail))=Prof(Q) intersect Prof(P). Reverse the Peirce steps for the converse. C07 removes dependence on the chosen cut.",
+      "depends_on": [
+        "C07",
+        "C02",
+        "D05"
+      ],
+      "notes": "N03",
+      "scope": "table_algebra",
+      "source_labels": [
+        "lem:helly-to-cco"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C09",
+      "name": "Semantic hom-cycle inputs establish ALG without SAP",
+      "statement": "For EACH specified simple cycle in G take its BOUND D04 homomorphism. A specified diversity edge cannot collapse, so C05 applies to its complementary walk even when chosen nonadjacent path terminals collapse. C06/C07 give ALG for the original labelled cycle. Universally, CycleHom(G) implies ALG(G); no global CCO or injective cycle realization is assumed.",
+      "depends_on": [
+        "D04",
+        "C05",
+        "C06",
+        "C07"
+      ],
+      "notes": "N02",
+      "scope": "semantic_bridge",
+      "source_labels": [
+        "lem:helly-to-cco"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C10",
+      "name": "Every current path restriction is a finite nonempty profile",
+      "statement": "The finite simple paths in D06 give a finite indexed family of reachable positive profiles with the SAME endpoint sort tags. Each profile is nonempty by C01; duplicate words/menus do not change the intersection. No infinite family of arbitrary walks is enumerated.",
+      "depends_on": [
+        "D06",
+        "C01"
+      ],
+      "notes": "N04",
+      "scope": "path_intersections",
+      "source_labels": [
+        "lem:helly-to-cco"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C11",
+      "name": "Equal geometric paths have a common nonempty profile",
+      "statement": "Two identical oriented simple paths have identical positive word labels and nonempty profile by C01. A single specified edge cannot occur with two different atomic labels because G has only one label per unordered pair.",
+      "depends_on": [
+        "C10",
+        "A05"
+      ],
+      "notes": "N04",
+      "scope": "path_intersections",
+      "source_labels": [
+        "lem:helly-to-cco"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C12",
+      "name": "Distinct internally disjoint paths form one specified cycle",
+      "statement": "Two distinct simple x->y paths with no common internal vertex have a simple-cycle union. The only two-direct-edge case would be identical and belongs to C11. ALG for the union and C08 give a common endpoint atom in both positive profiles.",
+      "depends_on": [
+        "C10",
+        "C11",
+        "D05",
+        "C08"
+      ],
+      "notes": "N04",
+      "scope": "path_intersections",
+      "source_labels": [
+        "lem:helly-to-cco"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C13",
+      "name": "Splitting at any common vertex strictly decreases induction",
+      "statement": "For two simple x->y paths sharing an internal v, split each at v. Both prefix paths x->v and both suffix paths v->y are positive and simple. Each pair has fewer common INTERNAL vertices than the original pair: its common internals are contained in the old intersection minus v. This remains true when other common vertices occur in opposite orders or the paths share edges.",
+      "depends_on": [
+        "D06"
+      ],
+      "notes": "N04",
+      "scope": "path_intersections",
+      "source_labels": [
+        "lem:helly-to-cco"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C14",
+      "name": "Common prefix and suffix atoms combine in both profiles",
+      "statement": "Given p in the intersection of the two prefix profiles and q in the intersection of the two suffix profiles, their types compose through the sort of v. Nonempty totality gives c in {p}*{q}; monotonicity and associativity put c in BOTH full path profiles. No simultaneous actual realization of the two smaller pairs is needed.",
+      "depends_on": [
+        "C13",
+        "A02",
+        "C01"
+      ],
+      "notes": "N04",
+      "scope": "path_intersections",
+      "source_labels": [
+        "lem:helly-to-cco"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C15",
+      "name": "ALG makes all current simple path profiles pairwise intersect",
+      "statement": "Induct on number of shared internal vertices, using C11/C12 for the base cases and C13/C14 for the step. Obtain pairwise nonempty intersections for the C10 finite family UNIFORMLY for ALL distinct endpoints, recorded OR unrecorded, in ANY state satisfying ALG. This stronger induction predicate applies to the split subpairs even when those endpoint edges are already recorded. This statement assumes ALG, not prior semantic completeability of that state.",
+      "depends_on": [
+        "C11",
+        "C12",
+        "C13",
+        "C14"
+      ],
+      "notes": "N04",
+      "scope": "path_intersections",
+      "source_labels": [
+        "lem:helly-to-cco"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C16",
+      "name": "Profile Helly chooses one colour for every old path",
+      "statement": "For the UNRECORDED pair chosen for filling, if its current x->y simple path family is NONEMPTY, apply A04 to C10/C15. Choose ONE atom c in EVERY path profile, with correct endpoint types. This is the only global-intersection step; no actual completion witness is inferred yet.",
+      "depends_on": [
+        "C10",
+        "C15",
+        "A04"
+      ],
+      "notes": "N05",
+      "scope": "fixed_vertex_fill",
+      "source_labels": [
+        "lem:helly-to-cco"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C17",
+      "name": "Disconnected missing endpoints use only nonempty palette",
+      "statement": "If there is NO specified simple x->y path, choose any c in the nonempty L_sort(x),sort(y). A new simple cycle using xy would have an old complementary simple path, impossible. No empty word menu, zero restriction or Helly call is used.",
+      "depends_on": [
+        "D06",
+        "A01"
+      ],
+      "notes": "N05",
+      "scope": "fixed_vertex_fill",
+      "source_labels": [
+        "lem:helly-to-cco"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C18",
+      "name": "One-edge extension preserves ONLY the algebraic invariant",
+      "statement": "For an unrecorded xy assign the C16 colour, or the C17 arbitrary colour if no old path, and its converse. Old specified cycles are unchanged. A NEW simple cycle uses xy exactly once and has an old complementary simple path; the chosen c lies in its profile. C07/C08 give ALG for that cycle. Vertex set, all old colours and sorts are unchanged. Do NOT assert recursive full completeability of new cycles as an intermediate premise.",
+      "depends_on": [
+        "C16",
+        "C17",
+        "C07",
+        "C08",
+        "D07"
+      ],
+      "notes": "N05",
+      "scope": "fixed_vertex_fill",
+      "source_labels": [
+        "lem:helly-to-cco"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C19",
+      "name": "Missing-pair induction terminates on the same vertices",
+      "statement": "The finite number of unrecorded unordered distinct pairs decreases by EXACTLY one at each C18 step. Iterate/induct on this natural number while retaining ALG, all original recorded labels and the EXACT fixed formal vertex set. When zero remains, every distinct pair has one correct atom and converse.",
+      "depends_on": [
+        "C18",
+        "D07"
+      ],
+      "notes": "N05",
+      "scope": "fixed_vertex_fill",
+      "source_labels": [
+        "lem:helly-to-cco"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C20",
+      "name": "Terminal algebraic triangles are exactly table legality",
+      "statement": "In the resulting complete network, every triple of distinct formal vertices is a specified simple 3-cycle. Its closing-edge compatibility is exactly c in {a}*{b}, hence its table triangle is legal. By FULL A03 the ENTIRE complete network is in K; no stronger local-to-global theorem or prior CCO is invoked.",
+      "depends_on": [
+        "C19",
+        "C07",
+        "A03"
+      ],
+      "notes": "N05",
+      "scope": "fixed_vertex_fill",
+      "source_labels": [
+        "lem:helly-to-cco"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C21",
+      "name": "Universal ALG fixed-vertex completion constructor",
+      "statement": "For EVERY finite partial G, ALG(G) implies one complete K-network on EXACTLY its formal vertices extending EVERY original specified pair. C18-C20 prove D10 by missing-pair induction. Neither the initial semantic cycle condition, desired CCO nor an assumed SAP is a premise of this constructor.",
+      "depends_on": [
+        "C18",
+        "C19",
+        "C20",
+        "D10"
+      ],
+      "notes": "N05",
+      "scope": "fixed_vertex_fill",
+      "source_labels": [
+        "lem:helly-to-cco"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C22",
+      "name": "Homomorphic cycle feasibility implies a fixed-vertex completion",
+      "statement": "Universally in finite G, the BOUND CycleHom(G) condition gives ALG via C09, then C21 supplies a fixed-vertex complete K-network extending G. Its identity-on-vertices map is in particular a homomorphism. This discharges the input condition to prove CCO, rather than assuming a source with CCO.",
+      "depends_on": [
+        "C09",
+        "C21"
+      ],
+      "notes": "N05",
+      "scope": "semantic_CCO_conclusion",
+      "source_labels": [
+        "lem:helly-to-cco"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C23",
+      "name": "Any homomorphic completion restricts to each cycle",
+      "statement": "If G already has a homomorphism into a complete K-network, restrict it to each specified simple cycle to obtain its cycle homomorphism. Nonadjacent collisions are allowed and no fixed-vertex assertion is required for this necessity direction.",
+      "depends_on": [
+        "D04",
+        "A03"
+      ],
+      "notes": "N05",
+      "scope": "semantic_CCO_conclusion",
+      "source_labels": [
+        "lem:helly-to-cco"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C24",
+      "name": "Source-scoped semantic CCO converse",
+      "statement": "For every finite partial G, C22/C23 give the source semantic CCO equivalence. Under the given fully supported total table and profile Helly, C22 actually yields a fixed-vertex extension in the sufficient direction. The class is the FULL triangle-defined K, not an arbitrary homogeneous age with a possibly noninjective map.",
+      "depends_on": [
+        "C22",
+        "C23"
+      ],
+      "notes": "N05",
+      "scope": "semantic_CCO_conclusion",
+      "source_labels": [
+        "lem:helly-to-cco"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C25",
+      "name": "Construct the exact free partial amalgam",
+      "statement": "Use A06 abstract factor copies over their entire common complete B, identifying no off-base vertices. Old factor labels agree on all base pairs, so D08 is a valid finite simple partial network. The original embeddings are induced on each complete factor and have intersection exactly B.",
+      "depends_on": [
+        "D08",
+        "A06"
+      ],
+      "notes": "N06",
+      "scope": "free_amalgam",
+      "source_labels": [
+        "lem:helly-to-cco"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C26",
+      "name": "Cycles contained in one factor are algebraically compatible",
+      "statement": "Such a cycle is realized inside that actual complete allowed factor network. C05/C06 give its ALG condition. No semantic CCO/SAP theorem for K is used.",
+      "depends_on": [
+        "C25",
+        "C05",
+        "C06"
+      ],
+      "notes": "N06",
+      "scope": "free_amalgam",
+      "source_labels": [
+        "lem:helly-to-cco"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C27",
+      "name": "Every genuinely mixed simple cycle has at least two base visits",
+      "statement": "With no off-base cross edges, switching between L-only and R-only vertices requires passing B. One single base vertex could not permit both switches on a simple cycle without repetition. Thus a mixed simple cycle has k>=2 DISTINCT base vertices; cutting at EVERY visit gives D09 positive factor-side segments with distinct endpoints.",
+      "depends_on": [
+        "C25",
+        "D09"
+      ],
+      "notes": "N06",
+      "scope": "free_amalgam",
+      "source_labels": [
+        "lem:helly-to-cco"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C28",
+      "name": "Each positive factor segment contains its actual base-edge colour",
+      "statement": "Its endpoints u!=v lie in B and its whole segment lies in one factor. The complete factor actual u-v colour belongs to that positive word profile by C05. The common base has that SAME literal colour regardless of the chosen side.",
+      "depends_on": [
+        "C27",
+        "C05",
+        "A06"
+      ],
+      "notes": "N06",
+      "scope": "free_amalgam",
+      "source_labels": [
+        "lem:helly-to-cco"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C29",
+      "name": "Exactly two base visits are a digon case",
+      "statement": "For k=2, orient the two positive factor-side arcs from the first base vertex to the second. BOTH profiles contain the SAME actual base-edge colour by C28. Their intersection is nonempty, so C08 gives ALG of the original cycle. Do not call the contracted parallel-edge digon a simple cycle or introduce a zero/identity profile.",
+      "depends_on": [
+        "C28",
+        "C08"
+      ],
+      "notes": "N06",
+      "scope": "free_amalgam",
+      "source_labels": [
+        "lem:helly-to-cco"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C30",
+      "name": "At least three base visits contract and expand algebraically",
+      "statement": "For k>=3 the distinct base vertices with their consecutive actual base-edge labels form a simple cycle inside the complete common base, hence ALG by C06. Each such label lies in its expanded factor-segment profile by C28. Associativity, monotonicity and C08 allow replacing one coarse edge by its positive segment: for a cut in another segment the coarse atom remains an available witness; cut invariance restores every other test. Repeating gives ALG of the original expanded cycle.",
+      "depends_on": [
+        "C28",
+        "C06",
+        "C07",
+        "C08",
+        "A02"
+      ],
+      "notes": "N06",
+      "scope": "free_amalgam",
+      "source_labels": [
+        "lem:helly-to-cco"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C31",
+      "name": "Empty and singleton common bases create no mixed simple cycle",
+      "statement": "If B is empty the specified factors are disjoint. If B has one vertex, a mixed simple cycle would need to repeat it by C27. Thus every specified simple cycle lies in one factor and C26 applies. No nonempty-base assumption is silently added.",
+      "depends_on": [
+        "C26",
+        "C27"
+      ],
+      "notes": "N06",
+      "scope": "free_amalgam",
+      "source_labels": [
+        "lem:helly-to-cco"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C32",
+      "name": "ALL specified cycles of the free partial amalgam satisfy ALG",
+      "statement": "Combine C26 with C27-C31, including k=2, k>=3 and empty/singleton bases. This proof uses only actual factor/base colours and the algebraic table laws; it does NOT require homomorphic completion of the free amalgam or prior SAP/CCO.",
+      "depends_on": [
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31"
+      ],
+      "notes": "N06",
+      "scope": "free_amalgam",
+      "source_labels": [
+        "lem:helly-to-cco"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C33",
+      "name": "Generic ALG completion gives a STRONG amalgam",
+      "statement": "Apply C21 DIRECTLY to the C25 free partial amalgam with C32 invariant. Every vertex remains the SAME formal vertex and all old complete factor labels stay fixed. The final full K-network is therefore an induced strong amalgam with intersection exactly B, including empty B.",
+      "depends_on": [
+        "C21",
+        "C25",
+        "C32"
+      ],
+      "notes": "N06",
+      "scope": "free_amalgam",
+      "source_labels": [
+        "lem:helly-to-cco"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C34",
+      "name": "Source SAP clause under its stated fork condition",
+      "statement": "For every complete factor span, C33 gives SAP in the FULL class. In particular this proves the source implication under optional A07 distinct-fork premise. No homomorphic-only amalgamation is substituted for this fixed-vertex construction.",
+      "depends_on": [
+        "C33",
+        "A07"
+      ],
+      "notes": "N07",
+      "scope": "SAP_conclusion",
+      "source_labels": [
+        "lem:helly-to-cco"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C35",
+      "name": "Required forks are locally supplied by nonempty totality",
+      "statement": "For incident atoms a:i->j and b:i->k choose c in bar(a)*{b} by strong totality. The allowed typed triangle realizes the fork on THREE DISTINCT formal vertices; FULL K includes it. All needed third palettes are nonempty by A01. Thus in this fully supported interpretation the source optional fork requirement is locally discharged, not a hidden assumed SAP.",
+      "depends_on": [
+        "A01",
+        "A02",
+        "A03",
+        "D02"
+      ],
+      "notes": "N07",
+      "scope": "table_algebra",
+      "source_labels": [
+        "lem:helly-to-cco"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C36",
+      "name": "One converse source export with its explicit boundaries",
+      "statement": "C24 proves semantic CCO from finite positive-profile Helly. C34 proves the source SAP clause, with C35 explaining its optional fork premise under the intended nonempty-total/FULL interpretation. Table-only assumptions never import a desired source SAP/CCO, exactness, countability or EPPA. Fully supported compatible sorts and FULL triangle class remain essential.",
+      "depends_on": [
+        "C24",
+        "C34",
+        "C35"
+      ],
+      "notes": "N07",
+      "scope": "SAP_conclusion",
+      "source_labels": [
+        "lem:helly-to-cco"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C37",
+      "name": "Small vertex sets and empty path families are explicit",
+      "statement": "Empty/singleton partial networks have no missing pairs or triangle obligations. A two-vertex missing pair can be filled from its NONEMPTY palette. Disconnected inputs use C17. Positivity applies only to actual paths; no empty strong profile or artificial identity atom is used anywhere. All filling measures count unordered DISTINCT pairs.",
+      "depends_on": [
+        "C17",
+        "C21",
+        "A01",
+        "A03"
+      ],
+      "notes": "N05",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:helly-to-cco"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    }
+  ],
+  "source_result_files": [
+    "sections/profile_completion_from_helly.tex"
+  ],
+  "exports": [
+    {
+      "source_label": "lem:helly-to-cco",
+      "claims": [
+        "C24",
+        "C34",
+        "C36"
+      ]
+    }
+  ],
+  "auxiliary_exports": [],
+  "source_files": [
+    {
+      "file": "sections/profile_completion_from_helly.tex",
+      "git_blob": "afb76792134a6fc3ccc9c48c48d6c42cf1c9b0ef"
+    },
+    {
+      "file": "sections/ramsey_preferred_support.tex",
+      "git_blob": "a4213db90239937a525e6fa7b6ea36703a2900df"
+    }
+  ],
+  "completion_invariant": {
+    "condition": "ALGEBRAIC simple-cycle closing-edge/profile compatibility",
+    "fixed_vertex_set": true,
+    "preserves_all_recorded_edges": true,
+    "semantic_start_bridge": "C09",
+    "one_edge_preservation": "C18",
+    "strict_missing_pair_measure": "C19",
+    "terminal_full_class": "C20",
+    "generic_constructor": "C21",
+    "semantic_CCO_output": "C24",
+    "SAP_output": "C34"
+  },
+  "dependency_firewalls": [
+    {
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09"
+      ],
+      "forbid": [
+        "A04",
+        "A06",
+        "A07",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37"
+      ]
+    },
+    {
+      "claims": [
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21"
+      ],
+      "forbid": [
+        "A06",
+        "A07",
+        "C09",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36"
+      ]
+    },
+    {
+      "claims": [
+        "C22",
+        "C23",
+        "C24"
+      ],
+      "forbid": [
+        "A06",
+        "A07",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35"
+      ]
+    },
+    {
+      "claims": [
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33"
+      ],
+      "forbid": [
+        "A07",
+        "C22",
+        "C23",
+        "C24",
+        "C34"
+      ]
+    },
+    {
+      "claims": [
+        "C35"
+      ],
+      "forbid": [
+        "A04",
+        "A05",
+        "A06",
+        "A07",
+        "C21",
+        "C24",
+        "C33",
+        "C34"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "T01",
+      "name": "Pure table laws and colliding hom-walk bridge",
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement the actual finite typed table laws, positive profiles and ALG cycle invariant. Derive guarded hom-walk readout with return-square absorption before using possibly colliding semantic cycle maps. The one-edge step must preserve ALG and the SAME vertices without invoking final CCO/SAP. Handle crossed shared-path order, digon base contraction, empty bases and all nonempty palette gates."
+    },
+    {
+      "id": "T02",
+      "name": "Finite path family and overlap induction",
+      "claims": [
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15"
+      ],
+      "depends_on": [
+        "T01"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement the actual finite typed table laws, positive profiles and ALG cycle invariant. Derive guarded hom-walk readout with return-square absorption before using possibly colliding semantic cycle maps. The one-edge step must preserve ALG and the SAME vertices without invoking final CCO/SAP. Handle crossed shared-path order, digon base contraction, empty bases and all nonempty palette gates."
+    },
+    {
+      "id": "T03",
+      "name": "Helly one-edge preservation and finite completion",
+      "claims": [
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21"
+      ],
+      "depends_on": [
+        "T01",
+        "T02"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement the actual finite typed table laws, positive profiles and ALG cycle invariant. Derive guarded hom-walk readout with return-square absorption before using possibly colliding semantic cycle maps. The one-edge step must preserve ALG and the SAME vertices without invoking final CCO/SAP. Handle crossed shared-path order, digon base contraction, empty bases and all nonempty palette gates."
+    },
+    {
+      "id": "T04",
+      "name": "Derived semantic CCO without an assumed completion oracle",
+      "claims": [
+        "C22",
+        "C23",
+        "C24"
+      ],
+      "depends_on": [
+        "T01",
+        "T02",
+        "T03"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement the actual finite typed table laws, positive profiles and ALG cycle invariant. Derive guarded hom-walk readout with return-square absorption before using possibly colliding semantic cycle maps. The one-edge step must preserve ALG and the SAME vertices without invoking final CCO/SAP. Handle crossed shared-path order, digon base contraction, empty bases and all nonempty palette gates."
+    },
+    {
+      "id": "T05",
+      "name": "Free-amalgam cycles and the two-base digon",
+      "claims": [
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32"
+      ],
+      "depends_on": [
+        "T01"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement the actual finite typed table laws, positive profiles and ALG cycle invariant. Derive guarded hom-walk readout with return-square absorption before using possibly colliding semantic cycle maps. The one-edge step must preserve ALG and the SAME vertices without invoking final CCO/SAP. Handle crossed shared-path order, digon base contraction, empty bases and all nonempty palette gates."
+    },
+    {
+      "id": "T06",
+      "name": "Fixed-vertex strong amalgam, forks and source conclusion",
+      "claims": [
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37"
+      ],
+      "depends_on": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement the actual finite typed table laws, positive profiles and ALG cycle invariant. Derive guarded hom-walk readout with return-square absorption before using possibly colliding semantic cycle maps. The one-edge step must preserve ALG and the SAME vertices without invoking final CCO/SAP. Handle crossed shared-path order, digon base contraction, empty bases and all nonempty palette gates."
+    }
+  ],
+  "overview_mermaid": [
+    "flowchart TD",
+    "  A[\"Total associative Peircean table\"] --> R[\"Return-square hom-walk bridge\"]",
+    "  R --> C[\"Semantic cycles imply ALG\"]",
+    "  A --> P[\"Overlapping path profile intersections\"]",
+    "  H[\"Positive profile 2-Helly\"] --> F[\"One missing edge preserves ALG\"]",
+    "  P --> F",
+    "  F --> V[\"Finite fixed-vertex completion\"]",
+    "  C --> O[\"Derived semantic CCO\"]",
+    "  V --> O",
+    "  B[\"Complete factor and base colours\"] --> S[\"Free amalgam ALG cycles\"]",
+    "  S --> T[\"Derived STRONG amalgam\"]",
+    "  V --> T"
+  ],
+  "overview_notes": [
+    "No mathematical provider imports or desired CCO/SAP axioms are used. The table algebra and 2-Helly property are the input conditions.",
+    "The semantic-cycle input is a BOUND per-graph predicate. Guarded readout handles collisions without assuming SAP.",
+    "ALG compatibility, not recursive semantic completeability, is maintained during edge filling. Triangle legality and FULL class membership are used only at termination.",
+    "Every simple path family is finite; overlapping paths may have common vertices in opposite orders.",
+    "Two base visits form a digon after contraction and need the common literal base-edge colour; they are not a specified simple 2-cycle.",
+    "All new cross-sort palettes must be nonempty. Strong totality and FULL class locally provide the source optional forks."
+  ],
+  "controls": [
+    {
+      "id": "K01",
+      "check": "Bounded finite symmetric Peircean triangle tables, nonempty totality, associativity and positive-profile Helly; compare exact complete extensions with ALG cycles and fixed-vertex filling."
+    },
+    {
+      "id": "K02",
+      "check": "Hom-cycle collisions, return absorption, common-path order, finite missing-pair measure, base digons and full-class/palette negative controls. Finite searches are diagnostics, not an all-size completion or SAP theorem."
+    }
+  ],
+  "article_feedback": [
+    {
+      "id": "F01",
+      "kind": "DEPENDENCY_OR_SCOPE_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/profile_completion_from_helly.tex",
+        "anchor": "Their endpoint"
+      },
+      "finding": "A semantic cycle homomorphism may identify nonadjacent path terminals, so its STRONG profile intersection cannot be read off by an unproved injectivity assumption. Return-square absorption and a guarded hom-walk length induction give the required bridge without SAP.",
+      "proposed_article_change": "Insert the positive hom-walk readout lemma and its typed absorption calculation before the first cycle/profile use.",
+      "caller_effect": "No SAP/CCO hypothesis is added; no equality atom is inserted into STRONG profiles.",
+      "proof_claims": [
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C09"
+      ]
+    },
+    {
+      "id": "F02",
+      "kind": "DEPENDENCY_OR_SCOPE_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/profile_completion_from_helly.tex",
+        "anchor": "Every new"
+      },
+      "finding": "During edge filling, membership in a path profile proves ALG cycle compatibility, not yet full K-completeability. Assuming semantic new-cycle completion at this stage would be circular.",
+      "proposed_article_change": "State ALG as the explicit induction invariant and use FULL triangle-defined membership only for the final complete network.",
+      "caller_effect": "Proof expansion preserves the intended fixed-vertex constructor and derives CCO/SAP afterwards.",
+      "proof_claims": [
+        "C07",
+        "C08",
+        "C18",
+        "C19",
+        "C20",
+        "C21"
+      ]
+    },
+    {
+      "id": "F03",
+      "kind": "DEPENDENCY_OR_SCOPE_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/profile_completion_from_helly.tex",
+        "anchor": "The contracted"
+      },
+      "finding": "Contracting a mixed simple cycle with EXACTLY two base vertices yields a digon, not a simple cycle in the base. Strong totality must mean nonempty outputs, and every new cross pair needs a nonempty permitted palette.",
+      "proposed_article_change": "Split the k=2 common-base-edge argument from k>=3 cycle contraction, and clarify nonempty totality/full sort support. The optional fork premise is locally supplied in this intended setting.",
+      "caller_effect": "Avoids zero-word/identity conventions and incompatible-sort overgeneralization.",
+      "proof_claims": [
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C35"
+      ]
+    }
+  ],
+  "review": {
+    "date": "2026-10-28",
+    "source_unchanged": true,
+    "source_signature_repairs": 0,
+    "unexpanded_provider_labels": [],
+    "proof_status": "HUMAN_EXPANDED_NOT_LEAN; one abstract-table Helly converse with explicit semantic collision bridge and ALG invariant. No Lean or global certification.",
+    "independent_reviews": [
+      "Overlapping positive paths, colliding semantic cycles and cyclic Peirce cuts",
+      "Free strong amalgam base contractions, nonempty palette/fork scope and fixed-vertex completion"
+    ],
+    "boundaries": [
+      "Nonempty totality is stronger than an arbitrary defined Boolean operation.",
+      "All pair palettes needed by inputs/free amalgams are permitted and nonempty.",
+      "The FULL table class is essential; arbitrary subclasses may fail the result."
+    ]
+  }
+}

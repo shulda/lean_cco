@@ -1,0 +1,104 @@
+\begin{lemma}[Invariant full-packet orbit trim and selected-root correction]
+\label{lem:acf-invariant-packet-orbit-trim}
+Let $D_0$ be a finite complete original-language structure,
+$F$ an actual invariant finite regular packet equivalence, and
+$G\le K\le\Aut(D_0)$. Suppose the global thin group $G$
+leaves each $F$-packet setwise invariant and acts regularly on it.
+For nonempty $A_0\subseteq D_0$ put
+\[
+ F[A_0]=\bigcup_{a\in A_0}F[a],
+ \qquad D=\bigcup_{\beta\in K}\beta(F[A_0]).
+\tag{OT}\label{eq:acf-packet-orbit-trim}
+\]
+Then $D$ is a finite induced, full-$F$-closed, $K$-invariant
+substructure containing $F[A_0]$. For every nonempty subset
+$Z\subseteq D$ contained in one $F$-packet and every selected
+$z\in Z$, some $\alpha\in K|_D$ satisfies
+\[
+ \alpha(Z)\subseteq F[A_0],\qquad \alpha(z)\in A_0.
+\tag{OTR}\label{eq:acf-packet-orbit-root}
+\]
+More generally, if $Z\subseteq D$ is nonempty and some
+$\delta\in K$ carries it into $F[A_0]$, then \textup{(OTR)}
+holds for every selected $z\in Z$, even when $Z$ meets several
+packets. For a $K$-equivariant owner map $\pi:D_0\to B$,
+\[
+                    \pi(D)=K\cdot\pi(F[A_0]);
+\]
+in particular $\pi(D)=B$ if $K\cdot\pi(A_0)=B$.
+\end{lemma}
+\begin{proof}
+Each $\beta\in K$ preserves $F$, so every summand in
+\textup{(OT)} is a union of full packets. The finite union $D$
+is $K$-invariant because $K$ permutes its summands. Thus all
+members of $K$ restrict to automorphisms of the induced $D$.
+
+If $Z$ lies in one packet and $z\in Z$, choose
+$\beta\in K$ and $u\in F[A_0]$ with $z=\beta(u)$.
+Then $\beta^{-1}(Z)\subseteq F[u]\subseteq F[A_0]$.
+This reduces the single-packet assertion to the more general
+one with $\delta=\beta^{-1}$. In that assertion, choose
+$a\in A_0$ in the packet of $\delta(z)$. Regularity gives
+$g\in G$ with $g\delta(z)=a$. The \emph{global} translation
+$g$ preserves every packet and hence the entire union $F[A_0]$.
+Therefore $\alpha=(g\delta)|_D$ satisfies \textup{(OTR)}.
+This uses one global thin automorphism, not independent
+permutations of the packets. Finally, apply equivariance of
+$\pi$ to the union in \textup{(OT)} to obtain its image formula.
+\end{proof}
+
+\begin{lemma}[Full-owner support makes the R07 language component recoverable]
+\label{lem:acf-full-owner-language-faithfulness}
+Let $U$ be a finite set of actual fine owner labels and
+$\widetilde\Gamma\le\operatorname{Sym}(U)$. Let $D_0$ be a
+complete finite owner-typed R07 decoder in which every label
+in $U$ is realised. Its semilinear automorphisms are pairs
+$(\gamma,\alpha)$, where $\gamma\in\widetilde\Gamma$ permutes
+owner predicates and $\alpha$ preserves every literal original
+fine atomic binary colour. Let $K$ be their underlying
+permutation group. Then the forgetful map
+\[
+ \Aut_{\widetilde\Gamma}(D_0)\longrightarrow K,
+ \qquad (\gamma,\alpha)\longmapsto\alpha
+\tag{FOL}\label{eq:acf-full-owner-language-faithfulness}
+\]
+is an isomorphism. In particular the owner-language component
+is a well-defined homomorphism on $K$.
+
+Suppose $D_0$ is the full-row decoder of a structural
+$\widetilde\Gamma$-EPPA reservoir containing a complete
+full-packet source $A^+$ that meets every owner in $U$, and the
+reservoir extends every empty-real-domain
+$\widetilde\Gamma$-request. Then $K\to\widetilde\Gamma$ is onto.
+If an equivariant surjection $U\to B$ induces an onto map
+$\widetilde\Gamma\to\Gamma_B$, the composite $K\to\Gamma_B$
+is onto as well. None of these assertions requires a group
+section or faithfulness of the original thin action
+$\rho:G\to\widetilde\Gamma$.
+\end{lemma}
+\begin{proof}
+For every $s\in U$ choose a vertex $v_s$ with owner $s$.
+If $(\gamma,\alpha)$ and $(\gamma',\alpha)$ have the same
+underlying permutation, then
+\[
+         \gamma s=\operatorname{own}(\alpha v_s)=\gamma's
+                  \qquad(s\in U).
+\]
+Since $\widetilde\Gamma$ is a group of permutations of $U$,
+$\gamma=\gamma'$. The forgetful homomorphism is therefore
+injective, and surjective onto $K$ by its definition.
+
+For each $\gamma\in\widetilde\Gamma$, extend the structural
+request $(\varnothing,\gamma)$. The correction matrix $C=0$
+is legal and has no prescribed source rows to satisfy.
+By the universal lift assertion of \cref{thm:R07-relative-eppa}
+it yields an automorphism of the same $D_0$ with owner component
+$\gamma$. This proves the first surjectivity claim; composition
+proves the second. The zero-row copy of $A^+$ supplies the full
+owner support used in the first paragraph.
+
+Full support is essential: permutations differing only on
+unrealised owner labels could have the same underlying vertex
+map. This is distinct from a nontrivial kernel of
+$\rho:G\to\widetilde\Gamma$, which the argument permits.
+\end{proof}

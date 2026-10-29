@@ -1,0 +1,58 @@
+{
+  "head": "dc5fa9eafc2954909d15f3d18986d04fc8967513",
+  "private_board_revision": 45,
+  "private_package_count": 64,
+  "public_main": "4562e4c0666f02790e3f526249b7a75acb854a76",
+  "public_state_revision": 236,
+  "selected": [
+    "B024",
+    "B033"
+  ],
+  "selected_modules": [
+    "full_rows",
+    "profile_helly"
+  ],
+  "provider_modules": [
+    "finite_packets",
+    "hkn_reservoir",
+    "owner_transversal",
+    "raw_exact",
+    "safe_readings",
+    "strong_selectors"
+  ],
+  "source_record_count": 26,
+  "payload_file_count": 15,
+  "new_source_files": [
+    "sections/full_rows_pc_decoder.tex",
+    "sections/rooted_mi/01_packet_zeroing_and_multipacket_root.tex",
+    "sections/rooted_mi/02_packet_orbit_trim_and_owner_language.tex",
+    "sections/profile_completion_from_helly.tex",
+    "sections/ramsey_preferred_support.tex"
+  ],
+  "selected_details": {
+    "full_rows": {
+      "definitions": 12,
+      "claims": 33,
+      "exports": 11,
+      "auxiliary_exports": 17,
+      "tasks": 4,
+      "source_files": 9,
+      "external_providers": 0,
+      "control": "tools/check_full_rows_controls.py"
+    },
+    "profile_helly": {
+      "definitions": 10,
+      "claims": 37,
+      "exports": 1,
+      "auxiliary_exports": 0,
+      "tasks": 6,
+      "source_files": 2,
+      "external_providers": 0,
+      "control": "tools/check_profile_helly_controls.py"
+    }
+  },
+  "selected_payload_changes_since_previous_preparation": [],
+  "mathematical_metadata_unchanged": true,
+  "extraction_production_validator_unchanged": true,
+  "public_state_unchanged": true
+}
