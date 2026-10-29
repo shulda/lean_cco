@@ -40,6 +40,7 @@ record failure; it is not successful submission evidence.
 | `cancel_integration` | `pr_not_merged: true` | Pre-merge cancellation only; clears approval. |
 | `accept` | actual `integration_commit`, successful `main_ci` | Green resulting-main audit releases lock/dependencies. |
 | `block` | precise `reason` | Preserve lock on merged-main failure; unresolved batch still counts. |
+| `promote_registry` | `head_sha`, exact added `package_ids`, actual `integration_commit`, successful `main_ci`; explicit old catalogue/policy CLI paths | Finish a manifest-bound infrastructure deployment and append only AVAILABLE registry records atomically; no active claims. |
 
 Use `checkpoint` after inspecting a completed WIP CI run to keep current heads
 honest while proofs remain open. It does not certify contract completion,
@@ -68,6 +69,37 @@ above `independence`. `finish_infrastructure` needs actual `integration_commit`
 and successful `main_ci`; `cancel_infrastructure` needs `pr_not_merged: true`.
 A failed resulting main is kept locked, with a durable failure checkpoint.
 These operations work during the v2→v3 deployment without resetting STATE.
+
+For an additive prepared-package release, keep exact old public BOARD/policy
+snapshots from `base_main_sha` and the new snapshots from the reviewed PR head.
+The new `registry_promotion_manifest(old_board, old_policy, new_board, new_policy)`
+helper validates the additive change and returns canonical SHA256 digests of
+all four complete snapshots plus the added IDs. Put its result in the
+`registry_promotion` field of `start_infrastructure` data. Run that proposal
+with the new helper but `--registry OLD_BOARD --policy OLD_POLICY`: live STATE
+still uses the old registry and policy. The lock is available only with no
+active claims and retains the reviewed manifest, exact head and CI/audit.
+
+After actual resulting-main CI/audit passes, use the deployed new helper:
+
+```bash
+python tools/coordination_queue.py --state /tmp/cco-locked-state.json \
+  --registry formalization/coordination/BOARD.json \
+  --policy formalization/coordination/AUTONOMY.json \
+  --previous-registry /tmp/cco-old-board.json \
+  --previous-policy /tmp/cco-old-policy.json --project 3 --actor root \
+  --event promote_registry --data /tmp/cco-promotion.json \
+  --output /tmp/cco-next-state.json
+```
+
+Promotion data names the locked `head_sha`, exact added `package_ids`, actual
+`integration_commit` and its successful `main_ci`. The helper verifies both
+snapshot pairs against the lock, preserves every old package/history entry,
+adds unowned AVAILABLE rows, advances the policy revision and completes the
+same infrastructure lock in ONE proposal. Publish and fully read it back with
+the usual exact-parent CAS. Do not use `finish_infrastructure` for this lock;
+normal events never accept a registry/policy mismatch. A failed main keeps
+the original lock and old STATE intact; do not activate packages to clear it.
 
 Before any actual merge, re-read main/PR and lock; merge with expected head and
 history preserved. If either ref moved, update main into the branch, review

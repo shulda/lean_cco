@@ -67,3 +67,15 @@ commits and current exact-head reports before stopping. Git-backed items do
 not need a second storage copy. Do not regenerate old launch manifests or
 rerun initial staging over a running repository. Private preparation continues
 in shulda/cycle_constrainedness; never enable its paid Actions.
+
+For later prepared-package releases, use the current preparation branch and
+its actual contracts/notes/pinned source, preserving the public protocol 3.
+No private template is an allocation. With no active claims, independently
+review an additive catalogue/whitelist PR, record the old/new complete snapshot
+manifest in the sole infrastructure lock, merge the exact approved head and
+verify resulting-main CI/audit. Keep old BOARD/policy snapshots from the
+locked base. `promote_registry` then validates those explicit old snapshots
+and the deployed new pair, appends only AVAILABLE live rows and finishes the
+same lock atomically. See QUEUE_OPERATIONS.md; ordinary validators remain
+strict during deployment, and every existing acceptance/history record stays
+unchanged. Claim the lowest eligible package only after effective public CAS.
