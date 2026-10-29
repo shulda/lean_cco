@@ -123,4 +123,48 @@ theorem primitive_loopPower_full_of_le (n : Nat)
     rw [loopPower_succ, ih]
     exact S.top_product_of_point_gluing point W hW
 
+include H in
+/-- Homogeneity identifies full group-invariant primitivity with the
+colour-invariant formulation used by the source-only loop argument. -/
+theorem sortwisePrimitive_of_invariant
+    (hprim : ∀ i (R : Setoid (X i)), InvariantSetoid (G := G) R → R = ⊥ ∨ R = ⊤) :
+    SortwisePrimitive S := by
+  intro i R hR
+  exact hprim i R (invariantSetoid_of_colourInvariant S H R hR)
+
+include H in
+/-- Actual SAP source instance of full-palette absorption, for arbitrary
+nonempty compatible raw menus. -/
+theorem source_product_top (sap : AgeSAP S) {a b c : ι}
+    (P : S.Menu a b) (hP : P.Nonempty) :
+    S.product P (Set.univ : S.Menu b c) = Set.univ :=
+  S.product_top_of_point_gluing (S.realPointGluing_of_SAP H sap) P hP
+
+include H in
+theorem source_top_product (sap : AgeSAP S) {a b c : ι}
+    (P : S.Menu b c) (hP : P.Nonempty) :
+    S.product (Set.univ : S.Menu a b) P = Set.univ :=
+  S.top_product_of_point_gluing (S.realPointGluing_of_SAP H sap) P hP
+
+include H hW in
+/-- The supported SAP fork duplicates every arbitrary nonempty raw loop. -/
+theorem source_loop_subset_cube (sap : AgeSAP S) :
+    W ⊆ S.product (S.product W W) W :=
+  S.loop_powers_three_of_gluing (S.realPointGluing_of_SAP H sap)
+    (S.realEdgeGluing_of_SAP H sap) W hW
+
+include H primitive hW in
+/-- Direct source theorem with exactly homogeneous SAP and individual-sort
+primitivity; no CCO, safe palette or exactness premise occurs. -/
+theorem primitive_loopPower_full_of_SAP (sap : AgeSAP S) :
+    loopPower S W (2 * Nat.card (S.Atom i i) - 1) = Set.univ :=
+  primitive_loopPower_full S H primitive (S.realPointGluing_of_SAP H sap)
+    (S.realEdgeGluing_of_SAP H sap) W hW
+
+include H primitive hW in
+theorem primitive_loopPower_full_of_SAP_of_le (sap : AgeSAP S) (n : Nat)
+    (hn : 2 * Nat.card (S.Atom i i) - 1 ≤ n) : loopPower S W n = Set.univ :=
+  primitive_loopPower_full_of_le S H primitive (S.realPointGluing_of_SAP H sap)
+    (S.realEdgeGluing_of_SAP H sap) W hW n hn
+
 end CCO.SafeReadings
