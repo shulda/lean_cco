@@ -40,8 +40,17 @@ def action {B : Type u} {K : Type v} {Atom : Type w} {Γ : Type z} [Group Γ]
     (tag : Γ →* Equiv.Perm B) : (Signature B K Atom).Action Γ where
   rel n := {
     toFun := fun g => Rel.ownerMove (tag g)
-    map_one' := by ext R; cases R <;> simp [Rel.ownerMove]
-    map_mul' := by intro g h; ext R; cases R <;> simp [Rel.ownerMove] }
+    map_one' := by
+      apply Equiv.ext
+      intro R
+      change Rel.ownerMove (tag 1) R = R
+      cases R <;> simp [Rel.ownerMove]
+    map_mul' := by
+      intro g h
+      apply Equiv.ext
+      intro R
+      change Rel.ownerMove (tag (g*h)) R = Rel.ownerMove (tag g) (Rel.ownerMove (tag h) R)
+      cases R <;> simp [Rel.ownerMove,Equiv.Perm.mul_apply] }
   func _ := 1
 
 @[simp] theorem action_owner {B : Type u} {K : Type v} {Atom : Type w} {Γ : Type z} [Group Γ]
