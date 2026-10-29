@@ -1,4 +1,5 @@
 import CCO.OwnerTransversal.AnchoredCompletion
+import CCO.OwnerTransversal.AnchoredCaps
 import CCO.StabilizerSAP
 
 /-! The OPTIONAL original-SAP branch.  During a repair only displayed
@@ -212,5 +213,45 @@ theorem injectivize_records {V : Type} [Finite V]
         obtain ⟨g,hg,hgown,hgfix,hginj⟩ := ih (collisionPairs f').card (by omega) f' rfl hf' hown'
         exact ⟨g,hg,hgown,fun a ha => (hgfix a ha).trans (hfix a ha),hginj⟩
   exact aux _ f rfl hf hOwner
+
+include H in
+/-- The optional injective clause of anchored completion, retaining the
+same complete protected anchor and its arbitrary prescribed embedding. -/
+theorem anchored_injective_completion {V : Type} [Finite V]
+    (D : RawRecords S V) (cco : SemanticCCO.{0,v,0,w} S)
+    (E : ColourEq S ()) (hne : E ≠ ⊥) (word : RawWord S () ())
+    (hword : RawWord.relation S word = E.val.r)
+    (sap : AgeSAP S) (hInfinite : ∀ x : M, Set.Infinite {y : M | E x y})
+    (A : Finset V) (complete : RawRecords.CompleteOn S D A)
+    (owner raw j : V → M) (hraw : RawRecords.Hom S D raw)
+    (hj : ∀ x ∈ A, ∀ y ∈ A, ∀ a, D.edge x y = some a →
+      S.colour (i := ()) (j := ()) (j x) (j y) = some a)
+    (hOwner : ∀ x y a, D.edge x y = some a →
+      ownerSaturate E.val (S.atomRel a) (owner x) (owner y))
+    (hA : ∀ x ∈ A, E (owner x) (j x)) :
+    ∃ f : V → M, RawRecords.Hom S D f ∧ (∀ x, E (owner x) (f x)) ∧
+      (∀ x ∈ A, f x = j x) ∧ Function.Injective f := by
+  obtain ⟨f,hf,hown,hfix⟩ := anchored_completion S H D cco E hne word hword
+    A complete owner raw j hraw hj hOwner hA
+  obtain ⟨g,hg,hgown,hgfix,hginj⟩ := injectivize_records S H D sap E hInfinite owner f hf hown A complete
+  exact ⟨g,hg,hgown,fun x hx => (hgfix x hx).trans (hfix x hx),hginj⟩
+
+include H in
+/-- Optional joint/diversity-cap injectivity. The recorded input here
+is the WHOLE augmented diagram, so every newly requested fine edge is
+retained during collision descent as well as all original records. -/
+theorem injective_joint_owner_caps {V : Type} [Finite V] (D : RawRecords S V)
+    (cco : SemanticCCO.{0,v,0,w} S) (E : ColourEq S ()) (hne : E ≠ ⊥)
+    (word : RawWord S () ()) (hword : RawWord.relation S word = E.val.r)
+    (sap : AgeSAP S) (hInfinite : ∀ x : M, Set.Infinite {y : M | E x y})
+    (owner : V → M)
+    (hCycles : ∀ C : SimpleCycle (RawRecords.diagram S D), CycleHom C)
+    (hOwner : ∀ x y a, D.edge x y = some a →
+      ownerSaturate E.val (S.atomRel a) (owner x) (owner y)) :
+    ∃ f : V → M, RawRecords.Hom S D f ∧ (∀ x, E (owner x) (f x)) ∧ Function.Injective f := by
+  obtain ⟨f,hf,hown⟩ := (joint_owner_caps S H D cco E hne word hword owner).mpr ⟨hCycles,hOwner⟩
+  obtain ⟨g,hg,hgown,_,hginj⟩ := injectivize_records S H D sap E hInfinite owner f hf hown
+    ∅ (by simp [RawRecords.CompleteOn])
+  exact ⟨g,hg,hgown,hginj⟩
 
 end CCO.OwnerTransversal
