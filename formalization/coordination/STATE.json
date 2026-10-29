@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 178,
+  "revision": 179,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -1138,13 +1138,14 @@
         "project_id": 3,
         "actor_id": "independent_review",
         "head_sha": "9b5e0c52c56a95763238ac317f22492d74dba5e6",
-        "approved": false,
+        "approved": true,
         "independence": {
           "identity": "/root/independent_review",
           "non_author": true,
           "summary": "Actual registered separate control-only reviewer authored none of the complete acl/owner implementation, source preparation, root proof helpers or design. It personally read all30 frozen modules and all35 claims once, then only two final reports, accepted-main import union and exact CI metadata/logs; no helper reviewers or duplicate builds.",
           "report_path": "formalization/coordination/reviews/B022-final.md"
-        }
+        },
+        "summary": "Actual nonauthor /root/independent_review approves exact9b5e0c52/treeac8fc363 after WHOLE C01–35 read: normalized global correspondence/all-original coordinates, general FULL invariant harmless-owner iff, APJ and finite-common-kernel closure/full-preimage/rectangle, generic C19/C35/coset avoidance, actual closed-target/clique consumers. Source branch premises retained; no same-rank/provider gap. Only2MD afterfreeze; acceptedB029union allproofbodies identical/exactacceptedrootprefix. Actual40838101568/job123327589847 SUCCESS87tests/3000jobs/11274standard3/763actualpartsANDcurrentsource PREPOST; actualnon-authorship retained."
       }
     },
     "B029": {
@@ -4591,6 +4592,19 @@
           "summary": "Actual registered separate control-only reviewer authored none of the complete acl/owner implementation, source preparation, root proof helpers or design. It personally read all30 frozen modules and all35 claims once, then only two final reports, accepted-main import union and exact CI metadata/logs; no helper reviewers or duplicate builds.",
           "report_path": "formalization/coordination/reviews/B022-final.md"
         },
+        "actor_id": "independent_review"
+      }
+    },
+    {
+      "revision": 179,
+      "project_id": 3,
+      "actor_id": "independent_review",
+      "event": "approve",
+      "package_id": "B022",
+      "details": {
+        "package_id": "B022",
+        "head_sha": "9b5e0c52c56a95763238ac317f22492d74dba5e6",
+        "summary": "Actual nonauthor /root/independent_review approves exact9b5e0c52/treeac8fc363 after WHOLE C01–35 read: normalized global correspondence/all-original coordinates, general FULL invariant harmless-owner iff, APJ and finite-common-kernel closure/full-preimage/rectangle, generic C19/C35/coset avoidance, actual closed-target/clique consumers. Source branch premises retained; no same-rank/provider gap. Only2MD afterfreeze; acceptedB029union allproofbodies identical/exactacceptedrootprefix. Actual40838101568/job123327589847 SUCCESS87tests/3000jobs/11274standard3/763actualpartsANDcurrentsource PREPOST; actualnon-authorship retained.",
         "actor_id": "independent_review"
       }
     }
