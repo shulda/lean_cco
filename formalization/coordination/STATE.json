@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 251,
+  "revision": 252,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -1559,7 +1559,7 @@
       }
     },
     "B033": {
-      "state": "INTEGRATING",
+      "state": "ACCEPTED",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b023_mi",
@@ -1600,16 +1600,17 @@
           "report_path": "formalization/coordination/reviews/B033-final.md"
         },
         "summary": "Actual nonauthor /root/independent_review APPROVES exactPR43head9a45a84/tree762c194 identicallocalc953c6. Whole27module2700line37claim standalone table source read PASS: nonemptytotal associativePeircean/FULLclass/profile2Helly, guarded collidingwalks, directALG filling and exactunorderedpair descent onSAMEvertices, actualfinitepushout fullinducedfactors EXACTwholebaseintersection, completefactorfans/ALLvertices/twobasearcsSAMEliteralatom, actualCCO/SAP/fork andgenuinethreefactorconsumer. No assumedactualsource/CCO/SAP/opaqueprovider. EveryB033mathblob unchanged55136; allB024mainnonrootblobs retained; exact940+25+27rootunion and22MDlines reviewed. Personally fetched FULL exactCI40928862223/job123641626486 SUCCESS121/1330facade+3531CCO/15725std3/992CCOcurrentSOURCEandpartsPREPOST/269providerexactcd358facadePREPOST; ALL27ProfileHellyactuallyBuilt, B024/providerwarm0Built. ActualB024ACCEPTED247/e10/green40928590992, all5actualauthors/state248/lockclear verified. Report-only9e6c5c7."
+      },
+      "accepted_commit": "9eda6084a7f841d9845f29ca03e63fbbae371b08",
+      "main_ci": {
+        "run_id": 40929727601,
+        "head_sha": "9eda6084a7f841d9845f29ca03e63fbbae371b08",
+        "conclusion": "success",
+        "axiom_audit": "allowlist"
       }
     }
   },
-  "integration_lock": {
-    "kind": "package",
-    "package_id": "B033",
-    "actor_id": "root",
-    "base_main_sha": "e10afddd47439af3d1eeb714397871eabc282f58",
-    "head_sha": "9a45a84e15e4994a242729cf24061f7a6391f62d"
-  },
+  "integration_lock": null,
   "history": [
     {
       "revision": 1,
@@ -6455,6 +6456,24 @@
         "ci": {
           "run_id": 40928862223,
           "head_sha": "9a45a84e15e4994a242729cf24061f7a6391f62d",
+          "conclusion": "success",
+          "axiom_audit": "allowlist"
+        }
+      }
+    },
+    {
+      "revision": 252,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "accept",
+      "package_id": "B033",
+      "details": {
+        "actor_id": "root",
+        "package_id": "B033",
+        "integration_commit": "9eda6084a7f841d9845f29ca03e63fbbae371b08",
+        "main_ci": {
+          "run_id": 40929727601,
+          "head_sha": "9eda6084a7f841d9845f29ca03e63fbbae371b08",
           "conclusion": "success",
           "axiom_audit": "allowlist"
         }
