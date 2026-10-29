@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 145,
+  "revision": 146,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -1004,54 +1004,17 @@
         "conclusion": "success",
         "axiom_audit": "allowlist"
       }
+    },
+    "B020": {
+      "state": "AVAILABLE",
+      "owner_project_id": null
+    },
+    "B021": {
+      "state": "AVAILABLE",
+      "owner_project_id": null
     }
   },
-  "integration_lock": {
-    "kind": "infrastructure",
-    "actor_id": "root",
-    "head_sha": "c5dbe53462499c4e890e324fb47e9aef3224df53",
-    "base_main_sha": "9bb179ae324d188083b9df8b55fe70b3c3391c2a",
-    "pr_number": 26,
-    "review": {
-      "actor_id": "independent_review",
-      "head_sha": "c5dbe53462499c4e890e324fb47e9aef3224df53",
-      "approved": true,
-      "summary": "Actual nonauthor /root/independent_review approves full publication at exact c5dbe534/treec779 after complete contract/source and registry tests/docs/code review. All19oldrows, sourcepin and unrelated permissions preserved; bound old/new digests, same single lock and one atomic post-main promotion retain strict normal validation/CAS. Private status finding repaired by explicit receiving notices. Exact40825473804 passes85tests/21catalogue/2891jobs/9752standard3/656partsANDcurrentsource prepost. No Lean code, API, toolchain or STATE edits; no new mathematical acceptance.",
-      "independence": {
-        "identity": "/root/independent_review",
-        "non_author": true,
-        "summary": "Actual registered control-only reviewer wrote none of this complete publication, registry implementation, tests or prepared mathematical contracts. It personally checked complete source/contract/policy/manifest paths and exact public CI without implementation or design participation.",
-        "report_path": "formalization/coordination/reviews/B020-B021-registry-publication.md"
-      }
-    },
-    "ci": {
-      "run_id": 40825473804,
-      "head_sha": "c5dbe53462499c4e890e324fb47e9aef3224df53",
-      "conclusion": "success",
-      "axiom_audit": "allowlist"
-    },
-    "author_actor_ids": [
-      "root",
-      "source-preparation-project",
-      "/root/next_frontier",
-      "/root/registry_promotion",
-      "/root/registry_promotion/promotion_tests"
-    ],
-    "original_author_project_ids": [
-      0,
-      3
-    ],
-    "registry_promotion": {
-      "package_ids": [
-        "B020",
-        "B021"
-      ],
-      "previous_registry_sha256": "c69d2e8b3c6d7ec2a2b2beef3e3ce4a63ff95b3dbf7c179e50205c442ef4f3dd",
-      "previous_policy_sha256": "1ff8da3a3a264c21b74242bb7ddc7c85b1a3e9baee2f5d039aed7e2f8e3d34ae",
-      "registry_sha256": "c258eb6b98d64249c7edf9215c99ed1804cbb175b1976556f74b051e7d4e04ed",
-      "policy_sha256": "5bce3ac0b69b44f4385644653e939cf481925c394fda14f73ea19a798a2f9a6f"
-    }
-  },
+  "integration_lock": null,
   "history": [
     {
       "revision": 1,
@@ -3823,6 +3786,38 @@
           "policy_sha256": "5bce3ac0b69b44f4385644653e939cf481925c394fda14f73ea19a798a2f9a6f"
         }
       }
+    },
+    {
+      "revision": 146,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "promote_registry",
+      "package_id": null,
+      "details": {
+        "actor_id": "root",
+        "head_sha": "c5dbe53462499c4e890e324fb47e9aef3224df53",
+        "package_ids": [
+          "B020",
+          "B021"
+        ],
+        "integration_commit": "392c0f257b3fea900d65f9fcf458837f096b8ed9",
+        "main_ci": {
+          "run_id": 40825849801,
+          "head_sha": "392c0f257b3fea900d65f9fcf458837f096b8ed9",
+          "conclusion": "success",
+          "axiom_audit": "allowlist"
+        },
+        "registry_promotion": {
+          "package_ids": [
+            "B020",
+            "B021"
+          ],
+          "previous_registry_sha256": "c69d2e8b3c6d7ec2a2b2beef3e3ce4a63ff95b3dbf7c179e50205c442ef4f3dd",
+          "previous_policy_sha256": "1ff8da3a3a264c21b74242bb7ddc7c85b1a3e9baee2f5d039aed7e2f8e3d34ae",
+          "registry_sha256": "c258eb6b98d64249c7edf9215c99ed1804cbb175b1976556f74b051e7d4e04ed",
+          "policy_sha256": "5bce3ac0b69b44f4385644653e939cf481925c394fda14f73ea19a798a2f9a6f"
+        }
+      }
     }
   ],
   "infrastructure_integrations": [
@@ -3976,9 +3971,62 @@
         "conclusion": "success",
         "axiom_audit": "allowlist"
       }
+    },
+    {
+      "kind": "infrastructure",
+      "actor_id": "root",
+      "head_sha": "c5dbe53462499c4e890e324fb47e9aef3224df53",
+      "base_main_sha": "9bb179ae324d188083b9df8b55fe70b3c3391c2a",
+      "pr_number": 26,
+      "review": {
+        "actor_id": "independent_review",
+        "head_sha": "c5dbe53462499c4e890e324fb47e9aef3224df53",
+        "approved": true,
+        "summary": "Actual nonauthor /root/independent_review approves full publication at exact c5dbe534/treec779 after complete contract/source and registry tests/docs/code review. All19oldrows, sourcepin and unrelated permissions preserved; bound old/new digests, same single lock and one atomic post-main promotion retain strict normal validation/CAS. Private status finding repaired by explicit receiving notices. Exact40825473804 passes85tests/21catalogue/2891jobs/9752standard3/656partsANDcurrentsource prepost. No Lean code, API, toolchain or STATE edits; no new mathematical acceptance.",
+        "independence": {
+          "identity": "/root/independent_review",
+          "non_author": true,
+          "summary": "Actual registered control-only reviewer wrote none of this complete publication, registry implementation, tests or prepared mathematical contracts. It personally checked complete source/contract/policy/manifest paths and exact public CI without implementation or design participation.",
+          "report_path": "formalization/coordination/reviews/B020-B021-registry-publication.md"
+        }
+      },
+      "ci": {
+        "run_id": 40825473804,
+        "head_sha": "c5dbe53462499c4e890e324fb47e9aef3224df53",
+        "conclusion": "success",
+        "axiom_audit": "allowlist"
+      },
+      "author_actor_ids": [
+        "root",
+        "source-preparation-project",
+        "/root/next_frontier",
+        "/root/registry_promotion",
+        "/root/registry_promotion/promotion_tests"
+      ],
+      "original_author_project_ids": [
+        0,
+        3
+      ],
+      "registry_promotion": {
+        "package_ids": [
+          "B020",
+          "B021"
+        ],
+        "previous_registry_sha256": "c69d2e8b3c6d7ec2a2b2beef3e3ce4a63ff95b3dbf7c179e50205c442ef4f3dd",
+        "previous_policy_sha256": "1ff8da3a3a264c21b74242bb7ddc7c85b1a3e9baee2f5d039aed7e2f8e3d34ae",
+        "registry_sha256": "c258eb6b98d64249c7edf9215c99ed1804cbb175b1976556f74b051e7d4e04ed",
+        "policy_sha256": "5bce3ac0b69b44f4385644653e939cf481925c394fda14f73ea19a798a2f9a6f"
+      },
+      "integration_commit": "392c0f257b3fea900d65f9fcf458837f096b8ed9",
+      "main_ci": {
+        "run_id": 40825849801,
+        "head_sha": "392c0f257b3fea900d65f9fcf458837f096b8ed9",
+        "conclusion": "success",
+        "axiom_audit": "allowlist"
+      }
     }
   ],
-  "policy_revision": 2,
+  "policy_revision": 3,
   "third_batch_exception": {
     "package_id": "B018",
     "independent_active_work": true,
