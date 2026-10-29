@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 196,
+  "revision": 197,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -1254,7 +1254,7 @@
       }
     },
     "B025": {
-      "state": "SUBMITTED",
+      "state": "REVIEWING",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b023_mi",
@@ -1282,7 +1282,19 @@
         "conclusion": "success",
         "axiom_audit": "allowlist"
       },
-      "report_path": "formalization/coordination/submissions/B025.md"
+      "report_path": "formalization/coordination/submissions/B025.md",
+      "review": {
+        "project_id": 3,
+        "actor_id": "independent_review",
+        "head_sha": "002b17005996009056d5202fdf7890ccc0bc59df",
+        "approved": false,
+        "independence": {
+          "identity": "/root/independent_review",
+          "non_author": true,
+          "summary": "Actual separate registered review-only actor authored and designed none of the entire B025 source, original preparation, root helpers, actual internal model, inflation or tests. It personally read all51 frozen modules/47claims once, then only two Markdown reports and exact public CI/tree/ancestry, without helper reviewers or duplicate builds.",
+          "report_path": "formalization/coordination/reviews/B025-final.md"
+        }
+      }
     }
   },
   "integration_lock": null,
@@ -5032,6 +5044,24 @@
         },
         "report_path": "formalization/coordination/submissions/B025.md",
         "actor_id": "root"
+      }
+    },
+    {
+      "revision": 197,
+      "project_id": 3,
+      "actor_id": "independent_review",
+      "event": "review",
+      "package_id": "B025",
+      "details": {
+        "package_id": "B025",
+        "head_sha": "002b17005996009056d5202fdf7890ccc0bc59df",
+        "independence": {
+          "identity": "/root/independent_review",
+          "non_author": true,
+          "summary": "Actual separate registered review-only actor authored and designed none of the entire B025 source, original preparation, root helpers, actual internal model, inflation or tests. It personally read all51 frozen modules/47claims once, then only two Markdown reports and exact public CI/tree/ancestry, without helper reviewers or duplicate builds.",
+          "report_path": "formalization/coordination/reviews/B025-final.md"
+        },
+        "actor_id": "independent_review"
       }
     }
   ],
