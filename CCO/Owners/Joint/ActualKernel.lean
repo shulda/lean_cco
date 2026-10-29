@@ -37,6 +37,25 @@ variable {ι : Type u} {X : ι → Type v}
 variable (S : AtomicSource.{u,v,w} ι X)
 variable {G : Type t} [Group G] [∀ i, MulAction G (X i)]
 variable (H : HomogeneousSource S G) (cco : SemanticCCO.{u,v,max u v,w} S)
+
+include H in
+/-- The full orbital group used below is EXACTLY the original named
+colour automorphism group on any induced carrier, including equality.
+No extension of a finite automorphism to the ambient source is presumed. -/
+theorem source_aut_iff_colours {j : ι} {U : Type*}
+    (ιU : U → X j) (p : Equiv.Perm U) :
+    p ∈ (Product.orbitalStructure G (X j) ιU).autGroup ↔
+      ∀ x y, S.colour (ιU (p x)) (ιU (p y)) = S.colour (ιU x) (ιU y) := by
+  rw [Product.mem_orbitalAut_iff]
+  constructor
+  · intro hp x y
+    have h := hp x y
+    rw [actual_pair_orbital_of_homogeneous S H (ιU x) (ιU y)] at h
+    exact h
+  · intro hp x y
+    rw [actual_pair_orbital_of_homogeneous S H (ιU x) (ιU y)]
+    exact hp x y
+
 variable {i : ι} {I : Type z} [Finite I]
 variable (C T : I → ExactEq S H cco i)
 variable (hCT : ∀ k, C k ≤ T k)

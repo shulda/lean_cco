@@ -21,6 +21,9 @@ variable (gate : ∀ k l, k ≠ l → (C k).val ⊔ (C l).val = (T k).val ⊔ (T
 local instance invariantC (k : I) : Invariant G (C k).val := Product.exactInvariant S H cco (C k)
 local instance invariantT (k : I) : Invariant G (T k).val := Product.exactInvariant S H cco (T k)
 
+variable [sourceCountable : Countable (X i)]
+include sourceCountable
+
 variable (B : Set (Quotient (Abstract.familyMeet (fun k => (T k).val))))
 variable (D : ∀ k, Set (Quotient (C k).val))
 variable (hD : ∀ k (d : D k), (actualGeometry S H cco C T hCT meet_id gate).own k d.val ∈ (actualGeometry S H cco C T hCT meet_id gate).OwnerImage B k)
@@ -37,7 +40,9 @@ identity. A tuple's common owner is unique, with no section chosen. -/
 noncomputable def full_automorphisms :
     OrbitalAut G (X i) (Subtype.val : (actualGeometry S H cco C T hCT meet_id gate).inducedCarrier D → X i) ≃*
       Matching ((actualGeometry S H cco C T hCT meet_id gate).factorAction B D hD surjD) ((actualGeometry S H cco C T hCT meet_id gate).jointAction B) :=
-  (actualGeometry S H cco C T hCT meet_id gate).actualInducedAutEquiv B D hD surjD fullB
+  by
+    letI : Countable (X i) := sourceCountable
+    exact (actualGeometry S H cco C T hCT meet_id gate).actualInducedAutEquiv B D hD surjD fullB
 
 /-- The source's existential coordinate-only version of JWA. -/
 noncomputable def full_coordinate_automorphisms :
@@ -72,8 +77,6 @@ theorem owner_image :
     exact (((actualGeometry S H cco C T hCT meet_id gate).inducedOwnerQuotient B D hD surjD fullB).commutes x).symm.trans
       (congrArg Subtype.val hx)
 
-variable [sourceCountable : Countable (X i)]
-include sourceCountable
 
 /-- Every prescribed ENTIRE full joint-owner action lifts with every
 compatible original point motion. Current actual-source scope retains
