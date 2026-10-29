@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 181,
+  "revision": 182,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -1205,7 +1205,50 @@
       }
     }
   },
-  "integration_lock": null,
+  "integration_lock": {
+    "kind": "infrastructure",
+    "actor_id": "root",
+    "head_sha": "e80996a1bafc309711419825e8a23bfe3b7c6ef8",
+    "base_main_sha": "3c49b18fddb528ea0da2a8cf2cbba5be5f16b9ad",
+    "pr_number": 32,
+    "review": {
+      "actor_id": "independent_review",
+      "head_sha": "e80996a1bafc309711419825e8a23bfe3b7c6ef8",
+      "approved": true,
+      "summary": "Actual nonauthor /root/independent_review approves exact repaired e80996a1/treeade688 after whole B023/B025 contracts/78claims/source/provenance and minimal auxiliary-import validator delta. All23oldrows/source/roles/capacity preserved; every auxiliary import independently binds unique provider/support/fingerprints, both ordering bypasses rejected. Actual exactCI40842462123 passes92tests/25catalogue/3000jobs/11274std3/763actualpartsANDcurrentSOURCE prepost. Same manifest/singlelock/CAS atomicpromotion retains alloldacceptances; no mathematical/Lean/toolchain change.",
+      "independence": {
+        "identity": "/root/independent_review",
+        "non_author": true,
+        "summary": "Actual same registered control-only reviewer authored none of this complete publication, extraction, prepared contracts, production code or tests. It personally inspected whole source/contracts and code, reported one concrete order-dependent validator bypass, and independently verified only the root repair delta and new exact CI; no implementation/design authorship.",
+        "report_path": "formalization/coordination/reviews/B023-B025-registry-publication.md"
+      }
+    },
+    "ci": {
+      "run_id": 40842462123,
+      "head_sha": "e80996a1bafc309711419825e8a23bfe3b7c6ef8",
+      "conclusion": "success",
+      "axiom_audit": "allowlist"
+    },
+    "author_actor_ids": [
+      "root",
+      "source-preparation-project",
+      "/root/frontier10"
+    ],
+    "original_author_project_ids": [
+      0,
+      3
+    ],
+    "registry_promotion": {
+      "package_ids": [
+        "B023",
+        "B025"
+      ],
+      "previous_registry_sha256": "7f6ca128e45182065c35e01ae406a00c1810b2dead19902dfd1ea1342f91259d",
+      "previous_policy_sha256": "f140922657a8e9a15291037c589da22c83fd08f10d8491d64575ba3211bb09ae",
+      "registry_sha256": "c2d3df01ea3fdd7fadcf84e7161371c7bac69c65007c47a7a8848dd7fcf3b9aa",
+      "policy_sha256": "57421d89a06865115c5b56bde3c3bcd99d221715230f3957208ce0876e148c8c"
+    }
+  },
   "history": [
     {
       "revision": 1,
@@ -4651,6 +4694,57 @@
           "axiom_audit": "allowlist"
         },
         "actor_id": "root"
+      }
+    },
+    {
+      "revision": 182,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "start_infrastructure",
+      "package_id": null,
+      "details": {
+        "actor_id": "root",
+        "pr_number": 32,
+        "head_sha": "e80996a1bafc309711419825e8a23bfe3b7c6ef8",
+        "base_main_sha": "3c49b18fddb528ea0da2a8cf2cbba5be5f16b9ad",
+        "head_contains_main": true,
+        "ci": {
+          "run_id": 40842462123,
+          "head_sha": "e80996a1bafc309711419825e8a23bfe3b7c6ef8",
+          "conclusion": "success",
+          "axiom_audit": "allowlist"
+        },
+        "author_actor_ids": [
+          "root",
+          "source-preparation-project",
+          "/root/frontier10"
+        ],
+        "original_author_project_ids": [
+          0,
+          3
+        ],
+        "review": {
+          "actor_id": "independent_review",
+          "head_sha": "e80996a1bafc309711419825e8a23bfe3b7c6ef8",
+          "approved": true,
+          "summary": "Actual nonauthor /root/independent_review approves exact repaired e80996a1/treeade688 after whole B023/B025 contracts/78claims/source/provenance and minimal auxiliary-import validator delta. All23oldrows/source/roles/capacity preserved; every auxiliary import independently binds unique provider/support/fingerprints, both ordering bypasses rejected. Actual exactCI40842462123 passes92tests/25catalogue/3000jobs/11274std3/763actualpartsANDcurrentSOURCE prepost. Same manifest/singlelock/CAS atomicpromotion retains alloldacceptances; no mathematical/Lean/toolchain change.",
+          "independence": {
+            "identity": "/root/independent_review",
+            "non_author": true,
+            "summary": "Actual same registered control-only reviewer authored none of this complete publication, extraction, prepared contracts, production code or tests. It personally inspected whole source/contracts and code, reported one concrete order-dependent validator bypass, and independently verified only the root repair delta and new exact CI; no implementation/design authorship.",
+            "report_path": "formalization/coordination/reviews/B023-B025-registry-publication.md"
+          }
+        },
+        "registry_promotion": {
+          "package_ids": [
+            "B023",
+            "B025"
+          ],
+          "previous_registry_sha256": "7f6ca128e45182065c35e01ae406a00c1810b2dead19902dfd1ea1342f91259d",
+          "previous_policy_sha256": "f140922657a8e9a15291037c589da22c83fd08f10d8491d64575ba3211bb09ae",
+          "registry_sha256": "c2d3df01ea3fdd7fadcf84e7161371c7bac69c65007c47a7a8848dd7fcf3b9aa",
+          "policy_sha256": "57421d89a06865115c5b56bde3c3bcd99d221715230f3957208ce0876e148c8c"
+        }
       }
     }
   ],
