@@ -9,6 +9,45 @@ open StrongExact Selectors
 variable {ι : Type u} {X : ι → Type v} (S : AtomicSource.{u,v,w} ι X)
 variable {G : Type*} [Group G] [∀ i, MulAction G (X i)]
 
+/-- The false flag means the WHOLE diversity palette, never equality. -/
+theorem augmented_bool_skeleton {safe : ∀ i j, S.Menu i j} {i j} {D : S.Menu i j}
+    (hD : Augmented S safe D) :
+    ∃ E, Exact S E ∧ ∃ flag : Bool, D = E ∩ (if flag then safe i j else Set.univ) := by
+  obtain ⟨E,hE,he⟩ := hD.skeleton
+  rcases he with he | he
+  · exact ⟨E,hE,false,by simpa only [Bool.false_eq_true,↓reduceIte,Set.inter_univ] using he⟩
+  · exact ⟨E,hE,true,he⟩
+
+theorem skeleton_flags_inter {safe : ∀ i j, S.Menu i j} {i j} (D E : S.Menu i j)
+    (a b : Bool) :
+    (D ∩ (if a then safe i j else Set.univ)) ∩ (E ∩ (if b then safe i j else Set.univ)) =
+      (D ∩ E) ∩ (if a || b then safe i j else Set.univ) := by
+  cases a <;> cases b <;> ext c <;> simp only [Bool.false_eq_true,Bool.or_false,Bool.or_true,
+    ↓reduceIte,Set.mem_inter_iff,Set.mem_univ,and_true] <;> tauto
+
+theorem singleton_trace_nonempty_iff {safe : ∀ i j, S.Menu i j} {i j} (a : S.Atom i j) :
+    (({a} : S.Menu i j) ∩ safe i j).Nonempty ↔ a ∈ safe i j := by simp
+
+/-- Explicit finite-meet closure, including the empty Top family. -/
+theorem MenuCalculus.meet_member {Q : Family S} (C : MenuCalculus S Q)
+    {i j} (menus : List (S.Menu i j))
+    (hm : ∀ D ∈ menus, (⟨i,j,D⟩ : TaggedMenu S) ∈ Q)
+    (hne : (meetMenus S menus).Nonempty) :
+    (⟨i,j,meetMenus S menus⟩ : TaggedMenu S) ∈ Q := by
+  induction menus with
+  | nil =>
+    have he : meetMenus S ([] : List (S.Menu i j)) = Set.univ := by ext a; simp [meetMenus]
+    rw [he]; exact C.top i j
+  | cons D rest ih =>
+    have he : meetMenus S (D :: rest) = D ∩ meetMenus S rest := by
+      ext a; simp [meetMenus]
+    have hnrest : (meetMenus S rest).Nonempty := by
+      obtain ⟨a,ha⟩ := hne
+      exact ⟨a,fun E hE => ha E (List.mem_cons_of_mem D hE)⟩
+    rw [he]
+    exact C.inter (hm D List.mem_cons_self)
+      (ih (fun E hE => hm E (List.mem_cons_of_mem D hE)) hnrest) (he ▸ hne)
+
 noncomputable def originalSkeleton (safe : ∀ i j, S.Menu i j) {i j} (D : S.Menu i j) : S.Menu i j := by
   classical
   exact if h : Augmented S safe D then Classical.choose h.skeleton else D
