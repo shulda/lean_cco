@@ -10,6 +10,17 @@ namespace CCO.Owners.Master
 noncomputable section
 open Product
 
+/-- Conjugation through a true point identification preserves the entire
+original orbital action, including its natural permutation action. -/
+def orbital_action_equivalence {G₀ A₀ X Y : Type*} [Group G₀] [MulAction G₀ A₀]
+    (ι : X → A₀) (κ : Y → A₀) (e : X ≃ Y) (h : ∀ x, κ (e x) = ι x) :
+    ActionEquivalence (OrbitalAut G₀ A₀ ι) (OrbitalAut G₀ A₀ κ) X Y where
+  group := orbitalAutCongr e h
+  point := e
+  equivariant g x := by
+    change e (g.val x) = e (g.val (e.symm (e x)))
+    rw [Equiv.symm_apply_apply]
+
 variable {G K ED JC O U : Type*} [Group G]
 variable [MulAction G K] [MulAction G ED] [MulAction G JC] [MulAction G O]
 variable (P : ProductGeometry (G := G) (K := K) (ED := ED) (JC := JC) (O := O))
