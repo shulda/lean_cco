@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 174,
+  "revision": 175,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -1127,7 +1127,7 @@
       }
     },
     "B029": {
-      "state": "REVIEWING",
+      "state": "INTEGRATING",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b029_finite",
@@ -1169,7 +1169,13 @@
       }
     }
   },
-  "integration_lock": null,
+  "integration_lock": {
+    "kind": "package",
+    "package_id": "B029",
+    "actor_id": "root",
+    "base_main_sha": "43c0bdd4f92b9a5697c5f64d1b9b63408c9f3832",
+    "head_sha": "2532e92e34710516d6a8ef630c546f97d50938b5"
+  },
   "history": [
     {
       "revision": 1,
@@ -4488,6 +4494,26 @@
         "head_sha": "2532e92e34710516d6a8ef630c546f97d50938b5",
         "summary": "Actual nonauthor /root/independent_review approves exact2532e92/treeceeaa8e after whole C01–27 source/premise/provider/consumer review: FULL-stabilizer acl equality, universal ENTIRE matrix safety, arbitrary closed spans, one fixed full preimage witness, all nine real/K/H pair types, both ENTIRE prescribed actions and ORIGINAL selected root proved. Ordinary witness input and relative onto/kernel gates remain separately scoped. Only2MD files after mathematical freeze. Actual CI40837126665/job123324423233 passes87tests/2968jobs/10965standard3/733actualpartsANDcurrentsource PREPOST; source/toolchain/accepted APIs unchanged.",
         "actor_id": "independent_review"
+      }
+    },
+    {
+      "revision": 175,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "start_integration",
+      "package_id": "B029",
+      "details": {
+        "package_id": "B029",
+        "head_sha": "2532e92e34710516d6a8ef630c546f97d50938b5",
+        "base_main_sha": "43c0bdd4f92b9a5697c5f64d1b9b63408c9f3832",
+        "head_contains_main": true,
+        "ci": {
+          "run_id": 40837126665,
+          "head_sha": "2532e92e34710516d6a8ef630c546f97d50938b5",
+          "conclusion": "success",
+          "axiom_audit": "allowlist"
+        },
+        "actor_id": "root"
       }
     }
   ],
