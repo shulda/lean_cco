@@ -31,7 +31,7 @@ def collect(root):
              'tools/check_formalization_coordination.py',
              'tools/prepare_formalization_launch.py',
              'tools/test_formalization_coordination.py', 'tools/coordination_queue.py',
-             'tools/test_coordination_queue.py'}
+             'tools/test_coordination_queue.py', 'tools/test_registry_promotion.py'}
     board = json.loads((root / coordination.DIRECTORY / 'BOARD.json').read_text())
     coordination.validate(root, board)
     for path, content in coordination.generated(board).items():
