@@ -652,3 +652,7 @@ import CCO.FinitePackets.Normalization.ThinBasic
 import CCO.FinitePackets.Normalization.ThinConsumers
 import CCO.FinitePackets.Normalization.Translations
 import CCO.FinitePackets.Normalization.SquarePowers
+import CCO.Owners.Provider.GenericConsumers
+import CCO.Owners.Provider.GenericEPPA
+import CCO.Owners.Provider.GenericLanguage
+import CCO.Owners.Provider.GenericRestriction
