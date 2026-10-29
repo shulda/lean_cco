@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 172,
+  "revision": 173,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -1127,7 +1127,7 @@
       }
     },
     "B029": {
-      "state": "SUBMITTED",
+      "state": "REVIEWING",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b029_finite",
@@ -1153,7 +1153,19 @@
         "conclusion": "success",
         "axiom_audit": "allowlist"
       },
-      "report_path": "formalization/coordination/submissions/B029.md"
+      "report_path": "formalization/coordination/submissions/B029.md",
+      "review": {
+        "project_id": 3,
+        "actor_id": "independent_review",
+        "head_sha": "2532e92e34710516d6a8ef630c546f97d50938b5",
+        "approved": false,
+        "independence": {
+          "identity": "/root/independent_review",
+          "non_author": true,
+          "summary": "Actual separate registered control-only reviewer authored none of the complete finite-lift implementation, root helpers, source preparation or design. It personally read all22 frozen modules and all27 claims once, then only two metadata reports and exact public CI/ancestry, with no helper reviewers or duplicate builds.",
+          "report_path": "formalization/coordination/reviews/B029-final.md"
+        }
+      }
     }
   },
   "integration_lock": null,
@@ -4444,6 +4456,24 @@
         },
         "report_path": "formalization/coordination/submissions/B029.md",
         "actor_id": "root"
+      }
+    },
+    {
+      "revision": 173,
+      "project_id": 3,
+      "actor_id": "independent_review",
+      "event": "review",
+      "package_id": "B029",
+      "details": {
+        "package_id": "B029",
+        "head_sha": "2532e92e34710516d6a8ef630c546f97d50938b5",
+        "independence": {
+          "identity": "/root/independent_review",
+          "non_author": true,
+          "summary": "Actual separate registered control-only reviewer authored none of the complete finite-lift implementation, root helpers, source preparation or design. It personally read all22 frozen modules and all27 claims once, then only two metadata reports and exact public CI/ancestry, with no helper reviewers or duplicate builds.",
+          "report_path": "formalization/coordination/reviews/B029-final.md"
+        },
+        "actor_id": "independent_review"
       }
     }
   ],
