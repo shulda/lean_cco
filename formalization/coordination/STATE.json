@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 122,
+  "revision": 123,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -613,8 +613,22 @@
       }
     },
     "B012": {
-      "state": "AVAILABLE",
-      "owner_project_id": null
+      "state": "IN_PROGRESS",
+      "owner_project_id": 3,
+      "author_actor_ids": [
+        "root"
+      ],
+      "original_author_project_ids": [
+        3
+      ],
+      "claim_revision": 123,
+      "base_main_sha": "8b165711491be83a7043dd4d40f818aa17ebcc05",
+      "base_ci": {
+        "head_sha": "8b165711491be83a7043dd4d40f818aa17ebcc05",
+        "run_id": 40766132785,
+        "conclusion": "success",
+        "axiom_audit": "allowlist"
+      }
     },
     "B013": {
       "state": "ACCEPTED",
@@ -3171,6 +3185,24 @@
         "package_id": "B011",
         "integration_commit": "8b165711491be83a7043dd4d40f818aa17ebcc05",
         "main_ci": {
+          "head_sha": "8b165711491be83a7043dd4d40f818aa17ebcc05",
+          "run_id": 40766132785,
+          "conclusion": "success",
+          "axiom_audit": "allowlist"
+        },
+        "actor_id": "root"
+      }
+    },
+    {
+      "revision": 123,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "claim",
+      "package_id": "B012",
+      "details": {
+        "package_id": "B012",
+        "base_main_sha": "8b165711491be83a7043dd4d40f818aa17ebcc05",
+        "base_ci": {
           "head_sha": "8b165711491be83a7043dd4d40f818aa17ebcc05",
           "run_id": 40766132785,
           "conclusion": "success",
