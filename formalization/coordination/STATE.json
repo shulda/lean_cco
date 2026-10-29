@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 137,
+  "revision": 138,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -710,7 +710,7 @@
       }
     },
     "B014": {
-      "state": "REVIEWING",
+      "state": "INTEGRATING",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b014_chain",
@@ -970,7 +970,13 @@
       }
     }
   },
-  "integration_lock": null,
+  "integration_lock": {
+    "kind": "package",
+    "package_id": "B014",
+    "actor_id": "root",
+    "base_main_sha": "a20e56f74221f30162224e2f6fa51266f1877b26",
+    "head_sha": "fe9f7428544b324d39499e94fc900cc3a600279c"
+  },
   "history": [
     {
       "revision": 1,
@@ -3561,6 +3567,26 @@
         "head_sha": "fe9f7428544b324d39499e94fc900cc3a600279c",
         "summary": "Actual nonauthor B014 whole-source PASS: genuine square and actual quotient atoms, CURRENT-palette source-preserving finitechain, finiteF2 translationgroup/central original automorphisms, subgroup-plus-cut interval, infinite twin-cell H/AP/CCO and exact-thin countercontrols. Exact combined PR24 CI40820498554 passes67tests/2868jobs/9463standard-three declarations/633 current source modules and actual bytes before/after.",
         "actor_id": "independent_review"
+      }
+    },
+    {
+      "revision": 138,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "start_integration",
+      "package_id": "B014",
+      "details": {
+        "package_id": "B014",
+        "head_sha": "fe9f7428544b324d39499e94fc900cc3a600279c",
+        "base_main_sha": "a20e56f74221f30162224e2f6fa51266f1877b26",
+        "head_contains_main": true,
+        "ci": {
+          "run_id": 40820498554,
+          "head_sha": "fe9f7428544b324d39499e94fc900cc3a600279c",
+          "conclusion": "success",
+          "axiom_audit": "allowlist"
+        },
+        "actor_id": "root"
       }
     }
   ],
