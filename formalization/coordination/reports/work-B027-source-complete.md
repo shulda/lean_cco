@@ -69,7 +69,8 @@ mutually consistent. The consumer's unknown-declaration error and a direct
 import check exposed it. Existing verifier invalidation was then scoped to
 ONLY that module (eight generated outputs), and the incremental consumer
 passed 2,822 jobs with `LAKE_RESTORE_ARTIFACTS=false`. No Lean source fix or
-broad cache wipe was needed. That earlier failure/repair was not counted as
+broad cache wipe was needed. The snapshot cause remains unproven; no new
+production cache change was introduced for that anomaly. That earlier failure/repair was not counted as
 completion or an audit. The final whole build used actual input rehashing;
 its complete current-source PRE/POST guards both passed.
 
