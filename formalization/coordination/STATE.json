@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 233,
+  "revision": 234,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -1441,13 +1441,14 @@
         "project_id": 3,
         "actor_id": "independent_review",
         "head_sha": "876ecec16ffa5486821c4bb8409d23c390c727bb",
-        "approved": false,
+        "approved": true,
         "independence": {
           "identity": "/root/independent_review",
           "non_author": true,
           "summary": "Actual registered review-only actor authored/designedNONEofcompleteB027source,originalpreparation/upstreamEPPA,receivinginfra,testsorrepairs. PersonallyreadWHOLE38frozenmodules/4582lines plusALLproductioninfra/scripts/tests/workflowONCE, thenONLYfinal3MDandexactpublictree/ancestry/FULLcompletedCIlogs. Nohelperreviewers/duplicatetests/build/audit.",
           "report_path": "formalization/coordination/reviews/B027-final.md"
-        }
+        },
+        "summary": "Actual nonauthor /root/independent_review approves exactPR40head876ecec16ffa5486821c4bb8409d23c390c727bb/tree1b5e631f afterONEwhole38module4582lineC01–31/7export/aux andproductioninfra read: positiveprefixEXACTell/ell0 andallcycleprofilecriterion; ACTUALE01/E02 viaCCOlanguage/morphism/fullclosedfunction-setbridge; globalBOTHdistinguishednormalizations/literalAplusNew/exactALLgammaEMPTYrequests; actualsourceG-saturation; arbitraryoutputfaithfulCLOSEDclosure→regularpackets/uniqueowners/ONE-edge matrixrecovery; actualclosedSAPstrongtree/injectivity/protectedwholebase; fullinducedkcardK/chords, WHOLEoriginCCO, acceptedcollision/inflation andactualbasealignment. C0existentialseparatefromunchangedB0records/auts; nohiddenprovider/section/rawSAP/equivariantcompletion. Exactproviderpin/toolchain9oldpins+10thpackage,269fullsource/blob/header/outputguards,defaultCCOguard,audit/cacheidentity reviewed. FinalONLY3MDcountcorrectionPASS. ExactCI40887696031/job123495724618 SUCCESS121tests/1330facade+3478CCOjobs/14430std3/940CCOANDsourcePREPOST/269providerANDsourcePREPOSTexactcd358; ALL940CCOincl38HKN+269providerindependentlycountedCOLDactualBuilt. Mainacceptedddf/tree/synthetic08e/pinsunchanged. Report-onlyapprovale6deaa903db7818efcfa18db9e93b53a2c2d063d."
       }
     },
     "B032": {
@@ -5980,6 +5981,19 @@
           "summary": "Actual registered review-only actor authored/designedNONEofcompleteB027source,originalpreparation/upstreamEPPA,receivinginfra,testsorrepairs. PersonallyreadWHOLE38frozenmodules/4582lines plusALLproductioninfra/scripts/tests/workflowONCE, thenONLYfinal3MDandexactpublictree/ancestry/FULLcompletedCIlogs. Nohelperreviewers/duplicatetests/build/audit.",
           "report_path": "formalization/coordination/reviews/B027-final.md"
         },
+        "actor_id": "independent_review"
+      }
+    },
+    {
+      "revision": 234,
+      "project_id": 3,
+      "actor_id": "independent_review",
+      "event": "approve",
+      "package_id": "B027",
+      "details": {
+        "package_id": "B027",
+        "head_sha": "876ecec16ffa5486821c4bb8409d23c390c727bb",
+        "summary": "Actual nonauthor /root/independent_review approves exactPR40head876ecec16ffa5486821c4bb8409d23c390c727bb/tree1b5e631f afterONEwhole38module4582lineC01–31/7export/aux andproductioninfra read: positiveprefixEXACTell/ell0 andallcycleprofilecriterion; ACTUALE01/E02 viaCCOlanguage/morphism/fullclosedfunction-setbridge; globalBOTHdistinguishednormalizations/literalAplusNew/exactALLgammaEMPTYrequests; actualsourceG-saturation; arbitraryoutputfaithfulCLOSEDclosure→regularpackets/uniqueowners/ONE-edge matrixrecovery; actualclosedSAPstrongtree/injectivity/protectedwholebase; fullinducedkcardK/chords, WHOLEoriginCCO, acceptedcollision/inflation andactualbasealignment. C0existentialseparatefromunchangedB0records/auts; nohiddenprovider/section/rawSAP/equivariantcompletion. Exactproviderpin/toolchain9oldpins+10thpackage,269fullsource/blob/header/outputguards,defaultCCOguard,audit/cacheidentity reviewed. FinalONLY3MDcountcorrectionPASS. ExactCI40887696031/job123495724618 SUCCESS121tests/1330facade+3478CCOjobs/14430std3/940CCOANDsourcePREPOST/269providerANDsourcePREPOSTexactcd358; ALL940CCOincl38HKN+269providerindependentlycountedCOLDactualBuilt. Mainacceptedddf/tree/synthetic08e/pinsunchanged. Report-onlyapprovale6deaa903db7818efcfa18db9e93b53a2c2d063d.",
         "actor_id": "independent_review"
       }
     }
