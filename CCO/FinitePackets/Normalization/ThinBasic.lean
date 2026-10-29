@@ -49,8 +49,11 @@ theorem thinNeighbour_involutive (c : FullColour S) (hc : ThinColour S c) :
   apply thinNeighbour_eq S c hc
   exact (col_symm S _ _).trans (thinNeighbour_colour S c hc x)
 
-noncomputable def thinPerm (c : FullColour S) (hc : ThinColour S c) : Equiv.Perm M :=
-  Equiv.ofInvolutive (thinNeighbour S c hc) (thinNeighbour_involutive S c hc)
+noncomputable def thinPerm (c : FullColour S) (hc : ThinColour S c) : Equiv.Perm M where
+  toFun := thinNeighbour S c hc
+  invFun := thinNeighbour S c hc
+  left_inv := thinNeighbour_involutive S c hc
+  right_inv := thinNeighbour_involutive S c hc
 
 @[simp] theorem thinPerm_apply (c : FullColour S) (hc : ThinColour S c) (x : M) :
     thinPerm S c hc x = thinNeighbour S c hc x := rfl
@@ -70,6 +73,7 @@ variable (H : HomogeneousSource S G)
 
 theorem thinPerm_equivariant (c : FullColour S) (hc : ThinColour S c)
     (g : G) (x : M) : thinPerm S c hc (g • x) = g • thinPerm S c hc x := by
+  change thinNeighbour S c hc (g • x) = g • thinPerm S c hc x
   apply thinNeighbour_eq S c hc
   exact (col_invariant S H g x (thinPerm S c hc x)).trans (thinPerm_colour S c hc x)
 
