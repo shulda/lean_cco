@@ -32,6 +32,19 @@ theorem old_orbital_iff_colour (a b x y : M) :
   · intro hc
     exact S.pair_homogeneous_of_homogeneous H a x b y hc.symm
 
+omit H in
+theorem thinColour_square_identity (c : FullColour S) (hc : ThinColour S c) :
+    (fun x z : M => ∃ y, col S x y = c ∧ col S y z = c) = Eq := by
+  funext x z
+  apply propext
+  constructor
+  · rintro ⟨y,hxy,hyz⟩
+    exact (hc y).unique ((col_symm S y x).trans hxy) hyz
+  · intro he
+    subst z
+    obtain ⟨y,hy,_⟩ := hc x
+    exact ⟨y,hy,(col_symm S y x).trans hy⟩
+
 variable (K : ColourEq S ())
 
 theorem quotient_projection_equivariant (g : G) (x : M) :
