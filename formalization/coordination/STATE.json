@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 133,
+  "revision": 134,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -613,7 +613,7 @@
       }
     },
     "B012": {
-      "state": "INTEGRATING",
+      "state": "ACCEPTED",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b012_sap",
@@ -651,6 +651,13 @@
           "report_path": "formalization/coordination/reviews/B012-final.md"
         },
         "summary": "Actual nonauthor whole B012 source review PASS: nonsymmetric full-base SAP orbit construction, full nondistributive MI reconstruction/tuple/stabilizer and exact/terminal infinite Helly, all nine real providers and boundaries; exact PR23 CI40819714579 audited8906 declarations and612 current modules with67 tests successful."
+      },
+      "accepted_commit": "a20e56f74221f30162224e2f6fa51266f1877b26",
+      "main_ci": {
+        "run_id": 40820182696,
+        "head_sha": "a20e56f74221f30162224e2f6fa51266f1877b26",
+        "conclusion": "success",
+        "axiom_audit": "allowlist"
       }
     },
     "B013": {
@@ -941,13 +948,7 @@
       }
     }
   },
-  "integration_lock": {
-    "kind": "package",
-    "package_id": "B012",
-    "actor_id": "root",
-    "base_main_sha": "8b165711491be83a7043dd4d40f818aa17ebcc05",
-    "head_sha": "b180eccace343d9fe76dac1d9064e4f2c29ca5e8"
-  },
+  "integration_lock": null,
   "history": [
     {
       "revision": 1,
@@ -3465,6 +3466,24 @@
         "ci": {
           "head_sha": "b180eccace343d9fe76dac1d9064e4f2c29ca5e8",
           "run_id": 40819714579,
+          "conclusion": "success",
+          "axiom_audit": "allowlist"
+        },
+        "actor_id": "root"
+      }
+    },
+    {
+      "revision": 134,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "accept",
+      "package_id": "B012",
+      "details": {
+        "package_id": "B012",
+        "integration_commit": "a20e56f74221f30162224e2f6fa51266f1877b26",
+        "main_ci": {
+          "run_id": 40820182696,
+          "head_sha": "a20e56f74221f30162224e2f6fa51266f1877b26",
           "conclusion": "success",
           "axiom_audit": "allowlist"
         },
