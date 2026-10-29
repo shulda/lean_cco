@@ -37,7 +37,8 @@ end SamePair
 /-- Every FULL structure automorphism preserves complete pair profiles. -/
 theorem aut_pair {S : BinaryStructure U} (g : S.Aut) (x y : U) :
     SamePair S x y (g.val x) (g.val y) :=
-  ⟨g.val.injective.eq_iff, fun r => g.unary r x, fun r => g.unary r y, fun r => g.binary r x y⟩
+  ⟨g.val.injective.eq_iff, fun r => g.property.1 r x,
+    fun r => g.property.1 r y, fun r => g.property.2 r x y⟩
 
 /-- Complete pair preservation gives membership in the accepted full
 structural group; unary predicates are recovered on diagonal pairs. -/
