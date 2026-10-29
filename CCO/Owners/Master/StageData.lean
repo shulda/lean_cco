@@ -15,6 +15,13 @@ variable {A : Type v} (S : AtomicSource.{0,v,w} Unit (fun _ => A))
 variable {G : Type t} [Group G] [MulAction G A] [Countable A]
 variable (H : HomogeneousSource S G) (cco : SemanticCCO.{0,v,v,w} S)
 
+/-- The source hypothesis includes EVERY actual exact quotient, in
+particular equality. Each action is the original induced G action. -/
+def AllQuotientsEPPA : Prop :=
+  ∀ E : Exact S H cco,
+    letI := Product.exactInvariant S H cco E
+    OrdinaryEPPA G (Quotient E.val)
+
 def originalShadow (T : Set A) (V : Finset (Position S H cco)) :
     Set (Coordinate S H cco V) := coordinateProjection S H cco V '' T
 
