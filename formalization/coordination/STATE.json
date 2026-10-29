@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 237,
+  "revision": 238,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -1505,52 +1505,17 @@
         "conclusion": "success",
         "axiom_audit": "allowlist"
       }
+    },
+    "B024": {
+      "state": "AVAILABLE",
+      "owner_project_id": null
+    },
+    "B033": {
+      "state": "AVAILABLE",
+      "owner_project_id": null
     }
   },
-  "integration_lock": {
-    "kind": "infrastructure",
-    "actor_id": "root",
-    "head_sha": "c439400b930e21baef502a582c585abe6a5185dc",
-    "base_main_sha": "4562e4c0666f02790e3f526249b7a75acb854a76",
-    "pr_number": 41,
-    "review": {
-      "actor_id": "independent_review",
-      "head_sha": "c439400b930e21baef502a582c585abe6a5185dc",
-      "approved": true,
-      "summary": "Actual nonauthor /root/independent_review approves exactPR41c439400/treec6e4 after complete70claim/source and29file production publication read. Independently verified26sourcefingerprints against490c+dc5 Git trees,15payloads againstdc5+2d15 withONLYtwo explicitprotocolnotices, all29oldrows/remainingpolicyfields, previoussnapshotbytes andfour canonicalpromotiondigests. Validatorlogicunchanged; onlymoduleallowlists/CIloop expanded. ExactCI40899290124/job123536848553 passes121tests/1330facade+3478CCOjobs/14430std3/940CCOactualpartsANDcurrentSOURCEprepost/269providerexactcd358facadeprepost. Bothactualcaches warmhit; zeroBuiltCCO/provider. Actualbase456/currentSTATE236 all29ACCEPTED lockclear. Report-onlyapproval1f8207e1e7d7659870539fd7c9c7121df955c0d9.",
-      "independence": {
-        "identity": "/root/independent_review",
-        "non_author": true,
-        "summary": "Actual registered review-only reader authored and designed NONE of this complete publication, original preparation, controls, extraction, tooling, tests or repairs. It personally read the whole source/contracts/production delta and exact public CI without helper reviewers or duplicate tests/builds/audits.",
-        "report_path": "formalization/coordination/reviews/B024-B033-registry-publication.md"
-      }
-    },
-    "ci": {
-      "run_id": 40899290124,
-      "head_sha": "c439400b930e21baef502a582c585abe6a5185dc",
-      "conclusion": "success",
-      "axiom_audit": "allowlist"
-    },
-    "author_actor_ids": [
-      "root",
-      "source-preparation-project",
-      "/root/frontier12"
-    ],
-    "original_author_project_ids": [
-      0,
-      3
-    ],
-    "registry_promotion": {
-      "package_ids": [
-        "B024",
-        "B033"
-      ],
-      "previous_registry_sha256": "a58049f796f68fc95ca647de2011c873461e3149563e6c0587bdffae61941ad0",
-      "previous_policy_sha256": "d2c90531f54f3c3d776e89a32a72704153234a485e72efd699710a8fb24fc704",
-      "registry_sha256": "3cdb5e168b7a4132330c6c9b07523daed6483a7a0ec7781b216d76617fd79b44",
-      "policy_sha256": "c0242b4803762019439d427b83db9c4bdb1f6975eab7b886b6bcacfa1ae7426a"
-    }
-  },
+  "integration_lock": null,
   "history": [
     {
       "revision": 1,
@@ -6135,6 +6100,38 @@
           "policy_sha256": "c0242b4803762019439d427b83db9c4bdb1f6975eab7b886b6bcacfa1ae7426a"
         }
       }
+    },
+    {
+      "revision": 238,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "promote_registry",
+      "package_id": null,
+      "details": {
+        "actor_id": "root",
+        "head_sha": "c439400b930e21baef502a582c585abe6a5185dc",
+        "package_ids": [
+          "B024",
+          "B033"
+        ],
+        "integration_commit": "614a0ee0d5ec557a64a1df6734a84e584c8964c6",
+        "main_ci": {
+          "run_id": 40900442838,
+          "head_sha": "614a0ee0d5ec557a64a1df6734a84e584c8964c6",
+          "conclusion": "success",
+          "axiom_audit": "allowlist"
+        },
+        "registry_promotion": {
+          "package_ids": [
+            "B024",
+            "B033"
+          ],
+          "previous_registry_sha256": "a58049f796f68fc95ca647de2011c873461e3149563e6c0587bdffae61941ad0",
+          "previous_policy_sha256": "d2c90531f54f3c3d776e89a32a72704153234a485e72efd699710a8fb24fc704",
+          "registry_sha256": "3cdb5e168b7a4132330c6c9b07523daed6483a7a0ec7781b216d76617fd79b44",
+          "policy_sha256": "c0242b4803762019439d427b83db9c4bdb1f6975eab7b886b6bcacfa1ae7426a"
+        }
+      }
     }
   ],
   "infrastructure_integrations": [
@@ -6548,9 +6545,60 @@
         "conclusion": "success",
         "axiom_audit": "allowlist"
       }
+    },
+    {
+      "kind": "infrastructure",
+      "actor_id": "root",
+      "head_sha": "c439400b930e21baef502a582c585abe6a5185dc",
+      "base_main_sha": "4562e4c0666f02790e3f526249b7a75acb854a76",
+      "pr_number": 41,
+      "review": {
+        "actor_id": "independent_review",
+        "head_sha": "c439400b930e21baef502a582c585abe6a5185dc",
+        "approved": true,
+        "summary": "Actual nonauthor /root/independent_review approves exactPR41c439400/treec6e4 after complete70claim/source and29file production publication read. Independently verified26sourcefingerprints against490c+dc5 Git trees,15payloads againstdc5+2d15 withONLYtwo explicitprotocolnotices, all29oldrows/remainingpolicyfields, previoussnapshotbytes andfour canonicalpromotiondigests. Validatorlogicunchanged; onlymoduleallowlists/CIloop expanded. ExactCI40899290124/job123536848553 passes121tests/1330facade+3478CCOjobs/14430std3/940CCOactualpartsANDcurrentSOURCEprepost/269providerexactcd358facadeprepost. Bothactualcaches warmhit; zeroBuiltCCO/provider. Actualbase456/currentSTATE236 all29ACCEPTED lockclear. Report-onlyapproval1f8207e1e7d7659870539fd7c9c7121df955c0d9.",
+        "independence": {
+          "identity": "/root/independent_review",
+          "non_author": true,
+          "summary": "Actual registered review-only reader authored and designed NONE of this complete publication, original preparation, controls, extraction, tooling, tests or repairs. It personally read the whole source/contracts/production delta and exact public CI without helper reviewers or duplicate tests/builds/audits.",
+          "report_path": "formalization/coordination/reviews/B024-B033-registry-publication.md"
+        }
+      },
+      "ci": {
+        "run_id": 40899290124,
+        "head_sha": "c439400b930e21baef502a582c585abe6a5185dc",
+        "conclusion": "success",
+        "axiom_audit": "allowlist"
+      },
+      "author_actor_ids": [
+        "root",
+        "source-preparation-project",
+        "/root/frontier12"
+      ],
+      "original_author_project_ids": [
+        0,
+        3
+      ],
+      "registry_promotion": {
+        "package_ids": [
+          "B024",
+          "B033"
+        ],
+        "previous_registry_sha256": "a58049f796f68fc95ca647de2011c873461e3149563e6c0587bdffae61941ad0",
+        "previous_policy_sha256": "d2c90531f54f3c3d776e89a32a72704153234a485e72efd699710a8fb24fc704",
+        "registry_sha256": "3cdb5e168b7a4132330c6c9b07523daed6483a7a0ec7781b216d76617fd79b44",
+        "policy_sha256": "c0242b4803762019439d427b83db9c4bdb1f6975eab7b886b6bcacfa1ae7426a"
+      },
+      "integration_commit": "614a0ee0d5ec557a64a1df6734a84e584c8964c6",
+      "main_ci": {
+        "run_id": 40900442838,
+        "head_sha": "614a0ee0d5ec557a64a1df6734a84e584c8964c6",
+        "conclusion": "success",
+        "axiom_audit": "allowlist"
+      }
     }
   ],
-  "policy_revision": 7,
+  "policy_revision": 8,
   "third_batch_exception": {
     "package_id": "B018",
     "independent_active_work": true,
