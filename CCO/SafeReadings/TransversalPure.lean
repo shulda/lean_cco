@@ -1,5 +1,7 @@
 import CCO.SafeReadings.TransversalGauge
 import CCO.OwnerTransversal.PrescribedActions
+import CCO.SafeReadings.PaletteRelabelling
+import CCO.SafeReadings.TransversalCCO
 
 universe v w t z
 namespace CCO.SafeReadings.TransversalPure
@@ -139,6 +141,27 @@ def diagonal (e : ResidualData.PacketGroup S H) : Gamma S H R B :=
 
 @[simp] theorem diagonal_val (e : ResidualData.PacketGroup S H) :
     (diagonal S H R B hB e).val = TransversalGauge.ownerHom S H R B hB e := rfl
+
+/-- All pure-action obligations are actual palette/triangle theorems;
+positive-word exact transport is derived by the shared constructor. -/
+def relabelling : PaletteRelabelling (source S H R B) (Gamma S H R B) (FullColour S) where
+  owner := tagHom S H R B
+  label := fun a => some a.val
+  label_injective := fun _ _ _ _ he => Subtype.ext (Option.some.inj he)
+  transport := fun γ _ _ a => ⟨palette S H R B hB γ a,rfl⟩
+  converse_label := fun _ => rfl
+  triangle := by
+    intro γ i j k a b c a' b' c' ha hb hc
+    have hae : a'.val = a.val := Option.some.inj ha
+    have hbe : b'.val = b.val := Option.some.inj hb
+    have hce : c'.val = c.val := Option.some.inj hc
+    rw [source_triangle_iff_original S H R B,source_triangle_iff_original S H R B,hae,hbe,hce]
+
+def pureAction : Selectors.PureTagAction (source S H R B) (Gamma S H R B) (FullColour S) :=
+  (relabelling S H R B hB).pureAction
+
+theorem literalConverse : LiteralConverse (source S H R B) (pureAction S H R B hB) :=
+  (relabelling S H R B hB).literalConverse
 
 end
 end CCO.SafeReadings.TransversalPure
