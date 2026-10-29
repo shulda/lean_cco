@@ -97,4 +97,27 @@ theorem harmless_owner_avoidance (K : ColourEq S ()) (harmless : FullHarmless S 
   intro x hx hxA z hz
   exact hg x (Finset.mem_sdiff.mpr ⟨hx,hxA⟩) z hz
 
+/-- The same avoidance theorem with any actual equivariant naming of the
+owner quotient. A kernel identity replaces a choice of global section. -/
+theorem harmless_owner_map_avoidance (K : ColourEq S ()) (harmless : FullHarmless S K)
+    {O : Type q} [MulAction G O] (owner : M → O)
+    (surj : Function.Surjective owner)
+    (equiv : ∀ (g : G) x, owner (g • x) = g • owner x)
+    (kernel : ∀ x y, K x y ↔ owner x = owner y)
+    {I : Type z} [Finite I] (q : I → O)
+    [DecidableEq M] (A L Z : Finset M) (closed : Closed G A) :
+    ∃ g : G, (∀ a ∈ A, g • a = a) ∧ (∀ i, g • q i = q i) ∧
+      ∀ x ∈ L, x ∉ A → ∀ z ∈ Z, g • x ≠ z := by
+  classical
+  choose r hr using fun i => surj (q i)
+  let qK : I → Quotient K.val := fun i => Quotient.mk'' (r i)
+  letI := originalQuotientAction S H K
+  obtain ⟨g,hA,hq,havoid⟩ := harmless_owner_avoidance S H K harmless qK A L Z closed
+  refine ⟨g,hA,?_,havoid⟩
+  intro i
+  have he : K (g • r i) (r i) := Quotient.exact (hq i)
+  have ho := (kernel _ _).mp he
+  rw [equiv,hr] at ho
+  exact ho
+
 end CCO.MIGeometry
