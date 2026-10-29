@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 180,
+  "revision": 181,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -1106,7 +1106,7 @@
       }
     },
     "B022": {
-      "state": "INTEGRATING",
+      "state": "ACCEPTED",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b022_acl",
@@ -1146,6 +1146,13 @@
           "report_path": "formalization/coordination/reviews/B022-final.md"
         },
         "summary": "Actual nonauthor /root/independent_review approves exact9b5e0c52/treeac8fc363 after WHOLE C01–35 read: normalized global correspondence/all-original coordinates, general FULL invariant harmless-owner iff, APJ and finite-common-kernel closure/full-preimage/rectangle, generic C19/C35/coset avoidance, actual closed-target/clique consumers. Source branch premises retained; no same-rank/provider gap. Only2MD afterfreeze; acceptedB029union allproofbodies identical/exactacceptedrootprefix. Actual40838101568/job123327589847 SUCCESS87tests/3000jobs/11274standard3/763actualpartsANDcurrentsource PREPOST; actualnon-authorship retained."
+      },
+      "accepted_commit": "3c49b18fddb528ea0da2a8cf2cbba5be5f16b9ad",
+      "main_ci": {
+        "run_id": 40838675350,
+        "head_sha": "3c49b18fddb528ea0da2a8cf2cbba5be5f16b9ad",
+        "conclusion": "success",
+        "axiom_audit": "allowlist"
       }
     },
     "B029": {
@@ -1198,13 +1205,7 @@
       }
     }
   },
-  "integration_lock": {
-    "kind": "package",
-    "package_id": "B022",
-    "actor_id": "root",
-    "base_main_sha": "a1370921cff5957a3fef32c8da9a6453d8609928",
-    "head_sha": "9b5e0c52c56a95763238ac317f22492d74dba5e6"
-  },
+  "integration_lock": null,
   "history": [
     {
       "revision": 1,
@@ -4628,6 +4629,24 @@
         "ci": {
           "run_id": 40838101568,
           "head_sha": "9b5e0c52c56a95763238ac317f22492d74dba5e6",
+          "conclusion": "success",
+          "axiom_audit": "allowlist"
+        },
+        "actor_id": "root"
+      }
+    },
+    {
+      "revision": 181,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "accept",
+      "package_id": "B022",
+      "details": {
+        "package_id": "B022",
+        "integration_commit": "3c49b18fddb528ea0da2a8cf2cbba5be5f16b9ad",
+        "main_ci": {
+          "run_id": 40838675350,
+          "head_sha": "3c49b18fddb528ea0da2a8cf2cbba5be5f16b9ad",
           "conclusion": "success",
           "axiom_audit": "allowlist"
         },
