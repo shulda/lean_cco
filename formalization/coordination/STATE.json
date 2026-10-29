@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 248,
+  "revision": 249,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -1559,7 +1559,7 @@
       }
     },
     "B033": {
-      "state": "SUBMITTED",
+      "state": "REVIEWING",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b023_mi",
@@ -1587,7 +1587,19 @@
         "conclusion": "success",
         "axiom_audit": "allowlist"
       },
-      "report_path": "formalization/coordination/submissions/B033.md"
+      "report_path": "formalization/coordination/submissions/B033.md",
+      "review": {
+        "project_id": 3,
+        "actor_id": "independent_review",
+        "head_sha": "9a45a84e15e4994a242729cf24061f7a6391f62d",
+        "approved": false,
+        "independence": {
+          "identity": "/root/independent_review",
+          "non_author": true,
+          "summary": "Actual registered review-only actor authored and designed NONE of complete B033 implementation, original preparation, preserved coordinator WIP, helper proofs, receiving consumer, tests or repairs. It personally read all27 frozen modules2700lines once, then only final2MD/22-line union/root delta and exact public head/CI/provenance. No helper reviewer or duplicate build/audit.",
+          "report_path": "formalization/coordination/reviews/B033-final.md"
+        }
+      }
     }
   },
   "integration_lock": null,
@@ -6388,6 +6400,24 @@
           "axiom_audit": "allowlist"
         },
         "report_path": "formalization/coordination/submissions/B033.md"
+      }
+    },
+    {
+      "revision": 249,
+      "project_id": 3,
+      "actor_id": "independent_review",
+      "event": "review",
+      "package_id": "B033",
+      "details": {
+        "actor_id": "independent_review",
+        "package_id": "B033",
+        "head_sha": "9a45a84e15e4994a242729cf24061f7a6391f62d",
+        "independence": {
+          "identity": "/root/independent_review",
+          "non_author": true,
+          "summary": "Actual registered review-only actor authored and designed NONE of complete B033 implementation, original preparation, preserved coordinator WIP, helper proofs, receiving consumer, tests or repairs. It personally read all27 frozen modules2700lines once, then only final2MD/22-line union/root delta and exact public head/CI/provenance. No helper reviewer or duplicate build/audit.",
+          "report_path": "formalization/coordination/reviews/B033-final.md"
+        }
       }
     }
   ],
