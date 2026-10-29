@@ -47,6 +47,37 @@ theorem reading_mem_restrictRight (hConv : LiteralConverse S A) (C : ExactCalcul
   refine ⟨reading_member E h g F hF,S.conv a,S.mem_opposite ha,reading E h k P hP,by simp,?_⟩
   simpa only [S.conv_invol] using S.triangle_rotate (S.triangle_cycle (S.triangle_rotate_back ht))
 
+/-- R08's specific chosen atoms survive BOTH original exact restrictions;
+the two support inclusions and individual hereditary equalities are explicit. -/
+theorem reading_restrictions (hConv : LiteralConverse S A) (C : ExactCalculus S)
+    (hPoint : S.RealPointGluing) (hEdge : S.RealEdgeGluing)
+    (g k l : K) {i j m : ι} (D : S.Menu i j) (F : S.Menu j m) (P : S.Menu i m)
+    (hD : StrongExact.Exact S D) (hF : StrongExact.Exact S F) (hP : StrongExact.Exact S P)
+    (hpc : S.PC D F P) :
+    let c := reading E h l P hP
+    let D' := restrictLeft S D F c
+    let F' := restrictRight S D F c
+    ∃ (heD : StrongExact.Exact S D') (heF : StrongExact.Exact S F'),
+      reading E h g D hD ∈ D' ∧ reading E h k F hF ∈ F' ∧
+      D' ⊆ S.product {c} (S.opposite F') ∧ F' ⊆ S.product (S.opposite D') {c} ∧
+      reading E h g D' heD = reading E h g D hD ∧ reading E h k F' heF = reading E h k F hF := by
+  dsimp only
+  let c := reading E h l P hP
+  let D' := restrictLeft S D F c
+  let F' := restrictRight S D F c
+  have ha : reading E h g D hD ∈ D' := reading_mem_restrictLeft E h hCov hConv C g l D F P hD hF hP hpc
+  have hb : reading E h k F hF ∈ F' := reading_mem_restrictRight E h hCov hConv C k l D F P hD hF hP hpc
+  have hnD : D'.Nonempty := ⟨_,ha⟩
+  have hnF : F'.Nonempty := ⟨_,hb⟩
+  have heD : StrongExact.Exact S D' := StrongExact.exact_inter S hD
+    (C.product (StrongExact.exact_singleton S c) (C.opposite hF)) hnD
+  have heF : StrongExact.Exact S F' := StrongExact.exact_inter S hF
+    (C.product (C.opposite hD) (StrongExact.exact_singleton S c)) hnF
+  obtain ⟨hl,hr⟩ := restricted_pair_bilateral S C hPoint hEdge c hD hF hnD hnF
+  exact ⟨heD,heF,ha,hb,hl,hr,
+    reading_heredity E h g D D' hD heD (fun _ hx => hx.1) ha,
+    reading_heredity E h k F F' hF heF (fun _ hx => hx.1) hb⟩
+
 /-- R08: ALL three reading parameters are independent. No relation
 between g, k and l, no safe palette and no countability premise occurs. -/
 theorem rectangular_reading_triangle (hConv : LiteralConverse S A) (C : ExactCalculus S)
