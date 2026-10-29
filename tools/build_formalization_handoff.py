@@ -18,7 +18,7 @@ import check_formalization_coordination as coordination
 
 
 ROOT = Path(__file__).resolve().parents[1]
-MODULES = ('raw_exact', 'strong_selectors', 'parity_hasse', 'exact_crt', 'canonical_hull', 'real_closure', 'finite_packets', 'rigid_groupoid', 'finite_kernel', 'owner_action', 'sir')
+MODULES = ('raw_exact', 'strong_selectors', 'parity_hasse', 'exact_crt', 'canonical_hull', 'real_closure', 'finite_packets', 'rigid_groupoid', 'finite_kernel', 'owner_action', 'sir', 'owner_master', 'joint_owner')
 MANIFEST = 'HANDOFF_MANIFEST.json'
 
 
@@ -31,7 +31,7 @@ def collect(root):
              'tools/check_formalization_coordination.py',
              'tools/prepare_formalization_launch.py',
              'tools/test_formalization_coordination.py', 'tools/coordination_queue.py',
-             'tools/test_coordination_queue.py'}
+             'tools/test_coordination_queue.py', 'tools/test_registry_promotion.py'}
     board = json.loads((root / coordination.DIRECTORY / 'BOARD.json').read_text())
     coordination.validate(root, board)
     for path, content in coordination.generated(board).items():
@@ -79,6 +79,8 @@ def collect(root):
                                  'python tools/check_rigid_groupoid_controls.py',
                                  'python tools/check_finite_kernel_controls.py',
                                  'python tools/check_owner_action_controls.py',
+                                 'python tools/check_owner_master_controls.py',
+                                 'python tools/check_joint_owner_controls.py',
                                  'python tools/check_sir_controls.py',
                                  'python tools/check_formalization_coordination.py --check'],
                 'unexpanded_upstream': [dict(module=m['id'], **item) for m in modules

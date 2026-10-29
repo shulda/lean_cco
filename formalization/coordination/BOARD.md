@@ -25,6 +25,8 @@ mathematical catalogue/initial checkpoint, not current ownership.
 | B017: Finite-fibre kernels, hidden projections and entire named axes | B001 | [B017](../../formalization/coordination/packages/B017.md) |
 | B018: Finite-base and packet-closed owner providers | B002, B013 | [B018](../../formalization/coordination/packages/B018.md) |
 | B019: Full fine-coloured products and prescribed kernel actions | B002 | [B019](../../formalization/coordination/packages/B019.md) |
+| B020: Simultaneous finite exact-owner master | B008, B018, B019 | [B020](../../formalization/coordination/packages/B020.md) |
+| B021: Joint-owner full tuple actions and sparse EPPA | B002, B008 | [B021](../../formalization/coordination/packages/B021.md) |
 
 Autonomous release permissions are in [AUTONOMY.json](AUTONOMY.json).
 Use [QUEUE_OPERATIONS.md](QUEUE_OPERATIONS.md) to claim or review work.

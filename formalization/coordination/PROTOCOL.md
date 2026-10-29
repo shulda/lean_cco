@@ -30,6 +30,30 @@ claim revisions, bases, original authors, branch/PR/head, actual CI status,
 last green checkpoint and old history. A failing WIP head is preserved alongside
 its green checkpoint, never reset to it. The event is not a SUBMITTED assertion.
 
+## Additive release of prepared packages
+
+A private preparation snapshot is not a live release. To promote concrete
+prepared contracts, the coordinator uses a reviewed infrastructure PR that
+appends catalogue rows and released IDs, preserving all old rows, metadata,
+source pin, roles and capacity rules. This operation requires no active
+claims. Do not copy a private catalogue, policy or STATE over the public ones.
+
+Read the old catalogue/policy at the actual integration base and the new
+pair at the reviewed head. `registry_promotion_manifest` binds both complete
+snapshot pairs and the added IDs by canonical SHA256 digests. Include that
+manifest in `start_infrastructure`, using the new helper with explicit OLD
+catalogue/policy paths; the single lock retains its exact-head independent
+review and successful CI/audit. Normal state validation remains strict.
+
+After the expected-head history-preserving merge, require green CI/audit
+on the actual resulting main. Then `promote_registry` uses explicit old/new
+snapshots to finish this same lock AND append only unowned AVAILABLE records
+in one exact-parent non-force CAS. It advances the policy revision and keeps
+every previous claim, acceptance, author and history entry unchanged. Do not
+finish the infrastructure lock separately or start implementation before
+that public transition. During the catalogue/STATE deployment interval the
+lock remains held; ordinary operations reject mismatched registries.
+
 ## Work selection and capacity
 
 The default is **two active batches for the whole Work team**. Every unresolved

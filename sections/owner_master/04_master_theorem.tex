@@ -1,0 +1,285 @@
+\begin{theorem}[Finite exact-quotient owner master]
+\label{thm:acf-owner-master}
+Let \(X\) be a nonempty transitive standing
+source, and assume ordinary EPPA for \(\Age(X/E)\) for
+\emph{every} exact quotient \(X/E\), including \(E=\Id\).
+Let
+\(\mathcal E_{\rm ex}(X)\) be its full finite
+lattice of invariant exact equivalences.
+For every finite nonempty \(A\subseteq X\)
+there is \emph{one} finite induced \(B\subseteq X\)
+containing \(A\), with
+\(B_E=\pi_E(B)\subseteq X/E\) for every exact \(E\),
+such that:
+\begin{enumerate}
+\item[(M1)] each \(B_E\) is an ordinary EPPA
+  witness for \(\pi_E(A)\);
+\item[(M2)] each \(B_E\) is \(F_{X/E}\)-closed
+  in its actual ambient quotient;
+\item[(M3)] for \(E\le H\) exact, the natural
+  \(\Aut(B_E)\to\Aut(B_H)\) is onto, and
+  its kernel acts transitively on \emph{each}
+  fibre of \(B_E\to B_H\);
+\item[(M4)] for every finite family
+  \(E_1,\ldots,E_m\) of exact equivalences,
+  \(B_{\cap_iE_i}\) is precisely the set of
+  tuples from \(\prod_iB_{E_i}\) whose images
+  agree in every \(B_{E_i\vee E_j}\).
+\end{enumerate}
+The construction uses only finitely many
+ordinary EPPA-provider steps and no safe
+palette or ACF induction hypothesis.
+\end{theorem}
+\begin{proof}
+By Corollary~\ref{lem:acf-exact-distributive}
+and Birkhoff's finite representation theorem,
+write the exact lattice as \(\operatorname{Down}(P)\)
+for a finite poset \(P\).  Let \(E_d\)
+denote the exact equivalence corresponding
+to downset \(d\subseteq P\).  For each upset
+\(U\subseteq P\), put
+\[
+             X_U=X/E_{P\setminus U},
+        \qquad A_U=\pi_U(A).
+\]
+For \(V\subseteq U\) upsets there is the actual
+exact projection \(X_U\to X_V\).
+The empty upset gives a singleton quotient
+and \(U=P\) gives the original \(X\).
+
+Process the elements of \(P\) in an order
+with larger elements first.  At an intermediate
+upset \(U\), suppose finite induced
+\(B_V\subseteq X_V\) have been constructed
+compatibly for all upsets \(V\subseteq U\),
+with properties (M1)--(M4) within this
+subsystem.  For \(U=\varnothing\) the
+singleton system plainly satisfies them.
+Choose \(p\notin U\) whose strict successors
+\(O=\{q:q>p\}\) already lie in \(U\);
+let \(U_p=O\cup\{p\}\).
+
+The distributive lattice identities and the
+A32 exact-coordinate gluing formula give, for
+every new upset \(V\subseteq U\cup\{p\}\)
+containing \(p\), with \(V^-=V\setminus\{p\}\),
+the \emph{actual fine-colour} identification
+\[
+        X_V=X_{V^-}\times_{X_O}X_{U_p}.
+        \tag{\(\ast\)}\label{eq:acf-master-step}
+\]
+Take the already prepared finite \(B_O\),
+which is closed under \(F_{X_O}\), and apply
+Lemma~\ref{lem:acf-owner-provider} to
+\(X_{U_p}\to X_O\) with original input
+\(A_{U_p}\).  Obtain a finite \(D_p\)
+over exactly \(B_O\), full finite-packet
+closed, with relative EPPA and prescribed
+owner point homogeneity.  Keep the old
+\(B_V\) unchanged and define for each
+new \(V\ni p\)
+\[
+              B_V=B_{V^-}\times_{B_O}D_p.
+              \tag{\(\ast\ast\)}
+\]
+This is the \emph{full} finite fibre product
+inside~\eqref{eq:acf-master-step}; both
+coordinates project onto \(B_O\), so the
+new quotient projects onto each of its
+two factors.  All original \(A_V\) embed.
+
+We check the four properties simultaneously.
+
+\emph{Finite-packet closure (M2).}
+Fix a new upset \(V\ni p\), a point
+\(w=(b,x)\in B_V\), and another point
+\(w'\in F_{X_V}[w]\). Write \(\pi^-,\pi^p\)
+for its two ACTUAL exact quotient
+projections. The images of the finite
+invariant \(F_{X_V}\)-packet under
+either projection belong to a finite-class
+equivalence of the corresponding
+quotient source: if \(K=\ker\pi\)
+then \((F_{X_V}\vee K)/K\) has finite
+classes, since every one of its
+\(K\)-classes is reached by the finite
+set \(F_{X_V}[w]\) after commuting
+the invariant equivalences
+\(F_{X_V}\) and \(K\).
+Therefore
+\[
+ \pi^-(w')\in F_{X_{V^-}}[b],
+ \qquad
+ \pi^p(w')\in F_{X_{U_p}}[x].
+\]
+By the old induction and the
+local owner-provider lemma, these
+two images belong to
+\(B_{V^-}\) and \(D_p\),
+respectively. As \(w'\) is an
+ACTUAL real point of \(X_V\),
+its coordinate images agree
+over \(X_O\); their common owner
+lies in \(B_O\).
+The FULL finite fibre product
+\eqref{eq:acf-master-step} therefore
+contains \(w'\). Thus \(B_V\)
+is closed under every full finite
+\(F_{X_V}\)-packet, without
+requiring \(F_{X_V}\) itself
+to be full exact or assuming that
+all automorphisms of a quotient
+lift globally.
+
+\emph{Full automorphism images (M3).}
+For every new $V\ni p$, \cref{lem:acf-fibreproduct-aut} applies to
+\eqref{eq:acf-master-step}: the actual exact coordinate kernels,
+the full induced product and the common surjective owner image
+$B_O$ give
+\[
+ \Aut(B_V)=
+       \Aut(B_{V^-})\times_{\Aut(B_O)}\Aut(D_p).
+       \tag{\(\ast\ast\ast\)}
+\]
+Apply \cref{lem:acf-fibreproduct-owner-kernels} to the largest new
+product $L=B_U\times_{B_O}D_p$, with $D=B_U$, $C=D_p$ and
+owner set $B_O$. The old (M3) supplies the quotient-action and
+kernel-transitivity hypotheses, and
+\cref{lem:acf-owner-provider} supplies prescribed-owner point
+homogeneity of $D_p$.
+For an old target $B_V$, use part (a) with $T=B_V$.
+Here $V$ need not contain $O$, so no map $B_V\to B_O$ is required.
+For a new target $B_V$, use part (b) with $T=B_{V^-}$ and
+$W_T=B_V$: now $O\subseteq V^-$ supplies the required
+factorization through $T$, and the displayed group identity
+applies to $W_T$ as well.
+Thus $\Aut(L)\to\Aut(B_V)$ is onto with fibre-transitive
+kernel for every old or new $V$.
+
+This also gives (M3) for every nested pair $B_V\to B_{V'}$.
+For surjectivity, lift an automorphism of $B_{V'}$ first to $L$
+and then project to $B_V$. For kernel transitivity, lift two
+points of $B_V$ with the same $B_{V'}$-image to $L$, move them
+by its kernel over $B_{V'}$, and project the resulting
+automorphism to $B_V$.
+
+\emph{Ordinary EPPA (M1).}
+Old quotients retain (M1). For a new $V\ni p$, apply the EPPA
+clause of \cref{lem:acf-fibreproduct-owner-kernels} with
+\[
+ (D,C,O,A_W)=(B_{V^-},D_p,B_O,A_V).
+\]
+Take $T=D$, so the identity quotient satisfies condition (i).
+The two input projections are exactly $A_{V^-}$ and $A_{U_p}$.
+The first has the old EPPA witness $B_{V^-}$; the second has
+all prescribed-owner extensions in $D_p$ by
+\cref{lem:acf-owner-provider}. The projection kernels and
+quotient pair orbitals are unions of the original fine colours,
+as required by that clause. It therefore extends every partial
+automorphism of $A_V$, including those not induced by a partial
+map of the original $A$. This proves (M1) without choosing any
+owner-group section.
+
+\emph{Full compatibility (M4).}
+It is convenient to state the
+assertion DUAL to the exact-equivalence
+indexing: for every finite nonempty
+family of available upsets
+\(V_1,\ldots,V_m\), the finite system
+\(B_{\bigcup_i V_i}\) is exactly the
+set of tuples \((b_i)_{i\le m}\)
+with \(b_i\in B_{V_i}\) which agree
+in every \(B_{V_i\cap V_j}\).
+This is the CRT written for the
+upset presentation \(X_V\);
+complementing upsets converts its
+unions/intersections to the
+meets/joins in M4.
+
+If \(p\notin \bigcup_iV_i\), this
+is the old induction hypothesis.
+Otherwise, at least one \(V_i\)
+contains \(p\), and ANY such
+upset contains the WHOLE principal
+upset \(U_p=O\cup\{p\}\).
+For two indices \(i,j\) containing
+\(p\), the intersection \(V_i\cap
+V_j\) still contains \(U_p\).
+Their agreement in the projected
+\(B_{V_i\cap V_j}\) therefore forces
+the SAME \(D_p\)-coordinate
+\(x\in D_p\) in all \(p\)-containing
+members.
+
+For each \(i\), put \(V_i^-=V_i
+\setminus\{p\}\) and project its
+coordinate \(b_i\) to the already
+constructed old \(B_{V_i^-}\).
+Because
+\[
+ (V_i\cap V_j)\setminus\{p\}
+    =V_i^-\cap V_j^- ,
+\]
+the given pairwise compatibility
+implies compatibility of EVERY
+old coordinate in the finite old
+system, even when one of the
+original \(V_i\) did not contain
+\(p\). By the inductive full
+CRT there is one UNIQUE
+\(b\in B_{\bigcup_i V_i^-}\)
+inducing all \(b_i^-\).
+For a \(p\)-containing index
+\(i\), the coordinate \(b_i\)
+itself belongs to the FULL
+fibre product
+\(B_{V_i^-}\times_{B_O}D_p\).
+Consequently its two projections
+have the same \(B_O\) owner.
+Since \(b\) induces \(b_i^-\),
+the new \(b\) and the common
+\(x\) are compatible over \(B_O\).
+Thus
+\[
+          (b,x)\in
+          B_{\bigcup_iV_i^-}
+                    \times_{B_O}D_p
+          =B_{\bigcup_iV_i}.
+\]
+This tuple realizes ALL given
+\(b_i\). It is unique, since
+the old coordinate \(b\) and
+the common new coordinate \(x\)
+are each uniquely determined.
+The empty family corresponds
+to the singleton top-equivalence
+quotient and causes no additional
+compatibility condition.
+This proves M4 at the new stage.
+
+All checks are performed at each
+of the finitely many elements of
+\(P\).  At the end \(B=B_P\)
+is a finite induced original source
+containing \(A\), and its complete
+quotient system satisfies
+(M1)--(M4).
+\end{proof}
+
+\begin{remark}[Why the master is not a coloured product assumption]
+The finite \(\operatorname{Down}(P)\)
+coordinatisation is applied to the lattice
+of \emph{actual exact equivalences}.
+The intermediate sources \(X_U\) retain
+all their original fine binary orbitals.
+They need not be pure sets, Cartesian
+Hamming products, or freely coloured
+primitive structures.  The new local
+\(D_p\) is obtained by ordinary EPPA
+on its actual quotient source.
+The sole padding occurs in an ordinary
+EPPA construction, not in a rooted
+ACF target; this is essential when
+owner-relative closure is larger than
+the absolute real algebraic closure.
+\end{remark}

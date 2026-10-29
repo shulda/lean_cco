@@ -1,0 +1,361 @@
+\begin{lemma}[Rank-relative rooted ACF construction]
+\label{lem:acf-rank-step}
+Let \(M\) be a nonempty standing symmetric binary source,
+and assume the rooted theorem, ordinary EPPA and the all-exact
+finite owner-master theorem for \emph{every strictly smaller
+actual exact quotient} of \(M\).  Let
+\(S\subseteq\mathcal D(M)\) have strong closed
+amalgamation as in Definition~\ref{def:rooted-acf}.
+The local normalised MI safe-selector/R07 construction is the
+explicit direct provider at this rank.
+
+For every finite nonempty original real input
+\(A_0\subseteq M\), there exists a finite induced
+\(W\subseteq M\) containing \(\operatorname{acl}_M(A_0)\)
+such that:
+\begin{enumerate}
+\item every partial automorphism of \(A_0\) extends to
+  an automorphism of the same \(W\);
+\item for every nonempty \(Z\subseteq W\) whose distinct
+  pairs have colours outside \(S\), and every selected
+  \(z\in Z\), some \(\alpha\in\Aut(W)\) satisfies
+  \[
+       \alpha(Z)\subseteq\operatorname{acl}_M(A_0),
+                 \qquad \alpha(z)\in A_0 .
+                 \tag{\(\mathrm{ACF}\)}\label{eq:acf-main}
+  \]
+\end{enumerate}
+Thus the witness is ordinary EPPA and
+automorphism-transport closure-relative
+\(S\)-clique faithful, in fact with a specified
+root.  No coherent extension assignment is asserted.
+\end{lemma}
+\begin{proof}
+If \(M\) is finite, take \(W=M\).  Its real algebraic
+closure over a nonempty input is all of \(M\);
+homogeneity extends the partial maps and
+transitivity moves any selected root into \(A_0\).
+We may therefore assume \(M\) infinite.
+
+\medskip\noindent
+\emph{1. First handle the finite-exact-normalised case.}
+Suppose no nonidentity finite-class invariant exact
+equivalence remains.  Enumerate all minimal infinite
+invariant equivalences \(E_1,\ldots,E_r\).
+For \(r=1\), the greatest finite-class equivalence is
+meet-irreducible. The fine-owner quotient \(M/E_1\) has
+ordinary EPPA by the lower-rank hypothesis, since the infinite
+exact equivalence \(E_1\) is nonidentity. Thus
+Lemma~\ref{lem:acf-relative-mi-normal} with the trivial
+\(\Top\)-owner quotient supplies a rooted witness directly.
+
+Suppose \(r\ge2\).  Use the \emph{maximal} exact
+pseudocomplements of Section~\ref{sec:acf-maximal-cores}:
+\[
+ R_i=R_{E_i},\qquad \widehat C_i
+   =\bigvee\{H\le R_i:H\text{ exact}\},\qquad
+ Q_i=M/\widehat C_i,\qquad F_i=R_i/\widehat C_i.
+\]
+Lemma~\ref{lem:acf-hat-normalised} says that every \(Q_i\)
+is already finite-exact-normalised, with one minimal infinite
+direction and unary real acl \(F_i[-]\).  Their exact kernels
+have meet \(\Id\).  Corollary~\ref{cor:acf-hat-factors}
+provides global full-support strong-closed palettes \(S_i\)
+and the one-exceptional-projection property:
+for every unsafe clique all but at most one \(Q_j\) projection
+lie in a single finite \(F_j\)-packet.  In particular every
+original unsafe pair with distinct \(Q_i\) projection stays
+unsafe in \(S_i\).
+
+\medskip\noindent
+\emph{2. One master for all actual owner quotients.}
+For \(i\ne j\) put
+\[
+    J_{ij}=\widehat C_i\vee \widehat C_j,\qquad
+    H_i=\bigcap_{j\ne i}J_{ij},\qquad
+    H_*=\bigcap_{i<j}J_{ij}.
+\]
+These are actual exact equivalences, and
+\(H_*\le H_i\).  More importantly
+\(H_*>\Id\) by Corollary~\ref{cor:acf-hat-factors},
+so the owner source is a \emph{strict} exact quotient
+and its master is available from the lower-rank hypothesis.
+Moreover
+\[
+                  H_i\vee H_j=J_{ij}.
+                  \tag{\(\triangle\)}\label{eq:acf-owner-joins}
+\]
+Indeed both \(H_i,H_j\) are contained in
+\(J_{ij}\), while
+\(\widehat C_i\le H_i\) and \(\widehat C_j\le H_j\).
+Let \(\Omega_\infty=M/H_*\); it is an
+actual homogeneous exact quotient satisfying the
+original A32 hypotheses.  The quotient
+\(\Omega_\infty\to M/H_i\) is exact.
+
+Apply Theorem~\ref{thm:acf-owner-master} in
+\(\Omega_\infty\) to the finite nonempty owner
+input \(\pi_{H_*}(A_0)\).  Denote its finite
+witness by \(B_\Omega\), let
+\[
+  B_i=\pi_{H_i}(B_\Omega),\qquad
+  \Gamma=\Aut(B_\Omega),\qquad
+  \rho_i:\Gamma\twoheadrightarrow\Aut(B_i).
+\]
+By (M1)--(M3), every \(B_i\) is an owner
+EPPA witness for the original projected owner
+input, is closed under its ambient finite-class
+equivalence, and \(\rho_i\) is surjective with
+kernel transitive on every finite
+\(B_\Omega\to B_i\) fibre.  In particular
+\(B_i\) is invariant under every finite
+thin-translation action induced from
+a normalised \(Q_i\) factor.
+
+Apply (M4) INSIDE the strictly lower-rank
+actual owner source \(\Omega_\infty=M/H_*\)
+to the family of exact quotient kernels
+\(H_i/H_*\). We have
+\[
+ \bigcap_i(H_i/H_*)=\Id_{\Omega_\infty},
+ \qquad
+ (H_i/H_*)\vee(H_j/H_*)
+                =J_{ij}/H_*,
+\]
+by \(H_*=\bigcap_iH_i\) and
+\eqref{eq:acf-owner-joins}.
+Consequently (M4) identifies the ACTUAL
+finite master \(B_\Omega\), not merely
+an abstract subset or a set of orbit
+representatives, with the FULL set of
+tuples in \(\prod_i B_i\) whose two
+coordinates agree in the appropriate
+\(B_{J_{ij}/H_*}\) owner quotient
+for every \(i<j\).
+Every such compatible owner tuple
+already lies in the SAME fixed finite
+\(B_\Omega\). This excludes phantom
+compatible tuples outside the finite
+owner witness and is the exact
+surjectivity used below.
+
+\medskip\noindent
+\emph{3. Relative rooted witnesses in every MI coordinate.}
+Write \(A_i^0=\pi_{\widehat C_i}(A_0)\) and
+\[
+              A_i=\operatorname{acl}_{Q_i}(A_i^0)
+                    =F_i[A_i^0].
+\]
+The actual owner kernel of \(Q_i\to M/H_i\)
+is \(H_i/\widehat C_i\).  It contains the unique
+minimal infinite direction
+\((E_i\vee \widehat C_i)/\widehat C_i\) of \(Q_i\):
+indeed \(E_i\le \widehat C_j\) for \(j\ne i\),
+so \(E_i\le H_i\).
+Thus this possibly coarser owner cut is
+eligible for the relative MI construction.
+
+Each \(Q_i\) is already normalised by
+Lemma~\ref{lem:acf-hat-normalised}.  Apply the \emph{normalised}
+relative MI construction, Lemma~\ref{lem:acf-relative-mi-normal},
+using the single preselected \(B_i\), original projected source
+\(A_i^0\) and safe palette \(S_i\). Its fine-owner EPPA input is
+available because
+\[
+ Q_i/((E_i\vee\widehat C_i)/\widehat C_i)
+                   =M/(E_i\vee\widehat C_i)
+\]
+is a strictly smaller actual exact quotient of \(M\): its
+kernel contains the nonidentity infinite \(E_i\).
+The owner-input EPPA and full finite-packet closure conditions
+follow from (M1)--(M2) of the lower-rank master.  For
+clarity, (M3) already implies that every $B_i$ is
+\emph{vertex-transitive}: take the nested quotient from its
+exact owner sort to $\Top$, which has one point; its kernel is
+all of $\Aut(B_i)$ and must act transitively on the unique
+fibre $B_i$.  Because the original projected owner input is
+nonempty, every $B_i$ owner consequently lies in the
+$\Aut(B_i)$-orbit of an old projected owner.  This is
+exactly the old-orbit coverage hypothesis of the relative
+MI lemma; it is not an additional group-theoretic splitting.
+There is no intermediate factor finite exact kernel \(L_i\),
+no crossed owner map \(h_i\), and no use of the general
+relative finite-owner-cover lemma at this stage.
+
+Thus we obtain \emph{one} finite
+\(F_i\)-closed induced \(D_i\subseteq Q_i\)
+with owner projection exactly \(B_i\),
+containing \(A_i\), such that:
+\begin{itemize}
+\item every compatible pair consisting of a
+  partial automorphism of \(A_i^0\) and
+  \(\gamma_i\in\Aut(B_i)\) extends in \(D_i\)
+  with precisely that owner component;
+\item every rooted unsafe \(S_i\)-clique of
+  \(D_i\) is transported into \(A_i\), with
+  its selected root transported into
+  \emph{original} \(A_i^0\);
+\item by Lemma~\ref{lem:acf-point-homogeneity},
+  \(D_i\) admits prescribed-\(\gamma_i\)
+  transport of any single point and of
+  its whole \(F_i\)-packet.
+\end{itemize}
+All witnesses are fixed before choosing any
+original partial map or unsafe clique.
+
+\medskip\noindent
+\emph{4. Assemble the one finite real witness.}
+Let \(W\) be the set of compatible tuples
+\[
+ W=\bigl\{(x_1,\ldots,x_r)\in\prod_iD_i:
+ \pi_{J_{ij}}(x_i)=\pi_{J_{ij}}(x_j)
+                          \text{ for all }i<j\bigr\}.
+\]
+Apply \cref{lem:acf-multi-owner-point-homogeneity} with
+$C_i=\widehat C_i$ and the owner kernels $H_i$ from Step~2.
+The kernels have meet $\Id_M$, and
+\eqref{eq:acf-owner-joins} is its join gate (JOG).
+The lower-rank (M4) gives exactly the full compatible owner
+set $B_\Omega$, with its induced actions $\rho_i$;
+Step~3 supplies the surjections $D_i\to B_i$ and their
+prescribed-owner point homogeneity. Thus $W$ is a finite
+induced subset of $M$, projects onto every $D_i$ and onto
+$B_\Omega$, and has precisely the automorphism group (JWA).
+In particular, factor automorphisms inducing the components
+of one $\gamma\in\Gamma$ assemble to an automorphism of
+this original fine-coloured $W$.
+
+The original \(A_0\) embeds
+diagonally through its actual
+quotient projections. Moreover,
+by the finite-meet algebraic-closure
+identity \eqref{eq:acf-closure-pullback},
+the entire original real closure
+is the full compatible tuple set
+of the chosen \(F_j\)-closed
+targets \(A_j\). Precisely,
+\[
+             \operatorname{acl}_M(A_0)
+           =\{\text{compatible tuples in }\prod_iA_i\}.
+           \tag{\(\square\)}\label{eq:acf-target-product}
+\]
+
+Ordinary EPPA now follows directly from the final clause of
+\cref{lem:acf-multi-owner-point-homogeneity}: (M1) supplies
+owner EPPA for $\pi_{H_*}(A_0)$, and Step~3 supplies every
+projected source extension with its prescribed owner component.
+
+\medskip\noindent
+\emph{5. Rooted transport and the simultaneous owner calculation.}
+Let \(Z\subseteq W\) be a nonempty original
+unsafe clique, with selected root
+\(z=(z_1,\ldots,z_r)\).
+Choose an exceptional index \(i_0\)
+from~Corollary~\ref{cor:acf-hat-factors}.  Thus
+\(\pi_j(Z)\subseteq F_j[z_j]\)
+for every \(j\ne i_0\).
+The distinct-coordinate set \(\pi_{i_0}(Z)\)
+is \(S_{i_0}\)-unsafe by the full-support
+palette property, including the singleton case.
+
+Apply relative rooted ACF in \(D_{i_0}\):
+some \(\alpha_{i_0}\) has
+\[
+ \alpha_{i_0}(\pi_{i_0}Z)\subseteq A_{i_0},
+ \qquad
+ \alpha_{i_0}(z_{i_0})=a_{i_0}
+                           \in A_{i_0}^0.
+\]
+Let its owner component be
+\(\gamma_{i_0}\in\Aut(B_{i_0})\).
+Choose \emph{one actual} \(a\in A_0\)
+such that \(\pi_{i_0}(a)=a_{i_0}\),
+and write \(a_j=\pi_j(a)\).
+Let \(b,c\in B_\Omega\) be the
+complete joint-owner values of
+\(z\) and \(a\).
+They satisfy
+\(\gamma_{i_0}(\pi_{i_0}b)=\pi_{i_0}c\).
+By (M3) and \cref{lem:prescribed-action-point-lifting}, choose
+\(\gamma\in\Gamma\) with
+\[
+ \rho_{i_0}(\gamma)=\gamma_{i_0},\qquad \gamma b=c.
+\]
+It has the prescribed exceptional
+component \(\rho_{i_0}\gamma=\gamma_{i_0}\)
+and sends the \emph{entire} joint-owner
+root tuple of \(z\) to that of the
+single selected original \(a\).
+
+For each \(j\ne i_0\), prescribed-owner
+point homogeneity of \(D_j\) supplies
+an automorphism \(\alpha_j\) with
+owner component \(\rho_j(\gamma)\) and
+\(\alpha_j(z_j)=a_j\).  Therefore
+\[
+ \alpha_j(\pi_j Z)
+           \subseteq\alpha_j(F_j[z_j])
+           =F_j[a_j]\subseteq A_j.
+\]
+The exceptional \(\alpha_{i_0}\)
+already transports the entire complex
+projection into \(A_{i_0}\), and its
+owner component equals
+\(\rho_{i_0}(\gamma)\).
+All factor automorphisms thus have
+compatible components of the \emph{same}
+\(\gamma\). By \eqref{eq:acf-joint-owner-automorphisms},
+their tuple is an actual
+automorphism \(\alpha\) of \(W\), and
+by~\eqref{eq:acf-target-product}
+\[
+          \alpha(Z)\subseteq
+                    \operatorname{acl}_M(A_0),
+             \qquad
+          \alpha(z)=(a_1,\ldots,a_r)=a\in A_0 .
+\]
+This proves both assertions in the
+normalised case.
+
+\medskip\noindent
+\emph{6. Restore an original finite exact kernel.}
+Let \(K>\Id\) be the greatest finite-class exact equivalence
+of the original source, if one remains. Its quotient
+\(\overline M=M/K\) is fully normalised and is a strict actual
+exact quotient. By \cref{lem:acf-finite-lift}, the full-matrix
+palette
+\[
+ \overline S=\{q\in\mathcal D(\overline M):
+                  \Lambda_K(q)\subseteq S\}
+\]
+has strong closed amalgamation. The lower-rank rooted theorem
+therefore gives one finite ordinary EPPA witness
+\(\overline W\) with rooted \(\overline S\)-ACF over
+\(\pi_K(A_0)\). The nonrelative reconstruction clause of
+\cref{lem:acf-finite-lift} now gives exactly the required
+\(W=\pi_K^{-1}(\overline W)\): it contains
+\(\operatorname{acl}_M(A_0)\), extends all original partial maps,
+and preserves both the whole unsafe-clique target and its
+selected original root. This is finite joint-map lifting;
+no independent fibre permutations or group section are used.
+
+The empty input has the empty witness
+under the usual convention, with no
+nonempty rooted requirement.
+\end{proof}
+
+\begin{remark}[Dependency boundary of the rank step]
+\label{rem:acf-firewall}
+This lemma uses no same-rank global ordinary EPPA or
+same-rank owner master.  For $r\ge2$ its joint owner
+source is strictly smaller by
+Corollary~\ref{cor:acf-hat-factors}; for $r=1$
+the fine owner source $M/E$ is a strict quotient,
+or a singleton when $E=\Top$.  The sole original-
+source constructional obligation is the normalised
+relative safe-MI HKN/R07 lemma, whose augmented safe
+selector and orbit-covariant packet-matrix steps are
+still subject to a separate end-to-end mathematical audit.
+The following phased proof preserves these interfaces
+and does not assert coherent EPPA.
+\end{remark}

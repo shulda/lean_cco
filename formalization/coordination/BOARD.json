@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 10,
+  "revision": 11,
   "date": "2026-10-28",
   "phase": "READY",
   "public_repository": "shulda/lean_cco",
@@ -710,6 +710,98 @@
           "C27",
           "C28",
           "C29"
+        ]
+      },
+      "additional_source_exports": [],
+      "accepted_commit": null
+    },
+    {
+      "id": "B020",
+      "name": "Simultaneous finite exact-owner master",
+      "scope": "owner_master C01–C26; coherent onto upset diagrams, all-family CRT and conditional actual M1–M4 source assembly",
+      "contract_revision": 1,
+      "state": "PLANNED",
+      "owner_project_id": null,
+      "depends_on": [
+        "B008",
+        "B018",
+        "B019"
+      ],
+      "spec_file": "formalization/coordination/packages/B020.md",
+      "claims": {
+        "owner_master": [
+          "C01",
+          "C02",
+          "C03",
+          "C04",
+          "C05",
+          "C06",
+          "C07",
+          "C08",
+          "C09",
+          "C10",
+          "C11",
+          "C12",
+          "C13",
+          "C14",
+          "C15",
+          "C16",
+          "C17",
+          "C18",
+          "C19",
+          "C20",
+          "C21",
+          "C22",
+          "C23",
+          "C24",
+          "C25",
+          "C26"
+        ]
+      },
+      "additional_source_exports": [],
+      "accepted_commit": null
+    },
+    {
+      "id": "B021",
+      "name": "Joint-owner full tuple actions and sparse EPPA",
+      "scope": "joint_owner C01–C27; actual full finite tuple/group assembly, independent sparse EPPA and conditional given-exceptional-map support",
+      "contract_revision": 1,
+      "state": "PLANNED",
+      "owner_project_id": null,
+      "depends_on": [
+        "B002",
+        "B008"
+      ],
+      "spec_file": "formalization/coordination/packages/B021.md",
+      "claims": {
+        "joint_owner": [
+          "C01",
+          "C02",
+          "C03",
+          "C04",
+          "C05",
+          "C06",
+          "C07",
+          "C08",
+          "C09",
+          "C10",
+          "C11",
+          "C12",
+          "C13",
+          "C14",
+          "C15",
+          "C16",
+          "C17",
+          "C18",
+          "C19",
+          "C20",
+          "C21",
+          "C22",
+          "C23",
+          "C24",
+          "C25",
+          "C26",
+          "C27"
         ]
       },
       "additional_source_exports": [],

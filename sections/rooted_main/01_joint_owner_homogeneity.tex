@@ -1,0 +1,224 @@
+\section{Rooted closure-faithful ordinary EPPA}
+\label{sec:acf-main}
+
+The construction below is the induction step in the
+\emph{phased} proof.  It invokes ordinary EPPA and finite
+owner masters only on strictly smaller actual exact quotients,
+not on the current real source.  The resulting global theorem,
+including its ordinary EPPA corollary, is established in
+Section~\ref{sec:global-phased-induction}.
+
+\begin{lemma}[Joint-owner prescribed-action homogeneity of a full MI tuple witness]
+\label{lem:acf-multi-owner-point-homogeneity}
+Let $X$ be a source in the standing one-sort symmetric
+homomorphic CCO setting. Let $r\ge1$ and let
+$C_1,\ldots,C_r$ be ACTUAL
+invariant FULL EXACT kernel
+equivalences, with
+$\bigcap_i C_i=\Id_X$,
+and choose ACTUAL exact
+$H_i\ge C_i$, with
+$H_*=\bigcap_i H_i$.
+Assume the CRUCIAL
+pairwise-common-quotient
+JOIN GATE
+\[
+               C_i\vee C_j
+                  =H_i\vee H_j
+                          \qquad(i\ne j).
+\tag{JOG}\label{eq:acf-joint-owner-join-gate}
+\]
+Write $Q_i=X/C_i$,
+$\Omega=X/H_*$, and
+$O_i=X/H_i$.
+
+Let $B_\Omega\subseteq\Omega$
+be a finite INDUCED owner
+structure whose projections
+$B_i\subseteq O_i$ satisfy:
+\begin{enumerate}[label=(\roman*)]
+\item $B_\Omega$ is EXACTLY
+the full set of compatible
+tuples from the $B_i$,
+with pairwise equality
+tested in their actual
+common quotient
+$X/(H_i\vee H_j)$;
+\item every
+$\gamma\in\Gamma=
+ \Aut(B_\Omega)$ induces
+a well-defined automorphism
+$\rho_i(\gamma)$ of each $B_i$.
+\end{enumerate}
+For every i, let
+$D_i\subseteq Q_i$ be
+a finite induced structure
+projecting ONTO $B_i$,
+with PRESCRIBED-OWNER POINT
+HOMOGENEITY:
+for EVERY $x_i,y_i\in D_i$
+and EVERY
+$\delta_i\in\Aut(B_i)$
+carrying the owner of
+$x_i$ to the owner of
+$y_i$, there is
+$\alpha_i\in\Aut(D_i)$
+with EXACT owner component
+$\delta_i$ and
+$\alpha_i(x_i)=y_i$.
+
+Let $W$ be the FULL finite
+compatible tuple set
+\[
+ W=\{(x_i)_{i\le r}\in
+             \prod_i D_i:
+    \pi_{H_i\vee H_j}(x_i)=
+    \pi_{H_i\vee H_j}(x_j)
+                        \ (i<j)\}.
+\tag{JOW}\label{eq:acf-joint-owner-full-witness}
+\]
+Then the ACTUAL exact CRT,
+using the JOIN GATE
+\eqref{eq:acf-joint-owner-join-gate},
+identifies $W$ with a
+finite induced subset of
+original X, with owner
+projection $\pi_{H_*}(W)$
+EXACTLY $B_\Omega$.
+Every coordinate projection $W\to D_i$ is also surjective.
+
+Write $\operatorname{own}_i:\Aut(D_i)\to\Aut(B_i)$
+for the actual induced owner-action map;
+it is well-defined because the owner
+kernel $H_i/C_i$ and all its quotient
+pair orbitals are unions of the named
+$Q_i$ fine binary orbitals.
+The ENTIRE automorphism group, not just
+the separately constructible maps, is
+the actual finite group pullback
+\[
+ \boxed{\quad
+ \Aut(W)\cong
+ \bigl\{(\alpha_i)_i\in\prod_i\Aut(D_i):
+   \exists\gamma\in\Gamma\
+   \forall i\
+   \operatorname{own}_i(\alpha_i)
+                    =\rho_i(\gamma)\bigr\}.
+ \quad}
+ \tag{JWA}\label{eq:acf-joint-owner-automorphisms}
+\]
+The witnessing $\gamma$ is UNIQUE:
+the full owner set $B_\Omega$ is
+determined pointwise by its complete
+tuple of $B_i$ coordinates. This is
+a group identity, not a choice of a
+section $\Gamma\to\Aut(W)$.
+
+Moreover for EVERY
+$\gamma\in\Gamma$ and
+EVERY $x,y\in W$ with
+\[
+            \gamma(\pi_{H_*}x)
+                           =\pi_{H_*}y,
+\]
+there is ONE
+$\alpha\in\Aut(W)$,
+inducing precisely
+$\gamma$ on ALL of
+$B_\Omega$ and satisfying
+$\alpha(x)=y$.
+Thus the natural
+$\Aut(W)\to\Gamma$
+is ONTO and its kernel
+is transitive on EVERY
+full $B_\Omega$ owner
+fibre. This conclusion
+does not claim any
+group section
+$\Gamma\to\Aut(W)$.
+The JOIN GATE is
+ESSENTIAL: if two
+$C_i=\Id$ while their
+$H_i=\Top$ in a
+nontrivial source,
+coarse owner agreement
+would admit ALL formal
+ordered pairs $(x,y)$,
+whereas the actual CRT
+only permits $(x,x)$.
+
+If in addition the
+owner input
+$B_\Omega$ has ordinary
+EPPA for the projection
+of a finite original
+$A_0\subseteq W$, and
+each $D_i$ extends
+EVERY compatible partial
+automorphism of its
+projected input with
+EVERY prescribed owner
+component $\delta_i$,
+then W has ordinary
+EPPA for $A_0$ as well.
+\end{lemma}
+\begin{proof}
+If $B_\Omega$ is empty, every $B_i$ and $D_i$ is empty and,
+since $r\ge1$, so is $W$. All groups in (JWA) are then trivial,
+and all assertions follow. Assume $B_\Omega\ne\varnothing$.
+
+The exact CRT of \cref{thm:abstract-exact-crt,lem:acf-exact-distributive},
+together with $\bigcap_iC_i=\Id_X$ and the join gate (JOG),
+identifies each tuple in $W$ with a unique original point of $X$.
+Indeed the CRT tests equality in $X/(C_i\vee C_j)$, which by
+(JOG) is precisely the owner compatibility tested in (JOW).
+For each $b\in B_\Omega$, choose $x_i\in D_i$ above its $i$th
+owner coordinate. These choices form a tuple in $W$ with owner
+$b$. Conversely, the owner tuple of every point of $W$ lies in
+$B_\Omega$ by (i). Thus $W\to B_\Omega$ is onto.
+Each $W\to D_i$ is onto as well: for a prescribed $x_i$, choose
+$b\in B_\Omega$ above its owner and complete the other coordinates
+by choosing points of $D_j$ above the corresponding coordinates
+of this same $b$.
+
+We prove (JWA). Every automorphism of the induced $W$ preserves
+the actual $C_i$ and $H_*$ kernels, since they are unions of named
+original pair orbitals. The surjective projections therefore
+induce automorphisms $\alpha_i\in\Aut(D_i)$ and
+$\gamma\in\Gamma$ with
+$\operatorname{own}_i(\alpha_i)=\rho_i(\gamma)$.
+Their quotient pair orbitals are preserved because each is
+determined by the original pair orbital. The tuple
+$(\alpha_i)_i$ determines the automorphism of $W$, as
+$\bigcap_iC_i=\Id_X$.
+Conversely, a tuple $(\alpha_i)_i$ with one common owner action
+$\gamma$ preserves $W$: its owner tuples are transformed by
+$\gamma$ within the full set $B_\Omega$, and the inverse tuple
+has the same property. It preserves every original fine pair
+orbital by \cref{lem:exact-quotient-colour-meet}, since all its
+$Q_i$ coordinate pair orbitals are preserved. This proves (JWA)
+as a group identity. Two possible owner actions inducing the
+same actions on all $B_i$ agree on each complete owner tuple,
+so $\gamma$ is unique.
+
+Now fix $\gamma\in\Gamma$ and $x,y\in W$ with
+$\gamma(\pi_{H_*}x)=\pi_{H_*}y$. For each $i$,
+prescribed-owner point homogeneity supplies
+$\alpha_i\in\Aut(D_i)$ with exact owner component
+$\rho_i(\gamma)$ and $\alpha_i(x_i)=y_i$.
+By (JWA) these maps give one $\alpha\in\Aut(W)$, inducing
+$\gamma$ and sending $x$ to $y$. Since $W\to B_\Omega$ is onto and nonempty,
+\cref{lem:prescribed-action-point-lifting} gives surjectivity onto
+$\Gamma$ and fibre transitivity of its kernel, without a group section.
+
+Finally, let $p$ be a partial automorphism of $A_0$.
+Its projections to the owner and to the $Q_i$ sorts are genuine
+partial isomorphisms: their kernels and quotient pair orbitals
+are determined by the original pair orbitals. Extend the owner
+projection to $\gamma\in\Gamma$ by the assumed owner EPPA.
+For each $i$, extend the $Q_i$ projection using the relative
+hypothesis with prescribed owner action $\rho_i(\gamma)$.
+The resulting tuple belongs to (JWA) and agrees with $p$ on
+its domain, proving the final assertion.
+\end{proof}
+

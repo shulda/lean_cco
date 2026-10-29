@@ -1,0 +1,240 @@
+{
+  "preparation_repository": "shulda/cycle_constrainedness",
+  "preparation_ref": "cco-sym/consolidated-r45-20261017",
+  "preparation_commit": "2cb35673b426d79ae3e7c749afadb63cac382ad9",
+  "source_pin": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+  "public_base": "9bb179ae324d188083b9df8b55fe70b3c3391c2a",
+  "files": [
+    {
+      "path": "formalization/coordination/packages/B020.md",
+      "blob_sha": "4423483d63b5553688168116fae545d98c323a0b",
+      "mode": "100644",
+      "expected_bytes": 4112,
+      "pinned_source_blob": null,
+      "public_exists": false,
+      "public_byte_identical": false,
+      "sha256": "4a66e67f3b10fc2f79d9df3136e72ea0f67b346b7ef3ec3d6e40dcd0ea9b7174",
+      "staged": true
+    },
+    {
+      "path": "formalization/coordination/packages/B021.md",
+      "blob_sha": "b1df92581f517daaeecc0090ad163d339ec92185",
+      "mode": "100644",
+      "expected_bytes": 4044,
+      "pinned_source_blob": null,
+      "public_exists": false,
+      "public_byte_identical": false,
+      "sha256": "71310e40e1b3db4088af4ec419a59b0cd25c90b45f781aa4b7a5707416c54c9d",
+      "staged": true
+    },
+    {
+      "path": "formalization/joint_owner/PROOF_NOTES.md",
+      "blob_sha": "147033f158407a061fedb5aa8a70a3503d2d38c2",
+      "mode": "100644",
+      "expected_bytes": 28505,
+      "pinned_source_blob": null,
+      "public_exists": false,
+      "public_byte_identical": false,
+      "sha256": "4abfdd3dfecd1b180276a7c9ad6567422302e979591e63145a9b1fdff1d9ca7b",
+      "staged": true
+    },
+    {
+      "path": "formalization/joint_owner/README.md",
+      "blob_sha": "5256d34a5bec14e69a6c0c3c0a617f5b0a40d72e",
+      "mode": "100644",
+      "expected_bytes": 21535,
+      "pinned_source_blob": null,
+      "public_exists": false,
+      "public_byte_identical": false,
+      "sha256": "0b20c1d508d6792b89fb87c3ddddb11fc39dc00fe3c4c0e6df0a6f910a99da10",
+      "staged": true
+    },
+    {
+      "path": "formalization/joint_owner/module.json",
+      "blob_sha": "4b14ffcc052538a5fbf27a1d9bc64b1f354780d6",
+      "mode": "100644",
+      "expected_bytes": 45739,
+      "pinned_source_blob": null,
+      "public_exists": false,
+      "public_byte_identical": false,
+      "sha256": "cc8d42a2af74a170d56fd096ed08771950848eaee346b6a80c072b36b0a8536f",
+      "staged": true
+    },
+    {
+      "path": "formalization/owner_master/PROOF_NOTES.md",
+      "blob_sha": "18281dfc20a6cbb465ab286443eb6f5f169d3f71",
+      "mode": "100644",
+      "expected_bytes": 31432,
+      "pinned_source_blob": null,
+      "public_exists": false,
+      "public_byte_identical": false,
+      "sha256": "c3723218d375762a44ed36484c0bb3ce169da5f41655d54463845d71452bf422",
+      "staged": true
+    },
+    {
+      "path": "formalization/owner_master/README.md",
+      "blob_sha": "bd68bb55f11f808c22441b8220ce6e9add2b3d46",
+      "mode": "100644",
+      "expected_bytes": 22689,
+      "pinned_source_blob": null,
+      "public_exists": false,
+      "public_byte_identical": false,
+      "sha256": "e833b81a26e531bebefc3ec02dd0129d3653aba8570f500e424e6795fad5fd0b",
+      "staged": true
+    },
+    {
+      "path": "formalization/owner_master/module.json",
+      "blob_sha": "93e7ae255b4eef167735eabc4bbebaa37b44e0e1",
+      "mode": "100644",
+      "expected_bytes": 47662,
+      "pinned_source_blob": null,
+      "public_exists": false,
+      "public_byte_identical": false,
+      "sha256": "a72180fb250eaf8d29d998d76a2e7fff9db4e95560c480440ec71b5da351906b",
+      "staged": true
+    },
+    {
+      "path": "sections/exact_foundations/02_exact_quotient_orbital_geometry.tex",
+      "blob_sha": "d462f2bfffcd67c1fa712ac516972ab18e073d44",
+      "mode": "100644",
+      "expected_bytes": 7919,
+      "pinned_source_blob": "d462f2bfffcd67c1fa712ac516972ab18e073d44",
+      "public_exists": true,
+      "public_byte_identical": true,
+      "sha256": "acc4354684822f214aac21d558877f3e4119f812f0c7f902a6ffd89d8afcf7e0",
+      "staged": false
+    },
+    {
+      "path": "sections/exact_foundations/03_joint_exact_sort_lifting.tex",
+      "blob_sha": "394e0db063a476c5c069384b3d3fa2ffd3c7471d",
+      "mode": "100644",
+      "expected_bytes": 10454,
+      "pinned_source_blob": "394e0db063a476c5c069384b3d3fa2ffd3c7471d",
+      "public_exists": true,
+      "public_byte_identical": true,
+      "sha256": "cb5da1ded3466bade78147c7d1342e3fee603d7f651819a6a7d678b5e2176080",
+      "staged": false
+    },
+    {
+      "path": "sections/exact_gluing_geometry.tex",
+      "blob_sha": "c98b468daef5d657d6470e3a14020b8b22cc3a3f",
+      "mode": "100644",
+      "expected_bytes": 5002,
+      "pinned_source_blob": "c98b468daef5d657d6470e3a14020b8b22cc3a3f",
+      "public_exists": true,
+      "public_byte_identical": true,
+      "sha256": "0f154b5147dc78af13367382c85d122a54d6e3eb47bde48edb7e6ba859f81395",
+      "staged": false
+    },
+    {
+      "path": "sections/exact_lattice_crt.tex",
+      "blob_sha": "5ead1d021abbc99c255c8a36ec87585cba3fbdc3",
+      "mode": "100644",
+      "expected_bytes": 4617,
+      "pinned_source_blob": "5ead1d021abbc99c255c8a36ec87585cba3fbdc3",
+      "public_exists": true,
+      "public_byte_identical": true,
+      "sha256": "a329ec0d7cdff5188926bf6aac9db5ca660906c8e992db14c4662879b75193f1",
+      "staged": false
+    },
+    {
+      "path": "sections/owner_master/01_ambient_owner_provider.tex",
+      "blob_sha": "1b8b729d929d91d1dc7fa006f261d685be2b82b2",
+      "mode": "100644",
+      "expected_bytes": 5734,
+      "pinned_source_blob": "1b8b729d929d91d1dc7fa006f261d685be2b82b2",
+      "public_exists": true,
+      "public_byte_identical": true,
+      "sha256": "53925fe8247066e37575550bec3b5211d24f46597f2a6dbd39adb0ba7fe30cd5",
+      "staged": false
+    },
+    {
+      "path": "sections/owner_master/02_full_fibreproduct_action.tex",
+      "blob_sha": "f7f66f0f06dfbaabc716d35f95fccba11697d928",
+      "mode": "100644",
+      "expected_bytes": 2833,
+      "pinned_source_blob": "f7f66f0f06dfbaabc716d35f95fccba11697d928",
+      "public_exists": true,
+      "public_byte_identical": true,
+      "sha256": "fa1852f0a93d322e192ec6e51d4fb3ffc535c5da0e18cb5ff043819908ec479f",
+      "staged": false
+    },
+    {
+      "path": "sections/owner_master/03_owner_kernels_prescribed_actions.tex",
+      "blob_sha": "45d16b4f4555acfc67c29167320390320e798ac4",
+      "mode": "100644",
+      "expected_bytes": 4377,
+      "pinned_source_blob": "45d16b4f4555acfc67c29167320390320e798ac4",
+      "public_exists": true,
+      "public_byte_identical": true,
+      "sha256": "b4052ec49ea6d1707d9180dde55b690ccef2e49ddce2e0177c439ec15526d8ab",
+      "staged": false
+    },
+    {
+      "path": "sections/owner_master/04_master_theorem.tex",
+      "blob_sha": "5a8c72dda7cf49ef85684799b587f63547da0690",
+      "mode": "100644",
+      "expected_bytes": 9468,
+      "pinned_source_blob": "5a8c72dda7cf49ef85684799b587f63547da0690",
+      "public_exists": false,
+      "public_byte_identical": false,
+      "sha256": "b9f24c9706f60b135839feed8170a536a87a3a94b7236cf9d809bad030ffe4b2",
+      "staged": true
+    },
+    {
+      "path": "sections/rooted_main/01_joint_owner_homogeneity.tex",
+      "blob_sha": "d12b1e5ed1b988cfe681786e3fa91aff486f97b5",
+      "mode": "100644",
+      "expected_bytes": 7116,
+      "pinned_source_blob": "d12b1e5ed1b988cfe681786e3fa91aff486f97b5",
+      "public_exists": false,
+      "public_byte_identical": false,
+      "sha256": "bd81d84ff944262b69bfa2fcd5ac2af67290e68ae42d60f4fa710f9ccd1380e9",
+      "staged": true
+    },
+    {
+      "path": "sections/rooted_main/02_rank_relative_rooted_induction.tex",
+      "blob_sha": "3977fd384d2d981f9a618524644d4891bd4f67e4",
+      "mode": "100644",
+      "expected_bytes": 13344,
+      "pinned_source_blob": "3977fd384d2d981f9a618524644d4891bd4f67e4",
+      "public_exists": false,
+      "public_byte_identical": false,
+      "sha256": "943e113c185d71d594c2b160292565306c81387a4873b79dc62a98a74d8989a8",
+      "staged": true
+    },
+    {
+      "path": "sections/typed_invariant_quotient_transport.tex",
+      "blob_sha": "3895b17d7d0176a74d6f69c39e4e22d9cdba5715",
+      "mode": "100644",
+      "expected_bytes": 11154,
+      "pinned_source_blob": "3895b17d7d0176a74d6f69c39e4e22d9cdba5715",
+      "public_exists": true,
+      "public_byte_identical": true,
+      "sha256": "6adbae3368dc8ec980c1dd7c58cff429e05a5ddfc886f85b67d20f169a910f87",
+      "staged": false
+    },
+    {
+      "path": "tools/check_joint_owner_controls.py",
+      "blob_sha": "16240e7d3eec042a24398c39ce49a9478bef6bc6",
+      "mode": "100644",
+      "expected_bytes": 27290,
+      "pinned_source_blob": null,
+      "public_exists": false,
+      "public_byte_identical": false,
+      "sha256": "30a671c722069380dfd83619f59521f44293bb3cc97ff58b8dc53ba405161d42",
+      "staged": true
+    },
+    {
+      "path": "tools/check_owner_master_controls.py",
+      "blob_sha": "165f91c8494415bb0ae50fdb92fb47bc6306a361",
+      "mode": "100644",
+      "expected_bytes": 18766,
+      "pinned_source_blob": null,
+      "public_exists": false,
+      "public_byte_identical": false,
+      "sha256": "816e3addb04abdbe2e700c50d8a7af76c5f8347961c9f2855c9a543a9373ee35",
+      "staged": true
+    }
+  ]
+}

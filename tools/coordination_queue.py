@@ -22,6 +22,7 @@ STATES = {'AVAILABLE', 'IN_PROGRESS', 'SUBMITTED', 'REVIEWING',
 ACTIVE = {'IN_PROGRESS', 'SUBMITTED', 'REVIEWING', 'INTEGRATING', 'CHANGES_REQUESTED', 'BLOCKED'}
 IMPLEMENTING = {'IN_PROGRESS'}
 SHA = re.compile(r'[0-9a-f]{40}')
+SHA256 = re.compile(r'[0-9a-f]{64}')
 
 
 def require(value, message):
@@ -31,6 +32,99 @@ def require(value, message):
 
 def sha(value):
     return isinstance(value, str) and bool(SHA.fullmatch(value))
+
+
+def fingerprint(value):
+    """Stable digest of a complete parsed public catalogue or policy snapshot."""
+    return hashlib.sha256(json.dumps(value, sort_keys=True, separators=(',', ':')).encode()).hexdigest()
+
+
+def registry_promotion_manifest(previous_registry, previous_policy, registry, policy):
+    """Validate a strictly additive release and bind both complete snapshot pairs.
+
+    This checks the data, not their Git origin or actual CI. The coordinator
+    must read old snapshots at the locked base and new snapshots at the exact
+    reviewed head/resulting main; their digests are retained in the sole lock.
+    """
+    validate_policy(previous_registry, previous_policy)
+    require(set(registry) == set(previous_registry), 'Promotion cannot change catalogue fields')
+    require(type(registry.get('revision')) is int
+            and registry['revision'] in {previous_registry['revision'], previous_registry['revision'] + 1},
+            'Catalogue revision must stay unchanged or advance once')
+    require({k: v for k, v in registry.items() if k not in {'packages', 'revision'}} ==
+            {k: v for k, v in previous_registry.items() if k not in {'packages', 'revision'}},
+            'Promotion must preserve old catalogue metadata and source pin')
+    old = previous_registry['packages']
+    rows = registry.get('packages')
+    require(isinstance(rows, list) and len(rows) > len(old) and rows[:len(old)] == old,
+            'Promotion must append packages and preserve every old catalogue row')
+    ids = [p.get('id') for p in rows]
+    require(all(isinstance(i, str) and re.fullmatch(r'B[0-9]{3}', i) for i in ids)
+            and len(ids) == len(set(ids)), 'Duplicate or invalid catalogue package IDs')
+    additions = rows[len(old):]
+    added_ids = [p['id'] for p in additions]
+    require(added_ids == sorted(added_ids) and min(added_ids) > max(p['id'] for p in old),
+            'Append new package IDs in increasing catalogue order')
+    for p in additions:
+        require(p.get('state') == 'PLANNED' and p.get('owner_project_id') is None
+                and p.get('accepted_commit') is None,
+                'New catalogue rows must be unowned preparation, never accepted claims')
+        require(type(p.get('contract_revision')) is int and p['contract_revision'] > 0
+                and p.get('spec_file') == f'{DIRECTORY}/packages/{p["id"]}.md'
+                and isinstance(p.get('name'), str) and p['name'].strip()
+                and isinstance(p.get('scope'), str) and p['scope'].strip(),
+                'New packages need concrete versioned contracts and scope')
+        claims = p.get('claims')
+        require(isinstance(claims, dict) and claims
+                and all(isinstance(module, str) and module and isinstance(values, list) and values
+                        and all(isinstance(c, str) and c for c in values)
+                        and len(values) == len(set(values)) for module, values in claims.items()),
+                'New packages need explicit nonduplicate mathematical claims')
+    edges = {}
+    for p in rows:
+        deps = p.get('depends_on')
+        require(isinstance(deps, list) and all(isinstance(d, str) and d in ids for d in deps)
+                and len(deps) == len(set(deps)), 'Unknown or duplicate package dependencies')
+        edges[p['id']] = deps
+    visiting, visited = set(), set()
+
+    def visit(ident):
+        require(ident not in visiting, 'Package dependency cycle')
+        if ident not in visited:
+            visiting.add(ident)
+            for dep in edges[ident]:
+                visit(dep)
+            visiting.remove(ident)
+            visited.add(ident)
+
+    for ident in ids:
+        visit(ident)
+    require(set(policy) == set(previous_policy)
+            and {k: v for k, v in policy.items() if k not in {'revision', 'released_packages'}} ==
+            {k: v for k, v in previous_policy.items() if k not in {'revision', 'released_packages'}},
+            'Promotion must preserve policy roles, limits and all existing permissions')
+    require(type(policy.get('revision')) is int and policy['revision'] == previous_policy['revision'] + 1,
+            'Promotion advances policy revision exactly once')
+    require(policy.get('released_packages') == previous_policy['released_packages'] + added_ids,
+            'Release exactly the appended packages without changing old releases')
+    validate_policy(registry, policy)
+    return {'package_ids': added_ids,
+            'previous_registry_sha256': fingerprint(previous_registry),
+            'previous_policy_sha256': fingerprint(previous_policy),
+            'registry_sha256': fingerprint(registry), 'policy_sha256': fingerprint(policy)}
+
+
+def validate_promotion_manifest(manifest):
+    fields = {'package_ids', 'previous_registry_sha256', 'previous_policy_sha256',
+              'registry_sha256', 'policy_sha256'}
+    require(isinstance(manifest, dict) and set(manifest) == fields,
+            'Registry promotion needs a complete snapshot manifest')
+    require(all(isinstance(manifest[k], str) and SHA256.fullmatch(manifest[k])
+                for k in fields - {'package_ids'}), 'Invalid registry promotion snapshot digest')
+    ids = manifest['package_ids']
+    require(isinstance(ids, list) and ids
+            and all(isinstance(i, str) and re.fullmatch(r'B[0-9]{3}', i) for i in ids)
+            and ids == sorted(set(ids)), 'Invalid registry promotion package IDs')
 
 
 def validate_policy(registry, policy):
@@ -168,6 +262,16 @@ def validate_state(registry, policy, state):
         require(review.get('head_sha') == lock['head_sha'] and review.get('approved') is True
                 and len(review.get('summary', '')) >= 80, 'Invalid infrastructure review')
         check_independence(policy, lock, review.get('actor_id'), review.get('independence', {}))
+        if 'registry_promotion' in lock:
+            manifest = lock['registry_promotion']
+            validate_promotion_manifest(manifest)
+            require(state['protocol_version'] == 3 and not active_packages(state),
+                    'Registry promotion requires a paused queue with no active claims')
+            require(manifest['previous_registry_sha256'] == fingerprint(registry)
+                    and manifest['previous_policy_sha256'] == fingerprint(policy),
+                    'Promotion lock must bind the current old catalogue and policy snapshots')
+            require(not set(manifest['package_ids']) & set(records),
+                    'Promotion lock may only name new package IDs')
     else:
         require((not integrating and lock is None) or
                 (len(integrating) == 1 and lock is not None
@@ -298,11 +402,16 @@ def transition(registry, policy, state, project, event, data):
                 'pr_number': data['pr_number'], 'review': deepcopy(review),
                 'ci': deepcopy(data['ci']), 'author_actor_ids': deepcopy(authors),
                 'original_author_project_ids': deepcopy(data.get('original_author_project_ids', []))}
+            if 'registry_promotion' in data:
+                actor_role(policy, project, data, 'coordinate')
+                result['integration_lock']['registry_promotion'] = deepcopy(data['registry_promotion'])
         else:
             lock = result.get('integration_lock') or {}
             require(lock.get('kind') == 'infrastructure' and lock.get('actor_id') == actor,
                     'Only the infrastructure lock holder can finish or cancel')
             if event == 'finish_infrastructure':
+                require('registry_promotion' not in lock,
+                        'Finish a registry promotion atomically with promote_registry and both snapshot pairs')
                 require(sha(data.get('integration_commit')), 'Missing infrastructure integration commit')
                 validate_ci(data.get('main_ci', {}), data['integration_commit'])
                 result.setdefault('infrastructure_integrations', []).append({**lock,
@@ -461,6 +570,44 @@ def transition(registry, policy, state, project, event, data):
     return result
 
 
+def promote_registry(previous_registry, previous_policy, registry, policy, state, project, data):
+    """Finish one reviewed registry deployment and append live AVAILABLE rows.
+
+    Unlike ordinary events, this explicitly validates the still-old locked
+    STATE against the previous public snapshots. There is no relaxed normal
+    validator, inferred registry or path that reconstructs existing records.
+    The returned proposal still needs the usual exact-parent non-force CAS.
+    """
+    validate_state(previous_registry, previous_policy, state)
+    actor = actor_role(previous_policy, project, data, 'coordinate')
+    actor_role(previous_policy, project, data, 'integrate')
+    require(state['protocol_version'] == 3 and not active_packages(state),
+            'Registry promotion requires a paused queue with no active claims')
+    lock = state.get('integration_lock') or {}
+    require(lock.get('kind') == 'infrastructure' and lock.get('actor_id') == actor,
+            'Only the current infrastructure lock holder can promote the registry')
+    manifest = registry_promotion_manifest(previous_registry, previous_policy, registry, policy)
+    require(lock.get('registry_promotion') == manifest,
+            'Promotion snapshots must match the complete reviewed lock manifest')
+    require(data.get('head_sha') == lock['head_sha'], 'Registry promotion reviewed head mismatch')
+    require(data.get('package_ids') == manifest['package_ids'], 'Promote exactly the locked package IDs')
+    require(sha(data.get('integration_commit')), 'Missing infrastructure integration commit')
+    validate_ci(data.get('main_ci', {}), data['integration_commit'])
+    result = deepcopy(state)
+    for ident in manifest['package_ids']:
+        result['packages'][ident] = {'state': 'AVAILABLE', 'owner_project_id': None}
+    result['policy_revision'] = policy['revision']
+    result.setdefault('infrastructure_integrations', []).append({**deepcopy(lock),
+        'integration_commit': data['integration_commit'], 'main_ci': deepcopy(data['main_ci'])})
+    result['integration_lock'] = None
+    result['revision'] += 1
+    result.setdefault('history', []).append({'revision': result['revision'], 'project_id': project,
+        'actor_id': actor, 'event': 'promote_registry', 'package_id': None,
+        'details': {**deepcopy(data), 'registry_promotion': manifest}})
+    validate_state(registry, policy, result)
+    return result
+
+
 def compare_and_swap(current_head, expected_head, current, proposed):
     """Model the publication lease; the real guard is Git's non-force ref update."""
     require(current_head == expected_head, 'Stale coordination ref: reload and recompute')
@@ -527,6 +674,8 @@ def main():
     parser.add_argument('--state', required=True, type=Path)
     parser.add_argument('--registry', type=Path, default=ROOT / DIRECTORY / 'BOARD.json')
     parser.add_argument('--policy', type=Path, default=ROOT / DIRECTORY / 'AUTONOMY.json')
+    parser.add_argument('--previous-registry', type=Path)
+    parser.add_argument('--previous-policy', type=Path)
     parser.add_argument('--project', type=int)
     parser.add_argument('--event')
     parser.add_argument('--actor', default='root')
@@ -535,6 +684,23 @@ def main():
     args = parser.parse_args()
     registry, policy, state = [json.loads(p.read_text())
                                for p in (args.registry, args.policy, args.state)]
+    if args.event == 'promote_registry':
+        require(args.previous_registry is not None and args.previous_policy is not None,
+                'promote_registry requires explicit previous public registry and policy snapshots')
+        require(args.project is not None and args.data is not None and args.output is not None,
+                'Event needs --project, --data and --output')
+        previous_registry = json.loads(args.previous_registry.read_text())
+        previous_policy = json.loads(args.previous_policy.read_text())
+        data = json.loads(args.data.read_text())
+        data.setdefault('actor_id', args.actor)
+        proposed = promote_registry(previous_registry, previous_policy, registry, policy,
+                                    state, args.project, data)
+        args.output.write_text(json.dumps(proposed, ensure_ascii=False, indent=2) + '\n')
+        print(json.dumps({'proposed_revision': proposed['revision'], 'published': False,
+                          'next_step': 'Commit only on coordination with expected parent/ref and force=false.'}))
+        return
+    require(args.previous_registry is None and args.previous_policy is None,
+            'Previous snapshots are only valid for promote_registry')
     validate_state(registry, policy, state)
     if args.project is None:
         print(json.dumps({'valid': True, 'revision': state['revision'],
