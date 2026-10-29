@@ -51,6 +51,8 @@
   "first_external_gate": "B027, AFTER B026 accepted; HKN1.1/1.2 adapter+dependency build reuse",
   "future_cache_note": "formalization/EXTERNAL_PROVIDER_BUILD_CACHE.md",
   "mathematical_metadata_unchanged": true,
-  "production_validator_unchanged": true,
-  "public_state_unchanged": true
+  "public_state_unchanged": true,
+  "extraction_production_validator_unchanged": true,
+  "receiving_validator_changed": true,
+  "receiving_validator_change": "Narrow pinned internal proof support provenance and visible rendering; existing hardened auxiliary import path retained."
 }
