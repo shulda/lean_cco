@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 229,
+  "revision": 230,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -1430,7 +1430,7 @@
       }
     },
     "B032": {
-      "state": "REVIEWING",
+      "state": "INTEGRATING",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b025_transversal",
@@ -1471,7 +1471,13 @@
       }
     }
   },
-  "integration_lock": null,
+  "integration_lock": {
+    "kind": "package",
+    "package_id": "B032",
+    "actor_id": "root",
+    "base_main_sha": "0da0e9f6d47fe956a8d64eb767ce39a211ceea87",
+    "head_sha": "4d097ddf2250fee2de3db04a27d632f56a8786d2"
+  },
   "history": [
     {
       "revision": 1,
@@ -5877,6 +5883,26 @@
         "head_sha": "4d097ddf2250fee2de3db04a27d632f56a8786d2",
         "summary": "Actual nonauthor /root/independent_review approves exactPR39head4d097ddf2250fee2de3db04a27d632f56a8786d2/treeb849a61e afterONEwhole8module608lineC01–21read: FULLAutpreservesALLoldcrosssortfinecolours, fullsortNR2quantifiesALLactualinvariantSetoids/relativeintervals includingproperconnectivity, exactbridgeproved. SelectedacceptedB011C25/C26graph/parity/oddwalk/uniformNbranchSAP-free; positive-onlySTRONGrecursion and separateupperinclusion, everyfiniteFin(n+1)formaloccurrence,bothliteralDISTINCTrootsfixedbyacceptedB001SAP, path-toprofile andgenuineALLn>=Nfixedpairconsumerproved. Nocountability/CCO/primitivity/exactness/distributivity/zerothSTRONGpremise. Only2MDafter5129freeze. ExactCI40882979134/job123479133402passes108tests/3166jobs/13573std3/902actualartifactsANDcurrentsourcePREPOST. Actualmain0da+synthetic49656763/approvedtreeancestry/pinsunchanged. Report-onlyapprovaldca177ddf21a86c37ef086e5333321c7eb2034df.",
         "actor_id": "independent_review"
+      }
+    },
+    {
+      "revision": 230,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "start_integration",
+      "package_id": "B032",
+      "details": {
+        "package_id": "B032",
+        "head_sha": "4d097ddf2250fee2de3db04a27d632f56a8786d2",
+        "base_main_sha": "0da0e9f6d47fe956a8d64eb767ce39a211ceea87",
+        "head_contains_main": true,
+        "ci": {
+          "run_id": 40882979134,
+          "head_sha": "4d097ddf2250fee2de3db04a27d632f56a8786d2",
+          "conclusion": "success",
+          "axiom_audit": "allowlist"
+        },
+        "actor_id": "root"
       }
     }
   ],
