@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 156,
+  "revision": 157,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -1028,7 +1028,7 @@
       }
     },
     "B021": {
-      "state": "REVIEWING",
+      "state": "INTEGRATING",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b021_joint",
@@ -1070,7 +1070,13 @@
       }
     }
   },
-  "integration_lock": null,
+  "integration_lock": {
+    "kind": "package",
+    "package_id": "B021",
+    "actor_id": "root",
+    "base_main_sha": "392c0f257b3fea900d65f9fcf458837f096b8ed9",
+    "head_sha": "91010838bcd901f9975ca8da69abedc8da8768a3"
+  },
   "history": [
     {
       "revision": 1,
@@ -4033,6 +4039,26 @@
         "head_sha": "91010838bcd901f9975ca8da69abedc8da8768a3",
         "summary": "Actual registered nonauthor /root/independent_review personally approves full B021 C01-C27 at exact public91010838/fa346 after ONE complete20-module source read, all true generic BinaryStructure recognition/fullAut/points/sparseEPPA/support paths, actual literal quotient/CRT/RAW fine-colour C22 realization and original optional-colour group equivalence, real fibre/orbit consumers and empty/repeated boundaries. Legitimate branch inputs remain explicit; no common ambient-group specialization, hidden source provider, group section, SAP/NR2 or whole rank/global EPPA claim. Only two final metadata files/head anchors followed the complete read. Exact40829499508 passes85tests/2911jobs/10196standard3/676actualpartsANDcurrentSOURCEbeforeafter. Durable B021-final report records actual independence and exact source/public evidence; no reviewer helpers or duplicate builds.",
         "actor_id": "independent_review"
+      }
+    },
+    {
+      "revision": 157,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "start_integration",
+      "package_id": "B021",
+      "details": {
+        "package_id": "B021",
+        "head_sha": "91010838bcd901f9975ca8da69abedc8da8768a3",
+        "base_main_sha": "392c0f257b3fea900d65f9fcf458837f096b8ed9",
+        "head_contains_main": true,
+        "ci": {
+          "run_id": 40829499508,
+          "head_sha": "91010838bcd901f9975ca8da69abedc8da8768a3",
+          "conclusion": "success",
+          "axiom_audit": "allowlist"
+        },
+        "actor_id": "root"
       }
     }
   ],
