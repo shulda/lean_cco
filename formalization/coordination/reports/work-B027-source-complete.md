@@ -12,8 +12,9 @@ The complete mathematical freeze is
 new Lean modules/4,582 lines and the entire rooted import closure. Actual
 accepted B032 main `ddf123247f043d9af6d8096ff652840196fe3a16` is merged,
 retaining all 902 accepted source modules and their proof bodies. No B032
-mathematical API is used by B027. Only this report and the submission change
-after the complete freeze.
+mathematical API is used by B027. After the complete freeze, changes are limited
+to these two final reports and a factual provider-test-count correction in the
+cache report (13 new test methods, 121 tests total).
 
 The positive-prefix proof counts positions 1 through r, proves the exact
 proper-state count, and retains ell=0 for singleton palettes. The source tree
@@ -61,18 +62,16 @@ use prefix `round12-b027-` and suffixes `prebuild-guard.log`, `whole-build.log`,
 `after-audit-guard.log`, `provider-after-audit.log`, `tests.log`, `modules.log`,
 `catalogue.log`, `controls.log`, and `mathlib-roots.json`.
 
-A concrete PRE-freeze incremental cache anomaly was handled before this final
-pipeline. The changed `PacketOrigins.lean` contained a new declaration while
-the existing older olean omitted it; the automatic cache repair flagged only
-the changed CCO root, since the stale module's trace/output descriptors were
-mutually consistent. The consumer's unknown-declaration error and a direct
-import check exposed it. Existing verifier invalidation was then scoped to
-ONLY that module (eight generated outputs), and the incremental consumer
-passed 2,822 jobs with `LAKE_RESTORE_ARTIFACTS=false`. No Lean source fix or
-broad cache wipe was needed. The snapshot cause remains unproven; no new
-production cache change was introduced for that anomaly. That earlier failure/repair was not counted as
-completion or an audit. The final whole build used actual input rehashing;
-its complete current-source PRE/POST guards both passed.
+A pre-freeze consumer import lacked a declaration present in the
+`PacketOrigins.lean` source. Its eight generated outputs were explicitly
+invalidated, then the Consumer incremental build passed 2,822 jobs without
+proof-source changes. The suspect binary, full trace and exact guard-source
+coverage snapshot were not retained, so the mechanism remains unproven.
+Changing `LAKE_RESTORE_ARTIFACTS` alongside that invalidation does not establish
+a restoration cause. No broad cache wipe or new production cache change was
+needed. This earlier failure/repair was not counted as completion or audit.
+The final whole frozen build used actual input rehashing, and complete rooted
+940-source CCO and 269-source provider PRE/POST guards passed.
 
 External-provider setup and the ONE cold public-facade build are documented in
 [B027-external-provider-cache.md](B027-external-provider-cache.md): exact pinned
@@ -94,8 +93,9 @@ Actual mathematical/infra authors are `/root`, `/root/b023_mi`,
 `/root/b023_mi/moving_readings`, `/root/b023_mi/finite_gates`,
 `/root/external12`, and `/root/b025_transversal`; the public ledger records their
 contributions. Incremental helper builds are trusted. ONE genuine nonauthor
-whole frozen math/infra read runs separately; only these two MD documents and
-exact CI binding remain for delta review.
+whole frozen math/infra read runs separately; only these two final reports,
+the one-line cache-report count correction and exact CI binding remain for
+delta review.
 
 B0's original records and structural automorphisms remain unchanged. C0 is an
 existential injective complete source certificate on the same vertices,

@@ -67,7 +67,7 @@ layout: the facade target passed in 1.326 seconds with all 269 olean hashes
 and timestamps unchanged and zero upstream modules rebuilt. The default
 CCO guard still reported 894 artifact/source modules, while the separate
 provider guard reported 269/269. The full Python suite passed 121 tests,
-including fourteen new provider fixtures for pin/configuration changes,
+including 13 new provider test methods for pin/configuration changes,
 hidden source changes, stale compiled headers, artifact bytes, input traces,
 search-path shadowing, closure completeness and safe private invalidation.
 
