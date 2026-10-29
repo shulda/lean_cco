@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 143,
+  "revision": 144,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -909,7 +909,7 @@
       }
     },
     "B018": {
-      "state": "INTEGRATING",
+      "state": "ACCEPTED",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b018_owners",
@@ -947,6 +947,13 @@
           "report_path": "formalization/coordination/reviews/B018-final.md"
         },
         "summary": "Actual nonauthor B018 PASS after closing generic scope blocker with genuine arbitrary-arity relational H/ordinaryAgeEPPA/anchored finite-base restriction and ternary consumer. Actual exact joint lifts, fullAut owner packets, ALL request families, finite generated-group trim and prescribed point/kernel consumers are discharged. Exact PR25 CI40822329682 passes67tests/2891jobs/audit9752standard3/656actual artifacts AND current modules before/after."
+      },
+      "accepted_commit": "9bb179ae324d188083b9df8b55fe70b3c3391c2a",
+      "main_ci": {
+        "head_sha": "9bb179ae324d188083b9df8b55fe70b3c3391c2a",
+        "run_id": 40822876680,
+        "conclusion": "success",
+        "axiom_audit": "allowlist"
       }
     },
     "B019": {
@@ -999,13 +1006,7 @@
       }
     }
   },
-  "integration_lock": {
-    "kind": "package",
-    "package_id": "B018",
-    "actor_id": "root",
-    "base_main_sha": "4da187d90f93ccc9e1614f38d175d49ff744bafe",
-    "head_sha": "4a65302a22e0f9926a20468ae5a6a6d9494f4f73"
-  },
+  "integration_lock": null,
   "history": [
     {
       "revision": 1,
@@ -3701,6 +3702,24 @@
         "ci": {
           "run_id": 40822329682,
           "head_sha": "4a65302a22e0f9926a20468ae5a6a6d9494f4f73",
+          "conclusion": "success",
+          "axiom_audit": "allowlist"
+        },
+        "actor_id": "root"
+      }
+    },
+    {
+      "revision": 144,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "accept",
+      "package_id": "B018",
+      "details": {
+        "package_id": "B018",
+        "integration_commit": "9bb179ae324d188083b9df8b55fe70b3c3391c2a",
+        "main_ci": {
+          "head_sha": "9bb179ae324d188083b9df8b55fe70b3c3391c2a",
+          "run_id": 40822876680,
           "conclusion": "success",
           "axiom_audit": "allowlist"
         },
