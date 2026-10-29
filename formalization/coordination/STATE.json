@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 213,
+  "revision": 214,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -1329,7 +1329,7 @@
       }
     },
     "B031": {
-      "state": "INTEGRATING",
+      "state": "ACCEPTED",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b025_transversal",
@@ -1368,16 +1368,17 @@
           "report_path": "formalization/coordination/reviews/B031-final.md"
         },
         "summary": "Actual nonauthor /root/independent_review approves exact PR36 head67748f891af6dff0142e2693447e24fd13e01210/treeeffb3eb0 after whole C01–25 source review: all three FULL original/named/induced closure equalities countability-free, sigma bottom and full unique infinite cut, forward actual hull only, locally proved real-representative owner harmlessness, actual C22 thin-kernel discharge, total literal maps may move owners, actual restriction hom IMAGE/orbit equality plus full-orbit inclusion, empty/full-packet boundaries and genuine consumer. Countable only separate ancillary all-mixed/ENTIRE B one joint lift. Exact CI40869933787/job123434087587 passes98tests/3111jobs/12610standard-three declarations/847actualparts AND CURRENT SOURCE pre/post. Final only two Markdown reports after mathfreeze61194065; actual accepted root prefix and source pins unchanged. Report-only approval a18ea2cb2ea429eba327de5fb5040c34c46ec112."
+      },
+      "accepted_commit": "6d8d2c9fdcef7849b20239dea19c33f089070239",
+      "main_ci": {
+        "run_id": 40871654175,
+        "head_sha": "6d8d2c9fdcef7849b20239dea19c33f089070239",
+        "conclusion": "success",
+        "axiom_audit": "allowlist"
       }
     }
   },
-  "integration_lock": {
-    "kind": "package",
-    "package_id": "B031",
-    "actor_id": "root",
-    "base_main_sha": "1f9306fb5e23358f610596520595939b1013b5de",
-    "head_sha": "67748f891af6dff0142e2693447e24fd13e01210"
-  },
+  "integration_lock": null,
   "history": [
     {
       "revision": 1,
@@ -5456,6 +5457,24 @@
         "ci": {
           "run_id": 40869933787,
           "head_sha": "67748f891af6dff0142e2693447e24fd13e01210",
+          "conclusion": "success",
+          "axiom_audit": "allowlist"
+        },
+        "actor_id": "root"
+      }
+    },
+    {
+      "revision": 214,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "accept",
+      "package_id": "B031",
+      "details": {
+        "package_id": "B031",
+        "integration_commit": "6d8d2c9fdcef7849b20239dea19c33f089070239",
+        "main_ci": {
+          "run_id": 40871654175,
+          "head_sha": "6d8d2c9fdcef7849b20239dea19c33f089070239",
           "conclusion": "success",
           "axiom_audit": "allowlist"
         },
