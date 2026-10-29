@@ -168,7 +168,7 @@ theorem finite_base_requests
     (over : ∀ x : T, π x.val ∈ B)
     (p : R → Partial S (Subtype.val : T → A))
     (γ : R → Equiv.Perm B) (g : R → Aut S (id : A → A))
-    (extends : ∀ r (x : (p r).domain),
+    (extendsReal : ∀ r (x : (p r).domain),
       (g r).val x.val.val = ((p r).map x).val)
     (owner : ∀ r (x : A) (hx : π x ∈ B),
       π ((g r).val x) = ((γ r) ⟨π x,hx⟩).val) :
@@ -184,6 +184,6 @@ theorem finite_base_requests
   refine ⟨W,hW,contains,overW,ontoW,?_⟩
   intro r
   obtain ⟨β,hβ,howner⟩ := extensions r
-  exact ⟨β,fun x => (hβ x.val).trans (extends r x),howner⟩
+  exact ⟨β,fun x => (hβ x.val).trans (extendsReal r x),howner⟩
 
 end CCO.Owners.Provider.Relational
