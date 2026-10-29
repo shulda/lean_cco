@@ -1,0 +1,13 @@
+# B025 whole mathematical freeze and exact PR34
+
+B023 remains ACCEPTED195 at actual green main99192554bec6022d3c5a6df1a444d609fd56a22e. Live STATE195 keeps B025 IN_PROGRESS under claim185; all24 accepted records retained, no integration lock.
+
+B025 source freeze cd3cc99ef150a1151fe6499f7d54e2882ca2f304/tree0af85331d06a19b4bc63d65fd78efbd7d7e08cae contains ALL51 new Lean modules/6964 lines/all47claims/12numbered exports/3auxiliary equations and51 direct root imports after the entire accepted991 root prefix. Exactly these modules, additive root imports and B025 submission differ from accepted main; accepted bodies/build pins/contracts are unchanged.
+
+Stable genuine nonauthor /root/independent_review personally completed ONE whole mathematical read of all51 modules and actual providers/consumer: PASS, no missing or stronger provider. Its actual review-only identity authored none of the production work and used no reviewer helpers/builds/audits. Actual B025 authors remain root, /root/b025_transversal, /root/b025_transversal/anchored_completion, /root/b025_transversal/countable_limit and /root/b023_mi (recorded190).
+
+Owner's ONE final whole build passed3103 jobs; official pinned allowlist audit passed12466 CCO declarations (propext/Classical.choice/Quot.sound only), with839 actual olean parts AND839 current source modules before and after audit. 92tests/17metadata/25package allocation/17bounded controls/150 actual targeted external roots pass. Expected prebuild stale root-import header repair touched only1module/8outputs. C47 diagnostic was run once. Generic SAP and conditional ordinary+honestGamma EPPA premises remain separately scoped; actual residual completion/primitivity/internal U/full packet recovery are proved. C37/C40 use the accepted singleton-stabilizer orbit route, as the final reports explicitly state.
+
+ONLY two Markdown reports follow the source freeze: submissions/B025.md and reports/work-B025-source-complete.md, final localcbacf6ca369e2f8253fe12dc32a1a4405342fb18/public002b17005996009056d5202fdf7890ccc0bc59df/tree6c45f28f5160d1e4be3899758f45e4d8e4a7bb06. All44 local source commits, ordered mapped parents and published history prefix are preserved. Actual accepted991 is a union parent and its history is excluded from replay. Mathematical dependencies remain B022 only.
+
+PR34 is open at that exact complete head; CI40853731818 is running. No submission, approval, integration or acceptance is pre-certified. Next gates are complete exact PR CI/log evidence, genuine exact-head final approval, sole CAS lock, history-preserving merge, actual resulting-main CI/audit and acceptance. Human pin490c3f36d85db5a0b3ced0598e6c431825254ec5/toolchain/manifest are unchanged.
