@@ -45,4 +45,38 @@ def Hom.ofExtends (D E : Network T sort) (h : D.Extends E) : D.Hom E where
     intro x y a ha
     exact congrArg (fun c => (⟨sort x,sort y,c⟩ : Σ i,Σ j,Option (T.Atom i j))) (h x y a ha)
 
+theorem Extends.tagged_some {D E : Network T sort} (h : D.Extends E)
+    (x y : V) {i j : ι} (a : T.Atom i j)
+    (he : D.tagged x y = ⟨i,j,some a⟩) : E.tagged x y = ⟨i,j,some a⟩ := by
+  cases hc : D.edge x y with
+  | none =>
+    have hh := congrArg (fun c : Σ i,Σ j,Option (T.Atom i j) => c.2.2.isSome) he
+    change (D.edge x y).isSome = true at hh
+    rw [hc] at hh
+    cases hh
+  | some b =>
+    have ht : E.tagged x y = D.tagged x y := by
+      simp only [tagged,h x y b hc,hc]
+    exact ht.trans he
+
+/-- Completing a partial target preserves the ENTIRE induced embedding
+of every complete factor. No absent cross-pair is asserted on that factor. -/
+def Embedding.extend {D E : Network T targetSort}
+    (C : CompleteNetwork T sort) (f : Embedding C.toNetwork D) (h : D.Extends E) :
+    Embedding C.toNetwork E where
+  point := f.point
+  injective := f.injective
+  preserves := by
+    intro x y
+    by_cases hxy : x = y
+    · subst y
+      have hd : E.tagged (f.point x) (f.point x) = D.tagged (f.point x) (f.point x) := by
+        simp only [tagged,E.diagonal,D.diagonal]
+      exact hd.trans (f.preserves x x)
+    · obtain ⟨a,ha⟩ := C.complete x y hxy
+      have htag : D.tagged (f.point x) (f.point y) = ⟨sort x,sort y,some a⟩ :=
+        f.toHom.preserves x y a ha
+      exact (h.tagged_some _ _ a htag).trans
+        (congrArg (fun c => (⟨sort x,sort y,c⟩ : Σ i,Σ j,Option (T.Atom i j))) ha).symm
+
 end CCO.ProfileHelly.Network
