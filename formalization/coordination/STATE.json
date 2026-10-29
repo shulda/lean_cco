@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 260,
+  "revision": 261,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -1637,7 +1637,7 @@
       "owner_project_id": null
     },
     "B034": {
-      "state": "SUBMITTED",
+      "state": "REVIEWING",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b025_transversal",
@@ -1663,7 +1663,19 @@
         "conclusion": "success",
         "axiom_audit": "allowlist"
       },
-      "report_path": "formalization/coordination/submissions/B034.md"
+      "report_path": "formalization/coordination/submissions/B034.md",
+      "review": {
+        "project_id": 3,
+        "actor_id": "independent_review",
+        "head_sha": "7aebbbafb51f926dc3571702d0e7c53c4b2de999",
+        "approved": false,
+        "independence": {
+          "identity": "/root/independent_review",
+          "non_author": true,
+          "summary": "Actual registered review-only reader personally read all nineteen modules and both exact source exports against every claim, then only the final two Markdown files and their tiny corrections. It authored or designed NONE of the complete B034 preparation, mathematical implementation, consumer, boundary examples, tests or repairs, and used no implementation helpers or duplicate build/audit/test.",
+          "report_path": "formalization/coordination/reviews/B034-final.md"
+        }
+      }
     },
     "B035": {
       "state": "AVAILABLE",
@@ -6741,6 +6753,24 @@
           "axiom_audit": "allowlist"
         },
         "report_path": "formalization/coordination/submissions/B034.md"
+      }
+    },
+    {
+      "revision": 261,
+      "project_id": 3,
+      "actor_id": "independent_review",
+      "event": "review",
+      "package_id": "B034",
+      "details": {
+        "actor_id": "independent_review",
+        "package_id": "B034",
+        "head_sha": "7aebbbafb51f926dc3571702d0e7c53c4b2de999",
+        "independence": {
+          "identity": "/root/independent_review",
+          "non_author": true,
+          "summary": "Actual registered review-only reader personally read all nineteen modules and both exact source exports against every claim, then only the final two Markdown files and their tiny corrections. It authored or designed NONE of the complete B034 preparation, mathematical implementation, consumer, boundary examples, tests or repairs, and used no implementation helpers or duplicate build/audit/test.",
+          "report_path": "formalization/coordination/reviews/B034-final.md"
+        }
       }
     }
   ],
