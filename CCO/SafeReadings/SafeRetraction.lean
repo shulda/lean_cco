@@ -302,6 +302,23 @@ theorem augmented_hom_card_le_twice (i j : ι) :
   change (homFamily S (augmentedFamily S safe) i j).ncard ≤ 2 * O.ncard
   simpa only [two_mul] using h
 
+theorem augmented_current_self (H : HomogeneousSource S G) (sap : AgeSAP S)
+    (hs : SafeSystem S safe) : Current S (augmentedFamily S safe) (augmentedFamily S safe) where
+  member := Set.Subset.rfl
+  singleton a := Or.inl (exact_singleton S a)
+  opposite h := augmented_opposite S H sap hs h
+  downward _ hE _ := hE
+
+/-- The literal displayed source bound counts each evaluated safe trace once. -/
+theorem augmented_orbitCount_le_original_sum (H : HomogeneousSource S G) (sap : AgeSAP S)
+    (hs : SafeSystem S safe) (A : PureTagAction S Λ N) :
+    orbitCount S A (augmentedFamily S safe) ≤ S.finiteSort.elems.sum (fun i =>
+      S.finiteSort.elems.sum fun j =>
+        2 * Nat.card (homFamily S (originalFamily S) i j) - Nat.card (S.Atom i j)) :=
+  orbitCount_le_sum_of_hom_bound S A (augmented_current_self S safe H sap hs)
+    (fun i j => 2 * Nat.card (homFamily S (originalFamily S) i j))
+    (augmented_hom_card_le_twice S safe)
+
 /-- Gates run after the actual T image, with the original augmented orbit budget. -/
 theorem safe_gate_iteration (H : HomogeneousSource S G) (sap : AgeSAP S)
     (hs : SafeSystem S safe) (C : MenuCalculus S (augmentedFamily S safe))
