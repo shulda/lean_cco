@@ -196,3 +196,41 @@ theorem packet_safe_motions (A L P : Finset N)
 
 end
 end CCO.RelativeMI
+
+namespace CCO.RelativeMI
+noncomputable section
+universe u
+private theorem nonempty_of_safePair {ι : Type u} {X : ι → Type v}
+    (S : AtomicSource.{u,v,w} ι X) (safe : ∀ i j, S.Menu i j)
+    {p q : Sigma X} {i j : ι} (hi : p.1 = i) (hj : q.1 = j)
+    (h : SafeReadings.SafePair S safe p q) : (safe i j).Nonempty := by
+  rcases p with ⟨i',x⟩
+  rcases q with ⟨j',y⟩
+  dsimp only at hi hj
+  subst i'; subst j'
+  obtain ⟨a,ha,_⟩ := h
+  exact ⟨a,ha⟩
+
+/-- The empty-base case produces a genuine safe atom even on a single
+owner fibre; nonemptiness is a conclusion, never a provider premise. -/
+theorem strongSafe_nonempty {ι : Type u} {X : ι → Type v}
+    (S : AtomicSource.{u,v,w} ι X) (safe : ∀ i j, S.Menu i j)
+    (h : SafeReadings.StrongSafeAmalgamation S safe) (i j : ι) :
+    (safe i j).Nonempty := by
+  classical
+  let x : X i := Classical.choice (S.nonemptySort i)
+  let y : X j := Classical.choice (S.nonemptySort j)
+  let p : Sigma X := ⟨i,x⟩
+  let q : Sigma X := ⟨j,y⟩
+  let C : FiniteInduced (X := X) := ⟨∅,Set.finite_empty⟩
+  let A : FiniteInduced (X := X) := ⟨{p},Set.finite_singleton _⟩
+  let B : FiniteInduced (X := X) := ⟨{q},Set.finite_singleton _⟩
+  let ca := inducedInclusion S C A (by simp [C])
+  let cb := inducedInclusion S C B (by simp [C])
+  obtain ⟨D,l,r,_,_,hs⟩ := h.amalgamate C A B ca cb
+  let a : ↥A.vertices := ⟨p,by simp [A]⟩
+  let b : ↥B.vertices := ⟨q,by simp [B]⟩
+  apply nonempty_of_safePair S safe (l.preserves_sort a) (r.preserves_sort b)
+  exact hs a b (fun c => False.elim c.property) (fun c => False.elim c.property)
+end
+end CCO.RelativeMI
