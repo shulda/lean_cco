@@ -1,0 +1,327 @@
+\section{Orbit-safe full-packet completion under thin translations}
+\label{sec:orbit-safe-packets}
+
+The pure-owner safe-trace selector and the moving-type readings
+must be connected through a $G$-stable safe palette.  Merely
+knowing $h_{st}(D)\in S$ does \emph{not} imply that every
+$h^u_{st}(D)$ belongs to $S$: unilateral thin translations
+may permute literal fine colours.  The following strengthening
+uses the fact that our original $S$ amalgamates \emph{full}
+finite algebraic packets, not arbitrary incomplete sets.
+
+Fix a finite $G$-invariant set $U$ of actual fine $E$-owners
+in a normalised one-direction source $Q$, its full-owner
+primitive transversal $\mathcal U_U$, and let $\Gamma\le\Aut(U)$
+be a finite group of genuine quotient automorphisms.  The group
+$G$ acts on fine colours by unilateral endpoint translation:
+$a\in P_{st}$ is sent to $ga\in P_{gs,t}$, and
+$\gamma(ga)=g\gamma(a)$, where the $\Gamma$-action fixes
+literal raw colour names but moves their owner types.
+
+\begin{definition}[Orbit-safe typed palettes]
+\label{def:orbit-safe}
+For a diversity colour $a\in P_{st}$ set
+\[
+  a\in S^{G}_{st}\ \Longleftrightarrow\
+           ga\in S\quad\text{for every }g\in G.
+\]
+Equivalently, if $x,y$ are origins of two distinct full
+$G$-packets and $\col(x,y)=a$, then $a\in S^G_{st}$
+precisely when \emph{every} entry of their full
+$G\times G$ colour matrix belongs to $S$.
+\end{definition}
+
+\begin{lemma}[One full thin packet covers one whole owner orbit]
+\label{lem:orbit-safe-owner-helper}
+Let $G$ be the ACTUAL finite regular
+thin translation group on every
+real full $F_Q$-packet, acting on
+the named fine $E$-owner set $U$.
+For any actual packet $\Pi=F_Q[x]$
+whose origin has owner
+$s=\operatorname{own}(x)\in U$,
+\[
+ \{\operatorname{own}(y):y\in\Pi\}=G s,
+ \quad
+ |\{y\in\Pi:\operatorname{own}(y)=t\}|
+        =|\operatorname{Stab}_G(s)|
+       \quad(t\in Gs).
+\tag{OH}\label{eq:orbit-safe-owner-helper}
+\]
+Thus for finite $G$-invariant
+$U$, exactly ONE actual full
+packet from EACH $G$-orbit
+of owner labels suffices for
+a full-packet helper containing
+a representative of EVERY
+named owner in $U$. This
+does NOT assume the $G$-action
+on owners is free; it only uses
+the regular action on REAL
+packet vertices. Given any
+finite full-packet closed
+old real set $V$, the helper
+can be realised packetwise
+DISJOINT from $V$ in $N_U$
+by relative full-packet
+closed SAP.
+\end{lemma}
+\begin{proof}
+Write the actual full packet
+as $\Pi=\{t_gx:g\in G\}$.
+The thin action is free on
+real points, so every group
+element supplies a distinct
+point. Its owner is
+$\operatorname{own}(t_gx)=gs$.
+These owners form exactly
+the orbit $Gs$, and the map
+$g\mapsto gs$ has all fibres
+of size
+$|\operatorname{Stab}_G(s)|$.
+This proves (OH), including
+nontrivial owner stabilisers.
+
+Choose one actually realised
+full packet with origin owner
+in each $G$-orbit of U;
+their owner sets cover all U
+and are disjoint as labels
+between different orbits.
+To make the chosen packets
+disjoint from an existing
+finite closed V, apply original
+owner-named closed SAP to
+the finite union of these
+complete packets and V
+over the empty closed base.
+The resulting finite full
+packet diagram lies in
+the actual owner-typed age
+and embeds into $N_U$,
+with all packets distinct
+and their original literal
+owner labels preserved.
+No packet representative
+section or group-action
+splitting on owner labels
+has been constructed.
+\end{proof}
+
+\begin{lemma}[Closed strong $S$ supplies strong orbit-safe transversal palettes]
+\label{lem:orbit-safe-strong}
+Assume original strong $S$-amalgamation over finite
+\emph{absolute real acl-closed} spans and normalised unary
+closure $\operatorname{acl}_{Q}(A)=F_Q[A]$.
+Then the tagged palettes $S^G_{st}$ are nonempty and
+strongly amalgamate \emph{all} finite spans in the
+primitive all-owner transversal $\mathcal U_U$.
+They are converse compatible, pure-$\Gamma$-covariant,
+and equivariant under each unilateral endpoint translation:
+\[
+     gS^G_{st}=S^G_{gs,t}=S^G_{s,gt}
+       \quad\text{(as raw fine-colour subsets, with moved types).}
+\]
+\end{lemma}
+\begin{proof}
+First fix any finite transversal span $A\to L,R$.  Inflate
+every transversal vertex to its full $F_Q$ packet.  By the
+full-owner closed-SAP theorem, first realise both inflated
+factors \emph{strongly} over the full-packet inflation of
+$A$, producing a finite union $V$ with no extra overlap.
+Then, using closed SAP once more, adjoin a finite union $T$
+of full packets meeting \emph{every} fine $E$-owner in $U$,
+disjoint from $V$. By
+\cref{lem:orbit-safe-owner-helper},
+one whole packet for each ACTUAL $G$-orbit
+of fine owner labels suffices, even if
+$H=\operatorname{Stab}_G(s)\ne1$.  In $V\cup T$ take the induced full-packet
+structures on the common base $F_Q[A]\cup T$ and the two
+extended factors $F_Q[L]\cup T$ and $F_Q[R]\cup T$.
+These factors intersect \emph{exactly} in that base and
+retain every old typed fine colour.  They are finite
+\emph{absolute} acl-closed structures because
+$\operatorname{acl}_Q=F_Q[-]$.
+Apply original strong $S$-amalgamation to these two abstract
+acl-closed factors over their common base.
+
+Each old vertex stays in its prescribed $E$-owner: it has a
+named $E$-incidence to a common anchor of that owner, and
+these incidences are preserved by the real-language amalgam.
+Two full off-base packets from opposite factors cannot
+collapse to the same $F_Q$-class: each is a complete
+$F_Q$-class, so such a collision would identify at least
+one off-base point from each factor, contradicting strongness.
+Hence selecting the origins gives a \emph{strong typed}
+transversal amalgam over $A$.
+
+For every new cross-origin pair $x,y$ all pairs
+$t_gx,t_hy$ are distinct off-base real pairs from
+opposite factors, and therefore have original colours in
+$S$.  Their fine colour is $(g+h)\col(x,y)$ by the actual
+thin law.  Consequently the origin colour lies in
+$S^G_{\operatorname{own}(x),\operatorname{own}(y)}$.
+This proves the required typed strong amalgamation;
+taking a span of two singleton factors proves each
+compatible $S^G_{st}$ nonempty.
+
+Commutativity of $G$ and its exponent two show that
+$a\in S^G_{st}$ iff $ga\in S^G_{gs,t}$ for each $g$;
+changing the second endpoint gives the same raw set.
+Converse is immediate from symmetry.  Genuine owner
+permutations $\gamma$ commute with the global thin
+translations and fix raw fine atom names, so they preserve
+all tagged orbit-safe palettes.
+\end{proof}
+
+\begin{lemma}[All-row orbit-safe R07 interface]
+\label{lem:orbit-safe-all-row-interface}
+Work in the actual full-owner source of
+\cref{lem:orbit-safe-strong}, with the ORIGINAL
+fine-colour palette \(S\), its thin-saturated
+orbit-safe palettes \(S^G_{st}\), and a
+pure-\(\Gamma\)-covariant augmented selector
+\(h=h_{S^G}\). Assume that \(\Gamma\) contains the
+owner action of the global thin translations, as required for
+\cref{prop:moving-readings}. Let \(W^\#\) be one fixed
+finite R07 partial packet reservoir, and
+suppose the origin transversal has an
+INJECTIVE completion in the owner-typed
+SAP source. Run the greatest strong-PC
+procedure ONCE on the actual packet
+indices \(p=(i,f)\), and denote its
+terminal exact menus by \(D_{pq}\).
+
+Then for EVERY pair of DISTINCT actual
+packets \(p=(i,f)\ne q=(j,k)\)
+the following exhaustive alternatives hold.
+
+\smallskip
+\noindent\textup{(R)} If \(\{i,j\}\) is an
+originally RECORDED structural pair
+(\(i\ne j\)), then \(D_{pq}\) is the
+literal original singleton \( \{c_{ij}\}\).
+For every \(z,w\in G\) the decoded
+old fine atom of \((i,f,z),(j,k,w)\)
+is precisely the original recorded
+structural fine colour
+\[
+       \operatorname{col}_{B_0}((i,z),(j,w))
+                          =(z+w)c_{ij}.
+\]
+
+\smallskip
+\noindent\textup{(U)} Otherwise the pair
+is originally UNRECORDED. This includes
+the case \(i=j\) with \(f\ne k\).
+Then \(D_{pq}\cap S^G_{\beta_i,\beta_j}
+\ne\varnothing\), and for ALL
+\(z,w,u,g,h\in G\), the reading
+\[
+ a=h^u_{z\beta_i,w\beta_j}
+             \bigl((z+w)D_{pq}\bigr)
+\]
+lies in \(S^G_{z\beta_i,w\beta_j}\).
+Moreover its entire translated
+interpacket matrix
+\[
+             (g+h)a
+\]
+consists of ORIGINAL fine atoms in
+\(S\), with the properly shifted owner
+tags. No old singleton record is
+recoloured to achieve this property.
+
+All these conclusions hold in ONE
+preselected finite PC fixed family,
+independently of which permitted
+R07 structural extension and correction
+matrix will be chosen later.
+The completed structure has no extra
+assumption that the structural
+automorphism of the INCOMPLETE
+reservoir preserves its arbitrary
+completion certificate.
+\end{lemma}
+\begin{proof}
+For (R), the injective completion certificate ensures that no
+strong-PC domain becomes empty. Thus a recorded singleton remains
+$\{c_{ij}\}$, and every conservative reading on its transported
+singleton returns $(z+w)c_{ij}$. This is its original full matrix,
+independently of the reading parameter.
+
+For (U), apply \cref{lem:safe-global-completion} to the injectively
+completable origin transversal and the strong typed palette $S^G$
+from \cref{lem:orbit-safe-strong}. The resulting same-vertex
+completion preserves every record and colours every original hole
+in $S^G$. Its atoms survive every PC update. Hence every terminal
+unrecorded domain $D_{pq}$ meets $S^G_{\beta_i,\beta_j}$.
+
+Translate its two endpoints separately by $z,w$. The original exact
+families and the tagged orbit-safe palettes are preserved, giving
+\[
+ (z+w)D_{pq}\cap S^G_{z\beta_i,w\beta_j}\ne\varnothing.
+\]
+The tags here are $(z\beta_i,w\beta_j)$, not
+$((z+w)\beta_i,\beta_j)$. A moving reading first translates this
+menu by $u$, chooses from its nonempty safe trace at the moved
+type, and translates the chosen atom back. Unilateral invariance
+of $S^G$ therefore puts its output in $S^G$ for every $u$.
+By the definition of $S^G$, all its further translates $(g+h)a$
+lie in the original palette $S$. This proves full-matrix safety,
+including distinct packets with the same structural index.
+
+The augmented selector restricted to the original exact families
+has the conservativity, survivor heredity, converse compatibility,
+pure-owner covariance and full-PC property used in
+\cref{prop:moving-readings}. Its moving readings therefore satisfy
+that proposition's switching and independent-triangle identities.
+Apply \cref{thm:R07-relative-eppa} with these readings: the same
+preselected PC family and decoder are legal, and every structural
+map with a legal correction matrix acts on the completed witness.
+Neither PC naturality nor this automorphism assertion requires an
+invariant choice of the auxiliary completion certificate.
+\end{proof}
+
+\begin{lemma}[Safe moving readings preserve every missing matrix]
+\label{lem:orbit-safe-readings}
+Assume $\Gamma$ contains the induced diagonal thin-owner action.
+Let $h=h_{S^G}$ be the pure-$\Gamma$-covariant,
+converse-compatible, survivor-hereditary full-PC selector
+from Lemmas~\ref{lem:augmented-safe-algebra} and
+\ref{lem:orbit-safe-strong}, and let
+\[
+      h^u_{st}(D)=u\,h_{us,t}(uD)
+\]
+be its moving-type readings as in
+Proposition~\ref{prop:moving-readings}.
+Whenever an original exact $D\in\mathcal H_{st}$ meets
+$S^G_{st}$, then for \emph{every} $u\in G$
+\[
+                 h^u_{st}(D)\in S^G_{st}\subseteq S.
+\]
+Suppose an R07 full-row reservoir has an injective
+completion of its \emph{origin transversal} in
+$\mathcal U_U$.  After greatest strong-PC and the safe
+selector on the original packet-pair domains,
+\emph{every} originally unrecorded actual interpacket
+pair receives a fine $S$-colour under the entire R07
+row decoder, for \emph{all} values of the reading
+parameter $u(x,y)$ and \emph{all} endpoint translations.
+All structural source extensions and their row corrections
+continue to preserve the decoded fine colours.
+\end{lemma}
+\begin{proof}
+If $D$ meets $S^G_{st}$, unilateral invariance makes $uD$ meet
+$S^G_{us,t}$. The safe-trace selector chooses there, and translating
+back by $u$ returns an atom of $S^G_{st}$. This proves the first
+assertion for every original exact menu, independently of any
+reservoir.
+
+For a reservoir, apply \cref{lem:orbit-safe-all-row-interface}:
+its alternative (U) supplies the nonempty traces and safety for all
+rows and endpoint translates, while (R) retains every original
+singleton matrix. The same interface verifies the moving-reading
+hypotheses of \cref{thm:R07-relative-eppa}, so all structural maps
+and legal row corrections remain automorphisms of this one decoder.
+\end{proof}

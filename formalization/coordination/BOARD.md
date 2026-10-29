@@ -37,6 +37,11 @@ mathematical catalogue/initial checkpoint, not current ownership.
 | B032: Typed terminal same-sort pure-power saturation without CCO | B001, B011 | [B032](../../formalization/coordination/packages/B032.md) |
 | B024: One fixed R07 full-row decoder and rooted packet controls | B002, B003, B014, B025, B026, B027 | [B024](../../formalization/coordination/packages/B024.md) |
 | B033: Positive profile Helly to fixed-vertex completion and SAP | — | [B033](../../formalization/coordination/packages/B033.md) |
+| B028: Orbit-safe padding and normalized relative MI witness | B002, B011, B013, B014, B018, B022, B024, B025, B026, B027 | [B028](../../formalization/coordination/packages/B028.md) |
+| B030: Strict quotient rank and source-relative rooted/ordinary EPPA assembly | B001, B002, B013, B014, B018, B020, B021, B022, B023, B028, B029 | [B030](../../formalization/coordination/packages/B030.md) |
+| B034: Local supports and actual unary-generated HN diagrams | — | [B034](../../formalization/coordination/packages/B034.md) |
+| B035: Full tuple codes, Ramsey readout and fixed-host EP | — | [B035](../../formalization/coordination/packages/B035.md) |
+| B036: Fibre normalization, reset midpoints and gated EP composition | — | [B036](../../formalization/coordination/packages/B036.md) |
 
 Autonomous release permissions are in [AUTONOMY.json](AUTONOMY.json).
 Use [QUEUE_OPERATIONS.md](QUEUE_OPERATIONS.md) to claim or review work.

@@ -1,0 +1,864 @@
+% EP04, EP08, EP10, EP11 + EP24. No core filtering is used on genuine V27.
+% Complete editable argument relative to the terminal hidden Ramsey/reset
+% and compatible tuple-readout interfaces in the internal V27/R18 source.
+\section{The explicit unfiltered Ramsey expansion has expansion property}
+\label{sec:ep-unfiltered}
+
+Recall the \emph{expansion property} (EP) for a reasonable,
+reduct-surjective precompact expansion
+\(\mathcal K^*\to\mathcal K\): for every finite
+\(A^*\in\mathcal K^*\) there is a finite
+\(B\in\mathcal K\) such that \emph{every}
+admissible expansion \(B^*\) of this fixed \(B\)
+contains an embedding \(A^*\hookrightarrow B^*\).
+This is a universal quantifier over all allowed
+choices on \(B\), not merely existence of
+one preferred homogeneous expansion.
+
+We first record a finite-template criterion which is useful
+outside CCO and, together with
+\cref{thm:ep-automatic-core}, eliminates any need
+for a separately selected minimal subflow or finite core retract
+in our main construction.
+
+\begin{theorem}[Simultaneous-singleton core criterion]
+\label{thm:ep-finite-core-criterion}
+Let \(\mathcal K\) be a hereditary finite complete
+atomic binary age (allowing original named unary sorts).
+Let \(\mathcal U_T\) be a reasonable, reduct-surjective,
+pair-locally specified finite unary expansion with
+a finite set \(T\) of realised complete unary labels:
+\[
+ (A,\lambda)\in\mathcal U_T
+ \quad\Longleftrightarrow\quad
+ A\in\mathcal K,\quad
+ \col_A(x,y)=a\ \Longrightarrow\
+         (\lambda(x),\lambda(y))\in R_a
+ \quad(x\ne y).
+ \tag{U1}\label{eq:ep-pair-local}
+\]
+Here every pair type is realised, the old atom
+names and original sort predicates are retained,
+and each \(R_a\subseteq T^2\) may overlap another.
+Suppose \(\mathcal U_T\) has a reasonable hereditary
+Ramsey expansion \(\mathcal R\) with JEP in which
+there is exactly \emph{one expanded singleton type}
+per label \(t\in T\). Then
+\[
+ \boxed{\quad
+ \operatorname{EP}(\mathcal U_T/\mathcal K)
+ \quad\Longleftrightarrow\quad
+  \operatorname{End}(\mathbf T)
+          =\operatorname{Aut}(\mathbf T).
+ \quad}
+ \tag{U2}\label{eq:ep-core-iff}
+\]
+No new unary label is individually named inside
+the \emph{finite template} \(\mathbf T\); otherwise
+the endomorphism test would be vacuous.
+\end{theorem}
+\begin{proof}
+If a table endomorphism \(f:T\to T\) omits
+some realised \(t\), any legal marking
+\(\lambda\) of any old finite \(B\) can be
+postcomposed with \(f\) by
+\eqref{eq:ep-pair-local}. The result omits
+\(t\), so it avoids the legal expanded singleton
+of type \(t\). Thus EP fails.
+
+For the converse fix \(A^*\in\mathcal U_T\).
+For every \(\alpha\in\operatorname{Aut}(\mathbf T)\)
+the inverse-relabelled object
+\(\alpha^{-1}A^*\) is legal by
+\eqref{eq:ep-pair-local}. Choose an
+\(\mathcal R\)-expansion of each. Choose in
+\(\mathcal R\) also a witness for \emph{every}
+allowed old-colour/type pair
+\((s,t)\in R_a\), including \(s=t\) on
+\emph{distinct} real vertices, and one
+singleton of every realised type. Finite
+JEP embeds these finitely many objects into
+one \(D\in\mathcal R\).
+
+Enumerate the singleton shapes
+\(s_1,\ldots,s_{|T|}\). Iterating the ordinary
+Ramsey arrows for these shapes (with \(|T|\)
+colours) produces \(C\in\mathcal R\)
+such that every simultaneous choice of
+\(|T|\)-colourings of the embeddings of the
+\(s_i\) into \(C\) is separately constant on
+some embedded copy of \(D\). For clarity,
+one obtains this by choosing the arrows in
+reverse order and peeling the resulting
+embedded copies; it requires neither EP
+nor any joint one-point language action.
+
+Set \(B=C|_{\mathcal K}\). Given an arbitrary
+legal competing \(T\)-labelling
+\(\lambda':B\to T\), colour a reference
+singleton \(s_i\) at vertex \(x\) by
+\(\lambda'(x)\). On the selected \(D\)-copy
+the competitor's label is a constant
+\(f(t)\) on each \emph{reference} label \(t\).
+All labels appear and the stored pair
+witnesses force
+\((f(s),f(t))\in R_a\) for every
+\((s,t)\in R_a\). Thus \(f\) is an
+endomorphism of \(\mathbf T\) preserving
+the original sorts. It is an
+automorphism \(\alpha\), by hypothesis.
+The stored \(\alpha^{-1}A^*\)-copy
+has exactly the prescribed competing
+labels of \(A^*\). The single old \(B\)
+was selected \emph{before} receiving
+\(\lambda'\), as required.
+\end{proof}
+
+\begin{remark}[Finite normalisation as an independent fallback]
+\label{rem:ep-core-filter}
+For an \emph{arbitrary} pair-local expansion,
+the image of a minimum-rank idempotent
+endomorphism of \(\mathbf T\) is an induced
+core. Restricting to its labels preserves
+reasonableness, reduct-surjectivity and a
+relational Ramsey provider, and yields EP
+by \cref{thm:ep-finite-core-criterion}.
+This is a general finite algorithm, not
+part of our main V27 recipe. Its necessity
+on the legitimate V27 family is ruled out
+by \cref{thm:ep-automatic-core}. An
+arbitrarily added free terminal unary
+partition, or the nonmaximal safe
+orientation in \cref{rem:ep-core-scope},
+can have a noncore type table.
+\end{remark}
+
+\begin{lemma}[Symmetry of equivariant coordinates]
+\label{lem:ep-unique-coordinate}
+Let \(G\) act transitively on \(S\) and assume
+all \(G\)-invariant binary relations on \(S\)
+are symmetric. If \(\tau,\sigma:S\to B\)
+are equivariant surjections onto the same
+transitive \(G\)-set \(B\), then
+\[
+ \ker\tau=\ker\sigma,\qquad
+ \sigma=f\circ\tau
+\]
+for an equivariant involution \(f:B\to B\).
+If \(S\) has no proper finite-relative-index
+invariant equivalence above \(\ker\tau\),
+then \(f=\Id\) and \(\sigma=\tau\).
+\end{lemma}
+\begin{proof}
+Define \(R(x,y)\) by
+\(\tau(x)=\sigma(y)\). It is symmetric.
+If \(\sigma(x)=\sigma(y)\), choose \(z\)
+with \(\tau(z)=\sigma(x)\), use
+\(R(z,x),R(z,y)\), and then symmetry
+to get \(\tau(x)=\sigma(z)=\tau(y)\).
+Interchanging \(\tau,\sigma\) gives equality
+of kernels and an equivariant bijection
+\(f\) with \(\sigma=f\tau\).
+Symmetry of \(R\) also implies \(f^2=\Id\).
+A nontrivial equivariant involution on a
+transitive \(B\) is fixed-point-free, so
+its two-element orbits pull back to an
+invariant equivalence of relative index
+two over \(\ker\tau\). Terminality excludes
+this case.
+\end{proof}
+
+\begin{corollary}[A singleton-faithful terminal Ramsey provider]
+\label{cor:ep-singleton-faithful}
+In the functorially block-normalised,
+finite-language V27 terminal hidden Ramsey
+expansion, interpreted on the original real
+roots by the full R18 unary/MI-tuple code,
+there is exactly one expanded singleton
+type for each realised full terminal unary
+label.
+\end{corollary}
+\begin{proof}
+Every unary hidden coordinate term on
+one terminal transitive real sort gives
+an equivariant surjection onto its named
+target quotient sort. By
+\cref{lem:ep-unique-coordinate}, two
+terms targeting the same sort have
+identical values. V27's
+no-real-algebraic-transition theorem
+rules out additional returning real
+term values. Consequently one real
+root has at most one unary term value
+in each hidden target sort.
+
+Order comparisons between values of
+different target sorts are fixed by the
+preassigned priority of hidden sort
+symbols. Comparisons within one target
+sort are equality for terms of the
+same real root. All non-order unary
+term/equality/cylinder data is invariant
+under the transitive terminal
+automorphism group and hence fixed by
+its realised parent unary label. These
+statements include any MR root interpreted
+as a compatible MI tuple: each of its
+coordinates is a unary term of a clone
+representative and has the same
+singleton normal form.
+\end{proof}
+
+The remaining ordering argument concerns the \emph{full fine
+colours}, not merely the distributive lattice-ultrametric
+equivalence reduct. It takes place inside the already
+constructed terminal hidden Ramsey age and uses the
+relative-reset semantic type of the V27 appendix.
+
+\begin{lemma}[Finite holonomy vanishes in terminal quotients]
+\label{lem:ep-terminal-holonomy}
+An equivariant permutation of a transitive represented
+terminal quotient sort is the identity. Hence orders
+transported along definable quotient bijections have
+no nontrivial closed-loop holonomy.
+\end{lemma}
+\begin{proof}
+The graph of such a permutation is a binary invariant
+orbital relation, and there are finitely many of them.
+Its successive powers therefore eventually repeat,
+so the permutation has finite order. A nonidentity
+equivariant finite-order permutation is fixed-point-free
+on each nontrivial orbit; these finite orbits give
+a proper finite-relative-index invariant equivalence
+above the kernel of the represented quotient map.
+This contradicts terminality.
+\end{proof}
+
+\begin{lemma}[One complete generated type of an ordered reset edge]
+\label{lem:ep-reset-complete-edge}
+Let $J<J^+$ be one of the genuinely represented
+terminal meet-irreducible cuts, let
+$\mathfrak m\subseteq J^+\setminus J$
+be ONE \emph{complete named} relative
+$J$-semantic type, and suppose all
+definable quotient-transition bijections
+and the corresponding subquotient orders
+are synchronized. Then every ordered pair
+of $J$-classes $u<v$ with
+$u\,\mathfrak m\,v$ has the same complete
+finite unary-generated \emph{hidden expanded}
+two-root type $H_{\mathfrak m}$, including
+all unary-term equality codes, original
+fine semantic cylinders and transported
+order comparisons.
+
+This statement is relative to V27's
+\emph{full transition-enriched hidden
+language}; it would not follow from the
+bare equivalence reduct or merely from
+the RAW equality-inclusive identity
+\(\mathfrak m;\mathfrak m=J^+\) from
+\cref{eq:typed-relative-reset-raw} without completeness
+of the named semantic type.
+\end{lemma}
+\begin{proof}
+The typed unary-coordinate normal form
+\cref{lem:typed-coordinate-normal-form}
+is stated for terms on a \emph{real} sort,
+so we first justify its application here.
+For a hidden unary term $\tau$ starting at
+a proper quotient sort $B_J$, compose it
+with the real projection $F_J:O\to B_J$.
+The resulting real-source term
+$\tau\circ F_J$ falls under that lemma.
+Its equivalence kernel $L$ contains $J$,
+since the term factors through $F_J$.
+By the no-real-return theorem it is a
+proper represented meet-irreducible,
+not real equality. If $L=J$, then
+the induced map from the $J$-quotient
+is an equivariant bijection onto its
+actual transitive target quotient.
+Otherwise $L>J$ is a strict coarsening.
+Because $J$ is meet-irreducible, it has the
+unique cover $J^+$, and $J^+\le L$ in
+the latter case. Thus for an
+$\mathfrak m$-pair within one $J^+$-class
+all strictly coarser term values at $u,v$
+are equal at their corresponding transported
+targets. Equality between two term
+presentations, including those from
+different roots, is determined by this
+dichotomy and the complete $J$-semantic
+pair type. On bijectively transported
+$J$-coordinates the \emph{entire}
+named $\mathfrak m$-cylinder fixes every
+binary fine atomic relation between the
+term values; the coarser values, being
+unary images of one of the same two
+root coordinates, introduce no new
+independent pair choices.
+
+Within each hidden target sort the
+prescribed comparisons are either
+equalities at a coarsening, or the
+transported orientation of $u<v$ at
+bijective $J$-level. Any two quotient
+transition paths with the same target
+agree, since terminality makes their
+equivariant return holonomy trivial by
+\cref{lem:ep-terminal-holonomy}. Between
+different target sorts the hidden global
+order comparison is the fixed priority
+of the SORT SYMBOLS. Consequently every
+unary-generated equality, fine-cylinder
+and order code of the pair is forced by
+the original named $\mathfrak m$ and
+the orientation $u<v$.
+\end{proof}
+
+\begin{theorem}[Synchronized terminal subquotient-order EP]
+\label{thm:ep-terminal-orders}
+Let \(\mathcal H_{\mathrm{imag}}\) be the
+functionally closed PURE-IMAGINARY hidden
+age obtained from the terminal V27 hidden
+envelope by retaining all proper represented
+quotient sorts, their unary upward maps,
+quotient transitions and COMPLETE named
+fine semantic cylinders, but forgetting
+the clone-real hidden sorts. On this age
+consider the explicit order expansion:
+for each represented meet-irreducible cut
+\(J<J^+\), order \(J\)-classes inside
+each \(J^+\)-class; transport each order
+along its definable quotient-transition
+orbit, choose one independent task per
+orbit, and use a fixed hidden-sort priority
+and functorial parent-coordinate
+lexicographic reconstruction for all
+remaining comparisons.
+
+This is a reasonable, precompact Ramsey
+order expansion with EP over the
+\emph{full fine-coloured} pure-imaginary
+hidden age \(\mathcal H_{\mathrm{imag}}\),
+relative to the proved V27 typed hidden
+Ramsey/SAP/reset source. It does NOT
+claim relative EP for arbitrary orders
+on deleted clone-real hidden vertices;
+these orders are not part of the R18
+MI/MR tuple readout.
+\end{theorem}
+\begin{proof}
+The full terminal hidden class with arbitrary
+global orders is hereditary Ramsey with JEP
+and SAP by the internal V27 construction.
+The class of proper imaginary coordinate
+sorts is UNARY-CLOSED: by
+\cref{lem:no-real-algebraic-transition}
+no quotient-transition or upward unary map
+from one proper imaginary sort has a real
+target. Therefore
+\cref{lem:foundational-ramsey-sort-restriction}
+proves that the pure-imaginary ordered hidden
+subage is itself Ramsey, JEP and SAP.
+This argument uses actual induced closed
+substructures, not an unsupported claim
+that an arbitrary reduct of a Ramsey
+class remains Ramsey.
+
+Apply \cref{lem:foundational-ramsey-normalization} to the hierarchical
+transition-synchronized normalizer of
+\cref{lem:foundational-hierarchical-order-normalization}.
+That normalizer is an idempotent endofunctor of the full
+pure-imaginary ordered class, leaves vertex maps and unexpanded
+hidden structures unchanged, and has exactly the desired normalized
+objects as its fixed class. It already orders different sorts by the
+fixed sort priority, so no separate block-normalization stage is needed.
+The common lemma gives a hereditary Ramsey/JEP provider. This does not
+assert that every partially ordered intermediate reduct is Ramsey.
+
+The image expansion is also reasonable
+and reduct-surjective: for any finite
+unexpanded pure-imaginary \(B\), choose
+an arbitrary full hidden order and
+normalize it. Given an embedding of
+an already normalized ordered \(A\)
+into an unexpanded \(B\), first extend
+the finite linear order of \(A\) to
+an arbitrary total order of the full
+underlying \(B\), then normalize.
+Functoriality and idempotence give
+\(N(B)|_A=N(A)=A\); hence the embedding
+extends to a legal ordered expansion
+of \(B\). Precompactness follows
+from finiteness of the hidden sorts
+and of the input structure.
+
+Relative reversal of a SINGLE independent
+transition-orbit task leaves all earlier
+coarser task orders fixed; its effects
+on finer parent-lex comparisons are
+recomputed functorially by
+\cref{lem:foundational-hierarchical-order-normalization}.
+Consequently the intermediate reducts
+used below genuinely differ by only
+ONE task and its derived codes.
+
+We verify the four actual hypotheses of the
+abstract single-task criterion
+\cref{thm:abstract-reset-order-EP}
+for one orbit of a terminal represented
+meet-irreducible cut $J<J^+$.
+Earlier coarser task orders are held fixed as
+part of the intermediate reduct; later finer
+task orders are not fixed at this stage.
+The \emph{full} transition-synchronized,
+block-normalized PURE-IMAGINARY ordered
+hidden class is the common Ramsey/JEP
+provider throughout, so we never assume
+an intermediate partially ordered class
+is Ramsey.
+
+First, the transition-synchronized orders
+on $J$-classes inside each $J^+$-class
+are free relative to the already fixed
+coarser parent orders. Reversing this
+one task \emph{simultaneously along all its
+definable transition copies} therefore
+produces another legal expansion over
+the very same intermediate reduct.
+Any dependent parent-tuple comparisons
+are reconstructed by the fixed top-down
+lexicographic rule, rather than being
+independently prescribed. This is condition
+(i) of the abstract criterion.
+
+Next, the typed same-sort relative-reset theorem
+\cref{thm:typed-relative-reset}, proved by
+relativising the sparse-graph and private-theta
+argument to the full SAP terminal typed source
+(rather than merely carrying indices through
+the historical one-sort proof), gives one
+complete named symmetric $J$-semantic type
+for the genuinely represented NONZERO cut
+$J\in\mathcal I_a$:
+\[
+ \mathfrak m\subseteq J^+\setminus J,
+ \quad \mathfrak m\starprod\mathfrak m=(J^+)^\circ,
+ \quad \mathfrak m;\mathfrak m=J^+.
+ \tag{O1}\label{eq:ep-reset}
+\]
+The first operation is the STRONG
+typed diversity product and its
+output is the ACTUAL diversity
+palette \((J^+)^\circ\).
+The final equality is the
+equality-INCLUSIVE RAW relation
+identity \cref{eq:typed-relative-reset-raw}.
+We use the STRONG equality below
+only on actual off-diagonal old
+pair colours and never insert a
+formal identity edge.
+Every orientation of an $\mathfrak m$-edge
+has the same \emph{entire} unary-generated
+expanded two-root type
+$H_{\mathfrak m}$ by
+\cref{lem:ep-reset-complete-edge}.
+This includes fine cylinders, equality,
+upward transition terms and comparisons,
+so condition (ii) holds.
+
+For condition (iii), take an actual finite
+functionally closed hidden object $A$
+with $u<v$ two distinct $J$-classes inside
+one $J^+$-class. We must realise the reset
+\emph{over the actual complete hidden
+two-root type of $(u,v)$}, not just over
+some abstract pair of one $J^+$-class.
+
+Embed the unexpanded $A$ in a full point-generated
+coordinate expansion of the original terminal
+fine-coloured homogeneous source, and choose
+real representatives $x,y$ with
+$F_J(x)=u$, $F_J(y)=v$. Their actual old
+fine atomic pair colour $a$ belongs to
+$J^+\setminus J$. The typed relative-reset theorem
+\cref{thm:typed-relative-reset}
+asserts the STRONG diversity equality
+\(\mathfrak m\starprod\mathfrak m=(J^+)^\circ\),
+in addition to its separately proved
+RAW equality-inclusive counterpart.
+We use the former, not a formal
+identity edge, in this argument. Since
+$a\in J^+\setminus J$ is a \emph{diversity}
+atom, its inclusion in that strong product
+is witnessed by a genuine old allowed
+triangle on three distinct real vertices
+with colours $(\mathfrak m,\mathfrak m,a)$.
+By homogeneity on the old fine pair colour
+$a$, transport that triangle's endpoints to
+the \emph{specified} real pair $(x,y)$.
+This supplies an actual real midpoint $z'$
+whose $J$-class $z_0=F_J(z')$ satisfies
+\[
+          u\,\mathfrak m\,z_0\,\mathfrak m\,v.
+\]
+The ambient induced unary closure of $u,v$
+already has EXACTLY the original hidden
+fine-cylinder, equality and transition data
+of $P=\langle u,v\rangle\le A$; we have
+not replaced the prescribed pair by an
+unrelated pair with merely the same
+$J^+$-parent. This use of old pair
+homogeneity is distinct from and prior to
+the subsequent strong hidden amalgamation.
+Because $\mathfrak m$ lies outside $J$,
+$z_0$ differs from $u,v$ as a $J$-class.
+Moreover $z_0$ cannot belong to the
+unary-generated closure $\langle u,v\rangle$:
+a unary term returning to the $J$-level
+is a quotient-transition bijection, and
+terminal no-holonomy makes every return
+to the same named $J$ sort the identity.
+All other terms from $u,v$ land in
+strict coarsenings at least $J^+$,
+whereas $z_0$ is a distinct $J$-point.
+Thus $z_0$ is genuinely outside the
+closed two-root base.
+
+Take the finite unary closure
+$T=\langle u,v,z_0\rangle$ with the same
+induced complete two-root base
+$P=\langle u,v\rangle$ as in $A$.
+Choose the task-fibre order $u<z_0<v$;
+it is legal because all three points
+have the same strict $J^+$ parent and
+the remaining comparisons are
+functorially transported/extended.
+Apply typed hidden SAP
+\cref{thm:typed-hidden-sap} to $T$ and
+$A$ over the \emph{complete closed} $P$.
+The two given orders have identical
+restrictions to $P$. On each represented
+hidden sort and each allowed task fibre,
+amalgamate these finite linear orders
+over their common suborder by shuffling
+the off-base points in each interval
+between consecutive base points.
+For the current $J$ task this keeps
+$u<z_0<v$; other existing comparisons
+in $A$ are unchanged. Recompute all
+functorial parent-lex and transition
+comparison codes from those joint
+orders. This is the joint-order construction just described, using
+\cref{thm:typed-hidden-sap} and the earlier sort-block normalization.
+The resulting copy $z$ is fresh over
+$A$ by strongness. This is exactly
+\cref{lem:abstract-fresh-reset-midpoint};
+repeat the construction for every
+comparison in a finite task-fibre
+configuration. No extension of a
+prescribed old fine-colour matrix by
+guessing a new colour is used:
+the genuine hidden SAP theorem
+constructs the common object.
+
+The complete ordered PURE-IMAGINARY
+hidden class is Ramsey and has JEP by
+the V27 hidden Ramsey source, the
+unary-closed sort restriction and
+functorial hierarchical normalization
+already checked at the start of this proof.
+Consequently the abstract midpoint
+theorem
+\cref{thm:abstract-reset-order-EP}
+gives EP for this \emph{one} current
+task over all earlier tasks, with an old
+host chosen before any competing order.
+Its proof stores the task target and
+its reversal, inserts the two reset
+edges at every comparison, applies one
+\(
+ C\longrightarrow(D)^{H_{\mathfrak m}}_2
+\)
+arrow in the SAME full hidden Ramsey
+class, and uses the constant comparison
+sign to select the correct target.
+The source theorem therefore does not
+need a Ramsey statement for partially
+ordered intermediate structures.
+
+Finally process the finitely many
+independent transition-orbits of cuts
+from coarser to finer. Their relative
+EP properties compose by
+\cref{lem:foundational-relative-EP-composition},
+whose proof transports \emph{arbitrary}
+expanded hosts along actual embeddings
+and preserves the quantifier order.
+All the other parent-lex comparisons
+are functorially determined by the
+task orders and fixed sort priority,
+so the final expanded order class
+has EP over the full fine-coloured
+PURE-IMAGINARY terminal hidden reduct.
+No order on a deleted clone-real vertex
+was used in the relative EP quantifiers.
+\end{proof}
+
+\begin{lemma}[Cofinal finite MI-tuple EP transfer]
+\label{lem:ep-tuple-transfer}
+Let \(\mathcal H^o\to\mathcal H\) be a reasonable
+hidden finite-relational/unary-functional
+precompact expansion with EP.
+Suppose an interpretation \(N(D)\)
+reads visible roots as finite compatible
+tuples of selected unary hidden
+quotient coordinates, and \(h(A)\)
+is their finite unary-generated support.
+Assume:
+\begin{enumerate}[label=(\textup{\roman*}),leftmargin=*]
+\item the unexpanded \(h(A)\) depends only
+on the old fine-coloured visible \(A\);
+\item every finite hidden \(D\) extends
+to a finite \(E\) with \(h(N(E))=E\);
+\item \emph{every} allowed visible
+expansion of \(N(E)\) lifts through
+its full comparison/equality code
+to a hidden \(\mathcal H^o\)
+expansion of the \emph{same} \(E\);
+\item visible embeddings extend uniquely
+to generated supports, and \(N\)
+recovers every original fine colour.
+\end{enumerate}
+Then the visible expansion has EP.
+The full R18 compatible MI-tuple
+readout of Part~III satisfies these
+four contracts, including the MR case.
+\end{lemma}
+\begin{proof}
+The abstract transfer under (i)--(iv) is already
+the general Part~I theorem
+\cref{thm:foundational-cofinal-tuple-EP}.
+Here it remains to audit the four
+contracts for the actual compatible
+R18 MI/MR tuple interpretation.
+We verify the hypotheses of the two general
+Foundations lemmas for the \emph{actual} R18
+terminal hidden source. First delete the
+clone-real hidden sorts. No unary transition
+has its target in those real sorts, by
+\cref{lem:no-real-algebraic-transition}, so
+the pure-imaginary hidden reduct is
+functionally closed and its finite age
+is represented in the pure-imaginary part
+of the actual terminal Fra\"iss\'e source.
+
+Every proper imaginary point $b$ in this
+actual ambient hidden structure is an
+original represented coordinate or a
+quotient-transition value of such a
+coordinate. Choose a real representative
+$x_b$ of its corresponding quotient class.
+By the typed coordinate-term normal form
+\cref{lem:typed-coordinate-normal-form},
+the kernel of this coordinate term is a
+proper represented meet-irreducible, and
+the value is obtained from that coordinate
+by unary quotient maps/transitions.
+If the target coordinate $J$ is one of
+the selected $J_{s,i}$, it is a coordinate
+of the root tuple $\eta_s(x_b)$.
+For a represented proper meet-irreducible
+coordinate $J$ with $K_s=\bigcap_iJ_{s,i}\le J$,
+the explicit finite-lattice cofinality
+\cref{lem:foundational-MI-coordinate-cofinal}
+gives a selected $J_{s,i}\le J$, so its
+value is an upward unary image of
+$\eta_s(x_b)$. More generally the
+transition normal form expresses any
+represented proper target by this finite
+unary closure. The compatibility
+predicate for $\eta_s(x_b)$ is the
+quantifier-free R18 predicate
+\cref{lem:ramsey-mi-domain}.
+
+Consequently \emph{every} point of the
+ambient pure-imaginary hidden source
+is a unary-term value of a valid visible
+MI tuple. The cofinal root-coverage lemma
+\cref{lem:foundational-root-cover-cofinal}
+now proves (ii): for each finite
+pure-imaginary $D$ it constructs a finite
+$E\supseteq D$ from the unary closure
+of finitely many chosen real-representative
+root tuples, with $h(N(E))=E$. This also
+handles orphan coordinates and their
+\emph{missing packet partners}, since
+the entire unary closure of each root
+tuple is included in $E$.
+
+For (i), the unexpanded visible structure
+at this relative EP stage contains the
+\emph{terminal unary labels} and all
+original fine binary atoms. The coordinate
+terms and proper quotient transports are
+canonical and $0$-definable from that
+source: every unexpanded term equality,
+fine-cylinder atom and unary incidence is
+a union of its complete atomic old types,
+as proved in \cref{cor:ramsey-small-language}.
+Thus the unexpanded generated support
+$h(B)$ is canonical over the visible
+roots, not an arbitrary additional
+imaginary coordinate assignment.
+For the full-code EP step we keep ALL
+unary terms, across-root equalities,
+fine-cylinder names and comparisons
+within each hidden target sort.
+
+Now take the fixed $E$ supplied by
+(ii), so $h(N(E))=E$, and an
+\emph{arbitrary} competing allowed
+full-code visible expansion $B^o$ of
+$B=N(E)|_{\mathcal V}$. Allowedness means
+that $B^o$ comes from an induced full
+code on some hidden expanded object,
+not necessarily on $E$.
+The common same-host lift lemma
+\cref{lem:foundational-same-host-code}
+transports its complete generated
+hidden code to the \emph{existing}
+unexpanded $E$ using (i). This
+produces one allowed hidden expansion
+$E^o$ on exactly the same underlying
+$E$ and realizes $B^o$, establishing
+(iii) without selecting a convenient
+alternative hidden host.
+
+The all-embeddings identity of
+\cref{lem:foundational-full-code-embeddings}
+gives (iv). This argument does not
+infer EP by quotienting an arbitrary
+Ramsey expansion or by silently
+discarding missing-partner
+comparison information.
+\end{proof}
+
+\begin{theorem}[Explicit Ramsey and expansion-property theorem]
+\label{thm:ep-unfiltered-main}
+For every one-original-sort countable transitive
+homogeneous complete finite symmetric binary
+AP+homomorphic-CCO source, the following
+\emph{unfiltered} finite unary/binary
+expansion is reasonable, reduct-surjective,
+precompact and Ramsey, and has the
+\emph{expansion property} over the
+original age:
+\begin{enumerate}[label=(\textup{\arabic*}),leftmargin=*]
+\item pass to the pure-clone SAP cover and
+perform any \emph{genuine} finite
+maximal-exact-character safe terminalisation;
+retain \emph{every} realised joint
+terminal unary type, removing \emph{none};
+\item on terminal hidden MI quotients
+use transition-synchronised
+subquotient orders, fixed sort-block
+priorities and parent-lex reconstruction;
+\item read them back on the
+original vertices as compatible
+MI-coordinate tuples with the
+finite \emph{full} unary/binary
+term-equality, cylinder and
+comparison code.
+\end{enumerate}
+No canonical choice of tower or
+minimality of the signature is claimed.
+\end{theorem}
+\begin{proof}
+R17's clone stability shows the
+genuine safe terminal labels are
+constant on full clone fibres,
+so they label the original real
+points. Its pair-locality is the
+realised full groupoid-character
+pair rule \eqref{eq:ep-pair-local};
+the clone atom has type support
+equal to the diagonal and adds
+no endomorphism restriction.
+
+The unfiltered table \(\mathbf T\)
+is core by \cref{thm:ep-automatic-core}.
+The block-normalised hidden Ramsey
+provider has one expanded singleton
+type per full terminal label by
+\cref{cor:ep-singleton-faithful}.
+Apply \cref{thm:ep-finite-core-criterion}:
+the \emph{unfiltered} unary phase age
+has EP over the original age.
+The order expansion has relative EP by
+\cref{thm:ep-terminal-orders};
+the interpreted visible order age
+has relative EP over the unary phase
+age by \cref{lem:ep-tuple-transfer}.
+These two relative EP statements
+compose with unary EP by the
+precise finite-chain quantifier lemma
+\cref{lem:foundational-relative-EP-composition}.
+First choose the necessary host at the
+most expanded intermediate stage, then
+successively choose hosts for its reducts.
+For EVERY competing expansion of the
+ONE final unexpanded host, restricting
+its intermediate reduct along the
+guaranteed embeddings supplies the
+required preceding expanded witnesses.
+The composition lemma uses heredity
+and reduct-surjectivity; JEP and
+precompactness are NOT needed for
+this quantifier step. No arbitrary
+order choice or phase marking is
+selected after the final original
+host is fixed.
+
+Ramsey, reasonableness and
+precompactness of the compatible
+tuple readout were already
+established in
+\cref{thm:ramsey-general-ap,thm:ramsey-tuple-readout}; the
+functorial order restriction
+preserves their Ramsey arrows.
+All displayed comparison codes
+are unary or binary and there are
+only finitely many uniform hidden
+unary term normal forms.
+Thus the entire visible expansion
+is finite-language and at most
+binary. EP of every layer has
+now been verified rather than
+inferred from its Ramsey property.
+\end{proof}
+
+\begin{remark}[Precise status]
+\label{rem:ep-final-audit}
+The core/label theorem is a direct
+diversity-rank deduction of
+\cref{sec:ep-exact-traces,sec:ep-automatic-core}
+from the represented exact, quotient
+and safe-character contracts.
+The order and tuple clauses above
+are direct finite categorical
+arguments using substantial
+terminal V27 hidden SAP/relative-reset
+and R18 full-code inputs.
+Those in-house source proofs are
+reproduced or connected in the
+technical appendices, but their
+end-to-end independent line audit
+and Lean formalisation are
+\emph{not} claimed. The distinction
+between original homomorphic CCO
+and any stronger injective completion
+statement is unchanged.
+\end{remark}

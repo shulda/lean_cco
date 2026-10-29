@@ -1,0 +1,305 @@
+% C1b/Q1: source-preserved standalone support lemma extracted from V27.
+\section{Local irreducible supports in binary/unary partial structures}
+\label{sec:binary-unary-irreducible-local-cover}
+
+\begin{lemma}[Binary/unary irreducible substructures are covered pairwise by local closed supports]
+\label{lem:typed-binary-irreducible-local-cover}
+Let \(C\) be a finite
+PARTIAL relational
+structure with total
+named UNARY functions
+and relational symbols
+of arity AT MOST TWO,
+closed under all the
+named functions.
+For every vertex \(v\in C\)
+form the closed support
+\(\cl_C\{v\}\).
+For every ACTUALLY
+DISPLAYED binary relation
+tuple on two distinct
+vertices \(u,v\in C\),
+also form the closed
+support \(\cl_C\{u,v\}\).
+Let \(\mathscr H(C)\)
+be this finite family
+of induced functionally
+closed substructures.
+
+Then for EVERY nonempty
+functionally closed
+IRREDUCIBLE induced
+substructure \(D\subseteq C\),
+and EVERY pair of distinct
+vertices \(x,y\in D\),
+SOME member of
+\(\mathscr H(D)\)
+contains BOTH \(x,y\).
+
+Consequently, if
+\(f:C\to H\) is a
+sort- and
+unary-function-preserving
+homomorphism to a
+COMPLETE target, and
+\(f|_A\) is an induced
+EMBEDDING for every
+\(A\in\mathscr H(C)\),
+then \(f\) is a
+HOMOMORPHISM-EMBEDDING
+on all of \(C\):
+its restriction to EVERY
+source irreducible
+substructure is an
+embedding.
+
+This conclusion is
+specific to the binary
+relational/unary-functional
+signature. For a higher
+arity relation, pairwise
+reflection does NOT
+by itself reflect a
+missing tuple of
+three or more roots.
+\end{lemma}
+\begin{proof}
+All members of
+\(\mathscr H(D)\)
+are functionally closed:
+the closure of a finite
+set under UNARY
+functions is the
+union of the
+one-generated closures
+of its elements.
+Every original
+displayed unary-function
+equation is contained
+in a one-generated
+member of
+\(\mathscr H(D)\),
+and every displayed
+binary relation tuple
+is contained in the
+closed support of its
+two endpoints.
+
+Suppose for contradiction
+that distinct \(x,y\in D\)
+lie together in NO
+member of
+\(\mathscr H(D)\).
+Define two subsets
+\[
+ \begin{aligned}
+ A_x&=\bigcup\{U\in\mathscr H(D):
+                              y\notin U\},\\
+ A_y&=\bigcup\{U\in\mathscr H(D):
+                              x\notin U\}.
+ \end{aligned}
+\]
+Each is functionally
+closed, because it is
+a union of sets closed
+under unary functions.
+We have \(x\in A_x
+\setminus A_y\)
+and \(y\in A_y
+\setminus A_x\):
+the one-generated
+support of \(x\)
+avoids \(y\), and
+that of \(y\) avoids
+\(x\), whereas all
+sets in the union
+defining \(A_y\)
+avoid \(x\), and
+vice versa.
+
+Every vertex \(z\in D\)
+belongs to its own
+one-generated support
+\(\cl_D\{z\}\).
+That support cannot
+contain BOTH \(x,y\)
+by the assumption,
+so it occurs in at
+least one of the two
+unions. Hence
+\(D=A_x\cup A_y\).
+
+Every displayed binary
+relation tuple of D
+lies in its own
+closed relation support
+\(U\in\mathscr H(D)\).
+Again \(U\) cannot
+contain both \(x,y\),
+so the entire tuple
+lies in \(A_x\)
+or in \(A_y\).
+Unary functions likewise
+stay inside each
+functionally closed part.
+Consequently the
+PARTIAL diagram of D
+is exactly the free
+amalgam of its two
+induced closed
+substructures on
+\(A_x,A_y\) over
+their induced closed
+intersection.
+Both sides have
+a vertex outside
+the overlap, so
+this is a NONTRIVIAL
+free decomposition.
+This contradicts
+irreducibility of D.
+
+For the last assertion,
+fix an arbitrary
+irreducible induced
+substructure \(D\subseteq C\).
+Each member of
+\(\mathscr H(D)\)
+is an induced
+substructure of
+a corresponding
+member of
+\(\mathscr H(C)\):
+unary closure inside
+D equals closure
+inside C because
+D is functionally
+closed. Therefore
+f is an induced
+embedding on every
+member of
+\(\mathscr H(D)\).
+For any distinct
+\(x,y\in D\), the
+first part supplies
+one such common
+closed support.
+Its embedding property
+proves \(f(x)\ne f(y)\).
+Thus \(f|_D\) is
+injective.
+
+The homomorphism f
+already preserves
+all unary functions
+and displayed relations.
+To reflect any
+ACTUAL binary relation
+\(R(f(x),f(y))\)
+of the target for
+vertices \(x,y\in D\),
+choose a local
+closed support
+containing both;
+f is an induced
+embedding there,
+so \(R(x,y)\)
+was displayed in
+that support and
+hence in D.
+For \(x=y\) use
+the one-generated
+support of x instead.
+This proves reflection
+of every binary and
+unary relation, and
+therefore \(f|_D\)
+is an embedding.
+As D was arbitrary,
+f is a
+homomorphism-embedding.
+\end{proof}
+
+
+\begin{lemma}[HN irreducibility forces completed unary-generated diagrams]
+\label{lem:hn-irreducible-forces-unary-admissible}
+Let $L$ be a finite many-sorted language with arbitrary
+relational symbols and only UNARY function symbols.
+In this lemma, function symbols of a finite PARTIAL
+$L$-structure $C$ are permitted to have proper domains,
+as in the HN 2019 finite-model convention.
+An induced $L$-substructure means an EMBEDDED one:
+its inclusion reflects not only relations but also
+the DOMAINS of all partially defined functions.
+Thus a substructure containing $x$ necessarily
+contains the value of every unary function which
+is already defined at $x$ in $C$.
+
+Let $\mathcal K$ be any class of finite COMPLETED
+$L$-structures whose named unary functions are
+TOTAL on their intended input sorts.
+Assume EVERY irreducible induced $L$-substructure
+of $C$ is an ACTUAL member of $\mathcal K$.
+Then:
+\begin{enumerate}[label=(\roman*)]
+\item For every $x\in C$, the substructure
+$U_x=\cl_C\{x\}$ generated by all iterated
+ALREADY DEFINED unary values is IRREDUCIBLE,
+and belongs to $\mathcal K$.
+\item Consequently every intended unary function
+is already TOTAL in $C$ on its named input sort,
+and every actual unary term identity valid in
+$\mathcal K$ holds in $C$ pointwise.
+\item If all completed one-generated $\mathcal K$
+members have size at most $m$, then
+$|U_x|\le m$ for EVERY $x\in C$, and
+$|\cl_C(B)|\le m|B|$ for each finite
+generator set $B\subseteq C$.
+\end{enumerate}
+In particular the HN local-finiteness requirement
+that every irreducible substructure of $C$
+already belong to the completed target age
+implies the unary-admissibility condition needed
+for the RESTRICTED hidden bounded-obstruction
+theorem, even though the ambient HN language
+permits PARTIAL unary functions.
+\end{lemma}
+\begin{proof}
+An HN induced substructure is closed under
+EVERY unary value already defined on its points,
+since embedding requires equality of FUNCTION
+DOMAINS on all input tuples from that substructure.
+Therefore the finite intersection of all such
+substructures containing a given $x$ is the
+substructure $U_x$ consisting precisely of the
+iterated defined unary values of $x$.
+
+Suppose $U_x$ were the free amalgam of two
+proper induced substructures over their
+common induced intersection. One of these
+two factors contains $x$. As that factor
+is an ACTUAL substructure, it is closed
+under all defined unary functions, and
+hence contains ALL of $U_x$. Thus it is
+not proper, a contradiction. So $U_x$
+is irreducible. The hypothesis yields
+$U_x\in\mathcal K$.
+
+Because the function-domain interpretations
+in each such completed $U_x$ are TOTAL on
+their intended source sorts, every applicable
+function value at $x$ is already defined in
+$U_x$ and hence in $C$. This holds for each
+$x$, proving the totality assertion.
+The source unary term evaluation on any one
+$x$ takes place entirely inside the ACTUAL
+completed $U_x$, so every universal unary
+identity valid in $\mathcal K$ holds in $C$.
+
+Finally $U_x\in\mathcal K$ gives $|U_x|\le m$.
+With unary functions the closure of any $B$
+is the union of the one-generated closures
+$U_x$, $x\in B$. This yields the asserted
+finite bound, without assuming the original
+PARTIAL source $C$ was complete or completable.
+\end{proof}

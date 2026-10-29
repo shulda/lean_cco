@@ -1,0 +1,317 @@
+\begin{definition}[Unary-admissible partial hidden sources]
+\label{def:typed-unary-admissible-source}
+A finite unary-functionally CLOSED PARTIAL terminal hidden
+structure \(C\) is \emph{unary-admissible} if, for EVERY
+\(x\in C\), the FULL induced hidden diagram on
+\(\cl_C\{x\}\), including all named total unary functions,
+their literal term equalities and the binary relations
+internal to this closure, is isomorphic to an ACTUAL
+completed one-generated induced hidden member.
+This does NOT assume \(C\) itself is complete or
+homomorphism-embedding completable.
+
+The condition is substantive. Arbitrary finite partial
+structures with total unary symbols may have arbitrarily
+large one-generated closures and violate the named
+quotient-transition identities; mere unary closedness
+does NOT imply unary-admissibility.
+\end{definition}
+
+\begin{example}[Arbitrarily long malformed unary transition cycles]
+\label{ex:typed-malformed-unary-long-cycles}
+The distinction in
+\cref{def:typed-unary-admissible-source}
+already occurs in the ACTUAL two-original-sort
+common-block SAP+CCO structure
+\cref{ex:typed-mixed-block-orbital-diagonal}.
+Its proper quotient sorts $Q_A,Q_B$ carry the
+NAMED inverse transitions
+$f=\pi_{r,E_A}:Q_A\to Q_B$
+and $g=\pi_{r^\smile,E_B}:Q_B\to Q_A$,
+with $g f=\operatorname{id}_{Q_A}$
+in every COMPLETED hidden member.
+
+For arbitrary $n\ge2$, take a finite
+PARTIAL total-unary hidden source
+with quotient vertices $x_0,\ldots,x_{n-1}$
+in $Q_A$ and $y_0,\ldots,y_{n-1}$
+in $Q_B$, no real vertices and
+NO displayed binary orbitals.
+Put $f(x_i)=y_i$ and
+$g(y_i)=x_{i+1\pmod n}$.
+The generated transition orbit of ANY vertex
+is the WHOLE $2n$-vertex structure,
+so it has NO proper nonempty
+unary-closed induced substructure and
+is IRREDUCIBLE. It has no hidden
+homomorphism-embedding completion:
+function preservation would imply
+$h(x_{i+1})=g f(h(x_i))=h(x_i)$,
+contradicting injectivity on this irreducible source.
+Thus no uniform bound on NONCOMPLETABLE
+unary-CLOSED substructures can hold for
+ARBITRARY total-unary partial inputs.
+
+These malformed sources fail
+HN Definition~2.8(ii): their
+one-generated IRREDUCIBLE closures
+are NOT completed hidden members.
+In the actual HN test, (ii) enforces the
+unary-admissibility needed for the
+RESTRICTED bounded-obstruction proof;
+the terminal Ramsey claim is NOT
+refuted by this example.
+\end{example}
+
+\begin{lemma}[Uniform typed unary closure in genuine hidden diagrams]
+\label{lem:typed-unary-closure-bound}
+There is a constant \(m_{\mathrm{typ}}\), depending only on
+the finite terminal hidden language, such that the unary
+functional closure of one vertex has at most
+\(m_{\mathrm{typ}}\) vertices in EVERY ACTUAL completed
+hidden member. Consequently the same bound holds for
+every one-generated closure in a
+\cref{def:typed-unary-admissible-source} source.
+NO uniform bound is asserted for arbitrary total-unary
+PARTIAL source structures.
+\end{lemma}
+
+\begin{proof}
+A unary coordinate term is a finite composition of projections, upward
+quotient maps and quotient transitions.  Suppose a transition induced by
+\(R\) carries an \(E\)-coordinate to the transported
+\(E^R\)-coordinate and is followed by the upward map to some represented
+\(H\geq E^R\).  The lattice isomorphism in
+\cref{lem:typed-quotient-transport} has a unique pullback
+\(H_0\geq E\) with \(H_0^R=H\); meet-irreducibility is preserved by
+transport, so this pullback is again a represented coordinate.  On quotient
+classes
+\[
+  u_{E^R,H}\circ\pi_{R,E}
+   =\pi_{R,H_0}\circ u_{E,H_0}.
+\]
+Thus every upward map occurring after a transition can be commuted one step
+towards the source.  Repeating this operation collects all upward maps at the
+source.  Consequently every coordinate term is a single projection to a
+represented quotient (if the source is real), or a single initial upward map
+(if it is already a coordinate), followed by a transition-only composite.
+The explicit composition and
+upward-interchange identities
+\cref{lem:typed-transition-composition-normal-form}
+show that every
+transition-only composite
+is the quotient map of
+one actual relation
+in a finite \(\Rel^{ab}\)
+family, or an existing
+identity term if that
+RAW relational
+representative contains
+logical identity.
+The latter case uses
+\cref{lem:typed-identity-transport-redundant},
+not an artificial STRONG
+identity-labelled atom.
+There are only finitely
+many represented coordinate sorts.  Thus only finitely many unary term
+functions can occur from any fixed hidden sort, uniformly in the finite
+structure, which gives the asserted bound.
+\end{proof}
+
+The next lemma records the more precise normal form which will be used in the
+amalgamation argument.
+
+\begin{definition}[Transition-closed root signature]
+\label{def:typed-transition-root-signature}
+Let two real roots \(x\in a\), \(y\in b\) carry a guarded pair constraint
+\(D\in\Dat^{ab}\).  Its canonical root signature contains, for every
+represented \(J\in\mathcal I_a\) with
+\(DD^{\smile}\subseteq J\), the direct quotient-transition identity
+\[
+ \pi_{D,J}(F_J(x))=F_{J^D}(y),
+\]
+together with its full functional closure.  If the constraint is represented
+by a theta bundle
+\(D=\bigcap_iP_i\) with \(P_i\in\Rch^{ab}\), we additionally include the
+corresponding transition identities forced by each branch profile \(P_i\).
+Thus both intersection-forced and branch-forced quotient data are retained.
+\end{definition}
+
+The signature is compatible with every actual root pair.  More generally, if
+non-empty definable pair relations \(R,S\in\Rel^{ab}\) both contain an
+atomic type \(c\), and both are quotient-functional from the same represented
+\(J\), then \(J^R=J^c=J^S\) and the three quotient maps agree on every
+source \(J\)-class.  Indeed an actual \(c\)-neighbour of any representative
+computes the unique source-class label for all three relations.  Hence the
+direct exact-domain transition and all branch transitions in one canonical
+theta root signature are consistent.
+
+\begin{lemma}[Typed coordinate-term normal form]
+\label{lem:typed-coordinate-normal-form}
+Let \(\tau\) be a unary term whose source is a real sort \(a\) and whose
+value is either the source real point itself or a hidden quotient coordinate.
+Then there is a definable equivalence \(K_\tau\) on \(a\), with
+\(K_\tau\) equality exactly for the identity real-point term and otherwise a
+proper meet-irreducible, such that for all real \(x,x'\in a\),
+\[
+ \tau(x)=\tau(x')\quad\Longleftrightarrow\quad xK_\tau x'.
+\tag{QT-NF}\label{eq:typed-coordinate-normal-form}
+\]
+Moreover the value \(\tau(x)\) is obtained from the
+\(K_\tau\)-coordinate of \(x\) by a finite chain of quotient transitions and upward quotient maps.
+Consequently the stabiliser of \(\tau(x)\) in any automorphism group equals
+the stabiliser of the \(K_\tau\)-class of \(x\).
+\end{lemma}
+
+\begin{proof}
+The identity real-point term has kernel equality.  A non-identity
+real-source term first applies a named projection
+\(F_{E_0}:a\to B_{a,E_0}\) to a represented proper
+meet-irreducible \(E_0\).  The rest is a finite word in named
+upward quotient maps and quotient transitions (including their
+named inverses).
+
+We prove the stronger LITERAL normal form, including its named maps.
+Whenever an upward map \(u_{F,H}\) follows a quotient transition
+\(\pi_{R,E}\), the source-sort pullback \(H_0\ge E\) is again a
+represented proper meet-irreducible, by the interval isomorphism
+\cref{lem:typed-quotient-transport}.  Replace these two
+consecutive maps, in source-to-target order, by
+\[
+ \pi_{R,E}\ \text{then}\ u_{F,H}
+ \quad=\quad
+ u_{E,H_0}\ \text{then}\ \pi_{R,H_0},
+\]
+as literal unary functions by the upward-interchange identity
+\eqref{eq:typed-upward-interchange}.  Each replacement reduces
+the finite number of transition-before-upward inversions in
+the word.  Once no such inversion remains, combine the
+upward maps into the initial projection \(F_K\), where
+\(K\) is a represented proper meet-irreducible on the
+ORIGINAL source sort \(a\).  Combine all remaining
+transitions by the actual RAW composition identity
+\eqref{eq:typed-transition-composition}.  If the resulting
+RAW relation contains logical identity, the corresponding
+quotient map is the already named identity by
+\cref{lem:typed-identity-transport-redundant};
+otherwise it is the named transition \(\pi_{T,K}\) for
+an ACTUAL \(T\in\Rel^{ab}\).  Write \(\theta\) for
+the named transition in the second case, and for the
+EXISTING named identity in the first.  Thus we have
+a literal equality of term functions
+\[
+                       \tau=\theta\circ F_K.
+\]
+Every transition is a quotient-set bijection, so
+\(\ker(\tau)=K\), giving \eqref{eq:typed-coordinate-normal-form}.
+The value of \(\tau(x)\) is thus obtained by a NAMED
+term from the \(K_\tau\)-coordinate, even if intermediate
+transitions change original sorts.
+
+Finally the quotient transition is equivariant and bijective.
+An automorphism fixes \(\tau(x)\) exactly when it fixes the
+\(K_\tau\)-class of \(x\), proving the stated stabiliser equality.
+\end{proof}
+
+\begin{corollary}[Named factorisation of forced typed real-source terms]
+\label{cor:typed-forced-term-factorisation}
+Let \(J\) be a represented proper meet-irreducible on original
+sort \(a\), and let \(\tau\) be an ACTUAL unary term from \(a\)
+with kernel \(K_\tau\).  If \(J\le K_\tau\), then there is a
+literal NAMED unary term
+\(\sigma_{\tau,J}:B_{a,J}\to\operatorname{cod}(\tau)\) such that
+\[
+                \tau(x)=\sigma_{\tau,J}(F_J(x))
+                \qquad(x\in a).
+\]
+No choice of groupoid chart, quotient representative or
+original-sort ordering is involved.
+\end{corollary}
+\begin{proof}
+Since \(J>\Id_a\), the real identity term cannot satisfy
+\(J\le K_\tau\).  For a proper hidden-coordinate term,
+the preceding literal normal form gives
+\(\tau=\theta\circ F_{K_\tau}\),
+where \(\theta\) is a NAMED quotient transition or the
+existing identity term.  The upward map
+\(u_{J,K_\tau}\) is named, and
+\(F_{K_\tau}=u_{J,K_\tau}\circ F_J\).
+Thus \(\sigma_{\tau,J}=\theta\circ u_{J,K_\tau}\)
+is a literal term in the ACTUAL hidden language,
+also for RAW diagonal-return composites.
+\end{proof}
+
+\begin{lemma}[Typed return transport]\label{lem:typed-return-transport}
+Let \(P_1,\ldots,P_n\) be a composable typed word from a sort \(a_0\)
+back to \(a_0\), and suppose
+\[
+ P_1\cdots P_n\subseteq E_0
+\]
+for a definable equivalence \(E_0\) on \(a_0\). Put
+\(R_i=P_1\cdots P_i\). Every prefix transports \(E_0\)
+to an invariant equivalence \(E_i\), every factor induces one
+quotient bijection, and the loop has IDENTITY holonomy.
+For EVERY represented proper meet-irreducible
+\(J\supseteq E_0\), the corresponding intermediate
+kernels are NAMED proper represented quotient coordinates
+and the actual quotient return is the identity on \(a_0/J\).
+\end{lemma}
+\begin{proof}
+Apply the general ORIGINAL invariant-return theorem
+\cref{lem:foundational-typed-return-holonomy}
+to the actual equality-inclusive RAW typed relations \(P_i\).
+It canonically gives
+\[
+ E_i=R_i^\smile E_0R_i,\qquad
+ J_i=R_i^\smile JR_i,\qquad
+ q_n\circ\cdots\circ q_1=\operatorname{id}_{a_0/J}.
+\]
+The transported \(J_i\) are meet-irreducible in the FULL
+invariant interval by
+\cref{lem:typed-quotient-transport}.
+In this terminal typed source EVERY invariant equivalence is
+FULL RAW exact by
+\cref{lem:typed-terminal-all-equivalences-exact}.
+Also, visible SAP and
+\cref{lem:no-real-algebraic-transition}
+prevent a nonidentity represented proper coordinate from
+transporting to OLD real equality; the interval isomorphism
+preserves strictness below the universal equivalence.
+Thus the \(J_i\) are precisely the NAMED represented proper
+quotient coordinates of the terminal hidden signature,
+and each quotient bijection is its existing named unary
+transition (with actual identity returns interpreted as
+the named identity term). The canonical quotients in the
+foundational construction use the SAME \(J_i\) at both
+macro sides incident at the intermediate OLD root.
+No transport chart or completion-dependent seam equality
+has been chosen.
+\end{proof}
+
+The transition closure corrects the first typed failure mechanism as well.
+If an atomic type \(t:a\to b\) and a represented meet-irreducible \(J\) on
+\(a\) satisfy \(tt^{\smile}\subseteq J\), then a \(b\)-point \(y\)
+uniquely determines the \(J\)-class of every \(t\)-neighbour: project \(y\)
+to its proper \(J^t\)-coordinate and apply the inverse of \(\pi_{t,J}\).
+Properness of \(J^t\) follows from
+\cref{lem:no-real-algebraic-transition}.
+
+\begin{remark}[The mixed-block diagnostic]
+The two-sorted mixed-block structure is the basic test which invalidates the
+naive ``carry sort indices through'' proof.  Let \(E_A,E_B\) be the
+same-block equivalences on the two real sorts and let \(r:A\to B\) be the
+same-block cross type.  Then
+\[
+ rr^{\smile}=E_A,
+ \qquad
+ E_A^r=E_B,
+\]
+so the hidden transition \(\pi_{r,E_A}\) sends the represented
+\(E_A\)-class of an \(A\)-point to the represented \(E_B\)-class of its
+\(r\)-neighbour.  The return word \(rr^{\smile}\) therefore transports the
+quotient from \(A/E_A\) to \(B/E_B\) and back with identity holonomy; no
+cross-sort factor is asserted to lie in a same-sort equivalence.  Thus both
+failure mechanisms of the naive typed proof are visible, and repaired, in
+this smallest test case.
+\end{remark}
+

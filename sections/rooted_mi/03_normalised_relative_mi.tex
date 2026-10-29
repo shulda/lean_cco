@@ -1,0 +1,192 @@
+\begin{lemma}[Normalised relative rooted MI construction]
+\label{lem:acf-relative-mi-normal}
+Let \(Q\) be an infinite standing homogeneous source with no
+nonidentity finite-class exact equivalence, and let
+\(S_Q\subseteq\mathcal D(Q)\) have strong closed amalgamation.
+Write \(F_Q\) for its greatest finite-class invariant equivalence
+and \(E\) for its unique minimal infinite direction. Let
+\(H\ge E\) be an actual invariant FULL EXACT owner equivalence,
+and assume \(\Age(Q/E)\) has ordinary EPPA.
+Let \(A_0\subseteq Q\) be finite
+nonempty and let \(B\subseteq Q/H\) be finite, induced and
+satisfy
+\begin{enumerate}
+\item \(B\) contains the owner projection of \(A_0\),
+  is an ordinary EPPA witness for that projection,
+  and the union of their owner orbits covers \(B\):
+  \(\Gamma_B\cdot\operatorname{own}_H(A_0)=B\);
+\item \(B\) is closed under the largest finite-class
+  equivalence of the actual owner quotient \(Q/H\).
+\end{enumerate}
+Here \(\Gamma_B=\Aut(B)\) in the actual quotient language, and
+\(\operatorname{own}_H(x)=[x]_H\). A source request \((p,\gamma)\)
+is \emph{compatible} precisely when
+\[
+ \operatorname{own}_H(p(x))=\gamma(\operatorname{own}_H(x))
+ \qquad(x\in\operatorname{dom}p).
+\]
+This includes every \((\varnothing,\gamma)\).
+There exists one finite, full-\(F_Q\)-closed, original-language
+\(D\subseteq Q\), projecting onto exactly \(B\) and
+containing \(F_Q[A_0]\), such that
+\begin{enumerate}
+\item every compatible source partial automorphism
+  \((p,\gamma)\), \(p:A_0\rightharpoonup A_0\),
+  \(\gamma\in\Gamma_B\), extends to a relative
+  automorphism of \(D\) with owner component precisely
+  \(\gamma\); this includes all compatible singleton
+  and empty-real-domain requests;
+\item for every nonempty all-non-\(S_Q\) clique
+  \(Z\subseteq D\) and \(z\in Z\), some relative
+  automorphism \(\alpha\) satisfies
+  \[
+       \alpha(Z)\subseteq F_Q[A_0],
+                   \qquad \alpha(z)\in A_0.
+  \]
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+In the normalised MI case, \(R_E=F_Q\): otherwise the global
+correspondence lemma would supply another infinite exact direction
+transverse to \(E\). The bottom \(F_Q\) is a thin regular packet
+torsor for the central elementary abelian group \(G\), by
+\cref{lem:thin-bottom}.
+
+\medskip\noindent
+\emph{1. A common fine-owner provider.}
+Start with the finite \(G\)-invariant set of \(E\)-classes
+meeting \(F_Q[A_0]\). For each source request \((p,\gamma)\),
+including \((\varnothing,\gamma)\) for every
+\(\gamma\in\Gamma_B\), \cref{thm:joint-exact} supplies an
+ambient lift of the real/\(H\)-owner request. Its restriction
+to \(F_Q[\operatorname{dom}p]\) induces a partial map
+\(\pi_E(F_Q[\operatorname{dom}p])\to
+\pi_E(F_Q[\operatorname{ran}p])\) within the chosen fine-owner
+set, compatible with \(\gamma\). Apply
+\cref{lem:finite-base} in the actual exact quotient
+\(Q/E\to Q/H\) to this finite list. Its EPPA hypothesis is
+precisely the assumed ordinary EPPA of \(\Age(Q/E)\).
+We obtain a finite fine-owner structure \(U_1\) projecting onto
+\(B\), with a selected extension for every request.
+
+Put \(U=G[U_1]\). Each selected automorphism of \(U_1\),
+together with its prescribed action on the ENTIRE \(B\), is a
+finite partial isomorphism of the actual \(E\)- and \(H\)-quotient
+sorts: every mixed pair factors through the \(H\)-projection by
+\cref{lem:nested-mixed}. Apply \cref{thm:joint-exact} in the
+ORIGINAL \(Q\) to lift this joint finite map. That original
+automorphism commutes with \(G\) by \cref{lem:thin-bottom},
+so it preserves \(G[U_1]\) and restricts to an automorphism
+of \(U\). No centrality assertion about a larger quotient
+automorphism group or global lifting section is needed.
+The finite-class closure of \(B\) ensures that no new
+\(H\)-owner appears. Let \(\widetilde\Gamma\) be the finite
+group of automorphisms of \(U\) inducing automorphisms of
+\(B\). It contains the actual thin owner translations and
+has a compatible lift for every prescribed \((p,\gamma)\).
+The same joint-lifting argument on \(U\) together with \(B\)
+applies to EVERY element of \(\widetilde\Gamma\). Its original
+lift commutes with \(G\), so \(\widetilde\Gamma\) commutes
+with the induced thin action on \(U\), as required by the
+safe palettes and moving readings below.
+In particular, the empty-real-domain requests prove that
+\(\widetilde\Gamma\to\Gamma_B\) is onto. No section is chosen,
+and the thin action on owner labels need not be faithful.
+
+\medskip\noindent
+\emph{2. Safe padding and the fixed decoder.}
+The normalised relative-closure theorem
+\cref{thm:relative-real-closure} gives closure \(F_Q[-]\) in
+the finite fine-owner source, and \cref{cor:relative-closed-sap}
+gives its full-packet closed SAP. Thus
+\cref{lem:orbit-safe-strong} applies to the assumed absolute
+strong closed-\(S_Q\) amalgamation: its full-owner transversal
+has strong orbit-safe palettes \(S^G\), equivariant under
+\(\widetilde\Gamma\) and unilateral thin translation.
+The augmented safe algebra of
+\cref{lem:safe-trace-product,lem:augmented-safe-algebra}
+provides a pure-owner covariant selector on the safe traces;
+\cref{lem:orbit-safe-readings} supplies its compatible moving
+readings. These are separate inputs: the original exact selector
+alone does not handle intersection with a safe palette, nor is
+\(S_Q\) assumed invariant under unilateral translation.
+
+Pad \(F_Q[A_0]\) to a complete full-packet source \(A^+\)
+meeting every fine owner in \(U\). To add a missing owner,
+strongly \(S^G\)-amalgamate the existing origin transversal
+with a fresh singleton of that owner over the empty base,
+then inflate the new origin to its full \(G\)-packet. Repeat
+for the finitely many missing owners. Every new cross matrix
+is entirely \(S_Q\)-safe, including padding-to-original and
+padding-to-padding pairs, while the original matrices remain
+unchanged.
+
+For each prescribed \((p,\gamma)\), choose its fine-owner lift
+\(\widetilde\gamma\in\widetilde\Gamma\) from Step~1.
+The joint map \(p\cup\widetilde\gamma\) lifts by
+\cref{thm:joint-exact}; restricting to \(F_Q[\operatorname{dom}p]\)
+gives a full-packet partial map of \(A^+\), with range in
+\(F_Q[A_0]\) and with that exact language component.
+Apply \cref{thm:completable-reservoir} to \(A^+\), including
+these requests and every empty-real-domain
+\(\widetilde\Gamma\)-request. Decode its full-row reservoir
+with the selector from Step~2. By
+\cref{thm:R07-relative-eppa,lem:orbit-safe-all-row-interface}
+this gives one finite complete \(D_0\), containing \(A^+\)
+in its zero rows, extending all prescribed source requests,
+and with every originally unrecorded actual interpacket matrix
+safe. Its universe, PC menus and colouring are fixed before
+any request-specific or clique-specific correction matrix.
+
+\medskip\noindent
+\emph{3. Transport and invariant trimming.}
+The padding just constructed and the all-row safety conclusion
+are exactly the hypotheses of
+\cref{lem:acf-multipacket-rooted-transport}. Consequently every
+unsafe clique in \(D_0\) meeting at least two actual packets is
+carried into \(F_Q[A_0]\) by an automorphism of this same decoder.
+The structural component alone need not preserve the chosen
+completion of the HKN holes; the decoded full-row lift does.
+
+Let \(K\) be the group of underlying original-language
+permutations of \(\Aut_{\widetilde\Gamma}(D_0)\) and set
+\[
+                   D=\bigcup_{\beta\in K}\beta(F_Q[A_0]).
+\]
+By \cref{lem:R07-global-diagonal-thin}, \(K\) contains the
+actual global group \(G\), acting regularly within each packet.
+Since the zero-row \(A^+\) realises every fine owner,
+\cref{lem:acf-full-owner-language-faithfulness} identifies the
+semilinear group with \(K\) and gives an onto owner map
+\(K\to\widetilde\Gamma\to\Gamma_B\). This does not require
+faithfulness of \(G\)'s owner action.
+
+We may now apply \cref{lem:acf-invariant-packet-orbit-trim}.
+It makes \(D\) finite, induced and full-\(F_Q\)-closed, containing
+\(F_Q[A_0]\) and invariant under every selected source extension
+and clique transport. Its owner image is all of \(B\), since
+\(K\to\Gamma_B\) is onto and
+\(\Gamma_B\cdot\operatorname{own}(A_0)=B\).
+The same lemma gives selected-root transport for every
+single-packet clique. For a multi-packet unsafe clique, the
+transport from the preceding paragraph supplies its more general
+hypothesis, so it again gives the whole clique in \(F_Q[A_0]\)
+and the selected root in \(A_0\). In both cases the final root
+correction is one global thin translation.
+
+All source extensions restrict to this one \(D\), with their
+prescribed owner actions unchanged because its owner image is
+\(B\). Forgetting auxiliary owner predicates, unary translation
+functions, rows and structural indices leaves an induced
+original-language witness: each selected semilinear automorphism
+preserves every literal original fine colour. The actual quotient
+map \(D\to B\) remains available for owner gluing. No coherent
+choice of extensions, independent packet permutations or group
+section is asserted.
+\end{proof}
+
+The following elementary observation will synchronise the
+finite packet coordinates.  We include its precise
+quantifier order because ordinary nonrelative EPPA alone
+does not imply it.
+

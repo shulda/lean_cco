@@ -1,0 +1,1897 @@
+{
+  "schema_version": 1,
+  "id": "reset_order",
+  "index_title": "Ramsey inheritance, fibre-order normalization and reset-midpoint EP",
+  "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+  "status": "HUMAN_EXPANDED_NOT_LEAN",
+  "scope": "Private B036: SIX Foundations III results, with the composition export explicitly GATED. Expand closed-sort Ramsey/JEP/SAP inheritance, universe-preserving idempotent functor Ramsey/JEP inheritance, synchronized FIBRE-task parent-lex normalization, the two-sign relative reset-midpoint EP criterion and the closed ordered-SAP fresh-midpoint provider. Relative EP composition is proved with explicit restriction/pullback compatibility A14, automatic for the intended relation/order-only tower retaining all unary functions. The displayed broader function-adding composition hypotheses with EP quantifiers alone have a JEP counterexample; that reading is NOT certified. The counterexample is not reasonable at its top expansion, so no claim that it refutes a reasonable added-function variant is made. No CCO, EPPA or external Ramsey provider is imported.",
+  "scope_vocabulary": [
+    "sort_restriction",
+    "idempotent_functor",
+    "fibre_normalization",
+    "reset_EP",
+    "fresh_midpoints",
+    "gated_EP_composition",
+    "boundary"
+  ],
+  "scope_explanation": "Independent conditional inheritance/provider arguments are kept separate. Full ambient Ramsey is an INPUT only where used; intermediate reducts are not assumed Ramsey. Synchronization concerns orders INSIDE cut fibres, not monotonicity of entire quotient sorts under arbitrary coordinate priorities. Composition retains the explicit restriction gate and the source convention ambiguity.",
+  "control_script": "tools/check_reset_order_controls.py",
+  "assumptions": [
+    {
+      "id": "A01",
+      "name": "Hereditary induced-structure conventions",
+      "statement": "Each result uses its stated isomorphism-closed hereditary finite-structure class with induced embeddings, which preserve/reflect all relations and function domains and preserve defined values. Generic functorial normalization allows any fixed signature; unary-function restrictions are imposed only in the relevant other branches. Empty structures/sorts and induced nullary relation truth, if present, are retained."
+    },
+    {
+      "id": "A02",
+      "name": "Supplied full ambient embedding Ramsey property",
+      "statement": "For the sort-restriction, generic normalizer and reset criterion branches, their respective full class R is Ramsey for ALL embeddings. For X,Y and k>=1 there is C with C -> (Y)^X_k. This is a conditional input; no external Ramsey theorem is proved or called."
+    },
+    {
+      "id": "A03",
+      "name": "Unary-closed selected named sorts",
+      "statement": "For the sort-restriction branch, R has finitely many disjoint named sorts, arbitrary relations and unary partial functions with domains fixed by input sorts. A selected collection I has no unary function from an I-sort to an outside sort. Its restriction retains the FULL induced language, with other sorts empty, including any nullary truth."
+    },
+    {
+      "id": "A04",
+      "name": "Optional joint embedding input",
+      "statement": "The relevant ambient R has JEP when its inheritance clause or reset EP uses it. No disjointness of the two pattern images is required for the reset proof."
+    },
+    {
+      "id": "A05",
+      "name": "Optional strong amalgamation input for sort restriction",
+      "statement": "ONLY the SAP-inheritance clause assumes ambient R has SAP. This is not an input of the reset EP criterion or generic functorial-normalization lemma."
+    },
+    {
+      "id": "A06",
+      "name": "Actual universe-preserving idempotent endofunctor",
+      "statement": "For generic normalization, N is an endofunctor of the hereditary R category of INDUCED embeddings. N(A) has exactly A universe, N(f) is the SAME vertex map for every embedding, and N squared equals N as structures. These conditions include legal normalized objects/maps; arbitrary objectwise reassignment of orders is not enough."
+    },
+    {
+      "id": "A07",
+      "name": "Actual distributive MI quotients and transition semantics",
+      "statement": "For hierarchical normalization, proper represented MI quotient sorts come from finite distributive equivalence lattices on named original sorts. Upward quotient maps give their actual coarser coordinates. Named transition bijections and inverses transport cuts and upper quotient intervals and commute with upward maps; this is actual quotient-transition semantics, not bare arbitrary permutations. Finite hidden objects are closed under these unary maps. No CCO or specific lattice/transition theorem is imported."
+    },
+    {
+      "id": "A08",
+      "name": "Fixed task data and trivial holonomy",
+      "statement": "Fix global sort priority, per-J strict coarser MI coordinate priorities and one representative of each transition orbit of cuts J<Jplus. Closed transition holonomy is identity. Initial within-sort orders are arbitrary total orders. Synchronization means FIBRE orders inside each Jplus class transported from the representative. Priority lists need not be transition-equivariant; whole-sort transition monotonicity is NOT an asserted output."
+    },
+    {
+      "id": "A09",
+      "name": "One-task relative ordering expansion",
+      "statement": "For reset EP, R is hereditary Ramsey with JEP, with finite unary closures and sort-fixed function domains when functions occur. Its reducts U1->U0 are reasonable precompact reduct-surjective and every U1 object has a full R lift. Their ONLY difference is one designated within-fibre linear-order task and functorial relational codes; all old functions/domains remain fixed. Reversing ALL designated fibres and recomputing task codes is legal over the SAME U0 data. Earlier tasks stay fixed."
+    },
+    {
+      "id": "A10",
+      "name": "Old reset relation and COMPLETE POINTED edge-closure type",
+      "statement": "Designated fibres and symmetric m are named or qf-definable in U0. m joins distinct points in one fibre. Every reference-oriented m edge has ONE complete expanded induced unary-generated type with TWO MARKED ENDPOINTS, first preceding second, denoted H_m when an edge exists. This includes every fine relation, function domain/value, order and equality code; every such edge admits a root-preserving isomorphism from H_m."
+    },
+    {
+      "id": "A11",
+      "name": "Induced fresh-midpoint schema",
+      "statement": "For every full ordered A in R and every selected same-fibre comparison u<v, there is an INDUCED extension in R with a fresh same-fibre z, u<z<v and u m z m v, preserving the entire earlier expansion. Iteration is over a fixed finite list of source comparisons, not all recursively introduced pairs."
+    },
+    {
+      "id": "A12",
+      "name": "Separate closed ordered-SAP midpoint provider",
+      "statement": "For the fresh-midpoint lemma H is hereditary unary-closed with SAP and H^o is an ordered SAP expansion. Orders extend freely across the actual closed base, including placing a new same-fibre z between prescribed u<v. For each pair there is a finite permitted closed witness T with z OUTSIDE its actual pair closure and two m edges. Its complete unexpanded POINTED pair-closure type agrees with the existing actual pair closure. These hypotheses supply an ordered lift T^o over that entire base."
+    },
+    {
+      "id": "A13",
+      "name": "Displayed relative-EP composition data",
+      "statement": "For composition take hereditary finite relational/unary-functional ages K2->K1->K0 with reduct-surjective maps, and EP quantifiers for K2/K1 and K1/K0: forall expanded A exists unexpanded host forall allowed expansions an embedding exists. The displayed lemma does not separately list reasonableness. If the surrounding definition of EP presupposes it, retain that convention; the counterexample below refutes only the displayed quantifier hypotheses without it."
+    },
+    {
+      "id": "A14",
+      "name": "EXPLICIT composition restriction/pullback gate",
+      "statement": "For EVERY allowed C2 and EVERY K1-induced f:B1->C2|K1, its image is closed under ALL added K2 functions and the inherited restriction/pullback is a legal K2 expansion of EXACTLY B1. Under heredity actual expanded functional closedness suffices. This is AUTOMATIC for relation/order-only expansions retaining the complete unary-function signature/domains. This safe proof gate is stated explicitly; it is not claimed to follow from reduct-surjectivity or EP quantifiers alone. For a finite tower require it at each successive level."
+    }
+  ],
+  "imports": [],
+  "external_providers": [],
+  "definitions": [
+    {
+      "id": "D01",
+      "name": "Full-language sort restriction",
+      "statement": "C|I has exactly C points in selected sorts, all other sorts empty, and all induced relation/domain/value data including nullary truth. It is an actual object, not a reduct discarding symbols.",
+      "depends_on": [
+        "A01",
+        "A03"
+      ],
+      "notes": "N01",
+      "source": {
+        "file": "sections/reset_midpoint_order_ep.tex",
+        "anchor": "\\label{lem:foundational-ramsey-sort-restriction}"
+      }
+    },
+    {
+      "id": "D02",
+      "name": "Embedding Ramsey arrow",
+      "statement": "C -> (B)^A_k colors ALL induced embeddings A->C and asks for g:B->C constant on g composed Emb(A,B). The input object and any distinguished reference vertices remain fixed.",
+      "depends_on": [
+        "A01",
+        "A02"
+      ],
+      "notes": "N01",
+      "source": {
+        "file": "sections/reset_midpoint_order_ep.tex",
+        "anchor": "\\label{lem:foundational-ramsey-sort-restriction}"
+      }
+    },
+    {
+      "id": "D03",
+      "name": "Full fixed-object category",
+      "statement": "R_N consists of ALL A in R with strict N(A)=A. Its morphisms are all induced R embeddings between those objects. The normalized host is N(C), not a chosen arbitrary subclass.",
+      "depends_on": [
+        "A06"
+      ],
+      "notes": "N02",
+      "source": {
+        "file": "sections/reset_midpoint_order_ep.tex",
+        "anchor": "\\label{lem:foundational-ramsey-normalization}"
+      }
+    },
+    {
+      "id": "D04",
+      "name": "MI parent key",
+      "statement": "For a represented MI J with unique cover Jplus, key_J(x) is the fixed-priority tuple of ALL strict coarser proper MI coordinate values of the J-point x. An empty tuple, when Jplus is top, is a constant key.",
+      "depends_on": [
+        "A07",
+        "A08"
+      ],
+      "notes": "N03",
+      "source": {
+        "file": "sections/reset_midpoint_order_ep.tex",
+        "anchor": "\\label{lem:foundational-hierarchical-order-normalization}"
+      }
+    },
+    {
+      "id": "D05",
+      "name": "Representative fibre task",
+      "statement": "Restrict the initial order on the chosen representative J-sort to each Jplus fibre, then transport those fibre orders along named transition charts to every equivalent cut. Inverse terms keep chart points inside each closed object.",
+      "depends_on": [
+        "A07",
+        "A08"
+      ],
+      "notes": "N03",
+      "source": {
+        "file": "sections/reset_midpoint_order_ep.tex",
+        "anchor": "\\label{lem:foundational-hierarchical-order-normalization}"
+      }
+    },
+    {
+      "id": "D06",
+      "name": "Recursive parent-lex order",
+      "statement": "Process strict coarser MI coordinates first. Compare J-points lexicographically by their already ordered full parent keys, and for equal keys use the synchronized fibre task. Across sort symbols use the fixed sort priority.",
+      "depends_on": [
+        "D04",
+        "D05"
+      ],
+      "notes": "N03",
+      "source": {
+        "file": "sections/reset_midpoint_order_ep.tex",
+        "anchor": "\\label{lem:foundational-hierarchical-order-normalization}"
+      }
+    },
+    {
+      "id": "D07",
+      "name": "One relative task reversal",
+      "statement": "Reverse the fibre orders of ONE selected cut-task orbit, keeping all other independent task inputs and earlier/coarser tasks. Recompute later derived lex comparisons by the same fixed rule. This is not an independent later host-specific priority choice.",
+      "depends_on": [
+        "D05",
+        "D06"
+      ],
+      "notes": "N03",
+      "source": {
+        "file": "sections/reset_midpoint_order_ep.tex",
+        "anchor": "\\label{lem:foundational-hierarchical-order-normalization}"
+      }
+    },
+    {
+      "id": "D08",
+      "name": "Pointed ordered reset-edge template",
+      "statement": "H_m is a chosen actual expanded edge closure with marked endpoints p<q and p m q. Root-preserving isomorphisms realize every oriented reset edge; its entire closure is generated by those endpoints. The marks are reference positions, not a new assumption that the ambient Ramsey language names them.",
+      "depends_on": [
+        "A10"
+      ],
+      "notes": "N04",
+      "source": {
+        "file": "sections/reset_midpoint_order_ep.tex",
+        "anchor": "\\label{thm:abstract-reset-order-EP}"
+      }
+    },
+    {
+      "id": "D09",
+      "name": "Finite midpoint obligations",
+      "statement": "For a stored finite source pattern enumerate only its original distinct same-fibre comparisons. Store one fresh midpoint per such comparison via induced extension, preserving old roots/functions/orders/codes after every step.",
+      "depends_on": [
+        "A11"
+      ],
+      "notes": "N04",
+      "source": {
+        "file": "sections/reset_midpoint_order_ep.tex",
+        "anchor": "\\label{thm:abstract-reset-order-EP}"
+      }
+    },
+    {
+      "id": "D10",
+      "name": "Two-sign coloring of all template embeddings",
+      "statement": "For e:H_m->C, color + when the competitor task puts e(p) before e(q), and - otherwise. Old m/fibre data ensure the comparison exists; injectivity excludes equality. The competitor need not retain other final R order tasks.",
+      "depends_on": [
+        "D08",
+        "A09",
+        "A10"
+      ],
+      "notes": "N04",
+      "source": {
+        "file": "sections/reset_midpoint_order_ep.tex",
+        "anchor": "\\label{thm:abstract-reset-order-EP}"
+      }
+    },
+    {
+      "id": "D11",
+      "name": "Actual ordered pair-closure amalgam span",
+      "statement": "P=closure{u,v} is the WHOLE induced unary-generated ordered substructure of the existing A^o. Identify it with the witness pair closure by its complete pointed type, choose T^o extending the inherited P^o, then amalgamate ordered sides strongly over P^o.",
+      "depends_on": [
+        "A12"
+      ],
+      "notes": "N05",
+      "source": {
+        "file": "sections/reset_midpoint_order_ep.tex",
+        "anchor": "\\label{lem:abstract-fresh-reset-midpoint}"
+      }
+    },
+    {
+      "id": "D12",
+      "name": "EP quantifier and legal pullback",
+      "statement": "Relative EP is forall A2 exists B1 forall expansions B2 exists embedding A2->B2. Composite proof first fixes B1,C0, then handles arbitrary C2. Pulling C2 back along f:B1->C1 requires the actual expanded restriction gate A14.",
+      "depends_on": [
+        "A13",
+        "A14"
+      ],
+      "notes": "N06",
+      "source": {
+        "file": "sections/reset_midpoint_order_ep.tex",
+        "anchor": "\\label{lem:foundational-relative-EP-composition}"
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "name": "The selected sort part is an actual closed induced substructure",
+      "statement": "A03 keeps every defined unary value of an I-point in I. Thus C|I is functionally closed; relations and all existing domains/values are induced. Arity-zero relation truth is retained, not reset to false.",
+      "depends_on": [
+        "D01"
+      ],
+      "notes": "N01",
+      "scope": "sort_restriction",
+      "source_labels": [
+        "lem:foundational-ramsey-sort-restriction"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C02",
+      "name": "All-I objects already belong to the ambient hereditary class",
+      "statement": "Each restricted object is in R by C01 and heredity, with outside sorts empty. Choosing an inducing isomorphism gives every R|I object this actual full-language representation.",
+      "depends_on": [
+        "C01",
+        "A01"
+      ],
+      "notes": "N01",
+      "scope": "sort_restriction",
+      "source_labels": [
+        "lem:foundational-ramsey-sort-restriction"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C03",
+      "name": "Embedding sets agree on literal vertex maps",
+      "statement": "A sort-preserving embedding of all-I A into C has image in C|I. Closed induced restriction preserves exactly its relations and function data, including any nullary symbols. Conversely every embedding into C|I composes with its actual induced inclusion into C. Hence Emb(A,C|I)=Emb(A,C).",
+      "depends_on": [
+        "C01",
+        "C02"
+      ],
+      "notes": "N01",
+      "scope": "sort_restriction",
+      "source_labels": [
+        "lem:foundational-ramsey-sort-restriction"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C04",
+      "name": "Restrict the ambient Ramsey witness",
+      "statement": "Choose C -> (B)^A_k in full R for all-I A,B. Pull any restricted coloring through C03. The ambient monochromatic B-copy has all-I image, so lies in C|I and witnesses the restricted arrow. No real representative or SAP input is needed.",
+      "depends_on": [
+        "C02",
+        "C03",
+        "A02",
+        "D02"
+      ],
+      "notes": "N01",
+      "scope": "sort_restriction",
+      "source_labels": [
+        "lem:foundational-ramsey-sort-restriction"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C05",
+      "name": "The restricted class is hereditary",
+      "statement": "Any actual induced closed substructure of an all-I object uses only I-sorts; heredity in R and its own I-restriction identify it as a restricted-class object.",
+      "depends_on": [
+        "C01",
+        "C02",
+        "A01"
+      ],
+      "notes": "N01",
+      "scope": "sort_restriction",
+      "source_labels": [
+        "lem:foundational-ramsey-sort-restriction"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C06",
+      "name": "Optional JEP and SAP survive the same restriction",
+      "statement": "Apply ambient JEP or SAP to the all-I inputs/base and restrict the output to I. Existing embedding maps and their images are unchanged; their strong intersection remains exactly the prescribed base. These inheritance clauses use A04 or A05 only as appropriate.",
+      "depends_on": [
+        "C01",
+        "C02",
+        "A04",
+        "A05"
+      ],
+      "notes": "N01",
+      "scope": "sort_restriction",
+      "source_labels": [
+        "lem:foundational-ramsey-sort-restriction"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C07",
+      "name": "Fixed objects are hereditary by inducedness on the same image",
+      "statement": "For induced B<=A with N(A)=A, functoriality gives N(B)->A on exactly the old inclusion map. Its image is B and it is induced, so all induced interpretations coincide and N(B)=B, including function domains. No unary-only signature assumption is needed.",
+      "depends_on": [
+        "A01",
+        "A06",
+        "D03"
+      ],
+      "notes": "N02",
+      "scope": "idempotent_functor",
+      "source_labels": [
+        "lem:foundational-ramsey-normalization"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C08",
+      "name": "A normalized host is an actual fixed object",
+      "statement": "N(C) is in R by endofunctoriality and N(N(C))=N(C) by strict idempotence. Its universe is exactly C universe.",
+      "depends_on": [
+        "A06",
+        "D03"
+      ],
+      "notes": "N02",
+      "scope": "idempotent_functor",
+      "source_labels": [
+        "lem:foundational-ramsey-normalization"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C09",
+      "name": "Pull a coloring back without requiring surjectivity",
+      "statement": "For fixed A, e:A->C is sent by N to an actual embedding A=N(A)->N(C), on the same vertex map. Thus chi(N(e)) colors Emb(A,C). No surjectivity onto all Emb(A,N(C)) is needed.",
+      "depends_on": [
+        "A06",
+        "D03"
+      ],
+      "notes": "N02",
+      "scope": "idempotent_functor",
+      "source_labels": [
+        "lem:foundational-ramsey-normalization"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C10",
+      "name": "Functorial composition gives a normalized monochromatic copy",
+      "statement": "From ambient C -> (B)^A_k choose monochromatic g:B->C for the C09 coloring. For every f:A->B, N(f)=f and N(g composed f)=N(g) composed f. Thus N(g) is monochromatic in N(C).",
+      "depends_on": [
+        "C09",
+        "A02",
+        "A06"
+      ],
+      "notes": "N02",
+      "scope": "idempotent_functor",
+      "source_labels": [
+        "lem:foundational-ramsey-normalization"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C11",
+      "name": "The full fixed class is Ramsey for embeddings",
+      "statement": "C08 makes the normalized host legal and fixed, and C10 gives its arrow for any fixed A,B. C07 supplies heredity. It is essential to use the full fixed class, not an arbitrary selected subset.",
+      "depends_on": [
+        "C07",
+        "C08",
+        "C10"
+      ],
+      "notes": "N02",
+      "scope": "idempotent_functor",
+      "source_labels": [
+        "lem:foundational-ramsey-normalization"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C12",
+      "name": "Optional JEP normalizes a joint host",
+      "statement": "For fixed A,B, take a joint host C from A04 and apply N to both embeddings. Their domains are unchanged fixed objects and N(C) is fixed by C08. No SAP-inheritance claim is made for this generic lemma.",
+      "depends_on": [
+        "C08",
+        "A04",
+        "A06"
+      ],
+      "notes": "N02",
+      "scope": "idempotent_functor",
+      "source_labels": [
+        "lem:foundational-ramsey-normalization"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C13",
+      "name": "All strict coarser MI coordinates meet to the unique cover",
+      "statement": "In the finite distributive lattice every element is the meet of the MIs above it; this follows by finite meet-irreducible decomposition. For MI J, L>J iff L>=Jplus. Thus the meet of ALL strict coarser represented MIs is Jplus; if Jplus is top the empty meet is top. Therefore equal full keys mean exactly equal Jplus classes.",
+      "depends_on": [
+        "D04",
+        "A07"
+      ],
+      "notes": "N03",
+      "scope": "fibre_normalization",
+      "source_labels": [
+        "lem:foundational-hierarchical-order-normalization"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C14",
+      "name": "Representative charts exist inside every closed object",
+      "statement": "Named inverse transition terms transport any target fibre point back to the fixed representative sort inside the SAME finite closed object, then forward again. Upward-map commutation identifies its correct parent fibre; no real-sort representative or external point is selected.",
+      "depends_on": [
+        "A07",
+        "D05"
+      ],
+      "notes": "N03",
+      "scope": "fibre_normalization",
+      "source_labels": [
+        "lem:foundational-hierarchical-order-normalization"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C15",
+      "name": "Transport is path-independent on pointed quotient fibres",
+      "statement": "Two transition paths between the same chart differ by a closed transition term, identity by A08. Actual cut/upper-interval transport and upward commutation identify their fibre domains. Hence the representative fibre order transports without ambiguity. Bare arbitrary bijections with no quotient semantics would not justify this step.",
+      "depends_on": [
+        "C14",
+        "A07",
+        "A08"
+      ],
+      "notes": "N03",
+      "scope": "fibre_normalization",
+      "source_labels": [
+        "lem:foundational-hierarchical-order-normalization"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C16",
+      "name": "Transported local orders are genuine synchronized fibre tasks",
+      "statement": "Pull back each initial representative order to a target parent fibre via C14/C15. It is total and agrees under every transition between equivalent cuts, as a WITHIN-FIBRE order. This does not assert whole-sort transition monotonicity.",
+      "depends_on": [
+        "C14",
+        "C15",
+        "D05"
+      ],
+      "notes": "N03",
+      "scope": "fibre_normalization",
+      "source_labels": [
+        "lem:foundational-hierarchical-order-normalization"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C17",
+      "name": "Coarser tasks precede finer tasks without an orbit cycle",
+      "statement": "Strict coarsening strictly shortens the finite upper interval, while actual transition maps preserve the upper-interval order type. Thus identifying transition-equivalent cuts cannot create a cycle of strict coarsenings. Process these finitely many tasks in a coarse-to-fine order.",
+      "depends_on": [
+        "A07",
+        "A08"
+      ],
+      "notes": "N03",
+      "scope": "fibre_normalization",
+      "source_labels": [
+        "lem:foundational-hierarchical-order-normalization"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C18",
+      "name": "Recursive lex keys and fibre tie-breakers give total sort orders",
+      "statement": "Previously ordered coarser coordinates give a lexicographic order of distinct keys. C13 says equal keys mean the same parent fibre, where C16 supplies the total tie-breaker. This defines a total J-sort order at each C17 stage; fixed sort priority handles distinct symbols.",
+      "depends_on": [
+        "C13",
+        "C16",
+        "C17",
+        "D06"
+      ],
+      "notes": "N03",
+      "scope": "fibre_normalization",
+      "source_labels": [
+        "lem:foundational-hierarchical-order-normalization"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C19",
+      "name": "Every old ordered embedding remains an induced normalized embedding",
+      "statement": "The unchanged map preserves all old hidden data and initial representative fibre orders, and commutes with every quotient/transition term. Induct along C17 to preserve coarser key comparisons and the transported tie-breakers. Injectivity plus totality reflects order as well. Thus it is an embedding of the normalized structures, with identities/compositions unchanged.",
+      "depends_on": [
+        "C14",
+        "C15",
+        "C16",
+        "C18",
+        "A01"
+      ],
+      "notes": "N03",
+      "scope": "fibre_normalization",
+      "source_labels": [
+        "lem:foundational-hierarchical-order-normalization"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C20",
+      "name": "Normalization is idempotent",
+      "statement": "On a normalized representative sort, restriction inside each parent fibre recovers exactly the fibre task used to construct it. Transport reproduces those tasks, and coarse-to-fine induction rebuilds the same keys and sort orders. Therefore N squared equals N.",
+      "depends_on": [
+        "C16",
+        "C18",
+        "C19"
+      ],
+      "notes": "N03",
+      "scope": "fibre_normalization",
+      "source_labels": [
+        "lem:foundational-hierarchical-order-normalization"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C21",
+      "name": "Its image is exactly the synchronized fibre-task parent-lex class",
+      "statement": "C18/C20 show every output satisfies the specified fibre synchronization and parent-lex rule. Conversely an object whose orders are built by that rule from its synchronized representative fibre tasks is unchanged by normalization. No extra requirement of global transition-monotone sort orders is inserted.",
+      "depends_on": [
+        "C18",
+        "C20",
+        "D06"
+      ],
+      "notes": "N03",
+      "scope": "fibre_normalization",
+      "source_labels": [
+        "lem:foundational-hierarchical-order-normalization"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C22",
+      "name": "Reverse one task orbit while preserving every earlier task",
+      "statement": "Changing the within-parent order for one chosen cut orbit leaves every independent strict coarser task and its keys untouched, by C17. Transport the reversal simultaneously to the equivalent fibres; holonomy keeps it coherent. This reverses the whole selected task, not an inconsistent one-chart choice.",
+      "depends_on": [
+        "C15",
+        "C17",
+        "D07"
+      ],
+      "notes": "N03",
+      "scope": "fibre_normalization",
+      "source_labels": [
+        "lem:foundational-hierarchical-order-normalization"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C23",
+      "name": "Later lex comparisons recompute functorially",
+      "statement": "Keep all other independent fibre-task inputs fixed and run the same C18 recursion after C22. Only the current task and later comparisons depending on it may change. The preservation argument C19 still applies between objects carrying these changed task inputs. No new priority or independent host-dependent choice is made.",
+      "depends_on": [
+        "C18",
+        "C19",
+        "C22"
+      ],
+      "notes": "N03",
+      "scope": "fibre_normalization",
+      "source_labels": [
+        "lem:foundational-hierarchical-order-normalization"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C24",
+      "name": "Hierarchical normalization and relative task independence",
+      "statement": "C18-C21 give the universe/map-preserving idempotent normalization, and C22/C23 give relative reversal with coarser tasks fixed. The synchronized image means fibre orders inside Jplus classes, as used downstream. Arbitrary fixed key priorities alone do not give global transition-order monotonicity.",
+      "depends_on": [
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23"
+      ],
+      "notes": "N03",
+      "scope": "fibre_normalization",
+      "source_labels": [
+        "lem:foundational-hierarchical-order-normalization"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C25",
+      "name": "A source with no nontrivial fibre comparisons has trivial task EP",
+      "statement": "If A1 has no pair of distinct points in a designated fibre, the forgotten task orders on its points and their functorial codes are forced by A0. Taking B0=A0 gives the same A1 in every allowed competitor. No H_m or reset edge is required in this vacuous branch.",
+      "depends_on": [
+        "A09"
+      ],
+      "notes": "N04",
+      "scope": "reset_EP",
+      "source_labels": [
+        "thm:abstract-reset-order-EP"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C26",
+      "name": "Store legal positive and reversed source patterns",
+      "statement": "For nontrivial A1, reverse ALL designated fibres legally over the same A0, obtaining A1minus. A09 supplies full R lifts of A1 and A1minus. Only the current task is reversed; earlier tasks in U0 remain literally fixed.",
+      "depends_on": [
+        "A09"
+      ],
+      "notes": "N04",
+      "scope": "reset_EP",
+      "source_labels": [
+        "thm:abstract-reset-order-EP"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C27",
+      "name": "Complete a fixed finite list of midpoint obligations",
+      "statement": "List each original same-fibre comparison in each stored full pattern. Apply A11 successively. Each induced extension preserves all previous functions/relations/orders/codes and earlier midpoints, yielding one fresh z for every listed pair. Do not recursively require midpoints for every newly added comparison.",
+      "depends_on": [
+        "C26",
+        "A11",
+        "D09"
+      ],
+      "notes": "N04",
+      "scope": "reset_EP",
+      "source_labels": [
+        "thm:abstract-reset-order-EP"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C28",
+      "name": "JEP combines the two extended patterns",
+      "statement": "Apply full R JEP to the two C27 patterns to obtain one finite D containing both via induced embeddings. Their images may overlap; the proof does not require a strong/disjoint amalgam or SAP.",
+      "depends_on": [
+        "C27",
+        "A04"
+      ],
+      "notes": "N04",
+      "scope": "reset_EP",
+      "source_labels": [
+        "thm:abstract-reset-order-EP"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C29",
+      "name": "The pointed edge template is an actual ambient object",
+      "statement": "The nontrivial branch has a comparison. Its induced midpoint extension has an oriented m edge; its finite actual unary closure is in R by heredity. A10 identifies it with the fixed POINTED H_m. Thus this template is available as a Ramsey input, with reference endpoints p<q.",
+      "depends_on": [
+        "C27",
+        "A10",
+        "A01",
+        "D08"
+      ],
+      "notes": "N04",
+      "scope": "reset_EP",
+      "source_labels": [
+        "thm:abstract-reset-order-EP"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C30",
+      "name": "Choose full ambient Ramsey host and fix its U0 reduct",
+      "statement": "Use A02 to choose C -> (D)^(H_m)_2 and set B0=C|U0. This host is chosen BEFORE any competing task-order expansion B1, and no Ramsey property of U0 or U1 is invoked.",
+      "depends_on": [
+        "C28",
+        "C29",
+        "A02",
+        "D02",
+        "A09"
+      ],
+      "notes": "N04",
+      "scope": "reset_EP",
+      "source_labels": [
+        "thm:abstract-reset-order-EP"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C31",
+      "name": "Every template embedding has a well-defined competitor sign",
+      "statement": "For ANY allowed B1 over fixed B0, an embedding e:H_m->C takes its reference endpoints to distinct m-related points in one OLD fibre, because m/fibre data are U0-definable. The competitor linearly orders them, giving exactly one sign by D10. It need not share the remaining final R tasks.",
+      "depends_on": [
+        "C30",
+        "A09",
+        "A10",
+        "D10"
+      ],
+      "notes": "N04",
+      "scope": "reset_EP",
+      "source_labels": [
+        "thm:abstract-reset-order-EP"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C32",
+      "name": "Homogeneity covers every needed oriented edge via its whole closure",
+      "statement": "The full Ramsey arrow gives g:D->C with all H_m embedding composites one sign. For EACH used oriented m edge in either stored pattern, A10 gives a root-preserving isomorphism H_m->its COMPLETE expanded closure in D, followed by inclusion. Therefore both midpoint edges have that sign. An unpointed two-vertex reduct would not suffice.",
+      "depends_on": [
+        "C29",
+        "C31",
+        "A10"
+      ],
+      "notes": "N04",
+      "scope": "reset_EP",
+      "source_labels": [
+        "thm:abstract-reset-order-EP"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C33",
+      "name": "Uniform positive edges force every stored comparison",
+      "statement": "For a listed stored u<z<v, both oriented m edges agree with the reference in the competitor, so competitor u<z<v by transitivity. Thus every original within-fibre comparison of the positive stored pattern agrees, not only comparisons already labeled m.",
+      "depends_on": [
+        "C27",
+        "C32"
+      ],
+      "notes": "N04",
+      "scope": "reset_EP",
+      "source_labels": [
+        "thm:abstract-reset-order-EP"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C34",
+      "name": "Uniform negative edges force the reverse of every stored comparison",
+      "statement": "For stored u<z<v, the competitor reverses both oriented m edges, giving v<z<u. Hence EVERY listed original comparison is reversed throughout the stored pattern, across all designated fibres with the SAME homogeneous sign.",
+      "depends_on": [
+        "C27",
+        "C32"
+      ],
+      "notes": "N04",
+      "scope": "reset_EP",
+      "source_labels": [
+        "thm:abstract-reset-order-EP"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C35",
+      "name": "The positive stored roots yield A1 in a positive competitor",
+      "statement": "Use the original positive pattern in C28. C33 preserves every comparison on its source roots, the induced U0 structure is unchanged, and functorial task codes follow from those orders and old data. All old unary functions remain fixed/closed, so this is an induced A1 embedding.",
+      "depends_on": [
+        "C26",
+        "C28",
+        "C33",
+        "A09"
+      ],
+      "notes": "N04",
+      "scope": "reset_EP",
+      "source_labels": [
+        "thm:abstract-reset-order-EP"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C36",
+      "name": "The negative stored roots undo the legal reversal",
+      "statement": "Use the stored A1minus pattern for negative sign. C34 reverses all its source-root comparisons, undoing exactly the earlier legal reversal of A1 over the SAME A0. Old data stay induced and functorial task codes transport. Thus these roots also give A1->B1.",
+      "depends_on": [
+        "C26",
+        "C28",
+        "C34",
+        "A09"
+      ],
+      "notes": "N04",
+      "scope": "reset_EP",
+      "source_labels": [
+        "thm:abstract-reset-order-EP"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C37",
+      "name": "A fixed old host works for every competing task expansion",
+      "statement": "The vacuous case is C25. Otherwise B0 was fixed in C30 and each arbitrary B1 has a homogeneous sign, handled by C35 or C36. Therefore forall A1 exists B0 forall B1 an induced A1 embedding exists: the relative EP quantifier.",
+      "depends_on": [
+        "C25",
+        "C30",
+        "C31",
+        "C32",
+        "C35",
+        "C36"
+      ],
+      "notes": "N04",
+      "scope": "reset_EP",
+      "source_labels": [
+        "thm:abstract-reset-order-EP"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C38",
+      "name": "Single-task reset-midpoint EP with its full-provider firewall",
+      "statement": "C37 proves the source criterion from full R Ramsey/JEP, legal reversal, complete POINTED reset-edge type and induced fresh-midpoint schema. No intermediate Ramsey assumption, SAP input, CCO or geometry theorem is smuggled into this criterion. Freshness may later be supplied by the independent provider, not assumed from m-composition alone.",
+      "depends_on": [
+        "C37",
+        "A09",
+        "A10",
+        "A11"
+      ],
+      "notes": "N04",
+      "scope": "reset_EP",
+      "source_labels": [
+        "thm:abstract-reset-order-EP"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C39",
+      "name": "Identify the WHOLE actual ordered pair closure",
+      "statement": "For existing A^o and u<v, form P^o=closure{u,v} inside it, with all induced domains, values, relations and earlier order data. A12 complete unexpanded pointed type identifies its reduct with the corresponding actual closure in witness T. A bare two-root binary/equivalence reduct is insufficient.",
+      "depends_on": [
+        "A12",
+        "D11"
+      ],
+      "notes": "N05",
+      "scope": "fresh_midpoints",
+      "source_labels": [
+        "lem:abstract-fresh-reset-midpoint"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C40",
+      "name": "Order the witness over that exact base and prescribed interval",
+      "statement": "Use the FREE order-extension part of A12 to give T an allowed ordered expansion T^o extending the inherited whole P^o and putting its z between u,v in the designated fibre. The chosen z is outside P. Derived codes remain compatible with these base/order embeddings.",
+      "depends_on": [
+        "C39",
+        "A12"
+      ],
+      "notes": "N05",
+      "scope": "fresh_midpoints",
+      "source_labels": [
+        "lem:abstract-fresh-reset-midpoint"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C41",
+      "name": "Apply ordered SAP over the actual closed base",
+      "statement": "Amalgamate A^o and T^o strongly in H^o over their full induced P^o. Both factor maps are actual induced embeddings, preserving all original relations, function domains/values and orders, including u m z m v from T^o. Unexpanded SAP alone is not substituted for the ordered SAP hypothesis.",
+      "depends_on": [
+        "C39",
+        "C40",
+        "A12"
+      ],
+      "notes": "N05",
+      "scope": "fresh_midpoints",
+      "source_labels": [
+        "lem:abstract-fresh-reset-midpoint"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C42",
+      "name": "Strong intersection makes the midpoint fresh over all of A",
+      "statement": "The witness z was outside the base P. Strongness says the two factor images intersect exactly in P, so its image is outside the ENTIRE old A^o, not just different from u,v. Its fibre and intermediate order position survive the induced witness embedding.",
+      "depends_on": [
+        "C40",
+        "C41"
+      ],
+      "notes": "N05",
+      "scope": "fresh_midpoints",
+      "source_labels": [
+        "lem:abstract-fresh-reset-midpoint"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C43",
+      "name": "Finite repetition gives distinct fresh midpoints preserving placements",
+      "statement": "Iterate C39-C42 over any fixed finite list of old comparisons, using the growing actual ordered host each time. Each new z lies outside that whole host. Consequently all midpoints are distinct and every old comparison, code, domain and previous placement survives.",
+      "depends_on": [
+        "C39",
+        "C40",
+        "C41",
+        "C42"
+      ],
+      "notes": "N05",
+      "scope": "fresh_midpoints",
+      "source_labels": [
+        "lem:abstract-fresh-reset-midpoint"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C44",
+      "name": "Closed ordered-SAP provider supplies the induced midpoint schema",
+      "statement": "C39-C43 give precisely the conditional fresh-midpoint conclusion in the source and hence its property (iii) when instantiated in the reset setting. The proof is independent of the reset EP output or a Ramsey property. Mere existence of some possibly nonfresh m-midpoint does not supply its hypotheses.",
+      "depends_on": [
+        "C39",
+        "C40",
+        "C41",
+        "C42",
+        "C43"
+      ],
+      "notes": "N05",
+      "scope": "fresh_midpoints",
+      "source_labels": [
+        "lem:abstract-fresh-reset-midpoint"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C45",
+      "name": "First relative EP fixes an intermediate expanded host",
+      "statement": "For fixed A2 in K2, A13 EP of K2/K1 gives one B1 such that EVERY allowed K2 expansion B2 of exactly B1 admits A2. The later choice of competitors cannot change B1.",
+      "depends_on": [
+        "A13",
+        "D12"
+      ],
+      "notes": "N06",
+      "scope": "gated_EP_composition",
+      "source_labels": [
+        "lem:foundational-relative-EP-composition"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C46",
+      "name": "Second relative EP fixes a base host before the final competitor",
+      "statement": "Apply K1/K0 EP to that B1, yielding a fixed C0 such that EVERY intermediate C1 expansion admits B1. This C0 is the proposed composite host.",
+      "depends_on": [
+        "C45",
+        "A13"
+      ],
+      "notes": "N06",
+      "scope": "gated_EP_composition",
+      "source_labels": [
+        "lem:foundational-relative-EP-composition"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C47",
+      "name": "An arbitrary final expansion supplies an intermediate embedding",
+      "statement": "Given ANY K2 expansion C2 of fixed C0, its K1 reduct C1 is allowed. C46 supplies an induced f:B1->C1. This alone is not yet a K2 embedding and need not have an expanded-closed image when functions were added.",
+      "depends_on": [
+        "C46",
+        "A13"
+      ],
+      "notes": "N06",
+      "scope": "gated_EP_composition",
+      "source_labels": [
+        "lem:foundational-relative-EP-composition"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C48",
+      "name": "The EXPLICIT restriction gate gives a legal B2 pullback",
+      "statement": "Apply A14 to this actual C2 and f. The image is closed under every added function, so its inherited whole K2 structure is an allowed induced substructure; pull it back along f to an allowed B2 whose reduct is EXACTLY B1. This is automatic in the intended common-function relation/order tower, not from the displayed EP quantifiers alone.",
+      "depends_on": [
+        "C47",
+        "A14",
+        "A01"
+      ],
+      "notes": "N06",
+      "scope": "gated_EP_composition",
+      "source_labels": [
+        "lem:foundational-relative-EP-composition"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C49",
+      "name": "Compose the top witness embedding with the actual expanded image",
+      "statement": "C45 gives A2->B2. The A14 pullback makes f:B2->C2 an ACTUAL expanded embedding, including domains and function values. Their composite embeds A2 into the arbitrary C2.",
+      "depends_on": [
+        "C45",
+        "C48"
+      ],
+      "notes": "N06",
+      "scope": "gated_EP_composition",
+      "source_labels": [
+        "lem:foundational-relative-EP-composition"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C50",
+      "name": "Relative EP composes UNDER the recorded restriction gate",
+      "statement": "The C0 of C46 preceded the arbitrary C2 and C49 works for every such competitor. Thus K2 has EP over K0 under A13 PLUS A14. The source literal unrestricted function-adding reading is NOT certified; the intended order-only tower satisfies the gate. No intermediate Ramsey assumption is used.",
+      "depends_on": [
+        "C46",
+        "C47",
+        "C48",
+        "C49",
+        "A14"
+      ],
+      "notes": "N06",
+      "scope": "gated_EP_composition",
+      "source_labels": [
+        "lem:foundational-relative-EP-composition"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C51",
+      "name": "Finite chains compose when restriction compatibility persists",
+      "statement": "Apply C50 inductively along a finite tower with A14 at every adjacent step. An induced lower image becomes closed successively for each added level, so the composite upper restriction remains an actual legal substructure/pullback. In particular a tower retaining all functions and adding only relations/orders meets this condition automatically.",
+      "depends_on": [
+        "C50",
+        "A13",
+        "A14"
+      ],
+      "notes": "N06",
+      "scope": "gated_EP_composition",
+      "source_labels": [
+        "lem:foundational-relative-EP-composition"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C52",
+      "name": "Arbitrary parent priorities do not force global transition monotonicity",
+      "statement": "Two quotient-sort copies can transport cuts/coordinates by swapping two incomparable coarser coordinates, with inverse transition and trivial holonomy. Equal per-copy priority lists then compare the swapped keys oppositely. Fibre-task orders still synchronize correctly. Global transition-order monotonicity would require an additional equivariant key-priority convention; it is not an output of C24.",
+      "depends_on": [
+        "C13",
+        "C16",
+        "C24"
+      ],
+      "notes": "N07",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:foundational-hierarchical-order-normalization"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C53",
+      "name": "Full pair closure and freshness are substantive provider conditions",
+      "statement": "Root pairs with F(u)=F(v) versus F(u)!=F(v) may share the same plain two-root relations yet have incompatible pointed generated supports. A reset relation can have a midpoint already inside the old closure, giving no new vertex. These diagnostics delimit the complete-type/outside-closure/ordered-SAP premises of C44.",
+      "depends_on": [
+        "C39",
+        "C42",
+        "C44"
+      ],
+      "notes": "N07",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:abstract-fresh-reset-midpoint"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C54",
+      "name": "Displayed function-adding EP composition has a JEP counterexample",
+      "statement": "K0 has finite Q subset P equivalences; K1 adds an order convex for both; K2 uniquely adds within-P immediate successor fixing each P-maximum. These are hereditary JEP classes with surjective reducts. K1/K0 EP uses uniform equal-sized Q blocks, K2/K1 EP is trivial by uniqueness. But target a<b<c with Q classes {a,b},{c} and F(a)=b,F(b)=c,F(c)=c is avoided in every base host by placing a large Q block LAST in each P component if one exists; otherwise all its Q blocks are singletons. Thus the composite EP quantifier fails. The top expansion is NOT reasonable; no counterexample to a reasonable added-function variant is claimed.",
+      "depends_on": [
+        "A13"
+      ],
+      "notes": "N07",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:foundational-relative-EP-composition"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C55",
+      "name": "The quantifier and pointed-edge scope are explicit",
+      "statement": "A host chosen after inspecting a competitor or a preferred single expansion does not give the required universal EP. Likewise unpointed isomorphism of edge closures alone does not make every selected edge a reference-template embedding with the marked endpoints. Finite controls diagnose these mechanisms, not an all-size Ramsey/EP theorem.",
+      "depends_on": [
+        "C29",
+        "C32",
+        "C37",
+        "C50"
+      ],
+      "notes": "N07",
+      "scope": "boundary",
+      "source_labels": [
+        "thm:abstract-reset-order-EP"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    }
+  ],
+  "source_result_files": [
+    "sections/reset_midpoint_order_ep.tex"
+  ],
+  "exports": [
+    {
+      "source_label": "lem:foundational-ramsey-sort-restriction",
+      "claims": [
+        "C04",
+        "C05",
+        "C06"
+      ]
+    },
+    {
+      "source_label": "lem:foundational-ramsey-normalization",
+      "claims": [
+        "C07",
+        "C11",
+        "C12"
+      ]
+    },
+    {
+      "source_label": "lem:foundational-hierarchical-order-normalization",
+      "claims": [
+        "C24"
+      ]
+    },
+    {
+      "source_label": "thm:abstract-reset-order-EP",
+      "claims": [
+        "C37",
+        "C38"
+      ]
+    },
+    {
+      "source_label": "lem:abstract-fresh-reset-midpoint",
+      "claims": [
+        "C44"
+      ]
+    },
+    {
+      "source_label": "lem:foundational-relative-EP-composition",
+      "claims": [
+        "C50",
+        "C51"
+      ]
+    }
+  ],
+  "auxiliary_exports": [],
+  "conditional_exports": [
+    {
+      "source_label": "lem:foundational-relative-EP-composition",
+      "required_gate": "A14",
+      "proved_claims": [
+        "C50",
+        "C51"
+      ],
+      "status": "RESTRICTION_COMPATIBLE_VERSION_ONLY",
+      "source_reading_held": "Unrestricted function-adding composition under displayed heredity/reduct-surjectivity/EP quantifiers",
+      "counterexample": "C54",
+      "reasonable_variant": "NOT_SETTLED_BY_COUNTEREXAMPLE",
+      "intended_application": "Order/relation expansions retaining the full function signature"
+    }
+  ],
+  "source_scope_repairs_pending": [
+    {
+      "feedback": "F03",
+      "source_label": "lem:foundational-relative-EP-composition",
+      "required_action": "State common-function/restriction-compatible scope, or clarify standing reasonableness and supply a valid separate general-function argument.",
+      "source_TeX_changed": false
+    }
+  ],
+  "source_files": [
+    {
+      "file": "sections/reset_midpoint_order_ep.tex",
+      "git_blob": "d4174bcb790f4a85ca5ae8492f810eeac63a97c8"
+    },
+    {
+      "file": "sections/expansion_property_unfiltered.tex",
+      "git_blob": "a6cc2ff95a5ed8f7d371e33d5504edcedc6cd35c"
+    }
+  ],
+  "dependency_firewalls": [
+    {
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06"
+      ],
+      "forbid": [
+        "A06",
+        "A07",
+        "A08",
+        "A09",
+        "A10",
+        "A11",
+        "A12",
+        "A13",
+        "A14",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40",
+        "C41",
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46",
+        "C47",
+        "C48",
+        "C49",
+        "C50",
+        "C51",
+        "C52",
+        "C53",
+        "C54",
+        "C55"
+      ]
+    },
+    {
+      "claims": [
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12"
+      ],
+      "forbid": [
+        "A03",
+        "A05",
+        "A07",
+        "A08",
+        "A09",
+        "A10",
+        "A11",
+        "A12",
+        "A13",
+        "A14",
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40",
+        "C41",
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46",
+        "C47",
+        "C48",
+        "C49",
+        "C50",
+        "C51",
+        "C52",
+        "C53",
+        "C54",
+        "C55"
+      ]
+    },
+    {
+      "claims": [
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24"
+      ],
+      "forbid": [
+        "A02",
+        "A03",
+        "A04",
+        "A05",
+        "A06",
+        "A09",
+        "A10",
+        "A11",
+        "A12",
+        "A13",
+        "A14",
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40",
+        "C41",
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46",
+        "C47",
+        "C48",
+        "C49",
+        "C50",
+        "C51",
+        "C52",
+        "C53",
+        "C54",
+        "C55"
+      ]
+    },
+    {
+      "claims": [
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38"
+      ],
+      "forbid": [
+        "A03",
+        "A05",
+        "A06",
+        "A07",
+        "A08",
+        "A12",
+        "A13",
+        "A14",
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C39",
+        "C40",
+        "C41",
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46",
+        "C47",
+        "C48",
+        "C49",
+        "C50",
+        "C51",
+        "C52",
+        "C53",
+        "C54",
+        "C55"
+      ]
+    },
+    {
+      "claims": [
+        "C39",
+        "C40",
+        "C41",
+        "C42",
+        "C43",
+        "C44"
+      ],
+      "forbid": [
+        "A02",
+        "A03",
+        "A04",
+        "A06",
+        "A07",
+        "A08",
+        "A09",
+        "A10",
+        "A11",
+        "A13",
+        "A14",
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C45",
+        "C46",
+        "C47",
+        "C48",
+        "C49",
+        "C50",
+        "C51",
+        "C52",
+        "C53",
+        "C54",
+        "C55"
+      ]
+    },
+    {
+      "claims": [
+        "C45",
+        "C46",
+        "C47",
+        "C48",
+        "C49",
+        "C50",
+        "C51"
+      ],
+      "forbid": [
+        "A02",
+        "A03",
+        "A04",
+        "A05",
+        "A06",
+        "A07",
+        "A08",
+        "A09",
+        "A10",
+        "A11",
+        "A12",
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40",
+        "C41",
+        "C42",
+        "C43",
+        "C44",
+        "C52",
+        "C53",
+        "C54",
+        "C55"
+      ]
+    }
+  ],
+  "source_scope_gates": {
+    "hierarchical_synchronization": "WITHIN-PARENT FIBRE TASKS, not global monotonicity under arbitrary priorities",
+    "reset_edge_type": "complete expanded POINTED two-root generated type",
+    "composition": "C50/C51 require A14 actual expanded restriction/pullback compatibility",
+    "function_adding_counterexample": "C54 refutes displayed EP quantifiers/heredity/reduct-surjectivity, even with JEP; top expansion NOT reasonable",
+    "reasonable_function_adding_variant": "NOT REFUTED OR PROVED by the counterexample; shared-function restriction-compatible version certified here",
+    "source_TeX_unchanged": true
+  },
+  "tasks": [
+    {
+      "id": "T01",
+      "name": "Closed-sort inherited embeddings and Ramsey/JEP/SAP",
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Retain exact branch hypotheses and full induced function domains. Hierarchical synchronization is within cut fibres; global transition monotonicity is not assumed. Reset EP colors ALL embeddings of the COMPLETE POINTED edge closure, covers only original finite midpoint obligations and fixes its old host first. Ordered SAP uses the whole actual pair closure and proves freshness outside the entire host. Composition exports MUST include A14; do not prove the false displayed unrestricted function-adding reading or claim the counterexample is reasonable."
+    },
+    {
+      "id": "T02",
+      "name": "Idempotent endofunctor fixed class and Ramsey pullback",
+      "claims": [
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Retain exact branch hypotheses and full induced function domains. Hierarchical synchronization is within cut fibres; global transition monotonicity is not assumed. Reset EP colors ALL embeddings of the COMPLETE POINTED edge closure, covers only original finite midpoint obligations and fixes its old host first. Ordered SAP uses the whole actual pair closure and proves freshness outside the entire host. Composition exports MUST include A14; do not prove the false displayed unrestricted function-adding reading or claim the counterexample is reasonable."
+    },
+    {
+      "id": "T03",
+      "name": "MI parent keys, coherent fibre tasks and normalization",
+      "claims": [
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Retain exact branch hypotheses and full induced function domains. Hierarchical synchronization is within cut fibres; global transition monotonicity is not assumed. Reset EP colors ALL embeddings of the COMPLETE POINTED edge closure, covers only original finite midpoint obligations and fixes its old host first. Ordered SAP uses the whole actual pair closure and proves freshness outside the entire host. Composition exports MUST include A14; do not prove the false displayed unrestricted function-adding reading or claim the counterexample is reasonable."
+    },
+    {
+      "id": "T04",
+      "name": "Fixed-host two-sign reset-midpoint EP",
+      "claims": [
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Retain exact branch hypotheses and full induced function domains. Hierarchical synchronization is within cut fibres; global transition monotonicity is not assumed. Reset EP colors ALL embeddings of the COMPLETE POINTED edge closure, covers only original finite midpoint obligations and fixes its old host first. Ordered SAP uses the whole actual pair closure and proves freshness outside the entire host. Composition exports MUST include A14; do not prove the false displayed unrestricted function-adding reading or claim the counterexample is reasonable."
+    },
+    {
+      "id": "T05",
+      "name": "Actual pair closure and ordered-SAP fresh midpoint provider",
+      "claims": [
+        "C39",
+        "C40",
+        "C41",
+        "C42",
+        "C43",
+        "C44"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Retain exact branch hypotheses and full induced function domains. Hierarchical synchronization is within cut fibres; global transition monotonicity is not assumed. Reset EP colors ALL embeddings of the COMPLETE POINTED edge closure, covers only original finite midpoint obligations and fixes its old host first. Ordered SAP uses the whole actual pair closure and proves freshness outside the entire host. Composition exports MUST include A14; do not prove the false displayed unrestricted function-adding reading or claim the counterexample is reasonable."
+    },
+    {
+      "id": "T06",
+      "name": "Restriction-compatible relative EP composition",
+      "claims": [
+        "C45",
+        "C46",
+        "C47",
+        "C48",
+        "C49",
+        "C50",
+        "C51"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Retain exact branch hypotheses and full induced function domains. Hierarchical synchronization is within cut fibres; global transition monotonicity is not assumed. Reset EP colors ALL embeddings of the COMPLETE POINTED edge closure, covers only original finite midpoint obligations and fixes its old host first. Ordered SAP uses the whole actual pair closure and proves freshness outside the entire host. Composition exports MUST include A14; do not prove the false displayed unrestricted function-adding reading or claim the counterexample is reasonable."
+    },
+    {
+      "id": "T07",
+      "name": "Scope and counterexample diagnostics",
+      "claims": [
+        "C52",
+        "C53",
+        "C54",
+        "C55"
+      ],
+      "depends_on": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Retain exact branch hypotheses and full induced function domains. Hierarchical synchronization is within cut fibres; global transition monotonicity is not assumed. Reset EP colors ALL embeddings of the COMPLETE POINTED edge closure, covers only original finite midpoint obligations and fixes its old host first. Ordered SAP uses the whole actual pair closure and proves freshness outside the entire host. Composition exports MUST include A14; do not prove the false displayed unrestricted function-adding reading or claim the counterexample is reasonable."
+    }
+  ],
+  "overview_mermaid": [
+    "flowchart TD",
+    "  I[\"Closed selected sorts\"] --> R[\"Inherited Ramsey and JEP or SAP\"]",
+    "  N[\"Actual idempotent endofunctor\"] --> F[\"Fixed class Ramsey and JEP\"]",
+    "  Q[\"MI quotient charts and fibre tasks\"] --> L[\"Parent lex normalization\"]",
+    "  S[\"Ordered SAP over full pair closure\"] --> M[\"Fresh induced midpoints\"]",
+    "  H[\"Full ambient Ramsey and JEP\"] --> E[\"Two sign relative task EP\"]",
+    "  M --> E",
+    "  P[\"Two relative EP inputs\"] --> C[\"GATED finite tower composition\"]",
+    "  G[\"Actual restriction compatibility\"] --> C"
+  ],
+  "overview_notes": [
+    "Six conditional results are prepared, with the composition export explicitly restricted by A14; there are no mathematical provider imports.",
+    "Sort restriction preserves the actual full induced language, including any nullary truth. Generic normalization requires an actual endofunctor and does not assert SAP inheritance.",
+    "Hierarchical synchronization is of within-parent fibre task orders; arbitrary parent priorities need not make whole-sort transitions monotone.",
+    "Reset EP uses full ambient Ramsey, never assumes the intermediate classes Ramsey, and needs a COMPLETE POINTED expanded edge closure.",
+    "Fresh midpoints require an ordered witness over the whole actual pair closure and ordered SAP; bare m;m reachability does not imply freshness.",
+    "The literal displayed function-adding composition hypotheses have a hereditary JEP counterexample. Its top expansion is not reasonable, so the reasonable variant is not refuted. The intended relation/order-only tower meets A14."
+  ],
+  "controls": [
+    {
+      "id": "K01",
+      "check": "Bounded closed-sort restrictions, actual normalizing maps/embedding-color pullback, distributive MI parent keys, synchronized fibre task orders, idempotence and reversal."
+    },
+    {
+      "id": "K02",
+      "check": "Two-sign midpoint transitivity and fresh closed amalgams; full pair closure, arbitrary-priority transition and nested-equivalence function-adding EP composition boundaries. Finite diagnostics do not certify general Ramsey/EP or Lean theorems."
+    }
+  ],
+  "article_feedback": [
+    {
+      "id": "F01",
+      "kind": "SOURCE_SCOPE_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/reset_midpoint_order_ep.tex",
+        "anchor": "all orders in the same transition orbit"
+      },
+      "finding": "The construction synchronizes WITHIN-PARENT FIBRE task orders. Arbitrary per-J parent-key priorities do not imply global transition monotonicity of whole quotient sorts; the downstream task definition uses the fibre interpretation.",
+      "proposed_article_change": "Replace all orders by all fibre task orders and spell out that actual transitions commute with upward quotient maps and transport cuts/upper intervals. State priority equivariance only if an additional global-monotonicity theorem is intended.",
+      "caller_effect": "No new hypothesis is needed for the intended fibre-task result. Do not overgeneralize its image.",
+      "proof_claims": [
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C24",
+        "C52"
+      ]
+    },
+    {
+      "id": "F02",
+      "kind": "PROOF_CONVENTION_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/reset_midpoint_order_ep.tex",
+        "anchor": "ONE isomorphism type"
+      },
+      "finding": "The reset-edge template needs the COMPLETE POINTED expanded generated type; same unpointed closure type or two-root reduct is insufficient. Sources without any nontrivial fibre comparison use a trivial witness, while nontrivial sources supply an actual edge template by midpoint extension.",
+      "proposed_article_change": "Name both distinguished endpoints in the type convention, add the vacuous-comparison branch and state that only the original finite comparison list is iterated. For the provider order T over the entire actual P before ordered SAP.",
+      "caller_effect": "The reset criterion uses full ambient Ramsey/JEP only; no SAP or intermediate Ramsey is added. The provider separately retains its ordered-SAP hypotheses.",
+      "proof_claims": [
+        "C25",
+        "C27",
+        "C29",
+        "C32",
+        "C39",
+        "C40",
+        "C41",
+        "C42",
+        "C43"
+      ]
+    },
+    {
+      "id": "F03",
+      "kind": "SOURCE_RESTRICTION_GATE_REQUIRED",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/reset_midpoint_order_ep.tex",
+        "anchor": "Restrict the full"
+      },
+      "finding": "For added unary functions an arbitrary intermediate induced image need not be expanded-closed, so the displayed composition proof cannot invoke heredity there. A hereditary JEP nested-equivalence/successor counterexample refutes the displayed EP quantifier hypotheses without reasonableness. That top expansion is not reasonable; the example does not settle a reasonable added-function variant.",
+      "proposed_article_change": "State that the tower retains the full function signature and adds only relations/orders, or add the explicit actual restriction/pullback compatibility A14. If EP is intended to carry extra standing reasonableness conventions, state them and supply a separate valid general-function proof rather than the unsupported restriction.",
+      "caller_effect": "C50/C51 certify the restriction-compatible intended ordering tower. The unrestricted function-adding source reading is explicitly held; no silent new hypothesis or false broad theorem is exported.",
+      "proof_claims": [
+        "C47",
+        "C48",
+        "C50",
+        "C51",
+        "C54"
+      ]
+    }
+  ],
+  "review": {
+    "date": "2026-10-28",
+    "source_unchanged": true,
+    "source_signature_repairs": 0,
+    "unexpanded_provider_labels": [],
+    "proof_status": "HUMAN_EXPANDED_NOT_LEAN; five results under explicit source conventions and the sixth composition result ONLY with recorded restriction gate A14. Broad displayed function-adding quantifier reading has a counterexample; reasonable added-function variant is not settled.",
+    "independent_reviews": [
+      "Closed-sort and functorial Ramsey inheritance; MI fibre normalization and global-priority boundary",
+      "Pointed reset-edge two-sign EP, finite midpoint obligations and actual ordered-SAP fresh provider",
+      "Relative EP composition restriction gate and hereditary JEP counterexample to displayed function-adding quantifiers"
+    ],
+    "boundaries": [
+      "Fibre-task synchronization is not whole-sort transition monotonicity.",
+      "Edge type is complete expanded and POINTED.",
+      "Only original finite midpoint obligations are iterated.",
+      "Composition requires actual expanded restriction compatibility; intended common-function ordering tower satisfies it.",
+      "The counterexample is not reasonable at the top; no reasonable-variant refutation is claimed."
+    ]
+  }
+}
