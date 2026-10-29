@@ -2,6 +2,7 @@ import CCO.FullRows.RowCertificate
 import CCO.FullRows.GaugeNatural
 import CCO.FullRows.Rows
 import CCO.FullRows.StructuralCoordinates
+import CCO.FullRows.VertexDomains
 
 /-! Actual record/hole and greatest-domain covariance under every structural
 reservoir automorphism and every row correction. No correction legality or
@@ -236,6 +237,126 @@ theorem row_fixedNetwork_natural (s₀ : Structure.Automorphism act E) (C : Matr
     StrongPC.fixedNetwork (rowDiagram S H R B hB Δ A hA E hLocal) :=
   (rowPCTransport S H R B hB Δ hΔ A hA E hLocal s₀ C).fixedNetwork_natural
     (row_initial_natural S H R B hB Δ hΔ A hA E hLocal s₀ C)
+
+
+def rowVertexEquiv (s₀ : Structure.Automorphism act E) (C : Matrix I K) :
+    Vertex I K ≃ Vertex I K := by
+  let := TransversalPure.thinCommGroup S H R
+  exact liftEquiv (rowStructural S H R B hB Δ A hA E hLocal s₀) C
+
+omit [Finite Z] in
+theorem rowVertexEquiv_packet_ne (s₀ : Structure.Automorphism act E) (C : Matrix I K)
+    (x y : Vertex I K) (hxy : x.1 ≠ y.1) :
+    (rowVertexEquiv S H R B hB Δ A hA E hLocal s₀ C x).1 ≠
+      (rowVertexEquiv S H R B hB Δ A hA E hLocal s₀ C y).1 :=
+  fun h => hxy ((rowPacketEquiv S H R B hB Δ A hA E hLocal s₀ C).injective h)
+
+omit [Finite Z] in
+theorem rowVertexEquiv_owner (s₀ : Structure.Automorphism act E) (C : Matrix I K)
+    (x : Vertex I K) :
+    vertexOwner S H R B hB Δ A hA E hLocal
+      (rowVertexEquiv S H R B hB Δ A hA E hLocal s₀ C x) =
+    (TransversalPure.subgroupRelabelling S H R B hB Δ).owner s₀.lang
+      (vertexOwner S H R B hB Δ A hA E hLocal x) := by
+  let := TransversalPure.thinCommGroup S H R
+  let Q := TransversalPure.endpointGauge S H R B hB
+  let s := rowStructural S H R B hB Δ A hA E hLocal s₀
+  change Q.owner (x.2*s.offset x.1.1) (own (s.sigma x.1.1)) =
+    (TransversalPure.subgroupRelabelling S H R B hB Δ).owner s₀.lang (Q.owner x.2 (own x.1.1))
+  have hOwner : own (s.sigma x.1.1) = Q.owner (s.offset x.1.1)
+      ((TransversalPure.subgroupRelabelling S H R B hB Δ).owner s₀.lang (own x.1.1)) :=
+    rowStructural_owner S H R B hB Δ A hA E hLocal s₀ x.1.1
+  calc
+    _ = Q.owner x.2 (Q.owner (s.offset x.1.1) (own (s.sigma x.1.1))) :=
+      congrArg (fun e : Equiv.Perm ↥B => e (own (s.sigma x.1.1)))
+        (Q.owner.map_mul x.2 (s.offset x.1.1))
+    _ = Q.owner x.2 (Q.owner (s.offset x.1.1) (Q.owner (s.offset x.1.1)
+        ((TransversalPure.subgroupRelabelling S H R B hB Δ).owner s₀.lang (own x.1.1)))) :=
+      congrArg (fun b => Q.owner x.2 (Q.owner (s.offset x.1.1) b)) hOwner
+    _ = Q.owner x.2 ((TransversalPure.subgroupRelabelling S H R B hB Δ).owner s₀.lang (own x.1.1)) :=
+      congrArg (Q.owner x.2) (Q.owner_twice (s.offset x.1.1) _)
+    _ = _ := (Q.commute s₀.lang.val x.2 (own x.1.1)).symm
+
+private theorem gauge_raw_names (g h : K) {i j : ↥B}
+    (M : (TransversalSource.source S H R B).Menu i j) :
+    letI := TransversalPure.thinCommGroup S H R
+    (fun a => some a.val) ''
+      gaugeMenu (TransversalPure.subgroupEndpointGauge S H R B hB Δ hΔ) g h M =
+      switchColour S (finitePacket S H) (g*h) '' ((fun a => some a.val) '' M) := by
+  let := TransversalPure.thinCommGroup S H R
+  let Q := TransversalPure.subgroupEndpointGauge S H R B hB Δ hΔ
+  simp only [gaugeMenu,Set.image_image]
+  congr 1
+  funext a
+  change (TransversalPure.subgroupAction S H R B hB Δ).label (Q.left g (Q.right h a)) = _
+  rw [Q.left_label,Q.right_label]
+  exact (switchColour_mul S (finitePacket S H) H g h (some a.val)).symm
+
+include hΔ in
+private theorem row_fixed_raw_names (s₀ : Structure.Automorphism act E) (C : Matrix I K)
+    (p : DistinctPair J) :
+    (fun a => some a.val) '' StrongPC.fixedNetwork (rowDiagram S H R B hB Δ A hA E hLocal)
+      (pairEquiv (rowPacketEquiv S H R B hB Δ A hA E hLocal s₀ C) p) =
+    switchColour S (finitePacket S H)
+      ((rowStructural S H R B hB Δ A hA E hLocal s₀).offset p.src.1 *
+        (rowStructural S H R B hB Δ A hA E hLocal s₀).offset p.dst.1) ''
+      ((fun a => some a.val) '' StrongPC.fixedNetwork
+        (rowDiagram S H R B hB Δ A hA E hLocal) p) := by
+  let T := rowPCTransport S H R B hB Δ hΔ A hA E hLocal s₀ C
+  have hm := congrFun (row_fixedNetwork_natural S H R B hB Δ hΔ A hA E hLocal s₀ C)
+    (pairEquiv (rowPacketEquiv S H R B hB Δ A hA E hLocal s₀ C) p)
+  rw [T.networkIso_apply] at hm
+  rw [← hm,Set.image_image,Set.image_image]
+  congr 1
+  funext a
+  exact rowPCTransport_colour S H R B hB Δ hΔ A hA E hLocal s₀ C p a
+
+/-- Full vertex domains have the SAME literal original fine names after
+every actual full-row lift. The two image phases cancel the real offsets. -/
+theorem vertexDomain_raw_covariant (s₀ : Structure.Automorphism act E) (C : Matrix I K)
+    (x y : Vertex I K) (hxy : x.1 ≠ y.1) :
+    (fun a => some a.val) '' vertexDomain S H R B hB Δ hΔ A hA E hLocal
+      (rowVertexEquiv S H R B hB Δ A hA E hLocal s₀ C x)
+      (rowVertexEquiv S H R B hB Δ A hA E hLocal s₀ C y)
+      (rowVertexEquiv_packet_ne S H R B hB Δ A hA E hLocal s₀ C x y hxy) =
+    (fun a => some a.val) '' vertexDomain S H R B hB Δ hΔ A hA E hLocal x y hxy := by
+  let := TransversalPure.thinCommGroup S H R
+  let Q := TransversalPure.subgroupEndpointGauge S H R B hB Δ hΔ
+  let s := rowStructural S H R B hB Δ A hA E hLocal s₀
+  let D := rowDiagram S H R B hB Δ A hA E hLocal
+  change (fun a => some a.val) '' gaugeMenu Q (x.2*s.offset x.1.1) (y.2*s.offset y.1.1)
+    (StrongPC.fixedNetwork D (pairEquiv (rowPacketEquiv S H R B hB Δ A hA E hLocal s₀ C)
+      ⟨x.1,y.1,hxy⟩)) =
+    (fun a => some a.val) '' gaugeMenu Q x.2 y.2 (StrongPC.fixedNetwork D ⟨x.1,y.1,hxy⟩)
+  rw [gauge_raw_names S H R B hB Δ hΔ,
+    gauge_raw_names S H R B hB Δ hΔ,
+    row_fixed_raw_names S H R B hB Δ hΔ A hA E hLocal s₀ C ⟨x.1,y.1,hxy⟩,
+    Set.image_image]
+  have hFront : (x.2*s.offset x.1.1)*(y.2*s.offset y.1.1) =
+      (x.2*y.2)*(s.offset x.1.1*s.offset y.1.1) := by
+    rw [mul_assoc, ← mul_assoc (s.offset x.1.1) y.2 (s.offset y.1.1),
+      translation_comm S (finitePacket S H) H (R.packet_thin S H) (s.offset x.1.1) y.2,
+      mul_assoc, ← mul_assoc]
+  have hc : ((x.2*s.offset x.1.1)*(y.2*s.offset y.1.1)) *
+      (s.offset x.1.1*s.offset y.1.1) = x.2*y.2 := by
+    rw [hFront,mul_assoc,translation_square S (finitePacket S H) H (R.packet_thin S H),mul_one]
+  congr 1
+  funext c
+  rw [← switchColour_mul S (finitePacket S H) H]
+  exact congrArg (fun g => switchColour S (finitePacket S H) g c) hc
+
+
+omit [Finite Z] in
+/-- The vertex-owner equation in the literal `lift` notation and the
+original globally prescribed language component. -/
+theorem rowLift_vertexOwner (s₀ : Structure.Automorphism act E) (C : Matrix I K)
+    (x : Vertex I K) :
+    letI := TransversalPure.thinCommGroup S H R
+    vertexOwner S H R B hB Δ A hA E hLocal
+      (lift (rowStructural S H R B hB Δ A hA E hLocal s₀) C x) =
+      sourceTag S H R B Δ s₀.lang (vertexOwner S H R B hB Δ A hA E hLocal x) := by
+  let := TransversalPure.thinCommGroup S H R
+  exact rowVertexEquiv_owner S H R B hB Δ A hA E hLocal s₀ C x
 
 end
 end CCO.FullRows
