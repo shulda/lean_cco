@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 267,
+  "revision": 268,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -1610,7 +1610,7 @@
       }
     },
     "B028": {
-      "state": "REVIEWING",
+      "state": "INTEGRATING",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b023_mi",
@@ -1716,7 +1716,13 @@
       "owner_project_id": null
     }
   },
-  "integration_lock": null,
+  "integration_lock": {
+    "kind": "package",
+    "package_id": "B028",
+    "actor_id": "root",
+    "base_main_sha": "625b6ed372ce7ed0ec53cb8c4e66c10056c7c5bd",
+    "head_sha": "2f0ce8d1977de862752481da694d80f1ff10199b"
+  },
   "history": [
     {
       "revision": 1,
@@ -6903,6 +6909,26 @@
         "package_id": "B028",
         "head_sha": "2f0ce8d1977de862752481da694d80f1ff10199b",
         "summary": "Actual nonauthor /root/independent_review approves exact2f0ce8d/treeDe89 after ONE complete34module/4912line source read covering42claims/16defs/sixexports/OH/seventasks, actual normalized_relative_mi and same-carrier joint consumer, plus final260-line two-MD-only delta with no mathematical/documentation finding. Every principal provider is constructed: original absolute closure/full direction residual; all-span original closed-S orbit safety and whole-base alignment; ONLY lower quotient ordinary EPPA and actual fine saturation; ALL compatible group including empty-request coarse onto; full-owner safe padding with new-new matrices; supplied-selector ALL-row decoder/age/alignment/global thin; faithful WHOLE clique and padding exclusion; original request adapter/fullpacket saturation; semilinear IMAGE/fullsupport BEFORE invarianttrim and selectedroot correction. Honest coarse/finite-class/orbit premises retained; no original EPPA(Q), free/faithful owner action, group section/fullAut equality or posttrim fullfine support assumed. Personally fetched public PR/ancestry and synthetic11d2d164 exacttreeDe89 ordered625b+2f, then FULL exactCI40950381124/job123716613595 SUCCESS121/1330provider+3584CCO+3584audit/17155standard3/1045CURRENTsource+parts PREPOST/269exactcd358 provider fourguards, all34newCCOBuilt/provider0. Report-onlycommit1d0730f384d7c06a6b780451a71fd5f14a5b9d8d; actualsixauthors preserved."
+      }
+    },
+    {
+      "revision": 268,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "start_integration",
+      "package_id": "B028",
+      "details": {
+        "actor_id": "root",
+        "package_id": "B028",
+        "head_sha": "2f0ce8d1977de862752481da694d80f1ff10199b",
+        "base_main_sha": "625b6ed372ce7ed0ec53cb8c4e66c10056c7c5bd",
+        "head_contains_main": true,
+        "ci": {
+          "run_id": 40950381124,
+          "head_sha": "2f0ce8d1977de862752481da694d80f1ff10199b",
+          "conclusion": "success",
+          "axiom_audit": "allowlist"
+        }
       }
     }
   ],
