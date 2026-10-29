@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 198,
+  "revision": 199,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -1254,7 +1254,7 @@
       }
     },
     "B025": {
-      "state": "REVIEWING",
+      "state": "INTEGRATING",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b023_mi",
@@ -1298,7 +1298,13 @@
       }
     }
   },
-  "integration_lock": null,
+  "integration_lock": {
+    "kind": "package",
+    "package_id": "B025",
+    "actor_id": "root",
+    "base_main_sha": "99192554bec6022d3c5a6df1a444d609fd56a22e",
+    "head_sha": "002b17005996009056d5202fdf7890ccc0bc59df"
+  },
   "history": [
     {
       "revision": 1,
@@ -5076,6 +5082,26 @@
         "head_sha": "002b17005996009056d5202fdf7890ccc0bc59df",
         "summary": "Actual nonauthor /root/independent_review approves exact002b170/tree6c45f28 after whole C01–47 source/premise/provider/consumer review: generic anchored/equality/joint caps and separately conditional SAP/common-witness ENTIRE-Gamma EPPA; actual closure before named homogeneity and direct accepted joint support; global RAW equivalence primitivity; whole-packet strict repair; actual internal fair finite-chart U and all owner-sort infinitude; BOTH actual finite full-packet extension properties, literal POINT-phase old origins and base-preserving countable full-language recovery into SAME primitive U inflation, consumed end-to-end. Actual singleton-orbit alternative C37/C40 faithful. Only2MD reports after freeze; allaccepted991 source/root prefix retained. Exact CI40853731818/job123379349229 passes92tests/3103jobs/12466standard3/839actualpartsANDcurrentsource PREPOST, pins/contracts unchanged.",
         "actor_id": "independent_review"
+      }
+    },
+    {
+      "revision": 199,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "start_integration",
+      "package_id": "B025",
+      "details": {
+        "package_id": "B025",
+        "head_sha": "002b17005996009056d5202fdf7890ccc0bc59df",
+        "base_main_sha": "99192554bec6022d3c5a6df1a444d609fd56a22e",
+        "head_contains_main": true,
+        "ci": {
+          "run_id": 40853731818,
+          "head_sha": "002b17005996009056d5202fdf7890ccc0bc59df",
+          "conclusion": "success",
+          "axiom_audit": "allowlist"
+        },
+        "actor_id": "root"
       }
     }
   ],
