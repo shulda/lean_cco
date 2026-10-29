@@ -1,0 +1,2009 @@
+{
+  "schema_version": 1,
+  "id": "relative_mi",
+  "index_title": "Orbit-safe matrices and one normalized relative rooted MI witness",
+  "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+  "status": "HUMAN_EXPANDED_NOT_LEAN",
+  "scope": "Candidate private B028: four orbit-safe packet lemmas, unsafe multi-packet transport and the normalized relative MI construction. The local parametric moving-reading proof applies to ANY h with the explicit original-family axioms and is then instantiated with the augmented safe selector restricted to original H. Ordinary EPPA is assumed ONLY for Age(Q/E); no EPPA of Q, same-rank owner master, raw SAP, group section or global rooted theorem is imported. B027 retains its published-HKN/pending local Lean-adapter qualification.",
+  "scope_vocabulary": [
+    "finite_regular_action",
+    "actual_closed_source",
+    "absolute_closed_S",
+    "parametric_finite_readings",
+    "fixed_safe_decoder",
+    "unsafe_clique_transport",
+    "normalized_source_geometry",
+    "lower_quotient_EPPA",
+    "normalized_relative_MI"
+  ],
+  "scope_explanation": "statement and proof. Pure finite action, actual absolute/named closure, strong closed-S input, supplied fixed decoder and lower-quotient EPPA have distinct dependency branches.",
+  "control_script": "tools/check_relative_mi_controls.py",
+  "assumptions": [
+    {
+      "id": "A01",
+      "name": "Actual symmetric-original homogeneous source",
+      "statement": "Q is nonempty transitive homogeneous in a FINITE complete symmetric binary language with actual equality-inclusive RAW orbitals and commutation of invariant endorelations. No SAP of the original real age, NR2, EPPA or safety is part of this premise."
+    },
+    {
+      "id": "A02",
+      "name": "Original semantic homomorphic CCO",
+      "statement": "Q has semantic homomorphic CCO. Actual owner/coordinate equivalences used for RAW joint lifting are FULL RAW EXACT; inheritance and exactness are retained explicitly. This does not imply a completed global EPPA theorem."
+    },
+    {
+      "id": "A03",
+      "name": "Infinite normalized one-direction source and exact coarse owner",
+      "statement": "Q is infinite with NO nonidentity finite-class full exact invariant equivalence and exactly ONE minimal infinite equivalence E in the FULL invariant lattice. Its actual exactness is derived from minimalcut; F=F_Q is the greatest finite-class invariant equivalence and need not itself be exact or Id. H is an ACTUAL FULL RAW EXACT invariant equivalence with E<=H; H=E or Top is allowed. R_E=F, thinness and absolute unary closure are derived, not substituted assumptions."
+    },
+    {
+      "id": "A04",
+      "name": "Given original strong absolute closed-S amalgamation",
+      "statement": "S_Q is a GIVEN set of ORIGINAL diversity atom names strongly amalgamating every finite ABSOLUTELY real-acl_Q-closed complete induced span, including empty base. S_Q is not assumed invariant under unilateral thin translations. No nonempty typed orbit-safe palette or all-span transversal safe amalgamation is assumed before it is proved."
+    },
+    {
+      "id": "A05",
+      "name": "Ordinary EPPA ONLY in the fine quotient",
+      "statement": "Age(Q/E) has ordinary EPPA. This is the sole age-level EPPA premise in B028. It is applied to the fine owner source X=Q/E, never to Q or a same-rank rooted/owner-master theorem."
+    },
+    {
+      "id": "A06",
+      "name": "Current actual RAW-provider countability",
+      "statement": "Countability is retained where the currently prepared actual RAW/joint exact quotient providers are instantiated. Pure finite regular-action, selector-parameter, row correction and orbit-trim calculations do not independently use countability."
+    },
+    {
+      "id": "A07",
+      "name": "Original finite input, entire coarse witness and requests",
+      "statement": "A0 subset Q is finite NONEMPTY. B subset Q/H is finite induced, contains pi_H(A0), is an ordinary EPPA witness for that projection, has Gamma_B*pi_H(A0)=B for Gamma_B=FULL Aut(B), and is closed under the greatest finite-class equivalence of the actual quotient Q/H. A request (p,gamma) is any original-language partial automorphism p:A0->A0 with gamma in Gamma_B and pi_H(p(x))=gamma pi_H(x) for every domain point. Retain EVERY (empty,gamma)."
+    },
+    {
+      "id": "A08",
+      "name": "Local displayed full-owner packet context",
+      "statement": "For the standalone orbit-safe/interface statements, U is a finite NONEMPTY G-closed actual E-owner set, N_U its entire real preimage, G the actual elementary abelian thin group REGULAR on real F-packets, and Gamma a supplied group of genuine U automorphisms with compatible pure owner lifts. Its owner action may be nonfree/nonfaithful; Gamma commutes with G and contains diagonal thin owners when readings are used. B025 supplies actual named homogeneity/closed SAP and primitive triangle-defined transversal with inflation. These displayed local data are CONSTRUCTED at C24-C30 for the final MI application, not new principal hypotheses of that construction."
+    }
+  ],
+  "imports": [
+    {
+      "id": "I01",
+      "name": "Actual joint original/exact-owner lifting",
+      "source_label": "thm:joint-exact",
+      "statement": "Every genuine finite joint real/full-exact-owner partial isomorphism extends to ONE original automorphism. Check the ENTIRE supplied coarse/fine owner set and all mixed pairs before applying this contract; no lifting section is inferred.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01",
+        "A02",
+        "A06"
+      ],
+      "provider_module": "raw_exact",
+      "provider_claims": [
+        "C23"
+      ]
+    },
+    {
+      "id": "I02",
+      "name": "Nested mixed-pair recognition",
+      "source_label": "lem:nested-mixed",
+      "statement": "For actual nested exact kernels including Id, mixed real/quotient and fine/coarse orbitals factor through the common owner projection. This makes p union gamma on its finite real domain and ENTIRE B a joint partial isomorphism once compatibility is checked.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01",
+        "A02",
+        "A06"
+      ],
+      "provider_module": "raw_exact",
+      "provider_claims": [
+        "C17"
+      ]
+    },
+    {
+      "id": "I03",
+      "name": "Finite-base witness in X=Q/E",
+      "source_label": "lem:finite-base",
+      "statement": "For an actual homogeneous fine source X->T, supplied finite ambient lifts for all requests and ordinary EPPA of Age(X), obtain ONE finite induced fine witness over the ENTIRE fixed B, retaining each exact coarse gamma. In C26 X is Q/E: this does not import EPPA of Q.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A05"
+      ],
+      "provider_module": "owner_action",
+      "provider_claims": [
+        "C01",
+        "C02",
+        "C03"
+      ]
+    },
+    {
+      "id": "I04",
+      "name": "Finite packet projection stays in coarse finite closure",
+      "source_label": "lem:acf-owner-provider",
+      "statement": "Select ONLY C07: for kernel H, (F_Q join H)/H is finite-class and invariant under FULL Aut(Q/H), hence below its greatest finite-class equivalence. Thus finite-class-closed B contains every coarse owner reached by original F_Q/G saturation. The other EPPA-dependent owner-provider claims are NOT selected.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01",
+        "A03"
+      ],
+      "provider_module": "owner_action",
+      "provider_claims": [
+        "C07"
+      ]
+    },
+    {
+      "id": "I05",
+      "name": "Finite-exact normalization makes F thin",
+      "source_label": "lem:finite-exact-normalization-geometric",
+      "statement": "Absence of nonidentity finite-class exact kernels implies all F-atoms thin. Do not use the false converse.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01",
+        "A02",
+        "A03"
+      ],
+      "provider_module": "finite_packets",
+      "provider_claims": [
+        "C25"
+      ]
+    },
+    {
+      "id": "I06",
+      "name": "Actual thin group, regular packets and matrix transport",
+      "source_label": "lem:thin-bottom",
+      "statement": "G is finite elementary abelian, regular on actual F-packets and central under ORIGINAL automorphisms. Actual full matrices satisfy col(t_g x,t_h y)=(g+h)col(x,y). The induced owner action may be nonfaithful.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01",
+        "A03"
+      ],
+      "provider_module": "finite_packets",
+      "provider_claims": [
+        "C26",
+        "C27",
+        "C28"
+      ]
+    },
+    {
+      "id": "I07",
+      "name": "ABSOLUTE real unary closure",
+      "source_label": "cor:rh-acl-bounded-character",
+      "statement": "In the infinite ONE-direction source, acl_Q(A)=F[A] for every finite real A, including empty A. This absolute statement is required before original closed-S is applied; relative acl_N alone does not suffice.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01",
+        "A02",
+        "A03",
+        "A06"
+      ],
+      "provider_module": "real_closure",
+      "provider_claims": [
+        "C11"
+      ]
+    },
+    {
+      "id": "I08",
+      "name": "Normalized global correspondence dichotomy",
+      "source_label": "lem:global-correspondence",
+      "statement": "Select structural C10: if R_E!=F, there is infinite nonidentity exact C with E meet C=Id. Uniqueness of minimal infinite E rules this out; no EPPA or S input.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01",
+        "A02",
+        "A03",
+        "A06"
+      ],
+      "provider_module": "acl_owner_geometry",
+      "provider_claims": [
+        "C10"
+      ]
+    },
+    {
+      "id": "I09",
+      "name": "Actual named-owner closure and homogeneity",
+      "source_label": "thm:relative-real-closure",
+      "statement": "For residual finite G-closed U, actual acl_N(X)=F[X], whole packets are closed, and every compatible owner action has an original lift fixing literal fine names/functions. Retain B025 source scope.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01",
+        "A02",
+        "A03",
+        "A06"
+      ],
+      "provider_module": "owner_transversal",
+      "provider_claims": [
+        "C22",
+        "C23",
+        "C24"
+      ]
+    },
+    {
+      "id": "I10",
+      "name": "Actual closed full-packet SAP",
+      "source_label": "cor:relative-closed-sap",
+      "statement": "Strongly place finite complete full-packet factors over a complete closed packet base in N_U, then align their actual embedded base by named-owner homogeneity. Original raw SAP is not assumed.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01",
+        "A02",
+        "A03",
+        "A06"
+      ],
+      "provider_module": "owner_transversal",
+      "provider_claims": [
+        "C26"
+      ]
+    },
+    {
+      "id": "I11",
+      "name": "Actual all-owner transversal and phase-correct inflation",
+      "source_label": "thm:joint-transversal",
+      "statement": "Actual primitive triangle-defined SAP/CCO owner source and its inflation identify finite origin diagrams with actual full-packet diagrams in N_U. Select C34 for actual age membership and C44-C46 for full inflation/alignment; no arbitrary triangle table is substituted.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01",
+        "A02",
+        "A03",
+        "A06"
+      ],
+      "provider_module": "owner_transversal",
+      "provider_claims": [
+        "C24",
+        "C31",
+        "C33",
+        "C34",
+        "C35",
+        "C41",
+        "C44",
+        "C45",
+        "C46"
+      ]
+    },
+    {
+      "id": "I12",
+      "name": "Augmented safe selector construction",
+      "source_label": "lem:augmented-safe-algebra",
+      "statement": "Once C07 proves all-span strong S^G and C08 its covariance, instantiate B026 C27 on S^G to obtain ONE joint augmented selector h_(S^G). Its restriction to ORIGINAL H satisfies the explicit D10 axioms. It is not identified with B026's separately chosen C24 original selector.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A08"
+      ],
+      "provider_module": "safe_readings",
+      "provider_claims": [
+        "C27"
+      ]
+    },
+    {
+      "id": "I13",
+      "name": "Original moving-reading PROOF template",
+      "source_label": "prop:moving-readings",
+      "statement": "Reuse the prepared C34-C39 proof, not a silently generalized theorem statement: LOCAL B028 C10-C12 prove its conclusion for ANY supplied h with D10 axioms, then C13/C17 instantiate h_(S^G)|H. Existing B026 exports and constructor remain unchanged.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A08"
+      ],
+      "provider_module": "safe_readings",
+      "provider_claims": [
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39"
+      ]
+    },
+    {
+      "id": "I14",
+      "name": "Safe same-vertex certificate and original PC survivors",
+      "source_label": "lem:safe-global-completion",
+      "statement": "Given one injective origin certificate and all-span strong S^G, obtain one safe same-vertex certificate, ORIGINAL exact greatest-PC survivors, and actual canonical safe completion. A fixed family, not per-request completions; C07 supplies the palette premise.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A08"
+      ],
+      "provider_module": "safe_readings",
+      "provider_claims": [
+        "C31",
+        "C32",
+        "C33"
+      ]
+    },
+    {
+      "id": "I15",
+      "name": "Completable structural HKN reservoir",
+      "source_label": "thm:completable-reservoir",
+      "statement": "From fixed complete full-packet Aplus and ALL specified/empty Gamma requests, obtain one faithful structural B0 with regular packets, complete-or-missing matrices, exact requested components and an existential injective completion fixing Aplus. Published HKN providers and PENDING local CCO Lean adapters remain explicit in B027; no second valued HKN or invariant certificate is supplied.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A08"
+      ],
+      "provider_module": "hkn_reservoir",
+      "provider_claims": [
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31"
+      ]
+    },
+    {
+      "id": "I16",
+      "name": "One R07 decoder and universal legal row lifts",
+      "source_label": "thm:R07-relative-eppa",
+      "statement": "Reuse fixed actual packet universe/PC/colouring and universal correction-matrix lift, with the locally supplied reading axioms and injective origin certificate. All source extensions and clique transports act on the SAME decoder. Existing explicit constructor inputs are discharged by B026/B027 and local C07-C17.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A08"
+      ],
+      "provider_module": "full_rows",
+      "provider_claims": [
+        "C02",
+        "C06",
+        "C07",
+        "C08",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26"
+      ]
+    },
+    {
+      "id": "I17",
+      "name": "Existing simultaneous recorded-clique row zeroing",
+      "source_label": "lem:acf-recorded-row-zeroing",
+      "statement": "For one selected actual row per index of a recorded structural clique, every structural map admits ONE legal correction zeroing ALL selected full rows simultaneously. It need not also extend an unrelated source request.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [],
+      "provider_module": "full_rows",
+      "provider_claims": [
+        "C09",
+        "C25"
+      ]
+    },
+    {
+      "id": "I18",
+      "name": "Existing invariant packet orbit trim and root correction",
+      "source_label": "lem:acf-invariant-packet-orbit-trim",
+      "statement": "For global G<=K preserving actual packets, D=union_beta beta(F[A0]) is finite induced full-F-closed and K-invariant. A single packet subset, or any clique already transported into F[A0], has its selected root moved into A0 by ONE global thin translation. Exact coarse owner image is K*pi_H(F[A0]).",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [],
+      "provider_module": "full_rows",
+      "provider_claims": [
+        "C28",
+        "C29",
+        "C30"
+      ]
+    },
+    {
+      "id": "I19",
+      "name": "Recoverable semilinear owner component onto IMAGE K",
+      "source_label": "lem:acf-full-owner-language-faithfulness",
+      "statement": "When D0 realizes all fine U, forgetting owner component is an isomorphism onto the semilinear IMAGE K, not FULL Aut(D0). ALL empty fine-owner requests give K->Gamma_tilde onto; compose with Gamma_tilde->Gamma_B. Fine support may be lost only AFTER invariant trim.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [],
+      "provider_module": "full_rows",
+      "provider_claims": [
+        "C31",
+        "C32"
+      ]
+    },
+    {
+      "id": "I20",
+      "name": "Decoded global diagonal thin group",
+      "source_label": "lem:R07-global-diagonal-thin",
+      "statement": "The actual GLOBAL G acts on the fixed R07 decoder, keeps each actual packet setwise and preserves effective row readings. No independent packet translations are assumed.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [],
+      "provider_module": "full_rows",
+      "provider_claims": [
+        "C27"
+      ]
+    },
+    {
+      "id": "I21",
+      "name": "Minimal infinite equivalence is actual exact",
+      "source_label": "prop:minimalcut",
+      "statement": "The unique minimal infinite FULL invariant E is a nonidentity actual exact kernel and inherits the actual quotient-source API. The elementary finite-index identity is not substituted for quotient inheritance.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01",
+        "A02",
+        "A03",
+        "A06"
+      ],
+      "provider_module": "finite_packets",
+      "provider_claims": [
+        "C11",
+        "C12",
+        "C13"
+      ]
+    },
+    {
+      "id": "I22",
+      "name": "Actual quotient source properties",
+      "source_label": "thm:exact-sorts-source",
+      "statement": "For ACTUAL full exact E and H, quotient sorts retain homogeneity/actual orbitals and required source inheritance. Used before applying finite-base in X=Q/E.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01",
+        "A02",
+        "A03",
+        "A06"
+      ],
+      "provider_module": "raw_exact",
+      "provider_claims": [
+        "C24",
+        "C25",
+        "C28"
+      ]
+    }
+  ],
+  "definitions": [
+    {
+      "id": "D01",
+      "name": "Actual fine and coarse owners",
+      "statement": "An E-owner is an actual class [x]_E; H-owners are [x]_H, with E<=H. Retain full canonical actual quotient colours and mixed orbitals, including logical equality.",
+      "depends_on": [
+        "A01",
+        "A03"
+      ],
+      "notes": "N01",
+      "source": {
+        "file": "sections/rooted_mi/03_normalised_relative_mi.tex",
+        "anchor": "\\label{lem:acf-relative-mi-normal}"
+      }
+    },
+    {
+      "id": "D02",
+      "name": "Normalized one-direction geometry",
+      "statement": "F=F_Q may be nonexact; E is the UNIQUE minimal infinite FULL direction, not a selected subset of minima. Normalization implies thin F; absolute unary closure and R_E=F are derived at C24.",
+      "depends_on": [
+        "A03"
+      ],
+      "notes": "N01",
+      "source": {
+        "file": "sections/rooted_mi/03_normalised_relative_mi.tex",
+        "anchor": "\\label{lem:acf-relative-mi-normal}"
+      }
+    },
+    {
+      "id": "D03",
+      "name": "Displayed fine owner set and projection",
+      "statement": "For the local statements U is finite nonempty G-closed actual E-owners and N_U=pi_E^{-1}(U), with projection pi:U->B whenever coarse data are supplied. Local statements are quantified over any such displayed input; final construction produces U in C26-C29.",
+      "depends_on": [
+        "A08",
+        "D01"
+      ],
+      "notes": "N01",
+      "source": {
+        "file": "sections/orbit_safe_packet_completion.tex",
+        "anchor": "\\label{def:orbit-safe}"
+      }
+    },
+    {
+      "id": "D04",
+      "name": "Full compatible fine-owner group",
+      "statement": "Gamma_tilde consists of EVERY alpha in FULL Aut(U) inducing some gamma in FULL Aut(B) on ENTIRE U. Since U->B is onto, gamma is unique. This is not merely the group generated by selected request extensions.",
+      "depends_on": [
+        "D03"
+      ],
+      "notes": "N07",
+      "source": {
+        "file": "sections/rooted_mi/03_normalised_relative_mi.tex",
+        "anchor": "\\label{lem:acf-relative-mi-normal}"
+      }
+    },
+    {
+      "id": "D05",
+      "name": "Regular real packets and full matrices",
+      "statement": "A full packet Pi=F[x]={t_g x:g in G} has |G| DISTINCT real vertices, while its owner map g->gs may have nontrivial stabilizers. Full distinct-packet matrices are (g+h)a. H continues to denote the coarse equivalence, not a new stabilizer symbol.",
+      "depends_on": [
+        "A08"
+      ],
+      "notes": "N02",
+      "source": {
+        "file": "sections/orbit_safe_packet_completion.tex",
+        "anchor": "\\label{lem:orbit-safe-owner-helper}"
+      }
+    },
+    {
+      "id": "D06",
+      "name": "Orbit-safe palettes",
+      "statement": "For a in P_st, a in S^G_st iff g a in ORIGINAL S_Q for EVERY g in G. This is equivalent to safety of the ENTIRE G-by-G matrix, and g=0 gives S^G subset S_Q. Nonemptiness is derived, not assumed.",
+      "depends_on": [
+        "D05",
+        "A04"
+      ],
+      "notes": "N03",
+      "source": {
+        "file": "sections/orbit_safe_packet_completion.tex",
+        "anchor": "\\label{def:orbit-safe}"
+      }
+    },
+    {
+      "id": "D07",
+      "name": "Inflated absolute closed anchored span",
+      "statement": "Inflate every transversal vertex to a full real packet. Add helper T meeting all fine owners. The common base C=F[A] union T and factors F[L] union T,F[R] union T are complete original-Q structures and ABSOLUTELY closed via acl_Q=F[-]. Their images must be aligned on the WHOLE complete C before preserving actual owners is asserted.",
+      "depends_on": [
+        "D05",
+        "I07"
+      ],
+      "notes": "N03",
+      "source": {
+        "file": "sections/orbit_safe_packet_completion.tex",
+        "anchor": "\\label{lem:orbit-safe-strong}"
+      }
+    },
+    {
+      "id": "D08",
+      "name": "Compatible finite source request",
+      "statement": "(p,gamma), with p an ORIGINAL fine-colour partial automorphism of A0 and gamma in Gamma_B, is compatible iff pi_H p=gamma pi_H on its domain. Empty p retains EVERY prescribed gamma. Entire B is part of the joint-lifting input.",
+      "depends_on": [
+        "A07",
+        "D01"
+      ],
+      "notes": "N07",
+      "source": {
+        "file": "sections/rooted_mi/03_normalised_relative_mi.tex",
+        "anchor": "\\label{lem:acf-relative-mi-normal}"
+      }
+    },
+    {
+      "id": "D09",
+      "name": "Augmented orbit-safe family",
+      "statement": "For original strong exact H_st, K_st=H_st union {D intersect S^G_st: D in H_st and trace nonempty}. h_(S^G) is supplied by B026 only AFTER all-span S^G/covariance are proved. Its original-H restriction need not equal any separately chosen ordinary selector.",
+      "depends_on": [
+        "D06"
+      ],
+      "notes": "N04",
+      "source": {
+        "file": "sections/orbit_safe_packet_completion.tex",
+        "anchor": "\\label{lem:orbit-safe-all-row-interface}"
+      }
+    },
+    {
+      "id": "D10",
+      "name": "PARAMETRIC original-family selector axioms",
+      "statement": "For ANY displayed original-family h: nonempty conservative singleton outputs, typed converse, survivor heredity on original exact submenus, all three PC coordinates and pure-Gamma covariance. These are LOCAL per-instance input axioms, not a new assumed global selector or an extension of an existing B026 export signature. Actual exact algebra and endpoint switching are supplied by the displayed owner source.",
+      "depends_on": [
+        "D03"
+      ],
+      "notes": "N04",
+      "source": {
+        "file": "sections/orbit_safe_packet_completion.tex",
+        "anchor": "\\label{lem:orbit-safe-all-row-interface}"
+      }
+    },
+    {
+      "id": "D11",
+      "name": "Moved-type readings of the supplied h",
+      "statement": "For ANY h satisfying D10 set h^u_st(D)=u h_(us),t(uD). The moved first owner type is essential. Thin diagonal owner action lies in Gamma. Local C10-C12 prove switching/independent rectangles parametrically before using safe h.",
+      "depends_on": [
+        "D10",
+        "D05"
+      ],
+      "notes": "N04",
+      "source": {
+        "file": "sections/orbit_safe_packet_completion.tex",
+        "anchor": "\\label{lem:orbit-safe-readings}"
+      }
+    },
+    {
+      "id": "D12",
+      "name": "One fixed actual R07 packet world",
+      "statement": "Given ONE finite structural B0 and full-row universe W={(i,f,z):f in G^I,z in G}, ACTUAL packets are p=(i,f), not i. A supplied injective origin certificate permits one greatest original PC family D_pq and one decoder. Recorded structural pairs i!=j give singleton c_ij; same-index different-row packets are holes. Later map/correction choices cannot change this world. This local input is constructed at C33-C35.",
+      "depends_on": [
+        "D05"
+      ],
+      "notes": "N05",
+      "source": {
+        "file": "sections/orbit_safe_packet_completion.tex",
+        "anchor": "\\label{lem:orbit-safe-all-row-interface}"
+      }
+    },
+    {
+      "id": "D13",
+      "name": "Safe all-owner padding",
+      "statement": "Aplus is one finite complete full-packet source extending the ACTUAL old F[A0], meeting every fine U, with EVERY matrix involving any padding packet original-S-safe, including padding-to-original and padding-to-padding pairs. Realizations are aligned over old complete packets. For C19-C23, the FIXED B0 of D12 is precisely the chosen I15 faithful structural reservoir over THIS Aplus, and THIS Aplus is its literal zero-row source in that SAME fixed decoder.",
+      "depends_on": [
+        "A07",
+        "D03",
+        "D06"
+      ],
+      "notes": "N08",
+      "source": {
+        "file": "sections/rooted_mi/01_packet_zeroing_and_multipacket_root.tex",
+        "anchor": "\\label{lem:acf-multipacket-rooted-transport}"
+      }
+    },
+    {
+      "id": "D14",
+      "name": "Unsafe cliques and selected roots",
+      "statement": "A nonempty finite Z is unsafe if EVERY pair of distinct points has original colour outside S_Q; singleton Z is allowed. Multi-packet transport handles at least two ACTUAL packets only; selected-root correction and single-packet cases belong later to invariant trim.",
+      "depends_on": [
+        "A04",
+        "D05"
+      ],
+      "notes": "N06",
+      "source": {
+        "file": "sections/rooted_mi/01_packet_zeroing_and_multipacket_root.tex",
+        "anchor": "\\label{lem:acf-multipacket-rooted-transport}"
+      }
+    },
+    {
+      "id": "D15",
+      "name": "Underlying semilinear IMAGE group K",
+      "statement": "K is the image in vertex permutations of Aut_Gamma_tilde(D0), preserving every literal original fine colour. Before trimming all U occur in zero-row Aplus, so owner components are recoverable on K. K is not asserted to be FULL Aut(D0).",
+      "depends_on": [
+        "D04",
+        "D12"
+      ],
+      "notes": "N09",
+      "source": {
+        "file": "sections/rooted_mi/03_normalised_relative_mi.tex",
+        "anchor": "\\label{lem:acf-relative-mi-normal}"
+      }
+    },
+    {
+      "id": "D16",
+      "name": "Invariant full-packet trim",
+      "statement": "D=union_{beta in K} beta(F[A0]) inside the SINGLE actual D0. It preserves coarse owner support exactly B through K->Gamma_B and the given orbit condition, but may omit some fine U labels. Only the coarse owner action is required to remain exact after restriction.",
+      "depends_on": [
+        "D15",
+        "A07"
+      ],
+      "notes": "N09",
+      "source": {
+        "file": "sections/rooted_mi/03_normalised_relative_mi.tex",
+        "anchor": "\\label{lem:acf-relative-mi-normal}"
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "name": "Whole packet owner orbit and stabilizer multiplicities",
+      "scope": "finite_regular_action",
+      "statement": "For a real regular packet Pi=F[x] and origin owner s, its owner set is EXACTLY Gs and each t in Gs occurs |Stab_G(s)| times. Distinct group elements give distinct REAL points even when their owner tags agree.",
+      "depends_on": [
+        "D05"
+      ],
+      "notes": "N02",
+      "source_labels": [
+        "lem:orbit-safe-owner-helper"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C02",
+      "name": "One full packet per owner orbit covers U",
+      "scope": "finite_regular_action",
+      "statement": "Choose one actual full packet per G-orbit of U. Distinct owner orbits cannot be the owner sets of the same packet; their finite complete induced union meets EVERY named owner. No one-point-per-owner section or free owner action is constructed.",
+      "depends_on": [
+        "C01",
+        "D03"
+      ],
+      "notes": "N02",
+      "source_labels": [
+        "lem:orbit-safe-owner-helper"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C03",
+      "name": "Helper disjoint from the prescribed actual old set",
+      "scope": "actual_closed_source",
+      "statement": "For finite full-packet closed V in N_U, apply named-owner closed SAP to V and the C02 helper over the empty closed base. Realize the resulting actual age structure OVER V by named-owner homogeneity; its helper T is packetwise disjoint from this prescribed V with literal owners retained.",
+      "depends_on": [
+        "C02",
+        "I10",
+        "I09"
+      ],
+      "notes": "N02",
+      "source_labels": [
+        "lem:orbit-safe-owner-helper"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C04",
+      "name": "Preplace an arbitrary inflated typed span strongly",
+      "scope": "absolute_closed_S",
+      "statement": "For ANY finite complete transversal span A->L,R, inflate whole packets and align its complete common inflation. I10 realizes the inflated factors strongly over F[A] in N_U with no extra overlap; retain the prescribed actual old copy by I09. Their induced union V is full-packet closed. No S assumption is used in this preliminary placement.",
+      "depends_on": [
+        "D07",
+        "I10",
+        "I09",
+        "I11"
+      ],
+      "notes": "N03",
+      "source_labels": [
+        "lem:orbit-safe-strong"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C05",
+      "name": "All-owner anchored factors are ABSOLUTELY closed",
+      "scope": "absolute_closed_S",
+      "statement": "Adjoin the C03 helper T disjoint from V. In the complete actual V union T, C=F[A] union T and factors Lprime=F[L] union T,Rprime=F[R] union T meet EXACTLY in C. I07 makes them absolutely acl_Q-closed. Relative acl_N-closedness alone is not substituted for the original closed-S premise.",
+      "depends_on": [
+        "C04",
+        "C03",
+        "I07"
+      ],
+      "notes": "N03",
+      "source_labels": [
+        "lem:orbit-safe-strong"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C06",
+      "name": "Original-language S amalgam aligned on the WHOLE base",
+      "scope": "absolute_closed_S",
+      "statement": "Apply A04 to Lprime<-C->Rprime. Embed the finite amalgam in Q, then use ORIGINAL Q homogeneity to align its COMPLETE C-image with the prescribed actual C. Only now do fixed helper anchors in each actual E-owner force every factor point to retain its original owner by preserved E-incidences. Preserve every old fine colour and all strong/S conclusions.",
+      "depends_on": [
+        "C05",
+        "A04",
+        "A01"
+      ],
+      "notes": "N03",
+      "source_labels": [
+        "lem:orbit-safe-strong"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C07",
+      "name": "Whole real packets yield all-span strong S^G and nonemptiness",
+      "scope": "absolute_closed_S",
+      "statement": "A fine-colour embedding of a complete F-packet preserves its thin coordinates and has image the WHOLE actual F-class. Thus strong factor embeddings cannot put two opposite off-base packets into one F-class. Every new cross t_g x,t_h y is an off-base pair and has colour in S_Q; (g+h)col(x,y) in S_Q for all g,h proves the origin edge lies in S^G. This gives strong S^G-amalgamation of EVERY finite complete typed span, and two singleton factors over empty base derive each S^G_st NONEMPTY.",
+      "depends_on": [
+        "C06",
+        "I06",
+        "I11",
+        "D06"
+      ],
+      "notes": "N03",
+      "source_labels": [
+        "lem:orbit-safe-strong"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C08",
+      "name": "Orbit-safe translation, converse and pure-owner laws",
+      "scope": "absolute_closed_S",
+      "statement": "For every g, g S^G_st=S^G_(gs),t=S^G_s,(gt) with moved tags; a in S^G iff all thin translates are safe. Typed converse and every genuine pure owner Gamma commute with the action/fix old names, so preserve S^G. This does NOT assume S_Q itself unilateral-invariant.",
+      "depends_on": [
+        "D06",
+        "I06",
+        "A08"
+      ],
+      "notes": "N03",
+      "source_labels": [
+        "lem:orbit-safe-strong"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C09",
+      "name": "Instantiate one augmented safe selector and restrict it",
+      "scope": "fixed_safe_decoder",
+      "statement": "C07/C08 discharge B026's all-span/covariance premises for S^G. I12 produces h_(S^G) on augmented K. Restriction to ORIGINAL H has EXACTLY D10 axioms, with singleton outputs in original H and safety whenever D meets S^G. It is not equated with B026's C24 selector.",
+      "depends_on": [
+        "C07",
+        "C08",
+        "I12",
+        "D09"
+      ],
+      "notes": "N04",
+      "source_labels": [
+        "lem:orbit-safe-all-row-interface"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C10",
+      "name": "LOCAL parametric moved-reading laws",
+      "scope": "parametric_finite_readings",
+      "statement": "For ANY supplied h satisfying D10, define D11. Actual endpoint transport and h axioms prove conservativity, individual survivor heredity, left/right reading equality via diagonal owner covariance, typed converse, pure-Gamma covariance, and h^(u+v)_(vs),t(vD)=v h^u_st(D). This is a local proof extraction, not silent instantiation of a theorem about a particular h.",
+      "depends_on": [
+        "D10",
+        "D11",
+        "I13"
+      ],
+      "notes": "N04",
+      "source_labels": [
+        "lem:orbit-safe-all-row-interface"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C11",
+      "name": "LOCAL parametric bilateral support",
+      "scope": "parametric_finite_readings",
+      "statement": "For original exact D,A,P with D subset P*bar A and A subset bar D*P, Pprime=P intersect(D*A) is nonempty exact and PC(D,A,Pprime). Atomic Peirce, supported duplication and NONEMPTY-result distribution check both other coordinates. Independently switch its two outer endpoints, apply the supplied h, and undo to get P intersect(h^g(D)*h^k(A)) nonempty for every g,k. Only D10 axioms of h are used.",
+      "depends_on": [
+        "C10",
+        "I13"
+      ],
+      "notes": "N04",
+      "source_labels": [
+        "lem:orbit-safe-all-row-interface"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C12",
+      "name": "LOCAL parametric fully independent rectangles",
+      "scope": "parametric_finite_readings",
+      "statement": "For original PC(D,A,P), independently fix a=h^g(D),b=h^k(A),c=h^ell(P). Two explicit Peirce rotations of C11 retain a,c and b,c. Original exact restrictions Dprime=D intersect({c}*bar A), Aprime=A intersect(bar D*{c}) contain a,b; individual heredity preserves them and both c-support conditions hold. Apply C11 with {c}: T(a,b,c), with NO relation g+k=ell. Thus any D10 selector, including h_(S^G)|H, supplies the B024 reading contract.",
+      "depends_on": [
+        "C11",
+        "C10"
+      ],
+      "notes": "N04",
+      "source_labels": [
+        "lem:orbit-safe-all-row-interface"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C13",
+      "name": "All safe moving readings preserve S^G",
+      "scope": "fixed_safe_decoder",
+      "statement": "For original exact D meeting S^G and EVERY u, uD meets the safe palette at the MOVED first type. Apply the safe selector from C09 there, then undo u; C08 puts h^u_st(D) back in S^G_st subset S_Q. This pointwise statement needs no reservoir and uses the locally extracted C10-C12 for this specific safe h.",
+      "depends_on": [
+        "C09",
+        "C08",
+        "C10"
+      ],
+      "notes": "N04",
+      "source_labels": [
+        "lem:orbit-safe-readings"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C14",
+      "name": "One safe certificate and one terminal PC family on actual packets",
+      "scope": "fixed_safe_decoder",
+      "statement": "Given the ONE origin certificate in D12, use I14 with C07 to obtain a safe same-vertex certificate on all original holes. Its atoms survive EVERY original-PC update. Hence all terminal D_pq are nonempty ORIGINAL exact, and EVERY unrecorded distinct actual pair meets S^G, including p=(i,f),q=(i,k) with f!=k. Fix this greatest family ONCE before choosing maps/corrections.",
+      "depends_on": [
+        "D12",
+        "C07",
+        "I14"
+      ],
+      "notes": "N05",
+      "source_labels": [
+        "lem:orbit-safe-all-row-interface"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C15",
+      "name": "Every recorded structural matrix stays literal",
+      "scope": "fixed_safe_decoder",
+      "statement": "For recorded structural {i,j}, all actual corresponding D_pq remain the ORIGINAL singleton {c_ij}, since a nonempty refinement of a singleton equals it. Every transported conservative reading at z,w returns (z+w)c_ij independently of its parameter. No original singleton is recoloured.",
+      "depends_on": [
+        "C14",
+        "C10"
+      ],
+      "notes": "N05",
+      "source_labels": [
+        "lem:orbit-safe-all-row-interface"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C16",
+      "name": "All actual hole matrices are safe for all rows and shifts",
+      "scope": "fixed_safe_decoder",
+      "statement": "For every unrecorded distinct actual p,q and all z,w,u, (z+w)D_pq meets S^G at tags (z beta_i,w beta_j). C13 gives a=h^u at THESE separately moved types in S^G; every further (g+h)a lies in ORIGINAL S_Q. This includes equal structural indices/different actual rows and all independently chosen parameters.",
+      "depends_on": [
+        "C14",
+        "C13",
+        "C08"
+      ],
+      "notes": "N05",
+      "source_labels": [
+        "lem:orbit-safe-all-row-interface"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C17",
+      "name": "One legal fixed decoder with universal structural lifts",
+      "scope": "fixed_safe_decoder",
+      "statement": "Apply I16 with the LOCAL parametric reading proof C10-C12 instantiated by C09 and the fixed C14 family. The same universe/menus/colouring is legal, retains C15 matrices, satisfies C16 safety, and EVERY structural map with EVERY legal correction matrix preserves its original fine colours. No map is required to preserve arbitrary completion-certificate colours.",
+      "depends_on": [
+        "C09",
+        "C12",
+        "C14",
+        "C15",
+        "C16",
+        "I16"
+      ],
+      "notes": "N05",
+      "source_labels": [
+        "lem:orbit-safe-all-row-interface"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C18",
+      "name": "Safe moving readings preserve every missing full matrix",
+      "scope": "fixed_safe_decoder",
+      "statement": "C13 proves pointwise safe readings independently of a reservoir. For any fixed full-row reservoir with the given injective origin certificate, C14-C17 give safety of every originally missing actual matrix for all rows/parameters/endpoint shifts while every structural extension/legal correction acts on this SAME decoder.",
+      "depends_on": [
+        "C13",
+        "C17"
+      ],
+      "notes": "N05",
+      "source_labels": [
+        "lem:orbit-safe-readings"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C19",
+      "name": "Unsafe multi-packet clique has one row per recorded index",
+      "scope": "unsafe_clique_transport",
+      "statement": "If an all-non-S clique Z meets >=2 actual packets, C16 forbids two distinct rows over one structural index and forbids any unrecorded pair of touched structural indices. Thus each touched i has ONE row f_i and the touched index set J is a recorded clique with >=2 indices.",
+      "depends_on": [
+        "D14",
+        "C16"
+      ],
+      "notes": "N06",
+      "source_labels": [
+        "lem:acf-multipacket-rooted-transport"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C20",
+      "name": "Whole touched structural packet clique is irreducible",
+      "scope": "unsafe_clique_transport",
+      "statement": "Take every FULL structural packet over J, including all complete recorded matrices. Unary closure keeps each packet in one side of a free split and recorded edges join every pair, so the WHOLE closed substructure is irreducible. There is no locality/size bound on J or Z in this faithfulness step.",
+      "depends_on": [
+        "C19",
+        "D12"
+      ],
+      "notes": "N06",
+      "source_labels": [
+        "lem:acf-multipacket-rooted-transport"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C21",
+      "name": "One faithful structural map enters the padded source",
+      "scope": "unsafe_clique_transport",
+      "statement": "The fixed B0 of D12 is the chosen I15 faithful reservoir over THIS D13 Aplus, whose literal zero rows lie in THIS decoder. Its irreducible faithfulness supplies ONE structural Gamma automorphism s carrying the whole C20 substructure into that Aplus. Its actual regular real packet coordinates uniquely give s(i,z)=(sigma i,z+b_i); do not recover b_i from owner labels. This uses the existing reservoir contract, not another HKN application.",
+      "depends_on": [
+        "C20",
+        "I15",
+        "D13"
+      ],
+      "notes": "N06",
+      "source_labels": [
+        "lem:acf-multipacket-rooted-transport"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C22",
+      "name": "One legal full-row correction transports all selected packets",
+      "scope": "unsafe_clique_transport",
+      "statement": "Apply I17 to s and rows f_i on recorded clique J. One legal C has C_ij=f_i(j)+b_i for each selected i and ALL j, zeroing all selected rows at once; recorded/diagonal entries have no symmetry constraints. I16's universal lift gives one automorphism alpha_C of THIS decoder, taking every touched actual packet into Aplus zero rows. It need not extend an unrelated source request.",
+      "depends_on": [
+        "C21",
+        "I17",
+        "C17"
+      ],
+      "notes": "N06",
+      "source_labels": [
+        "lem:acf-multipacket-rooted-transport"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C23",
+      "name": "Safety excludes every padding packet after transport",
+      "scope": "unsafe_clique_transport",
+      "statement": "alpha_C preserves fine colours and full-packet bijections, so its image Z is still unsafe and meets >=2 actual packets. Any point in padding would have a safe edge to another touched packet by D13, contradiction. Hence alpha_C(Z) subset F[A0]. No selected-root or single-packet conclusion is asserted here.",
+      "depends_on": [
+        "C22",
+        "D13"
+      ],
+      "notes": "N06",
+      "source_labels": [
+        "lem:acf-multipacket-rooted-transport"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C24",
+      "name": "Derive the residual/absolute-closure/thin inputs",
+      "scope": "normalized_source_geometry",
+      "statement": "I21 proves E actual exact. If R_E!=F, I08 gives infinite exact C with E meet C=Id; finite full invariant lattice forces C to contain a minimal infinite direction, hence unique E, contradiction. Thus R_E=F. I07 gives ABSOLUTE acl_Q=F[-]; I05/I06 give the actual regular thin G. No EPPA or S is used.",
+      "depends_on": [
+        "A03",
+        "I21",
+        "I08",
+        "I07",
+        "I05",
+        "I06"
+      ],
+      "notes": "N07",
+      "source_labels": [
+        "lem:acf-relative-mi-normal"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C25",
+      "name": "Actual ambient lifts of the entire finite request list",
+      "scope": "normalized_source_geometry",
+      "statement": "Let U0=pi_E(F[A0]). For EACH compatible (p,gamma), including empty p, I02 checks p union gamma on dom(p) and ENTIRE B as a genuine real/H-owner partial isomorphism. I01 gives one original lift, whose F-domain saturation induces a partial E-owner map on U0 compatible with gamma. No ordinary EPPA of Q or coherent choices are used.",
+      "depends_on": [
+        "D08",
+        "C24",
+        "I01",
+        "I02"
+      ],
+      "notes": "N07",
+      "source_labels": [
+        "lem:acf-relative-mi-normal"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C26",
+      "name": "Finite-base EPPA is applied only to X=Q/E",
+      "scope": "lower_quotient_EPPA",
+      "statement": "Use I22 actual homogeneous quotient X=Q/E->Q/H and the induced ambient lifts from C25. I03 with A05 ordinary EPPA of Age(X) yields ONE finite induced U1 containing U0, projecting onto ENTIRE B, and selected extensions alpha_(p,gamma) with their exact coarse gamma. Retain B's supplied EPPA/orbit/closure clauses; do not replace this by EPPA of Q.",
+      "depends_on": [
+        "C25",
+        "I22",
+        "I03",
+        "A05",
+        "A07"
+      ],
+      "notes": "N07",
+      "source_labels": [
+        "lem:acf-relative-mi-normal"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C27",
+      "name": "G-saturation stays exactly over the coarse B",
+      "scope": "lower_quotient_EPPA",
+      "statement": "Put U=G[U1]. I04 with kernel H places (F join H)/H below FULL F_(Q/H), so the given finite-class closure of B keeps every G-translated H-owner inside B. U is finite G-invariant and remains onto B since U1 was. This uses full quotient invariance, not just invariance under the induced original group.",
+      "depends_on": [
+        "C26",
+        "I04",
+        "I06",
+        "A07"
+      ],
+      "notes": "N07",
+      "source_labels": [
+        "lem:acf-relative-mi-normal"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C28",
+      "name": "Selected U1 extensions lift across G-saturation",
+      "scope": "lower_quotient_EPPA",
+      "statement": "For each selected alpha with prescribed coarse gamma, I02 checks alpha union gamma on ENTIRE U1 union B in the actual E/H sorts. I01 lifts it in ORIGINAL Q. Original centrality I06 then makes its restriction an automorphism of U=G[U1], retaining alpha and exact gamma. No centrality in an arbitrary quotient Aut group is assumed.",
+      "depends_on": [
+        "C27",
+        "I01",
+        "I02",
+        "I06"
+      ],
+      "notes": "N07",
+      "source_labels": [
+        "lem:acf-relative-mi-normal"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C29",
+      "name": "FULL Gamma_tilde is onto and commutes with G",
+      "scope": "lower_quotient_EPPA",
+      "statement": "Define D04 on entire U. Onto U->B makes its coarse component unique and a homomorphism. C28 supplies lifts of every request; empty requests for EVERY gamma make Gamma_tilde->Gamma_B onto. For EVERY alpha in FULL Gamma_tilde, lift alpha union gamma on ENTIRE U union B by I01/I02; original centrality proves alpha(gu)=g alpha(u). The actual diagonal thin owners lie in Gamma_tilde. No section or faithful owner action is assumed.",
+      "depends_on": [
+        "C28",
+        "I01",
+        "I02",
+        "I06",
+        "D04"
+      ],
+      "notes": "N07",
+      "source_labels": [
+        "lem:acf-relative-mi-normal"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C30",
+      "name": "Construct the actual finite-owner source BEFORE local safe inputs",
+      "scope": "lower_quotient_EPPA",
+      "statement": "C24/C27/C29 and B025 I09-I11 construct N_U, its absolute/named unary closure, owner homogeneity, closed full-packet SAP and actual primitive triangle-defined transversal/inflation, with the WHOLE Gamma_tilde action commuting with thin G. These establish EVERY displayed source condition of A08 BEFORE any local orbit-safe theorem is instantiated. No SG/selector or ordinary EPPA of Q is used to establish this source context.",
+      "depends_on": [
+        "C24",
+        "C27",
+        "C29",
+        "I09",
+        "I10",
+        "I11"
+      ],
+      "notes": "N08",
+      "source_labels": [
+        "lem:acf-relative-mi-normal"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C31",
+      "name": "Safe padding realizes all fine U over the old real set",
+      "scope": "normalized_relative_MI",
+      "statement": "In the actual context already constructed by C30, instantiate C07/C08 with the GIVEN original absolute strong closed-S A04 to obtain all-span S^G. Starting with actual F[A0] origins, add each missing fine owner by strong S^G amalgamation with a fresh singleton over empty base, inflate to its entire real packet, and align the old COMPLETE actual factor by named-owner homogeneity. Repeat at most |U| times. Obtain one actual Aplus containing F[A0], realizing ALL U and with all padding-to-original/padding-to-padding matrices original-S-safe.",
+      "depends_on": [
+        "C30",
+        "C07",
+        "C08",
+        "I11",
+        "I09",
+        "D13"
+      ],
+      "notes": "N08",
+      "source_labels": [
+        "lem:acf-relative-mi-normal"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C32",
+      "name": "Re-lift p with its ENTIRE selected fine-owner component",
+      "scope": "normalized_relative_MI",
+      "statement": "For each original request choose its selected gamma_tilde from C28. It extends the induced E-map of F[dom p], so I02/01 lift p union gamma_tilde on dom(p) union ENTIRE U. Restrict to F[dom p] to obtain a full-packet partial map of Aplus with range in F[A0] and EXACT language component gamma_tilde. An arbitrary independent extension of p is insufficient.",
+      "depends_on": [
+        "C31",
+        "C28",
+        "I01",
+        "I02"
+      ],
+      "notes": "N08",
+      "source_labels": [
+        "lem:acf-relative-mi-normal"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C33",
+      "name": "One faithful structural reservoir for ALL requests",
+      "scope": "normalized_relative_MI",
+      "statement": "Apply I15 to this FIXED Aplus, C32 finite requests and EVERY empty Gamma_tilde request. Obtain one B0, all structural extensions, complete-or-missing matrices and a potentially nonequivariant injective completion fixing Aplus. Its holes remain holes and its published-HKN/local-adapter qualification is retained.",
+      "depends_on": [
+        "C32",
+        "C29",
+        "I15"
+      ],
+      "notes": "N08",
+      "source_labels": [
+        "lem:acf-relative-mi-normal"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C34",
+      "name": "One complete full-row decoder before request-specific choices",
+      "scope": "normalized_relative_MI",
+      "statement": "Use I16's W# completion argument and B025 packet collision provider already in that proof to obtain ONE injective origin certificate fixing zero-row Aplus. Run greatest PC ONCE on actual (i,f) packets, choose C09 safe selector/readings ONCE, and apply C17. The resulting D0 universe, menus and colours are fixed before ANY source- or clique-specific correction matrix.",
+      "depends_on": [
+        "C33",
+        "C09",
+        "C17",
+        "I16"
+      ],
+      "notes": "N08",
+      "source_labels": [
+        "lem:acf-relative-mi-normal"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C35",
+      "name": "Actual N_U realization aligned over complete Aplus",
+      "scope": "normalized_relative_MI",
+      "statement": "I16 proves legal three-/two-packet triangles and full thin matrices. I11 C34 supplies ACTUAL triangle-defined origin age; its C44-C46 inflation realizes the WHOLE D0 in N_U. I09 named-owner homogeneity aligns its complete zero-row Aplus with the prescribed actual Aplus. Transport all automorphisms through this ONE alignment. D0 is now an actual finite induced structure over B realizing ALL fine U.",
+      "depends_on": [
+        "C34",
+        "I11",
+        "I09"
+      ],
+      "notes": "N08",
+      "source_labels": [
+        "lem:acf-relative-mi-normal"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C36",
+      "name": "Semilinear group identifies with its IMAGE K, onto all owners",
+      "scope": "normalized_relative_MI",
+      "statement": "Full fine-owner support in zero-row Aplus permits I19: semilinear group is isomorphic to IMAGE K<=Aut(D0), with recoverable fine component. ALL empty requests in C33 and universal lifts give K->Gamma_tilde onto, hence K->Gamma_B onto by C29. This is not an isomorphism with FULL Aut(D0).",
+      "depends_on": [
+        "C35",
+        "I19",
+        "C29",
+        "C33",
+        "D15"
+      ],
+      "notes": "N09",
+      "source_labels": [
+        "lem:acf-relative-mi-normal"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C37",
+      "name": "The same decoder contains the GLOBAL thin G",
+      "scope": "normalized_relative_MI",
+      "statement": "I20 supplies GLOBAL thin translations as automorphisms of this fixed D0, acting regularly within each actual F-packet and preserving all packet sets. Hence G<=K. No independent packet-by-packet permutations or owner-faithfulness premise is added.",
+      "depends_on": [
+        "C35",
+        "I20",
+        "D15"
+      ],
+      "notes": "N09",
+      "source_labels": [
+        "lem:acf-relative-mi-normal"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C38",
+      "name": "Invariant trim retains exactly all coarse B owners",
+      "scope": "normalized_relative_MI",
+      "statement": "Apply I18 to K and actual F[A0]: D=union_beta beta(F[A0]) is finite induced full-F-closed, contains F[A0], and is K-invariant. By C36 and Gamma_B*pi_H(A0)=B, pi_H(D)=B. Some fine U labels may disappear; only coarse B-fullness is asserted after trimming.",
+      "depends_on": [
+        "C36",
+        "C37",
+        "I18",
+        "D16",
+        "A07"
+      ],
+      "notes": "N09",
+      "source_labels": [
+        "lem:acf-relative-mi-normal"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C39",
+      "name": "Every source request restricts with its exact coarse component",
+      "scope": "normalized_relative_MI",
+      "statement": "I16 zero-row corrections extend every structural request from C33 on the SAME D0, with exact fine gamma_tilde and coarse gamma. K-invariance makes them restrict to D, still extending p. Because pi_H(D)=B, their coarse component on ALL B remains exactly prescribed gamma, including singleton and empty-real requests.",
+      "depends_on": [
+        "C38",
+        "C32",
+        "C33",
+        "I16"
+      ],
+      "notes": "N09",
+      "source_labels": [
+        "lem:acf-relative-mi-normal"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C40",
+      "name": "Single-packet selected-root transport",
+      "scope": "normalized_relative_MI",
+      "statement": "For every nonempty Z subset D contained in one actual F-packet and EVERY z in Z, I18 uses a K orbit representative in F[A0] and then ONE global thin translation to move Z into F[A0] and z into A0. Singleton Z is included. The owner component may be chosen.",
+      "depends_on": [
+        "C38",
+        "I18",
+        "C37"
+      ],
+      "notes": "N09",
+      "source_labels": [
+        "lem:acf-relative-mi-normal"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C41",
+      "name": "Multi-packet unsafe transport then one global root correction",
+      "scope": "normalized_relative_MI",
+      "statement": "For unsafe Z subset D meeting >=2 actual packets, C23 supplies delta in K taking the whole clique into F[A0]. I18 then chooses ONE global g in G carrying delta(z) to a selected A0 point in its packet; g preserves the ENTIRE union F[A0]. Thus (g delta)|D sends Z into F[A0] and z into A0. This is independent of any separately prescribed source-request gamma.",
+      "depends_on": [
+        "C38",
+        "C23",
+        "C37",
+        "I18"
+      ],
+      "notes": "N09",
+      "source_labels": [
+        "lem:acf-relative-mi-normal"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C42",
+      "name": "One normalized relative rooted MI witness",
+      "scope": "normalized_relative_MI",
+      "statement": "Under principal A01-A07, constructions C24-C35 instantiate ALL displayed local A08/D12/D13 inputs. The ONE finite induced D subset Q from C38 is full-F-closed, contains F[A0], projects onto EXACTLY B, extends EVERY compatible (p,gamma) with exact coarse component by C39, and has whole-unsafe-clique/selected-root transport by C40/C41. Forget rows, translations and auxiliary fine-owner predicates only after establishing original fine-colour automorphisms. No ordinary EPPA of Q, coherence, independent packet actions, group section or global rank theorem is asserted.",
+      "depends_on": [
+        "C38",
+        "C39",
+        "C40",
+        "C41"
+      ],
+      "notes": "N09",
+      "source_labels": [
+        "lem:acf-relative-mi-normal"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    }
+  ],
+  "source_result_files": [
+    "sections/orbit_safe_packet_completion.tex",
+    "sections/rooted_mi/03_normalised_relative_mi.tex"
+  ],
+  "additional_result_exports": [
+    "lem:acf-multipacket-rooted-transport"
+  ],
+  "exports": [
+    {
+      "source_label": "lem:orbit-safe-owner-helper",
+      "claims": [
+        "C01",
+        "C02",
+        "C03"
+      ]
+    },
+    {
+      "source_label": "lem:orbit-safe-strong",
+      "claims": [
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08"
+      ]
+    },
+    {
+      "source_label": "lem:orbit-safe-all-row-interface",
+      "claims": [
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C14",
+        "C15",
+        "C16",
+        "C17"
+      ]
+    },
+    {
+      "source_label": "lem:orbit-safe-readings",
+      "claims": [
+        "C13",
+        "C18"
+      ]
+    },
+    {
+      "source_label": "lem:acf-multipacket-rooted-transport",
+      "claims": [
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23"
+      ]
+    },
+    {
+      "source_label": "lem:acf-relative-mi-normal",
+      "claims": [
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40",
+        "C41",
+        "C42"
+      ],
+      "principal_contract": {
+        "assumptions": [
+          "A01",
+          "A02",
+          "A03",
+          "A04",
+          "A05",
+          "A06",
+          "A07"
+        ],
+        "local_context_discharge": "A08 via local_context_instantiations and C24-C35",
+        "age_EPPA_premise": "ONLY Age(Q/E), A05",
+        "retained_finite_owner_witness_premise": "A07 includes the supplied finite B EPPA witness/orbit/F-coarse closure",
+        "output_claim": "C42"
+      }
+    }
+  ],
+  "auxiliary_exports": [
+    {
+      "source_label": "eq:orbit-safe-owner-helper",
+      "source": {
+        "file": "sections/orbit_safe_packet_completion.tex",
+        "anchor": "\\label{eq:orbit-safe-owner-helper}"
+      },
+      "claims": [
+        "C01"
+      ]
+    }
+  ],
+  "source_files": [
+    {
+      "file": "sections/exact_eppa_providers.tex",
+      "git_blob": "16445039b5b7bc8828657a677231cf6e0acbc6e2"
+    },
+    {
+      "file": "sections/exact_foundations/02_exact_quotient_orbital_geometry.tex",
+      "git_blob": "d462f2bfffcd67c1fa712ac516972ab18e073d44"
+    },
+    {
+      "file": "sections/exact_foundations/03_joint_exact_sort_lifting.tex",
+      "git_blob": "394e0db063a476c5c069384b3d3fa2ffd3c7471d"
+    },
+    {
+      "file": "sections/finite_packets.tex",
+      "git_blob": "dd3e608f03e7c5b1b1854a45de462859f8355143"
+    },
+    {
+      "file": "sections/full_rows_pc_decoder.tex",
+      "git_blob": "4142c3912669eda40fb5929be81fd9f9d8c6aa4d"
+    },
+    {
+      "file": "sections/global_correspondence.tex",
+      "git_blob": "e18ca9d9d14f275a660a6358c45394891a2f46c0"
+    },
+    {
+      "file": "sections/hkn_packet_reservoir.tex",
+      "git_blob": "cdef46b3ee64bcac4513f5406a20593b758dc58d"
+    },
+    {
+      "file": "sections/orbit_safe_packet_completion.tex",
+      "git_blob": "0163b059f8b19db374c45398e419e62cb823cc8e"
+    },
+    {
+      "file": "sections/owner_covariant_readings.tex",
+      "git_blob": "486cc2bdb93734c3f255e7be260d47f4e7986d49"
+    },
+    {
+      "file": "sections/owner_master/01_ambient_owner_provider.tex",
+      "git_blob": "1b8b729d929d91d1dc7fa006f261d685be2b82b2"
+    },
+    {
+      "file": "sections/owner_transversal_direct.tex",
+      "git_blob": "3c0effbc63c31000bbe3d88be59616b67efd7364"
+    },
+    {
+      "file": "sections/real_hull/06_minimal_infinite_directions_acl.tex",
+      "git_blob": "4c01beca2f60acfa2d942714525173889bc5804f"
+    },
+    {
+      "file": "sections/rooted_mi/01_packet_zeroing_and_multipacket_root.tex",
+      "git_blob": "d62415398565746e882f3cfc5b6c1926b5cc7d54"
+    },
+    {
+      "file": "sections/rooted_mi/02_packet_orbit_trim_and_owner_language.tex",
+      "git_blob": "df7031076b312a6bd80954e319f3ce45a916550b"
+    },
+    {
+      "file": "sections/rooted_mi/03_normalised_relative_mi.tex",
+      "git_blob": "55c96a4ba0039c6b538886ab68a26a92bc6a4aaa"
+    },
+    {
+      "file": "sections/safe_trace_selector.tex",
+      "git_blob": "e7cb7a29e244dea361d6a6a7198fec35c5e9992b"
+    }
+  ],
+  "dependency_firewalls": [
+    {
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24"
+      ],
+      "forbid": [
+        "A05",
+        "I03",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40",
+        "C41",
+        "C42"
+      ]
+    },
+    {
+      "claims": [
+        "C10",
+        "C11",
+        "C12"
+      ],
+      "forbid": [
+        "A04",
+        "C07",
+        "C09",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18"
+      ]
+    },
+    {
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C24"
+      ],
+      "forbid": [
+        "A04",
+        "I12",
+        "I13",
+        "I14",
+        "I15",
+        "I16",
+        "I17",
+        "I18",
+        "I19",
+        "I20"
+      ]
+    },
+    {
+      "claims": [
+        "C24",
+        "C25",
+        "C27",
+        "C28",
+        "C29"
+      ],
+      "forbid": [
+        "A04",
+        "I12",
+        "I13",
+        "I14",
+        "I15",
+        "I16",
+        "I17",
+        "I18",
+        "I19",
+        "I20"
+      ]
+    },
+    {
+      "claims": [
+        "C30"
+      ],
+      "forbid": [
+        "A04",
+        "C07",
+        "C08",
+        "C09",
+        "C13",
+        "C17",
+        "I12",
+        "I13",
+        "I14",
+        "I15",
+        "I16"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "T01",
+      "name": "Regular owner helpers and anchored orbit-safe amalgamation",
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement the exact quantified local claims, import actual prepared providers and discharge every local instance. Preserve absolute anchored-base alignment, parametric h extraction, ONE decoder before all corrections, and ONLY lower-quotient ordinary EPPA. Regular owner helpers and anchored orbit-safe amalgamation."
+    },
+    {
+      "id": "T02",
+      "name": "Parametric safe reading extraction",
+      "claims": [
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13"
+      ],
+      "depends_on": [
+        "T01"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement the exact quantified local claims, import actual prepared providers and discharge every local instance. Preserve absolute anchored-base alignment, parametric h extraction, ONE decoder before all corrections, and ONLY lower-quotient ordinary EPPA. Parametric safe reading extraction."
+    },
+    {
+      "id": "T03",
+      "name": "One fixed all-row safe decoder",
+      "claims": [
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18"
+      ],
+      "depends_on": [
+        "T01",
+        "T02"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement the exact quantified local claims, import actual prepared providers and discharge every local instance. Preserve absolute anchored-base alignment, parametric h extraction, ONE decoder before all corrections, and ONLY lower-quotient ordinary EPPA. One fixed all-row safe decoder."
+    },
+    {
+      "id": "T04",
+      "name": "Unsafe multipacket clique transport",
+      "claims": [
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23"
+      ],
+      "depends_on": [
+        "T03"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement the exact quantified local claims, import actual prepared providers and discharge every local instance. Preserve absolute anchored-base alignment, parametric h extraction, ONE decoder before all corrections, and ONLY lower-quotient ordinary EPPA. Unsafe multipacket clique transport."
+    },
+    {
+      "id": "T05",
+      "name": "Normalized fine-owner provider",
+      "claims": [
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement the exact quantified local claims, import actual prepared providers and discharge every local instance. Preserve absolute anchored-base alignment, parametric h extraction, ONE decoder before all corrections, and ONLY lower-quotient ordinary EPPA. Normalized fine-owner provider."
+    },
+    {
+      "id": "T06",
+      "name": "Padding and one actual fixed decoded structure",
+      "claims": [
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35"
+      ],
+      "depends_on": [
+        "T01",
+        "T02",
+        "T03",
+        "T05"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement the exact quantified local claims, import actual prepared providers and discharge every local instance. Preserve absolute anchored-base alignment, parametric h extraction, ONE decoder before all corrections, and ONLY lower-quotient ordinary EPPA. Padding and one actual fixed decoded structure."
+    },
+    {
+      "id": "T07",
+      "name": "Image-group trim, exact coarse extensions and selected roots",
+      "claims": [
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40",
+        "C41",
+        "C42"
+      ],
+      "depends_on": [
+        "T04",
+        "T06"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement the exact quantified local claims, import actual prepared providers and discharge every local instance. Preserve absolute anchored-base alignment, parametric h extraction, ONE decoder before all corrections, and ONLY lower-quotient ordinary EPPA. Image-group trim, exact coarse extensions and selected roots."
+    }
+  ],
+  "overview_mermaid": [
+    "flowchart TD",
+    "  A[\"Absolute closed S and packet helper\"] --> S[\"All-span orbit-safe palettes\"]",
+    "  S --> H[\"Safe selector and parametric readings\"]",
+    "  H --> W[\"One fixed full-row decoder\"]",
+    "  B[\"Fine quotient EPPA and joint lifts\"] --> U[\"Full compatible fine-owner group\"]",
+    "  U --> W",
+    "  W --> T[\"Unsafe clique transport\"]",
+    "  T --> D[\"Invariant trim and selected root\"]"
+  ],
+  "overview_notes": [
+    "Local constructor proof only. Principal normalized-source inputs build the displayed fine-owner context before applying the standalone safe/interface lemmas. B027 HKN existence is reused with its named external theorems; the remaining finite exact/rank/P-O-U assembly is outside B028."
+  ],
+  "controls": [
+    {
+      "id": "K01",
+      "check": "Bounded regular real/possibly nonfree owner action, helper multiplicities and full-matrix orbit-safety diagnostics."
+    },
+    {
+      "id": "K02",
+      "check": "Bounded actual-row/index and unsafe-padding transport/trim scope controls; these do not establish infinite-source amalgamation, HKN or EPPA."
+    }
+  ],
+  "article_feedback": [
+    {
+      "id": "F01",
+      "kind": "FORMALIZATION_DETAIL",
+      "status": "NO_HUMAN_CHANGE_REQUIRED",
+      "source": {
+        "file": "sections/orbit_safe_packet_completion.tex",
+        "anchor": "Each old vertex stays in its prescribed"
+      },
+      "finding": "After original-language strong-S amalgamation, helper anchors initially form only an abstract image. Align the ENTIRE complete anchored common base to its prescribed actual copy by Q homogeneity before declaring fine E-owner labels fixed.",
+      "proposed_article_change": "No theorem repair: retain this explicit realization/normalization step in the receiving proof notes.",
+      "caller_effect": "No added raw SAP, no source repin; all original fine colours and the strong/S conclusions survive the alignment.",
+      "proof_claims": [
+        "C03",
+        "C05",
+        "C06"
+      ]
+    },
+    {
+      "id": "F02",
+      "kind": "FORMALIZATION_DETAIL",
+      "status": "NO_HUMAN_CHANGE_REQUIRED",
+      "source": {
+        "file": "sections/orbit_safe_packet_completion.tex",
+        "anchor": "The augmented selector restricted to the original exact families"
+      },
+      "finding": "B026's named moving-reading export was stated for its selected ordinary h. Local C10-C12 extract the proof parametrically from exactly the D10 axioms and instantiate the DIFFERENT safe h_(S^G)|H; no equality of selectors or silent B026 API change is used.",
+      "proposed_article_change": "No theorem repair; retain the local parametric extraction/instantiation in the receiving contract.",
+      "caller_effect": "Existing B026 source/export signatures unchanged; fixed R07 decoder hypotheses are actually supplied.",
+      "proof_claims": [
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C17"
+      ]
+    },
+    {
+      "id": "F03",
+      "kind": "WORDING_CLARIFICATION",
+      "status": "NO_HUMAN_CHANGE_REQUIRED",
+      "source": {
+        "file": "sections/rooted_mi/03_normalised_relative_mi.tex",
+        "anchor": "Let \\(K\\) be the group"
+      },
+      "finding": "Recoverability of semilinear owner components is onto IMAGE K before trim; after trim only FULL COARSE B support is guaranteed. Fine U support can be lost, while exact prescribed coarse actions remain meaningful.",
+      "proposed_article_change": "No source change: retain the image/fine-versus-coarse qualification explicitly.",
+      "caller_effect": "No assertion that K equals full Aut(D0), no group section, and no post-trim fine-support requirement.",
+      "proof_claims": [
+        "C36",
+        "C38",
+        "C39"
+      ]
+    }
+  ],
+  "review": {
+    "date": "2026-10-28",
+    "source_unchanged": true,
+    "source_signature_repairs": 0,
+    "unexpanded_provider_labels": [],
+    "proof_status": "Local human proof expansions and exact provider/consumer assembly; not Lean implementation, actual source-hypothesis verification or a global rooted/ordinary EPPA proof. B027 external theorem/adapter limits are inherited.",
+    "independent_final_reviews": [
+      "Orbit-safe helper/absolute anchoring, parametric moving readings and unsafe multi-packet audit",
+      "Normalized lower-quotient/fine-owner/one-witness/trim and selected-root assembly audit"
+    ],
+    "metadata_refinements": [
+      "Whole complete anchored base normalized by original homogeneity before literal owner preservation.",
+      "Local parametric h proof explicitly instantiated with safe h_(S^G)|H, without changing B026.",
+      "owner_action C07 alone supplies coarse finite-closure projection; no ordinary EPPA(Q) import.",
+      "Every FULL Gamma_tilde element, not just selected generators, is jointly lifted to prove thin commutation.",
+      "All PC/universe/colouring fixed before source/clique matrices.",
+      "IMAGE K and post-trim coarseB-full/fineU-loss remain separate."
+    ]
+  },
+  "local_context_instantiations": [
+    {
+      "context_id": "A08",
+      "kind": "UNIVERSALLY_QUANTIFIED_DISPLAYED_CONTEXT_NOT_PRINCIPAL_PREMISE",
+      "used_by_standalone_claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23"
+      ],
+      "principal_application": "lem:acf-relative-mi-normal",
+      "principal_assumptions": [
+        "A01",
+        "A02",
+        "A03",
+        "A04",
+        "A05",
+        "A06",
+        "A07"
+      ],
+      "construction_claims": [
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35"
+      ],
+      "bindings": [
+        {
+          "property": "Actual thin regular G, R_E=F and ABSOLUTE unary closure",
+          "providers": [
+            "C24"
+          ]
+        },
+        {
+          "property": "Finite nonempty actual G-invariant fine U projecting exactly onto B",
+          "providers": [
+            "C25",
+            "C26",
+            "C27"
+          ]
+        },
+        {
+          "property": "FULL compatible Gamma_tilde, exact coarse requests, ALL-element original lifts/commutation and diagonal G",
+          "providers": [
+            "C28",
+            "C29"
+          ]
+        },
+        {
+          "property": "Actual N_U closure/homogeneity/closed SAP and primitive full-owner transversal/inflation",
+          "providers": [
+            "C30",
+            "I09",
+            "I10",
+            "I11"
+          ]
+        },
+        {
+          "property": "Derived all-span S^G and one augmented safe selector with parametric reading axioms",
+          "providers": [
+            "C30",
+            "C31",
+            "C07",
+            "C08",
+            "C09",
+            "C10",
+            "C11",
+            "C12",
+            "C13"
+          ]
+        },
+        {
+          "property": "Complete all-owner Aplus with safe padding and exact source requests",
+          "providers": [
+            "C31",
+            "C32"
+          ]
+        },
+        {
+          "property": "D12 fixed B0/W# injective origin certificate, ONE PC family/colouring and actual source Aplus alignment",
+          "providers": [
+            "C33",
+            "C34",
+            "C35"
+          ]
+        }
+      ],
+      "interpretation": "Every local theorem is applied after substituting the constructed U/Gamma_tilde/N_U/Aplus/B0/D0 and proving its hypotheses at the listed claims. A08 is not an independent assumption in the principal source result."
+    }
+  ]
+}

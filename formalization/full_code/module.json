@@ -1,0 +1,1743 @@
+{
+  "schema_version": 1,
+  "id": "full_code",
+  "index_title": "Full unary-term tuple codes, Ramsey readout and fixed-host EP transfer",
+  "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+  "status": "HUMAN_EXPANDED_NOT_LEAN",
+  "scope": "Private B035: SIX Foundations III source results and TWO equations. Reconstruct actual partial-unary generated supports from COMPLETE finite tagged tuple codes, including definedness, within-root/cross-root equality and all unary/binary relations. Prove the natural bijection of ALL embeddings and transfer a supplied hidden Ramsey property without EP or root cofinality. Independently prove ambient root-cover cofinality and SAME-unexpanded-host lifting with explicit canonical-support/reduct-commutation hypotheses. Transfer a supplied hidden EP through the abstract four-contract interface; then discharge its contracts for an ambient root-covered full-code interpretation. No CCO/SAP/EPPA, MI/MR geometry, concrete fine-code definability or external Ramsey theorem is assumed as a provider. Hidden Ramsey and hidden EP are separate conditional INPUTS, not proved here.",
+  "scope_vocabulary": [
+    "partial_terms",
+    "reconstruction",
+    "embedding_bijection",
+    "Ramsey_readout",
+    "root_cofinality",
+    "same_host",
+    "EP_transfer",
+    "boundary"
+  ],
+  "scope_explanation": "Reconstruction needs neither hidden Ramsey nor EP. Ramsey readout needs no root cover or fixed-host lifting. The abstract EP theorem uses its explicit four contracts, not the later concrete proofs as extra hypotheses; the corollary instantiates those conditional interfaces. All root tuples and their coordinate presentations remain marked data.",
+  "control_script": "tools/check_full_code_controls.py",
+  "assumptions": [
+    {
+      "id": "A01",
+      "name": "Hereditary typed partial-unary hidden class",
+      "statement": "H^o is an isomorphism-closed hereditary class of finite induced structures in a finite many-sorted language with ONLY unary partial functions and positive unary/binary relations, including any hidden order. There are NO nullary symbols or higher-arity functions. Induced embeddings preserve and reflect function domains/values and all relations; induced substructures are unary-closed. Empty structures/sorts use the usual induced restriction convention."
+    },
+    {
+      "id": "A02",
+      "name": "Uniform finite normal forms as PARTIAL functions",
+      "statement": "For each hidden input sort fix finitely many well-typed unary-term normal forms, including identity, and a choice of representative for every unary term. A term and its representative have IDENTICAL domains and values in EVERY H^o member. In particular NF(F composed with t) records each named unary extension, including nowhere-defined composites. The finite lists need not contain syntactically every composition."
+    },
+    {
+      "id": "A03",
+      "name": "All valid tagged tuples without a quotient",
+      "statement": "Finitely many visible tags s have finite typed coordinate tuples and quantifier-free compatibility formulas delta_s. N(D^o) contains ALL valid tagged tuples of D^o; no tuple quotient or representative choice is taken. Coordinate terms select a root coordinate then apply a unary normal form. Zero-coordinate tuples, if admitted, are unique per tag and their nullary-free compatibility is constant."
+    },
+    {
+      "id": "A04",
+      "name": "Exact hereditary FULL-code visible age",
+      "statement": "V^o consists precisely of hereditary finite induced root subsets of full N(D^o) codes, up to isomorphism. The code retains tags, all applicable normal-form term equalities and definedness, every hidden unary/binary relation and order comparison, including same-root instances. There are no additional freely interpreted visible predicates. A fixed source A^o retains its root-coordinate presentations even though the unmarked hidden support alone need not determine which root subset was selected."
+    },
+    {
+      "id": "A05",
+      "name": "Optional hidden embedding Ramsey input",
+      "statement": "ONLY for Ramsey readout, H^o is Ramsey for EMBEDDINGS: for finite hidden X,Y and positive integer k there is finite D^o with D^o -> (Y)^X_k. Every k-coloring of Emb(X,D^o) is constant on g composed Emb(X,Y) for some g in Emb(Y,D^o). No hidden EP or root-cover condition is part of this input."
+    },
+    {
+      "id": "A06",
+      "name": "Optional ambient root-cover input",
+      "statement": "ONLY for ambient cofinality, P is a possibly infinite hidden partial-unary structure with the same valid-root interpretation and uniformly finite term normal forms on root-coordinate sorts. H is the hereditary age of finite unary-closed induced substructures embeddable in P. EVERY point of P is a defined coordinate-term value of some valid root tuple in N(P). No Ramsey, EP, CCO or SAP is assumed."
+    },
+    {
+      "id": "A07",
+      "name": "Compatible hidden and visible expansion setting",
+      "statement": "For the later SAME-HOST/EP statements H^o->H is hereditary and V^o->V is its corresponding full-code expansion over a chosen unexpanded fine visible age. Tags and delta formulas are fixed in the UNEXPANDED hidden language, so the root carrier N(E) is determined before an expansion is chosen. Unexpanded visible fine data canonically determine generated supports over root-coordinate presentations, and forgetting each allowed expanded generated support gives that SAME canonical unexpanded support. Added functions require this explicit commutation; relational expansions retaining functions satisfy the function part automatically."
+    },
+    {
+      "id": "A08",
+      "name": "BOUND full-root-generated host for the same-host lemma",
+      "statement": "In the same-host lemma choose ANY finite E in H with h(N(E))=E, let B be its full unexpanded visible interpretation, and retain its canonical unexpanded coordinate-template identification. All allowed expansions of B are hereditary FULL codes of hidden expanded hosts, with the reduct compatibility in A07. These are bound lemma inputs for each E, not a cofinality or EP axiom."
+    },
+    {
+      "id": "A09",
+      "name": "Reasonable precompact expansions for EP statements",
+      "statement": "ONLY for the EP transfer/corollary, the hidden and visible expansions are reasonable, reduct-surjective and precompact over their hereditary unexpanded ages. Reasonableness lifts any chosen unexpanded embedding X->Y and allowed X^o to some allowed Y^o with that SAME map an expanded embedding. This is used to normalize an EP witness to its OLD-root-generated part when extra unary functions are present. The proof constructs one fixed unexpanded host before any competing expansion; these class conditions are not used for reconstruction/Ramsey or the local same-host lemma."
+    },
+    {
+      "id": "A10",
+      "name": "Optional hidden EP input with its exact quantifiers",
+      "statement": "Hidden EP means: for EVERY finite expanded X^o in H^o there exists a finite UNEXPANDED D in H such that EVERY allowed expansion D^o contains an expanded embedding X^o->D^o. This is the source convention in sections/expansion_property_unfiltered.tex; no preferred single expansion may replace the universal quantifier. Hidden Ramsey is not assumed in this branch."
+    },
+    {
+      "id": "A11",
+      "name": "Abstract four-contract EP interface",
+      "statement": "For the abstract transfer: (i) unexpanded visible A canonically determines h(A), and each A^o gives a compatible hidden expansion; (ii) every finite hidden D embeds into some finite E with h(N(E))=E; (iii) EVERY allowed expansion of N(E), for such E, lifts to the SAME underlying unexpanded E preserving the full code; (iv) visible embeddings extend uniquely to generated supports, valid root tuples are transported correctly, and the full tuple code recovers all original fine visible binary atoms. The reverse hidden-to-visible embedding construction of the full-code setting is retained. These are explicit conditional inputs, not conclusions from hidden Ramsey alone."
+    },
+    {
+      "id": "A12",
+      "name": "Ambient root-covered corollary inputs",
+      "statement": "For the final corollary use reasonable precompact expansions with hidden EP, a source age represented by finite unary-closed induced substructures of one ambient P, ambient root coverage and finite normal forms as in A06. Complete unexpanded fine codes reconstruct canonical supports AND original fine atoms; expanded support reducts commute over the SAME presentations. Allowed expanded visible objects/embeddings are EXACTLY hereditary full hidden codes. These premises will discharge the abstract four-contract interface, with bound E inputs instantiated in the same-host lemma."
+    }
+  ],
+  "imports": [],
+  "external_providers": [],
+  "definitions": [
+    {
+      "id": "D01",
+      "name": "Partial term evaluation and normalization",
+      "statement": "A typed unary term is a composable chain of named unary partial maps, including identity. Evaluation is undefined if ANY required step is undefined. NF preserves both domain and value, not merely equality where both terms happen to be defined.",
+      "depends_on": [
+        "A01",
+        "A02"
+      ],
+      "notes": "N01",
+      "source": {
+        "file": "sections/full_code_tuple_ep_transfer.tex",
+        "anchor": "\\label{lem:foundational-full-code-embeddings}"
+      }
+    },
+    {
+      "id": "D02",
+      "name": "Marked valid roots and coordinate terms",
+      "statement": "A root a has its tag and ordered coordinate tuple eta(a). A presentation (a,j,t) applies a normal form t to coordinate j of a, when defined. Distinct tags always give distinct roots; equal tags use literal ordered tuple equality.",
+      "depends_on": [
+        "A03",
+        "D01"
+      ],
+      "notes": "N01",
+      "source": {
+        "file": "sections/full_code_tuple_ep_transfer.tex",
+        "anchor": "\\label{lem:foundational-full-code-embeddings}"
+      }
+    },
+    {
+      "id": "D03",
+      "name": "Complete finite code predicates",
+      "statement": "For applicable coordinate terms tau,sigma retain E_tau,sigma(a,b) iff both defined and equal, U_tau(a) iff defined and U holds, and R_tau,sigma(a,b) iff both defined and R holds, for ALL hidden unary/binary/order symbols. All same-root instances are retained. E_tau,tau(a,a) records definedness. Tags and normal-form indices make this a finite unary/binary signature.",
+      "depends_on": [
+        "D02",
+        "A04"
+      ],
+      "notes": "N02",
+      "source": {
+        "file": "sections/full_code_tuple_ep_transfer.tex",
+        "anchor": "\\label{lem:foundational-full-code-embeddings}"
+      }
+    },
+    {
+      "id": "D04",
+      "name": "Generated support as a marked presentation quotient",
+      "statement": "h(A^o) is the actual induced unary closure of the root coordinates in a realizing hidden host. Equivalently take the finite DEFINED presentations and quotient by the full equality codes. Keep the map from each marked source root coordinate to its class; do not infer the selected root subset from the unmarked quotient alone.",
+      "depends_on": [
+        "D02",
+        "D03"
+      ],
+      "notes": "N02",
+      "source": {
+        "file": "sections/full_code_tuple_ep_transfer.tex",
+        "anchor": "\\label{lem:foundational-full-code-embeddings}"
+      }
+    },
+    {
+      "id": "D05",
+      "name": "Two embedding constructions",
+      "statement": "For visible f define bar(f)(tau(a))=tau(f(a)). For hidden g define root(g)(a) by applying g to each coordinate, keeping its tag. Their validity, inducedness, inverses and naturality are proof obligations, not assumed bijections.",
+      "depends_on": [
+        "D03",
+        "D04"
+      ],
+      "notes": "N03",
+      "source": {
+        "file": "sections/full_code_tuple_ep_transfer.tex",
+        "anchor": "\\label{lem:foundational-full-code-embeddings}"
+      }
+    },
+    {
+      "id": "D06",
+      "name": "Embedding Ramsey arrow",
+      "statement": "D^o -> (Y^o)^(X^o)_k means every k-coloring of ALL embeddings X^o->D^o admits g:Y^o->D^o constant on g composed Emb(X^o,Y^o). It is not a coloring only of isomorphism types or unmarked copies.",
+      "depends_on": [
+        "A01"
+      ],
+      "notes": "N04",
+      "source": {
+        "file": "sections/full_code_tuple_ep_transfer.tex",
+        "anchor": "\\label{thm:ramsey-tuple-readout}"
+      }
+    },
+    {
+      "id": "D07",
+      "name": "Full-root-generated unexpanded host",
+      "statement": "Finite E is full-root-generated when the induced unary support h(N(E)) is EXACTLY E. It need not be true for arbitrary hidden hosts: points not generated by any valid root may be orphans. Cofinality says every finite hidden D embeds in SOME such E.",
+      "depends_on": [
+        "A03"
+      ],
+      "notes": "N05",
+      "source": {
+        "file": "sections/full_code_tuple_ep_transfer.tex",
+        "anchor": "\\label{lem:foundational-root-cover-cofinal}"
+      }
+    },
+    {
+      "id": "D08",
+      "name": "Canonical reduct identification",
+      "statement": "For fixed visible unexpanded B, its canonical h(B) has marked root-coordinate presentations. For allowed B^o the reduct of h(B^o) identifies with h(B) over those SAME marks; it is not merely some isomorphic unmarked structure with a different root incidence.",
+      "depends_on": [
+        "A07"
+      ],
+      "notes": "N06",
+      "source": {
+        "file": "sections/full_code_tuple_ep_transfer.tex",
+        "anchor": "\\label{lem:foundational-same-host-code}"
+      }
+    },
+    {
+      "id": "D09",
+      "name": "Same-host lift",
+      "statement": "A lift of B^o, where B=N(E) and E is full-root-generated, is an allowed E^o on the EXACT underlying unexpanded E whose code on the fixed root carrier B is precisely B^o. Uniqueness is relative to the chosen marked identification, not a claim of arbitrary canonical labelling.",
+      "depends_on": [
+        "D07",
+        "D08",
+        "A08"
+      ],
+      "notes": "N06",
+      "source": {
+        "file": "sections/full_code_tuple_ep_transfer.tex",
+        "anchor": "\\label{lem:foundational-same-host-code}"
+      }
+    },
+    {
+      "id": "D10",
+      "name": "Expansion property with a fixed unexpanded host",
+      "statement": "EP is forall finite A^o exists finite unexpanded B forall allowed B^o exists expanded embedding A^o->B^o. B, its root carrier and the embedding D0->E used to construct it must be chosen before B^o. D0 is the OLD-root-generated normalization of a hidden EP witness D. This is the fixed-expanded-source convention stated in the frozen source.",
+      "depends_on": [
+        "A09",
+        "A10"
+      ],
+      "notes": "N07",
+      "source": {
+        "file": "sections/full_code_tuple_ep_transfer.tex",
+        "anchor": "\\label{thm:foundational-cofinal-tuple-EP}"
+      }
+    },
+    {
+      "id": "D11",
+      "name": "Abstract EP interface and its concrete discharge",
+      "statement": "The four A11 contracts are used conditionally by the abstract transfer. The corollary discharges cofinality with ambient root coverage, same-host lifting with full canonical code, and embedding/fine-atom faithfulness with reconstruction. Bound local host inputs are instantiated for the E already chosen.",
+      "depends_on": [
+        "A11"
+      ],
+      "notes": "N07",
+      "source": {
+        "file": "sections/full_code_tuple_ep_transfer.tex",
+        "anchor": "\\label{thm:foundational-cofinal-tuple-EP}"
+      }
+    },
+    {
+      "id": "D12",
+      "name": "Original fine-atom faithfulness",
+      "statement": "Any original unexpanded visible fine binary atom must be recoverable from the retained tuple code, uniformly enough that code embeddings preserve and reflect it. This is an explicit application contract; the abstract full-code theorem does not prove definability for a particular MI/MR interpretation or justify freely adding visible relations.",
+      "depends_on": [
+        "A07",
+        "A11"
+      ],
+      "notes": "N07",
+      "source": {
+        "file": "sections/full_code_tuple_ep_transfer.tex",
+        "anchor": "\\label{thm:foundational-cofinal-tuple-EP}"
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "name": "Partial unary embeddings transport term domains and values",
+      "statement": "Induct on term length. Identity is preserved by the underlying injective sort map. For F(t(x)), a defined inner term is transported and the induced embedding reflects whether F is applicable there, with the same value after mapping. If an earlier step is undefined it remains undefined. Thus all typed term definedness and values are preserved AND reflected.",
+      "depends_on": [
+        "D01",
+        "A01"
+      ],
+      "notes": "N01",
+      "scope": "partial_terms",
+      "source_labels": [
+        "lem:foundational-full-code-embeddings"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C02",
+      "name": "Quantifier-free root validity is preserved and reflected",
+      "statement": "Atomic equalities and unary/binary relations on defined terms are preserved/reflected by C01 and inducedness; undefined atomic evaluations agree under the same partial-term convention. Boolean induction, including negations, transports every delta_s. Hence hidden induced embeddings send valid tagged roots to valid roots, without an existential witness outside the support.",
+      "depends_on": [
+        "C01",
+        "A03"
+      ],
+      "notes": "N01",
+      "scope": "partial_terms",
+      "source_labels": [
+        "lem:foundational-full-code-embeddings"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C03",
+      "name": "Defined normal-form presentations equal the finite generated support",
+      "statement": "Every reachable unary chain from a root coordinate equals its normal form as a PARTIAL function, hence has a defined listed presentation; conversely each defined presentation is an actual chain value. The finite root set, finite coordinate tuples and finite normal-form lists give finitely many presentations. Normalization of F composed with a form keeps their values closed under all already-defined functions.",
+      "depends_on": [
+        "D01",
+        "D02",
+        "A02"
+      ],
+      "notes": "N02",
+      "scope": "reconstruction",
+      "source_labels": [
+        "lem:foundational-full-code-embeddings"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C04",
+      "name": "Diagonal equality codes record exactly which presentations exist",
+      "statement": "E_tau,tau(a,a) is true exactly when tau(a) is defined. Retaining this SAME-ROOT instance separates undefined values from defined fixed points and determines the domain of the presentation quotient. Applicability by sort alone is not definedness at a point.",
+      "depends_on": [
+        "D03",
+        "C03"
+      ],
+      "notes": "N02",
+      "scope": "reconstruction",
+      "source_labels": [
+        "lem:foundational-full-code-embeddings"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C05",
+      "name": "Full equality gives the exact presentation equivalence relation",
+      "statement": "On the defined presentations, E_tau,sigma(a,b) holds exactly when their actual hidden values agree, both for a=b and for different roots. Quotienting therefore identifies all and only repetitions. A realizing host supplies coherence and independence of chosen representatives; arbitrary uninterpreted code structures are not being certified.",
+      "depends_on": [
+        "C03",
+        "C04",
+        "D04"
+      ],
+      "notes": "N02",
+      "scope": "reconstruction",
+      "source_labels": [
+        "lem:foundational-full-code-embeddings"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C06",
+      "name": "The quotient recovers all unary and binary relation diagrams",
+      "statement": "Any hidden support point has a defined presentation, and any pair has two such presentations, possibly from the same root. Its U_tau or R_tau,sigma code reads the corresponding hidden relation. C05 makes this independent of presentation choices. Hidden order comparisons are included among binary symbols. No higher-arity relation recovery is asserted.",
+      "depends_on": [
+        "C05",
+        "D03"
+      ],
+      "notes": "N02",
+      "scope": "reconstruction",
+      "source_labels": [
+        "lem:foundational-full-code-embeddings"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C07",
+      "name": "Normal-form composition recovers every partial function graph",
+      "statement": "For defined tau(a), F at its class is defined iff NF(F composed tau)(a) is defined, because A02 preserves complete partial domains. C04 records this test, and C05 gives its value class when defined. Thus the quotient recovers BOTH domains and values on every retained point. No everywhere-total function assumption is made.",
+      "depends_on": [
+        "C03",
+        "C04",
+        "C05",
+        "D01"
+      ],
+      "notes": "N02",
+      "scope": "reconstruction",
+      "source_labels": [
+        "lem:foundational-full-code-embeddings"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C08",
+      "name": "Marked generated support is reconstructed uniquely",
+      "statement": "C05-C07 reconstruct the entire actual induced hidden support. Any isomorphism agreeing on the source root coordinates agrees on every defined unary chain by C01, hence on all points by C03. Thus the identification is unique OVER THE MARKED root coordinates. The unmarked support need not determine which visible roots A selected.",
+      "depends_on": [
+        "C03",
+        "C05",
+        "C06",
+        "C07",
+        "D04"
+      ],
+      "notes": "N02",
+      "scope": "reconstruction",
+      "source_labels": [
+        "lem:foundational-full-code-embeddings"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C09",
+      "name": "Visible maps induce well-defined injective presentation maps",
+      "statement": "If f is a full-code embedding, C04 makes source/target presentations defined at the same positions. C05 and preservation of equality make bar(f) well-defined; reflection of equality makes it injective. Sort tags and term output sorts are retained.",
+      "depends_on": [
+        "D05",
+        "C04",
+        "C05"
+      ],
+      "notes": "N03",
+      "scope": "embedding_bijection",
+      "source_labels": [
+        "lem:foundational-full-code-embeddings"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C10",
+      "name": "The extended map is an induced hidden embedding",
+      "statement": "C06 plus full-code reflection transports every unary/binary relation on presentations. C07 with definedness/composition codes transports all function domains and values. Together with C09 injectivity, bar(f):h(A^o)->D^o is an induced hidden embedding.",
+      "depends_on": [
+        "C06",
+        "C07",
+        "C09"
+      ],
+      "notes": "N03",
+      "scope": "embedding_bijection",
+      "source_labels": [
+        "lem:foundational-full-code-embeddings"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C11",
+      "name": "Hidden maps transport tagged tuples to valid roots",
+      "statement": "For a hidden embedding g:h(A^o)->D^o, apply g to every source root coordinate. C02 proves the resulting tuple satisfies delta_s in D^o. Distinct roots have different tags or differ at an identity coordinate; coordinate injectivity preserves the latter. For zero-coordinate roots there is at most one per tag, so no collision is possible.",
+      "depends_on": [
+        "D05",
+        "C02",
+        "C03",
+        "A03"
+      ],
+      "notes": "N03",
+      "scope": "embedding_bijection",
+      "source_labels": [
+        "lem:foundational-full-code-embeddings"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C12",
+      "name": "The induced root map preserves and reflects the entire code",
+      "statement": "C01 transports every partial coordinate term, including undefinedness. Hidden inducedness and injectivity therefore preserve and reflect all term equalities, unary/binary predicates and comparisons, with same-root instances included. C11 gives an injective valid-root map. Thus root(g) embeds A^o into N(D^o).",
+      "depends_on": [
+        "C01",
+        "C11",
+        "D03"
+      ],
+      "notes": "N03",
+      "scope": "embedding_bijection",
+      "source_labels": [
+        "lem:foundational-full-code-embeddings"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C13",
+      "name": "The two embedding constructions are inverse",
+      "statement": "Starting with f, the extension agrees with it on each root coordinate, so root(bar(f))=f, using literal tagged tuples. Starting with g, evaluation of every defined presentation gives bar(root(g))=g by C01/C03. No representative-per-equivalence-class choice of roots is used.",
+      "depends_on": [
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C03"
+      ],
+      "notes": "N03",
+      "scope": "embedding_bijection",
+      "source_labels": [
+        "lem:foundational-full-code-embeddings"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C14",
+      "name": "Support extension is unique and natural under composition",
+      "statement": "The coordinates generate h(A), so any hidden extension of a root map agrees on every unary chain and is unique by C08. For a:A->B its extension lands in the induced generated support h(B), by term evaluation. Uniqueness or direct evaluation gives h(b composed a)=h(b) composed h(a), and identities lift to identities.",
+      "depends_on": [
+        "C08",
+        "C10",
+        "C12",
+        "C13"
+      ],
+      "notes": "N03",
+      "scope": "embedding_bijection",
+      "source_labels": [
+        "lem:foundational-full-code-embeddings"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C15",
+      "name": "Natural bijection of ALL visible and hidden embeddings",
+      "statement": "C10/C12/C13 give Emb_V^o(A^o,N(D^o)) bijective with Emb_H^o(h(A^o),D^o), and C14 gives naturality in the actual marked source and host. C08 gives reconstruction up to the unique marked isomorphism. Neither Ramsey, EP, cofinality nor same-host lifting is used.",
+      "depends_on": [
+        "C08",
+        "C10",
+        "C12",
+        "C13",
+        "C14"
+      ],
+      "notes": "N03",
+      "scope": "embedding_bijection",
+      "source_labels": [
+        "lem:foundational-full-code-embeddings"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C16",
+      "name": "A visible coloring pulls back through the exact bijection",
+      "statement": "For finite A^o,B^o, a k-coloring of ALL visible Emb(A^o,N(D^o)) gives a k-coloring of ALL hidden Emb(h(A^o),D^o) by C15, in the reverse direction of that bijection. All induced supports are actual H^o members by heredity.",
+      "depends_on": [
+        "C15",
+        "A01",
+        "D06"
+      ],
+      "notes": "N04",
+      "scope": "Ramsey_readout",
+      "source_labels": [
+        "thm:ramsey-tuple-readout"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C17",
+      "name": "Choose the supplied hidden Ramsey witness",
+      "statement": "Apply A05 to h(A^o),h(B^o),k and obtain D^o with the hidden arrow. For the C16 coloring choose g:h(B^o)->D^o monochromatic on every g composed hidden embedding h(A^o)->h(B^o). No root-generation property of D^o is required.",
+      "depends_on": [
+        "C16",
+        "A05"
+      ],
+      "notes": "N04",
+      "scope": "Ramsey_readout",
+      "source_labels": [
+        "thm:ramsey-tuple-readout"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C18",
+      "name": "Naturality gives the visible monochromatic copy",
+      "statement": "C12 turns g into a visible embedding of the SELECTED B^o roots into N(D^o). Every a:A^o->B^o has h(a):h(A^o)->h(B^o) by C14. Its composite with g has the common hidden color by C17, and naturality C15 identifies that color with the induced visible composite. N(D^o) is a finite V^o witness.",
+      "depends_on": [
+        "C12",
+        "C14",
+        "C15",
+        "C17",
+        "A04"
+      ],
+      "notes": "N04",
+      "scope": "Ramsey_readout",
+      "source_labels": [
+        "thm:ramsey-tuple-readout"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C19",
+      "name": "Empty supports, zero-coordinate roots and host orphans are harmless",
+      "statement": "Empty visible sources have the unique empty embedding; empty generated supports and zero-coordinate tagged roots obey C11-C15. N(D^o) remains finite even with zero-coordinate tags. A hidden Ramsey host may have points outside h(N(D^o)); the proof only uses the relevant embedding sets and does not replace D^o by a root-generated substructure.",
+      "depends_on": [
+        "C11",
+        "C15",
+        "C18",
+        "A03"
+      ],
+      "notes": "N04",
+      "scope": "Ramsey_readout",
+      "source_labels": [
+        "thm:ramsey-tuple-readout"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C20",
+      "name": "Conditional hidden-to-visible Ramsey readout",
+      "statement": "C16-C19 prove V^o Ramsey for embeddings from the supplied hidden Ramsey input A05. There is no EP, cofinal root cover, visible SAP or additional visible tuple order premise. Removing an order code, when present in the hidden language, would change A04 and invalidate the exact correspondence.",
+      "depends_on": [
+        "C16",
+        "C17",
+        "C18",
+        "C19"
+      ],
+      "notes": "N04",
+      "scope": "Ramsey_readout",
+      "source_labels": [
+        "thm:ramsey-tuple-readout"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C21",
+      "name": "Choose finitely many covering roots over an embedded D",
+      "statement": "Embed finite D into ambient P using A06. For EACH point z of that finite image choose one valid root r_z and a defined coordinate-term presentation with value z. This is only a finite choice of finitely many coordinate tuples, even when P is infinite.",
+      "depends_on": [
+        "A06",
+        "D02"
+      ],
+      "notes": "N05",
+      "scope": "root_cofinality",
+      "source_labels": [
+        "lem:foundational-root-cover-cofinal"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C22",
+      "name": "Close exactly those chosen coordinates inside P",
+      "statement": "Let E be the unary closure in P of all coordinates of the chosen r_z. Finitely many coordinate points and finitely many term normal forms from their input sorts make E finite; it is induced and unary-closed by its construction. Every z in the embedded D lies in E via its chosen presentation, so D embeds in E.",
+      "depends_on": [
+        "C21",
+        "A06",
+        "D01"
+      ],
+      "notes": "N05",
+      "scope": "root_cofinality",
+      "source_labels": [
+        "lem:foundational-root-cover-cofinal"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C23",
+      "name": "Chosen roots remain valid in that same finite E",
+      "statement": "The induced closed inclusion E->P preserves and reflects partial terms and qf formulas by the C01/C02 argument. Every coordinate of r_z is in E, so its unexpanded qf delta remains true there. Thus the SAME chosen root r_z belongs to N(E), without adding any witnesses or changing E.",
+      "depends_on": [
+        "C22",
+        "C01",
+        "C02"
+      ],
+      "notes": "N05",
+      "scope": "root_cofinality",
+      "source_labels": [
+        "lem:foundational-root-cover-cofinal"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C24",
+      "name": "Every point of E is generated by a retained valid root",
+      "statement": "By construction EVERY point of E, not only each original z, is a unary chain value of a coordinate of one of the chosen r_z. C23 puts each such root in N(E), hence E is contained in h(N(E)). The reverse inclusion follows from E being unary-closed. Thus h(N(E))=E on the SAME E.",
+      "depends_on": [
+        "C22",
+        "C23",
+        "D07"
+      ],
+      "notes": "N05",
+      "scope": "root_cofinality",
+      "source_labels": [
+        "lem:foundational-root-cover-cofinal"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C25",
+      "name": "Ambient root coverage yields finite root-generated cofinality",
+      "statement": "For every finite D in H, C21-C24 give a finite full-root-generated E in H and a D embedding into it. Empty D may use the empty coordinate closure. P need not be finite, homogeneous, Ramsey, CCO or SAP; no EP premise is used.",
+      "depends_on": [
+        "C21",
+        "C22",
+        "C23",
+        "C24"
+      ],
+      "notes": "N05",
+      "scope": "root_cofinality",
+      "source_labels": [
+        "lem:foundational-root-cover-cofinal"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C26",
+      "name": "Represent an arbitrary allowed expansion by an actual hidden host",
+      "statement": "Fix the B from bound A08 and an ARBITRARY allowed B^o. A04/A07 supply a realization in some finite D^o as an induced subset of its FULL root code. Reconstruction C08/C15 identifies h(B^o) with the actual induced expanded support in D^o. Heredity puts that support in H^o.",
+      "depends_on": [
+        "A08",
+        "A07",
+        "A04",
+        "C08",
+        "C15"
+      ],
+      "notes": "N06",
+      "scope": "same_host",
+      "source_labels": [
+        "lem:foundational-same-host-code"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C27",
+      "name": "Forgetting that support gives the fixed canonical E",
+      "statement": "The explicit reduct-commutation hypothesis A07 identifies the reduct of h(B^o) with the canonical h(B), over the SAME root coordinates. Since B=N(E) and h(N(E))=E by A08, that unexpanded support is E. No arbitrary unrelated isomorphism or enlarged reduct is substituted.",
+      "depends_on": [
+        "C26",
+        "A07",
+        "A08",
+        "D08"
+      ],
+      "notes": "N06",
+      "scope": "same_host",
+      "source_labels": [
+        "lem:foundational-same-host-code"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C28",
+      "name": "Transport the expanded structure onto the existing E",
+      "statement": "Use C27 marked isomorphism to transport every expanded relation, function domain/value and comparison from the actual h(B^o) to the existing unexpanded E. Isomorphism-closure/heredity give E^o in H^o, and its reduct is EXACTLY E. Added unary functions are allowed only when the explicit reduct commutation holds.",
+      "depends_on": [
+        "C26",
+        "C27",
+        "A01",
+        "D09"
+      ],
+      "notes": "N06",
+      "scope": "same_host",
+      "source_labels": [
+        "lem:foundational-same-host-code"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C29",
+      "name": "The transported full root code is exactly the competing B expansion",
+      "statement": "The tuple tags/delta are unexpanded, so N(E^o) has exactly the fixed root carrier N(E)=B. Marked transport agrees on every root coordinate, hence preserves all codes by C01/C12. Therefore the code on EVERY root of B is precisely B^o, not just some selected smaller subcode.",
+      "depends_on": [
+        "C28",
+        "C12",
+        "A07",
+        "A08"
+      ],
+      "notes": "N06",
+      "scope": "same_host",
+      "source_labels": [
+        "lem:foundational-same-host-code"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C30",
+      "name": "Lift uniqueness follows from complete code and full root generation",
+      "statement": "Every point of E has a root-term presentation. C05-C07 reconstruct all expanded relations and function domains/values from B^o. Two expanded structures on E with the SAME marked identification and full root code must therefore agree on every point, pair and function. This uniqueness can fail on an orphan point.",
+      "depends_on": [
+        "C08",
+        "C27",
+        "C29",
+        "A08"
+      ],
+      "notes": "N06",
+      "scope": "same_host",
+      "source_labels": [
+        "lem:foundational-same-host-code"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C31",
+      "name": "Every competing expansion has the required SAME-host realization",
+      "statement": "For ANY bound full-root-generated E and EVERY allowed B^o of B=N(E), C26-C30 give an allowed expansion E^o on THAT unexpanded E with exact code B^o, unique once the marked identification is fixed. Neither hidden Ramsey, EP nor ambient/cofinal root coverage is required for this local lemma.",
+      "depends_on": [
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30"
+      ],
+      "notes": "N06",
+      "scope": "same_host",
+      "source_labels": [
+        "lem:foundational-same-host-code"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C32",
+      "name": "Fix the expanded source and its compatible hidden support",
+      "statement": "For any allowed visible A^o, abstract contract (i) supplies a compatible finite hidden expansion H_A^o of the canonical unexpanded h(A). It retains A^o root-coordinate marks and the complete expanded code. This is the source object for hidden EP, rather than an arbitrary unexpanded lift.",
+      "depends_on": [
+        "A07",
+        "A11",
+        "D11"
+      ],
+      "notes": "N07",
+      "scope": "EP_transfer",
+      "source_labels": [
+        "thm:foundational-cofinal-tuple-EP"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C33",
+      "name": "Hidden EP selects D before any competing visible expansion",
+      "statement": "Apply A10 to this fixed H_A^o. Obtain one finite UNEXPANDED D such that EVERY allowed D^o admits H_A^o. The choice may depend on A^o under the source EP convention; it cannot depend on a later B^o. Hidden Ramsey is not an input.",
+      "depends_on": [
+        "C32",
+        "A10",
+        "A09"
+      ],
+      "notes": "N07",
+      "scope": "EP_transfer",
+      "source_labels": [
+        "thm:foundational-cofinal-tuple-EP"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C34",
+      "name": "Cofinality selects E above the normalized witness and fixes B",
+      "statement": "First C48-C50 normalize the hidden witness D to its OLD-root-generated D0=h(N(D)), which remains an EP witness for H_A^o. Abstract contract (ii) embeds that D0 into finite full-root-generated E. Fix j:D0->E and let unexpanded B=N(E)|_V. Tags/delta are fixed by A07, so B is independent of later competing expansions. No concrete ambient P or cofinality lemma is assumed.",
+      "depends_on": [
+        "C33",
+        "C50",
+        "A11",
+        "A07"
+      ],
+      "notes": "N07",
+      "scope": "EP_transfer",
+      "source_labels": [
+        "thm:foundational-cofinal-tuple-EP"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C35",
+      "name": "Universal same-host contract handles an arbitrary B expansion",
+      "statement": "Let B^o be ANY allowed expansion of the already fixed B. Abstract contract (iii) supplies E^o in H^o on PRECISELY E preserving the entire code B^o. A lift on some unrelated E-prime, or a lift only for a selected B^o, would not discharge this step.",
+      "depends_on": [
+        "C34",
+        "A11"
+      ],
+      "notes": "N07",
+      "scope": "EP_transfer",
+      "source_labels": [
+        "thm:foundational-cofinal-tuple-EP"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C36",
+      "name": "Restrict legally to the normalized witness and apply its EP",
+      "statement": "C51 proves the chosen image j(D0) is an ACTUAL expanded-closed induced substructure of this arbitrary E^o. Restrict there and pull back along j, obtaining an allowed D0^o. C50 supplies u:H_A^o->D0^o; compose with its actual expanded embedding into E^o. Ordinary heredity alone would NOT justify restriction to arbitrary old D when expansion functions are added.",
+      "depends_on": [
+        "C34",
+        "C35",
+        "C50",
+        "C51",
+        "A07",
+        "A01"
+      ],
+      "notes": "N07",
+      "scope": "EP_transfer",
+      "source_labels": [
+        "thm:foundational-cofinal-tuple-EP"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C37",
+      "name": "Use the reverse FCODE direction and fine-atom faithfulness",
+      "statement": "Apply the ACTUAL hidden-to-visible construction C11/C12 to the composite in C36 and the marked A^o roots. Qf validity keeps their images in the fixed N(E); full code reflects all expanded predicates, and abstract contract (iv)/D12 recovers original fine visible atoms. Thus the root map embeds A^o into the particular competing B^o. Unique extension of already-visible maps alone would not replace this reverse construction.",
+      "depends_on": [
+        "C36",
+        "C11",
+        "C12",
+        "C14",
+        "A11",
+        "D12"
+      ],
+      "notes": "N07",
+      "scope": "EP_transfer",
+      "source_labels": [
+        "thm:foundational-cofinal-tuple-EP"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C38",
+      "name": "The fixed host satisfies the universal visible EP quantifier",
+      "statement": "The B chosen in C34 is fixed for A^o. C35-C37 construct A^o->B^o for EVERY allowed B^o. Hence forall A^o exists unexpanded B forall B^o exists embedding, exactly D10/source EP. No chosen preferred expansion, changed host or hidden Ramsey assertion substitutes for the universal quantifier.",
+      "depends_on": [
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "D10"
+      ],
+      "notes": "N07",
+      "scope": "EP_transfer",
+      "source_labels": [
+        "thm:foundational-cofinal-tuple-EP"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C39",
+      "name": "Abstract cofinal EP transfer with exactly four contracts",
+      "statement": "C38 proves the source theorem under the reasonable precompact expansion setting, hidden EP and A11. Its use of reconstruction is internal to the full-code setting; it does not assume concrete C25 ambient cofinality, concrete C31 same-host proof, CCO, SAP, EPPA or any MI/MR fine-code theorem. No claim that those contracts hold for a particular interpretation is made.",
+      "depends_on": [
+        "C38",
+        "A09",
+        "A10",
+        "D11"
+      ],
+      "notes": "N07",
+      "scope": "EP_transfer",
+      "source_labels": [
+        "thm:foundational-cofinal-tuple-EP"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C40",
+      "name": "The ambient corollary discharges cofinality contract ii",
+      "statement": "Under A12 ambient root coverage and finite normal forms instantiate A06/C25 for each finite hidden D. This supplies a full-root-generated finite E containing an embedded D, exactly abstract contract (ii). It does not require a root-generated Ramsey witness.",
+      "depends_on": [
+        "A12",
+        "C25"
+      ],
+      "notes": "N08",
+      "scope": "EP_transfer",
+      "source_labels": [
+        "cor:foundational-root-covered-full-code-EP"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C41",
+      "name": "The corollary discharges SAME-host contract iii for every chosen E",
+      "statement": "For ANY E supplied by C40, the canonical unexpanded full code and reduct-commutation parts of A12/A07 supply the bound A08 inputs for that E and B=N(E). Instantiate the universal local lemma C31. Every allowed B^o therefore lifts to the SAME E; no global same-host axiom is added beyond those concrete full-code premises.",
+      "depends_on": [
+        "A12",
+        "A07",
+        "C40",
+        "C31"
+      ],
+      "notes": "N08",
+      "scope": "EP_transfer",
+      "source_labels": [
+        "cor:foundational-root-covered-full-code-EP"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C42",
+      "name": "Canonical full codes discharge source and embedding contracts i and iv",
+      "statement": "A12 canonical unexpanded reconstruction and reduct commutation give (i). C15, including its reverse construction, gives unique support extension, root validity and induced code embeddings; A12 fine-atom faithfulness supplies the original visible atoms. This is precisely (iv), without deriving fine-atom definability for a specific MI/MR application.",
+      "depends_on": [
+        "A12",
+        "A07",
+        "C15"
+      ],
+      "notes": "N08",
+      "scope": "EP_transfer",
+      "source_labels": [
+        "cor:foundational-root-covered-full-code-EP"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C43",
+      "name": "Apply the conditional abstract transfer to the discharged contracts",
+      "statement": "C40-C42 prove all four A11 contracts under the ambient corollary premises. Instantiate C39 with those contracts and the supplied hidden EP/reasonable precompact setting. Thus the visible full-code expansion has EP. The conditional abstract interface is DISCHARGED here, not asserted to follow from hidden Ramsey or added as an independent application hypothesis.",
+      "depends_on": [
+        "C39",
+        "C40",
+        "C41",
+        "C42",
+        "A12"
+      ],
+      "notes": "N08",
+      "scope": "EP_transfer",
+      "source_labels": [
+        "cor:foundational-root-covered-full-code-EP"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C44",
+      "name": "Missing domain/equality/comparison codes break exact reconstruction",
+      "statement": "An undefined unary singleton and a fixed-point singleton differ only in partial domains if same-root definedness is dropped. A one-root tuple (a,b) with a!=b versus (c,c) requires same-root coordinate equality; two roots sharing a coordinate require cross-root equality. Dropping an actual hidden order can change embedding sets and destroy the coloring correspondence. These are boundary diagnostics, not additional theorem exports.",
+      "depends_on": [
+        "C04",
+        "C05",
+        "C07",
+        "C15"
+      ],
+      "notes": "N09",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:foundational-full-code-embeddings"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C45",
+      "name": "Orphans show root-generation and same-host claims are substantive",
+      "statement": "A hidden point not generated by ANY valid root obstructs full-root equality and can carry invisible expansion data, defeating uniqueness. A hereditary class may realize an allowed colored root singleton in one hidden host but forbid that color on the SAME host once an orphan is present; full-root generation in the local lemma prevents this failure. This boundary is not asserted to satisfy all reasonable-EP hypotheses.",
+      "depends_on": [
+        "C24",
+        "C30",
+        "C31"
+      ],
+      "notes": "N09",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:foundational-same-host-code"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C46",
+      "name": "Added functions need reduct commutation even with finite normal forms",
+      "statement": "Let unexpanded E be a root singleton. Add an idempotent unary F and realize the same unexpanded visible root in an expanded two-point host with F(root)=a nonroot fixed point. Normal forms id,F are finite, but its expanded generated support has two points while old h(B)=E has one. That B^o has no SAME-singleton-host realization with F(root)!=root. It violates exactly the explicit support-reduct commutation gate.",
+      "depends_on": [
+        "C07",
+        "C27",
+        "C31",
+        "D08"
+      ],
+      "notes": "N09",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:foundational-same-host-code"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C47",
+      "name": "EP order of quantifiers and conditional inputs remain explicit",
+      "statement": "A finite incidence matrix can have SOME favorable expansion or a favorable host chosen AFTER each competing expansion without having ONE host favorable for ALL expansions. Such logical diagnostics do not claim a full structural counterexample satisfying the source contracts. Hidden Ramsey input and hidden EP input remain separate; no bounded computation proves either all-size property.",
+      "depends_on": [
+        "C20",
+        "C34",
+        "C35",
+        "C38"
+      ],
+      "notes": "N09",
+      "scope": "boundary",
+      "source_labels": [
+        "thm:foundational-cofinal-tuple-EP"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C48",
+      "name": "Normalize D using ONLY OLD unary functions and all its valid roots",
+      "statement": "For finite unexpanded D put D0=h_old(N(D)) inside D. It is finite and old-unary-closed, including the empty case. Every root of N(D) has all coordinates in D0, and qf validity reflects under the old induced inclusion; conversely valid D0 roots remain valid in D. Thus N(D0)=N(D) and h_old(N(D0))=D0. This needs no added-function closure and no uniform normal-form bound beyond finiteness of D.",
+      "depends_on": [
+        "C01",
+        "C02",
+        "A07",
+        "A11",
+        "D07"
+      ],
+      "notes": "N07",
+      "scope": "EP_transfer",
+      "source_labels": [
+        "thm:foundational-cofinal-tuple-EP"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C49",
+      "name": "Reasonableness extends EVERY normalized expansion to D",
+      "statement": "For ANY allowed D0^o, apply A09 reasonableness to the fixed old induced inclusion D0->D from C48. Obtain some allowed D^o on D in which that SAME inclusion is an expanded embedding extending D0^o. This establishes actual domain closure in the chosen extension; it is not claimed for every arbitrary expansion of D.",
+      "depends_on": [
+        "C48",
+        "A09"
+      ],
+      "notes": "N07",
+      "scope": "EP_transfer",
+      "source_labels": [
+        "thm:foundational-cofinal-tuple-EP"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C50",
+      "name": "The normalized D0 retains the required hidden EP witness property",
+      "statement": "For arbitrary D0^o choose its extension D^o by C49 and use C33 to embed H_A^o into D^o. Every source point is an OLD term of a source root coordinate, because contract (i)/A07 identifies the reduct of H_A^o with old-generated h(A). Image roots are valid in N(D), and all their coordinates/OLD unary values lie in D0 by C48. Thus the WHOLE image lies in D0 and the embedding factors through the given actual D0^o. This works for EVERY D0^o, so D0 is an EP witness for this H_A^o.",
+      "depends_on": [
+        "C32",
+        "C33",
+        "C48",
+        "C49",
+        "C01",
+        "C02",
+        "A07",
+        "A11"
+      ],
+      "notes": "N07",
+      "scope": "EP_transfer",
+      "source_labels": [
+        "thm:foundational-cofinal-tuple-EP"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C51",
+      "name": "Full-code reduct commutation proves normalized image expanded closure",
+      "statement": "For fixed j:D0->E and arbitrary E^o from C35, take its induced visible full-code subset on S=j(N(D0)). Its canonical OLD generated support is j(D0), by C48 and old term transport. Abstract contract (i)/A07 says the reduct of its ACTUAL expanded generated support is exactly that marked old support, not merely an unrelated isomorphism type. Hence its vertex set is j(D0); since it is an actual expanded induced support, j(D0) is closed under all ADDED functions too. Restriction/pullback to D0 is now legal.",
+      "depends_on": [
+        "C34",
+        "C35",
+        "C48",
+        "C01",
+        "C02",
+        "C03",
+        "A07",
+        "A11"
+      ],
+      "notes": "N07",
+      "scope": "EP_transfer",
+      "source_labels": [
+        "thm:foundational-cofinal-tuple-EP"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    }
+  ],
+  "source_result_files": [
+    "sections/full_code_tuple_ep_transfer.tex"
+  ],
+  "exports": [
+    {
+      "source_label": "lem:foundational-full-code-embeddings",
+      "claims": [
+        "C08",
+        "C15"
+      ]
+    },
+    {
+      "source_label": "thm:ramsey-tuple-readout",
+      "claims": [
+        "C20"
+      ]
+    },
+    {
+      "source_label": "lem:foundational-root-cover-cofinal",
+      "claims": [
+        "C24",
+        "C25"
+      ]
+    },
+    {
+      "source_label": "lem:foundational-same-host-code",
+      "claims": [
+        "C31"
+      ]
+    },
+    {
+      "source_label": "thm:foundational-cofinal-tuple-EP",
+      "claims": [
+        "C38",
+        "C39"
+      ]
+    },
+    {
+      "source_label": "cor:foundational-root-covered-full-code-EP",
+      "claims": [
+        "C43"
+      ]
+    }
+  ],
+  "auxiliary_exports": [
+    {
+      "source_label": "eq:foundational-full-code-embeddings",
+      "claims": [
+        "C15"
+      ],
+      "source": {
+        "file": "sections/full_code_tuple_ep_transfer.tex",
+        "anchor": "\\label{eq:foundational-full-code-embeddings}"
+      }
+    },
+    {
+      "source_label": "eq:foundational-root-cover",
+      "claims": [
+        "C24",
+        "C25"
+      ],
+      "source": {
+        "file": "sections/full_code_tuple_ep_transfer.tex",
+        "anchor": "\\label{eq:foundational-root-cover}"
+      }
+    }
+  ],
+  "source_files": [
+    {
+      "file": "sections/full_code_tuple_ep_transfer.tex",
+      "git_blob": "0c17201c80dbfa45e222553919f3545c95733c28"
+    },
+    {
+      "file": "sections/expansion_property_unfiltered.tex",
+      "git_blob": "a6cc2ff95a5ed8f7d371e33d5504edcedc6cd35c"
+    }
+  ],
+  "dependency_firewalls": [
+    {
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15"
+      ],
+      "forbid": [
+        "A05",
+        "A06",
+        "A07",
+        "A08",
+        "A09",
+        "A10",
+        "A11",
+        "A12",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40",
+        "C41",
+        "C42",
+        "C43",
+        "C48",
+        "C49",
+        "C50",
+        "C51"
+      ]
+    },
+    {
+      "claims": [
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20"
+      ],
+      "forbid": [
+        "A06",
+        "A07",
+        "A08",
+        "A09",
+        "A10",
+        "A11",
+        "A12",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40",
+        "C41",
+        "C42",
+        "C43",
+        "C48",
+        "C49",
+        "C50",
+        "C51"
+      ]
+    },
+    {
+      "claims": [
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25"
+      ],
+      "forbid": [
+        "A05",
+        "A07",
+        "A08",
+        "A09",
+        "A10",
+        "A11",
+        "A12",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40",
+        "C41",
+        "C42",
+        "C43",
+        "C48",
+        "C49",
+        "C50",
+        "C51"
+      ]
+    },
+    {
+      "claims": [
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31"
+      ],
+      "forbid": [
+        "A05",
+        "A06",
+        "A09",
+        "A10",
+        "A11",
+        "A12",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40",
+        "C41",
+        "C42",
+        "C43",
+        "C48",
+        "C49",
+        "C50",
+        "C51"
+      ]
+    },
+    {
+      "claims": [
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C48",
+        "C49",
+        "C50",
+        "C51"
+      ],
+      "forbid": [
+        "A05",
+        "A06",
+        "A08",
+        "A12",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C40",
+        "C41",
+        "C42",
+        "C43"
+      ]
+    }
+  ],
+  "EP_quantifier_contract": {
+    "source_convention": "forall expanded A^o exists unexpanded B forall allowed B^o exists expanded embedding",
+    "hidden_EP_input": "A10",
+    "abstract_interfaces": "A11",
+    "source_choice": "C32",
+    "hidden_D_choice": "C33",
+    "old_root_normalization": "C48",
+    "reasonable_extension": "C49",
+    "normalized_EP_witness": "C50",
+    "fixed_E_and_B_choice": "C34",
+    "arbitrary_competing_expansion": "C35",
+    "expanded_closure_before_restriction": "C51",
+    "restriction_to_fixed_D0": "C36",
+    "reverse_FCODE_and_fine_atoms": "C37",
+    "universal_EP_output": "C38",
+    "corollary_discharges_interfaces": {
+      "i": "C42",
+      "ii": "C40",
+      "iii": "C41",
+      "iv": "C42"
+    },
+    "support_reduct_commutation": "A07/D08/C27"
+  },
+  "tasks": [
+    {
+      "id": "T01",
+      "name": "Partial-term transport and marked quotient reconstruction",
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement genuine typed partial-function domains, finite NF composition and FULL same-root/cross-root tuple codes. Construct both directions of the embedding bijection and its naturality. Keep hidden Ramsey separate from hidden EP. EP normalizes D to OLD-root-generated D0 using reasonableness, fixes the unexpanded host before arbitrary competing expansions, and proves expanded closure by support reduct commutation BEFORE restriction. The corollary discharges all four application contracts. No concrete CCO/MI/MR encoding or external theorem is supplied."
+    },
+    {
+      "id": "T02",
+      "name": "Both embedding constructions, inverses and naturality",
+      "claims": [
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15"
+      ],
+      "depends_on": [
+        "T01"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement genuine typed partial-function domains, finite NF composition and FULL same-root/cross-root tuple codes. Construct both directions of the embedding bijection and its naturality. Keep hidden Ramsey separate from hidden EP. EP normalizes D to OLD-root-generated D0 using reasonableness, fixes the unexpanded host before arbitrary competing expansions, and proves expanded closure by support reduct commutation BEFORE restriction. The corollary discharges all four application contracts. No concrete CCO/MI/MR encoding or external theorem is supplied."
+    },
+    {
+      "id": "T03",
+      "name": "Conditional hidden Ramsey readout",
+      "claims": [
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20"
+      ],
+      "depends_on": [
+        "T01",
+        "T02"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement genuine typed partial-function domains, finite NF composition and FULL same-root/cross-root tuple codes. Construct both directions of the embedding bijection and its naturality. Keep hidden Ramsey separate from hidden EP. EP normalizes D to OLD-root-generated D0 using reasonableness, fixes the unexpanded host before arbitrary competing expansions, and proves expanded closure by support reduct commutation BEFORE restriction. The corollary discharges all four application contracts. No concrete CCO/MI/MR encoding or external theorem is supplied."
+    },
+    {
+      "id": "T04",
+      "name": "Ambient finite root-generated cofinality",
+      "claims": [
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25"
+      ],
+      "depends_on": [
+        "T01"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement genuine typed partial-function domains, finite NF composition and FULL same-root/cross-root tuple codes. Construct both directions of the embedding bijection and its naturality. Keep hidden Ramsey separate from hidden EP. EP normalizes D to OLD-root-generated D0 using reasonableness, fixes the unexpanded host before arbitrary competing expansions, and proves expanded closure by support reduct commutation BEFORE restriction. The corollary discharges all four application contracts. No concrete CCO/MI/MR encoding or external theorem is supplied."
+    },
+    {
+      "id": "T05",
+      "name": "Canonical reduct and universal SAME-host lifting",
+      "claims": [
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31"
+      ],
+      "depends_on": [
+        "T01",
+        "T02"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement genuine typed partial-function domains, finite NF composition and FULL same-root/cross-root tuple codes. Construct both directions of the embedding bijection and its naturality. Keep hidden Ramsey separate from hidden EP. EP normalizes D to OLD-root-generated D0 using reasonableness, fixes the unexpanded host before arbitrary competing expansions, and proves expanded closure by support reduct commutation BEFORE restriction. The corollary discharges all four application contracts. No concrete CCO/MI/MR encoding or external theorem is supplied."
+    },
+    {
+      "id": "T06",
+      "name": "Abstract four-contract EP transfer with fixed host",
+      "claims": [
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C48",
+        "C49",
+        "C50",
+        "C51"
+      ],
+      "depends_on": [
+        "T01",
+        "T02"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement genuine typed partial-function domains, finite NF composition and FULL same-root/cross-root tuple codes. Construct both directions of the embedding bijection and its naturality. Keep hidden Ramsey separate from hidden EP. EP normalizes D to OLD-root-generated D0 using reasonableness, fixes the unexpanded host before arbitrary competing expansions, and proves expanded closure by support reduct commutation BEFORE restriction. The corollary discharges all four application contracts. No concrete CCO/MI/MR encoding or external theorem is supplied."
+    },
+    {
+      "id": "T07",
+      "name": "Ambient corollary discharges the four contracts",
+      "claims": [
+        "C40",
+        "C41",
+        "C42",
+        "C43"
+      ],
+      "depends_on": [
+        "T01",
+        "T02",
+        "T04",
+        "T05",
+        "T06"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement genuine typed partial-function domains, finite NF composition and FULL same-root/cross-root tuple codes. Construct both directions of the embedding bijection and its naturality. Keep hidden Ramsey separate from hidden EP. EP normalizes D to OLD-root-generated D0 using reasonableness, fixes the unexpanded host before arbitrary competing expansions, and proves expanded closure by support reduct commutation BEFORE restriction. The corollary discharges all four application contracts. No concrete CCO/MI/MR encoding or external theorem is supplied."
+    },
+    {
+      "id": "T08",
+      "name": "Domain, alias, orphan and EP quantifier counterchecks",
+      "claims": [
+        "C44",
+        "C45",
+        "C46",
+        "C47"
+      ],
+      "depends_on": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement genuine typed partial-function domains, finite NF composition and FULL same-root/cross-root tuple codes. Construct both directions of the embedding bijection and its naturality. Keep hidden Ramsey separate from hidden EP. EP normalizes D to OLD-root-generated D0 using reasonableness, fixes the unexpanded host before arbitrary competing expansions, and proves expanded closure by support reduct commutation BEFORE restriction. The corollary discharges all four application contracts. No concrete CCO/MI/MR encoding or external theorem is supplied."
+    }
+  ],
+  "overview_mermaid": [
+    "flowchart TD",
+    "  T[\"Partial terms and full equality code\"] --> R[\"Marked generated support\"]",
+    "  R --> F[\"Natural embedding bijection\"]",
+    "  H[\"Supplied hidden Ramsey\"] --> V[\"Visible Ramsey readout\"]",
+    "  F --> V",
+    "  P[\"Ambient root coverage\"] --> C[\"Finite root generated cofinality\"]",
+    "  R --> S[\"Canonical reduct and SAME host lift\"]",
+    "  E[\"Supplied hidden EP\"] --> A[\"Abstract four contract EP transfer\"]",
+    "  F --> A",
+    "  C --> O[\"Ambient full code EP corollary\"]",
+    "  S --> O",
+    "  A --> O"
+  ],
+  "overview_notes": [
+    "All six results are conditional elementary transfers with no mathematical provider imports or external theorem calls.",
+    "Full code retains partial definedness, within-root/cross-root equality, every hidden unary/binary relation and comparisons. Roots are literal tagged tuples, with no tuple quotient.",
+    "The marked source root set is retained; the unmarked hidden support alone need not recover which roots were selected.",
+    "Hidden Ramsey readout permits orphan host points and requires neither root cofinality nor EP.",
+    "Same-host lifting requires exact canonical unexpanded support, explicit expanded-support reduct commutation and a full-root-generated E.",
+    "With ADDED functions, EP first normalizes D to OLD-root-generated D0, retaining its witness property by reasonableness. Support-reduct commutation then proves j(D0) expanded-closed before restriction.",
+    "D0, its embedding in E and B=N(E) are fixed BEFORE the universally quantified B^o. The reverse hidden-to-visible step uses the actual FCODE construction."
+  ],
+  "controls": [
+    {
+      "id": "K01",
+      "check": "Independent bounded partial-unary structures and tagged tuple presentations: exact hidden/visible embedding sets, generated supports, full definedness/equality/relations, inverse maps and composition."
+    },
+    {
+      "id": "K02",
+      "check": "Finite ambient root-cover closure, SAME-host/full-code transport and explicit missing-code, orphan, added-function/reduct and EP quantifier negatives. Bounds are diagnostics, not all-size Ramsey/EP or Lean certificates."
+    }
+  ],
+  "article_feedback": [
+    {
+      "id": "F01",
+      "kind": "DEPENDENCY_OR_SCOPE_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/full_code_tuple_ep_transfer.tex",
+        "anchor": "up to unique isomorphism over the root coordinates"
+      },
+      "finding": "The reconstruction is unique over MARKED root-coordinate presentations; the unmarked hidden support need not determine which subset of all valid roots A selected. Partial-term domain transport and same-root equality/definedness are essential.",
+      "proposed_article_change": "Make the marked-source convention and a short partial-term/qf transport induction explicit before defining the two inverse embedding maps.",
+      "caller_effect": "No positive-dimensional-root or total-function premise is added. Empty roots/supports and orphan Ramsey hosts remain allowed.",
+      "proof_claims": [
+        "C01",
+        "C02",
+        "C04",
+        "C05",
+        "C08",
+        "C11",
+        "C15",
+        "C19"
+      ]
+    },
+    {
+      "id": "F02",
+      "kind": "DEPENDENCY_OR_SCOPE_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/full_code_tuple_ep_transfer.tex",
+        "anchor": "on precisely the"
+      },
+      "finding": "Fixed root compatibility and explicit support-reduct commutation ensure an arbitrary competing B^o lifts on the SAME unexpanded E. Added unary functions can enlarge a generated support even with finite normal forms.",
+      "proposed_article_change": "Retain the reduct-commutation warning and name the marked transport identifying E; optionally include the idempotent added-function example to explain why the condition is substantive.",
+      "caller_effect": "The same-host lemma is conditional and does not silently supply these properties for a concrete MI/MR interpretation.",
+      "proof_claims": [
+        "C27",
+        "C28",
+        "C29",
+        "C31",
+        "C35",
+        "C46"
+      ]
+    },
+    {
+      "id": "F03",
+      "kind": "DEPENDENCY_OR_SCOPE_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/full_code_tuple_ep_transfer.tex",
+        "anchor": "Only the abstract four-contract interface"
+      },
+      "finding": "The final EP step needs the hidden-to-visible direction of FCODE with fine-atom faithfulness, not just unique extension of a map already known visible. The source EP convention fixes an expanded A^o and universally quantifies competing expansions of a host chosen first.",
+      "proposed_article_change": "Cite the reverse embedding construction explicitly and repeat the fixed-host quantifier order at the EP interface. Keep concrete cofinal/same-host proofs separate from the abstract four contracts.",
+      "caller_effect": "No hidden Ramsey premise or extra joint-embedding assumption is introduced into the EP proof.",
+      "proof_claims": [
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C40",
+        "C41",
+        "C42",
+        "C43"
+      ]
+    },
+    {
+      "id": "F04",
+      "kind": "PROOF_EXPANSION_REQUIRED",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/full_code_tuple_ep_transfer.tex",
+        "anchor": "Restrict $E^o$ along the fixed"
+      },
+      "finding": "If expansions add unary functions, an arbitrary OLD induced D inside E need not be expanded-closed. The printed restriction step is automatic for relational/function-preserving expansions but needs a genuine argument in the stated general scope.",
+      "proposed_article_change": "Replace D by D0=h_old(N(D)). Use reasonableness to extend every D0 expansion to D and factor each EP embedding through D0. Then, after embedding D0 in E, use the full code on jN(D0) and coordinate-preserving support/reduct commutation to prove jD0 expanded-closed BEFORE restriction.",
+      "caller_effect": "Existing hypotheses suffice; no relational-only restriction or new closure premise is added. Retain source cofinality scope without claiming it is logically necessary under every stronger combination of contracts.",
+      "proof_claims": [
+        "C34",
+        "C36",
+        "C48",
+        "C49",
+        "C50",
+        "C51"
+      ]
+    }
+  ],
+  "review": {
+    "date": "2026-10-28",
+    "source_unchanged": true,
+    "source_signature_repairs": 0,
+    "unexpanded_provider_labels": [],
+    "proof_status": "HUMAN_EXPANDED_NOT_LEAN; six source results/two equations with separate hidden Ramsey/EP inputs. The added-function EP restriction step is expanded using OLD-root normalization, reasonableness and support reduct commutation under the existing hypotheses.",
+    "independent_reviews": [
+      "Full-code reconstruction, partial domains, marked tuple roots and natural Ramsey embedding readout",
+      "Ambient cofinality, exact same-host transport, OLD-root EP-witness normalization, expanded closure and source EP quantifiers"
+    ],
+    "boundaries": [
+      "Finite NF equalities preserve PARTIAL domains as well as values.",
+      "The full code has no omitted arbitrary relations or freely interpreted visible predicates.",
+      "Canonical support/reduct commutation is a concrete application obligation.",
+      "Added functions require the explicit EP normalization and expanded-closure proof before restriction.",
+      "No hidden Ramsey/EP theorem or concrete fine-atom definability theorem is proved here."
+    ]
+  }
+}

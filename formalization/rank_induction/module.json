@@ -1,0 +1,1619 @@
+{
+  "schema_version": 1,
+  "id": "rank_induction",
+  "index_title": "Strict quotient rank, closed rooted witnesses and phased ordinary EPPA",
+  "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+  "status": "HUMAN_EXPANDED_NOT_LEAN",
+  "scope": "Private B030: five final EPPA-article results and three rank-step equations. Expand the conditional rank constructor, full-palette closed-strong amalgamation, the well-founded P/O/U assembly and its CLOSED-witness refinement. Lower-rank P/O/U are explicitly bound antecedents, discharged by the global induction, never new mathematical axioms. The original rank lemma needs only plain lower P; closed lower P is needed solely by the separate closedness refinement. The global theorem remains a SOURCE-RELATIVE CANDIDATE inheriting the B028 safe-selector/reservoir/decoder contracts and B027 published-HKN/local-CCO-adapter obligations. No compiled Lean, global certification or coherent EPPA is asserted.",
+  "scope_vocabulary": [
+    "rank_measure",
+    "closed_safe_palette",
+    "rank_step",
+    "closed_refinement",
+    "phased_induction",
+    "candidate_global",
+    "single_sort_transitivity"
+  ],
+  "scope_explanation": "statement and proof. Pure orbit avoidance, strict rank descent, bound lower-rank assumptions, ordinary finite restoration and the stronger closed constructor have distinct branches.",
+  "control_script": "tools/check_rank_induction_controls.py",
+  "assumptions": [
+    {
+      "id": "A01",
+      "name": "Actual homogeneous original one-sort source",
+      "statement": "M is nonempty transitive countable homogeneous in a FINITE complete named symmetric binary language of actual equality-inclusive pair orbitals. Invariant endorelations commute. Real finite induced partial maps preserve all original colours. AP/JEP are retained as standing age hypotheses; no raw SAP, EPPA, owner master or safe palette is assumed."
+    },
+    {
+      "id": "A02",
+      "name": "Semantic homomorphic CCO and prepared construction boundary",
+      "statement": "M has semantic homomorphic CCO. Actual full-exact quotient source inheritance and prepared local CCO constructions are used with their stated hypotheses. This is not an assumption that their receiving Lean encodings or the global source-relative candidate theorem have been independently certified."
+    },
+    {
+      "id": "A03",
+      "name": "Given absolutely closed strong-safe palette",
+      "statement": "S is a GIVEN set of original diversity atom names strongly amalgamating EVERY finite absolutely acl_M-closed induced span. The resulting amalgam need not itself be closed. This premise is discharged by full-palette construction when ordinary EPPA is derived."
+    },
+    {
+      "id": "A04",
+      "name": "Original nonempty finite input",
+      "statement": "A0 is a finite NONEMPTY set of original real points of M. Empty-input ordinary EPPA is dealt with separately by its empty witness; the closed/transitive corollary has nonempty input."
+    }
+  ],
+  "imports": [
+    {
+      "id": "I01",
+      "name": "Actual exact quotient source inheritance",
+      "source_label": "thm:exact-sorts-source",
+      "statement": "Actual full exact quotients inherit the standing named homogeneous/CCO source. At Id this includes the original triangle-defined source conclusion. Quotient full automorphism groups need not be images of the original group.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01",
+        "A02"
+      ],
+      "provider_module": "raw_exact",
+      "provider_claims": [
+        "C24",
+        "C25",
+        "C27",
+        "C28"
+      ]
+    },
+    {
+      "id": "I02",
+      "name": "Elementary finite-action avoidance",
+      "source_label": "lem:finite-action-avoidance",
+      "statement": "For a group acting on points with infinite relevant orbits, one element moves a finite set away from a finite forbidden set. Finite unions of cosets of infinite-index stabilizers cannot cover the group; the Neumann argument is already expanded by this provider. No topology, oligomorphy or new external theorem is needed.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01"
+      ],
+      "provider_module": "acl_owner_geometry",
+      "provider_claims": [
+        "C01",
+        "C02",
+        "C03"
+      ]
+    },
+    {
+      "id": "I03",
+      "name": "Finite exact normalization",
+      "source_label": "lem:finite-exact-normalization-geometric",
+      "statement": "Finite exact reduction terminates by loss of diversity orbitals and the terminal greatest finite equivalence has thin atoms. Absence of nonidentity finite exact kernels is the normalization condition; thinness is not its converse.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01",
+        "A02"
+      ],
+      "provider_module": "finite_packets",
+      "provider_claims": [
+        "C23",
+        "C24",
+        "C25"
+      ]
+    },
+    {
+      "id": "I04",
+      "name": "Minimal infinite equivalences are actual exact",
+      "source_label": "prop:minimalcut",
+      "statement": "Every minimal infinite invariant equivalence is full exact and its actual quotient is standing. The original greatest finite equivalence F need not itself be exact.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01",
+        "A02"
+      ],
+      "provider_module": "finite_packets",
+      "provider_claims": [
+        "C11",
+        "C12",
+        "C13"
+      ]
+    },
+    {
+      "id": "I05",
+      "name": "Maximal hat factors are normalized one-direction sources",
+      "source_label": "lem:acf-hat-normalised",
+      "statement": "For INFINITE finite-exact-normalized M and ALL minimal infinite E_i, maximal exact hatC_i yields Q_i with no nonidentity finite exact kernels, unique minimal infinite direction, finite bottom F_i and absolute unary acl=F_i[-].",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01",
+        "A02"
+      ],
+      "provider_module": "mi_geometry",
+      "provider_claims": [
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08"
+      ]
+    },
+    {
+      "id": "I06",
+      "name": "Complete factor geometry with safe premise",
+      "source_label": "cor:acf-hat-factors",
+      "statement": "For INFINITE finite-exact-normalized M with r>=2, the full family of maximal hats has meet Id; Hstar>Id and H_i join H_j=J_ij. Under GIVEN strong closed S the full-support factor palettes S_i are strong closed-safe and every unsafe clique has at most one nonsingle-packet projection. Closure pulls back coordinatewise.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01",
+        "A02"
+      ],
+      "provider_module": "mi_geometry",
+      "provider_claims": [
+        "C27",
+        "C28",
+        "C29",
+        "C30"
+      ],
+      "provider_support_claims": [
+        "C26"
+      ],
+      "provider_support_usage": "Extract the explicitly proved internal support with its original hypotheses; it is not an additional numbered theorem export."
+    },
+    {
+      "id": "I07",
+      "name": "Direct normalized relative MI constructor",
+      "source_label": "lem:acf-relative-mi-normal",
+      "statement": "Under its principal original source, normalization, GIVEN strong closed-safe S, ordinary EPPA ONLY in Q/E and the finite full-owner B hypotheses, B028 constructs ONE finite F-closed D with exact B image, all prescribed compatible requests and rooted unsafe transport. Its displayed local owner/selector/reservoir/decoder context is constructed, not added as an unexplained input. Published HKN encoding bridges remain pending.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01",
+        "A02"
+      ],
+      "provider_module": "relative_mi",
+      "provider_claims": [
+        "C42"
+      ]
+    },
+    {
+      "id": "I08",
+      "name": "Conditional all-exact finite owner master",
+      "source_label": "thm:acf-owner-master",
+      "statement": "For X with ordinary EPPA in EVERY actual exact quotient INCLUDING X, construct ONE full finite B with M1 EPPA, M2 packet closure, M3 full action maps onto with fibre-transitive kernels, and M4 actual full compatible-tuple carrier. This is a conditional construction, not an ordinary EPPA premise for current M.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01",
+        "A02"
+      ],
+      "provider_module": "owner_master",
+      "provider_claims": [
+        "C25"
+      ]
+    },
+    {
+      "id": "I09",
+      "name": "Actual full joint-owner reconstruction",
+      "source_label": "lem:acf-multi-owner-point-homogeneity",
+      "statement": "Meet-Id actual exact C_i, JOG, actual FULL owner tuple carrier and finite onto factors with whole-owner actions give an original fine-coloured W, onto projections and its full joint automorphism group. With separate owner/source partial-extension premises the independent EPPA branch extends every original p.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01",
+        "A02"
+      ],
+      "provider_module": "joint_owner",
+      "provider_claims": [
+        "C06",
+        "C16",
+        "C21",
+        "C22"
+      ]
+    },
+    {
+      "id": "I10",
+      "name": "General exact-coordinate closure pullback",
+      "source_label": "lem:acf-finite-exact-closed-preimages",
+      "statement": "For actual exact kernels with finite-class meet and finite absolutely closed coordinate targets, the inverse intersection is finite and absolutely closed. The exact target closure identity is imported separately in I15.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01",
+        "A02"
+      ],
+      "provider_module": "acl_owner_geometry",
+      "provider_claims": [
+        "C24",
+        "C25"
+      ]
+    },
+    {
+      "id": "I11",
+      "name": "NONRELATIVE finite exact restoration",
+      "source_label": "lem:acf-finite-lift",
+      "statement": "Use ONLY closure C06, full-matrix strong closed-safe descent C10 and ordinary whole-preimage rooted reconstruction C18. Internal C13 states D is closed IFF the supplied quotient witness is closed. No stronger relative owner H, complete owner-cover B or onto/kernel premise is imported into rank restoration.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01",
+        "A02"
+      ],
+      "provider_module": "finite_lift",
+      "provider_claims": [
+        "C06",
+        "C10",
+        "C18"
+      ],
+      "provider_support_claims": [
+        "C13"
+      ],
+      "provider_support_usage": "Extract the explicitly proved internal support with its original hypotheses; it is not an additional numbered theorem export."
+    },
+    {
+      "id": "I12",
+      "name": "Prescribed owner point and packet homogeneity",
+      "source_label": "lem:acf-point-homogeneity",
+      "statement": "A finite witness extending every compatible original source request over an orbit-covering nonempty A0 has point homogeneity with a prescribed entire B action, hence transports whole finite packets. No action section is supplied.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01",
+        "A02"
+      ],
+      "provider_module": "owner_action",
+      "provider_claims": [
+        "C12",
+        "C30"
+      ]
+    },
+    {
+      "id": "I13",
+      "name": "Elementary prescribed-action point lifting",
+      "source_label": "lem:prescribed-action-point-lifting",
+      "statement": "For an equivariant onto point map, a surjective homomorphism with fibre-transitive kernel lifts a prescribed target group element AND a compatible point motion. Choose one lift then one kernel correction. This is shared B001 support, not an extra B018 export.",
+      "status": "HUMAN_SUPPORT_PROOF_NOT_LEAN",
+      "depends_on": []
+    },
+    {
+      "id": "I14",
+      "name": "Products of full exact relations",
+      "source_label": "lem:exact-product",
+      "statement": "Actual RAW exact relations are composition-closed; commuting exact equivalences have full exact join E;H. Finite-class joins remain finite-class by the finite product bound.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01",
+        "A02"
+      ],
+      "provider_module": "raw_exact",
+      "provider_claims": [
+        "C09"
+      ]
+    },
+    {
+      "id": "I15",
+      "name": "Exact target algebraic-closure identity",
+      "source_label": "eq:acf-closure-pullback",
+      "statement": "acl_M(A)=intersection_i pi_i^-1(acl_(M/C_i)(pi_i A)) for actual exact kernels with finite-class meet; repeated and identity quotient sorts are merged canonically.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01",
+        "A02"
+      ],
+      "provider_module": "acl_owner_geometry",
+      "provider_claims": [
+        "C21",
+        "C22",
+        "C23"
+      ]
+    }
+  ],
+  "definitions": [
+    {
+      "id": "D01",
+      "name": "Finite diversity rank",
+      "statement": "mu(X) counts its ACTUAL named diversity pair orbitals, excluding genuine equality. Quotient atoms group old atoms; no equality of original and quotient full automorphism groups is assumed.",
+      "depends_on": [
+        "A01"
+      ],
+      "notes": "N01",
+      "source": {
+        "file": "sections/rooted_main/02_rank_relative_rooted_induction.tex",
+        "anchor": "\\label{lem:acf-rank-step}"
+      }
+    },
+    {
+      "id": "D02",
+      "name": "Plain rooted witness predicate",
+      "statement": "P(X,S,A,W) means ONE finite induced W contains acl_X(A), extends EVERY partial automorphism of A, and transports EVERY nonempty S-unsafe Z and EVERY selected z into acl_X(A) with z literally in A. Closedness of W is not part of this predicate.",
+      "depends_on": [
+        "A03",
+        "A04"
+      ],
+      "notes": "N02",
+      "source": {
+        "file": "sections/rooted_main/02_rank_relative_rooted_induction.tex",
+        "anchor": "\\label{lem:acf-rank-step}"
+      }
+    },
+    {
+      "id": "D03",
+      "name": "Universal phases and closed refinement",
+      "statement": "P_n quantifies the rooted predicate over ALL standing rank-n sources, admissible S and nonempty finite inputs; Pcl_n strengthens the chosen witness by acl_X(W)=W. O_n is ordinary EPPA for every such source; U_n is actual master EXISTENCE: for EVERY finite nonempty input there EXISTS ONE B satisfying M1-M4, with all EPPA antecedents already discharged in that phase. The conditional implication is only I08, not U_n. These are predicates to prove, not assumptions.",
+      "depends_on": [
+        "D01"
+      ],
+      "notes": "N09",
+      "source": {
+        "file": "sections/unified_induction.tex",
+        "anchor": "\\label{thm:main-rooted-acf}"
+      }
+    },
+    {
+      "id": "D04",
+      "name": "Bound lower-rank hypothesis schema",
+      "statement": "Lower(M) abbreviates the universally quantified P/O/U conclusions for EVERY STRICT actual exact quotient M/E with E>Id. It occurs as the BOUND ANTECEDENT of the rank constructor. It is not a free/global axiom; the strong induction discharges it. Identity and current-rank factors are excluded.",
+      "depends_on": [
+        "D03"
+      ],
+      "notes": "N03",
+      "source": {
+        "file": "sections/rooted_main/02_rank_relative_rooted_induction.tex",
+        "anchor": "\\label{lem:acf-rank-step}"
+      }
+    },
+    {
+      "id": "D05",
+      "name": "Absolute real closure",
+      "statement": "acl_X(A) is finite-orbit algebraic closure under FULL Aut(X/A). Finite homogeneous relational sources have finite real acl of finite A; closed means equality acl_X(A)=A. Packet closedness equals absolute real closedness only in the proved one-direction factors.",
+      "depends_on": [
+        "A01"
+      ],
+      "notes": "N02",
+      "source": {
+        "file": "sections/rooted_main/02_rank_relative_rooted_induction.tex",
+        "anchor": "\\label{lem:acf-rank-step}"
+      }
+    },
+    {
+      "id": "D06",
+      "name": "Full diversity palette",
+      "statement": "Full(X) consists of all ORIGINAL diversity atom names. Equality is never a diversity colour; a singleton unsafe clique is vacuously unsafe for EVERY S.",
+      "depends_on": [
+        "A01"
+      ],
+      "notes": "N02",
+      "source": {
+        "file": "sections/unified_induction.tex",
+        "anchor": "\\label{lem:acf-full-palette}"
+      }
+    },
+    {
+      "id": "D07",
+      "name": "Exhaustive normalization alternatives",
+      "statement": "For infinite M either a nonidentity finite-class full exact kernel exists, or M is finite-exact-normalized. In the latter enumerate ALL minimal infinite invariant equivalences E_1,...,E_r; r>=1 since Top is infinite-class.",
+      "depends_on": [
+        "A01",
+        "A02"
+      ],
+      "notes": "N03",
+      "source": {
+        "file": "sections/rooted_main/02_rank_relative_rooted_induction.tex",
+        "anchor": "\\label{lem:acf-rank-step}"
+      }
+    },
+    {
+      "id": "D08",
+      "name": "Canonical maximal exact coordinates",
+      "statement": "For r>=2, C_i=hatC_i is the MAXIMAL exact kernel below R_Ei; Q_i=M/C_i and F_i=R_Ei/C_i. For r>=2 each C_i contains E_j>Id for j!=i. No recursive global theorem for Q_i is used: the direct B028 constructor suffices.",
+      "depends_on": [
+        "D07",
+        "I05"
+      ],
+      "notes": "N04",
+      "source": {
+        "file": "sections/rooted_main/02_rank_relative_rooted_induction.tex",
+        "anchor": "\\label{lem:acf-rank-step}"
+      }
+    },
+    {
+      "id": "D09",
+      "name": "Actual common owner cuts",
+      "statement": "J_ij=C_i join C_j; H_i=meet_(j!=i)J_ij; Hstar=meet_(i<j)J_ij. Omega=M/Hstar. All are actual full exact kernels, not arbitrary finite quotient charts.",
+      "depends_on": [
+        "D08"
+      ],
+      "notes": "N04",
+      "source": {
+        "file": "sections/rooted_main/02_rank_relative_rooted_induction.tex",
+        "anchor": "\\label{lem:acf-rank-step}"
+      }
+    },
+    {
+      "id": "D10",
+      "name": "One full original finite carrier",
+      "statement": "W is the set of ALL compatible tuples in product D_i, compatibility in EVERY actual J_ij quotient; use the canonical fine-coloured actual M identification. Its owner carrier must be the WHOLE fixed lower-rank B_Omega, not a sparse subset.",
+      "depends_on": [
+        "D09"
+      ],
+      "notes": "N05",
+      "source": {
+        "file": "sections/rooted_main/02_rank_relative_rooted_induction.tex",
+        "anchor": "\\label{lem:acf-rank-step}"
+      }
+    },
+    {
+      "id": "D11",
+      "name": "Bound closed lower refinement",
+      "statement": "LowerClosed(M) means FOR EVERY strict quotient, admissible palette and nonempty finite input there EXISTS a CLOSED rooted witness. It does not assert arbitrary plain witnesses are closed. It is a bound antecedent ONLY for the closed constructor refinement, not the original rank lemma. Global induction proves Pcl_n, so this refinement becomes available without adding a hypothesis to the global source theorem.",
+      "depends_on": [
+        "D03",
+        "D04"
+      ],
+      "notes": "N08",
+      "source": {
+        "file": "sections/rooted_main/02_rank_relative_rooted_induction.tex",
+        "anchor": "\\label{lem:acf-rank-step}"
+      }
+    },
+    {
+      "id": "D12",
+      "name": "Entire owner actions and duplicate actual sorts",
+      "statement": "Gamma=FULL Aut(B_Omega), rho_i acts on ALL B_i. A coordinate alpha_i must induce exactly rho_i(gamma) on its ENTIRE owner image. Repeated actual quotient sorts carry the same maps; Id and Top receive their canonical identifications.",
+      "depends_on": [
+        "D09"
+      ],
+      "notes": "N06",
+      "source": {
+        "file": "sections/rooted_main/02_rank_relative_rooted_induction.tex",
+        "anchor": "\\label{lem:acf-rank-step}"
+      }
+    },
+    {
+      "id": "D13",
+      "name": "Lexicographic proof order",
+      "statement": "Use (mu,phase), with Pcl=0, O=1, U=2. Pcl at n uses only completed phases at smaller ranks; O_n uses Pcl_n; U_n uses O_m with m<=n. This is a well-founded order on natural pairs with finite phase.",
+      "depends_on": [
+        "D03"
+      ],
+      "notes": "N09",
+      "source": {
+        "file": "sections/unified_induction.tex",
+        "anchor": "\\label{thm:main-rooted-acf}"
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "name": "Strict quotient diversity decrease",
+      "statement": "For EVERY nonidentity invariant EQUIVALENCE E>Id, at least one original diversity atom is contained in E. Old atoms outside E map ONTO quotient diversity orbitals, so mu(M/E)<=mu(M)-1. For E=Id rank is unchanged; exactness is needed separately for source inheritance.",
+      "depends_on": [
+        "D01",
+        "A01"
+      ],
+      "notes": "N01",
+      "scope": "rank_measure",
+      "source_labels": [
+        "lem:acf-rank-step"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C02",
+      "name": "Finite source and zero-rank boundaries",
+      "statement": "For finite M and nonempty A0 take W=M: acl_M(A0)=M, homogeneity extends all partial maps and transitivity sends any selected root into A0. W is closed. A nonempty zero-diversity source has exactly one real point and is covered.",
+      "depends_on": [
+        "A01",
+        "A04",
+        "D05"
+      ],
+      "notes": "N01",
+      "scope": "rank_step",
+      "source_labels": [
+        "lem:acf-rank-step"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C03",
+      "name": "Original triangle-defined source is available",
+      "statement": "Apply I01 at the actual Id quotient and transport canonically to M. This provides the triangle-defined source used inside prepared B028; it is not an extra unexpanded generic triangle-fullness provider.",
+      "depends_on": [
+        "A01",
+        "A02",
+        "I01"
+      ],
+      "notes": "N01",
+      "scope": "rank_step",
+      "source_labels": [
+        "lem:acf-rank-step"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C04",
+      "name": "Off-base stabilizer orbits are infinite",
+      "statement": "For finite absolutely closed A and every x outside A, the Aut(M/A)-orbit of x is infinite by definition of real acl. Finite closed L,R over A may be embedded over the whole base by homogeneity.",
+      "depends_on": [
+        "A01",
+        "D05"
+      ],
+      "notes": "N02",
+      "scope": "closed_safe_palette",
+      "source_labels": [
+        "lem:acf-full-palette"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C05",
+      "name": "One base-fixing motion separates the whole right factor",
+      "statement": "Apply I02 to G=Aut(M/A), the finite right off-base set and the finite left off-base forbidden set. Every relevant orbit is infinite by C04. ONE g fixes A and moves ALL right off-base points away from ALL left off-base points; empty differences use identity.",
+      "depends_on": [
+        "C04",
+        "I02"
+      ],
+      "notes": "N02",
+      "scope": "closed_safe_palette",
+      "source_labels": [
+        "lem:acf-full-palette"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C06",
+      "name": "Full diversity strongly amalgamates closed spans",
+      "statement": "The induced union L union gR from C05 has intersection exactly A. Every new cross pair is distinct, hence has an allowed full-diversity colour. This proves full-palette closed-strong amalgamation; the union is not asserted closed.",
+      "depends_on": [
+        "C05",
+        "D06"
+      ],
+      "notes": "N02",
+      "scope": "closed_safe_palette",
+      "source_labels": [
+        "lem:acf-full-palette"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C07",
+      "name": "Finite exact branch has a legitimate kernel",
+      "statement": "Finite-class full exact invariant kernels form a finite family closed under joins by I14 and the product bound. Their join is a greatest such K. If any is nonidentity, K>Id; otherwise take the normalized branch. Finite exact normalization I03 is consistent with this split, but restoration needs only a finite exact K, not an additional owner cover.",
+      "depends_on": [
+        "D07",
+        "I14",
+        "I03"
+      ],
+      "notes": "N03",
+      "scope": "rank_step",
+      "source_labels": [
+        "lem:acf-rank-step"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C08",
+      "name": "Normalized directions are exhaustive and exact",
+      "statement": "In infinite normalized M there is at least one minimal infinite invariant E. Every such E_i is nonidentity actual full exact by I04. The one-direction relative constructor applies directly to M; it is not recursive use of P(M).",
+      "depends_on": [
+        "D07",
+        "I04"
+      ],
+      "notes": "N03",
+      "scope": "rank_step",
+      "source_labels": [
+        "lem:acf-rank-step"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C09",
+      "name": "One-direction direct rooted closed witness",
+      "statement": "In the INFINITE normalized r=1 branch, under the BOUND Lower(M), ordinary EPPA for M/E follows from C01/I01. Use I07 on Q=M with H=Top and B its singleton owner. B is closed, EPPA and orbit-covering for the nonempty projected input. Every source p has its unique compatible B action, so the SAME full-F-closed output is ordinary EPPA and rooted ACF over A0.",
+      "depends_on": [
+        "C08",
+        "C01",
+        "I01",
+        "D04",
+        "I07",
+        "A03",
+        "A04"
+      ],
+      "notes": "N03",
+      "scope": "rank_step",
+      "source_labels": [
+        "lem:acf-rank-step"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C10",
+      "name": "All maximal-hat factors have the required geometry",
+      "statement": "In INFINITE normalized M with r>=2 use ALL E_i and I05/I06: meet C_i=Id, each Q_i is normalized one-direction with unary acl=F_i[-]. Since r>=2, each C_i contains some E_j>Id and is nonidentity. No recursive rooted or owner-master conclusion is needed for Q_i: its construction is direct B028.",
+      "depends_on": [
+        "D08",
+        "C08",
+        "I05",
+        "I06"
+      ],
+      "notes": "N04",
+      "scope": "rank_step",
+      "source_labels": [
+        "lem:acf-rank-step"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C11",
+      "name": "Full safe factor palettes and exceptional projection",
+      "statement": "Under GIVEN A03 use I06 to obtain S_i with strong ABSOLUTE closed-safe amalgamation. Every original unsafe pair whose i-projections differ remains S_i-unsafe; every unsafe clique has at most one projection not contained in a single F_i packet. Diagonal projected pairs impose no diversity condition.",
+      "depends_on": [
+        "C10",
+        "I06",
+        "A03"
+      ],
+      "notes": "N04",
+      "scope": "rank_step",
+      "source_labels": [
+        "lem:acf-rank-step"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C12",
+      "name": "Strict joint owner and actual join gate",
+      "statement": "I06 gives Hstar>Id, Hstar=meet_i H_i and H_i join H_j=J_ij. Consequently Omega is a strict exact quotient by C01/I01. Hstar=Top and a singleton Omega are allowed.",
+      "depends_on": [
+        "D09",
+        "I06",
+        "C01",
+        "I01"
+      ],
+      "notes": "N04",
+      "scope": "rank_step",
+      "source_labels": [
+        "lem:acf-rank-step"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C13",
+      "name": "ONE lower-rank full owner master",
+      "statement": "The BOUND Lower(M) and C12 give U(Omega), hence ONE B_Omega over pi_Hstar A0 with M1-M4 for EVERY exact owner quotient. Set B_i to its ENTIRE H_i images and Gamma=FULL Aut(B_Omega), with the actual full restriction maps rho_i.",
+      "depends_on": [
+        "C12",
+        "D04",
+        "I08",
+        "A04",
+        "D12"
+      ],
+      "notes": "N04",
+      "scope": "rank_step",
+      "source_labels": [
+        "lem:acf-rank-step"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C14",
+      "name": "M4 supplies exactly the full compatible owner carrier",
+      "statement": "Apply M4 to H_i/Hstar: their meet is Id_Omega and joins are J_ij/Hstar. It identifies the SAME fixed finite B_Omega with ALL compatible tuples of its B_i. Onto individual projections or representative tuples alone would not suffice.",
+      "depends_on": [
+        "C13",
+        "C12"
+      ],
+      "notes": "N04",
+      "scope": "rank_step",
+      "source_labels": [
+        "lem:acf-rank-step"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C15",
+      "name": "Finite owners are closed EPPA and orbit-covering",
+      "statement": "M1/M2 give ordinary EPPA and F-closed B_i. Apply M3 from each owner sort to Top: its one-point image makes the kernel FULL Aut(B_i), transitive on all B_i. The old projected owner input is nonempty, hence meets that unique orbit and covers B_i under Aut(B_i).",
+      "depends_on": [
+        "C13",
+        "A04"
+      ],
+      "notes": "N04",
+      "scope": "rank_step",
+      "source_labels": [
+        "lem:acf-rank-step"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C16",
+      "name": "Each relative coarse cut contains its fine direction",
+      "statement": "For j!=i, E_i<=C_j, so E_i<=H_i. Thus H_i/C_i contains the unique minimal infinite direction (E_i join C_i)/C_i and is an eligible exact coarse cut of Q_i.",
+      "depends_on": [
+        "C10",
+        "D09",
+        "I06"
+      ],
+      "notes": "N04",
+      "scope": "rank_step",
+      "source_labels": [
+        "lem:acf-rank-step"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C17",
+      "name": "Every fine-owner EPPA input is strictly lower",
+      "statement": "The required fine quotient is Q_i/((E_i join C_i)/C_i)=M/(E_i join C_i). Its kernel contains nonidentity E_i. C01/I01 and the BOUND Lower(M) provide ordinary EPPA there. This uses the actual nonidentity E_i join C_i kernel directly; no recursive factor witness is used.",
+      "depends_on": [
+        "C16",
+        "C08",
+        "C01",
+        "I01",
+        "D04"
+      ],
+      "notes": "N04",
+      "scope": "rank_step",
+      "source_labels": [
+        "lem:acf-rank-step"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C18",
+      "name": "Construct ONE full closed witness in each factor",
+      "statement": "Apply I07 with source Q_i, projected original A_i0, palette S_i and preselected WHOLE B_i. C10/C11/C15/C16/C17 discharge ALL principal B028 premises. Obtain ONE finite full-F_i-closed D_i containing A_i=F_i[A_i0], projecting onto exactly B_i, with EVERY compatible source/entire-owner request and every rooted unsafe transport. No new local selector context or same-rank P/U is assumed.",
+      "depends_on": [
+        "C10",
+        "C11",
+        "C15",
+        "C16",
+        "C17",
+        "I07"
+      ],
+      "notes": "N05",
+      "scope": "rank_step",
+      "source_labels": [
+        "lem:acf-rank-step"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C19",
+      "name": "Prescribed component point and packet transport",
+      "statement": "First C18 rooted SINGLETON transport sends EVERY real D_i point into ORIGINAL A_i0 under Aut(D_i). This is REAL point-orbit coverage, distinct from the owner coverage C15. Now I12 conjugates through those two real transports and one compatible singleton source request. Given delta_i in FULL Aut(B_i) and x_i,y_i with compatible owners, choose alpha_i on the SAME D_i inducing delta_i and sending x_i to y_i. Since D_i is full F_i-closed and F_i recognizable, alpha_i sends its ENTIRE F_i[x_i] to F_i[y_i].",
+      "depends_on": [
+        "C18",
+        "C15",
+        "I12"
+      ],
+      "notes": "N05",
+      "scope": "rank_step",
+      "source_labels": [
+        "lem:acf-rank-step"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C20",
+      "name": "Full original W and its genuine automorphisms",
+      "statement": "C10 meet Id, C12 JOG, C14 full owner carrier and C18/C19 onto factor data discharge I09. D10 is ONE finite induced original W, onto every D_i and B_Omega. Compatible factor automorphisms with components from ONE gamma in Gamma assemble as genuine original fine-colour automorphisms.",
+      "depends_on": [
+        "D10",
+        "C10",
+        "C12",
+        "C14",
+        "C18",
+        "C19",
+        "I09"
+      ],
+      "notes": "N05",
+      "scope": "rank_step",
+      "source_labels": [
+        "lem:acf-rank-step"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C21",
+      "name": "Whole real target is exactly the compatible closure product",
+      "statement": "Use I15 with C_i meet Id and unary factor closures A_i from C10. Then acl_M(A0) is exactly ALL compatible tuples in product A_i. It is contained in the SAME W from C20. No representatives-only or packet-only target replaces real closure.",
+      "depends_on": [
+        "C20",
+        "C10",
+        "I15",
+        "A04"
+      ],
+      "notes": "N05",
+      "scope": "rank_step",
+      "source_labels": [
+        "lem:acf-rank-step",
+        "eq:acf-target-product"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C22",
+      "name": "All original partial maps extend in W",
+      "statement": "For any original p, recognize its projected owner/coordinate partial maps. M1 in C13 extends the joint-owner map to gamma; C18 extends each projected source request with ENTIRE component rho_i(gamma). I09 assembles them into one W automorphism agreeing with p. All requests use the previously fixed W.",
+      "depends_on": [
+        "C13",
+        "C18",
+        "C20",
+        "I09"
+      ],
+      "notes": "N05",
+      "scope": "rank_step",
+      "source_labels": [
+        "lem:acf-rank-step"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C23",
+      "name": "Exceptional projection remains genuinely unsafe",
+      "statement": "For every nonempty original unsafe Z subset W and every selected z, C11 yields i0 such that each j!=i0 projection lies in F_j[z_j]. The SET of distinct i0 projections is S_i0-unsafe, including its singleton case.",
+      "depends_on": [
+        "C11",
+        "C20",
+        "D06"
+      ],
+      "notes": "N06",
+      "scope": "rank_step",
+      "source_labels": [
+        "lem:acf-rank-step"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C24",
+      "name": "Exceptional transport selects ONE original target",
+      "statement": "Use C18 in i0 to transport its entire projected clique into A_i0-closure and root into some a_i0 in pi_i0(A0). Choose ONE a in the original A0 above a_i0; all later target coordinates a_j are its projections, never independently chosen roots. Let gamma_i0 be the exceptional automorphism actual full B_i0 action.",
+      "depends_on": [
+        "C23",
+        "C18",
+        "A04",
+        "D12"
+      ],
+      "notes": "N06",
+      "scope": "rank_step",
+      "source_labels": [
+        "lem:acf-rank-step"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C25",
+      "name": "One full master action corrects the joint root",
+      "statement": "Let b,c in B_Omega be the ENTIRE joint-owner values of z,a. Their exceptional projections are matched by gamma_i0. M3 for rho_i0 and I13 provide ONE gamma with rho_i0 gamma=gamma_i0 AND gamma(b)=c. Choose a lift and correct within ker rho_i0; no global section or independent coordinate lifts are needed.",
+      "depends_on": [
+        "C24",
+        "C13",
+        "I13",
+        "D12"
+      ],
+      "notes": "N06",
+      "scope": "rank_step",
+      "source_labels": [
+        "lem:acf-rank-step"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C26",
+      "name": "Other packets and exceptional factor glue simultaneously",
+      "statement": "For j!=i0 use C19 with delta_j=rho_j(gamma) to send z_j to a_j; it sends the entire projected clique into F_j[a_j] subset A_j. The exceptional automorphism already has the SAME gamma component. C20 glues them; C21 gives alpha(Z) subset acl_M(A0) and alpha(z)=a literally.",
+      "depends_on": [
+        "C25",
+        "C19",
+        "C24",
+        "C20",
+        "C21"
+      ],
+      "notes": "N06",
+      "scope": "rank_step",
+      "source_labels": [
+        "lem:acf-rank-step",
+        "eq:acf-owner-joins",
+        "eq:acf-main"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C27",
+      "name": "Normalized rank constructor under plain lower hypotheses",
+      "statement": "In INFINITE normalized M, the r=1 witness C09 or the r>=2 multi-direction W of C21/C22/C26 satisfies the original rooted/ordinary contract under BOUND Lower(M). The multi-direction call uses U only in strict Omega; Q_i constructors are direct B028 applications.",
+      "depends_on": [
+        "C09",
+        "C21",
+        "C22",
+        "C26",
+        "D04"
+      ],
+      "notes": "N06",
+      "scope": "rank_step",
+      "source_labels": [
+        "lem:acf-rank-step"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C28",
+      "name": "Finite kernel safe quotient stays in lower scope",
+      "statement": "For the nonnormalized K>Id from C07, I01 gives the actual source barM=M/K and C01 strictly lowers rank. I11 C10 descends A03 to the FULL-MATRIX quotient palette barS; one safe matrix entry is insufficient. Only ordinary finite restoration is used.",
+      "depends_on": [
+        "C07",
+        "C01",
+        "I01",
+        "I11",
+        "A03"
+      ],
+      "notes": "N07",
+      "scope": "rank_step",
+      "source_labels": [
+        "lem:acf-rank-step"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C29",
+      "name": "Lower plain P restores one ordinary rooted witness",
+      "statement": "BOUND Lower(M) supplies ONE finite plain rooted witness barW over pi_K(A0) for C28. I11 C06/C18 reconstruct W as the ENTIRE finite inverse image, containing acl_M(A0), extending all original requests and preserving whole-clique and literal-root transport. Neither barW nor W needs to be closed in this plain branch.",
+      "depends_on": [
+        "C28",
+        "D04",
+        "I11",
+        "A04"
+      ],
+      "notes": "N07",
+      "scope": "rank_step",
+      "source_labels": [
+        "lem:acf-rank-step"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C30",
+      "name": "Original conditional rank lemma",
+      "statement": "For EVERY nonempty standing M, admissible S and finite nonempty A0, Lower(M) implies the displayed ordinary rooted witness. Combine finite C02, normalized C27 and finite-exact C29. This export DOES NOT require LowerClosed(M) or relative finite-owner hypotheses.",
+      "depends_on": [
+        "C02",
+        "C27",
+        "C29"
+      ],
+      "notes": "N07",
+      "scope": "rank_step",
+      "source_labels": [
+        "lem:acf-rank-step"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C31",
+      "name": "Normalized outputs already are absolutely closed",
+      "statement": "In the normalized branch, C09 is full-F-closed with unary real acl; every C18 factor D_i is absolutely closed by C10. The actual full inverse intersection W of these factors is closed by I10. Thus normalized witnesses are closed without invoking LowerClosed(M).",
+      "depends_on": [
+        "C09",
+        "C10",
+        "C18",
+        "C20",
+        "I10"
+      ],
+      "notes": "N08",
+      "scope": "closed_refinement",
+      "source_labels": [
+        "cor:acf-closed-transitive"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C32",
+      "name": "Closedness through finite exact restoration",
+      "statement": "For the C28 strict quotient, the separate BOUND LowerClosed(M) supplies a CLOSED barW while retaining its rooted/extension contract. I11 internal C13 and C06 imply the ENTIRE inverse image W is closed. Mere inclusion acl(Abar) subset barW would not imply this.",
+      "depends_on": [
+        "C28",
+        "D11",
+        "I11"
+      ],
+      "notes": "N08",
+      "scope": "closed_refinement",
+      "source_labels": [
+        "cor:acf-closed-transitive"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C33",
+      "name": "Strengthened conditional closed rank constructor",
+      "statement": "Under Lower(M) AND LowerClosed(M) the finite C02, normalized C31 and finite-exact C32 branches give ONE witness satisfying the original contract AND absolute closedness. This is an internal stronger constructor, separate from original C30; it adds no free assumption to the global induction.",
+      "depends_on": [
+        "C30",
+        "C02",
+        "C31",
+        "C32",
+        "D11"
+      ],
+      "notes": "N08",
+      "scope": "closed_refinement",
+      "source_labels": [
+        "cor:acf-closed-transitive"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C34",
+      "name": "Proof schedule is well founded",
+      "statement": "D13 lex order is well founded: strict exact quotient decreases first coordinate by C01; at fixed rank only Pcl->O->U is allowed. Id-quotient O_n in U_n is already available; it cannot be fed back to Pcl_n. The all-source universal induction predicate covers every actual source, not only the chosen input.",
+      "depends_on": [
+        "D13",
+        "C01"
+      ],
+      "notes": "N09",
+      "scope": "phased_induction",
+      "source_labels": [
+        "thm:main-rooted-acf"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C35",
+      "name": "P phase discharges both lower schemas",
+      "statement": "This is an INDUCTION-STEP implication under IH(n): for ALL m<n the all-source conjunction Pcl_m/O_m/U_m holds. At n, that induction hypothesis for every m<n and I01/C01 instantiate exactly the bound Lower and LowerClosed in C33. Finite/zero cases use C02. Thus Pcl_n follows without any P/O/U at current rank being assumed. These are implication applications under a binder, not global recursive provider axioms.",
+      "depends_on": [
+        "C34",
+        "C33",
+        "C02",
+        "I01"
+      ],
+      "notes": "N09",
+      "scope": "phased_induction",
+      "source_labels": [
+        "thm:main-rooted-acf"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C36",
+      "name": "O phase uses the proved full palette",
+      "statement": "Under the SAME bound IH(n), C06 discharges the palette premise for Full(X). Apply the Pcl_n induction-step conclusion from C35 and forget its root and closedness clauses to get ordinary EPPA at n. Empty input has the empty witness. No U_n is used.",
+      "depends_on": [
+        "C06",
+        "C35"
+      ],
+      "notes": "N09",
+      "scope": "phased_induction",
+      "source_labels": [
+        "thm:main-rooted-acf",
+        "thm:main-ordinary-eppa"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C37",
+      "name": "U phase uses ordinary EPPA of every exact quotient",
+      "statement": "Under the SAME bound IH(n), for X of rank n, the Id quotient uses the O_n induction-step conclusion from C36; EVERY nonidentity exact quotient uses inherited standing source and the outer lower-rank O by C01/I01. Hence ALL hypotheses of conditional I08 hold and give U_n. No new rooted theorem is invoked inside this phase.",
+      "depends_on": [
+        "C36",
+        "C01",
+        "I01",
+        "I08",
+        "D13"
+      ],
+      "notes": "N09",
+      "scope": "phased_induction",
+      "source_labels": [
+        "thm:main-rooted-acf"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C38",
+      "name": "All ranks give the source-relative rooted candidate",
+      "statement": "C35-C37 prove the all-source conjunction at n under bound IH(n). Strong induction now discharges IH and retains FOR ALL n the ENTIRE conjunction Pcl_n/O_n/U_n; then project out the plain rooted clause and forget closedness to obtain the exact displayed rooted theorem. Lower/LowerClosed are discharged. The construction still inherits I07/B028 and its safe-selector/reservoir/decoder and external HKN encoding audit boundary; graph closure is not an end-to-end mathematical or Lean certification.",
+      "depends_on": [
+        "C35",
+        "C36",
+        "C37"
+      ],
+      "notes": "N09",
+      "scope": "candidate_global",
+      "source_labels": [
+        "thm:main-rooted-acf"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C39",
+      "name": "Ordinary EPPA with its inherited boundary",
+      "statement": "C06 and C38 give an ordinary witness for every nonempty input by Full(X); empty input is trivial. This expands the source corollary with its actual inherited candidate/provider boundary. It does not certify new coherent extension assignments.",
+      "depends_on": [
+        "C06",
+        "C38"
+      ],
+      "notes": "N10",
+      "scope": "candidate_global",
+      "source_labels": [
+        "thm:main-ordinary-eppa"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C40",
+      "name": "Global chosen witnesses are closed",
+      "statement": "Retain rather than forget the Pcl conclusion proved in C35-C37. All nonempty-input witnesses can be chosen absolutely acl_M-closed. This explicitly supplies the invariant missing from a proof relying only on plain P.",
+      "depends_on": [
+        "C38",
+        "C35",
+        "C37"
+      ],
+      "notes": "N10",
+      "scope": "closed_refinement",
+      "source_labels": [
+        "cor:acf-closed-transitive"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C41",
+      "name": "Singleton transport gives vertex transitivity",
+      "statement": "For x,y in the SAME rooted witness W choose alpha_x(x)=a and alpha_y(y)=b in original nonempty A0 using singleton unsafe cliques. One-sort source transitivity makes a->b an original partial automorphism; extend it to h in Aut(W). Then alpha_y^-1 h alpha_x sends x to y. There is no multi-named-sort global transitivity assertion.",
+      "depends_on": [
+        "C38",
+        "A01",
+        "D06",
+        "A04"
+      ],
+      "notes": "N10",
+      "scope": "single_sort_transitivity",
+      "source_labels": [
+        "cor:acf-closed-transitive"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C42",
+      "name": "Same witness is closed and vertex-transitive",
+      "statement": "Use the SAME chosen closed rooted witness C40 and apply C41 to it. For every nonempty original input it extends all source partial maps, contains closure, is itself absolutely closed and vertex-transitive, with the same source-relative candidate qualification.",
+      "depends_on": [
+        "C40",
+        "C41"
+      ],
+      "notes": "N10",
+      "scope": "candidate_global",
+      "source_labels": [
+        "cor:acf-closed-transitive"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    }
+  ],
+  "source_result_files": [
+    "sections/rooted_main/02_rank_relative_rooted_induction.tex",
+    "sections/unified_induction.tex"
+  ],
+  "exports": [
+    {
+      "source_label": "lem:acf-rank-step",
+      "claims": [
+        "C30"
+      ]
+    },
+    {
+      "source_label": "lem:acf-full-palette",
+      "claims": [
+        "C04",
+        "C05",
+        "C06"
+      ]
+    },
+    {
+      "source_label": "thm:main-rooted-acf",
+      "claims": [
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38"
+      ]
+    },
+    {
+      "source_label": "thm:main-ordinary-eppa",
+      "claims": [
+        "C39"
+      ]
+    },
+    {
+      "source_label": "cor:acf-closed-transitive",
+      "claims": [
+        "C40",
+        "C41",
+        "C42"
+      ]
+    }
+  ],
+  "auxiliary_exports": [
+    {
+      "source_label": "eq:acf-main",
+      "source": {
+        "file": "sections/rooted_main/02_rank_relative_rooted_induction.tex",
+        "anchor": "\\label{eq:acf-main}"
+      },
+      "claims": [
+        "C30"
+      ]
+    },
+    {
+      "source_label": "eq:acf-owner-joins",
+      "source": {
+        "file": "sections/rooted_main/02_rank_relative_rooted_induction.tex",
+        "anchor": "\\label{eq:acf-owner-joins}"
+      },
+      "claims": [
+        "C12"
+      ]
+    },
+    {
+      "source_label": "eq:acf-target-product",
+      "source": {
+        "file": "sections/rooted_main/02_rank_relative_rooted_induction.tex",
+        "anchor": "\\label{eq:acf-target-product}"
+      },
+      "claims": [
+        "C21"
+      ]
+    }
+  ],
+  "source_files": [
+    {
+      "file": "sections/exact_foundations/01_full_raw_exact_helly.tex",
+      "git_blob": "7cb28c86b4b296ddf865b6aff518cda1215cd491"
+    },
+    {
+      "file": "sections/exact_foundations/03_joint_exact_sort_lifting.tex",
+      "git_blob": "394e0db063a476c5c069384b3d3fa2ffd3c7471d"
+    },
+    {
+      "file": "sections/finite_orbit_avoidance.tex",
+      "git_blob": "290ab3ae54ade87fc4693b0c17955a9e319efd9b"
+    },
+    {
+      "file": "sections/finite_packets.tex",
+      "git_blob": "dd3e608f03e7c5b1b1854a45de462859f8355143"
+    },
+    {
+      "file": "sections/maximal_cores/01_maximal_hat_normalisation.tex",
+      "git_blob": "248cc19427c0ad7114022238ca086a9eccc47a3f"
+    },
+    {
+      "file": "sections/maximal_cores/05_joint_owner_minima.tex",
+      "git_blob": "1ee7537d574bdd2f5d071e248383eec1a4ff3e30"
+    },
+    {
+      "file": "sections/owner_master/04_master_theorem.tex",
+      "git_blob": "5a8c72dda7cf49ef85684799b587f63547da0690"
+    },
+    {
+      "file": "sections/rooted_acf_geometry.tex",
+      "git_blob": "4910a41d44909e4b01d48c03a3e9a1116b37ea23"
+    },
+    {
+      "file": "sections/rooted_main/01_joint_owner_homogeneity.tex",
+      "git_blob": "d12b1e5ed1b988cfe681786e3fa91aff486f97b5"
+    },
+    {
+      "file": "sections/rooted_main/02_rank_relative_rooted_induction.tex",
+      "git_blob": "3977fd384d2d981f9a618524644d4891bd4f67e4"
+    },
+    {
+      "file": "sections/rooted_mi/03_normalised_relative_mi.tex",
+      "git_blob": "55c96a4ba0039c6b538886ab68a26a92bc6a4aaa"
+    },
+    {
+      "file": "sections/rooted_mi/04_owner_point_and_finite_lift.tex",
+      "git_blob": "4d7533b499949f3e2c72a6f35413f5b7ab4d3210"
+    },
+    {
+      "file": "sections/typed_invariant_quotient_transport.tex",
+      "git_blob": "3895b17d7d0176a74d6f69c39e4e22d9cdba5715"
+    },
+    {
+      "file": "sections/unified_induction.tex",
+      "git_blob": "fd98988f6b532a9af704d6555f1732239e1c3048"
+    }
+  ],
+  "dependency_firewalls": [
+    {
+      "claims": [
+        "C01",
+        "C02"
+      ],
+      "forbid": [
+        "A02",
+        "A03",
+        "D04",
+        "D11",
+        "I07",
+        "I08",
+        "I11"
+      ]
+    },
+    {
+      "claims": [
+        "C04",
+        "C05",
+        "C06"
+      ],
+      "forbid": [
+        "A02",
+        "A03",
+        "D04",
+        "D11",
+        "I01",
+        "I03",
+        "I04",
+        "I05",
+        "I06",
+        "I07",
+        "I08",
+        "I09",
+        "I10",
+        "I11",
+        "I12",
+        "I13",
+        "I14",
+        "I15"
+      ]
+    },
+    {
+      "claims": [
+        "C09",
+        "C27",
+        "C28",
+        "C29",
+        "C30"
+      ],
+      "forbid": [
+        "D11"
+      ]
+    },
+    {
+      "claims": [
+        "C31"
+      ],
+      "forbid": [
+        "D11"
+      ]
+    },
+    {
+      "claims": [
+        "C28",
+        "C29"
+      ],
+      "forbid": [
+        "I08",
+        "I12",
+        "I13",
+        "D12"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "T01",
+      "name": "Rank and full-palette elementary foundations",
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement the exact bound-antecedent and branch-scoped statements using the prepared provider signatures. Explicitly discharge strict rank at each recursive call, preserve entire owner actions and original selected roots, and close Pcl/O/U without current-rank feedback. Keep the source-relative candidate and unbound HKN-to-CCO encoding status visible."
+    },
+    {
+      "id": "T02",
+      "name": "Exhaustive factors and one lower owner master",
+      "claims": [
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17"
+      ],
+      "depends_on": [
+        "T01"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement the exact bound-antecedent and branch-scoped statements using the prepared provider signatures. Explicitly discharge strict rank at each recursive call, preserve entire owner actions and original selected roots, and close Pcl/O/U without current-rank feedback. Keep the source-relative candidate and unbound HKN-to-CCO encoding status visible."
+    },
+    {
+      "id": "T03",
+      "name": "One factor family and original finite carrier",
+      "claims": [
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22"
+      ],
+      "depends_on": [
+        "T01",
+        "T02"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement the exact bound-antecedent and branch-scoped statements using the prepared provider signatures. Explicitly discharge strict rank at each recursive call, preserve entire owner actions and original selected roots, and close Pcl/O/U without current-rank feedback. Keep the source-relative candidate and unbound HKN-to-CCO encoding status visible."
+    },
+    {
+      "id": "T04",
+      "name": "Simultaneous exceptional rooted transport",
+      "claims": [
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27"
+      ],
+      "depends_on": [
+        "T01",
+        "T02",
+        "T03"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement the exact bound-antecedent and branch-scoped statements using the prepared provider signatures. Explicitly discharge strict rank at each recursive call, preserve entire owner actions and original selected roots, and close Pcl/O/U without current-rank feedback. Keep the source-relative candidate and unbound HKN-to-CCO encoding status visible."
+    },
+    {
+      "id": "T05",
+      "name": "Ordinary finite restoration and plain rank theorem",
+      "claims": [
+        "C28",
+        "C29",
+        "C30"
+      ],
+      "depends_on": [
+        "T01",
+        "T02",
+        "T03",
+        "T04"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement the exact bound-antecedent and branch-scoped statements using the prepared provider signatures. Explicitly discharge strict rank at each recursive call, preserve entire owner actions and original selected roots, and close Pcl/O/U without current-rank feedback. Keep the source-relative candidate and unbound HKN-to-CCO encoding status visible."
+    },
+    {
+      "id": "T06",
+      "name": "Closed constructor strengthening",
+      "claims": [
+        "C31",
+        "C32",
+        "C33"
+      ],
+      "depends_on": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement the exact bound-antecedent and branch-scoped statements using the prepared provider signatures. Explicitly discharge strict rank at each recursive call, preserve entire owner actions and original selected roots, and close Pcl/O/U without current-rank feedback. Keep the source-relative candidate and unbound HKN-to-CCO encoding status visible."
+    },
+    {
+      "id": "T07",
+      "name": "Well-founded all-source phase assembly",
+      "claims": [
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39"
+      ],
+      "depends_on": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement the exact bound-antecedent and branch-scoped statements using the prepared provider signatures. Explicitly discharge strict rank at each recursive call, preserve entire owner actions and original selected roots, and close Pcl/O/U without current-rank feedback. Keep the source-relative candidate and unbound HKN-to-CCO encoding status visible."
+    },
+    {
+      "id": "T08",
+      "name": "Closedness and singleton transitivity of same witness",
+      "claims": [
+        "C40",
+        "C41",
+        "C42"
+      ],
+      "depends_on": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement the exact bound-antecedent and branch-scoped statements using the prepared provider signatures. Explicitly discharge strict rank at each recursive call, preserve entire owner actions and original selected roots, and close Pcl/O/U without current-rank feedback. Keep the source-relative candidate and unbound HKN-to-CCO encoding status visible."
+    }
+  ],
+  "overview_mermaid": [
+    "flowchart TD",
+    "  R[\"Strict exact quotient rank\"] --> L[\"Bound lower P, O, U\"]",
+    "  L --> M[\"One lower owner master\"]",
+    "  M --> D[\"Direct normalized MI factors\"]",
+    "  D --> W[\"Full original rooted witness\"]",
+    "  L --> F[\"Nonrelative finite restoration\"]",
+    "  W --> C[\"Closed constructor refinement\"]",
+    "  F --> C",
+    "  C --> P[\"All-source Pcl phase\"]",
+    "  S[\"Full-palette avoidance\"] --> O[\"Ordinary O phase\"]",
+    "  P --> O",
+    "  O --> U[\"Owner U phase\"]",
+    "  P --> T[\"Same closed transitive witness\"]"
+  ],
+  "overview_notes": [
+    "Lower and LowerClosed are bound antecedents discharged by the all-source strong induction, not extra global axioms.",
+    "Direct B028 is allowed at current factor rank; its sole ordinary EPPA input is a STRICT fine-owner quotient.",
+    "Finite restoration imports only B029 ordinary closure/safety/reconstruction and its closedness support; stronger relative owner cover assumptions are excluded.",
+    "The global P phase is strengthened to choose closed witnesses. No hidden same-rank U_n is permitted.",
+    "Preparation of all EPPA source results is not a global certification: B028 construction audits and both external HKN CCO encoding bridges remain explicit."
+  ],
+  "controls": [
+    {
+      "id": "K01",
+      "check": "Bounded finite actual orbital quotient partitions, strict diversity loss and phase-edge order; these are diagnostics, not the infinite-source induction proof."
+    },
+    {
+      "id": "K02",
+      "check": "Full compatible tuple, one shared owner/root action and closure-refinement negative controls; finite corner deletion must not be mistaken for fullness."
+    }
+  ],
+  "article_feedback": [
+    {
+      "id": "F01",
+      "kind": "DEPENDENCY_OR_SCOPE_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/unified_induction.tex",
+        "anchor": "For a finite exact kernel, a full inverse image"
+      },
+      "finding": "The displayed plain rooted P only contains acl(A0); that does not ensure that a quotient witness chosen during finite exact restoration is closed. The final closedness corollary needs the induction to retain a closed-witness constructor invariant.",
+      "proposed_article_change": "Explicitly strengthen P_n to Pcl_n in the phased construction, or carry a simultaneous closedness refinement. Preserve the original plain conditional rank lemma under its weaker lower hypotheses.",
+      "caller_effect": "No new source assumption: normalized and finite branches already produce closed choices, and B029 closure equivalence propagates the lower closed choice.",
+      "proof_claims": [
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C35",
+        "C40"
+      ]
+    },
+    {
+      "id": "F02",
+      "kind": "DEPENDENCY_OR_SCOPE_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/rooted_main/02_rank_relative_rooted_induction.tex",
+        "anchor": "Its quotient"
+      },
+      "finding": "The rank-restoration branch needs only ANY actual nonidentity finite exact kernel and the lower P theorem, not a same-rank master or an extra finite-owner cover. Normality of the quotient is unnecessary for that particular recursive application.",
+      "proposed_article_change": "Keep the source greatest finite exact K choice if desired, but state the precise nonrelative B029 consumer and the independent strict-rank gate.",
+      "caller_effect": "Dependency clarification only; ordinary restoration stays independent of relative owner-kernel hypotheses.",
+      "proof_claims": [
+        "C07",
+        "C28",
+        "C29"
+      ]
+    }
+  ],
+  "review": {
+    "date": "2026-10-28",
+    "source_unchanged": true,
+    "source_signature_repairs": 0,
+    "unexpanded_provider_labels": [],
+    "proof_status": "HUMAN_EXPANDED_NOT_LEAN; source-relative candidate final assembly. No compiled Lean, coherent EPPA or complete end-to-end construction certification.",
+    "independent_reviews": [
+      "Rank/source/provider and strict quotient firewall audit",
+      "Global all-source Pcl/O/U, absolute closedness and singleton transitivity audit"
+    ],
+    "boundaries": [
+      "All recursive source theorems are bound lower-rank inputs and are discharged globally.",
+      "Closedness refinement is separate from the original rank lemma.",
+      "Two published HKN local CCO Lean adapters remain unbound in the inherited B027 provider."
+    ]
+  }
+}

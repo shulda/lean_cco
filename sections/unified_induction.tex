@@ -1,0 +1,133 @@
+
+\section{One phased global induction: rooted ACF and ordinary EPPA}
+\label{sec:global-phased-induction}
+
+\begin{lemma}[The full palette is closed-strong]
+\label{lem:acf-full-palette}
+For every standing homogeneous source $M$, the full diversity
+palette $S=\mathcal D(M)$ strongly amalgamates spans of finite
+\emph{real-algebraically-closed} induced structures.
+\end{lemma}
+\begin{proof}
+Fix a finite closed base $A$ and finite closed extensions
+$A\subseteq L,R$.  Embed both in $M$ over $A$ by homogeneity.
+For every $x\in R\setminus A$, the orbit of $x$ under
+$\Aut(M/A)$ is infinite because $A$ is algebraically closed.
+The pointwise stabilisers of finitely many such $x$ are
+open subgroups of infinite index in the oligomorphic
+pointwise-stabiliser group.  The elementary finite-coset
+avoidance lemma (B.~H.~Neumann's theorem) permits a translate
+of all of $R$ over $A$ avoiding the finitely many points
+of $L\setminus A$.  Their union is a finite induced
+strong amalgam.  There is no restriction on new cross
+colours when $S=\mathcal D(M)$.
+\end{proof}
+
+\begin{theorem}[Rooted closure-faithful ordinary EPPA]
+\label{thm:main-rooted-acf}
+Let $M$ be a transitive countable homogeneous complete structure
+in a finite named symmetric binary language, with AP/JEP and
+semantic homomorphic CCO.  The age is triangle-defined by
+Lemma~\ref{lem:cco-triangle-fullness}.  For every palette
+$S\subseteq\mathcal D(M)$ strongly amalgamating finite
+absolutely real-acl-closed spans, and every finite nonempty
+$A_0\subseteq M$, there is one finite induced
+$W\subseteq M$ containing $\operatorname{acl}_M(A_0)$
+which extends every partial automorphism of $A_0$ and satisfies:
+for every nonempty all-non-$S$ clique $Z\subseteq W$
+and every $z\in Z$ some $\alpha\in\Aut(W)$ has
+\[
+ \alpha(Z)\subseteq\operatorname{acl}_M(A_0),
+                 \qquad\alpha(z)\in A_0.
+\]
+This remains a source-relative candidate proof. Its packet-safe input
+is \cref{lem:orbit-safe-all-row-interface}, and its normalised MI assembly
+is \cref{lem:acf-relative-mi-normal}; the proof inherits their named
+closure, safe-selector, reservoir and decoder hypotheses.
+\end{theorem}
+\begin{proof}
+Write $\mu(X)$ for the number of actual named diversity
+orbitals of a transitive source $X$.  Every nonidentity
+exact quotient strictly decreases $\mu$ by actual
+quotient inheritance, Theorem~\ref{thm:exact-sorts-source}.
+We use strong induction on $\mu$, with the following
+\emph{ordered phases at each rank}:
+\begin{enumerate}
+\item $P_n$: prove the displayed rooted statement for every
+source of rank $n$ and every admissible $S$, assuming
+$P_m,O_m,U_m$ for $m<n$;
+\item $O_n$: derive ordinary EPPA at rank $n$ from
+$P_n$ with full $S=\mathcal D(X)$, admissible by
+Lemma~\ref{lem:acf-full-palette};
+\item $U_n$: apply Theorem~\ref{thm:acf-owner-master} to
+sources of rank $n$, using ordinary EPPA now
+available for every actual exact quotient of rank
+at most $n$ (including the source itself).
+\end{enumerate}
+The finite source and zero-diversity boundaries are direct
+from homogeneity.  For positive rank, the $P_n$ step is
+Lemma~\ref{lem:acf-rank-step}, with precisely these
+lower-rank hypotheses.  Its finite exact reduction uses
+$P$ of the strict quotient.  In the normalised one-direction
+case the normalised relative MI construction uses ordinary
+EPPA only for the strict fine owner quotient; in the
+multi-direction case Corollary~\ref{cor:acf-hat-factors}
+proves that the joint owner source is a strict exact quotient,
+so its simultaneous master is provided by $U_m$ at smaller
+rank.  No invocation of $U_n$ is hidden inside $P_n$.
+Thus each dependence decreases lexicographically in
+$(\mu,\text{phase})$, where the phases are ordered
+$P<O<U$, and the induction terminates.  This proves
+$P_n$ for all ranks.
+\end{proof}
+
+\begin{corollary}[Ordinary EPPA for symmetric binary CCO]
+\label{thm:main-ordinary-eppa}
+The age of every standing symmetric binary AP+semantic
+homomorphic CCO structure has ordinary EPPA.
+\end{corollary}
+\begin{proof}
+Apply Theorem~\ref{thm:main-rooted-acf} with the full
+palette $S=\mathcal D(M)$, which is admissible by
+Lemma~\ref{lem:acf-full-palette}.  The ordinary
+extension clause is precisely EPPA.
+\end{proof}
+
+\begin{corollary}[Closed and vertex-transitive finite witnesses]
+\label{cor:acf-closed-transitive}
+For every nonempty original input, the witness built in the
+preceding phased proof can additionally be chosen
+\emph{real-algebraically closed in $M$ and vertex-transitive}.
+\end{corollary}
+\begin{proof}
+In a normalised one-direction source the output is
+full-$F$-closed and $\operatorname{acl}(A)=F[A]$.
+In the multiple-direction case every factor $D_i$ is
+closed under $F_i=\operatorname{acl}_{Q_i}[-]$, and
+the full compatible product is real-acl-closed by the
+finite-meet coordinate reconstruction
+\eqref{eq:acf-closure-pullback}.
+For a finite exact kernel, a full inverse image of a
+closed quotient witness is again closed by
+\eqref{eq:acf-finite-acl}.  Finite $M$ is immediate.
+
+For vertex transitivity let $x,y$ lie in one such
+witness $W$.  Rooted transport for singleton cliques
+moves $x$ and $y$ respectively into some $a,b\in A_0$.
+The singleton map $a\mapsto b$ is a partial automorphism
+of the original one-sort input and hence extends to
+$\operatorname{Aut}(W)$.  Conjugating with the two
+root-transport automorphisms sends $x$ to $y$.
+The empty input is excluded from this statement.
+\end{proof}
+
+\begin{remark}[What the common induction does not erase]
+Birkhoff's owner-master theorem still uses ordinary EPPA
+as a \emph{local provider}, and its unprotected auxiliary
+$A^+$ may be larger than the original input.  The
+rooted construction keeps $A_0$ and $\operatorname{acl}(A_0)$
+protected.  Reversing the phases and trying to construct
+$U_n$ before $P_n$ would be circular when one Birkhoff
+principal-factor provider is the rank-$n$ source itself.
+No splitting of owner automorphism groups is assumed.
+\end{remark}

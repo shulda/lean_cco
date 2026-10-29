@@ -1,0 +1,117 @@
+{
+  "head": "dc5fa9eafc2954909d15f3d18986d04fc8967513",
+  "private_board_revision": 45,
+  "private_package_count": 64,
+  "public_main": "9eda6084a7f841d9845f29ca03e63fbbae371b08",
+  "public_coordination": "74fdae7bd87700bf562fd610a3fb35442578d3b0",
+  "public_state_revision": 252,
+  "selected": [
+    "B028",
+    "B030",
+    "B034",
+    "B035",
+    "B036"
+  ],
+  "selected_modules": [
+    "relative_mi",
+    "rank_induction",
+    "unary_support",
+    "full_code",
+    "reset_order"
+  ],
+  "provider_modules": [
+    "acl_owner_geometry",
+    "finite_lift",
+    "finite_packets",
+    "full_rows",
+    "hkn_reservoir",
+    "joint_owner",
+    "mi_geometry",
+    "owner_action",
+    "owner_master",
+    "owner_transversal",
+    "raw_exact",
+    "real_closure",
+    "safe_readings"
+  ],
+  "source_record_count": 52,
+  "payload_file_count": 33,
+  "raw_records_verified": 91,
+  "new_source_files": [
+    "sections/orbit_safe_packet_completion.tex",
+    "sections/rooted_mi/03_normalised_relative_mi.tex",
+    "sections/unified_induction.tex",
+    "sections/binary_unary_irreducible_local_cover.tex",
+    "sections/v27/10_typed_unary_terms_return.tex",
+    "sections/full_code_tuple_ep_transfer.tex",
+    "sections/expansion_property_unfiltered.tex",
+    "sections/reset_midpoint_order_ep.tex"
+  ],
+  "selected_details": {
+    "relative_mi": {
+      "definitions": 16,
+      "claims": 42,
+      "exports": 6,
+      "auxiliary_exports": 1,
+      "tasks": 7,
+      "source_files": 16,
+      "external_providers": 0,
+      "control": "tools/check_relative_mi_controls.py"
+    },
+    "rank_induction": {
+      "definitions": 13,
+      "claims": 42,
+      "exports": 5,
+      "auxiliary_exports": 3,
+      "tasks": 8,
+      "source_files": 14,
+      "external_providers": 0,
+      "control": "tools/check_rank_induction_controls.py"
+    },
+    "unary_support": {
+      "definitions": 10,
+      "claims": 32,
+      "exports": 2,
+      "auxiliary_exports": 0,
+      "tasks": 6,
+      "source_files": 2,
+      "external_providers": 0,
+      "control": "tools/check_unary_support_controls.py"
+    },
+    "full_code": {
+      "definitions": 12,
+      "claims": 51,
+      "exports": 6,
+      "auxiliary_exports": 2,
+      "tasks": 8,
+      "source_files": 2,
+      "external_providers": 0,
+      "control": "tools/check_full_code_controls.py"
+    },
+    "reset_order": {
+      "definitions": 12,
+      "claims": 55,
+      "exports": 6,
+      "auxiliary_exports": 0,
+      "tasks": 7,
+      "source_files": 2,
+      "external_providers": 0,
+      "control": "tools/check_reset_order_controls.py"
+    }
+  },
+  "next_two": [
+    "B028",
+    "B034"
+  ],
+  "remaining_dependencies": {
+    "B030": [
+      "B028"
+    ],
+    "B035": [],
+    "B036": []
+  },
+  "mathematical_metadata_unchanged": true,
+  "extraction_production_validator_unchanged": true,
+  "public_state_unchanged": true,
+  "new_external_provider_count": 0
+}

@@ -1,0 +1,1166 @@
+{
+  "schema_version": 1,
+  "id": "unary_support",
+  "index_title": "Local irreducible supports and actual unary-generated HN diagrams",
+  "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+  "status": "HUMAN_EXPANDED_NOT_LEAN",
+  "scope": "Private B034: TWO Foundations III source results. First, in a finite total-unary structure with relations of arity at most two, each pair in a NONEMPTY closed irreducible lies in a singleton/displayed-binary generated support. Local induced embeddings therefore give embeddings on all NONEMPTY irreducibles. The unrestricted HE wording additionally needs the explicit empty/nullary convention gate A07; the literal all-empty/all-nullary reading has a counterexample. Second, for a finite PARTIAL-unary structure with ARBITRARY relations, domain-reflecting induced substructures and ACTUAL completed-K membership of every irreducible force actual completed one-generated diagrams, total unary functions, ONE-VARIABLE term identities and any supplied uniform closure bound. No completion of the whole input, HN Ramsey theorem, CCO, EPPA or hidden closure-bound theorem is assumed or proved.",
+  "scope_vocabulary": [
+    "unary_closure",
+    "binary_local_cover",
+    "local_embedding",
+    "HN_actual_diagram",
+    "totality_and_terms",
+    "closure_bound",
+    "boundary"
+  ],
+  "scope_explanation": "Two independent elementary unary arguments share only closure definitions. Binary arity and totality belong to the local-cover branch; arbitrary relational arities and initially partial functions remain allowed in the HN branch. Source ambiguity and one-variable identity scope are explicit, not silently repaired.",
+  "control_script": "tools/check_unary_support_controls.py",
+  "assumptions": [
+    {
+      "id": "A01",
+      "name": "Finite typed partial unary language",
+      "statement": "C is a finite many-sorted structure in a finite language with unary function symbols and arbitrary relation symbols. Unary functions may initially have proper domains on their intended input sorts. No constants or other function arities are present. Sorts may be empty. Induced inclusions preserve and reflect all relation interpretations AND applicable function domains; if a function is defined at a retained point its actual value is retained."
+    },
+    {
+      "id": "A02",
+      "name": "Local-cover specialization",
+      "statement": "ONLY for the local-cover branch, every named unary function of C is total on its intended input sort, and every relation has arity 0, 1 or 2. Functionally closed induced substructures use the same actual functions and relation diagrams. There is no completeness or class-membership condition on C."
+    },
+    {
+      "id": "A03",
+      "name": "Locally induced homomorphism",
+      "statement": "ONLY for the local-embedding branch, f:C->H preserves sorts, all named unary functions and displayed relations, and is an induced embedding on EVERY member of the singleton/displayed-binary closed support family. Retain the source complete-target premise, though the proof does not use it. Each local embedding reflects ALL relation symbols, not only the symbol that generated its support."
+    },
+    {
+      "id": "A04",
+      "name": "Actual completed target class",
+      "statement": "ONLY for the HN branch, K is a class of finite completed structures of the SAME signature, whose unary functions are total on their intended input sorts. An ACTUAL K member means its existing whole induced diagram, not the existence of a later completion. Membership up to isomorphism is interchangeable only if K is isomorphism-closed."
+    },
+    {
+      "id": "A05",
+      "name": "All irreducibles are actual K members",
+      "statement": "ONLY for the HN branch, EVERY irreducible induced substructure of C is an ACTUAL K member. In particular this applies to any nonempty one-generated induced structure once irreducibility is proved. It does not assume C itself is complete, completable or in K."
+    },
+    {
+      "id": "A06",
+      "name": "Optional one-generated bound",
+      "statement": "ONLY for the quantitative HN branch, m is a nonnegative integer such that EVERY completed ONE-GENERATED K member has at most m vertices. This is a supplied conditional bound; no uniform bound for arbitrary partial-unary inputs or arbitrary completed classes is manufactured here."
+    },
+    {
+      "id": "A07",
+      "name": "Empty irreducible and nullary reflection gate",
+      "statement": "ONLY for extending the NONEMPTY local-embedding conclusion to every conventionally admitted irreducible, use at least ONE of: relational arities are positive; irreducibles are defined nonempty; OR the map reflects each nullary relation. Nonempty C already forces the third option from any singleton local embedding. If empty irreducibles AND nullary symbols are admitted, empty C needs that explicit nullary agreement. This gate is unnecessary for pair coverage and the HN branch."
+    }
+  ],
+  "imports": [],
+  "external_providers": [],
+  "definitions": [
+    {
+      "id": "D01",
+      "name": "Already-defined unary reachability closure",
+      "statement": "cl_C(B) consists of points reachable from some b in B by a finite composable chain of ALREADY-DEFINED named unary values; include the length-zero chain. Undefined transitions are not filled in. Sort tags follow each transition.",
+      "depends_on": [
+        "A01"
+      ],
+      "notes": "N01",
+      "source": {
+        "file": "sections/binary_unary_irreducible_local_cover.tex",
+        "anchor": "\\label{lem:typed-binary-irreducible-local-cover}"
+      }
+    },
+    {
+      "id": "D02",
+      "name": "Closed induced partial substructure",
+      "statement": "A subset S is closed when each named unary value defined in C at any applicable point of S lies in S. Equip S with exactly the induced relations and existing function domains/values. Its inclusion is a domain-reflecting embedding.",
+      "depends_on": [
+        "A01"
+      ],
+      "notes": "N01",
+      "source": {
+        "file": "sections/binary_unary_irreducible_local_cover.tex",
+        "anchor": "\\label{lem:typed-binary-irreducible-local-cover}"
+      }
+    },
+    {
+      "id": "D03",
+      "name": "Free-amalgam irreducibility",
+      "statement": "An induced structure D is irreducible if it has no free decomposition into two PROPER closed induced factors covering D and agreeing on their induced intersection. Relations and function graphs are exactly their unions. The base may be EMPTY. Empty-object conventions are separately recorded, not inferred.",
+      "depends_on": [
+        "D02"
+      ],
+      "notes": "N01",
+      "source": {
+        "file": "sections/binary_unary_irreducible_local_cover.tex",
+        "anchor": "\\label{lem:typed-binary-irreducible-local-cover}"
+      }
+    },
+    {
+      "id": "D04",
+      "name": "Finite local support family",
+      "statement": "H(D) contains cl_D({v}) for every v and cl_D({u,v}) for every ACTUALLY DISPLAYED binary tuple with u!=v, each with its FULL induced diagram. Duplicate supports may be identified. Diagonal binary tuples require no extra generator pair.",
+      "depends_on": [
+        "D01",
+        "D02",
+        "A02"
+      ],
+      "notes": "N02",
+      "source": {
+        "file": "sections/binary_unary_irreducible_local_cover.tex",
+        "anchor": "\\label{lem:typed-binary-irreducible-local-cover}"
+      }
+    },
+    {
+      "id": "D05",
+      "name": "Two omission unions",
+      "statement": "For distinct x,y in D with no common H(D) support define Ax=union{U in H(D): y notin U} and Ay=union{U in H(D): x notin U}. These are actual subsets, subsequently given the full induced diagrams.",
+      "depends_on": [
+        "D04"
+      ],
+      "notes": "N02",
+      "source": {
+        "file": "sections/binary_unary_irreducible_local_cover.tex",
+        "anchor": "\\label{lem:typed-binary-irreducible-local-cover}"
+      }
+    },
+    {
+      "id": "D06",
+      "name": "Local and global embedding contracts",
+      "statement": "An embedding is sort-preserving, injective and preserves/reflects every relation and every applicable function domain/value. A homomorphism-embedding is a homomorphism restricting to an embedding on every admitted source irreducible. The nonempty version quantifies only over nonempty irreducibles.",
+      "depends_on": [
+        "A01",
+        "D03"
+      ],
+      "notes": "N03",
+      "source": {
+        "file": "sections/binary_unary_irreducible_local_cover.tex",
+        "anchor": "\\label{lem:typed-binary-irreducible-local-cover}"
+      }
+    },
+    {
+      "id": "D07",
+      "name": "Actual one-generated completed diagram",
+      "statement": "U_x=cl_C({x}) with its EXISTING full induced structure. Once U_x is an actual K member, it is completed with the same domain interpretations; a homomorphism to a different K structure or a completion of U_x is not this assertion.",
+      "depends_on": [
+        "D01",
+        "D02",
+        "A04"
+      ],
+      "notes": "N04",
+      "source": {
+        "file": "sections/binary_unary_irreducible_local_cover.tex",
+        "anchor": "\\label{lem:hn-irreducible-forces-unary-admissible}"
+      }
+    },
+    {
+      "id": "D08",
+      "name": "Well-typed ONE-VARIABLE unary term identity",
+      "statement": "A unary term is x followed by a finite type-correct composition of named unary functions, possibly the empty composition. An identity is t(x)=s(x) for terms with the SAME output sort and AT MOST that one free variable. Merely having unary operation symbols does not authorize equations using independent variables.",
+      "depends_on": [
+        "A01"
+      ],
+      "notes": "N05",
+      "source": {
+        "file": "sections/binary_unary_irreducible_local_cover.tex",
+        "anchor": "\\label{lem:hn-irreducible-forces-unary-admissible}"
+      }
+    },
+    {
+      "id": "D09",
+      "name": "Uniform completed one-generator bound",
+      "statement": "The optional m bounds the number of all vertices across sorts in every completed one-generated K member. A finite generator-set bound is to be DERIVED from a union of actual singleton closures.",
+      "depends_on": [
+        "A04",
+        "A06"
+      ],
+      "notes": "N06",
+      "source": {
+        "file": "sections/binary_unary_irreducible_local_cover.tex",
+        "anchor": "\\label{lem:hn-irreducible-forces-unary-admissible}"
+      }
+    },
+    {
+      "id": "D10",
+      "name": "Full-diagram unary admissibility interface",
+      "statement": "For every x, its whole induced unary-generated diagram is isomorphic to an ACTUAL completed one-generated target member, including total functions, literal term equalities and ALL internal relations. In a terminal hidden instantiation this is def:typed-unary-admissible-source. It asserts no ambient completion or bounded-obstruction/Ramsey theorem.",
+      "depends_on": [
+        "D07"
+      ],
+      "notes": "N06",
+      "source": {
+        "file": "sections/binary_unary_irreducible_local_cover.tex",
+        "anchor": "\\label{lem:hn-irreducible-forces-unary-admissible}"
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "name": "Reachability is the least closed containing subset",
+      "statement": "A finite chain remains in every closed subset containing its starting generator. Conversely adjoining any already-defined unary value to a reachable point extends its chain. Thus D01 is closed, contains B and is contained in every such subset; its full induced structure is well-defined. No totality or relation-arity assumption is needed.",
+      "depends_on": [
+        "D01",
+        "D02"
+      ],
+      "notes": "N01",
+      "scope": "unary_closure",
+      "source_labels": [
+        "lem:typed-binary-irreducible-local-cover"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C02",
+      "name": "Domain-reflecting induced inclusions are exactly closed restrictions",
+      "statement": "For a domain-reflecting inclusion, any ambient unary value at a retained point must exist in the substructure and its value must remain there. Conversely a closed subset retains all applicable ambient domains/values and the induced relations, so inclusion is an embedding. Intersecting induced closed subsets preserves this property.",
+      "depends_on": [
+        "D02",
+        "A01"
+      ],
+      "notes": "N01",
+      "scope": "unary_closure",
+      "source_labels": [
+        "lem:typed-binary-irreducible-local-cover"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C03",
+      "name": "Unions of unary closures and empty closure",
+      "statement": "Unions of closed subsets are closed because each operation has ONE input. Hence cl_C(B)=union_{x in B}cl_C({x}); each inclusion follows from C01. With no constants cl_C(empty)=empty. No binary-operation closure or independent generator combination is inserted.",
+      "depends_on": [
+        "C01",
+        "C02"
+      ],
+      "notes": "N01",
+      "scope": "unary_closure",
+      "source_labels": [
+        "lem:typed-binary-irreducible-local-cover"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C04",
+      "name": "Unary closure is absolute inside closed induced substructures",
+      "statement": "If D is a closed induced substructure of C and B is contained in D, every already-defined unary chain from B is identical in C and D. Therefore cl_D(B)=cl_C(B), and their induced relation/domain diagrams also coincide. This is equality of actual supports, not just a possible completion.",
+      "depends_on": [
+        "C01",
+        "C02"
+      ],
+      "notes": "N01",
+      "scope": "unary_closure",
+      "source_labels": [
+        "lem:typed-binary-irreducible-local-cover"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C05",
+      "name": "Singleton supports cover points and local tuple data",
+      "statement": "Every point belongs to its singleton closure. Every unary function graph edge and unary relation or diagonal binary tuple is supported there. Every displayed off-diagonal binary tuple lies in its designated two-generator support. All supports are closed by C01. Nullary interpretations are the same in every induced restriction, including empty restrictions.",
+      "depends_on": [
+        "D04",
+        "C01",
+        "A02"
+      ],
+      "notes": "N02",
+      "scope": "binary_local_cover",
+      "source_labels": [
+        "lem:typed-binary-irreducible-local-cover"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C06",
+      "name": "No common support gives exclusive endpoint witnesses",
+      "statement": "Under D05, cl_D({x}) avoids y and cl_D({y}) avoids x; otherwise a common support exists. Thus x belongs to Ax but to no support in Ay, and y belongs to Ay but to no support in Ax. In particular both unions are proper subsets of D.",
+      "depends_on": [
+        "D05",
+        "C05"
+      ],
+      "notes": "N02",
+      "scope": "binary_local_cover",
+      "source_labels": [
+        "lem:typed-binary-irreducible-local-cover"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C07",
+      "name": "The two omission unions are closed and cover D",
+      "statement": "Every local support omits x or y, so occurs in at least one omission union. The singleton supports cover all vertices, hence D=Ax union Ay. C03 makes both unions closed and C02 makes the intersection an induced closed base, possibly empty. C06 gives a point exclusive to each side.",
+      "depends_on": [
+        "C03",
+        "C05",
+        "C06"
+      ],
+      "notes": "N02",
+      "scope": "binary_local_cover",
+      "source_labels": [
+        "lem:typed-binary-irreducible-local-cover"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C08",
+      "name": "Every displayed relation and function stays on one side",
+      "statement": "An off-diagonal binary tuple has a support wholly contained in Ax or Ay. A unary tuple or diagonal binary tuple uses a singleton support, also wholly on one side. Closedness retains all unary values on each side. Nullary interpretations agree in all induced pieces and need no vertex support. No displayed tuple can cross the two exclusive sides.",
+      "depends_on": [
+        "C05",
+        "C07",
+        "A02"
+      ],
+      "notes": "N02",
+      "scope": "binary_local_cover",
+      "source_labels": [
+        "lem:typed-binary-irreducible-local-cover"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C09",
+      "name": "Exact diagram union contradicts irreducibility",
+      "statement": "The induced factors on Ax and Ay agree on their whole induced intersection, and C08 shows their free amalgam is EXACTLY D, including all domains and relations. Both factors are proper by C06. This contradicts D03; the contradiction does not need a nonempty intersection or complete D.",
+      "depends_on": [
+        "C06",
+        "C07",
+        "C08",
+        "D03"
+      ],
+      "notes": "N02",
+      "scope": "binary_local_cover",
+      "source_labels": [
+        "lem:typed-binary-irreducible-local-cover"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C10",
+      "name": "Pairwise local support cover of nonempty irreducibles",
+      "statement": "For any NONEMPTY closed induced irreducible D and any distinct x,y in D, assuming no common local support leads to C09. Therefore some H(D) member contains both. A singleton D has no distinct pair and satisfies the conclusion vacuously.",
+      "depends_on": [
+        "C09"
+      ],
+      "notes": "N02",
+      "scope": "binary_local_cover",
+      "source_labels": [
+        "lem:typed-binary-irreducible-local-cover"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C11",
+      "name": "All local induced embedding hypotheses restrict literally to D",
+      "statement": "For closed induced D<=C, a singleton or displayed-binary generator in D has the SAME closure and induced diagram in C by C04. Thus its H(D) support is a corresponding H(C) member, and A03 makes f induced on it for EVERY symbol. It need not be generated by the symbol later reflected.",
+      "depends_on": [
+        "A03",
+        "C04",
+        "D04"
+      ],
+      "notes": "N03",
+      "scope": "local_embedding",
+      "source_labels": [
+        "lem:typed-binary-irreducible-local-cover"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C12",
+      "name": "The map is injective on every nonempty irreducible",
+      "statement": "For any distinct x,y in a nonempty irreducible D, C10 supplies a common support, and C11 supplies injectivity on it. Hence f(x)!=f(y); the singleton case is automatic. No global injectivity of f on different reducible pieces follows.",
+      "depends_on": [
+        "C10",
+        "C11"
+      ],
+      "notes": "N03",
+      "scope": "local_embedding",
+      "source_labels": [
+        "lem:typed-binary-irreducible-local-cover"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C13",
+      "name": "Off-diagonal binary tuples reflect through a common support",
+      "statement": "If the target satisfies ANY binary R(f(x),f(y)) for distinct x,y in D, choose the common support from C10. C11 reflects R there, regardless of which displayed relation originally generated that support. Inducedness then gives R(x,y) in D. This works even when R(x,y) was not previously displayed.",
+      "depends_on": [
+        "C10",
+        "C11"
+      ],
+      "notes": "N03",
+      "scope": "local_embedding",
+      "source_labels": [
+        "lem:typed-binary-irreducible-local-cover"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C14",
+      "name": "Unary predicates and repeated-coordinate binary tuples reflect",
+      "statement": "Use cl_D({x}) and C11 for every unary predicate at f(x) and every binary R(f(x),f(x)). Target or source equality patterns are controlled by C12. No two-distinct-point support is required in singleton D.",
+      "depends_on": [
+        "C11",
+        "C12"
+      ],
+      "notes": "N03",
+      "scope": "local_embedding",
+      "source_labels": [
+        "lem:typed-binary-irreducible-local-cover"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C15",
+      "name": "Nonempty supports also reflect nullary relations",
+      "statement": "For nonempty D choose any x in D. The local induced embedding on cl_D({x}) reflects EVERY nullary relation, whose interpretation is the same in D and that induced support. More generally, if C is nonempty any singleton H(C) support enforces nullary agreement of C and H, including for an empty restriction.",
+      "depends_on": [
+        "C11",
+        "A03"
+      ],
+      "notes": "N03",
+      "scope": "local_embedding",
+      "source_labels": [
+        "lem:typed-binary-irreducible-local-cover"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C16",
+      "name": "Assemble an induced embedding on each nonempty irreducible",
+      "statement": "Injectivity is C12. Sort/function and displayed-relation preservation come from A03; restrictions of total unary functions to the closed D are total, so domains also reflect. C13-C15 reflect all possible relation arities. Thus f restricted to ANY NONEMPTY irreducible D is an induced embedding. Complete target is retained from the source but unused.",
+      "depends_on": [
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "A02",
+        "A03",
+        "D06"
+      ],
+      "notes": "N03",
+      "scope": "local_embedding",
+      "source_labels": [
+        "lem:typed-binary-irreducible-local-cover"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C17",
+      "name": "Source local consequence under the nonempty convention",
+      "statement": "The given homomorphism is a homomorphism-embedding on all NONEMPTY irreducibles by C16. It need not be globally injective. This conclusion has no empty/nullary gate and is valid even when relation arity zero is admitted.",
+      "depends_on": [
+        "C16",
+        "D06"
+      ],
+      "notes": "N03",
+      "scope": "local_embedding",
+      "source_labels": [
+        "lem:typed-binary-irreducible-local-cover"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C18",
+      "name": "Full homomorphism-embedding after the explicit empty/nullary gate",
+      "statement": "If empty irreducibles are excluded, C17 is the whole claim. If included and relation arities are positive, the empty restriction embeds vacuously. If nullary symbols are allowed, A07 supplies their reflection (already forced whenever C is nonempty by C15). Thus the full source HE consequence holds under the recorded convention gate, with no silent claim for empty C with unmatched nullary truth.",
+      "depends_on": [
+        "C15",
+        "C17",
+        "A07"
+      ],
+      "notes": "N03",
+      "scope": "local_embedding",
+      "source_labels": [
+        "lem:typed-binary-irreducible-local-cover"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C19",
+      "name": "Every already-defined one-generated closure is irreducible",
+      "statement": "Fix x. If U_x were the free amalgam of proper induced closed factors, their union covers x, so one factor contains x. By C01/C02 it contains every already-defined unary iterate and therefore all U_x, contradiction. No K-membership, totality, binary relation arity, completion or size bound is used.",
+      "depends_on": [
+        "C01",
+        "C02",
+        "D03"
+      ],
+      "notes": "N04",
+      "scope": "HN_actual_diagram",
+      "source_labels": [
+        "lem:hn-irreducible-forces-unary-admissible"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C20",
+      "name": "Each one-generated full induced diagram is an actual K member",
+      "statement": "C19 proves U_x irreducible and C01/C02 give its actual induced inclusion. Apply A05 to obtain U_x in K. With A04 this is the existing completed diagram, including all its relations/domains, not the existence of a completion into K.",
+      "depends_on": [
+        "C19",
+        "A04",
+        "A05",
+        "D07"
+      ],
+      "notes": "N04",
+      "scope": "HN_actual_diagram",
+      "source_labels": [
+        "lem:hn-irreducible-forces-unary-admissible"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C21",
+      "name": "All intended unary functions are already total in C",
+      "statement": "For any x and applicable named unary f, the ACTUAL completed U_x from C20 has f defined at x by A04. Its induced inclusion preserves that very value into C, so f is already defined at x in C. Quantify over all applicable symbols and points. No m-bound and no global completedness of C is used.",
+      "depends_on": [
+        "C20",
+        "A04",
+        "C02"
+      ],
+      "notes": "N05",
+      "scope": "totality_and_terms",
+      "source_labels": [
+        "lem:hn-irreducible-forces-unary-admissible"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C22",
+      "name": "One-variable term evaluation remains inside the actual closure",
+      "statement": "For a D08 term and x, induct on its unary composition length. The variable is x in U_x. For the step, completed totality and closed induced inclusion keep the next value inside U_x and make its value agree literally with C. All type transitions and output sorts are retained.",
+      "depends_on": [
+        "D08",
+        "C20",
+        "C21",
+        "C04"
+      ],
+      "notes": "N05",
+      "scope": "totality_and_terms",
+      "source_labels": [
+        "lem:hn-irreducible-forces-unary-admissible"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C23",
+      "name": "All valid ONE-VARIABLE typed identities transfer pointwise",
+      "statement": "For t(x)=s(x) valid in K and any correctly sorted x in C, C20 makes it true inside actual U_x. C22 identifies both evaluations with their values in C. Hence the identity holds pointwise. This does not transfer arbitrary multivariable identities in a unary-operation language.",
+      "depends_on": [
+        "C20",
+        "C22",
+        "D08"
+      ],
+      "notes": "N05",
+      "scope": "totality_and_terms",
+      "source_labels": [
+        "lem:hn-irreducible-forces-unary-admissible"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C24",
+      "name": "Actual U_x is one-generated also as a completed K member",
+      "statement": "Its partial construction uses all already-defined chains; C20/C21 add no new vertices or function values to this existing structure. C04/C22 show closure of {x} in completed U_x is U_x itself. Thus it qualifies for a bound on completed ONE-GENERATED members.",
+      "depends_on": [
+        "C01",
+        "C04",
+        "C20",
+        "C21",
+        "C22"
+      ],
+      "notes": "N06",
+      "scope": "closure_bound",
+      "source_labels": [
+        "lem:hn-irreducible-forces-unary-admissible"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C25",
+      "name": "The supplied m bounds each actual singleton closure",
+      "statement": "Apply A06/D09 to the actual completed one-generated K member supplied by C20/C24. Obtain |U_x|<=m across all sorts. This is conditional on the supplied class bound, not a claimed bound for arbitrary partial-unary diagrams.",
+      "depends_on": [
+        "C20",
+        "C24",
+        "D09"
+      ],
+      "notes": "N06",
+      "scope": "closure_bound",
+      "source_labels": [
+        "lem:hn-irreducible-forces-unary-admissible"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C26",
+      "name": "Finite generator closure has size at most m times its generators",
+      "statement": "By C03, cl_C(B)=union_{x in B}U_x. The cardinality of a finite union is at most the sum of component cardinalities; C25 bounds each by m. Therefore |cl_C(B)|<=m|B|, allowing overlaps and repeated values without counting them twice.",
+      "depends_on": [
+        "C03",
+        "C25"
+      ],
+      "notes": "N06",
+      "scope": "closure_bound",
+      "source_labels": [
+        "lem:hn-irreducible-forces-unary-admissible"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C27",
+      "name": "Empty sources, empty generators and zero bound are handled",
+      "statement": "No constants imply cl_C(empty)=empty by C03. Empty C gives vacuous pointwise totality/identity assertions and the zero closure bound. If m=0 under A06/A05, C25 and x in U_x force C empty. No nonempty generator or nonempty-sort assumption is inserted.",
+      "depends_on": [
+        "C03",
+        "C21",
+        "C23",
+        "C25",
+        "C26"
+      ],
+      "notes": "N06",
+      "scope": "closure_bound",
+      "source_labels": [
+        "lem:hn-irreducible-forces-unary-admissible"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C28",
+      "name": "The full local admissibility interface is satisfied",
+      "statement": "C20 supplies for every x the WHOLE actual completed one-generated target diagram, with all induced relations as well as functions. C21/C23 give totality and literal term identities. This establishes D10 and, when K is the intended completed hidden age, the exact downstream unary-admissibility definition. It does not merely assert functions are total or identities hold.",
+      "depends_on": [
+        "C20",
+        "C21",
+        "C23",
+        "C24",
+        "D10"
+      ],
+      "notes": "N06",
+      "scope": "HN_actual_diagram",
+      "source_labels": [
+        "lem:hn-irreducible-forces-unary-admissible"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C29",
+      "name": "HN source export keeps its conditional and independent scope",
+      "statement": "C19/C20 prove clause (i); C21/C23 prove clause (ii); C25/C26/C27 prove conditional clause (iii); C28 gives the stated local-admissibility interface. Arbitrary relation arities, initially partial unary domains and no ambient completion are retained. No HN Ramsey theorem or hidden obstruction bound is derived here.",
+      "depends_on": [
+        "C19",
+        "C20",
+        "C21",
+        "C23",
+        "C25",
+        "C26",
+        "C27",
+        "C28"
+      ],
+      "notes": "N06",
+      "scope": "HN_actual_diagram",
+      "source_labels": [
+        "lem:hn-irreducible-forces-unary-admissible"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C30",
+      "name": "Nullary and higher-relation counterexamples delimit the local branch",
+      "statement": "Empty C with false nullary R mapping to a target with true R has vacuous local hypotheses but fails the empty embedding if empties count as irreducible; this requires A07. A sole ternary tuple on three points makes an irreducible not pair-covered by H. Even with all binary pairs displayed, adding only a missing all-distinct ternary tuple in the target defeats reflection while every singleton/pair restriction embeds. These are explicit small counterexamples, not new source exports.",
+      "depends_on": [
+        "D04",
+        "D06",
+        "C10",
+        "C18"
+      ],
+      "notes": "N07",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-binary-irreducible-local-cover"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C31",
+      "name": "Domain reflection and actual membership have distinct roles",
+      "statement": "A singleton with an undefined unary f is completable to an identity singleton yet not total, so mere completability cannot replace A05. If induced factors may SUPPRESS defined domains, the three-point diagram f(x)=a,g(x)=b is a graph-union of the two proper restrictions {x,a},{x,b}; its generated closure is then reducible. The latter refutes the independent C19 mechanism under that weaker convention; it is not claimed to satisfy all actual-total-K hypotheses.",
+      "depends_on": [
+        "C19",
+        "C20",
+        "C21"
+      ],
+      "notes": "N07",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:hn-irreducible-forces-unary-admissible"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C32",
+      "name": "Single-variable and unary-operation scope has real boundaries",
+      "statement": "A two-point identity-unary structure has only singleton nonempty irreducibles, all in K of empty/singleton identity structures, but fails the two-variable identity x=y valid in K. With a PARTIAL BINARY function on {a,b} defined only by f(a,a)=a,f(b,b)=b, actual irreducibles are total singleton pieces yet mixed-input totality fails. A three-point meet semilattice with a meet b=c also shows cl({a,b}) need not equal cl({a}) union cl({b}) for binary functions.",
+      "depends_on": [
+        "C03",
+        "C19",
+        "C23",
+        "C26"
+      ],
+      "notes": "N07",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:hn-irreducible-forces-unary-admissible"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    }
+  ],
+  "source_result_files": [
+    "sections/binary_unary_irreducible_local_cover.tex"
+  ],
+  "exports": [
+    {
+      "source_label": "lem:typed-binary-irreducible-local-cover",
+      "claims": [
+        "C10",
+        "C17",
+        "C18"
+      ]
+    },
+    {
+      "source_label": "lem:hn-irreducible-forces-unary-admissible",
+      "claims": [
+        "C20",
+        "C21",
+        "C23",
+        "C25",
+        "C26",
+        "C28",
+        "C29"
+      ]
+    }
+  ],
+  "auxiliary_exports": [],
+  "source_files": [
+    {
+      "file": "sections/binary_unary_irreducible_local_cover.tex",
+      "git_blob": "a91af6bdd0fd7de6c7266e5c908fde78192f9087"
+    },
+    {
+      "file": "sections/v27/10_typed_unary_terms_return.tex",
+      "git_blob": "7edb9833681c84ab9e15918a004137d7f2c47258"
+    }
+  ],
+  "dependency_firewalls": [
+    {
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29"
+      ],
+      "forbid": [
+        "A07"
+      ]
+    },
+    {
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04"
+      ],
+      "forbid": [
+        "A02",
+        "A03",
+        "A04",
+        "A05",
+        "A06",
+        "A07",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32"
+      ]
+    },
+    {
+      "claims": [
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18"
+      ],
+      "forbid": [
+        "A04",
+        "A05",
+        "A06",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29"
+      ]
+    },
+    {
+      "claims": [
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29"
+      ],
+      "forbid": [
+        "A02",
+        "A03",
+        "A07",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18"
+      ]
+    },
+    {
+      "claims": [
+        "C19"
+      ],
+      "forbid": [
+        "A04",
+        "A05",
+        "A06",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29"
+      ]
+    },
+    {
+      "claims": [
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C28"
+      ],
+      "forbid": [
+        "A06",
+        "D09",
+        "C25",
+        "C26",
+        "C27"
+      ]
+    }
+  ],
+  "convention_gates": {
+    "local_pair_cover": "NONEMPTY irreducibles, arity 0/1/2, total unary functions",
+    "local_homomorphism_embedding": "C17 unconditional on NONEMPTY irreducibles; C18 with A07 for all admitted irreducibles",
+    "empty_nullary_counterexample": "C30",
+    "HN_substructure": "domain-reflecting induced inclusion",
+    "HN_membership": "ACTUAL whole diagram in K, not merely completable",
+    "term_identity": "t(x)=s(x), at most ONE free variable",
+    "HN_relation_arities": "arbitrary",
+    "no_constants": true
+  },
+  "tasks": [
+    {
+      "id": "T01",
+      "name": "Partial unary closure and induced inclusions",
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement genuine partial unary domains and domain-reflecting induced inclusions. Keep local arity/totality premises separate from the HN branch. Reflect all symbols on supports, including diagonal and nullary cases. Export the full HE claim only with the recorded empty/nullary gate. Transfer only one-variable typed identities, actual completed diagrams and a supplied conditional m-bound; do not assume an ambient completion or import an HN theorem."
+    },
+    {
+      "id": "T02",
+      "name": "Closed local supports and exact free-decomposition contradiction",
+      "claims": [
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10"
+      ],
+      "depends_on": [
+        "T01"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement genuine partial unary domains and domain-reflecting induced inclusions. Keep local arity/totality premises separate from the HN branch. Reflect all symbols on supports, including diagonal and nullary cases. Export the full HE claim only with the recorded empty/nullary gate. Transfer only one-variable typed identities, actual completed diagrams and a supplied conditional m-bound; do not assume an ambient completion or import an HN theorem."
+    },
+    {
+      "id": "T03",
+      "name": "Local embedding reflection and empty/nullary gate",
+      "claims": [
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18"
+      ],
+      "depends_on": [
+        "T01",
+        "T02"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement genuine partial unary domains and domain-reflecting induced inclusions. Keep local arity/totality premises separate from the HN branch. Reflect all symbols on supports, including diagonal and nullary cases. Export the full HE claim only with the recorded empty/nullary gate. Transfer only one-variable typed identities, actual completed diagrams and a supplied conditional m-bound; do not assume an ambient completion or import an HN theorem."
+    },
+    {
+      "id": "T04",
+      "name": "Actual HN singleton diagrams, totality and typed term identities",
+      "claims": [
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24"
+      ],
+      "depends_on": [
+        "T01"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement genuine partial unary domains and domain-reflecting induced inclusions. Keep local arity/totality premises separate from the HN branch. Reflect all symbols on supports, including diagonal and nullary cases. Export the full HE claim only with the recorded empty/nullary gate. Transfer only one-variable typed identities, actual completed diagrams and a supplied conditional m-bound; do not assume an ambient completion or import an HN theorem."
+    },
+    {
+      "id": "T05",
+      "name": "Conditional size bound and full admissibility interface",
+      "claims": [
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29"
+      ],
+      "depends_on": [
+        "T01",
+        "T04"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement genuine partial unary domains and domain-reflecting induced inclusions. Keep local arity/totality premises separate from the HN branch. Reflect all symbols on supports, including diagonal and nullary cases. Export the full HE claim only with the recorded empty/nullary gate. Transfer only one-variable typed identities, actual completed diagrams and a supplied conditional m-bound; do not assume an ambient completion or import an HN theorem."
+    },
+    {
+      "id": "T06",
+      "name": "Scope boundary counterexamples",
+      "claims": [
+        "C30",
+        "C31",
+        "C32"
+      ],
+      "depends_on": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement genuine partial unary domains and domain-reflecting induced inclusions. Keep local arity/totality premises separate from the HN branch. Reflect all symbols on supports, including diagonal and nullary cases. Export the full HE claim only with the recorded empty/nullary gate. Transfer only one-variable typed identities, actual completed diagrams and a supplied conditional m-bound; do not assume an ambient completion or import an HN theorem."
+    }
+  ],
+  "overview_mermaid": [
+    "flowchart TD",
+    "  U[\"Partial unary closure\"] --> L[\"Binary local supports\"]",
+    "  L --> P[\"Pair cover in nonempty irreducibles\"]",
+    "  P --> E[\"Local induced embedding reflection\"]",
+    "  G[\"Empty and nullary convention gate\"] --> H[\"Full homomorphism embedding\"]",
+    "  E --> H",
+    "  U --> I[\"One generated irreducibility\"]",
+    "  K[\"Actual completed K membership\"] --> A[\"Full completed singleton diagrams\"]",
+    "  I --> A",
+    "  A --> T[\"Total functions and one variable identities\"]",
+    "  M[\"Supplied uniform bound\"] --> B[\"Finite generator closure bound\"]",
+    "  A --> B"
+  ],
+  "overview_notes": [
+    "There are no mathematical provider imports and no external HN theorem calls.",
+    "The local-support argument requires total unary functions and relational arity at most two. HN singleton irreducibility permits initially partial unary functions and arbitrary relations.",
+    "The first source statement explicitly says NONEMPTY irreducible; full HE wording needs the empty/nullary convention gate. No source TeX is changed.",
+    "Actual completed membership transfers the WHOLE generated diagram. Completion alone and arbitrary multivariable identities do not suffice.",
+    "The downstream hidden unary-admissibility interface is established only after choosing K to be that completed hidden age. Its uniform m-bound remains a separate input."
+  ],
+  "controls": [
+    {
+      "id": "K01",
+      "check": "Exhaustively enumerate bounded partial unary structures and compare one-generated reachability, closed induced pieces, actual-K conditions, irreducibility and the conditional union bound."
+    },
+    {
+      "id": "K02",
+      "check": "Bounded binary support/embedding maps and explicit nullary, higher relational arity, domain truncation, mere completion, multivariable identity and higher function arity counterexamples. These diagnostics do not certify all finite structures or HN/Ramsey/Lean results."
+    }
+  ],
+  "article_feedback": [
+    {
+      "id": "F01",
+      "kind": "SOURCE_SCOPE_AMBIGUITY",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/binary_unary_irreducible_local_cover.tex",
+        "anchor": "its restriction to EVERY"
+      },
+      "finding": "The pair-cover assertion explicitly quantifies NONEMPTY irreducibles, while the consequence says EVERY irreducible and arity AT MOST TWO literally includes nullary relations. Empty C with mismatched nullary truth is a counterexample if empty structures count as irreducible.",
+      "proposed_article_change": "Specify positive relation arities or nonempty irreducibles, or state the separate nullary-reflection condition for the empty-source case. Retain the unconditional nonempty HE statement.",
+      "caller_effect": "The intended positive unary/binary signature is unaffected. Formalization exports C18 only with the explicit convention gate A07; no false literal all-nullary/empty theorem is certified.",
+      "proof_claims": [
+        "C15",
+        "C17",
+        "C18",
+        "C30"
+      ]
+    },
+    {
+      "id": "F02",
+      "kind": "DEPENDENCY_OR_SCOPE_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/binary_unary_irreducible_local_cover.tex",
+        "anchor": "This proves reflection"
+      },
+      "finding": "Singleton supports handle unary predicates and repeated-coordinate binary tuples, while any common support must reflect EVERY symbol, not just its generating relation. Free-amalgam irreducibility allows an empty base. Complete target is unused.",
+      "proposed_article_change": "Add the singleton-tuple and empty-overlap sentences; make the all-symbol induced embedding convention explicit. Optionally remove the unnecessary complete-target premise in a separately reviewed edition.",
+      "caller_effect": "No stronger hypothesis is introduced into pair coverage; full target premise is retained in this source-preserving package.",
+      "proof_claims": [
+        "C07",
+        "C08",
+        "C09",
+        "C11",
+        "C13",
+        "C14",
+        "C16"
+      ]
+    },
+    {
+      "id": "F03",
+      "kind": "DEPENDENCY_OR_SCOPE_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/binary_unary_irreducible_local_cover.tex",
+        "anchor": "every actual unary term identity"
+      },
+      "finding": "Unary term identities transfer only when t and s use the same single source variable. Actual membership gives the full induced diagram, not just identities or existence of a completion. The m-bound is a separate conditional input.",
+      "proposed_article_change": "Write well-typed t(x)=s(x), with at most one free variable, and point explicitly to actual full one-generated diagrams when invoking downstream unary admissibility.",
+      "caller_effect": "Arbitrary relation arities and initially partial unary domains are preserved. No HN theorem, hidden uniform bound or global ambient completion is added.",
+      "proof_claims": [
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C25",
+        "C26",
+        "C28",
+        "C29",
+        "C31",
+        "C32"
+      ]
+    }
+  ],
+  "review": {
+    "date": "2026-10-28",
+    "source_unchanged": true,
+    "source_signature_repairs": 0,
+    "unexpanded_provider_labels": [],
+    "proof_status": "HUMAN_EXPANDED_NOT_LEAN; two local elementary results, with the first source empty/nullary ambiguity recorded and the full HE export explicitly gated.",
+    "independent_reviews": [
+      "Ax/Ay free-amalgam proof, all-symbol local reflection and nullary/higher-arity boundaries",
+      "Domain-reflecting unary closure, actual K membership, one-variable identities and conditional size bounds"
+    ],
+    "boundaries": [
+      "Literal empty-source/all-nullary full HE consequence requires the recorded convention gate.",
+      "No HN Ramsey theorem or terminal hidden closure-bound theorem is imported.",
+      "The full generated induced diagram belongs to K; totality/term identities alone are weaker."
+    ]
+  }
+}

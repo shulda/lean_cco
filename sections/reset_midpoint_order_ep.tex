@@ -1,0 +1,445 @@
+% A21: a general relative ordering-EP criterion, extracted from EP04.
+% Combinatorial Ramsey/midpoint lemma; the V27 reset and hidden-SAP
+% supply its hypotheses separately.
+\section{A reset-midpoint criterion for relative ordering EP}
+\label{sec:reset-midpoint-ep}
+
+We record an order-theoretic statement independent of CCO, exact
+relations, or the particular hidden-coordinate construction.
+Its \emph{relative} formulation matters: the Ramsey provider may
+retain \emph{all} final order tasks, even when the source and
+target of the EP step remember only the earlier tasks.
+
+\begin{lemma}[Ramsey inheritance under a unary-closed sort restriction]
+\label{lem:foundational-ramsey-sort-restriction}
+Let $\mathcal R$ be a hereditary Ramsey class
+of finite structures in a finite language with
+named disjoint sorts, arbitrary relations, and
+unary partial functions whose domains are
+determined by source sorts. Let $I$ be a fixed
+collection of sort symbols such that no unary
+function with source in $I$ has its target
+outside $I$. Define $\mathcal R|_I$ to be
+the class of structures obtained by restricting
+objects of $\mathcal R$ to their vertices in
+sorts $I$, retaining all induced symbols on
+those sorts. Then $\mathcal R|_I$ is hereditary
+and Ramsey. If $\mathcal R$ has JEP or SAP,
+then so does $\mathcal R|_I$.
+No extra strong-amalgamation or real-representative
+choices are needed for the Ramsey inheritance.
+\end{lemma}
+\begin{proof}
+For any $C\in\mathcal R$ its $I$-part
+$C|_I$ is a functionally closed induced
+substructure, hence itself belongs to
+$\mathcal R$ by heredity. Every
+$A\in\mathcal R|_I$ is therefore a
+member of $\mathcal R$ whose universe
+uses only sorts in $I$ (after choosing
+its inducing isomorphism).
+
+Fix $A,B\in\mathcal R|_I$ and $k$.
+Choose $C\in\mathcal R$ with
+$C\longrightarrow(B)^A_k$. The
+sort predicates force EVERY embedding
+of $A$ or $B$ into $C$ to have image
+entirely in $C|_I$. Consequently
+\[
+ \operatorname{Emb}(A,C|_I)
+         =\operatorname{Emb}(A,C)
+\]
+on the literal vertex maps, and every
+monochromatic copy of $B$ supplied by
+the full Ramsey arrow lies inside
+$C|_I$. Thus $C|_I$ witnesses the
+Ramsey arrow in $\mathcal R|_I$.
+Heredity follows from closure under
+induced functionally closed substructures.
+
+For JEP or SAP, apply the corresponding
+amalgamation/joint embedding construction
+in $\mathcal R$ to the same all-$I$
+inputs, and restrict the resulting output
+to $I$. The existing embeddings are
+unchanged on their images, and strong
+intersection is preserved by restriction.
+\end{proof}
+
+\begin{lemma}[Ramsey inheritance under a functorial normalization]
+\label{lem:foundational-ramsey-normalization}
+Let $\mathcal R$ be a hereditary Ramsey class of finite structures,
+with embeddings as morphisms. Let $N$ be an endofunctor such that
+$N(A)$ has the same universe as $A$, $N(f)$ is the same vertex map
+as $f$ for every embedding, and $N^2=N$. Then the full class
+\[
+                  \mathcal R_N=\{A\in\mathcal R:N(A)=A\}
+\]
+is hereditary and Ramsey for embeddings. If $\mathcal R$ has JEP,
+then so does $\mathcal R_N$.
+\end{lemma}
+\begin{proof}
+For an induced substructure $B\subseteq A$ with $N(A)=A$, applying
+$N$ to the inclusion gives an embedding $N(B)\hookrightarrow A$
+with the same image and vertex map. Inducedness forces $N(B)=B$,
+proving heredity. For fixed objects $A,B$ choose
+$C\longrightarrow(B)^A_k$ in $\mathcal R$.
+A colouring of $\operatorname{Emb}(A,N(C))$ pulls back to
+$\operatorname{Emb}(A,C)$ by $e\mapsto N(e)$.
+If $g:B\hookrightarrow C$ gives a monochromatic copy, then
+$N(g):B\hookrightarrow N(C)$ does too: for every $f:A\hookrightarrow B$,
+\[
+                       N(g\circ f)=N(g)\circ f,
+\]
+since $N(f)=f$. The host $N(C)$ is fixed by idempotence.
+No surjectivity of the map on embedding sets is needed.
+Normalizing a joint embedding host similarly proves JEP.
+\end{proof}
+
+\begin{lemma}[Functorial normalization of synchronized quotient orders]
+\label{lem:foundational-hierarchical-order-normalization}
+Let the hidden finite-sorted language have a finite
+family of proper meet-irreducible quotient sorts
+\(B_J\), indexed by a finite distributive
+equivalence lattice on each actual named original
+sort, together with all definable upward quotient
+maps and named quotient-transition bijections.
+Assume closed transition holonomy is the identity.
+Fix a priority on sort symbols, a priority on
+the finitely many strict coarser coordinates
+above each \(J\), and one representative
+\(B_J\) of every transition orbit of cuts
+\(J\prec J^+\).
+
+From ANY total order on each hidden quotient sort,
+extract for each representative cut the induced
+order on the \(J\)-points INSIDE each fixed
+\(J^+\)-class; transport that family of fibre
+orders to all transition-equivalent copies.
+Order all quotient sorts recursively from coarser
+to finer, by first lexicographically comparing
+the already ordered tuple of ALL strict coarser
+proper MI coordinates and then, on equality
+of that tuple, using the extracted order inside
+the common \(J^+\)-fibre. Across different
+hidden sort symbols use the fixed priority.
+
+This construction is a functorial idempotent
+normalization \(N\) on finite functionally
+closed ordered hidden objects: it preserves
+all old hidden structures and embeddings,
+and its image is precisely the synchronized
+parent-lex order class. Reversing the orders
+of ONE selected cut task simultaneously along
+its transition orbit does not change any
+coarser task, and all finer derived comparisons
+can be recomputed functorially. In particular
+no independent sort-order or parent-lex choice
+is made after a host has been selected.
+\end{lemma}
+\begin{proof}
+For a represented meet-irreducible \(J\)
+with unique cover \(J^+\), every strict
+coarser represented MI \(L>J\) contains
+\(J^+\), and the intersection of all such
+\(L\) is exactly \(J^+\). Indeed every
+element of a finite distributive lattice
+is the meet of the meet-irreducibles
+above it, and \(L>J\) is equivalent to
+\(L\ge J^+\). If \(J^+\) is the top
+equivalence, the tuple of strict coarser
+coordinates is empty and is assigned one
+constant comparison key.
+
+Thus two distinct \(J\)-points have the
+SAME tuple of all strict coarser MI
+coordinate values if and only if they
+lie in the SAME \(J^+\)-class.
+Induct downward on the finite lattice:
+all strict coarser coordinate orders
+are already defined, so their fixed-priority
+tuple comparison gives a total order on
+the distinct \(J^+\)-classes; within each
+class the extracted local \(J\)-order
+is a total tie-breaker. This yields one
+total order on the \(J\)-sort, and the
+definition is independent of individual
+vertex labels.
+
+A closed quotient transition is a
+bijective unary term and transports
+the named pair of quotients
+\(J\prec J^+\) to its corresponding
+cut. Path independence follows from
+trivial transition holonomy. Therefore
+all orders in the same transition orbit
+can be synchronized from the fixed
+representative task without ambiguity.
+
+Let \(f:A\hookrightarrow B\) be an
+embedding of arbitrarily ordered hidden
+objects. It preserves the sort predicates,
+all upward quotient and transition terms,
+and the old within-sort total order.
+Consequently it preserves each extracted
+representative-fibre order and its transported
+copies. By downward induction it preserves
+each normalized coarser coordinate order,
+hence every parent-key lex comparison and
+every within-parent tie-breaker. Thus
+the unchanged vertex map \(f\) is still
+an embedding \(N(A)\hookrightarrow N(B)\).
+Functoriality on compositions follows
+because all underlying maps are unchanged.
+
+On a normalized object the extracted
+representative task orders are exactly
+those from which its current normalized
+orders were built; hence repeating the
+construction changes nothing, proving
+\(N^2=N\). Finally the coarser
+coordinate keys are independent of
+the choice of order within a single
+\(J^+\)-fibre. Reversing that one
+fibre-order task, coherently throughout
+its transition orbit, fixes every
+previous coarser task and only changes
+the current task and later derived
+lex comparisons. This proves the
+claimed relative-order independence.
+\end{proof}
+
+\begin{theorem}[Single-task reset-midpoint EP criterion]
+\label{thm:abstract-reset-order-EP}
+Let $\mathcal R$ be a hereditary Ramsey class with JEP of finite
+ordered structures (possibly with unary partial functions, whose
+domains are fixed by sorts and whose closures are finite).
+Let $\mathcal U_1\to\mathcal U_0$ be reducts of $\mathcal R$,
+reasonable, precompact and reduct-surjective, with
+$\mathcal U_0$ forgetting \emph{one} task of ordering distinct
+points inside designated disjoint finite fibres. Assume:
+
+\begin{enumerate}[label=(\roman*),leftmargin=*]
+\item Every $\mathcal U_1$ object has a full $\mathcal R$
+expansion. The only data in $\mathcal U_1$ not present in
+$\mathcal U_0$ are the linear orders on the designated fibres
+and their functorially determined codes. Reversing the orders
+in \emph{all} designated fibres of a $\mathcal U_1$ object,
+with the derived codes changed accordingly, gives another
+legal $\mathcal U_1$ object on exactly the same
+$\mathcal U_0$ reduct.
+\item The designated fibre equivalence and the symmetric
+old binary relation $\mathfrak m$ are named or
+quantifier-free definable already in the
+$\mathcal U_0$ reduct. The relation $\mathfrak m$
+only joins distinct designated points \emph{in one fibre},
+and its complete finite \emph{unary-generated expanded}
+ordered edge type is always ONE isomorphism type
+$H_{\mathfrak m}$ when the first endpoint precedes
+the second. In particular, the whole edge closure,
+including all named fine relations and all auxiliary
+order/equality codes, is determined by the oriented edge.
+\item For every $A\in\mathcal R$ and each designated-fibre
+comparison $u<v$ in $A$, there is an \emph{induced}
+embedding $A\hookrightarrow A^+\in\mathcal R$ and
+a fresh designated point $z$ in the same fibre with
+\[
+       u<z<v,\qquad
+       u\,\mathfrak m\,z\,\mathfrak m\,v.
+\]
+The extension preserves the entire earlier expanded
+structure. By iteration the same can be done for
+\emph{every} such comparison in any one finite input.
+\end{enumerate}
+
+Then $\mathcal U_1$ has the expansion property over
+$\mathcal U_0$. The witness is an unexpanded
+$\mathcal U_0$ object chosen \emph{before} any competing
+task-order expansion. No Ramsey hypothesis is imposed
+on the intermediate classes $\mathcal U_0$ or
+$\mathcal U_1$ separately.
+\end{theorem}
+
+\begin{proof}
+Fix $A^1\in\mathcal U_1$. Let $A^{1,-}$ be the
+legal reversal of all its designated fibre orders,
+over the same $A^0=A^1|_{\mathcal U_0}$.
+Choose arbitrary full $\mathcal R$ expansions
+$\widehat A^+$ and $\widehat A^-$ of these two
+objects. By (iii), extend each so that every
+comparison $u<v$ on a designated fibre has a
+\emph{fresh} midpoint $z$ with two consecutive
+$\mathfrak m$ edges $u<z<v$.
+Because each midpoint extension is an induced
+embedding, earlier comparisons and codes survive.
+By JEP choose one $D\in\mathcal R$ containing
+both extended patterns.
+
+Use the \emph{full ambient} Ramsey property to
+choose $C\in\mathcal R$ with
+\[
+                  C\longrightarrow
+                      (D)^{H_{\mathfrak m}}_2 .
+\]
+Put $B^0=C|_{\mathcal U_0}$.
+This is the fixed unexpanded host.
+
+Take \emph{any} admissible competitor
+$B^1\in\mathcal U_1$ whose $\mathcal U_0$
+reduct is exactly $B^0$. For each embedding
+of the ordered edge closure
+$H_{\mathfrak m}\hookrightarrow C$, colour
+it $+$ if the orientation of its two distinguished
+roots in $B^1$ agrees with that in $C$, and $-$
+otherwise. This is well-defined for all
+embeddings because the roots lie in a single
+designated fibre and their complete expanded
+edge type is fixed by (ii).
+The Ramsey arrow supplies an induced copy
+$D'\subseteq C$ on which \emph{all} oriented
+$\mathfrak m$ edges have the same comparison sign.
+
+If the sign is $+$, use the stored
+$\widehat A^+$ pattern inside $D'$.
+For every one of its comparisons $u<v$
+the chosen midpoint gives $u<z<v$ through
+two $\mathfrak m$ edges; both retain
+their orientation in $B^1$, so $u<v$
+also in the competitor. The $\mathcal U_0$
+structure is preserved automatically, hence
+the stored roots yield an embedding
+$A^1\hookrightarrow B^1$.
+
+If the sign is $-$, instead use the stored
+$\widehat A^-$ pattern. The two midpoint
+edges now reverse their orientations in
+$B^1$, so on \emph{every} pair of its
+designated-fibre roots the competitor order
+is the reverse of the stored reference order.
+But $\widehat A^-$ was the reversal of
+$A^1$ over the \emph{same} $\mathcal U_0$
+structure. Thus the same induced roots,
+viewed in $B^1$, form an expanded copy
+of $A^1$. Any functorially determined task
+codes agree because they are determined by
+the indicated fibre orders and the unchanged
+$\mathcal U_0$ data.
+
+The host $B^0$ was selected independently
+of the competing order, so this is precisely
+EP for $\mathcal U_1/\mathcal U_0$.
+\end{proof}
+
+\begin{lemma}[Fresh reset midpoints from closed SAP]
+\label{lem:abstract-fresh-reset-midpoint}
+Let $\mathcal H$ be a hereditary class of finite
+unary-functionally closed structures with SAP,
+and let $\mathcal H^o$ be an ordered SAP
+expansion whose orders can be freely extended
+inside the designated fibres compatibly
+with existing closed substructures.
+Suppose for each pair of distinct same-fibre
+points $u,v$ of a member $A\in\mathcal H$,
+some permitted finite closed extension of
+the unary closure $\langle u,v\rangle$ contains
+$z$ in that fibre, outside $\langle u,v\rangle$,
+such that $u\,\mathfrak m\,z\,\mathfrak m\,v$.
+Then property (iii) of
+\cref{thm:abstract-reset-order-EP} holds in
+$\mathcal H^o$, provided the two-root generated
+structures of the existing pair and of the
+midpoint witness have the same \emph{complete}
+unexpanded named type.
+\end{lemma}
+\begin{proof}
+Let $A^o$ be the existing finite ordered
+object and $u<v$ the chosen pair.
+Let $P=\langle u,v\rangle\le A^o$
+be its actual induced unary closure.
+By the complete two-root type assumption,
+identify $P$ with the corresponding closure
+inside a finite midpoint witness $T$.
+Amalgamate $A^o$ and the ordered copy of $T$
+\emph{strongly over} $P$, first placing the
+new $z$ between $u,v$ in its designated
+fibre; every comparison with other points
+can be extended freely by the order-extension
+hypothesis. Strongness keeps
+$z\notin A^o$, since $z\notin P$ in the
+midpoint witness. All original relations
+of both finite sides, including the
+two $\mathfrak m$ edges, are preserved.
+Iterating over the finitely many designated
+comparisons creates distinct fresh midpoints
+while preserving every earlier placement.
+\end{proof}
+
+\begin{lemma}[Composition of relative expansion properties]
+\label{lem:foundational-relative-EP-composition}
+Let $\mathcal K_2\to\mathcal K_1\to
+\mathcal K_0$ be reduct maps of hereditary
+finite relational/unary-functional ages, with
+each expanded age reduct-surjective onto its
+predecessor. If $\mathcal K_2$ has EP over
+$\mathcal K_1$ and $\mathcal K_1$ has EP over
+$\mathcal K_0$, then $\mathcal K_2$ has EP
+over $\mathcal K_0$. The same holds for
+any finite chain. No Ramsey assumption on
+the intermediate classes is necessary.
+\end{lemma}
+\begin{proof}
+Fix $A^2\in\mathcal K_2$. Use EP of
+$\mathcal K_2/\mathcal K_1$ to choose
+$B^1\in\mathcal K_1$ such that
+\emph{every} $\mathcal K_2$ expansion
+of $B^1$ contains an embedding of
+$A^2$. Next use EP of
+$\mathcal K_1/\mathcal K_0$ to choose
+$C^0\in\mathcal K_0$ such that
+\emph{every} $\mathcal K_1$ expansion
+of $C^0$ contains $B^1$.
+
+Given any $\mathcal K_2$ expansion
+$C^2$ of the \emph{already fixed}
+$C^0$, its intermediate reduct
+$C^1$ contains some embedding
+$f:B^1\hookrightarrow C^1$.
+Restrict the full $\mathcal K_2$
+structure of $C^2$ to the induced
+image $f(B^1)$ and transport it
+back along $f$. By heredity this
+is a legal $\mathcal K_2$ expansion
+$B^2$ of precisely $B^1$.
+The defining property of $B^1$
+gives $A^2\hookrightarrow B^2$,
+and composing with $f$ yields
+$A^2\hookrightarrow C^2$.
+Thus $C^0$ witnesses the composite
+EP, with the existential host
+chosen before the arbitrary final
+expansion. Iterate along a finite
+chain.
+\end{proof}
+
+\begin{remark}[Source and quantifier firewall]
+\label{rem:abstract-reset-EP-scope}
+Condition (ii) is about the \emph{entire}
+unary-generated expanded fine type, not just
+the two-point equivalence reduct.
+A relation $\mathfrak m$ satisfying
+$\mathfrak m;\mathfrak m=J^+$ supplies
+one midpoint for each pair in the same
+$J^+$ fibre, but \emph{by itself} does
+not supply a fresh midpoint in every
+finite closed configuration: the latter
+also needs the closure type and SAP in
+\cref{lem:abstract-fresh-reset-midpoint}.
+The ordering reversal in (i) concerns
+only the \emph{one current order task};
+earlier named order tasks remain fixed.
+For multiple tasks, relative EP must
+be composed separately along the tower
+of reasonable precompact reducts.
+The proof never treats an intermediate
+partially ordered class as Ramsey.
+\end{remark}
