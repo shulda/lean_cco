@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 209,
+  "revision": 210,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -1329,7 +1329,7 @@
       }
     },
     "B031": {
-      "state": "IN_PROGRESS",
+      "state": "SUBMITTED",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b025_transversal",
@@ -1346,7 +1346,16 @@
         "head_sha": "1f9306fb5e23358f610596520595939b1013b5de",
         "conclusion": "success",
         "axiom_audit": "allowlist"
-      }
+      },
+      "head_sha": "67748f891af6dff0142e2693447e24fd13e01210",
+      "pr_number": 36,
+      "ci": {
+        "run_id": 40869933787,
+        "head_sha": "67748f891af6dff0142e2693447e24fd13e01210",
+        "conclusion": "success",
+        "axiom_audit": "allowlist"
+      },
+      "report_path": "formalization/coordination/submissions/B031.md"
     }
   },
   "integration_lock": null,
@@ -5360,6 +5369,26 @@
           "/root/b025_transversal",
           "/root/b025_transversal/ancillary_homogeneity"
         ],
+        "actor_id": "root"
+      }
+    },
+    {
+      "revision": 210,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "submit",
+      "package_id": "B031",
+      "details": {
+        "package_id": "B031",
+        "head_sha": "67748f891af6dff0142e2693447e24fd13e01210",
+        "pr_number": 36,
+        "ci": {
+          "run_id": 40869933787,
+          "head_sha": "67748f891af6dff0142e2693447e24fd13e01210",
+          "conclusion": "success",
+          "axiom_audit": "allowlist"
+        },
+        "report_path": "formalization/coordination/submissions/B031.md",
         "actor_id": "root"
       }
     }
