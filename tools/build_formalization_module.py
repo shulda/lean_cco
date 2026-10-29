@@ -278,7 +278,7 @@ def render(module, order, by_label, raw):
                           f"{', '.join(item['provider_support_claims'])} in "
                           f"`{item['provider_module']}`. {item['provider_support_usage']}", '',
                           'These are separately extracted proved support claims, not additional',
-                          'conclusions of the named exported theorem.', '']
+                          'numbered exports or consequences of the named theorem statement.', '']
     lines += ['## Definitions', '',
               '| ID | Definition | Exact meaning | Source |', '|---|---|---|---|']
     for item in module['definitions']:

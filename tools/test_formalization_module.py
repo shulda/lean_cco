@@ -33,7 +33,7 @@ class ModuleTests(unittest.TestCase):
                 self.assertFalse(set(item['provider_support_claims']) & set(item['provider_claims']))
                 self.assertIn(item['id'] + ' internal proof support', text)
                 self.assertIn(item['provider_support_usage'], text)
-        self.assertIn('not additional\nconclusions of the named exported theorem', text)
+        self.assertIn('not additional\nnumbered exports or consequences of the named theorem statement', text)
 
     def test_internal_support_rejects_unexported_or_invalid_selected_claims(self):
         config, decls = self._safe_import_fixture()

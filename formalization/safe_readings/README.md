@@ -50,22 +50,22 @@ not new axioms or claims of compiled imports.
 **I04 internal proof support:** C01 in `strong_selectors`. Extract the existing standalone Boolean triangle-definition proof C01 (ancestor of selected C08), retaining actual typed triangle premises; it is not inferred as a new conclusion of C08.
 
 These are separately extracted proved support claims, not additional
-conclusions of the named exported theorem.
+numbered exports or consequences of the named theorem statement.
 
 **I05 internal proof support:** C10 in `strong_selectors`. Extract the finite monotone iteration and completion-survivor induction C10, a proved ancestor of selected C13; keep original PC initialization and all three-coordinate semantics.
 
 These are separately extracted proved support claims, not additional
-conclusions of the named exported theorem.
+numbered exports or consequences of the named theorem statement.
 
 **I08 internal proof support:** C03, C16 in `strong_selectors`. Extract proved ancestors C03 (actual SAP-supported-fork duplication, arbitrary subsets) and C16 (original supported-menu restriction proof). Transport the latter explicitly under K closure/distribution; do not select them as direct exports or assert safe traces belong to original H.
 
 These are separately extracted proved support claims, not additional
-conclusions of the named exported theorem.
+numbered exports or consequences of the named theorem statement.
 
 **I10 internal proof support:** C25 in `strong_selectors`. Extract the existing minimum viable seed/visibility proof C25, a proved ancestor of selected C26. Its finite-family argument is repeated for K; no original-H quantified theorem is instantiated outside its domain.
 
 These are separately extracted proved support claims, not additional
-conclusions of the named exported theorem.
+numbered exports or consequences of the named theorem statement.
 
 ## Definitions
 
