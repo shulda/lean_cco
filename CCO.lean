@@ -842,3 +842,12 @@ import CCO.OwnerTransversal.TypedOrbitSAP
 import CCO.OwnerTransversal.TypedPalette
 import CCO.OwnerTransversal.TypedSAP
 import CCO.OwnerTransversal.TypedTriangle
+
+import CCO.DirectOwnerClosure.AncillaryHomogeneity
+import CCO.DirectOwnerClosure.Basic
+import CCO.DirectOwnerClosure.Consumer
+import CCO.DirectOwnerClosure.DirectHull
+import CCO.DirectOwnerClosure.HarmlessOwners
+import CCO.DirectOwnerClosure.OwnerUnionClosure
+import CCO.DirectOwnerClosure.RestrictionImage
+import CCO.DirectOwnerClosure.ThinUnion
