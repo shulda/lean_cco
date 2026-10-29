@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 129,
+  "revision": 130,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -613,7 +613,7 @@
       }
     },
     "B012": {
-      "state": "IN_PROGRESS",
+      "state": "SUBMITTED",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b012_sap",
@@ -629,7 +629,16 @@
         "run_id": 40766132785,
         "conclusion": "success",
         "axiom_audit": "allowlist"
-      }
+      },
+      "head_sha": "b180eccace343d9fe76dac1d9064e4f2c29ca5e8",
+      "pr_number": 23,
+      "ci": {
+        "run_id": 40819714579,
+        "head_sha": "b180eccace343d9fe76dac1d9064e4f2c29ca5e8",
+        "conclusion": "success",
+        "axiom_audit": "allowlist"
+      },
+      "report_path": "formalization/coordination/submissions/B012.md"
     },
     "B013": {
       "state": "ACCEPTED",
@@ -3369,6 +3378,26 @@
         "author_actor_ids": [
           "/root/b014_chain"
         ],
+        "actor_id": "root"
+      }
+    },
+    {
+      "revision": 130,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "submit",
+      "package_id": "B012",
+      "details": {
+        "package_id": "B012",
+        "head_sha": "b180eccace343d9fe76dac1d9064e4f2c29ca5e8",
+        "pr_number": 23,
+        "ci": {
+          "run_id": 40819714579,
+          "head_sha": "b180eccace343d9fe76dac1d9064e4f2c29ca5e8",
+          "conclusion": "success",
+          "axiom_audit": "allowlist"
+        },
+        "report_path": "formalization/coordination/submissions/B012.md",
         "actor_id": "root"
       }
     }
