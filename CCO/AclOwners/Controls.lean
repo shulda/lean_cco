@@ -10,10 +10,12 @@ def threeRook (i : Fin 3) : Setoid (Fin 3) :=
 
 theorem three_rook_pairwise_union :
     ∀ x y : Fin 3, ∃ i : Fin 3, threeRook i x y := by
+  change ∀ x y : Fin 3, ∃ i : Fin 3, decide (x = i) = decide (y = i)
   decide
 
 theorem three_rook_each_fails :
     ∀ i : Fin 3, ∃ x y : Fin 3, ¬ threeRook i x y := by
+  change ∀ i : Fin 3, ∃ x y : Fin 3, ¬ decide (x = i) = decide (y = i)
   decide
 
 theorem three_rook_no_global_class :
