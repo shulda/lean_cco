@@ -184,4 +184,44 @@ theorem anchored_completion_of_aligned {V : Type} [Finite V]
   intro x hx
   exact hfix (.inl x) ((memT _).mpr hx)
 
+include H in
+/-- Initial C04 realignment and C07 completion for an arbitrary supplied
+embedding of the complete anchor.  The total j is read ONLY on A. -/
+theorem anchored_completion {V : Type} [Finite V]
+    (D : RawRecords S V) (cco : SemanticCCO.{0,v,0,w} S)
+    (E : ColourEq S ()) (hne : E ≠ ⊥) (word : RawWord S () ())
+    (hword : RawWord.relation S word = E.val.r)
+    (A : Finset V) (complete : RawRecords.CompleteOn S D A)
+    (owner raw j : V → M) (hraw : RawRecords.Hom S D raw)
+    (hj : ∀ x ∈ A, ∀ y ∈ A, ∀ a, D.edge x y = some a →
+      S.colour (i := ()) (j := ()) (j x) (j y) = some a)
+    (hOwner : ∀ x y a, D.edge x y = some a →
+      ownerSaturate E.val (S.atomRel a) (owner x) (owner y))
+    (hA : ∀ x ∈ A, E (owner x) (j x)) :
+    ∃ f : V → M, RawRecords.Hom S D f ∧ (∀ x, E (owner x) (f x)) ∧
+      ∀ x ∈ A, f x = j x := by
+  classical
+  let src : ULift.{v} ↥A → Sigma (fun _ : Unit => M) := fun x => ⟨(),raw x.down.val⟩
+  let dst : ULift.{v} ↥A → Sigma (fun _ : Unit => M) := fun x => ⟨(),j x.down.val⟩
+  have hp : ∀ x y, taggedColour S (src x) (src y) = taggedColour S (dst x) (dst y) := by
+    intro x y
+    change (⟨(),(),S.colour (i := ()) (j := ()) (raw x.down.val) (raw y.down.val)⟩ :
+      Σ i : Unit, Σ j : Unit, Option (S.Atom i j)) =
+      ⟨(),(),S.colour (i := ()) (j := ()) (j x.down.val) (j y.down.val)⟩
+    by_cases hxy : x.down.val = y.down.val
+    · rw [hxy,(S.colour_none_iff _ _).mpr rfl,(S.colour_none_iff _ _).mpr rfl]
+    · obtain ⟨a,ha⟩ := complete _ x.down.property _ y.down.property hxy
+      rw [hraw _ _ a ha,hj _ x.down.property _ y.down.property a ha]
+  obtain ⟨g,hg⟩ := H.extends_finite_diagram src dst hp
+  have hgj : ∀ x ∈ A, g • raw x = j x := by
+    intro x hx
+    have hh := hg ⟨⟨x,hx⟩⟩
+    change (⟨(),g • raw x⟩ : Sigma (fun _ : Unit => M)) = ⟨(),j x⟩ at hh
+    simpa only [Sigma.mk.injEq,heq_eq_eq,true_and] using hh
+  obtain ⟨f,hf,hown,hfix⟩ := anchored_completion_of_aligned S H D cco E hne word hword
+    A complete owner (fun x => g • raw x)
+    (fun x y a ha => (S.colourInvariant_of_homogeneous H g _ _).trans (hraw x y a ha))
+    hOwner (fun x hx => by rw [hgj x hx]; exact hA x hx)
+  exact ⟨f,hf,hown,fun x hx => (hfix x hx).trans (hgj x hx)⟩
+
 end CCO.OwnerTransversal
