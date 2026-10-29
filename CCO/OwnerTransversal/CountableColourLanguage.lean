@@ -175,6 +175,77 @@ theorem structure_eq (h : Coding (B := B) (C := C) X) :
       conv_rhs => rw [hv]
       exact (h.colour_rel (x 0) (x 1) c).symm
 
+theorem owner_tuple (h : Coding (B := B) (C := C) X) (b : B) (x : Fin 1 → X) :
+    Structure.RelMap (L := language B C) (Symbol.owner b) x ↔ h.table.owner (x 0) = b := by
+  have he := congrArg (fun s : (language B C).Structure X =>
+    @Structure.RelMap (language B C) X s 1 (Symbol.owner b) x) h.structure_eq
+  exact he.symm.to_iff
+
+theorem colour_tuple (h : Coding (B := B) (C := C) X) (c : C) (x : Fin 2 → X) :
+    Structure.RelMap (L := language B C) (Symbol.colour c) x ↔
+      h.table.colour (x 0) (x 1) = c := by
+  have he := congrArg (fun s : (language B C).Structure X =>
+    @Structure.RelMap (language B C) X s 2 (Symbol.colour c) x) h.structure_eq
+  exact he.symm.to_iff
+
+/-- Literal-table homogeneity for arbitrary finite tuples. Equality
+recognition is explicit, so repeated tuple values are fully supported. -/
+theorem tuple_homogeneous (h : Coding (B := B) (C := C) X)
+    (hom : (language B C).IsUltrahomogeneous X)
+    {I : Type*} [Finite I] (source target : I → X)
+    (hEq : ∀ i j, source i = source j ↔ target i = target j)
+    (hOwner : ∀ i, h.table.owner (source i) = h.table.owner (target i))
+    (hColour : ∀ i j, h.table.colour (source i) (source j) =
+      h.table.colour (target i) (target j)) :
+    ∃ g : X ≃[language B C] X, ∀ i, g (source i) = target i := by
+  classical
+  let A : (language B C).Substructure X := {
+    carrier := Set.range source
+    fun_mem F := Empty.elim F }
+  let src : I → A := fun i => ⟨source i,⟨i,rfl⟩⟩
+  have hsrc : Function.Surjective src := by
+    rintro ⟨x,i,rfl⟩
+    exact ⟨i,rfl⟩
+  let : Finite A := Finite.of_surjective src hsrc
+  let idx : A → I := fun a => a.property.choose
+  have hidx (a : A) : source (idx a) = a.val := a.property.choose_spec
+  let f : A → X := fun a => target (idx a)
+  have hfi : Function.Injective f := by
+    intro a b hab
+    apply Subtype.ext
+    exact (hidx a).symm.trans (((hEq (idx a) (idx b)).mpr hab).trans (hidx b))
+  have hfo (a : A) : h.table.owner (f a) = h.table.owner a.val := by
+    change h.table.owner (target (idx a)) = _
+    rw [← hOwner (idx a),hidx a]
+  have hfc (a b : A) : h.table.colour (f a) (f b) = h.table.colour a.val b.val := by
+    change h.table.colour (target (idx a)) (target (idx b)) = _
+    rw [← hColour (idx a) (idx b),hidx a,hidx b]
+  let e : A ↪[language B C] X := {
+    toFun := f
+    inj' := hfi
+    map_fun' F := Empty.elim F
+    map_rel' := by
+      intro n r x
+      cases r with
+      | owner b =>
+        change Structure.RelMap (L := language B C) (Symbol.owner b) (f ∘ x) ↔
+          Structure.RelMap (L := language B C) (Symbol.owner b) (fun i => (x i).val)
+        rw [h.owner_tuple,h.owner_tuple]
+        exact (congrArg (· = b) (hfo (x 0))).to_iff
+      | colour c =>
+        change Structure.RelMap (L := language B C) (Symbol.colour c) (f ∘ x) ↔
+          Structure.RelMap (L := language B C) (Symbol.colour c) (fun i => (x i).val)
+        rw [h.colour_tuple,h.colour_tuple]
+        exact (congrArg (· = c) (hfc (x 0) (x 1))).to_iff }
+  obtain ⟨g,hg⟩ := hom A (Substructure.fg_iff_finite.mpr inferInstance) e
+  refine ⟨g,?_⟩
+  intro i
+  have hh := DFunLike.congr_fun hg (src i)
+  change f (src i) = g (source i) at hh
+  apply hh.symm.trans
+  apply (hEq (idx (src i)) i).mp
+  exact hidx (src i)
+
 theorem embedding_preserves (h : Coding (B := B) (C := C) X)
     (k : Coding (B := B) (C := C) Y) (f : X ↪[language B C] Y) :
     (∀ x, k.table.owner (f x) = h.table.owner x) ∧
@@ -204,6 +275,16 @@ theorem coding (T : Table B C X) : @Coding B C X T.toStructure := by
   exact {
     owner_unique x := ⟨T.owner x,rfl,fun _ h => h.symm⟩
     colour_unique x y := ⟨T.colour x y,rfl,fun _ h => h.symm⟩ }
+
+@[simp] theorem coding_table_owner (T : Table B C X) (x : X) :
+    (@Coding.table B C X T.toStructure T.coding).owner x = T.owner x := by
+  let := T.toStructure
+  exact (T.coding.owner_rel x _).mp rfl
+
+@[simp] theorem coding_table_colour (T : Table B C X) (x y : X) :
+    (@Coding.table B C X T.toStructure T.coding).colour x y = T.colour x y := by
+  let := T.toStructure
+  exact (T.coding.colour_rel x y _).mp rfl
 
 end Table
 end CCO.OwnerTransversal.CountableColour
