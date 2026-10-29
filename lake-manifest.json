@@ -109,6 +109,18 @@
       "inputRev": "v4.34.0",
       "inherited": true,
       "configFile": "lakefile.toml"
+    },
+    {
+      "url": "https://github.com/shulda/lean_all_those_eppa_classes.git",
+      "type": "git",
+      "subDir": null,
+      "scope": "",
+      "rev": "cd358cde844d5419fd43f30c441511927e09142f",
+      "name": "AllThoseEPPA",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "cd358cde844d5419fd43f30c441511927e09142f",
+      "inherited": false,
+      "configFile": "lakefile.toml"
     }
   ],
   "name": "CCO",
