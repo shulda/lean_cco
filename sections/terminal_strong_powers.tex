@@ -1,0 +1,55 @@
+% C4 standalone terminal strong same-sort pure powers (SAP + original invariant NR2).
+% It uses typed STRONG injectivisation, NOT CCO or RAW identity as a colour.
+\section{Terminal strong orbital powers without CCO}
+\label{sec:foundational-terminal-strong-powers}
+
+\begin{lemma}[Typed same-sort pure-power saturation without CCO]
+\label{lem:typed-terminal-pure-power}
+Let $a$ be one named transitive sort of an actual
+homogeneous finite complete typed symmetric source
+with visible SAP. Assume the FULL original invariant
+equivalence lattice on $a$ has no relative-index-two
+interval; semantic CCO is NOT assumed. For every old
+same-sort diversity atom $t$, let $F_t$ be the diversity
+palette of connectivity in its undirected orbital graph.
+Then there is $N_t$ such that
+\[
+                \{t\}^{\starprod n}=F_t
+                      \qquad (n\ge N_t).
+\tag{TPP}\label{eq:typed-terminal-pure-power}
+\]
+The left side is the STRONG diversity word profile and
+the right side omits literal equality.
+\end{lemma}
+\begin{proof}
+Every vertex has a $t$-neighbour by transitivity and
+nonemptiness of the named atomic orbital. Transitivity
+also permutes the connected components of the $t$-graph
+transitively. If one component were bipartite, all
+would be; its even-walk relation would be an invariant
+equivalence of relative index two inside connectivity.
+The even-walk equivalence is an ACTUAL original
+invariant equivalence and has relative index EXACTLY
+two inside the connectivity equivalence, contradicting
+the stated FULL original no-index-two hypothesis.
+Thus every connected component is nonbipartite.
+
+For each diversity atom $c\subseteq F_t$, choose one
+realised $c$-pair $(x_c,y_c)$. Connectedness and
+nonbipartiteness give a $t$-walk from $x_c$ to $y_c$
+of every sufficiently large length: use an odd closed
+walk to change parity and two-edge backtracks to
+increase length by two. Since there are only finitely
+many relevant old atoms, take a common threshold $N_t$.
+Old pair homogeneity transports these walks to all
+$c$-pairs. Finally typed SAP injectivisation
+\cref{lem:typed-injectivisation}, pinning the two
+\emph{distinct} endpoints, converts a represented
+walk with a possibly repeated internal vertex into
+an injectively realised positive typed path.
+Hence every $c\subseteq F_t$ lies in the strong
+profile $\{t\}^{\starprod n}$ for $n\ge N_t$.
+The reverse inclusion follows because a $t$-path
+never leaves its connectivity class. Literal equality
+is absent from both diversity palettes.
+\end{proof}

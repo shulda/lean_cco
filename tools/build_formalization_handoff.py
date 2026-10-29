@@ -18,7 +18,7 @@ import check_formalization_coordination as coordination
 
 
 ROOT = Path(__file__).resolve().parents[1]
-MODULES = ('raw_exact', 'strong_selectors', 'parity_hasse', 'exact_crt', 'canonical_hull', 'real_closure', 'finite_packets', 'rigid_groupoid', 'finite_kernel', 'owner_action', 'sir', 'owner_master', 'joint_owner', 'acl_owner_geometry', 'finite_lift', 'mi_geometry', 'owner_transversal', 'safe_readings', 'direct_owner_closure')
+MODULES = ('raw_exact', 'strong_selectors', 'parity_hasse', 'exact_crt', 'canonical_hull', 'real_closure', 'finite_packets', 'rigid_groupoid', 'finite_kernel', 'owner_action', 'sir', 'owner_master', 'joint_owner', 'acl_owner_geometry', 'finite_lift', 'mi_geometry', 'owner_transversal', 'safe_readings', 'direct_owner_closure', 'hkn_reservoir', 'terminal_powers')
 MANIFEST = 'HANDOFF_MANIFEST.json'
 
 
@@ -27,7 +27,7 @@ def collect(root):
     paths = {'formalization/README.md', 'formalization/HANDOFF.md',
              'catalogue/declarations.json', 'tools/build_formalization_module.py',
              'tools/build_formalization_handoff.py', 'tools/test_formalization_module.py',
-             'tools/test_formalization_handoff.py',
+             'tools/test_formalization_handoff.py', 'tools/test_external_provider_metadata.py',
              'tools/check_formalization_coordination.py',
              'tools/prepare_formalization_launch.py',
              'tools/test_formalization_coordination.py', 'tools/coordination_queue.py',
@@ -54,7 +54,9 @@ def collect(root):
         modules.append({'id': ident, 'definitions': len(config['definitions']),
                         'claims': len(config['claims']), 'source_exports': len(config['exports']),
                         'tasks': len(config['tasks']), 'source_commit': config['source_commit'],
-                        'imports': config.get('imports', []), 'proof_status': config['status']})
+                        'imports': config.get('imports', []),
+                        'external_providers': config.get('external_providers', []),
+                        'proof_status': config['status']})
     files = {path: (root / path).read_bytes() for path in sorted(paths)}
     manifest = {'format_version': 1,
                 'purpose': 'Mathematical preparation and work orders for separate receiving Lean projects; no Lean proof or compiled provider API.',
@@ -87,8 +89,12 @@ def collect(root):
                                  'python tools/check_owner_transversal_controls.py',
                                  'python tools/check_safe_readings_controls.py',
                                  'python tools/check_direct_owner_closure_controls.py',
+                                 'python tools/check_hkn_reservoir_controls.py',
+                                 'python tools/check_terminal_power_controls.py',
                                  'python tools/check_sir_controls.py',
                                  'python tools/check_formalization_coordination.py --check'],
+                'external_providers': [dict(module=m['id'], **item) for m in modules
+                                       for item in m['external_providers']],
                 'unexpanded_upstream': [dict(module=m['id'], **item) for m in modules
                                        for item in m['imports']
                                        if item['status'] == 'EXPLICIT_UPSTREAM_NOT_EXPANDED']}

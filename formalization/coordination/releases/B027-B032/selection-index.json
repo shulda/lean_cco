@@ -1,0 +1,52 @@
+{
+  "head": "2d15afaaf1a0c913ef16c9a45eff6d9824900e9a",
+  "private_board_revision": 44,
+  "private_package_count": 61,
+  "public_main": "5038154d2634f23dc745eea1227ac760afec7737",
+  "public_state_revision": 219,
+  "selected": [
+    "B027",
+    "B032"
+  ],
+  "selected_modules": [
+    "hkn_reservoir",
+    "terminal_powers"
+  ],
+  "provider_modules": [
+    "finite_packets",
+    "owner_transversal",
+    "real_closure",
+    "safe_readings",
+    "strong_selectors"
+  ],
+  "source_record_count": 26,
+  "payload_file_count": 11,
+  "new_source_files": [
+    "sections/terminal_strong_powers.tex"
+  ],
+  "selected_details": {
+    "hkn_reservoir": {
+      "definitions": 13,
+      "claims": 31,
+      "exports": 7,
+      "auxiliary_exports": 1,
+      "tasks": 7,
+      "source_files": 5,
+      "external_providers": 2,
+      "control": "tools/check_hkn_reservoir_controls.py"
+    },
+    "terminal_powers": {
+      "definitions": 8,
+      "claims": 21,
+      "exports": 1,
+      "auxiliary_exports": 1,
+      "tasks": 5,
+      "source_files": 3,
+      "external_providers": 0,
+      "control": "tools/check_terminal_power_controls.py"
+    }
+  },
+  "mathematical_metadata_unchanged": true,
+  "extraction_production_validator_unchanged": true,
+  "public_state_unchanged": true
+}
