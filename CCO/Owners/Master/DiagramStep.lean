@@ -236,5 +236,41 @@ noncomputable def fullProductEquiv (V : Finset P) (hV : Valid V)
     S.stage.Point V ≃ S.FinitePullback V hV hVS hpV :=
   Equiv.ofBijective (S.split V hV hVS hpV) (S.split_bijective V hV hVS hpV)
 
+/-- The principal new object is the chosen local factor as an ACTUAL
+subset of its ambient object.  No definitional identification of dependent
+pullback types is used. -/
+theorem stage_principal (hQ : Valid (insert p O)) :
+    S.stage.B (insert p O) = S.localSet := by
+  have hQS : insert p O ⊆ insert p U := Finset.insert_subset_insert p S.owner_subset
+  have hpQ : p ∈ insert p O := Finset.mem_insert_self p O
+  have hQO : (insert p O).erase p ⊆ O := by
+    intro q hq
+    have hh := Finset.mem_erase.mp hq
+    exact (Finset.mem_insert.mp hh.2).resolve_left hh.1
+  apply Set.ext
+  intro x
+  rw [show x ∈ S.stage.B (insert p O) ↔ _ from
+    S.mem_new_new hpQ (Finset.Subset.refl _) x]
+  constructor
+  · intro hx
+    simpa only [Ambient.project_self] using hx.2
+  · intro hx
+    refine ⟨?_,by simpa only [Ambient.project_self] using hx⟩
+    have hh := B.mapsTo S.valid_owner (S.valid_erase _ hQ hQS) S.owner_subset hQO
+      (A.r (Finset.subset_insert p O) x) (S.local_over x hx)
+    simpa only [Ambient.project_comp] using hh
+
+/-- The local coordinate projection of every full new object is onto. -/
+theorem local_projection_onto (V : Finset P) (hV : Valid V)
+    (hVS : V ⊆ insert p U) (hpV : p ∈ V) (d : A.X (insert p O))
+    (hd : d ∈ S.localSet) :
+    ∃ x ∈ S.stage.B V, A.r (S.principal_subset hV hVS hpV) x = d := by
+  have ho := S.local_over d hd
+  obtain ⟨b,hb,howner⟩ := B.onto (S.valid_erase V hV hVS) S.valid_owner
+    (S.erase_subset_old hVS) (S.owner_erase V hV hVS hpV) _ ho
+  obtain ⟨x,hx,-⟩ := S.glue V hV hVS hpV b d howner
+  exact ⟨x,(S.mem_new_new hpV (S.principal_subset hV hVS hpV) x).mpr
+    ⟨hx.1 ▸ hb,hx.2 ▸ hd⟩,hx.2⟩
+
 end Step
 end CCO.Owners.Master.Diagram
