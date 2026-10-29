@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 159,
+  "revision": 160,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -1006,7 +1006,7 @@
       }
     },
     "B020": {
-      "state": "SUBMITTED",
+      "state": "REVIEWING",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b020_master",
@@ -1034,7 +1034,19 @@
         "conclusion": "success",
         "axiom_audit": "allowlist"
       },
-      "report_path": "formalization/coordination/submissions/B020.md"
+      "report_path": "formalization/coordination/submissions/B020.md",
+      "review": {
+        "project_id": 3,
+        "actor_id": "independent_review",
+        "head_sha": "e612815143d5f67891f9a2ff2a926ef234ef0ad8",
+        "approved": false,
+        "independence": {
+          "identity": "/root/independent_review",
+          "non_author": true,
+          "summary": "Actual separate registered control-only reviewer authored none of the whole master implementation, helpers, tests, original preparation or design. It personally read all35 frozen modules/3601lines once against all26 claims and actual pinned source, then only two metadata files, accepted-main import union and exact public CI anchors, without helper reviewers or duplicate builds.",
+          "report_path": "formalization/coordination/reviews/B020-final.md"
+        }
+      }
     },
     "B021": {
       "state": "ACCEPTED",
@@ -4107,6 +4119,24 @@
         },
         "report_path": "formalization/coordination/submissions/B020.md",
         "actor_id": "root"
+      }
+    },
+    {
+      "revision": 160,
+      "project_id": 3,
+      "actor_id": "independent_review",
+      "event": "review",
+      "package_id": "B020",
+      "details": {
+        "package_id": "B020",
+        "head_sha": "e612815143d5f67891f9a2ff2a926ef234ef0ad8",
+        "independence": {
+          "identity": "/root/independent_review",
+          "non_author": true,
+          "summary": "Actual separate registered control-only reviewer authored none of the whole master implementation, helpers, tests, original preparation or design. It personally read all35 frozen modules/3601lines once against all26 claims and actual pinned source, then only two metadata files, accepted-main import union and exact public CI anchors, without helper reviewers or duplicate builds.",
+          "report_path": "formalization/coordination/reviews/B020-final.md"
+        },
+        "actor_id": "independent_review"
       }
     }
   ],
