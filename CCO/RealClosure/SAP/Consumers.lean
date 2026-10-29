@@ -22,6 +22,23 @@ theorem nonsymmetric_source_core (S : Source.{v,w} M) (H : S.Homogeneous (G := G
     InvariantEq.tuple_fibre_eq S H sap x,
     InvariantEq.tuple_stabilizer_orbit_infinite S H sap x⟩
 
+/-- Primitive means that the FULL original invariant lattice has only
+identity and Top. Its actual proper nonidentity MI coordinate type is empty. -/
+theorem primitive_empty_MI
+    (primitive : ∀ E : InvariantEq G M, E = ⊥ ∨ E = ⊤) :
+    IsEmpty (InvariantEq.NonidentityMI G M) := by
+  constructor
+  intro J
+  rcases primitive J.val with h | h
+  · exact J.property.1 h
+  · exact J.property.2.ne_top h
+
+theorem primitive_real_fibre
+    (primitive : ∀ E : InvariantEq G M, E = ⊥ ∨ E = ⊤) (x : M) :
+    {y | InvariantEq.tuple (G := G) y = InvariantEq.tuple x} = Set.univ := by
+  letI := primitive_empty_MI primitive
+  exact InvariantEq.empty_mi_fibre x
+
 variable (S : AtomicSource.{0,v,w} Unit (fun _ => M)) (H : HomogeneousSource S G)
 include H
 
@@ -108,6 +125,18 @@ theorem empty_family_boundary [Infinite M] :
       exact iff_of_true (fun k => Fin.elim0 k) trivial
     rw [hu]
     exact Set.infinite_univ
+
+/-- The common kernel is itself nonidentity, as required by C29. -/
+theorem familyEquiv_ne_identity (sap : AgeSAP S) [Infinite M]
+    {I : Type*} (E : I → ColourEq S ()) (hne : ∀ k, E k ≠ ⊥) :
+    familyEquiv S H E ≠ ⊥ := by
+  intro h
+  let x : M := Classical.choice inferInstance
+  have hi := family_class_infinite S H sap E hne x
+  rw [h] at hi
+  apply hi
+  change Set.Finite {y : M | x = y}
+  simpa only [Set.setOf_eq_eq_singleton'] using Set.finite_singleton x
 
 /-- One nonidentity class is infinite even though pairwise compatibility
 is vacuous. An identity class is instead exactly its real singleton. -/
