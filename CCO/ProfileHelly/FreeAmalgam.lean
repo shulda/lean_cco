@@ -1,4 +1,5 @@
 import CCO.ProfileHelly.Embeddings
+import CCO.ProfileHelly.Fill
 import Mathlib.Data.Fintype.Sum
 
 /-! A genuine finite pushout of FULL induced complete factors. Exactly
@@ -28,7 +29,7 @@ structure FreeAmalgam (B : CompleteNetwork T sortA) (C : CompleteNetwork T sortL
 namespace FreeAmalgamConstruction
 variable {B : CompleteNetwork T sortA} {C : CompleteNetwork T sortL} {D : CompleteNetwork T sortR}
 
-abbrev Carrier (f : Network.Embedding B.toNetwork C.toNetwork)
+abbrev Carrier (_f : Network.Embedding B.toNetwork C.toNetwork)
     (g : Network.Embedding B.toNetwork D.toNetwork) : Type (max a b c) :=
   ULift.{a} (L ⊕ {r : R // r ∉ Set.range g.point})
 
@@ -63,7 +64,7 @@ theorem right_on_base (f : Network.Embedding B.toNetwork C.toNetwork)
   classical
   have hx : g.point x ∈ Set.range g.point := ⟨x,rfl⟩
   unfold rightPoint leftPoint
-  rw [dif_pos hx]
+  rw [dite_eq_left hx]
   have hh := g.injective (Classical.choose_spec hx)
   rw [hh]
 
@@ -79,9 +80,9 @@ theorem right_on_base (f : Network.Embedding B.toNetwork C.toNetwork)
   · obtain ⟨x,rfl⟩ := hr
     rw [right_on_base]
     have hx : f.point x ∈ Set.range f.point := ⟨x,rfl⟩
-    simp only [rightProjection,leftPoint,dif_pos hx]
+    simp only [rightProjection,leftPoint,dite_eq_left hx]
     exact congrArg (fun z => some (g.point z)) (f.injective (Classical.choose_spec hx))
-  · simp only [rightPoint,dif_neg hr,rightProjection]
+  · simp only [rightPoint,dite_eq_right hr,rightProjection]
 
 theorem right_injective (f : Network.Embedding B.toNetwork C.toNetwork)
     (g : Network.Embedding B.toNetwork D.toNetwork) : Function.Injective (rightPoint f g) := by
@@ -98,9 +99,9 @@ theorem intersection (f : Network.Embedding B.toNetwork C.toNetwork)
     have hh := congrArg (rightProjection f g) he
     rw [rightProjection_right] at hh
     by_cases hl : l ∈ Set.range f.point
-    · simp only [rightProjection,leftPoint,dif_pos hl,Option.some.injEq] at hh
+    · simp only [rightProjection,leftPoint,dite_eq_left hl,Option.some.injEq] at hh
       exact ⟨Classical.choose hl,Classical.choose_spec hl,hh⟩
-    · simp only [rightProjection,leftPoint,dif_neg hl] at hh
+    · simp only [rightProjection,leftPoint,dite_eq_right hl] at hh
       cases hh
   · rintro ⟨x,rfl,rfl⟩
     exact (right_on_base f g x).symm
@@ -114,7 +115,7 @@ theorem covered (f : Network.Embedding B.toNetwork C.toNetwork)
   | inl l => exact Or.inl ⟨l,rfl⟩
   | inr r =>
     refine Or.inr ⟨r.val,?_⟩
-    simp only [rightPoint,dif_neg r.property]
+    simp only [rightPoint,dite_eq_right r.property]
 
 theorem leftProjection_some (f : Network.Embedding B.toNetwork C.toNetwork)
     (g : Network.Embedding B.toNetwork D.toNetwork) (x : Carrier f g) (l : L) :
@@ -131,9 +132,9 @@ theorem rightProjection_some (f : Network.Embedding B.toNetwork C.toNetwork)
     rcases (covered f g x) with ⟨l,rfl⟩ | ⟨s,rfl⟩
     · by_cases hl : l ∈ Set.range f.point
       · have hh : g.point (Classical.choose hl) = r := by
-          simpa only [rightProjection,leftPoint,dif_pos hl,Option.some.injEq] using he
+          simpa only [rightProjection,leftPoint,dite_eq_left hl,Option.some.injEq] using he
         rw [← hh,right_on_base,Classical.choose_spec hl]
-      · simp only [rightProjection,leftPoint,dif_neg hl] at he
+      · simp only [rightProjection,leftPoint,dite_eq_right hl] at he
         cases he
     · have hh : s = r := by simpa only [rightProjection_right,Option.some.injEq] using he
       rw [hh]
@@ -156,7 +157,7 @@ def sort (f : Network.Embedding B.toNetwork C.toNetwork)
   · obtain ⟨x,rfl⟩ := hr
     rw [right_on_base,sort_left]
     exact (f.sort_eq x).trans (g.sort_eq x).symm
-  · simp only [rightPoint,dif_neg hr,sort]
+  · simp only [rightPoint,dite_eq_right hr,sort]
 
 abbrev Tagged := Σ i, Σ j, Option (T.Atom i j)
 
@@ -212,18 +213,161 @@ theorem taggedMatrix_factor (f : Network.Embedding B.toNetwork C.toNetwork)
     (∃ l l', leftPoint f g l = x ∧ leftPoint f g l' = y ∧ taggedMatrix f g x y = C.tagged l l') ∨
     (∃ r r', rightPoint f g r = x ∧ rightPoint f g r' = y ∧ taggedMatrix f g x y = D.tagged r r') ∨
     taggedMatrix f g x y = ⟨sort f g x,sort f g y,none⟩ := by
+  classical
+  by_cases hL : ∃ l l', leftProjection f g x = some l ∧ leftProjection f g y = some l'
+  · obtain ⟨l,l',hx,hy⟩ := hL
+    exact Or.inl ⟨l,l',(leftProjection_some f g _ l).mp hx,
+      (leftProjection_some f g _ l').mp hy,by simp only [taggedMatrix,hx,hy]⟩
+  · have hm : taggedMatrix f g x y =
+        match rightProjection f g x,rightProjection f g y with
+        | some r,some r' => D.tagged r r'
+        | _,_ => ⟨sort f g x,sort f g y,none⟩ := by
+      cases hx : leftProjection f g x <;> cases hy : leftProjection f g y
+      · simp only [taggedMatrix,hx,hy]
+      · simp only [taggedMatrix,hx,hy]
+      · simp only [taggedMatrix,hx,hy]
+      · rename_i l l'
+        exact False.elim (hL ⟨l,l',hx,hy⟩)
+    by_cases hR : ∃ r r', rightProjection f g x = some r ∧ rightProjection f g y = some r'
+    · obtain ⟨r,r',hx,hy⟩ := hR
+      exact Or.inr (Or.inl ⟨r,r',(rightProjection_some f g _ r).mp hx,
+        (rightProjection_some f g _ r').mp hy,by rw [hm,hx,hy]⟩)
+    · right
+      right
+      rw [hm]
+      cases hx : rightProjection f g x <;> cases hy : rightProjection f g y
+      · rfl
+      · rfl
+      · rfl
+      · rename_i r r'
+        exact False.elim (hR ⟨r,r',hx,hy⟩)
+
+theorem taggedMatrix_sorts (f : Network.Embedding B.toNetwork C.toNetwork)
+    (g : Network.Embedding B.toNetwork D.toNetwork) (x y : Carrier f g) :
+    (taggedMatrix f g x y).1 = sort f g x ∧ (taggedMatrix f g x y).2.1 = sort f g y := by
+  rcases taggedMatrix_factor f g x y with ⟨l,l',rfl,rfl,hm⟩ | ⟨r,r',rfl,rfl,hm⟩ | hm
+  · rw [hm]
+    exact ⟨rfl,rfl⟩
+  · rw [hm]
+    exact ⟨(sort_right f g r).symm,(sort_right f g r').symm⟩
+  · rw [hm]
+    exact ⟨rfl,rfl⟩
+
+theorem taggedMatrix_diagonal (f : Network.Embedding B.toNetwork C.toNetwork)
+    (g : Network.Embedding B.toNetwork D.toNetwork) (x : Carrier f g) :
+    taggedMatrix f g x x = ⟨sort f g x,sort f g x,none⟩ := by
+  rcases covered f g x with ⟨l,rfl⟩ | ⟨r,rfl⟩
+  · rw [taggedMatrix_left]
+    simp only [Network.tagged,C.diagonal,sort_left]
+  · rw [taggedMatrix_right]
+    simp only [Network.tagged,D.diagonal]
+    exact congrArg (fun i => (⟨i,i,none⟩ : Tagged (T:=T))) (sort_right f g r).symm
+
+theorem taggedMatrix_reverse (f : Network.Embedding B.toNetwork C.toNetwork)
+    (g : Network.Embedding B.toNetwork D.toNetwork) (x y : Carrier f g) :
+    flipTagged (taggedMatrix f g x y) = taggedMatrix f g y x := by
+  have hR (X Y : Option R) :
+      flipTagged (match X,Y with
+        | some r,some r' => D.tagged r r'
+        | _,_ => ⟨sort f g x,sort f g y,none⟩) =
+      (match Y,X with
+        | some r',some r => D.tagged r' r
+        | _,_ => ⟨sort f g y,sort f g x,none⟩) := by
+    cases X with
+    | none => cases Y <;> rfl
+    | some r =>
+      cases Y with
+      | none => rfl
+      | some r' => exact flip_networkTagged D.toNetwork r r'
   cases hx : leftProjection f g x <;> cases hy : leftProjection f g y
-  all_goals try
-    (rename_i l l'
-     exact Or.inl ⟨l,l',(leftProjection_some f g _ l).mp hx,
-       (leftProjection_some f g _ l').mp hy,by simp only [taggedMatrix,hx,hy]⟩)
-  all_goals
-    right
-    cases hrx : rightProjection f g x <;> cases hry : rightProjection f g y
-    all_goals try (right; simp only [taggedMatrix,hx,hy,hrx,hry])
-    rename_i r r'
-    exact Or.inl ⟨r,r',(rightProjection_some f g _ r).mp hrx,
-      (rightProjection_some f g _ r').mp hry,by simp only [taggedMatrix,hx,hy,hrx,hry]⟩
+  · simpa only [taggedMatrix,hx,hy] using hR (rightProjection f g x) (rightProjection f g y)
+  · simpa only [taggedMatrix,hx,hy] using hR (rightProjection f g x) (rightProjection f g y)
+  · simpa only [taggedMatrix,hx,hy] using hR (rightProjection f g x) (rightProjection f g y)
+  · rename_i l l'
+    simpa only [taggedMatrix,hx,hy] using flip_networkTagged C.toNetwork l l'
+
+private theorem reconstruct_tagged (m : Tagged (T:=T)) (i j : ι)
+    (hi : m.1 = i) (hj : m.2.1 = j) :
+    (⟨i,j,m.2.2.map (Network.castAtom hi hj)⟩ : Tagged (T:=T)) = m := by
+  rcases m with ⟨k,l,e⟩
+  cases hi
+  cases hj
+  cases e <;> rfl
+
+noncomputable def amalgamEdge (f : Network.Embedding B.toNetwork C.toNetwork)
+    (g : Network.Embedding B.toNetwork D.toNetwork) (x y : Carrier f g) :
+    Option (T.Atom (sort f g x) (sort f g y)) :=
+  (taggedMatrix f g x y).2.2.map
+    (Network.castAtom (taggedMatrix_sorts f g x y).1 (taggedMatrix_sorts f g x y).2)
+
+theorem amalgamEdge_tagged (f : Network.Embedding B.toNetwork C.toNetwork)
+    (g : Network.Embedding B.toNetwork D.toNetwork) (x y : Carrier f g) :
+    (⟨sort f g x,sort f g y,amalgamEdge f g x y⟩ : Tagged (T:=T)) = taggedMatrix f g x y :=
+  reconstruct_tagged _ _ _ (taggedMatrix_sorts f g x y).1 (taggedMatrix_sorts f g x y).2
+
+noncomputable def network (f : Network.Embedding B.toNetwork C.toNetwork)
+    (g : Network.Embedding B.toNetwork D.toNetwork) : Network T (sort f g) where
+  edge := amalgamEdge f g
+  diagonal := by
+    intro x
+    have ht := (amalgamEdge_tagged f g x x).trans (taggedMatrix_diagonal f g x)
+    exact tagged_injective ht
+  edge_reverse := by
+    intro x y
+    have ht := taggedMatrix_reverse f g y x
+    rw [← amalgamEdge_tagged f g y x,← amalgamEdge_tagged f g x y] at ht
+    exact tagged_injective ht
+
+theorem network_tagged (f : Network.Embedding B.toNetwork C.toNetwork)
+    (g : Network.Embedding B.toNetwork D.toNetwork) (x y : Carrier f g) :
+    (network f g).tagged x y = taggedMatrix f g x y := amalgamEdge_tagged f g x y
+
+noncomputable def leftEmbedding (f : Network.Embedding B.toNetwork C.toNetwork)
+    (g : Network.Embedding B.toNetwork D.toNetwork) : Network.Embedding C.toNetwork (network f g) where
+  point := leftPoint f g
+  injective := left_injective f g
+  preserves := fun x y => (network_tagged f g _ _).trans (taggedMatrix_left f g x y)
+
+noncomputable def rightEmbedding (f : Network.Embedding B.toNetwork C.toNetwork)
+    (g : Network.Embedding B.toNetwork D.toNetwork) : Network.Embedding D.toNetwork (network f g) where
+  point := rightPoint f g
+  injective := right_injective f g
+  preserves := fun x y => (network_tagged f g _ _).trans (taggedMatrix_right f g x y)
+
+theorem edge_factor (f : Network.Embedding B.toNetwork C.toNetwork)
+    (g : Network.Embedding B.toNetwork D.toNetwork) (x y : Carrier f g)
+    (h : (network f g).graph.Adj x y) :
+    (∃ s t, leftPoint f g s = x ∧ leftPoint f g t = y) ∨
+      (∃ s t, rightPoint f g s = x ∧ rightPoint f g t = y) := by
+  rcases taggedMatrix_factor f g x y with ⟨l,l',hl,hl',_⟩ | ⟨r,r',hr,hr',_⟩ | hm
+  · exact Or.inl ⟨l,l',hl,hl'⟩
+  · exact Or.inr ⟨r,r',hr,hr'⟩
+  · obtain ⟨a,ha⟩ := h
+    have ht := (network_tagged f g x y).trans hm
+    have hn : (network f g).edge x y = none := tagged_injective ht
+    rw [hn] at ha
+    cases ha
 
 end FreeAmalgamConstruction
+
+/-- C25: the actual finite exact partial pushout, including empty bases.
+No algebraic cycle/completion/SAP hypothesis is part of this construction. -/
+noncomputable def freeAmalgam [Finite A] [Finite L] [Finite R]
+    (B : CompleteNetwork T sortA) (C : CompleteNetwork T sortL) (D : CompleteNetwork T sortR)
+    (f : Network.Embedding B.toNetwork C.toNetwork)
+    (g : Network.Embedding B.toNetwork D.toNetwork) : FreeAmalgam B C D f g where
+  Carrier := FreeAmalgamConstruction.Carrier f g
+  finiteCarrier := by
+    classical
+    let : Fintype L := Fintype.ofFinite _
+    let : Fintype R := Fintype.ofFinite _
+    exact Finite.of_injective ULift.down ULift.down_injective
+  sort := FreeAmalgamConstruction.sort f g
+  network := FreeAmalgamConstruction.network f g
+  left := FreeAmalgamConstruction.leftEmbedding f g
+  right := FreeAmalgamConstruction.rightEmbedding f g
+  commutes := fun x => (FreeAmalgamConstruction.right_on_base f g x).symm
+  intersection := FreeAmalgamConstruction.intersection f g
+  covered := FreeAmalgamConstruction.covered f g
+  edge_factor := FreeAmalgamConstruction.edge_factor f g
 end CCO.ProfileHelly
