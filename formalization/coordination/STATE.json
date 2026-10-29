@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 154,
+  "revision": 155,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -1028,7 +1028,7 @@
       }
     },
     "B021": {
-      "state": "SUBMITTED",
+      "state": "REVIEWING",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b021_joint",
@@ -1054,7 +1054,19 @@
         "conclusion": "success",
         "axiom_audit": "allowlist"
       },
-      "report_path": "formalization/coordination/submissions/B021.md"
+      "report_path": "formalization/coordination/submissions/B021.md",
+      "review": {
+        "project_id": 3,
+        "actor_id": "independent_review",
+        "head_sha": "91010838bcd901f9975ca8da69abedc8da8768a3",
+        "approved": false,
+        "independence": {
+          "identity": "/root/independent_review",
+          "non_author": true,
+          "summary": "Actual separate control-only reader authored none of this whole joint-owner implementation, generic BinaryStructure branch, original source/provider proofs, tests or design. It personally read all20 frozen modules once against all27 claims, then only the two metadata files and exact public head/tree/CI anchors, without helper reviewers or duplicate builds.",
+          "report_path": "formalization/coordination/reviews/B021-final.md"
+        }
+      }
     }
   },
   "integration_lock": null,
@@ -3989,6 +4001,24 @@
         },
         "report_path": "formalization/coordination/submissions/B021.md",
         "actor_id": "root"
+      }
+    },
+    {
+      "revision": 155,
+      "project_id": 3,
+      "actor_id": "independent_review",
+      "event": "review",
+      "package_id": "B021",
+      "details": {
+        "package_id": "B021",
+        "head_sha": "91010838bcd901f9975ca8da69abedc8da8768a3",
+        "independence": {
+          "identity": "/root/independent_review",
+          "non_author": true,
+          "summary": "Actual separate control-only reader authored none of this whole joint-owner implementation, generic BinaryStructure branch, original source/provider proofs, tests or design. It personally read all20 frozen modules once against all27 claims, then only the two metadata files and exact public head/tree/CI anchors, without helper reviewers or duplicate builds.",
+          "report_path": "formalization/coordination/reviews/B021-final.md"
+        },
+        "actor_id": "independent_review"
       }
     }
   ],
