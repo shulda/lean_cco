@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 243,
+  "revision": 244,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -1507,7 +1507,7 @@
       }
     },
     "B024": {
-      "state": "SUBMITTED",
+      "state": "REVIEWING",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b023_mi",
@@ -1536,7 +1536,19 @@
         "conclusion": "success",
         "axiom_audit": "allowlist"
       },
-      "report_path": "formalization/coordination/submissions/B024.md"
+      "report_path": "formalization/coordination/submissions/B024.md",
+      "review": {
+        "project_id": 3,
+        "actor_id": "independent_review",
+        "head_sha": "9970533009a5e2a5fb2e5363f6396bbe184b1e51",
+        "approved": false,
+        "independence": {
+          "identity": "/root/independent_review",
+          "non_author": true,
+          "summary": "Actual registered review-only reader authored or designed NONE of the complete B024 implementation, original preparation, receiving infrastructure, proof/API advice, tests or repairs. It personally read all25 frozen modules3494lines and only final2MD repairs, then exact public source/CI/provenance anchors; no helper or duplicate build/audit.",
+          "report_path": "formalization/coordination/reviews/B024-final.md"
+        }
+      }
     },
     "B033": {
       "state": "IN_PROGRESS",
@@ -6270,6 +6282,24 @@
           "axiom_audit": "allowlist"
         },
         "report_path": "formalization/coordination/submissions/B024.md"
+      }
+    },
+    {
+      "revision": 244,
+      "project_id": 3,
+      "actor_id": "independent_review",
+      "event": "review",
+      "package_id": "B024",
+      "details": {
+        "actor_id": "independent_review",
+        "package_id": "B024",
+        "head_sha": "9970533009a5e2a5fb2e5363f6396bbe184b1e51",
+        "independence": {
+          "identity": "/root/independent_review",
+          "non_author": true,
+          "summary": "Actual registered review-only reader authored or designed NONE of the complete B024 implementation, original preparation, receiving infrastructure, proof/API advice, tests or repairs. It personally read all25 frozen modules3494lines and only final2MD repairs, then exact public source/CI/provenance anchors; no helper or duplicate build/audit.",
+          "report_path": "formalization/coordination/reviews/B024-final.md"
+        }
       }
     }
   ],
