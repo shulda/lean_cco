@@ -1,0 +1,1215 @@
+{
+  "schema_version": 1,
+  "id": "owner_master",
+  "index_title": "Simultaneous finite exact-owner master and all-family compatibility",
+  "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+  "status": "HUMAN_PROOF_EXPANDED_NOT_LEAN",
+  "scope": "Preparation for OTHER Lean projects. Complete expansion of the finite exact-quotient owner master, its M1–M4 invariant, canonical quotient maps and finite all-family CRT. The abstract upset-diagram proof is independent of source geometry. The actual master remains conditional on ordinary EPPA for EVERY actual exact quotient, including Id; no global/rooted EPPA conclusion is exported.",
+  "scope_vocabulary": [
+    "finite_poset",
+    "abstract_diagram",
+    "canonical_quotients",
+    "actual_source",
+    "packet_closure",
+    "finite_group_actions",
+    "eppa_consumer",
+    "master_assembly",
+    "examples"
+  ],
+  "scope_explanation": "statement and proof. Abstract full pullbacks, actual fine-colour reconstruction, finite induced group actions and conditional ordinary EPPA retain separate quantified premises.",
+  "assumptions": [
+    {
+      "id": "A01",
+      "name": "Finite poset",
+      "statement": "P is a finite partially ordered set; its available indices are ALL upsets contained in the processed upset U, not only principal upsets or the processing chain. The empty poset is allowed."
+    },
+    {
+      "id": "A02",
+      "name": "Old coherent onto finite diagram with all-family CRT",
+      "statement": "For every available old upset V, B_V is a nonempty finite set; every W subset V has an explicit onto restriction r_VW. Identities and composition commute. B_empty is a singleton. The natural map from B_unionVi to ALL pairwise-compatible tuples is bijective for every finite indexed family, including empty and repeated families."
+    },
+    {
+      "id": "A03",
+      "name": "One full local extension",
+      "statement": "Choose p maximal in P minus U, put O={q:q>p} and Up=O union {p}. A nonempty finite local set D_p maps onto B_O. New B_V are FULL pullbacks B_(V minus p) times_(B_O) D_p; old data remain unchanged."
+    },
+    {
+      "id": "A04",
+      "name": "Elementary finite and group mathematics",
+      "statement": "Classical finite choices, finite-poset maximal elements and induction, explicit Cartesian/pullback sets and maps, group homomorphisms and equivariant surjections. The abstract CRT and generic action descent are proved internally; no compactness or external representation theorem is left hidden."
+    },
+    {
+      "id": "A05",
+      "name": "Actual symmetric CCO source",
+      "statement": "X is a nonempty transitive homogeneous one-sort finite complete symmetric binary source with equality-inclusive RAW relations and semantic homomorphic CCO. Exact equivalences are the actual full RAW exact invariant equivalences; their lattice is not the entire invariant-equivalence lattice. No SAP, NR2, safe palette, section or coherent EPPA is assumed."
+    },
+    {
+      "id": "A06",
+      "name": "Current countable provider scope",
+      "statement": "X is countable. This is retained only through the existing actual quotient-source/joint-lifting/owner-provider route. Abstract diagrams, canonical double quotients, set-level CRT and finite group action transfer do not need it."
+    },
+    {
+      "id": "A07",
+      "name": "Ordinary EPPA for every exact quotient, including identity",
+      "statement": "For EVERY original actual exact E, Age(X/E) has ordinary EPPA, including E=Id so the input explicitly includes Age(X). This is a conditional premise, not a theorem proved by the master or a same-rank rooted ACF assumption."
+    },
+    {
+      "id": "A08",
+      "name": "Recognizable finite group diagram and product identities",
+      "statement": "All finite quotient kernels and quotient pair colours are recognizable fine-colour unions, and the induced full finite group maps commute. The full group identities for the largest and EVERY new product target are supplied. This core group-diagram premise alone assumes neither old M1/M3 nor any local point/partial-map extension."
+    },
+    {
+      "id": "A09",
+      "name": "Packet projection input",
+      "statement": "For the conditional M2 step each ambient projection takes its entire finite packet into the finite packet of its image. Both finite factors are closed under entire ambient packets. The largest finite equivalence need not be exact. The actual source instance discharges this input using I07."
+    },
+    {
+      "id": "A10",
+      "name": "Generic nested canonical orbital quotients",
+      "statement": "For the independent quotient-associativity lemma, a group G acts on a set X, and K<=H are G-invariant equivalences. Every canonical quotient language names ALL actual G-pair orbitals, including equality. No finiteness, transitivity, homogeneity, CCO, exactness or global surjectivity of quotient automorphism maps is presumed."
+    },
+    {
+      "id": "A11",
+      "name": "Original nonempty finite input",
+      "statement": "A is a finite nonempty actual subset of X and A_V is its image in EVERY actual X_V. Finite witnesses must retain all A_V. These images may be sparse in the corresponding products; their partial maps need not descend from a partial map of original A."
+    },
+    {
+      "id": "A12",
+      "name": "Old M3 action input",
+      "statement": "For every nested OLD pair, its full finite induced automorphism group map is onto with fibre-transitive kernel. Used for both largest-product target branches."
+    },
+    {
+      "id": "A13",
+      "name": "Local prescribed owner point input",
+      "statement": "D_p has every prescribed owner point motion over B_O. Needed only for the nonnested OLD targets, not the nested new-product target or independent EPPA clause."
+    },
+    {
+      "id": "A14",
+      "name": "Old M1 and local prescribed partial-map input",
+      "statement": "Old finite objects have ordinary EPPA for their exact A_V inputs. D_p extends EVERY partial automorphism of A_Up with EVERY prescribed compatible entire Aut(B_O) owner action. Used by the independent sparse EPPA product consumer, not by the pure point-kernel proof. For this independent consumer the finite sparse input A_V is GIVEN as an induced subset of its full product, with coordinate images exactly A_Vminus and A_Up. The actual source recursion proves this datum by C11."
+    },
+    {
+      "id": "A15",
+      "name": "Old actual source invariant",
+      "statement": "For the actual one-stage instantiation, each OLD finite B_V is an actual induced subset of X_V, its maps are the canonical actual restrictions, it contains A_V and is closed under its ENTIRE ambient finite packet. No new local D_p is assumed in this OLD invariant."
+    },
+    {
+      "id": "A16",
+      "name": "Actual chosen local factor for the conditional product step",
+      "statement": "For the conditional actual product/containment claims, D_p is a finite actual induced subset of X_Up, has owner image exactly B_O and contains A_Up. This factor data is an OUTPUT of C22 in the source recursion, not an extra hypothesis of the final master."
+    },
+    {
+      "id": "A17",
+      "name": "Supplied initial decorations for abstract assembly",
+      "statement": "The conditional decorated-diagram recursion starts from a singleton object whose declared structure/ambient packet relation and input already satisfy M1, M2 and M3. The abstract set singleton alone does not prove ambient packet closure. In the actual source case C25 discharges these base decorations using X/Top being a singleton."
+    }
+  ],
+  "imports": [
+    {
+      "id": "I01",
+      "name": "Exact finite distributivity, Birkhoff and ambient CRT",
+      "source_label": "lem:acf-exact-distributive",
+      "provider_module": "exact_crt",
+      "statement": "The actual full exact-equivalence lattice is finite bounded distributive; reuse the internally expanded Birkhoff representation by nonzero join-irreducibles and actual compatible-quotient set CRT. Does not decompose the language into freely coloured factors.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A05"
+      ]
+    },
+    {
+      "id": "I02",
+      "name": "Actual exact quotient-source inheritance",
+      "source_label": "thm:exact-sorts-source",
+      "provider_module": "raw_exact",
+      "statement": "Every original actual exact quotient is a standing homogeneous CCO source in its complete canonical old-group orbital language. Retain the currently prepared countability premise; do not infer an unrestricted global lift of full quotient automorphisms.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A05",
+        "A06"
+      ]
+    },
+    {
+      "id": "I03",
+      "name": "Same-sort exact descent",
+      "source_label": "lem:exact-descent",
+      "provider_module": "exact_crt",
+      "statement": "For original exact K<=H, H/K is full exact on X/K because H is K-saturated; quotient words retain logical identity kernels. Only the one-original-sort branch is used, with no mixed-sort TI shortcut.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A05"
+      ]
+    },
+    {
+      "id": "I04",
+      "name": "Actual finite owner provider",
+      "source_label": "lem:acf-owner-provider",
+      "provider_module": "owner_action",
+      "statement": "Given the current actual exact Q->O, ordinary EPPA of Q and finite nonempty F_O-closed B, produce finite full-F_Q-closed D over exactly B, containing its input, extending all prescribed compatible input maps and every prescribed owner point motion. This is conditional ordinary EPPA, not rooted ACF.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A05",
+        "A06",
+        "A07"
+      ]
+    },
+    {
+      "id": "I05",
+      "name": "Full actual fine-coloured product automorphisms",
+      "source_label": "lem:acf-fibreproduct-aut",
+      "provider_module": "owner_action",
+      "statement": "Reuse owner_action C14 ambient set-product realization, C16 equality-inclusive fine-colour reconstruction and C17 natural finite full-group identity (with recognizable quotient descent C15). For actual original exact E,J, X/(E meet J) is canonically the full fine-coloured product; its FULL finite induced factors over a common owner image have exactly the matching-pair full Aut group. These are separate supporting claims, not an inference from a group identity alone.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A05"
+      ],
+      "provider_claims": [
+        "C14",
+        "C15",
+        "C16",
+        "C17"
+      ]
+    },
+    {
+      "id": "I06",
+      "name": "Prescribed product kernels and independent sparse EPPA consumer",
+      "source_label": "lem:acf-fibreproduct-owner-kernels",
+      "provider_module": "owner_action",
+      "statement": "Reuse the pure group conclusions with an explicitly supplied full product/group identity: nonnested targets require both factor point properties; nested product targets need factorization and their own identity. The sparse EPPA clause needs its separate partial-map providers, not the point-kernel premises.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A04"
+      ]
+    },
+    {
+      "id": "I07",
+      "name": "Finite packet projection support",
+      "source_label": "lem:acf-owner-provider",
+      "provider_module": "owner_action",
+      "statement": "In the symmetric finite canonical orbital framework with commuting invariant equivalences, reuse ONLY already expanded owner_action C06–C07/N03: greatest finite packets exist; for an actual quotient q, the FULL Aut(target)-invariant finite equivalence (F_source join ker q)/ker q has class q(F_source[x]) and is below F_target. Full-group invariance follows from named colour unions, not global lifts. The isolated support proof uses no ordinary EPPA, CCO or exactness of F.",
+      "status": "HUMAN_SUPPORT_PROOF_NOT_LEAN",
+      "depends_on": [
+        "A05",
+        "A04"
+      ],
+      "provider_claims": [
+        "C06",
+        "C07"
+      ]
+    }
+  ],
+  "source_files": [
+    {
+      "file": "sections/owner_master/04_master_theorem.tex",
+      "git_blob": "5a8c72dda7cf49ef85684799b587f63547da0690"
+    },
+    {
+      "file": "sections/owner_master/01_ambient_owner_provider.tex",
+      "git_blob": "1b8b729d929d91d1dc7fa006f261d685be2b82b2"
+    },
+    {
+      "file": "sections/owner_master/02_full_fibreproduct_action.tex",
+      "git_blob": "f7f66f0f06dfbaabc716d35f95fccba11697d928"
+    },
+    {
+      "file": "sections/owner_master/03_owner_kernels_prescribed_actions.tex",
+      "git_blob": "45d16b4f4555acfc67c29167320390320e798ac4"
+    },
+    {
+      "file": "sections/exact_lattice_crt.tex",
+      "git_blob": "5ead1d021abbc99c255c8a36ec87585cba3fbdc3"
+    },
+    {
+      "file": "sections/exact_gluing_geometry.tex",
+      "git_blob": "c98b468daef5d657d6470e3a14020b8b22cc3a3f"
+    },
+    {
+      "file": "sections/exact_foundations/03_joint_exact_sort_lifting.tex",
+      "git_blob": "394e0db063a476c5c069384b3d3fa2ffd3c7471d"
+    }
+  ],
+  "source_result_files": [
+    "sections/owner_master/04_master_theorem.tex"
+  ],
+  "definitions": [
+    {
+      "id": "D01",
+      "name": "Available upset indices",
+      "statement": "Up(U) is the family of all P-upsets V contained in processed upset U. All finite unions/intersections remain available.",
+      "depends_on": [
+        "A01"
+      ],
+      "notes": "N01",
+      "source": {
+        "file": "sections/owner_master/04_master_theorem.tex",
+        "anchor": "For each upset"
+      }
+    },
+    {
+      "id": "D02",
+      "name": "Coherent finite quotient diagram",
+      "statement": "B_V with explicit r_VW for W subset V; identity, composition, surjectivity, nonempty finite carriers and singleton empty object are part of the invariant.",
+      "depends_on": [
+        "A02"
+      ],
+      "notes": "N02",
+      "source": {
+        "file": "sections/owner_master/04_master_theorem.tex",
+        "anchor": "constructed\ncompatibly"
+      }
+    },
+    {
+      "id": "D03",
+      "name": "All-family finite compatibility",
+      "statement": "For a finite indexed list (V_i), compatibility means equality of the two images in every B_(V_i intersect V_j). The natural map from B_(union_i V_i) is required to be bijective. Empty product is one point.",
+      "depends_on": [
+        "D01",
+        "A04"
+      ],
+      "notes": "N04",
+      "source": {
+        "file": "sections/owner_master/04_master_theorem.tex",
+        "anchor": "finite nonempty\nfamily of available upsets"
+      }
+    },
+    {
+      "id": "D04",
+      "name": "Principal new step",
+      "statement": "p is maximal outside U; O=strict upper cone and Up=O union {p}. Each new V contains Up and Vminus=V minus {p} is an old upset with O subset Vminus.",
+      "depends_on": [
+        "A01",
+        "A03"
+      ],
+      "notes": "N01",
+      "source": {
+        "file": "sections/owner_master/04_master_theorem.tex",
+        "anchor": "O=\\{q:q>p\\}"
+      }
+    },
+    {
+      "id": "D05",
+      "name": "Full pullback carrier and maps",
+      "statement": "New B_V is every compatible pair (b,x) from old B_Vminus and D_p. Canonical new maps either forget x or retain exactly the same x.",
+      "depends_on": [
+        "D02",
+        "D04"
+      ],
+      "notes": "N02",
+      "source": {
+        "file": "sections/owner_master/04_master_theorem.tex",
+        "anchor": "B_V=B_{V^-}\\times_{B_O}D_p"
+      }
+    },
+    {
+      "id": "D06",
+      "name": "Exact-equivalence upset coordinates",
+      "statement": "Birkhoff sends an exact E to a downset d; for upset V put K_V=E_(P minus V), X_V=X/K_V, pi_V the actual quotient. The index order is reversed.",
+      "depends_on": [
+        "I01"
+      ],
+      "notes": "N05",
+      "source": {
+        "file": "sections/owner_master/04_master_theorem.tex",
+        "anchor": "X_U=X/E_{P\\setminus U}"
+      }
+    },
+    {
+      "id": "D07",
+      "name": "Canonical nested quotients",
+      "statement": "For K<=H, the relative equivalence on X/K is H/K. The canonical double quotient sends [[x]_K] to [x]_H; both carriers and complete actual orbital languages must be identified.",
+      "depends_on": [
+        "A10"
+      ],
+      "notes": "N05",
+      "source": {
+        "file": "sections/owner_master/04_master_theorem.tex",
+        "anchor": "actual\nexact projection"
+      }
+    },
+    {
+      "id": "D08",
+      "name": "Original shadows",
+      "statement": "A_V=pi_V(A). New A_V is merely a sparse induced subset of its full product; coordinate images are exactly A_Vminus and A_Up.",
+      "depends_on": [
+        "A11"
+      ],
+      "notes": "N06",
+      "source": {
+        "file": "sections/owner_master/04_master_theorem.tex",
+        "anchor": "A_U=\\pi_U(A)"
+      }
+    },
+    {
+      "id": "D09",
+      "name": "The four decorations",
+      "statement": "M1 is EPPA for each actual A_V, M2 is closure under the ENTIRE ambient F_(X_V) packet, M3 uses full finite induced Aut groups and fibre-transitive kernels, M4 is the all-family bijection.",
+      "depends_on": [
+        "A04"
+      ],
+      "notes": "N07",
+      "source": {
+        "file": "sections/owner_master/04_master_theorem.tex",
+        "anchor": "(M1)--(M4)"
+      }
+    },
+    {
+      "id": "D10",
+      "name": "Largest new witness",
+      "statement": "L=B_U times_(B_O) D_p is B_(U union {p}); its canonical onto maps reach EVERY old or new available target, including old V not containing O.",
+      "depends_on": [
+        "D05"
+      ],
+      "notes": "N08",
+      "source": {
+        "file": "sections/owner_master/04_master_theorem.tex",
+        "anchor": "L=B_U\\times_{B_O}D_p"
+      }
+    },
+    {
+      "id": "D11",
+      "name": "Finite provider schedule",
+      "statement": "A max-first enumeration of the finite P invokes one local owner provider per element; the final witness is transported from X_P=X/Id canonically into original X. P empty uses no provider call.",
+      "depends_on": [
+        "D01",
+        "A04"
+      ],
+      "notes": "N10",
+      "source": {
+        "file": "sections/owner_master/04_master_theorem.tex",
+        "anchor": "finitely many elements"
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "name": "Finite max-first schedule exists",
+      "statement": "Every nonempty complement of a processed upset has a maximal p; all q>p are processed. Adding p preserves the upset invariant. Recursion gives a max-first enumeration and terminates in |P| steps; P empty is allowed.",
+      "depends_on": [
+        "A01",
+        "A04"
+      ],
+      "notes": "N01",
+      "source_labels": [
+        "thm:acf-owner-master"
+      ],
+      "scope": "finite_poset",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C02",
+      "name": "All old/new indices and principal intersections",
+      "statement": "No element below p belongs to U. Hence every new upset V contains Up, Vminus is an old upset, Vminus intersect Up=O and Vminus union Up=V. Every available upset is exactly old or new, and all subscripted old maps exist.",
+      "depends_on": [
+        "C01",
+        "D04"
+      ],
+      "notes": "N01",
+      "source_labels": [
+        "thm:acf-owner-master"
+      ],
+      "scope": "finite_poset",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C03",
+      "name": "Generic canonical quotient associativity preserves full orbital colours",
+      "statement": "For any G-set and invariant K<=H, (X/K)/(H/K) canonically bijects with X/H and commutes with all projections. The kernel and each coarse G-orbital pullback are unions of named fine G-orbitals, hence invariant under FULL Aut(X/K). Because G already acts transitively within each named coarse orbital, the full Aut(X/K) quotient orbitals are exactly those colours. This proves a coloured identification without global quotient-group surjectivity.",
+      "depends_on": [
+        "D07",
+        "A04"
+      ],
+      "notes": "N05",
+      "source_labels": [
+        "thm:acf-owner-master"
+      ],
+      "scope": "canonical_quotients",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C04",
+      "name": "Actual exact quotient diagram and exact relative kernels",
+      "statement": "K_V inclusion reverses upset inclusion; actual quotient maps are coherent and onto. I03 makes K_W/K_V exact for W subset V, and C03 identifies its quotient with actual X_W in the correct complete language. I02 separately gives each X_V its standing source status.",
+      "depends_on": [
+        "D06",
+        "C03",
+        "I02",
+        "I03"
+      ],
+      "notes": "N05",
+      "source_labels": [
+        "thm:acf-owner-master"
+      ],
+      "scope": "actual_source",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C05",
+      "name": "Actual binary coordinates retain every fine colour",
+      "statement": "For new V, K_Vminus meet K_Up=K_V and their join=K_O. Apply the prepared actual set/fine-product theorem to the ORIGINAL X with those two exact kernels. Thus X_V is canonically the full fine-coloured product over X_O, including diagonal pair colours. This needs no countability or EPPA.",
+      "depends_on": [
+        "C02",
+        "D06",
+        "I05"
+      ],
+      "notes": "N05",
+      "source_labels": [
+        "thm:acf-owner-master"
+      ],
+      "scope": "actual_source",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C06",
+      "name": "Singleton initial system and empty-poset boundary",
+      "statement": "Start abstract B_empty as a singleton with its identity map. It is finite nonempty with the all-family compatible-tuple bijection and trivial permutation group. For P empty this is already the final abstract set system. The actual-source ambient packet/EPPA base and Id=Top implication are supplied separately in C25.",
+      "depends_on": [
+        "A01",
+        "A04"
+      ],
+      "notes": "N02",
+      "source_labels": [
+        "thm:acf-owner-master"
+      ],
+      "scope": "abstract_diagram",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C07",
+      "name": "One finite full pullback per new upset",
+      "statement": "Given old diagram and local D_p->B_O, keep old objects unchanged and define every new B_V as its full pullback. It is finite nonempty, and both factor projections are onto. The Up object is canonically D_p, not a required literal type equality.",
+      "depends_on": [
+        "D05",
+        "C02",
+        "A03",
+        "A04"
+      ],
+      "notes": "N02",
+      "source_labels": [
+        "thm:acf-owner-master"
+      ],
+      "scope": "abstract_diagram",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C08",
+      "name": "Every new restriction map is well-defined",
+      "statement": "For V new/W old, restrict the old first coordinate to W. For V,W new retain the SAME D_p coordinate and restrict the first coordinate to Wminus. Old coherence and O subset Wminus show the result lies in the target full pullback. The remaining old-old case is unchanged.",
+      "depends_on": [
+        "C07",
+        "D02"
+      ],
+      "notes": "N03",
+      "source_labels": [
+        "thm:acf-owner-master"
+      ],
+      "scope": "abstract_diagram",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C09",
+      "name": "Identities and all nested composition squares commute",
+      "statement": "Verify the exhaustive p-membership patterns: all old; new source with two old targets; two new indices then old; all three new. Both composites have the same old first restriction and, if needed, identical D_p coordinate. This establishes coherence without using the CRT conclusion.",
+      "depends_on": [
+        "C08"
+      ],
+      "notes": "N03",
+      "source_labels": [
+        "thm:acf-owner-master"
+      ],
+      "scope": "abstract_diagram",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C10",
+      "name": "Every finite restriction map is onto",
+      "statement": "For new->old, lift the old point to B_Vminus and then choose a D_p point over its owner. For new->new, lift the target first coordinate; O subset Wminus makes its owner match the ALREADY prescribed D_p coordinate. Old surjections remain. No M3 or CRT argument is used.",
+      "depends_on": [
+        "C08",
+        "C09",
+        "A03"
+      ],
+      "notes": "N03",
+      "source_labels": [
+        "thm:acf-owner-master"
+      ],
+      "scope": "abstract_diagram",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C11",
+      "name": "Every original projected input is retained",
+      "statement": "Define actual B_V as the induced subset of X_V whose canonical two images lie in the two finite factors. C05 identifies it with their full pullback. Every pi_V(a), a in A, has images in A_Vminus and A_Up, so it is retained. All A_V are nonempty; sparse A_V need not equal its full product.",
+      "depends_on": [
+        "C05",
+        "D08",
+        "C07",
+        "A15",
+        "A16"
+      ],
+      "notes": "N06",
+      "source_labels": [
+        "thm:acf-owner-master"
+      ],
+      "scope": "actual_source",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C12",
+      "name": "A compatible new family gives an old compatible family",
+      "statement": "For ANY finite indexed family remove p from every V_i and project b_i to c_i. Project every compatibility equality to B_((V_i intersect V_j) minus p)=B_(V_i minus p intersect V_j minus p). The map formulas give old pairwise compatibility, including one-new/one-old pairs without inventing an old-target->O map.",
+      "depends_on": [
+        "D03",
+        "C08",
+        "C09"
+      ],
+      "notes": "N04",
+      "source_labels": [
+        "thm:acf-owner-master"
+      ],
+      "scope": "abstract_diagram",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C13",
+      "name": "All new family members have one common local coordinate",
+      "statement": "If the union contains p, at least one member contains p and every such member contains Up. Intersections of two new members still contain Up, so their compatibility equality retains and equates the D_p coordinates. One new member alone determines its coordinate directly.",
+      "depends_on": [
+        "C02",
+        "C08",
+        "D03"
+      ],
+      "notes": "N04",
+      "source_labels": [
+        "thm:acf-owner-master"
+      ],
+      "scope": "abstract_diagram",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C14",
+      "name": "All-family CRT extends, with existence and uniqueness",
+      "statement": "Old CRT uniquely reconstructs b from C12; one new member forces its B_O owner to equal that of the common x from C13. Fullness gives (b,x) in the new union object, and the explicit maps recover every coordinate. Uniqueness is old b-uniqueness plus one new coordinate. Coherence supplies the forward compatible map. Empty family uses B_empty singleton; repeated upsets force equal repeated coordinates; empty/incomparable indices are allowed.",
+      "depends_on": [
+        "C12",
+        "C13",
+        "C07",
+        "C09",
+        "A02"
+      ],
+      "notes": "N04",
+      "source_labels": [
+        "thm:acf-owner-master"
+      ],
+      "scope": "abstract_diagram",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C15",
+      "name": "Full packet closure transfers through actual full products",
+      "statement": "Under A09, a point packet-related to one in the new full product has its two images in the two closed factor packets, hence both images remain in the finite factors. Its actual ambient coordinates agree, so fullness puts it in the finite product. No exactness of the finite packet, algebraic-closure identity or global owner lift is assumed.",
+      "depends_on": [
+        "A09",
+        "C07",
+        "A04"
+      ],
+      "notes": "N07",
+      "source_labels": [
+        "thm:acf-owner-master"
+      ],
+      "scope": "packet_closure",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C16",
+      "name": "Full finite group identities and all induced action maps",
+      "statement": "I05 on each actual product gives full Aut(B_V), not a selected ambient image, as its matching-pair group. Recognizable kernels and quotient colour pullbacks ensure EVERY full Aut(L) descends to every B_V; carrier surjectivity gives uniqueness and coherence of all induced group homomorphisms.",
+      "depends_on": [
+        "C05",
+        "C10",
+        "I05",
+        "A15",
+        "A16"
+      ],
+      "notes": "N08",
+      "source_labels": [
+        "thm:acf-owner-master"
+      ],
+      "scope": "actual_source",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C17",
+      "name": "Generic action property descends from a largest cover",
+      "statement": "For equivariant onto L->Y->Z and commuting group homomorphisms, onto G_L->G_Z with fibre-transitive kernel implies onto G_Y->G_Z and fibre-transitive kernel. Lift a target group element to G_L and descend; for same-Z points of Y choose any L preimages, move by the L kernel and descend. Surjectivity G_L->G_Y is not needed for this isolated lemma.",
+      "depends_on": [
+        "A04"
+      ],
+      "notes": "N08",
+      "source_labels": [
+        "thm:acf-owner-master"
+      ],
+      "scope": "finite_group_actions",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C18",
+      "name": "Largest product reaches all old target actions without nesting",
+      "statement": "With A08 full group identity, old M3 for B_U->B_V and D_p prescribed owner point lifting, I06 nonnested branch gives onto Aut(L)->Aut(B_V) and fibre-transitive kernel for EVERY old V. It does not require V to contain O or a map B_V->B_O.",
+      "depends_on": [
+        "D10",
+        "A08",
+        "I06",
+        "C10",
+        "A12",
+        "A13"
+      ],
+      "notes": "N08",
+      "source_labels": [
+        "thm:acf-owner-master"
+      ],
+      "scope": "finite_group_actions",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C19",
+      "name": "Largest product reaches all new target actions",
+      "statement": "For new V, let T=B_Vminus. Since O subset Vminus, B_U->B_O factors through T, and B_V=T times_(B_O)D_p has its own group identity. I06 nested branch gives onto action and fibre kernel to B_V. It needs no D_p point-lifting premise beyond the separate old-target use.",
+      "depends_on": [
+        "D10",
+        "A08",
+        "I06",
+        "C02",
+        "C10",
+        "A12"
+      ],
+      "notes": "N08",
+      "source_labels": [
+        "thm:acf-owner-master"
+      ],
+      "scope": "finite_group_actions",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C20",
+      "name": "Every nested pair satisfies M3",
+      "statement": "C18/C19 supply the largest-object property to EVERY target. For any Vprime subset V use the coherent carrier and group maps L->B_V->B_Vprime and C17. The descended kernel fixes EVERY target point. Old pairs keep their original maps and properties.",
+      "depends_on": [
+        "C17",
+        "C18",
+        "C19",
+        "C09",
+        "A08"
+      ],
+      "notes": "N08",
+      "source_labels": [
+        "thm:acf-owner-master"
+      ],
+      "scope": "finite_group_actions",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C21",
+      "name": "Every new actual input projection has ordinary EPPA",
+      "statement": "Apply the independent I06 sparse EPPA consumer to A_V with exact shadows A_Vminus,A_Up. Old M1 extends its first coordinate partial map; the local provider extends its second with the EXACT entire B_O action produced by the first. Recognizable kernels/colours ensure genuine partial descent. This covers all partial maps of A_V, even those not projected from original A, without any source point-kernel assumption in this subclaim.",
+      "depends_on": [
+        "D08",
+        "A08",
+        "I06",
+        "A14"
+      ],
+      "notes": "N09",
+      "source_labels": [
+        "thm:acf-owner-master"
+      ],
+      "scope": "eppa_consumer",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C22",
+      "name": "Actual local providers discharge each stage input",
+      "statement": "For Q=X_Up->X_O, C04 supplies actual exact standing sources/maps. Old B_O is finite nonempty and F-closed; A_Up lies over it. The explicit A07 ordinary EPPA input for Q invokes I04, giving D_p over precisely B_O with all packet/partial/point properties. A principal Up can be P itself, so EPPA(X) cannot be omitted.",
+      "depends_on": [
+        "C04",
+        "A07",
+        "A11",
+        "I04",
+        "A15",
+        "A02"
+      ],
+      "notes": "N06",
+      "source_labels": [
+        "thm:acf-owner-master"
+      ],
+      "scope": "actual_source",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C23",
+      "name": "Finite decorated recursion preserves the entire invariant",
+      "statement": "Given the initial decorations A17, induct in C01 order and preserve them. Given an appropriate local callback at each stage, C07–C10 preserve finite coherent onto carriers, C14 all-family CRT, and C15/C20/C21 preserve M2/M3/M1 under their supplied local decoration inputs. Old data remain unchanged. There are |P| stages, not an iteration until stability. This is a conditional diagram assembly, not an ordinary EPPA theorem.",
+      "depends_on": [
+        "C01",
+        "C06",
+        "C07",
+        "C09",
+        "C10",
+        "C14",
+        "C15",
+        "C20",
+        "C21",
+        "A17"
+      ],
+      "notes": "N10",
+      "source_labels": [
+        "thm:acf-owner-master"
+      ],
+      "scope": "master_assembly",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C24",
+      "name": "The final largest object gives exactly every quotient image",
+      "statement": "At the final stage every B_V is the exact image of B_P under its actual projection by C10; C11 retains A. Transport X_P=X/Id and B_P canonically to original X, rather than treating quotient types as literally equal. Convert finite upset unions/intersections to exact meets/joins via Birkhoff complements. Empty-family M4 uses ambient Top and its singleton quotient.",
+      "depends_on": [
+        "C10",
+        "C11",
+        "D06",
+        "C03",
+        "C14"
+      ],
+      "notes": "N10",
+      "source_labels": [
+        "thm:acf-owner-master"
+      ],
+      "scope": "actual_source",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C25",
+      "name": "Actual simultaneous finite exact-owner master",
+      "statement": "Discharge the abstract stage callbacks with C22, product identities with C16 and packet projection with I07; apply C23, then C24. Obtain one finite actual induced B containing A and all four M1–M4 assertions. Only finitely many conditional ordinary EPPA provider calls are used. No rooted ACF, safe palette, strict-quotient-only EPPA, section or global source theorem is concluded. The initial actual X/Top is a singleton, so all base decorations hold; if P is empty, Id=Top and nonempty X itself is a singleton.",
+      "depends_on": [
+        "C22",
+        "C16",
+        "I07",
+        "C23",
+        "C24"
+      ],
+      "notes": "N10",
+      "source_labels": [
+        "thm:acf-owner-master"
+      ],
+      "scope": "master_assembly",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C26",
+      "name": "Finite diagram and missing-fullness controls",
+      "statement": "Exhaust finite poset/pullback models by independent compatible-tuple enumeration, with successor-dependent local fibres and repeated/empty families. Sparse parity or missing-corner systems show onto projections/local data alone do not force all-family CRT, and a nonsingleton empty object fails empty-family CRT. These controls assert neither CCO nor external EPPA existence.",
+      "depends_on": [
+        "A04"
+      ],
+      "notes": "N11",
+      "source_labels": [
+        "thm:acf-owner-master"
+      ],
+      "scope": "examples",
+      "status": "HUMAN_PROOF_EXPANDED"
+    }
+  ],
+  "exports": [
+    {
+      "source_label": "thm:acf-owner-master",
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25"
+      ]
+    }
+  ],
+  "auxiliary_exports": [
+    {
+      "source_label": "eq:acf-master-step",
+      "source": {
+        "file": "sections/owner_master/04_master_theorem.tex",
+        "anchor": "\\label{eq:acf-master-step}"
+      },
+      "claims": [
+        "C02",
+        "C05",
+        "C07"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "T01",
+      "name": "Finite upset indices and canonical quotient interfaces",
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Separate generic orbital quotient association, exact relative descent and countable standing-source inheritance; handle empty P and identity quotient canonically."
+    },
+    {
+      "id": "T02",
+      "name": "Coherent full pullback diagrams and all-family CRT",
+      "claims": [
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C12",
+        "C13",
+        "C14"
+      ],
+      "depends_on": [
+        "T01"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Prove the maps, coherence and onto images before the CRT induction. Give a bijection for every finite indexed family, including repetitions and empty family."
+    },
+    {
+      "id": "T03",
+      "name": "Finite packet, group and sparse EPPA decorations",
+      "claims": [
+        "C11",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22"
+      ],
+      "depends_on": [
+        "T01",
+        "T02"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Reuse accepted owner providers/products and the generic largest-cover action lemma. Do not replace full Aut by an ambient image or sparse input by a full product."
+    },
+    {
+      "id": "T04",
+      "name": "Finite assembly, exact source export and controls",
+      "claims": [
+        "C23",
+        "C24",
+        "C25",
+        "C26"
+      ],
+      "depends_on": [
+        "T01",
+        "T02",
+        "T03"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Instantiate every callback without a rooted induction loop; verify final image equalities, exact-index M4 and independent finite countercontrols."
+    }
+  ],
+  "control_script": "tools/check_owner_master_controls.py",
+  "controls": [
+    {
+      "id": "R01",
+      "check": "Finite posets and every descending processing order, canonical upset indices and all three projection cases."
+    },
+    {
+      "id": "R02",
+      "check": "Coherence, onto finite images and independent all-family compatible-tuple reconstruction with context-dependent local fibres."
+    },
+    {
+      "id": "R03",
+      "check": "Empty/repeated/incomparable indices, empty P, singleton empty object and principal-source identity cases."
+    },
+    {
+      "id": "R04",
+      "check": "Actual difference-coloured coordinate sources test finite group images and nonnested targets where provided by the control model."
+    },
+    {
+      "id": "R05",
+      "check": "Sparse parity/missing-fullness and nonsingleton-empty-object models isolate failed hypotheses without claiming a CCO counterexample."
+    }
+  ],
+  "article_feedback_intro": "No required source theorem conclusion repair was found in two scoped model reviews and parent synthesis. Queue these import/invariant clarifications for the later human article pass; human TeX remains unchanged.",
+  "article_feedback": [
+    {
+      "id": "F01",
+      "kind": "PROOF_EXPANSION_OR_SCOPE_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/owner_master/04_master_theorem.tex",
+        "anchor": "actual\nexact projection"
+      },
+      "finding": "Canonical coloured double quotients and exact relative kernels are genuine imports: same-sort descent and actual quotient source inheritance must precede the local provider.",
+      "proposed_article_change": "Cite the prepared exact descent/inheritance interfaces and retain current countability at their source use.",
+      "caller_effect": "No theorem conclusion or human TeX changed. Future joint-owner/rooted consumers must import this conditional master with all actual quotient/provider premises.",
+      "proof_claims": [
+        "C03",
+        "C04",
+        "C22"
+      ]
+    },
+    {
+      "id": "F02",
+      "kind": "PROOF_EXPANSION_OR_SCOPE_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/owner_master/04_master_theorem.tex",
+        "anchor": "constructed\ncompatibly"
+      },
+      "finding": "The induction needs explicit coherent ONTO carrier maps and all original A_V containment. M3 alone does not prove carrier surjectivity.",
+      "proposed_article_change": "State the strengthened diagram invariant; the three map cases prove it independently of M4.",
+      "caller_effect": "No theorem conclusion or human TeX changed. Future joint-owner/rooted consumers must import this conditional master with all actual quotient/provider premises.",
+      "proof_claims": [
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C24"
+      ]
+    },
+    {
+      "id": "F03",
+      "kind": "PROOF_EXPANSION_OR_SCOPE_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/owner_master/04_master_theorem.tex",
+        "anchor": "Full compatibility (M4)"
+      },
+      "finding": "All-family CRT needs the old all-family bijection and one shared principal coordinate; two-factor set CRT or surjective projections alone are insufficient.",
+      "proposed_article_change": "Keep forward compatibility, reconstruction and uniqueness, and mention empty/repeated indices.",
+      "caller_effect": "No theorem conclusion or human TeX changed. Future joint-owner/rooted consumers must import this conditional master with all actual quotient/provider premises.",
+      "proof_claims": [
+        "C12",
+        "C13",
+        "C14"
+      ]
+    },
+    {
+      "id": "F04",
+      "kind": "PROOF_EXPANSION_OR_SCOPE_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/owner_master/04_master_theorem.tex",
+        "anchor": "whose images"
+      },
+      "finding": "Packet closure and full finite automorphism maps use recognizable actual quotient pair colours, not an assumed global lift of every quotient automorphism.",
+      "proposed_article_change": "Add the short named-colour-union justification in M2/M3.",
+      "caller_effect": "No theorem conclusion or human TeX changed. Future joint-owner/rooted consumers must import this conditional master with all actual quotient/provider premises.",
+      "proof_claims": [
+        "C15",
+        "C16",
+        "C20"
+      ]
+    },
+    {
+      "id": "F05",
+      "kind": "PROOF_EXPANSION_OR_SCOPE_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/owner_master/04_master_theorem.tex",
+        "anchor": "including \\(E=\\Id\\)"
+      },
+      "finding": "The principal source can equal X itself, so ordinary EPPA of Id is an essential explicit input at this phase.",
+      "proposed_article_change": "Retain the conditional U-phase placement and do not use the master to prove the same input.",
+      "caller_effect": "No theorem conclusion or human TeX changed. Future joint-owner/rooted consumers must import this conditional master with all actual quotient/provider premises.",
+      "proof_claims": [
+        "C22",
+        "C25"
+      ]
+    }
+  ],
+  "review": {
+    "date": "2026-10-27",
+    "method": "Independent full-source checks of the abstract all-family CRT and actual M1–M3/provider branches, parent synthesis and separate finite poset/group controls. Not independent human or Lean certification.",
+    "required_mathematical_repairs_found": 0,
+    "remaining": "Implement the whole finite diagram and source instantiation in a receiving project. Ordinary EPPA remains conditional; joint-owner, rooted rank and global source-relative candidate consumers are separate preparation."
+  },
+  "overview_mermaid": [
+    "flowchart TD",
+    "  P[\"Finite max-first poset\"] --> D[\"Coherent onto pullback diagram\"]",
+    "  D --> C[\"Every finite-family CRT bijection\"]",
+    "  Q[\"Canonical exact quotients\"] --> F[\"Actual fine product identities\"]",
+    "  Q --> O[\"Conditional ordinary EPPA provider\"]",
+    "  O --> M[\"Packet, action and EPPA decorations\"]",
+    "  F --> M",
+    "  G[\"Largest-cover action descent\"] --> M",
+    "  D --> M",
+    "  C --> A[\"One finite M1–M4 witness\"]",
+    "  M --> A"
+  ],
+  "overview_notes": [
+    "The generic diagram/CRT proof needs no CCO, exactness, EPPA, countability, group action or SAP.",
+    "Actual fine colours and full finite group actions are separate from the set-level CRT.",
+    "The final master uses ordinary EPPA for all exact quotients including Id, never a rooted ACF hypothesis. Public promotion of this new package is coordinated separately from active live assignments."
+  ],
+  "dependency_firewalls": [
+    {
+      "claims": [
+        "C01",
+        "C02",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C12",
+        "C13",
+        "C14"
+      ],
+      "forbid": [
+        "A05",
+        "A06",
+        "A07",
+        "A08",
+        "A09",
+        "A10",
+        "I01",
+        "I02",
+        "I03",
+        "I04",
+        "I05",
+        "I06",
+        "I07",
+        "A15",
+        "A16",
+        "A17"
+      ]
+    },
+    {
+      "claims": [
+        "C03"
+      ],
+      "forbid": [
+        "A05",
+        "A06",
+        "A07",
+        "I01",
+        "I02",
+        "I03",
+        "I04",
+        "I05",
+        "I06",
+        "I07",
+        "A15",
+        "A16",
+        "A17"
+      ]
+    },
+    {
+      "claims": [
+        "C05",
+        "C16"
+      ],
+      "forbid": [
+        "A06",
+        "A07",
+        "I02",
+        "I04",
+        "C22"
+      ]
+    },
+    {
+      "claims": [
+        "C15",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21"
+      ],
+      "forbid": [
+        "A05",
+        "A06",
+        "A07",
+        "I01",
+        "I02",
+        "I03",
+        "I04",
+        "I05",
+        "I07",
+        "C16",
+        "C22",
+        "A15",
+        "A16",
+        "A17"
+      ]
+    },
+    {
+      "claims": [
+        "C26"
+      ],
+      "forbid": [
+        "A05",
+        "A06",
+        "A07",
+        "I04",
+        "A15",
+        "A16",
+        "A17"
+      ]
+    },
+    {
+      "claims": [
+        "C19"
+      ],
+      "forbid": [
+        "A13",
+        "C18"
+      ]
+    },
+    {
+      "claims": [
+        "C21"
+      ],
+      "forbid": [
+        "A12",
+        "A13",
+        "C18",
+        "C19",
+        "C20"
+      ]
+    },
+    {
+      "claims": [
+        "C17"
+      ],
+      "forbid": [
+        "A08",
+        "A09",
+        "A12",
+        "A13",
+        "A14"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1186 @@
+{
+  "schema_version": 1,
+  "id": "joint_owner",
+  "index_title": "Joint-owner full tuple actions, sparse EPPA and exceptional-root synchronization",
+  "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+  "status": "HUMAN_EXPANDED_NOT_LEAN",
+  "scope": "Preparation for OTHER Lean projects. Complete expansion of the joint-owner source lemma, including actual finite CRT realization, the ENTIRE finite automorphism pullback, prescribed joint-owner points and an independent sparse-input EPPA clause. A separate conditional support lemma synchronizes a GIVEN exceptional coordinate automorphism for the rank consumer; it does NOT prove that rank theorem.",
+  "scope_vocabulary": [
+    "finite_assembly",
+    "actual_source",
+    "root_consumer",
+    "diagnostic"
+  ],
+  "scope_explanation": "statement and proof. Finite carrier/group/point/EPPA branches and actual source realization have distinct premises; source-relative rank providers are not silently imported.",
+  "assumptions": [
+    {
+      "id": "A01",
+      "name": "Finite nonempty coordinate index",
+      "statement": "I is a finite NONEMPTY index set; no meet-irreducibility or distinctness of the indexed kernels is assumed. Each finite colour structure names equality and all its specified binary colours. Empty finite carriers are permitted."
+    },
+    {
+      "id": "A02",
+      "name": "Joint owner diagram with actual images",
+      "statement": "B is a finite owner structure, B_i are its projected finite structures, and beta_i:B->B_i are ONTO and jointly injective. For each pair i,j their two maps to a common comparison carrier agree on every b in B. No individual full-group map Aut(B)->Aut(B_i) is required to be onto."
+    },
+    {
+      "id": "A03",
+      "name": "Full finite owner tuple set",
+      "statement": "The tuple map beta:B->product B_i has image EXACTLY the tuples agreeing in every pairwise comparison carrier. Thus no compatible owner tuple is omitted. This is additional finite data, not a consequence of individual projection surjectivity or ambient CRT."
+    },
+    {
+      "id": "A04",
+      "name": "Full finite coordinate witness over the owner diagram",
+      "statement": "Each finite D_i has an ONTO owner map o_i:D_i->B_i. W is ALL tuples (x_i) whose owners have equal pairwise comparison images. The coordinate structures are the declared finite induced structures, never a selected automorphism subgroup."
+    },
+    {
+      "id": "A05",
+      "name": "Recognizable quotient kernels and pair colours",
+      "statement": "For every relevant ONTO map W->D_i, W->B, D_i->B_i and B->B_i, its equality kernel and the pullback of EVERY target binary colour are unions of named source binary colours. When W->B is used, its carrier map is already supplied by full owner compatibility. This is a conditional finite-language datum; it does not assume any lifting of automorphisms."
+    },
+    {
+      "id": "A06",
+      "name": "Fine-colour reconstruction",
+      "statement": "The named W pair colour is determined by the tuple of all D_i pair colours, including coordinate equalities. No choice of free cross colours is allowed. This condition is separate from set-level compatible tuple realization."
+    },
+    {
+      "id": "A07",
+      "name": "Every prescribed coordinate point motion",
+      "statement": "For every i, x_i,y_i in D_i and delta_i in FULL Aut(B_i) with delta_i(o_i(x_i))=o_i(y_i), there is alpha_i in FULL Aut(D_i) inducing EXACTLY delta_i on ALL B_i and taking x_i to y_i. This is not used by the independent sparse-input EPPA branch."
+    },
+    {
+      "id": "A08",
+      "name": "Actual original source for the source instantiation",
+      "statement": "X is a nonempty transitive homogeneous one-sort source in a FINITE complete symmetric binary language with actual equality-inclusive RAW orbitals and homomorphic CCO. RETAIN countability in this actual specialization because the currently packaged RAW provider type includes it; no countability-free provider extraction is asserted. Abstract finite carrier/action/EPPA/support branches do not use countability. No SAP, NR2, global quotient-automorphism lift or group section is assumed."
+    },
+    {
+      "id": "A09",
+      "name": "Actual finite exact kernel family",
+      "statement": "For the source instantiation C_i and H_i are actual full RAW exact invariant equivalences, C_i<=H_i, meet_i C_i=Id. Q_i=X/C_i, O_i=X/H_i, Hstar=meet_i H_i, Omega=X/Hstar. The finite B and D_i are actual induced subsets in these sorts with precisely the maps in A02/A04; the prescribed owner tuples are tested in X/(H_i join H_j)."
+    },
+    {
+      "id": "A10",
+      "name": "Join gate JOG",
+      "statement": "For every distinct i,j, C_i join C_j = H_i join H_j. This identifies coordinate CRT comparison quotients with the owner comparison quotients. A witness-local equality of the compatibility tests would suffice for the abstract assembly, but no source theorem weakening is made."
+    },
+    {
+      "id": "A11",
+      "name": "Independent sparse-input EPPA data",
+      "statement": "A0 is a finite induced subset of W; A_B and A_i0 are its actual owner and coordinate images. B extends EVERY partial automorphism of A_B. Each D_i extends EVERY partial automorphism of A_i0 with EVERY prescribed delta_i in Aut(B_i) compatible on that partial domain, inducing delta_i on the ENTIRE B_i. Empty domains are included. Neither point homogeneity nor a coherent extension assignment is part of this branch."
+    },
+    {
+      "id": "A12",
+      "name": "Conditional exceptional-root consumer data",
+      "statement": "For the optional rank-step SUPPORT lemma, choose A0 subset W, A_i0 its images and targets A_i subset D_i containing A_i0. Each D_i has an Aut(D_i)-invariant equivalence F_i and F_i[A_i0] subset A_i. Fix an index e, a nonempty Z subset W and z in Z; every nonexceptional projection pi_j(Z) lies in F_j[z_j]. A GIVEN exceptional alpha_e in FULL Aut(D_e) carries pi_e(Z) into A_e and sends z_e into A_e0. The full map rho_e:Aut(B)->Aut(B_e) is onto with fibre-transitive kernel on beta_e:B->B_e; B is nonempty in this request. These extra inputs are NOT conclusions of the joint source lemma."
+    }
+  ],
+  "imports": [
+    {
+      "id": "I01",
+      "name": "Abstract finite compatible-class CRT",
+      "source_label": "thm:abstract-exact-crt",
+      "provider_module": "exact_crt",
+      "statement": "For a nonempty set with a distributive sublattice of pairwise commuting equivalences, every finite nonempty family identifies X/meet C_i with ALL tuples compatible in X/(C_i join C_j). Includes repeated relations and singleton families. This is set realization only.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I02",
+      "name": "Actual exact lattice provider",
+      "source_label": "lem:acf-exact-distributive",
+      "provider_module": "exact_crt",
+      "statement": "The full actual exact equivalences of a standing symmetric CCO source form a finite bounded distributive lattice and commute under represented composition. This supplies I01 for the actual C_i family; the entire invariant-equivalence lattice is not asserted distributive.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A08"
+      ]
+    },
+    {
+      "id": "I03",
+      "name": "Finite-family actual fine-colour recovery",
+      "source_label": "lem:exact-quotient-colour-meet",
+      "provider_module": "raw_exact",
+      "provider_claims": [
+        "C15"
+      ],
+      "statement": "For EVERY original RAW atom a including Id, intersection_i(C_i;a;C_i)=K;a;K with K=meet_i C_i. Hence all coordinate pair orbitals determine the K-quotient fine orbital. When K=Id this is the original fine colour, independently of tuple CRT.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A08"
+      ]
+    },
+    {
+      "id": "I04",
+      "name": "Shared prescribed-action point criterion",
+      "source_label": "lem:prescribed-action-point-lifting",
+      "statement": "Already assigned and accepted with shared B001: for an equivariant ONTO map from NONEMPTY Y, onto group map plus fibre-transitive kernel is equivalent to every compatible point pair with every prescribed target action. No faithfulness or group section. Empty finite systems are handled directly.",
+      "status": "HUMAN_SUPPORT_PROOF_NOT_LEAN"
+    }
+  ],
+  "source_files": [
+    {
+      "file": "sections/rooted_main/01_joint_owner_homogeneity.tex",
+      "git_blob": "d12b1e5ed1b988cfe681786e3fa91aff486f97b5",
+      "bytes": 7116
+    },
+    {
+      "file": "sections/rooted_main/02_rank_relative_rooted_induction.tex",
+      "git_blob": "3977fd384d2d981f9a618524644d4891bd4f67e4",
+      "bytes": 13344
+    },
+    {
+      "file": "sections/exact_lattice_crt.tex",
+      "git_blob": "5ead1d021abbc99c255c8a36ec87585cba3fbdc3",
+      "bytes": 4617
+    },
+    {
+      "file": "sections/exact_foundations/02_exact_quotient_orbital_geometry.tex",
+      "git_blob": "d462f2bfffcd67c1fa712ac516972ab18e073d44",
+      "bytes": 7919
+    },
+    {
+      "file": "sections/typed_invariant_quotient_transport.tex",
+      "git_blob": "3895b17d7d0176a74d6f69c39e4e22d9cdba5715",
+      "bytes": 11154
+    }
+  ],
+  "source_result_files": [
+    "sections/rooted_main/01_joint_owner_homogeneity.tex"
+  ],
+  "definitions": [
+    {
+      "id": "D01",
+      "name": "Actual coordinate and owner sorts",
+      "statement": "Q_i=X/C_i, O_i=X/H_i, Omega=X/Hstar, with every canonical projection retained as a map. Inclusion C_i<=H_i makes each coordinate owner map well defined.",
+      "source": {
+        "file": "sections/rooted_main/01_joint_owner_homogeneity.tex",
+        "anchor": "Write $Q_i=X/C_i$"
+      },
+      "notes": "N01",
+      "depends_on": [
+        "A08",
+        "A09"
+      ]
+    },
+    {
+      "id": "D02",
+      "name": "Pairwise owner compatibility",
+      "statement": "Use equality in X/(H_i join H_j) in the source instance; the abstract diagram uses its specified common comparison maps. Compatibility is a condition on owner coordinates, not equality of coordinate points.",
+      "source": {
+        "file": "sections/rooted_main/01_joint_owner_homogeneity.tex",
+        "anchor": "pairwise equality"
+      },
+      "notes": "N01",
+      "depends_on": [
+        "A02"
+      ]
+    },
+    {
+      "id": "D03",
+      "name": "Full compatible coordinate carrier",
+      "statement": "W is every tuple x_i in D_i whose owner coordinates pass all D02 tests. Its owner b is the UNIQUE B point with beta_i(b)=o_i(x_i), when A03 holds.",
+      "source": {
+        "file": "sections/rooted_main/01_joint_owner_homogeneity.tex",
+        "anchor": "\\label{eq:acf-joint-owner-full-witness}"
+      },
+      "notes": "N02",
+      "depends_on": [
+        "A01",
+        "A02",
+        "A04"
+      ]
+    },
+    {
+      "id": "D04",
+      "name": "Owner fibres and canonical finite maps",
+      "statement": "D_i(b_i)=o_i^{-1}(b_i); pi_i:W->D_i is tuple evaluation. The joint owner map q:W->B is defined only after the full-owner carrier argument.",
+      "source": {
+        "file": "sections/rooted_main/01_joint_owner_homogeneity.tex",
+        "anchor": "Every coordinate projection"
+      },
+      "notes": "N02",
+      "depends_on": [
+        "D03"
+      ]
+    },
+    {
+      "id": "D05",
+      "name": "Full finite groups and induced owner actions",
+      "statement": "Gamma=Aut(B), K_i=Aut(D_i), G_i=Aut(B_i); own_i and rho_i are induced maps on the ENTIRE finite targets. Their existence is proved by recognizable quotient descent.",
+      "source": {
+        "file": "sections/rooted_main/01_joint_owner_homogeneity.tex",
+        "anchor": "\\operatorname{own}_i:"
+      },
+      "notes": "N04",
+      "depends_on": [
+        "A02",
+        "A04"
+      ]
+    },
+    {
+      "id": "D06",
+      "name": "Unambiguous matching subgroup",
+      "statement": "P is the subgroup of Gamma times product K_i consisting of (gamma,(alpha_i)) with own_i(alpha_i)=rho_i(gamma) for every i. Forgetting gamma is injective because the beta_i jointly separate B.",
+      "source": {
+        "file": "sections/rooted_main/01_joint_owner_homogeneity.tex",
+        "anchor": "\\label{eq:acf-joint-owner-automorphisms}"
+      },
+      "notes": "N05",
+      "depends_on": [
+        "D05"
+      ]
+    },
+    {
+      "id": "D07",
+      "name": "Prescribed joint point request",
+      "statement": "For x,y in W and gamma in FULL Gamma, require gamma(q(x))=q(y); the output must induce that gamma on ALL B, not just at q(x).",
+      "source": {
+        "file": "sections/rooted_main/01_joint_owner_homogeneity.tex",
+        "anchor": "there is ONE"
+      },
+      "notes": "N06",
+      "depends_on": [
+        "D04",
+        "D05"
+      ]
+    },
+    {
+      "id": "D08",
+      "name": "Sparse projected input and partial maps",
+      "statement": "For a finite induced A0 subset W, A_B=q(A0), A_i0=pi_i(A0). A partial automorphism projects on its own image domain, using recognition of both kernel and pair colours. These images may omit most compatible tuples.",
+      "source": {
+        "file": "sections/rooted_main/01_joint_owner_homogeneity.tex",
+        "anchor": "partial automorphism of $A_0$"
+      },
+      "notes": "N07",
+      "depends_on": [
+        "D04"
+      ]
+    },
+    {
+      "id": "D09",
+      "name": "Entire-owner prescribed partial extension",
+      "statement": "For each partial isomorphism p_i on A_i0 and each compatible delta_i in FULL Aut(B_i), one alpha_i in Aut(D_i) agrees with p_i and induces delta_i on every B_i point.",
+      "source": {
+        "file": "sections/rooted_main/01_joint_owner_homogeneity.tex",
+        "anchor": "EVERY compatible partial"
+      },
+      "notes": "N07",
+      "depends_on": [
+        "A11"
+      ]
+    },
+    {
+      "id": "D10",
+      "name": "Actual source theorem versus finite assembly",
+      "statement": "The source theorem identifies W with an induced subset of X by actual CRT and RAW fine colours, then instantiates the abstract carrier/group/point/EPPA conclusions. Its own statement imposes no MI property on the C_i.",
+      "source": {
+        "file": "sections/rooted_main/01_joint_owner_homogeneity.tex",
+        "anchor": "\\label{lem:acf-multi-owner-point-homogeneity}"
+      },
+      "notes": "N08",
+      "depends_on": [
+        "D01",
+        "D03"
+      ]
+    },
+    {
+      "id": "D11",
+      "name": "Exceptional-root synchronization request",
+      "statement": "An exceptional coordinate automorphism is GIVEN first. Lift its entire owner component together with the joint root-owner pair, then choose the other point motions. The exceptional map must remain exactly the given map.",
+      "source": {
+        "file": "sections/rooted_main/02_rank_relative_rooted_induction.tex",
+        "anchor": "Let its owner component be"
+      },
+      "notes": "N09",
+      "depends_on": [
+        "A12"
+      ]
+    },
+    {
+      "id": "D12",
+      "name": "Compatible target set",
+      "statement": "T={w in W: pi_i(w) in A_i for every i}. The generic root consumer proves alpha(Z) subset T and alpha(z) in A0. Identifying T with actual acl_X(A0) is a separate later geometry obligation.",
+      "source": {
+        "file": "sections/rooted_main/02_rank_relative_rooted_induction.tex",
+        "anchor": "\\label{eq:acf-target-product}"
+      },
+      "notes": "N09",
+      "depends_on": [
+        "A12"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "name": "Commuting owner comparison data",
+      "statement": "Each actual owner tuple from B passes all pairwise comparison tests. Joint injectivity of the beta_i follows from Hstar=meet_i H_i, not from a chosen group section. In the abstract carrier proof these facts are supplied by A02.",
+      "depends_on": [
+        "A02",
+        "D02"
+      ],
+      "notes": "N01",
+      "source_labels": [
+        "lem:acf-multi-owner-point-homogeneity"
+      ],
+      "scope": "finite_assembly",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C02",
+      "name": "Simultaneously empty finite system",
+      "statement": "If B is empty, its projected B_i are empty and maps D_i->B_i force all D_i empty. Because I is nonempty, W is empty. All full finite groups and the matching group are trivial; empty-input EPPA and all point assertions hold directly, without applying the nonempty I04 criterion.",
+      "depends_on": [
+        "A01",
+        "A02",
+        "A04",
+        "D03"
+      ],
+      "notes": "N02",
+      "source_labels": [
+        "lem:acf-multi-owner-point-homogeneity"
+      ],
+      "scope": "finite_assembly",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C03",
+      "name": "Exact owner-fibre description",
+      "statement": "For each w in W the owner tuple is compatible; A03 supplies a unique b in B. Conversely every independent tuple x_i in D_i(beta_i(b)) belongs to W. Hence W is the disjoint union over b in B of these FULL fibre products, and q is a well-defined canonical map.",
+      "depends_on": [
+        "C01",
+        "D03",
+        "A03"
+      ],
+      "notes": "N02",
+      "source_labels": [
+        "lem:acf-multi-owner-point-homogeneity"
+      ],
+      "scope": "finite_assembly",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C04",
+      "name": "Joint owner map is onto",
+      "statement": "For each b in B choose one x_i above beta_i(b) using A04 and finite choice. Their tuple lies in W and has owner b. In particular W is nonempty iff B is nonempty. No coordinate group action or EPPA provider is used.",
+      "depends_on": [
+        "C03",
+        "A01",
+        "A04"
+      ],
+      "notes": "N02",
+      "source_labels": [
+        "lem:acf-multi-owner-point-homogeneity"
+      ],
+      "scope": "finite_assembly",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C05",
+      "name": "Every coordinate map is onto without finite owner fullness",
+      "statement": "Given x_i, choose b in B above o_i(x_i) using the actual image beta_i, then choose all other x_j above beta_j(b). C01 makes the tuple compatible, so its coordinate i is x_i. This proof does not need A03.",
+      "depends_on": [
+        "C01",
+        "A01",
+        "A02",
+        "A04",
+        "D03"
+      ],
+      "notes": "N02",
+      "source_labels": [
+        "lem:acf-multi-owner-point-homogeneity"
+      ],
+      "scope": "finite_assembly",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C06",
+      "name": "Actual coordinate CRT matches the declared tuple carrier",
+      "statement": "I01/I02 identify X/meet_i C_i with all coordinate tuples tested in X/(C_i join C_j). JOG changes exactly these tests to the D02 owner tests. Since meet_i C_i=Id, the restricted full finite W is canonically an actual subset of X. No fine-colour conclusion is inferred yet.",
+      "depends_on": [
+        "A08",
+        "A09",
+        "A10",
+        "I01",
+        "I02",
+        "D03"
+      ],
+      "notes": "N03",
+      "source_labels": [
+        "lem:acf-multi-owner-point-homogeneity"
+      ],
+      "scope": "actual_source",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C07",
+      "name": "Actual owner coordinates separate the joint owner sort",
+      "statement": "The map Omega=X/Hstar->product_i O_i is injective because equality of all H_i classes is Hstar equality. Restricted to B its images are exactly B_i and jointly separate B; the finite full-owner clause is still an independent hypothesis.",
+      "depends_on": [
+        "A09",
+        "D01"
+      ],
+      "notes": "N03",
+      "source_labels": [
+        "lem:acf-multi-owner-point-homogeneity"
+      ],
+      "scope": "actual_source",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C08",
+      "name": "Actual quotient kernels and every pair colour are recognizable",
+      "statement": "For each relevant canonical quotient map, kernel and each target pair orbital have pullbacks that are unions of the named fine source orbitals. Restricting to any induced finite subset preserves that description. Thus all finite quotient actions and projected partial maps have the operational A05 data; no global lift or countability is used.",
+      "depends_on": [
+        "A08",
+        "A09",
+        "C06",
+        "C07"
+      ],
+      "notes": "N03",
+      "source_labels": [
+        "lem:acf-multi-owner-point-homogeneity"
+      ],
+      "scope": "actual_source",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C09",
+      "name": "All coordinate orbitals recover the original fine colour",
+      "statement": "For actual x,y the coordinate colour tuple gives the membership of (x,y) in every C_i;a;C_i for a representative original atom a. I03 and meet C_i=Id recover precisely a, including coincident-coordinate/real-diagonal cases. This supplies A06 on the realized W; it is not a carrier CRT proof.",
+      "depends_on": [
+        "A08",
+        "A09",
+        "I03"
+      ],
+      "notes": "N03",
+      "source_labels": [
+        "lem:acf-multi-owner-point-homogeneity"
+      ],
+      "scope": "actual_source",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C10",
+      "name": "Recognizable quotient descent for automorphisms and partial maps",
+      "statement": "An automorphism of an induced finite source preserves the recognized quotient kernel, descends to a bijection of its onto quotient image, and preserves all quotient pair colours. The same proof on a partial domain yields a genuine partial automorphism of its image domain. Induced identities, composition and inverses commute with descent.",
+      "depends_on": [
+        "A05"
+      ],
+      "notes": "N04",
+      "source_labels": [
+        "lem:acf-multi-owner-point-homogeneity"
+      ],
+      "scope": "finite_assembly",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C11",
+      "name": "Canonical full owner-action homomorphisms",
+      "statement": "Apply C10 to D_i->B_i and B->B_i. The maps own_i:Aut(D_i)->Aut(B_i) and rho_i:Gamma->Aut(B_i) are well-defined homomorphisms on ALL target points and satisfy the canonical equivariance equations. Individual rho_i need not be onto.",
+      "depends_on": [
+        "C10",
+        "A02",
+        "A04",
+        "D05"
+      ],
+      "notes": "N04",
+      "source_labels": [
+        "lem:acf-multi-owner-point-homogeneity"
+      ],
+      "scope": "finite_assembly",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C12",
+      "name": "Every actual W automorphism gives one matching group element",
+      "statement": "C04/C05 make all projections onto; C10 descends every alpha in FULL Aut(W) to all alpha_i and one gamma in Gamma. The commuting square proves own_i(alpha_i)=rho_i(gamma) on ALL B_i, not only at one owner. The coordinate tuple determines alpha pointwise.",
+      "depends_on": [
+        "C04",
+        "C05",
+        "C10",
+        "C11"
+      ],
+      "notes": "N05",
+      "source_labels": [
+        "lem:acf-multi-owner-point-homogeneity"
+      ],
+      "scope": "finite_assembly",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C13",
+      "name": "The common full owner action is unique",
+      "statement": "If gamma,gamma_prime in Gamma induce the same actions on every B_i, then beta_i(gamma(b))=beta_i(gamma_prime(b)) for every b,i. Joint injectivity makes gamma=gamma_prime, including the empty case. Thus forgetting gamma from the matching subgroup is injective.",
+      "depends_on": [
+        "A02",
+        "C11",
+        "D06"
+      ],
+      "notes": "N05",
+      "source_labels": [
+        "lem:acf-multi-owner-point-homogeneity"
+      ],
+      "scope": "finite_assembly",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C14",
+      "name": "Matching actions preserve the full carrier with inverse",
+      "statement": "For a matching (gamma,(alpha_i)) and w above b, its coordinatewise image has owner tuple beta_i(gamma(b)) and belongs to FULL W. The inverse tuple matches gamma inverse, so the coordinatewise map is a bijection with that inverse, independently of fine-colour reconstruction.",
+      "depends_on": [
+        "C03",
+        "C11",
+        "D06"
+      ],
+      "notes": "N05",
+      "source_labels": [
+        "lem:acf-multi-owner-point-homogeneity"
+      ],
+      "scope": "finite_assembly",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C15",
+      "name": "Matching coordinate maps preserve all fine colours",
+      "statement": "The bijection in C14 preserves every D_i pair colour. By A06 it therefore preserves each named W fine colour, including equality, and is an automorphism of the declared FULL induced W. This is the only extra language input in the converse group direction.",
+      "depends_on": [
+        "C14",
+        "A06"
+      ],
+      "notes": "N05",
+      "source_labels": [
+        "lem:acf-multi-owner-point-homogeneity"
+      ],
+      "scope": "finite_assembly",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C16",
+      "name": "Natural full JWA group isomorphism",
+      "statement": "Descent and coordinate assembly are inverse group homomorphisms between FULL Aut(W) and the matching subgroup P. C13 gives the source existential-tuple presentation with UNIQUE gamma; neither direction chooses a section Gamma->Aut(W).",
+      "depends_on": [
+        "C12",
+        "C13",
+        "C15",
+        "D06"
+      ],
+      "notes": "N05",
+      "source_labels": [
+        "lem:acf-multi-owner-point-homogeneity"
+      ],
+      "scope": "finite_assembly",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C17",
+      "name": "Every prescribed joint-owner point request is realized",
+      "statement": "For gamma(q(x))=q(y), apply A07 independently to each (x_i,y_i,rho_i(gamma)). These alpha_i share EXACT entire owner components of that SAME gamma; C16 assembles them to one alpha with alpha(x)=y and owner action gamma.",
+      "depends_on": [
+        "C16",
+        "A07",
+        "D07"
+      ],
+      "notes": "N06",
+      "source_labels": [
+        "lem:acf-multi-owner-point-homogeneity"
+      ],
+      "scope": "finite_assembly",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C18",
+      "name": "Onto full joint-owner action and fibre-transitive kernel",
+      "statement": "If B is nonempty then C04 makes W nonempty and onto; C17 plus shared I04 gives Aut(W)->Gamma onto with fibre-transitive kernel. If B is empty use C02 directly. No individual rho_i surjectivity, finiteness of an ambient source, EPPA or section is needed.",
+      "depends_on": [
+        "C02",
+        "C04",
+        "C17",
+        "I04"
+      ],
+      "notes": "N06",
+      "source_labels": [
+        "lem:acf-multi-owner-point-homogeneity"
+      ],
+      "scope": "finite_assembly",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C19",
+      "name": "Sparse original partial maps project genuinely",
+      "statement": "For any finite A0 subset W and partial automorphism p of A0, C10 gives projected p_B and p_i on the images of its actual domain. Their kernels and colour preservation include quotient diagonals. The projected owner actions agree on every point in each projected partial domain.",
+      "depends_on": [
+        "C10",
+        "D08"
+      ],
+      "notes": "N07",
+      "source_labels": [
+        "lem:acf-multi-owner-point-homogeneity"
+      ],
+      "scope": "finite_assembly",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C20",
+      "name": "Extend one owner partial map before all coordinate maps",
+      "statement": "Under A11 extend p_B to gamma in Gamma; for every i the entire action rho_i(gamma) is compatible with p_i. Invoke the prescribed-owner partial extension for that p_i and that delta_i to obtain alpha_i. All coordinate partial maps, including ones not originally induced from a real p, are covered by the hypothesis.",
+      "depends_on": [
+        "C11",
+        "C19",
+        "A11",
+        "D09"
+      ],
+      "notes": "N07",
+      "source_labels": [
+        "lem:acf-multi-owner-point-homogeneity"
+      ],
+      "scope": "finite_assembly",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C21",
+      "name": "Independent sparse-input EPPA assembly",
+      "statement": "The tuple from C20 matches the same gamma, so C16 assembles one automorphism of W. It agrees with p in every coordinate and hence on the original A0 domain. Thus W is ordinary EPPA for A0 under A11, with NO use of A07 or the C17/C18 point branch. Empty input requests remain covered and no coherent assignment is exported.",
+      "depends_on": [
+        "C16",
+        "C20"
+      ],
+      "notes": "N07",
+      "source_labels": [
+        "lem:acf-multi-owner-point-homogeneity"
+      ],
+      "scope": "finite_assembly",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C22",
+      "name": "Instantiate the complete original joint-owner source theorem",
+      "statement": "The actual carrier C06 and owner coordinates C07, canonical recognizers C08 and RAW recovery C09 discharge the finite core data. Apply C02-C18 to obtain the actual finite induced W, onto projections, full JWA and prescribed joint-owner point motion. The source optional EPPA clause is C19-C21 with its separate A11 arguments. No MI property, owner-master, rooted theorem or ordinary EPPA provider is imported to prove this conditional source lemma.",
+      "depends_on": [
+        "A08",
+        "A09",
+        "A10",
+        "C02",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C16",
+        "C17",
+        "C18",
+        "C21"
+      ],
+      "notes": "N08",
+      "source_labels": [
+        "lem:acf-multi-owner-point-homogeneity"
+      ],
+      "scope": "actual_source",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C23",
+      "name": "Choose one original target point from the exceptional root",
+      "statement": "Under A12, alpha_e(z_e) lies in A_e0=pi_e(A0); choose ONE a in A0 with that e-coordinate. Let b=q(z),c=q(a),delta_e=own_e(alpha_e). Then delta_e(beta_e(b))=beta_e(c). Choosing unrelated a_j from the marginal inputs would not suffice.",
+      "depends_on": [
+        "A12",
+        "C03",
+        "C11",
+        "D11"
+      ],
+      "notes": "N09",
+      "source_labels": [
+        "lem:acf-rank-step"
+      ],
+      "scope": "root_consumer",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C24",
+      "name": "Lift both the given exceptional component and the full root owner",
+      "statement": "Use the nonempty equivariant onto beta_e:B->B_e and its supplied M3 data in A12. Shared I04 yields gamma in FULL Gamma with rho_e(gamma)=delta_e and gamma(b)=c. This step does not modify alpha_e and needs no group section.",
+      "depends_on": [
+        "C23",
+        "A12",
+        "I04"
+      ],
+      "notes": "N09",
+      "source_labels": [
+        "lem:acf-rank-step"
+      ],
+      "scope": "root_consumer",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C25",
+      "name": "Complete the given exceptional map by other prescribed points",
+      "statement": "For each j other than e, A07 supplies alpha_j with owner rho_j(gamma) and alpha_j(z_j)=pi_j(a). Keep the originally GIVEN alpha_e. All these full finite automorphisms match the same gamma, so C16 assembles them and sends z exactly to that original a.",
+      "depends_on": [
+        "C16",
+        "C24",
+        "A07"
+      ],
+      "notes": "N09",
+      "source_labels": [
+        "lem:acf-rank-step"
+      ],
+      "scope": "root_consumer",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C26",
+      "name": "Transport the clique into the compatible finite target",
+      "statement": "For j not e, invariance of F_j gives alpha_j(pi_j Z) subset F_j[pi_j(a)] subset A_j. The exceptional map already takes its whole projection into A_e. C25 thus sends Z into T and its root into A0. No claim T=acl_X(A0), safe palette construction or rank induction is proved by this support lemma.",
+      "depends_on": [
+        "C25",
+        "A12",
+        "D12"
+      ],
+      "notes": "N09",
+      "source_labels": [
+        "lem:acf-rank-step"
+      ],
+      "scope": "root_consumer",
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C27",
+      "name": "Finite premise diagnostics have bounded scope",
+      "statement": "Actual finite colour structures test full group equality, prescribed points, sparse partial extensions, empty/singleton/repeated indices and a nonsplit quotient. Missing JOG/full-owner/fine-readout/provider premises are tested by deliberate finite failures. They do not certify CCO, ambient exactness, the infinite provider theorem, or rooted/global EPPA.",
+      "depends_on": [
+        "A01"
+      ],
+      "notes": "N10",
+      "source_labels": [
+        "lem:acf-multi-owner-point-homogeneity"
+      ],
+      "scope": "diagnostic",
+      "status": "HUMAN_PROOF_EXPANDED"
+    }
+  ],
+  "exports": [
+    {
+      "source_label": "lem:acf-multi-owner-point-homogeneity",
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22"
+      ]
+    }
+  ],
+  "auxiliary_exports": [
+    {
+      "source_label": "eq:acf-joint-owner-join-gate",
+      "source": {
+        "file": "sections/rooted_main/01_joint_owner_homogeneity.tex",
+        "anchor": "\\label{eq:acf-joint-owner-join-gate}"
+      },
+      "claims": [
+        "C06"
+      ]
+    },
+    {
+      "source_label": "eq:acf-joint-owner-full-witness",
+      "source": {
+        "file": "sections/rooted_main/01_joint_owner_homogeneity.tex",
+        "anchor": "\\label{eq:acf-joint-owner-full-witness}"
+      },
+      "claims": [
+        "C03",
+        "C04",
+        "C05",
+        "C06"
+      ]
+    },
+    {
+      "source_label": "eq:acf-joint-owner-automorphisms",
+      "source": {
+        "file": "sections/rooted_main/01_joint_owner_homogeneity.tex",
+        "anchor": "\\label{eq:acf-joint-owner-automorphisms}"
+      },
+      "claims": [
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "T01",
+      "name": "Full compatible carriers and actual CRT realization",
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Prove the conditional finite carrier lemmas and source geometry separately; retain both onto maps, finite owner fullness, JOG and real equality."
+    },
+    {
+      "id": "T02",
+      "name": "Recognizable quotient maps and full finite group identity",
+      "claims": [
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16"
+      ],
+      "depends_on": [
+        "T01"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Descend full and partial maps using kernels AND pair colours; prove both directions of JWA and unique full owner component, with group laws."
+    },
+    {
+      "id": "T03",
+      "name": "Prescribed points and independent sparse EPPA",
+      "claims": [
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22"
+      ],
+      "depends_on": [
+        "T01",
+        "T02"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Handle empty owners separately, invoke shared nonempty point criterion, and prove sparse EPPA without point-transitivity assumptions. Instantiate exactly the source lemma."
+    },
+    {
+      "id": "T04",
+      "name": "Given exceptional map synchronization and premise controls",
+      "claims": [
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27"
+      ],
+      "depends_on": [
+        "T01",
+        "T02"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Keep the exceptional automorphism fixed while lifting its full owner component and root; prove the generic compatible-target transfer, without asserting the rank/global theorem. Retain finite diagnostic limits."
+    }
+  ],
+  "control_script": "tools/check_joint_owner_controls.py",
+  "controls": [
+    {
+      "id": "R01",
+      "check": "Actual all-difference finite quotient structures with one through four coordinates, linear changes of basis, repeated kernels, proper induced and empty witnesses; full finite automorphism identity and all compatible point requests."
+    },
+    {
+      "id": "R02",
+      "check": "Sparse induced original inputs and every colour-preserving partial map, entire-owner prescribed extensions and coordinate assembly."
+    },
+    {
+      "id": "R03",
+      "check": "Nonsplit C4->C2 quotient action and all prescribed point requests; no section is assumed."
+    },
+    {
+      "id": "R04",
+      "check": "Deliberately missing JOG, finite owner fullness, full carrier, fine-colour reconstruction, shared owner action and onto local providers produce the specified failures; these are not CCO counterexamples."
+    },
+    {
+      "id": "R05",
+      "check": "Twenty-two conditional exceptional-root transports keep a given nonidentity coordinate automorphism unchanged on its ENTIRE factor, move a two-point set into literal compatible coordinate targets and send its selected root to ONE original input point. No acl identification is tested."
+    }
+  ],
+  "article_feedback_intro": "All entries are queued for a later human-article pass; formalization detail stays in this sidecar. The optional rank support claims do not promote the source-relative rooted/global candidate.",
+  "article_feedback": [
+    {
+      "id": "F01",
+      "kind": "PROOF_EXPANSION_OR_SCOPE_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/rooted_main/01_joint_owner_homogeneity.tex",
+        "anchor": "\\label{lem:acf-multi-owner-point-homogeneity}"
+      },
+      "finding": "The title mentions an MI witness, but the proof and hypotheses only require a finite exact kernel family; meet-irreducibility is not used.",
+      "proposed_article_change": "Describe the reusable assembly theorem for arbitrary finite exact kernels, retaining the current statement as a special reading.",
+      "caller_effect": "No numbered theorem conclusion or human source is changed. The rank consumer must retain finite owner fullness, full finite JWA and its separate provider hypotheses.",
+      "proof_claims": [
+        "C06",
+        "C09",
+        "C22"
+      ]
+    },
+    {
+      "id": "F02",
+      "kind": "PROOF_EXPANSION_OR_SCOPE_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/rooted_main/01_joint_owner_homogeneity.tex",
+        "anchor": "the full set of compatible"
+      },
+      "finding": "Ambient exact CRT does not imply fullness of the CHOSEN finite owner witness. Individual finite projections can be onto while compatible owner tuples are omitted.",
+      "proposed_article_change": "Keep finite owner fullness adjacent to JOG and distinguish it from ambient CRT.",
+      "caller_effect": "No numbered theorem conclusion or human source is changed. The rank consumer must retain finite owner fullness, full finite JWA and its separate provider hypotheses.",
+      "proof_claims": [
+        "C03",
+        "C04",
+        "C05",
+        "C06"
+      ]
+    },
+    {
+      "id": "F03",
+      "kind": "PROOF_EXPANSION_OR_SCOPE_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/rooted_main/01_joint_owner_homogeneity.tex",
+        "anchor": "Their quotient pair orbitals are preserved"
+      },
+      "finding": "Full Aut descent uses every quotient pair colour as well as its kernel; the same mechanism gives sparse partial-map projection, including diagonals.",
+      "proposed_article_change": "State the reusable recognizable-quotient contract once and cite it in both group and EPPA branches.",
+      "caller_effect": "No numbered theorem conclusion or human source is changed. The rank consumer must retain finite owner fullness, full finite JWA and its separate provider hypotheses.",
+      "proof_claims": [
+        "C08",
+        "C10",
+        "C11",
+        "C12",
+        "C19"
+      ]
+    },
+    {
+      "id": "F04",
+      "kind": "PROOF_EXPANSION_OR_SCOPE_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/rooted_main/01_joint_owner_homogeneity.tex",
+        "anchor": "The ENTIRE automorphism group"
+      },
+      "finding": "The full JWA identity is needed to assemble a preexisting exceptional map in the rank consumer. Point homogeneity alone is not the required replacement API.",
+      "proposed_article_change": "Keep the full group identity prominent, with the common-owner subgroup as pairs before omitting its unique owner component.",
+      "caller_effect": "No numbered theorem conclusion or human source is changed. The rank consumer must retain finite owner fullness, full finite JWA and its separate provider hypotheses.",
+      "proof_claims": [
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C25",
+        "C26"
+      ]
+    },
+    {
+      "id": "F05",
+      "kind": "PROOF_EXPANSION_OR_SCOPE_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/rooted_main/01_joint_owner_homogeneity.tex",
+        "anchor": "If in addition the"
+      },
+      "finding": "The optional sparse EPPA branch requires partial-map providers but no prescribed-point hypothesis. Individual rho_i surjectivity is unnecessary in the core theorem.",
+      "proposed_article_change": "Separate the EPPA branch from the point-kernel branch in a future concise human rewrite.",
+      "caller_effect": "No numbered theorem conclusion or human source is changed. The rank consumer must retain finite owner fullness, full finite JWA and its separate provider hypotheses.",
+      "proof_claims": [
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21"
+      ]
+    }
+  ],
+  "review": {
+    "date": "2026-10-27",
+    "method": "Independent actual-source and rank-consumer model audits, parent synthesis and actual finite relation/action diagnostics. Not independent human certification or Lean proof.",
+    "required_mathematical_repairs_found": 0,
+    "remaining": "Receiving projects implement the source geometry and finite maps. Rooted/global conclusions still depend on separate maximal-core/closure, normalized relative MI augmented selector/reservoir/decoder and finite exact reconstruction obligations."
+  },
+  "overview_mermaid": [
+    "flowchart TD",
+    "  C[\"Exact CRT and JOG\"] --> W[\"Full finite tuple carrier\"]",
+    "  Q[\"Recognizable quotients and fine-colour recovery\"] --> G[\"Entire finite JWA group\"]",
+    "  W --> G",
+    "  G --> P[\"Prescribed joint-owner points\"]",
+    "  G --> E[\"Independent sparse EPPA\"]",
+    "  G --> R[\"Given exceptional map and root\"]",
+    "  R --> T[\"Compatible finite target\"]"
+  ],
+  "overview_notes": [
+    "The actual source supplies CRT and fine-colour recovery separately. The finite group identity imports neither an owner master nor a rooted theorem. Point lifting and partial-map EPPA are independent consumers. C23-C26 are conditional support for the rank step, not an export of the full rank theorem."
+  ],
+  "dependency_firewalls": [
+    {
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27"
+      ],
+      "forbid": [
+        "A08",
+        "A09",
+        "A10",
+        "I01",
+        "I02",
+        "I03",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C22"
+      ]
+    },
+    {
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16"
+      ],
+      "forbid": [
+        "A07",
+        "A11",
+        "A12",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C23",
+        "C24",
+        "C25",
+        "C26"
+      ]
+    },
+    {
+      "claims": [
+        "C05"
+      ],
+      "forbid": [
+        "A03",
+        "C03",
+        "C04"
+      ]
+    },
+    {
+      "claims": [
+        "C19",
+        "C20",
+        "C21"
+      ],
+      "forbid": [
+        "A07",
+        "A12",
+        "C17",
+        "C18",
+        "C23",
+        "C24",
+        "C25",
+        "C26"
+      ]
+    },
+    {
+      "claims": [
+        "C17",
+        "C18"
+      ],
+      "forbid": [
+        "A11",
+        "A12",
+        "C19",
+        "C20",
+        "C21",
+        "C23",
+        "C24",
+        "C25",
+        "C26"
+      ]
+    },
+    {
+      "claims": [
+        "C23",
+        "C24",
+        "C25",
+        "C26"
+      ],
+      "forbid": [
+        "A11",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22"
+      ]
+    },
+    {
+      "claims": [
+        "C09"
+      ],
+      "forbid": [
+        "I01",
+        "I02",
+        "A10",
+        "C06"
+      ]
+    }
+  ]
+}
