@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 223,
+  "revision": 224,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -1410,6 +1410,10 @@
       "state": "IN_PROGRESS",
       "owner_project_id": 3,
       "author_actor_ids": [
+        "/root/b023_mi",
+        "/root/b023_mi/finite_gates",
+        "/root/b023_mi/moving_readings",
+        "/root/external12",
         "root"
       ],
       "original_author_project_ids": [
@@ -5752,6 +5756,23 @@
           "conclusion": "success",
           "axiom_audit": "allowlist"
         },
+        "actor_id": "root"
+      }
+    },
+    {
+      "revision": 224,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "record_authorship",
+      "package_id": "B027",
+      "details": {
+        "package_id": "B027",
+        "author_actor_ids": [
+          "/root/b023_mi",
+          "/root/b023_mi/moving_readings",
+          "/root/b023_mi/finite_gates",
+          "/root/external12"
+        ],
         "actor_id": "root"
       }
     }
