@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 127,
+  "revision": 128,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -853,6 +853,7 @@
       "state": "IN_PROGRESS",
       "owner_project_id": 3,
       "author_actor_ids": [
+        "/root/b018_owners",
         "root"
       ],
       "original_author_project_ids": [
@@ -3338,6 +3339,20 @@
               "/root/b014_normalization/twin_example"
             ]
           }
+        ],
+        "actor_id": "root"
+      }
+    },
+    {
+      "revision": 128,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "record_authorship",
+      "package_id": "B018",
+      "details": {
+        "package_id": "B018",
+        "author_actor_ids": [
+          "/root/b018_owners"
         ],
         "actor_id": "root"
       }
