@@ -90,5 +90,20 @@ theorem source_fine_complete {x y : SourceCarrier S H R B} (hxy : x ≠ y) :
   | none => exact False.elim (hn hc)
   | some a => exact ⟨a,hc⟩
 
+/-- In the ACTUAL named source, functional closure is precisely closure
+under whole original F packets, not just closure of bare singletons. -/
+theorem source_closed_iff_full_packets (A : Set (SourceCarrier S H R B)) :
+    (sourceStructure S H R B hB).IsClosed A ↔
+      ∀ x ∈ A, ∀ y, finitePacket S H x.down.val y.down.val → y ∈ A := by
+  rw [sourceStructure,isClosed_encode_iff]
+  constructor
+  · intro hc x hx y hxy
+    obtain ⟨g,hg⟩ := (packetPoint_range S H R B hB x.down ▸ hxy : y.down ∈ Set.range (fun g => packetPoint S H R B hB g x.down))
+    have he : (sourceData S H R B hB).move g x = y := ULift.ext _ _ hg
+    exact he ▸ hc g x hx
+  · intro hc g x hx
+    exact hc x hx ((sourceData S H R B hB).move g x)
+      (translation_in_packet S (finitePacket S H) G g x.down.val)
+
 end
 end CCO.HKNReservoir

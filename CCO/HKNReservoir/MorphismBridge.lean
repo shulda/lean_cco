@@ -109,4 +109,20 @@ def toAutomorphism (f : ExactAut tag D) : Structure.Automorphism (action tag) (e
   target_eq_univ := rfl
 end ExactAut
 
+/-- A total external automorphism yields its genuine bijection and exact embedding. -/
+def automorphismPerm {D : Structure (Signature B K Atom) V}
+    (σ : Structure.Automorphism (action tag) D) : Equiv.Perm V where
+  toFun := σ
+  invFun := σ.toPartialIsomorphism.toPartialEquiv.symm
+  left_inv x := σ.toPartialIsomorphism.left_inv (by rw [σ.source_eq_univ]; trivial)
+  right_inv x := σ.toPartialIsomorphism.right_inv (by rw [σ.target_eq_univ]; trivial)
+
+def automorphismEmbedding {D : Structure (Signature B K Atom) V}
+    (σ : Structure.Automorphism (action tag) D) : Structure.Embedding (action tag) D D where
+  lang := σ.lang
+  toFun := σ
+  injective := (automorphismPerm tag σ).injective
+  map_rel_iff := fun R xs => σ.toPartialIsomorphism.map_rel_iff R xs (by intro i; change xs i ∈ σ.toPartialIsomorphism.source; rw [σ.source_eq_univ]; trivial)
+  map_func := fun F xs => σ.toPartialIsomorphism.map_func F xs (by intro i; change xs i ∈ σ.toPartialIsomorphism.source; rw [σ.source_eq_univ]; trivial)
+
 end CCO.HKNReservoir

@@ -92,5 +92,22 @@ theorem source_embedding_colour (f : Structure.Embedding (sourceAction S H R B �
       cases hh
   | some a => exact (hf a x y).mpr hs
 
+theorem finite_source_embedding_colour {A : Set (SourceCarrier S H R B)}
+    (hA : (sourceStructure S H R B hB).IsClosed A)
+    (f : Structure.Embedding (sourceAction S H R B Δ)
+      (encode (finiteSourceData S H R B hB A hA)) (sourceStructure S H R B hB)) (x y : A) :
+    col S (f x).down.val (f y).down.val = col S x.val.down.val y.val.down.val := by
+  have hf := (exactMapOfEmbedding (sourceTag S H R B Δ) f).fine
+  cases hs : col S x.val.down.val y.val.down.val with
+  | none =>
+    cases ht : col S (f x).down.val (f y).down.val with
+    | none => rfl
+    | some a =>
+      have hh := (hf a x y).mp ht
+      change col S x.val.down.val y.val.down.val = some a at hh
+      rw [hs] at hh
+      cases hh
+  | some a => exact (hf a x y).mpr hs
+
 end
 end CCO.HKNReservoir
