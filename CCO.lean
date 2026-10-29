@@ -711,3 +711,26 @@ import CCO.Owners.Master.StageActions
 import CCO.Owners.Master.StageData
 import CCO.Owners.Master.StepActionEquivalence
 import CCO.Owners.Master.UpsetSchedule
+
+import CCO.FiniteLift.Boundary
+import CCO.FiniteLift.Closure
+import CCO.FiniteLift.ClosureFull
+import CCO.FiniteLift.ClosureOrbit
+import CCO.FiniteLift.ClosureSource
+import CCO.FiniteLift.Consumers
+import CCO.FiniteLift.Join
+import CCO.FiniteLift.Kernel
+import CCO.FiniteLift.Mixed
+import CCO.FiniteLift.Ordinary
+import CCO.FiniteLift.OwnerBounds
+import CCO.FiniteLift.OwnerCorrection
+import CCO.FiniteLift.OwnerCover
+import CCO.FiniteLift.Palette
+import CCO.FiniteLift.Recognition
+import CCO.FiniteLift.RelativeRequests
+import CCO.FiniteLift.RelativeRoots
+import CCO.FiniteLift.SafeSpan
+import CCO.FiniteLift.SafeSpanBase
+import CCO.FiniteLift.Source
+import CCO.FiniteLift.ThreeSort
+import CCO.FiniteLift.WitnessBasics
