@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 387,
+  "revision": 388,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -3998,8 +3998,121 @@
       }
     },
     "B048": {
-      "state": "AVAILABLE",
-      "owner_project_id": null
+      "state": "IN_PROGRESS",
+      "owner_project_id": 3,
+      "author_actor_ids": [
+        "root"
+      ],
+      "original_author_project_ids": [
+        3
+      ],
+      "claim_revision": 388,
+      "base_main_sha": "787dd3b59e0405223a9b5870d562d2861c9f33d4",
+      "base_ci": {
+        "run_id": 41106937069,
+        "run_attempt": 1,
+        "head_sha": "787dd3b59e0405223a9b5870d562d2861c9f33d4",
+        "conclusion": "success",
+        "axiom_audit": "allowlist",
+        "job_id": 124239116416,
+        "tests": 130,
+        "declarations": 27280,
+        "guards": [
+          {
+            "parts": 1524,
+            "source": 1524
+          },
+          {
+            "parts": 1524,
+            "source": 1524
+          }
+        ],
+        "provider_guards": [
+          {
+            "parts": 269,
+            "source": 269,
+            "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+          },
+          {
+            "parts": 269,
+            "source": 269,
+            "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+          },
+          {
+            "parts": 269,
+            "source": 269,
+            "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+          },
+          {
+            "parts": 269,
+            "source": 269,
+            "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+          }
+        ],
+        "ramsey_guards": [
+          {
+            "parts": 106,
+            "source": 106,
+            "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+          },
+          {
+            "parts": 106,
+            "source": 106,
+            "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+          },
+          {
+            "parts": 106,
+            "source": 106,
+            "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+          },
+          {
+            "parts": 106,
+            "source": 106,
+            "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+          }
+        ],
+        "build_jobs": [
+          1330,
+          1182,
+          4198,
+          4198,
+          6
+        ],
+        "fresh_cco_modules": [
+          "CCO.PairSafeSplit.Full.Closure",
+          "CCO.PairSafeSplit.Infinity.TypeFibres",
+          "CCO.PairSafeSplit.Full.Factorisation",
+          "CCO.PairSafeSplit.Full.EPP",
+          "CCO.PairSafeSplit.StrongSaturation",
+          "CCO.PairSafeSplit.Terminal.OrbitCriterion",
+          "CCO.PairSafeSplit.Strong.WordFamily",
+          "CCO.PairSafeSplit.SAP.Gates",
+          "CCO.PairSafeSplit.Strong.NoOrthogonal",
+          "CCO.PairSafeSplit.Infinity.MarkedFibres",
+          "CCO.PairSafeSplit.Strong.ExtraIdentity",
+          "CCO.PairSafeSplit.Full.Gates",
+          "CCO.PairSafeSplit.Infinity.OldWitnesses",
+          "CCO.PairSafeSplit.SAP.Markings",
+          "CCO.PairSafeSplit.Infinity.Definability",
+          "CCO.PairSafeSplit.Strong.Primality",
+          "CCO.PairSafeSplit.Terminal.TypeReflection",
+          "CCO.PairSafeSplit.Strong.Realization",
+          "CCO.PairSafeSplit.Terminal.Current",
+          "CCO.PairSafeSplit.SAP.Source",
+          "CCO.PairSafeSplit.Strong.RealizationAtoms",
+          "CCO.PairSafeSplit.Strong.RealizationTriangles",
+          "CCO.PairSafeSplit.Strong.PathSyntax",
+          "CCO.PairSafeSplit.Terminal.Readout",
+          "CCO.PairSafeSplit.Terminal.Successor",
+          "CCO.PairSafeSplit.Strong.NormalForm",
+          "CCO.PairSafeSplit.Terminal.Elimination",
+          "CCO.PairSafeSplit.Strong.FullClass",
+          "CCO.PairSafeSplit.Strong.Calculus",
+          "CCO.PairSafeSplit.Strong.Sufficiency",
+          "CCO.PairSafeSplit.Source"
+        ],
+        "url": "https://github.com/shulda/lean_cco/actions/runs/41106937069"
+      }
     }
   },
   "integration_lock": null,
@@ -13496,6 +13609,123 @@
         "package_id": "B047",
         "integration_commit": "787dd3b59e0405223a9b5870d562d2861c9f33d4",
         "main_ci": {
+          "run_id": 41106937069,
+          "run_attempt": 1,
+          "head_sha": "787dd3b59e0405223a9b5870d562d2861c9f33d4",
+          "conclusion": "success",
+          "axiom_audit": "allowlist",
+          "job_id": 124239116416,
+          "tests": 130,
+          "declarations": 27280,
+          "guards": [
+            {
+              "parts": 1524,
+              "source": 1524
+            },
+            {
+              "parts": 1524,
+              "source": 1524
+            }
+          ],
+          "provider_guards": [
+            {
+              "parts": 269,
+              "source": 269,
+              "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+            },
+            {
+              "parts": 269,
+              "source": 269,
+              "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+            },
+            {
+              "parts": 269,
+              "source": 269,
+              "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+            },
+            {
+              "parts": 269,
+              "source": 269,
+              "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+            }
+          ],
+          "ramsey_guards": [
+            {
+              "parts": 106,
+              "source": 106,
+              "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+            },
+            {
+              "parts": 106,
+              "source": 106,
+              "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+            },
+            {
+              "parts": 106,
+              "source": 106,
+              "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+            },
+            {
+              "parts": 106,
+              "source": 106,
+              "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+            }
+          ],
+          "build_jobs": [
+            1330,
+            1182,
+            4198,
+            4198,
+            6
+          ],
+          "fresh_cco_modules": [
+            "CCO.PairSafeSplit.Full.Closure",
+            "CCO.PairSafeSplit.Infinity.TypeFibres",
+            "CCO.PairSafeSplit.Full.Factorisation",
+            "CCO.PairSafeSplit.Full.EPP",
+            "CCO.PairSafeSplit.StrongSaturation",
+            "CCO.PairSafeSplit.Terminal.OrbitCriterion",
+            "CCO.PairSafeSplit.Strong.WordFamily",
+            "CCO.PairSafeSplit.SAP.Gates",
+            "CCO.PairSafeSplit.Strong.NoOrthogonal",
+            "CCO.PairSafeSplit.Infinity.MarkedFibres",
+            "CCO.PairSafeSplit.Strong.ExtraIdentity",
+            "CCO.PairSafeSplit.Full.Gates",
+            "CCO.PairSafeSplit.Infinity.OldWitnesses",
+            "CCO.PairSafeSplit.SAP.Markings",
+            "CCO.PairSafeSplit.Infinity.Definability",
+            "CCO.PairSafeSplit.Strong.Primality",
+            "CCO.PairSafeSplit.Terminal.TypeReflection",
+            "CCO.PairSafeSplit.Strong.Realization",
+            "CCO.PairSafeSplit.Terminal.Current",
+            "CCO.PairSafeSplit.SAP.Source",
+            "CCO.PairSafeSplit.Strong.RealizationAtoms",
+            "CCO.PairSafeSplit.Strong.RealizationTriangles",
+            "CCO.PairSafeSplit.Strong.PathSyntax",
+            "CCO.PairSafeSplit.Terminal.Readout",
+            "CCO.PairSafeSplit.Terminal.Successor",
+            "CCO.PairSafeSplit.Strong.NormalForm",
+            "CCO.PairSafeSplit.Terminal.Elimination",
+            "CCO.PairSafeSplit.Strong.FullClass",
+            "CCO.PairSafeSplit.Strong.Calculus",
+            "CCO.PairSafeSplit.Strong.Sufficiency",
+            "CCO.PairSafeSplit.Source"
+          ],
+          "url": "https://github.com/shulda/lean_cco/actions/runs/41106937069"
+        },
+        "actor_id": "root"
+      }
+    },
+    {
+      "revision": 388,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "claim",
+      "package_id": "B048",
+      "details": {
+        "package_id": "B048",
+        "base_main_sha": "787dd3b59e0405223a9b5870d562d2861c9f33d4",
+        "base_ci": {
           "run_id": 41106937069,
           "run_attempt": 1,
           "head_sha": "787dd3b59e0405223a9b5870d562d2861c9f33d4",
