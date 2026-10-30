@@ -1,6 +1,6 @@
 # B047 — independent source review
 
-Disposition: **PENDING: selected-original-parity linkage C41; exact final CI and formal lease.**
+Disposition: **WHOLE MATHEMATICAL SOURCE PASS at native `33aeb246025550d51035460821dde090f330e483`; formal approval PENDING final documentation, public exact-head CI and genuine lease.**
 
 Reviewer is the actual registered actor `/root/independent_review`, role
 `independent_review`. I authored or designed none of this complete batch,
@@ -95,7 +95,7 @@ No arbitrary quotient-SAP transfer, finite opposite-kernel assumption,
 unaccepted B048 provider, later full-language/Ramsey result or new axiom
 is smuggled into the selected exports.
 
-## Open concrete finding
+## Initial concrete finding and actual repair
 
 The literal C41 contract requires the selected original parity relation
 O to lie in t*=K;O;K, detection of that same t* by the character, and hence
@@ -118,6 +118,58 @@ finding; it is not a claim that the independently proved SAP, RAW/STRONG
 algebra or termination arguments are false. Whole-batch source PASS and
 formal approval remain held until this original selected-layer linkage is
 established. Any actual source repair will be read once as a genuine delta.
+
+I subsequently read the actual native repair
+`0f80bd7f0986feea14b58e44d23aac0805d44d8f`, which changes only
+`Full/Gates.lean`, +47/−5 lines. The phase now constructs the actual
+detecting character while retaining the original maximal gate's odd arrow
+as its literal root-kernel cast. `phase_odd_rel` proves real-relation
+equality with that original arrow; `original_even_le_kernel` retains all
+original even pairs and `original_odd_le_phase` includes all original O
+pairs using the two reflexive K witnesses. `odd_sheet`, constructed by the
+actual original `source_odd_sheet` theorem in `exists_parity_gate`, lets
+`original_odd_walk_le_phase` retain every original positive odd-word pair.
+No new source premise or distinguished-arrow callback is introduced.
+This closes the `Full.ParityGateData` construction/API part of my finding.
+The actual selected split/history and canonical-source bit readout have
+not yet been supplied for delta review; C41/C43 whole-batch approval
+remains pending that connection and final exact CI. I did not rerun the
+reported 2,326-job narrow build.
+
+The next actual repair, native
+`f23aa9c9f90c03f4eb56f9b613e5a2d12dfd3ea1`, changes only
+`Terminal/Readout.lean` and `Terminal/Elimination.lean`, +161/−14 lines.
+I read that delta once. `Readout.original_even`, `original_odd` and
+`original_odd_walk` prove the original Y/O and positive-odd-word bit
+equations on the SAME `D.phase` and canonical identification. `SelectedStep`
+retains the actual original D and a literal target equality to the
+successor of that phase. Its `toActualStep` transports that same target;
+`selected_progress` constructs D from the CURRENT finite relative interval.
+`finite_cover_elimination_selected` and
+`original_selected_finite_cover_elimination` preserve that data at every
+actual history node. Conversion to the compatibility history preserves
+length and uses the same history for both composite reduct and functor.
+Thus the original C41/C43 gate/readout/history finding is substantively
+closed by actual proofs, with no replacement premise. I await only the
+announced final selected `Source.lean` assembly and any genuine final
+documentation/root delta before recording whole-source PASS. I did not
+rerun the reported 2,521-job narrow build.
+
+The final mathematical assembly, native
+`33aeb246025550d51035460821dde090f330e483`, changes only `Source.lean`
+by adding 29 lines. I read that actual delta once. The principal
+`CCO.PairSafeSplit.selected_safe_exact_split` returns the SAME
+`SelectedStep`, including its original D and actual successor equality,
+attaches `Strong.ActualPhaseSufficiency` to that SAME phase and
+`SingleStep.identification`, and explicitly exports every original even,
+odd and positive-odd-word bit equation. The C41/C43 finding is now
+**CLOSED**, without a contract change, caller-supplied odd-arrow equation
+or replacement provider premise. There is no other mathematical blocker
+from my whole read. The final 31-module mathematical source is 2,987 lines,
+proof subtree `39eed89c9d11926dd43cc37a59e6cfe6ad078b9a`; only the four
+identified repair files differ from the initially read freeze. All other
+27 bodies and the root imports remain unchanged. The reported final narrow
+consumer has 2,588 jobs; I did not rerun it.
 
 ## Evidence limits and remaining gates
 
