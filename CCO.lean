@@ -1359,3 +1359,4 @@ import CCO.FiniteFibres.RealExport
 import CCO.FiniteFibres.SmallTargets
 import CCO.FiniteFibres.SourceChain
 import CCO.FiniteFibres.Target
+import CCO.FiniteFibres.CycleObstruction
