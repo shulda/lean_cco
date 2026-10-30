@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 382,
+  "revision": 383,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -3574,7 +3574,7 @@
       }
     },
     "B047": {
-      "state": "IN_PROGRESS",
+      "state": "SUBMITTED",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b047_pair_safe_split",
@@ -3689,7 +3689,7 @@
         ],
         "url": "https://github.com/shulda/lean_cco/actions/runs/41097006356"
       },
-      "head_sha": "69cc4356c4bdda709800fa5674584c5e3460cd2c",
+      "head_sha": "f702071ee44712f81f227329228a074a10e2d9d6",
       "pr_number": 62,
       "observed_ci": {
         "run_id": 41102926191,
@@ -3796,7 +3796,87 @@
         ],
         "url": "https://github.com/shulda/lean_cco/actions/runs/41102926191"
       },
-      "checkpoint_revision": 382
+      "checkpoint_revision": 382,
+      "ci": {
+        "run_id": 41105647949,
+        "run_attempt": 1,
+        "head_sha": "f702071ee44712f81f227329228a074a10e2d9d6",
+        "conclusion": "success",
+        "axiom_audit": "allowlist",
+        "job_id": 124234622614,
+        "tests": 130,
+        "declarations": 27280,
+        "guards": [
+          {
+            "parts": 1524,
+            "source": 1524
+          },
+          {
+            "parts": 1524,
+            "source": 1524
+          }
+        ],
+        "provider_guards": [
+          {
+            "parts": 269,
+            "source": 269,
+            "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+          },
+          {
+            "parts": 269,
+            "source": 269,
+            "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+          },
+          {
+            "parts": 269,
+            "source": 269,
+            "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+          },
+          {
+            "parts": 269,
+            "source": 269,
+            "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+          }
+        ],
+        "ramsey_guards": [
+          {
+            "parts": 106,
+            "source": 106,
+            "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+          },
+          {
+            "parts": 106,
+            "source": 106,
+            "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+          },
+          {
+            "parts": 106,
+            "source": 106,
+            "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+          },
+          {
+            "parts": 106,
+            "source": 106,
+            "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+          }
+        ],
+        "build_jobs": [
+          1330,
+          1182,
+          4198,
+          4198,
+          6
+        ],
+        "fresh_cco_modules": [
+          "CCO.PairSafeSplit.Full.Gates",
+          "CCO.PairSafeSplit.Terminal.Readout",
+          "CCO.PairSafeSplit.Terminal.Successor",
+          "CCO.PairSafeSplit.Terminal.Elimination",
+          "CCO.PairSafeSplit.Source"
+        ],
+        "url": "https://github.com/shulda/lean_cco/actions/runs/41105647949"
+      },
+      "report_path": "formalization/coordination/submissions/B047.md"
     },
     "B048": {
       "state": "AVAILABLE",
@@ -13067,6 +13147,99 @@
           ],
           "url": "https://github.com/shulda/lean_cco/actions/runs/41102926191"
         },
+        "actor_id": "root"
+      }
+    },
+    {
+      "revision": 383,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "submit",
+      "package_id": "B047",
+      "details": {
+        "package_id": "B047",
+        "head_sha": "f702071ee44712f81f227329228a074a10e2d9d6",
+        "pr_number": 62,
+        "ci": {
+          "run_id": 41105647949,
+          "run_attempt": 1,
+          "head_sha": "f702071ee44712f81f227329228a074a10e2d9d6",
+          "conclusion": "success",
+          "axiom_audit": "allowlist",
+          "job_id": 124234622614,
+          "tests": 130,
+          "declarations": 27280,
+          "guards": [
+            {
+              "parts": 1524,
+              "source": 1524
+            },
+            {
+              "parts": 1524,
+              "source": 1524
+            }
+          ],
+          "provider_guards": [
+            {
+              "parts": 269,
+              "source": 269,
+              "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+            },
+            {
+              "parts": 269,
+              "source": 269,
+              "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+            },
+            {
+              "parts": 269,
+              "source": 269,
+              "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+            },
+            {
+              "parts": 269,
+              "source": 269,
+              "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+            }
+          ],
+          "ramsey_guards": [
+            {
+              "parts": 106,
+              "source": 106,
+              "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+            },
+            {
+              "parts": 106,
+              "source": 106,
+              "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+            },
+            {
+              "parts": 106,
+              "source": 106,
+              "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+            },
+            {
+              "parts": 106,
+              "source": 106,
+              "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+            }
+          ],
+          "build_jobs": [
+            1330,
+            1182,
+            4198,
+            4198,
+            6
+          ],
+          "fresh_cco_modules": [
+            "CCO.PairSafeSplit.Full.Gates",
+            "CCO.PairSafeSplit.Terminal.Readout",
+            "CCO.PairSafeSplit.Terminal.Successor",
+            "CCO.PairSafeSplit.Terminal.Elimination",
+            "CCO.PairSafeSplit.Source"
+          ],
+          "url": "https://github.com/shulda/lean_cco/actions/runs/41105647949"
+        },
+        "report_path": "formalization/coordination/submissions/B047.md",
         "actor_id": "root"
       }
     }
