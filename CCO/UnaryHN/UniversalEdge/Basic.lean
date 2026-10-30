@@ -52,6 +52,22 @@ theorem ExpandedClass.edge_iff {L : Language.{u}} {K : Class.{u,v} L}
   obtain ⟨old, _, rfl⟩ := hC
   exact Iff.rfl
 
+theorem ExpandedClass.of_edge_iff {L : Language.{u}} {K : Class.{u,v} L}
+    {V : Type v} {C : Structure (edgeLanguage L) V}
+    (hK : K (edgeReduct C))
+    (hEdge : ∀ xs : Fin 2 → V, C.rel (.inr ()) xs ↔ xs 0 ≠ xs 1) :
+    ExpandedClass K C := by
+  refine ⟨edgeReduct C, hK, ?_⟩
+  cases C with
+  | mk rel func =>
+    apply congrArg (fun rs => Structure.mk rs func)
+    funext R xs
+    cases R with
+    | inl R => rfl
+    | inr r =>
+      cases r
+      exact propext (hEdge xs)
+
 def reductEmbedding {L : Language.{u}} {V W : Type v}
     {C : Structure (edgeLanguage L) V} {D : Structure (edgeLanguage L) W}
     (e : Embedding C D) : Embedding (edgeReduct C) (edgeReduct D) where
