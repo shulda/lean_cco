@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 300,
+  "revision": 301,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -1891,6 +1891,10 @@
       "state": "IN_PROGRESS",
       "owner_project_id": 3,
       "author_actor_ids": [
+        "/root/b038_atomic",
+        "/root/b038_atomic/boundaries",
+        "/root/b038_counting",
+        "/root/b038_relational",
         "root"
       ],
       "original_author_project_ids": [
@@ -7736,6 +7740,23 @@
           "/root/b036_counterexample",
           "/root/b037_finish",
           "/root/b037_sap"
+        ],
+        "actor_id": "root"
+      }
+    },
+    {
+      "revision": 301,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "record_authorship",
+      "package_id": "B038",
+      "details": {
+        "package_id": "B038",
+        "author_actor_ids": [
+          "/root/b038_relational",
+          "/root/b038_atomic",
+          "/root/b038_counting",
+          "/root/b038_atomic/boundaries"
         ],
         "actor_id": "root"
       }
