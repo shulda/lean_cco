@@ -53,20 +53,37 @@ theorem higherCovered_augment {U : BoolTable L M} {D : Partial L V} {m : ℕ}
   rw [augmentLow_high U D p r xs hs] at hd
   exact hF r xs b hd hs
 
-/-- A possibly noninjective pair-shadow completion, induced on each frozen
-factor. ALL specified low signed data are retained. Global injectivity is
-not part of this raw interface and is proved only after chosen pair filling. -/
-def PairCompletion (U : BoolTable L M) (D : Partial L V) {m : ℕ}
+/-- A WEAK low realization. This alone is NOT the cycle-constrained source
+pair-completion premise: collisions can hide signed low constraints. -/
+def WeakPairCompletion (U : BoolTable L M) (D : Partial L V) {m : ℕ}
     (F : Fin m → FrozenFactor U D) : Prop :=
   ∃ p : V → M, LowRealizes U D p ∧
     ∀ j, Function.Injective (p ∘ (F j).inclusion)
 
-/-- EXACT conditional full-language source interface A03, on finite ordinal
-charts. No chosen-pair lift, full SAP, binary homogeneity or Fraïssé source
-is a caller-supplied replacement for this quantified signed factor interface. -/
-def SupportNormal (U : BoolTable L M) : Prop :=
+/-- INTERNAL strict semantic pair target. The actual source interface uses
+an atomic canonical shadow refinement and CycleHom certificates; the proved
+source-shadow bridge converts between that premise and this target.
+This is never presented as an unexplained negative-menu injectivization. -/
+def PairCompletion (U : BoolTable L M) (D : Partial L V) {m : ℕ}
+    (F : Fin m → FrozenFactor U D) : Prop :=
+  ∃ p : V ↪ M, LowRealizes U D p ∧
+    ∀ j, Function.Injective ((p : V → M) ∘ (F j).inclusion)
+
+theorem PairCompletion.of_actual {U : BoolTable L M} {D : Partial L V} {m : ℕ}
+    (F : Fin m → FrozenFactor U D) (p : V ↪ M) (hp : LowRealizes U D p) :
+    PairCompletion U D F :=
+  ⟨p,hp,fun j => p.injective.comp (F j).inclusion.injective⟩
+
+/-- INTERNAL strict-semantic completion interface, on finite ordinal charts.
+The source gate remains the fully quantified certified-shadow A03, with a
+proved equivalence at each actual homogeneous SAP+CCO canonical prefix. -/
+def StrictSupportNormal (U : BoolTable L M) : Prop :=
   ∀ (n : ℕ) (D : Partial L (Fin n)) (m : ℕ) (F : Fin m → FrozenFactor U D),
     Consistent U D → HigherCovered F → PairCompletion U D F →
     ∃ f : Fin n → M, Realizes U D f ∧ ∀ j, (F j).FixedBy f
+
+/-- Temporary compatible INTERNAL spelling for the strict-semantic lemma
+library. Source exports must use the certified-shadow interface/bridge. -/
+abbrev SupportNormal (U : BoolTable L M) : Prop := StrictSupportNormal U
 
 end CCO.FullPhaseLift.Full
