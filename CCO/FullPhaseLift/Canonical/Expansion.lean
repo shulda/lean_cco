@@ -118,6 +118,26 @@ noncomputable def forgetIso {L : Signature} {V : Type v} {W : Type w}
     {A : BoolTable L V} {B : BoolTable L W} (e : Embedding (expand A) (expand B)) :
     expandEmbedding (forgetEmbedding e) = e := by cases e; rfl
 
+@[simp] theorem forget_expandIso {L : Signature} {V : Type v} {W : Type w}
+    {A : BoolTable L V} {B : BoolTable L W} (e : Iso A B) :
+    forgetIso (expandIso e) = e := by cases e; rfl
+
+@[simp] theorem expand_forgetIso {L : Signature} {V : Type v} {W : Type w}
+    {A : BoolTable L V} {B : BoolTable L W} (e : Iso (expand A) (expand B)) :
+    expandIso (forgetIso e) = e := by cases e; rfl
+
+noncomputable def embeddingEquiv {L : Signature} {V : Type v} {W : Type w}
+    (A : BoolTable L V) (B : BoolTable L W) :
+    Embedding A B ≃ Embedding (expand A) (expand B) :=
+  ⟨expandEmbedding,forgetEmbedding,forget_expandEmbedding,expand_forgetEmbedding⟩
+
+/-- In particular this gives the same full automorphisms when A = B,
+with the identical underlying permutations. No claim about pair-reduct
+automorphisms is made. -/
+noncomputable def isoEquiv {L : Signature} {V : Type v} {W : Type w}
+    (A : BoolTable L V) (B : BoolTable L W) : Iso A B ≃ Iso (expand A) (expand B) :=
+  ⟨expandIso,forgetIso,forget_expandIso,expand_forgetIso⟩
+
 /-- Every actual distinct pair has an irreflexive named positive relation. -/
 theorem expand_separates {L : Signature} {V : Type v} (T : BoolTable L V)
     (x y : V) (hne : x ≠ y) :
@@ -137,5 +157,75 @@ theorem expand_separates {L : Signature} {V : Type v} (T : BoolTable L V)
       fin_cases k <;> rfl
     rw [ht] at h
     simpa using h
+
+theorem expand_profile_eq {L : Signature} {V : Type v} {W : Type w}
+    {A : BoolTable L V} {B : BoolTable L W} {k : ℕ} {p : Fin k → V} {q : Fin k → W}
+    (h : profile A p = profile B q)
+    (heq : ∀ i j, p i = p j ↔ q i = q j) :
+    profile (expand A) p = profile (expand B) q := by
+  funext t
+  rcases t with ⟨r,slots⟩
+  cases r using Fin.addCases with
+  | left a =>
+    simp only [profile,expand,Fin.addCases_left]
+    exact congrFun h ⟨a,slots ∘ Fin.cast (by simp [expansion])⟩
+  | right b =>
+    cases b using Fin.addCases with
+    | left a =>
+      simp only [profile,expand,Fin.addCases_right,Fin.addCases_left,Function.comp_apply]
+      simp only [profile_eq_unary h]
+    | right b =>
+      simp only [profile,expand,Fin.addCases_right,Function.comp_apply]
+      congr 1
+      apply propext
+      exact and_congr (not_congr (heq _ _)) (by rw [profile_eq_pair h])
+
+theorem forget_profile_eq {L : Signature} {V : Type v} {W : Type w}
+    {A : BoolTable L V} {B : BoolTable L W} {k : ℕ} {p : Fin k → V} {q : Fin k → W}
+    (h : profile (expand A) p = profile (expand B) q) :
+    profile A p = profile B q := by
+  funext a
+  have ha := congrFun h ⟨oldSymbol L a.1,a.2 ∘ Fin.cast (oldSymbol_arity L a.1)⟩
+  simpa only [profile,← Function.comp_assoc,expand_old] using ha
+
+theorem sameSortSymmetric_expand {L : Signature} {V : Type v}
+    {T : BoolTable L V} (hsym : SameSortSymmetric T) : SameSortSymmetric (expand T) := by
+  intro x y hxy
+  have hold : unaryProfile T x = unaryProfile T y := forget_profile_eq hxy
+  apply expand_profile_eq (hsym x y hold)
+  intro i j
+  fin_cases i <;> fin_cases j <;> simp [eq_comm]
+
+theorem expand_irreducible {L : Signature} {V : Type v} (T : BoolTable L V) :
+    (toRelational (expand T)).Irreducible := by
+  intro P Q hs
+  by_cases hp : P = Set.univ
+  · exact Or.inl hp
+  by_cases hq : Q = Set.univ
+  · exact Or.inr hq
+  have notallP : ∃ x, x ∉ P := by
+    by_contra h
+    apply hp
+    exact Set.eq_univ_of_forall (by simpa only [not_exists,not_not] using h)
+  have notallQ : ∃ y, y ∉ Q := by
+    by_contra h
+    apply hq
+    exact Set.eq_univ_of_forall (by simpa only [not_exists,not_not] using h)
+  obtain ⟨x,hx⟩ := notallP
+  obtain ⟨y,hy⟩ := notallQ
+  have hxy : x ≠ y := by
+    intro he
+    subst y
+    have hcover : x ∈ P ∪ Q := by rw [hs.1]; trivial
+    exact hcover.elim hx hy
+  let p := pairProfile T x y
+  let R : (expansion L).language.Rel 2 := ⟨pairSymbol L p,pairSymbol_arity L p⟩
+  have hr : (toRelational (expand T)).rel R ![x,y] := by
+    change expand T (pairSymbol L p) (![x,y] ∘ Fin.cast (pairSymbol_arity L p)) = true
+    rw [expand_pair]
+    simp [hxy,p]
+  rcases hs.2 R ![x,y] hr with hP | hQ
+  · exact False.elim (hx (hP 0))
+  · exact False.elim (hy (hQ 1))
 
 end CCO.FullPhaseLift.Canonical
