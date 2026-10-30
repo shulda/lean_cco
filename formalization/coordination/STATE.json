@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 313,
+  "revision": 314,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -1917,7 +1917,7 @@
       }
     },
     "B038": {
-      "state": "INTEGRATING",
+      "state": "ACCEPTED",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b038_atomic",
@@ -1958,6 +1958,13 @@
           "report_path": "formalization/coordination/reviews/B038-final.md"
         },
         "summary": "Actual nonauthor review approves both independent source theorems, all35claims and all actual boundary providers with arbitrary relational signature/palette, exact collision descent and ordinary-AP allowed-gated CCO fans. Exact PR52 head/tree/ordered history/all5authors verified. CI41038550994 passed130tests,22119standard-three audit and1252CCO/269EPPA/106Ramsey complete source guards."
+      },
+      "accepted_commit": "709931c1d7bae96f549efcf658d795d38dc1e9e8",
+      "main_ci": {
+        "run_id": 41039939898,
+        "head_sha": "709931c1d7bae96f549efcf658d795d38dc1e9e8",
+        "conclusion": "success",
+        "axiom_audit": "allowlist"
       }
     },
     "B039": {
@@ -1995,13 +2002,7 @@
       "owner_project_id": null
     }
   },
-  "integration_lock": {
-    "kind": "package",
-    "package_id": "B038",
-    "actor_id": "root",
-    "base_main_sha": "b27944b1d8f7436c44d83a6e155bae19a0cd25e7",
-    "head_sha": "f81cbb4b8858d282898565641bedbfdc4576ee1b"
-  },
+  "integration_lock": null,
   "history": [
     {
       "revision": 1,
@@ -8076,6 +8077,24 @@
         "ci": {
           "run_id": 41038550994,
           "head_sha": "f81cbb4b8858d282898565641bedbfdc4576ee1b",
+          "conclusion": "success",
+          "axiom_audit": "allowlist"
+        },
+        "actor_id": "root"
+      }
+    },
+    {
+      "revision": 314,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "accept",
+      "package_id": "B038",
+      "details": {
+        "package_id": "B038",
+        "integration_commit": "709931c1d7bae96f549efcf658d795d38dc1e9e8",
+        "main_ci": {
+          "run_id": 41039939898,
+          "head_sha": "709931c1d7bae96f549efcf658d795d38dc1e9e8",
           "conclusion": "success",
           "axiom_audit": "allowlist"
         },
