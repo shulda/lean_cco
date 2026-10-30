@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 340,
+  "revision": 341,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -2119,7 +2119,7 @@
       }
     },
     "B042": {
-      "state": "SUBMITTED",
+      "state": "REVIEWING",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b042_finite",
@@ -2148,7 +2148,19 @@
         "conclusion": "success",
         "axiom_audit": "allowlist"
       },
-      "report_path": "formalization/coordination/submissions/B042.md"
+      "report_path": "formalization/coordination/submissions/B042.md",
+      "review": {
+        "project_id": 3,
+        "actor_id": "independent_review",
+        "head_sha": "ba14bf64c71a08409b4b3fdbf91ab04f6c631068",
+        "approved": false,
+        "independence": {
+          "identity": "/root/independent_review",
+          "non_author": true,
+          "summary": "The actual registered nonauthor reviewer personally read all original33 B042 mathematical modules once, only genuine C01 and final14line theorem deltas, then final Markdown/two literal-name repairs/accepted-base-root-public-history union. It authored or designed none of the complete batch. All six actual authors remain recorded and distinct; no reviewer builds, tests, audits or implementation helpers were used.",
+          "report_path": "formalization/coordination/reviews/B042-final.md"
+        }
+      }
     }
   },
   "integration_lock": null,
@@ -8694,6 +8706,24 @@
         },
         "report_path": "formalization/coordination/submissions/B042.md",
         "actor_id": "root"
+      }
+    },
+    {
+      "revision": 341,
+      "project_id": 3,
+      "actor_id": "independent_review",
+      "event": "review",
+      "package_id": "B042",
+      "details": {
+        "package_id": "B042",
+        "head_sha": "ba14bf64c71a08409b4b3fdbf91ab04f6c631068",
+        "independence": {
+          "identity": "/root/independent_review",
+          "non_author": true,
+          "summary": "The actual registered nonauthor reviewer personally read all original33 B042 mathematical modules once, only genuine C01 and final14line theorem deltas, then final Markdown/two literal-name repairs/accepted-base-root-public-history union. It authored or designed none of the complete batch. All six actual authors remain recorded and distinct; no reviewer builds, tests, audits or implementation helpers were used.",
+          "report_path": "formalization/coordination/reviews/B042-final.md"
+        },
+        "actor_id": "independent_review"
       }
     }
   ],
