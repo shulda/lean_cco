@@ -1,6 +1,7 @@
 import CCO.FullCode.FiniteHidden
 import CCO.FullCode.ExpandedRestriction
 import CCO.FullCode.LanguageExpansion
+import CCO.FullCode.SupportReduct
 
 /-! Actual finite expansion ages.  Heredity and reasonableness are the
 source's stated class hypotheses.  Closure of a chosen old image in an
@@ -91,6 +92,54 @@ theorem normalized_witness {A : FiniteHidden.{u,v} L₀}
   refine ⟨f.factor j ?_⟩
   intro y hy
   exact ⟨⟨y, hold hy⟩, marked _⟩
+
+/-- Actual induced restriction and transport give an allowed expansion on
+the fixed old source carrier, once expanded closure has been established. -/
+noncomputable def restrictOn {D B : FiniteHidden.{u,v} L₀}
+    (b : ExpansionOn ρ E.expandedAge B) (j : Structure.Embedding D.model B.model)
+    (closed : b.model.IsClosed (Set.range j.point)) : ExpansionOn ρ E.expandedAge D := by
+  classical
+  let jred := j.targetCongr b.reduct_eq.symm
+  let iso : D.Carrier ≃ Set.range j.point := Equiv.ofBijective
+    (fun x => ⟨j.point x, ⟨x, rfl⟩⟩)
+    ⟨fun x y h => j.injective (congrArg Subtype.val h),
+      by rintro ⟨y, ⟨x, rfl⟩⟩; exact ⟨x, rfl⟩⟩
+  refine ⟨b.model.pullback j.point j.injective closed, ?_, ?_⟩
+  · exact b.model.pullback_reduct_eq ρ D.model jred closed
+  · have hmember := E.expandedHereditary b.toHidden b.member (Set.range j.point) closed
+    exact E.expandedIsoClosed (b.toHidden.induced (Set.range j.point) closed)
+      hmember D.Carrier iso
+
+def restrictOnEmbedding {D B : FiniteHidden.{u,v} L₀}
+    (b : ExpansionOn ρ E.expandedAge B) (j : Structure.Embedding D.model B.model)
+    (closed : b.model.IsClosed (Set.range j.point)) :
+    Structure.Embedding (E.restrictOn b j closed).model b.model :=
+  b.model.pullbackEmbedding j.point j.injective closed
+
+end ExpansionAges
+
+namespace ExpansionAges
+variable {ρ : LanguageExpansion L₀ L₁} (E : ExpansionAges.{u,v} ρ.toReduct)
+
+def SupportsCommute (S : RootScheme L₀) : Prop :=
+  ∀ D : FiniteHidden.{u,v} L₁, E.expandedAge D → SupportReductCommutes ρ S D.model
+
+/-- C51/C36: legal restriction is CONSTRUCTED for every competing expansion,
+from the actual full-code support/reduct hypothesis on all allowed objects. -/
+noncomputable def restrictGenerated {D B : FiniteHidden.{u,v} L₀}
+    (S : RootScheme L₀) (commutes : E.SupportsCommute S)
+    (b : ExpansionOn ρ.toReduct E.expandedAge B)
+    (j : Structure.Embedding D.model B.model) (generated : RootGenerated D.model S) :
+    ExpansionOn ρ.toReduct E.expandedAge D :=
+  E.restrictOn b j (expanded_image_closed ρ S D.model b.model
+    (j.targetCongr b.reduct_eq.symm) generated (commutes b.toHidden b.member))
+
+def restrictGeneratedEmbedding {D B : FiniteHidden.{u,v} L₀}
+    (S : RootScheme L₀) (commutes : E.SupportsCommute S)
+    (b : ExpansionOn ρ.toReduct E.expandedAge B)
+    (j : Structure.Embedding D.model B.model) (generated : RootGenerated D.model S) :
+    Structure.Embedding (E.restrictGenerated S commutes b j generated).model b.model :=
+  E.restrictOnEmbedding b j _
 
 end ExpansionAges
 end CCO.FullCode
