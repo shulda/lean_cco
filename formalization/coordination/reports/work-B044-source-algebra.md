@@ -89,7 +89,12 @@ there is no folding, marked-completion or homogeneous-limit callback left.
 chain directly from a finite relative interval of the original CURRENT source.
 The receiving narrow target passed2475jobs (root2.3seconds).
 
-Root owns independent rank and actual old-reduct/source packaging. The latter
-and its actual finite current-source tower/rank instance remain integration
-work before a complete submission. This scoped report does not turn the
-remaining generic tower-progress premise into a completed C59 export.
+Root's independent rank and actual old-reduct/source packaging are now
+complete and integrated. `SourceAge.SingleStep.actual_progress` constructs
+EVERY current successor from the actual source, and the principal Terminal
+exports bind it to the finite coherent history theorem. `ActualStep` retains
+literal global reduct data and the SAME unary functor; `history_forget_eq`
+proves their exact equality after composition. No generic tower-progress
+premise remains in the principal C59/C60 exports. The final source/claim map
+and honest verification/acceptance gates are in submissions/B044.md and
+reports/work-B044-source-complete.md.
