@@ -1,0 +1,112 @@
+{
+  "run_id": 41042931625,
+  "head_sha": "90feb040df23e2ef7fd18ebc7df3b92ccfc0a8a0",
+  "conclusion": "success",
+  "axiom_audit": "allowlist",
+  "job_id": 124019894763,
+  "tests": 130,
+  "declarations": 22837,
+  "guards": [
+    {
+      "parts": 1291,
+      "source": 1291
+    },
+    {
+      "parts": 1291,
+      "source": 1291
+    }
+  ],
+  "provider_guards": [
+    {
+      "parts": 269,
+      "source": 269,
+      "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+    },
+    {
+      "parts": 269,
+      "source": 269,
+      "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+    },
+    {
+      "parts": 269,
+      "source": 269,
+      "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+    },
+    {
+      "parts": 269,
+      "source": 269,
+      "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+    }
+  ],
+  "ramsey_guards": [
+    {
+      "parts": 106,
+      "source": 106,
+      "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+    },
+    {
+      "parts": 106,
+      "source": 106,
+      "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+    },
+    {
+      "parts": 106,
+      "source": 106,
+      "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+    },
+    {
+      "parts": 106,
+      "source": 106,
+      "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+    }
+  ],
+  "build_jobs": [
+    1330,
+    1182,
+    3953,
+    3953,
+    6
+  ],
+  "fresh_cco_modules": [
+    "CCO.UnaryFreshFrames.Examples.FiniteExtension",
+    "CCO.UnaryFreshFrames.Language",
+    "CCO.UnaryFreshFrames.Quotient.Fibres",
+    "CCO.UnaryFreshFrames.Age",
+    "CCO.UnaryFreshFrames.ClosureActions",
+    "CCO.UnaryFreshFrames.Quotient.Uniformity",
+    "CCO.UnaryFreshFrames.Quotient.Necessity",
+    "CCO.UnaryFreshFrames.Quotient.Avoidance",
+    "CCO.UnaryFreshFrames.SAPFresh",
+    "CCO.UnaryFreshFrames.Examples.Matching",
+    "CCO.UnaryFreshFrames.Examples.TwoCover",
+    "CCO.UnaryFreshFrames.Frames",
+    "CCO.UnaryFreshFrames.Quotient.Named",
+    "CCO.UnaryFreshFrames.SAPAvoidance",
+    "CCO.UnaryFreshFrames.Examples.MatchingHomogeneity",
+    "CCO.UnaryFreshFrames.Examples.TwoCoverAut",
+    "CCO.UnaryFreshFrames.Quotient.NamedNecessity",
+    "CCO.UnaryFreshFrames.Quotient.NamedAvoidance",
+    "CCO.UnaryFreshFrames.SAPAlgebraicity",
+    "CCO.UnaryFreshFrames.UniformBounds",
+    "CCO.UnaryFreshFrames.Examples.MatchingOrbits",
+    "CCO.UnaryFreshFrames.Examples.TwoCoverHomogeneity",
+    "CCO.UnaryFreshFrames.Quotient.System",
+    "CCO.UnaryFreshFrames.FullFrames",
+    "CCO.UnaryFreshFrames.SAPCopies",
+    "CCO.UnaryFreshFrames.Scope",
+    "CCO.UnaryFreshFrames.Examples.MatchingOriginal",
+    "CCO.UnaryFreshFrames.Examples.TwoCoverOrbits",
+    "CCO.UnaryFreshFrames.Quotient.SAPNecessity",
+    "CCO.UnaryFreshFrames.Quotient.Sequential",
+    "CCO.UnaryFreshFrames.Quotient.AFF",
+    "CCO.UnaryFreshFrames.SAPBoundaries",
+    "CCO.UnaryFreshFrames.Examples.MatchingBoundary",
+    "CCO.UnaryFreshFrames.Examples.TwoCoverKernels",
+    "CCO.UnaryFreshFrames.Source",
+    "CCO.UnaryFreshFrames.Examples.MatchingIndex",
+    "CCO.UnaryFreshFrames.Examples.TwoCoverOriginal",
+    "CCO.UnaryFreshFrames.Consumer",
+    "CCO.UnaryFreshFrames.Examples.TwoCoverBoundary"
+  ],
+  "url": "https://github.com/shulda/lean_cco/actions/runs/41042931625"
+}
