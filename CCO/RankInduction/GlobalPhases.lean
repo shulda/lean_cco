@@ -7,13 +7,28 @@ import CCO.FinitePackets.Normalization.DescentSource
 The rank constructor is an INTERNAL implication argument here; the final
 source theorem supplies the constructed rank step, not an external axiom. -/
 
-universe v t
+universe v w t
 namespace CCO.RankInduction
 noncomputable section
 open RawExact ExactCRT Owners.Product Owners.Provider
 open FinitePackets.Normalization
 
 variable {G : Type t} [Group G]
+
+/-- An original source may have diversity names in ANY universe. Its
+actual exact quotient has names in the carrier universe and therefore
+belongs to the universal induction family, also for the identity cut. -/
+def namedQuotientNode {M : Type v} [MulAction G M] [Countable M]
+    (S : AtomicSource.{0,v,w} Unit (fun _ => M)) (H : HomogeneousSource S G)
+    (cco : SemanticCCO.{0,v,v,w} S) (E : ExactEq S H cco ()) : SourceNode.{v,t} G where
+  Carrier := Quotient E.val
+  source := Owners.Master.quotientSource S H cco E
+  action := by
+    letI : CanonicalQuotients.Invariant G E.val := Owners.Product.exactInvariant S H cco E
+    infer_instance
+  countable := Owners.Master.quotientSource_countable S H cco E
+  homogeneous := Owners.Master.quotientSource_homogeneous S H cco E
+  cycles := Owners.Master.quotientSource_cco S H cco E
 
 def exactNode (N : SourceNode.{v,t} G)
     (E : ExactEq N.source N.homogeneous N.cycles ()) : SourceNode.{v,t} G where
