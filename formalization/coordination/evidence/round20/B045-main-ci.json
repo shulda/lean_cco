@@ -1,0 +1,100 @@
+{
+  "run_id": 41097006356,
+  "run_attempt": 1,
+  "head_sha": "bfbf8cf83d590d8d13499ab0e33aa8ea6445eb97",
+  "conclusion": "success",
+  "axiom_audit": "allowlist",
+  "job_id": 124205161008,
+  "tests": 130,
+  "declarations": 26875,
+  "guards": [
+    {
+      "parts": 1493,
+      "source": 1493
+    },
+    {
+      "parts": 1493,
+      "source": 1493
+    }
+  ],
+  "provider_guards": [
+    {
+      "parts": 269,
+      "source": 269,
+      "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+    },
+    {
+      "parts": 269,
+      "source": 269,
+      "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+    },
+    {
+      "parts": 269,
+      "source": 269,
+      "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+    },
+    {
+      "parts": 269,
+      "source": 269,
+      "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+    }
+  ],
+  "ramsey_guards": [
+    {
+      "parts": 106,
+      "source": 106,
+      "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+    },
+    {
+      "parts": 106,
+      "source": 106,
+      "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+    },
+    {
+      "parts": 106,
+      "source": 106,
+      "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+    },
+    {
+      "parts": 106,
+      "source": 106,
+      "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+    }
+  ],
+  "build_jobs": [
+    1330,
+    1182,
+    4161,
+    4161,
+    6
+  ],
+  "fresh_cco_modules": [
+    "CCO.CloneSAP.FiniteUnion",
+    "CCO.CloneSAP.Basic",
+    "CCO.CloneSAP.CCO.GenericCycleBlocks",
+    "CCO.CloneSAP.CCO.GraphCycles",
+    "CCO.CloneSAP.CCO.Lift",
+    "CCO.CloneSAP.Homogeneity",
+    "CCO.CloneSAP.Lattice.Palettes",
+    "CCO.CloneSAP.CCO.TwoPaths",
+    "CCO.CloneSAP.EdgeCases",
+    "CCO.CloneSAP.CCO.Components",
+    "CCO.CloneSAP.Owner",
+    "CCO.CloneSAP.FiniteBoundary",
+    "CCO.CloneSAP.Lattice.Definability",
+    "CCO.CloneSAP.Quotient",
+    "CCO.CloneSAP.CCO.Parallel",
+    "CCO.CloneSAP.Lattice.DirectedBoundary",
+    "CCO.CloneSAP.ExactKernel",
+    "CCO.CloneSAP.Amalgamation",
+    "CCO.CloneSAP.CCO.Quotient",
+    "CCO.CloneSAP.Triangles",
+    "CCO.CloneSAP.CCO.Realization",
+    "CCO.CloneSAP.CCO.CycleEdges",
+    "CCO.CloneSAP.TriangleReflection",
+    "CCO.CloneSAP.CCO.CycleProjection",
+    "CCO.CloneSAP.CCO.Cycles",
+    "CCO.CloneSAP.Source"
+  ],
+  "url": "https://github.com/shulda/lean_cco/actions/runs/41097006356"
+}
