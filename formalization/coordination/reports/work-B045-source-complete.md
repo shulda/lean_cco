@@ -95,8 +95,17 @@ forward/converse export (1,015 jobs); generic block author compiled its
 actual theorem (990 jobs). The owner actual `CCO.CloneSAP.Source` consumer
 passed 1,055 jobs, including all current source-level CCO providers. Dependencies and private incremental caches were
 reused; these counts are Lake dependency traversals, not fresh source counts.
-The owner performs one final whole-root build after the actual accepted-base
-union. Exact public-head and resulting-main CI, current-source/artifact guards
+The ONE final owner whole-root `lake build CCO` passed 4,161 jobs; root
+compilation took 2.9s. This followed the history-preserving merge of ACTUAL
+accepted B046 main `191442fb4b1929de016666a4b779c90ae36797be` and the addition
+of exactly 26 unique imports after its literal 1,467-source root prefix.
+The project has 1,493 sources total. Source/root union freeze is
+`9789bd20e69990cdb6a21fd3626ab878e86069a6`, tree
+`714bf61f110f748a5f0f7f336818d690f1705c5a`. All 26 new source bodies remain
+byte-identical to mathematical freeze `57d71a17f4fdf0ff77f3ec22575c833565d51365`,
+proof subtree `8c13eee96fa723358e1da40a9519e0de8fa343fd`.
+The build receipt and final source-map qualifier clarification are ONLY
+Markdown changes, so no duplicate local rebuild is required. Exact public-head and resulting-main CI, current-source/artifact guards
 and the standard-three transitive audit remain mandatory external gates.
 No duplicate broad local tests or author audit pipeline is run.
 
