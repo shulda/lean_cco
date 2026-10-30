@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 285,
+  "revision": 286,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -1815,7 +1815,54 @@
       "owner_project_id": null
     }
   },
-  "integration_lock": null,
+  "integration_lock": {
+    "kind": "infrastructure",
+    "actor_id": "root",
+    "head_sha": "ea20ca59104599229121babeb158d992445e5b12",
+    "base_main_sha": "42316147ca02c871464e885fe44766fe2c05c14e",
+    "pr_number": 49,
+    "review": {
+      "actor_id": "independent_review",
+      "head_sha": "ea20ca59104599229121babeb158d992445e5b12",
+      "approved": true,
+      "summary": "Actual registered nonauthor /root/independent_review approves exact PR49 ea20ca59104599229121babeb158d992445e5b12/tree89360cea after ONE complete 55-file six-contract/292-claim/source/control publication read, plus actual six-file guidance-only repair. Independently checked immutable490c+dc5 trees, 36 old rows and metadata, byte-exact old snapshots and all four canonical digests; validator semantics, source, toolchain, dependencies and cache are unchanged. B037 allthree external receiving bindings remain open; no mathematical implementation is accepted. Missing B038 cache-plan link finding CLOSED. Personally inspected FULL exactCI41010135665/job123913927258 SUCCESS121tests/1330provider+3663CCO+3663audit/18703standard-three declarations/1122CURRENTsource+actualparts allguards/269exactprovider allfourguards, warmzeroBuilt. Report-onlycommit611f59472edeed2b4950e11f184b233114ebef92.",
+      "independence": {
+        "identity": "/root/independent_review",
+        "non_author": true,
+        "summary": "Actual stable registered review-only agent wrote or designed NONE of the complete preparation, source, contracts, extraction, controls, code, tests, receipts, cache guidance or repair; it personally read the complete publication and actual exact CI without implementation helpers or duplicate builds/tests/audits.",
+        "report_path": "formalization/coordination/reviews/B037-B042-registry-publication.md"
+      }
+    },
+    "ci": {
+      "run_id": 41010135665,
+      "head_sha": "ea20ca59104599229121babeb158d992445e5b12",
+      "conclusion": "success",
+      "axiom_audit": "allowlist"
+    },
+    "author_actor_ids": [
+      "root",
+      "source-preparation-project",
+      "/root/frontier16"
+    ],
+    "original_author_project_ids": [
+      0,
+      3
+    ],
+    "registry_promotion": {
+      "package_ids": [
+        "B037",
+        "B038",
+        "B039",
+        "B040",
+        "B041",
+        "B042"
+      ],
+      "previous_registry_sha256": "c73431a9e2421ca58bc694d1e2fa9f807bf566baeb401f193dd1b90dd2be7bb5",
+      "previous_policy_sha256": "62d5b611f1cae5df5f9ce4a4646391b21d6d7de29d5e905fd03e86d667a88718",
+      "registry_sha256": "4d3c881df56345643b0871fe5ff48e73c4755ed44d899421733c7bf50a3beeda",
+      "policy_sha256": "c68a0fc9929bc364fbaeaadab52a0ce23cc137ef4b37db09953c59e89d2a1afa"
+    }
+  },
   "history": [
     {
       "revision": 1,
@@ -7313,6 +7360,61 @@
           "head_sha": "42316147ca02c871464e885fe44766fe2c05c14e",
           "conclusion": "success",
           "axiom_audit": "allowlist"
+        }
+      }
+    },
+    {
+      "revision": 286,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "start_infrastructure",
+      "package_id": null,
+      "details": {
+        "actor_id": "root",
+        "pr_number": 49,
+        "head_sha": "ea20ca59104599229121babeb158d992445e5b12",
+        "base_main_sha": "42316147ca02c871464e885fe44766fe2c05c14e",
+        "head_contains_main": true,
+        "ci": {
+          "run_id": 41010135665,
+          "head_sha": "ea20ca59104599229121babeb158d992445e5b12",
+          "conclusion": "success",
+          "axiom_audit": "allowlist"
+        },
+        "author_actor_ids": [
+          "root",
+          "source-preparation-project",
+          "/root/frontier16"
+        ],
+        "original_author_project_ids": [
+          0,
+          3
+        ],
+        "registry_promotion": {
+          "package_ids": [
+            "B037",
+            "B038",
+            "B039",
+            "B040",
+            "B041",
+            "B042"
+          ],
+          "previous_registry_sha256": "c73431a9e2421ca58bc694d1e2fa9f807bf566baeb401f193dd1b90dd2be7bb5",
+          "previous_policy_sha256": "62d5b611f1cae5df5f9ce4a4646391b21d6d7de29d5e905fd03e86d667a88718",
+          "registry_sha256": "4d3c881df56345643b0871fe5ff48e73c4755ed44d899421733c7bf50a3beeda",
+          "policy_sha256": "c68a0fc9929bc364fbaeaadab52a0ce23cc137ef4b37db09953c59e89d2a1afa"
+        },
+        "review": {
+          "actor_id": "independent_review",
+          "head_sha": "ea20ca59104599229121babeb158d992445e5b12",
+          "approved": true,
+          "summary": "Actual registered nonauthor /root/independent_review approves exact PR49 ea20ca59104599229121babeb158d992445e5b12/tree89360cea after ONE complete 55-file six-contract/292-claim/source/control publication read, plus actual six-file guidance-only repair. Independently checked immutable490c+dc5 trees, 36 old rows and metadata, byte-exact old snapshots and all four canonical digests; validator semantics, source, toolchain, dependencies and cache are unchanged. B037 allthree external receiving bindings remain open; no mathematical implementation is accepted. Missing B038 cache-plan link finding CLOSED. Personally inspected FULL exactCI41010135665/job123913927258 SUCCESS121tests/1330provider+3663CCO+3663audit/18703standard-three declarations/1122CURRENTsource+actualparts allguards/269exactprovider allfourguards, warmzeroBuilt. Report-onlycommit611f59472edeed2b4950e11f184b233114ebef92.",
+          "independence": {
+            "identity": "/root/independent_review",
+            "non_author": true,
+            "summary": "Actual stable registered review-only agent wrote or designed NONE of the complete preparation, source, contracts, extraction, controls, code, tests, receipts, cache guidance or repair; it personally read the complete publication and actual exact CI without implementation helpers or duplicate builds/tests/audits.",
+            "report_path": "formalization/coordination/reviews/B037-B042-registry-publication.md"
+          }
         }
       }
     }
