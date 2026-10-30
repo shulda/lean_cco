@@ -36,7 +36,7 @@ rather than assumes, its reverse-direction identity condition.
 
 Final targeted command under the exact unchanged Lean4.34.1/Lake manifest:
 `lake --rehash build +CCO.APCharacter.Completion.Source`.
-It passed1373 Lake jobs; the final wrapper built in1.4 seconds. Incremental
+It passed1373 Lake jobs; the final wrapper built in1.8 seconds. Incremental
 checks of identity, graph walks, all-path selection, actual pushforward and
 fold compatibility, legality, unordered-pair measure and finite procedure
 also passed. These are actual narrow compiler checks, not an assertion of
