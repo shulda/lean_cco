@@ -41,6 +41,7 @@ record failure; it is not successful submission evidence.
 | `accept` | actual `integration_commit`, successful `main_ci` | Green resulting-main audit releases lock/dependencies. |
 | `block` | precise `reason` | Preserve lock on merged-main failure; unresolved batch still counts. |
 | `promote_registry` | `head_sha`, exact added `package_ids`, actual `integration_commit`, successful `main_ci`; explicit old catalogue/policy CLI paths | Finish a manifest-bound infrastructure deployment and append only AVAILABLE registry records atomically; no active claims. |
+| `promote_reviewer` | `head_sha`, actual `integration_commit`, successful `main_ci`; explicit old catalogue/policy CLI paths | Finish the manifest-bound append-only reviewer recovery atomically, preserving every package record. |
 
 Use `checkpoint` after inspecting a completed WIP CI run to keep current heads
 honest while proofs remain open. It does not certify contract completion,
@@ -105,3 +106,44 @@ Before any actual merge, re-read main/PR and lock; merge with expected head and
 history preserved. If either ref moved, update main into the branch, review
 changed SHA, rerun CI, and reacquire the lock. After actual merge inspect the
 push CI and transitive axiom audit at the resulting main commit before finishing.
+
+For an unavailable actual reviewer, use a separately reviewed, narrow recovery
+PR; do not rename any existing actor or infer approval from a partial read.
+The policy may append one or two new actual identities with exactly `review`
+and `integrate` roles and empty historical-author projects, advancing its
+revision once. Every other policy field and the complete BOARD stay unchanged.
+The fresh reader of the recovery PR must not author it or any active batch;
+all added readers must satisfy the same non-authorship checks. No active batch
+may carry a review lease/approval during this recovery.
+
+Read the old snapshots at the actual base and new snapshots at the reviewed
+head. Generate
+`reviewer_recovery_manifest(old_board, old_policy, new_board, new_policy,
+unavailable_actor_id, bootstrap_actor_id)`. Put it in `reviewer_recovery` of
+`start_infrastructure`, and also supply `unavailable_reviewer`:
+
+```json
+{"actor_id": "independent_review", "identity": "/root/independent_review",
+ "reason": "Concrete runtime failure and unchanged-identity retry evidence, explained in at least eighty characters.",
+ "report_path": "formalization/coordination/reports/reviewer-runtime-recovery.md"}
+```
+
+Use the new helper with explicit OLD `--registry` and `--policy`: live STATE
+still binds the old policy. The manifest reconstructs the exact prospective
+policy solely for validating the new bootstrap reader's real independent
+review of this infrastructure. Its `review.actor_id` must equal the manifest's
+`bootstrap_actor_id`; `review.independence.identity` names that actual reader.
+The normal exact-head review/CI/authorship fields remain required. This cannot
+be combined with `registry_promotion`, confer package approval, grant root a
+review role or bypass the single lock.
+
+After merge and green actual main CI/audit, run the new helper with the
+DEPLOYED new `--registry`/`--policy`, explicit old `--previous-registry` and
+`--previous-policy`, `--event promote_reviewer`, and data naming the locked
+`head_sha`, actual `integration_commit` and successful `main_ci`. Publish the
+proposal by exact-parent CAS and read it back. It advances policy revision and
+finishes the same lock; all package records, heads, claims, original authors
+and accepted history are preserved. `finish_infrastructure` cannot finish this
+lock. A failed main stays locked; only proven pre-merge non-merging permits
+`cancel_infrastructure`. New ordinary package reviews begin after this public
+promotion and use their own actual whole-package readers and reports.

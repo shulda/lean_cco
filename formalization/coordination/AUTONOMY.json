@@ -1,6 +1,6 @@
 {
   "protocol_version": 3,
-  "revision": 11,
+  "revision": 12,
   "state_branch": "coordination",
   "state_file": "formalization/coordination/STATE.json",
   "registered_projects": [
@@ -97,6 +97,22 @@
       "historical_author_projects": [
         2
       ]
+    },
+    "independent_review_recovery": {
+      "identity": "/root/independent_review_recovery",
+      "roles": [
+        "review",
+        "integrate"
+      ],
+      "historical_author_projects": []
+    },
+    "reviewer_recovery_control": {
+      "identity": "/root/reviewer_recovery_control",
+      "roles": [
+        "review",
+        "integrate"
+      ],
+      "historical_author_projects": []
     }
   },
   "notes": [
