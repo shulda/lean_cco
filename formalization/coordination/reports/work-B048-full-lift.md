@@ -244,3 +244,16 @@ change, new axiom, `sorry` or unaccepted future batch was introduced.
 Only this final documentation receipt changes after the mathematical
 freeze; the coordinator performs remote publication, exact CI/audit,
 review and acceptance.
+
+Policy-only main refresh: actual `main` was fetched at
+`fe02066c6e743df6105774eef6ebcdb7966f4656` and merged, preserving the
+existing `c835d13e0ea09860f80d2cb40c7ace2f064ce4ef` author history, as
+`eeddc978a810b0a7d26821c7ccd4a298316e27f1`. The complete CCO proof tree
+(`916c99bda581ecdaa31f6510f208f127985d7a13`), all 1619 root proof sources,
+root import, B048 proof subtree (`b2daa55d4fbc5629b62539508558b8cfa51ab4d6`),
+toolchain and manifest are unchanged. The coordination generator/instruction
+check and all 14 reviewer-recovery queue tests pass. No duplicate Lean build
+was run for this policy-only refresh. This paragraph records no resulting-main
+CI success and performs no policy promotion, package submission, review lease
+or approval; the coordinator must finish the exact-main infrastructure gate
+and public atomic policy transition before ordinary package review operations.
