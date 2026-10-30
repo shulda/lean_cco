@@ -68,5 +68,19 @@ theorem progress (h : B.Obstruction) :
   obtain ⟨i,K,⟨P⟩⟩ := B.phase_of_obstruction h
   exact ⟨successor B P,⟨step B P⟩⟩
 
+def actualStep : Towers.CurrentSource.ActualStep B (successor B P) where
+  reduct := projection B P
+  unary := transition B P
+  forget_eq := transition_forget B P
+  potential_lt := potential_decreases B P
+
+/-- The source-stage progress theorem retaining the SAME actual global
+point/atom reduct projection and the concrete expansion functor. -/
+theorem actual_progress (h : B.Obstruction) :
+    ∃ next : Towers.CurrentSource.{u,v,w,t},
+      Nonempty (Towers.CurrentSource.ActualStep B next) := by
+  obtain ⟨i,K,⟨P⟩⟩ := B.phase_of_obstruction h
+  exact ⟨successor B P,⟨actualStep B P⟩⟩
+
 end
 end CCO.APCharacter.SourceAge.SingleStep
