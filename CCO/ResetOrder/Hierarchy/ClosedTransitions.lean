@@ -62,7 +62,9 @@ noncomputable def charting (h : T.Closed A)
     Charting (A.system.reindex (T.restrict A h).orbitEquiv) rep where
   paths r := (T.restrict A h).comap (fun j : (T.restrict A h).InOrbit r => j.val)
   chosen r j := (T.restrict A h).representativePath rep r j
-  parent_transport r p x y := T.parent_transport A h p x y
+  parent_transport r := by
+    intro j k p x y
+    exact T.parent_transport A h p x y
   rank_orbit r j := (T.rank_transport (P := P)
     ((T.restrict A h).representativePath rep r j)).symm
 
