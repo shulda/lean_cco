@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 352,
+  "revision": 353,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -2171,7 +2171,7 @@
       }
     },
     "B043": {
-      "state": "SUBMITTED",
+      "state": "REVIEWING",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b043_point_sap",
@@ -2348,7 +2348,19 @@
         ],
         "url": "https://github.com/shulda/lean_cco/actions/runs/41071984000"
       },
-      "report_path": "formalization/coordination/submissions/B043.md"
+      "report_path": "formalization/coordination/submissions/B043.md",
+      "review": {
+        "project_id": 3,
+        "actor_id": "independent_review",
+        "head_sha": "e01b918ae3bf46ce5a36d83901ef51d0310098e4",
+        "approved": false,
+        "independence": {
+          "identity": "/root/independent_review",
+          "non_author": true,
+          "summary": "The actual registered reviewer personally authored and designed none of B043, its original preparation or helper boundary models; all actual root, owner and helper identities remain recorded, and the reviewer has contributed no code, designs, builds, tests, audits or helper implementation.",
+          "report_path": "formalization/coordination/reviews/B043-final.md"
+        }
+      }
     },
     "B044": {
       "state": "IN_PROGRESS",
@@ -9629,6 +9641,24 @@
         },
         "report_path": "formalization/coordination/submissions/B043.md",
         "actor_id": "root"
+      }
+    },
+    {
+      "revision": 353,
+      "project_id": 3,
+      "actor_id": "independent_review",
+      "event": "review",
+      "package_id": "B043",
+      "details": {
+        "package_id": "B043",
+        "head_sha": "e01b918ae3bf46ce5a36d83901ef51d0310098e4",
+        "independence": {
+          "identity": "/root/independent_review",
+          "non_author": true,
+          "summary": "The actual registered reviewer personally authored and designed none of B043, its original preparation or helper boundary models; all actual root, owner and helper identities remain recorded, and the reviewer has contributed no code, designs, builds, tests, audits or helper implementation.",
+          "report_path": "formalization/coordination/reviews/B043-final.md"
+        },
+        "actor_id": "independent_review"
       }
     }
   ],
