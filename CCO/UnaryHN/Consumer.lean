@@ -1,4 +1,6 @@
 import CCO.UnaryHN.Source
+import CCO.UnaryHN.ObstructionBoundaries.StrongAmalgam
+import CCO.UnaryHN.ObstructionBoundaries.Unbounded
 
 /-! Actual consumers of the five source exports. Witnesses have genuine
 typed K diagrams on their ENTIRE finite carrier, and every colour is on
@@ -46,5 +48,17 @@ theorem constructed_strong_local_use {L : Signature.{u}} {K : Raw.Class.{u,v} L}
   obtain ⟨X, hX, Target, ⟨old, o, ⟨T, hT, rfl⟩, rfl⟩, q, hq, hInjective⟩ := h
   let : Finite X := hX
   exact ⟨X, hX, o, T, hT, hCompleted T hT, q, hq, hInjective⟩
+
+/-- A genuine hereditary SAP age with complete binary irreducible members
+still has no uniform obstruction bound. This consumes the constructed
+amalgams and the all-length minimal obstruction family together. -/
+theorem constructed_unbounded_sap_age :
+    Native.FiniteHereditarySAP (Native.ObstructionBoundaries.completed.{0}) ∧
+    Native.AllIrreducible (Native.ObstructionBoundaries.completed.{0}) ∧
+    ∀ N : ℤ, ¬ Native.RestrictedObstruction
+      (Native.ObstructionBoundaries.completed.{0}) N :=
+  ⟨Native.ObstructionBoundaries.completed_finiteHereditarySAP,
+    Native.ObstructionBoundaries.completed_irreducible,
+    Native.ObstructionBoundaries.no_uniform_obstruction_bound⟩
 
 end CCO.UnaryHN
