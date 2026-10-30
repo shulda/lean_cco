@@ -12,7 +12,7 @@ of those modules. Only the new Descent/Towers files belong to this stream.
 
 ## C01–C10, one original symmetric sort
 
-`Descent.OneSort.invariant_symmetric` and `invariant_commute` discharge the
+`Descent.invariant_symmetric` and `invariant_commute` discharge the
 actual symmetry/commutation arguments using original pair flips. `word_pullback`
 uses the actual projected old letters and the same literal quotient palette;
 its word-intertwining certificates are proved from original homogeneity, never
@@ -31,21 +31,21 @@ old diversity relations which do not contain equality.
 
 ## C41–C49, actual finite towers
 
-- `Towers.Flattening` defines the real pulled-back setoid F.comap(quotient J),
+- `Towers/Flattening.lean` defines the real pulled-back setoid F.comap(quotient J),
   proves J≤H, and constructs the canonical class bijection `[[x]] ↦ [x]` with
   literal commuting projection equations. `double_saturation` proves
   H;J;R;K;L=H;R;L from J≤H and K≤L for every old relation, including equality.
-- `Towers.ExactKernel.totalExact` explicitly pulls each current exact kernel
+- `Towers.totalExact` explicitly pulls each current exact kernel
   back using the accepted SAFE quotient-to-original theorem. `total_kernel_data`
   supplies full exactness and original containment. It never imports reverse
   descent. `Orbitals` proves full binary orbital preservation/reflection under
   the canonical flattening maps, with actual equivariant quotient actions.
 - `AtomicIso` constructs bijections between actual diversity orbital predicates
-  under equivariant carrier equivalences. `SourceIso.AtomicIso` additionally
+  under equivariant carrier equivalences. `Towers.AtomicIso` additionally
   records a bijection of EVERY typed atomic palette and the exact optional
   colour equation. `atomicIso` constructs it from actual realized colour
   partitions, rather than assuming a palette identification.
-- `ExactTower.Stage` stores actual current source data. A concrete `StepData`
+- `Towers.Stage` stores actual current source data. A concrete `StepData`
   contains only the chosen current setoids, their nonempty full exact word
   presentations and their literal representation equalities. `Stage.quotient`
   DERIVES countability, homogeneity and semantic HOM CCO using the owner’s actual
