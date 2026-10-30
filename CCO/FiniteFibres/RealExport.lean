@@ -1,4 +1,5 @@
 import CCO.FiniteFibres.FiniteAtomic
+import CCO.FiniteFibres.SourceChain
 import CCO.FiniteFibres.Real.Source
 
 /-! Discharge the actual finite-fibre/real-closure theorem. Its finite target
@@ -9,7 +10,8 @@ namespace CCO.FiniteFibres
 
 theorem finiteCard_provider : Real.FiniteAtomicCard.{v,w} := by
   intro F T _ _ K _ _ H cco
-  exact finite_atomic_card T H cco
+  have h := actual_source_chain_bounds T H cco
+  exact ⟨(sourceSaturatedChain T).length,h⟩
 
 variable {M : Type v} (S : AtomicSource.{0,v,w} Unit (fun _ => M)) [DecidableEq M]
 variable {G : Type t} [Group G] [MulAction G M]
