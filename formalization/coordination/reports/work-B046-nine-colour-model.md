@@ -14,7 +14,7 @@ obstruction consumers. Frozen mathematical source remains
 All names below are relative to `CCO.OrbitalCover.Example` unless qualified.
 `Point` has the literal fields `u v n : Nat` and `p q : ZMod 2`. The model
 uses three actual countably infinite pure sets; Nat is the chosen concrete
-copy. `Core.source` (declaration `source`) is a singleton-sort AtomicSource.
+copy. `Core.lean` defines the singleton-sort AtomicSource `source`.
 Every one of its nine diversity colours actually occurs; distinct clones
 of one owner have diversity `(some 0,some 0)`, whereas original logical
 equality has outer `none`. These are never identified.
@@ -43,7 +43,7 @@ unbounded actual AgeSAP; no finite diagnostic window is substituted.
 | C16 | `coordinate_triple`, `coordTriangle_realized`, `triangle_iff`; explicit independent coordinate triples combine with clone indices 0,1,2, so the STRONG table has genuine three-distinct-point witnesses. |
 | C17 | `coordinate_triangle_defined`; a complete one-coordinate table with exactly the displayed triangle law has a simultaneous block/bit realization, including empty/singleton/pair inputs. |
 | C18 | `triangle_defined`; actual permitted complete diagrams embed inducedly in the original source. |
-| C19–C22 | `Potentials.optional_phase_labels`, `coordinate_blocks`, `coordinate_solution`, `semanticCCO_injective`, `semanticCCO`; genuine specified old simple cycles force signed e-component consistency and forbid any n edge inside an e-component. Every component receives a fresh actual block; the two independent coordinate solutions combine with distinct original clone indices. |
+| C19–C22 | `Potentials.optional_phase_labels`, `Potentials.coordinate_blocks`, `Potentials.coordinate_solution`, `semanticCCO_injective`, `semanticCCO`; genuine specified old simple cycles force signed e-component consistency and forbid any n edge inside an e-component. Every component receives a fresh actual block; the two independent coordinate solutions combine with distinct original clone indices. |
 | C23–C24 | `product_boxes`, `CoordProfile`, `positive_profile_box`, `positive_profile_nonempty`, `every_coordProfile_reachable`, `positive_profiles_helly`; actual positive-word profiles, not an uninstantiated recurrence. |
 | C27 support | `diagonal_not_box`, `diagonal_not_positive_profile`; the actual coarse diagonal palette is not any positive STRONG word profile. Parent identifies the cover's palette with this literal set. |
 | C38 | `Prefix.source`, `Prefix.homogeneous`, `Prefix.strongAmalgamation`; actual p, then (p,q) unary refinements, whole labelled-source homogeneity and real SAP. |
@@ -69,7 +69,7 @@ mask, marked completion, identification, progress or later safe-splitting
 theorem is imported as a premise or used to prove the model properties.
 
 `Prefix.oldEquiv` is the actual global carrier bijection back to original
-points. `forgetSecondEquiv`, `forgetSecond_literal`, `reduct_same_point`
+points. `Prefix.forgetSecondEquiv`, `Prefix.forgetSecond_literal`, `Prefix.reduct_same_point`
 exhibit the second prefix as the literal further q refinement of the
 first p refinement, with the original global reduct retained. The group
 `Prefix.FullGroup` is the full original colour automorphism group restricted
