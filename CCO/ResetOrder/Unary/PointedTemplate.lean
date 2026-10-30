@@ -2,7 +2,7 @@ import CCO.ResetOrder.Unary.Task
 
 universe u v
 namespace CCO.ResetOrder.Unary
-open CCO.UnarySupport
+open CCO.ResetOrder.Unary.Primitive
 variable {L : Signature.{u}} {P : Fibres.{u,v} L} {X : ExtraLanguage L}
 
 abbrev FullAge (P : Fibres.{u,v} L) (X : ExtraLanguage L) := FullObject P X → Prop

@@ -3,7 +3,7 @@ import Mathlib.Data.Fintype.EquivFin
 
 /-! C53: actual same binary root type with different generated unary types. -/
 namespace CCO.ResetOrder.ClosureBoundaries
-open CCO.UnarySupport
+open CCO.ResetOrder.Unary.Primitive
 open CCO.ResetOrder.Unary
 
 def language : Signature where
@@ -14,9 +14,6 @@ def language : Signature where
   output _ := ()
   arity _ := 2
   argument _ _ := ()
-  finiteSort := inferInstance
-  finiteFunc := inferInstance
-  finiteRel := inferInstance
 
 def diagram (split : Bool) : Structure language (Fin 4) where
   sort _ := ()

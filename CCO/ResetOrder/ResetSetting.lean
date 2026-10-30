@@ -4,7 +4,7 @@ import CCO.ResetOrder.ResetEP
 precompact/reduct-surjective hypotheses. The combinatorial core is stronger. -/
 universe u v
 namespace CCO.ResetOrder.Unary
-open CCO.UnarySupport
+open CCO.ResetOrder.Unary.Primitive
 variable {L : Signature.{u}} {P : Fibres.{u,v} L} {X : ExtraLanguage L}
 
 def TaskHereditary (U : TaskAge P) : Prop := ∀{A B}, U A → Nonempty (TaskHom B A) → U B

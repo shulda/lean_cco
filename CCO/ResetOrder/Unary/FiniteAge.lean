@@ -3,7 +3,7 @@ import Mathlib.Basic.Finite.Set
 
 universe u v
 namespace CCO.ResetOrder.Unary
-open CCO.UnarySupport
+open CCO.ResetOrder.Unary.Primitive
 
 structure Object (L : Signature.{u}) where
   Carrier : Type v

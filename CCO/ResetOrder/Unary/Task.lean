@@ -1,11 +1,10 @@
 import CCO.ResetOrder.Unary.FiniteAge
-import Mathlib.Basic.Finite.Sum
 
 /-! Actual task structures, with every old partial-unary domain retained.
 The full Ramsey language may add additional unary functions. -/
 universe u v
 namespace CCO.ResetOrder.Unary
-open CCO.UnarySupport
+open CCO.ResetOrder.Unary.Primitive
 
 structure Fibres (L : Signature.{u}) where
   Allowed : Age.{u,v} L
@@ -104,9 +103,6 @@ structure ExtraLanguage (L : Signature.{u}) where
   output : Func → L.Sorts
   arity : Rel → ℕ
   argument : (R : Rel) → Fin (arity R) → L.Sorts
-  finiteFunc : Finite Func
-  finiteRel : Finite Rel
-attribute [instance] ExtraLanguage.finiteFunc ExtraLanguage.finiteRel
 
 def ExtraLanguage.signature {L : Signature.{u}} (X : ExtraLanguage L) : Signature where
   Sorts := L.Sorts
@@ -118,9 +114,6 @@ def ExtraLanguage.signature {L : Signature.{u}} (X : ExtraLanguage L) : Signatur
   argument := fun R => match R with
     | .inl R => L.argument R
     | .inr R => X.argument R
-  finiteSort := inferInstance
-  finiteFunc := inferInstance
-  finiteRel := inferInstance
 
 structure FullObject {L : Signature.{u}} (P : Fibres.{u,v} L) (X : ExtraLanguage L) where
   task : TaskObject P

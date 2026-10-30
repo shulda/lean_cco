@@ -4,7 +4,7 @@ import CCO.ResetOrder.Unary.StoredPatterns
 competitor; no Ramsey property of either intermediate class is assumed. -/
 universe u v
 namespace CCO.ResetOrder.Unary
-open CCO.UnarySupport
+open CCO.ResetOrder.Unary.Primitive
 variable {L : Signature.{u}} {P : Fibres.{u,v} L} {X : ExtraLanguage L}
 
 abbrev TaskAge (P : Fibres.{u,v} L) := TaskObject P → Prop

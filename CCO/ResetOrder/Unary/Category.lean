@@ -1,9 +1,9 @@
-import CCO.UnarySupport.Induced
+import CCO.ResetOrder.Unary.Primitive.Induced
 
 /-! Concrete induced embeddings retain every partial-unary domain and nullary relation. -/
 universe u v w z
 namespace CCO.ResetOrder.Unary
-open CCO.UnarySupport
+open CCO.ResetOrder.Unary.Primitive
 
 abbrev Hom {L : Signature.{u}} {V : Type v} {W : Type w}
     (A : Structure L V) (B : Structure L W) := Structure.Embedding A B

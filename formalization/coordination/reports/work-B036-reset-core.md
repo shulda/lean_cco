@@ -2,7 +2,10 @@
 
 The source pin is `490c3f36d85db5a0b3ced0598e6c431825254ec5`.
 This implementation preserves the B036 mathematical contract and accepted APIs.
-It uses the primitive generic `UnarySupport` language/induced graph semantics;
+It generalizes the accepted `UnarySupport` primitive graph semantics into
+local `Unary/Primitive` modules by removing only symbol/sort-finiteness fields;
+all accepted files/APIs remain unchanged. Arbitrary fixed unary signatures
+are allowed, including arbitrary extra full-R function and relation alphabets;
 no deeper CCO, Ramsey, SAP, EPPA or geometry provider is imported.
 
 ## Actual proof path
@@ -75,7 +78,12 @@ published. The actual proof text was recovered from preserved author tool-call
 history into new commits, without claiming the missing local commit objects
 still exist. These files are preserved by the current Git history. The
 previous unary core had passed narrow compilation; the qf constructor's last
-implicit-binder correction was pending. This is provenance, NOT a replacement
-for compiling the recovered current tree. Fresh validation is pending the
-pinned Lean/Lake/manifest restoration; no batch completion, independent
-approval, final audit, PR or main CI success is asserted by this report.
+implicit-binder correction was pending. The recovered tree, including that
+correction and legality-gated fibre laws, passed a fresh pinned narrow build
+of all owner roots (753 jobs). The subsequent unrestricted-symbol local primitive generalization passed
+a fresh narrow build of all owner roots (746 jobs), with a direct compiler
+check confirming `store_all_original_comparisons` uses the NEW local primitive
+signature. A stale generated module was moved aside reversibly and artifact
+restoration disabled for that check; `--rehash` alone had left its old interface
+visible. Logs are retained in the receiving runtime. No batch completion, independent approval,
+final audit, PR or main CI success is asserted by this report.

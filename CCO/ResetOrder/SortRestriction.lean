@@ -3,7 +3,7 @@ import CCO.ResetOrder.Unary.FiniteAge
 /-! C01--C06: actual full-language selected-sort restrictions. -/
 universe u v
 namespace CCO.ResetOrder.Unary
-open CCO.UnarySupport
+open CCO.ResetOrder.Unary.Primitive
 variable {L : Signature.{u}}
 
 def ClosedSorts (I : Set L.Sorts) : Prop := ∀ F, L.input F ∈ I → L.output F ∈ I

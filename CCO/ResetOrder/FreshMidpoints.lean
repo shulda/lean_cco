@@ -3,7 +3,7 @@ import CCO.ResetOrder.Unary.PointedTemplate
 /-! C39--C44: ORDERED SAP over the WHOLE actual generated pair closure. -/
 universe u v
 namespace CCO.ResetOrder.Unary
-open CCO.UnarySupport
+open CCO.ResetOrder.Unary.Primitive
 variable {L : Signature.{u}} {P : Fibres.{u,v} L} {X : ExtraLanguage L}
 
 structure PlainPairWitness (A : FullObject P X) (u v : A.task.old.Carrier) where

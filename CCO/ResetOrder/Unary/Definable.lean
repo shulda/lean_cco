@@ -4,7 +4,7 @@ import CCO.ResetOrder.Unary.Task
 arities, including nullary truth. Their naturality is PROVED structurally. -/
 universe u v w
 namespace CCO.ResetOrder.Unary.Definable
-open CCO.UnarySupport
+open CCO.ResetOrder.Unary.Primitive
 
 inductive Term (L : Signature.{u}) (n : ℕ) : Type u
   | var (i : Fin n)
