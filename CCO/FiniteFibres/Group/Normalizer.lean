@@ -1,6 +1,8 @@
 import CCO.FiniteFibres.Group.Cauchy
 import Mathlib.GroupTheory.QuotientGroup.Basic
 
+assert_not_exists exists_prime_orderOf_dvd_card IsPGroup Sylow
+
 /-! C12/C16–C20: prime divisors and the local finite p-group normalizer
 argument. Fixed cosets are counted explicitly; no Sylow, Cauchy or normalizer
 condition theorem is imported or applied. -/

@@ -1,6 +1,8 @@
 import CCO.FiniteFibres.Group.Counting
 import Mathlib.Data.ZMod.QuotientGroup
 
+assert_not_exists exists_prime_orderOf_dvd_card IsPGroup Sylow
+
 /-! C09–C11: a local Cauchy proof by cyclic rotation of product-one tuples.
 The tuple equivalence and elementary rotations are expanded here. No Cauchy
 theorem, Sylow theorem or p-group theorem is used. -/
