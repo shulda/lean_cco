@@ -1,0 +1,25 @@
+{
+  "head": "72f41c0f21f726804ed1c12a108da973e6f2c225",
+  "tree": "ab7309d31d2c745feaefd9b2511e145018b76801",
+  "complete": true,
+  "steps": 88,
+  "tests": 130,
+  "declarations": 22837,
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "project_sources": 1291,
+  "provider_sources": 269,
+  "ramsey_sources": 106,
+  "initial_failed_guard": "POST-project",
+  "initial_failures": [
+    "MIGeometry/Consumers.trace output bytes differ from trace descriptors",
+    "OwnerTransversal/TypedOrbitSAP.trace output bytes differ from trace descriptors"
+  ],
+  "recovery": "One distinct prepared recovery: clear only owned project outputs; retain provider/dependency caches; clean full build and complete guards before audit. No source/toolchain/manifest/CI edits.",
+  "all_final_required_steps_passed": true,
+  "seconds": 733.3,
+  "receipt": "/workspace/scratch/6b2f11185e14/runtime/round16-b039-final-receipt.json"
+}
