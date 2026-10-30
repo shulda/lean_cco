@@ -28,6 +28,12 @@ původní i nové autory a skutečnou identitu, neautorství a samostatný repor
 reviewera. Review porovná původní zdroj, hypotézy, všechny provider discharge,
 consumer a CI/audit přesného SHA. Kontrolní role nesmí psát implementaci.
 
+Při nedostupnosti kontrolního runtime nesmí autor přejmenovat sebe ani použít
+cizí nehotové review. Použij výslovný append-only reviewer_recovery manifest,
+nezávislou kontrolu opravného infrastrukturního PR, jediný zámek a přesný PR/main
+CI/audit. promote_reviewer atomicky aktivuje nové skutečné identity bez změny
+claimů, přijetí nebo autorství; teprve pak může začít jejich vlastní nové review.
+
 Po oprávněném nezávislém schválení integruj automaticky: jediný integrační
 zámek i pro infrastrukturu, čerstvý main jako předek, schválený přesný PR head
 se zeleným CI/auditem; potom merge se zachováním historie a zelený výsledný

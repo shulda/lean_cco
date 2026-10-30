@@ -130,6 +130,98 @@ def validate_promotion_manifest(manifest):
             and ids == sorted(set(ids)), 'Invalid registry promotion package IDs')
 
 
+def reviewer_recovery_manifest(previous_registry, previous_policy, registry, policy,
+                               unavailable_actor_id, bootstrap_actor_id):
+    """Bind an append-only recovery of genuinely fresh, review-only readers.
+
+    No old actor is renamed or removed. This exception authorizes only review
+    of the recovery infrastructure itself, never a mathematical approval.
+    Actual reader independence and runtime failure remain external evidence.
+    """
+    validate_policy(previous_registry, previous_policy)
+    require(registry == previous_registry, 'Reviewer recovery cannot change the catalogue')
+    require(set(policy) == set(previous_policy)
+            and {k: v for k, v in policy.items() if k not in {'revision', 'actors'}} ==
+            {k: v for k, v in previous_policy.items() if k not in {'revision', 'actors'}},
+            'Reviewer recovery must preserve every other policy field')
+    require(type(policy.get('revision')) is int
+            and policy['revision'] == previous_policy['revision'] + 1,
+            'Reviewer recovery advances policy revision exactly once')
+    old = previous_policy['actors']
+    require(isinstance(policy.get('actors'), dict)
+            and all(policy['actors'].get(a) == entry for a, entry in old.items()),
+            'Reviewer recovery must preserve every old actor and identity')
+    additions = {a: entry for a, entry in policy['actors'].items() if a not in old}
+    require(1 <= len(additions) <= 2, 'Recover one or two genuinely fresh review-only readers')
+    for entry in additions.values():
+        require(isinstance(entry, dict)
+                and set(entry) == {'identity', 'roles', 'historical_author_projects'}
+                and entry['roles'] == ['review', 'integrate']
+                and entry['historical_author_projects'] == [],
+                'Recovered readers may only review and integrate, without historical authorship')
+    require(isinstance(unavailable_actor_id, str)
+            and unavailable_actor_id in old and 'review' in old[unavailable_actor_id]['roles'],
+            'Identify an existing unavailable review actor')
+    require(isinstance(bootstrap_actor_id, str) and bootstrap_actor_id in additions,
+            'Recovery approval needs a genuinely new reader')
+    validate_policy(registry, policy)
+    return {'unavailable_actor_id': unavailable_actor_id,
+            'bootstrap_actor_id': bootstrap_actor_id, 'new_actors': deepcopy(additions),
+            'previous_registry_sha256': fingerprint(previous_registry),
+            'previous_policy_sha256': fingerprint(previous_policy),
+            'registry_sha256': fingerprint(registry), 'policy_sha256': fingerprint(policy)}
+
+
+def recovery_policy(registry, policy, manifest):
+    """Reconstruct and validate the ONLY prospective policy allowed by a lock."""
+    fields = {'unavailable_actor_id', 'bootstrap_actor_id', 'new_actors',
+              'previous_registry_sha256', 'previous_policy_sha256',
+              'registry_sha256', 'policy_sha256'}
+    require(isinstance(manifest, dict) and set(manifest) == fields,
+            'Reviewer recovery needs a complete snapshot manifest')
+    require(isinstance(manifest['new_actors'], dict), 'Invalid new reviewer actors')
+    proposed = deepcopy(policy)
+    proposed['revision'] += 1
+    proposed['actors'].update(deepcopy(manifest['new_actors']))
+    expected = reviewer_recovery_manifest(registry, policy, registry, proposed,
+                                         manifest['unavailable_actor_id'],
+                                         manifest['bootstrap_actor_id'])
+    require(manifest == expected, 'Recovery lock must bind the exact old and prospective snapshots')
+    return proposed
+
+
+def check_reviewer_recovery(registry, policy, state, lock):
+    prospective = recovery_policy(registry, policy, lock['reviewer_recovery'])
+    manifest = lock['reviewer_recovery']
+    missing = lock.get('unavailable_reviewer', {})
+    unavailable = manifest['unavailable_actor_id']
+    require(isinstance(missing, dict)
+            and set(missing) == {'actor_id', 'identity', 'reason', 'report_path'}
+            and missing['actor_id'] == unavailable
+            and missing['identity'] == policy['actors'][unavailable]['identity']
+            and isinstance(missing['reason'], str) and len(missing['reason']) >= 80
+            and isinstance(missing['report_path'], str)
+            and missing['report_path'].startswith(str(DIRECTORY / 'reports') + '/')
+            and missing['report_path'].endswith('.md'),
+            'Recovery needs durable evidence of the actual unavailable reviewer')
+    require(state['protocol_version'] == 3 and 'registry_promotion' not in lock,
+            'Reviewer recovery is separate from registry promotion and the old handoff')
+    require(lock.get('review', {}).get('actor_id') == manifest['bootstrap_actor_id'],
+            'Only the manifest-bound fresh reader may approve recovery infrastructure')
+    for actor in manifest['new_actors']:
+        # Even readers not approving this PR must be non-authors of it and of
+        # every active batch. No current review/approval is transferred or reused.
+        check_actor_non_author(prospective, lock, actor)
+        for ident in active_packages(state):
+            package = state['packages'][ident]
+            require(not package.get('review'),
+                    'Reviewer recovery requires active batches without review leases or approvals')
+            check_actor_non_author(prospective, package, actor)
+    check_independence(prospective, lock, manifest['bootstrap_actor_id'],
+                       lock['review'].get('independence', {}))
+    return prospective
+
+
 def validate_policy(registry, policy):
     ids = {p['id'] for p in registry['packages']}
     require(policy.get('protocol_version') == 3, 'Queue requires protocol 3')
@@ -171,7 +263,7 @@ def active_packages(state):
     return [i for i, p in state['packages'].items() if p['state'] in ACTIVE]
 
 
-def check_independence(policy, package, actor, evidence):
+def check_actor_non_author(policy, package, actor):
     role = policy['actors'].get(actor, {})
     require('review' in role.get('roles', []), 'Actor has no independent review role')
     author_identities = {policy['actors'].get(a, {}).get('identity', a)
@@ -180,6 +272,11 @@ def check_independence(policy, package, actor, evidence):
             and role.get('identity') not in author_identities, 'Author cannot review their own package')
     require(not set(role['historical_author_projects']) & set(package.get('original_author_project_ids', [])),
             'Historical author cannot review their own package under another role')
+
+
+def check_independence(policy, package, actor, evidence):
+    check_actor_non_author(policy, package, actor)
+    role = policy['actors'][actor]
     require(evidence.get('identity') == role['identity'] and evidence.get('non_author') is True,
             'Review must identify the actual non-author reader')
     require(isinstance(evidence.get('summary'), str) and len(evidence['summary']) >= 80,
@@ -264,7 +361,10 @@ def validate_state(registry, policy, state):
         review = lock.get('review', {})
         require(review.get('head_sha') == lock['head_sha'] and review.get('approved') is True
                 and len(review.get('summary', '')) >= 80, 'Invalid infrastructure review')
-        check_independence(policy, lock, review.get('actor_id'), review.get('independence', {}))
+        if 'reviewer_recovery' in lock:
+            check_reviewer_recovery(registry, policy, state, lock)
+        else:
+            check_independence(policy, lock, review.get('actor_id'), review.get('independence', {}))
         if 'registry_promotion' in lock:
             manifest = lock['registry_promotion']
             validate_promotion_manifest(manifest)
@@ -401,7 +501,9 @@ def transition(registry, policy, state, project, event, data):
             # Infrastructure authorship is explicit too; a distinct label alone is insufficient.
             authors = data.get('author_actor_ids', [])
             require(authors and review.get('actor_id') not in authors, 'Infrastructure reviewer is an author')
-            check_independence(policy, {'author_actor_ids': authors,
+            review_policy = (recovery_policy(registry, policy, data['reviewer_recovery'])
+                             if 'reviewer_recovery' in data else policy)
+            check_independence(review_policy, {'author_actor_ids': authors,
                                        'original_author_project_ids': data.get('original_author_project_ids', [])},
                                review.get('actor_id'), review.get('independence', {}))
             result['integration_lock'] = {'kind': 'infrastructure', 'actor_id': actor,
@@ -412,6 +514,10 @@ def transition(registry, policy, state, project, event, data):
             if 'registry_promotion' in data:
                 actor_role(policy, project, data, 'coordinate')
                 result['integration_lock']['registry_promotion'] = deepcopy(data['registry_promotion'])
+            if 'reviewer_recovery' in data:
+                actor_role(policy, project, data, 'coordinate')
+                result['integration_lock']['reviewer_recovery'] = deepcopy(data['reviewer_recovery'])
+                result['integration_lock']['unavailable_reviewer'] = deepcopy(data.get('unavailable_reviewer'))
         else:
             lock = result.get('integration_lock') or {}
             require(lock.get('kind') == 'infrastructure' and lock.get('actor_id') == actor,
@@ -419,6 +525,8 @@ def transition(registry, policy, state, project, event, data):
             if event == 'finish_infrastructure':
                 require('registry_promotion' not in lock,
                         'Finish a registry promotion atomically with promote_registry and both snapshot pairs')
+                require('reviewer_recovery' not in lock,
+                        'Finish reviewer recovery atomically with promote_reviewer and both snapshot pairs')
                 require(sha(data.get('integration_commit')), 'Missing infrastructure integration commit')
                 validate_ci(data.get('main_ci', {}), data['integration_commit'])
                 result.setdefault('infrastructure_integrations', []).append({**lock,
@@ -615,6 +723,36 @@ def promote_registry(previous_registry, previous_policy, registry, policy, state
     return result
 
 
+def promote_reviewer(previous_registry, previous_policy, registry, policy, state, project, data):
+    """Finish exactly the reviewed recovery without reconstructing any claim."""
+    validate_state(previous_registry, previous_policy, state)
+    actor = actor_role(previous_policy, project, data, 'coordinate')
+    actor_role(previous_policy, project, data, 'integrate')
+    lock = state.get('integration_lock') or {}
+    require(lock.get('kind') == 'infrastructure' and lock.get('actor_id') == actor
+            and 'reviewer_recovery' in lock,
+            'Only the current recovery infrastructure lock holder can promote reviewers')
+    old_manifest = lock['reviewer_recovery']
+    manifest = reviewer_recovery_manifest(previous_registry, previous_policy, registry, policy,
+                                         old_manifest['unavailable_actor_id'],
+                                         old_manifest['bootstrap_actor_id'])
+    require(manifest == old_manifest, 'Recovery snapshots must match the complete reviewed lock manifest')
+    require(data.get('head_sha') == lock['head_sha'], 'Reviewer recovery reviewed head mismatch')
+    require(sha(data.get('integration_commit')), 'Missing infrastructure integration commit')
+    validate_ci(data.get('main_ci', {}), data['integration_commit'])
+    result = deepcopy(state)
+    result['policy_revision'] = policy['revision']
+    result.setdefault('infrastructure_integrations', []).append({**deepcopy(lock),
+        'integration_commit': data['integration_commit'], 'main_ci': deepcopy(data['main_ci'])})
+    result['integration_lock'] = None
+    result['revision'] += 1
+    result.setdefault('history', []).append({'revision': result['revision'], 'project_id': project,
+        'actor_id': actor, 'event': 'promote_reviewer', 'package_id': None,
+        'details': {**deepcopy(data), 'reviewer_recovery': manifest}})
+    validate_state(registry, policy, result)
+    return result
+
+
 def compare_and_swap(current_head, expected_head, current, proposed):
     """Model the publication lease; the real guard is Git's non-force ref update."""
     require(current_head == expected_head, 'Stale coordination ref: reload and recompute')
@@ -652,6 +790,12 @@ přejmenování původního autora nezávislost nedokazuje. Zaznamenej všechny
 původní i nové autory a skutečnou identitu, neautorství a samostatný report
 reviewera. Review porovná původní zdroj, hypotézy, všechny provider discharge,
 consumer a CI/audit přesného SHA. Kontrolní role nesmí psát implementaci.
+
+Při nedostupnosti kontrolního runtime nesmí autor přejmenovat sebe ani použít
+cizí nehotové review. Použij výslovný append-only reviewer_recovery manifest,
+nezávislou kontrolu opravného infrastrukturního PR, jediný zámek a přesný PR/main
+CI/audit. promote_reviewer atomicky aktivuje nové skutečné identity bez změny
+claimů, přijetí nebo autorství; teprve pak může začít jejich vlastní nové review.
 
 Po oprávněném nezávislém schválení integruj automaticky: jediný integrační
 zámek i pro infrastrukturu, čerstvý main jako předek, schválený přesný PR head
@@ -691,23 +835,24 @@ def main():
     args = parser.parse_args()
     registry, policy, state = [json.loads(p.read_text())
                                for p in (args.registry, args.policy, args.state)]
-    if args.event == 'promote_registry':
+    if args.event in {'promote_registry', 'promote_reviewer'}:
         require(args.previous_registry is not None and args.previous_policy is not None,
-                'promote_registry requires explicit previous public registry and policy snapshots')
+                args.event + ' requires explicit previous public registry and policy snapshots')
         require(args.project is not None and args.data is not None and args.output is not None,
                 'Event needs --project, --data and --output')
         previous_registry = json.loads(args.previous_registry.read_text())
         previous_policy = json.loads(args.previous_policy.read_text())
         data = json.loads(args.data.read_text())
         data.setdefault('actor_id', args.actor)
-        proposed = promote_registry(previous_registry, previous_policy, registry, policy,
-                                    state, args.project, data)
+        promote = promote_registry if args.event == 'promote_registry' else promote_reviewer
+        proposed = promote(previous_registry, previous_policy, registry, policy,
+                           state, args.project, data)
         args.output.write_text(json.dumps(proposed, ensure_ascii=False, indent=2) + '\n')
         print(json.dumps({'proposed_revision': proposed['revision'], 'published': False,
                           'next_step': 'Commit only on coordination with expected parent/ref and force=false.'}))
         return
     require(args.previous_registry is None and args.previous_policy is None,
-            'Previous snapshots are only valid for promote_registry')
+            'Previous snapshots are only valid for promote_registry or promote_reviewer')
     validate_state(registry, policy, state)
     if args.project is None:
         print(json.dumps({'valid': True, 'revision': state['revision'],
