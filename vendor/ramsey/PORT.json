@@ -1,0 +1,146 @@
+{
+  "schema_version": 1,
+  "receiving_lean": "leanprover/lean4:v4.34.1",
+  "receiving_mathlib": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+  "source_module_count": 105,
+  "source_changes": [
+    {
+      "path": "PartiteConstruction/Functional/EHNStage.lean",
+      "upstream_blob": "07f1b2dee496f9558d4c3d8fe885a83a112986e3",
+      "compatibility_blob": "5ad935b80d31eabcc75967831778cfdc7e34bf9a"
+    },
+    {
+      "path": "PartiteConstruction/Functional/OrderedRecursive.lean",
+      "upstream_blob": "b7bf4369d49ed5bdd4a56de32a25172ec8da361f",
+      "compatibility_blob": "72ec6f78fca2511e1ac1539b41b2d5856a4ca56b"
+    },
+    {
+      "path": "PartiteConstruction/Partite/Picture.lean",
+      "upstream_blob": "7ce9742414f76a8f104405abac15c71797b356f7",
+      "compatibility_blob": "3b254a792caa7d57e839a066be3b48d2e13f787b"
+    },
+    {
+      "path": "PartiteConstruction/Ramsey/ForbiddenFunctions.lean",
+      "upstream_blob": "c39243b64605307a6073dccf3752372bd6dc0dc2",
+      "compatibility_blob": "828feecda0eabff344472c3000e057096d4c7fa6"
+    },
+    {
+      "path": "PartiteConstruction/Ramsey/ForbiddenFunctionsAllArity.lean",
+      "upstream_blob": "7bba5bb436cdf5dd2905cf1c6b8308053b1e65fc",
+      "compatibility_blob": "cc148d17c40e47a073d5e0784529c799d9e1a5fe"
+    },
+    {
+      "path": "PartiteConstruction/Ramsey/FreeAmalgamationFunctions.lean",
+      "upstream_blob": "7ab6f49c4b62eaf5093ec3886958bcde6c8b208b",
+      "compatibility_blob": "529bfd2eea8accbec78e6bf1eadf4bdafc763113"
+    },
+    {
+      "path": "PartiteConstruction/Ramsey/Ordered.lean",
+      "upstream_blob": "8fb4489722adc54c9ff01ac024c5c009b627d91a",
+      "compatibility_blob": "9592868a8f58cc5380162611f86ae936b3bf043f"
+    },
+    {
+      "path": "PartiteConstruction/Relational/Basic.lean",
+      "upstream_blob": "4ab681f8fcc4cede5bae5794d535a48da832cfcd",
+      "compatibility_blob": "d4eb0ef90b428cb8722f1692ffea224efb7d4702"
+    },
+    {
+      "path": "PartiteConstruction/Relational/Order.lean",
+      "upstream_blob": "0c18ccdfd57811dbc599ed443558967d9749c6f0",
+      "compatibility_blob": "5261bf387017f3f4c2c0d05b572c8f85204a94ee"
+    },
+    {
+      "path": "PartiteConstruction/Structure/Basic.lean",
+      "upstream_blob": "fe3c0c33928d0fe358e9f556d88340c06a79554b",
+      "compatibility_blob": "d7714c8f84d10cb84cdbbe8c5835c4e760751127"
+    },
+    {
+      "path": "PartiteConstruction/Structure/FreeAmalgamationClass.lean",
+      "upstream_blob": "8db3ccef4ed73037ef47f1ff8c48fb6e782ea04d",
+      "compatibility_blob": "9cdf6d711da7a78c52db9eb0868c27ab17f6ee90"
+    },
+    {
+      "path": "PartiteConstruction/Structure/Order.lean",
+      "upstream_blob": "afcf13ee5dc1acc0ef00c4f1ac672023a6fafd4c",
+      "compatibility_blob": "638eea51bd16153fa62ef5cfb2be7b1d39d6c9ac"
+    },
+    {
+      "path": "PartiteConstruction/Structure/RootedOrder.lean",
+      "upstream_blob": "88e63be69f713bc9c0b6d0121ec39e2c5761e8cf",
+      "compatibility_blob": "2c6e88d93befd73a8a1e25626da71a9b4db138ea"
+    },
+    {
+      "path": "PartiteConstruction/Structure/RootedReduction.lean",
+      "upstream_blob": "9b59262959215a0ef8914829469c4025b78eebdf",
+      "compatibility_blob": "e0534e148152d8b7a1ce0bec51ded891e2187b51"
+    },
+    {
+      "path": "SuccessorTree/HalesJewett/AlphabetEquiv.lean",
+      "upstream_blob": "e89ec7be50d4601743d97a9df67481e46c3314cf",
+      "compatibility_blob": "26c434d147212896c9b41d35124cfa1642fdabe3"
+    },
+    {
+      "path": "SuccessorTree/HalesJewett/AlphabetInduction.lean",
+      "upstream_blob": "3eb322e4158d17596db321a1b41738a3fcf6a79d",
+      "compatibility_blob": "17b968ab28dddeebaabb2937dbc915cd9e832273"
+    },
+    {
+      "path": "SuccessorTree/HalesJewett/AlphabetLift.lean",
+      "upstream_blob": "a98cf1a66d532f3adf694366f5fbc56a73859830",
+      "compatibility_blob": "f8155b0e4c2dfccdfe369ed09575dafab341debc"
+    },
+    {
+      "path": "SuccessorTree/HalesJewett/Composition.lean",
+      "upstream_blob": "e6eb73ce1062085ecfe8c74fa1024afaa07af000",
+      "compatibility_blob": "1cabc6ac074d09c8624708e25e6bfc6d522f42d1"
+    },
+    {
+      "path": "SuccessorTree/HalesJewett/FiniteVariableWord.lean",
+      "upstream_blob": "e884d31d508a9d7a369ad0953c6e1376505a6a96",
+      "compatibility_blob": "24e544ff2e07fc164466f76710dae33e4ceb5dde"
+    },
+    {
+      "path": "SuccessorTree/HalesJewett/ForcingFusion.lean",
+      "upstream_blob": "9afc53468f51737c8f7af177569432ed7c01a8eb",
+      "compatibility_blob": "3458289483f96d4793145fb50727c27a5052eaea"
+    },
+    {
+      "path": "SuccessorTree/HalesJewett/ForcingFusionLimit.lean",
+      "upstream_blob": "5e558557c6c912382ade34d48867fcbf62221850",
+      "compatibility_blob": "4bb8d013861837c78751c7dcfe88b521393e4e06"
+    },
+    {
+      "path": "SuccessorTree/HalesJewett/ForcingLemmaOne.lean",
+      "upstream_blob": "f18deb3f526ca0f845e0d2871ecdcef94c64405e",
+      "compatibility_blob": "f2480ee4e18abab60096efe2c5a75a48bda11df0"
+    },
+    {
+      "path": "SuccessorTree/HalesJewett/ForcingLemmaTwo.lean",
+      "upstream_blob": "6347e2e03539ca7d38d523011fe6889c6abf1a52",
+      "compatibility_blob": "de325dcda8d0445c02c0f992ae5a8b702fe6e2e7"
+    },
+    {
+      "path": "SuccessorTree/HalesJewett/ForcingMaximal.lean",
+      "upstream_blob": "86657a1cb9c8fd15b4aaf97f08365948eaa4d150",
+      "compatibility_blob": "b910eacc8d611225ef369a15f9e4732ab21ab8c8"
+    },
+    {
+      "path": "SuccessorTree/HalesJewett/ForcingProposition.lean",
+      "upstream_blob": "18261c9e9f6adadd0dcda1b8e2b213be055fb3c8",
+      "compatibility_blob": "a0c9ae709feea2a64385538e472fb26302abcb37"
+    },
+    {
+      "path": "SuccessorTree/HalesJewett/GreedyLimit.lean",
+      "upstream_blob": "10d1ce7cc1f4eb7ea976291e98a9c525e0d574f2",
+      "compatibility_blob": "fefb3a4fb9f632d87b57acd588ede9210429ba10"
+    },
+    {
+      "path": "SuccessorTree/HalesJewett/LineSchedule.lean",
+      "upstream_blob": "786c585ea1011264f999d0b9bd2e6f9e7b42e4f7",
+      "compatibility_blob": "6aae7021ebd5d29f61987a91a3e5d1b36a98a7b1"
+    }
+  ],
+  "policy": "Compatibility-only source changes; exact original theorem statements retained. This file records source identity, not compiler/audit acceptance.",
+  "facade": "CCORamsey",
+  "compiled_source_modules": 106
+}

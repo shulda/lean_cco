@@ -17,5 +17,9 @@ name = "AllThoseEPPA"
 git = "https://github.com/shulda/lean_all_those_eppa_classes.git"
 rev = "cd358cde844d5419fd43f30c441511927e09142f"
 
+[[require]]
+name = "CCORamsey"
+path = "vendor/ramsey"
+
 [[lean_lib]]
 name = "CCO"

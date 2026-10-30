@@ -1,0 +1,1729 @@
+{
+  "schema_version": 1,
+  "status": "ORIGINAL_SOURCE_MAP_FOR_RECEIVING_COMPATIBILITY_PORT",
+  "recorded_utc": "2026-10-30",
+  "upstream_partite_commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+  "upstream_partite_tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+  "upstream_successor_commit": "ce5ce187ef88e28d84a4a465517b3f9c87a0640a",
+  "upstream_successor_tree": "5cfcdcd2afa9b5077e9bdb1470a99755fe6556d3",
+  "source_modules": 105,
+  "license_files": 1,
+  "source_bytes": 790044,
+  "total_upstream_bytes": 797092,
+  "verification": "All106 saved files reread; exact Git blob SHA1 and byte count verified against original trees. All105 actual source imports equal reconnaissance graph. No source modifications, generated Lean artifacts, Lake configuration or git repository.",
+  "files": [
+    {
+      "module": "PartiteConstruction.Functional.Attachment",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Functional/Attachment.lean",
+      "blob_sha": "ebe59d97fa88fd78bbaf19d51c011778cba9e338",
+      "size": 8882,
+      "imports": [
+        "PartiteConstruction.Functional.Operations",
+        "PartiteConstruction.Structure.Attachment"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Functional/Attachment.lean",
+      "sha256": "6c6437f0e9dfb8ecb323cd2394c6c18850be67a72e935d679d1073ca533013ac",
+      "verified_git_blob": "ebe59d97fa88fd78bbaf19d51c011778cba9e338"
+    },
+    {
+      "module": "PartiteConstruction.Functional.Basic",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Functional/Basic.lean",
+      "blob_sha": "98cf630ca942b3b30eccf7a0b97d0c05f33a3753",
+      "size": 2805,
+      "imports": [
+        "PartiteConstruction.Structure.Basic"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Functional/Basic.lean",
+      "sha256": "397dbff9cfa4e1e997ca8b779dce1374719ef2ee0b1d9dce174e80d9295bc7d5",
+      "verified_git_blob": "98cf630ca942b3b30eccf7a0b97d0c05f33a3753"
+    },
+    {
+      "module": "PartiteConstruction.Functional.Closed",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Functional/Closed.lean",
+      "blob_sha": "f7f46f52d03347aac80b3c17edc91ec91aa1db5d",
+      "size": 17596,
+      "imports": [
+        "PartiteConstruction.Structure.Relationalize",
+        "PartiteConstruction.Partite.Basic"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Functional/Closed.lean",
+      "sha256": "72fdd3f560f09405776793371a2aa3b25623849ba3f84fc8cd6b30e6e8199883",
+      "verified_git_blob": "f7f46f52d03347aac80b3c17edc91ec91aa1db5d"
+    },
+    {
+      "module": "PartiteConstruction.Functional.ClosedAttachment",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Functional/ClosedAttachment.lean",
+      "blob_sha": "c420dc0e3efd44baeb22db3276c7631eec5d86f7",
+      "size": 15256,
+      "imports": [
+        "PartiteConstruction.Functional.ClosedPartite",
+        "PartiteConstruction.Partite.Attachment"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Functional/ClosedAttachment.lean",
+      "sha256": "b038b27ff259da543082d2beaecedc6646c04192716bedc2de46b00462b604af",
+      "verified_git_blob": "c420dc0e3efd44baeb22db3276c7631eec5d86f7"
+    },
+    {
+      "module": "PartiteConstruction.Functional.ClosedOperations",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Functional/ClosedOperations.lean",
+      "blob_sha": "a4b149b562d7cd3a169512057cfb3cbce70ccb25",
+      "size": 2315,
+      "imports": [
+        "PartiteConstruction.Functional.Closed",
+        "PartiteConstruction.Partite.Operations",
+        "PartiteConstruction.Partite.Induced"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Functional/ClosedOperations.lean",
+      "sha256": "b3de0cd80faca1f6dcc6deb5f686c27b40cb9c50ffd623f998d2a7608210cf63",
+      "verified_git_blob": "a4b149b562d7cd3a169512057cfb3cbce70ccb25"
+    },
+    {
+      "module": "PartiteConstruction.Functional.ClosedPartite",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Functional/ClosedPartite.lean",
+      "blob_sha": "7820d42278b5c51f8ac8cb68e5eb901e65466e48",
+      "size": 12316,
+      "imports": [
+        "PartiteConstruction.Functional.Closed",
+        "PartiteConstruction.Partite.Induced",
+        "PartiteConstruction.HalesJewett.Finite"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Functional/ClosedPartite.lean",
+      "sha256": "96d2778990284b2d07b4badd7cbd60ff1f48c43974955bfcc243e9c648c29be9",
+      "verified_git_blob": "7820d42278b5c51f8ac8cb68e5eb901e65466e48"
+    },
+    {
+      "module": "PartiteConstruction.Functional.ClosedPicture",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Functional/ClosedPicture.lean",
+      "blob_sha": "7fab6bf70a5c205bcfc8ec096d84aa904122022d",
+      "size": 13851,
+      "imports": [
+        "PartiteConstruction.Functional.ClosedPartite",
+        "PartiteConstruction.Functional.ClosedOperations",
+        "PartiteConstruction.Functional.ClosedAttachment",
+        "PartiteConstruction.Partite.InducedAttachment",
+        "PartiteConstruction.Partite.Picture"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Functional/ClosedPicture.lean",
+      "sha256": "6dd7d136cac428e54dd694117653421140eba47d294ebdd53fb0320d3b3ffe69",
+      "verified_git_blob": "7fab6bf70a5c205bcfc8ec096d84aa904122022d"
+    },
+    {
+      "module": "PartiteConstruction.Functional.ClosedPictureRepair",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Functional/ClosedPictureRepair.lean",
+      "blob_sha": "0a6aceed7ecbd0ed0d687e3395af2ade9813bfaa",
+      "size": 16228,
+      "imports": [
+        "PartiteConstruction.Functional.ClosedPicture",
+        "PartiteConstruction.Partite.Picture"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Functional/ClosedPictureRepair.lean",
+      "sha256": "709e4c4986d7763c77aed768eeaac56382164b4371924e920a6ff727d3c25899",
+      "verified_git_blob": "0a6aceed7ecbd0ed0d687e3395af2ade9813bfaa"
+    },
+    {
+      "module": "PartiteConstruction.Functional.EHNConstruction",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Functional/EHNConstruction.lean",
+      "blob_sha": "78732b65dce30491b247e07cc5299611a1f45e68",
+      "size": 6931,
+      "imports": [
+        "PartiteConstruction.Functional.EHNInitial",
+        "PartiteConstruction.Functional.EHNPicture"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Functional/EHNConstruction.lean",
+      "sha256": "8a5641cf43f947e924b902776bb3b8aeb556f8dcc276810fdffea25584ed276a",
+      "verified_git_blob": "78732b65dce30491b247e07cc5299611a1f45e68"
+    },
+    {
+      "module": "PartiteConstruction.Functional.EHNInitial",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Functional/EHNInitial.lean",
+      "blob_sha": "14ea23775e51bb4a1804e09fbc2bbf85e3fccab3",
+      "size": 8754,
+      "imports": [
+        "PartiteConstruction.Functional.EHNStage",
+        "PartiteConstruction.Functional.Closed",
+        "PartiteConstruction.Structure.NullaryRoot"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Functional/EHNInitial.lean",
+      "sha256": "d9978e78b2d8b22415fd55a709bc337929eb8ff9c97c8ec15f8b3ca65db6d421",
+      "verified_git_blob": "14ea23775e51bb4a1804e09fbc2bbf85e3fccab3"
+    },
+    {
+      "module": "PartiteConstruction.Functional.EHNPicture",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Functional/EHNPicture.lean",
+      "blob_sha": "c23003980599a78f150500cec93609dc21a61f97",
+      "size": 3381,
+      "imports": [
+        "PartiteConstruction.Functional.EHNStage"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Functional/EHNPicture.lean",
+      "sha256": "04f51e1d4cdbbf6466a6a70e08daa3f99983f2db8331216c13bb07af4fe7d7ec",
+      "verified_git_blob": "c23003980599a78f150500cec93609dc21a61f97"
+    },
+    {
+      "module": "PartiteConstruction.Functional.EHNStage",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Functional/EHNStage.lean",
+      "blob_sha": "07f1b2dee496f9558d4c3d8fe885a83a112986e3",
+      "size": 4265,
+      "imports": [
+        "PartiteConstruction.Functional.WeakAttachment"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Functional/EHNStage.lean",
+      "sha256": "17517b9049e67868f929f5a5220705ade41adc19f1ed0ea62273ed000e48fbc9",
+      "verified_git_blob": "07f1b2dee496f9558d4c3d8fe885a83a112986e3"
+    },
+    {
+      "module": "PartiteConstruction.Functional.FunctionDomains",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Functional/FunctionDomains.lean",
+      "blob_sha": "8955b98c339b2985d26854442006ea78c826cb93",
+      "size": 8701,
+      "imports": [
+        "PartiteConstruction.Functional.SingletonExpansion",
+        "PartiteConstruction.Functional.Closed"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Functional/FunctionDomains.lean",
+      "sha256": "c439ee9b65a370d609d44c32cd1f353daa827311b1d2a60ebccfe24b5a5d718e",
+      "verified_git_blob": "8955b98c339b2985d26854442006ea78c826cb93"
+    },
+    {
+      "module": "PartiteConstruction.Functional.HalfClosedConstruction",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Functional/HalfClosedConstruction.lean",
+      "blob_sha": "c401c57ce816a8e682bd7266f101ddcf7a32a1da",
+      "size": 13914,
+      "imports": [
+        "PartiteConstruction.Functional.HalfClosedInitial",
+        "PartiteConstruction.Functional.ClosedPicture"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Functional/HalfClosedConstruction.lean",
+      "sha256": "ed4b01f0ff463c9190b6e739e818d4a7c08c776ffec6e6c79db226edf07f8e39",
+      "verified_git_blob": "c401c57ce816a8e682bd7266f101ddcf7a32a1da"
+    },
+    {
+      "module": "PartiteConstruction.Functional.HalfClosedInitial",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Functional/HalfClosedInitial.lean",
+      "blob_sha": "cee72ccc8a4c285407b48cf075f926e1f3621f1f",
+      "size": 6197,
+      "imports": [
+        "PartiteConstruction.Functional.Closed",
+        "PartiteConstruction.Partite.Initial",
+        "PartiteConstruction.Partite.InducedInitial"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Functional/HalfClosedInitial.lean",
+      "sha256": "03a24d81a3cb7bed6506b91b53129ba96e67c5b691c0586f5640cf8167697844",
+      "verified_git_blob": "cee72ccc8a4c285407b48cf075f926e1f3621f1f"
+    },
+    {
+      "module": "PartiteConstruction.Functional.HalfClosedPartite",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Functional/HalfClosedPartite.lean",
+      "blob_sha": "ec86418bb799cc3b22d1164c255c3bc65c2109c7",
+      "size": 5265,
+      "imports": [
+        "PartiteConstruction.Functional.PartPredicates"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Functional/HalfClosedPartite.lean",
+      "sha256": "dd6da347571ed5505a802e329171edd07a76be3695f83f401c14c7f3045c3b74",
+      "verified_git_blob": "ec86418bb799cc3b22d1164c255c3bc65c2109c7"
+    },
+    {
+      "module": "PartiteConstruction.Functional.Induced",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Functional/Induced.lean",
+      "blob_sha": "3a6d7f6cb34287047b2aef6ae1c73a93f44f4c1a",
+      "size": 10258,
+      "imports": [
+        "PartiteConstruction.Functional.Basic",
+        "PartiteConstruction.HalesJewett.Finite"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Functional/Induced.lean",
+      "sha256": "04dce62bd25031d066a1ff9c85b534f0394ea8a7ba0f88f1b1c3e46dacd76237",
+      "verified_git_blob": "3a6d7f6cb34287047b2aef6ae1c73a93f44f4c1a"
+    },
+    {
+      "module": "PartiteConstruction.Functional.NestedFlatten",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Functional/NestedFlatten.lean",
+      "blob_sha": "c052e40a4f448a82edd2411601a74d8947734d32",
+      "size": 6219,
+      "imports": [
+        "PartiteConstruction.Functional.ClosedPictureRepair",
+        "PartiteConstruction.Partite.Induced"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Functional/NestedFlatten.lean",
+      "sha256": "26c3425802317527136e1921a54bfdc0ff82860b58a88476759575dc3bbf2004",
+      "verified_git_blob": "c052e40a4f448a82edd2411601a74d8947734d32"
+    },
+    {
+      "module": "PartiteConstruction.Functional.Operations",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Functional/Operations.lean",
+      "blob_sha": "341b368df0f018de0c198ee607d6723215ad0263",
+      "size": 6877,
+      "imports": [
+        "PartiteConstruction.Functional.Basic"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Functional/Operations.lean",
+      "sha256": "7f5cf04b65455e175d7aec22043b8988cc63e8c8598d2b8b8dfbeeb1725e5165",
+      "verified_git_blob": "341b368df0f018de0c198ee607d6723215ad0263"
+    },
+    {
+      "module": "PartiteConstruction.Functional.OrderedRecursive",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Functional/OrderedRecursive.lean",
+      "blob_sha": "b7bf4369d49ed5bdd4a56de32a25172ec8da361f",
+      "size": 8713,
+      "imports": [
+        "PartiteConstruction.Structure.Order",
+        "PartiteConstruction.Functional.SemiClosedRecursiveConstruction",
+        "PartiteConstruction.Functional.SingletonReduction",
+        "PartiteConstruction.Ramsey.Ordered"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Functional/OrderedRecursive.lean",
+      "sha256": "17b5eff66d5aeba08eafa72ed95ef9375d439cb530ddc896df3391984d4572fb",
+      "verified_git_blob": "b7bf4369d49ed5bdd4a56de32a25172ec8da361f"
+    },
+    {
+      "module": "PartiteConstruction.Functional.PartPredicates",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Functional/PartPredicates.lean",
+      "blob_sha": "09a7deb1a6ef78904ebfbe2dd02240fb5c58549f",
+      "size": 15519,
+      "imports": [
+        "PartiteConstruction.Functional.HalfClosedConstruction",
+        "PartiteConstruction.Functional.NestedFlatten"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Functional/PartPredicates.lean",
+      "sha256": "fdf178190e4ff9d1469bfbc5a04d875f524f4f0c05c531b36d1ee3ab2a37939d",
+      "verified_git_blob": "09a7deb1a6ef78904ebfbe2dd02240fb5c58549f"
+    },
+    {
+      "module": "PartiteConstruction.Functional.RecursiveConstruction",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Functional/RecursiveConstruction.lean",
+      "blob_sha": "aa2b42375efc4a2ec2a2094c4b0b54a18eb50be6",
+      "size": 17248,
+      "imports": [
+        "PartiteConstruction.Functional.HalfClosedPartite",
+        "PartiteConstruction.Functional.HalfClosedInitial",
+        "PartiteConstruction.Ramsey.Basic"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Functional/RecursiveConstruction.lean",
+      "sha256": "3a2c6fab63ff41c885f4bf340010337c33f7aacbce357081e854a41ec92fef00",
+      "verified_git_blob": "aa2b42375efc4a2ec2a2094c4b0b54a18eb50be6"
+    },
+    {
+      "module": "PartiteConstruction.Functional.RootPrune",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Functional/RootPrune.lean",
+      "blob_sha": "0996ca7adea963620bad8fa0788d8745c7fdbf15",
+      "size": 4922,
+      "imports": [
+        "PartiteConstruction.Functional.FunctionDomains",
+        "PartiteConstruction.Ramsey.Basic"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Functional/RootPrune.lean",
+      "sha256": "d9e95540b9c7bcd04e640dc0000b1b2e35ffeb26f0943bd2865c817b156562f1",
+      "verified_git_blob": "0996ca7adea963620bad8fa0788d8745c7fdbf15"
+    },
+    {
+      "module": "PartiteConstruction.Functional.SemiClosedAttachment",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Functional/SemiClosedAttachment.lean",
+      "blob_sha": "0c432fdb29a559b4338dfb004e2ca17be2133d40",
+      "size": 21983,
+      "imports": [
+        "PartiteConstruction.Functional.SemiClosedPartite",
+        "PartiteConstruction.Functional.ClosedAttachment"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Functional/SemiClosedAttachment.lean",
+      "sha256": "fbe34dc8bc11bccc785914a6a532e4966514eb88e06b7bee377b19684435d537",
+      "verified_git_blob": "0c432fdb29a559b4338dfb004e2ca17be2133d40"
+    },
+    {
+      "module": "PartiteConstruction.Functional.SemiClosedPartite",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Functional/SemiClosedPartite.lean",
+      "blob_sha": "d4abf47510108bea2483d5ff1d1e9b85a8074bd4",
+      "size": 2903,
+      "imports": [
+        "PartiteConstruction.Functional.FunctionDomains",
+        "PartiteConstruction.Functional.SingletonPartite"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Functional/SemiClosedPartite.lean",
+      "sha256": "b2383a589fd48047ce240209f3c9435f094b5e4184bdfe430a6f19dbe243b557",
+      "verified_git_blob": "d4abf47510108bea2483d5ff1d1e9b85a8074bd4"
+    },
+    {
+      "module": "PartiteConstruction.Functional.SemiClosedPicture",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Functional/SemiClosedPicture.lean",
+      "blob_sha": "2ceb9e9a25c1725f980496a627442780f04a4f12",
+      "size": 12796,
+      "imports": [
+        "PartiteConstruction.Functional.SemiClosedAttachment",
+        "PartiteConstruction.Functional.RecursiveConstruction"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Functional/SemiClosedPicture.lean",
+      "sha256": "8da14624a17ed290b99ce2d5698818a9e4653ccee48b91603823a2699db7d919",
+      "verified_git_blob": "2ceb9e9a25c1725f980496a627442780f04a4f12"
+    },
+    {
+      "module": "PartiteConstruction.Functional.SemiClosedPictureCore",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Functional/SemiClosedPictureCore.lean",
+      "blob_sha": "133e5ccf84cf0cc4d7f43ade33510acf871ceb85",
+      "size": 6474,
+      "imports": [
+        "PartiteConstruction.Functional.SemiClosedPicture"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Functional/SemiClosedPictureCore.lean",
+      "sha256": "0346db4881f3ef5ade744a5351a19f43cf933ede4a897bdeb3fdf54389e13adc",
+      "verified_git_blob": "133e5ccf84cf0cc4d7f43ade33510acf871ceb85"
+    },
+    {
+      "module": "PartiteConstruction.Functional.SemiClosedPictureProperty",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Functional/SemiClosedPictureProperty.lean",
+      "blob_sha": "a8927d7e09580de113800a660d177f567c6fa0b7",
+      "size": 7415,
+      "imports": [
+        "PartiteConstruction.Functional.SemiClosedPictureCore"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Functional/SemiClosedPictureProperty.lean",
+      "sha256": "8e0342978ea2eb71888596148557232e42757938768afdde226c26b8c15f0814",
+      "verified_git_blob": "a8927d7e09580de113800a660d177f567c6fa0b7"
+    },
+    {
+      "module": "PartiteConstruction.Functional.SemiClosedRecursiveConstruction",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Functional/SemiClosedRecursiveConstruction.lean",
+      "blob_sha": "ecb9fb64197ef6480bc30867f6ad1d91d35baab4",
+      "size": 11154,
+      "imports": [
+        "PartiteConstruction.Functional.SemiClosedPictureProperty",
+        "PartiteConstruction.Functional.RootPrune",
+        "PartiteConstruction.Functional.SingletonHalfClosedPartite"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Functional/SemiClosedRecursiveConstruction.lean",
+      "sha256": "20472cf19cd214e6e06e4264915c43ac7940e8308c28e8a460c283bf71af7d75",
+      "verified_git_blob": "ecb9fb64197ef6480bc30867f6ad1d91d35baab4"
+    },
+    {
+      "module": "PartiteConstruction.Functional.SingletonClosedPicture",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Functional/SingletonClosedPicture.lean",
+      "blob_sha": "28cf646f139efda96cbf4f105c2808653ce843ec",
+      "size": 3525,
+      "imports": [
+        "PartiteConstruction.Functional.SingletonPartite",
+        "PartiteConstruction.Functional.ClosedPicture"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Functional/SingletonClosedPicture.lean",
+      "sha256": "ddc73488f8c09716f7f567e295e90115c308999ce8d18537eb5d1bc1d62ff381",
+      "verified_git_blob": "28cf646f139efda96cbf4f105c2808653ce843ec"
+    },
+    {
+      "module": "PartiteConstruction.Functional.SingletonExpansion",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Functional/SingletonExpansion.lean",
+      "blob_sha": "0f525cd70cde7a4d9e45deb15e2f8f1f62c3ebb4",
+      "size": 12068,
+      "imports": [
+        "PartiteConstruction.Structure.Basic",
+        "Mathlib.Data.Finset.Sort"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Functional/SingletonExpansion.lean",
+      "sha256": "e502a0399e82db8331a01127301f395414f8ea998c021477d2047cd4e9658065",
+      "verified_git_blob": "0f525cd70cde7a4d9e45deb15e2f8f1f62c3ebb4"
+    },
+    {
+      "module": "PartiteConstruction.Functional.SingletonHalfClosedConstruction",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Functional/SingletonHalfClosedConstruction.lean",
+      "blob_sha": "06c9e42a6b52612f30a4d86e2cee96ea72679b7e",
+      "size": 7974,
+      "imports": [
+        "PartiteConstruction.Functional.SingletonClosedPicture",
+        "PartiteConstruction.Functional.HalfClosedConstruction"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Functional/SingletonHalfClosedConstruction.lean",
+      "sha256": "761d56e676facbba78bd0a818e5614481b099777f200f58af4ba6d4b2bd78c77",
+      "verified_git_blob": "06c9e42a6b52612f30a4d86e2cee96ea72679b7e"
+    },
+    {
+      "module": "PartiteConstruction.Functional.SingletonHalfClosedPartite",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Functional/SingletonHalfClosedPartite.lean",
+      "blob_sha": "1466a576819c10b4e403ecf70e68b892a7fdcba8",
+      "size": 4344,
+      "imports": [
+        "PartiteConstruction.Functional.SingletonHalfClosedConstruction",
+        "PartiteConstruction.Functional.HalfClosedPartite"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Functional/SingletonHalfClosedPartite.lean",
+      "sha256": "93a113692de6c3b16960a9e27ef797e45b4472553b4bf222072cff0696ff0f2c",
+      "verified_git_blob": "1466a576819c10b4e403ecf70e68b892a7fdcba8"
+    },
+    {
+      "module": "PartiteConstruction.Functional.SingletonPartite",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Functional/SingletonPartite.lean",
+      "blob_sha": "6e6a1a765da03f8299144a595b2d6f87773a32c4",
+      "size": 14687,
+      "imports": [
+        "PartiteConstruction.Functional.ClosedAttachment",
+        "PartiteConstruction.Functional.HalfClosedInitial",
+        "PartiteConstruction.Functional.NestedFlatten",
+        "PartiteConstruction.Functional.PartPredicates"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Functional/SingletonPartite.lean",
+      "sha256": "b96682ecff8ba1064a33e245e516cbb34bfd12999ab8c99d64568bed6b768b67",
+      "verified_git_blob": "6e6a1a765da03f8299144a595b2d6f87773a32c4"
+    },
+    {
+      "module": "PartiteConstruction.Functional.SingletonReduction",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Functional/SingletonReduction.lean",
+      "blob_sha": "ae38a6a10ead2b77e82ede7bdc0b6cb6476c6ecd",
+      "size": 6471,
+      "imports": [
+        "PartiteConstruction.Functional.SingletonExpansion"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Functional/SingletonReduction.lean",
+      "sha256": "360588456c07e5444d98f270cc0be9d868f26bfad00dbce7811fb80087edfb05",
+      "verified_git_blob": "ae38a6a10ead2b77e82ede7bdc0b6cb6476c6ecd"
+    },
+    {
+      "module": "PartiteConstruction.Functional.WeakAttachment",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Functional/WeakAttachment.lean",
+      "blob_sha": "61a8826890d8ac223abbeab9b1862814d8e0c789",
+      "size": 5550,
+      "imports": [
+        "PartiteConstruction.Functional.WeakOperations",
+        "PartiteConstruction.Functional.Attachment"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Functional/WeakAttachment.lean",
+      "sha256": "7881dde0e1c49a8818c01eb78fa921caeaf69e05f289f306087531de04e4c715",
+      "verified_git_blob": "61a8826890d8ac223abbeab9b1862814d8e0c789"
+    },
+    {
+      "module": "PartiteConstruction.Functional.WeakInduced",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Functional/WeakInduced.lean",
+      "blob_sha": "5b2f0cf99de604b592725f6d282afe6a32e1cfc4",
+      "size": 5772,
+      "imports": [
+        "PartiteConstruction.Functional.Induced",
+        "PartiteConstruction.Structure.WeakHomomorphism"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Functional/WeakInduced.lean",
+      "sha256": "44c53a041b03fbb22907f20604768fd460c8e86460bba65ec3c7afba9d34cee6",
+      "verified_git_blob": "5b2f0cf99de604b592725f6d282afe6a32e1cfc4"
+    },
+    {
+      "module": "PartiteConstruction.Functional.WeakInvariant",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Functional/WeakInvariant.lean",
+      "blob_sha": "c0170080f55f676073111844a1d1a6bdefb49d14",
+      "size": 6934,
+      "imports": [
+        "PartiteConstruction.Functional.WeakInduced",
+        "PartiteConstruction.Structure.GeneratedWeakHomImage"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Functional/WeakInvariant.lean",
+      "sha256": "04617c1261df997784859347efd5bb8675b45aaaab9fc923020998139de3e752",
+      "verified_git_blob": "c0170080f55f676073111844a1d1a6bdefb49d14"
+    },
+    {
+      "module": "PartiteConstruction.Functional.WeakOperations",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Functional/WeakOperations.lean",
+      "blob_sha": "e7f8182f2c22537a501f744b1ccc4887a7392d0a",
+      "size": 6869,
+      "imports": [
+        "PartiteConstruction.Functional.WeakInvariant",
+        "PartiteConstruction.Functional.Operations"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Functional/WeakOperations.lean",
+      "sha256": "cfda2a8a2c4671a95f776e0dfa2e8b57b5a7ecf86ccd87859489ce45e0e48c39",
+      "verified_git_blob": "e7f8182f2c22537a501f744b1ccc4887a7392d0a"
+    },
+    {
+      "module": "PartiteConstruction.HalesJewett.Finite",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/HalesJewett/Finite.lean",
+      "blob_sha": "c20ff158f5b5be508e2a5476891074eea13383e5",
+      "size": 2705,
+      "imports": [
+        "SuccessorTree.HalesJewett.AlphabetInduction"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/HalesJewett/Finite.lean",
+      "sha256": "5b83fc5dbc5fd376beb94a8feb075e42bda60af1d39f61cb5f48f4f2451181e5",
+      "verified_git_blob": "c20ff158f5b5be508e2a5476891074eea13383e5"
+    },
+    {
+      "module": "PartiteConstruction.Partite.Attachment",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Partite/Attachment.lean",
+      "blob_sha": "5369d7e3be98b9d249f335afca5f9d3d6c0e03df",
+      "size": 2391,
+      "imports": [
+        "PartiteConstruction.Relational.Attachment",
+        "PartiteConstruction.Partite.Operations"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Partite/Attachment.lean",
+      "sha256": "46a37004daf25a6dfae1b3107cb8f9f6d8eb2eaf7ea6e4b120e0e55ea2ac8e5c",
+      "verified_git_blob": "5369d7e3be98b9d249f335afca5f9d3d6c0e03df"
+    },
+    {
+      "module": "PartiteConstruction.Partite.Basic",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Partite/Basic.lean",
+      "blob_sha": "2f7327d7321cca06c51f974d69b690957fc010d0",
+      "size": 2336,
+      "imports": [
+        "PartiteConstruction.Ramsey.Basic"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Partite/Basic.lean",
+      "sha256": "93b88bad97a822ee3ff4f878d7971dad9252ca60b08cbabab82eeacc492d6e4a",
+      "verified_git_blob": "2f7327d7321cca06c51f974d69b690957fc010d0"
+    },
+    {
+      "module": "PartiteConstruction.Partite.Construction",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Partite/Construction.lean",
+      "blob_sha": "a0800e022c07c2234837c2087f30b1d81e246ec2",
+      "size": 2569,
+      "imports": [
+        "PartiteConstruction.Partite.Picture",
+        "PartiteConstruction.Partite.Fusion"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Partite/Construction.lean",
+      "sha256": "9501a88a34736ce9b8f2aea15fa5e8ce9c5accc40c436ca8b4b92553ed64d7bd",
+      "verified_git_blob": "a0800e022c07c2234837c2087f30b1d81e246ec2"
+    },
+    {
+      "module": "PartiteConstruction.Partite.Fusion",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Partite/Fusion.lean",
+      "blob_sha": "5dcdc7c880f6925a4a46751feee91920a8c617c3",
+      "size": 1821,
+      "imports": [
+        "PartiteConstruction.Partite.Projection"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Partite/Fusion.lean",
+      "sha256": "24cbecf33a6bb5fc3f498fba2260e21bbdf92c68029ad9a01dcf25d9dd5f35a0",
+      "verified_git_blob": "5dcdc7c880f6925a4a46751feee91920a8c617c3"
+    },
+    {
+      "module": "PartiteConstruction.Partite.Induced",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Partite/Induced.lean",
+      "blob_sha": "a0e4b78062e1aef15e8301291a27fc1412445fa9",
+      "size": 12657,
+      "imports": [
+        "PartiteConstruction.Relational.Homomorphism",
+        "PartiteConstruction.Partite.NonInduced",
+        "PartiteConstruction.Partite.Operations"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Partite/Induced.lean",
+      "sha256": "d00f93ebe0adde75790d25368647898d22055927c6c0fd776d68cff523601f24",
+      "verified_git_blob": "a0e4b78062e1aef15e8301291a27fc1412445fa9"
+    },
+    {
+      "module": "PartiteConstruction.Partite.InducedAttachment",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Partite/InducedAttachment.lean",
+      "blob_sha": "8f1ceaf1daae8f7f8b69c44716bfbde66377c7f1",
+      "size": 6144,
+      "imports": [
+        "PartiteConstruction.Partite.Induced",
+        "PartiteConstruction.Partite.Attachment"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Partite/InducedAttachment.lean",
+      "sha256": "f90c2bcec7b6d16510f3568d7c2359f8a4fb38fa9256bddbd91153abef786740",
+      "verified_git_blob": "8f1ceaf1daae8f7f8b69c44716bfbde66377c7f1"
+    },
+    {
+      "module": "PartiteConstruction.Partite.InducedInitial",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Partite/InducedInitial.lean",
+      "blob_sha": "de2fa2f174a0785f5e976246066df7cb8c758363",
+      "size": 3863,
+      "imports": [
+        "PartiteConstruction.Partite.Induced",
+        "PartiteConstruction.Partite.Initial"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Partite/InducedInitial.lean",
+      "sha256": "365107f2747365330628a1dadd7f6a9c9baba318fd2d72baa7de9b57a69ae741",
+      "verified_git_blob": "de2fa2f174a0785f5e976246066df7cb8c758363"
+    },
+    {
+      "module": "PartiteConstruction.Partite.Initial",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Partite/Initial.lean",
+      "blob_sha": "0660469e5c559762f5760319f052acf2cb083c92",
+      "size": 1261,
+      "imports": [
+        "PartiteConstruction.Partite.Basic"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Partite/Initial.lean",
+      "sha256": "5cd4146a6d2227ffc86af38bc4f5a4cddfce61e8913a3fa069cd72334116696f",
+      "verified_git_blob": "0660469e5c559762f5760319f052acf2cb083c92"
+    },
+    {
+      "module": "PartiteConstruction.Partite.Invariants",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Partite/Invariants.lean",
+      "blob_sha": "6b8c1f653a5b43747c1c8321593dadc8e8c76633",
+      "size": 3544,
+      "imports": [
+        "PartiteConstruction.Partite.Construction"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Partite/Invariants.lean",
+      "sha256": "fd6ba3e5dd582c96f93b7575d08306052180cd9eefa7ed5a0ea061310bc46977",
+      "verified_git_blob": "6b8c1f653a5b43747c1c8321593dadc8e8c76633"
+    },
+    {
+      "module": "PartiteConstruction.Partite.NonInduced",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Partite/NonInduced.lean",
+      "blob_sha": "15d9cef438cd962a200b25aabc0affa36ecbbacb",
+      "size": 7638,
+      "imports": [
+        "PartiteConstruction.Partite.Basic",
+        "PartiteConstruction.Partite.Predicates",
+        "PartiteConstruction.HalesJewett.Finite"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Partite/NonInduced.lean",
+      "sha256": "5cf761e4611d25a71d6d3d8ed8df0548097a2bf2b7d835c784d5b2ea93de9a0b",
+      "verified_git_blob": "15d9cef438cd962a200b25aabc0affa36ecbbacb"
+    },
+    {
+      "module": "PartiteConstruction.Partite.Operations",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Partite/Operations.lean",
+      "blob_sha": "772236ef6282aef33df7ce20c12ab704d383353e",
+      "size": 1965,
+      "imports": [
+        "PartiteConstruction.Partite.Basic"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Partite/Operations.lean",
+      "sha256": "f73c8e67a3914736768e1297b797a8a4d65670fb71c7328c1e5c586c3c6effcb",
+      "verified_git_blob": "772236ef6282aef33df7ce20c12ab704d383353e"
+    },
+    {
+      "module": "PartiteConstruction.Partite.Picture",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Partite/Picture.lean",
+      "blob_sha": "7ce9742414f76a8f104405abac15c71797b356f7",
+      "size": 3777,
+      "imports": [
+        "PartiteConstruction.Partite.Attachment",
+        "PartiteConstruction.Partite.NonInduced",
+        "PartiteConstruction.Partite.Projection"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Partite/Picture.lean",
+      "sha256": "6c4548896fcaefd3fe845c37734ddb3b184c839a30b3b58659d791e9bb1b6e64",
+      "verified_git_blob": "7ce9742414f76a8f104405abac15c71797b356f7"
+    },
+    {
+      "module": "PartiteConstruction.Partite.Predicates",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Partite/Predicates.lean",
+      "blob_sha": "5e627966b1bfc880871b4ada8c64dd4bb131beb4",
+      "size": 2489,
+      "imports": [
+        "PartiteConstruction.Partite.Basic"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Partite/Predicates.lean",
+      "sha256": "83a46e840f6ddfb3feed0141532b71ae3b1f5a3adcec1ccc5bbb84678bf253ed",
+      "verified_git_blob": "5e627966b1bfc880871b4ada8c64dd4bb131beb4"
+    },
+    {
+      "module": "PartiteConstruction.Partite.Projection",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Partite/Projection.lean",
+      "blob_sha": "2dcd0f20d7516d532176a8e15b51634f739cf3b2",
+      "size": 1631,
+      "imports": [
+        "PartiteConstruction.Partite.Basic"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Partite/Projection.lean",
+      "sha256": "1bbdb8c3bd3e392a8eb36c8c6559e8f20e8166c251e76dff60fa0b4d7dc103b9",
+      "verified_git_blob": "2dcd0f20d7516d532176a8e15b51634f739cf3b2"
+    },
+    {
+      "module": "PartiteConstruction.Ramsey.AllThoseFiniteModels",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Ramsey/AllThoseFiniteModels.lean",
+      "blob_sha": "72d6cc24ca107cfe071b75b3957fddaea0b282c0",
+      "size": 2142,
+      "imports": [
+        "PartiteConstruction.Ramsey.ForbiddenFunctionsAllArity"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Ramsey/AllThoseFiniteModels.lean",
+      "sha256": "35a9a8ef889d0676a0c830b4d29e42859a8b259bbe379e928aaf81ef34a339bd",
+      "verified_git_blob": "72d6cc24ca107cfe071b75b3957fddaea0b282c0"
+    },
+    {
+      "module": "PartiteConstruction.Ramsey.AllThosePartialFiniteModels",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Ramsey/AllThosePartialFiniteModels.lean",
+      "blob_sha": "f50d08fbe712389680fa3bbe162ab4f69396c4cb",
+      "size": 5239,
+      "imports": [
+        "PartiteConstruction.Ramsey.AllThoseFiniteModels",
+        "PartiteConstruction.Functional.SingletonExpansion",
+        "PartiteConstruction.Ramsey.FreeAmalgamationFunctionsAllArity"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Ramsey/AllThosePartialFiniteModels.lean",
+      "sha256": "5cc3feccd6628bd4203d25465ee9b02e9fab4ec2aabcf93c0886ae36221b06cb",
+      "verified_git_blob": "f50d08fbe712389680fa3bbe162ab4f69396c4cb"
+    },
+    {
+      "module": "PartiteConstruction.Ramsey.Basic",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Ramsey/Basic.lean",
+      "blob_sha": "1d335811607a5bb66234c6d9d9787eaef3e66c21",
+      "size": 1298,
+      "imports": [
+        "PartiteConstruction.Relational.Basic"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Ramsey/Basic.lean",
+      "sha256": "a41a6ad256d77bfee0cb3f0908e97916dd10d03ee754d31b870a84eec86ee88d",
+      "verified_git_blob": "1d335811607a5bb66234c6d9d9787eaef3e66c21"
+    },
+    {
+      "module": "PartiteConstruction.Ramsey.Finite",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Ramsey/Finite.lean",
+      "blob_sha": "28eb605834d90685b7cfe80d43a1571438f3a7a9",
+      "size": 8752,
+      "imports": [
+        "Mathlib.Data.Finset.Card",
+        "Mathlib.Data.Finset.Sort",
+        "Mathlib.Data.Fin.Tuple.Basic",
+        "Mathlib.Data.Fintype.Pi",
+        "Mathlib.Combinatorics.Pigeonhole",
+        "Mathlib.Order.Monotone.Basic"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Ramsey/Finite.lean",
+      "sha256": "8d94aa78cc5e6997868f8bcb97013a6321dc30990ab4af16a43d33df1b33e69e",
+      "verified_git_blob": "28eb605834d90685b7cfe80d43a1571438f3a7a9"
+    },
+    {
+      "module": "PartiteConstruction.Ramsey.ForbiddenFunctions",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Ramsey/ForbiddenFunctions.lean",
+      "blob_sha": "c39243b64605307a6073dccf3752372bd6dc0dc2",
+      "size": 8643,
+      "imports": [
+        "PartiteConstruction.Ramsey.FreeAmalgamationFunctions"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Ramsey/ForbiddenFunctions.lean",
+      "sha256": "1b14b69d8b9c431405651fb6fdabf95726dfc4551dc7b62ce21310df32bec469",
+      "verified_git_blob": "c39243b64605307a6073dccf3752372bd6dc0dc2"
+    },
+    {
+      "module": "PartiteConstruction.Ramsey.ForbiddenFunctionsAllArity",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Ramsey/ForbiddenFunctionsAllArity.lean",
+      "blob_sha": "7bba5bb436cdf5dd2905cf1c6b8308053b1e65fc",
+      "size": 3283,
+      "imports": [
+        "PartiteConstruction.Ramsey.ForbiddenFunctions",
+        "PartiteConstruction.Ramsey.FreeAmalgamationFunctionsAllArity"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Ramsey/ForbiddenFunctionsAllArity.lean",
+      "sha256": "932a142ecc7a95499dc74b71ee514a17a233ebbdebc070eff2bf5379dd2e0f87",
+      "verified_git_blob": "7bba5bb436cdf5dd2905cf1c6b8308053b1e65fc"
+    },
+    {
+      "module": "PartiteConstruction.Ramsey.FreeAmalgamationFunctions",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Ramsey/FreeAmalgamationFunctions.lean",
+      "blob_sha": "7ab6f49c4b62eaf5093ec3886958bcde6c8b208b",
+      "size": 6772,
+      "imports": [
+        "PartiteConstruction.Functional.EHNConstruction",
+        "PartiteConstruction.Functional.OrderedRecursive"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Ramsey/FreeAmalgamationFunctions.lean",
+      "sha256": "d3fc38e3a77336e5f7655a948a0d599f8e4bb415b023630f48cf2475f280cbd0",
+      "verified_git_blob": "7ab6f49c4b62eaf5093ec3886958bcde6c8b208b"
+    },
+    {
+      "module": "PartiteConstruction.Ramsey.FreeAmalgamationFunctionsAllArity",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Ramsey/FreeAmalgamationFunctionsAllArity.lean",
+      "blob_sha": "fc9977b4226246751bc23d53cd33adbb754dab69",
+      "size": 5411,
+      "imports": [
+        "PartiteConstruction.Structure.RootedOrder",
+        "PartiteConstruction.Structure.RootedCanonical",
+        "PartiteConstruction.Structure.RootedClass",
+        "PartiteConstruction.Ramsey.FreeAmalgamationFunctions"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Ramsey/FreeAmalgamationFunctionsAllArity.lean",
+      "sha256": "4e70e3325e4e4cc7456dfcc0b910f41d1c1f57f545c9e6ca49c52dfae1a8d531",
+      "verified_git_blob": "fc9977b4226246751bc23d53cd33adbb754dab69"
+    },
+    {
+      "module": "PartiteConstruction.Ramsey.FromProjections",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Ramsey/FromProjections.lean",
+      "blob_sha": "ab6b95e4e70cdf5e13c66a101b2e43b7c8810448",
+      "size": 3331,
+      "imports": [
+        "PartiteConstruction.Partite.Initial",
+        "PartiteConstruction.Partite.Invariants"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Ramsey/FromProjections.lean",
+      "sha256": "69c64f4a06ce95aa4736d55e6e96ff436e325e11634c4708369a915f5de1f551",
+      "verified_git_blob": "ab6b95e4e70cdf5e13c66a101b2e43b7c8810448"
+    },
+    {
+      "module": "PartiteConstruction.Ramsey.Ordered",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Ramsey/Ordered.lean",
+      "blob_sha": "8fb4489722adc54c9ff01ac024c5c009b627d91a",
+      "size": 6393,
+      "imports": [
+        "PartiteConstruction.Ramsey.Finite",
+        "PartiteConstruction.Ramsey.FromProjections",
+        "PartiteConstruction.Relational.Order"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Ramsey/Ordered.lean",
+      "sha256": "c14c88ba17f1379da5ca445a14385c6f5eed92f76b762de0b703c176b70d52ed",
+      "verified_git_blob": "8fb4489722adc54c9ff01ac024c5c009b627d91a"
+    },
+    {
+      "module": "PartiteConstruction.Relational.Attachment",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Relational/Attachment.lean",
+      "blob_sha": "ba37d2ec212ae4edd0d5319ac610f39cbebcc066",
+      "size": 8064,
+      "imports": [
+        "PartiteConstruction.Relational.Basic",
+        "PartiteConstruction.Relational.Homomorphism"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Relational/Attachment.lean",
+      "sha256": "8df91c463b5e17838884ce4fb42ae861991349355425031d78a0088c03d110ca",
+      "verified_git_blob": "ba37d2ec212ae4edd0d5319ac610f39cbebcc066"
+    },
+    {
+      "module": "PartiteConstruction.Relational.Basic",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Relational/Basic.lean",
+      "blob_sha": "4ab681f8fcc4cede5bae5794d535a48da832cfcd",
+      "size": 2771,
+      "imports": [
+        "Mathlib.Data.Fintype.Basic",
+        "Mathlib.Data.Fintype.Pi",
+        "Mathlib.Tactic"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Relational/Basic.lean",
+      "sha256": "1cdd9e06e2c8a854dd94e9f4daf096c33fcc120013437ac49cd0d8685d08a63a",
+      "verified_git_blob": "4ab681f8fcc4cede5bae5794d535a48da832cfcd"
+    },
+    {
+      "module": "PartiteConstruction.Relational.Homomorphism",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Relational/Homomorphism.lean",
+      "blob_sha": "79ff5c9557e8071d5976e195eadb5673ad9e8fee",
+      "size": 9371,
+      "imports": [
+        "PartiteConstruction.Relational.Basic"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Relational/Homomorphism.lean",
+      "sha256": "73bc798f36e72853085989cc31138014658ec9b1b6c843e65d8f8649cba3bb8c",
+      "verified_git_blob": "79ff5c9557e8071d5976e195eadb5673ad9e8fee"
+    },
+    {
+      "module": "PartiteConstruction.Relational.Order",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Relational/Order.lean",
+      "blob_sha": "0c18ccdfd57811dbc599ed443558967d9749c6f0",
+      "size": 3652,
+      "imports": [
+        "PartiteConstruction.Ramsey.Basic",
+        "Mathlib.Order.Prod.Lex.Basic"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Relational/Order.lean",
+      "sha256": "9c1a400eee7c41740f17dd375b0de2313ac728611e3419f019620a25c7174b35",
+      "verified_git_blob": "0c18ccdfd57811dbc599ed443558967d9749c6f0"
+    },
+    {
+      "module": "PartiteConstruction.Structure.Attachment",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Structure/Attachment.lean",
+      "blob_sha": "3f47f6323296e77f0d4646495a262e41f0b4191a",
+      "size": 9886,
+      "imports": [
+        "PartiteConstruction.Structure.FreeAmalgam"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Structure/Attachment.lean",
+      "sha256": "eff66b9342d5149e02632374998ba0b281d5470a60c64582bcc0a474db4bf782",
+      "verified_git_blob": "3f47f6323296e77f0d4646495a262e41f0b4191a"
+    },
+    {
+      "module": "PartiteConstruction.Structure.Basic",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Structure/Basic.lean",
+      "blob_sha": "fe3c0c33928d0fe358e9f556d88340c06a79554b",
+      "size": 6312,
+      "imports": [
+        "Mathlib.Data.Fintype.Basic",
+        "Mathlib.Data.Fintype.Pi",
+        "Mathlib.Tactic"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Structure/Basic.lean",
+      "sha256": "cf75fd8cb68ae3bb56b7bd9925d7f9fab34709df84c04066e11770d22648dafe",
+      "verified_git_blob": "fe3c0c33928d0fe358e9f556d88340c06a79554b"
+    },
+    {
+      "module": "PartiteConstruction.Structure.FreeAmalgam",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Structure/FreeAmalgam.lean",
+      "blob_sha": "37690235046f7b763d3fede4b1472336204e7d27",
+      "size": 5273,
+      "imports": [
+        "PartiteConstruction.Structure.Basic"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Structure/FreeAmalgam.lean",
+      "sha256": "747d17e67ad0cda069f423325513a1eee3fb522705c3eb8eda061c6c71fe6e1a",
+      "verified_git_blob": "37690235046f7b763d3fede4b1472336204e7d27"
+    },
+    {
+      "module": "PartiteConstruction.Structure.FreeAmalgamationClass",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Structure/FreeAmalgamationClass.lean",
+      "blob_sha": "8db3ccef4ed73037ef47f1ff8c48fb6e782ea04d",
+      "size": 14315,
+      "imports": [
+        "PartiteConstruction.Structure.FreeAmalgam",
+        "Mathlib.Data.Fintype.Card"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Structure/FreeAmalgamationClass.lean",
+      "sha256": "05558ba3dec3e1f4ac2381de01138b9d93cb21ae060eb8c90e482cded293bedc",
+      "verified_git_blob": "8db3ccef4ed73037ef47f1ff8c48fb6e782ea04d"
+    },
+    {
+      "module": "PartiteConstruction.Structure.GeneratedWeakHomImage",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Structure/GeneratedWeakHomImage.lean",
+      "blob_sha": "67ae696f66f84d316bf24ba151466a6848d1de3e",
+      "size": 10073,
+      "imports": [
+        "PartiteConstruction.Structure.WeakHomomorphism"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Structure/GeneratedWeakHomImage.lean",
+      "sha256": "11f783854439d1b1f7ab9fdf28a6b3f65f84ccfc334fdd29bdc6f5c6a9010286",
+      "verified_git_blob": "67ae696f66f84d316bf24ba151466a6848d1de3e"
+    },
+    {
+      "module": "PartiteConstruction.Structure.IrreducibleHomImage",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Structure/IrreducibleHomImage.lean",
+      "blob_sha": "1ea78facce8bca43df98a27216b94534a2c7e54c",
+      "size": 9531,
+      "imports": [
+        "PartiteConstruction.Structure.FreeAmalgamationClass"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Structure/IrreducibleHomImage.lean",
+      "sha256": "f53b8bf97134e2812c0d9c18ddddba9e9f9d12fa8119f354315f6e10a15b906b",
+      "verified_git_blob": "1ea78facce8bca43df98a27216b94534a2c7e54c"
+    },
+    {
+      "module": "PartiteConstruction.Structure.NullaryRoot",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Structure/NullaryRoot.lean",
+      "blob_sha": "46e6682b1e666011eddd20c221f3f81fb083c32b",
+      "size": 3905,
+      "imports": [
+        "PartiteConstruction.Structure.GeneratedWeakHomImage"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Structure/NullaryRoot.lean",
+      "sha256": "0e9b9c6a56f4617f6ed38cd540b91132b34dacd74fe334bae6395ce1f2e6e1ef",
+      "verified_git_blob": "46e6682b1e666011eddd20c221f3f81fb083c32b"
+    },
+    {
+      "module": "PartiteConstruction.Structure.Order",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Structure/Order.lean",
+      "blob_sha": "afcf13ee5dc1acc0ef00c4f1ac672023a6fafd4c",
+      "size": 5251,
+      "imports": [
+        "PartiteConstruction.Functional.FunctionDomains",
+        "PartiteConstruction.Relational.Order"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Structure/Order.lean",
+      "sha256": "6bcd16199b8d81f7f4498ec2ccfdc971876b5d084b10f4da17aabe1078d476f4",
+      "verified_git_blob": "afcf13ee5dc1acc0ef00c4f1ac672023a6fafd4c"
+    },
+    {
+      "module": "PartiteConstruction.Structure.Relationalize",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Structure/Relationalize.lean",
+      "blob_sha": "1f5bc5acd5a171382e37d6a3051756c4c1a2beed",
+      "size": 8130,
+      "imports": [
+        "PartiteConstruction.Structure.Basic",
+        "PartiteConstruction.Relational.Homomorphism",
+        "Mathlib.Data.Fin.Tuple.Basic"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Structure/Relationalize.lean",
+      "sha256": "b6b872e4f59085173af6886e973978eca6661d3ea45b3d80bdde4f3a356cf860",
+      "verified_git_blob": "1f5bc5acd5a171382e37d6a3051756c4c1a2beed"
+    },
+    {
+      "module": "PartiteConstruction.Structure.RootedCanonical",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Structure/RootedCanonical.lean",
+      "blob_sha": "133f190db15e75f9af6b349dfe4068bfa453d62a",
+      "size": 3158,
+      "imports": [
+        "PartiteConstruction.Structure.RootedEmbedding",
+        "PartiteConstruction.Ramsey.FreeAmalgamationFunctions",
+        "Mathlib.Order.Hom.Set"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Structure/RootedCanonical.lean",
+      "sha256": "185b91369e7b2982d33580de75d01998552d06d6df32bd95f6f5a89910078d9d",
+      "verified_git_blob": "133f190db15e75f9af6b349dfe4068bfa453d62a"
+    },
+    {
+      "module": "PartiteConstruction.Structure.RootedClass",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Structure/RootedClass.lean",
+      "blob_sha": "4c84647968dcfb7a778fcf7177cf914f855b85a9",
+      "size": 2153,
+      "imports": [
+        "PartiteConstruction.Structure.RootedFreeAmalgam",
+        "PartiteConstruction.Functional.WeakOperations"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Structure/RootedClass.lean",
+      "sha256": "75bb89145c2ebef520b1934f260281ee4b8d061dba62243a7b025e4d30469224",
+      "verified_git_blob": "4c84647968dcfb7a778fcf7177cf914f855b85a9"
+    },
+    {
+      "module": "PartiteConstruction.Structure.RootedCorrectness",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Structure/RootedCorrectness.lean",
+      "blob_sha": "517c039b14f81d9458817ecaf9310640bae4f722",
+      "size": 6917,
+      "imports": [
+        "PartiteConstruction.Structure.RootedSplit"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Structure/RootedCorrectness.lean",
+      "sha256": "b6bd8d5686492fc714604721d8f229d801d170898f1a16b6c8c91f7d9385e4a8",
+      "verified_git_blob": "517c039b14f81d9458817ecaf9310640bae4f722"
+    },
+    {
+      "module": "PartiteConstruction.Structure.RootedEmbedding",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Structure/RootedEmbedding.lean",
+      "blob_sha": "60ee427a20eb4b40da9d534e67fed382d40f9f9a",
+      "size": 9344,
+      "imports": [
+        "PartiteConstruction.Structure.RootedClass",
+        "PartiteConstruction.Ramsey.FreeAmalgamationFunctions"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Structure/RootedEmbedding.lean",
+      "sha256": "fa235d7a0fd9706362f9102fa3b7560d8d83d88d5914212fa25a20a896c73392",
+      "verified_git_blob": "60ee427a20eb4b40da9d534e67fed382d40f9f9a"
+    },
+    {
+      "module": "PartiteConstruction.Structure.RootedFreeAmalgam",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Structure/RootedFreeAmalgam.lean",
+      "blob_sha": "82d36bad89cac3bb62a11c9e168a6c943cfa7291",
+      "size": 16602,
+      "imports": [
+        "PartiteConstruction.Structure.RootedCorrectness"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Structure/RootedFreeAmalgam.lean",
+      "sha256": "31a63f1050aa7740b8de32a43898785fff120ab569efc7cf0411e28b6cfe8493",
+      "verified_git_blob": "82d36bad89cac3bb62a11c9e168a6c943cfa7291"
+    },
+    {
+      "module": "PartiteConstruction.Structure.RootedFunctor",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Structure/RootedFunctor.lean",
+      "blob_sha": "949157a172a1da497009393e198e2cae7b287d0d",
+      "size": 6500,
+      "imports": [
+        "PartiteConstruction.Structure.RootedReduction"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Structure/RootedFunctor.lean",
+      "sha256": "a10fd920040cd76bfc9655834a28c48ef6cef33b0d67f046c142fb52a45872dd",
+      "verified_git_blob": "949157a172a1da497009393e198e2cae7b287d0d"
+    },
+    {
+      "module": "PartiteConstruction.Structure.RootedOrder",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Structure/RootedOrder.lean",
+      "blob_sha": "88e63be69f713bc9c0b6d0121ec39e2c5761e8cf",
+      "size": 14682,
+      "imports": [
+        "PartiteConstruction.Structure.RootedEmbedding",
+        "PartiteConstruction.Ramsey.FreeAmalgamationFunctions",
+        "Mathlib.Data.Fintype.Card",
+        "Mathlib.Data.Set.Finite.Basic",
+        "Mathlib.Order.Prod.Lex.Basic"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Structure/RootedOrder.lean",
+      "sha256": "378978b81873121d1135b479b67290bbc234529b6e8a46936502830ead6d214c",
+      "verified_git_blob": "88e63be69f713bc9c0b6d0121ec39e2c5761e8cf"
+    },
+    {
+      "module": "PartiteConstruction.Structure.RootedReduction",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Structure/RootedReduction.lean",
+      "blob_sha": "9b59262959215a0ef8914829469c4025b78eebdf",
+      "size": 20813,
+      "imports": [
+        "PartiteConstruction.Structure.NullaryRoot",
+        "PartiteConstruction.Structure.Order",
+        "Mathlib.Order.Prod.Lex.Basic"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Structure/RootedReduction.lean",
+      "sha256": "1731f2ab5c5c5379217ed53863737b26e63634cce00eb07c123851cdaefa4dbe",
+      "verified_git_blob": "9b59262959215a0ef8914829469c4025b78eebdf"
+    },
+    {
+      "module": "PartiteConstruction.Structure.RootedSplit",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Structure/RootedSplit.lean",
+      "blob_sha": "c5c15025d5aa54d9888af0ccdb8086f3403e044e",
+      "size": 4798,
+      "imports": [
+        "PartiteConstruction.Structure.RootedFunctor"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Structure/RootedSplit.lean",
+      "sha256": "002968be32ddef2b59ad7f299ece3a979440b1d8e582df0ff84ff18cf9916710",
+      "verified_git_blob": "c5c15025d5aa54d9888af0ccdb8086f3403e044e"
+    },
+    {
+      "module": "PartiteConstruction.Structure.WeakHomomorphism",
+      "repository": "janhubicka/partite-construction",
+      "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+      "tree": "4281005adfd07388f7c77205cd01d3750dca31a4",
+      "path": "PartiteConstruction/Structure/WeakHomomorphism.lean",
+      "blob_sha": "125be64539589e585cd462e5e77a5d24a21eb9c9",
+      "size": 4270,
+      "imports": [
+        "PartiteConstruction.Structure.IrreducibleHomImage"
+      ],
+      "source_url": "https://github.com/janhubicka/partite-construction/blob/918732dcff88fd1ab9be69f70e4f1d66385106e3/PartiteConstruction/Structure/WeakHomomorphism.lean",
+      "sha256": "6371fdeef3d577bd29f4d0ada9fae69b452592658fc9e2141ce4585cb983b6c7",
+      "verified_git_blob": "125be64539589e585cd462e5e77a5d24a21eb9c9"
+    },
+    {
+      "module": "SuccessorTree.HalesJewett.AlphabetEquiv",
+      "repository": "janhubicka/lean-successors",
+      "commit": "ce5ce187ef88e28d84a4a465517b3f9c87a0640a",
+      "tree": "5cfcdcd2afa9b5077e9bdb1470a99755fe6556d3",
+      "path": "SuccessorTree/HalesJewett/AlphabetEquiv.lean",
+      "blob_sha": "e89ec7be50d4601743d97a9df67481e46c3314cf",
+      "size": 2685,
+      "imports": [
+        "SuccessorTree.Support",
+        "Mathlib.Data.Fintype.Option",
+        "Mathlib.Tactic"
+      ],
+      "source_url": "https://github.com/janhubicka/lean-successors/blob/ce5ce187ef88e28d84a4a465517b3f9c87a0640a/SuccessorTree/HalesJewett/AlphabetEquiv.lean",
+      "sha256": "c3bcb0454d03dd29953d6e66c9b82785459bae83abeb6725bda723cb4bfd4050",
+      "verified_git_blob": "e89ec7be50d4601743d97a9df67481e46c3314cf"
+    },
+    {
+      "module": "SuccessorTree.HalesJewett.AlphabetInduction",
+      "repository": "janhubicka/lean-successors",
+      "commit": "ce5ce187ef88e28d84a4a465517b3f9c87a0640a",
+      "tree": "5cfcdcd2afa9b5077e9bdb1470a99755fe6556d3",
+      "path": "SuccessorTree/HalesJewett/AlphabetInduction.lean",
+      "blob_sha": "3eb322e4158d17596db321a1b41738a3fcf6a79d",
+      "size": 16548,
+      "imports": [
+        "SuccessorTree.HalesJewett.AlphabetLift",
+        "SuccessorTree.HalesJewett.AlphabetEquiv",
+        "SuccessorTree.HalesJewett.LineSchedule",
+        "SuccessorTree.HalesJewett.ForcingProposition",
+        "SuccessorTree.HalesJewett.ForcingLemmaTwo",
+        "Mathlib.Data.Fintype.Option",
+        "Mathlib.Data.Fintype.Pigeonhole",
+        "Mathlib.Data.Fintype.EquivFin",
+        "Mathlib.Tactic"
+      ],
+      "source_url": "https://github.com/janhubicka/lean-successors/blob/ce5ce187ef88e28d84a4a465517b3f9c87a0640a/SuccessorTree/HalesJewett/AlphabetInduction.lean",
+      "sha256": "996c760acf3d364f980a24199b411213090ac2f453fc4acae52029589321cae7",
+      "verified_git_blob": "3eb322e4158d17596db321a1b41738a3fcf6a79d"
+    },
+    {
+      "module": "SuccessorTree.HalesJewett.AlphabetLift",
+      "repository": "janhubicka/lean-successors",
+      "commit": "ce5ce187ef88e28d84a4a465517b3f9c87a0640a",
+      "tree": "5cfcdcd2afa9b5077e9bdb1470a99755fe6556d3",
+      "path": "SuccessorTree/HalesJewett/AlphabetLift.lean",
+      "blob_sha": "a98cf1a66d532f3adf694366f5fbc56a73859830",
+      "size": 6375,
+      "imports": [
+        "SuccessorTree.HalesJewett.Composition",
+        "Mathlib.Tactic"
+      ],
+      "source_url": "https://github.com/janhubicka/lean-successors/blob/ce5ce187ef88e28d84a4a465517b3f9c87a0640a/SuccessorTree/HalesJewett/AlphabetLift.lean",
+      "sha256": "18c45023ec00b37725c721503d6137397cb7aa2b784a6c5d7f56b225466b53db",
+      "verified_git_blob": "a98cf1a66d532f3adf694366f5fbc56a73859830"
+    },
+    {
+      "module": "SuccessorTree.HalesJewett.Composition",
+      "repository": "janhubicka/lean-successors",
+      "commit": "ce5ce187ef88e28d84a4a465517b3f9c87a0640a",
+      "tree": "5cfcdcd2afa9b5077e9bdb1470a99755fe6556d3",
+      "path": "SuccessorTree/HalesJewett/Composition.lean",
+      "blob_sha": "e6eb73ce1062085ecfe8c74fa1024afaa07af000",
+      "size": 8612,
+      "imports": [
+        "SuccessorTree.HalesJewett.VariableWord",
+        "SuccessorTree.HalesJewett.Forcing",
+        "Mathlib.Tactic"
+      ],
+      "source_url": "https://github.com/janhubicka/lean-successors/blob/ce5ce187ef88e28d84a4a465517b3f9c87a0640a/SuccessorTree/HalesJewett/Composition.lean",
+      "sha256": "75ab02116bbbf1512cb07d513ef054c747d48cd87ca6d3c413e9f9a33797e13c",
+      "verified_git_blob": "e6eb73ce1062085ecfe8c74fa1024afaa07af000"
+    },
+    {
+      "module": "SuccessorTree.HalesJewett.FiniteVariableWord",
+      "repository": "janhubicka/lean-successors",
+      "commit": "ce5ce187ef88e28d84a4a465517b3f9c87a0640a",
+      "tree": "5cfcdcd2afa9b5077e9bdb1470a99755fe6556d3",
+      "path": "SuccessorTree/HalesJewett/FiniteVariableWord.lean",
+      "blob_sha": "e884d31d508a9d7a369ad0953c6e1376505a6a96",
+      "size": 15838,
+      "imports": [
+        "SuccessorTree.HalesJewett.VariableWord",
+        "Mathlib.Tactic"
+      ],
+      "source_url": "https://github.com/janhubicka/lean-successors/blob/ce5ce187ef88e28d84a4a465517b3f9c87a0640a/SuccessorTree/HalesJewett/FiniteVariableWord.lean",
+      "sha256": "855937ebd06f25b1ebcc151cbd8b6f09d8762eb98ca8ac8648a728ef104a221d",
+      "verified_git_blob": "e884d31d508a9d7a369ad0953c6e1376505a6a96"
+    },
+    {
+      "module": "SuccessorTree.HalesJewett.Forcing",
+      "repository": "janhubicka/lean-successors",
+      "commit": "ce5ce187ef88e28d84a4a465517b3f9c87a0640a",
+      "tree": "5cfcdcd2afa9b5077e9bdb1470a99755fe6556d3",
+      "path": "SuccessorTree/HalesJewett/Forcing.lean",
+      "blob_sha": "347eccfd00b8ac5cd46ebabe0e01f72c33b80872",
+      "size": 6881,
+      "imports": [
+        "Mathlib.Data.Set.Basic",
+        "Mathlib.Data.Fintype.Basic"
+      ],
+      "source_url": "https://github.com/janhubicka/lean-successors/blob/ce5ce187ef88e28d84a4a465517b3f9c87a0640a/SuccessorTree/HalesJewett/Forcing.lean",
+      "sha256": "80d63595aa13e36743c96521738a33a6bd393d9d6dc9f3905c012b948751427e",
+      "verified_git_blob": "347eccfd00b8ac5cd46ebabe0e01f72c33b80872"
+    },
+    {
+      "module": "SuccessorTree.HalesJewett.ForcingFusion",
+      "repository": "janhubicka/lean-successors",
+      "commit": "ce5ce187ef88e28d84a4a465517b3f9c87a0640a",
+      "tree": "5cfcdcd2afa9b5077e9bdb1470a99755fe6556d3",
+      "path": "SuccessorTree/HalesJewett/ForcingFusion.lean",
+      "blob_sha": "9afc53468f51737c8f7af177569432ed7c01a8eb",
+      "size": 6144,
+      "imports": [
+        "SuccessorTree.HalesJewett.ForcingLemmaTwo",
+        "Mathlib.Tactic"
+      ],
+      "source_url": "https://github.com/janhubicka/lean-successors/blob/ce5ce187ef88e28d84a4a465517b3f9c87a0640a/SuccessorTree/HalesJewett/ForcingFusion.lean",
+      "sha256": "a20efa81a0f29ee44379bdcb95851a0e9fd0322af9e047c2ef5bef2c4fab906a",
+      "verified_git_blob": "9afc53468f51737c8f7af177569432ed7c01a8eb"
+    },
+    {
+      "module": "SuccessorTree.HalesJewett.ForcingFusionLimit",
+      "repository": "janhubicka/lean-successors",
+      "commit": "ce5ce187ef88e28d84a4a465517b3f9c87a0640a",
+      "tree": "5cfcdcd2afa9b5077e9bdb1470a99755fe6556d3",
+      "path": "SuccessorTree/HalesJewett/ForcingFusionLimit.lean",
+      "blob_sha": "5e558557c6c912382ade34d48867fcbf62221850",
+      "size": 8931,
+      "imports": [
+        "SuccessorTree.HalesJewett.ForcingFusion",
+        "SuccessorTree.HalesJewett.ForcingMaximal",
+        "Mathlib.Tactic"
+      ],
+      "source_url": "https://github.com/janhubicka/lean-successors/blob/ce5ce187ef88e28d84a4a465517b3f9c87a0640a/SuccessorTree/HalesJewett/ForcingFusionLimit.lean",
+      "sha256": "9f35f7879155c8056a96e106cf178dc16dabee33e7b446ddbc07ad4b2ebb965d",
+      "verified_git_blob": "5e558557c6c912382ade34d48867fcbf62221850"
+    },
+    {
+      "module": "SuccessorTree.HalesJewett.ForcingLemmaOne",
+      "repository": "janhubicka/lean-successors",
+      "commit": "ce5ce187ef88e28d84a4a465517b3f9c87a0640a",
+      "tree": "5cfcdcd2afa9b5077e9bdb1470a99755fe6556d3",
+      "path": "SuccessorTree/HalesJewett/ForcingLemmaOne.lean",
+      "blob_sha": "f18deb3f526ca0f845e0d2871ecdcef94c64405e",
+      "size": 5291,
+      "imports": [
+        "SuccessorTree.HalesJewett.FiniteVariableWord",
+        "SuccessorTree.Support",
+        "Mathlib.Data.Fintype.Pi",
+        "Mathlib.Data.List.OfFn",
+        "Mathlib.Tactic"
+      ],
+      "source_url": "https://github.com/janhubicka/lean-successors/blob/ce5ce187ef88e28d84a4a465517b3f9c87a0640a/SuccessorTree/HalesJewett/ForcingLemmaOne.lean",
+      "sha256": "5a7305c7babd0b33514b50b5edbcc0d4490acea27199f34917588f2d5fdafe8f",
+      "verified_git_blob": "f18deb3f526ca0f845e0d2871ecdcef94c64405e"
+    },
+    {
+      "module": "SuccessorTree.HalesJewett.ForcingLemmaTwo",
+      "repository": "janhubicka/lean-successors",
+      "commit": "ce5ce187ef88e28d84a4a465517b3f9c87a0640a",
+      "tree": "5cfcdcd2afa9b5077e9bdb1470a99755fe6556d3",
+      "path": "SuccessorTree/HalesJewett/ForcingLemmaTwo.lean",
+      "blob_sha": "6347e2e03539ca7d38d523011fe6889c6abf1a52",
+      "size": 7000,
+      "imports": [
+        "SuccessorTree.HalesJewett.Composition",
+        "SuccessorTree.HalesJewett.ForcingReduction",
+        "Mathlib.Tactic"
+      ],
+      "source_url": "https://github.com/janhubicka/lean-successors/blob/ce5ce187ef88e28d84a4a465517b3f9c87a0640a/SuccessorTree/HalesJewett/ForcingLemmaTwo.lean",
+      "sha256": "7866f1a33b2b7de0da98787f74c321f96eedb4fb7fffbbd8e4644267482e9020",
+      "verified_git_blob": "6347e2e03539ca7d38d523011fe6889c6abf1a52"
+    },
+    {
+      "module": "SuccessorTree.HalesJewett.ForcingMaximal",
+      "repository": "janhubicka/lean-successors",
+      "commit": "ce5ce187ef88e28d84a4a465517b3f9c87a0640a",
+      "tree": "5cfcdcd2afa9b5077e9bdb1470a99755fe6556d3",
+      "path": "SuccessorTree/HalesJewett/ForcingMaximal.lean",
+      "blob_sha": "86657a1cb9c8fd15b4aaf97f08365948eaa4d150",
+      "size": 7023,
+      "imports": [
+        "SuccessorTree.HalesJewett.GreedyLimit",
+        "SuccessorTree.HalesJewett.ForcingLemmaOne",
+        "SuccessorTree.HalesJewett.ForcingReduction",
+        "Mathlib.Tactic"
+      ],
+      "source_url": "https://github.com/janhubicka/lean-successors/blob/ce5ce187ef88e28d84a4a465517b3f9c87a0640a/SuccessorTree/HalesJewett/ForcingMaximal.lean",
+      "sha256": "c7613a4caa8acb62258d9b95e3f704db123eef3a63961cc7957ab247f1f8db87",
+      "verified_git_blob": "86657a1cb9c8fd15b4aaf97f08365948eaa4d150"
+    },
+    {
+      "module": "SuccessorTree.HalesJewett.ForcingProposition",
+      "repository": "janhubicka/lean-successors",
+      "commit": "ce5ce187ef88e28d84a4a465517b3f9c87a0640a",
+      "tree": "5cfcdcd2afa9b5077e9bdb1470a99755fe6556d3",
+      "path": "SuccessorTree/HalesJewett/ForcingProposition.lean",
+      "blob_sha": "18261c9e9f6adadd0dcda1b8e2b213be055fb3c8",
+      "size": 11870,
+      "imports": [
+        "SuccessorTree.HalesJewett.ForcingFusionLimit",
+        "Mathlib.Tactic"
+      ],
+      "source_url": "https://github.com/janhubicka/lean-successors/blob/ce5ce187ef88e28d84a4a465517b3f9c87a0640a/SuccessorTree/HalesJewett/ForcingProposition.lean",
+      "sha256": "3b0ca2b4a2e08258704aa4005bc00ffc5a6142a943132897f73a55c378bdd12b",
+      "verified_git_blob": "18261c9e9f6adadd0dcda1b8e2b213be055fb3c8"
+    },
+    {
+      "module": "SuccessorTree.HalesJewett.ForcingReduction",
+      "repository": "janhubicka/lean-successors",
+      "commit": "ce5ce187ef88e28d84a4a465517b3f9c87a0640a",
+      "tree": "5cfcdcd2afa9b5077e9bdb1470a99755fe6556d3",
+      "path": "SuccessorTree/HalesJewett/ForcingReduction.lean",
+      "blob_sha": "88a7e49f2cdaecc02755c4cf98abbf1c8de14dac",
+      "size": 3493,
+      "imports": [
+        "SuccessorTree.HalesJewett.Composition",
+        "SuccessorTree.Support"
+      ],
+      "source_url": "https://github.com/janhubicka/lean-successors/blob/ce5ce187ef88e28d84a4a465517b3f9c87a0640a/SuccessorTree/HalesJewett/ForcingReduction.lean",
+      "sha256": "665340a542434d14a4450b29013a297000e512bf0a2eb3e24e231cd6a3608866",
+      "verified_git_blob": "88a7e49f2cdaecc02755c4cf98abbf1c8de14dac"
+    },
+    {
+      "module": "SuccessorTree.HalesJewett.GreedyLimit",
+      "repository": "janhubicka/lean-successors",
+      "commit": "ce5ce187ef88e28d84a4a465517b3f9c87a0640a",
+      "tree": "5cfcdcd2afa9b5077e9bdb1470a99755fe6556d3",
+      "path": "SuccessorTree/HalesJewett/GreedyLimit.lean",
+      "blob_sha": "10d1ce7cc1f4eb7ea976291e98a9c525e0d574f2",
+      "size": 7149,
+      "imports": [
+        "SuccessorTree.HalesJewett.Composition",
+        "SuccessorTree.HalesJewett.FiniteVariableWord",
+        "Mathlib.Tactic"
+      ],
+      "source_url": "https://github.com/janhubicka/lean-successors/blob/ce5ce187ef88e28d84a4a465517b3f9c87a0640a/SuccessorTree/HalesJewett/GreedyLimit.lean",
+      "sha256": "5b6bbefc6bc19385f91427a49c3336f1c8d7931c882a8d38df638a462d3eab9e",
+      "verified_git_blob": "10d1ce7cc1f4eb7ea976291e98a9c525e0d574f2"
+    },
+    {
+      "module": "SuccessorTree.HalesJewett.LineSchedule",
+      "repository": "janhubicka/lean-successors",
+      "commit": "ce5ce187ef88e28d84a4a465517b3f9c87a0640a",
+      "tree": "5cfcdcd2afa9b5077e9bdb1470a99755fe6556d3",
+      "path": "SuccessorTree/HalesJewett/LineSchedule.lean",
+      "blob_sha": "786c585ea1011264f999d0b9bd2e6f9e7b42e4f7",
+      "size": 11134,
+      "imports": [
+        "SuccessorTree.HalesJewett.ForcingFusion",
+        "Mathlib.Data.Fintype.Pi",
+        "Mathlib.Data.List.OfFn",
+        "Mathlib.Data.List.GetD",
+        "Mathlib.Data.Nat.Find",
+        "Mathlib.Tactic"
+      ],
+      "source_url": "https://github.com/janhubicka/lean-successors/blob/ce5ce187ef88e28d84a4a465517b3f9c87a0640a/SuccessorTree/HalesJewett/LineSchedule.lean",
+      "sha256": "d55b22dffe851fdcc20ef43722999333bfc8e1e336aaf8e027f05588e6290ee7",
+      "verified_git_blob": "786c585ea1011264f999d0b9bd2e6f9e7b42e4f7"
+    },
+    {
+      "module": "SuccessorTree.HalesJewett.VariableWord",
+      "repository": "janhubicka/lean-successors",
+      "commit": "ce5ce187ef88e28d84a4a465517b3f9c87a0640a",
+      "tree": "5cfcdcd2afa9b5077e9bdb1470a99755fe6556d3",
+      "path": "SuccessorTree/HalesJewett/VariableWord.lean",
+      "blob_sha": "b8f4e520b4b14587092162be6a076a1d7a42664c",
+      "size": 7824,
+      "imports": [
+        "SuccessorTree.StarLine"
+      ],
+      "source_url": "https://github.com/janhubicka/lean-successors/blob/ce5ce187ef88e28d84a4a465517b3f9c87a0640a/SuccessorTree/HalesJewett/VariableWord.lean",
+      "sha256": "298e3d0bcb91616bd18856d772c9fb59d32fbfbdf1bcb69f09aacfc725fe3ea6",
+      "verified_git_blob": "b8f4e520b4b14587092162be6a076a1d7a42664c"
+    },
+    {
+      "module": "SuccessorTree.StarLine",
+      "repository": "janhubicka/lean-successors",
+      "commit": "ce5ce187ef88e28d84a4a465517b3f9c87a0640a",
+      "tree": "5cfcdcd2afa9b5077e9bdb1470a99755fe6556d3",
+      "path": "SuccessorTree/StarLine.lean",
+      "blob_sha": "87e355f9a053c6fc73905194b1e8a211f737c84b",
+      "size": 7028,
+      "imports": [
+        "Mathlib.Data.Fintype.Basic",
+        "Mathlib.Data.List.Basic"
+      ],
+      "source_url": "https://github.com/janhubicka/lean-successors/blob/ce5ce187ef88e28d84a4a465517b3f9c87a0640a/SuccessorTree/StarLine.lean",
+      "sha256": "3b592e08af801c4d2ca99260819e00559eefd8cae84c54923279cc6d504dd94e",
+      "verified_git_blob": "87e355f9a053c6fc73905194b1e8a211f737c84b"
+    },
+    {
+      "module": "SuccessorTree.Support",
+      "repository": "janhubicka/lean-successors",
+      "commit": "ce5ce187ef88e28d84a4a465517b3f9c87a0640a",
+      "tree": "5cfcdcd2afa9b5077e9bdb1470a99755fe6556d3",
+      "path": "SuccessorTree/Support.lean",
+      "blob_sha": "6350fc7dd6caa55cd93a40589ade9576e04dcb35",
+      "size": 3060,
+      "imports": [
+        "SuccessorTree.StarLine",
+        "Mathlib.Data.Finset.Dedup"
+      ],
+      "source_url": "https://github.com/janhubicka/lean-successors/blob/ce5ce187ef88e28d84a4a465517b3f9c87a0640a/SuccessorTree/Support.lean",
+      "sha256": "d8c60514d5fb675a6d585ad539180d62127af4fb0d4e3b1ad9f6bcf7f8b9abdc",
+      "verified_git_blob": "6350fc7dd6caa55cd93a40589ade9576e04dcb35"
+    },
+    {
+      "path": "LICENSE.SuccessorTree",
+      "upstream_path": "LICENSE",
+      "repository": "janhubicka/lean-successors",
+      "commit": "ce5ce187ef88e28d84a4a465517b3f9c87a0640a",
+      "tree": "5cfcdcd2afa9b5077e9bdb1470a99755fe6556d3",
+      "blob_sha": "0e259d42c996742e9e3cba14c677129b2c1b6311",
+      "size": 7048,
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+      "verified_git_blob": "0e259d42c996742e9e3cba14c677129b2c1b6311"
+    }
+  ]
+}
