@@ -32,12 +32,26 @@ atom in the original source, verifies both directed pair masks and both
 diagonals, and applies the finite tuple construction. This is an actual
 source occurrence theorem, rather than formal prefix support alone.
 
+`RealizationTriangles.midpoint_readout` takes fixed actual child endpoints,
+an old midpoint of the specified parent sort, and the two allowed optional
+pair masks. The endpoint mask follows from the actual source marking.
+It verifies the entire three-point legal table, including all reverse and
+diagonal entries, and applies `align_legal_tuple` over the two fixed
+endpoints. The result is an actual midpoint in the specified child sort
+with both original optional colours preserved. Repeated endpoints or
+midpoints are allowed. The helper `allows_pair_reverse` treats actual
+equality via the identity mask, rather than turning equality into a
+diversity atom.
+
 Validation: pinned Lean4.34.1/Lake5 with the repository manifest, private
 project/provider outputs and immutable shared dependencies. Narrow
 `lake build CCO.PairSafeSplit.Strong.Realization` passed (2479 jobs), then
 `lake build CCO.PairSafeSplit.Strong.RealizationAtoms` passed (2480 jobs).
+`lake build CCO.PairSafeSplit.Strong.RealizationTriangles` also passed
+(2480 jobs, first compile).
 Logs are `runtime/b047-tuples-final.log` and
-`runtime/b047-tuple-atoms.log` outside the Git worktree. Existing style
+`runtime/b047-tuple-atoms.log`, plus `runtime/b047-tuple-triangles.log`,
+outside the Git worktree. Existing style
 warnings are nonfatal. No shared import edits, whole-project build, remote
 writes, new axioms, `sorry`, new-source SAP assumption, or reviewer-authored
 code. The owner retains assembled exact-head build, CI and axiom audit.
