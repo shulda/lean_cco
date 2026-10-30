@@ -76,3 +76,18 @@ too-weak raw pair-completion implementation: a collapsed low point map
 must be distinguished from a genuine signed-low-compatible atomic shadow
 with cycle certificates. These optional strict-target theorems do not rely
 on the weaker collapsed witness.
+
+## Full hypergraph class
+
+`Boundary.FreeUnion` (647 jobs), `Boundary.FreeAmalgam` (679 jobs) and
+`Boundary.Class` (864 jobs) now prove the actual hereditary strong
+amalgamation class of symmetric irreflexive K₄³-free hypergraphs. Its single
+ternary symbol uses the shared normalized `Canonical.Signature` and full
+Bool tables. The free amalgam is the literal finite union over the base;
+both full legs are induced, every base point commutes, and no off-base
+vertices coincide. This is independent of A03 and does not presume the
+support-normal property that the class will refute.
+
+The countable homogeneous realization and literal raw-interface failure
+adapter are the remaining boundary work, beyond the already compiled
+finite obstruction and actual pure-set pair SAP/CCO source.

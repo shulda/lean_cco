@@ -43,7 +43,7 @@ theorem complete_four_forbidden : ¬ K4Free (completeTriple (Fin 4)) := by
 abbrev Factor (i : Fin 4) := {x : Fin 4 // x ≠ i}
 
 theorem factor_card (i : Fin 4) : Fintype.card (Factor i) = 3 := by
-  simpa using (Fintype.card_congr (finSuccAboveEquiv i)).symm
+  exact (Fintype.card_congr (finSuccAboveEquiv i)).symm
 
 theorem each_frozen_factor_allowed (i : Fin 4) :
     K4Free (fun x y z : Factor i => completeTriple (Fin 4) x.val y.val z.val) :=
