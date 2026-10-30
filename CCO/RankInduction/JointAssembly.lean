@@ -33,6 +33,7 @@ theorem joint_stage_witness (finiteA : A0.Finite) (many : 2 ≤ directionCount S
       roots := stage_roots S H cco normalized F finiteA many amalgamate }
   · exact stage_closed S H cco normalized F
 
+include H cco normalized F in
 theorem joint_stage_exists (finiteA : A0.Finite) (many : 2 ≤ directionCount S)
     (amalgamate : FiniteLift.StrongClosedAmalgamation G (FiniteLift.aclSet G) (S.menuRel safe)) :
     ∃ W : Set M, Witness S G safe A0 W ∧ FiniteLift.aclSet G W = W :=
