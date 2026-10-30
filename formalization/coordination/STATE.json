@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 336,
+  "revision": 337,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -2068,7 +2068,7 @@
       }
     },
     "B041": {
-      "state": "REVIEWING",
+      "state": "INTEGRATING",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b040_transport",
@@ -2134,7 +2134,13 @@
       }
     }
   },
-  "integration_lock": null,
+  "integration_lock": {
+    "kind": "package",
+    "package_id": "B041",
+    "actor_id": "root",
+    "base_main_sha": "1121b2016c7141ac432364b07c49c0ae31b18dbe",
+    "head_sha": "f5c3a62433c85c77a807497721aaa3ee71cb03a8"
+  },
   "history": [
     {
       "revision": 1,
@@ -8605,6 +8611,26 @@
         "head_sha": "f5c3a62433c85c77a807497721aaa3ee71cb03a8",
         "summary": "Actual nonauthor whole-source review approves all60claims/14defs/five selected results/TQ5 across31modules: original typed quotient triangles and SAME displayed-vertex joint homogeneity/AP/JEP; independent private-path HOMCCO without quotient homogeneity/AP/FullWord premise; safe ONE-sort descent; actual current-stage ExactTower, total initial exact kernels, canonical flattening and AtomicIso, no-split/strict diversity rank; FULLAut entire finite axes/conditional F2Goursat; genuine infinite phase clone H+SAP+HOMCCO C55 and literal actual C56 quotient/fullgroup/intrinsic-kernel counterexample. Personally checked only real MD/accepted-base deltas after whole source, all5authors and public11commit topology/tree; exact CI41050090786/job124043711531 full log130tests/23915standard3audit/1335completeCCOguards/exact269EPPA+106Ramsey. Actual reviewer wrote/designed none; durable B041-final.md.",
         "actor_id": "independent_review"
+      }
+    },
+    {
+      "revision": 337,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "start_integration",
+      "package_id": "B041",
+      "details": {
+        "package_id": "B041",
+        "head_sha": "f5c3a62433c85c77a807497721aaa3ee71cb03a8",
+        "base_main_sha": "1121b2016c7141ac432364b07c49c0ae31b18dbe",
+        "head_contains_main": true,
+        "ci": {
+          "run_id": 41050090786,
+          "head_sha": "f5c3a62433c85c77a807497721aaa3ee71cb03a8",
+          "conclusion": "success",
+          "axiom_audit": "allowlist"
+        },
+        "actor_id": "root"
       }
     }
   ],
