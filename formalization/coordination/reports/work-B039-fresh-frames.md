@@ -8,11 +8,12 @@ finite-action avoidance theorem in `CCO.AclOwners.Avoidance`.
 
 ## Actual source status
 
-All five principal source results are implemented and their actual consumer
-union compiled successfully (1349 narrow build jobs). This is NOT a complete
-batch acceptance assertion: the final C49 diagnostic model properties are
-still being assembled, and a complete frozen receiving pipeline, independent
-exact-head review, public CI and resulting-main CI/audit remain required.
+All fifty claims, twelve definitions and five principal source results are
+implemented. The source/consumer union passed 1349 narrow build jobs; the two
+complete actual C49 model streams passed their respective 1340/1341-job
+consumer builds. The final exact source is not yet accepted: the complete
+frozen receiving pipeline, independent exact-head review, public CI and
+resulting-main CI/audit remain required.
 
 The public aliases are all in `CCO.UnaryFreshFrames.Source`:
 
@@ -76,7 +77,7 @@ the stronger core theorem; the full declared source family instantiates it.
 | C37–C44 | `Quotient.Necessity`, `NamedNecessity`, `SAPNecessity`: FULL-Aut fixed/finite fibre orbits and actual subgroup motions; SAP discharges full-Aut closure equality and BOTH kernel clauses |
 | C45–C46 | `Source.typed_abstract_relative_kernel_sap_iff`: actual sufficient AFF direction and actual SAP-only necessity, with the unchanged final source scope |
 | C47–C48 | `Quotient.NamedNecessity`: actual local definable-off-closure and finite-index algebraic-off-closure witnesses without assuming SAP |
-| C49 | `Examples.Matching*`, `Examples.TwoCover*`: actual countable models and all finite-closed homogeneity; final conservative-presentation/full-property aggregates still being completed at this checkpoint |
+| C49 | `Examples/Matching*.lean`, `Examples/TwoCover*.lean`: both ORIGINAL finite signatures, actual countability, all finite-closed homogeneity, local finiteness, real-base full-Aut infinitude, every hidden named proper quotient representation, exact separated kernel-clause failures and actual failure of SAP. Any auxiliary root predicates are proved conservative on EVERY original closed partial embedding, with literally equal full-Aut subgroups |
 | C50 | `SAPBoundaries`: actual nullary empty-base obstruction and two separately binary-closed finite factors with a nonclosed union |
 
 Generic elementary fibre lemmas accept equivariant maps because their proof
@@ -106,7 +107,11 @@ Coherent source is backed up by root with exact source-tree correspondence.
 
 Only narrow real Lean consumer builds have run during implementation. No
 whole receiving pipeline, whole audit or public exact-head CI is claimed at
-this checkpoint. A concrete stale `FullFrames` generated artifact was caught
+this source freeze. Accepted B038 main
+`709931c1d7bae96f549efcf658d795d38dc1e9e8` was merged once, preserving the
+entire accepted `CCO.lean` prefix and all source history. Its validated CCO
+children and Ramsey provider artifacts were privately copied for incremental
+validation; the changed CCO root artifact was not copied. A concrete stale `FullFrames` generated artifact was caught
 by a real consumer, moved reversibly to `runtime/b039-stale-fullframes`, and
 rebuilt with artifact restoration disabled. Root subsequently changed only
 the local runtime default; production workflow, toolchain and manifest remain
