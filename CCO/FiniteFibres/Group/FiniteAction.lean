@@ -45,6 +45,6 @@ theorem card_power_of_injective_hom {H : Type*} [Group H] [Finite H]
   have hd := Subgroup.card_subgroup_dvd_card f.range
   rw [hH] at hd
   obtain ⟨m,hm,hcard⟩ := (Nat.dvd_prime_pow hp.out).mp hd
-  exact ⟨m,hm,(Nat.card_congr (MulEquiv.ofInjective hf).toEquiv).trans hcard⟩
+  exact ⟨m,hm,(Nat.card_congr (MonoidHom.ofInjective hf).toEquiv).trans hcard⟩
 
 end CCO.FiniteFibres.Group
