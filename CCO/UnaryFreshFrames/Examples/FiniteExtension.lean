@@ -10,7 +10,7 @@ theorem extend_equal_kernels {I X : Type*} [Finite I] (f g : I → X)
     ∃ e : Equiv.Perm X, ∀ x, e (f x) = g x := by
   classical
   let T := Set.range f
-  letI : Finite T := (Set.finite_range f).to_subtype
+  let _ : Finite T := (Set.finite_range f).to_subtype
   let rep : T → I := fun x => x.property.choose
   have hrep (x : T) : f (rep x) = x.val := x.property.choose_spec
   let k : T → X := fun x => g (rep x)
