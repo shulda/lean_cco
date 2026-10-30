@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 307,
+  "revision": 308,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -1936,6 +1936,7 @@
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b039_fresh",
+        "/root/b039_fresh/examples",
         "/root/b039_fresh/quotient",
         "/root/b039_fresh/sap",
         "root"
@@ -7945,6 +7946,20 @@
           "/root/b039_fresh",
           "/root/b039_fresh/sap",
           "/root/b039_fresh/quotient"
+        ],
+        "actor_id": "root"
+      }
+    },
+    {
+      "revision": 308,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "record_authorship",
+      "package_id": "B039",
+      "details": {
+        "package_id": "B039",
+        "author_actor_ids": [
+          "/root/b039_fresh/examples"
         ],
         "actor_id": "root"
       }
