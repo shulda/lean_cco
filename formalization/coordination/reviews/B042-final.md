@@ -2,11 +2,13 @@
 
 ## Disposition and actual independence
 
-**WHOLE MATHEMATICAL SOURCE PASS; formal exact-public approval PENDING.**
+**WHOLE MATHEMATICAL SOURCE, CORRECTED FINAL DOCUMENTS AND ACCEPTED-BASE
+UNION PASS; formal exact-public approval PENDING completed CI.**
 No missing principal provider, circular Hasse/triangle inference, stronger
 replacement premise or mathematical blocker remains after the actual C01
-addition. Final owner Markdown, accepted-main/root union, exact public
-history/head and completed PR CI/full logs remain separate gates. This report
+and transitive-target additions. The two literal final-document namespace
+findings are closed; final exact public CI/full logs and live review-lease
+binding remain separate gates. This report
 does not assert future CI success, a merge or ACCEPTED event.
 
 Actual reviewer: `/root/independent_review`, registered actor
@@ -121,10 +123,95 @@ refresh after the genuine C01 addition; I did not rerun either or represent
 them as completed public CI. B041's resulting-main CI and a future accepted
 base union are not asserted as already complete here.
 
-Formal APPROVAL awaits only actual final Markdown changes, genuine accepted
-main/root union, exact published head/tree/history and live authorship/lease,
-personally inspected completed PR CI/full logs, full source/output/provider
-guards and the standard-three official audit. Stable bodies need no second
-whole read. Root alone owns public STATE/CAS, approval publication, the single
-integration lock, expected-head history-preserving merge and actual green
-resulting-main CI/audit before ACCEPTED.
+## Final actual transitive-target consumer delta — PASS
+
+Final mathematical freeze
+`0000a1ecf0d0e118d50fbfcd845b81e56223b828`, tree
+`2b2b6304a3b98859d13bd17dd2c54b36fbe61628`, appends ONLY fourteen lines in
+`Hasse.lean` after the reviewed `6586de65...` checkpoint. The new
+`transitive_target_card` constructs `|F|=2^m` from the actual FULL invariant
+saturated chain, and bounds its exponent by the ACTUAL occurring palette
+through the independently proved bit code. Its only added hypotheses are
+actual FULL target-group transitivity and a point; homogeneity is absent.
+I read ONLY this genuine addition. No old theorem/root changed, and the
+complete mathematical scope is now **34 modules/3433 Lean lines**.
+
+## Final Markdown delta — PASS after two actual namespace corrections
+
+Owner handoff `0b67efc9836124d0ce4732bbebb254a82a1e4219`, tree
+`8b33221e960f69e500c3ed92e0a46aa132e5474c`, adds ONLY two Markdown files
+after that final math freeze: `reports/work-B042-source-complete.md`
+(282 lines) and `submissions/B042.md` (94 lines). I read this actual
+376-line delta once. All six authors, exact mathematical premises,
+LocalAllowed/unused-colour scope, provider discharge, actual chain and
+FO/real-acl paths, genuine boundary models, incremental compilation and
+pending public gates are faithfully described.
+
+Two literal namespace errors were reported to the coordinator in the new
+complete source report, without implementation or test changes by me:
+
+- C22 lists `Group.Correspondence.InvEq.projection`; the actual declaration
+  is `Group.Correspondence.projection` because Basic ends the `InvEq`
+  namespace before the representative/projection definitions.
+- A later paragraph says `Group.Correspondence.InvEq` contains
+  `relativeMove`; the actual declaration is
+  `Group.Correspondence.relativeMove`, after Relative ends `InvEq`.
+
+These were documentation precision findings, not mathematical gaps. I
+subsequently inspected exact author correction
+`dcd730f8c90be66bdf2649b7d8429940d6c96372`, tree
+`e810a899497ceff83d2cbc420566be5f4d175782`: ONLY the two indicated report
+lines change (two additions/two deletions). C22 now names the actual
+`Group.Correspondence.projection`, and the namespace paragraph correctly
+places `relativeMove` in `Group.Correspondence`. Both findings are closed.
+No proof, source, root, configuration or other document content changed;
+no build or stable 376-line/source reread was needed. The corrected final
+document text has no remaining scope/provider/provenance finding.
+
+## Actual accepted-base/root/report union and public history — PASS
+
+I checked the true `dcd730f8...` to
+`c54513470eb5924ce4de4a2627488bb5954826ea` integration delta, tree
+`e2434603d591f0223e09d0b52b20b3ace607d293`. Ordered local parents are exact
+corrected owner head `dcd730f8c90be66bdf2649b7d8429940d6c96372` followed by
+ACTUAL accepted B041 main `5367e9e72b3dc099ff55238a80f1c9ea7cac46fc`.
+
+All 34 B042 mathematical bodies are byte-identical to reviewed final freeze
+`0000a1ec...`, subtree `d766a431ab561e2a42a0e9fdead60bddbc58a985`.
+Every accepted non-root file is unchanged, including all 44 accepted
+B040/B041 mathematical files. The ENTIRE actual accepted CCO root is an
+exact byte prefix followed by every one of the 34 new B042 imports exactly
+once, giving **1369 public CCO modules including root**. No mathematical
+provider, source, pin or project configuration changed in the union.
+
+I read ONLY the two actual 15-line publication-base additions to the final
+owner reports. They truthfully distinguish historical claim/base1121 and
+earlier local builds from the actual accepted5367 publication base, current
+root closure, narrow post-union replay and pending exact public CI. The
+already reviewed accepted B040/B041 proofs were not read again.
+
+I personally fetched actual
+[PR56](https://github.com/shulda/lean_cco/pull/56) and public head
+`ba14bf64c71a08409b4b3fdbf91ab04f6c631068`: its tree is EXACTLY the reviewed
+`e2434603...` tree, with ordered parents public corrected owner head
+`cac1acee866868984196ca1f8a7bdcb2429d60a5` then actual accepted `5367e9e7...`.
+The comparison is 33 commits ahead/zero behind that base. All 33 public
+checkpoint trees match their actual `Local-source-commit` local trees;
+source history and the two-parent accepted-base topology are preserved,
+without replaying accepted contributions as new work.
+
+Actual resulting-B041-main run `41050908739` is completed SUCCESS at exact
+`5367e9e7...`, attempt **2**. The earlier cancelled download-stall attempt is
+separate and is not success evidence. I independently parsed STATE339 at
+coordination commit `125298c04f1d345733e30f65b6de7e833f60cb98`: B041 is
+ACCEPTED; B042 remains IN_PROGRESS with all SIX actual authors, original
+claim331/base1121 history and no integration lock. Neither this accepted-base
+check nor the owner's narrow replay substitutes for the new exact public CI.
+
+Formal APPROVAL now awaits only final exact head/synthetic/live review-lease
+binding, personally inspected completed PR CI/full logs, complete
+source/output/provider guards and standard-three official audit. Stable
+bodies need no second whole read. Root alone owns public STATE/CAS,
+approval publication, the single integration lock, expected-head
+history-preserving merge and actual green resulting-main CI/audit before
+ACCEPTED.
