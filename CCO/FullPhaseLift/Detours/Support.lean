@@ -119,4 +119,31 @@ theorem fullPath_root_pair_none {n : ℕ} (U : BoolTable L M) (point : Fin (n+1)
   classical
   exact if_neg (onEdge_no_root_pair hn xs hx hy)
 
+/-- Every clause speaks about the same genuine signed full diagram.
+The edge truth field retains positive AND negative tuples of every arity. -/
+structure SignedPathCertificate {n : ℕ} (U : BoolTable L M)
+    (point : Fin (n+1) → M) (D : Full.Partial L (Fin (n+1))) : Prop where
+  actual : Full.Realizes U D point
+  consistent : Full.Consistent U D
+  completeEdges : ∀ (e : Fin n) (r : Fin L.size) (xs : Fin (L.arity r) → Fin 2),
+    D r (edgeVertex e ∘ xs) = some (U r (point ∘ edgeVertex e ∘ xs))
+  noOffEdge : ∀ (r : Fin L.size) (xs : Fin (L.arity r) → Fin (n+1)),
+    ¬OnEdge xs → D r xs = none
+  noHigh : ∀ (r : Fin L.size) (xs : Fin (L.arity r) → Fin (n+1)),
+    ¬Full.SmallSupport xs → D r xs = none
+  noRootPair : ∀ (r : Fin L.size) (xs : Fin (L.arity r) → Fin (n+1)),
+    (∃ a, xs a = 0) → (∃ b, xs b = Fin.last n) → D r xs = none
+
+theorem fullPath_certificate {n : ℕ} (U : BoolTable L M) (point : Fin (n+1) ↪ M)
+    (hn : 2 ≤ n) : SignedPathCertificate U point (fullPath U point) where
+  actual := fullPath_realizes U point
+  consistent := fullPath_consistent U point
+  completeEdges := fullPath_edge U point
+  noOffEdge := by
+    classical
+    intro r xs h
+    exact if_neg h
+  noHigh := fullPath_high_none U point
+  noRootPair := fullPath_root_pair_none U point hn
+
 end CCO.FullPhaseLift.Detours
