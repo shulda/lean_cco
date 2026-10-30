@@ -15,7 +15,7 @@ external dependency or infrastructure PR in this round.
 ## B046 — actual orbital parity and universal diagonal obstruction
 
 [PR60](https://github.com/shulda/lean_cco/pull/60) was accepted at STATE373.
-Final native head `1d394e3271d2c2a40e8d6054feb2e3752321e9c5) maps to public
+Final native head `1d394e3271d2c2a40e8d6054feb2e3752321e9c5` maps to public
 `7dd448bde59c8551f23e650380b11d49635901ee`; approved tree
 `6ea63319010f707f6f522544793b2f518ca3e61b`. Actual resulting main
 `191442fb4b1929de016666a4b779c90ae36797be` has exactly that tree and ordered
