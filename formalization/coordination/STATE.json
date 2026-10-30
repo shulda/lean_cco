@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 276,
+  "revision": 277,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -1732,7 +1732,7 @@
       }
     },
     "B035": {
-      "state": "SUBMITTED",
+      "state": "REVIEWING",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b035_code",
@@ -1759,7 +1759,19 @@
         "conclusion": "success",
         "axiom_audit": "allowlist"
       },
-      "report_path": "formalization/coordination/submissions/B035.md"
+      "report_path": "formalization/coordination/submissions/B035.md",
+      "review": {
+        "project_id": 3,
+        "actor_id": "independent_review",
+        "head_sha": "d102b4bf954c8e4317323590b5a1d104de61c438",
+        "approved": false,
+        "independence": {
+          "identity": "/root/independent_review",
+          "non_author": true,
+          "summary": "Actual registered review-only agent personally read ALL35 complete frozen mathematical modules and actual consumer against every claim and pinned TeX, then final246-line two-MD delta and ONLY four-line qualifier correction, and actual full exact public CI. It authored or designed NONE of the complete batch, preparation, production, helper, infrastructure, test, boundary or repair; allfour real contributors remain recorded. No review helpers or duplicate build/audit/tests were used.",
+          "report_path": "formalization/coordination/reviews/B035-final.md"
+        }
+      }
     },
     "B036": {
       "state": "AVAILABLE",
@@ -7107,6 +7119,24 @@
           "axiom_audit": "allowlist"
         },
         "report_path": "formalization/coordination/submissions/B035.md"
+      }
+    },
+    {
+      "revision": 277,
+      "project_id": 3,
+      "actor_id": "independent_review",
+      "event": "review",
+      "package_id": "B035",
+      "details": {
+        "actor_id": "independent_review",
+        "package_id": "B035",
+        "head_sha": "d102b4bf954c8e4317323590b5a1d104de61c438",
+        "independence": {
+          "identity": "/root/independent_review",
+          "non_author": true,
+          "summary": "Actual registered review-only agent personally read ALL35 complete frozen mathematical modules and actual consumer against every claim and pinned TeX, then final246-line two-MD delta and ONLY four-line qualifier correction, and actual full exact public CI. It authored or designed NONE of the complete batch, preparation, production, helper, infrastructure, test, boundary or repair; allfour real contributors remain recorded. No review helpers or duplicate build/audit/tests were used.",
+          "report_path": "formalization/coordination/reviews/B035-final.md"
+        }
       }
     }
   ],
