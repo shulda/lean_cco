@@ -64,16 +64,53 @@ implementation owner, and deliberately import ONLY accepted dependencies:
   This is a direct statement on the SAME actual canonical source; no
   second chart embedding or arbitrary homogeneous seed is introduced.
 
-## Current completion boundary
+## Actual successor and completed terminalisation
 
-The four modules compile. The genuinely actual marked SAP theorem is
-being proved by `/root/b047_pair_safe_split` from old SAP and actual
-infinite old-type/gate intersections. Once its exact
-`SAP.unary_source_sap` instance is available for the canonical B044
-identification, this contribution will instantiate the actual successor
-at EVERY current source and finish the principal finite terminalisation.
-No generic progress callback currently certifies that unclosed source
-obligation, and this report does not assert batch completion or acceptance.
+Read the actual selected `thm:safe-exact-split` and
+`thm:finite-cover-elimination` proofs in the pinned finite-cover TeX.
+The source notes' independent-SAP qualification is retained: the actual
+marked SAP proof comes BEFORE all new-source STRONG readout.
+
+`Terminal/Successor.lean`, namespace
+`CCO.PairSafeSplit.Terminal.CurrentSource`, constructs `successor A P`
+using the EXACT accepted B044 `SingleStep.successor A.base P`, and proves
+its new SAP by the ACTUAL owner theorem
+`SAP.unary_source_sap P A.base.cco (SingleStep.identification A.base P) A.sap`.
+That owner theorem constructs infinite marked type fibres from old SAP,
+actual gate geometry and the actual pulled-back global marking; this is
+not an input callback or an assertion that an arbitrary seed is homogeneous.
+`actualStep` keeps the same literal reduct/functor. `actual_progress`
+chooses its own actual parity/maximal gate/character from EVERY CURRENT
+finite relative interval and produces a genuine next SAP source with
+strictly smaller potential.
+
+`Terminal/Elimination.lean`, namespace `CCO.PairSafeSplit.Terminal`, exports:
+
+- `safe_exact_split`: actual maximal-character P and its genuine successor,
+  actual step, strict rank drop and all transported odd-arrow equations.
+  The step contains the literal reasonable, reduct-surjective, precompact
+  unary transition, and the new state intrinsically retains SAP/H/CCO.
+- `finite_cover_elimination`: finite actual CURRENT-source history to a
+  terminal source, bounded by initial sum of powers of three, and the
+  SAME composite point/sort/atom reduct and forgetful functor.
+- `initialSource` and `original_finite_cover_elimination`: original-source
+  formulation with explicit old SAP/H/CCO/countability premises and actual
+  terminal SAP, arbitrary-universe semantic CCO, FULL triangle realization,
+  infinite relative classes for EVERY proper same-sort invariant cover,
+  and the coherent precompact/reasonable/reduct-surjective unary functor.
+
+Every history node is a `CurrentSource` carrying genuine SAP, not an
+AP-only base whose endpoint is asserted SAP. No next-source, completion,
+rank, Fraisse, safe-splitting or final-SAP provider remains in the principal
+exports. The accepted AP-only terminal theorem is NOT applied to infer
+new SAP; only its initial state constructor and generic finite-history
+arithmetic/coherence support are reused. No later full-language, Ramsey,
+EPPA or coherent EPPA theorem is used.
+
+This closes this worker's C41–C51/D10–D11 source obligations, together
+with the two independently requested C30–C32 type/avoidance support files.
+The separate lifted STRONG algebra/phase-primality proofs are owned by
+`/root/b047_strong_phase`, and whole-batch acceptance remains external.
 
 ## Scoped local verification
 
@@ -82,6 +119,8 @@ Pinned Lean4.34.1 and bundled Lake, unchanged manifest:
 - `lake build CCO.PairSafeSplit.Terminal.Readout`: 2505 dependency jobs.
 - `lake build CCO.PairSafeSplit.Terminal.OrbitCriterion`: 1336 jobs.
 - `lake build CCO.PairSafeSplit.Terminal.TypeReflection`: 1439 jobs.
+- `lake build CCO.PairSafeSplit.Terminal.Elimination`: 2519 jobs; all final
+  successor and principal original-source statements compiled.
 
 These are narrow owner compiles, not fresh-source counts or a full public
 CI/audit certificate. No whole-root build, broad test/audit suite, reviewer
