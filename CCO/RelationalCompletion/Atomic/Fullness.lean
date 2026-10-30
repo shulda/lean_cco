@@ -7,6 +7,23 @@ universe u v
 namespace CCO.RelationalCompletion.Atomic
 variable {P : Palette.{u,v}}
 
+/-- C25: completeness alone forces an arbitrary positive map to be injective. -/
+theorem Hom.injective {A B : Model P} (f : Hom A.diagram B) :
+    Function.Injective f.vertex := f.toEmbedding.vertex.injective
+
+/-- C26: every target atom reflects, not merely the originally displayed one. -/
+theorem Hom.atom_iff {A B : Model P} (f : Hom A.diagram B)
+    (x y : Fin A.size) (a : P.Atom) :
+    B.edge (f.vertex x) (f.vertex y) = some a ↔ A.edge x y = some a := by
+  have h := f.toEmbedding.edge_eq x y
+  change B.edge (f.vertex x) (f.vertex y) = A.edge x y at h
+  rw [h]
+
+/-- C26: complete unary tags reflect as well as being preserved. -/
+theorem Hom.tag_iff {A B : Model P} (f : Hom A.diagram B)
+    (x : Fin A.size) (t : P.Sorts) : B.tag (f.vertex x) = t ↔ A.tag x = t := by
+  rw [f.tag_eq]
+
 /-- C24–C29: complete input gives reflection after locally allowed semantic CCO. -/
 theorem triangleFullness (K : Model P → Prop) (hereditary : Hereditary K)
     (ap : AP K) (cco : SemanticCCO K) (A : Model P) (small : SmallSubmodels K A) : K A := by
