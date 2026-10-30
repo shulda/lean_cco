@@ -63,6 +63,16 @@ for all automorphisms of the forgotten old diagram is assumed. Canonical
 point separation is a structural input discharged by the actual finite
 canonical expansion, not a new mathematical source premise.
 
-Restoring new unary bits and the optional interface's actual marked-model
-inheritance adapter remain open pending the terminal author's full model
-and finite-age identification. No ordinary result uses A04.
+`Equivariance.Marked` now compiles (1,268 jobs): restoring the supplied
+unary bits gives actual full-table automorphisms with EXACTLY the original
+prescribed permutations. `chosen_marked_target` retains actual old age
+membership, all frozen/full signed data and the same chosen low diagram.
+Every old arity is read through the shared `Marked.table` representation.
+
+The optional interface's actual marked-model inheritance adapter remains
+open pending the terminal author's full model and finite-age identification.
+No ordinary result uses A04. The owner is also repairing the initially
+too-weak raw pair-completion implementation: a collapsed low point map
+must be distinguished from a genuine signed-low-compatible atomic shadow
+with cycle certificates. These optional strict-target theorems do not rely
+on the weaker collapsed witness.
