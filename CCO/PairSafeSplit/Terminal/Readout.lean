@@ -1,4 +1,5 @@
 import CCO.PairSafeSplit.Terminal.Current
+import CCO.PairSafeSplit.Full.Gates
 
 /-! B047 C41/C42/C44--C46: all facts below concern the SAME actual B044
 marked limit and its old-reduct identification. They are not facts about
@@ -102,6 +103,40 @@ whole marked source; no rank or lost-colour callback is an input. -/
 theorem actual_potential_drop :
     (SingleStep.successor B P).potential < B.potential :=
   SingleStep.potential_decreases B P
+
+/-- The ORIGINAL selected even layer has equal bits in the SAME actual
+limit identification of its concrete selected maximal-gate phase. -/
+theorem original_even {i : B.Sorts} {c : B.source.Atom i i} {a : B.Point i}
+    (D : Full.ParityGateData B.source B.homogeneous c a) (x y : B.Point i)
+    (h : ParityHasse.Original.evenColourEq B.source B.homogeneous c x y) :
+    marking B (D.phase B.cco) ⟨i,y⟩ = marking B (D.phase B.cco) ⟨i,x⟩ := by
+  apply gate_constant B (D.phase B.cco) (Reached.root D.kernel) x y
+  change (Reached.kernel B.homogeneous
+    (exactCalculus_of_homogeneous_CCO B.source B.homogeneous B.cco)
+      (Reached.root D.kernel)).rel x y
+  rw [Reached.root_kernel]
+  exact D.original_even_le_kernel x y h
+
+/-- EVERY pair of the ORIGINAL selected O=U\Y is oriented, not merely
+the support of an unrelated existential odd involution. -/
+theorem original_odd {i : B.Sorts} {c : B.source.Atom i i} {a : B.Point i}
+    (D : Full.ParityGateData B.source B.homogeneous c a) (x y : B.Point i)
+    (h : ParityHasse.Relative.odd
+      (ParityHasse.Original.evenColourEq B.source B.homogeneous c).val
+      (ParityHasse.Original.connectivityColourEq B.source B.homogeneous c).val x y) :
+    marking B (D.phase B.cco) ⟨i,y⟩ = marking B (D.phase B.cco) ⟨i,x⟩ + 1 := by
+  have he := marking_arrow B (D.phase B.cco)
+    (b := Reached.root D.kernel) (c := Reached.root D.kernel)
+    (D.phase B.cco).odd x y (D.original_odd_le_phase B.cco x y h)
+  rw [(D.phase B.cco).detects] at he
+  exact he
+
+/-- The literal original positive odd-word relation has opposite bits. -/
+theorem original_odd_walk {i : B.Sorts} {c : B.source.Atom i i} {a : B.Point i}
+    (D : Full.ParityGateData B.source B.homogeneous c a) (x y : B.Point i)
+    (h : ParityHasse.Original.OddWalk (B.source.atomRel c) x y) :
+    marking B (D.phase B.cco) ⟨i,y⟩ = marking B (D.phase B.cco) ⟨i,x⟩ + 1 :=
+  original_odd B D x y ((D.odd_sheet x y).mp h)
 
 end
 end CCO.PairSafeSplit.Terminal.Readout
