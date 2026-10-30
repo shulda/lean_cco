@@ -54,7 +54,7 @@ def model : Structure language Point where
   func_sort := by
     intro F x hx
     rcases x with ⟨⟨q,b⟩,n⟩ | (⟨q,b⟩ | q)
-    all_goals fin_cases F <;> simp_all [language,sort,operation,real,middle,rootPoint]
+    all_goals fin_cases F <;> simp_all [language,sort,operation,middle,rootPoint]
   func_offsort := by
     intro F x hx
     rcases x with ⟨⟨q,b⟩,n⟩ | (⟨q,b⟩ | q)

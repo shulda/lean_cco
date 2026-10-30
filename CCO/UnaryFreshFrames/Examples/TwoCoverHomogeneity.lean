@@ -30,7 +30,7 @@ theorem tau_eq_iff {x y : Point} (hx : sort x ≠ 2) (hy : sort y ≠ 2) :
     operation 0 x = operation 0 y ↔ root x = root y ∧ bit x = bit y := by
   rcases x with ⟨⟨q,d⟩,n⟩ | (⟨q,d⟩ | q)
   all_goals rcases y with ⟨⟨r,e⟩,m⟩ | (⟨r,e⟩ | r)
-  all_goals simp_all [sort,operation,root,bit,middle,rootPoint,real]
+  all_goals simp_all [sort,operation,root,bit,middle]
 
 /-- Actual homogeneity on EVERY finite closed induced piece. In particular,
 orphan middle fibres contain both swapped points and their root; requests
