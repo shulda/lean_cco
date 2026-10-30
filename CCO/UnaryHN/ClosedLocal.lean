@@ -38,6 +38,22 @@ theorem closed_small_of_completion {C : Structure L V}
     (hC : HasCompletion K C) (n : ℕ) : ClosedSmallCompletable K C n :=
   fun S _ hS => hC.of_embedding (inclusion C (↑S : Set V) hS)
 
+theorem ClosedSmallCompletable.completion_of_embedding [Finite V]
+    {C : Structure L V} {D : Structure L W} {n : ℕ}
+    (hD : ClosedSmallCompletable K D n) (e : Embedding C D)
+    (hSize : Nat.card V ≤ n) : HasCompletion K C := by
+  classical
+  let : Fintype V := Fintype.ofFinite V
+  let I : Finset W := Finset.univ.image e
+  have hImage : (↑I : Set W) = Set.range e := by ext y; simp [I]
+  have hI : D.IsClosed (↑I : Set W) := by rw [hImage]; exact e.range_isClosed
+  have hCard : I.card ≤ n := by
+    have hBound : I.card ≤ Fintype.card V := Finset.card_image_le
+    rw [← Nat.card_eq_fintype_card] at hBound
+    exact hBound.trans hSize
+  have hRange : ∀ x, e x ∈ (↑I : Set W) := by intro x; rw [hImage]; exact ⟨x, rfl⟩
+  exact (hD I hCard hI).of_embedding (embedding_codRestrict e _ hI hRange)
+
 theorem closed_small_zero_of_placement (hK : FiniteHereditarySAP K)
     {C : Structure L V} {B : Structure L W} (hB : K B) (eB : Embedding B C) :
     ClosedSmallCompletable K C 0 := by
