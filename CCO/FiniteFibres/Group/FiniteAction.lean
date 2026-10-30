@@ -36,4 +36,15 @@ theorem transitive_card_two_power {n : ℕ} (hG : Nat.card G = 2^n)
   obtain ⟨m,_,hm⟩ := transitive_card_power hG trans a
   exact ⟨m,hm⟩
 
+/-- A faithful representation INTO a finite p-group transfers the order
+conclusion. This representation need not be onto the larger group. -/
+theorem card_power_of_injective_hom {H : Type*} [Group H] [Finite H]
+    {p n : ℕ} [hp : Fact p.Prime] (hH : Nat.card H = p^n)
+    (f : G →* H) (hf : Function.Injective f) :
+    ∃ m, m ≤ n ∧ Nat.card G = p^m := by
+  have hd := Subgroup.card_subgroup_dvd_card f.range
+  rw [hH] at hd
+  obtain ⟨m,hm,hcard⟩ := (Nat.dvd_prime_pow hp.out).mp hd
+  exact ⟨m,hm,(Nat.card_congr (MulEquiv.ofInjective hf).toEquiv).trans hcard⟩
+
 end CCO.FiniteFibres.Group
