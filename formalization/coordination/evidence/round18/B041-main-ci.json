@@ -1,0 +1,105 @@
+{
+  "run_id": 41050908739,
+  "run_attempt": 2,
+  "head_sha": "5367e9e72b3dc099ff55238a80f1c9ea7cac46fc",
+  "conclusion": "success",
+  "axiom_audit": "allowlist",
+  "job_id": 124059553147,
+  "tests": 130,
+  "declarations": 23915,
+  "guards": [
+    {
+      "parts": 1335,
+      "source": 1335
+    },
+    {
+      "parts": 1335,
+      "source": 1335
+    }
+  ],
+  "provider_guards": [
+    {
+      "parts": 269,
+      "source": 269,
+      "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+    },
+    {
+      "parts": 269,
+      "source": 269,
+      "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+    },
+    {
+      "parts": 269,
+      "source": 269,
+      "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+    },
+    {
+      "parts": 269,
+      "source": 269,
+      "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+    }
+  ],
+  "ramsey_guards": [
+    {
+      "parts": 106,
+      "source": 106,
+      "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+    },
+    {
+      "parts": 106,
+      "source": 106,
+      "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+    },
+    {
+      "parts": 106,
+      "source": 106,
+      "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+    },
+    {
+      "parts": 106,
+      "source": 106,
+      "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+    }
+  ],
+  "build_jobs": [
+    1330,
+    1182,
+    3998,
+    3998,
+    6
+  ],
+  "fresh_cco_modules": [
+    "CCO.SimultaneousQuotients.CCOBranch.TypedCycles",
+    "CCO.SimultaneousQuotients.Source",
+    "CCO.SimultaneousQuotients.CCOBranch.Menus",
+    "CCO.SimultaneousQuotients.Boundaries.PhaseSource",
+    "CCO.SimultaneousQuotients.Towers.Flattening",
+    "CCO.SimultaneousQuotients.Towers.Rank",
+    "CCO.SimultaneousQuotients.Towers.AtomicIso",
+    "CCO.SimultaneousQuotients.Descent.OneSort",
+    "CCO.SimultaneousQuotients.Private.Graph",
+    "CCO.SimultaneousQuotients.CCOBranch.CycleWitnesses",
+    "CCO.SimultaneousQuotients.Boundaries.PhaseKernel",
+    "CCO.SimultaneousQuotients.FullAut",
+    "CCO.SimultaneousQuotients.Boundaries.PhaseExact",
+    "CCO.SimultaneousQuotients.Boundaries.PhaseSAP",
+    "CCO.SimultaneousQuotients.Towers.FiniteChain",
+    "CCO.SimultaneousQuotients.Towers.Orbitals",
+    "CCO.SimultaneousQuotients.Towers.ExactKernel",
+    "CCO.SimultaneousQuotients.Towers.CanonicalRank",
+    "CCO.SimultaneousQuotients.Towers.SourceIso",
+    "CCO.SimultaneousQuotients.Descent.Consumers",
+    "CCO.SimultaneousQuotients.CCOBranch.Semantics",
+    "CCO.SimultaneousQuotients.FullOrbitals",
+    "CCO.SimultaneousQuotients.FiniteAxes",
+    "CCO.SimultaneousQuotients.Boundaries.PhasePresentation",
+    "CCO.SimultaneousQuotients.Boundaries.MixedProjection",
+    "CCO.SimultaneousQuotients.Towers.ExactTower",
+    "CCO.SimultaneousQuotients.Exports",
+    "CCO.SimultaneousQuotients.Towers.TowerGeometry",
+    "CCO.SimultaneousQuotients.Towers.InitialSource",
+    "CCO.SimultaneousQuotients.Towers.Consumers",
+    "CCO.SimultaneousQuotients.Consumers"
+  ],
+  "url": "https://github.com/shulda/lean_cco/actions/runs/41050908739"
+}
