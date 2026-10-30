@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 374,
+  "revision": 375,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -2842,7 +2842,7 @@
       }
     },
     "B045": {
-      "state": "SUBMITTED",
+      "state": "REVIEWING",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b045_clone_sap",
@@ -3097,7 +3097,19 @@
         ],
         "url": "https://github.com/shulda/lean_cco/actions/runs/41095868044"
       },
-      "report_path": "formalization/coordination/submissions/B045.md"
+      "report_path": "formalization/coordination/submissions/B045.md",
+      "review": {
+        "project_id": 3,
+        "actor_id": "independent_review",
+        "head_sha": "55370f74497d632eae3e9bf0ca2190f5d587ac88",
+        "approved": false,
+        "independence": {
+          "identity": "/root/independent_review",
+          "non_author": true,
+          "summary": "The actual /root/independent_review wrote and designed none of the complete B045 proofs or preparation, including every root, owner and helper contribution. It personally read all26 source bodies once and true final base/root/Markdown deltas, and contributes no implementation, build, test, audit or helper work. All four actual authors are retained.",
+          "report_path": "formalization/coordination/reviews/B045-final.md"
+        }
+      }
     },
     "B046": {
       "state": "ACCEPTED",
@@ -12214,6 +12226,24 @@
         },
         "report_path": "formalization/coordination/submissions/B045.md",
         "actor_id": "root"
+      }
+    },
+    {
+      "revision": 375,
+      "project_id": 3,
+      "actor_id": "independent_review",
+      "event": "review",
+      "package_id": "B045",
+      "details": {
+        "package_id": "B045",
+        "head_sha": "55370f74497d632eae3e9bf0ca2190f5d587ac88",
+        "independence": {
+          "identity": "/root/independent_review",
+          "non_author": true,
+          "summary": "The actual /root/independent_review wrote and designed none of the complete B045 proofs or preparation, including every root, owner and helper contribution. It personally read all26 source bodies once and true final base/root/Markdown deltas, and contributes no implementation, build, test, audit or helper work. All four actual authors are retained.",
+          "report_path": "formalization/coordination/reviews/B045-final.md"
+        },
+        "actor_id": "independent_review"
       }
     }
   ],
