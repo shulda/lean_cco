@@ -113,5 +113,33 @@ theorem phased_induction
         A0 finiteA nonemptyA allQuotients
     exact ⟨pcl,ordinary,master⟩
 
+section ArbitraryNames
+variable {M : Type v} [MulAction G M] [Countable M]
+variable (S : AtomicSource.{0,v,w} Unit (fun _ => M)) (H : HomogeneousSource S G)
+variable (cco : SemanticCCO.{0,v,v,w} S)
+variable (complete : ∀ N : SourceNode.{v,t} G, PhaseComplete N)
+include complete
+
+/-- AFTER the universal phased induction is closed, its completed actual
+quotients discharge the lower schema for an arbitrary diversity-name
+universe. This is not an induction call at the original source's rank. -/
+theorem universal_lower : Lower S G H cco := by
+  intro E _
+  let _ : CanonicalQuotients.Invariant G E.val := Owners.Product.exactInvariant S H cco E
+  have result := complete (namedQuotientNode S H cco E)
+  exact ⟨ClosedRooted.rooted _ G result.1,result.2.1,result.2.2⟩
+
+theorem universal_lower_closed : LowerClosed S G H cco := by
+  intro E _
+  exact (complete (namedQuotientNode S H cco E)).1
+
+/-- Includes the identity quotient only AFTER the all-ranks conjunction
+has been proved. No ordinary conclusion is fed back into its own P step. -/
+theorem universal_all_quotients : Owners.Master.AllQuotientsEPPA S H cco := by
+  intro E
+  exact (complete (namedQuotientNode S H cco E)).2.1
+
+end ArbitraryNames
+
 end
 end CCO.RankInduction
