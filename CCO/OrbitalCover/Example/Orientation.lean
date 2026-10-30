@@ -1,7 +1,6 @@
 import CCO.OrbitalCover.Example.Core
 import CCO.ParityHasse.Original.RelativeIndices
 import Mathlib.Tactic.FinCases
-import Mathlib.Tactic.NormNum
 
 /-! The full diagonal two-cover and arbitrary orientations. All relations
 include logical equality; the clone diversity colour remains irreflexive. -/
@@ -110,6 +109,22 @@ structure Orientation (P : Point → Bit) : Prop where
 
 def orientationOffset (P : Point → Bit) (u v : Nat) : Bit :=
   P ⟨u,v,0,0,0⟩
+
+/-- Conversely every offset function really defines an orientation.
+In particular the universal obstruction is not vacuous. -/
+theorem orientation_of_offset (h : Nat → Nat → Bit) :
+    Orientation (fun x => x.p+x.q+h x.u x.v) := by
+  constructor
+  · intro x y hxy
+    obtain ⟨hu,hv,hs⟩ := (diagonal_iff x y).mp hxy
+    rw [hu,hv,hs]
+  · intro x y hxy hn he
+    obtain ⟨hu,hv⟩ := (coarse_iff x y).mp hxy
+    apply hn
+    apply (diagonal_iff x y).mpr
+    refine ⟨hu,hv,?_⟩
+    rw [hu,hv] at he
+    exact add_right_cancel he
 
 /-- C28, the actual orientation equation: no definability, equivariance,
 homogeneity or compatibility of the function h is assumed. -/

@@ -88,6 +88,32 @@ theorem strong_parity_profiles (H : HomogeneousSource S G)
   · exact PositiveWord.profile_nonempty_of_SAP S H sap even
   · exact PositiveWord.profile_nonempty_of_SAP S H sap odd
 
+/-- The odd relation is exactly the other sheet, already without SAP. -/
+theorem source_odd_sheet (H : HomogeneousSource S G)
+    (cco : SemanticCCO.{u,v,0,w} S)
+    (E F : ColourEq S i) (a : X i)
+    [Finite (RelativeClass E.val F.val a)] (c : S.Atom i i)
+    (hFE : ∀ x y, S.atomRel c x y → F x y ∧ ¬ E x y) (x y : X i) :
+    OddWalk (S.atomRel c) x y ↔
+      connectivityColourEq S H c x y ∧ ¬evenColourEq S H c x y := by
+  have noOdd : ∀ x n, Odd n → ¬relPow (S.atomRel c) n x x := by
+    intro x n hn hp
+    obtain ⟨p,hp⟩ := (relPow_atom_iff_walk S c n x x).mp hp
+    exact no_odd_orbital_walk S H cco E F a c hFE x p (by simpa only [hp] using hn)
+  have hs : ∀ x y, S.atomRel c x y → S.atomRel c y x := by
+    intro x y h
+    simpa only [AtomicSource.atomRel,S.symmetricLoop] using (S.colour_swap x y c).mp h
+  constructor
+  · intro h
+    exact ⟨(connectivity_eq_even_union_odd S H c x y).mpr (.inr h),
+      fun he => even_odd_disjoint (S.atomRel c) hs noOdd x y ⟨he,h⟩⟩
+  · rintro ⟨h,hne⟩
+    exact ((connectivity_eq_even_union_odd S H c x y).mp h).resolve_left hne
+
+/-- C02: the actual old atom is contained in the nonempty odd support. -/
+theorem odd_contains_atom (c : S.Atom i i) (x y : X i) (h : S.atomRel c x y) :
+    OddWalk (S.atomRel c) x y := ⟨1,odd_one,(relPow_one _ _ _).mpr h⟩
+
 /-- C01–C06, `thm:orbital-parity`: original SAP-free parity and positive
 RAW exactness, together with the additional visible-SAP diversity result.
 The general source parity theorem keeps its separate SAP-free signature. -/
