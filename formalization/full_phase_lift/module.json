@@ -1,0 +1,1141 @@
+{
+  "schema_version": 1,
+  "id": "full_phase_lift",
+  "index_title": "Private phase detours and conditional full-language finite-cover elimination",
+  "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+  "status": "HUMAN_EXPANDED_NOT_LEAN",
+  "scope": "Private B048: TWO selected Ramsey I results, eight definitions, 34 claims, six tasks and no new equation. Root-free private two/three-edge detours use actual full quotient cylinders and fresh source-gate representatives. Full-language elimination retains the EXPLICIT support-normal frozen-factor completion interface; a simpler complete chosen pair-diagram lift proves full SAP, actual binary-reduct homogeneity and preservation of the interface under unary splitting. No unproved full-old SAP or collision-unfolding is imported; no arbitrary higher-arity theorem, coherent EPPA or new published provider is inferred.",
+  "scope_vocabulary": [
+    "canonical",
+    "interface",
+    "detour",
+    "full_lift",
+    "full_age",
+    "iteration",
+    "conditional_automorphisms",
+    "boundary"
+  ],
+  "scope_explanation": "statement and proof. Pair-shadow SAP alone is not full-language support normality. Complete canonical pair diagrams force injectivity, while induced reflection of higher data is retained on the frozen factors. Optional automorphism preservation is a separate conditional source gate.",
+  "control_script": "tools/check_full_phase_lift_controls.py",
+  "assumptions": [
+    {
+      "id": "A01",
+      "name": "Finite relational homogeneous full age",
+      "statement": "C is a hereditary homogeneous finite relational class in a finite signature, with its countable homogeneous realization M (finite realizations allowed when applicable). Name all realized quantifier-free unary and distinct-pair types by a finite definitional expansion. Complete old objects and embeddings retain ALL old relations including repeated-argument tuples. Logical Id is separate from distinct-pair canonical atoms."
+    },
+    {
+      "id": "A02",
+      "name": "Actual canonical pair-age premises",
+      "statement": "The canonical binary pair age has SAP and semantic homomorphic CCO, with symmetric same-sort actual canonical pair types and typed converses. Named realized unary sorts are finite in number and nonempty. This is the pair-age premise only; homogeneity of the actual binary reduct and full-language SAP will be derived from A03, not assumed from full homogeneity alone."
+    },
+    {
+      "id": "A03",
+      "name": "EXPLICIT support-normal frozen-factor interface",
+      "statement": "For every finite CONSISTENT partial canonical full diagram whose specified support>=3 positive/negative tuple data lie inside finitely many distinguished complete induced C-factors, if its canonical pair shadow has a cycle-constrained completion fixing every pair in those factors, there is a full C-completion preserving all specified data and fixing each factor inducedly. A completion may initially be described by a homomorphism-embedding on the factors. This is EXACT source hypothesis (iii), not inferred from A02, irreducibility or SAP. Adding additional chosen support<=2 canonical pair predicates is allowed; it introduces no new support>=3 data."
+    },
+    {
+      "id": "A04",
+      "name": "OPTIONAL automorphism-preserving support-normal interface",
+      "statement": "Only for the conditional automorphism statement: when the pair completion is isomorphism-natural, the A03 lift can simultaneously preserve every automorphism of the partial FULL diagram preserving the distinguished factor family. No such lift is constructed from pair SAP alone; no coherent-EPPA theorem is claimed."
+    },
+    {
+      "id": "A05",
+      "name": "Actual single character instance for detours",
+      "statement": "Fix a genuine maximal-exact character split of the actual canonical pair source after C07. Its source gate K_* contains the nontrivial RAW even equivalence Y of I06. Active gates and full exact bridges, character and globally extendible phase bits are the actual I01/I03-I05 construction. Inactive sorts have the one constant bit. A requested c is a REALIZED DISTINCT-POINT canonical pair type with locally legal endpoint bits, not an Id diversity edge."
+    }
+  ],
+  "imports": [
+    {
+      "id": "I01",
+      "name": "thm:safe-exact-split",
+      "provider_module": "pair_safe_split",
+      "source_label": "thm:safe-exact-split",
+      "statement": "Actual maximal-exact character split, with legal FULL marked triangle age, SAP/HOM CCO and finite unary labels. Retain its repaired standing-actual-sector proof contract; do not use an abstract three-property unary-sector claim.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I02",
+      "name": "thm:finite-cover-elimination",
+      "provider_module": "pair_safe_split",
+      "source_label": "thm:finite-cover-elimination",
+      "statement": "A finite sequence of the actual SAP-preserving pair splits eliminates all finite-relative invariant covers. The same pair-age tower can be lifted stage by stage once full support normality is preserved.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I03",
+      "name": "thm:foundational-rigid-groupoid",
+      "provider_module": "rigid_groupoid",
+      "source_label": "thm:foundational-rigid-groupoid",
+      "statement": "Actual bridge equations, quotient-functional bijections, reached objects and FREE groupoid action. Use full represented relations including whole kernel identities, not formal diversity units.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "provider_claims": [
+        "C06",
+        "C07",
+        "C09",
+        "C11"
+      ]
+    },
+    {
+      "id": "I04",
+      "name": "thm:foundational-rigid-character",
+      "provider_module": "rigid_groupoid",
+      "source_label": "thm:foundational-rigid-character",
+      "statement": "Character addition and actual rigid/nonrigid quotient orbital classification: a whole rigid cylinder has its forced phase and a nonrigid cylinder permits both differences.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "provider_claims": [
+        "C25",
+        "C26",
+        "C28",
+        "C31"
+      ]
+    },
+    {
+      "id": "I05",
+      "name": "lem:foundational-finite-phase-extension",
+      "provider_module": "rigid_groupoid",
+      "source_label": "lem:foundational-finite-phase-extension",
+      "statement": "Finite compatible quotient bits extend to one global seed marking, including repeated quotient points and inactive conventions supplied by the instance.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "provider_claims": [
+        "C30"
+      ]
+    },
+    {
+      "id": "I06",
+      "name": "thm:orbital-parity",
+      "provider_module": "orbital_cover_boundary",
+      "source_label": "thm:orbital-parity",
+      "statement": "In an actual visible-SAP pair source the reached RAW even sheet Y is strictly above logical Id; the STRONG diversity slice is nonempty. The chosen source K_* contains Y.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "provider_claims": [
+        "C05"
+      ]
+    },
+    {
+      "id": "I07",
+      "name": "lem:typed-injectivisation",
+      "provider_module": "strong_selectors",
+      "source_label": "lem:typed-injectivisation",
+      "statement": "Actual old SAP gives infinite stabilizer orbits outside finite real bases. In particular a nontrivial definable equivalence class contains infinitely many points. Apply to the ACTUAL canonical binary source after C07.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "provider_claims": [
+        "C04"
+      ]
+    },
+    {
+      "id": "I08",
+      "name": "Actual pair SAP injectivisation at any prefix",
+      "provider_module": "strong_selectors",
+      "source_label": "lem:typed-injectivisation",
+      "provider_claims": [
+        "C05"
+      ],
+      "statement": "Any finite diversity homomorphism into an ACTUAL homogeneous binary SAP prefix can be made injective. Apply to the chosen B047 homogeneous pair prefix when an interface premise initially gives only a homomorphic pair completion, then take its complete induced pair diagram on the original finite vertices. No higher tuple is changed at this pair-only stage.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I09",
+      "name": "Actual old pair triangle fullness from AP and HOM CCO",
+      "provider_module": "relational_completion",
+      "source_label": "lem:cco-triangle-fullness",
+      "provider_claims": [
+        "C27",
+        "C28",
+        "C29"
+      ],
+      "statement": "A hereditary complete atomic binary age with ordinary AP/JEP and semantic HOM CCO is defined by its actual unary/pair/triangle diagrams. This discharges the FULL old triangle-age premise of I01 from A02, with no new full-language assumption and no use of collision-unfolding.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    }
+  ],
+  "definitions": [
+    {
+      "id": "D01",
+      "name": "Finite canonical unary/pair expansion",
+      "statement": "A finite relational signature has finitely many atomic formulas on one or two variables, even with repetitions. Name their realized complete qf types. Distinct-pair atoms are irreflexive, exhaustive and retain the entire old two-point induced structure.",
+      "depends_on": [],
+      "notes": "N01",
+      "source": {
+        "file": "sections/v27/06_legacy_finite_covers.tex",
+        "anchor": "\\label{thm:full-language-elimination}"
+      }
+    },
+    {
+      "id": "D02",
+      "name": "Frozen full factors",
+      "statement": "Distinguished finite induced C-objects retain all positive and negative old tuple data; data of support>=3 occur only inside these factors. Outside such supports higher relations are unspecified, not asserted freely realizable without A03.",
+      "depends_on": [],
+      "notes": "N01",
+      "source": {
+        "file": "sections/v27/06_legacy_finite_covers.tex",
+        "anchor": "\\label{thm:full-language-elimination}"
+      }
+    },
+    {
+      "id": "D03",
+      "name": "Chosen complete pair-diagram lift",
+      "statement": "On the original finite vertex set choose a strict complete canonical binary target extending the partial pair data. Add ALL of its pair predicates before invoking A03; all higher-support data remain exactly in the frozen factors.",
+      "depends_on": [],
+      "notes": "N02",
+      "source": {
+        "file": "sections/v27/06_legacy_finite_covers.tex",
+        "anchor": "\\label{thm:full-language-elimination}"
+      }
+    },
+    {
+      "id": "D04",
+      "name": "Whole semantic cylinder",
+      "statement": "For an actual old pair atom c:s->t set C(c)=K_s;c;K_t as the whole represented quotient-orbital cylinder. Its distinct-endpoint part is used for STRONG path outputs. No reachable/exact presentation of C(c) is assumed.",
+      "depends_on": [],
+      "notes": "N03",
+      "source": {
+        "file": "sections/v27/06_legacy_finite_covers.tex",
+        "anchor": "\\label{lem:root-free-phase-safe}"
+      }
+    },
+    {
+      "id": "D05",
+      "name": "Private detour",
+      "statement": "W(c,epsilon) has unspecified root pair xy, realized complete canonical two-point edge structures along x-u-v-y (active) or x-z-y (inactive), private internal vertices and no tuple support>=3.",
+      "depends_on": [],
+      "notes": "N03",
+      "source": {
+        "file": "sections/v27/06_legacy_finite_covers.tex",
+        "anchor": "\\label{lem:root-free-phase-safe}"
+      }
+    },
+    {
+      "id": "D06",
+      "name": "Legal full marked class",
+      "statement": "C* consists of actual full C-objects with unary bits whose canonical pair reduct belongs to the actual I01 marked pair class. This definition needs no homogeneous choice of global marking of full M.",
+      "depends_on": [],
+      "notes": "N04",
+      "source": {
+        "file": "sections/v27/06_legacy_finite_covers.tex",
+        "anchor": "\\label{thm:full-language-elimination}"
+      }
+    },
+    {
+      "id": "D07",
+      "name": "Inherited support-normality",
+      "statement": "The A03 implication in the new signature uses complete marked full factors and a marked pair completion. Forgetting only the new unary labels preserves all old frozen higher-support data.",
+      "depends_on": [],
+      "notes": "N05",
+      "source": {
+        "file": "sections/v27/06_legacy_finite_covers.tex",
+        "anchor": "\\label{thm:full-language-elimination}"
+      }
+    },
+    {
+      "id": "D08",
+      "name": "Conditional equivariant lift",
+      "statement": "When a natural fixed-vertex pair completion is supplied, apply A04 to its old full partial diagram and restrict to the image of the original vertex set; every source automorphism has its original prescribed permutation there.",
+      "depends_on": [],
+      "notes": "N05",
+      "source": {
+        "file": "sections/v27/06_legacy_finite_covers.tex",
+        "anchor": "\\label{thm:full-language-elimination}"
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "name": "The canonical expansion is finite and definitional",
+      "statement": "D01 has finitely many realized unary/distinct-pair type names. Each is a quantifier-free old formula, so expanding/forgetting gives the same full embeddings and automorphisms. All old tuple data on at most two points are recorded.",
+      "depends_on": [
+        "A01",
+        "D01"
+      ],
+      "notes": "N01",
+      "scope": "canonical",
+      "source_labels": [
+        "thm:full-language-elimination"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C02",
+      "name": "Complete old factors are irreducible in the canonical expansion",
+      "statement": "Every two distinct vertices in a complete factor have a named canonical pair atom; any putative free amalgam of two proper induced pieces omits a cross pair atom. Thus the factor is irreducible. This proves the irreducibility part of the source context, not the substantial completion interface.",
+      "depends_on": [
+        "C01",
+        "D02"
+      ],
+      "notes": "N01",
+      "scope": "canonical",
+      "source_labels": [
+        "thm:full-language-elimination"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C03",
+      "name": "Support normality remains an actual conditional premise",
+      "statement": "A03 concerns arbitrary finite families of frozen full factors and permits additional pair data. Pair-shadow SAP/CCO and C02 alone do not establish it. Its induced-factor requirement includes reflection of negative higher data.",
+      "depends_on": [
+        "A03",
+        "D02"
+      ],
+      "notes": "N01",
+      "scope": "interface",
+      "source_labels": [
+        "thm:full-language-elimination"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C04",
+      "name": "Adding the chosen complete pair diagram preserves the interface premises",
+      "statement": "Start with a consistent partial full diagram and frozen factors, and a chosen strict complete binary completion fixing their pair data. Add every chosen pair atom on the SAME finite vertices. No support>=3 tuple is added or changed. The chosen pair diagram is already an actual pair-age object and is its own cycle-constrained pair completion.",
+      "depends_on": [
+        "A02",
+        "A03",
+        "D02",
+        "D03"
+      ],
+      "notes": "N02",
+      "scope": "full_lift",
+      "source_labels": [
+        "thm:full-language-elimination"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C05",
+      "name": "A full lift of a complete pair diagram is globally injective",
+      "statement": "Apply A03 to C04. Any two distinct original vertices carry a specified irreflexive canonical pair atom, so their completion images cannot collide. Exclusivity of canonical atoms fixes every chosen pair type; induced reflection on each frozen full factor is supplied by A03. Restrict the target to the original vertex images to obtain a C-object on exactly these vertices.",
+      "depends_on": [
+        "C03",
+        "C04"
+      ],
+      "notes": "N02",
+      "scope": "full_lift",
+      "source_labels": [
+        "thm:full-language-elimination"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C06",
+      "name": "The old full age already has SAP under its explicit interface",
+      "statement": "For a span of finite full C-factors, A02 supplies a strict strong pair amalgam on the formal real union over the full common base. Keep both full legs frozen and apply C05. The maps preserve/reflect each leg and distinct root vertices remain distinct, giving full SAP, including empty-base JEP. No old full SAP was presumed.",
+      "depends_on": [
+        "A01",
+        "A02",
+        "C05"
+      ],
+      "notes": "N02",
+      "scope": "interface",
+      "source_labels": [
+        "thm:full-language-elimination"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C07",
+      "name": "The ACTUAL binary reduct is homogeneous by the frozen-factor interface",
+      "statement": "Let A be an actual finite full substructure of M and B any finite canonical pair-age extension over its pair reduct. Freeze the FULL A, add all B pair predicates and apply C05. Full M homogeneity embeds the resulting C-object back into M over actual A. Thus the actual binary reduct has the pair-age extension property and hence is its homogeneous Fraisse realization. Full homogeneity alone would not suffice; A03 is essential.",
+      "depends_on": [
+        "A01",
+        "C01",
+        "C05"
+      ],
+      "notes": "N02",
+      "scope": "interface",
+      "source_labels": [
+        "thm:full-language-elimination"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C08",
+      "name": "The actual pair safe-split theorem is now applicable",
+      "statement": "C07 supplies the actual homogeneous binary realization of A02; canonical full pair names give its original finite typed palette. Pair SAP gives AP, and I09 derives actual old pair triangle-definedness from A02. Apply I01 in this setting, retaining its actual-character/FULL triangle-age scope and the independently proved SAP preservation.",
+      "depends_on": [
+        "A02",
+        "C07",
+        "I01",
+        "I09"
+      ],
+      "notes": "N02",
+      "scope": "interface",
+      "source_labels": [
+        "thm:full-language-elimination"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C09",
+      "name": "Source-gate classes are infinite",
+      "statement": "In the instance A05, I06 gives Y>Id and K_*>=Y, so every K_*-class has a point different from its anchor. By I07 the orbit of that point over the anchor is infinite and stays in its definable K_*-class. Transitivity gives this at every source quotient class.",
+      "depends_on": [
+        "A05",
+        "C07",
+        "I06",
+        "I07"
+      ],
+      "notes": "N03",
+      "scope": "detour",
+      "source_labels": [
+        "lem:root-free-phase-safe"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C10",
+      "name": "Choose one realized allowed root pair and marking",
+      "statement": "An allowed distinct-root c with requested bits is in the actual legal marked pair age I01. Embed its old pair into the actual source and use the finite phase test I05 to choose one global marking realizing both bits. Root sorts and Id are handled as in A05.",
+      "depends_on": [
+        "A05",
+        "C08",
+        "I04",
+        "I05"
+      ],
+      "notes": "N03",
+      "scope": "detour",
+      "source_labels": [
+        "lem:root-free-phase-safe"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C11",
+      "name": "Choose fresh source representatives for active endpoints",
+      "statement": "For active a,b take fixed source bridges B_a,B_b. The preimages of x,y under their actual quotient bijections are entire source K_*-classes. By C09 choose u B_a x and v B_b y with u,v distinct and fresh from x,y, even if the two preimage classes coincide. Give them their chosen global marking bits.",
+      "depends_on": [
+        "C09",
+        "C10",
+        "I03"
+      ],
+      "notes": "N03",
+      "scope": "detour",
+      "source_labels": [
+        "lem:root-free-phase-safe"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C12",
+      "name": "The active three-edge path really permits the chosen c",
+      "statement": "Keep only complete two-point structures on x-u, u-v, v-y. The actual four distinct vertices realize this STRONG path and its root pair c, so c belongs to its old endpoint profile P. All consecutive edge bits are locally compatible. No higher tuple of the actual quadruple is retained.",
+      "depends_on": [
+        "C11",
+        "D05"
+      ],
+      "notes": "N03",
+      "scope": "detour",
+      "source_labels": [
+        "lem:root-free-phase-safe"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C13",
+      "name": "The whole cylinder has one rigid phase or is wholly nonrigid",
+      "statement": "The quotient image of c is one actual quotient pair orbital. Its whole inverse-image cylinder C(c)=K_a;c;K_b is therefore a single semantic cylinder. If rigid it has its unique character phase epsilon; otherwise every one of its pair types permits both phase differences by I04. The quotient identity cylinder is WHOLE K and has phase zero.",
+      "depends_on": [
+        "A05",
+        "I03",
+        "I04",
+        "D04"
+      ],
+      "notes": "N03",
+      "scope": "detour",
+      "source_labels": [
+        "lem:root-free-phase-safe"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C14",
+      "name": "All outputs of the active path stay in that cylinder",
+      "statement": "Its outer edge relations lie in B_a^op and B_b; its middle relation lies in B_a;C(c);B_b^op. Actual represented associativity/monotonicity and bridge identities give P subset K_a;C(c);K_b=C(c). P consists of distinct-root outputs, so logical Id is not added as a diversity edge. This assertion neither requires nor proves C(c) reachable/exact.",
+      "depends_on": [
+        "C12",
+        "C13",
+        "I03",
+        "D04"
+      ],
+      "notes": "N03",
+      "scope": "detour",
+      "source_labels": [
+        "lem:root-free-phase-safe"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C15",
+      "name": "Inactive endpoints admit a two-edge detour",
+      "statement": "Realize the allowed old root pair, choose one fresh real point z using the infinite current sort guaranteed by old binary SAP, and keep only x-z-y. The actual roots give c in P. With an inactive endpoint the literal endpoint-bit mask is the whole old palette, hence all P outputs are allowed. Both inactive endpoints retain their constant labels.",
+      "depends_on": [
+        "A05",
+        "C07",
+        "C10",
+        "I07",
+        "D05"
+      ],
+      "notes": "N03",
+      "scope": "detour",
+      "source_labels": [
+        "lem:root-free-phase-safe"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C16",
+      "name": "Detours have precisely the required support",
+      "statement": "The root pair remains unspecified even though c was used to choose a witness. Each edge records its entire canonical two-point structure, including repeated old tuples of support<=2. Internal vertices are private, and all support>=3 data of the witness are omitted. Thus no spurious higher-support constraint is introduced.",
+      "depends_on": [
+        "C12",
+        "C15",
+        "D01",
+        "D05"
+      ],
+      "notes": "N03",
+      "scope": "detour",
+      "source_labels": [
+        "lem:root-free-phase-safe"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C17",
+      "name": "Root-free phase-safe detour export",
+      "statement": "C12-C16 give the requested path with c in P and every possible output phase-compatible, with a three-edge choice for active endpoints and two-edge choice otherwise. The displayed cylinder bound is read as the whole actual represented semantic cylinder, with its diversity slice for P.",
+      "depends_on": [
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16"
+      ],
+      "notes": "N03",
+      "scope": "detour",
+      "source_labels": [
+        "lem:root-free-phase-safe"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C18",
+      "name": "Define the full marked age from the actual pair marked age",
+      "statement": "D06 uses full old C-objects and the actual legal pair marking of I01. Any full old embedding restricts to a pair embedding. Its finite prescribed marks extend along the SAME old embedding by reasonableness of I01; no higher tuple is changed.",
+      "depends_on": [
+        "A01",
+        "C08",
+        "I01",
+        "D06"
+      ],
+      "notes": "N04",
+      "scope": "full_age",
+      "source_labels": [
+        "thm:full-language-elimination"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C19",
+      "name": "Full reasonableness, reduct surjectivity and precompactness",
+      "statement": "C18 proves reasonableness; empty prescribed source gives marks on every old C-object. At most two labels per active vertex give finitely many expansions; inactive bits are fixed. Restriction preserves both old induced structure and pair legality, giving heredity.",
+      "depends_on": [
+        "C18"
+      ],
+      "notes": "N04",
+      "scope": "full_age",
+      "source_labels": [
+        "thm:full-language-elimination"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C20",
+      "name": "The full marked pair age is exactly the chosen pair split",
+      "statement": "One inclusion is D06. Conversely, for any complete legal marked pair diagram, forget bits and apply C05 with NO higher frozen factors. Restore exactly its bits, whose pair diagram has been fixed. The resulting full C-object belongs to D06, so every pair object is realized by a full marked object.",
+      "depends_on": [
+        "C05",
+        "C18",
+        "D06"
+      ],
+      "notes": "N04",
+      "scope": "full_age",
+      "source_labels": [
+        "thm:full-language-elimination"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C21",
+      "name": "A strict marked pair completion lifts without detours or unfolding",
+      "statement": "Given a marked partial full diagram with frozen full factors, choose a complete strict marked pair completion on the same vertices. Forget ONLY the new bits, add the entire chosen old pair diagram, and use C05. Restore the prescribed bits; C20 and the fixed complete pair types make the result a legal full marked object. All frozen higher data are preserved inducedly.",
+      "depends_on": [
+        "C05",
+        "C18",
+        "C20",
+        "D03",
+        "D06"
+      ],
+      "notes": "N04",
+      "scope": "full_lift",
+      "source_labels": [
+        "thm:full-language-elimination"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C22",
+      "name": "The full marked age has SAP",
+      "statement": "For a span of two full marked complete legs, I01 supplies a strong complete marked pair amalgam on their formal union over the base. Keep the two old full legs frozen and apply C21. Distinct original vertices remain distinct, hence the full marked amalgam is strong. This does not use collision-unfolding or presume full-old SAP.",
+      "depends_on": [
+        "C08",
+        "C21",
+        "I01"
+      ],
+      "notes": "N04",
+      "scope": "full_age",
+      "source_labels": [
+        "thm:full-language-elimination"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C23",
+      "name": "Construct the homogeneous full marked realization with old reduct C",
+      "statement": "The finite relational marked class is hereditary, countable up to isomorphism, and has SAP/JEP by C22. Its Fraisse realization is homogeneous. Reasonableness and old age equality in C19 give the old full extension property, so its old reduct is the original homogeneous full source. No arbitrary global marking of fixed M is assumed homogeneous.",
+      "depends_on": [
+        "A01",
+        "C19",
+        "C22"
+      ],
+      "notes": "N04",
+      "scope": "full_age",
+      "source_labels": [
+        "thm:full-language-elimination"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C24",
+      "name": "Support normality is preserved at the next prefix",
+      "statement": "Take the A03 premise in the NEW marked language: marked pair-completable partial full data and finitely many marked complete frozen factors. If the given marked pair completion is initially homomorphic, apply I08 at the actual I01 pair prefix to make it injective, then record all its pair types on the original vertices. Complete factor pair data remain induced. This gives the strict complete target needed by C21; use that lemma. It proves the new full interface with the same induced frozen-factor quantifiers. Only unary bits were added, so support>=3 constraints are precisely the old ones.",
+      "depends_on": [
+        "C21",
+        "C23",
+        "D07",
+        "I08"
+      ],
+      "notes": "N05",
+      "scope": "iteration",
+      "source_labels": [
+        "thm:full-language-elimination"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C25",
+      "name": "The optional automorphism interface is preserved conditionally",
+      "statement": "If A04 and a natural fixed-vertex marked pair completion are supplied, forget the marks in that completed pair diagram and invoke A04 on the AUGMENTED old partial diagram containing ALL chosen pair predicates. Its own pair completion is the identity and is natural for its entire automorphism group. Naturality of the original marked pair target ensures every source marked automorphism acts on this augmented diagram. Each source full automorphism preserving the marked factors acts on this old completed diagram. Its lifted automorphism preserves the original vertex-image set; restriction gives exactly the original permutation there, and it preserves the restored unary bits. This preserves the optional interface, not a coherent-EPPA theorem.",
+      "depends_on": [
+        "A04",
+        "C21",
+        "D08"
+      ],
+      "notes": "N05",
+      "scope": "conditional_automorphisms",
+      "source_labels": [
+        "thm:full-language-elimination"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C26",
+      "name": "Canonical irreducibility and symmetry persist",
+      "statement": "New predicates are only unary labels. Complete objects still have a canonical irreflexive predicate on each distinct pair, and all full old two-point information plus labels determines a new canonical pair type. Thus irreducibility and same-sort symmetry remain, and no old binary atom acquires hidden extra pair orbitals once the full prefix is homogeneous.",
+      "depends_on": [
+        "C01",
+        "C02",
+        "C23"
+      ],
+      "notes": "N05",
+      "scope": "iteration",
+      "source_labels": [
+        "thm:full-language-elimination"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C27",
+      "name": "Actual binary-reduct homogeneity persists too",
+      "statement": "Apply the proof of C07 at the homogeneous marked prefix C23 using its preserved interface C24. Thus the actual canonical binary reduct at every stage realizes its pair-age extension property. No inference from full-language homogeneity alone is used.",
+      "depends_on": [
+        "C07",
+        "C23",
+        "C24"
+      ],
+      "notes": "N05",
+      "scope": "iteration",
+      "source_labels": [
+        "thm:full-language-elimination"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C28",
+      "name": "Lift the finite pair safe-split tower stage by stage",
+      "statement": "I02 gives a finite actual pair-character tower. At each step C18-C27 lift it to the full language with SAME chosen binary age, old full reduct, SAP and preserved support-normal interface. C26/C27 supply the symmetry and actual binary context for the next step. Thus the whole finite pair tower is realized by a full unary tower.",
+      "depends_on": [
+        "C19",
+        "C20",
+        "C22",
+        "C23",
+        "C24",
+        "C26",
+        "C27",
+        "I02"
+      ],
+      "notes": "N06",
+      "scope": "iteration",
+      "source_labels": [
+        "thm:full-language-elimination"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C29",
+      "name": "Terminal finite-relative covers transfer through the canonical pair age",
+      "statement": "At a homogeneous full prefix, its canonical pair names are exactly its full automorphism pair orbitals, by complete two-point homogeneity. Invariant binary equivalences are unions of these finitely many orbitals, the same as in the actual binary reduct. Their finite relative class counts are determined by finite pair patterns. Hence terminal absence of finite-relative covers from I02 is precisely the required full canonical named-sort conclusion.",
+      "depends_on": [
+        "C01",
+        "C20",
+        "C23",
+        "C27",
+        "C28",
+        "I02"
+      ],
+      "notes": "N06",
+      "scope": "iteration",
+      "source_labels": [
+        "thm:full-language-elimination"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C30",
+      "name": "Finite full unary composition retains expansion properties",
+      "statement": "Finite compositions lift old embeddings successively for reasonableness, choose labels successively for reduct surjectivity, and multiply finite choices for precompactness. Each full prefix has SAP by C22, and each pair age has semantic HOM CCO by I01. No added function changes the closure or restriction convention.",
+      "depends_on": [
+        "C19",
+        "C22",
+        "C28",
+        "I01"
+      ],
+      "notes": "N06",
+      "scope": "iteration",
+      "source_labels": [
+        "thm:full-language-elimination"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C31",
+      "name": "Conditional full-language elimination export",
+      "statement": "C28-C30 prove the full finite-language terminal expansion under A01-A03. The optional A04 form is preserved only by C25 and is not required for this ordinary conclusion. Higher-language support normality remains an explicit source hypothesis, not a new published theorem or a consequence of binary SAP.",
+      "depends_on": [
+        "C28",
+        "C29",
+        "C30"
+      ],
+      "notes": "N06",
+      "scope": "iteration",
+      "source_labels": [
+        "thm:full-language-elimination"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C32",
+      "name": "The support-normal premise cannot be dropped",
+      "statement": "For the age of K4^(3)-free 3-hypergraphs, the canonical pair shadow is the pure-set age, which has SAP and HOM CCO. Four vertices with all four triples positive have each triple as an actual frozen complete three-point factor, and their pure pair shadow is completable, but the whole K4^(3) cannot embed in the full age. Thus the A03 implication fails even though the pair premises hold. This is a boundary, not a counterexample satisfying A03.",
+      "depends_on": [],
+      "notes": "N07",
+      "scope": "boundary",
+      "source_labels": [
+        "thm:full-language-elimination"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C33",
+      "name": "The complete-pair proof removes a potentially circular unfolding step",
+      "statement": "The source gadget proof invokes full collision-unfolding before spelling out old full SAP. C06 derives old full SAP from the actual interface, and C21 more directly keeps every chosen pair fixed so no collision can occur at all. The detour lemma remains independently proved as useful source support, but is unnecessary for this simpler full lifting proof.",
+      "depends_on": [
+        "C06",
+        "C17",
+        "C21"
+      ],
+      "notes": "N07",
+      "scope": "boundary",
+      "source_labels": [
+        "thm:full-language-elimination"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C34",
+      "name": "Finite diagnostics and source gates remain visible",
+      "statement": "Finite tests of private paths, chosen full pair diagrams, frozen higher data and equivariance only check bounded instances. They do not establish the source A03/A04 interfaces, general SAP/CCO, the terminal theorem or Lean certification. Existing five HN/HKN receiving bindings and source-relative EPPA status are unchanged.",
+      "depends_on": [
+        "C17",
+        "C25",
+        "C31",
+        "C32",
+        "C33"
+      ],
+      "notes": "N07",
+      "scope": "boundary",
+      "source_labels": [
+        "thm:full-language-elimination"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    }
+  ],
+  "source_result_files": [],
+  "additional_result_exports": [
+    "lem:root-free-phase-safe",
+    "thm:full-language-elimination"
+  ],
+  "exports": [
+    {
+      "source_label": "lem:root-free-phase-safe",
+      "claims": [
+        "C17"
+      ]
+    },
+    {
+      "source_label": "thm:full-language-elimination",
+      "claims": [
+        "C31"
+      ]
+    }
+  ],
+  "auxiliary_exports": [],
+  "source_files": [
+    {
+      "file": "sections/rigid_exact_groupoid_foundations.tex",
+      "git_blob": "fb231ec107f8c18b550c87d20ea2da9d86a2d735"
+    },
+    {
+      "file": "sections/triangle_fullness.tex",
+      "git_blob": "d25f85dd267577d1af0c6ffb1245809892fe1dc0"
+    },
+    {
+      "file": "sections/typed_strong_domains.tex",
+      "git_blob": "75d584069ce802c62d66104a852a3649fc082f1d"
+    },
+    {
+      "file": "sections/v27/06_legacy_finite_covers.tex",
+      "git_blob": "67eda024d68a41c2dab17bf99fe440d6a137af66"
+    }
+  ],
+  "dependency_firewalls": [
+    {
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08"
+      ],
+      "forbid": [
+        "A04",
+        "A05",
+        "I02",
+        "I03",
+        "I04",
+        "I05",
+        "I06",
+        "I07",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34"
+      ]
+    },
+    {
+      "claims": [
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17"
+      ],
+      "forbid": [
+        "A04",
+        "I02",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34"
+      ]
+    },
+    {
+      "claims": [
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31"
+      ],
+      "forbid": [
+        "A04",
+        "A05",
+        "I03",
+        "I04",
+        "I05",
+        "I06",
+        "I07",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C25",
+        "C32",
+        "C33",
+        "C34"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "T01",
+      "name": "Canonical pair expansion and explicit frozen-factor interface",
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Retain source hypothesis (iii) with complete induced frozen factors and every higher-support constraint. Derive actual binary-reduct homogeneity using the interface; full homogeneity alone is insufficient. A complete chosen pair target forces global injectivity and fixes all pairtypes; this proves full SAP and preservation under unary labels without a circular unfolding premise. Detours use actual whole semantic cylinders, no invented reachable/exact domain. Optional automorphism gate remains conditional and does not imply coherent EPPA."
+    },
+    {
+      "id": "T02",
+      "name": "Private active/inactive detours",
+      "claims": [
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17"
+      ],
+      "depends_on": [
+        "T01"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Retain source hypothesis (iii) with complete induced frozen factors and every higher-support constraint. Derive actual binary-reduct homogeneity using the interface; full homogeneity alone is insufficient. A complete chosen pair target forces global injectivity and fixes all pairtypes; this proves full SAP and preservation under unary labels without a circular unfolding premise. Detours use actual whole semantic cylinders, no invented reachable/exact domain. Optional automorphism gate remains conditional and does not imply coherent EPPA."
+    },
+    {
+      "id": "T03",
+      "name": "Complete chosen pair diagrams lift full marked ages",
+      "claims": [
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23"
+      ],
+      "depends_on": [
+        "T01"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Retain source hypothesis (iii) with complete induced frozen factors and every higher-support constraint. Derive actual binary-reduct homogeneity using the interface; full homogeneity alone is insufficient. A complete chosen pair target forces global injectivity and fixes all pairtypes; this proves full SAP and preservation under unary labels without a circular unfolding premise. Detours use actual whole semantic cylinders, no invented reachable/exact domain. Optional automorphism gate remains conditional and does not imply coherent EPPA."
+    },
+    {
+      "id": "T04",
+      "name": "Preserve support normality and optional naturality",
+      "claims": [
+        "C24",
+        "C25",
+        "C26",
+        "C27"
+      ],
+      "depends_on": [
+        "T03"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Retain source hypothesis (iii) with complete induced frozen factors and every higher-support constraint. Derive actual binary-reduct homogeneity using the interface; full homogeneity alone is insufficient. A complete chosen pair target forces global injectivity and fixes all pairtypes; this proves full SAP and preservation under unary labels without a circular unfolding premise. Detours use actual whole semantic cylinders, no invented reachable/exact domain. Optional automorphism gate remains conditional and does not imply coherent EPPA."
+    },
+    {
+      "id": "T05",
+      "name": "Lift finite pair tower and terminal equivalences",
+      "claims": [
+        "C28",
+        "C29",
+        "C30",
+        "C31"
+      ],
+      "depends_on": [
+        "T04"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Retain source hypothesis (iii) with complete induced frozen factors and every higher-support constraint. Derive actual binary-reduct homogeneity using the interface; full homogeneity alone is insufficient. A complete chosen pair target forces global injectivity and fixes all pairtypes; this proves full SAP and preservation under unary labels without a circular unfolding premise. Detours use actual whole semantic cylinders, no invented reachable/exact domain. Optional automorphism gate remains conditional and does not imply coherent EPPA."
+    },
+    {
+      "id": "T06",
+      "name": "Conditional boundaries and finite controls",
+      "claims": [
+        "C32",
+        "C33",
+        "C34"
+      ],
+      "depends_on": [
+        "T02",
+        "T05"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Retain source hypothesis (iii) with complete induced frozen factors and every higher-support constraint. Derive actual binary-reduct homogeneity using the interface; full homogeneity alone is insufficient. A complete chosen pair target forces global injectivity and fixes all pairtypes; this proves full SAP and preservation under unary labels without a circular unfolding premise. Detours use actual whole semantic cylinders, no invented reachable/exact domain. Optional automorphism gate remains conditional and does not imply coherent EPPA."
+    }
+  ],
+  "controls": [
+    {
+      "id": "K01",
+      "check": "Bounded actual active/inactive detours, private roots, whole represented cylinders and distinct source representatives."
+    },
+    {
+      "id": "K02",
+      "check": "Finite free higher-relation toy lifts with chosen complete pair targets, induced frozen data, canonical equivariance and explicit K4^(3)-free support-normal boundary; no general interface certification."
+    }
+  ],
+  "overview_mermaid": [
+    "flowchart TD",
+    "  I[\"Explicit frozen-factor interface\"] --> B[\"Actual binary reduct and full SAP\"]",
+    "  B --> P[\"Actual pair character split\"]",
+    "  P --> D[\"Private phase-safe detours\"]",
+    "  I --> C[\"Fix a complete chosen pair diagram\"]",
+    "  C --> F[\"Injective full marked lift\"]",
+    "  F --> N[\"Preserved support-normal interface\"]",
+    "  N --> T[\"Lift the finite pair tower\"]"
+  ],
+  "overview_notes": [
+    "The full theorem is conditional on its substantial source interface; canonical pair naming alone does not establish it.",
+    "A complete chosen pair diagram makes the full lifting proof simpler than the source detour/unfolding route.",
+    "The actual binary reduct is shown homogeneous using frozen-factor extension, not inferred from full-language homogeneity.",
+    "The optional automorphism-preserving form is separate and no coherent EPPA theorem is exported."
+  ],
+  "article_feedback": [
+    {
+      "id": "F01",
+      "kind": "PROOF_EXPANSION_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/v27/06_legacy_finite_covers.tex",
+        "anchor": "Any\ncollisions are unfolded"
+      },
+      "finding": "A source use of full collision-unfolding hides its full-old SAP premise. The literal support-normal interface already implies full-old SAP, and a chosen complete pair diagram makes every completion map injective before any unfolding.",
+      "proposed_article_change": "Replace the full-language gadget/unfolding step by adding the complete chosen pair target before invoking (iii). Explicitly prove full SAP, actual binary-reduct homogeneity, and preservation of (iii) under each unary split. Keep detours as an independent optional lemma.",
+      "caller_effect": "No added hypothesis or external provider. The substantial existing support-normal interface remains explicit; binary SAP alone never substitutes for it.",
+      "proof_claims": [
+        "C05",
+        "C06",
+        "C07",
+        "C21",
+        "C24",
+        "C27",
+        "C33"
+      ]
+    }
+  ],
+  "review": {
+    "date": "2026-10-29",
+    "source_unchanged": true,
+    "source_signature_repairs": 0,
+    "unexpanded_provider_labels": [],
+    "proof_status": "HUMAN_EXPANDED_NOT_LEAN; full theorem retains its explicit support-normal interface. Simpler direct complete-pair proof removes unfolding circularity and proves interface preservation; no new source axiom.",
+    "independent_reviews": [
+      "Independent auditor confirmed literal (iii) permits complete chosen pair diagrams and frozen-factor extension of the actual binary reduct",
+      "Parent proof reconstruction of full-age lifting and preservation at every prefix",
+      "Parent independently reviewed RAW/STRONG EPP, direct marked SAP before injectivisation, conditional FULL-sector sufficiency, and complete-pair full-language lifting with preservation of the explicit frozen-factor interface: PASS",
+      "Final concrete module/notes review by independent auditor and pair-package author: PASS, including marked pair strictification and identity-naturality at the augmented pair diagram"
+    ],
+    "boundaries": [
+      "A03/A04 remain conditional source gates",
+      "No arbitrary higher-arity theorem",
+      "No coherent EPPA conclusion",
+      "No arbitrary global seed marking assumed homogeneous",
+      "No invented exactness/reachability of a semantic cylinder"
+    ]
+  }
+}

@@ -1,0 +1,422 @@
+{
+  "human_source_pin": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+  "fresh_preparation_head": "dc5fa9eafc2954909d15f3d18986d04fc8967513",
+  "source_records": [
+    {
+      "path": "sections/finite_orbit_avoidance.tex",
+      "git_blob": "290ab3ae54ade87fc4693b0c17955a9e319efd9b",
+      "bytes": 7097,
+      "sha256": "e2372b83ce162e92524d4908946cb95abc3dd89c8eb128b06fdd659e15c59ef4",
+      "matches_human_pin": true,
+      "matches_fresh_preparation": true,
+      "existing_public_identical": true
+    },
+    {
+      "path": "sections/ep_safe_ap_character_completion.tex",
+      "git_blob": "42e7958c333f8e39a9a5268ec22d0213c72d715b",
+      "bytes": 26049,
+      "sha256": "fb16d8874d6184f83c31f7258047904852803143e9eac009e1003196f96a907c",
+      "matches_human_pin": true,
+      "matches_fresh_preparation": true,
+      "existing_public_identical": false
+    },
+    {
+      "path": "sections/exact_foundations/01_full_raw_exact_helly.tex",
+      "git_blob": "7cb28c86b4b296ddf865b6aff518cda1215cd491",
+      "bytes": 14993,
+      "sha256": "03c847e8bfd52d000ac56ada1b7eed230cd05f1100f62bbd8d2675b3b6b56db8",
+      "matches_human_pin": true,
+      "matches_fresh_preparation": true,
+      "existing_public_identical": true
+    },
+    {
+      "path": "sections/finite_relative_parity_exact_closure.tex",
+      "git_blob": "9f6983f96bae28d06466fcbf23f15e20a55f2686",
+      "bytes": 9580,
+      "sha256": "8ac8de37271b3def934c69908193f6ea732d7015b63acbfee13ebc83eeda2b2b",
+      "matches_human_pin": true,
+      "matches_fresh_preparation": true,
+      "existing_public_identical": true
+    },
+    {
+      "path": "sections/rigid_exact_groupoid_foundations.tex",
+      "git_blob": "fb231ec107f8c18b550c87d20ea2da9d86a2d735",
+      "bytes": 15148,
+      "sha256": "642e86d57a157a86a5f54a1f46c3eb321d37ee230045d647301a3fe6277133b8",
+      "matches_human_pin": true,
+      "matches_fresh_preparation": true,
+      "existing_public_identical": true
+    },
+    {
+      "path": "sections/ramsey_clone_sap.tex",
+      "git_blob": "2b14f19885e7109be548a0af73fba14c974dc636",
+      "bytes": 3422,
+      "sha256": "aff41f01b250fbf09e5f58c7664c645dc756d49ea0be67720e8429f0f41579c7",
+      "matches_human_pin": true,
+      "matches_fresh_preparation": true,
+      "existing_public_identical": false
+    },
+    {
+      "path": "sections/ramsey_preferred_support.tex",
+      "git_blob": "a4213db90239937a525e6fa7b6ea36703a2900df",
+      "bytes": 7386,
+      "sha256": "d2619ed2bbe9ce13661e60531ba253d86bc5a77eefd3820a1ecf08c15f8a6049",
+      "matches_human_pin": true,
+      "matches_fresh_preparation": true,
+      "existing_public_identical": true
+    },
+    {
+      "path": "sections/typed_strong_domains.tex",
+      "git_blob": "75d584069ce802c62d66104a852a3649fc082f1d",
+      "bytes": 21685,
+      "sha256": "6706f74206d539dad6a6c137364c7cd6e97a134122652eda93f55c5b6539045f",
+      "matches_human_pin": true,
+      "matches_fresh_preparation": true,
+      "existing_public_identical": true
+    },
+    {
+      "path": "sections/v27/06_legacy_finite_covers.tex",
+      "git_blob": "67eda024d68a41c2dab17bf99fe440d6a137af66",
+      "bytes": 31672,
+      "sha256": "f6971167379491ff1761d95419b543361032ac66bc7ee03c75db7c489e96813b",
+      "matches_human_pin": true,
+      "matches_fresh_preparation": true,
+      "existing_public_identical": false
+    },
+    {
+      "path": "sections/triangle_fullness.tex",
+      "git_blob": "d25f85dd267577d1af0c6ffb1245809892fe1dc0",
+      "bytes": 1868,
+      "sha256": "80b7f35665c9e8b5dee1615cf62b975f0bf7b4561c40a0fa11dd8adf5d0039f4",
+      "matches_human_pin": true,
+      "matches_fresh_preparation": true,
+      "existing_public_identical": true
+    }
+  ],
+  "payload_records": [
+    {
+      "path": "formalization/point_generated_sap/module.json",
+      "preparation_path": "cco-symmetric-eppa/papers/consolidated_working/formalization/point_generated_sap/module.json",
+      "git_blob": "451b836db3aa9af2253ae89e34e2095146b21365",
+      "bytes": 32156,
+      "sha256": "e44426acfa83ef46068cffbf490b5f57656851e7e5aa65b87508dfc15206cf84",
+      "receiving_sha256": "e44426acfa83ef46068cffbf490b5f57656851e7e5aa65b87508dfc15206cf84",
+      "transformation": null
+    },
+    {
+      "path": "formalization/point_generated_sap/README.md",
+      "preparation_path": "cco-symmetric-eppa/papers/consolidated_working/formalization/point_generated_sap/README.md",
+      "git_blob": "7efbfd83f51d04ddeba3510b33a1964c53904b0b",
+      "bytes": 15599,
+      "sha256": "16d431ba5fde5698a5e34a51a69578361e35d9bd3fbe3adb8048daa9bcf8487c",
+      "receiving_sha256": "16d431ba5fde5698a5e34a51a69578361e35d9bd3fbe3adb8048daa9bcf8487c",
+      "transformation": null
+    },
+    {
+      "path": "formalization/point_generated_sap/PROOF_NOTES.md",
+      "preparation_path": "cco-symmetric-eppa/papers/consolidated_working/formalization/point_generated_sap/PROOF_NOTES.md",
+      "git_blob": "a0044806f0a0ad5ff2c7bcf57f8e60d68a99e1c9",
+      "bytes": 9058,
+      "sha256": "57a583471e1fc2d450e424875c5a6f03efa1da457972daa97ff4e9d8cc8109ae",
+      "receiving_sha256": "57a583471e1fc2d450e424875c5a6f03efa1da457972daa97ff4e9d8cc8109ae",
+      "transformation": null
+    },
+    {
+      "path": "formalization/point_generated_sap/VALIDATION.json",
+      "preparation_path": "cco-symmetric-eppa/papers/consolidated_working/formalization/point_generated_sap/VALIDATION.json",
+      "git_blob": "61203980fe867ddfe9d495418afe3cb8c77d9bc3",
+      "bytes": 82961,
+      "sha256": "593e58db23afb8107a7cf8b95e54e8b2ff4eaa9adf347f2d871820560d48748a",
+      "receiving_sha256": "593e58db23afb8107a7cf8b95e54e8b2ff4eaa9adf347f2d871820560d48748a",
+      "transformation": null
+    },
+    {
+      "path": "formalization/ap_character/module.json",
+      "preparation_path": "cco-symmetric-eppa/papers/consolidated_working/formalization/ap_character/module.json",
+      "git_blob": "44094d0673093a9196d6aae3a77ab7e25f07ee5c",
+      "bytes": 68976,
+      "sha256": "3b246bf4060c8f7a1c6ebc34fe39382cb41927dfe646a33b340db85c8302b29e",
+      "receiving_sha256": "3b246bf4060c8f7a1c6ebc34fe39382cb41927dfe646a33b340db85c8302b29e",
+      "transformation": null
+    },
+    {
+      "path": "formalization/ap_character/README.md",
+      "preparation_path": "cco-symmetric-eppa/papers/consolidated_working/formalization/ap_character/README.md",
+      "git_blob": "33ed123ef3dc467fc02aeefa933098a77d5c0418",
+      "bytes": 27450,
+      "sha256": "86bcd3ddbde2a7d4a151d94d4b089be2453cd11ff803b13c16a47c19a6490691",
+      "receiving_sha256": "86bcd3ddbde2a7d4a151d94d4b089be2453cd11ff803b13c16a47c19a6490691",
+      "transformation": null
+    },
+    {
+      "path": "formalization/ap_character/PROOF_NOTES.md",
+      "preparation_path": "cco-symmetric-eppa/papers/consolidated_working/formalization/ap_character/PROOF_NOTES.md",
+      "git_blob": "f14152284d44e3db3e39d96da9cdfda45d15c7cc",
+      "bytes": 17170,
+      "sha256": "5804ecae2d9fad139076ffa8c4e61a1358ed6ab11b3170c24abaa98ae7350f80",
+      "receiving_sha256": "5804ecae2d9fad139076ffa8c4e61a1358ed6ab11b3170c24abaa98ae7350f80",
+      "transformation": null
+    },
+    {
+      "path": "formalization/ap_character/VALIDATION.json",
+      "preparation_path": "cco-symmetric-eppa/papers/consolidated_working/formalization/ap_character/VALIDATION.json",
+      "git_blob": "2d8960990b9097c8cac725161c4b88d8eaedded5",
+      "bytes": 82954,
+      "sha256": "418306dc710aba2611b4b65c7caa8f6c816d821ecba75fa2812818849adfaa4e",
+      "receiving_sha256": "418306dc710aba2611b4b65c7caa8f6c816d821ecba75fa2812818849adfaa4e",
+      "transformation": null
+    },
+    {
+      "path": "formalization/clone_sap/module.json",
+      "preparation_path": "cco-symmetric-eppa/papers/consolidated_working/formalization/clone_sap/module.json",
+      "git_blob": "052fd178c1c06694d9f028ee22d6c1a87f2d53f2",
+      "bytes": 44225,
+      "sha256": "4b6f07a5698bb4175ad46d1dd0aa1e06923c9420474a5b588ef5cae7a6e91337",
+      "receiving_sha256": "4b6f07a5698bb4175ad46d1dd0aa1e06923c9420474a5b588ef5cae7a6e91337",
+      "transformation": null
+    },
+    {
+      "path": "formalization/clone_sap/README.md",
+      "preparation_path": "cco-symmetric-eppa/papers/consolidated_working/formalization/clone_sap/README.md",
+      "git_blob": "e8fdd8eaeaf54f2c35e9d1528366c762ecc14417",
+      "bytes": 18106,
+      "sha256": "405340645871b421babfc7b2fdc330850f93dbdd56618371c80d6549f08da8fc",
+      "receiving_sha256": "405340645871b421babfc7b2fdc330850f93dbdd56618371c80d6549f08da8fc",
+      "transformation": null
+    },
+    {
+      "path": "formalization/clone_sap/PROOF_NOTES.md",
+      "preparation_path": "cco-symmetric-eppa/papers/consolidated_working/formalization/clone_sap/PROOF_NOTES.md",
+      "git_blob": "b78e00126621bc6a0c1fc3c36ff4abbb07524251",
+      "bytes": 12236,
+      "sha256": "cad3723f0b89e0146ace5cfcfaef9ad002fd4bdc41d7aff07a6fed0a0dc8ee3b",
+      "receiving_sha256": "cad3723f0b89e0146ace5cfcfaef9ad002fd4bdc41d7aff07a6fed0a0dc8ee3b",
+      "transformation": null
+    },
+    {
+      "path": "formalization/clone_sap/VALIDATION.json",
+      "preparation_path": "cco-symmetric-eppa/papers/consolidated_working/formalization/clone_sap/VALIDATION.json",
+      "git_blob": "b602f9b4699628eecd0cc238211aa4f385b3e7d7",
+      "bytes": 85761,
+      "sha256": "96a509bdf470f5795ab202d58a63f20785c57eac1da7eb10ad631f59480d7be1",
+      "receiving_sha256": "96a509bdf470f5795ab202d58a63f20785c57eac1da7eb10ad631f59480d7be1",
+      "transformation": null
+    },
+    {
+      "path": "formalization/orbital_cover_boundary/module.json",
+      "preparation_path": "cco-symmetric-eppa/papers/consolidated_working/formalization/orbital_cover_boundary/module.json",
+      "git_blob": "bf54044900c790734167b26e5575a97f445471f6",
+      "bytes": 48675,
+      "sha256": "adf31cbbc35dfe283a3247878bc65b0c7d5d029a7c04693c4055f29ac566866e",
+      "receiving_sha256": "adf31cbbc35dfe283a3247878bc65b0c7d5d029a7c04693c4055f29ac566866e",
+      "transformation": null
+    },
+    {
+      "path": "formalization/orbital_cover_boundary/README.md",
+      "preparation_path": "cco-symmetric-eppa/papers/consolidated_working/formalization/orbital_cover_boundary/README.md",
+      "git_blob": "6e0311cd0bfec0070efffd6209e5d09a32b386e8",
+      "bytes": 20227,
+      "sha256": "dd84ebbb6420915ff6c9a2f80668e45298585e3b407e086ffbef5102b4173bbf",
+      "receiving_sha256": "dd84ebbb6420915ff6c9a2f80668e45298585e3b407e086ffbef5102b4173bbf",
+      "transformation": null
+    },
+    {
+      "path": "formalization/orbital_cover_boundary/PROOF_NOTES.md",
+      "preparation_path": "cco-symmetric-eppa/papers/consolidated_working/formalization/orbital_cover_boundary/PROOF_NOTES.md",
+      "git_blob": "ad4317147f8383d4676e77e21c65e645575afab0",
+      "bytes": 16020,
+      "sha256": "4fe807c07cd8a77777583c5233280fdab535c508e36324571275a96c1cb0c8bc",
+      "receiving_sha256": "4fe807c07cd8a77777583c5233280fdab535c508e36324571275a96c1cb0c8bc",
+      "transformation": null
+    },
+    {
+      "path": "formalization/orbital_cover_boundary/VALIDATION.json",
+      "preparation_path": "cco-symmetric-eppa/papers/consolidated_working/formalization/orbital_cover_boundary/VALIDATION.json",
+      "git_blob": "4892ba32769d5c2a64410c08b7343af8c1cd19d7",
+      "bytes": 85774,
+      "sha256": "896052d071ff02a27391d32fb826028dd617c60c993832f2f9e0bef5494971c7",
+      "receiving_sha256": "896052d071ff02a27391d32fb826028dd617c60c993832f2f9e0bef5494971c7",
+      "transformation": null
+    },
+    {
+      "path": "formalization/pair_safe_split/module.json",
+      "preparation_path": "cco-symmetric-eppa/papers/consolidated_working/formalization/pair_safe_split/module.json",
+      "git_blob": "80fb733f9e356889cb1ead94f00f914cb1711ede",
+      "bytes": 79427,
+      "sha256": "fdbae5f2fb6546fa6446b924e8f8ab75973c55990141fba847c47946992b1bb2",
+      "receiving_sha256": "fdbae5f2fb6546fa6446b924e8f8ab75973c55990141fba847c47946992b1bb2",
+      "transformation": null
+    },
+    {
+      "path": "formalization/pair_safe_split/README.md",
+      "preparation_path": "cco-symmetric-eppa/papers/consolidated_working/formalization/pair_safe_split/README.md",
+      "git_blob": "abe342644a32bb3c190e6c4dd6c6a18e745a8ec2",
+      "bytes": 32952,
+      "sha256": "ad7e5326f51a743ac8ffa99b481c4cf1f32a504781fa51a188ea27392d9d6857",
+      "receiving_sha256": "ad7e5326f51a743ac8ffa99b481c4cf1f32a504781fa51a188ea27392d9d6857",
+      "transformation": null
+    },
+    {
+      "path": "formalization/pair_safe_split/PROOF_NOTES.md",
+      "preparation_path": "cco-symmetric-eppa/papers/consolidated_working/formalization/pair_safe_split/PROOF_NOTES.md",
+      "git_blob": "d842e5b6129d06ebcab9eca5c3e6ce731b0dba07",
+      "bytes": 19164,
+      "sha256": "7b8cf81e6e2804678eb2bd93144fe477863fe3f054bdd14c00322c57acea35b7",
+      "receiving_sha256": "7b8cf81e6e2804678eb2bd93144fe477863fe3f054bdd14c00322c57acea35b7",
+      "transformation": null
+    },
+    {
+      "path": "formalization/pair_safe_split/VALIDATION.json",
+      "preparation_path": "cco-symmetric-eppa/papers/consolidated_working/formalization/pair_safe_split/VALIDATION.json",
+      "git_blob": "d62a4e5cc09a583c544e4e67792e769b76b401b4",
+      "bytes": 88906,
+      "sha256": "f05c4cc942d9029b1424e476ca01d0e8e2b7fddc6e608a79e83d41ff6f496ed6",
+      "receiving_sha256": "f05c4cc942d9029b1424e476ca01d0e8e2b7fddc6e608a79e83d41ff6f496ed6",
+      "transformation": null
+    },
+    {
+      "path": "formalization/full_phase_lift/module.json",
+      "preparation_path": "cco-symmetric-eppa/papers/consolidated_working/formalization/full_phase_lift/module.json",
+      "git_blob": "98b96ac897460570d9d13b7b89c4f6db2afdf793",
+      "bytes": 49176,
+      "sha256": "8b4675635b336586e4ed9149e74466a7236a6689783722363f84b4132eaef19d",
+      "receiving_sha256": "8b4675635b336586e4ed9149e74466a7236a6689783722363f84b4132eaef19d",
+      "transformation": null
+    },
+    {
+      "path": "formalization/full_phase_lift/README.md",
+      "preparation_path": "cco-symmetric-eppa/papers/consolidated_working/formalization/full_phase_lift/README.md",
+      "git_blob": "f4e2381ee4bcbefbb1e3aa433d4bbd9efdf6851a",
+      "bytes": 21934,
+      "sha256": "4eb3db365bc8b8c42dc9bd6f17b815914b97f402a2695e00e0b504526d14d2df",
+      "receiving_sha256": "4eb3db365bc8b8c42dc9bd6f17b815914b97f402a2695e00e0b504526d14d2df",
+      "transformation": null
+    },
+    {
+      "path": "formalization/full_phase_lift/PROOF_NOTES.md",
+      "preparation_path": "cco-symmetric-eppa/papers/consolidated_working/formalization/full_phase_lift/PROOF_NOTES.md",
+      "git_blob": "2850fc29bddcf34ea9704a82096f69b8eb90aff1",
+      "bytes": 13418,
+      "sha256": "a00e82aa74e1d07c6e96767a2fcd75dd7860b3297ee4f193d558ac2aa91b1609",
+      "receiving_sha256": "a00e82aa74e1d07c6e96767a2fcd75dd7860b3297ee4f193d558ac2aa91b1609",
+      "transformation": null
+    },
+    {
+      "path": "formalization/full_phase_lift/VALIDATION.json",
+      "preparation_path": "cco-symmetric-eppa/papers/consolidated_working/formalization/full_phase_lift/VALIDATION.json",
+      "git_blob": "4f98b1f90ec99e15c406d95cfe408e6c98c7ac57",
+      "bytes": 88906,
+      "sha256": "da55e230549a0ea571768ea2dc6ec698c400e7c763eab08ff55107592a901f99",
+      "receiving_sha256": "da55e230549a0ea571768ea2dc6ec698c400e7c763eab08ff55107592a901f99",
+      "transformation": null
+    },
+    {
+      "path": "tools/check_point_generated_sap_controls.py",
+      "preparation_path": "cco-symmetric-eppa/papers/consolidated_working/tools/check_point_generated_sap_controls.py",
+      "git_blob": "95db7254c7b15959445b950b3a9280834bcbbb98",
+      "bytes": 4964,
+      "sha256": "37992c90663c8fe183ced9e96f09b342b3cf8756993cef902f39ac3f603d7b13",
+      "receiving_sha256": "37992c90663c8fe183ced9e96f09b342b3cf8756993cef902f39ac3f603d7b13",
+      "transformation": null
+    },
+    {
+      "path": "tools/check_ap_character_controls.py",
+      "preparation_path": "cco-symmetric-eppa/papers/consolidated_working/tools/check_ap_character_controls.py",
+      "git_blob": "d46cfad23c80a20b2c2e1a74cc9c8a3603bbad39",
+      "bytes": 14175,
+      "sha256": "f3ac12bf763dce2d7af9af265d8444d58b03a3bf7eae73cd4f2ee2cd76e15a53",
+      "receiving_sha256": "f3ac12bf763dce2d7af9af265d8444d58b03a3bf7eae73cd4f2ee2cd76e15a53",
+      "transformation": null
+    },
+    {
+      "path": "tools/check_clone_sap_controls.py",
+      "preparation_path": "cco-symmetric-eppa/papers/consolidated_working/tools/check_clone_sap_controls.py",
+      "git_blob": "60132196a5b835c4b40a25bd161e8f5c453dd328",
+      "bytes": 10416,
+      "sha256": "f1e8991f0d5a41152bcd0b1dca9cfcf70a1eadedb4cfc6eb8abd139b7e49f505",
+      "receiving_sha256": "f1e8991f0d5a41152bcd0b1dca9cfcf70a1eadedb4cfc6eb8abd139b7e49f505",
+      "transformation": null
+    },
+    {
+      "path": "tools/check_pair_safe_split_controls.py",
+      "preparation_path": "cco-symmetric-eppa/papers/consolidated_working/tools/check_pair_safe_split_controls.py",
+      "git_blob": "9473a9975f9254774253db99471311c66ff97f9c",
+      "bytes": 10530,
+      "sha256": "f7cdf17ae1ed3a861b32c541b573a94a19274fd20d0a11ee7f9a7bc1a57cbbab",
+      "receiving_sha256": "f7cdf17ae1ed3a861b32c541b573a94a19274fd20d0a11ee7f9a7bc1a57cbbab",
+      "transformation": null
+    },
+    {
+      "path": "tools/check_full_phase_lift_controls.py",
+      "preparation_path": "cco-symmetric-eppa/papers/consolidated_working/tools/check_full_phase_lift_controls.py",
+      "git_blob": "bc2a9330498f995acf20d3c0f93e6244a4a224c0",
+      "bytes": 10990,
+      "sha256": "14b45facf3ba800a1b55ee9229a2f156386b7a102c4efb98090214c3e659389a",
+      "receiving_sha256": "14b45facf3ba800a1b55ee9229a2f156386b7a102c4efb98090214c3e659389a",
+      "transformation": null
+    },
+    {
+      "path": "formalization/coordination/packages/B043.md",
+      "preparation_path": "cco-symmetric-eppa/papers/consolidated_working/formalization/coordination/packages/B043.md",
+      "git_blob": "a3d7d6fa6a2dafc274c32426d513e6bd84576044",
+      "bytes": 3590,
+      "sha256": "eaf8f81bfc6a904cfda876727afbe47373da44dc11da3dd7af99e9cec0fe8dbb",
+      "receiving_sha256": "c365690d58a856864a13b1abdf0c2e1c35f226315f0eb5d7c0cbdc03f06b5fc8",
+      "transformation": "Public protocol-3 activation notice; mathematical text preserved"
+    },
+    {
+      "path": "formalization/coordination/packages/B044.md",
+      "preparation_path": "cco-symmetric-eppa/papers/consolidated_working/formalization/coordination/packages/B044.md",
+      "git_blob": "5ace52e9c5795feea3bd03a2430c15a9f1df316c",
+      "bytes": 4262,
+      "sha256": "ae6c46af1f7e4c5352fecbcb997860bf3a8469912fdc539748bb70e30e414dfa",
+      "receiving_sha256": "1368d5481a83a6ca95b9bc5f1070b35e0ab97c0380edb025a70f1e5a8203820d",
+      "transformation": "Public protocol-3 activation notice; mathematical text preserved"
+    },
+    {
+      "path": "formalization/coordination/packages/B045.md",
+      "preparation_path": "cco-symmetric-eppa/papers/consolidated_working/formalization/coordination/packages/B045.md",
+      "git_blob": "58e2a74b4de1c57cc5f6ada2b85dc070af207542",
+      "bytes": 4202,
+      "sha256": "94ba1318f5be5a3968b0de533e8f46c6653b2166c79476bfe7912e0281496d2f",
+      "receiving_sha256": "1e8599ed8703146ad9a8e71a69aa58cf81596e154c16541c4758a43fef8876e8",
+      "transformation": "Public protocol-3 activation notice; mathematical text preserved"
+    },
+    {
+      "path": "formalization/coordination/packages/B046.md",
+      "preparation_path": "cco-symmetric-eppa/papers/consolidated_working/formalization/coordination/packages/B046.md",
+      "git_blob": "3c6a0209ac6f4e54e35344e76f0e2d735ce4a989",
+      "bytes": 4149,
+      "sha256": "0b20f320eaee8285b671ddd5855f3e84ce6e7c10068535a7b9ccd3b08f5d6716",
+      "receiving_sha256": "dfd8d9baa52f30393aa47e9427d0a57f8ad5e1ecca071c8c5833c450a1c0da0c",
+      "transformation": "Public protocol-3 activation notice; mathematical text preserved"
+    },
+    {
+      "path": "formalization/coordination/packages/B047.md",
+      "preparation_path": "cco-symmetric-eppa/papers/consolidated_working/formalization/coordination/packages/B047.md",
+      "git_blob": "29fa011bf8823b47c57e15d51a525507410ddc3a",
+      "bytes": 5111,
+      "sha256": "034b97ec4451c24e15e52e1e00c266fb2e2565cacecd640141fc5bb7f9f12606",
+      "receiving_sha256": "89d37683eef602bb2cca1a5cf89f44eeef03c8b02c60388fa61b519bb13af59e",
+      "transformation": "Public protocol-3 activation notice; mathematical text preserved"
+    },
+    {
+      "path": "formalization/coordination/packages/B048.md",
+      "preparation_path": "cco-symmetric-eppa/papers/consolidated_working/formalization/coordination/packages/B048.md",
+      "git_blob": "d5d2d81bec5f59786f37766b4a902f247b0fd168",
+      "bytes": 4563,
+      "sha256": "3b21c0aabf845ad7512a21638a4a4838ebfd8ef43a2cadc811c7055d1745db0d",
+      "receiving_sha256": "4868c501a9f8ca74f0fbea0e935ac7c5dc7cadcd7e0a5f12d96af6ba7b9f2e41",
+      "transformation": "Public protocol-3 activation notice; mathematical text preserved"
+    },
+    {
+      "path": "tools/check_orbital_cover_controls.py",
+      "preparation_path": "cco-symmetric-eppa/papers/consolidated_working/tools/check_orbital_cover_controls.py",
+      "git_blob": "d8ca47546419ba4656f20a897a9c0e25368cae97",
+      "bytes": 9897,
+      "sha256": "8f2ba3a9469493dd2146ffacd15c4b2ce74d51a43aa781cf7d56f1a05dc4080d",
+      "receiving_sha256": "8f2ba3a9469493dd2146ffacd15c4b2ce74d51a43aa781cf7d56f1a05dc4080d",
+      "transformation": null
+    }
+  ]
+}

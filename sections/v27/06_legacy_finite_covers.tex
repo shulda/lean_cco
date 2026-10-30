@@ -1,0 +1,769 @@
+\section{Finite covers and exact-complement elimination}
+\label{sec:finite-covers}
+
+We now remove the terminal hypothesis \ref{A:cover} for the Ramsey theorem.
+The finite-cover reduction is the most delicate part of the general argument,
+and we give the complete pair-shadow interface rather than referring to a
+``phase split'' as a black box.  At intermediate stages the realised unary
+$1$-types are treated as finitely many \emph{sorts}; all path profiles and
+exact domains below are typed by their endpoint sorts.
+
+\subsection{Orbital parity and index two}
+
+The general SAP collision-unfolding lemma preserving frozen complete
+higher-support factors is now foundational,
+\cref{lem:collision-unfolding}. Orbital parity below instead uses the
+SAP-free old parity theorem plus typed STRONG injectivisation.
+
+
+\begin{theorem}[Orbital parity]\label{thm:orbital-parity}
+Let $E<F$ be $0$-definable equivalences on one current
+transitive unary sort and suppose $[F:E]=n<\infty$.
+If $t\subseteq F\setminus E$ is a canonical diversity
+pair orbit, then there are actual invariant equivalences
+\[
+ Y_t<E_t\leq F,\qquad [E_t:Y_t]=2,
+\]
+where $Y_t$ is the FULL RAW exact even-walk equivalence
+(including real equality) and
+$O_t=E_t\setminus Y_t$ is the odd-walk relation.
+In the present SAP source, $Y_t>\Id$; moreover its
+\emph{diversity part} $Y_t^\circ=Y_t\setminus\Id$
+and $O_t$ are nonempty STRONG reachable profiles.
+
+The distinction between the RAW equivalence $Y_t$
+and its identity-free STRONG profile $Y_t^\circ$
+is essential: no logical equality is inserted as
+an artificial diversity edge.
+\end{theorem}
+\begin{proof}
+Apply the SAP-free ORIGINAL orbital-parity theorem
+\cref{lem:ep-ap-orbital-parity} to the named
+homogeneous current sort and the actual invariant
+interval $E<F$. It supplies bipartiteness, the
+even/odd represented RAW word relations and the
+index-two equivalence interval, with $Y_t$
+FULL RAW exact. In particular the eventual even
+and odd powers of the ORIGINAL atomic relation $t$
+stabilise to $Y_t$ and $O_t$, respectively.
+
+The current source also has visible SAP, so
+\cref{lem:typed-injectivisation} identifies the
+DIVERSITY slices of these positive represented
+words with their corresponding STRONG
+simple-path profiles. The odd slice $O_t$ is
+nonempty because it contains $t$ itself.
+
+Finally take an actual old $t$-edge $xy$.
+Strongly amalgamate two copies of this
+two-point structure over the common real
+vertex $y$. Their two copies $x_1\ne x_2$
+have a common $t$-neighbour $y$, hence
+$(x_1,x_2)\in Y_t\setminus\Id$.
+Thus $Y_t^\circ\ne\varnothing$, and the
+stabilised positive even word represents
+the claimed nonempty STRONG profile.
+No independent collision-unfolding argument
+or strengthening of the original AP-only
+parity theorem was used.
+\end{proof}
+
+\begin{theorem}[Finite covers have index two]
+\label{thm:finite-cover-two}
+Let $E_X\prec E_Y$ be a cover in the lattice $\Lambda$ of
+\cref{prop:lattice-interface}. If $[Y:X]$ is finite, then
+$[Y:X]=2$. Hence any finite relative index between such
+invariant equivalences is a power of two.
+\end{theorem}
+\begin{proof}
+This is the full invariant-lattice SAP-free result
+\cref{thm:full-relative-Hasse}, applied to this one-sort
+SAP+CCO source. The proof is independent of SAP and appears
+in Foundations so that it also applies to AP-only exact quotients.
+\end{proof}
+
+The index-two conclusion does not mean that an arbitrary such cover may be
+oriented directly.  The following example is deliberately coarse: its bad
+cover is not a reachable path profile.
+
+\begin{proposition}[A preselected two-cover need not be splittable]
+\label{prop:bad-diagonal-split}
+There is a nine-colour symmetric triangle-constrained SAP+CCO class with a
+definable cover $K<X$, $[X:K]=2$, such that every unary orientation of the two
+$K$-classes inside each $X$-class destroys AP.  The same structure has two
+finer orbital coordinate covers which can be split successively.
+\end{proposition}
+
+\begin{proof}
+Let $U,V,N$ be countably infinite pure sets and put
+\[
+ M=U\times V\times\mathbb F_2\times\mathbb F_2\times N.
+\]
+Write $x=(u_x,v_x,p_x,q_x,n_x)$.  For distinct $x,y$, the first coordinate
+colour is $e_i$ if $u_x=u_y$ and $p_x+p_y=i$, and is $n$ if $u_x\ne u_y$.
+Define the second coordinate colour analogously from $(v,q)$.  Thus
+\[
+ L=\{e_0,e_1,n\}^2.
+\]
+The two coordinates are independent.  A finite colour-preserving partial map
+extends by extending the used permutations of $U,V$, the local shifts
+$p\mapsto p+a(u)$ and $q\mapsto q+b(v)$, and finally the clone permutations.
+Hence the structure is homogeneous.  Infinite clone fibres also give SAP.
+
+For one coordinate the product is
+\[
+ e_i\starprod e_j=\{e_{i+j}\},\qquad
+ e_i\starprod n=n\starprod e_i=\{n\},\qquad
+ n\starprod n=\{e_0,e_1,n\}.
+\]
+Its reachable profiles are exactly
+$\{e_0\},\{e_1\},\{n\}$ and the full three-element palette, hence are
+$2$-Helly.  The nine-colour algebra is their direct product, so its reachable
+profiles are boxes and are again $2$-Helly.  This proves semantic CCO; the
+coordinate description shows that the resulting triangle table is exactly
+the age just described.
+
+Let $X$ mean equality of the $U$- and $V$-coordinates.  Its palette is
+\[
+ X=\{e_0,e_1\}\times\{e_0,e_1\}.
+\]
+Inside an $X$-class let $K$ additionally remember $p+q$; its palette is the
+diagonal
+\[
+ K=\{(e_0,e_0),(e_1,e_1)\}.
+\]
+Then $[X:K]=2$.  Every unary predicate $P$ orienting these two $K$-classes has
+the form
+\[
+ P(u,v,p,q,n)=p+q+h(u,v)
+\tag{3}\label{eq:bad-diagonal-orientation}
+\]
+for some function $h:U\times V\to\mathbb F_2$.
+
+Choose distinct $u_0,u_1$ and $v_0,v_1$, put
+$h_{ij}=h(u_i,v_j)$, and for $\varepsilon\in\mathbb F_2$ choose fresh clones
+\[
+ b_\varepsilon=(u_0,v_0,\varepsilon,\varepsilon+h_{00}),
+ \qquad d=(u_1,v_1,h_{11},0),
+ \qquad z_\varepsilon=(u_0,v_1,\varepsilon,0).
+\]
+Then $P(b_\varepsilon)=P(d)=0$ while
+$P(z_\varepsilon)=\varepsilon+h_{01}$.  Independently of $\varepsilon$,
+\[
+ \operatorname{col}(b_\varepsilon,d)=(n,n),\qquad
+ \operatorname{col}(b_\varepsilon,z_\varepsilon)=(e_0,n),\qquad
+ \operatorname{col}(z_\varepsilon,d)=(n,e_0).
+\]
+Thus the two expanded triangles
+$\{b_0,d,z_0\}$ and $\{b_1,d,z_1\}$ have isomorphic bases
+$\{b_0,d\}\cong\{b_1,d\}$ but prescribe opposite unary values on their new
+vertices.  In any old-language amalgam the two paths through the first base
+point force
+\[
+ \operatorname{col}(z_0,z_1)
+ \in\{(e_0,e_0),(e_0,e_1),(e_0,n)\},
+\]
+while the paths through the second force
+\[
+ \operatorname{col}(z_0,z_1)
+ \in\{(e_0,e_0),(e_1,e_0),(n,e_0)\}.
+\]
+The intersection is the singleton $\{(e_0,e_0)\}\subseteq K$.  The
+orientation axiom therefore requires equal $P$-values, contradicting the two
+extensions.  Hence every orientation fails AP.
+
+On the other hand the two finer coordinate covers
+\[
+ \{(e_0,e_0)\}
+ <\{(e_0,e_0),(e_1,e_0)\},
+ \qquad
+ \{(e_0,e_0)\}
+ <\{(e_0,e_0),(e_0,e_1)\}
+\]
+are generated by individual coordinate orbitals and can be split
+successively.  The obstruction therefore concerns a coarse preselected
+cover, not the bottom-up orbital construction used below.
+\end{proof}
+
+\subsection{Exact-complement pivot in a typed pair shadow}
+
+For current unary sorts $a,b$, let $\mathcal T^{ab}$ denote the finite set of
+canonical raw pair types from $a$ to $b$.  A typed exact domain is a nonempty
+finite intersection of typed reachable profiles.  If $K_a\subseteq
+\mathcal T^{aa}$ and $K_b\subseteq\mathcal T^{bb}$ are exact equivalences,
+write
+\[
+ \operatorname{Sat}_{K_a,K_b}(D)
+   =K_a\starprod D\starprod K_b.
+\]
+
+\begin{lemma}[Typed strong exact saturation commutes with nonempty meets]
+\label{lem:exact-saturation-intersection}
+Let $K_a\in\mathcal H_{aa}$ and $K_b\in\mathcal H_{bb}$
+be nonempty strong exact equivalence palettes in the
+current SAP+homomorphic-CCO pair-shadow calculus.
+If the nonempty strong exact menus
+$D_i\subseteq\mathcal T^{ab}$ have a
+\emph{nonempty} common exact intersection
+$D=\bigcap_iD_i$, then
+\[
+ \boxed{\quad
+ \bigcap_i(K_a\starprod D_i\starprod K_b)
+     =K_a\starprod D\starprod K_b .
+ \quad}
+\]
+Every product is the supported STRONG diversity product
+of distinct-vertex legal triangles. This is a separate
+application of the strong exact calculus, not the
+equality-inclusive raw identity
+\cref{lem:full-typed-exact-saturation}.
+\end{lemma}
+\begin{proof}
+The strong typed distributivity
+\cref{lem:typed-exact-products,eq:typed-distrib}
+gives
+\[
+ K_a\starprod\Bigl(\bigcap_iD_i\Bigr)
+       =\bigcap_i(K_a\starprod D_i).
+\]
+All factors and their common intersection
+are nonempty strong exact menus under the
+hypotheses of that theorem. Compose on the
+right by the nonempty exact $K_b$ and use the
+same distributivity once more. This yields
+the displayed equation. No actual represented
+logical identity was introduced into the
+off-diagonal palette; in particular the result
+makes no assertion for AP-only networks where
+formal vertices can be identified.
+\end{proof}
+
+For an exact domain $A$ containing the identity cell, let
+$\langle A\rangle$ denote the stable exact equivalence obtained from the
+increasing powers of $A$.
+
+\begin{theorem}[Exact closure separation]
+\label{thm:closure-separation}
+Let $A,B$ be nonempty full exact same-sort domains in the
+\emph{represented typed pair shadow}, both containing its identity
+cell $e$. If $A\cap B=\{e\}$, then
+\[
+ \langle A\rangle\cap\langle B\rangle=\{e\}.
+\]
+\end{theorem}
+\begin{proof}
+Apply the relative-$K$ theorem
+\cref{lem:ep-relative-K-closure} on the actual homogeneous
+AP+CCO sort represented by this shadow, using its own equality
+orbital as $K$. When the shadow is a quotient of an earlier real
+sort, its identity cell pulls back to the \emph{whole quotient
+kernel}, not necessarily to original real equality. Equivalently,
+one may apply the same relative-$K$ theorem to those full
+$K$-bisaturated old exact relations. In either reading, products
+are actual represented products, not an artificial unit adjoined
+to diversity relations.
+\end{proof}
+
+Fix a source sort $a_*$ and an orbital parity cover
+\[
+ Y<X,
+ \qquad O=X\setminus Y,
+ \qquad [X:Y]=2.
+\]
+Choose an inclusion-maximal exact equivalence $K_*$ satisfying
+\[
+ Y\leq K_*,
+ \qquad K_*\cap X=Y.
+\tag{4}\label{eq:max-exact}
+\]
+Such a $K_*$ exists because $Y$ is full exact; the
+even and odd orbit relations $Y,O$ are represented
+stabilized word profiles. Put
+$F_*=K_*\vee X$ and, in the
+$K_*$-semantic quotient, write
+\[
+ e_*=K_*,\qquad
+ t_*=K_*\starprod O\starprod K_*.
+\]
+By the common SAP-free maximal parity-gate theorem
+\cref{thm:foundational-maximal-parity-gate},
+the relation $t_*$ is a nonidentity full exact
+involution, with $t_*^2=e_*$ and
+$[F_*:K_*]=2$.
+
+
+
+The common source theorem
+\cref{thm:foundational-rigid-groupoid} constructs all exact
+functional bridges for arbitrary named transitive original
+sorts in the \emph{represented full exact} AP+CCO algebra.
+Here we apply it to the current homogeneous typed pair shadow
+at the maximal gate $K_*$ from \eqref{eq:max-exact}.
+In particular the exact-bridge equations are
+\eqref{eq:exact-bridge} from Foundations;
+no new formal identity cell is adjoined.
+
+\begin{proposition}[Rigid bridge groupoid]
+\label{prop:rigid-bridge-groupoid}
+Starting from $(a_*,K_*)$ and closing under full exact
+bridges gives one finite connected component of current sorts.
+For each reached sort $b$ its exact kernel $K_b$ is
+path-independent. The quotient-functional $K_a,K_b$-bisaturated
+full exact correspondences form the hom-set
+$\mathcal H(a,b)$ of a connected groupoid with finite
+elementary abelian $2$-group isotropy; every nonempty hom-set
+is a torsor. In addition, for any bridge $R:a_*\to b$,
+\[
+             t_b=R^\smile t_*R
+\]
+is a path-independent nonidentity involution in the
+$K_b$-semantic quotient, and every nonidentity exact
+equivalence on that quotient contains $t_b$.
+\end{proposition}
+\begin{proof}
+The finite groupoid, kernels, torsors and isotropy follow from
+\cref{thm:foundational-rigid-groupoid}. The source involution
+$t_*$ is an original full exact nonidentity isotropy arrow;
+\cref{thm:foundational-maximal-parity-gate} states that it is
+contained in every original full exact equivalence strictly
+above $K_*$. Apply the common dominant-involution transport
+lemma \cref{lem:foundational-rigid-gate-transport} to obtain
+path-independence, nontriviality and the required inclusion
+in every nonidentity full exact quotient equivalence at every
+reached object. The quotient conclusion uses only the full exact
+inverse-image direction of quotient-word pullback; it does not
+assert unrestricted exact descent of mixed old relations.
+\end{proof}
+
+
+
+
+
+Choose base bridges $B_b:a_*\to b$, with
+$B_{a_*}=K_*$. Since the finite isotropy group
+$\mathcal H_*$ is elementary abelian and
+$t_*\ne K_*$, choose a linear character
+$\chi_*:\mathcal H_*\to\mathbb F_2$ with
+$\chi_*(t_*)=1$. Every arrow $R:b\to c$ has a
+unique representation $R=B_b^\smile hB_c$ with
+$h\in\mathcal H_*$. Define
+\[
+ \chi(R)=\chi_*(h).
+ \tag{6}\label{eq:groupoid-character}
+\]
+
+\begin{proposition}[Groupoid phase labelling]
+\label{prop:groupoid-phase}
+The character $\chi$ is a functor to $\mathbb F_2$,
+with $\chi(t_b)=1$ for every reached sort $b$.
+The quotient points admit global binary labels
+satisfying
+\[
+ \lambda(Rq)=\lambda(q)+\chi(R).
+ \tag{7}\label{eq:quotient-phase}
+\]
+A raw orbital whose $K_a,K_b$-semantic cylinder is
+rigid has exactly its forced character phase; a
+nonrigid cylinder admits both phase differences.
+All finite old structures admit such phase
+markings, hence the unary phase expansion is
+reduct-surjective.
+\end{proposition}
+\begin{proof}
+The functoriality, freeness, global seed assignment,
+rigid/nonrigid dichotomy and reduct-surjectivity
+are \cref{thm:foundational-rigid-character},
+applied with distinguished $t_*$.
+The selected source parity cover is actually
+oriented because $t_*$ has character one.
+These conclusions alone do not prove SAP or CCO
+of the marked age: they are verified separately
+by phase totality/primality below.
+\end{proof}
+
+For component sorts $a,b$ and
+$\delta\in\mathbb F_2$, let $B_{ab}^{\delta}$
+be the union of rigid arrows of character
+$\delta$. Nonrigid cylinders belong to neither
+deterministic sheet. The allowed raw pair
+types at endpoint phase difference $\delta$ are
+\[
+ A_{ab}^{\delta}
+  = B_{ab}^{\delta}\cup
+    \{\text{raw types in nonrigid cylinders}\}.
+\]
+
+\begin{lemma}[Rigid-product factorisation]
+\label{lem:rigid-product-factorisation}
+Let $A\subseteq\mathcal T^{ab}$ and
+$B\subseteq\mathcal T^{bc}$ be nonempty
+reachable \emph{represented} profiles.
+If $AB\subseteq R$ for one rigid arrow
+$R\in\mathcal H(a,c)$, then $b$ is in the
+same rigid component and there are arrows
+$R_1\in\mathcal H(a,b)$,
+$R_2\in\mathcal H(b,c)$ with
+\[
+ A\subseteq R_1,\qquad B\subseteq R_2,
+                  \qquad R_1R_2=R.
+\]
+\end{lemma}
+\begin{proof}
+This is \cref{lem:foundational-rigid-factor}
+in the current full exact typed pair shadow.
+Its proof uses only seriality, exact convolution
+and actual represented composition; no source SAP.
+\end{proof}
+
+\begin{lemma}[Totality of the lifted phase product]
+\label{lem:phase-totality}
+Every compatible pair of allowed lifted atomic pair types has an output with
+the required xor of endpoint phase differences.
+\end{lemma}
+
+\begin{proof}
+Only the case in which both output endpoint sorts lie in the rigid component
+is nontrivial.  Suppose the two input phase differences are $\alpha,\beta$,
+but every raw output has phase different from $\alpha+\beta$.  Any output in
+a nonrigid cylinder would be phase-flexible, so after bisaturating the
+nonempty raw output profile by the endpoint exact equivalences we obtain a
+nonempty exact semantic domain $D$ contained in the rigid hom-torsor
+$\mathcal H(a,c)$, all of whose arrows have the same wrong character.
+
+By \cref{lem:foundational-rigid-affine}, $D=dS$ for an exact subgroup
+$S\le\mathcal H_a$.  Constancy of $\chi$ on $D$ gives
+$S\le\ker\chi$.  If $S$ is nontrivial, it is a nonidentity exact equivalence
+in the $K_a$-semantic quotient and cannot contain $t_a$, since
+$\chi(t_a)=1$.  This contradicts the transported exact gate in
+\cref{prop:rigid-bridge-groupoid}.  Hence $S$ is trivial and the output
+profile lies in one rigid bridge.  By
+\cref{lem:rigid-product-factorisation} both input profiles lie in rigid
+bridges, whose characters add to the character of the output bridge.  This is
+exactly the required phase $\alpha+\beta$, a contradiction.
+\end{proof}
+
+\begin{theorem}[Typed exact phase primality]
+\label{thm:typed-epp}
+Let $P_1,\ldots,P_m\subseteq\mathcal T^{ab}$ be reachable profiles between
+component sorts.  If
+\[
+ \varnothing\ne\bigcap_iP_i\subseteq B_{ab}^{\delta},
+\tag{8}\label{eq:epp-hyp}
+\]
+then $P_j\subseteq B_{ab}^{\delta}$ for some $j$.
+\end{theorem}
+
+\begin{proof}
+Bisaturate $A_i=K_aP_iK_b$.  By
+\cref{lem:exact-saturation-intersection}, their intersection is the
+saturation of the old nonempty intersection, so it is nonempty and contained
+in $B_{ab}^{\delta}$.  Suppose no $A_i$ is contained in that deterministic
+sheet and choose a deletion-minimal counterexample.  Put $D=\bigcap_iA_i$.
+It is an exact domain contained in the rigid hom-torsor.  Hence
+$D=dS$ by \cref{lem:foundational-rigid-affine}, with
+$S\le\ker\chi$.  The transported exact gate forces $S$ to be trivial.
+Therefore $D=\{d\}$ at the semantic level.
+
+Right-translate every $A_i$ by $d^{\smile}$.  This preserves exactness and all
+intersections, turns the cross-sort domains into same-sort domains at $a$, and
+sends the deterministic sheet to phase $0$.  We may therefore assume
+\[
+ \bigcap_iA_i=\{K_a\}.
+\]
+Put $A=A_1$ and $B=\bigcap_{i>1}A_i$.  Both are nonempty exact same-sort
+domains containing $K_a$, and $A\cap B=\{K_a\}$.  Deletion-minimality says
+that neither $A$ nor $B$ is contained in phase $0$; consequently both stable
+exact-equivalence closures are nonidentity.  Exact closure separation,
+\cref{thm:closure-separation}, gives
+\[
+ \langle A\rangle\cap\langle B\rangle=\{K_a\},
+\]
+whereas the transported exact gate forces both nonidentity closures to contain
+$t_a$.  Contradiction.
+\end{proof}
+
+\begin{lemma}[Phase-primality sufficiency]
+\label{lem:phase-primality-sufficiency}
+Assume a finite typed unary phase sector is reduct-surjective, has total lifted
+atomic products, and satisfies \cref{thm:typed-epp}.  If a lifted path has old
+endpoint profile $P$ and total endpoint phase difference $\varepsilon$, then
+its endpoint profile is exactly
+\[
+ P\cap A_{ab}^{\varepsilon}.
+\tag{9}\label{eq:lifted-profile-normal-form}
+\]
+Consequently the lifted product is associative, its reachable profiles are
+typed $2$-Helly, and the unary expansion has SAP and semantic CCO.
+\end{lemma}
+
+\begin{proof}
+Induct on path length. The one-edge case is the definition.
+To keep all typed converses explicit, write the intermediate
+sorts as $i,j,k$: the prefix profile is
+$S:i\to j$, the final old atom $b:j\to k$,
+and the desired output atom $c:i\to k$.
+Let their phases be $\alpha,\beta,\varepsilon$,
+respectively, with $\varepsilon=\alpha+\beta$.
+The forward inclusion in
+\eqref{eq:lifted-profile-normal-form} is formal.
+For the converse choose
+\[
+ c\in(S\starprod\{b\})\cap A_{ik}^{\varepsilon},
+ \qquad T=\{c\}\starprod\{\bar b\}
+                 \subseteq L_{ij}.
+\]
+The original expression $c\starprod b$ would
+be \emph{ill-typed} for different intermediate
+sorts. The typed Peirce equivalence gives
+$S\cap T\ne\varnothing$ directly from
+$c\in S\starprod\{b\}$.
+By induction $S\cap A_{ij}^{\alpha}\ne\varnothing$.
+Totality of the lifted fork with colours
+$(c,\varepsilon)$ and $(\bar b,\beta)$
+gives $T\cap A_{ij}^{\alpha}\ne\varnothing$;
+reversal preserves a binary phase difference
+because $\mathbb F_2$ has exponent two.
+If
+$S\cap T\cap A_{ij}^{\alpha}$ were empty, then
+the nonempty intersection $S\cap T$ would lie
+in the opposite deterministic sheet
+$B_{ij}^{1-\alpha}$.  The two-profile case of
+\cref{thm:typed-epp} would put $S$ or $T$ wholly in that wrong sheet,
+contradicting the two phase-compatible witnesses.  Hence a correct-phase
+intermediate colour exists and the induction closes.
+
+The normal form depends only on the old word and xor of the edge phases, so
+the two parenthesisations of a product agree; the lifted product is
+associative.  Finally let $P_i\cap A^{\varepsilon}$ be pairwise-intersecting
+lifted reachable profiles.  Old $2$-Helly gives
+$D=\bigcap_iP_i\ne\varnothing$.  If
+$D\cap A^{\varepsilon}=\varnothing$, then
+$D\subseteq B^{1-\varepsilon}$, and full exact phase primality puts one
+$P_j$ wholly in the wrong sheet, contradicting nonemptiness of its lifted
+profile. Thus the lifted profiles are $2$-Helly. The fixed-vertex
+completion criterion \cref{lem:helly-to-cco}, applied to the full lifted
+triangle class and its total realisable forks, gives SAP and semantic CCO.
+\end{proof}
+
+\begin{theorem}[Safe exact-complement split]
+\label{thm:safe-exact-split}
+Suppose a current unary sort of a finite-sorted symmetric SAP+CCO pair-shadow
+has a proper finite relative index.  Then there is a finite precompact unary
+expansion which is reduct-surjective, preserves SAP and CCO, and orients an
+index-two orbital parity layer.  The split is chosen from a maximal exact
+complement; it need not orient a preassigned finite cover.
+\end{theorem}
+
+\begin{proof}
+Use \cref{thm:orbital-parity} to choose a reachable parity cover $Y<X$ and
+choose the maximal exact complement $K_*$ in \eqref{eq:max-exact}.  The rigid
+bridge groupoid and its character are given by
+\cref{prop:rigid-bridge-groupoid,prop:groupoid-phase}.  The latter gives a
+finite unary phase expansion which is reduct-surjective and which orients the
+source parity cover.  Totality of its pair product is
+\cref{lem:phase-totality}, and exact phase primality is
+\cref{thm:typed-epp}.  Apply
+\cref{lem:phase-primality-sufficiency}.  The resulting pair-shadow therefore
+has SAP and semantic CCO.  All participating sorts are synchronised by the
+single groupoid character; sorts outside the rigid component receive the
+constant new bit $0$.
+\end{proof}
+
+\subsection{Finite termination and the typed terminal interface}
+
+\begin{theorem}[Finite-cover elimination]
+\label{thm:finite-cover-elimination}
+Starting from a class satisfying Assumption~\ref{ass:general}, finitely many
+applications of \cref{thm:safe-exact-split} produce a finite precompact unary
+expansion $\K^{\mathrm{term}}$ which has SAP and CCO and in which every proper
+same-sort cover of definable equivalences has infinite relative index.
+\end{theorem}
+
+\begin{proof}
+At each stage regard the realised unary valuations as
+current named sorts. The current age retains SAP and
+semantic CCO by the preceding safe split theorem.
+If a sort still has a proper finite relative
+equivalence index,
+\cref{thm:orbital-parity,thm:safe-exact-split}
+provide a genuine maximal character split.
+Every participating sort has a nontrivial
+phase-one same-sort involution, whose old
+atomic support is absent inside each child.
+Consequently the common rank-drop lemma
+\cref{lem:exact-character-rank-drop}
+applies to the positive integer
+\[
+                      \Phi=\sum_a3^{k_a},
+\]
+where $k_a$ counts the current nonidentity
+same-sort pair orbitals. Each nontrivial step
+strictly decreases $\Phi$, and thus only
+finitely many steps are possible.
+At termination no proper finite same-sort
+relative index remains, since the same
+parity/safe-split argument would then allow
+another step.
+
+This has the same numerical descent as the
+SAP-free foundational result
+\cref{thm:ap-finite-character-elimination},
+but the current V27 safe splits have the
+\emph{additional SAP preservation} proved
+by \cref{thm:safe-exact-split}. Finiteness,
+precompactness and reduct-surjectivity persist
+under finite composition of unary expansions.
+\end{proof}
+
+The preceding argument was formulated at the canonical pair-shadow level.  We
+record separately the full-language interface needed both for higher arity and
+for the terminal Ramsey/EPPA theorems.
+
+\begin{lemma}[Root-free phase-safe detours]
+\label{lem:root-free-phase-safe}
+Fix one safe split and let $c\in\mathcal T^{ab}$ be an old canonical pair
+type together with an allowed endpoint phase difference $\varepsilon$.
+There is a finite path gadget $W(c,\varepsilon)$ between two distinct roots
+$x,y$ of sorts $a,b$ such that:
+\begin{enumerate}[label=(\roman*)]
+\item the root pair $xy$ itself is left unspecified and every internal vertex
+      is private;
+\item every consecutive edge carries a realised complete canonical
+      two-point type with phase-compatible endpoint bits, and the gadget
+      carries no relation tuple of support at least three;
+\item if $P(c)$ is the old endpoint profile of the path, then
+      $c\in P(c)$ and every member of $P(c)$ is compatible with the prescribed
+      endpoint phases.
+\end{enumerate}
+If both endpoint sorts lie in the active rigid component, one may choose a
+three-edge detour and, with
+$C(c)=K_a\starprod\{c\}\starprod K_b$, arrange
+\[
+        c\in P(c)\subseteq C(c).
+\]
+No assertion that $C(c)$ itself is reachable or exact is made.
+\end{lemma}
+
+\begin{proof}
+First suppose that $a,b$ lie in the active rigid component.  Choose a global
+phase labelling supplied by \cref{prop:groupoid-phase} which realises the
+allowed lifted pair $(c,\varepsilon)$ on actual roots $x,y$.  Let
+$B_a:a_*\to a$ and $B_b:a_*\to b$ be the fixed base bridges used in
+\eqref{eq:groupoid-character}.  Choose distinct source representatives
+$u,v$ with $uB_ax$ and $vB_by$; infinitude of the relevant source
+$K_*$-classes, obtained from SAP, permits the representatives to be chosen
+fresh even when the two quotient classes coincide.  Retain only the path
+\[
+        x-u-v-y.
+\]
+Write
+$r_a=\operatorname{tp}_2(x,u)$,
+$d=\operatorname{tp}_2(u,v)$ and
+$r_b=\operatorname{tp}_2(v,y)$.  The actual quadruple gives
+$c\in r_a\starprod d\starprod r_b$.  Moreover
+\[
+ \{r_a\}\subseteq B_a^{\smile},\qquad
+ \{d\}\subseteq B_a\starprod C(c)\starprod B_b^{\smile},\qquad
+ \{r_b\}\subseteq B_b,
+\]
+so associativity and the bridge identities give
+\[
+ P(c)=\{r_a\}\starprod\{d\}\starprod\{r_b\}
+ \subseteq
+ B_a^{\smile}B_a\starprod C(c)\starprod
+ B_b^{\smile}B_b
+ =K_a\starprod C(c)\starprod K_b=C(c).
+\]
+If $C(c)$ is rigid, every type in it has the unique phase difference
+$\varepsilon$; if it is nonrigid, \cref{prop:groupoid-phase} says that both
+phase differences are allowed.  Thus every possible root type forced by this
+path is phase-compatible.
+
+If at least one endpoint sort is outside the active component, realise
+$(c,\varepsilon)$ on an actual pair $x,y$, choose a fresh point $z$, and
+retain only the two complete two-point structures on $xz$ and $zy$.  Their
+endpoint profile contains $c$.  The phase sector imposes no old pair-type
+restriction through a nonactive endpoint (and nonactive sorts carry the
+constant bit $0$ when both endpoints are nonactive), so every possible root
+type of this two-edge path is again phase-compatible.  In both cases the
+internal vertices are made private and no higher-support tuple is retained.
+\end{proof}
+
+\begin{theorem}[Full-language finite-cover elimination]
+\label{thm:full-language-elimination}
+Let $\mathcal C$ be a homogeneous class in a finite relational language.
+Pass to the finite quantifier-free definitional expansion naming all realised
+unary and canonical pair types.  Assume:
+\begin{enumerate}[label=(\roman*)]
+\item all canonical pair types are symmetric;
+\item the canonical pair shadow has SAP and semantic CCO;
+\item complete old substructures are irreducible in the working expansion,
+      and higher-support relations are \emph{support-normal} in the following
+      explicit sense.  Whenever all specified support-$\ge3$ tuples of a
+      finite partial canonical structure lie in finitely many distinguished
+      complete old substructures and its canonical pair shadow admits a
+      cycle-constrained completion fixing every pair inside those factors,
+      the full partial structure admits a completion in $\mathcal C$ fixing
+      each distinguished factor pointwise as an induced structure.  For the
+      coherent-EPPA conclusion we moreover assume the automorphism-preserving
+      form of this interface: an isomorphism-natural pair-shadow completion
+      can be lifted while preserving every automorphism of the partial full
+      structure which preserves the distinguished factors.
+\end{enumerate}
+Then the iterated exact-complement construction lifts to the full finite
+language.  It yields a finite precompact unary expansion
+$\mathcal C^{\mathrm{term}}$ whose reduct is $\mathcal C$, whose age has SAP,
+and whose pair shadow is semantic CCO with all proper same-sort covers of
+infinite relative index.
+\end{theorem}
+
+\begin{proof}
+One split is lifted as follows.  Canonical pair predicates make every complete
+old factor irreducible, so a homomorphism-embedding is automatically an
+embedding on each such factor.  Start with a phase-compatible complete
+completion of the canonical pair shadow.  For every pair of old vertices
+whose old canonical two-point type was unspecified, let $(c,\varepsilon)$ be
+its completed lifted pair type and attach a private copy of
+$W(c,\varepsilon)$ from \cref{lem:root-free-phase-safe}, leaving the root pair
+itself unspecified.  The gadgets carry no support of size at least three.  A
+finite family of old complete factors is kept distinguished.
+
+Consider a simple sparse cycle in the resulting full-language partial
+structure.  If it avoids private vertices, it was already an old specified
+cycle.  Otherwise degree two forces it to traverse each encountered private
+gadget from one old root to the other.  Contract every such path to its chosen
+completed pair type $c$.  The contracted pair cycle lies in the
+phase-compatible complete pair shadow.  Realise that contracted cycle in the
+old homogeneous structure and, for every contracted gadget edge, strongly
+amalgamate a realisation of $W(c,\varepsilon)$ over the same endpoint
+canonical two-point structure.  The expanded sparse cycle therefore
+homomorphism-embeds into the old structure.  Private internal vertices occur
+in no support-$\ge3$ tuple and have Gaifman degree two along their own path,
+so no new irreducible higher-support obstruction can contain one.
+
+By hypothesis (iii) of the theorem, applied
+to the pair-shadow cycle completion just verified and to the frozen complete
+higher-support factors, the whole sparse partial structure has a
+homomorphism-embedding into the old homogeneous structure.  Any
+collisions are unfolded by \cref{lem:collision-unfolding} while simultaneously
+preserving all distinguished complete factors.  Restrict to the images of the
+old vertices.  Originally specified canonical two-point types and every
+higher-support tuple on a distinguished old factor are unchanged; on a pair
+which received a gadget, the surviving path forces its induced root type to
+belong to $P(c)$ and hence to be phase-compatible by
+\cref{lem:root-free-phase-safe}.  Thus the restriction is a complete
+phase-compatible full-language lift.
+
+Applied to a free partial amalgam of two expanded factors, with both factors
+distinguished, this proves SAP of the split class.  Applied without
+distinguished factors, it proves the required full-language
+cycle/irreducible-completion interface.  Notice that nowhere is a semantic
+cell asserted to be a reachable profile or an exact domain.
+
+After one split the language is still finite, pair types remain symmetric,
+and the same hypotheses are preserved.  The pair-shadow potential $\Phi$ from
+\cref{thm:finite-cover-elimination} therefore proves finite termination in the
+full language as well.  Reduct-surjectivity at each stage is inherited from
+\cref{prop:groupoid-phase}.
+\end{proof}
+

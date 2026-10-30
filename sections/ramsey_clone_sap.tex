@@ -1,0 +1,56 @@
+% Self-contained A108 pure-clone input for the Ramsey argument.
+\section{Pure-clone SAPification of an AP source}\label{sec:internal-clone-sap}
+\begin{theorem}[Pure-clone SAPification, A108]\label{thm:internal-clone-sap}
+Let $Q$ be countable and homogeneous in a finite complete symmetric binary
+language, with AP, triangle-definedness and semantic homomorphic CCO.
+On $\widehat Q=Q\times\mathbb N$ define a new diversity atom $c$
+between distinct clones of one old point, retaining old $Q$ colours between
+distinct first coordinates. Then $\widehat Q$ is homogeneous,
+triangle-defined, has SAP and semantic homomorphic CCO, and the clone
+equivalence $K=\mathrm{Id}\cup c=c^2$ is exact with quotient $Q$.
+The same holds in finitely many original unary sorts, with one clone atom
+per sort.
+\end{theorem}
+\begin{proof}
+Homogeneity: a finite partial clone isomorphism induces a partial
+old-$Q$ isomorphism because $c$ records equality of old owners and old
+colours separate distinct old owners. Extend it to an automorphism of $Q$;
+extend the finite injections between the clone fibres to bijections of
+$\mathbb N$ independently in each fibre. Conversely an automorphism of the
+clone source projects to one of $Q$.
+
+Triangle-definedness: in a locally legal complete clone diagram,
+$\mathrm{Id}\cup c$ defines an equivalence. Every permitted
+$(c,a,b)$ triangle with a third point outside this class requires $a=b$.
+Collapse all clone classes. The resulting complete $Q$ diagram has all
+allowed triangles, hence embeds into $Q$. Distinct clone indices then
+embed the original diagram. The reverse implication follows by considering
+any locally legal $Q$ diagram using only old atoms upstairs.
+
+SAP: given finite clone structures $B,C$ over a common $A$, collapse their
+clone equivalences and AP-amalgamate their owner diagrams in $Q$.
+The quotient amalgam may identify off-base owners. Give the corresponding
+finite clone fibres sufficiently many pairwise distinct real clone indices
+on the two sides, identifying only the original real base vertices. This
+realises all old colours and all $c$-pairs and is a STRONG real amalgam.
+
+CCO: first allow original logical equalities by contracting their
+consistency components; a diversity edge inside such a component or
+incompatible parallel quotient colours already produce a forbidden
+specified simple cycle (take shortest equality paths). For any finite
+partial clone diagram replace its specified $c$-edges by logical
+equalities in a $Q$-diagram and retain all old atoms. Every specified
+simple $Q$-cycle lifts through the equality paths to a specified simple
+clone cycle (different equality components give disjoint interiors), hence
+is $Q$-completable. Apply semantic CCO of $Q$. Give all originally distinct
+formal real vertices distinct clone indices over their selected $Q$ values,
+so each old diversity edge remains correct and every specified $c$-edge
+becomes an edge between distinct clones of one $Q$ point.
+Conversely, a specified simple $Q$ cycle admits a clone completion by
+choosing distinct clone indices over any $Q$ homomorphic solution;
+semantic CCO upstairs followed by projection gives CCO downstairs.
+
+Finally, for any clone point $x$ its $c$-neighbourhood is its infinite
+clone fibre without $x$. A two-step $c;c$-path reaches every ordered pair
+of this fibre, including equal endpoints, and no point outside it.
+Thus $c^2=K$, proving exactness.\end{proof}
