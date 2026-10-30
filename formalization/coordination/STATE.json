@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 294,
+  "revision": 295,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -1811,7 +1811,7 @@
       }
     },
     "B036": {
-      "state": "SUBMITTED",
+      "state": "REVIEWING",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b036_counterexample",
@@ -1839,7 +1839,19 @@
         "conclusion": "success",
         "axiom_audit": "allowlist"
       },
-      "report_path": "formalization/coordination/submissions/B036.md"
+      "report_path": "formalization/coordination/submissions/B036.md",
+      "review": {
+        "project_id": 3,
+        "actor_id": "independent_review",
+        "head_sha": "2709a2b9292d8d1bbb08bdc0b6e401efe4bc4d70",
+        "approved": false,
+        "independence": {
+          "identity": "/root/independent_review",
+          "non_author": true,
+          "summary": "Actual stable registered review-only agent authored or designed none of this complete B036 preparation, mathematical implementation, arbitrary-signature recovery, consumer, diagnostics, tests, repairs or final reports. It personally read every one of the 53 modules, actual source contracts and proof notes once, with no implementation helpers or duplicate build/audit/test.",
+          "report_path": "formalization/coordination/reviews/B036-final.md"
+        }
+      }
     },
     "B037": {
       "state": "IN_PROGRESS",
@@ -7598,6 +7610,24 @@
           "axiom_audit": "allowlist"
         },
         "report_path": "formalization/coordination/submissions/B036.md"
+      }
+    },
+    {
+      "revision": 295,
+      "project_id": 3,
+      "actor_id": "independent_review",
+      "event": "review",
+      "package_id": "B036",
+      "details": {
+        "actor_id": "independent_review",
+        "package_id": "B036",
+        "head_sha": "2709a2b9292d8d1bbb08bdc0b6e401efe4bc4d70",
+        "independence": {
+          "identity": "/root/independent_review",
+          "non_author": true,
+          "summary": "Actual stable registered review-only agent authored or designed none of this complete B036 preparation, mathematical implementation, arbitrary-signature recovery, consumer, diagnostics, tests, repairs or final reports. It personally read every one of the 53 modules, actual source contracts and proof notes once, with no implementation helpers or duplicate build/audit/test.",
+          "report_path": "formalization/coordination/reviews/B036-final.md"
+        }
       }
     }
   ],
