@@ -75,6 +75,21 @@ theorem exists_terminal (rank : State → ℕ) (Terminal : State → Prop)
         exact ⟨c,.cons hab tail,hc,History.length_bound rank descends (.cons hab tail)⟩
   exact all (rank initial) initial rfl
 
+/-- No infinite chain of actual rank-decreasing source steps exists.
+The explicit bound also covers finite sources and zero initial potential. -/
+theorem no_infinite_steps (rank : State → ℕ)
+    (descends : ∀ {a b}, Step a b → rank b < rank a)
+    (source : ℕ → State) (next : ∀ n, Step (source n) (source (n+1))) : False := by
+  have bound : ∀ n, rank (source n) + n ≤ rank (source 0) := by
+    intro n
+    induction n with
+    | zero => simp
+    | succ n ih =>
+      have hlt := descends (next n)
+      omega
+  have h := bound (rank (source 0) + 1)
+  omega
+
 /-- The same theorem with explicit residual obstruction data. The absence
 of a split is not silently declared terminal: every actual obstruction must
 construct a next step. -/
