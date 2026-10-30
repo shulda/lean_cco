@@ -43,6 +43,8 @@ theorem withLinearOrder_irreducible {L : Language.{u}} {V : Type v}
   rintro ⟨d⟩
   have hL := d.leftProper
   have hR := d.rightProper
+  change ¬ ∀ z : V, ∃ x : d.Left, d.leftIn x = z at hL
+  change ¬ ∀ z : V, ∃ x : d.Right, d.rightIn x = z at hR
   push_neg at hL hR
   obtain ⟨x, hx⟩ := hL
   obtain ⟨y, hy⟩ := hR
@@ -55,18 +57,18 @@ theorem withLinearOrder_irreducible {L : Language.{u}} {V : Type v}
   · have hr : A.withLinearOrder.rel (.inr ()) ![x, y] := hxy
     rcases (d.free.rel_iff (.inr ()) ![x, y]).mp hr with
       ⟨xs, _, he⟩ | ⟨xs, _, he⟩
-    · exact hx (xs 0) (congrFun he 0).symm
-    · exact hy (xs 1) (congrFun he 1).symm
+    · exact hx (xs (0 : Fin 2)) (congrFun he (0 : Fin 2)).symm
+    · exact hy (xs (1 : Fin 2)) (congrFun he (1 : Fin 2)).symm
   · have hr : A.withLinearOrder.rel (.inr ()) ![y, x] := hyx
     rcases (d.free.rel_iff (.inr ()) ![y, x]).mp hr with
       ⟨xs, _, he⟩ | ⟨xs, _, he⟩
-    · exact hx (xs 1) (congrFun he 1).symm
-    · exact hy (xs 0) (congrFun he 0).symm
+    · exact hx (xs (1 : Fin 2)) (congrFun he (1 : Fin 2)).symm
+    · exact hy (xs (0 : Fin 2)) (congrFun he (0 : Fin 2)).symm
 
 theorem orderedClass_allIrreducible {L : Language.{u}} (K : Class.{u,v} L) :
     AllIrreducible (OrderedClass K) := by
   rintro V C ⟨old, o, _, rfl⟩
   letI := o
-  exact withLinearOrder_irreducible old
+  exact @withLinearOrder_irreducible L V old o
 
 end CCO.UnaryHN.Native
