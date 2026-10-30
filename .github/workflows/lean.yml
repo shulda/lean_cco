@@ -65,6 +65,10 @@ jobs:
         id: eppa_key
         run: python3 tools/verify_external_provider.py --cache-key --github-output --os "${{ runner.os }}" --arch "${{ runner.arch }}"
 
+      - name: Bind vendored Ramsey dependency cache identity
+        id: ramsey_key
+        run: python3 tools/verify_ramsey_provider.py --cache-key --github-output --os "${{ runner.os }}" --arch "${{ runner.arch }}"
+
       # Follow all CCO edges first. The pinned Mathlib cache command filters
       # CCO imports, so `cache get CCO.lean` cannot discover these roots.
       - name: Download targeted Mathlib cache
@@ -89,6 +93,20 @@ jobs:
           python3 tools/verify_external_provider.py --repair
           lake --rehash build +AllThoseEPPA.MainTheorems
           python3 tools/verify_external_provider.py --require-complete
+
+      - name: Cache compiled vendored Ramsey provider
+        uses: actions/cache@v5
+        with:
+          path: vendor/ramsey/.lake/build
+          key: ${{ steps.ramsey_key.outputs.key }}
+
+      - name: Build and verify vendored Ramsey facade
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 tools/verify_ramsey_provider.py --repair
+          lake --rehash build +CCORamsey
+          python3 tools/verify_ramsey_provider.py --require-complete
 
       # Reuse project artifacts only. Lake checks source/dependency traces;
       # a restored cache never replaces the build or the transitive audit.
@@ -120,6 +138,7 @@ jobs:
             python3 tools/verify_project_cache.py --require-complete
           fi
           python3 tools/verify_external_provider.py --require-complete
+          python3 tools/verify_ramsey_provider.py --require-complete
 
       - name: Audit the verified current source closure
         uses: leanprover/lean-action@f061402b660e0c34644504b324e830f2991d4865 # v1.6.1
@@ -140,3 +159,4 @@ jobs:
         run: |
           python3 tools/verify_project_cache.py --require-complete
           python3 tools/verify_external_provider.py --require-complete
+          python3 tools/verify_ramsey_provider.py --require-complete
