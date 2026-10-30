@@ -22,7 +22,7 @@ local instance nestedOwnersInvariantK : Invariant G K.val := exactInvariant S H 
 local instance nestedOwnersInvariantE : Invariant G E.val := exactInvariant S H cco E
 
 /-- Exactness of the nested owner comes from projected original RAW words. -/
-def nestedExact : ExactEq (quotientSource S H cco K)
+abbrev nestedExact : ExactEq (quotientSource S H cco K)
     (quotientSource_homogeneous S H cco K) (quotientSource_cco S H cco K) () :=
   ⟨nestedKernel hKE, ⟨relativeExact S H cco K E hKE,
     (relativeExact_kernel S H cco K E hKE).symm⟩⟩
