@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 301,
+  "revision": 302,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -1862,7 +1862,7 @@
       }
     },
     "B037": {
-      "state": "IN_PROGRESS",
+      "state": "SUBMITTED",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b030_rank",
@@ -1885,7 +1885,16 @@
         "head_sha": "096e50a64875ff2e68e5aa5340137c5effe9fb88",
         "conclusion": "success",
         "axiom_audit": "allowlist"
-      }
+      },
+      "head_sha": "e4bb90f27f9dc9ea6f3c8bc0f77926ab639f0c9a",
+      "pr_number": 51,
+      "ci": {
+        "run_id": 41032355658,
+        "head_sha": "e4bb90f27f9dc9ea6f3c8bc0f77926ab639f0c9a",
+        "conclusion": "success",
+        "axiom_audit": "allowlist"
+      },
+      "report_path": "formalization/coordination/submissions/B037.md"
     },
     "B038": {
       "state": "IN_PROGRESS",
@@ -7758,6 +7767,26 @@
           "/root/b038_counting",
           "/root/b038_atomic/boundaries"
         ],
+        "actor_id": "root"
+      }
+    },
+    {
+      "revision": 302,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "submit",
+      "package_id": "B037",
+      "details": {
+        "package_id": "B037",
+        "head_sha": "e4bb90f27f9dc9ea6f3c8bc0f77926ab639f0c9a",
+        "pr_number": 51,
+        "ci": {
+          "run_id": 41032355658,
+          "head_sha": "e4bb90f27f9dc9ea6f3c8bc0f77926ab639f0c9a",
+          "conclusion": "success",
+          "axiom_audit": "allowlist"
+        },
+        "report_path": "formalization/coordination/submissions/B037.md",
         "actor_id": "root"
       }
     }
