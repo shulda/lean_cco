@@ -1,6 +1,6 @@
 # B047 — independent source review
 
-Disposition: **WHOLE MATHEMATICAL SOURCE PASS at native `33aeb246025550d51035460821dde090f330e483`; formal approval PENDING final documentation, public exact-head CI and genuine lease.**
+Disposition: **WHOLE MATHEMATICAL SOURCE, FINAL DOCUMENTATION AND PUBLIC HISTORY PASS at public `f702071ee44712f81f227329228a074a10e2d9d6`; formal approval PENDING exact-head CI and genuine lease.**
 
 Reviewer is the actual registered actor `/root/independent_review`, role
 `independent_review`. I authored or designed none of this complete batch,
@@ -171,13 +171,46 @@ identified repair files differ from the initially read freeze. All other
 27 bodies and the root imports remain unchanged. The reported final narrow
 consumer has 2,588 jobs; I did not rerun it.
 
+## Repaired final documentation and public checkpoint
+
+The repaired final native head is
+`3165200a1505f4fb9d267109cc1ff47fab69d4d0`, public
+`f702071ee44712f81f227329228a074a10e2d9d6`, tree
+`e0379991ff060db6b53a7e7d9fc05b27e5809464`. I read its actual final
+delta from mathematical freeze `33aeb246`: three Markdown files only,
++83/−30 lines, comprising the submission, full-geometry report and terminal
+report. It maps the original Y/O/OddWalk equations, selected source export
+and every selected history node to the actual repaired declarations;
+preserves the original source/contract scope and all six authors; and
+distinguishes initial compilation from the justified repaired consumer/root
+refresh. Both collected owner receipts are reported as 2,588/4,198 jobs,
+not as public acceptance. I found no remaining documentation blocker.
+
+I fetched the actual final PR and head object and checked each of the four
+additional public Git commit objects against its native tree, ordered mapped
+parent and original message/trailer. This extends, rather than repeats, the
+earlier 50-checkpoint review:
+
+| Actual native checkpoint | Preserved public checkpoint |
+|---|---|
+| `0f80bd7f0986feea14b58e44d23aac0805d44d8f` | `895ec7c2787061dec18b0e0aff89c06856d3ada7` |
+| `f23aa9c9f90c03f4eb56f9b613e5a2d12dfd3ea1` | `c9afa263fb6c8e335b1cc0750ff37204cf67f793` |
+| `33aeb246025550d51035460821dde090f330e483` | `66efeb93313e5c0072b76fde6f9729b5efe12c92` |
+| `3165200a1505f4fb9d267109cc1ff47fab69d4d0` | `f702071ee44712f81f227329228a074a10e2d9d6` |
+
+The actual PR reports 54 preserved commits at the same accepted bfb base.
+The original failed-completeness checkpoint is retained honestly; the repair
+is not presented as if it had existed at the initial freeze. No root import,
+accepted proof, provider pin, contract or configuration changed in these
+four commits.
+
 ## Evidence limits and remaining gates
 
-The owner reports one collected whole-root build of 4,198 jobs, following
-the collected 2,588-job source consumer. I have not rerun either build and
-do not treat either as actual public CI, an axiom audit or acceptance.
-Exact PR run `41102926191` has been announced but no completed successful
-gate is certified here. The reviewed initial public head has no final
-approval in this report. Final exact-head CI/logs, tested synthetic tree,
-live genuine review lease/authors/current base and resulting-main CI remain
-coordinator gates after the source finding is closed.
+I have not rerun any author build and do not treat the initial or repaired
+local receipts as actual public CI, an axiom audit or acceptance. Initial
+run `41102926191` was reported green by the coordinator, but that initial
+head was not approved because it did not close the source finding. The
+new final exact run is `41105647949`, presently pending completion evidence.
+Final exact-head CI/logs, tested synthetic tree and live genuine review
+lease/authors/current base remain required for formal approval. The
+resulting-main CI remains a separate coordinator gate after integration.
