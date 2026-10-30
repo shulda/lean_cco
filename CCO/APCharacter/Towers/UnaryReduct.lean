@@ -103,6 +103,34 @@ theorem precompact : Precompact P.forget := by
   intro D E h
   exact Subtype.ext (congrArg (fun x : {D : Age.Chart T (Age.zeroMask T) // D.size = C.size} => x.val) h)
 
+/-- The identity reduct adds no predicate or colour. -/
+def identity (S : AtomicSource.{u,v,w} ι X) : UnaryReduct S S where
+  parent := id
+  point _ := id
+  atom _ _ := id
+  atom_injective _ _ := Function.injective_id
+  colour _ _ _ _ := by simp
+  bijective := Function.bijective_id
+
+/-- Actual sort, point and old-colour projections compose, retaining the
+literal global old-reduct bijection and injectivity of binary-name maps. -/
+def compose {ν : Type u} {Z : ν → Type v} {U : AtomicSource.{u,v,w} ν Z}
+    (Q : UnaryReduct T U) : UnaryReduct S U where
+  parent k := P.parent (Q.parent k)
+  point k x := P.point (Q.parent k) (Q.point k x)
+  atom k l a := P.atom (Q.parent k) (Q.parent l) (Q.atom k l a)
+  atom_injective k l := (P.atom_injective _ _).comp (Q.atom_injective _ _)
+  colour k l x y := by
+    rw [P.colour,Q.colour,Option.map_map]
+    rfl
+  bijective := P.bijective.comp Q.bijective
+
+/-- The endpoint map of a composite is literally the composite endpoint
+map, not a newly chosen isomorphism or a quotient-section substitute. -/
+theorem compose_project {ν : Type u} {Z : ν → Type v} {U : AtomicSource.{u,v,w} ν Z}
+    (Q : UnaryReduct T U) (p : Sigma Z) :
+    (P.compose Q).project p = P.project (Q.project p) := rfl
+
 /-- The original table used by the actual source extension theorem. -/
 def originalTable : Table ι (Age.Colour S) (Sigma X) where
   owner := Sigma.fst

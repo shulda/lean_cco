@@ -1,4 +1,5 @@
 import CCO.APCharacter.Towers.FiniteUnary
+import CCO.APCharacter.Towers.UnaryReduct
 import CCO.APCharacter.Age.Category
 import CCO.ParityHasse.Original.SourceHasse
 
@@ -55,6 +56,20 @@ structure Step (age : CurrentSource.{u,v,w,t} → UnaryAge.{0,0})
   unary : UnaryTransition (age A) (age B)
   potential_lt : B.potential < A.potential
 
+/-- One actual character step retains its literal unary projection and
+its expansion functor TOGETHER, so an unrelated functor cannot stand in
+for preservation of the original named reduct. -/
+structure ActualStep (A B : CurrentSource.{u,v,w,t}) where
+  reduct : UnaryReduct A.source B.source
+  unary : UnaryTransition A.finiteAge B.finiteAge
+  forget_eq : unary.forget = reduct.forget
+  potential_lt : B.potential < A.potential
+
+namespace ActualStep
+noncomputable def toStep {A B : CurrentSource.{u,v,w,t}} (s : ActualStep A B) :
+    Step finiteAge A B := ⟨s.unary,s.potential_lt⟩
+end ActualStep
+
 /-- Once the concrete source split has constructed its certificate for
 EVERY current finite interval, the terminal source and the entire finite
 old-to-new expansion tower are actual data. The concrete parity/SourceAge
@@ -83,6 +98,36 @@ theorem actual_age_terminalisation
         terminal.Terminal ∧ history.length + terminal.potential ≤ initial.potential ∧
         Nonempty (UnaryTransition initial.finiteAge terminal.finiteAge) :=
   finite_terminalisation finiteAge split initial
+
+/-- The actual old point/sort/colour projections compose along the same
+finite source history. In particular their global old-reduct bijection is
+retained even though the current carrier and named sorts change. -/
+def historyReduct {A B : CurrentSource.{u,v,w,t}}
+    (history : History (fun A B => Nonempty (ActualStep A B)) A B) :
+    UnaryReduct A.source B.source := by
+  classical
+  induction history with
+  | nil A => exact UnaryReduct.identity A.source
+  | cons hs tail ih => exact (Classical.choice hs).reduct.compose ih
+
+/-- Concrete ACTUAL steps produce a terminal current source together with
+both its original reduct and its reasonable precompact expansion functor.
+The original-to-terminal history preserves the relation between the two
+at every step; no source or expansion provider is erased. -/
+theorem actual_terminalisation
+    (split : ∀ A : CurrentSource.{u,v,w,t}, A.Obstruction →
+      ∃ B, Nonempty (ActualStep A B)) (initial : CurrentSource.{u,v,w,t}) :
+    ∃ terminal : CurrentSource.{u,v,w,t},
+      ∃ history : History (fun A B => Nonempty (ActualStep A B)) initial terminal,
+        terminal.Terminal ∧ history.length + terminal.potential ≤ initial.potential ∧
+        Nonempty (UnaryReduct initial.source terminal.source) ∧
+        Nonempty (UnaryTransition initial.finiteAge terminal.finiteAge) := by
+  classical
+  let Next := fun A B : CurrentSource.{u,v,w,t} => Nonempty (ActualStep A B)
+  obtain ⟨terminal,h,ht,hbound⟩ := eliminate_obstructions Next potential Obstruction
+    split (fun hs => (Classical.choice hs).potential_lt) initial
+  exact ⟨terminal,h,ht,hbound,⟨historyReduct h⟩,
+    ⟨finiteUnaryComposite finiteAge (fun hs => (Classical.choice hs).unary) h⟩⟩
 
 end
 end CurrentSource
