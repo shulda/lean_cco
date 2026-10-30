@@ -44,9 +44,9 @@ noncomputable def pathConstraints (f : DiagramHom D) (x y : V) :
   letI := pathFintype D x y
   exact Finset.univ.toList.map (pathExact D f)
 
+include legal in
 /-- C28-C29, with the disconnected (empty path family) case included by the
 empty-family source primality law. No marked realization is assumed. -/
-include legal in
 theorem choose_allowed_endpoint {G : Type t} [Group G] [∀ i, MulAction G (X i)]
     (H : HomogeneousSource S G) (laws : M.Calculus) (f : DiagramHom D) (x y : V) :
     ∃ (a : X (D.vertexSort x)) (b : X (D.vertexSort y)),
