@@ -1,4 +1,5 @@
 import CCO.APCharacter.SourceAge.SingleStep
+import CCO.APCharacter.Towers.HistoryCoherence
 
 /-! Actual AP-only finite character terminalisation. Every successor is
 constructed from the CURRENT source and its actual finite interval; the
@@ -16,9 +17,10 @@ theorem finite_character_elimination (initial : CurrentSource.{u,v,w,t}) :
     ∃ terminal : CurrentSource.{u,v,w,t},
       ∃ history : History (fun A B => Nonempty (CurrentSource.ActualStep A B)) initial terminal,
         terminal.Terminal ∧ history.length + terminal.potential ≤ initial.potential ∧
-        Nonempty (UnaryReduct initial.source terminal.source) ∧
-        Nonempty (UnaryTransition initial.finiteAge terminal.finiteAge) :=
-  CurrentSource.actual_terminalisation SourceAge.SingleStep.actual_progress initial
+        ∃ reduct : UnaryReduct initial.source terminal.source,
+          ∃ unary : UnaryTransition initial.finiteAge terminal.finiteAge,
+            unary.forget = reduct.forget :=
+  CurrentSource.actual_terminalisation_coherent SourceAge.SingleStep.actual_progress initial
 
 variable {ι : Type u} {X : ι → Type v} (S : AtomicSource.{u,v,w} ι X)
 variable {G : Type t} [Group G] [∀ i, MulAction G (X i)]
@@ -45,8 +47,9 @@ theorem ap_finite_character_elimination :
           (initialSource S H cco countable) terminal,
         terminal.Terminal ∧
         history.length + terminal.potential ≤ (initialSource S H cco countable).potential ∧
-        Nonempty (UnaryReduct S terminal.source) ∧
-        Nonempty (UnaryTransition (initialSource S H cco countable).finiteAge terminal.finiteAge) :=
+        ∃ reduct : UnaryReduct S terminal.source,
+          ∃ unary : UnaryTransition (initialSource S H cco countable).finiteAge terminal.finiteAge,
+            unary.forget = reduct.forget :=
   finite_character_elimination (initialSource S H cco countable)
 
 /-- An available finite relative interval gives a genuine first safe split,
@@ -59,11 +62,12 @@ theorem ep_ap_safe_splitting
       ∃ terminal : CurrentSource.{u,v,w,t},
         ∃ history : History (fun A B => Nonempty (CurrentSource.ActualStep A B)) next terminal,
           terminal.Terminal ∧ history.length + terminal.potential ≤ next.potential ∧
-          Nonempty (UnaryReduct next.source terminal.source) ∧
-          Nonempty (UnaryTransition next.finiteAge terminal.finiteAge) := by
+          ∃ reduct : UnaryReduct next.source terminal.source,
+            ∃ unary : UnaryTransition next.finiteAge terminal.finiteAge,
+              unary.forget = reduct.forget := by
   obtain ⟨next,hs⟩ := SourceAge.SingleStep.actual_progress (initialSource S H cco countable) h
-  obtain ⟨terminal,history,ht,hbound,hred,hunary⟩ := finite_character_elimination next
-  exact ⟨next,hs,terminal,history,ht,hbound,hred,hunary⟩
+  obtain ⟨terminal,history,ht,hbound,hred,hunary,heq⟩ := finite_character_elimination next
+  exact ⟨next,hs,terminal,history,ht,hbound,hred,hunary,heq⟩
 
 end
 end CCO.APCharacter
