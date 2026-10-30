@@ -220,6 +220,33 @@ theorem coarser_label {J : InvEq G (X a)} (hEJ : E ≤ J) {i : I}
   rw [(prefixTransport J trans p s (coarser_bound E hEJ p s h)).label_edge (T.predecessor_spec y)]
   rfl
 
+theorem coarser_kernel {J : InvEq G (X a)} (hEJ : E ≤ J) {i : I}
+    (p : Word G X a i) (s : Word G X i a) (h : Bound E p s) :
+    (prefixTransport E trans p s h).target ≤
+      (prefixTransport J trans p s (coarser_bound E hEJ p s h)).target := by
+  intro y z he
+  change (prefixTransport J trans p s (coarser_bound E hEJ p s h)).label y = _
+  rw [coarser_label E trans hEJ p s h y,coarser_label E trans hEJ p s h z,he]
+
+/-- The consecutive ACTUAL quotient bijections commute with the canonical
+coarsening projections at both adjacent positions, not only at endpoints. -/
+theorem coarser_step {J : InvEq G (X a)} (hEJ : E ≤ J) {i j : I}
+    (p : Word G X a i) (P : Letter G X i j) (s : Word G X j a)
+    (h : Bound E p (.cons P s))
+    (q : Quotient (prefixTransport E trans p (.cons P s) h).target.val) :
+    step J trans p P s (coarser_bound E hEJ p (.cons P s) h)
+      (Quot.mapRight (coarser_kernel E trans hEJ p (.cons P s) h) q) =
+      Quot.mapRight (coarser_kernel E trans hEJ (p.extend P) s (next_bound E p P s h))
+        (step E trans p P s h q) := by
+  induction q using Quotient.inductionOn with
+  | _ y =>
+    obtain ⟨z,hz⟩ := (factor E trans p P s h).serial y
+    change step J trans p P s _ (Quotient.mk'' y) =
+      Quot.mapRight _ (step E trans p P s h (Quotient.mk'' y))
+    rw [step_edge E trans p P s h hz,
+      step_edge J trans p P s (coarser_bound E hEJ p (.cons P s) h) hz]
+    rfl
+
 theorem all_coarser_holonomy (s : Word G X a a) (h : Bound E (.nil a) s)
     (J : InvEq G (X a)) (hEJ : E ≤ J) :
     holonomy J trans s (coarser_bound E hEJ (.nil a) s h) = id := holonomy_identity J trans s _
