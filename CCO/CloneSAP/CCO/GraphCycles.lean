@@ -118,4 +118,22 @@ theorem walkCycle_global
   have hcur : C.vertices i = p.getVert n := rfl
   exact realizer_transport D f hcur hnext (hf i) h a ha
 
+/-- An undirected walk edge can be read in either typed orientation. -/
+theorem walkCycle_edges
+    (cycles : ∀ C : SimpleCycle D, CycleHom C)
+    {x : V} (p : (graph D).Walk x x) (hp : p.IsCycle) :
+    ∃ f : ∀ x : V, X (D.vertexSort x),
+      ∀ (a b : V) (h : a ≠ b) atom, s(a,b) ∈ p.edges →
+        D.edge a b h = some atom → S.colour (f a) (f b) = some atom := by
+  obtain ⟨f,hf⟩ := walkCycle_global D cycles p hp
+  refine ⟨f,?_⟩
+  intro a b h atom hmem he
+  obtain ⟨i,hi,hab⟩ := (p.mk_mem_edges_iff_exists).mp hmem
+  rcases Sym2.eq_iff.mp hab with ⟨ha,hb⟩ | ⟨ha,hb⟩
+  · exact realizer_transport D f ha hb (fun h atom he => hf i hi h atom he) h atom he
+  · have hre := realizer_transport D f ha hb (fun h atom he => hf i hi h atom he)
+    exact (S.colour_swap (f b) (f a) (S.conv atom)).mp
+      (hre h.symm (S.conv atom) ((D.edge_reverse a b h atom).mp he)) |>
+      (by simpa only [S.conv_invol] using ·)
+
 end CCO.CloneSAP.CCO
