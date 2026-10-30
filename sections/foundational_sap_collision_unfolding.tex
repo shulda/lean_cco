@@ -1,0 +1,54 @@
+% C4 standalone ordinary relational SAP helper, independent of CCO/EPPA/Ramsey.
+\section{Collision unfolding under strong amalgamation}
+\label{sec:foundational-collision-unfolding}
+
+\begin{lemma}[Collision unfolding]\label{lem:collision-unfolding}
+Let $A$ be a finite PARTIAL relational structure, and let
+$h:A\to U$ be a homomorphism-embedding into a countable homogeneous
+relational structure $U$ whose age has SAP. Suppose $h$ is
+injective on every member of a fixed finite family of
+distinguished COMPLETE induced substructures of $A$.
+Then $h$ can be replaced by an INJECTIVE homomorphism-embedding
+$h':A\to U$ preserving the complete induced isomorphism type
+of the image of EACH distinguished substructure.
+
+No unary-functional closure, CCO, exactness or original
+binary-language assumption is used; the statement concerns
+the full displayed relational supports of the partial source.
+\end{lemma}
+\begin{proof}
+If $h$ is not injective, choose $x\ne y$ with $h(x)=h(y)=v$,
+and let $B$ be the finite COMPLETE induced substructure of $U$
+on $h(A)$. Every irreducible induced source substructure
+contains AT MOST ONE point of the fibre $h^{-1}(v)$, since
+$h$ embeds each such substructure. In particular, every
+distinguished complete factor contains at most one such
+source point by the stated injectivity assumption.
+
+Strongly amalgamate TWO copies of $B$ over the complete
+induced $B\setminus\{v\}$ and embed their strong amalgam
+into $U$. By homogeneity move the FIRST copy to the
+literal old finite $B$. Its other copy of $v$ is a new
+point $v'\ne v$, of the same sort and with exactly the
+same complete atomic diagram to $B\setminus\{v\}$ as $v$.
+
+Send a chosen nonempty proper subset of $h^{-1}(v)$
+containing $x$ to $v'$ and keep its complement at $v$.
+All other source images remain their old points.
+For EACH irreducible source substructure $D$, its
+old image contains at most one source vertex over $v$,
+so the new image of $D$ is either unchanged or the
+corresponding induced copy with $v$ replaced by $v'$.
+Consequently the modified map is still a
+homomorphism-embedding. The same reasoning preserves
+the full induced type on each distinguished complete
+factor, including ALL its higher-arity displayed tuples.
+
+The number of colliding unordered pairs strictly
+decreases: collisions of members of this one old
+fibre are separated, and $v'$ was not previously in
+the image of $A$. Repeating finitely many times yields
+the required injective map. No choices of representative
+colour outside the indicated completed factors are
+required, and SAP (not mere AP) guarantees $v'\ne v$.
+\end{proof}

@@ -86,11 +86,18 @@ class ExternalProviderTests(unittest.TestCase):
     def test_external_providers_survive_handoff_with_exact_pending_pins(self):
         _, manifest = handoff.collect(handoff.ROOT)
         providers = manifest['external_providers']
-        self.assertEqual(providers, [dict(module='hkn_reservoir', **p)
-                                     for p in self.config['external_providers']])
-        self.assertEqual(len(providers), 2)
+        unary = json.loads((module.ROOT / 'formalization/unary_hn/module.json').read_text())
+        self.assertEqual(providers, [dict(module=ident, **p)
+                                     for ident, config in [('hkn_reservoir', self.config),
+                                                           ('unary_hn', unary)]
+                                     for p in config['external_providers']])
+        self.assertEqual(len(providers), 5)
         self.assertTrue(all(p['lean_reference']['bridge_status'] == 'NOT_BOUND_TO_CCO_ENCODING'
+                            for p in providers if 'lean_reference' in p))
+        self.assertTrue(all(p['status'] == 'PUBLISHED_THEOREM_LOCAL_BRIDGE_PENDING'
                             for p in providers))
+        self.assertEqual([p['id'] for p in unary['external_providers']
+                          if 'lean_reference' not in p], ['E02', 'E03'])
         self.assertEqual(next(m for m in manifest['modules'] if m['id'] == 'hkn_reservoir')
                          ['external_providers'], self.config['external_providers'])
 

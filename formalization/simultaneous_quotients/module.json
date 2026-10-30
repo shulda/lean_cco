@@ -1,0 +1,2131 @@
+{
+  "schema_version": 1,
+  "id": "simultaneous_quotients",
+  "index_title": "Simultaneous full exact quotients: one-sort descent, private paths, CCO and towers",
+  "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+  "status": "HUMAN_EXPANDED_NOT_LEAN",
+  "scope": "Private B041: FIVE SELECTED new Foundations I results, ONE new equation, fourteen definitions, 60 human claims and eight tasks. The three other results and TQ1-TQ4 in the same source file are ALREADY prepared in rigid_groupoid/finite_kernel and remain imports, not duplicate coverage. Prove reverse exact descent ONLY for ONE original symmetric sort, abstract private-path cycle decomposition, simultaneous quotient triangle fullness/homogeneity/AP/JEP and semantic homomorphic CCO, exact quotient towers and full-Aut finite entire-axis application. The quotient CCO proof uses original CCO directly and does not consume quotient homogeneity/AP or a FullWord criterion. No SAP, global automorphism-lifting section, independent mixed-word descent, current owner-kernel binding or new external theorem is asserted.",
+  "scope_vocabulary": [
+    "one_original_sort_descent",
+    "private_graph",
+    "anchored_extension",
+    "joint_homogeneity",
+    "quotient_CCO",
+    "quotient_towers",
+    "entire_finite_axes",
+    "boundary"
+  ],
+  "scope_explanation": "statement and proof. Preserve old equality versus quotient equality versus unrestricted top, original full exactness versus quotient exactness, actual old-group orbitals versus full quotient automorphisms, and canonical class flattening rather than literal equality of nested classes.",
+  "control_script": "tools/check_simultaneous_quotients_controls.py",
+  "assumptions": [
+    {
+      "id": "A01",
+      "name": "Actual original typed semantic homomorphic CCO source",
+      "statement": "M is COUNTABLE HOMOGENEOUS in a FINITE complete atomic binary language with finitely many named nonempty original transitive sorts. G=Aut(M) is the actual original full automorphism group. Same-sort orbitals are symmetric, cross-sort orbitals have typed converses and need not commute. Semantic HOMOMORPHIC simple-cycle CCO is supplied for original finite partial diversity diagrams. No original SAP or extra triangle-fullness hypothesis is supplied. Quotients and word profiles are actual represented objects."
+    },
+    {
+      "id": "A02",
+      "name": "Independent FULL exact equivalences and actual quotient signature",
+      "statement": "For EVERY named original sort s choose an arbitrary independent G-invariant FULL equality-inclusive exact equivalence E_s, allowing Id_s and top. Q_s=M_s/E_s; Q is their tagged union, naming ALL actual pair orbitals of the induced ORIGINAL G-action, with same-sort equality logical. Exact means a nonempty finite intersection of actual atomic-word profiles; empty restriction list is typed top, empty loop word is real Id. No reverse mixed-sort exact descent or group section is assumed."
+    },
+    {
+      "id": "A03",
+      "name": "ONE-original-sort reverse descent request",
+      "statement": "ONLY for the reverse-descent branch, the original source has ONE transitive sort and ALL its old binary orbitals are symmetric. E is its full exact invariant equivalence and D is a NONEMPTY old full exact invariant relation with literal E;D;E=D. D may be top with an empty defining list; a defining word may be the empty equality word. This premise is not used by quotient towers or the multi-original-sort theorem."
+    },
+    {
+      "id": "A04",
+      "name": "Independent finite private-path graph data",
+      "statement": "G0 is a finite SIMPLE partially coloured typed graph with diversity atoms on specified unordered edges and typed converse orientation. Replace each edge by finitely many formal individually simple paths with pairwise PRIVATE internal vertices, distinct marked endpoints, and only local genuine equality contractions. Every surviving path has positive length; coincident length-one paths over one marked pair have the SAME colour and are merged. Zero paths above an edge are allowed; there is no resulting zero-length path or artificial parallel-edge 2-cycle."
+    },
+    {
+      "id": "A05",
+      "name": "Arbitrary anchored one-point quotient request",
+      "statement": "In the anchored-extension proof, take an ACTUAL finite complete quotient base of pairwise distinct C_j, a requested new sort u and one actual quotient pair orbital to each centre. Every indicated triangle is realized in Q, with consistent unary sorts/converses and same-sort requested diversity for a NEW distinct vertex. This is an arbitrary conditional extension request, not an additional global triangle-fullness assumption."
+    },
+    {
+      "id": "A06",
+      "name": "Arbitrary semantic quotient CCO request",
+      "statement": "In the CCO proof, take any finite partially specified quotient atomic DIVERSITY diagram whose EVERY specified simple cycle has a homomorphism into Q. A homomorphism may identify nonadjacent formal vertices. The whole diagram completion is the conclusion. Different raw-cycle witnesses need not use globally coherent quotient images or real representatives."
+    },
+    {
+      "id": "A07",
+      "name": "Current-stage exact quotient tower data",
+      "statement": "For towers, each subsequent stage quotients the CURRENT named original sorts by arbitrary full exact invariant equivalences in its CURRENT equality-inclusive represented algebra. They need not be images of independently chosen exact relations from the initial source. Pullback to earlier sources is the safe direction. Every stage is finite in number and all same-sort/cross-sort names remain typed."
+    },
+    {
+      "id": "A08",
+      "name": "Entire finite named quotient axes",
+      "statement": "Choose any finite selection of named sorts whose ENTIRE quotient sets Q_s are finite, including the empty selection. Use Gamma=FULL Aut(Q) and R_s=Aut(Q restricted to the whole Q_s), with actual pair-image subgroups. These are whole named finite sorts, not finite fibres over moving owners, not an arbitrary earlier subgroup image, and not a pointwise coarse-owner kernel."
+    },
+    {
+      "id": "A09",
+      "name": "Optional elementary-abelian intrinsic coordinate groups",
+      "statement": "ONLY for the linear/rank subbranch each intrinsic R_s in A08 is abstractly an elementary abelian 2-group V_s=F2^(d_s). Dimensions and pair quotient spaces are finite. Do not infer this group structure from the quotient theorem; it is an explicit conditional extra premise for that consequence."
+    }
+  ],
+  "imports": [
+    {
+      "id": "I01",
+      "name": "Nonempty-result exact meet saturation",
+      "source_label": "lem:full-typed-exact-saturation",
+      "provider_module": "raw_exact",
+      "provider_claims": [
+        "C10"
+      ],
+      "statement": "For exact E,H and NONEMPTY exact meet D=intersection P_alpha, E;D;H=intersection(E;P_alpha;H), with empty list interpreted as typed top. Keep the nonempty-result guard; no arbitrary Boolean meet distribution is imported.",
+      "depends_on": [
+        "A01"
+      ],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I02",
+      "name": "Actual nonempty full exact quotient atomic blocks",
+      "source_label": "lem:typed-simultaneous-blocks",
+      "provider_module": "rigid_groupoid",
+      "provider_claims": [
+        "C02"
+      ],
+      "statement": "E_s;a;E_t are actual inverse images of quotient ORIGINAL-G pair orbitals, nonempty full exact and endpoint saturated. Blocks partition old atoms; quotient equality pulls back to E_s and same-sort diversity blocks are disjoint E_s. This selected block result is sufficient for the main quotient CCO construction; no quotient FullWord/Helly theorem is imported there.",
+      "depends_on": [
+        "A01",
+        "A02"
+      ],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I03",
+      "name": "Saturated quotient relation semantics",
+      "source_label": "lem:typed-simultaneous-blocks",
+      "provider_module": "rigid_groupoid",
+      "provider_claims": [
+        "C03"
+      ],
+      "statement": "Inverse image preserves intersections/converse and actual relational composition: insert the actual intermediate E_t then remove it using endpoint saturation. The empty quotient word pulls back to E_s, not old Id. Use in one-sort descent/tower algebra, not as a substitute for a globally coherent choice of representatives.",
+      "depends_on": [
+        "A01",
+        "A02"
+      ],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I04",
+      "name": "Safe upward full exact pullback",
+      "source_label": "lem:typed-simultaneous-blocks",
+      "provider_module": "rigid_groupoid",
+      "provider_claims": [
+        "C04"
+      ],
+      "statement": "Every quotient word/menu, including empty word and top empty list, pulls back to an old full exact relation. This is quotient exact => original exact; it does NOT infer arbitrary original exact => quotient exact under independent mixed kernels. Used by towers, not by the main quotient CCO proof.",
+      "depends_on": [
+        "A01",
+        "A02"
+      ],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I05",
+      "name": "Heterogeneous exact balls over actual original centres",
+      "source_label": "thm:full-typed-exact-balls",
+      "provider_module": "raw_exact",
+      "provider_claims": [
+        "C13"
+      ],
+      "statement": "For one target original sort and arbitrary actual original centre sorts, a finite pairwise-intersecting family of nonempty full exact balls has a common point, including empty/singleton families. The centres may be arbitrary chosen representatives; endpoint saturation, not representative compatibility, provides pairwise witnesses.",
+      "depends_on": [
+        "A01"
+      ],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I06",
+      "name": "Individual finite typed joint exact lifting",
+      "source_label": "thm:typed-joint-exact-lifting",
+      "provider_module": "raw_exact",
+      "provider_claims": [
+        "C21"
+      ],
+      "statement": "Include each Id_s and chosen E_s in the joint structure. EVERY finite partial isomorphism on the EXACT SAME displayed real/quotient vertices is induced by ONE original automorphism. No arbitrary real representatives are added, no original fine colours between them are presumed, and no functorial group section is supplied.",
+      "depends_on": [
+        "A01",
+        "A02"
+      ],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I07",
+      "name": "Full-group projection on whole named finite axes",
+      "source_label": "lem:typed-finite-entire-axis-projection",
+      "provider_module": "finite_kernel",
+      "provider_claims": [
+        "C16",
+        "C17"
+      ],
+      "statement": "For a HOMOGENEOUS relational structure of arity<=2 and ENTIRE finite named sorts, the full automorphism group projects onto each intrinsic axis group and its finite coordinate image is exactly the set satisfying all actual pair-image constraints. Empty/singleton selections are included. Not a theorem about a pointwise owner kernel.",
+      "depends_on": [
+        "A08"
+      ],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I08",
+      "name": "Conditional finite linear Goursat and rank count",
+      "source_label": "cor:typed-finite-linear-goursat",
+      "provider_module": "finite_kernel",
+      "provider_claims": [
+        "C18",
+        "C19"
+      ],
+      "statement": "Under elementary-abelian intrinsic groups and the full homogeneous entire-axis setting, actual pair images have surjective linear quotient-coordinate presentations; the actual finite image is ker Phi and has size 2^(sum dimensions-rank Phi). This counts the coordinate IMAGE, not full possibly infinite Gamma. Flatness C20 is not imported because the new source corollary asks only projection/rank.",
+      "depends_on": [
+        "A08",
+        "A09"
+      ],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    }
+  ],
+  "external_providers": [],
+  "definitions": [
+    {
+      "id": "D01",
+      "name": "FULL word/menu conventions",
+      "statement": "An actual typed atomic-word profile is a relational product; the empty loop word is old Id. A nonempty full exact menu is a finite intersection; empty list is typed top. A quotient empty word pulls back to its old E_s rather than Id.",
+      "depends_on": [
+        "A01",
+        "A02"
+      ],
+      "notes": "N01",
+      "source": {
+        "file": "sections/simultaneous_typed_exact_quotients.tex",
+        "anchor": "\\label{lem:one-original-sort-exact-descent}"
+      }
+    },
+    {
+      "id": "D02",
+      "name": "Actual pure simultaneous quotient",
+      "statement": "Q_s consists of ACTUAL E_s-classes, tagged by named original sort, and Q names the ORIGINAL-G pair orbitals. Their inverse-image blocks are those of I02; no coherent real representatives are chosen.",
+      "depends_on": [
+        "A01",
+        "A02"
+      ],
+      "notes": "N03",
+      "source": {
+        "file": "sections/simultaneous_typed_exact_quotients.tex",
+        "anchor": "\\label{thm:typed-simultaneous-exact-quotients}"
+      }
+    },
+    {
+      "id": "D03",
+      "name": "One-sort E-bisaturated descent datum",
+      "statement": "D=E;D;E is old nonempty full exact in the ONE original symmetric sort, so its quotient image D/E is a well-defined actual quotient relation. This additional saturation is a premise, not automatic for arbitrary D.",
+      "depends_on": [
+        "A03",
+        "D01"
+      ],
+      "notes": "N01",
+      "source": {
+        "file": "sections/simultaneous_typed_exact_quotients.tex",
+        "anchor": "\\label{lem:one-original-sort-exact-descent}"
+      }
+    },
+    {
+      "id": "D04",
+      "name": "Exact finite word presentation",
+      "statement": "Choose D=intersection_alpha P_alpha with each P_alpha a nonempty represented atomic word; the finite list may be empty. Nonempty D witnesses every restriction and all their required nonempty meet results.",
+      "depends_on": [
+        "A03",
+        "D01"
+      ],
+      "notes": "N01",
+      "source": {
+        "file": "sections/simultaneous_typed_exact_quotients.tex",
+        "anchor": "\\label{lem:one-original-sort-exact-descent}"
+      }
+    },
+    {
+      "id": "D05",
+      "name": "Marked private-path expansion",
+      "statement": "Marked vertices are those of G0. Every internal formal vertex lies in exactly one individually simple path, with specified degree two; its endpoints are distinct marked vertices. The resulting raw graph is simple after direct-edge merging.",
+      "depends_on": [
+        "A04"
+      ],
+      "notes": "N02",
+      "source": {
+        "file": "sections/simultaneous_typed_exact_quotients.tex",
+        "anchor": "\\label{lem:typed-private-path-cycle}"
+      }
+    },
+    {
+      "id": "D06",
+      "name": "Genuine equality contraction",
+      "statement": "Contract a named logical identity letter within its own typed path; never identify distinct marked endpoints or private vertices of different paths. In the abstract lemma the input excludes a zero-length reduced path; the main quotient application derives that exclusion.",
+      "depends_on": [
+        "A04",
+        "D05"
+      ],
+      "notes": "N02",
+      "source": {
+        "file": "sections/simultaneous_typed_exact_quotients.tex",
+        "anchor": "\\label{lem:typed-private-path-cycle}"
+      }
+    },
+    {
+      "id": "D07",
+      "name": "Anchored actual quotient base",
+      "statement": "A one-point request over C1,...,Cn uses the existing ACTUAL quotient classes, not merely an isomorphic base copy. Choose arbitrary real b_j in each class and old block D_j for the requested orbital.",
+      "depends_on": [
+        "A05",
+        "D02"
+      ],
+      "notes": "N03",
+      "source": {
+        "file": "sections/simultaneous_typed_exact_quotients.tex",
+        "anchor": "\\label{thm:typed-simultaneous-exact-quotients}"
+      }
+    },
+    {
+      "id": "D08",
+      "name": "Exact-ball intersection request",
+      "statement": "B_(D_j)(b_j)={z in M_u:(z,b_j) in D_j}. Its target sort is fixed, centre sorts can differ. Arbitrarily fixed b_j are retained throughout; saturation will align all pairwise triangle witnesses to them.",
+      "depends_on": [
+        "D07",
+        "I02"
+      ],
+      "notes": "N03",
+      "source": {
+        "file": "sections/simultaneous_typed_exact_quotients.tex",
+        "anchor": "\\label{thm:typed-simultaneous-exact-quotients}"
+      }
+    },
+    {
+      "id": "D09",
+      "name": "Pure quotient map as a joint partial map",
+      "statement": "View a finite pure-Q partial isomorphism in the larger joint structure with each Id_s and E_s, retaining EXACTLY its displayed quotient vertices and their actual old-G orbitals. Add no unconstrained original representatives or fine real pair colours.",
+      "depends_on": [
+        "D02"
+      ],
+      "notes": "N03",
+      "source": {
+        "file": "sections/simultaneous_typed_exact_quotients.tex",
+        "anchor": "\\label{thm:typed-simultaneous-exact-quotients}"
+      }
+    },
+    {
+      "id": "D10",
+      "name": "Raw word expansion of a quotient CCO request",
+      "statement": "For each specified quotient edge, let D be its old exact pullback block and choose a finite word presentation. Attach a private path for each reduced word, with all marked vertices retained even when a top block has zero restrictions/paths.",
+      "depends_on": [
+        "A06",
+        "D01",
+        "D02"
+      ],
+      "notes": "N04",
+      "source": {
+        "file": "sections/simultaneous_typed_exact_quotients.tex",
+        "anchor": "\\label{thm:typed-simultaneous-exact-quotients}"
+      }
+    },
+    {
+      "id": "D11",
+      "name": "Witnesses local to ONE raw simple cycle",
+      "statement": "For a two-path cycle choose one actual quotient pair; for a projected base cycle choose ONE homomorphism of that ENTIRE quotient cycle. Within this raw cycle choose ONE old representative per marked variable. Distinct marked variables may have equal images; choices may differ across different raw cycles.",
+      "depends_on": [
+        "A06",
+        "D10"
+      ],
+      "notes": "N04",
+      "source": {
+        "file": "sections/simultaneous_typed_exact_quotients.tex",
+        "anchor": "\\label{thm:typed-simultaneous-exact-quotients}"
+      }
+    },
+    {
+      "id": "D12",
+      "name": "Total pulled-back tower kernel",
+      "statement": "A next-stage equivalence F_s on M_s/E_s pulls back to H_s on original M_s, with E_s<=H_s. The canonical bijection sends an iterated class [[x]_(E_s)]_(F_s) to [x]_(H_s), equivalently unions its E_s-classes. Nested class sets are not literally equal before this identification.",
+      "depends_on": [
+        "A07",
+        "D02"
+      ],
+      "notes": "N05",
+      "source": {
+        "file": "sections/simultaneous_typed_exact_quotients.tex",
+        "anchor": "\\label{cor:typed-exact-quotient-towers}"
+      }
+    },
+    {
+      "id": "D13",
+      "name": "Finite typed diversity rank",
+      "statement": "Count all named typed diversity atom orbitals consistently, either directed pairs or paired converse names with fixed convention. Quotient atoms are unions of prior atoms: no splitting; one nonidentity same-sort atom becomes equality under any strict kernel, giving a strict total decrease.",
+      "depends_on": [
+        "A01",
+        "A02"
+      ],
+      "notes": "N05",
+      "source": {
+        "file": "sections/simultaneous_typed_exact_quotients.tex",
+        "anchor": "\\label{cor:typed-exact-quotient-towers}"
+      }
+    },
+    {
+      "id": "D14",
+      "name": "Intrinsic full-Aut finite coordinate image",
+      "statement": "For entire finite quotient sorts let Gamma=Aut(Q) and R_s=Aut(Q|Q_s). The actual image on finitely many such axes is finite even if Gamma is infinite; pair images and, conditionally, linear check map Phi describe that image.",
+      "depends_on": [
+        "A08"
+      ],
+      "notes": "N06",
+      "source": {
+        "file": "sections/simultaneous_typed_exact_quotients.tex",
+        "anchor": "\\label{cor:typed-exact-finite-axis-goursat}"
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "name": "One-original-sort invariants commute by symmetry and converse",
+      "statement": "In the ONE original-sort A03 setting every invariant relation is a union of symmetric old orbitals, hence symmetric. Any product of invariant relations is invariant and therefore symmetric too. Taking its converse reverses factors, yielding R;T=T;R. This argument is NOT applied to independently typed cross-sort arrows.",
+      "depends_on": [
+        "A01",
+        "A03"
+      ],
+      "notes": "N01",
+      "scope": "one_original_sort_descent",
+      "source_labels": [
+        "lem:one-original-sort-exact-descent"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C02",
+      "name": "Nonempty exact D supplies a valid finite presentation including top",
+      "statement": "Choose D=intersection P_alpha as D04. Every restriction and every subintersection containing D is nonempty. If the list is empty, D is top, E;top;E=top and its quotient is top; handle it directly.",
+      "depends_on": [
+        "A03",
+        "D03",
+        "D04"
+      ],
+      "notes": "N01",
+      "scope": "one_original_sort_descent",
+      "source_labels": [
+        "lem:one-original-sort-exact-descent"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C03",
+      "name": "Guarded exact distribution saturates each defining word",
+      "statement": "For a nonempty defining list, D=E;D;E by A03 and I01 gives D=intersection_alpha(E;P_alpha;E). The nonempty-result guard is discharged by D itself; no saturation of an empty meet result is used. The empty-list case was handled in C02.",
+      "depends_on": [
+        "A03",
+        "C02",
+        "I01"
+      ],
+      "notes": "N01",
+      "scope": "one_original_sort_descent",
+      "source_labels": [
+        "lem:one-original-sort-exact-descent"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C04",
+      "name": "Symmetry and idempotence split a saturated old word into blocks",
+      "statement": "For P=a1;...;am, commute E through old invariant factors using C01 and E;E=E, obtaining E;P;E=(E;a1;E);...;(E;am;E) for m>=1. If m=0, P=old Id and E;P;E=E, corresponding to quotient equality rather than old Id.",
+      "depends_on": [
+        "C01",
+        "D01",
+        "C03"
+      ],
+      "notes": "N01",
+      "scope": "one_original_sort_descent",
+      "source_labels": [
+        "lem:one-original-sort-exact-descent"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C05",
+      "name": "Each saturated old atom is one ACTUAL quotient atom pullback",
+      "statement": "I02 identifies every E;ai;E with exactly one actual quotient orbital block, including quotient logical equality when ai lies in E. The full inverse-image map is injective because the quotient map is onto.",
+      "depends_on": [
+        "A03",
+        "I02",
+        "D02"
+      ],
+      "notes": "N01",
+      "scope": "one_original_sort_descent",
+      "source_labels": [
+        "lem:one-original-sort-exact-descent"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C06",
+      "name": "A saturated defining word is a quotient WORD-profile pullback",
+      "statement": "By C04/C05 and I03 actual saturated composition, each E;P_alpha;E is precisely the pullback of the corresponding finite quotient atomic word profile. For m=0 use the empty quotient word, whose pullback is E. No arbitrary old mixed word is projected factorwise.",
+      "depends_on": [
+        "C04",
+        "C05",
+        "I03"
+      ],
+      "notes": "N01",
+      "scope": "one_original_sort_descent",
+      "source_labels": [
+        "lem:one-original-sort-exact-descent"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C07",
+      "name": "Intersecting the quotient words gives full exact D/E",
+      "statement": "Inverse image commutes with intersections. C03/C06 make D the pullback of the finite meet of the displayed quotient words, and injectivity from C05 identifies that meet with D/E. It is nonempty because D is nonempty. For empty list it is quotient top. Thus reverse exact descent holds in the stated ONE original symmetric sort.",
+      "depends_on": [
+        "C02",
+        "C03",
+        "C05",
+        "C06"
+      ],
+      "notes": "N01",
+      "scope": "one_original_sort_descent",
+      "source_labels": [
+        "lem:one-original-sort-exact-descent"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C08",
+      "name": "An exact equivalence K above E descends as an exact equivalence",
+      "statement": "For original exact K>=E, equivalence transitivity gives E;K;E=K. Apply C07 with D=K. Its quotient image is an equivalence by ordinary class semantics and is full exact by the descent proof.",
+      "depends_on": [
+        "A03",
+        "C07"
+      ],
+      "notes": "N01",
+      "scope": "one_original_sort_descent",
+      "source_labels": [
+        "lem:one-original-sort-exact-descent"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C09",
+      "name": "One-original-sort exact-descent source export",
+      "statement": "C07/C08 establish the selected source lemma. Retain ONE original symmetric sort, nonempty exact D and actual E-bisaturation. This is a reverse direction beyond safe upward pullback, not a multi-sort theorem for mutually independent kernels.",
+      "depends_on": [
+        "C07",
+        "C08"
+      ],
+      "notes": "N01",
+      "scope": "one_original_sort_descent",
+      "source_labels": [
+        "lem:one-original-sort-exact-descent"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C10",
+      "name": "Top, real equality and quotient equality are three distinct conventions",
+      "statement": "Top is an empty list of word restrictions; old Id is an empty old loop word; the empty quotient loop word pulls back to E. C02/C04/C06 handle all three without inserting a zero-length path between distinct marked endpoints. None can be silently interchanged when E is nonidentity.",
+      "depends_on": [
+        "D01",
+        "C02",
+        "C04",
+        "C06"
+      ],
+      "notes": "N01",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:one-original-sort-exact-descent"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C11",
+      "name": "Private-path normalization retains the graph hypotheses",
+      "statement": "Under A04, delete genuine identity factors only within their own paths, retain their distinct marked endpoints, and use the stipulated positive remaining length. Private interior vertices remain private; merging coincident SAME-colour one-edge paths gives a simple raw graph, not a multigraph. No group action or CCO premise occurs in this combinatorial branch.",
+      "depends_on": [
+        "A04",
+        "D05",
+        "D06"
+      ],
+      "notes": "N02",
+      "scope": "private_graph",
+      "source_labels": [
+        "lem:typed-private-path-cycle"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C12",
+      "name": "A raw cycle traverses a private path all the way to a marked endpoint",
+      "statement": "Every internal vertex has specified degree two, both neighbours on its unique private path. A simple cycle entering that path cannot exit elsewhere or stop before the marked endpoint, so it traverses the complete path between its two marked endpoints.",
+      "depends_on": [
+        "D05",
+        "C11"
+      ],
+      "notes": "N02",
+      "scope": "private_graph",
+      "source_labels": [
+        "lem:typed-private-path-cycle"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C13",
+      "name": "A raw simple cycle visits at least two marked vertices",
+      "statement": "A cycle solely within internal vertices is impossible because each private path is individually simple with distinct marked endpoints. Using C12, a raw simple cycle is a concatenation of entire private paths; marked vertices are distinct except final return, so it visits at least two.",
+      "depends_on": [
+        "C12",
+        "D05"
+      ],
+      "notes": "N02",
+      "scope": "private_graph",
+      "source_labels": [
+        "lem:typed-private-path-cycle"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C14",
+      "name": "Two marked vertices mean two paths above ONE base edge",
+      "statement": "If a raw cycle visits exactly two marked vertices, its two complete traversed paths have that endpoint pair. G0 is simple, hence both paths belong to the SAME specified base edge. This case is not an artificial parallel one-edge 2-cycle.",
+      "depends_on": [
+        "A04",
+        "C12",
+        "C13"
+      ],
+      "notes": "N02",
+      "scope": "private_graph",
+      "source_labels": [
+        "lem:typed-private-path-cycle"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C15",
+      "name": "At least three marked vertices project to a SIMPLE base cycle",
+      "statement": "For >=3 marked vertices their consecutive pairs are specified edges of G0, and marked simplicity from C13 makes their sequence a simple specified base cycle. Exactly one whole private path is traversed above each consecutive edge. It is not merely an arbitrary closed walk with repeated marked vertices.",
+      "depends_on": [
+        "A04",
+        "C12",
+        "C13"
+      ],
+      "notes": "N02",
+      "scope": "private_graph",
+      "source_labels": [
+        "lem:typed-private-path-cycle"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C16",
+      "name": "Direct-edge merging prevents fake parallel cycles",
+      "statement": "A surviving length-one path contributes one old specified edge. Equal direct copies were merged in C11; one such edge cannot be traversed twice in a raw simple cycle. Internal longer paths remain distinct alternatives, and a direct edge with a longer private path forms a genuine >=3-edge raw cycle.",
+      "depends_on": [
+        "C11",
+        "C14",
+        "C15"
+      ],
+      "notes": "N02",
+      "scope": "private_graph",
+      "source_labels": [
+        "lem:typed-private-path-cycle"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C17",
+      "name": "Private word-path cycle-decomposition source export",
+      "statement": "C12-C16 prove every specified raw simple cycle is either two distinct private paths above one base edge or one private path over each edge of a simple specified base cycle. No source CCO, exactness, homogeneity, SAP or quotient algebra is used.",
+      "depends_on": [
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16"
+      ],
+      "notes": "N02",
+      "scope": "private_graph",
+      "source_labels": [
+        "lem:typed-private-path-cycle"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C18",
+      "name": "A top pullback may legitimately contribute ZERO private paths",
+      "statement": "For a specified quotient orbital whose nonempty old block D is top, choose the EMPTY exact presentation. Add no paths for that edge, retain its marked vertices and regard the old endpoint condition as vacuous. Since D is the FULL inverse image of this one quotient orbital, ANY marked endpoint images satisfy that edge on projection. This case is not a zero-length equality path.",
+      "depends_on": [
+        "A06",
+        "I02",
+        "D10"
+      ],
+      "notes": "N04",
+      "scope": "quotient_CCO",
+      "source_labels": [
+        "thm:typed-simultaneous-exact-quotients"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C19",
+      "name": "Quotient colours are actual original-group orbitals with saturated exact blocks",
+      "statement": "I02 gives nonempty full exact D_j for each actual quotient orbital, endpoint saturation, logical equality pullback E_s and diversity disjointness. The quotient sorts are nonempty/transitive under original G; its palette is finite. No quotient homogeneity or lifting section is assumed at this point.",
+      "depends_on": [
+        "A01",
+        "A02",
+        "I02",
+        "D02"
+      ],
+      "notes": "N03",
+      "scope": "anchored_extension",
+      "source_labels": [
+        "thm:typed-simultaneous-exact-quotients"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C20",
+      "name": "Zero and one anchored centre require no capacity assumption",
+      "statement": "For n=0 choose a point in the requested nonempty quotient sort. For n=1, actual old-group transitivity on the centre sort transports a witness of the requested nonempty pair orbital to that ACTUAL centre. A same-sort diversity orbital supplies a different quotient class. No infinite quotient fibre/capacity hypothesis or SAP is needed.",
+      "depends_on": [
+        "A01",
+        "A05",
+        "C19",
+        "D07"
+      ],
+      "notes": "N03",
+      "scope": "anchored_extension",
+      "source_labels": [
+        "thm:typed-simultaneous-exact-quotients"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C21",
+      "name": "Each allowed triangle aligns with the actual quotient centre pair",
+      "statement": "For n>=2, choose arbitrary real b_j in each actual C_j. A realized requested triangle supplies a pair of quotient centres in the SAME named ORIGINAL-G orbital as C_j,C_k. ONE original automorphism aligns this pair with the actual centres, and its third quotient vertex has the two requested orbital incidences.",
+      "depends_on": [
+        "A05",
+        "C19",
+        "D07"
+      ],
+      "notes": "N03",
+      "scope": "anchored_extension",
+      "source_labels": [
+        "thm:typed-simultaneous-exact-quotients"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C22",
+      "name": "Endpoint saturation makes the exact balls pairwise intersect",
+      "statement": "Choose an old representative z of the aligned third quotient vertex from C21. Since D_j,D_k are FULL inverse images, (z,b_j) in D_j and (z,b_k) in D_k for the ARBITRARILY FIXED real b_j,b_k. Hence the two actual balls meet; different centre pairs may use different witnesses.",
+      "depends_on": [
+        "C21",
+        "I02",
+        "D08"
+      ],
+      "notes": "N03",
+      "scope": "anchored_extension",
+      "source_labels": [
+        "thm:typed-simultaneous-exact-quotients"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C23",
+      "name": "Heterogeneous exact-ball Helly gives ONE common old point",
+      "statement": "All D_j are nonempty full exact and have common target sort u, with arbitrary actual centre sorts. C22 supplies pairwise intersections. Apply I05 to get one z in EVERY B_(D_j)(b_j). C20 covers n<2 directly; no coherent fine representative choice was assumed.",
+      "depends_on": [
+        "C19",
+        "C20",
+        "C22",
+        "I05"
+      ],
+      "notes": "N03",
+      "scope": "anchored_extension",
+      "source_labels": [
+        "thm:typed-simultaneous-exact-quotients"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C24",
+      "name": "Same-sort diversity forces the new quotient class to be fresh",
+      "statement": "For a centre of requested sort u, D_j is disjoint E_u by I02, since the requested quotient orbital is diversity. Thus C23 gives [z]_(E_u)!=C_j. Other named sorts are disjoint by tagging. Accidental quotient collisions are ruled out by the specified atoms, not by SAP or an infinitude assumption.",
+      "depends_on": [
+        "I02",
+        "C23"
+      ],
+      "notes": "N03",
+      "scope": "anchored_extension",
+      "source_labels": [
+        "thm:typed-simultaneous-exact-quotients"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C25",
+      "name": "The one-point extension is anchored over the EXACT old quotient base",
+      "statement": "Project the C23 common point and use C24. It has every requested pair orbital and differs from each old same-sort centre. Thus the complete diagram extends over the literal ACTUAL existing quotient vertices, not just over an isomorphic base copy.",
+      "depends_on": [
+        "C20",
+        "C23",
+        "C24"
+      ],
+      "notes": "N03",
+      "scope": "anchored_extension",
+      "source_labels": [
+        "thm:typed-simultaneous-exact-quotients"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C26",
+      "name": "Induction gives quotient triangle fullness",
+      "statement": "For any finite complete typed quotient diagram with actual unary/pair data and every indicated triangle realized, build it one vertex at a time using C25. The empty/singleton/two-point cases are actual allowed sorts/orbitals and C20; for larger bases all required triangles are in the premise. This proves the quotient age is triangle-defined without assuming it beforehand.",
+      "depends_on": [
+        "C20",
+        "C25"
+      ],
+      "notes": "N03",
+      "scope": "anchored_extension",
+      "source_labels": [
+        "thm:typed-simultaneous-exact-quotients"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C27",
+      "name": "A pure quotient partial isomorphism is joint on the SAME displayed vertices",
+      "statement": "Include Id_s and E_s in the joint exact structure. A finite pure-Q partial isomorphism preserves exactly the SAME actual old-G pair orbitals on its displayed quotient vertices, so is a joint partial isomorphism there. No arbitrary real representatives or old fine colours are added to its domain.",
+      "depends_on": [
+        "A01",
+        "A02",
+        "D09"
+      ],
+      "notes": "N03",
+      "scope": "joint_homogeneity",
+      "source_labels": [
+        "thm:typed-simultaneous-exact-quotients"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C28",
+      "name": "Individual joint lifting gives quotient homogeneity and age AP/JEP",
+      "statement": "I06 extends the C27 map by ONE original g whose induced quotient action preserves every named old-G orbital. Hence Q is homogeneous and countable, with Age(Q) AP/JEP by ordinary homogeneous-age embedding/alignment: align a finite base inside Q and take the finite induced union; JEP uses any two actual finite images. This yields ordinary AP, not SAP or a global group section.",
+      "depends_on": [
+        "A01",
+        "C27",
+        "I06",
+        "D02"
+      ],
+      "notes": "N03",
+      "scope": "joint_homogeneity",
+      "source_labels": [
+        "thm:typed-simultaneous-exact-quotients"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C29",
+      "name": "Every specified quotient edge has a nonempty exact old pullback presentation",
+      "statement": "For arbitrary A06 quotient CCO input, take the actual full old block D from I02 and a finite exact word presentation. Every word restriction contains nonempty D. Use the same orientation/converse for both ends of the unordered specified edge. No quotient FullWord theorem or new quotient homogeneity is used.",
+      "depends_on": [
+        "A06",
+        "I02",
+        "D10"
+      ],
+      "notes": "N04",
+      "scope": "quotient_CCO",
+      "source_labels": [
+        "thm:typed-simultaneous-exact-quotients"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C30",
+      "name": "Reduced equality-only words are impossible for quotient diversity edges",
+      "statement": "Contract genuine identity letters locally without changing a represented word profile. A same-sort quotient diversity block D is disjoint E_s and hence old Id, so a word profile equal to old Id cannot contain D. For cross-sort edges an empty loop equality word is ill-typed. Thus every actual chosen restriction reduces to a POSITIVE-length diversity path; a top block instead uses C18 zero restrictions.",
+      "depends_on": [
+        "A01",
+        "A02",
+        "C18",
+        "C29",
+        "I02",
+        "D01"
+      ],
+      "notes": "N04",
+      "scope": "quotient_CCO",
+      "source_labels": [
+        "thm:typed-simultaneous-exact-quotients"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C31",
+      "name": "Duplicate direct old paths have the same atom and can be merged",
+      "statement": "If two reduced restrictions over one quotient edge have length one, their profiles are single old atoms both containing the same NONEMPTY D. Distinct atomic relations are disjoint, so the atoms agree. Merge the duplicate direct specified edge without discarding any constraint.",
+      "depends_on": [
+        "C29",
+        "C30",
+        "A01"
+      ],
+      "notes": "N04",
+      "scope": "quotient_CCO",
+      "source_labels": [
+        "thm:typed-simultaneous-exact-quotients"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C32",
+      "name": "The expanded old diagram satisfies the private-path graph hypotheses",
+      "statement": "Attach the C30 paths with globally private formal interiors, retaining all marked vertices even for top edges with no paths. C31 merges coincident direct edges. Distinct marked endpoints remain distinct FORMAL vertices; equality contraction is only within a path. Thus A04 applies to this raw simple typed diversity diagram.",
+      "depends_on": [
+        "C18",
+        "C29",
+        "C30",
+        "C31",
+        "D10"
+      ],
+      "notes": "N04",
+      "scope": "quotient_CCO",
+      "source_labels": [
+        "thm:typed-simultaneous-exact-quotients"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C33",
+      "name": "Every raw simple cycle has one of the two controlled projections",
+      "statement": "Apply the abstract C17 decomposition to C32. A raw simple cycle is either two private paths over one quotient edge or projects to a SIMPLE specified quotient cycle, traversing one complete private path per edge. Repeated marked walks or internal-only cycles do not occur.",
+      "depends_on": [
+        "C17",
+        "C32"
+      ],
+      "notes": "N04",
+      "scope": "quotient_CCO",
+      "source_labels": [
+        "thm:typed-simultaneous-exact-quotients"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C34",
+      "name": "Choose ONE compatible quotient witness for each whole raw cycle",
+      "statement": "For the two-path case choose an actual realization of the nonempty quotient edge orbital. For the projected-cycle case use A06 to choose a homomorphism of the ENTIRE indicated quotient simple cycle. This assigns one compatible quotient class to each marked variable on that raw cycle. Different raw cycles may use unrelated witnesses.",
+      "depends_on": [
+        "A06",
+        "C29",
+        "C33",
+        "D11"
+      ],
+      "notes": "N04",
+      "scope": "quotient_CCO",
+      "source_labels": [
+        "thm:typed-simultaneous-exact-quotients"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C35",
+      "name": "Arbitrary old representatives of that cycle satisfy every traversed word",
+      "statement": "Within ONE raw cycle choose one old representative per marked variable of its C34 quotient image. Endpoint saturation of I02 makes EACH adjacent marked endpoint pair belong to its full block D, regardless of these choices. Therefore it satisfies every defining old word profile for that edge, including the one traversed. Different marked variables may have the same old image when allowed by nonadjacent collisions.",
+      "depends_on": [
+        "I02",
+        "C29",
+        "C34",
+        "D11"
+      ],
+      "notes": "N04",
+      "scope": "quotient_CCO",
+      "source_labels": [
+        "thm:typed-simultaneous-exact-quotients"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C36",
+      "name": "Independent private word witnesses realize each old raw cycle homomorphically",
+      "statement": "C35 word membership gives an actual old walk for each complete traversed private path with the FIXED chosen marked endpoint images. Its private interiors may be mapped independently. Together these walks give one homomorphism of the entire old raw simple cycle; repeated old internal/marked images are allowed. No injective completion or quotient homogeneity is required.",
+      "depends_on": [
+        "C33",
+        "C34",
+        "C35"
+      ],
+      "notes": "N04",
+      "scope": "quotient_CCO",
+      "source_labels": [
+        "thm:typed-simultaneous-exact-quotients"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C37",
+      "name": "Original semantic CCO gives a homomorphism of the ENTIRE expanded diagram",
+      "statement": "C36 shows EVERY specified raw simple cycle has an old homomorphism. Apply original semantic HOM CCO from A01 to the finite raw typed diversity diagram C32, retaining isolated marked vertices too. Obtain one homomorphism of the whole expanded diagram into M. No quotient AP/homogeneity/triangle-fullness or quotient FullWord criterion is consumed.",
+      "depends_on": [
+        "A01",
+        "C32",
+        "C36"
+      ],
+      "notes": "N04",
+      "scope": "quotient_CCO",
+      "source_labels": [
+        "thm:typed-simultaneous-exact-quotients"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C38",
+      "name": "The whole homomorphism recovers every exact endpoint block",
+      "statement": "For each original specified quotient edge, the image of every attached old path witnesses its corresponding word profile. Thus the marked endpoint images satisfy ALL defining restrictions and lie in D. For the empty/top presentation C18 the condition is vacuous and D is the full endpoint product. Merged direct edges still supply each duplicate restriction.",
+      "depends_on": [
+        "C18",
+        "C29",
+        "C31",
+        "C37"
+      ],
+      "notes": "N04",
+      "scope": "quotient_CCO",
+      "source_labels": [
+        "thm:typed-simultaneous-exact-quotients"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C39",
+      "name": "Projecting marked images proves semantic HOM quotient CCO",
+      "statement": "Project the C37 marked images to their actual E_s-classes. By C38 every specified quotient edge has its required orbital. The result is a homomorphism of the ENTIRE quotient input into Q, completing the arbitrary A06 request. Nonadjacent collisions are allowed. This proves quotient semantic CCO independently of C26/C28.",
+      "depends_on": [
+        "C37",
+        "C38",
+        "D02"
+      ],
+      "notes": "N04",
+      "scope": "quotient_CCO",
+      "source_labels": [
+        "thm:typed-simultaneous-exact-quotients"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C40",
+      "name": "Simultaneous full exact quotient theorem source export",
+      "statement": "Combine C26 triangle fullness, C28 countable homogeneity/AP/JEP and C39 semantic homomorphic CCO. The quotient has a finite complete actual orbital language and named transitive sorts. Original SAP, quotient SAP, coherent representatives, a global Aut(Q)->Aut(M) lift/section and mixed-word reverse descent are not conclusions. An empty selected sort family, if allowed, has only the empty typed diagram and all claims are vacuous.",
+      "depends_on": [
+        "C19",
+        "C26",
+        "C28",
+        "C39"
+      ],
+      "notes": "N04",
+      "scope": "quotient_CCO",
+      "source_labels": [
+        "thm:typed-simultaneous-exact-quotients"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C41",
+      "name": "Every quotient stage retains the exact source hypotheses",
+      "statement": "C40 gives countability, homogeneity, finite complete typed language, transitive named sorts and semantic homomorphic CCO. A same-sort quotient orbital block E_s;a;E_s is symmetric by taking converses of the symmetric original factors; cross-sort blocks retain paired converse. Its named old-group orbitals equal full-Aut pair orbits since old G is transitive within each named colour and full Aut cannot merge named colours.",
+      "depends_on": [
+        "A01",
+        "A02",
+        "C40",
+        "I02"
+      ],
+      "notes": "N05",
+      "scope": "quotient_towers",
+      "source_labels": [
+        "cor:typed-exact-quotient-towers"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C42",
+      "name": "The theorem can be applied again at each CURRENT stage",
+      "statement": "Under A07 the current source satisfies C41, and its current kernels are full exact in the actual represented algebra of that source. Reapply the universal C40 theorem at each finite stage to retain its conclusions, without adding SAP or treating current exactness as a reverse image-descent claim.",
+      "depends_on": [
+        "A07",
+        "C40",
+        "C41"
+      ],
+      "notes": "N05",
+      "scope": "quotient_towers",
+      "source_labels": [
+        "cor:typed-exact-quotient-towers"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C43",
+      "name": "Pulling the next-stage kernel back gives exact original H above E",
+      "statement": "I04 at the current quotient step pulls each next-stage full exact equivalence back to a nonempty old full exact invariant relation H_s. Class semantics make it an equivalence and give E_s<=H_s. This uses safe upward pullback, NOT the one-original-sort reverse descent C09 and not an arbitrary mixed old exact relation.",
+      "depends_on": [
+        "A07",
+        "I04",
+        "D12"
+      ],
+      "notes": "N05",
+      "scope": "quotient_towers",
+      "source_labels": [
+        "cor:typed-exact-quotient-towers"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C44",
+      "name": "Nested quotient classes flatten by a canonical bijection",
+      "statement": "For H_s the pullback kernel, [[x]_(E_s)]_(F_s) is determined exactly by [x]_(H_s). Send one to the other, equivalently union its E_s-classes. This is well-defined and bijective in each named sort and commutes with projection from old points. Iterated classes and direct classes are not literally the same sets before this canonical identification.",
+      "depends_on": [
+        "C43",
+        "D12"
+      ],
+      "notes": "N05",
+      "scope": "quotient_towers",
+      "source_labels": [
+        "cor:typed-exact-quotient-towers"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C45",
+      "name": "Double saturation gives the direct old atomic blocks",
+      "statement": "For an old atom a:s->t, its first quotient block is E_s;a;E_t. Pulling back saturation by the next kernels gives H_s;E_s;a;E_t;H_t=H_s;a;H_t, since E_s<=H_s and E_t<=H_t. This is the direct quotient block, including quotient equality. No mixed-arrow commutation or chosen fine representatives are used.",
+      "depends_on": [
+        "C43",
+        "I02",
+        "I03"
+      ],
+      "notes": "N05",
+      "scope": "quotient_towers",
+      "source_labels": [
+        "cor:typed-exact-quotient-towers"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C46",
+      "name": "Class flattening is a complete typed atomic structure isomorphism",
+      "statement": "C44 is the sortwise canonical bijection. C45 makes its pair orbital blocks exactly those of the direct H_s quotient, with corresponding quotient atom names and equality. Thus it preserves and reflects the full atomic binary signature under the canonical block identification, yielding the asserted canonical isomorphism.",
+      "depends_on": [
+        "C44",
+        "C45"
+      ],
+      "notes": "N05",
+      "scope": "quotient_towers",
+      "source_labels": [
+        "cor:typed-exact-quotient-towers"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C47",
+      "name": "Every finite tower flattens to one simultaneous exact quotient",
+      "statement": "Iterate C43-C46 through the finite sequence. Each total pulled-back initial kernel is full exact, invariant and contains its earlier kernel; the canonical class/atom maps compose. This proves the direct-composite assertion for independent multiple sorts using upward pullback only. For zero stages use initial kernels Id_s and the identity canonical map.",
+      "depends_on": [
+        "A07",
+        "C42",
+        "C43",
+        "C46"
+      ],
+      "notes": "N05",
+      "scope": "quotient_towers",
+      "source_labels": [
+        "cor:typed-exact-quotient-towers"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C48",
+      "name": "Any nonidentity current kernel strictly lowers total typed diversity rank",
+      "statement": "Every new atom is a nonempty union of prior atoms in its typed palette, so diversity atoms cannot split; same-sort equality cannot become diversity. A current kernel strictly above Id contains an old same-sort diversity atom, which becomes quotient equality. With the finite consistent converse counting of D13, at least one diversity unit disappears and none are created, so total rank strictly decreases.",
+      "depends_on": [
+        "A01",
+        "A02",
+        "I02",
+        "D13",
+        "C41"
+      ],
+      "notes": "N05",
+      "scope": "quotient_towers",
+      "source_labels": [
+        "cor:typed-exact-quotient-towers"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C49",
+      "name": "Exact quotient-tower source export",
+      "statement": "C42 preserves all stage hypotheses/conclusions, C47 proves canonical direct flattening by full exact pulled-back kernels, and C48 gives strict diversity rank drop whenever a current stage has nonidentity kernel. No global group map section or mixed reverse descent is included.",
+      "depends_on": [
+        "C42",
+        "C47",
+        "C48"
+      ],
+      "notes": "N05",
+      "scope": "quotient_towers",
+      "source_labels": [
+        "cor:typed-exact-quotient-towers"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C50",
+      "name": "The new quotient meets the whole-finite-axis provider hypotheses",
+      "statement": "By C40 Q is HOMOGENEOUS and purely relational binary with named sorts. Under A08 selected axes are ENTIRE finite named Q_s, disjoint by tagging. Therefore the independent general I07/I08 homogeneous entire-axis setting applies to FULL Gamma=Aut(Q), not to an arbitrary earlier subgroup or owner kernel.",
+      "depends_on": [
+        "A08",
+        "C40",
+        "D14"
+      ],
+      "notes": "N06",
+      "scope": "entire_finite_axes",
+      "source_labels": [
+        "cor:typed-exact-finite-axis-goursat"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C51",
+      "name": "Actual full-Aut finite coordinate images satisfy strong projection",
+      "statement": "Apply I07 to C50. Each coordinate map Gamma->R_s is onto and actual pair images are subdirect. On every finite selection the coordinate image is exactly the tuples satisfying all actual pair-image constraints. Empty and singleton selections are covered without hidden pair constraints.",
+      "depends_on": [
+        "C50",
+        "I07"
+      ],
+      "notes": "N06",
+      "scope": "entire_finite_axes",
+      "source_labels": [
+        "cor:typed-exact-finite-axis-goursat"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C52",
+      "name": "Conditional elementary-abelian pair images have linear Goursat presentations",
+      "statement": "Under A09 apply I08 C18 to the full entire-axis setting C50/C51. Each actual pair subgroup has form pi_ij(x)=rho_ij(y) with surjective linear maps to finite W_ij. No elementary-abelian structure or intrinsic fibre binding is inferred when A09 is absent.",
+      "depends_on": [
+        "A09",
+        "C50",
+        "C51",
+        "I08"
+      ],
+      "notes": "N06",
+      "scope": "entire_finite_axes",
+      "source_labels": [
+        "cor:typed-exact-finite-axis-goursat"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C53",
+      "name": "The finite coordinate IMAGE is a linear kernel with rank-nullity count",
+      "statement": "The C51 pair constraints and C52 presentations give im(Gamma->product R_s)=ker(Phi). I08 C19 gives cardinal 2^(sum d_s-rank Phi), including empty/singleton selections. This counts the finite coordinate IMAGE, not full possibly infinite Gamma or an independently defined pointwise kernel.",
+      "depends_on": [
+        "C51",
+        "C52",
+        "I08"
+      ],
+      "notes": "N06",
+      "scope": "entire_finite_axes",
+      "source_labels": [
+        "cor:typed-exact-finite-axis-goursat"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C54",
+      "name": "Finite entire-axis-after-quotient source export",
+      "statement": "C51 gives strong projection on entire finite quotient sorts; C53 gives the conditional linear/rank consequence. No original SAP is required. The statement is about FULL Aut(Q) and does not assert an intrinsic-binding description for fibres over moving owners or an identification with an earlier action image.",
+      "depends_on": [
+        "C50",
+        "C51",
+        "C53"
+      ],
+      "notes": "N06",
+      "scope": "entire_finite_axes",
+      "source_labels": [
+        "cor:typed-exact-finite-axis-goursat"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C55",
+      "name": "Mixed XOR word projection can strictly enlarge a word without refuting all exact descent",
+      "statement": "Take three original sorts with two F2 phase classes each and infinite pure clones; name all pair sort/XOR orbitals. The source is homogeneous SAP and HOM CCO by consistent XOR constraints, with fresh clone choices. Word (0:A->B,0:B->C) has endpoint XOR0. Quotient B by top and keep A,C equality: both projected factors are total, so their product is ALL A times C, strictly larger. Yet the old XOR0 endpoint relation is still an actual named atomic A-C quotient relation. This refutes factorwise mixed WORD descent, not every multi-sort exact-descent statement.",
+      "depends_on": [
+        "A01",
+        "A02",
+        "I03"
+      ],
+      "notes": "N07",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:one-original-sort-exact-descent"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C56",
+      "name": "The two-sort phase owner-kernel control does not contradict entire-axis projection",
+      "statement": "With two original clone sorts U,V and cross XOR, the fine two-phase quotient full group is diagonal C2. Coarsen U to singleton, keep V phases: coarse full group is C2 and the induced fine/coarse map is injective, so its pointwise kernel is trivial. Intrinsic U fibre group is C2. The phase cuts and top cuts are full exact; this disproves naive intrinsic binding for an owner kernel while the full fine axis pair group is correctly diagonal/subdirect.",
+      "depends_on": [
+        "C40",
+        "C51",
+        "C54"
+      ],
+      "notes": "N07",
+      "scope": "boundary",
+      "source_labels": [
+        "cor:typed-exact-finite-axis-goursat"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C57",
+      "name": "A pure quotient partial map never requires arbitrary fine representatives",
+      "statement": "C27/I06 keep exactly the displayed quotient vertices. Adding arbitrary real representatives could introduce fine pair-colour constraints not preserved by that pure quotient map. Existence of the lift is established without adding them, so one may not silently claim arbitrary chosen representatives are simultaneously mapped.",
+      "depends_on": [
+        "C27",
+        "C28"
+      ],
+      "notes": "N07",
+      "scope": "boundary",
+      "source_labels": [
+        "thm:typed-simultaneous-exact-quotients"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C58",
+      "name": "Quotient homogeneity and HOM CCO do not add SAP or a group section",
+      "statement": "The C28 lift is individual for one finite request. C39 permits nonadjacent collisions and supplies a homomorphism, not injective completion. These facts give neither coherent lifts for all quotient automorphisms nor SAP of the quotient age; finite quotient capacities are handled by actual atoms, not excluded by a freeness premise.",
+      "depends_on": [
+        "C24",
+        "C28",
+        "C39",
+        "C40"
+      ],
+      "notes": "N07",
+      "scope": "boundary",
+      "source_labels": [
+        "thm:typed-simultaneous-exact-quotients"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C59",
+      "name": "Safe upward pullback and one-sort reverse descent have different scopes",
+      "statement": "I04 safely pulls exact quotient menus/equivalences to old full exact relations under independent typed kernels. C09 proves a converse only for one original symmetric sort with actual bisaturation. C43/C47 tower flattening uses the former, not an unproved general converse; the XOR C55 example delimits the tempting factorwise proof without overstating its counterexample.",
+      "depends_on": [
+        "I04",
+        "C09",
+        "C43",
+        "C47",
+        "C55"
+      ],
+      "notes": "N07",
+      "scope": "boundary",
+      "source_labels": [
+        "cor:typed-exact-quotient-towers"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C60",
+      "name": "Formal private vertices, actual real images and nested class sets must stay distinct",
+      "statement": "Raw path interiors are formally private even when their images collide; marked endpoint images may coincide for nonadjacent variables under HOM witnesses. Distinct same-sort QUOTIENT centres in the anchored extension remain distinct by C24. Nested tower classes require C44 canonical flattening, not literal set equality. Finite controls diagnose these mechanisms and prove no unbounded CCO/SAP or Lean theorem.",
+      "depends_on": [
+        "C17",
+        "C24",
+        "C36",
+        "C44"
+      ],
+      "notes": "N07",
+      "scope": "boundary",
+      "source_labels": [
+        "thm:typed-simultaneous-exact-quotients"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    }
+  ],
+  "source_result_files": [],
+  "additional_result_exports": [
+    "lem:one-original-sort-exact-descent",
+    "lem:typed-private-path-cycle",
+    "thm:typed-simultaneous-exact-quotients",
+    "cor:typed-exact-quotient-towers",
+    "cor:typed-exact-finite-axis-goursat"
+  ],
+  "exports": [
+    {
+      "source_label": "lem:one-original-sort-exact-descent",
+      "claims": [
+        "C07",
+        "C08",
+        "C09"
+      ]
+    },
+    {
+      "source_label": "lem:typed-private-path-cycle",
+      "claims": [
+        "C14",
+        "C15",
+        "C16",
+        "C17"
+      ]
+    },
+    {
+      "source_label": "thm:typed-simultaneous-exact-quotients",
+      "claims": [
+        "C26",
+        "C28",
+        "C39",
+        "C40"
+      ]
+    },
+    {
+      "source_label": "cor:typed-exact-quotient-towers",
+      "claims": [
+        "C42",
+        "C47",
+        "C48",
+        "C49"
+      ]
+    },
+    {
+      "source_label": "cor:typed-exact-finite-axis-goursat",
+      "claims": [
+        "C51",
+        "C53",
+        "C54"
+      ]
+    }
+  ],
+  "auxiliary_exports": [
+    {
+      "source_label": "eq:one-sort-exact-descent",
+      "claims": [
+        "C03",
+        "C07"
+      ],
+      "source": {
+        "file": "sections/simultaneous_typed_exact_quotients.tex",
+        "anchor": "\\label{eq:one-sort-exact-descent}"
+      }
+    }
+  ],
+  "source_files": [
+    {
+      "file": "sections/simultaneous_typed_exact_quotients.tex",
+      "git_blob": "078017a03e1d6f62088fb17fb6e31bce4f6e8ef6"
+    },
+    {
+      "file": "sections/exact_foundations/01_full_raw_exact_helly.tex",
+      "git_blob": "7cb28c86b4b296ddf865b6aff518cda1215cd491"
+    },
+    {
+      "file": "sections/exact_foundations/03_joint_exact_sort_lifting.tex",
+      "git_blob": "394e0db063a476c5c069384b3d3fa2ffd3c7471d"
+    }
+  ],
+  "dependency_firewalls": [
+    {
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10"
+      ],
+      "forbid": [
+        "A04",
+        "A05",
+        "A06",
+        "A07",
+        "A08",
+        "A09",
+        "I04",
+        "I05",
+        "I06",
+        "I07",
+        "I08",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40",
+        "C41",
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46",
+        "C47",
+        "C48",
+        "C49",
+        "C50",
+        "C51",
+        "C52",
+        "C53",
+        "C54",
+        "C55",
+        "C56",
+        "C57",
+        "C58",
+        "C59",
+        "C60"
+      ]
+    },
+    {
+      "claims": [
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17"
+      ],
+      "forbid": [
+        "A01",
+        "A02",
+        "A03",
+        "A05",
+        "A06",
+        "A07",
+        "A08",
+        "A09",
+        "I01",
+        "I02",
+        "I03",
+        "I04",
+        "I05",
+        "I06",
+        "I07",
+        "I08",
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40",
+        "C41",
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46",
+        "C47",
+        "C48",
+        "C49",
+        "C50",
+        "C51",
+        "C52",
+        "C53",
+        "C54",
+        "C55",
+        "C56",
+        "C57",
+        "C58",
+        "C59",
+        "C60"
+      ]
+    },
+    {
+      "claims": [
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26"
+      ],
+      "forbid": [
+        "A03",
+        "A04",
+        "A06",
+        "A07",
+        "A08",
+        "A09",
+        "I01",
+        "I03",
+        "I04",
+        "I06",
+        "I07",
+        "I08",
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40",
+        "C41",
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46",
+        "C47",
+        "C48",
+        "C49",
+        "C50",
+        "C51",
+        "C52",
+        "C53",
+        "C54",
+        "C55",
+        "C56",
+        "C57",
+        "C58",
+        "C59",
+        "C60"
+      ]
+    },
+    {
+      "claims": [
+        "C27",
+        "C28"
+      ],
+      "forbid": [
+        "A03",
+        "A04",
+        "A05",
+        "A06",
+        "A07",
+        "A08",
+        "A09",
+        "I01",
+        "I03",
+        "I04",
+        "I05",
+        "I07",
+        "I08",
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40",
+        "C41",
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46",
+        "C47",
+        "C48",
+        "C49",
+        "C50",
+        "C51",
+        "C52",
+        "C53",
+        "C54",
+        "C55",
+        "C56",
+        "C57",
+        "C58",
+        "C59",
+        "C60"
+      ]
+    },
+    {
+      "claims": [
+        "C18",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39"
+      ],
+      "forbid": [
+        "A03",
+        "A05",
+        "A07",
+        "A08",
+        "A09",
+        "I01",
+        "I03",
+        "I04",
+        "I05",
+        "I06",
+        "I07",
+        "I08",
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C40",
+        "C41",
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46",
+        "C47",
+        "C48",
+        "C49",
+        "C50",
+        "C51",
+        "C52",
+        "C53",
+        "C54",
+        "C55",
+        "C56",
+        "C57",
+        "C58",
+        "C59",
+        "C60"
+      ]
+    },
+    {
+      "claims": [
+        "C41",
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46",
+        "C47",
+        "C48",
+        "C49"
+      ],
+      "forbid": [
+        "A03",
+        "A08",
+        "A09",
+        "I01",
+        "I07",
+        "I08",
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C50",
+        "C51",
+        "C52",
+        "C53",
+        "C54",
+        "C55",
+        "C56",
+        "C57",
+        "C58",
+        "C59",
+        "C60"
+      ]
+    }
+  ],
+  "quotient_contracts": {
+    "new_results": "Exactly five selected results; three other source results already imported",
+    "reverse_descent": "C01-C10 ONE original symmetric sort only",
+    "private_cycles": "C11-C17 pure finite graph, no source/group assumptions",
+    "anchored_extension": "C19-C26 old exact balls over literal quotient base",
+    "homogeneity": "C27-C28 same displayed quotient vertices only; individual old g",
+    "semantic_CCO": "C18,C29-C39 old blocks + private cycle classification + ORIGINAL CCO only",
+    "top_edge": "C18 empty restriction family attaches NO paths",
+    "reduced_word": "C30 no all-identity restriction in diversity block",
+    "tower_exactness": "C43 I04 safe upward pullback, never C09 reverse descent",
+    "tower_classes": "C44 canonical flattening, not literal equality",
+    "rank_drop": "C48 finite atomic blocks merge/no splitting; one diversity atom becomes equality",
+    "finite_axes": "C50-C54 FULL Aut(Q), ENTIRE finite named sorts; conditional elementary-abelian groups",
+    "external_bindings": "Five existing HN/HKN receiving bindings unchanged; no new published provider"
+  },
+  "tasks": [
+    {
+      "id": "T01",
+      "name": "One-original-sort exact descent",
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Keep source scopes and exact selected provider claims. Reverse descent is ONE-sort only. Private cycles are pure finite graph combinatorics. QCCO uses original CCO independently of quotient AP/homogeneity or FullWord. Handle top with zero restrictions and equality contraction without zero-length paths. Towers use upward exact pullback and canonical class flattening. Finite-axis groups are FULL Aut(Q) on ENTIRE named finite sorts, not owner kernels. No SAP/group section/global certificate."
+    },
+    {
+      "id": "T02",
+      "name": "Abstract private word-path cycle decomposition",
+      "claims": [
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Keep source scopes and exact selected provider claims. Reverse descent is ONE-sort only. Private cycles are pure finite graph combinatorics. QCCO uses original CCO independently of quotient AP/homogeneity or FullWord. Handle top with zero restrictions and equality contraction without zero-length paths. Towers use upward exact pullback and canonical class flattening. Finite-axis groups are FULL Aut(Q) on ENTIRE named finite sorts, not owner kernels. No SAP/group section/global certificate."
+    },
+    {
+      "id": "T03",
+      "name": "Anchored quotient triangles and individual joint homogeneity",
+      "claims": [
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Keep source scopes and exact selected provider claims. Reverse descent is ONE-sort only. Private cycles are pure finite graph combinatorics. QCCO uses original CCO independently of quotient AP/homogeneity or FullWord. Handle top with zero restrictions and equality contraction without zero-length paths. Towers use upward exact pullback and canonical class flattening. Finite-axis groups are FULL Aut(Q) on ENTIRE named finite sorts, not owner kernels. No SAP/group section/global certificate."
+    },
+    {
+      "id": "T04",
+      "name": "Semantic quotient CCO via old private word paths",
+      "claims": [
+        "C18",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39"
+      ],
+      "depends_on": [
+        "T02"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Keep source scopes and exact selected provider claims. Reverse descent is ONE-sort only. Private cycles are pure finite graph combinatorics. QCCO uses original CCO independently of quotient AP/homogeneity or FullWord. Handle top with zero restrictions and equality contraction without zero-length paths. Towers use upward exact pullback and canonical class flattening. Finite-axis groups are FULL Aut(Q) on ENTIRE named finite sorts, not owner kernels. No SAP/group section/global certificate."
+    },
+    {
+      "id": "T05",
+      "name": "Assemble simultaneous quotient source theorem",
+      "claims": [
+        "C40"
+      ],
+      "depends_on": [
+        "T03",
+        "T04"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Keep source scopes and exact selected provider claims. Reverse descent is ONE-sort only. Private cycles are pure finite graph combinatorics. QCCO uses original CCO independently of quotient AP/homogeneity or FullWord. Handle top with zero restrictions and equality contraction without zero-length paths. Towers use upward exact pullback and canonical class flattening. Finite-axis groups are FULL Aut(Q) on ENTIRE named finite sorts, not owner kernels. No SAP/group section/global certificate."
+    },
+    {
+      "id": "T06",
+      "name": "Current-stage exact towers, canonical flattening and rank loss",
+      "claims": [
+        "C41",
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46",
+        "C47",
+        "C48",
+        "C49"
+      ],
+      "depends_on": [
+        "T05"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Keep source scopes and exact selected provider claims. Reverse descent is ONE-sort only. Private cycles are pure finite graph combinatorics. QCCO uses original CCO independently of quotient AP/homogeneity or FullWord. Handle top with zero restrictions and equality contraction without zero-length paths. Towers use upward exact pullback and canonical class flattening. Finite-axis groups are FULL Aut(Q) on ENTIRE named finite sorts, not owner kernels. No SAP/group section/global certificate."
+    },
+    {
+      "id": "T07",
+      "name": "Full-Aut entire finite-axis application",
+      "claims": [
+        "C50",
+        "C51",
+        "C52",
+        "C53",
+        "C54"
+      ],
+      "depends_on": [
+        "T05"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Keep source scopes and exact selected provider claims. Reverse descent is ONE-sort only. Private cycles are pure finite graph combinatorics. QCCO uses original CCO independently of quotient AP/homogeneity or FullWord. Handle top with zero restrictions and equality contraction without zero-length paths. Towers use upward exact pullback and canonical class flattening. Finite-axis groups are FULL Aut(Q) on ENTIRE named finite sorts, not owner kernels. No SAP/group section/global certificate."
+    },
+    {
+      "id": "T08",
+      "name": "Scope and negative-control diagnostics",
+      "claims": [
+        "C55",
+        "C56",
+        "C57",
+        "C58",
+        "C59",
+        "C60"
+      ],
+      "depends_on": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Keep source scopes and exact selected provider claims. Reverse descent is ONE-sort only. Private cycles are pure finite graph combinatorics. QCCO uses original CCO independently of quotient AP/homogeneity or FullWord. Handle top with zero restrictions and equality contraction without zero-length paths. Towers use upward exact pullback and canonical class flattening. Finite-axis groups are FULL Aut(Q) on ENTIRE named finite sorts, not owner kernels. No SAP/group section/global certificate."
+    }
+  ],
+  "overview_mermaid": [
+    "flowchart TD",
+    "  S[\"One symmetric original sort and bisaturation\"] --> D[\"Reverse exact descent\"]",
+    "  B[\"Actual full exact quotient blocks\"] --> T[\"Anchored quotient triangle extension\"]",
+    "  H[\"Original exact-ball Helly\"] --> T",
+    "  J[\"Individual joint exact lifting\"] --> A[\"Quotient homogeneity and AP/JEP\"]",
+    "  P[\"Private paths and raw cycle classification\"] --> C[\"Every raw cycle has an old homomorphism\"]",
+    "  B --> C",
+    "  O[\"Original semantic HOM CCO\"] --> Q[\"Semantic quotient HOM CCO\"]",
+    "  C --> Q",
+    "  T --> R[\"Simultaneous exact quotient theorem\"]",
+    "  A --> R",
+    "  Q --> R",
+    "  R --> W[\"Current-stage towers and full finite axes\"]"
+  ],
+  "overview_notes": [
+    "Only five new results and one equation are counted; blocks/general entire-axis/linear Goursat results remain existing provider exports.",
+    "Quotient CCO is independent of the newly proved quotient triangle fullness, homogeneity and AP.",
+    "Top has no word restrictions; old Id and quotient equality have distinct pullbacks.",
+    "Independent mixed word projection may enlarge a word even when its endpoint relation still descends atomically.",
+    "Nested quotient classes flatten canonically; tower exactness uses safe upward pullback only.",
+    "All five existing external HN/HKN receiving bindings, provider-cache guidance and prior source qualifications are unchanged."
+  ],
+  "controls": [
+    {
+      "id": "K01",
+      "check": "Actual finite XOR/clone quotient blocks/products, one-sort exact descent, mixed factorwise word failure, canonical two-stage tower classes/atomic blocks and strict rank loss."
+    },
+    {
+      "id": "K02",
+      "check": "Enumerated private-path simple cycles after equality contraction/direct-edge merging; entire finite named-axis full group projection and separate proper-subgroup/owner-kernel firewalls. No infinite homogeneous CCO/SAP or Lean certification."
+    }
+  ],
+  "article_feedback": [
+    {
+      "id": "F01",
+      "kind": "PROOF_EMPTY_PRESENTATION_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/simultaneous_typed_exact_quotients.tex",
+        "anchor": "Replace the specified\nedge by private old paths"
+      },
+      "finding": "A nonempty pullback block may be typed top with an empty restriction presentation. That edge contributes no paths while its marked vertices remain. This is a vacuous endpoint condition, not a zero-length equality path.",
+      "proposed_article_change": "Add the top/zero-path sentence; separately show an actual chosen restriction cannot reduce entirely to equality for a quotient diversity edge, and justify duplicate one-edge colours from nonempty block membership.",
+      "caller_effect": "No new hypothesis or source repair; no quotient capacity/SAP assumption or quotient FullWord theorem is needed.",
+      "proof_claims": [
+        "C18",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C38"
+      ]
+    },
+    {
+      "id": "F02",
+      "kind": "CANONICAL_IDENTIFICATION_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/simultaneous_typed_exact_quotients.tex",
+        "anchor": "Hence both quotient structures have identical underlying"
+      },
+      "finding": "An iterated class is a set of earlier classes, whereas a direct class is a set of original points. They are canonically bijective by union/[[x]]->[x], not literally identical sets until this identification.",
+      "proposed_article_change": "Replace the literal identical-underlying-sets wording by the canonical class-flattening identification and retain the direct block calculation H_s;a;H_t.",
+      "caller_effect": "The asserted canonical isomorphism is correct; no theorem scope change, commutation or global group map is added.",
+      "proof_claims": [
+        "C43",
+        "C44",
+        "C45",
+        "C46",
+        "C47"
+      ]
+    }
+  ],
+  "review": {
+    "date": "2026-10-28",
+    "source_unchanged": true,
+    "source_signature_repairs": 0,
+    "unexpanded_provider_labels": [],
+    "proof_status": "HUMAN_EXPANDED_NOT_LEAN; five selected Foundations I results, exact existing provider selections and independent proof branches. No new mathematical gap found; top-presentation and canonical class-identification wording expanded.",
+    "independent_reviews": [
+      "Anchored quotient extension, same-displayed joint lifting and semantic old-CCO private path proof",
+      "One-original-sort descent, mixed XOR boundary and exact quotient towers/rank loss",
+      "Full-Aut whole-finite-axis corollary and intrinsic owner-kernel firewall"
+    ],
+    "boundaries": [
+      "No multi-sort reverse word descent.",
+      "No quotient homogeneity/AP input in quotient CCO proof.",
+      "No zero-length path for an identity restriction or top.",
+      "Canonical class flattening is not literal set equality.",
+      "Full-Aut entire axes are not pointwise owner kernels."
+    ]
+  }
+}

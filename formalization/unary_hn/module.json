@@ -1,0 +1,1706 @@
+{
+  "schema_version": 1,
+  "id": "unary_hn",
+  "index_title": "Unary irreducibility, same-map universal edges and HN Ramsey transfer",
+  "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+  "status": "HUMAN_EXPANDED_NOT_LEAN",
+  "scope": "Private B037: FIVE Foundations III results, no equations. Prove unary/binary pair coverage gives irreducibility and completed-map rigidity transports the SAME old homomorphism-embedding across a universal irreflexive edge. Prove the restricted-obstruction unary HN transfer with exact uniform n=max(1,N), then its one-generated-admissible and binary-covered variants. Use an explicit one-sorted encoding and LARGER all-model ambient: the local irreducible-membership hypothesis itself forces correct sorts, unary domains/values and relation tuple typing. Three versioned HN2019 inputs remain published theorem/receiving Lean bridges pending; an exact existing Lean2.19 declaration is pinned read-only. Reuse ONLY B034 actual singleton diagrams/totality, not its size bounds. No arbitrary-malformed obstruction bound, CCO, EPPA or homogeneous geometry is supplied.",
+  "scope_vocabulary": [
+    "pair_irreducibility",
+    "same_map_edge",
+    "typed_encoding",
+    "ordered_class",
+    "restricted_local_finiteness",
+    "HN_Ramsey",
+    "direct_admissibility",
+    "boundary"
+  ],
+  "scope_explanation": "The local universal-edge lemma is independent of the HN transfer. The transfer uses irreducibility directly and does not add a universal edge. Strong completion means INJECTIVE homomorphism-embedding, not global induced embedding. Main local finiteness is proved in a larger one-sorted ordered ambient, avoiding unsupported inheritance for a typed predicate subcategory.",
+  "control_script": "tools/check_unary_hn_controls.py",
+  "assumptions": [
+    {
+      "id": "A01",
+      "name": "Finite typed partial unary convention",
+      "statement": "Languages have finitely many named sorts, unary function symbols and relations of arbitrary finite arity. No constants or higher-arity functions occur. Empty sorts are allowed. Partial sources may have proper unary domains. Actual induced substructures reflect domains and retain all already-defined values and all relations; homomorphisms preserve positive relations and defined values. The one-sorted encoding uses unary sort predicates; raw ambient models may initially violate typing."
+    },
+    {
+      "id": "A02",
+      "name": "Pair-coverage lemma inputs",
+      "statement": "For the first lemma A is finite induced unary-closed with TOTAL unary functions on intended input sorts. For every distinct x,y, x lies in closure{y}, or y lies in closure{x}, or a POSITIVE named binary tuple joins them in one orientation. Higher relational arities remain allowed; negative/missing tuples do not witness coverage."
+    },
+    {
+      "id": "A03",
+      "name": "Hereditary actual completed class",
+      "statement": "K is an isomorphism-closed hereditary class of finite completed induced unary-closed typed structures. Functions are total on their prescribed input sorts and undefined off those sorts in the one-sorted encoding. Actual K membership means the existing entire induced diagram, not merely a completion. There is no automatic bound on generated closures."
+    },
+    {
+      "id": "A04",
+      "name": "Completed-map rigidity for the edge lemma",
+      "statement": "ONLY for universal-edge transport, EVERY old L-homomorphism-embedding between completed K members is an induced embedding. This is weaker than asserting every homomorphism embeds; it follows if every completed member is irreducible. SAP alone does not imply it."
+    },
+    {
+      "id": "A05",
+      "name": "Universal-edge local source and given old map",
+      "statement": "Expand K by universal irreflexive E_* to K*. C is a finite partial expanded source whose EVERY actual induced irreducible substructure belongs to K*. Its old reduct has a GIVEN old homomorphism-embedding h into H in K. The conclusion must use this SAME h, without replacing it by a different injective map."
+    },
+    {
+      "id": "A06",
+      "name": "Irreducible SAP class for the main transfer",
+      "statement": "For the main/direct transfer, K as in A03 has SAP and EVERY completed member is old-L irreducible. The encoded one-sorted class has the same actual closed subobjects, free decompositions and strong-amalgamation spans as the typed class. Arbitrary added global linear orders are allowed; no universal-edge expansion is required."
+    },
+    {
+      "id": "A07",
+      "name": "Restricted all-irreducible-admissible obstruction bound",
+      "statement": "There is an integer N such that each finite TYPED partial C, whose every old induced irreducible already belongs to K and which has NO K homomorphism-embedding completion, contains an actual induced unary-CLOSED noncompletable substructure with at most N points. The premise is restricted to this admissible domain, not arbitrary malformed unary inputs."
+    },
+    {
+      "id": "A08",
+      "name": "BOUND HN local-finiteness test data",
+      "statement": "Fix any finite ordered ambient C0 and n=max(1,N). A candidate partial ordered C has (i) a homomorphism-embedding to C0, (ii) every actual expanded induced irreducible in K^<, and (iii) every actual induced substructure with at most n points has a K^< completion. These are BOUND inputs to the implication, not an assumed global completion or closure-size bound. In the larger ambient C is initially raw one-sorted."
+    },
+    {
+      "id": "A09",
+      "name": "Direct one-generated-admissible obstruction bound",
+      "statement": "For the direct variant, keep hereditary completed SAP K and its irreducibility, but assume the same N-bound ONLY for noncompletable typed partial sources whose EVERY one-generated induced closure is already an actual completed K member. This supplies A07 after the B034 admissibility conversion. No uniform size bound on the closures or arbitrary malformed sources is assumed."
+    },
+    {
+      "id": "A10",
+      "name": "Binary-covered specialization",
+      "statement": "For the last theorem replace the completed-class irreducibility input by positive named binary coverage of EVERY ordered distinct pair in each completed member. Retain the source arity-at-most-two condition, hereditary completed SAP setting and direct restricted obstruction premise. Binary coverage proves irreducibility, not that obstruction premise; no homogeneity/countability or auxiliary E_* is required."
+    }
+  ],
+  "imports": [
+    {
+      "id": "I01",
+      "name": "Actual one-generated diagrams and forced unary totality",
+      "source_label": "lem:hn-irreducible-forces-unary-admissible",
+      "statement": "For a TYPED partial unary source whose every induced irreducible belongs to actual completed K, each U_x is itself an ACTUAL completed K member and intended functions are already total. Reuse unary_support C20/C21. Its independent one-generated irreducibility proof C19 is recorded as internal support; no optional m-bound, term-identity export or hidden-specific admissibility interface is imported.",
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "depends_on": [
+        "A01",
+        "A03"
+      ],
+      "provider_module": "unary_support",
+      "provider_claims": [
+        "C20",
+        "C21"
+      ],
+      "provider_support_claims": [
+        "C19"
+      ],
+      "provider_support_usage": "C19 supplies the independent domain-reflecting one-generated closure mechanism before actual membership/totality. Receiving C37 uses the selected typed C20/C21 exactly; raw one-sorted typing C18-C22 is separately proved before any such typed application."
+    }
+  ],
+  "external_providers": [
+    {
+      "id": "E01",
+      "name": "HN finite ordered models",
+      "theorem": "2.19",
+      "statement": "All finite linearly ordered one-sorted models of a fixed relation/partial-function language are Ramsey. Strict-order and ordered-copy/embedding conventions are adapted locally.",
+      "status": "PUBLISHED_THEOREM_LOCAL_BRIDGE_PENDING",
+      "source_url": "https://arxiv.org/html/1606.07979v4",
+      "source_version": "1606.07979v4",
+      "depends_on": [
+        "A01"
+      ],
+      "lean_reference": {
+        "repository": "janhubicka/partite-construction",
+        "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+        "module": "PartiteConstruction.Ramsey.AllThosePartialFiniteModels",
+        "declarations": [
+          "StructuralRamsey.Structure.allThoseRamseyClasses_theorem_2_19_partialFunctions"
+        ],
+        "bridge_status": "NOT_BOUND_TO_CCO_ENCODING",
+        "source_file": "PartiteConstruction/Ramsey/AllThosePartialFiniteModels.lean",
+        "lean_version": "v4.35.0-rc3",
+        "representation": "SingletonValued functions with empty/singleton output fibres; full functional embeddings; finite nonempty color type",
+        "verified_CI": "https://github.com/janhubicka/partite-construction/actions/runs/40521111992",
+        "verification_scope": "Read-only declaration signature and successful pinned CI; receiving representation/typing/order adapter and axiom audit remain pending.",
+        "mathlib_commit": "5bd58ac291422a21f412ae354c91e7d172255a2c"
+      }
+    },
+    {
+      "id": "E02",
+      "name": "HN unary injective completion",
+      "theorem": "2.6",
+      "statement": "For unary functions and hereditary irreducible SAP K, any finite source with a K completion has an injective homomorphism-embedding completion. No global inducedness is asserted.",
+      "status": "PUBLISHED_THEOREM_LOCAL_BRIDGE_PENDING",
+      "source_url": "https://arxiv.org/html/1606.07979v4",
+      "source_version": "1606.07979v4",
+      "depends_on": [
+        "A01"
+      ]
+    },
+    {
+      "id": "E03",
+      "name": "HN locally finite Ramsey subclass",
+      "theorem": "2.11",
+      "statement": "A hereditary locally finite SAP subclass of an irreducible finite Ramsey ambient is Ramsey. Local finiteness uses Definition2.8 actual substructures and ordinary completion.",
+      "status": "PUBLISHED_THEOREM_LOCAL_BRIDGE_PENDING",
+      "source_url": "https://arxiv.org/html/1606.07979v4",
+      "source_version": "1606.07979v4",
+      "depends_on": [
+        "A01"
+      ]
+    }
+  ],
+  "definitions": [
+    {
+      "id": "D01",
+      "name": "Actual unary closure and free irreducibility",
+      "statement": "Closure consists of all iterated already-defined unary values. An induced closed structure is irreducible if it has no nontrivial free decomposition into proper actual induced closed factors over their intersection, possibly empty.",
+      "depends_on": [
+        "A01"
+      ],
+      "notes": "N01",
+      "source": {
+        "file": "sections/unary_hn_transfer.tex",
+        "anchor": "\\label{lem:typed-unary-binary-irreducibility}"
+      }
+    },
+    {
+      "id": "D02",
+      "name": "Homomorphism-embedding and strong completion",
+      "statement": "A HE is a homomorphism embedding every actual source irreducible induced substructure. A K completion is a HE into some K member. STRONG means that HE is globally INJECTIVE, without demanding reflection on all reducible source tuples. These are the HN Definitions2.3/2.5 conventions.",
+      "depends_on": [
+        "A01"
+      ],
+      "notes": "N01",
+      "source": {
+        "file": "sections/unary_hn_transfer.tex",
+        "anchor": "\\label{lem:typed-unary-binary-irreducibility}"
+      }
+    },
+    {
+      "id": "D03",
+      "name": "Universal irreflexive edge expansion",
+      "statement": "K* puts E_*(x,y) exactly on distinct carrier points of each K member. In a typed syntax this is one disjoint-union relation or finitely many E_ij relations. A partial source may initially display only some E edges.",
+      "depends_on": [
+        "A03",
+        "A05"
+      ],
+      "notes": "N02",
+      "source": {
+        "file": "sections/unary_hn_transfer.tex",
+        "anchor": "\\label{lem:typed-universal-edge-hn-reflection}"
+      }
+    },
+    {
+      "id": "D04",
+      "name": "One-sorted encoding of typed structures",
+      "statement": "Use one carrier with unary S_i predicates for a disjoint exhaustive sort partition. Encode functions as genuine partial unary maps, undefined off their prescribed input sorts, and typed relations as ordinary predicates with tuples of their prescribed sort sequence. Actual typed embeddings/subobjects/free amalgams agree with the encoded ones.",
+      "depends_on": [
+        "A01",
+        "A03"
+      ],
+      "notes": "N03",
+      "source": {
+        "file": "sections/unary_hn_transfer.tex",
+        "anchor": "\\label{thm:unary-hn-irreducible-source-transfer}"
+      }
+    },
+    {
+      "id": "D05",
+      "name": "LARGER all-model ordered ambient",
+      "statement": "R_all is ALL finite one-sorted models of the encoded language with a global strict linear order. It includes ill-typed models. It is the literal HN2.19 ambient after the strict-order convention adapter. Do not infer the typed predicate subcategory Ramsey just from unary predicates.",
+      "depends_on": [
+        "D04",
+        "E01"
+      ],
+      "notes": "N03",
+      "source": {
+        "file": "sections/unary_hn_transfer.tex",
+        "anchor": "\\label{thm:unary-hn-irreducible-source-transfer}"
+      }
+    },
+    {
+      "id": "D06",
+      "name": "Ordered completed class",
+      "statement": "K^< puts an arbitrary global strict linear order on each K object. Induced subobjects retain the same unary functions and their domains; only a relation is added. Ordered automorphisms are identity, identifying copies with unique embeddings.",
+      "depends_on": [
+        "A03",
+        "A06"
+      ],
+      "notes": "N03",
+      "source": {
+        "file": "sections/unary_hn_transfer.tex",
+        "anchor": "\\label{thm:unary-hn-irreducible-source-transfer}"
+      }
+    },
+    {
+      "id": "D07",
+      "name": "HN Definition2.8 local test",
+      "statement": "For every ambient C0 choose a finite cutoff n first. Every candidate C with a completion to C0, actual irreducibles in K^< and completions of all actual induced substructures of size<=n must itself have a K^< completion. These tests are CLOSED functional substructures, not arbitrary weak relational subsets.",
+      "depends_on": [
+        "A07",
+        "A08"
+      ],
+      "notes": "N04",
+      "source": {
+        "file": "sections/unary_hn_transfer.tex",
+        "anchor": "\\label{thm:unary-hn-irreducible-source-transfer}"
+      }
+    },
+    {
+      "id": "D08",
+      "name": "Restricted old reduct",
+      "statement": "C^- forgets ONLY the displayed order, keeping the same partial functions/domains and all old relations. Closed subsets are unchanged by forgetting/adding this relation. A displayed order on a candidate need not yet be total or acyclic.",
+      "depends_on": [
+        "A01"
+      ],
+      "notes": "N04",
+      "source": {
+        "file": "sections/unary_hn_transfer.tex",
+        "anchor": "\\label{thm:unary-hn-irreducible-source-transfer}"
+      }
+    },
+    {
+      "id": "D09",
+      "name": "Injective image of a displayed order DAG",
+      "statement": "Once an old completion f is injective, transport every displayed order edge to distinct image points in B. Acyclicity is preserved under this injective relabelling, then the finite DAG on all B points has a strict total extension.",
+      "depends_on": [
+        "D02",
+        "D08"
+      ],
+      "notes": "N05",
+      "source": {
+        "file": "sections/unary_hn_transfer.tex",
+        "anchor": "\\label{thm:unary-hn-irreducible-source-transfer}"
+      }
+    },
+    {
+      "id": "D10",
+      "name": "All-irreducible versus one-generated admissible sources",
+      "statement": "The main premise requires every old induced irreducible actual K. The direct premise requires only every one-generated induced closure actual completed K. B034 supplies the implication and totality; neither condition is merely total unary closedness or existence of a later completion.",
+      "depends_on": [
+        "A07",
+        "A09",
+        "I01"
+      ],
+      "notes": "N06",
+      "source": {
+        "file": "sections/unary_hn_transfer.tex",
+        "anchor": "\\label{thm:typed-direct-irreducible-unary-HN}"
+      }
+    },
+    {
+      "id": "D11",
+      "name": "Uniform cutoff and direct-premise discharge",
+      "statement": "n=max(1,N) is fixed independently of C0. C38 will discharge the main restricted obstruction hypothesis from the direct one; C40 will discharge irreducibility for the binary variant. No new global N-bound is created.",
+      "depends_on": [
+        "A07",
+        "A09"
+      ],
+      "notes": "N06",
+      "source": {
+        "file": "sections/unary_hn_transfer.tex",
+        "anchor": "\\label{thm:typed-direct-irreducible-unary-HN}"
+      }
+    },
+    {
+      "id": "D12",
+      "name": "Published input and Lean binding boundary",
+      "statement": "Use HN2019 v4 Theorems2.19/2.11 and Proposition2.6 as THREE published inputs, with local receiving Lean bridges pending. The exact pinned2.19 declaration is a reference, not a bound CCO encoding. No verified2.6/2.11 declaration is invented; revised relational2.18 is not substituted.",
+      "depends_on": [
+        "E01",
+        "E02",
+        "E03"
+      ],
+      "notes": "N07",
+      "source": {
+        "file": "sections/unary_hn_transfer.tex",
+        "anchor": "\\label{thm:unary-hn-irreducible-source-transfer}"
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "name": "Three-way pair coverage excludes every nontrivial free split",
+      "statement": "In a proper free split choose exclusive x in A1 and y in A2. Closedness keeps each singleton closure inside its factor, excluding x in closure{y} and y in closure{x}. Freeness excludes any positive binary tuple on this cross pair in either orientation. This contradicts A02, proving irreducibility with arbitrary additional relation arities.",
+      "depends_on": [
+        "A02",
+        "D01"
+      ],
+      "notes": "N01",
+      "scope": "pair_irreducibility",
+      "source_labels": [
+        "lem:typed-unary-binary-irreducibility"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C02",
+      "name": "Completed binary orbitals or named unary links give the stated cases",
+      "statement": "Complete positive binary pair coverage supplies disjunct(iii) of C01. If a unary graph orbital is represented only by its named function, its corresponding pair is unary-reachable; require positive binary coverage on every remaining pair. Totality is retained from the source statement.",
+      "depends_on": [
+        "C01",
+        "A02"
+      ],
+      "notes": "N01",
+      "scope": "pair_irreducibility",
+      "source_labels": [
+        "lem:typed-unary-binary-irreducibility"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C03",
+      "name": "Closure of any displayed relation tuple is irreducible",
+      "statement": "For any positive displayed tuple, its actual unary-generated closure cannot freely decompose: some factor must contain that WHOLE tuple, hence all its generators and every defined unary iterate. It is then the whole closure, not proper. Repeated entries, an E loop and arbitrary positive relation arities are handled; nullary tuples have no typing coordinates.",
+      "depends_on": [
+        "A01",
+        "D01"
+      ],
+      "notes": "N02",
+      "scope": "same_map_edge",
+      "source_labels": [
+        "lem:typed-universal-edge-hn-reflection"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C04",
+      "name": "HE maps restrict to actual induced closed pieces",
+      "statement": "For closed D^-<=C^-, any intrinsically old irreducible S<=D^- is also an actual old irreducible induced substructure of C^-. The given old HE therefore embeds S. Thus its restriction to D^- is an old HE, even if D^- itself is reducible.",
+      "depends_on": [
+        "A01",
+        "D02"
+      ],
+      "notes": "N02",
+      "scope": "same_map_edge",
+      "source_labels": [
+        "lem:typed-universal-edge-hn-reflection"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C05",
+      "name": "Completed rigidity embeds each expanded irreducible old reduct",
+      "statement": "For expanded irreducible D<=C, A05 gives D in K*, hence D^- in K. C04 makes h restricted to this whole D^- an old HE into H. A04 makes it an embedding. Do NOT infer that forgetting E preserves irreducibility.",
+      "depends_on": [
+        "A03",
+        "A04",
+        "A05",
+        "C04"
+      ],
+      "notes": "N02",
+      "scope": "same_map_edge",
+      "source_labels": [
+        "lem:typed-universal-edge-hn-reflection"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C06",
+      "name": "The same restriction embeds the universal edge diagram",
+      "statement": "On D and H* the new relation is exactly inequality. C05 injectivity therefore preserves and reflects E_*, as well as all old data. Hence the same h embeds every expanded irreducible D.",
+      "depends_on": [
+        "C05",
+        "D03"
+      ],
+      "notes": "N02",
+      "scope": "same_map_edge",
+      "source_labels": [
+        "lem:typed-universal-edge-hn-reflection"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C07",
+      "name": "Every displayed E edge has a locally completed closed support",
+      "statement": "For a displayed E(x,y), including a possible loop, C03 makes closure{x,y} irreducible. A05 places that actual support in K*, excluding x=y because completed E is irreflexive. C05 embeds its old reduct, forcing h(x)!=h(y).",
+      "depends_on": [
+        "C03",
+        "C05",
+        "A05",
+        "D03"
+      ],
+      "notes": "N02",
+      "scope": "same_map_edge",
+      "source_labels": [
+        "lem:typed-universal-edge-hn-reflection"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C08",
+      "name": "The given vertex map preserves every displayed expanded tuple",
+      "statement": "C07 preserves all displayed E edges. All old relations and defined unary values were already preserved by the GIVEN old h in A05. Thus that same map is an expanded homomorphism; it was not replaced by a chosen global injection.",
+      "depends_on": [
+        "C07",
+        "A05"
+      ],
+      "notes": "N02",
+      "scope": "same_map_edge",
+      "source_labels": [
+        "lem:typed-universal-edge-hn-reflection"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C09",
+      "name": "Same-map universal-edge homomorphism-embedding export",
+      "statement": "C08 is global homomorphism preservation and C06 is embedding on every expanded irreducible piece. Together they prove the source same-map HE conclusion. Global injectivity on reducible sources does not follow.",
+      "depends_on": [
+        "C06",
+        "C08",
+        "D02"
+      ],
+      "notes": "N02",
+      "scope": "same_map_edge",
+      "source_labels": [
+        "lem:typed-universal-edge-hn-reflection"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C10",
+      "name": "The two stated completed-rigidity sufficient conditions are correct",
+      "statement": "If every completed K member is irreducible, any HE whose source is that member embeds its whole source by definition. If every completed homomorphism is already an embedding, the conclusion also holds for its subclass of HE maps. These justify A04 when supplied; SAP by itself does not.",
+      "depends_on": [
+        "A03",
+        "D02"
+      ],
+      "notes": "N02",
+      "scope": "same_map_edge",
+      "source_labels": [
+        "lem:typed-universal-edge-hn-reflection"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C11",
+      "name": "Typed structures have a faithful one-sorted closed encoding",
+      "statement": "D04 is a bijective presentation of typed objects with their sort partition and domain/tuple restrictions. Actual induced embeddings, closed subsets and free decompositions are the SAME maps/diagrams in either presentation. No extra sort labels, ill-typed function values or tuples can be inserted into an encoded K member.",
+      "depends_on": [
+        "D04",
+        "A01"
+      ],
+      "notes": "N03",
+      "scope": "typed_encoding",
+      "source_labels": [
+        "thm:unary-hn-irreducible-source-transfer"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C12",
+      "name": "Encoding preserves hereditary irreducible SAP class data",
+      "statement": "Every encoded substructure of a typed K member remains type-correct and corresponds to a typed closed substructure; thus heredity and irreducibility transfer. Encode a typed strong amalgam span to get the same intersection and embeddings. This supplies the exact class hypotheses for HN2.6/2.11.",
+      "depends_on": [
+        "C11",
+        "A03",
+        "A06"
+      ],
+      "notes": "N03",
+      "scope": "typed_encoding",
+      "source_labels": [
+        "thm:unary-hn-irreducible-source-transfer"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C13",
+      "name": "The full ordered ambient is irreducible",
+      "statement": "Any two distinct points of an R_all object are joined by one direction of its positive strict order. A proper free decomposition would have exclusive cross points with that missing cross tuple, impossible. This holds even for ill-typed ambient models; small/empty cases have no nontrivial split.",
+      "depends_on": [
+        "D05",
+        "A01"
+      ],
+      "notes": "N03",
+      "scope": "ordered_class",
+      "source_labels": [
+        "thm:unary-hn-irreducible-source-transfer"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C14",
+      "name": "HN2.19 gives the all-model ambient Ramsey input with exact conventions",
+      "statement": "Apply E01 to the ONE-SORTED encoded language without imposing type axioms on its ambient witnesses. Strict/nonstrict linear-order conventions transport via adding/removing the diagonal. Finite linearly ordered objects are rigid, so copies correspond to unique embeddings; the published copy-arrow yields the required embedding-arrow. The pinned Lean declaration still needs receiving representation/order bindings.",
+      "depends_on": [
+        "D05",
+        "E01"
+      ],
+      "notes": "N03",
+      "scope": "ordered_class",
+      "source_labels": [
+        "thm:unary-hn-irreducible-source-transfer"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C15",
+      "name": "Arbitrary orders give hereditary ordered SAP K",
+      "statement": "Closed substructures of ordered K members retain their old K diagrams and restricted linear orders. For a strong old amalgam, identify the whole common ordered base and shuffle the two factor orders in each base interval, including empty base. Place any extra host points afterwards without changing either factor order. All functions/domains remain old ones, so the embeddings stay induced.",
+      "depends_on": [
+        "A03",
+        "A06",
+        "C12",
+        "D06"
+      ],
+      "notes": "N03",
+      "scope": "ordered_class",
+      "source_labels": [
+        "thm:unary-hn-irreducible-source-transfer"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C16",
+      "name": "Adding order preserves old irreducibility",
+      "statement": "If a closed old irreducible D^- gained a nontrivial free split after adding its induced order, forgetting that relation would give the same old free split. Thus the induced expansion of every old irreducible is expanded irreducible. No converse is asserted.",
+      "depends_on": [
+        "A01",
+        "D08"
+      ],
+      "notes": "N04",
+      "scope": "restricted_local_finiteness",
+      "source_labels": [
+        "thm:unary-hn-irreducible-source-transfer"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C17",
+      "name": "Forgetting an ordered completion gives an old HE completion",
+      "statement": "Each old irreducible piece remains expanded irreducible by C16, so an ordered HE embeds its old restriction there. Forgetting only order keeps the old homomorphism and all domain data, giving an old HE. The argument applies to any actual induced ordered substructure as well.",
+      "depends_on": [
+        "C16",
+        "D02",
+        "D08"
+      ],
+      "notes": "N04",
+      "scope": "restricted_local_finiteness",
+      "source_labels": [
+        "thm:unary-hn-irreducible-source-transfer"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C18",
+      "name": "Raw one-generated unary closures are irreducible before typing",
+      "statement": "In any raw one-sorted partial unary diagram, a free factor covering generator x contains all its already-defined unary iterates by actual closedness. It equals the whole U_x and cannot be proper. No K membership, sort correctness, totality or obstruction bound is used here.",
+      "depends_on": [
+        "A01",
+        "D01"
+      ],
+      "notes": "N03",
+      "scope": "typed_encoding",
+      "source_labels": [
+        "thm:unary-hn-irreducible-source-transfer"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C19",
+      "name": "Local completed membership forces point and function typing",
+      "statement": "Conditionally, if EVERY expanded irreducible of a raw candidate is an actual encoded ordered K member, C18 applies to each U_x. Its actual inclusion therefore forces x to satisfy EXACTLY one sort predicate and every unary domain/value to obey the prescribed input/output sorts, including undefinedness off input sorts and totality on intended ones. No typed theorem is applied before this conclusion.",
+      "depends_on": [
+        "C11",
+        "C18",
+        "A03"
+      ],
+      "notes": "N03",
+      "scope": "typed_encoding",
+      "source_labels": [
+        "thm:unary-hn-irreducible-source-transfer"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C20",
+      "name": "Each displayed arbitrary-arity relation has an irreducible support",
+      "statement": "Apply C03 to the unary closure of ALL entries of each displayed positive relation tuple in the raw candidate, including repeats and any arity. One free factor must contain the entire tuple and hence the entire support. This does not rely on binary pair coverage.",
+      "depends_on": [
+        "C03",
+        "A01"
+      ],
+      "notes": "N03",
+      "scope": "typed_encoding",
+      "source_labels": [
+        "thm:unary-hn-irreducible-source-transfer"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C21",
+      "name": "Local membership forces relation tuple typing too",
+      "statement": "Under the same conditional membership hypothesis as C19, each C20 support is an actual encoded ordered K member. Every displayed old relation tuple therefore has its prescribed input sort sequence. Unary sort predicates were already controlled by C19; nullary relations have no argument-typing restriction. The added order is global, not a typed old tuple symbol.",
+      "depends_on": [
+        "C11",
+        "C19",
+        "C20",
+        "A03"
+      ],
+      "notes": "N03",
+      "scope": "typed_encoding",
+      "source_labels": [
+        "thm:unary-hn-irreducible-source-transfer"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C22",
+      "name": "The HN membership test makes a raw candidate a legitimate typed input",
+      "statement": "Combine C19/C21: a raw candidate with every expanded irreducible in encoded K^< has a proper sort partition, correctly typed unary domains/values and correctly typed old relations. Forgetting only order is therefore a typed source for the many-sorted obstruction premise. This proves the needed adapter in the LARGER ambient rather than assuming typed Ramsey inheritance.",
+      "depends_on": [
+        "C19",
+        "C21"
+      ],
+      "notes": "N03",
+      "scope": "typed_encoding",
+      "source_labels": [
+        "thm:unary-hn-irreducible-source-transfer"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C23",
+      "name": "HN test(ii) puts every old irreducible reduct piece in K",
+      "statement": "Fix the A08 test candidate. C22 makes it typed. Any old irreducible D^- becomes expanded irreducible under C16, so test(ii) places that induced expansion in K^<. Forgetting order gives the ACTUAL D^- in K, exactly the restricted all-irreducible-admissible premise.",
+      "depends_on": [
+        "A08",
+        "C22",
+        "C16",
+        "D07"
+      ],
+      "notes": "N04",
+      "scope": "restricted_local_finiteness",
+      "source_labels": [
+        "thm:unary-hn-irreducible-source-transfer"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C24",
+      "name": "Absence of an old completion produces a small actual closed obstruction",
+      "statement": "If C^- had no K HE completion, A07 applies by C23 and gives a noncompletable actual induced unary-closed D^- with |D^-|<=N. This uses the restricted supplied bound, not a theorem about arbitrary malformed unary diagrams.",
+      "depends_on": [
+        "C23",
+        "A07"
+      ],
+      "notes": "N04",
+      "scope": "restricted_local_finiteness",
+      "source_labels": [
+        "thm:unary-hn-irreducible-source-transfer"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C25",
+      "name": "Restore its displayed order without changing size or closedness",
+      "statement": "Use the SAME point set and functions of D^- and the relation induced from the candidate C order. Since order is relational, D is an actual expanded induced substructure of C, still of size<=N<=n=max(1,N). No generated-closure size enlargement occurs.",
+      "depends_on": [
+        "C24",
+        "A08",
+        "D08"
+      ],
+      "notes": "N04",
+      "scope": "restricted_local_finiteness",
+      "source_labels": [
+        "thm:unary-hn-irreducible-source-transfer"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C26",
+      "name": "Small-test completion contradicts that obstruction",
+      "statement": "Test(iii) gives D a K^< completion. C17 forgets it to a K HE completion of D^-, contradicting C24. Therefore C^- HAS an old K completion. If N<0 the alleged nonnegative-size obstruction is already impossible; the same implication holds.",
+      "depends_on": [
+        "C24",
+        "C25",
+        "C17",
+        "A08"
+      ],
+      "notes": "N04",
+      "scope": "restricted_local_finiteness",
+      "source_labels": [
+        "thm:unary-hn-irreducible-source-transfer"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C27",
+      "name": "HN2.6 supplies an INJECTIVE old homomorphism-embedding",
+      "statement": "Use E02 with the encoded hereditary irreducible unary SAP class from C12 and the old completion C26. Obtain f:C^-->B in K globally injective AND an old HE. This is a STRONG completion in HN terminology; it need not reflect missing old relations on the entire reducible source.",
+      "depends_on": [
+        "C12",
+        "C26",
+        "E02",
+        "D02"
+      ],
+      "notes": "N05",
+      "scope": "restricted_local_finiteness",
+      "source_labels": [
+        "thm:unary-hn-irreducible-source-transfer"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C28",
+      "name": "The map to C0 excludes every displayed strict-order cycle",
+      "statement": "The A08(i) map preserves every displayed order edge into a strict linear order of C0. A directed closed walk, including a loop, would give a strict chain returning to its start, impossible. Global injectivity of this ambient map is not needed for acyclicity.",
+      "depends_on": [
+        "A08",
+        "D08"
+      ],
+      "notes": "N05",
+      "scope": "restricted_local_finiteness",
+      "source_labels": [
+        "thm:unary-hn-irreducible-source-transfer"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C29",
+      "name": "The injective old completion transports this DAG without new cycles",
+      "statement": "Use the C27 injection to relabel all displayed order edges on its image in B. A directed cycle there would lift uniquely to a displayed cycle in C, excluded by C28. Noninjective relabelling would not justify this step.",
+      "depends_on": [
+        "C27",
+        "C28",
+        "D09"
+      ],
+      "notes": "N05",
+      "scope": "restricted_local_finiteness",
+      "source_labels": [
+        "thm:unary-hn-irreducible-source-transfer"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C30",
+      "name": "Extend the finite transported DAG to a total target order",
+      "statement": "Add the remaining B points as isolated vertices of the constraint DAG. Finite topological sorting supplies a strict total order extending every displayed comparison. Thus B^< is an allowed ordered completed K member and f preserves ALL displayed source order edges. Empty sets cause no exception.",
+      "depends_on": [
+        "C29",
+        "A03",
+        "D06",
+        "D09"
+      ],
+      "notes": "N05",
+      "scope": "restricted_local_finiteness",
+      "source_labels": [
+        "thm:unary-hn-irreducible-source-transfer"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C31",
+      "name": "Each expanded irreducible piece has an old irreducible completed reduct",
+      "statement": "For any actual expanded irreducible D<=C, test(ii) gives D in K^<. Its old reduct belongs to K and is irreducible by the CLASS hypothesis A06, not by forgetting order in general. Its source order is already TOTAL.",
+      "depends_on": [
+        "A08",
+        "A06",
+        "D06"
+      ],
+      "notes": "N05",
+      "scope": "restricted_local_finiteness",
+      "source_labels": [
+        "thm:unary-hn-irreducible-source-transfer"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C32",
+      "name": "The injection reflects all old data and order on each protected piece",
+      "statement": "C27 old HE embeds D^- from C31. C30 preserves every source comparison; since D order is total and f injective, its restriction also reflects order (including false diagonals). Thus f restricted to D is an ordered induced embedding. No global old relation reflection is used.",
+      "depends_on": [
+        "C27",
+        "C30",
+        "C31"
+      ],
+      "notes": "N05",
+      "scope": "restricted_local_finiteness",
+      "source_labels": [
+        "thm:unary-hn-irreducible-source-transfer"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C33",
+      "name": "Assemble a STRONG ordered completion of the whole candidate",
+      "statement": "Old homomorphism preservation is C27, order preservation C30, and embedding on EVERY expanded irreducible is C32. Thus f:C->B^< is an ordered HE and is globally injective, providing a strong K^< completion.",
+      "depends_on": [
+        "C27",
+        "C30",
+        "C32",
+        "D02"
+      ],
+      "notes": "N05",
+      "scope": "restricted_local_finiteness",
+      "source_labels": [
+        "thm:unary-hn-irreducible-source-transfer"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C34",
+      "name": "Uniform HN local finiteness in the larger ambient",
+      "statement": "For EVERY C0 in R_all and EVERY test candidate with cutoff max(1,N), C23-C33 produce a completion, stronger than Definition2.8 requires. The same cutoff works independently of C0. In particular local finiteness holds in the intended typed ambient as a restriction of this implication.",
+      "depends_on": [
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "D07"
+      ],
+      "notes": "N05",
+      "scope": "restricted_local_finiteness",
+      "source_labels": [
+        "thm:unary-hn-irreducible-source-transfer"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C35",
+      "name": "HN2.11 turns the proved local finiteness into Ramsey",
+      "statement": "R_all is irreducible by C13 and Ramsey by C14; ordered K is hereditary with SAP by C15 and locally finite by C34. Apply E03 to get the ordered K Ramsey conclusion. Ordered rigidity transports the published copies convention to embeddings. No relational-closure-description2.18 theorem is substituted.",
+      "depends_on": [
+        "C13",
+        "C14",
+        "C15",
+        "C34",
+        "E03"
+      ],
+      "notes": "N05",
+      "scope": "HN_Ramsey",
+      "source_labels": [
+        "thm:unary-hn-irreducible-source-transfer"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C36",
+      "name": "Restricted irreducible-source HN theorem export",
+      "statement": "C34 proves the stated uniform local finiteness, indeed in a larger raw ambient, and C35 proves Ramsey using the THREE exact published inputs. No unary closure-size bound, completed-map rigidity for universal E, CCO or geometric obstruction theorem is assumed beyond the explicitly supplied A07 restricted bound.",
+      "depends_on": [
+        "C34",
+        "C35"
+      ],
+      "notes": "N05",
+      "scope": "HN_Ramsey",
+      "source_labels": [
+        "thm:unary-hn-irreducible-source-transfer"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C37",
+      "name": "B034 converts actual irreducible membership to the direct domain",
+      "statement": "For a correctly typed partial source whose every old induced irreducible belongs to K, apply I01 selected C20/C21: each U_x is an ACTUAL completed K member and intended unary functions are already total. This is exactly one-generated admissibility, without optional m-bounds, hidden-specific interfaces or mere completable diagrams.",
+      "depends_on": [
+        "I01",
+        "A01",
+        "A03"
+      ],
+      "notes": "N06",
+      "scope": "direct_admissibility",
+      "source_labels": [
+        "thm:typed-direct-irreducible-unary-HN"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C38",
+      "name": "The direct obstruction premise discharges the main restricted premise",
+      "statement": "For any source in the main A07 domain, C37 places it in the A09 one-generated-admissible domain. If noncompletable, A09 gives the SAME actual closed obstruction size<=N. Thus A07 is PROVED from A09 for this instance, not an additional independent hypothesis of the direct application.",
+      "depends_on": [
+        "C37",
+        "A09"
+      ],
+      "notes": "N06",
+      "scope": "direct_admissibility",
+      "source_labels": [
+        "thm:typed-direct-irreducible-unary-HN"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C39",
+      "name": "Direct unary HN transfer with exact conditional discharge",
+      "statement": "Instantiate the conditional main theorem C36 with the restricted bound supplied by C38 and the unchanged hereditary irreducible SAP class. It gives uniform max(1,N) local finiteness and Ramsey. Neither a universal-edge adapter nor binary pair coverage is required.",
+      "depends_on": [
+        "C36",
+        "C38",
+        "A06",
+        "A09",
+        "D11"
+      ],
+      "notes": "N06",
+      "scope": "direct_admissibility",
+      "source_labels": [
+        "thm:typed-direct-irreducible-unary-HN"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C40",
+      "name": "The binary specialization supplies completed irreducibility",
+      "statement": "For every completed member under A10, positive binary coverage is disjunct(iii) of the C01 schema. Hence it is irreducible. This DISCHARGES that class hypothesis for the direct theorem; hereditary SAP and the restricted N-bound remain supplied. Retain the source arity<=2 scope although the coverage proof itself tolerates more arities.",
+      "depends_on": [
+        "C01",
+        "A10"
+      ],
+      "notes": "N06",
+      "scope": "direct_admissibility",
+      "source_labels": [
+        "thm:typed-abstract-unary-HN-ramsey"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C41",
+      "name": "Binary-covered direct Ramsey transfer export",
+      "statement": "Apply C39 with irreducibility derived by C40 and the remaining actual direct premises. The same local-finiteness cutoff and Ramsey conclusion follow. Binary coverage has not supplied the N-bound, a homogeneous ambient, countability, CCO or exact geometry.",
+      "depends_on": [
+        "C39",
+        "C40",
+        "A10"
+      ],
+      "notes": "N06",
+      "scope": "HN_Ramsey",
+      "source_labels": [
+        "thm:typed-abstract-unary-HN-ramsey"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C42",
+      "name": "No theorem here bounds arbitrary malformed unary sources",
+      "statement": "Local tests and direct obstruction premises require actual completed singleton diagrams (or the stronger all-irreducible membership), not mere unary closedness or totality. Malformed long unary cycles can fail that actual membership and are outside the bounded domain. No numerical size bound on singleton closures is used by this transfer.",
+      "depends_on": [
+        "C37",
+        "C38",
+        "C39"
+      ],
+      "notes": "N07",
+      "scope": "boundary",
+      "source_labels": [
+        "thm:typed-direct-irreducible-unary-HN"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C43",
+      "name": "Without rigidity the same-map edge claim fails",
+      "statement": "In the empty old language K=all finite sets, the two-point constant map to a singleton is an old HE because old irreducibles are singletons. Expanding its source by a universal irreflexive edge makes all local pieces completed K*, yet that same constant map sends the edge to a forbidden diagonal. A different injection does not rescue the SAME-map assertion.",
+      "depends_on": [
+        "D02",
+        "D03"
+      ],
+      "notes": "N07",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-universal-edge-hn-reflection"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C44",
+      "name": "Rigidity still allows global collapse and reducible old reducts",
+      "statement": "With K complete irreflexive R graphs, a two-isolated-point partial source may map constantly to a singleton and remain old/expanded HE, though K maps are rigid. Separately, two named sorts with at most one completed point each have rigid completed maps while their two-point old reduct is reducible; its universal-E expansion is irreducible. These show why C05 uses rigidity on a completed OLD HE restriction, not a false forgetting-irreducibility claim.",
+      "depends_on": [
+        "C04",
+        "C05",
+        "C09"
+      ],
+      "notes": "N07",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-universal-edge-hn-reflection"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C45",
+      "name": "Strong completion is not a global induced embedding",
+      "statement": "Two isolated points with no old R edges have an injective HE into a complete two-point irreflexive R graph: each irreducible singleton embeds and old positive tuples are preserved. The missing source R pair is added, so the whole map is not induced. Prop2.6 requires and supplies only the injection needed for C29.",
+      "depends_on": [
+        "C27",
+        "C29",
+        "D02"
+      ],
+      "notes": "N07",
+      "scope": "boundary",
+      "source_labels": [
+        "thm:unary-hn-irreducible-source-transfer"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C46",
+      "name": "Binary coverage and singleton admissibility do not imply a uniform N",
+      "statement": "In completed equivalence-colored networks let R mean same-class distinct and B different-class. This complete binary class has SAP and irreducible members. An n>=4 partial R path with a B edge between its endpoints is noncompletable even homomorphically; every proper induced substructure completes by its R-components, while its irreducibles are completed edges/singletons. Thus admissibility/coverage alone allow unbounded minimal obstructions; the supplied N premise is substantive.",
+      "depends_on": [
+        "C01",
+        "D01"
+      ],
+      "notes": "N07",
+      "scope": "boundary",
+      "source_labels": [
+        "thm:typed-abstract-unary-HN-ramsey"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C47",
+      "name": "Typing and exact closed tests remain explicit",
+      "statement": "Raw local candidates may have absent/multiple sort predicates, off-sort unary domains/values or wrong-sort relation tuples; C18-C22 reject them through actual irreducible membership. Definition2.8(iii) tests actual induced functional substructures, not arbitrary nonclosed weak relational subsets. These conventions and the three pending receiving Lean bindings must survive implementation.",
+      "depends_on": [
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "D07",
+        "D12"
+      ],
+      "notes": "N07",
+      "scope": "boundary",
+      "source_labels": [
+        "thm:unary-hn-irreducible-source-transfer"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    }
+  ],
+  "source_result_files": [
+    "sections/unary_hn_transfer.tex"
+  ],
+  "exports": [
+    {
+      "source_label": "lem:typed-unary-binary-irreducibility",
+      "claims": [
+        "C01",
+        "C02"
+      ]
+    },
+    {
+      "source_label": "lem:typed-universal-edge-hn-reflection",
+      "claims": [
+        "C09",
+        "C10"
+      ]
+    },
+    {
+      "source_label": "thm:unary-hn-irreducible-source-transfer",
+      "claims": [
+        "C34",
+        "C35",
+        "C36"
+      ]
+    },
+    {
+      "source_label": "thm:typed-direct-irreducible-unary-HN",
+      "claims": [
+        "C39"
+      ]
+    },
+    {
+      "source_label": "thm:typed-abstract-unary-HN-ramsey",
+      "claims": [
+        "C41"
+      ]
+    }
+  ],
+  "auxiliary_exports": [],
+  "source_files": [
+    {
+      "file": "sections/unary_hn_transfer.tex",
+      "git_blob": "1efc39213f95aa916353eecb639594cb156b7b41"
+    },
+    {
+      "file": "sections/binary_unary_irreducible_local_cover.tex",
+      "git_blob": "a91af6bdd0fd7de6c7266e5c908fde78192f9087"
+    }
+  ],
+  "dependency_firewalls": [
+    {
+      "claims": [
+        "C01",
+        "C02"
+      ],
+      "forbid": [
+        "A03",
+        "A04",
+        "A05",
+        "A06",
+        "A07",
+        "A08",
+        "A09",
+        "A10",
+        "E01",
+        "E02",
+        "E03",
+        "I01",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40",
+        "C41",
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46",
+        "C47"
+      ]
+    },
+    {
+      "claims": [
+        "C03"
+      ],
+      "forbid": [
+        "A02",
+        "A03",
+        "A04",
+        "A05",
+        "A06",
+        "A07",
+        "A08",
+        "A09",
+        "A10",
+        "E01",
+        "E02",
+        "E03",
+        "I01",
+        "C01",
+        "C02",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40",
+        "C41",
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46",
+        "C47"
+      ]
+    },
+    {
+      "claims": [
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10"
+      ],
+      "forbid": [
+        "A02",
+        "A06",
+        "A07",
+        "A08",
+        "A09",
+        "A10",
+        "E01",
+        "E02",
+        "E03",
+        "I01",
+        "C01",
+        "C02",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40",
+        "C41",
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46",
+        "C47"
+      ]
+    },
+    {
+      "claims": [
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22"
+      ],
+      "forbid": [
+        "A02",
+        "A04",
+        "A05",
+        "A07",
+        "A08",
+        "A09",
+        "A10",
+        "E02",
+        "E03",
+        "I01",
+        "C01",
+        "C02",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40",
+        "C41",
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46",
+        "C47"
+      ]
+    },
+    {
+      "claims": [
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36"
+      ],
+      "forbid": [
+        "A02",
+        "A04",
+        "A05",
+        "A09",
+        "A10",
+        "I01",
+        "C01",
+        "C02",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C37",
+        "C38",
+        "C39",
+        "C40",
+        "C41",
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46",
+        "C47"
+      ]
+    }
+  ],
+  "provider_binding_contract": {
+    "HN_version": "1606.07979v4",
+    "HN_definitions": [
+      "2.3",
+      "2.5",
+      "2.8"
+    ],
+    "new_theorem_inputs": [
+      "E01",
+      "E02",
+      "E03"
+    ],
+    "local_finiteness": "C34",
+    "same_map_universal_edge": "C09; independent of the transfer",
+    "larger_one_sorted_ambient": "C11-C22; ii forces typing",
+    "strong_completion": "INJECTIVE HE; C27/C33, not global inducedness",
+    "direct_bound_discharge": "C38 proves A07 from A09",
+    "binary_irreducibility_discharge": "C40",
+    "existing_Lean_reference": "E01 exact pinned signature/CI only; receiving adapter and audit pending",
+    "unverified_Lean_references": [
+      "E02",
+      "E03"
+    ],
+    "existing_HKN_obligations": "Two prior HKN/local CCO adapters remain separate; handoff now totals FIVE published-provider records"
+  },
+  "tasks": [
+    {
+      "id": "T01",
+      "name": "Pair coverage and actual tuple closures",
+      "claims": [
+        "C01",
+        "C02",
+        "C03"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement actual domain-reflecting partial unary structures and preserve class premises. Prove the raw one-sorted ii=>typing adapter before using typed obstructions. Keep same-map universal-E rigidity separate from direct irreducible HN transfer. Strong means injective HE; prove DAG transport and order reflection only on completed irreducible pieces. Bind the THREE published providers explicitly; reuse B034 C20/C21 without optional closure-size assumptions. Do not replace literal functional HN2.11 with revised relational2.18 or treat the existing2.19 pin as an integrated CCO adapter."
+    },
+    {
+      "id": "T02",
+      "name": "SAME-map universal-edge HE and rigidity",
+      "claims": [
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10"
+      ],
+      "depends_on": [
+        "T01"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement actual domain-reflecting partial unary structures and preserve class premises. Prove the raw one-sorted ii=>typing adapter before using typed obstructions. Keep same-map universal-E rigidity separate from direct irreducible HN transfer. Strong means injective HE; prove DAG transport and order reflection only on completed irreducible pieces. Bind the THREE published providers explicitly; reuse B034 C20/C21 without optional closure-size assumptions. Do not replace literal functional HN2.11 with revised relational2.18 or treat the existing2.19 pin as an integrated CCO adapter."
+    },
+    {
+      "id": "T03",
+      "name": "One-sorted ambient, typing adapter and ordered SAP",
+      "claims": [
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22"
+      ],
+      "depends_on": [
+        "T01"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement actual domain-reflecting partial unary structures and preserve class premises. Prove the raw one-sorted ii=>typing adapter before using typed obstructions. Keep same-map universal-E rigidity separate from direct irreducible HN transfer. Strong means injective HE; prove DAG transport and order reflection only on completed irreducible pieces. Bind the THREE published providers explicitly; reuse B034 C20/C21 without optional closure-size assumptions. Do not replace literal functional HN2.11 with revised relational2.18 or treat the existing2.19 pin as an integrated CCO adapter."
+    },
+    {
+      "id": "T04",
+      "name": "Restricted obstruction proof, injective completion and order extension",
+      "claims": [
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36"
+      ],
+      "depends_on": [
+        "T01",
+        "T03"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement actual domain-reflecting partial unary structures and preserve class premises. Prove the raw one-sorted ii=>typing adapter before using typed obstructions. Keep same-map universal-E rigidity separate from direct irreducible HN transfer. Strong means injective HE; prove DAG transport and order reflection only on completed irreducible pieces. Bind the THREE published providers explicitly; reuse B034 C20/C21 without optional closure-size assumptions. Do not replace literal functional HN2.11 with revised relational2.18 or treat the existing2.19 pin as an integrated CCO adapter."
+    },
+    {
+      "id": "T05",
+      "name": "Actual singleton import and direct/binary variants",
+      "claims": [
+        "C37",
+        "C38",
+        "C39",
+        "C40",
+        "C41"
+      ],
+      "depends_on": [
+        "T01",
+        "T03",
+        "T04"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement actual domain-reflecting partial unary structures and preserve class premises. Prove the raw one-sorted ii=>typing adapter before using typed obstructions. Keep same-map universal-E rigidity separate from direct irreducible HN transfer. Strong means injective HE; prove DAG transport and order reflection only on completed irreducible pieces. Bind the THREE published providers explicitly; reuse B034 C20/C21 without optional closure-size assumptions. Do not replace literal functional HN2.11 with revised relational2.18 or treat the existing2.19 pin as an integrated CCO adapter."
+    },
+    {
+      "id": "T06",
+      "name": "Rigidity, strong-map, typing and obstruction boundaries",
+      "claims": [
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46",
+        "C47"
+      ],
+      "depends_on": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Implement actual domain-reflecting partial unary structures and preserve class premises. Prove the raw one-sorted ii=>typing adapter before using typed obstructions. Keep same-map universal-E rigidity separate from direct irreducible HN transfer. Strong means injective HE; prove DAG transport and order reflection only on completed irreducible pieces. Bind the THREE published providers explicitly; reuse B034 C20/C21 without optional closure-size assumptions. Do not replace literal functional HN2.11 with revised relational2.18 or treat the existing2.19 pin as an integrated CCO adapter."
+    }
+  ],
+  "overview_mermaid": [
+    "flowchart TD",
+    "  P[\"Unary or binary pair coverage\"] --> I[\"Completed irreducibility\"]",
+    "  R[\"Completed map rigidity\"] --> U[\"SAME map universal edge HE\"]",
+    "  H[\"HN all ordered one sorted models\"] --> A[\"Larger Ramsey ambient\"]",
+    "  T[\"Local membership forces correct typing\"] --> O[\"Restricted old obstruction proof\"]",
+    "  O --> F[\"Injective old HE completion\"]",
+    "  C[\"HN unary completion theorem\"] --> F",
+    "  F --> L[\"Uniform local finiteness\"]",
+    "  D[\"Displayed order maps to strict C0\"] --> L",
+    "  A --> S[\"HN locally finite subclass Ramsey\"]",
+    "  L --> S",
+    "  B[\"B034 actual singleton diagrams\"] --> V[\"Direct restricted variant\"]",
+    "  S --> V",
+    "  I --> W[\"Binary covered specialization\"]",
+    "  V --> W"
+  ],
+  "overview_notes": [
+    "The two local lemmas have no external theorem inputs and no N-bound. The universal-edge route is independent of the direct transfer.",
+    "HN2.19 is applied to ALL one-sorted models with sort predicates; HN(ii) forces the candidate typed via singleton and displayed-tuple closures.",
+    "Use exactly HN2019 v4 2.19,2.6,2.11; strong completion is injective HE. The published2.8 tests are actual induced functional substructures.",
+    "Source order acyclicity comes from the given map to C0; Prop2.6 injectivity is needed to transport it to B without new cycles.",
+    "B034 selected C20/C21 supplies actual singleton K membership/totality only. No closure-size bound or hidden-specific admissibility is imported.",
+    "One exact2.19 Lean reference is pinned at a green dependency commit; all three receiving HN bindings remain pending, alongside the prior two HKN bindings."
+  ],
+  "controls": [
+    {
+      "id": "K01",
+      "check": "Bounded actual unary closures/free irreducibility, same-map universal edges under completed-map rigidity, and explicit collapse/loop/reduct counterchecks."
+    },
+    {
+      "id": "K02",
+      "check": "Raw sort/domain/tuple typing through local membership, restricted singleton admissibility, acyclic/injective order extension and unbounded-obstruction pattern diagnostics. Finite checks do not prove HN Ramsey or arbitrary obstruction bounds."
+    }
+  ],
+  "article_feedback": [
+    {
+      "id": "F01",
+      "kind": "PROOF_CONVENTION_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/unary_hn_transfer.tex",
+        "anchor": "The restriction"
+      },
+      "finding": "An expanded irreducible may have a reducible old reduct. The universal-edge proof correctly uses completed-map rigidity on the WHOLE completed old restriction, after proving it is an old HE. Global injectivity of the original map does not follow.",
+      "proposed_article_change": "Make this distinction explicit and retain the same-map quantifier; keep the displayed-edge closure argument including possible loops.",
+      "caller_effect": "No SAP/binary-completeness assumption is added to the general rigidity lemma and no replacement map is chosen.",
+      "proof_claims": [
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C09",
+        "C43",
+        "C44"
+      ]
+    },
+    {
+      "id": "F02",
+      "kind": "PROOF_ADAPTER_EXPANSION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/unary_hn_transfer.tex",
+        "anchor": "It is Ramsey by"
+      },
+      "finding": "The literal HN2.19 theorem is one-sorted and allows all models. Merely coding sorts by predicates does not justify automatic Ramsey inheritance by a typed subcategory.",
+      "proposed_article_change": "Use the larger all-model one-sorted ambient. Under local test(ii), singleton closures force point/function typing and closure of every displayed relation tuple forces tuple typing. Then apply the original typed obstruction premise and prove local finiteness even in the larger ambient.",
+      "caller_effect": "Existing hypotheses suffice; no new typing axiom or external theorem input is added. The same bound max(1,N) remains uniform.",
+      "proof_claims": [
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C34"
+      ]
+    },
+    {
+      "id": "F03",
+      "kind": "PROVIDER_AND_SCOPE_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/unary_hn_transfer.tex",
+        "anchor": "strong"
+      },
+      "finding": "HN strong completion is globally injective HE, not globally induced embedding. Its injection is exactly what makes the transported order acyclic; reflection is proved only on completed irreducible pieces. Three exact published inputs and their receiving bindings must remain visible.",
+      "proposed_article_change": "Record the HN v4 numbering/conventions and distinguish Def2.8 actual closed substructure tests from relational weak-subset formulations. State the direct A07 discharge and retain the supplied restricted N-bound.",
+      "caller_effect": "No malformed-source bound, closure-size theorem, revised relational2.18 theorem or unverified Lean provider is silently substituted.",
+      "proof_claims": [
+        "C17",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C37",
+        "C38",
+        "C39",
+        "C46",
+        "C47"
+      ]
+    }
+  ],
+  "review": {
+    "date": "2026-10-28",
+    "source_unchanged": true,
+    "source_signature_repairs": 0,
+    "unexpanded_provider_labels": [],
+    "proof_status": "HUMAN_EXPANDED_NOT_LEAN; five results with explicit typed ambient adapter and THREE published HN theorem/receiving Lean binding obligations. No new theorem hypothesis repair.",
+    "independent_reviews": [
+      "Pair coverage and SAME-map universal-edge proof with rigidity/collapse boundaries",
+      "Exact primary HN2019v4 definitions/theorems and larger one-sorted typing adapter",
+      "Restricted obstruction contradiction, injective DAG transport, ordered SAP and direct-premise discharge"
+    ],
+    "boundaries": [
+      "No global injection is asserted by the universal-edge lemma.",
+      "Strong completion is injective HE, not global inducedness.",
+      "The obstruction N-bound is restricted and supplied, not derived from binary coverage/admissibility.",
+      "Three HN receiving bindings are pending; existing two HKN bindings remain separate."
+    ]
+  }
+}
