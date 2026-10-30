@@ -42,8 +42,8 @@ All names below have prefix `CCO.UnaryFreshFrames.Examples.Matching`.
 | Full finite-closed homogeneity | `original_homogeneous`; explicit root permutations and independent infinite-fibre permutations, constructed by `extend_equal_kernels` |
 | Finite closure | `original_locallyFinite`; each real singleton has exactly its real point, p-value and τ-value, while Q/S singleton closures are singletons |
 | Actual real transitivity | `original_real_transitive`, explicit root and fibre swaps |
-| Full-Aut real-base orbit infinitude | `original_real_base_orbits`, for EVERY finite real D and EVERY point outside its actual closure; explicit fresh root/coordinate swaps exclude any finite candidate orbit |
-| Actual named quotient and term | `projectionTerm`, `matchingTerm`, their literal value lemmas and `projection_onto_noninjective` |
+| Full-Aut real-base orbit infinitude | `original_real_base_orbits`, for EVERY finite real D and EVERY point outside its actual closure; explicit fresh root/coordinate swaps exclude any finite candidate orbit. `real_base_acl_eq` and `real_base_dcl_eq` prove the corresponding actual real-base closure equalities |
+| Actual named quotient and term | `projectionTerm`, `matchingTerm`, their literal value lemmas, `projection_onto_noninjective`, and `all_hidden_named_representations` (both hidden sorts, each with infinite real fibres) |
 | Forced value but no named factor | `forced_on_actual_projection_fibres`, `original_no_named_factor` |
 | Set/definable factor really exists | `unique_matching_partner`, using the original one matching relation |
 | Full-Aut definability outside closure | `original_definable_off_closure`; the matching partner is fixed by EVERY full automorphism over its quotient point, but is absent from the actual singleton term closure |
@@ -58,7 +58,7 @@ proofs, not finite-reservoir diagnostics.
 
 ## Validation and handoff
 
-The seven new Lean modules contain 727 lines. The final targeted build
+The seven new Lean modules contain 763 lines. The final targeted build
 of `CCO.UnaryFreshFrames.Examples.MatchingIndex` passed **1340 jobs**,
 with no new-file warnings after the final cleanup. No whole-project build,
 test suite or axiom audit was duplicated by this helper. Root/owner retain
