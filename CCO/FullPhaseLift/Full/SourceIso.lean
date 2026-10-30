@@ -5,7 +5,7 @@ import CCO.Finite
 of all realized tagged optional colours. Sorts, fibres and atoms are rebuilt
 from real points; no palette correspondence is a premise. -/
 
-universe u v w u' v' w'
+universe u v w u' v' w' u'' v'' w''
 namespace CCO.FullPhaseLift.Full
 
 structure SourceIso {κ : Type u} {Y : κ → Type v} {ι : Type u'} {X : ι → Type v'}
@@ -205,6 +205,40 @@ noncomputable def of_pattern (e : Sigma Y ≃ Sigma X)
   apply Equiv.ext
   rintro ⟨k,y⟩
   exact patternPoint_whole T S e h k y
+
+/-- Reverse the actual source isomorphism through its whole carrier map.
+The constructor recovers the dependent typed data without manual casts. -/
+noncomputable def symm (F : SourceIso T S) : SourceIso S T :=
+  of_pattern F.whole.symm (by
+    intro p q r s
+    have h := F.whole_tagged_iff (F.whole.symm p) (F.whole.symm q)
+      (F.whole.symm r) (F.whole.symm s)
+    simpa only [Equiv.apply_symm_apply] using h.symm)
+
+@[simp] theorem symm_whole (F : SourceIso T S) : F.symm.whole = F.whole.symm :=
+  of_pattern_whole _ _
+
+/-- Compose actual whole source isomorphisms, then reconstruct the exact
+typed correspondence. No prefix-history coherence callback is required. -/
+noncomputable def trans {ζ : Type u''} {Z : ζ → Type v''}
+    {U : AtomicSource.{u'',v'',w''} ζ Z} (F : SourceIso T S) (G : SourceIso S U) :
+    SourceIso T U :=
+  of_pattern (F.whole.trans G.whole) (by
+    intro p q r s
+    exact (F.whole_tagged_iff p q r s).trans
+      (G.whole_tagged_iff (F.whole p) (F.whole q) (F.whole r) (F.whole s)))
+
+@[simp] theorem trans_whole {ζ : Type u''} {Z : ζ → Type v''}
+    {U : AtomicSource.{u'',v'',w''} ζ Z} (F : SourceIso T S) (G : SourceIso S U) :
+    (F.trans G).whole = F.whole.trans G.whole := of_pattern_whole _ _
+
+noncomputable abbrev compose {ζ : Type u''} {Z : ζ → Type v''}
+    {U : AtomicSource.{u'',v'',w''} ζ Z} (G : SourceIso S U) (F : SourceIso T S) :
+    SourceIso T U := F.trans G
+
+@[simp] theorem compose_whole {ζ : Type u''} {Z : ζ → Type v''}
+    {U : AtomicSource.{u'',v'',w''} ζ Z} (G : SourceIso S U) (F : SourceIso T S) :
+    (G.compose F).whole = F.whole.trans G.whole := trans_whole F G
 
 end SourceIso
 end CCO.FullPhaseLift.Full

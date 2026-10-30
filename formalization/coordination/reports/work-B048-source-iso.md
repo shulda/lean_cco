@@ -47,3 +47,10 @@ with 749 jobs on pinned Lean4.34.1 and the unchanged manifest/private outputs.
 Only this file and this report are authored; prior canonical, unary-expansion
 and marked-pairSAP branches are preserved. Root owns assembled build,
 exact-head CI/audit and all remote coordination/publication. No axiom/sorry.
+
+The terminal-prefix seam additionally provides `SourceIso.symm`, `trans`
+and `compose`, each reconstructed by the proved `of_pattern` constructor.
+The equations `symm_whole`, `trans_whole` and `compose_whole` identify their
+whole-carrier maps literally with inverse/composition of the supplied maps.
+This avoids any additional dependent-coherence/history assumption. The same
+narrow target passed with 749 jobs.
