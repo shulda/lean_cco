@@ -1391,3 +1391,15 @@ import CCO.FiniteFibres.SmallTargets
 import CCO.FiniteFibres.SourceChain
 import CCO.FiniteFibres.Target
 import CCO.FiniteFibres.CycleObstruction
+import CCO.PointGeneratedSAP.Alignment
+import CCO.PointGeneratedSAP.Copies
+import CCO.PointGeneratedSAP.Examples.Binary
+import CCO.PointGeneratedSAP.Examples.Constant
+import CCO.PointGeneratedSAP.Examples.ConstantSource
+import CCO.PointGeneratedSAP.Examples.Matching
+import CCO.PointGeneratedSAP.Examples.MatchingSource
+import CCO.PointGeneratedSAP.Forward
+import CCO.PointGeneratedSAP.Original
+import CCO.PointGeneratedSAP.Pieces
+import CCO.PointGeneratedSAP.Reverse
+import CCO.PointGeneratedSAP.Source
