@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 291,
+  "revision": 292,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -1817,6 +1817,7 @@
         "/root/b036_counterexample",
         "/root/b036_hierarchy",
         "/root/b036_reset",
+        "/root/workspace_recovery",
         "root"
       ],
       "original_author_project_ids": [
@@ -7538,6 +7539,20 @@
           "/root/b030_rank/e03_unary_analysis",
           "/root/ramsey16",
           "/root/frontier16"
+        ]
+      }
+    },
+    {
+      "revision": 292,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "record_authorship",
+      "package_id": "B036",
+      "details": {
+        "actor_id": "root",
+        "package_id": "B036",
+        "author_actor_ids": [
+          "/root/workspace_recovery"
         ]
       }
     }
