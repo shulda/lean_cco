@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 364,
+  "revision": 365,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -2994,8 +2994,156 @@
       }
     },
     "B046": {
-      "state": "AVAILABLE",
-      "owner_project_id": null
+      "state": "IN_PROGRESS",
+      "owner_project_id": 3,
+      "author_actor_ids": [
+        "root"
+      ],
+      "original_author_project_ids": [
+        3
+      ],
+      "claim_revision": 365,
+      "base_main_sha": "6a3ed6e3a485b3218b5038b38494a7de1f821241",
+      "base_ci": {
+        "run_id": 41083770047,
+        "run_attempt": 1,
+        "head_sha": "6a3ed6e3a485b3218b5038b38494a7de1f821241",
+        "conclusion": "success",
+        "axiom_audit": "allowlist",
+        "job_id": 124159429538,
+        "tests": 130,
+        "declarations": 25938,
+        "guards": [
+          {
+            "parts": 1447,
+            "source": 1447
+          },
+          {
+            "parts": 1447,
+            "source": 1447
+          }
+        ],
+        "provider_guards": [
+          {
+            "parts": 269,
+            "source": 269,
+            "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+          },
+          {
+            "parts": 269,
+            "source": 269,
+            "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+          },
+          {
+            "parts": 269,
+            "source": 269,
+            "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+          },
+          {
+            "parts": 269,
+            "source": 269,
+            "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+          }
+        ],
+        "ramsey_guards": [
+          {
+            "parts": 106,
+            "source": 106,
+            "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+          },
+          {
+            "parts": 106,
+            "source": 106,
+            "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+          },
+          {
+            "parts": 106,
+            "source": 106,
+            "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+          },
+          {
+            "parts": 106,
+            "source": 106,
+            "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+          }
+        ],
+        "build_jobs": [
+          1330,
+          1182,
+          4113,
+          4113,
+          6
+        ],
+        "fresh_cco_modules": [
+          "CCO.APCharacter.Completion.Identity",
+          "CCO.APCharacter.Masks",
+          "CCO.APCharacter.Completion.Insertion",
+          "CCO.APCharacter.SourcePhase",
+          "CCO.APCharacter.Seeds",
+          "CCO.APCharacter.Rank.Source",
+          "CCO.APCharacter.Rank.Potential",
+          "CCO.APCharacter.SourceAge.BackAndForth",
+          "CCO.APCharacter.Completion.Identification",
+          "CCO.APCharacter.Completion.Walks",
+          "CCO.APCharacter.Paths",
+          "CCO.APCharacter.Towers.FiniteHistory",
+          "CCO.APCharacter.Age.Coding",
+          "CCO.APCharacter.Rank.Orbitals",
+          "CCO.APCharacter.Towers.UnaryComposition",
+          "CCO.APCharacter.ActualMasks",
+          "CCO.APCharacter.Completion.Measure",
+          "CCO.APCharacter.Completion.QuotientDiagram",
+          "CCO.APCharacter.Completion.SpecifiedPaths",
+          "CCO.APCharacter.Completion.PathChoice",
+          "CCO.APCharacter.Age.Charts",
+          "CCO.APCharacter.Rank.Consumer",
+          "CCO.APCharacter.Towers.FiniteUnary",
+          "CCO.APCharacter.MaskReadout",
+          "CCO.APCharacter.SeedSource",
+          "CCO.APCharacter.Completion.FoldCoherence",
+          "CCO.APCharacter.SingleBridge",
+          "CCO.APCharacter.Age.Category",
+          "CCO.APCharacter.Age.Span",
+          "CCO.APCharacter.PhaseWitnesses",
+          "CCO.APCharacter.Completion.Legality",
+          "CCO.APCharacter.Completion.FoldCycles",
+          "CCO.APCharacter.Totality",
+          "CCO.APCharacter.Towers.UnaryReduct",
+          "CCO.APCharacter.Age.Alignment",
+          "CCO.APCharacter.Completion.FiniteProcedure",
+          "CCO.APCharacter.Towers.ProjectionComposition",
+          "CCO.APCharacter.ProperDomains",
+          "CCO.APCharacter.Age.Image",
+          "CCO.APCharacter.Towers.CurrentSource",
+          "CCO.APCharacter.Completion.Small",
+          "CCO.APCharacter.Age.Amalgamation",
+          "CCO.APCharacter.Towers.HistoryCoherence",
+          "CCO.APCharacter.Primality",
+          "CCO.APCharacter.Completion.Source",
+          "CCO.APCharacter.Age.Limit",
+          "CCO.APCharacter.Calculus",
+          "CCO.APCharacter.Age.Reasonableness",
+          "CCO.APCharacter.GateSource",
+          "CCO.APCharacter.Age.CCOTransfer",
+          "CCO.APCharacter.PathNormalForm",
+          "CCO.APCharacter.ParitySource",
+          "CCO.APCharacter.Age.Realized",
+          "CCO.APCharacter.Towers.CurrentParity",
+          "CCO.APCharacter.SourceAge.UnarySource",
+          "CCO.APCharacter.SourceAge.Reduct",
+          "CCO.APCharacter.MarkedSource",
+          "CCO.APCharacter.SourceAge.UnarySourceAction",
+          "CCO.APCharacter.SourceAge.Identification",
+          "CCO.APCharacter.SourceCompletion",
+          "CCO.APCharacter.SourceAge.UnarySourceHomogeneity",
+          "CCO.APCharacter.SourceAge.UnarySourceCCO",
+          "CCO.APCharacter.SourceAge.UnaryTransition",
+          "CCO.APCharacter.SourceAge.CharacterRank",
+          "CCO.APCharacter.SourceAge.SingleStep",
+          "CCO.APCharacter.Terminal"
+        ],
+        "url": "https://github.com/shulda/lean_cco/actions/runs/41083770047"
+      }
     },
     "B047": {
       "state": "AVAILABLE",
@@ -10944,6 +11092,158 @@
       "package_id": "B045",
       "details": {
         "package_id": "B045",
+        "base_main_sha": "6a3ed6e3a485b3218b5038b38494a7de1f821241",
+        "base_ci": {
+          "run_id": 41083770047,
+          "run_attempt": 1,
+          "head_sha": "6a3ed6e3a485b3218b5038b38494a7de1f821241",
+          "conclusion": "success",
+          "axiom_audit": "allowlist",
+          "job_id": 124159429538,
+          "tests": 130,
+          "declarations": 25938,
+          "guards": [
+            {
+              "parts": 1447,
+              "source": 1447
+            },
+            {
+              "parts": 1447,
+              "source": 1447
+            }
+          ],
+          "provider_guards": [
+            {
+              "parts": 269,
+              "source": 269,
+              "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+            },
+            {
+              "parts": 269,
+              "source": 269,
+              "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+            },
+            {
+              "parts": 269,
+              "source": 269,
+              "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+            },
+            {
+              "parts": 269,
+              "source": 269,
+              "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+            }
+          ],
+          "ramsey_guards": [
+            {
+              "parts": 106,
+              "source": 106,
+              "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+            },
+            {
+              "parts": 106,
+              "source": 106,
+              "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+            },
+            {
+              "parts": 106,
+              "source": 106,
+              "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+            },
+            {
+              "parts": 106,
+              "source": 106,
+              "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+            }
+          ],
+          "build_jobs": [
+            1330,
+            1182,
+            4113,
+            4113,
+            6
+          ],
+          "fresh_cco_modules": [
+            "CCO.APCharacter.Completion.Identity",
+            "CCO.APCharacter.Masks",
+            "CCO.APCharacter.Completion.Insertion",
+            "CCO.APCharacter.SourcePhase",
+            "CCO.APCharacter.Seeds",
+            "CCO.APCharacter.Rank.Source",
+            "CCO.APCharacter.Rank.Potential",
+            "CCO.APCharacter.SourceAge.BackAndForth",
+            "CCO.APCharacter.Completion.Identification",
+            "CCO.APCharacter.Completion.Walks",
+            "CCO.APCharacter.Paths",
+            "CCO.APCharacter.Towers.FiniteHistory",
+            "CCO.APCharacter.Age.Coding",
+            "CCO.APCharacter.Rank.Orbitals",
+            "CCO.APCharacter.Towers.UnaryComposition",
+            "CCO.APCharacter.ActualMasks",
+            "CCO.APCharacter.Completion.Measure",
+            "CCO.APCharacter.Completion.QuotientDiagram",
+            "CCO.APCharacter.Completion.SpecifiedPaths",
+            "CCO.APCharacter.Completion.PathChoice",
+            "CCO.APCharacter.Age.Charts",
+            "CCO.APCharacter.Rank.Consumer",
+            "CCO.APCharacter.Towers.FiniteUnary",
+            "CCO.APCharacter.MaskReadout",
+            "CCO.APCharacter.SeedSource",
+            "CCO.APCharacter.Completion.FoldCoherence",
+            "CCO.APCharacter.SingleBridge",
+            "CCO.APCharacter.Age.Category",
+            "CCO.APCharacter.Age.Span",
+            "CCO.APCharacter.PhaseWitnesses",
+            "CCO.APCharacter.Completion.Legality",
+            "CCO.APCharacter.Completion.FoldCycles",
+            "CCO.APCharacter.Totality",
+            "CCO.APCharacter.Towers.UnaryReduct",
+            "CCO.APCharacter.Age.Alignment",
+            "CCO.APCharacter.Completion.FiniteProcedure",
+            "CCO.APCharacter.Towers.ProjectionComposition",
+            "CCO.APCharacter.ProperDomains",
+            "CCO.APCharacter.Age.Image",
+            "CCO.APCharacter.Towers.CurrentSource",
+            "CCO.APCharacter.Completion.Small",
+            "CCO.APCharacter.Age.Amalgamation",
+            "CCO.APCharacter.Towers.HistoryCoherence",
+            "CCO.APCharacter.Primality",
+            "CCO.APCharacter.Completion.Source",
+            "CCO.APCharacter.Age.Limit",
+            "CCO.APCharacter.Calculus",
+            "CCO.APCharacter.Age.Reasonableness",
+            "CCO.APCharacter.GateSource",
+            "CCO.APCharacter.Age.CCOTransfer",
+            "CCO.APCharacter.PathNormalForm",
+            "CCO.APCharacter.ParitySource",
+            "CCO.APCharacter.Age.Realized",
+            "CCO.APCharacter.Towers.CurrentParity",
+            "CCO.APCharacter.SourceAge.UnarySource",
+            "CCO.APCharacter.SourceAge.Reduct",
+            "CCO.APCharacter.MarkedSource",
+            "CCO.APCharacter.SourceAge.UnarySourceAction",
+            "CCO.APCharacter.SourceAge.Identification",
+            "CCO.APCharacter.SourceCompletion",
+            "CCO.APCharacter.SourceAge.UnarySourceHomogeneity",
+            "CCO.APCharacter.SourceAge.UnarySourceCCO",
+            "CCO.APCharacter.SourceAge.UnaryTransition",
+            "CCO.APCharacter.SourceAge.CharacterRank",
+            "CCO.APCharacter.SourceAge.SingleStep",
+            "CCO.APCharacter.Terminal"
+          ],
+          "url": "https://github.com/shulda/lean_cco/actions/runs/41083770047"
+        },
+        "actor_id": "root"
+      }
+    },
+    {
+      "revision": 365,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "claim",
+      "package_id": "B046",
+      "details": {
+        "package_id": "B046",
         "base_main_sha": "6a3ed6e3a485b3218b5038b38494a7de1f821241",
         "base_ci": {
           "run_id": 41083770047,
