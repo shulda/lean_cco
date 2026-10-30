@@ -171,3 +171,32 @@ separate preserved terminal contributions; full marked model SAP and
 all full-automorphism orbital readout are separately preserved author
 contributions. Final source assembly still must instantiate the concrete
 prefix and finite history before any completion claim.
+
+## Principal ordinary source assembly
+
+The genuine final ordinary selected full tower is merged at native
+`cb054756cfca8476957ea8a393912d6e04ab9601`, with tuple's constructed
+comparison and exact finite forgetful square at `9f3ce441...`. The helper
+`SingleStep.current` receives a comparison internally, but principal
+`SingleStep.actualComparison` CONSTRUCTS that certificate from the actual
+full model's finite ages, derived binary homogeneity and back-and-forth.
+`Tower.actual_progress` selects an original B047 parity gate and invokes
+this exact constructor. No current/next model, comparison, normality or
+progress provider survives in `Tower.full_language_elimination`.
+
+`CCO.FullPhaseLift.Source` exposes the two selected exports. Its additional
+`canonical_full_language_elimination` starts with the original full table
+T, original full homogeneity, pair premises on its finite canonical
+expansion, and EXACT raw source A03. It derives the canonical full initial
+prefix, invokes the actual finite selected full history, then composes
+`Full.definitionalReduct` with that history's full reduct. Thus the
+original pre-naming language and every old signed/repeated/nullary tuple
+are retained by the SAME composite global map and finite-age functor.
+The terminal statement concerns all genuine FULL-automorphism invariant
+covers, via the separately proved full-orbital theorem, rather than only
+a selected exact-equivalence sublattice.
+
+The actual Source consumer is GREEN (2614 jobs). This closes ordinary
+C24/C27–31 assembly; C25's optional actual marked-model restriction and
+C32's actual canonical raw boundary are separate remaining author scopes.
+No final broad build, exact-head CI or acceptance is asserted here.
