@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 388,
+  "revision": 389,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -4001,6 +4001,11 @@
       "state": "IN_PROGRESS",
       "owner_project_id": 3,
       "author_actor_ids": [
+        "/root/b047_pair_safe_split",
+        "/root/b047_pair_safe_split/infinite_type_fibres",
+        "/root/b047_strong_phase",
+        "/root/b047_strong_phase/tuple_readout",
+        "/root/b047_terminal",
         "root"
       ],
       "original_author_project_ids": [
@@ -13830,6 +13835,25 @@
           ],
           "url": "https://github.com/shulda/lean_cco/actions/runs/41106937069"
         },
+        "actor_id": "root"
+      }
+    },
+    {
+      "revision": 389,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "record_authorship",
+      "package_id": "B048",
+      "details": {
+        "package_id": "B048",
+        "author_actor_ids": [
+          "root",
+          "/root/b047_pair_safe_split",
+          "/root/b047_pair_safe_split/infinite_type_fibres",
+          "/root/b047_strong_phase/tuple_readout",
+          "/root/b047_terminal",
+          "/root/b047_strong_phase"
+        ],
         "actor_id": "root"
       }
     }
