@@ -1,4 +1,5 @@
 import CCO.ResetOrder.Hierarchy.Normalize
+import Mathlib.Basic.Finite.Sigma
 
 /-! ALL coordinates of an actual finite closed quotient object discharge
 the recursion's rank and parent-key laws; these are not provider callbacks. -/
@@ -8,6 +9,10 @@ namespace QuotientSystem
 variable {S : Type u} {L : S → Type u} {V : S → Type v}
 variable [∀ s, Lattice (L s)] [∀ s, OrderTop (L s)] [∀ s, Fintype (L s)]
 def Index := (s : S) × {j : L s // InfIrred j}
+
+instance finiteIndex [Finite S] : Finite (Index (L := L)) := by
+  unfold Index
+  infer_instance
 
 structure Priority where
   count : Index (L := L) → ℕ
@@ -38,6 +43,8 @@ namespace ClosedObject
 variable {P R} (A : ClosedObject P R)
 def Carrier (i : Index (L := L)) : Type v := {x // x ∈ A.points i}
 instance finiteCarrier (i : Index (L := L)) : Finite (A.Carrier i) := A.finite i
+
+instance finiteWholeObject [Finite S] : Finite (Sigma A.Carrier) := by infer_instance
 
 def parent (i : Index (L := L)) (x y : A.Carrier i) : Prop :=
   (R i.1).up (le_miParent i.2.val) x.val = (R i.1).up (le_miParent i.2.val) y.val

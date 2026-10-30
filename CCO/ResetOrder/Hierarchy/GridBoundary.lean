@@ -102,6 +102,25 @@ theorem J_parent : miParent J = P := by
   rw [covBy_iff_lt_and_eq_or_eq]
   decide
 
+theorem proper_nonidentity_MI : ∀ k : Level,
+    (InfIrred k ∧ k.value ≠ 0) ↔ k = J ∨ k = L ∨ k = M := by
+  unfold InfIrred IsMax
+  decide
+
+def swapLevel (k : Level) : Level := if k = L then M else if k = M then L else k
+theorem swapLevel_involutive : ∀ k, swapLevel (swapLevel k) = k := by decide
+theorem swapLevel_order : ∀ i j, swapLevel i ≤ swapLevel j ↔ i ≤ j := by decide
+
+def swapOriginal (x : Original) : Original := (x.1,x.2.1,x.2.2.2,x.2.2.1)
+theorem actual_cut_transport : ∀ k x y,
+    equivalent (swapLevel k) (swapOriginal x) (swapOriginal y) ↔ equivalent k x y := by decide
+
+def upperIntervalTransition : {k : Level // J < k} ≃ {k : Level // J < k} where
+  toFun k := ⟨swapLevel k.val, (show ∀ k, J < k → J < swapLevel k from by decide) k.val k.property⟩
+  invFun k := ⟨swapLevel k.val, (show ∀ k, J < k → J < swapLevel k from by decide) k.val k.property⟩
+  left_inv k := Subtype.ext (swapLevel_involutive k.val)
+  right_inv k := Subtype.ext (swapLevel_involutive k.val)
+
 def quotientJ (x : Original) : Grid := x.2
 theorem quotientJ_surjective : Function.Surjective quotientJ := fun x => ⟨(0,x), rfl⟩
 theorem quotientJ_kernel (x y : Original) : quotientJ x = quotientJ y ↔ equivalent J x y := Iff.rfl
@@ -120,6 +139,12 @@ theorem transition_parent (x y : Grid) : parent (swap x) = parent (swap y) ↔ p
 def priorityLT (x y : Grid) : Prop :=
   upL x < upL y ∨ (upL x = upL y ∧ (upM x < upM y ∨ (upM x = upM y ∧ x.1 < y.1)))
 instance priorityLTDecidable : DecidableRel priorityLT := by intro x y; unfold priorityLT; infer_instance
+
+def priorityOrder : TotalOrder Grid where
+  lt := priorityLT
+  irrefl := by decide
+  trans := by decide
+  total := by decide
 
 theorem fibre_comparison : ∀ x y : Grid, parent x = parent y → (priorityLT x y ↔ x.1 < y.1) := by decide
 theorem synchronized_fibres : ∀ x y : Grid, parent x = parent y →
