@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 365,
+  "revision": 366,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -2845,6 +2845,8 @@
       "state": "IN_PROGRESS",
       "owner_project_id": 3,
       "author_actor_ids": [
+        "/root/b045_clone_sap",
+        "/root/b045_clone_sap/clone_cco",
         "root"
       ],
       "original_author_project_ids": [
@@ -11385,6 +11387,22 @@
           ],
           "url": "https://github.com/shulda/lean_cco/actions/runs/41083770047"
         },
+        "actor_id": "root"
+      }
+    },
+    {
+      "revision": 366,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "record_authorship",
+      "package_id": "B045",
+      "details": {
+        "package_id": "B045",
+        "author_actor_ids": [
+          "root",
+          "/root/b045_clone_sap",
+          "/root/b045_clone_sap/clone_cco"
+        ],
         "actor_id": "root"
       }
     }
