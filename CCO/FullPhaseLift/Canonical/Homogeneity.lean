@@ -1,11 +1,12 @@
 import CCO.FullPhaseLift.Canonical.FirstOrder
 import Mathlib.ModelTheory.Fraisse
+import Mathlib.Data.Fintype.EquivFin
 
 /-! Exact native first-order ultrahomogeneity gives full relational-table
 homogeneity. Every relation arity, negative truth and nullary is retained;
 the theorem does not pass to a binary reduct. -/
 
-universe v
+universe u v
 namespace CCO.FullPhaseLift.Canonical
 open scoped FirstOrder
 
@@ -65,5 +66,41 @@ theorem homogeneous_of_firstOrder {L : Signature} {M : Type v}
   change g' (f'.equivRange.symm (f'.equivRange x)) = a (f' x) at h
   rw [FirstOrder.Language.Equiv.symm_apply_apply] at h
   exact h.symm
+
+/-- FULL isomorphism preserves homogeneity even when the native Fraïssé
+carrier and the receiving old carrier lie in different universes. The
+finite source is explicitly recoded into the first carrier's universe. -/
+theorem homogeneous_of_iso {L : Signature} {M : Type u} {N : Type v}
+    {U : BoolTable L M} {V : BoolTable L N} (e : Iso U V)
+    (hom : (toRelational U).Homogeneous) : (toRelational V).Homogeneous := by
+  classical
+  intro W _ B f g
+  letI := Fintype.ofFinite W
+  let c : W ≃ ULift.{u} (Fin (Fintype.card W)) := {
+    toFun x := ⟨(Fintype.equivFin W) x⟩
+    invFun x := (Fintype.equivFin W).symm x.down
+    left_inv x := (Fintype.equivFin W).symm_apply_apply x
+    right_inv x := by
+      apply ULift.ext
+      exact (Fintype.equivFin W).apply_symm_apply x.down }
+  let B' : R.Structure L.language (ULift.{u} (Fin (Fintype.card W))) := {
+    rel R xs := B.rel R (c.symm ∘ xs) }
+  let back : RelationalCompletion.Relational.Structure.Embedding B' B := {
+    point := c.symm
+    injective := c.symm.injective
+    rel_iff _ _ := Iff.rfl }
+  let f' := e.symm.toEmbedding.comp (f.comp back)
+  let g' := e.symm.toEmbedding.comp (g.comp back)
+  obtain ⟨a,ha⟩ := hom (ULift.{u} (Fin (Fintype.card W))) B' f' g'
+  refine ⟨(e.symm.trans a).trans e,?_⟩
+  intro x
+  have hx : back.point (c x) = x := c.symm_apply_apply x
+  have h := ha (c x)
+  change a.point (e.point.symm (f.point (back.point (c x)))) =
+    e.point.symm (g.point (back.point (c x))) at h
+  rw [hx] at h
+  have h' := congrArg e.point h
+  change e.point (a.point (e.point.symm (f.point x))) = g.point x
+  simpa only [Equiv.apply_symm_apply] using h'
 
 end CCO.FullPhaseLift.Canonical
