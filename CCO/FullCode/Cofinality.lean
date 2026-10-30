@@ -26,6 +26,19 @@ instance finiteRoot (C : Structure L V) (S : RootScheme L) [Finite V] :
       cases hc
       rfl
 
+/-- The ambient cofinality lemma needs normal forms only at coordinates of
+actual valid roots, not at every arbitrary ambient input point. -/
+def RootNormalFormsValid (N : NormalForms L) (C : Structure L V)
+    (S : RootScheme L) : Prop :=
+  ∀ (r : Root C S) (j : Fin (S.arity r.tag)) (t : L.Sorts)
+    (q : Term L (S.coordinateSort r.tag j) t),
+    q.eval C (r.coordinate j) =
+      (N.form _ _ (N.normalize q)).eval C (r.coordinate j)
+
+theorem rootNormalFormsValid_of_valid (N : NormalForms L) (C : Structure L V)
+    (S : RootScheme L) (valid : N.Valid C) : RootNormalFormsValid N C S :=
+  fun r j _ q => valid _ _ q _ (r.sorted j)
+
 def RootGenerated (C : Structure L V) (S : RootScheme L) : Prop :=
   (Object.full C S).support = Set.univ
 
@@ -52,6 +65,22 @@ theorem support_finite (O : Object C S A) [Finite A]
     ext x
     simp only [Set.mem_iUnion]
     exact O.mem_support_iff_presentation N hN x
+  rw [heq]
+  exact Set.finite_iUnion fun a => Set.finite_iUnion fun p =>
+    ((O.root a).presentation_functional N p).finite
+
+theorem support_finite_of_rootForms (O : Object C S A) [Finite A]
+    (N : NormalForms L) (valid : RootNormalFormsValid N C S) : O.support.Finite := by
+  have heq : O.support = ⋃ a, ⋃ p : Presentation N S, (O.root a).presentation N p := by
+    ext x
+    simp only [Set.mem_iUnion]
+    constructor
+    · rintro ⟨z, ⟨a, j, rfl⟩, hpath⟩
+      obtain ⟨t, q, hq⟩ := Term.path_represented ((O.root a).sorted j) hpath
+      exact ⟨a, ⟨⟨(O.root a).tag, j⟩, t, N.normalize q⟩,
+        (O.root a).coordinate j, ⟨rfl, rfl⟩, (valid (O.root a) j t q) ▸ hq⟩
+    · rintro ⟨a, p, hx⟩
+      exact O.presentation_mem_support N a p hx
   rw [heq]
   exact Set.finite_iUnion fun a => Set.finite_iUnion fun p =>
     ((O.root a).presentation_functional N p).finite
@@ -104,8 +133,8 @@ structure CofinalExtension (P : Structure L V) (S : RootScheme L)
 
 /-- C21--C25 / RC: finitely many chosen covering roots, all their coordinates,
 and the genuine old unary closure construct ONE finite cofinal host. -/
-noncomputable def cofinalExtension (P : Structure L V) (S : RootScheme L)
-    (N : NormalForms L) (hN : N.Valid P) (cover : RootCovered P S)
+noncomputable def cofinalExtensionRootForms (P : Structure L V) (S : RootScheme L)
+    (N : NormalForms L) (hN : RootNormalFormsValid N P S) (cover : RootCovered P S)
     (D : Structure L W) [Finite W] (e : Structure.Embedding D P) :
     CofinalExtension P S D := by
   classical
@@ -117,7 +146,7 @@ noncomputable def cofinalExtension (P : Structure L V) (S : RootScheme L)
     intro z
     apply (t z).eval_mem_closure ?_ (ht z)
     exact O.coordinate_mem_support ⟨r z, ⟨z, rfl⟩⟩ (j z)
-  refine ⟨O.support, O.support_finite N hN, P.isClosed_closure O.coordinates, ?_,
+  refine ⟨O.support, O.support_finite_of_rootForms N hN, P.isClosed_closure O.coordinates, ?_,
     O.support_rootGenerated⟩
   refine {
     point := fun z => ⟨e.point z, hcontains z⟩
@@ -133,5 +162,11 @@ noncomputable def cofinalExtension (P : Structure L V) (S : RootScheme L)
   · intro F x y hy
     obtain ⟨z, hz, heq⟩ := e.reflect_func F x y.val hy
     exact ⟨z, hz, Subtype.ext heq⟩
+
+noncomputable def cofinalExtension (P : Structure L V) (S : RootScheme L)
+    (N : NormalForms L) (hN : N.Valid P) (cover : RootCovered P S)
+    (D : Structure L W) [Finite W] (e : Structure.Embedding D P) :
+    CofinalExtension P S D :=
+  cofinalExtensionRootForms P S N (rootNormalFormsValid_of_valid N P S hN) cover D e
 
 end CCO.FullCode

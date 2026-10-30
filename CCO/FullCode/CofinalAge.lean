@@ -32,4 +32,17 @@ theorem root_cover_cofinal {H : FiniteHidden.{u,v} L → Prop}
   have hE : H E := (ambient E).mpr ⟨P.inclusion C.carrier C.closed⟩
   exact ⟨E, hE, C.generated, ⟨C.embedding⟩⟩
 
+theorem root_cover_cofinal_rootForms {H : FiniteHidden.{u,v} L → Prop}
+    {V : Type v} (P : Structure L V) (S : RootScheme L)
+    (N : NormalForms L) (valid : RootNormalFormsValid N P S)
+    (ambient : IsAmbientAge H P) (cover : RootCovered P S) :
+    CofinalRootHosts H S := by
+  intro D hD
+  obtain ⟨f⟩ := (ambient D).mp hD
+  let C := cofinalExtensionRootForms P S N valid cover D.model f
+  let E : FiniteHidden.{u,v} L :=
+    ⟨C.carrier, P.induce C.carrier C.closed, C.finite.to_subtype⟩
+  have hE : H E := (ambient E).mpr ⟨P.inclusion C.carrier C.closed⟩
+  exact ⟨E, hE, C.generated, ⟨C.embedding⟩⟩
+
 end CCO.FullCode
