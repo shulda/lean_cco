@@ -1,0 +1,96 @@
+{
+  "run_id": 41039939898,
+  "head_sha": "709931c1d7bae96f549efcf658d795d38dc1e9e8",
+  "conclusion": "success",
+  "axiom_audit": "allowlist",
+  "job_id": 124009986704,
+  "tests": 130,
+  "declarations": 22119,
+  "guards": [
+    {
+      "parts": 1252,
+      "source": 1252
+    },
+    {
+      "parts": 1252,
+      "source": 1252
+    }
+  ],
+  "provider_guards": [
+    {
+      "parts": 269,
+      "source": 269,
+      "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+    },
+    {
+      "parts": 269,
+      "source": 269,
+      "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+    },
+    {
+      "parts": 269,
+      "source": 269,
+      "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+    },
+    {
+      "parts": 269,
+      "source": 269,
+      "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+    }
+  ],
+  "ramsey_guards": [
+    {
+      "parts": 106,
+      "source": 106,
+      "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+    },
+    {
+      "parts": 106,
+      "source": 106,
+      "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+    },
+    {
+      "parts": 106,
+      "source": 106,
+      "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+    },
+    {
+      "parts": 106,
+      "source": 106,
+      "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+    }
+  ],
+  "build_jobs": [
+    1330,
+    1182,
+    3914,
+    3914,
+    6
+  ],
+  "fresh_cco_modules": [
+    "CCO.RelationalCompletion.Atomic.Palette",
+    "CCO.RelationalCompletion.Relational.Language",
+    "CCO.RelationalCompletion.Collision.Counting",
+    "CCO.RelationalCompletion.Atomic.BoundariesFiniteAge",
+    "CCO.RelationalCompletion.Relational.Irreducible",
+    "CCO.RelationalCompletion.Relational.Homogeneous",
+    "CCO.RelationalCompletion.Atomic.Class",
+    "CCO.RelationalCompletion.Atomic.BoundariesCycles",
+    "CCO.RelationalCompletion.Relational.Clone",
+    "CCO.RelationalCompletion.Relational.AgeAP",
+    "CCO.RelationalCompletion.Atomic.Fan",
+    "CCO.RelationalCompletion.Relational.Split",
+    "CCO.RelationalCompletion.Relational.BoundariesAP",
+    "CCO.RelationalCompletion.Atomic.BoundariesTwoColour",
+    "CCO.RelationalCompletion.Atomic.FanDiagram",
+    "CCO.RelationalCompletion.Relational.Profiles",
+    "CCO.RelationalCompletion.Atomic.Cycle",
+    "CCO.RelationalCompletion.Atomic.BoundariesAdapters",
+    "CCO.RelationalCompletion.Relational.Unfolding",
+    "CCO.RelationalCompletion.Atomic.Fullness",
+    "CCO.RelationalCompletion.Relational.BoundariesImages",
+    "CCO.RelationalCompletion.Relational.Source",
+    "CCO.RelationalCompletion.SourceAssembly"
+  ],
+  "url": "https://github.com/shulda/lean_cco/actions/runs/41039939898"
+}
