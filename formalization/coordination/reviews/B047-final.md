@@ -1,6 +1,6 @@
 # B047 — independent source review
 
-Disposition: **WHOLE MATHEMATICAL SOURCE, FINAL DOCUMENTATION AND PUBLIC HISTORY PASS at public `f702071ee44712f81f227329228a074a10e2d9d6`; formal approval PENDING exact-head CI and genuine lease.**
+Disposition: **APPROVE B047 exact public head `f702071ee44712f81f227329228a074a10e2d9d6`, tree `e0379991ff060db6b53a7e7d9fc05b27e5809464`.** The original C41/C43 finding is closed by actual source proofs; complete source, final documentation, preserved history, exact-head CI and genuine nonauthor lease pass. This approves this precise candidate, not a future head or resulting-main acceptance.
 
 Reviewer is the actual registered actor `/root/independent_review`, role
 `independent_review`. I authored or designed none of this complete batch,
@@ -204,13 +204,60 @@ is not presented as if it had existed at the initial freeze. No root import,
 accepted proof, provider pin, contract or configuration changed in these
 four commits.
 
-## Evidence limits and remaining gates
+## Personally verified final exact CI and genuine lease
 
-I have not rerun any author build and do not treat the initial or repaired
-local receipts as actual public CI, an axiom audit or acceptance. Initial
-run `41102926191` was reported green by the coordinator, but that initial
-head was not approved because it did not close the source finding. The
-new final exact run is `41105647949`, presently pending completion evidence.
-Final exact-head CI/logs, tested synthetic tree and live genuine review
-lease/authors/current base remain required for formal approval. The
-resulting-main CI remains a separate coordinator gate after integration.
+I fetched the actual completed run, job metadata and FULL decoded job log,
+2,934,608 characters / 35,400 lines, rather than relying on the coordinator's
+summary. The exact final evidence is:
+
+| Anchor | Personally verified value |
+|---|---|
+| Public PR | `https://github.com/shulda/lean_cco/pull/62`, open and mergeable, exact head `f702071ee44712f81f227329228a074a10e2d9d6`, 54 commits |
+| Actual run | `41105647949`, attempt 1, event `pull_request`, exact head above, completed `success` |
+| Actual completed job | `124234622614`, `build`, completed `success` |
+| Tests | 130, `OK` |
+| Build counts | 1,330 EPPA facade; 1,182 Ramsey; 4,198 project; 4,198 audit replay; six audit-tool jobs |
+| Project guards | Two complete checks, each 1,524 CURRENT source modules AND 1,524 actual olean parts, before and after the official audit |
+| EPPA guards | Four complete 269-source/269-part checks at exact `cd358cde844d5419fd43f30c441511927e09142f` |
+| Ramsey guards | Four complete 106-source/106-part checks at exact subtree `374241ce3751715c90b12c0b071f36026819ad4a` |
+| Official transitive axiom audit | 27,280 declarations under `CCO`, all within `[propext, Classical.choice, Quot.sound]` |
+
+The final log actually builds the affected `Full.Gates`, `Terminal.Readout`,
+`Terminal.Successor`, `Terminal.Elimination`, `Source` and CCO root; the
+unchanged children and providers are reused. I do not claim a cold rebuild
+of every module. The complete actual-source/artifact guards and official
+audit cover the entire final closure. No failure marker was found in the
+full log. I cross-checked its counts and exact pins with the immutable
+published evidence
+`ad5b7a3796f6f3d36d8bed2ebdeae0c8be942597:formalization/coordination/reports/round21-B047-final-pr-ci.json`;
+they agree. Only the actual job ID above is used here.
+
+The log checks out and prints synthetic merge
+`ee9005c15dcec6fde1e00b50cf9ea4c277d8005c`. I fetched that Git object:
+its tree is the exact approved `e0379991ff060db6b53a7e7d9fc05b27e5809464`,
+and its ordered parents are accepted main
+`bfbf8cf83d590d8d13499ab0e33aa8ea6445eb97` then the exact final public
+head. Fresh PR/main refs agree; the PR is mergeable. The actual accepted-base
+push run `41097006356` is completed successful at that same bfb main.
+
+I read the FULL immutable STATE at coordination
+`ad5b7a3796f6f3d36d8bed2ebdeae0c8be942597`, which is also the observed
+current coordination ref. It parses at revision 384, protocol 3, policy 11,
+unchanged human source pin, with contiguous preserved history 1–384.
+There are 46 accepted packages, B047 REVIEWING, B048 AVAILABLE, no other
+active package and a null integration lock. Submission 383 and genuine
+review lease 384 bind this exact final head/run, PR #62 and report path.
+The leased reviewer is the registered `independent_review` with actual
+identity `/root/independent_review`, nonauthor declaration, and no premature
+approval bit. All six actual authors listed above remain recorded; neither
+reviewer identity is in that author list. The conditional report leased at
+that point is the unaltered `6bd7ef02ae0dd3ec41ba991134f731f27c3b2eb0`
+checkpoint. The initial incomplete head is preserved as checkpoint 382,
+not falsely submitted or approved.
+
+I ran no author build, test or audit. Initial run `41102926191` being green
+did not cure the source finding and was never my approval evidence. My
+actual decision is now **APPROVE the exact repaired final head** based on
+the personal source/delta review and the complete successful final evidence
+above. The coordinator must still acquire the sole integration lock, merge
+the expected head and verify actual resulting-main CI before acceptance.
