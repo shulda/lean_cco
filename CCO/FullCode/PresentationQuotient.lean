@@ -54,6 +54,26 @@ noncomputable def presentationQuotientEquiv (hN : N.Valid C) :
   Equiv.ofBijective (O.quotientToSupport N)
     ⟨O.quotientToSupport_injective N, O.quotientToSupport_surjective N hN⟩
 
+def coordinatePresentation (hN : N.Valid C) (a : A) (j : Fin (S.arity (O.root a).tag)) :
+    O.DefinedPresentation N := by
+  let q : Coordinate S := ⟨(O.root a).tag, j⟩
+  refine ⟨⟨a, Presentation.identity N q⟩, (O.root a).coordinate j, ?_⟩
+  rw [(O.root a).identity_presentation N hN q, Root.coordinateGraph_self]
+  rfl
+
+noncomputable def coordinateClass (hN : N.Valid C) (a : A) (j : Fin (S.arity (O.root a).tag)) :
+    Quotient (O.presentationSetoid N) := Quotient.mk _ (O.coordinatePresentation N hN a j)
+
+theorem quotient_coordinate (hN : N.Valid C) (a : A) (j : Fin (S.arity (O.root a).tag)) :
+    O.presentationQuotientEquiv N hN (O.coordinateClass N hN a j) =
+      ⟨(O.root a).coordinate j, O.coordinate_mem_support a j⟩ := by
+  apply Subtype.ext
+  have hx := O.presentationValue_mem N (O.coordinatePresentation N hN a j)
+  change O.presentationValue N (O.coordinatePresentation N hN a j) ∈
+    (O.root a).presentation N (Presentation.identity N ⟨(O.root a).tag, j⟩) at hx
+  rw [(O.root a).identity_presentation N hN _, Root.coordinateGraph_self] at hx
+  exact Set.mem_singleton_iff.mp hx
+
 theorem unary_recovered (p : O.DefinedPresentation N) (U : L.Unary) :
     UnaryCode N U (O.root p.val.1) p.val.2 ↔ C.unary U (O.presentationValue N p) := by
   constructor
