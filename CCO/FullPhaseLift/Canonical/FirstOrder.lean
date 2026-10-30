@@ -19,6 +19,22 @@ instance (L : Signature) : L.firstOrder.IsRelational := fun _ => Empty.instIsEmp
   funMap f := nomatch f
   RelMap := (toRelational T).rel
 
+noncomputable def ofFirstOrder {L : Signature} {V : Type v}
+    (A : L.firstOrder.Structure V) : BoolTable L V :=
+  ofRelational { rel := A.RelMap }
+
+@[simp] theorem ofFirstOrder_toFirstOrder {L : Signature} {V : Type v}
+    (T : BoolTable L V) : ofFirstOrder (toFirstOrder T) = T :=
+  ofRelational_toRelational T
+
+@[simp] theorem toFirstOrder_ofFirstOrder {L : Signature} {V : Type v}
+    (A : L.firstOrder.Structure V) : toFirstOrder (ofFirstOrder A) = A := by
+  apply FirstOrder.Language.Structure.ext
+  · funext n f
+    exact Empty.elim f
+  · exact congrArg RelationalCompletion.Relational.Structure.rel
+      (toRelational_ofRelational { rel := A.RelMap })
+
 abbrev FirstOrderEmbedding {L : Signature} {V : Type v} {W : Type w}
     (A : BoolTable L V) (B : BoolTable L W) :=
   @FirstOrder.Language.Embedding L.firstOrder V W (toFirstOrder A) (toFirstOrder B)
