@@ -125,3 +125,32 @@ Pinned Lean4.34.1 and bundled Lake, unchanged manifest:
 These are narrow owner compiles, not fresh-source counts or a full public
 CI/audit certificate. No whole-root build, broad test/audit suite, reviewer
 implementation or remote publication is performed by this worker.
+
+
+## C41 selected-original-parity repair
+
+The repaired `Full.ParityGateData.phase` retains its literal original
+maximal odd arrow. `Readout.original_even`, `original_odd` and
+`original_odd_walk` apply the proved original Y/O inclusions to the SAME
+`SingleStep.identification` and its actual global marking. Thus every
+original even pair has equal bits and every original odd pair has opposite
+bits; this is stronger source linkage than a generic transported-arrow
+statement alone.
+
+`Terminal.SelectedStep` stores the selected original sort, anchor, orbital,
+concrete parity gate and equality to its exact successor. Its actual step,
+rank drop and all original parity equations are DERIVED. `selected_progress`
+selects it from the current residual interval using visible current SAP.
+`finite_cover_elimination_selected` and
+`original_selected_finite_cover_elimination` iterate only these selected
+steps and retain that metadata at every stage. The old safe-split and
+elimination theorem signatures are compatibility wrappers through the SAME
+selected construction, its actual history and its composite reduct/functor.
+No arbitrary phase selector is used by the principal terminal proof.
+
+The terminal author changed only `Terminal/Readout.lean` and
+`Terminal/Elimination.lean` at native `f23aa9c`; the narrow Elimination target
+passed 2,521 jobs after Readout passed 2,507 jobs. The owner supplies the
+original root/phase linkage and the final selected source assembly. This
+is author work, not independent review; the final exact-head CI and true
+review approval remain separate.
