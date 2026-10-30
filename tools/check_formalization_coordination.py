@@ -15,7 +15,7 @@ import build_formalization_module as modules
 
 ROOT = Path(__file__).resolve().parents[1]
 DIRECTORY = Path('formalization/coordination')
-MODULES = ('raw_exact', 'strong_selectors', 'parity_hasse', 'exact_crt', 'canonical_hull', 'real_closure', 'finite_packets', 'rigid_groupoid', 'finite_kernel', 'owner_action', 'sir', 'owner_master', 'joint_owner', 'acl_owner_geometry', 'finite_lift', 'mi_geometry', 'owner_transversal', 'safe_readings', 'direct_owner_closure', 'hkn_reservoir', 'terminal_powers', 'full_rows', 'profile_helly', 'relative_mi', 'rank_induction', 'unary_support', 'full_code', 'reset_order')
+MODULES = ('raw_exact', 'strong_selectors', 'parity_hasse', 'exact_crt', 'canonical_hull', 'real_closure', 'finite_packets', 'rigid_groupoid', 'finite_kernel', 'owner_action', 'sir', 'owner_master', 'joint_owner', 'acl_owner_geometry', 'finite_lift', 'mi_geometry', 'owner_transversal', 'safe_readings', 'direct_owner_closure', 'hkn_reservoir', 'terminal_powers', 'full_rows', 'profile_helly', 'relative_mi', 'rank_induction', 'unary_support', 'full_code', 'reset_order', 'unary_hn', 'relational_completion', 'unary_fresh_frames', 'quotient_transport', 'simultaneous_quotients', 'finite_fibres')
 STATES = {'PLANNED', 'PREPARED', 'ASSIGNED', 'BLOCKED', 'SUBMITTED', 'ACCEPTED'}
 CURRENT = STATES - {'PLANNED', 'ACCEPTED'}
 

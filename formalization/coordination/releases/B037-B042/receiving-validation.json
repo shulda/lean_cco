@@ -1,0 +1,1118 @@
+{
+  "preparation_head": "dc5fa9eafc2954909d15f3d18986d04fc8967513",
+  "source_pin": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+  "accepted_base": "42316147ca02c871464e885fe44766fe2c05c14e",
+  "accepted_base_ci": 41007182727,
+  "observed_coordination": "2555a785518699136fa84598cbf1c8e5b125cfa8",
+  "observed_state_revision": 285,
+  "observed_state_sha256": "3fbeb7b3a439933d143931bc9e733d6c5791546a4231e950c322a5a4dc07b928",
+  "public_board_revisions": [
+    17,
+    18
+  ],
+  "policy_revisions": [
+    9,
+    10
+  ],
+  "preserved_previous_packages": 36,
+  "added_packages": [
+    "B037",
+    "B038",
+    "B039",
+    "B040",
+    "B041",
+    "B042"
+  ],
+  "next_two": [
+    "B036",
+    "B037"
+  ],
+  "active_batch_limit_unchanged": 2,
+  "new_dependency_commits_accepted_and_ancestors": true,
+  "python_tests": 121,
+  "inherited_python_tests": 121,
+  "new_regression_tests": 0,
+  "changed_existing_test": "Extend the exact external-provider handoff expectation from the existing two HKN records to those two plus the three new unary HN records; check pending statuses and missing E02/E03 references explicitly.",
+  "module_checks": [
+    "raw_exact",
+    "strong_selectors",
+    "parity_hasse",
+    "exact_crt",
+    "canonical_hull",
+    "real_closure",
+    "finite_packets",
+    "rigid_groupoid",
+    "finite_kernel",
+    "owner_action",
+    "sir",
+    "owner_master",
+    "joint_owner",
+    "acl_owner_geometry",
+    "finite_lift",
+    "mi_geometry",
+    "owner_transversal",
+    "safe_readings",
+    "direct_owner_closure",
+    "hkn_reservoir",
+    "terminal_powers",
+    "full_rows",
+    "profile_helly",
+    "relative_mi",
+    "rank_induction",
+    "unary_support",
+    "full_code",
+    "reset_order",
+    "unary_hn",
+    "relational_completion",
+    "unary_fresh_frames",
+    "quotient_transport",
+    "simultaneous_quotients",
+    "finite_fibres"
+  ],
+  "package_envelopes": 42,
+  "source_records_verified": 12,
+  "raw_records_git_verified": 51,
+  "claim_source_concordance": 292,
+  "payload_receipts": [
+    {
+      "path": "formalization/coordination/packages/B037.md",
+      "fresh_sha256": "b5324fab63650a8f3ccdc782c28c712927d36dd3346c764187f4ce70be1ee78e",
+      "published_sha256": "c26889b52beb96a6a6c03571d900855228df9de934c701e94518449d9dbf7931",
+      "published_bytes": 6276,
+      "transformation": "public protocol-3 activation and historical provider-status supersession notice"
+    },
+    {
+      "path": "formalization/coordination/packages/B038.md",
+      "fresh_sha256": "99de0a3e2ff04837aa013031eee20b86c117d3d48687ee2be83e75aa3791c7b4",
+      "published_sha256": "1f6b78c3cd67594c2660370f87208f6da48b62abb4a9d0c73c339fe17cbbe501",
+      "published_bytes": 4897,
+      "transformation": "public protocol-3 activation and historical provider-status supersession notice"
+    },
+    {
+      "path": "formalization/coordination/packages/B039.md",
+      "fresh_sha256": "6bb23c4c15bf13347646de5801cc61c016713a2c4d207919ccd9296ed2d52d25",
+      "published_sha256": "c569b06abacd7e0546014a007ed7dcaa673cb56d281d196a43894e5636783760",
+      "published_bytes": 4750,
+      "transformation": "public protocol-3 activation and historical provider-status supersession notice"
+    },
+    {
+      "path": "formalization/coordination/packages/B040.md",
+      "fresh_sha256": "f3b410d9f3eec1e9d263a30dff72b1ed9c0deca2c370e9edc4985134c6b1cd5e",
+      "published_sha256": "fb91e520c29308d54e613acffa021490c4627797a21626782e40fc2949d25ae3",
+      "published_bytes": 4846,
+      "transformation": "public protocol-3 activation and historical provider-status supersession notice"
+    },
+    {
+      "path": "formalization/coordination/packages/B041.md",
+      "fresh_sha256": "874caea9e0d323e760b193c003ccd22f9ce2cd8acb9a700ca039836104af4f77",
+      "published_sha256": "735f1f8484a3586e46ec9e4ae870742e3a39fb8ecce3729954998204be2da6d5",
+      "published_bytes": 5404,
+      "transformation": "public protocol-3 activation and historical provider-status supersession notice"
+    },
+    {
+      "path": "formalization/coordination/packages/B042.md",
+      "fresh_sha256": "bf94adbc87f68271e9dbf64aa2c7c25f0308a7336b85f1dd0a9b5fb3d6170141",
+      "published_sha256": "98e4609015d84df3c36e0517d306956f797a5676070630f770cc90792f673a3f",
+      "published_bytes": 5009,
+      "transformation": "public protocol-3 activation and historical provider-status supersession notice"
+    },
+    {
+      "path": "formalization/unary_hn/module.json",
+      "fresh_sha256": "383ab69cea93314fd0dc20066a8ebe19ad8eefd3070aaaf6042f9530ba837f2f",
+      "published_sha256": "fe43aa2567a2b58585ce91cd8862c0dff239c987265c1c5918f90640bd4f8393",
+      "published_bytes": 68320,
+      "transformation": "supplement exact pinned E01 mathlib_commit required by unchanged validator; mathematical metadata unchanged"
+    },
+    {
+      "path": "formalization/unary_hn/README.md",
+      "fresh_sha256": "1145af31cfd18dc7a5e7f09e470e10e000b8959e46c29e78ca468cd0b69fc341",
+      "published_sha256": "1145af31cfd18dc7a5e7f09e470e10e000b8959e46c29e78ca468cd0b69fc341",
+      "published_bytes": 29643,
+      "transformation": "exact fresh bytes"
+    },
+    {
+      "path": "formalization/unary_hn/PROOF_NOTES.md",
+      "fresh_sha256": "e8028090779bc649fbd53df17fd21c22b747978d67b5e9a5b428e64d14bf8b20",
+      "published_sha256": "e8028090779bc649fbd53df17fd21c22b747978d67b5e9a5b428e64d14bf8b20",
+      "published_bytes": 17884,
+      "transformation": "exact fresh bytes"
+    },
+    {
+      "path": "formalization/unary_hn/VALIDATION.json",
+      "fresh_sha256": "b28ae3b7a1ecf5091280dfb1cef8fd8c016a02f7b6d70f4aafacea727ac90491",
+      "published_sha256": "b28ae3b7a1ecf5091280dfb1cef8fd8c016a02f7b6d70f4aafacea727ac90491",
+      "published_bytes": 64810,
+      "transformation": "exact fresh bytes"
+    },
+    {
+      "path": "tools/check_unary_hn_controls.py",
+      "fresh_sha256": "c0bdcc9ab1c05b3c8746a00711ba2c3a0a9538f013c1ed9d6d3ac378860ef791",
+      "published_sha256": "c0bdcc9ab1c05b3c8746a00711ba2c3a0a9538f013c1ed9d6d3ac378860ef791",
+      "published_bytes": 27538,
+      "transformation": "exact fresh bytes"
+    },
+    {
+      "path": "formalization/relational_completion/module.json",
+      "fresh_sha256": "53fcc7a9333d7daf23bd3f00747185fa791c57af91a5d9496860e1525f7ab07b",
+      "published_sha256": "53fcc7a9333d7daf23bd3f00747185fa791c57af91a5d9496860e1525f7ab07b",
+      "published_bytes": 47766,
+      "transformation": "exact fresh bytes"
+    },
+    {
+      "path": "formalization/relational_completion/README.md",
+      "fresh_sha256": "67e3239035c17991b9d7f4e4507a046dd248fe539b4e30edb147173bc606fa12",
+      "published_sha256": "67e3239035c17991b9d7f4e4507a046dd248fe539b4e30edb147173bc606fa12",
+      "published_bytes": 21351,
+      "transformation": "exact fresh bytes"
+    },
+    {
+      "path": "formalization/relational_completion/PROOF_NOTES.md",
+      "fresh_sha256": "0bf7bb35e2604bee034fc09fc0868343a9bc8a3cacb67ccc00ec77b701777a18",
+      "published_sha256": "0bf7bb35e2604bee034fc09fc0868343a9bc8a3cacb67ccc00ec77b701777a18",
+      "published_bytes": 11626,
+      "transformation": "exact fresh bytes"
+    },
+    {
+      "path": "formalization/relational_completion/VALIDATION.json",
+      "fresh_sha256": "40670fe625b6b35e02c4572831a8fda52546f2ff5f984959912cfcc7b9583372",
+      "published_sha256": "40670fe625b6b35e02c4572831a8fda52546f2ff5f984959912cfcc7b9583372",
+      "published_bytes": 68083,
+      "transformation": "exact fresh bytes"
+    },
+    {
+      "path": "tools/check_relational_completion_controls.py",
+      "fresh_sha256": "d02eefe01740bd4453637a4b6b750a2ec830e5083b534c3b679f867caf5cb4c3",
+      "published_sha256": "d02eefe01740bd4453637a4b6b750a2ec830e5083b534c3b679f867caf5cb4c3",
+      "published_bytes": 21857,
+      "transformation": "exact fresh bytes"
+    },
+    {
+      "path": "formalization/unary_fresh_frames/module.json",
+      "fresh_sha256": "f00fedb98afb3d4d1a452ee5de17a78705a6644459b95cd0683ea0ed3d1bb65b",
+      "published_sha256": "f00fedb98afb3d4d1a452ee5de17a78705a6644459b95cd0683ea0ed3d1bb65b",
+      "published_bytes": 66643,
+      "transformation": "exact fresh bytes"
+    },
+    {
+      "path": "formalization/unary_fresh_frames/README.md",
+      "fresh_sha256": "6d8081589145c5d37e0e3cb85495e2a0ee04750997c436179a3529d8478b140e",
+      "published_sha256": "6d8081589145c5d37e0e3cb85495e2a0ee04750997c436179a3529d8478b140e",
+      "published_bytes": 27052,
+      "transformation": "exact fresh bytes"
+    },
+    {
+      "path": "formalization/unary_fresh_frames/PROOF_NOTES.md",
+      "fresh_sha256": "4e903e6f3fbf02496705246e90a7f6a1f549c93255ad241260e0b5063f2e78a7",
+      "published_sha256": "4e903e6f3fbf02496705246e90a7f6a1f549c93255ad241260e0b5063f2e78a7",
+      "published_bytes": 16057,
+      "transformation": "exact fresh bytes"
+    },
+    {
+      "path": "formalization/unary_fresh_frames/VALIDATION.json",
+      "fresh_sha256": "47e61a856c836b527ca231441000e19bfe6897adf157198f97331a7edf88a381",
+      "published_sha256": "47e61a856c836b527ca231441000e19bfe6897adf157198f97331a7edf88a381",
+      "published_bytes": 70614,
+      "transformation": "exact fresh bytes"
+    },
+    {
+      "path": "tools/check_unary_fresh_frames_controls.py",
+      "fresh_sha256": "e58f74de4be04a71789006fe6deb0d66f4db99728ee99d6adbfd2261692fee41",
+      "published_sha256": "e58f74de4be04a71789006fe6deb0d66f4db99728ee99d6adbfd2261692fee41",
+      "published_bytes": 18691,
+      "transformation": "exact fresh bytes"
+    },
+    {
+      "path": "formalization/quotient_transport/module.json",
+      "fresh_sha256": "6622428389feae98bf6acb8bbb5ca0789e7f9d304cdcedf08e21ef68e76c2fad",
+      "published_sha256": "6622428389feae98bf6acb8bbb5ca0789e7f9d304cdcedf08e21ef68e76c2fad",
+      "published_bytes": 64425,
+      "transformation": "exact fresh bytes"
+    },
+    {
+      "path": "formalization/quotient_transport/README.md",
+      "fresh_sha256": "5d97a1f6d2bf79f13d8d97a77c6e4f1f8ab913420a11d8be02fe86602d34e5d2",
+      "published_sha256": "5d97a1f6d2bf79f13d8d97a77c6e4f1f8ab913420a11d8be02fe86602d34e5d2",
+      "published_bytes": 25606,
+      "transformation": "exact fresh bytes"
+    },
+    {
+      "path": "formalization/quotient_transport/PROOF_NOTES.md",
+      "fresh_sha256": "4169df1dbb2a9d32af902f32606091acab98ba3f14947980d76299fa60333c5f",
+      "published_sha256": "4169df1dbb2a9d32af902f32606091acab98ba3f14947980d76299fa60333c5f",
+      "published_bytes": 15252,
+      "transformation": "exact fresh bytes"
+    },
+    {
+      "path": "formalization/quotient_transport/VALIDATION.json",
+      "fresh_sha256": "bd42a1f367d5d42d93349224864782caa6a474e0c222ccade995203f22f2052d",
+      "published_sha256": "bd42a1f367d5d42d93349224864782caa6a474e0c222ccade995203f22f2052d",
+      "published_bytes": 74250,
+      "transformation": "exact fresh bytes"
+    },
+    {
+      "path": "tools/check_quotient_transport_controls.py",
+      "fresh_sha256": "300fd0f16b8f23e039800b8cc2b48d1e368226d8248c92598f78e5dc145800d8",
+      "published_sha256": "300fd0f16b8f23e039800b8cc2b48d1e368226d8248c92598f78e5dc145800d8",
+      "published_bytes": 25395,
+      "transformation": "exact fresh bytes"
+    },
+    {
+      "path": "formalization/simultaneous_quotients/module.json",
+      "fresh_sha256": "f11dbb1b4911e19b9407e5f69765a29ffc10981105b9df21ca5cbe360a89f632",
+      "published_sha256": "f11dbb1b4911e19b9407e5f69765a29ffc10981105b9df21ca5cbe360a89f632",
+      "published_bytes": 83795,
+      "transformation": "exact fresh bytes"
+    },
+    {
+      "path": "formalization/simultaneous_quotients/README.md",
+      "fresh_sha256": "521ebbc17eb17de17f9b7431f641392188a5186c9cb961c9171b50df6940a898",
+      "published_sha256": "521ebbc17eb17de17f9b7431f641392188a5186c9cb961c9171b50df6940a898",
+      "published_bytes": 33990,
+      "transformation": "exact fresh bytes"
+    },
+    {
+      "path": "formalization/simultaneous_quotients/PROOF_NOTES.md",
+      "fresh_sha256": "bcf5f999c151b6150e73244b1de2a98f0cdd6fe0a9a9d7237b073c4f0c4b03d8",
+      "published_sha256": "bcf5f999c151b6150e73244b1de2a98f0cdd6fe0a9a9d7237b073c4f0c4b03d8",
+      "published_bytes": 17197,
+      "transformation": "exact fresh bytes"
+    },
+    {
+      "path": "formalization/simultaneous_quotients/VALIDATION.json",
+      "fresh_sha256": "f44057fa511d659a11e438b2dee710cc9678a2d10baf857c35f5097179b79e51",
+      "published_sha256": "f44057fa511d659a11e438b2dee710cc9678a2d10baf857c35f5097179b79e51",
+      "published_bytes": 77127,
+      "transformation": "exact fresh bytes"
+    },
+    {
+      "path": "tools/check_simultaneous_quotients_controls.py",
+      "fresh_sha256": "7558b68e9538baac3da5c35b8f1d39318a35b60fb64419039324dd2e69f4eef5",
+      "published_sha256": "7558b68e9538baac3da5c35b8f1d39318a35b60fb64419039324dd2e69f4eef5",
+      "published_bytes": 24390,
+      "transformation": "exact fresh bytes"
+    },
+    {
+      "path": "formalization/finite_fibres/module.json",
+      "fresh_sha256": "fcc88840bc1885e472f0a4e550b5203c80a91e27722407ed546d88a3f5620d5a",
+      "published_sha256": "fcc88840bc1885e472f0a4e550b5203c80a91e27722407ed546d88a3f5620d5a",
+      "published_bytes": 68035,
+      "transformation": "exact fresh bytes"
+    },
+    {
+      "path": "formalization/finite_fibres/README.md",
+      "fresh_sha256": "4653010974f8a01fd726e52f5698732ef3143eefbb69fda7925809f5a2808907",
+      "published_sha256": "4653010974f8a01fd726e52f5698732ef3143eefbb69fda7925809f5a2808907",
+      "published_bytes": 27414,
+      "transformation": "exact fresh bytes"
+    },
+    {
+      "path": "formalization/finite_fibres/PROOF_NOTES.md",
+      "fresh_sha256": "145a11e41b8ce5ef4958d9e40a8318cf171ed91bfb20e96b5f7210936c81733a",
+      "published_sha256": "145a11e41b8ce5ef4958d9e40a8318cf171ed91bfb20e96b5f7210936c81733a",
+      "published_bytes": 14526,
+      "transformation": "exact fresh bytes"
+    },
+    {
+      "path": "formalization/finite_fibres/VALIDATION.json",
+      "fresh_sha256": "3bf9b0a81dc95ca5159b828579007830a07f33d0947fb71f5f85bb1c8f0a24ec",
+      "published_sha256": "3bf9b0a81dc95ca5159b828579007830a07f33d0947fb71f5f85bb1c8f0a24ec",
+      "published_bytes": 80168,
+      "transformation": "exact fresh bytes"
+    },
+    {
+      "path": "tools/check_finite_fibres_controls.py",
+      "fresh_sha256": "cabe19c306fbc506d0f57192b54c4c2680782e1ec08db1365757776c3a729f93",
+      "published_sha256": "cabe19c306fbc506d0f57192b54c4c2680782e1ec08db1365757776c3a729f93",
+      "published_bytes": 24079,
+      "transformation": "exact fresh bytes"
+    },
+    {
+      "path": "sections/unary_hn_transfer.tex",
+      "fresh_sha256": "00f4cc140cd909659c9672d808f65e121942da5b18dda48591dc3cf681182d44",
+      "published_sha256": "00f4cc140cd909659c9672d808f65e121942da5b18dda48591dc3cf681182d44",
+      "published_bytes": 10584,
+      "transformation": "exact fresh bytes and immutable human-source blob"
+    },
+    {
+      "path": "sections/foundational_sap_collision_unfolding.tex",
+      "fresh_sha256": "8d75b3ba6d189abcb9e4d1ac8b79ecdbc3cc5b81dfba55a6efcacd8a8f1aa8fc",
+      "published_sha256": "8d75b3ba6d189abcb9e4d1ac8b79ecdbc3cc5b81dfba55a6efcacd8a8f1aa8fc",
+      "published_bytes": 2606,
+      "transformation": "exact fresh bytes and immutable human-source blob"
+    },
+    {
+      "path": "sections/unary_fresh_frame_sap.tex",
+      "fresh_sha256": "eaa687c0032f64389157ea3ef785e5bda3a9a3374958de44a4d9372cbf90e08c",
+      "published_sha256": "eaa687c0032f64389157ea3ef785e5bda3a9a3374958de44a4d9372cbf90e08c",
+      "published_bytes": 12040,
+      "transformation": "exact fresh bytes and immutable human-source blob"
+    },
+    {
+      "path": "formalization/EXTERNAL_PROVIDER_BUILD_CACHE.md",
+      "fresh_git_blob": "1cd3c96683353da045b171c42e85a25b491ea1b9",
+      "fresh_sha256": "56afc24a39c6dc94b3c47eed9e36200fa184d3ffbca04e1a522ce3f657fb5300",
+      "published_sha256": "3b93ed8ad47b5f08a70e25ef6c42989c7314f53223975c8eceb9b60fa6fcbf78",
+      "published_bytes": 6856,
+      "transformation": "public protocol-3 and accepted-HKN status notice; pin the otherwise absent forest-workorder link to its exact original upstream snapshot; original engineering content preserved"
+    }
+  ],
+  "controls": {
+    "unary_hn": {
+      "counts": {
+        "actual_irreducible_K_hypothesis_models": 55,
+        "admissible_finite_generator_bounds": 399,
+        "completed_order_piece_reflection_checks": 631967,
+        "covered_induced_irreducible_pieces": 56249,
+        "expanded_local_hypothesis_models": 12,
+        "expanded_local_hypothesis_rejections": 58,
+        "injective_order_transport_and_extension_checks": 65781,
+        "minimal_equivalence_color_obstructions": 4,
+        "noninjective_order_homomorphisms": 108,
+        "obstruction_actual_completed_irreducible_checks": 48,
+        "partial_one_generated_irreducibility_checks": 12454,
+        "partial_two_unary_models": 4182,
+        "partial_unary_displayed_edge_supports": 614,
+        "proper_obstruction_restrictions_completed": 236,
+        "raw_illtyped_point_or_function_local_rejections": 4142,
+        "raw_illtyped_relation_local_rejections": 4472,
+        "raw_models_accepted_as_actual_typed": 7,
+        "raw_one_sorted_typed_guard_models": 2321,
+        "same_map_globally_noninjective_checks": 108,
+        "same_map_local_reflection_checks": 864,
+        "same_map_universal_edge_HE_checks": 182,
+        "strict_order_homomorphism_acyclicity_checks": 182,
+        "total_unary_binary_models": 13891
+      },
+      "limits": "Finite one-sort diagnostics do not certify arbitrary languages, HN/Ramsey, uniform obstruction premises, external adapters or Lean.",
+      "status": "PASS",
+      "witnesses": {
+        "binary_coverage_does_not_supply_obstruction_bound": {
+          "K": "finite complete equivalence-color networks R=same class distinct, B=different classes",
+          "boundedness_premise_is_a_separate_input": true,
+          "checked_instances": [
+            {
+              "all_irreducibles_actual_completed": true,
+              "all_singleton_closures_completed": true,
+              "minimal_noncompletable": true,
+              "vertices": 4
+            },
+            {
+              "all_irreducibles_actual_completed": true,
+              "all_singleton_closures_completed": true,
+              "minimal_noncompletable": true,
+              "vertices": 5
+            },
+            {
+              "all_irreducibles_actual_completed": true,
+              "all_singleton_closures_completed": true,
+              "minimal_noncompletable": true,
+              "vertices": 6
+            },
+            {
+              "all_irreducibles_actual_completed": true,
+              "all_singleton_closures_completed": true,
+              "minimal_noncompletable": true,
+              "vertices": 7
+            }
+          ],
+          "scope": "finite minimal obstruction diagnostics; no general HN/Ramsey assertion",
+          "source": "R path with B joining its endpoints"
+        },
+        "completed_map_rigidity_is_necessary": {
+          "different_injective_completion_exists": true,
+          "expanded_HE": false,
+          "old_HE": true,
+          "old_language": "empty",
+          "same_constant_vertex_map": [
+            0,
+            0
+          ],
+          "source_vertices": [
+            0,
+            1
+          ],
+          "target_vertices": [
+            0
+          ]
+        },
+        "diagonal_edge_rejected_by_actual_local_membership": {
+          "generated_support_irreducible": true,
+          "source_E": [
+            [
+              0,
+              0
+            ]
+          ],
+          "support_is_actual_K_star_member": false
+        },
+        "injective_HE_need_not_be_global_embedding": {
+          "globally_induced_embedding": false,
+          "injective_HE": true,
+          "source_order": [],
+          "target_order": [
+            [
+              0,
+              1
+            ]
+          ],
+          "vertex_map": [
+            0,
+            1
+          ]
+        },
+        "mere_completability_is_not_admissibility": {
+          "existing_closure_is_actual_completed_member": false,
+          "partial_singleton_function": [
+            -1
+          ],
+          "possible_completion": [
+            0
+          ]
+        },
+        "noninjective_order_transport_can_create_cycle": {
+          "old_vertex_map": [
+            0,
+            1,
+            0
+          ],
+          "scope": "transport mechanism, not a counterexample to the HN theorem",
+          "source_acyclic": true,
+          "source_order_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "transported_acyclic": false,
+          "transported_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        },
+        "raw_one_sorted_typing_is_forced_locally": {
+          "ambient_language": "raw one-sorted partial F with unary sort predicates",
+          "arbitrary_typed_hereditary_subclass_Ramsey_claimed": false,
+          "intended_signature": "disjoint exhaustive S,T; F:S->T total; R subset SxT",
+          "malformed_examples": [
+            {
+              "F": [
+                -1
+              ],
+              "R": [],
+              "actual_completed_typed_member": false,
+              "closed_irreducible_support": [
+                0
+              ],
+              "defect": "missing_sort",
+              "point_tags": [
+                0
+              ]
+            },
+            {
+              "F": [
+                0
+              ],
+              "R": [],
+              "actual_completed_typed_member": false,
+              "closed_irreducible_support": [
+                0
+              ],
+              "defect": "multiple_sorts",
+              "point_tags": [
+                3
+              ]
+            },
+            {
+              "F": [
+                1,
+                -1
+              ],
+              "R": [],
+              "actual_completed_typed_member": false,
+              "closed_irreducible_support": [
+                0,
+                1
+              ],
+              "defect": "wrong_function_source",
+              "point_tags": [
+                2,
+                2
+              ]
+            },
+            {
+              "F": [
+                1,
+                1
+              ],
+              "R": [],
+              "actual_completed_typed_member": false,
+              "closed_irreducible_support": [
+                0,
+                1
+              ],
+              "defect": "wrong_function_target",
+              "point_tags": [
+                1,
+                1
+              ]
+            },
+            {
+              "F": [
+                -1,
+                -1
+              ],
+              "R": [],
+              "actual_completed_typed_member": false,
+              "closed_irreducible_support": [
+                0
+              ],
+              "defect": "missing_intended_function_domain",
+              "point_tags": [
+                1,
+                2
+              ]
+            },
+            {
+              "F": [
+                1,
+                -1
+              ],
+              "R": [
+                [
+                  1,
+                  0
+                ]
+              ],
+              "actual_completed_typed_member": false,
+              "closed_irreducible_support": [
+                0,
+                1
+              ],
+              "defect": "illtyped_relation",
+              "point_tags": [
+                1,
+                2
+              ]
+            }
+          ]
+        },
+        "unary_only_rigidity_with_global_collisions": {
+          "expanded_HE": true,
+          "expanded_nonempty_irreducibles": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "globally_injective": false,
+          "old_HE": true,
+          "old_binary_relations": [],
+          "same_vertex_map": [
+            0,
+            1,
+            0,
+            1
+          ],
+          "source_function": [
+            1,
+            0,
+            3,
+            2
+          ],
+          "target_function": [
+            1,
+            0
+          ]
+        }
+      }
+    },
+    "relational_completion": {
+      "counts": {
+        "HE_tuple_fibre_guards": 16561,
+        "K4_small_induced_subobjects_in_K": 15,
+        "actual_homomorphism_embeddings": 2549,
+        "all_nontrivial_fibre_split_checks": 632,
+        "bounded_complete_AP_spans": 30,
+        "complete_atomic_K4_hom_embeddings": 312,
+        "complete_atomic_hom_embeddings": 1047,
+        "complete_atomic_map_candidates": 115347,
+        "cycle_fan_homomorphisms": 14,
+        "displayed_tuple_irreducible_supports": 499,
+        "explicit_boundary_witnesses": 6,
+        "fan_induced_triangle_AP_steps": 91,
+        "genuinely_noninjective_cycle_fans": 13,
+        "relational_map_candidates": 15081,
+        "strict_collision_descent_steps": 308,
+        "terminal_injective_HE_maps": 2549,
+        "unconstrained_cross_clone_tuple_checks": 632,
+        "whole_ternary_clone_diagrams": 1024
+      },
+      "limits": "Finite examples do not certify arbitrary relational signatures, homogeneous SAP, semantic CCO, triangle fullness, unbounded collision induction or Lean proofs.",
+      "scope": "bounded relational clone and atomic cycle-fan diagnostics",
+      "status": "PASS",
+      "witnesses": {
+        "AP_does_not_replace_SAP_for_collision_unfolding": {
+          "SAP_failure": "two partners of the same base root are forced to coincide",
+          "ambient": "countably infinite homogeneous disjoint union of edges",
+          "injective_hom_exists": false,
+          "old_HE": [
+            0,
+            1,
+            1
+          ],
+          "source": "three-point two-leaf star"
+        },
+        "AP_without_CCO_not_triangle_full": {
+          "AP": true,
+          "K": "complete one-color structures of size at most three",
+          "all_at_most_three_subobjects_in_K": true,
+          "all_simple_cycles_homomorphically_realizable": true,
+          "complete_input_size": 4,
+          "global_hom_completion": false
+        },
+        "complete_atomic_guards": {
+          "looped_target_constant_map": [
+            0,
+            0
+          ],
+          "partial_path_collapses": [
+            0,
+            1,
+            0
+          ],
+          "target_with_two_atoms_on_same_pair_reflects": false
+        },
+        "distinguished_image_not_source_reflection": {
+          "distinguished_source_pair": [
+            0,
+            1
+          ],
+          "initial_induced_image_type_preserved": true,
+          "new_map": [
+            0,
+            2,
+            1
+          ],
+          "new_whole_image_size": 3,
+          "old_whole_image_size": 2,
+          "original_map_embeds_that_source_pair": false,
+          "source_map": [
+            0,
+            1,
+            1
+          ],
+          "source_relation": [
+            [
+              0,
+              2
+            ]
+          ],
+          "target_relation": [
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        "partial_triangle_consistency_is_insufficient": {
+          "completion_exists": false,
+          "different_class_edge": [
+            0,
+            3
+          ],
+          "fully_specified_triangles": 0,
+          "missing_gate": "the triangle-fullness input must be COMPLETE with actual chords",
+          "same_class_path": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              3
+            ]
+          ]
+        },
+        "relational_deletion_is_not_functional_closure": {
+          "deleted": 1,
+          "function": [
+            1,
+            1
+          ],
+          "retained": [
+            0
+          ],
+          "retained_set_closed": false
+        }
+      }
+    },
+    "unary_fresh_frames": {
+      "counts": {
+        "actual_fibre_transitivity_witnesses": 278,
+        "actual_kernel_and_relative_index_checks": 48,
+        "closure_equivariance_checks": 6275,
+        "closure_union_and_stabiliser_checks": 5899,
+        "distinct_transitive_term_functions": 33,
+        "finite_reservoir_exhaustion_instances": 293,
+        "literal_closed_base_fresh_frames": 10803,
+        "literal_named_factorisation_checks": 24,
+        "local_failure_and_scope_witnesses": 6,
+        "simultaneous_bounded_avoidance_instances": 2022,
+        "successive_representative_choices": 2064,
+        "total_two_unary_structures": 747,
+        "transitive_term_function_models": 14
+      },
+      "limits": "All sampled actions are finite: no infinite orbit/index premise, homogeneous hereditary SAP equivalence, general group avoidance theorem or Lean proof is certified.",
+      "scope": "bounded unary closure, quotient-fibre and real-frame diagnostics",
+      "status": "PASS",
+      "witnesses": {
+        "finite_models_do_not_have_infinite_reservoirs": {
+          "consequence": "bounded positive samples do not certify infinite orbit or index assumptions",
+          "example": "one hidden quotient in A, every real point of its finite fibre in B",
+          "fresh_frame_exists": false
+        },
+        "finite_proper_relative_index": {
+          "all_fibre_image_values_outside_named_base_closure": true,
+          "base_stabiliser_orbit_size": 3,
+          "local_failure": "algebraic off-closure values; infinite-index condition fails",
+          "relative_index": 3,
+          "some_base_stabiliser_element_moves_each_value": true
+        },
+        "finite_separate_avoidance_is_not_simultaneous": {
+          "common_representative_exists": false,
+          "each_unforced_term_individually_avoidable": true,
+          "fibre_size": 2,
+          "forbidden": [
+            [
+              "M",
+              0,
+              0
+            ],
+            [
+              "U",
+              1
+            ]
+          ]
+        },
+        "kernel_inclusion_without_named_factor": {
+          "J_le_K": true,
+          "closure_of_base": [
+            [
+              "Q",
+              0
+            ]
+          ],
+          "defining_formula": "exists x (p(x)=b and tau(x)=v)",
+          "named_Q_to_V_term_exists": false,
+          "set_theoretic_factor_exists": true,
+          "unique_fibre_value": [
+            "V",
+            0
+          ],
+          "value_fixed_by_full_sample_base_stabiliser": true
+        },
+        "nullary_generator_boundary": {
+          "closure_of_empty": [
+            0
+          ],
+          "constant": 0,
+          "union_of_no_singleton_closures": []
+        },
+        "proper_subgroup_orbits_are_separate": {
+          "SAP_claimed_for_finite_sample_age": false,
+          "full_sample_orbit_size": 3,
+          "proper_subgroup_orbit_size": 1
+        }
+      }
+    },
+    "quotient_transport": {
+      "counts": {
+        "actual_induced_quotient_bijections": 360,
+        "actual_orbital_saturation_identities": 1611,
+        "actual_quotient_transport_instances": 360,
+        "actual_return_words": 695,
+        "canonical_label_equivariance_checks": 1920,
+        "canonical_prefix_and_edge_identities": 1941,
+        "coarser_J_return_instances": 886,
+        "empty_diversity_exceptions_different_output_sorts": 36,
+        "explicit_boundary_witnesses": 11,
+        "genuinely_typed_composition_checks": 4,
+        "interval_order_meet_join_cover_pairs": 1130,
+        "literal_reverse_transport_identities": 546,
+        "meet_irreducible_checks": 546,
+        "orbital_pullback_models": 421,
+        "output_orbital_classifications": 641,
+        "positive_nonfaithful_action_instances": 38,
+        "prescribed_action_equivalence_instances": 508,
+        "repeated_original_sort_positions": 2636,
+        "root_orbital_partition_checks": 1387,
+        "transitive_typed_action_models": 36
+      },
+      "limits": "Finite diagnostics only: no unbounded theorem, FO definability, FULL RAW exactness, named-sort representation, SAP/CCO property or Lean proof is certified.",
+      "scope": "bounded actual quotient transport, canonical holonomy, point actions and orbital pullbacks",
+      "status": "PASS",
+      "witnesses": {
+        "empty_Y_boundary": {
+          "Y_and_B_empty": true,
+          "point_lifting_vacuous": true,
+          "rho_onto": false
+        },
+        "independent_chart_boundary": {
+          "actual_edge_quotient_maps": [
+            "identity",
+            "identity"
+          ],
+          "canonical_actual_holonomy": "identity",
+          "replacement_respects_actual_second_relation": false,
+          "unrelated_replacement_map": "transposition"
+        },
+        "missing_kernel_condition": {
+          "E": "identity",
+          "R": "universal on two points",
+          "canonical_label_well_defined": false,
+          "predecessor_E_classes": 2
+        },
+        "missing_surjectivity_of_pi": {
+          "B": "regular C2",
+          "Y": "singleton",
+          "every_compatible_point_request_holds": true,
+          "nonidentity_gamma_has_compatible_request": false,
+          "pi_equivariant": true,
+          "pi_onto": false,
+          "rho_onto": false
+        },
+        "missing_transitivity": {
+          "RR_converse_le_E": true,
+          "nonempty_invariant_R": true,
+          "target_without_predecessor": 1
+        },
+        "missing_whole_word_containment": {
+          "actual_holonomy": "transposition",
+          "whole_word_le_E": false
+        },
+        "no_general_noncollapse": {
+          "source_equivalence_nonidentity": true,
+          "transported_equivalence": "identity on smaller target sort"
+        },
+        "no_mixed_commutativity": {
+          "action": "left-regular S3",
+          "ordered_a_b_b_a_return_is_identity": true,
+          "two_actual_invariant_relations_commute": false
+        },
+        "nononto_rho_boundary": {
+          "kernel_fibre_transitive": true,
+          "prescribed_point_lifting": false,
+          "rho_onto": false
+        },
+        "nontransitive_kernel_boundary": {
+          "kernel_fibre_transitive": false,
+          "prescribed_point_lifting": false,
+          "rho_onto": true
+        },
+        "point_lifting_without_group_section": {
+          "B": "parity quotient",
+          "Gamma": "C2",
+          "K": "C4",
+          "Y": "regular C4",
+          "homomorphic_section_exists": false,
+          "point_lifting": true
+        }
+      }
+    },
+    "simultaneous_quotients": {
+      "counts": {
+        "actual_finite_homogeneous_axis_extensions": 1121,
+        "actual_full_exact_orbital_block_checks": 1620,
+        "canonical_tower_atom_block_checks": 3888,
+        "canonical_two_stage_quotient_towers": 432,
+        "coincident_length_one_paths_merged": 266,
+        "entire_finite_axis_projection_checks": 40,
+        "entire_finite_named_axis_models": 5,
+        "explicit_nonempty_exact_menus": 84,
+        "explicit_old_atomic_word_profiles": 66,
+        "inconsistent_parallel_atomic_guards": 1,
+        "independent_simultaneous_quotient_models": 54,
+        "one_original_sort_exact_descent_checks": 22,
+        "path_word_equality_contractions": 1622,
+        "private_path_expansion_models": 444,
+        "projected_simple_base_cycles": 3089,
+        "raw_private_simple_cycles": 4230,
+        "saturated_quotient_product_checks": 7057,
+        "strict_diversity_rank_drops": 378,
+        "two_private_paths_one_edge_cycles": 1141,
+        "zero_length_path_guards": 3
+      },
+      "limits": "Finite diagnostics only: no general homogeneous/CCO/SAP theorem, unrestricted exact descent, global automorphism lift/section or Lean proof is certified.",
+      "scope": "bounded private-path, actual independent quotient/tower and entire-finite-axis diagnostics",
+      "status": "PASS",
+      "witnesses": {
+        "full_binary_group_is_not_an_arbitrary_earlier_subgroup": {
+          "all_pair_projections_equal": true,
+          "earlier_even_parity_subgroup_size": 4,
+          "full_named_binary_group_size": 8,
+          "scope": "outside a claim of full homogeneous old-source action; guards against substituting an arbitrary subgroup"
+        },
+        "nonprivate_internal_vertex_boundary": {
+          "marked_roots_on_cycle": 1,
+          "raw_cycle": [
+            0,
+            3,
+            5,
+            4
+          ],
+          "shared_internal_degree": 4
+        },
+        "pointwise_owner_kernel_is_not_intrinsic_fibre_group": {
+          "full_fine_diagonal_group_size": 2,
+          "intrinsic_U_fibre_group_size": 2,
+          "not_a_counterexample_to_entire_named_axis_projection": true,
+          "pointwise_coarse_kernel_size": 1
+        },
+        "unsafe_factorwise_mixed_word_projection": {
+          "intermediate_kernel": "top on B; identity on A,C",
+          "old_endpoint_profile_still_quotient_atomic": true,
+          "old_profile_pairs": 8,
+          "projected_factor_product_pairs": 16,
+          "strict_enlargement": true
+        },
+        "zero_and_inconsistent_path_boundaries": {
+          "inconsistent_coincident_length_one_colours_rejected": true,
+          "merged_length_one_edge_is_not_a_two_cycle": true,
+          "zero_diversity_length_rejected": true
+        }
+      }
+    },
+    "finite_fibres": {
+      "counts": {
+        "actual_atom_bipartitions": 22,
+        "actual_finite_fibre_models": 8,
+        "actual_named_pair_orbital_checks": 22,
+        "actual_real_fibre_orbit_size_checks": 2596,
+        "actual_source_hasse_covers": 56,
+        "actual_source_invariant_equivalences": 40,
+        "bipartite_atom_group_order_checks": 27,
+        "cauchy_finite_group_instances": 4,
+        "cauchy_rotation_tuple_checks": 706,
+        "empty_base_finite_source_checks": 8,
+        "even_fold_or_odd_backtrack_walks": 155,
+        "finite_acl_uniform_bound_checks": 814,
+        "finite_homogeneity_extension_checks": 264,
+        "finite_symmetric_atomic_automorphism_models": 1099,
+        "finite_two_group_models": 8,
+        "hasse_equivalence_local_index_checks": 806,
+        "hasse_subgroup_covers": 151,
+        "nonfaithful_coset_action_instances": 28,
+        "odd_prime_monochromatic_orbit_checks": 452,
+        "palette_binary_code_pairs": 103,
+        "pgroup_normalizer_checks": 39,
+        "proper_colouring_from_homomorphism_checks": 1974,
+        "subgroup_equivalence_correspondences": 150,
+        "transitive_coset_action_instances": 47
+      },
+      "limits": "Finite diagnostics only: no unbounded high-girth/chromatic theorem, general semantic CCO or finite-group theorem, imaginary inheritance, AP-only Hasse theorem or Lean proof is certified.",
+      "scope": "bounded finite atom graphs, group actions, real fibres and palette bounds",
+      "status": "PASS",
+      "witnesses": {
+        "K3_is_not_homomorphic_CCO": {
+          "all_simple_cycles_hom_to_K3": true,
+          "chromatic_number": 4,
+          "obstruction": "Mycielski(C5)",
+          "scope": "one finite witness; not the general high-girth/high-chromatic theorem",
+          "triangle_free": true,
+          "vertices": 11,
+          "whole_graph_hom_to_K3": false
+        },
+        "no_imaginary_or_AP_only_inheritance_claim": {
+          "arbitrary_imaginary_CCO_or_AP_only_Hasse_not_certified": true,
+          "realized_real_one_point_fibres_only": true
+        },
+        "nontransitive_cover_has_no_uniform_index": {
+          "action": "C2 swaps 0,1 and fixes 2",
+          "cover": "identity < {0,1}|{2}",
+          "local_class_indices": [
+            2,
+            2,
+            1
+          ],
+          "scope": "does not contradict the transitive theorem"
+        },
+        "odd_group_outside_CCO_has_index_three": {
+          "action": "regular C3",
+          "cover": "identity < top",
+          "relative_index": 3,
+          "scope": "outside the finite-2-group and symmetric HOM-CCO hypotheses"
+        },
+        "palette_bound_has_no_transitivity_requirement": {
+          "bound": "|F| <= 2^d",
+          "complete_atomic_pairs_force_injectivity": true,
+          "construction": "one actual bipartition bit per diversity atom",
+          "scope": "bounded injection checks; an alternate consequence, not a new source export"
+        }
+      }
+    }
+  },
+  "comprehensive_handoff": "Produce one deterministic full34-module handoff after these receipts are frozen, extract once and verify every manifest file; final archive receipt is external to this self-containing snapshot.",
+  "production_validator_logic_changed": false,
+  "module_allowlists_and_CI_loop_additions": [
+    "unary_hn",
+    "relational_completion",
+    "unary_fresh_frames",
+    "quotient_transport",
+    "simultaneous_quotients",
+    "finite_fibres"
+  ],
+  "local_lean_build_repeated": false,
+  "local_axiom_audit_repeated": false,
+  "lean_sources_root_and_pins_unchanged": true,
+  "new_external_provider_count": 3,
+  "E01_exact_reference": "918732dcff88fd1ab9be69f70e4f1d66385106e3; mathlib5bd58ac291422a21f412ae354c91e7d172255a2c; Lean4.35.0-rc3; source/signature and recorded successful upstream CI only; receiving adapter/build/axiom audit pending.",
+  "E02_E03": "UNBOUND: no exact Lean reference verified; no relational2.18 substitution for functional2.11.",
+  "accepted_HKN_status": "Historical pending source metadata is retained verbatim; actual B027 HKN receiving bindings are accepted and unchanged.",
+  "live_state_changed": false,
+  "mathematical_implementation_started": false,
+  "limits": [
+    "Source/DAG checks and bounded controls are preparation diagnostics, not Lean theorem certificates.",
+    "No published-provider port, receiving compatibility claim, dependency installation or cache-policy change occurs.",
+    "Exact reviewed release-head CI/audit and actual resulting-main CI/audit remain required before one locked atomic registry promotion.",
+    "No claim or implementation slot is reserved by publication."
+  ],
+  "receiving_guidance_link_correction": {
+    "initial_frozen_head": "ae11baa3822a24b6aa3b5eb6ff5ed08578e0d572",
+    "reason": "B038 contract and proof-notes cache-plan links resolved to an absent receiving file.",
+    "added_guidance": "formalization/EXTERNAL_PROVIDER_BUILD_CACHE.md",
+    "original_preparation_head": "dc5fa9eafc2954909d15f3d18986d04fc8967513",
+    "original_preparation_git_blob": "1cd3c96683353da045b171c42e85a25b491ea1b9",
+    "B038_contract_and_notes_unchanged": true,
+    "all_mathematical_payloads_unchanged": true,
+    "handoff_selection": "Add exactly the shared guidance file to the existing static handoff path set.",
+    "narrow_checks": [
+      "exact original Git blob and byte count",
+      "only documented reversible notice/link transformations",
+      "both B038 relative links and the new local release-record link resolve",
+      "handoff path is present in the existing literal collection set",
+      "all original mathematical payloads, BOARD, policy and canonical promotion manifest unchanged"
+    ],
+    "original_full_handoff_evidence_scope": "The initial frozen55-file publication; no second local archive or full suite is run for this receiving-only guidance correction. Final exact-head CI exercises the existing handoff tests.",
+    "production_validator_logic_changed": false,
+    "cache_policy_changed": false,
+    "local_Lean_build": false
+  }
+}

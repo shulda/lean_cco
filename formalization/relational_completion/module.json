@@ -1,0 +1,1169 @@
+{
+  "schema_version": 1,
+  "id": "relational_completion",
+  "index_title": "Relational SAP collision unfolding and AP+CCO triangle fullness",
+  "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+  "status": "HUMAN_EXPANDED_NOT_LEAN",
+  "scope": "Private B038: TWO Foundations I helpers, no equations/imports/external theorem nodes. In a countable homogeneous PURELY RELATIONAL U with age SAP, unfold a finite HE source map into an injection, retaining the induced type of EACH distinguished IMAGE separately. The relational signature need not be finite; every symbol has finite arity. Independently, derive triangle fullness for COMPLETE atomic binary diagrams from heredity, AP and semantic HOMOMORPHIC CCO using actual star chords and possibly colliding AP fans. The triangle proof uses neither SAP, homogeneity/countability, collision unfolding nor an assumed FULL triangle class. Ancillary external-provider build-cache guidance is engineering handoff material, not a mathematical premise or a configured public CI change.",
+  "scope_vocabulary": [
+    "relational_supports",
+    "clone_construction",
+    "homomorphism_and_images",
+    "termination",
+    "AP_fans",
+    "atomic_reflection",
+    "triangle_fullness",
+    "boundary"
+  ],
+  "scope_explanation": "The relational injectivization branch and complete atomic triangle-fullness branch have independent assumptions. Collision output is an INJECTIVE HE, not necessarily globally induced; distinguished IMAGE types do not assert source-factor embeddings or joint-union preservation. AP fans keep only their recorded star/path edges, allowing identifications until complete-input homomorphic CCO gives global injectivity.",
+  "control_script": "tools/check_relational_completion_controls.py",
+  "assumptions": [
+    {
+      "id": "A01",
+      "name": "Finite partial PURELY RELATIONAL source and given HE",
+      "statement": "A is a finite partial relational structure and h:A->U is a homomorphism-embedding (HE), preserving positive tuples and embedding every induced irreducible source piece. The signature may have ARBITRARILY MANY finite-arity relation symbols, including unary sort predicates and nullary relations, but NO functions. Irreducibility forbids a nontrivial free amalgam of proper induced substructures; empty bases are allowed."
+    },
+    {
+      "id": "A02",
+      "name": "Homogeneous target and strong age amalgamation",
+      "statement": "U is a countable homogeneous relational structure and its isomorphism-closed age has SAP. Every finite age member embeds into U, and every finite induced isomorphism inside U extends to an automorphism. No CCO, binary-language restriction, exactness or functional closure is assumed in this branch."
+    },
+    {
+      "id": "A03",
+      "name": "Distinguished source factors with injective restrictions",
+      "statement": "A fixed finite family S_i of distinguished COMPLETE induced source substructures has h restricted to each S_i injective. Retain the source completeness premise; the proof uses this injectivity to preserve the FULL induced type of the TARGET IMAGE h(S_i), not a false assertion that h was already a source-factor embedding."
+    },
+    {
+      "id": "A04",
+      "name": "Hereditary complete atomic binary setting",
+      "statement": "For the independent triangle branch, K is an isomorphism-closed hereditary class of finite COMPLETE atomic binary-coloured diagrams. Every ordered distinct pair has exactly one named irreflexive diversity atom, with correct converses and typed unary tags when present; unary types are complete/exclusive. Equality is the logical diagonal, never a diversity atom. There are no arbitrary extra relational predicates outside this complete atomic code and no functions. No finite palette assumption is needed by the argument. K is NOT assumed to be the FULL triangle-defined class."
+    },
+    {
+      "id": "A05",
+      "name": "Ordinary AP for the triangle branch",
+      "statement": "The complete atomic class K has AP over actual complete induced spans. Off-base vertices may be identified. No SAP, homogeneous target or collision-unfolding oracle is assumed here."
+    },
+    {
+      "id": "A06",
+      "name": "Semantic HOMOMORPHIC CCO",
+      "statement": "A finite partial atomic diagram with locally allowed types/pairs has a colour-preserving homomorphism into a K member whenever each of its specified simple cycles has such a homomorphic realization. Nonadjacent vertices may collide. In particular this implication applies to the complete input once its actual cycles have been verified. This is an INPUT, not the desired triangle-fullness conclusion."
+    },
+    {
+      "id": "A07",
+      "name": "COMPLETE input with genuine small age diagrams",
+      "statement": "A is a finite COMPLETE atomic input and EVERY induced substructure on at most three vertices belongs to K, including its realized unary tags and complete edge colours. The <=3 premise handles the small input cases directly. It is stronger than mere legality of fully displayed triangles in a partial diagram."
+    }
+  ],
+  "imports": [],
+  "external_providers": [],
+  "definitions": [
+    {
+      "id": "D01",
+      "name": "Relation-tuple support and relational irreducibility",
+      "statement": "For a displayed positive tuple take the induced structure on its DISTINCT entries. A free split must put that whole tuple in one factor, so this support is irreducible. Repeated occurrences do not produce new vertices; nullary truth is unchanged by all vertex maps.",
+      "depends_on": [
+        "A01"
+      ],
+      "notes": "N01",
+      "source": {
+        "file": "sections/foundational_sap_collision_unfolding.tex",
+        "anchor": "\\label{lem:collision-unfolding}"
+      }
+    },
+    {
+      "id": "D02",
+      "name": "HE versus globally induced embedding",
+      "statement": "A HE is a positive homomorphism embedding every induced irreducible source piece. Injective HE does not require global relation reflection on a reducible partial input. Distinct-entry tuple supports will ensure GLOBAL positive preservation during a clone step.",
+      "depends_on": [
+        "A01"
+      ],
+      "notes": "N01",
+      "source": {
+        "file": "sections/foundational_sap_collision_unfolding.tex",
+        "anchor": "\\label{lem:collision-unfolding}"
+      }
+    },
+    {
+      "id": "D03",
+      "name": "Finite complete target image and collision fibre",
+      "statement": "At a current map h let B be the FULL induced target structure on h(A), not the partial source image diagram. For v in B let F_v={x:h(x)=v}. A collision means |F_v|>=2.",
+      "depends_on": [
+        "A01"
+      ],
+      "notes": "N01",
+      "source": {
+        "file": "sections/foundational_sap_collision_unfolding.tex",
+        "anchor": "\\label{lem:collision-unfolding}"
+      }
+    },
+    {
+      "id": "D04",
+      "name": "Distinguished IMAGE type invariant",
+      "statement": "For each marked source S_i retain injectivity of h|S_i and the full induced isomorphism type of h(S_i) in U. The invariant is separate for each i, without preserving their joint image union or literal old positions.",
+      "depends_on": [
+        "A01",
+        "A03"
+      ],
+      "notes": "N01",
+      "source": {
+        "file": "sections/foundational_sap_collision_unfolding.tex",
+        "anchor": "\\label{lem:collision-unfolding}"
+      }
+    },
+    {
+      "id": "D05",
+      "name": "Induced replacement clone",
+      "statement": "A clone g_v:B->Bprime fixes B minus {v}, sends v to fresh vprime outside B and is an induced isomorphism onto Bprime=(B minus {v}) union {vprime}, preserving ALL relations/negative data and repeated-coordinate instances.",
+      "depends_on": [
+        "A01",
+        "A02"
+      ],
+      "notes": "N02",
+      "source": {
+        "file": "sections/foundational_sap_collision_unfolding.tex",
+        "anchor": "\\label{lem:collision-unfolding}"
+      }
+    },
+    {
+      "id": "D06",
+      "name": "Finite collision measure",
+      "statement": "mu(h) is the number of unordered distinct source pairs with equal images, equivalently sum_v choose(|F_v|,2). It is a natural number, zero exactly for injective maps.",
+      "depends_on": [
+        "A01",
+        "D03"
+      ],
+      "notes": "N03",
+      "source": {
+        "file": "sections/foundational_sap_collision_unfolding.tex",
+        "anchor": "\\label{lem:collision-unfolding}"
+      }
+    },
+    {
+      "id": "D07",
+      "name": "Complete atomic code embedding test",
+      "statement": "A colour homomorphism preserves the unique atom on every specified ordered distinct pair, converse labels and complete unary type tags. On complete inputs, irreflexivity gives injection and target atom exclusivity then gives reflection, including false off-diagonal atoms and diagonals.",
+      "depends_on": [
+        "A04"
+      ],
+      "notes": "N04",
+      "source": {
+        "file": "sections/triangle_fullness.tex",
+        "anchor": "\\label{lem:cco-triangle-fullness}"
+      }
+    },
+    {
+      "id": "D08",
+      "name": "Specified cycle feasibility",
+      "statement": "A specified simple m-cycle, m>=3, retains its actual oriented edge colours from A and their converses. It need only have a homomorphism into some finite K member, possibly a different host per cycle. Its unrecorded other chords impose no constraints.",
+      "depends_on": [
+        "A04",
+        "A06",
+        "A07"
+      ],
+      "notes": "N04",
+      "source": {
+        "file": "sections/triangle_fullness.tex",
+        "anchor": "\\label{lem:cco-triangle-fullness}"
+      }
+    },
+    {
+      "id": "D09",
+      "name": "Partial star fan invariant",
+      "statement": "For cycle v0,...,v(m-1), F_i on v0,...,v(i+1) records ONLY star edges v0-vj and consecutive path edges vj-v(j+1), with their actual A colours/converses. A state carries a colour homomorphism F_i->H_i in K; it does NOT record every other A pair.",
+      "depends_on": [
+        "A04",
+        "A07"
+      ],
+      "notes": "N04",
+      "source": {
+        "file": "sections/triangle_fullness.tex",
+        "anchor": "\\label{lem:cco-triangle-fullness}"
+      }
+    },
+    {
+      "id": "D10",
+      "name": "AP gluing along the actual complete edge",
+      "statement": "For incoming T_i={v0,vi,v(i+1)}, i>=2, the current fan is F_(i-1) in host H_(i-1). Its shared complete edge is v0-vi; the fan map there is an induced embedding by D07. AP amalgamates H_(i-1) and T_i along this exact edge and supplies the next F_i map.",
+      "depends_on": [
+        "A04",
+        "A05",
+        "A07"
+      ],
+      "notes": "N04",
+      "source": {
+        "file": "sections/triangle_fullness.tex",
+        "anchor": "\\label{lem:cco-triangle-fullness}"
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "name": "Every positive tuple has an irreducible distinct-entry support",
+      "statement": "In the induced structure on all distinct entries of a displayed tuple, a free amalgam must place that tuple wholly in one factor. That factor contains the entire vertex set, contradicting properness. This covers all finite relation arities and repeated entries; nullary truth never changes under the later map.",
+      "depends_on": [
+        "D01"
+      ],
+      "notes": "N01",
+      "scope": "relational_supports",
+      "source_labels": [
+        "lem:collision-unfolding"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C02",
+      "name": "HE irreducibles contain at most one point of a collision fibre",
+      "statement": "The current HE restricts injectively to each induced irreducible source piece. Thus such a piece cannot contain two distinct source vertices of F_v. In particular C01 controls the distinct-entry support of EVERY displayed positive tuple. No SAP or distinguished-family assumption is used.",
+      "depends_on": [
+        "A01",
+        "D02",
+        "D03",
+        "C01"
+      ],
+      "notes": "N01",
+      "scope": "relational_supports",
+      "source_labels": [
+        "lem:collision-unfolding"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C03",
+      "name": "Distinguished factors also contain at most one fibre point",
+      "statement": "Injectivity of h on each S_i in A03 implies |S_i intersect F_v|<=1, independently of whether S_i is irreducible or whether h reflects its SOURCE relations. This is exactly the extra invariant needed for its image type.",
+      "depends_on": [
+        "A03",
+        "D04",
+        "D03"
+      ],
+      "notes": "N01",
+      "scope": "relational_supports",
+      "source_labels": [
+        "lem:collision-unfolding"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C04",
+      "name": "Use the full finite target image as an age object",
+      "statement": "B=h(A) with all induced U relations is finite and belongs to Age(U). It contains every current image point and all its higher-arity and negative atomic information. No completion of the partial source A is being asserted by naming this induced B.",
+      "depends_on": [
+        "A01",
+        "A02",
+        "D03"
+      ],
+      "notes": "N02",
+      "scope": "clone_construction",
+      "source_labels": [
+        "lem:collision-unfolding"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C05",
+      "name": "Deleting the collision value gives an actual relational base",
+      "statement": "Because there are NO functions, B minus {v} with its induced structure is an actual age subobject, including unary sorts and nullary truth. This deletion step would not automatically be closed in a functional language.",
+      "depends_on": [
+        "C04",
+        "A01"
+      ],
+      "notes": "N02",
+      "scope": "clone_construction",
+      "source_labels": [
+        "lem:collision-unfolding"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C06",
+      "name": "SAP gives two copies differing outside the whole base",
+      "statement": "Strongly amalgamate two copies of B over the entire induced B minus {v}. Their off-base images of v are distinct and both are outside the shared base; their images intersect exactly there. The resulting finite age object may contain additional points, which do not affect the two induced copies.",
+      "depends_on": [
+        "C04",
+        "C05",
+        "A02"
+      ],
+      "notes": "N02",
+      "scope": "clone_construction",
+      "source_labels": [
+        "lem:collision-unfolding"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C07",
+      "name": "Embed the finite amalgam and align the first copy with old B",
+      "statement": "Embed the C06 age object into U. The first B-copy is induced-isomorphic to the literal old B; homogeneity extends that inverse identification to an automorphism of U. Apply it to the whole amalgam, fixing the first copy pointwise onto old B. The second v-image becomes vprime outside ALL old B by strong intersection.",
+      "depends_on": [
+        "C06",
+        "A02"
+      ],
+      "notes": "N02",
+      "scope": "clone_construction",
+      "source_labels": [
+        "lem:collision-unfolding"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C08",
+      "name": "The second copy is a full induced replacement clone",
+      "statement": "After C07 alignment, the second B-copy supplies g_v from D05, identity on B minus {v} and sending v to vprime. It preserves and reflects every relation symbol in the whole signature, repeated-coordinate tuples, unary tags and nullary truth. Signature finiteness is unnecessary.",
+      "depends_on": [
+        "C05",
+        "C07",
+        "D05"
+      ],
+      "notes": "N02",
+      "scope": "clone_construction",
+      "source_labels": [
+        "lem:collision-unfolding"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C09",
+      "name": "Split one current fibre without changing any other source images",
+      "statement": "Choose a nonempty proper T subset F_v. Send T to vprime and keep F_v minus T at v; leave every other source image unchanged. Both sides are nonempty, and vprime was absent from h(A). Denote this new map h_T.",
+      "depends_on": [
+        "C08",
+        "D03"
+      ],
+      "notes": "N03",
+      "scope": "homomorphism_and_images",
+      "source_labels": [
+        "lem:collision-unfolding"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C10",
+      "name": "The split is a GLOBAL positive homomorphism",
+      "statement": "For every displayed source tuple, C01/C02 say its distinct-entry support contains at most one F_v point. All occurrences of that one source point move together. Its image tuple is therefore unchanged or obtained by applying the full clone C08, which fixes every other image point. Positive relations of ALL arities are preserved; nullary truth is unchanged.",
+      "depends_on": [
+        "C01",
+        "C02",
+        "C08",
+        "C09"
+      ],
+      "notes": "N03",
+      "scope": "homomorphism_and_images",
+      "source_labels": [
+        "lem:collision-unfolding"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C11",
+      "name": "The split still embeds every irreducible source piece",
+      "statement": "An irreducible source D has at most one F_v vertex by C02. Its new restriction is unchanged, or g_v composed with its old induced embedding. Both are induced embeddings in U. Together with C10 global positive preservation, h_T remains a HE.",
+      "depends_on": [
+        "C02",
+        "C08",
+        "C09",
+        "C10",
+        "D02"
+      ],
+      "notes": "N03",
+      "scope": "homomorphism_and_images",
+      "source_labels": [
+        "lem:collision-unfolding"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C12",
+      "name": "Every distinguished IMAGE type and its injectivity survive",
+      "statement": "By C03 each S_i sees at most one split-fibre vertex. Its new restriction is unchanged or its image is obtained through g_v. Thus it remains injective and h_T(S_i) is induced-isomorphic to old h(S_i), over the unchanged other points when applicable. This does not claim that h embedded the SOURCE S_i.",
+      "depends_on": [
+        "C03",
+        "C08",
+        "C09",
+        "D04"
+      ],
+      "notes": "N03",
+      "scope": "homomorphism_and_images",
+      "source_labels": [
+        "lem:collision-unfolding"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C13",
+      "name": "The collision measure decreases by exactly t times r-minus-t",
+      "statement": "If the old fibre has size r and |T|=t with 0<t<r, its old choose(r,2) collisions become choose(t,2)+choose(r-t,2). Difference is t(r-t)>0. Other fibres are unchanged and vprime is new, so there are no new cross-fibre collisions. Image cardinality increases exactly one.",
+      "depends_on": [
+        "C09",
+        "D06"
+      ],
+      "notes": "N03",
+      "scope": "termination",
+      "source_labels": [
+        "lem:collision-unfolding"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C14",
+      "name": "Finite iteration yields an injective HE with all image invariants",
+      "statement": "Repeat C04-C13 while the current map has a collision. It remains a HE and every distinguished restriction stays injective, so all step hypotheses persist. The natural collision measure strictly decreases and terminates at zero. Compose the per-step image isomorphisms for each S_i to preserve its ORIGINAL induced image type.",
+      "depends_on": [
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "D06"
+      ],
+      "notes": "N03",
+      "scope": "termination",
+      "source_labels": [
+        "lem:collision-unfolding"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C15",
+      "name": "Relational collision-unfolding source export",
+      "statement": "C14 gives h-prime:A->U globally injective and HE, preserving the full induced type of EACH distinguished image separately. It uses homogeneous relational U with age SAP, not CCO, unary closure or a binary-language assumption. Neither global source inducedness, the joint distinguished-union type nor literal positions are asserted.",
+      "depends_on": [
+        "C14"
+      ],
+      "notes": "N03",
+      "scope": "termination",
+      "source_labels": [
+        "lem:collision-unfolding"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C16",
+      "name": "Empty sources, already injective maps and arbitrary signatures",
+      "statement": "If mu(h)=0, including empty/singleton source cases, take h-prime=h immediately. Otherwise finite vertex images/induced isomorphisms suffice for each step even with infinitely many finite-arity relation symbols. Countability is retained from the source; the finite argument uses only age embeddability and homogeneity.",
+      "depends_on": [
+        "A01",
+        "A02",
+        "C14",
+        "D06"
+      ],
+      "notes": "N03",
+      "scope": "termination",
+      "source_labels": [
+        "lem:collision-unfolding"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C17",
+      "name": "Every fan triangle and shared complete edge is genuinely in K",
+      "statement": "Fix a simple m-cycle of complete A. Each actual triangle {v0,vi,v(i+1)} and each complete shared edge is an induced <=3-point A structure, so belongs to K by A07. Use their ACTUAL chord colours, not newly chosen representatives.",
+      "depends_on": [
+        "A04",
+        "A07"
+      ],
+      "notes": "N04",
+      "scope": "AP_fans",
+      "source_labels": [
+        "lem:cco-triangle-fullness"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C18",
+      "name": "Start with the first actual triangle and the partial fan invariant",
+      "statement": "The first triangle provides F_1 and its identity realization in a K host. At stage i retain ONLY the actual star and consecutive path edges in D09 and a homomorphism into some complete H_i in K. No constraint is placed on other pairs of formal fan vertices.",
+      "depends_on": [
+        "C17",
+        "D09"
+      ],
+      "notes": "N04",
+      "scope": "AP_fans",
+      "source_labels": [
+        "lem:cco-triangle-fullness"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C19",
+      "name": "The old fan map embeds the complete shared edge",
+      "statement": "For incoming T_i with i>=2, restrict the CURRENT F_(i-1) map to v0-vi. Its irreflexive atom forces distinct images. The complete/exclusive source and target edges have the same atom, converse and unary tags, so this restriction is an induced embedding.",
+      "depends_on": [
+        "C18",
+        "A04",
+        "D07"
+      ],
+      "notes": "N04",
+      "scope": "AP_fans",
+      "source_labels": [
+        "lem:cco-triangle-fullness"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C20",
+      "name": "AP glues the next actual triangle over that pinned edge",
+      "statement": "Apply A05 to current host H_(i-1) and incoming T_i from C17, along the exact shared complete edge v0-vi from C19 and the triangle inclusion. Obtain a K amalgam and induced factor maps. Off-base vertices may be identified; this is AP, not SAP.",
+      "depends_on": [
+        "C17",
+        "C19",
+        "A05",
+        "D10"
+      ],
+      "notes": "N04",
+      "scope": "AP_fans",
+      "source_labels": [
+        "lem:cco-triangle-fullness"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C21",
+      "name": "Compose all old fan images and append the new triangle vertex",
+      "statement": "Compose the ENTIRE F_(i-1) map with the amalgam embedding and send v(i+1) through T_i. They agree at both base endpoints and give the next F_i map. Every old star/path edge survives; the new path edge/star chord and converses come from T_i. Nonadjacent old images may collide because unrecorded A chords impose no requirement.",
+      "depends_on": [
+        "C18",
+        "C20"
+      ],
+      "notes": "N04",
+      "scope": "AP_fans",
+      "source_labels": [
+        "lem:cco-triangle-fullness"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C22",
+      "name": "Induct finitely through the fan and recover the closing cycle edge",
+      "statement": "Starting with F_1, apply C19-C21 for i=2,...,m-2, obtaining final F_(m-2) on all cycle vertices. For m=3 no AP step is needed. The fan includes v0-v1, every consecutive cycle edge and the closing star edge v(m-1)-v0. Its restriction is a colour homomorphism of the whole cycle into a K host.",
+      "depends_on": [
+        "C18",
+        "C19",
+        "C20",
+        "C21"
+      ],
+      "notes": "N04",
+      "scope": "AP_fans",
+      "source_labels": [
+        "lem:cco-triangle-fullness"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C23",
+      "name": "Every specified simple cycle is homomorphically feasible",
+      "statement": "C17-C22 apply to ANY simple cycle of complete A. Different cycles may use different K hosts and nonadjacent collisions. This establishes only cycle feasibility; no global completion, CCO, SAP or triangle-fullness conclusion has yet been used.",
+      "depends_on": [
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22"
+      ],
+      "notes": "N04",
+      "scope": "AP_fans",
+      "source_labels": [
+        "lem:cco-triangle-fullness"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C24",
+      "name": "Semantic HOM CCO gives one whole-input homomorphism",
+      "statement": "The complete input has allowed unary/small diagrams by A07 and every specified simple cycle feasible by C23. Apply the supplied A06 implication to obtain ONE colour-preserving homomorphism h:A->H in K. Do not infer this solely from fan AP or triangle legality.",
+      "depends_on": [
+        "C23",
+        "A06",
+        "A07",
+        "D08"
+      ],
+      "notes": "N05",
+      "scope": "triangle_fullness",
+      "source_labels": [
+        "lem:cco-triangle-fullness"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C25",
+      "name": "Completeness and irreflexive diversity force global injectivity",
+      "statement": "For every distinct x,y in COMPLETE A, its specified diversity atom holds on that pair and is preserved by C24. Its target interpretation is irreflexive, so h(x)!=h(y). No SAP or separate collision-unfolding helper is used.",
+      "depends_on": [
+        "C24",
+        "A04",
+        "A07",
+        "D07"
+      ],
+      "notes": "N05",
+      "scope": "atomic_reflection",
+      "source_labels": [
+        "lem:cco-triangle-fullness"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C26",
+      "name": "Unique complete atoms give full induced reflection",
+      "statement": "If a target binary atom b holds on h(x),h(y), source distinct x,y have their unique atom a, which C24 preserves. Target exclusivity forces b=a, so reflection holds. Converse colours, logical equality/false diversity diagonals and complete exclusive unary tags also agree by C25 and the atomic code. Arbitrary extra predicates outside A04 are not covered.",
+      "depends_on": [
+        "C24",
+        "C25",
+        "A04",
+        "D07"
+      ],
+      "notes": "N05",
+      "scope": "atomic_reflection",
+      "source_labels": [
+        "lem:cco-triangle-fullness"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C27",
+      "name": "Heredity gives membership of the complete source A",
+      "statement": "C25/C26 make the colour map an induced embedding A->H in K. Its actual induced image belongs to K by heredity and A belongs by isomorphism closure. Thus complete local <=3 membership implies A in K.",
+      "depends_on": [
+        "C25",
+        "C26",
+        "A04"
+      ],
+      "notes": "N05",
+      "scope": "triangle_fullness",
+      "source_labels": [
+        "lem:cco-triangle-fullness"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C28",
+      "name": "The at-most-three-point premise handles all small input cases",
+      "statement": "If |A|<=3, the premise already includes A itself. For larger A the fan proof applies to m>=3 cycles; realized unary tags and complete edges were also included. No empty path or unspecified chord needs an invented colour.",
+      "depends_on": [
+        "A07"
+      ],
+      "notes": "N05",
+      "scope": "triangle_fullness",
+      "source_labels": [
+        "lem:cco-triangle-fullness"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C29",
+      "name": "AP plus semantic homomorphic CCO derives triangle fullness",
+      "statement": "Combine C27 for the fan/CCO argument and C28 for small inputs. This is a CONSEQUENCE for the selected hereditary atomic class, not an assumed FULL triangle class. The branch requires neither countability/homogeneity, SAP, unary functions nor the collision-unfolding theorem.",
+      "depends_on": [
+        "C27",
+        "C28"
+      ],
+      "notes": "N05",
+      "scope": "triangle_fullness",
+      "source_labels": [
+        "lem:cco-triangle-fullness"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C30",
+      "name": "AP without SAP does not guarantee relational collision unfolding",
+      "statement": "In a countable homogeneous matching graph the age has AP but not SAP. A partial three-point R-star folds onto an edge and is a HE on its irreducible edges/singletons, yet no injective star homomorphism exists into a degree-one matching. Alternatively use a singleton named sort plus an infinite other sort and two source points of the singleton sort. These delimit the SAP hypothesis, not the triangle branch.",
+      "depends_on": [
+        "D02",
+        "C15"
+      ],
+      "notes": "N06",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:collision-unfolding"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C31",
+      "name": "An injective HE can still fail global inducedness",
+      "statement": "Two isolated partial source points may inject into an edge in the countable random graph. The source irreducibles are singletons, so this is an injective HE even though the absent source edge is added. Distinguished singleton images cause no issue. Thus C15 is not a global source-embedding theorem.",
+      "depends_on": [
+        "D02",
+        "C15"
+      ],
+      "notes": "N06",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:collision-unfolding"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C32",
+      "name": "Separate distinguished image types do not determine their joint union",
+      "statement": "In an infinite pure set, map two source points constantly and distinguish their singleton factors separately. Each singleton image type survives an injective replacement, but their joint image changes from one point to two. Therefore joint-union type/literal positions cannot be included in the claimed invariant, nor can source reflection be inferred from mere distinguished injectivity.",
+      "depends_on": [
+        "D04",
+        "C12",
+        "C15"
+      ],
+      "notes": "N06",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:collision-unfolding"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C33",
+      "name": "AP and legal triples without CCO do not imply fullness",
+      "statement": "The age of a one-colour complete three-point graph has AP. Every <=3-point part of K4 is legal and all its simple cycles are 3-colourable/homomorphically feasible; an AP fan C4 may collapse into K3. But K4 has no homomorphism into K3 and is absent from this age. Thus semantic CCO is a substantive input.",
+      "depends_on": [
+        "C23",
+        "C29"
+      ],
+      "notes": "N06",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:cco-triangle-fullness"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C34",
+      "name": "Partial displayed-triangle legality is weaker than the input premise",
+      "statement": "The age of K2 has AP and semantic homomorphic CCO via bipartiteness. A PARTIAL C5 has no displayed triangles but no K2 completion. This refutes only a partial triangle-consistency overgeneralization, not A07: its partial induced triples are not complete K members. Actual complete-input chord colours are necessary for C17 fans.",
+      "depends_on": [
+        "C17",
+        "C29"
+      ],
+      "notes": "N06",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:cco-triangle-fullness"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C35",
+      "name": "Deleting a target point need not be an actual functional base",
+      "statement": "For B={0,1} with F(0)=F(1)=1, deleting v=1 leaves a nonclosed set. Thus the specific C05 clone-over-deletion construction is PURELY relational. This is a proof-mechanism boundary, not a claim against independent unary injectivization theorems with their own assumptions.",
+      "depends_on": [
+        "C05",
+        "C15"
+      ],
+      "notes": "N06",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:collision-unfolding"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    }
+  ],
+  "source_result_files": [
+    "sections/foundational_sap_collision_unfolding.tex",
+    "sections/triangle_fullness.tex"
+  ],
+  "exports": [
+    {
+      "source_label": "lem:collision-unfolding",
+      "claims": [
+        "C14",
+        "C15"
+      ]
+    },
+    {
+      "source_label": "lem:cco-triangle-fullness",
+      "claims": [
+        "C27",
+        "C28",
+        "C29"
+      ]
+    }
+  ],
+  "auxiliary_exports": [],
+  "source_files": [
+    {
+      "file": "sections/foundational_sap_collision_unfolding.tex",
+      "git_blob": "f3ed62cf481b082ca6be793f45bf180db12a6468"
+    },
+    {
+      "file": "sections/triangle_fullness.tex",
+      "git_blob": "d25f85dd267577d1af0c6ffb1245809892fe1dc0"
+    }
+  ],
+  "dependency_firewalls": [
+    {
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16"
+      ],
+      "forbid": [
+        "A04",
+        "A05",
+        "A06",
+        "A07",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35"
+      ]
+    },
+    {
+      "claims": [
+        "C01",
+        "C02"
+      ],
+      "forbid": [
+        "A02",
+        "A03",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35"
+      ]
+    },
+    {
+      "claims": [
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29"
+      ],
+      "forbid": [
+        "A01",
+        "A02",
+        "A03",
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35"
+      ]
+    },
+    {
+      "claims": [
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23"
+      ],
+      "forbid": [
+        "A06",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29"
+      ]
+    }
+  ],
+  "completion_contracts": {
+    "collision_output": "INJECTIVE HE, preserving EACH distinguished IMAGE type separately",
+    "relational_signature": "Arbitrary number of finite-arity relation symbols, NO functions",
+    "global_positive_support": "C01/C02/C10",
+    "clone_alignment": "C07/C08",
+    "strict_measure": "C13: exact drop t(r-t)>0",
+    "triangle_input": "COMPLETE atomic binary A, actual <=3-point diagrams in K",
+    "fan_invariant": "Only recorded star/path edges; not the full A on those vertices",
+    "AP_only_cycle_bridge": "C17-C23",
+    "semantic_CCO_step": "C24",
+    "complete_input_injection": "C25",
+    "atomic_reflection": "C26",
+    "triangle_fullness_output": "C29",
+    "cache_guidance": "formalization/EXTERNAL_PROVIDER_BUILD_CACHE.md; ancillary receiving engineering only"
+  },
+  "tasks": [
+    {
+      "id": "T01",
+      "name": "Positive tuple supports and image invariants",
+      "claims": [
+        "C01",
+        "C02",
+        "C03"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Keep the two branches independent. Collision unfolding is pure relational and preserves distinguished IMAGE types; prove global positive preservation via ALL tuple supports and exact t(r-t) measure. Triangle fans use actual complete chords but ONLY record star/path edges; AP may identify nonadjacent vertices. Invoke semantic CCO only after all cycles, then derive injection/reflection from COMPLETE atomic input. Do not assume B033 FULL class, add SAP to the triangle branch or make a partial-triangle completion claim."
+    },
+    {
+      "id": "T02",
+      "name": "Strong target clones and literal homogeneity alignment",
+      "claims": [
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Keep the two branches independent. Collision unfolding is pure relational and preserves distinguished IMAGE types; prove global positive preservation via ALL tuple supports and exact t(r-t) measure. Triangle fans use actual complete chords but ONLY record star/path edges; AP may identify nonadjacent vertices. Invoke semantic CCO only after all cycles, then derive injection/reflection from COMPLETE atomic input. Do not assume B033 FULL class, add SAP to the triangle branch or make a partial-triangle completion claim."
+    },
+    {
+      "id": "T03",
+      "name": "Global HE preservation and strict collision termination",
+      "claims": [
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16"
+      ],
+      "depends_on": [
+        "T01",
+        "T02"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Keep the two branches independent. Collision unfolding is pure relational and preserves distinguished IMAGE types; prove global positive preservation via ALL tuple supports and exact t(r-t) measure. Triangle fans use actual complete chords but ONLY record star/path edges; AP may identify nonadjacent vertices. Invoke semantic CCO only after all cycles, then derive injection/reflection from COMPLETE atomic input. Do not assume B033 FULL class, add SAP to the triangle branch or make a partial-triangle completion claim."
+    },
+    {
+      "id": "T04",
+      "name": "Actual AP fans and homomorphic cycle feasibility",
+      "claims": [
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Keep the two branches independent. Collision unfolding is pure relational and preserves distinguished IMAGE types; prove global positive preservation via ALL tuple supports and exact t(r-t) measure. Triangle fans use actual complete chords but ONLY record star/path edges; AP may identify nonadjacent vertices. Invoke semantic CCO only after all cycles, then derive injection/reflection from COMPLETE atomic input. Do not assume B033 FULL class, add SAP to the triangle branch or make a partial-triangle completion claim."
+    },
+    {
+      "id": "T05",
+      "name": "Semantic CCO and complete atomic reflection",
+      "claims": [
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29"
+      ],
+      "depends_on": [
+        "T04"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Keep the two branches independent. Collision unfolding is pure relational and preserves distinguished IMAGE types; prove global positive preservation via ALL tuple supports and exact t(r-t) measure. Triangle fans use actual complete chords but ONLY record star/path edges; AP may identify nonadjacent vertices. Invoke semantic CCO only after all cycles, then derive injection/reflection from COMPLETE atomic input. Do not assume B033 FULL class, add SAP to the triangle branch or make a partial-triangle completion claim."
+    },
+    {
+      "id": "T06",
+      "name": "Scope and counterexample diagnostics",
+      "claims": [
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35"
+      ],
+      "depends_on": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Keep the two branches independent. Collision unfolding is pure relational and preserves distinguished IMAGE types; prove global positive preservation via ALL tuple supports and exact t(r-t) measure. Triangle fans use actual complete chords but ONLY record star/path edges; AP may identify nonadjacent vertices. Invoke semantic CCO only after all cycles, then derive injection/reflection from COMPLETE atomic input. Do not assume B033 FULL class, add SAP to the triangle branch or make a partial-triangle completion claim."
+    }
+  ],
+  "overview_mermaid": [
+    "flowchart TD",
+    "  S[\"Relational tuple supports\"] --> H[\"HE survives one fibre split\"]",
+    "  A[\"Age SAP and homogeneity\"] --> C[\"Full induced target clone\"]",
+    "  C --> H",
+    "  H --> M[\"Strict collision measure\"]",
+    "  M --> I[\"Injective HE with individual image types\"]",
+    "  T[\"Actual complete input triangles\"] --> F[\"AP fans with possible collisions\"]",
+    "  F --> Y[\"Every cycle has a homomorphism\"]",
+    "  O[\"Semantic homomorphic CCO\"] --> G[\"Whole complete input homomorphism\"]",
+    "  Y --> G",
+    "  G --> R[\"Irreflexive exclusive atoms give embedding\"]",
+    "  R --> K[\"Derived triangle fullness\"]"
+  ],
+  "overview_notes": [
+    "No mathematical provider imports or external theorem nodes are added; the five existing HN/HKN receiving binding records are unchanged.",
+    "The collision signature may be infinite; finite vertex supports and full induced maps suffice. No functions occur in that branch.",
+    "Distinguished source injectivity preserves each target IMAGE type, not source reflection, a joint-union diagram or all literal images.",
+    "Triangle fullness is derived from AP and semantic HOM CCO. Do not import an assumed FULL triangle class from another module.",
+    "Fan homomorphisms may collide at nonadjacent vertices; global injection follows only for the final COMPLETE input.",
+    "External-provider build-cache guidance is included in the handoff but configures no public CI and introduces no mathematical premise."
+  ],
+  "controls": [
+    {
+      "id": "K01",
+      "check": "Actual bounded relational maps, tuple supports and full induced clone diagrams, distinguished image invariants and exact collision-measure descent, including higher-arity/repeated-coordinate tuples."
+    },
+    {
+      "id": "K02",
+      "check": "Ordinary AP fans with collisions, complete-colour injection/reflection, and matching/no-SAP, missing-CCO and partial-triangle negative controls. Finite models are diagnostics, not an unbounded homogeneous SAP/CCO theorem."
+    }
+  ],
+  "article_feedback": [
+    {
+      "id": "F01",
+      "kind": "PROOF_EXPANSION_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/foundational_sap_collision_unfolding.tex",
+        "anchor": "Consequently the modified map"
+      },
+      "finding": "Embedding every irreducible piece alone should be accompanied by explicit GLOBAL homomorphism preservation. Every positive relation tuple has an irreducible distinct-entry support, so at most one distinct point of the split fibre occurs; repeated occurrences move together.",
+      "proposed_article_change": "Add the arbitrary-arity tuple-support sentence, the literal first-copy alignment and the exact collision drop t(r-t). Clarify preservation of each IMAGE type rather than source reflection or a joint-union type.",
+      "caller_effect": "No finite-signature assumption, functional closure, CCO or globally induced source embedding is added.",
+      "proof_claims": [
+        "C01",
+        "C02",
+        "C07",
+        "C08",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C15",
+        "C32"
+      ]
+    },
+    {
+      "id": "F02",
+      "kind": "PROOF_INVARIANT_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/triangle_fullness.tex",
+        "anchor": "Starting with the first triangle"
+      },
+      "finding": "The AP induction maintains a homomorphism of a PARTIAL star/path fan, not the full induced A on its current vertices. Its pinned complete edge embeds because of atomic irreflexivity/exclusivity, but the incoming point may identify with an old nonneighbor.",
+      "proposed_article_change": "State the partial fan invariant and compose the old fan map through every AP host embedding. Separate all-cycle feasibility, semantic CCO, and complete-input injection/reflection.",
+      "caller_effect": "Ordinary AP suffices. No SAP or B033 FULL triangle-class hypothesis is assumed; partial displayed-triangle legality is not a completion theorem.",
+      "proof_claims": [
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C29",
+        "C33",
+        "C34"
+      ]
+    }
+  ],
+  "review": {
+    "date": "2026-10-28",
+    "source_unchanged": true,
+    "source_signature_repairs": 0,
+    "unexpanded_provider_labels": [],
+    "proof_status": "HUMAN_EXPANDED_NOT_LEAN; two independent Foundations I results with explicit global tuple preservation and partial-fan invariant. No new mathematical gap or external theorem input.",
+    "independent_reviews": [
+      "Arbitrary-arity relational clone construction, HE/global preservation, individual image types and strict finite measure",
+      "Ordinary AP cycle fans with collisions, semantic CCO and complete atomic inducedness"
+    ],
+    "boundaries": [
+      "Collision output is injective HE, not necessarily globally induced.",
+      "The deletion-base clone proof is purely relational.",
+      "Triangle input is COMPLETE and contains genuine allowed small diagrams.",
+      "Triangle branch assumes AP+semantic CCO, not SAP or desired FULL class.",
+      "Cache guidance is an unconfigured receiving plan, not a proof/provider premise."
+    ]
+  }
+}

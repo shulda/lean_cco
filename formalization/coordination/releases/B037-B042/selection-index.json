@@ -1,0 +1,199 @@
+{
+  "head": "dc5fa9eafc2954909d15f3d18986d04fc8967513",
+  "private_board_revision": 45,
+  "private_package_count": 64,
+  "public_main": "42316147ca02c871464e885fe44766fe2c05c14e",
+  "public_coordination": "2555a785518699136fa84598cbf1c8e5b125cfa8",
+  "public_state_revision": 285,
+  "selected": [
+    "B037",
+    "B038",
+    "B039",
+    "B040",
+    "B041",
+    "B042"
+  ],
+  "selected_modules": [
+    "unary_hn",
+    "relational_completion",
+    "unary_fresh_frames",
+    "quotient_transport",
+    "simultaneous_quotients",
+    "finite_fibres"
+  ],
+  "provider_modules": [
+    "acl_owner_geometry",
+    "canonical_hull",
+    "finite_kernel",
+    "parity_hasse",
+    "raw_exact",
+    "rigid_groupoid",
+    "unary_support"
+  ],
+  "source_record_count": 12,
+  "payload_file_count": 40,
+  "raw_records_verified": 51,
+  "new_source_files": [
+    "sections/unary_hn_transfer.tex",
+    "sections/foundational_sap_collision_unfolding.tex",
+    "sections/unary_fresh_frame_sap.tex"
+  ],
+  "selected_details": {
+    "unary_hn": {
+      "definitions": 12,
+      "claims": 47,
+      "exports": 5,
+      "auxiliary_exports": 0,
+      "tasks": 6,
+      "source_files": 2,
+      "external_providers": 3,
+      "control": "tools/check_unary_hn_controls.py"
+    },
+    "relational_completion": {
+      "definitions": 10,
+      "claims": 35,
+      "exports": 2,
+      "auxiliary_exports": 0,
+      "tasks": 6,
+      "source_files": 2,
+      "external_providers": 0,
+      "control": "tools/check_relational_completion_controls.py"
+    },
+    "unary_fresh_frames": {
+      "definitions": 12,
+      "claims": 50,
+      "exports": 5,
+      "auxiliary_exports": 3,
+      "tasks": 7,
+      "source_files": 2,
+      "external_providers": 0,
+      "control": "tools/check_unary_fresh_frames_controls.py"
+    },
+    "quotient_transport": {
+      "definitions": 12,
+      "claims": 50,
+      "exports": 4,
+      "auxiliary_exports": 2,
+      "tasks": 8,
+      "source_files": 1,
+      "external_providers": 0,
+      "control": "tools/check_quotient_transport_controls.py"
+    },
+    "simultaneous_quotients": {
+      "definitions": 14,
+      "claims": 60,
+      "exports": 5,
+      "auxiliary_exports": 1,
+      "tasks": 8,
+      "source_files": 3,
+      "external_providers": 0,
+      "control": "tools/check_simultaneous_quotients_controls.py"
+    },
+    "finite_fibres": {
+      "definitions": 12,
+      "claims": 50,
+      "exports": 4,
+      "auxiliary_exports": 0,
+      "tasks": 8,
+      "source_files": 2,
+      "external_providers": 0,
+      "control": "tools/check_finite_fibres_controls.py"
+    }
+  },
+  "next_two": [
+    "B036",
+    "B037"
+  ],
+  "remaining_dependencies": {
+    "B037": [],
+    "B038": [],
+    "B039": [],
+    "B040": [],
+    "B041": [],
+    "B042": []
+  },
+  "dependency_evidence": {
+    "B002": {
+      "accepted_commit": "4206ff772cc3ee334fe530b55dbb0afe8174dfd4",
+      "main_ci": {
+        "head_sha": "4206ff772cc3ee334fe530b55dbb0afe8174dfd4",
+        "run_id": 40697932819,
+        "conclusion": "success",
+        "axiom_audit": "allowlist"
+      },
+      "ancestor_of_public_base": true
+    },
+    "B006": {
+      "accepted_commit": "21381f6095d3b2787e3e248e5ea244180a66f06f",
+      "main_ci": {
+        "head_sha": "21381f6095d3b2787e3e248e5ea244180a66f06f",
+        "run_id": 40719464681,
+        "conclusion": "success",
+        "axiom_audit": "allowlist"
+      },
+      "ancestor_of_public_base": true
+    },
+    "B009": {
+      "accepted_commit": "2d0f6d3bd6e4eff4dabb1efd15fdcf8e390e56ea",
+      "main_ci": {
+        "head_sha": "2d0f6d3bd6e4eff4dabb1efd15fdcf8e390e56ea",
+        "run_id": 40743163500,
+        "conclusion": "success",
+        "axiom_audit": "allowlist"
+      },
+      "ancestor_of_public_base": true
+    },
+    "B010": {
+      "accepted_commit": "dd6ddf721e39b3e618409ebc8ecb82aed4bc1e00",
+      "main_ci": {
+        "head_sha": "dd6ddf721e39b3e618409ebc8ecb82aed4bc1e00",
+        "run_id": 40752210798,
+        "conclusion": "success",
+        "axiom_audit": "allowlist"
+      },
+      "ancestor_of_public_base": true
+    },
+    "B015": {
+      "accepted_commit": "4180b8e12c37b0419bbc40220f64cfbdc68679b9",
+      "main_ci": {
+        "head_sha": "4180b8e12c37b0419bbc40220f64cfbdc68679b9",
+        "run_id": 40740746255,
+        "conclusion": "success",
+        "axiom_audit": "allowlist"
+      },
+      "ancestor_of_public_base": true
+    },
+    "B017": {
+      "accepted_commit": "7ccce32d991a83645816bdb6522f6ebbfa8d50f0",
+      "main_ci": {
+        "head_sha": "7ccce32d991a83645816bdb6522f6ebbfa8d50f0",
+        "run_id": 40744460289,
+        "conclusion": "success",
+        "axiom_audit": "allowlist"
+      },
+      "ancestor_of_public_base": true
+    },
+    "B034": {
+      "accepted_commit": "625b6ed372ce7ed0ec53cb8c4e66c10056c7c5bd",
+      "main_ci": {
+        "run_id": 40946501124,
+        "head_sha": "625b6ed372ce7ed0ec53cb8c4e66c10056c7c5bd",
+        "conclusion": "success",
+        "axiom_audit": "allowlist"
+      },
+      "ancestor_of_public_base": true
+    }
+  },
+  "mathematical_metadata_unchanged": true,
+  "extraction_production_validator_unchanged": true,
+  "public_state_unchanged": true,
+  "new_external_provider_count": 3,
+  "new_external_provider_bindings": [
+    "unary_hn.E01: NOT_BOUND_TO_CCO_ENCODING",
+    "unary_hn.E02: UNBOUND; no verified Lean declaration",
+    "unary_hn.E03: UNBOUND; no verified Lean declaration"
+  ],
+  "ancillary_guidance": [
+    "formalization/EXTERNAL_PROVIDER_BUILD_CACHE.md"
+  ]
+}

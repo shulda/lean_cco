@@ -1,0 +1,197 @@
+\section{Unary completion and ordered Ramsey transfer}
+\label{sec:unary-hn-transfer}
+
+The results in this section concern finite many-sorted structures with
+unary functions and relations. They do not use CCO, quotient geometry or
+factorisation forests. Completed structures have total unary functions on
+their prescribed source sorts. Partial sources use the HN convention:
+functions may initially have proper domains, and induced substructures
+reflect those domains and are closed under all already defined values.
+
+\begin{lemma}[Unary-or-binary pair coverage implies irreducibility]
+\label{lem:typed-unary-binary-irreducibility}
+Let $A$ be a finite induced unary-closed structure, with total unary
+functions and relations of arbitrary finite arity. Suppose that for every
+pair of distinct vertices $x,y\in A$, at least one of the following holds:
+\begin{enumerate}[label=(\roman*)]
+\item $x\in\cl_A\{y\}$;
+\item $y\in\cl_A\{x\}$;
+\item a positive named binary relation contains $(x,y)$ or $(y,x)$.
+\end{enumerate}
+Then $A$ is irreducible with respect to free amalgamation of induced
+unary-closed substructures. In particular, a complete binary orbital
+signature makes every completed member irreducible. The same holds if
+some unary graph orbitals are represented only by their named functions,
+provided every remaining pair satisfies (iii).
+\end{lemma}
+\begin{proof}
+Suppose $A$ were a free amalgam of two proper induced closed factors
+$A_1,A_2$ over $A_0=A_1\cap A_2$. Choose
+$x\in A_1\setminus A_0$ and $y\in A_2\setminus A_0$.
+Closedness gives $\cl_A\{x\}\subseteq A_1$ and
+$\cl_A\{y\}\subseteq A_2$, excluding (i) and (ii).
+A positive binary tuple joining $x$ and $y$ belongs to neither factor,
+excluding (iii) by freeness. This contradicts the hypothesis.
+\end{proof}
+
+\begin{lemma}[Universal irreflexive edge restores local irreducible reflection]
+\label{lem:typed-universal-edge-hn-reflection}
+Let $L$ be a finite many-sorted language with unary functions and relations
+of arbitrary finite arity. Let $\mathcal K$ be a hereditary class of
+completed induced unary-closed $L$-structures such that every
+$L$-homomorphism-embedding between two members of $\mathcal K$ is an
+embedding. This condition holds, in particular, if every completed member
+is irreducible, or if every homomorphism between completed members is an
+embedding. Positive binary coverage of every distinct pair is a sufficient
+condition by \cref{lem:typed-unary-binary-irreducibility}.
+
+Expand each member by a universal irreflexive binary relation $E_*$, and
+write $\mathcal K^*$ for the resulting class. Let $C$ be a finite partial
+$(L\cup\{E_*\})$-structure whose every induced irreducible substructure
+belongs to $\mathcal K^*$. If its $L$-reduct $C^-$ has an
+$L$-homomorphism-embedding $h:C^-\to H$, where $H\in\mathcal K$, then
+\emph{the same vertex map} is a homomorphism-embedding $C\to H^*$.
+Global injectivity of $h$ is not asserted.
+\end{lemma}
+\begin{proof}
+For an induced irreducible $D\subseteq C$, the hypothesis gives
+$D\in\mathcal K^*$, hence $D^-\in\mathcal K$.
+The restriction $h|_{D^-}$ is a homomorphism-embedding: every induced
+irreducible substructure of $D^-$ is also such a substructure of $C^-$.
+The assumed rigidity of completed maps makes this restriction an
+embedding. Since $E_*$ is universal and irreflexive on both $D$ and $H^*$,
+$h|_D$ is an embedding in the expanded language as well.
+
+For any displayed $E_*^C(x,y)$, its induced unary-closed support
+$D=\cl_C\{x,y\}$ is irreducible: in a free decomposition, one factor
+must contain the relation tuple and hence all unary values of its
+endpoints. Thus $D\in\mathcal K^*$, which also excludes $x=y$.
+The preceding paragraph makes $h$ injective on $D$, so the displayed
+$E_*$-edge is preserved. All $L$-relations and defined unary values are
+already preserved by $h$. Together with reflection on every irreducible
+source piece, this proves the assertion.
+\end{proof}
+
+\begin{remark}[The completed-map rigidity hypothesis cannot be omitted]
+\label{rem:typed-universal-edge-old-completeness}
+Take the empty relational/function language and let $\mathcal K$ be all
+finite sets. It is hereditary and has SAP, but the constant map from a
+two-point set to a singleton is a homomorphism-embedding, since its old
+irreducible pieces are singletons. Let $C$ be a two-point member of
+$\mathcal K^*$ with $E_*$ on its distinct pair. Every irreducible source
+piece is completed, but the constant map from $C^-$ to a singleton does
+not preserve $E_*$: it sends its edge to a forbidden diagonal.
+A different injective completion of $C$ exists; the failure concerns only
+transport of the \emph{same} arbitrary old map. Thus some completed-map
+rigidity is necessary for this general argument. Binary completeness is
+one sufficient hypothesis, not a necessary one: unary-generated
+irreducibility can provide the same rigidity.
+\end{remark}
+
+\begin{theorem}[Unary HN transfer from irreducible-source obstructions]
+\label{thm:unary-hn-irreducible-source-transfer}
+Let $L$ be a finite many-sorted language with relations of arbitrary finite
+arity and only unary functions. Let $\mathcal K$ be a hereditary class of
+finite completed induced unary-closed \emph{irreducible} $L$-structures
+with SAP. Suppose there is an integer $N$ such that every finite partial
+$L$-structure $C$ satisfying
+\[
+  \text{every induced irreducible substructure of $C$ belongs to
+  $\mathcal K$}
+\]
+and having no $\mathcal K$-homomorphism-embedding completion contains an
+induced unary-closed noncompletable substructure of size at most $N$.
+Then the class $\mathcal K^<$ of all members with arbitrary strict linear
+orders is locally finite in the class of all finite ordered $L$-models,
+in the sense of \cite[Definition~2.8]{HN-Ramsey}, with the uniform bound
+$n=\max\{1,N\}$. Consequently $\mathcal K^<$ is Ramsey.
+\end{theorem}
+\begin{proof}
+Let $\mathcal R$ be the class of all finite $(L,<)$-models with $<$ a
+strict linear order. It is Ramsey by \cite[Theorem~2.19]{HN-Ramsey}, and
+its members are irreducible because of the order. The subclass
+$\mathcal K^<$ is hereditary and has SAP: first strongly amalgamate in
+$\mathcal K$, then shuffle the two orders in each interval over the
+common induced suborder.
+
+Fix any $C_0\in\mathcal R$ and $n=\max\{1,N\}$. Let $C$ satisfy the
+three HN local-finiteness hypotheses:
+\begin{enumerate}[label=(\roman*)]
+\item $C$ has a homomorphism-embedding to $C_0$;
+\item every induced irreducible substructure of $C$ belongs to
+      $\mathcal K^<$;
+\item every induced substructure of $C$ on at most $n$ vertices has a
+      $\mathcal K^<$-completion.
+\end{enumerate}
+Write $C^-$ for the reduct forgetting only the order. If $D^-$ is an
+induced irreducible substructure of $C^-$, adding its induced order
+preserves irreducibility. By (ii), $D^-\in\mathcal K$.
+Thus $C^-$ satisfies the restricted obstruction hypothesis. If it had no
+completion, a noncompletable induced unary-closed $D^-$ of size at most
+$N$ would contradict (iii), by restoring the displayed order and then
+forgetting it from a completion. Hence $C^-$ has a
+$\mathcal K$-homomorphism-embedding completion.
+
+Apply \cite[Proposition~2.6]{HN-Ramsey} to $\mathcal K$. Its members are
+irreducible, it is hereditary with SAP, and all functions are unary.
+We obtain an injective homomorphism-embedding $f:C^-\hookrightarrow B$,
+where $B\in\mathcal K$. By (i) the displayed order edges of $C$ are
+acyclic, since a closed strict-order walk cannot map to $C_0$. Transport
+these edges through $f$ and extend them to a strict linear order on $B$.
+For any induced irreducible $D\subseteq C$, (ii) says that $D$ is already
+a completed ordered member. In particular, its reduct $D^-$ is an
+irreducible member of $\mathcal K$, so $f|_{D^-}$ is an embedding.
+Its source order is total, and extending all its comparisons therefore
+also reflects that order. Thus $f|_D$ is an ordered embedding. The map
+$f$ is the required strong $\mathcal K^<$-completion of $C$.
+
+This proves local finiteness with the stated uniform bound, independently
+of $C_0$. The locally finite Ramsey subclass theorem
+\cite[Theorem~2.11]{HN-Ramsey} gives the Ramsey conclusion. No unary
+closure-size bound or condition on arbitrary unary-malformed sources was
+used.
+\end{proof}
+
+\begin{theorem}[Direct unary HN transfer for irreducible SAP ages]
+\label{thm:typed-direct-irreducible-unary-HN}
+Let $L$ be a finite many-sorted language with relations of arbitrary finite
+arity and only total unary functions on their prescribed source sorts.
+Let $\mathcal K$ be a hereditary class of finite induced unary-closed
+irreducible $L$-structures with SAP. Suppose there is one integer $N$
+such that every noncompletable finite partial $L$-structure whose every
+one-generated induced closure is already a completed member of
+$\mathcal K$ contains an induced unary-closed noncompletable substructure
+of size at most $N$. Completions here are homomorphism-embeddings.
+Then $\mathcal K^<$, with arbitrary strict linear orders, is locally
+finite with bound $\max\{1,N\}$ and is Ramsey.
+
+The obstruction premise is required only on this unary-admissible domain;
+no bound for arbitrary malformed unary cycles is assumed. No positive
+binary pair cover, auxiliary universal relation, CCO or exact geometry
+is part of this abstract theorem.
+\end{theorem}
+\begin{proof}
+If every induced irreducible substructure of a partial source belongs to
+$\mathcal K$, then \cref{lem:hn-irreducible-forces-unary-admissible}
+makes each one-generated closure a completed member and forces the
+intended unary function domains to be total. Hence the assumed
+obstruction bound applies on the domain required by
+\cref{thm:unary-hn-irreducible-source-transfer}. Apply that theorem.
+\end{proof}
+
+\begin{theorem}[A unary homogeneous finite-obstruction Ramsey transfer]
+\label{thm:typed-abstract-unary-HN-ramsey}
+Under the hypotheses of \cref{thm:typed-direct-irreducible-unary-HN},
+replace the irreducibility assumption by the following sufficient
+condition: the relational symbols have arity at most two, and in every
+completed member every ordered pair of distinct vertices is covered by a
+positive named binary relation. Then the same Ramsey conclusion holds.
+In particular, the bounded-obstruction hypothesis remains restricted to
+sources with completed one-generated closures; it is not supplied by
+binary coverage or by this theorem.
+\end{theorem}
+\begin{proof}
+By \cref{lem:typed-unary-binary-irreducibility}, positive binary coverage
+makes every completed member irreducible. Apply
+\cref{thm:typed-direct-irreducible-unary-HN}.
+\end{proof}

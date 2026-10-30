@@ -42,6 +42,12 @@ mathematical catalogue/initial checkpoint, not current ownership.
 | B034: Local supports and actual unary-generated HN diagrams | — | [B034](../../formalization/coordination/packages/B034.md) |
 | B035: Full tuple codes, Ramsey readout and fixed-host EP | — | [B035](../../formalization/coordination/packages/B035.md) |
 | B036: Fibre normalization, reset midpoints and gated EP composition | — | [B036](../../formalization/coordination/packages/B036.md) |
+| B037: Unary completion and ordered HN Ramsey transfer | B034 | [B037](../../formalization/coordination/packages/B037.md) |
+| B038: Relational collision unfolding and AP+CCO triangle fullness | — | [B038](../../formalization/coordination/packages/B038.md) |
+| B039: Fresh real frames, actual quotient-fibre avoidance and hereditary unary SAP | B010 | [B039](../../formalization/coordination/packages/B039.md) |
+| B040: Invariant typed quotient transport, canonical return and shared action support | — | [B040](../../formalization/coordination/packages/B040.md) |
+| B041: Simultaneous full exact quotients, private cycles and exact towers | B002, B015, B017 | [B041](../../formalization/coordination/packages/B041.md) |
+| B042: Finite symmetric CCO, automorphism 2-groups, Hasse covers and real acl | B006, B009 | [B042](../../formalization/coordination/packages/B042.md) |
 
 Autonomous release permissions are in [AUTONOMY.json](AUTONOMY.json).
 Use [QUEUE_OPERATIONS.md](QUEUE_OPERATIONS.md) to claim or review work.
