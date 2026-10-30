@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 333,
+  "revision": 334,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -2068,7 +2068,7 @@
       }
     },
     "B041": {
-      "state": "IN_PROGRESS",
+      "state": "SUBMITTED",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b040_transport",
@@ -2087,7 +2087,16 @@
         "head_sha": "90feb040df23e2ef7fd18ebc7df3b92ccfc0a8a0",
         "conclusion": "success",
         "axiom_audit": "allowlist"
-      }
+      },
+      "head_sha": "f5c3a62433c85c77a807497721aaa3ee71cb03a8",
+      "pr_number": 55,
+      "ci": {
+        "run_id": 41050090786,
+        "head_sha": "f5c3a62433c85c77a807497721aaa3ee71cb03a8",
+        "conclusion": "success",
+        "axiom_audit": "allowlist"
+      },
+      "report_path": "formalization/coordination/submissions/B041.md"
     },
     "B042": {
       "state": "IN_PROGRESS",
@@ -8531,6 +8540,26 @@
           "/root/b042_finite/real_acl",
           "/root/b042_finite/boundaries"
         ],
+        "actor_id": "root"
+      }
+    },
+    {
+      "revision": 334,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "submit",
+      "package_id": "B041",
+      "details": {
+        "package_id": "B041",
+        "head_sha": "f5c3a62433c85c77a807497721aaa3ee71cb03a8",
+        "pr_number": 55,
+        "ci": {
+          "run_id": 41050090786,
+          "head_sha": "f5c3a62433c85c77a807497721aaa3ee71cb03a8",
+          "conclusion": "success",
+          "axiom_audit": "allowlist"
+        },
+        "report_path": "formalization/coordination/submissions/B041.md",
         "actor_id": "root"
       }
     }
