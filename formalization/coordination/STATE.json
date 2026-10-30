@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 392,
+  "revision": 393,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -3998,7 +3998,7 @@
       }
     },
     "B048": {
-      "state": "SUBMITTED",
+      "state": "REVIEWING",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b047_pair_safe_split",
@@ -4289,7 +4289,19 @@
         ],
         "url": "https://github.com/shulda/lean_cco/actions/runs/41124679389"
       },
-      "report_path": "formalization/coordination/submissions/B048.md"
+      "report_path": "formalization/coordination/submissions/B048.md",
+      "review": {
+        "project_id": 3,
+        "actor_id": "independent_review_recovery",
+        "head_sha": "f5681b3dd29ec81bbe7f9c4a987d0dd37885a34d",
+        "approved": false,
+        "independence": {
+          "identity": "/root/independent_review_recovery",
+          "non_author": true,
+          "summary": "I am the genuinely fresh actual agent /root/independent_review_recovery, distinct from the unavailable historical reviewer. I authored, designed and directed none of B048 or its preparation and supplied no implementation decisions, code, builds, tests or audits. I personally read all 95 mathematical bodies, pinned source/notes and provider paths, verified every body hash against the exact public head, and independently inspected its completed full CI job log and genuine SUBMITTED record. No old partial review or identity is reused.",
+          "report_path": "formalization/coordination/reviews/B048-final.md"
+        }
+      }
     }
   },
   "integration_lock": null,
@@ -14467,6 +14479,24 @@
         },
         "report_path": "formalization/coordination/submissions/B048.md",
         "actor_id": "root"
+      }
+    },
+    {
+      "revision": 393,
+      "project_id": 3,
+      "actor_id": "independent_review_recovery",
+      "event": "review",
+      "package_id": "B048",
+      "details": {
+        "package_id": "B048",
+        "head_sha": "f5681b3dd29ec81bbe7f9c4a987d0dd37885a34d",
+        "independence": {
+          "identity": "/root/independent_review_recovery",
+          "non_author": true,
+          "summary": "I am the genuinely fresh actual agent /root/independent_review_recovery, distinct from the unavailable historical reviewer. I authored, designed and directed none of B048 or its preparation and supplied no implementation decisions, code, builds, tests or audits. I personally read all 95 mathematical bodies, pinned source/notes and provider paths, verified every body hash against the exact public head, and independently inspected its completed full CI job log and genuine SUBMITTED record. No old partial review or identity is reused.",
+          "report_path": "formalization/coordination/reviews/B048-final.md"
+        },
+        "actor_id": "independent_review_recovery"
       }
     }
   ],
