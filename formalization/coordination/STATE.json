@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 324,
+  "revision": 325,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -2042,6 +2042,7 @@
       "state": "IN_PROGRESS",
       "owner_project_id": 3,
       "author_actor_ids": [
+        "/root/b040_transport",
         "/root/b041_simultaneous",
         "/root/b041_simultaneous/descent_towers",
         "/root/b041_simultaneous/private_cco",
@@ -8330,6 +8331,20 @@
         "author_actor_ids": [
           "/root/b041_simultaneous/private_cco",
           "/root/b041_simultaneous/descent_towers"
+        ],
+        "actor_id": "root"
+      }
+    },
+    {
+      "revision": 325,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "record_authorship",
+      "package_id": "B041",
+      "details": {
+        "package_id": "B041",
+        "author_actor_ids": [
+          "/root/b040_transport"
         ],
         "actor_id": "root"
       }
