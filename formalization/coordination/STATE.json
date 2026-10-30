@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 384,
+  "revision": 385,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -3881,13 +3881,14 @@
         "project_id": 3,
         "actor_id": "independent_review",
         "head_sha": "f702071ee44712f81f227329228a074a10e2d9d6",
-        "approved": false,
+        "approved": true,
         "independence": {
           "identity": "/root/independent_review",
           "non_author": true,
           "summary": "The actual separate reviewer /root/independent_review authored and designed none of the complete B047 batch or its preparation. All six actual implementing identities and preserved prior histories were checked; the reviewer only read source, exact proof deltas, reports, public/native trees and validation evidence, and performed no implementation, compiler, test, audit or helper work.",
           "report_path": "formalization/coordination/reviews/B047-final.md"
-        }
+        },
+        "summary": "The actual separate non-author reviewer approves this exact repaired public head after the complete source read, all true repair/documentation deltas, all 54 ordered native/public checkpoints, full successful final CI logs/audit and personally verified effective STATE384 lease. Original C41/C43 findings are closed at the same selected gate, phase, identification and every selected history node. Reviewer report-only native b36d16932b195c6535fd2e2b8fbc298c3282b997 records actual run41105647949/job124234622614 and synthetic approved-tree checkout; no source/docs/history blocker remains."
       }
     },
     "B048": {
@@ -13270,6 +13271,19 @@
           "summary": "The actual separate reviewer /root/independent_review authored and designed none of the complete B047 batch or its preparation. All six actual implementing identities and preserved prior histories were checked; the reviewer only read source, exact proof deltas, reports, public/native trees and validation evidence, and performed no implementation, compiler, test, audit or helper work.",
           "report_path": "formalization/coordination/reviews/B047-final.md"
         },
+        "actor_id": "independent_review"
+      }
+    },
+    {
+      "revision": 385,
+      "project_id": 3,
+      "actor_id": "independent_review",
+      "event": "approve",
+      "package_id": "B047",
+      "details": {
+        "package_id": "B047",
+        "head_sha": "f702071ee44712f81f227329228a074a10e2d9d6",
+        "summary": "The actual separate non-author reviewer approves this exact repaired public head after the complete source read, all true repair/documentation deltas, all 54 ordered native/public checkpoints, full successful final CI logs/audit and personally verified effective STATE384 lease. Original C41/C43 findings are closed at the same selected gate, phase, identification and every selected history node. Reviewer report-only native b36d16932b195c6535fd2e2b8fbc298c3282b997 records actual run41105647949/job124234622614 and synthetic approved-tree checkout; no source/docs/history blocker remains.",
         "actor_id": "independent_review"
       }
     }
