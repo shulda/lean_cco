@@ -399,3 +399,54 @@ hash; the proof subtree object also binds the complete collection.
 | `CCO/FullPhaseLift/Tower/Reduct.lean` | `01ad001673852984aecc389294e29ea4eb11e145982e7a41f159beca839709b7` |
 | `CCO/FullPhaseLift/Tower/Selected.lean` | `2a31b2c6fdf9d14a2cc3bff0d4a805a7218169b9e2636bed968960b1bd5a3f06` |
 | `CCO/FullPhaseLift/Tower/SingleStep.lean` | `50f3e3d3fbbe66a8293d1c4423bfde9355b68dc96e3ce76b79b2044307dc15ed` |
+
+## Final actual leased decision — APPROVED
+
+This appended decision supersedes the earlier pending-lease status; the
+historical conditional report remains intact above.
+
+I directly fetched and inspected the COMPLETE actual public STATE at
+coordination `2dde72a59b548e44eee0fd5759535b9a93c1b7f3` (623300 characters,
+STATE revision 393 / policy 12), and fetched fresh live coordination again.
+They are identical. B048 is REVIEWING under actor
+`independent_review_recovery`, ACTUAL identity
+`/root/independent_review_recovery`, for exact head
+`f5681b3dd29ec81bbe7f9c4a987d0dd37885a34d`; `approved` is still false in
+that observed lease. The independence statement is my own verbatim endorsed
+statement and the report path is this file. Main AUTONOMY registers this
+exact fresh identity. The unavailable old actor is not used.
+
+I compared the COMPLETE parsed STATE with exact submitted STATE392. All
+47 other package records remain identical (all 47 accepted); B048's claim,
+authors, original author project, submitted head, PR and entire CI receipt
+are unchanged except the expected SUBMITTED→REVIEWING state and new own
+lease. The complete history prefix is preserved and the sole new event is
+revision 393 `review` by my actual actor. Every other top-level field remains
+identical, including the null integration lock and frozen source pin.
+The CI receipt's ordered list of 95 fresh B048 modules equals the list I
+read from the independently fetched full actual job log.
+
+I also fetched the actual published conditional report at coordination
+`d7a71d62384e5ef34a4552a96d71a0da64bc930f`: Git blob
+`baa4c38d71b6be22721b544ed9e40c7a52f913e4` exactly matches my committed local
+report. The coordinator has not edited or substituted my findings.
+Fresh direct PR metadata still has base `fe02066...`, exact head
+`f5681b3...`, synthetic merge `db8faff...`, OPEN and not merged; a fresh
+main commit lookup still returns `fe02066c6e743df6105774eef6ebcdb7966f4656`.
+Thus the verified source, provider paths, exact green CI and genuine own
+review lease all bind the SAME head. No new mathematical or operational
+blocker was identified.
+
+**My actual decision is APPROVE B048 at that exact public head.** This is
+my own substantive independent decision after observing the lease, not an
+approval attributed to another actor, to an old incomplete review, or to the
+coordinator. Only this report is appended. The coordinator may publish the
+following verbatim summary in the ordinary `approve` event with my actual
+actor and exact head. Integration and acceptance still require the single
+lock, expected-head history-preserving merge, successful actual resulting-main
+build/audit and exact-parent CAS. This decision does not assert those later
+gates have already occurred.
+
+Verbatim approval summary:
+
+> I, /root/independent_review_recovery, APPROVE B048 at exact public head f5681b3dd29ec81bbe7f9c4a987d0dd37885a34d. I am the genuinely fresh registered non-author and personally read all 95 proof bodies, pinned source, notes, contracts and provider discharge paths; every body hash matches this public head. Exact raw A03, all signed/repeated/nullary old tuples, actual full SAP and binary homogeneity, the genuine full marked Fraisse model and full old-reduct isomorphism, concrete selected finite tower and same full reduct/functor are retained. C25 is only the optional supplied natural STRICT target route, with no coherent EPPA claim; C32 is the actual homogeneous K4^3-free model with same-source pair SAP/CCO and failure of raw A03. I found no mathematical blocker or missing provider. I independently inspected successful exact CI 41124679389/job124299979975, synthetic checkout db8faffd407213b556ac812321145460785a84e3 with the identical reviewed tree and ordered main/head parents, all 95 fresh modules/root4293, complete cache guards and 28723 three-axiom declarations. I personally verified genuine SUBMITTED STATE392 and my effective own REVIEWING lease in complete public STATE393, preserved authorship/history and fresh unchanged PR/main refs. This is my actual independent approval; resulting-main build/audit and CAS acceptance remain required.
