@@ -132,4 +132,14 @@ noncomputable def foldDiagram (x y : V) (hxy : x ≠ y)
     (pushCompatible_of_edgeCoherent D f _ _ _
       (identify_edge_coherent D f x y hxy missing bound))
 
+/-- The independent old-cycle folding lemma, stated without phase algebra,
+AP, SAP or homogeneity. The actual pure graph proof supplies this interface;
+merely assuming it does not discharge the B044 source theorem. -/
+def FoldCycleLaw : Prop :=
+  ∀ {V : Type z} (D : PartialDiagram S V) (f : DiagramHom D)
+    (x y : V) (hxy : x ≠ y) (sameSort : D.vertexSort x = D.vertexSort y)
+    (missing : D.edge x y hxy = none) (bound : IdentityBound D x y)
+    (boundRev : IdentityBound D y x),
+    ∀ C : SimpleCycle (foldDiagram D f x y hxy sameSort missing bound), CycleHom C
+
 end CCO.APCharacter.Completion
