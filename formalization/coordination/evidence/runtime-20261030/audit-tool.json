@@ -1,0 +1,15 @@
+{
+  "official_action": "leanprover/lean-action",
+  "action_commit": "f061402b660e0c34644504b324e830f2991d4865",
+  "official_script": "runtime/lean-action/scripts/run_axiom_audit.sh",
+  "tool": "leanprover-community/axiom-audit",
+  "tool_commit": "46024e005996495c65ef609368e11ab39c4222e3",
+  "original_toolchain": "leanprover/lean4:v4.32.0-rc1",
+  "receiving_toolchain": "leanprover/lean4:v4.34.1",
+  "overlay": "Only lean-toolchain copied from receiving project, exactly as official script lines46\u201350",
+  "tool_build_jobs": 6,
+  "tool_build_success": true,
+  "project_build_or_audit_run_by_bootstrap": false,
+  "binary": "/workspace/scratch/6b2f11185e14/runtime/axiom-audit/.lake/build/bin/axiom-audit",
+  "project_command": "lake env /workspace/scratch/6b2f11185e14/runtime/axiom-audit/.lake/build/bin/axiom-audit --root CCO --allow propext,Classical.choice,Quot.sound"
+}

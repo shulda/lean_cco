@@ -1,0 +1,78 @@
+{
+  "source_main": "096e50a64875ff2e68e5aa5340137c5effe9fb88",
+  "toolchain": "leanprover/lean4:v4.34.1",
+  "lean_commit": "5045d0056413266e57c625dcd7c365b10e377c52",
+  "lake_version": "5.0.0-src+5045d00",
+  "official_release_asset": {
+    "id": 586761733,
+    "bytes": 580432872,
+    "sha256": "47bf4bbd78f70c2e9670598ab7124d92b6efb7330ff33e5fbb4030f6fd72e4e4",
+    "url": "https://github.com/leanprover/lean4/releases/download/v4.34.1/lean-4.34.1-linux.tar.zst",
+    "download_attempts": 1,
+    "success": true
+  },
+  "actual_external_roots": 178,
+  "decompressed_cache_artifacts": 2255,
+  "small_incremental_build": {
+    "target": "CCO.UnarySupport.Induced",
+    "jobs": 447,
+    "success": true
+  },
+  "pinned_project_inputs": {
+    "lean-toolchain": "d5edba4e4b8faad9c1baeadb265716d20d03be4d1a2647dc5e35b0c0325bea7b",
+    "lakefile.toml": "afcedd779f3340b72ab18281d9520a73ccc476218f6489e24bc9965c4d8f25bc",
+    "lake-manifest.json": "3cff2d09ad04a71272a69ed56229a4c7085ac751b3f25a39a9d3063604f31454",
+    "tools/external_provider.json": "eeee3e25b6bf12fab1e1c5fc154d66ccd6b63b9ac1d62974af14eccd2bd76c6c"
+  },
+  "runtime_sources": {
+    "env.sh": "8a8b2fbfe68825be1a67b76f129bf5da470b77f5a1ef1fe397dcf7e91fd99840",
+    "proc_self_compat.c": "7cec8486ad03f2c296add14e4c83d862b804ddf70ed103350bdfac3cb9d2d154",
+    "bootstrap-pinned-sources.py": "723a381ef5b0af829861fa5776343ddce93ef5fbba86c3895625d2f378586aba"
+  },
+  "eppa_facade_status": "SUCCESS; actual1330jobs269modules",
+  "eppa_source_artifact_guard": {
+    "success": true,
+    "current_source": 269,
+    "actual_olean_parts": 269,
+    "pin": "cd358cde844d5419fd43f30c441511927e09142f",
+    "log": "runtime/primary-eppa-complete-guard.log"
+  },
+  "isolated_worktrees": [
+    {
+      "worktree": "cco-b036",
+      "exit_code": 0,
+      "output": "Prepared isolated pinned EPPA package and copied API artifacts: /workspace/scratch/6b2f11185e14/cco-b036/.lake/packages/AllThoseEPPA",
+      "stderr": ""
+    },
+    {
+      "worktree": "cco-b036-generic",
+      "exit_code": 0,
+      "output": "Prepared isolated pinned EPPA package and copied API artifacts: /workspace/scratch/6b2f11185e14/cco-b036-generic/.lake/packages/AllThoseEPPA",
+      "stderr": ""
+    },
+    {
+      "worktree": "cco-b036-counter",
+      "exit_code": 0,
+      "output": "Prepared isolated pinned EPPA package and copied API artifacts: /workspace/scratch/6b2f11185e14/cco-b036-counter/.lake/packages/AllThoseEPPA",
+      "stderr": ""
+    },
+    {
+      "worktree": "cco-b036-hierarchy",
+      "exit_code": 0,
+      "output": "Prepared isolated pinned EPPA package and copied API artifacts: /workspace/scratch/6b2f11185e14/cco-b036-hierarchy/.lake/packages/AllThoseEPPA",
+      "stderr": ""
+    },
+    {
+      "worktree": "cco-b037",
+      "exit_code": 0,
+      "output": "Prepared isolated pinned EPPA package and copied API artifacts: /workspace/scratch/6b2f11185e14/cco-b037/.lake/packages/AllThoseEPPA",
+      "stderr": ""
+    },
+    {
+      "worktree": "cco-b037-e02",
+      "exit_code": 0,
+      "output": "Prepared isolated pinned EPPA package and copied API artifacts: /workspace/scratch/6b2f11185e14/cco-b037-e02/.lake/packages/AllThoseEPPA",
+      "stderr": ""
+    }
+  ]
+}
