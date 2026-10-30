@@ -25,8 +25,11 @@ theorem identity_folding_cycles {V : Type z} (D : PartialDiagram S V)
 /-- C33's separation uses only completeness and the irreflexivity of actual
 original diversity atoms, independently of SAP and triangle-definedness. -/
 theorem terminal_injective {V : Type z} (D : PartialDiagram S V)
-    (complete : D.IsComplete) (f : DiagramHom D) : f.IsInjective :=
-  f.injective_of_complete complete
+    (complete : D.IsComplete) (f : DiagramHom D) : f.IsInjective := by
+  intro x y he
+  by_contra hxy
+  obtain ⟨a,ha⟩ := complete x y hxy
+  exact S.atomRel_ne (f.preserves_edge x y hxy a ha) he
 
 /-- On every distinct terminal pair the whole optional old colour is its
 specified atom. This is induced full binary readout, not merely a positive
