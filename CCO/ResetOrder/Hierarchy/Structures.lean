@@ -91,6 +91,19 @@ structure OrderedEmbedding (A : OrderedStructure C L) (B : OrderedStructure D L)
 
 namespace OrderedEmbedding
 variable {C D L} {A : OrderedStructure C L} {B : OrderedStructure D L}
+
+theorem order_iff (f : OrderedEmbedding C D L A B) (i : Sigma J) (x y : X i) :
+    (B.orders i).lt (f.old.point i x) (f.old.point i y) ↔ (A.orders i).lt x y := by
+  constructor
+  · intro h
+    by_cases he : x = y
+    · subst y
+      exact False.elim ((B.orders i).irrefl _ h)
+    · rcases (A.orders i).total he with hxy | hyx
+      · exact hxy
+      · exact False.elim ((B.orders i).asymm h (f.order_preserve i y x hyx))
+  · exact f.order_preserve i x y
+
 def geometryMap (f : OrderedEmbedding C D L A B) : S.Map T :=
   ⟨f.old.point, f.old.injective, f.up_commute⟩
 
