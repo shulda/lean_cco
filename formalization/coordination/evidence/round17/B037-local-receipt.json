@@ -1,0 +1,987 @@
+{
+  "head": "3bf5772b6b0c440497636a281f78fb00bc663e8f",
+  "tree": "55d88de95d552898ff5df42dc08c93f04315714e",
+  "steps": [
+    {
+      "name": "PRE-eppa-repair",
+      "command": [
+        "python3",
+        "tools/verify_external_provider.py",
+        "--repair"
+      ],
+      "exit_code": 0,
+      "seconds": 2.43,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-PRE-eppa-repair.log"
+    },
+    {
+      "name": "PRE-eppa",
+      "command": [
+        "python3",
+        "tools/verify_external_provider.py",
+        "--require-complete"
+      ],
+      "exit_code": 0,
+      "seconds": 2.23,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-PRE-eppa.log"
+    },
+    {
+      "name": "PRE-ramsey-repair",
+      "command": [
+        "python3",
+        "tools/verify_ramsey_provider.py",
+        "--repair"
+      ],
+      "exit_code": 0,
+      "seconds": 2.06,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-PRE-ramsey-repair.log"
+    },
+    {
+      "name": "PRE-ramsey",
+      "command": [
+        "python3",
+        "tools/verify_ramsey_provider.py",
+        "--require-complete"
+      ],
+      "exit_code": 0,
+      "seconds": 2.04,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-PRE-ramsey.log"
+    },
+    {
+      "name": "PRE-project",
+      "command": [
+        "python3",
+        "tools/verify_project_cache.py",
+        "--repair"
+      ],
+      "exit_code": 0,
+      "seconds": 2.27,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-PRE-project.log"
+    },
+    {
+      "name": "whole-build",
+      "command": [
+        "lake",
+        "--rehash",
+        "build"
+      ],
+      "exit_code": 0,
+      "seconds": 433.48,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-whole-build.log"
+    },
+    {
+      "name": "POST-project",
+      "command": [
+        "python3",
+        "tools/verify_project_cache.py",
+        "--require-complete"
+      ],
+      "exit_code": 0,
+      "seconds": 2.71,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-POST-project.log"
+    },
+    {
+      "name": "POST-eppa",
+      "command": [
+        "python3",
+        "tools/verify_external_provider.py",
+        "--require-complete"
+      ],
+      "exit_code": 0,
+      "seconds": 2.27,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-POST-eppa.log"
+    },
+    {
+      "name": "POST-ramsey",
+      "command": [
+        "python3",
+        "tools/verify_ramsey_provider.py",
+        "--require-complete"
+      ],
+      "exit_code": 0,
+      "seconds": 2.24,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-POST-ramsey.log"
+    },
+    {
+      "name": "standard-three-audit",
+      "command": [
+        "lake",
+        "env",
+        "/workspace/scratch/6b2f11185e14/runtime/axiom-audit/.lake/build/bin/axiom-audit",
+        "--root",
+        "CCO",
+        "--allow",
+        "propext,Classical.choice,Quot.sound"
+      ],
+      "exit_code": 0,
+      "seconds": 5.31,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-standard-three-audit.log"
+    },
+    {
+      "name": "AUDIT-POST-project",
+      "command": [
+        "python3",
+        "tools/verify_project_cache.py",
+        "--require-complete"
+      ],
+      "exit_code": 0,
+      "seconds": 2.55,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-AUDIT-POST-project.log"
+    },
+    {
+      "name": "AUDIT-POST-eppa",
+      "command": [
+        "python3",
+        "tools/verify_external_provider.py",
+        "--require-complete"
+      ],
+      "exit_code": 0,
+      "seconds": 2.18,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-AUDIT-POST-eppa.log"
+    },
+    {
+      "name": "AUDIT-POST-ramsey",
+      "command": [
+        "python3",
+        "tools/verify_ramsey_provider.py",
+        "--require-complete"
+      ],
+      "exit_code": 0,
+      "seconds": 2.14,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-AUDIT-POST-ramsey.log"
+    },
+    {
+      "name": "tests",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tools",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0,
+      "seconds": 4.55,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-tests.log"
+    },
+    {
+      "name": "module-raw_exact",
+      "command": [
+        "python3",
+        "tools/build_formalization_module.py",
+        "--check",
+        "--module",
+        "raw_exact"
+      ],
+      "exit_code": 0,
+      "seconds": 0.04,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-module-raw_exact.log"
+    },
+    {
+      "name": "module-strong_selectors",
+      "command": [
+        "python3",
+        "tools/build_formalization_module.py",
+        "--check",
+        "--module",
+        "strong_selectors"
+      ],
+      "exit_code": 0,
+      "seconds": 0.04,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-module-strong_selectors.log"
+    },
+    {
+      "name": "module-parity_hasse",
+      "command": [
+        "python3",
+        "tools/build_formalization_module.py",
+        "--check",
+        "--module",
+        "parity_hasse"
+      ],
+      "exit_code": 0,
+      "seconds": 0.05,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-module-parity_hasse.log"
+    },
+    {
+      "name": "module-exact_crt",
+      "command": [
+        "python3",
+        "tools/build_formalization_module.py",
+        "--check",
+        "--module",
+        "exact_crt"
+      ],
+      "exit_code": 0,
+      "seconds": 0.04,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-module-exact_crt.log"
+    },
+    {
+      "name": "module-canonical_hull",
+      "command": [
+        "python3",
+        "tools/build_formalization_module.py",
+        "--check",
+        "--module",
+        "canonical_hull"
+      ],
+      "exit_code": 0,
+      "seconds": 0.05,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-module-canonical_hull.log"
+    },
+    {
+      "name": "module-real_closure",
+      "command": [
+        "python3",
+        "tools/build_formalization_module.py",
+        "--check",
+        "--module",
+        "real_closure"
+      ],
+      "exit_code": 0,
+      "seconds": 0.04,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-module-real_closure.log"
+    },
+    {
+      "name": "module-finite_packets",
+      "command": [
+        "python3",
+        "tools/build_formalization_module.py",
+        "--check",
+        "--module",
+        "finite_packets"
+      ],
+      "exit_code": 0,
+      "seconds": 0.04,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-module-finite_packets.log"
+    },
+    {
+      "name": "module-rigid_groupoid",
+      "command": [
+        "python3",
+        "tools/build_formalization_module.py",
+        "--check",
+        "--module",
+        "rigid_groupoid"
+      ],
+      "exit_code": 0,
+      "seconds": 0.04,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-module-rigid_groupoid.log"
+    },
+    {
+      "name": "module-finite_kernel",
+      "command": [
+        "python3",
+        "tools/build_formalization_module.py",
+        "--check",
+        "--module",
+        "finite_kernel"
+      ],
+      "exit_code": 0,
+      "seconds": 0.04,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-module-finite_kernel.log"
+    },
+    {
+      "name": "module-owner_action",
+      "command": [
+        "python3",
+        "tools/build_formalization_module.py",
+        "--check",
+        "--module",
+        "owner_action"
+      ],
+      "exit_code": 0,
+      "seconds": 0.04,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-module-owner_action.log"
+    },
+    {
+      "name": "module-sir",
+      "command": [
+        "python3",
+        "tools/build_formalization_module.py",
+        "--check",
+        "--module",
+        "sir"
+      ],
+      "exit_code": 0,
+      "seconds": 0.05,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-module-sir.log"
+    },
+    {
+      "name": "module-owner_master",
+      "command": [
+        "python3",
+        "tools/build_formalization_module.py",
+        "--check",
+        "--module",
+        "owner_master"
+      ],
+      "exit_code": 0,
+      "seconds": 0.04,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-module-owner_master.log"
+    },
+    {
+      "name": "module-joint_owner",
+      "command": [
+        "python3",
+        "tools/build_formalization_module.py",
+        "--check",
+        "--module",
+        "joint_owner"
+      ],
+      "exit_code": 0,
+      "seconds": 0.04,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-module-joint_owner.log"
+    },
+    {
+      "name": "module-acl_owner_geometry",
+      "command": [
+        "python3",
+        "tools/build_formalization_module.py",
+        "--check",
+        "--module",
+        "acl_owner_geometry"
+      ],
+      "exit_code": 0,
+      "seconds": 0.04,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-module-acl_owner_geometry.log"
+    },
+    {
+      "name": "module-finite_lift",
+      "command": [
+        "python3",
+        "tools/build_formalization_module.py",
+        "--check",
+        "--module",
+        "finite_lift"
+      ],
+      "exit_code": 0,
+      "seconds": 0.04,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-module-finite_lift.log"
+    },
+    {
+      "name": "module-mi_geometry",
+      "command": [
+        "python3",
+        "tools/build_formalization_module.py",
+        "--check",
+        "--module",
+        "mi_geometry"
+      ],
+      "exit_code": 0,
+      "seconds": 0.04,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-module-mi_geometry.log"
+    },
+    {
+      "name": "module-owner_transversal",
+      "command": [
+        "python3",
+        "tools/build_formalization_module.py",
+        "--check",
+        "--module",
+        "owner_transversal"
+      ],
+      "exit_code": 0,
+      "seconds": 0.04,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-module-owner_transversal.log"
+    },
+    {
+      "name": "module-safe_readings",
+      "command": [
+        "python3",
+        "tools/build_formalization_module.py",
+        "--check",
+        "--module",
+        "safe_readings"
+      ],
+      "exit_code": 0,
+      "seconds": 0.04,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-module-safe_readings.log"
+    },
+    {
+      "name": "module-direct_owner_closure",
+      "command": [
+        "python3",
+        "tools/build_formalization_module.py",
+        "--check",
+        "--module",
+        "direct_owner_closure"
+      ],
+      "exit_code": 0,
+      "seconds": 0.04,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-module-direct_owner_closure.log"
+    },
+    {
+      "name": "module-hkn_reservoir",
+      "command": [
+        "python3",
+        "tools/build_formalization_module.py",
+        "--check",
+        "--module",
+        "hkn_reservoir"
+      ],
+      "exit_code": 0,
+      "seconds": 0.04,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-module-hkn_reservoir.log"
+    },
+    {
+      "name": "module-terminal_powers",
+      "command": [
+        "python3",
+        "tools/build_formalization_module.py",
+        "--check",
+        "--module",
+        "terminal_powers"
+      ],
+      "exit_code": 0,
+      "seconds": 0.05,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-module-terminal_powers.log"
+    },
+    {
+      "name": "module-full_rows",
+      "command": [
+        "python3",
+        "tools/build_formalization_module.py",
+        "--check",
+        "--module",
+        "full_rows"
+      ],
+      "exit_code": 0,
+      "seconds": 0.04,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-module-full_rows.log"
+    },
+    {
+      "name": "module-profile_helly",
+      "command": [
+        "python3",
+        "tools/build_formalization_module.py",
+        "--check",
+        "--module",
+        "profile_helly"
+      ],
+      "exit_code": 0,
+      "seconds": 0.04,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-module-profile_helly.log"
+    },
+    {
+      "name": "module-relative_mi",
+      "command": [
+        "python3",
+        "tools/build_formalization_module.py",
+        "--check",
+        "--module",
+        "relative_mi"
+      ],
+      "exit_code": 0,
+      "seconds": 0.05,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-module-relative_mi.log"
+    },
+    {
+      "name": "module-rank_induction",
+      "command": [
+        "python3",
+        "tools/build_formalization_module.py",
+        "--check",
+        "--module",
+        "rank_induction"
+      ],
+      "exit_code": 0,
+      "seconds": 0.04,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-module-rank_induction.log"
+    },
+    {
+      "name": "module-unary_support",
+      "command": [
+        "python3",
+        "tools/build_formalization_module.py",
+        "--check",
+        "--module",
+        "unary_support"
+      ],
+      "exit_code": 0,
+      "seconds": 0.04,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-module-unary_support.log"
+    },
+    {
+      "name": "module-full_code",
+      "command": [
+        "python3",
+        "tools/build_formalization_module.py",
+        "--check",
+        "--module",
+        "full_code"
+      ],
+      "exit_code": 0,
+      "seconds": 0.06,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-module-full_code.log"
+    },
+    {
+      "name": "module-reset_order",
+      "command": [
+        "python3",
+        "tools/build_formalization_module.py",
+        "--check",
+        "--module",
+        "reset_order"
+      ],
+      "exit_code": 0,
+      "seconds": 0.04,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-module-reset_order.log"
+    },
+    {
+      "name": "module-unary_hn",
+      "command": [
+        "python3",
+        "tools/build_formalization_module.py",
+        "--check",
+        "--module",
+        "unary_hn"
+      ],
+      "exit_code": 0,
+      "seconds": 0.04,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-module-unary_hn.log"
+    },
+    {
+      "name": "module-relational_completion",
+      "command": [
+        "python3",
+        "tools/build_formalization_module.py",
+        "--check",
+        "--module",
+        "relational_completion"
+      ],
+      "exit_code": 0,
+      "seconds": 0.04,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-module-relational_completion.log"
+    },
+    {
+      "name": "module-unary_fresh_frames",
+      "command": [
+        "python3",
+        "tools/build_formalization_module.py",
+        "--check",
+        "--module",
+        "unary_fresh_frames"
+      ],
+      "exit_code": 0,
+      "seconds": 0.04,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-module-unary_fresh_frames.log"
+    },
+    {
+      "name": "module-quotient_transport",
+      "command": [
+        "python3",
+        "tools/build_formalization_module.py",
+        "--check",
+        "--module",
+        "quotient_transport"
+      ],
+      "exit_code": 0,
+      "seconds": 0.04,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-module-quotient_transport.log"
+    },
+    {
+      "name": "module-simultaneous_quotients",
+      "command": [
+        "python3",
+        "tools/build_formalization_module.py",
+        "--check",
+        "--module",
+        "simultaneous_quotients"
+      ],
+      "exit_code": 0,
+      "seconds": 0.04,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-module-simultaneous_quotients.log"
+    },
+    {
+      "name": "module-finite_fibres",
+      "command": [
+        "python3",
+        "tools/build_formalization_module.py",
+        "--check",
+        "--module",
+        "finite_fibres"
+      ],
+      "exit_code": 0,
+      "seconds": 0.04,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-module-finite_fibres.log"
+    },
+    {
+      "name": "coordination-envelopes",
+      "command": [
+        "python3",
+        "tools/check_formalization_coordination.py",
+        "--check",
+        "--require-launch"
+      ],
+      "exit_code": 0,
+      "seconds": 0.05,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-coordination-envelopes.log"
+    },
+    {
+      "name": "control-check_acl_owner_controls",
+      "command": [
+        "python3",
+        "/workspace/scratch/6b2f11185e14/cco-b037/tools/check_acl_owner_controls.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.17,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-control-check_acl_owner_controls.log"
+    },
+    {
+      "name": "control-check_canonical_hull_controls",
+      "command": [
+        "python3",
+        "/workspace/scratch/6b2f11185e14/cco-b037/tools/check_canonical_hull_controls.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.18,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-control-check_canonical_hull_controls.log"
+    },
+    {
+      "name": "control-check_direct_owner_closure_controls",
+      "command": [
+        "python3",
+        "/workspace/scratch/6b2f11185e14/cco-b037/tools/check_direct_owner_closure_controls.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.11,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-control-check_direct_owner_closure_controls.log"
+    },
+    {
+      "name": "control-check_exact_crt_controls",
+      "command": [
+        "python3",
+        "/workspace/scratch/6b2f11185e14/cco-b037/tools/check_exact_crt_controls.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.05,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-control-check_exact_crt_controls.log"
+    },
+    {
+      "name": "control-check_finite_fibres_controls",
+      "command": [
+        "python3",
+        "/workspace/scratch/6b2f11185e14/cco-b037/tools/check_finite_fibres_controls.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.33,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-control-check_finite_fibres_controls.log"
+    },
+    {
+      "name": "control-check_finite_kernel_controls",
+      "command": [
+        "python3",
+        "/workspace/scratch/6b2f11185e14/cco-b037/tools/check_finite_kernel_controls.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.11,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-control-check_finite_kernel_controls.log"
+    },
+    {
+      "name": "control-check_finite_lift_controls",
+      "command": [
+        "python3",
+        "/workspace/scratch/6b2f11185e14/cco-b037/tools/check_finite_lift_controls.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.49,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-control-check_finite_lift_controls.log"
+    },
+    {
+      "name": "control-check_finite_packet_controls",
+      "command": [
+        "python3",
+        "/workspace/scratch/6b2f11185e14/cco-b037/tools/check_finite_packet_controls.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.4,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-control-check_finite_packet_controls.log"
+    },
+    {
+      "name": "control-check_full_code_controls",
+      "command": [
+        "python3",
+        "/workspace/scratch/6b2f11185e14/cco-b037/tools/check_full_code_controls.py"
+      ],
+      "exit_code": 0,
+      "seconds": 1.75,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-control-check_full_code_controls.log"
+    },
+    {
+      "name": "control-check_full_rows_controls",
+      "command": [
+        "python3",
+        "/workspace/scratch/6b2f11185e14/cco-b037/tools/check_full_rows_controls.py"
+      ],
+      "exit_code": 0,
+      "seconds": 3.72,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-control-check_full_rows_controls.log"
+    },
+    {
+      "name": "control-check_hkn_reservoir_controls",
+      "command": [
+        "python3",
+        "/workspace/scratch/6b2f11185e14/cco-b037/tools/check_hkn_reservoir_controls.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.2,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-control-check_hkn_reservoir_controls.log"
+    },
+    {
+      "name": "control-check_joint_owner_controls",
+      "command": [
+        "python3",
+        "/workspace/scratch/6b2f11185e14/cco-b037/tools/check_joint_owner_controls.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.1,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-control-check_joint_owner_controls.log"
+    },
+    {
+      "name": "control-check_mi_geometry_controls",
+      "command": [
+        "python3",
+        "/workspace/scratch/6b2f11185e14/cco-b037/tools/check_mi_geometry_controls.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.06,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-control-check_mi_geometry_controls.log"
+    },
+    {
+      "name": "control-check_owner_action_controls",
+      "command": [
+        "python3",
+        "/workspace/scratch/6b2f11185e14/cco-b037/tools/check_owner_action_controls.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.06,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-control-check_owner_action_controls.log"
+    },
+    {
+      "name": "control-check_owner_master_controls",
+      "command": [
+        "python3",
+        "/workspace/scratch/6b2f11185e14/cco-b037/tools/check_owner_master_controls.py"
+      ],
+      "exit_code": 0,
+      "seconds": 1.33,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-control-check_owner_master_controls.log"
+    },
+    {
+      "name": "control-check_owner_transversal_controls",
+      "command": [
+        "python3",
+        "/workspace/scratch/6b2f11185e14/cco-b037/tools/check_owner_transversal_controls.py"
+      ],
+      "exit_code": 0,
+      "seconds": 4.15,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-control-check_owner_transversal_controls.log"
+    },
+    {
+      "name": "control-check_parity_hasse_controls",
+      "command": [
+        "python3",
+        "/workspace/scratch/6b2f11185e14/cco-b037/tools/check_parity_hasse_controls.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.02,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-control-check_parity_hasse_controls.log"
+    },
+    {
+      "name": "control-check_profile_helly_controls",
+      "command": [
+        "python3",
+        "/workspace/scratch/6b2f11185e14/cco-b037/tools/check_profile_helly_controls.py"
+      ],
+      "exit_code": 0,
+      "seconds": 5.43,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-control-check_profile_helly_controls.log"
+    },
+    {
+      "name": "control-check_quotient_transport_controls",
+      "command": [
+        "python3",
+        "/workspace/scratch/6b2f11185e14/cco-b037/tools/check_quotient_transport_controls.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.41,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-control-check_quotient_transport_controls.log"
+    },
+    {
+      "name": "control-check_rank_induction_controls",
+      "command": [
+        "python3",
+        "/workspace/scratch/6b2f11185e14/cco-b037/tools/check_rank_induction_controls.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.77,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-control-check_rank_induction_controls.log"
+    },
+    {
+      "name": "control-check_raw_exact_controls",
+      "command": [
+        "python3",
+        "/workspace/scratch/6b2f11185e14/cco-b037/tools/check_raw_exact_controls.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.02,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-control-check_raw_exact_controls.log"
+    },
+    {
+      "name": "control-check_real_closure_controls",
+      "command": [
+        "python3",
+        "/workspace/scratch/6b2f11185e14/cco-b037/tools/check_real_closure_controls.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.66,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-control-check_real_closure_controls.log"
+    },
+    {
+      "name": "control-check_relational_completion_controls",
+      "command": [
+        "python3",
+        "/workspace/scratch/6b2f11185e14/cco-b037/tools/check_relational_completion_controls.py"
+      ],
+      "exit_code": 0,
+      "seconds": 1.4,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-control-check_relational_completion_controls.log"
+    },
+    {
+      "name": "control-check_relative_mi_controls",
+      "command": [
+        "python3",
+        "/workspace/scratch/6b2f11185e14/cco-b037/tools/check_relative_mi_controls.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.96,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-control-check_relative_mi_controls.log"
+    },
+    {
+      "name": "control-check_reset_order_controls",
+      "command": [
+        "python3",
+        "/workspace/scratch/6b2f11185e14/cco-b037/tools/check_reset_order_controls.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.38,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-control-check_reset_order_controls.log"
+    },
+    {
+      "name": "control-check_rigid_groupoid_controls",
+      "command": [
+        "python3",
+        "/workspace/scratch/6b2f11185e14/cco-b037/tools/check_rigid_groupoid_controls.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.31,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-control-check_rigid_groupoid_controls.log"
+    },
+    {
+      "name": "control-check_safe_readings_controls",
+      "command": [
+        "python3",
+        "/workspace/scratch/6b2f11185e14/cco-b037/tools/check_safe_readings_controls.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.66,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-control-check_safe_readings_controls.log"
+    },
+    {
+      "name": "control-check_simultaneous_quotients_controls",
+      "command": [
+        "python3",
+        "/workspace/scratch/6b2f11185e14/cco-b037/tools/check_simultaneous_quotients_controls.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.77,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-control-check_simultaneous_quotients_controls.log"
+    },
+    {
+      "name": "control-check_sir_controls",
+      "command": [
+        "python3",
+        "/workspace/scratch/6b2f11185e14/cco-b037/tools/check_sir_controls.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.31,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-control-check_sir_controls.log"
+    },
+    {
+      "name": "control-check_strong_selector_controls",
+      "command": [
+        "python3",
+        "/workspace/scratch/6b2f11185e14/cco-b037/tools/check_strong_selector_controls.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.65,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-control-check_strong_selector_controls.log"
+    },
+    {
+      "name": "control-check_terminal_power_controls",
+      "command": [
+        "python3",
+        "/workspace/scratch/6b2f11185e14/cco-b037/tools/check_terminal_power_controls.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.42,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-control-check_terminal_power_controls.log"
+    },
+    {
+      "name": "control-check_unary_fresh_frames_controls",
+      "command": [
+        "python3",
+        "/workspace/scratch/6b2f11185e14/cco-b037/tools/check_unary_fresh_frames_controls.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.24,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-control-check_unary_fresh_frames_controls.log"
+    },
+    {
+      "name": "control-check_unary_hn_controls",
+      "command": [
+        "python3",
+        "/workspace/scratch/6b2f11185e14/cco-b037/tools/check_unary_hn_controls.py"
+      ],
+      "exit_code": 0,
+      "seconds": 2.41,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-control-check_unary_hn_controls.log"
+    },
+    {
+      "name": "control-check_unary_support_controls",
+      "command": [
+        "python3",
+        "/workspace/scratch/6b2f11185e14/cco-b037/tools/check_unary_support_controls.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.61,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-control-check_unary_support_controls.log"
+    },
+    {
+      "name": "targeted-import-roots",
+      "command": [
+        "python3",
+        "tools/mathlib_cache_roots.py",
+        "--include-provider",
+        "--reject-broad"
+      ],
+      "exit_code": 0,
+      "seconds": 1.61,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-targeted-import-roots.log"
+    },
+    {
+      "name": "whitespace",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "seconds": 0.0,
+      "log": "/workspace/scratch/6b2f11185e14/runtime/round16-b037-whitespace.log"
+    }
+  ],
+  "complete": true
+}

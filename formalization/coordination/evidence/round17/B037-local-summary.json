@@ -1,0 +1,37 @@
+{
+  "local_head": "3bf5772b6b0c440497636a281f78fb00bc663e8f",
+  "tree": "55d88de95d552898ff5df42dc08c93f04315714e",
+  "mathematical_freeze": "3b1e12c7361e909f6c205a6ad172959e2c91b155",
+  "source_pin": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+  "complete": true,
+  "steps": 85,
+  "new_lean_modules": 54,
+  "new_lean_lines": 5437,
+  "owner_pipeline_seconds": 501.19,
+  "fallback": false,
+  "build_jobs": 3877,
+  "audited_declarations": 21523,
+  "tests": 130,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "module_checks": 34,
+  "control_scripts": 34,
+  "targeted_mathlib_roots": 191,
+  "project_guards": {
+    "POST-project": "Project cache consistent: 1229 olean part(s), 1229 current source module(s) checked.",
+    "AUDIT-POST-project": "Project cache consistent: 1229 olean part(s), 1229 current source module(s) checked."
+  },
+  "eppa_guards": {
+    "PRE-eppa": "External provider cache consistent: 269 olean part(s), 269 current source module(s) checked; exact pin cd358cde844d5419fd43f30c441511927e09142f.",
+    "POST-eppa": "External provider cache consistent: 269 olean part(s), 269 current source module(s) checked; exact pin cd358cde844d5419fd43f30c441511927e09142f.",
+    "AUDIT-POST-eppa": "External provider cache consistent: 269 olean part(s), 269 current source module(s) checked; exact pin cd358cde844d5419fd43f30c441511927e09142f."
+  },
+  "ramsey_guards": {
+    "PRE-ramsey": "Ramsey provider cache consistent: 106 olean part(s), 106 current source module(s) checked; exact subtree 374241ce3751715c90b12c0b071f36026819ad4a.",
+    "POST-ramsey": "Ramsey provider cache consistent: 106 olean part(s), 106 current source module(s) checked; exact subtree 374241ce3751715c90b12c0b071f36026819ad4a.",
+    "AUDIT-POST-ramsey": "Ramsey provider cache consistent: 106 olean part(s), 106 current source module(s) checked; exact subtree 374241ce3751715c90b12c0b071f36026819ad4a."
+  }
+}
