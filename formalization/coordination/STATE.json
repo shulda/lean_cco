@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 383,
+  "revision": 384,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -3574,7 +3574,7 @@
       }
     },
     "B047": {
-      "state": "SUBMITTED",
+      "state": "REVIEWING",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b047_pair_safe_split",
@@ -3876,7 +3876,19 @@
         ],
         "url": "https://github.com/shulda/lean_cco/actions/runs/41105647949"
       },
-      "report_path": "formalization/coordination/submissions/B047.md"
+      "report_path": "formalization/coordination/submissions/B047.md",
+      "review": {
+        "project_id": 3,
+        "actor_id": "independent_review",
+        "head_sha": "f702071ee44712f81f227329228a074a10e2d9d6",
+        "approved": false,
+        "independence": {
+          "identity": "/root/independent_review",
+          "non_author": true,
+          "summary": "The actual separate reviewer /root/independent_review authored and designed none of the complete B047 batch or its preparation. All six actual implementing identities and preserved prior histories were checked; the reviewer only read source, exact proof deltas, reports, public/native trees and validation evidence, and performed no implementation, compiler, test, audit or helper work.",
+          "report_path": "formalization/coordination/reviews/B047-final.md"
+        }
+      }
     },
     "B048": {
       "state": "AVAILABLE",
@@ -13241,6 +13253,24 @@
         },
         "report_path": "formalization/coordination/submissions/B047.md",
         "actor_id": "root"
+      }
+    },
+    {
+      "revision": 384,
+      "project_id": 3,
+      "actor_id": "independent_review",
+      "event": "review",
+      "package_id": "B047",
+      "details": {
+        "package_id": "B047",
+        "head_sha": "f702071ee44712f81f227329228a074a10e2d9d6",
+        "independence": {
+          "identity": "/root/independent_review",
+          "non_author": true,
+          "summary": "The actual separate reviewer /root/independent_review authored and designed none of the complete B047 batch or its preparation. All six actual implementing identities and preserved prior histories were checked; the reviewer only read source, exact proof deltas, reports, public/native trees and validation evidence, and performed no implementation, compiler, test, audit or helper work.",
+          "report_path": "formalization/coordination/reviews/B047-final.md"
+        },
+        "actor_id": "independent_review"
       }
     }
   ],
