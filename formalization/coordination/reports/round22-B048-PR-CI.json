@@ -1,0 +1,169 @@
+{
+  "run_id": 41124679389,
+  "run_attempt": 1,
+  "head_sha": "f5681b3dd29ec81bbe7f9c4a987d0dd37885a34d",
+  "conclusion": "success",
+  "axiom_audit": "allowlist",
+  "job_id": 124299979975,
+  "tests": 144,
+  "declarations": 28723,
+  "guards": [
+    {
+      "parts": 1619,
+      "source": 1619
+    },
+    {
+      "parts": 1619,
+      "source": 1619
+    }
+  ],
+  "provider_guards": [
+    {
+      "parts": 269,
+      "source": 269,
+      "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+    },
+    {
+      "parts": 269,
+      "source": 269,
+      "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+    },
+    {
+      "parts": 269,
+      "source": 269,
+      "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+    },
+    {
+      "parts": 269,
+      "source": 269,
+      "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+    }
+  ],
+  "ramsey_guards": [
+    {
+      "parts": 106,
+      "source": 106,
+      "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+    },
+    {
+      "parts": 106,
+      "source": 106,
+      "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+    },
+    {
+      "parts": 106,
+      "source": 106,
+      "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+    },
+    {
+      "parts": 106,
+      "source": 106,
+      "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+    }
+  ],
+  "build_jobs": [
+    1330,
+    1182,
+    4293,
+    4293,
+    6
+  ],
+  "fresh_cco_modules": [
+    "CCO.FullPhaseLift.BinarySource.FullAlignment",
+    "CCO.FullPhaseLift.Canonical.Signature",
+    "CCO.FullPhaseLift.BinarySource.SourceSpan",
+    "CCO.FullPhaseLift.BinarySource.TableHomogeneity",
+    "CCO.FullPhaseLift.Boundary.Hypergraph",
+    "CCO.FullPhaseLift.Boundary.OneColour",
+    "CCO.FullPhaseLift.Boundary.PurePair",
+    "CCO.FullPhaseLift.Full.SourceIso",
+    "CCO.FullPhaseLift.Detours.BinaryPath",
+    "CCO.FullPhaseLift.Tower.Invariant",
+    "CCO.FullPhaseLift.Detours.Fresh",
+    "CCO.FullPhaseLift.Detours.Cylinders",
+    "CCO.FullPhaseLift.Full.Partial",
+    "CCO.FullPhaseLift.BinarySource.SmallProfiles",
+    "CCO.FullPhaseLift.Canonical.FirstOrder",
+    "CCO.FullPhaseLift.BinarySource.FrozenDiagram",
+    "CCO.FullPhaseLift.BinarySource.FrozenExtension",
+    "CCO.FullPhaseLift.BinarySource.MarkedComparisonSupport",
+    "CCO.FullPhaseLift.Boundary.FreeUnion",
+    "CCO.FullPhaseLift.BinarySource.AtomicHomogeneity",
+    "CCO.FullPhaseLift.Full.Frozen",
+    "CCO.FullPhaseLift.Full.SourceTransport",
+    "CCO.FullPhaseLift.Canonical.Normalization",
+    "CCO.FullPhaseLift.Canonical.Homogeneity",
+    "CCO.FullPhaseLift.BinarySource.FullReductBackAndForth",
+    "CCO.FullPhaseLift.Boundary.FreeAmalgam",
+    "CCO.FullPhaseLift.Marked.Signature",
+    "CCO.FullPhaseLift.Detours.Support",
+    "CCO.FullPhaseLift.Full.ChosenPair",
+    "CCO.FullPhaseLift.Full.SourceSAP",
+    "CCO.FullPhaseLift.Canonical.Profiles",
+    "CCO.FullPhaseLift.Boundary.Class",
+    "CCO.FullPhaseLift.Tower.Reduct",
+    "CCO.FullPhaseLift.Equivariance.Chosen",
+    "CCO.FullPhaseLift.Marked.Class",
+    "CCO.FullPhaseLift.Full.Reindex",
+    "CCO.FullPhaseLift.Full.SourceInvariants",
+    "CCO.FullPhaseLift.Canonical.Source",
+    "CCO.FullPhaseLift.Boundary.Age",
+    "CCO.FullPhaseLift.Equivariance.Marked",
+    "CCO.FullPhaseLift.Tower.FiniteAgeReduct",
+    "CCO.FullPhaseLift.Marked.Hereditary",
+    "CCO.FullPhaseLift.Full.Shadow",
+    "CCO.FullPhaseLift.BinarySource.ChosenPairsByFactors",
+    "CCO.FullPhaseLift.Marked.Canonical",
+    "CCO.FullPhaseLift.BinarySource.CanonicalNames",
+    "CCO.FullPhaseLift.Canonical.Expansion",
+    "CCO.FullPhaseLift.Detours.Marking",
+    "CCO.FullPhaseLift.Full.ActualShadow",
+    "CCO.FullPhaseLift.Marked.PairAge",
+    "CCO.FullPhaseLift.Marked.PairSAP",
+    "CCO.FullPhaseLift.Full.DefinitionalReduct",
+    "CCO.FullPhaseLift.Canonical.NameFormulas",
+    "CCO.FullPhaseLift.Full.ExpansionHomogeneity",
+    "CCO.FullPhaseLift.Boundary.Profiles",
+    "CCO.FullPhaseLift.BinarySource.LowNames",
+    "CCO.FullPhaseLift.Canonical.UnaryExpansion",
+    "CCO.FullPhaseLift.BinarySource.PairContext",
+    "CCO.FullPhaseLift.BinarySource.MarkedComparisonSquare",
+    "CCO.FullPhaseLift.Marked.Fraisse",
+    "CCO.FullPhaseLift.Boundary.Counterexample",
+    "CCO.FullPhaseLift.Detours.Paths",
+    "CCO.FullPhaseLift.BinarySource.ActualExtension",
+    "CCO.FullPhaseLift.BinarySource.MarkedComparisonNames",
+    "CCO.FullPhaseLift.Full.CanonicalIso",
+    "CCO.FullPhaseLift.Canonical.FullOrbitals",
+    "CCO.FullPhaseLift.Full.ShadowNormalization",
+    "CCO.FullPhaseLift.BinarySource.FullReduct",
+    "CCO.FullPhaseLift.BinarySource.SpanFactors",
+    "CCO.FullPhaseLift.Detours.Gadgets",
+    "CCO.FullPhaseLift.BinarySource.ActualContext",
+    "CCO.FullPhaseLift.BinarySource.FullSAP",
+    "CCO.FullPhaseLift.Marked.SAP",
+    "CCO.FullPhaseLift.BinarySource.MarkedComparisonAge",
+    "CCO.FullPhaseLift.Full.Receiving",
+    "CCO.FullPhaseLift.BinarySource.CertifiedContext",
+    "CCO.FullPhaseLift.Detours.CanonicalGadgets",
+    "CCO.FullPhaseLift.Marked.Model",
+    "CCO.FullPhaseLift.Full.Separation",
+    "CCO.FullPhaseLift.BinarySource.MarkedComparisonTarget",
+    "CCO.FullPhaseLift.Detours.Export",
+    "CCO.FullPhaseLift.BinarySource.MarkedLimitSAP",
+    "CCO.FullPhaseLift.Marked.Inheritance",
+    "CCO.FullPhaseLift.BinarySource.MarkedComparisonPatterns",
+    "CCO.FullPhaseLift.Marked.OnOldCarrier",
+    "CCO.FullPhaseLift.Equivariance.Inheritance",
+    "CCO.FullPhaseLift.BinarySource.MarkedComparison",
+    "CCO.FullPhaseLift.Tower.Current",
+    "CCO.FullPhaseLift.BinarySource.MarkedComparisonSourceIso",
+    "CCO.FullPhaseLift.Tower.SingleStep",
+    "CCO.FullPhaseLift.Tower.Selected",
+    "CCO.FullPhaseLift.Tower.Readout",
+    "CCO.FullPhaseLift.Tower.Elimination",
+    "CCO.FullPhaseLift.Full.OptionalHistory",
+    "CCO.FullPhaseLift.Source"
+  ],
+  "url": "https://github.com/shulda/lean_cco/actions/runs/41124679389"
+}
