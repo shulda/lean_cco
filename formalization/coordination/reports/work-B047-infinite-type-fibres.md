@@ -18,6 +18,19 @@ orbit by actual finite tuple homogeneity. `typeFibre_avoids`,
 `typeFibre_motion` and `typeFibre_infinite` retain off-base inequalities,
 pointwise parameters and all actual original sorts.
 
+`Definability.lean` supplies literal named first-order syntax as well.
+`formulaSet_invariant` applies actual first-order automorphism semantics
+to arbitrary-depth formulas with parameters indexed by the actual finite
+base. `finite_formulaSet_subset_base` therefore proves C22 for genuine
+first-order definable finite sets, not only a semantic surrogate.
+`typeFormula` is the explicit finite conjunction of the actual sort/self
+pair and every forward/reverse spoke atom. `typeFormula_realize` proves
+its exact semantics and `typeFormula_qf` proves it is quantifier-free.
+`tupleTypeFormula`, `tupleTypeFormula_realize` and `tupleTypeFormula_qf`
+give the requested Option(Fin n) parameter interface, with arbitrary
+repeated parameter values and n=0. Relabelling chooses existing real
+parameter representatives; no new parameter or assumption is introduced.
+
 For ANY actual colour-invariant equivalence strictly above equality,
 `class_has_other` and `equivalence_class_infinite` prove that every real
 class is nontrivial and infinite. `type_class_infinite` is the central
@@ -50,6 +63,8 @@ This helper does not claim that those assembly obligations are complete.
 
 Pinned local Lean 4.34.1, bundled Lake and unchanged manifest:
 `lake build CCO.PairSafeSplit.Infinity.OldWitnesses` passed 998 jobs.
+The final explicit formula consumer
+`lake build CCO.PairSafeSplit.Infinity.Definability` passed 1,089 jobs.
 Only scoped incremental consumers were built; no broad test/audit suite
 or reviewer compilation was run. Source, accepted APIs and pins remain
 unchanged. Worktree cco-b047-infinity has private build/provider outputs;
