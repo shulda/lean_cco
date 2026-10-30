@@ -49,4 +49,41 @@ theorem graph_bound_specified_bound {x y : V}
   rw [specifiedWalk_word] at hp
   rwa [PositiveWord.represented_toRawWord S]
 
+ theorem walkWord_append {x y z : V} (p : (graph D).Walk x y)
+    (r : (graph D).Walk y z) :
+    walkWord D (p.append r) = RawWord.append S (walkWord D p) (walkWord D r) := by
+  induction p with
+  | nil => rfl
+  | cons h p ih =>
+    change RawWord.atom _ (walkWord D (p.append r)) =
+      RawWord.atom _ (RawWord.append S (walkWord D p) (walkWord D r))
+    rw [ih]
+
+ theorem walkWord_reverse_relation {x y : V} (p : (graph D).Walk x y) :
+    RawWord.relation S (walkWord D p.reverse) =
+      TRel.converse (RawWord.relation S (walkWord D p)) := by
+  induction p with
+  | nil =>
+    funext a b
+    exact propext eq_comm
+  | @cons x z y h p ih =>
+    rw [SimpleGraph.Walk.reverse_cons,walkWord_append,RawWord.relation_append,ih]
+    have edgeReverse : edgeAtom D h.symm = S.conv (edgeAtom D h) :=
+      edgeAtom_unique D h.symm _ _ ((D.edge_reverse _ _ h.choose _).mp (edgeAtom_spec D h))
+    change TRel.comp (TRel.converse (RawWord.relation S (walkWord D p)))
+      (TRel.comp (S.atomRel (edgeAtom D h.symm)) (TRel.ident X _)) =
+      TRel.converse (TRel.comp (S.atomRel (edgeAtom D h)) (RawWord.relation S (walkWord D p)))
+    rw [TRel.comp_ident,edgeReverse,RawWord.atomRel_flip,TRel.converse_comp]
+
+/-- Reversing the ALL-simple-path output test retains the SAME actual real
+endpoint pair in reverse order, including literal identity outputs. -/
+theorem graph_bound_reverse {x y : V}
+    (a : X (D.vertexSort x)) (b : X (D.vertexSort y))
+    (bound : ∀ p : (graph D).Path x y, RawWord.relation S (walkWord D p.val) a b) :
+    ∀ p : (graph D).Path y x, RawWord.relation S (walkWord D p.val) b a := by
+  intro p
+  have h := bound ⟨p.val.reverse,p.property.reverse⟩
+  rw [walkWord_reverse_relation] at h
+  exact h
+
 end CCO.APCharacter.Completion

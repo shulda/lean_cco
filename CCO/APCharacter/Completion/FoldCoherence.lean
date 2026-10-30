@@ -62,6 +62,21 @@ theorem identity_incident_coherence (x y : V) (hxy : x ≠ y)
       _ = taggedColour S (f.image z) (f.image y) :=
         (tagged_some _ _ _ ((S.colour_swap _ _ b).mp hyzF)).symm
 
+/-- The selected equality output belongs to ALL actual simple endpoint
+profiles in BOTH orientations. This supplies the reversed fold-cycle case
+without adding an assumption to the original identity-folding contract. -/
+theorem identity_bounds_of_graph {x y : V}
+    (a : X (D.vertexSort x)) (b : X (D.vertexSort y)) (hn : S.colour a b = none)
+    (bound : ∀ p : (graph D).Path x y, RawWord.relation S (walkWord D p.val) a b) :
+    IdentityBound D x y ∧ IdentityBound D y x := by
+  constructor
+  · intro p
+    exact ⟨a,b,graph_bound_specified_bound D a b bound p,hn⟩
+  · intro p
+    have hn' : S.colour b a = none :=
+      (S.colour_none_iff b a).mpr ((S.colour_none_iff a b).mp hn).symm
+    exact ⟨b,a,graph_bound_specified_bound D b a (graph_bound_reverse D a b bound) p,hn'⟩
+
 /-- No specified old edge is collapsed by the literal two-point identity
 identification, because the selected old pair was missing. -/
 theorem identify_no_collapse (x y : V) (hxy : x ≠ y)
