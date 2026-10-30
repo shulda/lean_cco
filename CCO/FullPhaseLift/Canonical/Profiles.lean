@@ -116,4 +116,26 @@ def nullaryType {L : Signature} {V : Type v} (T : BoolTable L V) : Profile L 0 :
   funext j
   exact Fin.elim0 (a.2 j)
 
+theorem profile_eq_unary {L : Signature} {V : Type v} {W : Type w}
+    {A : BoolTable L V} {B : BoolTable L W} {k : ℕ} {p : Fin k → V} {q : Fin k → W}
+    (h : profile A p = profile B q) (i : Fin k) :
+    unaryProfile A (p i) = unaryProfile B (q i) := by
+  funext a
+  exact congrFun h ⟨a.1,fun _ => i⟩
+
+theorem profile_eq_pair {L : Signature} {V : Type v} {W : Type w}
+    {A : BoolTable L V} {B : BoolTable L W} {k : ℕ} {p : Fin k → V} {q : Fin k → W}
+    (h : profile A p = profile B q) (i j : Fin k) :
+    pairProfile A (p i) (p j) = pairProfile B (q i) (q j) := by
+  funext a
+  have hp : ![p i,p j] = p ∘ ![i,j] := by
+    funext t
+    fin_cases t <;> rfl
+  have hq : ![q i,q j] = q ∘ ![i,j] := by
+    funext t
+    fin_cases t <;> rfl
+  change A a.1 (![p i,p j] ∘ a.2) = B a.1 (![q i,q j] ∘ a.2)
+  rw [hp,hq]
+  exact congrFun h ⟨a.1,![i,j] ∘ a.2⟩
+
 end CCO.FullPhaseLift.Canonical
