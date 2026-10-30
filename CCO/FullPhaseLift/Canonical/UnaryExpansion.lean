@@ -8,6 +8,14 @@ No homogeneous prefix model or history callback is assumed. -/
 universe v w
 namespace CCO.FullPhaseLift.Canonical
 open APCharacter
+attribute [local instance] Classical.propDecidable
+
+/-- Untyped code of the actual optional pair name, independent of the
+particular realized typed palette on either carrier. -/
+noncomputable def pairNameCode {L : Signature} {V : Type v}
+    (T : BoolTable L V) (x y : V) :
+    Profile L 1 × Profile L 1 × Option (Profile L 2) :=
+  (unaryProfile T x,unaryProfile T y,if x = y then none else some (pairProfile T x y))
 
 def oldProfile {L : Signature} {k : ℕ} (p : Profile (Marked.addBit L) k) : Profile L k :=
   fun a => p ⟨a.1.succ,a.2⟩
@@ -71,6 +79,22 @@ theorem marked_pairProfile_eq_iff {L : Signature} {V : Type v} {W : Type w}
       pairProfile A x y = pairProfile B z t ∧ a x = b z ∧ a y = b t := by
   simpa only [pairProfile,Fin.forall_fin_two,Matrix.cons_val_zero,Matrix.cons_val_one] using
     marked_profile_eq_iff A B a b ![x,y] ![z,t]
+
+/-- Actual optional pair names after a bit expansion are exactly the old
+optional pair name and both endpoint bits, including identity colours. -/
+theorem marked_pairNameCode_eq_iff {L : Signature} {V : Type v} {W : Type w}
+    (A : BoolTable L V) (B : BoolTable L W) (a : V → Bit) (b : W → Bit)
+    (x y : V) (z t : W) :
+    pairNameCode (Marked.table A a) x y = pairNameCode (Marked.table B b) z t ↔
+      pairNameCode A x y = pairNameCode B z t ∧ a x = b z ∧ a y = b t := by
+  by_cases hxy : x = y <;> by_cases hzt : z = t <;>
+    simp [pairNameCode,hxy,hzt,marked_unaryProfile_eq_iff,marked_pairProfile_eq_iff,
+      and_assoc,and_left_comm,and_comm]
+
+theorem tagCode_pack_eq_pairNameCode {L : Signature} {V : Type v}
+    (T : BoolTable L V) (hsym : SameSortSymmetric T) (x y : V) :
+    tagCode T (taggedColour (source T hsym) (pack T x) (pack T y)) = pairNameCode T x y :=
+  tagCode_pack T hsym x y
 
 theorem sameSortSymmetric_of_iso {L : Signature} {V : Type v} {W : Type w}
     {A : BoolTable L V} {B : BoolTable L W} (e : Iso A B)
