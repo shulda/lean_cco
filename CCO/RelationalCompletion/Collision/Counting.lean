@@ -179,8 +179,116 @@ theorem collisionCount_split_singleton_lt (h : X → Y) (x y : X) (fresh : Y)
   refine collisionCount_split_lt h {x} (h x) fresh ?_ hfresh ?_ ?_
   · intro z hz
     have hz' : z = x := Set.mem_singleton_iff.mp hz
-    simpa [hz']
+    simp [hz']
   · exact ⟨x, Set.mem_singleton x⟩
   · exact ⟨y, he.symm, fun hy => hxy (Set.mem_singleton_iff.mp hy).symm⟩
+
+noncomputable def fibreFinset (h : X → Y) (old : Y) : Finset X :=
+  univ.filter (fun x => h x = old)
+
+@[simp] theorem mem_fibreFinset (h : X → Y) (old : Y) (x : X) :
+    x ∈ fibreFinset h old ↔ h x = old := by
+  simp [fibreFinset]
+
+theorem remainder_card (h : X → Y) (T : Set X) (old : Y)
+    (hT : T ⊆ {x | h x = old}) :
+    (remainder h T old).card = (fibreFinset h old).card - (partFinset T).card := by
+  classical
+  have hsub : partFinset T ⊆ fibreFinset h old := by
+    intro x hx
+    exact (mem_fibreFinset h old x).2 (hT ((mem_partFinset T x).mp hx))
+  have he : remainder h T old = fibreFinset h old \ partFinset T := by
+    ext x
+    simp
+  rw [he, card_sdiff_of_subset hsub]
+
+/-- C13 in the source notation: `r` is the old fibre size and `t` the moved size. -/
+theorem collisionCount_split_exact_sub (h : X → Y) (T : Set X) (old fresh : Y)
+    (hT : T ⊆ {x | h x = old}) (hfresh : fresh ∉ Set.range h) :
+    collisionCount (splitMap h T fresh) +
+      (partFinset T).card * ((fibreFinset h old).card - (partFinset T).card) =
+      collisionCount h := by
+  simpa only [remainder_card h T old hT] using
+    collisionCount_split_exact h T old fresh hT hfresh
+
+/-- The actual finite image; the target itself need not be finite. -/
+noncomputable def imageFinset (h : X → Y) : Finset Y := univ.image h
+
+@[simp] theorem mem_imageFinset (h : X → Y) (z : Y) :
+    z ∈ imageFinset h ↔ z ∈ Set.range h := by
+  simp [imageFinset]
+
+theorem imageFinset_split (h : X → Y) (T : Set X) (old fresh : Y)
+    (hT : T ⊆ {x | h x = old})
+    (hleft : T.Nonempty) (hright : ∃ x, h x = old ∧ x ∉ T) :
+    imageFinset (splitMap h T fresh) = insert fresh (imageFinset h) := by
+  classical
+  ext z
+  simp only [mem_insert, mem_imageFinset, Set.mem_range]
+  constructor
+  · rintro ⟨x, rfl⟩
+    by_cases hx : x ∈ T
+    · exact Or.inl (by simp [splitMap, hx])
+    · exact Or.inr ⟨x, by simp [splitMap, hx]⟩
+  · rintro (rfl | ⟨x, rfl⟩)
+    · obtain ⟨x, hx⟩ := hleft
+      exact ⟨x, by simp [splitMap, hx]⟩
+    · by_cases hx : x ∈ T
+      · obtain ⟨y, hy, hyT⟩ := hright
+        exact ⟨y, by simpa [splitMap, hyT] using hy.trans (hT hx).symm⟩
+      · exact ⟨x, by simp [splitMap, hx]⟩
+
+/-- Equivalently, precisely one new target image is added by a proper split. -/
+theorem imageFinset_split_card (h : X → Y) (T : Set X) (old fresh : Y)
+    (hT : T ⊆ {x | h x = old}) (hfresh : fresh ∉ Set.range h)
+    (hleft : T.Nonempty) (hright : ∃ x, h x = old ∧ x ∉ T) :
+    (imageFinset (splitMap h T fresh)).card = (imageFinset h).card + 1 := by
+  rw [imageFinset_split h T old fresh hT hleft hright,
+    card_insert_of_notMem ((mem_imageFinset h fresh).not.mpr hfresh)]
+
+/-- Unordered collisions contributed by a single actual fibre. -/
+noncomputable def fibreCollisionPairs (h : X → Y) (old : Y) : Finset (Sym2 X) :=
+  (fibreFinset h old).offDiag.image Sym2.mk.uncurry
+
+theorem card_fibreCollisionPairs (h : X → Y) (old : Y) :
+    (fibreCollisionPairs h old).card = ((fibreFinset h old).card).choose 2 := by
+  exact Sym2.card_image_offDiag _
+
+theorem fibreFinset_split_fresh (h : X → Y) (T : Set X) (fresh : Y)
+    (hfresh : fresh ∉ Set.range h) :
+    fibreFinset (splitMap h T fresh) fresh = partFinset T := by
+  ext x
+  have hn : h x ≠ fresh := fun he => hfresh ⟨x, he⟩
+  simp [splitMap, hn]
+
+theorem fibreFinset_split_old (h : X → Y) (T : Set X) (old fresh : Y)
+    (hfresh : fresh ∉ Set.range h) (hright : ∃ x, h x = old ∧ x ∉ T) :
+    fibreFinset (splitMap h T fresh) old = remainder h T old := by
+  obtain ⟨y, hy, _⟩ := hright
+  have hne : fresh ≠ old := fun he => hfresh ⟨y, hy.trans he.symm⟩
+  ext x
+  by_cases hx : x ∈ T <;> simp [splitMap, hx, hne]
+
+theorem fibreFinset_split_other (h : X → Y) (T : Set X) (old fresh z : Y)
+    (hT : T ⊆ {x | h x = old}) (hzo : z ≠ old) (hzf : z ≠ fresh) :
+    fibreFinset (splitMap h T fresh) z = fibreFinset h z := by
+  ext x
+  by_cases hx : x ∈ T
+  · have he : h x = old := hT hx
+    simp [splitMap, hx, he, Ne.symm hzo, Ne.symm hzf]
+  · simp [splitMap, hx]
+
+/-- The two replacement fibres have exactly the source's two binomial counts. -/
+theorem split_fibre_collision_counts (h : X → Y) (T : Set X) (old fresh : Y)
+    (hT : T ⊆ {x | h x = old}) (hfresh : fresh ∉ Set.range h)
+    (hright : ∃ x, h x = old ∧ x ∉ T) :
+    (fibreCollisionPairs (splitMap h T fresh) fresh).card =
+        ((partFinset T).card).choose 2 ∧
+      (fibreCollisionPairs (splitMap h T fresh) old).card =
+        ((fibreFinset h old).card - (partFinset T).card).choose 2 := by
+  rw [card_fibreCollisionPairs, card_fibreCollisionPairs,
+    fibreFinset_split_fresh h T fresh hfresh,
+    fibreFinset_split_old h T old fresh hfresh hright, remainder_card h T old hT]
+  exact ⟨rfl, rfl⟩
 
 end CCO.RelationalCompletion.Collision
