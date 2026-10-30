@@ -1,0 +1,77 @@
+{
+  "run_id": 41069717134,
+  "run_attempt": 1,
+  "head_sha": "e77b672fd17704e92d39786cbb8818adb36a9fcb",
+  "conclusion": "success",
+  "axiom_audit": "allowlist",
+  "job_id": 124110307246,
+  "tests": 130,
+  "declarations": 24563,
+  "guards": [
+    {
+      "parts": 1369,
+      "source": 1369
+    },
+    {
+      "parts": 1369,
+      "source": 1369
+    },
+    {
+      "parts": 1369,
+      "source": 1369
+    }
+  ],
+  "provider_guards": [
+    {
+      "parts": 269,
+      "source": 269,
+      "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+    },
+    {
+      "parts": 269,
+      "source": 269,
+      "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+    },
+    {
+      "parts": 269,
+      "source": 269,
+      "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+    },
+    {
+      "parts": 269,
+      "source": 269,
+      "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+    }
+  ],
+  "ramsey_guards": [
+    {
+      "parts": 106,
+      "source": 106,
+      "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+    },
+    {
+      "parts": 106,
+      "source": 106,
+      "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+    },
+    {
+      "parts": 106,
+      "source": 106,
+      "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+    },
+    {
+      "parts": 106,
+      "source": 106,
+      "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+    }
+  ],
+  "build_jobs": [
+    1330,
+    1182,
+    4034,
+    4034,
+    6
+  ],
+  "fresh_cco_modules": [],
+  "url": "https://github.com/shulda/lean_cco/actions/runs/41069717134"
+}
