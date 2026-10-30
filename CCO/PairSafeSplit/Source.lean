@@ -37,5 +37,34 @@ theorem safe_exact_split (A : Terminal.CurrentSource.{u,v,w,t}) (h : A.Obstructi
   exact ⟨i,K,P,Strong.actual_phase_sufficiency P A.base.cco
     (SingleStep.identification A.base P) A.sap,hs,hd,ho⟩
 
+/-- The source-facing selected form retains the ORIGINAL parity layer and
+the concrete chosen maximal gate through the SAME successor identification.
+Every original even pair has equal bits and every original odd pair has
+opposite bits; the latter includes the literal positive odd-word relation. -/
+theorem selected_safe_exact_split (A : Terminal.CurrentSource.{u,v,w,t})
+    (h : A.Obstruction) :
+    ∃ B : Terminal.CurrentSource.{u,v,w,t}, ∃ s : Terminal.SelectedStep A B,
+      Strong.ActualPhaseSufficiency s.phase A.base.cco
+        (SingleStep.identification A.base s.phase) ∧
+      (∀ x y : A.base.Point s.sort,
+        ParityHasse.Original.evenColourEq A.base.source A.base.homogeneous s.atom x y →
+        Terminal.Readout.marking A.base s.phase ⟨s.sort,y⟩ =
+          Terminal.Readout.marking A.base s.phase ⟨s.sort,x⟩) ∧
+      (∀ x y : A.base.Point s.sort,
+        ParityHasse.Relative.odd
+          (ParityHasse.Original.evenColourEq A.base.source A.base.homogeneous s.atom).val
+          (ParityHasse.Original.connectivityColourEq A.base.source A.base.homogeneous s.atom).val
+          x y →
+        Terminal.Readout.marking A.base s.phase ⟨s.sort,y⟩ =
+          Terminal.Readout.marking A.base s.phase ⟨s.sort,x⟩ + 1) ∧
+      (∀ x y : A.base.Point s.sort, ParityHasse.Original.OddWalk
+        (A.base.source.atomRel s.atom) x y →
+        Terminal.Readout.marking A.base s.phase ⟨s.sort,y⟩ =
+          Terminal.Readout.marking A.base s.phase ⟨s.sort,x⟩ + 1) := by
+  obtain ⟨B,⟨s⟩⟩ := Terminal.selected_safe_exact_split A h
+  exact ⟨B,s,Strong.actual_phase_sufficiency s.phase A.base.cco
+    (SingleStep.identification A.base s.phase) A.sap,
+    s.original_even,s.original_odd,s.original_odd_walk⟩
+
 end
 end CCO.PairSafeSplit
