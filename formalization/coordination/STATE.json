@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 389,
+  "revision": 390,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -4120,7 +4120,141 @@
       }
     }
   },
-  "integration_lock": null,
+  "integration_lock": {
+    "kind": "infrastructure",
+    "actor_id": "root",
+    "head_sha": "c6b57d0e31e42cf5ce136cbf95cd4d0935cd82d9",
+    "base_main_sha": "787dd3b59e0405223a9b5870d562d2861c9f33d4",
+    "pr_number": 63,
+    "review": {
+      "actor_id": "reviewer_recovery_control",
+      "head_sha": "c6b57d0e31e42cf5ce136cbf95cd4d0935cd82d9",
+      "approved": true,
+      "summary": "Fresh non-author /root/reviewer_recovery_control personally reviewed all ten changed files, all fourteen new test bodies, actual STATE389, exact public-tree and ordered synthetic-checkout binding, and complete successful CI41123112887/job124294540633 logs. The append-only recovery preserves source, catalogue, all claims/authors/accepted records, strict validation, one integration lock and exact PR/main CI. No source/policy finding; approval is specific to this infrastructure head and actual prospective lock.",
+      "independence": {
+        "identity": "/root/reviewer_recovery_control",
+        "non_author": true,
+        "summary": "I am the actual fresh read-only infrastructure reader /root/reviewer_recovery_control. I authored and designed none of this recovery or B048, supplied no implementation advice and performed no tests, Lean builds or audits. Both newly registered readers are distinct from all recovery authors and all six actual B048 contributors; old identities and their history are preserved.",
+        "report_path": "formalization/coordination/reviews/reviewer-runtime-recovery.md"
+      }
+    },
+    "ci": {
+      "run_id": 41123112887,
+      "run_attempt": 1,
+      "head_sha": "c6b57d0e31e42cf5ce136cbf95cd4d0935cd82d9",
+      "conclusion": "success",
+      "axiom_audit": "allowlist",
+      "job_id": 124294540633,
+      "tests": 144,
+      "declarations": 27280,
+      "guards": [
+        {
+          "parts": 1524,
+          "source": 1524
+        },
+        {
+          "parts": 1524,
+          "source": 1524
+        },
+        {
+          "parts": 1524,
+          "source": 1524
+        }
+      ],
+      "provider_guards": [
+        {
+          "parts": 269,
+          "source": 269,
+          "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+        },
+        {
+          "parts": 269,
+          "source": 269,
+          "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+        },
+        {
+          "parts": 269,
+          "source": 269,
+          "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+        },
+        {
+          "parts": 269,
+          "source": 269,
+          "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+        }
+      ],
+      "ramsey_guards": [
+        {
+          "parts": 106,
+          "source": 106,
+          "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+        },
+        {
+          "parts": 106,
+          "source": 106,
+          "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+        },
+        {
+          "parts": 106,
+          "source": 106,
+          "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+        },
+        {
+          "parts": 106,
+          "source": 106,
+          "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+        }
+      ],
+      "build_jobs": [
+        1330,
+        1182,
+        4198,
+        4198,
+        6
+      ],
+      "fresh_cco_modules": [],
+      "url": "https://github.com/shulda/lean_cco/actions/runs/41123112887"
+    },
+    "author_actor_ids": [
+      "root",
+      "/root/reviewer_recovery_protocol"
+    ],
+    "original_author_project_ids": [
+      3
+    ],
+    "reviewer_recovery": {
+      "unavailable_actor_id": "independent_review",
+      "bootstrap_actor_id": "reviewer_recovery_control",
+      "new_actors": {
+        "independent_review_recovery": {
+          "identity": "/root/independent_review_recovery",
+          "roles": [
+            "review",
+            "integrate"
+          ],
+          "historical_author_projects": []
+        },
+        "reviewer_recovery_control": {
+          "identity": "/root/reviewer_recovery_control",
+          "roles": [
+            "review",
+            "integrate"
+          ],
+          "historical_author_projects": []
+        }
+      },
+      "previous_registry_sha256": "661173fcaa2fcbda1a54f7c8bf484d9b6ce480b8b1b65b4887c0c1942d7bfa8f",
+      "previous_policy_sha256": "b4ee24a10b621f5ce224f218de25bd1f04a8347b2f1e4f6fd6e798b6ddd8282e",
+      "registry_sha256": "661173fcaa2fcbda1a54f7c8bf484d9b6ce480b8b1b65b4887c0c1942d7bfa8f",
+      "policy_sha256": "83860e56213ee023c1fd7df3b5a8194a36342ebffb2b7542c03497f35e986be6"
+    },
+    "unavailable_reviewer": {
+      "actor_id": "independent_review",
+      "identity": "/root/independent_review",
+      "reason": "The existing actual review agent repeatedly failed with the unsupported gpt-6.1-sol-wm runtime error; an unchanged-identity retry failed identically and reusing the task path was rejected. No B048 approval exists from that agent.",
+      "report_path": "formalization/coordination/reports/reviewer-runtime-recovery.md"
+    }
+  },
   "history": [
     {
       "revision": 1,
@@ -13854,6 +13988,148 @@
           "/root/b047_terminal",
           "/root/b047_strong_phase"
         ],
+        "actor_id": "root"
+      }
+    },
+    {
+      "revision": 390,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "start_infrastructure",
+      "package_id": null,
+      "details": {
+        "pr_number": 63,
+        "head_sha": "c6b57d0e31e42cf5ce136cbf95cd4d0935cd82d9",
+        "base_main_sha": "787dd3b59e0405223a9b5870d562d2861c9f33d4",
+        "head_contains_main": true,
+        "ci": {
+          "run_id": 41123112887,
+          "run_attempt": 1,
+          "head_sha": "c6b57d0e31e42cf5ce136cbf95cd4d0935cd82d9",
+          "conclusion": "success",
+          "axiom_audit": "allowlist",
+          "job_id": 124294540633,
+          "tests": 144,
+          "declarations": 27280,
+          "guards": [
+            {
+              "parts": 1524,
+              "source": 1524
+            },
+            {
+              "parts": 1524,
+              "source": 1524
+            },
+            {
+              "parts": 1524,
+              "source": 1524
+            }
+          ],
+          "provider_guards": [
+            {
+              "parts": 269,
+              "source": 269,
+              "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+            },
+            {
+              "parts": 269,
+              "source": 269,
+              "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+            },
+            {
+              "parts": 269,
+              "source": 269,
+              "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+            },
+            {
+              "parts": 269,
+              "source": 269,
+              "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+            }
+          ],
+          "ramsey_guards": [
+            {
+              "parts": 106,
+              "source": 106,
+              "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+            },
+            {
+              "parts": 106,
+              "source": 106,
+              "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+            },
+            {
+              "parts": 106,
+              "source": 106,
+              "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+            },
+            {
+              "parts": 106,
+              "source": 106,
+              "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+            }
+          ],
+          "build_jobs": [
+            1330,
+            1182,
+            4198,
+            4198,
+            6
+          ],
+          "fresh_cco_modules": [],
+          "url": "https://github.com/shulda/lean_cco/actions/runs/41123112887"
+        },
+        "author_actor_ids": [
+          "root",
+          "/root/reviewer_recovery_protocol"
+        ],
+        "original_author_project_ids": [
+          3
+        ],
+        "reviewer_recovery": {
+          "unavailable_actor_id": "independent_review",
+          "bootstrap_actor_id": "reviewer_recovery_control",
+          "new_actors": {
+            "independent_review_recovery": {
+              "identity": "/root/independent_review_recovery",
+              "roles": [
+                "review",
+                "integrate"
+              ],
+              "historical_author_projects": []
+            },
+            "reviewer_recovery_control": {
+              "identity": "/root/reviewer_recovery_control",
+              "roles": [
+                "review",
+                "integrate"
+              ],
+              "historical_author_projects": []
+            }
+          },
+          "previous_registry_sha256": "661173fcaa2fcbda1a54f7c8bf484d9b6ce480b8b1b65b4887c0c1942d7bfa8f",
+          "previous_policy_sha256": "b4ee24a10b621f5ce224f218de25bd1f04a8347b2f1e4f6fd6e798b6ddd8282e",
+          "registry_sha256": "661173fcaa2fcbda1a54f7c8bf484d9b6ce480b8b1b65b4887c0c1942d7bfa8f",
+          "policy_sha256": "83860e56213ee023c1fd7df3b5a8194a36342ebffb2b7542c03497f35e986be6"
+        },
+        "unavailable_reviewer": {
+          "actor_id": "independent_review",
+          "identity": "/root/independent_review",
+          "reason": "The existing actual review agent repeatedly failed with the unsupported gpt-6.1-sol-wm runtime error; an unchanged-identity retry failed identically and reusing the task path was rejected. No B048 approval exists from that agent.",
+          "report_path": "formalization/coordination/reports/reviewer-runtime-recovery.md"
+        },
+        "review": {
+          "actor_id": "reviewer_recovery_control",
+          "head_sha": "c6b57d0e31e42cf5ce136cbf95cd4d0935cd82d9",
+          "approved": true,
+          "summary": "Fresh non-author /root/reviewer_recovery_control personally reviewed all ten changed files, all fourteen new test bodies, actual STATE389, exact public-tree and ordered synthetic-checkout binding, and complete successful CI41123112887/job124294540633 logs. The append-only recovery preserves source, catalogue, all claims/authors/accepted records, strict validation, one integration lock and exact PR/main CI. No source/policy finding; approval is specific to this infrastructure head and actual prospective lock.",
+          "independence": {
+            "identity": "/root/reviewer_recovery_control",
+            "non_author": true,
+            "summary": "I am the actual fresh read-only infrastructure reader /root/reviewer_recovery_control. I authored and designed none of this recovery or B048, supplied no implementation advice and performed no tests, Lean builds or audits. Both newly registered readers are distinct from all recovery authors and all six actual B048 contributors; old identities and their history are preserved.",
+            "report_path": "formalization/coordination/reviews/reviewer-runtime-recovery.md"
+          }
+        },
         "actor_id": "root"
       }
     }
