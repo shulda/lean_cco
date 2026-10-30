@@ -132,6 +132,13 @@ def pullPushHom [Finite W] (compatible : PushCompatible D f q sort typed)
       (g.point (q a)) (g.point (q b)) hh
     exact hOrig.symm.trans (f.preserves_edge a b hab c hc)
 
+theorem pullPushHom_image [Finite W] (compatible : PushCompatible D f q sort typed)
+    (noCollapse : ∀ a b, (graph D).Adj a b → q a ≠ q b)
+    (g : DiagramHom (pushDiagram D f q sort typed compatible)) (a : V) :
+    (pullPushHom D f q sort typed compatible noCollapse g).image a =
+      ⟨sort (q a),g.point (q a)⟩ :=
+  sigma_cast (typed a).symm (g.point (q a))
+
 /-- Lift compatibility can be checked entirely on literal OLD tagged pair
 colours, before any quotient realization is constructed. -/
 def EdgeCoherent : Prop := ∀ a b a' b',
