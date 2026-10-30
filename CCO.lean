@@ -1223,3 +1223,13 @@ import CCO.UnaryFreshFrames.SAPFresh
 import CCO.UnaryFreshFrames.Scope
 import CCO.UnaryFreshFrames.Source
 import CCO.UnaryFreshFrames.UniformBounds
+import CCO.UnaryFreshFrames.Examples.MatchingBoundary
+import CCO.UnaryFreshFrames.Examples.MatchingIndex
+import CCO.UnaryFreshFrames.Examples.MatchingOriginal
+import CCO.UnaryFreshFrames.Examples.TwoCover
+import CCO.UnaryFreshFrames.Examples.TwoCoverAut
+import CCO.UnaryFreshFrames.Examples.TwoCoverBoundary
+import CCO.UnaryFreshFrames.Examples.TwoCoverHomogeneity
+import CCO.UnaryFreshFrames.Examples.TwoCoverKernels
+import CCO.UnaryFreshFrames.Examples.TwoCoverOrbits
+import CCO.UnaryFreshFrames.Examples.TwoCoverOriginal
