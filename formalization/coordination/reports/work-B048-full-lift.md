@@ -123,3 +123,51 @@ No new axioms, `sorry`, contract changes, source-pin changes, remote writes
 or whole-project build occurred in this scoped checkpoint. Final source
 assembly, a single coherent owner root build, exact-head CI/axiom audit
 and nonauthor approval remain required before batch acceptance.
+
+## Actual source-isomorphism transport (C26–C29 assembly support)
+
+`Full.SourceIso` is authored by the independent canonical implementer and
+its native history is preserved. `of_pattern` reconstructs the sort
+bijection, every fibre bijection and every realized atom bijection from
+ONE actual whole-point equivalence preserving/reflection equality of all
+tagged optional colours. Its reconstructed whole map is proved literally
+equal to that supplied equivalence. `symm`, `trans` and `compose` retain
+the exact inverse/composite whole maps.
+
+Owner modules supply the actual transport:
+
+* `SourceTransport.mapDiagram` renames only the already specified atomic
+  edges, on the SAME finite formal carrier. `semanticCCO` retains every
+  actual simple cycle and both pointwise edge directions. `potential_eq`
+  uses the actual sort and atom bijections to preserve the sum of powers
+  of three of the WHOLE occurring self-palettes.
+* `SourceSAP.ageSAP` maps finite induced subsets and both full induced
+  embeddings through that same whole bijection, applies actual source SAP,
+  and pulls the amalgam back. The common-root equations and the absence of
+  every off-root identification are proved on the actual maps.
+* `SourceInvariants.colourOrderIso` transports ALL colour-invariant
+  setoids, not only exact equivalences. `relativeClassEquiv` is a genuine
+  quotient equivalence of the actual relative class sets;
+  `relativeIndex_eq` and `finite_relativeClass_iff` preserve their indices
+  and finiteness. Both terminal covers and ALL proper relative intervals
+  remain infinite after re-naming.
+* `CanonicalIso.canonicalSourceIso` derives an actual pair-source iso from
+  a GENUINE full-language `Canonical.Iso`. All old relation tuples are
+  already retained by the full iso; no binary iso is used to transport a
+  higher relation. Its whole map is exactly the two canonical pack maps
+  composed with that full iso's underlying point equivalence.
+
+These are helper theorems applied to the actual model comparison, not
+source hypotheses or future-prefix provider callbacks. Terminal constructs
+the full marked Fraisse model and its full old-reduct iso, tuple constructs
+the actual marked binary comparison, and the full prefix assembly then
+instantiates these proved helpers on that concrete comparison.
+
+Narrow validation: SourceIso's basic data and of_pattern/trans/symm 749
+jobs; SourceTransport 993; SourceSAP 994; SourceInvariants 995 (also in a
+1357-job mixed affected consumer); CanonicalIso 1351. The actual full
+marked inheritance/model and genuine same-old-carrier construction are
+separate preserved terminal contributions; full marked model SAP and
+all full-automorphism orbital readout are separately preserved author
+contributions. Final source assembly still must instantiate the concrete
+prefix and finite history before any completion claim.
