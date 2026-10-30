@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 376,
+  "revision": 377,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -2842,7 +2842,7 @@
       }
     },
     "B045": {
-      "state": "REVIEWING",
+      "state": "INTEGRATING",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b045_clone_sap",
@@ -3481,7 +3481,13 @@
       "owner_project_id": null
     }
   },
-  "integration_lock": null,
+  "integration_lock": {
+    "kind": "package",
+    "package_id": "B045",
+    "actor_id": "root",
+    "base_main_sha": "191442fb4b1929de016666a4b779c90ae36797be",
+    "head_sha": "55370f74497d632eae3e9bf0ca2190f5d587ac88"
+  },
   "history": [
     {
       "revision": 1,
@@ -12258,6 +12264,120 @@
         "head_sha": "55370f74497d632eae3e9bf0ca2190f5d587ac88",
         "summary": "Actual nonauthor approved all26 proof bodies/2671 lines once plus only genuine accepted-base/root/Markdown deltas, all36 claims and actual complete source providers. All19 public checkpoint trees, ordered mapped parents and original message prefixes match natives. Full actual CI41095868044/job124201338100 proves130tests26875standard-three declarations and complete1493CCO/269EPPA/106Ramsey guards. Exact synthetic tree/parents, unchanged current main and actual four-author STATE375 lease personally checked; all source and documentation findings closed.",
         "actor_id": "independent_review"
+      }
+    },
+    {
+      "revision": 377,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "start_integration",
+      "package_id": "B045",
+      "details": {
+        "package_id": "B045",
+        "head_sha": "55370f74497d632eae3e9bf0ca2190f5d587ac88",
+        "base_main_sha": "191442fb4b1929de016666a4b779c90ae36797be",
+        "head_contains_main": true,
+        "ci": {
+          "run_id": 41095868044,
+          "run_attempt": 1,
+          "head_sha": "55370f74497d632eae3e9bf0ca2190f5d587ac88",
+          "conclusion": "success",
+          "axiom_audit": "allowlist",
+          "job_id": 124201338100,
+          "tests": 130,
+          "declarations": 26875,
+          "guards": [
+            {
+              "parts": 1493,
+              "source": 1493
+            },
+            {
+              "parts": 1493,
+              "source": 1493
+            }
+          ],
+          "provider_guards": [
+            {
+              "parts": 269,
+              "source": 269,
+              "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+            },
+            {
+              "parts": 269,
+              "source": 269,
+              "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+            },
+            {
+              "parts": 269,
+              "source": 269,
+              "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+            },
+            {
+              "parts": 269,
+              "source": 269,
+              "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+            }
+          ],
+          "ramsey_guards": [
+            {
+              "parts": 106,
+              "source": 106,
+              "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+            },
+            {
+              "parts": 106,
+              "source": 106,
+              "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+            },
+            {
+              "parts": 106,
+              "source": 106,
+              "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+            },
+            {
+              "parts": 106,
+              "source": 106,
+              "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+            }
+          ],
+          "build_jobs": [
+            1330,
+            1182,
+            4161,
+            4161,
+            6
+          ],
+          "fresh_cco_modules": [
+            "CCO.CloneSAP.FiniteUnion",
+            "CCO.CloneSAP.Basic",
+            "CCO.CloneSAP.CCO.GraphCycles",
+            "CCO.CloneSAP.Lattice.Palettes",
+            "CCO.CloneSAP.CCO.GenericCycleBlocks",
+            "CCO.CloneSAP.CCO.TwoPaths",
+            "CCO.CloneSAP.CCO.Lift",
+            "CCO.CloneSAP.Homogeneity",
+            "CCO.CloneSAP.Lattice.Definability",
+            "CCO.CloneSAP.EdgeCases",
+            "CCO.CloneSAP.CCO.Components",
+            "CCO.CloneSAP.Lattice.DirectedBoundary",
+            "CCO.CloneSAP.Owner",
+            "CCO.CloneSAP.CCO.Parallel",
+            "CCO.CloneSAP.FiniteBoundary",
+            "CCO.CloneSAP.Quotient",
+            "CCO.CloneSAP.Amalgamation",
+            "CCO.CloneSAP.CCO.Quotient",
+            "CCO.CloneSAP.ExactKernel",
+            "CCO.CloneSAP.CCO.Realization",
+            "CCO.CloneSAP.Triangles",
+            "CCO.CloneSAP.CCO.CycleEdges",
+            "CCO.CloneSAP.TriangleReflection",
+            "CCO.CloneSAP.CCO.CycleProjection",
+            "CCO.CloneSAP.CCO.Cycles",
+            "CCO.CloneSAP.Source"
+          ],
+          "url": "https://github.com/shulda/lean_cco/actions/runs/41095868044"
+        },
+        "actor_id": "root"
       }
     }
   ],
