@@ -64,6 +64,24 @@ theorem transitive :
   exact ExactCRT.TypedPalette.quotient_transitive (Carrier J) S H id
     (projection J) (onto J) (equivariant S H J E represents) i x y
 
+/-- A single actual quotient orbital is incident to EVERY prescribed old
+centre. This includes finite quotient sorts and needs neither SAP nor CCO. -/
+theorem single_centre_request :
+    letI : ∀ i, MulAction G (Carrier J i) := action S H J E represents
+    ∀ {i j} (a : Carrier J i) (b centre : Carrier J j),
+      ∃ x, GroupActions.orbital (G := G) a b x centre := by
+  letI : ∀ i, MulAction G (Carrier J i) := action S H J E represents
+  intro i j a b centre
+  obtain ⟨g, hg⟩ := transitive S H J E represents j b centre
+  exact ⟨g • a, g, rfl, hg⟩
+
+include S in
+/-- With no anchored centres, only the actual nonempty requested sort is
+needed; this is valid even when there are no other named sorts. -/
+theorem empty_centre_request (i : ι) : Nonempty (Carrier J i) := by
+  obtain ⟨x⟩ := S.nonemptySort i
+  exact ⟨projection J i x⟩
+
 theorem countable_carrier [∀ i, Countable (X i)] (i : ι) : Countable (Carrier J i) :=
   (onto J i).countable
 
