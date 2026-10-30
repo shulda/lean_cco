@@ -15,7 +15,7 @@ theorem collision_unfolding (A : Structure L V) (U : Structure L W) [Finite V]
     ∃ k : V → W, A.IsHE U k ∧ Function.Injective k ∧
       ∀ i, U.SameImageType h k (S i) := by
   classical
-  letI : Fintype V := Fintype.ofFinite V
+  let : Fintype V := Fintype.ofFinite V
   suffices ht : ∀ n (h : V → W), Collision.collisionCount h = n →
       A.IsHE U h → (∀ i, Set.InjOn h (S i)) →
       ∃ k : V → W, A.IsHE U k ∧ Function.Injective k ∧
@@ -30,7 +30,7 @@ theorem collision_unfolding (A : Structure L V) (U : Structure L W) [Finite V]
         simp only [Function.Injective, not_forall] at hj
         obtain ⟨x, y, he, hne⟩ := hj
         exact ⟨x, y, hne, he⟩
-      letI : Finite (Set.range h) := by infer_instance
+      let : Finite (Set.range h) := by infer_instance
       let v : Set.range h := ⟨h x, ⟨x, rfl⟩⟩
       obtain ⟨e, hfix, hfresh⟩ := U.exists_induced_clone hom sap (Set.range h) v
       let k := split h {x} (e.point v)

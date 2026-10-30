@@ -18,7 +18,7 @@ theorem exists_induced_clone (U : Structure L W) (hom : U.Homogeneous)
   have hA : U.Age A := ⟨(U.inclusion S).comp s⟩
   obtain ⟨X, hX, D, hD, l, r, hcomm, hinter⟩ :=
     sap root S S A B B hA hB hB s s
-  letI : Finite X := hX
+  let : Finite X := hX
   obtain ⟨d⟩ := hD
   obtain ⟨a, ha⟩ := hom S B (d.comp l) (U.inclusion S)
   let e : Embedding B U := a.toEmbedding.comp (d.comp r)

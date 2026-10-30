@@ -24,10 +24,10 @@ theorem split_restriction (U : Structure L W) (h : V → W) (T I : Set V) (v : S
     right
     intro y hyi
     by_cases hyt : y ∈ T
-    · simp only [split, if_pos hyt]
+    · simp only [split, ite_eq_left hyt]
       congr 1
       exact Subtype.ext (ht y hyt).symm
-    · simp only [split, if_neg hyt]
+    · simp only [split, ite_eq_right hyt]
       symm
       apply hfix
       intro he
@@ -35,7 +35,7 @@ theorem split_restriction (U : Structure L W) (h : V → W) (T I : Set V) (v : S
       exact hyt (hi hyi hxi hxy ▸ hxt)
   · left
     intro x hxi
-    simp only [split, if_neg (fun hxt => hx ⟨x, hxi, hxt⟩)]
+    simp only [split, ite_eq_right (fun hxt => hx ⟨x, hxi, hxt⟩)]
 
 /-- C12: every separately protected injective restriction remains injective. -/
 theorem split_injOn (U : Structure L W) (h : V → W) (T I : Set V)
