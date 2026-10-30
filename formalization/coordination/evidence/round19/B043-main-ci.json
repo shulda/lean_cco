@@ -1,0 +1,86 @@
+{
+  "run_id": 41073285171,
+  "run_attempt": 1,
+  "head_sha": "740a82e53132200f44987ad48c87272673628679",
+  "conclusion": "success",
+  "axiom_audit": "allowlist",
+  "job_id": 124122683094,
+  "tests": 130,
+  "declarations": 24850,
+  "guards": [
+    {
+      "parts": 1381,
+      "source": 1381
+    },
+    {
+      "parts": 1381,
+      "source": 1381
+    }
+  ],
+  "provider_guards": [
+    {
+      "parts": 269,
+      "source": 269,
+      "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+    },
+    {
+      "parts": 269,
+      "source": 269,
+      "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+    },
+    {
+      "parts": 269,
+      "source": 269,
+      "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+    },
+    {
+      "parts": 269,
+      "source": 269,
+      "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+    }
+  ],
+  "ramsey_guards": [
+    {
+      "parts": 106,
+      "source": 106,
+      "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+    },
+    {
+      "parts": 106,
+      "source": 106,
+      "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+    },
+    {
+      "parts": 106,
+      "source": 106,
+      "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+    },
+    {
+      "parts": 106,
+      "source": 106,
+      "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+    }
+  ],
+  "build_jobs": [
+    1330,
+    1182,
+    4046,
+    4046,
+    6
+  ],
+  "fresh_cco_modules": [
+    "CCO.PointGeneratedSAP.Examples.Binary",
+    "CCO.PointGeneratedSAP.Original",
+    "CCO.PointGeneratedSAP.Examples.Matching",
+    "CCO.PointGeneratedSAP.Pieces",
+    "CCO.PointGeneratedSAP.Examples.Constant",
+    "CCO.PointGeneratedSAP.Alignment",
+    "CCO.PointGeneratedSAP.Examples.ConstantSource",
+    "CCO.PointGeneratedSAP.Copies",
+    "CCO.PointGeneratedSAP.Forward",
+    "CCO.PointGeneratedSAP.Reverse",
+    "CCO.PointGeneratedSAP.Source",
+    "CCO.PointGeneratedSAP.Examples.MatchingSource"
+  ],
+  "url": "https://github.com/shulda/lean_cco/actions/runs/41073285171"
+}
