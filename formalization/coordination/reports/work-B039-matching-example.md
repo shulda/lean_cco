@@ -64,7 +64,8 @@ with no new-file warnings after the final cleanup. No whole-project build,
 test suite or axiom audit was duplicated by this helper. Root/owner retain
 the one final receiving pipeline and the actual nonauthor review.
 
-Coherent source commits, in order: `9129e7f6f63d2fbd5501a1013f6503772a2f3ee0`,
+Final mathematical source checkpoint: `64c919ddc0f0f570be41cbdd2441f62f400f3fd7`.
+Initial coherent source checkpoints, in order: `9129e7f6f63d2fbd5501a1013f6503772a2f3ee0`,
 `89fa5ea68819b05e3384af448fc82367213d84de`,
 `98134b2102bad86dc0ecd607142274e56ca5e311`, and
 `1f7179333c5c3d786ce91a70b46b996a3e67bbe4`.
