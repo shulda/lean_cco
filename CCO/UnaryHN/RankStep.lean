@@ -47,7 +47,9 @@ theorem attach_closed_rank (hK : FiniteHereditarySAP K) (hIrr : AllIrreducible K
     Old.system.toStructure Supp hSupp T.system.toStructure f.toEmbedding
   intro S hSize hClosed
   have hCard : Nat.card (↑S : Set R.Carrier) ≤ m + 1 := by
-    simpa only [Nat.card_eq_fintype_card, Fintype.card_coe] using hSize
+    have hc : Fintype.card (↑S : Set R.Carrier) = S.card :=
+      Fintype.card_of_finset' S (fun _ => Iff.rfl)
+    rwa [Nat.card_eq_fintype_card, hc]
   let inc : Structure.Embedding (Whole.induce (↑S : Set R.Carrier) hClosed) Whole :=
     inclusion Whole (↑S : Set R.Carrier) hClosed
   by_cases hCore : ∀ x : (↑S : Set R.Carrier), ∃ y, x.val = iCore y
@@ -57,13 +59,11 @@ theorem attach_closed_rank (hK : FiniteHereditarySAP K) (hIrr : AllIrreducible K
     · let e := inc.factorThroughClosedRange iCopy hCopy
       exact hOld.completion_of_embedding e hCard
     · have hOutsideCore : ∃ z ∈ S, ∀ y, z ≠ iCore y := by
-        push_neg at hCore
-        obtain ⟨x, hx⟩ := hCore
-        exact ⟨x.val, x.2, hx⟩
+        obtain ⟨x, hx⟩ := not_forall.mp hCore
+        exact ⟨x.val, x.2, fun y hy => hx ⟨y, hy⟩⟩
       have hOutsideCopy : ∃ z ∈ S, ∀ y, z ≠ iCopy y := by
-        push_neg at hCopy
-        obtain ⟨x, hx⟩ := hCopy
-        exact ⟨x.val, x.2, hx⟩
+        obtain ⟨x, hx⟩ := not_forall.mp hCopy
+        exact ⟨x.val, x.2, fun y hy => hx ⟨y, hy⟩⟩
       have hRoot : ∀ z : Supp, ∃ a, R.system.part (iCore (f z)) = alpha a := by
         intro z
         obtain ⟨a, ha⟩ := z.2

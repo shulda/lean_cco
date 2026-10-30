@@ -22,7 +22,7 @@ structure RankStage {L : Language.{u}} (K : Class.{u,v} L)
   arrow : Structure.Arrow A B C κ
   projection : Carrier → P
   projectionHE : HE C D projection
-  local : ClosedSmallCompletable K C n
+  localBound : ClosedSmallCompletable K C n
 
 attribute [instance] RankStage.finiteCarrier
 
@@ -45,7 +45,7 @@ theorem first (hK : FiniteHereditarySAP K) (hIrr : AllIrreducible K)
     arrow := hTArrow
     projection := T.system.part
     projectionHE := T.isPartite
-    local := hT
+    localBound := hT
   }⟩
 
 theorem next (hK : FiniteHereditarySAP K) (hIrr : AllIrreducible K)
@@ -54,7 +54,7 @@ theorem next (hK : FiniteHereditarySAP K) (hIrr : AllIrreducible K)
     (κ : Type w) [Fintype κ] [Nonempty κ] (n : ℕ) (S : RankStage K A B D κ n) :
     Nonempty (RankStage K A B D κ (n + 1)) := by
   obtain ⟨T, hT, hTArrow⟩ :=
-    closed_rank_pass hK hIrr hUnary A B hA hB κ S.arrow n S.local
+    closed_rank_pass hK hIrr hUnary A B hA hB κ S.arrow n S.localBound
   exact ⟨{
     Carrier := T.Carrier
     finiteCarrier := T.finiteCarrier
@@ -63,7 +63,7 @@ theorem next (hK : FiniteHereditarySAP K) (hIrr : AllIrreducible K)
     arrow := hTArrow
     projection := S.projection ∘ T.system.part
     projectionHE := S.projectionHE.comp T.isPartite
-    local := hT
+    localBound := hT
   }⟩
 
 theorem build (hK : FiniteHereditarySAP K) (hIrr : AllIrreducible K)
@@ -112,12 +112,12 @@ theorem original_unary_locally_finite_ramsey {L : Language.{u}} {K R : Class.{u,
   intro U V hU hV A B hA hB κ hκ hκnonempty
   have hIrr : AllIrreducible K := fun C hC => hRirred C (hSub C hC)
   obtain ⟨P, hP, D, hD, hArrow⟩ := hRamsey A B (hSub A hA) (hSub B hB) κ
-  letI : Finite P := hP
+  let : Finite P := hP
   obtain ⟨n, hn⟩ := hLocal D hD
   obtain ⟨S⟩ := PartiteTransfer.build hK hIrr hUnary A B D hA hB κ hArrow (n + 1) (by omega)
   have hComplete : HasCompletion K S.C :=
     hn S.C S.admissible.1 ⟨S.projection, S.projectionHE⟩ S.admissible.2
-      (S.local.mono (Nat.le_succ n))
+      (S.localBound.mono (Nat.le_succ n))
   obtain ⟨X, hX, T, hT, p, hp⟩ := hComplete
   exact ⟨X, hX, T, hT, arrow_of_HE_completion (hIrr A hA) (hIrr B hB) hp κ S.arrow⟩
 
