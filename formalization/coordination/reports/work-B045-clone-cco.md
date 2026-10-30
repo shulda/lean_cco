@@ -7,16 +7,19 @@ The actual source and expansion were read. The mathematical contract is unchange
 
 ## Exact allocation and proof map
 
+All implementation declaration names below are relative to
+`CCO.CloneSAP.CCO`; file names are location breadcrumbs only.
+
 This helper owns `CCO/CloneSAP/CCO/` except the independently implemented
 `GenericCycleBlocks.lean`, plus this report. The clone `Basic.lean` source
 is the batch owner's proved actual construction.
 
-- D05/C14: `Components.cloneGraph` is exactly the specified c-edge subgraph;
+- D05/C14: `cloneGraph` is exactly the specified c-edge subgraph;
   connected components include isolated vertices. `componentSort` descends
   the original named sort along actual c-paths.
 - C15: `old_edge_distinct_components` uses an actual simple c-path plus the
   offending old diversity edge. Atomic exclusivity excludes that old edge
-  from the path; `cons_isCycle_iff` proves a genuine cycle of length at least
+  from the path; `SimpleGraph.Walk.cons_isCycle_iff` proves a genuine cycle of length at least
   three. Its actual clone homomorphism would collapse the old edge's owners,
   contradicting original diversity.
 - C16: `old_parallel_labels` joins two actual old edges by disjoint simple
@@ -24,21 +27,21 @@ is the batch owner's proved actual construction.
   connecting paths and proves a real simple cycle. Both paths cannot have
   length zero for two conflicting original labels. One cycle assignment
   projects to equal old ordered pairs, so their literal tagged atoms agree.
-- D06/C17: `Quotient.quotientDiagram` is a finite original diversity-only
+- D06/C17: `quotientDiagram` is a finite original diversity-only
   partial graph on the actual connected components. `OldBetween` retains
   original endpoints, specified old edge and exact typed atom. The edge
   choice uses proved uniqueness, not a coherence premise. No equality
   edge or internal old edge is inserted; all isolated components remain.
-- C18: `CycleEdges` chooses actual old-edge representatives of every
+- C18: `CycleEdges.lean` chooses actual old-edge representatives of every
   quotient cycle and actual simple c-path connectors. Distinct quotient
-  vertices force the full connector supports disjoint. `CycleProjection`
+  vertices force the full connector supports disjoint. `CycleProjection.lean`
   proves literal old-atom readout from the actual realized old edges and
-  owner equalities along those paths. `Cycles.quotient_cycles` assembles
+  owner equalities along those paths. `quotient_cycles` assembles
   these disjoint blocks into one genuine simple clone cycle using the
   separately proved `cyclic_blocks` theorem, then projects its solution.
-- C19–C21: `Cycles.cco_injective` applies ONLY the original `SemanticCCO`
-  to this actual old diversity quotient. `Realization.realize_from_quotient`
-  and `Lift.lift_owner_assignment` assign globally distinct natural indices
+- C19–C21: `cco_injective` applies ONLY the original `SemanticCCO`
+  to this actual old diversity quotient. `realize_from_quotient`
+  and `lift_owner_assignment` assign globally distinct natural indices
   to all formal vertices. Missing edges are not asserted reflected.
   `cco_forward` discharges the actual clone `SemanticCCO` instance.
 - C22: `oldDiagram` inserts only old diversity atoms. Each original cycle
