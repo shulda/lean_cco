@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 385,
+  "revision": 386,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -3574,7 +3574,7 @@
       }
     },
     "B047": {
-      "state": "REVIEWING",
+      "state": "INTEGRATING",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b047_pair_safe_split",
@@ -3896,7 +3896,13 @@
       "owner_project_id": null
     }
   },
-  "integration_lock": null,
+  "integration_lock": {
+    "kind": "package",
+    "package_id": "B047",
+    "actor_id": "root",
+    "base_main_sha": "bfbf8cf83d590d8d13499ab0e33aa8ea6445eb97",
+    "head_sha": "f702071ee44712f81f227329228a074a10e2d9d6"
+  },
   "history": [
     {
       "revision": 1,
@@ -13285,6 +13291,99 @@
         "head_sha": "f702071ee44712f81f227329228a074a10e2d9d6",
         "summary": "The actual separate non-author reviewer approves this exact repaired public head after the complete source read, all true repair/documentation deltas, all 54 ordered native/public checkpoints, full successful final CI logs/audit and personally verified effective STATE384 lease. Original C41/C43 findings are closed at the same selected gate, phase, identification and every selected history node. Reviewer report-only native b36d16932b195c6535fd2e2b8fbc298c3282b997 records actual run41105647949/job124234622614 and synthetic approved-tree checkout; no source/docs/history blocker remains.",
         "actor_id": "independent_review"
+      }
+    },
+    {
+      "revision": 386,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "start_integration",
+      "package_id": "B047",
+      "details": {
+        "package_id": "B047",
+        "head_sha": "f702071ee44712f81f227329228a074a10e2d9d6",
+        "base_main_sha": "bfbf8cf83d590d8d13499ab0e33aa8ea6445eb97",
+        "head_contains_main": true,
+        "ci": {
+          "run_id": 41105647949,
+          "run_attempt": 1,
+          "head_sha": "f702071ee44712f81f227329228a074a10e2d9d6",
+          "conclusion": "success",
+          "axiom_audit": "allowlist",
+          "job_id": 124234622614,
+          "tests": 130,
+          "declarations": 27280,
+          "guards": [
+            {
+              "parts": 1524,
+              "source": 1524
+            },
+            {
+              "parts": 1524,
+              "source": 1524
+            }
+          ],
+          "provider_guards": [
+            {
+              "parts": 269,
+              "source": 269,
+              "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+            },
+            {
+              "parts": 269,
+              "source": 269,
+              "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+            },
+            {
+              "parts": 269,
+              "source": 269,
+              "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+            },
+            {
+              "parts": 269,
+              "source": 269,
+              "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+            }
+          ],
+          "ramsey_guards": [
+            {
+              "parts": 106,
+              "source": 106,
+              "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+            },
+            {
+              "parts": 106,
+              "source": 106,
+              "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+            },
+            {
+              "parts": 106,
+              "source": 106,
+              "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+            },
+            {
+              "parts": 106,
+              "source": 106,
+              "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+            }
+          ],
+          "build_jobs": [
+            1330,
+            1182,
+            4198,
+            4198,
+            6
+          ],
+          "fresh_cco_modules": [
+            "CCO.PairSafeSplit.Full.Gates",
+            "CCO.PairSafeSplit.Terminal.Readout",
+            "CCO.PairSafeSplit.Terminal.Successor",
+            "CCO.PairSafeSplit.Terminal.Elimination",
+            "CCO.PairSafeSplit.Source"
+          ],
+          "url": "https://github.com/shulda/lean_cco/actions/runs/41105647949"
+        },
+        "actor_id": "root"
       }
     }
   ],
