@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 302,
+  "revision": 303,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -1919,8 +1919,22 @@
       }
     },
     "B039": {
-      "state": "AVAILABLE",
-      "owner_project_id": null
+      "state": "IN_PROGRESS",
+      "owner_project_id": 3,
+      "author_actor_ids": [
+        "root"
+      ],
+      "original_author_project_ids": [
+        3
+      ],
+      "claim_revision": 303,
+      "base_main_sha": "8a8e2f9e73e4bdcb0101259416238c8f9ab4429b",
+      "base_ci": {
+        "run_id": 41022253890,
+        "head_sha": "8a8e2f9e73e4bdcb0101259416238c8f9ab4429b",
+        "conclusion": "success",
+        "axiom_audit": "allowlist"
+      }
     },
     "B040": {
       "state": "AVAILABLE",
@@ -7789,6 +7803,62 @@
         "report_path": "formalization/coordination/submissions/B037.md",
         "actor_id": "root"
       }
+    },
+    {
+      "revision": 303,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "claim_third",
+      "package_id": "B039",
+      "details": {
+        "package_id": "B039",
+        "base_main_sha": "8a8e2f9e73e4bdcb0101259416238c8f9ab4429b",
+        "base_ci": {
+          "run_id": 41022253890,
+          "head_sha": "8a8e2f9e73e4bdcb0101259416238c8f9ab4429b",
+          "conclusion": "success",
+          "axiom_audit": "allowlist"
+        },
+        "independent_active_work": true,
+        "summary": "B037 and B038 mathematical implementations are frozen and independently reviewed; a dedicated independent implementer now actively constructs B039 unary fresh-frame and actual quotient-fibre proofs using only accepted B010, in a separate source prefix and private worktree while existing final integration gates continue.",
+        "implementation_actor_id": "/root/b039_fresh",
+        "active_work_items": [
+          "B039-actual-named-unary-closure-and-fresh-frames",
+          "B039-actual-quotient-fibre-kernel-indices",
+          "B039-hereditary-SAP-AFF-and-necessity"
+        ],
+        "independence_report_path": "formalization/coordination/reports/B039-third-slot-independence.md",
+        "existing_batches": [
+          {
+            "package_id": "B037",
+            "head_sha": "e4bb90f27f9dc9ea6f3c8bc0f77926ab639f0c9a",
+            "actual_current_source_head_sha": "e4bb90f27f9dc9ea6f3c8bc0f77926ab639f0c9a",
+            "work_items": [
+              "B037-exact-head-review-and-integration",
+              "B037-resulting-main-CI"
+            ],
+            "implementation_actor_ids": [
+              "root",
+              "/root/b037_finish"
+            ]
+          },
+          {
+            "package_id": "B038",
+            "head_sha": "8a8e2f9e73e4bdcb0101259416238c8f9ab4429b",
+            "actual_current_source_head_sha": "6958b54e9f3022f4233f8e3ddb5792206460b63f",
+            "ledger_anchor_kind": "claim_base_no_public_CI_checkpoint",
+            "work_items": [
+              "B038-accepted-base-union",
+              "B038-single-final-validation-and-integration"
+            ],
+            "implementation_actor_ids": [
+              "root",
+              "/root/b038_relational"
+            ]
+          }
+        ],
+        "actor_id": "root"
+      }
     }
   ],
   "infrastructure_integrations": [
@@ -8366,39 +8436,45 @@
   ],
   "policy_revision": 10,
   "third_batch_exception": {
-    "package_id": "B018",
+    "package_id": "B039",
     "independent_active_work": true,
-    "summary": "B018 has a dedicated active owner-provider implementer and disjoint source files/APIs from B012 SAP/MI and B014 finite normalization. All dependencies are already ACCEPTED on current green main; no sibling branch is an input.",
+    "summary": "B037 and B038 mathematical implementations are frozen and independently reviewed; a dedicated independent implementer now actively constructs B039 unary fresh-frame and actual quotient-fibre proofs using only accepted B010, in a separate source prefix and private worktree while existing final integration gates continue.",
     "active_work_items": [
-      "CCO/Owners/Provider/**: C01-C13 and C30 actual owner providers"
+      "B039-actual-named-unary-closure-and-fresh-frames",
+      "B039-actual-quotient-fibre-kernel-indices",
+      "B039-hereditary-SAP-AFF-and-necessity"
     ],
-    "implementation_actor_id": "/root/b018_owners",
-    "independence_report_path": "formalization/coordination/reports/B018-third-active-independence.md",
+    "implementation_actor_id": "/root/b039_fresh",
+    "independence_report_path": "formalization/coordination/reports/B039-third-slot-independence.md",
     "existing_batches": [
       {
-        "package_id": "B012",
-        "head_sha": "8b165711491be83a7043dd4d40f818aa17ebcc05",
+        "package_id": "B037",
+        "head_sha": "e4bb90f27f9dc9ea6f3c8bc0f77926ab639f0c9a",
+        "actual_current_source_head_sha": "e4bb90f27f9dc9ea6f3c8bc0f77926ab639f0c9a",
         "work_items": [
-          "CCO/RealClosure/SAP/**: C19-C24 and C29-C31"
+          "B037-exact-head-review-and-integration",
+          "B037-resulting-main-CI"
         ],
         "implementation_actor_ids": [
           "root",
-          "/root/b012_sap"
+          "/root/b037_finish"
         ]
       },
       {
-        "package_id": "B014",
-        "head_sha": "8b165711491be83a7043dd4d40f818aa17ebcc05",
+        "package_id": "B038",
+        "head_sha": "8a8e2f9e73e4bdcb0101259416238c8f9ab4429b",
+        "actual_current_source_head_sha": "6958b54e9f3022f4233f8e3ddb5792206460b63f",
+        "ledger_anchor_kind": "claim_base_no_public_CI_checkpoint",
         "work_items": [
-          "CCO/FinitePackets/Normalization/**: C19-C31"
+          "B038-accepted-base-union",
+          "B038-single-final-validation-and-integration"
         ],
         "implementation_actor_ids": [
-          "/root/b014_normalization",
-          "/root/b014_normalization/square_normalize",
-          "/root/b014_normalization/twin_example"
+          "root",
+          "/root/b038_relational"
         ]
       }
     ],
-    "revision": 127
+    "revision": 303
   }
 }
