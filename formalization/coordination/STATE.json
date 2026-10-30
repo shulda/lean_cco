@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 367,
+  "revision": 368,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -2847,6 +2847,7 @@
       "author_actor_ids": [
         "/root/b045_clone_sap",
         "/root/b045_clone_sap/clone_cco",
+        "/root/b046_orbital_cover/nine_colour_model/coordinate_potentials",
         "root"
       ],
       "original_author_project_ids": [
@@ -11421,6 +11422,20 @@
           "root",
           "/root/b046_orbital_cover",
           "/root/b046_orbital_cover/nine_colour_model",
+          "/root/b046_orbital_cover/nine_colour_model/coordinate_potentials"
+        ],
+        "actor_id": "root"
+      }
+    },
+    {
+      "revision": 368,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "record_authorship",
+      "package_id": "B045",
+      "details": {
+        "package_id": "B045",
+        "author_actor_ids": [
           "/root/b046_orbital_cover/nine_colour_model/coordinate_potentials"
         ],
         "actor_id": "root"
