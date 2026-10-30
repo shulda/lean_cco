@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 377,
+  "revision": 378,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -2842,7 +2842,7 @@
       }
     },
     "B045": {
-      "state": "INTEGRATING",
+      "state": "ACCEPTED",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b045_clone_sap",
@@ -3110,6 +3110,107 @@
           "report_path": "formalization/coordination/reviews/B045-final.md"
         },
         "summary": "Actual nonauthor approved all26 proof bodies/2671 lines once plus only genuine accepted-base/root/Markdown deltas, all36 claims and actual complete source providers. All19 public checkpoint trees, ordered mapped parents and original message prefixes match natives. Full actual CI41095868044/job124201338100 proves130tests26875standard-three declarations and complete1493CCO/269EPPA/106Ramsey guards. Exact synthetic tree/parents, unchanged current main and actual four-author STATE375 lease personally checked; all source and documentation findings closed."
+      },
+      "accepted_commit": "bfbf8cf83d590d8d13499ab0e33aa8ea6445eb97",
+      "main_ci": {
+        "run_id": 41097006356,
+        "run_attempt": 1,
+        "head_sha": "bfbf8cf83d590d8d13499ab0e33aa8ea6445eb97",
+        "conclusion": "success",
+        "axiom_audit": "allowlist",
+        "job_id": 124205161008,
+        "tests": 130,
+        "declarations": 26875,
+        "guards": [
+          {
+            "parts": 1493,
+            "source": 1493
+          },
+          {
+            "parts": 1493,
+            "source": 1493
+          }
+        ],
+        "provider_guards": [
+          {
+            "parts": 269,
+            "source": 269,
+            "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+          },
+          {
+            "parts": 269,
+            "source": 269,
+            "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+          },
+          {
+            "parts": 269,
+            "source": 269,
+            "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+          },
+          {
+            "parts": 269,
+            "source": 269,
+            "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+          }
+        ],
+        "ramsey_guards": [
+          {
+            "parts": 106,
+            "source": 106,
+            "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+          },
+          {
+            "parts": 106,
+            "source": 106,
+            "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+          },
+          {
+            "parts": 106,
+            "source": 106,
+            "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+          },
+          {
+            "parts": 106,
+            "source": 106,
+            "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+          }
+        ],
+        "build_jobs": [
+          1330,
+          1182,
+          4161,
+          4161,
+          6
+        ],
+        "fresh_cco_modules": [
+          "CCO.CloneSAP.FiniteUnion",
+          "CCO.CloneSAP.Basic",
+          "CCO.CloneSAP.CCO.GenericCycleBlocks",
+          "CCO.CloneSAP.CCO.GraphCycles",
+          "CCO.CloneSAP.CCO.Lift",
+          "CCO.CloneSAP.Homogeneity",
+          "CCO.CloneSAP.Lattice.Palettes",
+          "CCO.CloneSAP.CCO.TwoPaths",
+          "CCO.CloneSAP.EdgeCases",
+          "CCO.CloneSAP.CCO.Components",
+          "CCO.CloneSAP.Owner",
+          "CCO.CloneSAP.FiniteBoundary",
+          "CCO.CloneSAP.Lattice.Definability",
+          "CCO.CloneSAP.Quotient",
+          "CCO.CloneSAP.CCO.Parallel",
+          "CCO.CloneSAP.Lattice.DirectedBoundary",
+          "CCO.CloneSAP.ExactKernel",
+          "CCO.CloneSAP.Amalgamation",
+          "CCO.CloneSAP.CCO.Quotient",
+          "CCO.CloneSAP.Triangles",
+          "CCO.CloneSAP.CCO.Realization",
+          "CCO.CloneSAP.CCO.CycleEdges",
+          "CCO.CloneSAP.TriangleReflection",
+          "CCO.CloneSAP.CCO.CycleProjection",
+          "CCO.CloneSAP.CCO.Cycles",
+          "CCO.CloneSAP.Source"
+        ],
+        "url": "https://github.com/shulda/lean_cco/actions/runs/41097006356"
       }
     },
     "B046": {
@@ -3481,13 +3582,7 @@
       "owner_project_id": null
     }
   },
-  "integration_lock": {
-    "kind": "package",
-    "package_id": "B045",
-    "actor_id": "root",
-    "base_main_sha": "191442fb4b1929de016666a4b779c90ae36797be",
-    "head_sha": "55370f74497d632eae3e9bf0ca2190f5d587ac88"
-  },
+  "integration_lock": null,
   "history": [
     {
       "revision": 1,
@@ -12376,6 +12471,118 @@
             "CCO.CloneSAP.Source"
           ],
           "url": "https://github.com/shulda/lean_cco/actions/runs/41095868044"
+        },
+        "actor_id": "root"
+      }
+    },
+    {
+      "revision": 378,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "accept",
+      "package_id": "B045",
+      "details": {
+        "package_id": "B045",
+        "integration_commit": "bfbf8cf83d590d8d13499ab0e33aa8ea6445eb97",
+        "main_ci": {
+          "run_id": 41097006356,
+          "run_attempt": 1,
+          "head_sha": "bfbf8cf83d590d8d13499ab0e33aa8ea6445eb97",
+          "conclusion": "success",
+          "axiom_audit": "allowlist",
+          "job_id": 124205161008,
+          "tests": 130,
+          "declarations": 26875,
+          "guards": [
+            {
+              "parts": 1493,
+              "source": 1493
+            },
+            {
+              "parts": 1493,
+              "source": 1493
+            }
+          ],
+          "provider_guards": [
+            {
+              "parts": 269,
+              "source": 269,
+              "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+            },
+            {
+              "parts": 269,
+              "source": 269,
+              "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+            },
+            {
+              "parts": 269,
+              "source": 269,
+              "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+            },
+            {
+              "parts": 269,
+              "source": 269,
+              "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+            }
+          ],
+          "ramsey_guards": [
+            {
+              "parts": 106,
+              "source": 106,
+              "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+            },
+            {
+              "parts": 106,
+              "source": 106,
+              "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+            },
+            {
+              "parts": 106,
+              "source": 106,
+              "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+            },
+            {
+              "parts": 106,
+              "source": 106,
+              "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+            }
+          ],
+          "build_jobs": [
+            1330,
+            1182,
+            4161,
+            4161,
+            6
+          ],
+          "fresh_cco_modules": [
+            "CCO.CloneSAP.FiniteUnion",
+            "CCO.CloneSAP.Basic",
+            "CCO.CloneSAP.CCO.GenericCycleBlocks",
+            "CCO.CloneSAP.CCO.GraphCycles",
+            "CCO.CloneSAP.CCO.Lift",
+            "CCO.CloneSAP.Homogeneity",
+            "CCO.CloneSAP.Lattice.Palettes",
+            "CCO.CloneSAP.CCO.TwoPaths",
+            "CCO.CloneSAP.EdgeCases",
+            "CCO.CloneSAP.CCO.Components",
+            "CCO.CloneSAP.Owner",
+            "CCO.CloneSAP.FiniteBoundary",
+            "CCO.CloneSAP.Lattice.Definability",
+            "CCO.CloneSAP.Quotient",
+            "CCO.CloneSAP.CCO.Parallel",
+            "CCO.CloneSAP.Lattice.DirectedBoundary",
+            "CCO.CloneSAP.ExactKernel",
+            "CCO.CloneSAP.Amalgamation",
+            "CCO.CloneSAP.CCO.Quotient",
+            "CCO.CloneSAP.Triangles",
+            "CCO.CloneSAP.CCO.Realization",
+            "CCO.CloneSAP.CCO.CycleEdges",
+            "CCO.CloneSAP.TriangleReflection",
+            "CCO.CloneSAP.CCO.CycleProjection",
+            "CCO.CloneSAP.CCO.Cycles",
+            "CCO.CloneSAP.Source"
+          ],
+          "url": "https://github.com/shulda/lean_cco/actions/runs/41097006356"
         },
         "actor_id": "root"
       }
