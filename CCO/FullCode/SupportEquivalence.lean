@@ -41,7 +41,7 @@ def fullSupportEmbedding (C : Structure L V) (S : RootScheme L) (generated : Roo
   injective := (fullSupportEquiv C S generated).injective
   sort_eq _ := rfl
   map_func _ _ _ h := h
-  reflect_func F x y hy := ⟨y.val, hy, rfl⟩
+  reflect_func _F _x y hy := ⟨y.val, hy, rfl⟩
   unary_iff _ _ := Iff.rfl
   binary_iff _ _ _ := Iff.rfl
 

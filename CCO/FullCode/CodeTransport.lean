@@ -76,9 +76,9 @@ def rootEmbedding (N : NormalForms L) (O : Object C S A)
   point a := (O.root a).map f
   injective := (Root.map_injective f).comp O.injective
   tag_eq _ := rfl
-  equality_iff a b p q := equalityCode_map N f _ _ p q
-  unary_iff U a p := unaryCode_map N f U _ p
-  binary_iff R a b p q := binaryCode_map N f R _ _ p q
+  equality_iff _a _b p q := equalityCode_map N f _ _ p q
+  unary_iff U _a p := unaryCode_map N f U _ p
+  binary_iff R _a _b p q := binaryCode_map N f R _ _ p q
 
 def marking (N : NormalForms L) (O : Object C S A) : Embedding N O O.markedObject where
   point x := x
