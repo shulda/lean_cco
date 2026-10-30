@@ -17,14 +17,16 @@ nullaries. Cross tuples remain unspecified. Its two-factor version and
 positive binary agreement.
 
 `ChosenPairsByFactors.lift_chosen_pairs_by_factors_finite` derives an
-injective complete chosen-pair full lift from the literal raw support-normal
-interface. It adds every actual chosen zero-, one- and two-point full
+injective complete chosen-pair full lift from the internal strict semantic
+interface. The source-facing certified-shadow A03 derives that interface
+by `Full.Shadow.SupportNormal.to_strict`, without pair homogeneity, SAP or
+CCO assumptions. It adds every actual chosen zero-, one- and two-point full
 factor to the existing distinguished family. These factors introduce no
-support-at-least-three declaration. The raw interface's induced-factor
+support-at-least-three declaration. The interface's induced-factor
 injectivity implies global injectivity of the resulting map, even for the
 empty original relational language. No `SeparatesPoints`, old full SAP or
 binary homogeneity is assumed. The original finite-ordinal specialization
-is retained. The raw interface and its finite-carrier reindexing remain
+is retained. The strict interface and its finite-carrier reindexing remain
 owned by the full-lift worker.
 
 `SmallProfiles.lean` and `LowNames.lean` prove that complete canonical pair
@@ -37,9 +39,11 @@ in the compatibility test, not silently forgotten.
 `ActualExtension.actual_pair_finiteExtension U hsym hom normal` freezes the
 entire actual full base, applies that constructed chosen-pair lift, and
 then aligns the full base by old FULL homogeneity. The resulting map fixes
-the prescribed base exactly. Its hypotheses are old full homogeneity A01,
-actual same-sort pair symmetry, and raw A03; pair homogeneity and full SAP
-are not replacement source premises.
+the prescribed base exactly. Internally it consumes old full homogeneity
+A01, actual same-sort pair symmetry, and the derived strict interface;
+`CertifiedContext.certified_binary_homogeneous` supplies the source-facing
+theorem with exact certified-shadow A03. Pair homogeneity and full SAP are
+not replacement source premises.
 
 `FullAlignment.lean` handles full tuple alignment through actual finite
 ranges, so repeated tuples and different indexing universes are retained.
@@ -58,6 +62,10 @@ triangle age through the accepted AP plus homogeneous semantic CCO theorem.
 `actualPairContext` constructs the accepted B047 current-source context on
 the SAME actual canonical source. Its SAP argument is exactly the A02 pair
 SAP premise. No triangle-completion provider is added.
+`CertifiedContext.certifiedPairContext` discharges this whole context from
+the actual source-facing certified-shadow gate, through its proved strict
+normalization. The certified shadow retains signed low literals, complete
+frozen canonical pair profiles, and actual CycleHom certificates.
 
 `SpanFactors.lean` packages the two actual full legs as distinguished
 complete factors, proves higher coverage, and verifies low compatibility
@@ -90,7 +98,9 @@ Pinned Lean4.34.1/Lake5 and manifest; private project/provider outputs,
 immutable shared dependencies. Every scoped module was compiled narrowly
 as implemented. Final significant targets: ActualExtension 1222 jobs,
 ActualContext 2531 jobs, SpanFactors 1223 jobs, finite chosen-pair wrapper
-753 jobs, FullReductBackAndForth 1013 jobs, FullReduct 1453 jobs. Logs are
+753 jobs, FullReductBackAndForth 1013 jobs, FullReduct 1453 jobs. After the
+owner's strict/certified source correction, ActualContext passed again
+(2533 jobs); the certified source wrapper passed 2536 jobs. Logs are
 `runtime/b048-*.log` outside Git. Existing style/deprecation warnings are
 nonfatal. No shared root import edits, remote writes, whole-project build,
 new axioms, `sorry`, or reviewer-authored code. The owning coordinator keeps
