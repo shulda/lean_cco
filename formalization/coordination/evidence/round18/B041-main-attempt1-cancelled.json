@@ -1,0 +1,18 @@
+{
+  "run_id": 41050908739,
+  "run_attempt": 1,
+  "job_id": 124046426320,
+  "head_sha": "5367e9e72b3dc099ff55238a80f1c9ea7cac46fc",
+  "conclusion": "cancelled",
+  "failed_step": "Download targeted Mathlib cache",
+  "workflow_timeout_minutes": 30,
+  "last_downloaded": 1942,
+  "requested_files": 2271,
+  "last_decompressed": 346,
+  "last_progress": "2026-10-30T11:52:04.6899289Z",
+  "cancellation": "2026-10-30T12:20:22.8998302Z",
+  "cco_build_ran": false,
+  "axiom_audit_ran": false,
+  "source_or_workflow_changed": false,
+  "excerpt": "2026-10-30T11:52:02.9454396Z Attempting to download 2271 file(s) from leanprover-community/mathlib4 cache at https://cache.mathlib.org/mathlib4-master\n2026-10-30T11:52:04.6899289Z Downloaded: 1942 file(s) [attempted 1942/2271 = 85%, 1796 KB/s], Decompressed: 346\n2026-10-30T12:20:22.8998302Z ##[error]The operation was canceled.\n2026-10-30T12:20:23.1345934Z Terminate orphan process: pid (3114) (cache)\n2026-10-30T12:20:23.1395635Z Terminate orphan process: pid (3136) (curl)"
+}
