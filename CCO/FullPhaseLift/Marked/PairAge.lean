@@ -76,6 +76,42 @@ theorem pairChart_fullChartOfPair (names : PairFaithful U S pack) (C : Age.Chart
   · funext x y
     exact congrArg (Age.colourEquiv S) (hc x y)
 
+/-- A FULL marked embedding induces the literal marked pair embedding.
+All higher truths remain in the original full morphism. -/
+def pairEmbedding (names : PairFaithful U S pack)
+    {A B : Chart U S pack mask} (f : A ⟶ B) :
+    @FirstOrder.Language.Embedding (Age.Language S) (Fin A.old.size) (Fin B.old.size)
+      (pairChart U S pack mask A).structure (pairChart U S pack mask B).structure := by
+  have hc (x y : Fin A.old.size) :
+      taggedColour S (B.pairPoint (f.point x)) (B.pairPoint (f.point y)) =
+        taggedColour S (A.pairPoint x) (A.pairPoint y) :=
+    names A.realization (B.realization.comp (oldEmbedding f)) x y
+  exact (pairChart U S pack mask A).table.embedding
+    (pairChart U S pack mask B).table ⟨f.point,f.injective⟩
+    (fun x => congrArg (Age.ownerEquiv S)
+      (Prod.ext (congrArg (fun c : Age.Colour S => c.1) (hc x x)) (embedding_bits f x)))
+    (fun x y => congrArg (Age.colourEquiv S) (hc x y))
+
+/-- Direct names of the full source object, independent of the pair
+chart's auxiliary choice of an actual realization. -/
+theorem pairEmbedding_names {A : Chart U S pack mask} {Z : Age.Chart S mask}
+    (f : @FirstOrder.Language.Embedding (Age.Language S) (Fin A.old.size) (Fin Z.size)
+      (pairChart U S pack mask A).structure Z.structure) :
+    (∀ x, (Z.point (f.toFun x)).1 = (A.pairPoint x).1 ∧ Z.bits (f.toFun x) = A.bits x) ∧
+      ∀ x y, taggedColour S (Z.point (f.toFun x)) (Z.point (f.toFun y)) =
+        taggedColour S (A.pairPoint x) (A.pairPoint y) := by
+  have h := (pairChart U S pack mask A).table.embedding_preserves Z.table f
+  constructor
+  · intro x
+    have he : Age.ownerEquiv S ((Z.point (f.toFun x)).1,Z.bits (f.toFun x)) =
+        Age.ownerEquiv S ((A.pairPoint x).1,A.bits x) :=
+      (congrArg (fun T : Age.Table S (Fin Z.size) => T.owner (f.toFun x)) Z.table_eq).symm.trans (h.1 x)
+    have hp := (Age.ownerEquiv S).injective he
+    exact ⟨congrArg Prod.fst hp,congrArg Prod.snd hp⟩
+  · intro x y
+    apply (Age.colourEquiv S).injective
+    exact (congrArg (fun T : Age.Table S (Fin Z.size) => T.colour (f.toFun x) (f.toFun y)) Z.table_eq).symm.trans (h.2 x y)
+
 /-- Both pair-age inclusions, on actual identical finite pair objects. -/
 theorem pairChart_surjective (names : PairFaithful U S pack) :
     Function.Surjective (pairChart U S pack mask) :=

@@ -50,7 +50,7 @@ theorem pairCompletion_reindex {U : BoolTable L M} {D : Partial L V} {m : ℕ}
     (F : Fin m → FrozenFactor U D) (h : PairCompletion U D F) (e : W ≃ V) :
     PairCompletion U (D.pullback e) (fun j => (F j).reindex e) := by
   obtain ⟨p,hp,hi⟩ := h
-  refine ⟨p ∘ e,?_,?_⟩
+  refine ⟨e.toEmbedding.trans p,?_,?_⟩
   · intro r xs b hs hd
     exact hp r (e ∘ xs) b (hs.comp e) hd
   · intro j a b hab
