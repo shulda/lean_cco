@@ -49,6 +49,13 @@ abbrev child := SingleStep.pairChild A s.phase
 def pairStep : PairSafeSplit.Terminal.SelectedStep A.pair s.child :=
   ⟨s.sort,s.point,s.atom,s.parity,rfl⟩
 
+/-- The full next prefix has the very SAME pair age as this literal
+B047 successor, through the comparison actually used to construct it. -/
+def sourceComparison : Full.SourceIso (source B.table B.symmetric) s.child.base.source :=
+  Eq.mp (congrArg (fun C : CurrentSource M =>
+      Full.SourceIso (source C.table C.symmetric) s.child.base.source) s.target.symm)
+    (SingleStep.actualComparison A s.phase)
+
 theorem potential_lt (step : SelectedStep A B) : B.potential < A.potential := by
   rw [step.target]
   exact SingleStep.potential_lt A step.phase
