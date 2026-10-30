@@ -113,3 +113,18 @@ The coordinator must retain the lock until actual resulting-main CI/audit
 passes, then perform the manifest-bound atomic promotion. This exact
 infrastructure approval supplies no B048 mathematical approval and transfers
 none of the unavailable reader's partial work.
+
+## Actual public pre-merge recheck
+
+After the approval above was published unaltered at coordination
+`221075ea511bc9e3e5f7b7cd76d229d1378ee8d9`, I personally fetched the whole
+actual public STATE390 at `46e72feb4f3db17acc13a3b59cc43534521815f7`.
+The public lock and history event exactly equal the approved candidate. Every
+package record, all other STATE fields and the complete prior history prefix
+equal STATE389, and policy_revision remains11. I compared the published final
+report text with my own committed report and found it unaltered.
+
+Fresh PR63 remains OPEN/unmerged at the approved exact head and base787dd3,
+with the same synthetic merge, while fresh actual main remains787dd3. My
+exact infrastructure approval remains valid for the expected-head merge under
+this sole lock. Resulting-main CI/audit and atomic promotion remain mandatory.
