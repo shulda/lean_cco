@@ -5,6 +5,16 @@ Implementation mathematical freeze: local
 `work/B041-simultaneous-quotients`. Public coordinator publication retains
 exact trees/history and records actual public head/CI separately.
 
+Accepted-base union: actual B040 main `1121b2016c7141ac432364b07c49c0ae31b18dbe`
+with successful main CI 41049235617. The merge parents are the complete
+B041 report head 479ab521870aefc92bf3ef9479b5125b9188b93f and that actual
+accepted main, in that order. All 31 proof bodies remain byte-identical to
+cbba911. The resolved root is the exact accepted CCO.lean byte prefix plus
+31 unique B041 imports; no accepted import is removed or duplicated.
+One narrow post-union consumer replay passed (1,915 jobs). No whole local
+suite or audit was repeated; the new exact public head remains subject
+to its own required CI/audit and non-author approval.
+
 31 new Lean modules / 3,860 lines, all explicitly imported by `CCO.lean`.
 All sixty claims, fourteen definitions, five selected source results and
 TQ5 are discharged. The exact source map, hypotheses, branch firewalls,
