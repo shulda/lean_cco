@@ -207,8 +207,7 @@ theorem every_orientation_not_AP {P : Point → Bit} (hP : Orientation P) :
     obtain ⟨hu,hv,hp,hq⟩ := (owner_iff _ _).mp howner
     simp [pattern,coordinateColour,hu,hv,hp,hq]
   have hdiag : diagonalSetoid (L.point 2) (R.point 2) := by
-    obtain ⟨hu,hv,hp,hq⟩ := (owner_iff _ _).mp howner
-    exact (diagonal_iff _ _).mpr ⟨hu,hv,by rw [hp,hq]⟩
+    exact (diagonal_pattern _ _).mpr ⟨0,((colour_some _ _ _).mp hclone).2⟩
   exact hDifferent (hP.same _ _ hdiag)
 
 end CCO.OrbitalCover.Example
