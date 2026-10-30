@@ -1,14 +1,15 @@
-# B041 — independent complete frozen-source review
+# B041 — independent final exact-head review
 
 ## Disposition and genuine independence
 
-**WHOLE MATHEMATICAL SOURCE, FINAL DOCUMENTS AND ACCEPTED-BASE UNION PASS;
-formal exact-public approval PENDING completed CI.**
+**APPROVE** exact PR55 head
+`f5c3a62433c85c77a807497721aaa3ee71cb03a8`, tree
+`222ecc475c6f858563650f5922dd73b71ab8129b`.
 No missing principal provider, circular quotient-CCO inference, stronger
-replacement premise or mathematical blocker was found. Completed exact
-PR CI/full logs and final live provenance remain separate gates.
-This report asserts no future merge,
-successful CI or ACCEPTED event.
+replacement premise or mathematical blocker was found. Whole source, final
+documents, accepted-base union, actual completed exact PR CI and genuine
+nonauthor provenance pass. This report asserts no future merge,
+resulting-main success or ACCEPTED event.
 
 Actual reviewer: `/root/independent_review`, registered actor
 `independent_review`. I authored, designed and repaired NONE of the complete
@@ -180,9 +181,58 @@ IN_PROGRESS with all five actual authors, the original claim321/base90
 history is retained and the integration lock is null. This source-stage
 report does not treat B041's newly started PR CI as a successful gate.
 
-Formal APPROVAL now requires only personally inspected completed exact
-PR CI/full logs, final ref/synthetic/provenance binding, full
-source/output/provider guards and standard-three official audit. No stable
-mathematical source needs another whole read. Root alone owns formal
-lease/approval publication, sole CAS integration lock, expected-head
-history-preserving merge and actual resulting-main success before ACCEPTED.
+## Completed exact public CI and effective review lease — APPROVE
+
+I personally fetched the final PR/head/base/current-main metadata, actual
+completed run and job, FULL external decoded job log, actual tested synthetic
+merge and live STATE. The reviewed public head/tree above remain unchanged;
+current accepted main/base remains
+`1121b2016c7141ac432364b07c49c0ae31b18dbe`. PR55 remains open, ready and
+mergeable. Synthetic tested merge
+`9e6d9fa8c041efa0553b02a0df28bb1ccb773afa` has EXACTLY the approved tree and
+ordered parents accepted `1121b201...` followed by exact public `f5c3a624...`.
+
+[Run 41050090786](https://github.com/shulda/lean_cco/actions/runs/41050090786),
+job `124043711531`, actually completed SUCCESS for that exact public head,
+with no failed job step. I inspected the full **2,575,593-character** actual
+job log, rather than substituting a summary, local build or another head:
+
+- **130 Python tests** passed.
+- Successful build totals were **1330 EPPA-facade, 1182 Ramsey-facade,
+  3998 CCO project, 3998 audit-replay and six audit-tool jobs**.
+- Official axiom-audit v0.1.2 at exact commit
+  `46024e005996495c65ef609368e11ab39c4222e3` checked **23,915 CCO declarations**,
+  all within `[propext, Classical.choice, Quot.sound]`.
+- Both complete before/after-audit project guards checked **1335 CURRENT CCO
+  source modules and 1335 actual output parts**.
+- Four complete EPPA guards checked 269 current source modules and actual
+  parts at exact pin `cd358cde844d5419fd43f30c441511927e09142f`; four complete
+  Ramsey guards checked 106 current source modules and actual parts at exact
+  vendor subtree `374241ce3751715c90b12c0b071f36026819ad4a`.
+- **All 31 new B041 children and the CCO root were actually built**; no
+  accepted CCO child or provider module was rebuilt. The initial expected
+  stale CCO root import header caused invalidation of one module/eight
+  generated outputs; the subsequent ordinary build, full guards and official
+  audit succeeded. No full clean fallback was observed.
+
+The coordinator's matching receipt is `ci-evidence-41050090786.json`; the
+facts above were independently checked in the actual external full log.
+No duplicate reviewer build/test/audit/cache repair was performed.
+
+I independently parsed actual STATE335 at coordination commit
+`75365bdaaf851c459acc7a636daa1ed437b01b4c`: B041 is REVIEWING at exact
+`f5c3a624...`/PR55 with successful run `41050090786` and allowlist audit.
+The effective review lease names registered actor `independent_review`,
+actual identity `/root/independent_review`, this report path and genuine
+complete-package nonauthorship. All five implementation author identities
+and original claim/base history are retained; the reviewer is not among
+them. B040 remains ACCEPTED, original source pin is unchanged, the
+integration lock is null and the lease's approval flag is still false
+pending this actual decision.
+
+This exact-head approval supplies the independent decision, not a claim
+that future formal events already occurred. Root retains approval
+publication, the sole CAS lock, expected-head history-preserving merge and
+successful actual resulting-main CI/audit before ACCEPTED. Later source
+changes require review of their actual delta; no unchanged whole-source
+read or local receiving pipeline was repeated.
