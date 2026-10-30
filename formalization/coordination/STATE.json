@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 351,
+  "revision": 352,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -2171,7 +2171,7 @@
       }
     },
     "B043": {
-      "state": "IN_PROGRESS",
+      "state": "SUBMITTED",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b043_point_sap",
@@ -2259,7 +2259,96 @@
         ],
         "fresh_cco_modules": [],
         "url": "https://github.com/shulda/lean_cco/actions/runs/41069717134"
-      }
+      },
+      "head_sha": "e01b918ae3bf46ce5a36d83901ef51d0310098e4",
+      "pr_number": 58,
+      "ci": {
+        "run_id": 41071984000,
+        "run_attempt": 1,
+        "head_sha": "e01b918ae3bf46ce5a36d83901ef51d0310098e4",
+        "conclusion": "success",
+        "axiom_audit": "allowlist",
+        "job_id": 124118197879,
+        "tests": 130,
+        "declarations": 24850,
+        "guards": [
+          {
+            "parts": 1381,
+            "source": 1381
+          },
+          {
+            "parts": 1381,
+            "source": 1381
+          }
+        ],
+        "provider_guards": [
+          {
+            "parts": 269,
+            "source": 269,
+            "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+          },
+          {
+            "parts": 269,
+            "source": 269,
+            "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+          },
+          {
+            "parts": 269,
+            "source": 269,
+            "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+          },
+          {
+            "parts": 269,
+            "source": 269,
+            "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+          }
+        ],
+        "ramsey_guards": [
+          {
+            "parts": 106,
+            "source": 106,
+            "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+          },
+          {
+            "parts": 106,
+            "source": 106,
+            "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+          },
+          {
+            "parts": 106,
+            "source": 106,
+            "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+          },
+          {
+            "parts": 106,
+            "source": 106,
+            "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+          }
+        ],
+        "build_jobs": [
+          1330,
+          1182,
+          4046,
+          4046,
+          6
+        ],
+        "fresh_cco_modules": [
+          "CCO.PointGeneratedSAP.Examples.Binary",
+          "CCO.PointGeneratedSAP.Original",
+          "CCO.PointGeneratedSAP.Examples.Matching",
+          "CCO.PointGeneratedSAP.Pieces",
+          "CCO.PointGeneratedSAP.Examples.Constant",
+          "CCO.PointGeneratedSAP.Alignment",
+          "CCO.PointGeneratedSAP.Forward",
+          "CCO.PointGeneratedSAP.Copies",
+          "CCO.PointGeneratedSAP.Examples.ConstantSource",
+          "CCO.PointGeneratedSAP.Reverse",
+          "CCO.PointGeneratedSAP.Source",
+          "CCO.PointGeneratedSAP.Examples.MatchingSource"
+        ],
+        "url": "https://github.com/shulda/lean_cco/actions/runs/41071984000"
+      },
+      "report_path": "formalization/coordination/submissions/B043.md"
     },
     "B044": {
       "state": "IN_PROGRESS",
@@ -9439,6 +9528,106 @@
           "/root/b043_point_sap",
           "/root/b043_point_sap/boundaries"
         ],
+        "actor_id": "root"
+      }
+    },
+    {
+      "revision": 352,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "submit",
+      "package_id": "B043",
+      "details": {
+        "package_id": "B043",
+        "head_sha": "e01b918ae3bf46ce5a36d83901ef51d0310098e4",
+        "pr_number": 58,
+        "ci": {
+          "run_id": 41071984000,
+          "run_attempt": 1,
+          "head_sha": "e01b918ae3bf46ce5a36d83901ef51d0310098e4",
+          "conclusion": "success",
+          "axiom_audit": "allowlist",
+          "job_id": 124118197879,
+          "tests": 130,
+          "declarations": 24850,
+          "guards": [
+            {
+              "parts": 1381,
+              "source": 1381
+            },
+            {
+              "parts": 1381,
+              "source": 1381
+            }
+          ],
+          "provider_guards": [
+            {
+              "parts": 269,
+              "source": 269,
+              "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+            },
+            {
+              "parts": 269,
+              "source": 269,
+              "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+            },
+            {
+              "parts": 269,
+              "source": 269,
+              "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+            },
+            {
+              "parts": 269,
+              "source": 269,
+              "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+            }
+          ],
+          "ramsey_guards": [
+            {
+              "parts": 106,
+              "source": 106,
+              "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+            },
+            {
+              "parts": 106,
+              "source": 106,
+              "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+            },
+            {
+              "parts": 106,
+              "source": 106,
+              "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+            },
+            {
+              "parts": 106,
+              "source": 106,
+              "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+            }
+          ],
+          "build_jobs": [
+            1330,
+            1182,
+            4046,
+            4046,
+            6
+          ],
+          "fresh_cco_modules": [
+            "CCO.PointGeneratedSAP.Examples.Binary",
+            "CCO.PointGeneratedSAP.Original",
+            "CCO.PointGeneratedSAP.Examples.Matching",
+            "CCO.PointGeneratedSAP.Pieces",
+            "CCO.PointGeneratedSAP.Examples.Constant",
+            "CCO.PointGeneratedSAP.Alignment",
+            "CCO.PointGeneratedSAP.Forward",
+            "CCO.PointGeneratedSAP.Copies",
+            "CCO.PointGeneratedSAP.Examples.ConstantSource",
+            "CCO.PointGeneratedSAP.Reverse",
+            "CCO.PointGeneratedSAP.Source",
+            "CCO.PointGeneratedSAP.Examples.MatchingSource"
+          ],
+          "url": "https://github.com/shulda/lean_cco/actions/runs/41071984000"
+        },
+        "report_path": "formalization/coordination/submissions/B043.md",
         "actor_id": "root"
       }
     }
