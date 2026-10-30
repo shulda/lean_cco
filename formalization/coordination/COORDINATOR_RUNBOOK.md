@@ -79,3 +79,23 @@ and the deployed new pair, appends only AVAILABLE live rows and finishes the
 same lock atomically. See QUEUE_OPERATIONS.md; ordinary validators remain
 strict during deployment, and every existing acceptance/history record stays
 unchanged. Claim the lowest eligible package only after effective public CAS.
+
+If the actual review agent's runtime becomes unavailable, preserve its identity
+and incomplete report; never alias a new agent to it. Record concrete failures
+and retry evidence, then use a separately independently reviewed append-only
+reviewer recovery PR. `reviewer_recovery_manifest` permits only one or two fresh
+review/integrate actors, with every old actor/policy field and complete BOARD
+unchanged. Every new reader must be a non-author of the recovery PR and all
+active batches. Active batches must have no review/approval to transfer.
+
+The manifest-bound fresh infrastructure reader may review this recovery PR
+under its prospective policy, solely for bootstrapping registration. Use the
+new helper and old snapshots for `start_infrastructure`; the sole lock binds
+that exact review, successful PR CI/audit and durable unavailable-identity
+evidence. After the expected-head merge and green actual-main CI/audit,
+`promote_reviewer` with explicit old/new snapshots advances the live policy
+revision and finishes this same lock atomically. It changes no package record
+and reuses no approval. Normal validators still reject revision mismatches;
+ordinary fresh package review starts only after effective public promotion.
+See QUEUE_OPERATIONS.md for exact fields and CLI flags. Failure after merge
+keeps the lock; this operation cannot be combined with a catalogue release.

@@ -54,6 +54,36 @@ finish the infrastructure lock separately or start implementation before
 that public transition. During the catalogue/STATE deployment interval the
 lock remains held; ordinary operations reject mismatched registries.
 
+## Recovery of an unavailable reviewer
+
+An unavailable review runtime does not authorize an author to review, an
+identity alias or reuse of an incomplete review. A coordinator may deploy a
+narrow append-only recovery PR under the same single infrastructure lock.
+Preserve every old actor, policy field, catalogue row, claim and acceptance;
+advance the policy revision once and add only one or two genuinely fresh
+review-only/integrator identities. Record the old actual identity, concrete
+failure and retry evidence in a durable report. Verify each new reader is a
+non-author of both this infrastructure and every active batch.
+
+`reviewer_recovery_manifest` binds the unchanged complete old/new catalogue,
+both complete policies, unavailable actor and actual fresh infrastructure
+reader. It permits only this exact actor addition. During `start_infrastructure`,
+validate STATE against the OLD policy; the manifest reconstructs the sole
+prospective policy for checking the fresh reader's substantive exact-head
+review of this recovery PR. This is the narrowly scoped bootstrap exception
+to pre-existing reviewer registration. It confers no package approval and
+requires active batches to have no review lease or approval to transfer.
+Keep all normal validators strict and do not combine recovery with a release.
+
+After the expected-head history-preserving merge and green actual resulting
+main CI/audit, `promote_reviewer` validates explicit old/new snapshots against
+that same lock, advances the live policy revision and finishes the lock in
+one exact-parent CAS. Every package record remains exactly equal as parsed
+JSON; append only the deployment history/infrastructure receipt. A
+failed main keeps the lock. Only then may newly registered readers acquire
+ordinary fresh review leases with their actual identities and own whole-batch
+reports. An unavailable or partial old review never supplies their review.
+
 ## Work selection and capacity
 
 The default is **two active batches for the whole Work team**. Every unresolved
@@ -103,8 +133,10 @@ and audit; green alone never completes a batch. Refreshing a head clears review.
 
 ## Separate non-author control and automatic integration
 
-The `independent_review` actor is a separate review-only agent with its actual
-identity recorded in AUTONOMY. It must have written none of the complete batch,
+Each registered review actor is a separate review-only agent with its actual
+identity recorded in AUTONOMY. The original `independent_review` identity is
+retained in policy and history when a fresh reader is added. Every reader must
+have written none of the complete batch,
 including earlier projects' implementation, and must not participate in its
 implementation decisions. Different IDs, agents or role labels alone do not
 establish this. A former project 2 author cannot review B003 by renaming itself.
