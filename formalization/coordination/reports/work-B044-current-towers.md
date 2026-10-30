@@ -77,6 +77,18 @@ length bound, a composite original reduct and a composite reasonable
 precompact reduct-surjective unary transition. The history itself
 preserves the relation between those two certificates at every stage.
 
+`Towers/ProjectionComposition.lean` additionally proves EXACT equality of
+composed actual forgetful functors with the functor of the composite
+literal point/sort/colour projection, including the zero-stage identity.
+`Towers/HistoryCoherence.lean` proves `history_forget_eq` for the SAME
+chosen `ActualStep` history, and `historyTransition` transfers all three
+expansion properties to that literal composite projection's OWN functor.
+The stronger `actual_terminalisation_coherent` returns both actual data
+and the explicit equality `unary.forget = reduct.forget`. Thus the final
+expansion properties are not certified for an unrelated composite functor.
+The separate `no_infinite_steps` theorem proves the infinite-step sequence
+impossible using the same actual integer potential and an explicit bound.
+
 ## Source instance and exact scope
 
 These support proofs deliberately distinguish a well-founded iteration
@@ -102,8 +114,11 @@ Checkpoint `2bda932` passed the three generic history/composition modules
 (762 jobs); `a8440d6` added the actual finite-age category/current-source/
 parity instance (2375 jobs); `d4be60b` proved the concrete forgetful functor
 and all expansion properties (1438 jobs); `b52377c` added actual-source
-projection provenance and its finite global reduct composition. Final
-`lake --rehash build +CCO.APCharacter.Towers.CurrentParity` passed2378jobs.
+projection provenance and its finite global reduct composition. That actual current-parity target passed2378jobs. Coherence checkpoint
+`a911c24` then passed2226jobs for the narrower HistoryCoherence closure;
+its original projection/forgetful-functor equality is a compiled theorem.
+The final HistoryCoherence replay after adding the explicit no-infinite-
+steps consequence passed2226jobs, without a broad local pipeline.
 
 The last source instance depended on source-algebra/finite-completion
 files copied from the owning stream's immutable `9a1ce20` checkpoint and
