@@ -6,8 +6,9 @@ main `6a3ed6e3a485b3218b5038b38494a7de1f821241`. Source pin and contracts unchan
 Read the actual selected source in `sections/v27/06_legacy_finite_covers.tex`
 and `formalization/orbital_cover_boundary/PROOF_NOTES.md`.
 
-This contribution supplies the direct constructive part of C19–C22 and the
-prescribed-coordinate construction needed for C39. The independent actual
+This contribution supplies the actual coordinate product and profile proofs
+C16/C23/C24/C27, the direct constructive part of C19–C22 and the prescribed-
+coordinate construction needed for C39. The independent actual
 product source, homogeneity, SAP, triangle reconstruction and unary-prefix
 source wrappers belong to the parent contribution. No overall completion
 claim is made by this scoped report.
@@ -50,6 +51,36 @@ identities. They are instantiated by the literal coordinate functions of
 `Example.source`; the final semanticCCO theorem has no potential/CCO/Helly
 provider premise. The prescribed solver's edge equations are exactly local
 unary/edge legality, not an unproved global completion premise.
+
+## Actual STRONG table and positive-word profiles
+
+`Example.Products.coordTriangle` is the literal one-coordinate table:
+e_i * e_j has output e_(i+j), e_i*n and n*e_i have output n, while n*n
+permits all three colours. `coordinate_triple` reads any actual coordinate
+triple. Conversely `coordTriangle_realized` explicitly constructs witnesses
+for every permitted entry. `triangle_iff` combines the two independent
+coordinate triples and assigns clone indices 0,1,2; it proves exactly the
+actual `source.Triangle`, with three distinct real vertices. This is C16.
+
+`Example.Profiles.product_boxes` proves factorization of the actual STRONG
+product. `CoordProfile` has three singleton forms and Top, with its step
+operation proved equal to that actual product table. `wordFactors` folds a
+literal typed `PositiveWord source i j`, and `positive_profile_box` proves
+by induction that its actual `PositiveWord.profile source` is precisely the
+resulting Cartesian product. Every coordinate form is actually reachable
+(`every_coordProfile_reachable`), and every word profile is nonempty. This
+is C23, not merely an abstract recursive algebra.
+
+`CoordProfile.helly` and `positive_profiles_helly` prove the pairwise-
+intersection consistency check for arbitrary families (hence finite
+families). These are C24; neither is used as a premise of semanticCCO.
+`diagonal_not_box` proves the coarse diversity palette containing exactly
+(e0,e0),(e1,e1) is not any Cartesian product. Therefore
+`diagonal_not_positive_profile` separates it from every actual positive
+STRONG word profile (C27).
+
+The targeted `Example.Profiles` build passed 1214 jobs after the added
+actual-table/profile proofs. Only the changed leaf modules were elaborated.
 
 ## Validation and provenance
 
