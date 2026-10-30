@@ -45,3 +45,24 @@ FirstOrder adapter and raw Option-Bool A03 core. Root does not introduce a
 second full-language encoding or a stronger completion callback. Source
 pin, mathematical contracts, accepted APIs and external providers remain
 unchanged.
+
+## Conditional equivariant chosen lift
+
+`Equivariance.Chosen` compiles (747 jobs) on the owner's actual raw signed
+diagram/frozen-factor API. `NaturalSupportNormal` is the optional old A04
+gate for a supplied natural strict pair completion, exactly the conditional
+setting of C25. It remains an assumption, independent of ordinary A03/SAP.
+
+The derived `chosen_lift` augments every low positive/negative tuple before
+using A04. The augmented diagram's own chosen pair completion is natural
+for its ENTIRE automorphism group. Any prescribed original subgroup whose
+permutations preserve the old partial diagram, factor family and chosen
+pair target embeds into that whole augmented group. The SAME injective
+full output retains all those permutations simultaneously. No naturality
+for all automorphisms of the forgotten old diagram is assumed. Canonical
+point separation is a structural input discharged by the actual finite
+canonical expansion, not a new mathematical source premise.
+
+Restoring new unary bits and the optional interface's actual marked-model
+inheritance adapter remain open pending the terminal author's full model
+and finite-age identification. No ordinary result uses A04.
