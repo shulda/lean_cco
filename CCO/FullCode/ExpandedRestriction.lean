@@ -6,6 +6,30 @@ universe u v w z
 namespace CCO.FullCode.Structure
 variable {L L₀ L₁ : Language.{u}} {V : Type v} {W : Type w} {Z : Type z}
 
+def Embedding.targetCongr {A : Structure L V} {C D : Structure L W}
+    (f : Embedding A C) (h : C = D) : Embedding A D where
+  point := f.point
+  injective := f.injective
+  sort_eq x := by rw [← h]; exact f.sort_eq x
+  map_func F x y hy := by rw [← h]; exact f.map_func F x y hy
+  reflect_func F x y hy := by
+    rw [← h] at hy
+    exact f.reflect_func F x y hy
+  unary_iff U x := by rw [← h]; exact f.unary_iff U x
+  binary_iff R x y := by rw [← h]; exact f.binary_iff R x y
+
+def Embedding.sourceCongr {A B : Structure L V} {C : Structure L W}
+    (f : Embedding A C) (h : A = B) : Embedding B C where
+  point := f.point
+  injective := f.injective
+  sort_eq x := by rw [← h]; exact f.sort_eq x
+  map_func F x y hy := by
+    rw [← h] at hy
+    exact f.map_func F x y hy
+  reflect_func F x y hy := by rw [← h]; exact f.reflect_func F x y hy
+  unary_iff U x := by rw [← h]; exact f.unary_iff U x
+  binary_iff R x y := by rw [← h]; exact f.binary_iff R x y
+
 theorem ext_data {C D : Structure L V} (hsort : C.sort = D.sort)
     (hfunc : C.func = D.func) (hunary : C.unary = D.unary)
     (hbinary : C.binary = D.binary) : C = D := by
