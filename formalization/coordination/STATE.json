@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 338,
+  "revision": 339,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -2068,7 +2068,7 @@
       }
     },
     "B041": {
-      "state": "INTEGRATING",
+      "state": "ACCEPTED",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b040_transport",
@@ -2109,6 +2109,13 @@
           "report_path": "formalization/coordination/reviews/B041-final.md"
         },
         "summary": "Actual nonauthor whole-source review approves all60claims/14defs/five selected results/TQ5 across31modules: original typed quotient triangles and SAME displayed-vertex joint homogeneity/AP/JEP; independent private-path HOMCCO without quotient homogeneity/AP/FullWord premise; safe ONE-sort descent; actual current-stage ExactTower, total initial exact kernels, canonical flattening and AtomicIso, no-split/strict diversity rank; FULLAut entire finite axes/conditional F2Goursat; genuine infinite phase clone H+SAP+HOMCCO C55 and literal actual C56 quotient/fullgroup/intrinsic-kernel counterexample. Personally checked only real MD/accepted-base deltas after whole source, all5authors and public11commit topology/tree; exact CI41050090786/job124043711531 full log130tests/23915standard3audit/1335completeCCOguards/exact269EPPA+106Ramsey. Actual reviewer wrote/designed none; durable B041-final.md."
+      },
+      "accepted_commit": "5367e9e72b3dc099ff55238a80f1c9ea7cac46fc",
+      "main_ci": {
+        "run_id": 41050908739,
+        "head_sha": "5367e9e72b3dc099ff55238a80f1c9ea7cac46fc",
+        "conclusion": "success",
+        "axiom_audit": "allowlist"
       }
     },
     "B042": {
@@ -2135,13 +2142,7 @@
       }
     }
   },
-  "integration_lock": {
-    "kind": "package",
-    "package_id": "B041",
-    "actor_id": "root",
-    "base_main_sha": "1121b2016c7141ac432364b07c49c0ae31b18dbe",
-    "head_sha": "f5c3a62433c85c77a807497721aaa3ee71cb03a8"
-  },
+  "integration_lock": null,
   "history": [
     {
       "revision": 1,
@@ -8645,6 +8646,24 @@
         "author_actor_ids": [
           "/root/b042_finite/group_support/correspondence"
         ],
+        "actor_id": "root"
+      }
+    },
+    {
+      "revision": 339,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "accept",
+      "package_id": "B041",
+      "details": {
+        "package_id": "B041",
+        "integration_commit": "5367e9e72b3dc099ff55238a80f1c9ea7cac46fc",
+        "main_ci": {
+          "run_id": 41050908739,
+          "head_sha": "5367e9e72b3dc099ff55238a80f1c9ea7cac46fc",
+          "conclusion": "success",
+          "axiom_audit": "allowlist"
+        },
         "actor_id": "root"
       }
     }
