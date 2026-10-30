@@ -1,0 +1,79 @@
+{
+  "run_id": 41105647949,
+  "run_attempt": 1,
+  "head_sha": "f702071ee44712f81f227329228a074a10e2d9d6",
+  "conclusion": "success",
+  "axiom_audit": "allowlist",
+  "job_id": 124234622614,
+  "tests": 130,
+  "declarations": 27280,
+  "guards": [
+    {
+      "parts": 1524,
+      "source": 1524
+    },
+    {
+      "parts": 1524,
+      "source": 1524
+    }
+  ],
+  "provider_guards": [
+    {
+      "parts": 269,
+      "source": 269,
+      "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+    },
+    {
+      "parts": 269,
+      "source": 269,
+      "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+    },
+    {
+      "parts": 269,
+      "source": 269,
+      "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+    },
+    {
+      "parts": 269,
+      "source": 269,
+      "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+    }
+  ],
+  "ramsey_guards": [
+    {
+      "parts": 106,
+      "source": 106,
+      "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+    },
+    {
+      "parts": 106,
+      "source": 106,
+      "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+    },
+    {
+      "parts": 106,
+      "source": 106,
+      "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+    },
+    {
+      "parts": 106,
+      "source": 106,
+      "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+    }
+  ],
+  "build_jobs": [
+    1330,
+    1182,
+    4198,
+    4198,
+    6
+  ],
+  "fresh_cco_modules": [
+    "CCO.PairSafeSplit.Full.Gates",
+    "CCO.PairSafeSplit.Terminal.Readout",
+    "CCO.PairSafeSplit.Terminal.Successor",
+    "CCO.PairSafeSplit.Terminal.Elimination",
+    "CCO.PairSafeSplit.Source"
+  ],
+  "url": "https://github.com/shulda/lean_cco/actions/runs/41105647949"
+}
