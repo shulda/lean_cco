@@ -25,6 +25,7 @@ MANIFEST = 'HANDOFF_MANIFEST.json'
 def collect(root):
     declarations = json.loads((root / 'catalogue/declarations.json').read_text())
     paths = {'formalization/README.md', 'formalization/HANDOFF.md',
+             'formalization/EXTERNAL_PROVIDER_BUILD_CACHE.md',
              'catalogue/declarations.json', 'tools/build_formalization_module.py',
              'tools/build_formalization_handoff.py', 'tools/test_formalization_module.py',
              'tools/test_formalization_handoff.py', 'tools/test_external_provider_metadata.py',

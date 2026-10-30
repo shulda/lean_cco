@@ -62,9 +62,9 @@ of these new claims and reserves no implementation slot.
 
 ## Exact extraction and preserved public history
 
-The 39 payload files are six package specs, 24 module files (including the
-six original preparation VALIDATION records), six bounded control scripts
-and three new immutable TeX files. Nine other required source files already
+The 40 payload files are six package specs, 24 module files (including the
+six original preparation VALIDATION records), six bounded control scripts,
+three new immutable TeX files and the accompanying historical provider-cache plan. Nine other required source files already
 exist publicly with identical bytes. The source manifest binds all twelve
 required source records to the freshly read immutable human tree and the
 unchanged preparation tree. All 51 fetched raw preparation records were
@@ -74,7 +74,10 @@ is copied into public authority.
 The only payload transformations are public protocol3 activation notices in
 the six specs and one provenance field in unary_hn's existing E01 reference:
 the independently checked pinned `mathlib_commit` required by the unchanged
-validator. All mathematical module fields and claim statements are unchanged.
+validator. The ancillary cache plan has a receiving-context notice and its
+forest-workorder link points to the exact original upstream snapshot. These
+reversible edits preserve its engineering content. All mathematical module
+fields and claim statements are unchanged.
 Every generated module README remains byte-identical to preparation. The
 [292-claim concordance](claim-concordance.json) maps every preserved claim
 to its actual pinned source labels, proof notes and local dependencies.
@@ -89,7 +92,9 @@ Only four existing module allowlists/CI loops gain the six names. The one
 existing handoff-provider test now expects the old two HKN records plus
 the three new HN records, retains pending-state checks and explicitly
 checks that E02/E03 have no Lean references. No test is removed or added,
-and no production validator semantics change. Accepted Lean code/root
+and no production validator semantics change. The handoff path set also
+includes the shared cache plan so both B038 links resolve after extraction.
+Accepted Lean code/root
 imports, lakefile, toolchain, transitive manifest, provider installation,
 cache keys/policy and axiom-audit gates remain unchanged.
 
@@ -130,11 +135,14 @@ The separate newer human edition does not repin any formalization source.
 All **121 inherited Python tests**, all **34 module/source/render checks**,
 all **42 public package envelopes**, and the six new bounded controls pass.
 The finite controls certify their stated diagnostics, never an infinite
-CCO, SAP, Ramsey, EP or EPPA theorem. One comprehensive deterministic full
-handoff is produced after these documents are frozen, extracted once and
-verified against every manifest file; its archive receipt remains outside
-the self-containing snapshot. No local Lean build or axiom audit is repeated
-for this metadata-only release.
+CCO, SAP, Ramsey, EP or EPPA theorem. The initial frozen publication passed
+one comprehensive deterministic full handoff verification of 439 files.
+Independent review then found the missing B038 cache-plan target; the
+guidance-only correction received exact provenance, relative-link and
+handoff-selection checks. Its delta is recorded in the receiving receipt.
+Final exact-head CI exercises the existing handoff tests including that
+added guidance path. No second local archive, full suite, Lean build or
+axiom audit is repeated for this receiving-document correction.
 
 After genuine independent approval, merge the exact expected head under the
 sole infrastructure lock. Keep that SAME lock through successful actual-main

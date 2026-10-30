@@ -31,7 +31,7 @@
     "unary_support"
   ],
   "source_record_count": 12,
-  "payload_file_count": 39,
+  "payload_file_count": 40,
   "raw_records_verified": 51,
   "new_source_files": [
     "sections/unary_hn_transfer.tex",
@@ -192,5 +192,8 @@
     "unary_hn.E01: NOT_BOUND_TO_CCO_ENCODING",
     "unary_hn.E02: UNBOUND; no verified Lean declaration",
     "unary_hn.E03: UNBOUND; no verified Lean declaration"
+  ],
+  "ancillary_guidance": [
+    "formalization/EXTERNAL_PROVIDER_BUILD_CACHE.md"
   ]
 }

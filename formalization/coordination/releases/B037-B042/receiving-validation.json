@@ -346,6 +346,14 @@
       "published_sha256": "eaa687c0032f64389157ea3ef785e5bda3a9a3374958de44a4d9372cbf90e08c",
       "published_bytes": 12040,
       "transformation": "exact fresh bytes and immutable human-source blob"
+    },
+    {
+      "path": "formalization/EXTERNAL_PROVIDER_BUILD_CACHE.md",
+      "fresh_git_blob": "1cd3c96683353da045b171c42e85a25b491ea1b9",
+      "fresh_sha256": "56afc24a39c6dc94b3c47eed9e36200fa184d3ffbca04e1a522ce3f657fb5300",
+      "published_sha256": "3b93ed8ad47b5f08a70e25ef6c42989c7314f53223975c8eceb9b60fa6fcbf78",
+      "published_bytes": 6856,
+      "transformation": "public protocol-3 and accepted-HKN status notice; pin the otherwise absent forest-workorder link to its exact original upstream snapshot; original engineering content preserved"
     }
   ],
   "controls": {
@@ -1085,5 +1093,26 @@
     "No published-provider port, receiving compatibility claim, dependency installation or cache-policy change occurs.",
     "Exact reviewed release-head CI/audit and actual resulting-main CI/audit remain required before one locked atomic registry promotion.",
     "No claim or implementation slot is reserved by publication."
-  ]
+  ],
+  "receiving_guidance_link_correction": {
+    "initial_frozen_head": "ae11baa3822a24b6aa3b5eb6ff5ed08578e0d572",
+    "reason": "B038 contract and proof-notes cache-plan links resolved to an absent receiving file.",
+    "added_guidance": "formalization/EXTERNAL_PROVIDER_BUILD_CACHE.md",
+    "original_preparation_head": "dc5fa9eafc2954909d15f3d18986d04fc8967513",
+    "original_preparation_git_blob": "1cd3c96683353da045b171c42e85a25b491ea1b9",
+    "B038_contract_and_notes_unchanged": true,
+    "all_mathematical_payloads_unchanged": true,
+    "handoff_selection": "Add exactly the shared guidance file to the existing static handoff path set.",
+    "narrow_checks": [
+      "exact original Git blob and byte count",
+      "only documented reversible notice/link transformations",
+      "both B038 relative links and the new local release-record link resolve",
+      "handoff path is present in the existing literal collection set",
+      "all original mathematical payloads, BOARD, policy and canonical promotion manifest unchanged"
+    ],
+    "original_full_handoff_evidence_scope": "The initial frozen55-file publication; no second local archive or full suite is run for this receiving-only guidance correction. Final exact-head CI exercises the existing handoff tests.",
+    "production_validator_logic_changed": false,
+    "cache_policy_changed": false,
+    "local_Lean_build": false
+  }
 }
