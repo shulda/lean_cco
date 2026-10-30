@@ -48,14 +48,24 @@ reflection premise hides in the completeness marking.
 | C15 | `collision_unfolding_source`: actual finite-family source statement with explicit complete declarations and countability retained. |
 | C16 | `already_injective` and the core's identity branch include empty/singleton sources; no symbol enumeration, signature finiteness or binary restriction is used anywhere. |
 
-Boundary C30–C32/C35 examples are a separate active stream; they are not
-certified by this principal proof report. The independent atomic C17–C29
-provider and its scope are mapped in `work-B038-atomic-fullness.md`.
+All relational boundary providers are now complete:
+
+| Claims | Actual boundary proofs |
+| --- | --- |
+| C30 | `BoundariesAP.target` is Option ℕ with red iff none. `target_countable`, `target_homogeneous`, `target_ageAP`, `target_not_ageSAP` are proved for the actual structure. The homogeneity proof extends the actual finite partial blue bijection, augmented by the red point, to a permutation fixing none. `foldRed_HE`, `twoRed_no_injective_hom`, `counterexample` give the actual two-red-point HE with no injective positive replacement. |
+| C31 | `Boundaries.isolated_isHE` treats any loop-free binary target and any injective map of two isolated source points. `isolated_not_embedding` uses an actual edge to refute global inducedness; `two_isolated_into_edge` gives the literal finite witness. This is a local universal edge adapter applicable inside the random graph; construction of the random graph itself is not claimed. |
+| C32 | `Boundaries.collapsed_isHE` maps two pure-set points constantly into ℕ; `separate_singleton_image_iso` constructs an actual Iso for EACH protected singleton after injectivization. `joint_image_card_changes`, `joint_images_not_isomorphic`, `cannot_fix_all_old_positions` explicitly rule out the joint-union/literal-position strengthening. |
+| C35 | `Boundaries.functional_deletion_not_closed` uses the actual Bool function constant true: deleting true retains false but loses its function value. This delimits the deletion proof, not unrelated unary injectivization theorems. |
+
+The independent atomic C17–C29 and C33–C34 providers and their scope are mapped
+in `work-B038-atomic-fullness.md` and `work-B038-atomic-boundaries.md`.
 
 ## Validation and current limits
 
-The relational core, complete-declaration source wrapper and atomic principal
-provider have passed narrow builds under pinned Lean 4.34.1. These are actual
+All 23 new modules, including every boundary provider, are imported from
+`CCO.lean` after the accepted prefix. Their complete SourceAssembly union
+passed the narrow build under pinned Lean 4.34.1 (1291 jobs).
+Mathematical freeze: `5e71e93a88ceb0f9ac7384b0dac216d753dd6f6f`. These are actual
 source proofs, with no new axioms, sorry/admit or conditional clone/provider
 callbacks. Whole-package build, transitive axiom audit, independent final
 review, exact-head CI and actual resulting-main CI remain final gates.
