@@ -1211,3 +1211,7 @@ import CCO.RelationalCompletion.Relational.Split
 import CCO.RelationalCompletion.Relational.Unfolding
 import CCO.RelationalCompletion.SourceAssembly
 import CCO.RelationalCompletion.Relational.AgeAP
+import CCO.RelationalCompletion.Atomic.BoundariesAdapters
+import CCO.RelationalCompletion.Atomic.BoundariesCycles
+import CCO.RelationalCompletion.Atomic.BoundariesFiniteAge
+import CCO.RelationalCompletion.Atomic.BoundariesTwoColour
