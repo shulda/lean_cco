@@ -111,6 +111,12 @@ def modelTable : BoolTable signature Model := ofFirstOrder (inferInstance : sign
 
 theorem model_homogeneous : signature.firstOrder.IsUltrahomogeneous Model := data.homogeneous
 
+theorem model_infinite : Infinite Model := by
+  apply data.infinite_of_unbounded
+  intro n
+  exact ⟨⟨n,table (fun (_ _ _ : Fin n) => False),empty_valid _⟩,
+    ⟨Function.Embedding.refl (Fin n)⟩⟩
+
 /-- Every actual valid finite full hypergraph embeds in the constructed
 model, including each complete three-point factor and every empty-higher
 finite set. -/
