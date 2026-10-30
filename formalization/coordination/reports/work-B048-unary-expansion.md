@@ -40,3 +40,11 @@ helper and this report are authored here. Root owns the assembled project
 build, exact-head CI and transitive axiom audit. Prior canonical freeze
 `b3c13ae` and actual marked pairSAP `2a69a67` remain on preserved branches.
 No new axiom, sorry, provider premise or unpublished batch dependency.
+
+The later comparison support `pairNameCode` is an untyped code independent of
+which carrier supplies the realized typed palette. `marked_pairNameCode_eq_iff`
+proves literal optional pair-code equality after expansion iff the old optional
+pair code and BOTH endpoint bits agree. Identity colours are included, and
+`tagCode_pack_eq_pairNameCode` identifies this code with the actual canonical
+AtomicSource's tagged colour. This was requested by the independent prefix
+comparison author and passed the same narrow target (1346 jobs).
