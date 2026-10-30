@@ -72,14 +72,14 @@ theorem ordered_completion {L : Language.{u}} (hUnary : Unary L)
     HasStrongCompletion (OrderedClass K) C := by
   obtain ⟨W, hW, D, hD, g, hg, hInjective⟩ :=
     unary_injective_completion hUnary hK hIrr C.linearOrderReduct hSingle hOld
-  letI : Finite W := hW
+  let : Finite W := hW
   rcases hD₀ with ⟨old₀, o₀, _hS₀, rfl⟩
-  letI : LinearOrder P := o₀
+  let : LinearOrder P := o₀
   have hpOrder : ∀ x y, C.rel (.inr ()) ![x, y] → p x < p y := by
     intro x y hxy
     exact hp.1.1 (.inr ()) ![x, y] hxy
   obtain ⟨o, hExt⟩ := extend_transported_order C D p hpOrder g hInjective
-  letI : LinearOrder W := o
+  let : LinearOrder W := o
   refine ⟨W, hW, D.withLinearOrder, ⟨D, o, hD, rfl⟩, g, ?_, hInjective⟩
   constructor
   · constructor
@@ -93,7 +93,7 @@ theorem ordered_completion {L : Language.{u}} (hUnary : Unary L)
     · exact hg.1.2
   · intro X E hE e
     obtain ⟨oldE, oE, hKE, rfl⟩ := hPieces E hE e
-    letI : LinearOrder X := oE
+    let : LinearOrder X := oE
     obtain ⟨f, hf⟩ := hg.2 oldE (hIrr oldE hKE) e.linearOrderReduct
     have hm : StrictMono f := by
       intro x y hxy

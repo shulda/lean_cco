@@ -29,8 +29,8 @@ theorem allOrderedModels_ramsey (L : Language.{u}) : Ramsey (AllOrderedModels.{u
   intro V W hV hW A B hA hB κ hκ hκn
   rcases hA with ⟨A₀, oA, hA₀, rfl⟩
   rcases hB with ⟨B₀, oB, hB₀, rfl⟩
-  letI : LinearOrder V := oA
-  letI : LinearOrder W := oB
+  let : LinearOrder V := oA
+  let : LinearOrder W := oB
   obtain ⟨X, hX, oX, C, hC, hArrow⟩ :=
     allThoseRamseyClasses_theorem_2_19_partialFunctions A₀ B₀ hA₀ hB₀ κ
   exact ⟨X, hX, @Structure.withLinearOrder L X C oX.toLT,
@@ -45,7 +45,7 @@ theorem withLinearOrder_irreducible {L : Language.{u}} {V : Type v}
   have hR := d.rightProper
   change ¬ ∀ z : V, ∃ x : d.Left, d.leftIn x = z at hL
   change ¬ ∀ z : V, ∃ x : d.Right, d.rightIn x = z at hR
-  push_neg at hL hR
+  push Not at hL hR
   obtain ⟨x, hx⟩ := hL
   obtain ⟨y, hy⟩ := hR
   have hne : x ≠ y := by
@@ -68,7 +68,7 @@ theorem withLinearOrder_irreducible {L : Language.{u}} {V : Type v}
 theorem orderedClass_allIrreducible {L : Language.{u}} (K : Class.{u,v} L) :
     AllIrreducible (OrderedClass K) := by
   rintro V C ⟨old, o, _, rfl⟩
-  letI := o
+  let := o
   exact @withLinearOrder_irreducible L V old o
 
 end CCO.UnaryHN.Native
