@@ -8,19 +8,22 @@ namespace CCO.ResetOrder.Unary
 open CCO.UnarySupport
 
 structure Fibres (L : Signature.{u}) where
+  Allowed : Age.{u,v} L
+  hereditary : Hereditary Allowed
   same : (A : Object.{u,v} L) → A.Carrier → A.Carrier → Prop
   reset : (A : Object.{u,v} L) → A.Carrier → A.Carrier → Prop
-  same_symm : ∀ A x y, same A x y → same A y x
-  same_trans : ∀ A x y z, same A x y → same A y z → same A x z
+  same_symm : ∀ A, Allowed A → ∀ x y, same A x y → same A y x
+  same_trans : ∀ A, Allowed A → ∀ x y z, same A x y → same A y z → same A x z
   same_natural : ∀ {A B} (f : A.Emb B) x y,
     same B (f.point x) (f.point y) ↔ same A x y
   reset_natural : ∀ {A B} (f : A.Emb B) x y,
     reset B (f.point x) (f.point y) ↔ reset A x y
-  reset_symm : ∀ A x y, reset A x y → reset A y x
-  reset_ne : ∀ A x y, reset A x y → x ≠ y
-  reset_same : ∀ A x y, reset A x y → same A x y
+  reset_symm : ∀ A, Allowed A → ∀ x y, reset A x y → reset A y x
+  reset_ne : ∀ A, Allowed A → ∀ x y, reset A x y → x ≠ y
+  reset_same : ∀ A, Allowed A → ∀ x y, reset A x y → same A x y
 
 structure FibreOrder {L : Signature.{u}} (P : Fibres.{u,v} L) (A : Object.{u,v} L) where
+  valid : P.Allowed A
   lt : A.Carrier → A.Carrier → Prop
   same : ∀ {x y}, lt x y → P.same A x y
   irrefl : ∀ x, ¬ lt x x
@@ -47,11 +50,12 @@ def taskCompose {L : Signature.{u}} {P : Fibres.{u,v} L} {A B C : TaskObject P}
 def reverse {L : Signature.{u}} {P : Fibres.{u,v} L} (A : TaskObject P) : TaskObject P where
   old := A.old
   order := {
+    valid := A.order.valid
     lt := fun x y => A.order.lt y x
-    same := fun h => P.same_symm A.old _ _ (A.order.same h)
+    same := fun h => P.same_symm A.old A.order.valid _ _ (A.order.same h)
     irrefl := A.order.irrefl
     trans := fun hxy hyz => A.order.trans hyz hxy
-    total := fun h hn => A.order.total (P.same_symm _ _ _ h) (Ne.symm hn) }
+    total := fun h hn => A.order.total (P.same_symm _ A.order.valid _ _ h) (Ne.symm hn) }
 
 def taskHomOfPreserves {L : Signature.{u}} {P : Fibres.{u,v} L}
     {A B : TaskObject P} (f : A.old.Emb B.old)
@@ -71,6 +75,7 @@ def taskInduce {L : Signature.{u}} {P : Fibres.{u,v} L} (A : TaskObject P)
     (S : Set A.old.Carrier) (hS : A.old.data.IsClosed S) : TaskObject P where
   old := A.old.induce S hS
   order := {
+    valid := P.hereditary A.order.valid ⟨A.old.inclusion S hS⟩
     lt := fun x y => A.order.lt x.val y.val
     same := fun h => (P.same_natural (A.old.inclusion S hS) _ _).1 (A.order.same h)
     irrefl := fun x => A.order.irrefl x.val

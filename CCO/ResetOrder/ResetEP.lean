@@ -73,9 +73,9 @@ theorem template_global_sign {R : FullAge P X} (T : ResetTemplate R)
       simp only [heleft,heright,hp,ite_true] at hm
       exact hm.symm
     have hfibre : P.same C.task.old (g.point x) (g.point y) :=
-      (P.same_natural g.task.old x y).2 (P.reset_same D.task.old x y hreset)
+      (P.same_natural g.task.old x y).2 (P.reset_same D.task.old D.task.order.valid x y hreset)
     have hne : g.point x ≠ g.point y :=
-      fun h => P.reset_ne D.task.old x y hreset (g.task.old.injective h)
+      fun h => P.reset_ne D.task.old D.task.order.valid x y hreset (g.task.old.injective h)
     exact (competitor.total hfibre hne).resolve_left hn
 
 /-- Actual reset EP: both source patterns, their paths, full-template colour

@@ -16,6 +16,9 @@ no deeper CCO, Ramsey, SAP, EPPA or geometry provider is imported.
   of restriction. The coloring pullback proves Ramsey; restricting joint and
   strong amalgam hosts proves optional JEP and SAP with the exact base images.
 - C25–C28: `Unary/Task` gives actual fibre orders and old induced embeddings.
+  Structural fibre/reset laws are required only on the hereditary legal old
+  age (`Fibres.Allowed`), with each allowed fibre order carrying that actual
+  legality witness; arbitrary raw interpretations need not be equivalences.
   U1/U0 retain exactly the same unary functions, including all partial domains.
   The full ambient `FullObject` may add EXTRA unary partial functions and
   arbitrary relations; every `FullHom` preserves/reflects all of them.
