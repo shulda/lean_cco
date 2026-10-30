@@ -70,5 +70,141 @@ theorem atom_conv (F : SourceIso T S) (k l : κ) (a : T.Atom k l) :
   rw [ht,Option.map_some,hsw] at hm
   exact Option.some.inj hm
 
+private theorem diagonal_tagged_iff {J : Type*} {Z : J → Type*}
+    (U : AtomicSource J Z) (p q : Sigma Z) :
+    taggedColour U p p = taggedColour U q q ↔ p.1 = q.1 := by
+  constructor
+  · exact congrArg Sigma.fst
+  · intro h
+    rcases p with ⟨i,x⟩
+    rcases q with ⟨j,y⟩
+    change i = j at h
+    subst j
+    have hx : U.colour x x = none := (U.colour_none_iff _ _).mpr rfl
+    have hy : U.colour y y = none := (U.colour_none_iff _ _).mpr rfl
+    simp only [taggedColour,hx,hy]
+
+private theorem sigma_cast {J : Type*} {Z : J → Type*} {a b : J}
+    (h : a = b) (x : Z a) :
+    (⟨b,cast (congrArg Z h) x⟩ : Sigma Z) = ⟨a,x⟩ := by cases h; rfl
+
+section Pattern
+variable (T S)
+variable (e : Sigma Y ≃ Sigma X)
+variable (h : ∀ p q r s, taggedColour T p q = taggedColour T r s ↔
+  taggedColour S (e p) (e q) = taggedColour S (e r) (e s))
+
+private noncomputable def patternSort (k : κ) : ι :=
+  (e ⟨k,Classical.choice (T.nonemptySort k)⟩).1
+
+include h
+
+private theorem pattern_sort_point (p : Sigma Y) :
+    (e p).1 = patternSort T e p.1 := by
+  apply (diagonal_tagged_iff S _ _).mp
+  apply (h p p _ _).mp
+  exact (diagonal_tagged_iff T _ _).mpr rfl
+
+private theorem patternSort_bijective : Function.Bijective (patternSort T e) := by
+  constructor
+  · intro k l he
+    have ht : taggedColour S (e ⟨k,Classical.choice (T.nonemptySort k)⟩)
+        (e ⟨k,Classical.choice (T.nonemptySort k)⟩) =
+        taggedColour S (e ⟨l,Classical.choice (T.nonemptySort l)⟩)
+        (e ⟨l,Classical.choice (T.nonemptySort l)⟩) :=
+      (diagonal_tagged_iff S _ _).mpr he
+    exact (diagonal_tagged_iff T _ _).mp ((h _ _ _ _).mpr ht)
+  · intro i
+    let x := Classical.choice (S.nonemptySort i)
+    let p := e.symm ⟨i,x⟩
+    refine ⟨p.1,?_⟩
+    exact (pattern_sort_point T S e h p).symm.trans (congrArg Sigma.fst (e.apply_symm_apply ⟨i,x⟩))
+
+private noncomputable def patternSortEquiv : κ ≃ ι :=
+  Equiv.ofBijective (patternSort T e) (patternSort_bijective T S e h)
+
+private noncomputable def patternPoint (k : κ) (y : Y k) : X (patternSortEquiv T S e h k) :=
+  cast (congrArg X (pattern_sort_point T S e h ⟨k,y⟩)) (e ⟨k,y⟩).2
+
+private theorem patternPoint_whole (k : κ) (y : Y k) :
+    (⟨patternSortEquiv T S e h k,patternPoint T S e h k y⟩ : Sigma X) = e ⟨k,y⟩ :=
+  sigma_cast (pattern_sort_point T S e h ⟨k,y⟩) (e ⟨k,y⟩).2
+
+private theorem patternPoint_bijective (k : κ) :
+    Function.Bijective (patternPoint T S e h k) := by
+  constructor
+  · intro x y hxy
+    have ht : e ⟨k,x⟩ = e ⟨k,y⟩ := (patternPoint_whole T S e h k x).symm.trans
+      ((congrArg (Sigma.mk (patternSortEquiv T S e h k)) hxy).trans
+        (patternPoint_whole T S e h k y))
+    exact eq_of_heq (Sigma.mk.inj (e.injective ht)).2
+  · intro x
+    let p := e.symm ⟨patternSortEquiv T S e h k,x⟩
+    have hep : e p = ⟨patternSortEquiv T S e h k,x⟩ := e.apply_symm_apply _
+    have hs0 : (e p).1 = patternSortEquiv T S e h p.1 := pattern_sort_point T S e h p
+    have hs1 := congrArg (fun q : Sigma X => q.1) hep
+    have hsort : patternSortEquiv T S e h p.1 = patternSortEquiv T S e h k := hs0.symm.trans hs1
+    have hpk := (patternSortEquiv T S e h).injective hsort
+    rcases p with ⟨l,y⟩
+    change l = k at hpk
+    subst l
+    exact ⟨y,eq_of_heq (Sigma.mk.inj ((patternPoint_whole T S e h k y).trans hep)).2⟩
+
+private noncomputable def patternPointEquiv (k : κ) : Y k ≃ X (patternSortEquiv T S e h k) :=
+  Equiv.ofBijective _ (patternPoint_bijective T S e h k)
+
+end Pattern
+
+private noncomputable def renamedSource (S : AtomicSource.{u',v',w'} ι X) (σ : κ ≃ ι) :
+    AtomicSource κ (fun k => X (σ k)) where
+  Atom k l := S.Atom (σ k) (σ l)
+  finiteSort := by
+    letI := S.finiteSort
+    exact Fintype.ofEquiv ι σ.symm
+  finiteAtom k l := S.finiteAtom _ _
+  nonemptySort k := S.nonemptySort _
+  conv := S.conv
+  conv_invol := S.conv_invol
+  symmetricLoop := S.symmetricLoop
+  colour := S.colour
+  colour_none_iff := by
+    intro i j x y
+    let E : Sigma (fun k => X (σ k)) ≃ Sigma X :=
+      Equiv.sigmaCongr σ (fun k => Equiv.refl (X (σ k)))
+    have he : E (⟨i,x⟩ : Sigma (fun k => X (σ k))) = E ⟨j,y⟩ ↔
+        (⟨i,x⟩ : Sigma (fun k => X (σ k))) = ⟨j,y⟩ := E.injective.eq_iff
+    exact (S.colour_none_iff x y).trans he
+  colour_swap := S.colour_swap
+  realized := S.realized
+
+/-- Recover the actual typed source isomorphism from a bijection which
+identifies precisely the equality classes of all tagged optional colours. -/
+noncomputable def of_pattern (e : Sigma Y ≃ Sigma X)
+    (h : ∀ p q r s, taggedColour T p q = taggedColour T r s ↔
+      taggedColour S (e p) (e q) = taggedColour S (e r) (e s)) : SourceIso T S := by
+  let σ := patternSortEquiv T S e h
+  let f := patternPointEquiv T S e h
+  let U := renamedSource S σ
+  have hp : ∀ {k l} (x x' : Y k) (y y' : Y l),
+      T.colour x y = T.colour x' y' ↔ U.colour (f k x) (f l y) = U.colour (f k x') (f l y') := by
+    intro k l x x' y y'
+    change T.colour x y = T.colour x' y' ↔
+      S.colour (patternPoint T S e h k x) (patternPoint T S e h l y) =
+        S.colour (patternPoint T S e h k x') (patternPoint T S e h l y')
+    have hh := h ⟨k,x⟩ ⟨l,y⟩ ⟨k,x'⟩ ⟨l,y'⟩
+    rw [← patternPoint_whole T S e h k x,← patternPoint_whole T S e h l y,
+      ← patternPoint_whole T S e h k x',← patternPoint_whole T S e h l y'] at hh
+    simpa only [taggedColour,Sigma.mk.injEq,heq_eq_eq,true_and] using hh
+  let F := SimultaneousQuotients.Towers.atomicIso T U f hp
+  exact ⟨σ,f,F.atom,F.colours⟩
+
+@[simp] theorem of_pattern_whole (e : Sigma Y ≃ Sigma X)
+    (h : ∀ p q r s, taggedColour T p q = taggedColour T r s ↔
+      taggedColour S (e p) (e q) = taggedColour S (e r) (e s)) :
+    (of_pattern e h).whole = e := by
+  apply Equiv.ext
+  rintro ⟨k,y⟩
+  exact patternPoint_whole T S e h k y
+
 end SourceIso
 end CCO.FullPhaseLift.Full
