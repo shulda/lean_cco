@@ -76,6 +76,22 @@ theorem pairChart_fullChartOfPair (names : PairFaithful U S pack) (C : Age.Chart
   · funext x y
     exact congrArg (Age.colourEquiv S) (hc x y)
 
+/-- A FULL marked embedding induces the literal marked pair embedding.
+All higher truths remain in the original full morphism. -/
+def pairEmbedding (names : PairFaithful U S pack)
+    {A B : Chart U S pack mask} (f : A ⟶ B) :
+    @FirstOrder.Language.Embedding (Age.Language S) (Fin A.old.size) (Fin B.old.size)
+      (pairChart U S pack mask A).structure (pairChart U S pack mask B).structure := by
+  have hc (x y : Fin A.old.size) :
+      taggedColour S (B.pairPoint (f.point x)) (B.pairPoint (f.point y)) =
+        taggedColour S (A.pairPoint x) (A.pairPoint y) :=
+    names A.realization (B.realization.comp (oldEmbedding f)) x y
+  exact (pairChart U S pack mask A).table.embedding
+    (pairChart U S pack mask B).table ⟨f.point,f.injective⟩
+    (fun x => congrArg (Age.ownerEquiv S)
+      (Prod.ext (congrArg (fun c : Age.Colour S => c.1) (hc x x)) (embedding_bits f x)))
+    (fun x y => congrArg (Age.colourEquiv S) (hc x y))
+
 /-- Both pair-age inclusions, on actual identical finite pair objects. -/
 theorem pairChart_surjective (names : PairFaithful U S pack) :
     Function.Surjective (pairChart U S pack mask) :=
