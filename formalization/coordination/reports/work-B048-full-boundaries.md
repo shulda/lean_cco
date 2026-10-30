@@ -19,11 +19,22 @@ The narrow target compiled successfully under pinned Lean 4.34.1 and the
 unchanged manifest: 646 jobs. No broad build, duplicated test pipeline or
 local axiom audit was run.
 
+`Boundary.PurePair` now constructs the actual pure-set shadow as the
+infinite pure clone of a literal one-point source with no old diversity
+atoms. It proves one-point ordinary AP and homogeneity, genuine clone
+SAP, whole homogeneous pure-pair source and an injective realization for
+EVERY finite partial pure-pair diagram (hence semantic CCO). Its diversity
+atom is unique, with the logical diagonal kept separate. This uses the
+accepted pure-clone constructors rather than a finite diagnostic.
+The narrow target passed 813 jobs; the initial local elaboration errors
+were fixed with explicit Sigma finiteness/action imports and typed maps.
+
 ## Open root obligations
 
 - Adapt this actual finite hypergraph class/frozen-factor counterexample to
   the single shared full-language/partial-diagram representation.
-- Bind its pair shadow to an actual pure-set SAP and semantic CCO source.
+- Connect the constructed actual pure-set source to the canonical pair
+  shadow of the hypergraph class in the shared signature representation.
 - Prove preservation of the optional A04 interface from its literal old
   hypothesis and a natural chosen pair target; retain all prescribed
   source automorphisms and restored unary bits. This is conditional and
