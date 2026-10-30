@@ -174,9 +174,41 @@ theorem encode_pullbackTyped {L : Signature.{u}} {V : Type v} {W : Type w}
 def pullbackTypedEmbedding {L : Signature.{u}} {V : Type v} {W : Type w}
     (C : Typed L W) {A : Diagram L V}
     (e : StructuralRamsey.Structure.Embedding A (encode C)) :
-    (pullbackTyped C e).Embedding C := by
-  apply decodeEmbedding
-  rw [encode_pullbackTyped]
+    (pullbackTyped C e).Embedding C where
+  point := e
+  sort_eq _ := rfl
+  map_func F x y hy := by
+    have h : e y ∈ StructuralRamsey.Structure.imageSet e (A.func F (fun _ => x)) :=
+      ⟨y, hy, rfl⟩
+    rw [e.map_func F (fun _ => x)] at h
+    exact h
+  map_rel R xs := (e.map_rel_iff (.inl R) xs).mpr
+  injective := e.injective
+  reflect_func F x y hy := by
+    have h : y ∈ (encode C).func F (e ∘ (fun _ => x)) := hy
+    rw [← e.map_func F (fun _ => x)] at h
+    exact h
+  reflect_rel R xs := (e.map_rel_iff (.inl R) xs).mp
+
+@[simp] theorem pullbackTypedEmbedding_point {L : Signature.{u}} {V : Type v} {W : Type w}
+    (C : Typed L W) {A : Diagram L V}
+    (e : StructuralRamsey.Structure.Embedding A (encode C)) :
+    (pullbackTypedEmbedding C e).point = e := rfl
+
+def castEmbedding {L : Signature.{u}} {V : Type v} {W : Type w}
+    {A A' : Diagram L V} {B B' : Diagram L W}
+    (e : StructuralRamsey.Structure.Embedding A B) (hA : A = A') (hB : B = B') :
+    StructuralRamsey.Structure.Embedding A' B' := by
+  subst A'
+  subst B'
   exact e
+
+@[simp] theorem castEmbedding_apply {L : Signature.{u}} {V : Type v} {W : Type w}
+    {A A' : Diagram L V} {B B' : Diagram L W}
+    (e : StructuralRamsey.Structure.Embedding A B) (hA : A = A') (hB : B = B') (x : V) :
+    castEmbedding e hA hB x = e x := by
+  subst A'
+  subst B'
+  rfl
 
 end CCO.UnaryHN.Raw
