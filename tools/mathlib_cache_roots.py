@@ -12,6 +12,8 @@ from pathlib import Path
 import re
 
 from external_provider import materialized_provider
+from ramsey_provider import NAMESPACES as RAMSEY_NAMESPACES
+from ramsey_provider import materialized_provider as materialized_ramsey_provider
 
 # Namespaces accepted by Cache.IO.isPartOfMathlibCache at the manifest pin.
 CACHE_NAMESPACES = frozenset({
@@ -75,9 +77,15 @@ def cache_roots(project: Path, root: str = 'CCO', include_provider: bool = False
     external: set[str] = set()
     pending = [root]
     provider = None
+    ramsey = None
     if include_provider:
         config, provider = materialized_provider(project)
         pending.append(config['module'])
+        # The separately registered path provider is optional for older
+        # EPPA-only fixtures/projects. Its source identity is checked first.
+        if (project / 'tools/ramsey_provider.json').is_file():
+            config, ramsey = materialized_ramsey_provider(project)
+            pending.append(config['module'])
     while pending:
         module = pending.pop()
         if module in visited:
@@ -88,13 +96,17 @@ def cache_roots(project: Path, root: str = 'CCO', include_provider: bool = False
             if provider is None:
                 _, provider = materialized_provider(project)
             path = provider.joinpath(*module.split('.')).with_suffix('.lean')
+        elif namespace in RAMSEY_NAMESPACES:
+            if ramsey is None:
+                _, ramsey = materialized_ramsey_provider(project)
+            path = ramsey.joinpath(*module.split('.')).with_suffix('.lean')
         else:
             path = project.joinpath(*module.split('.')).with_suffix('.lean')
         if not path.is_file():
             raise ValueError(f'missing project module {module}: {path}')
         for imported in imports(path.read_text(encoding='utf-8')):
             namespace = imported.split('.')[0]
-            if namespace in {'CCO', 'AllThoseEPPA'}:
+            if namespace in {'CCO', 'AllThoseEPPA', *RAMSEY_NAMESPACES}:
                 pending.append(imported)
             elif namespace in CACHE_NAMESPACES:
                 external.add(imported)
