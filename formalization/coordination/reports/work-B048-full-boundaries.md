@@ -88,6 +88,12 @@ both full legs are induced, every base point commutes, and no off-base
 vertices coincide. This is independent of A03 and does not presume the
 support-normal property that the class will refute.
 
-The countable homogeneous realization and literal raw-interface failure
-adapter are the remaining boundary work, beyond the already compiled
-finite obstruction and actual pure-set pair SAP/CCO source.
+`Boundary.Age` now constructs the countable homogeneous Fraïssé model
+from that class (1,146 jobs): every valid full finite object embeds,
+every induced finite object is valid, and the actual model is K₄³-free.
+No model or completion callback is used. This includes actual complete
+three-point hyperedges and empty-higher objects of every finite size.
+
+The literal canonical raw-interface failure adapter and explicit finite
+pair-age comparison remain, beyond the compiled finite obstruction and
+actual pure-set pair SAP/CCO source.
