@@ -115,9 +115,14 @@ theorem coordinates_of_colour_eq {x y x' y' : Point}
     simpa only [coordinateColour, if_pos he, if_pos (hkv.mp he), Option.some.injEq]
       using hv
 
-theorem finite_extension {V : Type*} [Finite V] (f h : V → Point)
-    (hc : ∀ v w, colour (f v) (f w) = colour (h v) (h w)) :
-    ∃ g : Aut, ∀ v, g • f v = h v := by
+theorem finite_extension_controlled {V : Type*} [Finite V] (f h : V → Point)
+    (hc : ∀ v w, colour (f v) (f w) = colour (h v) (h w))
+    (keepP keepQ : Bool)
+    (hP : keepP = true → ∀ v, (f v).p = (h v).p)
+    (hQ : keepQ = true → ∀ v, (f v).q = (h v).q) :
+    ∃ g : Aut, (∀ v, g • f v = h v) ∧
+      (keepP = true → ∀ x : Point, (g • x).p = x.p) ∧
+      (keepQ = true → ∀ x : Point, (g • x).q = x.q) := by
   classical
   have hr := fun v w => coordinates_of_colour_eq (hc v w)
   obtain ⟨ρ, hρ⟩ := SIR.Positive.Direct.exists_perm_of_kernel
@@ -179,11 +184,35 @@ theorem finite_extension {V : Type*} [Finite V] (f h : V → Point)
       have hh : h v = h w := pointEquiv.injective (Prod.ext ho' hn)
       exact congrArg Point.n (hi.mpr hh)
   choose τ ht using hτ
-  refine ⟨motion ρ κ δ ε τ, fun v => ?_⟩
-  have hn := ht (owner (f v)) ⟨v, rfl⟩
-  change motionPerm ρ κ δ ε τ (f v) = h v
-  apply pointEquiv.injective
-  exact Prod.ext (Prod.ext (Prod.ext (hρ v) (hδ v)) (Prod.ext (hκ v) (hε v))) hn
+  refine ⟨motion ρ κ δ ε τ, ?_, ?_, ?_⟩
+  · intro v
+    have hn := ht (owner (f v)) ⟨v, rfl⟩
+    change motionPerm ρ κ δ ε τ (f v) = h v
+    apply pointEquiv.injective
+    exact Prod.ext (Prod.ext (Prod.ext (hρ v) (hδ v)) (Prod.ext (hκ v) (hε v))) hn
+  · intro hk x
+    change δ x.u + x.p = x.p
+    have hd : δ x.u = 0 := by
+      dsimp only [δ]
+      split_ifs with he
+      · rw [← hP hk (Classical.choose he), CharTwo.add_self_eq_zero]
+      · rfl
+    rw [hd, zero_add]
+  · intro hk x
+    change ε x.v + x.q = x.q
+    have he : ε x.v = 0 := by
+      dsimp only [ε]
+      split_ifs with he
+      · rw [← hQ hk (Classical.choose he), CharTwo.add_self_eq_zero]
+      · rfl
+    rw [he, zero_add]
+
+theorem finite_extension {V : Type*} [Finite V] (f h : V → Point)
+    (hc : ∀ v w, colour (f v) (f w) = colour (h v) (h w)) :
+    ∃ g : Aut, ∀ v, g • f v = h v := by
+  obtain ⟨g, hg, _, _⟩ := finite_extension_controlled f h hc false false
+    (fun h => Bool.noConfusion h) (fun h => Bool.noConfusion h)
+  exact ⟨g, hg⟩
 
 theorem homogeneous : HomogeneousSource source Aut where
   preserves_sort := by intro g p; rcases p with ⟨i, x⟩; cases i; rfl
