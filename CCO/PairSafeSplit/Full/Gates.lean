@@ -22,6 +22,9 @@ structure ParityGateData (c : S.Atom i i) (a : X i) where
   parity_cover : evenColourEq S H c ⋖ connectivityColourEq S H c
   parity_index : relativeIndex (evenColourEq S H c).val
     (connectivityColourEq S H c).val a = 2
+  odd_sheet : ∀ x y, OddWalk (S.atomRel c) x y ↔
+    ParityHasse.Relative.odd (evenColourEq S H c).val
+      (connectivityColourEq S H c).val x y
   maximal : ParityHasse.Relative.MaximalGate S H (evenColourEq S H c)
     (connectivityColourEq S H c)
   named : ParityHasse.Relative.NamedGateData S H (evenColourEq S H c)
@@ -35,11 +38,48 @@ def kernel : Kernel S i := APCharacter.MaximalGate.kernel S H _ _ D.maximal
 theorem root_kernel_nontrivial : (⊥ : ColourEq S i) < D.maximal.kernel :=
   lt_of_lt_of_le D.even_nontrivial D.maximal.maximal.1.2.1
 
-/-- The actual maximal gate supplies all groupoid/character providers. -/
+/-- The actual maximal gate supplies all groupoid/character providers.
+The distinguished odd arrow is retained literally, including its original
+parity relation; no existential phase choice can replace that arrow. -/
 def phase (cco : SemanticCCO.{u,v,max u v,w} S) :
-    SourcePhase S H (exactCalculus_of_homogeneous_CCO S H cco) D.kernel :=
-  Classical.choice (APCharacter.MaximalGate.actual_phase S H
-    (exactCalculus_of_homogeneous_CCO S H cco) _ _ D.maximal)
+    SourcePhase S H (exactCalculus_of_homogeneous_CCO S H cco) D.kernel := by
+  let C := exactCalculus_of_homogeneous_CCO S H cco
+  let e := Reached.root_kernel H C (A := D.kernel)
+  let odd := APCharacter.MaximalGate.oddArrow S H _ _ D.maximal
+  have hn := APCharacter.MaximalGate.odd_nonidentity S H _ _ D.maximal
+  let hχ := actual_root_phase S H C D.kernel odd hn
+  let χ := Classical.choose hχ
+  exact ⟨kernelLoopCast S e.symm odd,kernelLoopCast_nonidentity S e.symm odd hn,
+    APCharacter.cast_loop_dominant S e.symm odd
+      (APCharacter.MaximalGate.odd_dominant S H _ _ D.maximal),
+    χ,(Classical.choose_spec hχ).1⟩
+
+/-- Casting the original root kernel changes no real pair in its selected
+odd relation `K;O;K`. This is the source linkage retained by `phase`. -/
+theorem phase_odd_rel (cco : SemanticCCO.{u,v,max u v,w} S) :
+    (D.phase cco).odd.rel = (APCharacter.MaximalGate.oddArrow S H _ _ D.maximal).rel := by
+  change (kernelLoopCast S _ _).rel = _
+  exact kernelLoopCast_rel S _ _
+
+/-- Every pair in the ORIGINAL even layer lies in the selected whole gate. -/
+theorem original_even_le_kernel (x y : X i) (h : evenColourEq S H c x y) :
+    D.kernel.rel x y :=
+  D.maximal.maximal.1.2.1 h
+
+/-- Every pair in the ORIGINAL odd layer lies in the SAME selected odd
+arrow whose character is detected by `phase`, rather than a new odd choice. -/
+theorem original_odd_le_phase (cco : SemanticCCO.{u,v,max u v,w} S)
+    (x y : X i)
+    (h : ParityHasse.Relative.odd (evenColourEq S H c).val
+      (connectivityColourEq S H c).val x y) : (D.phase cco).odd.rel x y := by
+  rw [D.phase_odd_rel cco]
+  exact ⟨y,⟨x,D.maximal.kernel.val.refl x,h⟩,D.maximal.kernel.val.refl y⟩
+
+/-- The original positive odd-word relation itself, not only an abstract
+complement notation, lies in the distinguished arrow of the selected phase. -/
+theorem original_odd_walk_le_phase (cco : SemanticCCO.{u,v,max u v,w} S)
+    (x y : X i) (h : OddWalk (S.atomRel c) x y) : (D.phase cco).odd.rel x y :=
+  D.original_odd_le_phase cco x y ((D.odd_sheet x y).mp h)
 
 end ParityGateData
 
@@ -85,7 +125,9 @@ theorem exists_parity_gate (cco : SemanticCCO.{u,v,max u v,w} S) (sap : AgeSAP S
     intro he
     have hh : (⊥ : ColourEq S i) p q := he ▸ hYpq
     exact hpq hh
-  exact ⟨c,⟨⟨lt_of_le_of_ne bot_le hYne,hcover,hidx,M,hM⟩⟩,hUF,hnot⟩
+  exact ⟨c,⟨⟨lt_of_le_of_ne bot_le hYne,hcover,hidx,
+    fun x y => OrbitalCover.source_odd_sheet S H cco0 E F a c hFE x y,
+    M,hM⟩⟩,hUF,hnot⟩
 
 section Markings
 variable {S H} {C : ExactCalculus S} {r : ι} {A : Kernel S r}
