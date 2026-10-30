@@ -19,7 +19,7 @@ variable {E : InvEq G A} {R : Rel A B} {S : Rel B C}
 variable (T : Transport E R) (U : Transport T.target S)
 
 /-- C09: both actual kernel conditions, on the literal intermediate kernel. -/
-theorem composite : Transport E (compose R S) where
+theorem composite (T : Transport E R) (U : Transport T.target S) : Transport E (compose R S) where
   serial x := by
     obtain ⟨y,hy⟩ := T.serial x
     obtain ⟨z,hz⟩ := U.serial y

@@ -99,6 +99,35 @@ theorem descend_invariant (H : InvEq G A) (h : E ≤ H) (g : G)
     induction q' using Quotient.inductionOn with
     | _ y => exact H.property g x y hq
 
+abbrev QuotientInvariantEq (E : InvEq G A) :=
+  {L : Setoid (Quotient E.val) // ∀ g : G, ∀ q q', L q q' → L (E.act g q) (E.act g q')}
+
+/-- The FULL invariant quotient correspondence, in both directions. -/
+def quotientCorrespondence (E : InvEq G A) : {H : InvEq G A // E ≤ H} ≃o
+    QuotientInvariantEq E where
+  toFun H := ⟨descend H.val H.property,descend_invariant H.val H.property⟩
+  invFun L := ⟨⟨Setoid.comap Quotient.mk'' L.val,fun g x y h => L.property g _ _ h⟩,
+    fun x y h => by
+      have he : (Quotient.mk'' x : Quotient E.val) = Quotient.mk'' y := Quotient.sound h
+      change L.val (Quotient.mk'' x) (Quotient.mk'' y)
+      rw [he]⟩
+  left_inv H := Subtype.ext (InvEq.ext (fun _ _ => Iff.rfl))
+  right_inv L := Subtype.ext (Setoid.ext (fun q q' =>
+    Quotient.inductionOn₂ q q' (fun _ _ => Iff.rfl)))
+  map_rel_iff' := by
+    intro H K
+    constructor
+    · intro h x y hxy
+      have h' : descend H.val H.property ≤ descend K.val K.property := h
+      exact @h' (Quotient.mk'' x) (Quotient.mk'' y) hxy
+    · intro h q q'
+      induction q using Quotient.inductionOn with
+      | _ x =>
+        induction q' using Quotient.inductionOn with
+        | _ y =>
+          change H.val x y → K.val x y
+          exact @h x y
+
 /-- Covers, without any distributivity or finite-lattice assumption. -/
 def Covers {L : Type*} [PartialOrder L] (x y : L) : Prop :=
   x < y ∧ ∀ z, x ≤ z → z ≤ y → z = x ∨ z = y
