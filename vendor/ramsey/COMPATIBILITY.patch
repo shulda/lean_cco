@@ -1,0 +1,254 @@
+--- a/PartiteConstruction/Functional/EHNStage.lean
++++ b/PartiteConstruction/Functional/EHNStage.lean
+@@ -1,3 +1,4 @@
++import Mathlib.Basic.Finite.Sum
+ import PartiteConstruction.Functional.WeakAttachment
+ 
+ set_option autoImplicit false
+--- a/PartiteConstruction/Functional/OrderedRecursive.lean
++++ b/PartiteConstruction/Functional/OrderedRecursive.lean
+@@ -1,3 +1,4 @@
++import Mathlib.Data.Fin.VecNotation
+ import PartiteConstruction.Structure.Order
+ import PartiteConstruction.Functional.SemiClosedRecursiveConstruction
+ import PartiteConstruction.Functional.SingletonReduction
+--- a/PartiteConstruction/Partite/Picture.lean
++++ b/PartiteConstruction/Partite/Picture.lean
+@@ -1,3 +1,4 @@
++import Mathlib.Basic.Finite.Sum
+ import PartiteConstruction.Partite.Attachment
+ import PartiteConstruction.Partite.NonInduced
+ import PartiteConstruction.Partite.Projection
+--- a/PartiteConstruction/Ramsey/ForbiddenFunctions.lean
++++ b/PartiteConstruction/Ramsey/ForbiddenFunctions.lean
+@@ -1,3 +1,5 @@
++import Mathlib.Data.Fin.VecNotation
++import Mathlib.Tactic.FinCases
+ import PartiteConstruction.Ramsey.FreeAmalgamationFunctions
+ 
+ set_option autoImplicit false
+--- a/PartiteConstruction/Ramsey/ForbiddenFunctionsAllArity.lean
++++ b/PartiteConstruction/Ramsey/ForbiddenFunctionsAllArity.lean
+@@ -1,3 +1,5 @@
++import Mathlib.Data.Fin.VecNotation
++import Mathlib.Tactic.FinCases
+ import PartiteConstruction.Ramsey.ForbiddenFunctions
+ import PartiteConstruction.Ramsey.FreeAmalgamationFunctionsAllArity
+ 
+--- a/PartiteConstruction/Ramsey/FreeAmalgamationFunctions.lean
++++ b/PartiteConstruction/Ramsey/FreeAmalgamationFunctions.lean
+@@ -1,3 +1,5 @@
++import Mathlib.Data.Fin.VecNotation
++import Mathlib.Tactic.FinCases
+ import PartiteConstruction.Functional.EHNConstruction
+ import PartiteConstruction.Functional.OrderedRecursive
+ 
+--- a/PartiteConstruction/Ramsey/Ordered.lean
++++ b/PartiteConstruction/Ramsey/Ordered.lean
+@@ -1,3 +1,4 @@
++import Mathlib.Data.Fin.VecNotation
+ import PartiteConstruction.Ramsey.Finite
+ import PartiteConstruction.Ramsey.FromProjections
+ import PartiteConstruction.Relational.Order
+--- a/PartiteConstruction/Relational/Basic.lean
++++ b/PartiteConstruction/Relational/Basic.lean
+@@ -1,6 +1,7 @@
+ import Mathlib.Data.Fintype.Basic
++import Mathlib.Basic.Finite.Prod
++import Mathlib.Tactic.Ext
+ import Mathlib.Data.Fintype.Pi
+-import Mathlib.Tactic
+ 
+ /-! # Relational structures and induced embeddings
+ 
+--- a/PartiteConstruction/Relational/Order.lean
++++ b/PartiteConstruction/Relational/Order.lean
+@@ -1,5 +1,7 @@
++import Mathlib.Data.Fin.VecNotation
++import Mathlib.Tactic.FinCases
+ import PartiteConstruction.Ramsey.Basic
+-import Mathlib.Order.Prod.Lex.Basic
++import Mathlib.Data.Prod.Lex
+ 
+ /-! # Adding and completing a distinguished order relation
+ 
+--- a/PartiteConstruction/Structure/Basic.lean
++++ b/PartiteConstruction/Structure/Basic.lean
+@@ -1,6 +1,7 @@
+ import Mathlib.Data.Fintype.Basic
++import Mathlib.Basic.Finite.Prod
++import Mathlib.Tactic.Ext
+ import Mathlib.Data.Fintype.Pi
+-import Mathlib.Tactic
+ 
+ /-! # Structures with relations and set-valued functions
+ 
+--- a/PartiteConstruction/Structure/FreeAmalgamationClass.lean
++++ b/PartiteConstruction/Structure/FreeAmalgamationClass.lean
+@@ -1,3 +1,4 @@
++import Mathlib.SetTheory.Cardinal.Finite
+ import PartiteConstruction.Structure.FreeAmalgam
+ import Mathlib.Data.Fintype.Card
+ 
+--- a/PartiteConstruction/Structure/Order.lean
++++ b/PartiteConstruction/Structure/Order.lean
+@@ -1,3 +1,5 @@
++import Mathlib.Data.Fin.VecNotation
++import Mathlib.Tactic.FinCases
+ import PartiteConstruction.Functional.FunctionDomains
+ import PartiteConstruction.Relational.Order
+ 
+--- a/PartiteConstruction/Structure/RootedOrder.lean
++++ b/PartiteConstruction/Structure/RootedOrder.lean
+@@ -1,8 +1,10 @@
++import Mathlib.Data.Fin.VecNotation
++import Mathlib.Tactic.FinCases
+ import PartiteConstruction.Structure.RootedEmbedding
+ import PartiteConstruction.Ramsey.FreeAmalgamationFunctions
+ import Mathlib.Data.Fintype.Card
+ import Mathlib.Data.Set.Finite.Basic
+-import Mathlib.Order.Prod.Lex.Basic
++import Mathlib.Data.Prod.Lex
+ 
+ set_option autoImplicit false
+ 
+--- a/PartiteConstruction/Structure/RootedReduction.lean
++++ b/PartiteConstruction/Structure/RootedReduction.lean
+@@ -1,6 +1,6 @@
+ import PartiteConstruction.Structure.NullaryRoot
+ import PartiteConstruction.Structure.Order
+-import Mathlib.Order.Prod.Lex.Basic
++import Mathlib.Data.Prod.Lex
+ 
+ set_option autoImplicit false
+ 
+--- a/SuccessorTree/HalesJewett/AlphabetEquiv.lean
++++ b/SuccessorTree/HalesJewett/AlphabetEquiv.lean
+@@ -1,6 +1,5 @@
+ import SuccessorTree.Support
+ import Mathlib.Data.Fintype.Option
+-import Mathlib.Tactic
+ 
+ /-!
+ # Equivariance of starred Hales--Jewett
+--- a/SuccessorTree/HalesJewett/AlphabetInduction.lean
++++ b/SuccessorTree/HalesJewett/AlphabetInduction.lean
+@@ -6,7 +6,6 @@
+ import Mathlib.Data.Fintype.Option
+ import Mathlib.Data.Fintype.Pigeonhole
+ import Mathlib.Data.Fintype.EquivFin
+-import Mathlib.Tactic
+ 
+ /-!
+ # Closing the combinatorial-forcing proof of Hales--Jewett
+--- a/SuccessorTree/HalesJewett/AlphabetLift.lean
++++ b/SuccessorTree/HalesJewett/AlphabetLift.lean
+@@ -1,5 +1,4 @@
+ import SuccessorTree.HalesJewett.Composition
+-import Mathlib.Tactic
+ 
+ /-!
+ # Alphabet extension plumbing
+--- a/SuccessorTree/HalesJewett/Composition.lean
++++ b/SuccessorTree/HalesJewett/Composition.lean
+@@ -1,6 +1,5 @@
+ import SuccessorTree.HalesJewett.VariableWord
+ import SuccessorTree.HalesJewett.Forcing
+-import Mathlib.Tactic
+ 
+ /-!
+ # Composition of variable-word subspaces
+--- a/SuccessorTree/HalesJewett/FiniteVariableWord.lean
++++ b/SuccessorTree/HalesJewett/FiniteVariableWord.lean
+@@ -1,5 +1,4 @@
+ import SuccessorTree.HalesJewett.VariableWord
+-import Mathlib.Tactic
+ 
+ /-!
+ # Finite variable-word calculus
+@@ -427,8 +426,7 @@
+     rw [hsame, evalIndexed_indexedLine_eval' u n a L hu]
+   · intro i hi
+     have hil : i < (u ++ [a]).length := by
+-      simp [hu]
+-      exact Nat.le_of_lt (U.below i hi)
++      simpa [hu] using Nat.lt_succ_of_lt (U.below i hi)
+     cases hget : (u ++ [a])[i]? with
+     | none =>
+         rw [List.getElem?_eq_none_iff] at hget
+--- a/SuccessorTree/HalesJewett/ForcingFusion.lean
++++ b/SuccessorTree/HalesJewett/ForcingFusion.lean
+@@ -1,5 +1,4 @@
+ import SuccessorTree.HalesJewett.ForcingLemmaTwo
+-import Mathlib.Tactic
+ 
+ /-!
+ # Fusion schedule and recursive bad-line refinement
+--- a/SuccessorTree/HalesJewett/ForcingFusionLimit.lean
++++ b/SuccessorTree/HalesJewett/ForcingFusionLimit.lean
+@@ -1,6 +1,5 @@
+ import SuccessorTree.HalesJewett.ForcingFusion
+ import SuccessorTree.HalesJewett.ForcingMaximal
+-import Mathlib.Tactic
+ 
+ /-!
+ # Fusion limit for forcing Lemma 2
+--- a/SuccessorTree/HalesJewett/ForcingLemmaOne.lean
++++ b/SuccessorTree/HalesJewett/ForcingLemmaOne.lean
+@@ -2,7 +2,6 @@
+ import SuccessorTree.Support
+ import Mathlib.Data.Fintype.Pi
+ import Mathlib.Data.List.OfFn
+-import Mathlib.Tactic
+ 
+ /-!
+ # The maximal-avoider core of forcing Lemma 1
+--- a/SuccessorTree/HalesJewett/ForcingLemmaTwo.lean
++++ b/SuccessorTree/HalesJewett/ForcingLemmaTwo.lean
+@@ -1,6 +1,5 @@
+ import SuccessorTree.HalesJewett.Composition
+ import SuccessorTree.HalesJewett.ForcingReduction
+-import Mathlib.Tactic
+ 
+ /-!
+ # One-step refinement for forcing Lemma 2
+--- a/SuccessorTree/HalesJewett/ForcingMaximal.lean
++++ b/SuccessorTree/HalesJewett/ForcingMaximal.lean
+@@ -1,7 +1,6 @@
+ import SuccessorTree.HalesJewett.GreedyLimit
+ import SuccessorTree.HalesJewett.ForcingLemmaOne
+ import SuccessorTree.HalesJewett.ForcingReduction
+-import Mathlib.Tactic
+ 
+ /-!
+ # Maximal avoiders and forcing Lemma 1
+--- a/SuccessorTree/HalesJewett/ForcingProposition.lean
++++ b/SuccessorTree/HalesJewett/ForcingProposition.lean
+@@ -1,5 +1,4 @@
+ import SuccessorTree.HalesJewett.ForcingFusionLimit
+-import Mathlib.Tactic
+ 
+ /-!
+ # Proposition 1 from forcing Lemma 2
+--- a/SuccessorTree/HalesJewett/GreedyLimit.lean
++++ b/SuccessorTree/HalesJewett/GreedyLimit.lean
+@@ -1,6 +1,5 @@
+ import SuccessorTree.HalesJewett.Composition
+ import SuccessorTree.HalesJewett.FiniteVariableWord
+-import Mathlib.Tactic
+ 
+ /-!
+ # Greedy extension limits for the forcing proof
+--- a/SuccessorTree/HalesJewett/LineSchedule.lean
++++ b/SuccessorTree/HalesJewett/LineSchedule.lean
+@@ -1,9 +1,9 @@
+ import SuccessorTree.HalesJewett.ForcingFusion
+ import Mathlib.Data.Fintype.Pi
++import Mathlib.Data.Fintype.Option
+ import Mathlib.Data.List.OfFn
+ import Mathlib.Data.List.GetD
+ import Mathlib.Data.Nat.Find
+-import Mathlib.Tactic
+ 
+ /-!
+ # A concrete length-sorted schedule of starred lines
