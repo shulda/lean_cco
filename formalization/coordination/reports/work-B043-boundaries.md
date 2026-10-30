@@ -55,7 +55,10 @@ Concrete example carriers themselves are explicitly countable/infinite.
 Exact runtime Lean4.34.1/Lake5 and unchanged receiving manifest were used.
 Narrow model build Matching+Constant passed1335jobs; Binary passed373jobs;
 actual source-consumer build ConstantSource+MatchingSource+Binary passed
-1342jobs. The final MatchingSource compile uses the complete owner iff
+1342jobs. After refreshing all seven generic owner dependency files to
+committed `4ba8c3497ec4a05323ef84a15019524554649cfc`, the FINAL combined
+MatchingSource+ConstantSource+Binary target passed1345jobs, including the
+complete source iff and both actual consumers. The final MatchingSource compile uses the complete owner iff
 rather than only its forward implication. Owner generic dependency files
 were private untracked source copies solely for compilation, never staged
 or committed by this helper. No broad project build, test suite, audit or
