@@ -1,0 +1,86 @@
+{
+  "run_id": 41048342120,
+  "head_sha": "8e0ad173ed85d3ee6093fbddd6a18a6e19e7f47b",
+  "conclusion": "success",
+  "axiom_audit": "allowlist",
+  "job_id": 124037918462,
+  "tests": 130,
+  "declarations": 23221,
+  "guards": [
+    {
+      "parts": 1304,
+      "source": 1304
+    },
+    {
+      "parts": 1304,
+      "source": 1304
+    }
+  ],
+  "provider_guards": [
+    {
+      "parts": 269,
+      "source": 269,
+      "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+    },
+    {
+      "parts": 269,
+      "source": 269,
+      "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+    },
+    {
+      "parts": 269,
+      "source": 269,
+      "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+    },
+    {
+      "parts": 269,
+      "source": 269,
+      "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+    }
+  ],
+  "ramsey_guards": [
+    {
+      "parts": 106,
+      "source": 106,
+      "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+    },
+    {
+      "parts": 106,
+      "source": 106,
+      "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+    },
+    {
+      "parts": 106,
+      "source": 106,
+      "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+    },
+    {
+      "parts": 106,
+      "source": 106,
+      "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+    }
+  ],
+  "build_jobs": [
+    1330,
+    1182,
+    3966,
+    3966,
+    6
+  ],
+  "fresh_cco_modules": [
+    "CCO.QuotientTransport.SharedActions.Orbitals",
+    "CCO.QuotientTransport.Core",
+    "CCO.QuotientTransport.Boundaries.NonDefinability",
+    "CCO.QuotientTransport.SharedActions.PointLifting",
+    "CCO.QuotientTransport.Definability",
+    "CCO.QuotientTransport.Lattice",
+    "CCO.QuotientTransport.SharedActions.Boundaries",
+    "CCO.QuotientTransport.Composition",
+    "CCO.QuotientTransport.Irreducible",
+    "CCO.QuotientTransport.Boundaries.Transport",
+    "CCO.QuotientTransport.Return",
+    "CCO.QuotientTransport.Consumers",
+    "CCO.QuotientTransport.FormulaConsumers"
+  ],
+  "url": "https://github.com/shulda/lean_cco/actions/runs/41048342120"
+}
