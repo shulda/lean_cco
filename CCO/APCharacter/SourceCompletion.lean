@@ -30,5 +30,18 @@ theorem actual_finite_interval_marked_completion
   exact ⟨K,P,P.calculus cco,P.finite_seed_extension,P.completion_property cco,
     P.marked_homogeneous cco,P.completion_property cco⟩
 
+include cco in
+/-- Original old-cycle identity folding without a caller-supplied whole
+homomorphism. Original semantic CCO discharges that temporary graph witness;
+no character, marking, SAP or hidden homogeneous-limit provider is used. -/
+theorem old_identity_fold {V : Type (max u v)} (D : PartialDiagram S V)
+    (cycles : ∀ C : SimpleCycle D, CycleHom C)
+    (x y : V) (hxy : x ≠ y) (sameSort : D.vertexSort x = D.vertexSort y)
+    (missing : D.edge x y hxy = none) (bound : Completion.IdentityBound D x y) :
+    ∃ f : DiagramHom D,
+      ∀ C : SimpleCycle (Completion.foldDiagram D f x y hxy sameSort missing bound), CycleHom C := by
+  obtain ⟨f⟩ := cco V D cycles
+  exact ⟨f,Completion.identity_folding_cycles D f x y hxy sameSort missing bound⟩
+
 end
 end CCO.APCharacter
