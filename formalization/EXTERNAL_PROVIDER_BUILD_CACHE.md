@@ -103,6 +103,19 @@ re-elaboration while still rebuilding a deliberately changed CCO adapter.
 Keep provider audit provenance separate from ordinary cache-hit evidence.
 This is the engineering acceptance criterion, not a mathematical proof test.
 
+## Receiving reminder: factorization-forest licensing
+
+Before importing or porting the forest provider, follow the explicit
+[licensing and attribution gate in its updated work order](https://github.com/shulda/cycle_constrainedness/blob/30abcca888c0348f6b1ce5a32581b9250e5f7ae5/cco-symmetric-eppa/papers/consolidated_working/formalization/FACTORIZATION_FOREST_PROVIDER.md).
+Retain the exact upstream Apache-2.0 LICENSE and Re'em Melamed-Katz's
+copyright/authorship, preserve applicable notices and any NOTICE attribution,
+and put prominent change notices in each modified upstream file. Record
+original source and receiving patches separately. Include required license
+and notices when distributing compiled provider artifacts as well as source.
+The CCO adapter must identify upstream proof authorship separately from the
+receiving application. This reminder adds no mathematical assumption or
+provider installation and does not change the source/toolchain/cache pins.
+
 Primary documentation consulted:
 
 - [Lake build traces, artifact caches and release builds](https://lean-lang.org/doc/reference/latest/Build-Tools-and-Distribution/Lake/).

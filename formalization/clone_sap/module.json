@@ -1,0 +1,1184 @@
+{
+  "schema_version": 1,
+  "id": "clone_sap",
+  "index_title": "Pure-clone SAPification and the actual symmetric palette lattice",
+  "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+  "status": "HUMAN_EXPANDED_NOT_LEAN",
+  "scope": "Private B045: two selected Ramsey source results and the JC equation. Infinite pure clones convert ordinary old AP into real SAP, preserve homogeneity, triangle-definedness and semantic HOM CCO, and have exact kernel K=Id union c=c;c with actual quotient Q. Expand c-component obstruction/cycle lifting locally, with no equality-extended CCO black box. Independently prove the finite palette lattice interface and permutability by a same-sort two-point swap. No new external provider, later Ramsey theorem or old SAP is assumed.",
+  "scope_vocabulary": [
+    "clone_geometry",
+    "homogeneity",
+    "triangles",
+    "strong_amalgamation",
+    "clone_CCO",
+    "kernel",
+    "palette_lattice",
+    "boundary"
+  ],
+  "scope_explanation": "statement and proof. Separate infinite clone indices from finite/countable old Q, ordinary owner AP from real clone SAP, logical identity outputs from diversity edges, partial-diagram homomorphisms from induced complete embeddings, and the independent symmetric one-sort lattice result from all clone/CCO assumptions.",
+  "control_script": "tools/check_clone_sap_controls.py",
+  "assumptions": [
+    {
+      "id": "A01",
+      "name": "Actual homogeneous old binary source",
+      "statement": "Q is a nonempty countable homogeneous complete relational binary structure in a finite atomic colour language, with one or finitely many named NONEMPTY transitive original sorts. Same-sort atoms are symmetric; mixed-sort atoms have paired converses. Colours are ACTUAL occurring induced pair types, logical equality separate. There are no extra unnamed structure/functions/higher-arity relations. Q may be finite. Empty/unrealized named sorts are omitted."
+    },
+    {
+      "id": "A02",
+      "name": "Actual infinite pure clone construction",
+      "statement": "For every real q in Q take the fibre {q} x N. Distinct clones of the same owner receive a new sort-specific diversity colour c; distinct owners retain their old Q colour. Original unary sort labels are pulled back. Clone identities are logical diagonals, never specified diversity edges. Each fibre has arbitrarily many fresh indices."
+    },
+    {
+      "id": "A03",
+      "name": "Optional old triangle-definedness",
+      "statement": "The finite age of Q consists of complete old diagrams whose singleton/pair types and every triangle are actual permitted old types. Include actual unary/pair admissibility for diagrams with fewer than three points; triangle-only vacuity does not create unrealized atoms."
+    },
+    {
+      "id": "A04",
+      "name": "Optional ordinary old amalgamation",
+      "statement": "Age(Q) has ordinary AP over finite complete induced bases; cross-leg owner identifications are allowed. No old strong amalgamation is assumed. Embeddings preserve/reflect original complete induced binary types and unary sorts."
+    },
+    {
+      "id": "A05",
+      "name": "Optional old semantic HOM CCO",
+      "statement": "Every finite typed old diversity partial graph whose specified simple cycles map homomorphically into Q has a homomorphism of the entire partial graph into Q. Nonadjacent vertices may collide. Source cycle feasibility is homomorphic, not injective; equality-labelled graphs are not taken as an additional black-box input."
+    },
+    {
+      "id": "A06",
+      "name": "Independent actual symmetric palette setting",
+      "statement": "For the palette interface, M is ONE nonempty named transitive sort of a homogeneous complete binary structure with FINITELY many actual occurring symmetric diversity colours. Complete two-point induced isomorphisms extend to full structure automorphisms. Countability, AP/SAP, CCO, triangle-definedness and the clone construction are NOT assumed in this independent setting. Parameter-free definability is in the given named language."
+    }
+  ],
+  "imports": [],
+  "definitions": [
+    {
+      "id": "D01",
+      "name": "Clone carrier and owner map",
+      "statement": "Qhat is the actual sorted set Q x N with projection pi(q,i)=q and colours prescribed by A02.",
+      "depends_on": [
+        "A01",
+        "A02"
+      ],
+      "notes": "N01",
+      "source": {
+        "file": "sections/ramsey_clone_sap.tex",
+        "anchor": "\\label{thm:internal-clone-sap}"
+      }
+    },
+    {
+      "id": "D02",
+      "name": "Full clone kernel",
+      "statement": "K(x,y) means pi(x)=pi(y); this is Id union c on each original sort. A c;c product uses an actual intermediate clone and includes possible equal endpoints.",
+      "depends_on": [
+        "A02",
+        "D01"
+      ],
+      "notes": "N01",
+      "source": {
+        "file": "sections/ramsey_clone_sap.tex",
+        "anchor": "\\label{thm:internal-clone-sap}"
+      }
+    },
+    {
+      "id": "D03",
+      "name": "Finite owner diagram",
+      "statement": "For an actual finite induced clone object B, quotient B by K and keep every old colour between different owner classes; this is the actual finite induced Q diagram on pi(B).",
+      "depends_on": [
+        "D01",
+        "D02"
+      ],
+      "notes": "N01",
+      "source": {
+        "file": "sections/ramsey_clone_sap.tex",
+        "anchor": "\\label{thm:internal-clone-sap}"
+      }
+    },
+    {
+      "id": "D04",
+      "name": "Locally legal clone triangles",
+      "statement": "Use actual one/two-point clone types and the actual permitted triples. In particular two c-edges force the third edge c; one c-edge to an external point forces the two old colours equal in typed orientation.",
+      "depends_on": [
+        "D01"
+      ],
+      "notes": "N02",
+      "source": {
+        "file": "sections/ramsey_clone_sap.tex",
+        "anchor": "\\label{thm:internal-clone-sap}"
+      }
+    },
+    {
+      "id": "D05",
+      "name": "Partial graph and c-components",
+      "statement": "A finite typed diversity partial graph has at most one atomic label per unordered pair, with paired converse orientation. Its c-components are the connected components of the specified c-edge subgraph, including isolated vertices.",
+      "depends_on": [
+        "A02"
+      ],
+      "notes": "N04",
+      "source": {
+        "file": "sections/ramsey_clone_sap.tex",
+        "anchor": "\\label{thm:internal-clone-sap}"
+      }
+    },
+    {
+      "id": "D06",
+      "name": "Contracted owner graph",
+      "statement": "Collapse every c-component of a partial graph. Keep old diversity edge labels between components after proving there are no internal old edges and conflicting parallel labels. No equality edge is added to the old diversity graph.",
+      "depends_on": [
+        "D05"
+      ],
+      "notes": "N04",
+      "source": {
+        "file": "sections/ramsey_clone_sap.tex",
+        "anchor": "\\label{thm:internal-clone-sap}"
+      }
+    },
+    {
+      "id": "D07",
+      "name": "Palette equivalences",
+      "statement": "For X a subset of the actual same-sort diversity palette L, E_X is logical equality union the X-coloured pairs. Lambda comprises X for which E_X is an equivalence; empty palette represents equality.",
+      "depends_on": [
+        "A06"
+      ],
+      "notes": "N06",
+      "source": {
+        "file": "sections/ramsey_preferred_support.tex",
+        "anchor": "\\label{prop:lattice-interface}"
+      }
+    },
+    {
+      "id": "D08",
+      "name": "Full represented composition and relative indices",
+      "statement": "E;F consists of actual pairs with an actual intermediate witness, including logical equality. For E<=F, relative index is the number of E-classes in an F-class, uniform by transitivity; the lattice proof does not require this number finite.",
+      "depends_on": [],
+      "notes": "N06",
+      "source": {
+        "file": "sections/ramsey_preferred_support.tex",
+        "anchor": "\\label{prop:lattice-interface}"
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "name": "The clone language is an actual complete atomic code",
+      "statement": "A02 assigns exactly one diversity atom to each distinct same-sort or mixed-sort pair, with inherited converses and symmetry. K=Id union c is the actual equivalence of equal owners. It neither merges original sorts nor treats old equality as diversity.",
+      "depends_on": [
+        "A01",
+        "A02",
+        "D01",
+        "D02"
+      ],
+      "notes": "N01",
+      "scope": "clone_geometry",
+      "source_labels": [
+        "thm:internal-clone-sap"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C02",
+      "name": "Owner quotients of finite induced objects are induced old diagrams",
+      "statement": "The K-classes of finite B correspond bijectively to pi(B). Clone colours between different K-classes are exactly the old Q colours, independent of representative indices. Thus B/K is an actual complete induced Q object, and any clone embedding induces an induced owner embedding.",
+      "depends_on": [
+        "C01",
+        "D03"
+      ],
+      "notes": "N01",
+      "scope": "clone_geometry",
+      "source_labels": [
+        "thm:internal-clone-sap"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C03",
+      "name": "A finite clone partial isomorphism induces one old partial isomorphism",
+      "statement": "Preservation/reflection of K makes the owner map well-defined and injective. Every old colour and original unary sort is retained, so the finite owner map is an induced old Q isomorphism.",
+      "depends_on": [
+        "C01",
+        "C02"
+      ],
+      "notes": "N01",
+      "scope": "homogeneity",
+      "source_labels": [
+        "thm:internal-clone-sap"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C04",
+      "name": "Old homogeneity and independent fibre bijections extend the map",
+      "statement": "Extend C03 to alpha in Aut(Q). On each owner fibre the original finite clone map prescribes a finite partial injection into the alpha-owner fibre. Extend it to a permutation/bijection of N; combine these independent bijections with alpha to get a whole clone automorphism. Hence Qhat is homogeneous.",
+      "depends_on": [
+        "A01",
+        "A02",
+        "C03"
+      ],
+      "notes": "N01",
+      "scope": "homogeneity",
+      "source_labels": [
+        "thm:internal-clone-sap"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C05",
+      "name": "Every clone automorphism projects to an old automorphism",
+      "statement": "K is definable by equality or c, so any clone automorphism permutes its actual classes. C02 shows that the induced permutation preserves every old relation/sort and is an automorphism of Q. No section or preferred clone is chosen.",
+      "depends_on": [
+        "C01",
+        "C02"
+      ],
+      "notes": "N01",
+      "scope": "homogeneity",
+      "source_labels": [
+        "thm:internal-clone-sap"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C06",
+      "name": "A locally legal complete clone diagram has a clone equivalence",
+      "statement": "The actual triangle rule with two c-edges forces a third c-edge. Together with symmetry and logical diagonal this makes Id union c transitive, hence an equivalence in every locally legal complete diagram. One/two-point edge cases use actual admissibility.",
+      "depends_on": [
+        "A01",
+        "A02",
+        "D04"
+      ],
+      "notes": "N02",
+      "scope": "triangles",
+      "source_labels": [
+        "thm:internal-clone-sap"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C07",
+      "name": "Old labels are uniform between clone classes",
+      "statement": "For a c-related pair and an external point, the actual c,a,b triangle rule forces a=b with the correct orientation. Applying it in each class makes all old labels between any two different clone classes equal.",
+      "depends_on": [
+        "C06",
+        "D04"
+      ],
+      "notes": "N02",
+      "scope": "triangles",
+      "source_labels": [
+        "thm:internal-clone-sap"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C08",
+      "name": "The collapsed complete diagram has permitted original types",
+      "statement": "C06/C07 yield a well-defined complete owner diagram. Choosing representatives of three distinct classes shows each old triangle is actual Q-feasible. Singleton and pair types are actual as part of local legality.",
+      "depends_on": [
+        "C06",
+        "C07",
+        "A03"
+      ],
+      "notes": "N02",
+      "scope": "triangles",
+      "source_labels": [
+        "thm:internal-clone-sap"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C09",
+      "name": "Old triangle-definedness realizes the clone complete diagram",
+      "statement": "A03 embeds C08 into Q. Assign distinct clone indices to all vertices over each embedded owner, using A02. All old colours and within-class c-edges are then realized, yielding an induced clone embedding. Therefore Qhat is triangle-defined.",
+      "depends_on": [
+        "A02",
+        "A03",
+        "C08"
+      ],
+      "notes": "N02",
+      "scope": "triangles",
+      "source_labels": [
+        "thm:internal-clone-sap"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C10",
+      "name": "Triangle-definedness also reflects back to the quotient",
+      "statement": "Conditionally, if the actual clone age is triangle-defined, any locally legal old complete diagram is locally legal upstairs using only old colours. Its induced clone realization has distinct owners for every distinct pair, so projection realizes it inducedly in Q. This converse is internal support, not another numbered export.",
+      "depends_on": [
+        "A01",
+        "A02",
+        "D04"
+      ],
+      "notes": "N02",
+      "scope": "triangles",
+      "source_labels": [
+        "thm:internal-clone-sap"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C11",
+      "name": "A clone AP span descends to an ordinary owner AP span",
+      "statement": "For finite clone A->B,C, C02 produces owner diagrams and induced base owner embeddings. A04 amalgamates these in Age(Q). Different off-base owners across the legs may coincide, while distinct owners within a leg cannot.",
+      "depends_on": [
+        "A04",
+        "C02"
+      ],
+      "notes": "N03",
+      "scope": "strong_amalgamation",
+      "source_labels": [
+        "thm:internal-clone-sap"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C12",
+      "name": "Fresh clone indices separate every real off-base vertex",
+      "statement": "In the formal real union B disjoint-union-over-A C, keep only the actual base identifications. Above each amalgamated owner assign different natural-number indices to all distinct real vertices. This uses finitely many indices, available by A02 even if old AP merged owners.",
+      "depends_on": [
+        "A02",
+        "C11"
+      ],
+      "notes": "N03",
+      "scope": "strong_amalgamation",
+      "source_labels": [
+        "thm:internal-clone-sap"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C13",
+      "name": "The resulting real amalgam is strong",
+      "statement": "Within each leg the owner embedding preserves old colours and distinguishes old owner classes, while C12 preserves c and every shared real base point. Hence both legs embed inducedly into the actual finite clone target, with image intersection exactly the real base. This is SAP, not free amalgamation, derived without old SAP.",
+      "depends_on": [
+        "C02",
+        "C11",
+        "C12"
+      ],
+      "notes": "N03",
+      "scope": "strong_amalgamation",
+      "source_labels": [
+        "thm:internal-clone-sap"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C14",
+      "name": "Components for CCO lie in one original sort",
+      "statement": "In a partial clone diversity graph, every c-edge joins one original sort to itself. Therefore each c-component has a definite original sort, with isolated vertices retained. Assume for C15-C21 that all specified simple cycles are clone-homomorphic.",
+      "depends_on": [
+        "A01",
+        "A02",
+        "D05"
+      ],
+      "notes": "N04",
+      "scope": "clone_CCO",
+      "source_labels": [
+        "thm:internal-clone-sap"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C15",
+      "name": "An old edge inside one c-component creates an infeasible simple cycle",
+      "statement": "A shortest c-path between its endpoints plus that old edge is a simple cycle, of length at least three because the graph has one label per pair. Any clone homomorphism projects the whole c-path to one owner, while the old irreflexive atom requires different owners, contradiction. Thus no old edge lies inside one component.",
+      "depends_on": [
+        "C01",
+        "C14",
+        "D05"
+      ],
+      "notes": "N04",
+      "scope": "clone_CCO",
+      "source_labels": [
+        "thm:internal-clone-sap"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C16",
+      "name": "Conflicting old edges between two components create an infeasible simple cycle",
+      "statement": "Orient both old edges from the first component to the second. Join their endpoints by simple c-paths inside each component; the paths have disjoint vertex sets. Together they form a simple cycle, allowing a zero-length path when endpoints agree. Both paths cannot be zero unless it is the same original pair. A clone homomorphism would make both old atoms hold on one ordered owner pair, contradicting atomic exclusivity. Thus duplicate component edges agree.",
+      "depends_on": [
+        "C01",
+        "C14",
+        "D05"
+      ],
+      "notes": "N04",
+      "scope": "clone_CCO",
+      "source_labels": [
+        "thm:internal-clone-sap"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C17",
+      "name": "Contraction yields a genuine old diversity partial graph",
+      "statement": "C15 removes internal old edges and C16 makes duplicate intercomponent labels agree. The resulting quotient graph has actual typed old diversity atoms, no loops or equality-labelled edges. Its isolated component vertices are kept.",
+      "depends_on": [
+        "C14",
+        "C15",
+        "C16",
+        "D06"
+      ],
+      "notes": "N04",
+      "scope": "clone_CCO",
+      "source_labels": [
+        "thm:internal-clone-sap"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C18",
+      "name": "Every old quotient simple cycle lifts to a simple clone cycle",
+      "statement": "Choose old edge representatives around a quotient simple cycle. Within each visited c-component connect the incoming and outgoing endpoints by a simple c-path. Distinct quotient vertices are different components, so the interiors do not overlap; zero-length connecting paths cause no repeated vertex. The lifted simple cycle has a clone homomorphism by hypothesis. Projection collapses its c-paths and gives an old homomorphism of the quotient cycle.",
+      "depends_on": [
+        "C14",
+        "C17"
+      ],
+      "notes": "N04",
+      "scope": "clone_CCO",
+      "source_labels": [
+        "thm:internal-clone-sap"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C19",
+      "name": "Original semantic CCO solves the quotient owner graph",
+      "statement": "By C18 every specified simple cycle of the old quotient graph maps to Q. A05 supplies a whole old homomorphism of that graph, allowing nonadjacent component vertices to collide. No equality-extension or injectivity theorem is imported.",
+      "depends_on": [
+        "A05",
+        "C17",
+        "C18"
+      ],
+      "notes": "N04",
+      "scope": "clone_CCO",
+      "source_labels": [
+        "thm:internal-clone-sap"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C20",
+      "name": "Infinite fibres lift the owner solution to the whole clone graph",
+      "statement": "Give every original formal vertex a fresh index in the fibre over its chosen owner from C19, distinct from all other formal vertices assigned that owner. Each c-edge then joins distinct clones of one owner, and every old edge keeps its old Q atom. The resulting whole clone homomorphism may be chosen injective on real vertices.",
+      "depends_on": [
+        "A02",
+        "C19"
+      ],
+      "notes": "N04",
+      "scope": "clone_CCO",
+      "source_labels": [
+        "thm:internal-clone-sap"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C21",
+      "name": "Clone semantic HOM CCO follows",
+      "statement": "C14-C20 give a whole clone homomorphism whenever each specified simple clone cycle is feasible. This proves the source CCO conclusion directly from old A05, independently of old AP, SAP or triangle-definedness. It is a homomorphism of the partial edge diagram; missing edges are not asserted reflected.",
+      "depends_on": [
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20"
+      ],
+      "notes": "N04",
+      "scope": "clone_CCO",
+      "source_labels": [
+        "thm:internal-clone-sap"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C22",
+      "name": "Clone semantic CCO implies old semantic CCO",
+      "statement": "Conditionally assume semantic HOM CCO of Qhat. For an old partial graph whose simple cycles map to Q, regard its old labels upstairs. Each cycle Q-solution lifts by fresh clone indices. Clone CCO gives a whole map upstairs; owner projection gives a whole Q homomorphism. Different cycle lifts need not agree with each other.",
+      "depends_on": [
+        "A01",
+        "A02",
+        "C01"
+      ],
+      "notes": "N04",
+      "scope": "clone_CCO",
+      "source_labels": [
+        "thm:internal-clone-sap"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C23",
+      "name": "Every two-step c walk stays in one owner fibre",
+      "statement": "Both c-edges preserve the owner, so c;c is contained in K. This is actual represented composition, with equality allowed at endpoints.",
+      "depends_on": [
+        "A02",
+        "D01",
+        "D02"
+      ],
+      "notes": "N05",
+      "scope": "kernel",
+      "source_labels": [
+        "thm:internal-clone-sap"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C24",
+      "name": "A third clone witnesses every pair in K",
+      "statement": "For any x,y with the same owner choose a clone z different from both. Then x c z c y. If x=y only one point is excluded. Infinite fibres supply such a z; hence K is contained in c;c.",
+      "depends_on": [
+        "A02",
+        "D01",
+        "D02"
+      ],
+      "notes": "N05",
+      "scope": "kernel",
+      "source_labels": [
+        "thm:internal-clone-sap"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C25",
+      "name": "The clone kernel is an exact full relation with quotient Q",
+      "statement": "C23/C24 give K=c;c=Id union c, a positive represented word profile including logical equality. The owner map identifies the actual K-quotient canonically with Q with all original named relations and sorts. For multiple sorts use each own c_a and K_a.",
+      "depends_on": [
+        "C02",
+        "C23",
+        "C24"
+      ],
+      "notes": "N05",
+      "scope": "kernel",
+      "source_labels": [
+        "thm:internal-clone-sap"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C26",
+      "name": "Pure-clone SAPification source export",
+      "statement": "Under A01-A05, C04 gives homogeneity, C09 triangle-definedness, C13 SAP, C21 semantic HOM CCO and C25 the exact clone kernel/quotient. Old Q may be finite; clone fibres are infinite. No later Ramsey theorem or old SAP was used.",
+      "depends_on": [
+        "C04",
+        "C09",
+        "C13",
+        "C21",
+        "C25"
+      ],
+      "notes": "N05",
+      "scope": "clone_geometry",
+      "source_labels": [
+        "thm:internal-clone-sap"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C27",
+      "name": "Actual named colours are exactly the full pair orbitals",
+      "statement": "Under independent A06, every occurring same-sort named diversity colour is one full automorphism pair orbit by extending a same-colour complete two-point isomorphism. Transitivity makes logical equality one orbit. Different named colours cannot merge.",
+      "depends_on": [
+        "A06",
+        "D07"
+      ],
+      "notes": "N06",
+      "scope": "palette_lattice",
+      "source_labels": [
+        "prop:lattice-interface"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C28",
+      "name": "Every invariant equivalence has one definable palette",
+      "statement": "Every parameter-free definable relation is invariant, hence by C27 a union of actual named pair orbitals. Conversely every union is parameter-free definable since the palette is finite and named. An equivalence includes the whole diagonal and is uniquely E_X for X in Lambda. This also proves the invariant-equivalence strengthening as internal support.",
+      "depends_on": [
+        "A06",
+        "C27",
+        "D07"
+      ],
+      "notes": "N06",
+      "scope": "palette_lattice",
+      "source_labels": [
+        "prop:lattice-interface"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C29",
+      "name": "The palette order is finite with intersection as meet",
+      "statement": "There are at most 2^|L| palettes; equality and top are included. Inclusion of palettes equals inclusion of represented equivalences. Intersections of equivalences remain equivalences and E_(X intersect Y)=E_X intersect E_Y. Thus binary meets are literal palette intersections.",
+      "depends_on": [
+        "A06",
+        "C28",
+        "D07"
+      ],
+      "notes": "N06",
+      "scope": "palette_lattice",
+      "source_labels": [
+        "prop:lattice-interface"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C30",
+      "name": "Degenerate composition witnesses already reverse",
+      "statement": "For x E y F z, if x=y choose z as the F;E intermediate; if y=z choose x; if x=z choose x. Reflexivity and the given equalities make these valid. The remaining case has three distinct points.",
+      "depends_on": [
+        "A06",
+        "D08"
+      ],
+      "notes": "N06",
+      "scope": "palette_lattice",
+      "source_labels": [
+        "prop:lattice-interface"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C31",
+      "name": "A symmetric two-point swap proves permutability",
+      "statement": "For distinct x,y,z with x E y F z, the induced map swapping x,z is a two-point isomorphism because their same-sort atom is symmetric. Extend it to a whole automorphism g and set w=g(y). Then z E w F x, hence x F w E z. Together with C30 and exchanging E,F, this proves E;F=F;E. No CCO, triangle constraints or separate one-point-extension theorem is needed.",
+      "depends_on": [
+        "A06",
+        "C30",
+        "D08"
+      ],
+      "notes": "N06",
+      "scope": "palette_lattice",
+      "source_labels": [
+        "prop:lattice-interface"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C32",
+      "name": "The commuting product is an equivalence",
+      "statement": "For invariant equivalences E,F, their product R is reflexive. Its converse is F;E=E;F by C31, so it is symmetric. Associativity of actual existential witnesses gives R;R=E;(F;E);F=E;E;F;F=R, so it is transitive.",
+      "depends_on": [
+        "C31",
+        "D08"
+      ],
+      "notes": "N06",
+      "scope": "palette_lattice",
+      "source_labels": [
+        "prop:lattice-interface"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C33",
+      "name": "The product is exactly the palette join",
+      "statement": "Reflexivity of E,F makes R=E;F contain both. Every equivalence containing them contains each two-step E,F witness, so contains R. Therefore R is their least upper equivalence; it is invariant and by C28 has one palette Z=X join Y. Along with C29 this proves the finite lattice and JC. Join need not be palette union, and products include the logical diagonals.",
+      "depends_on": [
+        "C28",
+        "C29",
+        "C32",
+        "D08"
+      ],
+      "notes": "N06",
+      "scope": "palette_lattice",
+      "source_labels": [
+        "prop:lattice-interface"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C34",
+      "name": "Symmetry cannot be dropped from the palette product theorem",
+      "statement": "Outside A06 take S3 with all directed difference atoms R_g(x,y) iff x^-1 y=g. The full structure is homogeneous by left translations. Equivalences from H=<(12)> and J=<(23)> compose according to HJ and JH, which differ. This boundary claims no CCO or symmetric source and shows arbitrary invariant equivalences need not permute.",
+      "depends_on": [
+        "D08"
+      ],
+      "notes": "N07",
+      "scope": "boundary",
+      "source_labels": [
+        "prop:lattice-interface"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C35",
+      "name": "Finite clone windows test but do not replace infinite fibres",
+      "statement": "With two clones per owner c;c is Id, not K. At least three indices suffice for bounded kernel calculations. For any fixed fibre size m>=2, two full c-fibre extensions over one real point cannot strongly amalgamate because they require 2m-1 distinct clones of that owner. For m=1, c is empty and the construction is old Q itself, so SAP depends on Q. Controls use finite windows ample for their bounded spans/graphs, never certified as unbounded SAP/CCO sources.",
+      "depends_on": [
+        "A02",
+        "D02",
+        "C23",
+        "C24"
+      ],
+      "notes": "N07",
+      "scope": "boundary",
+      "source_labels": [
+        "thm:internal-clone-sap"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C36",
+      "name": "Small cases, actual sorts and certification boundaries",
+      "statement": "Empty partial diagrams and isolated components are retained; all original sorts used are nonempty, so acyclic diagrams have actual unary witnesses. Triangle-definedness checks actual unary/pair admissibility for size below three. Finite nonempty old Q, singleton owner sources and zero old diversity palettes are allowed; infinite clone fibres still realize c and c-triangles. Local proofs give no arbitrary hidden equality, unspecified-edge reflection, Ramsey theorem, external provider binding or Lean certificate.",
+      "depends_on": [
+        "A01",
+        "A02",
+        "D04",
+        "D05"
+      ],
+      "notes": "N07",
+      "scope": "boundary",
+      "source_labels": [
+        "thm:internal-clone-sap"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    }
+  ],
+  "source_result_files": [],
+  "additional_result_exports": [
+    "thm:internal-clone-sap",
+    "prop:lattice-interface"
+  ],
+  "exports": [
+    {
+      "source_label": "thm:internal-clone-sap",
+      "claims": [
+        "C26"
+      ]
+    },
+    {
+      "source_label": "prop:lattice-interface",
+      "claims": [
+        "C28",
+        "C29",
+        "C31",
+        "C33"
+      ]
+    }
+  ],
+  "auxiliary_exports": [
+    {
+      "source_label": "eq:join-composition",
+      "claims": [
+        "C29",
+        "C33"
+      ],
+      "source": {
+        "file": "sections/ramsey_preferred_support.tex",
+        "anchor": "\\label{eq:join-composition}"
+      }
+    }
+  ],
+  "source_files": [
+    {
+      "file": "sections/ramsey_clone_sap.tex",
+      "git_blob": "2b14f19885e7109be548a0af73fba14c974dc636"
+    },
+    {
+      "file": "sections/ramsey_preferred_support.tex",
+      "git_blob": "a4213db90239937a525e6fa7b6ea36703a2900df"
+    }
+  ],
+  "dependency_firewalls": [
+    {
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05"
+      ],
+      "forbid": [
+        "A03",
+        "A04",
+        "A05",
+        "A06",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36"
+      ]
+    },
+    {
+      "claims": [
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10"
+      ],
+      "forbid": [
+        "A04",
+        "A05",
+        "A06",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36"
+      ]
+    },
+    {
+      "claims": [
+        "C11",
+        "C12",
+        "C13"
+      ],
+      "forbid": [
+        "A03",
+        "A05",
+        "A06",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36"
+      ]
+    },
+    {
+      "claims": [
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22"
+      ],
+      "forbid": [
+        "A03",
+        "A04",
+        "A06",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36"
+      ]
+    },
+    {
+      "claims": [
+        "C23",
+        "C24",
+        "C25"
+      ],
+      "forbid": [
+        "A03",
+        "A04",
+        "A05",
+        "A06",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36"
+      ]
+    },
+    {
+      "claims": [
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33"
+      ],
+      "forbid": [
+        "A01",
+        "A02",
+        "A03",
+        "A04",
+        "A05",
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C34",
+        "C35",
+        "C36"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "T01",
+      "name": "Actual clone owners and homogeneous extension",
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Keep actual old/clone colours, nonempty original sorts and infinite fresh clone indices. Prove internal-edge and duplicate-component-label obstructions by genuine simple cycles before quotient lifting. Use ordinary owner AP only; distinguish globally injective partial homomorphism from an induced complete embedding. Palette lattice uses independent same-sort symmetry/homogeneity and logical diagonals, no CCO/SAP. Finite controls certify no unbounded theorem or compiled Lean."
+    },
+    {
+      "id": "T02",
+      "name": "Triangle quotient and ordinary-owner to real-strong AP",
+      "claims": [
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13"
+      ],
+      "depends_on": [
+        "T01"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Keep actual old/clone colours, nonempty original sorts and infinite fresh clone indices. Prove internal-edge and duplicate-component-label obstructions by genuine simple cycles before quotient lifting. Use ordinary owner AP only; distinguish globally injective partial homomorphism from an induced complete embedding. Palette lattice uses independent same-sort symmetry/homogeneity and logical diagonals, no CCO/SAP. Finite controls certify no unbounded theorem or compiled Lean."
+    },
+    {
+      "id": "T03",
+      "name": "Component obstructions, simple cycle lifting and semantic CCO",
+      "claims": [
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22"
+      ],
+      "depends_on": [
+        "T01"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Keep actual old/clone colours, nonempty original sorts and infinite fresh clone indices. Prove internal-edge and duplicate-component-label obstructions by genuine simple cycles before quotient lifting. Use ordinary owner AP only; distinguish globally injective partial homomorphism from an induced complete embedding. Palette lattice uses independent same-sort symmetry/homogeneity and logical diagonals, no CCO/SAP. Finite controls certify no unbounded theorem or compiled Lean."
+    },
+    {
+      "id": "T04",
+      "name": "Exact clone kernel, source assembly and finite boundaries",
+      "claims": [
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C35",
+        "C36"
+      ],
+      "depends_on": [
+        "T01",
+        "T02",
+        "T03"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Keep actual old/clone colours, nonempty original sorts and infinite fresh clone indices. Prove internal-edge and duplicate-component-label obstructions by genuine simple cycles before quotient lifting. Use ordinary owner AP only; distinguish globally injective partial homomorphism from an induced complete embedding. Palette lattice uses independent same-sort symmetry/homogeneity and logical diagonals, no CCO/SAP. Finite controls certify no unbounded theorem or compiled Lean."
+    },
+    {
+      "id": "T05",
+      "name": "Independent finite palette lattice and oriented boundary",
+      "claims": [
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Keep actual old/clone colours, nonempty original sorts and infinite fresh clone indices. Prove internal-edge and duplicate-component-label obstructions by genuine simple cycles before quotient lifting. Use ordinary owner AP only; distinguish globally injective partial homomorphism from an induced complete embedding. Palette lattice uses independent same-sort symmetry/homogeneity and logical diagonals, no CCO/SAP. Finite controls certify no unbounded theorem or compiled Lean."
+    }
+  ],
+  "controls": [
+    {
+      "id": "K01",
+      "check": "Bounded actual two-owner clone models: partial graph homomorphism search versus independent cycle criterion and c-component quotient; owner-AP collision versus strong real clone separation; actual finite partial automorphism extension."
+    },
+    {
+      "id": "K02",
+      "check": "Full c;c kernels in finite clone windows, including two-clone failure; finite symmetric palette equivalence products/joins and directed S3 noncommuting boundary."
+    }
+  ],
+  "overview_mermaid": [
+    "flowchart TD",
+    "  O[\"Actual homogeneous old source\"] --> H[\"Homogeneous infinite clone cover\"]",
+    "  A[\"Ordinary owner AP\"] --> S[\"Strong real clone amalgamation\"]",
+    "  C[\"Old semantic HOM CCO\"] --> P[\"Contract c-components and lift cycles\"]",
+    "  P --> K[\"Clone HOM CCO and exact kernel\"]",
+    "  T[\"Old triangle-defined age\"] --> H",
+    "  L[\"Independent symmetric actual pair orbitals\"] --> J[\"Finite palette lattice and commuting joins\"]"
+  ],
+  "overview_notes": [
+    "Two selected results and JC; the remaining assumptions/notation in preferred_support are not additional result exports.",
+    "Infinite clone fibres supply fresh real points even when an ordinary old amalgam identifies off-base owners.",
+    "The quotient CCO proof is local and uses no equality-labelled CCO black box or later Ramsey theorem.",
+    "Palette permutability comes from extending the same-sort endpoint swap, independent of all clone/CCO hypotheses."
+  ],
+  "article_feedback": [
+    {
+      "id": "F01",
+      "kind": "PROOF_EXPANSION_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/ramsey_clone_sap.tex",
+        "anchor": "CCO: first allow original logical equalities"
+      },
+      "finding": "Before applying original diversity-only CCO to the c-component quotient, explicitly rule out an internal old edge and conflicting old parallel component labels by shortest/simple c-path cycles. Quotient simple cycles then lift through distinct components.",
+      "proposed_article_change": "Expand the two obstruction cases and allow zero-length internal connecting paths when two old edges share an endpoint. This gives a direct proof without treating equality-extended CCO as a new input.",
+      "caller_effect": "No new mathematical hypothesis or external provider; frozen source remains unchanged.",
+      "proof_claims": [
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21"
+      ]
+    },
+    {
+      "id": "F02",
+      "kind": "PROOF_EXPANSION_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/ramsey_preferred_support.tex",
+        "anchor": "It remains to prove permutability."
+      },
+      "finding": "The allowed swapped triangle can be transported by extending the induced two-point endpoint swap. This directly proves equivalence permutability in the actual symmetric homogeneous sort, without a separate Fraisse one-point extension API.",
+      "proposed_article_change": "Optionally replace the one-point-extension sentence by the endpoint-swap automorphism proof and state actual occurring atom/unary-pair admissibility conventions.",
+      "caller_effect": "Only proof support; no source repair, CCO/SAP assumption or new counted result.",
+      "proof_claims": [
+        "C27",
+        "C30",
+        "C31",
+        "C33"
+      ]
+    }
+  ],
+  "review": {
+    "date": "2026-10-29",
+    "source_unchanged": true,
+    "source_signature_repairs": 0,
+    "unexpanded_provider_labels": [],
+    "proof_status": "HUMAN_EXPANDED_NOT_LEAN; independent source proof audit PASS, local clone/component and palette proof expansion complete; parent independent proof synthesis PASS.",
+    "independent_reviews": [
+      "Independent reconstruction of clone homogeneity, owner AP/real SAP, triangle quotient, c-component obstructions/cycle lifting and exact kernel: PASS",
+      "Independent symmetric palette endpoint-swap proof and directed S3 boundary: PASS",
+      "Parent read the complete claim graph and proof expansion, checking original/clone equality, component cycle obstructions and actual universal orientation scope: PASS"
+    ],
+    "boundaries": [
+      "Finite old Q is allowed; clone fibres are infinite.",
+      "Actual unary/pair legality retained below size three.",
+      "No old SAP or equality-extended CCO input.",
+      "Palette proof independent of clone/CCO hypotheses.",
+      "Full represented K includes logical identity; specified clone edges are diversity."
+    ]
+  }
+}

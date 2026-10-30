@@ -1,0 +1,161 @@
+{
+  "preparation_head": "dc5fa9eafc2954909d15f3d18986d04fc8967513",
+  "source_pin": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+  "accepted_base": "c3faa6121cf075a7d1d8a2b889051c527583717b",
+  "accepted_base_ci": 41057110156,
+  "observed_state_revision": 344,
+  "observed_state_sha256": "990cc681394d3ca362e25f2d0d1308f4ca7bbf6ba19eda008c6e09bacdc2991f",
+  "public_board_revisions": [
+    18,
+    19
+  ],
+  "policy_revisions": [
+    10,
+    11
+  ],
+  "preserved_previous_packages": 42,
+  "added_packages": [
+    "B043",
+    "B044",
+    "B045",
+    "B046",
+    "B047",
+    "B048"
+  ],
+  "next_two": [
+    "B043",
+    "B044"
+  ],
+  "active_batch_limit_unchanged": 2,
+  "python_tests": 130,
+  "inherited_python_tests": 130,
+  "new_regression_tests": 0,
+  "module_checks": 40,
+  "catalogue_envelopes": 48,
+  "new_control_scripts": 6,
+  "all_ten_sources_verified_at_human_and_preparation_pins": true,
+  "existing_source_files_byte_identical": 7,
+  "new_source_files": 3,
+  "accepted_dependency_records_and_ancestry": {
+    "B001": {
+      "state": "ACCEPTED",
+      "accepted_commit": "34b7f1b055788dcf1c134f07fd6a89c123189a82",
+      "main_ci": {
+        "run_id": 40533022306,
+        "head_sha": "34b7f1b055788dcf1c134f07fd6a89c123189a82",
+        "conclusion": "success",
+        "axiom_audit": "allowlist"
+      },
+      "ancestor_of_public_base": true
+    },
+    "B002": {
+      "state": "ACCEPTED",
+      "accepted_commit": "4206ff772cc3ee334fe530b55dbb0afe8174dfd4",
+      "main_ci": {
+        "head_sha": "4206ff772cc3ee334fe530b55dbb0afe8174dfd4",
+        "run_id": 40697932819,
+        "conclusion": "success",
+        "axiom_audit": "allowlist"
+      },
+      "ancestor_of_public_base": true
+    },
+    "B003": {
+      "state": "ACCEPTED",
+      "accepted_commit": "68322c7b9196eaaad4abdc7f074e93bba64bfedb",
+      "main_ci": {
+        "head_sha": "68322c7b9196eaaad4abdc7f074e93bba64bfedb",
+        "run_id": 40695882842,
+        "conclusion": "success",
+        "axiom_audit": "allowlist"
+      },
+      "ancestor_of_public_base": true
+    },
+    "B006": {
+      "state": "ACCEPTED",
+      "accepted_commit": "21381f6095d3b2787e3e248e5ea244180a66f06f",
+      "main_ci": {
+        "head_sha": "21381f6095d3b2787e3e248e5ea244180a66f06f",
+        "run_id": 40719464681,
+        "conclusion": "success",
+        "axiom_audit": "allowlist"
+      },
+      "ancestor_of_public_base": true
+    },
+    "B007": {
+      "state": "ACCEPTED",
+      "accepted_commit": "3a91b5da4006bd9ecc6805061d3942cd63ea7007",
+      "main_ci": {
+        "head_sha": "3a91b5da4006bd9ecc6805061d3942cd63ea7007",
+        "run_id": 40727101886,
+        "conclusion": "success",
+        "axiom_audit": "allowlist"
+      },
+      "ancestor_of_public_base": true
+    },
+    "B015": {
+      "state": "ACCEPTED",
+      "accepted_commit": "4180b8e12c37b0419bbc40220f64cfbdc68679b9",
+      "main_ci": {
+        "head_sha": "4180b8e12c37b0419bbc40220f64cfbdc68679b9",
+        "run_id": 40740746255,
+        "conclusion": "success",
+        "axiom_audit": "allowlist"
+      },
+      "ancestor_of_public_base": true
+    },
+    "B016": {
+      "state": "ACCEPTED",
+      "accepted_commit": "df02e734b6245aad006487a0a2071caaabe69524",
+      "main_ci": {
+        "head_sha": "df02e734b6245aad006487a0a2071caaabe69524",
+        "run_id": 40754567438,
+        "conclusion": "success",
+        "axiom_audit": "allowlist"
+      },
+      "ancestor_of_public_base": true
+    },
+    "B022": {
+      "state": "ACCEPTED",
+      "accepted_commit": "3c49b18fddb528ea0da2a8cf2cbba5be5f16b9ad",
+      "main_ci": {
+        "run_id": 40838675350,
+        "head_sha": "3c49b18fddb528ea0da2a8cf2cbba5be5f16b9ad",
+        "conclusion": "success",
+        "axiom_audit": "allowlist"
+      },
+      "ancestor_of_public_base": true
+    },
+    "B038": {
+      "state": "ACCEPTED",
+      "accepted_commit": "709931c1d7bae96f549efcf658d795d38dc1e9e8",
+      "main_ci": {
+        "run_id": 41039939898,
+        "head_sha": "709931c1d7bae96f549efcf658d795d38dc1e9e8",
+        "conclusion": "success",
+        "axiom_audit": "allowlist"
+      },
+      "ancestor_of_public_base": true
+    },
+    "B039": {
+      "state": "ACCEPTED",
+      "accepted_commit": "90feb040df23e2ef7fd18ebc7df3b92ccfc0a8a0",
+      "main_ci": {
+        "run_id": 41042931625,
+        "head_sha": "90feb040df23e2ef7fd18ebc7df3b92ccfc0a8a0",
+        "conclusion": "success",
+        "axiom_audit": "allowlist"
+      },
+      "ancestor_of_public_base": true
+    }
+  },
+  "no_local_broad_lean_build_or_audit": true,
+  "future_gates": [
+    "actual independent nonauthor exact-head approval",
+    "exact PR-head CI/allowlist audit",
+    "sole manifest-bound integration lock",
+    "expected-head history-preserving merge",
+    "actual resulting-main CI/allowlist audit",
+    "atomic exact-parent promote_registry"
+  ],
+  "licensing_plan_commit": "30abcca888c0348f6b1ce5a32581b9250e5f7ae5"
+}

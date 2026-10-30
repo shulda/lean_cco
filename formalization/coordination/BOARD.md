@@ -48,6 +48,12 @@ mathematical catalogue/initial checkpoint, not current ownership.
 | B040: Invariant typed quotient transport, canonical return and shared action support | — | [B040](../../formalization/coordination/packages/B040.md) |
 | B041: Simultaneous full exact quotients, private cycles and exact towers | B002, B015, B017 | [B041](../../formalization/coordination/packages/B041.md) |
 | B042: Finite symmetric CCO, automorphism 2-groups, Hasse covers and real acl | B006, B009 | [B042](../../formalization/coordination/packages/B042.md) |
+| B043: Point-generated canonical unary SAP and orbit criterion | B022 | [B043](../../formalization/coordination/packages/B043.md) |
+| B044: AP-only actual character completion and finite terminalisation | B001, B002, B006, B007, B015, B016 | [B044](../../formalization/coordination/packages/B044.md) |
+| B045: Pure-clone SAPification and symmetric palette lattice | — | [B045](../../formalization/coordination/packages/B045.md) |
+| B046: Orbital parity, finite Hasse covers and unsplittable diagonal orientation | B001, B006 | [B046](../../formalization/coordination/packages/B046.md) |
+| B047: Actual SAP-preserving exact character splits and finite terminalisation | B001, B002, B003, B007, B015, B016, B039, B044, B046 | [B047](../../formalization/coordination/packages/B047.md) |
+| B048: Private detours and conditional full-language phase lifting | B001, B015, B016, B038, B046, B047 | [B048](../../formalization/coordination/packages/B048.md) |
 
 Autonomous release permissions are in [AUTONOMY.json](AUTONOMY.json).
 Use [QUEUE_OPERATIONS.md](QUEUE_OPERATIONS.md) to claim or review work.

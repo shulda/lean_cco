@@ -1,0 +1,88 @@
+{
+  "head": "dc5fa9eafc2954909d15f3d18986d04fc8967513",
+  "private_board_revision": 45,
+  "private_package_count": 64,
+  "public_main": "c3faa6121cf075a7d1d8a2b889051c527583717b",
+  "public_coordination": "9e72c9283070433942ef86a311e0e61083163726",
+  "public_state_revision": 344,
+  "selected": [
+    "B043",
+    "B044",
+    "B045",
+    "B046",
+    "B047",
+    "B048"
+  ],
+  "selected_modules": [
+    "point_generated_sap",
+    "ap_character",
+    "clone_sap",
+    "orbital_cover_boundary",
+    "pair_safe_split",
+    "full_phase_lift"
+  ],
+  "source_record_count": 10,
+  "payload_file_count": 39,
+  "raw_records_verified": 46,
+  "new_source_files": [
+    "sections/ep_safe_ap_character_completion.tex",
+    "sections/ramsey_clone_sap.tex",
+    "sections/v27/06_legacy_finite_covers.tex"
+  ],
+  "selected_details": {
+    "point_generated_sap": {
+      "definitions": 6,
+      "claims": 26,
+      "exports": 1,
+      "auxiliary_exports": 1,
+      "tasks": 4,
+      "source_files": 1,
+      "control": "tools/check_point_generated_sap_controls.py"
+    },
+    "ap_character": {
+      "definitions": 10,
+      "claims": 62,
+      "exports": 7,
+      "auxiliary_exports": 4,
+      "tasks": 8,
+      "source_files": 4,
+      "control": "tools/check_ap_character_controls.py"
+    },
+    "clone_sap": {
+      "definitions": 8,
+      "claims": 36,
+      "exports": 2,
+      "auxiliary_exports": 1,
+      "tasks": 5,
+      "source_files": 2,
+      "control": "tools/check_clone_sap_controls.py"
+    },
+    "orbital_cover_boundary": {
+      "definitions": 8,
+      "claims": 40,
+      "exports": 3,
+      "auxiliary_exports": 1,
+      "tasks": 6,
+      "source_files": 3,
+      "control": "tools/check_orbital_cover_controls.py"
+    },
+    "pair_safe_split": {
+      "definitions": 12,
+      "claims": 59,
+      "exports": 10,
+      "auxiliary_exports": 5,
+      "tasks": 8,
+      "source_files": 7,
+      "control": "tools/check_pair_safe_split_controls.py"
+    },
+    "full_phase_lift": {
+      "definitions": 8,
+      "claims": 34,
+      "exports": 2,
+      "auxiliary_exports": 0,
+      "tasks": 6,
+      "source_files": 4,
+      "control": "tools/check_full_phase_lift_controls.py"
+    }
+  }
+}

@@ -1,0 +1,705 @@
+% A13: Shared foundational AP-only exact-character completion, originally
+% EP27. Full represented equality-inclusive products; SAP NOT assumed.
+% Older V27 SAP terminal Ramsey source remains a later separate application.
+\section{AP-only safe exact character splitting}
+\label{sec:ep-ap-only-safe-character}
+
+This section gives the \emph{actual AP-only} safe-character
+completion theorem as part of the common Foundations.
+It is used later for exact-quotient character towers in
+\cref{thm:ep-quotient-tower,thm:ep-automatic-core}.
+In contrast to the historical SAP-only V27 terminal
+construction reproduced in the technical appendix,
+the present proof constructs genuine finite marked
+AP and homomorphic-CCO completions, never inferring
+SAP from abstract associative products.
+
+Let \(M\) be countable homogeneous complete finite binary,
+with finitely many named transitive original unary sorts,
+same-sort symmetric orbital relations and homomorphic
+semantic simple-cycle CCO. No old SAP or
+triangle-definedness is assumed in this section.
+All old products are actual represented relations,
+\emph{including logical identity}. We use the positive
+full typed exact-domain convolution and 2-Helly
+from Part~I (or its direct A130 proof).
+
+The SAP-free finite-relative orbital parity theorem is now stated and
+proved in Foundations, \cref{lem:ep-ap-orbital-parity}. We use its actual
+represented even/odd relations, without requiring injective intermediate
+vertices or replacing logical identity by a diversity atom.
+
+Choose one such reachable even/odd interval
+\(Y<X\), an inclusion-maximal full exact
+complement \(K\) with \(Y\le K\) and
+\(K\cap X=Y\), and the full groupoid of
+actual quotient-functional exact bridges.
+The \emph{source maximal exact complement} and
+its distinguished odd quotient involution follow
+directly from the earlier SAP-free foundational
+\cref{thm:foundational-maximal-parity-gate}; the
+\emph{quotient-functional bridge groupoid}
+and its finite character now follow from
+the earlier general full exact source results
+\cref{thm:foundational-rigid-groupoid,thm:foundational-rigid-character}.
+Those common results require old homomorphic
+CCO and exact convolution but no SAP:
+\[
+  K\prec K\vee X,\quad [K\vee X:K]=2,
+\]
+and \(K;O;K\) induces a nontrivial
+fixed-point-free quotient involution
+\(\tau\) with the following
+\emph{maximal source gate}:
+\[
+ Z>\Id_{M_a/K}\text{ full exact}
+          \quad\Longrightarrow\quad \tau\subseteq Z.
+ \tag{S0}\label{eq:ep-ap-source-gate}
+\]
+Indeed any larger quotient exact equivalence
+omitting \(\tau\) pulls back to an original
+exact \(K'>K\) satisfying
+\(K'\cap X=Y\), contradicting maximality.
+The full exact functional bridges transport
+the gate and its odd involution; path
+independence and elementary abelian
+isotropy are
+\cref{thm:foundational-rigid-groupoid}.
+The resulting character \(\chi\) takes
+each transported odd involution to \(1\).
+All compatible finite phase prescriptions
+extend to global orbit-seed markings
+exactly by
+\cref{lem:foundational-finite-phase-extension};
+this proves reasonableness and
+reduct-surjectivity of the character
+marking, but does \emph{not} itself
+establish AP or CCO of the marked age.
+Those properties are proved below.
+On active
+original sorts, the actual phase masks are
+\[
+ A_{st}^{\varepsilon,\eta}
+    =B_{st}^{\varepsilon+\eta}\cup N_{st},
+ \tag{S1}\label{eq:ep-ap-mask}
+\]
+where \(B^\delta\) consists of rigid quotient arrows
+of character \(\delta\), while \(N\) consists of
+nonrigid atoms. The forbidden mask is precisely
+the opposite rigid sheet. Inactive sorts have
+only their prescribed bit. The literal diagonal
+\(\Id\) is an allowed output only for
+equal old sorts and identical phase labels;
+it is never a diversity edge joining two
+distinct formal vertices.
+
+The original relative-$K$ exact closure-separation lemma is now proved
+in Foundations, \cref{lem:ep-relative-K-closure}. In the following
+phase-primality argument its base relation is the \emph{whole old
+$K$-equivalence}, not original logical equality.
+
+\begin{lemma}[SAP-free fork totality and phase-primality]
+\label{lem:ep-ap-TP}
+For the \emph{maximal} exact-character
+groupoid phase masks \eqref{eq:ep-ap-mask},
+the following hold without old SAP:
+\begin{enumerate}[label=(\textup{\alph*}),leftmargin=*]
+\item[(T)] Given two allowed old atomic
+pair types with compatible middle phase,
+some old represented output is allowed
+at the prescribed endpoint phases.
+\item[(P)] If old reachable typed word
+endpoint profiles \(W_1,\ldots,W_r\)
+have nonempty intersection and each
+meets the requested endpoint phase mask,
+their intersection also meets the mask.
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+For (T), represented products of nonempty
+typed invariant relations are nonempty
+because their intermediate original sort
+is transitive. If either output endpoint
+sort is inactive, every old output with
+the prescribed inactive bit is allowed,
+so (T) holds immediately. If both are
+active, any nonrigid old output is
+phase-flexible. Otherwise, suppose all
+old outputs have the wrong rigid character.
+Saturating the output product by the
+endpoint exact gates yields a nonempty
+full exact domain \(D\), confined to a
+single rigid hom-torsor. The general exact rigid-slice theorem
+\cref{lem:foundational-rigid-affine} gives
+\(D=dS\) for a full exact isotropy subgroup \(S\),
+since the constructed domain is explicitly
+endpoint-gate bisaturated.
+The wrong character is constant on \(D\),
+so \(S\subseteq\ker\chi\).
+If \(S\ne1\), the union of its old
+$K$-bisaturated represented arrows is
+a nontrivial \emph{original full exact
+equivalence strictly above $K$}. It
+omits the selected old phase-one relation
+$t=KOK$, because $S\subseteq\ker\chi$
+and $\chi(t)=1$. This contradicts the
+strong old-level maximal gate
+\cref{thm:foundational-maximal-parity-gate},
+without a converse exact-descent assumption. Hence \(S=1\),
+and all old output atoms lie in one
+functional rigid bridge \(R\).
+The shared rigid-product factorisation
+\cref{lem:foundational-rigid-factor}
+factors the two old inputs through
+rigid bridges \(R_1,R_2\) with
+\(R_1;R_2=R\).
+Their admissible characters add,
+contradicting the wrong character of
+\(R\). This proves (T), including
+identity outputs.
+
+For (P), if either endpoint is inactive,
+the requested mask contains the entire
+old typed atom palette, so the assertion
+is immediate. When both are active,
+suppose contrapositively the
+nonempty old intersection \(D=\bigcap_iW_i\)
+is confined to the wrong rigid sheet
+but each \(W_i\) meets the allowed mask.
+Saturate each profile by the endpoint full exact gates,
+writing \(E_i=K_s;W_i;K_t\). The RAW full typed
+saturation--intersection theorem
+\cref{lem:full-typed-exact-saturation} gives
+\[
+ \bigcap_i E_i=K_s;\Bigl(\bigcap_iW_i\Bigr);K_t.
+\]
+This is nonempty and entirely supported on wrong-character
+rigid arrows. We do \emph{not} use the SAP/strong-diversity
+variant \cref{lem:exact-saturation-intersection}.
+The affine rigid-slice lemma gives a coset \(dS\);
+the original maximal gate forces \(S=1\), as in (T).
+Thus \(\bigcap_iE_i=d\) is ONE complete rigid
+\(K_s,K_t\)-bridge, not an old fine atomic relation.
+
+Each \(W_i\) meets the allowed mask, and \(d\) lies wholly
+in the wrong rigid sheet. Hence \(E_i\supsetneq d\).
+Set \(A_i=E_i;d^\smile\), of type \(s\to s\).
+The \(A_i\) are symmetric full exact \(K_s\)-bisaturated
+relations, and each contains \(K_s=d;d^\smile\).
+Since \(d^\smile;d=K_t\) and each \(E_i\) is
+right-\(K_t\)-saturated,
+\(A_i=K_s\) would imply \(E_i=d\), impossible.
+Consequently EVERY \(A_i\) strictly contains \(K_s\).
+The nonempty exact meet-distributivity and the bridge
+identities give
+\[
+ \bigcap_iA_i=
+ \Bigl(\bigcap_iE_i\Bigr);d^\smile
+       =d;d^\smile=K_s .
+\]
+This is the \emph{whole original represented
+equivalence \(K_s\)}, not old logical \(\Id_s\).
+
+Choose an inclusion-minimal subfamily whose intersection is
+\(K_s\). It has at least two members. Choose one member
+\(A\) and let \(B\) be the intersection of all the others.
+Both \(A,B\) strictly contain \(K_s\):
+for \(A\) this was proved above, and for \(B\) it follows
+from minimality of the subfamily. They are symmetric full
+exact, \(K_s\)-bisaturated, with \(A\cap B=K_s\).
+Their represented stable equivalence closures are therefore
+both strictly above \(K_s\). The transported
+\emph{old-level} maximal gate (via exact bridge conjugation)
+puts the phase-one \(K_s\)-bisaturated relation into BOTH
+closures, contradicting their intersection being exactly
+\(K_s\) by \cref{lem:ep-relative-K-closure}.
+This proves (P), without identifying a quotient
+identity with old equality.
+\end{proof}
+
+\begin{lemma}[Exact algebraic endpoint support of a marked path]
+\label{lem:ep-ap-path}
+Let $w=(a_1,\ldots,a_n)$ be a nonempty
+old \emph{typed diversity} path on formal
+vertices $v_0,\ldots,v_n$, with each
+specified edge $a_j$ locally allowed for
+the prescribed endpoint phase bits
+$\epsilon_0,\ldots,\epsilon_n$.
+Write
+\[
+ P_r=\{a_1\};\cdots;\{a_r\},\qquad
+ \delta_r=\epsilon_0+\epsilon_r,
+\]
+and calculate the \emph{formal lifted
+endpoint supports} recursively by
+\[
+ L_1=\{a_1\},\qquad
+ L_{r+1}=(L_r;\{a_{r+1}\})\cap
+       A_{s_0s_{r+1}}^{\epsilon_0,\epsilon_{r+1}},
+\]
+where the last mask is the \emph{actual two-endpoint-bit}
+mask from \eqref{eq:ep-ap-mask}; no extra independent
+bit is introduced when an endpoint sort is inactive.
+Then for every $r=1,\ldots,n$,
+\[
+ \boxed{\qquad
+ L_r=P_r\cap A_{s_0s_r}^{\epsilon_0,\epsilon_r}
+                      \ne\varnothing .\qquad}
+ \tag{S4}\label{eq:ep-ap-path-normal-form}
+\]
+The equality uses \emph{actual represented}
+equality-inclusive old products: a literal
+old identity may occur in $L_r$ as a
+possible \emph{endpoint output}, never
+as a specified diversity edge.
+The supports $L_r$ are a formal
+algebraic reduction of phase-constrained
+paths; their equality alone does not
+assume or assert that the entire marked
+age has already been proved to have AP.
+\end{lemma}
+\begin{proof}
+The one-edge case is the definition
+of local phase legality. Assume the
+formula for $r$ and put
+$b=a_{r+1}$, $\alpha=\delta_r$,
+$\beta=\epsilon_r+\epsilon_{r+1}$,
+so $\delta_{r+1}=\alpha+\beta$.
+In this proof $A^\alpha$ is shorthand for the
+literal typed mask $A_{s_0s_r}^{\epsilon_0,\epsilon_r}$
+and $A^{\alpha+\beta}$ for
+$A_{s_0s_{r+1}}^{\epsilon_0,\epsilon_{r+1}}$;
+this convention only abbreviates the already
+prescribed endpoint bits. The forward inclusion
+\[
+ (L_r;\{b\})\cap A^{\alpha+\beta}
+ \subseteq (P_r;\{b\})\cap A^{\alpha+\beta}
+\]
+is monotonicity. For the converse take
+any old output atom
+\[
+ c\in (P_r;\{b\})\cap A^{\alpha+\beta}.
+\]
+Typed Peircean rotation puts
+$P_r\cap T\ne\varnothing$, where
+\[
+       T=\{c\};\{\bar b\}
+\]
+is a nonempty represented \emph{word
+profile of type $s_0\to s_r$}.
+This is the required converse $\bar b$,
+not the generally ill-typed product
+$c;b$.
+
+The induction hypothesis says
+$P_r\cap A^{\alpha}\ne\varnothing$.
+Both the old output $c$ with phase
+$\alpha+\beta$ and the reversed edge
+$\bar b$ with phase $\beta$ are allowed
+(the latter uses exponent-two phase
+bits). Totality (T) of
+\cref{lem:ep-ap-TP}, applied to these
+two inputs with the common middle
+vertex of sort $s_{r+1}$, gives
+$T\cap A^{\alpha}\ne\varnothing$.
+By primality (P), since the two
+represented word profiles $P_r,T$
+have nonempty intersection and both
+meet the same $A^{\alpha}$ mask,
+\[
+             P_r\cap T\cap A^\alpha
+                        \ne\varnothing .
+\]
+Choose an atom $a$ in this intersection.
+It lies in $L_r$ by induction and
+$c\in a;b$, so $c\in L_r;\{b\}$.
+This proves the reverse inclusion.
+
+Finally $L_r$ is nonempty by induction,
+and (T) applied to one old atom from
+$L_r$ and the locally allowed final
+edge $b$ supplies an allowed output
+in $(L_r;b)\cap A^{\alpha+\beta}$.
+Thus $L_{r+1}\ne\varnothing$, and the
+induction is complete. No SAP or
+injective intermediate witnesses
+are used.
+\end{proof}
+
+\begin{lemma}[Identity folding preserves individual old cycles]
+\label{lem:ep-ap-identity-fold}
+Let \(G\) be a finite simple, typed old diversity partial network
+such that every specified simple cycle has a homomorphism into \(M\).
+Let \(x\ne y\) be nonadjacent vertices of the same original sort.
+Suppose \(\Id\) belongs to the represented endpoint profile of
+\emph{every} simple \(x\)--\(y\) path in \(G\)
+(the condition is vacuous when there is no such path).
+Then one may identify \(x=y\), deduplicate incident edges,
+and obtain another simple typed old diversity partial network
+whose every specified simple cycle admits a homomorphism into \(M\).
+If \(x,y\) have the same phase bit, their prescribed bits
+also descend to this quotient. No SAP or already constructed
+marked Fra\"iss\'e limit is assumed.
+\end{lemma}
+\begin{proof}
+Suppose \(x\to z\) and \(y\to z\) have old atomic colours
+\(a,b\), respectively. The simple path \(x-z-y\)
+has endpoint profile \(\{a\};\{\bar b\}\).
+Since its profile contains the actual old identity, some
+real pair \((u,v)\) belongs to both \(a\) and \(b\);
+the old orbital partition gives \(a=b\).
+Thus the identification never creates conflicting parallel
+edge labels. Edges with only one former representative
+retain their label; the quotient is a well-defined simple
+typed diversity partial network.
+
+Consider a simple cycle \(C\) in the quotient.
+If it avoids the identified vertex, it was already a cycle
+of \(G\). Otherwise the two distinct neighbours of the
+identified vertex on \(C\) have incident edge representatives
+coming from \(x\) or \(y\). If both can be chosen from the
+same former vertex, replacing the identified vertex by that
+former vertex lifts \(C\) to an old simple cycle of \(G\).
+If the two chosen representatives come from different former
+vertices, cutting \(C\) at the identified vertex produces a
+simple \(x\)--\(y\) path in \(G\).
+By hypothesis its \emph{represented} profile contains \(\Id\):
+there are actual old witnesses for its edges with its two
+endpoints mapped to the same real point. They realize a
+homomorphism of \(C\) into \(M\).
+These cases exhaust the quotient simple cycles.
+Equal phase bits plainly descend when the vertices are
+identified; no claim about marked-cycle realization is
+needed for this old-cycle argument.
+\end{proof}
+
+\begin{theorem}[Real marked completion and AP-only safe splitting]
+\label{thm:ep-ap-marked-completion}
+A finite locally \(\chi\)-legal phase-marked
+old diversity partial network \(P\)
+has a homomorphic marked completion
+provided each specified old simple
+cycle is homomorphically completable in
+the original \(M\).
+Consequently the marked finite age
+is reasonable, reduct-surjective,
+precompact, has AP/JEP and homomorphic
+semantic CCO, and its Fra\"iss\'e
+limit is homogeneous.
+Its complete diagrams are precisely
+the locally pair-admissible old
+complete diagrams.
+These conclusions do \emph{not}
+require original SAP or triangle-definedness.
+\end{theorem}
+\begin{proof}
+We construct an actual finite completion;
+formal associativity alone would not
+prove the assertion.
+
+For any currently missing unordered
+pair \(x,y\), original CCO supplies a
+common old endpoint atom in the
+intersection \(D\) of all its old
+simple-path profiles, with the
+typed top when there is no path.
+By \cref{lem:ep-ap-path}, each
+individual old path profile meets the
+requested endpoint phase mask.
+By (P), their nonempty intersection
+meets that mask. With no path,
+nonemptiness follows from the actual
+free-isotropy groupoid orbit-seed
+construction. Choose one allowed
+old output \(c\in D\), possibly
+\(\Id\).
+
+If \(c\) is diversity, add its
+specified edge to the partial graph.
+Every new simple specified cycle is
+exactly the new edge together with
+one old simple \(x\)-\(y\) path.
+Its old profile contains \(c\), hence
+it is homomorphically completable.
+The old cycles are unchanged.
+
+If \(c=\Id\), immediately
+\emph{identify} the formal vertices
+\(x,y\), whose original sorts and
+phase bits agree. The choice \(c\in D\)
+means that \(\Id\) lies in \emph{every}
+old simple \(x\)--\(y\) path profile.
+Therefore \cref{lem:ep-ap-identity-fold}
+proves that incident duplicate edges agree
+and EVERY new specified simple cycle remains
+old-completable, including cycles obtained by
+joining old paths through the identified vertex.
+The identity selection lies in the prescribed
+literal endpoint mask. Moreover
+\eqref{eq:ep-ap-path-normal-form}
+places \(\Id\) in the \emph{formal
+phase-compatible support} of each such old
+path, so no path carries an unrecorded
+phase obstruction. This last assertion is
+algebraic only: it does \emph{not} assume
+a marked-age homomorphism before the final
+global phase extension. No artificial
+identity-labelled graph edge is added.
+All local phase requirements remain satisfied.
+
+Every diversity insertion decreases
+the number of unspecified pairs.
+Every identity contraction decreases
+the number of formal vertices.
+Thus the lexicographic measure
+(number of vertices, number of
+unspecified pairs) strictly decreases.
+We terminate in a \emph{strict complete
+old diversity network} \(P_*\)
+whose specified simple cycles
+are still individually old-completable.
+Apply the ORIGINAL homomorphic
+semantic CCO directly to this
+complete graph. Its homomorphism
+into \(M\) is now \emph{injective},
+since each distinct formal pair
+is connected by an irreflexive
+diversity atom. Thus \(P_*\)
+embeds as an induced old complete
+substructure, independently of old
+triangle-definedness.
+We verify the \emph{actual} hypotheses of
+the global phase-extension lemma rather
+than treating arbitrary marks as independent
+bits. For any two of the finitely many
+embedded real points whose current
+$K$-quotient points are in the SAME
+rigid-groupoid orbit, their old pair
+orbital lies in the unique rigid arrow
+$R$ relating those quotient points:
+freeness of the rigid action makes
+this the entire corresponding quotient
+orbital. Since the final old pair colour
+was chosen from its prescribed phase mask,
+the two endpoint phase bits differ by
+exactly $\chi(R)$. For a pair in different
+rigid-groupoid orbits there is no
+constraint on their relative seeds.
+If two marked vertices map into the
+same $K$-class, their relation lies
+in the identity bridge and local
+legality similarly forces equal bits.
+Thus EVERY pairwise character condition
+of \cref{lem:foundational-finite-phase-extension}
+holds on the finite set of actual
+$K$-quotient points represented by
+$P_*$. Apply that lemma once to obtain
+ONE global phase marking of the original
+homogeneous source extending all the
+prescribed finite bits. Inactive sorts
+retain their unique fixed label.
+Composing contractions with this
+marked embedding gives a marked
+homomorphic completion of $P$.
+
+A marked partial diagram whose marked
+simple cycles are completable has all
+its old simple cycles completable, so
+the same algorithm gives marked CCO.
+For marked AP, take a span of complete
+marked finite structures. By OLD AP
+and homogeneity its formal partial
+free union over the common complete
+base has an old homomorphism into \(M\),
+so all specified old cycles are
+individually completable. Complete it
+by the marked procedure. The resulting
+map is injective on EACH original
+complete leg because all its
+distinct-vertex pair atoms are
+irreflexive; hence the resulting
+amalgamation is genuine AP, allowing
+cross-leg collisions outside the base.
+With empty base the same gives JEP.
+
+Reasonableness and reduct-surjectivity
+hold directly for full rigid-groupoid
+character markings: every finite
+complete old pair already records
+its within-orbit \(\chi\)-difference
+when rigid, and new quotient orbits
+admit independent initial seed bits.
+Hence any legal old finite embedding
+extends any prescribed legal finite
+marking. The hereditary finite
+marked class now has AP and JEP
+and therefore a homogeneous Fra\"iss\'e
+limit; its old reduct is the original
+homogeneous source by reasonableness
+and age equality.
+\end{proof}
+
+\begin{lemma}[Strict rank drop under a genuine binary character split]
+\label{lem:exact-character-rank-drop}
+Let $\mathcal C$ be any homogeneous finite complete
+binary age with finitely many named transitive current
+sorts. Suppose a \emph{genuine} finite unary character
+split replaces a nonempty family $S$ of active sorts
+$a$ by two \emph{nonempty} child sorts
+$a^0,a^1$, with all original binary atom names
+unchanged. Assume on each active parent $a$
+there is a realised old same-sort diversity atom
+$c_a$ which always has phase difference one,
+so that no $c_a$-pair can lie inside
+$a^0$ or inside $a^1$.
+For a current sort $a$, let $k_a$ count its realised
+\emph{nonidentity same-sort pair orbitals}.
+Then
+\[
+ k_{a^\epsilon}\le k_a-1\quad(\epsilon=0,1),
+ \qquad
+ \Phi(\mathcal C)=\sum_{\text{current sorts }a}3^{k_a}
+\]
+strictly decreases at this split:
+\[
+ \Phi(\mathcal C^{\rm new})
+ \le \Phi(\mathcal C)
+       -\sum_{a\in S}3^{k_a}
+       +\sum_{a\in S}2\cdot3^{k_a-1}
+ <\Phi(\mathcal C).
+ \tag{ACR}\label{eq:exact-character-rank-drop}
+\]
+No SAP is needed for this counting lemma.
+\end{lemma}
+\begin{proof}
+Within a fixed child sort the expanded binary
+language adds only unary labels, so an old same-sort
+atomic colour cannot split into two distinct
+new pair types \emph{within that fixed child}.
+The designated old colour $c_a$ is absent from
+both children because its phase difference is one,
+whereas points of a given child have equal phase.
+Thus each child has at most $k_a-1$ distinct
+nonidentity pair types. All inactive sorts are
+unchanged. Each active parent contributes at most
+$2\cdot3^{k_a-1}$ after splitting, strictly
+less than its old contribution $3^{k_a}$,
+since $k_a\ge1$. Summing gives the displayed
+strict inequality. Both child sorts are nonempty
+by the hypothesis; for the maximal exact character
+splits below this also follows directly from
+the phase-one involution on every active quotient
+sort. No amalgamation argument enters this proof.
+\end{proof}
+
+\begin{theorem}[Finite AP-only exact character terminalisation]
+\label{thm:ap-finite-character-elimination}
+Starting from any homogeneous finite complete
+named-sorted symmetric binary AP+semantic
+homomorphic-CCO source in the class considered
+above, successive \emph{maximal full exact}
+character splits of
+\cref{lem:ep-ap-TP,thm:ep-ap-marked-completion}
+terminate after finitely many stages.
+The resulting finite unary expansion remains
+reasonable, reduct-surjective, precompact,
+homogeneous, has AP/JEP and homomorphic
+CCO, and on every terminal named sort
+there are no distinct invariant equivalences
+of \emph{finite relative index}.
+Neither the initial nor the terminal age
+is asserted to have SAP.
+\end{theorem}
+\begin{proof}
+If a current named sort has an invariant
+equivalence interval of finite relative
+index greater than one, choose a saturated
+cover of finite index. The SAP-free orbital
+parity theorem
+\cref{lem:ep-ap-orbital-parity} provides a
+reachable two-sheet even/odd layer on that
+sort; its exact odd relation and the maximal
+complement give a nontrivial character gate
+by \cref{thm:foundational-maximal-parity-gate}.
+Apply the real marked completion theorem
+\cref{thm:ep-ap-marked-completion}; its
+single-step age is again homogeneous,
+reasonable, AP/JEP and homomorphic CCO,
+and has finitely many named transitive
+child sorts. Every active parent has a
+nonidentity transported odd involution;
+its represented relation is nonempty and
+contains at least one actual old
+same-sort diversity atom $c_a$. The character
+takes that involution to one; hence its
+old atom $c_a$ has phase difference one,
+and both new children are nonempty.
+Thus \cref{lem:exact-character-rank-drop}
+strictly decreases the positive integer
+$\Phi$ at every nontrivial step.
+
+An infinite sequence is impossible.
+If the terminal structure still had a
+finite relative equivalence interval,
+the same SAP-free orbital parity source
+would permit another nontrivial split,
+contradicting termination. A finite
+composition of reasonable reduct-surjective
+precompact unary expansions preserves
+those three properties and the original
+reduct. No use was made of SAP of an
+intermediate quotient or original source.
+\end{proof}
+
+\begin{corollary}[AP-only source for the exact-quotient core induction]
+\label{cor:ep-ap-safe-splitting}
+Every available finite-relative-index invariant
+equivalence interval in a homogeneous symmetric
+AP+homomorphic-CCO source admits a reachable
+maximal exact character split whose actual
+expanded age has AP/JEP and homomorphic CCO
+with unchanged old reduct. Moreover finitely
+many such steps eliminate \emph{all} finite
+relative-index intervals on the resulting
+named sorts, without introducing any SAP
+hypothesis on the original or a quotient.
+\end{corollary}
+\begin{proof}
+The parity theorem and maximal full exact
+source gate supply a two-sheet layer and the
+character with phase-one involution.
+One-step marked AP/CCO completion is
+\cref{lem:ep-ap-TP,thm:ep-ap-marked-completion}.
+Finite termination, preservation of AP/CCO,
+and absence of residual finite relative indices
+are proved independently in Part~I by
+\cref{thm:ap-finite-character-elimination}.
+In particular this assertion does \emph{not}
+rely on the later SAP-specific V27 terminal
+Ramsey construction.
+\end{proof}
+
+\begin{remark}[Scope and retained source dependencies]
+\label{rem:ep-ap-source-boundary}
+The old parity and maximal gate, full exact
+word 2-Helly/convolution, rigid groupoid,
+rigid-product factorisation, affine coset
+and relative-\(K\) closure-separation
+results all occur earlier in Part~I.
+The substantial new content here is the
+SAP-free actual finite marked AP/CCO
+completion, including real equality
+contractions. Finite termination of the
+\emph{entire} AP-only character tower is
+proved IN THIS Part-I module by the
+standalone potential-decrease lemma
+\cref{lem:exact-character-rank-drop};
+it does NOT invoke the later SAP-only V27
+terminal Ramsey construction.
+The underlying old parity, exact and
+rigid-groupoid inputs remain substantial
+source-relative premises, not human/Lean
+certified. In particular the proof
+does not infer SAP of a marked age
+when the old age lacks it.
+\end{remark}

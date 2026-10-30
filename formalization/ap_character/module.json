@@ -1,0 +1,1922 @@
+{
+  "schema_version": 1,
+  "id": "ap_character",
+  "index_title": "AP-only exact character completion with identity folding and finite terminalisation",
+  "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+  "status": "HUMAN_EXPANDED_NOT_LEAN",
+  "scope": "Private B044: seven Foundations I results and four auxiliary equations. Actual equality-inclusive RAW products, maximal ORIGINAL exact gates, rigid character masks, formal support induction, finite identity contractions, induced marked AP/JEP/HOM CCO and rank-decreasing unary terminalisation. No SAP, diversity-only convolution, arbitrary quotient exact descent or later terminal Ramsey theorem is used. Human preparation retains all selected source-provider hypotheses, not global certification.",
+  "scope_vocabulary": [
+    "gate",
+    "totality",
+    "primality",
+    "path_support",
+    "identity_fold",
+    "finite_completion",
+    "marked_age",
+    "rank",
+    "terminal",
+    "boundary"
+  ],
+  "scope_explanation": "statement and proof. Separate original logical Id from whole quotient kernel K, formal lifted supports from actual completions, actual old-age diagrams from arbitrary atom assignments, and a homogeneous Fraisse expansion from an arbitrary global seed marking.",
+  "control_script": "tools/check_ap_character_controls.py",
+  "assumptions": [
+    {
+      "id": "A01",
+      "name": "Actual AP and semantic HOM CCO original source",
+      "statement": "M is countable ultrahomogeneous complete finite relational binary with finitely many named nonempty transitive original unary sorts. Same-sort orbital relations are symmetric; all original binary atoms are actual full-Aut pair orbitals. Equality is included in represented products, not a diversity edge. Its age has ordinary AP/JEP and semantic homomorphic simple-cycle CCO. No old SAP or triangle-definedness."
+    },
+    {
+      "id": "A02",
+      "name": "Chosen maximal full exact gate instance",
+      "statement": "Choose the reachable even/odd index-two interval Y<X supplied by I02, inclusion-maximal full exact K>=Y with K intersect X=Y, and the connected ACTUAL full exact quotient-functional bridge groupoid rooted at K. I03/I06 supply its original-level maximal gate and transport; I09 supplies a character taking the transported odd involutions to one. Active sorts are reached objects; each inactive sort has one fixed prescribed label. These are provider outputs instantiated on the original source, not arbitrary algebraic masks."
+    },
+    {
+      "id": "A03",
+      "name": "Actual age and ordinary Fraisse conventions",
+      "statement": "Finite marked objects are COMPLETE induced old-age structures equipped with locally legal unary bits. Embeddings are induced old embeddings preserving bits, and AP allows cross-leg collisions. Standard countable finite-language Fraisse construction and uniqueness are used only after HP, AP and JEP; reasonableness gives the extension property of the old reduct. An arbitrary global orbit-seed marking need not itself be homogeneous."
+    },
+    {
+      "id": "A04",
+      "name": "Independent rank lemma setting",
+      "statement": "A homogeneous finite complete binary age has finitely many named transitive current sorts. A genuine expansion whose ENTIRE resulting structure/age is homogeneous adds ONLY unary labels and replaces each active parent a by two NONEMPTY homogeneous child sorts a^0,a^1, retaining all binary atom names. Some realized same-sort diversity colour c_a has phase difference one and is absent inside both children. Inactive sorts and their induced structures are unchanged. No CCO, exactness, AP or SAP is needed for this counting lemma; homogeneity identifies pair orbitals with occurring named colours."
+    }
+  ],
+  "imports": [
+    {
+      "id": "I01",
+      "name": "thm:full-typed-exact-balls",
+      "source_label": "thm:full-typed-exact-balls",
+      "provider_module": "raw_exact",
+      "provider_claims": [
+        "C07",
+        "C08",
+        "C09",
+        "C10"
+      ],
+      "statement": "RAW word 2-Helly, full exact convolution and distribution over finite exact meets with NONEMPTY result; includes top/empty-restriction-list handling.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "provider_support_claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C05"
+      ],
+      "provider_support_usage": "Use ONLY strict proved ancestors: C01 atomic full-orbit seriality, C02 typed represented composition/top absorption, C03 Peircean rotation and C05 walk/profile semantics. These are existing B001 support, not additional counted source exports or a SAP input."
+    },
+    {
+      "id": "I02",
+      "name": "lem:ep-ap-orbital-parity",
+      "source_label": "lem:ep-ap-orbital-parity",
+      "provider_module": "parity_hasse",
+      "provider_claims": [
+        "C09",
+        "C10",
+        "C11",
+        "C12"
+      ],
+      "statement": "SAP-free finite-relative-index parity seed, equality-inclusive even/odd words and index-two layer, inside any current actual homogeneous source.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I03",
+      "name": "thm:foundational-maximal-parity-gate",
+      "source_label": "thm:foundational-maximal-parity-gate",
+      "provider_module": "parity_hasse",
+      "provider_claims": [
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26"
+      ],
+      "statement": "Maximal original full exact K, represented odd relation t=KOK, t;t=K, original exact Z>K contains t and quotient involution. Keep C24 ORIGINAL dominance; no converse exact descent.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I04",
+      "name": "lem:ep-relative-K-closure",
+      "source_label": "lem:ep-relative-K-closure",
+      "provider_module": "parity_hasse",
+      "provider_claims": [
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19"
+      ],
+      "statement": "For symmetric full exact K-bisaturated A,B strictly above K with A intersect B=K, their stable equivalence closures intersect in WHOLE K. No SAP or Hasse input.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I05",
+      "name": "thm:foundational-rigid-groupoid",
+      "source_label": "thm:foundational-rigid-groupoid",
+      "provider_module": "rigid_groupoid",
+      "provider_claims": [
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11"
+      ],
+      "statement": "Actual exact functional bridges with kernels, one reached object per sort, finite connected groupoid, elementary abelian isotropy and FREE actual quotient action.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I06",
+      "name": "lem:foundational-rigid-gate-transport",
+      "source_label": "lem:foundational-rigid-gate-transport",
+      "provider_module": "rigid_groupoid",
+      "provider_claims": [
+        "C12",
+        "C13",
+        "C14"
+      ],
+      "statement": "Bridge conjugation preserves ORIGINAL upper exact-equivalence intervals and transports the odd involution and original maximal gate. No arbitrary old-to-quotient exact descent.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I07",
+      "name": "lem:foundational-rigid-affine",
+      "source_label": "lem:foundational-rigid-affine",
+      "provider_module": "rigid_groupoid",
+      "provider_claims": [
+        "C20",
+        "C21"
+      ],
+      "statement": "A nonempty full exact endpoint-bisaturated domain supported in a rigid hom-torsor is dS for a full exact isotropy subgroup. Whole rigid quotient orbitals, not fine old atoms; subgroup represented relation is exact.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I08",
+      "name": "lem:foundational-rigid-factor",
+      "source_label": "lem:foundational-rigid-factor",
+      "provider_module": "rigid_groupoid",
+      "provider_claims": [
+        "C22",
+        "C23"
+      ],
+      "statement": "If the whole nonempty product of two exact inputs lies inside one rigid bridge, inputs factor through compatible rigid bridges. The middle kernel is constructed; if reached already it agrees with its gate.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I09",
+      "name": "thm:foundational-rigid-character",
+      "source_label": "thm:foundational-rigid-character",
+      "provider_module": "rigid_groupoid",
+      "provider_claims": [
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C31"
+      ],
+      "statement": "Actual exponent-two character, chi(t_s)=1, free-action orbit seeds, rigid/nonrigid actual pair-orbital classification and finite reduct-surjective marking. This alone gives no AP or CCO.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I10",
+      "name": "lem:foundational-finite-phase-extension",
+      "source_label": "lem:foundational-finite-phase-extension",
+      "provider_module": "rigid_groupoid",
+      "provider_claims": [
+        "C30"
+      ],
+      "statement": "Finite bits extend to ONE global marking iff all pairs in the same free groupoid action orbit have their required character difference. Empty/singleton cases and independent orbit seeds included.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    }
+  ],
+  "definitions": [
+    {
+      "id": "D01",
+      "name": "Old full typed profiles",
+      "statement": "A word profile consists of all actual old endpoint pairs realized by its walk. Id may be an OUTPUT, and the empty word is Id; the empty intersection is typed Top.",
+      "depends_on": [],
+      "notes": "N01",
+      "source": {
+        "file": "sections/ep_safe_ap_character_completion.tex",
+        "anchor": "\\label{lem:ep-ap-TP}"
+      }
+    },
+    {
+      "id": "D02",
+      "name": "Whole gate and rigid arrow",
+      "statement": "K_s is the original equivalence inducing quotient identity. A rigid bridge d:s->t obeys dd^op=K_s,d^op d=K_t. One bridge may contain MANY fine old binary atoms.",
+      "depends_on": [],
+      "notes": "N01",
+      "source": {
+        "file": "sections/ep_safe_ap_character_completion.tex",
+        "anchor": "\\label{lem:ep-ap-TP}"
+      }
+    },
+    {
+      "id": "D03",
+      "name": "Actual two-bit mask",
+      "statement": "For active endpoints A_st^(e,h) is the union of rigid arrows of character e+h and all nonrigid atoms. If either endpoint is inactive, its unique label makes every old typed atom allowed. Id is allowed only at the SAME sort and EQUAL labels.",
+      "depends_on": [],
+      "notes": "N01",
+      "source": {
+        "file": "sections/ep_safe_ap_character_completion.tex",
+        "anchor": "\\label{lem:ep-ap-TP}"
+      }
+    },
+    {
+      "id": "D04",
+      "name": "Endpoint saturation",
+      "statement": "For old exact W:s->t set E=K_s;W;K_t. This is a full old represented relation, with nonempty-meet distribution from RAW geometry.",
+      "depends_on": [],
+      "notes": "N01",
+      "source": {
+        "file": "sections/ep_safe_ap_character_completion.tex",
+        "anchor": "\\label{lem:ep-ap-TP}"
+      }
+    },
+    {
+      "id": "D05",
+      "name": "Formal lifted support",
+      "statement": "For a locally allowed specified diversity path set L1={a1} and L_(r+1)=(L_r;{a_(r+1)}) intersect its ACTUAL endpoint-bit mask. This is algebraic, not an assumed marked age product.",
+      "depends_on": [],
+      "notes": "N03",
+      "source": {
+        "file": "sections/ep_safe_ap_character_completion.tex",
+        "anchor": "\\label{lem:ep-ap-path}"
+      }
+    },
+    {
+      "id": "D06",
+      "name": "Identity folding",
+      "statement": "For missing nonadjacent x,y of same sort and bit, contract x=y only when Id belongs to EVERY old simple x-y path profile. Merge equal incident edge labels; never add a specified Id diversity edge.",
+      "depends_on": [],
+      "notes": "N04",
+      "source": {
+        "file": "sections/ep_safe_ap_character_completion.tex",
+        "anchor": "\\label{lem:ep-ap-identity-fold}"
+      }
+    },
+    {
+      "id": "D07",
+      "name": "Completion measure",
+      "statement": "Use the lexicographic pair (number of formal vertices, number of missing unordered pairs). A contraction drops the first component, even if the second changes.",
+      "depends_on": [],
+      "notes": "N05",
+      "source": {
+        "file": "sections/ep_safe_ap_character_completion.tex",
+        "anchor": "\\label{thm:ep-ap-marked-completion}"
+      }
+    },
+    {
+      "id": "D08",
+      "name": "Legal marked age",
+      "statement": "Objects are actual finite induced original-age structures with pairwise legal prescribed bits, not arbitrary complete atom assignments. Each has a global-marking realization but different objects may use different seed choices.",
+      "depends_on": [],
+      "notes": "N06",
+      "source": {
+        "file": "sections/ep_safe_ap_character_completion.tex",
+        "anchor": "\\label{thm:ep-ap-marked-completion}"
+      }
+    },
+    {
+      "id": "D09",
+      "name": "Same-child orbital rank",
+      "statement": "k_a counts realized nonidentity full pair orbitals. Under homogeneous complete binary unary-only expansions these are exactly the occurring old named diversity colours within that fixed child.",
+      "depends_on": [],
+      "notes": "N07",
+      "source": {
+        "file": "sections/ep_safe_ap_character_completion.tex",
+        "anchor": "\\label{lem:exact-character-rank-drop}"
+      }
+    },
+    {
+      "id": "D10",
+      "name": "Integer terminal potential",
+      "statement": "Phi=sum_a 3^(k_a). A split replaces one active contribution by at most 2*3^(k_a-1); k_a>=1 for every active parent.",
+      "depends_on": [],
+      "notes": "N07",
+      "source": {
+        "file": "sections/ep_safe_ap_character_completion.tex",
+        "anchor": "\\label{lem:exact-character-rank-drop}"
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "name": "Choose a reachable two-sheet source layer",
+      "statement": "I02 supplies Y<X with [X:Y]=2 whenever a finite relative interval exists. I03 chooses maximal K and t=KOK, with K union t=K join X and t;t=K. Real t need not be a point function; t/K is the quotient involution.",
+      "depends_on": [
+        "A01",
+        "I02",
+        "I03"
+      ],
+      "notes": "N01",
+      "scope": "gate",
+      "source_labels": [
+        "lem:ep-ap-TP"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C02",
+      "name": "Transport the ORIGINAL maximal gate",
+      "statement": "I05/I06 give reached gates K_s and transported nonidentity t_s with: every ORIGINAL full exact Z>K_s contains t_s. This is stronger than a merely quotient-exact gate and is what later contradictions need.",
+      "depends_on": [
+        "A01",
+        "A02",
+        "C01",
+        "I05",
+        "I06"
+      ],
+      "notes": "N01",
+      "scope": "gate",
+      "source_labels": [
+        "lem:ep-ap-TP"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C03",
+      "name": "Construct actual character masks",
+      "statement": "I09 supplies chi(t_s)=1 and compatible arrow addition. Define D03 masks on actual old atoms. Whole rigid bridges have constant character; nonrigid atoms are flexible. Inactive endpoint masks are the full palette for their fixed label.",
+      "depends_on": [
+        "A02",
+        "I05",
+        "I09",
+        "D03"
+      ],
+      "notes": "N01",
+      "scope": "gate",
+      "source_labels": [
+        "lem:ep-ap-TP"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C04",
+      "name": "Literal identity is allowed exactly at matching labels",
+      "statement": "Id_s lies inside the identity bridge K_s with character zero. Thus an Id OUTPUT requires same old sort and equal prescribed bits. K_s itself can also contain diversity colours; it is never identified with original logical equality.",
+      "depends_on": [
+        "C03",
+        "D02",
+        "D03"
+      ],
+      "notes": "N01",
+      "scope": "gate",
+      "source_labels": [
+        "lem:ep-ap-TP"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C05",
+      "name": "Compatible nonempty old products have an output",
+      "statement": "Transitivity of the intermediate old sort makes each nonempty invariant input serial/coserial, so their represented product is nonempty. If an endpoint is inactive every output is allowed; if an output is nonrigid it is also allowed.",
+      "depends_on": [
+        "A01",
+        "I01",
+        "C03"
+      ],
+      "notes": "N02",
+      "scope": "totality",
+      "source_labels": [
+        "lem:ep-ap-TP"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C06",
+      "name": "A hypothetical entirely wrong product gives an affine slice",
+      "statement": "If active endpoint outputs all have wrong character, saturate their product by K_s,K_t. Exact convolution makes a nonempty exact bisaturated domain D; saturation stays within the same wrong rigid hom-torsor sheet. I07 gives D=dS, with represented subgroup S full exact and S contained in ker chi.",
+      "depends_on": [
+        "C02",
+        "C03",
+        "C05",
+        "I01",
+        "I07",
+        "D04"
+      ],
+      "notes": "N02",
+      "scope": "totality",
+      "source_labels": [
+        "lem:ep-ap-TP"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C07",
+      "name": "The maximal gate kills the slice subgroup",
+      "statement": "If S is nontrivial, its union of represented arrows is an ORIGINAL full exact equivalence strictly above K_s. C02 forces t_s inside it, contrary to S contained in ker chi and chi(t_s)=1. Hence S=1 and D is ONE rigid bridge, not necessarily one old atom.",
+      "depends_on": [
+        "C02",
+        "C06"
+      ],
+      "notes": "N02",
+      "scope": "totality",
+      "source_labels": [
+        "lem:ep-ap-TP"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C08",
+      "name": "Rigid product factorisation contradicts the wrong phase",
+      "statement": "I08 factors the two input atoms through compatible bridges R1,R2 whose product is D. Its constructed intermediate gate is the already reached gate if that sort is active; if unreached, factorisation would make it reached, contradicting that it is inactive. Hence the middle sort is active and BOTH locally legal input characters apply. Local legality gives admissible characters adding to the prescribed endpoint difference, contradiction.",
+      "depends_on": [
+        "C03",
+        "C07",
+        "I05",
+        "I08"
+      ],
+      "notes": "N02",
+      "scope": "totality",
+      "source_labels": [
+        "lem:ep-ap-TP"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C09",
+      "name": "Fork totality including logical identity",
+      "statement": "C05-C08 show an allowed output exists for every locally allowed pair of old input atoms with compatible middle bit. No chosen witnesses need be distinct, and an Id endpoint output is permitted as in C04.",
+      "depends_on": [
+        "C04",
+        "C05",
+        "C08"
+      ],
+      "notes": "N02",
+      "scope": "totality",
+      "source_labels": [
+        "lem:ep-ap-TP"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C10",
+      "name": "Reduce phase primality to active wrong intersection",
+      "statement": "For a finite family of reachable word profiles with nonempty total meet, inactive endpoint masks settle the claim. Otherwise suppose D=meet_i W_i is confined to wrong rigid arrows although every W_i meets the allowed mask. The empty family is handled directly by global seeds; the contrary case has at least one member.",
+      "depends_on": [
+        "A01",
+        "C03",
+        "I09",
+        "D01"
+      ],
+      "notes": "N02",
+      "scope": "primality",
+      "source_labels": [
+        "lem:ep-ap-TP"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C11",
+      "name": "Saturation preserves the NONEMPTY meet",
+      "statement": "Set E_i=K_s;W_i;K_t. RAW I01 gives meet E_i=K_s;D;K_t, nonempty and supported on wrong rigid arrows. Apply the affine slice and original maximal gate as C06-C07 to obtain meet E_i=d, one complete rigid bridge.",
+      "depends_on": [
+        "C02",
+        "C07",
+        "C10",
+        "I01",
+        "I07",
+        "D04"
+      ],
+      "notes": "N02",
+      "scope": "primality",
+      "source_labels": [
+        "lem:ep-ap-TP"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C12",
+      "name": "Every saturated profile properly contains the bridge",
+      "statement": "Each W_i has an allowed atom, while d lies wholly in the wrong sheet, so E_i properly contains d. A_i=E_i;d^op is nonempty exact symmetric on original sort s, K_s-bisaturated and contains K_s. If A_i=K_s, composing with d and using right K_t saturation gives E_i=d, contradiction.",
+      "depends_on": [
+        "C11",
+        "I01",
+        "I05"
+      ],
+      "notes": "N02",
+      "scope": "primality",
+      "source_labels": [
+        "lem:ep-ap-TP"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C13",
+      "name": "Translate the common intersection to WHOLE K",
+      "statement": "Nonempty exact meet distribution gives meet_i A_i=(meet_i E_i);d^op=d;d^op=K_s. This is whole original gate K_s, not original Id_s.",
+      "depends_on": [
+        "C11",
+        "C12",
+        "I01",
+        "D02"
+      ],
+      "notes": "N02",
+      "scope": "primality",
+      "source_labels": [
+        "lem:ep-ap-TP"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C14",
+      "name": "Choose a minimal subfamily with meet K",
+      "statement": "Choose an inclusion-minimal subfamily of the finite A_i meeting in K_s. Each A_i>K_s, so at least two members are needed. One member A and the meet B of the rest are symmetric exact K_s-bisaturated, both strictly above K_s by minimality, and A intersect B=K_s.",
+      "depends_on": [
+        "C12",
+        "C13",
+        "I01"
+      ],
+      "notes": "N02",
+      "scope": "primality",
+      "source_labels": [
+        "lem:ep-ap-TP"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C15",
+      "name": "Relative closure separation contradicts the gate",
+      "statement": "I04 says the stable equivalence closures of A,B meet in K_s. Both closures are ORIGINAL full exact equivalences strictly above K_s, so C02 puts t_s in both, impossible. This proves primality (P), without SAP saturation or reverse quotient exact descent.",
+      "depends_on": [
+        "C02",
+        "C14",
+        "I04"
+      ],
+      "notes": "N02",
+      "scope": "primality",
+      "source_labels": [
+        "lem:ep-ap-TP"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C16",
+      "name": "The one-edge support is its masked old profile",
+      "statement": "L1={a1}=P1 intersect its endpoint mask by specified local legality. This is nonempty.",
+      "depends_on": [
+        "C03",
+        "D05"
+      ],
+      "notes": "N03",
+      "scope": "path_support",
+      "source_labels": [
+        "lem:ep-ap-path"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C17",
+      "name": "Forward support inclusion is monotonicity",
+      "statement": "Given L_r=P_r intersect mask, (L_r;b) intersect endpoint mask is contained in (P_r;b) intersect endpoint mask. Use actual represented product, not diversity-only multiplication.",
+      "depends_on": [
+        "C16",
+        "I01",
+        "D05"
+      ],
+      "notes": "N03",
+      "scope": "path_support",
+      "source_labels": [
+        "lem:ep-ap-path"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C18",
+      "name": "Peircean rotation finds a compatible intermediate profile",
+      "statement": "For any atom c in (P_r;b) and the final mask, rotate by the CONVERSE of b: P_r meets T={c};{bar b}. It is a nonempty typed word profile of type s0->sr. This remains valid when c is Id.",
+      "depends_on": [
+        "C17",
+        "I01"
+      ],
+      "notes": "N03",
+      "scope": "path_support",
+      "source_labels": [
+        "lem:ep-ap-path"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C19",
+      "name": "Totality makes the rotated profile meet the right mask",
+      "statement": "c and bar b are locally allowed at the actual reversed endpoint bits; character addition is exponent two. By C09, T meets the actual (epsilon0,epsilon_r) mask. The induction hypothesis says P_r meets it too. Inactive bits are fixed actual labels, not fresh free bits.",
+      "depends_on": [
+        "C09",
+        "C16",
+        "C18",
+        "D03"
+      ],
+      "notes": "N03",
+      "scope": "path_support",
+      "source_labels": [
+        "lem:ep-ap-path"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C20",
+      "name": "Primality proves reverse inclusion",
+      "statement": "Apply C15 to intersecting word profiles P_r and T, both meeting the same mask. Choose atom a in their allowed intersection. By induction a in L_r, and Peirce gives c in a;b. Thus c belongs to the recursive lifted support.",
+      "depends_on": [
+        "C15",
+        "C18",
+        "C19",
+        "I01"
+      ],
+      "notes": "N03",
+      "scope": "path_support",
+      "source_labels": [
+        "lem:ep-ap-path"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C21",
+      "name": "Totality proves nonemptiness at every step",
+      "statement": "Choose any a in the nonempty previous support and apply C09 with the last locally allowed edge b. The resulting allowed output lies in L_(r+1). Together with C16-C20 this inductively proves L_r=P_r intersect actual mask !=empty for every prefix.",
+      "depends_on": [
+        "C09",
+        "C16",
+        "C17",
+        "C20"
+      ],
+      "notes": "N03",
+      "scope": "path_support",
+      "source_labels": [
+        "lem:ep-ap-path"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C22",
+      "name": "Formal support is not an assumed marked completion",
+      "statement": "C21 is a recursively defined algebraic equality using old represented relations only. It supplies possible endpoint atoms including Id, not an already homogeneous marked model or simultaneous realizations of the whole path.",
+      "depends_on": [
+        "C21"
+      ],
+      "notes": "N03",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:ep-ap-path"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C23",
+      "name": "Identity-containing two-edge paths force duplicate labels equal",
+      "statement": "If x-z and y-z have colours a,b and every x-y path contains Id in its endpoint profile, then Id in a;bar b. Actual witnesses give a shared pair belonging to both a,b; the old orbital partition forces a=b, with typed orientation retained.",
+      "depends_on": [
+        "A01",
+        "I01",
+        "D06"
+      ],
+      "notes": "N04",
+      "scope": "identity_fold",
+      "source_labels": [
+        "lem:ep-ap-identity-fold"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C24",
+      "name": "The folded graph is a well-defined diversity graph",
+      "statement": "Only nonadjacent same-sort x,y are identified, so no loop arises. C23 makes all duplicate incident labels agree. Existing unary bits descend when equal; local pair legality is unchanged on all surviving edges.",
+      "depends_on": [
+        "C23",
+        "D06"
+      ],
+      "notes": "N04",
+      "scope": "identity_fold",
+      "source_labels": [
+        "lem:ep-ap-identity-fold"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C25",
+      "name": "Cycles avoiding the folded vertex lift unchanged",
+      "statement": "A simple cycle in the quotient avoiding the identified vertex is literally an old simple cycle, so its assumed old homomorphism still works.",
+      "depends_on": [
+        "C24"
+      ],
+      "notes": "N04",
+      "scope": "identity_fold",
+      "source_labels": [
+        "lem:ep-ap-identity-fold"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C26",
+      "name": "Cycles using the folded vertex either lift or close one old path",
+      "statement": "Take its two incident edges. If both have representatives from the same former vertex, lift to that old simple cycle. Otherwise cutting at the identified vertex yields a simple x-y path whose represented profile contains Id. Its actual walk with equal endpoints is a homomorphism of the quotient cycle.",
+      "depends_on": [
+        "C23",
+        "C24",
+        "I01"
+      ],
+      "notes": "N04",
+      "scope": "identity_fold",
+      "source_labels": [
+        "lem:ep-ap-identity-fold"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C27",
+      "name": "Identity folding preserves all old cycle feasibility",
+      "statement": "C25-C26 exhaust simple cycles after folding. Thus every old cycle remains homomorphic; equal bits descend independently. This is an old-cycle statement, not an assumption of marked CCO or SAP.",
+      "depends_on": [
+        "C24",
+        "C25",
+        "C26"
+      ],
+      "notes": "N04",
+      "scope": "identity_fold",
+      "source_labels": [
+        "lem:ep-ap-identity-fold"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C28",
+      "name": "All current missing-pair path profiles have common old output",
+      "statement": "Maintain local marked legality and feasibility of every specified OLD simple cycle. Original HOM CCO gives a homomorphism of the current partial graph into M; its x,y image pair supplies an atom common to all simple x-y path profiles. With no path use typed Top.",
+      "depends_on": [
+        "A01",
+        "I01",
+        "D01"
+      ],
+      "notes": "N05",
+      "scope": "finite_completion",
+      "source_labels": [
+        "thm:ep-ap-marked-completion"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C29",
+      "name": "The common old output can be chosen allowed",
+      "statement": "For at least one path, C21 says each profile meets the prescribed endpoint mask, so C15 makes their nonempty meet meet it. For no path, choose actual typed endpoints and compatible groupoid seeds via I09, allowing Id if necessary. Thus choose an allowed c in the common old domain.",
+      "depends_on": [
+        "C03",
+        "C15",
+        "C21",
+        "C28",
+        "I09"
+      ],
+      "notes": "N05",
+      "scope": "finite_completion",
+      "source_labels": [
+        "thm:ep-ap-marked-completion"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C30",
+      "name": "Diversity insertion preserves old cycle feasibility",
+      "statement": "If c is diversity, add edge xy. Every new simple cycle consists of it and one previous simple x-y path; since c lies in that path profile, actual witnesses close it (using converse orientation when necessary). Old cycles persist and local legality holds.",
+      "depends_on": [
+        "C29",
+        "I01"
+      ],
+      "notes": "N05",
+      "scope": "finite_completion",
+      "source_labels": [
+        "thm:ep-ap-marked-completion"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C31",
+      "name": "An identity output requires actual contraction",
+      "statement": "If c=Id, C04 ensures same sort and equal bits. It belongs to EVERY old path profile, so C27 proves that contracting x=y preserves old-cycle feasibility, diversity labels and local bits. C21 provides formal phase support but is not used as a pre-existing marked model.",
+      "depends_on": [
+        "C04",
+        "C21",
+        "C27",
+        "C29"
+      ],
+      "notes": "N05",
+      "scope": "finite_completion",
+      "source_labels": [
+        "thm:ep-ap-marked-completion"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C32",
+      "name": "The finite completion process terminates",
+      "statement": "A diversity insertion strictly drops missing pairs at fixed vertex count. An identity contraction strictly drops vertices. The lexicographic measure D07 in N x N therefore decreases each step. Terminal graph P* is complete, strict and locally legal, and all its old simple cycles remain feasible.",
+      "depends_on": [
+        "C30",
+        "C31",
+        "D07"
+      ],
+      "notes": "N05",
+      "scope": "finite_completion",
+      "source_labels": [
+        "thm:ep-ap-marked-completion"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C33",
+      "name": "Original CCO embeds the terminal old complete diagram",
+      "statement": "Apply OLD HOM CCO to P*. Every distinct pair has a specified irreflexive diversity atom, so the resulting homomorphism is injective. Completeness and exclusive old atom names give an INDUCED old embedding. This does not assume triangle-definedness or marked AP.",
+      "depends_on": [
+        "A01",
+        "C32"
+      ],
+      "notes": "N05",
+      "scope": "finite_completion",
+      "source_labels": [
+        "thm:ep-ap-marked-completion"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C34",
+      "name": "Actual quotient points satisfy all finite phase tests",
+      "statement": "For embedded vertices in the same rigid-action orbit, freeness and actual orbital classification I05/I09 put their old pair in the unique rigid bridge; local legality forces the required chi difference. Points in one K-class have equal bits. Different rigid-action orbits impose no relative-seed constraint.",
+      "depends_on": [
+        "C03",
+        "C33",
+        "I05",
+        "I09"
+      ],
+      "notes": "N05",
+      "scope": "finite_completion",
+      "source_labels": [
+        "thm:ep-ap-marked-completion"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C35",
+      "name": "ONE global seed marking realizes every final bit",
+      "statement": "Apply I10 once to the finite actual quotient points of C34, after checking repeated K-classes carry equal bits. It yields a single global marking of M extending all prescribed bits, inactive labels unchanged. Compose the contractions with the final marked embedding to complete the original partial network homomorphically.",
+      "depends_on": [
+        "C31",
+        "C33",
+        "C34",
+        "I10"
+      ],
+      "notes": "N05",
+      "scope": "finite_completion",
+      "source_labels": [
+        "thm:ep-ap-marked-completion"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C36",
+      "name": "Actual finite marked completion export",
+      "statement": "C28-C35 prove every locally legal finite partial diversity network with all old simple cycles feasible has a homomorphic marked completion in a globally marked copy of M. Fine original pairs may collide only as implemented by identity contraction.",
+      "depends_on": [
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35"
+      ],
+      "notes": "N05",
+      "scope": "finite_completion",
+      "source_labels": [
+        "thm:ep-ap-marked-completion"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C37",
+      "name": "Marked HOM CCO follows by forgetting the marks of each cycle",
+      "statement": "If all marked simple cycles have marked homomorphisms, then each old cycle is old-feasible. C36 supplies one marked homomorphism of the whole network. Cycle-by-cycle witnesses need not share seeds.",
+      "depends_on": [
+        "C36"
+      ],
+      "notes": "N06",
+      "scope": "marked_age",
+      "source_labels": [
+        "thm:ep-ap-marked-completion"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C38",
+      "name": "The old AP span union is cycle feasible",
+      "statement": "For a marked age span, take its formal partial union over the COMPLETE common base. Old AP/JEP and old homogeneity give an old homomorphism of this union into M, possibly identifying cross-leg points. Therefore every specified old simple cycle is feasible; common-base marks agree.",
+      "depends_on": [
+        "A01",
+        "A03",
+        "D08"
+      ],
+      "notes": "N06",
+      "scope": "marked_age",
+      "source_labels": [
+        "thm:ep-ap-marked-completion"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C39",
+      "name": "Completion yields genuine ordinary marked AP",
+      "statement": "Apply C36 to C38. Each original leg is complete, so its distinct points remain distinct under the marked homomorphism by irreflexive pair atoms. Thus both legs embed inducedly with agreeing base. Cross-leg collisions outside the base are allowed: AP, not SAP.",
+      "depends_on": [
+        "C36",
+        "C38"
+      ],
+      "notes": "N06",
+      "scope": "marked_age",
+      "source_labels": [
+        "thm:ep-ap-marked-completion"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C40",
+      "name": "Empty-base union gives marked JEP",
+      "statement": "Use the same argument for two disjoint complete marked legs over the empty base. Old JEP makes the old union feasible and C36 completes it, injectively on each leg. No disjointness of their final images is claimed.",
+      "depends_on": [
+        "C36",
+        "C38",
+        "C39"
+      ],
+      "notes": "N06",
+      "scope": "marked_age",
+      "source_labels": [
+        "thm:ep-ap-marked-completion"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C41",
+      "name": "The complete marked objects are exactly locally legal actual old-age diagrams",
+      "statement": "Every global marking obeys the pair masks. Conversely take an ACTUAL old-age complete object with local legal bits, embed it inducedly into M and apply the pair test of C34 and I10. Thus it is globally markable. This does NOT mean arbitrary complete colour assignments are old-age diagrams.",
+      "depends_on": [
+        "A03",
+        "C03",
+        "C34",
+        "I10",
+        "D08"
+      ],
+      "notes": "N06",
+      "scope": "marked_age",
+      "source_labels": [
+        "thm:ep-ap-marked-completion"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C42",
+      "name": "Reasonableness and reduct-surjectivity use orbit seeds",
+      "statement": "Given an old finite embedding and legal marks on its source, realize the target old diagram in M. The source bits satisfy every same-groupoid-orbit pair test by C41; extend them to global seeds using I10 and restrict to the target. This lifts the SAME old embedding. With no prescribed source it yields a marking on every old object.",
+      "depends_on": [
+        "A03",
+        "C41",
+        "I10"
+      ],
+      "notes": "N06",
+      "scope": "marked_age",
+      "source_labels": [
+        "thm:ep-ap-marked-completion"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C43",
+      "name": "Precompactness and hereditary closure",
+      "statement": "At most two bits per active vertex give finitely many expansions of each finite old object; inactive labels are fixed. Induced restriction preserves local legality, so HP holds. Finite signature and finite objects give countably many isomorphism types.",
+      "depends_on": [
+        "A01",
+        "A03",
+        "C41"
+      ],
+      "notes": "N06",
+      "scope": "marked_age",
+      "source_labels": [
+        "thm:ep-ap-marked-completion"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C44",
+      "name": "Construct the homogeneous marked Fraisse limit",
+      "statement": "C39/C40/C43 give the Fraisse class. Its limit is homogeneous in the expanded relational language. Reasonableness C42 lets every old finite embedding problem lift from an actual marked finite source; marked extension then solves it. Hence its old reduct has the old age and extension property and is isomorphic to M by uniqueness. This is not a claim about every global seed marking.",
+      "depends_on": [
+        "A01",
+        "A03",
+        "C39",
+        "C40",
+        "C42",
+        "C43"
+      ],
+      "notes": "N06",
+      "scope": "marked_age",
+      "source_labels": [
+        "thm:ep-ap-marked-completion"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C45",
+      "name": "The homogeneous marked limit also has semantic HOM CCO",
+      "statement": "Its age consists of C41 objects. If all marked cycles map to the limit they are old feasible; C36 produces a finite complete globally marked object in this same age receiving the whole partial graph. Embed it into the limit. Thus the limit inherits marked HOM CCO without treating one arbitrary seed marking as universal.",
+      "depends_on": [
+        "C36",
+        "C37",
+        "C41",
+        "C44"
+      ],
+      "notes": "N06",
+      "scope": "marked_age",
+      "source_labels": [
+        "thm:ep-ap-marked-completion"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C46",
+      "name": "Children are homogeneous transitive named sorts",
+      "statement": "The limit is homogeneous and its only new language is unary bits. Any two points in one realized child share their full one-point type, so a singleton isomorphism extends; similarly each realized old binary colour on EACH FIXED ORDERED PAIR OF child sorts is one full expanded pair orbital. Same-child pairs give the rank specialization. Old same-sort symmetry persists.",
+      "depends_on": [
+        "A01",
+        "C44"
+      ],
+      "notes": "N06",
+      "scope": "marked_age",
+      "source_labels": [
+        "thm:ep-ap-marked-completion"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C47",
+      "name": "The designated odd involution populates both children",
+      "statement": "For every active quotient sort choose an actual q and its distinct t_s q. Their propagated bits differ by one. Choose real representatives; I09/I10 make the resulting legal two-point marked old object. It appears in the marked age/limit, so both children are nonempty and some realized same-sort diversity colour c_a is always phase-one.",
+      "depends_on": [
+        "C01",
+        "C02",
+        "C03",
+        "C41",
+        "C44",
+        "I09"
+      ],
+      "notes": "N06",
+      "scope": "marked_age",
+      "source_labels": [
+        "thm:ep-ap-marked-completion"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C48",
+      "name": "No SAP conclusion is smuggled into the marked theorem",
+      "statement": "C39 proves AP by legwise injectivity only; its completion permits cross-leg identity contractions. The algorithm and all groupoid/RAW inputs are old AP/HOM CCO results, not a SAP-only quotient or terminal Ramsey theorem.",
+      "depends_on": [
+        "C31",
+        "C39",
+        "C44",
+        "C45"
+      ],
+      "notes": "N06",
+      "scope": "boundary",
+      "source_labels": [
+        "thm:ep-ap-marked-completion"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C49",
+      "name": "Within one child no old named colour can split",
+      "statement": "Under A04, two child pairs with the same old colour define a complete two-point isomorphism: unary bits are identical and there are no new binary names. Homogeneity of the WHOLE expanded structure extends it to a full expanded automorphism; homogeneity of each child reduct alone would not suffice. Hence new full pair orbitals in a fixed child correspond to realized old colours.",
+      "depends_on": [
+        "A04",
+        "D09"
+      ],
+      "notes": "N07",
+      "scope": "rank",
+      "source_labels": [
+        "lem:exact-character-rank-drop"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C50",
+      "name": "Each child loses a realized diversity colour",
+      "statement": "The designated c_a cannot occur within either equal-bit child. By C49 no remaining old colour splits there. Thus k_(a^epsilon)<=k_a-1 with k_a>=1. Child nonemptiness is part of A04; no amalgamation argument proves this independent counting step.",
+      "depends_on": [
+        "A04",
+        "C49"
+      ],
+      "notes": "N07",
+      "scope": "rank",
+      "source_labels": [
+        "lem:exact-character-rank-drop"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C51",
+      "name": "Base three gives strict decrease even though sorts double",
+      "statement": "For k>=1, 2*3^(k-1)<3^k. Each active parent is replaced by at most this contribution, and inactive contributions are unchanged. Sum over a nonempty active family to get exactly ACR and Phi_new<Phi_old.",
+      "depends_on": [
+        "A04",
+        "C50",
+        "D10"
+      ],
+      "notes": "N07",
+      "scope": "rank",
+      "source_labels": [
+        "lem:exact-character-rank-drop"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C52",
+      "name": "Rank lemma is independent of AP and CCO",
+      "statement": "C49-C51 prove the conditional unary counting assertion under A04 alone. Homogeneity is essential to comparing orbitals with colours; arbitrary unary predicates on a fixed source need not retain it. The splitting construction discharges A04 separately.",
+      "depends_on": [
+        "C49",
+        "C50",
+        "C51"
+      ],
+      "notes": "N07",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:exact-character-rank-drop"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C53",
+      "name": "Every residual finite relative interval permits a next split",
+      "statement": "A finite relative-index interval >1 admits a saturated finite-index cover because finitely many invariant equivalences are unions of finitely many pair orbitals. I02 gives a reachable two-sheet layer and C01-C03 its maximal full exact character gate at the CURRENT source.",
+      "depends_on": [
+        "A01",
+        "I02",
+        "C01",
+        "C02",
+        "C03"
+      ],
+      "notes": "N08",
+      "scope": "terminal",
+      "source_labels": [
+        "thm:ap-finite-character-elimination"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C54",
+      "name": "The next source retains every required structural premise",
+      "statement": "C39-C47 produce a reasonable reduct-surjective precompact unary expansion, countable homogeneous with finitely many nonempty transitive named child sorts, same-sort symmetry, ordinary AP/JEP and semantic HOM CCO. All old binary names are unchanged. Thus the procedure can be reapplied at the next CURRENT source.",
+      "depends_on": [
+        "C39",
+        "C40",
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46",
+        "C47"
+      ],
+      "notes": "N08",
+      "scope": "terminal",
+      "source_labels": [
+        "thm:ap-finite-character-elimination"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C55",
+      "name": "Every actual nontrivial split satisfies the rank hypotheses",
+      "statement": "C46 identifies the child orbitals with retained binary names, C47 supplies nonempty children and a realized phase-one diversity colour on each active parent. Inactive induced structures are unchanged by the unary split. Thus A04 is discharged by the actual construction, so C51 applies.",
+      "depends_on": [
+        "C46",
+        "C47",
+        "C51",
+        "C54"
+      ],
+      "notes": "N08",
+      "scope": "terminal",
+      "source_labels": [
+        "thm:ap-finite-character-elimination"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C56",
+      "name": "The potential bounds the total number of splits",
+      "statement": "Phi is a positive integer initially finite, and C55 lowers it by at least one at every genuine split. Therefore only finitely many nontrivial stages are possible; an infinite tower would give an infinite descending sequence in N. This does not use the later SAP terminal construction.",
+      "depends_on": [
+        "C51",
+        "C55",
+        "D10"
+      ],
+      "notes": "N08",
+      "scope": "terminal",
+      "source_labels": [
+        "thm:ap-finite-character-elimination"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C57",
+      "name": "Terminal sorts have no distinct finite-relative-index interval",
+      "statement": "If such an interval remained, C53 would permit another split satisfying C54-C55, contrary to stopping only at an unsplittable stage; the decreasing potential ensures this stage is eventually reached. Hence no terminal named sort has E<F of finite relative index.",
+      "depends_on": [
+        "C53",
+        "C54",
+        "C56"
+      ],
+      "notes": "N08",
+      "scope": "terminal",
+      "source_labels": [
+        "thm:ap-finite-character-elimination"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C58",
+      "name": "Finite unary composition preserves expansion properties",
+      "statement": "Compose finitely many unchanged-reduct unary expansions. Lift any old embedding stage by stage for reasonableness, choose expansions stage by stage for reduct-surjectivity, and multiply finite choices for precompactness. Each terminal source has AP/JEP, homogeneity and HOM CCO by C54. No added-function restriction-composition issue occurs.",
+      "depends_on": [
+        "C42",
+        "C43",
+        "C54",
+        "C56"
+      ],
+      "notes": "N08",
+      "scope": "terminal",
+      "source_labels": [
+        "thm:ap-finite-character-elimination"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C59",
+      "name": "AP-only finite character terminalisation export",
+      "statement": "C53-C58 give a finite tower with unchanged original reduct and no terminal finite relative-index equivalence interval. Initial/intermediate/terminal SAP is neither needed nor concluded.",
+      "depends_on": [
+        "C53",
+        "C54",
+        "C55",
+        "C56",
+        "C57",
+        "C58"
+      ],
+      "notes": "N08",
+      "scope": "terminal",
+      "source_labels": [
+        "thm:ap-finite-character-elimination"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C60",
+      "name": "Safe-splitting corollary uses only earlier AP-only results",
+      "statement": "For any available finite relative interval, C53 starts a reachable maximal exact character split; C36/C39/C45 provide actual AP/JEP/HOM CCO at that stage and C59 terminates all finite intervals. This is the foundational input to later core induction, not a proof of that later core theorem.",
+      "depends_on": [
+        "C36",
+        "C39",
+        "C45",
+        "C53",
+        "C59"
+      ],
+      "notes": "N08",
+      "scope": "terminal",
+      "source_labels": [
+        "cor:ep-ap-safe-splitting"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C61",
+      "name": "Source-provider and equality firewalls remain explicit",
+      "statement": "All ten imports are earlier RAW/parity/rigid results. Full old represented identities are retained; quotient identity K is separate. Neither strong-diversity saturation nor later SAP V27 Ramsey terminalisation nor arbitrary exact quotient descent enters this proof. No new published provider is introduced.",
+      "depends_on": [
+        "I01",
+        "I02",
+        "I03",
+        "I04",
+        "I05",
+        "I06",
+        "I07",
+        "I08",
+        "I09",
+        "I10",
+        "C48",
+        "C60"
+      ],
+      "notes": "N09",
+      "scope": "boundary",
+      "source_labels": [
+        "cor:ep-ap-safe-splitting"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C62",
+      "name": "Finite diagnostics do not certify general marked completion",
+      "statement": "Finite group masks, path supports, identity contractions and integer rank checks test local reasoning. They do not establish the unbounded RAW/CCO/provider results or a Lean proof. The marked theorem remains relative to its explicitly selected already prepared source proofs.",
+      "depends_on": [
+        "C22",
+        "C48",
+        "C52",
+        "C61"
+      ],
+      "notes": "N09",
+      "scope": "boundary",
+      "source_labels": [
+        "cor:ep-ap-safe-splitting"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    }
+  ],
+  "source_result_files": [
+    "sections/ep_safe_ap_character_completion.tex"
+  ],
+  "exports": [
+    {
+      "source_label": "lem:ep-ap-TP",
+      "claims": [
+        "C09",
+        "C15"
+      ]
+    },
+    {
+      "source_label": "lem:ep-ap-path",
+      "claims": [
+        "C21"
+      ]
+    },
+    {
+      "source_label": "lem:ep-ap-identity-fold",
+      "claims": [
+        "C27"
+      ]
+    },
+    {
+      "source_label": "thm:ep-ap-marked-completion",
+      "claims": [
+        "C36",
+        "C39",
+        "C40",
+        "C41",
+        "C42",
+        "C43",
+        "C44",
+        "C45"
+      ]
+    },
+    {
+      "source_label": "lem:exact-character-rank-drop",
+      "claims": [
+        "C50",
+        "C51"
+      ]
+    },
+    {
+      "source_label": "thm:ap-finite-character-elimination",
+      "claims": [
+        "C59"
+      ]
+    },
+    {
+      "source_label": "cor:ep-ap-safe-splitting",
+      "claims": [
+        "C60"
+      ]
+    }
+  ],
+  "auxiliary_exports": [
+    {
+      "source_label": "eq:ep-ap-source-gate",
+      "claims": [
+        "C01",
+        "C02"
+      ],
+      "source": {
+        "file": "sections/ep_safe_ap_character_completion.tex",
+        "anchor": "\\label{eq:ep-ap-source-gate}"
+      }
+    },
+    {
+      "source_label": "eq:ep-ap-mask",
+      "claims": [
+        "C03",
+        "C04"
+      ],
+      "source": {
+        "file": "sections/ep_safe_ap_character_completion.tex",
+        "anchor": "\\label{eq:ep-ap-mask}"
+      }
+    },
+    {
+      "source_label": "eq:ep-ap-path-normal-form",
+      "claims": [
+        "C21"
+      ],
+      "source": {
+        "file": "sections/ep_safe_ap_character_completion.tex",
+        "anchor": "\\label{eq:ep-ap-path-normal-form}"
+      }
+    },
+    {
+      "source_label": "eq:exact-character-rank-drop",
+      "claims": [
+        "C51"
+      ],
+      "source": {
+        "file": "sections/ep_safe_ap_character_completion.tex",
+        "anchor": "\\label{eq:exact-character-rank-drop}"
+      }
+    }
+  ],
+  "source_files": [
+    {
+      "file": "sections/ep_safe_ap_character_completion.tex",
+      "git_blob": "42e7958c333f8e39a9a5268ec22d0213c72d715b"
+    },
+    {
+      "file": "sections/exact_foundations/01_full_raw_exact_helly.tex",
+      "git_blob": "7cb28c86b4b296ddf865b6aff518cda1215cd491"
+    },
+    {
+      "file": "sections/finite_relative_parity_exact_closure.tex",
+      "git_blob": "9f6983f96bae28d06466fcbf23f15e20a55f2686"
+    },
+    {
+      "file": "sections/rigid_exact_groupoid_foundations.tex",
+      "git_blob": "fb231ec107f8c18b550c87d20ea2da9d86a2d735"
+    }
+  ],
+  "dependency_firewalls": [
+    {
+      "claims": [
+        "C49",
+        "C50",
+        "C51",
+        "C52"
+      ],
+      "forbid": [
+        "A01",
+        "A02",
+        "A03",
+        "I01",
+        "I02",
+        "I03",
+        "I04",
+        "I05",
+        "I06",
+        "I07",
+        "I08",
+        "I09",
+        "I10",
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40",
+        "C41",
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46",
+        "C47",
+        "C48",
+        "C53",
+        "C54",
+        "C55",
+        "C56",
+        "C57",
+        "C58",
+        "C59",
+        "C60",
+        "C61",
+        "C62"
+      ]
+    },
+    {
+      "claims": [
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27"
+      ],
+      "forbid": [
+        "A02",
+        "A03",
+        "A04",
+        "I02",
+        "I03",
+        "I04",
+        "I05",
+        "I06",
+        "I07",
+        "I08",
+        "I09",
+        "I10",
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40",
+        "C41",
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46",
+        "C47",
+        "C48",
+        "C49",
+        "C50",
+        "C51",
+        "C52",
+        "C53",
+        "C54",
+        "C55",
+        "C56",
+        "C57",
+        "C58",
+        "C59",
+        "C60",
+        "C61",
+        "C62"
+      ]
+    },
+    {
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35"
+      ],
+      "forbid": [
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40",
+        "C41",
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46",
+        "C47",
+        "C48",
+        "C49",
+        "C50",
+        "C51",
+        "C52",
+        "C53",
+        "C54",
+        "C55",
+        "C56",
+        "C57",
+        "C58",
+        "C59",
+        "C60",
+        "C61",
+        "C62"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "T01",
+      "name": "Original maximal gate, actual masks and TP",
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Retain actual full represented products, whole original K gate and nonempty RAW meets. Formal path support is not a marked realization. Contract actual Id outputs and prove old-cycle invariant. Build the legal finite marked age before Fraisse homogeneity; AP permits cross-leg collisions. Interpret complete old diagrams as actual old-age diagrams. Prove same-child orbital/colour recognition before rank decrease. No SAP, arbitrary global marking homogeneity, later terminal Ramsey or new provider axiom."
+    },
+    {
+      "id": "T02",
+      "name": "Formal path supports with converse rotation",
+      "claims": [
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22"
+      ],
+      "depends_on": [
+        "T01"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Retain actual full represented products, whole original K gate and nonempty RAW meets. Formal path support is not a marked realization. Contract actual Id outputs and prove old-cycle invariant. Build the legal finite marked age before Fraisse homogeneity; AP permits cross-leg collisions. Interpret complete old diagrams as actual old-age diagrams. Prove same-child orbital/colour recognition before rank decrease. No SAP, arbitrary global marking homogeneity, later terminal Ramsey or new provider axiom."
+    },
+    {
+      "id": "T03",
+      "name": "Independent old identity-folding lemma",
+      "claims": [
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Retain actual full represented products, whole original K gate and nonempty RAW meets. Formal path support is not a marked realization. Contract actual Id outputs and prove old-cycle invariant. Build the legal finite marked age before Fraisse homogeneity; AP permits cross-leg collisions. Interpret complete old diagrams as actual old-age diagrams. Prove same-child orbital/colour recognition before rank decrease. No SAP, arbitrary global marking homogeneity, later terminal Ramsey or new provider axiom."
+    },
+    {
+      "id": "T04",
+      "name": "Finite completion, contractions and one global phase extension",
+      "claims": [
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36"
+      ],
+      "depends_on": [
+        "T01",
+        "T02",
+        "T03"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Retain actual full represented products, whole original K gate and nonempty RAW meets. Formal path support is not a marked realization. Contract actual Id outputs and prove old-cycle invariant. Build the legal finite marked age before Fraisse homogeneity; AP permits cross-leg collisions. Interpret complete old diagrams as actual old-age diagrams. Prove same-child orbital/colour recognition before rank decrease. No SAP, arbitrary global marking homogeneity, later terminal Ramsey or new provider axiom."
+    },
+    {
+      "id": "T05",
+      "name": "Actual marked age, ordinary AP and homogeneous reduct",
+      "claims": [
+        "C37",
+        "C38",
+        "C39",
+        "C40",
+        "C41",
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46",
+        "C47",
+        "C48"
+      ],
+      "depends_on": [
+        "T04"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Retain actual full represented products, whole original K gate and nonempty RAW meets. Formal path support is not a marked realization. Contract actual Id outputs and prove old-cycle invariant. Build the legal finite marked age before Fraisse homogeneity; AP permits cross-leg collisions. Interpret complete old diagrams as actual old-age diagrams. Prove same-child orbital/colour recognition before rank decrease. No SAP, arbitrary global marking homogeneity, later terminal Ramsey or new provider axiom."
+    },
+    {
+      "id": "T06",
+      "name": "Independent orbital counting and integer potential",
+      "claims": [
+        "C49",
+        "C50",
+        "C51",
+        "C52"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Retain actual full represented products, whole original K gate and nonempty RAW meets. Formal path support is not a marked realization. Contract actual Id outputs and prove old-cycle invariant. Build the legal finite marked age before Fraisse homogeneity; AP permits cross-leg collisions. Interpret complete old diagrams as actual old-age diagrams. Prove same-child orbital/colour recognition before rank decrease. No SAP, arbitrary global marking homogeneity, later terminal Ramsey or new provider axiom."
+    },
+    {
+      "id": "T07",
+      "name": "Current-source iteration and finite terminalisation",
+      "claims": [
+        "C53",
+        "C54",
+        "C55",
+        "C56",
+        "C57",
+        "C58",
+        "C59",
+        "C60"
+      ],
+      "depends_on": [
+        "T05",
+        "T06"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Retain actual full represented products, whole original K gate and nonempty RAW meets. Formal path support is not a marked realization. Contract actual Id outputs and prove old-cycle invariant. Build the legal finite marked age before Fraisse homogeneity; AP permits cross-leg collisions. Interpret complete old diagrams as actual old-age diagrams. Prove same-child orbital/colour recognition before rank decrease. No SAP, arbitrary global marking homogeneity, later terminal Ramsey or new provider axiom."
+    },
+    {
+      "id": "T08",
+      "name": "Provider/equality/source-scope acceptance",
+      "claims": [
+        "C61",
+        "C62"
+      ],
+      "depends_on": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Retain actual full represented products, whole original K gate and nonempty RAW meets. Formal path support is not a marked realization. Contract actual Id outputs and prove old-cycle invariant. Build the legal finite marked age before Fraisse homogeneity; AP permits cross-leg collisions. Interpret complete old diagrams as actual old-age diagrams. Prove same-child orbital/colour recognition before rank decrease. No SAP, arbitrary global marking homogeneity, later terminal Ramsey or new provider axiom."
+    }
+  ],
+  "controls": [
+    {
+      "id": "K01",
+      "check": "Bounded actual character-mask products/path supports, identity contraction and completion invariants, active/inactive and nonrigid boundaries; no general CCO certification."
+    },
+    {
+      "id": "K02",
+      "check": "Integer potential/rank decrease, ordinary-AP versus SAP boundaries and explicit equality-inclusive guards."
+    }
+  ],
+  "overview_mermaid": [
+    "flowchart TD",
+    "  G[\"Original exact maximal gate\"] --> T[\"Fork totality and phase primality\"]",
+    "  T --> P[\"Formal path supports\"]",
+    "  P --> C[\"Finite completion with contractions\"]",
+    "  F[\"Old identity-folding lemma\"] --> C",
+    "  C --> A[\"Actual marked AP and HOM CCO\"]",
+    "  A --> H[\"Homogeneous unary split\"]",
+    "  H --> R[\"Strict integer rank drop\"]",
+    "  R --> E[\"Finite terminalisation without SAP\"]"
+  ],
+  "overview_notes": [
+    "Seven source results and four equations; last seven Foundations I results.",
+    "Original K is the whole represented equivalence; its quotient identity is not logical equality on old points.",
+    "An arbitrary global seed marking is used for a finite completion only; homogeneous expansion comes from the legal marked Fraisse age.",
+    "No new external published input; selected RAW/parity/rigid support only."
+  ],
+  "article_feedback": [
+    {
+      "id": "F01",
+      "kind": "PROOF_EXPANSION_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/ep_safe_ap_character_completion.tex",
+        "anchor": "Its complete diagrams are precisely"
+      },
+      "finding": "Complete old diagrams means actual old-age diagrams, not arbitrary full atom assignments. A global orbit-seed marking realizes a finite object; its homogeneity is not automatic. Fraisse constructs the homogeneous marked source separately.",
+      "proposed_article_change": "Repeat actual old-age in the complete-diagram sentence, and explicitly separate finite global marking realizations from the homogeneous marked Fraisse limit. Add same-child pair-orbital/colour recognition at rank counting.",
+      "caller_effect": "Clarifies intended source context without changing the theorem hypotheses or frozen TeX.",
+      "proof_claims": [
+        "C41",
+        "C44",
+        "C45",
+        "C46",
+        "C49"
+      ]
+    }
+  ],
+  "review": {
+    "date": "2026-10-28",
+    "source_unchanged": true,
+    "source_signature_repairs": 0,
+    "unexpanded_provider_labels": [],
+    "proof_status": "HUMAN_EXPANDED_NOT_LEAN; AP-only marked completion and finite terminalisation with selected source support, no new source gap found.",
+    "independent_reviews": [
+      "Independent reconstruction of all seven results and exact RAW/parity/rigid provider map: PASS",
+      "Final review of concrete 62-claim module and proof notes: PASS after explicitly stating WHOLE expanded homogeneity and the active-middle factorisation argument"
+    ],
+    "boundaries": [
+      "No SAP asserted",
+      "No arbitrary complete atom assignments",
+      "No arbitrary global marking assumed homogeneous",
+      "Original K is not old Id",
+      "Only unary labels added in finite composition"
+    ]
+  }
+}

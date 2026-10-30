@@ -1,0 +1,1277 @@
+{
+  "schema_version": 1,
+  "id": "orbital_cover_boundary",
+  "index_title": "SAP orbital parity, finite cover indices and an unsplittable diagonal two-cover",
+  "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+  "status": "HUMAN_EXPANDED_NOT_LEAN",
+  "scope": "Private B046: THREE selected Ramsey I results and ONE equation, eight definitions, 40 human claims and six tasks. Upgrade SAP-free original parity to nonempty STRONG even/odd profiles using visible SAP; reuse the full invariant Hasse theorem; give a self-contained actual nine-colour homogeneous triangle-defined SAP+HOM CCO example where EVERY orientation of a preselected coarse index-two cover destroys AP. Finer coordinate covers have explicit compatible successive splits. No later safe-splitting theorem, arbitrary quotient exact descent or generic Helly-to-CCO shortcut is used.",
+  "scope_vocabulary": [
+    "original_parity",
+    "strong_profiles",
+    "finite_Hasse",
+    "example_structure",
+    "example_CCO",
+    "diagonal_orientation",
+    "AP_obstruction",
+    "fine_splits",
+    "boundary"
+  ],
+  "scope_explanation": "statement and proof. Logical Id in RAW relations is separate from clone diversity colour (e0,e0). The bad cover is full definable but not a box-shaped reachable profile. The counterexample quantifies over ALL functions h; fine split success is proved for explicit coordinate predicates, not every arbitrary fine orientation.",
+  "control_script": "tools/check_orbital_cover_controls.py",
+  "assumptions": [
+    {
+      "id": "A01",
+      "name": "Current actual original homogeneous HOM CCO source",
+      "statement": "M is homogeneous complete in a finite binary named-sorted language with finitely many nonempty transitive current unary sorts, same-sort symmetric orbitals and typed converses. Its actual finite age has semantic homomorphic CCO; visible SAP is the SEPARATE A05 premise used only for the STRONG upgrade. The parity and Hasse applications stay on ONE current original named sort. No abstract quotient SAP or terminal no-finite-cover hypothesis is assumed."
+    },
+    {
+      "id": "A02",
+      "name": "Finite-relative interval and actual atom",
+      "statement": "For orbital parity, E<F are actual zero-definable invariant equivalences on the selected transitive sort, [F:E] is finite >1, and t is an occurring actual same-sort diversity orbital inside F minus E. For finite-cover-two, the interval is instead a COVER in the FULL invariant lattice; neither endpoint is required full exact."
+    },
+    {
+      "id": "A03",
+      "name": "Independent countable product model",
+      "statement": "U,V,N are countably infinite pure sets, p,q range over F2, and M=U x V x F2 x F2 x N. Distinct points receive one of nine colours (alpha,beta) in {e0,e1,n}^2: alpha=e_(p+pprime) if u=uprime, otherwise n; beta is analogous for v,q. Logical equality is separate from the occurring irreflexive clone diversity atom (e0,e0). No global parity/Hasse/SAP theorem is assumed to prove this example."
+    },
+    {
+      "id": "A04",
+      "name": "Arbitrary orientation variable",
+      "statement": "For the obstruction, P is ANY unary predicate choosing one of the two K-classes inside EACH X-class, where X fixes (u,v) and K additionally fixes p+q. P is constant on K-classes and has opposite bits on the two K-classes of an X-class. No definability, equivariance, regularity or homogeneity of P is assumed; its normal form h is derived."
+    },
+    {
+      "id": "A05",
+      "name": "Additional visible original SAP for the parity upgrade only",
+      "statement": "The actual finite age of the current ORIGINAL named-sorted source has SAP. This premise is used to create distinct even-sheet endpoints and to apply the existing finite injectivisation API. It is NOT a premise of the finite invariant Hasse proof and NOT an assumption used to prove the independent nine-colour example."
+    }
+  ],
+  "imports": [
+    {
+      "id": "I01",
+      "name": "lem:ep-ap-orbital-parity",
+      "provider_module": "parity_hasse",
+      "source_label": "lem:ep-ap-orbital-parity",
+      "provider_claims": [
+        "C09",
+        "C10",
+        "C11",
+        "C12"
+      ],
+      "statement": "Original SAP-FREE parity gives bipartite t graph, stabilized positive RAW even/odd powers Y_t,O_t, with Y_t full exact, [Y_t union O_t:Y_t]=2 and O_t containing t. It does NOT assert Y_t>Id.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I02",
+      "name": "lem:typed-injectivisation",
+      "provider_module": "strong_selectors",
+      "source_label": "lem:typed-injectivisation",
+      "provider_claims": [
+        "C04",
+        "C05"
+      ],
+      "statement": "Visible original SAP identifies diversity slices of positive represented word relations with STRONG simple-path profiles via finite injectivisation. Do not replace RAW Y_t itself by a diversity palette.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I03",
+      "name": "thm:full-relative-Hasse",
+      "provider_module": "parity_hasse",
+      "source_label": "thm:full-relative-Hasse",
+      "provider_claims": [
+        "C13",
+        "C14"
+      ],
+      "statement": "FULL invariant-equivalence covers of finite relative index have index two in an actual transitive symmetric HOM CCO source; every finite relative index is a power of two. This theorem is independent of SAP and does not require exact endpoints.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    }
+  ],
+  "definitions": [
+    {
+      "id": "D01",
+      "name": "RAW even equivalence and odd relation",
+      "statement": "Y_t is the stabilized equality-inclusive even walk relation; E_t=Y_t union O_t and Y_t^circ=Y_t minus Id. O_t is its disjoint odd sheet.",
+      "depends_on": [],
+      "notes": "N01",
+      "source": {
+        "file": "sections/v27/06_legacy_finite_covers.tex",
+        "anchor": "\\label{thm:orbital-parity}"
+      }
+    },
+    {
+      "id": "D02",
+      "name": "STRONG word endpoint support",
+      "statement": "Only distinct endpoints and distinct formal path vertices are retained by the STRONG profile. Positive RAW words may include diagonal outputs; injectivisation supplies exactly their diversity slice.",
+      "depends_on": [],
+      "notes": "N01",
+      "source": {
+        "file": "sections/v27/06_legacy_finite_covers.tex",
+        "anchor": "\\label{thm:orbital-parity}"
+      }
+    },
+    {
+      "id": "D03",
+      "name": "Full invariant cover index",
+      "statement": "A cover E<F has no intermediate FULL invariant equivalence. [F:E] counts E-blocks in one F-class and is independent of that class by transitivity. Equality E=F has index one.",
+      "depends_on": [],
+      "notes": "N02",
+      "source": {
+        "file": "sections/v27/06_legacy_finite_covers.tex",
+        "anchor": "\\label{thm:finite-cover-two}"
+      }
+    },
+    {
+      "id": "D04",
+      "name": "Coordinate e/n constraint system",
+      "statement": "An e_i edge forces equal U-block and F2 difference i; an n edge forces different blocks, with no bit relation. The second coordinate has an independent identical system.",
+      "depends_on": [],
+      "notes": "N03",
+      "source": {
+        "file": "sections/v27/06_legacy_finite_covers.tex",
+        "anchor": "\\label{prop:bad-diagonal-split}"
+      }
+    },
+    {
+      "id": "D05",
+      "name": "Original owner and clone atom",
+      "statement": "The owner of (u,v,p,q,n) is (u,v,p,q); a distinct pair has colour (e0,e0) iff its owners agree. Infinite N-fibres provide fresh vertices without changing any old colour.",
+      "depends_on": [],
+      "notes": "N03",
+      "source": {
+        "file": "sections/v27/06_legacy_finite_covers.tex",
+        "anchor": "\\label{prop:bad-diagonal-split}"
+      }
+    },
+    {
+      "id": "D06",
+      "name": "Coarse diagonal cover",
+      "statement": "X fixes u and v; K fixes u,v,p+q. Diversity palettes X={e0,e1}^2 and K={(e0,e0),(e1,e1)} are supplemented by original logical equality to form full equivalences.",
+      "depends_on": [],
+      "notes": "N05",
+      "source": {
+        "file": "sections/v27/06_legacy_finite_covers.tex",
+        "anchor": "\\label{prop:bad-diagonal-split}"
+      }
+    },
+    {
+      "id": "D07",
+      "name": "Orientation normal form",
+      "statement": "An arbitrary orientation has P(u,v,p,q,n)=p+q+h(u,v). The function h has no compatibility assumption across different U,V blocks.",
+      "depends_on": [],
+      "notes": "N05",
+      "source": {
+        "file": "sections/v27/06_legacy_finite_covers.tex",
+        "anchor": "\\label{prop:bad-diagonal-split}"
+      }
+    },
+    {
+      "id": "D08",
+      "name": "Compatible finer coordinate splits",
+      "statement": "The explicit first label P1=p orients the first fine coordinate cover; add P2=q to orient the second. These global choices work together; no assertion that every arbitrary fine orientation works is needed.",
+      "depends_on": [],
+      "notes": "N07",
+      "source": {
+        "file": "sections/v27/06_legacy_finite_covers.tex",
+        "anchor": "\\label{prop:bad-diagonal-split}"
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "name": "Apply original SAP-free parity on the current real sort",
+      "statement": "A01/A02 satisfy I01. Obtain Y_t<E_t<=F, [E_t:Y_t]=2, full RAW exact Y_t and stabilized positive even/odd word relations. This remains an ORIGINAL actual orbit calculation, not a new quotient argument.",
+      "depends_on": [
+        "A01",
+        "A02",
+        "I01",
+        "D01"
+      ],
+      "notes": "N01",
+      "scope": "original_parity",
+      "source_labels": [
+        "thm:orbital-parity"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C02",
+      "name": "Odd support is nonempty and diversity only",
+      "statement": "O_t contains actual t and is disjoint from Y_t, which contains Id. Thus O_t has no diagonal output and is nonempty. Its stabilized odd RAW word therefore has a nonempty diversity slice.",
+      "depends_on": [
+        "C01",
+        "D01"
+      ],
+      "notes": "N01",
+      "scope": "original_parity",
+      "source_labels": [
+        "thm:orbital-parity"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C03",
+      "name": "Visible SAP produces a nontrivial even diversity pair",
+      "statement": "Take a realized t-edge xy. Strongly amalgamate TWO copies of this actual two-point structure over the common vertex y. The two x-images x1,x2 are distinct, retain their t-edges to y, and hence their pair lies in t;t subset Y_t. Thus Y_t minus Id is nonempty.",
+      "depends_on": [
+        "A01",
+        "A02",
+        "C01",
+        "A05"
+      ],
+      "notes": "N01",
+      "scope": "strong_profiles",
+      "source_labels": [
+        "thm:orbital-parity"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C04",
+      "name": "Positive RAW even and odd words have STRONG diversity profiles",
+      "statement": "Apply I02 to each stabilized positive original t-word: its distinct-endpoint slice equals its STRONG simple-path profile. By C02/C03 both Y_t^circ and O_t are nonempty profiles. No equality is inserted as a diversity edge.",
+      "depends_on": [
+        "A01",
+        "C01",
+        "C02",
+        "C03",
+        "I02",
+        "D02",
+        "A05"
+      ],
+      "notes": "N01",
+      "scope": "strong_profiles",
+      "source_labels": [
+        "thm:orbital-parity"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C05",
+      "name": "Orbital parity source export with explicit RAW versus STRONG distinction",
+      "statement": "C01-C04 prove thm:orbital-parity, including Y_t>Id under visible SAP. Y_t itself remains full RAW exact; its nonempty diversity part and odd sheet are separate STRONG reachable profiles.",
+      "depends_on": [
+        "C01",
+        "C02",
+        "C03",
+        "C04"
+      ],
+      "notes": "N01",
+      "scope": "strong_profiles",
+      "source_labels": [
+        "thm:orbital-parity"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C06",
+      "name": "The SAP upgrade is not an AP-only conclusion",
+      "statement": "The SAP-free parity provider gives Id as a possible entire even sheet. The two-copy construction C03 is exactly where visible SAP forbids that degeneracy. Do not carry Y_t>Id to an arbitrary AP-only quotient.",
+      "depends_on": [
+        "C01",
+        "C03",
+        "C05"
+      ],
+      "notes": "N01",
+      "scope": "boundary",
+      "source_labels": [
+        "thm:orbital-parity"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C07",
+      "name": "Apply the existing FULL invariant Hasse result",
+      "statement": "For the finite cover in A02 use I03 on the same actual homogeneous transitive symmetric HOM CCO sort. It gives [F:E]=2. The endpoints are arbitrary invariant equivalences and may be nonexact. No STRONG profile or SAP inference is involved.",
+      "depends_on": [
+        "A01",
+        "A02",
+        "I03",
+        "D03"
+      ],
+      "notes": "N02",
+      "scope": "finite_Hasse",
+      "source_labels": [
+        "thm:finite-cover-two"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C08",
+      "name": "Finite relative intervals have a finite saturated chain",
+      "statement": "Finite binary homogeneity identifies pair orbitals with finitely many colour names, so invariant equivalences form a finite lattice. Any finite relative-index interval has a saturated chain, and each subinterval index is finite because its class partition refines the original finite partition.",
+      "depends_on": [
+        "A01",
+        "D03"
+      ],
+      "notes": "N02",
+      "scope": "finite_Hasse",
+      "source_labels": [
+        "thm:finite-cover-two"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C09",
+      "name": "Multiply index-two covers to get every finite power-of-two index",
+      "statement": "Transitivity gives uniform relative class counts, and along a finite chain the indices multiply by partitioning an upper class into intermediate classes. C07 gives two at each strict cover, so a chain of length m gives 2^m; equality gives m=0 and index one.",
+      "depends_on": [
+        "C07",
+        "C08",
+        "I03"
+      ],
+      "notes": "N02",
+      "scope": "finite_Hasse",
+      "source_labels": [
+        "thm:finite-cover-two"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C10",
+      "name": "Finite-cover source export adds no new finite-group input",
+      "statement": "C07/C09 prove thm:finite-cover-two by precisely selected earlier Hasse claims. The current source happens to have SAP, but the cover-index proof does not use it; no finite-target-only Hasse theorem is substituted.",
+      "depends_on": [
+        "C07",
+        "C09"
+      ],
+      "notes": "N02",
+      "scope": "finite_Hasse",
+      "source_labels": [
+        "thm:finite-cover-two"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C11",
+      "name": "An index-two cover need not be a safe phase pivot",
+      "statement": "The Hasse conclusion concerns arbitrary invariant equivalences. It says neither that their palettes are reachable profiles nor that any chosen two-class orientation preserves AP. The next independent model separates these assertions.",
+      "depends_on": [
+        "C10"
+      ],
+      "notes": "N02",
+      "scope": "boundary",
+      "source_labels": [
+        "thm:finite-cover-two"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C12",
+      "name": "The product model is symmetric complete and all nine colours occur",
+      "statement": "Under A03 every distinct pair has one colour and each coordinate colour is symmetric in its endpoints. Choose block/bit values independently to realize all nine combinations; for (e0,e0) choose two different N-indices. Equality remains an additional diagonal relation.",
+      "depends_on": [
+        "A03",
+        "D04",
+        "D05"
+      ],
+      "notes": "N03",
+      "scope": "example_structure",
+      "source_labels": [
+        "prop:bad-diagonal-split"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C13",
+      "name": "Finite old partial isomorphisms determine compatible coordinate maps",
+      "statement": "An induced finite partial map preserves for each coordinate the same-block partition (e0 or e1) and every signed difference. Its induced map on used U-blocks is injective and in each used block there is one consistent p-shift; similarly for V and q. Owner coincidences are recorded by (e0,e0), hence used clone maps are injective within owner fibres.",
+      "depends_on": [
+        "A03",
+        "C12",
+        "D04",
+        "D05"
+      ],
+      "notes": "N03",
+      "scope": "example_structure",
+      "source_labels": [
+        "prop:bad-diagonal-split"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C14",
+      "name": "Extend coordinate maps and clone maps to prove homogeneity",
+      "statement": "Extend the finite U,V block injections to permutations of the infinite sets. Extend the determined local F2 shifts, choosing arbitrary shifts on unused blocks. These define a permutation of owners. Extend each finite clone injection to a bijection of N, independently at every owner. The resulting map is an automorphism extending the original partial isomorphism.",
+      "depends_on": [
+        "A03",
+        "C13"
+      ],
+      "notes": "N03",
+      "scope": "example_structure",
+      "source_labels": [
+        "prop:bad-diagonal-split"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C15",
+      "name": "Infinite clone fibres turn old AP alignment into actual SAP",
+      "statement": "Homogeneity aligns two finite legs on their common base inside M. Keep the resulting owner quadruples, then choose fresh N-indices for every off-base formal vertex, preserving the base and distinguishing vertices on both legs even when their owners collide. All pair colours ignore the N-index except that distinct clones still have diversity (e0,e0). Thus both legs embed with exact intersection the base.",
+      "depends_on": [
+        "A03",
+        "C14",
+        "D05"
+      ],
+      "notes": "N03",
+      "scope": "example_structure",
+      "source_labels": [
+        "prop:bad-diagonal-split"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C16",
+      "name": "The single-coordinate triangle table is actual",
+      "statement": "For three distinct formal vertices the possible output supports are e_i*e_j={e_(i+j)}, e_i*n=n*e_i={n}, n*n={e0,e1,n}. In the last case choose the middle block different from both endpoints, using infinitude. Repeated owner values are realized by distinct clones.",
+      "depends_on": [
+        "A03",
+        "D04",
+        "D05"
+      ],
+      "notes": "N03",
+      "scope": "example_structure",
+      "source_labels": [
+        "prop:bad-diagonal-split"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C17",
+      "name": "Locally permitted complete diagrams reconstruct one coordinate globally",
+      "statement": "In a complete coordinate diagram, e-coloured pairs plus equality form an equivalence relation by the e*e table. Inside a block, choose an anchor bit; triangle legality enforces e_i labels as differences of the resulting bits. Distinct blocks are joined by n. Thus the whole coordinate diagram is realized in U x F2. Singleton/two-point blocks require no triangle argument.",
+      "depends_on": [
+        "A03",
+        "C16",
+        "D04"
+      ],
+      "notes": "N03",
+      "scope": "example_structure",
+      "source_labels": [
+        "prop:bad-diagonal-split"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C18",
+      "name": "Two coordinate reconstructions plus fresh clones prove triangle-definedness",
+      "statement": "Apply C17 independently to both coordinate projections of a locally permitted complete nine-colour diagram. Their owner quadruples realize all pair colours; give distinct formal vertices distinct N-indices if owners coincide. Hence every such complete diagram embeds inducedly in M, and every actual triangle is permitted.",
+      "depends_on": [
+        "A03",
+        "C12",
+        "C17",
+        "D05"
+      ],
+      "notes": "N03",
+      "scope": "example_structure",
+      "source_labels": [
+        "prop:bad-diagonal-split"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C19",
+      "name": "Infeasible signed e-cycles are detected by simple cycles",
+      "statement": "For one projected partial coordinate graph, look only at e_i edges. If their F2 difference equations are inconsistent, a shortest closed walk of odd signed sum reduces by splitting repeated vertices to a SIMPLE e-cycle of odd sum. That specified cycle cannot map into M, contradicting the assumed feasibility of every old nine-colour simple cycle.",
+      "depends_on": [
+        "A03",
+        "D04"
+      ],
+      "notes": "N04",
+      "scope": "example_CCO",
+      "source_labels": [
+        "prop:bad-diagonal-split"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C20",
+      "name": "An n edge cannot lie inside one e-component",
+      "statement": "If an n edge joins two vertices in one e-component, a shortest e-path between them is simple and together with that n edge forms a specified simple cycle. A homomorphism would force both equal and unequal coordinate blocks, impossible. A simple graph cannot have parallel e/n labels on the same pair.",
+      "depends_on": [
+        "A03",
+        "D04"
+      ],
+      "notes": "N04",
+      "scope": "example_CCO",
+      "source_labels": [
+        "prop:bad-diagonal-split"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C21",
+      "name": "Solve one whole projected partial graph by block and bit potentials",
+      "statement": "Under feasibility of every specified old simple cycle, C19 gives consistent bits on each e-component; C20 puts every n edge between distinct e-components. Assign each component its own fresh block from U and propagate bits. Isolated vertices are singleton components. This satisfies every first-coordinate specified constraint.",
+      "depends_on": [
+        "A03",
+        "C19",
+        "C20",
+        "D04"
+      ],
+      "notes": "N04",
+      "scope": "example_CCO",
+      "source_labels": [
+        "prop:bad-diagonal-split"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C22",
+      "name": "Independent coordinate potentials prove actual semantic HOM CCO",
+      "statement": "Repeat C21 for V,q independently. Combine the two solutions into owner quadruples, and give all distinct formal vertices distinct clone indices. Every specified nine-colour edge is preserved, including (e0,e0) edges. Thus a whole homomorphism exists whenever every specified simple cycle maps to M. Necessity is restriction. This is a direct construction, not an inference from a multiplication table or Helly alone.",
+      "depends_on": [
+        "A03",
+        "C21",
+        "D05"
+      ],
+      "notes": "N04",
+      "scope": "example_CCO",
+      "source_labels": [
+        "prop:bad-diagonal-split"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C23",
+      "name": "The actual positive strong products are coordinate products",
+      "statement": "Given input colours (a,b),(c,d), choose the two coordinate triple realizations independently as C16 and then fresh clones for distinct formal vertices. Thus the output support is (a*c) x (b*d), and no extra correlation is imposed between coordinates. Positive word profiles are nonempty boxes whose coordinate factors are singleton e0,e1,n or the full palette.",
+      "depends_on": [
+        "A03",
+        "C16",
+        "D05"
+      ],
+      "notes": "N04",
+      "scope": "example_CCO",
+      "source_labels": [
+        "prop:bad-diagonal-split"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C24",
+      "name": "Profile box Helly is a consistency check, not the CCO proof",
+      "statement": "The four one-coordinate reachable profiles are its three singletons and top. A finite pairwise-intersecting family contains at most one singleton type, hence meets globally. Products of these families are boxes and inherit 2-Helly coordinatewise. The already established direct CCO proof is C22; no generic converse theorem is assumed.",
+      "depends_on": [
+        "C22",
+        "C23"
+      ],
+      "notes": "N04",
+      "scope": "boundary",
+      "source_labels": [
+        "prop:bad-diagonal-split"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C25",
+      "name": "X and K are actual definable equivalences with relative index two",
+      "statement": "X is equality of (u,v), and K is equality of (u,v,p+q). These are definable by their stated colour palettes plus logical equality. Each X-class has two K-classes indexed by p+q in F2; both occur. Therefore [X:K]=2.",
+      "depends_on": [
+        "A03",
+        "C12",
+        "D06"
+      ],
+      "notes": "N05",
+      "scope": "diagonal_orientation",
+      "source_labels": [
+        "prop:bad-diagonal-split"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C26",
+      "name": "There is no intermediate invariant equivalence in the diagonal interval",
+      "statement": "Let K<=H<=X be invariant and suppose H contains a pair from different K-blocks in one X-class. Transitivity of M sends that X-class to any other, and H being an equivalence containing K then merges both K-blocks in every X-class. Hence H=X; otherwise H=K. Thus K<X is a cover in the FULL invariant lattice.",
+      "depends_on": [
+        "A03",
+        "C14",
+        "C25"
+      ],
+      "notes": "N05",
+      "scope": "diagonal_orientation",
+      "source_labels": [
+        "prop:bad-diagonal-split"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C27",
+      "name": "The coarse diagonal palette is not a reachable box profile",
+      "statement": "Its diversity palette {(e0,e0),(e1,e1)} has both e0,e1 in each coordinate projection but omits (e0,e1),(e1,e0), so it is not a box. C23 says every positive reachable strong profile is a box; hence this preselected K palette is not such a profile. This explains why the obstruction does not contradict safe orbital selection.",
+      "depends_on": [
+        "C23",
+        "C25"
+      ],
+      "notes": "N05",
+      "scope": "diagonal_orientation",
+      "source_labels": [
+        "prop:bad-diagonal-split"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C28",
+      "name": "Derive the normal form for EVERY orientation",
+      "statement": "Fix u,v. Since P is constant on K-blocks, it depends only on r=p+q and not n or the choice of (p,q) with that sum. The two r-values have opposite labels, so setting h(u,v)=P(u,v,0,0,n) gives P=p+q+h(u,v). This proves equation (3) without any definability or coherence condition on h.",
+      "depends_on": [
+        "A03",
+        "A04",
+        "C25",
+        "D07"
+      ],
+      "notes": "N05",
+      "scope": "diagonal_orientation",
+      "source_labels": [
+        "prop:bad-diagonal-split"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C29",
+      "name": "Choose four blocks and the actual witness triangles",
+      "statement": "Choose u0!=u1 and v0!=v1. For epsilon=0,1 choose fresh clones of b_e=(u0,v0,e,e+h00), d=(u1,v1,h11,0), z_e=(u0,v1,e,0). These are actual old vertices, and each listed triangle has distinct owners where required. The same d may be used in both legs.",
+      "depends_on": [
+        "A03",
+        "C28"
+      ],
+      "notes": "N06",
+      "scope": "AP_obstruction",
+      "source_labels": [
+        "prop:bad-diagonal-split"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C30",
+      "name": "The two marked base edges are isomorphic",
+      "statement": "The normal form gives P(b_e)=P(d)=0. The old base colour b_e,d is (n,n), independent of epsilon, so b0->b1 and d->d define an induced expanded base isomorphism. This does not assume arbitrary P is homogeneous.",
+      "depends_on": [
+        "C28",
+        "C29"
+      ],
+      "notes": "N06",
+      "scope": "AP_obstruction",
+      "source_labels": [
+        "prop:bad-diagonal-split"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C31",
+      "name": "Their extensions force opposite marks",
+      "statement": "P(z_e)=e+h01, so the two new marks differ. For both epsilon the legs have colours b_e,z_e=(e0,n) and z_e,d=(n,e0). All these expanded finite triangles belong to Age(M,P) because their vertices were chosen actually.",
+      "depends_on": [
+        "C28",
+        "C29"
+      ],
+      "notes": "N06",
+      "scope": "AP_obstruction",
+      "source_labels": [
+        "prop:bad-diagonal-split"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C32",
+      "name": "An amalgam cannot identify the two extension points",
+      "statement": "If z0,z1 have equal images, preservation of their unary predicate would give equal P-values, contrary to C31. Thus any putative expanded AP amalgam must have distinct z-images. Each leg already embeds, so neither z-image equals a base vertex. This explicitly excludes the old logical Id output as an AP escape.",
+      "depends_on": [
+        "C30",
+        "C31"
+      ],
+      "notes": "N06",
+      "scope": "AP_obstruction",
+      "source_labels": [
+        "prop:bad-diagonal-split"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C33",
+      "name": "The two base paths constrain the cross colour",
+      "statement": "For distinct z-images, the path through common b has inputs (e0,n),(e0,n), so its output lies in {e0} x {e0,e1,n}. The path through common d has inputs (n,e0),(n,e0), forcing {e0,e1,n} x {e0}. Their intersection is exactly {(e0,e0)}. These are old STRONG supports on three distinct real vertices.",
+      "depends_on": [
+        "C16",
+        "C23",
+        "C30",
+        "C32"
+      ],
+      "notes": "N06",
+      "scope": "AP_obstruction",
+      "source_labels": [
+        "prop:bad-diagonal-split"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C34",
+      "name": "The forced clone atom contradicts the orientation",
+      "statement": "The sole possible cross diversity colour (e0,e0) lies inside K. Any actual expanded-age amalgam must then assign the SAME P-value to its two z-images because P is constant on K-blocks. C31 makes their values opposite. Hence there is no AP amalgam, including ones permitting off-base collisions.",
+      "depends_on": [
+        "A04",
+        "C25",
+        "C31",
+        "C32",
+        "C33"
+      ],
+      "notes": "N06",
+      "scope": "AP_obstruction",
+      "source_labels": [
+        "prop:bad-diagonal-split"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C35",
+      "name": "The failure is universal over all choices of h",
+      "statement": "The argument used only h00,h01,h11 and worked for their arbitrary bit values; h10 and all other h-values were irrelevant. Consequently EVERY orientation of this fixed coarse two-cover destroys AP, not merely a particular named or homogeneous orientation.",
+      "depends_on": [
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34"
+      ],
+      "notes": "N06",
+      "scope": "AP_obstruction",
+      "source_labels": [
+        "prop:bad-diagonal-split"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C36",
+      "name": "The two finer orbital coordinate intervals are actual covers",
+      "statement": "Let K0 fix the whole owner quadruple (its diversity palette is {(e0,e0)}). Let Xp fix u,v,q and allow p to vary, and Xq fix u,v,p and allow q to vary. Each interval K0<Xp or K0<Xq has two blocks and the same transitivity argument as C26 proves it is a full invariant cover. The added diversity colours (e1,e0),(e0,e1) are individual orbitals.",
+      "depends_on": [
+        "A03",
+        "C14",
+        "C26",
+        "D05",
+        "D08"
+      ],
+      "notes": "N07",
+      "scope": "fine_splits",
+      "source_labels": [
+        "prop:bad-diagonal-split"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C37",
+      "name": "Explicit compatible orientations are p then q",
+      "statement": "Name P1=p first; it is constant on every K0-block and opposite on the two blocks of each Xp-class. Then name P2=q, analogously orienting the remaining second-coordinate cover inside each fixed-p child. These choices exist simultaneously on the entire original product; no arbitrary h(u,v) correlation is imposed.",
+      "depends_on": [
+        "A03",
+        "C36",
+        "D08"
+      ],
+      "notes": "N07",
+      "scope": "fine_splits",
+      "source_labels": [
+        "prop:bad-diagonal-split"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C38",
+      "name": "The chosen finer unary expansions remain homogeneous and SAP",
+      "statement": "For a finite partial isomorphism preserving p (and, at the second stage, q), the corresponding coordinate shifts in C13 are forced to zero on used U-blocks (respectively V-blocks), so extend by zero on unused blocks; all other coordinate and clone extensions remain available. Thus each prefix expansion is homogeneous. Fresh clone-index separation of C15 preserves the labels and gives SAP.",
+      "depends_on": [
+        "A03",
+        "C13",
+        "C14",
+        "C15",
+        "C37"
+      ],
+      "notes": "N07",
+      "scope": "fine_splits",
+      "source_labels": [
+        "prop:bad-diagonal-split"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C39",
+      "name": "The chosen finer unary expansions also retain actual HOM CCO",
+      "statement": "To solve a marked partial graph, one-coordinate e-paths propagate bit differences. If p is named, locally legal e_i edges agree with its prescribed endpoint p-values, while n imposes no bit constraint. Assign each e-component a fresh U-block and use its already prescribed bits. If q is not yet named solve it as C21; if named do the same prescribed-bit construction. Old-cycle feasibility prevents n-inside-component as C20. Combine coordinates and distinct clones. This proves each chosen prefix expansion has HOM CCO and actual triangle-definedness follows from the same complete-diagram construction.",
+      "depends_on": [
+        "A03",
+        "C17",
+        "C18",
+        "C20",
+        "C21",
+        "C22",
+        "C37"
+      ],
+      "notes": "N07",
+      "scope": "fine_splits",
+      "source_labels": [
+        "prop:bad-diagonal-split"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C40",
+      "name": "The counterexample export and proof boundary",
+      "statement": "C12-C39 establish the actual nine-colour homogeneous triangle-defined SAP+HOM CCO example, its unsplittable preselected coarse full invariant two-cover and compatible finer successive splits. It refutes orienting an arbitrary index-two cover, not a maximal exact character algorithm. Finite-window diagnostics do not certify unbounded SAP/CCO or Lean proofs.",
+      "depends_on": [
+        "C12",
+        "C14",
+        "C15",
+        "C18",
+        "C22",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39"
+      ],
+      "notes": "N08",
+      "scope": "boundary",
+      "source_labels": [
+        "prop:bad-diagonal-split"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    }
+  ],
+  "source_result_files": [],
+  "additional_result_exports": [
+    "thm:orbital-parity",
+    "thm:finite-cover-two",
+    "prop:bad-diagonal-split"
+  ],
+  "exports": [
+    {
+      "source_label": "thm:orbital-parity",
+      "claims": [
+        "C05"
+      ]
+    },
+    {
+      "source_label": "thm:finite-cover-two",
+      "claims": [
+        "C07",
+        "C09",
+        "C10"
+      ]
+    },
+    {
+      "source_label": "prop:bad-diagonal-split",
+      "claims": [
+        "C40"
+      ]
+    }
+  ],
+  "auxiliary_exports": [
+    {
+      "source_label": "eq:bad-diagonal-orientation",
+      "claims": [
+        "C28"
+      ],
+      "source": {
+        "file": "sections/v27/06_legacy_finite_covers.tex",
+        "anchor": "\\label{eq:bad-diagonal-orientation}"
+      }
+    }
+  ],
+  "source_files": [
+    {
+      "file": "sections/finite_relative_parity_exact_closure.tex",
+      "git_blob": "9f6983f96bae28d06466fcbf23f15e20a55f2686"
+    },
+    {
+      "file": "sections/typed_strong_domains.tex",
+      "git_blob": "75d584069ce802c62d66104a852a3649fc082f1d"
+    },
+    {
+      "file": "sections/v27/06_legacy_finite_covers.tex",
+      "git_blob": "67eda024d68a41c2dab17bf99fe440d6a137af66"
+    }
+  ],
+  "dependency_firewalls": [
+    {
+      "claims": [
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40"
+      ],
+      "forbid": [
+        "A01",
+        "A02",
+        "I01",
+        "I02",
+        "I03",
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "A05"
+      ]
+    },
+    {
+      "claims": [
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11"
+      ],
+      "forbid": [
+        "I01",
+        "I02",
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40",
+        "A05"
+      ]
+    },
+    {
+      "claims": [
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27"
+      ],
+      "forbid": [
+        "A04",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40"
+      ]
+    },
+    {
+      "claims": [
+        "C36",
+        "C37",
+        "C38",
+        "C39"
+      ],
+      "forbid": [
+        "A04",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35"
+      ]
+    },
+    {
+      "claims": [
+        "C01",
+        "C02"
+      ],
+      "forbid": [
+        "A05",
+        "I02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "T01",
+      "name": "Original parity and visible-SAP STRONG upgrade",
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Keep the selected original parity/Hasse and STRONG injectivisation APIs distinct. Retain full RAW Y versus identity-free profiles and use visible SAP only for the upgrade. Prove the actual product example directly by coordinate potentials and infinite clone freshness. Logical equality is separate from (e0,e0); opposite marks first forbid a cross-leg identification. The obstruction quantifies over every h, while successful fine orientations are the explicit compatible labels p then q. No later safe-splitting theorem is used."
+    },
+    {
+      "id": "T02",
+      "name": "FULL invariant finite-cover indices",
+      "claims": [
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Keep the selected original parity/Hasse and STRONG injectivisation APIs distinct. Retain full RAW Y versus identity-free profiles and use visible SAP only for the upgrade. Prove the actual product example directly by coordinate potentials and infinite clone freshness. Logical equality is separate from (e0,e0); opposite marks first forbid a cross-leg identification. The obstruction quantifies over every h, while successful fine orientations are the explicit compatible labels p then q. No later safe-splitting theorem is used."
+    },
+    {
+      "id": "T03",
+      "name": "Actual nine-colour homogeneous/SAP/triangle/CCO model",
+      "claims": [
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Keep the selected original parity/Hasse and STRONG injectivisation APIs distinct. Retain full RAW Y versus identity-free profiles and use visible SAP only for the upgrade. Prove the actual product example directly by coordinate potentials and infinite clone freshness. Logical equality is separate from (e0,e0); opposite marks first forbid a cross-leg identification. The obstruction quantifies over every h, while successful fine orientations are the explicit compatible labels p then q. No later safe-splitting theorem is used."
+    },
+    {
+      "id": "T04",
+      "name": "Coarse cover, nonprofile boundary and arbitrary orientation",
+      "claims": [
+        "C25",
+        "C26",
+        "C27",
+        "C28"
+      ],
+      "depends_on": [
+        "T03"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Keep the selected original parity/Hasse and STRONG injectivisation APIs distinct. Retain full RAW Y versus identity-free profiles and use visible SAP only for the upgrade. Prove the actual product example directly by coordinate potentials and infinite clone freshness. Logical equality is separate from (e0,e0); opposite marks first forbid a cross-leg identification. The obstruction quantifies over every h, while successful fine orientations are the explicit compatible labels p then q. No later safe-splitting theorem is used."
+    },
+    {
+      "id": "T05",
+      "name": "Universal AP obstruction including equality escape",
+      "claims": [
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35"
+      ],
+      "depends_on": [
+        "T04"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Keep the selected original parity/Hasse and STRONG injectivisation APIs distinct. Retain full RAW Y versus identity-free profiles and use visible SAP only for the upgrade. Prove the actual product example directly by coordinate potentials and infinite clone freshness. Logical equality is separate from (e0,e0); opposite marks first forbid a cross-leg identification. The obstruction quantifies over every h, while successful fine orientations are the explicit compatible labels p then q. No later safe-splitting theorem is used."
+    },
+    {
+      "id": "T06",
+      "name": "Explicit finer split construction and acceptance",
+      "claims": [
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40"
+      ],
+      "depends_on": [
+        "T03",
+        "T04",
+        "T05"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Keep the selected original parity/Hasse and STRONG injectivisation APIs distinct. Retain full RAW Y versus identity-free profiles and use visible SAP only for the upgrade. Prove the actual product example directly by coordinate potentials and infinite clone freshness. Logical equality is separate from (e0,e0); opposite marks first forbid a cross-leg identification. The obstruction quantifies over every h, while successful fine orientations are the explicit compatible labels p then q. No later safe-splitting theorem is used."
+    }
+  ],
+  "controls": [
+    {
+      "id": "K01",
+      "check": "Actual finite-window coordinate/nine-colour strong products, all 16 rectangle values of h, AP path intersection and clone-orientation contradiction with Id collision separately excluded."
+    },
+    {
+      "id": "K02",
+      "check": "Independent bounded one-coordinate cycle-feasibility versus homomorphism oracle, complete triangle reconstruction and prescribed p/q constraint solving. Finite windows only, not unbounded CCO/SAP certification."
+    }
+  ],
+  "overview_mermaid": [
+    "flowchart TD",
+    "  P[\"Original SAP-free parity\"] --> S[\"Visible-SAP even diversity profile\"]",
+    "  H[\"Full invariant Hasse theorem\"] --> I[\"Finite cover index two\"]",
+    "  M[\"Actual nine-colour product\"] --> C[\"Coordinate potential CCO proof\"]",
+    "  M --> K[\"Coarse diagonal two-cover\"]",
+    "  K --> O[\"Every orientation fails AP\"]",
+    "  M --> F[\"Explicit p then q splits succeed\"]"
+  ],
+  "overview_notes": [
+    "Three selected results only; twelve later results in the same source file remain separate.",
+    "The diagonal K palette is not a reachable box profile.",
+    "Id collision and (e0,e0) diversity output are treated separately.",
+    "The example proof is independent of the parity/Hasse imports and uses no generic algebra-to-CCO shortcut."
+  ],
+  "article_feedback": [
+    {
+      "id": "F01",
+      "kind": "PROOF_EXPANSION_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/v27/06_legacy_finite_covers.tex",
+        "anchor": "In any old-language amalgam"
+      },
+      "finding": "Ordinary AP may identify the two off-base new vertices. Opposite unary bits exclude this first; only then is their cross colour a diversity atom. The source multiplication argument implicitly uses this step.",
+      "proposed_article_change": "Insert one sentence excluding z0=z1 by their opposite P-values before calculating their cross diversity colour. Optionally replace the short CCO-by-Helly sentence by the direct independent coordinate-potential argument.",
+      "caller_effect": "No new hypothesis or source repair; makes AP versus SAP and actual semantic CCO reasoning explicit.",
+      "proof_claims": [
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C32",
+        "C33",
+        "C34"
+      ]
+    }
+  ],
+  "review": {
+    "date": "2026-10-29",
+    "source_unchanged": true,
+    "source_signature_repairs": 0,
+    "unexpanded_provider_labels": [],
+    "proof_status": "HUMAN_EXPANDED_NOT_LEAN; three selected results expanded, no gap found in intended source context.",
+    "independent_reviews": [
+      "Independent reconstruction of original parity/STRONG upgrade and actual nine-colour AP obstruction, with direct coordinate CCO and explicit finer splits",
+      "Parent read the complete claim graph and proof expansion, checking original/clone equality, component cycle obstructions and actual universal orientation scope: PASS"
+    ],
+    "boundaries": [
+      "No parity-even nontriviality for arbitrary AP-only sources",
+      "No exactness assumed for full invariant Hasse endpoints",
+      "No arbitrary coarse two-cover orientation is safe",
+      "No claim that every fine orientation works",
+      "No finite-host unbounded CCO/SAP claim"
+    ]
+  }
+}

@@ -1,0 +1,599 @@
+{
+  "module": "clone_sap",
+  "date": "2026-10-29",
+  "status": "PASS",
+  "mathematical_source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+  "preparation_base": "cb312aaf4161983ff980d7193a743dcc14dfdcf2",
+  "unit_tests": 105,
+  "fresh_handoff_preflights": 78,
+  "fresh_handoff_files": 300,
+  "handoff_sha256": "1d1b0339cc995cae0b80a66179d92ced0c68947bb3cea65508030334dee10a4c",
+  "deterministic_archive": true,
+  "active_source_hashes_unchanged": 93,
+  "existing_package_allocations_unchanged": 44,
+  "remaining_unexpanded_imports": [],
+  "external_provider_obligations": [
+    {
+      "module": "hkn_reservoir",
+      "id": "E01",
+      "name": "Unrestricted faithful HKN EPPA",
+      "statement": "HKN v4 Theorem 1.1: for a relation/unary-set-function language with an arity/type-preserving Gamma_L and finite A whose relabel orbit is finite, obtain a finite coherent irreducible-structure-faithful Gamma_L EPPA witness W along a distinguished Gamma embedding of A. The witness is unrestricted; no current packet/owner axioms follow without local faithfulness arguments.",
+      "status": "PUBLISHED_THEOREM_LOCAL_BRIDGE_PENDING",
+      "source_url": "https://arxiv.org/html/1902.03855v4",
+      "source_version": "1902.03855v4",
+      "theorem": "1.1",
+      "depends_on": [
+        "A06",
+        "D02"
+      ],
+      "lean_reference": {
+        "repository": "shulda/lean_all_those_eppa_classes",
+        "commit": "cd358cde844d5419fd43f30c441511927e09142f",
+        "module": "AllThoseEPPA.MainTheorems",
+        "declarations": [
+          "AllThoseEPPA.MainTheorems.unrestrictedFaithfulCoherentEPPA"
+        ],
+        "bridge_status": "NOT_BOUND_TO_CCO_ENCODING",
+        "lean_version": "v4.34.1",
+        "mathlib_commit": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+        "source_file": "AllThoseEPPA/MainTheorems.lean"
+      }
+    },
+    {
+      "module": "hkn_reservoir",
+      "id": "E02",
+      "name": "Restricted local-tree HKN EPPA",
+      "statement": "HKN v4 Theorem 1.2: for finite IRREDUCIBLE A, ANY finite EPPA witness W for A, and integer n>=1, obtain a finite irreducible-structure-faithful EPPA witness B0 for A, a Gamma-homomorphism-embedding B0->W, and for EVERY induced functionally CLOSED C<=B0 with |C|<=n one Gamma-homomorphism-embedding C->D into a finite tree amalgamation of FULL Gamma_L-isomorphic A-copies. Coherence transfers if W is coherent. Local maps have one global language component and need not be globally injective.",
+      "status": "PUBLISHED_THEOREM_LOCAL_BRIDGE_PENDING",
+      "source_url": "https://arxiv.org/html/1902.03855v4",
+      "source_version": "1902.03855v4",
+      "theorem": "1.2",
+      "depends_on": [
+        "A06",
+        "D02",
+        "D03",
+        "E01"
+      ],
+      "lean_reference": {
+        "repository": "shulda/lean_all_those_eppa_classes",
+        "commit": "cd358cde844d5419fd43f30c441511927e09142f",
+        "module": "AllThoseEPPA.MainTheorems",
+        "declarations": [
+          "AllThoseEPPA.MainTheorems.restrictedLocallyTreeLikeEPPA"
+        ],
+        "bridge_status": "NOT_BOUND_TO_CCO_ENCODING",
+        "lean_version": "v4.34.1",
+        "mathlib_commit": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+        "source_file": "AllThoseEPPA/MainTheorems.lean"
+      }
+    },
+    {
+      "module": "unary_hn",
+      "id": "E01",
+      "name": "HN finite ordered models",
+      "theorem": "2.19",
+      "statement": "All finite linearly ordered one-sorted models of a fixed relation/partial-function language are Ramsey. Strict-order and ordered-copy/embedding conventions are adapted locally.",
+      "status": "PUBLISHED_THEOREM_LOCAL_BRIDGE_PENDING",
+      "source_url": "https://arxiv.org/html/1606.07979v4",
+      "source_version": "1606.07979v4",
+      "depends_on": [
+        "A01"
+      ],
+      "lean_reference": {
+        "repository": "janhubicka/partite-construction",
+        "commit": "918732dcff88fd1ab9be69f70e4f1d66385106e3",
+        "module": "PartiteConstruction.Ramsey.AllThosePartialFiniteModels",
+        "declarations": [
+          "StructuralRamsey.Structure.allThoseRamseyClasses_theorem_2_19_partialFunctions"
+        ],
+        "bridge_status": "NOT_BOUND_TO_CCO_ENCODING",
+        "source_file": "PartiteConstruction/Ramsey/AllThosePartialFiniteModels.lean",
+        "lean_version": "v4.35.0-rc3",
+        "representation": "SingletonValued functions with empty/singleton output fibres; full functional embeddings; finite nonempty color type",
+        "verified_CI": "https://github.com/janhubicka/partite-construction/actions/runs/40521111992",
+        "verification_scope": "Read-only declaration signature and successful pinned CI; receiving representation/typing/order adapter and axiom audit remain pending."
+      }
+    },
+    {
+      "module": "unary_hn",
+      "id": "E02",
+      "name": "HN unary injective completion",
+      "theorem": "2.6",
+      "statement": "For unary functions and hereditary irreducible SAP K, any finite source with a K completion has an injective homomorphism-embedding completion. No global inducedness is asserted.",
+      "status": "PUBLISHED_THEOREM_LOCAL_BRIDGE_PENDING",
+      "source_url": "https://arxiv.org/html/1606.07979v4",
+      "source_version": "1606.07979v4",
+      "depends_on": [
+        "A01"
+      ]
+    },
+    {
+      "module": "unary_hn",
+      "id": "E03",
+      "name": "HN locally finite Ramsey subclass",
+      "theorem": "2.11",
+      "statement": "A hereditary locally finite SAP subclass of an irreducible finite Ramsey ambient is Ramsey. Local finiteness uses Definition2.8 actual substructures and ordinary completion.",
+      "status": "PUBLISHED_THEOREM_LOCAL_BRIDGE_PENDING",
+      "source_url": "https://arxiv.org/html/1606.07979v4",
+      "source_version": "1606.07979v4",
+      "depends_on": [
+        "A01"
+      ]
+    }
+  ],
+  "independent_model_reviews": [
+    "B045 independent clone/component/simple-cycle and palette-lattice proof reconstruction plus parent synthesis: PASS",
+    "B046 independent original parity/Hasse provider selection, direct nine-colour coordinate CCO, arbitrary diagonal orientation AP obstruction and finer explicit split proof plus parent synthesis: PASS"
+  ],
+  "scope": "Human preparation only. B045: two selected results/JC,36claims, no imports. B046: three selected results/one equation,40claims; only earlier original parity, strong injectivisation and full invariant Hasse. Infinite clones convert ordinary owner AP into real SAP. CCO contracted components require explicit internal-edge/parallel-label simple-cycle obstructions. Actual K=c;c includes logical Id. Symmetric palette commutation uses an endpoint-swap automorphism independently. Visible SAP upgrades RAW parity diversity slices; finite Hasse excludes SAP ancestry. Nine-colour HOM CCO is constructed by two independent signed block potentials. Every coarse diagonal orientation fails ordinary AP, with opposite bits first excluding an Id collision; explicit compatible p then q splits succeed. No new source gap, published provider, Lean proof or global certificate. Existing five HN/HKN bindings, cache guidance, public Work/CI/policy, source-relative EPPA and separate human edition remain unchanged.",
+  "results": [
+    {
+      "command": "python tools/build_formalization_handoff.py --verify .",
+      "exit_code": 0,
+      "stdout": "Verified 300 snapshot files for 38 preparation modules; no Lean certification.\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/build_formalization_module.py --module raw_exact --check",
+      "exit_code": 0,
+      "stdout": "Validated 11 definitions, 28 claims, 12 exports and 6 implementation tasks; no Lean proof claimed.\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/build_formalization_module.py --module strong_selectors --check",
+      "exit_code": 0,
+      "stdout": "Validated 12 definitions, 27 claims, 15 exports and 6 implementation tasks; no Lean proof claimed.\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/build_formalization_module.py --module parity_hasse --check",
+      "exit_code": 0,
+      "stdout": "Validated 10 definitions, 26 claims, 7 exports and 6 implementation tasks; no Lean proof claimed.\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/build_formalization_module.py --module exact_crt --check",
+      "exit_code": 0,
+      "stdout": "Validated 10 definitions, 24 claims, 5 exports and 5 implementation tasks; no Lean proof claimed.\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/build_formalization_module.py --module canonical_hull --check",
+      "exit_code": 0,
+      "stdout": "Validated 14 definitions, 36 claims, 19 exports and 6 implementation tasks; no Lean proof claimed.\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/build_formalization_module.py --module real_closure --check",
+      "exit_code": 0,
+      "stdout": "Validated 13 definitions, 34 claims, 8 exports and 6 implementation tasks; no Lean proof claimed.\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/build_formalization_module.py --module finite_packets --check",
+      "exit_code": 0,
+      "stdout": "Validated 10 definitions, 31 claims, 8 exports and 6 implementation tasks; no Lean proof claimed.\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/build_formalization_module.py --module rigid_groupoid --check",
+      "exit_code": 0,
+      "stdout": "Validated 13 definitions, 31 claims, 9 exports and 6 implementation tasks; no Lean proof claimed.\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/build_formalization_module.py --module finite_kernel --check",
+      "exit_code": 0,
+      "stdout": "Validated 11 definitions, 22 claims, 5 exports and 5 implementation tasks; no Lean proof claimed.\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/build_formalization_module.py --module owner_action --check",
+      "exit_code": 0,
+      "stdout": "Validated 12 definitions, 30 claims, 6 exports and 5 implementation tasks; no Lean proof claimed.\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/build_formalization_module.py --module owner_master --check",
+      "exit_code": 0,
+      "stdout": "Validated 11 definitions, 26 claims, 1 exports and 4 implementation tasks; no Lean proof claimed.\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/build_formalization_module.py --module joint_owner --check",
+      "exit_code": 0,
+      "stdout": "Validated 12 definitions, 27 claims, 1 exports and 4 implementation tasks; no Lean proof claimed.\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/build_formalization_module.py --module acl_owner_geometry --check",
+      "exit_code": 0,
+      "stdout": "Validated 11 definitions, 35 claims, 9 exports and 4 implementation tasks; no Lean proof claimed.\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/build_formalization_module.py --module mi_geometry --check",
+      "exit_code": 0,
+      "stdout": "Validated 12 definitions, 31 claims, 7 exports and 4 implementation tasks; no Lean proof claimed.\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/build_formalization_module.py --module full_rows --check",
+      "exit_code": 0,
+      "stdout": "Validated 12 definitions, 33 claims, 11 exports and 4 implementation tasks; no Lean proof claimed.\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/build_formalization_module.py --module owner_transversal --check",
+      "exit_code": 0,
+      "stdout": "Validated 15 definitions, 47 claims, 12 exports and 6 implementation tasks; no Lean proof claimed.\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/build_formalization_module.py --module safe_readings --check",
+      "exit_code": 0,
+      "stdout": "Validated 14 definitions, 40 claims, 12 exports and 7 implementation tasks; no Lean proof claimed.\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/build_formalization_module.py --module hkn_reservoir --check",
+      "exit_code": 0,
+      "stdout": "Validated 13 definitions, 31 claims, 7 exports and 7 implementation tasks; no Lean proof claimed.\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/build_formalization_module.py --module relative_mi --check",
+      "exit_code": 0,
+      "stdout": "Validated 16 definitions, 42 claims, 6 exports and 7 implementation tasks; no Lean proof claimed.\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/build_formalization_module.py --module finite_lift --check",
+      "exit_code": 0,
+      "stdout": "Validated 10 definitions, 27 claims, 1 exports and 6 implementation tasks; no Lean proof claimed.\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/build_formalization_module.py --module rank_induction --check",
+      "exit_code": 0,
+      "stdout": "Validated 13 definitions, 42 claims, 5 exports and 8 implementation tasks; no Lean proof claimed.\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/build_formalization_module.py --module direct_owner_closure --check",
+      "exit_code": 0,
+      "stdout": "Validated 8 definitions, 25 claims, 1 exports and 6 implementation tasks; no Lean proof claimed.\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/build_formalization_module.py --module terminal_powers --check",
+      "exit_code": 0,
+      "stdout": "Validated 8 definitions, 21 claims, 1 exports and 5 implementation tasks; no Lean proof claimed.\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/build_formalization_module.py --module profile_helly --check",
+      "exit_code": 0,
+      "stdout": "Validated 10 definitions, 37 claims, 1 exports and 6 implementation tasks; no Lean proof claimed.\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/build_formalization_module.py --module unary_support --check",
+      "exit_code": 0,
+      "stdout": "Validated 10 definitions, 32 claims, 2 exports and 6 implementation tasks; no Lean proof claimed.\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/build_formalization_module.py --module full_code --check",
+      "exit_code": 0,
+      "stdout": "Validated 12 definitions, 51 claims, 6 exports and 8 implementation tasks; no Lean proof claimed.\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/build_formalization_module.py --module reset_order --check",
+      "exit_code": 0,
+      "stdout": "Validated 12 definitions, 55 claims, 6 exports and 7 implementation tasks; no Lean proof claimed.\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/build_formalization_module.py --module unary_hn --check",
+      "exit_code": 0,
+      "stdout": "Validated 12 definitions, 47 claims, 5 exports and 6 implementation tasks; no Lean proof claimed.\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/build_formalization_module.py --module relational_completion --check",
+      "exit_code": 0,
+      "stdout": "Validated 10 definitions, 35 claims, 2 exports and 6 implementation tasks; no Lean proof claimed.\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/build_formalization_module.py --module unary_fresh_frames --check",
+      "exit_code": 0,
+      "stdout": "Validated 12 definitions, 50 claims, 5 exports and 7 implementation tasks; no Lean proof claimed.\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/build_formalization_module.py --module quotient_transport --check",
+      "exit_code": 0,
+      "stdout": "Validated 12 definitions, 50 claims, 4 exports and 8 implementation tasks; no Lean proof claimed.\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/build_formalization_module.py --module simultaneous_quotients --check",
+      "exit_code": 0,
+      "stdout": "Validated 14 definitions, 60 claims, 5 exports and 8 implementation tasks; no Lean proof claimed.\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/build_formalization_module.py --module finite_fibres --check",
+      "exit_code": 0,
+      "stdout": "Validated 12 definitions, 50 claims, 4 exports and 8 implementation tasks; no Lean proof claimed.\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/build_formalization_module.py --module point_generated_sap --check",
+      "exit_code": 0,
+      "stdout": "Validated 6 definitions, 26 claims, 1 exports and 4 implementation tasks; no Lean proof claimed.\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/build_formalization_module.py --module ap_character --check",
+      "exit_code": 0,
+      "stdout": "Validated 10 definitions, 62 claims, 7 exports and 8 implementation tasks; no Lean proof claimed.\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/build_formalization_module.py --module clone_sap --check",
+      "exit_code": 0,
+      "stdout": "Validated 8 definitions, 36 claims, 2 exports and 5 implementation tasks; no Lean proof claimed.\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/build_formalization_module.py --module orbital_cover_boundary --check",
+      "exit_code": 0,
+      "stdout": "Validated 8 definitions, 40 claims, 3 exports and 6 implementation tasks; no Lean proof claimed.\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/build_formalization_module.py --module sir --check",
+      "exit_code": 0,
+      "stdout": "Validated 13 definitions, 25 claims, 8 exports and 6 implementation tasks; no Lean proof claimed.\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/check_raw_exact_controls.py",
+      "exit_code": 0,
+      "stdout": "R01–R05 passed: exact controls, typed orientation and three false strengthenings; no general proof claimed.\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/check_strong_selector_controls.py",
+      "exit_code": 0,
+      "stdout": "R01–R05 passed; 2 pure-tag gates and 1561/4096 completable four-vertex diagrams. No general proof claimed.\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/check_parity_hasse_controls.py",
+      "exit_code": 0,
+      "stdout": "R01–R05 passed: 16 subspaces, 66 intervals, 27 parameter bounds; full-lattice, missing-CCO, nonexact and quotient controls. No general proof or CCO certification claimed.\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/check_exact_crt_controls.py",
+      "exit_code": 0,
+      "stdout": "R01–R05 passed: 225 equivalence pairs (117 commuting), 51 finite posets, 8 typed TI cases; set/colour/descent boundaries checked. No general Lean or CCO certification.\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/check_canonical_hull_controls.py",
+      "exit_code": 0,
+      "stdout": "R01–R05 passed: 28 actual finite-type cases, 19721 gain diagrams, 32768 binary K6 colourings; fibre/word exactness and hull/orbit boundaries retained. No general Lean or CCO certification of finite snapshots claimed.\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/check_real_closure_controls.py",
+      "exit_code": 0,
+      "stdout": "Real-closure controls passed: 20 diagonal and 249 arbitrary coordinate bases; 93 phase bases, 8 invariant supports, 18 word/20 intersection profiles; 370 labelled lattices (size 2--7), 51 unique-atom (34 nondistributive); 88330 CRT triples and 130 avoidance cases; F3^2: 6 equivalences, 25 word profiles, 9118 partial isometries, indices 3/9 and nondistributive M4. Growing-domain fibre controls do not certify infinite CCO/AP/SAP or general theorems.\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/check_finite_packet_controls.py",
+      "exit_code": 0,
+      "stdout": "Finite-packet controls passed: 8 named-phase products, 67 computed supports, 17 packets, 152 finite crossing intervals; F2^d subgroup counts 1/2/5/16 (d=0/1/2/3), including nondistributive F2^2 packets; twin: 5 supports, 4 packets/12 crossings, exact thin F, quotient diversity 4->3, 15625 partial diagrams; square: 6 supports, 2 packets/12 crossings, nonidentity H0 with actual thin quotient. No finite snapshot is asserted to certify infinite CCO, SAP, or general theorems.\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/check_rigid_groupoid_controls.py",
+      "exit_code": 0,
+      "stdout": "Rigid groupoid controls passed: 126 actual arrows/2268 compositions, 91 dominant subgroup-family menus; 31 invariant relation menus/36 rigid factors; 40 saturated relations/6 quotient bridges/1088 quotient products; 4096 full phase assignments/4 seed markings, 1760 prescribed triples (960 inconsistent); 273 nonempty sets/65 affine cosets, 7007 pairwise-intersecting translate families. Gate exactness remains a separate hypothesis. No finite snapshot certifies CCO/AP/SAP or RAW exact descent.\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/check_finite_kernel_controls.py",
+      "exit_code": 0,
+      "stdout": "Finite-kernel controls passed: named 10-point hidden-parity model has 4 actual automorphisms, 135 finite motion candidates/80 blocked, 16 linear projections; unnamed-owner S3 model has 6 actual automorphisms, trivial owner kernel, 27 motion candidates/19 blocked, 379 partial isometries; entire named-sort homogeneous model: 4 projections/31 partial isometries; 223 exhaustive small binary-generated rowspaces/1806 projections (198 nonsubdirect local examples). All finite subsets include empty. No countable compactness, CCO, or exact-owner claim is certified.\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/check_owner_action_controls.py",
+      "exit_code": 0,
+      "stdout": "Owner-action finite controls passed: actual F2^3 colour groups W/D/C/O = 8/4/4/2; nonnested W->d kernel 4 (64 prescribed point requests), nested W->O kernel 4 (64 requests), W->W_T=C kernel 2 (64 requests); 5 sparse sources, 170 partial isometries, 185 chosen-D/exact-owner extension requests, 137 prescribed C requests; empty system: trivial groups and 1 empty partial isometry; negative controls: 4-point nonfull subset, extra relation with 4 automorphisms, nontransitive 2-element kernel after dropping C premise; nonsplit C4->C2: 16 point lifts and 2 rejected candidate sections. Finite-base restriction: 48 actual ambient automorphisms, (8, 1, 0, 0) requests in nonempty/empty/no-request boundary cases; seed conjugation: 4 singleton requests, 16 arbitrary-point requests, 512 exact-component h^-1 k g checks; finite partition orbit trim: 6 points/3 full packets, 3-point incomplete-seed negative control. No CCO, arbitrary EPPA, infinite-provider, or master-theorem certification.\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/check_owner_master_controls.py",
+      "exit_code": 0,
+      "stdout": "Owner-master finite controls passed; labelled posets n=0..4: 1/1/3/19/219. Full F2 and context-dependent fibre diagrams:\n  actual_automorphisms: 81\n  actual_coloured_sets: 16\n  actual_group_maps: 81\n  addition_orders: 1008\n  binary_squares: 28366\n  binary_tuples: 208601\n  checked_diagrams: 486\n  compatible_tuples: 4674448\n  constructed_diagrams: 2016\n  constructed_points: 82348\n  constructed_products: 15634\n  context_dependent_steps: 1826\n  families: 345484\n  group_compositions: 6561\n  independent_join_pairs: 410702\n  independent_joins: 19064\n  induction_family_steps: 1061680\n  induction_reconstruction_maps: 4430\n  induction_support_pairs: 21428\n  induction_tuple_checks: 26332\n  induction_tuple_instances: 15049184\n  join_requests: 689996\n  kernel_point_pairs: 2401\n  negative_empty_base_excess_points: 1\n  negative_missing_binary_tuples: 5\n  negative_missing_global_tuples: 4\n  nonnested_examples: 1\n  prescribed_point_requests: 6561\n  projections: 13322\n  repeated_families: 344998\n  stages: 7950\n  triangles: 35682\nAll distinct upset families (including empty) and one repeat of every nonempty family; all addition orders; actual M3 only for the all-difference F2 model. No CCO, arbitrary EPPA, finite-packet, provider, or master-theorem certification.\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/check_joint_owner_controls.py",
+      "exit_code": 0,
+      "stdout": "Joint-owner finite controls passed (stdlib; carriers <=8; r=1..4; repeated kernels; empty witnesses).\n  actual_automorphisms: 238\n  actual_structures: 80\n  assembled_extensions: 980\n  coordinate_point_requests: 276\n  fine_colour_meet_pairs: 532\n  finite_inputs: 41\n  group_compositions: 534\n  join_gate_pairs: 24\n  joint_point_requests: 532\n  kernel_pairs: 220\n  models: 12\n  negative_extra_colour_automorphisms: 4\n  negative_extra_owner_tuples: 1\n  negative_missing_global_tuples: 4\n  negative_missing_join_gate_tuples: 2\n  negative_uncompleted_coordinates: 1\n  negative_unmatched_owner_actions: 1\n  negative_unprovided_partial_requests: 1\n  nonsplit_point_requests: 16\n  pullback_elements: 72\n  rejected_sections: 2\n  relative_partial_requests: 793\n  rooted_complex_points: 44\n  rooted_owner_kernel_pairs: 189\n  rooted_owner_refinements: 22\n  rooted_proper_nontrivial_packets: 16\n  rooted_proper_targets: 10\n  rooted_retained_exceptional_entries: 64\n  rooted_transport_cases: 22\n  sparse_partial_maps: 741\n  witness_points: 70\nFull actual colour automorphism pullbacks and point lifts; sparse-input finite assembly; conditional retained-exceptional-map transport into coordinate targets only. No CCO, actual-exact-source, provider, or unrestricted ordinary-EPPA certification.\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/check_acl_owner_controls.py",
+      "exit_code": 0,
+      "stdout": "ACL/owner finite controls passed (Python standard library).\n  partitions_by_carrier_n_0_to_4: [1, 1, 2, 5, 15]; total=24\n  actual_mixed_pair_inputs: 459\n  actual_owner_pair_inputs: 2732\n  all_ordered_distinct_y_pairs: 30\n  cartesian_phase_atom_orbits: 8\n  complementary_ordered_owner_tables: 4\n  difference_models: 4\n  enumerated_automorphisms: 15\n  full_helper_fine_lifts: 60\n  full_preimage_cardinality_inputs: 438\n  identity_kernel_fine_readouts: 3588\n  joint_kernel_families: 4540\n  negative_existential_vs_full_support_palette: 1\n  negative_missing_x_diagonal_pairs: 12\n  negative_union_of_three_equivalences: 1\n  nonempty_preimage_intersections: 342\n  one_free_family_premises: 26125\n  partition_family_clique_inputs: 59176\n  subspace_kernels: 24\n  two_equivalence_rook_inputs: 3819\n  two_equivalence_rook_premises: 2303\n  elapsed_seconds: 0.155\nScope: all subset cliques, indexed partition families of sizes 0..3, all colour automorphisms on fully named F2 carriers 1,2,4,8, all subspace families of sizes 1..3; selected preimage cardinality families; 3x3xF2 pair table with all 30 ordered distinct Y pairs.\nPreimage controls establish finite cardinalities ONLY, not model-theoretic acl. No infinite-source, homogeneity, AP, CCO, harmlessness, safety, acl projection/reconstruction, infinite-index avoidance, or EPPA certification.\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/check_mi_geometry_controls.py",
+      "exit_code": 0,
+      "stdout": "MI geometry controls passed (stdlib; labelled posets and finite carriers n=0..4).\n  labelled_posets_by_n: [1, 1, 3, 19, 219]; total=243\n  partitions_by_n: [1, 1, 2, 5, 15]; total=24\n  ancestor_owner_tests: 339\n  ancestor_pair_and_jog_tests: 217\n  class_injection_triples: 651\n  complete_core_meets: 243\n  downsets: 1789\n  finite_class_boundary_witnesses: 1\n  greatest_disjoint_tests: 3401\n  injected_classes: 2186\n  interval_elements: 3410\n  local_nested_index_sums: 307\n  multiple_root_posets: 154\n  negative_incomplete_ancestor_formula_witnesses: 1\n  negative_incomplete_atom_list_witnesses: 1\n  negative_m3_witnesses: 1\n  negative_nonmaximal_core_witnesses: 1\n  nonboolean_downset_lattices: 238\n  nontrivial_index_products: 3\n  partition_triples: 3510\n  selected_root_intervals: 678\n  shared_ancestor_posets: 85\n  strict_positive_owner_cuts: 154\n  uniform_nested_index_triples: 70\n  elapsed_seconds: 0.035\nBounds: all downsets, all nonempty root selections, all partition triples in these sizes. H_star > zero does not require H_star < top. Negative controls drop stated hypotheses.\nFinite-class/infinite-source boundary: NO absence-of-finite-exact-quotients, acl, safety, CCO, EPPA, or general theorem/Lean certification.\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/check_full_rows_controls.py",
+      "exit_code": 0,
+      "stdout": "Full-row finite controls passed (stdlib; exhaustive F2 compatibility, |I|=1..3).\n  compatibility_graphs: 11\n  compatible_requests: 223868\n  constant_diagonal_graphs: 44\n  constant_diagonal_vertices: 3648\n  effective_row_entries: 40976\n  exhaustive_legal_matrices: 1754\n  fixed_record_diagram_automorphism_lifts: 276\n  free_diagonal_checks: 5234\n  incompatible_requests: 135489\n  lift_bijections: 388\n  negative_independent_unrecorded_rows: 1\n  negative_same_index_zeroing: 192\n  nonfaithful_owner_stabiliser_vertices: 912\n  pc_endpoint_gauges: 4128\n  pc_exhaustive_initial_networks: 512\n  pc_fixed_subfamilies: 3760\n  pc_gauge_product_checks: 2048\n  pc_larger_initial_networks: 32\n  pc_nonempty_without_global_solution_diagnostic: 1\n  pc_schedule_comparisons: 1056\n  pc_singleton_records: 384\n  pc_strict_contractions: 971\n  pc_subfamilies_enumerated: 157464\n  pc_surviving_solutions: 1233\n  projection_intertwinings: 17424\n  recorded_clique_zeroings: 71318\n  recorded_fine_pairs: 188416\n  row_requests: 359357\n  same_index_two_row_requests: 3072\n  same_index_unrecorded_pairs: 298000\n  same_packet_thin_pairs: 16904\n  thin_commutation_checks: 51232\n  unrecorded_parameter_pairs: 482320\n  zero_row_source_requests: 2220\nLimits: larger lift suites are bounded samples; arbitrary structural maps transport recorded diagrams, and the reported fixed-diagram subset gives actual finite record automorphisms. PC uses literal finite relation triangles, with exhaustive greatest-fixed-point checks on 512 three-variable binary networks and 32 larger planted-solution networks. No assertion that PC equals global completion spectra; no CCO, actual exact-menu, reading, reservoir-completion, or unrestricted EPPA certification.\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/check_owner_transversal_controls.py",
+      "exit_code": 0,
+      "stdout": "Owner-transversal bounded finite controls passed.\nCoverage: d=0,1,2; all subgroup counts 1,2,5; three-packet action models; collision target budget six packets; no enumeration of 12! carrier maps.\n  action_function_checks: 34146\n  aligned_embeddings: 762\n  ambient_swap_witnesses: 120\n  collision_inputs: 58301\n  complete_base_alignments: 2286\n  embedding_candidates: 2022\n  empty_protected_inputs: 11458\n  four_cycle_negative_controls: 1\n  four_cycle_subfamilies: 16\n  generator_compositions: 9408\n  identity_cap_accepts: 116\n  identity_cap_assignments: 320\n  identity_cap_rejects: 204\n  independent_cap_patterns: 16\n  individual_caps: 4\n  inflated_fine_pairs: 46665\n  joint_cap_patterns: 12\n  nonempty_protected_inputs: 46843\n  nonfaithful_owner_models: 5\n  origin_gauges: 337\n  packet_models: 8\n  packet_owner_fibres: 45\n  phase_negative_controls: 10\n  point_orbits: 75\n  proper_finite_raw_equivalences: 9\n  raw_equivalence_accepts: 33\n  raw_equivalence_rejects: 3\n  raw_support_candidates: 36\n  represented_actions: 762\n  single_packet_moves: 45832\n  unrecorded_target_negative_controls: 8\nLimits: represented structured group actions and bounded finite constraint/matrix checks only. No infinite-source, acl, CCO, SAP, primitivity, HKN, or EPPA certification; proper finite raw equivalences are retained as diagnostic controls.\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/check_safe_readings_controls.py",
+      "exit_code": 0,
+      "stdout": "{\"augmented_menus\": 9, \"counts\": {\"all_skeleton_products\": 196, \"arbitrary_multiplier_identities\": 1215, \"bilateral_support_tests\": 16064, \"complete_diagrams_examined\": 4164, \"negative_directed_converse_scope\": 1, \"negative_empty_distribution\": 1, \"negative_imprimitive_uniform_power\": 1, \"negative_unilateral_safety_invariance\": 1, \"negative_unmoved_endpoint_typing\": 32, \"no_g_plus_k_equals_ell_assumption\": 15936, \"nonempty_distribution\": 513, \"nonexact_loop_subsets\": 7, \"nonfaithful_Gamma_covariance\": 256, \"nontrivial_PC_selector_triples\": 712, \"pairwise_intersecting_augmented_families\": 92, \"positive_return_normal_forms\": 17280, \"rectangular_independent_shift_triples\": 31872, \"repeated_owner_triangle_tests\": 31872, \"safe_single_edge_recolourings\": 21946, \"subset_associativity\": 3375, \"switching_identities\": 128, \"typed_readings\": 64, \"uniform_loop_powers\": 45}, \"limits\": \"No infinite-source, actual finite-kernel, SAP/CCO/primitivity, HKN or EPPA certification.\", \"original_exact_menus\": 8, \"scope\": \"bounded finite typed triangle-table/action diagnostics\", \"seconds\": 0.613, \"status\": \"PASS\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/check_hkn_reservoir_controls.py",
+      "exit_code": 0,
+      "stdout": "{\"counts\": {\"all_or_nothing_recorded_matrices\": 6, \"chord_complete_locality_domains\": 2, \"collision_protected_base_states\": 3564, \"empty_domain_language_requests\": 6, \"free_split_irreducibility_tests\": 14, \"global_tree_language_normalizations\": 144, \"irreducible_restriction_embeddings\": 10, \"literal_cycle_completions\": 2694, \"locality_models\": 4, \"negative_dropped_chord_cycle_only_solutions\": 6, \"negative_imprimitive_automata\": 1, \"negative_per_node_language_normalization\": 1, \"negative_sparse_matrix_embedding_examples\": 6, \"negative_unary_value_inclusion_examples\": 2, \"negative_wrong_composition_order\": 1, \"noninjective_homomorphism_embedding_examples\": 2, \"one_generated_packets\": 18, \"packet_subset_closedness\": 20, \"positive_words\": 9420, \"proper_profile_states\": 24, \"protected_base_with_fixed_neighbour_collision_moves\": 1392, \"protected_collision_target_patch_moves\": 996, \"strict_collision_decreases\": 3426, \"structured_recorded_pair_maps\": 40, \"unrecorded_targets_not_fixed_by_ambient_move\": 3426}, \"limits\": \"No HKN, infinite closed-SAP/CCO/primitivity, actual source or global EPPA certification.\", \"scope\": \"bounded B027 locality and unary-packet/action diagnostics\", \"seconds\": 0.174, \"status\": \"PASS\", \"witnesses\": {\"closed_cycle_vertices_G2\": {\"actual_vertices\": 8, \"chord_matrix_entries\": 4, \"origins\": 4}, \"closed_cycle_vertices_G4\": {\"actual_vertices\": 16, \"chord_matrix_entries\": 16, \"origins\": 4}, \"collision_patch\": {\"fixed_neighbours\": [], \"fresh\": 1, \"initial_packet_images\": [0, 0], \"moving\": 0, \"old_image\": 0, \"potential_after\": 0, \"potential_before\": 1, \"protected\": []}, \"imprimitive_automaton_cycle\": {\"positive_multiplier\": \"within-block diversity\", \"proper_atom\": \"within-block diversity\"}, \"longest_proper_word\": {\"colours\": 4, \"ell\": 2, \"owners\": [1, 0, 0], \"profile\": 14, \"word\": [0, 0]}, \"nonabelian_language_composition\": {\"correct\": [2, 0, 1], \"gamma\": [0, 2, 1], \"incorrect\": [1, 2, 0], \"target_copy\": [1, 0, 2]}, \"per_node_language_conflict\": {\"copy0_normalized\": 1, \"copy1_unnormalized\": 2, \"gamma\": [0, 2, 1], \"shared_original_owner\": 1}, \"protected_collision_target_patch\": {\"fixed_neighbours\": [1], \"fresh\": 2, \"initial_packet_images\": [0, 1, 0], \"moving\": 0, \"old_image\": 0, \"potential_after\": 0, \"potential_before\": 1, \"protected\": [2]}, \"protected_recorded_neighbour_collision\": {\"fixed_neighbours\": [1], \"fresh\": 2, \"initial_packet_images\": [0, 1, 0], \"moving\": 0, \"old_image\": 0, \"potential_after\": 0, \"potential_before\": 1, \"protected\": [1]}, \"sharp_bad_cycle\": {\"b\": 3, \"colours\": [0, 0, 0], \"ell\": 2, \"length\": 3}}}\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/check_relative_mi_controls.py",
+      "exit_code": 0,
+      "stdout": "{\"counts\": {\"actual_packet_PC_domains\": 1544, \"clique_zeroing_without_source_zero_fix\": 1134, \"full_matrix_safety_equivalences\": 18, \"full_original_trim_automorphisms\": 256, \"helper_models\": 7, \"literal_fine_pair_comparisons\": 9478144, \"multipacket_selected_root_corrections\": 1024, \"negative_conflated_source_and_root_requests\": 1, \"negative_missing_fine_support\": 1, \"nonfaithful_helper_models\": 5, \"one_fixed_PC_runs\": 2, \"orbit_safe_translation_checks\": 60, \"owner_stabilizer_multiplicities\": 56, \"padded_new_safe_matrix_entries\": 100, \"padding_excluded_unsafe_cliques\": 9, \"root_corrections_allowed_owner_change\": 32, \"safe_full_matrix_translates\": 129344, \"same_index_distinct_row_safe_pairs\": 4176, \"semilinear_image_automorphisms\": 128, \"single_packet_selected_root_transports\": 64, \"structured_trim_automorphism_candidates\": 6144, \"trim_invariance_actions\": 128, \"universal_fixed_decoder_lifts\": 2048, \"unsafe_multipacket_zeroings\": 1152, \"unsafe_triangle_projection_tests\": 512, \"whole_B_empty_requests\": 6, \"whole_B_singleton_requests\": 2}, \"limits\": \"No infinite source, closed-SAP/CCO, HKN, EPPA, ambient lifting or MI theorem certification.\", \"scope\": \"bounded B028 palette, fixed-row decoder and finite-group diagnostics\", \"seconds\": 0.671, \"status\": \"PASS\", \"witnesses\": {\"clique_zeroing_moves_old_zero_rows\": {\"images_of_old_zero_rows\": [[0, [0, 0, 0], 0], [1, [0, 0, 1], 0]], \"selected_rows\": [[0, 0, 0], [0, 0, 1]], \"touched\": [0, 1]}, \"fixed_decoder_G2\": {\"PC_signature\": \"76d88af291fb784272c732ba35b5f379bcab1ac681af3744914aab8b56dfddcc\", \"actual_packets\": 24, \"legal_corrections\": 256, \"owner_labels\": [0], \"owner_stabilizer\": [0, 1], \"vertices\": 48}, \"fixed_decoder_G4\": {\"PC_signature\": \"100f4a0aab9654c2b38974485398269f167fb4d94234b7973d5ff567d76a8c6c\", \"actual_packets\": 32, \"legal_corrections\": 64, \"owner_labels\": [0, 2], \"owner_stabilizer\": [0, 1], \"vertices\": 128}, \"nonfaithful_owner_helper\": {\"group_order\": 2, \"helper_packets\": 2, \"owner_orbits\": 2, \"stabilizer\": [0, 1]}, \"proper_nonfaithful_owner_helper\": {\"group_order\": 4, \"owner_fibre_size\": 2, \"owner_orbit_size\": 2, \"stabilizer\": [0, 1]}, \"pure_safe_not_unilateral_G2\": {\"safe_origin\": [2, 0], \"unsafe_translate\": [2, 1]}, \"pure_safe_not_unilateral_G4\": {\"safe_origin\": [2, 0], \"unsafe_translate\": [2, 1]}, \"root_correction_changes_owner\": {\"global_shift\": 2, \"image\": [0, 0], \"selected\": [0, 2]}, \"source_vs_root_requests\": {\"root\": [1, 1], \"root_image\": [0, 0], \"root_owner_component\": [1, 0, 2], \"source_point_fixed\": [0, 0]}, \"trim_support\": {\"K_image\": 128, \"coarse_B_after\": [0, 2], \"fine_U_after\": [[0, 0], [0, 2]], \"fine_U_before\": [[0, 0], [0, 2], [1, 0], [1, 2]], \"full_original_Aut\": 256}}}\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/check_finite_lift_controls.py",
+      "exit_code": 0,
+      "stdout": "{\"counts\": {\"actual_H_owner_automorphisms\": 72, \"actual_K_H_mixed_orbitals\": 36, \"actual_K_quotient_automorphisms\": 72, \"actual_mixed_join_atom_identities\": 5, \"actual_real_quotient_orbitals\": 216, \"fine_source_partial_isomorphisms\": 17, \"finite_packet_closure_identities\": 1024, \"full_K_preimages\": 63, \"full_preimage_setwise_lifts\": 23328, \"negative_coarse_compatibility\": 1, \"negative_incomplete_K_preimage\": 1, \"negative_incomplete_owner_cover\": 1, \"negative_missing_owner_kernel\": 1, \"negative_missing_owner_onto\": 1, \"negative_real_K_compatibility\": 1, \"negative_real_owner_compatibility\": 1, \"negative_representative_only_safety\": 1, \"noncanonical_b_root_targets\": 65664, \"ordinary_entire_beta_partial_lifts\": 234, \"ordinary_literal_root_lifts\": 8208, \"prescribed_coarse_and_owner_point_lifts\": 36, \"prescribed_point_conjugation_lifts\": 3888, \"relative_entire_beta_gamma_lifts\": 4284, \"relative_literal_root_lifts\": 98496, \"selected_unsafe_clique_roots\": 684, \"singleton_unsafe_quotient_projections\": 42, \"structured_actual_real_automorphisms\": 2592}, \"limits\": \"No infinite acl/source/CCO/closed-SAP/EPPA, ambient joint-lifting theorem or coherent section certification.\", \"scope\": \"bounded B029 genuine finite exact-grid and group-lifting diagnostics\", \"seconds\": 0.53, \"status\": \"PASS\", \"witnesses\": {\"entire_action_not_singleton\": {\"changed_action_outside_source_packet\": \"swap coordinate values 0,1 in grid 1\", \"source_singleton\": [0, 0, 0]}, \"exact_nonnested_geometry\": {\"H_fibre_size\": 3, \"H_owner_size\": 6, \"K_fibre_size\": 3, \"K_quotient_size\": 6, \"join_fibre_size\": 9, \"raw_exact_words\": [\"k_atom;k_atom\", \"h_atom;h_atom\"], \"real_points\": 18}, \"literal_original_root\": {\"original_target\": [0, 0, 2], \"target_b_is_noncanonical\": true}, \"missing_full_preimage\": {\"compatible_source_map\": [[[0, 0, 2], [0, 1, 0]]], \"missing_real_point\": [0, 1, 2], \"quotient_a_permutation\": [1, 0, 2]}, \"noncommuting_point_conjugation\": {\"correct_owner\": [1, 0, 2, 3, 4, 5], \"wrong_owner\": [0, 2, 1, 3, 4, 5], \"x\": [0, 0, 0], \"y\": [0, 0, 0]}, \"owner_cover_negative_premises\": {\"incomplete_owner_fibres\": [3, 2], \"onto_without_transitive_kernel\": \"grid permutations, no b motion\", \"transitive_kernel_without_onto\": \"independent b permutations, no grid swap\"}, \"representative_safe_matrix_unsafe\": {\"full_matrix_colours\": [[\"inside\", false, false], [\"inside\", false, true]], \"quotient_pair\": [[0, 0], [0, 1]], \"safe_representative_colour\": [\"inside\", false, true]}}}\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/check_rank_induction_controls.py",
+      "exit_code": 0,
+      "stdout": "{\"counts\": {\"actual_fine_coordinate_colour_checks\": 54, \"actual_pair_orbit_models\": 4, \"actual_quotient_pair_orbit_checks\": 15, \"full_compatible_master_points\": 27, \"identity_quotients_not_strict\": 4, \"joint_owner_kernel_point_cases\": 243, \"literal_root_and_whole_packet_transports\": 26244, \"negative_incomplete_master\": 1, \"negative_independent_old_root_targets\": 1, \"negative_rank_increase_despite_lower_phase\": 5, \"negative_same_rank_master_cycles\": 6, \"negative_singleton_only_owner_agreement\": 1, \"phase_nodes\": 18, \"prescribed_exceptional_joint_owner_lifts\": 972, \"strict_exact_quotient_rank_decreases\": 11, \"strict_phase_dependency_edges\": 72}, \"limits\": \"No infinite source/acl/CCO/closed-SAP/HKN/EPPA or coherence certification.\", \"scope\": \"bounded actual-orbit rank, phased dependency and joint-owner/root diagnostics\", \"seconds\": 1.005, \"status\": \"PASS\", \"witnesses\": {\"literal_root_target_packet\": [2, 1, 0], \"old_coordinate_targets_not_one_old_root\": {\"assembled_nonold_root\": [0, 0, 0], \"old_joint_points\": [[1, 0, 0], [0, 1, 0], [0, 0, 1]]}, \"phantom_owner_tuple\": {\"all_three_projections_still_onto\": true, \"missing_actual_master_point\": [2, 2, 2]}, \"rank_boundary\": {\"identity_quotient_does_not_decrease\": true, \"nonidentity_example\": {\"quotient_diversity\": 3, \"source_diversity\": 7}, \"zero_diversity_source_points\": 1}, \"same_rank_cycle\": [\"P_n calls U_n\", \"U_n calls O_n\", \"O_n calls P_n\"]}}\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/check_direct_owner_closure_controls.py",
+      "exit_code": 0,
+      "stdout": "{\"counts\": {\"G_invariant_owner_unions\": 16, \"empty_owner_unions\": 6, \"empty_real_inputs\": 104, \"finite_acl_empty_warning_witnesses\": 98, \"finite_packet_models\": 6, \"finite_packet_upper_orbit_bounds\": 6507, \"negative_group_equality\": 1, \"negative_partial_packet_unions\": 6, \"negative_reversed_orbit_inclusion\": 1, \"owner_subset_saturation_checks\": 104, \"parameter_orbit_inclusions\": 14611, \"restricted_literal_thin_translations\": 40, \"restriction_subgroup_inclusions\": 104}, \"limits\": \"Finite real acl(empty) is the whole finite structure. No infinite unary acl, harmless-owner naming, standing homogeneity, CCO, EPPA or HKN adapter is certified.\", \"scope\": \"bounded orbit-restriction, named-owner and whole-packet diagnostics\", \"seconds\": 0.066, \"status\": \"PASS\", \"witnesses\": {\"partial_packet\": {\"B\": [[0, 0]], \"a\": [0, 0, 0], \"missing_F_point\": [0, 0, 1]}, \"strict_ambient_image\": {\"ambient_fixed_orbit\": [4], \"ambient_restriction_group_order\": 8, \"fixed_real_A\": [0], \"full_induced_fixed_orbit\": [2, 4, 6], \"full_induced_group_order\": 24, \"model\": \"C8 graph; structural countercheck outside standing-source hypotheses\", \"named_owner\": [0, 2, 4, 6], \"point\": 4}}}\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/check_terminal_power_controls.py",
+      "exit_code": 0,
+      "stdout": "{\"counts\": {\"actual_connectivity_diversity_orbits\": 38, \"actual_pair_orbit_transports\": 840, \"actual_transitive_orbital_models\": 14, \"all_positive_distinct_endpoint_readouts\": 252, \"bipartite_index_two_components\": 489, \"bipartite_parity_guards\": 48636, \"bounded_complete_host_pinned_paths\": 7, \"constructive_padded_walks\": 47598, \"enumerated_simple_graphs\": 1099, \"index_one_components\": 1045, \"negative_bipartite_saturation\": 6, \"negative_equality_as_diversity\": 1, \"negative_walk_implies_injective_path_without_SAP\": 1, \"nonbipartite_components\": 684, \"positive_RAW_diagonals_excluded_from_diversity\": 178, \"rejected_nonpositive_powers\": 2, \"uniform_positive_power_checks\": 152}, \"limits\": \"Finite graph controls do not certify SAP, FULL NR2, homogeneity, infinite sources, STRONG injectivisation or eventual STRONG saturation; CCO is not used.\", \"scope\": \"bounded graph parity, actual orbital transport and positive-walk diagnostics\", \"seconds\": 0.61, \"status\": \"PASS\", \"witnesses\": {\"endpoint_guard\": \"all target diversity pairs have distinct literal endpoints\", \"finite_no_SAP_counterexample\": {\"graph\": \"C3\", \"host_points\": 3, \"injective_3_edge_path_requires\": 4, \"walk\": [0, 1, 0, 1]}, \"nonpositive_STRONG_power\": \"excluded\", \"raw_equality_walk\": [0, 1, 0], \"uniform_cycle_thresholds\": [{\"copies\": 1, \"cycle\": 3, \"diversity_pair_orbits\": 1, \"threshold\": 2}, {\"copies\": 2, \"cycle\": 3, \"diversity_pair_orbits\": 1, \"threshold\": 2}, {\"copies\": 1, \"cycle\": 5, \"diversity_pair_orbits\": 2, \"threshold\": 4}, {\"copies\": 2, \"cycle\": 5, \"diversity_pair_orbits\": 2, \"threshold\": 4}, {\"copies\": 1, \"cycle\": 7, \"diversity_pair_orbits\": 3, \"threshold\": 6}, {\"copies\": 2, \"cycle\": 7, \"diversity_pair_orbits\": 3, \"threshold\": 6}, {\"copies\": 1, \"cycle\": 9, \"diversity_pair_orbits\": 4, \"threshold\": 8}, {\"copies\": 2, \"cycle\": 9, \"diversity_pair_orbits\": 4, \"threshold\": 8}]}}\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/check_profile_helly_controls.py",
+      "exit_code": 0,
+      "stdout": "{\"counts\": {\"SAP_complete_edge_base_digons\": 12815, \"SAP_empty_base_amalgams\": 1037, \"SAP_singleton_base_amalgams\": 5949, \"SAP_three_point_complete_base_samples\": 7985, \"collapsed_cycle_terminal_profile_intersections\": 1037, \"crossed_common_internal_orders\": 9069, \"cycle_CSP_comparisons\": 39707, \"edge_assignments\": 55458, \"fixed_vertex_completions\": 10314, \"homomorphic_walk_readouts\": 260988, \"independently_enumerated_complete_K4\": 1245, \"negative_empty_profile_word\": 1, \"negative_non_full_triangle_subclass\": 1, \"negative_non_total_fork\": 1, \"negative_nonassociative_table\": 1, \"negative_pairwise_not_Helly_clone_type\": 1, \"negative_unavailable_typed_cross_palette\": 1, \"noninjective_walks_read_correctly\": 246648, \"overlapping_simple_path_pairs\": 50294, \"partial_K4_networks\": 14539, \"return_square_absorptions\": 1037, \"total_assoc_peirce_helly_tables\": 120, \"triangle_tables_enumerated\": 1042}, \"limits\": \"Finite one-sort examples do not certify arbitrary typed palettes, unbounded path induction, source CCO/SAP, homogeneity, Lean or EPPA.\", \"scope\": \"bounded profile algebra, hom-walk and fixed-vertex completion checks\", \"seconds\": 5.636, \"status\": \"PASS\", \"witnesses\": {\"base_edge_case\": \"two shared base points contract to a digon, not a simple cycle\", \"collapsed_formal_cycle\": {\"map\": [0, 1, 0, 2], \"opposite_formal_terminals_equal\": true, \"specified_edge_images_distinct\": true}, \"crossed_internal_order\": [[2, 0, 1, 3], [2, 1, 0, 3]], \"no_vertex_identifications\": \"all fills retain original vertex set and all old edges\", \"non_Helly_legal_K4\": [0, 1, 2, 2, 1, 0], \"non_Helly_return_profiles\": [6, 5, 3], \"non_full_triangle_subclass\": {\"K4_triangle_legal_but_excluded\": true, \"artificial_class_size_cap\": 3, \"complete_base_size\": 2, \"factor_sizes\": [3, 3], \"minimum_strong_amalgam_size\": 4, \"table\": \"one colour; its sole triangle is allowed\", \"violated_gate\": \"FULL triangle-defined class\"}, \"unavailable_typed_cross_palette\": {\"base_vertices\": [], \"cross_palette_a_b\": [], \"factor_sorts\": [[\"a\"], [\"b\"]], \"required_strong_union_sorts\": [\"a\", \"b\"], \"violated_gate\": \"nonempty palette for every required cross pair\"}}}\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/check_unary_support_controls.py",
+      "exit_code": 0,
+      "stdout": "{\"counts\": {\"actual_K_hypothesis_models\": 55, \"actual_K_size_bound_checks\": 399, \"ambient_induced_closure_agreements\": 472, \"binary_homomorphism_map_cases\": 29607, \"closed_nonempty_binary_substructures\": 46210, \"diagonal_binary_reflection_failures_detected\": 24513, \"domain_reflection_and_closure_union_checks\": 33101, \"explicit_nullary_reflection_gate_checks\": 22, \"function_preserving_maps\": 45, \"globally_noninjective_HE_map_cases\": 1636, \"higher_arity_local_pair_cover_failure_checks\": 3, \"irreducible_embedding_checks\": 7244, \"irreducible_pair_cover_checks\": 54180, \"local_binary_embedding_map_cases\": 628, \"local_to_HE_map_cases\": 2504, \"missing_pair_free_decompositions\": 3076, \"negative_relational_or_functional_arity_witnesses\": 5, \"negative_term_variable_witnesses\": 1, \"negative_unary_convention_witnesses\": 3, \"nullary_full_HE_boundary_failures\": 3, \"nullary_nonempty_HE_gate_checks\": 25, \"one_generated_irreducibles\": 12454, \"partial_models_rejected_by_actual_K\": 3435, \"partial_two_unary_models\": 4182, \"positive_arity_empty_structure_gate_checks\": 25, \"source_target_function_map_candidates\": 101, \"total_unary_directed_binary_models\": 13890, \"unary_binary_homomorphism_map_cases\": 7664, \"unary_relation_reflection_failures_detected\": 5160}, \"limits\": \"One-sort finite bounds only: <=3 points, <=2 unary functions, unary/binary relations; nullary boundary checked separately, no constants, empty-base free amalgams allowed. No unbounded theorem, many-sorted proof, HN theorem/local-finiteness, or Lean certification.\", \"seconds\": 0.542, \"status\": \"PASS\", \"witnesses\": {\"binary_function_closure_union_failure\": {\"closure_0\": [0], \"closure_0_1\": [0, 1, 2], \"closure_1\": [1], \"defined_binary_function_equation\": \"h(0,1)=2\"}, \"binary_function_totality_does_not_transfer\": {\"carrier\": [0, 1], \"defined_function_graph\": [[0, 0, 0], [1, 1, 1]], \"function_total_on_all_irreducibles\": true, \"function_total_on_source\": false, \"nonempty_irreducibles\": [[0], [1]], \"undefined_mixed_inputs\": [[0, 1], [1, 0]]}, \"completion_exists_is_insufficient\": {\"completion_function\": [0], \"irreducible_source_is_actual_completed_member\": false, \"partial_function\": [-1], \"source_function_total\": false}, \"higher_arity_local_pair_cover_failure\": {\"binary_relation\": [], \"carrier\": [0, 1, 2], \"function\": [0, 1, 2], \"local_supports\": [[0], [1], [2]], \"source_irreducible\": true, \"ternary_relation\": [[0, 1, 2]], \"uncovered_pairs\": [[0, 1], [0, 2], [1, 2]]}, \"higher_arity_pair_reflection_failure\": {\"binary_relation\": \"all ordered pairs\", \"carrier\": [0, 1, 2], \"full_induced_embedding\": false, \"function\": [0, 1, 2], \"local_induced_embeddings\": true, \"local_support_sizes\": [1, 2], \"source_irreducible\": true, \"source_ternary_relation\": [], \"target_added_ternary_tuple\": [0, 1, 2]}, \"nullary_empty_source\": {\"HE_on_nonempty_irreducibles\": true, \"full_HE_including_empty\": false, \"local_embeddings_vacuous\": true, \"local_supports\": [], \"source_nullary_relation\": false, \"source_size\": 0, \"target_nullary_relation\": true, \"target_size\": 1}, \"two_variable_identity_does_not_transfer\": {\"K\": \"empty and singleton structures with identity unary function\", \"all_actual_irreducibles_in_K\": true, \"identity\": \"x=y\", \"identity_valid_in_K\": true, \"identity_valid_in_source\": false, \"nonempty_irreducibles\": [[0], [1]], \"source_function\": [0, 1]}, \"weak_domain_graph_union\": {\"actual_generated_structure_irreducible\": true, \"actual_proper_closed_root_factor_exists\": false, \"carrier\": [\"x\", \"a\", \"b\"], \"function_f\": [1, -1, -1], \"function_g\": [2, -1, -1], \"weak_factors\": [[0, 1], [0, 2]], \"weak_graph_union_is_source\": true, \"weak_overlap\": [0], \"weak_overlap_functions_agree\": true}, \"weak_function_substructure\": {\"actual_generated_structure_irreducible\": true, \"function\": [1, 1], \"inclusion_reflects_domains\": false, \"lost_equation\": \"f(0)=1\", \"weak_restricted_function\": [-1], \"weak_subset\": [0], \"weak_subset_closed_under_source_defined_values\": false}}}\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/check_full_code_controls.py",
+      "exit_code": 0,
+      "stdout": "{\"counts\": {\"EP_logical_quantifier_gate_checks\": 3, \"Ramsey_naturality_color_readouts\": 24, \"actual_partial_idempotent_models\": 393, \"ambient_models_rejected_by_root_cover\": 197, \"ambient_root_covered_models\": 199, \"cofinal_same_E_constructions\": 660, \"defined_coordinate_presentations\": 73068, \"embedding_set_comparisons\": 170654, \"identified_alias_presentations\": 46468, \"missing_code_witnesses\": 4, \"mutual_inverse_embedding_checks\": 28172, \"nonidentity_naturality_checks\": 16242, \"normalized_witness_restriction_guard_checks\": 1, \"normalized_witness_support_commutation_checks\": 8, \"reconstructed_generated_diagrams\": 15706, \"same_host_lift_and_uniqueness_checks\": 192, \"same_host_missing_gate_witnesses\": 2, \"two_color_Ramsey_instance_colorings\": 8}, \"limits\": \"Finite one-sort models and incidence tables do not certify arbitrary typed languages, infinite sources, Ramsey/EP transfer, or Lean.\", \"scope\": \"bounded partial-unary full-code reconstruction, embeddings, color transport and fixed-host diagnostics\", \"seconds\": 1.977, \"status\": \"PASS\", \"witnesses\": {\"EP_logical_quantifier_gates\": {\"finite_source_expansion_types\": 2, \"fixed_expanded_A_has_host_in_table\": true, \"kind\": \"finite logical incidence diagnostics, not full structural counterexamples\", \"lift_on_fixed_E_exists\": false, \"lift_somewhere_exists\": true, \"one_host_for_all_expanded_A_in_table\": false, \"some_competing_expansion_suffices\": false}, \"added_function_breaks_reduct_closure_commutation\": {\"added_g\": [1, 1], \"expanded_generated_support\": [0, 1], \"root_code\": {\"g_defined\": true, \"g_equals_identity\": false}, \"same_singleton_host_lift_exists\": false, \"unexpanded_template\": [0], \"violated_gate\": \"reduct of h(B^o) equals h(B)\"}, \"ambient_root_cover_can_require_growth\": {\"ambient_function\": [1, 1], \"chosen_root\": [0], \"closed_D\": [1], \"constructed_E\": [0, 1], \"internal_generated_support_of_D\": [], \"unary_root_predicate\": [0]}, \"missing_cross_root_equality\": {\"hidden_lift_injective\": false, \"root_map_injective\": true, \"source_roots\": [[\"v\", [0]], [\"p\", [1, 1]]], \"target_roots\": [[\"v\", [0]], [\"p\", [0, 0]]]}, \"missing_definedness\": {\"E_F_F_source\": false, \"E_F_F_target\": true, \"E_id_F_in_both\": false, \"omitted_information\": \"definedness bits including E_F,F; all ordinary predicates empty\", \"root\": [0], \"source_F\": [-1], \"target_F\": [1, 1]}, \"missing_same_root_comparison\": {\"full_code_accepts_identity\": false, \"root\": [0, 1], \"source_order\": [[0, 1]], \"target_order\": [[1, 0]]}, \"missing_within_root_equality\": {\"full_code_accepts_map\": false, \"source_root\": [0, 0], \"target_root\": [0, 1]}, \"normalize_EP_witness_before_expanded_restriction\": {\"D0_is_expanded_closed\": true, \"D_is_expanded_closed\": false, \"N_D0_equals_N_D\": true, \"added_expanded_G\": [0, 1, 0], \"all_root_generated_supports_commute_with_reduct\": true, \"kind\": \"restriction-step guard, not a counterexample to the final transfer theorem\", \"normalized_D0\": [1], \"root_binary_relation\": [[0, 2]], \"root_unary_predicate\": [1], \"unexpanded_E\": [0, 1, 2], \"unexpanded_functions\": [], \"unexpanded_induced_D\": [1, 2]}, \"orphan_prevents_same_host_uniqueness_without_gate\": {\"E\": [0, 1], \"differing_expanded_relation\": [1, 1], \"h_N_E\": [0], \"root_coordinates\": [0], \"same_full_visible_code\": true, \"violated_gate\": \"h(N(E))=E\"}}}\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/check_reset_order_controls.py",
+      "exit_code": 0,
+      "stdout": "{\"counts\": {\"EP_logical_quantifier_checks\": 1, \"MI_parent_key_pair_checks\": 3748, \"closed_quotient_normalization_inclusions\": 19672, \"coherent_transition_path_checks\": 23976, \"common_function_composite_EP_instances\": 98, \"complete_unary_edge_closure_checks\": 8, \"constant_sign_midpoint_competitors\": 24, \"fibre_sync_without_global_transition_monotonicity_checks\": 1, \"finite_distributive_lattices\": 24, \"fresh_strong_closed_midpoint_amalgams\": 164, \"function_adding_EP_composition_bad_hosts\": 435, \"hierarchical_normalization_samples\": 96, \"idempotent_normalization_objects\": 31, \"nonsurjective_normalized_Ramsey_colorings\": 16, \"normalization_functor_embedding_checks\": 341, \"normalized_heredity_checks\": 31, \"relation_composition_without_freshness_checks\": 3, \"selected_plus_or_minus_source_copies\": 12, \"single_cut_reversal_checks\": 256, \"sort_restriction_embedding_set_checks\": 1608, \"successor_closed_substructure_checks\": 12527, \"synchronized_quotient_order_copies\": 768, \"transition_upward_commutation_checks\": 8064, \"typed_unary_sort_models\": 212, \"uniform_nested_EP_source_patterns\": 17}, \"limits\": \"Finite models do not prove arbitrary-size Ramsey/EP/SAP, general distributive representation, actual CCO/MI geometry or Lean. The function-adding composition witness includes a separate human all-size obstruction; the checked theorem contract must retain restriction stability.\", \"scope\": \"bounded sort maps, quotient-order functors, midpoint signs and relative EP diagnostics\", \"seconds\": 0.35, \"status\": \"PASS\", \"witnesses\": {\"EP_quantifier_order\": {\"exists_host_forall_competitor\": false, \"forall_competitor_exists_host\": true, \"host_by_competitor_matrix\": [[true, false], [false, true]]}, \"coarse_edge_type_is_insufficient\": {\"complete_named_base_types_match\": false, \"first_base_fine_relation\": [[0, 1]], \"same_fibre\": true, \"second_base_fine_relation\": []}, \"fibre_synchronization_not_global_transition_monotonicity\": {\"coarser_MI_coordinates\": [[\"a\", \"b\"], [\"a\", \"c\"]], \"first_priority\": [3, 5], \"global_orders_disagree_on_points\": [2, 4], \"identity_transition\": true, \"parent_J_plus\": [\"a\"], \"poset\": \"a<b and a<c\", \"scope\": \"boundary to stronger global-order claim; no compatible-priority premise is added to fibre-task synchronization\", \"second_priority\": [5, 3], \"selected_MI\": [], \"within_parent_orders_synchronized\": true}, \"function_adding_EP_composition_failure\": {\"EP_K1_over_K0\": \"uniform nested blocks provide the source pattern for every convex order\", \"EP_K2_over_K1\": \"unique legal F expansion of each fixed ordered reduct\", \"K0\": \"finite nested equivalences Q subset P\", \"K1\": \"linear order convex for P and Q\", \"K2\": \"unique new successor within each P class; its maximum is fixed\", \"adverse_order_rule\": \"put a Q block of size at least 2 LAST in each P class when available\", \"bounded_host_sizes_checked\": [0, 1, 2, 3, 4, 5], \"counterexample_scope\": \"displayed added-function EP quantifiers only; restriction-stable/common-function composition remains valid\", \"human_all_size_obstruction\": \"F forces c to P-maximum and b to its predecessor: Q(b,c) holds if the last Q block is large; if all blocks are singletons, Q(a,b) fails.\", \"reasonable_added_function_variant_settled\": false, \"target_F\": [1, 2, 2], \"target_P\": [0, 0, 0], \"target_Q\": [0, 0, 1], \"target_order\": [0, 1, 2], \"top_expansion_is_reasonable\": false}, \"midpoint_relation_does_not_imply_freshness\": {\"every_nonempty_unary_closure_is_whole_cycle\": true, \"fibre\": [0, 1, 2], \"fresh_same_fibre_point_outside_pair_closure\": false, \"m\": \"all distinct pairs in that fibre\", \"m_composed_m_is_full_fibre\": true, \"scope\": \"outside-closure witness hypothesis fails; disjoint unary 3-cycles admit closed free unions\", \"unary_function\": [1, 2, 0]}, \"nonclosed_sort_collection\": {\"kept_points\": [0], \"lost_equation\": \"F(0)=1\", \"restriction_domain_reflecting\": false, \"sorts\": [0, 1], \"unary_function\": [1, 1]}, \"nontrivial_holonomy\": {\"closed_transition\": [1, 0], \"path_independent\": false, \"representative_order\": [0, 1], \"transported_order\": [1, 0]}, \"normalization_not_surjective_on_embeddings\": {\"C_P_true_points\": [3], \"all_binary_colorings_checked\": 16, \"normalization\": \"keep order and universe, reset unary P to empty\", \"normalized_singleton_embeddings\": 4, \"old_singleton_embeddings\": 3}}}\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/check_unary_hn_controls.py",
+      "exit_code": 0,
+      "stdout": "{\"counts\": {\"actual_irreducible_K_hypothesis_models\": 55, \"admissible_finite_generator_bounds\": 399, \"completed_order_piece_reflection_checks\": 631967, \"covered_induced_irreducible_pieces\": 56249, \"expanded_local_hypothesis_models\": 12, \"expanded_local_hypothesis_rejections\": 58, \"injective_order_transport_and_extension_checks\": 65781, \"minimal_equivalence_color_obstructions\": 4, \"noninjective_order_homomorphisms\": 108, \"obstruction_actual_completed_irreducible_checks\": 48, \"partial_one_generated_irreducibility_checks\": 12454, \"partial_two_unary_models\": 4182, \"partial_unary_displayed_edge_supports\": 614, \"proper_obstruction_restrictions_completed\": 236, \"raw_illtyped_point_or_function_local_rejections\": 4142, \"raw_illtyped_relation_local_rejections\": 4472, \"raw_models_accepted_as_actual_typed\": 7, \"raw_one_sorted_typed_guard_models\": 2321, \"same_map_globally_noninjective_checks\": 108, \"same_map_local_reflection_checks\": 864, \"same_map_universal_edge_HE_checks\": 182, \"strict_order_homomorphism_acyclicity_checks\": 182, \"total_unary_binary_models\": 13891}, \"limits\": \"Finite one-sort diagnostics do not certify arbitrary languages, HN/Ramsey, uniform obstruction premises, external adapters or Lean.\", \"seconds\": 2.548, \"status\": \"PASS\", \"witnesses\": {\"binary_coverage_does_not_supply_obstruction_bound\": {\"K\": \"finite complete equivalence-color networks R=same class distinct, B=different classes\", \"boundedness_premise_is_a_separate_input\": true, \"checked_instances\": [{\"all_irreducibles_actual_completed\": true, \"all_singleton_closures_completed\": true, \"minimal_noncompletable\": true, \"vertices\": 4}, {\"all_irreducibles_actual_completed\": true, \"all_singleton_closures_completed\": true, \"minimal_noncompletable\": true, \"vertices\": 5}, {\"all_irreducibles_actual_completed\": true, \"all_singleton_closures_completed\": true, \"minimal_noncompletable\": true, \"vertices\": 6}, {\"all_irreducibles_actual_completed\": true, \"all_singleton_closures_completed\": true, \"minimal_noncompletable\": true, \"vertices\": 7}], \"scope\": \"finite minimal obstruction diagnostics; no general HN/Ramsey assertion\", \"source\": \"R path with B joining its endpoints\"}, \"completed_map_rigidity_is_necessary\": {\"different_injective_completion_exists\": true, \"expanded_HE\": false, \"old_HE\": true, \"old_language\": \"empty\", \"same_constant_vertex_map\": [0, 0], \"source_vertices\": [0, 1], \"target_vertices\": [0]}, \"diagonal_edge_rejected_by_actual_local_membership\": {\"generated_support_irreducible\": true, \"source_E\": [[0, 0]], \"support_is_actual_K_star_member\": false}, \"injective_HE_need_not_be_global_embedding\": {\"globally_induced_embedding\": false, \"injective_HE\": true, \"source_order\": [], \"target_order\": [[0, 1]], \"vertex_map\": [0, 1]}, \"mere_completability_is_not_admissibility\": {\"existing_closure_is_actual_completed_member\": false, \"partial_singleton_function\": [-1], \"possible_completion\": [0]}, \"noninjective_order_transport_can_create_cycle\": {\"old_vertex_map\": [0, 1, 0], \"scope\": \"transport mechanism, not a counterexample to the HN theorem\", \"source_acyclic\": true, \"source_order_edges\": [[0, 1], [1, 2]], \"transported_acyclic\": false, \"transported_edges\": [[0, 1], [1, 0]]}, \"raw_one_sorted_typing_is_forced_locally\": {\"ambient_language\": \"raw one-sorted partial F with unary sort predicates\", \"arbitrary_typed_hereditary_subclass_Ramsey_claimed\": false, \"intended_signature\": \"disjoint exhaustive S,T; F:S->T total; R subset SxT\", \"malformed_examples\": [{\"F\": [-1], \"R\": [], \"actual_completed_typed_member\": false, \"closed_irreducible_support\": [0], \"defect\": \"missing_sort\", \"point_tags\": [0]}, {\"F\": [0], \"R\": [], \"actual_completed_typed_member\": false, \"closed_irreducible_support\": [0], \"defect\": \"multiple_sorts\", \"point_tags\": [3]}, {\"F\": [1, -1], \"R\": [], \"actual_completed_typed_member\": false, \"closed_irreducible_support\": [0, 1], \"defect\": \"wrong_function_source\", \"point_tags\": [2, 2]}, {\"F\": [1, 1], \"R\": [], \"actual_completed_typed_member\": false, \"closed_irreducible_support\": [0, 1], \"defect\": \"wrong_function_target\", \"point_tags\": [1, 1]}, {\"F\": [-1, -1], \"R\": [], \"actual_completed_typed_member\": false, \"closed_irreducible_support\": [0], \"defect\": \"missing_intended_function_domain\", \"point_tags\": [1, 2]}, {\"F\": [1, -1], \"R\": [[1, 0]], \"actual_completed_typed_member\": false, \"closed_irreducible_support\": [0, 1], \"defect\": \"illtyped_relation\", \"point_tags\": [1, 2]}]}, \"unary_only_rigidity_with_global_collisions\": {\"expanded_HE\": true, \"expanded_nonempty_irreducibles\": [[0, 1], [2, 3]], \"globally_injective\": false, \"old_HE\": true, \"old_binary_relations\": [], \"same_vertex_map\": [0, 1, 0, 1], \"source_function\": [1, 0, 3, 2], \"target_function\": [1, 0]}}}\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/check_relational_completion_controls.py",
+      "exit_code": 0,
+      "stdout": "{\"counts\": {\"HE_tuple_fibre_guards\": 16561, \"K4_small_induced_subobjects_in_K\": 15, \"actual_homomorphism_embeddings\": 2549, \"all_nontrivial_fibre_split_checks\": 632, \"bounded_complete_AP_spans\": 30, \"complete_atomic_K4_hom_embeddings\": 312, \"complete_atomic_hom_embeddings\": 1047, \"complete_atomic_map_candidates\": 115347, \"cycle_fan_homomorphisms\": 14, \"displayed_tuple_irreducible_supports\": 499, \"explicit_boundary_witnesses\": 6, \"fan_induced_triangle_AP_steps\": 91, \"genuinely_noninjective_cycle_fans\": 13, \"relational_map_candidates\": 15081, \"strict_collision_descent_steps\": 308, \"terminal_injective_HE_maps\": 2549, \"unconstrained_cross_clone_tuple_checks\": 632, \"whole_ternary_clone_diagrams\": 1024}, \"limits\": \"Finite examples do not certify arbitrary relational signatures, homogeneous SAP, semantic CCO, triangle fullness, unbounded collision induction or Lean proofs.\", \"scope\": \"bounded relational clone and atomic cycle-fan diagnostics\", \"seconds\": 1.344, \"status\": \"PASS\", \"witnesses\": {\"AP_does_not_replace_SAP_for_collision_unfolding\": {\"SAP_failure\": \"two partners of the same base root are forced to coincide\", \"ambient\": \"countably infinite homogeneous disjoint union of edges\", \"injective_hom_exists\": false, \"old_HE\": [0, 1, 1], \"source\": \"three-point two-leaf star\"}, \"AP_without_CCO_not_triangle_full\": {\"AP\": true, \"K\": \"complete one-color structures of size at most three\", \"all_at_most_three_subobjects_in_K\": true, \"all_simple_cycles_homomorphically_realizable\": true, \"complete_input_size\": 4, \"global_hom_completion\": false}, \"complete_atomic_guards\": {\"looped_target_constant_map\": [0, 0], \"partial_path_collapses\": [0, 1, 0], \"target_with_two_atoms_on_same_pair_reflects\": false}, \"distinguished_image_not_source_reflection\": {\"distinguished_source_pair\": [0, 1], \"initial_induced_image_type_preserved\": true, \"new_map\": [0, 2, 1], \"new_whole_image_size\": 3, \"old_whole_image_size\": 2, \"original_map_embeds_that_source_pair\": false, \"source_map\": [0, 1, 1], \"source_relation\": [[0, 2]], \"target_relation\": [[0, 1]]}, \"partial_triangle_consistency_is_insufficient\": {\"completion_exists\": false, \"different_class_edge\": [0, 3], \"fully_specified_triangles\": 0, \"missing_gate\": \"the triangle-fullness input must be COMPLETE with actual chords\", \"same_class_path\": [[0, 1], [1, 2], [2, 3]]}, \"relational_deletion_is_not_functional_closure\": {\"deleted\": 1, \"function\": [1, 1], \"retained\": [0], \"retained_set_closed\": false}}}\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/check_unary_fresh_frames_controls.py",
+      "exit_code": 0,
+      "stdout": "{\"counts\": {\"actual_fibre_transitivity_witnesses\": 278, \"actual_kernel_and_relative_index_checks\": 48, \"closure_equivariance_checks\": 6275, \"closure_union_and_stabiliser_checks\": 5899, \"distinct_transitive_term_functions\": 33, \"finite_reservoir_exhaustion_instances\": 293, \"literal_closed_base_fresh_frames\": 10803, \"literal_named_factorisation_checks\": 24, \"local_failure_and_scope_witnesses\": 6, \"simultaneous_bounded_avoidance_instances\": 2022, \"successive_representative_choices\": 2064, \"total_two_unary_structures\": 747, \"transitive_term_function_models\": 14}, \"limits\": \"All sampled actions are finite: no infinite orbit/index premise, homogeneous hereditary SAP equivalence, general group avoidance theorem or Lean proof is certified.\", \"scope\": \"bounded unary closure, quotient-fibre and real-frame diagnostics\", \"seconds\": 0.219, \"status\": \"PASS\", \"witnesses\": {\"finite_models_do_not_have_infinite_reservoirs\": {\"consequence\": \"bounded positive samples do not certify infinite orbit or index assumptions\", \"example\": \"one hidden quotient in A, every real point of its finite fibre in B\", \"fresh_frame_exists\": false}, \"finite_proper_relative_index\": {\"all_fibre_image_values_outside_named_base_closure\": true, \"base_stabiliser_orbit_size\": 3, \"local_failure\": \"algebraic off-closure values; infinite-index condition fails\", \"relative_index\": 3, \"some_base_stabiliser_element_moves_each_value\": true}, \"finite_separate_avoidance_is_not_simultaneous\": {\"common_representative_exists\": false, \"each_unforced_term_individually_avoidable\": true, \"fibre_size\": 2, \"forbidden\": [[\"M\", 0, 0], [\"U\", 1]]}, \"kernel_inclusion_without_named_factor\": {\"J_le_K\": true, \"closure_of_base\": [[\"Q\", 0]], \"defining_formula\": \"exists x (p(x)=b and tau(x)=v)\", \"named_Q_to_V_term_exists\": false, \"set_theoretic_factor_exists\": true, \"unique_fibre_value\": [\"V\", 0], \"value_fixed_by_full_sample_base_stabiliser\": true}, \"nullary_generator_boundary\": {\"closure_of_empty\": [0], \"constant\": 0, \"union_of_no_singleton_closures\": []}, \"proper_subgroup_orbits_are_separate\": {\"SAP_claimed_for_finite_sample_age\": false, \"full_sample_orbit_size\": 3, \"proper_subgroup_orbit_size\": 1}}}\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/check_quotient_transport_controls.py",
+      "exit_code": 0,
+      "stdout": "{\"counts\": {\"actual_induced_quotient_bijections\": 360, \"actual_orbital_saturation_identities\": 1611, \"actual_quotient_transport_instances\": 360, \"actual_return_words\": 695, \"canonical_label_equivariance_checks\": 1920, \"canonical_prefix_and_edge_identities\": 1941, \"coarser_J_return_instances\": 886, \"empty_diversity_exceptions_different_output_sorts\": 36, \"explicit_boundary_witnesses\": 11, \"genuinely_typed_composition_checks\": 4, \"interval_order_meet_join_cover_pairs\": 1130, \"literal_reverse_transport_identities\": 546, \"meet_irreducible_checks\": 546, \"orbital_pullback_models\": 421, \"output_orbital_classifications\": 641, \"positive_nonfaithful_action_instances\": 38, \"prescribed_action_equivalence_instances\": 508, \"repeated_original_sort_positions\": 2636, \"root_orbital_partition_checks\": 1387, \"transitive_typed_action_models\": 36}, \"limits\": \"Finite diagnostics only: no unbounded theorem, FO definability, FULL RAW exactness, named-sort representation, SAP/CCO property or Lean proof is certified.\", \"scope\": \"bounded actual quotient transport, canonical holonomy, point actions and orbital pullbacks\", \"seconds\": 0.387, \"status\": \"PASS\", \"witnesses\": {\"empty_Y_boundary\": {\"Y_and_B_empty\": true, \"point_lifting_vacuous\": true, \"rho_onto\": false}, \"independent_chart_boundary\": {\"actual_edge_quotient_maps\": [\"identity\", \"identity\"], \"canonical_actual_holonomy\": \"identity\", \"replacement_respects_actual_second_relation\": false, \"unrelated_replacement_map\": \"transposition\"}, \"missing_kernel_condition\": {\"E\": \"identity\", \"R\": \"universal on two points\", \"canonical_label_well_defined\": false, \"predecessor_E_classes\": 2}, \"missing_surjectivity_of_pi\": {\"B\": \"regular C2\", \"Y\": \"singleton\", \"every_compatible_point_request_holds\": true, \"nonidentity_gamma_has_compatible_request\": false, \"pi_equivariant\": true, \"pi_onto\": false, \"rho_onto\": false}, \"missing_transitivity\": {\"RR_converse_le_E\": true, \"nonempty_invariant_R\": true, \"target_without_predecessor\": 1}, \"missing_whole_word_containment\": {\"actual_holonomy\": \"transposition\", \"whole_word_le_E\": false}, \"no_general_noncollapse\": {\"source_equivalence_nonidentity\": true, \"transported_equivalence\": \"identity on smaller target sort\"}, \"no_mixed_commutativity\": {\"action\": \"left-regular S3\", \"ordered_a_b_b_a_return_is_identity\": true, \"two_actual_invariant_relations_commute\": false}, \"nononto_rho_boundary\": {\"kernel_fibre_transitive\": true, \"prescribed_point_lifting\": false, \"rho_onto\": false}, \"nontransitive_kernel_boundary\": {\"kernel_fibre_transitive\": false, \"prescribed_point_lifting\": false, \"rho_onto\": true}, \"point_lifting_without_group_section\": {\"B\": \"parity quotient\", \"Gamma\": \"C2\", \"K\": \"C4\", \"Y\": \"regular C4\", \"homomorphic_section_exists\": false, \"point_lifting\": true}}}\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/check_simultaneous_quotients_controls.py",
+      "exit_code": 0,
+      "stdout": "{\"counts\": {\"actual_finite_homogeneous_axis_extensions\": 1121, \"actual_full_exact_orbital_block_checks\": 1620, \"canonical_tower_atom_block_checks\": 3888, \"canonical_two_stage_quotient_towers\": 432, \"coincident_length_one_paths_merged\": 266, \"entire_finite_axis_projection_checks\": 40, \"entire_finite_named_axis_models\": 5, \"explicit_nonempty_exact_menus\": 84, \"explicit_old_atomic_word_profiles\": 66, \"inconsistent_parallel_atomic_guards\": 1, \"independent_simultaneous_quotient_models\": 54, \"one_original_sort_exact_descent_checks\": 22, \"path_word_equality_contractions\": 1622, \"private_path_expansion_models\": 444, \"projected_simple_base_cycles\": 3089, \"raw_private_simple_cycles\": 4230, \"saturated_quotient_product_checks\": 7057, \"strict_diversity_rank_drops\": 378, \"two_private_paths_one_edge_cycles\": 1141, \"zero_length_path_guards\": 3}, \"limits\": \"Finite diagnostics only: no general homogeneous/CCO/SAP theorem, unrestricted exact descent, global automorphism lift/section or Lean proof is certified.\", \"scope\": \"bounded private-path, actual independent quotient/tower and entire-finite-axis diagnostics\", \"seconds\": 0.783, \"status\": \"PASS\", \"witnesses\": {\"full_binary_group_is_not_an_arbitrary_earlier_subgroup\": {\"all_pair_projections_equal\": true, \"earlier_even_parity_subgroup_size\": 4, \"full_named_binary_group_size\": 8, \"scope\": \"outside a claim of full homogeneous old-source action; guards against substituting an arbitrary subgroup\"}, \"nonprivate_internal_vertex_boundary\": {\"marked_roots_on_cycle\": 1, \"raw_cycle\": [0, 3, 5, 4], \"shared_internal_degree\": 4}, \"pointwise_owner_kernel_is_not_intrinsic_fibre_group\": {\"full_fine_diagonal_group_size\": 2, \"intrinsic_U_fibre_group_size\": 2, \"not_a_counterexample_to_entire_named_axis_projection\": true, \"pointwise_coarse_kernel_size\": 1}, \"unsafe_factorwise_mixed_word_projection\": {\"intermediate_kernel\": \"top on B; identity on A,C\", \"old_endpoint_profile_still_quotient_atomic\": true, \"old_profile_pairs\": 8, \"projected_factor_product_pairs\": 16, \"strict_enlargement\": true}, \"zero_and_inconsistent_path_boundaries\": {\"inconsistent_coincident_length_one_colours_rejected\": true, \"merged_length_one_edge_is_not_a_two_cycle\": true, \"zero_diversity_length_rejected\": true}}}\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/check_finite_fibres_controls.py",
+      "exit_code": 0,
+      "stdout": "{\"counts\": {\"actual_atom_bipartitions\": 22, \"actual_finite_fibre_models\": 8, \"actual_named_pair_orbital_checks\": 22, \"actual_real_fibre_orbit_size_checks\": 2596, \"actual_source_hasse_covers\": 56, \"actual_source_invariant_equivalences\": 40, \"bipartite_atom_group_order_checks\": 27, \"cauchy_finite_group_instances\": 4, \"cauchy_rotation_tuple_checks\": 706, \"empty_base_finite_source_checks\": 8, \"even_fold_or_odd_backtrack_walks\": 155, \"finite_acl_uniform_bound_checks\": 814, \"finite_homogeneity_extension_checks\": 264, \"finite_symmetric_atomic_automorphism_models\": 1099, \"finite_two_group_models\": 8, \"hasse_equivalence_local_index_checks\": 806, \"hasse_subgroup_covers\": 151, \"nonfaithful_coset_action_instances\": 28, \"odd_prime_monochromatic_orbit_checks\": 452, \"palette_binary_code_pairs\": 103, \"pgroup_normalizer_checks\": 39, \"proper_colouring_from_homomorphism_checks\": 1974, \"subgroup_equivalence_correspondences\": 150, \"transitive_coset_action_instances\": 47}, \"limits\": \"Finite diagnostics only: no unbounded high-girth/chromatic theorem, general semantic CCO or finite-group theorem, imaginary inheritance, AP-only Hasse theorem or Lean proof is certified.\", \"scope\": \"bounded finite atom graphs, group actions, real fibres and palette bounds\", \"seconds\": 0.304, \"status\": \"PASS\", \"witnesses\": {\"K3_is_not_homomorphic_CCO\": {\"all_simple_cycles_hom_to_K3\": true, \"chromatic_number\": 4, \"obstruction\": \"Mycielski(C5)\", \"scope\": \"one finite witness; not the general high-girth/high-chromatic theorem\", \"triangle_free\": true, \"vertices\": 11, \"whole_graph_hom_to_K3\": false}, \"no_imaginary_or_AP_only_inheritance_claim\": {\"arbitrary_imaginary_CCO_or_AP_only_Hasse_not_certified\": true, \"realized_real_one_point_fibres_only\": true}, \"nontransitive_cover_has_no_uniform_index\": {\"action\": \"C2 swaps 0,1 and fixes 2\", \"cover\": \"identity < {0,1}|{2}\", \"local_class_indices\": [2, 2, 1], \"scope\": \"does not contradict the transitive theorem\"}, \"odd_group_outside_CCO_has_index_three\": {\"action\": \"regular C3\", \"cover\": \"identity < top\", \"relative_index\": 3, \"scope\": \"outside the finite-2-group and symmetric HOM-CCO hypotheses\"}, \"palette_bound_has_no_transitivity_requirement\": {\"bound\": \"|F| <= 2^d\", \"complete_atomic_pairs_force_injectivity\": true, \"construction\": \"one actual bipartition bit per diversity atom\", \"scope\": \"bounded injection checks; an alternate consequence, not a new source export\"}}}\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/check_point_generated_sap_controls.py",
+      "exit_code": 0,
+      "stdout": "{\"counts\": {\"binary_mixed_generator_boundaries\": 1, \"bounded_matching_span_amalgams\": 5532, \"copy_pair_intersections\": 560, \"empty_base_constant_map_obstructions\": 1, \"finite_orbit_pigeonhole_checks\": 14, \"general_unary_union_checks\": 46916, \"matching_equivariance_checks\": 33778, \"orphan_unique_preimage_checks\": 21}, \"limits\": \"Bounded diagnostics only. Fixed finite matching hosts do not satisfy PGO; checks use only capacity-sufficient spans. Infinite-model explanations are mathematical proof notes, not computational certification. No general SAP, infinite orbit, hidden homogeneity or Lean proof is certified.\", \"seconds\": 0.168, \"status\": \"PASS\", \"witnesses\": {\"empty_base\": \"Infinite pure real set mapping to one hidden singleton: nonempty-base off-closure orbits infinite, but empty-base PGO/SAP fail.\", \"point_generated_vs_hereditary\": \"Infinite pure real set plus interpreted hidden copy, named bijection without inverse: PGO/point-generated SAP hold; orphan hidden base fails hereditary SAP by unique real preimage.\"}}\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/check_ap_character_controls.py",
+      "exit_code": 0,
+      "stdout": "{\"counts\": {\"actual_identity_contractions\": 2373, \"actual_typed_products\": 20, \"diversity_insertions\": 4186, \"fork_totality_checks\": 59, \"marked_completions\": 3305, \"old_partial_graphs\": 761, \"phase_primality_checks\": 25, \"rank_drop_checks\": 10330, \"typed_marked_words\": 1568}, \"limits\": \"Bounded actual finite-set diagnostics, not a general CCO/AP/SAP, source maximal-gate, affine-slice, Fraisse or Lean proof; the finite paired window itself is not claimed to satisfy unbounded CCO.\", \"seconds\": 0.411, \"status\": \"PASS\", \"witnesses\": {\"AP_not_SAP_pairing_span\": {\"base\": [0], \"each_leg_injective\": true, \"forced_cross_leg_collision\": [1, 2], \"left_leg\": [0, 1], \"right_leg\": [0, 2]}, \"fold_created_cycle\": {\"actual_identity_endpoint_witness\": true, \"new_cycle\": [\"mate\", \"far\", \"far\"], \"old_path\": [\"mate\", \"far\", \"far\"]}, \"inactive_bit_boundary\": {\"cross_mask_is_entire_palette\": true, \"inactive_available_bits\": [0]}, \"logical_identity_output\": {\"identity_is_not_a_specified_diversity_edge\": true, \"mate_times_mate\": [\"Id\"]}, \"rank_zero_guard\": \"An active parent must contain a realized phase-one diversity atom, hence k>=1.\"}}\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/check_clone_sap_controls.py",
+      "exit_code": 0,
+      "stdout": "{\"counts\": {\"actual_clone_automorphisms\": 72, \"capacity_sufficient_strong_spans\": 861, \"component_quotient_lifts\": 422, \"directed_noncommuting_boundaries\": 1, \"explicit_component_obstructions\": 2, \"explicit_quotient_cycle_lifts\": 1, \"finite_fibre_SAP_obstructions\": 6, \"kernel_pair_checks\": 120, \"palette_product_join_checks\": 25, \"partial_clone_graphs\": 761, \"partial_isomorphism_tuple_checks\": 157, \"specified_simple_cycles\": 763}, \"limits\": \"No finite host is certified as an unbounded SAP/CCO source; no general clone theorem, arbitrary imaginary transfer, Ramsey theorem or Lean proof is certified.\", \"scope\": \"Bounded actual clone graphs, owner/real spans, partial automorphisms and full palette products.\", \"seconds\": 0.308, \"status\": \"PASS\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/check_orbital_cover_controls.py",
+      "exit_code": 0,
+      "stdout": "{\"counts\": {\"K_constancy_pairs\": 4096, \"actual_distinct_vertex_triangles\": 11342, \"all_rectangle_orientations\": 16, \"complete_nine_colour_triangles\": 729, \"coordinate_partial_diagrams\": 4166, \"explicit_fine_cover_classes\": 16, \"independent_cycle_obstruction_guards\": 2, \"logical_identity_clone_atom_guard\": 1, \"nine_colour_product_entries\": 81, \"nonbox_diagonal_guard\": 1, \"opposite_mark_identity_guards\": 16, \"prescribed_coordinate_markings\": 531}, \"limits\": \"Bounded diagnostics only. No fixed finite host is claimed to have unbounded CCO/SAP; no general parity/Hasse, infinite automorphism-extension theorem or Lean proof is certified.\", \"seconds\": 1.546, \"status\": \"PASS\", \"witnesses\": {\"all_h_rectangle_values_checked\": 16, \"complete_diagram_scope\": \"actual finite-window constraint witnesses\", \"fine_split_scope\": \"explicit compatible p then q only\", \"logical_Id_separate_from_clone_e0e0\": true}}\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/check_sir_controls.py",
+      "exit_code": 0,
+      "stdout": "R01–R05 passed: 1024 selected spans; all 5-point set overlaps in both models; 3464/3578 prescribed-map stationarity cases (360/410 over empty base). No general proof claimed.\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/check_formalization_coordination.py --check",
+      "exit_code": 0,
+      "stdout": "Coordination valid: 46 package envelopes, 1 reserved/current project, phase PREPARATION; no Lean certification.\n",
+      "stderr": ""
+    }
+  ]
+}

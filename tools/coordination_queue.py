@@ -336,6 +336,10 @@ def next_action(registry, policy, state, project, actor=None):
     if (candidates and state.get('integration_lock') is None
             and len(active_packages(state)) < policy['default_active_batches']):
         return {'action': 'claim', 'package_id': candidates[0]}
+    if (state.get('integration_lock') is None and not active_packages(state)
+            and all(state['packages'][i]['state'] == 'ACCEPTED'
+                    for i in policy['released_packages'])):
+        return {'action': 'wait', 'reason': 'All released batches are accepted; prepare the next additive package release.'}
     return {'action': 'wait', 'reason': 'Finish or repair active batches; submitted work still occupies a slot.'}
 
 
