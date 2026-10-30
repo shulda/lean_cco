@@ -96,4 +96,31 @@ theorem coordinate_prescribed (read : ∀ {i j}, S.Atom i j → Option (ZMod 2))
     have he : label x = label y := hl.mpr (by simp only [hr,Option.isSome_some])
     rw [if_pos he,hbits x y h a b ha hr]
 
+/-- An optional unary prescription is retained literally. With no named
+phase, solve gains; with a named phase, solve only the block partition. -/
+theorem coordinate_optional (read : ∀ {i j}, S.Atom i j → Option (ZMod 2))
+    (hsym : ∀ {i j} (a : S.Atom i j), read (S.conv a) = read a)
+    (block : ∀ i, X i → ℕ) (phase : ∀ i, X i → ZMod 2)
+    (hvalue : ∀ {i j} (x : X i) (y : X j) (a : S.Atom i j),
+      S.colour x y = some a → read a =
+        if block i x = block j y then some (phase i x + phase j y) else none)
+    (hcycles : ∀ C : SimpleCycle D, CycleHom C)
+    (prescribed : Option (V → ZMod 2))
+    (hbits : ∀ bits, prescribed = some bits →
+      ∀ x y (h : x ≠ y) (a : S.Atom (D.vertexSort x) (D.vertexSort y)) (b : ZMod 2),
+        D.edge x y h = some a → read a = some b → bits x + bits y = b) :
+    ∃ (label : V → ℕ) (bits : V → ZMod 2),
+      (∀ x y (h : x ≠ y) (a : S.Atom (D.vertexSort x) (D.vertexSort y)),
+        D.edge x y h = some a → read a =
+          if label x = label y then some (bits x + bits y) else none) ∧
+      (∀ fixed, prescribed = some fixed → bits = fixed) := by
+  cases prescribed with
+  | none =>
+    obtain ⟨label,bits,h⟩ := coordinate_solution S D read hsym block phase hvalue hcycles
+    exact ⟨label,bits,h,fun _ he => by cases he⟩
+  | some fixed =>
+    obtain ⟨label,h⟩ := coordinate_prescribed S D read hsym block phase hvalue hcycles
+      fixed (hbits fixed rfl)
+    exact ⟨label,fixed,h,fun _ he => Option.some.inj he⟩
+
 end CCO.OrbitalCover.Example.Potentials
