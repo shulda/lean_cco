@@ -8,7 +8,7 @@ Freeze the entire actual FULL base, lift the chosen complete pair target
 through raw A03, then align that FULL base by original homogeneity.
 No binary homogeneity or full old SAP is a premise. -/
 
-universe u
+universe u v
 namespace CCO.FullPhaseLift.BinarySource
 open Canonical Full
 open APCharacter.SourceAge
@@ -33,8 +33,8 @@ theorem baseFactor_covered {L : Signature} {M : Type u} (U : BoolTable L M)
   exact ⟨ys i,congrFun hys i⟩
 
 theorem base_lowRealizes {L : Signature} {M : Type u} (U : BoolTable L M)
-    (hsym : SameSortSymmetric U) {n m : ℕ} (j : Fin n ↪ Fin m)
-    (p : Fin m ↪ M) (q : Fin n ↪ M)
+    (hsym : SameSortSymmetric U) {n : ℕ} {V : Type v} (j : Fin n ↪ V)
+    (p : V ↪ M) (q : Fin n ↪ M)
     (names : ∀ x y, (pairTable U hsym).colour (q x) (q y) =
       (pairTable U hsym).colour (p (j x)) (p (j y))) :
     LowRealizes U (frozenPartial U j q) p := by
