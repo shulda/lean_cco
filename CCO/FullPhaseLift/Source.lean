@@ -5,7 +5,9 @@ import CCO.FullPhaseLift.Full.ExpansionHomogeneity
 import CCO.FullPhaseLift.Full.DefinitionalReduct
 import CCO.FullPhaseLift.Detours.Export
 import CCO.FullPhaseLift.Tower.Elimination
-import CCO.FullPhaseLift.Equivariance.Marked
+import CCO.FullPhaseLift.Equivariance.Inheritance
+import CCO.FullPhaseLift.Full.OptionalHistory
+import CCO.FullPhaseLift.Boundary.Counterexample
 
 /-! B048's two selected source results. The finite FULL tower constructs
 EVERY successor from its actual full marked Fraisse model, preserves the
@@ -67,6 +69,21 @@ theorem canonical_full_language_elimination {L : Signature} {M : Type v} [Counta
   let originalReduct := (Full.definitionalReduct T).compose reduct
   exact ⟨terminal,history,ht,hbound,hsize,hsap,hcovers,
     originalReduct,originalReduct.transition hom,rfl⟩
+
+/-- The separately conditional A04 route holds along the SAME actual
+ordinary history whenever its original natural-STRICT gate is supplied.
+Canonical separation is derived from naming, not an extra source callback. -/
+theorem canonical_history_optional {L : Signature} {M : Type v} [Countable M]
+    (T : BoolTable L M) (hsym : SameSortSymmetric T)
+    (hom : (toRelational T).Homogeneous)
+    (normal : Full.Shadow.SupportNormal (expand T) (sameSortSymmetric_expand hsym))
+    (sap : AgeSAP (source (expand T) (sameSortSymmetric_expand hsym)))
+    (cco : SemanticCCO.{0,v,v,0} (source (expand T) (sameSortSymmetric_expand hsym)))
+    (optional : Equivariance.NaturalSupportNormal (expand T))
+    {terminal : Tower.CurrentSource M}
+    (history : History Tower.Next (canonicalInitialSource T hsym hom normal sap cco) terminal) :
+    Equivariance.NaturalSupportNormal terminal.table :=
+  (Tower.history_optional history (Full.separatesPoints_expand T) optional).2
 
 end
 end CCO.FullPhaseLift

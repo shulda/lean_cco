@@ -200,3 +200,32 @@ The actual Source consumer is GREEN (2614 jobs). This closes ordinary
 C24/C27–31 assembly; C25's optional actual marked-model restriction and
 C32's actual canonical raw boundary are separate remaining author scopes.
 No final broad build, exact-head CI or acceptance is asserted here.
+
+## Final mathematical assembly
+
+C25's optional actual-model theorem `bde67b8...` and C32's genuine full
+model raw boundary `e96a84cf...` are merged with native histories intact.
+`Full.OptionalHistory` applies the optional natural-STRICT theorem to each
+ACTUAL selected full successor and preserves it along the SAME ordinary
+history. `Full.Separation` derives its structural naming condition from
+the initial canonical expansion and retains those literal guarded old
+names under every unary bit step. `canonical_history_optional` exposes
+this separate conditional source conclusion; ordinary elimination still
+requires no A04. No equivalence to naturally colliding completions and no
+coherent-EPPA claim is made.
+
+Final terminal native `a0f43cc...` additionally reads equal original Y and
+opposite EVERY original O/OddWalk bit on the ACTUAL constructed full
+marking, and exposes the SAME child comparison at every selected node.
+The canonical full source entry and all 34/8/2/6 map rows are now concrete.
+The final Source consumer includes the actual K4³-free counterexample and
+optional inheritance; the root imports every new proof module explicitly,
+including independent diagnostics/support modules, so the whole-project
+build and transitive axiom audit cover all new declarations.
+
+A single final broad owner build follows this assembly. To resolve the
+observed private stale-trace artifacts, only new B048 module traces are
+archived outside Git before that build; accepted source/dependency outputs,
+source code, manifest and toolchain are unchanged. Exact remote head/main
+CI, transitive axiom audit and actual nonauthor approval remain the root
+coordinator's integration gates.
