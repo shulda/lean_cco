@@ -1,6 +1,9 @@
 import CCO.RelationalCompletion.Relational.Source
 import CCO.RelationalCompletion.Atomic.FanDiagram
 import CCO.RelationalCompletion.Atomic.Fullness
+import CCO.RelationalCompletion.Atomic.BoundariesAdapters
+import CCO.RelationalCompletion.Relational.BoundariesAP
+import CCO.RelationalCompletion.Relational.BoundariesImages
 
 /-! The TWO independent B038 source exports. The relational theorem uses
 actual homogeneous age SAP and arbitrary finite-arity relational signatures.

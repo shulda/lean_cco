@@ -1215,3 +1215,5 @@ import CCO.RelationalCompletion.Atomic.BoundariesAdapters
 import CCO.RelationalCompletion.Atomic.BoundariesCycles
 import CCO.RelationalCompletion.Atomic.BoundariesFiniteAge
 import CCO.RelationalCompletion.Atomic.BoundariesTwoColour
+import CCO.RelationalCompletion.Relational.BoundariesAP
+import CCO.RelationalCompletion.Relational.BoundariesImages
