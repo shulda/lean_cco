@@ -92,4 +92,20 @@ theorem exists_many_strong_copies (hom : H.Homogeneous) (sap : H.AgeSAP)
     (hval.symm.trans (hfix j x.val hxA).symm)
   exact ⟨hxA, hyval.symm⟩
 
+/-- C10's explicit unbounded-cardinality witness: the same-base copies
+produce n DISTINCT points in the actual full-Aut stabilizer orbit. -/
+theorem exists_many_distinct_orbit_points (hom : H.Homogeneous) (sap : H.AgeSAP)
+    (A B : H.Piece) (hAB : A.points ⊆ B.points) (x : V)
+    (hx : x ∈ B.points) (hnot : x ∉ A.points) (n : ℕ) :
+    ∃ f : Fin n → V, Function.Injective f ∧
+      ∀ i, f i ∈ orbitOver H.Aut A.points x := by
+  obtain ⟨g, hfix, hinter⟩ := H.exists_same_base_automorphisms
+    (H.freshMotion_of_ageSAP hom sap) A B hAB n
+  refine ⟨fun i => g i • x, ?_, ?_⟩
+  · intro i j he
+    by_contra hne
+    exact hnot (hinter i j hne x hx x hx he)
+  · intro i
+    exact (mem_orbitOver_iff H.Aut).mpr ⟨g i, hfix i, rfl⟩
+
 end CCO.UnaryFreshFrames.Structure
