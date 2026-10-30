@@ -49,6 +49,37 @@ theorem graph_bound_specified_bound {x y : V}
   rw [specifiedWalk_word] at hp
   rwa [PositiveWord.represented_toRawWord S]
 
+/-- Every nonempty genuine simple graph path is the literal specified-path
+object, with the SAME vertex list and the SAME RAW word. -/
+noncomputable def specifiedOfWalk {x y : V} (p : (graph D).Walk x y)
+    (hp : p.IsPath) (hne : x ≠ y) :
+    {t : SpecifiedPath D x y // t.vertexList = p.support ∧
+      PositiveWord.toRawWord S t.word = walkWord D p} := by
+  induction p with
+  | nil => exact False.elim (hne rfl)
+  | @cons x z y h r ih =>
+    by_cases he : z = y
+    · subst y
+      have hr : r.Nil := (hp.of_cons.nil_iff_eq).mpr rfl
+      cases hr
+      refine ⟨SpecifiedPath.edge h.choose (edgeAtom D h) (edgeAtom_spec D h),rfl,rfl⟩
+    · obtain ⟨t,hSupport,hWord⟩ := ih hp.of_cons he
+      refine ⟨SpecifiedPath.cons h.choose hne (edgeAtom D h) (edgeAtom_spec D h) t,?_,?_⟩
+      · change _ :: t.vertexList = _ :: r.support
+        rw [hSupport]
+      · change RawWord.atom _ (PositiveWord.toRawWord S t.word) = RawWord.atom _ (walkWord D r)
+        rw [hWord]
+
+noncomputable def graphToSpecified {x y : V} (p : (graph D).Path x y) (hne : x ≠ y) :
+    SimpleSpecifiedPath D x y :=
+  ⟨(specifiedOfWalk D p.val p.property hne).val,by
+    rw [(specifiedOfWalk D p.val p.property hne).property.1]
+    exact p.property.support_nodup⟩
+
+theorem graphToSpecified_word {x y : V} (p : (graph D).Path x y) (hne : x ≠ y) :
+    PositiveWord.toRawWord S (graphToSpecified D p hne).val.word = walkWord D p.val :=
+  (specifiedOfWalk D p.val p.property hne).property.2
+
  theorem walkWord_append {x y z : V} (p : (graph D).Walk x y)
     (r : (graph D).Walk y z) :
     walkWord D (p.append r) = RawWord.append S (walkWord D p) (walkWord D r) := by
