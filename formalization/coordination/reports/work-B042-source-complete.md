@@ -178,7 +178,7 @@ file breadcrumbs do not invent extra namespaces.
 | C19 | `Group.maximal_normal` |
 | C20 | `Group.maximal_index`, using its actual quotient local-Cauchy proof |
 | C21 | `Group.Correspondence.InvEq.subgroup`, `stabilizer_le` |
-| C22 | `Group.Correspondence.InvEq.projection`, `projection_move`, `ofSubgroup`, `subgroupCorrespondence`, both inverse laws |
+| C22 | `Group.Correspondence.projection`, `projection_move`, `ofSubgroup`, `subgroupCorrespondence`, both inverse laws |
 | C23 | `Group.Correspondence.cosetEquivRelative`, `relative_card_eq_index`, `relativeMove`, `relative_card_uniform` |
 | C24 | `Group.Correspondence.subgroup_cover`, `relative_subgroup_maximal` |
 | C25 | `finite_hasse_index_two` instantiates FULL actual `Aut T` |
@@ -208,7 +208,7 @@ file breadcrumbs do not invent extra namespaces.
 | C49 | `Real.SpokeType`, `spoke_type_count`, original unary/binary language and actual one-point real orbit types |
 | C50 | `Boundaries.InfinitePalette` countable infinite full source and symmetric actual atoms, `singleton_realAcl_infinite`, `every_point_unique_atomic`; `infinite_palette_counterexample` and actual arbitrary-palette diagram completion |
 
-`Group.Correspondence.InvEq` contains `relativeMove`; the other relative
+`Group.Correspondence` contains `relativeMove`; the other relative
 class/coset names above are in `Group.Correspondence`. Selected receiving
 definitions such as `RealHull.Geometry.FibreSet`/`fibreSource` remain in their
 original accepted namespaces.
