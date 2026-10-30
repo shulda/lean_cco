@@ -2,9 +2,9 @@
 
 Actor: `/root/b047_pair_safe_split`, physical `cco-b038`, branch
 `work/B048-full-lift`; effective claim 388, accepted base
-`787dd3b59e0405223a9b5870d562d2861c9f33d4`. Root is the sole public
-publisher and coordination CAS writer. This scoped report does not assert
-completion of the full tower or acceptance of B048.
+`787dd3b59e0405223a9b5870d562d2861c9f33d4`. Root is the sole public publisher and coordination CAS writer. This report
+records the completed mathematical assembly and actual local validation;
+remote CI, nonauthor approval and batch acceptance are separate live gates.
 
 ## Scope and exact source model
 
@@ -120,9 +120,9 @@ Native contributor branches are merged with their histories intact.
 The only merge resolutions kept the strict finite-reindex witness and
 kept the strong worker's completed FullSAP body over an older empty stub.
 No new axioms, `sorry`, contract changes, source-pin changes, remote writes
-or whole-project build occurred in this scoped checkpoint. Final source
-assembly, a single coherent owner root build, exact-head CI/axiom audit
-and nonauthor approval remain required before batch acceptance.
+or whole-project build occurred in this scoped checkpoint. The final source assembly and single coherent owner root build are
+recorded below. Exact-head CI/axiom audit and nonauthor approval remain
+required before batch acceptance.
 
 ## Actual source-isomorphism transport (C26–C29 assembly support)
 
@@ -169,8 +169,8 @@ jobs; SourceTransport 993; SourceSAP 994; SourceInvariants 995 (also in a
 marked inheritance/model and genuine same-old-carrier construction are
 separate preserved terminal contributions; full marked model SAP and
 all full-automorphism orbital readout are separately preserved author
-contributions. Final source assembly still must instantiate the concrete
-prefix and finite history before any completion claim.
+contributions. The final source assembly below instantiates the concrete prefix and
+finite history, rather than leaving their construction as a callback.
 
 ## Principal ordinary source assembly
 
@@ -199,7 +199,8 @@ a selected exact-equivalence sublattice.
 The actual Source consumer is GREEN (2614 jobs). This closes ordinary
 C24/C27–31 assembly; C25's optional actual marked-model restriction and
 C32's actual canonical raw boundary are separate remaining author scopes.
-No final broad build, exact-head CI or acceptance is asserted here.
+That ordinary checkpoint preceded the final broad build recorded below;
+exact-head remote CI and acceptance are not asserted by a local result.
 
 ## Final mathematical assembly
 
@@ -223,9 +224,23 @@ optional inheritance; the root imports every new proof module explicitly,
 including independent diagnostics/support modules, so the whole-project
 build and transitive axiom audit cover all new declarations.
 
-A single final broad owner build follows this assembly. To resolve the
-observed private stale-trace artifacts, only new B048 module traces are
-archived outside Git before that build; accepted source/dependency outputs,
+The single final broad owner build PASSED at mathematical freeze
+`0abb7f015a29cac0eecd1653ff8ff06928c04fd2`: `lake build`, 4293 jobs,
+including the actual CCO root. All 95 new Lean modules (9637 source lines)
+are explicit root imports. The proof-subtree Git object is
+`b2daa55d4fbc5629b62539508558b8cfa51ab4d6`. Log:
+`runtime/b048-owner-root.log`; the process was collected and no build
+remains active. To resolve the observed private stale-trace artifacts,
+91 available new B048 module traces were archived outside Git before
+that build; accepted source/dependency outputs,
 source code, manifest and toolchain are unchanged. Exact remote head/main
 CI, transitive axiom audit and actual nonauthor approval remain the root
 coordinator's integration gates.
+
+Final source consumer passed 2627 jobs; optional SAME-history consumer
+passed 2602. The frozen generator/control diagnostics and base-to-head
+whitespace check also pass. No source/contract/toolchain/manifest/pin
+change, new axiom, `sorry` or unaccepted future batch was introduced.
+Only this final documentation receipt changes after the mathematical
+freeze; the coordinator performs remote publication, exact CI/audit,
+review and acceptance.
