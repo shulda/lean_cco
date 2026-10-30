@@ -1,7 +1,4 @@
 import Mathlib.Data.Fin.Basic
-import Mathlib.Data.Fintype.Fin
-import Mathlib.Tactic.FinCases
-import Lean.Elab.Tactic.Omega
 
 /-! Arbitrary typed diversity palettes. Neither the sorts nor the atoms are
 assumed finite or realized in an ambient structure. -/
