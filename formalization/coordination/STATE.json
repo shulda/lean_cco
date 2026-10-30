@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 371,
+  "revision": 372,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -2997,7 +2997,7 @@
       }
     },
     "B046": {
-      "state": "REVIEWING",
+      "state": "INTEGRATING",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b046_orbital_cover",
@@ -3270,7 +3270,13 @@
       "owner_project_id": null
     }
   },
-  "integration_lock": null,
+  "integration_lock": {
+    "kind": "package",
+    "package_id": "B046",
+    "actor_id": "root",
+    "base_main_sha": "6a3ed6e3a485b3218b5038b38494a7de1f821241",
+    "head_sha": "7dd448bde59c8551f23e650380b11d49635901ee"
+  },
   "history": [
     {
       "revision": 1,
@@ -11688,6 +11694,114 @@
         "head_sha": "7dd448bde59c8551f23e650380b11d49635901ee",
         "summary": "Actual nonauthor personally approved all twenty source modules/2360 lines and genuine Markdown deltas, all40 claims and complete actual source models. All17 public checkpoint trees and ordered parent topology match the native histories. Full exact CI41093400615/job124192818048 proves130tests26454standard-three declarations and complete1467CCO/269EPPA/106Ramsey guards; synthetic tree and actual four-author STATE370 lease verified. All documentation findings closed and no provider remains.",
         "actor_id": "independent_review"
+      }
+    },
+    {
+      "revision": 372,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "start_integration",
+      "package_id": "B046",
+      "details": {
+        "package_id": "B046",
+        "head_sha": "7dd448bde59c8551f23e650380b11d49635901ee",
+        "base_main_sha": "6a3ed6e3a485b3218b5038b38494a7de1f821241",
+        "head_contains_main": true,
+        "ci": {
+          "run_id": 41093400615,
+          "run_attempt": 1,
+          "head_sha": "7dd448bde59c8551f23e650380b11d49635901ee",
+          "conclusion": "success",
+          "axiom_audit": "allowlist",
+          "job_id": 124192818048,
+          "tests": 130,
+          "declarations": 26454,
+          "guards": [
+            {
+              "parts": 1467,
+              "source": 1467
+            },
+            {
+              "parts": 1467,
+              "source": 1467
+            }
+          ],
+          "provider_guards": [
+            {
+              "parts": 269,
+              "source": 269,
+              "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+            },
+            {
+              "parts": 269,
+              "source": 269,
+              "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+            },
+            {
+              "parts": 269,
+              "source": 269,
+              "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+            },
+            {
+              "parts": 269,
+              "source": 269,
+              "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+            }
+          ],
+          "ramsey_guards": [
+            {
+              "parts": 106,
+              "source": 106,
+              "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+            },
+            {
+              "parts": 106,
+              "source": 106,
+              "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+            },
+            {
+              "parts": 106,
+              "source": 106,
+              "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+            },
+            {
+              "parts": 106,
+              "source": 106,
+              "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+            }
+          ],
+          "build_jobs": [
+            1330,
+            1182,
+            4133,
+            4133,
+            6
+          ],
+          "fresh_cco_modules": [
+            "CCO.OrbitalCover.Example.Bits",
+            "CCO.OrbitalCover.Example.Potentials",
+            "CCO.OrbitalCover.Example.Core",
+            "CCO.OrbitalCover.Hasse",
+            "CCO.OrbitalCover.Example.CoordinatePotentials",
+            "CCO.OrbitalCover.Example.Products",
+            "CCO.OrbitalCover.Parity",
+            "CCO.OrbitalCover.Example.Orientation",
+            "CCO.OrbitalCover.Example.CCO",
+            "CCO.OrbitalCover.Example.Prescribed",
+            "CCO.OrbitalCover.Example.Profiles",
+            "CCO.OrbitalCover.Example.Homogeneity",
+            "CCO.OrbitalCover.Example.APObstruction",
+            "CCO.OrbitalCover.Example.Covers",
+            "CCO.OrbitalCover.Example.SAP",
+            "CCO.OrbitalCover.Example.Prefixes",
+            "CCO.OrbitalCover.Example.PrefixCCO",
+            "CCO.OrbitalCover.Example.PrefixSAP",
+            "CCO.OrbitalCover.Example.Model",
+            "CCO.OrbitalCover.Counterexample"
+          ],
+          "url": "https://github.com/shulda/lean_cco/actions/runs/41093400615"
+        },
+        "actor_id": "root"
       }
     }
   ],
