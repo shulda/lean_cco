@@ -78,10 +78,18 @@ Numbers include unchanged dependency jobs; they are not fresh module counts.
 No duplicate broad local test/audit pipeline was run. Exact final whole-batch
 PR/main CI and official transitive allowlist audit remain separate gates.
 
-The completion helper owns actual identity folding, all-cycle preservation,
-finite lexicographic completion and its small-universe consumer. The age
-helper owns real ordinary marked AP/JEP, genuine countable Fraisse construction,
-reasonableness and marked semantic CCO. Root owns independent rank and actual
-old-reduct/source packaging. Their actual providers and finite current-source
-iteration must be bound before a complete submission; this report does not
-turn any generic callback into a completed mathematical export.
+The completion helper has now closed actual identity folding, all-cycle
+preservation, finite lexicographic completion and the small-universe consumer.
+The age helper has closed real ordinary marked AP/JEP, genuine countable
+Fraisse construction, reasonableness and marked semantic CCO. In
+`MarkedSource.completion_property` these generic providers are ACTUALLY bound
+to the source's masks, proved TP calculus and indexed finite seed extension;
+there is no folding, marked-completion or homogeneous-limit callback left.
+`SourceCompletion.actual_finite_interval_marked_completion` exposes this full
+chain directly from a finite relative interval of the original CURRENT source.
+The receiving narrow target passed2475jobs (root2.3seconds).
+
+Root owns independent rank and actual old-reduct/source packaging. The latter
+and its actual finite current-source tower/rank instance remain integration
+work before a complete submission. This scoped report does not turn the
+remaining generic tower-progress premise into a completed C59 export.
