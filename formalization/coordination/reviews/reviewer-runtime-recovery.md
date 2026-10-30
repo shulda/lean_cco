@@ -63,11 +63,53 @@ No source/policy blocker found in this scope. Specifically:
   evidence, refusal of transferred review, same-lock/failure/cancellation,
   strict revision and snapshot checks, and CLI failure/success behavior.
 
-## Decision and remaining evidence
+## Exact CI and actual proposed lock
 
-Source review is complete, with no source/policy finding. This is not yet an
-operational approval. Actual exact-head PR CI41123112887/job124294540633 was
-in progress when this report was first written; I must personally inspect its
-completed logs, final current refs and genuine proposed lock before approval.
-No STATE event may treat this conditional report as final approval. This
-infrastructure review does not approve B048 mathematics.
+I personally fetched completed successful exact-head PR CI41123112887 and its
+actual job124294540633, retrieved the complete 2,933,702-character job log, and
+inspected the checkout, validation, build, audit and cache evidence. Checkout
+was the exact synthetic merge above. All144 tests and the generators/finite
+controls passed; project build and audit each completed4198 jobs. The audit
+checked27280 CCO declarations against only propext/Classical.choice/Quot.sound.
+All three project guards checked1524 actual parts and1524 current source modules;
+all four EPPA guards checked269 modules at exact pin
+`cd358cde844d5419fd43f30c441511927e09142f`, and all four Ramsey guards checked106
+modules at exact subtree`374241ce3751715c90b12c0b071f36026819ad4a`. Existing warm
+caches were reused, zero CCO modules were rebuilt, and there were no error
+annotations. This infrastructure has no Lean change.
+
+Fresh independent GitHub reads confirmed PR63 still OPEN/unmerged at
+`c6b57d0e31e42cf5ce136cbf95cd4d0935cd82d9`, actual main unchanged at787dd3,
+and actual coordination stillbe726f/STATE389 without a lock.
+
+I then personally read the actual offline start data and complete parsed
+proposed STATE390 in `recovery-start-proposal.json` and
+`recovery-lock-proposal.json`. The exact old BOARD/policy snapshot bytes equal
+those at main787dd3. Canonical digests match the complete locked manifest:
+
+| Snapshot | SHA256 |
+|---|---|
+| Old and new unchanged BOARD | `661173fcaa2fcbda1a54f7c8bf484d9b6ce480b8b1b65b4887c0c1942d7bfa8f` |
+| Old policy11 | `b4ee24a10b621f5ce224f218de25bd1f04a8347b2f1e4f6fd6e798b6ddd8282e` |
+| New policy12 | `83860e56213ee023c1fd7df3b5a8194a36342ebffb2b7542c03497f35e986be6` |
+
+The candidate preserves every package record, prior history entry and all other
+STATE fields, leaves policy_revision11 until final promotion, advances revision
+once, and adds only the root-held infrastructure lock and one history event.
+It binds actual PR63/head/main, the exact successful CI, actual authors, both
+new actual identities, unchanged old reviewer and its durable runtime evidence.
+Its bootstrap actor and independence identity are my own actual identity.
+
+## Decision
+
+I, actual non-author `/root/reviewer_recovery_control`, approve exact PR63 head
+`c6b57d0e31e42cf5ce136cbf95cd4d0935cd82d9` and the reviewed actual prospective
+recovery lock. No source, policy or CI blocker remains. I expressly endorse the
+review summary and independence text in the inspected start proposal as my
+actual decision; the earlier conditional report was not an approval.
+
+Before merge I will personally recheck the actual published full STATE390 lock.
+The coordinator must retain the lock until actual resulting-main CI/audit
+passes, then perform the manifest-bound atomic promotion. This exact
+infrastructure approval supplies no B048 mathematical approval and transfers
+none of the unavailable reader's partial work.
