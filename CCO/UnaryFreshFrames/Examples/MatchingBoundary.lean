@@ -56,6 +56,22 @@ theorem projection_onto_noninjective :
   refine ⟨fun q => ⟨real q 0,rfl,rfl⟩,?_,?_,?_,?_,?_,?_⟩
   exacts [real 0 0,real 0 1,rfl,rfl,by simp [real],rfl]
 
+/-- EVERY hidden vertex, including either orphan matching-sort point, has
+an existing named quotient representation with an infinite real fibre. -/
+theorem all_hidden_named_representations (u : Point) (hu : sort u ≠ 0) :
+    ∃ F : Bool, ∃ q : ℕ, ∀ n : ℕ, sort (real q n) = 0 ∧ operation F (real q n) = u := by
+  rcases u with ⟨q,n⟩ | (q | q)
+  · exact False.elim (hu rfl)
+  · exact ⟨false,q,fun _ => ⟨rfl,rfl⟩⟩
+  · exact ⟨true,q,fun _ => ⟨rfl,rfl⟩⟩
+
+theorem named_projection_has_infinite_fibre (F : Bool) (q : ℕ) :
+    (Set.range (real q)).Infinite ∧ ∀ n m, operation F (real q n) = operation F (real q m) := by
+  constructor
+  · exact Set.infinite_range_of_injective (fun _ _ he => congrArg coordinate he)
+  · intro n m
+    cases F <;> rfl
+
 theorem forced_on_actual_projection_fibres (x y : Point) (hx : sort x = 0)
     (hy : sort y = 0) (hp : operation false x = operation false y) :
     operation true x = operation true y := by
@@ -78,6 +94,26 @@ theorem original_real_transitive (q n r m : ℕ) :
   refine ⟨originalAut (wreathAut (Equiv.swap q r) (fun _ => Equiv.swap n m)),?_⟩
   change real ((Equiv.swap q r) q) ((Equiv.swap n m) n) = real r m
   simp
+
+/-- The actual real-base algebraicity premise of RK also holds; the failure
+occurs specifically over hidden quotient parameters, not over real bases. -/
+theorem real_base_acl_eq (D : Set Point) (hD : D.Finite)
+    (hReal : ∀ x ∈ D, sort x = 0) : Acl originalModel.Aut D = originalModel.closure D := by
+  apply Set.Subset.antisymm
+  · intro x hx
+    by_contra hn
+    exact original_real_base_orbits D hD hReal x hn hx
+  · intro x hx
+    apply dcl_subset_acl originalModel.Aut D
+    intro g
+    exact originalModel.closure_fixed g.val g.property x hx
+
+theorem real_base_dcl_eq (D : Set Point) (hD : D.Finite)
+    (hReal : ∀ x ∈ D, sort x = 0) : Dcl originalModel.Aut D = originalModel.closure D := by
+  apply Set.Subset.antisymm
+  · exact (dcl_subset_acl originalModel.Aut D).trans (by rw [real_base_acl_eq D hD hReal])
+  · intro x hx g
+    exact originalModel.closure_fixed g.val g.property x hx
 
 /-- A compact actual witness for the first C49 mechanism. Countability,
 finite named signature, homogeneity, local finiteness and real-base orbit
