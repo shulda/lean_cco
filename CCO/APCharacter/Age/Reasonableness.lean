@@ -28,7 +28,7 @@ theorem legal_of_names {A : Type} {p q : A → Sigma X} {bits : A → Bit}
   constructor
   · intro x
     exact Eq.mpr (congrArg (fun i => M.validBit i (bits x))
-      (congrArg Sigma.fst (h x x))) (hp.1 x)
+      (congrArg (fun z : Colour S => z.1) (h x x))) (hp.1 x)
   · intro x y
     exact Eq.mpr (congrArg (fun z : Colour S => M.allowed z.2.2 (bits x) (bits y))
       (h x y)) (hp.2 x y)
