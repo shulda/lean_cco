@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 296,
+  "revision": 297,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -1811,7 +1811,7 @@
       }
     },
     "B036": {
-      "state": "REVIEWING",
+      "state": "INTEGRATING",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b036_counterexample",
@@ -1898,7 +1898,13 @@
       "owner_project_id": null
     }
   },
-  "integration_lock": null,
+  "integration_lock": {
+    "kind": "package",
+    "package_id": "B036",
+    "actor_id": "root",
+    "base_main_sha": "096e50a64875ff2e68e5aa5340137c5effe9fb88",
+    "head_sha": "2709a2b9292d8d1bbb08bdc0b6e401efe4bc4d70"
+  },
   "history": [
     {
       "revision": 1,
@@ -7642,6 +7648,26 @@
         "package_id": "B036",
         "head_sha": "2709a2b9292d8d1bbb08bdc0b6e401efe4bc4d70",
         "summary": "Actual stable nonauthor /root/independent_review approves exact PR50 2709a2b9292d8d1bbb08bdc0b6e401efe4bc4d70/tree4a7f8dc after ONE complete 53-module/4915-line/55claim/12definition/six-export actual source/provider/consumer read and final two-MD delta. Genuine arbitrary-signature normalization, actual MI quotient/chart bridge, full-R extra-function pointed reset with all-template coloring, whole-base ordered-SAP freshness, actual A14 pullbacks/finite towers and all-host/all-order C54 are faithful; no mathematical blocker or hidden principal callback. Personally inspected actual FULL exact CI41020603290/job123946802287 SUCCESS121tests/1330provider+3717CCO+3717audit+6tool/20836standard-three declarations/1175CURRENT CCO source+actualparts PREPOST/269exact provider fourguards. All53newmodules plusCCO root actuallybuilt, zero provider rebuilt. All27 public source trees/trailers/ordered history, source pins/contracts/current refs and genuine authorship including recovery verified. No source delta since whole PASS. Report-onlycommit8216e515e554ad4f88d75839c8de02de30d209fc."
+      }
+    },
+    {
+      "revision": 297,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "start_integration",
+      "package_id": "B036",
+      "details": {
+        "actor_id": "root",
+        "package_id": "B036",
+        "head_sha": "2709a2b9292d8d1bbb08bdc0b6e401efe4bc4d70",
+        "base_main_sha": "096e50a64875ff2e68e5aa5340137c5effe9fb88",
+        "head_contains_main": true,
+        "ci": {
+          "run_id": 41020603290,
+          "head_sha": "2709a2b9292d8d1bbb08bdc0b6e401efe4bc4d70",
+          "conclusion": "success",
+          "axiom_audit": "allowlist"
+        }
       }
     }
   ],
