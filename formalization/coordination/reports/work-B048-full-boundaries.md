@@ -94,6 +94,35 @@ every induced finite object is valid, and the actual model is K₄³-free.
 No model or completion callback is used. This includes actual complete
 three-point hyperedges and empty-higher objects of every finite size.
 
-The literal canonical raw-interface failure adapter and explicit finite
-pair-age comparison remain, beyond the compiled finite obstruction and
-actual pure-set pair SAP/CCO source.
+`Boundary.Profiles` proves every actual old unary/two-point profile is
+empty, including all repeated ternary arguments. Its exact canonical
+low-truth transport retains all added qf names and the distinctness guard.
+The only increased recursion limit is local to finite-profile elaboration;
+all proofs remain kernel checked.
+
+`Boundary.Counterexample` is now complete and compiled (1,219 jobs).
+The SAME actual countable infinite homogeneous full model has genuine
+canonical pair SAP and semantic CCO, using the proved one-colour source
+factory. Four actual complete three-point hyperedges form induced frozen
+factors in its canonical full expansion. A genuine strict four-point
+empty-higher age object realizes their entire low signed pair target.
+Every proposed full completion would realize a K₄³, contradicting the
+model's proved finite age. Thus the internal strict gate fails, and the
+proved complete-certified-shadow specialization transfers this to failure
+of the EXACT raw `Full.Shadow.SupportNormal` interface. This is an actual
+model outside the A03 hypothesis, not a finite diagnostic or a supplied
+model/completion premise.
+
+`OneColour` was independently implemented by the strong/detour author in
+its own disjoint file and merged with original native history. It proves
+actual whole-age SAP and every finite partial diagram's injective
+realization for any infinite single-sort/single-diversity-colour source.
+
+The root also supplied `Canonical.Homogeneity`: native first-order full
+ultrahomogeneity gives the custom FULL table property, and a true FULL
+isomorphism transports it across carrier universes through explicit
+finite-source `ULift` recoding. Narrow target passed 1,139 jobs. Every old
+arity and nullary is retained. The tuple author subsequently closes the
+actual optional marked-model inheritance in its separately authored
+`Equivariance.Inheritance`; source assembly states the supplied-natural-
+STRICT-target restriction explicitly.
