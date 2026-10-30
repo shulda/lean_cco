@@ -12,27 +12,6 @@ theorem diagonal_cover : diagonal ⋖ coarse :=
   covBy_of_relativeIndex_two source homogeneous diagonal coarse
     diagonal_le_coarse default (diagonal_index_two default)
 
-def diagonalPalette : Set Colour := {a | ∃ b : Bit, a=(some b,some b)}
-
-/-- C27's concrete obstruction: the coarse diagonal palette cannot be
-a Cartesian box, independently of any reachable-profile theorem. -/
-theorem diagonal_not_cartesian (A B : Set CoordColour) :
-    diagonalPalette ≠ Set.prod A B := by
-  intro he
-  have h00 : (some (0:Bit),some (0:Bit)) ∈ Set.prod A B := by
-    rw [←he]
-    exact ⟨0,rfl⟩
-  have h11 : (some (1:Bit),some (1:Bit)) ∈ Set.prod A B := by
-    rw [←he]
-    exact ⟨1,rfl⟩
-  have h01 : (some (0:Bit),some (1:Bit)) ∈ diagonalPalette := by
-    rw [he]
-    exact ⟨h00.1,h11.2⟩
-  obtain ⟨b,hb⟩ := h01
-  have h0 : (0:Bit)=b := Option.some.inj (congrArg Prod.fst hb)
-  have h1 : (1:Bit)=b := Option.some.inj (congrArg Prod.snd hb)
-  exact zero_ne_one (h0.trans h1.symm)
-
 theorem owner_pattern (x y : Point) :
     ownerSetoid x y ↔ pattern x y=(some 0,some 0) := by
   simp [owner_iff,pattern,coordinateColour_some,CharTwo.add_eq_zero,
