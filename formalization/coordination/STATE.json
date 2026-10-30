@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 283,
+  "revision": 284,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -1662,7 +1662,7 @@
       }
     },
     "B030": {
-      "state": "REVIEWING",
+      "state": "INTEGRATING",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b030_factors",
@@ -1808,7 +1808,13 @@
       "owner_project_id": null
     }
   },
-  "integration_lock": null,
+  "integration_lock": {
+    "kind": "package",
+    "package_id": "B030",
+    "actor_id": "root",
+    "base_main_sha": "0841c3c42cb0d1b147d79a269d5c4e374c52ae45",
+    "head_sha": "75ab2bfdfb97cb7c75abaaca5507db185bffe35e"
+  },
   "history": [
     {
       "revision": 1,
@@ -7269,6 +7275,26 @@
         "package_id": "B030",
         "head_sha": "75ab2bfdfb97cb7c75abaaca5507db185bffe35e",
         "summary": "Actual nonauthor /root/independent_review approves exact75ab2bfd/treed678cc7b after ONE42module/4068line whole-source read covering42claims/13defs/fiveexports/threeequations/eighttasks and actual SAMEclosed/transitiveconsumer. Actualold-G strictdiversityrank inclId/Top/zero/finite, ONEwholebase fullpaletteavoidance NOCCO, exhaustivegreatestfinite/ALLdirections, B028TopbranchfineLowerONLY, strictmasterM1–M4/fullnativeowners, SINGLETONrealcoverage/WHOLEpackettransport, ALLcompatibleoriginalW/ENTIREacl target and ONEoriginala+ONEgamma checked. NonrelativeFULLmatrixfinite restoration preservesplain/closedseparation; allsourcePcl→O→U inclId and arbitraryatomuniverse globalexports have NOunprovedLower/Stage/master/decoder/HKNcallback. All42blobs4137unchanged through accepted084main/root1122closure; final273MD and ONLYone-line1079imports/1080modulesrepair read andfindingclosed. PersonallyfetchedactualPR/compare32ahead0behind/synthetic2403db86d62a14c6441aaef7ec65c0b324799665 exactd678treeordered0841+75ab and FULLCI41006413359/job123902212585 SUCCESS121/1330+3663+3663/18703standard3/1122CURRENTsource+partsPREPOST/269exactcd358fourguards. ALL42newCCOBuilt/nootherCCO/providerBuilt. Report-only8df4a6387b7d8a21f151ad9a4d8f34738b20992b; liveSUBMITTED281andallfouractualauthors personallyverified."
+      }
+    },
+    {
+      "revision": 284,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "start_integration",
+      "package_id": "B030",
+      "details": {
+        "actor_id": "root",
+        "package_id": "B030",
+        "head_sha": "75ab2bfdfb97cb7c75abaaca5507db185bffe35e",
+        "base_main_sha": "0841c3c42cb0d1b147d79a269d5c4e374c52ae45",
+        "head_contains_main": true,
+        "ci": {
+          "run_id": 41006413359,
+          "head_sha": "75ab2bfdfb97cb7c75abaaca5507db185bffe35e",
+          "conclusion": "success",
+          "axiom_audit": "allowlist"
+        }
       }
     }
   ],
