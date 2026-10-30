@@ -2,10 +2,14 @@
 
 ## Disposition and independence
 
-**LOCAL MATHEMATICAL PASS; formal exact-public approval pending.** I found
-no mathematical blocker after one complete read of the final 23-module
-implementation, including `BoundariesImages`. This is not approval of a
-future public head, CI run, main merge or ACCEPTED event.
+**APPROVE exact PR52 head
+`f81cbb4b8858d282898565641bedbfdc4576ee1b`, tree
+`51e735770190efb95ad71affb6d44420e4e079d4`.** The single complete
+23-module mathematical read, final documents and exact namespace repair,
+accepted-main/root union and actual exact public CI all pass. No
+substantive blocker remains. The normal formal review events, sole
+lock, expected-head merge and actual resulting-main CI/audit remain
+the coordinator's obligations; this is not an ACCEPTED event.
 
 Actual reviewer: `/root/independent_review`, registered actor
 `independent_review`. I authored/designed/repaired none of this complete
@@ -71,7 +75,7 @@ other's hypotheses. All principal clone, counting, fan and reflection
 providers are proved; no opaque stronger provider or desired-conclusion
 premise was found.
 
-## Remaining gates
+## Documentation finding and accepted-main integration
 
 The author documentation checkpoint
 `895ac6ce3444517af455688f95ca0a69a95d1b28` differs from the whole mathematical
@@ -91,12 +95,90 @@ and they now name the correct namespace. **Finding closed; final
 documentation PASS.** No Lean, hypothesis or provider changed, and
 no mathematical reread or validation rerun was performed.
 
-This review trusts author compilation as instructed and does not invent
-owner full-pipeline results or external CI evidence. The author is to
-merge the actually accepted B037 main through the additive root union,
-run its ONE complete receiving pipeline, and add its final documents.
-I will read only those actual deltas and bind the final public head/tree,
-completed exact PR logs, actual source/artifact/provider guards, official
-allowlist audit and live authorship/review lease before formal approval.
-The coordinator retains CAS, the sole integration lock, expected-head
-merge and actual resulting-main CI/audit before ACCEPTED.
+### Accepted-main union — PASS
+
+I checked only the actual accepted-base/root delta at
+`1817c0a68098a7b05c8f9d5eea54f3f32e2abdb3`, tree
+`51e735770190efb95ad71affb6d44420e4e079d4`, with literal parents repaired
+B038 `065425b40c9462b0babcdb989c37db71b379ae46` then accepted B037 main
+`b27944b1d8f7436c44d83a6e155bae19a0cd25e7`.
+All 23 B038 source bodies and its corrected documents are byte-identical;
+every other non-root file is the exact union with the accepted main.
+No extra path or altered accepted proof/provider/configuration appeared.
+The ENTIRE accepted `CCO.lean` is a literal byte prefix, followed by
+exactly those 23 imports once: 1251 unique child imports, 1252 modules
+including the root. The accepted main is an actual Git ancestor.
+
+I independently verified actual main's public ref and push run
+`41035271291`: completed SUCCESS at exact `b27944b...`. I parsed public
+STATE309 at `8edc3b2393f6e3d1c86b3cf2bcf25527ac3881de`: B037 is actually
+ACCEPTED at that main with allowlisted successful main CI, B038 remains
+IN_PROGRESS with all five actual authors retained, the original source
+pin is unchanged and the integration lock is null. The inherited B037
+content is precisely the already reviewed and accepted provider/source;
+I did not reread it or rerun any build/audit/test.
+
+## Exact public CI and provenance — PASS
+
+I personally fetched actual PR52/head/run/job metadata, the FULL decoded
+job log (2,461,752 characters), synthetic Git object, public comparison,
+current main and live STATE. Public head `f81cbb4...` has precisely the
+reviewed union tree above and retains actual accepted B037 main as its
+second parent. The PR is open, ready and mergeable. Actual run
+`41038550994`, job `124005326148`, is completed SUCCESS at that exact head;
+every listed job step succeeded. The actual checkout is synthetic
+`045c43e2a4272eeea7c6a389f3adf169217b01b5`, with the SAME tree and ordered
+parents accepted `b27944b1d8f7436c44d83a6e155bae19a0cd25e7` then exact
+approved `f81cbb4b8858d282898565641bedbfdc4576ee1b`.
+
+The actual FULL logs establish:
+
+- **130 Python tests passed**; actual build counts 1330 EPPA facade,
+  1182 Ramsey facade, 3914 project, 3914 audit replay and six audit-tool jobs.
+- Both complete pre-audit and post-audit checks verify **1252 CURRENT
+  CCO source modules AND 1252 actual olean parts**. All 23 new
+  RelationalCompletion modules plus the changed CCO root were actually
+  Built; no accepted CCO child was rebuilt.
+- All four EPPA checks verify **269 actual parts AND 269 current source
+  modules** at unchanged exact pin
+  `cd358cde844d5419fd43f30c441511927e09142f`.
+- All four Ramsey checks verify **106 actual parts AND 106 current source
+  modules** at unchanged subtree
+  `374241ce3751715c90b12c0b071f36026819ad4a`.
+  Neither provider rebuilt any module: the validated dependency cache worked.
+- The pinned official `axiom-audit` v0.1.2 at
+  `46024e005996495c65ef609368e11ab39c4222e3` audited **22119 CCO
+  declarations**, all within `[propext, Classical.choice, Quot.sound]`.
+  Its own project replay and the final source/artifact guards succeeded.
+- The prebuild guard correctly rejected only the old CCO root import
+  header, invalidating one module/eight generated outputs. The subsequent
+  ordinary project build and complete guards passed; no full-CCO fallback
+  was executed. This is an expected changed-root repair, not a source change.
+
+The owner's separate ONE receiving pipeline is reported as 85 successful
+steps in 84.33 seconds with the same 3914/22119/1252/269/106 checks,
+130 tests, 34 module checks, 42 envelopes and 34 controls. I trusted its
+compilation as instructed and did not rerun that pipeline; the public
+evidence above was personally read independently.
+
+The actual GitHub comparison is ahead by 29 commits with merge base the
+current accepted main. Every public checkpoint has the same tree as its
+actual `Local-source-commit`: all 29 were compared. The ordered B038
+source history starts at its original accepted `8a8e2f9...` parent and
+preserves the final real accepted-B037 merge; accepted B037 history is
+not relabelled as new B038 implementation.
+
+I independently parsed public STATE310 at
+`5b237b2cbaab6f82222f8b038dbf09e132c0ab41`: B038 is SUBMITTED at the exact
+head/run/audit, all five actual authors remain, B037 is ACCEPTED and
+the integration lock is null. My actual identity is absent from the
+authors. Current main remains the genuinely accepted `b27944b...` with
+successful actual push CI `41035271291`; the frozen source pin is unchanged.
+This report supplies the substantive approval, without pretending the
+coordinator's subsequent formal lease/approval events or main acceptance
+already exist. CAS, the sole lock, expected-head merge and actual
+resulting-main CI/audit remain mandatory before ACCEPTED.
+
+External anchors: [PR52](https://github.com/shulda/lean_cco/pull/52),
+[exact successful run](https://github.com/shulda/lean_cco/actions/runs/41038550994),
+[synthetic tree/parents](https://github.com/shulda/lean_cco/commit/045c43e2a4272eeea7c6a389f3adf169217b01b5).
