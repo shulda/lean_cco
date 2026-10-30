@@ -96,6 +96,23 @@ theorem length_le_palette (C : InvariantChain S m) (H : HomogeneousSource S G) :
 
 end InvariantChain
 
+/-- The source chain route combines the actual telescoping size with its
+independently proved named-colour step bound. -/
+theorem power_bound_of_chain {m : ℕ} (C : InvariantChain S m)
+    (H : HomogeneousSource S G) (hsize : Nat.card M = 2 ^ m) :
+    Nat.card M = 2 ^ m ∧ m ≤ Nat.card (Atom S) :=
+  ⟨hsize,C.length_le_palette H⟩
+
+/-- C43: the independent bit-code cardinal bound controls the exponent
+without any homogeneity or named-orbital recognition hypothesis. -/
+theorem exponent_le_of_card_bound {F : Type*} {m d : ℕ}
+    (hsize : Nat.card F = 2 ^ m) (hbound : Nat.card F ≤ 2 ^ d) : m ≤ d := by
+  by_contra hnot
+  have hp : 2 ^ d < 2 ^ m := Nat.pow_lt_pow_right (by decide : 1 < 2)
+    (Nat.lt_of_not_ge hnot)
+  rw [hsize] at hbound
+  exact Nat.not_le_of_gt hp hbound
+
 theorem fibre_palette_card_le [DecidableEq M] (A : Finset M) (q : ↥A → Atom S) :
     Nat.card (InducedAtom S () (FibreSet S A q)) ≤ Nat.card (Atom S) := by
   letI := S.finiteAtom () ()

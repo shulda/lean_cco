@@ -32,6 +32,24 @@ def originalAutEquiv (g : Aut S) : M ≃[originalLanguage S] M where
     change (col S (g • xs 0) (g • xs 1) = some a) ↔ col S (xs 0) (xs 1) = some a
     rw [show col S (g • xs 0) (g • xs 1) = col S (xs 0) (xs 1) from g.property _ _]
 
+/-- Conversely, every automorphism of that literal first-order language
+preserves the original optional colour. Thus this is the FULL original
+automorphism group in either presentation. -/
+theorem languageAut_colour (g : M ≃[originalLanguage S] M) (x y : M) :
+    col S (g x) (g y) = col S x y := by
+  cases hc : col S x y with
+  | none =>
+    have he : x = y := (col_none S x y).mp hc
+    subst y
+    exact (col_none S (g x) (g x)).mpr rfl
+  | some a =>
+    have hh := g.map_rel (⟨a,rfl⟩ : (originalLanguage S).Relations 2) ![x,y]
+    change (col S (g x) (g y) = some a) ↔ col S x y = some a at hh
+    exact hh.mpr hc
+
+def languageAutToOriginal (g : M ≃[originalLanguage S] M) : Aut S :=
+  ⟨g.toEquiv,languageAut_colour S g⟩
+
 def relationNames : (Σ n, (originalLanguage S).Relations n) ≃ Atom S where
   toFun p := p.2.val
   invFun a := ⟨2,⟨a,rfl⟩⟩
