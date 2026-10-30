@@ -1,4 +1,12 @@
-# Round 21 — B047 implemented; exact review and CI pending
+# Round 21 — B047 C41 repair before submission
+
+The whole non-author mathematical read found a narrow missing source-facing linkage for C41. The existing readout exposes orientation on `P.atSort` and its reached kernel, but the output API does not yet retain the equation linking the selected phase odd arrow to the originally selected maximal parity gate. Completion therefore remains OPEN: prove equal bits on original Y and opposite bits on every original O pair at the SAME selected split. Owner and terminal author are repairing this additively; accepted APIs and mathematical contracts remain unchanged. The reviewer has not approved and contributes no repair code or design.
+
+The preserved first candidate public head 69cc4356c4bdda709800fa5674584c5e3460cd2c passed PR CI 41102926191 / job 124224161506, attempt 1: 130 tests; 27,226 declarations with only propext, Classical.choice, Quot.sound; both project guards 1,524/1,524; complete provider guards at the exact 269/106 pins. Its 31 new modules compiled in the actual whole build. Green does not discharge the missing C41 output. A repaired head will require its own successful CI/audit and independent exact-delta control. No submission, review lease, integration lock or acceptance has been asserted; STATE remains 381 with 46 accepted records and B047 as the sole active batch.
+
+B048 source/API reading is preparation only; no B048 claim, branch, implementation or build. Its dependency B047 is still unaccepted.
+
+## Preserved initial candidate checkpoint (superseded completion assertion)
 
 Accepted main remains bfbf8cf83d590d8d13499ab0e33aa8ea6445eb97 (main CI41097006356 successful). Full live STATE378 was read at exact coordination6d36768209fd8f3017dea94af7743c06a27931f8 and matched the local checkpoint. All nine B047 dependency main runs were freshly checked successful at their actual accepted commits, with Git ancestry into current main. Effective claim379 owns B047; authorship380/381 retains every actual contributor. There are46 accepted records and only ONE active batch. B048 depends on actual B047 acceptance and has not been claimed or implemented.
 
