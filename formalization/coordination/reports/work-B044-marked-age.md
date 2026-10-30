@@ -8,7 +8,9 @@ B044 claim base `e77b672fd17704e92d39786cbb8818adb36a9fcb`.
 
 Source contracts and mathematical pin remain unchanged:
 `490c3f36d85db5a0b3ced0598e6c431825254ec5`, B044 `ap_character`, N06.
-The helper contains ten public Age modules and 987 Lean lines. The
+The core helper checkpoint contains ten public Age modules and 987 Lean lines.
+The later `Age/Category.lean` supplies the concrete induced-embedding
+category used by the separately recorded current-tower stream. The
 literal `MaskData` interface is imported from the separately authored
 identity/completion stream (original checkpoint `22120cd`).
 
