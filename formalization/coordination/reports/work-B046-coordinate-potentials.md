@@ -15,6 +15,10 @@ claim is made by this scoped report.
 
 ## Source-to-Lean map
 
+Names prefixed `Example.` denote the actual namespace
+`CCO.OrbitalCover.Example`; Products and Profiles are module files, not
+additional declaration namespaces.
+
 - `Example.Potentials.signedGraph` keeps only specified edges carrying an
   actual optional sign. Unsigned `n` edges impose no phase constraint.
 - `signed_cycle_readout` restricts original source `CycleHom` witnesses to
@@ -54,7 +58,7 @@ unary/edge legality, not an unproved global completion premise.
 
 ## Actual STRONG table and positive-word profiles
 
-`Example.Products.coordTriangle` is the literal one-coordinate table:
+`Example.coordTriangle` is the literal one-coordinate table:
 e_i * e_j has output e_(i+j), e_i*n and n*e_i have output n, while n*n
 permits all three colours. `coordinate_triple` reads any actual coordinate
 triple. Conversely `coordTriangle_realized` explicitly constructs witnesses
@@ -62,7 +66,7 @@ for every permitted entry. `triangle_iff` combines the two independent
 coordinate triples and assigns clone indices 0,1,2; it proves exactly the
 actual `source.Triangle`, with three distinct real vertices. This is C16.
 
-`Example.Profiles.product_boxes` proves factorization of the actual STRONG
+`Example.product_boxes` proves factorization of the actual STRONG
 product. `CoordProfile` has three singleton forms and Top, with its step
 operation proved equal to that actual product table. `wordFactors` folds a
 literal typed `PositiveWord source i j`, and `positive_profile_box` proves
@@ -79,7 +83,7 @@ families). These are C24; neither is used as a premise of semanticCCO.
 `diagonal_not_positive_profile` separates it from every actual positive
 STRONG word profile (C27).
 
-The targeted `Example.Profiles` build passed 1214 jobs after the added
+The targeted `CCO.OrbitalCover.Example.Profiles` build passed 1214 jobs after the added
 actual-table/profile proofs. Only the changed leaf modules were elaborated.
 
 ## Validation and provenance
