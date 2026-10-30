@@ -1,4 +1,5 @@
 import CCO.RelationalCompletion.Atomic.Fan
+import Mathlib.Tactic.Tauto
 
 /-! The literal partial star/path fan. Unlike the complete restriction of A,
 it records no other chords, so a realization may identify nonadjacent points. -/

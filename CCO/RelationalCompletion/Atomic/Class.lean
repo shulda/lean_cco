@@ -1,4 +1,7 @@
 import CCO.RelationalCompletion.Atomic.Palette
+import Mathlib.Data.Fintype.Fin
+import Mathlib.Tactic.FinCases
+import Lean.Elab.Tactic.Omega
 
 /-! Hereditary atomic classes, ordinary amalgamation, and the exact locally
 allowed semantic homomorphic CCO input. Off-base coincidences are permitted. -/
