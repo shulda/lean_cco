@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 381,
+  "revision": 382,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -3688,7 +3688,115 @@
           "CCO.CloneSAP.Source"
         ],
         "url": "https://github.com/shulda/lean_cco/actions/runs/41097006356"
-      }
+      },
+      "head_sha": "69cc4356c4bdda709800fa5674584c5e3460cd2c",
+      "pr_number": 62,
+      "observed_ci": {
+        "run_id": 41102926191,
+        "run_attempt": 1,
+        "head_sha": "69cc4356c4bdda709800fa5674584c5e3460cd2c",
+        "conclusion": "success",
+        "axiom_audit": "allowlist",
+        "job_id": 124224161506,
+        "tests": 130,
+        "declarations": 27226,
+        "guards": [
+          {
+            "parts": 1524,
+            "source": 1524
+          },
+          {
+            "parts": 1524,
+            "source": 1524
+          }
+        ],
+        "provider_guards": [
+          {
+            "parts": 269,
+            "source": 269,
+            "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+          },
+          {
+            "parts": 269,
+            "source": 269,
+            "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+          },
+          {
+            "parts": 269,
+            "source": 269,
+            "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+          },
+          {
+            "parts": 269,
+            "source": 269,
+            "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+          }
+        ],
+        "ramsey_guards": [
+          {
+            "parts": 106,
+            "source": 106,
+            "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+          },
+          {
+            "parts": 106,
+            "source": 106,
+            "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+          },
+          {
+            "parts": 106,
+            "source": 106,
+            "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+          },
+          {
+            "parts": 106,
+            "source": 106,
+            "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+          }
+        ],
+        "build_jobs": [
+          1330,
+          1182,
+          4198,
+          4198,
+          6
+        ],
+        "fresh_cco_modules": [
+          "CCO.PairSafeSplit.Full.Closure",
+          "CCO.PairSafeSplit.Infinity.TypeFibres",
+          "CCO.PairSafeSplit.Full.Factorisation",
+          "CCO.PairSafeSplit.SAP.Gates",
+          "CCO.PairSafeSplit.StrongSaturation",
+          "CCO.PairSafeSplit.Terminal.OrbitCriterion",
+          "CCO.PairSafeSplit.Strong.WordFamily",
+          "CCO.PairSafeSplit.Strong.NoOrthogonal",
+          "CCO.PairSafeSplit.Infinity.MarkedFibres",
+          "CCO.PairSafeSplit.Full.EPP",
+          "CCO.PairSafeSplit.Strong.ExtraIdentity",
+          "CCO.PairSafeSplit.Full.Gates",
+          "CCO.PairSafeSplit.SAP.Markings",
+          "CCO.PairSafeSplit.Infinity.OldWitnesses",
+          "CCO.PairSafeSplit.Infinity.Definability",
+          "CCO.PairSafeSplit.Strong.Primality",
+          "CCO.PairSafeSplit.Terminal.TypeReflection",
+          "CCO.PairSafeSplit.Terminal.Current",
+          "CCO.PairSafeSplit.Strong.Realization",
+          "CCO.PairSafeSplit.SAP.Source",
+          "CCO.PairSafeSplit.Terminal.Readout",
+          "CCO.PairSafeSplit.Strong.RealizationAtoms",
+          "CCO.PairSafeSplit.Strong.RealizationTriangles",
+          "CCO.PairSafeSplit.Terminal.Successor",
+          "CCO.PairSafeSplit.Strong.PathSyntax",
+          "CCO.PairSafeSplit.Terminal.Elimination",
+          "CCO.PairSafeSplit.Strong.NormalForm",
+          "CCO.PairSafeSplit.Strong.FullClass",
+          "CCO.PairSafeSplit.Strong.Calculus",
+          "CCO.PairSafeSplit.Strong.Sufficiency",
+          "CCO.PairSafeSplit.Source"
+        ],
+        "url": "https://github.com/shulda/lean_cco/actions/runs/41102926191"
+      },
+      "checkpoint_revision": 382
     },
     "B048": {
       "state": "AVAILABLE",
@@ -12841,6 +12949,124 @@
         "author_actor_ids": [
           "/root/b047_strong_phase/tuple_readout"
         ],
+        "actor_id": "root"
+      }
+    },
+    {
+      "revision": 382,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "checkpoint",
+      "package_id": "B047",
+      "details": {
+        "package_id": "B047",
+        "head_sha": "69cc4356c4bdda709800fa5674584c5e3460cd2c",
+        "pr_number": 62,
+        "observed_ci": {
+          "run_id": 41102926191,
+          "run_attempt": 1,
+          "head_sha": "69cc4356c4bdda709800fa5674584c5e3460cd2c",
+          "conclusion": "success",
+          "axiom_audit": "allowlist",
+          "job_id": 124224161506,
+          "tests": 130,
+          "declarations": 27226,
+          "guards": [
+            {
+              "parts": 1524,
+              "source": 1524
+            },
+            {
+              "parts": 1524,
+              "source": 1524
+            }
+          ],
+          "provider_guards": [
+            {
+              "parts": 269,
+              "source": 269,
+              "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+            },
+            {
+              "parts": 269,
+              "source": 269,
+              "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+            },
+            {
+              "parts": 269,
+              "source": 269,
+              "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+            },
+            {
+              "parts": 269,
+              "source": 269,
+              "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+            }
+          ],
+          "ramsey_guards": [
+            {
+              "parts": 106,
+              "source": 106,
+              "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+            },
+            {
+              "parts": 106,
+              "source": 106,
+              "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+            },
+            {
+              "parts": 106,
+              "source": 106,
+              "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+            },
+            {
+              "parts": 106,
+              "source": 106,
+              "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+            }
+          ],
+          "build_jobs": [
+            1330,
+            1182,
+            4198,
+            4198,
+            6
+          ],
+          "fresh_cco_modules": [
+            "CCO.PairSafeSplit.Full.Closure",
+            "CCO.PairSafeSplit.Infinity.TypeFibres",
+            "CCO.PairSafeSplit.Full.Factorisation",
+            "CCO.PairSafeSplit.SAP.Gates",
+            "CCO.PairSafeSplit.StrongSaturation",
+            "CCO.PairSafeSplit.Terminal.OrbitCriterion",
+            "CCO.PairSafeSplit.Strong.WordFamily",
+            "CCO.PairSafeSplit.Strong.NoOrthogonal",
+            "CCO.PairSafeSplit.Infinity.MarkedFibres",
+            "CCO.PairSafeSplit.Full.EPP",
+            "CCO.PairSafeSplit.Strong.ExtraIdentity",
+            "CCO.PairSafeSplit.Full.Gates",
+            "CCO.PairSafeSplit.SAP.Markings",
+            "CCO.PairSafeSplit.Infinity.OldWitnesses",
+            "CCO.PairSafeSplit.Infinity.Definability",
+            "CCO.PairSafeSplit.Strong.Primality",
+            "CCO.PairSafeSplit.Terminal.TypeReflection",
+            "CCO.PairSafeSplit.Terminal.Current",
+            "CCO.PairSafeSplit.Strong.Realization",
+            "CCO.PairSafeSplit.SAP.Source",
+            "CCO.PairSafeSplit.Terminal.Readout",
+            "CCO.PairSafeSplit.Strong.RealizationAtoms",
+            "CCO.PairSafeSplit.Strong.RealizationTriangles",
+            "CCO.PairSafeSplit.Terminal.Successor",
+            "CCO.PairSafeSplit.Strong.PathSyntax",
+            "CCO.PairSafeSplit.Terminal.Elimination",
+            "CCO.PairSafeSplit.Strong.NormalForm",
+            "CCO.PairSafeSplit.Strong.FullClass",
+            "CCO.PairSafeSplit.Strong.Calculus",
+            "CCO.PairSafeSplit.Strong.Sufficiency",
+            "CCO.PairSafeSplit.Source"
+          ],
+          "url": "https://github.com/shulda/lean_cco/actions/runs/41102926191"
+        },
         "actor_id": "root"
       }
     }
