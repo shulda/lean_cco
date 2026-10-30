@@ -3,8 +3,12 @@
 Reviewer: registered `independent_review`, actual identity
 `/root/independent_review`. Date: 2026-10-30.
 
-**Local mathematical and final-documentation PASS; formal exact-public-head
-approval PENDING completed PR58 CI/audit and final external binding.**
+**APPROVE** exact public PR58 head
+`e01b918ae3bf46ce5a36d83901ef51d0310098e4`, tree
+`c520521ef03ea532643e11b5c9c0822a792edfee`. The complete mathematical and
+final-documentation PASS is now bound to personally inspected successful
+exact-head CI and the effective registered nonauthor lease. The earlier
+conditional disposition is preserved in review commit `be1cfebb74af0bbbc949a207ae964f87d68ab685`.
 
 I personally read all12 new `CCO/PointGeneratedSAP` modules,1286 Lean lines,
 once against all26 claims,6 definitions, the selected source lemma, displayed
@@ -76,14 +80,53 @@ Accepted main `e77b672fd17704e92d39786cbb8818adb36a9fcb` is an ancestor.
 Its complete CCO root is an exact byte prefix, followed by exactly12 unique
 new imports covering all12 public modules. No accepted mathematical body,
 contract, source, API, toolchain, manifest, provider/cache policy or CI gate
-changes. This local review does not assert formal submission, approval,
-integration or resulting-main acceptance.
+changes. Local author evidence alone does not establish formal approval,
+integration or resulting-main acceptance; the actual final gates below are
+recorded separately.
 
-## Pending exact public integration evidence
+## Actual exact public CI, history and effective review lease
 
-Root has announced source-identical public PR58 head
-`e01b918ae3bf46ce5a36d83901ef51d0310098e4`. Completed exact run/job logs,
-synthetic final-tree/parent binding and actual contributor/lease provenance
-must still be personally bound before formal approval. Root alone performs
-public coordination, sole-lock expected-head merge and actual resulting-main
-CI/audit acceptance.
+I personally fetched public [PR58](https://github.com/shulda/lean_cco/pull/58),
+the head Git object, six-commit comparison, current main, completed run/jobs,
+the FULL decoded 2,665,741-character job log, synthetic Git object and live
+STATE at the exact supplied coordination ref. Public head and its tree equal
+the reviewed final local `0ef117b...` above. All six ordered public checkpoint
+trees match their literal `Local-source-commit` originals individually.
+The branch is six ahead/zero behind accepted `e77b672...`, with no replay of
+accepted history. PR58 remains ready, mergeable and unchanged; current main
+is still `e77b672fd17704e92d39786cbb8818adb36a9fcb`.
+
+[Run41071984000](https://github.com/shulda/lean_cco/actions/runs/41071984000),
+attempt1, job124118197879, is COMPLETED/SUCCESS at exact approved public
+head. The log checks out synthetic
+`bd610744f378af5c4ee7ac608bce860578169d0f`; its exact tree is the same
+`c520521ef03ea532643e11b5c9c0822a792edfee`, with ordered parents actual
+accepted `e77b672...` then exact approved `e01b918...`.
+
+Actual completed evidence:130 tests pass; successful Lake jobs1330 EPPA,
+1182 Ramsey,4046 project,4046 audit replay and6 audit-tool jobs. Official
+transitive audit checks24850 CCO declarations with only `propext`,
+`Classical.choice`, `Quot.sound`. Both complete project guards check1381
+CURRENT source modules AND1381 actual olean parts, before/after audit.
+Four complete EPPA source/output guards check269 at exact
+`cd358cde844d5419fd43f30c441511927e09142f`; four complete Ramsey guards
+check106 at exact subtree `374241ce3751715c90b12c0b071f36026819ad4a`.
+All twelve new PointGeneratedSAP children and CCO root are actually built;
+accepted children and external providers are reused. These are actual
+remote log observations, not reviewer builds or a claim that cached jobs
+all recompiled.
+
+I personally parsed STATE353 at coordination
+`1885d2c2a1fdfde511ec3daec6b6bc63570d81bb`: B043 is REVIEWING this exact
+head/PR58 with successful CI/audit; the effective actor is
+`independent_review`, actual identity `/root/independent_review`, non_author
+true, this report path. Its pre-decision approved flag is false. All three
+actual root/owner/boundaries identities, claim347, accepted base and unchanged
+sourcepin remain recorded; policy11 and integration lock null are preserved.
+No source or documentation delta occurred after the complete review.
+
+**Final actual independent decision: APPROVE this exact public head.** Root
+alone publishes the report/approval event, acquires the sole integration
+lock, merges the expected head with history preserved and requires successful
+actual resulting-main build/audit before ACCEPTED. This report does not
+pre-certify that future main gate or write any public coordination state.
