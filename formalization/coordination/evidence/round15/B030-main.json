@@ -1,0 +1,100 @@
+{
+  "run_id": 41007182727,
+  "head_sha": "42316147ca02c871464e885fe44766fe2c05c14e",
+  "conclusion": "success",
+  "axiom_audit": "allowlist",
+  "job_id": 123904630847,
+  "tests": 121,
+  "declarations": 18703,
+  "modules": 1122,
+  "provider_guards": [
+    {
+      "parts": 269,
+      "source": 269,
+      "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+    },
+    {
+      "parts": 269,
+      "source": 269,
+      "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+    },
+    {
+      "parts": 269,
+      "source": 269,
+      "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+    },
+    {
+      "parts": 269,
+      "source": 269,
+      "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+    }
+  ],
+  "fresh_cco_modules": [
+    "CCO.RankInduction.AbsoluteWitness",
+    "CCO.RankInduction.AmalgamationBridge",
+    "CCO.RankInduction.Basis",
+    "CCO.RankInduction.ComponentConstruction",
+    "CCO.RankInduction.Constructor",
+    "CCO.RankInduction.Consumer",
+    "CCO.RankInduction.DirectionCases",
+    "CCO.RankInduction.FactorConstruction",
+    "CCO.RankInduction.FactorGeometry",
+    "CCO.RankInduction.FactorPoints",
+    "CCO.RankInduction.FactorPremises",
+    "CCO.RankInduction.FactorSources",
+    "CCO.RankInduction.FactorWitnessTransport",
+    "CCO.RankInduction.FiniteBoundary",
+    "CCO.RankInduction.FiniteRestoration",
+    "CCO.RankInduction.FullPalette",
+    "CCO.RankInduction.GlobalPhases",
+    "CCO.RankInduction.JointAssembly",
+    "CCO.RankInduction.JointExtensions",
+    "CCO.RankInduction.JointGeometry",
+    "CCO.RankInduction.JointInputs",
+    "CCO.RankInduction.JointMaster",
+    "CCO.RankInduction.JointMasterActions",
+    "CCO.RankInduction.JointRoots",
+    "CCO.RankInduction.JointUnsafe",
+    "CCO.RankInduction.KernelSplit",
+    "CCO.RankInduction.NestedActions",
+    "CCO.RankInduction.NestedDecorations",
+    "CCO.RankInduction.NestedOwners",
+    "CCO.RankInduction.NormalizedConstruction",
+    "CCO.RankInduction.OneDirection",
+    "CCO.RankInduction.OrbitalEquivalence",
+    "CCO.RankInduction.OrbitalTransfer",
+    "CCO.RankInduction.OrdinaryReadout",
+    "CCO.RankInduction.PacketTransfer",
+    "CCO.RankInduction.PaletteTransfer",
+    "CCO.RankInduction.Rank",
+    "CCO.RankInduction.RelativeWitnessReadout",
+    "CCO.RankInduction.Source",
+    "CCO.RankInduction.SourceStage",
+    "CCO.RankInduction.StandingSource",
+    "CCO.RankInduction.Transitivity"
+  ],
+  "fresh_provider_modules": [],
+  "provider_cache_lines": [
+    "2026-10-30T05:14:17.3511754Z cco-eppa-dependency-v1-a2a8f96056850ededd7ac1bab447f1d923dedf7797b54c6479a3be9638b55e41",
+    "2026-10-30T05:14:35.7938798Z   key: cco-eppa-dependency-v1-a2a8f96056850ededd7ac1bab447f1d923dedf7797b54c6479a3be9638b55e41",
+    "2026-10-30T05:14:36.1302798Z Cache hit for: cco-eppa-dependency-v1-a2a8f96056850ededd7ac1bab447f1d923dedf7797b54c6479a3be9638b55e41",
+    "2026-10-30T05:14:37.6948694Z Cache restored from key: cco-eppa-dependency-v1-a2a8f96056850ededd7ac1bab447f1d923dedf7797b54c6479a3be9638b55e41",
+    "2026-10-30T05:15:48.9607155Z Cache hit occurred on the primary key cco-eppa-dependency-v1-a2a8f96056850ededd7ac1bab447f1d923dedf7797b54c6479a3be9638b55e41, not saving cache."
+  ],
+  "build_jobs": [
+    1330,
+    3663,
+    3663
+  ],
+  "guards": [
+    {
+      "parts": 1122,
+      "source": 1122
+    },
+    {
+      "parts": 1122,
+      "source": 1122
+    }
+  ],
+  "url": "https://github.com/shulda/lean_cco/actions/runs/41007182727"
+}
