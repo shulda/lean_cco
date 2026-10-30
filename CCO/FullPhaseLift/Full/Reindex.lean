@@ -55,6 +55,7 @@ theorem pairCompletion_reindex {U : BoolTable L M} {D : Partial L V} {m : ℕ}
     exact hp r (e ∘ xs) b (hs.comp e) hd
   · intro j a b hab
     apply hi j
+    change p ((F j).inclusion a) = p ((F j).inclusion b)
     change p (e (e.symm ((F j).inclusion a))) =
       p (e (e.symm ((F j).inclusion b))) at hab
     simpa only [Equiv.apply_symm_apply] using hab
