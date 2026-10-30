@@ -1,14 +1,14 @@
-# B040 — independent complete frozen-source review
+# B040 — independent final exact-head review
 
 ## Disposition and actual independence
 
-**WHOLE MATHEMATICAL SOURCE AND FINAL DOCUMENTS PASS; formal exact-public
-approval PENDING completed CI.**
+**APPROVE** exact PR54 head
+`8e0ad173ed85d3ee6093fbddd6a18a6e19e7f47b`, tree
+`6622004f370f050fd4c0e63ca9ea67f14a0f14c9`.
 I found no missing principal provider, stronger replacement premise or
-mathematical blocker in the complete frozen source. Final owner documentation
-and the exact public tree are checked. Completed PR CI/full logs and
-resulting-main integration gates remain pending. This is not
-an assertion that a future CI, merge or ACCEPTED event has occurred.
+mathematical blocker in the complete frozen source. Whole source, final
+documents, public history/provenance and actual completed exact-head CI pass.
+This does not assert a future merge, resulting-main success or ACCEPTED event.
 
 Actual reviewer: `/root/independent_review`, registered actor
 `independent_review`. I authored, designed and repaired NONE of the complete
@@ -124,11 +124,65 @@ build or treat its report as reviewer compilation.
 I fetched actual public Git commit
 `8e0ad173ed85d3ee6093fbddd6a18a6e19e7f47b` for
 [PR54](https://github.com/shulda/lean_cco/pull/54): its tree is EXACTLY the
-reviewed `6622004f...` tree. The coordinator reports actual PR run
-`41048342120` is still in progress. No successful exact-head CI is asserted
-here. Formal approval awaits personally inspected completed run/job/full
-logs, final ref/history/provenance binding, complete source/output/provider
-guards and the standard-three official audit. Root alone records the formal
-lease/approval, sole CAS integration lock, expected-head merge and actual
-resulting-main success before ACCEPTED. Stable source requires no second
-whole read absent an actual change.
+reviewed `6622004f...` tree. The initial in-progress run was not treated as
+a successful gate; the actual completed evidence was read subsequently below.
+
+## Final external history, exact CI and live provenance — APPROVE
+
+I personally fetched the actual PR, head object, current main ref, comparison,
+synthetic merge, completed run/job and FULL actual job log. The head remains
+exact `8e0ad173...`, with current accepted base/main
+`90feb040df23e2ef7fd18ebc7df3b92ccfc0a8a0`. PR54 is open, ready and mergeable.
+The tested synthetic merge is
+`5924ccff65e2cf163a950e17ff5098c91c93048c`, with the SAME approved tree and
+ordered parents actual accepted `90feb040...` then exact public `8e0ad173...`.
+
+The comparison is seven commits ahead, zero behind, merge base actual
+`90feb040...`; its 18-file diff is confined to the 13 new Lean modules,
+additive CCO root and four scoped/submission Markdown reports. All seven
+public checkpoints retain `Local-source-commit` provenance; each actual
+public tree matches its corresponding local checkpoint tree and the
+first-parent sequence is preserved from the actual accepted base. No accepted
+history is erased or replayed as a new contribution.
+
+[Run 41048342120](https://github.com/shulda/lean_cco/actions/runs/41048342120),
+job `124037918462`, is actually completed SUCCESS for this exact public head,
+with no failed job step. I inspected the entire external decoded job log
+(2,477,667 characters), including the actual build/audit/guard outputs:
+
+- **130 Python tests** passed.
+- Actual successful build totals were **1330 EPPA-facade, 1182 Ramsey-facade,
+  3966 project, 3966 audit-replay and six audit-tool jobs**.
+- Official `leanprover-community/axiom-audit` v0.1.2 at exact commit
+  `46024e005996495c65ef609368e11ab39c4222e3` audited **23,221 CCO declarations**;
+  every declaration is within `[propext, Classical.choice, Quot.sound]`.
+- Both complete pre-audit/post-audit project guards checked **1304 CURRENT
+  source modules and 1304 actual output parts**.
+- Four complete EPPA guards checked 269 current source modules and actual
+  parts at exact `cd358cde844d5419fd43f30c441511927e09142f`; four complete
+  Ramsey guards checked 106 current source modules and actual parts at exact
+  subtree `374241ce3751715c90b12c0b071f36026819ad4a`.
+- **All 13 new `QuotientTransport` children and the CCO root were actually
+  built**. No accepted CCO child or provider module was rebuilt. The initial
+  expected stale CCO root import header caused selective invalidation of one
+  module/eight generated outputs, followed by successful ordinary build,
+  complete guards and official audit. No full clean fallback was observed.
+
+These facts were checked against the actual complete external log, not only
+the coordinator's matching `ci-evidence-41048342120.json` receipt. No local
+author compilation has been substituted for exact-head CI.
+
+I independently parsed STATE326 at coordination commit
+`ff5c81e12f0fa4551301fe3b97274680f297f82a`: B040 is SUBMITTED at this exact
+head/PR54 with successful run `41048342120` and allowlist audit; all three
+actual author identities and original project provenance are retained,
+the source pin is unchanged and the integration lock is null. My actual
+reviewer identity remains absent from all implementation authorship.
+
+No reviewer build, test, audit, cache repair, helper review or unchanged
+whole-source reread was performed. This exact-head disposition supplies the
+independent decision, not a claim that future formal events already happened.
+Root alone must record the review lease/approval, acquire the sole CAS lock,
+merge the expected approved head with history preserved and require successful
+actual resulting-main CI/audit before ACCEPTED. Approval is specific to the
+exact head/tree above; any later source change requires its actual delta review.
