@@ -1,10 +1,12 @@
 # B046 — independent whole-source review
 
 Date: 2026-10-30. Registered reviewer `independent_review`, actual identity
-`/root/independent_review`. **Whole mathematical source PASS at
-`662a1f376ffc6fc8bd1fd0c9b801564e6b27e1dc`; formal exact-head approval is
-PENDING public history/provenance and successful exact public CI/audit.**
-Final documentation PASS; no future merge or ACCEPTED state is asserted.
+`/root/independent_review`. **APPROVE exact PR60 head
+`7dd448bde59c8551f23e650380b11d49635901ee`, tree
+`6ea63319010f707f6f522544793b2f518ca3e61b`.** Whole mathematical source,
+final documentation, public source history, completed exact CI and genuine
+nonauthor lease are personally bound below. No future merge or ACCEPTED
+state is asserted.
 
 I personally read all20 new `CCO/OrbitalCover` modules, 2360 Lean lines,
 once in an isolated review-only worktree at that exact freeze, tree
@@ -23,8 +25,8 @@ reviewed again. I wrote or designed NONE of this complete batch, including
 root/owner/helper proofs, historical preparation, infrastructure or tests.
 I supplied no implementation decisions, fixes, code, builds, tests, audits
 or helper review. All final actual contributors and the effective lease
-will be bound to the live public ledger before formal approval. This branch
-edits only this review report.
+are bound to the live public ledger below. This branch edits only this
+review report.
 
 ## Substantive source/provider/consumer findings
 
@@ -68,7 +70,7 @@ proofs, direct CCO and literal good prefixes from bounded controls and narrow
 compilation. Triangle readout honestly records its accepted AP/CCO direction.
 Their physical-slot/private-copy history does not relabel either author as
 a reviewer or certify any future complete public CI. Root/owner authorship
-and any further actual contributors remain to be bound at the final lease.
+and all actual contributors are bound at the effective final lease below.
 
 I then read only the genuine final three-Markdown delta at native
 `1d394e3271d2c2a40e8d6054feb2e3752321e9c5`, tree
@@ -83,14 +85,39 @@ the three implementing identities and root's coordination, local compilation
 limits, and the still-pending external acceptance gates. No Lean body or root
 import changed in this delta; no reviewer compilation was run.
 
-## Pending formal gates
+## Actual exact public CI, history and nonauthor provenance
 
-The author reports its sole final root build successful; that local report
-is not a substitute for the exact public gates. The final author MD packet
-has been read, while public candidate/CI, review lease and resulting-main
-status remain to be personally bound. Review only genuine later source,
-documentation/base/root deltas
-and actual complete exact public CI before approval. The resulting-main
-guard/audit gate remains the publisher's responsibility after a valid
-expected-head integration. No reviewer build/test/audit/cache repair/helper
-or remote queue write was performed.
+I personally fetched the actual PR, final public head commit, accepted main
+ref, complete comparison history, synthetic tested commit, completed run and
+job metadata, FULL actual job log, and exact effective public STATE. These
+are independent external anchors, not merely an author receipt or an
+inference from narrow local compilation.
+
+| Gate | Personally bound evidence |
+|---|---|
+| Exact candidate | PR60 head `7dd448bde59c8551f23e650380b11d49635901ee`, tree `6ea63319010f707f6f522544793b2f518ca3e61b`, exactly native final `1d394e3271d2c2a40e8d6054feb2e3752321e9c5`. The mathematical body remains the reviewed freeze662a1f. |
+| Current accepted base | Actual PR base and main ref both `6a3ed6e3a485b3218b5038b38494a7de1f821241`; the live ledger retains B044 ACCEPTED and its successful main CI41083770047. PR is open and mergeable. |
+| Source-preserving history | All17 ahead/zero-behind public checkpoints carry their actual `Local-source-commit`. Every public tree matches its native checkpoint, with mapped parent topology/order and original commit-message prefixes preserved. Original helper histories are retained; no accepted branch is replayed as new authorship. |
+| Actual tested commit | Synthetic `53370516bde55951d1d0dfbf890d0c7505576de2`, SAME final tree, ordered parents exactly accepted6a3ed6 then final7dd448. Actual checkout log names that synthetic commit. |
+| Exact completed CI | Run41093400615, attempt1, job124192818048, COMPLETED SUCCESS at the final exact head. All actual build/guard/audit job steps succeeded. |
+| Full actual log | 2,828,131 characters / 34,153 lines personally inspected through full-log parsing. All130 tests pass; jobs1330 external facade,1182 Ramsey facade,4133 project,4133 audit replay,6 official audit tool. |
+| Transitive audit | 26,454 CCO declarations, only `propext`, `Classical.choice`, `Quot.sound`. Both PRE/POST complete project guards verify1467 actual olean parts AND1467 CURRENT source modules. |
+| Provider guards | Four complete269-part/269-source EPPA checks at exact `cd358cde844d5419fd43f30c441511927e09142f`; four complete106-part/106-source Ramsey checks at exact subtree `374241ce3751715c90b12c0b071f36026819ad4a`. |
+| New source materialized | All20 new OrbitalCover child modules plus CCO root actually Built. No other CCO children rebuilt; accepted children/providers reused. No reviewer build/test/audit was run. |
+| Genuine review lease | STATE370 at coordination `c0ae171472e76106c488cc561a98fbb398401f54`: B046 REVIEWING, exact candidate/PR60/CI, registered actor `independent_review`, actual `/root/independent_review`, `non_author:true`, integration lock null. Approval flag is false before this actual decision. |
+
+All FOUR real contributor identities are retained at that exact ledger:
+`root` (actual `/root`), `/root/b046_orbital_cover`,
+`/root/b046_orbital_cover/nine_colour_model`, and
+`/root/b046_orbital_cover/nine_colour_model/coordinate_potentials`.
+Their contributions, historical human preparation and unchanged source pin
+are preserved. I am the same actual stable separate reviewer and authored
+or designed none of any complete-batch contribution, including the shared
+helper's work on either B045 or B046. No author was relabelled as reviewer.
+
+No mathematical, source/provider/consumer, documentation or exact-candidate
+integration blocker remains. Root may record this actual exact-head approval
+and integrate with sole-lock/expected-head protection. The actual resulting-
+main source/guard/audit success remains the publisher's subsequent acceptance
+gate; this report does not assert future merge or ACCEPTED status. No reviewer
+build/test/audit/cache repair/helper or remote queue write was performed.
