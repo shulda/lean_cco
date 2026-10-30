@@ -77,6 +77,24 @@ theorem identity_bounds_of_graph {x y : V}
       (S.colour_none_iff b a).mpr ((S.colour_none_iff a b).mp hn).symm
     exact ⟨b,a,graph_bound_specified_bound D b a (graph_bound_reverse D a b bound) p,hn'⟩
 
+/-- Original identity profiles on simple x-y paths automatically give the
+reverse simple-path condition, with exactly the same real witnesses swapped. -/
+theorem identity_bound_reverse (x y : V) (hxy : x ≠ y)
+    (bound : IdentityBound D x y) : IdentityBound D y x := by
+  intro p
+  let r := simpleSpecifiedWalk D p
+  let revPath : (graph D).Path x y := ⟨r.val.reverse,r.property.reverse⟩
+  let oldPath := graphToSpecified D revPath hxy
+  obtain ⟨a,b,hWord,hn⟩ := bound oldPath
+  rw [PositiveWord.represented_toRawWord S,graphToSpecified_word] at hWord
+  change RawWord.relation S (walkWord D (specifiedWalk D p.val).reverse) a b at hWord
+  rw [walkWord_reverse_relation] at hWord
+  change RawWord.relation S (walkWord D (specifiedWalk D p.val)) b a at hWord
+  rw [specifiedWalk_word] at hWord
+  refine ⟨b,a,?_,?_⟩
+  · rwa [PositiveWord.represented_toRawWord S]
+  · exact (S.colour_none_iff b a).mpr ((S.colour_none_iff a b).mp hn).symm
+
 /-- No specified old edge is collapsed by the literal two-point identity
 identification, because the selected old pair was missing. -/
 theorem identify_no_collapse (x y : V) (hxy : x ≠ y)
