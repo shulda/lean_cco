@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 308,
+  "revision": 309,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -1862,7 +1862,7 @@
       }
     },
     "B037": {
-      "state": "INTEGRATING",
+      "state": "ACCEPTED",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b030_rank",
@@ -1907,6 +1907,13 @@
           "report_path": "formalization/coordination/reviews/B037-final.md"
         },
         "summary": "Actual nonauthor whole-source review approves all47claims and all three discharged HN providers, typed encoding/same-map transport and genuine all-size SAP obstruction boundary. Exact PR51 head/tree/history and all9 authors verified; run41032355658 passed130tests,21523standard-three audit,1229current CCO and269EPPA/106Ramsey complete guards."
+      },
+      "accepted_commit": "b27944b1d8f7436c44d83a6e155bae19a0cd25e7",
+      "main_ci": {
+        "run_id": 41035271291,
+        "head_sha": "b27944b1d8f7436c44d83a6e155bae19a0cd25e7",
+        "conclusion": "success",
+        "axiom_audit": "allowlist"
       }
     },
     "B038": {
@@ -1966,13 +1973,7 @@
       "owner_project_id": null
     }
   },
-  "integration_lock": {
-    "kind": "package",
-    "package_id": "B037",
-    "actor_id": "root",
-    "base_main_sha": "8a8e2f9e73e4bdcb0101259416238c8f9ab4429b",
-    "head_sha": "e4bb90f27f9dc9ea6f3c8bc0f77926ab639f0c9a"
-  },
+  "integration_lock": null,
   "history": [
     {
       "revision": 1,
@@ -7961,6 +7962,24 @@
         "author_actor_ids": [
           "/root/b039_fresh/examples"
         ],
+        "actor_id": "root"
+      }
+    },
+    {
+      "revision": 309,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "accept",
+      "package_id": "B037",
+      "details": {
+        "package_id": "B037",
+        "integration_commit": "b27944b1d8f7436c44d83a6e155bae19a0cd25e7",
+        "main_ci": {
+          "run_id": 41035271291,
+          "head_sha": "b27944b1d8f7436c44d83a6e155bae19a0cd25e7",
+          "conclusion": "success",
+          "axiom_audit": "allowlist"
+        },
         "actor_id": "root"
       }
     }
