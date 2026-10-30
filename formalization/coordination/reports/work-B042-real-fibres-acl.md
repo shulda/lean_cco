@@ -83,7 +83,7 @@ It asserts `card F = 2^m` with `m <= card (T.Atom () ())`. It is neither
 an axiom nor a new source hypothesis. The generic local reuse lemmas
 `finite_fibre_power`, `uniform_real_bound`, `empty_finite_power` and
 `real_source_package` take that theorem as an explicit argument. The final
-B042 source export must and does bind this argument to its actual proved
+B042 source export requires an actual proof of this argument from the
 generic finite-target theorem; this helper does not certify that separate
 group/finite-target branch. A final export leaving this argument open would
 be an unfinished provider.
