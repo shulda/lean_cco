@@ -81,6 +81,30 @@ theorem relativeIndex_eq (E F : ColourEq T k) (a : Y k) :
       relativeIndex (e.colourOrderIso k E).val (e.colourOrderIso k F).val (e.point k a) :=
   Nat.card_congr (e.relativeClassEquiv k E F a)
 
+theorem finite_relativeClass_iff (E F : ColourEq T k) (a : Y k) :
+    Finite (RelativeClass E.val F.val a) ↔
+      Finite (RelativeClass (e.colourOrderIso k E).val
+        (e.colourOrderIso k F).val (e.point k a)) := by
+  constructor
+  · intro h
+    letI := h
+    exact Finite.of_equiv _ (e.relativeClassEquiv k E F a)
+  · intro h
+    letI := h
+    exact Finite.of_equiv _ (e.relativeClassEquiv k E F a).symm
+
+/-- Terminality concerns ALL proper relative intervals, and survives the
+canonical sort/palette renaming with its actual class sets unchanged. -/
+theorem terminal_interval_infinite
+    (terminal : ∀ (E F : ColourEq S (e.sort k)), E < F → ∀ a,
+      Infinite (RelativeClass E.val F.val a))
+    (E F : ColourEq T k) (hEF : E < F) (a : Y k) :
+    Infinite (RelativeClass E.val F.val a) := by
+  letI := terminal (e.colourOrderIso k E) (e.colourOrderIso k F)
+    ((e.colourOrderIso k).strictMono hEF) (e.point k a)
+  exact Infinite.of_injective (e.relativeClassEquiv k E F a).symm
+    (e.relativeClassEquiv k E F a).symm.injective
+
 /-- A terminal child excludes every finite-relative cover after canonical
 re-naming; actual relative class sets, cover order and indices survive. -/
 theorem terminal_cover_infinite
