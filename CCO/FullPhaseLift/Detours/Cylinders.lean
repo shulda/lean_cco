@@ -104,6 +104,29 @@ theorem three_edge_bound {r i j : ι} {A : Kernel S r} {K : Kernel S i} {L : Ker
     exact ⟨t,hty',hright t q htq⟩
   exact ⟨y',⟨x',hK,hc'⟩,hL⟩
 
+include H in
+/-- The semantic cylinder is precisely the full pullback of ONE actual
+original-group quotient pair orbital. No quotient homogeneity or section
+is presumed. -/
+theorem cylinder_orbital_pullback {i j : ι} (K : Kernel S i) (L : Kernel S j)
+    (a : S.Atom i j) (x : X i) (y : X j) (hc : S.colour x y = some a) :
+    letI := K.action H
+    letI := L.action H
+    GroupActions.pullback K.project L.project
+      (GroupActions.orbital (G := G) (K.project x) (L.project y)) = cylinder S K L a := by
+  letI := K.action H
+  letI := L.action H
+  have hK : GroupActions.kernel K.project = K.rel := by
+    funext p q
+    exact propext Quotient.eq
+  have hL : GroupActions.kernel L.project = L.rel := by
+    funext p q
+    exact propext Quotient.eq
+  rw [RawExact.equivariant_orbit_pullback K.project L.project
+    (K.project_equivariant H) (L.project_equivariant H) x y,hK,hL,
+    RawExact.actual_pair_orbital_of_homogeneous S H x y,hc]
+  rfl
+
 variable {S H} {C : ExactCalculus S} {r : ι} {A : Kernel S r}
 
 /-- An allowed old atom makes EVERY optional pair colour in its entire
