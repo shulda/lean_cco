@@ -1,0 +1,104 @@
+{
+  "run_id": 41020603290,
+  "head_sha": "2709a2b9292d8d1bbb08bdc0b6e401efe4bc4d70",
+  "conclusion": "success",
+  "axiom_audit": "allowlist",
+  "job_id": 123946802287,
+  "declarations": 20836,
+  "tests": 121,
+  "guards": [
+    {
+      "parts": 1175,
+      "source": 1175
+    },
+    {
+      "parts": 1175,
+      "source": 1175
+    }
+  ],
+  "provider_guards": [
+    {
+      "parts": 269,
+      "source": 269,
+      "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+    },
+    {
+      "parts": 269,
+      "source": 269,
+      "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+    },
+    {
+      "parts": 269,
+      "source": 269,
+      "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+    },
+    {
+      "parts": 269,
+      "source": 269,
+      "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+    }
+  ],
+  "build_jobs": [
+    1330,
+    3717,
+    3717,
+    6
+  ],
+  "fresh_cco_modules": [
+    "CCO.ResetOrder.ClosureBoundaries",
+    "CCO.ResetOrder.Composition",
+    "CCO.ResetOrder.Counterexample.AdversarialOrder",
+    "CCO.ResetOrder.Counterexample.Basic",
+    "CCO.ResetOrder.Counterexample.Boundary",
+    "CCO.ResetOrder.Counterexample.Consumer",
+    "CCO.ResetOrder.Counterexample.ConvexRanks",
+    "CCO.ResetOrder.Counterexample.Failure",
+    "CCO.ResetOrder.Counterexample.FinalSegments",
+    "CCO.ResetOrder.Counterexample.JointEmbedding",
+    "CCO.ResetOrder.Counterexample.PaddedEP",
+    "CCO.ResetOrder.Counterexample.Rectangular",
+    "CCO.ResetOrder.Counterexample.Relabel",
+    "CCO.ResetOrder.Counterexample.Successor",
+    "CCO.ResetOrder.FiniteTower",
+    "CCO.ResetOrder.FreshMidpoints",
+    "CCO.ResetOrder.Generic.Embedding",
+    "CCO.ResetOrder.Generic.FiniteAge",
+    "CCO.ResetOrder.Generic.Induced",
+    "CCO.ResetOrder.Generic.Language",
+    "CCO.ResetOrder.Generic.Reduct",
+    "CCO.ResetOrder.Hierarchy.Charts",
+    "CCO.ResetOrder.Hierarchy.ClosedTransitions",
+    "CCO.ResetOrder.Hierarchy.Consumer",
+    "CCO.ResetOrder.Hierarchy.GridBoundary",
+    "CCO.ResetOrder.Hierarchy.Lattice",
+    "CCO.ResetOrder.Hierarchy.Maps",
+    "CCO.ResetOrder.Hierarchy.NamedTerms",
+    "CCO.ResetOrder.Hierarchy.Normalize",
+    "CCO.ResetOrder.Hierarchy.Orders",
+    "CCO.ResetOrder.Hierarchy.QuotientSystem",
+    "CCO.ResetOrder.Hierarchy.Quotients",
+    "CCO.ResetOrder.Hierarchy.Reindex",
+    "CCO.ResetOrder.Hierarchy.RelativeReversal",
+    "CCO.ResetOrder.Hierarchy.Reversal",
+    "CCO.ResetOrder.Hierarchy.SortPriority",
+    "CCO.ResetOrder.Hierarchy.Structures",
+    "CCO.ResetOrder.Hierarchy.Synchronize",
+    "CCO.ResetOrder.Hierarchy.TaskDAG",
+    "CCO.ResetOrder.Normalization",
+    "CCO.ResetOrder.ResetEP",
+    "CCO.ResetOrder.ResetSetting",
+    "CCO.ResetOrder.SortRestriction",
+    "CCO.ResetOrder.SourceAssembly",
+    "CCO.ResetOrder.Unary.Category",
+    "CCO.ResetOrder.Unary.Definable",
+    "CCO.ResetOrder.Unary.FiniteAge",
+    "CCO.ResetOrder.Unary.PointedTemplate",
+    "CCO.ResetOrder.Unary.Primitive.Basic",
+    "CCO.ResetOrder.Unary.Primitive.Closure",
+    "CCO.ResetOrder.Unary.Primitive.Induced",
+    "CCO.ResetOrder.Unary.StoredPatterns",
+    "CCO.ResetOrder.Unary.Task"
+  ],
+  "fresh_provider_modules": [],
+  "url": "https://github.com/shulda/lean_cco/actions/runs/41020603290"
+}
