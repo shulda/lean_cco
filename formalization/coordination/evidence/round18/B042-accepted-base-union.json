@@ -1,0 +1,205 @@
+{
+  "base_main": "5367e9e72b3dc099ff55238a80f1c9ea7cac46fc",
+  "base_ci": {
+    "run_id": 41050908739,
+    "attempt": 2,
+    "job_id": 124059553147,
+    "conclusion": "success"
+  },
+  "before": "dcd730f8c90be66bdf2649b7d8429940d6c96372",
+  "math_freeze": "0000a1ecf0d0e118d50fbfcd845b81e56223b828",
+  "proof_modules": 34,
+  "proof_subtree": "d766a431ab561e2a42a0e9fdead60bddbc58a985",
+  "proof_sha256": "157e430050d44096b67006503e73015bdd7909c1be92e11ab7057a5c17963062",
+  "proof_files": [
+    [
+      "CCO/FiniteFibres/AtomicAdapter.lean",
+      "b4c6a12f797a0d07d5641cd4cef546e7a1e2389052e1e9f5588d9bd1bc813df7"
+    ],
+    [
+      "CCO/FiniteFibres/AtomicAut.lean",
+      "9d39bb72c4322639914bc20307d97824c09d51d8cf154e3335e5e1e1a589aacc"
+    ],
+    [
+      "CCO/FiniteFibres/Automorphisms.lean",
+      "700486b31e8ab5be614d7525382ea873fbe8c1ceaea0775ebde0bfead4d0a4b6"
+    ],
+    [
+      "CCO/FiniteFibres/Bipartite.lean",
+      "933c939a80b6458ee89d0f0deb4fb3732221bec2a6c331eefc7a6be48bf6b23c"
+    ],
+    [
+      "CCO/FiniteFibres/Boundaries/Consumers.lean",
+      "94c206939010efad4ae8ad969d1619bfcbc2b4930a9486ffd511c53d5355e843"
+    ],
+    [
+      "CCO/FiniteFibres/Boundaries/DifferenceCCO.lean",
+      "d8fc2e350042966fcb89ec23be6b2876f9d422cbfed2f4f1244039a39caf1e06"
+    ],
+    [
+      "CCO/FiniteFibres/Boundaries/DifferenceExamples.lean",
+      "665d0e233e6a923513d736d6a0d789a97c55607f9a3de77b15825f37d931c05f"
+    ],
+    [
+      "CCO/FiniteFibres/Boundaries/DifferencePalette.lean",
+      "be5ac3973825e9478cc736fce0e1e96b4383f5af32a39436d40772c9336e0720"
+    ],
+    [
+      "CCO/FiniteFibres/Boundaries/DifferenceSource.lean",
+      "9cbceb665d6e586e493894421caa5d986fc96c26b8a60e08bd47eb358994c4fd"
+    ],
+    [
+      "CCO/FiniteFibres/Boundaries/GainWalk.lean",
+      "ec1565f8eac9c7d5d08b8bad3ae0252469a350e9c3dd931e0b860727dc90fe89"
+    ],
+    [
+      "CCO/FiniteFibres/Boundaries/Nontransitive.lean",
+      "0ba3a478bf9fdc47334c5552efb8229c8d95ff326df296a072cd316ede2ff1df"
+    ],
+    [
+      "CCO/FiniteFibres/Consumers.lean",
+      "8b2bd17bccc0b8e51607c1c5f265b35b8da82166463da56264846c16ff688505"
+    ],
+    [
+      "CCO/FiniteFibres/CycleObstruction.lean",
+      "d0e03f94ceef8d979dce27b4b147588a0e0e463f3f332ba61a3d418e8be820d7"
+    ],
+    [
+      "CCO/FiniteFibres/CycleWalks.lean",
+      "cefa58550429966cf3bd78677b7d35a07c9d54b89501e47935d84bec2519844d"
+    ],
+    [
+      "CCO/FiniteFibres/FiniteAtomic.lean",
+      "dcb5da15a76e1cb5fdc992ed321aebe0319d7addf9c98c3a6d9f8a11de76a6a7"
+    ],
+    [
+      "CCO/FiniteFibres/Group/Cauchy.lean",
+      "97984184a8fc11507e33061329f3289bd073dda130741dc80da0aaa325892bdf"
+    ],
+    [
+      "CCO/FiniteFibres/Group/Chain.lean",
+      "a748c4b045fb0bf08ead3790773d9f70531518e0f9d86a869ac73187117d0546"
+    ],
+    [
+      "CCO/FiniteFibres/Group/Correspondence/Basic.lean",
+      "752583fcab489ba7fb0ecf8fbd703aa053326c077e430aa0f7153dd732c4f1c0"
+    ],
+    [
+      "CCO/FiniteFibres/Group/Correspondence/Counting.lean",
+      "a9eab87edfaaf7fe53b9260700f31a83d4498eaec80cab701dc83956756e5562"
+    ],
+    [
+      "CCO/FiniteFibres/Group/Correspondence/Relative.lean",
+      "ff1f74d09c1fec69fd9b452cc491339a51a1e7d2ce681c20ede9695c7d42e60e"
+    ],
+    [
+      "CCO/FiniteFibres/Group/Counting.lean",
+      "ebec478c9e9a6c5b171c19ed67650aa6f11560a924a479276f6960dea90db68c"
+    ],
+    [
+      "CCO/FiniteFibres/Group/FiniteAction.lean",
+      "e94cf3b813369cdfeadc692c1587e2bab5aae36679ce6e6edb5813494b23db8a"
+    ],
+    [
+      "CCO/FiniteFibres/Group/FiniteCover.lean",
+      "7c7c0e557a8a4f2df43c641862a40649f46d54205ceb5f26c98065991ba981e1"
+    ],
+    [
+      "CCO/FiniteFibres/Group/Normalizer.lean",
+      "4c204c3ddd67b503cecf28fcb8593aff73b58f19334cd37abf7f5e5a418715e3"
+    ],
+    [
+      "CCO/FiniteFibres/Hasse.lean",
+      "df609df018256b624a249de3c56e5d5e547ea264fb82bf339ddf19b80f50a0f6"
+    ],
+    [
+      "CCO/FiniteFibres/Real/Basic.lean",
+      "0694c0c4af143bc1f845917864c30737f57768cd3adcd6be1840b9bd9d5efb62"
+    ],
+    [
+      "CCO/FiniteFibres/Real/Count.lean",
+      "7ceedbcf40700c0b527c82a1e3b8b17bf874875fbd9112849fc50e6c5bd863d7"
+    ],
+    [
+      "CCO/FiniteFibres/Real/Definability.lean",
+      "6deaf4b198dcffd19cc1adddbcaae2556da3cb05ec00578a6262cdb935ac5961"
+    ],
+    [
+      "CCO/FiniteFibres/Real/PaletteChain.lean",
+      "8f58bc2e57a0005723bb22672f45b63cbfe971a477a0b85375e9783c193c6efd"
+    ],
+    [
+      "CCO/FiniteFibres/Real/Source.lean",
+      "ba534ea7c52978e777b92b86c73843bf34dd7d3a54cc6163dd378df1b4a26d58"
+    ],
+    [
+      "CCO/FiniteFibres/RealExport.lean",
+      "866de735f557b8f7e14140101ad4c09b6ebd54604a3a2832fbb5e2685ea7ab6c"
+    ],
+    [
+      "CCO/FiniteFibres/SmallTargets.lean",
+      "7bf7dfc7879ec548b5ff6e4a66a4be8034b563b47bcac3fc3e396f7f3c934e53"
+    ],
+    [
+      "CCO/FiniteFibres/SourceChain.lean",
+      "f83becb30a41511fd3be106a73b576c8e1d71fed70b26e5789a6db2b914950cb"
+    ],
+    [
+      "CCO/FiniteFibres/Target.lean",
+      "7c9367eaece2e83e3fe598221ad06b187c83da121f9e10dc2a1a9501c2d66294"
+    ]
+  ],
+  "accepted_modules_unchanged": 44,
+  "root_exact_accepted_prefix": true,
+  "root_new_imports": [
+    "import CCO.FiniteFibres.AtomicAdapter",
+    "import CCO.FiniteFibres.AtomicAut",
+    "import CCO.FiniteFibres.Automorphisms",
+    "import CCO.FiniteFibres.Bipartite",
+    "import CCO.FiniteFibres.Boundaries.Consumers",
+    "import CCO.FiniteFibres.Boundaries.DifferenceCCO",
+    "import CCO.FiniteFibres.Boundaries.DifferenceExamples",
+    "import CCO.FiniteFibres.Boundaries.DifferencePalette",
+    "import CCO.FiniteFibres.Boundaries.DifferenceSource",
+    "import CCO.FiniteFibres.Boundaries.GainWalk",
+    "import CCO.FiniteFibres.Boundaries.Nontransitive",
+    "import CCO.FiniteFibres.Consumers",
+    "import CCO.FiniteFibres.CycleWalks",
+    "import CCO.FiniteFibres.FiniteAtomic",
+    "import CCO.FiniteFibres.Group.Cauchy",
+    "import CCO.FiniteFibres.Group.Chain",
+    "import CCO.FiniteFibres.Group.Correspondence.Basic",
+    "import CCO.FiniteFibres.Group.Correspondence.Counting",
+    "import CCO.FiniteFibres.Group.Correspondence.Relative",
+    "import CCO.FiniteFibres.Group.Counting",
+    "import CCO.FiniteFibres.Group.FiniteAction",
+    "import CCO.FiniteFibres.Group.FiniteCover",
+    "import CCO.FiniteFibres.Group.Normalizer",
+    "import CCO.FiniteFibres.Hasse",
+    "import CCO.FiniteFibres.Real.Basic",
+    "import CCO.FiniteFibres.Real.Count",
+    "import CCO.FiniteFibres.Real.Definability",
+    "import CCO.FiniteFibres.Real.PaletteChain",
+    "import CCO.FiniteFibres.Real.Source",
+    "import CCO.FiniteFibres.RealExport",
+    "import CCO.FiniteFibres.SmallTargets",
+    "import CCO.FiniteFibres.SourceChain",
+    "import CCO.FiniteFibres.Target",
+    "import CCO.FiniteFibres.CycleObstruction"
+  ],
+  "total_cco_modules": 1369,
+  "final_local_head": "c54513470eb5924ce4de4a2627488bb5954826ea",
+  "final_tree": "e2434603d591f0223e09d0b52b20b3ace607d293",
+  "ordered_parents": [
+    "dcd730f8c90be66bdf2649b7d8429940d6c96372",
+    "5367e9e72b3dc099ff55238a80f1c9ea7cac46fc"
+  ],
+  "post_union_check": {
+    "command": "lake build CCO.FiniteFibres.Consumers",
+    "result": "success",
+    "jobs": 2180,
+    "log": "/workspace/scratch/6b2f11185e14/b042-accepted-base-consumers.log",
+    "scope": "narrow consumer replay only; no whole local suite or audit"
+  },
+  "worktree_clean": true
+}

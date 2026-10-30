@@ -1,0 +1,108 @@
+{
+  "run_id": 41057110156,
+  "run_attempt": 1,
+  "head_sha": "c3faa6121cf075a7d1d8a2b889051c527583717b",
+  "conclusion": "success",
+  "axiom_audit": "allowlist",
+  "job_id": 124067311446,
+  "tests": 130,
+  "declarations": 24563,
+  "guards": [
+    {
+      "parts": 1369,
+      "source": 1369
+    },
+    {
+      "parts": 1369,
+      "source": 1369
+    }
+  ],
+  "provider_guards": [
+    {
+      "parts": 269,
+      "source": 269,
+      "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+    },
+    {
+      "parts": 269,
+      "source": 269,
+      "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+    },
+    {
+      "parts": 269,
+      "source": 269,
+      "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+    },
+    {
+      "parts": 269,
+      "source": 269,
+      "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+    }
+  ],
+  "ramsey_guards": [
+    {
+      "parts": 106,
+      "source": 106,
+      "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+    },
+    {
+      "parts": 106,
+      "source": 106,
+      "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+    },
+    {
+      "parts": 106,
+      "source": 106,
+      "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+    },
+    {
+      "parts": 106,
+      "source": 106,
+      "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+    }
+  ],
+  "build_jobs": [
+    1330,
+    1182,
+    4034,
+    4034,
+    6
+  ],
+  "fresh_cco_modules": [
+    "CCO.FiniteFibres.Target",
+    "CCO.FiniteFibres.Group.Counting",
+    "CCO.FiniteFibres.Real.Basic",
+    "CCO.FiniteFibres.Boundaries.DifferenceSource",
+    "CCO.FiniteFibres.Group.Chain",
+    "CCO.FiniteFibres.Boundaries.GainWalk",
+    "CCO.FiniteFibres.Boundaries.Nontransitive",
+    "CCO.FiniteFibres.Group.Correspondence.Basic",
+    "CCO.FiniteFibres.CycleWalks",
+    "CCO.FiniteFibres.AtomicAdapter",
+    "CCO.FiniteFibres.Real.Definability",
+    "CCO.FiniteFibres.Group.Cauchy",
+    "CCO.FiniteFibres.Real.Count",
+    "CCO.FiniteFibres.Real.PaletteChain",
+    "CCO.FiniteFibres.Boundaries.DifferenceCCO",
+    "CCO.FiniteFibres.Group.Correspondence.Relative",
+    "CCO.FiniteFibres.CycleObstruction",
+    "CCO.FiniteFibres.Bipartite",
+    "CCO.FiniteFibres.Real.Source",
+    "CCO.FiniteFibres.Group.Normalizer",
+    "CCO.FiniteFibres.Boundaries.DifferencePalette",
+    "CCO.FiniteFibres.Boundaries.DifferenceExamples",
+    "CCO.FiniteFibres.Group.Correspondence.Counting",
+    "CCO.FiniteFibres.SmallTargets",
+    "CCO.FiniteFibres.Group.FiniteAction",
+    "CCO.FiniteFibres.Boundaries.Consumers",
+    "CCO.FiniteFibres.Automorphisms",
+    "CCO.FiniteFibres.Group.FiniteCover",
+    "CCO.FiniteFibres.AtomicAut",
+    "CCO.FiniteFibres.FiniteAtomic",
+    "CCO.FiniteFibres.Hasse",
+    "CCO.FiniteFibres.SourceChain",
+    "CCO.FiniteFibres.RealExport",
+    "CCO.FiniteFibres.Consumers"
+  ],
+  "url": "https://github.com/shulda/lean_cco/actions/runs/41057110156"
+}
