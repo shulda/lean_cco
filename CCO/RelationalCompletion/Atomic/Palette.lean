@@ -1,4 +1,5 @@
 import Mathlib.Data.Fin.Basic
+import Mathlib.Logic.Embedding.Basic
 
 /-! Arbitrary typed diversity palettes. Neither the sorts nor the atoms are
 assumed finite or realized in an ambient structure. -/
