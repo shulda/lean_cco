@@ -16,7 +16,12 @@ namespace SourcePhase
 variable (P : SourcePhase S H C A)
 
 theorem bit_eq_or_add_one (ε δ : Bit) : ε = δ ∨ ε = δ+1 := by
-  fin_cases ε <;> fin_cases δ <;> decide
+  classical
+  fin_cases ε <;> fin_cases δ
+  · exact Or.inl rfl
+  · exact Or.inr (ZModModule.add_self (1 : Bit)).symm
+  · exact Or.inr (zero_add (1 : Bit)).symm
+  · exact Or.inl rfl
 
 theorem actual_two_children :
     ∃ mark : Sigma X → Bit, P.masks.GlobalMarking mark ∧
