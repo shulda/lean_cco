@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 332,
+  "revision": 333,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -2094,6 +2094,9 @@
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b042_finite",
+        "/root/b042_finite/boundaries",
+        "/root/b042_finite/group_support",
+        "/root/b042_finite/real_acl",
         "root"
       ],
       "original_author_project_ids": [
@@ -8511,6 +8514,22 @@
         "author_actor_ids": [
           "root",
           "/root/b042_finite"
+        ],
+        "actor_id": "root"
+      }
+    },
+    {
+      "revision": 333,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "record_authorship",
+      "package_id": "B042",
+      "details": {
+        "package_id": "B042",
+        "author_actor_ids": [
+          "/root/b042_finite/group_support",
+          "/root/b042_finite/real_acl",
+          "/root/b042_finite/boundaries"
         ],
         "actor_id": "root"
       }
