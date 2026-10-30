@@ -1,6 +1,7 @@
 import CCO.FiniteKernel.Named.Axes
 import Mathlib.Data.Bool.Basic
 import Mathlib.Logic.Equiv.Bool
+import Mathlib.SetTheory.Cardinal.Finite
 
 /-! B041 C56: the actual fine and coarse full binary phase groups. Fine
 has two named two-point phase sorts. Coarse collapses the first sort to a
@@ -154,6 +155,174 @@ theorem swap_ne_one : swap ≠ 1 := by
   change true = false at hh
   cases hh
 
+/-- Every permutation of a two-point phase set preserves XOR difference. -/
+theorem perm_preserves_xor (e : Equiv.Perm Bool) (x y : Bool) :
+    Bool.xor (e x) (e y) = Bool.xor x y := by
+  have hne : e false ≠ e true := e.injective.ne (by decide)
+  cases h0 : e false <;> cases h1 : e true <;> cases x <;> cases y <;> simp_all
+
+def globalPhase (e : Equiv.Perm Bool) : FineAut := by
+  refine ⟨Equiv.prodCongr (Equiv.refl Bool) e, ?_⟩
+  constructor
+  · intro c p
+    exact Iff.rfl
+  · intro c p q
+    change Bool.xor (e p.2) (e q.2) = c ↔ Bool.xor p.2 q.2 = c
+    rw [perm_preserves_xor]
+
+def coarseOfPerm (e : Equiv.Perm Bool) : CoarseAut := by
+  refine ⟨e.optionCongr, ?_⟩
+  constructor
+  · intro c p
+    cases p <;> exact Iff.rfl
+  · intro c p q
+    cases p with
+    | none => exact Iff.rfl
+    | some x =>
+      cases q with
+      | none => exact Iff.rfl
+      | some y =>
+        change Bool.xor (e x) (e y) = c ↔ Bool.xor x y = c
+        rw [perm_preserves_xor]
+
+theorem coarse_fixes_none (g : CoarseAut) : g.val none = none := by
+  have h := (g.property.1 false none).mpr rfl
+  change (g.val none).isSome = false at h
+  cases hp : g.val none with
+  | none => rfl
+  | some b => rw [hp] at h; cases h
+
+def coarseEquivPerm : CoarseAut ≃ Equiv.Perm Bool where
+  toFun g := g.val.removeNone
+  invFun := coarseOfPerm
+  left_inv g := by
+    apply Subtype.ext
+    apply Equiv.ext
+    intro p
+    cases p with
+    | none => exact (coarse_fixes_none g).symm
+    | some b =>
+      apply Equiv.removeNone_some g.val
+      have h := (g.property.1 true (some b)).mpr rfl
+      change (g.val (some b)).isSome = true at h
+      cases hp : g.val (some b) with
+      | none => rw [hp] at h; cases h
+      | some c => exact ⟨c,rfl⟩
+  right_inv e := Equiv.removeNone_optionCongr e
+
+theorem coarse_card_two : Nat.card CoarseAut = 2 := by
+  rw [Nat.card_congr coarseEquivPerm, Nat.card_eq_fintype_card, Fintype.card_perm]
+  rfl
+
+/-- Every full coarse automorphism has a fine lift in this concrete model;
+its unique pointwise kernel element is nevertheless only the identity. -/
+theorem descent_surjective : Function.Surjective descent := by
+  intro g
+  refine ⟨globalPhase (coarseEquivPerm g), ?_⟩
+  exact coarseEquivPerm.left_inv g
+
+noncomputable def fineCoarseEquiv : FineAut ≃* CoarseAut :=
+  MulEquiv.ofBijective descent ⟨descent_injective,descent_surjective⟩
+
+theorem fine_card_two : Nat.card FineAut = 2 := by
+  rw [Nat.card_congr fineCoarseEquiv.toEquiv]
+  exact coarse_card_two
+
+/-- The full fine group acts by ONE common phase permutation on both sorts,
+so its two-coordinate image is the diagonal two-element group. -/
+theorem fine_action_diagonal (g : FineAut) (s b : Bool) :
+    g.val (s,b) = (s,restrictV g b) := by
+  have h := (g.property.2 false (s,b) (true,b)).mpr (by
+    change Bool.xor b b = false
+    cases b <;> rfl)
+  change Bool.xor (g.val (s,b)).2 (g.val (true,b)).2 = false at h
+  have he : (g.val (s,b)).2 = (g.val (true,b)).2 := by
+    cases hx : (g.val (s,b)).2 <;> cases hy : (g.val (true,b)).2 <;> simp_all
+  exact Prod.ext (fine_sort g (s,b)) he
+
+theorem full_pair_diagonal (eU eV : Equiv.Perm Bool) :
+    (∃ g : FineAut, (∀ b, g.val (false,b) = (false,eU b)) ∧
+      (∀ b, g.val (true,b) = (true,eV b))) ↔ eU = eV := by
+  constructor
+  · rintro ⟨g,hU,hV⟩
+    apply Equiv.ext
+    intro b
+    have hu := congrArg Prod.snd ((hU b).symm.trans (fine_action_diagonal g false b))
+    have hv := congrArg Prod.snd ((hV b).symm.trans (fine_action_diagonal g true b))
+    exact hu.trans hv.symm
+  · intro h
+    subst eV
+    exact ⟨globalPhase eU,fun _ => rfl,fun _ => rfl⟩
+
+def intrinsicEquivPerm : intrinsic.Aut ≃* Equiv.Perm Bool where
+  toFun := Subtype.val
+  invFun e := ⟨e, ⟨fun _ _ => Iff.rfl, fun c x y => by
+    change Bool.xor (e x) (e y) = c ↔ Bool.xor x y = c
+    rw [perm_preserves_xor]⟩⟩
+  left_inv _ := rfl
+  right_inv _ := rfl
+  map_mul' _ _ := rfl
+
+theorem intrinsic_card_two : Nat.card intrinsic.Aut = 2 := by
+  rw [Nat.card_congr intrinsicEquivPerm.toEquiv, Nat.card_eq_fintype_card,
+    Fintype.card_perm]
+  rfl
+
+def firstAxis : Set FinePoint := {p | p.1 = false}
+
+def firstAxisEquiv : Bool ≃ ↥firstAxis where
+  toFun b := ⟨(false,b),rfl⟩
+  invFun p := p.val.2
+  left_inv _ := rfl
+  right_inv p := Subtype.ext (Prod.ext p.property.symm rfl)
+
+/-- The displayed intrinsic structure is exactly the induced binary language
+on the ENTIRE first fine sort, under this explicit carrier equivalence. -/
+def intrinsicToAxis (g : intrinsic.Aut) : (fine.induced firstAxis).Aut := by
+  refine ⟨firstAxisEquiv.symm.trans (g.val.trans firstAxisEquiv), ?_⟩
+  constructor
+  · intro c p
+    change false = c ↔ p.val.1 = c
+    rw [p.property]
+  · intro c p q
+    exact g.property.2 c p.val.2 q.val.2
+
+def axisToIntrinsic (g : (fine.induced firstAxis).Aut) : intrinsic.Aut := by
+  refine ⟨firstAxisEquiv.trans (g.val.trans firstAxisEquiv.symm), ?_⟩
+  constructor
+  · intro c p
+    exact Iff.rfl
+  · intro c p q
+    exact g.property.2 c (firstAxisEquiv p) (firstAxisEquiv q)
+
+def intrinsicEquivInduced : intrinsic.Aut ≃* (fine.induced firstAxis).Aut where
+  toFun := intrinsicToAxis
+  invFun := axisToIntrinsic
+  left_inv g := by
+    apply Subtype.ext
+    apply Equiv.ext
+    intro x
+    rfl
+  right_inv g := by
+    apply Subtype.ext
+    apply Equiv.ext
+    intro x
+    change firstAxisEquiv (firstAxisEquiv.symm
+      (g.val (firstAxisEquiv (firstAxisEquiv.symm x)))) = g.val x
+    rw [Equiv.apply_symm_apply, Equiv.apply_symm_apply]
+  map_mul' g h := by
+    apply Subtype.ext
+    apply Equiv.ext
+    intro x
+    change firstAxisEquiv (g.val (h.val (firstAxisEquiv.symm x))) =
+      firstAxisEquiv (g.val (firstAxisEquiv.symm
+        (firstAxisEquiv (h.val (firstAxisEquiv.symm x)))))
+    rw [Equiv.symm_apply_apply]
+
+theorem actual_intrinsic_card_two : Nat.card (fine.induced firstAxis).Aut = 2 := by
+  rw [Nat.card_congr intrinsicEquivInduced.symm.toEquiv]
+  exact intrinsic_card_two
+
 /-- Therefore an intrinsic-binding isomorphism for the owner kernel cannot
 exist, even though the fine full-group pair image remains subdirect. -/
 theorem no_intrinsic_binding : ¬ Nonempty (descent.ker ≃* intrinsic.Aut) := by
@@ -165,5 +334,11 @@ theorem no_intrinsic_binding : ¬ Nonempty (descent.ker ≃* intrinsic.Aut) := b
     have h := Subsingleton.elim (e.symm swap) (e.symm 1)
     exact e.symm.injective h
   exact swap_ne_one hswap
+
+/-- The same failure for the literal induced full first-axis group. -/
+theorem no_actual_intrinsic_binding :
+    ¬ Nonempty (descent.ker ≃* (fine.induced firstAxis).Aut) := by
+  rintro ⟨e⟩
+  exact no_intrinsic_binding ⟨e.trans intrinsicEquivInduced.symm⟩
 
 end CCO.SimultaneousQuotients.Boundaries.PhaseKernel
