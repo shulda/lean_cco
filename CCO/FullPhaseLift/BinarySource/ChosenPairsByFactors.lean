@@ -1,4 +1,4 @@
-import CCO.FullPhaseLift.Full.Frozen
+import CCO.FullPhaseLift.Full.Reindex
 import Mathlib.Data.Fintype.EquivFin
 import Mathlib.Data.Fintype.Sum
 import Mathlib.Data.Fintype.Sigma
@@ -18,6 +18,14 @@ noncomputable section
 
 abbrev LowChart (V : Type u) := Σ k : Fin 3, (Fin k.val ↪ V)
 
+instance lowChartFinite (V : Type u) [Finite V] : Finite (LowChart V) := by
+  classical
+  letI : Fintype V := Fintype.ofFinite V
+  letI : ∀ k : Fin 3, Fintype (Fin k.val ↪ V) := fun _ =>
+    Fintype.ofInjective (fun e : Fin _ ↪ V => e.toFun)
+      (fun _ _ h => Function.Embedding.ext (congrFun h))
+  exact Finite.of_fintype (Σ k : Fin 3, Fin k.val ↪ V)
+
 def chosenLowFactor {L : Signature} {M : Type v} {V : Type u}
     (U : BoolTable L M) (D : Partial L V) (p : V ↪ M) (c : LowChart V) :
     FrozenFactor U (augmentLow U D p) where
@@ -30,16 +38,18 @@ def chosenLowFactor {L : Signature} {M : Type v} {V : Type u}
 
 /-- No point-separation premise is needed. In particular this applies to
 the empty original language as well as the actual canonical expansion. -/
-theorem lift_chosen_pairs_by_factors {L : Signature} {M : Type v}
+theorem lift_chosen_pairs_by_factors_finite {L : Signature} {M : Type v}
     (U : BoolTable L M) (normal : SupportNormal U)
-    (n : ℕ) (D : Partial L (Fin n)) (m : ℕ) (F : Fin m → FrozenFactor U D)
-    (covered : HigherCovered F) (p : Fin n ↪ M) (hp : LowRealizes U D p) :
-    ∃ q : Fin n ↪ M, Realizes U D q ∧ (∀ j, (F j).FixedBy q) ∧
+    {V : Type u} [Finite V] (D : Partial L V) (m : ℕ) (F : Fin m → FrozenFactor U D)
+    (covered : HigherCovered F) (p : V ↪ M) (hp : LowRealizes U D p) :
+    ∃ q : V ↪ M, Realizes U D q ∧ (∀ j, (F j).FixedBy q) ∧
       ∀ r xs, SmallSupport xs → U r (q ∘ xs) = U r (p ∘ xs) := by
   classical
   let D' := augmentLow U D p
-  let κ := Fin m ⊕ LowChart (Fin n)
-  letI : Fintype κ := Fintype.ofFinite κ
+  letI : Finite (LowChart V) := lowChartFinite V
+  letI : Fintype (LowChart V) := Fintype.ofFinite (LowChart V)
+  let κ := Fin m ⊕ LowChart V
+  letI : Fintype κ := inferInstanceAs (Fintype (Fin m ⊕ LowChart V))
   let enum := Fintype.equivFin κ
   let factors : κ → FrozenFactor U D' := fun j => match j with
     | .inl i => (F i).augment p hp
@@ -63,20 +73,20 @@ theorem lift_chosen_pairs_by_factors {L : Signature} {M : Type v}
       exact Option.some.inj hd
     · intro j
       exact p.injective.comp (family j).inclusion.injective
-  obtain ⟨q,hq,hfix⟩ := normal n D' _ family (augmentLow_consistent U D p) hcov hpair
+  obtain ⟨q,hq,hfix⟩ := normal.realize_finite D' _ family (augmentLow_consistent U D p) hcov hpair
   have hqi : Function.Injective q := by
     intro a b hab
     by_contra hne
-    let j : Fin 2 ↪ Fin n := ⟨![a,b],by
+    let j : Fin 2 ↪ V := ⟨![a,b],by
       intro i k hik
       fin_cases i <;> fin_cases k <;> simp_all⟩
-    let c : LowChart (Fin n) := ⟨⟨2,by decide⟩,j⟩
+    let c : LowChart V := ⟨⟨2,by decide⟩,j⟩
     have hf := (hfix (enum (.inr c))).1
     rw [fam] at hf
     change Function.Injective (q ∘ j) at hf
     have he : (0 : Fin 2) = 1 := hf (by exact hab)
     exact (by decide : (0 : Fin 2) ≠ 1) he
-  let q' : Fin n ↪ M := ⟨q,hqi⟩
+  let q' : V ↪ M := ⟨q,hqi⟩
   refine ⟨q',?_,?_,?_⟩
   · intro r xs b hd
     exact hq r xs b (augmentLow_extends U D p hp r xs b hd)
@@ -86,6 +96,14 @@ theorem lift_chosen_pairs_by_factors {L : Signature} {M : Type v}
     exact h
   · intro r xs hs
     exact hq r xs _ (augmentLow_small U D p r xs hs)
+
+theorem lift_chosen_pairs_by_factors {L : Signature} {M : Type v}
+    (U : BoolTable L M) (normal : SupportNormal U)
+    (n : ℕ) (D : Partial L (Fin n)) (m : ℕ) (F : Fin m → FrozenFactor U D)
+    (covered : HigherCovered F) (p : Fin n ↪ M) (hp : LowRealizes U D p) :
+    ∃ q : Fin n ↪ M, Realizes U D q ∧ (∀ j, (F j).FixedBy q) ∧
+      ∀ r xs, SmallSupport xs → U r (q ∘ xs) = U r (p ∘ xs) :=
+  lift_chosen_pairs_by_factors_finite U normal D m F covered p hp
 
 end
 end CCO.FullPhaseLift.BinarySource
