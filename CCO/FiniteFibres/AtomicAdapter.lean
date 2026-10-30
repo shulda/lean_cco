@@ -30,7 +30,7 @@ def inputCycle {n : Nat} (D : Atomic.Diagram (palette (S.Atom () ())) n)
 
 theorem targetOfAtomic_CCO (cco : CCO.SemanticCCO.{0,u,0,v} S) :
     SemanticCCO (targetOfAtomic S) := by
-  intro n D hcycles
+  intro n D _hLocal hcycles
   have hsource : ∀ K : CCO.SimpleCycle (inputDiagram S D), CCO.CycleHom K := by
     intro K
     obtain ⟨point,_,hp⟩ := hcycles (inputCycle S D K)

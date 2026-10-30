@@ -68,7 +68,13 @@ theorem no_odd_atom_walk (cco : SemanticCCO T) (a : C)
     have hq : 0 < T.size := by have := x.isLt; omega
     obtain ⟨W⟩ := ParityHasse.Sparse.high_girth_chromatic_exists hq p.length
     let D := monochromaticDiagram W.graph a
-    obtain ⟨f⟩ := cco D (monochromatic_cycles_map T W.graph a p hxy hp W.noShortCycles)
+    have hLocal : LocalAllowed T D := by
+      refine ⟨fun _ => ⟨x⟩,?_⟩
+      intro s t b hb
+      have hab := ((monochromatic_edge_iff W.graph a b s t).mp hb).2
+      subst b
+      exact ⟨x,y,hxy⟩
+    obtain ⟨f⟩ := cco D hLocal (monochromatic_cycles_map T W.graph a p hxy hp W.noShortCycles)
     obtain ⟨s,t,hst,heq⟩ := W.monochromatic f.vertex
     have hcol := f.edge_eq s t a ((monochromatic_edge_iff W.graph a a s t).mpr ⟨hst,rfl⟩)
     exact T.ne_of_edge hcol heq

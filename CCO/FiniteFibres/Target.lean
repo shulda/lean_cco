@@ -50,8 +50,13 @@ def atomGraph (a : C) : SimpleGraph (Fin T.size) where
 
 /-- Original semantic homomorphic simple-cycle CCO for this ONE actual target.
 Missing edges assert no inequality; nonadjacent vertices may collide. -/
+def LocalAllowed {n : Nat} (D : Atomic.Diagram (palette C) n) : Prop :=
+  (∀ _x : Fin n, Nonempty (Fin T.size)) ∧
+  (∀ x y a, D.edge x y = some a → ∃ b c : Fin T.size, T.edge b c = some a)
+
 def SemanticCCO : Prop :=
   ∀ {n : Nat} (D : Atomic.Diagram (palette C) n),
+    LocalAllowed T D →
     (∀ K : Atomic.SimpleCycle D, Atomic.CycleHomInto K T) →
       Nonempty (Atomic.Hom D T)
 
