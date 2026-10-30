@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 326,
+  "revision": 327,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -2019,7 +2019,7 @@
       }
     },
     "B040": {
-      "state": "SUBMITTED",
+      "state": "REVIEWING",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b040_transport",
@@ -2045,7 +2045,19 @@
         "conclusion": "success",
         "axiom_audit": "allowlist"
       },
-      "report_path": "formalization/coordination/submissions/B040.md"
+      "report_path": "formalization/coordination/submissions/B040.md",
+      "review": {
+        "project_id": 3,
+        "actor_id": "independent_review",
+        "head_sha": "8e0ad173ed85d3ee6093fbddd6a18a6e19e7f47b",
+        "approved": false,
+        "independence": {
+          "identity": "/root/independent_review",
+          "non_author": true,
+          "summary": "The actual registered review-only agent personally read all 13 frozen B040 modules once, pinned source and all 50 claims, then only final Markdown delta and exact public source tree. It authored and designed none of this package; all three actual authors are recorded and distinct from it. No reviewer builds, tests, audits or implementation helpers were used.",
+          "report_path": "formalization/coordination/reviews/B040-final.md"
+        }
+      }
     },
     "B041": {
       "state": "IN_PROGRESS",
@@ -8376,6 +8388,24 @@
         },
         "report_path": "formalization/coordination/submissions/B040.md",
         "actor_id": "root"
+      }
+    },
+    {
+      "revision": 327,
+      "project_id": 3,
+      "actor_id": "independent_review",
+      "event": "review",
+      "package_id": "B040",
+      "details": {
+        "package_id": "B040",
+        "head_sha": "8e0ad173ed85d3ee6093fbddd6a18a6e19e7f47b",
+        "independence": {
+          "identity": "/root/independent_review",
+          "non_author": true,
+          "summary": "The actual registered review-only agent personally read all 13 frozen B040 modules once, pinned source and all 50 claims, then only final Markdown delta and exact public source tree. It authored and designed none of this package; all three actual authors are recorded and distinct from it. No reviewer builds, tests, audits or implementation helpers were used.",
+          "report_path": "formalization/coordination/reviews/B040-final.md"
+        },
+        "actor_id": "independent_review"
       }
     }
   ],
