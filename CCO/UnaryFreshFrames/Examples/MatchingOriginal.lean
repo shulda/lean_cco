@@ -20,7 +20,7 @@ def basicRoot (x y : Point) : Prop :=
 theorem root_iff_basic (x y : Point) : root x = root y ↔ basicRoot x y := by
   rcases x with ⟨q,n⟩ | (q | q)
   all_goals rcases y with ⟨r,m⟩ | (r | r)
-  all_goals simp [basicRoot,matchRel,sort,root,operation,real,rootPoint,partner]
+  all_goals simp [basicRoot,matchRel,sort,root,operation,rootPoint,partner]
   all_goals exact eq_comm
 
 abbrev originalLanguage : Language where
