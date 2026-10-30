@@ -12,12 +12,12 @@ symbols and no functions. `network E` has R exactly on distinct equivalent
 pairs and B exactly on inequivalent pairs. `completed` consists of all
 finite such networks, with no bound on the number or sizes of classes.
 
-`Basic.completed_hereditary` pulls the equivalence relation back along the
+`completed_hereditary` in `Basic.lean` pulls the equivalence relation back along the
 actual given full embedding. `network_irreducible` uses positive coverage
 of each distinct pair to rule out a proper free split, and yields
 `completed_irreducible` for every completed member.
 
-`StrongAmalgam.completed_finiteHereditarySAP` is an actual construction,
+`completed_finiteHereditarySAP` in `StrongAmalgam.lean` is an actual construction,
 not a supplied amalgamation callback. For any full common-root span, the
 carrier consists of the original root, the left points outside that root,
 and the right points outside that root. Thus no distinct nonroot points
@@ -43,7 +43,7 @@ It needs neither global injectivity nor a protected-piece premise, and
 implies `path_no_completion` even for ordinary homomorphism-embedding
 completions.
 
-`FreeSplit.irreducible_image_linked` applies to every actual irreducible
+`irreducible_image_linked` in `FreeSplit.lean` applies to every actual irreducible
 subobject and every full embedding into the partial source. Combined
 with the absence of triangles in the n-cycle of specified pairs, it
 proves `path_irreducibles_completed`: all protected pieces are actual
