@@ -14,6 +14,20 @@ def ProductOne (n : ℕ) := {v : List.Vector K n // v.toList.prod = 1}
 
 namespace ProductOne
 
+/-- The first n entries determine the LAST entry uniquely, also for a
+noncommutative group. This is the source's literal completion request. -/
+theorem last_entry_iff (l : List K) (g : K) :
+    (l ++ [g]).prod = 1 ↔ g = l.prod⁻¹ := by
+  rw [List.prod_append,List.prod_singleton]
+  exact ⟨eq_inv_of_mul_eq_one_right,fun h => by rw [h,mul_inv_cancel]⟩
+
+/-- A one-step cyclic rotation conjugates the product rather than assuming
+that different entries commute. -/
+theorem rotated_product (g : K) (l : List K) :
+    (l ++ [g]).prod = g⁻¹ * (g :: l).prod * g := by
+  simp only [List.prod_append,List.prod_singleton,List.prod_cons,List.prod_nil,mul_one,
+    inv_mul_cancel_left]
+
 def complete (n : ℕ) : List.Vector K n ≃ ProductOne K (n+1) where
   toFun v := ⟨v.toList.prod⁻¹ ::ᵥ v,by
     change (v.toList.prod⁻¹ :: v.toList).prod = 1
