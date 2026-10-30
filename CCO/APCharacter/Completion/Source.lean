@@ -22,6 +22,21 @@ theorem identity_folding_cycles {V : Type z} (D : PartialDiagram S V)
     ∀ C : SimpleCycle (foldDiagram D f x y hxy sameSort missing bound), CycleHom C :=
   fold_cycleHom D f x y hxy sameSort missing bound (identity_bound_reverse D x y hxy bound)
 
+/-- C33's separation uses only completeness and the irreflexivity of actual
+original diversity atoms, independently of SAP and triangle-definedness. -/
+theorem terminal_injective {V : Type z} (D : PartialDiagram S V)
+    (complete : D.IsComplete) (f : DiagramHom D) : f.IsInjective :=
+  f.injective_of_complete complete
+
+/-- On every distinct terminal pair the whole optional old colour is its
+specified atom. This is induced full binary readout, not merely a positive
+map on a partial diagram. Equality pairs are the source's actual diagonal. -/
+theorem terminal_full_pair {V : Type z} (D : PartialDiagram S V)
+    (complete : D.IsComplete) (f : DiagramHom D) (x y : V) (hxy : x ≠ y) :
+    S.colour (f.point x) (f.point y) = D.edge x y hxy := by
+  obtain ⟨a,ha⟩ := complete x y hxy
+  exact (f.preserves_edge x y hxy a ha).trans ha.symm
+
 variable (M : MaskData S)
 variable {G : Type t} [Group G] [∀ i, MulAction G (X i)]
 variable (H : HomogeneousSource S G) (laws : M.Calculus)
