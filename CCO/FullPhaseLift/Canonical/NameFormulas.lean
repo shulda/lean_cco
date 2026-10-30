@@ -49,4 +49,30 @@ theorem pairNameFormula_qf {L : Signature} (p : Profile L 2) :
     (pairNameFormula p).IsQF :=
   (BoundedFormula.IsAtomic.equal _ _).isQF.not.inf (profileFormula_qf p)
 
+theorem unarySymbol_definable {L : Signature} {V : Type v} (T : BoolTable L V)
+    (p : Profile L 1) (xs : Fin 1 → V) :
+    letI := toFirstOrder T
+    (toRelational (expand T)).rel
+      (⟨unarySymbol L p,unarySymbol_arity L p⟩ : (expansion L).language.Rel 1) xs ↔
+      (unaryNameFormula p).Realize xs := by
+  classical
+  letI := toFirstOrder T
+  change expand T (unarySymbol L p) (xs ∘ Fin.cast (unarySymbol_arity L p)) = true ↔ _
+  rw [expand_unary]
+  simp only [decide_eq_true_eq]
+  exact (unaryNameFormula_realize T p xs).symm
+
+theorem pairSymbol_definable {L : Signature} {V : Type v} (T : BoolTable L V)
+    (p : Profile L 2) (xs : Fin 2 → V) :
+    letI := toFirstOrder T
+    (toRelational (expand T)).rel
+      (⟨pairSymbol L p,pairSymbol_arity L p⟩ : (expansion L).language.Rel 2) xs ↔
+      (pairNameFormula p).Realize xs := by
+  classical
+  letI := toFirstOrder T
+  change expand T (pairSymbol L p) (xs ∘ Fin.cast (pairSymbol_arity L p)) = true ↔ _
+  rw [expand_pair]
+  simp only [decide_eq_true_eq]
+  exact (pairNameFormula_realize T p xs).symm
+
 end CCO.FullPhaseLift.Canonical

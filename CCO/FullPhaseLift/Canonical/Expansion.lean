@@ -118,6 +118,26 @@ noncomputable def forgetIso {L : Signature} {V : Type v} {W : Type w}
     {A : BoolTable L V} {B : BoolTable L W} (e : Embedding (expand A) (expand B)) :
     expandEmbedding (forgetEmbedding e) = e := by cases e; rfl
 
+@[simp] theorem forget_expandIso {L : Signature} {V : Type v} {W : Type w}
+    {A : BoolTable L V} {B : BoolTable L W} (e : Iso A B) :
+    forgetIso (expandIso e) = e := by cases e; rfl
+
+@[simp] theorem expand_forgetIso {L : Signature} {V : Type v} {W : Type w}
+    {A : BoolTable L V} {B : BoolTable L W} (e : Iso (expand A) (expand B)) :
+    expandIso (forgetIso e) = e := by cases e; rfl
+
+noncomputable def embeddingEquiv {L : Signature} {V : Type v} {W : Type w}
+    (A : BoolTable L V) (B : BoolTable L W) :
+    Embedding A B ≃ Embedding (expand A) (expand B) :=
+  ⟨expandEmbedding,forgetEmbedding,forget_expandEmbedding,expand_forgetEmbedding⟩
+
+/-- In particular this gives the same full automorphisms when A = B,
+with the identical underlying permutations. No claim about pair-reduct
+automorphisms is made. -/
+noncomputable def isoEquiv {L : Signature} {V : Type v} {W : Type w}
+    (A : BoolTable L V) (B : BoolTable L W) : Iso A B ≃ Iso (expand A) (expand B) :=
+  ⟨expandIso,forgetIso,forget_expandIso,expand_forgetIso⟩
+
 /-- Every actual distinct pair has an irreflexive named positive relation. -/
 theorem expand_separates {L : Signature} {V : Type v} (T : BoolTable L V)
     (x y : V) (hne : x ≠ y) :
