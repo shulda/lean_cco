@@ -126,7 +126,22 @@ theorem preserves_sSup_of_finite
   | empty =>
       simpa only [sSup_empty, Set.image_empty] using hBot
   | @insert E s hnot hfin ih =>
-      simp only [sSup_insert, Set.image_insert, hJoin, ih]
+      have hImage : (rho '' (insert E s : Set Old)) =
+          insert (rho E) (rho '' s) := by
+        ext y
+        constructor
+        · rintro ⟨x, hx, rfl⟩
+          rcases Set.mem_insert_iff.mp hx with he | hs
+          · subst x
+            exact Set.mem_insert _ _
+          · exact Set.mem_insert_of_mem _ ⟨x, hs, rfl⟩
+        · intro hy
+          rcases Set.mem_insert_iff.mp hy with he | hy
+          · subst y
+            exact ⟨E, Set.mem_insert _ _, rfl⟩
+          · obtain ⟨x, hx, rfl⟩ := hy
+            exact ⟨x, Set.mem_insert_of_mem _ hx, rfl⟩
+      simp only [sSup_insert, hJoin, ih, hImage]
 
 /-- Source C34/C35 order core under EXACTLY finite-lattice restrictions,
 with only C29 bottom/C30 joins/C33 surjectivity left to instantiate. -/
