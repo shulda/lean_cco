@@ -99,9 +99,9 @@ complete stopped-worker WIP handover with old records/history preserved and
 effective approvals cleared. These source observations do not establish final
 approval while exact final-head evidence remains outstanding.
 
-## Exact final CI
+## Reviewed prior-head CI
 
-I personally fetched successful final-head CI41169070408/job124442885428 and
+I personally fetched successful then-current-head CI41169070408/job124442885428 and
 its complete 3,060,696-character log, then inspected actual checkout, tests,
 generators/controls, build/audit and complete source/provider evidence.
 Checkout `fabf3e0972f462c9efc8eca7a50faa3489b6e146` has the final approved-source
@@ -115,12 +115,34 @@ Ramsey guards checked106 at subtree`374241ce3751715c90b12c0b071f36026819ad4a`.
 There were no error annotations and zero rebuilt CCO modules. Earlier-head
 green runs were preserved but do not provide approval evidence for this head.
 
+## Actor-relevant STATE projection delta
+
+The author subsequently supplied native
+`fca2f212f74a6ab10085249e2616de6cec9358fc`, public
+`b8877da8b102bb8c6a174e76914d638bb864b2ae`, tree
+`56cdbffb57370600d14a47119366b1503d4f0a3e`. I personally read the entire
+eleven-file `+124/-24` delta, including every changed generated instruction and
+documentation paragraph and both new/extended test bodies. It exposes an exact
+deep-copied actor-relevant `state_view` in a receipt. The canonical ledger and
+effective applied event remain authority; AVAILABLE/recommendation/no_change
+does not create a claim. Existing work may be resumed from its actual own record.
+
+The bound Git blob SHA uses actual UTF8 byte length and the Git blob header.
+New STATE writes use the same serializer for the hash and published bytes;
+status/no-write requests hash the original raw STATE text, retaining its actual
+formatting. Selection includes own active work, foreign leased review, the
+recommended package and the processed package. Whole STATE remains required
+for audit, mismatch or full handover. No mutation or ownership rule changes;
+no new source finding. This new head needs its own CI41169876583, not the
+earlier182-test run above.
+
 ## Decision
 
-The complete source review, including both actual repair deltas and the author's
-related guard, is finished with R1 and R2 closed and no remaining source or CI
-blocker. Operational approval is withheld pending genuine proposed/published
-infrastructure lock inspection and final fresh refs. No conditional statement in this report may
+The complete source review, including both actual repair deltas, the author's
+related guard and the STATE projection delta, is finished with R1 and R2 closed
+and no remaining source blocker. Operational approval is withheld pending the
+current exact public-head CI, genuine proposed/published infrastructure lock
+inspection and final fresh refs. No conditional statement in this report may
 be used as operational approval. Mathematical sources, contracts, provider pins,
 toolchain, original Lean workflow and caches have not been changed in the read
 migration scope.
