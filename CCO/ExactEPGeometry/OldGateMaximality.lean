@@ -132,7 +132,10 @@ theorem lift_maximal_gate
         have hh := congrArg
           (fun V : ColourEq A.source (P.parent p) =>
             V (P.point p x) (P.point p y)) hZ.2
-        exact hh
+        change (Z (P.point p x) (P.point p y) ∧
+          Uold (P.point p x) (P.point p y)) =
+          Y (P.point p x) (P.point p y) at hh
+        rw [hh]
       _ ↔ (rho A B P transport p Y) x y :=
         (rho_iff A B P transport p Y x y).symm
   have hKleZcur : K ≤ rho A B P transport p Z := by
