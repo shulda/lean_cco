@@ -63,8 +63,11 @@ theorem oldOptionalPositivePresentations_all_occurrences_positive
         simp [P, oldOptionalPositivePresentations, h]
       have hBound : slot.val < (P e).length := by
         simpa only [P] using slot.isLt
-      rw [hZero] at hBound
-      exact False.elim (Nat.not_lt_zero slot.val hBound)
+      have hImpossible : slot.val < 0 := by
+        calc
+          slot.val < (P e).length := hBound
+          _ = 0 := hZero
+      exact False.elim (Nat.not_lt_zero slot.val hImpossible)
   | some w =>
       have hEq : (P e).get slot = PositiveWord.toRawWord S w := by
         simpa [P, oldOptionalPositivePresentations, h] using hMem
