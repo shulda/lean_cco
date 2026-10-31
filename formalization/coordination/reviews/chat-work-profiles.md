@@ -35,7 +35,7 @@ previous policy is exact, and current BOARD is unchanged.
 
 ## Findings
 
-**R1 — P2, OPEN at the initial freeze: malformed checkpoint can poison the inbox.**
+**R1 — P2, CLOSED by the personally reviewed repair: malformed checkpoint can poison the inbox.**
 In `tools/coordination_broker.py`262–264, `observed_ci.run_id` is interpolated
 into a URL before integer validation. A syntactically valid checkpoint request
 with `run_id: {"bad": 1}` creates a path containing `{'bad': 1}`. The space causes
@@ -46,6 +46,27 @@ drain revisits the same immutable unreceipted request. This contradicts the
 documented malformed-request isolation. I reported the concrete source path
 and inspected the standard-library exception definition; I did not execute a
 reproducer or implement the fix.
+
+The author independently reproduced the escaping `InvalidURL` before repair.
+I personally read the complete two-file repair at native
+`f679dac6adb3da28e67597a31608a1847558d88c`, public
+`f2c279a0d03ebbfce4ddde4bd1b05a680d2ec58b`, tree
+`d3e16578f8432422be3102d654af52ef28d429b3`. Checkpoint evidence is now checked
+for dict shape, a positive exact-int run ID, exact SHA and completed conclusion
+before URL construction. Its behavioral regression covers an actual owned
+claim, the malformed checkpoint, a subsequent different worker, rejected/no-change
+receipts and the unchanged whole STATE. R1 is closed on this repaired source;
+I did not rerun the test. Initial-head green CI does not certify this new head.
+
+**R2 — P2, OPEN at the repaired freeze: adding a worker clears a live claim pause.**
+`coordination_profiles.promote()`232–233 unconditionally writes
+`claims_paused=False`. A supported later append-worker deployment during a
+paused handover therefore silently resumes new claims, despite no explicit
+user-authorized `resume_claims` or mode-switch event. The old live pause should
+remain a distinct preserved control on this advertised unchanged-mode/live-work
+deployment path. STATE396's initial unpaused deployment is unaffected, but the
+later worker-addition path breaks this guard. This was reported as a source
+finding, without executing a reproducer or participating in repair design.
 
 Other reviewed invariants at this checkpoint are consistent: fresh Chat
 identities4/5/6, all old actors/roles preserved, one unresolved batch per Chat,
@@ -58,7 +79,7 @@ approval while R1 and exact final-head evidence remain outstanding.
 
 ## Decision
 
-Approval withheld pending author repair/evidence for R1, independent review of
+Approval withheld pending author repair/evidence for R2, independent review of
 the actual repaired delta, successful exact final public-head CI and genuine
 proposed/published infrastructure lock inspection. Initial CI41168141706 was
 still in progress when observed. No conditional statement in this report may
