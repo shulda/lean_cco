@@ -45,20 +45,19 @@ theorem markedChild_exact_comp_iff
           (RawExact.evaluate S D.words) ε a b ∧
         markedChildRelation S H (P.completion_property cco)
           (RawExact.evaluate S E.words) ε b c := by
-  let completion := P.completion_property cco
   have hCurrentD : RawSymmetric.EquivRel
-      (markedChildRelation S H completion
+      (markedChildRelation S H (P.completion_property cco)
         (RawExact.evaluate S D.words) ε) :=
     markedChild_exact_equiv S H P cco D hD ε
   have hCurrentE : RawSymmetric.EquivRel
-      (markedChildRelation S H completion
+      (markedChildRelation S H (P.completion_property cco)
         (RawExact.evaluate S E.words) ε) :=
     markedChild_exact_equiv S H P cco E hE ε
-  have hInputD : ∃ x y : Age.Limit S H completion,
-      markedTrace S H completion (RawExact.evaluate S D.words)
+  have hInputD : ∃ x y : Age.Limit S H (P.completion_property cco),
+      markedTrace S H (P.completion_property cco) (RawExact.evaluate S D.words)
         ε ε x y := ⟨a.val, a.val, hCurrentD.refl a⟩
-  have hInputE : ∃ x y : Age.Limit S H completion,
-      markedTrace S H completion (RawExact.evaluate S E.words)
+  have hInputE : ∃ x y : Age.Limit S H (P.completion_property cco),
+      markedTrace S H (P.completion_property cco) (RawExact.evaluate S E.words)
         ε ε x y := ⟨a.val, a.val, hCurrentE.refl a⟩
   have hTP :=
     marked_trace_product S H P cco D E ε ε ε hInputD hInputE a.val c.val
@@ -71,6 +70,9 @@ theorem markedChild_exact_comp_iff
 
 /-- The OLD full exact product is an equivalence and its universal
 original join, by original invariant pair flips, not a quotient action. -/
+section OriginalJoin
+include H
+
 theorem original_exact_comp_join
     {i : ι} (D E : RawExact.NonemptyExact S i i)
     (hD : RawSymmetric.EquivRel (RawExact.evaluate S D.words))
@@ -91,6 +93,8 @@ theorem original_exact_comp_join
     hD hE (RawExact.presentation_invariant_of_homogeneous S H D.words)
     (RawExact.presentation_invariant_of_homogeneous S H E.words)
   exact h
+
+end OriginalJoin
 
 /-- A complete actual one-stage current child has the genuine product
 of two old exact equivalence traces as its LEAST upper equivalence bound.
@@ -149,4 +153,5 @@ theorem markedChild_exact_comp_join
       (markedChild_exact_comp_iff S H P cco D E hD hE ε a c).mp hJ
     exact hK.trans a b c (hR a b hAB) (hT b c hBC)
 
+end
 end CCO.ExactEPGeometry
