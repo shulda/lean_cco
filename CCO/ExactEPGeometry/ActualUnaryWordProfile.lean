@@ -81,8 +81,8 @@ theorem realized_original_word_has_current_word
       (RawExact.word_invariant_of_homogeneous S H W) x z).mp hInChild
   obtain ⟨V,hForgotten,hReal⟩ :=
     lift_old_word_with_witness I W x.val z.val hOld
-  have hC : childOf I x.val = c := childOf_actual_point I x
-  have hD : childOf I z.val = d := childOf_actual_point I z
+  have hC : childOf I x.val = c := childOf_actual_point P cco I x
+  have hD : childOf I z.val = d := childOf_actual_point P cco I z
   cases hC
   cases hD
   exact ⟨V,hForgotten,pointOf I x.val,pointOf I z.val,hReal⟩
