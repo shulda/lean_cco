@@ -58,7 +58,7 @@ claim, the malformed checkpoint, a subsequent different worker, rejected/no-chan
 receipts and the unchanged whole STATE. R1 is closed on this repaired source;
 I did not rerun the test. Initial-head green CI does not certify this new head.
 
-**R2 — P2, OPEN at the repaired freeze: adding a worker clears a live claim pause.**
+**R2 — P2, CLOSED by the personally reviewed repair: adding a worker clears a live claim pause.**
 `coordination_profiles.promote()`232–233 unconditionally writes
 `claims_paused=False`. A supported later append-worker deployment during a
 paused handover therefore silently resumes new claims, despite no explicit
@@ -68,6 +68,17 @@ deployment path. STATE396's initial unpaused deployment is unaffected, but the
 later worker-addition path breaks this guard. This was reported as a source
 finding, without executing a reproducer or participating in repair design.
 
+The author independently reproduced the lost pause with a real paused fixture
+and live claim before repair. I personally read the entire two-file delta at
+native `a027a58880278e8c3380da49501dc12cd6beb72d`, public
+`67304ffa21ecfad31fe6c54cdf69818424615c41`, tree
+`8c74196b997cf45fc341fe20f1dc31c496117782`. Promotion now preserves the actual
+old pause flag. The regression performs append-worker promotion under a live
+paused Chat pool, checks unchanged package records/mode and retained true pause,
+then verifies a new otherwise eligible worker claim remains rejected as paused.
+The small fixture extraction retains the prior live-worker-addition checks.
+R2 is closed on this repaired source; I did not rerun tests.
+
 Other reviewed invariants at this checkpoint are consistent: fresh Chat
 identities4/5/6, all old actors/roles preserved, one unresolved batch per Chat,
 real per-package and historical non-authorship, original Work capacity,
@@ -75,14 +86,15 @@ accepted-dependency ancestry, single lock and exact PR/main CI, strict policy
 revision, manifest-bound deployment, explicit user-authorized reversible modes,
 complete stopped-worker WIP handover with old records/history preserved and
 effective approvals cleared. These source observations do not establish final
-approval while R2 and exact final-head evidence remain outstanding.
+approval while exact final-head evidence remains outstanding.
 
 ## Decision
 
-Approval withheld pending author repair/evidence for R2, independent review of
-the actual repaired delta, successful exact final public-head CI and genuine
-proposed/published infrastructure lock inspection. Initial CI41168141706 was
-still in progress when observed. No conditional statement in this report may
+The complete source review, including both actual repair deltas, is finished
+with R1 and R2 closed and no remaining source blocker. Operational approval is
+withheld pending successful exact final public-head CI and genuine proposed/
+published infrastructure lock inspection. Earlier-head CI cannot certify the
+final repaired head. No conditional statement in this report may
 be used as operational approval. Mathematical sources, contracts, provider pins,
 toolchain, original Lean workflow and caches have not been changed in the read
 migration scope.
