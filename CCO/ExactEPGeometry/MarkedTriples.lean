@@ -145,7 +145,7 @@ theorem masked_three_point_in_limit
   let old : Fin 3 → Sigma X := ![⟨i,a⟩,⟨j,b⟩,⟨k,c⟩]
   let bits : Fin 3 → Bit := ![ε,η,θ]
   have legal : APCharacter.Age.Legal S P.masks old bits :=
-    masked_three_point_legal S a b c ε η θ hv hw hz hab hbc hac
+    masked_three_point_legal (S := S) (M := P.masks) a b c ε η θ hv hw hz hab hbc hac
   obtain ⟨mark, hm, prescribed⟩ :=
     APCharacter.Age.finite_seed_small S P.masks P.finite_seed_extension old bits legal
   obtain ⟨f, heq, ho, hc⟩ :=
