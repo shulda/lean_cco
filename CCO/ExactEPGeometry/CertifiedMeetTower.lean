@@ -50,7 +50,7 @@ theorem history_meet_support
     (history : History Step s q)
     (hS : ExactMeetSupport original.source s.current.source s.reduct) :
     ExactMeetSupport original.source q.current.source q.reduct := by
-  exact History.preserves Step
+  exact History.preserves
     (fun b : ExactPrefix original =>
       ExactMeetSupport original.source b.current.source b.reduct)
     (fun {_ _} step h => step_meet_support step h)
