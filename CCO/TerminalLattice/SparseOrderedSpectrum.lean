@@ -77,6 +77,6 @@ theorem originalSparseGraph_ordered_complementary_profile
   have hSpectrum :=
     original_long_ordered_label_path_saturates
       S H sap K hN menus labels hLongList hMenus hPowers
-  simpa only [labels, List.map_ofFn] using hSpectrum
+  simpa only [labels, List.map_ofFn, Function.comp_def] using hSpectrum
 
 end CCO.TerminalLattice
