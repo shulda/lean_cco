@@ -1642,3 +1642,4 @@ import CCO.FullPhaseLift.Tower.Readout
 import CCO.FullPhaseLift.Tower.Reduct
 import CCO.FullPhaseLift.Tower.Selected
 import CCO.FullPhaseLift.Tower.SingleStep
+import CCO.TerminalLattice.OriginalModularity
