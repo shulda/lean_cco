@@ -161,9 +161,10 @@ theorem marked_diagonal_of_owner
   have hTag : taggedColour S (C.point (q 0)) (C.point (q 0)) =
       (⟨i,i,none⟩ : APCharacter.Age.Colour S) := by
     rw [hpoint]
-    change (⟨j,j,S.colour x x⟩ : APCharacter.Age.Colour S) =
+    cases hj
+    change (⟨i,i,S.colour x x⟩ : APCharacter.Age.Colour S) =
       (⟨i,i,none⟩ : APCharacter.Age.Colour S)
-    rw [hj, hnone]
+    rw [hnone]
   exact hName.trans (congrArg (APCharacter.Age.colourEquiv S) hTag)
 
 /-- A diagonal marked pair has some REAL original diagonal code, whose
