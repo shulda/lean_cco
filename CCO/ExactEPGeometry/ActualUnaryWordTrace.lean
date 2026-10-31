@@ -26,6 +26,7 @@ universe u v w t
 namespace CCO.ExactEPGeometry.ActualUnaryWordTrace
 
 open APCharacter APCharacter.SourceAge RigidGroupoid.Geometry RigidGroupoid.Phase
+open CCO.ExactEPGeometry.ActualUnaryTrace
 noncomputable section
 
 variable {ι : Type u} {X : ι → Type v}
@@ -136,15 +137,23 @@ theorem nonempty_current_word_iff_trace
         obtain ⟨y,hy⟩ :=
           ActualUnaryDecode.decode_child_of_bit I e q hFirst.2.1
         have hAtom : T.atomRel a x y := by
-          apply (real_current_atom_iff I a x y).mp
-          rw [hDrep] at hFirst
-          rw [← hy]
-          exact hFirst
+          have hCurrent : markedTrace S H (P.completion_property cco)
+              (S.atomRel a.val) c.2.val e.2.val
+              (SourceAge.UnarySource.newEquiv I ⟨c,x⟩)
+              (SourceAge.UnarySource.newEquiv I ⟨e,y⟩) := by
+            rw [hDrep] at hFirst
+            rw [← hy] at hFirst
+            exact hFirst
+          exact (real_current_atom_iff I a x y).mp hCurrent
         have hTail : RawWord.relation T tail y z := by
-          apply (ih hTailNE y z).mpr
-          rw [hErep] at hSecond
-          rw [← hy]
-          exact hSecond
+          have hCurrent : markedTrace S H (P.completion_property cco)
+              (RawWord.relation S oldTail) e.2.val d.2.val
+              (SourceAge.UnarySource.newEquiv I ⟨e,y⟩)
+              (SourceAge.UnarySource.newEquiv I ⟨d,z⟩) := by
+            rw [hErep] at hSecond
+            rw [← hy] at hSecond
+            exact hSecond
+          exact (ih hTailNE y z).mpr hCurrent
         exact ⟨y,hAtom,hTail⟩
 
 end
