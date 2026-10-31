@@ -1659,3 +1659,4 @@ import CCO.TerminalLattice.FullCoverUniformPowers
 import CCO.TerminalLattice.FullCoverStrongRelation
 import CCO.TerminalLattice.StrongPaletteBridge
 import CCO.TerminalLattice.FullCoverIndexTwo
+import CCO.TerminalLattice.FullCoverAlternation
