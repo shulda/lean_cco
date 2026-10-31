@@ -1685,3 +1685,4 @@ import CCO.ExactEPGeometry.OriginalPivotTrace
 import CCO.ExactEPGeometry.OldGateMaximality
 import CCO.ExactEPGeometry.OldGateActualProvider
 import CCO.ExactEPGeometry.OldGatePivotBridge
+import CCO.ExactEPGeometry.OldGateObstructionStep
