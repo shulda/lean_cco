@@ -68,14 +68,14 @@ instance : OrderBot (ExactEq S i) where
 
 /-- Meet stays FULL exact by original RAW intersection with a witnessed
 diagonal, independently of quotient SAP. -/
-def inf (E F : ExactEq S i) : ExactEq S i := by
+noncomputable def inf (E F : ExactEq S i) : ExactEq S i := by
   let x : X i := Classical.choice (S.nonemptySort i)
   have hNE : TRel.Nonempty
       (fun a b : X i => E.val a b ∧ F.val a b) :=
     ⟨x,x,E.val.val.refl x,F.val.val.refl x⟩
   exact ⟨E.val ⊓ F.val,fullExact_meet S E.property F.property hNE⟩
 
-instance : SemilatticeInf (ExactEq S i) where
+noncomputable instance : SemilatticeInf (ExactEq S i) where
   inf := inf
   inf_le_left := by
     intro E F
@@ -94,7 +94,7 @@ instance : SemilatticeInf (ExactEq S i) where
 exact-equivalence objects, including their proof-irrelevant exactness. -/
 @[ext] theorem ext {E F : ExactEq S i}
     (h : ∀ x y : X i, E x y ↔ F x y) : E = F :=
-  Subtype.ext (ColourEq.ext h)
+  Subtype.ext (ColourEq.ext S i h)
 
 /-- In the ONE named original symmetric sort, the join of two exact
 equivalences is their represented product. Its RAW exactness follows from
@@ -121,7 +121,7 @@ def sup {G : Type t} [Group G] [∀ j : ι, MulAction G (X j)]
 /-- A finite genuine FULL-exact equivalence lattice for one actual
 source sort. The inherited order is inclusion, its meet is intersection,
 and its join is actual represented relational product. -/
-@[instance_reducible] def lattice
+@[instance_reducible] noncomputable def lattice
     {G : Type t} [Group G] [∀ j : ι, MulAction G (X j)]
     (H : HomogeneousSource S G)
     (cco : SemanticCCO.{u,v,max u v,w} S) :
