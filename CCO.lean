@@ -1646,3 +1646,4 @@ import CCO.TerminalLattice.OriginalModularity
 import CCO.TerminalLattice.QuotientLift
 import CCO.TerminalLattice.FibreSAP
 import CCO.TerminalLattice.ModularDiamond
+import CCO.TerminalLattice.M3CCOObstruction
