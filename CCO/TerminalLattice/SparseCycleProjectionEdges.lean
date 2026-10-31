@@ -59,7 +59,7 @@ theorem oldOptionalPositive_used_marked_edge_has_word
         simp [P,oldOptionalPositivePresentations,hWords]
       omega
   | some word =>
-      exact ⟨word,hWords⟩
+      exact ⟨word,rfl⟩
 
 /-- Elementary C27 literal sparse-edge support. An actual specified
 positive word belongs EITHER to one edge ending at the unique LAST
