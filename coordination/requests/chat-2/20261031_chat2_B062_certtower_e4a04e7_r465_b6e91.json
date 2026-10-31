@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "request_id": "20261031_chat2_B062_certtower_e4a04e7_r465_b6e91",
+  "actor_id": "chat-2",
+  "project_id": 5,
+  "policy_revision": 14,
+  "operation": "event",
+  "expected_revision": 465,
+  "event": "checkpoint",
+  "data": {
+    "package_id": "B062",
+    "head_sha": "e4a04e7f1383db04e469cc7e429e2a470b8a50c4",
+    "pr_number": 68,
+    "observed_ci": {
+      "run_id": 41228052069,
+      "head_sha": "e4a04e7f1383db04e469cc7e429e2a470b8a50c4",
+      "conclusion": "success",
+      "axiom_audit": "allowlist"
+    }
+  }
+}
