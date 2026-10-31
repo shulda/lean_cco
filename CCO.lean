@@ -1683,6 +1683,7 @@ import CCO.TerminalLattice.OptionalPositiveCycles
 import CCO.TerminalLattice.ReversePositiveWord
 import CCO.TerminalLattice.SparseCycleProjectionEdges
 import CCO.TerminalLattice.PositiveOccurrenceLength
+import CCO.TerminalLattice.SparseCycleNoCentre
 import CCO.TerminalLattice.LabelledPathGrouping
 import CCO.TerminalLattice.PositivePathFold
 import CCO.TerminalLattice.StrongPathReordering
