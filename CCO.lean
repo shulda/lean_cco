@@ -1653,3 +1653,4 @@ import CCO.ExactEPGeometry.PeirceMasks
 import CCO.ExactEPGeometry.PeirceChoices
 import CCO.ExactEPGeometry.MarkedTriples
 import CCO.ExactEPGeometry.MarkedPairGeometry
+import CCO.ExactEPGeometry.TraceProductForward
