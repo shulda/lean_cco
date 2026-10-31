@@ -150,10 +150,16 @@ theorem masked_three_point_in_limit
     APCharacter.Age.finite_seed_small S P.masks P.finite_seed_extension old bits legal
   obtain ⟨f, heq, ho, hc⟩ :=
     marked_finite_tuple_realized S H (P.completion_property cco) old mark hm
+  have h0 : mark (⟨i,a⟩ : Sigma X) = ε := by
+    simpa [old,bits] using prescribed 0
+  have h1 : mark (⟨j,b⟩ : Sigma X) = η := by
+    simpa [old,bits] using prescribed 1
+  have h2 : mark (⟨k,c⟩ : Sigma X) = θ := by
+    simpa [old,bits] using prescribed 2
   refine ⟨f 0, f 1, f 2, ?_, ?_, ?_, ?_, ?_, ?_, ?_⟩
-  · simpa [old,bits,prescribed 0] using ho 0
-  · simpa [old,bits,prescribed 1] using ho 1
-  · simpa [old,bits,prescribed 2] using ho 2
+  · simpa [old, h0] using ho 0
+  · simpa [old, h1] using ho 1
+  · simpa [old, h2] using ho 2
   · simpa [old] using hc 0 1
   · simpa [old] using hc 1 2
   · simpa [old] using hc 0 2
