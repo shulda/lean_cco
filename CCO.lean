@@ -1676,6 +1676,7 @@ import CCO.TerminalLattice.SparseCycleSpectrum
 import CCO.TerminalLattice.PositiveBranchCycles
 import CCO.TerminalLattice.OriginalExternalLabels
 import CCO.TerminalLattice.OriginalExternalWords
+import CCO.TerminalLattice.SingletonExternalLayer
 import CCO.TerminalLattice.ExternalUniformPowers
 import CCO.TerminalLattice.OptionalPositiveNetwork
 import CCO.TerminalLattice.SparseWordNetwork
