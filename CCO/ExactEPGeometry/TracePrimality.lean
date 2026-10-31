@@ -52,7 +52,7 @@ theorem rawExactFamily_mask_primality
     (P : APCharacter.SourcePhase S H C A)
     (cco : SemanticCCO.{u,v,max u v,w} S)
     {i j : ι} (L : List (RawExact.NonemptyExact S i j))
-    (ε η : Bit)
+    (ε η : APCharacter.Bit)
     (hv : P.validBit i ε) (hw : P.validBit j η)
     (hMeet : TRel.Nonempty (rawExactFamily S L))
     (hEach : ∀ d ∈ L, ∃ x y,
