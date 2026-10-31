@@ -141,4 +141,60 @@ theorem originalIndexedExternalOrbitalMenus_cover
   simpa only [originalIndexedExternalOrbitalMenus,
     Equiv.symm_apply_apply] using hOrbital
 
+
+/-- The C31 fixed finite list has ONLY actual nonempty complete old-G
+external orbitals. Each menu lies inside K-diversity and is disjoint
+from J-diversity. Neither full-cover powers nor original CCO is used;
+a mere J≤K suffices for this well-typed OLD G family. -/
+theorem originalIndexedExternalOrbitalMenus_valid
+    (H : HomogeneousSource S G) {i : ι}
+    (J K : ColourEq S i) (hJK : J ≤ K) :
+    ∀ j : Fin (Fintype.card (OriginalExternalAtom S J K)),
+      (originalIndexedExternalOrbitalMenus S (G := G) J K j).Nonempty ∧
+      originalIndexedExternalOrbitalMenus S (G := G) J K j ⊆
+        originalEquivDiversityPalette S K ∧
+      (∀ c ∈ originalIndexedExternalOrbitalMenus S (G := G) J K j,
+        c ∉ originalEquivDiversityPalette S J) := by
+  intro j
+  let c : OriginalExternalAtom S J K :=
+    (Fintype.equivFin (OriginalExternalAtom S J K)).symm j
+  let p := originalExternalAtomWitness S J K c
+  have hKpq : K p.val.1 p.val.2 := p.property.1
+  have hNotJpq : ¬ J p.val.1 p.val.2 := p.property.2.1
+  have hpne : p.val.1 ≠ p.val.2 := by
+    intro heq
+    subst heq
+    exact hNotJpq (J.val.refl _)
+  have hTag : (⟨i,p.val.1⟩ : Sigma X) ≠ ⟨i,p.val.2⟩ := by
+    intro heq
+    have hh : p.val.1 = p.val.2 := by
+      simpa only [Sigma.mk.injEq, heq_eq_eq, true_and] using heq
+    exact hpne hh
+  obtain ⟨d, hCol⟩ := S.some_colour_of_ne p.val.1 p.val.2 hTag
+  have hRoot : d ∈ originalQuotientOrbitalPalette S (G := G)
+      J p.val.1 p.val.2 :=
+    ⟨p.val.1, p.val.2,
+      ⟨hpne, originalQuotientOrbital_root S (G := G) J p.val.1 p.val.2⟩, hCol⟩
+  change (originalQuotientOrbitalPalette S (G := G) J
+    p.val.1 p.val.2).Nonempty ∧
+    originalQuotientOrbitalPalette S (G := G) J p.val.1 p.val.2 ⊆
+      originalEquivDiversityPalette S K ∧
+    (∀ a ∈ originalQuotientOrbitalPalette S (G := G) J p.val.1 p.val.2,
+      a ∉ originalEquivDiversityPalette S J)
+  refine ⟨⟨d,hRoot⟩, ?_, ?_⟩
+  · exact original_full_external_orbital_inside_K
+      S H J K hJK p.val.1 p.val.2 hKpq
+  · intro a ha haJ
+    obtain ⟨u,v,hJuv,hColUV⟩ := haJ
+    obtain ⟨x,y,⟨_,hOrbXY⟩,hColXY⟩ := ha
+    have hJxy : J x y :=
+      (J.property u v x y (hColUV.trans hColXY.symm)).mp hJuv
+    have hQ : Quotient.mk J.val x = Quotient.mk J.val y :=
+      Quotient.sound hJxy
+    rw [← hQ] at hOrbXY
+    exact (originalQuotientOrbital_irreflexive
+      S H J p.val.1 p.val.2 hNotJpq
+      (Quotient.mk J.val x)) hOrbXY
+
+
 end CCO.TerminalLattice
