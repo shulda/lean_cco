@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "request_id": "20261031_chat2_B062_exactEqLattice_382112_7c0f1",
+  "actor_id": "chat-2",
+  "project_id": 5,
+  "policy_revision": 14,
+  "operation": "event",
+  "expected_revision": 449,
+  "event": "checkpoint",
+  "data": {
+    "package_id": "B062",
+    "head_sha": "38211282811c5e5e96eb9aa878cfc37a55490e07",
+    "pr_number": 68,
+    "observed_ci": {
+      "run_id": 41217097126,
+      "head_sha": "38211282811c5e5e96eb9aa878cfc37a55490e07",
+      "conclusion": "success",
+      "axiom_audit": "allowlist"
+    }
+  }
+}
