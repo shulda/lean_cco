@@ -1666,3 +1666,4 @@ import CCO.TerminalLattice.OldAbsorption
 import CCO.TerminalLattice.SameJFibreMotion
 import CCO.TerminalLattice.SameJAtomSaturation
 import CCO.TerminalLattice.CompleteOrbitalWord
+import CCO.TerminalLattice.OriginalStrongAlgebra
