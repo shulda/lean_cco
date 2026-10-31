@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "request_id": "20261031_chat2_B062_actualgate_b7018a_r461_73bd2",
+  "actor_id": "chat-2",
+  "project_id": 5,
+  "policy_revision": 14,
+  "operation": "event",
+  "expected_revision": 461,
+  "event": "checkpoint",
+  "data": {
+    "package_id": "B062",
+    "head_sha": "b7018a3d3316df5a47f7f6551b830c2632eee89b",
+    "pr_number": 68,
+    "observed_ci": {
+      "run_id": 41226247712,
+      "head_sha": "b7018a3d3316df5a47f7f6551b830c2632eee89b",
+      "conclusion": "success",
+      "axiom_audit": "allowlist"
+    }
+  }
+}
