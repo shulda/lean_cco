@@ -1688,3 +1688,4 @@ import CCO.ExactEPGeometry.OldGatePivotBridge
 import CCO.ExactEPGeometry.OldGateObstructionStep
 import CCO.ExactEPGeometry.CertifiedGateTower
 import CCO.ExactEPGeometry.ActualPrefixSupport
+import CCO.ExactEPGeometry.CanonicalStepMeet
