@@ -1663,3 +1663,4 @@ import CCO.ExactEPGeometry.MarkedJoins
 import CCO.ExactEPGeometry.OriginalPowers
 import CCO.ExactEPGeometry.MarkedPowerLifts
 import CCO.ExactEPGeometry.ProjectedWords
+import CCO.ExactEPGeometry.ProjectedHistory
