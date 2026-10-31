@@ -1701,3 +1701,4 @@ import CCO.ExactEPGeometry.OriginalCommonGateArrow
 import CCO.ExactEPGeometry.OriginalBridgeTrace
 import CCO.ExactEPGeometry.OriginalGateTargetTrace
 import CCO.ExactEPGeometry.OriginalCommonGateEquality
+import CCO.ExactEPGeometry.OriginalConnectedGate
