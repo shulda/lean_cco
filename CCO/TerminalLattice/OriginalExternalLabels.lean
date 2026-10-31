@@ -137,9 +137,14 @@ theorem originalIndexedExternalOrbitalMenus_cover
         originalQuotientOrbitalPalette S (G := G) J x y :=
     originalQuotientOrbitalPalette_eq_of_fine_colour
       S H J p.val.1 p.val.2 x y hOldColour
-  refine ⟨(Fintype.equivFin (OriginalExternalAtom S J K)) c, ?_⟩
-  simpa only [originalIndexedExternalOrbitalMenus,
-    Equiv.symm_apply_apply] using hOrbital
+  let e := Fintype.equivFin (OriginalExternalAtom S J K)
+  refine ⟨e c, ?_⟩
+  change originalQuotientOrbitalPalette S (G := G) J
+      (originalExternalAtomWitness S J K (e.symm (e c))).val.1
+      (originalExternalAtomWitness S J K (e.symm (e c))).val.2 =
+        originalQuotientOrbitalPalette S (G := G) J x y
+  rw [e.symm_apply_apply]
+  exact hOrbital
 
 
 /-- The C31 fixed finite list has ONLY actual nonempty complete old-G
