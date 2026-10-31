@@ -46,7 +46,7 @@ theorem atom_iff {i j : κ} (a : T.Atom i j) (x : Y i) (y : Y j) :
     | some b =>
         rw [hc] at h
         have hb : P.atom i j b = P.atom i j a := Option.some.inj h
-        exact hc.trans (congrArg some ((P.atom_injective i j) hb))
+        exact congrArg some ((P.atom_injective i j) hb)
 
 /-- The projected diagonal is still the TRUE diagonal: the whole-carrier
 bijection excludes collisions of two distinct child points. -/
