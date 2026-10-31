@@ -1654,3 +1654,4 @@ import CCO.TerminalLattice.QuotientPowerSemigroup
 import CCO.TerminalLattice.QuotientOrbitals
 import CCO.TerminalLattice.FullCoverConnectivity
 import CCO.TerminalLattice.FullCoverParity
+import CCO.TerminalLattice.FullCoverAperiodicity
