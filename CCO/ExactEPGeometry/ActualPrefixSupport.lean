@@ -142,8 +142,12 @@ theorem prefixSupport_comp
   · rintro ⟨x,z,y,hxy,hyz⟩
     obtain ⟨⟨j,b⟩,hb⟩ := P.bijective.2 y
     refine ⟨j,⟨x,b,?_⟩,⟨b,z,?_⟩⟩
-    · simpa only [← hb] using hxy
-    · simpa only [← hb] using hyz
+    · change R (P.project ⟨i,x⟩)
+        (⟨P.parent j, P.point j b⟩ : Sigma X)
+      simpa only [← hb] using hxy
+    · change U (⟨P.parent j, P.point j b⟩ : Sigma X)
+        (P.project ⟨k,z⟩)
+      simpa only [← hb] using hyz
   · rintro ⟨j,⟨x,y,hxy⟩,⟨y',z,hyz⟩⟩
     obtain ⟨g,hgy⟩ :=
       (T.original_sort_transitive_of_homogeneous HT j) y' y
