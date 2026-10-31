@@ -1649,3 +1649,4 @@ import CCO.ExactEPGeometry.TracePrimality
 import CCO.ExactEPGeometry.MarkedPair
 import CCO.ExactEPGeometry.MarkedTrace
 import CCO.ExactEPGeometry.PeirceEndpoints
+import CCO.ExactEPGeometry.PeirceMasks
