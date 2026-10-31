@@ -167,7 +167,7 @@ theorem original_positive_branch_chain_cyclic_values
         (raw (Fin.cast hLenPlus.symm t.succ))
       rw [hCastStart,hCastFinish,← hWord]
       exact hRawEdges t'
-  obtain ⟨values,hFirst,hLast,hEdges⟩ := hFinite
+  rcases hFinite with ⟨hFirst,hLast,hEdges⟩
   refine ⟨values, ?_⟩
   intro k
   by_cases hkLast : k = Fin.last n
