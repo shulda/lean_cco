@@ -1,3 +1,4 @@
+import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Data.Finset.Card
 import Mathlib.Data.Fintype.Basic
 
@@ -86,7 +87,7 @@ theorem long_cycle_delete_any_closing_edge
   classical
   have hcard :
       ((Finset.univ : Finset (Fin m)).erase closing).card = m-1 := by
-    simp
+    simp [Fintype.card_fin]
   apply long_cycle_has_many_labels
   rw [hcard]
   omega
