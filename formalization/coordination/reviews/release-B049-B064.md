@@ -37,9 +37,9 @@ ownership, compiled provider acceptance or a replacement for the public ledger.
 I independently fetched the actual private forest-provider plan
 `formalization/FACTORIZATION_FOREST_PROVIDER.md`, blob
 `923322fb51217c6995bda604d4baabd2e1f2831e`, and read its complete licensing and
-integration requirements. It retains the full Apache-2.0 text/attribution and
-per-file modifications inventory, NOTICE recheck, binary-cache notices and
-review evidence as future receiving gates. B058's exact semigroup/tree adapter,
+integration requirements. It explicitly requires full Apache-2.0 text and
+attribution, a per-file source/modification inventory, NOTICE recheck,
+binary-cache notices and review evidence at future integration. B058's exact semigroup/tree adapter,
 toolchain port/build and transitive audit remain pending; a reference or upstream
 green run is not a CCO binding. HN and HKN tracks remain distinct.
 
