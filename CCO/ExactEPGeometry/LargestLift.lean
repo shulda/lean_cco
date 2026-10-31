@@ -122,7 +122,7 @@ theorem preserves_sSup_of_finite
   classical
   intro s
   have hs : s.Finite := Set.toFinite s
-  induction hs using Set.Finite.induction_on with
+  induction s, hs using Set.Finite.induction_on with
   | empty =>
       simpa only [sSup_empty, Set.image_empty] using hBot
   | @insert E s hnot hfin ih =>
