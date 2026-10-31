@@ -120,18 +120,53 @@ theorem original_positive_branch_chain_cyclic_values
         PositiveWord.represented S (branches k)
           (values k)
           (values (CCO.cyclicNext (Nat.succ_pos n) k)) := by
+  let wordList : List (PositiveWord S i i) :=
+    List.ofFn (fun t : Fin n => branches t.castSucc)
+  have hLen : wordList.length = n := List.length_ofFn
+  have hLenPlus : wordList.length + 1 = n + 1 :=
+    congrArg (fun m : Nat => m + 1) hLen
+  obtain ⟨raw,hRawFirst,hRawLast,hRawEdges⟩ :=
+    originalPositiveBranchChain_fin_values S wordList x y hChain
+  let values : Fin (n+1) → X i :=
+    fun k => raw (Fin.cast hLenPlus.symm k)
   have hFinite :
-      ∃ values : Fin (n+1) → X i,
-        values 0 = x ∧
-        values (Fin.last n) = y ∧
-        ∀ t : Fin n,
-          PositiveWord.represented S (branches t.castSucc)
-            (values t.castSucc) (values t.succ) := by
-    have hRaw :=
-      originalPositiveBranchChain_fin_values S
-        (List.ofFn (fun t : Fin n => branches t.castSucc)) x y hChain
-    simp only [List.get_ofFn] at hRaw
-    simpa [List.length_ofFn] using hRaw
+      values 0 = x ∧ values (Fin.last n) = y ∧
+      ∀ t : Fin n,
+        PositiveWord.represented S (branches t.castSucc)
+          (values t.castSucc) (values t.succ) := by
+    have hCastZero :
+        Fin.cast hLenPlus.symm (0 : Fin (n+1)) =
+          (0 : Fin (wordList.length+1)) := Fin.ext rfl
+    have hCastLast :
+        Fin.cast hLenPlus.symm (Fin.last n) =
+          Fin.last wordList.length := by
+      apply Fin.ext
+      exact hLen.symm
+    refine ⟨?_, ?_, ?_⟩
+    · change raw (Fin.cast hLenPlus.symm 0) = x
+      rw [hCastZero]
+      exact hRawFirst
+    · change raw (Fin.cast hLenPlus.symm (Fin.last n)) = y
+      rw [hCastLast]
+      exact hRawLast
+    · intro t
+      let t' : Fin wordList.length := Fin.cast hLen.symm t
+      have hWord : wordList.get t' = branches t.castSucc := by
+        change (List.ofFn (fun p : Fin n => branches p.castSucc)).get
+            (Fin.cast hLen.symm t) = branches t.castSucc
+        rw [List.get_ofFn]
+        exact congrArg (fun p : Fin n => branches p.castSucc) (Fin.ext rfl)
+      have hCastStart :
+          Fin.cast hLenPlus.symm t.castSucc = t'.castSucc :=
+        Fin.ext rfl
+      have hCastFinish :
+          Fin.cast hLenPlus.symm t.succ = t'.succ :=
+        Fin.ext rfl
+      change PositiveWord.represented S (branches t.castSucc)
+        (raw (Fin.cast hLenPlus.symm t.castSucc))
+        (raw (Fin.cast hLenPlus.symm t.succ))
+      rw [hCastStart,hCastFinish,← hWord]
+      exact hRawEdges t'
   obtain ⟨values,hFirst,hLast,hEdges⟩ := hFinite
   refine ⟨values, ?_⟩
   intro k
