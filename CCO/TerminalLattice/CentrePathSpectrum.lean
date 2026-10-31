@@ -36,7 +36,7 @@ theorem actual_list_perm_cons_of_mem
         exact ⟨xs, List.Perm.refl _⟩
       · obtain ⟨tail,hperm⟩ := ih hmem
         refine ⟨b :: tail, ?_⟩
-        exact (List.Perm.cons b hperm).trans (List.Perm.swap b a tail)
+        exact (List.Perm.cons b hperm).trans (List.Perm.swap b a tail).symm
 
 variable {ι : Type u} {X : ι → Type v}
 variable (S : AtomicSource.{u,v,w} ι X)
