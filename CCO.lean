@@ -1690,6 +1690,7 @@ import CCO.TerminalLattice.PositiveOccurrenceLength
 import CCO.TerminalLattice.SparseCycleNoCentre
 import CCO.TerminalLattice.SparseCycleStarSteps
 import CCO.TerminalLattice.SparseCycleUsedWords
+import CCO.TerminalLattice.ProjectedCycleRootValues
 import CCO.TerminalLattice.SparseWordMarkedEdges
 import CCO.TerminalLattice.LabelledPathGrouping
 import CCO.TerminalLattice.PositivePathFold
