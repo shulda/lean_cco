@@ -31,7 +31,7 @@ def originalPositiveWordReverse {i j : ι} :
   | .single a => .single (S.conv a)
   | .cons a rest =>
       PositiveWord.append S
-        (originalPositiveWordReverse S rest) (.single (S.conv a))
+        (originalPositiveWordReverse rest) (.single (S.conv a))
 
 /-- Real endpoint semantics, including possible diagonal outputs,
 are reversed EXACTLY. This needs neither original SAP nor CCO,
