@@ -62,15 +62,24 @@ theorem original_index_two_class_decomposition
   let qb : Q := Quotient.mk _ ⟨b, hab⟩
   have habQ : qa ≠ qb := by
     intro hh
-    exact hne (Quotient.exact hh)
+    change Quotient.mk _ (⟨a, K.val.refl a⟩ : {x // K a x}) =
+      Quotient.mk _ (⟨b, hab⟩ : {x // K a x}) at hh
+    have hJ := Quotient.exact hh
+    exact hne hJ
   have hCover := two_points_exhaust htwo qa qb habQ
   intro x
   constructor
   · intro hK
     let qx : Q := Quotient.mk _ ⟨x, hK⟩
     rcases hCover qx with h | h
-    · exact Or.inl (J.val.symm (Quotient.exact h))
-    · exact Or.inr (J.val.symm (Quotient.exact h))
+    · change Quotient.mk _ (⟨x, hK⟩ : {z // K a z}) =
+        Quotient.mk _ (⟨a, K.val.refl a⟩ : {z // K a z}) at h
+      have hJ := Quotient.exact h
+      exact Or.inl (J.val.symm hJ)
+    · change Quotient.mk _ (⟨x, hK⟩ : {z // K a z}) =
+        Quotient.mk _ (⟨b, hab⟩ : {z // K a z}) at h
+      have hJ := Quotient.exact h
+      exact Or.inr (J.val.symm hJ)
   · rintro (hJ | hJ)
     · exact hJK hJ
     · exact K.val.trans hab (hJK hJ)
