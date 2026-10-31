@@ -1,0 +1,555 @@
+\begin{lemma}[Nonzero typed equivalence reproduction]
+\label{lem:typed-equivalence-reproduction}
+Let $E$ be the diversity palette of a nonzero invariant
+same-sort equivalence relation in a finite-named-sorted
+homogeneous symmetric SAP source. If $C\subseteq E$ is
+a nonempty set of same-sort diversity atoms, then
+\[
+                   E\starprod C=E=C\starprod E,
+              \qquad E\starprod E=E.
+ \tag{TER}\label{eq:typed-equivalence-reproduction}
+\]
+The assertion is about STRONG off-diagonal products,
+not about an equality-labelled edge.
+\end{lemma}
+\begin{proof}
+The inclusion $E\starprod C\subseteq E$
+is transitivity of the actual equivalence.
+Choose any old atom $c\in C$ and any
+old diversity atom $s\in E$.
+Realise an $s$-edge $xz$ and a $c$-edge
+$xy$ with their old $x$-endpoints aligned
+by source homogeneity. Apply SAP to
+amalgamate these two complete old
+two-vertex structures over $\{x\}$ so
+that $y\ne z$. Both $y,z$ are in the
+$E$-class of $x$, hence the old
+diversity colour of $yz$ belongs to $E$.
+The genuine three-distinct-points
+triangle proves $s\in C\starprod E$.
+The same argument with the factors reversed
+gives $s\in E\starprod C$.
+Taking $C=E$ proves idempotence.
+\end{proof}
+
+\begin{lemma}[Typed no-return into a same-sort equivalence]
+\label{lem:typed-terminal-no-return}
+In a finite named-sorted homogeneous symmetric
+terminal SAP+CCO source, let $J$ be a nonzero
+represented full exact same-sort equivalence
+palette on a sort $a$. For any two nonempty
+SAME-SORT STRONG reachable profiles
+$P,Q\in\Rch^{aa}$,
+\[
+       P\starprod Q\subseteq J
+          \quad\Longrightarrow\quad
+       P\subseteq J,\quad Q\subseteq J.
+ \tag{TNR}\label{eq:typed-no-return}
+\]
+The same conclusion holds for any finite positive
+product contained in $J$. Internal path vertices
+of $P,Q$ may belong to other named sorts.
+\end{lemma}
+\begin{proof}
+Write $J^\circ=J\setminus\Id_a$ and saturate the
+two menus by this NONZERO original equivalence:
+\[
+ \widehat P=J^\circ\starprod P\starprod J^\circ,
+ \qquad
+ \widehat Q=J^\circ\starprod Q\starprod J^\circ.
+\]
+Nonzero equivalence reproduction
+\cref{lem:typed-equivalence-reproduction},
+same-sort STRONG commutativity and associativity
+give
+\[
+ \widehat P\starprod\widehat Q
+ =J^\circ\starprod(P\starprod Q)\starprod J^\circ
+ \subseteq J^\circ.
+\]
+The actual RAW/STRONG comparison
+\cref{lem:typed-raw-strong-saturation}
+shows that $\widehat P,\widehat Q$ are
+the DIVERSITY parts of the FULL OLD
+$J$-bi-saturated relations $J;P;J$ and
+$J;Q;J$ respectively. Thus they induce
+well-defined nonempty, symmetric and SERIAL
+invariant binary relations $\bar P,\bar Q$
+on the actual quotient $M_a/J$.
+
+We justify the quotient-composition implication
+without an unproved simultaneous representative
+choice. Suppose quotient classes $u,v,w$ satisfy
+$u\bar P v$ and $v\bar Q w$, with $u\ne w$.
+Choose one ACTUAL real representative $y\in v$.
+Full OLD $J$-saturation permits representative
+pairs $x\in u,z\in w$ with
+$x\widehat P y\widehat Q z$.
+All $J$-classes are infinite by visible SAP
+and $J\ne\Id_a$, so the representatives may
+be chosen pairwise distinct even if $u=v$
+or $v=w$. The resulting old STRONG
+two-edge triangle has its endpoint diversity
+atom in $\widehat P\starprod\widehat Q
+\subseteq J^\circ$, while $u\ne w$ puts
+the endpoints in different $J$-classes.
+Contradiction. Hence
+\[
+                \bar P\circ\bar Q\subseteq\Delta_{M_a/J}.
+\]
+
+For clarity, the remaining quotient argument
+is purely about symmetric SERIAL relations.
+Take $u\bar P v$. Every $\bar Q$-neighbour
+of $v$ must be $u$, by the displayed
+composition inclusion, and there is such
+a neighbour by seriality; hence
+$\bar Q(v)=\{u\}$. By symmetry
+$v\bar Q u$. Every $\bar P$-neighbour
+$w$ of $v$ must therefore equal $u$,
+and symmetry supplies the neighbour $u$.
+Consequently
+\[
+                 \bar P(v)=\bar Q(v)=\{u\}.
+\]
+For every quotient class $v$ this defines
+ONE map $\iota(v)=u$. Symmetry gives
+$\iota^2=\mathrm{id}$; group invariance gives
+equivariance. Thus $\bar P$ and $\bar Q$
+are the graphs of the SAME equivariant
+involution on the transitive quotient $M_a/J$.
+
+If $\iota$ were nonidentity, transitivity
+and equivariance would make it FIXED-POINT-FREE.
+The union of its graph with the quotient
+diagonal would then be an invariant
+equivalence of class size exactly two.
+Its actual old inverse image defines an
+invariant original equivalence strictly
+above $J$ with relative index two,
+contrary to terminality (indeed this is
+a strict Hasse cover). Thus $\iota$
+is the identity. Both saturated profiles
+are contained in FULL $J$, and since
+$P\subseteq\widehat P$, $Q\subseteq\widehat Q$
+by nonzero same-sort equivalence reproduction,
+both original profiles lie in $J$.
+
+For a positive product of more than two
+factors, apply the two-factor assertion
+first to its initial factor and the
+remaining nonempty STRONG reachable
+product, then iterate. No intermediate
+logical equality factor is introduced.
+\end{proof}
+
+\begin{lemma}[Eventual typed powers of a same-sort profile]
+\label{lem:typed-profile-pure-power}
+Let $W\in\Rch^{aa}$ be a nonempty STRONG
+same-sort diversity word profile in a
+terminal typed SAP+CCO source, and let $F_W$
+be the diversity palette of connectedness in
+the undirected old invariant $W$-graph.
+There exists $N_W$ such that
+\[
+                  W^{\starprod n}=F_W
+                            \quad(n\ge N_W).
+ \tag{TWP}\label{eq:typed-profile-pure-power}
+\]
+In particular, $F_W$ is a nonempty strong
+reachable idempotent equivalence palette.
+\end{lemma}
+\begin{proof}
+Choose one actual old atomic $t\subseteq W$.
+Every vertex of the named transitive sort $a$
+has a $t$-neighbour. Hence every connected
+component of the $W$-graph contains a
+$t$-orbital subgraph and therefore an odd
+$t$-cycle, by
+\cref{lem:typed-terminal-pure-power};
+in particular it is nonbipartite.
+In a connected nonbipartite undirected graph
+there is, between any two distinct connected
+vertices, a $W$-walk of every sufficiently
+large length. For one pair in each of the
+finitely many old atomic diversity orbitals
+contained in $F_W$, choose a common threshold.
+Old homogeneity transports those witnesses
+to all pairs of the same atom, and typed SAP
+injectivisation \cref{lem:typed-injectivisation}
+fixes both distinct endpoints while making
+all path occurrences distinct. Thus every old
+diversity atom in $F_W$ belongs to the
+STRONG word profile $W^{\starprod n}$
+for all sufficiently large $n$.
+The reverse inclusion follows from connectivity.
+Since $W$ is a positive reachable profile,
+its positive powers are reachable; taking
+$n$ and $2n$ beyond the threshold gives
+$F_W\starprod F_W=F_W$.
+\end{proof}
+
+\begin{lemma}[Exact two-edge return test for complete $J$-cylinders]
+\label{lem:typed-complete-J-cylinder-return}
+Let $J>\Id_a$ be an invariant equivalence on
+one original named transitive REAL sort of a
+homogeneous symmetric visible SAP source.
+Let $T,S$ be TWO nonempty, J-BISATURATED,
+COMPLETE semantic same-sort DIVERSITY
+cylinders, each DISJOINT from $J$.
+Then the following are equivalent:
+\[
+        (T\starprod S)\cap J^\circ
+                \ne\varnothing
+             \quad\Longleftrightarrow\quad T=S.
+\tag{JRT}\label{eq:typed-complete-J-cylinder-return}
+\]
+No CCO, NR2, MI, exact-domain Helly
+or reset theorem is needed for this
+purely complete-orbital return test.
+The COMPLETENESS of the two cylinders
+is indispensable: it is not a claim
+for arbitrary J-saturated unions.
+\end{lemma}
+\begin{proof}
+Suppose some ACTUAL three-distinct-point
+old triangle witnesses
+$x\,T\,y\,S\,z$ with $xJz$.
+Since $S$ is left/right J-saturated,
+$ySz$ and $zJx$ imply $ySx$.
+Same-sort symmetry gives $xSy$.
+But $xTy$ as well, so the
+single OLD fine diversity atom
+of $(x,y)$ lies in BOTH complete
+J-semantic cylinders $T,S$.
+By DEFINITION these cylinders
+are inverse images of individual
+complete $\Aut(M)$-pair orbitals
+on $(M_a/J)^2$; such pair orbits
+are DISJOINT. Hence the cylinders
+are equal: $T=S$. This uses only
+the actual equivariant G-action,
+not the CCO-dependent positive-word
+representation of those cylinders.
+
+Conversely suppose $T=S$.
+Choose any ACTUAL old diversity
+T-edge $xTy$.
+The J-class of $x$ is INFINITE
+by original visible SAP, since
+$J>\Id_a$. Choose $z\in[x]_J$
+with $z\ne x$. Since $T$ is
+J-saturated, $xTy$ and $xJz$
+give $zTy$, hence $yTz$
+by symmetry. Because $T$ is
+disjoint from $J$, $y$ lies
+outside $[x]_J$, so the three
+vertices $x,y,z$ are distinct.
+Their triangle witnesses a
+diversity atom in
+$(T\starprod T)\cap J^\circ$,
+proving the converse.
+\end{proof}
+
+\begin{lemma}[Exact STRONG lifting of original quotient relation composition]
+\label{lem:typed-quotient-strong-semigroup}
+Let $M$ be an original finite-complete homogeneous
+binary source with a transitive named real sort $a$
+and visible SAP. Let $J>\Id_a$ be an ACTUAL
+invariant equivalence on that sort, and
+$Q=M_a/J$. For EVERY $\Aut(M)$-invariant
+quotient binary relation $R\subseteq Q^2$,
+define the ORIGINAL diversity pullback
+\[
+ \Phi(R)=\{(x,y)\in M_a^2:x\ne y,\
+             ([x]_J,[y]_J)\in R\}.
+\]
+Then for any nonempty invariant $R,S$,
+\[
+                 \Phi(R)\starprod\Phi(S)
+                       =\Phi(R;S).
+\tag{QS}\label{eq:typed-quotient-strong-semigroup}
+\]
+All OLD original $J$-classes are infinite by SAP.
+Therefore $\Phi$ is injective on quotient relations,
+preserves finite unions/intersections, and sends
+every nonempty quotient relation to a nonempty
+OLD DIVERSITY palette (also for the quotient
+diagonal). The product equality is on DISTINCT
+old real endpoints, even when the intermediate
+QUOTIENT class equals one endpoint's quotient
+class; no old logical identity is inserted
+into the STRONG palette. Finite concatenations
+satisfy the analogous identity by choosing
+ALL formal intermediate OLD representatives
+pairwise distinct.
+\end{lemma}
+\begin{proof}
+Project any actual three-distinct-point OLD
+STRONG $R,S$-path to quotient classes to get
+one inclusion. Conversely suppose
+$qRrSs$ on the quotient and choose ANY
+two DISTINCT old real endpoints $x\in q$,
+$z\in s$. Since $J>\Id_a$ and SAP holds,
+the ORIGINAL class $r$ is infinite.
+Choose $y\in r\setminus\{x,z\}$.
+The FULL-preimage definition gives
+$x\,\Phi(R)\,y\,\Phi(S)\,z$;
+the OLD fine endpoint colour of $x,z$
+thus belongs to the STRONG product.
+For longer quotient walks, choose each
+intermediate original representative
+successively outside the finitely many
+already chosen points. This proves all
+assertions, including quotient-diagonal
+returns with OLD distinct endpoints.
+\end{proof}
+
+\begin{theorem}[Original positive external layer at every nonzero full cover]
+\label{thm:typed-original-full-cover-layer-word}
+Let $M$ be a finite-complete homogeneous
+binary source with a transitive named
+original real sort $a$, finitely many
+symmetric SAME-SORT fine atomic orbitals,
+original SAP, and semantic HOMOMORPHIC CCO.
+Let $\Id_a<J\prec K$ be a cover in the
+FULL original invariant-equivalence lattice.
+Suppose $J^\circ$ is the STRONG diversity
+endpoint profile of ONE positive ORIGINAL
+atomic word on $a$. Then
+\[
+               K\setminus J
+       \quad\text{is the STRONG endpoint profile
+                   of ONE positive old atomic word.}
+\tag{OWL}\label{eq:typed-original-full-cover-layer-word}
+\]
+No FULL NR2, distributivity, original exact
+theta presentation, typed exact-domain
+Helly, or hidden SAP is assumed.
+The index-two cover case is allowed.
+\end{theorem}
+\begin{proof}
+Put $Q=M_a/J$ and let $C_1,\ldots,C_r$
+be ALL complete external $\Aut(M)$-orbitals
+on quotient pairs lying in $K/J$.
+Each original diversity pullback
+$T_i=\Phi(C_i)$ is a positive STRONG word
+profile: for one fine atom $t_i\in T_i$,
+old SAP and complete J-saturation give
+$T_i=J^\circ\starprod\{t_i\}
+                        \starprod J^\circ$.
+Concatenate the assumed positive word
+for $J^\circ$ on both sides of $t_i$.
+These complete palettes partition
+$U=K\setminus J$. If $r=1$, then
+$U=T_1$ and we are done; this includes
+EVERY $[K:J]=2$ cover. Thus assume $r\ge2$,
+which forces $[K:J]\ne2$.
+
+By the CCO-free full-cover dichotomy
+\cref{lem:typed-quotient-full-cover-powers},
+a sufficiently high positive power of
+$T_1$ is $K^\circ$. Hence $K^\circ$
+ALSO has a single positive old word
+representation. All hypotheses of
+the one-word original reset
+\cref{thm:typed-original-full-cover-reset-single-path}
+now hold. Choose its COMPLETE external
+orbital $M_0=C_k$ with
+$M_0;M_0=K/J$ on the QUOTIENT, using
+the product identity and the INJECTIVITY of $\Phi$
+from \cref{lem:typed-quotient-strong-semigroup}
+to translate the strong reset identity.
+We henceforth work with actual invariant
+relations on $Q$. Their orbitals are all
+symmetric (original fine same-sort
+atomic orbitals are symmetric and old
+homogeneity swaps two real representatives);
+thus EVERY invariant quotient binary relation
+is symmetric, and represented quotient
+products commute. Nonempty such relations
+are serial by transitivity of $Q$.
+
+We record two elementary QUOTIENT facts.
+First, if nonempty invariant symmetric
+serial $P,S\subseteq K/J$ satisfy
+$P;S\subseteq\Delta_Q$, then $P,S$
+are graphs of the SAME equivariant
+involution: all neighbours of any
+vertex are forced to be unique by
+seriality and the diagonal inclusion,
+and symmetry makes the resulting
+map involutive. If $P$ is external,
+a nonidentity involution would define
+a two-point invariant equivalence
+between $\Delta_Q$ and $K/J$.
+FULL cover would then give
+$[K:J]=2$, impossible. Consequently
+NO finite nonempty quotient product
+of external COMPLETE orbitals lies
+in $\Delta_Q$: group its first factor
+against the remaining nonempty
+symmetric invariant product.
+
+Second, if nonempty invariant
+$W\subseteq K/J$ is NOT contained
+in $\Delta_Q$, its quotient graph has
+connectedness equivalence strictly
+above $\Delta_Q$ and inside $K/J$,
+hence EQUAL to $K/J$ by FULL cover.
+If W has quotient loops, all its
+components are aperiodic. Otherwise
+a bipartite component would yield an
+even-walk invariant equivalence strictly
+below $K/J$ and hence, by FULL cover,
+equal to $\Delta_Q$; this forces a
+two-vertex $K/J$-component, i.e.
+$[K:J]=2$, impossible. Every component
+is therefore nonbipartite/aperiodic.
+The finite number of quotient pair
+orbitals gives one uniform threshold:
+\[
+                       W^{;n}=K/J
+                    \quad(n\text{ sufficiently large}).
+\tag{OWL-P}\label{eq:typed-old-cover-quotient-powers}
+\]
+
+Suppose for a contradiction no two
+DISTINCT complete external orbitals
+$C,D$ have $C;D=\bar U:=(K/J)\setminus\Delta_Q$.
+For each external complete C put
+$P_C=M_0;C$. Since
+$C\subseteq M_0;M_0$ by reset,
+quotient Peirce rotation gives
+$P_C\cap M_0\ne\varnothing$.
+As $P_C$ is invariant and $M_0$
+one COMPLETE orbit, $M_0\subseteq P_C$.
+We claim
+\[
+                          \bigcap_C P_C=M_0.
+\tag{OWL-I}\label{eq:typed-old-cover-intersection}
+\]
+Choose C DISTINCT from $M_0$.
+Then $P_C$ contains no quotient
+diagonal: a two-edge return via
+two disjoint complete symmetric
+external orbitals is impossible.
+Hence the intersection lies
+outside $\Delta_Q$.
+If an external complete orbital S
+meets every $P_C$, quotient
+Peirce yields $C\cap(M_0;S)\ne
+\varnothing$ for ALL external C.
+By invariance $M_0;S$ therefore
+contains the ENTIRE $\bar U$.
+If $S\ne M_0$, it cannot contain
+the quotient diagonal either;
+so $M_0;S=\bar U$, contradicting
+our supposition. Thus S=$M_0$,
+proving the claim.
+
+Start with one external COMPLETE
+$R\ne M_0$, so $R\cap M_0=\varnothing$.
+If $R$ met EVERY $P_C$, the
+family $\{R\}\cup\{P_C:C\text{ external}\}$
+would be pairwise intersecting
+(ALL $P_C$ contain $M_0$)
+with empty total intersection,
+by \eqref{eq:typed-old-cover-intersection}.
+Its OLD STRONG diversity pullbacks
+are positive word profiles by
+\cref{lem:typed-quotient-strong-semigroup},
+since $R,M_0,C$ have positive
+single-word presentations.
+The direct ORIGINAL positive-word
+2-Helly follows from CCO+SAP:
+put private old paths between two
+formal roots, merge duplicate
+length-one specified edges,
+use pairwise overlapping diversity
+profiles to complete every
+specified simple cycle homomorphically,
+then use SAP
+\cref{lem:typed-injectivisation}
+to split ALL vertices after one
+global CCO completion. Hence
+the assumed family cannot exist.
+Choose C with $R\cap(M_0;C)=\varnothing$;
+Peirce gives $(R;C)\cap M_0=\varnothing$.
+The new state $R;C$ remains nonempty,
+invariant, OLD-positive on lifting,
+and inside $K/J$, but need no
+longer be a COMPLETE orbital or
+avoid the QUOTIENT diagonal.
+Repeat this escape for every new state
+$R$ disjoint from $M_0$.
+
+There are FINITELY many invariant
+binary quotient relations. Some state
+repeats, so we obtain nonempty
+invariant $R\subseteq K/J$,
+$R\cap M_0=\varnothing$, and a
+NONEMPTY product $W$ of external
+complete orbitals with
+\[
+                           R;W=R.
+\]
+The quotient no-return fact above
+makes $W\not\subseteq\Delta_Q$.
+The eventual-full-power fact
+\eqref{eq:typed-old-cover-quotient-powers}
+gives $W^{;n}=K/J$ for large n.
+Iterating the state equation gives
+$R=R;(K/J)=K/J$, since every
+nonempty invariant quotient relation
+is serial and is contained in $K/J$.
+This contradicts $R\cap M_0=\varnothing$.
+
+Hence some two distinct external
+COMPLETE orbitals $C,D$ satisfy
+$C;D=\bar U$. Lift via
+\cref{lem:typed-quotient-strong-semigroup}:
+\[
+             \Phi(C)\starprod\Phi(D)
+                =\Phi(\bar U)=K\setminus J.
+\]
+Both factors have a single positive
+OLD atomic word, so their concatenation
+is ONE positive old word for $U$.
+This proves \eqref{eq:typed-original-full-cover-layer-word}.
+\end{proof}
+
+\begin{theorem}[Reachable typed relative cover layer]
+\label{thm:typed-cover-layer-reachable}
+Under the same terminal typed SAP+CCO
+hypotheses, let $J$ be a nonzero represented
+proper meet-irreducible FULL EXACT same-sort
+equivalence on $a$ and $K=J^+$ its cover
+in the finite represented exact-equivalence
+lattice. Then the STRONG diversity palette
+\[
+                         U=K\setminus J
+\]
+is a nonempty reachable typed $a$--$a$
+word profile (even when its witnessing
+positive words visit other named sorts).
+\end{theorem}
+\begin{proof}
+A SHORT original-source proof is now available
+independently of typed exact theta geometry.
+By \cref{lem:typed-all-invariant-equivalences-raw-word},
+the terminal source's FULL NR2 makes every
+original invariant equivalence FULL RAW word
+representable; the represented exact cover
+$J\prec K$ is therefore a FULL invariant cover.
+By visible SAP injectivisation, $J^\circ$
+has ONE positive original STRONG atomic word.
+The direct quotient-semigroup theorem
+\cref{thm:typed-original-full-cover-layer-word}
+now gives ONE positive word profile exactly
+$K\setminus J$, as claimed.
+This does not use a separate typed hidden
+SAP or mixed-sort private theta construction.
+
+\end{proof}
+

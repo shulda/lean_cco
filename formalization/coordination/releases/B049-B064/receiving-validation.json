@@ -1,0 +1,331 @@
+{
+  "phase": "LOCAL_SOURCE_AND_METADATA_CHECKS_ONLY",
+  "source_pin": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+  "new_packages": 16,
+  "new_modules": 16,
+  "source_records_git_blob_checked": 122,
+  "all57_required_tex_blobs_match_frozen_and_preparation": true,
+  "all48_previous_catalogue_rows_unchanged": true,
+  "all_policy_roles_profiles_permissions_unchanged": true,
+  "preflight": [
+    {
+      "module": "raw_exact",
+      "control": "tools/check_raw_exact_controls.py",
+      "seconds": 0.129
+    },
+    {
+      "module": "strong_selectors",
+      "control": "tools/check_strong_selector_controls.py",
+      "seconds": 1.312
+    },
+    {
+      "module": "parity_hasse",
+      "control": "tools/check_parity_hasse_controls.py",
+      "seconds": 0.092
+    },
+    {
+      "module": "exact_crt",
+      "control": "tools/check_exact_crt_controls.py",
+      "seconds": 0.147
+    },
+    {
+      "module": "canonical_hull",
+      "control": "tools/check_canonical_hull_controls.py",
+      "seconds": 0.322
+    },
+    {
+      "module": "real_closure",
+      "control": "tools/check_real_closure_controls.py",
+      "seconds": 1.105
+    },
+    {
+      "module": "finite_packets",
+      "control": "tools/check_finite_packet_controls.py",
+      "seconds": 0.714
+    },
+    {
+      "module": "rigid_groupoid",
+      "control": "tools/check_rigid_groupoid_controls.py",
+      "seconds": 0.519
+    },
+    {
+      "module": "finite_kernel",
+      "control": "tools/check_finite_kernel_controls.py",
+      "seconds": 0.184
+    },
+    {
+      "module": "owner_action",
+      "control": "tools/check_owner_action_controls.py",
+      "seconds": 0.133
+    },
+    {
+      "module": "sir",
+      "control": "tools/check_sir_controls.py",
+      "seconds": 0.438
+    },
+    {
+      "module": "owner_master",
+      "control": "tools/check_owner_master_controls.py",
+      "seconds": 1.937
+    },
+    {
+      "module": "joint_owner",
+      "control": "tools/check_joint_owner_controls.py",
+      "seconds": 0.204
+    },
+    {
+      "module": "acl_owner_geometry",
+      "control": "tools/check_acl_owner_controls.py",
+      "seconds": 0.327
+    },
+    {
+      "module": "finite_lift",
+      "control": "tools/check_finite_lift_controls.py",
+      "seconds": 0.782
+    },
+    {
+      "module": "mi_geometry",
+      "control": "tools/check_mi_geometry_controls.py",
+      "seconds": 0.149
+    },
+    {
+      "module": "owner_transversal",
+      "control": "tools/check_owner_transversal_controls.py",
+      "seconds": 5.126
+    },
+    {
+      "module": "safe_readings",
+      "control": "tools/check_safe_readings_controls.py",
+      "seconds": 1.058
+    },
+    {
+      "module": "direct_owner_closure",
+      "control": "tools/check_direct_owner_closure_controls.py",
+      "seconds": 0.197
+    },
+    {
+      "module": "hkn_reservoir",
+      "control": "tools/check_hkn_reservoir_controls.py",
+      "seconds": 0.388
+    },
+    {
+      "module": "terminal_powers",
+      "control": "tools/check_terminal_power_controls.py",
+      "seconds": 0.609
+    },
+    {
+      "module": "full_rows",
+      "control": "tools/check_full_rows_controls.py",
+      "seconds": 5.936
+    },
+    {
+      "module": "profile_helly",
+      "control": "tools/check_profile_helly_controls.py",
+      "seconds": 8.043
+    },
+    {
+      "module": "relative_mi",
+      "control": "tools/check_relative_mi_controls.py",
+      "seconds": 1.262
+    },
+    {
+      "module": "rank_induction",
+      "control": "tools/check_rank_induction_controls.py",
+      "seconds": 1.136
+    },
+    {
+      "module": "unary_support",
+      "control": "tools/check_unary_support_controls.py",
+      "seconds": 0.924
+    },
+    {
+      "module": "full_code",
+      "control": "tools/check_full_code_controls.py",
+      "seconds": 2.67
+    },
+    {
+      "module": "reset_order",
+      "control": "tools/check_reset_order_controls.py",
+      "seconds": 0.726
+    },
+    {
+      "module": "unary_hn",
+      "control": "tools/check_unary_hn_controls.py",
+      "seconds": 4.025
+    },
+    {
+      "module": "relational_completion",
+      "control": "tools/check_relational_completion_controls.py",
+      "seconds": 2.173
+    },
+    {
+      "module": "unary_fresh_frames",
+      "control": "tools/check_unary_fresh_frames_controls.py",
+      "seconds": 0.452
+    },
+    {
+      "module": "quotient_transport",
+      "control": "tools/check_quotient_transport_controls.py",
+      "seconds": 0.682
+    },
+    {
+      "module": "simultaneous_quotients",
+      "control": "tools/check_simultaneous_quotients_controls.py",
+      "seconds": 1.209
+    },
+    {
+      "module": "finite_fibres",
+      "control": "tools/check_finite_fibres_controls.py",
+      "seconds": 0.62
+    },
+    {
+      "module": "point_generated_sap",
+      "control": "tools/check_point_generated_sap_controls.py",
+      "seconds": 0.319
+    },
+    {
+      "module": "ap_character",
+      "control": "tools/check_ap_character_controls.py",
+      "seconds": 0.721
+    },
+    {
+      "module": "clone_sap",
+      "control": "tools/check_clone_sap_controls.py",
+      "seconds": 0.62
+    },
+    {
+      "module": "orbital_cover_boundary",
+      "control": "tools/check_orbital_cover_controls.py",
+      "seconds": 2.641
+    },
+    {
+      "module": "pair_safe_split",
+      "control": "tools/check_pair_safe_split_controls.py",
+      "seconds": 0.24
+    },
+    {
+      "module": "full_phase_lift",
+      "control": "tools/check_full_phase_lift_controls.py",
+      "seconds": 0.346
+    },
+    {
+      "module": "transition_closure",
+      "control": "tools/check_transition_closure_controls.py",
+      "seconds": 0.313
+    },
+    {
+      "module": "terminal_lattice",
+      "control": "tools/check_terminal_lattice_controls.py",
+      "seconds": 0.385
+    },
+    {
+      "module": "terminal_profiles",
+      "control": "tools/check_terminal_profile_controls.py",
+      "seconds": 0.106
+    },
+    {
+      "module": "unary_terms_return",
+      "control": "tools/check_unary_terms_return_controls.py",
+      "seconds": 0.926
+    },
+    {
+      "module": "typed_orbit_frames",
+      "control": "tools/check_typed_orbit_frame_controls.py",
+      "seconds": 0.547
+    },
+    {
+      "module": "hereditary_hidden_orbits",
+      "control": "tools/check_hereditary_hidden_orbit_controls.py",
+      "seconds": 0.131
+    },
+    {
+      "module": "hidden_sap_readings",
+      "control": "tools/check_hidden_sap_reading_controls.py",
+      "seconds": 0.159
+    },
+    {
+      "module": "guarded_two_root",
+      "control": "tools/check_guarded_two_root_controls.py",
+      "seconds": 0.123
+    },
+    {
+      "module": "guarded_old_seams",
+      "control": "tools/check_guarded_old_seam_controls.py",
+      "seconds": 0.626
+    },
+    {
+      "module": "old_idempotent_forest",
+      "control": "tools/check_old_idempotent_forest_controls.py",
+      "seconds": 0.243
+    },
+    {
+      "module": "terminal_hidden_hn",
+      "control": "tools/check_terminal_hidden_hn_controls.py",
+      "seconds": 0.259
+    },
+    {
+      "module": "clone_tuple_geometry",
+      "control": "tools/check_clone_tuple_geometry_finite.py",
+      "seconds": 0.489
+    },
+    {
+      "module": "ap_ramsey_readout",
+      "control": "tools/check_ap_ramsey_readout_finite.py",
+      "seconds": 0.583
+    },
+    {
+      "module": "exact_ep_geometry",
+      "control": "tools/check_exact_ep_geometry_finite.py",
+      "seconds": 4.795
+    },
+    {
+      "module": "automatic_ep_core",
+      "control": "tools/check_automatic_ep_core_finite.py",
+      "seconds": 0.133
+    },
+    {
+      "module": "unfiltered_ep",
+      "control": "tools/check_unfiltered_ep_finite.py",
+      "seconds": 0.683
+    }
+  ],
+  "unpublished_scheduler_rehearsal": {
+    "not_actual_claims": true,
+    "initial_ready": [
+      "B050",
+      "B062"
+    ],
+    "hypothetical_client_actions": [
+      {
+        "project": 4,
+        "actor": "chat-1",
+        "action": {
+          "action": "claim",
+          "package_id": "B050"
+        }
+      },
+      {
+        "project": 5,
+        "actor": "chat-2",
+        "action": {
+          "action": "claim",
+          "package_id": "B062"
+        }
+      },
+      {
+        "project": 6,
+        "actor": "chat-3",
+        "action": {
+          "action": "wait",
+          "reason": "No eligible released batch; finish reviews or await preparation."
+        }
+      }
+    ]
+  },
+  "external_forest_code_imported": false,
+  "no_new_lean_proof_or_acceptance_asserted": true,
+  "python_unit_tests": {
+    "count": 187,
+    "conclusion": "success"
+  }
+}

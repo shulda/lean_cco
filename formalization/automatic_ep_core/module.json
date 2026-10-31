@@ -1,0 +1,1796 @@
+{
+  "schema_version": 1,
+  "id": "automatic_ep_core",
+  "index_title": "Original bipartite separation and the automatic terminal label core",
+  "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+  "status": "HUMAN_EXPANDED_NOT_LEAN",
+  "scope": "Private B063: all FOUR automatic-core source results, 10 definitions, 62 expanded human claims, five equations and eight tasks. Genuine terminal maximal-exact-character towers over ONE original transitive symmetric AP+HOM-CCO source have an ORIGINAL bipartite atom between every two different terminal types. A rank induction uses genuine full-age exact quotient towers, with an explicit original-identity-gate branch and a finite functional-group action on TYPE supports. No original/quotient SAP, Ramsey, EP or pre-existing core theorem is assumed. Exact least F is not a least arbitrary invariant equivalence or the greatest finite-packet relation.",
+  "scope_vocabulary": [
+    "loopless",
+    "functional",
+    "lifting",
+    "rank",
+    "identity_gate",
+    "prefix_action",
+    "core",
+    "boundary"
+  ],
+  "scope_explanation": "statement and proof. Type-table loops for original diversity atoms mean two distinct real points of one label. The template retains original atom names but does not individually name the new labels. The theorem is one-original-sort and genuinely maximal-character only.",
+  "control_script": "tools/check_automatic_ep_core_finite.py",
+  "assumptions": [
+    {
+      "id": "A01",
+      "name": "Actual one-original-sort symmetric AP+HOM CCO source",
+      "statement": "M is nonempty countable (possibly finite), transitive and homogeneous in a finite complete symmetric relational binary language of ACTUAL old diversity pair orbitals, with logical equality separate. Its finite age has ordinary AP and semantic HOM simple-cycle CCO. No original SAP, infinite-source premise, pre-existing Ramsey/EP/core theorem or several-original-sort extension is assumed.",
+      "depends_on": []
+    },
+    {
+      "id": "A02",
+      "name": "One genuine finite maximal-character tower",
+      "statement": "Use an actual finite safe tower of the proved AP-only maximal FULL-EXACT-complement, FULL rigid-groupoid character construction. Every prefix is its actual homogeneous realized marked age, identified with the preceding old reduct using reasonableness. Every connected step uses its original canonical maximal gate; current labels refine old atoms only by their endpoint sorts. The actual character is additive, the selected odd loop has value one, and no arbitrary global marking or nonmaximal safe-looking orientation is substituted.",
+      "depends_on": []
+    },
+    {
+      "id": "A03",
+      "name": "Terminal FULL invariant equivalences",
+      "statement": "On every nonempty final transitive sort EVERY strict cover in the FULL actual invariant-equivalence lattice has infinite relative index, including Top covers. This is not merely terminality in the represented exact sublattice. The finite tower may have zero steps and M may be finite.",
+      "depends_on": []
+    }
+  ],
+  "imports": [
+    {
+      "id": "I01",
+      "name": "lem:ep-phi-support",
+      "provider_module": "exact_ep_geometry",
+      "source_label": "lem:ep-phi-support",
+      "provider_claims": [
+        "C50"
+      ],
+      "statement": "Actual prefix support Phi preserves unions, converse, logical identity and represented composition; on original full exact equivalences it preserves finite meets. An actual E-class meets exactly ALL types in its Phi(E)-occupancy class. Empty or arbitrary atomic meet preservation is not asserted.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I02",
+      "name": "lem:ep-old-gate",
+      "provider_module": "exact_ep_geometry",
+      "source_label": "lem:ep-old-gate",
+      "provider_claims": [
+        "C43"
+      ],
+      "statement": "A current odd pivot is an ORIGINAL bipartite atom. Its original parity relations restrict to the current ones, and the canonical largest old lift of the chosen current gate is an ORIGINAL maximal full exact complement to its original even/connectivity interval.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I03",
+      "name": "lem:ep-single-old-gate",
+      "provider_module": "exact_ep_geometry",
+      "source_label": "lem:ep-single-old-gate",
+      "provider_claims": [
+        "C58"
+      ],
+      "statement": "Every connected full character step has ONE original canonical gate G. Current full exact bridges are precisely nonempty traces of ALL original G-quotient functional correspondences; conversely all such correspondences whose traces occur belong to the selected connected full groupoid.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I04",
+      "name": "prop:ep-common-kernel",
+      "provider_module": "exact_ep_geometry",
+      "source_label": "prop:ep-common-kernel",
+      "provider_claims": [
+        "C64"
+      ],
+      "statement": "For original gates G_i, the intersection of Phi_m(G_i) is the literal identity relation on ALL realized final types. The common original exact kernel is the largest exact equivalence whose classes preserve every final label.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I05",
+      "name": "thm:ep-quotient-tower",
+      "provider_module": "exact_ep_geometry",
+      "source_label": "thm:ep-quotient-tower",
+      "provider_claims": [
+        "C105"
+      ],
+      "statement": "For each original full exact E, actual occupancy labels are T_j/Phi_j(E). The projected sequence is a GENUINE full admissible maximal-character tower after removing EXACTLY E-not<=G_i steps. A removed step does not refine the actual quotient occupancy partition; retained steps have canonical gate G_i/E after objectwise phase correction. A terminal original tower gives terminality for ALL invariant quotient equivalences. Quotients are actual homogeneous AP+HOM-CCO sources, with no SAP assertion.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "provider_support_claims": [
+        "C76"
+      ],
+      "provider_support_usage": "Use the strict proved discarded-step support C76: EVERY actual E-class meets both children in an active parent when E is not<=G. Together with actual occupancy labels and the removed-step conclusion this supplies C49 ONE new occupancy class containing ALL children, not only an abstract equality of cardinalities."
+    },
+    {
+      "id": "I06",
+      "name": "eq:ep-graph-offsets",
+      "provider_module": "exact_ep_geometry",
+      "source_label": "eq:ep-graph-offsets",
+      "provider_claims": [
+        "C81"
+      ],
+      "statement": "For a retained step E<=G, each active old Phi_j(E)-class C has precisely two new occupancy classes {p_(b+gamma_p):p in C}; each projects BIJECTIVELY to C. Inactive classes have one unchanged lift. The offsets are coherent actual identity-bridge characters, not independently chosen child signs.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I07",
+      "name": "prop:lattice-interface",
+      "provider_module": "clone_sap",
+      "source_label": "prop:lattice-interface",
+      "provider_claims": [
+        "C28",
+        "C29",
+        "C31",
+        "C33"
+      ],
+      "statement": "On any actual homogeneous transitive symmetric finite-orbital sort, FULL invariant equivalences form a finite lattice of orbital unions; literal intersection is meet and represented composition is their join. This branch needs no SAP, CCO or clone construction.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I08",
+      "name": "cor:typed-exact-quotient-towers",
+      "provider_module": "simultaneous_quotients",
+      "source_label": "cor:typed-exact-quotient-towers",
+      "provider_claims": [
+        "C48"
+      ],
+      "statement": "In an actual homogeneous exact quotient, every quotient atom is a nonempty union of old atoms and no old atom splits. A nonidentity kernel absorbs an old diversity atom into quotient equality, so the finite original diversity rank strictly decreases. Use the ONE-stage, ONE-original-sort instance; no mixed reverse exact descent or group section.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    }
+  ],
+  "definitions": [
+    {
+      "id": "D01",
+      "name": "Original diversity rank",
+      "statement": "k is the number of original old diversity pair orbitals, excluding the logical real diagonal. Rank is reset at each actual original quotient source, not measured by tower length.",
+      "source": {
+        "file": "sections/expansion_property_automatic_core.tex",
+        "anchor": "\\label{thm:ep-automatic-core}"
+      },
+      "notes": "N04",
+      "depends_on": []
+    },
+    {
+      "id": "D02",
+      "name": "The unfiltered old-atom template",
+      "statement": "T_j is the finite set of ALL realized full unary prefix types; T=T_m. The terminal template has relations R_a=Phi_m(a) for ORIGINAL diversity atom names and has NO predicate naming each new individual phase label.",
+      "source": {
+        "file": "sections/expansion_property_automatic_core.tex",
+        "anchor": "\\label{eq:ep-template}"
+      },
+      "notes": "N01",
+      "depends_on": []
+    },
+    {
+      "id": "D03",
+      "name": "Actual prefix support and occupancy",
+      "statement": "Phi_j(D) consists of type pairs admitting one actual old D-pair. Phi_j(Id)=Id_Tj uses real equality; a diversity support loop means two DISTINCT real points of the same type.",
+      "source": {
+        "file": "sections/expansion_property_automatic_core.tex",
+        "anchor": "\\label{eq:ep-template}"
+      },
+      "notes": "N01",
+      "depends_on": []
+    },
+    {
+      "id": "D04",
+      "name": "Original bipartite atoms",
+      "statement": "BP is the set of old diversity atoms whose actual undirected old graph is bipartite. Odd walks of all lengths matter, not merely the absence of a monochromatic triangle.",
+      "source": {
+        "file": "sections/expansion_property_automatic_core.tex",
+        "anchor": "Call an original atom"
+      },
+      "notes": "N01",
+      "depends_on": []
+    },
+    {
+      "id": "D05",
+      "name": "Original equivariant functional group",
+      "statement": "H is the group of ALL permutations of the original point set commuting with Aut(M). Its original graph is denoted Gamma_h; the action h_j on types is defined by Phi_j(Gamma_h), not by assuming h preserves marked unary predicates.",
+      "source": {
+        "file": "sections/expansion_property_automatic_core.tex",
+        "anchor": "\\label{lem:ep-original-functional}"
+      },
+      "notes": "N02",
+      "depends_on": []
+    },
+    {
+      "id": "D06",
+      "name": "A bound quotient separator witness",
+      "statement": "E>Id is original FULL exact. Distinct Phi_m(E)-classes C,D contain types s,t, and an original quotient bipartite diversity orbital b occurs between the occupancy classes. This is the conditional input of the separator-lift lemma, not an axiom that such b always exists.",
+      "source": {
+        "file": "sections/expansion_property_automatic_core.tex",
+        "anchor": "\\label{lem:ep-lift-separator}"
+      },
+      "notes": "N03",
+      "depends_on": []
+    },
+    {
+      "id": "D07",
+      "name": "Least nonidentity exact equivalence in the identity-gate branch",
+      "statement": "Only after an original gate equals Id, F is the finite intersection of all original FULL EXACT equivalences strictly above Id. Its nonidentity and exactness will be proved. It is not automatically the greatest finite-class equivalence or a least arbitrary full invariant equivalence.",
+      "source": {
+        "file": "sections/expansion_property_automatic_core.tex",
+        "anchor": "\\label{eq:ep-least-F}"
+      },
+      "notes": "N05",
+      "depends_on": []
+    },
+    {
+      "id": "D08",
+      "name": "The functional subgroup inside F",
+      "statement": "H_F={h in H:Gamma_h subset F}. It will be a nontrivial normal subgroup under the identity-gate construction.",
+      "source": {
+        "file": "sections/expansion_property_automatic_core.tex",
+        "anchor": "\\label{eq:ep-HF}"
+      },
+      "notes": "N05",
+      "depends_on": []
+    },
+    {
+      "id": "D09",
+      "name": "Prefix orbit-occupancy invariant",
+      "statement": "P(j) says H_F acts TRANSITIVELY on each Phi_j(F)-class of realized prefix types. Actions at different prefixes commute with the actual forgetful projections.",
+      "source": {
+        "file": "sections/expansion_property_automatic_core.tex",
+        "anchor": "\\label{eq:ep-HF-transitive}"
+      },
+      "notes": "N06",
+      "depends_on": []
+    },
+    {
+      "id": "D10",
+      "name": "Explicit nonmaximal negative control",
+      "statement": "The old source I x F_2 x N has atoms c (same block/bit, distinct clones), b (same block, opposite bits), r (different blocks, same bit) and s (different blocks, opposite bits). Nonmaximal first clone-gate orientation lambda=bit+epsilon_block followed by the maximal sheet split mu=bit gives four terminal labels and a proper old-atom-table retraction.",
+      "source": {
+        "file": "sections/expansion_property_automatic_core.tex",
+        "anchor": "\\label{rem:ep-core-scope}"
+      },
+      "notes": "N08",
+      "depends_on": []
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "name": "Terminal full lattices exclude all finite proper intervals",
+      "statement": "I07 gives a finite FULL invariant-equivalence lattice on each final transitive sort. Any strict finite-index interval contains a cover whose index is finite, by class-count refinement; A03 forbids it. No exactness of that interval is needed.",
+      "depends_on": [
+        "A01",
+        "A02",
+        "A03",
+        "I07"
+      ],
+      "notes": "N01",
+      "scope": "loopless",
+      "source_labels": [
+        "lem:ep-bp-loopless"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C02",
+      "name": "A nonempty diagonal restriction is a serial symmetric invariant graph",
+      "statement": "If an original bipartite atom a occurs inside final sort t, its restriction is a symmetric invariant graph. Transitivity of t makes every vertex incident to an edge. The graph is bipartite as an induced restriction of the original one.",
+      "depends_on": [
+        "A01",
+        "A02",
+        "D04"
+      ],
+      "notes": "N01",
+      "scope": "loopless",
+      "source_labels": [
+        "lem:ep-bp-loopless"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C03",
+      "name": "Even-walk and connectivity relations are actual invariant equivalences",
+      "statement": "For the graph of C02, even-walk reachability Y (including length zero) and full connectivity X are invariant equivalences. Seriality gives Id subset a^2, so even powers are increasing; finitely many current pair orbitals make them stabilize. Thus Y,X are finite orbital unions and are definable in the actual named language.",
+      "depends_on": [
+        "C02",
+        "I07"
+      ],
+      "notes": "N01",
+      "scope": "loopless",
+      "source_labels": [
+        "lem:ep-bp-loopless"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C04",
+      "name": "The bipartite interval has relative index two",
+      "statement": "Every nonempty connected bipartite component has exactly two even-walk classes: its two sides. Hence Y<X and [X:Y]=2 uniformly on this transitive sort. Logical equality is not inserted as a diversity edge.",
+      "depends_on": [
+        "C03"
+      ],
+      "notes": "N01",
+      "scope": "loopless",
+      "source_labels": [
+        "lem:ep-bp-loopless"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C05",
+      "name": "A terminal sort has no original bipartite diagonal edge",
+      "statement": "C04 contradicts C01. Therefore a restriction of an original bipartite atom to t^2 is empty.",
+      "depends_on": [
+        "C01",
+        "C04"
+      ],
+      "notes": "N01",
+      "scope": "loopless",
+      "source_labels": [
+        "lem:ep-bp-loopless"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C06",
+      "name": "All original bipartite type supports are globally loopless",
+      "statement": "By the actual support definition D03, C05 is exactly (t,t) notin R_a for every t and every original a in BP.",
+      "depends_on": [
+        "C05",
+        "D02",
+        "D03"
+      ],
+      "notes": "N01",
+      "scope": "loopless",
+      "source_labels": [
+        "lem:ep-bp-loopless"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C07",
+      "name": "The two diagonal conventions remain separate",
+      "statement": "An R_a-loop for diversity a asks for distinct real witnesses of one label, whereas Phi(Id) is the literal equality relation on labels. The template has all old atom names and no new singleton-label predicates, so its core question is substantive.",
+      "depends_on": [
+        "D02",
+        "D03"
+      ],
+      "notes": "N01",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:ep-bp-loopless"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C08",
+      "name": "Terminal bipartite-loopless source export",
+      "statement": "C01-C07 prove lem:ep-bp-loopless for every original bipartite atom under FULL terminality, without an exact-kernel or arbitrary-triangle shortcut.",
+      "depends_on": [
+        "C06",
+        "C07"
+      ],
+      "notes": "N01",
+      "scope": "loopless",
+      "source_labels": [
+        "lem:ep-bp-loopless"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C09",
+      "name": "Equivariant permutations form a group",
+      "statement": "The identity, compositions and inverses of Aut(M)-equivariant permutations are equivariant, so D05 is a group on the original point set.",
+      "depends_on": [
+        "A01",
+        "D05"
+      ],
+      "notes": "N02",
+      "scope": "functional",
+      "source_labels": [
+        "lem:ep-original-functional"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C10",
+      "name": "Each functional graph is one old orbital and is free off identity",
+      "statement": "Transitivity sends every (x,hx) to every other graph pair by equivariance, so Gamma_h is one actual orbital, or Id. If h fixes one point, transitivity makes it fix every point; hence a nonidentity h has no fixed point.",
+      "depends_on": [
+        "A01",
+        "C09"
+      ],
+      "notes": "N02",
+      "scope": "functional",
+      "source_labels": [
+        "lem:ep-original-functional"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C11",
+      "name": "Symmetry forces exponent two",
+      "statement": "Each original same-sort orbital is symmetric. Thus Gamma_h=Gamma_h inverse and h^2=Id for every equivariant permutation h.",
+      "depends_on": [
+        "C10"
+      ],
+      "notes": "N02",
+      "scope": "functional",
+      "source_labels": [
+        "lem:ep-original-functional"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C12",
+      "name": "The original functional group is finite elementary abelian",
+      "statement": "There are finitely many old orbitals and each functional graph determines its map, so H is finite. Since every product fg also has square Id, gf=(fg) inverse=fg. Thus H is abelian of exponent two, i.e. a finite elementary abelian 2-group.",
+      "depends_on": [
+        "C09",
+        "C10",
+        "C11"
+      ],
+      "notes": "N02",
+      "scope": "functional",
+      "source_labels": [
+        "lem:ep-original-functional"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C13",
+      "name": "Each nonidentity functional atom is original bipartite",
+      "statement": "A nonidentity involution is fixed-point-free by C10, so its graph is a disjoint union of two-point matching components, hence bipartite. It is one ORIGINAL diversity atom, not a newly added phase predicate.",
+      "depends_on": [
+        "C10",
+        "C11",
+        "D04"
+      ],
+      "notes": "N02",
+      "scope": "functional",
+      "source_labels": [
+        "lem:ep-original-functional"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C14",
+      "name": "Functional supports square to literal type identity",
+      "statement": "I01 preserves represented composition and logical identity. Since Gamma_h;Gamma_h=Id by C11, R=Phi_j(Gamma_h) is symmetric and R;R=Id_Tj at EVERY prefix.",
+      "depends_on": [
+        "A02",
+        "C11",
+        "I01"
+      ],
+      "notes": "N02",
+      "scope": "prefix_action",
+      "source_labels": [
+        "lem:ep-original-functional"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C15",
+      "name": "Total symmetric square-identity support is a unique involution",
+      "statement": "Every actual original point has an h-image, so R in C14 is total on realized types. If p has neighbors q,r, symmetry gives (q,r) in R;R=Id, forcing q=r. Thus R is exactly the graph of one involutive permutation h_j.",
+      "depends_on": [
+        "C14",
+        "D03"
+      ],
+      "notes": "N02",
+      "scope": "prefix_action",
+      "source_labels": [
+        "lem:ep-original-functional"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C16",
+      "name": "These supports form an actual group action on every type set",
+      "statement": "I01 gives Phi_j(Gamma_h;Gamma_g)=Phi_j(Gamma_h);Phi_j(Gamma_g). The uniqueness in C15 therefore gives the group multiplication law and identity on T_j, rather than a nonfunctional multivalued action.",
+      "depends_on": [
+        "C09",
+        "C15",
+        "I01"
+      ],
+      "notes": "N02",
+      "scope": "prefix_action",
+      "source_labels": [
+        "lem:ep-original-functional"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C17",
+      "name": "Every nonidentity original functional permutation acts freely terminally",
+      "statement": "If h_j at final T fixed t for h nonidentity, its original bipartite graph C13 would give an R_h-loop at t, contrary to C06. Thus nonidentity h has no terminal fixed type.",
+      "depends_on": [
+        "C06",
+        "C13",
+        "C16"
+      ],
+      "notes": "N02",
+      "scope": "functional",
+      "source_labels": [
+        "lem:ep-original-functional"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C18",
+      "name": "Type actions are not marked-source automorphism claims",
+      "statement": "The original h may move unary labels. C15-C16 assert only its unique induced permutation of type supports, and do not replace h by an automorphism preserving each marked unary predicate.",
+      "depends_on": [
+        "C15",
+        "C16"
+      ],
+      "notes": "N02",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:ep-original-functional"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C19",
+      "name": "Type actions commute with prefix forgetful projections",
+      "statement": "Choose an actual x of a child type u. Its h-image has the unique child type h_(j+1)(u), and its parent is h_j(parent(u)). This proves equivariance of the actual child-to-parent projection for every h and every prefix.",
+      "depends_on": [
+        "C15",
+        "C16",
+        "A02"
+      ],
+      "notes": "N02",
+      "scope": "prefix_action",
+      "source_labels": [
+        "lem:ep-original-functional"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C20",
+      "name": "Original functional involution source export",
+      "statement": "C12,C13,C16-C19 prove lem:ep-original-functional, including every-prefix involutions and FREE terminal type action. No Ramsey or expansion-property argument enters this lemma.",
+      "depends_on": [
+        "C12",
+        "C13",
+        "C16",
+        "C17",
+        "C18",
+        "C19"
+      ],
+      "notes": "N02",
+      "scope": "functional",
+      "source_labels": [
+        "lem:ep-original-functional"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C21",
+      "name": "Take one actual quotient separator pair",
+      "statement": "Under bound D06 choose actual E-classes X,Y of occupancy C,D joined by b. They are different classes because b is a quotient diversity atom and C,D differ.",
+      "depends_on": [
+        "A01",
+        "A02",
+        "D06"
+      ],
+      "notes": "N03",
+      "scope": "lifting",
+      "source_labels": [
+        "lem:ep-lift-separator"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C22",
+      "name": "Occupancy supplies the prescribed real endpoint types",
+      "statement": "I01 says X contains an s-point and Y a t-point. Choose them. They are distinct real points because X!=Y and have one original diversity atom a.",
+      "depends_on": [
+        "C21",
+        "I01"
+      ],
+      "notes": "N03",
+      "scope": "lifting",
+      "source_labels": [
+        "lem:ep-lift-separator"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C23",
+      "name": "The entire original atom lies in one saturated pullback",
+      "statement": "The chosen a-pair maps to b. Original homogeneity and equivariance of the E quotient send every actual a-pair to that same named quotient orbital, so EVERY a-edge belongs to the saturated pullback of b.",
+      "depends_on": [
+        "A01",
+        "C22"
+      ],
+      "notes": "N03",
+      "scope": "lifting",
+      "source_labels": [
+        "lem:ep-lift-separator"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C24",
+      "name": "Pull back the quotient bipartition",
+      "statement": "A bipartition of the actual b-graph pulls back along M->M/E. Every a-edge lies in it by C23 and connects opposite sides; therefore original a is bipartite and its chosen endpoints witness (s,t) in R_a.",
+      "depends_on": [
+        "C23",
+        "D04",
+        "D03"
+      ],
+      "notes": "N03",
+      "scope": "lifting",
+      "source_labels": [
+        "lem:ep-lift-separator"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C25",
+      "name": "Bipartite quotient separator source export",
+      "statement": "C21-C24 prove lem:ep-lift-separator with the specified s,t, without choosing a global representative section, imposing quotient SAP or using the automatic core theorem.",
+      "depends_on": [
+        "C21",
+        "C22",
+        "C23",
+        "C24"
+      ],
+      "notes": "N03",
+      "scope": "lifting",
+      "source_labels": [
+        "lem:ep-lift-separator"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C26",
+      "name": "Every nonidentity original exact quotient has strictly lower rank",
+      "statement": "Apply I08 to the ONE-stage quotient M/E for original full exact E>Id. Quotient diversity orbitals are images of old atoms, none split, and an old diversity atom in E becomes equality. Hence its original diversity rank is <k. This conclusion remains valid for finite or non-SAP quotient sources.",
+      "depends_on": [
+        "A01",
+        "I05",
+        "I08",
+        "D01"
+      ],
+      "notes": "N04",
+      "scope": "rank",
+      "source_labels": [
+        "thm:ep-automatic-core"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C27",
+      "name": "Set up strong original-diversity-rank induction",
+      "statement": "For the main theorem use strong induction on natural k, with the induction assertion quantified over ALL actual one-original-sort homogeneous symmetric AP+HOM-CCO sources of that rank and ALL genuine terminal towers over them. Within the k step the theorem is available for lower-rank sources ONLY; this is a bound induction hypothesis, not an unproved provider.",
+      "depends_on": [
+        "A01",
+        "A02",
+        "A03",
+        "D01"
+      ],
+      "notes": "N04",
+      "scope": "rank",
+      "source_labels": [
+        "thm:ep-automatic-core"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C28",
+      "name": "The rank-zero and zero-step cases separate no pair",
+      "statement": "If k=0, completeness and nonemptiness give one original point, so at most one realized final label. With zero tower steps there is exactly the original one label. The desired distinct-label separation is vacuous in either case.",
+      "depends_on": [
+        "A01",
+        "A02",
+        "C27"
+      ],
+      "notes": "N04",
+      "scope": "rank",
+      "source_labels": [
+        "thm:ep-automatic-core"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C29",
+      "name": "If every original gate is nonidentity a gate separates the two types",
+      "statement": "For a nonempty tower with all G_i>Id and s!=t, I04 gives intersection_i Phi_m(G_i)=Id_T. Hence some i puts s,t in DIFFERENT G_i occupancy classes.",
+      "depends_on": [
+        "C27",
+        "I04"
+      ],
+      "notes": "N04",
+      "scope": "core",
+      "source_labels": [
+        "thm:ep-automatic-core"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C30",
+      "name": "The selected quotient is a new valid induction source",
+      "statement": "I05 instantiated at that original G_i supplies an actual homogeneous symmetric AP+HOM-CCO original quotient with a GENUINE full-age terminal projected tower, retaining old quotient binary orbitals. No SAP is inferred or required. C26 supplies its strictly lower rank.",
+      "depends_on": [
+        "C26",
+        "C29",
+        "I05"
+      ],
+      "notes": "N04",
+      "scope": "rank",
+      "source_labels": [
+        "thm:ep-automatic-core"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C31",
+      "name": "The all-nonidentity-gate case yields an original separator",
+      "statement": "Apply the bound lower-rank induction hypothesis C27 to C30 and its two distinct quotient labels. Its bipartite quotient atom lifts by C25 to one ORIGINAL bipartite atom between the specified s,t.",
+      "depends_on": [
+        "C25",
+        "C27",
+        "C30"
+      ],
+      "notes": "N04",
+      "scope": "core",
+      "source_labels": [
+        "thm:ep-automatic-core"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C32",
+      "name": "An original identity gate has an original parity pivot",
+      "statement": "Within the identity-gate branch, consider an ARBITRARY step i whose original canonical gate is Id. I02 supplies its original symmetric nonempty odd atom c_i and parity interval Y_ci<X_ci, with Y_ci<=Id and Id a MAXIMAL exact complement. Thus Y_ci=Id. C32-C35 are a uniform lemma for any such i, not a choice fixed across all later steps.",
+      "depends_on": [
+        "A01",
+        "A02",
+        "I02",
+        "I03"
+      ],
+      "notes": "N05",
+      "scope": "identity_gate",
+      "source_labels": [
+        "thm:ep-automatic-core"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C33",
+      "name": "That original pivot squares to identity",
+      "statement": "Original transitivity makes c serial, so Id subset c;c. Every c;c pair is even-reachable and therefore lies in Y_c=Id from C32. Hence c;c=Id in FULL represented semantics.",
+      "depends_on": [
+        "A01",
+        "C32"
+      ],
+      "notes": "N05",
+      "scope": "identity_gate",
+      "source_labels": [
+        "thm:ep-automatic-core"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C34",
+      "name": "The pivot is a selected original functional involution",
+      "statement": "For the selected pivot c_i of this arbitrary identity-gate step, seriality and c_i;c_i=Id force each real vertex to have exactly one neighbor: two neighbors would be related by c_i;c_i and thus equal. Its original invariant graph is consequently one fixed-point-free equivariant involution u_i in H. The actual selected character at this step source parent is one by A02.",
+      "depends_on": [
+        "C10",
+        "C11",
+        "C13",
+        "C33",
+        "A02"
+      ],
+      "notes": "N05",
+      "scope": "identity_gate",
+      "source_labels": [
+        "thm:ep-automatic-core"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C35",
+      "name": "Original identity-gate maximality puts u inside every positive exact equivalence",
+      "statement": "For any original full exact E>Id, being a strict extension of the maximal complement Id prevents E from meeting X_c only in Y_c=Id. The index-two interval forces X_c subset E, hence Gamma_u subset E. This is a statement about EXACT E; no arbitrary full invariant lattice assertion is added.",
+      "depends_on": [
+        "C32",
+        "C34"
+      ],
+      "notes": "N05",
+      "scope": "identity_gate",
+      "source_labels": [
+        "thm:ep-automatic-core"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C36",
+      "name": "The least nonidentity original exact F exists",
+      "statement": "The family of original exact E>Id is finite and nonempty (Top belongs since an identity-gate pivot c_i is nonempty). Choose ONE identity-gate step initially, with witness u_0. The intersection F contains Id and Gamma_u0 by C35, so is original full exact and strictly above Id. It is the least such exact equivalence and may be Top. Later steps may use different u_i; C35 still puts each Gamma_ui inside this SAME F.",
+      "depends_on": [
+        "C35",
+        "I07",
+        "D07"
+      ],
+      "notes": "N05",
+      "scope": "identity_gate",
+      "source_labels": [
+        "thm:ep-automatic-core"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C37",
+      "name": "The subgroup H_F is nontrivial and normal",
+      "statement": "Id lies in H_F; inverse graphs and compositions stay inside invariant equivalence F, so D08 defines a subgroup. It contains the initial u_0 by C35/C36 and is nontrivial. Since H is abelian by C12, H_F is normal.",
+      "depends_on": [
+        "C12",
+        "C34",
+        "C36",
+        "D08"
+      ],
+      "notes": "N05",
+      "scope": "functional",
+      "source_labels": [
+        "thm:ep-automatic-core"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C38",
+      "name": "All original gates are identity or contain F",
+      "statement": "Every canonical original G is full exact. Its nonidentity case contains the least positive exact F by C36; no distributivity or full-lattice monolith inference is used.",
+      "depends_on": [
+        "C36",
+        "I03"
+      ],
+      "notes": "N05",
+      "scope": "identity_gate",
+      "source_labels": [
+        "thm:ep-automatic-core"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C39",
+      "name": "Bind the prefix orbit-occupancy assertion",
+      "statement": "With fixed original F and H_F define P(j) as D09. The action exists by C16, and Gamma_h subset F implies its type map stays inside the actual Phi_j(F)-class.",
+      "depends_on": [
+        "C16",
+        "C37",
+        "D09",
+        "I01"
+      ],
+      "notes": "N06",
+      "scope": "prefix_action",
+      "source_labels": [
+        "thm:ep-automatic-core"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C40",
+      "name": "The initial prefix assertion is immediate",
+      "statement": "There is one original transitive unary type, so its unique Phi_0(F)-class is a singleton. Every group action on it is transitive, proving P(0).",
+      "depends_on": [
+        "A01",
+        "C39"
+      ],
+      "notes": "N06",
+      "scope": "prefix_action",
+      "source_labels": [
+        "thm:ep-automatic-core"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C41",
+      "name": "A nonidentity-gate step has two bijective F-occupancy graph lifts",
+      "statement": "Suppose P(j) and original G>Id. By C38, F<=G. Apply I06 with this original exact F. Every active old Phi_j(F)-class has TWO new occupancy classes, each projecting BIJECTIVELY onto it with the actual character offsets; inactive classes are unchanged.",
+      "depends_on": [
+        "C38",
+        "C39",
+        "I06"
+      ],
+      "notes": "N06",
+      "scope": "prefix_action",
+      "source_labels": [
+        "thm:ep-automatic-core"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C42",
+      "name": "H_F preserves each new occupancy class and projection is equivariant",
+      "statement": "For h in H_F, the graph containment Gamma_h subset F gives Phi_(j+1)(Gamma_h) subset Phi_(j+1)(F); C15 makes it a type permutation. Thus it preserves EACH new F-occupancy class. C19 gives equivariance of projection to parents. No claim that h preserves all marked predicates is used.",
+      "depends_on": [
+        "C15",
+        "C19",
+        "C37",
+        "C41",
+        "I01"
+      ],
+      "notes": "N06",
+      "scope": "prefix_action",
+      "source_labels": [
+        "thm:ep-automatic-core"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C43",
+      "name": "Transitivity passes through the bijective lifts",
+      "statement": "By the bound P(j), move one parent to another with h in H_F. C42 keeps the chosen new occupancy class invariant and I06 makes its projection injective, so h sends the unique lift of the first parent to the unique lift of the second. Each new class is transitive; inactive classes inherit P(j).",
+      "depends_on": [
+        "C39",
+        "C41",
+        "C42"
+      ],
+      "notes": "N06",
+      "scope": "prefix_action",
+      "source_labels": [
+        "thm:ep-automatic-core"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C44",
+      "name": "An identity-gate connected step acts on one original H-orbit of parents",
+      "statement": "For original G=Id, original G-quotient functional correspondences are exactly the graphs of H; each is already an exact atomic relation. I03 FULL bridge converse says every occurring trace belongs to the selected component. Since Phi_j(Gamma_h) is total functional by C15, the ACTIVE parents are exactly ONE H-orbit.",
+      "depends_on": [
+        "C10",
+        "C15",
+        "I03"
+      ],
+      "notes": "N06",
+      "scope": "identity_gate",
+      "source_labels": [
+        "thm:ep-automatic-core"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C45",
+      "name": "An old F-occupancy class is wholly active or wholly inactive",
+      "statement": "By P(j), each old Phi_j(F)-class is an H_F orbit. Normality H_F normal H and the one-H-orbit active set C44 imply that an H_F orbit meeting the active set is contained in it. Thus each old occupancy class is all active or all inactive.",
+      "depends_on": [
+        "C37",
+        "C39",
+        "C44"
+      ],
+      "notes": "N06",
+      "scope": "prefix_action",
+      "source_labels": [
+        "thm:ep-automatic-core"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C46",
+      "name": "At the source parent the selected original u fixes its old type",
+      "statement": "Instantiate the uniform C32-C35 argument at THIS identity-gate step i. Its selected original u_i belongs to every positive original exact equivalence, hence to the fixed F from C36. The odd pivot occurs inside its source parent p_*; since Phi_j(Gamma_ui) is a permutation, u_i fixes p_*. This u_i may differ from the initial positivity witness u_0.",
+      "depends_on": [
+        "C15",
+        "C32",
+        "C34",
+        "C35",
+        "C36"
+      ],
+      "notes": "N06",
+      "scope": "identity_gate",
+      "source_labels": [
+        "thm:ep-automatic-core"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C47",
+      "name": "The SAME original u fixes every active parent and stays odd",
+      "statement": "For active p=h(p_*) with h in H by C44, commutativity gives u_i(p)=u_i h(p_*)=h u_i(p_*)=p. Actual groupoid transport conjugates u_i to h u_i h inverse=u_i, so its selected character is still one at p. The SAME original u_i works over ALL active parents of THIS step; no common selected odd element across different steps is assumed.",
+      "depends_on": [
+        "C12",
+        "C16",
+        "C44",
+        "C46",
+        "A02"
+      ],
+      "notes": "N06",
+      "scope": "identity_gate",
+      "source_labels": [
+        "thm:ep-automatic-core"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C48",
+      "name": "That same u exchanges the two children over every active parent",
+      "statement": "The phase equation for the character-one graph Gamma_ui of this step sends bit epsilon to epsilon+1. Its old parent is fixed by C47, so the unique type action Phi_(j+1)(Gamma_ui) swaps the two realized children over EVERY active parent of this fixed step.",
+      "depends_on": [
+        "C15",
+        "C47",
+        "A02"
+      ],
+      "notes": "N06",
+      "scope": "prefix_action",
+      "source_labels": [
+        "thm:ep-automatic-core"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C49",
+      "name": "The identity-gate step has one new F-occupancy class over each old one",
+      "statement": "F>Id=C36 is not<=G=Id. I05 therefore discards this step from the ACTUAL quotient tower on M/F. Its occupancy partition is unchanged: every active old Phi_j(F)-class has ONE new Phi_(j+1)(F)-class containing ALL its children; inactive classes have their unchanged single lifts.",
+      "depends_on": [
+        "C36",
+        "C45",
+        "I05"
+      ],
+      "notes": "N06",
+      "scope": "prefix_action",
+      "source_labels": [
+        "thm:ep-automatic-core"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C50",
+      "name": "Parent movement plus the child swap proves transitivity in the discarded case",
+      "statement": "Use P(j) to send any active parent p to q with h in H_F. Its child image lies over q by C19; if it is the wrong child, compose with the SAME step-specific u_i in H_F from C46/C48. Thus every pair of children over that old occupancy class is connected by H_F, proving transitivity on C49 single new class.",
+      "depends_on": [
+        "C19",
+        "C39",
+        "C46",
+        "C48",
+        "C49"
+      ],
+      "notes": "N06",
+      "scope": "prefix_action",
+      "source_labels": [
+        "thm:ep-automatic-core"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C51",
+      "name": "The prefix H_F-transitivity invariant holds at every stage",
+      "statement": "C40 gives P(0). Each later step is either G>Id, handled by C43, or G=Id, handled by C45-C50; inactive classes never change. Ordinary induction on prefix length proves P(j) for every j, in particular terminal j=m. This prefix induction is inside the separate strong ORIGINAL-rank induction.",
+      "depends_on": [
+        "C40",
+        "C43",
+        "C45",
+        "C50"
+      ],
+      "notes": "N06",
+      "scope": "prefix_action",
+      "source_labels": [
+        "thm:ep-automatic-core"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C52",
+      "name": "Different terminal F-occupancy classes separate through a lower-rank quotient",
+      "statement": "If s,t belong to different Phi_m(F)-classes, F>Id by C36. Instantiate I05 and C26 at E=F; apply the bound lower-rank hypothesis C27 and lift its bipartite quotient atom by C25. This produces an ORIGINAL bipartite separator for the specified s,t.",
+      "depends_on": [
+        "C25",
+        "C26",
+        "C27",
+        "C36",
+        "I05"
+      ],
+      "notes": "N07",
+      "scope": "core",
+      "source_labels": [
+        "thm:ep-automatic-core"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C53",
+      "name": "Equal terminal F-occupancy classes supply an original functional map",
+      "statement": "If s,t are in the same Phi_m(F)-class, C51 supplies h in H_F with h(s)=t. For s!=t, this h is nonidentity because identity fixes all types.",
+      "depends_on": [
+        "C16",
+        "C51"
+      ],
+      "notes": "N07",
+      "scope": "core",
+      "source_labels": [
+        "thm:ep-automatic-core"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C54",
+      "name": "That nonidentity functional map is the original bipartite separator",
+      "statement": "C13 makes Gamma_h one original bipartite atom. The actual support action h(s)=t in C53 is exactly (s,t) in Phi_m(Gamma_h), so it separates this pair without naming a new unary label.",
+      "depends_on": [
+        "C13",
+        "C53",
+        "D03"
+      ],
+      "notes": "N07",
+      "scope": "core",
+      "source_labels": [
+        "thm:ep-automatic-core"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C55",
+      "name": "Complete original bipartite separation follows by strong rank induction",
+      "statement": "C28 handles the bases. For arbitrary distinct s,t at positive rank and a nonempty tower, either all gates are nonidentity (C31) or an identity gate exists and C52/C54 exhaust different/same F occupancy. All recursive calls have strictly lower ORIGINAL rank C26; hence strong induction C27 proves the displayed complete separation for every genuine terminal tower in the category.",
+      "depends_on": [
+        "C28",
+        "C31",
+        "C52",
+        "C54"
+      ],
+      "notes": "N07",
+      "scope": "core",
+      "source_labels": [
+        "thm:ep-automatic-core"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C56",
+      "name": "Every endomorphism of the old-atom table is injective",
+      "statement": "If a template endomorphism identified s!=t, C55 gives an original bipartite a with (s,t) in R_a. Preservation would put the image diagonal in R_a, contradicting C06. Therefore no pair collapses.",
+      "depends_on": [
+        "C06",
+        "C55",
+        "D02"
+      ],
+      "notes": "N07",
+      "scope": "core",
+      "source_labels": [
+        "thm:ep-automatic-core"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C57",
+      "name": "Finite injective relational endomorphisms are automorphisms",
+      "statement": "T is finite, so C56 is a permutation f of finite order n. Its inverse equals f^(n-1), a composition of endomorphisms, and therefore also preserves every named relation. Thus f preserves AND reflects each old atom relation and is an automorphism. This is not an arbitrary infinite-bijection assertion.",
+      "depends_on": [
+        "C56",
+        "D02"
+      ],
+      "notes": "N07",
+      "scope": "core",
+      "source_labels": [
+        "thm:ep-automatic-core"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C58",
+      "name": "Automatic complete separation and core source export",
+      "statement": "C55 proves original-bipartite-atom separation of EVERY two different terminal labels, C06 makes each such atom globally loopless on T, and C56-C57 give End(T)=Aut(T). This proves thm:ep-automatic-core in its one-original-sort genuine maximal-character setting.",
+      "depends_on": [
+        "C55",
+        "C56",
+        "C57",
+        "C08"
+      ],
+      "notes": "N07",
+      "scope": "core",
+      "source_labels": [
+        "thm:ep-automatic-core"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C59",
+      "name": "The induction category and exact F must not be strengthened or confused",
+      "statement": "C26/C30/C52 use actual exact quotients with AP+HOM CCO, including finite and non-SAP sources. The F of C36 is least positive EXACT, may be Top and is not asserted to be the finite-packet hull or the least nonidentity FULL invariant equivalence.",
+      "depends_on": [
+        "C26",
+        "C30",
+        "C36",
+        "C52"
+      ],
+      "notes": "N08",
+      "scope": "boundary",
+      "source_labels": [
+        "thm:ep-automatic-core"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C60",
+      "name": "A nonmaximal safe orientation really can give a noncore terminal table",
+      "statement": "The explicit I x F_2 x N source of D10 is homogeneous SAP+HOM CCO. Its first clone gate K is a NONMAXIMAL exact complement to the b-parity interval; the actual maximal gate is the same-bit equivalence. Nonmaximal lambda followed by maximal mu has all four labels, is terminal, and admits the proper retraction (lambda,mu)->(mu,mu). The corresponding first-maximal two-label table is a core. The construction and table are proved explicitly in N08, not inferred from finite diagnostics.",
+      "depends_on": [
+        "D10"
+      ],
+      "notes": "N08",
+      "scope": "boundary",
+      "source_labels": [
+        "thm:ep-automatic-core"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C61",
+      "name": "No multioriginal-sort, preferred tower or EP conclusion is inferred",
+      "statement": "The original single transitive symmetric sort supplies the global elementary abelian H argument. The theorem does not extend it to arbitrary multiple original sorts, identify a preferred tower or least language, or prove expansion property merely from core-ness. Later EP arguments are separate consumers.",
+      "depends_on": [
+        "C58",
+        "C60"
+      ],
+      "notes": "N08",
+      "scope": "boundary",
+      "source_labels": [
+        "thm:ep-automatic-core"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C62",
+      "name": "Finite controls test the actual semantic interfaces and negative boundary",
+      "statement": "The independent finite controls enumerate actual old-atom supports, prefix functional actions, quotient separator pullbacks, all table endomorphisms and maximal/nonmaximal coordinate labelings, including genuine proper retractions. They certify no unbounded source theorem, published HN/HKN/forest adapter or Lean proof.",
+      "depends_on": [
+        "C20",
+        "C25",
+        "C58",
+        "C60"
+      ],
+      "notes": "N08",
+      "scope": "boundary",
+      "source_labels": [
+        "thm:ep-automatic-core"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    }
+  ],
+  "exports": [
+    {
+      "source_label": "lem:ep-bp-loopless",
+      "claims": [
+        "C08"
+      ]
+    },
+    {
+      "source_label": "lem:ep-original-functional",
+      "claims": [
+        "C20"
+      ]
+    },
+    {
+      "source_label": "lem:ep-lift-separator",
+      "claims": [
+        "C25"
+      ]
+    },
+    {
+      "source_label": "thm:ep-automatic-core",
+      "claims": [
+        "C58"
+      ]
+    }
+  ],
+  "auxiliary_exports": [
+    {
+      "source_label": "eq:ep-template",
+      "claims": [
+        "C07"
+      ],
+      "source": {
+        "file": "sections/expansion_property_automatic_core.tex",
+        "anchor": "\\label{eq:ep-template}"
+      }
+    },
+    {
+      "source_label": "eq:ep-bp-separation",
+      "claims": [
+        "C55"
+      ],
+      "source": {
+        "file": "sections/expansion_property_automatic_core.tex",
+        "anchor": "\\label{eq:ep-bp-separation}"
+      }
+    },
+    {
+      "source_label": "eq:ep-least-F",
+      "claims": [
+        "C36"
+      ],
+      "source": {
+        "file": "sections/expansion_property_automatic_core.tex",
+        "anchor": "\\label{eq:ep-least-F}"
+      }
+    },
+    {
+      "source_label": "eq:ep-HF",
+      "claims": [
+        "C37"
+      ],
+      "source": {
+        "file": "sections/expansion_property_automatic_core.tex",
+        "anchor": "\\label{eq:ep-HF}"
+      }
+    },
+    {
+      "source_label": "eq:ep-HF-transitive",
+      "claims": [
+        "C51"
+      ],
+      "source": {
+        "file": "sections/expansion_property_automatic_core.tex",
+        "anchor": "\\label{eq:ep-HF-transitive}"
+      }
+    }
+  ],
+  "source_result_files": [
+    "sections/expansion_property_automatic_core.tex"
+  ],
+  "dependency_firewalls": [
+    {
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08"
+      ],
+      "forbid": [
+        "I01",
+        "I02",
+        "I03",
+        "I04",
+        "I05",
+        "I06",
+        "I08"
+      ]
+    },
+    {
+      "claims": [
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13"
+      ],
+      "forbid": [
+        "I01",
+        "I02",
+        "I03",
+        "I04",
+        "I05",
+        "I06",
+        "I07",
+        "I08"
+      ]
+    },
+    {
+      "claims": [
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25"
+      ],
+      "forbid": [
+        "I02",
+        "I03",
+        "I04",
+        "I05",
+        "I06",
+        "I08",
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20"
+      ]
+    },
+    {
+      "claims": [
+        "C60"
+      ],
+      "forbid": [
+        "I01",
+        "I02",
+        "I03",
+        "I04",
+        "I05",
+        "I06",
+        "I07",
+        "I08",
+        "C58",
+        "A01",
+        "A02",
+        "A03"
+      ]
+    }
+  ],
+  "application_contracts": [
+    {
+      "consumer": "C26",
+      "lemma": "I08",
+      "discharge": "Use only the one-stage actual original exact quotient M/E of I05; E>Id and the original complete actual orbital palette discharge the strict rank-drop hypotheses."
+    },
+    {
+      "consumer": "C31",
+      "lemma": "C27",
+      "discharge": "C30 supplies the NEW original quotient AP+HOM-CCO source and genuine terminal full-age tower; C26 proves its original rank <k. Invoke only the bound strong-induction hypothesis, never assume SAP of that quotient."
+    },
+    {
+      "consumer": "C41",
+      "lemma": "I06",
+      "discharge": "The fixed original F is full exact by C36; for this G>Id step C38 proves F<=G, so the retained graph-offset formula is applied with E=F."
+    },
+    {
+      "consumer": "C49",
+      "lemma": "I05",
+      "discharge": "For THIS identity-gate step, F>Id is not<=G=Id. The quotient theorem therefore removes it on the actual occupancy carrier, giving one new class of all children, not only an abstract count."
+    },
+    {
+      "consumer": "C52",
+      "lemma": "C27",
+      "discharge": "E=F>Id gives a genuine terminal full-age original quotient by I05 with strictly smaller original rank C26; its distinct actual occupancy classes are the bound lower-rank theorem inputs."
+    },
+    {
+      "consumer": "C46",
+      "lemma": "C35",
+      "discharge": "C32-C35 form a uniform lemma for ANY original identity-gate step. Reinstantiate it at the current step i with its own selected u_i. Its graph lies in the fixed F defined using one initial witness u_0; only within this fixed i is the SAME u_i transported across all active parents."
+    }
+  ],
+  "induction_contract": {
+    "theorem": "C58",
+    "measure": "D01",
+    "bound_step_context": "C27",
+    "strict_drop": "C26",
+    "lower_source_calls": [
+      "C31",
+      "C52"
+    ],
+    "inner_prefix_induction": "C51",
+    "statement": "The outer induction ranges over ALL original one-sort AP+HOM-CCO sources, finite or infinite and not necessarily SAP. The inner prefix induction proves H_F occupancy transitivity within one fixed outer source."
+  },
+  "tasks": [
+    {
+      "id": "T01",
+      "name": "Loopless original bipartite diagonal",
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Keep FULL invariant terminality distinct from exact maximal gates; use original diversity rank and actual full-age quotient sources. Original equivariant maps act on type supports, not as automorphisms fixing every phase predicate. Preserve the same odd u across an identity-gate component. The finite old-atom table has no individual new-label predicates. Retain the explicit nonmaximal four-label retraction and do not infer EP/Ramsey or a several-original-sort theorem."
+    },
+    {
+      "id": "T02",
+      "name": "Functional graphs and all-prefix type actions",
+      "claims": [
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20"
+      ],
+      "depends_on": [
+        "T01"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Keep FULL invariant terminality distinct from exact maximal gates; use original diversity rank and actual full-age quotient sources. Original equivariant maps act on type supports, not as automorphisms fixing every phase predicate. Preserve the same odd u across an identity-gate component. The finite old-atom table has no individual new-label predicates. Retain the explicit nonmaximal four-label retraction and do not infer EP/Ramsey or a several-original-sort theorem."
+    },
+    {
+      "id": "T03",
+      "name": "Quotient separators and actual rank drop",
+      "claims": [
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Keep FULL invariant terminality distinct from exact maximal gates; use original diversity rank and actual full-age quotient sources. Original equivariant maps act on type supports, not as automorphisms fixing every phase predicate. Preserve the same odd u across an identity-gate component. The finite old-atom table has no individual new-label predicates. Retain the explicit nonmaximal four-label retraction and do not infer EP/Ramsey or a several-original-sort theorem."
+    },
+    {
+      "id": "T04",
+      "name": "Strong rank induction and nonidentity-gate branch",
+      "claims": [
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31"
+      ],
+      "depends_on": [
+        "T03"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Keep FULL invariant terminality distinct from exact maximal gates; use original diversity rank and actual full-age quotient sources. Original equivariant maps act on type supports, not as automorphisms fixing every phase predicate. Preserve the same odd u across an identity-gate component. The finite old-atom table has no individual new-label predicates. Retain the explicit nonmaximal four-label retraction and do not infer EP/Ramsey or a several-original-sort theorem."
+    },
+    {
+      "id": "T05",
+      "name": "Identity pivot, least exact F and H_F",
+      "claims": [
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38"
+      ],
+      "depends_on": [
+        "T02"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Keep FULL invariant terminality distinct from exact maximal gates; use original diversity rank and actual full-age quotient sources. Original equivariant maps act on type supports, not as automorphisms fixing every phase predicate. Preserve the same odd u across an identity-gate component. The finite old-atom table has no individual new-label predicates. Retain the explicit nonmaximal four-label retraction and do not infer EP/Ramsey or a several-original-sort theorem."
+    },
+    {
+      "id": "T06",
+      "name": "Full prefix H_F-transitivity induction",
+      "claims": [
+        "C39",
+        "C40",
+        "C41",
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46",
+        "C47",
+        "C48",
+        "C49",
+        "C50",
+        "C51"
+      ],
+      "depends_on": [
+        "T02",
+        "T05"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Keep FULL invariant terminality distinct from exact maximal gates; use original diversity rank and actual full-age quotient sources. Original equivariant maps act on type supports, not as automorphisms fixing every phase predicate. Preserve the same odd u across an identity-gate component. The finite old-atom table has no individual new-label predicates. Retain the explicit nonmaximal four-label retraction and do not infer EP/Ramsey or a several-original-sort theorem."
+    },
+    {
+      "id": "T07",
+      "name": "Complete separation and finite core conclusion",
+      "claims": [
+        "C52",
+        "C53",
+        "C54",
+        "C55",
+        "C56",
+        "C57",
+        "C58"
+      ],
+      "depends_on": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T06"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Keep FULL invariant terminality distinct from exact maximal gates; use original diversity rank and actual full-age quotient sources. Original equivariant maps act on type supports, not as automorphisms fixing every phase predicate. Preserve the same odd u across an identity-gate component. The finite old-atom table has no individual new-label predicates. Retain the explicit nonmaximal four-label retraction and do not infer EP/Ramsey or a several-original-sort theorem."
+    },
+    {
+      "id": "T08",
+      "name": "Actual nonmaximal countermodel and scope",
+      "claims": [
+        "C59",
+        "C60",
+        "C61",
+        "C62"
+      ],
+      "depends_on": [
+        "T07"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Keep FULL invariant terminality distinct from exact maximal gates; use original diversity rank and actual full-age quotient sources. Original equivariant maps act on type supports, not as automorphisms fixing every phase predicate. Preserve the same odd u across an identity-gate component. The finite old-atom table has no individual new-label predicates. Retain the explicit nonmaximal four-label retraction and do not infer EP/Ramsey or a several-original-sort theorem."
+    }
+  ],
+  "controls": [
+    {
+      "id": "K01",
+      "check": "Actual finite elementary-abelian coloured sources test every original functional graph, all-prefix functional support actions, composition, terminal freeness, complete bipartite pair separation and ALL table endomorphisms."
+    },
+    {
+      "id": "K02",
+      "check": "A concrete old four-atom coordinate/clone window compares original bipartite graphs, maximal exact gate candidates, quotient separator pullbacks and actual terminal old-atom support tables."
+    },
+    {
+      "id": "K03",
+      "check": "Enumerate ALL endomorphisms of the nonmaximal four-label table and the maximal two-label table; verify the explicit proper retraction (lambda,mu)->(mu,mu) and negative complete-separation pair. Finite windows certify no unbounded AP/CCO theorem."
+    }
+  ],
+  "article_feedback": [
+    {
+      "id": "F01",
+      "kind": "PROOF_DETAIL_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/expansion_property_automatic_core.tex",
+        "anchor": "finitely definable"
+      },
+      "finding": "The terminal bipartite obstruction uses actual FULL invariant even-walk/connectivity equivalences, with finite orbital stabilization; exactness is not needed.",
+      "proposed_article_change": "Spell out seriality, Id subset a^2, stabilization of even powers and the full index-two interval.",
+      "caller_effect": "No stronger source hypothesis or signature repair.",
+      "proof_claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C08"
+      ]
+    },
+    {
+      "id": "F02",
+      "kind": "PROOF_SCOPE_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/expansion_property_automatic_core.tex",
+        "anchor": "acts as a permutation"
+      },
+      "finding": "An original equivariant h need not fix marked unary predicates. The actual Phi_j graph and represented composition supply its type action and equivariant forgetful projections.",
+      "proposed_article_change": "Keep the square-identity/totality proof and explicitly record projection equivariance before the H_F prefix argument.",
+      "caller_effect": "Prevents an invalid marked-source automorphism substitution.",
+      "proof_claims": [
+        "C14",
+        "C15",
+        "C16",
+        "C18",
+        "C19",
+        "C42",
+        "C47"
+      ]
+    },
+    {
+      "id": "F03",
+      "kind": "PROOF_SCOPE_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/expansion_property_automatic_core.tex",
+        "anchor": "eq:ep-least-F"
+      },
+      "finding": "F in the identity-gate branch is least positive FULL EXACT, may equal Top, and is unrelated by definition to the greatest finite-class equivalence also denoted F elsewhere.",
+      "proposed_article_change": "Use a local distinguishing name such as F_exact and retain the exact-family qualifier throughout.",
+      "caller_effect": "No claim of a full invariant monolith or packet-hull identification.",
+      "proof_claims": [
+        "C35",
+        "C36",
+        "C38",
+        "C59"
+      ]
+    },
+    {
+      "id": "F04",
+      "kind": "PROOF_DETAIL_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/expansion_property_automatic_core.tex",
+        "anchor": "The group"
+      },
+      "finding": "A G>Id step preserves each new F-occupancy class because every H_F graph lies in F. The bijective projection then transfers transitivity; at G=Id the SAME original u is used over every active parent.",
+      "proposed_article_change": "Retain both mechanisms and the actual discarded F-quotient partition in the prefix induction, rather than infer arbitrary permutations of children.",
+      "caller_effect": "No new assumption, but the two induction cases cannot be collapsed into an informal label symmetry.",
+      "proof_claims": [
+        "C41",
+        "C42",
+        "C43",
+        "C45",
+        "C46",
+        "C47",
+        "C48",
+        "C49",
+        "C50",
+        "C51"
+      ]
+    }
+  ],
+  "overview_mermaid": [
+    "flowchart TD",
+    "  B[\"Original bipartite atoms\"] --> L[\"Terminal looplessness\"]",
+    "  H[\"Original functional group\"] --> P[\"Actual type actions\"]",
+    "  Q[\"Genuine exact quotient tower\"] --> R[\"Strict original rank induction\"]",
+    "  P --> F[\"Identity-gate prefix invariant\"]",
+    "  R --> S[\"Complete old-atom separation\"]",
+    "  F --> S",
+    "  L --> C[\"Finite table core\"]",
+    "  S --> C"
+  ],
+  "overview_notes": [
+    "All four source results are covered. Main core proof uses AP-only exact quotients, not a SAP quotient assumption.",
+    "Outer induction is on ORIGINAL diversity orbitals; the H_F argument is a separate inner induction on tower prefixes.",
+    "Logical real equality, diversity loops on types and identity-gate quotient identities are distinct.",
+    "No Ramsey, EP, HN/HKN or forest theorem is imported or duplicated by this module."
+  ],
+  "review": {
+    "date": "2026-10-29",
+    "source_unchanged": true,
+    "source_signature_repairs": 0,
+    "unexpanded_provider_labels": [],
+    "proof_status": "HUMAN_EXPANDED_NOT_LEAN; author full source/contract audit, independent all62claim quotient-auditor and B062-author concrete peer reviews, and parent independent all-claim/source synthesis PASS. Global package/unit/fresh-handoff checks remain the parent delivery step. No required mathematical source repair or new external theorem.",
+    "boundaries": [
+      "One ORIGINAL transitive symmetric sort",
+      "Genuine MAXIMAL full-character age, not arbitrary phase orientations",
+      "FULL terminal equivalence lattice, exact gate complements",
+      "Exact least F is not the finite-packet F",
+      "Original functional actions are on TYPE supports",
+      "AP-only quotient category includes finite/non-SAP sources",
+      "No EP/Ramsey, least language, preferred tower or Lean certificate"
+    ],
+    "independent_reviews": [
+      "Independent quotient/EP auditor read every claim, definition, import, source355lines, entire notes and control. Checked least POSITIVE EXACT F, uniform identity-step u_i versus initial u_0, all-prefix TYPE actions, actual all-children quotient support, outer original-rank induction and exact nonmaximal four-type retraction. Direct83node metadata and control PASS; own separate enumeration confirms 8 endomorphisms=4 automorphisms+4 proper two-point maps.",
+      "Independent B062 author read all62claims, 10definitions, 8imports, DAG/application contracts/firewalls, source, notes and whole control. Re-read final N08 unbounded lambda-prefix and terminal two-step homogeneity/SAP/typedCCO proof, exactId<K<S<Top versus nonexact block B, and explicit maximal/nonmaximal boundary. Direct83node metadata/control PASS.",
+      "Parent independently read all62claims, all notes and full frozen source, including the global infinite negative control. Confirmed AP-only quotient rank category, source/type action distinction, least EXACT F and identity-step binder precision; mathematical PASS."
+    ]
+  },
+  "source_files": [
+    {
+      "file": "sections/exact_foundations/01_full_raw_exact_helly.tex",
+      "git_blob": "7cb28c86b4b296ddf865b6aff518cda1215cd491"
+    },
+    {
+      "file": "sections/exact_foundations/03_joint_exact_sort_lifting.tex",
+      "git_blob": "394e0db063a476c5c069384b3d3fa2ffd3c7471d"
+    },
+    {
+      "file": "sections/expansion_property_automatic_core.tex",
+      "git_blob": "73ae11633e805d54e9fccb90174e67506b90849f"
+    },
+    {
+      "file": "sections/expansion_property_exact_geometry.tex",
+      "git_blob": "8f901d3c7070d9c900e5c5541e93e25bed6a630a"
+    },
+    {
+      "file": "sections/ramsey_clone_sap.tex",
+      "git_blob": "2b14f19885e7109be548a0af73fba14c974dc636"
+    },
+    {
+      "file": "sections/ramsey_preferred_support.tex",
+      "git_blob": "a4213db90239937a525e6fa7b6ea36703a2900df"
+    },
+    {
+      "file": "sections/simultaneous_typed_exact_quotients.tex",
+      "git_blob": "078017a03e1d6f62088fb17fb6e31bce4f6e8ef6"
+    }
+  ]
+}

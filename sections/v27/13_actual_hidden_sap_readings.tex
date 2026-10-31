@@ -1,0 +1,842 @@
+\begin{theorem}[Typed strong hidden amalgamation]
+\label{thm:typed-hidden-sap}
+The transition-enriched typed hereditary hidden envelope has strong
+amalgamation.
+\end{theorem}
+
+\begin{proof}[Direct unary-algebraic-closure proof]
+The actual terminal hidden structure $\widehat\M$, with all complete
+original hidden binary orbitals named, is homogeneous by
+\cref{thm:typed-joint-exact-lifting}: every finite hidden partial
+isomorphism extends through one original real automorphism, preserving
+all named equivariant projections and quotient transitions.
+For finite $T$, its unary closure has size at most
+$m_{\mathrm{typ}}|T|$ by \cref{lem:typed-unary-closure-bound}.
+
+For every finite hidden unary-closed $A$ and every $u\notin A$,
+\cref{lem:typed-hereditary-hidden-orbits} gives an infinite orbit under
+the original group $\Aut(\M/A)$. Its induced action is contained in
+$\Aut(\widehat\M/A)$, so the latter orbit is infinite as well.
+Thus \cref{lem:unary-homogeneous-sap-criterion} applies to the
+actual hidden structure and gives SAP for its entire hereditary
+finite unary-closed age, including orphan-only bases.
+
+The source-specific inputs remain the original full exact lifting,
+real-base orbit theorem and typed fresh representatives, with the
+last two linked by the common group-action frame criterion.
+The full working manuscript retains a separate alternative construction.
+\end{proof}
+
+
+
+\begin{lemma}[Rigidity of completed typed hidden structures]
+\label{lem:typed-hidden-rigidity}
+Every homomorphism between completed members of the transition-enriched typed
+hidden envelope is an embedding.
+\end{lemma}
+
+\begin{proof}
+Unary sort predicates prevent identifications between different real or
+coordinate sorts.  On two distinct real vertices the canonical pair-type
+relations form a partition, so a homomorphism is injective there and preserves
+and reflects their pair type.  By
+\cref{lem:typed-cylinder-realisation}, on every compatible ordered pair of
+represented coordinate positions with at least one proper quotient endpoint
+the named semantic-cylinder relations form a partition.  This includes the
+mixed real--coordinate case, with the real sort interpreted as the equality
+coordinate.  A homomorphism preserves the unique cylinder relation carried by
+a source pair; uniqueness of the cylinder in the target therefore reflects
+that relation as well.  In particular, on one proper coordinate sort it
+cannot identify two distinct vertices, since the cylinder predicates are
+interpreted off the diagonal.  Sort predicates already separate vertices
+belonging to different coordinate sorts.  The
+finite canonical definitional completion fixed at the beginning of this
+subsection makes the old tuple-type relations a partition on every compatible
+real tuple up to the maximum arity, so all old higher-support relations are
+reflected as well.  Finally, the domains of all projections, upward maps and
+quotient transitions are fixed by their source sorts, and completed hidden
+structures are induced and functionally closed.  Thus function values and all
+remaining displayed relations are reflected.
+\end{proof}
+
+\begin{lemma}[An anchored fine pair type fixes every old hidden coordinate reading]
+\label{lem:typed-anchored-real-clone-readout}
+Let \(p\) be an actual real point of original
+sort \(a\), and let \(B\) be a finite
+COMPLETE old visible frame not containing
+\(p\). Assume that for every old proper
+hidden coordinate vertex \(q\) whose
+reading must be retained, \(B\) contains
+one designated actual real representative
+\(a_q\) of the target quotient class.
+Also include representatives of all
+proper quotient coordinates \(F_J(p)\)
+that must be retained from \(p\).
+Suppose \(p'\ne p\) is another real point
+of sort \(a\) and
+\[
+       \col(p',z)=\col(p,z)\qquad(z\in B).
+\tag{ACR}\label{eq:typed-anchor-clone-reading}
+\]
+Then \(p'\) has exactly the same
+represented proper \(J\)-coordinates as
+\(p\) for every relevant \(J\), and
+the same named unary term values after
+all upward maps and quotient transitions.
+Every old real--proper-coordinate
+semantic cylinder with first endpoint
+\(p\) and second endpoint among
+the retained \(q\)'s has the same
+value with first endpoint \(p'\).
+All relations between proper coordinates
+of \(p\) and old proper coordinates
+\(q\), as well as between two
+old proper coordinates, are unchanged.
+
+The conclusion is only about hidden
+RELATIONS/FUNCTIONS that are canonically
+defined by original fine pair orbitals
+and represented quotient classes.
+Higher-arity original tuple constraints
+are not covered by this binary lemma.
+\end{lemma}
+\begin{proof}
+For a relevant proper represented
+\(J\), choose in the frame one
+\(a_q\in[p]_J\).
+By the hypothesis (ACR),
+the old fine orbital of
+\((p',a_q)\) equals that of
+\((p,a_q)\), and hence
+\(p'J a_q\). Therefore
+\([p']_J=[p]_J\).
+Every named upward quotient map
+and transition is a fixed actual
+function of the represented input
+class, by
+\cref{lem:typed-quotient-transport,lem:typed-coordinate-normal-form};
+thus it has the same output on
+the corresponding coordinates of
+\(p,p'\).
+
+Fix an old proper coordinate
+\(q\in B_{b,K}\), represented in
+the frame by a real point
+\(a_q\in b\). The semantic
+cylinder on \((p,q)\)
+is determined by the old fine
+atomic orbital on \((p,a_q)\)
+and the quotient kernel \(K\),
+with the equality-coordinate
+convention for the real endpoint,
+by \cref{lem:typed-cylinder-realisation}.
+The same fine orbital on
+\((p',a_q)\) gives the SAME
+cylinder. Every proper coordinate
+of \(p'\) equals the corresponding
+proper coordinate of \(p\), so
+all cylinders between these
+coordinates and the old \(q\)'s
+are identical, and cylinders
+between old proper coordinates
+are untouched. These
+observations also cover mixed
+original sorts: the relevant
+fine orbital \(p a_q\) is a
+named typed cross orbital,
+and no same-sort commutation
+is being used. This establishes
+all asserted readings.
+\end{proof}
+
+\begin{lemma}[Typed representative splitting]
+\label{lem:typed-real-sort-splitting}
+Let \(h:C\to H\) be a homomorphism-embedding of a finite functionally closed
+transition-enriched hidden structure into a full hidden expansion of some
+finite visible \(A\in\mathcal C\).  After passing to a finite visible
+extension \(A'\in\mathcal C\), one may choose pairwise distinct real images
+for all old real vertices of \(C\) and pairwise distinct designated real
+representatives for all old proper coordinate vertices.  All specified old
+relations, coordinate functions, quotient transitions and semantic-cylinder
+relations are preserved.
+\end{lemma}
+
+\begin{proof}
+Work inside the homogeneous limit.
+BEFORE splitting any old real collisions,
+fix one finite COMPLETE visible anchor frame.
+For EVERY old proper coordinate vertex
+\(q\in C\), including all unary term
+values of old real roots and all old
+orphan quotient vertices, choose an
+actual real anchor \(a_q\) in the
+target quotient class \(h(q)\).
+Likewise fix an anchor in every
+represented proper quotient class
+of every old real image, if not
+already represented by one of the
+\(a_q\). Choose ALL anchors pairwise distinct
+and away from the finite old real
+image, even when two old proper
+coordinate vertices have the same
+target quotient class.
+This is possible: in a visible
+SAP source each nonzero invariant
+equivalence class is infinite,
+by strong duplication of a
+nonidentity same-class pair over
+one pinned point. There are
+only finitely many old quotient
+vertices and named coordinate
+sorts, so the frame is finite.
+Take its complete induced old
+visible structure together with
+all current old real images.
+
+If two distinct old real source
+vertices have the same image \(p\),
+they cannot lie together in one
+displayed irreducible old factor,
+because \(h\) is an embedding on
+irreducibles. Strongly amalgamate
+two copies of the current COMPLETE
+visible structure over its
+complement of \(p\), keeping
+the entire finite anchor frame
+and all OTHER DISTINCT current
+real image points in the base.
+Several unprocessed old source
+real positions may still share
+the point \(p\); they are not
+erroneously counted as distinct
+base elements. Assign \(p'\)
+to one of those positions
+and retain \(p\) for the others.
+The second copy \(p'\ne p\)
+has exactly the same old fine
+atomic relation to every fixed
+frame anchor as \(p\). In
+particular \(p'\) belongs to
+all the SAME named proper
+quotient classes as \(p\),
+including its designated
+\(F_J\)-values and their
+transition/upward images.
+By
+\cref{lem:typed-anchored-real-clone-readout},
+the complete frame equalities of
+old fine pair colours imply
+preservation of EVERY relevant
+mixed real--quotient cylinder
+and quotient--quotient cylinder,
+as well as all upward and
+transition unary-term readings.
+No independent choice of
+unforced new quotient values
+is made during this cloning. Any originally
+displayed old REAL fine atomic
+pair whose endpoint is \(p\)
+has its other endpoint distinct
+from \(p\), hence fixed in the
+complete base and preserved.
+There is no specified fine old
+relation between two source
+real vertices that \(h\) had
+collapsed to \(p\), since that
+two-point source would be
+irreducible and \(h\) an
+embedding on it.
+
+Repeat with all previous clones
+in the fixed complete base.
+This separates the real source
+vertices while preserving their
+literal old unary term values.
+In the support-normal
+finite-arity setting the
+corresponding SAP amalgam must
+additionally preserve the
+distinguished complete old
+higher-support factors;
+that is its SEPARATE assumed
+interface, not a consequence
+of the binary anchor argument.
+
+For every old proper coordinate vertex
+\(q\) use its previously fixed
+pairwise-distinct anchor \(a_q\)
+as a designated real representative
+of its ACTUAL target quotient class.
+Alternatively,
+\cref{lem:typed-fresh-representatives}
+allows a fresh representative of that class
+while retaining the class itself and its
+named forced term values. Existing hidden
+vertices remain fixed; unforced term values
+of the new representative may change.
+Upward maps and quotient
+transitions constrain actual
+quotient \emph{classes}, so these
+choices preserve every displayed
+functional identity.  A displayed semantic-cylinder relation is bisaturated by the corresponding
+endpoint equivalences and is therefore preserved by arbitrary representatives
+of the displayed classes.  Exact-domain labels are not hidden-language data;
+when they occur in guarded templates their defining anchors and private paths
+are retained separately and are reinstalled after this splitting step.  There
+is no equality-coordinate orphan to treat: by
+\cref{lem:no-real-algebraic-transition} every transition target is a proper
+coordinate sort and the real sorts are reached only by the original real
+vertices.  Taking a finite induced visible substructure containing all chosen
+points gives the required \(A'\).
+\end{proof}
+
+
+% C1b/Q1: the standalone binary/unary local-support theorem is now
+% proved in Part I, preserving its original label and exact hypotheses.
+% Here and below we use \cref{lem:typed-binary-irreducible-local-cover}.
+
+
+\begin{lemma}[Irreducible source supports and complete-pattern defects]
+\label{lem:typed-joined-source-support}
+Let \(C\) be a finite functionally closed PARTIAL
+hidden structure, and let \(D=\cl_C(B)\)
+for at most \(k\) OLD hidden source vertices.
+Assume \( |\cl_C\{b\}|\le m_{\mathrm{typ}}\) for each chosen generator
+\(b\in B\), as holds when \(C\) is unary-admissible.
+Suppose \(D\), with its actual induced
+PARTIAL diagram, is irreducible in the
+hidden language (including its unary functions).
+If \(C\) has a hidden
+homomorphism-embedding completion,
+then the map on \(D\) is an EMBEDDING,
+so \(D\) is isomorphic to a completed
+induced hidden substructure. In particular,
+if the full induced diagram of \(D\) is
+missing a relation, inequality, or
+functional identity that every actual
+completed realisation of its displayed
+joining datum has, then \(C\) has NO
+homomorphism-embedding completion.
+The defect is supported on at most
+\(k m_{\mathrm{typ}}\) old vertices.
+
+It is NOT enough that a displayed relation
+joins some unary TERM VALUES from
+\(\cl_C(b)\) and \(\cl_C(c)\):
+the joint closure \(\cl_C\{b,c\}\)
+can remain reducible. Such an
+unjoined pair must NOT be subjected
+to the complete two-root test merely
+because a relation holds in a common
+quotient-coordinate subdiagram.
+\end{lemma}
+\begin{proof}
+By the definition of a homomorphism-embedding,
+its restriction to every source irreducible
+substructure is an embedding.
+Thus its restriction to \(D\) is an
+isomorphism onto a FUNCTIONALLY CLOSED
+induced substructure of a completed
+hidden member. The completed hidden class
+is hereditary, so the induced diagram
+on \(D\) must already be one of the
+completed diagrams. Any missing mandatory
+named datum prevents this. Since
+\(\cl_C(B)\) is the union of the
+one-generated closures of the at
+most \(k\) old generators, its size
+is at most \(k m_{\mathrm{typ}}\).
+No conclusion about completion of
+a reducible \(D\) follows from this
+argument.
+\end{proof}
+
+\begin{remark}[A reducible two-root control]
+\label{rem:typed-term-join-not-irreducible}
+In the one-sort age of an equivalence
+with infinitely many infinite classes,
+let \(x,y\) be real vertices and let
+\(u=F_E(x)\), \(v=F_E(y)\) be their
+proper quotient coordinates. Take
+the functionally closed partial
+hidden diagram induced by the
+two complete one-generated diagrams
+of \(x,y\), together with the
+displayed OFF-DIAGONAL quotient-cylinder
+relation on \(u,v\), but with NO
+original fine atomic relation on
+\(x,y\) (nor arbitrary cross-cylinder
+relations on \(x,v\), \(y,u\)).
+This diagram is completable,
+choosing \(x,y\) in distinct
+\(E\)-classes. It is the free
+amalgam of its restrictions
+to \(\{x,u,v\}\) and
+\(\{y,u,v\}\) over \(\{u,v\}\).
+A relation between \(F_E(x)\) and
+\(F_E(y)\) thus DOES NOT make
+the full two-real-root closure
+irreducible. In a guarded lift
+the quotient-cylinder datum is
+attached to its ACTUAL old source
+endpoints \(u,v\), while the
+individual projection equations
+are attached to \(x,u\) and \(y,v\).
+It is invalid to fill in the
+previously unspecified fine
+\(x,y\) relation before completion.
+\end{remark}
+
+\begin{lemma}[Exactly when a hidden term-pair orbital has no diversity preimage]
+\label{lem:typed-term-orbit-diagonal-dichotomy}
+Let \(a,b\) be original
+transitive named real sorts
+of one homogeneous complete
+typed binary SAP structure,
+and let
+\(\tau:a\to Q\),
+\(\sigma:b\to R\)
+be surjective equivariant
+unary-term maps with
+original real kernels
+\(J=K_\tau\), \(K=K_\sigma\).
+For every NONEMPTY
+\(\Aut(\M)\)-orbit
+\(\Theta\subseteq Q\times R\)
+exactly one of the following
+holds:
+\begin{enumerate}[label=(\roman*)]
+\item Its pullback contains
+an ordered pair of
+DISTINCT original real
+vertices. Then its
+DIVERSITY preimage is
+the nonempty full
+representative saturation
+\(\operatorname{Cyl}_{J,K}(t)\)
+of any one old atomic
+diversity pair type
+\(t\) in that pullback.
+\item Its pullback contains
+NO distinct original
+real pair. Necessarily
+\(a=b\), \(J=K=\Id_a\),
+both maps are injective
+equivariant identifications
+of their real source with
+their respective output
+sorts, and \(\Theta\)
+is the graph pairing
+\(\tau(x)\) with
+\(\sigma(x)\) for the
+SAME original real point
+\(x\in a\).
+\end{enumerate}
+In case (ii), a requirement
+on two distinct, irreducibly
+joined OLD source vertices
+to realise \(\Theta\)
+is a bounded real-identity
+defect, not a nonempty
+STRONG diversity constraint.
+For a single OLD source
+real root the corresponding
+term identity is tested
+in its unary closure.
+\end{lemma}
+\begin{proof}
+Apply \cref{lem:foundational-orbital-pullback} to the actual
+$G=\Aut(\M)$ action on the two original real sorts. The named terms
+are equivariant surjections, and their actual kernels are $J,K$.
+Old complete binary homogeneity identifies each diversity pair orbit
+with its fine atomic colour. Hence the general saturation formula
+identifies the nonempty diversity preimage with
+$\operatorname{Cyl}_{J,K}(t)$ for any old diversity witness $t$.
+Its empty-diversity alternative gives exactly (ii), including the
+same-original-sort and true identity-kernel requirements. This part
+of the argument needs no SAP and does not depend on the later
+positive STRONG representation.
+
+In case (ii), any real preimage of a pair in $\Theta$ has equal
+endpoints. An induced embedding of an irreducibly joined OLD two-root
+support cannot identify its distinct real roots, so such a requirement
+is a bounded real-identity defect. For two terms on the same OLD root,
+the comparison is instead checked in its one-generated unary closure;
+no STRONG identity edge is introduced.
+\end{proof}
+
+\begin{lemma}[CCO-free positive pullback for complete quotient-pair orbitals]
+\label{lem:typed-complete-orbital-positive-NR2-SAP}
+Let $M$ be any countable HOMOGENEOUS finite complete
+binary structure with named individually transitive
+original real sorts, symmetric same-sort old atoms,
+and visible SAP. Assume that on EACH original
+real sort there is NO strict finite-relative-index
+interval in the FULL lattice of original
+invariant equivalences.  Semantic CCO, exact-ball
+Helly, and distributivity of the invariant
+equivalence lattice are NOT assumed.
+
+For ANY surjective $\Aut(M)$-equivariant maps
+$\tau:M_a\to Q$, $\sigma:M_b\to R$
+to transitive quotient $G$-sets,
+each complete $G$-orbital $\Theta\subseteq Q\times R$
+has exactly one of the following OLD diversity
+pullbacks:
+\begin{enumerate}[label=(\roman*)]
+\item ONE nonempty ORIGINAL strong-positive typed
+word profile, equal to the full
+$\ker\tau,\ker\sigma$-saturated old cylinder
+of ANY of its fine atomic diversity witnesses;
+\item the EMPTY diversity spectrum, possible
+only if $a=b$, both kernels are TRUE real
+equality, and $\Theta$ is the same-real-point
+graph of $\tau,\sigma$.
+\end{enumerate}
+The nonempty spectra of all such orbitals partition
+the ORIGINAL old diversity atomic palette.
+In particular, the terminal named-term readout below obtains
+positivity from old SAP plus full-lattice terminality,
+without CCO. This does NOT imply hidden SAP, exact
+quotient structure inheritance or any Ramsey arrow.
+\end{lemma}
+\begin{proof}
+Put $J=\ker\tau$ and $K=\ker\sigma$. Apply
+\cref{lem:foundational-orbital-pullback} to the actual
+$G=\Aut(M)$ action. By old complete binary homogeneity a diversity
+root-pair orbit is one fine atomic colour $t_0$. Thus every nonempty
+diversity pullback is the off-diagonal part of the actual RAW relation
+$J;\{t_0\};K$. The same general lemma supplies the unique possible
+empty-diversity exception and the partition of original fine orbitals.
+It remains to prove positive STRONG reachability of each nonempty part.
+
+FULL original NR2 excludes all intervals of relative index two.
+Therefore \cref{lem:typed-all-invariant-equivalences-raw-word}
+gives one actual RAW atomic word for each nonidentity original kernel
+$J$ or $K$. Such a word is positive, since the empty word represents
+only true real identity. For an identity kernel use the empty word.
+Concatenating these two endpoint words with the middle diversity atom
+$t_0$ gives one positive typed atomic word whose actual RAW relation
+is $J;\{t_0\};K$.
+
+Visible SAP permits the pinned-endpoint injectivisation of
+\cref{lem:typed-injectivisation}: for each distinct original endpoint
+pair, separate the occurrences of a witnessing word walk while fixing
+both endpoints. Consequently the off-diagonal part of this RAW word
+is exactly its STRONG word profile. No associativity of STRONG
+products is needed for this whole-word argument.
+The same SAP conversion on the exterior equivalence factors is
+\cref{lem:typed-raw-strong-saturation}; in the established notation it gives
+\[
+ (J;\{t_0\};K)^\circ
+       =J^\circ\starprod\{t_0\}\starprod K^\circ,
+\]
+with each true-identity exterior factor omitted. This is the full
+saturated cylinder in (i), and it is nonempty because $t_0$ was chosen
+from a distinct-real witness. The group-action partition and exception
+already proved give all remaining assertions.
+\end{proof}
+
+\begin{lemma}[Complete hidden term-pair orbitals have one positive old cylinder]
+\label{lem:typed-term-pair-orbit-pullback}
+Let \(\tau:a\to Q\) and
+\(\sigma:b\to R\) be two
+NAMED unary term functions
+from original transitive
+real sorts \(a,b\) into
+actual hidden real or
+proper represented quotient
+sorts. Let \(J=K_\tau\)
+and \(K=K_\sigma\) be their
+OLD real kernel
+equivalences from
+\cref{lem:typed-coordinate-normal-form};
+each is either actual
+logical equality or a
+nonzero represented proper
+meet-irreducible.
+
+Let \(\Theta\) denote ONE
+complete named hidden
+binary semantic-cylinder
+orbital on the output
+sort pair \(Q,R\), or a
+single named quotient
+transition graph orbital,
+or the actual equality
+diagonal on one common
+hidden output sort.
+Assume \(\Theta\) has at
+least ONE witness
+\((\tau(x_0),\sigma(y_0))\)
+with DISTINCT original
+real representatives
+\(x_0\ne y_0\).
+Put \(t_0=\col(x_0,y_0)\).
+Then the exact old
+DIVERSITY atomic spectrum
+of this term-value
+comparison is
+\[
+ \{t:\Theta(\tau(x),\sigma(y))
+       \text{ whenever }\col(x,y)=t\}
+     =\operatorname{Cyl}_{J,K}(t_0).
+\tag{TOP}\label{eq:typed-term-orbital-pullback}
+\]
+The right side is a
+NONEMPTY POSITIVE STRONG
+typed reachable profile:
+interpret each nonzero
+\(J,K\) as its diversity
+palette \(J^\circ,K^\circ\),
+omit actual identity
+endpoint factors, and use
+\cref{lem:typed-raw-strong-saturation}
+and the terminal reachability
+of these equivalence
+diversity palettes.
+
+The equality-comparison
+case excluded by the
+distinct-representative
+hypothesis is characterised
+EXACTLY by
+\cref{lem:typed-term-orbit-diagonal-dichotomy}:
+it has equality real
+kernels at both source
+endpoints and forces their
+SAME original real point.
+It is NOT a positive
+STRONG diversity type. In an irreducibly
+joined source pair of
+DISTINCT OLD hidden
+vertices it is a bounded
+identity defect, as in
+\cref{lem:typed-identity-transport-redundant}.
+For two occurrences of
+the SAME old source root,
+the equality is instead
+already tested within its
+one-generated unary
+closure, with NO synthetic
+STRONG identity edge.
+\end{lemma}
+\begin{proof}
+We verify that each allowed named comparison is one actual output
+orbital. For a complete semantic cylinder, choose representatives of
+the same old fine atomic colour from any two quotient-class pairs in
+that cylinder, using \cref{lem:typed-cylinder-realisation}. Old pair
+homogeneity moves one representative pair to the other, hence moves
+their actual quotient values as well. Equality on a transitive hidden
+sort is its diagonal orbital. The graph of a named equivariant quotient
+transition is likewise one orbital, by transitivity of its domain.
+All named unary terms are equivariant; their images are their named
+transitive output sorts and their kernels are the actual $J,K$ given by
+\cref{lem:typed-coordinate-normal-form}.
+
+The terminal original source has visible SAP, symmetric same-sort atoms
+and FULL original NR2. Thus
+\cref{lem:typed-complete-orbital-positive-NR2-SAP} applies to these
+actual maps and the single orbital just verified. The stipulated
+distinct-real witness gives (TOP) and its positive STRONG word.
+The excluded real-identity case is the application of
+\cref{lem:typed-term-orbit-diagonal-dichotomy} stated above; quotient
+diagonals with distinct real representatives are not excluded.
+\end{proof}
+
+\begin{corollary}[Exact diversity partition by complete hidden term-pair orbitals]
+\label{cor:typed-complete-orbital-pullback-partition}
+In the terminal typed source let
+$\tau:a\to Q$ and $\sigma:b\to R$
+be surjective equivariant NAMED unary terms
+with original real kernels $J,K$,
+each either logical equality or a represented
+proper nonzero quotient equivalence.
+For each COMPLETE $\Aut(\M)$-orbital
+$\Theta\subseteq Q\times R$, put
+\[
+ \mathcal P_\Theta=
+ \{\col(x,y):x\in a,\ y\in b,\ x\ne y,\
+       (\tau(x),\sigma(y))\in\Theta\}.
+\]
+As $\Theta$ ranges over the complete actual hidden
+pair orbitals, the NONEMPTY $\mathcal P_\Theta$
+form a PARTITION of the realised old
+$a$-to-$b$ DIVERSITY atomic palette.
+Each part is exactly ONE original full
+$J,K$-saturated cylinder
+$\operatorname{Cyl}_{J,K}(t)$ and is
+a nonempty positive typed STRONG reachable profile.
+There is at most ONE orbital with empty
+diversity pullback; if it exists, then
+$a=b$, $J=K=\Id_a$, and it is exactly
+the SAME-original-real-point graph orbital
+of \cref{lem:typed-term-orbit-diagonal-dichotomy}.
+Thus one COMPLETE hidden orbital never pulls
+back to an unverified union of distinct cylinders;
+an arbitrary union of hidden orbitals is NOT
+claimed to be one cylinder or one reachable profile.
+\end{corollary}
+\begin{proof}
+The named terms are equivariant surjections and the terminal original
+source satisfies the hypotheses of
+\cref{lem:typed-complete-orbital-positive-NR2-SAP}. Its partition and
+positivity conclusions give exactly the nonempty parts
+$\mathcal P_\Theta$, each a single full saturated cylinder. Its unique
+possible empty part is the same-real-point graph, as also recorded in
+\cref{lem:typed-term-orbit-diagonal-dichotomy}. Actual identity kernels
+are omitted from STRONG words, and no conclusion about unions of
+different output orbitals is used.
+\end{proof}
+
+\begin{example}[Mixed original sorts: quotient diagonal versus real equality]
+\label{ex:typed-mixed-block-orbital-diagonal}
+Let $I,N_A,N_B$ be countably
+infinite sets. Take two disjoint
+original named real sorts
+$M_A=I\times N_A$ and
+$M_B=I\times N_B$.
+On each sort name the complete
+symmetric diversity pair atoms
+$p_A,p_B$ for DISTINCT points
+with the SAME $I$-coordinate
+and $d_A,d_B$ for DIFFERENT
+$I$-coordinates. Between
+the two original sorts
+name $r:A\to B$ for
+SAME $I$-coordinate and
+$s:A\to B$ for DIFFERENT
+$I$-coordinates, with their
+actual typed converses.
+
+The combined finite-complete
+binary structure is homogeneous,
+has visible SAP and semantic
+HOMOMORPHIC simple-cycle CCO.
+Indeed finite coloured diagrams
+are precisely finite systems
+of equality/inequality
+constraints on a COMMON block
+index set $I$, with arbitrary
+distinct points in each old
+sort/block. Any inconsistent
+specified diagram has an
+inequality edge connected by
+a specified equality path;
+choose a SHORTEST such path
+to get an uncompletable
+specified simple cycle.
+Otherwise assign distinct
+block indices to the equality
+components. Original SAP
+keeps all real points distinct
+using fresh $N_A,N_B$
+coordinates even when
+their block indices are forced
+to agree. Original finite
+partial isomorphisms extend
+by a common block permutation
+and independent
+within-sort/block permutations.
+
+The FULL same-sort invariant
+lattices are
+$\Id_A<E_A<\Top_A$ and
+$\Id_B<E_B<\Top_B$, where
+$E_A,E_B$ are the actual
+same-block equivalences;
+all strict relative indices
+are INFINITE. The actual
+RAW word $p_A;p_A$ represents
+$E_A$ including genuine
+real identity, and
+$p_B;p_B$ represents $E_B$.
+Let $Q_A=M_A/E_A$,
+$Q_B=M_B/E_B$, both actual
+copies of the common block
+index $I$.
+The cross atom $r$
+induces the NAMED
+bijective quotient
+transport
+\[
+                   q_r:Q_A\longrightarrow Q_B.
+\]
+Its graph is ONE complete
+hidden quotient-pair orbital
+$\Theta_r\subseteq Q_A\times Q_B$;
+the other complete orbital
+$\Theta_s$ consists of
+different block indices.
+Their FULL old diversity
+pullbacks are respectively
+\[
+ \mathcal P_{\Theta_r}
+   =\operatorname{Cyl}_{E_A,E_B}(r)
+   =p_A\starprod r\starprod p_B
+   =\{r\},
+\qquad
+ \mathcal P_{\Theta_s}
+   =\operatorname{Cyl}_{E_A,E_B}(s)
+   =\{s\}.
+\]
+Likewise the mixed REAL/QUOTIENT
+hidden orbital on
+$M_A\times Q_B$
+saying that the old A-point
+has the SAME block as the
+B-quotient point has
+diversity preimage
+\[
+                   \{r\}\starprod p_B=\{r\}.
+\]
+No identification of real
+A- and B-points, and no
+section choosing individual
+REAL block representatives,
+is involved.
+
+The subtle diagonal control
+is on $Q_A\times Q_A$:
+its TRUE HIDDEN quotient
+diagonal $\Delta_{Q_A}$
+has NONEMPTY OLD diversity
+preimage
+\[
+     \mathcal P_{\Delta_{Q_A}}
+       =\{p_A\}
+       =p_A\starprod p_A\starprod p_A.
+\]
+Two distinct old real A-points
+in one infinite $E_A$-class
+therefore realise EQUALITY
+of their hidden $Q_A$ outputs.
+In contrast the TRUE old
+real equality diagonal on
+$M_A\times M_A$ has EMPTY
+old diversity pullback
+and is the identity-only
+exception of
+\cref{lem:typed-term-orbit-diagonal-dichotomy}.
+Thus a HIDDEN quotient
+diagonal is NOT generally
+an OLD STRONG identity edge.
+
+If $q_r$ were OMITTED
+from a proposed hidden
+unary signature while
+the canonical mixed
+binary quotient orbitals
+were still named, the
+unique matched $Q_B$ value
+over one orphan $Q_A$ point
+would be algebraic but
+NOT generated by a
+named unary term. This
+would violate the abstract
+criterion
+\cref{cor:typed-abstract-relative-kernel-sap-iff},
+even though the original
+two-sorted visible source
+still has SAP and CCO.
+\end{example}

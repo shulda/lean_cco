@@ -1,0 +1,66 @@
+\begin{theorem}[Terminal typed Ramsey expansion]
+\label{thm:internal-ramsey-terminal}
+Let $\mathcal C$ be a finite-sorted homogeneous complete binary
+triangle-constrained class with SAP and semantic homomorphic CCO, such that
+every proper same-sort invariant-equivalence cover has infinite relative
+index. Then $\mathcal C$ admits a finite relational precompact Ramsey
+expansion. Its added comparison predicates record a linear order on the
+point-generated transition-enriched hidden coordinate system.
+\end{theorem}
+\begin{proof}
+Let \(\mathcal H_{\rm typ}\) be the hereditary envelope of all
+finite induced unary-closed substructures of the actual terminal
+transition-enriched hidden structure. We use its full hidden signature:
+original real sorts, proper MI quotient sorts, named unary projections,
+upward maps and quotient transitions, and the complete binary
+semantic-cylinder relations. This is the hereditary envelope, not just
+its point-generated subfamily or a reduct to selected cylinders.
+
+We apply \cref{thm:typed-direct-irreducible-unary-HN} to this age.
+The signature is finite and its functions are total unary maps on their
+prescribed source sorts. The remaining hypotheses have the following
+providers:
+\begin{enumerate}[label=(\roman*)]
+\item The envelope is hereditary by its definition and has SAP by
+      \cref{thm:typed-hidden-sap}.
+\item Every completed member is irreducible already in the original
+      hidden signature, by \cref{lem:typed-terminal-hidden-irreducible}.
+\item If every one-generated induced closure of a partial source is a
+      completed hidden member, the source is unary-admissible in exactly
+      the sense of \cref{def:typed-unary-admissible-source}.
+      The uniform bound \(N_{\rm typ}\) from
+      \cref{cor:typed-bounded-hidden} therefore supplies the required
+      induced unary-closed noncompletable substructure.
+\end{enumerate}
+The third item uses the bounded-obstruction theorem only on its stated
+unary-admissible domain. Its proof, including the uniform closure bound
+of \cref{lem:typed-unary-closure-bound}, is independent of the abstract
+HN transfer. Conversely, the abstract theorem already verifies that
+HN's irreducible-substructure condition enforces this admissibility;
+there is no further local-finiteness argument to repeat here.
+It follows that \(\mathcal H_{\rm typ}^{<}\), with arbitrary linear
+orders, is Ramsey. No auxiliary universal relation \(E_*\) is needed.
+
+Finally \cref{lem:typed-finite-ordered-real-readout} transfers these
+ordered hidden Ramsey arrows to the original real sorts. Its finite
+list of binary term-comparison predicates records the entire order on
+each point-generated hidden closure, including diagonal comparisons
+between different term values of one real root. The lemma supplies
+precompactness, reasonableness and the embedding correspondence, so the
+resulting finite relational real expansion is Ramsey as claimed.
+\end{proof}
+
+\begin{theorem}[General SAP symmetric CCO Ramsey expansion]
+\label{thm:internal-v27-general-ramsey}
+Every homogeneous triangle-defined complete finite symmetric binary
+SAP+homomorphic-CCO age has a finite relational precompact Ramsey expansion.
+\end{theorem}
+\begin{proof}
+The safe exact-complement split theorem
+\cref{thm:safe-exact-split} and its terminating iteration
+\cref{thm:finite-cover-elimination} yield a finite reasonable unary
+terminal expansion which retains SAP and CCO. Apply
+\cref{thm:internal-ramsey-terminal} to this finite-sorted terminal age.
+The composite is finite relational and precompact. No expansion-property
+or coherent-EPPA claim is made here.
+\end{proof}

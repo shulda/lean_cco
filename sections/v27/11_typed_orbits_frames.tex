@@ -1,0 +1,557 @@
+\begin{lemma}[Chordless cycles over a complete named base]
+\label{lem:typed-complete-base-chords}
+Let $D$ be a finite complete atomic typed diagram and
+let $X$ be another disjoint finite set of formal vertices.
+Suppose every $x\in X$ has a specified atomic edge to
+EVERY $d\in D$, while the specified edges within $X$
+are those of a graph $H$. Then each specified
+\emph{chordless simple cycle} is either entirely contained
+in $H$, or is a triangle meeting $D$.
+In particular, to test individual old-cycle completability
+it suffices to test all displayed triangles meeting $D$
+and the chordless cycles of $H$.
+\end{lemma}
+\begin{proof}
+A simple cycle meeting exactly one vertex $d$ of $D$
+has all of its other vertices in $X$. If it has more
+than three vertices, one of the internal $X$ vertices
+is not a neighbour of $d$ ALONG the cycle, but is joined
+to $d$ by a specified spoke: a chord.
+If it meets two or more vertices of $D$, every two
+of these vertices are adjacent by a specified old
+base edge. Hence a chordless cycle can have at most
+two base vertices; if two occur, they must be
+consecutive along the cycle. Unless the cycle is a
+triangle, the other path between them has an internal
+vertex $x\in X$ not adjacent to at least one of those
+base vertices ALONG the cycle. Its specified spoke
+to that base vertex is a chord. Thus a nontriangular
+chordless cycle cannot meet $D$.
+
+For the final assertion, split a specified cycle along
+any specified chord. Both resulting strictly shorter
+cycles may be homomorphically realised with their
+common chord given an endpoint colour; when the chord
+is already specified, one can instead glue realizations
+of the two resulting cycles along its complete coloured
+two-vertex substructure using old SAP. Repeating the
+splitting shows completability by induction on length.
+\end{proof}
+
+\begin{lemma}[Typed exact-coloured orbit infinitude]
+\label{lem:typed-exact-orbit-infinitude}
+Let \(p(x/D)\) be an exact atomic one-point type, with \(x\) in sort \(a\),
+and, writing \(b_d\) for the unary sort of \(d\), let
+\(t_d:a\to b_d\) be its spoke type to \(d\in D\).  Let \(J\) be a proper
+represented meet-irreducible on \(a\).  If the \(J\)-class of \(x\) does
+not belong to the full quotient-transition closure of \(D\), then
+realisations of \(p\) occupy infinitely many \(J\)-classes.
+\end{lemma}
+
+\begin{proof}
+The hypothesis forces the distinguished point $x$
+to be outside the real base $D$: otherwise its
+$J$-class would already be the named $J$-projection
+of a member of $D$. Thus all old spokes $t_d$
+below are ACTUAL DIVERSITY atoms, not logical equality.
+
+For every \(d\in D\), put
+\(P_d=\{t_d\}\starprod\{\bar t_d\}\), the
+STRONG off-diagonal typed diversity profile of
+the two-edge fork through the sort of \(d\). We have
+\[
+ P_d\not\subseteq J,
+\tag{QT4}\label{eq:typed-unforced-spoke}
+\]
+Indeed otherwise the ACTUAL equality-inclusive RAW
+product $t_d;t_d^{\smile}$ is contained in $J$:
+its diversity restriction is exactly $P_d$
+by original visible SAP injectivisation
+\cref{lem:typed-injectivisation},
+and its only remaining possible old atom is
+the TRUE real diagonal, already in $J$.
+Apply \cref{lem:typed-quotient-transport}
+to the original OLD typed atomic relation
+$t_d:a\to b_d$ and the proper represented
+MI kernel $J$ on $a$. Its transported
+kernel $J^{t_d}=t_d^{\smile};J;t_d$
+on the sort of $d$ is again a represented
+proper MI, and is NOT real equality, by
+\cref{lem:no-real-algebraic-transition}.
+The bijection of ACTUAL quotient sorts
+$\pi_{t_d,J}:a/J\to b_d/J^{t_d}$
+is one of the named terminal unary transitions,
+and its inverse is named as well (the
+transition for the converse atomic relation).
+For the ACTUAL spoke $x\,t_d\,d$ this gives
+the literal term identity
+\[
+ F_J(x)
+   =\pi_{t_d,J}^{-1}
+                \bigl(F_{J^{t_d}}(d)\bigr).
+\]
+The right-hand side is a NAMED unary
+quotient-transition term value of the
+old real point $d\in D$, contradicting
+the hypothesis that $F_J(x)$ is outside
+the FULL unary quotient-transition closure of $D$.
+This proves (QT4) without silently
+equating a diversity guard with a RAW
+relation or assuming a target equality kernel.  Put
+\[
+ C_p=\bigcap_{d\in D}P_d,\qquad
+ C_p=L_{aa}\text{ when }D=\varnothing.
+\]
+We must NOT claim that a STRONG diversity profile contains
+the logical diagonal: it does not. Instead, realise the
+COMPLETE old finite one-point type \(p(x/D)\) and
+strongly amalgamate two copies over their full common
+base \(D\). The two new points \(x,x'\) are distinct
+and have equal prescribed spoke colours \(t_d\) to
+every \(d\in D\). Their actual diversity colour
+\(c=\col(x,x')\) therefore belongs to EVERY \(P_d\).
+Thus \(C_p\ne\varnothing\) and indeed every
+partial intersection is nonempty. In the empty-base
+case \(C_p=L_{aa}\) is nonempty by SAP and
+the existence of at least one same-sort diversity
+atom.
+
+If \(C_p\subseteq J\) and \(D\ne\varnothing\),
+repeated use of \cref{lem:typed-prime-intersection}
+on these nonempty STRONG exact domains \(P_d\)
+would force some factor \(P_d\subseteq J\), contrary
+to \eqref{eq:typed-unforced-spoke}.
+For \(D=\varnothing\), the properness of \(J\)
+already gives \(C_p\not\subseteq J\).
+Choose an actual same-sort diversity atom
+\(e\in C_p\setminus J\).
+
+Fix any positive integer \(n\). Choose a finite graph
+\(H\) with chromatic number \(>n\) and girth
+\[
+       g(H)>\max\{3,N_e+1\},
+\]
+where \(N_e\) is the TYPED STRONG same-sort
+pure-power threshold from
+\cref{lem:typed-terminal-pure-power}.
+Take a disjoint formal vertex \(x_v\) of the fixed
+sort \(a\) for each \(v\in V(H)\).
+Keep the COMPLETE actual atomic diagram of \(D\);
+give every \(x_v\) the SAME complete spoke type
+\(p(x/D)\), and prescribe the old diversity
+atom \(e\) exactly on graph edges \(x_vx_w\)
+when \(vw\in E(H)\). All other clone-clone
+edges are left unspecified.
+
+We verify EVERY chordless specified simple cycle,
+rather than merely asserting that long cycles are
+harmless. By
+\cref{lem:typed-complete-base-chords}, such a cycle
+is either a triangle meeting the old base \(D\)
+or is entirely within the clone graph \(H\).
+A triangle with two base vertices is legal
+because \(p(x/D)\) is a REALISED complete one-point
+type; a triangle \((d,x_v,x_w)\) with one base
+vertex is legal because
+\(e\in \{t_d\}\starprod\{\bar t_d\}=P_d\).
+A clone-only cycle has length
+\(\ell>N_e+1\), so delete one edge as a
+closing side; the remaining \(e\)-path
+has length \(\ell-1\ge N_e\), and its
+STRONG endpoint profile is exactly the
+connectivity diversity palette \(F_e\).
+Since \(e\in F_e\), the closing edge is
+compatible. This gives an old realisation
+of each clone-only cycle using SAP
+injectivisation if the represented walk
+initially repeats vertices. Every specified
+simple cycle with chords is consequently
+completable by the preceding chord lemma.
+
+Semantic homomorphic CCO now yields ONE
+homomorphism $f$ of the ENTIRE finite typed
+partial graph into the old homogeneous source.
+The complete OLD atomic diagram on $D$ is
+specified, and every displayed pair atom
+between two DISTINCT old base vertices is a
+diversity atom. Thus $f|_D$ is an induced
+embedding of the COMPLETE original base.
+By ORIGINAL finite-diagram homogeneity,
+choose ONE automorphism $h\in\Aut(\M)$
+sending $f(d)$ to the ACTUAL pinned old
+point $d$ for every $d\in D$; replace
+$f$ by $h\circ f$. This common alignment
+must precede orbit counting: otherwise
+the clone images would realise the
+one-point type over $f(D)$, not
+literally over the stated base $D$.
+For the orbit counting we need not force the
+distinct formal clones to have distinct images;
+however every specified graph edge is a
+diversity atom, so adjacent vertices have
+different images and, since \(e\notin J\),
+different \(J\)-classes. Every clone image
+realises the prescribed complete type
+\(p(x/D)\) over the same base image.
+Thus the \(J\)-classes of its realisations
+properly colour \(H\), so at least
+\(\chi(H)>n\) such classes occur.
+In the support-normal finite-arity setting,
+one additionally freezes the complete factors
+\(D\cup\{x_v\}\) and uses the stated
+support-normal completion interface;
+no such interface is needed for this
+binary theorem.
+\end{proof}
+
+\begin{corollary}[No hidden algebraicity outside unary closure of an original real base]
+\label{cor:typed-no-real-base-hidden-algebraicity}
+In the terminal visible SAP+semantic-CCO named-sorted source,
+for every finite COMPLETE original real $D$,
+\[
+ \left\{u\in|\widehat\M|:
+       |\Aut(\M/D)\cdot u|<\infty\right\}
+                =D^{\coord}.
+ \tag{PG-ACL}\label{eq:typed-no-real-base-hidden-algebraicity}
+\]
+Here $\widehat\M$ is the ACTUAL full interpreted hidden
+structure, including the original real and all proper
+represented quotient sorts, and $D^{\coord}$ is its full
+point-generated unary closure of $D$.  Consequently
+the orbit-theoretic algebraic closure of the original
+real base $D$ in that full hidden structure has size
+at most $m_{\mathrm{typ}}|D|$, with the empty-base
+case interpreted literally. This asserts nothing
+about algebraicity over an arbitrary orphan-only base.
+\end{corollary}
+\begin{proof}
+Every vertex of $D^{\coord}$ is a value of a NAMED
+unary term on a point of $D$, so is fixed by
+$\Aut(\M/D)$.  Conversely take any hidden
+$u\notin D^{\coord}$. By point generation of the
+FULL interpreted hidden universe, write
+$u=\tau(q)$ for an old real $q$ and one named
+real-source unary term $\tau$.
+The normal form \cref{lem:typed-coordinate-normal-form}
+says either $\tau$ is the real identity, or it
+has a represented proper meet-irreducible
+original kernel $J$.
+In the real case $q\notin D$ and visible SAP
+gives arbitrarily many realisations of the
+complete old one-point type $q/D$, hence
+an infinite orbit under $\Aut(\M/D)$.
+In the quotient case, if $[q]_J$ belonged
+to the FULL unary quotient-transition closure of
+$D$, then the normal form of $\tau$ would
+put $u$ in $D^{\coord}$, a contradiction.
+Thus \cref{lem:typed-exact-orbit-infinitude}
+gives infinitely many $J$-classes realised by
+the same old type $q/D$.  Old homogeneity
+moves $q$ to each representative while
+fixing $D$. The kernel biconditional of
+$\tau$ makes the corresponding values of
+$u$ pairwise distinct.  Therefore its
+orbit is infinite. The uniform cardinality
+bound is \cref{lem:typed-unary-closure-bound},
+since the unary closure of finite real $D$
+is the union of its one-generated closures.
+\end{proof}
+
+We apply the general point-generated SAP criterion of
+\cref{lem:typed-point-generated-sap-criterion} to the preceding
+coordinate-orbit calculation.
+
+
+\begin{proposition}[Typed point-generated coordinate SAP]
+\label{prop:typed-coordinate-sap}
+Full point-generated coordinate expansions in the transition-enriched hidden
+language have strong amalgamation over full point-generated common
+substructures.
+\end{proposition}
+
+\begin{proof}
+The source-specific orbit theorem
+\cref{cor:typed-no-real-base-hidden-algebraicity}
+gives the following condition for EVERY finite original
+real base $D$ and EVERY actual point-generated hidden
+coordinate vertex $u\notin D^{\coord}$:
+\[
+             |\Aut(\M/D)\cdot u|=\infty .
+ \tag{TOS}\label{eq:typed-coordinate-orbit-stabilizer}
+\]
+This is exactly the hypothesis of the standalone
+point-generated SAP criterion
+\cref{lem:typed-point-generated-sap-criterion}.
+That criterion applies because all named coordinate maps and
+transition functions are unary and equivariant, every finite
+old real factor has finite FULL hidden closure, and the
+complete old real copy of a common base aligns by
+old homogeneity.  Therefore the two FULL point-generated
+hidden factors have one STRONG point-generated amalgam.
+
+The hard ORIGINAL typed SAP+CCO content is precisely
+the orbit-infinitude argument inside
+\cref{lem:typed-exact-orbit-infinitude}; the generic
+finite-coset step does NOT assert SAP over an orphan-only
+hidden base. That case is proved separately below.
+\end{proof}
+
+\begin{lemma}[Meet-prime MI coordinate dichotomy inside one exact Helly fibre]
+\label{lem:typed-mi-fibre-infinite-dichotomy}
+Fix ONE original named transitive real sort $a$ of
+the terminal symmetric-on-sorts SAP+homomorphic-CCO
+source, with full invariant-lattice NR2.
+Let $E_1,\ldots,E_m>\Id_a$ be original
+invariant equivalences and let
+$C_i$ be actual $E_i$-classes which
+meet PAIRWISE (allow $m=0$).
+Put
+\[
+       H=\bigcap_{i=1}^m E_i,\qquad
+       X=\bigcap_{i=1}^m C_i,
+\]
+with $H=\Top_a$, $X=M_a$ for $m=0$.
+Then $X$ is ONE INFINITE actual $H$-class.
+For EVERY proper meet-irreducible original
+invariant equivalence $J$ on the SAME
+original sort there is the dichotomy
+\begin{enumerate}[label=(\roman*)]
+\item If $H\le J$, then some $E_i\le J$,
+  and the actual $J$-class of any $x\in X$
+  is already determined by that SINGLE
+  original $E_i$-class. This case cannot
+  arise when $m=0$ and $J<\Top$.
+\item If $H\nleq J$, then $X$ meets
+  INFINITELY MANY actual $J$-classes:
+  $[H:H\cap J]=\infty$.
+\end{enumerate}
+Furthermore, given finitely many such
+unforced MI kernels $J_1,\ldots,J_s$
+and for each a FINITE list of forbidden
+actual $J_k$-classes, ONE $x\in X$
+can be chosen to avoid all lists
+SIMULTANEOUSLY.
+This statement concerns genuine
+original class incidence, NOT a complete
+fine old one-point spoke type, and does
+not replace \cref{lem:typed-exact-orbit-infinitude}.
+\end{lemma}
+\begin{proof}
+By \cref{lem:typed-terminal-all-equivalences-exact},
+the FULL finite original invariant-equivalence
+lattice on $a$ is distributive and every
+invariant equivalence is FULL RAW exact.
+For $m\ge1$, its original exact
+equivalence classes $C_i$ are
+pairwise-intersecting actual FULL RAW
+exact balls. By
+\cref{thm:full-typed-exact-balls}(iii)
+they have a common original real
+$x\in X$, whence
+$X=[x]_H$. The latter is INFINITE
+by original SAP and
+\cref{lem:rh-sap-invariant-monolith},
+since the finite meet $H$ of
+nonidentity invariant equivalences
+remains nonidentity. For $m=0$,
+$X=M_a$ is infinite.
+
+The exact meet-prime inference is
+the already established finite-lattice
+cofinality lemma
+\cref{lem:foundational-MI-coordinate-cofinal}:
+from $H=\bigcap_iE_i\le J$
+for proper meet-irreducible $J$
+one obtains $E_i\le J$ for
+at least one $i$.
+This is a REUSE of the earlier
+abstract CRT geometry, not
+a new lattice assertion.
+The $J$-class of $x$ is then
+the upward image of the
+prescribed $E_i$-class; if the
+corresponding sorts are NAMED
+this upward map is a named
+original unary coordinate map.
+
+If instead $H\nleq J$,
+then $H\cap J<H$.
+The FULL NR2 hypothesis says the
+relative index $[H:H\cap J]$
+is INFINITE, giving infinitely
+many distinct $J$-classes in $X$.
+For simultaneous avoidance let
+$G_X\le\Aut(\M)$ be the SETWISE
+stabiliser of the actual $H$-class $X$.
+It acts transitively on $X$:
+for any $x,y\in X$, original
+sort transitivity sends $x$ to
+$y$, and by invariance of $H$
+that automorphism preserves $X$.
+For each unforced $J_k$, the
+orbit of $[x]_{J_k}$ under $G_X$
+has size exactly
+$[H:H\cap J_k]=\infty$.
+Apply \cref{lem:finite-action-avoidance} to the $G_X$-action on
+$\bigsqcup_{k=1}^s M_a/J_k$, keeping the index $k$ as a sort tag.
+The moving finite set consists of the tagged classes $(k,[x]_{J_k})$;
+the forbidden finite set is the union of the tagged forbidden lists.
+The preceding index calculation makes each moving orbit infinite.
+Thus one $g\in G_X$ avoids all lists simultaneously, and $gx\in X$
+is the required common real witness. This also covers $s=0$.
+No full fine SPOKE colours to
+additional real anchors are
+controlled by this argument.
+\end{proof}
+
+\begin{corollary}[One fresh real frame for a compatible family of MI orphans]
+\label{cor:typed-compatible-mi-single-real-frame}
+In the setting of
+\cref{lem:typed-mi-fibre-infinite-dichotomy},
+suppose the $E_i$ are proper represented
+MEET-IRREDUCIBLES on the SAME original
+real sort $a$, with pairwise compatible
+actual quotient class vertices
+$b_i=C_i\in M_a/E_i$.
+Put $A=\cl(\{b_1,\ldots,b_m\})$
+in the ACTUAL MI-only hidden language.
+For EVERY finite induced unary-closed
+hidden $B\supseteq A$, there is ONE
+original real point $x$ with
+\[
+   x\in\bigcap_i C_i,\qquad
+   A\subseteq\cl(\{x\}),\qquad
+   \cl(\{x\})\cap B=A.
+ \tag{CMF}\label{eq:typed-compatible-mi-single-real-frame}
+\]
+In particular $x$ can avoid every
+original real vertex of $B$.
+This does NOT replace the full
+\cref{lem:typed-fresh-representatives},
+which allows mutually INCOMPATIBLE
+or different-original-sort orphan bases.
+\end{corollary}
+\begin{proof}
+The joint real fibre $X=\bigcap_i C_i$
+is an infinite actual $H$-class,
+$H=\bigcap_i E_i$, by
+\cref{lem:typed-mi-fibre-infinite-dichotomy}.
+Every $x\in X$ has each actual
+$b_i$ as a NAMED quotient term
+value, so
+$A\subseteq\cl(\{x\})$.
+
+There are only FINITELY many
+real-source unary term functions
+$\tau$ on sort $a$ by
+\cref{lem:typed-unary-closure-bound}.
+The kernel $K_\tau$ is either
+actual real equality or a proper
+represented MI by
+\cref{lem:typed-coordinate-normal-form}.
+If $H\le K_\tau$, then
+$K_\tau\ne\Id$ because $H>\Id$.
+The meet-prime implication
+in \cref{lem:typed-mi-fibre-infinite-dichotomy}
+provides some $E_i\le K_\tau$.
+Thus the value $\tau(x)$ is
+a unary upward-quotient/transition
+term of $b_i$, CONSTANT on $X$,
+and is already in the closed $A$.
+This value is FORCED, not forbidden.
+
+For every remaining term with
+$H\nleq K_\tau$, the same lemma
+gives an INFINITE set of possible
+$\tau$-values on $X$, and
+simultaneous finite-coset avoidance
+lets us choose ONE $x\in X$
+such that $\tau(x)$ avoids
+EVERY hidden vertex of $B$
+of its output sort, for ALL
+such terms at once. In
+particular the real-identity
+term has kernel $\Id$, is
+unforced and avoids $B_{\mathrm{real}}$.
+The full hidden term closure
+of $x$ consists of precisely
+these finitely many forced and
+unforced term values. Therefore
+$\cl(\{x\})\cap B$ consists
+exactly of the forced values
+already in $A$, while the
+reverse inclusion holds because
+all $b_i$ are values of $x$.
+\end{proof}
+
+\begin{lemma}[Typed fresh representatives]
+\label{lem:typed-fresh-representatives}
+Let $A\le B$ be finite actual induced unary-closed hidden structures,
+and let $F$ be any additional finite set of actual hidden vertices.
+For every proper coordinate vertex $b\in A$ of sort $B_{a,J}$,
+one can choose a real representative $x_b\in M_a$ with $F_J(x_b)=b$
+such that all representatives are distinct and outside
+$(B\cup F)_{\mathrm{real}}$. For every real-source term $\tau$ on $a$:
+if $J\le K_\tau$, its forced value $\tau(x_b)$ is the prescribed
+named term value of $b$ in $A$; otherwise $\tau(x_b)$ avoids
+$B\cup F$ and every unforced term value of earlier representatives.
+This gives literal closure freshness as well as fresh real representatives. With $C=A_{\mathrm{real}}$ and
+$X=\{x_b:b\in A\text{ is a proper coordinate vertex}\}$, one has
+\[
+                  B\cap(C\cup X)^{\coord}=A.
+\]
+\end{lemma}
+\begin{proof}
+Work in one actual ambient copy of $\widehat\M$ and put $G=\Aut(\M)$.
+All named projections and terms are $G$-equivariant. For the source sort
+of $b$, \cref{lem:typed-unary-closure-bound,lem:typed-coordinate-normal-form}
+give finitely many term functions, with kernel either real equality
+(for the identity term) or an actual proper represented MI equivalence.
+We verify the two inputs of
+\cref{lem:foundational-quotient-fibre-avoidance}.
+
+If $J\le K_\tau$, \cref{cor:typed-forced-term-factorisation}
+gives a literal named factorisation $\tau=\sigma_{\tau,J}\circ F_J$.
+The forced value $\sigma_{\tau,J}(b)$ belongs to $A$ by unary closure
+and is retained. If $J\nleq K_\tau$, then $J\cap K_\tau<J$,
+and FULL original NR2 makes $[J:J\cap K_\tau]$ infinite.
+These are statements about the actual original invariant kernels,
+including $K_\tau=\Id_a$, not merely about the named MI sublattice.
+Original sort transitivity supplies the remaining group-action input.
+
+Apply the common fibre-avoidance lemma successively to each $b$,
+using as forbidden set $B\cup F$ together with all previously chosen
+unforced term values. This is finite, and the lemma keeps every forced
+value while avoiding the whole forbidden set on every unforced term.
+Since $J>\Id_a$, the real identity term is unforced; it makes the
+representatives distinct and avoids all old forbidden real points.
+These are actual representatives of the same quotient vertices, so
+all their prescribed upward maps and quotient transitions stay fixed.
+The semantic-cylinder relations between retained hidden vertices
+stay unchanged by \cref{lem:typed-cylinder-realisation}.
+
+Every vertex of $A$ is either in $C$ or is a named projection of its
+chosen $x_b$, giving $A\subseteq(C\cup X)^{\coord}$.
+Conversely unary closure is the union of the one-generated closures.
+Terms on $C$ stay in $A$; forced terms on each $x_b$ stay in $A$;
+unforced terms avoid $B$. This proves the displayed intersection.
+\end{proof}
+
+\begin{remark}[CCO-free kernel criterion for fresh real frames]
+\label{rem:typed-fresh-frame-cco-free}
+The common provider \cref{lem:foundational-quotient-fibre-avoidance}
+uses only a transitive group action, finitely many equivariant term
+functions, literal named factorisation of forced terms and infinite
+relative indices for unforced terms. Thus the finite freshness step
+requires no original CCO, SAP, symmetry, lattice distributivity or
+model homogeneity once these inputs have been verified.
+In the actual terminal signature the factorisation is
+\cref{cor:typed-forced-term-factorisation}, and the index condition is
+FULL original NR2. CCO is used upstream to establish the represented
+quotient geometry and real-base orbit infinitude. Fresh frames alone
+do not imply hereditary hidden SAP: the real-base orbit condition is
+still needed in \cref{lem:foundational-real-frame-orbits}.
+Nor does this argument authorize adding non-MI meet quotients to
+the hidden language without rechecking both the term-kernel conditions
+and the real-base orbit hypothesis.
+\end{remark}

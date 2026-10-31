@@ -1,0 +1,1136 @@
+\subsection{Typed terminal transfer via quotient-transition closure}
+
+The terminal one-sort construction cannot be transferred merely by carrying
+sort indices through the notation.  Cross-sort pair data can force a same-sort
+quotient coordinate, and a typed word may return into a same-sort equivalence
+without any individual cross-sort factor lying in that equivalence.  We now
+build the missing finite transition closure explicitly.
+
+For the hidden/HKN part of this subsection we harmlessly pass once more to the
+finite quantifier-free definitional expansion naming every realised canonical
+old tuple type on compatible real sorts up to the maximum relational arity.
+This does not change embeddings, partial automorphisms, SAP, Ramsey arrows or
+EPPA after reduct.  Its only purpose is that, in a completed visible
+structure, the canonical old tuple-type relations partition every compatible
+real tuple.  We suppress this definitional completion from the notation.
+
+For current unary sorts \(a,b\), let \(\Rch^{ab}\) denote the finite family of
+non-empty typed reachable profiles from \(a\) to \(b\).  Let
+\(\Rel^{ab}\) denote the finite family of all non-empty \(0\)-definable
+relations between these two transitive sorts, equivalently all non-empty
+unions of realised canonical \(a\)-\(b\) pair types.  Every member of
+\(\Rel^{ab}\), and in particular every reachable profile and every non-empty
+exact domain, is total and surjective between its endpoint sorts.
+
+\begin{lemma}[RAW saturation versus STRONG diversity equivalence factors]
+\label{lem:typed-raw-strong-saturation}
+Let $M$ be a homogeneous complete binary structure with individually
+transitive named sorts, symmetric same-sort atomic relations and SAP.
+No CCO or terminality hypothesis is needed for this lemma.
+Let \(J,K\) be NONZERO actual
+invariant same-sort equivalences on
+named sorts \(a,b\), and put
+\(J^\circ=J\setminus\Id_a\),
+\(K^\circ=K\setminus\Id_b\).
+For every actual old DIVERSITY
+atomic relation \(t:a\to b\),
+\[
+       (J;\{t\};K)^\circ
+        =J^\circ\starprod\{t\}
+                          \starprod K^\circ.
+\tag{TSC}\label{eq:typed-raw-strong-saturation}
+\]
+In addition, for two NONZERO actual
+equivalences \(J,K\) on the SAME named
+sort one has
+\[
+     (J;K)^\circ
+           =J^\circ\starprod K^\circ
+           =(J\vee K)^\circ.
+\tag{TSC2}\label{eq:typed-equivalence-join-strong}
+\]
+This two-factor identity does NOT
+introduce an artificial identity
+as an intermediate STRONG atom.
+
+With an identity equivalence at
+either endpoint the corresponding
+STRONG exterior factor is OMITTED.
+Accordingly, in the following
+transition-enriched typed subsection,
+any nonzero equivalence \(J\) used
+as a factor of \(\starprod\) means
+its diversity palette \(J^\circ\);
+in RAW inclusions and quotient
+transport \(J\) continues to mean
+the full relation including
+logical identity. This is an
+explicit notational coercion,
+NOT an extra identity atom in
+the STRONG product.
+\end{lemma}
+\begin{proof}
+Every \(J\)-class is infinite
+under SAP: choose a diversity
+\(J\)-neighbour of one point
+and strongly amalgamate arbitrarily
+many copies of this two-point
+structure over that point.
+The same holds for \(K\).
+
+The STRONG product is contained
+in the RAW saturated relation.
+Conversely suppose two DISTINCT
+real endpoints \(x,y\) have
+an old atomic colour in the
+RAW saturation. Choose a
+witnessing real walk
+\(xJu\,t\,vKy\).
+If \(x=u\), choose an anchor
+\(a\in J[x]\) different from
+the finitely many existing
+vertices, and strongly amalgamate
+two copies of the COMPLETE
+old structure on
+\(\{a,x,v,y\}\) over the
+complete base \(\{a,v,y\}\).
+The resulting second copy \(u'\)
+of \(x\) is different from
+\(x\), belongs to the SAME
+\(J\)-class via the common
+anchor \(a\), and still has
+the old atom \(t\) to \(v\).
+Thus \(xJ^\circ u'\,t\,v\).
+If \(x\ne u\) simply put
+\(u'=u\).
+
+If \(v=y\), choose a new
+anchor \(b\in K[y]\) away
+from the current finite set,
+and strongly duplicate \(y\)
+over the complete diagram on
+the other existing vertices
+and \(b\), fixing \(x,u'\).
+The second copy \(v'\ne y\)
+still has atom \(t\) to \(u'\)
+and belongs to the same
+\(K\)-class as \(y\) via \(b\).
+Thus \(u'tv'K^\circ y\).
+When \(v\ne y\) put \(v'=v\).
+
+We now have a REAL represented
+word walk between the original
+distinct endpoints with three
+DIVERSITY factors
+\(J^\circ,\{t\},K^\circ\).
+Use SAP injectivisation
+\cref{lem:typed-injectivisation}
+with \(x,y\) pinned to
+separate any remaining
+nonconsecutive internal
+occurrences. Its endpoint
+colour is unchanged and
+lies in the STRONG product,
+as required.
+
+For the two-factor identity, take
+distinct old points \(x,y\) and
+an ACTUAL RAW witness \(xJzKy\).
+The witness \(z\) may coincide
+with one endpoint; it would be
+INVALID to try to clone \(z\)
+over a base CONTAINING \(z\).
+We distinguish all three cases,
+using old SAP and the infinite
+nonzero equivalence classes
+established above.
+
+If \(z\notin\{x,y\}\),
+strongly amalgamate two copies
+of the COMPLETE old structure
+on \(\{x,y,z\}\) over the
+COMPLETE pair \(\{x,y\}\).
+Keep the first old \(z\),
+and call its second copy \(z'\).
+Then \(z'\ne x,y\),
+\(xJz'\) and \(z'Ky\).
+
+If \(z=x\), so \(xKy\),
+choose a fresh point
+\(a\in J[x]\setminus\{x,y\}\).
+Strongly amalgamate two copies
+of the COMPLETE old structure
+on \(\{a,x,y\}\) over the
+COMPLETE pair \(\{a,y\}\),
+retaining \(x\) from the first
+copy and writing \(z'\)
+for the second copy of \(x\).
+The second copy is distinct
+from \(x,a,y\); it satisfies
+\(z'JaJx\) and \(z'Ky\)
+(the original \(xKy\) relation
+is preserved to the common \(y\)).
+Thus \(xJ^\circ z'K^\circ y\).
+
+If \(z=y\), so \(xJy\),
+choose a fresh point
+\(b\in K[y]\setminus\{x,y\}\).
+Strongly amalgamate two copies
+of the COMPLETE old structure
+on \(\{x,y,b\}\) over
+\(\{x,b\}\), retaining the
+first \(y\) and calling its
+second copy \(z'\).
+Then \(z'\ne x,y,b\),
+\(xJz'\) and \(z'KbKy\),
+so again \(xJ^\circ z'K^\circ y\).
+
+In the first case the same
+STRONG conclusion holds because
+\(z'\ne x,y\). Every amalgamation
+keeps the ORIGINAL old fine
+atomic type of the pinned
+endpoints \(x,y\) unchanged.
+Hence IN ALL cases there exists
+a distinct-middle-point walk
+\(xJ^\circ z'K^\circ y\),
+with NO equality-labelled
+STRONG atom and NO implicit
+identification of SAP with AP.
+Thus every diversity
+output of RAW \(J;K\)
+lies in the strong product.
+The reverse inclusion
+is immediate; commuting
+same-sort invariant
+equivalences have
+\(J;K=J\vee K\).
+This proves
+\eqref{eq:typed-equivalence-join-strong}.
+
+With an identity-only
+endpoint kernel simply omit
+the corresponding exterior
+step throughout.
+\end{proof}
+
+For a fixed ordered pair of sorts \(a,b\), call a non-empty subset of the
+atomic \(a\)-\(b\) types \emph{typed exact} if it occurs as a fixed-point
+path-consistency domain of a completable finite typed partial structure; write
+\(\Dat^{ab}\) for the finite family of these domains.
+
+\begin{lemma}[Typed exact-domain calculus]
+\label{lem:typed-exact-domain-calculus}
+For every ordered pair of current unary sorts \(a,b\),
+\[
+ \Dat^{ab}
+ =\left\{\bigcap\mathcal F:
+   \mathcal F\subseteq\Rch^{ab}\text{ finite and }
+   \bigcap\mathcal F\ne\varnothing\right\}.
+\tag{TED}\label{eq:typed-exact-domains}
+\]
+Finite pairwise-intersecting families in one \(\Dat^{ab}\) have non-empty
+total intersection.  Moreover, for any sort triple \(a,b,c\), a triple
+\[
+ D_{ab}\in\Dat^{ab},\qquad
+ D_{bc}\in\Dat^{bc},\qquad
+ D_{ca}\in\Dat^{ca}
+\]
+occurs simultaneously as the three fixed-point domains of one completable
+typed triangle network if and only if it is support-consistent under the typed
+Peircean products.
+\end{lemma}
+
+\begin{proof}
+This is exactly \cref{lem:typed-PC-fixedpoint-exact}
+in the present current named-sorted strong SAP+CCO
+source. The canonical typed walk formula
+\cref{lem:typed-PC-walk-formula} identifies PC
+fixed points with nonempty path-profile meets;
+the three-domain assertion is the same typed
+Peirce support-consistency condition.
+\end{proof}
+
+\begin{lemma}[Original quotient first-hit cover interpolation]
+\label{lem:typed-original-full-cover-interpolation}
+Let $M$ be a finite-complete homogeneous
+binary source with a named transitive
+original real sort $a$, finite symmetric
+SAME-SORT fine atomic palette, original
+visible SAP and semantic HOMOMORPHIC CCO.
+Let $\Id_a<J\prec K$ be an ACTUAL FULL
+original invariant-equivalence cover,
+with $J$ MEET-IRREDUCIBLE (so $K$
+is its UNIQUE FULL cover).
+Assume that both $J^\circ$ and $K^\circ$
+are single positive STRONG OLD typed
+word endpoint profiles; their private
+word interiors may use arbitrary named
+original sorts. Then for EVERY nonempty
+positive STRONG typed $a$--$a$ word profile
+$P$, we have
+\[
+ P\cap J^\circ\ne\varnothing,\qquad
+ P\setminus J\ne\varnothing
+   \quad\Longrightarrow\quad
+                   P\cap(K\setminus J)\ne\varnothing.
+\tag{OWI}\label{eq:typed-original-full-cover-interpolation}
+\]
+There is NO exact-domain product calculus,
+Set-Pasch, lattice distributivity or hidden
+SAP assumption in this original theorem.
+\end{lemma}
+\begin{proof}
+Suppose for contradiction that
+$P\cap(K\setminus J)=\varnothing$.
+The old SAP full $J$-saturation
+\[
+           S=J^\circ\starprod P\starprod J^\circ
+\]
+is positive and is the FULL old diversity
+pullback $\Phi(\bar S)$ of one invariant
+binary quotient relation $\bar S$ on
+$Q=M_a/J$. The quotient relation contains
+the TRUE quotient diagonal $\Delta_Q$,
+since $P$ meets $J^\circ$ and full
+$J$-saturation fills the diagonal
+quotient orbital. Saturation cannot
+change whether endpoint J-classes
+are K-related; since P avoids
+$K\setminus J$, we have
+\[
+                   \bar S\cap(K/J)=\Delta_Q.
+\tag{OWI-S}\label{eq:typed-old-interpolation-S}
+\]
+But $P$ exits $J$ and avoids $K\setminus J$,
+so $\bar S$ has an edge OUTSIDE $K/J$.
+Its connectedness equivalence H on Q
+lifts to an ORIGINAL invariant
+equivalence strictly above J.
+Since J has UNIQUE FULL cover K,
+we have $K\le H$. Thus some quotient
+pair in $\bar U=(K/J)\setminus\Delta_Q$
+is joined by an $\bar S$-walk.
+Because $\Delta_Q\subseteq\bar S$,
+the powers of $\bar S$ increase.
+Choose the LEAST $n\ge2$ such that
+$\bar S^{;n}$ meets $\bar U$.
+Put
+\[
+              A=\bar S^{;(n-1)},\qquad
+              T=\bar S;\bar U.
+\]
+Minimality and \eqref{eq:typed-old-interpolation-S}
+give
+\[
+ A\cap(K/J)=\Delta_Q,\qquad
+ T\cap(K/J)=\bar U.
+\tag{OWI-ST}\label{eq:typed-old-interpolation-AT}
+\]
+For the second equality, an $\bar S$-edge
+inside a K-component must be quotient
+diagonal, whereas an $\bar U$-edge
+always stays inside that K-component.
+The quotient diagonal of $\bar S$
+also supplies every external U edge.
+
+By the choice of n,
+$(A;\bar S)\cap\bar U\ne\varnothing$.
+Peirce rotation of a witnessed ACTUAL
+quotient triangle, using symmetry of
+all original same-sort quotient orbitals,
+gives
+\[
+                         A\cap T\ne\varnothing.
+\tag{OWI-P}\label{eq:typed-old-interpolation-peirce}
+\]
+
+By the original positive cover-layer theorem
+\cref{thm:typed-original-full-cover-layer-word},
+the quotient layer $\bar U$ has a SINGLE
+positive STRONG OLD word pullback U, since
+$J^\circ$ is positive. The three OLD
+diversity menus
+\[
+               \Phi(A),\quad \Phi(T),
+                           \quad \Phi(K/J)=K^\circ
+\]
+are therefore each SINGLE positive STRONG
+typed OLD word profiles. Indeed by the
+exact quotient STRONG composition
+\cref{lem:typed-quotient-strong-semigroup},
+$\Phi(A)=S^{\starprod(n-1)}$ and
+$\Phi(T)=S\starprod U$.
+Their pairwise intersections are NONEMPTY:
+the first and third meet in $J^\circ$
+by \eqref{eq:typed-old-interpolation-AT},
+the second and third meet in U,
+and the first two meet by
+\eqref{eq:typed-old-interpolation-peirce}
+and the injectivity of $\Phi$.
+Their TOTAL intersection is EMPTY:
+inside K/J the quotient supports
+of A,T are respectively the
+disjoint $\Delta_Q,\bar U$.
+
+This contradicts the original positive
+STRONG word 2-Helly consequence of
+semantic CCO+visible SAP: private positive
+OLD typed paths for pairwise intersecting
+word profiles give homomorphically
+realisable specified cycles, a global
+CCO map, and then fully DISTINCT roots
+by SAP injectivisation
+\cref{lem:typed-injectivisation}.
+Hence P meets $K\setminus J$.
+\end{proof}
+
+\begin{lemma}[Typed cover interpolation]
+\label{lem:typed-cover-interpolation}
+Let \(J\) be a represented proper meet-irreducible on a real sort \(a\), let
+\(K=J^+\) be its unique cover, and let \(P\in\Rch^{aa}\), where the path
+realising \(P\) may pass through arbitrary intermediate sorts.  If
+\[
+ P\cap J\ne\varnothing,
+ \qquad
+ P\setminus J\ne\varnothing,
+\]
+then \(P\cap(K\setminus J)\ne\varnothing\).
+\end{lemma}
+
+\begin{proof}
+A SHORT independent proof is now available
+directly from original quotient geometry.
+The $J=\Id_a$ case is VACUOUS because a
+STRONG diversity profile contains no
+logical real identity. Otherwise the
+TERMINAL full NR2 hypothesis and
+\cref{lem:typed-all-invariant-equivalences-raw-word}
+make the represented exact MI J and
+its exact cover K an actual FULL
+invariant MI and its UNIQUE FULL cover.
+Both nonzero full RAW equivalences J,K
+have positive STRONG word profiles by
+original visible SAP injectivisation.
+The quotient first-hit theorem
+\cref{lem:typed-original-full-cover-interpolation}
+therefore applies DIRECTLY to the
+given reachable profile P, including
+when P has intermediate vertices of
+other original named sorts. This
+proves the asserted cover interpolation
+without the older Set-Pasch,
+distributivity or minimal-power descent.
+
+\end{proof}
+
+\begin{lemma}[Original STRONG exact-domain MI-primality from one cover]
+\label{lem:typed-original-strong-exact-prime}
+In the setting of
+\cref{lem:typed-original-full-cover-interpolation},
+let $J>\Id_a$ be the FULL original
+meet-irreducible with unique FULL
+cover $K=J^+$, and let $D_1,D_2$
+be NONEMPTY finite intersections
+of genuinely positive OLD STRONG
+typed $a$--$a$ word profiles.
+(The empty intersection means
+the full diversity palette and
+is handled separately.) If
+\[
+     D_1\cap D_2\ne\varnothing,\qquad
+     D_1\cap D_2\subseteq J^\circ,
+\]
+then
+\[
+                 D_1\subseteq J^\circ
+                   \quad\text{or}\quad
+                 D_2\subseteq J^\circ.
+\tag{OWP}\label{eq:typed-original-strong-exact-prime}
+\]
+The proof uses only ORIGINAL
+SAP+homomorphic CCO positive-word
+2-Helly, the direct quotient
+cover-layer positivity, and
+the first-hit quotient
+interpolation. It does NOT
+assume a typed exact-domain
+product formula, distributivity,
+original Set-Pasch, or hidden SAP.
+\end{lemma}
+\begin{proof}
+If one $D_i$ is the full
+diversity palette (empty family
+of defining words), the premise
+already makes the OTHER
+$D_j\subseteq J^\circ$;
+so assume nonempty defining
+families $\mathcal P_1,\mathcal P_2$.
+Suppose both $D_i$ exit $J$.
+Fix one old fine diversity atom
+$c\in D_1\cap D_2\subseteq J^\circ$.
+For EVERY defining positive
+profile $P\in\mathcal P_i$,
+we have $c\in P$ and
+$P\setminus J\ne\varnothing$,
+because $D_i\subseteq P$
+and $D_i$ exits J.
+The direct first-hit interpolation
+\cref{lem:typed-original-full-cover-interpolation}
+therefore shows that EVERY such
+P meets the POSITIVE external
+layer $U=K\setminus J$.
+This layer is one old STRONG
+positive word profile by
+\cref{thm:typed-original-full-cover-layer-word}.
+
+For each fixed i, the finite
+family $\{U\}\cup\mathcal P_i$
+is PAIRWISE-intersecting: U
+meets every P by interpolation,
+and all P meet each other at
+the SAME original fine atom c.
+The original positive-word
+2-Helly theorem (private paths,
+homomorphic CCO and original SAP
+injectivisation) thus gives
+$D_i\cap U\ne\varnothing$ for
+both i.
+
+Finally $D_1,D_2,U$ are
+pairwise-intersecting finite
+intersections of OLD positive
+STRONG word profiles. Flatten
+their defining families.
+Every defining word from one
+$D_i$ meets every defining
+word from the other through
+the assumed nonempty
+$D_1\cap D_2$; similarly the
+$D_i$--U pairs meet by the
+previous paragraph. Positive
+word 2-Helly yields
+$D_1\cap D_2\cap U
+\ne\varnothing$, contradicting
+$D_1\cap D_2\subseteq J^\circ$
+and $J^\circ\cap U=\varnothing$.
+This proves (OWP).
+\end{proof}
+
+\begin{lemma}[Typed prime intersection]
+\label{lem:typed-prime-intersection}
+Let \(J\) be a represented proper meet-irreducible on sort \(a\).  If
+\(D_1,D_2\in\Dat^{aa}\) have non-empty intersection and
+\[
+ D_1\cap D_2\subseteq J,
+\]
+then \(D_1\subseteq J\) or \(D_2\subseteq J\).
+\end{lemma}
+
+\begin{proof}
+The $\Id_a$ case is vacuous because
+$D_1\cap D_2$ is a NONEMPTY
+STRONG diversity domain, never
+the logical equality atom.
+Otherwise the terminal ORIGINAL
+full NR2 and the CCO-free
+\cref{lem:typed-all-invariant-equivalences-raw-word}
+identify every original invariant
+equivalence with an ACTUAL FULL
+represented exact equivalence.
+Thus J is an ORIGINAL FULL MI
+with its unique FULL invariant
+cover K. Original visible SAP
+injectivises positive RAW words
+for the nonzero J,K diversity
+palettes. By
+\cref{lem:typed-exact-domain-calculus},
+each $D_i$ is a finite nonempty
+intersection of positive STRONG
+typed word profiles, with an
+empty defining family handled
+trivially as FULL diversity top.
+The ORIGINAL strong exact-prime
+\cref{lem:typed-original-strong-exact-prime}
+therefore applies DIRECTLY and
+proves the conclusion.
+This uses no extra hidden SAP
+and avoids importing the
+historical Set-Pasch/descent
+proof of cover interpolation.
+
+\end{proof}
+
+\noindent\emph{Foundational transport imported.}
+The general invariant typed quotient-transport statement
+\cref{lem:typed-quotient-transport} and its proof now occur in
+Part~I, \cref{sec:typed-simultaneous-exact}.
+Here it is applied to the already named original real sorts;
+no quotient-section, exactness of a transported nonexact relation,
+or SAP is inferred merely from that lemma.
+
+\begin{lemma}[No algebraic real quotient under SAP]
+\label{lem:no-real-algebraic-transition}
+Assume visible SAP.  Let \(R\in\Rel^{ab}\) and let \(E\) be a proper
+NONIDENTITY definable equivalence on sort \(a\), so \(E>\Id_a\), with
+\(RR^{\smile}\subseteq E\).  Then the transported equivalence \(E^R\) on
+sort \(b\) is proper; in particular \(E^R\) is not equality.
+Moreover, if \(R\in\Rel^{ab}\) satisfies
+\(RR^{\smile}=1'_a\), then \(a=b\) and \(R=1'_a\).
+\end{lemma}
+
+\begin{proof}
+If \(E^R\) were equality, then for every \(x\in a\) there would be exactly
+one \(y\in b\) with \(xRy\).  Indeed existence follows from totality of
+\(R\), while two such points \(y,y'\) satisfy
+\(yE^Ry'\) because \(xEx\), and hence \(y=y'\).  Thus \(R\) is the graph of
+a total \(0\)-definable function \(f:a\to b\), constant on \(E\)-classes.
+Choose \(x\) and put \(y=f(x)\).  Unless \(a=b\) and \(y=x\), strongly
+amalgamating two copies of the finite two-point structure generated by
+\(x,y\) over the one-point substructure \(\{x\}\) would have to keep the two
+copies of \(y\) distinct, while functionality of \(R\) forces them to be the
+same point.  This contradicts SAP.  Hence every value of a \(0\)-definable
+total function between real sorts is the source point; by transitivity of the
+current unary sorts this is possible only when source and target sorts agree
+and the function is the identity.  But for
+\(R=1'_a\) we have \(E^R=E\), contradicting properness of \(E\) if
+\(E^R\) were equality.  This proves the first assertion.
+
+For the FINAL assertion the direction of functionality is
+the CONVERSE one. If \(RR^\smile=1'_a\),
+then every \(y\) in sort \(b\) has exactly ONE
+\(R\)-predecessor \(x\) in sort \(a\):
+existence follows from surjectivity of
+the nonempty invariant \(R\), while
+two predecessors \(x,x'\) satisfy
+\(xRR^\smile x'\) and hence \(x=x'\).
+Thus \(R^\smile\) is the graph of
+a total \(0\)-definable function \(b\to a\).
+Visible SAP, by the same two-copy
+strong amalgam over the INPUT point
+\(y\), forces this function to be
+literal old identity. Consequently
+\(a=b\) and \(R=1'_a\).
+No equality of \(E^R\) was asserted
+or needed for this converse-direction argument.
+\end{proof}
+
+\begin{lemma}[Identity-containing quotient transport is redundant]
+\label{lem:typed-identity-transport-redundant}
+Let \(R\in\Rel^{aa}\) contain the ACTUAL
+logical diagonal \(\Id_a\), and let
+\(J\) be a represented proper same-sort
+equivalence with \(R;R^\smile\subseteq J\).
+Then
+\[
+ R\subseteq J,\qquad
+ J^R=R^\smile;J;R=J,\qquad
+ q_{R,J}=\operatorname{id}_{a/J}.
+\tag{QT-Id}\label{eq:typed-identity-transport}
+\]
+Such an \(R\) gives no new unary
+quotient-transition function. Its map
+is the existing identity on
+\(B_{a,J}\), without any artificial
+STRONG identity-labelled edge.
+This includes \(R=\Id_a\)
+and any mixture of identity and
+genuine diversity atoms.
+\end{lemma}
+\begin{proof}
+Same-sort old orbitals are symmetric,
+so \(R^\smile=R\). Since
+\(\Id_a\subseteq R\),
+\[
+ R=\Id_a;R\subseteq R;R^\smile
+                      \subseteq J.
+\]
+Thus \(R^\smile;J;R\subseteq
+J;J;J=J\); the reverse inclusion
+follows from \(\Id_a\subseteq R\),
+so \(J^R=J\). For any \(xRy\)
+we have \(xJy\), hence the
+induced quotient map sends
+each class to itself. Its
+graph is the existing unary
+identity term, not an additional
+positive-path constraint.
+\end{proof}
+
+\begin{lemma}[Finite typed quotient-transition composition normal form]
+\label{lem:typed-transition-composition-normal-form}
+Let \(R\in\Rel^{ab}\),
+\(S\in\Rel^{bc}\) be
+nonempty ACTUAL typed
+invariant relations.
+Let \(E\) be a represented
+proper equivalence on
+sort \(a\), and assume
+\[
+ RR^\smile\subseteq E,\qquad
+ F=E^R,\qquad
+ SS^\smile\subseteq F .
+\]
+Put \(T=R;S\) as an
+equality-inclusive RAW
+represented relation.
+Then
+\[
+ TT^\smile\subseteq E,\qquad
+ E^T=F^S,\qquad
+ q_{T,E}=q_{S,F}\circ q_{R,E}.
+\tag{TQC}\label{eq:typed-transition-composition}
+\]
+For any represented
+equivalence \(H\ge F\)
+on \(b\), let
+\(H_0=(q_{R,E})^{-1}(H)\)
+be its unique pullback
+in the interval
+\([E,\Top_a]\). Then
+\(H_0^R=H\) and
+\[
+ u_{F,H}\circ q_{R,E}
+ =q_{R,H_0}\circ u_{E,H_0}.
+\tag{TQU}\label{eq:typed-upward-interchange}
+\]
+If \(H\) is a represented
+proper meet-irreducible,
+so is \(H_0\). If
+\(a=c\) and the ACTUAL
+diagonal \(\Id_a\)
+belongs to \(T\), then
+the composite quotient
+map in (TQC) is exactly
+the IDENTITY on \(a/E\),
+by \cref{lem:typed-identity-transport-redundant};
+it introduces no synthetic
+STRONG diversity identity
+or additional named unary
+transition.
+
+Consequently every
+transition-only unary
+composite between
+represented proper
+quotient sorts equals
+either one quotient
+transition \(q_{T,E}\)
+of an ACTUAL member of
+one of the finitely many
+families \(\Rel^{ac}\),
+or the old unary identity.
+After moving upward maps
+leftwards by (TQU),
+every unary coordinate
+term has one initial
+projection/upward map
+and one such transition
+(or identity). Hence
+there are finitely many
+unary term FUNCTIONS
+from each hidden sort.
+\end{lemma}
+\begin{proof}
+The relation \(T=R;S\)
+is nonempty and total and
+surjective between its
+endpoint sorts because
+\(R,S\) have these
+properties on transitive
+original named sorts.
+If \(xTz\) and \(x'Tz\),
+choose intermediate
+\(y,y'\) with
+\(xRySz\) and
+\(x'Ry'Sz\).
+Since \(ySS^\smile y'\),
+we have \(yFy'\).
+By the bijection
+\(q_{R,E}:a/E\to b/F\)
+of
+\cref{lem:typed-quotient-transport},
+the corresponding
+\(E\)-classes of \(x,x'\)
+are equal. Thus
+\(TT^\smile\subseteq E\).
+For a target point \(z\),
+the unique source
+\(E\)-class associated
+through \(T\) is the
+one obtained by applying
+the inverse quotient
+bijections for \(S\)
+and then \(R\).
+Hence the target kernel
+is exactly \(F^S\), and
+the forward quotient
+map is their composition,
+proving (TQC).
+
+The interval-lattice
+isomorphism in
+\cref{lem:typed-quotient-transport}
+sends \(H_0\) to \(H\).
+By the definition of
+an upward quotient map,
+the two compositions in
+(TQU) send any
+\(E\)-class \(q\)
+to the same \(H\)-class
+of its \(R\)-neighbours.
+They therefore agree
+pointwise. A proper
+meet-irreducible in
+\([F,\Top_b]\) has a
+unique cover there and
+hence the pullback has
+a unique cover in
+\([E,\Top_a]\), which is
+also its unique cover
+in the full actual
+equivalence lattice.
+This proves the
+meet-irreducibility
+assertion.
+
+When \(T\) contains
+logical identity the
+identity-redundancy lemma
+directly yields
+\(T\subseteq E\) and
+\(q_{T,E}=\mathrm{id}\).
+Do NOT infer the
+existence of a
+diversity identity atom
+from this RAW conclusion.
+
+Repeated use of (TQC)
+replaces any finite
+transition-only composite
+by the one relation
+product of its original
+typed \(R\)-relations.
+Such a product is
+again a member of
+\(\Rel^{ac}\), since it
+is actual invariant
+and is a union of
+finitely many original
+typed atomic orbitals.
+If it contains identity,
+the preceding paragraph
+replaces its quotient map
+by an existing unary
+identity. Repeated use
+of (TQU) moves every
+upward quotient map
+toward the source.
+There are finitely many
+named real sorts, proper
+represented quotient sorts
+and invariant binary
+relations \(\Rel^{ac}\),
+so only finitely many
+distinct normal-form
+unary functions can occur.
+\end{proof}
+
+Let \(\mathcal I_a\) be the proper represented meet-irreducibles on sort
+\(a\).  Equality is represented by the real sort itself; by
+\cref{lem:no-real-algebraic-transition} no non-trivial quotient transition
+can enter a real sort.  Thus we introduce hidden coordinate sorts
+\(B_{a,J}\) only for \(J\in\mathcal I_a\), together with the old projections
+from the real sort and upward quotient maps between represented coordinates.
+Whenever \(J\in\mathcal I_a\), \(R\in\Rel^{ab}\),
+\(RR^{\smile}\subseteq J\), and the ACTUAL logical
+identity is NOT contained in \(R\), introduce
+the unary quotient-transition map
+\[
+ \pi_{R,J}:B_{a,J}\longrightarrow B_{b,J^R},
+\tag{QT3}\label{eq:typed-transition-function}
+\]
+where \(J^R\in\mathcal I_b\) follows from the FULL invariant
+interval transport, the SEPARATE terminal RAW exactness theorem,
+and the SAP noncollapse statement, respectively:
+\cref{lem:typed-quotient-transport,lem:typed-terminal-all-equivalences-exact,lem:no-real-algebraic-transition}.
+The generic transport lemma alone does NOT make an arbitrary
+transported invariant equivalence FULL RAW exact.
+Quotient transitions are bijections, so include their inverses and all
+composition identities supplied by \cref{lem:typed-quotient-transport}.
+If a relational composite contains genuine identity,
+\cref{lem:typed-identity-transport-redundant}
+reduces it to an existing quotient identity term;
+no synthetic strong identity edge is introduced.
+For
+the cylinder notation it is convenient to regard the real sort \(a\) as the
+equality coordinate \(a/1'_a\).  Put
+\[
+ \overline{\mathcal I}_a=\mathcal I_a\cup\{1'_a\},
+ \qquad B_{a,1'_a}:=a,
+\]
+where a \(1'_a\)-class is a singleton.
+For every nonzero represented proper
+same-sort equivalence \(J\)
+used as a STRONG factor below,
+its diversity palette \(J^\circ\)
+is nonempty and itself a
+POSITIVE typed reachable profile:
+\cref{lem:typed-terminal-all-equivalences-exact}
+represents the FULL \(J\)
+by one equality-inclusive
+old atomic word in this
+TERMINAL typed source, and
+\cref{lem:typed-injectivisation}
+identifies its distinct-endpoint
+profile with \(J^\circ\).
+That terminal reachability
+lemma uses
+\cref{lem:typed-terminal-pure-power}
+and the original RAW exact
+calculus, not the cylinder
+construction here; the forward
+reference does NOT assume
+quotient-transition closure.
+For
+\(J\in\overline{\mathcal I}_a\),
+\(K\in\overline{\mathcal I}_b\), and an atomic \(a\)-\(b\) pair type \(t\),
+define the representative cylinder by omitting identity
+saturation and using the explicit diversity
+parts of nonzero equivalences from
+\cref{lem:typed-raw-strong-saturation}:
+\[
+ \operatorname{Cyl}_{J,K}(t)=
+ \begin{cases}
+ \{t\},&J=1'_a,\ K=1'_b,\\
+ \{t\}\starprod K^\circ,&J=1'_a,\ K\neq1'_b,\\
+ J^\circ\starprod\{t\},&J\neq1'_a,\ K=1'_b,\\
+ J^\circ\starprod\{t\}\starprod K^\circ,&J\neq1'_a,\ K\neq1'_b.
+ \end{cases}
+\tag{QT-Cyl}\label{eq:typed-cylinder}
+\]
+
+\begin{lemma}[Typed cylinder realisation and partition]
+\label{lem:typed-cylinder-realisation}
+Let \(J\in\overline{\mathcal I}_a\) and
+\(K\in\overline{\mathcal I}_b\).  Let \(q\in a/J\) and \(r\in b/K\),
+where an equality-coordinate class is identified with its unique real point.
+Suppose distinct representatives \(x\in q\), \(y\in r\) have atomic pair type \(t\).
+Then the set of all atomic pair types realised by choices of representatives
+\(x'\in q\), \(y'\in r\) with \(x'\neq y'\) is exactly
+\[
+ \operatorname{Cyl}_{J,K}(t).
+\]
+Consequently this cylinder depends only on the ordered pair \((q,r)\), not
+on the chosen representatives.  For every compatible ordered pair of
+represented coordinate positions, including a real-sort endpoint interpreted
+as equality, the distinct cylinders therefore partition the ordered pairs of
+\emph{distinct} corresponding vertices (with the diagonal omitted when the
+two endpoint positions are the same hidden sort); when both endpoints are real
+this is simply the old atomic pair-type partition off the diagonal.
+\end{lemma}
+
+\begin{proof}
+If \(x'\in q\) and \(y'\in r\), then the left exterior step has type in
+\(J\) when \(J\neq1'_a\) and is absent when \(J=1'_a\); similarly the
+right exterior step has type in \(K\) unless \(K=1'_b\).  Together with the
+middle type \(t\), this gives exactly the appropriate case of
+\eqref{eq:typed-cylinder} for the type of \(x'y'\).
+
+Conversely, let \(s\in\operatorname{Cyl}_{J,K}(t)\).  By the semantic
+definition of the typed Peircean product, realise the corresponding path in
+the homogeneous limit: its middle edge has type \(t\), with a left exterior
+edge in \(J\) precisely when \(J\neq1'_a\) and a right exterior edge in
+\(K\) precisely when \(K\neq1'_b\).  Thus the path has between two and four
+vertices.  An automorphism sends its middle edge to \((x,y)\).  Every exterior
+vertex is then sent into the required quotient class, while an
+equality-coordinate endpoint is already the corresponding middle vertex.
+The endpoint type remains \(s\).  Thus every member of the displayed cylinder
+is realised by distinct representatives of \((q,r)\).  The final assertion follows by
+choosing representatives of each coordinate pair and applying the first
+assertion twice.
+\end{proof}
+
+Accordingly, between every compatible ordered pair of represented coordinate
+positions with at least one proper quotient coordinate we name one binary
+semantic-cylinder relation for each distinct cylinder in
+\eqref{eq:typed-cylinder}, interpreted by the corresponding part of the
+partition in \cref{lem:typed-cylinder-realisation}.  Real--real cylinders are
+already named by the old atomic pair-type predicates.
+
+\begin{lemma}[Quotient-transition cylinders]
+\label{lem:typed-transition-cylinder}
+Let \(J\in\mathcal I_a\), let \(R\in\Rel^{ab}\)
+be nonempty and contain NO ACTUAL logical identity,
+assume \(RR^{\smile}\subseteq J\), and put \(K=J^R\).
+For every DIVERSITY atomic pair type
+\(t\in R\),
+\[
+ \operatorname{Cyl}_{J,K}(t)
+   =J^\circ\starprod R\starprod K^\circ.
+\tag{QT-Graph}\label{eq:typed-transition-cylinder}
+\]
+In particular the left-hand side is independent of \(t\).  If
+\(q\in a/J\) and \(r\in b/K\), then
+\[
+ \pi_{R,J}(q)=r
+ \quad\Longleftrightarrow\quad
+ \text{the type of representatives of \((q,r)\) lies in
+ \(J^\circ\starprod R\starprod K^\circ\)}.
+\]
+Thus the graph of every quotient-transition function is represented by one
+reachable visible pair profile.
+\end{lemma}
+
+\begin{proof}
+For every old diversity atomic $t\in R$,
+we have $tt^\smile\subseteq RR^\smile
+\subseteq J$. The atom $t$ is total and
+surjective between the original transitive
+sorts. For every $y\in b$, choose
+$x\,t\,y$; as $t\subseteq R$, the unique
+source $J$-class is the same for $t$ and
+for $R$. Consequently
+\[
+ \lambda_{t,J}=\lambda_{R,J},
+ \qquad J^t=J^R=K,\qquad
+ q_{t,J}=q_{R,J}.
+\]
+For ANY matched quotient pair
+$r=q_{R,J}(q)$, each $x\in q$ has a
+$t$-neighbour $y\in r$. Thus every
+graph pair admits one actual old
+$t$-representative pair. By original
+two-point homogeneity, ALL these pairs
+belong to ONE complete $\Aut(M)$-orbital
+of quotient pairs, including when $a\ne b$.
+This orbit is the graph of $q_{R,J}$.
+
+The complete OLD diversity spectrum of
+one matched pair is
+$(J;\{t\};K)^\circ$ by
+\cref{lem:typed-cylinder-realisation}.
+It is independent of the chosen atomic
+$t\in R$, since each such atom induces
+the SAME quotient graph. Taking their
+union therefore gives
+\[
+ (J;R;K)^\circ
+   =(J;\{t\};K)^\circ
+   =\operatorname{Cyl}_{J,K}(t).
+\]
+Here all semicolons are actual RAW
+equality-inclusive relational products.
+Both kernels are NONZERO under visible
+SAP, so \cref{lem:typed-raw-strong-saturation}
+converts this diversity slice into
+$J^\circ\starprod R\starprod K^\circ$.
+It equals the corresponding product
+with the SINGLE atom $t$ and is
+STRONG reachable by the terminal
+positive word representation of
+$J^\circ,K^\circ$. This proves
+\eqref{eq:typed-transition-cylinder}.
+
+Conversely, if a distinct OLD
+representative pair has a fine atom
+in that graph spectrum, original
+two-point homogeneity carries it
+to a representative pair of a matched
+quotient class pair. Thus its classes
+satisfy $r=q_{R,J}(q)$. In a matched
+pair EVERY distinct representative
+pair has fine atom in the same full
+spectrum. Distinct representatives
+always exist because proper nonzero
+J,K-classes are infinite by SAP.
+The possible coincidence of the
+HIDDEN quotient vertices is checked
+by unary equality and is not an
+artificial off-diagonal binary atom.
+\end{proof}
+
+\begin{lemma}[Atomic naming of a quotient-functional strong branch]
+\label{lem:typed-branch-atomic-transport}
+Let \(P\in\Rch^{ab}\) be a nonempty
+IDENTITY-FREE positive typed strong
+word profile, and let \(J\) be a
+represented proper equivalence on
+the source sort \(a\) with
+\(P;P^\smile\subseteq J\).
+Choose ANY old diversity
+atomic type \(t\subseteq P\).
+Then
+\[
+      J^t=J^P,\qquad
+      \pi_{t,J}=\pi_{P,J}.
+\tag{QT-Atom}\label{eq:typed-atomic-transport}
+\]
+In particular, when \(J\) is a
+represented proper meet-irreducible,
+the transported target kernel
+\(J^P\) is also a represented proper
+meet-irreducible under visible SAP,
+and the quotient map induced by
+the WHOLE strong branch \(P\) is
+ALREADY a named unary quotient
+transition of the finite hidden
+language. The assertion does NOT
+identify old fine atomic relations
+\(P\) and \(t\); only their
+induced quotient maps agree.
+\end{lemma}
+\begin{proof}
+The actual relation \(P\) is
+nonempty and invariant between
+the transitive named sorts
+\(a,b\), so is total and
+surjective. The same holds for
+the atomic orbital \(t\).
+Since \(t\subseteq P\),
+\(t;t^\smile\subseteq
+P;P^\smile\subseteq J\),
+and both quotient transports
+are defined by
+\cref{lem:typed-quotient-transport}.
+
+For any target point \(y\)
+choose an OLD real point
+\(x\) with \(x\,t\,y\),
+possible by surjectivity.
+Then \(x\,P\,y\) too,
+so the unique source
+\(J\)-class associated to
+\(y\) through the
+relation \(t\) is the SAME
+one associated through \(P\).
+Thus their well-defined
+maps \(\lambda_{t,J}\)
+and \(\lambda_{P,J}\)
+coincide POINTWISE on
+the actual target sort \(b\).
+Their kernel equivalences
+\(t^\smile Jt\) and
+\(P^\smile JP\) are equal;
+the quotient bijections
+defined as inverses of the
+same source-class labelling
+are identical. This gives
+\eqref{eq:typed-atomic-transport}.
+If \(J\) is proper MI,
+transport preserves
+meet-irreducibility, and
+\cref{lem:no-real-algebraic-transition}
+excludes an equality target
+under visible SAP. Since
+\(t\) is a genuine old
+diversity atom, the
+symbol \(\pi_{t,J}\)
+is one of the explicitly
+named IDENTITY-FREE
+transition symbols.
+\end{proof}
+
+There are only finitely many new symbols.  In particular, functional
+transition closure never creates a new visible real point.
+

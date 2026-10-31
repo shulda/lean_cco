@@ -8,7 +8,10 @@ PR refs and exact CI logs; no green status alone completes a mathematical batch.
 As of the completed B048 handoff, STATE396 had all48 released packages ACCEPTED,
 no active claim or lock, main700c12f7e6e8476eb0100a6be37d5f619ade3c0a. These are
 historical startup receipts, NOT an allocation or promise about current heads.
-B049 was unreleased then. Always read live state and current prepared releases.
+B049 was unreleased then. B049–B064 now have an additive receiving release
+under releases/B049-B064; it becomes claimable only after actual promote_registry.
+Always read live STATE/policy and the actual DAG; the initial ready pair is
+B050/B062, not B049.
 
 Work project3 and Chat projects initially4/5/6 are different actors. Original
 projects1/2 stopped; never reuse their identities for fresh review. Read the

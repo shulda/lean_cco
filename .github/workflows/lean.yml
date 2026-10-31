@@ -31,11 +31,11 @@ jobs:
       - name: Validate mathematical preparation and project allocation
         run: |
           python3 -m unittest discover -s tools -p 'test_*.py' -q
-          for module in raw_exact strong_selectors parity_hasse exact_crt canonical_hull real_closure finite_packets rigid_groupoid finite_kernel owner_action sir owner_master joint_owner acl_owner_geometry finite_lift mi_geometry owner_transversal safe_readings direct_owner_closure hkn_reservoir terminal_powers full_rows profile_helly relative_mi rank_induction unary_support full_code reset_order unary_hn relational_completion unary_fresh_frames quotient_transport simultaneous_quotients finite_fibres point_generated_sap ap_character clone_sap orbital_cover_boundary pair_safe_split full_phase_lift; do
+          for module in raw_exact strong_selectors parity_hasse exact_crt canonical_hull real_closure finite_packets rigid_groupoid finite_kernel owner_action sir owner_master joint_owner acl_owner_geometry finite_lift mi_geometry owner_transversal safe_readings direct_owner_closure hkn_reservoir terminal_powers full_rows profile_helly relative_mi rank_induction unary_support full_code reset_order unary_hn relational_completion unary_fresh_frames quotient_transport simultaneous_quotients finite_fibres point_generated_sap ap_character clone_sap orbital_cover_boundary pair_safe_split full_phase_lift transition_closure terminal_lattice terminal_profiles unary_terms_return typed_orbit_frames hereditary_hidden_orbits hidden_sap_readings guarded_two_root guarded_old_seams old_idempotent_forest terminal_hidden_hn clone_tuple_geometry ap_ramsey_readout exact_ep_geometry automatic_ep_core unfiltered_ep; do
             python3 tools/build_formalization_module.py --module "$module" --check
           done
           python3 tools/check_formalization_coordination.py --check --require-launch
-          for control in tools/check_*_controls.py; do
+          for control in tools/check_*_controls.py tools/check_*_finite.py; do
             python3 "$control"
           done
 

@@ -1,0 +1,1735 @@
+{
+  "schema_version": 1,
+  "id": "terminal_hidden_hn",
+  "index_title": "Actual terminal hidden HN application, full order readout and general SAP Ramsey transfer",
+  "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+  "status": "HUMAN_EXPANDED_NOT_LEAN",
+  "scope": "Private B059: all THREE source17 lemmas and TWO source18 theorems, two equations, ten definitions, 52 human claims and seven tasks. Literal real-root closure and finite root cofinality are separate from Ramsey transfer. All term-order comparisons INCLUDING same-real-root diagonals give the exact finite full code, unique hidden embedding extensions, precompactness and reasonableness. Actual complete hidden pair orbitals make every completed member irreducible without E*. Existing direct unary HN transfer is instantiated with actual hereditary SAP and unary-admissible bounded obstructions, retaining its three published receiving bindings. General symmetric SAP+CCO Ramsey follows through the actual finite safe terminalisation, with its FULL-sector qualifications. No expansion-property or coherent-EPPA conclusion is made. The B058 factorisation-forest binding remains separate and pending; no external theorem is duplicated here.",
+  "scope_vocabulary": [
+    "cofinal",
+    "readout",
+    "irreducible",
+    "terminal_hn",
+    "general_transfer",
+    "boundary"
+  ],
+  "scope_explanation": "statement and proof. Actual finite hidden members may contain orphans. Linear orders are arbitrary global strict orders on hidden vertices. Original real-root term comparisons include x=y and may hold on their diagonal. The binary theorem does not remove inherited higher-support gates.",
+  "control_script": "tools/check_terminal_hidden_hn_controls.py",
+  "assumptions": [
+    {
+      "id": "A01",
+      "name": "Bound homogeneous binary source instance",
+      "statement": "For the terminal lemmas, M is countable homogeneous in a finite complete binary language with finitely many nonempty individually transitive named original sorts, symmetric same-sort atoms and actual typed pair orbitals. Old unary/pair/equality type is the full original two-point orbit, including repeated-root tuples.",
+      "depends_on": []
+    },
+    {
+      "id": "A02",
+      "name": "Literal finite actual MI-only hidden signature",
+      "statement": "H is the ACTUAL interpretation containing real sorts and proper nonidentity represented MI quotient sorts, all actual pair orbitals/cylinders, and actual equivariant unary projections, upward maps and quotient transitions/inverses. Every proper vertex has an onto real projection. No quotient-to-real nonidentity map and no nullary vertex generator. Completed members are finite induced unary-closed substructures. All hidden functions are total on prescribed source sorts and undefined off-sort in the one-sorted HN encoding.",
+      "depends_on": []
+    },
+    {
+      "id": "A03",
+      "name": "Original visible SAP",
+      "statement": "The original finite age has SAP, including empty bases, hence every proper nonidentity invariant quotient class has infinitely many actual real representatives. This does not itself imply hidden SAP; the actual hidden SAP provider is imported separately.",
+      "depends_on": []
+    },
+    {
+      "id": "A04",
+      "name": "Terminal original CCO and FULL infinite covers",
+      "statement": "For the terminal theorem instance, original semantic homomorphic CCO holds and every strict cover in each FULL original invariant-equivalence lattice has infinite relative index, INCLUDING Top covers. This is the standing sortwise infinite-cover branch, not merely a condition on already represented MI cuts. B058 bounded obstruction and B055 hidden SAP providers retain it.",
+      "depends_on": []
+    },
+    {
+      "id": "A05",
+      "name": "Conditional ordered hidden Ramsey input for readout only",
+      "statement": "For the readout lemma Ramsey implication only, the hereditary ordered hidden envelope with ALL global strict linear orders is assumed Ramsey. This is discharged in the terminal theorem by the direct HN application; no expansion property is included.",
+      "depends_on": []
+    },
+    {
+      "id": "A06",
+      "name": "Bound general symmetric SAP+CCO source",
+      "statement": "For the final general theorem, the input is an actual homogeneous FULL triangle-defined complete finite symmetric binary SAP+homomorphic-CCO age. It need NOT already have infinite covers. The original general instance is distinct from A01-A04 terminal parameters; I13 produces the terminal source on which the parameterized C39 theorem is instantiated.",
+      "depends_on": []
+    }
+  ],
+  "imports": [
+    {
+      "id": "I01",
+      "name": "lem:typed-unary-closure-bound",
+      "provider_module": "unary_terms_return",
+      "source_label": "lem:typed-unary-closure-bound",
+      "provider_claims": [
+        "C13",
+        "C14"
+      ],
+      "statement": "Actual/unary-admissible singleton closures have size<=m_typ. Proved ancestor C12 separately provides finitely many actual unary term FUNCTIONS per hidden source sort, not a bound on syntax.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "provider_support_claims": [
+        "C12"
+      ],
+      "provider_support_usage": "Use strict proved ancestor C12 to choose finite representative lists of ALL actual real-source term functions and close their compositions. A finite image at one point is not substituted for this function theorem. This supplies the finite relational order language and root-cover normal forms."
+    },
+    {
+      "id": "I02",
+      "name": "lem:typed-coordinate-normal-form",
+      "provider_module": "unary_terms_return",
+      "source_label": "lem:typed-coordinate-normal-form",
+      "provider_claims": [
+        "C24",
+        "C25"
+      ],
+      "statement": "Each actual real-source term is its real identity or a proper quotient projection followed by a named bijection/identity, with exact original kernel. No nonidentity real-valued quotient term occurs in this literal signature.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I03",
+      "name": "lem:foundational-root-cover-cofinal",
+      "provider_module": "full_code",
+      "source_label": "lem:foundational-root-cover-cofinal",
+      "provider_claims": [
+        "C24",
+        "C25"
+      ],
+      "statement": "In an actual unary ambient with finite normal forms and real root coverage, every finite hidden member embeds into a finite full-root-generated support; use the literal inclusion into H to obtain actual induced containment. This needs no SAP/Ramsey or automorphism section.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I04",
+      "name": "lem:foundational-full-code-embeddings",
+      "provider_module": "full_code",
+      "source_label": "lem:foundational-full-code-embeddings",
+      "provider_claims": [
+        "C08",
+        "C15"
+      ],
+      "statement": "ALL same-root/cross-root equality, relation, domain/value and order codes reconstruct an actual generated support uniquely OVER MARKED roots and give the natural bijection of visible-code embeddings with hidden generated-support embeddings.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I05",
+      "name": "thm:ramsey-tuple-readout",
+      "provider_module": "full_code",
+      "source_label": "thm:ramsey-tuple-readout",
+      "provider_claims": [
+        "C20"
+      ],
+      "statement": "A hereditary ordered hidden Ramsey class transfers its arrows to the finite full-code visible root class by the exact embedding bijection. Hidden Ramsey hosts may have orphans; neither EP nor cofinal enlargement is needed.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I06",
+      "name": "lem:typed-unary-binary-irreducibility",
+      "provider_module": "unary_hn",
+      "source_label": "lem:typed-unary-binary-irreducibility",
+      "provider_claims": [
+        "C01",
+        "C02"
+      ],
+      "statement": "A completed finite unary structure whose every distinct pair is joined by a positive binary tuple or named unary reachability is irreducible in the ORIGINAL language. No universal E* relation is required.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I07",
+      "name": "lem:typed-cylinder-realisation",
+      "provider_module": "transition_closure",
+      "source_label": "lem:typed-cylinder-realisation",
+      "provider_claims": [
+        "C42",
+        "C43"
+      ],
+      "statement": "Complete actual semantic cylinders partition compatible distinct hidden pairs with a proper quotient endpoint. A proper quotient position has its actual representative spectrum, not an arbitrary selected subpalette.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I08",
+      "name": "lem:rh-sap-invariant-monolith",
+      "provider_module": "real_closure",
+      "source_label": "lem:rh-sap-invariant-monolith",
+      "provider_claims": [
+        "C19",
+        "C20",
+        "C21"
+      ],
+      "statement": "Original SAP gives infinite nonidentity invariant classes and infinite real off-base orbits. Use only the class-infinity part for distinct proper endpoint representatives.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I09",
+      "name": "thm:typed-hidden-sap",
+      "provider_module": "hidden_sap_readings",
+      "source_label": "thm:typed-hidden-sap",
+      "provider_claims": [
+        "C09"
+      ],
+      "statement": "The ACTUAL binary MI-only hidden envelope is homogeneous and its ENTIRE hereditary finite unary-closed age has SAP, including orphan-only/empty bases, through full exact lifting and prior real-frame orbit transfer.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I10",
+      "name": "cor:typed-bounded-hidden",
+      "provider_module": "old_idempotent_forest",
+      "source_label": "cor:typed-bounded-hidden",
+      "provider_claims": [
+        "C58"
+      ],
+      "statement": "There is a uniform N for noncompletable UNARY-ADMISSIBLE finite closed partial actual hidden sources, with a noncompletable induced unary-closed substructure of size<=N. The restriction is essential; B058 factorisation-forest published receiving binding remains pending.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I11",
+      "name": "thm:typed-direct-irreducible-unary-HN",
+      "provider_module": "unary_hn",
+      "source_label": "thm:typed-direct-irreducible-unary-HN",
+      "provider_claims": [
+        "C39"
+      ],
+      "statement": "For a finite typed unary hereditary SAP class of ACTUAL irreducible completed members, a uniform obstruction bound restricted to actual completed one-generated diagrams gives Definition2.8 local finiteness with max(1,N) and ordered Ramsey. Reuse its three exact published HN inputs; no duplicate external provider.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "provider_support_claims": [
+        "C22",
+        "C34",
+        "C37",
+        "C38"
+      ],
+      "provider_support_usage": "Use strict proved ancestors C22/C34 for the raw one-sorted candidate typing adapter and uniform HN local-finiteness conclusion, and C37/C38 for irreducible-membership forcing actual one-generated admissibility before applying the restricted bound. These are already proved parts of the selected direct theorem; no hidden-source bound is assumed beyond I10."
+    },
+    {
+      "id": "I12",
+      "name": "lem:hn-irreducible-forces-unary-admissible",
+      "provider_module": "unary_support",
+      "source_label": "lem:hn-irreducible-forces-unary-admissible",
+      "provider_claims": [
+        "C20",
+        "C21"
+      ],
+      "statement": "Actual induced functional subobjects reflect domains of already-defined unary functions. If every irreducible belongs to the completed class, each one-generated closure is itself an actual member and all intended functions are total, even when the ambient HN candidate initially allows partial unary maps.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I13",
+      "name": "thm:finite-cover-elimination",
+      "provider_module": "pair_safe_split",
+      "source_label": "thm:finite-cover-elimination",
+      "provider_claims": [
+        "C51"
+      ],
+      "statement": "From the actual FULL triangle-defined symmetric SAP+CCO source, the proved maximal-character safe split iterates finitely to a finite reasonable reduct-surjective precompact UNARY terminal expansion preserving SAP/CCO and actual full current orbitals. This retains B047 actual/FULL-sector and EPP proof qualifications.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    }
+  ],
+  "definitions": [
+    {
+      "id": "D01",
+      "name": "Literal original real-root set",
+      "statement": "A finite real D consists of length-one valid roots with named sort tags; identity terms retain them, and only proper quotient values can be added by nonidentity terms.",
+      "depends_on": [],
+      "notes": "N01",
+      "source": {
+        "file": "sections/v27/17_hidden_hn_terminal_readout.tex",
+        "anchor": "\\label{lem:typed-real-root-closure-cofinal}"
+      }
+    },
+    {
+      "id": "D02",
+      "name": "Actual root cover",
+      "statement": "Every finite actual closed hidden B is covered by its real part and one real preimage for each proper quotient vertex; D is their finite union in the same actual H.",
+      "depends_on": [],
+      "notes": "N01",
+      "source": {
+        "file": "sections/v27/17_hidden_hn_terminal_readout.tex",
+        "anchor": "\\label{lem:typed-real-root-closure-cofinal}"
+      }
+    },
+    {
+      "id": "D03",
+      "name": "Finite term-function list",
+      "statement": "T_a contains one representative syntax for each actual well-sorted real-source unary term function, including real identity. Function composition is represented by another member of the finite list.",
+      "depends_on": [],
+      "notes": "N02",
+      "source": {
+        "file": "sections/v27/17_hidden_hn_terminal_readout.tex",
+        "anchor": "\\label{lem:typed-finite-ordered-real-readout}"
+      }
+    },
+    {
+      "id": "D04",
+      "name": "Presentation quotient",
+      "statement": "T_A={(x,tau):x in A,tau in T_sort(x)}; identify two presentations iff their actual hidden values agree. Their quotient Q_A canonically identifies with cl_H(A).",
+      "depends_on": [],
+      "notes": "N02",
+      "source": {
+        "file": "sections/v27/17_hidden_hn_terminal_readout.tex",
+        "anchor": "\\label{lem:typed-finite-ordered-real-readout}"
+      }
+    },
+    {
+      "id": "D05",
+      "name": "Complete order comparison code",
+      "statement": "For all ordered real sort/term pairs, C_tau,sigma(x,y) iff tau(x)<sigma(y), INCLUDING x=y. Compatibility means a strict total order descends to Q_A.",
+      "depends_on": [],
+      "notes": "N03",
+      "source": {
+        "file": "sections/v27/17_hidden_hn_terminal_readout.tex",
+        "anchor": "\\label{lem:typed-finite-ordered-real-readout}"
+      }
+    },
+    {
+      "id": "D06",
+      "name": "Actual completed hidden age",
+      "statement": "K contains precisely all finite induced unary-closed H substructures, including orphan-only members, and all their isomorphic copies. K^< allows every global strict linear order.",
+      "depends_on": [],
+      "notes": "N04",
+      "source": {
+        "file": "sections/v27/17_hidden_hn_terminal_readout.tex",
+        "anchor": "\\label{lem:typed-terminal-hidden-irreducible}"
+      }
+    },
+    {
+      "id": "D07",
+      "name": "HN admissible source and cutoff",
+      "statement": "The geometric N-bound applies only when each induced one-generated closure is an ACTUAL completed K member. HN Definition2.8 tests EVERY expanded irreducible as an actual K^< member and every actual induced subobject of size<=n=max(1,N) for completion.",
+      "depends_on": [],
+      "notes": "N05",
+      "source": {
+        "file": "sections/v27/18_unary_hn_transfer.tex",
+        "anchor": "\\label{thm:internal-ramsey-terminal}"
+      }
+    },
+    {
+      "id": "D08",
+      "name": "Readout of an arbitrary hidden host",
+      "statement": "N(H0) is the original real-sort portion of a finite ordered hidden host H0 with its full actual term code. Its generated support is a closed induced subobject; orphan vertices outside that support are allowed.",
+      "depends_on": [],
+      "notes": "N03",
+      "source": {
+        "file": "sections/v27/17_hidden_hn_terminal_readout.tex",
+        "anchor": "\\label{lem:typed-finite-ordered-real-readout}"
+      }
+    },
+    {
+      "id": "D09",
+      "name": "Finite unary terminalisation",
+      "statement": "The final general proof applies I13 to the original A06 source and obtains a different finite-sorted terminal source Mprime. Terminal A01-A04 are then discharged for Mprime, not assumed for the original source.",
+      "depends_on": [],
+      "notes": "N06",
+      "source": {
+        "file": "sections/v27/18_unary_hn_transfer.tex",
+        "anchor": "\\label{thm:internal-v27-general-ramsey}"
+      }
+    },
+    {
+      "id": "D10",
+      "name": "Diagonal order diagnostic",
+      "statement": "A one-sort real singleton x with one MI quotient has two distinct hidden values x and F_E(x). Its two hidden orders have the same off-diagonal real comparison data; C_id,F_E(x,x) distinguishes them.",
+      "depends_on": [],
+      "notes": "N07",
+      "source": {
+        "file": "sections/v27/17_hidden_hn_terminal_readout.tex",
+        "anchor": "\\label{lem:typed-finite-ordered-real-readout}"
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "name": "No new real vertex can be generated by a nonidentity term",
+      "statement": "By the literal A02 signature and I02 normal form, a term on an original real point is its identity or has proper quotient codomain. Every later nonidentity map stays among quotient sorts. Thus no new real point can occur in its generated closure.",
+      "depends_on": [
+        "A02",
+        "I02",
+        "D01"
+      ],
+      "notes": "N01",
+      "scope": "cofinal",
+      "source_labels": [
+        "lem:typed-real-root-closure-cofinal"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C02",
+      "name": "Exact real part of the point-generated closure",
+      "statement": "Identity terms give D subset cl_H(D); C01 gives every real output in D. Hence cl_H(D) intersect M_real=D, including D empty because there are no nullary vertex generators.",
+      "depends_on": [
+        "A02",
+        "C01"
+      ],
+      "notes": "N01",
+      "scope": "cofinal",
+      "source_labels": [
+        "lem:typed-real-root-closure-cofinal"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C03",
+      "name": "A finite actual hidden member has a finite real generating cover",
+      "statement": "For every real b in B retain b; for each proper coordinate vertex choose one actual real representative x_b with F_J(x_b)=b, possible by onto projections. Their finite union D covers every B vertex by a named term. Coincident representatives are harmless for this cofinality lemma.",
+      "depends_on": [
+        "A02",
+        "D02"
+      ],
+      "notes": "N01",
+      "scope": "cofinal",
+      "source_labels": [
+        "lem:typed-real-root-closure-cofinal"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C04",
+      "name": "The covering closure is finite and induced in the SAME ambient",
+      "statement": "I01 bounds each singleton closure. Unary closure of D is their union, so cl_H(D) is finite and closed. Both B and that closure are induced in actual H; the literal containment from C03 is therefore induced, not merely a homomorphic completion.",
+      "depends_on": [
+        "A02",
+        "I01",
+        "C03"
+      ],
+      "notes": "N01",
+      "scope": "cofinal",
+      "source_labels": [
+        "lem:typed-real-root-closure-cofinal"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C05",
+      "name": "Discharge the general root-cover cofinality provider",
+      "statement": "Length-one roots are exactly the actual original real vertices. I01 supplies finite actual normal forms, and C03 supplies an ambient root presentation for every hidden vertex. Using the actual inclusion B<=H in I03 gives precisely the same finite cl_H(D), with no section or hidden SAP premise.",
+      "depends_on": [
+        "I01",
+        "I03",
+        "C03",
+        "C04"
+      ],
+      "notes": "N01",
+      "scope": "cofinal",
+      "source_labels": [
+        "lem:typed-real-root-closure-cofinal"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C06",
+      "name": "Any order extends along finite induced containment",
+      "statement": "For a strict linear order on B, place the finitely many new closure vertices into any intervals around the ordered old list, e.g. all after it in any order. This gives a strict total order on cl_H(D) restricting to the original one. Empty B causes no exception.",
+      "depends_on": [
+        "C04"
+      ],
+      "notes": "N01",
+      "scope": "cofinal",
+      "source_labels": [
+        "lem:typed-real-root-closure-cofinal"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C07",
+      "name": "Root cofinality is independent of orphan SAP and Ramsey",
+      "statement": "C03-C06 use actual root coverage, finite terms and finite order extension only. The representatives need not be fresh or canonical and no automorphism section is constructed. This statement does not derive a Ramsey arrow or EP.",
+      "depends_on": [
+        "C05",
+        "C06"
+      ],
+      "notes": "N01",
+      "scope": "cofinal",
+      "source_labels": [
+        "lem:typed-real-root-closure-cofinal"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C08",
+      "name": "Exact real-root closure and point-generated cofinality export",
+      "statement": "C02 gives RCF, C04/C05 give literal induced cofinality and C06 gives order extension. The no-real-output hypothesis is substantive, and no orphan-only SAP is used.",
+      "depends_on": [
+        "C02",
+        "C04",
+        "C05",
+        "C06"
+      ],
+      "notes": "N01",
+      "scope": "cofinal",
+      "source_labels": [
+        "lem:typed-real-root-closure-cofinal"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C09",
+      "name": "Choose finitely many actual real-source term functions",
+      "statement": "I01 strict C12 support supplies a finite list T_a from each original sort; include real identity. Output sorts and actual definedness are fixed. Composing with any applicable named function is another actual term function represented in this list. No syntax-length bound is inferred.",
+      "depends_on": [
+        "A02",
+        "I01",
+        "D03"
+      ],
+      "notes": "N02",
+      "scope": "readout",
+      "source_labels": [
+        "lem:typed-finite-ordered-real-readout"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C10",
+      "name": "Old pair type determines every non-order hidden code",
+      "statement": "For fixed terms tau,sigma, equality of their outputs and any named hidden binary relation on them are invariant under Aut(M). A01 complete binary homogeneity makes these properties constant on the whole old pair orbit, including unary/equality type when x=y. Thus every such code is determined by old atomic types, not just selected quotient incidences.",
+      "depends_on": [
+        "A01",
+        "A02",
+        "C09"
+      ],
+      "notes": "N02",
+      "scope": "readout",
+      "source_labels": [
+        "lem:typed-finite-ordered-real-readout"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C11",
+      "name": "Function codes reduce to literal term equalities",
+      "statement": "All named unary maps are total on their specified input sorts. Definedness is fixed by sorts; for any applicable function f, its composition with tau is a listed actual function by C09. The graph equality f(tau(x))=sigma(y) is one of the codes in C10. Unary hidden predicates depend on the old root unary type as well.",
+      "depends_on": [
+        "A02",
+        "C09",
+        "C10"
+      ],
+      "notes": "N02",
+      "scope": "readout",
+      "source_labels": [
+        "lem:typed-finite-ordered-real-readout"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C12",
+      "name": "The presentation quotient reconstructs exactly the generated hidden support",
+      "statement": "Evaluate each (x,tau) in actual H. It is onto cl_H(A), and the equivalence in D04 identifies exactly equal values by C10. C11 reconstructs functions; all named unary/binary hidden relations are read by C10. I04 therefore identifies Q_A canonically with cl_H(A), uniquely over the marked original A.",
+      "depends_on": [
+        "I04",
+        "C09",
+        "C10",
+        "C11",
+        "D04"
+      ],
+      "notes": "N02",
+      "scope": "readout",
+      "source_labels": [
+        "lem:typed-finite-ordered-real-readout"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C13",
+      "name": "The full order is exactly its compatible comparison list",
+      "statement": "Every hidden point has a presentation and every ordered pair has two presentations, possibly from the same real root. Hence the C_tau,sigma list records every comparison. It is compatible iff independent of presentations and descending to a strict total order on Q_A. Arbitrary uninterpreted predicate assignments need not be compatible.",
+      "depends_on": [
+        "C12",
+        "D05"
+      ],
+      "notes": "N03",
+      "scope": "readout",
+      "source_labels": [
+        "lem:typed-finite-ordered-real-readout"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C14",
+      "name": "Visible readout embeddings extend by the actual term formula",
+      "statement": "For a readout embedding f, put fhat(tau(x))=tau(f(x)). C10 reflected equalities make this well-defined and injective; C11 gives function domains/values, all non-order codes are old-type-definable, and the full comparison list gives order preservation/reflection. I04 supplies the exact induced hidden embedding correspondence.",
+      "depends_on": [
+        "I04",
+        "C10",
+        "C11",
+        "C12",
+        "C13"
+      ],
+      "notes": "N03",
+      "scope": "readout",
+      "source_labels": [
+        "lem:typed-finite-ordered-real-readout"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C15",
+      "name": "The extension is unique and hidden embeddings restrict correctly",
+      "statement": "Every generated hidden point is a term value, so a hidden extension of f is forced by C14. Conversely C02 says the real portion of cl_H(A) is exactly A, so restricting any such ordered hidden embedding gives precisely the intended original real domain, with old predicates and comparisons preserved/reflected.",
+      "depends_on": [
+        "C02",
+        "C14"
+      ],
+      "notes": "N03",
+      "scope": "readout",
+      "source_labels": [
+        "lem:typed-finite-ordered-real-readout"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C16",
+      "name": "Same-root comparisons cannot be deleted",
+      "statement": "In the one-MI equivalence example D10, A={x} has hidden closure {x,F_E(x)}. Its two strict orders have no distinct-real-root pair comparison at all but opposite values of C_id,F_E(x,x). Thus diagonal comparison tuples are necessary, and the added binary predicates need not be irreflexive.",
+      "depends_on": [
+        "D10"
+      ],
+      "notes": "N03",
+      "scope": "readout",
+      "source_labels": [
+        "lem:typed-finite-ordered-real-readout"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C17",
+      "name": "The expansion is finite relational and precompact",
+      "statement": "There are finitely many sorts and term-function pairs by C09, so only finitely many added binary symbols. The hidden closure has size<=m_typ|A| by I01; only finitely many strict orders exist on it. Their comparison readouts therefore give finitely many expansions of any finite A.",
+      "depends_on": [
+        "I01",
+        "C09",
+        "C13"
+      ],
+      "notes": "N03",
+      "scope": "readout",
+      "source_labels": [
+        "lem:typed-finite-ordered-real-readout"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C18",
+      "name": "Reasonableness follows from actual unexpanded hidden embeddings",
+      "statement": "An old induced embedding A->B extends to the unexpanded hidden support by C10-C12/I04 (or old homogeneity). Transport the given order on cl_H(A) to its image, extend that finite order to cl_H(B) by C06, then read it back. The SAME old embedding is now a readout embedding.",
+      "depends_on": [
+        "I04",
+        "C06",
+        "C10",
+        "C12",
+        "C13"
+      ],
+      "notes": "N03",
+      "scope": "readout",
+      "source_labels": [
+        "lem:typed-finite-ordered-real-readout"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C19",
+      "name": "Every arbitrary finite hidden host has an allowed real code",
+      "statement": "For finite ordered H0 in K^<, its real portion N(H0) has generated support cl_H0(N(H0)) induced and unary-closed in H0, hence in K. Its full term/order code is an allowed real readout even if H0 has orphan vertices outside that support. Conversely any real readout occurs in its own ordered generated closure.",
+      "depends_on": [
+        "A02",
+        "C12",
+        "C13",
+        "D08"
+      ],
+      "notes": "N03",
+      "scope": "readout",
+      "source_labels": [
+        "lem:typed-finite-ordered-real-readout"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C20",
+      "name": "Length-one real roots have quantifier-free compatibility",
+      "statement": "In the full-code transfer, valid roots are just single original real vertices with their named sort tags. This is quantifier-free and requires no existential quotient representative. C10/C11 show every omitted non-order code is old-type-definable, so omitting it changes no embedding set.",
+      "depends_on": [
+        "A01",
+        "A02",
+        "C10",
+        "C11",
+        "D01"
+      ],
+      "notes": "N03",
+      "scope": "readout",
+      "source_labels": [
+        "lem:typed-finite-ordered-real-readout"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C21",
+      "name": "Discharge the Ramsey tuple-readout application",
+      "statement": "A05 supplies ordered hidden Ramsey. C14/C15 give the natural embedding bijection, C19 exact visible-class agreement for arbitrary hosts and C20 the fixed qf root predicates. I05 transfers the arrows without enlarging the host to a root-generated object or invoking EP/cofinality.",
+      "depends_on": [
+        "A05",
+        "I05",
+        "C14",
+        "C15",
+        "C19",
+        "C20"
+      ],
+      "notes": "N03",
+      "scope": "readout",
+      "source_labels": [
+        "lem:typed-finite-ordered-real-readout"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C22",
+      "name": "The readout theorem retains all four separate conclusions",
+      "statement": "C12 reconstructs hidden support; C13-C16 characterize complete order codes and embeddings; C17/C18 prove finite precompact reasonableness; C21 gives the conditional Ramsey implication. Each uses full actual codes, not an arbitrary reduct deleting diagonal comparisons.",
+      "depends_on": [
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C21"
+      ],
+      "notes": "N03",
+      "scope": "readout",
+      "source_labels": [
+        "lem:typed-finite-ordered-real-readout"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C23",
+      "name": "Finite ordered-real full-code source export",
+      "statement": "C22 proves the complete source lemma. The order language uses binary predicates on original real tuples, including repeated-root tuples. No expansion property follows from this Ramsey implication.",
+      "depends_on": [
+        "C22"
+      ],
+      "notes": "N03",
+      "scope": "readout",
+      "source_labels": [
+        "lem:typed-finite-ordered-real-readout"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C24",
+      "name": "Distinct real vertices have a positive old joining atom",
+      "statement": "In an actual completed hidden member, two distinct original real vertices have one named complete old diversity pair predicate by A01/A02, including mixed real sorts. Thus their pair cannot be split freely across closed factors.",
+      "depends_on": [
+        "A01",
+        "A02"
+      ],
+      "notes": "N04",
+      "scope": "irreducible",
+      "source_labels": [
+        "lem:typed-terminal-hidden-irreducible"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C25",
+      "name": "Proper quotient endpoints have distinct actual real representatives",
+      "statement": "For a pair with a proper endpoint, I08 under A03 gives its actual kernel class infinitely many representatives. Avoid the unique real endpoint if present and the finitely many prior representative choices; for two proper endpoints choose them distinct even with repeated underlying original sort.",
+      "depends_on": [
+        "A03",
+        "I08",
+        "A02"
+      ],
+      "notes": "N04",
+      "scope": "irreducible",
+      "source_labels": [
+        "lem:typed-terminal-hidden-irreducible"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C26",
+      "name": "Every remaining distinct hidden pair has a complete positive cylinder",
+      "statement": "Choose representatives by C25; their fine old atom lies in exactly one actual semantic-cylinder spectrum by I07. That full named binary relation holds on the given hidden pair. Since hidden vertices are distinct, no same-sort hidden diagonal is involved. Named projection/transition graph pairs have this relation too, or are additionally unary-reachable.",
+      "depends_on": [
+        "A02",
+        "I07",
+        "C25"
+      ],
+      "notes": "N04",
+      "scope": "irreducible",
+      "source_labels": [
+        "lem:typed-terminal-hidden-irreducible"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C27",
+      "name": "Actual pair coverage discharges the original irreducibility schema",
+      "statement": "C24/C26 cover EVERY distinct hidden pair by a displayed positive binary relation in the ORIGINAL hidden language. Apply I06 to any finite induced closed completed member, including empty/singleton cases. No artificial universal E* relation is added.",
+      "depends_on": [
+        "I06",
+        "C24",
+        "C26",
+        "D06"
+      ],
+      "notes": "N04",
+      "scope": "irreducible",
+      "source_labels": [
+        "lem:typed-terminal-hidden-irreducible"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C28",
+      "name": "Actual completed hidden irreducibility source export",
+      "statement": "C27 proves the source statement for the FULL actual orbital signature. A reduct keeping only selected cylinders need not have this coverage or irreducibility and is excluded.",
+      "depends_on": [
+        "C27"
+      ],
+      "notes": "N04",
+      "scope": "irreducible",
+      "source_labels": [
+        "lem:typed-terminal-hidden-irreducible"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C29",
+      "name": "The actual hidden class meets hereditary and finite-language inputs",
+      "statement": "K in D06 is hereditary/isomorphism-closed by definition. A02 gives finitely many sorts, relations and unary symbols total on their intended input sorts. All its objects are actual induced closed diagrams, not merely completable partial diagrams.",
+      "depends_on": [
+        "A02",
+        "D06"
+      ],
+      "notes": "N05",
+      "scope": "terminal_hn",
+      "source_labels": [
+        "thm:internal-ramsey-terminal"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C30",
+      "name": "Hereditary SAP is supplied for the SAME whole hidden age",
+      "statement": "Under terminal A01-A04, I09 gives SAP for exactly K, with orphan-only and empty bases. It is not only point-generated SAP, and no arbitrary hidden homogeneity is inferred from original homogeneity alone.",
+      "depends_on": [
+        "A01",
+        "A02",
+        "A03",
+        "A04",
+        "I09",
+        "C29"
+      ],
+      "notes": "N05",
+      "scope": "terminal_hn",
+      "source_labels": [
+        "thm:internal-ramsey-terminal"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C31",
+      "name": "Actual completed irreducibility supplies the direct HN class hypothesis",
+      "statement": "C28 says EVERY completed K member is irreducible in the ORIGINAL language. Thus C29/C30/C28 give all structural class premises of I11; no universal E*-edge adapter or new completed rigidity premise is needed.",
+      "depends_on": [
+        "C28",
+        "C29",
+        "C30"
+      ],
+      "notes": "N05",
+      "scope": "terminal_hn",
+      "source_labels": [
+        "thm:internal-ramsey-terminal"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C32",
+      "name": "The bounded-obstruction hypothesis is used only on admissible sources",
+      "statement": "For a typed partial source whose every one-generated induced closure is an ACTUAL K member, the definition is precisely unary-admissibility. I10 therefore supplies one N and an actual induced unary-closed noncompletable subobject of size<=N whenever that source has no K HE completion. Arbitrary total-unary sources are not included.",
+      "depends_on": [
+        "A01",
+        "A02",
+        "A03",
+        "A04",
+        "I10",
+        "D07"
+      ],
+      "notes": "N05",
+      "scope": "terminal_hn",
+      "source_labels": [
+        "thm:internal-ramsey-terminal"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C33",
+      "name": "HN irreducible-membership enforces the required unary admissibility",
+      "statement": "In the direct HN test every expanded induced irreducible belongs to actual K^<. Its one-generated functional closure is irreducible because a closed free factor containing its generator contains every already-defined iterate. Actual membership forces the correct sort partition, all intended unary functions total and all one-root identities. I12/I11 support C37/C38 make the source eligible for C32, even with initially partial raw unary maps.",
+      "depends_on": [
+        "I11",
+        "I12",
+        "C29",
+        "C31",
+        "C32"
+      ],
+      "notes": "N05",
+      "scope": "terminal_hn",
+      "source_labels": [
+        "thm:internal-ramsey-terminal"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C34",
+      "name": "The larger raw ambient typing adapter remains in force",
+      "statement": "Do not restrict the ambient Ramsey theorem to typed objects without proof. I11 support C22 handles raw one-sorted candidates: singleton generated supports force exactly one sort and correct function domains/values; closed supports of every displayed relation tuple force tuple typing. Only then is the typed bound C32 applied.",
+      "depends_on": [
+        "I11",
+        "C29",
+        "C33"
+      ],
+      "notes": "N05",
+      "scope": "terminal_hn",
+      "source_labels": [
+        "thm:internal-ramsey-terminal"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C35",
+      "name": "Uniform HN local finiteness is the proved direct implication",
+      "statement": "With n=max(1,N), any test candidate over ANY finite ordered ambient satisfying HN conditions (i)-(iii) has an ordered completion by I11 support C34. The small obstruction from C32 would otherwise inherit order on the SAME <=N-point closed set and contradict test(iii). The already proved provider handles order acyclicity, injective completion and extension.",
+      "depends_on": [
+        "I11",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "D07"
+      ],
+      "notes": "N05",
+      "scope": "terminal_hn",
+      "source_labels": [
+        "thm:internal-ramsey-terminal"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C36",
+      "name": "Apply the existing direct HN theorem without duplicate published inputs",
+      "statement": "C29-C35 discharge I11 completely. Its three exact external inputs HN2019v4 Theorem2.19, Proposition2.6 and Theorem2.11 remain the existing receiving obligations in unary_hn. Therefore K^< with arbitrary global strict linear orders is Ramsey. The upstream B058 factorisation-forest binding remains distinct; no new external theorem is introduced in B059.",
+      "depends_on": [
+        "I11",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35"
+      ],
+      "notes": "N05",
+      "scope": "terminal_hn",
+      "source_labels": [
+        "thm:internal-ramsey-terminal"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C37",
+      "name": "Instantiate the conditional real readout with the proved hidden Ramsey class",
+      "statement": "C36 discharges A05 for this actual K^<. Apply C23 on the SAME terminal M/H. Its finite binary comparisons, including x=y, give the Ramsey real expansion and its unique embedding correspondence. This is an application of a parameterized conditional lemma, not an extra hidden Ramsey assumption.",
+      "depends_on": [
+        "C23",
+        "C36"
+      ],
+      "notes": "N05",
+      "scope": "terminal_hn",
+      "source_labels": [
+        "thm:internal-ramsey-terminal"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C38",
+      "name": "Terminal conclusion retains finite relational precompact reasonableness",
+      "statement": "C17/C18 make the added real language finite relational, precompact and reasonable. C37 proves its Ramsey arrows. Orders live on full generated hidden closures; the real output need not be a single literal order on real points alone.",
+      "depends_on": [
+        "C17",
+        "C18",
+        "C37"
+      ],
+      "notes": "N05",
+      "scope": "terminal_hn",
+      "source_labels": [
+        "thm:internal-ramsey-terminal"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C39",
+      "name": "Terminal typed Ramsey source export",
+      "statement": "C29-C38 prove the source terminal theorem with FULL original infinite covers, actual MI-only hidden age and all external/provider qualifications retained. There is no EP or coherent-EPPA assertion.",
+      "depends_on": [
+        "C36",
+        "C37",
+        "C38"
+      ],
+      "notes": "N05",
+      "scope": "terminal_hn",
+      "source_labels": [
+        "thm:internal-ramsey-terminal"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C40",
+      "name": "The safe terminalisation theorem applies to the general actual source",
+      "statement": "Under A06, I13 uses its actual maximal-character/full-triangle safe split proof and finite integer descent. It yields a finite reasonable precompact reduct-surjective unary terminal source Mprime, preserving SAP/HOM CCO and full current child-sort orbital recognition. No infinite-cover premise is assumed for the starting source.",
+      "depends_on": [
+        "A06",
+        "I13",
+        "D09"
+      ],
+      "notes": "N06",
+      "scope": "general_transfer",
+      "source_labels": [
+        "thm:internal-v27-general-ramsey"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C41",
+      "name": "Discharge the terminal theorem on the NEW source",
+      "statement": "Mprime from C40 is homogeneous, finite-sorted, complete symmetric-on-sorts and FULL triangle-defined, with SAP/CCO and all FULL proper covers infinite including Top. These instantiate A01-A04 on Mprime and its actual MI-only hidden signature. They are not additional original-source assumptions.",
+      "depends_on": [
+        "C40",
+        "D09"
+      ],
+      "notes": "N06",
+      "scope": "general_transfer",
+      "source_labels": [
+        "thm:internal-v27-general-ramsey"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C42",
+      "name": "Apply the parameterized terminal result at Mprime",
+      "statement": "Instantiate C39 with the C41 terminal source. It gives a finite relational precompact reasonable Ramsey expansion of Mprime by its actual hidden full order code. The use of C39 is a proved theorem application with its hypotheses discharged at Mprime, not use of A04 on the original general source.",
+      "depends_on": [
+        "C39",
+        "C41"
+      ],
+      "notes": "N06",
+      "scope": "general_transfer",
+      "source_labels": [
+        "thm:internal-v27-general-ramsey"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C43",
+      "name": "Finite relational composition remains precompact and reasonable",
+      "statement": "Keep the finitely many unary terminal labels from C40 and all finite comparison predicates from C42 in the final real language. For finite original A there are finitely many legal unary terminal expansions and finitely many order-code expansions of each; their union is finite. Successive reasonableness extends every old embedding through both stages.",
+      "depends_on": [
+        "C40",
+        "C42"
+      ],
+      "notes": "N06",
+      "scope": "general_transfer",
+      "source_labels": [
+        "thm:internal-v27-general-ramsey"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C44",
+      "name": "The composite class has the required Ramsey arrows",
+      "statement": "The final composite class is exactly the Ramsey expansion supplied by C42 with its terminal unary labels retained. Viewing it as an expansion of the original reduct changes no final embedding set, so its Ramsey property is unchanged. No generic composition-of-Ramsey-classes assertion is required.",
+      "depends_on": [
+        "C42",
+        "C43"
+      ],
+      "notes": "N06",
+      "scope": "general_transfer",
+      "source_labels": [
+        "thm:internal-v27-general-ramsey"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C45",
+      "name": "General symmetric SAP+CCO Ramsey source export",
+      "statement": "C40-C44 prove finite relational precompact Ramsey expansion for the general A06 source, with reasonableness also retained by the construction. This result inherits the actual/FULL-sector and RAW/STRONG EPP qualifications in I13, and makes no expansion-property or coherent-EPPA claim.",
+      "depends_on": [
+        "C40",
+        "C41",
+        "C42",
+        "C43",
+        "C44"
+      ],
+      "notes": "N06",
+      "scope": "general_transfer",
+      "source_labels": [
+        "thm:internal-v27-general-ramsey"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C46",
+      "name": "A quotient-to-real selector would invalidate exact real-root closure",
+      "statement": "If a new map selects a real s(b) from a quotient b, a real x can generate b and then a possibly different real s(b), so cl{x} intersect M_real may strictly exceed{x}. A02 explicitly excludes this. This is a signature boundary, not an allowed terminal operation.",
+      "depends_on": [
+        "D01"
+      ],
+      "notes": "N07",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-real-root-closure-cofinal"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C47",
+      "name": "Orphans do not obstruct actual readout Ramsey transfer",
+      "statement": "An ordered hidden host can contain a proper quotient vertex with no real representative inside that host. C19 uses only its generated real support, which is closed and allowed. I05 colors hidden embeddings via the full-code bijection and needs no root-generated host enlargement. Cofinality C08 is a separate true result, not an extra transfer premise.",
+      "depends_on": [
+        "C08",
+        "C19",
+        "C21"
+      ],
+      "notes": "N07",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-finite-ordered-real-readout"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C48",
+      "name": "Selected cylinder reducts can lose original irreducibility",
+      "statement": "With only real-sort and quotient-sort predicates and no relation joining their distinct values, a completed two-sort object can freely split into its singleton factors. Actual A02 ALL-orbital coverage prevents this. A universal relation would change the signature and is not silently added.",
+      "depends_on": [
+        "C28"
+      ],
+      "notes": "N07",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-terminal-hidden-irreducible"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C49",
+      "name": "The geometry supplies a substantive obstruction bound",
+      "statement": "Completed irreducibility and SAP alone do not imply bounded obstructions. In an equivalence-coloured old class, an arbitrary long same-class path closed by a different-class edge is a minimal cycle obstruction whose proper induced pieces complete. I10 is an independent geometric input, not obtained from HN irreducibility.",
+      "depends_on": [
+        "I10",
+        "C32"
+      ],
+      "notes": "N07",
+      "scope": "boundary",
+      "source_labels": [
+        "thm:internal-ramsey-terminal"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C50",
+      "name": "Published bindings are reused with their representation contracts",
+      "statement": "B059 creates no duplicate external provider record. Existing HN2.19/2.6/2.11 bindings retain partial-function domains, sort encoding, strict/global order and embeddings-vs-copies adapters. B058 E01 is separately the factorisation-forest receiving obligation; finite controls prove none of those published theorems.",
+      "depends_on": [
+        "I10",
+        "I11",
+        "C35",
+        "C36"
+      ],
+      "notes": "N07",
+      "scope": "boundary",
+      "source_labels": [
+        "thm:internal-ramsey-terminal"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C51",
+      "name": "The three output properties are not conflated",
+      "statement": "Finite relationality/precompactness/reasonableness are C17/C18/C43; Ramsey is C21/C36/C44. None implies an expansion property automatically, and no coherent-EPPA or universal automorphism section is constructed here. Higher-support statements remain subject to their earlier separate frozen-factor interfaces.",
+      "depends_on": [
+        "C23",
+        "C39",
+        "C45"
+      ],
+      "notes": "N07",
+      "scope": "boundary",
+      "source_labels": [
+        "thm:internal-v27-general-ramsey"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C52",
+      "name": "Finite diagnostics test code fidelity and order scope only",
+      "statement": "Controls enumerate actual term presentation quotients, same-root diagonal order distinctions, unique real/hidden embedding correspondence, finite order-extension reasonableness and actual pair-covered irreducibility. Partial-domain one-generated examples distinguish admissibility from mere closedness. No finite window certifies Ramsey arrows, arbitrary N-bounds, HN, forest theorem or Lean correctness.",
+      "depends_on": [
+        "C08",
+        "C23",
+        "C28",
+        "C39",
+        "C45"
+      ],
+      "notes": "N07",
+      "scope": "boundary",
+      "source_labels": [
+        "thm:internal-v27-general-ramsey"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    }
+  ],
+  "source_result_files": [
+    "sections/v27/17_hidden_hn_terminal_readout.tex",
+    "sections/v27/18_unary_hn_transfer.tex"
+  ],
+  "exports": [
+    {
+      "source_label": "lem:typed-real-root-closure-cofinal",
+      "claims": [
+        "C08"
+      ]
+    },
+    {
+      "source_label": "lem:typed-finite-ordered-real-readout",
+      "claims": [
+        "C23"
+      ]
+    },
+    {
+      "source_label": "lem:typed-terminal-hidden-irreducible",
+      "claims": [
+        "C28"
+      ]
+    },
+    {
+      "source_label": "thm:internal-ramsey-terminal",
+      "claims": [
+        "C39"
+      ]
+    },
+    {
+      "source_label": "thm:internal-v27-general-ramsey",
+      "claims": [
+        "C45"
+      ]
+    }
+  ],
+  "auxiliary_exports": [
+    {
+      "source_label": "eq:typed-real-root-closure",
+      "claims": [
+        "C02"
+      ],
+      "source": {
+        "file": "sections/v27/17_hidden_hn_terminal_readout.tex",
+        "anchor": "\\label{eq:typed-real-root-closure}"
+      }
+    },
+    {
+      "source_label": "eq:typed-ordered-real-readout",
+      "claims": [
+        "C13"
+      ],
+      "source": {
+        "file": "sections/v27/17_hidden_hn_terminal_readout.tex",
+        "anchor": "\\label{eq:typed-ordered-real-readout}"
+      }
+    }
+  ],
+  "source_files": [
+    {
+      "file": "sections/binary_unary_irreducible_local_cover.tex",
+      "git_blob": "a91af6bdd0fd7de6c7266e5c908fde78192f9087"
+    },
+    {
+      "file": "sections/full_code_tuple_ep_transfer.tex",
+      "git_blob": "0c17201c80dbfa45e222553919f3545c95733c28"
+    },
+    {
+      "file": "sections/real_hull/07_sap_mi_intersection_geometry.tex",
+      "git_blob": "7d681c9087c1d7f41ea65a834158daf456ee5fd2"
+    },
+    {
+      "file": "sections/unary_hn_transfer.tex",
+      "git_blob": "1efc39213f95aa916353eecb639594cb156b7b41"
+    },
+    {
+      "file": "sections/v27/06_legacy_finite_covers.tex",
+      "git_blob": "67eda024d68a41c2dab17bf99fe440d6a137af66"
+    },
+    {
+      "file": "sections/v27/07_typed_raw_strong_transition.tex",
+      "git_blob": "6dc7e4c7aa452b179e95cc502b4daf4d2b6592d9"
+    },
+    {
+      "file": "sections/v27/10_typed_unary_terms_return.tex",
+      "git_blob": "7edb9833681c84ab9e15918a004137d7f2c47258"
+    },
+    {
+      "file": "sections/v27/13_actual_hidden_sap_readings.tex",
+      "git_blob": "9b01d7ebe43b4df87823c1127f101de49c2738c5"
+    },
+    {
+      "file": "sections/v27/16_old_idempotent_forest.tex",
+      "git_blob": "b96c51e5f950dea05911438e6022d35e89f5695e"
+    },
+    {
+      "file": "sections/v27/17_hidden_hn_terminal_readout.tex",
+      "git_blob": "c11cf17b014a4c3c47bd72322a54867b6f06b2e2"
+    },
+    {
+      "file": "sections/v27/18_unary_hn_transfer.tex",
+      "git_blob": "70ca6cf0482331ddac045512a80dbf70f1feed68"
+    }
+  ],
+  "dependency_firewalls": [
+    {
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08"
+      ],
+      "forbid": [
+        "A03",
+        "A04",
+        "A05",
+        "A06",
+        "I04",
+        "I05",
+        "I06",
+        "I07",
+        "I08",
+        "I09",
+        "I10",
+        "I11",
+        "I12",
+        "I13",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40",
+        "C41",
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46",
+        "C47",
+        "C48",
+        "C49",
+        "C50",
+        "C51",
+        "C52"
+      ]
+    },
+    {
+      "claims": [
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23"
+      ],
+      "forbid": [
+        "A03",
+        "A04",
+        "A06",
+        "I06",
+        "I07",
+        "I08",
+        "I09",
+        "I10",
+        "I11",
+        "I12",
+        "I13",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40",
+        "C41",
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46",
+        "C47",
+        "C48",
+        "C49",
+        "C50",
+        "C51",
+        "C52"
+      ]
+    },
+    {
+      "claims": [
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28"
+      ],
+      "forbid": [
+        "A04",
+        "A05",
+        "A06",
+        "I01",
+        "I02",
+        "I03",
+        "I04",
+        "I05",
+        "I09",
+        "I10",
+        "I11",
+        "I12",
+        "I13",
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40",
+        "C41",
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46",
+        "C47",
+        "C48",
+        "C49",
+        "C50",
+        "C51",
+        "C52"
+      ]
+    }
+  ],
+  "application_contracts": [
+    {
+      "consumer": "C37",
+      "lemma": "C23",
+      "discharge": "C36 supplies A05 for the SAME actual ordered hidden envelope; no additional Ramsey assumption survives this theorem application."
+    },
+    {
+      "consumer": "C42",
+      "lemma": "C39",
+      "discharge": "C40/I13 produces a NEW finite-sorted terminal source. C41 discharges A01-A04 and the actual A02 hidden signature at that source; the general starting source only satisfies A06 and is not assumed terminal. All terminal dependencies are bound lemma parameters in this application."
+    }
+  ],
+  "tasks": [
+    {
+      "id": "T01",
+      "name": "Exact real-root closure and finite actual cofinality",
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Keep literal no-quotient-to-real signature, actual finite term FUNCTIONS and ALL same-root/cross-root code comparisons. Complete old unary/pair/equality types determine non-order codes. Discharge hereditary hidden SAP, actual completed irreducibility and the unary-admissible geometric N-bound before applying the existing direct HN theorem; raw one-sorted typing/partial-domain adapters remain. Reuse its published HN bindings without duplication and retain separate B058 forest binding. Apply terminal theorem to the NEW safely terminalised source, not by assuming original terminality. No EP/coherent-EPPA assertion."
+    },
+    {
+      "id": "T02",
+      "name": "Complete finite non-order term code",
+      "claims": [
+        "C09",
+        "C10",
+        "C11",
+        "C12"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Keep literal no-quotient-to-real signature, actual finite term FUNCTIONS and ALL same-root/cross-root code comparisons. Complete old unary/pair/equality types determine non-order codes. Discharge hereditary hidden SAP, actual completed irreducibility and the unary-admissible geometric N-bound before applying the existing direct HN theorem; raw one-sorted typing/partial-domain adapters remain. Reuse its published HN bindings without duplication and retain separate B058 forest binding. Apply terminal theorem to the NEW safely terminalised source, not by assuming original terminality. No EP/coherent-EPPA assertion."
+    },
+    {
+      "id": "T03",
+      "name": "Full order readout, embeddings and conditional Ramsey",
+      "claims": [
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23"
+      ],
+      "depends_on": [
+        "T01",
+        "T02"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Keep literal no-quotient-to-real signature, actual finite term FUNCTIONS and ALL same-root/cross-root code comparisons. Complete old unary/pair/equality types determine non-order codes. Discharge hereditary hidden SAP, actual completed irreducibility and the unary-admissible geometric N-bound before applying the existing direct HN theorem; raw one-sorted typing/partial-domain adapters remain. Reuse its published HN bindings without duplication and retain separate B058 forest binding. Apply terminal theorem to the NEW safely terminalised source, not by assuming original terminality. No EP/coherent-EPPA assertion."
+    },
+    {
+      "id": "T04",
+      "name": "Actual hidden irreducibility without E*",
+      "claims": [
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Keep literal no-quotient-to-real signature, actual finite term FUNCTIONS and ALL same-root/cross-root code comparisons. Complete old unary/pair/equality types determine non-order codes. Discharge hereditary hidden SAP, actual completed irreducibility and the unary-admissible geometric N-bound before applying the existing direct HN theorem; raw one-sorted typing/partial-domain adapters remain. Reuse its published HN bindings without duplication and retain separate B058 forest binding. Apply terminal theorem to the NEW safely terminalised source, not by assuming original terminality. No EP/coherent-EPPA assertion."
+    },
+    {
+      "id": "T05",
+      "name": "Discharge actual direct HN and terminal arrow",
+      "claims": [
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39"
+      ],
+      "depends_on": [
+        "T03",
+        "T04"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Keep literal no-quotient-to-real signature, actual finite term FUNCTIONS and ALL same-root/cross-root code comparisons. Complete old unary/pair/equality types determine non-order codes. Discharge hereditary hidden SAP, actual completed irreducibility and the unary-admissible geometric N-bound before applying the existing direct HN theorem; raw one-sorted typing/partial-domain adapters remain. Reuse its published HN bindings without duplication and retain separate B058 forest binding. Apply terminal theorem to the NEW safely terminalised source, not by assuming original terminality. No EP/coherent-EPPA assertion."
+    },
+    {
+      "id": "T06",
+      "name": "Safe finite terminalisation and general Ramsey transfer",
+      "claims": [
+        "C40",
+        "C41",
+        "C42",
+        "C43",
+        "C44",
+        "C45"
+      ],
+      "depends_on": [
+        "T05"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Keep literal no-quotient-to-real signature, actual finite term FUNCTIONS and ALL same-root/cross-root code comparisons. Complete old unary/pair/equality types determine non-order codes. Discharge hereditary hidden SAP, actual completed irreducibility and the unary-admissible geometric N-bound before applying the existing direct HN theorem; raw one-sorted typing/partial-domain adapters remain. Reuse its published HN bindings without duplication and retain separate B058 forest binding. Apply terminal theorem to the NEW safely terminalised source, not by assuming original terminality. No EP/coherent-EPPA assertion."
+    },
+    {
+      "id": "T07",
+      "name": "Signature, diagonal and receiving boundaries",
+      "claims": [
+        "C46",
+        "C47",
+        "C48",
+        "C49",
+        "C50",
+        "C51",
+        "C52"
+      ],
+      "depends_on": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Keep literal no-quotient-to-real signature, actual finite term FUNCTIONS and ALL same-root/cross-root code comparisons. Complete old unary/pair/equality types determine non-order codes. Discharge hereditary hidden SAP, actual completed irreducibility and the unary-admissible geometric N-bound before applying the existing direct HN theorem; raw one-sorted typing/partial-domain adapters remain. Reuse its published HN bindings without duplication and retain separate B058 forest binding. Apply terminal theorem to the NEW safely terminalised source, not by assuming original terminality. No EP/coherent-EPPA assertion."
+    }
+  ],
+  "controls": [
+    {
+      "id": "K01",
+      "check": "Actual one-MI finite windows test term quotient reconstruction, literal root cover/cofinality, complete real/hidden embedding correspondence and all finite order extension choices, retaining diagonal comparisons."
+    },
+    {
+      "id": "K02",
+      "check": "Actual complete pair-covered hidden members are irreducible under closed free-amalgam tests; raw partial-domain one-generated controls distinguish actual K membership from mere totality/closedness. Finite diagnostics certify no Ramsey/HN/forest or geometric N theorem."
+    }
+  ],
+  "overview_mermaid": [
+    "flowchart TD",
+    "  T[\"Finite actual term functions\"] --> R[\"Exact real closure and full code\"]",
+    "  R --> C[\"All comparisons including x=y\"]",
+    "  C --> V[\"Finite reasonable precompact readout\"]",
+    "  S[\"Actual hereditary hidden SAP\"] --> H[\"Direct unary HN application\"]",
+    "  I[\"ALL orbital irreducibility\"] --> H",
+    "  B[\"Restricted admissible obstruction bound\"] --> H",
+    "  H --> V",
+    "  V --> A[\"Terminal real Ramsey expansion\"]",
+    "  U[\"Actual safe finite unary terminalisation\"] --> G[\"General symmetric SAP+CCO expansion\"]",
+    "  A --> G"
+  ],
+  "overview_notes": [
+    "Five final Ramsey II results and two equations. No external theorem is duplicated; three HN obligations are inherited from B037 and factorisation forests from B058.",
+    "Same-real-root order comparisons are substantive even with one MI quotient and one real root.",
+    "Actual irreducible-member and unary-admissibility conditions are discharged before the existing direct HN theorem is used.",
+    "Final general theorem applies the parameterized terminal theorem to a NEW finite-sorted safe expansion; no original terminality or expansion property is assumed."
+  ],
+  "article_feedback": [
+    {
+      "id": "F01",
+      "kind": "SOURCE_HYPOTHESIS_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/v27/18_unary_hn_transfer.tex",
+        "anchor": "every proper same-sort"
+      },
+      "finding": "The terminal application uses the standing FULL infinite-cover premise, including covers whose upper endpoint is Top; the compressed phrase proper cover should retain that convention explicitly.",
+      "proposed_article_change": "Repeat including covers with universal upper endpoint in the terminal theorem statement, matching ass:standing and the actual providers.",
+      "caller_effect": "No additional assumption in the standing terminal branch; avoids reading a weaker terminal condition.",
+      "proof_claims": [
+        "C30",
+        "C32",
+        "C39",
+        "C41"
+      ]
+    },
+    {
+      "id": "F02",
+      "kind": "PROOF_PROVIDER_PRECISION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/v27/17_hidden_hn_terminal_readout.tex",
+        "anchor": "finite list"
+      },
+      "finding": "Finite singleton closures do not alone state a finite set of term functions; the proved B052 C12 ancestor supplies that exact function theorem in this transitive actual setting.",
+      "proposed_article_change": "Reference the explicit finite-function normal-form argument when choosing T_a; retain the diagonal comparison tuples.",
+      "caller_effect": "No new mathematical premise or export; exact proved support is recorded.",
+      "proof_claims": [
+        "C09",
+        "C16",
+        "C17"
+      ]
+    }
+  ],
+  "review": {
+    "date": "2026-10-29",
+    "source_unchanged": true,
+    "source_signature_repairs": 0,
+    "unexpanded_provider_labels": [],
+    "proof_status": "HUMAN_EXPANDED_NOT_LEAN; independent concrete all-claim/notes audits and parent synthesis PASS. One TV1 proof-equation repair and six receiving obligations explicitly retained; frozen source and previous qualifications unchanged.",
+    "independent_reviews": [
+      "Author checked all five source proofs and exact previous full-code/directHN/actualSAP contracts; no repeated published-provider records",
+      "Final audit PASS: corrected off-diagonal root saturation; literal OLD source equations and one-generated holonomy; exact idempotent envelope; maximal disjoint forest gaps and original whole-word reconstruction; HN applied only through its admissible-input gate and complete real order code. Six external receiving obligations remain: five HN/HKN plus the previously cited factorization-forest theorem."
+    ],
+    "boundaries": [
+      "No quotient-to-real selectors",
+      "ALL diagonal comparison tuples retained",
+      "Actual completed hidden orbitals for irreducibility",
+      "Restricted admissible N-bound, not arbitrary unary sources",
+      "No EP or coherent EPPA from Ramsey",
+      "General source terminalised before terminal theorem"
+    ]
+  }
+}

@@ -1,0 +1,1241 @@
+{
+  "schema_version": 1,
+  "id": "unary_terms_return",
+  "index_title": "Typed unary term functions, literal kernels and canonical quotient returns",
+  "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+  "status": "HUMAN_EXPANDED_NOT_LEAN",
+  "scope": "Private B052: four source10 results and QT-NF, ten definitions, 39 human claims and six tasks. Bound actual and unary-admissible one-generated closures through finitely many term FUNCTIONS; retain literal named factorisation and canonical RAW return holonomy. Malformed arbitrarily long transition cycles show why the restriction to unary-admissible HN inputs is essential. Generic group-action holonomy is separated from the old SAP/FULL NR2 named-coordinate upgrade. No hidden SAP, homogeneity or HN theorem is asserted.",
+  "scope_vocabulary": [
+    "support",
+    "signature",
+    "normal_form",
+    "closure",
+    "malformed",
+    "kernel",
+    "factorisation",
+    "return",
+    "named_return",
+    "boundary"
+  ],
+  "scope_explanation": "statement and proof. The actual terminal signature is finite WITH its quotient identities, not an arbitrary interpretation of finitely many unary symbols. Quotient identity is an existing term, never a STRONG old equality atom. Named represented proper kernels are strictly above real Id and below Top. Generic action statements supply invariant kernels only.",
+  "control_script": "tools/check_unary_terms_return_controls.py",
+  "assumptions": [
+    {
+      "id": "A01",
+      "name": "Actual finite typed original and quotient interpretation",
+      "statement": "M is a complete homogeneous finite binary relational source with finitely many nonempty transitive named real sorts and finitely many actual full-Aut pair orbitals per typed pair. Actual same-sort pair orbitals are symmetric; mixed-sort orbitals have their paired typed converses. Logical real identity is distinguished. Every hidden coordinate is the ACTUAL quotient by a represented proper meet-irreducible J, Id<J<Top. The interpreted finite language has real projections F_J, upward maps u_JK for represented J<=K, canonical quotient transitions and their inverse terms. Its functions are interpreted by actual quotients, not arbitrary total-unary operations. Named maps are equivariant."
+    },
+    {
+      "id": "A02",
+      "name": "Visible real SAP",
+      "statement": "The actual original age has SAP over complete finite induced old bases. This is used only to prevent a nonzero proper quotient from transporting to an old real equality kernel. It does not imply arbitrary hereditary hidden SAP."
+    },
+    {
+      "id": "A03",
+      "name": "Terminal FULL no-relative-index-two gate",
+      "statement": "On EVERY original named real sort the FULL invariant-equivalence lattice has no index-two interval. I05 identifies it with full RAW exact equivalences before transported MI kernels are declared represented/named. This is not merely a condition on an already represented sublattice. Neither semantic CCO nor hidden SAP is used in the present proofs."
+    },
+    {
+      "id": "A04",
+      "name": "Actual completed and unary-admissible finite hidden sources",
+      "statement": "An actual completed member is a finite unary-closed induced substructure of the actual interpreted hidden structure, including quotient-only orphan substructures. A unary-admissible partial source has, for EVERY vertex, its FULL induced one-generated closure, including all functions, literal equalities and internal named binary data, isomorphic to an actual completed one-generated member. The whole partial source need not be completed or completable."
+    },
+    {
+      "id": "A05",
+      "name": "Separate generic closed RAW word",
+      "statement": "Independently G acts transitively on nonempty typed carriers a_i. Each P_i:a_(i-1)->a_i is a NONEMPTY G-invariant actual relation, n>=1, a_n is literally a_0, and the equality-inclusive existential RAW product P_1;...;P_n is contained in a G-invariant equivalence E_0. Every coarser J>=E_0 is invariant. For definability conclusions the relations, E_0 and J have given parameter-free first-order definitions; finite named full-Aut orbitals discharge this in the actual source. No SAP/CCO/faithfulness or naming is supplied by this generic premise."
+    },
+    {
+      "id": "A06",
+      "name": "Standard unary irreducibility test for the diagnostic",
+      "statement": "A unary-functional substructure is closed under all named unary functions. An irreducible structure is not a free amalgam of two proper substructures; a homomorphism-embedding is injective on every irreducible substructure. This is the elementary condition tested by the malformed-cycle diagnostic, without importing a published HN theorem. HN applicability and its three existing external receiving bindings remain outside this package."
+    }
+  ],
+  "imports": [
+    {
+      "id": "I01",
+      "name": "lem:typed-transition-composition-normal-form",
+      "provider_module": "transition_closure",
+      "source_label": "lem:typed-transition-composition-normal-form",
+      "provider_claims": [
+        "C40"
+      ],
+      "statement": "Literal RAW transition composition and upward interchange, finite induced term FUNCTIONS, and represented membership after actual FULL NR2/noncollapse. Use these exact named-coordinate contracts without transporting an arbitrary invariant kernel into the language.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I02",
+      "name": "lem:no-real-algebraic-transition",
+      "provider_module": "transition_closure",
+      "source_label": "lem:no-real-algebraic-transition",
+      "provider_claims": [
+        "C30"
+      ],
+      "statement": "Under visible original SAP a transported nonzero proper quotient stays nonzero and proper. No generic group-action noncollapse or hidden SAP is inferred.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I03",
+      "name": "lem:typed-quotient-transport",
+      "provider_module": "quotient_transport",
+      "source_label": "lem:typed-quotient-transport",
+      "provider_claims": [
+        "C05",
+        "C08",
+        "C11",
+        "C13",
+        "C14"
+      ],
+      "statement": "Canonical equivariant quotient bijections and upper-invariant-interval isomorphisms, preserving proper MI and composing on the LITERAL middle kernel. Actual finite full-Aut orbital naming supplies definability; arbitrary-G invariance alone does not.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I04",
+      "name": "lem:foundational-typed-return-holonomy",
+      "provider_module": "quotient_transport",
+      "source_label": "lem:foundational-typed-return-holonomy",
+      "provider_claims": [
+        "C18",
+        "C21",
+        "C23",
+        "C24",
+        "C25",
+        "C26"
+      ],
+      "statement": "A nonempty typed RAW closed word contained in E0 canonically labels every position by a0/E0. Exact prefix/factor kernels, compatible quotient bijections and identity holonomy hold simultaneously for all coarser invariant J. Generic objects are invariant, not automatically named/full RAW exact.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I05",
+      "name": "lem:typed-all-invariant-equivalences-raw-word",
+      "provider_module": "real_closure",
+      "source_label": "lem:typed-all-invariant-equivalences-raw-word",
+      "provider_claims": [
+        "C25",
+        "C26",
+        "C27"
+      ],
+      "statement": "FULL original NR2 supplies actual full RAW words for EVERY invariant equivalence. This identifies transported full MI with represented exact MI; exclude the separate distributivity claim C28.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I06",
+      "name": "lem:typed-identity-transport-redundant",
+      "provider_module": "transition_closure",
+      "source_label": "lem:typed-identity-transport-redundant",
+      "provider_claims": [
+        "C32"
+      ],
+      "statement": "A same-sort RAW transport containing real Id and quotient-functional over J induces the EXISTING identity on J-classes, with J^R=J. Do not introduce an identity-labelled STRONG atom.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    }
+  ],
+  "definitions": [
+    {
+      "id": "D01",
+      "name": "Literal finite coordinate language",
+      "statement": "Real sorts a, actual quotients B_(a,J), projections F_J, upward maps u_JK, actual canonical transitions pi_(R,J) and existing identity terms. All maps carry literal domain/codomain objects.",
+      "depends_on": [],
+      "notes": "N01",
+      "source": {
+        "file": "sections/v27/10_typed_unary_terms_return.tex",
+        "anchor": "\\label{lem:typed-unary-closure-bound}"
+      }
+    },
+    {
+      "id": "D02",
+      "name": "Term function rather than syntax",
+      "statement": "A unary term is composable syntax; its term function is its actual interpreted map in the fixed hidden structure. Distinct terms can denote the same function, including repeated transition-inverse loops.",
+      "depends_on": [],
+      "notes": "N02",
+      "source": {
+        "file": "sections/v27/10_typed_unary_terms_return.tex",
+        "anchor": "\\label{lem:typed-unary-closure-bound}"
+      }
+    },
+    {
+      "id": "D03",
+      "name": "Upward inversion count",
+      "statement": "For a source-to-target word count pairs consisting of a transition and an upward map occurring later. An adjacent transition/upward interchange reduces this nonnegative integer by one.",
+      "depends_on": [],
+      "notes": "N02",
+      "source": {
+        "file": "sections/v27/10_typed_unary_terms_return.tex",
+        "anchor": "\\label{lem:typed-unary-closure-bound}"
+      }
+    },
+    {
+      "id": "D04",
+      "name": "Normal-form index set and explicit bound",
+      "statement": "For each real source index the real identity and all pairs (represented source kernel K, actual typed relation T from that original sort). For coordinate source B_(a,J), index all (represented K>=J, actual T), including identities as already existing functions. These finite sets overcount the possible normal-form functions. m_typ is the maximum of their cardinalities over all source hidden sorts, enlarged to at least one.",
+      "depends_on": [],
+      "notes": "N02",
+      "source": {
+        "file": "sections/v27/10_typed_unary_terms_return.tex",
+        "anchor": "\\label{lem:typed-unary-closure-bound}"
+      }
+    },
+    {
+      "id": "D05",
+      "name": "Unary-admissible partial input",
+      "statement": "For every vertex v, cl_C(v) with its FULL induced hidden diagram is isomorphic to an ACTUAL completed one-generated member. This includes binary data within the closure and all unary term equalities, not just cardinality or unary closedness.",
+      "depends_on": [],
+      "notes": "N03",
+      "source": {
+        "file": "sections/v27/10_typed_unary_terms_return.tex",
+        "anchor": "\\label{def:typed-unary-admissible-source}"
+      }
+    },
+    {
+      "id": "D06",
+      "name": "Transition-closed root signature",
+      "statement": "For an actual guarded root pair x D y and represented J with D;D^op subset J, retain pi_(D,J)(F_J(x))=F_(J^D)(y) and full functional closure. If D is a theta intersection, additionally retain each branch-forced identity at its own quotient-functional kernel.",
+      "depends_on": [],
+      "notes": "N01",
+      "source": {
+        "file": "sections/v27/10_typed_unary_terms_return.tex",
+        "anchor": "\\label{def:typed-transition-root-signature}"
+      }
+    },
+    {
+      "id": "D07",
+      "name": "Malformed cyclic source",
+      "statement": "On quotient sorts QA,QB use x_i,y_i, i modulo n>=2, f(x_i)=y_i and g(y_i)=x_(i+1); no real roots or displayed binary orbitals. Any additional unary symbols in the actual common-block signature are interpreted consistently with their indicated source/target; nontrivial extra functions do not exist in this diagnostic.",
+      "depends_on": [],
+      "notes": "N04",
+      "source": {
+        "file": "sections/v27/10_typed_unary_terms_return.tex",
+        "anchor": "\\label{ex:typed-malformed-unary-long-cycles}"
+      }
+    },
+    {
+      "id": "D08",
+      "name": "Real-source kernel K_tau",
+      "statement": "For real identity tau use actual Id_a. Otherwise a literal normal form theta composed F_K has K_tau=K, a represented proper MI; theta is an actual named bijection or existing quotient identity.",
+      "depends_on": [],
+      "notes": "N05",
+      "source": {
+        "file": "sections/v27/10_typed_unary_terms_return.tex",
+        "anchor": "\\label{lem:typed-coordinate-normal-form}"
+      }
+    },
+    {
+      "id": "D09",
+      "name": "Generic prefixes and canonical labels",
+      "statement": "R_0=Id_(a0), R_i=P_1;...;P_i. For y at position i, lambda_i(y) is the E0-class of ANY R_i-predecessor; a common suffix proves well-definedness. All position labels live in the SAME a0/E0.",
+      "depends_on": [],
+      "notes": "N06",
+      "source": {
+        "file": "sections/v27/10_typed_unary_terms_return.tex",
+        "anchor": "\\label{lem:typed-return-transport}"
+      }
+    },
+    {
+      "id": "D10",
+      "name": "Coarsened return kernels",
+      "statement": "For J>=E0 put J_i=R_i^op;J;R_i. The corresponding quotient labels are lambda_i followed by a0/E0->a0/J. Adjacent maps use exactly these J_i on both incident macro sides.",
+      "depends_on": [],
+      "notes": "N06",
+      "source": {
+        "file": "sections/v27/10_typed_unary_terms_return.tex",
+        "anchor": "\\label{lem:typed-return-transport}"
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "name": "Actual invariant relations are nonempty serial and coserial",
+      "statement": "A nonempty invariant typed relation has a successor at every source and predecessor at every target by moving either endpoint of one witness under transitivity. A compatible finite RAW product is therefore nonempty invariant and belongs to one of finitely many old typed relation families.",
+      "depends_on": [
+        "A01"
+      ],
+      "notes": "N01",
+      "scope": "support",
+      "source_labels": [
+        "lem:typed-unary-closure-bound"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C02",
+      "name": "Terminal representation is discharged before named transport",
+      "statement": "I05 under A03 makes every actual invariant original equivalence full RAW exact. Thus a FULL invariant proper MI is a represented coordinate, once nonzero is checked separately. No semantic CCO or distributivity is used.",
+      "depends_on": [
+        "A01",
+        "A03",
+        "I05"
+      ],
+      "notes": "N01",
+      "scope": "support",
+      "source_labels": [
+        "lem:typed-unary-closure-bound"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C03",
+      "name": "Proper nonzero MI objects remain named under transport and pullback",
+      "statement": "I03 gives an isomorphism of full upper intervals and preserves proper MI: any equivalences meeting in H0>=E already lie in that interval. Quotient bijectivity preserves non-Top; I02 under A02 excludes old equality for a transported E>Id. Pullbacks H0>=E>Id are already nonzero. C02 then supplies represented named objects.",
+      "depends_on": [
+        "A01",
+        "A02",
+        "C02",
+        "I02",
+        "I03"
+      ],
+      "notes": "N01",
+      "scope": "support",
+      "source_labels": [
+        "lem:typed-unary-closure-bound"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C04",
+      "name": "Relations sharing an atom have the same canonical quotient map",
+      "statement": "If nonempty R,S both contain an actual atom c and are quotient-functional over J, choose a c-predecessor x of EVERY target y using C01. The unique predecessor J-class for R,S,c is [x]_J. Hence their lambda maps agree pointwise, their transported kernels are literally equal, and their inverse quotient bijections coincide. Equality of R and S is not claimed.",
+      "depends_on": [
+        "A01",
+        "C01",
+        "I03"
+      ],
+      "notes": "N01",
+      "scope": "signature",
+      "source_labels": [
+        "lem:typed-unary-closure-bound"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C05",
+      "name": "Direct and branch-forced root identities are simultaneously consistent",
+      "statement": "At any actual x D y each recorded quotient-functional relation sends its source coordinate to the actual target coordinate of y. At a common kernel C04 identifies direct and branch transition functions whenever a shared atom witnesses them; kernels differing across branches retain their own equations. Applying further actual named functions preserves every identity. This constructs no completion for an arbitrary partial signature.",
+      "depends_on": [
+        "D06",
+        "C03",
+        "C04"
+      ],
+      "notes": "N01",
+      "scope": "signature",
+      "source_labels": [
+        "lem:typed-unary-closure-bound"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C06",
+      "name": "One upward interchange is a literal pointwise equality",
+      "statement": "For transition q_(R,E) to F=E^R and upward F<=H, I03 yields the unique H0>=E with H0^R=H. C03 makes H0 represented proper MI. Both u_(F,H) after q_(R,E) and q_(R,H0) after u_(E,H0) send an E-class to the SAME H-class of its R-neighbours. This is I01 upward interchange on actual quotient objects.",
+      "depends_on": [
+        "D01",
+        "C03",
+        "I01",
+        "I03"
+      ],
+      "notes": "N02",
+      "scope": "normal_form",
+      "source_labels": [
+        "lem:typed-unary-closure-bound"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C07",
+      "name": "The normalization rewrite terminates",
+      "statement": "Replacing an adjacent transition then upward map by upward then transition as in C06 decreases D03 by exactly one. Whenever an inversion remains some adjacent such pair exists after identity removals. Thus finitely many replacements collect all upward maps before all transitions. Infinite term SYNTAX is not ruled out.",
+      "depends_on": [
+        "D02",
+        "D03",
+        "C06"
+      ],
+      "notes": "N02",
+      "scope": "normal_form",
+      "source_labels": [
+        "lem:typed-unary-closure-bound"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C08",
+      "name": "Consecutive upward maps collapse to an initial quotient map",
+      "statement": "Literal quotient projection sends an E-class to its containing H-class, so upward maps compose by inclusion. For a real source their composite with the initial F_E is F_K; for quotient source B_(a,J) it is u_(J,K), possibly existing identity. The resulting K is represented and remains proper/nonzero. No term can first move from a quotient back to a real point.",
+      "depends_on": [
+        "A01",
+        "D01",
+        "C03",
+        "C07"
+      ],
+      "notes": "N02",
+      "scope": "normal_form",
+      "source_labels": [
+        "lem:typed-unary-closure-bound"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C09",
+      "name": "Transition-only words collapse to one actual RAW relation",
+      "statement": "Inductively compose actual transport relations in their typed order. I01/I03 show the composite T is nonempty, T;T^op lies in the initial kernel, its final transported kernel is the literal last one and q_T is exactly the composed maps. C01 puts T in a finite actual Rel family. Mixed-sort products are not commuted.",
+      "depends_on": [
+        "C01",
+        "C03",
+        "I01",
+        "I03"
+      ],
+      "notes": "N02",
+      "scope": "normal_form",
+      "source_labels": [
+        "lem:typed-unary-closure-bound"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C10",
+      "name": "Identity-containing RAW returns reduce to an existing identity",
+      "statement": "If the collapsed same-sort T contains logical real Id, I06 proves K^T=K and q_T=id on the existing K-coordinate. It is represented by that existing term. This includes pure Id and relations containing both Id and diversity; no artificial STRONG identity atom is created.",
+      "depends_on": [
+        "C09",
+        "I06"
+      ],
+      "notes": "N02",
+      "scope": "normal_form",
+      "source_labels": [
+        "lem:typed-unary-closure-bound"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C11",
+      "name": "Literal real- and coordinate-source normal forms",
+      "statement": "Every real-source term is either real identity or theta composed F_K. Every coordinate-source term is theta composed u_(J,K). Here theta is one named quotient transition or the existing identity and is bijective. C06-C10 prove equality of FUNCTIONS on every source element, not an isomorphism after selecting quotient charts.",
+      "depends_on": [
+        "C07",
+        "C08",
+        "C09",
+        "C10"
+      ],
+      "notes": "N02",
+      "scope": "normal_form",
+      "source_labels": [
+        "lem:typed-unary-closure-bound"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C12",
+      "name": "There are finitely many normal-form functions from every sort",
+      "statement": "C11 injects the set of possible functions into the finite overcount D04 after selecting one index for each function. Finite old atom sets give finite powerset Rel families, and there are finitely many represented coordinate kernels and sorts. Thus one language/source-dependent m_typ bounds the number of distinct term functions from each source sort. Infinite equivalent syntax remains possible.",
+      "depends_on": [
+        "A01",
+        "D04",
+        "C11"
+      ],
+      "notes": "N02",
+      "scope": "closure",
+      "source_labels": [
+        "lem:typed-unary-closure-bound"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C13",
+      "name": "Every actual one-generated closure has at most m_typ values",
+      "statement": "The unary closure of v is exactly the set of all term values tau(v), including the identity term. Evaluation can identify distinct functions, so its cardinal is at most the number of term functions from the sort of v, hence <=m_typ. The same holds inside any unary-closed induced actual completed member because all its term evaluations are ambient ones. Quotient-only orphan generators are included.",
+      "depends_on": [
+        "A04",
+        "C12"
+      ],
+      "notes": "N03",
+      "scope": "closure",
+      "source_labels": [
+        "lem:typed-unary-closure-bound"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C14",
+      "name": "Unary-admissible sources inherit the actual bound one vertex at a time",
+      "statement": "For v in a unary-admissible C, D05 supplies an isomorphism from the FULL cl_C(v) onto an actual completed one-generated diagram. Isomorphism preserves cardinality and C13 bounds its target. Therefore every cl_C(v) has size <=m_typ although C itself may be incomplete and noncompletable. This proves the closure-bound source export.",
+      "depends_on": [
+        "A04",
+        "D05",
+        "C13"
+      ],
+      "notes": "N03",
+      "scope": "closure",
+      "source_labels": [
+        "lem:typed-unary-closure-bound"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C15",
+      "name": "Finite language alone is not the closure theorem",
+      "statement": "C12 uses actual quotient identities and terminal represented transport laws, not just a finite list of unary symbols. C14 relies on the full induced one-generated isomorphism; unary closedness, small individual function images or absence of displayed binary constraints does not imply it.",
+      "depends_on": [
+        "C12",
+        "C14"
+      ],
+      "notes": "N03",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-unary-closure-bound"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C16",
+      "name": "The common-block diagnostic has genuine old SAP and CCO",
+      "statement": "Take infinitely many common blocks, each containing infinitely many A and B real points. Old atoms record same-block or different-block pairs, with real equality separate. Finite equivalence-pattern amalgams add fresh points and fresh blocks, giving old SAP. If block equalities conflict with a displayed different-block edge, a shortest same-block path plus that edge is a forbidden simple cycle; otherwise assign blocks and distinct clone points. Hence homomorphic cycle-local consistency gives old CCO. The hidden proper quotients QA,QB have canonical inverse same-block transitions f,g.",
+      "depends_on": [
+        "A06"
+      ],
+      "notes": "N04",
+      "scope": "malformed",
+      "source_labels": [
+        "ex:typed-malformed-unary-long-cycles"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C17",
+      "name": "One malformed unary generator reaches the entire 2n-cycle",
+      "statement": "In D07 repeated g after f cycles x_i through every x_j, and f reaches every y_j; starting at y_i similarly reaches all points. Consequently every nonempty unary-closed substructure equals the entire 2n-vertex source. This holds for all n>=2.",
+      "depends_on": [
+        "D07",
+        "C16"
+      ],
+      "notes": "N04",
+      "scope": "malformed",
+      "source_labels": [
+        "ex:typed-malformed-unary-long-cycles"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C18",
+      "name": "The cyclic source is irreducible for unary closed substructures",
+      "statement": "A free amalgam decomposition into proper substructures would require nonempty proper unary-closed pieces covering the source. C17 rules these out. Thus the entire cyclic source is irreducible even though it displays no binary orbital. Graph-edge irreducibility intuition for a purely relational language would be incorrect here.",
+      "depends_on": [
+        "A06",
+        "C17"
+      ],
+      "notes": "N04",
+      "scope": "malformed",
+      "source_labels": [
+        "ex:typed-malformed-unary-long-cycles"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C19",
+      "name": "Every completion homomorphism collapses consecutive x-points",
+      "statement": "In any genuine hidden target g composed f is identity on QA. A function-preserving homomorphism h would satisfy h(x_(i+1))=g(f(h(x_i)))=h(x_i). The distinct x_i therefore collapse, contradicting injectivity on the irreducible whole source C18. Hence no homomorphism-embedding completion exists.",
+      "depends_on": [
+        "A06",
+        "C16",
+        "C18"
+      ],
+      "notes": "N04",
+      "scope": "malformed",
+      "source_labels": [
+        "ex:typed-malformed-unary-long-cycles"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C20",
+      "name": "Arbitrary unary-closed inputs have no bounded closed obstruction size",
+      "statement": "Given any proposed bound N choose 2n>N. The malformed source has no proper nonempty unary-closed substructures at all; its empty substructure is completable. Its only noncompletable unary-closed obstruction is the whole 2n-point source by C19. Thus no uniform closed-substructure obstruction bound applies to arbitrary total-unary partial inputs.",
+      "depends_on": [
+        "C17",
+        "C19"
+      ],
+      "notes": "N04",
+      "scope": "malformed",
+      "source_labels": [
+        "ex:typed-malformed-unary-long-cycles"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C21",
+      "name": "The malformed family violates precisely one-generated admissibility",
+      "statement": "Every cl(v) is the entire source and is irreducible/noncompletable, so it is not isomorphic to an actual completed one-generated member. It fails D05 and the intended HN one-generated irreducible membership test. This explains the input restriction; no terminal Ramsey theorem or published HN conclusion is refuted.",
+      "depends_on": [
+        "D05",
+        "C18",
+        "C19",
+        "C20"
+      ],
+      "notes": "N04",
+      "scope": "boundary",
+      "source_labels": [
+        "ex:typed-malformed-unary-long-cycles"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C22",
+      "name": "Real identity has exactly the equality kernel",
+      "statement": "For tau=id_a, equality of tau(x),tau(xprime) is literal x=xprime, so K_tau=Id_a. The actual hidden language has no other term with real codomain; no quotient transition manufactures a real output.",
+      "depends_on": [
+        "A01",
+        "D08"
+      ],
+      "notes": "N05",
+      "scope": "kernel",
+      "source_labels": [
+        "lem:typed-coordinate-normal-form"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C23",
+      "name": "A proper coordinate normal form has exactly kernel K",
+      "statement": "For tau=theta composed F_K from C11, theta is injective. Hence tau(x)=tau(xprime) iff F_K(x)=F_K(xprime) iff x K xprime. C03 ensures K is a represented proper nonzero MI on the ORIGINAL source sort even if the transition word changes old sorts.",
+      "depends_on": [
+        "D08",
+        "C03",
+        "C11"
+      ],
+      "notes": "N05",
+      "scope": "kernel",
+      "source_labels": [
+        "lem:typed-coordinate-normal-form"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C24",
+      "name": "Coordinate-term normal-form source export is literal",
+      "statement": "C22/C23 prove QT-NF, and C11 supplies an actual named term taking the K_tau-coordinate to tau(x). This determines both the equivalence kernel and the value without any quotient representative, groupoid chart or original-sort ordering.",
+      "depends_on": [
+        "C22",
+        "C23",
+        "C11"
+      ],
+      "notes": "N05",
+      "scope": "kernel",
+      "source_labels": [
+        "lem:typed-coordinate-normal-form"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C25",
+      "name": "An equivariant quotient bijection gives equality of stabilizers",
+      "statement": "For a group acting equivariantly on all actual named maps, tau(x)=theta(F_K(x)) implies fixation of F_K(x) gives fixation of tau(x). Conversely if tau(x) is fixed, injectivity of theta and equivariance force F_K(x) fixed. Thus the two point stabilizers agree. For real identity the class is its singleton. No homogeneity or faithfulness of this group is required.",
+      "depends_on": [
+        "C22",
+        "C23",
+        "A01"
+      ],
+      "notes": "N05",
+      "scope": "kernel",
+      "source_labels": [
+        "lem:typed-coordinate-normal-form"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C26",
+      "name": "The real identity is excluded by a nonzero forced coordinate",
+      "statement": "For represented J>Id, J<=K_tau cannot hold for real identity because C22 gives K_tau=Id. Thus every term under the forced-factorisation hypothesis has the proper coordinate case C23.",
+      "depends_on": [
+        "A01",
+        "C22"
+      ],
+      "notes": "N05",
+      "scope": "factorisation",
+      "source_labels": [
+        "cor:typed-forced-term-factorisation"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C27",
+      "name": "Forced terms factor through the literal named upward map",
+      "statement": "If J<=K_tau, C26 permits C11 tau=theta composed F_(K_tau). The actual named upward u_(J,K_tau) satisfies F_(K_tau)=u_(J,K_tau) composed F_J. Therefore sigma=theta composed u_(J,K_tau) is a literal named unary term with tau=sigma composed F_J. Identity-containing RAW composites use the existing identity from C10.",
+      "depends_on": [
+        "C10",
+        "C11",
+        "C23",
+        "C26"
+      ],
+      "notes": "N05",
+      "scope": "factorisation",
+      "source_labels": [
+        "cor:typed-forced-term-factorisation"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C28",
+      "name": "A common suffix canonically labels every prefix of a generic return",
+      "statement": "Under A05, serial/coserial factors make every prefix and suffix nonempty and serial/coserial. If x R_i y and xprime R_i y, choose ONE suffix witness y S_i z. The whole-word containment gives x E0 z and xprime E0 z, hence x E0 xprime. So D09 lambda_i is well defined, onto and equivariant. No original SAP or terminality enters.",
+      "depends_on": [
+        "A05",
+        "D09",
+        "I04"
+      ],
+      "notes": "N06",
+      "scope": "return",
+      "source_labels": [
+        "lem:typed-return-transport"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C29",
+      "name": "Prefix kernels are exact actual transported equivalences",
+      "statement": "Equality of lambda_i values is witnessed by two R_i-predecessors E0-related, so E_i=ker(lambda_i)=R_i^op;E0;R_i. This is an invariant equivalence, and R_i;R_i^op subset E0 from C28 supplies the correct transport premise. The formula uses RAW existential relations including possible old diagonals.",
+      "depends_on": [
+        "C28",
+        "I04"
+      ],
+      "notes": "N06",
+      "scope": "return",
+      "source_labels": [
+        "lem:typed-return-transport"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C30",
+      "name": "Each factor uses the SAME kernel on its intermediate macro side",
+      "statement": "If y P_i z, choose an R_(i-1)-predecessor x of y. Then x R_i z, hence lambda_(i-1)(y)=lambda_i(z). It follows P_i;P_i^op subset E_(i-1) and P_i^op;E_(i-1);P_i=E_i. The induced q_i is bar-lambda_i inverse after bar-lambda_(i-1), not an independently chosen chart.",
+      "depends_on": [
+        "C28",
+        "C29",
+        "I04"
+      ],
+      "notes": "N06",
+      "scope": "return",
+      "source_labels": [
+        "lem:typed-return-transport"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C31",
+      "name": "Canonical closed-word holonomy is literal identity",
+      "statement": "At start lambda_0(x)=[x]_E0; at end whole-word containment gives lambda_n(y)=[y]_E0 on the SAME real carrier a_n=a0. Compose the C30 formulas: adjacent labels cancel, leaving bar-lambda_n inverse after bar-lambda_0=id. Thus E_n=E0 and the quotient return is identity.",
+      "depends_on": [
+        "C28",
+        "C29",
+        "C30",
+        "I04"
+      ],
+      "notes": "N06",
+      "scope": "return",
+      "source_labels": [
+        "lem:typed-return-transport"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C32",
+      "name": "All coarser J return simultaneously and compatibly",
+      "statement": "Compose every lambda_i with the canonical projection a0/E0->a0/J. Its kernel is J_i=R_i^op;J;R_i. The proof C30 applies to each edge, with the same J_i at the two incident macro sides, and C31 gives identity on a0/J. There is no completion-dependent seam equality or transport chart.",
+      "depends_on": [
+        "A05",
+        "D10",
+        "C28",
+        "C30",
+        "C31",
+        "I04"
+      ],
+      "notes": "N06",
+      "scope": "return",
+      "source_labels": [
+        "lem:typed-return-transport"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C33",
+      "name": "Generic first-order wording requires supplied definitions",
+      "statement": "If E0, Pi and J are first-order definable, finite existential composition gives formulas for R_i,E_i,J_i. In the intended actual finite named full-Aut orbital context every invariant pair relation is a finite union of named orbitals, so this is automatic. Generic arbitrary-G invariance alone supplies no such definability.",
+      "depends_on": [
+        "A05",
+        "C29",
+        "C32",
+        "I04"
+      ],
+      "notes": "N06",
+      "scope": "return",
+      "source_labels": [
+        "lem:typed-return-transport"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C34",
+      "name": "Actual terminal coarser MI kernels are named proper coordinates",
+      "statement": "Specialize C32 to actual A01 and represented Id<J<Top. Every prefix R_i is actual quotient-functional over J; I03 preserves full MI and non-Top, I02 plus A02 excludes transported old equality, and C02 uses FULL NR2 to supply represented exactness. Thus each J_i is a NAMED nonzero proper MI of its actual original sort. E_i themselves need not be represented MI.",
+      "depends_on": [
+        "A01",
+        "A02",
+        "C02",
+        "C03",
+        "C32",
+        "I02",
+        "I03"
+      ],
+      "notes": "N06",
+      "scope": "named_return",
+      "source_labels": [
+        "lem:typed-return-transport"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C35",
+      "name": "Each actual return edge has its existing literal named term",
+      "statement": "For actual Pi, C30/C34 identify the exact adjacent J_(i-1),J_i and canonical induced map. It is the named transition for that actual finite relation, or if Pi contains logical Id the already existing identity by I06. A diagonal-free Pi can alternatively use any chosen atom by C04; the quotient map is unchanged. All intermediate objects are literal source/target quotients.",
+      "depends_on": [
+        "C04",
+        "C30",
+        "C34",
+        "I06"
+      ],
+      "notes": "N06",
+      "scope": "named_return",
+      "source_labels": [
+        "lem:typed-return-transport"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C36",
+      "name": "Typed return-transport source export retains two logical stages",
+      "statement": "C28-C33 prove generic invariant return with identity holonomy. C34/C35 give the source terminal NAMED proper-coordinate statement for EVERY represented J>=E0. E_i are original invariant equivalences; only the J_i are asserted represented proper coordinates. No hidden homogeneity, hidden SAP or external HN theorem is invoked.",
+      "depends_on": [
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35"
+      ],
+      "notes": "N06",
+      "scope": "named_return",
+      "source_labels": [
+        "lem:typed-return-transport"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C37",
+      "name": "Arbitrary subgroup invariance is not represented full-Aut data",
+      "statement": "The generic A05 group may be nonfaithful and need not be the original full automorphism group; its invariant kernels need not be definable or represented. C34 explicitly specializes to A01-A03 before naming. The stabilizer argument C25 is valid for any group preserving the actual named maps, not an arbitrary unrelated action.",
+      "depends_on": [
+        "C25",
+        "C33",
+        "C34"
+      ],
+      "notes": "N07",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-return-transport"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C38",
+      "name": "Finite term and return controls are diagnostics only",
+      "statement": "Bounded common-block/coordinate functions, explicit kernel fibers, coarsened closed words and malformed cycles check the stated identities and guards. They do not prove unbounded old SAP/CCO, actual hidden SAP/homogeneity, a published HN theorem or a compiled Lean binding. All five existing HN/HKN receiving bindings remain pending.",
+      "depends_on": [
+        "C14",
+        "C21",
+        "C27",
+        "C36"
+      ],
+      "notes": "N07",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-unary-closure-bound"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C39",
+      "name": "Empty transition parts and short closed words retain actual identities",
+      "statement": "An upward-only normal form has theta=id, a coordinate identity has K=J and existing u=id, and a real identity is handled by C22. In A05 n=1 is allowed; R0 is actual Id, and the same canonical proof applies. Empty relation factors are excluded by A05; an empty word would be a separate trivial identity statement, not a positive STRONG old edge.",
+      "depends_on": [
+        "C10",
+        "C11",
+        "C22",
+        "C31",
+        "A05"
+      ],
+      "notes": "N07",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-return-transport"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    }
+  ],
+  "source_result_files": [
+    "sections/v27/10_typed_unary_terms_return.tex"
+  ],
+  "additional_result_exports": [],
+  "exports": [
+    {
+      "source_label": "lem:typed-unary-closure-bound",
+      "claims": [
+        "C13",
+        "C14"
+      ]
+    },
+    {
+      "source_label": "lem:typed-coordinate-normal-form",
+      "claims": [
+        "C24",
+        "C25"
+      ]
+    },
+    {
+      "source_label": "cor:typed-forced-term-factorisation",
+      "claims": [
+        "C27"
+      ]
+    },
+    {
+      "source_label": "lem:typed-return-transport",
+      "claims": [
+        "C36"
+      ]
+    }
+  ],
+  "auxiliary_exports": [
+    {
+      "source_label": "eq:typed-coordinate-normal-form",
+      "claims": [
+        "C24"
+      ],
+      "source": {
+        "file": "sections/v27/10_typed_unary_terms_return.tex",
+        "anchor": "\\label{eq:typed-coordinate-normal-form}"
+      }
+    }
+  ],
+  "source_files": [
+    {
+      "file": "sections/terminal_invariant_raw_exact.tex",
+      "git_blob": "af0064c672f332049209e142a585bc62540954b4"
+    },
+    {
+      "file": "sections/typed_invariant_quotient_transport.tex",
+      "git_blob": "3895b17d7d0176a74d6f69c39e4e22d9cdba5715"
+    },
+    {
+      "file": "sections/v27/07_typed_raw_strong_transition.tex",
+      "git_blob": "6dc7e4c7aa452b179e95cc502b4daf4d2b6592d9"
+    },
+    {
+      "file": "sections/v27/10_typed_unary_terms_return.tex",
+      "git_blob": "7edb9833681c84ab9e15918a004137d7f2c47258"
+    }
+  ],
+  "dependency_firewalls": [
+    {
+      "claims": [
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33"
+      ],
+      "forbid": [
+        "A01",
+        "A02",
+        "A03",
+        "A04",
+        "A06",
+        "I01",
+        "I02",
+        "I03",
+        "I05",
+        "I06",
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39"
+      ]
+    },
+    {
+      "claims": [
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21"
+      ],
+      "forbid": [
+        "A01",
+        "A02",
+        "A03",
+        "A04",
+        "A05",
+        "I01",
+        "I02",
+        "I03",
+        "I04",
+        "I05",
+        "I06",
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "T01",
+      "name": "Actual coordinates, named transport and root signatures",
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Retain actual interpreted quotient objects, named inverse transitions and FULL invariant NR2 before declaring transported kernels represented. Bound term functions, never syntax or arbitrary total-unary partial inputs. Use literal RAW composition and existing identities. Forced factorisation is a named term; generic holonomy keeps nonempty factors and the same canonical intermediate kernels. No hidden SAP or external-provider conclusion follows."
+    },
+    {
+      "id": "T02",
+      "name": "Literal normalization and finite function index",
+      "claims": [
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12"
+      ],
+      "depends_on": [
+        "T01"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Retain actual interpreted quotient objects, named inverse transitions and FULL invariant NR2 before declaring transported kernels represented. Bound term functions, never syntax or arbitrary total-unary partial inputs. Use literal RAW composition and existing identities. Forced factorisation is a named term; generic holonomy keeps nonempty factors and the same canonical intermediate kernels. No hidden SAP or external-provider conclusion follows."
+    },
+    {
+      "id": "T03",
+      "name": "Genuine closure bound and malformed partial-input guard",
+      "claims": [
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21"
+      ],
+      "depends_on": [
+        "T01",
+        "T02"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Retain actual interpreted quotient objects, named inverse transitions and FULL invariant NR2 before declaring transported kernels represented. Bound term functions, never syntax or arbitrary total-unary partial inputs. Use literal RAW composition and existing identities. Forced factorisation is a named term; generic holonomy keeps nonempty factors and the same canonical intermediate kernels. No hidden SAP or external-provider conclusion follows."
+    },
+    {
+      "id": "T04",
+      "name": "Real-source kernels, stabilizers and forced factorisation",
+      "claims": [
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27"
+      ],
+      "depends_on": [
+        "T01",
+        "T02"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Retain actual interpreted quotient objects, named inverse transitions and FULL invariant NR2 before declaring transported kernels represented. Bound term functions, never syntax or arbitrary total-unary partial inputs. Use literal RAW composition and existing identities. Forced factorisation is a named term; generic holonomy keeps nonempty factors and the same canonical intermediate kernels. No hidden SAP or external-provider conclusion follows."
+    },
+    {
+      "id": "T05",
+      "name": "Generic RAW return and definability boundary",
+      "claims": [
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Retain actual interpreted quotient objects, named inverse transitions and FULL invariant NR2 before declaring transported kernels represented. Bound term functions, never syntax or arbitrary total-unary partial inputs. Use literal RAW composition and existing identities. Forced factorisation is a named term; generic holonomy keeps nonempty factors and the same canonical intermediate kernels. No hidden SAP or external-provider conclusion follows."
+    },
+    {
+      "id": "T06",
+      "name": "Terminal named return and all boundary contracts",
+      "claims": [
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39"
+      ],
+      "depends_on": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Retain actual interpreted quotient objects, named inverse transitions and FULL invariant NR2 before declaring transported kernels represented. Bound term functions, never syntax or arbitrary total-unary partial inputs. Use literal RAW composition and existing identities. Forced factorisation is a named term; generic holonomy keeps nonempty factors and the same canonical intermediate kernels. No hidden SAP or external-provider conclusion follows."
+    }
+  ],
+  "controls": [
+    {
+      "id": "K01",
+      "check": "Finite actual coordinate language: close all induced term functions, compare normal forms pointwise, verify real kernels/stabilizers and named forced factorisations, and show arbitrarily repeated inverse syntax has one function."
+    },
+    {
+      "id": "K02",
+      "check": "Finite RAW two-sort closed words and EVERY coarser equivalence: verify prefix/factor kernel bounds, exact adjacent canonical maps and literal identity holonomy. Noncontained closed words retain nonidentity holonomy as a guard."
+    },
+    {
+      "id": "K03",
+      "check": "Malformed quotient cycles of several sizes: one-generated closure is the full cycle, every proper nonempty subset fails unary closedness, genuine inverse identities force collapse, and no real or displayed binary data is needed."
+    }
+  ],
+  "overview_mermaid": [
+    "flowchart TD",
+    "  A[\"Actual quotient laws and FULL NR2\"] --> N[\"Literal unary normal forms\"]",
+    "  N --> F[\"Finitely many term functions\"]",
+    "  F --> B[\"Genuine and admissible closure bound\"]",
+    "  N --> K[\"Real-source kernel and named factorisation\"]",
+    "  G[\"Nonempty RAW closed word inside E0\"] --> R[\"Canonical invariant identity return\"]",
+    "  A --> T[\"Named proper-coordinate return\"]",
+    "  R --> T"
+  ],
+  "overview_notes": [
+    "Four source10 results and QT-NF; arbitrary total-unary partial sources are explicitly excluded from the closure theorem.",
+    "Only actual original SAP and FULL NR2 enter the named upgrade. Generic return needs neither SAP nor CCO and preserves literal canonical quotient labels.",
+    "Malformed long cycles are a boundary diagnostic for HN input admissibility, not an external HN theorem application or a Ramsey counterexample."
+  ],
+  "article_feedback": [
+    {
+      "id": "F01",
+      "kind": "HYPOTHESIS_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/v27/10_typed_unary_terms_return.tex",
+        "anchor": "Let \\(P_1,\\ldots,P_n\\) be a composable typed word"
+      },
+      "finding": "The return statement uses the standing convention that all word factors are nonempty actual invariant RAW relations and n>=1. Without nonemptiness a contained empty product relation would not induce quotient bijections.",
+      "proposed_article_change": "Optionally repeat NONEMPTY actual RAW factors and n>=1 in the return lemma statement, and note that the generic invariant stage is distinct from terminal represented namedness.",
+      "caller_effect": "No new mathematical premise within the standing word convention; it prevents applying the statement to empty factors in a receiving generic API.",
+      "proof_claims": [
+        "C28",
+        "C32",
+        "C36",
+        "C39"
+      ]
+    }
+  ],
+  "review": {
+    "date": "2026-10-29",
+    "source_unchanged": true,
+    "source_signature_repairs": 0,
+    "unexpanded_provider_labels": [],
+    "proof_status": "HUMAN_EXPANDED_NOT_LEAN; independent concrete mathematical review and parent source/provider synthesis PASS. Source frozen and all prior qualifications retained.",
+    "independent_reviews": [
+      "Final concrete module/notes/provider audit PASS; finite actual term-function support and complete export scope explicitly recorded, original-group orbit inclusion separate from full hidden group, no hidden homogeneity/SAP assumed."
+    ],
+    "boundaries": [
+      "Actual completed or full one-generated unary-admissible diagrams only",
+      "Finite term functions, not finite syntax",
+      "FULL NR2 and old SAP before named proper-kernel upgrade",
+      "Generic invariant return is not arbitrary subgroup definability",
+      "Nonempty RAW factors and canonical intermediate quotient objects",
+      "No hidden SAP, homogeneity or external-provider certification"
+    ]
+  }
+}

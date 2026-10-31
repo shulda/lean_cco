@@ -1,0 +1,928 @@
+% C4: The CCO-free terminal SAP positive pure-power theorem is now
+% the earlier foundational/strong module,
+% \cref{lem:typed-terminal-pure-power}, with its original label.
+
+
+
+\begin{lemma}[Commutation of same-sort invariant binary relations]
+\label{lem:typed-symmetric-orbital-commutation}
+Let \(a\) be one named original
+transitive sort of a homogeneous
+complete SYMMETRIC binary source.
+For any two invariant (equivalently,
+unions of old named atomic orbitals)
+relations \(P,Q\subseteq M_a^2\),
+their equality-inclusive RAW
+relational products commute:
+\[
+                    P;Q=Q;P.
+\]
+No assertion is made here about
+relations with different source
+and target sorts.
+\end{lemma}
+\begin{proof}
+Take \(xP yQ z\).
+On the old two-point induced
+substructure \(\{x,z\}\), the map
+interchanging \(x,z\) is an
+isomorphism, because every
+same-sort atomic orbital is
+symmetric. By homogeneity it
+extends to an automorphism
+\(g\) of the actual source.
+Then \(xQ g(y)Pz\), since
+\(g(z)=x\), \(g(x)=z\),
+and both \(P,Q\) are invariant
+and symmetric. Thus
+\(P;Q\subseteq Q;P\);
+interchanging \(P,Q\)
+gives the reverse inclusion.
+The argument includes
+all equality cases, because
+the atomic diagonal and
+the symmetric invariant
+relations are fixed by \(g\).
+\end{proof}
+
+\begin{lemma}[Modularity of the original same-sort invariant equivalence lattice]
+\label{lem:typed-invariant-equivalence-modularity}
+Let $a$ be a transitive original named real sort
+of a homogeneous COMPLETE binary source, whose
+same-sort ORIGINAL atomic orbitals are symmetric.
+The FULL invariant-equivalence lattice on $a$
+is MODULAR, without assuming SAP, CCO,
+terminal NR2, RAW exactness, or distributivity.
+Precisely, for original invariant equivalences
+$E,F,G$ with $E\le G$,
+\[
+             (E\vee F)\cap G
+                    =E\vee(F\cap G).
+\tag{MOD}\label{eq:typed-invariant-modularity}
+\]
+\end{lemma}
+\begin{proof}
+Every original invariant same-sort binary relation
+is a union of symmetric old atomic orbitals, hence
+symmetric. Its represented product with another
+invariant relation is again invariant and symmetric.
+Taking converses therefore shows that all invariant
+same-sort relations COMMUTE under ACTUAL RAW
+relational composition, as in
+\cref{lem:typed-symmetric-orbital-commutation}.
+In particular for invariant equivalences
+$E,F$, the product $E;F$ is an equivalence
+and equals their join $E\vee F$.
+Fix $E\le G$.  Take actual real points
+$x,y$ with
+$x\,(E\vee F)\,y$ and $xGy$.
+Choose $z$ with $xEzFy$.
+Since $E\le G$, we have $xGz$;
+together with $xGy$, transitivity
+gives $zGy$. Hence
+$z(F\cap G)y$ and
+\[
+                   x\bigl(E;(F\cap G)\bigr)y .
+\]
+The latter product is an equivalence
+and equals $E\vee(F\cap G)$.
+This proves one inclusion of
+\eqref{eq:typed-invariant-modularity}.
+The reverse follows immediately since
+$E\subseteq G$ and $F\cap G\subseteq G$,
+while both are contained in $E\vee F$.
+No original CCO or SAP entered.
+\end{proof}
+
+\begin{lemma}[An original exact $M_3$ forces failure of homomorphic CCO]
+\label{lem:typed-exact-m3-cco-obstruction}
+Suppose a homogeneous COMPLETE binary
+same-sort symmetric original source has
+three invariant equivalences
+$E_1,E_2,E_3$ generating an actual
+sublattice $M_3$:
+\[
+ \begin{gathered}
+ E_i\cap E_j=L<E_i\quad(i\ne j),\\
+ E_i\vee E_j=H\quad(i\ne j),
+ \qquad L<H .
+ \end{gathered}
+\]
+Assume each $E_i$ is the ACTUAL represented
+RAW endpoint relation of at least one
+finite original atomic word, including
+true equality on the diagonal.
+Then the original source does NOT have
+semantic HOMOMORPHIC simple-cycle CCO.
+No SAP or NR2 is needed for this implication.
+\end{lemma}
+\begin{proof}
+Choose actual $x,y$ with
+$xE_1y$ but $\neg xLy$, possible
+since $L<E_1$.  Put
+\[
+ A=E_1[x],\quad
+ B=E_2[x],\quad
+ C=E_3[y].
+\]
+The pairwise intersections are NONEMPTY:
+$x\in A\cap B$,
+$y\in A\cap C$, and
+$B\cap C\ne\varnothing$ because
+$xE_1y$, $E_1\le H=E_2\vee E_3
+=E_2;E_3$ (the last identity uses
+original same-sort symmetry and RAW
+commutation).  On the other hand,
+\[
+           A\cap B=L[x],
+           \qquad A\cap C=L[y],
+\]
+and $L[x]\cap L[y]=\varnothing$.
+Thus $A\cap B\cap C=\varnothing$.
+
+Choose one ACTUAL old atomic word
+representing each $E_i$.  Construct
+a finite specified original PARTIAL
+atomic graph with two actual marked
+centres having the COMPLETE old
+atomic pair type of $(x,y)$
+and one new formal old root $z$.
+Attach PRIVATE old atomic word paths
+from $z$ to the centre $x$
+representing $E_1$ and $E_2$,
+and from $z$ to the centre $y$
+representing $E_3$; keep all
+three path interiors disjoint,
+also from the two marked centres.
+Delete genuine zero-length
+equality factors (the represented
+$E_i>L$ are nonidentity, so
+each word has a positive path).
+If two direct length-one paths
+coincide, merge duplicate old
+specified edges; their singleton
+atom would have to agree because
+the corresponding endpoint classes
+meet, and in fact no
+equality-inclusive nonidentity
+equivalence is represented by
+a single diversity atom.
+
+Every specified SIMPLE cycle
+uses exactly TWO distinct private
+root-to-centre paths, with either
+an EMPTY route at the common
+centre or the specified old
+$x$--$y$ edge between distinct
+centres. Its two RAW endpoint
+requirements have a common
+ACTUAL realization, by the
+three verified pairwise
+intersections of $A,B,C$.
+Align the complete old centre
+pair by old binary homogeneity
+and realize the private word
+walks independently, allowing
+nonadjacent path vertices to
+collapse under a homomorphism.
+Thus EVERY specified simple cycle
+has an original homomorphism.
+
+A global homomorphism of the
+entire partial network would
+map the two marked centres to
+the original fine pair type
+of $x,y$, which old homogeneity
+moves back to the ACTUAL
+$x,y$. The image of $z$ would
+then lie simultaneously in
+$E_1[x]\cap E_2[x]\cap E_3[y]$,
+which is EMPTY. Hence the
+network has NO global original
+homomorphism. This contradicts
+semantic homomorphic CCO.
+\end{proof}
+
+\begin{corollary}[A finite modular $M_3$ diagnostic for non-CCO]
+\label{cor:typed-terminal-nondistributive-noncco}
+Let $M$ be a homogeneous finite-complete
+binary symmetric-on-each-sort source with
+NO relative-index-two interval in the FULL
+invariant-equivalence lattice on one original
+transitive sort $a$; visible SAP is NOT assumed.
+If the FULL invariant-equivalence lattice
+on $a$ is NONDISTRIBUTIVE, then the
+original source does NOT have semantic
+homomorphic simple-cycle CCO.
+In fact three nonidentity original
+invariant equivalences in an $M_3$
+sublattice yield an explicit finite
+bad partial atomic network built from
+their ACTUAL RAW atomic word presentations.
+No converse is claimed:
+a DISTRIBUTIVE invariant lattice
+alone does not imply CCO.
+\end{corollary}
+\begin{proof}
+By \cref{lem:typed-invariant-equivalence-modularity}
+the full invariant-equivalence lattice
+is MODULAR without CCO.  A finite
+modular nondistributive lattice
+contains a sublattice $M_3$ (the
+standard finite forbidden-sublattice
+criterion: modularity excludes $N_5$).
+By the standalone CCO- and SAP-FREE
+\cref{lem:typed-all-invariant-equivalences-raw-word},
+EVERY original invariant equivalence
+on $a$ is represented by ONE ACTUAL
+equality-inclusive old atomic word.
+This uses only symmetry, homogeneity,
+finite old orbitals and the absence
+of full invariant relative index two;
+no STRONG diversity interpretation
+or original SAP is needed.
+Apply
+\cref{lem:typed-exact-m3-cco-obstruction}
+to the three $M_3$ elements.
+It gives a specified old simple-cycle
+CCO obstruction, as asserted.
+\end{proof}
+
+% C4: general and terminal ORIGINAL invariant RAW equivalence
+% statements (stable old labels) have moved to the Part-I module
+% terminal_invariant_raw_exact.tex, ahead of the historical V27 proof.
+
+
+
+
+\begin{lemma}[CCO-free quotient-orbital power dichotomy at a full invariant cover]
+\label{lem:typed-quotient-full-cover-powers}
+Let $M$ be a homogeneous finite-complete binary structure
+with finitely many named transitive original real sorts,
+symmetric old same-sort orbitals, and visible SAP.
+Fix an original sort $a$ and let
+$\Id_a<J\prec K$ be a cover in the FULL original
+invariant-equivalence lattice, with $J>\Id_a$.
+Let $T\subseteq K\setminus J$ be the full OLD diversity
+preimage of ONE non-diagonal complete $\Aut(M)$-orbital
+on $(M_a/J)^2$. Exactly one of the following holds:
+\begin{enumerate}[label=(\roman*)]
+\item $[K:J]=2$, and for EVERY $n\ge1$ the actual
+STRONG diversity powers alternate:
+$T^{\starprod n}=T$ for odd $n$ and
+$T^{\starprod n}=J^\circ$ for even $n$;
+\item $[K:J]\ne2$, and there is $N_T$ such that
+\[
+                   T^{\starprod n}=K^\circ
+                   \quad\text{for every }n\ge N_T.
+\tag{QPP}\label{eq:typed-quotient-full-cover-powers}
+\]
+\end{enumerate}
+Thus local exclusion of THIS index-two cover suffices;
+no global NR2 or semantic CCO, exact-ball Helly,
+distributivity, RAW exactness, or mixed-sort
+quotient transport is needed for (ii).
+The FULL-cover condition is essential.
+\end{lemma}
+\begin{proof}
+Put $Q=M_a/J$, with quotient action of
+$G=\Aut(M)$, and let $\Theta$ be the non-diagonal
+complete $G$-orbital whose full preimage is $T$.
+Since old same-sort atomic orbitals are symmetric,
+$\Theta$ is a symmetric irreflexive graph relation
+on $Q$. Its connectedness equivalence $\sim$ is
+$G$-invariant, and its inverse image under
+$M_a\to Q$ is an ORIGINAL invariant equivalence
+$H$ satisfying $J\le H\le K$.
+Because $T$ is nonempty and external to $J$, we
+have $H>J$. The FULL invariant cover $J\prec K$
+therefore gives $H=K$. Thus the connected
+components of the $\Theta$-graph are EXACTLY
+the actual $K/J$-classes.
+
+If a component is bipartite, transitivity of
+the original named sort (and hence of $Q$)
+makes EVERY component bipartite. The relation
+of admitting an even $\Theta$-walk is then
+a $G$-invariant equivalence on $Q$ splitting
+each component into exactly TWO nonempty
+parity classes. Its inverse image on $M_a$
+is an ORIGINAL invariant equivalence $E$
+with $J\le E<K$ and $[K:E]=2$.
+Because $J\prec K$ is a FULL invariant cover,
+necessarily $E=J$. Thus each parity class
+contains exactly ONE quotient $J$-vertex,
+and each connected component has exactly
+TWO quotient vertices: $[K:J]=2$.
+Conversely, if $[K:J]=2$, every component
+consists of two vertices with their unique
+external edge, so it is bipartite.
+In that case the quotient $\Theta$-walks
+alternate: for odd length the endpoint
+relation is exactly $\Theta$, and for
+positive even length it is the quotient
+diagonal on each $J$-class. Since every
+old $J$-class is infinite by SAP, choosing
+distinct representatives at every formal
+position lifts these quotient walks to
+injective OLD STRONG paths. Their exact
+old endpoint menus are respectively
+$T$ and $J^\circ$, proving (i).
+
+Hence for case (ii), $[K:J]\ne2$, no
+component can be bipartite. Every
+connected component is NONBIPARTITE.
+
+For any two quotient vertices $q,r$ in one
+connected nonbipartite component, there is a
+$\Theta$-walk of EVERY sufficiently large length
+from $q$ to $r$: concatenate a route to an odd
+cycle, an odd detour when parity must be changed,
+and two-edge backtracks. This argument includes
+$q=r$ and TRUE even and odd closed walks; no
+synthetic identity edge is introduced.
+There are only FINITELY many $G$-orbitals on
+$Q^2$, because $(M_a)^2$ has finitely many
+old fine atomic pair orbitals and its surjective
+projection to $Q^2$ is $G$-equivariant.
+Choose one witness pair from each quotient
+orbital contained in $K/J$; by equivariance
+its walk threshold applies to EVERY pair of
+that orbital. Taking the maximum of finitely
+many thresholds gives one $N_T$ such that
+\[
+                 \Theta^{;n}=K/J
+                 \qquad(n\ge N_T)
+\]
+as actual quotient binary relations, INCLUDING
+the true quotient diagonal.
+
+Fix now ANY two DISTINCT old real points
+$x,y\in M_a$ with $xKy$, and any $n\ge N_T$.
+Choose a quotient walk
+$[x]_J=q_0\,\Theta\,q_1\,\Theta\cdots
+        \Theta\,q_n=[y]_J$.
+Every ORIGINAL $J$-class is INFINITE by SAP:
+choose a proper $J$-neighbour and strongly
+amalgamate arbitrarily many copies of the
+complete two-point extension over its anchor;
+homogeneity and sort transitivity cover all
+classes. Hence select pairwise DISTINCT old
+representatives $x_1\in q_1,\ldots,
+x_{n-1}\in q_{n-1}$, disjoint from the fixed
+$x_0=x$ and $x_n=y$, even when a quotient
+vertex occurs more than once along the walk.
+By the definition of COMPLETE cylinder as
+the FULL PREIMAGE of $\Theta$, each adjacent
+old real pair $(x_i,x_{i+1})$ belongs to $T$.
+The lifted old walk is fully injective, so
+the fine diversity colour of $(x,y)$ belongs
+to the STRONG product $T^{\starprod n}$.
+This proves $K^\circ\subseteq
+T^{\starprod n}$ for all $n\ge N_T$.
+The reverse inclusion follows from
+$T\subseteq K$ and transitivity of the
+actual ORIGINAL equivalence $K$.
+
+In particular, a quotient walk MAY return to
+its initial $J$-class: different old real
+representatives are chosen for different formal
+positions. This is why $J>\Id_a$ matters,
+and why a quotient diagonal walk is not
+confused with an OLD STRONG identity edge.
+The argument for (ii), together with the
+bipartite alternative already proved,
+establishes the claimed dichotomy.
+\end{proof}
+
+\begin{lemma}[Typed relative pure powers at a nonzero exact cut]
+\label{lem:typed-relative-pure-power}
+Work in an actual finite-named-sorted, homogeneous, symmetric
+on each sort, SAP and semantic homomorphic-CCO
+\emph{terminal} source. Fix one original named sort $a$,
+a \emph{nonzero} represented proper meet-irreducible
+full exact equivalence $J$ on $a$, and its unique
+represented exact cover $K=J^+$. Let
+$T\subseteq K\setminus J$ be one complete
+$J$-semantic same-sort cylinder. Then for some
+$N_T$, in the guarded STRONG typed diversity product,
+\[
+                         T^{\starprod n}=K^\circ
+                   \qquad(n\ge N_T).
+ \tag{TRP}\label{eq:typed-relative-pure-power}
+\]
+\end{lemma}
+\begin{proof}
+By \cref{lem:typed-all-invariant-equivalences-raw-word},
+the terminal source's FULL original NR2 hypothesis
+already makes EVERY original invariant same-sort
+equivalence an ACTUAL represented FULL RAW exact
+relation, without invoking CCO or distributivity.
+Thus the represented exact cover $J\prec K$
+is also a cover in the FULL invariant lattice.
+The terminal FULL NR2 hypothesis in particular
+excludes the LOCAL index-two cover $[K:J]=2$.
+The complete $J$-semantic cylinder is precisely
+the FULL old diversity preimage of one
+non-diagonal quotient $\Aut(M)$-orbital on
+$(M_a/J)^2$, by its definition and
+\cref{lem:typed-cylinder-realisation}.
+Therefore \cref{lem:typed-quotient-full-cover-powers}
+applies verbatim and proves (TRP).
+
+In particular NO use of terminal RAW exactness is
+needed INSIDE the quotient-graph power argument:
+RAW exactness is used here only to identify the
+represented exact cover with a FULL invariant
+cover. Mixed original-sort private witnesses,
+if any, are irrelevant to this same-sort
+quotient-graph proof.
+\end{proof}
+
+\begin{lemma}[Specified-cycle control for the typed reset theta network]
+\label{lem:typed-relative-reset-cycle-guard}
+Let \(a\) be one original named
+transitive sort of a typed
+symmetric-on-sorts SAP source.
+Let \(K\) be a NONZERO actual
+same-sort invariant equivalence,
+and write \(K^\circ\) for its
+STRONG diversity palette.
+Let \(T_1,\ldots,T_r\) be
+nonempty positive exact
+same-sort STRONG menus
+contained in \(K^\circ\).
+Suppose
+\[
+ T_i^{\starprod n}=K^\circ
+       \qquad(n\ge N)
+\]
+for every \(i\), and that
+\(K^\circ,T_1,\ldots,T_r\)
+have finite PRIVATE theta
+presentations: each branch
+is a positive typed atomic
+word whose strong endpoint
+spectrum CONTAINS the
+specified menu.
+
+Let \(H\) be a SIMPLE
+graph with edges labelled
+\(1,\ldots,r\), of girth
+strictly greater than
+\(r(N-1)+1\).
+Introduce a new formal
+same-sort centre \(o\).
+Attach one private
+\(K^\circ\)-theta gadget
+from \(o\) to each graph
+vertex, and one private
+\(T_i\)-theta gadget along
+each graph edge of label
+\(i\). Give all gadgets
+pairwise disjoint interiors.
+Then EVERY specified
+simple cycle of the
+resulting typed PARTIAL
+atomic diagram admits
+a colour-preserving
+HOMOMORPHISM to the
+original source.
+
+This is a cycle-by-cycle
+claim, not the assertion
+that one arbitrary
+completion simultaneously
+realises all root colours
+or that a CCO homomorphism
+is injective.
+\end{lemma}
+\begin{proof}
+If \(K^\circ\) is
+the unconstrained same-sort
+top menu and its chosen
+presentation is BARE,
+its spoke creates NO
+specified edge or cycle;
+omit such a spoke from
+the root skeleton.
+Otherwise the following
+arguments apply to each
+actually specified spoke.
+Inside any private
+two-root theta gadget,
+every branch has a
+strong endpoint spectrum
+containing its assigned
+nonempty exact menu.
+Thus two distinct
+branches have a common
+diversity endpoint atom;
+realise their complete
+cycle over that pair
+with SAP as needed.
+A simple cycle entirely
+inside one gadget is
+therefore homomorphically
+realisable.
+
+Any other simple
+specified cycle can
+traverse the interior
+of a private gadget
+only along a COMPLETE
+root-to-root branch.
+Indeed each private
+interior vertex has no
+specified exterior
+incidences, and
+traversing two different
+branches of the same
+gadget would already
+close a simple cycle
+inside that gadget.
+After contracting these
+whole branches the
+cycle is a simple cycle
+in the root skeleton,
+which consists of
+the graph \(H\)
+and the star centred
+at \(o\). The formal
+roots on this cycle
+are pairwise distinct.
+For each contracted
+side its particular
+chosen branch spectrum
+contains \(K^\circ\)
+or the associated
+\(T_i\), respectively.
+
+If the root-skeleton
+cycle visits \(o\),
+it consists of two
+different spokes and
+a nonempty path in
+\(H\). Close through
+one of its \(K^\circ\)
+spokes. The other spoke
+has spectrum containing
+\(K^\circ\), and every
+intervening graph edge
+has a nonempty profile
+inside \(K^\circ\).
+By SAP,
+\cref{lem:typed-equivalence-reproduction}
+gives
+\(K^\circ\starprod D
+ =K^\circ\)
+for EVERY nonempty
+\(D\subseteq K^\circ\).
+Associativity therefore
+makes the complementary
+strong endpoint spectrum
+contain \(K^\circ\);
+it meets the chosen
+closing spoke spectrum
+on any diversity atom
+of \(K^\circ\).
+
+If the root-skeleton
+cycle avoids \(o\),
+it is a simple cycle
+of \(H\), of length
+\(m>r(N-1)+1\).
+By pigeonhole, some
+label \(i\) occurs at
+least \(N\) times.
+Choose one closing
+graph edge of a
+DIFFERENT label if
+there is one; otherwise
+choose any edge,
+when \(m-1\ge N\).
+Consequently the
+complementary ordered
+path still contains
+at least \(N\)
+edges labelled \(i\).
+All its menu factors
+lie nonemptily inside
+\(K^\circ\).
+Commutativity of
+same-sort original
+invariant STRONG
+products (obtained
+from RAW orbital
+commutation and SAP
+injectivisation),
+associativity,
+\(T_i^{\starprod N}
+ =K^\circ\),
+and the preceding
+absorption show that
+the product of the
+assigned menus on
+the complementary
+path is EXACTLY
+\(K^\circ\).
+The actual branch
+word spectra are
+supersets of those
+menus, so their
+product CONTAINS
+\(K^\circ\).
+The closing branch
+spectrum contains
+its nonempty
+\(T_j\subseteq
+K^\circ\). Hence the
+two endpoint spectra
+intersect on an
+ACTUAL diversity
+atom.
+
+Finally realise the
+chosen complementary
+typed atomic path and
+closing branch with
+the SAME endpoint
+fine atom, using
+two-point homogeneity
+and SAP to separate
+interior occurrences
+if needed. This gives
+a colour-preserving
+homomorphism of the
+original specified
+simple cycle.
+No additional root
+equality, synthetic
+STRONG identity or
+simultaneous choice of
+root fine colours
+was used.
+\end{proof}
+
+\begin{theorem}[Original one-word-path relative reset at a full cover]
+\label{thm:typed-original-full-cover-reset-single-path}
+Let $M$ be a finite-complete, homogeneous,
+symmetric-on-one-original-transitive-sort $a$
+binary source with original visible SAP and
+semantic HOMOMORPHIC simple-cycle CCO.
+Let $\Id_a<J\prec K$ be a cover in the FULL
+original invariant-equivalence lattice,
+with $J>\Id_a$ and $[K:J]\ne2$.
+Suppose the old diversity palettes
+$J^\circ$ and $K^\circ$ EACH have one
+genuinely positive original atomic WORD
+with exactly that STRONG endpoint profile.
+Then there is ONE COMPLETE non-diagonal
+$J$-semantic same-sort quotient orbital
+$\mathfrak m\subseteq K\setminus J$ with
+\[
+ \mathfrak m\starprod\mathfrak m=K^\circ,
+ \qquad
+ \mathfrak m;\mathfrak m=K
+ \quad\text{(ACTUAL equality-inclusive RAW).}
+ \tag{OWR}\label{eq:typed-original-full-cover-reset}
+\]
+The proof uses ONE private OLD positive word
+per graph/spoke edge, NOT private exact theta
+presentations, typed Helly, distributivity,
+a mixed-sort quotient groupoid or a hidden
+SAP assumption. It does use original CCO
+for ONE global homomorphic completion.
+\end{theorem}
+\begin{proof}
+Let $T_1,\ldots,T_r$ be all COMPLETE non-diagonal
+$\Aut(M)$-quotient pair orbitals on $(M_a/J)^2$
+inside $K/J$, pulled back to OLD pair palettes.
+These pairwise disjoint menus partition
+$K\setminus J$. Each is the COMPLETE
+$J$-bi-saturation of an old diversity
+atomic colour $t_i\in T_i$. Thus visible
+SAP and the RAW/STRONG identity
+\cref{lem:typed-raw-strong-saturation}
+give
+\[
+ T_i=(J;\{t_i\};J)^\circ
+       =J^\circ\starprod\{t_i\}
+                       \starprod J^\circ .
+\]
+The assumed positive word for $J^\circ$
+therefore yields ONE positive atomic
+word $w_i$ with STRONG profile EXACTLY $T_i$;
+write $w_K$ for the positive word with
+profile EXACTLY $K^\circ$.
+The CCO-free full-cover graph theorem
+\cref{lem:typed-quotient-full-cover-powers}
+and $[K:J]\ne2$ give a common $N$
+such that $T_i^{\starprod n}=K^\circ$
+for EVERY $i$ and $n\ge N$.
+
+We use two OLD SAP facts about NONZERO
+invariant equivalences, not typed exactness.
+First, for every nonempty same-sort STRONG
+profile $D\subseteq K^\circ$,
+\[
+                 K^\circ\starprod D=K^\circ.
+\tag{OW-Abs}\label{eq:typed-old-reset-absorption}
+\]
+For distinct $xKz$, choose any fine atom
+$d\in D$. By original transitivity $z$
+has a $d$-neighbour in its $K$-class,
+and by SAP it has arbitrarily many such
+distinct neighbours. Choose $y\ne x,z$
+with $y\,d\,z$; then $xK^\circ yDz$.
+The reverse inclusion is K-transitivity.
+Second, SAME-SORT STRONG positive
+products commute and associate:
+the RAW old invariant products commute
+by symmetry and two-point homogeneity,
+and original SAP injectivisation
+\cref{lem:typed-injectivisation}
+realises their diversity slice by fully
+distinct positive word vertices.
+
+Choose the sparse labelled graph
+\cref{lem:sparse-labelled-graph} with
+edge labels $1,\ldots,r$, vertex colours
+the finitely many OLD atoms in $K^\circ$,
+and girth $>r(N-1)+1$.
+Attach from a new original-sort centre
+$o$ to every graph vertex $v$ ONE private
+path spelling $w_K$. Replace every
+$i$-labelled graph edge by ONE private
+path spelling $w_i$. All path interiors
+are pairwise disjoint and carry the ORIGINAL
+named sorts prescribed by the typed words
+$w_K,w_i$; only the centre and graph roots
+are required to have original sort $a$.
+Every specified edge is an ACTUAL old
+DIVERSITY atom.
+
+Every specified SIMPLE cycle of this
+partial old network traverses WHOLE
+private paths. Contracting these
+paths gives a simple cycle in the
+graph plus its star at $o$.
+A cycle THROUGH $o$ contains TWO
+$K^\circ$-spokes and intervening
+nonempty $T_i$-factors; close one
+spoke against the other and use
+\eqref{eq:typed-old-reset-absorption}
+to obtain a common endpoint atom
+in $K^\circ$. A cycle AVOIDING $o$
+is a graph cycle of length
+$>r(N-1)+1$, so some label $i$
+occurs at least $N$ times.
+Choose its closing edge with a
+DIFFERENT label if possible;
+otherwise any edge leaves at
+least $N$ copies of label $i$.
+By STRONG commutativity, positive
+powers and absorption, the
+complementary word profile is
+$K^\circ$ and meets the closing
+edge's nonempty $T_j$.
+Thus EVERY specified simple cycle
+admits a colour-preserving old
+HOMOMORPHISM, with no invented
+identity factor or simultaneous
+choice of root atomic colours.
+
+Semantic CCO now yields ONE
+homomorphism of the WHOLE partial
+old network. Use original SAP
+injectivisation
+\cref{lem:typed-injectivisation}
+to separate ALL its formal vertices,
+preserving the displayed atoms.
+For each graph vertex $v$, the
+actual fine colour
+$d_v=\col(o,v)$ belongs to
+$K^\circ$, since its spoke
+spells $w_K$ and both endpoints
+are distinct. The labelled
+graph gives ONE atom $d\in K^\circ$
+such that for every $i$ some
+$i$-edge $vw$ has
+$d_v=d_w=d$. Its realised OLD
+triangle gives
+\[
+       (\{d\}\starprod\{d\})\cap T_i
+                      \ne\varnothing
+              \qquad\text{for every }i.
+\tag{OW-Tri}\label{eq:typed-old-reset-triangle}
+\]
+Since $T_i\cap J=\varnothing$,
+equivalence transitivity forces
+$d\notin J$.
+
+Let $\mathfrak m$ be the COMPLETE
+external $J$-quotient orbital
+containing $d$. Its full original
+$J$-saturation, with SAP, gives
+\[
+ \mathfrak m=J^\circ\starprod\{d\}
+                          \starprod J^\circ,
+ \qquad
+ J^\circ\starprod\mathfrak m
+       =\mathfrak m
+       =\mathfrak m\starprod J^\circ.
+\]
+Thus $W=\mathfrak m\starprod\mathfrak m$
+is $J^\circ$-bisaturated and
+contained in $K^\circ$. It meets
+each COMPLETE external cylinder
+$T_i$ by \eqref{eq:typed-old-reset-triangle};
+bilateral saturation then makes
+$T_i\subseteq W$. Hence
+$K\setminus J\subseteq W$.
+
+For the remaining $J^\circ$,
+choose an OLD $d$-edge $xy$ and
+an $a\in J[x]\setminus\{x\}$;
+then $a\ne y$ as $d\notin J$.
+Strongly amalgamate two copies
+of the COMPLETE old triangle
+$\{a,x,y\}$ over its COMPLETE
+pair $\{a,y\}$. The two distinct
+copies $x,x'$ share their $J$-class
+through $a$ and have the same
+fine colour $d$ to $y$.
+Thus an OLD diversity atom
+$c=\col(x,x')$ lies in
+$J^\circ\cap(\{d\}\starprod\{d\})
+\subseteq J^\circ\cap W$.
+The diagonal quotient orbital
+has full preimage $J$, so by
+old SAP
+$J^\circ\starprod\{c\}
+\starprod J^\circ=J^\circ$.
+Since $W$ is $J^\circ$-bisaturated,
+$J^\circ\subseteq W$.
+Together with the external
+cylinders this yields $W=K^\circ$.
+
+Finally $\mathfrak m$ is
+symmetric and serial, so its
+RAW square contains TRUE
+logical identity by a two-edge
+return. On distinct endpoints
+its RAW square has precisely
+the STRONG diversity profile
+$W=K^\circ$ by original SAP
+injectivisation. Hence
+$\mathfrak m;\mathfrak m=K$.
+\end{proof}
+
+\begin{theorem}[Typed relative reset for one named-sort cut]
+\label{thm:typed-relative-reset}
+Under the hypotheses of
+\cref{lem:typed-relative-pure-power}, there is
+ONE complete named same-sort $J$-semantic
+type $\mathfrak m\subseteq K\setminus J$ with
+\[
+                 \boxed{\quad
+      \mathfrak m\starprod\mathfrak m=K^\circ.\quad}
+ \tag{TR}\label{eq:typed-relative-reset}
+\]
+Equivalently, for the equality-INCLUSIVE
+RAW relational product we have
+\[
+       \mathfrak m;\mathfrak m=K.
+ \tag{TR-RAW}\label{eq:typed-relative-reset-raw}
+\]
+Only the second equation contains
+actual logical identity. Products
+marked \(\starprod\) here are
+\emph{strong typed diversity products},
+and $J$ contains some actual diversity colour;
+the statement does not extend to the bottom/equality
+palette by a formal-unit convention.
+Private theta witnesses may have intermediate vertices
+in other original named sorts. Thus the result applies
+to the terminal transition-enriched hidden construction,
+not only to the historical one-original-sort appendix.
+\end{theorem}
+\begin{proof}
+There is now a SHORT proof using only original
+old one-word paths. By the CCO-free
+\cref{lem:typed-all-invariant-equivalences-raw-word},
+the terminal FULL invariant lattice consists
+entirely of represented RAW exact equivalences,
+so the displayed represented exact cover
+$J\prec K$ is a FULL invariant cover.
+By original SAP injectivisation, its two
+nonzero RAW word profiles have positive
+STRONG diversity profiles $J^\circ,K^\circ$.
+The terminal FULL NR2 hypothesis excludes
+$[K:J]=2$. The original one-word-path reset
+\cref{thm:typed-original-full-cover-reset-single-path}
+therefore applies and yields the desired
+STRONG and RAW equalities.
+
+\end{proof}
+

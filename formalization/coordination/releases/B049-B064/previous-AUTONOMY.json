@@ -1,0 +1,195 @@
+{
+  "protocol_version": 3,
+  "revision": 13,
+  "state_branch": "coordination",
+  "state_file": "formalization/coordination/STATE.json",
+  "registered_projects": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "team_project_id": 3,
+  "team_name": "cco-work-team",
+  "default_active_batches": 2,
+  "maximum_active_batches": 3,
+  "released_packages": [
+    "B002",
+    "B003",
+    "B004",
+    "B005",
+    "B006",
+    "B007",
+    "B008",
+    "B009",
+    "B010",
+    "B011",
+    "B012",
+    "B013",
+    "B014",
+    "B015",
+    "B016",
+    "B017",
+    "B018",
+    "B019",
+    "B020",
+    "B021",
+    "B022",
+    "B029",
+    "B023",
+    "B025",
+    "B026",
+    "B031",
+    "B027",
+    "B032",
+    "B024",
+    "B033",
+    "B028",
+    "B030",
+    "B034",
+    "B035",
+    "B036",
+    "B037",
+    "B038",
+    "B039",
+    "B040",
+    "B041",
+    "B042",
+    "B043",
+    "B044",
+    "B045",
+    "B046",
+    "B047",
+    "B048"
+  ],
+  "coordinator_review_packages": [
+    "B001"
+  ],
+  "review_requires_non_author": true,
+  "submission_releases_implementation_slot": false,
+  "actors": {
+    "root": {
+      "identity": "/root",
+      "roles": [
+        "coordinate",
+        "implement",
+        "integrate"
+      ],
+      "historical_author_projects": []
+    },
+    "independent_review": {
+      "identity": "/root/independent_review",
+      "roles": [
+        "review",
+        "integrate"
+      ],
+      "historical_author_projects": []
+    },
+    "legacy-project-1": {
+      "identity": "stopped-original-formalization-project-1",
+      "roles": [],
+      "historical_author_projects": [
+        1
+      ]
+    },
+    "legacy-project-2": {
+      "identity": "stopped-original-formalization-project-2",
+      "roles": [],
+      "historical_author_projects": [
+        2
+      ]
+    },
+    "independent_review_recovery": {
+      "identity": "/root/independent_review_recovery",
+      "roles": [
+        "review",
+        "integrate"
+      ],
+      "historical_author_projects": []
+    },
+    "reviewer_recovery_control": {
+      "identity": "/root/reviewer_recovery_control",
+      "roles": [
+        "review",
+        "integrate"
+      ],
+      "historical_author_projects": []
+    },
+    "chat-1": {
+      "identity": "chat-project:cco-chat-1",
+      "roles": [
+        "coordinate",
+        "implement",
+        "review",
+        "integrate"
+      ],
+      "historical_author_projects": [
+        4
+      ]
+    },
+    "chat-2": {
+      "identity": "chat-project:cco-chat-2",
+      "roles": [
+        "coordinate",
+        "implement",
+        "review",
+        "integrate"
+      ],
+      "historical_author_projects": [
+        5
+      ]
+    },
+    "chat-3": {
+      "identity": "chat-project:cco-chat-3",
+      "roles": [
+        "coordinate",
+        "implement",
+        "review",
+        "integrate"
+      ],
+      "historical_author_projects": [
+        6
+      ]
+    }
+  },
+  "notes": [
+    "One Work team owns implementations; original project IDs are historical authorship, not extra workers.",
+    "Every unresolved claimed batch, including submission, review, integration, requested repair or blocker, occupies a team slot.",
+    "Two active batches are the default; a third requires a durable concrete independence exception and actual active work.",
+    "Repairs and completion have priority. Do not claim backups speculatively or build on unaccepted dependencies.",
+    "The reviewer must actually be a non-author of the complete package, including original implementation; role labels or a new ID do not establish independence.",
+    "After substantive independent exact-head approval, integrate automatically under the sole lock, with exact-head CI/audit and green resulting main CI/audit.",
+    "Existing v2 state is read-only except the authorized one-time handoff and infrastructure locking during deployment.",
+    "Work-specific historical notes above remain preserved; STATE.execution_mode selects execution_profiles. In chat mode each registered Chat project owns one unresolved batch and reviews only work it never authored."
+  ],
+  "legacy_accepted_records": {
+    "B001": "bd99297a86920f4719bc4f089858f8736dbd9324f28dcef7ff430a51799857c9"
+  },
+  "chat_project_actors": {
+    "4": "chat-1",
+    "5": "chat-2",
+    "6": "chat-3"
+  },
+  "execution_profiles": {
+    "work": {
+      "project_ids": [
+        3
+      ],
+      "default_active_batches": 2,
+      "maximum_active_batches": 3,
+      "per_project_limit": 3
+    },
+    "chat": {
+      "project_ids": [
+        4,
+        5,
+        6
+      ],
+      "default_active_batches": 3,
+      "maximum_active_batches": 3,
+      "per_project_limit": 1
+    }
+  }
+}

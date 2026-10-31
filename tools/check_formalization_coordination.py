@@ -15,7 +15,7 @@ import build_formalization_module as modules
 
 ROOT = Path(__file__).resolve().parents[1]
 DIRECTORY = Path('formalization/coordination')
-MODULES = ('raw_exact', 'strong_selectors', 'parity_hasse', 'exact_crt', 'canonical_hull', 'real_closure', 'finite_packets', 'rigid_groupoid', 'finite_kernel', 'owner_action', 'sir', 'owner_master', 'joint_owner', 'acl_owner_geometry', 'finite_lift', 'mi_geometry', 'owner_transversal', 'safe_readings', 'direct_owner_closure', 'hkn_reservoir', 'terminal_powers', 'full_rows', 'profile_helly', 'relative_mi', 'rank_induction', 'unary_support', 'full_code', 'reset_order', 'unary_hn', 'relational_completion', 'unary_fresh_frames', 'quotient_transport', 'simultaneous_quotients', 'finite_fibres', 'point_generated_sap', 'ap_character', 'clone_sap', 'orbital_cover_boundary', 'pair_safe_split', 'full_phase_lift')
+MODULES = ('raw_exact', 'strong_selectors', 'parity_hasse', 'exact_crt', 'canonical_hull', 'real_closure', 'finite_packets', 'rigid_groupoid', 'finite_kernel', 'owner_action', 'sir', 'owner_master', 'joint_owner', 'acl_owner_geometry', 'finite_lift', 'mi_geometry', 'owner_transversal', 'safe_readings', 'direct_owner_closure', 'hkn_reservoir', 'terminal_powers', 'full_rows', 'profile_helly', 'relative_mi', 'rank_induction', 'unary_support', 'full_code', 'reset_order', 'unary_hn', 'relational_completion', 'unary_fresh_frames', 'quotient_transport', 'simultaneous_quotients', 'finite_fibres', 'point_generated_sap', 'ap_character', 'clone_sap', 'orbital_cover_boundary', 'pair_safe_split', 'full_phase_lift', 'transition_closure', 'terminal_lattice', 'terminal_profiles', 'unary_terms_return', 'typed_orbit_frames', 'hereditary_hidden_orbits', 'hidden_sap_readings', 'guarded_two_root', 'guarded_old_seams', 'old_idempotent_forest', 'terminal_hidden_hn', 'clone_tuple_geometry', 'ap_ramsey_readout', 'exact_ep_geometry', 'automatic_ep_core', 'unfiltered_ep')
 STATES = {'PLANNED', 'PREPARED', 'ASSIGNED', 'BLOCKED', 'SUBMITTED', 'ACCEPTED'}
 CURRENT = STATES - {'PLANNED', 'ACCEPTED'}
 
@@ -60,7 +60,7 @@ def validate(root, board, require_launch=False):
     declarations = json.loads((root / 'catalogue/declarations.json').read_text())
     if board['source_commit'] != declarations['summary']['source_commit']:
         raise ValueError('Coordination and mathematical source pins differ')
-    labels = {label for item in declarations['declarations'] for label in item['labels']}
+    labels = set(modules.catalogue_references(declarations['declarations']))
     for ident in MODULES:
         config = json.loads((root / 'formalization' / ident / 'module.json').read_text())
         known_claims[ident] = {c['id'] for c in config['claims']}

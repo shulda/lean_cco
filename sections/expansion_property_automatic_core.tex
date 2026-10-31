@@ -1,0 +1,355 @@
+% EP24 + EP25. Internal source-relative theorem, 19 October 2026.
+% Assumes the full EP20--EP23 trace/quotient infrastructure immediately above.
+\section{Automatic core of the genuine terminal phase labels}
+\label{sec:ep-automatic-core}
+
+In this section \(\mathcal K_m\) is \emph{terminal}:
+no strict same-sort cover of invariant equivalences has
+finite relative index. No assertion is made for an arbitrary
+terminal unary partition or for safe-looking but
+\emph{nonmaximal} phase orientations.
+
+Let \(T=T_m\) denote the finite set of all realised terminal
+unary types, and for each \emph{original diversity atom} \(a\)
+put \(R_a=\Phi_m(a)\) as in
+\eqref{eq:ep-Phi}. These are relations on the finite
+label set, and \((t,t)\in R_a\) means that two
+\emph{distinct} real vertices of type \(t\) have
+old colour \(a\). The old original sort predicates are
+included when there are several; our theorem below
+starts with precisely one original transitive sort.
+No predicate individually naming the \emph{new}
+labels is included in the template
+\[
+   \mathbf T=(T;(R_a)_{a\in L}).
+   \tag{C1}\label{eq:ep-template}
+\]
+An endomorphism of \(\mathbf T\) must preserve all the
+\emph{old} atom names. This is the finite core problem
+relevant to expansion property, not the exact
+equivalence cores used in Part~I.
+
+Call an original atom \(a\) \emph{bipartite} if its
+undirected graph on the original \(M\) is bipartite.
+Write \(\mathrm{BP}\) for these atoms. Notice that
+a bipartite atom need not forbid the monochromatic
+triangle for the sole reason that its graph is
+bipartite; odd cycles of arbitrary length are
+relevant here.
+
+\begin{lemma}[No bipartite atom on a terminal diagonal]
+\label{lem:ep-bp-loopless}
+For \(a\in\mathrm{BP}\) and any \(t\in T\), one has
+\((t,t)\notin R_a\).
+\end{lemma}
+\begin{proof}
+Any restriction of a bipartite graph remains bipartite.
+If the current atomic \(a\)-graph within the
+homogeneous transitive terminal sort \(t\) were nonempty,
+its even-walk equivalence \(Y\) and its connectivity
+\(X\) would form invariant, finitely definable
+equivalences with \([X:Y]=2\): each connected component
+of a nonempty transitive bipartite atomic graph
+has exactly two even-walk classes. This is excluded
+by terminality. Thus no such edge occurs.
+\end{proof}
+
+\begin{lemma}[Original functional involutions]
+\label{lem:ep-original-functional}
+Let \(\mathscr H\) be the group of all
+\(\operatorname{Aut}(M)\)-equivariant permutations
+of the underlying original transitive set \(M\).
+It is a finite elementary abelian \(2\)-group.
+For nonidentity \(h\in\mathscr H\), its graph is
+one original bipartite atomic relation. Each
+\(h\) acts as a permutation on \emph{every}
+prefix-type set \(T_j\); a nonidentity \(h\)
+acts freely on \(T\).
+\end{lemma}
+\begin{proof}
+By transitivity, the graph of \(h\) is one
+old orbital (or logical identity). Old same-sort
+symmetry gives \(h^2=1\). There are finitely
+many orbitals, so \(\mathscr H\) is a finite group
+of exponent two and is elementary abelian.
+A nonidentity graph is a perfect matching
+and is bipartite. By
+\cref{lem:ep-phi-support}, the support
+\(R=\Phi_j(\operatorname{graph}(h))\)
+is a relation on the finite prefix-type
+set \(T_j\), is symmetric because the
+original orbital is symmetric, and satisfies
+\[
+                    R;R=\Id_{T_j}.
+\]
+It is also total on \(T_j\): every
+original point has an \(h\)-image and
+each prefix type is realized.
+For clarity, these properties FORCE
+\(R\) to be the graph of a unique
+involution. Indeed, if a type \(p\)
+had two neighbours \(q,r\) in \(R\),
+symmetry would put \((q,r)\) in
+\(R;R=\Id_{T_j}\), so \(q=r\).
+Totality gives exactly one neighbour
+of every type; symmetry makes the
+resulting permutation involutive.
+Thus EVERY original equivariant
+permutation \(h\) acts on EVERY
+prefix-type set, although \(h\) need
+not itself preserve the individual
+expanded unary predicates.
+At terminality its action has no fixed
+type by \cref{lem:ep-bp-loopless}.
+\end{proof}
+
+\begin{lemma}[Lifting bipartite quotient separators]
+\label{lem:ep-lift-separator}
+Let \(E>\Id\) be original full exact, and let
+\(s,t\in T\) belong to \emph{different}
+\(\Phi_m(E)\)-classes \(C,D\). Suppose the
+quotient terminal tower on \(M/E\) has an
+original quotient bipartite atom \(b\)
+occurring between \(C,D\). Then an
+\emph{original} bipartite atom \(a\) of \(M\)
+occurs between \(s,t\).
+\end{lemma}
+\begin{proof}
+Choose an actual \(b\)-pair of \(E\)-classes \(X,Y\)
+of occupancy types \(C,D\). By
+\cref{lem:ep-phi-support}, \(X\) contains an
+\(s\)-point and \(Y\) a \(t\)-point. Choose them.
+Their old atom \(a\) belongs to the
+\(E\)-saturated pullback of \(b\).
+A bipartition of the quotient \(b\)-graph
+pulls back to a bipartition of the old
+\(a\)-graph, because every old \(a\)-edge is
+contained in that same saturated quotient
+orbital. Thus \(a\in\mathrm{BP}\) and
+\((s,t)\in R_a\). No distinguished raw
+representatives or common ordering have been
+used.
+\end{proof}
+
+\begin{theorem}[Automatic complete separation and core]
+\label{thm:ep-automatic-core}
+For every genuinely generated terminal tower
+\eqref{eq:ep-tower} over the original one-sort
+symmetric AP+homomorphic-CCO source, one has
+\[
+ \boxed{\quad s\ne t\ \Longrightarrow\
+    \exists a\in\mathrm{BP}\ 
+       (s,t)\in R_a .\quad}
+ \tag{C2}\label{eq:ep-bp-separation}
+\]
+Consequently the graph of terminal types joined
+by a common globally loopless old atom is
+\emph{complete} and every endomorphism of
+\(\mathbf T\) is an automorphism. In particular,
+\(\mathbf T\) is a \emph{core}.
+\end{theorem}
+\begin{proof}
+We prove \eqref{eq:ep-bp-separation} by strong
+induction on the number \(k\) of original
+diversity orbitals. The induction category includes
+all one-sort homogeneous symmetric AP+homomorphic-CCO
+sources, including finite and non-SAP structures:
+an exact quotient of an SAP source need not have SAP.
+
+If \(k=0\), the original one-sort complete structure
+has at most one point and there is at most one realised
+terminal label. A zero-step tower likewise has
+one label. Assume \(k>0\) and a nonempty tower.
+Let \(G_1,\ldots,G_m\) be its \emph{original}
+canonical gates, one per connected safe step, from
+\cref{lem:ep-single-old-gate}.
+
+\emph{Case 1: \(G_i>\Id\) for every step.}
+By \eqref{eq:ep-common-kernel}, for distinct
+\(s,t\in T\) some \(i\) satisfies
+\[
+       [s]_{\Phi_m(G_i)}
+            \ne [t]_{\Phi_m(G_i)} .
+\]
+The projected tower on \(M/G_i\) is genuine
+and terminal by
+\cref{thm:ep-quotient-tower}. Since \(G_i>\Id\)
+its original diversity rank is strictly below \(k\)
+(\cref{rem:ep-trace-audit}). The induction
+hypothesis supplies a bipartite quotient
+atom joining these two quotient labels.
+Apply \cref{lem:ep-lift-separator} to obtain
+an original bipartite separator between \(s,t\).
+
+\emph{Case 2: some \(G_i=\Id\).}
+The original gate \(\Id\) is maximal for one
+original parity pivot \(c\). Its even relation
+\(Y_c\) is contained in \(\Id\); thus
+\(Y_c=\Id\). The symmetric nonempty
+old orbital \(c\) is serial on the
+original transitive sort, so
+\(\Id\subseteq c;c\). But every
+two-edge \(c\)-walk is even, hence
+\(c;c\subseteq Y_c=\Id\). Therefore
+\(c;c=\Id\). A symmetric serial
+relation whose square is identity
+is the graph of a unique nontrivial
+fixed-point-free involution
+\(u\in\mathscr H\). The selected
+character takes this involution to one.
+Original maximality says that the graph of \(u\)
+is contained in \emph{every} original full
+exact equivalence strictly above \(\Id\).
+
+The finite meet
+\[
+ F=\bigcap\{E\in\operatorname{ExEq}(M):
+                                      E>\Id\}
+ \tag{C3}\label{eq:ep-least-F}
+\]
+is therefore an original full exact equivalence
+\emph{strictly} above \(\Id\), and the least
+such one. Put
+\[
+ \mathscr H_F=
+    \{h\in\mathscr H:\operatorname{graph}(h)\subseteq F\}.
+ \tag{C4}\label{eq:ep-HF}
+\]
+It is a nontrivial subgroup.
+Every original gate is now either \(\Id\) or
+contains \(F\).
+
+We claim that, \emph{for every prefix \(j\)},
+\[
+ \mathscr H_F\text{ acts transitively on each }
+     \Phi_j(F)\text{-class of realised prefix types}.
+ \tag{C5}\label{eq:ep-HF-transitive}
+\]
+Induct on the prefix length. Initially there is
+one original type, so the assertion is immediate.
+
+Suppose it holds before a step with original
+gate \(G>\Id\). Then \(F\le G\).
+By \eqref{eq:ep-graph-offsets}, each active
+old \(\Phi(F)\)-class acquires two new
+occupancy classes, each projecting \emph{bijectively}
+to the old class, with objectwise character offsets.
+The group \(\mathscr H_F\) preserves both
+new classes, since its graphs are contained in
+\(F\). Projection is equivariant, so the
+transitivity of the old class transports to
+each new class. An inactive class is unchanged.
+
+Now suppose the step has original gate \(G=\Id\).
+By \cref{lem:ep-single-old-gate}, its active
+parents form one orbit of the full original
+functional group \(\mathscr H\).
+Since \(\mathscr H\) is abelian,
+\(\mathscr H_F\) is normal, and each
+\(\mathscr H_F\)-orbit is either wholly active
+or wholly inactive. By induction each
+\(\Phi(F)\)-class is one such orbit.
+For an active parent \(p\), the selected
+odd functional involution is an original
+element of \(\mathscr H_F\). To check
+this independently of a chosen label
+for a groupoid object, fix the source
+parent \(p_*\) and let \(u\) be the
+original functional atom selected there.
+Its graph belongs to \(F\), by maximality
+of the old identity gate. It fixes the
+source parent type: the chosen
+same-parent odd pivot has a nonempty
+trace \(p_*^2\) and
+\(\Phi_j(u)\) is a permutation, so
+\(u(p_*)=p_*\).
+
+For any other active parent
+\(p=h(p_*)\), where \(h\in\mathscr H\)
+because the FULL old identity-gate
+groupoid is one original functional
+\(\mathscr H\)-orbit, commutativity
+of the elementary abelian group gives
+\[
+                 u(p)=u h(p_*)=
+                      h u(p_*)=p.
+\]
+The transported groupoid odd element
+at \(p\) is \(huh^{-1}=u\);
+its character still equals one, so
+the SAME original involution \(u\in
+\mathscr H_F\) exchanges both realized
+new children over EVERY active parent.
+This requires only the action of original
+equivariant relations on current type
+supports, not an assertion that \(h\)
+is itself an automorphism of the chosen
+marked expansion.
+The old \(\mathscr H_F\)-transitivity moves
+any active parent \(p\) to any other one
+\(q\) in the same occupancy class.
+Then the SAME \(u\in\mathscr H_F\)
+exchanges the two children over \(q\).
+Thus \(\mathscr H_F\) acts transitively on
+the \emph{single} new \(\Phi(F)\)-class
+consisting of all the children over that
+old class. Inactive classes remain unchanged.
+This establishes \eqref{eq:ep-HF-transitive}
+for every \(j\).
+
+Return to arbitrary distinct terminal \(s,t\).
+If their \(\Phi_m(F)\)-classes differ,
+quotient by \(F>\Id\), apply the diversity-rank
+induction hypothesis to the genuine terminal
+tower on \(M/F\), and lift the bipartite
+separator using \cref{lem:ep-lift-separator}.
+If their classes agree, by
+\eqref{eq:ep-HF-transitive} there is
+\(h\in\mathscr H_F\) with \(h(s)=t\).
+Since \(s\ne t\), \(h\) is nonidentity.
+Its graph is an original bipartite atom
+by \cref{lem:ep-original-functional},
+and its type image witnesses
+\((s,t)\in R_h\). This also separates \(s,t\).
+
+This finishes the induction. Finally, if
+an endomorphism \(f\) identified \(s\ne t\),
+an atom \(a\in\mathrm{BP}\) separating them
+would give the forbidden diagonal
+\((f(s),f(s))\in R_a\), contradicting
+\cref{lem:ep-bp-loopless}.
+Thus all endomorphisms are injective and,
+on a finite relational structure, automorphisms.
+\end{proof}
+
+\begin{remark}[Proof boundaries and negative control]
+\label{rem:ep-core-scope}
+This theorem is stronger than core-ness alone;
+it gives an original-bipartite-atom separator
+for \emph{every pair} of terminal labels.
+No intermediate step invokes Ramsey,
+expansion property or an existing core theorem,
+and the induction is on original
+\emph{diversity rank}, not on tower length.
+
+It is false if maximality of the chosen exact
+complements is omitted, even while reachable
+parity, full character transport, homogeneity,
+SAP and CCO are retained. The explicit
+four-atom source \(I\times\mathbb F_2\times\mathbb N\)
+from the EP18 proof record has a safe first
+parity orientation using the \emph{nonmaximal}
+clone gate, followed by a maximal split;
+its four-label table has the proper retraction
+\((\lambda,\mu)\mapsto(\mu,\mu)\).
+Choosing the actual first maximal gate
+instead gives two terminal labels and a core.
+
+Neither this theorem nor the shorter terminal
+diagonal-palette lemma identifies a unique
+preferred safe tower, proves a least vocabulary,
+or extends without work to several \emph{original}
+unary sorts. The source-level exact/quotient/phase
+inputs require independent review before
+formal verification or publication.
+\end{remark}

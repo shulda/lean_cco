@@ -1,0 +1,2006 @@
+{
+  "schema_version": 1,
+  "id": "typed_orbit_frames",
+  "index_title": "Typed exact-coloured orbits, compatible MI fibres and fresh real frames",
+  "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+  "status": "HUMAN_EXPANDED_NOT_LEAN",
+  "scope": "Private B053: all SEVEN source11 results and FOUR equations; eight definitions, 62 human claims and seven tasks. Exact old one-point types give infinite unforced MI-coordinate orbits by high-chromatic old CCO diagrams. This proves point-generated SAP only after the real-base orbit calculation. Actual MI class incidence and simultaneous term-sensitive fibre avoidance give fresh real frames over arbitrary finite closed hidden sets; hereditary hidden orbits are reserved for B054. Literal standing terminal infinite FULL covers, the identity-term case, compatible same-sort frames versus general incompatible/different-sort frames, and original-group versus full-hidden-Aut distinctions remain explicit.",
+  "scope_vocabulary": [
+    "chords",
+    "exact_orbits",
+    "real_base",
+    "point_generated",
+    "mi_fibres",
+    "compatible_frame",
+    "fresh_frames",
+    "boundary"
+  ],
+  "scope_explanation": "statement and proof. All old spoke types are actual complete finite diagrams; their STRONG profiles omit real identity. No arbitrary orphan SAP, hidden homogeneity, or higher-arity completion is assumed from old real SAP alone.",
+  "control_script": "tools/check_typed_orbit_frame_controls.py",
+  "assumptions": [
+    {
+      "id": "A01",
+      "name": "Actual complete binary typed homogeneous source",
+      "statement": "M is the homogeneous limit in the standing finite complete binary terminal setting, with nonempty transitive named real sorts, finitely many actual typed orbitals, symmetric same-sort atoms and converse cross-sort atoms. G=Aut(M) acts on actual named quotient sorts by equivariant unary maps.",
+      "depends_on": []
+    },
+    {
+      "id": "A02",
+      "name": "Original visible SAP",
+      "statement": "The actual original finite age has SAP over EVERY complete finite real base, including the empty base. It gives pinned relational injectivisation and infinite off-base real orbits; no hidden SAP is assumed.",
+      "depends_on": []
+    },
+    {
+      "id": "A03",
+      "name": "Original semantic HOM CCO",
+      "statement": "Every finite typed partial old atomic graph whose specified simple cycles admit old homomorphisms has ONE whole old homomorphism. One-point root/base factors are actual binary diagrams. An optional higher-arity reading needs the separately stated support-normal interface and is not inferred here.",
+      "depends_on": []
+    },
+    {
+      "id": "A04",
+      "name": "Standing terminal FULL infinite covers",
+      "statement": "Every strict cover in the finite FULL original invariant-equivalence lattice on EACH real sort has INFINITE relative index, including Top covers. This is the literal ass:standing infinite-cover branch, stronger in its wording than merely excluding index two. Every strict interval then has infinite relative index by C31; the weaker no-index-two route would additionally require the full Hasse theorem.",
+      "depends_on": []
+    },
+    {
+      "id": "A05",
+      "name": "Actual transition-enriched MI-only hidden signature",
+      "statement": "The hidden universe contains original reals and ONLY actual proper NONIDENTITY meet-irreducible quotient sorts with all named projections, upward maps, quotient bijections and inverses, and actual semantic-cylinder binary relations. All vertices are point-generated in the full universe; finite induced hidden subobjects can have orphans. No nullary vertex generators. All terms act in this SAME actual interpretation; no chart is chosen.",
+      "depends_on": []
+    }
+  ],
+  "imports": [
+    {
+      "id": "I01",
+      "name": "lem:typed-raw-strong-saturation",
+      "provider_module": "transition_closure",
+      "source_label": "lem:typed-raw-strong-saturation",
+      "provider_claims": [
+        "C05",
+        "C07",
+        "C08"
+      ],
+      "statement": "Nonzero RAW/STRONG saturation and strict old binary pinned-path support; for a diversity fork its STRONG profile equals the distinct-endpoint RAW relation. Logical identity is handled separately, never as a diversity edge.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "provider_support_claims": [
+        "C01"
+      ],
+      "provider_support_usage": "Use strict proved ancestor C01 ONLY for old binary atomic homomorphism injectivisation with designated complete endpoint pair frozen and aligned by old homogeneity; it is not a new export or a Set-Pasch/exactness assumption."
+    },
+    {
+      "id": "I02",
+      "name": "lem:typed-quotient-transport",
+      "provider_module": "quotient_transport",
+      "source_label": "lem:typed-quotient-transport",
+      "provider_claims": [
+        "C05",
+        "C08",
+        "C11",
+        "C13",
+        "C14"
+      ],
+      "statement": "For actual nonempty typed R with RRop subset J, actual quotient bijection to J^R, canonical inverse and FULL upper-interval lattice isomorphism preserve MI and Top strictness. Generic invariant transport is not automatic terminal namedness.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I03",
+      "name": "lem:no-real-algebraic-transition",
+      "provider_module": "transition_closure",
+      "source_label": "lem:no-real-algebraic-transition",
+      "provider_claims": [
+        "C30"
+      ],
+      "statement": "Original visible SAP prevents a proper nonidentity MI quotient from becoming old real equality; transport remains a proper represented coordinate once terminal full/exact identification is discharged.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I04",
+      "name": "lem:typed-prime-intersection",
+      "provider_module": "transition_closure",
+      "source_label": "lem:typed-prime-intersection",
+      "provider_claims": [
+        "C23"
+      ],
+      "statement": "For terminal proper represented MI J, a nonempty finite meet of STRONG exact domains inside J forces one defining domain inside J. The source wrapper retains positive original word presentations and FULL terminal identification.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I05",
+      "name": "lem:typed-terminal-pure-power",
+      "provider_module": "terminal_powers",
+      "source_label": "lem:typed-terminal-pure-power",
+      "provider_claims": [
+        "C19",
+        "C21"
+      ],
+      "statement": "Under actual original SAP and full no-index-two, any same-sort atom e has a uniform positive STRONG power threshold with e^n equal to its connectivity diversity palette for all large n; no CCO or hidden SAP in this provider.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I06",
+      "name": "cor:high-girth-high-chromatic",
+      "provider_module": "parity_hasse",
+      "source_label": "cor:high-girth-high-chromatic",
+      "provider_claims": [
+        "C05"
+      ],
+      "statement": "For every finite chromatic/girth bound there is a finite graph exceeding both. Only the graph existence export is imported.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I07",
+      "name": "lem:typed-unary-closure-bound",
+      "provider_module": "unary_terms_return",
+      "source_label": "lem:typed-unary-closure-bound",
+      "provider_claims": [
+        "C13",
+        "C14"
+      ],
+      "statement": "There are finitely many actual unary term FUNCTIONS from each hidden sort, uniformly bounded one-generated closures in genuine completed or unary-admissible diagrams; arbitrary partial unary cycles are excluded.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "provider_support_claims": [
+        "C12"
+      ],
+      "provider_support_usage": "Use strict proved ancestor unary_terms_return C12 for the explicitly proved finite set of actual unary term FUNCTIONS, not merely its finite image at a generator. This supports the finite common moving set in C36/C39/C42; infinitely many syntactic words may coincide. No extra source export or additional hypothesis is introduced."
+    },
+    {
+      "id": "I08",
+      "name": "lem:typed-coordinate-normal-form",
+      "provider_module": "unary_terms_return",
+      "source_label": "lem:typed-coordinate-normal-form",
+      "provider_claims": [
+        "C24",
+        "C25"
+      ],
+      "statement": "Each real-source term is real identity with kernel Id, or literal theta composed with F_K for a nonzero proper represented MI K and a named quotient bijection/identity; equality of term values is exactly K and stabilisers agree.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I09",
+      "name": "lem:typed-point-generated-sap-criterion",
+      "provider_module": "point_generated_sap",
+      "source_label": "lem:typed-point-generated-sap-criterion",
+      "provider_claims": [
+        "C11"
+      ],
+      "statement": "Same original group real-base infinite hidden orbits outside full closure imply strong amalgamation over full POINT-GENERATED common bases, via one finite avoidance move and complete original base alignment. Orphan hereditary SAP is not its conclusion.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I10",
+      "name": "lem:rh-sap-invariant-monolith",
+      "provider_module": "real_closure",
+      "source_label": "lem:rh-sap-invariant-monolith",
+      "provider_claims": [
+        "C19",
+        "C20",
+        "C21"
+      ],
+      "statement": "Original SAP gives infinite real off-base orbits; two nonidentity invariant equivalences have infinite meet classes, hence all finite nonempty meets of nonidentity equivalences remain nonidentity with infinite classes.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I11",
+      "name": "lem:typed-terminal-all-equivalences-exact",
+      "provider_module": "real_closure",
+      "source_label": "lem:typed-terminal-all-equivalences-exact",
+      "provider_claims": [
+        "C27",
+        "C28"
+      ],
+      "statement": "Under actual terminal symmetric CCO context the FULL original invariant lattice is RAW exact and distributive. This is not assumed for an arbitrary group quotient lattice.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I12",
+      "name": "thm:full-typed-exact-balls",
+      "provider_module": "raw_exact",
+      "source_label": "thm:full-typed-exact-balls",
+      "provider_claims": [
+        "C13"
+      ],
+      "statement": "Pairwise-intersecting actual FULL RAW exact balls in one target real sort have a common point, including the empty family. Only the original ball-Helly export is used.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I13",
+      "name": "lem:foundational-MI-coordinate-cofinal",
+      "provider_module": "exact_crt",
+      "source_label": "lem:foundational-MI-coordinate-cofinal",
+      "provider_claims": [
+        "C15",
+        "C16"
+      ],
+      "statement": "In a finite DISTRIBUTIVE lattice, meet E_i <= proper MI J implies some E_i<=J; original quotient-coordinate upward images are actual maps. Nonempty family required, empty Top case handled separately.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I14",
+      "name": "lem:finite-action-avoidance",
+      "provider_module": "acl_owner_geometry",
+      "source_label": "lem:finite-action-avoidance",
+      "provider_claims": [
+        "C03"
+      ],
+      "statement": "For any group action and finite moving set all of whose point orbits are infinite, ONE group element avoids any prescribed finite forbidden set. Keep sort tags for different coordinates.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I15",
+      "name": "cor:typed-forced-term-factorisation",
+      "provider_module": "unary_terms_return",
+      "source_label": "cor:typed-forced-term-factorisation",
+      "provider_claims": [
+        "C27"
+      ],
+      "statement": "If nonzero represented J<=K_tau, the ACTUAL real-source term factors through F_J by a literal NAMED unary term, including RAW diagonal returns. Constancy alone would not prove membership in hidden unary closure.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I16",
+      "name": "lem:foundational-quotient-fibre-avoidance",
+      "provider_module": "unary_fresh_frames",
+      "source_label": "lem:foundational-quotient-fibre-avoidance",
+      "provider_claims": [
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27"
+      ],
+      "statement": "Transitive real action plus finitely many actual equivariant term functions, named forced factors and infinite relative indices for unforced terms gives one representative avoiding ALL finite forbidden outputs while preserving every forced output; sequential finite requests allowed. No SAP/CCO/homogeneity premise in this abstract provider.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I17",
+      "name": "lem:typed-cylinder-realisation",
+      "provider_module": "transition_closure",
+      "source_label": "lem:typed-cylinder-realisation",
+      "provider_claims": [
+        "C42",
+        "C43"
+      ],
+      "statement": "Actual hidden quotient position pairs have representative-independent full semantic spectra; choosing different real representatives does not change retained actual hidden binary relations.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    }
+  ],
+  "definitions": [
+    {
+      "id": "D01",
+      "name": "Complete base and clone graph",
+      "statement": "D is a complete actual finite real diagram, X is a disjoint formal set, every X-D pair has a specified diversity atom; only H edges inside X are specified.",
+      "depends_on": [],
+      "notes": "N01",
+      "source": {
+        "file": "sections/v27/11_typed_orbits_frames.tex",
+        "anchor": "\\label{lem:typed-complete-base-chords}"
+      }
+    },
+    {
+      "id": "D02",
+      "name": "Exact-coloured one-point fibre",
+      "statement": "p(x/D) is a REALISED complete old atomic one-point type. Its new point is outside D when its chosen coordinate is outside cl(D). P_d is the STRONG diversity fork t_d*t_d^op.",
+      "depends_on": [],
+      "notes": "N02",
+      "source": {
+        "file": "sections/v27/11_typed_orbits_frames.tex",
+        "anchor": "\\label{lem:typed-exact-orbit-infinitude}"
+      }
+    },
+    {
+      "id": "D03",
+      "name": "Full point-generated unary closure",
+      "statement": "D^coord is the union of one-generated hidden closures of reals in D, under ALL named transitions/upward maps, including original reals via identity terms. Empty closure is empty.",
+      "depends_on": [],
+      "notes": "N03",
+      "source": {
+        "file": "sections/v27/11_typed_orbits_frames.tex",
+        "anchor": "\\label{cor:typed-no-real-base-hidden-algebraicity}"
+      }
+    },
+    {
+      "id": "D04",
+      "name": "Same-sort actual class incidence fibre",
+      "statement": "C_i are actual E_i-classes on ONE original sort and meet pairwise. H=meet_i E_i and X=intersection_i C_i. Empty list means H=Top,X=M_a.",
+      "depends_on": [],
+      "notes": "N05",
+      "source": {
+        "file": "sections/v27/11_typed_orbits_frames.tex",
+        "anchor": "\\label{lem:typed-mi-fibre-infinite-dichotomy}"
+      }
+    },
+    {
+      "id": "D05",
+      "name": "Forced and unforced term kernels",
+      "statement": "A real-source tau has kernel K_tau=Id for identity, otherwise nonzero proper represented MI. Relative to a fibre cut H, forced means H<=K_tau; otherwise unforced. Forced values may lie in the forbidden set and are retained.",
+      "depends_on": [],
+      "notes": "N06",
+      "source": {
+        "file": "sections/v27/11_typed_orbits_frames.tex",
+        "anchor": "\\label{cor:typed-compatible-mi-single-real-frame}"
+      }
+    },
+    {
+      "id": "D06",
+      "name": "Compatible MI orphan frame",
+      "statement": "For same-sort pairwise-compatible MI quotient vertices b_i, A=cl({b_i}); the request is ONE real x with cl(x) intersect B=A. This is narrower than arbitrary incompatible/different-sort orphan bases.",
+      "depends_on": [],
+      "notes": "N06",
+      "source": {
+        "file": "sections/v27/11_typed_orbits_frames.tex",
+        "anchor": "\\label{cor:typed-compatible-mi-single-real-frame}"
+      }
+    },
+    {
+      "id": "D07",
+      "name": "General finite fresh representative request",
+      "statement": "A<=B are finite actual induced unary-closed hidden sets, F is any further finite hidden set. Choose one real preimage x_b for each proper coordinate b in A, sequentially preserving forced terms and avoiding every forbidden unforced value.",
+      "depends_on": [],
+      "notes": "N07",
+      "source": {
+        "file": "sections/v27/11_typed_orbits_frames.tex",
+        "anchor": "\\label{lem:typed-fresh-representatives}"
+      }
+    },
+    {
+      "id": "D08",
+      "name": "Original-group stabiliser",
+      "statement": "G=Aut(M) acts on actual hidden sorts. G_D fixes complete original real D, G_X stabilises a class fibre SETWISE, G_b fixes a quotient vertex. These are not replaced by an unproved equality with full Aut(hidden).",
+      "depends_on": [],
+      "notes": "N03",
+      "source": {
+        "file": "sections/v27/11_typed_orbits_frames.tex",
+        "anchor": "\\label{cor:typed-no-real-base-hidden-algebraicity}"
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "name": "Chordless cycles with one base vertex are triangles",
+      "statement": "If a cycle contains just d in D and has length>3, some internal X vertex is not adjacent to d along the cycle but has its specified spoke to d, giving a chord.",
+      "depends_on": [
+        "D01"
+      ],
+      "notes": "N01",
+      "scope": "chords",
+      "source_labels": [
+        "lem:typed-complete-base-chords"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C02",
+      "name": "Two or more base vertices force a short chordless cycle",
+      "statement": "Three D vertices on a cycle of length>3 yield a complete-base chord. With exactly two they must be consecutive; on a length>3 other path, an X vertex has a spoke chord to one base endpoint. Hence any chordless cycle meeting D is a triangle.",
+      "depends_on": [
+        "D01",
+        "C01"
+      ],
+      "notes": "N01",
+      "scope": "chords",
+      "source_labels": [
+        "lem:typed-complete-base-chords"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C03",
+      "name": "Glue homomorphic cycle IMAGES over their diversity chord",
+      "statement": "Split along a specified chord into two shorter cycles. Each homomorphism sends its two chord endpoints to distinct points of the same complete old pair type. Take the finite induced OLD IMAGE structures, align that pair by homogeneity, and amalgamate them over the pair by old SAP. Composing the two source maps gives a homomorphism of the union; collisions away from the chord are allowed. Do not treat a noninjective source cycle as an age object.",
+      "depends_on": [
+        "A01",
+        "A02",
+        "D01"
+      ],
+      "notes": "N01",
+      "scope": "chords",
+      "source_labels": [
+        "lem:typed-complete-base-chords"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C04",
+      "name": "Chord splitting induction proves the cycle test",
+      "statement": "Induct on cycle length with C03 until all leaves are chordless. C01/C02 show each leaf either lies in H or is a triangle meeting D. Thus those local tests suffice for every specified simple cycle. This is individual-cycle realizability, before whole-graph CCO.",
+      "depends_on": [
+        "C01",
+        "C02",
+        "C03"
+      ],
+      "notes": "N01",
+      "scope": "chords",
+      "source_labels": [
+        "lem:typed-complete-base-chords"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C05",
+      "name": "Unforced quotient class makes the old root genuinely new",
+      "statement": "If x were in D, its named F_J(x) would already be in D^coord. Thus x outside D and every p-spoke t_d is an actual diversity atom, even across named real sorts.",
+      "depends_on": [
+        "A05",
+        "D02",
+        "D03"
+      ],
+      "notes": "N02",
+      "scope": "exact_orbits",
+      "source_labels": [
+        "lem:typed-exact-orbit-infinitude"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C06",
+      "name": "A guarded fork inside J implies RAW quotient-functionality",
+      "statement": "I01 pinned old fork injection identifies P_d with (t_d;t_d^op) off the true real diagonal. If P_d subset J, all other RAW outputs are diagonal and already in full reflexive J, so t_d;t_d^op subset J. No STRONG profile contains logical equality.",
+      "depends_on": [
+        "A01",
+        "A02",
+        "I01",
+        "C05"
+      ],
+      "notes": "N02",
+      "scope": "exact_orbits",
+      "source_labels": [
+        "lem:typed-exact-orbit-infinitude"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C07",
+      "name": "The actual spoke would name the supposedly unforced coordinate",
+      "statement": "I02 transports J to FULL MI J^t_d, with quotient bijection and converse inverse. I03 excludes real equality; I11/A04 identifies it as proper represented. The actual edge x t_d d gives F_J(x)=pi_inverse(F_{J^t_d}(d)), a literal named term on d, contradiction. Hence every P_d exits J.",
+      "depends_on": [
+        "A04",
+        "A05",
+        "I02",
+        "I03",
+        "I11",
+        "C06"
+      ],
+      "notes": "N02",
+      "scope": "exact_orbits",
+      "source_labels": [
+        "lem:typed-exact-orbit-infinitude"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C08",
+      "name": "Old SAP gives a nonempty common diversity fork intersection",
+      "statement": "Strongly amalgamate two complete copies of D+x over D and embed/align that full base. The two distinct roots have one actual fine atom in EVERY P_d. The same witness makes all partial intersections nonempty. Empty D gives the entire inhabited same-sort diversity palette by old empty-base SAP.",
+      "depends_on": [
+        "A01",
+        "A02",
+        "C05",
+        "D02"
+      ],
+      "notes": "N02",
+      "scope": "exact_orbits",
+      "source_labels": [
+        "lem:typed-exact-orbit-infinitude"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C09",
+      "name": "Exact MI-primality produces one external fine atom",
+      "statement": "P_d are nonempty positive STRONG exact domains; iterating I04 on their nonempty partial intersections from C08 shows their meet C_p cannot lie in J, since C07 forbids any factor inside. Empty D instead uses J<Top and every sort transitive. Choose e in C_p outside J.",
+      "depends_on": [
+        "A04",
+        "I04",
+        "C07",
+        "C08"
+      ],
+      "notes": "N02",
+      "scope": "exact_orbits",
+      "source_labels": [
+        "lem:typed-exact-orbit-infinitude"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C10",
+      "name": "Choose the sparse high-chromatic clone diagram",
+      "statement": "Given n>=1, I05 gives N_e (A04 excludes all index-two covers/intervals). Choose H by I06 with chi(H)>n and girth>max(3,N_e+1). On formal clones in sort a use p-spokes to literal D and atom e on H edges only. No clone-clone nonedge is assigned.",
+      "depends_on": [
+        "A01",
+        "A02",
+        "A04",
+        "I05",
+        "I06",
+        "C09"
+      ],
+      "notes": "N02",
+      "scope": "exact_orbits",
+      "source_labels": [
+        "lem:typed-exact-orbit-infinitude"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C11",
+      "name": "All base triangles are actual old triangles",
+      "statement": "A triangle with two D points is legal by realised complete p. A triangle d,x_v,x_w is legal by e in P_d; three base points lie in actual D. All edges are diversity, and triangle witnesses may be aligned to their fine endpoint pair.",
+      "depends_on": [
+        "C08",
+        "C09",
+        "C10"
+      ],
+      "notes": "N02",
+      "scope": "exact_orbits",
+      "source_labels": [
+        "lem:typed-exact-orbit-infinitude"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C12",
+      "name": "Long clone-only cycles use the positive power threshold",
+      "statement": "For an H cycle of length ell, the complementary e-path has length ell-1>=N_e and profile F_e; e belongs to it. Thus the cycle has a genuine old realization, injectivising expanded old paths by I01 if required. There are no shorter clone cycles by the girth bound.",
+      "depends_on": [
+        "I01",
+        "I05",
+        "C10"
+      ],
+      "notes": "N02",
+      "scope": "exact_orbits",
+      "source_labels": [
+        "lem:typed-exact-orbit-infinitude"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C13",
+      "name": "Every displayed old cycle is completable",
+      "statement": "C04 reduces arbitrary cycles to base triangles C11 and clone cycles C12. This checks each individual cycle without invoking a putative whole diagram or hidden SAP.",
+      "depends_on": [
+        "C04",
+        "C11",
+        "C12"
+      ],
+      "notes": "N02",
+      "scope": "exact_orbits",
+      "source_labels": [
+        "lem:typed-exact-orbit-infinitude"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C14",
+      "name": "Invoke old CCO once and align the WHOLE real base",
+      "statement": "A03 gives ONE homomorphism f of the whole clone/base partial graph. The complete diversity diagram on D forces f|D to be an induced old embedding. Old homogeneity supplies ONE automorphism taking all f(d) back to literal d. Compose before counting types/orbits. For empty D alignment is the identity.",
+      "depends_on": [
+        "A01",
+        "A03",
+        "C13"
+      ],
+      "notes": "N02",
+      "scope": "exact_orbits",
+      "source_labels": [
+        "lem:typed-exact-orbit-infinitude"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C15",
+      "name": "Class labels properly colour H without global injectivity",
+      "statement": "Every clone image now realises p over the SAME actual D. Along each H edge its fine atom e exits J, so images have different J-classes. The J-class assignment is a proper H-colouring even if nonadjacent formal clones collide. Thus p has >n distinct J-classes for every n.",
+      "depends_on": [
+        "C09",
+        "C10",
+        "C14"
+      ],
+      "notes": "N02",
+      "scope": "exact_orbits",
+      "source_labels": [
+        "lem:typed-exact-orbit-infinitude"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C16",
+      "name": "Exact-coloured orbit infinitude export",
+      "statement": "C05-C15 prove infinitely many J-classes for any realised exact p with F_J(x) outside full unary closure of D. The binary proof uses no support-normal higher-arity interface; that extension is separately conditional.",
+      "depends_on": [
+        "C15"
+      ],
+      "notes": "N02",
+      "scope": "exact_orbits",
+      "source_labels": [
+        "lem:typed-exact-orbit-infinitude"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C17",
+      "name": "Term values on the real base are fixed by its original stabiliser",
+      "statement": "Every named unary map is G-equivariant, so every value in D^coord is fixed by G_D. Identity terms retain D and no nullary generators give cl(empty)=empty.",
+      "depends_on": [
+        "A01",
+        "A05",
+        "D03",
+        "D08"
+      ],
+      "notes": "N03",
+      "scope": "real_base",
+      "source_labels": [
+        "cor:typed-no-real-base-hidden-algebraicity"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C18",
+      "name": "Point generation and normal form reduce every hidden vertex",
+      "statement": "Every actual hidden u is tau(q) for real q. I08 gives either identity or tau=theta F_J with J proper nonidentity represented MI and theta a named equivariant bijection/identity. The latter equality also identifies G-stabilisers of the term value and J-class.",
+      "depends_on": [
+        "A05",
+        "I08"
+      ],
+      "notes": "N03",
+      "scope": "real_base",
+      "source_labels": [
+        "cor:typed-no-real-base-hidden-algebraicity"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C19",
+      "name": "Real off-base values have infinite old orbits",
+      "statement": "For identity tau, u=q outside D^coord implies q outside D. I10 C19 gives infinitely many realizations of its complete old type over D by old SAP and full finite-base alignment; old homogeneity places them in G_D.q.",
+      "depends_on": [
+        "A01",
+        "A02",
+        "I10",
+        "C18"
+      ],
+      "notes": "N03",
+      "scope": "real_base",
+      "source_labels": [
+        "cor:typed-no-real-base-hidden-algebraicity"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C20",
+      "name": "Coordinate off-base values inherit infinitely many distinct images",
+      "statement": "If [q]_J were in D^coord then named theta puts u there, contradiction. Apply C16 to complete old type q/D; homogeneity moves q to each of its representatives fixing D. Kernel biconditional I08 makes tau-values pairwise distinct, so G_D.u infinite.",
+      "depends_on": [
+        "A01",
+        "I08",
+        "C16",
+        "C18"
+      ],
+      "notes": "N03",
+      "scope": "real_base",
+      "source_labels": [
+        "cor:typed-no-real-base-hidden-algebraicity"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C21",
+      "name": "Exact original real-base algebraic closure export",
+      "statement": "C17-C20 show finite G_D-orbit points are exactly D^coord, including empty D. Closure points are fixed, not merely finite-orbit. This is the stronger SAME original-group claim; no orphan-base inference occurs yet.",
+      "depends_on": [
+        "C17",
+        "C19",
+        "C20"
+      ],
+      "notes": "N03",
+      "scope": "real_base",
+      "source_labels": [
+        "cor:typed-no-real-base-hidden-algebraicity"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C22",
+      "name": "The real-base closure cardinality is linear",
+      "statement": "By I07 and unary-only vertex generation, D^coord is the union of |D| one-generated closures of size<=m_typ. Thus it has at most m_typ|D| vertices. Empty D gives zero literally. This counts vertices/functions, not term syntax.",
+      "depends_on": [
+        "A05",
+        "I07",
+        "C21"
+      ],
+      "notes": "N03",
+      "scope": "real_base",
+      "source_labels": [
+        "cor:typed-no-real-base-hidden-algebraicity"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C23",
+      "name": "Discharge all point-generated criterion inputs",
+      "statement": "Named unary maps are equivariant, all finite real factors have finite full closure by I07, and old homogeneity aligns the complete original real common base. C21 gives the needed off-closure G_D orbits for EVERY real D, including empty.",
+      "depends_on": [
+        "A01",
+        "A05",
+        "I07",
+        "C21"
+      ],
+      "notes": "N04",
+      "scope": "point_generated",
+      "source_labels": [
+        "prop:typed-coordinate-sap"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C24",
+      "name": "Point-generated hidden SAP follows without orphan SAP",
+      "statement": "Apply I09 to C23. One original-group finite avoidance move separates the two FULL point-generated factors over the full point-generated common base; a finite union of unary closures stays closed. Output is point-generated SAP only, with no assumed hereditary hidden homogeneity.",
+      "depends_on": [
+        "I09",
+        "C23"
+      ],
+      "notes": "N04",
+      "scope": "point_generated",
+      "source_labels": [
+        "prop:typed-coordinate-sap"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C25",
+      "name": "Point-generated SAP source export",
+      "statement": "C24 proves prop:typed-coordinate-sap. The hard source-specific step is C16, not a formal transfer of old real SAP. General orphan SAP and full hidden homogeneity remain later results.",
+      "depends_on": [
+        "C24"
+      ],
+      "notes": "N04",
+      "scope": "point_generated",
+      "source_labels": [
+        "prop:typed-coordinate-sap"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C26",
+      "name": "Full terminal equivalences are distributive RAW exact",
+      "statement": "Under A01/A03/A04, I11 identifies the FULL finite invariant lattice with RAW exact equivalences and supplies distributivity. This discharges the exact-lattice hypotheses of I12/I13 for all E_i/J, not only pre-named subsets.",
+      "depends_on": [
+        "A01",
+        "A03",
+        "A04",
+        "I11"
+      ],
+      "notes": "N05",
+      "scope": "mi_fibres",
+      "source_labels": [
+        "lem:typed-mi-fibre-infinite-dichotomy"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C27",
+      "name": "Pairwise class incidence has a genuine common real witness",
+      "statement": "Each E_i-class is a nonempty FULL RAW exact ball by C26. I12 makes their pairwise-intersecting finite family intersect, including empty family. For x in X, equivalence transitivity gives X=H[x].",
+      "depends_on": [
+        "I12",
+        "C26",
+        "D04"
+      ],
+      "notes": "N05",
+      "scope": "mi_fibres",
+      "source_labels": [
+        "lem:typed-mi-fibre-infinite-dichotomy"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C28",
+      "name": "The common fibre is infinite including the empty family",
+      "statement": "For m>=1, I10 C20/C21 keeps the finite meet H of nonidentity E_i nonidentity and makes H[x] infinite. Empty m gives H=Top and X=M_a, infinite by original empty-base SAP. No incompatible family is included.",
+      "depends_on": [
+        "A02",
+        "I10",
+        "C27"
+      ],
+      "notes": "N05",
+      "scope": "mi_fibres",
+      "source_labels": [
+        "lem:typed-mi-fibre-infinite-dichotomy"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C29",
+      "name": "Meet-primality determines forced coordinates from ONE class",
+      "statement": "For proper MI J and H<=J, nonempty-family I13/C26 gives some E_i<=J. The actual J-class on X is the canonical upward image of C_i. If m=0, H=Top cannot be below proper J. Namedness of the upward map is asserted only for represented endpoints.",
+      "depends_on": [
+        "I13",
+        "C26",
+        "C27"
+      ],
+      "notes": "N05",
+      "scope": "mi_fibres",
+      "source_labels": [
+        "lem:typed-mi-fibre-infinite-dichotomy"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C30",
+      "name": "Every unforced MI cuts a proper subfibre",
+      "statement": "If H not<=J, L=H meet J is strictly below H. Its classes within one actual H-class are exactly the distinct J-classes meeting X, so their number equals [H:L]. This is actual class incidence, not a formula in named meet quotients.",
+      "depends_on": [
+        "C27",
+        "D04"
+      ],
+      "notes": "N05",
+      "scope": "mi_fibres",
+      "source_labels": [
+        "lem:typed-mi-fibre-infinite-dichotomy"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C31",
+      "name": "Standing infinite FULL covers imply all strict indices infinite",
+      "statement": "In the finite full invariant lattice, if L<H choose a cover L<=U<V<=H in [L,H]. A04 makes [V:U] infinite. Inside any H-class select one V-class, then one L-subclass in each of its infinitely many U-classes; these L-subclasses are distinct. Thus [H:L] infinite. This avoids reading no-index-two alone as the conclusion.",
+      "depends_on": [
+        "A01",
+        "A04"
+      ],
+      "notes": "N05",
+      "scope": "mi_fibres",
+      "source_labels": [
+        "lem:typed-mi-fibre-infinite-dichotomy"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C32",
+      "name": "The setwise fibre stabiliser is transitive on X",
+      "statement": "For x,y in H[x], original sort transitivity gives g x=y. H-invariance makes gH[x]=H[y]=H[x], so g belongs to G_X. For every invariant J, its class orbit is exactly {[z]_J:z in X}, with cardinal [H:H meet J].",
+      "depends_on": [
+        "A01",
+        "C27",
+        "D08"
+      ],
+      "notes": "N05",
+      "scope": "mi_fibres",
+      "source_labels": [
+        "lem:typed-mi-fibre-infinite-dichotomy"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C33",
+      "name": "One tagged avoidance move handles ALL unforced MI coordinates",
+      "statement": "For finitely many J_k with H not<=J_k, C30/C31/C32 give infinite G_X-orbits of tagged (k,[x]_Jk). Apply I14 to their finite union and tagged forbidden classes. ONE g in G_X avoids every list; gx lies in X. Empty list s=0 is allowed.",
+      "depends_on": [
+        "I14",
+        "C30",
+        "C31",
+        "C32"
+      ],
+      "notes": "N05",
+      "scope": "mi_fibres",
+      "source_labels": [
+        "lem:typed-mi-fibre-infinite-dichotomy"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C34",
+      "name": "Actual MI-fibre dichotomy source export",
+      "statement": "C27-C33 give one infinite H-class, the forced-single-class alternative, infinitely many unforced J-classes and simultaneous finite avoidance. It does not prescribe full fine old spokes to additional real anchors.",
+      "depends_on": [
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C33"
+      ],
+      "notes": "N05",
+      "scope": "mi_fibres",
+      "source_labels": [
+        "lem:typed-mi-fibre-infinite-dichotomy"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C35",
+      "name": "A compatible same-sort orphan family is generated by any point in X",
+      "statement": "For b_i=C_i actual proper MI classes and A=cl({b_i}), each x in X has all b_i as its named projections, so A subset cl(x). For m=0, A=empty and X=M_a. No common representative is claimed for incompatible or mixed-sort b_i.",
+      "depends_on": [
+        "A05",
+        "C27",
+        "C28",
+        "D06"
+      ],
+      "notes": "N06",
+      "scope": "compatible_frame",
+      "source_labels": [
+        "cor:typed-compatible-mi-single-real-frame"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C36",
+      "name": "Every forced nonidentity term is already a named value in A",
+      "statement": "Use I07/I08 finite functions and normal form. If H<=K_tau, H>Id from C28 excludes real identity. By C29 choose E_i<=K_tau; I15 factors tau through b_i by a NAMED term. Thus tau is constant on X and that value lies in closed A. For empty m this case is impossible.",
+      "depends_on": [
+        "I07",
+        "I08",
+        "I15",
+        "C28",
+        "C29",
+        "C35"
+      ],
+      "notes": "N06",
+      "scope": "compatible_frame",
+      "source_labels": [
+        "cor:typed-compatible-mi-single-real-frame"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C37",
+      "name": "Unforced hidden term values have infinite G_X-orbits",
+      "statement": "For nonidentity tau=theta F_K, K is proper MI. If H not<=K, C30-C32 give infinitely many K-classes on X and equivariant bijection theta preserves orbit size. Each forbidden output corresponds to at most one K-class via theta inverse.",
+      "depends_on": [
+        "I08",
+        "C30",
+        "C31",
+        "C32"
+      ],
+      "notes": "N06",
+      "scope": "compatible_frame",
+      "source_labels": [
+        "cor:typed-compatible-mi-single-real-frame"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C38",
+      "name": "Handle real identity SEPARATELY from the proper-MI dichotomy",
+      "statement": "For tau=id_real, K=Id is not an allowed proper nonidentity MI argument of C34. Instead X is infinite by C28 and G_X transitive by C32, so its real point orbit is infinite. This adds the real-identity value to the SAME finite moving set; it avoids every real vertex of B.",
+      "depends_on": [
+        "C28",
+        "C32"
+      ],
+      "notes": "N06",
+      "scope": "compatible_frame",
+      "source_labels": [
+        "cor:typed-compatible-mi-single-real-frame"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C39",
+      "name": "ONE action chooses the entire compatible fresh frame",
+      "statement": "Choose x0 in X. The finite set of ALL distinct unforced term values at x0 has infinite G_X-orbits by C37/C38. Apply I14 once with forbidden hidden set B, on disjoint tagged carriers. Put x=gx0; forced values remain the prescribed A-values C36, all unforced values avoid B simultaneously.",
+      "depends_on": [
+        "I07",
+        "I14",
+        "C36",
+        "C37",
+        "C38"
+      ],
+      "notes": "N06",
+      "scope": "compatible_frame",
+      "source_labels": [
+        "cor:typed-compatible-mi-single-real-frame"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C40",
+      "name": "The compatible frame has the exact closure intersection",
+      "statement": "Every cl(x) value is a forced or unforced term value. C36 puts forced ones in A and C39 puts unforced ones outside B, so cl(x) intersect B subset A. C35 plus A subset B gives the reverse inclusion. Identity term also makes x outside B_real.",
+      "depends_on": [
+        "C35",
+        "C36",
+        "C39"
+      ],
+      "notes": "N06",
+      "scope": "compatible_frame",
+      "source_labels": [
+        "cor:typed-compatible-mi-single-real-frame"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C41",
+      "name": "Compatible one-real-frame source export",
+      "statement": "C35-C40 prove CMF with finite actual unary-closed B containing A, including empty A. This is exact same-sort compatible MI class incidence and does not replace the general multi-representative lemma.",
+      "depends_on": [
+        "C40"
+      ],
+      "notes": "N06",
+      "scope": "compatible_frame",
+      "source_labels": [
+        "cor:typed-compatible-mi-single-real-frame"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C42",
+      "name": "Start each general request in its ACTUAL transitive real fibre",
+      "statement": "For b in A of proper quotient B_aJ, pick actual x0 with F_J(x0)=b. Original sort transitivity makes G_b transitive on J[x0]; every named real-source term is equivariant. I07/I08 give finitely many actual functions with the correct original kernels.",
+      "depends_on": [
+        "A01",
+        "A05",
+        "I07",
+        "I08",
+        "D07"
+      ],
+      "notes": "N07",
+      "scope": "fresh_frames",
+      "source_labels": [
+        "lem:typed-fresh-representatives"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C43",
+      "name": "Forced outputs are literal named terms of the SAME b",
+      "statement": "If J<=K_tau, I15 writes tau=sigma_tauJ F_J in the actual language. Thus every representative of b has tau-value sigma_tauJ(b) in unary-closed A. Retain this value even if it lies in B, F or earlier forbidden lists. This is stronger than abstract constancy.",
+      "depends_on": [
+        "A05",
+        "I15",
+        "C42"
+      ],
+      "notes": "N07",
+      "scope": "fresh_frames",
+      "source_labels": [
+        "lem:typed-fresh-representatives"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C44",
+      "name": "Every unforced fibre term has an infinite original orbit",
+      "statement": "If J not<=K_tau, J meet K_tau<J. C31 gives [J:J meet K_tau] infinite, including K_tau=Id. The orbit of tau(x0) under G_b is exactly its set of values on the fibre, whose cardinal is that class index by the kernel biconditional.",
+      "depends_on": [
+        "I08",
+        "C31",
+        "C42"
+      ],
+      "notes": "N07",
+      "scope": "fresh_frames",
+      "source_labels": [
+        "lem:typed-fresh-representatives"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C45",
+      "name": "The common abstract avoidance provider is fully discharged",
+      "statement": "C42 finite equivariant functions/transitive fibre, C43 literal forced factors and C44 infinite unforced indices give all premises of I16. Therefore one x_b represents b, preserves ALL forced outputs, and avoids any supplied finite Z in every unforced output. The abstract step itself needs no CCO/SAP once these inputs are supplied.",
+      "depends_on": [
+        "I16",
+        "C42",
+        "C43",
+        "C44"
+      ],
+      "notes": "N07",
+      "scope": "fresh_frames",
+      "source_labels": [
+        "lem:typed-fresh-representatives"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C46",
+      "name": "Sequential requests remain finite and preserve forced coincidences",
+      "statement": "Enumerate finitely many proper coordinate vertices b of A, possibly different real sorts or incompatible classes. At each step let Z=B union F union earlier unforced term values and earlier representatives. Finite singleton closures keep Z finite. Apply C45 in the current b-fibre; do not demand avoidance of its forced outputs.",
+      "depends_on": [
+        "I07",
+        "C45",
+        "D07"
+      ],
+      "notes": "N07",
+      "scope": "fresh_frames",
+      "source_labels": [
+        "lem:typed-fresh-representatives"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C47",
+      "name": "Identity outputs force all real representatives distinct and fresh",
+      "statement": "For every b, J>Id makes the real identity term unforced. C45/C46 therefore put x_b outside B_real,F_real and all earlier real representatives, including different quotient requests on the same real sort. No extra generic freshness is assumed.",
+      "depends_on": [
+        "A05",
+        "C45",
+        "C46"
+      ],
+      "notes": "N07",
+      "scope": "fresh_frames",
+      "source_labels": [
+        "lem:typed-fresh-representatives"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C48",
+      "name": "Changing representatives preserves the retained hidden structure",
+      "statement": "Each x_b is a real preimage of its SAME actual quotient vertex b. All named maps/identities stay fixed; I17 shows its actual semantic-cylinder relations to retained hidden vertices are independent of the representative choice. This is not a reconstruction of arbitrary hidden diagrams.",
+      "depends_on": [
+        "I17",
+        "C46"
+      ],
+      "notes": "N07",
+      "scope": "fresh_frames",
+      "source_labels": [
+        "lem:typed-fresh-representatives"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C49",
+      "name": "The union of real frames covers every vertex of A",
+      "statement": "Let C=A_real and X be all chosen x_b. Every real vertex of A is in C, and every proper coordinate b in A is a projection of its x_b. Hence A subset cl(C union X). Conversely terms on C stay in A because A is closed.",
+      "depends_on": [
+        "A05",
+        "C46",
+        "D03"
+      ],
+      "notes": "N07",
+      "scope": "fresh_frames",
+      "source_labels": [
+        "lem:typed-fresh-representatives"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C50",
+      "name": "The general frame has the exact requested B intersection",
+      "statement": "Unary closure is the union of the singleton closures. Terms on C stay in A; forced terms on each x_b stay in A by C43; unforced terms avoid B by C45/C46. Thus B intersect cl(C union X) subset A, with reverse C49. This permits forced overlaps between different representative closures.",
+      "depends_on": [
+        "C43",
+        "C46",
+        "C49"
+      ],
+      "notes": "N07",
+      "scope": "fresh_frames",
+      "source_labels": [
+        "lem:typed-fresh-representatives"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C51",
+      "name": "Typed fresh representatives source export",
+      "statement": "C42-C50 prove every stated freshness clause, for arbitrary finite actual closed A<=B and finite F, with no same-sort/compatibility assumption on orphan vertices. The conclusion supplies fresh frames but does not alone prove hereditary hidden SAP.",
+      "depends_on": [
+        "C47",
+        "C48",
+        "C50"
+      ],
+      "notes": "N07",
+      "scope": "fresh_frames",
+      "source_labels": [
+        "lem:typed-fresh-representatives"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C52",
+      "name": "Abstract finite freshness has a weaker mathematical premise",
+      "statement": "Once finite term functions, transitive actual quotient fibres, literal forced terms and infinite unforced indices are supplied, the C45/I16 step needs no CCO, SAP, symmetry, distributivity or homogeneity. Source geometry discharges these inputs separately; do not erase that distinction.",
+      "depends_on": [
+        "C45"
+      ],
+      "notes": "N08",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-fresh-representatives"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C53",
+      "name": "Identity-term repair is a proof expansion, not an added MI axiom",
+      "statement": "The compatible frame source proof cites a proper-MI dichotomy for K_tau=Id. C38 supplies that case directly by infinite transitive X and includes it in one common avoidance move, repairing only a local proof reference. The real identity remains unforced and named equality is not a diversity atom.",
+      "depends_on": [
+        "C38",
+        "C39"
+      ],
+      "notes": "N08",
+      "scope": "boundary",
+      "source_labels": [
+        "cor:typed-compatible-mi-single-real-frame"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C54",
+      "name": "Incomplete spokes do not define an exact old one-point orbit",
+      "statement": "C14 relies on the WHOLE realised p(x/D), and old homogeneity of the complete base, to count one G_D type. Keeping only class incidences C34 would not prescribe fine old pair colours. The MI-fibre result cannot replace exact-coloured orbit infinitude.",
+      "depends_on": [
+        "C14",
+        "C16",
+        "C34"
+      ],
+      "notes": "N08",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-exact-orbit-infinitude"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C55",
+      "name": "Do not assume arbitrary orphan hidden homogeneity or SAP",
+      "statement": "C25 is about full point-generated common bases. C51 is representative separation in the actual hidden universe. To derive arbitrary closed-base original-group infinitude one must combine C21 AND C51 through the frame lemma, prepared in B054. Actual hidden homogeneity is a separate later proof.",
+      "depends_on": [
+        "C21",
+        "C25",
+        "C51"
+      ],
+      "notes": "N08",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-fresh-representatives"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C56",
+      "name": "Finite relative index can obstruct a newly visible term",
+      "statement": "In blocks times F2 times infinite clones, a named coarse block quotient alone has only real-identity/uncoarse-projection functions and infinite unforced fibres. Naming the fine bit quotient creates an unforced term with TWO values over a coarse orphan, violating the index premise; fresh frames are term-sensitive. No arbitrary smaller-language necessity of full terminality is claimed.",
+      "depends_on": [],
+      "notes": "N08",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-fresh-representatives"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C57",
+      "name": "A non-MI meet quotient can create a cross-coordinate forced value",
+      "statement": "In independent rows/columns with infinite real clones, naming additionally the CELL quotient creates a unique cell vertex determined by one row and one column orphan but absent from their unary closure. It is algebraic outside that closure. Exactness of the meet does not justify adding its quotient to the MI-only language.",
+      "depends_on": [],
+      "notes": "N08",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-fresh-representatives"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C58",
+      "name": "Chords require gluing over their actual pair image",
+      "statement": "A homomorphism of a cycle may identify nonadjacent formal positions. Only the specified chord forces its endpoints distinct and fixes a common fine pair type. C03 glues the finite images; treating the literal noninjective source cycle as an induced old finite member is not valid.",
+      "depends_on": [
+        "C03"
+      ],
+      "notes": "N08",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-complete-base-chords"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C59",
+      "name": "Finite diagnostics test local invariants, not existence theorems",
+      "statement": "The control enumerates finite graph chord reductions, proper-colouring class counts and actual independent-coordinate windows for forced/unforced values, incompatible orphans, one common avoidance witness, identity freshness and signature obstruction. It does not establish arbitrarily high chromatic girth, infinite groups/indices or general old CCO.",
+      "depends_on": [
+        "C16",
+        "C41",
+        "C51"
+      ],
+      "notes": "N08",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-fresh-representatives"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C60",
+      "name": "All orbit groups remain named throughout the proof",
+      "statement": "Exact p counting and real-base PG-ACL use G_D with G=Aut(M); fibre avoidance uses G_X or G_b within the SAME group. No equality G=Aut(hidden) is inferred. Containment of induced G in full hiddenAut will suffice for later outside-closure infinitude, once that argument is explicitly given.",
+      "depends_on": [
+        "D08",
+        "C21",
+        "C32",
+        "C42"
+      ],
+      "notes": "N08",
+      "scope": "boundary",
+      "source_labels": [
+        "cor:typed-no-real-base-hidden-algebraicity"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C61",
+      "name": "Empty bases and identity cases have literal witnesses",
+      "statement": "Empty D uses nonempty diversity from SAP in C08; empty compatible family uses infinite X=M_a and one simultaneous avoidance of all finite B; empty A in general frame can take C=X=empty. Every real identity term is handled as kernel Id, without inventing a hidden equality-colour edge.",
+      "depends_on": [
+        "C08",
+        "C22",
+        "C38",
+        "C41",
+        "C50"
+      ],
+      "notes": "N08",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-fresh-representatives"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C62",
+      "name": "Inherited qualifications and receiving obligations remain",
+      "statement": "No extra external theorem or receiving binding is introduced. All five HN/HKN bindings, B047 actual/FULL-sector scope and B048 support-normal gate remain. This is private human preparation with frozen TeX unchanged, not a Lean theorem or source-wide/global certification.",
+      "depends_on": [
+        "C16",
+        "C25",
+        "C34",
+        "C41",
+        "C51"
+      ],
+      "notes": "N08",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-fresh-representatives"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    }
+  ],
+  "source_result_files": [
+    "sections/v27/11_typed_orbits_frames.tex"
+  ],
+  "exports": [
+    {
+      "source_label": "lem:typed-complete-base-chords",
+      "claims": [
+        "C04"
+      ]
+    },
+    {
+      "source_label": "lem:typed-exact-orbit-infinitude",
+      "claims": [
+        "C16"
+      ]
+    },
+    {
+      "source_label": "cor:typed-no-real-base-hidden-algebraicity",
+      "claims": [
+        "C21",
+        "C22"
+      ]
+    },
+    {
+      "source_label": "prop:typed-coordinate-sap",
+      "claims": [
+        "C25"
+      ]
+    },
+    {
+      "source_label": "lem:typed-mi-fibre-infinite-dichotomy",
+      "claims": [
+        "C34"
+      ]
+    },
+    {
+      "source_label": "cor:typed-compatible-mi-single-real-frame",
+      "claims": [
+        "C41"
+      ]
+    },
+    {
+      "source_label": "lem:typed-fresh-representatives",
+      "claims": [
+        "C51"
+      ]
+    }
+  ],
+  "auxiliary_exports": [
+    {
+      "source_label": "eq:typed-unforced-spoke",
+      "claims": [
+        "C07"
+      ],
+      "source": {
+        "file": "sections/v27/11_typed_orbits_frames.tex",
+        "anchor": "\\label{eq:typed-unforced-spoke}"
+      }
+    },
+    {
+      "source_label": "eq:typed-no-real-base-hidden-algebraicity",
+      "claims": [
+        "C21"
+      ],
+      "source": {
+        "file": "sections/v27/11_typed_orbits_frames.tex",
+        "anchor": "\\label{eq:typed-no-real-base-hidden-algebraicity}"
+      }
+    },
+    {
+      "source_label": "eq:typed-coordinate-orbit-stabilizer",
+      "claims": [
+        "C25"
+      ],
+      "source": {
+        "file": "sections/v27/11_typed_orbits_frames.tex",
+        "anchor": "\\label{eq:typed-coordinate-orbit-stabilizer}"
+      }
+    },
+    {
+      "source_label": "eq:typed-compatible-mi-single-real-frame",
+      "claims": [
+        "C41"
+      ],
+      "source": {
+        "file": "sections/v27/11_typed_orbits_frames.tex",
+        "anchor": "\\label{eq:typed-compatible-mi-single-real-frame}"
+      }
+    }
+  ],
+  "source_files": [
+    {
+      "file": "sections/exact_foundations/01_full_raw_exact_helly.tex",
+      "git_blob": "7cb28c86b4b296ddf865b6aff518cda1215cd491"
+    },
+    {
+      "file": "sections/exact_lattice_crt.tex",
+      "git_blob": "5ead1d021abbc99c255c8a36ec87585cba3fbdc3"
+    },
+    {
+      "file": "sections/finite_orbit_avoidance.tex",
+      "git_blob": "290ab3ae54ade87fc4693b0c17955a9e319efd9b"
+    },
+    {
+      "file": "sections/real_hull/07_sap_mi_intersection_geometry.tex",
+      "git_blob": "7d681c9087c1d7f41ea65a834158daf456ee5fd2"
+    },
+    {
+      "file": "sections/sparse_labelled_graphs.tex",
+      "git_blob": "c7db0b7169dd8ff4dcd5642469ac8fa42c2ef530"
+    },
+    {
+      "file": "sections/terminal_invariant_raw_exact.tex",
+      "git_blob": "af0064c672f332049209e142a585bc62540954b4"
+    },
+    {
+      "file": "sections/terminal_strong_powers.tex",
+      "git_blob": "e76bcb91b465a9192fe51748e845e49d05c16a58"
+    },
+    {
+      "file": "sections/typed_invariant_quotient_transport.tex",
+      "git_blob": "3895b17d7d0176a74d6f69c39e4e22d9cdba5715"
+    },
+    {
+      "file": "sections/unary_fresh_frame_sap.tex",
+      "git_blob": "7a05cbd11bb6a051541cdaa93694461a76357c53"
+    },
+    {
+      "file": "sections/v27/01_profiles_exact_cco.tex",
+      "git_blob": "db05cf3ab4a6cc493499b3a44b4a544abf41285f"
+    },
+    {
+      "file": "sections/v27/07_typed_raw_strong_transition.tex",
+      "git_blob": "6dc7e4c7aa452b179e95cc502b4daf4d2b6592d9"
+    },
+    {
+      "file": "sections/v27/10_typed_unary_terms_return.tex",
+      "git_blob": "7edb9833681c84ab9e15918a004137d7f2c47258"
+    },
+    {
+      "file": "sections/v27/11_typed_orbits_frames.tex",
+      "git_blob": "9bd287329e85276d13dd4cc7a5bc852a125e9c70"
+    }
+  ],
+  "dependency_firewalls": [
+    {
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04"
+      ],
+      "forbid": [
+        "A03",
+        "A04",
+        "A05",
+        "I01",
+        "I02",
+        "I03",
+        "I04",
+        "I05",
+        "I06",
+        "I07",
+        "I08",
+        "I09",
+        "I10",
+        "I11",
+        "I12",
+        "I13",
+        "I14",
+        "I15",
+        "I16",
+        "I17",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40",
+        "C41",
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46",
+        "C47",
+        "C48",
+        "C49",
+        "C50",
+        "C51",
+        "C52",
+        "C53",
+        "C54",
+        "C55",
+        "C56",
+        "C57",
+        "C58",
+        "C59",
+        "C60",
+        "C61",
+        "C62"
+      ]
+    },
+    {
+      "claims": [
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34"
+      ],
+      "forbid": [
+        "I01",
+        "I02",
+        "I03",
+        "I04",
+        "I05",
+        "I06",
+        "I07",
+        "I08",
+        "I09",
+        "I15",
+        "I16",
+        "I17",
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40",
+        "C41",
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46",
+        "C47",
+        "C48",
+        "C49",
+        "C50",
+        "C51",
+        "C52",
+        "C53",
+        "C54",
+        "C55",
+        "C56",
+        "C57",
+        "C58",
+        "C59",
+        "C60",
+        "C61",
+        "C62"
+      ]
+    },
+    {
+      "claims": [
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46",
+        "C47",
+        "C48",
+        "C49",
+        "C50",
+        "C51"
+      ],
+      "forbid": [
+        "A02",
+        "A03",
+        "I01",
+        "I02",
+        "I03",
+        "I04",
+        "I05",
+        "I06",
+        "I09",
+        "I10",
+        "I11",
+        "I12",
+        "I13",
+        "I14",
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40",
+        "C41",
+        "C52",
+        "C53",
+        "C54",
+        "C55",
+        "C56",
+        "C57",
+        "C58",
+        "C59",
+        "C60",
+        "C61",
+        "C62"
+      ]
+    },
+    {
+      "claims": [
+        "C38"
+      ],
+      "forbid": [
+        "I08",
+        "I13",
+        "C29",
+        "C30",
+        "C33",
+        "C34",
+        "C37"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "T01",
+      "name": "Chord geometry and cycle-image gluing",
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Use actual complete old types and image gluing over chord endpoints; align ONE entire old base before orbit counting. Preserve STRONG/RAW distinction, full infinite covers, all identity-term outputs in the same avoidance move, literal named factorisation, point-generated versus hereditary bases, actual original group, and finite functions rather than syntax. Fresh-frame/MI-class incidence branches do not replace exact-coloured orbit infinitude. No hidden homogeneity or SAP imported into their own proof."
+    },
+    {
+      "id": "T02",
+      "name": "Exact fine-spoke orbit infinitude",
+      "claims": [
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16"
+      ],
+      "depends_on": [
+        "T01"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Use actual complete old types and image gluing over chord endpoints; align ONE entire old base before orbit counting. Preserve STRONG/RAW distinction, full infinite covers, all identity-term outputs in the same avoidance move, literal named factorisation, point-generated versus hereditary bases, actual original group, and finite functions rather than syntax. Fresh-frame/MI-class incidence branches do not replace exact-coloured orbit infinitude. No hidden homogeneity or SAP imported into their own proof."
+    },
+    {
+      "id": "T03",
+      "name": "Real-base closure and point-generated SAP",
+      "claims": [
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25"
+      ],
+      "depends_on": [
+        "T02"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Use actual complete old types and image gluing over chord endpoints; align ONE entire old base before orbit counting. Preserve STRONG/RAW distinction, full infinite covers, all identity-term outputs in the same avoidance move, literal named factorisation, point-generated versus hereditary bases, actual original group, and finite functions rather than syntax. Fresh-frame/MI-class incidence branches do not replace exact-coloured orbit infinitude. No hidden homogeneity or SAP imported into their own proof."
+    },
+    {
+      "id": "T04",
+      "name": "Actual MI Helly fibres and simultaneous class avoidance",
+      "claims": [
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Use actual complete old types and image gluing over chord endpoints; align ONE entire old base before orbit counting. Preserve STRONG/RAW distinction, full infinite covers, all identity-term outputs in the same avoidance move, literal named factorisation, point-generated versus hereditary bases, actual original group, and finite functions rather than syntax. Fresh-frame/MI-class incidence branches do not replace exact-coloured orbit infinitude. No hidden homogeneity or SAP imported into their own proof."
+    },
+    {
+      "id": "T05",
+      "name": "One compatible fresh real frame",
+      "claims": [
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40",
+        "C41"
+      ],
+      "depends_on": [
+        "T04"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Use actual complete old types and image gluing over chord endpoints; align ONE entire old base before orbit counting. Preserve STRONG/RAW distinction, full infinite covers, all identity-term outputs in the same avoidance move, literal named factorisation, point-generated versus hereditary bases, actual original group, and finite functions rather than syntax. Fresh-frame/MI-class incidence branches do not replace exact-coloured orbit infinitude. No hidden homogeneity or SAP imported into their own proof."
+    },
+    {
+      "id": "T06",
+      "name": "Arbitrary actual orphan representatives",
+      "claims": [
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46",
+        "C47",
+        "C48",
+        "C49",
+        "C50",
+        "C51"
+      ],
+      "depends_on": [
+        "T04"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Use actual complete old types and image gluing over chord endpoints; align ONE entire old base before orbit counting. Preserve STRONG/RAW distinction, full infinite covers, all identity-term outputs in the same avoidance move, literal named factorisation, point-generated versus hereditary bases, actual original group, and finite functions rather than syntax. Fresh-frame/MI-class incidence branches do not replace exact-coloured orbit infinitude. No hidden homogeneity or SAP imported into their own proof."
+    },
+    {
+      "id": "T07",
+      "name": "Boundary cases and inherited scope",
+      "claims": [
+        "C52",
+        "C53",
+        "C54",
+        "C55",
+        "C56",
+        "C57",
+        "C58",
+        "C59",
+        "C60",
+        "C61",
+        "C62"
+      ],
+      "depends_on": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Use actual complete old types and image gluing over chord endpoints; align ONE entire old base before orbit counting. Preserve STRONG/RAW distinction, full infinite covers, all identity-term outputs in the same avoidance move, literal named factorisation, point-generated versus hereditary bases, actual original group, and finite functions rather than syntax. Fresh-frame/MI-class incidence branches do not replace exact-coloured orbit infinitude. No hidden homogeneity or SAP imported into their own proof."
+    }
+  ],
+  "controls": [
+    {
+      "id": "K01",
+      "check": "Exhaustive bounded complete-base chord classification and recursive image-compatible cycle splitting; explicit class-colouring counts without requiring global injectivity."
+    },
+    {
+      "id": "K02",
+      "check": "Actual finite independent-coordinate/clones windows test all term kernels, one common compatible-frame avoidance, general incompatible mixed-sort orphan freshness, forced overlaps and identity-term freshness. Term-visible index-two and non-MI cross-cell obstruction controls remain negative tests, not terminal sources."
+    }
+  ],
+  "overview_mermaid": [
+    "flowchart TD",
+    "  C[\"Complete-base chord test\"] --> O[\"Exact fine-spoke orbit infinitude\"]",
+    "  P[\"Original terminal powers and CCO\"] --> O",
+    "  O --> R[\"Original real-base hidden orbits\"]",
+    "  R --> S[\"Point-generated SAP\"]",
+    "  H[\"Actual exact MI Helly fibres\"] --> F[\"One compatible real frame\"]",
+    "  N[\"Finite normal-form terms and infinite indices\"] --> F",
+    "  N --> G[\"General fresh representatives\"]",
+    "  R --> Z[\"B054 hereditary orbit step\"]",
+    "  G --> Z"
+  ],
+  "overview_notes": [
+    "All seven source11 results and four equations are locally prepared; hereditary hidden-orbit result belongs to B054.",
+    "The real-identity term is handled separately from the proper-MI dichotomy but included in the SAME finite avoidance action.",
+    "Literal standing terminal infinite FULL covers imply the infinite-index fibre premise; merely no-index-two needs its separate Hasse bridge.",
+    "The last freshness step is abstractly CCO-free once actual finite functions, named factors and indices are established."
+  ],
+  "article_feedback": [
+    {
+      "id": "F01",
+      "kind": "PROOF_CASE_EXPANSION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/v27/11_typed_orbits_frames.tex",
+        "anchor": "For every remaining term"
+      },
+      "finding": "The compatible-frame proof invokes a proper-MI dichotomy for every unforced term, although the real identity has kernel Id and is outside that stated dichotomy.",
+      "proposed_article_change": "Treat identity separately using infinite X and transitivity of G_X; add it to the same finite moving set before one avoidance application. Make explicit the standing infinite-cover premise when asserting infinite strict relative indices.",
+      "caller_effect": "No added assumption or statement change under the standing terminal infinite-cover branch.",
+      "proof_claims": [
+        "C31",
+        "C38",
+        "C39",
+        "C53"
+      ]
+    },
+    {
+      "id": "F02",
+      "kind": "PROOF_IMAGE_GLUE_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/v27/11_typed_orbits_frames.tex",
+        "anchor": "glue realizations"
+      },
+      "finding": "Cycle realizations may be noninjective; gluing is performed on their induced finite image structures over the complete diversity chord image.",
+      "proposed_article_change": "Spell out image structures and pair alignment; collisions away from the chord remain allowed.",
+      "caller_effect": "No theorem change; makes the actual old SAP application explicit.",
+      "proof_claims": [
+        "C03",
+        "C58"
+      ]
+    }
+  ],
+  "review": {
+    "date": "2026-10-29",
+    "source_unchanged": true,
+    "source_signature_repairs": 0,
+    "unexpanded_provider_labels": [],
+    "proof_status": "HUMAN_EXPANDED_NOT_LEAN; independent concrete mathematical review and parent source/provider synthesis PASS. Source frozen and all prior qualifications retained.",
+    "independent_reviews": [
+      "Independent source11 reconstruction found no new theorem gap; explicit identity-term and image-gluing proof expansions retained",
+      "Final concrete module/notes/provider audit PASS; finite actual term-function support and complete export scope explicitly recorded, original-group orbit inclusion separate from full hidden group, no hidden homogeneity/SAP assumed."
+    ],
+    "boundaries": [
+      "Only actual realised complete one-point types in exact-orbit theorem",
+      "Full infinite-cover terminal premise for infinite strict fibre indices",
+      "Compatible MI class incidence is not arbitrary fine old spoke control",
+      "Fresh frames do not imply hereditary SAP without original real-base orbit input",
+      "MI-only actual signature and named forced terms remain essential"
+    ]
+  }
+}

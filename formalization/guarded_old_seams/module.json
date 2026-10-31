@@ -1,0 +1,2371 @@
+{
+  "schema_version": 1,
+  "id": "guarded_old_seams",
+  "index_title": "Guarded lift equivalence, exact idempotent envelopes and literal OLD seams",
+  "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+  "status": "HUMAN_EXPANDED_NOT_LEAN",
+  "scope": "Private B057: EIGHT source15 results, EIGHT equations with the explicitly CORRECTED TV1 guarded/RAW formula, eleven definitions, 72 human claims and nine tasks. Global guarded completion equivalence is proved via actual one-/two-generated reflection and binary irreducible local cover. Literal OLD term equations telescope before any completion. A nonempty strong idempotent has direct RAW envelope R_w;R_w=Id union e represented by ww, without CCO or NR2; MI reconstruction is separate. CCO-free full idempotent lattice/monolith is distinguished from its CCO distributive specialization. Branch visibility is repaired because a STRONG diversity menu is not literally RAW bisaturated when real diagonal pairs can be added: use its full restored pullback and guarded saturation, then fresh SAP neighbours. The desired kernel/old-equation conclusions remain valid. Higher-support clauses retain separate scope.",
+  "scope_vocabulary": [
+    "lift_equivalence",
+    "literal_seams",
+    "raw_envelope",
+    "idempotent_lattice",
+    "branch_visibility",
+    "old_equations",
+    "reinsertion",
+    "word_insertion",
+    "boundary"
+  ],
+  "scope_explanation": "statement and proof. D is a diversity-only menu; Dhat is its actual full root pullback and may contain real Id. TV1 is exported only with its recorded repair. Strong e is irreflexive; the equivalence is E_e=Id union e. Source16 old-gap certificates and factorisation forests are not imported.",
+  "control_script": "tools/check_guarded_old_seam_controls.py",
+  "assumptions": [
+    {
+      "id": "A01",
+      "name": "Actual original finite typed homogeneous source",
+      "statement": "M is countable homogeneous and complete in a finite binary relational language, with nonempty transitive named real sorts, finite actual pair orbitals, symmetric same-sort atoms and typed converses. All invariant same-sort relations are symmetric unions of actual old orbitals. Logical equality is separate from diversity.",
+      "depends_on": []
+    },
+    {
+      "id": "A02",
+      "name": "Original visible SAP",
+      "statement": "The original finite complete age has SAP over every complete old base. It gives pinned positive-word injectivisation, infinite old neighbour fibres, distinct representative splitting and fresh private interiors. No hidden SAP or CCO is inferred from SAP alone.",
+      "depends_on": []
+    },
+    {
+      "id": "A03",
+      "name": "Separate semantic CCO input",
+      "statement": "Original semantic homomorphic CCO supplies the prior exact-ball/finite distributive exact-lattice calculus and its full terminal specialization when used. It is NOT a premise of the direct ww envelope or the CCO-free idempotent lattice branch.",
+      "depends_on": []
+    },
+    {
+      "id": "A04",
+      "name": "FULL original NR2 terminal input",
+      "statement": "On each named real sort every proper original invariant relative index is infinite; in particular no index-two interval exists. This is checked on the FULL invariant lattice. It supplies prior RAW words and terminal named MI coordinates; no assumption that all generic invariant quotients are named is made.",
+      "depends_on": []
+    },
+    {
+      "id": "A05",
+      "name": "Actual MI-only hidden signature",
+      "statement": "The actual hidden interpretation has original real sorts and proper NONZERO represented MI quotient sorts, all actual complete pair orbitals and named projections/upward maps/quotient transitions/inverses. Functions are actual equivariant quotient maps and only unary. Relation arities are positive and at most two in the binary core; no nullary generators or quotient-to-real functions.",
+      "depends_on": []
+    },
+    {
+      "id": "A06",
+      "name": "Admissible partial source with actual joined support tests",
+      "statement": "C is finite, unary-functionally closed and unary-admissible. Its one-generated diagrams and every ACTUALLY joined irreducible old endpoint-pair support used by the guarded lift are full actual completed induced members. All constraints on one pair arise from that SAME support, as B056. The construction reaches a nonempty exact menu for each issued pair; no global completion is assumed.",
+      "depends_on": []
+    },
+    {
+      "id": "A07",
+      "name": "Optional higher-support interface",
+      "statement": "The binary conclusions are unconditional under their displayed inputs. An original finite-arity extension additionally freezes complete canonical old higher-support factors and assumes the separate support-normal completion/reflection interface. Binary pair closure and anchors alone do not imply higher-tuple reflection.",
+      "depends_on": []
+    },
+    {
+      "id": "A08",
+      "name": "Abstract literal unary seam context",
+      "statement": "Independently C is functionally closed under the named total unary maps. Every displayed macro-side equation is already a literal equality of OLD source term values. At a shared root both incident readings use the SAME canonical coordinate term, or an already literal named transition equality. No accidental equality of distinct completion images may be used as a seam.",
+      "depends_on": []
+    }
+  ],
+  "imports": [
+    {
+      "id": "I01",
+      "name": "lem:typed-one-source-support-per-guarded-pair",
+      "provider_module": "guarded_two_root",
+      "source_label": "lem:typed-one-source-support-per-guarded-pair",
+      "provider_claims": [
+        "C17"
+      ],
+      "statement": "Every constrained pair is supported by ONE actually irreducible locally completed old closure and has one actual common fine atom in ALL its profiles. No global C completion or Helly manufacturing of that witness.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I02",
+      "name": "lem:typed-two-root-complete-reflection",
+      "provider_module": "guarded_two_root",
+      "source_label": "lem:typed-two-root-complete-reflection",
+      "provider_claims": [
+        "C38"
+      ],
+      "statement": "EVERY actual fine diversity atom in the menu realizes the COMPLETE induced joined two-generated hidden diagram, including all unary term equalities, distinctness and binary relation reflection. No complete test on unjoined real ancestors.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I03",
+      "name": "lem:typed-real-sort-splitting",
+      "provider_module": "hidden_sap_readings",
+      "source_label": "lem:typed-real-sort-splitting",
+      "provider_claims": [
+        "C34"
+      ],
+      "statement": "A finite HE completion can be placed inside a full hidden expansion over a finite old visible carrier and split real collision fibres while retaining actual proper quotient data and all binary hidden readings. All designated real witnesses can be distinct.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I04",
+      "name": "lem:typed-binary-irreducible-local-cover",
+      "provider_module": "unary_support",
+      "source_label": "lem:typed-binary-irreducible-local-cover",
+      "provider_claims": [
+        "C10",
+        "C17",
+        "C18"
+      ],
+      "statement": "In a binary/total-unary partial source, actual singleton and displayed two-endpoint closed supports cover every pair of vertices in a NONEMPTY irreducible; induced embeddings on these supports give HE on every irreducible, with the explicit empty/nullary convention. A05 positive arities discharge the empty gate.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I05",
+      "name": "lem:typed-cylinder-realisation",
+      "provider_module": "transition_closure",
+      "source_label": "lem:typed-cylinder-realisation",
+      "provider_claims": [
+        "C42",
+        "C43"
+      ],
+      "statement": "Named cylinders are exact actual representative spectra and partition compatible hidden pairs; membership forces the corresponding semantic relation. Real equality exteriors are omitted.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I06",
+      "name": "lem:typed-transition-cylinder",
+      "provider_module": "transition_closure",
+      "source_label": "lem:typed-transition-cylinder",
+      "provider_claims": [
+        "C47",
+        "C48",
+        "C49"
+      ],
+      "statement": "Nontrivial actual transition graphs have their saturated identity-free cylinder profile. Strict ancestor C45 identifies the actual kernels/maps of a fine atom and every quotient-functional relation containing it.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "provider_support_claims": [
+        "C45"
+      ],
+      "provider_support_usage": "Use strict proved ancestor C45 only for pointwise equality of canonical quotient maps/kernels of a common atomic witness and direct/branch relations in the root signature. It does not identify the fine binary relation with the larger relation."
+    },
+    {
+      "id": "I07",
+      "name": "lem:typed-identity-transport-redundant",
+      "provider_module": "transition_closure",
+      "source_label": "lem:typed-identity-transport-redundant",
+      "provider_claims": [
+        "C32"
+      ],
+      "statement": "A RAW relation containing old logical Id induces the existing unary coordinate identity; no synthetic STRONG equality atom is inserted.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I08",
+      "name": "lem:typed-branch-atomic-transport",
+      "provider_module": "transition_closure",
+      "source_label": "lem:typed-branch-atomic-transport",
+      "provider_claims": [
+        "C50",
+        "C51"
+      ],
+      "statement": "A quotient-functional identity-free positive branch has the same actual quotient map as ANY fine atom inside it; terminal proper MI targets are existing named coordinates, separately using FULL RAW representation and old SAP noncollapse.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I09",
+      "name": "lem:typed-raw-strong-saturation",
+      "provider_module": "transition_closure",
+      "source_label": "lem:typed-raw-strong-saturation",
+      "provider_claims": [
+        "C05",
+        "C07",
+        "C08"
+      ],
+      "statement": "Old nonzero exterior saturation and equivalence joins agree with actual STRONG diversity products. Strict C01 support converts every whole positive old word RAW walk with distinct pinned endpoints to a fully injective realization, without CCO.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "provider_support_claims": [
+        "C01"
+      ],
+      "provider_support_usage": "Use strict proved ancestor C01 for whole-word old binary SAP injectivisation with its actual complete exterior pair preserved and aligned; no exact-domain/Set-Pasch or hidden SAP premise is added."
+    },
+    {
+      "id": "I10",
+      "name": "lem:acf-exact-distributive",
+      "provider_module": "exact_crt",
+      "source_label": "lem:acf-exact-distributive",
+      "provider_claims": [
+        "C11",
+        "C12",
+        "C13",
+        "C14"
+      ],
+      "statement": "Under original exact-ball calculus, represented FULL exact equivalences form a finite distributive bounded lattice with actual meet/joins and finite MI/Birkhoff reconstruction. This is a separate CCO-dependent input AFTER direct ww exactness.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I11",
+      "name": "lem:typed-all-invariant-equivalences-raw-word",
+      "provider_module": "real_closure",
+      "source_label": "lem:typed-all-invariant-equivalences-raw-word",
+      "provider_claims": [
+        "C25",
+        "C26",
+        "C27"
+      ],
+      "statement": "FULL no-index-two gives one actual RAW atomic word for EVERY original invariant equivalence, including genuine empty-word Id. This provider needs no SAP/CCO for its word representation.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I12",
+      "name": "lem:rh-sap-invariant-monolith",
+      "provider_module": "real_closure",
+      "source_label": "lem:rh-sap-invariant-monolith",
+      "provider_claims": [
+        "C19",
+        "C20",
+        "C21"
+      ],
+      "statement": "Old SAP gives infinite off-base orbits, nonidentity finite meet classes and the unique least nonidentity FULL invariant equivalence L_a.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I13",
+      "name": "lem:typed-equivalence-reproduction",
+      "provider_module": "terminal_profiles",
+      "source_label": "lem:typed-equivalence-reproduction",
+      "provider_claims": [
+        "C04"
+      ],
+      "statement": "For nonidentity old E, its diversity E^circ reproduces every nonempty profile inside E; in particular E^circ*E^circ=E^circ. This uses old SAP only.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I14",
+      "name": "lem:typed-terminal-all-equivalences-exact",
+      "provider_module": "real_closure",
+      "source_label": "lem:typed-terminal-all-equivalences-exact",
+      "provider_claims": [
+        "C27",
+        "C28"
+      ],
+      "statement": "Under extra original CCO and FULL terminality, the FULL original invariant lattice is RAW exact and distributive. Only the optional final distributivity specialization uses this provider.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I15",
+      "name": "lem:typed-quotient-transport",
+      "provider_module": "quotient_transport",
+      "source_label": "lem:typed-quotient-transport",
+      "provider_claims": [
+        "C05",
+        "C08",
+        "C11",
+        "C13",
+        "C14"
+      ],
+      "statement": "For nonempty actual R with RRop subset J, canonical transported J^R=Rop;J;R is an invariant equivalence and induces the actual quotient bijection. Generic FULL interval transport is separate from named terminal membership.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I16",
+      "name": "lem:typed-private-theta-cycle",
+      "provider_module": "guarded_two_root",
+      "source_label": "lem:typed-private-theta-cycle",
+      "provider_claims": [
+        "C22"
+      ],
+      "statement": "Every traversed private branch has its two ACTUAL OLD hidden source endpoints; no private interior becomes an old generator or a new completion-only seam.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    }
+  ],
+  "definitions": [
+    {
+      "id": "D01",
+      "name": "Actual guarded visible lift",
+      "statement": "G_typ(C) has one designated real witness per old hidden vertex, private positive theta bundles for nonempty actual pair menus, and full named root signatures. A visible completion here is induced/injective on this whole formal visible graph.",
+      "depends_on": [],
+      "notes": "N01",
+      "source": {
+        "file": "sections/v27/15_guarded_reflection_old_seams.tex",
+        "anchor": "\\label{lem:typed-guarded-lift-equivalence}"
+      }
+    },
+    {
+      "id": "D02",
+      "name": "Whole irreducible source reflection",
+      "statement": "A hidden completion is a homomorphism that embeds every induced closed irreducible source subobject. It need not be globally injective on reducible C.",
+      "depends_on": [],
+      "notes": "N01",
+      "source": {
+        "file": "sections/v27/15_guarded_reflection_old_seams.tex",
+        "anchor": "\\label{lem:typed-guarded-lift-equivalence}"
+      }
+    },
+    {
+      "id": "D03",
+      "name": "Literal shared OLD seam",
+      "statement": "At consecutive macro sides both incident coordinates are the same value of one canonical OLD source unary term at the shared formal root. Target coincidences of different source vertices are not seams.",
+      "depends_on": [],
+      "notes": "N02",
+      "source": {
+        "file": "sections/v27/15_guarded_reflection_old_seams.tex",
+        "anchor": "\\label{lem:typed-old-seam-telescope}"
+      }
+    },
+    {
+      "id": "D04",
+      "name": "Strong idempotent and its envelope",
+      "statement": "e is a nonempty same-sort diversity-only positive word profile with e*e=e. E_e=Id union e is the actual reflexive relation; e itself is not an equivalence.",
+      "depends_on": [],
+      "notes": "N03",
+      "source": {
+        "file": "sections/v27/15_guarded_reflection_old_seams.tex",
+        "anchor": "\\label{eq:typed-idempotent-equivalence}"
+      }
+    },
+    {
+      "id": "D05",
+      "name": "Equality-inclusive whole word relation",
+      "statement": "R_w is the actual RAW endpoint relation of ONE fixed positive original atomic word. Its off-diagonal part is e; it may or may not contain the whole old diagonal.",
+      "depends_on": [],
+      "notes": "N03",
+      "source": {
+        "file": "sections/v27/15_guarded_reflection_old_seams.tex",
+        "anchor": "\\label{lem:typed-idempotent-raw-exact}"
+      }
+    },
+    {
+      "id": "D06",
+      "name": "Represented exact MI reconstruction",
+      "statement": "MI is taken in the finite lattice of represented FULL RAW exact equivalences when reconstructing E_e, not in an arbitrary unproved invariant subfamily. Empty meet means Top.",
+      "depends_on": [],
+      "notes": "N04",
+      "source": {
+        "file": "sections/v27/15_guarded_reflection_old_seams.tex",
+        "anchor": "\\label{eq:typed-idempotent-MI-meet}"
+      }
+    },
+    {
+      "id": "D07",
+      "name": "Idempotent lattice and monolith",
+      "statement": "I_a contains nonempty positive same-sort strong idempotents. L_a is the actual least nonidentity original invariant equivalence; e0=L_a^circ. Its unit action is asserted only on I_a.",
+      "depends_on": [],
+      "notes": "N05",
+      "source": {
+        "file": "sections/v27/15_guarded_reflection_old_seams.tex",
+        "anchor": "\\label{lem:typed-strong-idempotent-lattice-monolith}"
+      }
+    },
+    {
+      "id": "D08",
+      "name": "Full restored menu versus diversity guard",
+      "statement": "For the complete local hidden pattern let Dhat be its actual FULL representative-pair pullback, intersecting all actual term-comparison relations before deleting real Id. D=Dhat restricted to distinct original endpoints. Dhat is H_b,H_c-bisaturated; D generally is NOT literally RAW bisaturated.",
+      "depends_on": [],
+      "notes": "N06",
+      "source": {
+        "file": "sections/v27/15_guarded_reflection_old_seams.tex",
+        "anchor": "\\label{eq:typed-anchored-bisaturation}"
+      }
+    },
+    {
+      "id": "D09",
+      "name": "Visible root coordinate",
+      "statement": "H_b=Id for a real old root, or its proper represented MI kernel for a quotient old root. If H_b<=J, the J-coordinate is the real projection F_J or the named upward map from b.",
+      "depends_on": [],
+      "notes": "N06",
+      "source": {
+        "file": "sections/v27/15_guarded_reflection_old_seams.tex",
+        "anchor": "\\label{lem:typed-branch-root-visibility}"
+      }
+    },
+    {
+      "id": "D10",
+      "name": "Old source branch equation",
+      "statement": "A quotient-functional positive branch P containing D induces an existing named atomic quotient transition, and its coordinate equation is reflected from ONE actual embedding of the same complete old source support.",
+      "depends_on": [],
+      "notes": "N07",
+      "source": {
+        "file": "sections/v27/15_guarded_reflection_old_seams.tex",
+        "anchor": "\\label{eq:typed-old-source-branch-equation}"
+      }
+    },
+    {
+      "id": "D11",
+      "name": "Private whole-word obligation",
+      "statement": "An obligation is ONE particular original atomic word with prescribed DISTINCT old endpoints whose actual fine pair atom is in its genuine strong profile; all its internal formal positions must be fresh.",
+      "depends_on": [],
+      "notes": "N08",
+      "source": {
+        "file": "sections/v27/15_guarded_reflection_old_seams.tex",
+        "anchor": "\\label{lem:typed-simultaneous-word-insertion}"
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "name": "A completed root atom lies in EVERY private branch profile",
+      "statement": "Each private branch remains its exact positive old atomic path in a visible completion. Its prescribed root fine atom therefore lies in its genuine endpoint profile. Intersecting gives c in D for every guarded pair.",
+      "depends_on": [
+        "A06",
+        "D01"
+      ],
+      "notes": "N01",
+      "scope": "lift_equivalence",
+      "source_labels": [
+        "lem:typed-guarded-lift-equivalence"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C02",
+      "name": "Positive profile membership forces all primitive hidden data",
+      "statement": "Membership in an equivalence diversity profile forces a projection/upward equality; I05 forces semantic cylinders, I06 forces nontrivial transition graphs and a singleton preserves an old fine atom. Identity-containing RAW transitions use I07 existing identity instead of any STRONG edge.",
+      "depends_on": [
+        "A05",
+        "I05",
+        "I06",
+        "I07",
+        "C01"
+      ],
+      "notes": "N01",
+      "scope": "lift_equivalence",
+      "source_labels": [
+        "lem:typed-guarded-lift-equivalence"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C03",
+      "name": "Common atom and whole relations compute the SAME root signature",
+      "statement": "At each represented J with DDop subset J, the actual completed atom c lies in D and in every defining branch. I06 strict C45 support identifies canonical maps/kernels for all quotient-functional relations containing c. Thus all direct and branch root equations hold on their literal actual quotients.",
+      "depends_on": [
+        "I06",
+        "C01"
+      ],
+      "notes": "N01",
+      "scope": "lift_equivalence",
+      "source_labels": [
+        "lem:typed-guarded-lift-equivalence"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C04",
+      "name": "Functional closure preserves all stored signature consequences",
+      "statement": "The actual named functions compose, invert and commute with upward maps as already interpreted. Once C03 holds, every stored named functional consequence is an equality of the same actual term values. No independent completion chart or fresh quotient map is chosen.",
+      "depends_on": [
+        "A05",
+        "C03"
+      ],
+      "notes": "N01",
+      "scope": "lift_equivalence",
+      "source_labels": [
+        "lem:typed-guarded-lift-equivalence"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C05",
+      "name": "Place a hidden completion in one finite old visible expansion",
+      "statement": "A finite completed hidden target is actual. Retain its real part and choose one real preimage for every proper quotient vertex; their finite induced old visible carrier has a full hidden expansion containing the target. Compose the original HE map with that inclusion.",
+      "depends_on": [
+        "A05",
+        "D02"
+      ],
+      "notes": "N01",
+      "scope": "lift_equivalence",
+      "source_labels": [
+        "lem:typed-guarded-lift-equivalence"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C06",
+      "name": "Split real images and representatives while retaining hidden readings",
+      "statement": "Apply I03 to C05. All old real source witnesses and designated proper coordinate representatives may be chosen pairwise distinct, and all displayed unary/cylinder/old pair data stay true. Every imposed comparison then lies in its actual menu by I01/I02.",
+      "depends_on": [
+        "A02",
+        "A06",
+        "I01",
+        "I02",
+        "I03",
+        "C05"
+      ],
+      "notes": "N01",
+      "scope": "lift_equivalence",
+      "source_labels": [
+        "lem:typed-guarded-lift-equivalence"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C07",
+      "name": "Insert all private paths over their complete pinned old pair",
+      "statement": "For each fixed actual root pair with atom in D, its atom lies in each positive branch profile. Choose a fully simple old realization of that EXACT word and align its fine pair by old homogeneity. Repeated old SAP over the complete root pair adds all interiors fresh, preserving the prior entire old base.",
+      "depends_on": [
+        "A01",
+        "A02",
+        "C01",
+        "C06"
+      ],
+      "notes": "N01",
+      "scope": "lift_equivalence",
+      "source_labels": [
+        "lem:typed-guarded-lift-equivalence"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C08",
+      "name": "Hidden completion gives a visible completion of the lift",
+      "statement": "After finite C07 insertions, the finite complete old target realizes every branch and all designated roots. The formal vertices are all distinct, so it is a visible completion of G_typ(C). This is the binary direction; higher factors retain A07 separately.",
+      "depends_on": [
+        "C04",
+        "C06",
+        "C07"
+      ],
+      "notes": "N01",
+      "scope": "lift_equivalence",
+      "source_labels": [
+        "lem:typed-guarded-lift-equivalence"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C09",
+      "name": "A visible completion canonically defines the source hidden map",
+      "statement": "Map an old real vertex to its real witness and an old proper b in B_aJ to the actual J-class of its designated real witness. C02-C04 preserve every displayed unary equation, cylinder, old atom and full root signature. No global source injectivity is presumed.",
+      "depends_on": [
+        "A05",
+        "C02",
+        "C04",
+        "D02"
+      ],
+      "notes": "N01",
+      "scope": "lift_equivalence",
+      "source_labels": [
+        "lem:typed-guarded-lift-equivalence"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C10",
+      "name": "One-generated valid diagrams embed in the canonical interpretation",
+      "statement": "A06 provides the FULL actual one-generated type. Original transitivity of each real/quotient root sort carries that one-root model to the chosen image; named equivariance determines all its term values. C09 function equations make the separately designated values agree, so the whole one-generated diagram is preserved and reflected.",
+      "depends_on": [
+        "A01",
+        "A05",
+        "A06",
+        "C09"
+      ],
+      "notes": "N01",
+      "scope": "lift_equivalence",
+      "source_labels": [
+        "lem:typed-guarded-lift-equivalence"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C11",
+      "name": "Joined two-root supports embed for EVERY chosen target atom",
+      "statement": "For every actual displayed joining endpoint pair, C01 puts its completed fine atom in D. I02 gives complete induced two-generated reflection, including all inequality/term-collision cases. This does not claim a reducible partial ancestor pair has one complete orbit.",
+      "depends_on": [
+        "A06",
+        "I02",
+        "C01",
+        "C09"
+      ],
+      "notes": "N01",
+      "scope": "lift_equivalence",
+      "source_labels": [
+        "lem:typed-guarded-lift-equivalence"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C12",
+      "name": "Binary local cover upgrades the small checks to every irreducible",
+      "statement": "Apply I04 to the source homomorphism C09 and local embeddings C10/C11. Every pair in a nonempty irreducible lies in one actual one-/two-generated displayed support, so all vertex collisions and binary relation reflection are controlled on that support. Positive arities A05 discharge the empty/nullary gate.",
+      "depends_on": [
+        "A05",
+        "I04",
+        "C09",
+        "C10",
+        "C11"
+      ],
+      "notes": "N01",
+      "scope": "lift_equivalence",
+      "source_labels": [
+        "lem:typed-guarded-lift-equivalence"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C13",
+      "name": "The canonical map is a hidden HE completion",
+      "statement": "C12 proves induced injectivity/reflection on EVERY irreducible source substructure. With C09 homomorphism preservation this is exactly a hidden completion. For arity>=3 the independent frozen higher-support reflection interface is required; the binary proof does not assert it automatically.",
+      "depends_on": [
+        "C09",
+        "C12",
+        "D02"
+      ],
+      "notes": "N01",
+      "scope": "lift_equivalence",
+      "source_labels": [
+        "lem:typed-guarded-lift-equivalence"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C14",
+      "name": "Guarded lift equivalence and root forcing source export",
+      "statement": "C01-C04 prove every visible completion realizes all positive/signature data. C08/C13 give hidden completion iff visible completion, hence hidden noncompletion implies lift noncompletion. Binary proof uses no later forest or bounded-obstruction theorem. Conditional higher-support interpretation retains A07.",
+      "depends_on": [
+        "C04",
+        "C08",
+        "C13"
+      ],
+      "notes": "N01",
+      "scope": "lift_equivalence",
+      "source_labels": [
+        "lem:typed-guarded-lift-equivalence"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C15",
+      "name": "Every OLD term equation has values inside C",
+      "statement": "Under A08, unary functional closedness retains every named term value. Each macro-side equation is literal in C before any completion. Its values do not depend on representative choices.",
+      "depends_on": [
+        "A08",
+        "D03"
+      ],
+      "notes": "N02",
+      "scope": "literal_seams",
+      "source_labels": [
+        "lem:typed-old-seam-telescope"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C16",
+      "name": "The intermediate seam is one literal coordinate value",
+      "statement": "The hypotheses identify the incoming and outgoing readouts at the same OLD formal root as the SAME canonical term value, or supply an already literal named unary connecting equality. This supplies genuine substitution in C.",
+      "depends_on": [
+        "A08",
+        "C15"
+      ],
+      "notes": "N02",
+      "scope": "literal_seams",
+      "source_labels": [
+        "lem:typed-old-seam-telescope"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C17",
+      "name": "Finite substitution telescopes the OLD equations",
+      "statement": "Induct on m. At the next side replace its source term by C16 and substitute the previous composite equation. This yields (pi_m composed...composed pi_1)(tau_0(b_0))=tau_m(b_m) inside C. Empty chain is its literal identity base case.",
+      "depends_on": [
+        "C15",
+        "C16"
+      ],
+      "notes": "N02",
+      "scope": "literal_seams",
+      "source_labels": [
+        "lem:typed-old-seam-telescope"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C18",
+      "name": "No shared real vertex or amalgamation of supports is needed",
+      "statement": "C17 only uses equality of OLD named unary term values. Successive locally complete supports may intersect only in proper quotient coordinates; no same real representative or amalgamation of the supports enters this proof.",
+      "depends_on": [
+        "C17"
+      ],
+      "notes": "N02",
+      "scope": "literal_seams",
+      "source_labels": [
+        "lem:typed-old-seam-telescope"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C19",
+      "name": "Target coincidence of distinct old vertices cannot supply a seam",
+      "statement": "A HE map of a reducible source can identify vertices in different irreducible factors. Such an equality in a target is not literal source equality and cannot be substituted in C17. A separately displayed old unary transition can connect values only by its actual old equation.",
+      "depends_on": [
+        "A08",
+        "D03"
+      ],
+      "notes": "N02",
+      "scope": "literal_seams",
+      "source_labels": [
+        "lem:typed-old-seam-telescope"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C20",
+      "name": "Literal OLD-seam telescope source export",
+      "statement": "C15-C19 prove OSE under the precise same-coordinate seam premise. This is an abstract unary equality argument with no original SAP/CCO, lattice, hidden completion or global injectivity assumption.",
+      "depends_on": [
+        "C17",
+        "C18",
+        "C19"
+      ],
+      "notes": "N02",
+      "scope": "literal_seams",
+      "source_labels": [
+        "lem:typed-old-seam-telescope"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C21",
+      "name": "Id union a strong idempotent is an ACTUAL equivalence",
+      "statement": "For nonempty same-sort symmetric diversity e with e*e=e, E_e=Id union e is reflexive/symmetric. If xE_e yE_e z and vertices coincide, transitivity is immediate; if all three are distinct, the two e-edges and strong idempotence put their endpoint atom in e. Hence E_e is invariant equivalence, while e itself stays irreflexive.",
+      "depends_on": [
+        "A01",
+        "D04"
+      ],
+      "notes": "N03",
+      "scope": "raw_envelope",
+      "source_labels": [
+        "lem:typed-idempotent-raw-exact"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C22",
+      "name": "The whole RAW word has precisely e as diversity part",
+      "statement": "For the fixed positive word w with strong profile e, I09 pinned C01 support converts each RAW distinct-endpoint walk into a fully distinct word path over that same fine endpoint pair. Thus R_w restricted off real Id is e. Since the source sort is transitive, the invariant diagonal part is either all Id or empty.",
+      "depends_on": [
+        "A01",
+        "A02",
+        "I09",
+        "D05"
+      ],
+      "notes": "N03",
+      "scope": "raw_envelope",
+      "source_labels": [
+        "lem:typed-idempotent-raw-exact"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C23",
+      "name": "The RAW whole word is symmetric and nontrivially serial",
+      "statement": "R_w is an original invariant same-sort relation, hence a union of symmetric orbitals by A01. A distinct witness exists since e is nonempty. Transitivity moves its first endpoint to every point, giving a distinct R_w-neighbour at each point. No CCO or terminality is used.",
+      "depends_on": [
+        "A01",
+        "C22"
+      ],
+      "notes": "N03",
+      "scope": "raw_envelope",
+      "source_labels": [
+        "lem:typed-idempotent-raw-exact"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C24",
+      "name": "Every true diagonal lies in the RAW square",
+      "statement": "For x choose y!=x with x R_w y by C23; symmetry gives y R_w x. Hence every (x,x) belongs to R_w;R_w. This is a genuine two-step RAW return, not a synthetic diversity equality letter.",
+      "depends_on": [
+        "C23"
+      ],
+      "notes": "N03",
+      "scope": "raw_envelope",
+      "source_labels": [
+        "lem:typed-idempotent-raw-exact"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C25",
+      "name": "All off-diagonal RAW-square outputs stay in e",
+      "statement": "C22 gives R_w subset E_e, and C21 gives actual E_e transitivity. Thus R_w;R_w subset E_e; every distinct-endpoint output therefore lies in its diversity e.",
+      "depends_on": [
+        "C21",
+        "C22"
+      ],
+      "notes": "N03",
+      "scope": "raw_envelope",
+      "source_labels": [
+        "lem:typed-idempotent-raw-exact"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C26",
+      "name": "Strong idempotence supplies every e atom to the RAW square",
+      "statement": "Every actual e-atom belongs to e*e=e. Its strong two-edge witness has both incident relations in R_w by C22, so it lies in R_w;R_w. Original two-point homogeneity transports the witness to every actual pair of that atom.",
+      "depends_on": [
+        "A01",
+        "C22",
+        "D04"
+      ],
+      "notes": "N03",
+      "scope": "raw_envelope",
+      "source_labels": [
+        "lem:typed-idempotent-raw-exact"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C27",
+      "name": "The direct RAW identity is represented by the literal word ww",
+      "statement": "C24-C26 give R_w;R_w=Id union e=E_e. Ordinary existential RAW composition is exactly the endpoint relation of the concatenated ORIGINAL word ww, so E_e is a singleton FULL RAW word profile and exact by definition. No prior exactness of every invariant equivalence is used.",
+      "depends_on": [
+        "C24",
+        "C25",
+        "C26"
+      ],
+      "notes": "N03",
+      "scope": "raw_envelope",
+      "source_labels": [
+        "lem:typed-idempotent-raw-exact"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C28",
+      "name": "Direct idempotent-envelope subexport has no CCO or NR2 premise",
+      "statement": "C21-C27 prove actual E_e and the literal ww representation using old symmetry/transitivity, the strong idempotence and visible SAP injection only. It remains valid outside terminal/no-finite-cover and outside CCO.",
+      "depends_on": [
+        "C21",
+        "C27"
+      ],
+      "notes": "N03",
+      "scope": "raw_envelope",
+      "source_labels": [
+        "lem:typed-idempotent-raw-exact"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C29",
+      "name": "Apply the SEPARATE finite exact-lattice reconstruction theorem",
+      "statement": "Under original CCO exact-ball input, I10 gives the finite distributive lattice of represented FULL RAW exact equivalences with actual meets/Top. C27 first places E_e in that lattice. Its internal MI/Birkhoff reconstruction gives E_e=meet{represented proper MI J>=E_e}, including empty Top meet.",
+      "depends_on": [
+        "A03",
+        "I10",
+        "C27",
+        "D06"
+      ],
+      "notes": "N04",
+      "scope": "raw_envelope",
+      "source_labels": [
+        "lem:typed-idempotent-raw-exact"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C30",
+      "name": "Idempotent RAW exact-envelope source export",
+      "statement": "C28 gives the direct word identity and C29 its separate represented-MI reconstruction TF1. The statement is prepared without pretending the diversity profile e itself is reflexive or silently identifying all generic invariants with represented exacts.",
+      "depends_on": [
+        "C28",
+        "C29"
+      ],
+      "notes": "N04",
+      "scope": "raw_envelope",
+      "source_labels": [
+        "lem:typed-idempotent-raw-exact"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C31",
+      "name": "The envelope map is injective and order preserving",
+      "statement": "Every nonempty positive idempotent gives E_e>Id by C21. Removing Id recovers e exactly, so the map is injective; inclusion of profiles is equivalent to inclusion of their actual envelopes. This requires no CCO.",
+      "depends_on": [
+        "C21"
+      ],
+      "notes": "N05",
+      "scope": "idempotent_lattice",
+      "source_labels": [
+        "lem:typed-strong-idempotent-lattice-monolith"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C32",
+      "name": "Every nonidentity invariant equivalence has one positive diversity word",
+      "statement": "For original E>Id, A04 excludes every index-two interval and I11 gives a RAW atomic word for E. Remove any literal Id letters; the remaining word is positive since an all-Id word would represent Id. I09 pinned whole-word injection identifies its distinct-endpoint profile with E^circ.",
+      "depends_on": [
+        "A01",
+        "A02",
+        "A04",
+        "I09",
+        "I11"
+      ],
+      "notes": "N05",
+      "scope": "idempotent_lattice",
+      "source_labels": [
+        "lem:typed-strong-idempotent-lattice-monolith"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C33",
+      "name": "Equivalence reproduction makes that diversity word idempotent",
+      "statement": "I13 applies to nonidentity E under old SAP and gives E^circ*E^circ=E^circ. Combining with C32 proves surjectivity of the envelope map onto ALL original invariant E>Id, with no CCO input.",
+      "depends_on": [
+        "A02",
+        "I13",
+        "C32"
+      ],
+      "notes": "N05",
+      "scope": "idempotent_lattice",
+      "source_labels": [
+        "lem:typed-strong-idempotent-lattice-monolith"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C34",
+      "name": "Nonzero meets stay nonzero by the original SAP monolith",
+      "statement": "For E,F>Id, I12 makes E meet F>Id with infinite classes. Its diversity is e intersect f and is positive reachable/idempotent by C32/C33. Thus the idempotent meet is actual nonempty intersection; no zero diversity bottom is inserted.",
+      "depends_on": [
+        "A02",
+        "I12",
+        "C33"
+      ],
+      "notes": "N05",
+      "scope": "idempotent_lattice",
+      "source_labels": [
+        "lem:typed-strong-idempotent-lattice-monolith"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C35",
+      "name": "The idempotent join is the actual strong product",
+      "statement": "For nonzero old E,F, I09 gives E^circ*F^circ=(E;F)^circ=(E join F)^circ. The last relation is the actual original invariant join. Hence e join f=e*f, with no mixed-sort commutation or CCO assumption.",
+      "depends_on": [
+        "I09",
+        "C33"
+      ],
+      "notes": "N05",
+      "scope": "idempotent_lattice",
+      "source_labels": [
+        "lem:typed-strong-idempotent-lattice-monolith"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C36",
+      "name": "The full idempotent family is a finite lattice",
+      "statement": "Finite original orbitals give a finite full invariant lattice. C31/C33 give an order isomorphism after removing Id, and C34 keeps this nonidentity part meet-closed. C35 supplies the join formula. Therefore I_a is a finite lattice with the stated actual operations.",
+      "depends_on": [
+        "A01",
+        "C31",
+        "C33",
+        "C34",
+        "C35"
+      ],
+      "notes": "N05",
+      "scope": "idempotent_lattice",
+      "source_labels": [
+        "lem:typed-strong-idempotent-lattice-monolith"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C37",
+      "name": "Its unique least nonzero element is the SAP monolith diversity",
+      "statement": "I12 provides the unique least nonidentity invariant L_a. C32/C33 make its diversity e0 positive/idempotent, and the order isomorphism makes it the unique least element of I_a, below every e.",
+      "depends_on": [
+        "I12",
+        "C33",
+        "C36"
+      ],
+      "notes": "N05",
+      "scope": "idempotent_lattice",
+      "source_labels": [
+        "lem:typed-strong-idempotent-lattice-monolith"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C38",
+      "name": "The monolith diversity is a unit INSIDE the idempotent lattice",
+      "statement": "For e corresponding to E>=L_a, C35 gives e0*e=(L_a join E)^circ=E^circ=e and similarly e*e0=e. No unit action is asserted on arbitrary reachable profiles or atomic colours.",
+      "depends_on": [
+        "C35",
+        "C37"
+      ],
+      "notes": "N05",
+      "scope": "idempotent_lattice",
+      "source_labels": [
+        "lem:typed-strong-idempotent-lattice-monolith"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C39",
+      "name": "CCO-free lattice and monolith conclusions are complete",
+      "statement": "C31-C38 prove the order bijection, nonempty meets, strong-product joins and monolith unit for a symmetric old SAP+FULL NR2 source. No original CCO, exact-ball Helly, distributivity or hidden SAP enters this branch.",
+      "depends_on": [
+        "C31",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38"
+      ],
+      "notes": "N05",
+      "scope": "idempotent_lattice",
+      "source_labels": [
+        "lem:typed-strong-idempotent-lattice-monolith"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C40",
+      "name": "Distributivity is the separate extra-CCO specialization",
+      "statement": "If original CCO is ALSO assumed, A04 and I14 make the FULL invariant lattice distributive. Its nonidentity part is meet-closed by C34, so the isomorphic idempotent lattice is distributive. The source export comprises C39 plus this conditional specialization; the G5 interval envelope is E_e, not automatically L_a.",
+      "depends_on": [
+        "A03",
+        "I14",
+        "C34",
+        "C39"
+      ],
+      "notes": "N05",
+      "scope": "idempotent_lattice",
+      "source_labels": [
+        "lem:typed-strong-idempotent-lattice-monolith"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C41",
+      "name": "Restore the FULL actual root-pullback relation before saturation",
+      "statement": "For a complete locally valid old endpoint pattern, every mandatory term comparison pulls back to a FULL relation factoring through the actual H_b and H_c classes. Their intersection Dhat is H_b,H_c-bisaturated. Its diversity restriction is exactly the guarded menu D. Dhat can contain the real diagonal; D never does.",
+      "depends_on": [
+        "A05",
+        "A06",
+        "D08",
+        "D09"
+      ],
+      "notes": "N06",
+      "scope": "branch_visibility",
+      "source_labels": [
+        "lem:typed-branch-root-visibility"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C42",
+      "name": "Correct TV1 is guarded saturation, not a false RAW equality",
+      "statement": "From C41 and reflexivity, D subset H_b;D;H_c subset Dhat; therefore (H_b;D;H_c)^circ=D. The printed RAW H_b;D;H_c=D is false in general: projection to J has D=J^circ,H_b=Id,H_c=J and J^circ;J=full J, including Id. Only the corrected equation is exported.",
+      "depends_on": [
+        "C41"
+      ],
+      "notes": "N06",
+      "scope": "branch_visibility",
+      "source_labels": [
+        "lem:typed-branch-root-visibility"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C43",
+      "name": "Every nonempty old diversity relation has infinite neighbour fibres",
+      "statement": "Choose any atom t in D and one witnessed t-edge x-y. Repeated old SAP copies of the complete pair over x give arbitrarily many distinct target neighbours, all retaining t; homogeneity/transitivity gives the same at every source. Converse gives infinite predecessor fibres. This supplies avoidance of finitely many possible coincident endpoints.",
+      "depends_on": [
+        "A01",
+        "A02"
+      ],
+      "notes": "N06",
+      "scope": "branch_visibility",
+      "source_labels": [
+        "lem:typed-branch-root-visibility"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C44",
+      "name": "Fresh neighbours repair the source-kernel visibility proof",
+      "statement": "For x H_b xprime choose y in D[x] with y!=xprime, possible by C43 (and x!=y because D is diversity). Full Dhat left saturation C41 gives xprime Dhat y; distinctness gives xprime D y. Since D subset P both incident pairs lie in P, so x(P;Pop)xprime and hence x J xprime. Thus H_b<=J without falsely assuming D itself RAW bisaturated.",
+      "depends_on": [
+        "C41",
+        "C43"
+      ],
+      "notes": "N06",
+      "scope": "branch_visibility",
+      "source_labels": [
+        "lem:typed-branch-root-visibility"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C45",
+      "name": "Fresh predecessors repair target-kernel visibility",
+      "statement": "For y H_c yprime choose x in D^-1[y] with x!=yprime by C43. C41 right saturation gives x Dhat yprime, and distinctness gives x D yprime. Both are P-edges, so y(Pop;P)yprime. Since J is reflexive, Pop;P subset Pop;J;P=J^P by I15. Thus H_c<=J^P.",
+      "depends_on": [
+        "I15",
+        "C41",
+        "C43"
+      ],
+      "notes": "N06",
+      "scope": "branch_visibility",
+      "source_labels": [
+        "lem:typed-branch-root-visibility"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C46",
+      "name": "The visible coordinates and branch map are ALREADY named terms",
+      "statement": "For a real old root use F_J. For a proper root H_b<=J gives its named upward quotient; C45 gives the target upward map too. I08 identifies the quotient map of P with any actual fine t subset P and makes J^P a named proper MI under FULL terminality/noncollapse. No auxiliary representative-dependent coordinate symbol is introduced.",
+      "depends_on": [
+        "A04",
+        "A05",
+        "I08",
+        "C44",
+        "C45",
+        "D09"
+      ],
+      "notes": "N06",
+      "scope": "branch_visibility",
+      "source_labels": [
+        "lem:typed-branch-root-visibility"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C47",
+      "name": "The checked complete old factor reflects its branch equation",
+      "statement": "A06 supplies ONE actual embedding of the source support. Choose distinct real representatives by I03; its actual pair atom lies in D subset P by I01. Canonical quotient transport therefore gives pi_PJ(tau_J(b))=tau_JP(c) in that realization. As both sides are named OLD term values, induced injectivity reflects their equality back to C.",
+      "depends_on": [
+        "A06",
+        "I01",
+        "I03",
+        "I15",
+        "C46"
+      ],
+      "notes": "N06",
+      "scope": "branch_visibility",
+      "source_labels": [
+        "lem:typed-branch-root-visibility"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C48",
+      "name": "Branch-root visibility source export WITH TV1 repair",
+      "statement": "C44/C45 prove H_b<=J,H_c<=J^P; C46/C47 give the literal named old-root equation. The full RAW restatement is H_b;Dhat;H_c=Dhat, and the actual STRONG restatement is C42. The desired TV2/conclusions need no added assumption; their proof uses oldSAP freshness to repair the printed TV1 error.",
+      "depends_on": [
+        "C42",
+        "C44",
+        "C45",
+        "C46",
+        "C47"
+      ],
+      "notes": "N06",
+      "scope": "branch_visibility",
+      "source_labels": [
+        "lem:typed-branch-root-visibility"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C49",
+      "name": "Each branch under discussion has ACTUAL OLD source endpoints",
+      "statement": "I16 locates its root witnesses at the original source vertices b,c. By A06 their constraints belong to one already checked one-generated or genuinely irreducible two-generated old support; no equation is synthesized on an unconstrained ancestor pair.",
+      "depends_on": [
+        "A06",
+        "I16"
+      ],
+      "notes": "N07",
+      "scope": "old_equations",
+      "source_labels": [
+        "lem:typed-old-source-branch-equation"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C50",
+      "name": "A total exact meet inside P is sufficient for branch visibility",
+      "statement": "The repaired C48 applies to D_bc subset P and actual H_b,H_c. It does NOT require any primitive defining profile of D_bc to have J-functional fibres; only the particular branch P under consideration satisfies PP^op subset J.",
+      "depends_on": [
+        "C48",
+        "C49"
+      ],
+      "notes": "N07",
+      "scope": "old_equations",
+      "source_labels": [
+        "lem:typed-old-source-branch-equation"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C51",
+      "name": "Use one full local realization for the ENTIRE pair menu",
+      "statement": "The complete source support has one actual embedding, not separately selected models per constraint. I03 provides distinct representatives inside one finite old visible expansion covering that factor. I01 supplies their one fine atom t in EVERY imposed profile and hence t in D_bc subset P.",
+      "depends_on": [
+        "A06",
+        "I01",
+        "I03",
+        "C49"
+      ],
+      "notes": "N07",
+      "scope": "old_equations",
+      "source_labels": [
+        "lem:typed-old-source-branch-equation"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C52",
+      "name": "Canonical quotient transport forces the branch equation there",
+      "statement": "C50 gives named tau_J(b),tau_JP(c) and an existing atomic representative of pi_PJ. The actual P-edge witnessed in C51 satisfies this canonical quotient map, so TOE holds in that one full hidden realization.",
+      "depends_on": [
+        "I08",
+        "I15",
+        "C50",
+        "C51"
+      ],
+      "notes": "N07",
+      "scope": "old_equations",
+      "source_labels": [
+        "lem:typed-old-source-branch-equation"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C53",
+      "name": "Induced old-support embedding reflects equality of named term values",
+      "statement": "The source support is functionally closed and its realization is an EMBEDDING. Both sides of TOE are images of named unary term values already in that source support; equality of images therefore implies equality of their actual old source vertices in C. Mere homomorphism preservation would not suffice.",
+      "depends_on": [
+        "A06",
+        "C52"
+      ],
+      "notes": "N07",
+      "scope": "old_equations",
+      "source_labels": [
+        "lem:typed-old-source-branch-equation"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C54",
+      "name": "Original-source branch equation source export",
+      "statement": "C49-C53 prove TOE literally in C, including when D_bc is a meet whose primitive factors lack functional fibres. It applies only to actual source-supported gadgets; it does not depend on a later completion-selected atom or theta interior vertex.",
+      "depends_on": [
+        "C50",
+        "C53"
+      ],
+      "notes": "N07",
+      "scope": "old_equations",
+      "source_labels": [
+        "lem:typed-old-source-branch-equation"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C55",
+      "name": "Distinct endpoints select e rather than real Id",
+      "statement": "For a positive whole word w with strong idempotent profile e, if actual roots x!=y satisfy xE_e y, their actual pair colour is a diversity atom in e. E_e membership alone would not give an e-colour if the roots coincided.",
+      "depends_on": [
+        "D04",
+        "D11"
+      ],
+      "notes": "N08",
+      "scope": "reinsertion",
+      "source_labels": [
+        "lem:typed-idempotent-reinsert"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C56",
+      "name": "Realize the EXACT original word at its pinned fine pair",
+      "statement": "By definition of the genuine strong profile, C55 supplies a simple old word realization with that fine endpoint atom. Old pair homogeneity places its two endpoints at the prescribed actual x,y. No replacement factor word, equality edge or return to the same point is used.",
+      "depends_on": [
+        "A01",
+        "C55"
+      ],
+      "notes": "N08",
+      "scope": "reinsertion",
+      "source_labels": [
+        "lem:typed-idempotent-reinsert"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C57",
+      "name": "SAP makes the private interior fresh over the whole complete base",
+      "statement": "Take the complete induced old finite structure of the simple word realization. Strongly amalgamate it with the already completed old base over their complete two-point endpoint substructure. All word interior vertices stay outside the entire prior base and all its specified atoms remain fixed.",
+      "depends_on": [
+        "A02",
+        "C56"
+      ],
+      "notes": "N08",
+      "scope": "reinsertion",
+      "source_labels": [
+        "lem:typed-idempotent-reinsert"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C58",
+      "name": "Off-diagonal idempotent reinsertion source export",
+      "statement": "C55-C57 realizes the entire original w over its distinct roots with all interiors new. No CCO or FULL terminality is needed once the idempotent word and correct actual endpoint atom are supplied.",
+      "depends_on": [
+        "C57"
+      ],
+      "notes": "N08",
+      "scope": "reinsertion",
+      "source_labels": [
+        "lem:typed-idempotent-reinsert"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C59",
+      "name": "Each obligation has one simple complete OLD word witness",
+      "statement": "For a finite list over complete old A, membership of col_A(p_i,q_i) in the genuine strong profile of the SPECIFIED word w_i gives a simple realization in a finite complete old structure W_i. Endpoint pair types agree, and p_i!=q_i is explicit.",
+      "depends_on": [
+        "A01",
+        "D11"
+      ],
+      "notes": "N09",
+      "scope": "word_insertion",
+      "source_labels": [
+        "lem:typed-simultaneous-word-insertion"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C60",
+      "name": "Align its complete endpoint pair without changing any old atom",
+      "statement": "Old named fine-pair homogeneity identifies the witness endpoints with literal p_i,q_i in A. The common two-point substructure is complete even when that pair also occurs in other obligations.",
+      "depends_on": [
+        "A01",
+        "C59"
+      ],
+      "notes": "N09",
+      "scope": "word_insertion",
+      "source_labels": [
+        "lem:typed-simultaneous-word-insertion"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C61",
+      "name": "Sequential SAP preserves the entire old base and all previous words",
+      "statement": "Strongly amalgamate the current complete old structure with W_i over its two pinned endpoints. Its other vertices are fresh from the whole current structure; every earlier interior and all original A pair colours remain fixed. New cross-interior colours are unrestricted, so overlapping endpoint pairs cause no problem.",
+      "depends_on": [
+        "A02",
+        "C60"
+      ],
+      "notes": "N09",
+      "scope": "word_insertion",
+      "source_labels": [
+        "lem:typed-simultaneous-word-insertion"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C62",
+      "name": "Finite induction gives one simultaneous finite complete extension",
+      "statement": "Start at A and apply C61 to each finite obligation. The final union lies in one finite complete old age member. All interiors are pairwise distinct, disjoint between words and from A; every prescribed endpoint pair and old base atom is retained literally. Empty obligation list returns A.",
+      "depends_on": [
+        "C59",
+        "C60",
+        "C61"
+      ],
+      "notes": "N09",
+      "scope": "word_insertion",
+      "source_labels": [
+        "lem:typed-simultaneous-word-insertion"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C63",
+      "name": "Simultaneous original-word insertion source export",
+      "statement": "C59-C62 prove the literal original words can ALL be inserted over ONE complete old base by visible SAP. No CCO, idempotence, quotient naming or relation among new private interiors is required after the given endpoint-profile premises.",
+      "depends_on": [
+        "C62"
+      ],
+      "notes": "N09",
+      "scope": "word_insertion",
+      "source_labels": [
+        "lem:typed-simultaneous-word-insertion"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C64",
+      "name": "Printed TV1 fails even for a basic projection equality",
+      "statement": "In an infinite equivalence source choose a proper coordinate J and its projection. For a real old root b and proper root c=F_J(b), distinct real representatives have menu D=J^circ with H_b=Id,H_c=J. RAW J^circ;J is fullJ because each class has at least two points, while D omits Id. The corrected C42 holds.",
+      "depends_on": [
+        "D08"
+      ],
+      "notes": "N10",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-branch-root-visibility"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C65",
+      "name": "FULL restored pullbacks and guarded menus must not be conflated",
+      "statement": "A target comparison factors through root classes on ALL real pairs, including equal ones; deleting real Id can destroy literal RAW left/right saturation. The C41/C42 repair restores the full relation only for algebra, while C43-C45 keeps both required P-edges genuinely diversity. No stronger raw-saturation hypothesis is imposed on actual source menus.",
+      "depends_on": [
+        "C41",
+        "C42",
+        "C44",
+        "C45"
+      ],
+      "notes": "N10",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-branch-root-visibility"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C66",
+      "name": "A diversity idempotent is not a reflexive equivalence",
+      "statement": "Even e*e=e has no actual diagonal pairs. The word-square C27 adds genuine RAW returns to form E_e. Treating e as reflexive would confuse a deleted interval diversity profile with a logical equality certificate and invalidate off-diagonal reinsertion.",
+      "depends_on": [
+        "C21",
+        "C27",
+        "C55"
+      ],
+      "notes": "N10",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-idempotent-raw-exact"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C67",
+      "name": "Monolith unit need not act on arbitrary reachable profiles",
+      "statement": "In a primitive source with at least two freely allowed same-sort atoms (the random graph palette is a control), the only nonidentity invariant equivalence is Top, so e0 is the whole diversity palette. Its product with one atom is the whole palette, not that atom. The I_a unit claim never licenses replacing E_e by L_a in a deleted interval certificate.",
+      "depends_on": [],
+      "notes": "N10",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-strong-idempotent-lattice-monolith"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C68",
+      "name": "Completion coincidences do not create literal OLD seams",
+      "statement": "Two distinct orphan-only points in different reducible unary factors can map to one target point under a HE homomorphism. That does not identify source vertices or their term values; without a named old connecting equation C20 is inapplicable.",
+      "depends_on": [
+        "C19"
+      ],
+      "notes": "N10",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-old-seam-telescope"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C69",
+      "name": "A nonexact invariant need not equal its represented-MI meet",
+      "statement": "The ww proof C27 explicitly establishes exactness BEFORE I10 reconstruction. Without that step, intersecting represented exact MIs can yield a larger relation than a given arbitrary invariant equivalence, as the earlier finite-index coarse-diagonal control shows. No all-invariants-exact axiom replaces the proof.",
+      "depends_on": [
+        "C27",
+        "C29"
+      ],
+      "notes": "N10",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-idempotent-raw-exact"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C70",
+      "name": "Whole words and complete old bases are essential to reinsertion",
+      "statement": "The obligation is the EXACT original word, not a semigroup element realized by an unrelated shorter factor. The pinned endpoint atom is preserved over one complete old base so successive SAP insertions cannot alter later obligations. Roots must remain distinct; no finite diagnostic establishes arbitrarily long injective paths in a finite window.",
+      "depends_on": [
+        "C58",
+        "C63"
+      ],
+      "notes": "N10",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-simultaneous-word-insertion"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C71",
+      "name": "Higher-support and empty/nullary gates remain explicit",
+      "statement": "I04 is discharged in the positive-arity binary core. An empty source has its literal vacuous completion there; a nullary-enriched variant needs the previously recorded reflection convention. Arity>=3 factor reflection and clone preservation retain A07 independently, with no unconditional lift from pair data.",
+      "depends_on": [
+        "A05",
+        "A07",
+        "I04",
+        "C14"
+      ],
+      "notes": "N10",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-guarded-lift-equivalence"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C72",
+      "name": "Receiving status and finite diagnostics stay separate",
+      "statement": "Controls test finite actual relation/word squares, corrected guarded saturation and fresh-neighbour witnesses, literal term telescoping, localcover/HE distinctions and private insertion bookkeeping. They prove no unbounded SAP/CCO, full forest theorem, Lean correctness or new HN/HKN binding. All earlier source qualifications and private/public boundaries remain.",
+      "depends_on": [
+        "C14",
+        "C20",
+        "C30",
+        "C40",
+        "C48",
+        "C54",
+        "C58",
+        "C63"
+      ],
+      "notes": "N10",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-simultaneous-word-insertion"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    }
+  ],
+  "source_result_files": [
+    "sections/v27/15_guarded_reflection_old_seams.tex"
+  ],
+  "exports": [
+    {
+      "source_label": "lem:typed-guarded-lift-equivalence",
+      "claims": [
+        "C14"
+      ]
+    },
+    {
+      "source_label": "lem:typed-old-seam-telescope",
+      "claims": [
+        "C20"
+      ]
+    },
+    {
+      "source_label": "lem:typed-idempotent-raw-exact",
+      "claims": [
+        "C30"
+      ]
+    },
+    {
+      "source_label": "lem:typed-strong-idempotent-lattice-monolith",
+      "claims": [
+        "C40"
+      ]
+    },
+    {
+      "source_label": "lem:typed-branch-root-visibility",
+      "claims": [
+        "C48"
+      ]
+    },
+    {
+      "source_label": "lem:typed-old-source-branch-equation",
+      "claims": [
+        "C54"
+      ]
+    },
+    {
+      "source_label": "lem:typed-idempotent-reinsert",
+      "claims": [
+        "C58"
+      ]
+    },
+    {
+      "source_label": "lem:typed-simultaneous-word-insertion",
+      "claims": [
+        "C63"
+      ]
+    }
+  ],
+  "auxiliary_exports": [
+    {
+      "source_label": "eq:typed-guarded-root-colour",
+      "claims": [
+        "C01"
+      ],
+      "source": {
+        "file": "sections/v27/15_guarded_reflection_old_seams.tex",
+        "anchor": "\\label{eq:typed-guarded-root-colour}"
+      }
+    },
+    {
+      "source_label": "eq:typed-idempotent-equivalence",
+      "claims": [
+        "C21"
+      ],
+      "source": {
+        "file": "sections/v27/15_guarded_reflection_old_seams.tex",
+        "anchor": "\\label{eq:typed-idempotent-equivalence}"
+      }
+    },
+    {
+      "source_label": "eq:typed-old-seam-telescope",
+      "claims": [
+        "C20"
+      ],
+      "source": {
+        "file": "sections/v27/15_guarded_reflection_old_seams.tex",
+        "anchor": "\\label{eq:typed-old-seam-telescope}"
+      }
+    },
+    {
+      "source_label": "eq:typed-idempotent-MI-meet",
+      "claims": [
+        "C29"
+      ],
+      "source": {
+        "file": "sections/v27/15_guarded_reflection_old_seams.tex",
+        "anchor": "\\label{eq:typed-idempotent-MI-meet}"
+      }
+    },
+    {
+      "source_label": "eq:typed-strong-idempotent-lattice",
+      "claims": [
+        "C39",
+        "C40"
+      ],
+      "source": {
+        "file": "sections/v27/15_guarded_reflection_old_seams.tex",
+        "anchor": "\\label{eq:typed-strong-idempotent-lattice}"
+      }
+    },
+    {
+      "source_label": "eq:typed-anchored-bisaturation",
+      "claims": [
+        "C41",
+        "C42"
+      ],
+      "source": {
+        "file": "sections/v27/15_guarded_reflection_old_seams.tex",
+        "anchor": "\\label{eq:typed-anchored-bisaturation}"
+      },
+      "statement_repair": "Printed RAW H_b;D;H_c=D is false for diversity-only D. Correct actual statement is H_b;Dhat;H_c=Dhat with D=Dhat^circ, equivalently (H_b;D;H_c)^circ=D."
+    },
+    {
+      "source_label": "eq:typed-branch-visible-kernels",
+      "claims": [
+        "C44",
+        "C45"
+      ],
+      "source": {
+        "file": "sections/v27/15_guarded_reflection_old_seams.tex",
+        "anchor": "\\label{eq:typed-branch-visible-kernels}"
+      }
+    },
+    {
+      "source_label": "eq:typed-old-source-branch-equation",
+      "claims": [
+        "C54"
+      ],
+      "source": {
+        "file": "sections/v27/15_guarded_reflection_old_seams.tex",
+        "anchor": "\\label{eq:typed-old-source-branch-equation}"
+      }
+    }
+  ],
+  "source_files": [
+    {
+      "file": "sections/binary_unary_irreducible_local_cover.tex",
+      "git_blob": "a91af6bdd0fd7de6c7266e5c908fde78192f9087"
+    },
+    {
+      "file": "sections/exact_lattice_crt.tex",
+      "git_blob": "5ead1d021abbc99c255c8a36ec87585cba3fbdc3"
+    },
+    {
+      "file": "sections/real_hull/07_sap_mi_intersection_geometry.tex",
+      "git_blob": "7d681c9087c1d7f41ea65a834158daf456ee5fd2"
+    },
+    {
+      "file": "sections/terminal_invariant_raw_exact.tex",
+      "git_blob": "af0064c672f332049209e142a585bc62540954b4"
+    },
+    {
+      "file": "sections/typed_invariant_quotient_transport.tex",
+      "git_blob": "3895b17d7d0176a74d6f69c39e4e22d9cdba5715"
+    },
+    {
+      "file": "sections/v27/07_typed_raw_strong_transition.tex",
+      "git_blob": "6dc7e4c7aa452b179e95cc502b4daf4d2b6592d9"
+    },
+    {
+      "file": "sections/v27/09_typed_equivalence_and_profiles.tex",
+      "git_blob": "39d1678e6616140b50d6d9448b94f0de823f26d8"
+    },
+    {
+      "file": "sections/v27/13_actual_hidden_sap_readings.tex",
+      "git_blob": "9b01d7ebe43b4df87823c1127f101de49c2738c5"
+    },
+    {
+      "file": "sections/v27/14_guarded_source_positive.tex",
+      "git_blob": "9936dcb306b2c10d87cd8038014fee019bb7cc53"
+    },
+    {
+      "file": "sections/v27/15_guarded_reflection_old_seams.tex",
+      "git_blob": "15f208adcc2740bf5bb495164e012e9d9894a66f"
+    }
+  ],
+  "dependency_firewalls": [
+    {
+      "claims": [
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20"
+      ],
+      "forbid": [
+        "A01",
+        "A02",
+        "A03",
+        "A04",
+        "A05",
+        "A06",
+        "A07",
+        "I01",
+        "I02",
+        "I03",
+        "I04",
+        "I05",
+        "I06",
+        "I07",
+        "I08",
+        "I09",
+        "I10",
+        "I11",
+        "I12",
+        "I13",
+        "I14",
+        "I15",
+        "I16",
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40",
+        "C41",
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46",
+        "C47",
+        "C48",
+        "C49",
+        "C50",
+        "C51",
+        "C52",
+        "C53",
+        "C54",
+        "C55",
+        "C56",
+        "C57",
+        "C58",
+        "C59",
+        "C60",
+        "C61",
+        "C62",
+        "C63",
+        "C64",
+        "C65",
+        "C66",
+        "C67",
+        "C68",
+        "C69",
+        "C70",
+        "C71",
+        "C72"
+      ]
+    },
+    {
+      "claims": [
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28"
+      ],
+      "forbid": [
+        "A03",
+        "A04",
+        "A05",
+        "A06",
+        "A07",
+        "A08",
+        "I01",
+        "I02",
+        "I03",
+        "I04",
+        "I05",
+        "I06",
+        "I07",
+        "I08",
+        "I10",
+        "I11",
+        "I12",
+        "I13",
+        "I14",
+        "I15",
+        "I16",
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40",
+        "C41",
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46",
+        "C47",
+        "C48",
+        "C49",
+        "C50",
+        "C51",
+        "C52",
+        "C53",
+        "C54",
+        "C55",
+        "C56",
+        "C57",
+        "C58",
+        "C59",
+        "C60",
+        "C61",
+        "C62",
+        "C63",
+        "C64",
+        "C65",
+        "C66",
+        "C67",
+        "C68",
+        "C69",
+        "C70",
+        "C71",
+        "C72"
+      ]
+    },
+    {
+      "claims": [
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39"
+      ],
+      "forbid": [
+        "A03",
+        "A05",
+        "A06",
+        "A07",
+        "A08",
+        "I01",
+        "I02",
+        "I03",
+        "I04",
+        "I05",
+        "I06",
+        "I07",
+        "I08",
+        "I10",
+        "I14",
+        "I15",
+        "I16",
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C29",
+        "C30",
+        "C40",
+        "C41",
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46",
+        "C47",
+        "C48",
+        "C49",
+        "C50",
+        "C51",
+        "C52",
+        "C53",
+        "C54",
+        "C55",
+        "C56",
+        "C57",
+        "C58",
+        "C59",
+        "C60",
+        "C61",
+        "C62",
+        "C63",
+        "C64",
+        "C65",
+        "C66",
+        "C67",
+        "C68",
+        "C69",
+        "C70",
+        "C71",
+        "C72"
+      ]
+    },
+    {
+      "claims": [
+        "C55",
+        "C56",
+        "C57",
+        "C58",
+        "C59",
+        "C60",
+        "C61",
+        "C62",
+        "C63"
+      ],
+      "forbid": [
+        "A03",
+        "A04",
+        "A05",
+        "A06",
+        "A07",
+        "A08",
+        "I01",
+        "I02",
+        "I03",
+        "I04",
+        "I05",
+        "I06",
+        "I07",
+        "I08",
+        "I09",
+        "I10",
+        "I11",
+        "I12",
+        "I13",
+        "I14",
+        "I15",
+        "I16",
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40",
+        "C41",
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46",
+        "C47",
+        "C48",
+        "C49",
+        "C50",
+        "C51",
+        "C52",
+        "C53",
+        "C54",
+        "C64",
+        "C65",
+        "C66",
+        "C67",
+        "C68",
+        "C69",
+        "C70",
+        "C71",
+        "C72"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "T01",
+      "name": "Guarded visible/hidden completion equivalence",
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Keep literal OLD seam equalities separate from target coincidences. D is diversity-only; restore Dhat before RAW saturation, or guard the result, then use fresh old SAP neighbours to prove branchkernel inclusions. Direct ww exactness precedes separate represented-MI reconstruction. Only extra CCO gives distributivity; monolith unit is restricted to idempotents. Global HE uses actual binary local support cover, and all reinsertions retain the EXACT original word over one complete old base. No unqualified export of printed TV1 or higher-support binary shortcut."
+    },
+    {
+      "id": "T02",
+      "name": "Literal OLD-coordinate seam telescope",
+      "claims": [
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Keep literal OLD seam equalities separate from target coincidences. D is diversity-only; restore Dhat before RAW saturation, or guard the result, then use fresh old SAP neighbours to prove branchkernel inclusions. Direct ww exactness precedes separate represented-MI reconstruction. Only extra CCO gives distributivity; monolith unit is restricted to idempotents. Global HE uses actual binary local support cover, and all reinsertions retain the EXACT original word over one complete old base. No unqualified export of printed TV1 or higher-support binary shortcut."
+    },
+    {
+      "id": "T03",
+      "name": "Direct ww RAW exact envelope and separate MI reconstruction",
+      "claims": [
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Keep literal OLD seam equalities separate from target coincidences. D is diversity-only; restore Dhat before RAW saturation, or guard the result, then use fresh old SAP neighbours to prove branchkernel inclusions. Direct ww exactness precedes separate represented-MI reconstruction. Only extra CCO gives distributivity; monolith unit is restricted to idempotents. Global HE uses actual binary local support cover, and all reinsertions retain the EXACT original word over one complete old base. No unqualified export of printed TV1 or higher-support binary shortcut."
+    },
+    {
+      "id": "T04",
+      "name": "CCO-free idempotent lattice and distributive specialization",
+      "claims": [
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40"
+      ],
+      "depends_on": [
+        "T03"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Keep literal OLD seam equalities separate from target coincidences. D is diversity-only; restore Dhat before RAW saturation, or guard the result, then use fresh old SAP neighbours to prove branchkernel inclusions. Direct ww exactness precedes separate represented-MI reconstruction. Only extra CCO gives distributivity; monolith unit is restricted to idempotents. Global HE uses actual binary local support cover, and all reinsertions retain the EXACT original word over one complete old base. No unqualified export of printed TV1 or higher-support binary shortcut."
+    },
+    {
+      "id": "T05",
+      "name": "Corrected guarded bisaturation and visible branch kernels",
+      "claims": [
+        "C41",
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46",
+        "C47",
+        "C48"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Keep literal OLD seam equalities separate from target coincidences. D is diversity-only; restore Dhat before RAW saturation, or guard the result, then use fresh old SAP neighbours to prove branchkernel inclusions. Direct ww exactness precedes separate represented-MI reconstruction. Only extra CCO gives distributivity; monolith unit is restricted to idempotents. Global HE uses actual binary local support cover, and all reinsertions retain the EXACT original word over one complete old base. No unqualified export of printed TV1 or higher-support binary shortcut."
+    },
+    {
+      "id": "T06",
+      "name": "Reflect named branch equations into the OLD source",
+      "claims": [
+        "C49",
+        "C50",
+        "C51",
+        "C52",
+        "C53",
+        "C54"
+      ],
+      "depends_on": [
+        "T05"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Keep literal OLD seam equalities separate from target coincidences. D is diversity-only; restore Dhat before RAW saturation, or guard the result, then use fresh old SAP neighbours to prove branchkernel inclusions. Direct ww exactness precedes separate represented-MI reconstruction. Only extra CCO gives distributivity; monolith unit is restricted to idempotents. Global HE uses actual binary local support cover, and all reinsertions retain the EXACT original word over one complete old base. No unqualified export of printed TV1 or higher-support binary shortcut."
+    },
+    {
+      "id": "T07",
+      "name": "Off-diagonal whole idempotent interval reinsertion",
+      "claims": [
+        "C55",
+        "C56",
+        "C57",
+        "C58"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Keep literal OLD seam equalities separate from target coincidences. D is diversity-only; restore Dhat before RAW saturation, or guard the result, then use fresh old SAP neighbours to prove branchkernel inclusions. Direct ww exactness precedes separate represented-MI reconstruction. Only extra CCO gives distributivity; monolith unit is restricted to idempotents. Global HE uses actual binary local support cover, and all reinsertions retain the EXACT original word over one complete old base. No unqualified export of printed TV1 or higher-support binary shortcut."
+    },
+    {
+      "id": "T08",
+      "name": "Simultaneous exact original-word insertion",
+      "claims": [
+        "C59",
+        "C60",
+        "C61",
+        "C62",
+        "C63"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Keep literal OLD seam equalities separate from target coincidences. D is diversity-only; restore Dhat before RAW saturation, or guard the result, then use fresh old SAP neighbours to prove branchkernel inclusions. Direct ww exactness precedes separate represented-MI reconstruction. Only extra CCO gives distributivity; monolith unit is restricted to idempotents. Global HE uses actual binary local support cover, and all reinsertions retain the EXACT original word over one complete old base. No unqualified export of printed TV1 or higher-support binary shortcut."
+    },
+    {
+      "id": "T09",
+      "name": "Formula repair and scope boundaries",
+      "claims": [
+        "C64",
+        "C65",
+        "C66",
+        "C67",
+        "C68",
+        "C69",
+        "C70",
+        "C71",
+        "C72"
+      ],
+      "depends_on": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Keep literal OLD seam equalities separate from target coincidences. D is diversity-only; restore Dhat before RAW saturation, or guard the result, then use fresh old SAP neighbours to prove branchkernel inclusions. Direct ww exactness precedes separate represented-MI reconstruction. Only extra CCO gives distributivity; monolith unit is restricted to idempotents. Global HE uses actual binary local support cover, and all reinsertions retain the EXACT original word over one complete old base. No unqualified export of printed TV1 or higher-support binary shortcut."
+    }
+  ],
+  "controls": [
+    {
+      "id": "K01",
+      "check": "Actual finite clone-window RAW/STRONG squares, idempotent lattice operations, corrected guarded saturation and fresh-neighbour branchvisibility, with a concrete counterexample to printed TV1."
+    },
+    {
+      "id": "K02",
+      "check": "Literal old-term telescopes versus accidental completion collisions, local irreducible reflection and complete-base private-word insertion bookkeeping. Finite windows are not unbounded SAP/CCO/forest or Lean certificates."
+    }
+  ],
+  "overview_mermaid": [
+    "flowchart TD",
+    "  L[\"Complete old local diagrams\"] --> G[\"Guarded visible/hidden equivalence\"]",
+    "  B[\"Binary irreducible local cover\"] --> G",
+    "  W[\"Positive idempotent word w\"] --> E[\"RAW ww equals Id union e\"]",
+    "  E --> M[\"Separate exact MI reconstruction\"]",
+    "  N[\"FULL NR2 plus old SAP\"] --> I[\"Idempotent lattice and monolith\"]",
+    "  H[\"Full restored root pullback\"] --> V[\"Fresh-neighbour branch visibility\"]",
+    "  V --> O[\"Literal OLD source equations\"]",
+    "  O --> T[\"Same-coordinate seam telescope\"]",
+    "  P[\"Distinct pinned endpoints and old SAP\"] --> R[\"Simultaneous whole-word insertion\"]"
+  ],
+  "overview_notes": [
+    "Eight source15 results/eight equations, with one explicit mathematical formula repair: printed TV1 RAW equality is false on diversity-only menus.",
+    "Branchvisibility/old equations remain valid after full restored pullback plus guarded saturation and fresh SAP neighbours; no stronger raw-saturation premise is imposed.",
+    "Direct ww RAW exactness and CCO-free idempotent lattice have firewalls excluding CCO/hidden completion; MI reconstruction and distributivity are separate.",
+    "No source16 old-gap certificate, forest theorem or bounded-obstruction conclusion is imported."
+  ],
+  "article_feedback": [
+    {
+      "id": "F01",
+      "kind": "RAW_STRONG_FORMULA_REPAIR",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/v27/15_guarded_reflection_old_seams.tex",
+        "anchor": "\\label{eq:typed-anchored-bisaturation}"
+      },
+      "finding": "The printed H_b;D;H_c=D is false when D is the STRONG diversity menu. Already a real-to-J projection has D=J^circ, H_b=Id,H_c=J and J^circ;J=fullJ including logical identity. The subsequent proof silently uses RAW saturation of this guarded menu.",
+      "proposed_article_change": "Define the actual full root pullback Dhat (intersection of full term-comparison pullbacks), write H_b;Dhat;H_c=Dhat and D=Dhat^circ, or explicitly use (H_b;D;H_c)^circ=D. For H_b<=J choose an actual D-neighbour avoiding both source points by old SAP, then use full saturation and distinctness to obtain the second D-edge. Do the converse fresh-predecessor argument for H_c<=J^P. Keep TV2 and old-source equation conclusions.",
+      "caller_effect": "The false intermediate displayed equation is replaced. Desired branch visibility, OLD source equations and downstream boundary certificates survive under the existing old SAP/source-pattern inputs; no added assumption or frozen-TeX edit.",
+      "proof_claims": [
+        "C41",
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C48",
+        "C64",
+        "C65"
+      ]
+    }
+  ],
+  "review": {
+    "date": "2026-10-29",
+    "source_unchanged": true,
+    "source_signature_repairs": 1,
+    "unexpanded_provider_labels": [],
+    "proof_status": "HUMAN_EXPANDED_NOT_LEAN; independent concrete all-claim/notes audits and parent synthesis PASS. One TV1 proof-equation repair and six receiving obligations explicitly retained; frozen source and previous qualifications unchanged.",
+    "independent_reviews": [
+      "Author and parent independently identified the printed TV1 RAW-diversity saturation error and supplied fresh-neighbour proof of the same desired kernel conclusions",
+      "Final audit PASS: corrected off-diagonal root saturation; literal OLD source equations and one-generated holonomy; exact idempotent envelope; maximal disjoint forest gaps and original whole-word reconstruction; HN applied only through its admissible-input gate and complete real order code. Six external receiving obligations remain: five HN/HKN plus the previously cited factorization-forest theorem."
+    ],
+    "boundaries": [
+      "Printed TV1 is not exported unqualified",
+      "Literal old seams cannot use accidental completion image equality",
+      "Direct ww RAW exactness needs neither CCO nor NR2",
+      "Idempotent lattice bijection/monolith is CCO-free; distributivity is extra",
+      "e0 is a unit only inside idempotents",
+      "Exact original words and distinct endpoints retained in reinsertion",
+      "Binary localcover retains positive-arity/empty convention and separate higher-support gate"
+    ]
+  },
+  "article_feedback_intro": "One required mathematical proof-equation repair is recorded below: printed TV1 confuses a STRONG diversity menu with its full RAW saturated pullback. The corrected formula and old-SAP fresh-neighbour proof retain the original desired kernel/OLD-branch conclusions under the existing hypotheses. Frozen TeX remains unchanged pending the human article pass."
+}

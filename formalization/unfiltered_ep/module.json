@@ -1,0 +1,3504 @@
+{
+  "schema_version": 1,
+  "id": "unfiltered_ep",
+  "index_title": "Unfiltered phase labels, synchronized terminal orders and same-host tuple expansion property",
+  "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+  "status": "HUMAN_EXPANDED_NOT_LEAN",
+  "scope": "Private B064: all EIGHT unfiltered-EP source results, THREE auxiliary equations, sixteen definitions, 112 human claims and fourteen tasks. An independent finite-template singleton Ramsey criterion gives unary EP exactly for core type tables. Actual terminal symmetry gives unique coordinate values, trivial return holonomy and one complete pointed reset-edge type. The genuine PURE-IMAGINARY hidden SAP source supplies ordered fresh midpoints over the entire actual closed pair base; one fixed full Ramsey provider and legal reversal prove each relative task EP. Orders add no functions, so precise finite-chain EP composition applies. All actual MI tuple coverage, distributivity/cofinality, canonical fine supports and SAME-HOST lifting hypotheses are discharged before visible EP. The genuine unfiltered table is core, so the explicit final AP+HOM-CCO expansion has Ramsey and EP without deleting labels. The finite-original case is separately completed using actual unique terminal tags and zero-coordinate roots. No new external theorem, source TeX edit, EPPA or Lean certification.",
+  "scope_vocabulary": [
+    "core",
+    "coordinates",
+    "orders",
+    "tuple_transfer",
+    "assembly",
+    "boundary"
+  ],
+  "scope_explanation": "Each statement retains its independent generic or actual terminal context. EP always means forall expanded target exists ONE fixed reduct host forall allowed competing expansions an induced embedding. Actual hidden structures are finite induced unary-closed members, possibly orphan-only. Generic singleton shapes are actual one-point objects; label names are not individually named in the finite template. All functions/domains are retained through the relational/order tower.",
+  "control_script": "tools/check_unfiltered_ep_finite.py",
+  "assumptions": [
+    {
+      "id": "A01",
+      "name": "Independent finite pair-local template setting",
+      "statement": "K is a hereditary finite complete atomic binary age with retained original sorts. U_T is a reasonable reduct-surjective finite unary expansion defined exactly by its realized original-atom/type-pair tables R_a, with EVERY listed pair realized on distinct actual vertices, including repeated labels. T consists of realized complete labels. R is a hereditary reasonable reduct-surjective Ramsey expansion of U_T with JEP and exactly ONE actual expanded one-point shape per label: every vertex induces that shape, so its singleton embeddings are legitimate. Template endomorphisms preserve original sorts and every R_a; the individual new labels are NOT constants or unary predicates of the TEMPLATE.",
+      "depends_on": []
+    },
+    {
+      "id": "A02",
+      "name": "Independent symmetric equivariant-coordinate setting",
+      "statement": "G acts transitively on S and every G-invariant binary relation on S is symmetric. The two displayed maps tau,sigma:S->B are equivariant surjections onto the SAME transitive G-set B. No CCO, Ramsey, SAP, finiteness or terminality is assumed for the kernel/involution part.",
+      "depends_on": []
+    },
+    {
+      "id": "A03",
+      "name": "Conditional terminality for coordinate uniqueness only",
+      "statement": "Only for the final uniqueness implication in the preceding generic setting, there is NO invariant equivalence strictly above the common kernel whose relative index over that kernel is finite and greater than one. A finite strict interval is excluded, not merely a represented sublattice or a no-index-two condition on unnamed objects.",
+      "depends_on": []
+    },
+    {
+      "id": "A04",
+      "name": "Bound actual terminal clone and pure-imaginary instance",
+      "statement": "Mdagger=Qdagger x N is an actual finite-sorted FULL triangle-defined homogeneous symmetric binary SAP+HOM-CCO terminal clone source. Every strict cover in EVERY FULL current invariant-equivalence lattice has infinite relative index, including Top covers. Owner sorts are infinite in this parameterized branch. The actual hidden signature has proper nonidentity represented MI quotient sorts, all complete actual mixed semantic cylinders and equivariant unary projections/upward maps/quotient transitions with inverses. Named functions are total on their prescribed input sorts and undefined off-sort; no proper quotient map returns to a real sort. Choose finite meet-representing MI charts for each K_s. Order assertions use fixed hidden SORT priority and transition-synchronized within-cut fibre orders with parent-coordinate lex reconstruction; existence of their legal Ramsey class is proved, not assumed as an EP input. This is a BOUND intermediate instance, discharged from A06 for the main infinite theorem.",
+      "depends_on": []
+    },
+    {
+      "id": "A05",
+      "name": "Independent abstract same-host tuple-EP parameters",
+      "statement": "For the abstract implication only, H^o->H is a reasonable reduct-surjective precompact unary-functional/relational expansion with EP and a full finite tuple code. The four stated contracts hold: canonical unexpanded generated supports; cofinal finite E with h(N(E))=E; EVERY allowed full visible expansion lifts to that SAME E; and the natural ALL-embeddings correspondence with original fine-colour recovery. These are parameters of the abstract theorem, discharged concretely in C73-C84 rather than assumed for the final application.",
+      "depends_on": []
+    },
+    {
+      "id": "A06",
+      "name": "Original infinite one-sort AP source",
+      "statement": "Q is countably infinite, transitive and homogeneous in a finite complete symmetric binary language of actual pair orbitals, with ordinary age AP and semantic HOM CCO. No old SAP, terminality, finite-packet MI assumption, Ramsey expansion or expansion property is an input. The actual genuine maximal-character safe terminalisation, not arbitrary unary labels, is the recipe used in the main construction.",
+      "depends_on": []
+    },
+    {
+      "id": "A07",
+      "name": "Separate finite original source",
+      "statement": "For the finite-original case, Q is a nonempty FINITE transitive homogeneous complete symmetric binary AP+HOM-CCO source. Apply the same actual infinite-clone cover and genuine finite maximal-character terminalisation; the owner quotient remains this finite Q. This case does not satisfy A06 or the infinite-owner A04 parameter and is proved separately.",
+      "depends_on": []
+    },
+    {
+      "id": "A08",
+      "name": "Relational finite-core fallback only",
+      "statement": "For the ancillary minimum-rank core-filter remark, the provider is relational (or otherwise its retained-label induced restrictions are actual closed substructures). This is the explicitly relational fallback in the source, not an extra premise of the genuine unfiltered construction.",
+      "depends_on": []
+    }
+  ],
+  "imports": [
+    {
+      "id": "I01",
+      "name": "lem:ramsey-clone-stability",
+      "provider_module": "clone_tuple_geometry",
+      "source_label": "lem:ramsey-clone-stability",
+      "provider_claims": [
+        "C20"
+      ],
+      "statement": "The genuine safe terminal clone tower descends to finite reasonable owner labels with infinite owner sorts; strict C05 separately gives K_s as the LEAST nonidentity FULL invariant equivalence in every clone-saturated current transitive sort.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "provider_support_claims": [
+        "C05"
+      ],
+      "provider_support_usage": "Use the actual fibre-permutation proof C05 to show EVERY proper nonzero MI J contains K_s before applying selected-coordinate cofinality; merely choosing a meet-representing family would not imply this."
+    },
+    {
+      "id": "I02",
+      "name": "thm:ep-ap-marked-completion",
+      "provider_module": "ap_character",
+      "source_label": "thm:ep-ap-marked-completion",
+      "provider_claims": [
+        "C41",
+        "C42",
+        "C44"
+      ],
+      "statement": "Actual finite complete marked objects are precisely old-age diagrams satisfying the full character pair masks. Any prescribed legal marking extends along the SAME old embedding; the genuine homogeneous marked limit has unchanged old reduct. Arbitrary locally invented old atoms or a single arbitrary global seed are not substituted.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I03",
+      "name": "thm:ramsey-general-ap",
+      "provider_module": "ap_ramsey_readout",
+      "source_label": "thm:ramsey-general-ap",
+      "provider_claims": [
+        "C34"
+      ],
+      "statement": "Use the proved AP-to-actual-terminal construction and canonical fine full-code setting, retaining its explicit NEW-source substitutions. The old theorem arrows are not a shortcut for the new hierarchical ordered age.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "provider_support_claims": [
+        "C05",
+        "C06",
+        "C07",
+        "C23",
+        "C27",
+        "C28",
+        "C29"
+      ],
+      "provider_support_usage": "C05 constructs the bound terminal clone instance from an AP-only original source; C06/C07 give actual owner homogeneity/equivariant imaginary action. C23/C27/C28/C29 record the canonical full-code setting and same-map finite expansion properties. Rebuild hierarchical arrows and order EP on their actual new class."
+    },
+    {
+      "id": "I04",
+      "name": "lem:typed-unary-closure-bound",
+      "provider_module": "unary_terms_return",
+      "source_label": "lem:typed-unary-closure-bound",
+      "provider_claims": [
+        "C13",
+        "C14"
+      ],
+      "statement": "Finite hidden closures have a uniform size bound, and strict C12 gives finitely many ACTUAL unary term FUNCTIONS on EVERY hidden input sort, including proper coordinate sorts.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "provider_support_claims": [
+        "C12"
+      ],
+      "provider_support_usage": "Choose representatives with identical actual domains and values on all proper input sorts. Singleton image-size bounds or a real-source-only list do not supply finite tuple templates."
+    },
+    {
+      "id": "I05",
+      "name": "lem:typed-coordinate-normal-form",
+      "provider_module": "unary_terms_return",
+      "source_label": "lem:typed-coordinate-normal-form",
+      "provider_claims": [
+        "C24",
+        "C25"
+      ],
+      "statement": "A real-source term is an actual quotient projection with a proper represented MI kernel followed by a named equivariant quotient bijection, or the real identity. Compose a quotient-start term with its real projection before applying this theorem.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I06",
+      "name": "lem:no-real-algebraic-transition",
+      "provider_module": "transition_closure",
+      "source_label": "lem:no-real-algebraic-transition",
+      "provider_claims": [
+        "C30"
+      ],
+      "statement": "No actual proper quotient-coordinate sort has a nonidentity unary transition/upward map into a real sort. Its literal pure-imaginary sort restriction is therefore unary closed.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I07",
+      "name": "thm:internal-ramsey-terminal",
+      "provider_module": "terminal_hidden_hn",
+      "source_label": "thm:internal-ramsey-terminal",
+      "provider_claims": [
+        "C39"
+      ],
+      "statement": "Use ONLY strict C30 actual proof support: the ENTIRE hereditary hidden age has SAP, including orphan-only and empty closed bases. This SAP import is kept separate from the ordered Ramsey support I30; no Ramsey or EP output supplies a fresh midpoint.",
+      "depends_on": [],
+      "status": "HUMAN_SUPPORT_PROOF_NOT_LEAN",
+      "provider_support_claims": [
+        "C30"
+      ],
+      "provider_support_usage": "Select only the proved strict ancestor C30 for actual hereditary hidden SAP. Do not require the C36 Ramsey support for the ordered midpoint amalgamation. The C39 theorem export is ONLY the verified source locator for that strict support; its full theorem conclusion is not consumed by this import."
+    },
+    {
+      "id": "I08",
+      "name": "lem:foundational-ramsey-sort-restriction",
+      "provider_module": "reset_order",
+      "source_label": "lem:foundational-ramsey-sort-restriction",
+      "provider_claims": [
+        "C04",
+        "C05",
+        "C06"
+      ],
+      "statement": "A full induced restriction to unary-closed named sorts inherits Ramsey, JEP and supplied SAP; deleted sorts stay empty. It is not an arbitrary relational reduct.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I09",
+      "name": "lem:foundational-ramsey-normalization",
+      "provider_module": "reset_order",
+      "source_label": "lem:foundational-ramsey-normalization",
+      "provider_claims": [
+        "C07",
+        "C11",
+        "C12"
+      ],
+      "statement": "A legal same-universe, same-map strict idempotent endofunctor gives a hereditary Ramsey fixed-object class, with JEP when supplied. No surjectivity on embedding sets or generic ordered SAP assertion is assumed.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I10",
+      "name": "lem:foundational-hierarchical-order-normalization",
+      "provider_module": "reset_order",
+      "source_label": "lem:foundational-hierarchical-order-normalization",
+      "provider_claims": [
+        "C24"
+      ],
+      "statement": "On actual finite distributive quotient lattices, canonical commuting upward/transition maps and trivial return holonomy, the hierarchical normalizer is legal, same-map idempotent and permits SINGLE task reversal with earlier coarser tasks fixed. Only FIBRE orders are synchronized; global transition monotonicity is not asserted.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I11",
+      "name": "thm:typed-relative-reset",
+      "provider_module": "terminal_lattice",
+      "source_label": "thm:typed-relative-reset",
+      "provider_claims": [
+        "C41"
+      ],
+      "statement": "Every actual represented NONZERO terminal MI cut J<Jplus has ONE complete symmetric quotient semantic cylinder m in Jplus minus J, with BOTH m*m=(Jplus)^circ in STRONG diversity and m;m=Jplus in FULL RAW semantics. m may contain many old fine atoms.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I12",
+      "name": "thm:abstract-reset-order-EP",
+      "provider_module": "reset_order",
+      "source_label": "thm:abstract-reset-order-EP",
+      "provider_claims": [
+        "C37",
+        "C38"
+      ],
+      "statement": "Relative single-task EP follows from ONE common full hereditary Ramsey/JEP lift class, legal total reversal over the same earlier reduct, ONE complete POINTED ordered reset-edge type and induced fresh-midpoint extensions. Intermediate partially ordered classes need not be Ramsey.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I13",
+      "name": "lem:abstract-fresh-reset-midpoint",
+      "provider_module": "reset_order",
+      "source_label": "lem:abstract-fresh-reset-midpoint",
+      "provider_claims": [
+        "C44"
+      ],
+      "statement": "A finite permitted closed midpoint witness over the EXACT actual pointed pair closure and an actual ordered SAP extension produce a fresh induced midpoint over the whole given object. These hypotheses must be discharged; raw menu multiplication alone is insufficient.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I14",
+      "name": "lem:foundational-relative-EP-composition",
+      "provider_module": "reset_order",
+      "source_label": "lem:foundational-relative-EP-composition",
+      "provider_claims": [
+        "C50",
+        "C51"
+      ],
+      "statement": "Compose the forall-expanded-target/exists-fixed-host/forall-competing-expansion EP statements only with the proved inherited-image closedness gate A14. Every level here retains all functions/domains and adds only relations/orders, so that gate is automatic.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I15",
+      "name": "lem:foundational-MI-coordinate-cofinal",
+      "provider_module": "exact_crt",
+      "source_label": "lem:foundational-MI-coordinate-cofinal",
+      "provider_claims": [
+        "C15",
+        "C16"
+      ],
+      "statement": "In a FINITE DISTRIBUTIVE lattice, K=meet selected J_i<=J with J MI implies some selected J_i<=J. It is a meet-PRIME consequence, not a theorem of generic finite MI separation.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I16",
+      "name": "lem:foundational-root-cover-cofinal",
+      "provider_module": "full_code",
+      "source_label": "lem:foundational-root-cover-cofinal",
+      "provider_claims": [
+        "C24",
+        "C25"
+      ],
+      "statement": "Actual ambient unary-term root coverage and finite normal forms produce finite E extending any hidden D with h(N(E))=E, including orphan/empty cases. No Ramsey or EP premise is used.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I17",
+      "name": "lem:foundational-same-host-code",
+      "provider_module": "full_code",
+      "source_label": "lem:foundational-same-host-code",
+      "provider_claims": [
+        "C31"
+      ],
+      "statement": "For ANY bound full-root-generated E and EVERY allowed visible full-code expansion of N(E), its canonical generated code transports to an allowed hidden expansion of THAT SAME unexpanded E. No cofinality/EP/Ramsey is assumed for this local lemma.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I18",
+      "name": "lem:foundational-full-code-embeddings",
+      "provider_module": "full_code",
+      "source_label": "lem:foundational-full-code-embeddings",
+      "provider_claims": [
+        "C08",
+        "C15"
+      ],
+      "statement": "ALL marked same-root/cross-root term equality, function-domain/value, fine relation and order codes reconstruct the generated support and give the natural bijection of ALL visible and hidden embedding maps.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I19",
+      "name": "thm:foundational-cofinal-tuple-EP",
+      "provider_module": "full_code",
+      "source_label": "thm:foundational-cofinal-tuple-EP",
+      "provider_claims": [
+        "C38",
+        "C39"
+      ],
+      "statement": "The abstract four-contract same-host full-code interface plus the supplied hidden EP and reasonable/precompact setting gives visible EP, with ONE host chosen before ANY competing expansion.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I20",
+      "name": "thm:ramsey-tuple-readout",
+      "provider_module": "full_code",
+      "source_label": "thm:ramsey-tuple-readout",
+      "provider_claims": [
+        "C20"
+      ],
+      "statement": "A hidden embedding-Ramsey class transfers to its hereditary full-code age through the exact ALL-embeddings bijection. It does not require EP, cofinal root coverage or visible SAP.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I21",
+      "name": "lem:ramsey-mi-domain",
+      "provider_module": "clone_tuple_geometry",
+      "source_label": "lem:ramsey-mi-domain",
+      "provider_claims": [
+        "C34"
+      ],
+      "statement": "Actual compatible MI tuples are exactly the original owner points; their qf domain remains valid on orphan-only finite hidden hosts.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "provider_support_claims": [
+        "C24",
+        "C25",
+        "C26",
+        "C27"
+      ],
+      "provider_support_usage": "Keep the actual finite MI chart existence, representability, coordinate independence and owner injection, rather than treating a compatibility formula as an independent chart-existence axiom."
+    },
+    {
+      "id": "I22",
+      "name": "lem:ramsey-singleton-recovery",
+      "provider_module": "clone_tuple_geometry",
+      "source_label": "lem:ramsey-singleton-recovery",
+      "provider_claims": [
+        "C52"
+      ],
+      "statement": "The intersection of ALL actual mixed spectra recovers the singleton original fine atom; equal roots return the clone marker as VISIBLE equality. Coincident hidden coordinates use their full equivalence diversity support.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I23",
+      "name": "thm:ep-automatic-core",
+      "provider_module": "automatic_ep_core",
+      "source_label": "thm:ep-automatic-core",
+      "provider_claims": [
+        "C58"
+      ],
+      "statement": "For the genuine maximal-exact-character terminal tower on one original sort, complete original bipartite-atom separation makes every table endomorphism injective and hence an automorphism. No labels are filtered and individual terminal labels are not constants of the template.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I24",
+      "name": "thm:finite-cover-elimination",
+      "provider_module": "pair_safe_split",
+      "source_label": "thm:finite-cover-elimination",
+      "provider_claims": [
+        "C51"
+      ],
+      "statement": "The actual full maximal-character construction terminalizes the symmetric clone SAP+HOM-CCO source by finitely many reasonable reduct-surjective unary steps while preserving actual old reduct, homogeneity and full current orbitals. Keep its actual/FULL-sector qualifications.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I25",
+      "name": "thm:internal-clone-sap",
+      "provider_module": "clone_sap",
+      "source_label": "thm:internal-clone-sap",
+      "provider_claims": [
+        "C26"
+      ],
+      "statement": "The actual Q x N cover of a homogeneous AP+HOM-CCO triangle-constrained source is homogeneous SAP+HOM CCO, including FINITE Q; K=Id union c is the owner kernel and the owner quotient remains Q.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I26",
+      "name": "lem:cco-triangle-fullness",
+      "provider_module": "relational_completion",
+      "source_label": "lem:cco-triangle-fullness",
+      "provider_claims": [
+        "C27",
+        "C28",
+        "C29"
+      ],
+      "statement": "Original ordinary AP plus semantic HOM CCO gives complete-diagram triangle fullness, including actual unary/pair admissibility below three points; no old SAP is inserted.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I27",
+      "name": "lem:typed-terminal-all-equivalences-exact",
+      "provider_module": "real_closure",
+      "source_label": "lem:typed-terminal-all-equivalences-exact",
+      "provider_claims": [
+        "C28"
+      ],
+      "statement": "With original symmetric CCO and FULL NR2, all invariant equivalences are RAW exact and the FULL lattice is distributive. Terminal infinite covers supply FULL NR2. This is selected separately for MI meet-primeness and the hierarchical normalizer.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I28",
+      "name": "lem:typed-transition-composition-normal-form",
+      "provider_module": "transition_closure",
+      "source_label": "lem:typed-transition-composition-normal-form",
+      "provider_claims": [
+        "C40"
+      ],
+      "statement": "Actual quotient transitions, their inverses and upward maps have literal compatible composition/upward normal forms. They transport full quotient intervals/cuts and obey the actual equivariant quotient semantics required by hierarchical normalization.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I29",
+      "name": "cor:ramsey-small-language",
+      "provider_module": "ap_ramsey_readout",
+      "source_label": "cor:ramsey-small-language",
+      "provider_claims": [
+        "C56"
+      ],
+      "statement": "The existing actual block-normalized full MI-code Ramsey provider is reasonable, finite, precompact and reduct-surjective over the terminal unary age; restoring qf-defined non-order codes preserves every embedding set.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "provider_support_claims": [
+        "C23",
+        "C28",
+        "C51",
+        "C55"
+      ],
+      "provider_support_usage": "Strict C51 supplies the FULL block-code Ramsey class (before deletion), C55 its same-expansion reasonableness, and C23/C28 reduct-surjectivity/precompactness. It is a provider for unary singleton homogenization, not an EP theorem."
+    },
+    {
+      "id": "I30",
+      "name": "thm:internal-ramsey-terminal",
+      "provider_module": "terminal_hidden_hn",
+      "source_label": "thm:internal-ramsey-terminal",
+      "provider_claims": [
+        "C39"
+      ],
+      "statement": "Use strict C36 for the ENTIRE actual hidden ALL-global-orders Ramsey class at the bound terminal source. Retain inherited HN and forest bindings; two global HKN entries belong to the separate EPPA track.",
+      "depends_on": [],
+      "status": "HUMAN_SUPPORT_PROOF_NOT_LEAN",
+      "provider_support_claims": [
+        "C36"
+      ],
+      "provider_support_usage": "Use the full actual ordered age, not merely its real-generated subage. The SAP support C30 is separately imported as I07 so the fresh-midpoint branch has no ordered-Ramsey dependency. The C39 theorem export is ONLY the verified source locator for that strict support; its full theorem conclusion is not consumed by this import."
+    }
+  ],
+  "definitions": [
+    {
+      "id": "D01",
+      "name": "EP quantifier",
+      "statement": "For every expanded target Astar choose ONE unexpanded host B before receiving ANY competing allowed Bstar; then an induced Astar embedding must exist for EVERY Bstar.",
+      "source": {
+        "file": "sections/expansion_property_unfiltered.tex",
+        "anchor": "Recall the"
+      },
+      "notes": "N01",
+      "depends_on": []
+    },
+    {
+      "id": "D02",
+      "name": "Finite type template",
+      "statement": "The finite relational structure T has original-sort unary predicates and binary R_a relations of allowed actual atom/type pairs, without individual terminal-label constants.",
+      "source": {
+        "file": "sections/expansion_property_unfiltered.tex",
+        "anchor": "\\label{eq:ep-pair-local}"
+      },
+      "notes": "N01",
+      "depends_on": []
+    },
+    {
+      "id": "D03",
+      "name": "Actual singleton shapes",
+      "statement": "For each realized label t choose its unique actual expanded one-point object s_t; every vertex of that label gives an embedding of that same object.",
+      "source": {
+        "file": "sections/expansion_property_unfiltered.tex",
+        "anchor": "Enumerate the singleton shapes"
+      },
+      "notes": "N01",
+      "depends_on": []
+    },
+    {
+      "id": "D04",
+      "name": "Equivariant coordinate comparison",
+      "statement": "R_tau,sigma(x,y) means tau(x)=sigma(y), an invariant binary relation on the real-source transitive G-set.",
+      "source": {
+        "file": "sections/expansion_property_unfiltered.tex",
+        "anchor": "\\label{lem:ep-unique-coordinate}"
+      },
+      "notes": "N02",
+      "depends_on": []
+    },
+    {
+      "id": "D05",
+      "name": "Actual pure-imaginary hidden age",
+      "statement": "Retain all proper represented MI quotient sorts, actual fine semantic cylinders and all unary upward/transition maps, with clone-real sorts empty.",
+      "source": {
+        "file": "sections/expansion_property_unfiltered.tex",
+        "anchor": "\\label{thm:ep-terminal-orders}"
+      },
+      "notes": "N04",
+      "depends_on": []
+    },
+    {
+      "id": "D06",
+      "name": "Task cut and orbit",
+      "statement": "An independent order task is one transition orbit of a represented nonzero MI cut J<Jplus, ordered inside its Jplus fibres. Coarser tasks precede finer tasks.",
+      "source": {
+        "file": "sections/expansion_property_unfiltered.tex",
+        "anchor": "\\label{lem:ep-reset-complete-edge}"
+      },
+      "notes": "N07",
+      "depends_on": []
+    },
+    {
+      "id": "D07",
+      "name": "Complete pointed reset-edge shape",
+      "statement": "H_m is the entire induced finite unary-generated EXPANDED type of an m edge with TWO MARKED ordered endpoints, including all fine/equality/function/order data.",
+      "source": {
+        "file": "sections/expansion_property_unfiltered.tex",
+        "anchor": "\\label{lem:ep-reset-complete-edge}"
+      },
+      "notes": "N06",
+      "depends_on": []
+    },
+    {
+      "id": "D08",
+      "name": "Parent key",
+      "statement": "A Jplus fibre on the J quotient is identified by the tuple of ALL strict-coarser represented MI coordinate values. Empty key means Jplus=Top.",
+      "source": {
+        "file": "sections/expansion_property_unfiltered.tex",
+        "anchor": "functorial parent-coordinate"
+      },
+      "notes": "N08",
+      "depends_on": []
+    },
+    {
+      "id": "D09",
+      "name": "Hierarchical order normalizer",
+      "statement": "Normalize all global input orders by fixed hidden-sort priority, synchronized independent within-cut tasks and top-down parent-lex reconstruction, acting as the same vertex map.",
+      "source": {
+        "file": "sections/expansion_property_unfiltered.tex",
+        "anchor": "hierarchical"
+      },
+      "notes": "N07",
+      "depends_on": []
+    },
+    {
+      "id": "D10",
+      "name": "Exact closed pair base",
+      "statement": "P=cl{u,v} is the FULL actual induced unary closure of the specified hidden pair, not an arbitrary pair of the same coarse parent.",
+      "source": {
+        "file": "sections/expansion_property_unfiltered.tex",
+        "anchor": "complete closed"
+      },
+      "notes": "N08",
+      "depends_on": []
+    },
+    {
+      "id": "D11",
+      "name": "Finite midpoint witness",
+      "statement": "T=cl{u,v,z0} retains P literally, with m edges u-z0-v and z0 outside P; its new coarser term values are already in P.",
+      "source": {
+        "file": "sections/expansion_property_unfiltered.tex",
+        "anchor": "finite unary closure"
+      },
+      "notes": "N08",
+      "depends_on": []
+    },
+    {
+      "id": "D12",
+      "name": "Full compatible tuple code",
+      "statement": "N(D) contains ALL valid tagged selected-MI tuples; h(A) is the marked induced unary closure of their coordinate terms, with no additional tuple quotient.",
+      "source": {
+        "file": "sections/expansion_property_unfiltered.tex",
+        "anchor": "\\label{lem:ep-tuple-transfer}"
+      },
+      "notes": "N10",
+      "depends_on": []
+    },
+    {
+      "id": "D13",
+      "name": "Same-host EP lift",
+      "statement": "For fixed E with h(N(E))=E, EVERY allowed full-code expansion of B=N(E) must reconstruct an allowed hidden expansion on the SAME underlying E.",
+      "source": {
+        "file": "sections/expansion_property_unfiltered.tex",
+        "anchor": "\\label{lem:ep-tuple-transfer}"
+      },
+      "notes": "N10",
+      "depends_on": []
+    },
+    {
+      "id": "D14",
+      "name": "Finite-source zero chart",
+      "statement": "If every terminal owner type is singleton and K_s=Top, use the unique zero-coordinate tuple per realized tag; original fine colours are tag-determined definitions and the pure-imaginary support is empty.",
+      "source": {
+        "file": "sections/expansion_property_unfiltered.tex",
+        "anchor": "\\label{thm:ep-unfiltered-main}"
+      },
+      "notes": "N12",
+      "depends_on": []
+    },
+    {
+      "id": "D15",
+      "name": "Minimum-rank core retract",
+      "statement": "A minimum-rank finite template endomorphism has an idempotent power e; its induced image is a core. This fallback is separate from the genuine unfiltered tower.",
+      "source": {
+        "file": "sections/expansion_property_unfiltered.tex",
+        "anchor": "\\label{rem:ep-core-filter}"
+      },
+      "notes": "N13",
+      "depends_on": []
+    },
+    {
+      "id": "D16",
+      "name": "Complete menu versus fine atom",
+      "statement": "m is ONE complete quotient semantic cylinder, possibly containing many old fine atoms; its strong product is a diversity palette and its RAW product separately includes equality.",
+      "source": {
+        "file": "sections/expansion_property_unfiltered.tex",
+        "anchor": "\\label{eq:ep-reset}"
+      },
+      "notes": "N08",
+      "depends_on": []
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "name": "A finite bijective endomorphism is an automorphism",
+      "statement": "A bijective finite-template endomorphism maps each finite R_a injectively into itself, hence onto it; the same holds for original-sort predicates. Its inverse preserves them all. Thus End=Aut is equivalent to every endomorphism being surjective.",
+      "depends_on": [
+        "A01",
+        "D02"
+      ],
+      "notes": "N01",
+      "scope": "core",
+      "source_labels": [
+        "thm:ep-finite-core-criterion"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C02",
+      "name": "A nonsurjective endomorphism omits a realized label",
+      "statement": "If an endomorphism is not an automorphism, C01 makes it nonsurjective and some realized t is absent from its image.",
+      "depends_on": [
+        "C01"
+      ],
+      "notes": "N01",
+      "scope": "core",
+      "source_labels": [
+        "thm:ep-finite-core-criterion"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C03",
+      "name": "Postcomposition preserves every legal old marking",
+      "statement": "For ANY old finite host B and ANY legal marking lambda, f composed lambda is legal because f preserves every original R_a and sort predicate in the exact pair-local rule.",
+      "depends_on": [
+        "A01",
+        "C02"
+      ],
+      "notes": "N01",
+      "scope": "core",
+      "source_labels": [
+        "thm:ep-finite-core-criterion"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C04",
+      "name": "The omitted singleton contradicts EP on every host",
+      "statement": "Every old B has at least one legal marking by reduct-surjectivity. Its postcomposition C03 omits t and contains no expanded t-singleton. Thus no fixed old B can witness EP for that singleton.",
+      "depends_on": [
+        "A01",
+        "C02",
+        "C03",
+        "D01",
+        "D03"
+      ],
+      "notes": "N01",
+      "scope": "core",
+      "source_labels": [
+        "thm:ep-finite-core-criterion"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C05",
+      "name": "Inverse-relabelled targets are all legal",
+      "statement": "If every table endomorphism is an automorphism, for each alpha in Aut(T), the finite inverse-relabelled alpha^-1 Astar is legal on the SAME old target by the exact pair-local rule.",
+      "depends_on": [
+        "A01",
+        "C01"
+      ],
+      "notes": "N01",
+      "scope": "core",
+      "source_labels": [
+        "thm:ep-finite-core-criterion"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C06",
+      "name": "Store all labels and EVERY allowed pair",
+      "statement": "Choose provider expansions of every C05 target, each realized singleton and EVERY allowed actual atom/type pair, including two DISTINCT real vertices carrying the same label. There are finitely many witnesses.",
+      "depends_on": [
+        "A01",
+        "C05",
+        "D03"
+      ],
+      "notes": "N01",
+      "scope": "core",
+      "source_labels": [
+        "thm:ep-finite-core-criterion"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C07",
+      "name": "One full provider object contains all witnesses",
+      "statement": "Finite repeated JEP in R embeds the finite collection C06 into one D. Disjoint witness images are not required.",
+      "depends_on": [
+        "A01",
+        "C06"
+      ],
+      "notes": "N01",
+      "scope": "core",
+      "source_labels": [
+        "thm:ep-finite-core-criterion"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C08",
+      "name": "Simultaneous singleton homogenization uses only Ramsey arrows",
+      "statement": "If T is empty the old/unary age has only the empty carrier and EP is immediate. Otherwise enumerate actual singleton shapes and choose |T|-colour Ramsey arrows in reverse peeling order; iteratively restrict to ONE D copy on which every singleton colouring is separately constant. No EP or joint language action is used.",
+      "depends_on": [
+        "A01",
+        "C07",
+        "D03"
+      ],
+      "notes": "N01",
+      "scope": "core",
+      "source_labels": [
+        "thm:ep-finite-core-criterion"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C09",
+      "name": "The old witness precedes the arbitrary competitor",
+      "statement": "Let B be the original reduct of the C08 Ramsey host. Only AFTER fixing it receive any competing legal T-marking lambda prime of B, and colour each reference singleton at x by lambda prime(x).",
+      "depends_on": [
+        "C08",
+        "D01"
+      ],
+      "notes": "N01",
+      "scope": "core",
+      "source_labels": [
+        "thm:ep-finite-core-criterion"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C10",
+      "name": "The homogeneous copy induces one map on ALL labels",
+      "statement": "On the selected D copy, the competitor label is a fixed f(t) on every reference label t. Every t occurs in D, so this defines f on all of T, respecting original sorts.",
+      "depends_on": [
+        "C06",
+        "C08",
+        "C09"
+      ],
+      "notes": "N01",
+      "scope": "core",
+      "source_labels": [
+        "thm:ep-finite-core-criterion"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C11",
+      "name": "Stored pair witnesses force a template endomorphism",
+      "statement": "For each (s,t) in R_a, its actual pair witness in D has competitor labels f(s),f(t); competitor legality gives (f(s),f(t) in R_a. This includes same-reference-label pairs on distinct vertices. Hence f is a template endomorphism.",
+      "depends_on": [
+        "A01",
+        "C06",
+        "C10"
+      ],
+      "notes": "N01",
+      "scope": "core",
+      "source_labels": [
+        "thm:ep-finite-core-criterion"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C12",
+      "name": "The stored inverse relabelling recovers the exact target",
+      "statement": "The core hypothesis and C11 give f=alpha in Aut(T). The stored alpha^-1 Astar copy therefore has competitor labels alpha(alpha^-1(t))=t and exactly the prescribed old fine colours. It embeds Astar into this arbitrary competitor.",
+      "depends_on": [
+        "C05",
+        "C06",
+        "C09",
+        "C11"
+      ],
+      "notes": "N01",
+      "scope": "core",
+      "source_labels": [
+        "thm:ep-finite-core-criterion"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C13",
+      "name": "Finite simultaneous-singleton core criterion",
+      "statement": "If T is empty both the old/unary age have only empty carriers and EP/core are immediate. Otherwise C04 proves the only-if implication and C09-C12 the converse, with ONE old B for EVERY competitor. Thus EP(U_T/K) iff End(T)=Aut(T) under independent A01.",
+      "depends_on": [
+        "C01",
+        "C04",
+        "C12"
+      ],
+      "notes": "N01",
+      "scope": "core",
+      "source_labels": [
+        "thm:ep-finite-core-criterion"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C14",
+      "name": "The coordinate comparison is symmetric",
+      "statement": "The relation R(x,y):tau(x)=sigma(y) is G-invariant, hence symmetric by A02.",
+      "depends_on": [
+        "A02",
+        "D04"
+      ],
+      "notes": "N02",
+      "scope": "coordinates",
+      "source_labels": [
+        "lem:ep-unique-coordinate"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C15",
+      "name": "The two coordinate kernels agree",
+      "statement": "If sigma(x)=sigma(y), choose z with tau(z)=sigma(x). Symmetry of R(z,x),R(z,y) gives tau(x)=sigma(z)=tau(y). Interchanging tau and sigma gives the reverse kernel inclusion.",
+      "depends_on": [
+        "A02",
+        "C14"
+      ],
+      "notes": "N02",
+      "scope": "coordinates",
+      "source_labels": [
+        "lem:ep-unique-coordinate"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C16",
+      "name": "One equivariant quotient bijection relates the maps",
+      "statement": "Define f(tau(x))=sigma(x). Kernel equality gives well-definedness and injectivity, surjectivity follows from sigma, and equivariance follows by evaluation. Thus sigma=f composed tau.",
+      "depends_on": [
+        "A02",
+        "C15"
+      ],
+      "notes": "N02",
+      "scope": "coordinates",
+      "source_labels": [
+        "lem:ep-unique-coordinate"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C17",
+      "name": "The quotient bijection is an involution",
+      "statement": "Symmetry of tau(x)=f(tau(y)) implies the reversed equality, so f squared is identity on the onto tau image.",
+      "depends_on": [
+        "C14",
+        "C16"
+      ],
+      "notes": "N02",
+      "scope": "coordinates",
+      "source_labels": [
+        "lem:ep-unique-coordinate"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C18",
+      "name": "A nontrivial equivariant involution creates a finite interval",
+      "statement": "An equivariant involution on transitive B either fixes every point or has two-point orbits everywhere. In the latter case its orbit equivalence pulls back to an invariant equivalence strictly above ker(tau) of relative index two.",
+      "depends_on": [
+        "A02",
+        "C16",
+        "C17"
+      ],
+      "notes": "N02",
+      "scope": "coordinates",
+      "source_labels": [
+        "lem:ep-unique-coordinate"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C19",
+      "name": "Terminality forces literal coordinate uniqueness",
+      "statement": "A03 excludes the interval C18, so f=Id and sigma=tau on the ACTUAL source. This is equality of functions, not merely equality of their kernels.",
+      "depends_on": [
+        "A03",
+        "C16",
+        "C18"
+      ],
+      "notes": "N02",
+      "scope": "coordinates",
+      "source_labels": [
+        "lem:ep-unique-coordinate"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C20",
+      "name": "Symmetric coordinate source export",
+      "statement": "C15-C17 prove equal kernels and an equivariant involution; C19 proves its conditional terminal triviality, exactly the stated generic coordinate lemma.",
+      "depends_on": [
+        "C15",
+        "C16",
+        "C17",
+        "C19"
+      ],
+      "notes": "N02",
+      "scope": "coordinates",
+      "source_labels": [
+        "lem:ep-unique-coordinate"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C21",
+      "name": "All one-owner coordinate terms are equivariant surjections",
+      "statement": "For any actual terminal owner/clone sort, compose each proper-coordinate term with its real projection. It is equivariant and onto its actual transitive hidden target. No nonidentity proper term has a real target by I06.",
+      "depends_on": [
+        "A04",
+        "I05",
+        "I06"
+      ],
+      "notes": "N03",
+      "scope": "coordinates",
+      "source_labels": [
+        "cor:ep-singleton-faithful"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C22",
+      "name": "All same-target one-root values coincide",
+      "statement": "Instantiate C19 on ANY two C21 real-source composites with the same actual target. Original symmetry supplies A02 and FULL terminal covers exclude the finite interval A03. The two maps are identical, even when they began at different selected MI coordinates.",
+      "depends_on": [
+        "A04",
+        "C19",
+        "C21"
+      ],
+      "notes": "N03",
+      "scope": "coordinates",
+      "source_labels": [
+        "cor:ep-singleton-faithful"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C23",
+      "name": "An MI-tuple root has at most one value per hidden target sort",
+      "statement": "Each coordinate of a valid root is a projection of ONE clone representative by I21. Every derived term is one C21 composite; C22 makes all values with the same named target equal. The no-real-return signature adds no extra real value.",
+      "depends_on": [
+        "C21",
+        "C22",
+        "I21",
+        "I06"
+      ],
+      "notes": "N03",
+      "scope": "coordinates",
+      "source_labels": [
+        "cor:ep-singleton-faithful"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C24",
+      "name": "Every non-order singleton code is fixed by its full terminal label",
+      "statement": "All term equalities, actual unary/fine-cylinder data and incidences of one owner root are equivariant. Current owner transitivity makes these unary predicates constant on its FULL realized terminal label, including MR tuple roots.",
+      "depends_on": [
+        "A04",
+        "C23",
+        "I03"
+      ],
+      "notes": "N03",
+      "scope": "coordinates",
+      "source_labels": [
+        "cor:ep-singleton-faithful"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C25",
+      "name": "All block-order singleton comparisons are fixed",
+      "statement": "Between different hidden target sorts comparisons are the fixed SORT priority. Within one target sort C23 gives equal values, so strict comparisons are false. Thus every order code on a singleton root is fixed by its terminal label.",
+      "depends_on": [
+        "A04",
+        "C23",
+        "D09"
+      ],
+      "notes": "N03",
+      "scope": "coordinates",
+      "source_labels": [
+        "cor:ep-singleton-faithful"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C26",
+      "name": "The actual block full-code provider is singleton faithful",
+      "statement": "I29 supplies the actual FULL block-code reasonable finite Ramsey provider; C28 and the embedding correspondence give JEP. C24/C25 show exactly ONE expanded one-point type for EACH realized full terminal label, with no discarded labels.",
+      "depends_on": [
+        "I29",
+        "I18",
+        "C24",
+        "C25",
+        "C28"
+      ],
+      "notes": "N03",
+      "scope": "coordinates",
+      "source_labels": [
+        "cor:ep-singleton-faithful"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C27",
+      "name": "The entire actual hidden ALL-orders provider is available",
+      "statement": "Apply I07 to bound A04: its strict C30 gives hereditary hidden SAP and C36 its ALL-global-orders Ramsey class; SAP over the empty base supplies JEP. Retain inherited HN and forest obligations without duplicating them.",
+      "depends_on": [
+        "A04",
+        "I07",
+        "I30"
+      ],
+      "notes": "N04",
+      "scope": "orders",
+      "source_labels": [
+        "thm:ep-terminal-orders"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C28",
+      "name": "Proper imaginary sorts inherit the actual full Ramsey age",
+      "statement": "I06 proves that proper imaginary sorts are unary closed. Apply I08 to C27 to obtain the full pure-imaginary hereditary ALL-orders Ramsey/JEP/SAP class, with real sorts empty.",
+      "depends_on": [
+        "C27",
+        "I06",
+        "I08",
+        "D05"
+      ],
+      "notes": "N04",
+      "scope": "orders",
+      "source_labels": [
+        "thm:ep-terminal-orders"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C29",
+      "name": "Finite exact term FUNCTIONS apply on every proper input sort",
+      "statement": "Use I04 strict C12 to choose finite domain-and-value normal forms on EACH proper hidden input sort, closed under normalized compositions and including identity. Finite generated supports are actual induced unary-closed members.",
+      "depends_on": [
+        "A04",
+        "I04"
+      ],
+      "notes": "N04",
+      "scope": "coordinates",
+      "source_labels": [
+        "lem:ep-tuple-transfer"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C30",
+      "name": "A represented quotient has finitely many invariant pair orbitals",
+      "statement": "Pull an invariant binary relation on B_J back along the real projection. Its truth is a union of finitely many actual old real pair orbitals. Therefore there are finitely many such quotient relations, and each equivariant permutation graph is one actual orbital.",
+      "depends_on": [
+        "A04"
+      ],
+      "notes": "N05",
+      "scope": "coordinates",
+      "source_labels": [
+        "lem:ep-terminal-holonomy"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C31",
+      "name": "Every equivariant quotient permutation has finite order",
+      "statement": "The powers of an equivariant permutation have invariant graphs in the finite family C30. Two powers agree, and permutation cancellation gives a positive power equal to identity.",
+      "depends_on": [
+        "C30"
+      ],
+      "notes": "N05",
+      "scope": "coordinates",
+      "source_labels": [
+        "lem:ep-terminal-holonomy"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C32",
+      "name": "Nontrivial finite permutation orbits violate FULL terminality",
+      "statement": "Transitivity makes all orbits of a fixed finite-order equivariant permutation have the same finite size. If the permutation is nonidentity this size is greater than one; their pullback is a finite-relative-index invariant equivalence strictly above J, excluded by A04.",
+      "depends_on": [
+        "A04",
+        "C31"
+      ],
+      "notes": "N05",
+      "scope": "coordinates",
+      "source_labels": [
+        "lem:ep-terminal-holonomy"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C33",
+      "name": "Terminal holonomy source export",
+      "statement": "C32 makes every equivariant self-permutation of an actual proper represented terminal quotient identity. Thus any two definable quotient-transition paths with the same endpoints agree; closed-loop transport has trivial holonomy.",
+      "depends_on": [
+        "C30",
+        "C31",
+        "C32"
+      ],
+      "notes": "N05",
+      "scope": "coordinates",
+      "source_labels": [
+        "lem:ep-terminal-holonomy"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C34",
+      "name": "Apply real normal form to quotient-start terms by composition",
+      "statement": "For tau starting at B_J, tau composed F_J is a real-source term of I05. Its kernel L contains J; I06 rules out real equality, so L is a proper represented MI kernel and the term has a named quotient-bijection normal form.",
+      "depends_on": [
+        "A04",
+        "I05",
+        "I06"
+      ],
+      "notes": "N06",
+      "scope": "orders",
+      "source_labels": [
+        "lem:ep-reset-complete-edge"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C35",
+      "name": "Every strict coarsening term identifies a reset pair",
+      "statement": "Because J is MI with unique cover Jplus, L>J implies Jplus<=L. For u,v in one Jplus fibre, every such coarser term consequently has the SAME value on u and v. If L=J, the term is a bijective J-level transport.",
+      "depends_on": [
+        "C34",
+        "D06"
+      ],
+      "notes": "N06",
+      "scope": "orders",
+      "source_labels": [
+        "lem:ep-reset-complete-edge"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C36",
+      "name": "Same-target quotient-start terms are literally equal",
+      "statement": "Compose ANY two same-target terms from B_J with onto F_J and apply C22. Surjectivity gives equality of the original terms. In particular every unary self-return on the SAME named B_J is identity, not only explicit transition-only loops.",
+      "depends_on": [
+        "C22",
+        "C34"
+      ],
+      "notes": "N06",
+      "scope": "orders",
+      "source_labels": [
+        "lem:ep-reset-complete-edge"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C37",
+      "name": "One complete quotient cylinder fixes all unexpanded pair codes",
+      "statement": "The complete actual m orbital fixes the unordered two-root type. Applying actual equivariant unary functions determines every term-pair relation/equality/domain/value, including the coarser coincidences C35 and same-target uniqueness C36. No bare equivalence-incidence reduct is substituted.",
+      "depends_on": [
+        "A04",
+        "C34",
+        "C35",
+        "C36",
+        "D07",
+        "D16"
+      ],
+      "notes": "N06",
+      "scope": "orders",
+      "source_labels": [
+        "lem:ep-reset-complete-edge"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C38",
+      "name": "All strictly coarser same-target comparisons are equality",
+      "statement": "For an m pair u,v within Jplus, any target with kernel L>J has identical term values at both roots by C35, and all same-target presentations agree by C36. Its strict-order comparisons are therefore false.",
+      "depends_on": [
+        "C35",
+        "C36"
+      ],
+      "notes": "N06",
+      "scope": "orders",
+      "source_labels": [
+        "lem:ep-reset-complete-edge"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C39",
+      "name": "All J-level comparisons transport the one orientation",
+      "statement": "Targets with kernel L=J are actual bijective J-level transition copies. Their within-fibre orders are synchronized with u<v; C33 eliminates return-path ambiguity. Only fibre monotonicity is needed.",
+      "depends_on": [
+        "A04",
+        "C33",
+        "C35",
+        "C36"
+      ],
+      "notes": "N06",
+      "scope": "orders",
+      "source_labels": [
+        "lem:ep-reset-complete-edge"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C40",
+      "name": "Every within-target order code is forced",
+      "statement": "At a fixed hidden target sort C36 gives one map from B_J. C38 or C39 then determines every same-root/cross-root comparison of the two endpoints from their one orientation.",
+      "depends_on": [
+        "C38",
+        "C39"
+      ],
+      "notes": "N06",
+      "scope": "orders",
+      "source_labels": [
+        "lem:ep-reset-complete-edge"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C41",
+      "name": "Different-target order codes are fixed by sort priority",
+      "statement": "In the bound BLOCK/HIERARCHICAL normalized setting A04, comparisons of two defined values in different named hidden target sorts are their fixed sort-symbol priority. They are not arbitrary ALL-global-order comparisons.",
+      "depends_on": [
+        "A04",
+        "D09"
+      ],
+      "notes": "N06",
+      "scope": "orders",
+      "source_labels": [
+        "lem:ep-reset-complete-edge"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C42",
+      "name": "Complete pointed ordered reset-edge source export",
+      "statement": "C37 gives all induced unexpanded unary-generated data; C40/C41 give every order code. Every reference-oriented complete m edge therefore has ONE complete expanded finite type H_m with TWO MARKED endpoints.",
+      "depends_on": [
+        "C37",
+        "C40",
+        "C41",
+        "D07"
+      ],
+      "notes": "N06",
+      "scope": "orders",
+      "source_labels": [
+        "lem:ep-reset-complete-edge"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C43",
+      "name": "Terminal FULL lattices are genuinely finite distributive lattices",
+      "statement": "A04 supplies symmetric CCO and FULL no-finite-cover, hence FULL NR2. Apply I27 to identify every FULL invariant equivalence with a RAW exact one and obtain distributivity. This is a direct provider, separate from generic finite MI separation.",
+      "depends_on": [
+        "A04",
+        "I27"
+      ],
+      "notes": "N07",
+      "scope": "orders",
+      "source_labels": [
+        "thm:ep-terminal-orders"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C44",
+      "name": "Discharge the actual hierarchical normalization data",
+      "statement": "C43 supplies finite distributive lattices; actual quotient maps and I28 give commuting transported intervals/cuts and inverses. C33 gives trivial closed holonomy. Thus I10 applies with the fixed priorities to the actual pure-imaginary unary-closed age, giving a legal same-map strict idempotent normalizer and relative reversal.",
+      "depends_on": [
+        "A04",
+        "C33",
+        "C43",
+        "I10",
+        "I28",
+        "D09"
+      ],
+      "notes": "N07",
+      "scope": "orders",
+      "source_labels": [
+        "thm:ep-terminal-orders"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C45",
+      "name": "The normalized hidden full class is Ramsey with JEP",
+      "statement": "Apply I09 to the ALL-orders pure-imaginary C28 class and actual endofunctor C44. Its fixed objects give ONE common hereditary Ramsey/JEP provider for the subsequent task argument. No partially ordered intermediate class is assumed Ramsey.",
+      "depends_on": [
+        "C28",
+        "C44",
+        "I09"
+      ],
+      "notes": "N07",
+      "scope": "orders",
+      "source_labels": [
+        "thm:ep-terminal-orders"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C46",
+      "name": "Normalized finite restrictions remain normalized",
+      "statement": "An induced closed restriction has the same actual parent keys, transitions and restricted independent task orders. Same-map idempotence also sends its inclusion into a fixed object to the SAME induced inclusion; the inherited order is therefore the normalized one.",
+      "depends_on": [
+        "C44"
+      ],
+      "notes": "N07",
+      "scope": "orders",
+      "source_labels": [
+        "thm:ep-terminal-orders"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C47",
+      "name": "The normalized expansion is reasonable and reduct surjective",
+      "statement": "Every finite unexpanded hidden B admits an arbitrary full order and its normalization. Given a normalized A and an unexpanded induced embedding into B, extend its finite total order to B, then normalize. Functoriality/idempotence retain EXACTLY the specified expansion of A under that SAME map.",
+      "depends_on": [
+        "C44",
+        "C46"
+      ],
+      "notes": "N07",
+      "scope": "orders",
+      "source_labels": [
+        "thm:ep-terminal-orders"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C48",
+      "name": "The hidden normalized expansion is finite and precompact",
+      "statement": "There are finitely many hidden sorts/cuts/transitions and unary term functions; on a fixed finite hidden carrier there are only finitely many input global orders and normalized outputs. The expansion is finite relational/order data with unchanged functions.",
+      "depends_on": [
+        "A04",
+        "C29",
+        "C44",
+        "C47"
+      ],
+      "notes": "N07",
+      "scope": "orders",
+      "source_labels": [
+        "thm:ep-terminal-orders"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C49",
+      "name": "One synchronized task reverses over the SAME earlier reduct",
+      "statement": "I10/C44 reverses ALL fibres of one independent transition orbit, keeping every earlier coarser task fixed. Its effects on finer parent-lex comparisons are recomputed functorially; no independent incompatible derived comparison is prescribed.",
+      "depends_on": [
+        "C44",
+        "D06"
+      ],
+      "notes": "N07",
+      "scope": "orders",
+      "source_labels": [
+        "thm:ep-terminal-orders"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C50",
+      "name": "Obtain the actual complete nonzero reset menu",
+      "statement": "Apply I11 at the SAME terminal original clone sort and represented nonzero MI J<Jplus. Obtain ONE complete symmetric quotient cylinder m outside J with strong m*m=(Jplus)^circ and separately RAW m;m=Jplus. All full-lattice/positivity/SAP/CCO hypotheses are discharged by A04.",
+      "depends_on": [
+        "A04",
+        "I11",
+        "D06",
+        "D16"
+      ],
+      "notes": "N08",
+      "scope": "orders",
+      "source_labels": [
+        "thm:ep-terminal-orders"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C51",
+      "name": "Every oriented reset edge has the required pointed shape",
+      "statement": "The menu C50 is a COMPLETE actual named cylinder, so C42 supplies ONE H_m for every ordered m edge in the normalized full class, with both endpoints marked. This verifies the complete-edge condition of I12.",
+      "depends_on": [
+        "C42",
+        "C50"
+      ],
+      "notes": "N08",
+      "scope": "orders",
+      "source_labels": [
+        "thm:ep-terminal-orders"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C52",
+      "name": "Keep the exact original closed pair base",
+      "statement": "Take an actual normalized finite hidden A with u<v in one task fibre and P=cl{u,v}. Realize its whole unexpanded structure once in the actual hidden source; preserve this ENTIRE pointed induced P.",
+      "depends_on": [
+        "A04",
+        "C29",
+        "D10"
+      ],
+      "notes": "N08",
+      "scope": "orders",
+      "source_labels": [
+        "thm:ep-terminal-orders"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C53",
+      "name": "Choose old real representatives of this specified hidden pair",
+      "statement": "Choose actual x,y projecting to u,v in that realization. Their actual old fine atom a lies in Jplus minus J and is a diversity atom because u!=v.",
+      "depends_on": [
+        "C52",
+        "D06"
+      ],
+      "notes": "N08",
+      "scope": "orders",
+      "source_labels": [
+        "thm:ep-terminal-orders"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C54",
+      "name": "The STRONG reset gives a midpoint over the specified old pair",
+      "statement": "By C50, a is in the STRONG product m*m; hence an actual allowed triangle has SOME fine atoms b,c in the menu m on its two legs and a on its endpoint pair. Old homogeneity aligns those endpoints to the SPECIFIED (x,y), yielding actual zprime and z0=F_J(zprime) with u m z0 m v.",
+      "depends_on": [
+        "C50",
+        "C53"
+      ],
+      "notes": "N08",
+      "scope": "orders",
+      "source_labels": [
+        "thm:ep-terminal-orders"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C55",
+      "name": "The midpoint is a distinct J-class",
+      "statement": "Both reset legs lie outside J, so z0 differs from u and v as an actual B_J point; no logical identity edge has been inserted.",
+      "depends_on": [
+        "C50",
+        "C54"
+      ],
+      "notes": "N08",
+      "scope": "orders",
+      "source_labels": [
+        "thm:ep-terminal-orders"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C56",
+      "name": "The midpoint is outside the FULL two-root unary closure",
+      "statement": "Any unary term from u or v landing back in the SAME B_J is identity by C36, so that named sort has only u,v inside P. All other terms land in other named sorts. Thus the distinct z0 in B_J cannot belong to P.",
+      "depends_on": [
+        "C36",
+        "C52",
+        "C55"
+      ],
+      "notes": "N08",
+      "scope": "orders",
+      "source_labels": [
+        "thm:ep-terminal-orders"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C57",
+      "name": "Every coarser midpoint value already lies in the base",
+      "statement": "For every term with kernel L>J, Jplus<=L by C35 and u,v,z0 share their Jplus parent. Its value at z0 equals its value at u/v and lies in P. Therefore every NEW point of T=cl{u,v,z0} is a bijective J-level transition value of z0; earlier coarser tasks receive no new point.",
+      "depends_on": [
+        "C34",
+        "C35",
+        "C54",
+        "C56"
+      ],
+      "notes": "N08",
+      "scope": "orders",
+      "source_labels": [
+        "thm:ep-terminal-orders"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C58",
+      "name": "A finite permitted witness has exactly the required pointed base",
+      "statement": "Let T be the actual induced unary closure of u,v,z0. C29 makes it finite; it contains the SAME induced P from A and z0 lies outside P. It retains the complete fine-cylinder/equality/transition data of the specified pair, not only its coarse parent.",
+      "depends_on": [
+        "C29",
+        "C52",
+        "C56",
+        "C57",
+        "D11"
+      ],
+      "notes": "N08",
+      "scope": "orders",
+      "source_labels": [
+        "thm:ep-terminal-orders"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C59",
+      "name": "Parent fibres have actual named coarser keys",
+      "statement": "In a finite lattice the meet of ALL proper MI elements strictly above MI J is its unique cover Jplus; for Jplus=Top the family may be empty. Thus equality of the full tuple of strict-coarser MI unary coordinates is exactly equality of Jplus parents. All such values belong to closed factors.",
+      "depends_on": [
+        "C43",
+        "D08"
+      ],
+      "notes": "N08",
+      "scope": "orders",
+      "source_labels": [
+        "thm:ep-terminal-orders"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C60",
+      "name": "Order the witness without changing earlier tasks",
+      "statement": "Put u<z0<v in the current J fibre and transport this order to its bijective transition copies. C57 adds no coarser point, so earlier task orders agree exactly with the given P order. Choose later tasks freely and recompute parent-lex codes by C44.",
+      "depends_on": [
+        "C44",
+        "C49",
+        "C57",
+        "C58"
+      ],
+      "notes": "N08",
+      "scope": "orders",
+      "source_labels": [
+        "thm:ep-terminal-orders"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C61",
+      "name": "Actual hidden SAP amalgamates over the ENTIRE P",
+      "statement": "The proved C30 support imported as I07 supplies hereditary hidden SAP. Amalgamate unexpanded A,T over the closed induced P, obtaining induced copies meeting EXACTLY in P. Hence the image of z0 is fresh over the whole A, with both reset edges unchanged.",
+      "depends_on": [
+        "A04",
+        "I07",
+        "C52",
+        "C56",
+        "C58"
+      ],
+      "notes": "N08",
+      "scope": "orders",
+      "source_labels": [
+        "thm:ep-terminal-orders"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C62",
+      "name": "Newly merged parent fibres have compatible base keys",
+      "statement": "If parent fibres from both factors merge, each corresponding strict-coarser named key value is equal in the target. Strong intersection puts a common key point in P, and inducedness retains its old identities. For the new witness points C57 already places EVERY coarser key in P. The Top/empty-key case is one shared fibre automatically. Thus no off-base parent identification imposes conflicting old orders.",
+      "depends_on": [
+        "C57",
+        "C59",
+        "C61"
+      ],
+      "notes": "N08",
+      "scope": "orders",
+      "source_labels": [
+        "thm:ep-terminal-orders"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C63",
+      "name": "All task orders shuffle over their common induced suborders",
+      "statement": "Closure under each transition AND its inverse makes the charted factor intersections exactly their charted P. In every merged task fibre the two finite orders agree on P, so shuffle the off-base intervals between consecutive common points. For the current task this retains u<z<v; every old A comparison remains.",
+      "depends_on": [
+        "C60",
+        "C61",
+        "C62",
+        "I28"
+      ],
+      "notes": "N08",
+      "scope": "orders",
+      "source_labels": [
+        "thm:ep-terminal-orders"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C64",
+      "name": "Reconstructed normalized codes preserve BOTH factors",
+      "statement": "Apply the fixed hierarchical reconstruction to the jointly chosen task orders C63. The maps are the same induced embeddings and both factors were fixed normalized objects, so all their derived parent-lex/transition comparisons are retained. This proves the actual ordered-amalgam extension needed HERE, not a blanket SAP assertion for arbitrary orders.",
+      "depends_on": [
+        "C44",
+        "C46",
+        "C63"
+      ],
+      "notes": "N08",
+      "scope": "orders",
+      "source_labels": [
+        "thm:ep-terminal-orders"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C65",
+      "name": "Discharge the fresh-midpoint lemma without assuming EP",
+      "statement": "C58 supplies a permitted finite witness over the EXACT pointed pair closure, C56 its off-base point, and C61-C64 supply the actual ordered SAP extension. I13 therefore gives the fresh induced midpoint schema over ANY full normalized A. No Ramsey or EP output was used to construct it.",
+      "depends_on": [
+        "C58",
+        "C61",
+        "C64",
+        "I13"
+      ],
+      "notes": "N08",
+      "scope": "orders",
+      "source_labels": [
+        "thm:ep-terminal-orders"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C66",
+      "name": "Insert midpoints for a fixed finite source comparison list",
+      "statement": "Repeat C65 finitely for the ORIGINAL selected task-fibre comparisons, retaining each previous induced object. Do not recursively demand new midpoints for all newly introduced comparisons.",
+      "depends_on": [
+        "C65"
+      ],
+      "notes": "N08",
+      "scope": "orders",
+      "source_labels": [
+        "thm:ep-terminal-orders"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C67",
+      "name": "All four single-task reset hypotheses are actual",
+      "statement": "C49 gives legal reversal over the same earlier reduct; C51 gives ONE complete POINTED ordered edge type; C65/C66 give induced fresh midpoint extensions; C45 is the SAME full Ramsey/JEP provider lifting every intermediate object.",
+      "depends_on": [
+        "C45",
+        "C49",
+        "C51",
+        "C65",
+        "C66"
+      ],
+      "notes": "N09",
+      "scope": "orders",
+      "source_labels": [
+        "thm:ep-terminal-orders"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C68",
+      "name": "Apply the full-provider single-task EP criterion",
+      "statement": "I12 applied to C67 proves forall current expanded target exists ONE earlier-reduct host forall competing task expansions an induced target copy. It stores the target/reversal, colors full H_m embeddings by the competitor sign and uses one arrow in C45; intermediate reducts need no Ramsey property.",
+      "depends_on": [
+        "C67",
+        "I12"
+      ],
+      "notes": "N09",
+      "scope": "orders",
+      "source_labels": [
+        "thm:ep-terminal-orders"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C69",
+      "name": "Every adjacent task reduct retains all functions and domains",
+      "statement": "The normalized tower changes only finitely many order relations and their derived relational codes. Its complete unary-function signature/domains remain unchanged, so every lower induced image is closed at the upper level: the exact A14 composition gate of I14.",
+      "depends_on": [
+        "A04",
+        "C44",
+        "D06"
+      ],
+      "notes": "N09",
+      "scope": "orders",
+      "source_labels": [
+        "thm:ep-terminal-orders"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C70",
+      "name": "Compose finitely many task EP quantifiers in the safe order",
+      "statement": "Process the finite independent cut orbits from coarser to finer. Apply I14 to C68 at each level with C69. Select the final old host before any competitor; pull arbitrary competing expansions back along the guaranteed induced embeddings using unchanged functions.",
+      "depends_on": [
+        "C68",
+        "C69",
+        "I14"
+      ],
+      "notes": "N09",
+      "scope": "orders",
+      "source_labels": [
+        "thm:ep-terminal-orders"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C71",
+      "name": "Synchronized pure-imaginary terminal order EP source export",
+      "statement": "C45 supplies Ramsey/JEP, C47/C48 reasonableness/reduct-surjectivity/precompactness, and C70 EP over the FULL fine-coloured pure-imaginary hidden age. No order on a deleted clone-real vertex appears in the relative EP quantifiers.",
+      "depends_on": [
+        "C45",
+        "C47",
+        "C48",
+        "C70"
+      ],
+      "notes": "N09",
+      "scope": "orders",
+      "source_labels": [
+        "thm:ep-terminal-orders"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C72",
+      "name": "The abstract four-contract implication is precisely the existing theorem",
+      "statement": "Under independent A05 instantiate I19: one fixed visible host can be chosen before EVERY allowed competing expansion, using the four actual same-host/full-code contracts and supplied hidden EP. This abstract branch asserts no concrete MI geometry.",
+      "depends_on": [
+        "A05",
+        "I19",
+        "D01",
+        "D13"
+      ],
+      "notes": "N10",
+      "scope": "tuple_transfer",
+      "source_labels": [
+        "lem:ep-tuple-transfer"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C73",
+      "name": "Every proper current MI kernel contains the clone kernel",
+      "statement": "I01 strict C05 says K_s is the LEAST nonidentity FULL invariant equivalence in each clone-saturated terminal sort. Thus EVERY proper represented MI J>Id satisfies K_s<=J, not merely those in the selected chart.",
+      "depends_on": [
+        "A04",
+        "I01"
+      ],
+      "notes": "N10",
+      "scope": "tuple_transfer",
+      "source_labels": [
+        "lem:ep-tuple-transfer"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C74",
+      "name": "Selected MI charts cover EVERY proper coordinate",
+      "statement": "C43 gives the FINITE DISTRIBUTIVE FULL lattice; I21 supplies meet selected J_i=K_s. For any MI J>=K_s from C73, I15 meet-primeness yields some selected J_i<=J. This step does NOT follow from generic finite MI separation alone.",
+      "depends_on": [
+        "C43",
+        "C73",
+        "I15",
+        "I21"
+      ],
+      "notes": "N10",
+      "scope": "tuple_transfer",
+      "source_labels": [
+        "lem:ep-tuple-transfer"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C75",
+      "name": "Every actual imaginary point is a term of a valid root",
+      "statement": "For a proper vertex b choose an actual old real representative x of its quotient class. C74 gives a selected coordinate below its kernel; an actual upward map and any normal-form transition I05 then recover b from that coordinate of the actual valid eta(x) tuple I21.",
+      "depends_on": [
+        "C74",
+        "I05",
+        "I21"
+      ],
+      "notes": "N10",
+      "scope": "tuple_transfer",
+      "source_labels": [
+        "lem:ep-tuple-transfer"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C76",
+      "name": "Ambient root coverage handles arbitrary orphans and missing partners",
+      "statement": "C75 holds for EVERY point of the actual pure-imaginary ambient, independently of which finite hidden object first contained it. Choose one whole root tuple per point, not an independent partial cell; include all its coordinate terms and packet partners.",
+      "depends_on": [
+        "C75",
+        "D12"
+      ],
+      "notes": "N10",
+      "scope": "tuple_transfer",
+      "source_labels": [
+        "lem:ep-tuple-transfer"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C77",
+      "name": "Cofinal finite E is full-root-generated on the SAME carrier",
+      "statement": "Apply I16 with C29 exact finite normal forms and C76 ambient root coverage. For every finite hidden D obtain finite closed E extending it, containing the chosen roots, with literal h(N(E))=E. Empty/orphan-only D is allowed.",
+      "depends_on": [
+        "C29",
+        "C76",
+        "I16"
+      ],
+      "notes": "N10",
+      "scope": "tuple_transfer",
+      "source_labels": [
+        "lem:ep-tuple-transfer"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C78",
+      "name": "The unexpanded fine visible structure canonically fixes its support",
+      "statement": "The terminal labels and original fine pair/equality types are the full owner types by I03 C06/C07. All actual unexpanded term equalities/functions/fine cylinders are equivariant finite atomic-type unions. Their full presentation code therefore reconstructs ONE canonical unexpanded generated support over its marked roots via I18; no coordinate assignment is an extra free choice.",
+      "depends_on": [
+        "A04",
+        "I03",
+        "I18",
+        "I21",
+        "I22"
+      ],
+      "notes": "N10",
+      "scope": "tuple_transfer",
+      "source_labels": [
+        "lem:ep-tuple-transfer"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C79",
+      "name": "Keep the full across-root and within-target comparison code",
+      "statement": "The allowed visible age is EXACTLY hereditary full codes of normalized hidden hosts. Keep every term, across-root equality, function domain/value, fine-cylinder name and comparison within each hidden target sort; omitted different-target comparisons are fixed priority definitions. The root domain itself is unexpanded and qf.",
+      "depends_on": [
+        "A04",
+        "C29",
+        "C46",
+        "I21",
+        "I22",
+        "D12"
+      ],
+      "notes": "N10",
+      "scope": "tuple_transfer",
+      "source_labels": [
+        "lem:ep-tuple-transfer"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C80",
+      "name": "EVERY competitor lifts to the EXISTING E",
+      "statement": "Fix E from C77, B=N(E), and ANY allowed full-code B^o, even if it originated in another host. C78 gives the same unexpanded marked support E; hereditary C46 and I17 transport its ENTIRE generated expanded code to an allowed normalized hidden expansion on THAT SAME E. No convenient alternative host is selected.",
+      "depends_on": [
+        "C46",
+        "C77",
+        "C78",
+        "C79",
+        "I17",
+        "D13"
+      ],
+      "notes": "N10",
+      "scope": "tuple_transfer",
+      "source_labels": [
+        "lem:ep-tuple-transfer"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C81",
+      "name": "ALL embeddings and original fine colours are recovered",
+      "statement": "I18 gives the natural support-extension/coordinate-readback bijection on ALL induced maps; I22 gives actual singleton fine-colour recovery, including equal-root and coincident-coordinate cases. The full code retains all missing-partner comparisons.",
+      "depends_on": [
+        "C78",
+        "C79",
+        "I18",
+        "I22"
+      ],
+      "notes": "N10",
+      "scope": "tuple_transfer",
+      "source_labels": [
+        "lem:ep-tuple-transfer"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C82",
+      "name": "The normalized relative visible expansion has the required setting",
+      "statement": "Given a full prescribed expansion on A and an old labelled embedding A->B, C78 gives its canonical unexpanded template map. Extend its finite global order to h(B) and normalize as C47; same-map functoriality retains the entire A code. Finite terms give precompactness and any actual template yields reduct-surjectivity. Thus the SAME normalized full-code age is reasonable, reduct-surjective and precompact.",
+      "depends_on": [
+        "C29",
+        "C44",
+        "C47",
+        "C78",
+        "C79",
+        "I18"
+      ],
+      "notes": "N10",
+      "scope": "tuple_transfer",
+      "source_labels": [
+        "lem:ep-tuple-transfer"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C83",
+      "name": "The normalized visible full-code provider is also Ramsey and JEP",
+      "statement": "Apply I20 to the actual normalized hidden C45 class and ALL-embedding correspondence C81. Read a hidden JEP host similarly. This proves arrows for the SAME normalized code age of C82; arbitrary reducts of a Ramsey class are not invoked.",
+      "depends_on": [
+        "C45",
+        "C81",
+        "C82",
+        "I20"
+      ],
+      "notes": "N10",
+      "scope": "tuple_transfer",
+      "source_labels": [
+        "lem:ep-tuple-transfer"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C84",
+      "name": "Concrete cofinal MI-tuple EP source export",
+      "statement": "C77 discharges cofinality, C78 canonical support, C80 SAME-HOST lifting and C81 the embedding/fine-code contract. With C82 and hidden EP C71, instantiate the abstract C72/I19 implication at this ACTUAL normalized interpretation. The relative visible order expansion has EP also for MR charts and orphan coordinates.",
+      "depends_on": [
+        "C71",
+        "C72",
+        "C77",
+        "C78",
+        "C80",
+        "C81",
+        "C82"
+      ],
+      "notes": "N10",
+      "scope": "tuple_transfer",
+      "source_labels": [
+        "lem:ep-tuple-transfer"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C85",
+      "name": "Construct the actual intermediate terminal instance from original AP",
+      "statement": "Bind ANY given genuine finite maximal-character safe terminal tower of the actual clone source for A06. Replay the provider construction behind I03 strict C05 with THESE choices; I01 clone stability holds at EVERY genuine step, so the resulting Mdagger=Qdagger x N supplies all A04 source/signature/chart hypotheses at this SAME tower. No original SAP/terminality or special canonical tower choice is inserted.",
+      "depends_on": [
+        "A06",
+        "I01",
+        "I03"
+      ],
+      "notes": "N11",
+      "scope": "assembly",
+      "source_labels": [
+        "thm:ep-unfiltered-main"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C86",
+      "name": "The actual unfiltered owner labels are exactly pair local",
+      "statement": "I02 gives the exact actual groupoid-character pair rule at each genuine step. For any complete original owner diagram, a legal joint terminal pair labelling projects to legal prefix labels; inductively each prefix old diagram is actual, so I02 realizes the next legal finite marking. I01 makes labels clone constant, hence descent gives EXACTLY the old owner R_a tables on ALL realized joint labels. The extra clone atom c has ONLY diagonal label support, adding no template endomorphism restriction.",
+      "depends_on": [
+        "C85",
+        "I01",
+        "I02",
+        "D02"
+      ],
+      "notes": "N11",
+      "scope": "assembly",
+      "source_labels": [
+        "thm:ep-unfiltered-main"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C87",
+      "name": "The actual unfiltered owner type table is core",
+      "statement": "Apply I23 to the SAME one-original-sort genuine maximal-character tower beginning at the clone source. C86 identifies its template endomorphisms with the original owner fine-colour template, since clone-diagonal support is automatically preserved. Thus End(T)=Aut(T) without deleting labels.",
+      "depends_on": [
+        "C85",
+        "C86",
+        "I23"
+      ],
+      "notes": "N11",
+      "scope": "assembly",
+      "source_labels": [
+        "thm:ep-unfiltered-main"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C88",
+      "name": "The singleton Ramsey provider uses the actual full label set",
+      "statement": "Instantiate C26 and I29 at C85. The block FULL-code provider is reasonable/hereditary/Ramsey/JEP and has exactly one actual expanded singleton shape for EVERY joint terminal label of the pair-local age C86. No terminal label is individually named inside the template test.",
+      "depends_on": [
+        "C26",
+        "C85",
+        "C86",
+        "I29"
+      ],
+      "notes": "N11",
+      "scope": "assembly",
+      "source_labels": [
+        "thm:ep-unfiltered-main"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C89",
+      "name": "Unary phase labels have EP over the original age",
+      "statement": "C86 discharges pair-locality and all realized-pair/sort clauses of generic A01; C88 gives its exact singleton Ramsey provider and C87 its core condition. Instantiate C13 at this ACTUAL template to get EP of the unfiltered unary age over Age(Q).",
+      "depends_on": [
+        "C13",
+        "C86",
+        "C87",
+        "C88"
+      ],
+      "notes": "N11",
+      "scope": "assembly",
+      "source_labels": [
+        "thm:ep-unfiltered-main"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C90",
+      "name": "Instantiate hidden order EP on this actual terminal source",
+      "statement": "C85 discharges the bound terminal source in C71. Its normalized pure-imaginary fine hidden order expansion has EP, with earlier unary labels retained as part of the unexpanded relative reduct.",
+      "depends_on": [
+        "C71",
+        "C85"
+      ],
+      "notes": "N11",
+      "scope": "assembly",
+      "source_labels": [
+        "thm:ep-unfiltered-main"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C91",
+      "name": "The actual visible order readout has relative EP",
+      "statement": "C85 discharges the actual source in C84, using C90 as the supplied hidden EP. Hence the SAME normalized full MI-code visible order age has EP over the terminal unary fine owner age.",
+      "depends_on": [
+        "C84",
+        "C85",
+        "C90"
+      ],
+      "notes": "N11",
+      "scope": "assembly",
+      "source_labels": [
+        "thm:ep-unfiltered-main"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C92",
+      "name": "Compose unary and order EP over ONE final original host",
+      "statement": "Apply I14 to C89 and C91. Visible levels add only unary/binary relations, so inherited-image closedness is automatic; hidden order levels already retain all functions by C69. The composed host is fixed before ANY competing final expansion, whose intermediate reducts pull back legally along the guaranteed maps.",
+      "depends_on": [
+        "C69",
+        "C89",
+        "C91",
+        "I14"
+      ],
+      "notes": "N11",
+      "scope": "assembly",
+      "source_labels": [
+        "thm:ep-unfiltered-main"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C93",
+      "name": "The final actual hierarchical code is Ramsey on its OWN age",
+      "statement": "Instantiate C83 at C85. Its arrows arise from the hierarchical fixed hidden class and the exact full-code bijection, rather than transferring arbitrary arrows from an unrelated expansion or assuming EP implies Ramsey.",
+      "depends_on": [
+        "C83",
+        "C85"
+      ],
+      "notes": "N11",
+      "scope": "assembly",
+      "source_labels": [
+        "thm:ep-unfiltered-main"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C94",
+      "name": "The final language is finite unary/binary and reasonable",
+      "statement": "At C85 the finite actual term functions and full tuple code give only finitely many unary/binary predicates. C82 supplies relative reasonableness/precompactness/reduct-surjectivity, and composition with genuine safe unary labels preserves the SAME original embedding by successive actual lifts.",
+      "depends_on": [
+        "C29",
+        "C82",
+        "C85",
+        "C86"
+      ],
+      "notes": "N11",
+      "scope": "assembly",
+      "source_labels": [
+        "thm:ep-unfiltered-main"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C95",
+      "name": "The infinite-original explicit recipe has every asserted property",
+      "statement": "For A06 the actual unfiltered safe labels, synchronized pure-imaginary subquotient orders and finite full MI-tuple readout have Ramsey by C93, EP by C92, and finite reasonable reduct-surjective precompact unary/binary language by C94.",
+      "depends_on": [
+        "C92",
+        "C93",
+        "C94"
+      ],
+      "notes": "N11",
+      "scope": "assembly",
+      "source_labels": [
+        "thm:ep-unfiltered-main"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C96",
+      "name": "Finite originals use the SAME genuine clone-stable safe labels",
+      "statement": "For A07, I26 gives triangle fullness and I25 the actual infinite-clone SAP cover with owner quotient Q. I24 terminalizes it. Clone constancy is proved directly as in the fibre-permutation/gate argument: K is least nonidentity, every finite interval lower gate contains K, and transported target gates contain K by fresh-clone saturation. Hence the actual terminal labels descend to this SAME finite Q.",
+      "depends_on": [
+        "A07",
+        "I02",
+        "I24",
+        "I25",
+        "I26"
+      ],
+      "notes": "N12",
+      "scope": "assembly",
+      "source_labels": [
+        "thm:ep-unfiltered-main"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C97",
+      "name": "Every finite terminal owner type contains exactly one owner",
+      "statement": "Every nonempty final clone sort has finitely many owner K_s classes, because its owner quotient is a subset of finite Q. If it had more than one, K_s<Top would be a finite strict FULL interval and would contain a finite-index cover, contradicting actual terminality. Thus every realized terminal label names ONE owner.",
+      "depends_on": [
+        "C96",
+        "I24"
+      ],
+      "notes": "N12",
+      "scope": "assembly",
+      "source_labels": [
+        "thm:ep-unfiltered-main"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C98",
+      "name": "The finite pure-imaginary chart is the empty zero chart",
+      "statement": "In a one-owner clone sort the FULL invariant lattice is Id<Top and K_s=Top, so there is NO proper nonzero MI hidden sort. The pure-imaginary age is empty. Use its unique zero-coordinate tagged root per realized terminal label, as allowed by the general full-code convention.",
+      "depends_on": [
+        "C96",
+        "C97",
+        "D14"
+      ],
+      "notes": "N12",
+      "scope": "assembly",
+      "source_labels": [
+        "thm:ep-unfiltered-main"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C99",
+      "name": "All finite original fine colours are determined by tags",
+      "statement": "Each terminal tag names exactly one actual original owner by C97. Thus the original colour of ANY pair of distinct tags is fixed in the actual Qdagger table and is a qf disjunction of tag pairs. No free binary relation or hidden representative is chosen in the zero chart.",
+      "depends_on": [
+        "C97",
+        "C98"
+      ],
+      "notes": "N12",
+      "scope": "assembly",
+      "source_labels": [
+        "thm:ep-unfiltered-main"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C100",
+      "name": "EVERY allowed full finite-source marking uses all tags bijectively",
+      "statement": "In any allowed expansion of the full original Q, two distinct vertices cannot share a tag whose actual owner class is singleton; their original diversity pair type has no such repeated-tag realization. Therefore its marking is injective into the |Q| realized tags and hence bijective. All retained fine relations agree with the actual tag table.",
+      "depends_on": [
+        "C97",
+        "C99"
+      ],
+      "notes": "N12",
+      "scope": "assembly",
+      "source_labels": [
+        "thm:ep-unfiltered-main"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C101",
+      "name": "The fixed old finite Q witnesses EP for EVERY target",
+      "statement": "Choose the fixed host B=Q BEFORE any allowed full expansion Bstar. By C100 every actual terminal tag appears exactly once, so any allowed expanded finite target Astar embeds by matching its tags, preserving all tag-determined fine codes. This works for EVERY competitor.",
+      "depends_on": [
+        "C99",
+        "C100",
+        "D01"
+      ],
+      "notes": "N12",
+      "scope": "assembly",
+      "source_labels": [
+        "thm:ep-unfiltered-main"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C102",
+      "name": "Finite actual tag expansions are reasonable and Ramsey",
+      "statement": "Between labelled finite subsets there is at most one embedding. The labelled full Q is a JEP/Ramsey host. For reasonableness along a given old embedding, finite homogeneity of Q extends the relevant old partial isomorphism and transports the prescribed actual source tags to a legal target labelling. Finite language gives precompactness and every old object has an actual labelled realization.",
+      "depends_on": [
+        "A07",
+        "C97",
+        "C99",
+        "C100"
+      ],
+      "notes": "N12",
+      "scope": "assembly",
+      "source_labels": [
+        "thm:ep-unfiltered-main"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C103",
+      "name": "The finite ORIGINAL recipe is exactly this zero-chart code",
+      "statement": "The SAME actual genuine terminal labels from C96 are retained without filtering. The pure-imaginary order task list is empty by C98, and the zero-coordinate full readout with tag-defined old fine colours C99 is exactly the actual unique-tag expansion. C101/C102 give EP/Ramsey and all finite expansion properties for this literal finite-case recipe.",
+      "depends_on": [
+        "C96",
+        "C98",
+        "C99",
+        "C101",
+        "C102"
+      ],
+      "notes": "N12",
+      "scope": "assembly",
+      "source_labels": [
+        "thm:ep-unfiltered-main"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C104",
+      "name": "Final unfiltered Ramsey and EP source export",
+      "statement": "C95 proves the recipe for countably infinite Q and C103 completes the finite countable case using actual terminal tags and explicit zero-chart convention. All labels are retained; no canonical tower/minimal language, coherent EPPA or Lean certificate is asserted.",
+      "depends_on": [
+        "C95",
+        "C103"
+      ],
+      "notes": "N12",
+      "scope": "assembly",
+      "source_labels": [
+        "thm:ep-unfiltered-main"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C105",
+      "name": "A minimum-rank finite endomorphism has an idempotent power",
+      "statement": "Choose a finite-template endomorphism of minimum image size. Its sufficiently large power is idempotent on its eventual image, since its restriction there is a finite permutation; minimality keeps the same minimum rank.",
+      "depends_on": [
+        "A01",
+        "D15"
+      ],
+      "notes": "N13",
+      "scope": "core",
+      "source_labels": [
+        "thm:ep-finite-core-criterion"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C106",
+      "name": "The induced image is a core",
+      "statement": "If an endomorphism of the induced image were nonsurjective, compose the retract C105 with that image map and inclusion to get an endomorphism of T of strictly smaller rank, contradiction. Bijective image endomorphisms are automorphisms by C01.",
+      "depends_on": [
+        "C01",
+        "C105"
+      ],
+      "notes": "N13",
+      "scope": "core",
+      "source_labels": [
+        "thm:ep-finite-core-criterion"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C107",
+      "name": "Restricted labels preserve old surjectivity and same-map reasonableness",
+      "statement": "Postcompose any legal old marking with the idempotent retract to obtain labels in its image. Given prescribed image labels on A and an old A->B, first extend them by original reasonableness and then retract; the old image labels are fixed. Thus reduct-surjectivity and the SAME embedding lift survive.",
+      "depends_on": [
+        "A01",
+        "C105"
+      ],
+      "notes": "N13",
+      "scope": "core",
+      "source_labels": [
+        "thm:ep-finite-core-criterion"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C108",
+      "name": "The relational provider restricts to the induced core label set",
+      "statement": "Under the ancillary A08 gate, the induced subobject on retained labels is a legal closed provider object. Any embedding of a retained-label source lands there. Restrict an original Ramsey/JEP host to those labels to obtain a hereditary Ramsey/JEP retained provider, with the same one-point shapes.",
+      "depends_on": [
+        "A01",
+        "A08",
+        "C105"
+      ],
+      "notes": "N13",
+      "scope": "core",
+      "source_labels": [
+        "thm:ep-finite-core-criterion"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C109",
+      "name": "The optional core-filter fallback has EP",
+      "statement": "C106 gives a core table; C107/C108 give the independent finite criterion hypotheses on its induced label subset. Instantiate C13 to obtain EP for the restricted expansion. This is an optional finite-template fallback, not a step of the genuine tower.",
+      "depends_on": [
+        "C13",
+        "C106",
+        "C107",
+        "C108"
+      ],
+      "notes": "N13",
+      "scope": "core",
+      "source_labels": [
+        "thm:ep-finite-core-criterion"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C110",
+      "name": "Arbitrary free unary labels can require filtering",
+      "statement": "For a free two-label partition of a pure infinite old set, each old pair table is all T squared; constant maps are endomorphisms and one legal constant marking omits the other realized singleton. The table is not core and unary EP fails. The genuine tower avoids this by C87, not by a general assertion about arbitrary unary expansions.",
+      "depends_on": [
+        "C04",
+        "C87",
+        "C109"
+      ],
+      "notes": "N13",
+      "scope": "boundary",
+      "source_labels": [
+        "thm:ep-finite-core-criterion"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C111",
+      "name": "Retain the exact scope boundaries",
+      "statement": "The main proof uses FULL terminality, one COMPLETE reset menu, actual normalized fine hidden types and a full same-host comparison code. Ramsey alone does not imply EP; a RAW identity is not a STRONG diversity edge; same-target term uniqueness is proved; finite sources need zero charts rather than an invented proper MI above Top.",
+      "depends_on": [
+        "C20",
+        "C42",
+        "C50",
+        "C65",
+        "C84",
+        "C104"
+      ],
+      "notes": "N14",
+      "scope": "boundary",
+      "source_labels": [
+        "thm:ep-unfiltered-main"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C112",
+      "name": "Finite controls certify only bounded semantic interfaces",
+      "statement": "Independent finite endomorphism/core, actual map/quotient, ordered closed-amalgam and fixed-host competing-expansion diagnostics test these interfaces and boundaries. They prove no unbounded Ramsey, SAP/CCO, safe tower, HN/forest bridge or Lean theorem.",
+      "depends_on": [
+        "C13",
+        "C20",
+        "C65",
+        "C84",
+        "C104"
+      ],
+      "notes": "N14",
+      "scope": "boundary",
+      "source_labels": [
+        "thm:ep-unfiltered-main"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    }
+  ],
+  "source_result_files": [
+    "sections/expansion_property_unfiltered.tex"
+  ],
+  "additional_result_exports": [],
+  "exports": [
+    {
+      "source_label": "thm:ep-finite-core-criterion",
+      "claims": [
+        "C13"
+      ]
+    },
+    {
+      "source_label": "lem:ep-unique-coordinate",
+      "claims": [
+        "C20"
+      ]
+    },
+    {
+      "source_label": "cor:ep-singleton-faithful",
+      "claims": [
+        "C26"
+      ]
+    },
+    {
+      "source_label": "lem:ep-terminal-holonomy",
+      "claims": [
+        "C33"
+      ]
+    },
+    {
+      "source_label": "lem:ep-reset-complete-edge",
+      "claims": [
+        "C42"
+      ]
+    },
+    {
+      "source_label": "thm:ep-terminal-orders",
+      "claims": [
+        "C71"
+      ]
+    },
+    {
+      "source_label": "lem:ep-tuple-transfer",
+      "claims": [
+        "C84"
+      ]
+    },
+    {
+      "source_label": "thm:ep-unfiltered-main",
+      "claims": [
+        "C104"
+      ]
+    }
+  ],
+  "auxiliary_exports": [
+    {
+      "source_label": "eq:ep-pair-local",
+      "claims": [
+        "C86"
+      ],
+      "source": {
+        "file": "sections/expansion_property_unfiltered.tex",
+        "anchor": "\\label{eq:ep-pair-local}"
+      }
+    },
+    {
+      "source_label": "eq:ep-core-iff",
+      "claims": [
+        "C13"
+      ],
+      "source": {
+        "file": "sections/expansion_property_unfiltered.tex",
+        "anchor": "\\label{eq:ep-core-iff}"
+      }
+    },
+    {
+      "source_label": "eq:ep-reset",
+      "claims": [
+        "C50"
+      ],
+      "source": {
+        "file": "sections/expansion_property_unfiltered.tex",
+        "anchor": "\\label{eq:ep-reset}"
+      }
+    }
+  ],
+  "dependency_firewalls": [
+    {
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13"
+      ],
+      "forbid": [
+        "A02",
+        "A03",
+        "A04",
+        "A05",
+        "A06",
+        "A07",
+        "A08",
+        "I01",
+        "I02",
+        "I03",
+        "I04",
+        "I05",
+        "I06",
+        "I07",
+        "I08",
+        "I09",
+        "I10",
+        "I11",
+        "I12",
+        "I13",
+        "I14",
+        "I15",
+        "I16",
+        "I17",
+        "I18",
+        "I19",
+        "I20",
+        "I21",
+        "I22",
+        "I23",
+        "I24",
+        "I25",
+        "I26",
+        "I27",
+        "I28",
+        "I29",
+        "I30"
+      ]
+    },
+    {
+      "claims": [
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20"
+      ],
+      "forbid": [
+        "A01",
+        "A04",
+        "A05",
+        "A06",
+        "A07",
+        "A08",
+        "I01",
+        "I02",
+        "I03",
+        "I04",
+        "I05",
+        "I06",
+        "I07",
+        "I08",
+        "I09",
+        "I10",
+        "I11",
+        "I12",
+        "I13",
+        "I14",
+        "I15",
+        "I16",
+        "I17",
+        "I18",
+        "I19",
+        "I20",
+        "I21",
+        "I22",
+        "I23",
+        "I24",
+        "I25",
+        "I26",
+        "I27",
+        "I28",
+        "I29",
+        "I30"
+      ]
+    },
+    {
+      "claims": [
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C42",
+        "C65"
+      ],
+      "forbid": [
+        "I12",
+        "I19",
+        "I30",
+        "C27",
+        "C68",
+        "C70",
+        "C71",
+        "C84",
+        "C89",
+        "C92",
+        "C95",
+        "C104",
+        "I03",
+        "I09",
+        "I20",
+        "I29"
+      ]
+    },
+    {
+      "claims": [
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40",
+        "C41",
+        "C42"
+      ],
+      "forbid": [
+        "I07",
+        "I08",
+        "I09",
+        "I10",
+        "I11",
+        "I12",
+        "I13",
+        "I19",
+        "I20"
+      ]
+    },
+    {
+      "claims": [
+        "C72"
+      ],
+      "forbid": [
+        "A01",
+        "A02",
+        "A03",
+        "A04",
+        "A06",
+        "A07",
+        "A08",
+        "I01",
+        "I02",
+        "I03",
+        "I04",
+        "I05",
+        "I06",
+        "I07",
+        "I08",
+        "I09",
+        "I10",
+        "I11",
+        "I12",
+        "I13",
+        "I14",
+        "I15",
+        "I16",
+        "I17",
+        "I18",
+        "I20",
+        "I21",
+        "I22",
+        "I23",
+        "I24",
+        "I25",
+        "I26",
+        "I27",
+        "I28",
+        "I29",
+        "I30"
+      ]
+    },
+    {
+      "claims": [
+        "C96",
+        "C97",
+        "C98",
+        "C99",
+        "C100",
+        "C101",
+        "C102",
+        "C103"
+      ],
+      "forbid": [
+        "A04",
+        "A06",
+        "I01",
+        "I03",
+        "I07",
+        "I11",
+        "I20",
+        "I21",
+        "I22",
+        "I23",
+        "I29"
+      ]
+    },
+    {
+      "claims": [
+        "C26",
+        "C83",
+        "C88"
+      ],
+      "forbid": [
+        "I12",
+        "I13",
+        "I14",
+        "I19",
+        "I23",
+        "C65",
+        "C68",
+        "C70",
+        "C71",
+        "C84",
+        "C87",
+        "C89",
+        "C90",
+        "C91",
+        "C92"
+      ]
+    }
+  ],
+  "application_contracts": [
+    {
+      "consumer": "C22",
+      "lemma": "C19",
+      "discharge": "Apply the generic symmetric-coordinate lemma to actual real-source composites at the SAME A04 terminal source: every invariant real relation is symmetric; a nontrivial quotient involution would create a FULL finite interval, forbidden by A04. This discharges generic A02/A03 rather than assuming uniqueness."
+    },
+    {
+      "consumer": "C26",
+      "lemma": "I29",
+      "discharge": "The bound A04 source/charts and C21-C25 supply the same terminal MI-code setting. Strict C51 restores the full block-code Ramsey provider; qf definitions and strict C55 preserve its exact embedding sets and reasonableness."
+    },
+    {
+      "consumer": "C44",
+      "lemma": "I10",
+      "discharge": "Use actual FULL terminal lattice distributivity C43, actual commuting quotient maps/inverses I28 and no-holonomy C33 to discharge B036 A07/A08, including fixed priorities. Synchronization is within cut fibres only."
+    },
+    {
+      "consumer": "C65",
+      "lemma": "I13",
+      "discharge": "C58/C56 provide an actual finite permitted midpoint witness over the SAME induced pair closure with its midpoint outside that base. C61-C64 prove actual ordered amalgamation by all-coarser-key compatibility and interval shuffles; no blanket ordered-SAP assumption is added."
+    },
+    {
+      "consumer": "C68",
+      "lemma": "I12",
+      "discharge": "C49/C51/C65/C66 and the ONE common full normalized provider C45 discharge legal reversal, complete pointed edge type, induced fresh midpoint and Ramsey/JEP lift hypotheses. Intermediate partially ordered reducts are not assumed Ramsey."
+    },
+    {
+      "consumer": "C74",
+      "lemma": "I15",
+      "discharge": "C43 supplies the FINITE DISTRIBUTIVE FULL actual terminal lattice; I21 supplies meet selected J_i=K and C73 supplies K<=EVERY proper MI J. This is an explicit meet-prime instance, not a consequence of generic finite MI separation."
+    },
+    {
+      "consumer": "C80",
+      "lemma": "I17",
+      "discharge": "Bind the arbitrary fixed E of C77 with h(N(E))=E and ANY allowed full-code competitor of N(E). C78/C79 supply canonical unexpanded support and complete codes; C46 gives hereditary legality of its generated normalized support. Transport to the SAME E."
+    },
+    {
+      "consumer": "C84",
+      "lemma": "C72",
+      "discharge": "C77/C78/C80/C81 prove all FOUR A05 contracts for the ACTUAL R18 interpretation. C82 gives its reasonable/precompact setting and C71 hidden EP. No conditional contract is left as an unexplained application assumption."
+    },
+    {
+      "consumer": "C89",
+      "lemma": "C13",
+      "discharge": "For the source built in C85, C86 gives the EXACT pair-local table and all realized pairs, C88 the same-label singleton Ramsey provider, C87 End=Aut. Discharge generic A01 at that table; no core filtering is performed."
+    },
+    {
+      "consumer": "C90",
+      "lemma": "C71",
+      "discharge": "C85 constructs the NEW actual terminal clone source from A06 and supplies all A04 hypotheses, rather than asserting original Q is SAP or terminal."
+    },
+    {
+      "consumer": "C91",
+      "lemma": "C84",
+      "discharge": "Instantiate the actual same-host tuple transfer at C85, with C90 the same normalized hidden EP. The visible relative reduct already contains full terminal unary labels and original fine atoms."
+    },
+    {
+      "consumer": "C92",
+      "lemma": "I14",
+      "discharge": "All visible added data are relations/orders, and every hidden task level retains its entire unary-function signature/domains C69. Hence B036 A14 inherited-image closure holds at EACH composition level, preserving EVERY competing expansion of ONE fixed final host."
+    }
+  ],
+  "tasks": [
+    {
+      "id": "T01",
+      "name": "Independent finite singleton/core criterion",
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Prove the displayed actual/generic hypotheses and every SAME-HOST forall-competitor quantifier. Retain FULL versus STRONG semantics, actual hidden unary closure, normalized within-fibre transitions and the full comparison code. Discharge every new-source application explicitly; do not count finite diagnostics or inherited published theorems as Lean certification."
+    },
+    {
+      "id": "T02",
+      "name": "Symmetric equivariant coordinates",
+      "claims": [
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Prove the displayed actual/generic hypotheses and every SAME-HOST forall-competitor quantifier. Retain FULL versus STRONG semantics, actual hidden unary closure, normalized within-fibre transitions and the full comparison code. Discharge every new-source application explicitly; do not count finite diagnostics or inherited published theorems as Lean certification."
+    },
+    {
+      "id": "T03",
+      "name": "Actual singleton provider and proper hidden age",
+      "claims": [
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29"
+      ],
+      "depends_on": [
+        "T02"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Prove the displayed actual/generic hypotheses and every SAME-HOST forall-competitor quantifier. Retain FULL versus STRONG semantics, actual hidden unary closure, normalized within-fibre transitions and the full comparison code. Discharge every new-source application explicitly; do not count finite diagnostics or inherited published theorems as Lean certification."
+    },
+    {
+      "id": "T04",
+      "name": "Terminal finite holonomy",
+      "claims": [
+        "C30",
+        "C31",
+        "C32",
+        "C33"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Prove the displayed actual/generic hypotheses and every SAME-HOST forall-competitor quantifier. Retain FULL versus STRONG semantics, actual hidden unary closure, normalized within-fibre transitions and the full comparison code. Discharge every new-source application explicitly; do not count finite diagnostics or inherited published theorems as Lean certification."
+    },
+    {
+      "id": "T05",
+      "name": "Complete pointed reset-edge type",
+      "claims": [
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40",
+        "C41",
+        "C42"
+      ],
+      "depends_on": [
+        "T03",
+        "T04"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Prove the displayed actual/generic hypotheses and every SAME-HOST forall-competitor quantifier. Retain FULL versus STRONG semantics, actual hidden unary closure, normalized within-fibre transitions and the full comparison code. Discharge every new-source application explicitly; do not count finite diagnostics or inherited published theorems as Lean certification."
+    },
+    {
+      "id": "T06",
+      "name": "Actual hierarchical normalization",
+      "claims": [
+        "C43",
+        "C44",
+        "C45",
+        "C46",
+        "C47",
+        "C48",
+        "C49"
+      ],
+      "depends_on": [
+        "T03",
+        "T04"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Prove the displayed actual/generic hypotheses and every SAME-HOST forall-competitor quantifier. Retain FULL versus STRONG semantics, actual hidden unary closure, normalized within-fibre transitions and the full comparison code. Discharge every new-source application explicitly; do not count finite diagnostics or inherited published theorems as Lean certification."
+    },
+    {
+      "id": "T07",
+      "name": "Ordered SAP and fresh specified midpoints",
+      "claims": [
+        "C50",
+        "C51",
+        "C52",
+        "C53",
+        "C54",
+        "C55",
+        "C56",
+        "C57",
+        "C58",
+        "C59",
+        "C60",
+        "C61",
+        "C62",
+        "C63",
+        "C64",
+        "C65",
+        "C66"
+      ],
+      "depends_on": [
+        "T03",
+        "T05",
+        "T06"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Prove the displayed actual/generic hypotheses and every SAME-HOST forall-competitor quantifier. Retain FULL versus STRONG semantics, actual hidden unary closure, normalized within-fibre transitions and the full comparison code. Discharge every new-source application explicitly; do not count finite diagnostics or inherited published theorems as Lean certification."
+    },
+    {
+      "id": "T08",
+      "name": "Single-task and finite-chain order EP",
+      "claims": [
+        "C67",
+        "C68",
+        "C69",
+        "C70",
+        "C71"
+      ],
+      "depends_on": [
+        "T06",
+        "T07"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Prove the displayed actual/generic hypotheses and every SAME-HOST forall-competitor quantifier. Retain FULL versus STRONG semantics, actual hidden unary closure, normalized within-fibre transitions and the full comparison code. Discharge every new-source application explicitly; do not count finite diagnostics or inherited published theorems as Lean certification."
+    },
+    {
+      "id": "T09",
+      "name": "Cofinal same-host full MI-tuple transfer",
+      "claims": [
+        "C72",
+        "C73",
+        "C74",
+        "C75",
+        "C76",
+        "C77",
+        "C78",
+        "C79",
+        "C80",
+        "C81",
+        "C82",
+        "C83",
+        "C84"
+      ],
+      "depends_on": [
+        "T03",
+        "T06",
+        "T08"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Prove the displayed actual/generic hypotheses and every SAME-HOST forall-competitor quantifier. Retain FULL versus STRONG semantics, actual hidden unary closure, normalized within-fibre transitions and the full comparison code. Discharge every new-source application explicitly; do not count finite diagnostics or inherited published theorems as Lean certification."
+    },
+    {
+      "id": "T10",
+      "name": "Actual unfiltered type table and unary EP",
+      "claims": [
+        "C85",
+        "C86",
+        "C87",
+        "C88",
+        "C89"
+      ],
+      "depends_on": [
+        "T01",
+        "T03"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Prove the displayed actual/generic hypotheses and every SAME-HOST forall-competitor quantifier. Retain FULL versus STRONG semantics, actual hidden unary closure, normalized within-fibre transitions and the full comparison code. Discharge every new-source application explicitly; do not count finite diagnostics or inherited published theorems as Lean certification."
+    },
+    {
+      "id": "T11",
+      "name": "Infinite original final assembly",
+      "claims": [
+        "C90",
+        "C91",
+        "C92",
+        "C93",
+        "C94",
+        "C95"
+      ],
+      "depends_on": [
+        "T03",
+        "T08",
+        "T09",
+        "T10"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Prove the displayed actual/generic hypotheses and every SAME-HOST forall-competitor quantifier. Retain FULL versus STRONG semantics, actual hidden unary closure, normalized within-fibre transitions and the full comparison code. Discharge every new-source application explicitly; do not count finite diagnostics or inherited published theorems as Lean certification."
+    },
+    {
+      "id": "T12",
+      "name": "Finite original zero-chart completion",
+      "claims": [
+        "C96",
+        "C97",
+        "C98",
+        "C99",
+        "C100",
+        "C101",
+        "C102",
+        "C103",
+        "C104"
+      ],
+      "depends_on": [
+        "T11"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Prove the displayed actual/generic hypotheses and every SAME-HOST forall-competitor quantifier. Retain FULL versus STRONG semantics, actual hidden unary closure, normalized within-fibre transitions and the full comparison code. Discharge every new-source application explicitly; do not count finite diagnostics or inherited published theorems as Lean certification."
+    },
+    {
+      "id": "T13",
+      "name": "Separate finite core-retract fallback",
+      "claims": [
+        "C105",
+        "C106",
+        "C107",
+        "C108",
+        "C109",
+        "C110"
+      ],
+      "depends_on": [
+        "T01",
+        "T10"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Prove the displayed actual/generic hypotheses and every SAME-HOST forall-competitor quantifier. Retain FULL versus STRONG semantics, actual hidden unary closure, normalized within-fibre transitions and the full comparison code. Discharge every new-source application explicitly; do not count finite diagnostics or inherited published theorems as Lean certification."
+    },
+    {
+      "id": "T14",
+      "name": "Semantic boundaries and finite controls",
+      "claims": [
+        "C111",
+        "C112"
+      ],
+      "depends_on": [
+        "T01",
+        "T02",
+        "T05",
+        "T07",
+        "T09",
+        "T12"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Prove the displayed actual/generic hypotheses and every SAME-HOST forall-competitor quantifier. Retain FULL versus STRONG semantics, actual hidden unary closure, normalized within-fibre transitions and the full comparison code. Discharge every new-source application explicitly; do not count finite diagnostics or inherited published theorems as Lean certification."
+    }
+  ],
+  "controls": [
+    {
+      "id": "K01",
+      "check": "Independent small finite-template endomorphism/automorphism/retract and postcomposition checks; actual symmetric equivariant coordinate maps and finite orbit-boundaries, without claiming infinite terminality."
+    },
+    {
+      "id": "K02",
+      "check": "Actual finite closed midpoint/order-amalgam and fixed-host competing-expansion diagnostics, including finite original unique terminal tags and zero-coordinate roots. No unbounded Ramsey/CCO/EP or Lean certificate."
+    }
+  ],
+  "overview_mermaid": [
+    "flowchart TD",
+    "  C[\"Finite table core + singleton Ramsey\"] --> U[\"Unfiltered unary EP\"]",
+    "  Q[\"Terminal coordinate uniqueness\"] --> R[\"Complete pointed reset edges\"]",
+    "  H[\"Actual pure-imaginary SAP + Ramsey\"] --> N[\"Legal hierarchical normalization\"]",
+    "  R --> O[\"Fresh midpoint + single-task EP\"]",
+    "  N --> O",
+    "  O --> T[\"Same-host full MI tuple EP\"]",
+    "  U --> F[\"Original-age unfiltered EP\"]",
+    "  T --> F"
+  ],
+  "overview_notes": [
+    "The generic finite-template and equivariant-coordinate branches have no CCO/provider ancestry. The actual reset proof uses ONE full normalized Ramsey class and proves its ordered midpoint amalgamation over the entire old pair closure.",
+    "Selected-coordinate coverage needs actual FULL distributivity and K_s least-nonidentity. The same-host lifting quantifier covers EVERY allowed visible competitor. Finite original sources are completed separately by their actual zero-chart tag recipe."
+  ],
+  "article_feedback_intro": "No false theorem statement was found in this scoped pass. The FINITE_CASE_PROOF_COMPLETION and zero-coordinate convention are REQUIRED for the literal countable theorem. The other required proof-detail completions make the normalized-order ambient, actual ordered midpoint amalgamation and FULL-distributive MI coverage explicit. Frozen TeX remains unchanged; no new mathematical hypothesis or external theorem is inserted.",
+  "article_feedback": [
+    {
+      "id": "F01",
+      "kind": "PROOF_CONTRACT_COMPLETION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/expansion_property_unfiltered.tex",
+        "anchor": "\\label{lem:ep-reset-complete-edge}"
+      },
+      "finding": "The complete-edge proof uses fixed hidden-sort priority and normalized within-fibre transport, not arbitrary ALL-global orders. Same-target arbitrary quotient-start terms coincide by the earlier coordinate lemma.",
+      "proposed_article_change": "State this ambient normalization explicitly and invoke coordinate uniqueness on their real-source composites, including arbitrary self-returns.",
+      "caller_effect": "Proof details are supplied here with the original theorem conclusions preserved; no frozen TeX or public receiving allocation is changed.",
+      "proof_claims": [
+        "C22",
+        "C36",
+        "C42"
+      ]
+    },
+    {
+      "id": "F02",
+      "kind": "PROOF_CONTRACT_COMPLETION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/expansion_property_unfiltered.tex",
+        "anchor": "\\label{thm:ep-terminal-orders}"
+      },
+      "finding": "Hidden SAP alone does not assert arbitrary ordered SAP. The actual midpoint witness adds only J-level transition points; all coarser values are already in the closed pair base.",
+      "proposed_article_change": "Include all-coarser-key compatibility, inverse-chart closure and interval shuffling over the exact induced P before invoking the fresh-midpoint criterion.",
+      "caller_effect": "Proof details are supplied here with the original theorem conclusions preserved; no frozen TeX or public receiving allocation is changed.",
+      "proof_claims": [
+        "C57",
+        "C59",
+        "C62",
+        "C63",
+        "C65"
+      ]
+    },
+    {
+      "id": "F03",
+      "kind": "PROOF_CONTRACT_COMPLETION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/expansion_property_unfiltered.tex",
+        "anchor": "\\label{lem:ep-tuple-transfer}"
+      },
+      "finding": "Root coverage for EVERY proper coordinate needs K_s least nonidentity and MI meet-primeness in the actual FULL DISTRIBUTIVE terminal lattice.",
+      "proposed_article_change": "Cite strict proved clone-kernel C05 and the separate full-lattice distributivity provider before selected-MI coordinate cofinality; retain every same-host code.",
+      "caller_effect": "Proof details are supplied here with the original theorem conclusions preserved; no frozen TeX or public receiving allocation is changed.",
+      "proof_claims": [
+        "C43",
+        "C73",
+        "C74",
+        "C80",
+        "C84"
+      ]
+    },
+    {
+      "id": "F04",
+      "kind": "FINITE_CASE_PROOF_COMPLETION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/expansion_property_unfiltered.tex",
+        "anchor": "\\label{thm:ep-unfiltered-main}"
+      },
+      "finding": "The displayed final theorem says countable, while the preceding infinite-owner charts have K_s<Top and positive coordinate arity. For finite originals actual terminal owner sorts are singleton and K_s=Top.",
+      "proposed_article_change": "Add the separate finite-original completion: retain the SAME unique terminal tags, use zero-coordinate roots over empty pure-imaginary support and tag-defined fine colours; fixed host Q works for every competitor.",
+      "caller_effect": "Proof details are supplied here with the original theorem conclusions preserved; no frozen TeX or public receiving allocation is changed.",
+      "proof_claims": [
+        "C96",
+        "C97",
+        "C98",
+        "C99",
+        "C100",
+        "C101",
+        "C102",
+        "C103",
+        "C104"
+      ]
+    },
+    {
+      "id": "F05",
+      "kind": "PROOF_CONTRACT_COMPLETION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/expansion_property_unfiltered.tex",
+        "anchor": "\\label{thm:ep-finite-core-criterion}"
+      },
+      "finding": "The singleton shapes are actual one-point objects, all stored pair witnesses include repeated labels on distinct vertices, and original sorts remain template predicates.",
+      "proposed_article_change": "Keep those exact meanings and the reverse-arrow peeling construction explicit; individual new labels are never named as constants of the template.",
+      "caller_effect": "Proof details are supplied here with the original theorem conclusions preserved; no frozen TeX or public receiving allocation is changed.",
+      "proof_claims": [
+        "C01",
+        "C06",
+        "C08",
+        "C11",
+        "C13"
+      ]
+    }
+  ],
+  "review": {
+    "date": "2026-10-29",
+    "source_unchanged": true,
+    "source_signature_repairs": 0,
+    "unexpanded_provider_labels": [],
+    "proof_status": "HUMAN_EXPANDED_NOT_LEAN; author source audit, independent concrete all112-claim peer review and parent full source/claim/note synthesis PASS. Global handoff checks are recorded separately by the parent.",
+    "independent_reviews": [
+      "Independent reset/order source-provider audit before concrete authoring: terminalholonomy, completepointededge and orderedSAP/freshmidpoint discharges PASS.",
+      "B063 author independent read of all864frozen source rows, all112canonicalclaims/DAG/16defs/30imports/applicationcontracts, allN01-N14notes and fullcontrol: PASS, metadata166nodes and independent control0.29s.",
+      "Parent independent source/all112claim/fullN01-N14 proof-note/control synthesis PASS; C46 directheredity DAG madeRamsey-free, ANYgiven tower clarified, finiteoriginal actualzerochart completion and EVERYcompetitor samehost retained."
+    ],
+    "boundaries": [
+      "ONE fixed host before EVERY competing expansion",
+      "Actual singleton objects and ALL realized pair witnesses",
+      "FULL terminality and actual distributivity",
+      "Pure-imaginary normalized order context only",
+      "Complete m menu may contain many fine atoms",
+      "Ordered fresh-midpoint amalgamation proved over full closed pair base",
+      "Same-host full MI code including orphan/missing-partner values",
+      "Finite original actual terminal tags use zero-coordinate charts",
+      "No EPPA/coherent EPPA/new external theorem or Lean certification"
+    ]
+  },
+  "source_files": [
+    {
+      "file": "sections/binary_unary_irreducible_local_cover.tex",
+      "git_blob": "a91af6bdd0fd7de6c7266e5c908fde78192f9087"
+    },
+    {
+      "file": "sections/direct_owner_closure.tex",
+      "git_blob": "a4249938c53d20cd208d68dcd013c5c6d12a5ffd"
+    },
+    {
+      "file": "sections/ep_safe_ap_character_completion.tex",
+      "git_blob": "42e7958c333f8e39a9a5268ec22d0213c72d715b"
+    },
+    {
+      "file": "sections/exact_foundations/01_full_raw_exact_helly.tex",
+      "git_blob": "7cb28c86b4b296ddf865b6aff518cda1215cd491"
+    },
+    {
+      "file": "sections/exact_foundations/02_exact_quotient_orbital_geometry.tex",
+      "git_blob": "d462f2bfffcd67c1fa712ac516972ab18e073d44"
+    },
+    {
+      "file": "sections/exact_foundations/03_joint_exact_sort_lifting.tex",
+      "git_blob": "394e0db063a476c5c069384b3d3fa2ffd3c7471d"
+    },
+    {
+      "file": "sections/exact_gluing_geometry.tex",
+      "git_blob": "c98b468daef5d657d6470e3a14020b8b22cc3a3f"
+    },
+    {
+      "file": "sections/exact_lattice_crt.tex",
+      "git_blob": "5ead1d021abbc99c255c8a36ec87585cba3fbdc3"
+    },
+    {
+      "file": "sections/expansion_property_automatic_core.tex",
+      "git_blob": "73ae11633e805d54e9fccb90174e67506b90849f"
+    },
+    {
+      "file": "sections/expansion_property_exact_geometry.tex",
+      "git_blob": "8f901d3c7070d9c900e5c5541e93e25bed6a630a"
+    },
+    {
+      "file": "sections/expansion_property_unfiltered.tex",
+      "git_blob": "a6cc2ff95a5ed8f7d371e33d5504edcedc6cd35c"
+    },
+    {
+      "file": "sections/finite_orbit_avoidance.tex",
+      "git_blob": "290ab3ae54ade87fc4693b0c17955a9e319efd9b"
+    },
+    {
+      "file": "sections/finite_packet_kernel_constraints.tex",
+      "git_blob": "e47d0d2de416e03dd0207dc56a581088da78b74c"
+    },
+    {
+      "file": "sections/finite_packets.tex",
+      "git_blob": "dd3e608f03e7c5b1b1854a45de462859f8355143"
+    },
+    {
+      "file": "sections/finite_relative_parity_exact_closure.tex",
+      "git_blob": "9f6983f96bae28d06466fcbf23f15e20a55f2686"
+    },
+    {
+      "file": "sections/foundational_sap_collision_unfolding.tex",
+      "git_blob": "f3ed62cf481b082ca6be793f45bf180db12a6468"
+    },
+    {
+      "file": "sections/full_code_tuple_ep_transfer.tex",
+      "git_blob": "0c17201c80dbfa45e222553919f3545c95733c28"
+    },
+    {
+      "file": "sections/global_correspondence.tex",
+      "git_blob": "e18ca9d9d14f275a660a6358c45394891a2f46c0"
+    },
+    {
+      "file": "sections/harmless_exact_owners.tex",
+      "git_blob": "f2259434387184b1fbf24edf099da5e12be33024"
+    },
+    {
+      "file": "sections/maximal_cores/01_maximal_hat_normalisation.tex",
+      "git_blob": "248cc19427c0ad7114022238ca086a9eccc47a3f"
+    },
+    {
+      "file": "sections/ramsey_ap_from_clones.tex",
+      "git_blob": "74c191ad2f16775194c5ef588c7fcbc6cf536a2f"
+    },
+    {
+      "file": "sections/ramsey_clone_sap.tex",
+      "git_blob": "2b14f19885e7109be548a0af73fba14c974dc636"
+    },
+    {
+      "file": "sections/ramsey_preferred_support.tex",
+      "git_blob": "a4213db90239937a525e6fa7b6ea36703a2900df"
+    },
+    {
+      "file": "sections/real_hull/02_global_finite_fibre_fixer.tex",
+      "git_blob": "61b51f223bb0bec1c0ae53c3f21d8c7336def669"
+    },
+    {
+      "file": "sections/real_hull/03_invariant_class_packets.tex",
+      "git_blob": "a0093ce4c6d0366a1060ae7678090be765884462"
+    },
+    {
+      "file": "sections/real_hull/05_even_walk_canonical_hull.tex",
+      "git_blob": "40c459c5d2582ad92811ab62dcffbcb4456a8826"
+    },
+    {
+      "file": "sections/real_hull/06_minimal_infinite_directions_acl.tex",
+      "git_blob": "4c01beca2f60acfa2d942714525173889bc5804f"
+    },
+    {
+      "file": "sections/real_hull/07_sap_mi_intersection_geometry.tex",
+      "git_blob": "7d681c9087c1d7f41ea65a834158daf456ee5fd2"
+    },
+    {
+      "file": "sections/reset_midpoint_order_ep.tex",
+      "git_blob": "d4174bcb790f4a85ca5ae8492f810eeac63a97c8"
+    },
+    {
+      "file": "sections/rigid_exact_groupoid_foundations.tex",
+      "git_blob": "fb231ec107f8c18b550c87d20ea2da9d86a2d735"
+    },
+    {
+      "file": "sections/rooted_acf_geometry.tex",
+      "git_blob": "4910a41d44909e4b01d48c03a3e9a1116b37ea23"
+    },
+    {
+      "file": "sections/simultaneous_typed_exact_quotients.tex",
+      "git_blob": "078017a03e1d6f62088fb17fb6e31bce4f6e8ef6"
+    },
+    {
+      "file": "sections/sparse_labelled_graphs.tex",
+      "git_blob": "c7db0b7169dd8ff4dcd5642469ac8fa42c2ef530"
+    },
+    {
+      "file": "sections/terminal_invariant_raw_exact.tex",
+      "git_blob": "af0064c672f332049209e142a585bc62540954b4"
+    },
+    {
+      "file": "sections/terminal_strong_powers.tex",
+      "git_blob": "e76bcb91b465a9192fe51748e845e49d05c16a58"
+    },
+    {
+      "file": "sections/triangle_fullness.tex",
+      "git_blob": "d25f85dd267577d1af0c6ffb1245809892fe1dc0"
+    },
+    {
+      "file": "sections/typed_hereditary_selectors.tex",
+      "git_blob": "35b4013ad3c9886c7641f924202a1491464c126a"
+    },
+    {
+      "file": "sections/typed_invariant_quotient_transport.tex",
+      "git_blob": "3895b17d7d0176a74d6f69c39e4e22d9cdba5715"
+    },
+    {
+      "file": "sections/typed_pc_fixedpoint.tex",
+      "git_blob": "796c74460c724023281e2d916d9ddb2e9eb70f07"
+    },
+    {
+      "file": "sections/typed_strong_domains.tex",
+      "git_blob": "75d584069ce802c62d66104a852a3649fc082f1d"
+    },
+    {
+      "file": "sections/unary_hn_transfer.tex",
+      "git_blob": "1efc39213f95aa916353eecb639594cb156b7b41"
+    },
+    {
+      "file": "sections/v27/06_legacy_finite_covers.tex",
+      "git_blob": "67eda024d68a41c2dab17bf99fe440d6a137af66"
+    },
+    {
+      "file": "sections/v27/07_typed_raw_strong_transition.tex",
+      "git_blob": "6dc7e4c7aa452b179e95cc502b4daf4d2b6592d9"
+    },
+    {
+      "file": "sections/v27/08_typed_terminal_reset_equivalences.tex",
+      "git_blob": "624a17bdab4758ac1ccf4ce406cdf32742375374"
+    },
+    {
+      "file": "sections/v27/09_typed_equivalence_and_profiles.tex",
+      "git_blob": "39d1678e6616140b50d6d9448b94f0de823f26d8"
+    },
+    {
+      "file": "sections/v27/10_typed_unary_terms_return.tex",
+      "git_blob": "7edb9833681c84ab9e15918a004137d7f2c47258"
+    },
+    {
+      "file": "sections/v27/13_actual_hidden_sap_readings.tex",
+      "git_blob": "9b01d7ebe43b4df87823c1127f101de49c2738c5"
+    },
+    {
+      "file": "sections/v27/16_old_idempotent_forest.tex",
+      "git_blob": "b96c51e5f950dea05911438e6022d35e89f5695e"
+    },
+    {
+      "file": "sections/v27/17_hidden_hn_terminal_readout.tex",
+      "git_blob": "c11cf17b014a4c3c47bd72322a54867b6f06b2e2"
+    },
+    {
+      "file": "sections/v27/18_unary_hn_transfer.tex",
+      "git_blob": "70ca6cf0482331ddac045512a80dbf70f1feed68"
+    }
+  ]
+}

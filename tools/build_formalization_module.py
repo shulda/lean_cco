@@ -21,6 +21,18 @@ def blob_sha(data):
     return hashlib.sha1(b'blob ' + str(len(data)).encode() + b'\0' + data).hexdigest()
 
 
+def catalogue_references(declarations):
+    """Resolve explicit catalogue IDs and label aliases without guessing anchors."""
+    by_reference = {}
+    for declaration in declarations:
+        for reference in [declaration['id'], *declaration['labels']]:
+            if not isinstance(reference, str) or not reference:
+                raise ValueError('Invalid catalogue source reference')
+            if reference in by_reference and by_reference[reference] is not declaration:
+                raise ValueError(f'Ambiguous catalogue source reference: {reference}')
+            by_reference[reference] = declaration
+    return by_reference
+
 def topological_order(nodes):
     """Deterministic provider-before-consumer order; reject unknowns/cycles."""
     ids = [n['id'] for n in nodes]
@@ -82,25 +94,33 @@ def validate_external_providers(module):
     if not isinstance(providers, list):
         raise ValueError('External providers must be an explicit list')
     for item in providers:
+        forest = (isinstance(item, dict) and item.get('source_version') ==
+                  'Kufleitner, MFCS 2008, LNCS 5162, The Height of Factorization Forests'
+                  and item.get('theorem') ==
+                  'Theorem 1; use the weaker height bound 3|S| proved explicitly')
         if not isinstance(item, dict) or item.get('status') != 'PUBLISHED_THEOREM_LOCAL_BRIDGE_PENDING':
             raise ValueError('External theorem status must retain local bridge obligation')
         if (not isinstance(item.get('id'), str) or not re.fullmatch(r'E[0-9]{2}', item['id'])
                 or any(not isinstance(item.get(key), str) or not item[key].strip()
                        for key in ['name', 'statement', 'source_version', 'theorem'])
-                or not re.fullmatch(r'[0-9]{4}\.[0-9]{4,5}v[1-9][0-9]*', item['source_version'])
-                or not re.fullmatch(r'[1-9][0-9]*(?:\.[0-9]+)*', item['theorem'])):
+                or (not forest and (
+                    not re.fullmatch(r'[0-9]{4}\.[0-9]{4,5}v[1-9][0-9]*', item['source_version'])
+                    or not re.fullmatch(r'[1-9][0-9]*(?:\.[0-9]+)*', item['theorem'])))):
             raise ValueError('External theorem requires a versioned precise contract')
         if (not isinstance(item.get('depends_on'), list)
                 or any(not isinstance(dep, str) or not dep for dep in item['depends_on'])
                 or len(item['depends_on']) != len(set(item['depends_on']))):
             raise ValueError('External theorem requires explicit unique dependencies')
-        if item.get('source_url') not in {
-                f'https://arxiv.org/html/{item["source_version"]}',
-                f'https://arxiv.org/abs/{item["source_version"]}'}:
+        urls = ({'https://link.springer.com/chapter/10.1007/978-3-540-85238-4_36'}
+                if forest else {f'https://arxiv.org/html/{item["source_version"]}',
+                                f'https://arxiv.org/abs/{item["source_version"]}'})
+        if item.get('source_url') not in urls:
             raise ValueError('External theorem requires its versioned primary source URL')
         ref = item.get('lean_reference')
         if ref is not None:
             qualified = r'[A-Za-z_][A-Za-z0-9_]*(?:\.[A-Za-z_][A-Za-z0-9_]*)+'
+            declaration = (r'[A-Za-z_][A-Za-z0-9_]*(?:\.[A-Za-z_][A-Za-z0-9_]*)*'
+                           if forest else qualified)
             if (not isinstance(ref, dict)
                     or not isinstance(ref.get('repository'), str)
                     or not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9_.-]*/[A-Za-z0-9][A-Za-z0-9_.-]*', ref['repository'])
@@ -114,13 +134,17 @@ def validate_external_providers(module):
                     or not re.fullmatch(r'v[0-9]+\.[0-9]+\.[0-9]+(?:-rc[0-9]+)?', ref['lean_version'])
                     or ref.get('bridge_status') != 'NOT_BOUND_TO_CCO_ENCODING'
                     or not isinstance(ref.get('declarations'), list) or not ref['declarations']
-                    or any(not isinstance(name, str) or not re.fullmatch(qualified, name)
+                    or any(not isinstance(name, str) or not re.fullmatch(declaration, name)
                            for name in ref['declarations'])
                     or len(ref['declarations']) != len(set(ref['declarations']))):
                 raise ValueError('Existing Lean reference must be pinned and retain encoding bridge')
 
 
 def validate(root, module, declarations):
+    for key in ('overview_mermaid', 'overview_notes'):
+        if key in module and (not isinstance(module[key], list)
+                              or any(not isinstance(line, str) for line in module[key])):
+            raise ValueError(f'{key} must be a list of text lines')
     sources = {x['file']: x for x in module['source_files']}
     if len(sources) != len(module['source_files']):
         raise ValueError('Duplicate source file')
@@ -132,7 +156,7 @@ def validate(root, module, declarations):
         raw[file] = data.decode()
     if module['source_commit'] != declarations['summary']['source_commit']:
         raise ValueError('Catalogue and module source pins differ')
-    by_label = {label: d for d in declarations['declarations'] for label in d['labels']}
+    by_label = catalogue_references(declarations['declarations'])
 
     def check_anchor(item):
         file, anchor = item['file'], item['anchor']
@@ -435,7 +459,7 @@ def render(module, order, by_label, raw):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--check', action='store_true')
-    parser.add_argument('--module', default='raw_exact', choices=['raw_exact', 'strong_selectors', 'sir', 'parity_hasse', 'exact_crt', 'canonical_hull', 'real_closure', 'finite_packets', 'rigid_groupoid', 'finite_kernel', 'owner_action', 'owner_master', 'joint_owner', 'acl_owner_geometry', 'finite_lift', 'mi_geometry', 'owner_transversal', 'safe_readings', 'direct_owner_closure', 'hkn_reservoir', 'terminal_powers', 'full_rows', 'profile_helly', 'relative_mi', 'rank_induction', 'unary_support', 'full_code', 'reset_order', 'unary_hn', 'relational_completion', 'unary_fresh_frames', 'quotient_transport', 'simultaneous_quotients', 'finite_fibres', 'point_generated_sap', 'ap_character', 'clone_sap', 'orbital_cover_boundary', 'pair_safe_split', 'full_phase_lift'])
+    parser.add_argument('--module', default='raw_exact', choices=['raw_exact', 'strong_selectors', 'sir', 'parity_hasse', 'exact_crt', 'canonical_hull', 'real_closure', 'finite_packets', 'rigid_groupoid', 'finite_kernel', 'owner_action', 'owner_master', 'joint_owner', 'acl_owner_geometry', 'finite_lift', 'mi_geometry', 'owner_transversal', 'safe_readings', 'direct_owner_closure', 'hkn_reservoir', 'terminal_powers', 'full_rows', 'profile_helly', 'relative_mi', 'rank_induction', 'unary_support', 'full_code', 'reset_order', 'unary_hn', 'relational_completion', 'unary_fresh_frames', 'quotient_transport', 'simultaneous_quotients', 'finite_fibres', 'point_generated_sap', 'ap_character', 'clone_sap', 'orbital_cover_boundary', 'pair_safe_split', 'full_phase_lift', 'transition_closure', 'terminal_lattice', 'terminal_profiles', 'unary_terms_return', 'typed_orbit_frames', 'hereditary_hidden_orbits', 'hidden_sap_readings', 'guarded_two_root', 'guarded_old_seams', 'old_idempotent_forest', 'terminal_hidden_hn', 'clone_tuple_geometry', 'ap_ramsey_readout', 'exact_ep_geometry', 'automatic_ep_core', 'unfiltered_ep'])
     args = parser.parse_args()
     directory = Path('formalization') / args.module
     module = json.loads((ROOT / directory / 'module.json').read_text())

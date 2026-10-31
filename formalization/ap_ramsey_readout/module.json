@@ -1,0 +1,1817 @@
+{
+  "schema_version": 1,
+  "id": "ap_ramsey_readout",
+  "index_title": "AP clone Ramsey readout, coordinate completion and the smaller visible language",
+  "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+  "status": "HUMAN_EXPANDED_NOT_LEAN",
+  "scope": "Private B061: the FIVE remaining Ramsey III results of ramsey_ap_from_clones.tex, with 11 definitions, 62 human claims and eight tasks. Bind the original AP+HOM-CCO source to a NEW actual terminal pure-clone source, restrict the whole ALL-orders hidden Ramsey age to its unary-closed proper sorts, and transfer through the exact marked ALL-embeddings code. Prove finite coordinate completion, actual block normalization and definitional smaller signature. ALL coordinate-source finite term FUNCTIONS and same-root/cross-root equality/order codes are retained. No cofinality, EP, EPPA, original SAP, F-MI hypothesis or real-hull input enters the main theorem. The ancillary MI specialization remains separately proved in B060; this module does not depend on it.",
+  "scope_vocabulary": [
+    "source_application",
+    "readout",
+    "template",
+    "ramsey",
+    "output",
+    "completion",
+    "block",
+    "smaller_language",
+    "boundary",
+    "finite_case"
+  ],
+  "scope_explanation": "statement and proof. The main theorem applies parameterized terminal and readout results to the actual safely terminalized CLONE source, not to the original AP-only structure. Hidden targets, literal tagged tuples and all diagonal codes are substantive.",
+  "control_script": "tools/check_ap_ramsey_readout_finite.py",
+  "assumptions": [
+    {
+      "id": "A01",
+      "name": "Original AP homomorphic-CCO source",
+      "statement": "Q is countably infinite transitive homogeneous in a finite complete symmetric relational binary language of ACTUAL pair orbitals. Age(Q) has ordinary AP and semantic HOM simple-cycle CCO. No original SAP, triangle-definedness, MI finite-packet assumption, EP or EPPA is assumed. Logical equality is separate from diversity atoms.",
+      "depends_on": []
+    },
+    {
+      "id": "A02",
+      "name": "Bound actual terminal pure-clone instance",
+      "statement": "For the parameterized readout lemmas Mdagger=Qdagger x N is an actual finite-sorted homogeneous FULL triangle-defined symmetric binary SAP+HOM-CCO source with every FULL invariant-equivalence cover of infinite relative index, including Top covers. Its unary labels are clone constant; Qdagger is a finite reasonable reduct-surjective unary expansion of its original Q, and each nonempty Qdagger sort is infinite. The actual hidden signature contains represented proper MI quotients, all actual mixed cylinders and equivariant unary upward/transition maps with inverses; functions are total on prescribed sorts and undefined off-sort. There is no proper-quotient-to-real map. This is a BOUND intermediate instance, discharged from A01 for the main theorem in C05/C33.",
+      "depends_on": []
+    },
+    {
+      "id": "A03",
+      "name": "Bound finite actual MI charts",
+      "statement": "For each clone sort s choose finitely many DISTINCT proper represented MI equivalences J_s,i>=K_s with meet K_s. Here K_s is the actual exact pure-clone congruence, Id union c_s; it is proper. Each root is the literal tagged ordered coordinate tuple, with no quotient of tuples and no point-dependent choice. All coordinate data are interpreted in the SAME actual terminal source.",
+      "depends_on": []
+    },
+    {
+      "id": "A04",
+      "name": "Independent block-normalizer setting",
+      "statement": "For the generic block lemma H< is an isomorphism-closed hereditary Ramsey class of finite hidden structures with finitely many disjoint named sorts partitioning its universe and ALL global strict linear orders over each allowed unordered reduct. Fix a priority of SORT SYMBOLS. Changing only the order is legal in this class. This independent setting does not assume a clone source, CCO, SAP or term bounds.",
+      "depends_on": []
+    },
+    {
+      "id": "A05",
+      "name": "Separate finite original source",
+      "statement": "ONLY for the ancillary finite-source branch, Qfin is finite homogeneous in the given relational binary language. It need not satisfy the countably infinite A01 premise. Label all its finitely many individual points and take the hereditary age of that actual finite labelled structure.",
+      "depends_on": []
+    }
+  ],
+  "imports": [
+    {
+      "id": "I01",
+      "name": "lem:cco-triangle-fullness",
+      "provider_module": "relational_completion",
+      "source_label": "lem:cco-triangle-fullness",
+      "provider_claims": [
+        "C27",
+        "C28",
+        "C29"
+      ],
+      "statement": "Ordinary original AP plus semantic HOM CCO gives complete-diagram triangle fullness, including actual unary/pair admissibility. No old SAP or equality-extended CCO black box.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I02",
+      "name": "thm:internal-clone-sap",
+      "provider_module": "clone_sap",
+      "source_label": "thm:internal-clone-sap",
+      "provider_claims": [
+        "C26"
+      ],
+      "statement": "The actual infinite pure-clone source of a homogeneous AP+HOM-CCO Q is homogeneous SAP+HOM CCO; with old triangle fullness it is FULL triangle-defined. K=Id union c=c;c is exact in FULL RAW semantics and the owner quotient is precisely Q.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I03",
+      "name": "lem:ramsey-clone-stability",
+      "provider_module": "clone_tuple_geometry",
+      "source_label": "lem:ramsey-clone-stability",
+      "provider_claims": [
+        "C20"
+      ],
+      "statement": "The genuine safe terminalisation stays pure-clone Mdagger=Qdagger x N with reasonable finite unary Qdagger labels, infinite nonempty quotient sorts and proper exact K_s. It uses the actual phase table, not arbitrary independent unary labels.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I04",
+      "name": "lem:ramsey-mi-domain",
+      "provider_module": "clone_tuple_geometry",
+      "source_label": "lem:ramsey-mi-domain",
+      "provider_claims": [
+        "C34"
+      ],
+      "statement": "A tagged tuple of the fixed MI coordinates is valid exactly when its actual classes meet pairwise, equivalently c_s lies in every pair spectrum; the common intersection is exactly one actual K_s class. This is a qf domain in the existing hidden language, valid also for actual orphan-only hidden hosts.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "provider_support_claims": [
+        "C24",
+        "C25",
+        "C26",
+        "C27"
+      ],
+      "provider_support_usage": "Use precisely strict proved ancestors C24/C25 for existence of a NONEMPTY finite distinct represented proper-MI family with meet the actual K_s, and C26/C27 for the canonical owner-to-tuple map and injection. These discharge A03 in C04/C05 and distinguish literal tagged roots in C18; they are existing proof support, not additional source theorem exports."
+    },
+    {
+      "id": "I05",
+      "name": "lem:ramsey-singleton-recovery",
+      "provider_module": "clone_tuple_geometry",
+      "source_label": "lem:ramsey-singleton-recovery",
+      "provider_claims": [
+        "C52"
+      ],
+      "statement": "On compatible tuples the intersection of ALL actual mixed spectra is exactly the original typed fine atom, and the equal-visible-root case returns the clone atom c_s interpreted as visible equality. Diagonal coordinate spectra are full J-diversity supports, not off-diagonal predicates. Class CRT alone is insufficient.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I06",
+      "name": "lem:typed-unary-closure-bound",
+      "provider_module": "unary_terms_return",
+      "source_label": "lem:typed-unary-closure-bound",
+      "provider_claims": [
+        "C13",
+        "C14"
+      ],
+      "statement": "Actual hidden singleton closures are uniformly bounded. Select strict proved ancestor C12 for finitely many actual unary term FUNCTIONS on EACH proper-coordinate source sort; normalize compositions with identical sort domains and values, including identity.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "provider_support_claims": [
+        "C12"
+      ],
+      "provider_support_usage": "Use C12 on ALL selected proper-coordinate input sorts, rather than merely the real-source specialization. It gives a finite complete function list and exact composition representatives for the tuple code and its uniform signature; finite image size at one point is not substituted for this theorem."
+    },
+    {
+      "id": "I07",
+      "name": "lem:no-real-algebraic-transition",
+      "provider_module": "transition_closure",
+      "source_label": "lem:no-real-algebraic-transition",
+      "provider_claims": [
+        "C30"
+      ],
+      "statement": "No actual proper quotient-coordinate sort has a unary upward or transition map into an original real sort. Thus the pure-imaginary selected sorts are unary-functionally closed.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I08",
+      "name": "thm:internal-ramsey-terminal",
+      "provider_module": "terminal_hidden_hn",
+      "source_label": "thm:internal-ramsey-terminal",
+      "provider_claims": [
+        "C39"
+      ],
+      "statement": "Instantiate the terminal theorem at the SAME actual Mdagger. Its proved C30 gives the ENTIRE hereditary actual hidden SAP age, and C36 gives that entire age with ALL global strict linear orders as Ramsey. Retain its inherited HN/forest receiving obligations and the unchanged GLOBAL six-entry manifest (whose two HKN entries belong to the separate EPPA track); do not duplicate or add an external binding.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "provider_support_claims": [
+        "C30",
+        "C36"
+      ],
+      "provider_support_usage": "Use strict proved support C30/C36 for hereditary hidden SAP (hence JEP over empty base) and the ALL-orders hidden Ramsey conclusion before any real-root readout. These are parameters discharged on Mdagger, not assertions that the original AP-only Q is SAP or terminal."
+    },
+    {
+      "id": "I09",
+      "name": "lem:foundational-ramsey-sort-restriction",
+      "provider_module": "reset_order",
+      "source_label": "lem:foundational-ramsey-sort-restriction",
+      "provider_claims": [
+        "C04",
+        "C05",
+        "C06"
+      ],
+      "statement": "The full induced restriction to named sorts with no outgoing unary map remains hereditary Ramsey; JEP/SAP pass if supplied. All outside sorts remain empty in the retained full language. No representative selection or real ordering is involved.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I10",
+      "name": "lem:foundational-full-code-embeddings",
+      "provider_module": "full_code",
+      "source_label": "lem:foundational-full-code-embeddings",
+      "provider_claims": [
+        "C08",
+        "C15"
+      ],
+      "statement": "Complete marked tuple-term codes reconstruct the induced unary-generated support and give the natural bijection of ALL visible embeddings with hidden support embeddings. Retain all same-root/cross-root equalities, function domains/values and order codes.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I11",
+      "name": "thm:ramsey-tuple-readout",
+      "provider_module": "full_code",
+      "source_label": "thm:ramsey-tuple-readout",
+      "provider_claims": [
+        "C20"
+      ],
+      "statement": "A hereditary hidden embedding-Ramsey class transfers to the hereditary full-code age of ALL valid tagged tuples through the exact natural embedding bijection. The Ramsey host may have orphan points; neither EP nor cofinal enlargement is required.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I12",
+      "name": "lem:foundational-ramsey-normalization",
+      "provider_module": "reset_order",
+      "source_label": "lem:foundational-ramsey-normalization",
+      "provider_claims": [
+        "C07",
+        "C11",
+        "C12"
+      ],
+      "statement": "A strict idempotent endofunctor on induced embeddings preserving each universe and vertex map has a hereditary Ramsey fixed-object class; no surjectivity on embedding sets or generic SAP inheritance is assumed.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I13",
+      "name": "thm:finite-cover-elimination",
+      "provider_module": "pair_safe_split",
+      "source_label": "thm:finite-cover-elimination",
+      "provider_claims": [
+        "C51"
+      ],
+      "statement": "Apply the actual maximal-character safe splitting to the FULL symmetric clone SAP+HOM-CCO source. It terminates in a finite reasonable precompact reduct-surjective unary terminal expansion preserving actual homogeneity, SAP, CCO, triangle fullness and current full pair orbitals. Retain its actual-sector/FULL-versus-STRONG qualifications.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    }
+  ],
+  "definitions": [
+    {
+      "id": "D01",
+      "name": "Pure-imaginary age",
+      "statement": "H_im< is the full induced unary-closed proper-quotient-sort restriction of the actual ordered hidden age; clone-real sorts are empty.",
+      "depends_on": [],
+      "notes": "N02",
+      "source": {
+        "file": "sections/ramsey_ap_from_clones.tex",
+        "anchor": "PURE-IMAGINARY"
+      }
+    },
+    {
+      "id": "D02",
+      "name": "Literal compatible roots",
+      "statement": "N(D) consists of ALL tagged ordered MI tuples in D satisfying delta_s from I04. The root carrier is not a quotient and does not introduce hidden cell vertices.",
+      "depends_on": [],
+      "notes": "N02",
+      "source": {
+        "file": "sections/ramsey_ap_from_clones.tex",
+        "anchor": "N(D)"
+      }
+    },
+    {
+      "id": "D03",
+      "name": "Finite coordinate-term function list",
+      "statement": "For each proper input sort fix one representative of every actual unary term function, including identity, with identical domains and values. Coordinate terms first select a root position and then apply such a representative.",
+      "depends_on": [],
+      "notes": "N02",
+      "source": {
+        "file": "sections/ramsey_ap_from_clones.tex",
+        "anchor": "finite hidden unary-term normal forms"
+      }
+    },
+    {
+      "id": "D04",
+      "name": "Exact hereditary full-code age",
+      "statement": "K* consists exactly of finite selected induced root subsets of the complete N(D) codes, over all finite D in H_im<. Retain tags and ALL unary/binary, equality, function-domain/value and order codes, including same-root instances.",
+      "depends_on": [],
+      "notes": "N02",
+      "source": {
+        "file": "sections/ramsey_ap_from_clones.tex",
+        "anchor": "All hidden unary/binary"
+      }
+    },
+    {
+      "id": "D05",
+      "name": "Marked generated template",
+      "statement": "Presentations (a,j,t) evaluate the coordinate term t on position j of selected root a. Identify presentations iff their actual values agree; h(A*) is their actual induced unary-closed hidden support, marked by those root coordinates.",
+      "depends_on": [],
+      "notes": "N02",
+      "source": {
+        "file": "sections/ramsey_ap_from_clones.tex",
+        "anchor": "generated hidden support"
+      }
+    },
+    {
+      "id": "D06",
+      "name": "Finite coordinate completion",
+      "statement": "C(A*)=N(h(A*)) with its full code, on the SAME marked support. It adds all compatible tuples available in that support.",
+      "depends_on": [],
+      "notes": "N05",
+      "source": {
+        "file": "sections/ramsey_ap_from_clones.tex",
+        "anchor": "Put $C(A)=N(h(A))$"
+      }
+    },
+    {
+      "id": "D07",
+      "name": "Sort-block endofunctor",
+      "statement": "B replaces a global order by the concatenation, in fixed sort-symbol priority, of its unchanged within-sort restrictions. It changes no other data and acts as the identity on vertex maps.",
+      "depends_on": [],
+      "notes": "N06",
+      "source": {
+        "file": "sections/ramsey_ap_from_clones.tex",
+        "anchor": "Fix a total priority"
+      }
+    },
+    {
+      "id": "D08",
+      "name": "Reduced visible language",
+      "statement": "Retain original fine colours, genuine safe unary labels and coordinate-term order comparisons. Delete only codes proved qf definable in that retained language.",
+      "depends_on": [],
+      "notes": "N07",
+      "source": {
+        "file": "sections/ramsey_ap_from_clones.tex",
+        "anchor": "A smaller visible signature"
+      }
+    },
+    {
+      "id": "D09",
+      "name": "Hidden target sort comparison criterion",
+      "statement": "A comparison C_tau,sigma(x,y) concerns the HIDDEN target sorts of tau and sigma. These may coincide even for roots of different visible tags; source visible tags alone do not make their relative order forced.",
+      "depends_on": [],
+      "notes": "N07",
+      "source": {
+        "file": "sections/ramsey_ap_from_clones.tex",
+        "anchor": "Comparisons of terms from different visible sorts"
+      }
+    },
+    {
+      "id": "D10",
+      "name": "Order-code diagnostics",
+      "statement": "Order-code diagnostics distinguish a singleton tuple with two hidden coordinates by a diagonal comparison. A separate GENERIC UNORDERED reconstruction example uses two roots sharing a coordinate and no other hidden relations/functions. Distinct visible tags may evaluate into the same hidden target sort; equality minimality in the actual ALL-order signature is not asserted.",
+      "depends_on": [],
+      "notes": "N08",
+      "source": {
+        "file": "sections/ramsey_ap_from_clones.tex",
+        "anchor": "including same-root instances"
+      }
+    },
+    {
+      "id": "D11",
+      "name": "Uniform MI/MR scope",
+      "statement": "The construction uses any nonempty finite distinct proper MI family with meet K. Specializing to one coordinate requires actual K to be MI; the separate real-hull/phase-algebraicity argument is not a premise of the general Ramsey readout.",
+      "depends_on": [],
+      "notes": "N08",
+      "source": {
+        "file": "sections/ramsey_ap_from_clones.tex",
+        "anchor": "MI and MR are the same Ramsey construction"
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "name": "Original triangle fullness is derived before cloning",
+      "statement": "Instantiate I01 on A01. Every actual unary/pair-admissible complete triangle-legal old diagram is in Age(Q). No old SAP is inserted into this call.",
+      "depends_on": [
+        "A01",
+        "I01"
+      ],
+      "notes": "N01",
+      "scope": "source_application",
+      "source_labels": [
+        "thm:ramsey-general-ap"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C02",
+      "name": "Pure clones discharge the FULL SAP+CCO source",
+      "statement": "Apply I02 with A01 and C01. Obtain actual M=Q x N, full triangle-defined homogeneous SAP+HOM CCO, exact K=Id union c and literal owner quotient Q. Original owner amalgams may identify off-base owners; fresh clone indices give real SAP.",
+      "depends_on": [
+        "A01",
+        "I02",
+        "C01"
+      ],
+      "notes": "N01",
+      "scope": "source_application",
+      "source_labels": [
+        "thm:ramsey-general-ap"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C03",
+      "name": "Apply genuine finite safe terminalisation to this clone source",
+      "statement": "I13 applies to C02 and yields a NEW actual finite-sorted terminal Mdagger with all required infinite FULL covers, actual homogeneity/orbitals, SAP and CCO, and reasonable reduct-surjective finite unary labels. Terminality is not assumed of original Q.",
+      "depends_on": [
+        "C02",
+        "I13"
+      ],
+      "notes": "N01",
+      "scope": "source_application",
+      "source_labels": [
+        "thm:ramsey-general-ap"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C04",
+      "name": "The terminal expansion still descends to Qdagger",
+      "statement": "I03 on this same clone source and genuine safe tower gives Mdagger=Qdagger x N, clone-constant unary labels, reasonable finite unary Qdagger expansion and infinite quotient sorts. Its K_s are proper exact and admit the finite MI charts of I04.",
+      "depends_on": [
+        "C02",
+        "C03",
+        "I03",
+        "I04"
+      ],
+      "notes": "N01",
+      "scope": "source_application",
+      "source_labels": [
+        "thm:ramsey-general-ap"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C05",
+      "name": "Discharge the bound intermediate instance for the general theorem",
+      "statement": "C02-C04 supply every A02 property on Mdagger, and the finite actual lattice/MI chart construction in I04 supplies A03. This is a new-source instantiation of the parameterized readout proof, not a claim that A02/A03 hold on Q itself.",
+      "depends_on": [
+        "C02",
+        "C03",
+        "C04"
+      ],
+      "notes": "N01",
+      "scope": "source_application",
+      "source_labels": [
+        "thm:ramsey-general-ap"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C06",
+      "name": "Qdagger is homogeneous in its finite binary and unary language",
+      "statement": "A finite Qdagger partial isomorphism lifts by one clone per owner to an Mdagger partial isomorphism. A02 homogeneity extends it; the extension preserves K and therefore descends to a Qdagger automorphism. Thus complete unary/pair/equality types are its full finite one/two-point orbits.",
+      "depends_on": [
+        "A02"
+      ],
+      "notes": "N01",
+      "scope": "readout",
+      "source_labels": [
+        "cor:ramsey-small-language"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C07",
+      "name": "Qdagger automorphisms lift and act on all actual imaginary terms",
+      "statement": "An automorphism of Qdagger lifts to the pure-clone product using any independent fibre bijections. It preserves every actual represented quotient, mixed cylinder and equivariant unary term, so induces the canonical imaginary action. The resulting action on quotient coordinates is independent of clone choices because J>=K.",
+      "depends_on": [
+        "A02",
+        "A03",
+        "C06"
+      ],
+      "notes": "N01",
+      "scope": "readout",
+      "source_labels": [
+        "cor:ramsey-small-language"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C08",
+      "name": "Proper hidden sorts form an actual induced closed class",
+      "statement": "I07 rules out every outgoing map to clone-real sorts. All actual unary values of proper coordinates therefore stay proper, so the full induced restriction in D01 is closed, and its finite members retain every original relation and function-domain test.",
+      "depends_on": [
+        "A02",
+        "I07",
+        "D01"
+      ],
+      "notes": "N02",
+      "scope": "template",
+      "source_labels": [
+        "lem:ramsey-template-bijection"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C09",
+      "name": "Choose all actual coordinate-source term functions",
+      "statement": "I06 strict C12 gives a finite complete function list on EACH proper-coordinate input sort. Include identity and normalize every applicable composition to an equal actual function. No bound on syntax or mere singleton image size is substituted.",
+      "depends_on": [
+        "A02",
+        "I06",
+        "D03"
+      ],
+      "notes": "N02",
+      "scope": "template",
+      "source_labels": [
+        "lem:ramsey-template-bijection"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C10",
+      "name": "These lists are exact partial-function normal forms on finite hosts",
+      "statement": "Actual functions are total on named input sorts and undefined off-sort. Their compositions have uniform sort domains. Induced unary-closed actual finite members preserve both applicability and values, so the lists in C09 satisfy the domain-and-value normal-form contract of I10 on the whole imaginary age.",
+      "depends_on": [
+        "A02",
+        "C08",
+        "C09"
+      ],
+      "notes": "N02",
+      "scope": "template",
+      "source_labels": [
+        "lem:ramsey-template-bijection"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C11",
+      "name": "The interpreted objects are exactly the hereditary full-code age",
+      "statement": "I04 supplies fixed qf domains for all literal tagged tuples. D04 retains every hidden term code, including repeated-root equality and order, and allows arbitrary selected finite root subsets. Thus this is exactly the full-code setting of I10, with no additional free predicates or further quotient of roots.",
+      "depends_on": [
+        "A02",
+        "A03",
+        "I04",
+        "D02",
+        "D04",
+        "C10"
+      ],
+      "notes": "N02",
+      "scope": "template",
+      "source_labels": [
+        "lem:ramsey-template-bijection"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C12",
+      "name": "Marked presentations give a finite actual generated support",
+      "statement": "Every coordinate chain is represented by C09, so evaluating D05 presentations is onto the unary closure of all selected coordinates. The support is induced, closed and finite; no unmarked support is asserted to remember the selected root subset.",
+      "depends_on": [
+        "C09",
+        "C10",
+        "D05"
+      ],
+      "notes": "N02",
+      "scope": "template",
+      "source_labels": [
+        "lem:ramsey-template-bijection"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C13",
+      "name": "Full codes reconstruct every hidden datum on that support",
+      "statement": "Apply I10 to C10-C12. Equality codes identify precisely repeated presentations, all unary/binary codes reconstruct induced relations, and normalizing F composed with each term reconstructs function domains and values. The reconstruction is unique OVER marked root coordinates.",
+      "depends_on": [
+        "I10",
+        "C10",
+        "C11",
+        "C12"
+      ],
+      "notes": "N02",
+      "scope": "template",
+      "source_labels": [
+        "lem:ramsey-template-bijection"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C14",
+      "name": "A visible full-code embedding extends to an induced hidden map",
+      "statement": "For a root embedding f send tau(a) to tau(f(a)). All cross-root equalities give well-definedness, their reflection gives injectivity, and the full relation/order/function codes give inducedness. Every support point is a term value, so this extension is unique over the marked roots.",
+      "depends_on": [
+        "I10",
+        "C13"
+      ],
+      "notes": "N02",
+      "scope": "template",
+      "source_labels": [
+        "lem:ramsey-template-bijection"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C15",
+      "name": "Every hidden support embedding sends roots to valid tuples",
+      "statement": "For g:h(A*)->D apply g to every ordered coordinate of each root, retaining its tag. Inducedness transports qf delta by I04; distinct literal roots stay distinct by identity coordinate terms and tags. All full codes are preserved and reflected.",
+      "depends_on": [
+        "I10",
+        "I04",
+        "C13"
+      ],
+      "notes": "N02",
+      "scope": "template",
+      "source_labels": [
+        "lem:ramsey-template-bijection"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C16",
+      "name": "Both constructions are inverse and natural on ALL embeddings",
+      "statement": "Composing either construction with the other fixes every coordinate and hence every term value. Uniqueness gives h(g composed f)=h(g) composed h(f), and the corresponding identity equation. This is a bijection on ALL embedding maps for every host, not merely copies or a chosen subset.",
+      "depends_on": [
+        "I10",
+        "C14",
+        "C15"
+      ],
+      "notes": "N02",
+      "scope": "template",
+      "source_labels": [
+        "lem:ramsey-template-bijection"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C17",
+      "name": "Template and all-embedding source export",
+      "statement": "C13 gives unique marked support reconstruction and C16 gives exactly Emb_K(A*,N(D)) bijective to Emb_H(h(A*),D). Hosts may have orphan coordinates. Neither a Ramsey premise nor EP/cofinality is used in these template claims.",
+      "depends_on": [
+        "C13",
+        "C16"
+      ],
+      "notes": "N02",
+      "scope": "template",
+      "source_labels": [
+        "lem:ramsey-template-bijection"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C18",
+      "name": "Every arbitrary imaginary host has an actual fine reduct",
+      "statement": "Realize the ONE finite unordered D in the actual hidden source. By I04 each valid tuple represents one actual K_s class, and all such classes coexist in that same source. I05 determines their original fine colours and interprets equal tuples via c_s. Distinct roots remain distinct original quotient points.",
+      "depends_on": [
+        "A02",
+        "A03",
+        "I04",
+        "I05",
+        "C11"
+      ],
+      "notes": "N03",
+      "scope": "ramsey",
+      "source_labels": [
+        "thm:ramsey-general-ap"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C19",
+      "name": "Fine readout is independent of realization and functorial",
+      "statement": "On each root pair the full hidden spectra/equality codes fix the unique I05 fine colour, so two actual realizations produce the same fine diagram. A hidden embedding preserves these codes and the qf domain, hence induces the actual fine embedding. No simultaneous-cell completion is required.",
+      "depends_on": [
+        "I05",
+        "C16",
+        "C18"
+      ],
+      "notes": "N03",
+      "scope": "ramsey",
+      "source_labels": [
+        "thm:ramsey-general-ap"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C20",
+      "name": "The proper-sort ALL-orders age is hereditary Ramsey and JEP",
+      "statement": "Instantiate I08 on bound A02, using its strict C30/C36 support for the whole actual ordered hidden age. C08 discharges the closed-sort premise of I09. The imaginary restriction is therefore hereditary Ramsey and JEP; no hidden real order is imported into tuple templates.",
+      "depends_on": [
+        "A02",
+        "I08",
+        "I09",
+        "C08"
+      ],
+      "notes": "N03",
+      "scope": "ramsey",
+      "source_labels": [
+        "thm:ramsey-general-ap"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C21",
+      "name": "The entire readout class agrees with these imaginary codes",
+      "statement": "C11 defines K* precisely as all hereditary full codes of the imaginary hosts; C18-C19 show every one has the intended actual fine reduct. Conversely each chosen finite template is itself an allowed imaginary host. No cofinality or requirement h(N(D))=D is imposed.",
+      "depends_on": [
+        "C11",
+        "C18",
+        "C19"
+      ],
+      "notes": "N03",
+      "scope": "ramsey",
+      "source_labels": [
+        "thm:ramsey-general-ap"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C22",
+      "name": "Discharge the tuple-Ramsey application",
+      "statement": "C17 supplies the natural ALL-embeddings bijection, C20 the exact hidden Ramsey class and C21 the exact visible age. I11 colors hidden h(A*) embeddings and obtains a monochromatic h(B*) embedding whose selected B* roots read back by naturality. Orphans in the Ramsey witness are allowed.",
+      "depends_on": [
+        "I11",
+        "C17",
+        "C20",
+        "C21"
+      ],
+      "notes": "N03",
+      "scope": "ramsey",
+      "source_labels": [
+        "thm:ramsey-general-ap"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C23",
+      "name": "Readout is reduct-surjective over the original finite age",
+      "statement": "Give a finite original Q object an allowed safe unary expansion, possible by A02. Its actual eta coordinate tuples generate a finite proper template by C09; order that template arbitrarily. I04/I05 show its selected full-code roots have exactly the original fine reduct.",
+      "depends_on": [
+        "A02",
+        "I04",
+        "I05",
+        "C09",
+        "C18"
+      ],
+      "notes": "N04",
+      "scope": "output",
+      "source_labels": [
+        "thm:ramsey-general-ap"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C24",
+      "name": "Extend the specified safe unary labels along the original embedding",
+      "statement": "For f:A->B and a given expansion A*, the safe label expansion in A02 is reasonable. Hence choose labels on B making the SAME f an embedding of labelled fine diagrams; this choice precedes extending the hidden order.",
+      "depends_on": [
+        "A02",
+        "C23"
+      ],
+      "notes": "N04",
+      "scope": "output",
+      "source_labels": [
+        "thm:ramsey-general-ap"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C25",
+      "name": "Original labelled embeddings canonically lift to the unexpanded templates",
+      "statement": "Use C06 homogeneity of Qdagger to extend the finite labelled isomorphism, C07 to lift it to the actual imaginary action, and restrict to generated supports. Equivariance gives the term formula independently of the chosen extending automorphism. It is induced and retains all marked equality data.",
+      "depends_on": [
+        "C06",
+        "C07",
+        "C09",
+        "C13",
+        "C24"
+      ],
+      "notes": "N04",
+      "scope": "output",
+      "source_labels": [
+        "thm:ramsey-general-ap"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C26",
+      "name": "A finite chosen template order extends along this map",
+      "statement": "Transport the given strict order on h(A*) to its induced image in h(B). Insert the finitely many remaining points anywhere, for example after that ordered list. This is a legal global order because ALL such orders are allowed, and retains every old comparison.",
+      "depends_on": [
+        "C12",
+        "C25"
+      ],
+      "notes": "N04",
+      "scope": "output",
+      "source_labels": [
+        "thm:ramsey-general-ap"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C27",
+      "name": "The full readout expansion is reasonable",
+      "statement": "Read back the extended template order of C26, after the safe labels of C24. C25 and the all-embedding bijection show the SAME original f is an expanded embedding. All comparisons on absent packet partners or other generated term values of A* are preserved.",
+      "depends_on": [
+        "C16",
+        "C24",
+        "C25",
+        "C26"
+      ],
+      "notes": "N04",
+      "scope": "output",
+      "source_labels": [
+        "thm:ramsey-general-ap"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C28",
+      "name": "The expansion language is finite and precompact",
+      "statement": "Finitely many tags, coordinate positions and actual term functions C09 give finitely many unary/binary code symbols. There are finitely many labelings and strict orders on the uniformly finite template of any fixed A; alternatively a finite relational language directly bounds its expansions.",
+      "depends_on": [
+        "A02",
+        "C09",
+        "C11",
+        "C12"
+      ],
+      "notes": "N04",
+      "scope": "output",
+      "source_labels": [
+        "thm:ramsey-general-ap"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C29",
+      "name": "Hidden JEP supplies visible JEP",
+      "statement": "Choose a hidden JEP host for h(A*) and h(B*) using C20, and read their embeddings through C16 into N(D). The images may overlap, as allowed by JEP. Their full codes have the intended fine reduct by C21.",
+      "depends_on": [
+        "C16",
+        "C20",
+        "C21"
+      ],
+      "notes": "N04",
+      "scope": "output",
+      "source_labels": [
+        "thm:ramsey-general-ap"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C30",
+      "name": "Every finite expanded visible member is rigid",
+      "statement": "An automorphism extends by C16 to an automorphism of its finite strictly ordered template. A finite strict total order has only the identity automorphism. Thus every coordinate and every literal tagged root is fixed.",
+      "depends_on": [
+        "C16",
+        "C12"
+      ],
+      "notes": "N04",
+      "scope": "output",
+      "source_labels": [
+        "thm:ramsey-general-ap"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C31",
+      "name": "Optional visible AP follows by a direct Ramsey coloring argument",
+      "statement": "For a hypothetical nonamalgamable span f_i:A->B_i choose a JEP host E of B_1,B_2. In a Ramsey witness for E color each A embedding by whether it extends B_1 over f_1. Every E copy contains one extendible A copy through B_1 and a nonextendible one through B_2, otherwise an amalgam exists. This contradicts a monochromatic E copy. No visible SAP follows.",
+      "depends_on": [
+        "C22",
+        "C29"
+      ],
+      "notes": "N04",
+      "scope": "output",
+      "source_labels": [
+        "thm:ramsey-general-ap"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C32",
+      "name": "Parameterized terminal clone readout conclusion",
+      "statement": "On the bound A02/A03 instance, C22 gives Ramsey, C23 reduct surjectivity, C27 reasonableness and C28 finite relational precompactness; JEP and rigidity are C29/C30. This conclusion is uniform in the actual terminal clone source and its fixed finite MI charts.",
+      "depends_on": [
+        "C22",
+        "C23",
+        "C27",
+        "C28",
+        "C29",
+        "C30"
+      ],
+      "notes": "N04",
+      "scope": "output",
+      "source_labels": [
+        "thm:ramsey-general-ap"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C33",
+      "name": "Apply the parameterized conclusion to the NEW terminal clone instance",
+      "statement": "Use C05 to instantiate A02/A03 in C32 at the actually safely terminalized Mdagger and quotient Qdagger arising from A01. Its finite reasonable unary labels were retained throughout the visible code. The final fine reduct is the starting Age(Q), and the Ramsey class is the very same expanded full-code age.",
+      "depends_on": [
+        "C05",
+        "C32"
+      ],
+      "notes": "N04",
+      "scope": "source_application",
+      "source_labels": [
+        "thm:ramsey-general-ap"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C34",
+      "name": "General AP Ramsey source export",
+      "statement": "C33 proves a reasonable reduct-surjective precompact Ramsey expansion of Age(Q) by finitely many unary and binary relations under A01. No original SAP, F-MI assumption, EP, EPPA, cofinality or algebraic-closure provider was introduced.",
+      "depends_on": [
+        "C33"
+      ],
+      "notes": "N04",
+      "scope": "source_application",
+      "source_labels": [
+        "thm:ramsey-general-ap"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C35",
+      "name": "Every selected root embeds in its coordinate completion",
+      "statement": "Identity coordinate terms put all coordinates of each old a in h(A*); its same qf domain remains true in that induced closed support. Thus the SAME tagged tuple occurs in C(A*)=N(h(A*)), with every inherited code unchanged.",
+      "depends_on": [
+        "C11",
+        "D06"
+      ],
+      "notes": "N05",
+      "scope": "completion",
+      "source_labels": [
+        "unlabelled:sections/ramsey_ap_from_clones.tex:corollary:1"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C36",
+      "name": "Coordinate completion preserves the SAME generated support",
+      "statement": "All coordinates of new tuples lie in h(A*), which is already unary-closed, so h(C(A*)) is contained in h(A*). Conversely C35 retains old roots, whose coordinates and terms generate all of h(A*). The two containments give literal same-host equality.",
+      "depends_on": [
+        "C09",
+        "C12",
+        "C35"
+      ],
+      "notes": "N05",
+      "scope": "completion",
+      "source_labels": [
+        "unlabelled:sections/ramsey_ap_from_clones.tex:corollary:1"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C37",
+      "name": "Coordinate completion is strictly idempotent on this host",
+      "statement": "C36 gives h(C(A*))=h(A*). Applying the SAME all-valid-tuple interpretation N to these identical ordered hidden supports yields C(C(A*))=C(A*), including all codes and tags.",
+      "depends_on": [
+        "C11",
+        "C36"
+      ],
+      "notes": "N05",
+      "scope": "completion",
+      "source_labels": [
+        "unlabelled:sections/ramsey_ap_from_clones.tex:corollary:1"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C38",
+      "name": "Every expanded embedding extends naturally through completion",
+      "statement": "The unique hidden term extension h(f) from C16 sends every valid tuple of h(A*) to one of h(B*); read it as C(f). It restricts to the original f by C35. Identities and compositions follow from the same h(f) naturality, not a choice of new tuple representatives.",
+      "depends_on": [
+        "C16",
+        "C35",
+        "C36",
+        "D06"
+      ],
+      "notes": "N05",
+      "scope": "completion",
+      "source_labels": [
+        "unlabelled:sections/ramsey_ap_from_clones.tex:corollary:1"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C39",
+      "name": "Both finite completion size bounds are explicit",
+      "statement": "Let m bound the total number of all coordinate-term values of one root, summing over its finitely many positions. Their union gives |h(A*)|<=m|A*|. For tag s, at most |D|^r_s ordered tuples exist, so |N(D)|<=sum_s |D|^r_s. In this application r_s>=1 because K_s is proper and its finite MI-meet family is nonempty.",
+      "depends_on": [
+        "A03",
+        "C09",
+        "C12",
+        "D06"
+      ],
+      "notes": "N05",
+      "scope": "completion",
+      "source_labels": [
+        "unlabelled:sections/ramsey_ap_from_clones.tex:corollary:1"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C40",
+      "name": "Functorial finite coordinate-completion source export",
+      "statement": "C35-C39 prove containment, same-host support equality, strict idempotence, natural extension of every embedding and the two bounds. This is not an identification with original algebraic closure.",
+      "depends_on": [
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39"
+      ],
+      "notes": "N05",
+      "scope": "completion",
+      "source_labels": [
+        "unlabelled:sections/ramsey_ap_from_clones.tex:corollary:1"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C41",
+      "name": "Block normalization is a legal object operation",
+      "statement": "A04 allows every global strict order on each fixed unordered reduct. Concatenating the unchanged within-sort orders in the fixed finite sort priority is again one such total order, including empty sorts, and changes no function/relation data.",
+      "depends_on": [
+        "A04",
+        "D07"
+      ],
+      "notes": "N06",
+      "scope": "block",
+      "source_labels": [
+        "lem:ramsey-block-retract"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C42",
+      "name": "The same vertex maps form an actual block endofunctor",
+      "statement": "An original induced embedding preserves named sorts and their within-sort order. Between different sorts both normalized orders compare by the same fixed priority. Therefore the SAME map preserves and reflects the entire normalized structure. Identities and compositions remain their original maps.",
+      "depends_on": [
+        "A04",
+        "C41"
+      ],
+      "notes": "N06",
+      "scope": "block",
+      "source_labels": [
+        "lem:ramsey-block-retract"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C43",
+      "name": "The block endofunctor is strictly idempotent",
+      "statement": "A block-normalized order has exactly its original within-sort restrictions and fixed sort priority; normalizing it a second time reproduces each comparison. All other data are untouched, so B squared equals B on structures and maps.",
+      "depends_on": [
+        "C41"
+      ],
+      "notes": "N06",
+      "scope": "block",
+      "source_labels": [
+        "lem:ramsey-block-retract"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C44",
+      "name": "The full class of block-fixed objects is hereditary",
+      "statement": "Restricting a block order to any induced closed subset retains that sort priority and each restricted within-sort order. Equivalently I12 applies to the same-image inclusion from C42/C43. Thus every induced subobject of a fixed object is fixed.",
+      "depends_on": [
+        "I12",
+        "C42",
+        "C43"
+      ],
+      "notes": "N06",
+      "scope": "block",
+      "source_labels": [
+        "lem:ramsey-block-retract"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C45",
+      "name": "Pullback of an embedding coloring proves normalized Ramsey",
+      "statement": "For fixed A,B choose an original Ramsey C. A coloring on Emb(A,B(C)) pulls back by f mapped to chi(B(f)); B(A)=A. For a monochromatic g:B->C, functoriality gives B(gf)=B(g)f for every f:A->B. Therefore B(g) is the desired normalized copy in the legal fixed host B(C). No embedding-set surjectivity is required.",
+      "depends_on": [
+        "A04",
+        "I12",
+        "C42",
+        "C43"
+      ],
+      "notes": "N06",
+      "scope": "block",
+      "source_labels": [
+        "lem:ramsey-block-retract"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C46",
+      "name": "Functorial sort-block source export",
+      "statement": "C41-C45 prove legality, same-map functoriality, strict idempotence, heredity and Ramsey of the full block-fixed class in the independent A04 setting. No CCO, SAP, clone geometry or coordinate normal forms enter this generic lemma.",
+      "depends_on": [
+        "C41",
+        "C42",
+        "C43",
+        "C44",
+        "C45"
+      ],
+      "notes": "N06",
+      "scope": "block",
+      "source_labels": [
+        "lem:ramsey-block-retract"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C47",
+      "name": "Every non-order code is invariant under actual Qdagger automorphisms",
+      "statement": "By C07 an automorphism lifts to the clone source and all actual quotient terms; its action preserves all actual hidden predicates and equalities. Therefore each fixed unary or binary term code, including repeated-root cases and function-graph equalities, is Aut(Qdagger)-invariant.",
+      "depends_on": [
+        "C07",
+        "C09",
+        "D08"
+      ],
+      "notes": "N07",
+      "scope": "smaller_language",
+      "source_labels": [
+        "cor:ramsey-small-language"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C48",
+      "name": "These invariant codes are finite unions of original atomic types",
+      "statement": "C06 says full one/two-point Qdagger orbits are its complete unary/pair/equality types. A fixed invariant unary/binary code is constant on each such orbit. There are finitely many, so it is a qf finite disjunction of those actual types, retaining equality and same-root instances.",
+      "depends_on": [
+        "C06",
+        "C47"
+      ],
+      "notes": "N07",
+      "scope": "smaller_language",
+      "source_labels": [
+        "cor:ramsey-small-language"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C49",
+      "name": "Delete defined non-order codes without changing any embedding set",
+      "statement": "An embedding preserving the retained original fine colours and safe unary labels preserves and reflects every full original atomic type, hence every C48 definition. Restoring or deleting those code predicates therefore changes no object maps or embedding set. Retained order comparisons are unchanged.",
+      "depends_on": [
+        "C48",
+        "D08"
+      ],
+      "notes": "N07",
+      "scope": "smaller_language",
+      "source_labels": [
+        "cor:ramsey-small-language"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C50",
+      "name": "The actual imaginary age admits the generic block theorem",
+      "statement": "C20 supplies hereditary Ramsey with ALL global orders and the actual finite hidden sorts partition its universe. Thus it discharges A04 for C46, yielding the genuine block-ordered imaginary Ramsey class. The same unexpanded actual hosts remain allowed.",
+      "depends_on": [
+        "C20",
+        "C46"
+      ],
+      "notes": "N07",
+      "scope": "smaller_language",
+      "source_labels": [
+        "cor:ramsey-small-language"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C51",
+      "name": "Read out the block class with the SAME full-code method",
+      "statement": "The finite term lists, domains, actual fine recognition and ALL-embeddings correspondence C17/C21 remain valid when the allowed global orders are block orders. Apply I11 with the block Ramsey class C50. This is the full-code visible block age, rather than an unsupported deletion of arbitrary comparisons.",
+      "depends_on": [
+        "I11",
+        "C17",
+        "C21",
+        "C50"
+      ],
+      "notes": "N07",
+      "scope": "smaller_language",
+      "source_labels": [
+        "cor:ramsey-small-language"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C52",
+      "name": "Only different HIDDEN target-sort comparisons become forced",
+      "statement": "Under a block order two defined term values in different hidden target sorts compare exactly by the fixed sort priority. Their applicability is determined by sorts. Thus every such comparison is qf fixed by tags and may be deleted. This criterion concerns target sorts, not visible root sorts.",
+      "depends_on": [
+        "C41",
+        "D09"
+      ],
+      "notes": "N07",
+      "scope": "smaller_language",
+      "source_labels": [
+        "cor:ramsey-small-language"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C53",
+      "name": "Within-target comparisons remain explicitly retained",
+      "statement": "For two values in the SAME hidden target sort, block normalization preserves their arbitrary within-sort order. Such codes remain in the reduced language, including when the two visible source sorts differ or their roots coincide. No general deletion of these comparisons is inferred from block priority.",
+      "depends_on": [
+        "C52",
+        "D09"
+      ],
+      "notes": "N07",
+      "scope": "smaller_language",
+      "source_labels": [
+        "cor:ramsey-small-language"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C54",
+      "name": "The final reduced code has the same embedding sets as its block full code",
+      "statement": "C49 reconstructs every non-order code from fine colours and safe unary labels. C52 reconstructs every omitted different-target comparison from applicability and priority; C53 retains all other comparisons. Thus an induced map is an embedding of the reduced code exactly when it is an embedding of its full block code.",
+      "depends_on": [
+        "C49",
+        "C52",
+        "C53"
+      ],
+      "notes": "N07",
+      "scope": "smaller_language",
+      "source_labels": [
+        "cor:ramsey-small-language"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C55",
+      "name": "Block reasonableness preserves the full prescribed source expansion",
+      "statement": "Repeat C24/C25 for labels and canonical unexpanded template lifting. The given block order specifies a within-sort order on the image of h(A*). Extend each of these finite orders inside its target sort, then concatenate by the fixed priority. This legal block order of h(B) retains every original source code, so the reduced block expansion is reasonable as well.",
+      "depends_on": [
+        "C24",
+        "C25",
+        "C26",
+        "C41",
+        "C54"
+      ],
+      "notes": "N07",
+      "scope": "smaller_language",
+      "source_labels": [
+        "cor:ramsey-small-language"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C56",
+      "name": "Smaller visible signature source export",
+      "statement": "C51 supplies Ramsey of the full block age and C54 preserves all its embedding sets under the stated deletions. C23/C28 and the within-sort order extension C55 retain reduct-surjectivity, finiteness, precompactness and reasonableness. Original fine colours, safe unary labels and within-target coordinate-term comparisons suffice.",
+      "depends_on": [
+        "C51",
+        "C54",
+        "C55",
+        "C23",
+        "C28"
+      ],
+      "notes": "N07",
+      "scope": "smaller_language",
+      "source_labels": [
+        "cor:ramsey-small-language"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C57",
+      "name": "Diagonal and shared-coordinate codes have real boundary witnesses",
+      "statement": "A one-root tuple (r,c) may have either r<c or c<r in an arbitrary global hidden order, with no distinct visible root pair present. Separately, in the generic UNORDERED two-sort reconstruction interface with no hidden functions or other relations, roots (r,c0),(r,c1) share one actual coordinate and a weakened code omitting cross-root equality permits inconsistent images. In the actual ALL-order signature equality may instead be definable from both comparison directions; no independence or minimality of E alone is claimed.",
+      "depends_on": [
+        "D10"
+      ],
+      "notes": "N08",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:ramsey-template-bijection"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C58",
+      "name": "Different visible tags do not justify deleting a comparison",
+      "statement": "Take two visible tagged roots whose terms have distinct values u,v in the SAME hidden target sort. Two legal block orders can reverse u,v while retaining all tags and other unordered data. Their cross-visible comparison changes and remains an actual code in D09.",
+      "depends_on": [
+        "D09"
+      ],
+      "notes": "N08",
+      "scope": "boundary",
+      "source_labels": [
+        "cor:ramsey-small-language"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C59",
+      "name": "The separate finite original case has a reasonable Ramsey labeling",
+      "statement": "Under A05 each label occurs at most once, so between any labelled finite members there is at most one embedding and every coloring is trivially homogeneous on a suitable JEP host inside labelled Qfin. For an old embedding A->B, homogeneity extends its underlying finite isomorphism to an automorphism of Qfin, which transports the prescribed labels to B. This proves reasonableness and reduct-surjectivity; finite language gives precompactness.",
+      "depends_on": [
+        "A05"
+      ],
+      "notes": "N08",
+      "scope": "finite_case",
+      "source_labels": [
+        "thm:ramsey-general-ap"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C60",
+      "name": "The MI special case is ancillary to the uniform tuple proof",
+      "statement": "D11 records that an actually proved K_s-MI instance permits the singleton coordinate family {K_s}. The general proofs C17-C56 neither require original F to be MI nor use a real-hull or safe-phase algebraicity theorem. The separate source-specific MI branch is owned by B060, and is not re-proved or assumed by this readout.",
+      "depends_on": [
+        "D11"
+      ],
+      "notes": "N08",
+      "scope": "boundary",
+      "source_labels": [
+        "thm:ramsey-general-ap"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C61",
+      "name": "No expansion property or EPPA follows from these Ramsey arrows",
+      "statement": "C34 and C56 prove their stated Ramsey, reasonable and finite expansion conclusions using the actual hidden Ramsey provider and full codes. They make no assertion about all competing expansions in one fixed EP host, canonical minimum language, universal minimal flow or coherent EPPA. Those require the later independent sections.",
+      "depends_on": [
+        "C34",
+        "C56"
+      ],
+      "notes": "N08",
+      "scope": "boundary",
+      "source_labels": [
+        "thm:ramsey-general-ap"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C62",
+      "name": "Finite controls certify code and functor fidelity only",
+      "statement": "The bounded independent finite models test actual map bijections, all-valid-root support completion, block endofunctor identities and retained-comparison boundaries. They do not prove the unbounded Ramsey/HN/forest/CCO, safe terminalisation or original algebraic-closure theorems.",
+      "depends_on": [
+        "C17",
+        "C40",
+        "C46",
+        "C56",
+        "C57",
+        "C58"
+      ],
+      "notes": "N08",
+      "scope": "boundary",
+      "source_labels": [
+        "thm:ramsey-general-ap"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    }
+  ],
+  "source_result_files": [],
+  "additional_result_exports": [
+    "thm:ramsey-general-ap",
+    "lem:ramsey-template-bijection",
+    "unlabelled:sections/ramsey_ap_from_clones.tex:corollary:1",
+    "lem:ramsey-block-retract",
+    "cor:ramsey-small-language"
+  ],
+  "exports": [
+    {
+      "source_label": "thm:ramsey-general-ap",
+      "claims": [
+        "C34"
+      ]
+    },
+    {
+      "source_label": "lem:ramsey-template-bijection",
+      "claims": [
+        "C17"
+      ]
+    },
+    {
+      "source_label": "unlabelled:sections/ramsey_ap_from_clones.tex:corollary:1",
+      "claims": [
+        "C40"
+      ]
+    },
+    {
+      "source_label": "lem:ramsey-block-retract",
+      "claims": [
+        "C46"
+      ]
+    },
+    {
+      "source_label": "cor:ramsey-small-language",
+      "claims": [
+        "C56"
+      ]
+    }
+  ],
+  "auxiliary_exports": [
+    {
+      "source_label": "eq:ramsey-embeddings",
+      "claims": [
+        "C16"
+      ],
+      "source": {
+        "file": "sections/ramsey_ap_from_clones.tex",
+        "anchor": "\\label{eq:ramsey-embeddings}"
+      }
+    }
+  ],
+  "source_files": [
+    {
+      "file": "sections/full_code_tuple_ep_transfer.tex",
+      "git_blob": "0c17201c80dbfa45e222553919f3545c95733c28"
+    },
+    {
+      "file": "sections/ramsey_ap_from_clones.tex",
+      "git_blob": "74c191ad2f16775194c5ef588c7fcbc6cf536a2f"
+    },
+    {
+      "file": "sections/ramsey_clone_sap.tex",
+      "git_blob": "2b14f19885e7109be548a0af73fba14c974dc636"
+    },
+    {
+      "file": "sections/reset_midpoint_order_ep.tex",
+      "git_blob": "d4174bcb790f4a85ca5ae8492f810eeac63a97c8"
+    },
+    {
+      "file": "sections/triangle_fullness.tex",
+      "git_blob": "d25f85dd267577d1af0c6ffb1245809892fe1dc0"
+    },
+    {
+      "file": "sections/v27/06_legacy_finite_covers.tex",
+      "git_blob": "67eda024d68a41c2dab17bf99fe440d6a137af66"
+    },
+    {
+      "file": "sections/v27/07_typed_raw_strong_transition.tex",
+      "git_blob": "6dc7e4c7aa452b179e95cc502b4daf4d2b6592d9"
+    },
+    {
+      "file": "sections/v27/10_typed_unary_terms_return.tex",
+      "git_blob": "7edb9833681c84ab9e15918a004137d7f2c47258"
+    },
+    {
+      "file": "sections/v27/18_unary_hn_transfer.tex",
+      "git_blob": "70ca6cf0482331ddac045512a80dbf70f1feed68"
+    }
+  ],
+  "dependency_firewalls": [
+    {
+      "claims": [
+        "C17"
+      ],
+      "forbid": [
+        "A01",
+        "A04",
+        "A05",
+        "I01",
+        "I02",
+        "I03",
+        "I05",
+        "I08",
+        "I09",
+        "I11",
+        "I12",
+        "I13",
+        "D11"
+      ]
+    },
+    {
+      "claims": [
+        "C34"
+      ],
+      "forbid": [
+        "A04",
+        "A05",
+        "I12",
+        "D11",
+        "C59",
+        "C60"
+      ]
+    },
+    {
+      "claims": [
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40"
+      ],
+      "forbid": [
+        "A01",
+        "A04",
+        "A05",
+        "I01",
+        "I02",
+        "I03",
+        "I08",
+        "I09",
+        "I11",
+        "I12",
+        "I13",
+        "C20",
+        "C22",
+        "C32",
+        "C33",
+        "C34",
+        "D11"
+      ]
+    },
+    {
+      "claims": [
+        "C41",
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46"
+      ],
+      "forbid": [
+        "A01",
+        "A02",
+        "A03",
+        "A05",
+        "I01",
+        "I02",
+        "I03",
+        "I04",
+        "I05",
+        "I06",
+        "I07",
+        "I08",
+        "I09",
+        "I10",
+        "I11",
+        "I13",
+        "D11"
+      ]
+    }
+  ],
+  "application_contracts": [
+    {
+      "consumer": "C33",
+      "lemma": "C32",
+      "discharge": "C01-C04 construct the actual NEW terminal pure-clone Mdagger and its finite MI charts from the AP-only A01 source. C33 later instantiates the parameterized C32 result at that source; A02/A03 are lemma parameters, not additional original-source assumptions."
+    },
+    {
+      "consumer": "C20",
+      "lemma": "I08",
+      "discharge": "Use the actual Mdagger in A02 to discharge terminal source/signature/full-infinite-cover hypotheses for strict support C30/C36. Then C08 discharges the unary-closed selected-sort condition of I09."
+    },
+    {
+      "consumer": "C50",
+      "lemma": "C46",
+      "discharge": "C20 gives the actual imaginary hereditary Ramsey age with ALL global orders and named finite sort partition; it supplies every A04 parameter for the independent block theorem and the SAME instantiated block operation throughout downstream C41-C56, including the target-sort comparison rule C52 and finite within-sort order extension C55."
+    }
+  ],
+  "tasks": [
+    {
+      "id": "T01",
+      "name": "Original AP to the actual terminal clone source and quotient homogeneity",
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Retain exact original AP versus clone SAP scopes and instantiate terminal providers on the NEW Mdagger. Use finite actual unary term FUNCTIONS on every proper input sort, all marked same-root/cross-root equality and order codes, actual qf tuple domains and singleton fine recognition. Ramsey uses ALL embedding maps without cofinality/EP. Block normalization is a legal same-universe strict idempotent endofunctor; remove only defined non-order or different-HIDDEN-target comparisons. The MI branch is separate; no EPPA/EP or Lean certificate follows from finite controls."
+    },
+    {
+      "id": "T02",
+      "name": "Finite proper-coordinate templates and the ALL-embeddings bijection",
+      "claims": [
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Retain exact original AP versus clone SAP scopes and instantiate terminal providers on the NEW Mdagger. Use finite actual unary term FUNCTIONS on every proper input sort, all marked same-root/cross-root equality and order codes, actual qf tuple domains and singleton fine recognition. Ramsey uses ALL embedding maps without cofinality/EP. Block normalization is a legal same-universe strict idempotent endofunctor; remove only defined non-order or different-HIDDEN-target comparisons. The MI branch is separate; no EPPA/EP or Lean certificate follows from finite controls."
+    },
+    {
+      "id": "T03",
+      "name": "Actual fine readout and proper-sort Ramsey application",
+      "claims": [
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22"
+      ],
+      "depends_on": [
+        "T02"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Retain exact original AP versus clone SAP scopes and instantiate terminal providers on the NEW Mdagger. Use finite actual unary term FUNCTIONS on every proper input sort, all marked same-root/cross-root equality and order codes, actual qf tuple domains and singleton fine recognition. Ramsey uses ALL embedding maps without cofinality/EP. Block normalization is a legal same-universe strict idempotent endofunctor; remove only defined non-order or different-HIDDEN-target comparisons. The MI branch is separate; no EPPA/EP or Lean certificate follows from finite controls."
+    },
+    {
+      "id": "T04",
+      "name": "Reasonableness and the general AP Ramsey expansion",
+      "claims": [
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34"
+      ],
+      "depends_on": [
+        "T01",
+        "T02",
+        "T03"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Retain exact original AP versus clone SAP scopes and instantiate terminal providers on the NEW Mdagger. Use finite actual unary term FUNCTIONS on every proper input sort, all marked same-root/cross-root equality and order codes, actual qf tuple domains and singleton fine recognition. Ramsey uses ALL embedding maps without cofinality/EP. Block normalization is a legal same-universe strict idempotent endofunctor; remove only defined non-order or different-HIDDEN-target comparisons. The MI branch is separate; no EPPA/EP or Lean certificate follows from finite controls."
+    },
+    {
+      "id": "T05",
+      "name": "Functorial same-support coordinate completion",
+      "claims": [
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40"
+      ],
+      "depends_on": [
+        "T02"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Retain exact original AP versus clone SAP scopes and instantiate terminal providers on the NEW Mdagger. Use finite actual unary term FUNCTIONS on every proper input sort, all marked same-root/cross-root equality and order codes, actual qf tuple domains and singleton fine recognition. Ramsey uses ALL embedding maps without cofinality/EP. Block normalization is a legal same-universe strict idempotent endofunctor; remove only defined non-order or different-HIDDEN-target comparisons. The MI branch is separate; no EPPA/EP or Lean certificate follows from finite controls."
+    },
+    {
+      "id": "T06",
+      "name": "Independent same-map sort-block endofunctor",
+      "claims": [
+        "C41",
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Retain exact original AP versus clone SAP scopes and instantiate terminal providers on the NEW Mdagger. Use finite actual unary term FUNCTIONS on every proper input sort, all marked same-root/cross-root equality and order codes, actual qf tuple domains and singleton fine recognition. Ramsey uses ALL embedding maps without cofinality/EP. Block normalization is a legal same-universe strict idempotent endofunctor; remove only defined non-order or different-HIDDEN-target comparisons. The MI branch is separate; no EPPA/EP or Lean certificate follows from finite controls."
+    },
+    {
+      "id": "T07",
+      "name": "Definitional smaller language and block reasonableness",
+      "claims": [
+        "C47",
+        "C48",
+        "C49",
+        "C50",
+        "C51",
+        "C52",
+        "C53",
+        "C54",
+        "C55",
+        "C56"
+      ],
+      "depends_on": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T06"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Retain exact original AP versus clone SAP scopes and instantiate terminal providers on the NEW Mdagger. Use finite actual unary term FUNCTIONS on every proper input sort, all marked same-root/cross-root equality and order codes, actual qf tuple domains and singleton fine recognition. Ramsey uses ALL embedding maps without cofinality/EP. Block normalization is a legal same-universe strict idempotent endofunctor; remove only defined non-order or different-HIDDEN-target comparisons. The MI branch is separate; no EPPA/EP or Lean certificate follows from finite controls."
+    },
+    {
+      "id": "T08",
+      "name": "Finite source, MI/MR and diagnostic scope boundaries",
+      "claims": [
+        "C57",
+        "C58",
+        "C59",
+        "C60",
+        "C61",
+        "C62"
+      ],
+      "depends_on": [
+        "T02",
+        "T04",
+        "T05",
+        "T06",
+        "T07"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Retain exact original AP versus clone SAP scopes and instantiate terminal providers on the NEW Mdagger. Use finite actual unary term FUNCTIONS on every proper input sort, all marked same-root/cross-root equality and order codes, actual qf tuple domains and singleton fine recognition. Ramsey uses ALL embedding maps without cofinality/EP. Block normalization is a legal same-universe strict idempotent endofunctor; remove only defined non-order or different-HIDDEN-target comparisons. The MI branch is separate; no EPPA/EP or Lean certificate follows from finite controls."
+    }
+  ],
+  "controls": [
+    {
+      "id": "K01",
+      "check": "Independent finite three-sort partial-unary hosts with actual inverse transition maps enumerate ALL visible full-code embeddings and hidden support embeddings, including shared coordinates, diagonal order codes, selected root subsets, empty roots and orphan host coordinates; compare maps exactly."
+    },
+    {
+      "id": "K02",
+      "check": "All-valid-root coordinate completion checks same-host support equality, strict idempotence, natural extensions and bounds. Exhaustive small global orders and closed restrictions test legal block normalization, same-map embedding preservation and different-visible/same-hidden-target comparison boundaries. No unbounded Ramsey theorem is certified."
+    }
+  ],
+  "overview_mermaid": [
+    "flowchart TD",
+    "  A[\"Original AP plus HOM CCO\"] --> C[\"Actual terminal pure-clone source\"]",
+    "  C --> H[\"Proper-sort ALL-orders hidden Ramsey age\"]",
+    "  C --> Q[\"Actual compatible MI tuple fine reduct\"]",
+    "  T[\"Finite actual term functions and full codes\"] --> E[\"All-embedding template bijection\"]",
+    "  H --> R[\"Finite reasonable AP Ramsey readout\"]",
+    "  Q --> R",
+    "  E --> R",
+    "  E --> F[\"Functorial coordinate completion\"]",
+    "  H --> B[\"Block-order endofunctor\"]",
+    "  B --> L[\"Defined-code smaller visible language\"]"
+  ],
+  "overview_notes": [
+    "The template/completion branch needs no Ramsey, cofinality or EP input. Proper-coordinate term functions are finite as FUNCTIONS, not just at one image.",
+    "The original AP-only source is replaced before terminal HN is instantiated; actual clone stability is supplied by B060. No original SAP is silently assumed.",
+    "Different hidden TARGET sorts, rather than different visible tags, determine which comparisons become forced after block normalization.",
+    "The source-specific MI/real-hull specialization is separate from the general tuple construction. All six already exposed external receiving obligations remain; no new external record is added."
+  ],
+  "article_feedback_intro": "The five scoped source results need no mathematical statement repair after retaining the precise actual-provider contracts below. These proof and scope clarifications are queued for the human article pass; frozen TeX is unchanged.",
+  "article_feedback": [
+    {
+      "id": "F01",
+      "kind": "PROOF_PROVIDER_PRECISION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/ramsey_ap_from_clones.tex",
+        "anchor": "finite hidden unary-term normal forms"
+      },
+      "finding": "The tuple-code list needs finitely many actual unary term FUNCTIONS on every proper-coordinate source sort, not merely finite singleton closures or the earlier real-source specialization.",
+      "proposed_article_change": "Cite the strict finite-function argument of typed-unary closure explicitly, retaining every same-root/cross-root equality and order comparison.",
+      "caller_effect": "No new premise; exact proved support I06 C12 is selected for all proper input sorts.",
+      "proof_claims": [
+        "C09",
+        "C10",
+        "C17"
+      ]
+    },
+    {
+      "id": "F02",
+      "kind": "PROOF_EXPANSION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/ramsey_ap_from_clones.tex",
+        "anchor": "Homogeneity and canonical quotient-term lifting"
+      },
+      "finding": "The compressed reasonable-expansion argument uses actual Qdagger homogeneity and the clone lift to produce a canonical unexpanded template embedding before extending the order.",
+      "proposed_article_change": "Insert the one-clone-per-owner descent proof and extend the chosen finite order on the complete generated support, including nonselected term values.",
+      "caller_effect": "No generic claim that original fine data determine order codes; the actual marked old source expansion is preserved.",
+      "proof_claims": [
+        "C06",
+        "C07",
+        "C25",
+        "C27"
+      ]
+    },
+    {
+      "id": "F03",
+      "kind": "SOURCE_SCOPE_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/ramsey_ap_from_clones.tex",
+        "anchor": "MI and MR are the same Ramsey construction"
+      },
+      "finding": "The one-coordinate F-MI specialization uses the separate original real-hull and all-finite-base safe-phase algebraicity-preservation argument. The uniform Ramsey theorem does not use that branch.",
+      "proposed_article_change": "Point explicitly to the independently expanded ancillary MI branch of clone_tuple_geometry; retain its source-specific hypotheses and keep it outside the main readout dependency chain.",
+      "caller_effect": "No F-MI or real-hull premise is added to the general AP Ramsey theorem.",
+      "proof_claims": [
+        "C34",
+        "C60"
+      ]
+    }
+  ],
+  "review": {
+    "date": "2026-10-29",
+    "source_unchanged": true,
+    "source_signature_repairs": 0,
+    "unexpanded_provider_labels": [],
+    "proof_status": "HUMAN_EXPANDED_NOT_LEAN; author, two independent concrete peer audits and parent mathematical synthesis PASS. Final shared handoff checks are performed by the parent; no Lean certification claimed.",
+    "independent_reviews": [
+      "Author read all five source results and the exact full-code/sort-restriction/normalizer providers, then expanded all 62 claims and full notes.",
+      "Independent B060-author peer read all 62 claims, assumptions/imports, entire notes and finite-control source; actual marked source binding, two-way embedding bijection, same-age reasonableness, support completion and hidden-target-sort reduction PASS.",
+      "Independent MI-scope peer read all 62 claims/notes/providers/DAG and ran the controls; corrected UNORDERED equality-boundary and inherited-HN/forest versus global-manifest scope verified PASS.",
+      "Parent independently read every claim and full proof note, reviewed actual control enumeration, and strengthened the separate nonempty-root orphan-host diagnostic before final delivery checks."
+    ],
+    "boundaries": [
+      "No original SAP or terminality assumed",
+      "No cofinality/EP in Ramsey branch",
+      "ALL marked diagonal and cross-root equality/order codes",
+      "Finite term FUNCTIONS for each proper input sort",
+      "Actual same-expanded-age reasonableness",
+      "Different hidden TARGET sort deletion only",
+      "MI specialization separate from main theorem",
+      "No new external binding or Lean certification",
+      "Generic UNORDERED shared-coordinate boundary does not assert equality-code minimality in the actual ALL-order signature",
+      "Inherited Ramsey HN/forest obligations kept distinct from the GLOBAL six-entry manifest containing separate EPPA HKN entries"
+    ]
+  }
+}
