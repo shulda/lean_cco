@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "request_id": "20261031_chat2_B062_pivotgate_71d1d76_r462_d93fc",
+  "actor_id": "chat-2",
+  "project_id": 5,
+  "policy_revision": 14,
+  "operation": "event",
+  "expected_revision": 462,
+  "event": "checkpoint",
+  "data": {
+    "package_id": "B062",
+    "head_sha": "71d1d7652759032704b4dfec47059ba80d2f88ce",
+    "pr_number": 68,
+    "observed_ci": {
+      "run_id": 41226930326,
+      "head_sha": "71d1d7652759032704b4dfec47059ba80d2f88ce",
+      "conclusion": "success",
+      "axiom_audit": "allowlist"
+    }
+  }
+}
