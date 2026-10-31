@@ -171,3 +171,61 @@ actual main269b1acc unchanged. I expressly confirmed the actual approval
 remains valid for the expected-head preserving merge under this single lock.
 The lock must remain until green actual-main CI/audit and atomic promotion;
 no mathematical acceptance or dependency release was pre-asserted.
+
+## Actual resulting main, promotion and broker receipt
+
+I personally fetched the actual preserving merge commit
+`f42f098e852b4cea8cb09b9ada6b1145a6138dd4`. Its exact tree remains
+`6eb9502b7322e10dc36e2766a2f920db235fac38`; its ordered parents are actual
+baseline `269b1acc05c64aca74c2bc5f238b9c75fb3af223` and approved PR head
+`0ccc373bb554ffd6de13d03b1ec5b80bae41cdaa`. Fresh main still names this commit.
+
+I personally fetched completed successful resulting-main CI `41177688044`,
+actual job `124468532094`, and its complete 3,071,083-character log. All 187
+tests passed. The standard three-axiom audit checked 28,723 CCO declarations;
+all three complete project guards checked 1,619 source modules; all four EPPA
+guards checked 269 at the exact recorded provider pin; all four Ramsey guards
+checked 106 at the exact recorded subtree. There were no error annotations.
+I did not rerun any build, test or audit.
+
+I personally read the whole actual STATE400 published by atomic
+`promote_registry` at coordination
+`bcaa04c329066df5ca0381b6bfcea35148d16b36`. Every old package object is exactly
+preserved; all 48 remain accepted. The entire STATE399 history and completed
+infrastructure prefix are preserved. The completed infrastructure record
+retains the actual reviewed lock, manifest, identities and PR CI and appends
+the actual resulting-main commit and CI above. Every other global field is
+unchanged except the intended revision/policy update and cleared lock.
+Policy14 and Chat mode are active; claims are not paused. The sixteen added
+records B049–B064 are each only AVAILABLE, with a null owner. They are not
+accepted Lean batches and do not discharge pending external forest obligations.
+
+I also personally fetched the real root-only status request at request-branch
+commit `c84192178e2d70e4c65bb899177b2444c2147011` and its actual successful
+coordination workflow `41177954505`, job `124469312158`, including the complete
+11,576-character log. The log checks out trusted actual main f42f098e, processes
+one request, and records `no_change` at revision400. The request is genuinely
+`root`/project3, operation `status` with `verify_ci: true`; it makes no Chat or
+mathematical claim.
+
+The immutable receipt is at coordination
+`50d2d278514151b23af31e5ce125a949ae441645`, whose sole parent is the actual
+promotion commit bcaa04c3. Its only changed files are STATUS and
+`formalization/coordination/requests/results/root/20261031_release64_bootstrap_e8643a2c.json`.
+I checked the actual Git trees: request blob
+`7dbf0e9f2a14031514b0db92873a8a2117397bf3` exactly matches the receipt binding,
+and actual full STATE blob `4ce1751cdb4443d998d431beb3bf905ec44a5a0a` exactly
+matches its projected state binding. The complete post-request STATE equals
+the complete promoted STATE400; the broker made no STATE write.
+
+The receipt verifies actual main CI41177688044/head f42f098e and reports
+STATE400/policy14/chat, no pause and no lock. STATUS reports 48 accepted,
+no active claims and the dependency-ready frontier B050 and B062. All three
+Chat recommendations currently show B050 because they share one unclaimed
+snapshot; these recommendations are not leases or actual assignments. The
+real broker must recompute the frontier on each actual claim. Root remains
+inactive in Chat mode. No Chat identity has been impersonated.
+
+My actual non-author review of this publication and its completed deployment
+is clear. This final receipt confirms a usable released queue and genuine
+root health check, not mathematical acceptance of any of the sixteen scopes.
