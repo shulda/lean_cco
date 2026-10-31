@@ -1,4 +1,5 @@
 import CCO.TerminalLattice.PositiveBranchChain
+import CCO.TerminalLattice.ReversePositiveWord
 import CCO.RawExact.CyclicDeletion
 import Mathlib.Data.List.OfFn
 
@@ -151,5 +152,78 @@ theorem original_positive_branch_chain_cyclic_values
       exact original_cyclicNext_castSucc (by omega : 0 < n) t
     have hThis := hEdges t
     simpa only [ht, hNext] using hThis
+
+
+/-- Genuine C27/C30 cyclic witness from the established same-sort
+STRONG complementary-path spectrum. The first n ACTUAL old positive
+branches, in their literal cyclic order, have the full diversity
+spectrum K°. A nonempty fine menu D of the CLOSING branch lies in
+K°, so the already proved C30 word-closure theorem can be applied
+to the reverse closing word, whose same-sort STRONG profile is exact.
+
+This constructs ONE simultaneous ORIGINAL real valuation for every
+cyclic root, satisfying EVERY correctly oriented old positive word.
+No original CCO completion, SAP at the quotient level, unproved
+cycle-realization provider or invented identity factor is used.
+
+To instantiate the original sparse network, C27 must still identify
+its actual projected oriented branches and PROVE this precise
+complementary spectrum from its centre/spoke or girth/label geometry.
+-/
+theorem original_saturated_positive_cyclic_values
+    (H : HomogeneousSource S G) (sap : AgeSAP S)
+    {i : ι} (K : ParityHasse.Original.ColourEq S i)
+    {n : Nat} (hn : 0 < n)
+    (branches : Fin (n+1) → PositiveWord S i i)
+    (D : S.Menu i i)
+    (hD : D.Nonempty)
+    (hDinside : D ⊆ originalEquivDiversityPalette S K)
+    (hClosing : D ⊆
+      PositiveWord.profile S (branches (Fin.last n)))
+    (hSpectrum : originalPositiveStrongPath S
+      ((List.ofFn (fun k : Fin n => branches k.castSucc)).map
+        (PositiveWord.profile S)) =
+      some (originalEquivDiversityPalette S K)) :
+    ∃ values : Fin (n+1) → X i,
+      ∀ k : Fin (n+1),
+        PositiveWord.represented S (branches k) (values k)
+          (values (CCO.cyclicNext (Nat.succ_pos n) k)) := by
+  cases hPath : (List.ofFn (fun k : Fin n => branches k.castSucc)) with
+  | nil =>
+      have hZero : n = 0 := by
+        have hLength := congrArg List.length hPath
+        simpa only [List.length_ofFn, List.length_nil] using hLength
+      omega
+  | cons first rest =>
+      have hSpectrum' :
+          originalPositiveStrongPath S
+              ((first :: rest).map (PositiveWord.profile S)) =
+            some (originalEquivDiversityPalette S K) := by
+        simpa only [hPath] using hSpectrum
+      have hClosingReverse : D ⊆
+          PositiveWord.profile S
+            (originalPositiveWordReverse S (branches (Fin.last n))) := by
+        rw [originalPositiveWordReverse_same_sort_profile
+          S H sap (branches (Fin.last n))]
+        exact hClosing
+      obtain ⟨x,y,hChain,hReverse⟩ :=
+        original_saturated_positive_path_branch_values
+          S H sap K first rest
+          (originalPositiveWordReverse S (branches (Fin.last n)))
+          D hD hDinside hClosingReverse hSpectrum'
+      have hChainActual :
+          originalPositiveBranchChain S
+            (List.ofFn (fun k : Fin n => branches k.castSucc)) x y := by
+        rw [hPath]
+        exact hChain
+      have hLastActual :
+          PositiveWord.represented S (branches (Fin.last n)) y x := by
+        change (TRel.converse
+          (PositiveWord.represented S (branches (Fin.last n)))) x y
+        rw [← originalPositiveWordReverse_represented
+          S (branches (Fin.last n))]
+        exact hReverse
+      exact original_positive_branch_chain_cyclic_values
+        S branches x y hChainActual hLastActual
 
 end CCO.TerminalLattice
