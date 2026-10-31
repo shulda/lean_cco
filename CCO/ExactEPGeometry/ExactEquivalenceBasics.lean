@@ -56,6 +56,9 @@ theorem markedTrace_identity_iff
     refine ⟨ha,ha,x,x,rfl,?_⟩
     simpa [taggedColour, hnone] using hdiag
 
+section OriginalDiagonal
+include H
+
 /-- In an ACTUAL original transitive homogeneous named sort,
 one invariant witnessed diagonal already contains the WHOLE original
 logical identity. This uses the original group action, not a quotient
@@ -68,6 +71,8 @@ theorem original_invariant_reflexive_of_one
   intro y
   obtain ⟨g,hgy⟩ := S.original_sort_transitive_of_homogeneous H i x y
   simpa only [hgy] using hInv g x x hxx
+
+end OriginalDiagonal
 
 /-- C31 actual one-character-step application. A witnessed diagonal in
 the current marked trace of the REAL source exact D implies:
