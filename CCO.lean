@@ -1681,6 +1681,7 @@ import CCO.TerminalLattice.OptionalPositiveNetwork
 import CCO.TerminalLattice.SparseWordNetwork
 import CCO.TerminalLattice.OptionalPositiveCycles
 import CCO.TerminalLattice.OptionalPositiveLengths
+import CCO.TerminalLattice.OptionalPositiveReadout
 import CCO.TerminalLattice.ReversePositiveWord
 import CCO.TerminalLattice.SparseCycleProjectionEdges
 import CCO.TerminalLattice.PositiveOccurrenceLength
