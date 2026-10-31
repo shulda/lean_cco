@@ -49,7 +49,7 @@ publication does not justify claiming an unaccepted dependency or a speculative
 third implementation. All sixteen packages are release candidates, not accepted
 mathematical implementations.
 
-## Decision pending
+## Frozen publication control
 
 The frozen publication was supplied as native
 `2a93994086e1bbf310302767b0986cdd248d8637`, tree
@@ -105,7 +105,52 @@ mathematical correctness. No remaining publication source blocker found.
 Actual public baseline coordination
 `ef4513b61ec9e7e97f79f019532b1d65c506869d` was personally fetched in full:
 STATE398/policy13/chat,48ACCEPTED and no active claim or integration lock.
-Final PR66 CI41177115150/job124466845080 was in progress when inspected.
-Approval is withheld pending its successful exact-head log, fresh refs and
-the genuine actual prospective/public infrastructure lock. This conditional
-report authorizes no public STATE event, acceptance or claim.
+
+## Actual exact-head CI and prospective lock
+
+I personally fetched completed successful PR66 CI41177115150 and actual
+job124466845080, with every job step successful, and retrieved its complete
+3,072,117-character log. All187 tests passed; the64-package generator/check and
+all56 module controls completed. The forest diagnostic explicitly retained its
+unbound external theorem. Project build and audit each completed4293 jobs;
+the audit checked28723 CCO declarations against only
+propext/Classical.choice/Quot.sound. All three project guards checked1619
+actual parts and current sources; all four EPPA guards checked269 at exact
+pin`cd358cde844d5419fd43f30c441511927e09142f`; all four Ramsey guards checked106
+at exact subtree`374241ce3751715c90b12c0b071f36026819ad4a`. There were no error
+annotations or rebuilt CCO modules. I ran no local test/build/audit.
+
+Actual synthetic checkout`37ffbeeabe1724df2f722ae1eccf916ae0e75d99` has the
+same exact final native/public tree`6eb9502b7322e10dc36e2766a2f920db235fac38`,
+with ordered parents baseline269b1acc and final PR head0ccc373b. Fresh GitHub
+reads confirmed PR66 OPEN/unmerged at that exact head/base and actual main
+still269b1acc; coordination remained the exact ef4513b6 snapshot above.
+
+I personally read the actual completed `release64-start-draft.json` and complete
+parsed `release64-state399-candidate.json`. Saved old STATE398 has exact actual
+Git blob`6a58c20f1629567bb68ca71e07211da9fba2c980`, independently matched against
+the actual coordination Git tree. Its canonical SHA256 is
+`3f04b76378213a1f7874ac811ab8256d72c3e96afd87c2ca5a54a7830ad40e4d`.
+The prospective STATE399 preserves all48 records, the complete old history and
+every other global field, including Chat mode. It leaves policy_revision13 and
+adds only the sole root-held infrastructure lock/event and one revision. The
+lock binds actual PR66/head/base, true CI above, my actual review identity and
+the full manifest with the four independently checked digests. It releases no
+new mathematical dependency before actual resulting-main CI and promotion.
+
+## Actual decision
+
+I, actual registered non-author `/root/reviewer_recovery_control`, APPROVE
+exact PR66 head`0ccc373bb554ffd6de13d03b1ec5b80bae41cdaa` and the actual
+personally reviewed prospective infrastructure lock. I explicitly endorse the
+`review.summary` and `review.independence` text in `release64-start-draft.json`
+as my own actual decision. No source/provenance, publication or CI blocker
+remains. Earlier conditional reports were not approvals.
+
+This approves publication of prepared scopes, not sixteen new Lean proofs,
+the1044 human claims' mathematical correctness or discharge of the pending
+licensed forest adapter. Publish this report unaltered before CAS. I will
+personally recheck actual public STATE399 before expected-head preserving
+merge; actual resulting-main CI/audit must then pass before the single atomic
+manifest-bound `promote_registry` adds only16 unowned AVAILABLE records. All
+old acceptances/history, identities, Chat mode and source pin remain intact.
