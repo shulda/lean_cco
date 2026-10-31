@@ -1,5 +1,5 @@
 import CCO.TerminalLattice.SparseAllCycleHom
-import CCO.StrongExact.CycleCompletion
+import CCO.TerminalLattice.OriginalCCOUniverseBridge
 
 /-!
 # B050 C34: ONE actual original CCO completion of the entire sparse network
@@ -59,8 +59,10 @@ theorem oldSparseWordDiagram_strongCompletion_of_original_CCO
     (hN : 0 < N)
     (hGirth : r * (N-1) + 1 ≤ g) :
     (oldSparseWordDiagram S H sap W spoke words).HasStrongCompletion := by
+  have ccoZero : SemanticCCO.{u,v,0,w} S :=
+    originalSemanticCCO_finite_universe_zero S cco
   apply (PartialDiagram.strongCompletion_iff_cycles_of_SAP_CCO
-    H sap cco (oldSparseWordDiagram S H sap W spoke words)).2
+    H sap ccoZero (oldSparseWordDiagram S H sap W spoke words)).2
   exact oldSparseWordDiagram_all_cyclesHom
     S H sap K W spoke words menus hSpoke hWords hMenus hPowers hN hGirth
 
