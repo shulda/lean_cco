@@ -340,11 +340,8 @@ class ProfileDeploymentTests(unittest.TestCase):
             with self.subTest(change=change), self.assertRaises(ValueError):
                 q.execution_profile_manifest(self.registry, self.old, board, policy)
 
-    def test_adding_fourth_worker_preserves_live_claims_without_draining_the_pool(self):
+    def addition(self, state):
         from configure_execution_profiles import add_worker
-        state = self.promote()
-        state = q.transition(self.registry, self.policy, state, 4, 'claim',
-            {'actor_id': 'chat-1', 'package_id': 'B002', 'base_main_sha': 'a' * 40, 'base_ci': ci()})
         new, manifest = add_worker(self.registry, self.policy, 4)
         locked = q.transition(self.registry, self.policy, state, 4, 'start_infrastructure', {
             'actor_id': 'chat-1', 'head_sha': 'd' * 40, 'pr_number': 72,
@@ -353,6 +350,14 @@ class ProfileDeploymentTests(unittest.TestCase):
             'profile_deployment': manifest, 'review': {'actor_id': 'chat-2', 'head_sha': 'd' * 40,
                 'approved': True, 'summary': SUMMARY,
                 'independence': {**independence(), 'identity': self.policy['actors']['chat-2']['identity']}}})
+        return new, locked
+
+    def test_adding_fourth_worker_preserves_live_claims_without_draining_the_pool(self):
+        from configure_execution_profiles import add_worker
+        state = self.promote()
+        state = q.transition(self.registry, self.policy, state, 4, 'claim',
+            {'actor_id': 'chat-1', 'package_id': 'B002', 'base_main_sha': 'a' * 40, 'base_ci': ci()})
+        new, locked = self.addition(state)
         result = q.promote_profiles(self.registry, self.policy, self.registry, new, locked, 4,
             {'actor_id': 'chat-1', 'head_sha': 'd' * 40, 'integration_commit': 'e' * 40,
              'main_ci': ci('e' * 40)})
@@ -366,6 +371,23 @@ class ProfileDeploymentTests(unittest.TestCase):
             q.promote_profiles(self.registry, self.policy, self.registry, new, locked, 4,
                 {'actor_id': 'chat-1', 'head_sha': 'd' * 40, 'integration_commit': 'e' * 40,
                  'main_ci': ci('e' * 40), 'target_mode': 'work'})
+
+    def test_adding_worker_does_not_resume_a_pool_paused_for_actual_handover(self):
+        state = self.promote()
+        state = q.transition(self.registry, self.policy, state, 4, 'claim',
+            {'actor_id': 'chat-1', 'package_id': 'B002', 'base_main_sha': 'a' * 40, 'base_ci': ci()})
+        state = q.transition(self.registry, self.policy, state, 4, 'pause_claims',
+            {'actor_id': 'chat-1', 'user_authorized': True, 'summary': SUMMARY})
+        new, locked = self.addition(state)
+        result = q.promote_profiles(self.registry, self.policy, self.registry, new, locked, 4,
+            {'actor_id': 'chat-1', 'head_sha': 'd' * 40, 'integration_commit': 'e' * 40,
+             'main_ci': ci('e' * 40)})
+        self.assertTrue(result['claims_paused'])
+        self.assertEqual(result['packages'], state['packages'])
+        self.assertEqual(result['execution_mode'], state['execution_mode'])
+        with self.assertRaisesRegex(ValueError, 'paused'):
+            q.transition(self.registry, new, result, 6, 'claim', {'actor_id': 'chat-3',
+                'package_id': 'B003', 'base_main_sha': 'a' * 40, 'base_ci': ci()})
 
 
 if __name__ == '__main__':

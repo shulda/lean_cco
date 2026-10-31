@@ -230,7 +230,8 @@ def promote(q, previous_registry, previous_policy, registry, policy, state, proj
               'Adding a worker preserves active ownership; switch modes with an explicit handover')
     result = deepcopy(state)
     result.update(policy_revision=policy['revision'], execution_mode=target,
-                  claims_paused=False, integration_lock=None, revision=state['revision'] + 1)
+                  claims_paused=state.get('claims_paused', False), integration_lock=None,
+                  revision=state['revision'] + 1)
     result.setdefault('infrastructure_integrations', []).append({**deepcopy(lock),
         'integration_commit': data['integration_commit'], 'main_ci': deepcopy(data['main_ci'])})
     result.setdefault('history', []).append({'revision': result['revision'], 'project_id': project,
