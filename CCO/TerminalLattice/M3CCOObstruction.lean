@@ -41,8 +41,7 @@ private def originalEquivWordExact {i : ι}
   intro w hm
   have heq : w = word := by simpa only [List.mem_singleton] using hm
   subst w
-  rw [hw]
-  exact E.val.refl a
+  exact Eq.mp (congrFun (congrFun hw a) a).symm (E.val.refl a)
 
 private theorem originalEquivWordExact_evaluate {i : ι}
     (E : ColourEq S i) (word : RawWord S i i)
