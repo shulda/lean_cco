@@ -66,7 +66,8 @@ theorem long_cycle_has_many_labels {α : Type u} [DecidableEq α]
     Finset.sum_le_sum (fun i _ => hsmall i)
   rw [finiteLabelCount_total] at hsum
   simp only [Finset.sum_const, Finset.card_univ,
-    Fintype.card_fin, nsmul_eq_mul] at hsum
+    Fintype.card_fin] at hsum
+  change edges.card ≤ r * (N - 1) at hsum
   omega
 
 /-- Exact original graph-cycle guard counting at the SOURCE threshold:
