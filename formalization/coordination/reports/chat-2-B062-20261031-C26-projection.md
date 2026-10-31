@@ -1,0 +1,28 @@
+# CCO chat-project:cco-chat-2 — B062 exact RAW projection WIP (2026-10-31)
+
+**Author** project_id 5, actor_id `chat-2`, stable identity `chat-project:cco-chat-2`. Sole original B062 author. This is an author progress report, **not** submission, approval, or independent review.
+
+## Live ownership and verified starting point
+
+- B062 effective claim since STATE revision 402, `IN_PROGRESS`, draft PR [#68](https://github.com/shulda/lean_cco/pull/68), own branch `chat/chat-2/B062`; no integration lock, no extra batch claim.
+- Frozen source commit `490c3f36d85db5a0b3ced0598e6c431825254ec5`, base `main` `f42f098e852b4cea8cb09b9ada6b1145a6138dd4`. No source/API/toolchain/pin edits.
+- Prior genuine C10/C22/C47 source one-step results, original exact positive powers and finite stabilization C32, one-step exact-equivalence C29 and join C30 are on PR. For their exact claims and guards see earlier coordination reports (especially `chat-2-B062-20261031-C32-stable-powers.md`). They are NOT full source exports across arbitrary towers.
+- **Actual green PR checkpoint** `c15b1ac0ac126b9f0734061e9d67b690c35d5587`, [CI run 41205983574](https://github.com/shulda/lean_cco/actions/runs/41205983574), job `124551039740`, full project Lean build and source/provider guards successful; audited **28,846 CCO declarations**, only `propext`, `Classical.choice`, `Quot.sound`.
+- Broker accepted this as checkpoint **STATE rev 430**, receipt `formalization/coordination/requests/results/chat-2/20261031_1436_chat2_B062_projectedwords_green_a72e41c9.json`, matching Git STATE blob `334c1ec79600791ad7fda0fd47dc0281afd32e2a`.
+
+## New actual source-to-Lean map
+
+- `CCO/ExactEPGeometry/ProjectedWords.lean`: `ProjectedWords.atom_iff` uses the **actual** binary name map and its injectivity to prove both directions on current points. `point_eq_iff` uses the real full-carrier bijection, so equality is not a diversity relation. `forgetWord` erases a correctly typed current RAW word to its original RAW word via the literal `UnaryReduct`. `forgetWord_forward` transports all original intermediate actual witnesses. `forgetProfile_forward` retains every finite word restriction, including empty Top, and `forgetExact` constructs a nonempty original RAW exact profile from an actually witnessed current profile. **Only forward containment is proved.** The reverse would require all the specified middle current types and the real nonempty (TP) provider from B062 C22, not merely a colour-algebra formal identity.
+- `CCO/ExactEPGeometry/ProjectedHistory.lean`: directly instantiates the above construction on the ACCEPTED `Towers.CurrentSource.historyReduct`, an actual composite of certified `ActualStep` source-to-source projections. This gives `atom_iff`, `point_eq_iff`, `word_forward`, `profile_forward`, and `exact_forget` for **any recorded finite actual source history**, no invented step or quotient SAP. Exact head `ebf644260bfac1d5c069497aa3b4d1e7d5b8dfe5`, [CI 41206325448](https://github.com/shulda/lean_cco/actions/runs/41206325448) **success**, job `124552058623`, full project and audit **28,852 declarations**, same allowlist. An append-only checkpoint request `chat-2/20261031_1442_chat2_B062_history_projection_53b7e1c2` was submitted; check its receipt before claiming effectiveness.
+- `CCO/ExactEPGeometry/ActualUnaryTrace.lean`: **new WIP**, head `c2707d100d65bc730b1801f02f519e9dea692b9e`, [CI 41206769395](https://github.com/shulda/lean_cco/actions/runs/41206769395) pending at this report. It instantiates the actual `SourceAge.UnarySource.Identification` and `actualProjection`, shows that a genuine current child atom and current nil identity are exactly the real old atomic/identity marked traces on the source's actual child pair, and constructs old `NonemptyExact` witness profiles for each. It further instantiates the one-step current exact-profile FORWARD forgetful theorem. No certification before the exact-head build and audit.
+
+## Source obligation status and next proof
+
+- C23 and C26: real current atom/identity base and current-to-original forward word map are addressed; general current RAW word reverse trace equality remains unproved.
+- C24/C25/C27/C28: prove the reverse direction with the real `marked_trace_product` (TP), **requiring nonempty input traces at each specified intermediate child sort**, then finite exact presentation intersections and induction along genuine `ActualStep` histories. No conditional provider as conclusion.
+- C29–C33: actual current exactness, exact equivalence lattice restriction/join/surjectivity still need all source instances. Original finite stable exact positive powers and one-stage trace equality for a preexisting original RAW lift are already proved; they do not imply arbitrary current exact lift existence.
+- C34–C37: abstract `LargestLift` right adjunction is green, still requires above real exact-lattice restriction instance before being a canonical **original** source lift.
+- C38–C64: original pivot/parity/gates, exact type supports and label common kernel remain open at full prefix scope.
+- C65–C105, C106–C112: full AP-only original quotient-safe tower, real retained/discarded steps, global finite-age converse, conditioned bridge I11 after projected-gate exactness C82, terminality and correctly scoped rank/diagnostics remain open.
+
+The eight frozen source results, thirteen auxiliary equations, expanded 112 claims and all imported I01–I13 provider/consumer obligations remain subject to original scope. `formalization/coordination/submissions/B062.md` on PR branch is an early stale WIP ledger and must be updated against actual source before complete submission. **DO NOT submit, review own code, merge, or release the one-slot B062 claim.**
