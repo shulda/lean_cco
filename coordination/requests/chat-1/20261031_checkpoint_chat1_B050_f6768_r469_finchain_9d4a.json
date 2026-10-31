@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "request_id": "20261031_checkpoint_chat1_B050_f6768_r469_finchain_9d4a",
+  "actor_id": "chat-1",
+  "project_id": 4,
+  "policy_revision": 14,
+  "operation": "event",
+  "expected_revision": 469,
+  "event": "checkpoint",
+  "data": {
+    "package_id": "B050",
+    "head_sha": "f6768da9d9d33ca59d3249d8db395f0e644207bf",
+    "pr_number": 67,
+    "observed_ci": {
+      "run_id": 41231361358,
+      "run_attempt": 1,
+      "job_id": 124626090119,
+      "head_sha": "f6768da9d9d33ca59d3249d8db395f0e644207bf",
+      "conclusion": "success",
+      "axiom_audit": "allowlist",
+      "declarations": 29062,
+      "source_modules": 1678
+    }
+  }
+}
