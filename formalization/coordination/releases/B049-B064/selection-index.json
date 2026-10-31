@@ -1,0 +1,355 @@
+[
+  {
+    "package": "B049",
+    "module": "transition_closure",
+    "definitions": 12,
+    "claims": 62,
+    "exports": 12,
+    "equations": 15,
+    "tasks": 8,
+    "depends_on": [
+      "B003",
+      "B011",
+      "B038",
+      "B040",
+      "B050"
+    ],
+    "source_contract": "formalization/coordination/packages/B049.md",
+    "external_providers": []
+  },
+  {
+    "package": "B050",
+    "module": "terminal_lattice",
+    "definitions": 12,
+    "claims": 68,
+    "exports": 11,
+    "equations": 12,
+    "tasks": 9,
+    "depends_on": [
+      "B006",
+      "B011",
+      "B038"
+    ],
+    "source_contract": "formalization/coordination/packages/B050.md",
+    "external_providers": []
+  },
+  {
+    "package": "B051",
+    "module": "terminal_profiles",
+    "definitions": 7,
+    "claims": 32,
+    "exports": 5,
+    "equations": 4,
+    "tasks": 5,
+    "depends_on": [
+      "B011",
+      "B032",
+      "B049",
+      "B050"
+    ],
+    "source_contract": "formalization/coordination/packages/B051.md",
+    "external_providers": []
+  },
+  {
+    "package": "B052",
+    "module": "unary_terms_return",
+    "definitions": 10,
+    "claims": 39,
+    "exports": 4,
+    "equations": 1,
+    "tasks": 6,
+    "depends_on": [
+      "B011",
+      "B040",
+      "B049"
+    ],
+    "source_contract": "formalization/coordination/packages/B052.md",
+    "external_providers": []
+  },
+  {
+    "package": "B053",
+    "module": "typed_orbit_frames",
+    "definitions": 8,
+    "claims": 62,
+    "exports": 7,
+    "equations": 4,
+    "tasks": 7,
+    "depends_on": [
+      "B002",
+      "B006",
+      "B008",
+      "B011",
+      "B012",
+      "B022",
+      "B032",
+      "B039",
+      "B040",
+      "B043",
+      "B049",
+      "B052"
+    ],
+    "source_contract": "formalization/coordination/packages/B053.md",
+    "external_providers": []
+  },
+  {
+    "package": "B054",
+    "module": "hereditary_hidden_orbits",
+    "definitions": 6,
+    "claims": 30,
+    "exports": 1,
+    "equations": 1,
+    "tasks": 4,
+    "depends_on": [
+      "B039",
+      "B052",
+      "B053"
+    ],
+    "source_contract": "formalization/coordination/packages/B054.md",
+    "external_providers": []
+  },
+  {
+    "package": "B055",
+    "module": "hidden_sap_readings",
+    "definitions": 10,
+    "claims": 68,
+    "exports": 9,
+    "equations": 2,
+    "tasks": 8,
+    "depends_on": [
+      "B002",
+      "B011",
+      "B012",
+      "B039",
+      "B040",
+      "B049",
+      "B052",
+      "B054"
+    ],
+    "source_contract": "formalization/coordination/packages/B055.md",
+    "external_providers": []
+  },
+  {
+    "package": "B056",
+    "module": "guarded_two_root",
+    "definitions": 10,
+    "claims": 61,
+    "exports": 4,
+    "equations": 1,
+    "tasks": 7,
+    "depends_on": [
+      "B001",
+      "B003",
+      "B049",
+      "B052",
+      "B055"
+    ],
+    "source_contract": "formalization/coordination/packages/B056.md",
+    "external_providers": []
+  },
+  {
+    "package": "B057",
+    "module": "guarded_old_seams",
+    "definitions": 11,
+    "claims": 72,
+    "exports": 8,
+    "equations": 8,
+    "tasks": 9,
+    "depends_on": [
+      "B008",
+      "B011",
+      "B012",
+      "B034",
+      "B040",
+      "B049",
+      "B051",
+      "B055",
+      "B056"
+    ],
+    "source_contract": "formalization/coordination/packages/B057.md",
+    "external_providers": []
+  },
+  {
+    "package": "B058",
+    "module": "old_idempotent_forest",
+    "definitions": 11,
+    "claims": 74,
+    "exports": 6,
+    "equations": 2,
+    "tasks": 8,
+    "depends_on": [
+      "B001",
+      "B003",
+      "B011",
+      "B049",
+      "B052",
+      "B055",
+      "B056",
+      "B057"
+    ],
+    "source_contract": "formalization/coordination/packages/B058.md",
+    "external_providers": [
+      {
+        "id": "E01",
+        "name": "Finite-semigroup factorisation forest height",
+        "status": "PUBLISHED_THEOREM_LOCAL_BRIDGE_PENDING",
+        "source_version": "Kufleitner, MFCS 2008, LNCS 5162, The Height of Factorization Forests",
+        "source_url": "https://link.springer.com/chapter/10.1007/978-3-540-85238-4_36",
+        "theorem": "Theorem 1; use the weaker height bound 3|S| proved explicitly",
+        "statement": "For any finite semigroup S and evaluation homomorphism from nonempty words, each word admits an ordered factorisation tree of height at most 3|S| (leaves at height zero). Internal nodes have at least two children; at arity at least three every child has the same idempotent image. The pinned existing Lean declaration supplies the stronger 3|S|-1 bound. Its independent receiving build/axiom audit and adapter to the finite typed positive semigroup remain pending; see formalization/FACTORIZATION_FOREST_PROVIDER.md.",
+        "depends_on": [],
+        "lean_reference": {
+          "repository": "ReemMelamed/algebraic-automata",
+          "commit": "0acb244aaa913c32eeeff48e939cb5df469a3f70",
+          "module": "AlgebraicAutomata.FactorizationForest.Tree",
+          "declarations": [
+            "factorization_forest_classical_bound"
+          ],
+          "bridge_status": "NOT_BOUND_TO_CCO_ENCODING",
+          "source_file": "AlgebraicAutomata/FactorizationForest/Tree.lean",
+          "lean_version": "v4.35.0-rc3",
+          "mathlib_commit": "2a885768dae569d938bb9ff3474da6a8753bb90a",
+          "verified_CI": "https://github.com/ReemMelamed/algebraic-automata/actions/runs/40362358302",
+          "representation": "General finite nonempty semigroup, arbitrary alphabet, nonempty-list multiplicative evaluation; ordered factorization tree with exact original yield, leaves height0, no unary nodes and wide common-idempotent children; height <= 3*card(S)-1.",
+          "verification_scope": "Read-only exact declaration and tree-definition inspection, scan of all20repositoryLeanfiles without sorry/admit/declaredaxiom/unsafe/implemented_by/sorryAx tokens, and successful exact-pin upstream CI. No independent local build, transitive compiled-axiom audit or CCO/toolchain adapter performed.",
+          "receiving_plan": "formalization/FACTORIZATION_FOREST_PROVIDER.md"
+        }
+      }
+    ]
+  },
+  {
+    "package": "B059",
+    "module": "terminal_hidden_hn",
+    "definitions": 10,
+    "claims": 52,
+    "exports": 5,
+    "equations": 2,
+    "tasks": 7,
+    "depends_on": [
+      "B012",
+      "B034",
+      "B035",
+      "B037",
+      "B047",
+      "B049",
+      "B052",
+      "B055",
+      "B058"
+    ],
+    "source_contract": "formalization/coordination/packages/B059.md",
+    "external_providers": []
+  },
+  {
+    "package": "B060",
+    "module": "clone_tuple_geometry",
+    "definitions": 12,
+    "claims": 76,
+    "exports": 4,
+    "equations": 4,
+    "tasks": 9,
+    "depends_on": [
+      "B001",
+      "B003",
+      "B011",
+      "B012",
+      "B013",
+      "B016",
+      "B022",
+      "B031",
+      "B038",
+      "B044",
+      "B045",
+      "B047",
+      "B049",
+      "B051"
+    ],
+    "source_contract": "formalization/coordination/packages/B060.md",
+    "external_providers": []
+  },
+  {
+    "package": "B061",
+    "module": "ap_ramsey_readout",
+    "definitions": 11,
+    "claims": 62,
+    "exports": 5,
+    "equations": 1,
+    "tasks": 8,
+    "depends_on": [
+      "B035",
+      "B036",
+      "B038",
+      "B045",
+      "B047",
+      "B049",
+      "B052",
+      "B059",
+      "B060"
+    ],
+    "source_contract": "formalization/coordination/packages/B061.md",
+    "external_providers": []
+  },
+  {
+    "package": "B062",
+    "module": "exact_ep_geometry",
+    "definitions": 14,
+    "claims": 112,
+    "exports": 8,
+    "equations": 13,
+    "tasks": 12,
+    "depends_on": [
+      "B002",
+      "B006",
+      "B007",
+      "B015",
+      "B016",
+      "B041",
+      "B044",
+      "B045"
+    ],
+    "source_contract": "formalization/coordination/packages/B062.md",
+    "external_providers": []
+  },
+  {
+    "package": "B063",
+    "module": "automatic_ep_core",
+    "definitions": 10,
+    "claims": 62,
+    "exports": 4,
+    "equations": 5,
+    "tasks": 8,
+    "depends_on": [
+      "B041",
+      "B045",
+      "B062"
+    ],
+    "source_contract": "formalization/coordination/packages/B063.md",
+    "external_providers": []
+  },
+  {
+    "package": "B064",
+    "module": "unfiltered_ep",
+    "definitions": 16,
+    "claims": 112,
+    "exports": 8,
+    "equations": 3,
+    "tasks": 14,
+    "depends_on": [
+      "B008",
+      "B011",
+      "B035",
+      "B036",
+      "B038",
+      "B044",
+      "B045",
+      "B047",
+      "B049",
+      "B050",
+      "B052",
+      "B059",
+      "B060",
+      "B061",
+      "B063"
+    ],
+    "source_contract": "formalization/coordination/packages/B064.md",
+    "external_providers": []
+  }
+]

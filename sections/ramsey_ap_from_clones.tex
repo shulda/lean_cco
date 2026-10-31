@@ -1,0 +1,387 @@
+% R18/R17 consolidated Ramsey application. Do not include standalone preamble.
+\providecommand{\Emb}{\operatorname{Emb}}
+\providecommand{\acl}{\operatorname{acl}}
+\providecommand{\Spec}{\operatorname{Spec}}
+\providecommand{\cl}{\operatorname{cl}}
+\providecommand{\HH}{\mathcal{H}^{<}}
+\providecommand{\KK}{\mathcal{K}^{*}}
+\providecommand{\NN}{\mathbb{N}}
+
+\section{Ramsey expansions by compatible meet-irreducible imaginaries}\label{sec:ramsey-clones}
+
+\noindent\emph{Status and source boundary.}
+The following result is an internal, source-relative deduction from
+(A108) pure-clone SAPification and the safe splitting, hidden SAP,
+bounded-obstruction and typed terminal Ramsey theorems of the
+internal Ramsey proof appendix, Theorem~\ref{thm:internal-v27-general-ramsey}.  In particular it is
+\emph{not} a consequence of ordinary EPPA, the HKN valuation
+construction, or of generic $\Lambda$-ultrametric Ramsey theory
+alone.  The novel reduction to compatible MI-tuples was developed in
+R17--R18 and checked internally, but the long V27 source theorems
+have not thereby received an independent certification.
+
+
+Let $Q$ be countably infinite, transitive and homogeneous in a finite complete
+symmetric binary language. Assume AP and semantic \emph{homomorphic} CCO.
+Triangle fullness follows from the AP fan argument C02 (or can be retained in
+the source contract). Write $F=\Sigma_Q(\Id)$ for the largest invariant
+finite-class equivalence. We do \emph{not} assume that $F$ is MI, exact or thin.
+
+\begin{theorem}[AP Ramsey expansion, relative to A108 and V27]\label{thm:ramsey-general-ap}
+The class $\Age(Q)$ has a reasonable, reduct-surjective, precompact Ramsey
+expansion by finitely many unary and binary relations.
+\end{theorem}
+
+The inputs are the internal pure-clone SAPification Theorem~\ref{thm:internal-clone-sap} and the actual safe-phase and
+terminal hidden construction: reasonable finite unary terminalisation;
+represented terminal same-sort equivalence lattices and class Helly; typed
+profile Helly and Peircean composition; mixed semantic cylinders on all proper
+coordinate pairs; uniformly finitely many unary term normal forms; and the
+hereditary ordered hidden Ramsey class. The last assertion contains the
+substantive hidden SAP and bounded-obstruction/HN argument. It is not inferred
+merely from naming imaginaries. Their complete non-published proofs are included in the internal Ramsey proof appendix, together with source-provenance pointers. The R17--R18 audits record the new transfer.
+
+We use the clone-preservation argument of R17 and only the \emph{empty-base}
+part of its quotient infinitude argument. Neither B32's real-hull theorem nor
+EPPA, finite Ramsey degrees, a general finite-exact Ramsey lift, or the
+Birkhoff owner-witness construction is an input here. For finite $Q$, uniquely
+labelling all its points gives the conclusion separately.
+
+\subsection{The terminal clone source and its coordinates}
+
+By A108 replace $Q$ by $M=Q\times\NN$. Distinct clones of one old point
+receive a new colour $c$; all other colours come from $Q$. Then $M$ is
+homogeneous SAP+CCO, and its clone congruence is
+\[
+                       K=\Id\cup c=c^2.
+\]
+The square here denotes actual represented composition, including equality.
+
+\begin{lemma}[Clone-stable terminalisation]\label{lem:ramsey-clone-stability}
+The safe unary splits of V27 yield
+$M^\dagger=Q^\dagger\times\NN$, where $Q^\dagger$ is a reasonable finite
+unary expansion of $Q$. Every nonempty terminal sort of $Q^\dagger$ is
+infinite. In each corresponding clone sort $s$, $K_s$ is proper and exact.
+\end{lemma}
+\begin{proof}
+Independent permutations within clone fibres make $K_s$ the least
+nonidentity invariant equivalence in every current clone-saturated sort. A
+proper finite-index interval $Y<X$ therefore has $K_s\le Y$. The source gate
+$L_*$ used by V27 contains $Y$. For a transported bridge $R:s\to t$, the
+target gate is $L_t=R^\smile R$ and $L_*R=R$. Given $yK_ty'$ and $xRy$,
+replace $x$ by a fresh source clone $x_0$ distinct from $y,y'$. Transposing the
+two target clones while fixing $x_0$ gives $x_0Ry'$, hence $yL_ty'$.
+Thus every gate contains its clone congruence. Bits pulled back from these
+gates are constant on clones, at every step.
+
+For infinitude, any looped same-sort atom $a$ admits phase difference zero.
+If its cylinder is rigid with group element $h$, an $(a,a,a)$ triangle gives
+$h^2=h$, so $h=1$; a nonrigid cylinder admits both differences. An infinite
+parent quotient unary type has an infinite monochromatic clique of a looped
+atom outside $K$. Give arbitrarily many such points the same new bit as any
+realised child type. Every old triangle and its permitted phase differences
+are valid in the specific V27 lifted triangle table. The child type therefore
+has arbitrarily many distinct quotient realisations. Iterate from the infinite
+transitive $Q$. This uses the phase table, not arbitrary unary labelling.
+\end{proof}
+
+In the finite terminal lattice $\Lambda_s$, choose a fixed list of distinct
+proper MI equivalences $J_{s,1},\ldots,J_{s,r_s}$ above $K_s$ such that
+\begin{equation}\label{eq:ramsey-mi-meet}
+                  \bigcap_{i=1}^{r_s}J_{s,i}=K_s.
+\end{equation}
+One may choose all proper MI elements above $K_s$. They are represented and
+are already sorts $B_{s,J_{s,i}}$ of V27's hidden language. Each old point
+$q\in Q_s^\dagger$ gives a tuple
+\[
+       \eta_s(q)=\bigl([x]_{J_{s,i}}\bigr)_{i=1}^{r_s},
+       \qquad x\in\pi_K^{-1}(q).
+\]
+This is independent of the clone $x$ and is injective by~\eqref{eq:ramsey-mi-meet}.
+Only the finite list of \emph{symbols} is ordered once and for all. No
+point-dependent choice is required. We do not introduce hidden cell vertices.
+
+\subsection{Recognising tuples and reconstructing fine colours}
+
+For actual coordinate vertices $b\in B_{s,J}$, $d\in B_{t,L}$, let
+$\Spec(b,d)$ be the diversity colours realised by distinct representatives.
+For distinct hidden endpoints this is the named mixed semantic cylinder of
+V27. On the diagonal of one coordinate sort define
+$\Spec(b,b)=J^\circ$, the diversity support of $J$. This is an equality case,
+not an off-diagonal cylinder predicate.
+
+\begin{lemma}[Quantifier-free tuple domain]\label{lem:ramsey-mi-domain}
+For $b_i\in B_{s,J_{s,i}}$, the tuple $(b_i)_i$ represents one old
+$Q_s^\dagger$ point if and only if
+\begin{equation}\label{eq:ramsey-domain}
+                 c_s\in\Spec(b_i,b_j)\quad(i<j).
+\end{equation}
+This condition is quantifier-free in the existing binary hidden language.
+\end{lemma}
+\begin{proof}
+Two actual $J,L$ classes meet if and only if their representative spectrum
+contains $c_s$. A common point has two distinct clones in both classes.
+Conversely, a $c_s$-pair in the two classes belongs to one $K_s$-class, which
+lies entirely in both because $K_s\le J,L$. Thus~\eqref{eq:ramsey-domain} says that
+the classes meet pairwise. Terminal class Helly gives a nonempty common
+intersection, and~\eqref{eq:ramsey-mi-meet} makes it exactly one $K_s$-class. Membership
+of the fixed atom $c_s$ is a finite disjunction of named cylinder predicates.
+The sort tags are included in the formula. The case $r_s=1$ is immediate.
+\end{proof}
+
+This also applies to orphan coordinates: a completed finite hidden object is
+an induced closed substructure of actual coordinate data. Actual realisation
+is used to prove the formula, not to define a noncanonical choice of tuples.
+
+For the colour calculation we use $*$ for strong typed \emph{diversity}
+composition. In this convention
+\begin{equation}\label{eq:ramsey-clone-diversity-meet}
+                 \bigcap_iJ_{s,i}^\circ=\{c_s\}.
+\end{equation}
+The meets are nonempty. No logical equality atom is inserted into these
+strong path products.
+
+\begin{lemma}[Typed meet-product distributivity]
+\label{lem:ramsey-typed-distributivity}
+For composable nonempty strong typed exact domains
+$A=\bigcap_iP_i$, $B=\bigcap_jQ_j$ in the terminal
+\emph{diversity} pair palettes, with positive reachable-profile
+presentations, one has
+\[
+ A*B=\bigcap_{i,j}(P_i*Q_j).
+\]
+Consequently strong products distribute over any nonempty
+exact meet in either coordinate.
+\end{lemma}
+\begin{proof}
+The general typed exact-product theorem
+\cref{lem:typed-exact-products} from Part~I applies verbatim:
+its proof uses only named transitive typed palettes, SAP,
+semantic homomorphic CCO and strong off-diagonal path semantics,
+not primitivity or (NR2). The actual terminal clone source has
+these properties under the genuine V27 safe splits. In
+particular, all products here exclude the logical diagonal;
+the equality-inclusive represented product used on an AP-only
+quotient is \emph{not} substituted for $*$.
+\end{proof}
+
+\begin{lemma}[Singleton fine-colour reconstruction]\label{lem:ramsey-singleton-recovery}
+Let $q,r$ be distinct old points of terminal sorts $s,t$ and let $a$ be their
+original typed fine colour. For their compatible coordinate tuples,
+\begin{equation}\label{eq:ramsey-singleton}
+ \bigcap_{i,j}\Spec\bigl(\eta_s(q)_i,\eta_t(r)_j\bigr)=\{a\}.
+\end{equation}
+In particular every original fine colour is quantifier-free definable on
+valid tuples using the hidden binary shadows and equality.
+\end{lemma}
+\begin{proof}
+V27's mixed-cylinder theorem gives
+\[
+ \Spec\bigl(\eta_s(q)_i,\eta_t(r)_j\bigr)
+       =J_{s,i}^\circ*\{a\}*J_{t,j}^\circ.
+\]
+For coincident coordinates in one hidden sort, both sides are the full
+support of that equivalence, by equivalence reproduction. By
+Lemmas~\ref{lem:ramsey-typed-distributivity} and~\eqref{eq:ramsey-clone-diversity-meet}, the intersection is
+\[
+     \{c_s\}*\{a\}*\{c_t\}=\{a\}.
+\]
+The last equality is the pure-clone rule: shifting either endpoint to a
+fresh clone preserves its literal fine colour. For two equal visible tuples
+the same calculation returns the clone marker $c_s$, which is interpreted as
+\emph{visible equality}, not as a diversity edge. Distinct tuples of one
+sort differ in at least one coordinate, and different visible sort tags
+cannot represent one old point. All diagonal cases are thus separated.
+\end{proof}
+
+\begin{remark}
+Class CRT alone would not prove Lemma~\ref{lem:ramsey-singleton-recovery}. An equivalence reduct
+can forget all RED/BLUE data. The full mixed cylinders and typed
+meet-product distributivity are the load-bearing additions. It is important
+to use the transition-enriched typed hidden language, not just the earliest
+same-coordinate shadow presentation.
+\end{remark}
+
+\subsection{The finite-tuple Ramsey readout interface}
+
+Use the full-code construction of
+\cref{lem:foundational-full-code-embeddings,thm:ramsey-tuple-readout}.
+Here $\HH$ denotes the hereditary ordered hidden Ramsey class,
+$N(D)$ consists of all tagged tuples satisfying the chosen quantifier-free
+domains $\delta_s$, and $\KK$ is the hereditary age of their induced full
+codes. All hidden unary/binary, equality and order codes on coordinate
+terms are retained, including same-root instances and equalities between
+different roots. Function domains are determined by sorts, so no further
+definedness information is needed in this application. There is no
+quotient of tuples by a further equivalence relation.
+
+\begin{lemma}[Templates and all embeddings]\label{lem:ramsey-template-bijection}
+The codes determine the generated hidden support $h(A^*)$ up to a unique
+isomorphism over the root coordinates. For every $D\in\HH$,
+\begin{equation}\label{eq:ramsey-embeddings}
+       \Emb_{\KK}(A^*,N(D))\ \cong\ \Emb_{\HH}(h(A^*),D).
+\end{equation}
+\end{lemma}
+\begin{proof}
+This is \cref{lem:foundational-full-code-embeddings} for the chosen tuple
+domains and the finite hidden unary-term normal forms. Cross-root equality
+codes identify all repeated term presentations. The resulting Ramsey
+transfer is exactly \cref{thm:ramsey-tuple-readout}; it does not require
+visible SAP, a cofinality hypothesis or an independent order on tuple points.
+\end{proof}
+
+\subsection{Application and reasonable finite expansion}
+
+Apply Theorem~\ref{thm:ramsey-tuple-readout}
+to the PURE-IMAGINARY, unary-functionally
+closed sort restriction of the terminal
+clone source's V27 hidden ordered Ramsey
+class. This restricted class is itself
+hereditary Ramsey (and JEP/SAP) by
+\cref{lem:foundational-ramsey-sort-restriction},
+because no hidden upward map or quotient
+transition from a proper quotient-coordinate
+sort has target in a clone-real sort
+(\cref{lem:no-real-algebraic-transition}).
+Use the MI tuple families
+\eqref{eq:ramsey-mi-meet} and the domains
+of \cref{lem:ramsey-mi-domain}.
+Every selected coordinate and every unary
+transition term remains in this
+pure-imaginary age. The finite unary term
+bound thus applies to their coordinate
+templates, while NO free ordering of deleted
+clone-real hidden vertices is introduced
+into the visible full-code interpretation.
+
+For any hidden $D$, realise its unordered structure in the actual coordinate
+system. Each valid tuple gives one actual $K$-class; all these classes coexist
+in that same source. Lemma~\ref{lem:ramsey-singleton-recovery} shows that the resulting finite
+$Q^\dagger$-structure is independent of this realisation and functorial on
+embeddings. There is no further simultaneous-cell completion obligation.
+
+Every finite original $Q$-structure has a safe terminal unary expansion. Its
+actual coordinate template is finite and can be freely ordered, so the
+construction is reduct-surjective. It is hereditary by definition. For
+reasonableness, along an original embedding $A\to B$ first extend the safe
+unary labels. Homogeneity and canonical quotient-term lifting give the
+induced unexpanded template embedding $h(A)\to h(B)$. Extend the chosen
+finite hidden order and read back the codes. This preserves the entire given
+expansion of $A$, including comparisons on absent packet partners or other
+term values.
+
+Finite language gives precompactness, hidden JEP gives JEP, and a visible
+automorphism extends uniquely to an automorphism of its finite ordered
+template, hence is trivial. Theorem~\ref{thm:ramsey-tuple-readout} proves
+Theorem~\ref{thm:ramsey-general-ap}. If desired, hereditary Ramsey plus JEP supplies AP of
+the visible expanded age. We do not assert SAP there.
+
+\begin{corollary}[A functorial finite coordinate completion]
+Put $C(A)=N(h(A))$. Then $A\subseteq C(A)$ and
+\[
+                      h(C(A))=h(A),\qquad C(C(A))=C(A).
+\]
+Every expanded embedding extends naturally through this completion. If each
+root has at most $m$ coordinate-term values, then
+\[
+ |h(A)|\le m|A|,\qquad |N(D)|\le\sum_s|D|^{r_s}.
+\]
+\end{corollary}
+\begin{proof}
+All coordinates of a new tuple in $C(A)$ lie in $h(A)$, whose unary closure
+is already complete. Conversely the old roots still generate $h(A)$.
+Naturality follows from Lemma~\ref{lem:ramsey-template-bijection}; the cardinality bounds count
+term values and coordinate tuples. We do not identify this completion with
+the full original algebraic closure.
+\end{proof}
+
+\begin{lemma}[Functorial sort-block normalisation]
+\label{lem:ramsey-block-retract}
+Let $\mathcal H^{<}$ be a Ramsey hereditary class whose finite hidden
+sort predicates partition the universe and whose expanded order is an
+arbitrary total order of all hidden points. Fix a total priority on the
+hidden SORT SYMBOLS. Replace any order by the concatenation of its
+within-sort restrictions in this fixed priority. Then the resulting
+block-ordered hidden class is Ramsey.
+\end{lemma}
+\begin{proof}
+The block normalisation keeps the unordered reducts and acts identically
+on vertex maps. Every original embedding preserves the sort labels and the
+within-sort orders, and therefore remains an embedding after
+normalisation. Thus this is an idempotent functor whose fixed objects
+are exactly the block-ordered structures. Their class is hereditary,
+since restricting a block order preserves its fixed sort priority.
+Apply \cref{lem:foundational-ramsey-normalization}. No surjectivity on
+embedding sets is required.
+\end{proof}
+
+\begin{corollary}[A smaller visible signature]\label{cor:ramsey-small-language}
+In the concrete application one can retain only the original fine colours,
+the safe terminal unary labels, and finitely many coordinate-term order
+comparisons. After fixed hidden-sort block normalisation, comparisons between
+different hidden target sorts can also be omitted.
+\end{corollary}
+\begin{proof}
+Every non-order atomic or equality code is invariant under
+$\operatorname{Aut}(Q^\dagger)$: the automorphism lifts to the pure-clone
+source and its canonical imaginary terms. Homogeneity of the complete finite
+binary $Q^\dagger$ language therefore makes each such unary/binary code a
+finite union of its atomic types. Deleting these definable predicates
+preserves all embedding sets and the Ramsey arrows. We do not delete the
+original fine colours.
+
+For the final assertion use Lemma~\ref{lem:ramsey-block-retract}: replace a hidden order
+by concatenation of fixed sort-symbol blocks, keeping each within-sort order.
+This is an idempotent functor preserving embeddings, so its full image is
+Ramsey. Apply the tuple readout there. Different-target-sort comparisons are
+then fixed by the tags. Comparisons of terms from different visible sorts
+must still be retained when their hidden target sorts agree.
+\end{proof}
+
+
+
+\subsection{MI and MR are the same Ramsey construction}
+The proof above does not distinguish whether the original greatest
+finite-class equivalence $F=\Sigma_Q(\Id)$ is meet-irreducible (MI)
+or meet-reducible (MR).  The distinction affects only the number
+$r_s$ of hidden coordinates necessary to represent one terminal
+original vertex.  In the MI case the prior real-hull theorem
+$\operatorname{acl}_Q(A)=F[A]$, together with the source-specific
+phase splitting preserving quotient algebraicity, implies that
+$K_s$ is itself represented MI after terminalisation; hence
+$r_s=1$ and original vertices are literal hidden coordinates.
+In MR, $r_s$ can exceed one; the compatibility formula from
+Lemma~\ref{lem:ramsey-mi-domain} and the singleton reconstruction
+Lemma~\ref{lem:ramsey-singleton-recovery} make the tuple a single
+original vertex, with no separate cell-imaginary sort.
+
+This is the exact mathematical reason that the pure-clone reduction
+avoids the failure of hidden SAP for independently materialised
+multi-parent cells: such cells are interpreted \emph{as tuples},
+not added as a fresh hidden vertex with multiple outgoing parents.
+
+\subsection{Scope of the Ramsey construction and expansion property}
+Theorem~\ref{thm:ramsey-general-ap} proves the Ramsey property,
+reasonableness and precompactness of the finite unary/binary
+readout from compatible MI tuples. Its proof does \emph{not}
+invoke the later EPPA construction or assume expansion property.
+The additional \emph{expansion property} of the explicit
+\emph{unfiltered} V27 safe unary labels and transition-synchronised
+subquotient-order code is established separately in
+\cref{sec:ep-exact-traces,sec:ep-automatic-core,sec:ep-unfiltered}.
+The central new input is complete original-bipartite-atom
+separation, \eqref{eq:ep-bp-separation}, which implies that the
+terminal unary type table is always a core. Thus no finite
+core retraction is needed for a genuine maximal-exact-character
+tower.
+
+This is not an application of Braunfeld's ordering property
+for the bare generic $\Lambda$-ultrametric \emph{reduct}
+\cite{Braunfeld}: the old fine binary colours and actual mixed
+semantic cylinders are retained throughout the relative-reset
+order argument. Finite-index sheet names must come from the
+\emph{safe, globally compatible} parity splittings, not from
+arbitrary independent local labellings. The construction does
+not identify a canonical smallest language or the universal
+minimal flow, and its in-house source dependencies still
+require independent audit.

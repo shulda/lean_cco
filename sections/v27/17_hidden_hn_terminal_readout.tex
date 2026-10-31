@@ -1,0 +1,371 @@
+\section{Typed terminal Ramsey conclusion and finite-cover transfer}
+\label{sec:internal-ramsey-terminal}
+\begin{lemma}[Exact real-root closure and point-generated cofinality]
+\label{lem:typed-real-root-closure-cofinal}
+Let $\widehat{\M}$ be the actual terminal completed
+transition-enriched hidden structure, with its original real sorts
+and named proper MI quotient sorts. Assume the literal unary
+signature of Part~III: nonidentity real-source maps project to
+proper quotients, and the remaining nonidentity maps are upward
+maps or quotient transitions, with no real-valued map from a
+quotient sort. Then:
+\begin{enumerate}[label=(\roman*)]
+\item For every finite set $D$ of original real points,
+\[
+       \cl_{\widehat{\M}}(D)\cap M_{\mathrm{real}}=D.
+\tag{RCF}\label{eq:typed-real-root-closure}
+\]
+\item Every finite induced unary-closed completed hidden
+substructure $B\subseteq\widehat{\M}$ is contained inducedly
+in a finite point-generated substructure
+$\cl_{\widehat{\M}}(D)$. One may take $D$ to contain the real
+points of $B$ and one actual real representative of each proper
+quotient vertex of $B$.
+\item Every linear order on $B$ extends to a linear order on
+this finite $\cl_{\widehat{\M}}(D)$.
+\end{enumerate}
+No automorphism section or SAP over an orphan-only base is
+required. The no-real-output hypothesis is substantive: adding
+a unary selector from a proper quotient back to a real point
+could invalidate (i).
+\end{lemma}
+\begin{proof}
+By \cref{lem:typed-coordinate-normal-form}, a term starting at
+an original real point is either its identity term or takes
+values in a proper quotient sort. Subsequent maps stay in
+quotient sorts. This proves (i); \cref{lem:no-real-algebraic-transition}
+justifies this actual signature upstream.
+
+Apply \cref{lem:foundational-root-cover-cofinal} with ambient
+structure $P=\widehat{\M}$ and visible roots the length-one
+tuples of original real points. The term bound is
+\cref{lem:typed-unary-closure-bound}. A real hidden vertex is
+its own identity-term value, and every proper quotient vertex
+$b$ has an actual representative $x_b$ with
+$p_{J_b}(x_b)=b$. Thus the required ambient root cover holds.
+Using the given inclusion $B\subseteq P$ in that lemma's
+construction gives exactly $\cl_P(D)$ containing $B$, with
+$D$ as in (ii). This is induced containment because both are
+induced substructures of the same actual $P$; it is not merely
+a homomorphic completion. Finally any order on a finite subset
+extends to its finite superset, proving (iii).
+\end{proof}
+
+\begin{lemma}[Finite full-code hidden order readout on original real sorts]
+\label{lem:typed-finite-ordered-real-readout}
+For each original named real sort $a$, choose a finite list
+$\mathcal T_a$ representing all applicable unary term functions
+in the terminal typed hidden signature, including the identity
+real-root term, as supplied by
+\cref{lem:typed-unary-closure-bound,lem:typed-coordinate-normal-form}.
+For every ordered pair of real sorts $a,b$ and terms
+$\tau\in\mathcal T_a$, $\sigma\in\mathcal T_b$, add the binary
+comparison predicate
+\[
+ C_{\tau,\sigma}(x,y)
+       \quad\Longleftrightarrow\quad \tau(x)<\sigma(y).
+\tag{TOR}\label{eq:typed-ordered-real-readout}
+\]
+The tuples $x=y$ are included: terms with different hidden
+values may give a true diagonal comparison, so these added
+binary predicates need not be irreflexive.
+
+The resulting finite relational expansion satisfies:
+\begin{enumerate}[label=(\roman*)]
+\item For every finite original real $A$, its point-generated
+hidden closure $\widehat A$ is determined up to unique
+isomorphism over $A$ by the original atomic unary, pair and
+equality types. These determine all hidden term equalities,
+unary-function values and complete named semantic-cylinder
+relations.
+\item A linear order on $\widehat A$ is determined exactly by
+its comparison predicates. More precisely, put
+\[
+ T_A=\{(x,\tau):x\in A,\ \tau\in\mathcal T_{\operatorname{sort}(x)}\},
+ \qquad Q_A=T_A/{\equiv_A},
+\]
+where $(x,\tau)\equiv_A(y,\sigma)$ means equality of their
+hidden term values, determined by the old atomic types.
+A comparison list is compatible precisely when
+\[
+ [(x,\tau)]<[(y,\sigma)]
+       \quad\Longleftrightarrow\quad C_{\tau,\sigma}(x,y)
+\]
+defines a strict linear order on $Q_A$, including the tuples
+$x=y$. Every embedding of real readout expansions
+$f:A^*\to B^*$ extends uniquely to an ordered hidden embedding
+$\widehat f:\widehat A\to\widehat B$, and conversely every
+such hidden embedding restricts to a real readout embedding.
+\item The expansion is precompact and reasonable: there are
+finitely many expansions of each finite $A$, and along every
+old embedding $A\hookrightarrow B$ every order on $\widehat A$
+extends to an order on $\widehat B$.
+\item If the hereditary ordered hidden envelope is Ramsey,
+then the finite real readout class is Ramsey.
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+We first verify the source-specific input to the general
+full-code lemma. All hidden coordinates, unary maps and
+semantic-cylinder relations are defined on the actual
+canonical quotient sorts and are $\Aut(\M)$-invariant.
+For fixed terms $\tau,\sigma$, both
+\(\tau(x)=\sigma(y)\) and the truth of any named hidden
+binary relation on their values are therefore invariant
+properties of the ordered real pair $(x,y)$. Homogeneity of
+the complete binary old source implies that its fine atomic
+pair type, or its equality and unary type when $x=y$,
+determines exactly one such orbit. Thus all these codes are
+determined by the old types, including equalities between
+presentations coming from different roots. Hidden unary
+predicates on $\tau(x)$ are determined in the same way by
+the unary type of $x$.
+
+The named unary functions are total on their prescribed
+source sorts; hence definedness of every applicable term is
+fixed by those sorts. Composition with a named function is
+represented by another normal-form term in the same finite
+list. Function graph codes consequently reduce to the term
+equalities just considered. We have verified that \emph{all}
+non-order codes required by
+\cref{lem:foundational-full-code-embeddings} are determined
+by the original unary, pair and equality types, not just
+selected quotient incidences.
+
+Apply that lemma with length-one visible root tuples consisting
+of original real vertices, first without order and then with
+all the comparisons in \eqref{eq:typed-ordered-real-readout}.
+The old-definable non-order codes can be omitted without
+changing any embedding set. Its reconstruction identifies
+$Q_A$ canonically with $\widehat A$ and gives the unique extension
+\[
+                      \widehat f(\tau(x))=\tau(f(x)).
+\]
+By \cref{lem:typed-real-root-closure-cofinal}(i), the real
+portion of $\widehat A$ is exactly $A$, so restricting hidden
+embeddings returns precisely the intended old real domain.
+This proves (i) and the embedding assertion of (ii). Since
+every hidden vertex has a term presentation, every pair of
+hidden vertices is represented in (TOR). The compatible lists
+are therefore exactly the strict linear orders on $Q_A$,
+proving the remaining assertion of (ii).
+
+Diagonal comparisons cannot in general be discarded. In the
+two-original-sort common-block source, one old real point $x$
+can generate three distinct hidden values
+$x,F_{E_A}(x),\pi(F_{E_A}(x))$ in three different named sorts.
+Their six linear orders give the same readout without the
+comparisons $C_{\tau,\sigma}(x,x)$, and these comparisons
+distinguish all six. The following example shows the issue
+already with one original sort and one MI coordinate.
+
+For (iii), $|\widehat A|\le m_{\mathrm{typ}}|A|$, so only
+finitely many orders are possible. The unexpanded hidden
+embedding induced by an old embedding $A\hookrightarrow B$
+exists by (i); extend the order on its image to the finite
+$\widehat B$ and read back its comparisons.
+
+For (iv), apply \cref{thm:ramsey-tuple-readout} to the ordered
+hidden envelope, again using length-one real roots. Their
+quantifier-free compatibility conditions are just the named
+real sort predicates. For an arbitrary finite hidden host $H$,
+$N(H)$ is its original real-sort portion equipped with the full
+term code. Its generated support is an induced unary-closed
+substructure of $H$, so its code belongs to our readout class
+even if $H$ has orphan quotient vertices outside that support.
+Conversely every finite real readout occurs in its own ordered
+point-generated closure. The classes therefore agree after
+omitting the old-definable non-order codes established above,
+and the generic theorem gives the required Ramsey arrows.
+No cofinal enlargement of $H$ and no expansion-property
+hypothesis are needed for this transfer.
+\end{proof}
+
+\begin{example}[Diagonal term-order comparisons are already necessary with one MI]
+\label{ex:typed-diagonal-term-order-necessary}
+Let $M$ be the countable
+homogeneous one-sort
+structure with ONE
+nontrivial equivalence E,
+infinitely many infinite
+E-classes, and the COMPLETE
+symmetric binary old
+diversity colours
+$p$ (distinct same-class
+pairs) and $q$
+(different-class pairs).
+This original source has
+SAP, triangle-defined age
+and semantic homomorphic
+CCO, with FULL original
+NR2.
+
+Its actual MI-only hidden
+signature has one original
+REAL sort M and the
+proper quotient sort
+$Q=M/E$, with the
+named unary projection
+$F_E:M\to Q$. For the
+SINGLE original real
+point $A=\{x\}$,
+the point-generated
+hidden closure contains
+the TWO DISTINCT
+hidden vertices
+\[
+                       x,\qquad F_E(x).
+\]
+There are two possible
+strict linear orders
+on this hidden closure:
+$x<F_E(x)$ and
+$F_E(x)<x$. They give
+the SAME old real
+one-point diagram and
+there are NO pairs of
+DISTINCT original real
+vertices on which an
+off-diagonal term-order
+readout could distinguish
+the two orders. But
+\[
+   C_{\operatorname{id},F_E}(x,x)
+       \Longleftrightarrow x<F_E(x)
+\]
+distinguishes them
+immediately. Therefore
+one cannot delete
+diagonal comparisons
+$x=y$ from
+\eqref{eq:typed-ordered-real-readout},
+even with ONE original
+real sort, ONE proper
+MI quotient and NO
+mixed original-sort
+transports.
+\end{example}
+
+\begin{lemma}[Actual terminal hidden orbit completeness gives irreducibility]
+\label{lem:typed-terminal-hidden-irreducible}
+In the ACTUAL finite
+terminal MI-only hidden
+signature, take ALL old
+original real sorts,
+proper represented
+MI quotient sorts,
+named unary projections,
+upward maps and quotient
+transitions, all named
+old fine atomic
+real-pair predicates,
+and the FULL named
+semantic-cylinder
+binary orbital partition
+on every ordered
+sort-pair containing
+at least one proper
+quotient sort, as in
+\cref{lem:typed-cylinder-realisation}.
+Then EVERY finite induced
+UNARY-CLOSED completed
+hidden substructure is
+IRREDUCIBLE in its
+ORIGINAL hidden language,
+without adjoining
+a universal $E_*$ edge.
+
+This statement concerns
+ACTUAL complete hidden
+orbitals and named unary
+graphs, not an arbitrary
+reduct retaining only
+selected cylinders.
+\end{lemma}
+\begin{proof}
+Fix two DISTINCT hidden
+vertices $x,y$ of a
+completed induced member.
+If both belong to
+original real sorts,
+their pair has one
+NAMED original fine
+atomic diversity
+relation, because
+the original real
+binary language is
+COMPLETE. This includes
+mixed original real sorts
+with a named typed
+pair orbital.
+
+If at least one
+endpoint lies in a
+PROPER represented
+MI quotient sort,
+its old real
+equivalence class
+has infinitely many
+representatives by
+original visible SAP.
+Choose old real
+representatives of
+the two vertices
+which are DISTINCT:
+the real endpoint,
+if present, has its
+unique representative,
+while any proper
+quotient endpoint
+can avoid the finitely
+many forbidden
+real points. For
+two proper endpoints
+also choose distinct
+representatives,
+even when the hidden
+sort pair is repeated.
+Their original fine
+atomic pair type
+belongs to ONE full
+old cylinder
+\(\operatorname{Cyl}_{J,K}(t)\).
+By the actual
+\cref{lem:typed-cylinder-realisation},
+this cylinder labels a
+NAMED POSITIVE
+binary semantic relation
+on exactly that ordered
+hidden pair.
+The hidden vertices
+are distinct, so
+the possible same-sort
+logical hidden diagonal
+is not involved.
+A pair that also
+forms the graph of a
+named unary projection
+or transition is still
+either joined by its
+actual named cylinder
+or, independently,
+by one of the unary
+term clauses (i),(ii)
+of
+\cref{lem:typed-unary-binary-irreducibility}.
+
+Thus EVERY pair of
+distinct hidden
+vertices satisfies
+the binary clause of
+\cref{lem:typed-unary-binary-irreducibility}
+(or additionally a
+named unary clause).
+Apply that lemma to
+the completed finite
+induced unary-closed
+member. It is
+IRREDUCIBLE without
+a synthetic E* relation.
+\end{proof}
+

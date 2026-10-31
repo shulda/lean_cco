@@ -471,8 +471,8 @@ Pracovat na novém batchi začni až po účinném claimu. Přečti celý jeho k
 zdrojové důkazy, notes a přijaté závislosti, pak autonomně formalizuj.
 
 Pokud není vydaný žádný připravený batch, nic si nerezervuj. Napiš, že jsi
-připravený a čekáš na přípravu; nepouštěj se do nepublikovaného B049 jen podle
-staršího textu. Aktuální číslo fronty vždy zjisti živě. Na prvním checkpointu
+připravený a čekáš na vydání; žádné nevydané ID neodvozuj ze starších zpráv.
+Aktuální frontu vždy zjisti živě. Na prvním checkpointu
 stručně potvrď svou identitu, výsledek testu nástrojů, účinný claim nebo čekání
 a nejbližší skutečný důkaz. Dále pokračuj podle instrukcí bez rutinních dotazů.
 '''

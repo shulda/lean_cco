@@ -1,0 +1,3170 @@
+{
+  "schema_version": 1,
+  "id": "exact_ep_geometry",
+  "index_title": "Exact trace geometry, canonical old gates and AP-only quotient safe towers",
+  "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+  "status": "HUMAN_EXPANDED_NOT_LEAN",
+  "scope": "Private B062: all EIGHT exact-trace-geometry source results, THIRTEEN auxiliary equations, fourteen definitions, 112 expanded human claims and twelve implementation tasks. Actual AP+HOM CCO full-character towers preserve nonempty RAW exact trace products, exact-equivalence lifts and finite type supports. Connected steps have ONE canonical ORIGINAL gate; their meet is the largest exact label kernel. Every original exact quotient carries the genuine full admissible safe tower, with precisely the E-not-below-G steps discarded, objectwise character correction on retained occupancy graphs, full finite-age converse, reachable maximal projected gates and terminality. No quotient SAP, arbitrary mixed reverse exact descent, or EP inherited from an arbitrary quotient is assumed. One required RAW-provider citation correction is exposed; no formula or hypothesis is changed.",
+  "scope_vocabulary": [
+    "trace",
+    "lift",
+    "parity",
+    "type_support",
+    "gate",
+    "quotient",
+    "rank",
+    "boundary"
+  ],
+  "scope_explanation": "One ORIGINAL symmetric transitive source supplies commutation of all old invariant relations. Prefix sorts and quotient occupancy sorts are actual homogeneous named carriers. Products are equality-inclusive RAW represented relations; middle trace sorts are literal and both input traces are nonempty.",
+  "control_script": "tools/check_exact_ep_geometry_finite.py",
+  "assumptions": [
+    {
+      "id": "A01",
+      "name": "One original actual symmetric AP+HOM CCO source",
+      "statement": "M is a nonempty countable transitive homogeneous source in a finite complete named symmetric binary language of actual orbitals. Its age has ordinary AP and semantic HOM simple-cycle CCO. Every invariant old relation is a finite orbital union; logical identity is included in RAW products and is never a diversity edge. No SAP is imposed.",
+      "depends_on": []
+    },
+    {
+      "id": "A02",
+      "name": "Specified genuine finite safe tower",
+      "statement": "Choose a finite succession of the ACTUAL maximal-exact-complement FULL connected rigid-groupoid character constructions of the AP-only provider. Each prefix is its genuine homogeneous marked-age limit, identified over its old reduct by reasonableness. All allowed finite markings, not an arbitrary single seed marking or one selected orbit, are retained. Active masks/gates and inactive fixed labels are the actual provider construction.",
+      "depends_on": []
+    },
+    {
+      "id": "A03",
+      "name": "Optional terminal starting tower",
+      "statement": "ONLY for the last terminality implication, every strict cover in the FULL invariant-equivalence lattice on each final nonempty parent sort has infinite relative index. This concerns all invariant equivalences, not only exact ones.",
+      "depends_on": []
+    },
+    {
+      "id": "A04",
+      "name": "Bound original exact quotient kernel",
+      "statement": "For the quotient theorem choose any ORIGINAL full exact invariant equivalence E, including Id or Top. Quotient points are actual E-classes and quotient atoms are their actual saturated original orbital blocks. No SAP, section of automorphism groups, or arbitrary mixed reverse exact descent is supplied by this parameter.",
+      "depends_on": []
+    },
+    {
+      "id": "A05",
+      "name": "Optional nonidentity kernel for strict rank",
+      "statement": "ONLY for the auxiliary diversity-rank observation assume E>Id on the original carrier. This is not required for the quotient-tower theorem.",
+      "depends_on": [
+        "A04"
+      ]
+    }
+  ],
+  "imports": [
+    {
+      "id": "I01",
+      "name": "thm:full-typed-exact-balls",
+      "provider_module": "raw_exact",
+      "source_label": "thm:full-typed-exact-balls",
+      "provider_claims": [
+        "C09",
+        "C10"
+      ],
+      "statement": "The equality-inclusive RAW exact calculus closes nonempty exact domains under represented convolution and distributes exact factors over finite exact meets with NONEMPTY evaluation. In particular E;D;E=intersection_r E;P_r;E for a nonempty exact presentation D=intersection_r P_r. This is the required AP-only RAW provider, not the STRONG-only lemma sharing an old saturation citation.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I02",
+      "name": "lem:ep-ap-TP",
+      "provider_module": "ap_character",
+      "source_label": "lem:ep-ap-TP",
+      "provider_claims": [
+        "C09",
+        "C15"
+      ],
+      "statement": "For the genuine AP-only full-character step, actual allowed atomic forks satisfy (T), and nonempty old exact profile intersections satisfy mask primality (P). Logical identity outputs and relative-K closures are handled by the proved provider; no SAP saturation is used.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I03",
+      "name": "thm:ep-ap-marked-completion",
+      "provider_module": "ap_character",
+      "source_label": "thm:ep-ap-marked-completion",
+      "provider_claims": [
+        "C41",
+        "C42",
+        "C44",
+        "C45"
+      ],
+      "statement": "An ACTUAL old finite complete object has legal pair masks iff its bits extend to a global character marking. Reasonableness lifts the SAME embedding. Its genuine marked Fraisse age is homogeneous with unchanged old reduct and HOM CCO. An arbitrary global seed marking is not itself assumed homogeneous.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I04",
+      "name": "cor:ep-ap-safe-splitting",
+      "provider_module": "ap_character",
+      "source_label": "cor:ep-ap-safe-splitting",
+      "provider_claims": [
+        "C60"
+      ],
+      "statement": "The actual AP-only maximal-character split exists for a finite relative interval; its marked AP/JEP/HOM CCO iteration terminates. This binds the specified safe tower construction at every actual prefix without assuming SAP of exact quotients.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I05",
+      "name": "prop:lattice-interface",
+      "provider_module": "clone_sap",
+      "source_label": "prop:lattice-interface",
+      "provider_claims": [
+        "C28",
+        "C29",
+        "C31",
+        "C33"
+      ],
+      "statement": "In the independent finite symmetric original-sort setting, invariant equivalences form a finite FULL lattice with actual intersection and represented commuting product as join. This independent branch assumes no clones, SAP or CCO; its source parameters are discharged by A01 or each actual prefix sort.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I06",
+      "name": "lem:ep-ap-orbital-parity",
+      "provider_module": "parity_hasse",
+      "source_label": "lem:ep-ap-orbital-parity",
+      "provider_claims": [
+        "C11",
+        "C12"
+      ],
+      "statement": "Actual symmetric orbital walk powers stabilize; a finite-index-separated atom has nonempty exact even/odd profiles Y,O with X=Y union O and [X:Y]=2. X need not be exact. Products include the logical diagonal; no extra identity-coloured diversity edges occur.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I07",
+      "name": "thm:foundational-maximal-parity-gate",
+      "provider_module": "parity_hasse",
+      "source_label": "thm:foundational-maximal-parity-gate",
+      "provider_claims": [
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26"
+      ],
+      "statement": "For a maximal full exact complement K of a reachable Y<X of index two, the WHOLE selected odd K-quotient involution t lies in every full exact equivalence strictly above K. Its real relation need not be functional; only t/K is. Quotient word inverse images are full exact.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I08",
+      "name": "thm:foundational-rigid-character",
+      "provider_module": "rigid_groupoid",
+      "source_label": "thm:foundational-rigid-character",
+      "provider_claims": [
+        "C31"
+      ],
+      "statement": "The actual connected rigid quotient groupoid is free. Rigid arrows are whole quotient orbitals, every other orbital joins different free-action orbits, and the full character sends the selected odd involution to one. No preferred seed or generic higher-owner action is provided.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I09",
+      "name": "lem:foundational-finite-phase-extension",
+      "provider_module": "rigid_groupoid",
+      "source_label": "lem:foundational-finite-phase-extension",
+      "provider_claims": [
+        "C30"
+      ],
+      "statement": "On finitely many ACTUAL groupoid quotient points, prescribed bits extend to ONE global marking iff all same-action-orbit pair differences equal the character. Duplicate quotient points must receive the same bit; independent action orbits have independent seeds.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I10",
+      "name": "lem:typed-simultaneous-blocks",
+      "provider_module": "rigid_groupoid",
+      "source_label": "lem:typed-simultaneous-blocks",
+      "provider_claims": [
+        "C02",
+        "C03",
+        "C04",
+        "C05"
+      ],
+      "statement": "Actual quotient atoms pull back to nonempty exact saturated orbital blocks. Pullback preserves converse, intersections and compatible RAW composition; quotient equality pulls back to the WHOLE kernel. Quotient exact words pull back exact, including empty-word kernel rather than old Id. No arbitrary mixed reverse descent is asserted.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I11",
+      "name": "lem:foundational-rigid-quotient-bridge",
+      "provider_module": "rigid_groupoid",
+      "source_label": "lem:foundational-rigid-quotient-bridge",
+      "provider_claims": [
+        "C15",
+        "C16",
+        "C17",
+        "C18"
+      ],
+      "statement": "If exact quotient kernels e_p refine the proposed gate kernels K_p and the projected gate kernels are already proved FULL exact, full exact K-bridges descend and EVERY full exact projected gate bridge pulls back. Correspondence preserves all compatible compositions and inverses. This is precise bridge-specific exact descent, not arbitrary typed saturated word descent; C82 establishes the projected-gate exactness before C83 applies this provider.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I12",
+      "name": "lem:one-original-sort-exact-descent",
+      "provider_module": "simultaneous_quotients",
+      "source_label": "lem:one-original-sort-exact-descent",
+      "provider_claims": [
+        "C07",
+        "C08",
+        "C09"
+      ],
+      "statement": "A nonempty E-bisaturated full exact relation in ONE ORIGINAL SYMMETRIC sort descends to a quotient full exact relation; exact equivalences containing E do so in particular. The proof uses original one-sort commutation, and is not a theorem for independently quotiented original sorts.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I13",
+      "name": "thm:typed-simultaneous-exact-quotients",
+      "provider_module": "simultaneous_quotients",
+      "source_label": "thm:typed-simultaneous-exact-quotients",
+      "provider_claims": [
+        "C26",
+        "C28",
+        "C39",
+        "C40"
+      ],
+      "statement": "For a homogeneous finite NAMED-SORTED actual AP+HOM CCO source with independently chosen nonempty full exact kernels, the simultaneously interpreted typed quotients have actual finite orbital language, triangle fullness, countable joint homogeneity/AP/JEP and semantic HOM CCO. This is applied to the NEW many-parent prefix M_j, not the older ONE_ORIGINAL_SORT exact-sorts-source theorem. No quotient SAP, group section or arbitrary mixed reverse exact descent is supplied.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    }
+  ],
+  "definitions": [
+    {
+      "id": "D01",
+      "name": "RAW exact domains",
+      "statement": "An exact domain is a finite intersection of reachable RAW endpoint profiles with nonempty evaluation; empty restriction list is typed Top and empty word is logical Id. Products use actual existential witnesses with compatible named endpoints.",
+      "source": {
+        "file": "sections/expansion_property_exact_geometry.tex",
+        "anchor": "source contracts"
+      },
+      "notes": "N01",
+      "depends_on": []
+    },
+    {
+      "id": "D02",
+      "name": "Genuine safe prefix",
+      "statement": "M_j is the actual homogeneous output of the preceding full-character stages, with all current unary types and the original old atom names retained.",
+      "source": {
+        "file": "sections/expansion_property_exact_geometry.tex",
+        "anchor": "Each \\(\\mathcal K_j\\)"
+      },
+      "notes": "N01",
+      "depends_on": []
+    },
+    {
+      "id": "D03",
+      "name": "Literal trace",
+      "statement": "tr_uv(D)=D intersect (u x v) as a real relation; its represented composition quantifies its middle point inside the DISPLAYED current sort v.",
+      "source": {
+        "file": "sections/expansion_property_exact_geometry.tex",
+        "anchor": "operatorname{tr}_{uv}(D)"
+      },
+      "notes": "N02",
+      "depends_on": []
+    },
+    {
+      "id": "D04",
+      "name": "Actual mask contracts",
+      "statement": "A_uv is the allowed old atomic mask. (T) is lifted fork totality, (P) nonempty-profile primality, and (R) actual old-age pair/triangle realization with coherent marks.",
+      "source": {
+        "file": "sections/expansion_property_exact_geometry.tex",
+        "anchor": "item[(T)]"
+      },
+      "notes": "N01",
+      "depends_on": []
+    },
+    {
+      "id": "D05",
+      "name": "Exact restriction map",
+      "statement": "rho_p sends each original full exact equivalence H to H restricted to p squared, on the actual nonempty current sort.",
+      "source": {
+        "file": "sections/expansion_property_exact_geometry.tex",
+        "anchor": "eq:ep-rho"
+      },
+      "notes": "N04",
+      "depends_on": []
+    },
+    {
+      "id": "D06",
+      "name": "Largest original exact lift",
+      "statement": "L_p(F) is the finite join of ALL original exact-equivalence lifts having trace F; it is not an arbitrary old predecessor.",
+      "source": {
+        "file": "sections/expansion_property_exact_geometry.tex",
+        "anchor": "eq:ep-old-largest"
+      },
+      "notes": "N04",
+      "depends_on": []
+    },
+    {
+      "id": "D07",
+      "name": "Original orbital parity",
+      "statement": "For original bipartite c, Y_c,O_c are the stable even/odd RAW walk profiles and X_c=Y_c union O_c has index two over Y_c; X_c need not be exact.",
+      "source": {
+        "file": "sections/expansion_property_exact_geometry.tex",
+        "anchor": "eq:ep-parity-trace"
+      },
+      "notes": "N05",
+      "depends_on": []
+    },
+    {
+      "id": "D08",
+      "name": "Finite type support",
+      "statement": "Phi_j(D) relates actual prefix types s,t iff some actual x in s,y in t satisfy old D. For Id it is literal type identity; a diversity loop uses DISTINCT points.",
+      "source": {
+        "file": "sections/expansion_property_exact_geometry.tex",
+        "anchor": "eq:ep-Phi"
+      },
+      "notes": "N06",
+      "depends_on": []
+    },
+    {
+      "id": "D09",
+      "name": "One connected old gate",
+      "statement": "G_i is the common canonical largest ORIGINAL exact lift of the active current gates in one connected full-character step.",
+      "source": {
+        "file": "sections/expansion_property_exact_geometry.tex",
+        "anchor": "lem:ep-single-old-gate"
+      },
+      "notes": "N07",
+      "depends_on": []
+    },
+    {
+      "id": "D10",
+      "name": "Common exact label kernel",
+      "statement": "Kcom is the intersection of the finitely many original step gates G_i, with Top for no steps.",
+      "source": {
+        "file": "sections/expansion_property_exact_geometry.tex",
+        "anchor": "eq:ep-common-kernel"
+      },
+      "notes": "N08",
+      "depends_on": []
+    },
+    {
+      "id": "D11",
+      "name": "Exact quotient occupancy",
+      "statement": "An E-class is labelled by the Phi_j(E)-class of precisely the prefix unary types it meets; the current quotient label set is T_j/Phi_j(E).",
+      "source": {
+        "file": "sections/expansion_property_exact_geometry.tex",
+        "anchor": "T_j/\\Phi_j(E)"
+      },
+      "notes": "N09",
+      "depends_on": []
+    },
+    {
+      "id": "D12",
+      "name": "Objectwise phase correction",
+      "statement": "For occupancy C choose p_C; the whole identity G-bridge I_pq has character cocycle. gamma_p=chi(I_pC,p), and zeta(X)=bit(x)+gamma_p for x in X intersect p.",
+      "source": {
+        "file": "sections/expansion_property_exact_geometry.tex",
+        "anchor": "eq:ep-gamma"
+      },
+      "notes": "N10",
+      "depends_on": []
+    },
+    {
+      "id": "D13",
+      "name": "Full finite quotient age",
+      "statement": "Every pair-locally allowed new marked quotient diagram whose old PREFIX diagram is legal is realized in the actual new homogeneous quotient prefix, not only in one chosen global seed marking.",
+      "source": {
+        "file": "sections/expansion_property_exact_geometry.tex",
+        "anchor": "converse finite"
+      },
+      "notes": "N11",
+      "depends_on": []
+    },
+    {
+      "id": "D14",
+      "name": "Original diversity rank",
+      "statement": "Count original diversity orbitals before choosing any safe labels. A nonidentity exact quotient merges at least one old diversity orbital into equality and splits no old orbital.",
+      "source": {
+        "file": "sections/expansion_property_exact_geometry.tex",
+        "anchor": "strict induction parameter"
+      },
+      "notes": "N13",
+      "depends_on": []
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "name": "Actual step contracts are provided in AP-only semantics",
+      "statement": "Bind I02/I03 at each actual prefix from A01/A02: (T),(P),(R) are statements about actual old orbitals and full globally markable finite diagrams. Relative-K identity contractions remain in the provider; no SAP assumption is introduced.",
+      "depends_on": [
+        "A01",
+        "A02",
+        "I02",
+        "I03",
+        "I04",
+        "D01",
+        "D02",
+        "D04"
+      ],
+      "notes": "N01",
+      "scope": "trace",
+      "source_labels": [
+        "lem:ep-exact-meet-prime"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C02",
+      "name": "Old symmetry supplies represented commutation",
+      "statement": "Every old invariant relation is an orbital union and is symmetric. Its product with another invariant relation is again invariant and symmetric, so converse reversal gives D;F=F;D on the ONE original carrier. Nonempty invariant relations are serial by original transitivity. The full invariant equivalence lattice is finite by I05.",
+      "depends_on": [
+        "A01",
+        "I05"
+      ],
+      "notes": "N01",
+      "scope": "lift",
+      "source_labels": [
+        "lem:ep-exact-meet-prime"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C03",
+      "name": "Every finite prefix is an actual allowed homogeneous source",
+      "statement": "Inductively apply I03/I04 to the specified A02 construction: each prefix retains finite named transitive types, actual old pair orbitals, ordinary AP and HOM CCO, with the preceding reduct identified by reasonableness. Any later quotient application is to that current actual source.",
+      "depends_on": [
+        "C01",
+        "I03",
+        "I04"
+      ],
+      "notes": "N01",
+      "scope": "trace",
+      "source_labels": [
+        "lem:ep-exact-meet-prime"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C04",
+      "name": "Set traces retain their literal types",
+      "statement": "Restriction preserves unions, converse and intersections as actual relations. A current atom is precisely a nonempty restriction of an old atom with its endpoint unary tags. Equality traces are Id_p on p,p and empty between distinct disjoint types.",
+      "depends_on": [
+        "C03",
+        "D03"
+      ],
+      "notes": "N02",
+      "scope": "trace",
+      "source_labels": [
+        "lem:ep-exact-meet-prime"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C05",
+      "name": "Actual complete pair and triangle legality includes equality cases",
+      "statement": "The provider realizes an allowed actual old pair/triangle with the prescribed current bits. If two formal positions agree, use actual equality and compatible type/bit labels rather than inventing a diversity edge between them.",
+      "depends_on": [
+        "C01",
+        "C04",
+        "I03"
+      ],
+      "notes": "N02",
+      "scope": "trace",
+      "source_labels": [
+        "lem:ep-exact-meet-prime"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C06",
+      "name": "Nonempty exact presentations and Top are fixed",
+      "statement": "Use finite reachable-profile presentations of exact domains. A typed Top is the empty restriction family; on two actual inhabited child sorts its trace is nonempty. Intermediate profile products are actual nonempty represented relations by transitivity and compatible types.",
+      "depends_on": [
+        "C01",
+        "I01",
+        "D01",
+        "D03"
+      ],
+      "notes": "N02",
+      "scope": "trace",
+      "source_labels": [
+        "lem:ep-exact-meet-prime"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C07",
+      "name": "Flatten the presentations of all input domains",
+      "statement": "For exact D_i with nonempty old common intersection, concatenate their finite profile presentations. The resulting old intersection is precisely the given nonempty intersection; omit empty Top presentations.",
+      "depends_on": [
+        "C06"
+      ],
+      "notes": "N02",
+      "scope": "trace",
+      "source_labels": [
+        "lem:ep-exact-meet-prime"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C08",
+      "name": "Every flattened constituent meets the same allowed mask",
+      "statement": "If tr_uv(D_i) is nonempty, a witnessing old atom belongs to D_i and hence every constituent profile of its presentation. Thus each constituent meets the SAME A_uv.",
+      "depends_on": [
+        "C04",
+        "C07"
+      ],
+      "notes": "N02",
+      "scope": "trace",
+      "source_labels": [
+        "lem:ep-exact-meet-prime"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C09",
+      "name": "Mask primality gives a common traced atom",
+      "statement": "Apply I02 (P) to the flattened family in C07/C08. Its nonempty old intersection meets A_uv, and actual pair legality realizes the common atom on those child sorts. The empty-family Top case is C06.",
+      "depends_on": [
+        "I02",
+        "C05",
+        "C07",
+        "C08"
+      ],
+      "notes": "N02",
+      "scope": "trace",
+      "source_labels": [
+        "lem:ep-exact-meet-prime"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C10",
+      "name": "Nonempty exact-meet trace source export",
+      "statement": "C07-C09 prove primality for finite exact domains with nonempty old intersection and all traces nonempty. There is no assertion for an empty old intersection.",
+      "depends_on": [
+        "C07",
+        "C08",
+        "C09"
+      ],
+      "notes": "N02",
+      "scope": "trace",
+      "source_labels": [
+        "lem:ep-exact-meet-prime"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C11",
+      "name": "Trace-product forward containment",
+      "statement": "An actual D witness through v followed by an E witness through the SAME point of v is an old D;E witness between u,z.",
+      "depends_on": [
+        "D03"
+      ],
+      "notes": "N03",
+      "scope": "trace",
+      "source_labels": [
+        "thm:ep-trace-product"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C12",
+      "name": "Fix an actual allowed endpoint orbital",
+      "statement": "For reverse containment fix x in u,zpoint in z with x(D;E)zpoint. Let c be its actual old orbital, including Id only when these endpoints agree. The whole c lies in D;E by old invariance.",
+      "depends_on": [
+        "C04",
+        "C06"
+      ],
+      "notes": "N03",
+      "scope": "trace",
+      "source_labels": [
+        "thm:ep-trace-product"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C13",
+      "name": "First Peirce intersection is nonempty",
+      "statement": "The actual D;E witness for c gives D intersect ({c};Eop) nonempty by rotating its three positions. F={c};Eop is nonempty exact by I01.",
+      "depends_on": [
+        "C12",
+        "I01"
+      ],
+      "notes": "N03",
+      "scope": "trace",
+      "source_labels": [
+        "thm:ep-trace-product"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C14",
+      "name": "The first auxiliary exact factor meets the required mask",
+      "statement": "Choose b0 in E with a nonempty v,z trace. Apply (T) to the compatible allowed fork c,b0op; its output is an atom of F allowed on u,v.",
+      "depends_on": [
+        "C01",
+        "C12",
+        "C13",
+        "I02"
+      ],
+      "notes": "N03",
+      "scope": "trace",
+      "source_labels": [
+        "thm:ep-trace-product"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C15",
+      "name": "First primality chooses a with its correct phase",
+      "statement": "D meets the u,v mask by hypothesis and F does by C14, while D intersect F is nonempty by C13. C10 therefore chooses a in D intersect F with an actual u,v trace.",
+      "depends_on": [
+        "C10",
+        "C13",
+        "C14"
+      ],
+      "notes": "N03",
+      "scope": "trace",
+      "source_labels": [
+        "thm:ep-trace-product"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C16",
+      "name": "The second Peirce intersection remains nonempty",
+      "statement": "a in {c};Eop gives E intersect H nonempty for H={a}op;{c}; H is nonempty exact by I01. This is a second constrained choice, not a claim the first choice already fixed the b phase.",
+      "depends_on": [
+        "C15",
+        "I01"
+      ],
+      "notes": "N03",
+      "scope": "trace",
+      "source_labels": [
+        "thm:ep-trace-product"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C17",
+      "name": "The second factor meets the other required mask",
+      "statement": "Apply (T) to the allowed fork aop,c, using C15 and the fixed allowed c endpoint pair. The output is in H and allowed on v,z.",
+      "depends_on": [
+        "C01",
+        "C12",
+        "C15",
+        "C16",
+        "I02"
+      ],
+      "notes": "N03",
+      "scope": "trace",
+      "source_labels": [
+        "thm:ep-trace-product"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C18",
+      "name": "Second primality chooses b with its correct phase",
+      "statement": "E and H both meet the v,z mask and E intersect H is nonempty. C10 gives b in that intersection with an actual allowed v,z trace.",
+      "depends_on": [
+        "C10",
+        "C16",
+        "C17"
+      ],
+      "notes": "N03",
+      "scope": "trace",
+      "source_labels": [
+        "thm:ep-trace-product"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C19",
+      "name": "The chosen old triple is an actual old diagram",
+      "statement": "b in aop;c witnesses an ACTUAL old a,b,c triangle or equality degeneracy. All prescribed child endpoint masks are allowed; compatibility of any repeated positions is part of the actual pair masks.",
+      "depends_on": [
+        "C05",
+        "C15",
+        "C18"
+      ],
+      "notes": "N03",
+      "scope": "trace",
+      "source_labels": [
+        "thm:ep-trace-product"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C20",
+      "name": "Actual marking legality realizes this labelled triangle",
+      "statement": "Use (R)/I03 on the actual old diagram C19 and its prescribed child types u,v,z. This produces a marked realization with an actual middle point in v.",
+      "depends_on": [
+        "C01",
+        "C19",
+        "I03"
+      ],
+      "notes": "N03",
+      "scope": "trace",
+      "source_labels": [
+        "thm:ep-trace-product"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C21",
+      "name": "Homogeneity aligns the complete endpoint pair",
+      "statement": "Current homogeneity C03 sends the resulting c-edge to the fixed endpoint pair C12 because full unary/pair types agree. For c=Id align the singleton; repeated input positions use the corresponding equality/two-point diagram. This proves the desired real relation containment.",
+      "depends_on": [
+        "C03",
+        "C05",
+        "C12",
+        "C20"
+      ],
+      "notes": "N03",
+      "scope": "trace",
+      "source_labels": [
+        "thm:ep-trace-product"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C22",
+      "name": "Actual exact trace-product source export",
+      "statement": "C11/C21 prove tr_uv(D);tr_vz(E)=tr_uz(D;E) as actual relations whenever BOTH input traces are nonempty. The middle sort is v, and logical identities are genuine equality cases.",
+      "depends_on": [
+        "C11",
+        "C21"
+      ],
+      "notes": "N03",
+      "scope": "trace",
+      "source_labels": [
+        "thm:ep-trace-product"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C23",
+      "name": "Choose a realized old word and read its prefix types",
+      "statement": "For a nonempty old word trace choose actual endpoints and an old word witness. In the identified current prefix the same real witness has actual intermediate unary types. Each displayed letter trace is therefore nonempty.",
+      "depends_on": [
+        "C03",
+        "C04",
+        "D01"
+      ],
+      "notes": "N04",
+      "scope": "lift",
+      "source_labels": [
+        "prop:ep-exact-trace-surj"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C24",
+      "name": "A nonempty old word trace is one current word profile",
+      "statement": "Apply C22 repeatedly along those fixed intermediate types. Its current word profile is exactly the original word restricted to the chosen endpoint types, not merely a subset. The empty old word is the actual current identity.",
+      "depends_on": [
+        "C22",
+        "C23"
+      ],
+      "notes": "N04",
+      "scope": "lift",
+      "source_labels": [
+        "prop:ep-exact-trace-surj"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C25",
+      "name": "Old nonempty exact traces are current exact",
+      "statement": "Intersect the current word profiles of C24. A nonempty trace of their old intersection makes all required constituent traces nonempty; Top restricts to current Top.",
+      "depends_on": [
+        "C06",
+        "C24"
+      ],
+      "notes": "N04",
+      "scope": "lift",
+      "source_labels": [
+        "prop:ep-exact-trace-surj"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C26",
+      "name": "Forgetting a current word gives an original profile",
+      "statement": "A current word already has compatible fixed intermediate types and realized nonempty letter traces. Repeated C22 identifies it with the trace of its original old word.",
+      "depends_on": [
+        "C22",
+        "C24"
+      ],
+      "notes": "N04",
+      "scope": "lift",
+      "source_labels": [
+        "prop:ep-exact-trace-surj"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C27",
+      "name": "Every current exact domain has an original exact lift",
+      "statement": "Write it as a finite nonempty meet of current reachable profiles, use C26 and take the corresponding old profile intersection. A current witness proves that old intersection nonempty.",
+      "depends_on": [
+        "C25",
+        "C26"
+      ],
+      "notes": "N04",
+      "scope": "lift",
+      "source_labels": [
+        "prop:ep-exact-trace-surj"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C28",
+      "name": "The same assertions iterate across arbitrary prefixes",
+      "statement": "Induct through the finite stages: nonempty exact domains lift to original domains and trace-product identities compose stagewise. Every use retains the nonempty displayed input traces.",
+      "depends_on": [
+        "C22",
+        "C25",
+        "C27"
+      ],
+      "notes": "N04",
+      "scope": "lift",
+      "source_labels": [
+        "prop:ep-exact-trace-surj"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C29",
+      "name": "Exact-equivalence restriction preserves meets and bounds",
+      "statement": "Restriction sends old exact equivalences to reflexive current exact equivalences; meets and Id/Top commute with restriction literally.",
+      "depends_on": [
+        "C04",
+        "C25",
+        "I05",
+        "D05"
+      ],
+      "notes": "N04",
+      "scope": "lift",
+      "source_labels": [
+        "prop:ep-exact-trace-surj"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C30",
+      "name": "Exact-equivalence joins commute with restriction",
+      "statement": "Old and current same-sort invariant equivalences commute; their join is represented product by I05. Input traces contain current Id, so C22/C28 makes rho_p preserve joins.",
+      "depends_on": [
+        "C02",
+        "C28",
+        "C29",
+        "I05"
+      ],
+      "notes": "N04",
+      "scope": "lift",
+      "source_labels": [
+        "prop:ep-exact-trace-surj"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C31",
+      "name": "A lift of a current exact equivalence contains original Id",
+      "statement": "Lift current F as tr_pp(D) by C27/C28. Its reflexivity gives one (x,x) in D, and original transitivity gives all Id. Every old relation is symmetric by C02, so D=Dop.",
+      "depends_on": [
+        "C02",
+        "C27",
+        "C28"
+      ],
+      "notes": "N04",
+      "scope": "lift",
+      "source_labels": [
+        "prop:ep-exact-trace-surj"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C32",
+      "name": "Stable powers produce an old exact equivalence with the same trace",
+      "statement": "The reflexive symmetric invariant D has increasing RAW powers, finite orbital support makes them stabilize, and the stable relation is an equivalence. Each power is exact by I01. C28 with middle p makes every trace F^n=F.",
+      "depends_on": [
+        "C02",
+        "C28",
+        "C31",
+        "I01"
+      ],
+      "notes": "N04",
+      "scope": "lift",
+      "source_labels": [
+        "prop:ep-exact-trace-surj"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C33",
+      "name": "Exact-domain and equivalence trace-surjectivity source export",
+      "statement": "C25-C28 prove both exact-domain directions and prefix products. C29/C30/C32 make rho_p a surjective finite exact-equivalence lattice homomorphism. This is an exact sublattice claim, not a claim every full invariant equivalence is exact.",
+      "depends_on": [
+        "C25",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C32"
+      ],
+      "notes": "N04",
+      "scope": "lift",
+      "source_labels": [
+        "prop:ep-exact-trace-surj"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C34",
+      "name": "The full fiber join is the largest exact lift",
+      "statement": "For current exact F its rho fiber is nonempty by C33 and finite. Joining ALL members stays in that fiber by C30, so L_p(F) exists, has trace F and contains every other old exact lift.",
+      "depends_on": [
+        "C30",
+        "C33",
+        "D06"
+      ],
+      "notes": "N04",
+      "scope": "lift",
+      "source_labels": [
+        "prop:ep-exact-trace-surj"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C35",
+      "name": "Largest-lift adjunction is proved in both directions",
+      "statement": "If H<=L_p(F), restriction gives rho(H)<=F. Conversely if rho(H)<=F, H join L_p(F) has trace F, so its fiber maximality forces H<=L_p(F).",
+      "depends_on": [
+        "C30",
+        "C34"
+      ],
+      "notes": "N04",
+      "scope": "lift",
+      "source_labels": [
+        "prop:ep-exact-trace-surj"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C36",
+      "name": "The right adjoint preserves all finite meets",
+      "statement": "H<=L_p(F meet Fprime) iff rho(H)<=F,Fprime iff H<=L_p(F),L_p(Fprime). This identifies L_p of a meet with the old meet; Top follows likewise.",
+      "depends_on": [
+        "C35",
+        "I05"
+      ],
+      "notes": "N04",
+      "scope": "lift",
+      "source_labels": [
+        "prop:ep-exact-trace-surj"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C37",
+      "name": "The canonical lift uses only exact-equivalence data",
+      "statement": "C34-C36 distinguish the largest exact lift from an arbitrary predecessor and prove its order properties without declaring the whole FULL invariant lattice exact.",
+      "depends_on": [
+        "C34",
+        "C35",
+        "C36"
+      ],
+      "notes": "N04",
+      "scope": "lift",
+      "source_labels": [
+        "prop:ep-exact-trace-surj"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C38",
+      "name": "All restricted pivot powers are nonempty",
+      "statement": "A realized current same-sort pivot is invariant and serial in its transitive parent; its positive RAW powers are nonempty. Hence C28 applies with every intermediate sort equal to that parent.",
+      "depends_on": [
+        "C03",
+        "C28"
+      ],
+      "notes": "N05",
+      "scope": "parity",
+      "source_labels": [
+        "lem:ep-old-gate"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C39",
+      "name": "An originally nonbipartite atom cannot become a current pivot",
+      "statement": "An odd old c-walk closes at some point and original transitivity gives Id in that odd power. C28/C38 would put current Id in the corresponding odd current power, contradicting the actual bipartite pivot.",
+      "depends_on": [
+        "C28",
+        "C38"
+      ],
+      "notes": "N05",
+      "scope": "parity",
+      "source_labels": [
+        "lem:ep-old-gate"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C40",
+      "name": "All even odd and connectivity relations are literal traces",
+      "statement": "After C39 proves original c bipartite, its actual even-walk Y_c and connectivity X_c are invariant equivalences with exactly two even-walk classes per connected component. Thus [X_c:Y_c]=2 and c lies in X_c minus Y_c, discharging the finite-relative separating-interval context of I06. Seriality plus finite palette gives stable positive even/odd word profiles; repeated C28 restricts Y,O,X exactly, including nonempty odd trace. X need not be exact.",
+      "depends_on": [
+        "C28",
+        "C38",
+        "C39",
+        "I06",
+        "D07"
+      ],
+      "notes": "N05",
+      "scope": "parity",
+      "source_labels": [
+        "lem:ep-old-gate"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C41",
+      "name": "The canonical lifted gate contains original even parity",
+      "statement": "Y_c restricts below the current gate K_p. By C35, original Y_c<=Ghat=L_p(K_p).",
+      "depends_on": [
+        "C35",
+        "C40"
+      ],
+      "notes": "N05",
+      "scope": "gate",
+      "source_labels": [
+        "lem:ep-old-gate"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C42",
+      "name": "The lifted gate is an original complement",
+      "statement": "Ghat intersect X_c is Y_c or X_c since [X_c:Y_c]=2. The latter would put the nonempty odd trace inside K_p, contradicting the current complement. Thus Ghat intersect X_c=Y_c.",
+      "depends_on": [
+        "C40",
+        "C41",
+        "I06"
+      ],
+      "notes": "N05",
+      "scope": "gate",
+      "source_labels": [
+        "lem:ep-old-gate"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C43",
+      "name": "Original pivot and maximal-gate source export",
+      "statement": "Any exact old complement H>Ghat has trace strictly above K_p, because Ghat is the largest lift, and its trace remains a current complement by C40. This contradicts current maximality. C39-C42 therefore prove the original bipartite-pivot and canonical maximal-exact-gate assertion.",
+      "depends_on": [
+        "C35",
+        "C39",
+        "C40",
+        "C41",
+        "C42",
+        "I07"
+      ],
+      "notes": "N05",
+      "scope": "gate",
+      "source_labels": [
+        "lem:ep-old-gate"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C44",
+      "name": "Type support preserves union converse and identity",
+      "statement": "All three facts follow from actual witnesses in the fixed prefix. For Id a point has exactly one unary type; diversity loops use distinct real witnesses.",
+      "depends_on": [
+        "C03",
+        "D08"
+      ],
+      "notes": "N06",
+      "scope": "type_support",
+      "source_labels": [
+        "lem:ep-phi-support"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C45",
+      "name": "Type support preserves represented composition",
+      "statement": "Align the two actual middle points of matching type with a current automorphism. It preserves old D,F, so the aligned pair gives a D;F witness. Conversely any D;F witness has an actual middle type. This works for ANY old invariant relations, not just exact ones.",
+      "depends_on": [
+        "C03",
+        "C44"
+      ],
+      "notes": "N06",
+      "scope": "type_support",
+      "source_labels": [
+        "lem:ep-phi-support"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C46",
+      "name": "Equivalence type images are equivalences",
+      "statement": "Identity, converse and composition preservation send every old invariant equivalence to a reflexive symmetric transitive relation on the type set.",
+      "depends_on": [
+        "C44",
+        "C45"
+      ],
+      "notes": "N06",
+      "scope": "type_support",
+      "source_labels": [
+        "lem:ep-phi-support"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C47",
+      "name": "Nonempty old exact intersections commute with type support",
+      "statement": "On any chosen pair of current types, all constituent traces nonempty imply a common traced atom by C10 iterated stagewise through C28. The reverse implication is immediate. Require the OLD exact intersection nonempty.",
+      "depends_on": [
+        "C10",
+        "C28",
+        "C44"
+      ],
+      "notes": "N06",
+      "scope": "type_support",
+      "source_labels": [
+        "lem:ep-phi-support"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C48",
+      "name": "Exact-equivalence type meets always satisfy the guard",
+      "statement": "A finite intersection of old exact equivalences contains Id, so C47 applies to every such meet; for zero factors use Top and all inhabited type pairs. No assertion is made for disjoint old atomic relations.",
+      "depends_on": [
+        "C29",
+        "C47"
+      ],
+      "notes": "N06",
+      "scope": "type_support",
+      "source_labels": [
+        "lem:ep-phi-support"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C49",
+      "name": "Every actual class has its complete occupancy class",
+      "statement": "If an E-class contains an s point and (s,t) is in Phi(E), send a witnessing s endpoint into that class by a current automorphism. Its E-related t endpoint also lies there. Conversely any two types meeting that class are Phi(E)-related.",
+      "depends_on": [
+        "C03",
+        "C46"
+      ],
+      "notes": "N06",
+      "scope": "type_support",
+      "source_labels": [
+        "lem:ep-phi-support"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C50",
+      "name": "Finite support and occupancy source export",
+      "statement": "C44-C49 prove represented support homomorphism, exact nonempty meet preservation, equivalence images and exact actual E-class occupancy. Empty old atomic intersections are excluded from the meet claim.",
+      "depends_on": [
+        "C44",
+        "C45",
+        "C46",
+        "C47",
+        "C48",
+        "C49"
+      ],
+      "notes": "N06",
+      "scope": "type_support",
+      "source_labels": [
+        "lem:ep-phi-support"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C51",
+      "name": "Lift a current full exact bridge to original exact D",
+      "statement": "For current R:p->q with RRop=K_p, choose D with tr_pq(D)=R by C33. D is an ORIGINAL one-sort relation and hence symmetric.",
+      "depends_on": [
+        "C02",
+        "C33"
+      ],
+      "notes": "N07",
+      "scope": "gate",
+      "source_labels": [
+        "lem:ep-single-old-gate"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C52",
+      "name": "The old square has current kernel trace and contains Id",
+      "statement": "C28 gives tr_pp(D^2)=RRop=K_p. Nonempty symmetric old D is serial, so Id<=D^2.",
+      "depends_on": [
+        "C02",
+        "C28",
+        "C51"
+      ],
+      "notes": "N07",
+      "scope": "gate",
+      "source_labels": [
+        "lem:ep-single-old-gate"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C53",
+      "name": "Its stable exact equivalence closure lies below G_p",
+      "statement": "Stable powers of D^2 are exact equivalences as in C32 and all have trace K_p by C28. Therefore their closure is at most G_p=L_p(K_p).",
+      "depends_on": [
+        "C28",
+        "C32",
+        "C34",
+        "C52"
+      ],
+      "notes": "N07",
+      "scope": "gate",
+      "source_labels": [
+        "lem:ep-single-old-gate"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C54",
+      "name": "Saturating D produces a whole old G_p correspondence",
+      "statement": "Put C=G_p;D. Original commutation C02 and Id<=D^2<=G_p give C^2=G_p. Also G_p;C=C=C;G_p, so it is a full exact functional G_p-quotient correspondence, not generally a function on real points.",
+      "depends_on": [
+        "C02",
+        "C53",
+        "I01"
+      ],
+      "notes": "N07",
+      "scope": "gate",
+      "source_labels": [
+        "lem:ep-single-old-gate"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C55",
+      "name": "The same old gate lifts the target current kernel",
+      "statement": "C28 gives tr_pq(C)=K_p;R=R. The reverse trace is Rop and its q-square trace is K_q. Hence G_p is an old exact lift of K_q.",
+      "depends_on": [
+        "C28",
+        "C54"
+      ],
+      "notes": "N07",
+      "scope": "gate",
+      "source_labels": [
+        "lem:ep-single-old-gate"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C56",
+      "name": "Canonical old gates agree throughout the connected component",
+      "statement": "Largest-lift maximality gives G_p<=G_q; reverse the bridge to get equality. Connectivity propagates this along all active objects.",
+      "depends_on": [
+        "C34",
+        "C55"
+      ],
+      "notes": "N07",
+      "scope": "gate",
+      "source_labels": [
+        "lem:ep-single-old-gate"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C57",
+      "name": "All and only nonempty old G correspondences trace to full bridges",
+      "statement": "C54 lifts every current bridge. Conversely a full exact original G-quotient correspondence with nonempty p,q trace has trace bridge equations by C28 and is current exact by C33. The FULL chosen component includes that bridge and its target.",
+      "depends_on": [
+        "C28",
+        "C33",
+        "C54",
+        "C56",
+        "I08"
+      ],
+      "notes": "N07",
+      "scope": "gate",
+      "source_labels": [
+        "lem:ep-single-old-gate"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C58",
+      "name": "One original gate per connected step source export",
+      "statement": "C51-C57 prove equality of all canonical active old gates and the full old/current correspondence. The proof uses ONE original symmetric-sort commutation, not an unspecified mixed relation-algebra commutativity axiom.",
+      "depends_on": [
+        "C51",
+        "C52",
+        "C53",
+        "C54",
+        "C55",
+        "C56",
+        "C57"
+      ],
+      "notes": "N07",
+      "scope": "gate",
+      "source_labels": [
+        "lem:ep-single-old-gate"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C59",
+      "name": "The finite common old gate meet is exact",
+      "statement": "Each G_i is an old exact equivalence by C58. Their finite meet contains Id and is exact; with no steps take original Top.",
+      "depends_on": [
+        "C58",
+        "I01",
+        "D10"
+      ],
+      "notes": "N08",
+      "scope": "gate",
+      "source_labels": [
+        "prop:ep-common-kernel"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C60",
+      "name": "The common kernel preserves every prefix label",
+      "statement": "Induct through the tower: previously related endpoints have the same parent type; in an active parent Kcom<=G_i restricts below its phase gate, so their bits agree. Inactive labels are unchanged.",
+      "depends_on": [
+        "C28",
+        "C58",
+        "C59"
+      ],
+      "notes": "N08",
+      "scope": "gate",
+      "source_labels": [
+        "prop:ep-common-kernel"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C61",
+      "name": "A final label-preserving exact E preserves every prefix",
+      "statement": "Every prefix label is a coordinate of the final unary label; an old exact equivalence all of whose classes lie in final types therefore preserves each earlier label and each new active bit.",
+      "depends_on": [
+        "A02"
+      ],
+      "notes": "N08",
+      "scope": "gate",
+      "source_labels": [
+        "prop:ep-common-kernel"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C62",
+      "name": "Such E restricts below each active phase gate",
+      "statement": "On active p the exact relations E_p and K_p both preserve the bit, as does their represented exact join. If E_p were not below K_p, maximality I07 would put the WHOLE phase-one involution into this join, contradicting preservation. Thus E_p<=K_p.",
+      "depends_on": [
+        "C29",
+        "C30",
+        "C61",
+        "I07"
+      ],
+      "notes": "N08",
+      "scope": "gate",
+      "source_labels": [
+        "prop:ep-common-kernel"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C63",
+      "name": "The adjunction proves largest original label kernel",
+      "statement": "C35 and C62 give E<=G_i for every connected step; hence E<=Kcom. Together with C60 this proves Kcom is the largest ORIGINAL exact label-preserving equivalence.",
+      "depends_on": [
+        "C35",
+        "C59",
+        "C60",
+        "C62"
+      ],
+      "notes": "N08",
+      "scope": "gate",
+      "source_labels": [
+        "prop:ep-common-kernel"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C64",
+      "name": "Common-kernel and type-meet source export",
+      "statement": "Kcom has classes inside single final types, so Phi_m(Kcom)=Id_T. C48 and C59 give intersection_i Phi_m(G_i)=Id_T, including the zero-step case with its single original type. C63 proves the stated largest exact kernel.",
+      "depends_on": [
+        "C48",
+        "C59",
+        "C60",
+        "C63"
+      ],
+      "notes": "N08",
+      "scope": "gate",
+      "source_labels": [
+        "prop:ep-common-kernel"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C65",
+      "name": "Bind the actual exact quotient and stage induction",
+      "statement": "Fix A04 E. At stage j let Q_j be the ACTUAL E-class quotient of M_j, with occupancy labels D11. Inductively its full labelled age is the quotient safe prefix already constructed; initially it is the actual original exact quotient.",
+      "depends_on": [
+        "A04",
+        "C03",
+        "C50",
+        "D11"
+      ],
+      "notes": "N09",
+      "scope": "quotient",
+      "source_labels": [
+        "thm:ep-quotient-tower"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C66",
+      "name": "Representative parent sorts cover every occupancy object",
+      "statement": "For every occupancy C choose p_C in C. C49 says every actual E-class of C meets p_C, so that quotient sort is exactly p_C/e_C, where e_C=E restricted to p_C squared.",
+      "depends_on": [
+        "C49",
+        "C65"
+      ],
+      "notes": "N09",
+      "scope": "quotient",
+      "source_labels": [
+        "thm:ep-quotient-tower"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C67",
+      "name": "Joint exact quotients supply the actual current source",
+      "statement": "C33 makes each e_C current exact. Apply the fully NAMED-SORTED simultaneous quotient source theorem I13 to the NEW actual many-parent prefix M_j and these independently chosen kernels. It gives actual finite orbital language, joint homogeneity, AP/JEP, triangle fullness and HOM CCO. Occupancy identifies its carriers with the partitioned old E-classes. No quotient SAP or one-original-sort theorem is substituted.",
+      "depends_on": [
+        "C03",
+        "C33",
+        "C66",
+        "I13"
+      ],
+      "notes": "N09",
+      "scope": "quotient",
+      "source_labels": [
+        "thm:ep-quotient-tower"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C68",
+      "name": "Saturated actual orbital traces obey E7",
+      "statement": "For a REALIZED old a trace between p_C,p_D, C28 twice gives e_C;(a trace);e_D=(E;a;E) trace. I10 identifies its quotient with one actual current quotient orbital. No nonempty trace is claimed for an arbitrary a.",
+      "depends_on": [
+        "C28",
+        "C66",
+        "C67",
+        "I10"
+      ],
+      "notes": "N09",
+      "scope": "quotient",
+      "source_labels": [
+        "thm:ep-quotient-tower"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C69",
+      "name": "Original quotient atoms plus occupancy labels are complete",
+      "statement": "For any occurring saturated old quotient atom b choose actual reps in p_C,p_D. Their REALIZED old atom a_prime has the same saturation b by quotient orbital partition. C68 identifies the whole current pair orbital; no hidden finer binary relation remains.",
+      "depends_on": [
+        "C66",
+        "C68",
+        "I10"
+      ],
+      "notes": "N09",
+      "scope": "quotient",
+      "source_labels": [
+        "thm:ep-quotient-tower"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C70",
+      "name": "Reverse exact descent has its precise one-sort scope",
+      "statement": "For nonempty original E-bisaturated D=intersection P_r, RAW I01 gives D=intersection E;P_r;E. Each factor descends from an old word, or use I12 directly. Thus D/E is full exact in ORIGINAL M/E. This does not use the STRONG-only saturation lemma or arbitrary mixed reverse descent.",
+      "depends_on": [
+        "C02",
+        "A04",
+        "I01",
+        "I10",
+        "I12"
+      ],
+      "notes": "N09",
+      "scope": "quotient",
+      "source_labels": [
+        "thm:ep-quotient-tower"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C71",
+      "name": "Use only the earlier quotient prefix when taking a trace",
+      "statement": "At stage j, C65-C70 construct the actual full quotient source Q_j before proving stage j+1. Applying C33 or its trace consequences to the quotient tower is allowed ONLY on that already established prefix.",
+      "depends_on": [
+        "C65",
+        "C67",
+        "C69",
+        "C70"
+      ],
+      "notes": "N09",
+      "scope": "quotient",
+      "source_labels": [
+        "thm:ep-quotient-tower"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C72",
+      "name": "Logical quotient identities retain their whole kernels",
+      "statement": "I10 makes quotient equality pull back to e_C, and gate-groupoid identity pull back to K_p when the proposed gate contains e_C. E=Id is the ordinary tower, while E=Top has one quotient point and no retained step. Distinguish these actual identities throughout.",
+      "depends_on": [
+        "C66",
+        "C68",
+        "I10",
+        "D12",
+        "C58"
+      ],
+      "notes": "N09",
+      "scope": "quotient",
+      "source_labels": [
+        "thm:ep-quotient-tower"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C73",
+      "name": "A discarded step is nonrefining on every active parent",
+      "statement": "If E is not below the common original G_i, C35 gives e_p not below K_p on EVERY active p, since all canonical largest old lifts equal G_i by C58.",
+      "depends_on": [
+        "A04",
+        "C35",
+        "C58",
+        "C65"
+      ],
+      "notes": "N10",
+      "scope": "quotient",
+      "source_labels": [
+        "thm:ep-quotient-tower"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C74",
+      "name": "Its strict current exact join contains the whole odd relation",
+      "statement": "F_p=e_p join K_p strictly exceeds K_p. I07 puts the WHOLE selected phase-one K_p-quotient involution t_p inside F_p. It acts serially on every gate class.",
+      "depends_on": [
+        "C30",
+        "C73",
+        "I07"
+      ],
+      "notes": "N10",
+      "scope": "quotient",
+      "source_labels": [
+        "thm:ep-quotient-tower"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C75",
+      "name": "Every individual E-class meets both new children",
+      "statement": "For arbitrary x in active p choose z with x t_p z. Since F_p=e_p;K_p by same-sort commutation, find y with x e_p y K_p z. Gate K_p preserves the bit while t_p reverses it, so y lies in x E-class with opposite bit. This uses actual marked points and no unmarked-parent automorphism to transport a cross-phase pair.",
+      "depends_on": [
+        "C02",
+        "C74",
+        "I05"
+      ],
+      "notes": "N10",
+      "scope": "quotient",
+      "source_labels": [
+        "thm:ep-quotient-tower"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C76",
+      "name": "Discarded occupancy classes lift once and keep ALL children",
+      "statement": "C49 connects all parents of an old occupancy class. C75 makes both children of each active parent occur in EVERY E-class that met it; inactive parents have their unique lift. Thus each old occupancy class has exactly one new occupancy class containing ALL its children. Distinct old occupancy classes cannot merge, so the quotient partition is unchanged.",
+      "depends_on": [
+        "C49",
+        "C73",
+        "C75"
+      ],
+      "notes": "N10",
+      "scope": "quotient",
+      "source_labels": [
+        "thm:ep-quotient-tower"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C77",
+      "name": "Retained occupancy objects are wholly active or inactive",
+      "statement": "If E<=G_i and occupancy C meets one active parent, each other parent in C is joined by a nonempty old G_i identity trace. C57 and fullness of the connected component make it active too.",
+      "depends_on": [
+        "A04",
+        "C49",
+        "C57",
+        "C58"
+      ],
+      "notes": "N10",
+      "scope": "quotient",
+      "source_labels": [
+        "thm:ep-quotient-tower"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C78",
+      "name": "Identity G transports are whole current gate bridges",
+      "statement": "For p,q in such C, I_pq=G_i trace on p,q is nonempty because E<=G_i and occupancy is actual. C28 gives both gate equations; C57 puts this whole exact bridge in the full current groupoid.",
+      "depends_on": [
+        "C28",
+        "C49",
+        "C57",
+        "C77"
+      ],
+      "notes": "N10",
+      "scope": "quotient",
+      "source_labels": [
+        "thm:ep-quotient-tower"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C79",
+      "name": "Choose a coherent objectwise character coboundary",
+      "statement": "I_pq;I_qr=I_pr by C28 and I_pp=K_p. Their characters satisfy chi(I_pq)+chi(I_qr)=chi(I_pr). Choose p_C and gamma_p=chi(I_pC,p); then chi(I_pq)=gamma_p+gamma_q and gamma_pC=0.",
+      "depends_on": [
+        "C78",
+        "I08",
+        "D12"
+      ],
+      "notes": "N10",
+      "scope": "quotient",
+      "source_labels": [
+        "thm:ep-quotient-tower"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C80",
+      "name": "The adjusted phase is well defined on each actual E-class",
+      "statement": "For x,y in the same E-class, their parent types lie in C. E_p<=K_p fixes same-parent bits, and E trace on p,q lies in I_pq. Hence bit(y)+gamma_q=bit(x)+gamma_p. Define their common value zeta(X).",
+      "depends_on": [
+        "C77",
+        "C78",
+        "C79"
+      ],
+      "notes": "N10",
+      "scope": "quotient",
+      "source_labels": [
+        "thm:ep-quotient-tower"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C81",
+      "name": "The two retained occupancy classes are exact offset graphs",
+      "statement": "They are C^b={p_(b+gamma_p):p in C}. Both occur above p_C; E_pC<=K_pC prevents opposite bits in one E-class. Every E-class of C meets every p by C49, so each graph projects BIJECTIVELY to C. Inactive C has one unchanged lift.",
+      "depends_on": [
+        "C49",
+        "C77",
+        "C79",
+        "C80"
+      ],
+      "notes": "N10",
+      "scope": "quotient",
+      "source_labels": [
+        "thm:ep-quotient-tower"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C82",
+      "name": "Projected gates are exact before using the next step",
+      "statement": "Original G_i/E is full exact by C70/I12. Its nonempty trace on the EARLIER quotient prefix Q_j is K_p/e_p by C28; C33 applied to that already constructed prefix makes the proposed gate full exact. The step j+1 is not used to justify its own gate.",
+      "depends_on": [
+        "C28",
+        "C33",
+        "C58",
+        "C70",
+        "C71",
+        "C77",
+        "I12"
+      ],
+      "notes": "N10",
+      "scope": "quotient",
+      "source_labels": [
+        "thm:ep-quotient-tower"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C83",
+      "name": "The entire projected gate groupoid is obtained bijectively",
+      "statement": "e_p<=K_p and C82 discharge I11. Every old full exact gate bridge descends, and EVERY projected full exact bridge pulls back to an old one. After choosing representative parents p_C this gives the FULL objectwise correspondence, not a selected arrow subfamily.",
+      "depends_on": [
+        "C77",
+        "C82",
+        "I11"
+      ],
+      "notes": "N10",
+      "scope": "quotient",
+      "source_labels": [
+        "thm:ep-quotient-tower"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C84",
+      "name": "Normalize every arrow on the chosen representative objects",
+      "statement": "An old R:p->q represents I_pC,p;R;I_q,pD on p_C,p_D. Its character is gamma_p+chi(R)+gamma_q. Define this as the character of the corresponding projected arrow.",
+      "depends_on": [
+        "C79",
+        "C83"
+      ],
+      "notes": "N11",
+      "scope": "quotient",
+      "source_labels": [
+        "thm:ep-quotient-tower"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C85",
+      "name": "The corrected character is coherent and its gate identities have zero",
+      "statement": "C79 makes the normalization independent of parent presentations and additive under composition. Identity transports between merged parents become quotient GATE identities of character zero, not necessarily logical identities on real E-classes.",
+      "depends_on": [
+        "C72",
+        "C79",
+        "C84"
+      ],
+      "notes": "N11",
+      "scope": "quotient",
+      "source_labels": [
+        "thm:ep-quotient-tower"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C86",
+      "name": "No arrows collapse after fixing normalized object endpoints",
+      "statement": "On fixed representative objects, quotienting by e<=K does not merge distinct K-classes. Freeness I08 makes distinct original gate arrows different on those classes, so C83 is injective there. Cross-parent identity transports ARE deliberately identified by C84/C85. The selected odd involution retains character one.",
+      "depends_on": [
+        "C83",
+        "C84",
+        "C85",
+        "I08"
+      ],
+      "notes": "N11",
+      "scope": "quotient",
+      "source_labels": [
+        "thm:ep-quotient-tower"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C87",
+      "name": "Rigid status is compared with this same full groupoid",
+      "statement": "A rigid projected pair pulls back to a full old gate bridge by C83; a pair with endpoints in different full rigid-action orbits stays nonrigid. No claim is made for an unrelated quotient or an arbitrary nonfunctional correspondence.",
+      "depends_on": [
+        "C69",
+        "C83",
+        "C86",
+        "I08"
+      ],
+      "notes": "N11",
+      "scope": "quotient",
+      "source_labels": [
+        "thm:ep-quotient-tower"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C88",
+      "name": "Projected local masks are exactly the corrected character rule",
+      "statement": "C80/C84 identify allowed bit differences for each rigid actual quotient orbital, including the whole gate identity; C87 leaves both differences on nonrigid orbit pairs. Inactive labels have one fixed value.",
+      "depends_on": [
+        "C69",
+        "C80",
+        "C84",
+        "C85",
+        "C87"
+      ],
+      "notes": "N11",
+      "scope": "quotient",
+      "source_labels": [
+        "thm:ep-quotient-tower"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C89",
+      "name": "Realize an arbitrary legal unmarked QUOTIENT PREFIX diagram first",
+      "statement": "For an arbitrary new pair-locally allowed finite diagram P, realize its underlying OLD PREFIX diagram including occupancy labels in Q_j by C67/C71. If presented from the original quotient plus all previous masks, the induction full-age statement first supplies exactly this legal prefix. No arbitrary fine representatives or prechosen compatible bits are assumed.",
+      "depends_on": [
+        "C65",
+        "C67",
+        "C71",
+        "C88"
+      ],
+      "notes": "N11",
+      "scope": "quotient",
+      "source_labels": [
+        "thm:ep-quotient-tower"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C90",
+      "name": "Choose actual real representatives of every quotient vertex",
+      "statement": "For each active vertex choose x_v in its E-class with parent p_C by C49/C66; set q_v=[x_v]_KpC and epsilon_v=zeta_P(X_v)+gamma_pC. Choose real reps for inactive vertices too, but assign them no K-point or seed.",
+      "depends_on": [
+        "C49",
+        "C66",
+        "C79",
+        "C89"
+      ],
+      "notes": "N11",
+      "scope": "quotient",
+      "source_labels": [
+        "thm:ep-quotient-tower"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C91",
+      "name": "Every same-orbit seed pair satisfies the actual character equation",
+      "statement": "If q_v,q_w share a rigid-action orbit, the unique full arrow is a whole actual quotient orbital by I08. C69/C83 identify its actual E-quotient pair and corrected character C84. Pair-local legality of P therefore gives epsilon_w+epsilon_v=chi(R).",
+      "depends_on": [
+        "C69",
+        "C83",
+        "C84",
+        "C88",
+        "C90",
+        "I08"
+      ],
+      "notes": "N11",
+      "scope": "quotient",
+      "source_labels": [
+        "thm:ep-quotient-tower"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C92",
+      "name": "Duplicate gate points define one consistent finite prescription",
+      "statement": "If q_v=q_w the arrow in C91 is the GATE identity and character zero, so epsilon_v=epsilon_w even when X_v,X_w are distinct E-classes. Thus the assignments form a FUNCTION on the finite set of actual groupoid points.",
+      "depends_on": [
+        "C72",
+        "C85",
+        "C91"
+      ],
+      "notes": "N11",
+      "scope": "quotient",
+      "source_labels": [
+        "thm:ep-quotient-tower"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C93",
+      "name": "One global character marking extends all prescriptions",
+      "statement": "Apply I09 to the actual finite prescription C91/C92, componentwise where necessary; retain inactive fixed labels. Pull it back to the actual old real source. This changes no old real relation, E-class or quotient pair orbital.",
+      "depends_on": [
+        "C90",
+        "C91",
+        "C92",
+        "I09"
+      ],
+      "notes": "N11",
+      "scope": "quotient",
+      "source_labels": [
+        "thm:ep-quotient-tower"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C94",
+      "name": "Each prescribed projected bit is recovered from that marking",
+      "statement": "Since e_p<=K_p, bits within each same-parent E-class are fixed; C79/C80 make all other parents agree after correction. Therefore each selected active E-class has exactly its prescribed zeta_P bit; inactive classes retain their unique label.",
+      "depends_on": [
+        "C77",
+        "C79",
+        "C80",
+        "C90",
+        "C93"
+      ],
+      "notes": "N11",
+      "scope": "quotient",
+      "source_labels": [
+        "thm:ep-quotient-tower"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C95",
+      "name": "A finite real witness puts P into the GENUINE marked output age",
+      "statement": "Take the finite complete real diagram on ALL representatives chosen in C90 with the global marking C93. By I03 it is in the genuine marked age, so embeds inducedly into M_(j+1). E and each saturated quotient orbital are finite OLD orbital unions, so the embedding preserves E-inequality, all quotient atoms, prefix occupancies and the corrected bits C94. Its quotient therefore realizes P in the actual new homogeneous quotient. The arbitrary global marking itself need not be homogeneous.",
+      "depends_on": [
+        "C03",
+        "C69",
+        "C90",
+        "C93",
+        "C94",
+        "I03"
+      ],
+      "notes": "N11",
+      "scope": "quotient",
+      "source_labels": [
+        "thm:ep-quotient-tower"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C96",
+      "name": "The full admissible marked quotient age is proved in both directions",
+      "statement": "Every actual marked quotient diagram satisfies C88. Conversely C89-C95 realize EVERY finite locally allowed diagram over the legal prefix. This proves the ENTIRE character age, not only one orbit of markings or a chosen fine lift. No SAP of M/E is used.",
+      "depends_on": [
+        "C88",
+        "C89",
+        "C90",
+        "C91",
+        "C92",
+        "C93",
+        "C94",
+        "C95"
+      ],
+      "notes": "N11",
+      "scope": "quotient",
+      "source_labels": [
+        "thm:ep-quotient-tower"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C97",
+      "name": "The projected odd pivot is one actual diversity atom",
+      "statement": "At p put e=E_p<=K_p. I10 identifies barc=(e;c;e)/e as one actual quotient atom. Since c lies in X minus Y and K_p intersect X=Y, saturation cannot meet K_p, hence cannot meet e; so barc is not quotient equality.",
+      "depends_on": [
+        "C40",
+        "C77",
+        "C82",
+        "I10"
+      ],
+      "notes": "N12",
+      "scope": "quotient",
+      "source_labels": [
+        "thm:ep-quotient-tower"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C98",
+      "name": "Projected walk powers are the corresponding saturated old powers",
+      "statement": "Same-sort invariant commutation lets e commute with every pivot power. Quotient pullback/composition I10 makes even and odd powers pull back to e;c^n;e. Their stable images give barY=(e join Y)/e, barO=(e;O;e)/e and barX=(e join X)/e.",
+      "depends_on": [
+        "C02",
+        "C40",
+        "C97",
+        "I10"
+      ],
+      "notes": "N12",
+      "scope": "quotient",
+      "source_labels": [
+        "thm:ep-quotient-tower"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C99",
+      "name": "Even and odd images stay disjoint with relative index two",
+      "statement": "e join Y<=K_p while e;O;e is disjoint from K_p. Thus barY and barO are disjoint. Also X intersect (e join Y)=Y; commuting-equivalence class transposition gives [(e join X):(e join Y)]=[X:Y]=2. Hence the projected pivot remains genuinely reachable and bipartite.",
+      "depends_on": [
+        "C40",
+        "C77",
+        "C98",
+        "I05",
+        "I07"
+      ],
+      "notes": "N12",
+      "scope": "quotient",
+      "source_labels": [
+        "thm:ep-quotient-tower"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C100",
+      "name": "The projected proposed gate is a complement",
+      "statement": "For e<=K_p, the modular identity K_p intersect (e join X)=e join (K_p intersect X)=e join Y follows directly from commuting relations. Divide by e to obtain barK intersect barX=barY; barK=K_p/e was already full exact in C82.",
+      "depends_on": [
+        "C82",
+        "C98",
+        "C99",
+        "I05"
+      ],
+      "notes": "N12",
+      "scope": "quotient",
+      "source_labels": [
+        "thm:ep-quotient-tower"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C101",
+      "name": "Projected complement maximality follows by exact pullback",
+      "statement": "A strictly larger full exact projected complement pulls back exact by I10 to Kprime>K_p. Intersecting its condition with X gives Kprime intersect X=Y (because X intersect (e join Y)=Y), contrary to original maximality.",
+      "depends_on": [
+        "C99",
+        "C100",
+        "I07",
+        "I10"
+      ],
+      "notes": "N12",
+      "scope": "quotient",
+      "source_labels": [
+        "thm:ep-quotient-tower"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C102",
+      "name": "The proposed original quotient gate is the LARGEST old lift",
+      "statement": "G_i/E is exact by C70. Any original quotient exact H_Q with the same current gate trace pulls back to original exact H by I10 and has H|p^2=K_p. Thus H<=L_p(K_p)=G_i and H_Q<=G_i/E. Only the already constructed Q_j prefix trace is used.",
+      "depends_on": [
+        "C34",
+        "C58",
+        "C70",
+        "C71",
+        "C82",
+        "I10"
+      ],
+      "notes": "N12",
+      "scope": "quotient",
+      "source_labels": [
+        "thm:ep-quotient-tower"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C103",
+      "name": "Retained steps are genuine safe steps and the induction closes",
+      "statement": "C81 gives their exact occupancy graphs; C82-C88 give the full projected gate/groupoid character; C96 proves the full admissible marked age; C97-C102 give the reachable bipartite pivot and canonical largest maximal-exact gate. Discard C76 identity changes and continue the finite induction from C65, without using future steps to prove an earlier gate exact.",
+      "depends_on": [
+        "C65",
+        "C71",
+        "C76",
+        "C81",
+        "C82",
+        "C83",
+        "C84",
+        "C85",
+        "C86",
+        "C87",
+        "C88",
+        "C96",
+        "C97",
+        "C98",
+        "C99",
+        "C100",
+        "C101",
+        "C102"
+      ],
+      "notes": "N12",
+      "scope": "quotient",
+      "source_labels": [
+        "thm:ep-quotient-tower"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C104",
+      "name": "Terminality pulls back ALL invariant finite intervals",
+      "statement": "Under A03, a finite relative-index interval of full invariant equivalences in a final occupancy quotient p/e pulls back to the same finite interval in the actual final parent p. This contradicts terminality. Exactness of these two arbitrary equivalences is neither assumed nor needed.",
+      "depends_on": [
+        "A03",
+        "C66",
+        "C103"
+      ],
+      "notes": "N12",
+      "scope": "quotient",
+      "source_labels": [
+        "thm:ep-quotient-tower"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C105",
+      "name": "Exact quotient-tower source export",
+      "statement": "For every original full exact E, C65-C103 prove the genuine full safe quotient tower, discarding exactly E-not-below-G steps, with corrected retained characters and canonical G_i/E gates. C104 proves its terminal implication if the original tower is terminal. No quotient SAP, generic EP inheritance or arbitrary mixed reverse descent is asserted.",
+      "depends_on": [
+        "C65",
+        "C66",
+        "C67",
+        "C68",
+        "C69",
+        "C70",
+        "C71",
+        "C72",
+        "C73",
+        "C74",
+        "C75",
+        "C76",
+        "C77",
+        "C78",
+        "C79",
+        "C80",
+        "C81",
+        "C82",
+        "C83",
+        "C84",
+        "C85",
+        "C86",
+        "C87",
+        "C88",
+        "C89",
+        "C90",
+        "C91",
+        "C92",
+        "C93",
+        "C94",
+        "C95",
+        "C96",
+        "C97",
+        "C98",
+        "C99",
+        "C100",
+        "C101",
+        "C102",
+        "C103",
+        "C104"
+      ],
+      "notes": "N12",
+      "scope": "quotient",
+      "source_labels": [
+        "thm:ep-quotient-tower"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C106",
+      "name": "A nonidentity original exact kernel absorbs a diversity orbital",
+      "statement": "Under A05 choose distinct original xEy. Their whole actual old diversity orbital lies inside E by invariance and becomes quotient equality.",
+      "depends_on": [
+        "A01",
+        "A05",
+        "I10",
+        "D14"
+      ],
+      "notes": "N13",
+      "scope": "rank",
+      "source_labels": [
+        "thm:ep-quotient-tower"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C107",
+      "name": "Old orbital blocks cannot split into finer quotient orbitals",
+      "statement": "Each quotient atom is an actual old saturated atom image by I10; old atoms have unique images and quotient diversity cannot arise from logical Id. Thus no new diversity atom is created, and C106 removes at least one.",
+      "depends_on": [
+        "C106",
+        "I10"
+      ],
+      "notes": "N13",
+      "scope": "rank",
+      "source_labels": [
+        "thm:ep-quotient-tower"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C108",
+      "name": "The strict rank is ORIGINAL diversity count",
+      "statement": "C107 proves fewer original diversity orbitals in M/E when E>Id. This is a well-founded parameter for later EP proofs, not an assertion that arbitrary Ramsey/EP expansions descend through quotients.",
+      "depends_on": [
+        "C107"
+      ],
+      "notes": "N13",
+      "scope": "rank",
+      "source_labels": [
+        "thm:ep-quotient-tower"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C109",
+      "name": "Both nonempty trace inputs are necessary",
+      "statement": "On two separately labelled points take D=Id, E=Top, u={0},v={1},z={0}. The first trace is empty so the left product is empty, whereas tr_uz(D;E) contains (0,0). This boundary does not satisfy the omitted input hypothesis.",
+      "depends_on": [
+        "D03"
+      ],
+      "notes": "N13",
+      "scope": "boundary",
+      "source_labels": [
+        "thm:ep-quotient-tower"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C110",
+      "name": "Finite type support does not preserve disjoint atomic meets",
+      "statement": "Inside any prefix type with two clone points, old Id and their clone diversity atom have disjoint old supports but both Phi images have the same type loop. Hence their support intersection is nonempty while Phi of the empty old intersection is empty. C47 is genuinely guarded.",
+      "depends_on": [
+        "C47",
+        "D08"
+      ],
+      "notes": "N13",
+      "scope": "boundary",
+      "source_labels": [
+        "thm:ep-quotient-tower"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C111",
+      "name": "Kernel and descent scope shortcuts remain forbidden",
+      "statement": "Quotient logical Id pulls back to E, while groupoid identity is its full gate. Reverse exact descent C70 uses ONE original symmetric sort; bridge descent C83 uses e<=K; neither is replaced by arbitrary independent mixed bisaturation.",
+      "depends_on": [
+        "C70",
+        "C72",
+        "C83"
+      ],
+      "notes": "N13",
+      "scope": "boundary",
+      "source_labels": [
+        "thm:ep-quotient-tower"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C112",
+      "name": "Finite controls test interfaces rather than unbounded theorems",
+      "statement": "Independent actual finite hierarchical orbital relations, traces, quotient blocks and phase functions test nonempty RAW products, canonical lifts, type occupancies, graph offsets and all local/global finite phase assignments. They prove no unbounded AP/CCO, full theorem, HN/EPPA bridge or compiled Lean proof.",
+      "depends_on": [
+        "C22",
+        "C33",
+        "C43",
+        "C50",
+        "C58",
+        "C64",
+        "C105",
+        "C109",
+        "C110",
+        "C111"
+      ],
+      "notes": "N13",
+      "scope": "boundary",
+      "source_labels": [
+        "thm:ep-quotient-tower"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    }
+  ],
+  "source_result_files": [
+    "sections/expansion_property_exact_geometry.tex"
+  ],
+  "exports": [
+    {
+      "source_label": "lem:ep-exact-meet-prime",
+      "claims": [
+        "C10"
+      ]
+    },
+    {
+      "source_label": "thm:ep-trace-product",
+      "claims": [
+        "C22"
+      ]
+    },
+    {
+      "source_label": "prop:ep-exact-trace-surj",
+      "claims": [
+        "C33"
+      ]
+    },
+    {
+      "source_label": "lem:ep-old-gate",
+      "claims": [
+        "C43"
+      ]
+    },
+    {
+      "source_label": "lem:ep-phi-support",
+      "claims": [
+        "C50"
+      ]
+    },
+    {
+      "source_label": "lem:ep-single-old-gate",
+      "claims": [
+        "C58"
+      ]
+    },
+    {
+      "source_label": "prop:ep-common-kernel",
+      "claims": [
+        "C64"
+      ]
+    },
+    {
+      "source_label": "thm:ep-quotient-tower",
+      "claims": [
+        "C105"
+      ]
+    }
+  ],
+  "auxiliary_exports": [
+    {
+      "source_label": "eq:ep-tower",
+      "claims": [
+        "C03"
+      ],
+      "source": {
+        "file": "sections/expansion_property_exact_geometry.tex",
+        "anchor": "\\label{eq:ep-tower}"
+      }
+    },
+    {
+      "source_label": "eq:ep-tp",
+      "claims": [
+        "C22"
+      ],
+      "source": {
+        "file": "sections/expansion_property_exact_geometry.tex",
+        "anchor": "\\label{eq:ep-tp}"
+      }
+    },
+    {
+      "source_label": "eq:ep-rho",
+      "claims": [
+        "C33"
+      ],
+      "source": {
+        "file": "sections/expansion_property_exact_geometry.tex",
+        "anchor": "\\label{eq:ep-rho}"
+      }
+    },
+    {
+      "source_label": "eq:ep-old-largest",
+      "claims": [
+        "C34"
+      ],
+      "source": {
+        "file": "sections/expansion_property_exact_geometry.tex",
+        "anchor": "\\label{eq:ep-old-largest}"
+      }
+    },
+    {
+      "source_label": "eq:ep-adjunction",
+      "claims": [
+        "C35"
+      ],
+      "source": {
+        "file": "sections/expansion_property_exact_geometry.tex",
+        "anchor": "\\label{eq:ep-adjunction}"
+      }
+    },
+    {
+      "source_label": "eq:ep-parity-trace",
+      "claims": [
+        "C40"
+      ],
+      "source": {
+        "file": "sections/expansion_property_exact_geometry.tex",
+        "anchor": "\\label{eq:ep-parity-trace}"
+      }
+    },
+    {
+      "source_label": "eq:ep-Phi",
+      "claims": [
+        "C50"
+      ],
+      "source": {
+        "file": "sections/expansion_property_exact_geometry.tex",
+        "anchor": "\\label{eq:ep-Phi}"
+      }
+    },
+    {
+      "source_label": "eq:ep-common-kernel",
+      "claims": [
+        "C64"
+      ],
+      "source": {
+        "file": "sections/expansion_property_exact_geometry.tex",
+        "anchor": "\\label{eq:ep-common-kernel}"
+      }
+    },
+    {
+      "source_label": "eq:ep-sat-quotient",
+      "claims": [
+        "C68"
+      ],
+      "source": {
+        "file": "sections/expansion_property_exact_geometry.tex",
+        "anchor": "\\label{eq:ep-sat-quotient}"
+      }
+    },
+    {
+      "source_label": "eq:ep-gamma",
+      "claims": [
+        "C80"
+      ],
+      "source": {
+        "file": "sections/expansion_property_exact_geometry.tex",
+        "anchor": "\\label{eq:ep-gamma}"
+      }
+    },
+    {
+      "source_label": "eq:ep-graph-offsets",
+      "claims": [
+        "C81"
+      ],
+      "source": {
+        "file": "sections/expansion_property_exact_geometry.tex",
+        "anchor": "\\label{eq:ep-graph-offsets}"
+      }
+    },
+    {
+      "source_label": "eq:ep-projected-character",
+      "claims": [
+        "C84"
+      ],
+      "source": {
+        "file": "sections/expansion_property_exact_geometry.tex",
+        "anchor": "\\label{eq:ep-projected-character}"
+      }
+    },
+    {
+      "source_label": "eq:ep-quotient-parity",
+      "claims": [
+        "C99"
+      ],
+      "source": {
+        "file": "sections/expansion_property_exact_geometry.tex",
+        "anchor": "\\label{eq:ep-quotient-parity}"
+      }
+    }
+  ],
+  "application_contracts": [
+    {
+      "consumer": "C01",
+      "lemma": "I02/I03",
+      "discharge": "Instantiate the AP-only represented relative-K/full-character providers at each actual prefix specified by A02, using its AP+HOM CCO actual orbitals. No SAP-specific V27 provider is called."
+    },
+    {
+      "consumer": "C67",
+      "lemma": "I13",
+      "discharge": "Apply the fully NAMED-SORTED simultaneous exact quotient theorem to the NEW actual many-parent prefix M_j and exact kernels E|p_C^2 from C33. Occupancy C49 identifies its carrier with actual Eclasses; every I13 hypothesis holds at this source. The old one-original-sort exact-sorts-source theorem is not used for this typed prefix, and quotient SAP is unnecessary."
+    },
+    {
+      "consumer": "C82",
+      "lemma": "C33",
+      "discharge": "Use trace exactness only on the already proved quotient prefix Q_j. Original one-sort G_i/E exactness was proved separately by I12 before this call; do not use the stage j+1 presently under construction."
+    },
+    {
+      "consumer": "C95",
+      "lemma": "I03",
+      "discharge": "The arbitrary global marking supplies only a finite actual fine marked witness. Its membership in the genuine marked AGE permits a finite induced embedding into the homogeneous output; E/orbital unions and C94 transport the prescribed quotient data."
+    },
+    {
+      "consumer": "C40",
+      "lemma": "I06",
+      "discharge": "C39 already proves original c bipartite. Its actual even-walk/connectivity equivalences Y_c<X_c have index two, so choosing this original separating interval discharges parity_hasse finite-relative context; c is serial and outside Y_c. No arbitrary old finite-index interval is assumed."
+    }
+  ],
+  "dependency_firewalls": [
+    {
+      "claims": [
+        "C01",
+        "C10",
+        "C22",
+        "C33",
+        "C43",
+        "C50",
+        "C58",
+        "C64"
+      ],
+      "forbid": [
+        "A03",
+        "A04",
+        "A05"
+      ]
+    },
+    {
+      "claims": [
+        "C22",
+        "C33",
+        "C43",
+        "C50",
+        "C58",
+        "C64",
+        "C105"
+      ],
+      "forbid": [
+        "A05",
+        "C106",
+        "C107",
+        "C108"
+      ]
+    },
+    {
+      "claims": [
+        "C34",
+        "C35",
+        "C36",
+        "C37"
+      ],
+      "forbid": [
+        "C38",
+        "C39",
+        "C40",
+        "C41",
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46",
+        "C47",
+        "C48",
+        "C49",
+        "C50",
+        "C51",
+        "C52",
+        "C53",
+        "C54",
+        "C55",
+        "C56",
+        "C57",
+        "C58",
+        "C59",
+        "C60",
+        "C61",
+        "C62",
+        "C63",
+        "C64",
+        "C65",
+        "C66",
+        "C67",
+        "C68",
+        "C69",
+        "C70",
+        "C71",
+        "C72",
+        "C73",
+        "C74",
+        "C75",
+        "C76",
+        "C77",
+        "C78",
+        "C79",
+        "C80",
+        "C81",
+        "C82",
+        "C83",
+        "C84",
+        "C85",
+        "C86",
+        "C87",
+        "C88",
+        "C89",
+        "C90",
+        "C91",
+        "C92",
+        "C93",
+        "C94",
+        "C95",
+        "C96",
+        "C97",
+        "C98",
+        "C99",
+        "C100",
+        "C101",
+        "C102",
+        "C103",
+        "C104",
+        "C105"
+      ]
+    },
+    {
+      "claims": [
+        "C65",
+        "C66",
+        "C67",
+        "C68",
+        "C69",
+        "C70",
+        "C71",
+        "C72",
+        "C73",
+        "C74",
+        "C75",
+        "C76",
+        "C77",
+        "C78",
+        "C79",
+        "C80",
+        "C81",
+        "C82",
+        "C83",
+        "C84",
+        "C85",
+        "C86",
+        "C87",
+        "C88",
+        "C89",
+        "C90",
+        "C91",
+        "C92",
+        "C93",
+        "C94",
+        "C95",
+        "C96",
+        "C97",
+        "C98",
+        "C99",
+        "C100",
+        "C101",
+        "C102",
+        "C103"
+      ],
+      "forbid": [
+        "A03"
+      ]
+    },
+    {
+      "claims": [
+        "C106",
+        "C107",
+        "C108"
+      ],
+      "forbid": [
+        "A02",
+        "A03",
+        "C105"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "T01",
+      "name": "Actual AP-only contracts and nonempty trace primality",
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Prove every listed claim with its literal hypotheses and actual source application; preserve RAW equality, nonempty traces and the scope firewalls."
+    },
+    {
+      "id": "T02",
+      "name": "Two Peircean choices and actual trace products",
+      "claims": [
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22"
+      ],
+      "depends_on": [
+        "T01"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Prove every listed claim with its literal hypotheses and actual source application; preserve RAW equality, nonempty traces and the scope firewalls."
+    },
+    {
+      "id": "T03",
+      "name": "Exact trace lifts and largest-lift adjunction",
+      "claims": [
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37"
+      ],
+      "depends_on": [
+        "T01",
+        "T02"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Prove every listed claim with its literal hypotheses and actual source application; preserve RAW equality, nonempty traces and the scope firewalls."
+    },
+    {
+      "id": "T04",
+      "name": "Original bipartite pivots and maximal complements",
+      "claims": [
+        "C38",
+        "C39",
+        "C40",
+        "C41",
+        "C42",
+        "C43"
+      ],
+      "depends_on": [
+        "T01",
+        "T03"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Prove every listed claim with its literal hypotheses and actual source application; preserve RAW equality, nonempty traces and the scope firewalls."
+    },
+    {
+      "id": "T05",
+      "name": "Finite type supports and actual occupancy",
+      "claims": [
+        "C44",
+        "C45",
+        "C46",
+        "C47",
+        "C48",
+        "C49",
+        "C50"
+      ],
+      "depends_on": [
+        "T01",
+        "T03"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Prove every listed claim with its literal hypotheses and actual source application; preserve RAW equality, nonempty traces and the scope firewalls."
+    },
+    {
+      "id": "T06",
+      "name": "One canonical original gate per full component",
+      "claims": [
+        "C51",
+        "C52",
+        "C53",
+        "C54",
+        "C55",
+        "C56",
+        "C57",
+        "C58"
+      ],
+      "depends_on": [
+        "T01",
+        "T03"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Prove every listed claim with its literal hypotheses and actual source application; preserve RAW equality, nonempty traces and the scope firewalls."
+    },
+    {
+      "id": "T07",
+      "name": "Largest common exact label kernel",
+      "claims": [
+        "C59",
+        "C60",
+        "C61",
+        "C62",
+        "C63",
+        "C64"
+      ],
+      "depends_on": [
+        "T03",
+        "T05",
+        "T06"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Prove every listed claim with its literal hypotheses and actual source application; preserve RAW equality, nonempty traces and the scope firewalls."
+    },
+    {
+      "id": "T08",
+      "name": "Actual quotient prefixes and retained occupancy graphs",
+      "claims": [
+        "C65",
+        "C66",
+        "C67",
+        "C68",
+        "C69",
+        "C70",
+        "C71",
+        "C72",
+        "C73",
+        "C74",
+        "C75",
+        "C76",
+        "C77",
+        "C78",
+        "C79",
+        "C80",
+        "C81",
+        "C82",
+        "C83"
+      ],
+      "depends_on": [
+        "T01",
+        "T03",
+        "T05",
+        "T06"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Prove every listed claim with its literal hypotheses and actual source application; preserve RAW equality, nonempty traces and the scope firewalls."
+    },
+    {
+      "id": "T09",
+      "name": "Full corrected character age via finite witnesses",
+      "claims": [
+        "C84",
+        "C85",
+        "C86",
+        "C87",
+        "C88",
+        "C89",
+        "C90",
+        "C91",
+        "C92",
+        "C93",
+        "C94",
+        "C95",
+        "C96"
+      ],
+      "depends_on": [
+        "T01",
+        "T05",
+        "T08"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Prove every listed claim with its literal hypotheses and actual source application; preserve RAW equality, nonempty traces and the scope firewalls."
+    },
+    {
+      "id": "T10",
+      "name": "Projected reachable maximal steps and terminality",
+      "claims": [
+        "C97",
+        "C98",
+        "C99",
+        "C100",
+        "C101",
+        "C102",
+        "C103",
+        "C104",
+        "C105"
+      ],
+      "depends_on": [
+        "T01",
+        "T03",
+        "T04",
+        "T06",
+        "T08",
+        "T09"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Prove every listed claim with its literal hypotheses and actual source application; preserve RAW equality, nonempty traces and the scope firewalls."
+    },
+    {
+      "id": "T11",
+      "name": "Strict original diversity rank",
+      "claims": [
+        "C106",
+        "C107",
+        "C108"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Prove every listed claim with its literal hypotheses and actual source application; preserve RAW equality, nonempty traces and the scope firewalls."
+    },
+    {
+      "id": "T12",
+      "name": "Boundary diagnostics and source review",
+      "claims": [
+        "C109",
+        "C110",
+        "C111",
+        "C112"
+      ],
+      "depends_on": [
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T10"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Prove every listed claim with its literal hypotheses and actual source application; preserve RAW equality, nonempty traces and the scope firewalls."
+    }
+  ],
+  "controls": [
+    {
+      "id": "F1",
+      "check": "Enumerate RAW profiles/exact domains in actual finite hierarchical symmetric orbital relations and verify every nonempty trace product with its displayed middle type."
+    },
+    {
+      "id": "F2",
+      "check": "Enumerate exact-equivalence restriction fibers, largest old lifts and their adjunction; check Phi supports, nonempty exact meets and actual class occupancies."
+    },
+    {
+      "id": "F3",
+      "check": "For actual finite E-class quotients check atom blocks/diagonal kernels, original diversity drop and kept/discarded occupancy partitions with coherent nonzero objectwise offsets."
+    },
+    {
+      "id": "F4",
+      "check": "Independently enumerate all finite quotient phase assignments satisfying full local constraints and compare them with images of global original phase markings, including duplicate gate points."
+    },
+    {
+      "id": "F5",
+      "check": "Retain explicit failures when a trace-input hypothesis is dropped or Phi is asked to preserve an empty old atomic intersection. Finite hosts are not unbounded AP/CCO certificates."
+    }
+  ],
+  "article_feedback_intro": "One required provider-citation repair is recorded: the AP-only RAW saturation/intersection step must cite the proved RAW calculus, not the STRONG-only lemma currently referenced there. Its mathematical equality and stated hypotheses remain valid. Other entries expand precise source applications; frozen TeX is unchanged.",
+  "article_feedback": [
+    {
+      "id": "F01",
+      "kind": "REQUIRED_PROVIDER_CITATION_REPAIR",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/expansion_property_exact_geometry.tex",
+        "anchor": "exact saturation-intersection lemma"
+      },
+      "finding": "The displayed AP-only E-bisaturated exact descent invokes lem:exact-saturation-intersection, whose prepared export is STRONG-only and SAP-scoped.",
+      "proposed_article_change": "Replace that citation by the equality-inclusive full-typed-exact RAW meet-product theorem and the one-original-sort exact-descent lemma. Do not add SAP to the quotient theorem.",
+      "caller_effect": "No new mathematical hypothesis or formula change; exact existing providers and actual source contexts are retained.",
+      "proof_claims": [
+        "C70"
+      ]
+    },
+    {
+      "id": "F02",
+      "kind": "PROOF_EXPANSION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/expansion_property_exact_geometry.tex",
+        "anchor": "converse finite"
+      },
+      "finding": "A legal unmarked quotient diagram must be realized in the already constructed QUOTIENT PREFIX with its occupancy labels, before the next new bits are prescribed.",
+      "proposed_article_change": "State this prefix explicitly, and distinguish the induction full-age conclusion from a realization in bare M/E without labels.",
+      "caller_effect": "No new mathematical hypothesis or formula change; exact existing providers and actual source contexts are retained.",
+      "proof_claims": [
+        "C65",
+        "C71",
+        "C89"
+      ]
+    },
+    {
+      "id": "F03",
+      "kind": "PROOF_EXPANSION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/expansion_property_exact_geometry.tex",
+        "anchor": "Thus the quotient of this one globally marked"
+      },
+      "finding": "An arbitrary global seed marking is not necessarily the genuine homogeneous marked output.",
+      "proposed_article_change": "Take finitely many real representatives of all active and inactive quotient vertices, embed their complete globally marked finite diagram in the genuine marked-age limit, and use E/orbital-union invariance to preserve the quotient diagram and corrected bits.",
+      "caller_effect": "No new mathematical hypothesis or formula change; exact existing providers and actual source contexts are retained.",
+      "proof_claims": [
+        "C90",
+        "C93",
+        "C94",
+        "C95",
+        "C96"
+      ]
+    },
+    {
+      "id": "F04",
+      "kind": "NOTATION_PRECISION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/expansion_property_exact_geometry.tex",
+        "anchor": "no two\narrows collapse"
+      },
+      "finding": "Cross-parent identity transports are intentionally identified by occupancy contraction; injectivity concerns arrows after fixing normalized representative objects.",
+      "proposed_article_change": "Say that explicitly and identify the projected groupoid identity as the full gate K_p/e_p, not logical identity on real quotient classes.",
+      "caller_effect": "No new mathematical hypothesis or formula change; exact existing providers and actual source contexts are retained.",
+      "proof_claims": [
+        "C72",
+        "C84",
+        "C85",
+        "C86"
+      ]
+    },
+    {
+      "id": "F05",
+      "kind": "PROOF_SCOPE",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/expansion_property_exact_geometry.tex",
+        "anchor": "Original one-sort symmetry"
+      },
+      "finding": "The common-original-gate argument commutes ALL invariant original relations, beyond mere equivalence commutation.",
+      "proposed_article_change": "Spell out that finite complete same-sort symmetry makes every old invariant relation and product symmetric; converse reversal then gives commutation on ONE original carrier.",
+      "caller_effect": "No new mathematical hypothesis or formula change; exact existing providers and actual source contexts are retained.",
+      "proof_claims": [
+        "C02",
+        "C54",
+        "C58"
+      ]
+    },
+    {
+      "id": "F06",
+      "kind": "PROOF_SCOPE",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/expansion_property_exact_geometry.tex",
+        "anchor": "This calculation is restricted to realised"
+      },
+      "finding": "Equation E7 and completeness of quotient orbitals concern realized old atomic traces only.",
+      "proposed_article_change": "Retain the a-prime representative argument; do not require every old atom to occur on arbitrary occupancy parents.",
+      "caller_effect": "No new mathematical hypothesis or formula change; exact existing providers and actual source contexts are retained.",
+      "proof_claims": [
+        "C68",
+        "C69"
+      ]
+    },
+    {
+      "id": "F07",
+      "kind": "PROVIDER_SCOPE_PRECISION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/expansion_property_exact_geometry.tex",
+        "anchor": "joint exact-axis theorem of Part~I"
+      },
+      "finding": "The new prefix M_j has many current parent sorts with independently chosen E_p kernels; the receiving source theorem must be the fully NAMED-SORTED simultaneous exact quotient theorem.",
+      "proposed_article_change": "Cite thm:typed-simultaneous-exact-quotients explicitly at this application, keeping the older ONE-original-sort source theorem separate.",
+      "caller_effect": "Existing fully typed provider discharges the application; no new mathematical hypothesis or formula change.",
+      "proof_claims": [
+        "C66",
+        "C67",
+        "C68",
+        "C69"
+      ]
+    }
+  ],
+  "overview_mermaid": [
+    "flowchart TD",
+    "  A[\"AP-only RAW character contracts\"] --> T[\"Nonempty trace products\"]",
+    "  T --> L[\"Exact lifts and type supports\"]",
+    "  L --> G[\"One original gate and common kernel\"]",
+    "  L --> Q[\"Actual quotient prefix\"]",
+    "  G --> Q",
+    "  Q --> C[\"Corrected full character age\"]",
+    "  C --> S[\"Reachable maximal steps and terminality\"]"
+  ],
+  "overview_notes": [
+    "All exact products are RAW and include logical equality. Both displayed input traces must be nonempty.",
+    "Original one-sort symmetry is essential to the old bridge saturation; typed quotient sources themselves need no SAP.",
+    "Every retained step is proved over its already constructed quotient prefix, and full finite age is obtained by finite marked witnesses in the genuine homogeneous output."
+  ],
+  "review": {
+    "date": "2026-10-29",
+    "source_unchanged": true,
+    "source_signature_repairs": 0,
+    "source_citation_repairs": 1,
+    "unexpanded_provider_labels": [],
+    "proof_status": "HUMAN_EXPANDED_NOT_LEAN; author, independent concrete full-module peer and parent mathematical audits PASS with required RAW provider-citation correction. Global delivery checks are performed separately by root.",
+    "independent_reviews": [
+      "Author concrete all112claims/14definitions/13imports/all13notes/frozen727line source proof audit PASS; finite controls PASS with actual RAW trace products, largest lifts and full finite quotient character ages.",
+      "Independent source quotient-tower audit by quotient_tower_audit PASS: correct gate-vs-logical identity, normalized objectwise arrow injectivity, same-prefix realization and finite witness into genuine homogeneous marked output.",
+      "Independent quotient_ep_audit full concrete all112claims/DAG/firewalls/imports/all13notes/control/source peer PASS after exact I13 fully NAMED-SORTED simultaneous provider replacement, I11 projected FULL gate hypothesis and C40 finite-relative separator application. Independent finite control PASS: 106896 actual trace products, 144 full local/global quotient phase bijections, 3158592 functions, 384 duplicate gate-point pairs and 80 nonzero offsets.",
+      "Parent independently read all112claims/all13notes/frozen727line source and checked the one-original-sort algebra, conditional terminality, existing RAW correction and full finite-age witness arguments: mathematical PASS. No unbounded theorem is certified by finite controls."
+    ]
+  },
+  "source_files": [
+    {
+      "file": "main.tex",
+      "git_blob": "df7370f12a248732db9723c3b3c02d4a05ee0eec"
+    },
+    {
+      "file": "sections/ep_safe_ap_character_completion.tex",
+      "git_blob": "42e7958c333f8e39a9a5268ec22d0213c72d715b"
+    },
+    {
+      "file": "sections/exact_foundations/01_full_raw_exact_helly.tex",
+      "git_blob": "7cb28c86b4b296ddf865b6aff518cda1215cd491"
+    },
+    {
+      "file": "sections/exact_foundations/02_exact_quotient_orbital_geometry.tex",
+      "git_blob": "d462f2bfffcd67c1fa712ac516972ab18e073d44"
+    },
+    {
+      "file": "sections/exact_foundations/03_joint_exact_sort_lifting.tex",
+      "git_blob": "394e0db063a476c5c069384b3d3fa2ffd3c7471d"
+    },
+    {
+      "file": "sections/expansion_property_exact_geometry.tex",
+      "git_blob": "8f901d3c7070d9c900e5c5541e93e25bed6a630a"
+    },
+    {
+      "file": "sections/finite_packet_kernel_constraints.tex",
+      "git_blob": "e47d0d2de416e03dd0207dc56a581088da78b74c"
+    },
+    {
+      "file": "sections/finite_relative_parity_exact_closure.tex",
+      "git_blob": "9f6983f96bae28d06466fcbf23f15e20a55f2686"
+    },
+    {
+      "file": "sections/ramsey_clone_sap.tex",
+      "git_blob": "2b14f19885e7109be548a0af73fba14c974dc636"
+    },
+    {
+      "file": "sections/ramsey_preferred_support.tex",
+      "git_blob": "a4213db90239937a525e6fa7b6ea36703a2900df"
+    },
+    {
+      "file": "sections/rigid_exact_groupoid_foundations.tex",
+      "git_blob": "fb231ec107f8c18b550c87d20ea2da9d86a2d735"
+    },
+    {
+      "file": "sections/simultaneous_typed_exact_quotients.tex",
+      "git_blob": "078017a03e1d6f62088fb17fb6e31bce4f6e8ef6"
+    },
+    {
+      "file": "sections/sparse_labelled_graphs.tex",
+      "git_blob": "c7db0b7169dd8ff4dcd5642469ac8fa42c2ef530"
+    },
+    {
+      "file": "sections/typed_invariant_quotient_transport.tex",
+      "git_blob": "3895b17d7d0176a74d6f69c39e4e22d9cdba5715"
+    }
+  ]
+}

@@ -54,6 +54,22 @@ mathematical catalogue/initial checkpoint, not current ownership.
 | B046: Orbital parity, finite Hasse covers and unsplittable diagonal orientation | B001, B006 | [B046](../../formalization/coordination/packages/B046.md) |
 | B047: Actual SAP-preserving exact character splits and finite terminalisation | B001, B002, B003, B007, B015, B016, B039, B044, B046 | [B047](../../formalization/coordination/packages/B047.md) |
 | B048: Private detours and conditional full-language phase lifting | B001, B015, B016, B038, B046, B047 | [B048](../../formalization/coordination/packages/B048.md) |
+| B049: Typed RAW-STRONG saturation, first-hit interpolation and finite transition closure | B003, B011, B038, B040, B050 | [B049](../../formalization/coordination/packages/B049.md) |
+| B050: Original modular lattices, full quotient-cover powers, reset and positive external layers | B006, B011, B038 | [B050](../../formalization/coordination/packages/B050.md) |
+| B051: Terminal positive profiles, non-return and complete-cylinder return tests | B011, B032, B049, B050 | [B051](../../formalization/coordination/packages/B051.md) |
+| B052: Typed unary term normal forms, admissibility and canonical returns | B011, B040, B049 | [B052](../../formalization/coordination/packages/B052.md) |
+| B053: Exact-coloured typed orbits and fresh real frames | B002, B006, B008, B011, B012, B022, B032, B039, B040, B043, B049, B052 | [B053](../../formalization/coordination/packages/B053.md) |
+| B054: Hereditary hidden orbit infinitude over arbitrary closed bases | B039, B052, B053 | [B054](../../formalization/coordination/packages/B054.md) |
+| B055: Actual hidden homogeneity/SAP, representative splitting and orbital readouts | B002, B011, B012, B039, B040, B049, B052, B054 | [B055](../../formalization/coordination/packages/B055.md) |
+| B056: Guarded old-source pair supports, private theta and complete reflection | B001, B003, B049, B052, B055 | [B056](../../formalization/coordination/packages/B056.md) |
+| B057: Guarded lift equivalence, exact idempotents and literal old seams | B008, B011, B012, B034, B040, B049, B051, B055, B056 | [B057](../../formalization/coordination/packages/B057.md) |
+| B058: Factorization forests, old boundary certificates and bounded obstructions | B001, B003, B011, B049, B052, B055, B056, B057 | [B058](../../formalization/coordination/packages/B058.md) |
+| B059: Terminal hidden HN Ramsey arrows and full real order readout | B012, B034, B035, B037, B047, B049, B052, B055, B058 | [B059](../../formalization/coordination/packages/B059.md) |
+| B060: Clone-stable terminalisation and compatible MI-tuple fine-colour geometry | B001, B003, B011, B012, B013, B016, B022, B031, B038, B044, B045, B047, B049, B051 | [B060](../../formalization/coordination/packages/B060.md) |
+| B061: AP clone Ramsey readout, coordinate completion and the smaller visible language | B035, B036, B038, B045, B047, B049, B052, B059, B060 | [B061](../../formalization/coordination/packages/B061.md) |
+| B062: Exact trace geometry, canonical old gates and AP-only quotient safe towers | B002, B006, B007, B015, B016, B041, B044, B045 | [B062](../../formalization/coordination/packages/B062.md) |
+| B063: Original bipartite separation and the automatic terminal label core | B041, B045, B062 | [B063](../../formalization/coordination/packages/B063.md) |
+| B064: Unfiltered phase labels, synchronized terminal orders and same-host tuple expansion property | B008, B011, B035, B036, B038, B044, B045, B047, B049, B050, B052, B059, B060, B061, B063 | [B064](../../formalization/coordination/packages/B064.md) |
 
 Autonomous release permissions are in [AUTONOMY.json](AUTONOMY.json).
 Use [QUEUE_OPERATIONS.md](QUEUE_OPERATIONS.md) to claim or review work.

@@ -1,0 +1,1900 @@
+{
+  "schema_version": 1,
+  "id": "guarded_two_root",
+  "index_title": "Guarded old-source pairs, private theta cycles and complete two-root reflection",
+  "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+  "status": "HUMAN_EXPANDED_NOT_LEAN",
+  "scope": "Private B056: all FOUR source14 results, the finite-index G1 diagnostic equation, ten definitions, 61 human claims and seven tasks. Actual unary-admissible local closed supports are tested BEFORE guarded constraints. ONE irreducible OLD endpoint-pair factor supplies a common fine atom for all its positive comparisons, with no Helly or global completion used for that nonempty intersection. Private interiors give old-endpoint macro cycles; finite positive typed prefix states give uniform gadget size; ALL complete term-pair comparisons give reflection for joined local supports only. Hidden SAP by itself supplies no positive quotient diagonal; full original no-finite-index scope remains explicit. No arbitrary missing cross relation or unjoined ancestor pair is completed.",
+  "scope_vocabulary": [
+    "local_support",
+    "common_survivor",
+    "private_cycles",
+    "uniform_size",
+    "reflection",
+    "boundary"
+  ],
+  "scope_explanation": "statement and proof. Roots are ACTUAL OLD hidden source vertices; their chosen real witnesses are formal or actual representatives according to the indicated step. STRONG profiles contain only diversity atoms. Conditional higher-arity factor preservation is kept separate from binary reflection.",
+  "control_script": "tools/check_guarded_two_root_controls.py",
+  "assumptions": [
+    {
+      "id": "A01",
+      "name": "Actual original terminal binary context",
+      "statement": "The old source is countable homogeneous, complete in a finite typed binary language with transitive named real sorts, symmetric same-sort atoms, visible SAP and semantic homomorphic CCO. Every FULL strict invariant-equivalence cover, including Top covers, has infinite relative index. This discharges the positive pullback and original strong/exact providers; hidden SAP is not a positivity assumption.",
+      "depends_on": []
+    },
+    {
+      "id": "A02",
+      "name": "Actual finite MI-only hidden language",
+      "statement": "Real and proper represented nonzero MI quotient sorts carry actual named equivariant projections, upward maps, quotient transitions/inverses, and complete hidden pair orbitals/cylinders. No quotient-to-real maps or nullary vertex generators. All unary term FUNCTIONS are actual functions of one original real representative and obey the prior normal form.",
+      "depends_on": []
+    },
+    {
+      "id": "A03",
+      "name": "Unary-admissible partial source and completed local supports",
+      "statement": "C is finite, functionally closed and unary-admissible: every FULL one-generated induced hidden diagram is an actual completed member. Every ACTUALLY IRREDUCIBLE joining closed source support used by the construction passes the bounded complete-pattern test, preserving AND reflecting its full induced diagram. No global hidden completion of C is assumed.",
+      "depends_on": []
+    },
+    {
+      "id": "A04",
+      "name": "Literal old-source endpoint-pair restriction",
+      "statement": "A positive menu on a witness pair for distinct OLD vertices b,c is issued only from their displayed unary/binary joining datum or the full comparisons of the SAME irreducible S_bc=cl_C{b,c}. No menu is moved to arbitrary real ancestors merely because their term values are related. ALL comparisons on one pair come from this ONE locally vetted support. Failed real-identity cases are rejected before positive menus.",
+      "depends_on": []
+    },
+    {
+      "id": "A05",
+      "name": "Separate optional higher-support gate",
+      "statement": "The main four results are binary. In a finite-arity extension, complete old higher-support factors and their canonical pair shadows are retained, and support>=3 tuple realization/preservation requires the separately supplied support-normal completion interface. Binary pair reflection alone proves no higher tuple reflection.",
+      "depends_on": []
+    },
+    {
+      "id": "A06",
+      "name": "Abstract private theta graph input",
+      "statement": "For the combinatorial cycle branch, roots form a fixed old vertex set; each theta is a union of internally vertex-disjoint positive paths between its two old roots. Interiors are disjoint across all gadgets and have NO outside incident specified edges. Repeated equal direct branches are merged into one graph edge. This branch makes no semantic completion assertion.",
+      "depends_on": []
+    }
+  ],
+  "imports": [
+    {
+      "id": "I01",
+      "name": "lem:typed-unary-closure-bound",
+      "provider_module": "unary_terms_return",
+      "source_label": "lem:typed-unary-closure-bound",
+      "provider_claims": [
+        "C13",
+        "C14"
+      ],
+      "statement": "Actual/unary-admissible singleton closures have uniform size m_typ. Strict proved ancestor C12 separately gives finitely many actual term FUNCTIONS; syntax is not bounded.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "provider_support_claims": [
+        "C12"
+      ],
+      "provider_support_usage": "Use proved strict ancestor C12 for finitely many real-source term FUNCTIONS before counting the finite list of all term-pair comparisons and root signatures. A finite singleton image alone would not justify function finiteness without the original transitivity argument. No new export or premise is added."
+    },
+    {
+      "id": "I02",
+      "name": "lem:typed-joined-source-support",
+      "provider_module": "hidden_sap_readings",
+      "source_label": "lem:typed-joined-source-support",
+      "provider_claims": [
+        "C39"
+      ],
+      "statement": "An ACTUALLY irreducible induced closed support on at most k old generators has <=k*m_typ vertices and any hidden HE completion embeds its WHOLE diagram; failure of complete mandatory data is already a bounded noncompletable source defect. Reducible ancestor pairs are excluded.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I03",
+      "name": "lem:typed-real-sort-splitting",
+      "provider_module": "hidden_sap_readings",
+      "source_label": "lem:typed-real-sort-splitting",
+      "provider_claims": [
+        "C34"
+      ],
+      "statement": "Within ONE completed local factor choose pairwise distinct old real witness images and designated real representatives of all proper coordinate vertices, preserving all displayed functions, cylinders and old data. Distinct actual quotient vertices/classes are retained; anchors use old SAP, not a global C completion.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I04",
+      "name": "lem:typed-term-pair-orbit-pullback",
+      "provider_module": "hidden_sap_readings",
+      "source_label": "lem:typed-term-pair-orbit-pullback",
+      "provider_claims": [
+        "C56"
+      ],
+      "statement": "Each ONE complete actual hidden orbital/equality/transition-graph comparison between named real-source term functions with a distinct real witness has exactly ONE nonempty positive old STRONG cylinder profile, with actual kernels. Arbitrary unions are not one profile.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I05",
+      "name": "lem:typed-term-orbit-diagonal-dichotomy",
+      "provider_module": "hidden_sap_readings",
+      "source_label": "lem:typed-term-orbit-diagonal-dichotomy",
+      "provider_claims": [
+        "C45"
+      ],
+      "statement": "The only empty diversity pullback of a complete output orbital is the same-original-real-point graph with BOTH original kernels Id. It is rejected as a bounded joined two-real-root identity defect or tested as a one-root identity; proper quotient diagonals can have nonempty diversity pullbacks.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I06",
+      "name": "lem:typed-identity-transport-redundant",
+      "provider_module": "transition_closure",
+      "source_label": "lem:typed-identity-transport-redundant",
+      "provider_claims": [
+        "C32"
+      ],
+      "statement": "An actual RAW transition relation containing real Id induces the existing coordinate identity. Distinct source vertices cannot be its different images; no STRONG identity-labelled edge is added.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I07",
+      "name": "lem:typed-exact-domain-calculus",
+      "provider_module": "transition_closure",
+      "source_label": "lem:typed-exact-domain-calculus",
+      "provider_claims": [
+        "C09"
+      ],
+      "statement": "A nonempty finite meet of positive typed original word profiles is an exact domain, with a finite private theta presentation. Root-signature consistency is proved separately using I11 atomic/whole-map support. Importing this supplies no existence of the intersection.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I08",
+      "name": "lem:typed-helly",
+      "provider_module": "strong_selectors",
+      "source_label": "lem:typed-helly",
+      "provider_claims": [
+        "C07"
+      ],
+      "statement": "Original positive profiles are 2-Helly and finite theta exact-domain presentations have their stated endpoint semantics. Use Helly ONLY for a small incompatible-profile certificate, never to replace the direct common-survivor construction.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I09",
+      "name": "lem:typed-set-pasch",
+      "provider_module": "strong_selectors",
+      "source_label": "lem:typed-set-pasch",
+      "provider_claims": [
+        "C02"
+      ],
+      "statement": "Only the proved old SAP associative nonempty strong-product algebra in C02 is used for finite TYPED positive profile prefix states. Profiles remember both endpoint sorts. No hidden identity is adjoined and mixed typed factors are not commuted.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I10",
+      "name": "lem:typed-cylinder-realisation",
+      "provider_module": "transition_closure",
+      "source_label": "lem:typed-cylinder-realisation",
+      "provider_claims": [
+        "C42",
+        "C43"
+      ],
+      "statement": "Complete named semantic cylinders partition actual compatible distinct hidden pairs and equal the full representative spectra, omitting equality exteriors. This gives relation reflection once a complete local comparison is preserved.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I11",
+      "name": "lem:typed-transition-cylinder",
+      "provider_module": "transition_closure",
+      "source_label": "lem:typed-transition-cylinder",
+      "provider_claims": [
+        "C47",
+        "C48",
+        "C49"
+      ],
+      "statement": "A named nontrivial quotient transition graph has its full saturated positive old cylinder, independent of the fine atomic witness and actual representative choices; real-Id cases reduce separately.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "provider_support_claims": [
+        "C45"
+      ],
+      "provider_support_usage": "Use strict proved ancestor transition_closure C45 for equality of the actual transported kernels and canonical maps of an atomic t and a quotient-functional R containing t. C16 applies this at each represented common root kernel to direct-domain and branch signatures; fine relations themselves are not asserted equal."
+    },
+    {
+      "id": "I12",
+      "name": "lem:typed-coordinate-normal-form",
+      "provider_module": "unary_terms_return",
+      "source_label": "lem:typed-coordinate-normal-form",
+      "provider_claims": [
+        "C24",
+        "C25"
+      ],
+      "statement": "A named term on a real representative is real identity or theta F_J with exact kernel J and actual named bijective theta. Terms from a proper coordinate root are read after its actual real projection. Literal maps determine all equalities.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    }
+  ],
+  "definitions": [
+    {
+      "id": "D01",
+      "name": "Locally vetted old support",
+      "statement": "S_bc=cl_C{b,c} with its FULL actual induced PARTIAL source diagram. It is used only if actually irreducible, not merely if two descendants are related.",
+      "depends_on": [],
+      "notes": "N01",
+      "source": {
+        "file": "sections/v27/14_guarded_source_positive.tex",
+        "anchor": "\\label{lem:typed-one-source-support-per-guarded-pair}"
+      }
+    },
+    {
+      "id": "D02",
+      "name": "Old vertices and distinct real witnesses",
+      "statement": "Each old real vertex gets its own real witness; each proper coordinate b in B_aJ gets a prospective real representative in sort a. Named hidden terms on b are interpreted on that real point after F_J.",
+      "depends_on": [],
+      "notes": "N02",
+      "source": {
+        "file": "sections/v27/14_guarded_source_positive.tex",
+        "anchor": "\\label{con:typed-guarded-lift}"
+      }
+    },
+    {
+      "id": "D03",
+      "name": "All-term comparison list",
+      "statement": "For one joined pair take EVERY ordered pair of unary term values in its complete local factor, with its mandatory equality/inequality, unique cylinder or old atomic colour. Pull the ONE actual orbital back to the SAME real witness pair.",
+      "depends_on": [],
+      "notes": "N02",
+      "source": {
+        "file": "sections/v27/14_guarded_source_positive.tex",
+        "anchor": "\\label{con:typed-guarded-lift}"
+      }
+    },
+    {
+      "id": "D04",
+      "name": "Positive guarded exact menu",
+      "statement": "D_bc is the finite intersection of the positive profiles for that same old pair. Existence is proved by a common actual fine witness before the word exact-domain API is used.",
+      "depends_on": [],
+      "notes": "N03",
+      "source": {
+        "file": "sections/v27/14_guarded_source_positive.tex",
+        "anchor": "\\label{lem:typed-one-source-support-per-guarded-pair}"
+      }
+    },
+    {
+      "id": "D05",
+      "name": "Private theta",
+      "statement": "A finite graph of positive atomic branches between two distinct old root witnesses; all interiors are private with no external incidences. Duplicate direct edges agree and are merged.",
+      "depends_on": [],
+      "notes": "N04",
+      "source": {
+        "file": "sections/v27/14_guarded_source_positive.tex",
+        "anchor": "\\label{lem:typed-private-theta-cycle}"
+      }
+    },
+    {
+      "id": "D06",
+      "name": "Typed positive prefix state",
+      "statement": "A nonempty positive word prefix is represented by (initial sort,current end sort,actual nonempty STRONG profile). The finite set S_typ contains only such positive typed states, not a logical real-Id unit.",
+      "depends_on": [],
+      "notes": "N05",
+      "source": {
+        "file": "sections/v27/14_guarded_source_positive.tex",
+        "anchor": "\\label{lem:typed-two-root-uniform-size}"
+      }
+    },
+    {
+      "id": "D07",
+      "name": "Uniform pair bound",
+      "statement": "u=m_typ bounds each source singleton closure; R bounds the finite number of allowed atomic/equality/function comparisons per ordered term-value pair; s=|S_typ| bounds a shortest positive profile word. B_pair bounds a fixed theta and root anchors for every locally admissible joined pair.",
+      "depends_on": [],
+      "notes": "N05",
+      "source": {
+        "file": "sections/v27/14_guarded_source_positive.tex",
+        "anchor": "\\label{lem:typed-two-root-uniform-size}"
+      }
+    },
+    {
+      "id": "D08",
+      "name": "Complete local reflection",
+      "statement": "The map on the FULL two-generated joined hidden diagram preserves AND reflects equality, unary functions and every complete named hidden binary relation. No absent relation between distinct irreducible components is forced.",
+      "depends_on": [],
+      "notes": "N06",
+      "source": {
+        "file": "sections/v27/14_guarded_source_positive.tex",
+        "anchor": "\\label{lem:typed-two-root-complete-reflection}"
+      }
+    },
+    {
+      "id": "D09",
+      "name": "Identity-only pullback defect",
+      "statement": "A complete output comparison whose only preimages have the same original real point has no old diversity profile. For distinct joined real source roots it is impossible for an embedding; for the same source vertex it is a one-root equation.",
+      "depends_on": [],
+      "notes": "N02",
+      "source": {
+        "file": "sections/v27/14_guarded_source_positive.tex",
+        "anchor": "\\label{con:typed-guarded-lift}"
+      }
+    },
+    {
+      "id": "D10",
+      "name": "Finite-index coarse-diagonal control",
+      "statement": "In blocks times F2 times infinite clones, p means same block/bit, q same block/opposite bit, r different blocks; K fixes block+bit and J fixes block. The coarse hidden diagonal pulls back on distinct reals to {p,q}.",
+      "depends_on": [],
+      "notes": "N07",
+      "source": {
+        "file": "sections/v27/14_guarded_source_positive.tex",
+        "anchor": "\\label{rem:typed-hidden-sap-not-G1-positivity}"
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "name": "One-generated diagrams must pass their ACTUAL gate first",
+      "statement": "A03 ensures each one-generated FULL induced diagram already obeys all named unary/transition equations and has <=m_typ vertices by I01. This is not a consequence of being a finite structure in a finite unary language.",
+      "depends_on": [
+        "A03",
+        "I01"
+      ],
+      "notes": "N01",
+      "scope": "local_support",
+      "source_labels": [
+        "lem:typed-one-source-support-per-guarded-pair"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C02",
+      "name": "A displayed unary join puts both endpoints in one closure",
+      "statement": "If f(b)=c or f(c)=b, cl_C{b,c} is one-generated. Any free-amalgam factor containing that generator contains its entire closure, so this source support is irreducible.",
+      "depends_on": [
+        "A03",
+        "D01"
+      ],
+      "notes": "N01",
+      "scope": "local_support",
+      "source_labels": [
+        "lem:typed-one-source-support-per-guarded-pair"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C03",
+      "name": "A binary relation on the ACTUAL endpoint pair forces irreducibility",
+      "statement": "A displayed binary tuple containing both old b,c must lie wholly in one proposed free-amalgam factor. Unary functional closure then puts every point of S_bc in that factor. Hence no decomposition into two proper closed factors exists. A relation merely on proper descendants does not give this argument for b,c.",
+      "depends_on": [
+        "A03",
+        "A04",
+        "D01"
+      ],
+      "notes": "N01",
+      "scope": "local_support",
+      "source_labels": [
+        "lem:typed-one-source-support-per-guarded-pair"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C04",
+      "name": "The full local pattern has a bounded old-source support",
+      "statement": "By unary closure union and I01, |S_bc|<=2m_typ. I02 says any HE completion would embed this irreducible whole support as an actual induced completed member. A missing mandatory relation, wrong inequality or failed unary identity is therefore a bounded noncompletable source defect.",
+      "depends_on": [
+        "I01",
+        "I02",
+        "C01",
+        "C02",
+        "C03"
+      ],
+      "notes": "N01",
+      "scope": "local_support",
+      "source_labels": [
+        "lem:typed-one-source-support-per-guarded-pair"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C05",
+      "name": "Do not move a descendant relation to unjoined ancestors",
+      "statement": "For a relation on u=tau(b),v=sigma(c), attach it to OLD endpoints u,v and test cl_C{u,v}. Unless b,c themselves supply an irreducible joining support, no forced menu is placed on their real witness pair. The full cl_C{b,c} can be reducible and completable despite a missing b,c fine relation.",
+      "depends_on": [
+        "A04",
+        "C03"
+      ],
+      "notes": "N01",
+      "scope": "local_support",
+      "source_labels": [
+        "lem:typed-one-source-support-per-guarded-pair"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C06",
+      "name": "A completed local test supplies ONE factor for ALL comparisons",
+      "statement": "After the C04 test passes, fix one embedding of the FULL S_bc into one completed actual hidden factor. Every comparison on the same endpoint pair is read from this one factor, not from independent models for separate primitive data. No embedding of the rest of C is required.",
+      "depends_on": [
+        "A03",
+        "A04",
+        "C04"
+      ],
+      "notes": "N01",
+      "scope": "common_survivor",
+      "source_labels": [
+        "lem:typed-one-source-support-per-guarded-pair"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C07",
+      "name": "Interpret all source terms through actual real representatives",
+      "statement": "For a proper old vertex b in B_aJ, a real representative p reads a term tau(b) as tau(F_J(p)); for a real b read tau(p). I12 gives the actual real-source kernel normal form, and I01/C12 support gives finitely many actual functions. One-root equations remain inside their already vetted closure.",
+      "depends_on": [
+        "A02",
+        "I01",
+        "I12",
+        "D02",
+        "C01"
+      ],
+      "notes": "N02",
+      "scope": "local_support",
+      "source_labels": [
+        "lem:typed-one-source-support-per-guarded-pair"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C08",
+      "name": "Each complete comparison has a single actual output orbital",
+      "statement": "The local factor records one equality diagonal, complete semantic cylinder, transition graph, or fine real pair type for every ordered pair of term values. Equality on a transitive sort and a named equivariant bijection graph are single orbitals, not arbitrary unions.",
+      "depends_on": [
+        "A02",
+        "C06",
+        "D03"
+      ],
+      "notes": "N02",
+      "scope": "local_support",
+      "source_labels": [
+        "lem:typed-one-source-support-per-guarded-pair"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C09",
+      "name": "Reject identity-only real pullbacks before positivity",
+      "statement": "I05 characterises the sole empty diversity case by same real sort and BOTH kernels Id. Distinct joined old real roots cannot be identified by their local embedding, so this comparison is a bounded identity defect; on one old root it is an equation in C01. No empty menu is encoded as a positive word.",
+      "depends_on": [
+        "I05",
+        "C04",
+        "C07",
+        "C08",
+        "D09"
+      ],
+      "notes": "N02",
+      "scope": "local_support",
+      "source_labels": [
+        "lem:typed-one-source-support-per-guarded-pair"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C10",
+      "name": "RAW identity transition graphs remain existing unary identities",
+      "statement": "By I06, any identity-containing RAW quotient relation acts as the existing identity. If b,c are distinct vertices of the SAME proper sort it cannot demand b maps to c; if the occurrences are literally the same vertex the equation is already one-generated. True quotient-diagonal comparisons between DISTINCT REAL representatives remain allowed.",
+      "depends_on": [
+        "I06",
+        "C01",
+        "D09"
+      ],
+      "notes": "N02",
+      "scope": "local_support",
+      "source_labels": [
+        "lem:typed-one-source-support-per-guarded-pair"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C11",
+      "name": "Nonempty comparisons are positive old profiles with typed kernels",
+      "statement": "For each retained comparison I04 yields exactly one full old cylinder profile with actual endpoint kernels; identity exteriors are omitted. Projection and upward equations give the appropriate full equivalence diversity profile; nontrivial transition graphs also agree with I11. No complement or unverified union is used.",
+      "depends_on": [
+        "A01",
+        "I04",
+        "I11",
+        "C07",
+        "C08",
+        "C09",
+        "C10"
+      ],
+      "notes": "N02",
+      "scope": "local_support",
+      "source_labels": [
+        "lem:typed-one-source-support-per-guarded-pair"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C12",
+      "name": "The list includes complete data rather than only positive primitive joins",
+      "statement": "Enumerate ALL ordered term-value pairs of the local factor, including recorded equalities and off-diagonal cylinders witnessing differences. The language is finite and I01 supplies finite actual functions/closures, so this is a finite list. No artificial negative condition is imposed on an unjoined support.",
+      "depends_on": [
+        "A04",
+        "I01",
+        "C07",
+        "C08",
+        "C11",
+        "D03"
+      ],
+      "notes": "N02",
+      "scope": "local_support",
+      "source_labels": [
+        "lem:typed-one-source-support-per-guarded-pair"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C13",
+      "name": "Select distinct real representatives INSIDE that ONE factor",
+      "statement": "First place the finite actual local factor inside the full hidden expansion of a finite old visible A: retain its real part and choose one real preimage for each proper vertex. Apply I03 to that ONE completed local factor. It preserves all old hidden readings while making its designated real witnesses pairwise distinct, including representatives of proper coordinates. Let t be the actual old diversity atom between the witnesses for b,c.",
+      "depends_on": [
+        "I03",
+        "C06",
+        "D02"
+      ],
+      "notes": "N03",
+      "scope": "common_survivor",
+      "source_labels": [
+        "lem:typed-one-source-support-per-guarded-pair"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C14",
+      "name": "The SAME fine atom satisfies every imposed comparison",
+      "statement": "Every listed comparison was true in that local factor, and C13 preserves all actual hidden functions/cylinders. Since the comparison profile is its actual old diversity preimage, the one t belongs to EVERY profile on that witness pair. Hence their total intersection is nonempty directly.",
+      "depends_on": [
+        "C11",
+        "C12",
+        "C13"
+      ],
+      "notes": "N03",
+      "scope": "common_survivor",
+      "source_labels": [
+        "lem:typed-one-source-support-per-guarded-pair"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C15",
+      "name": "Only after existence use exact-domain recognition",
+      "statement": "C14 proves nonempty D_bc; I07 now identifies its finite positive-profile intersection as an exact domain with a fixed private theta presentation. This order avoids using Helly or exact meet algebra to manufacture an assumed local witness.",
+      "depends_on": [
+        "I07",
+        "C14",
+        "D04"
+      ],
+      "notes": "N03",
+      "scope": "common_survivor",
+      "source_labels": [
+        "lem:typed-one-source-support-per-guarded-pair"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C16",
+      "name": "Keep full transition-closed root data on the original endpoints",
+      "statement": "Record direct quotient-functional D_bc transitions and branch-forced transitions with their actual source/target kernels, then close under named functions. The common t from C14 computes the same canonical predecessor class for direct and branch relations at each common kernel, so these equations are consistent. All signatures are anchored at OLD b,c; interior vertices are not new old generators.",
+      "depends_on": [
+        "A02",
+        "I06",
+        "I11",
+        "C14",
+        "C15"
+      ],
+      "notes": "N03",
+      "scope": "common_survivor",
+      "source_labels": [
+        "lem:typed-one-source-support-per-guarded-pair"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C17",
+      "name": "Single-old-support common-survivor source export",
+      "statement": "C02-C16 establish the statement for every actually constrained old pair, with |S_bc|<=2m_typ and one common atom. This uses no cross-support amalgamation, no global hidden completion of C and no 2-Helly in the nonempty-intersection step.",
+      "depends_on": [
+        "C04",
+        "C05",
+        "C14"
+      ],
+      "notes": "N03",
+      "scope": "common_survivor",
+      "source_labels": [
+        "lem:typed-one-source-support-per-guarded-pair"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C18",
+      "name": "Private interior vertices have exactly their path incidences",
+      "statement": "Under A06, every interior lies on a single positive branch, has its two branch neighbours and has no outside edges. A specified simple cycle using it must continue along that path until it reaches a designated root.",
+      "depends_on": [
+        "A06",
+        "D05"
+      ],
+      "notes": "N04",
+      "scope": "private_cycles",
+      "source_labels": [
+        "lem:typed-private-theta-cycle"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C19",
+      "name": "A cycle using two branches of one theta closes there",
+      "statement": "Once a simple cycle goes p-to-q along one branch and returns q-to-p along a different branch of that same theta, it has closed and cannot also visit outside vertices without repeating p or q. Direct old-root edges count as whole length-one branches.",
+      "depends_on": [
+        "C18"
+      ],
+      "notes": "N04",
+      "scope": "private_cycles",
+      "source_labels": [
+        "lem:typed-private-theta-cycle"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C20",
+      "name": "Any noninternal traversal uses one WHOLE old-root branch",
+      "statement": "If the cycle leaves the theta, it visits each root at most once and cannot escape through an interior. Thus its intersection with a used private branch is the complete p-to-q path with no repeated internal positions. This assertion concerns every theta the cycle uses, not merely a selected one.",
+      "depends_on": [
+        "C18",
+        "C19"
+      ],
+      "notes": "N04",
+      "scope": "private_cycles",
+      "source_labels": [
+        "lem:typed-private-theta-cycle"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C21",
+      "name": "Contraction preserves literal OLD endpoints and anchors",
+      "statement": "Contract every used whole branch in a noninternal cycle. Its macro endpoints remain the originally designated old root witnesses, with their preattached old root-signature anchors. No subsequently chosen atom on an unrecorded pair changes these endpoints. Contraction may yield two parallel macro sides, so no unwarranted simple-graph macro-cycle assertion is made.",
+      "depends_on": [
+        "A06",
+        "C20"
+      ],
+      "notes": "N04",
+      "scope": "private_cycles",
+      "source_labels": [
+        "lem:typed-private-theta-cycle"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C22",
+      "name": "Private-theta cycle source export",
+      "statement": "C18-C21 prove the private network statement as pure graph combinatorics. It needs neither old CCO/SAP nor a hidden interpretation or a completion atom. This is not yet a proof that every global guarded cycle is completable.",
+      "depends_on": [
+        "C19",
+        "C20",
+        "C21"
+      ],
+      "notes": "N04",
+      "scope": "private_cycles",
+      "source_labels": [
+        "lem:typed-private-theta-cycle"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C23",
+      "name": "Two-generator closures give a finite comparison count",
+      "statement": "Put u=m_typ. C01/I01 bounds their union by2u. There are <=(2u)^2 ordered value pairs, and a fixed language-dependent R bounds all possible canonical relation/equality/function comparison records per pair. Therefore the all-term list has a uniform finite bound. This counts actual functions/values, not syntax lengths.",
+      "depends_on": [
+        "I01",
+        "C01",
+        "D07"
+      ],
+      "notes": "N05",
+      "scope": "uniform_size",
+      "source_labels": [
+        "lem:typed-two-root-uniform-size"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C24",
+      "name": "Positive typed profile states form a finite semigroupoid",
+      "statement": "I09 supplies associative compatible nonempty STRONG products. Each source/end pair has a finite palette, hence finitely many nonempty profiles; retain the endpoint-sort tags as in D06. Noncomposable products are not used, and no real logical-Id unit is included.",
+      "depends_on": [
+        "A01",
+        "I09",
+        "D06"
+      ],
+      "notes": "N05",
+      "scope": "uniform_size",
+      "source_labels": [
+        "lem:typed-two-root-uniform-size"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C25",
+      "name": "A repeated NONEMPTY prefix state gives a shorter positive word",
+      "statement": "Let a shortest positive word have prefix states s_1,...,s_n. If s_i=s_j for1<=i<j<=n, their current sorts and profiles agree. Delete letters i+1 through j and keep the first i>=1 letters, then the same suffix. Typed composition remains valid and associativity preserves the endpoint profile. The result stays positive and is shorter, contradiction.",
+      "depends_on": [
+        "C24",
+        "D06"
+      ],
+      "notes": "N05",
+      "scope": "uniform_size",
+      "source_labels": [
+        "lem:typed-two-root-uniform-size"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C26",
+      "name": "Each reachable profile has a fixed word of length at most s",
+      "statement": "The n nonempty prefix states of a shortest positive word are distinct by C25, so n<=s=|S_typ|. Choose one such presentation ONCE for each reachable typed profile. No bound is imposed on all equivalent syntactic words.",
+      "depends_on": [
+        "C25"
+      ],
+      "notes": "N05",
+      "scope": "uniform_size",
+      "source_labels": [
+        "lem:typed-two-root-uniform-size"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C27",
+      "name": "Finite exact domains permit one fixed theta for each menu",
+      "statement": "The constrained pair common D_bc is a nonempty exact domain by C15. Finite original palettes give finitely many exact menus per typed pair. Choose a finite theta presentation once for every such menu, using positive words C26 and merging any equal direct edges. The selected theta is not chosen afresh with unbounded length for each source pair.",
+      "depends_on": [
+        "I07",
+        "C15",
+        "C26"
+      ],
+      "notes": "N05",
+      "scope": "uniform_size",
+      "source_labels": [
+        "lem:typed-two-root-uniform-size"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C28",
+      "name": "An explicit finite overbound is available",
+      "statement": "With at most L=R(2u)^2 listed positive profiles and each fixed word length<=s, a theta with the two real roots has at most2+L*max(s-1,0) vertices. Add a uniform bound A_root for the finite root term-signature anchors. Taking the maximum with the fixed presentations of C27 gives B_pair. It depends only on the fixed language/profile families.",
+      "depends_on": [
+        "C16",
+        "C23",
+        "C26",
+        "C27",
+        "D07"
+      ],
+      "notes": "N05",
+      "scope": "uniform_size",
+      "source_labels": [
+        "lem:typed-two-root-uniform-size"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C29",
+      "name": "A positive-menu incompatibility has a small pair certificate",
+      "statement": "If a finite family of nonempty positive profiles has empty total intersection, I08 2-Helly gives two with empty intersection. This is ONLY the negative diagnostic branch; actual local admissibility had already produced a total common survivor in C14. A real-identity defect was already rejected by C09.",
+      "depends_on": [
+        "I08",
+        "C09"
+      ],
+      "notes": "N05",
+      "scope": "uniform_size",
+      "source_labels": [
+        "lem:typed-two-root-uniform-size"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C30",
+      "name": "Uniform two-root gadget source export",
+      "statement": "C23-C28 give an equivalent uniformly bounded guarded theta for every locally admissible joined two-generated diagram, including all recorded term comparisons. C29 records the incompatible alternative. Equivalent means exact endpoint/root-signature constraints, not a global model of C.",
+      "depends_on": [
+        "C23",
+        "C28",
+        "C29"
+      ],
+      "notes": "N05",
+      "scope": "uniform_size",
+      "source_labels": [
+        "lem:typed-two-root-uniform-size"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C31",
+      "name": "Read target term values via their fixed actual normal forms",
+      "statement": "For any actual real witness pair of old fine atom t, compose each proper-root projection with the source hidden term. I12 makes each resulting real-source function a fixed named quotient normal form or real identity. Internal equations are already enforced by the one-root diagrams C01.",
+      "depends_on": [
+        "I12",
+        "C01",
+        "C07"
+      ],
+      "notes": "N06",
+      "scope": "reflection",
+      "source_labels": [
+        "lem:typed-two-root-complete-reflection"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C32",
+      "name": "Every listed comparison pulls back to its exact old spectrum",
+      "statement": "I04/I10/I11 identify each recorded ONE complete equality/cylinder/transition graph with the actual diversity atoms satisfying that term comparison. By C12 every ordered pair and complete comparison in the source support was included. There is no freedom to choose a new composed transition output.",
+      "depends_on": [
+        "I04",
+        "I10",
+        "I11",
+        "C11",
+        "C12",
+        "C31"
+      ],
+      "notes": "N06",
+      "scope": "reflection",
+      "source_labels": [
+        "lem:typed-two-root-complete-reflection"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C33",
+      "name": "ANY atom of D preserves ALL complete comparisons at once",
+      "statement": "Let t in D_bc. By definition of the intersection, t belongs to the exact preimage of EVERY recorded comparison C32. Thus all required term equalities, complete cylinders, functional identities and original real pair colours hold in the target for that same witness pair, not only for the atom C14 initially selected.",
+      "depends_on": [
+        "C15",
+        "C32",
+        "D04"
+      ],
+      "notes": "N06",
+      "scope": "reflection",
+      "source_labels": [
+        "lem:typed-two-root-complete-reflection"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C34",
+      "name": "Recorded off-diagonal orbitals give pairwise injectivity",
+      "statement": "For two distinct source term values in the same output sort, the complete local diagram records a non-diagonal cylinder or real fine diversity atom. C33 preserves that irreflexive relation, preventing identification. Distinct named sorts are already disjoint. Equal source occurrences remain equal by the recorded identities.",
+      "depends_on": [
+        "A02",
+        "C08",
+        "C12",
+        "C33"
+      ],
+      "notes": "N06",
+      "scope": "reflection",
+      "source_labels": [
+        "lem:typed-two-root-complete-reflection"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C35",
+      "name": "Unique complete orbital labels give binary relation reflection",
+      "statement": "For any compatible ordered output pair, its complete source diagram records either equality or exactly one actual complete orbital. C33 preserves it. The actual target labels partition that pair type by I10, so no other named binary relation can newly hold; equality is reflected by C34. This uses COMPLETE local data, not a lone primitive relation.",
+      "depends_on": [
+        "I10",
+        "C33",
+        "C34",
+        "D08"
+      ],
+      "notes": "N06",
+      "scope": "reflection",
+      "source_labels": [
+        "lem:typed-two-root-complete-reflection"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C36",
+      "name": "Unary function values are preserved and reflected literally",
+      "statement": "All source closures are functionally closed. C31/C33 realize each named unary function equation at its term value; totality/domain fixed by the source sort and pairwise injectivity C34 make the induced map an isomorphism onto its closed image. No new independent value for a transition composite is chosen.",
+      "depends_on": [
+        "A02",
+        "C31",
+        "C33",
+        "C34"
+      ],
+      "notes": "N06",
+      "scope": "reflection",
+      "source_labels": [
+        "lem:typed-two-root-complete-reflection"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C37",
+      "name": "Original real pairs and typed converse data are exact",
+      "statement": "Every old real pair in the completed local factor has a unique fine atomic colour, whose singleton positive profile is included when applicable. C33 preserves that colour and all converse/sort tags, so complete real binary data are reflected. No same-sort product commutation is used for cross-sort words.",
+      "depends_on": [
+        "A02",
+        "C12",
+        "C33",
+        "C34"
+      ],
+      "notes": "N06",
+      "scope": "reflection",
+      "source_labels": [
+        "lem:typed-two-root-complete-reflection"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C38",
+      "name": "Two-root complete reflection source export",
+      "statement": "C31-C37 show that EVERY t in D_bc reconstructs the SAME complete joined two-generated hidden diagram. The result concerns genuinely irreducible old endpoint supports under A04. For higher-support factors only their binary pair shadows are handled here; remaining tuple data retain A05 as a separate interface.",
+      "depends_on": [
+        "A04",
+        "A05",
+        "C35",
+        "C36",
+        "C37"
+      ],
+      "notes": "N06",
+      "scope": "reflection",
+      "source_labels": [
+        "lem:typed-two-root-complete-reflection"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C39",
+      "name": "Unjoined components need not reflect absent cross relations",
+      "statement": "HE completions embed each source irreducible; they may add absent relations across different irreducible components and permit non-forbidden overlaps. Hence the construction inserts no negative cross constraints and chooses no arbitrary missing cylinder for unjoined root pairs. This limitation is part of C38, not a missing step in its proof.",
+      "depends_on": [
+        "A04",
+        "C05",
+        "C38"
+      ],
+      "notes": "N06",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-two-root-complete-reflection"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C40",
+      "name": "The original finite-index source is a genuine SAP example",
+      "statement": "For the block/bit/clone model, finite base block partitions align, within each anchored block at most two bit classes align consistently, and all new real vertices use fresh clones. Independent new blocks remain separate. This gives old SAP even though [J:K]=2. Arbitrary finite compatible old partial automorphisms extend by block permutations, bit swaps and clone permutations.",
+      "depends_on": [
+        "D10"
+      ],
+      "notes": "N07",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-two-root-uniform-size"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C41",
+      "name": "Its semantic CCO is equality plus parity consistency",
+      "statement": "Specified p/q require same block, r different blocks. A contradictory r closes a same-block path, yielding a forbidden simple cycle. Within a consistent block component p/q prescribe F2 parity; a contradiction yields a nonzero-parity simple cycle. Otherwise solve block/parity labels and choose fresh clones. Thus cycle-local satisfiability gives a whole old completion.",
+      "depends_on": [
+        "C40",
+        "D10"
+      ],
+      "notes": "N07",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-two-root-uniform-size"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C42",
+      "name": "Coarse-only hidden SAP has a direct actual amalgamation proof",
+      "statement": "Name only Q_J and projection with actual old/owner pair orbitals. Over a closed hidden base, align old block owners, pair the at most two internal bit classes of each common block consistently on the real base, and choose disjoint real clone points. New owner blocks outside the base stay separate unless forced by a shared real base point. This directly gives hereditary SAP in this narrower signature despite [J:K]=2.",
+      "depends_on": [
+        "C40",
+        "D10"
+      ],
+      "notes": "N07",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-two-root-uniform-size"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C43",
+      "name": "The coarse hidden diagonal has diversity spectrum p union q",
+      "statement": "For Q_J=old block classes, equality of two projected real points means same block. On distinct old points this is exactly J^circ={p,q}; true real equality remains separate. The comparison is a single FULL hidden diagonal orbital.",
+      "depends_on": [
+        "C40",
+        "D10"
+      ],
+      "notes": "N07",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-two-root-uniform-size"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C44",
+      "name": "An r-free positive word has one fixed parity profile",
+      "statement": "Without r every step stays in one block. The parity of q letters fixes the final bit difference. Infinite clone fibres realize all formal path positions distinctly, hence its STRONG endpoint profile is exactly{p} for even q parity or{q} for odd parity, never{p,q}.",
+      "depends_on": [
+        "C40",
+        "D10"
+      ],
+      "notes": "N07",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-two-root-uniform-size"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C45",
+      "name": "Any word containing r has an outside-block diversity witness",
+      "statement": "At each r-step choose a new block label distinct from the current one and, at the last r-step, also from the initial block; infinitely many blocks permit this even with only one r. Between r-steps keep the block and solve the p/q parity. Fresh clone indices make the whole path injective. The final pair has atom r.",
+      "depends_on": [
+        "C40",
+        "D10"
+      ],
+      "notes": "N07",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-two-root-uniform-size"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C46",
+      "name": "Coarse diagonal positivity does not follow from hidden SAP",
+      "statement": "By C44/C45 no positive old atomic word has STRONG profile{p,q}. Yet C42 gives hidden hereditary SAP and C43 identifies the full hidden diagonal. Thus hidden SAP is insufficient to replace original FULL no-finite-index geometry in the positive pullback theorem.",
+      "depends_on": [
+        "C42",
+        "C43",
+        "C44",
+        "C45"
+      ],
+      "notes": "N07",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-two-root-uniform-size"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C47",
+      "name": "The same coarse equivalence is not FULL RAW exact",
+      "statement": "Delete any true logical-Id RAW letters first; an all-Id word has no p/q output. A remaining RAW atomic word with no r has fixed p/q parity and cannot contain both. Exactly one r cannot contain either same-block p/q. A word with>=2 r that contains p and q also contains r by the witness C45. Therefore any finite RAW-word intersection containing both p and q also contains r; it cannot be J=Id union p union q. Empty intersection is Top and also contains r.",
+      "depends_on": [
+        "C44",
+        "C45",
+        "D10"
+      ],
+      "notes": "N07",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-two-root-uniform-size"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C48",
+      "name": "RAW exact quotient lifting is inapplicable to this coarse counterexample",
+      "statement": "C47 prevents application of the earlier full EXACT quotient-lifting theorem to J. Its coarse expansion is homogeneous directly from explicit block actions C40, not by pretending J is exact. This example violates the terminal finite-index premise and refutes no actual terminal result.",
+      "depends_on": [
+        "C40",
+        "C47"
+      ],
+      "notes": "N07",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-two-root-uniform-size"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C49",
+      "name": "Private direct edges must agree before being merged",
+      "statement": "If two one-letter branches occur on the same old pair and D_bc is nonempty, their singleton profiles meet, hence are the same fine atom. Merge duplicate direct graph edges. Distinct conflicting direct atoms are a bounded empty-intersection defect, not a multicoloured old edge.",
+      "depends_on": [
+        "C14",
+        "C15"
+      ],
+      "notes": "N08",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-private-theta-cycle"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C50",
+      "name": "Typed prefix states cannot forget the current endpoint sort",
+      "statement": "Equal untyped palette names on different endpoint pairs do not allow deletion of an intervening subword; the remaining suffix could be ill-typed. D06/C25 uses both initial/current sorts. Deleting the entire prefix i=0 is also excluded, since a positive state is not a logical identity word.",
+      "depends_on": [
+        "C24",
+        "C25"
+      ],
+      "notes": "N08",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-two-root-uniform-size"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C51",
+      "name": "A common actual factor is stronger than pairwise menu overlap",
+      "statement": "Pairwise intersections of arbitrary sets can be nonempty with empty total intersection. C14 avoids such an inference by choosing ONE fine atom of a single actual local completed support. This is why no Helly assumption appears in the common-survivor export ancestry.",
+      "depends_on": [
+        "C06",
+        "C14"
+      ],
+      "notes": "N08",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-one-source-support-per-guarded-pair"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C52",
+      "name": "Binary reflection alone does not control higher-arity tuples",
+      "statement": "Two structures can have identical binary shadows but different ternary relation values. Thus C37 supplies only the binary shadow inside a distinguished higher-support factor; complete support>=3 target data must be frozen by A05. No canonical pair encoding is treated as an unconditional higher-arity completion theorem.",
+      "depends_on": [
+        "A05",
+        "C37"
+      ],
+      "notes": "N08",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-two-root-complete-reflection"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C53",
+      "name": "Finite bounds do not extend to malformed unary cycles",
+      "statement": "The I01 closure size and function count are actual/unary-admissible inputs. Arbitrary partial total-unary transition cycles have unbounded one-generated irreducible closures and fail A03. They cannot be admitted to claim a uniform2m_typ witness bound.",
+      "depends_on": [
+        "I01",
+        "C01",
+        "C04"
+      ],
+      "notes": "N08",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-one-source-support-per-guarded-pair"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C54",
+      "name": "Diagonal pullbacks and unary identity reductions are different tests",
+      "statement": "A true quotient diagonal with nonzero real kernel has many DISTINCT real preimages, so C11 represents it positively. Only BOTH real identity kernels in I05 can force the same original point and empty diversity. Identity-containing RAW transition maps are reduced to a named identity by I06, not by deleting all quotient equality constraints.",
+      "depends_on": [
+        "C09",
+        "C10",
+        "C11"
+      ],
+      "notes": "N08",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-one-source-support-per-guarded-pair"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C55",
+      "name": "The local root test is independent of future unrecorded pair choices",
+      "statement": "C33 reads any actual fine atom t in the fixed menu. It supplies no labels on other unconstrained root pairs and does not depend on which completion will eventually select such labels. Private roots remain old by C21. Global cycle reflection and bounded-obstruction assembly are separate later results.",
+      "depends_on": [
+        "C21",
+        "C33",
+        "C38"
+      ],
+      "notes": "N08",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-two-root-complete-reflection"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C56",
+      "name": "All-term reflection uses the complete local test essentially",
+      "statement": "If only the primitive joining relation were listed, several output orbitals or cross-term equalities might remain undecided, so preservation of that relation would not reflect the complete two-generated diagram. C12/C32 enumerate the whole locally vetted induced support and are necessary for the claimed complete reflection.",
+      "depends_on": [
+        "C12",
+        "C32",
+        "C35"
+      ],
+      "notes": "N08",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-two-root-complete-reflection"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C57",
+      "name": "General guarded-source consistency is not presumed",
+      "statement": "Different local factors may have no common global completion. C17 only proves each guarded pair menu nonempty. C22 only locates macro endpoints. C30 only bounds local gadgets. C38 only reconstructs a joined local factor from an atom. None of them assumes or exports a completion of all C.",
+      "depends_on": [
+        "C17",
+        "C22",
+        "C30",
+        "C38"
+      ],
+      "notes": "N08",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-two-root-complete-reflection"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C58",
+      "name": "Finite diagnostics exercise structural boundaries",
+      "statement": "Controls enumerate small unary closures/free decompositions, common-spectrum fibres and ANY-atom complete readout, theta cycles with private interiors, finite typed profile shortest words and the block parity counterexample. They certify no infinite SAP/CCO, no HN local-finiteness theorem and no Lean correctness.",
+      "depends_on": [
+        "C17",
+        "C22",
+        "C30",
+        "C38",
+        "C46"
+      ],
+      "notes": "N08",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-two-root-complete-reflection"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C59",
+      "name": "The reflection statement uses a genuinely joined OLD support",
+      "statement": "The printed phrase joining two closures is read with its explicit source-pair restriction and final unjoined-pair exclusion. A relation only on tau(b),sigma(c) does not meet the premise for a complete test on b,c. Local support S_bc itself must be irreducible, as A04 records.",
+      "depends_on": [
+        "A04",
+        "C05",
+        "C38"
+      ],
+      "notes": "N08",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-two-root-complete-reflection"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C60",
+      "name": "Root signature coordinates are class-valued actual named objects",
+      "statement": "Direct and branch transitions in C16 use literal quotient kernels and existing named maps. Equal values on one common fine atom compute canonical classes for every represented input fibre; no independent transition chart or coarse union is added. All named function closure of the finite old endpoint signatures remains actual.",
+      "depends_on": [
+        "C16",
+        "I12"
+      ],
+      "notes": "N08",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-one-source-support-per-guarded-pair"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C61",
+      "name": "Earlier qualifications and receiving obligations remain unchanged",
+      "statement": "This is private human proof preparation with frozen TeX. All five HN/HKN local receiving bindings, earlier B047 actual/FULL-sector qualification, B048 support-normal gate and all public Work/CI/policy boundaries remain. The new finite-index control narrows no terminal theorem.",
+      "depends_on": [
+        "C46",
+        "C48",
+        "C57"
+      ],
+      "notes": "N08",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-two-root-complete-reflection"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    }
+  ],
+  "source_result_files": [
+    "sections/v27/14_guarded_source_positive.tex"
+  ],
+  "exports": [
+    {
+      "source_label": "lem:typed-one-source-support-per-guarded-pair",
+      "claims": [
+        "C17"
+      ]
+    },
+    {
+      "source_label": "lem:typed-private-theta-cycle",
+      "claims": [
+        "C22"
+      ]
+    },
+    {
+      "source_label": "lem:typed-two-root-uniform-size",
+      "claims": [
+        "C30"
+      ]
+    },
+    {
+      "source_label": "lem:typed-two-root-complete-reflection",
+      "claims": [
+        "C38"
+      ]
+    }
+  ],
+  "auxiliary_exports": [
+    {
+      "source_label": "eq:typed-finite-index-G1-failure",
+      "claims": [
+        "C43",
+        "C46"
+      ],
+      "source": {
+        "file": "sections/v27/14_guarded_source_positive.tex",
+        "anchor": "\\label{eq:typed-finite-index-G1-failure}"
+      }
+    }
+  ],
+  "source_files": [
+    {
+      "file": "sections/typed_strong_domains.tex",
+      "git_blob": "75d584069ce802c62d66104a852a3649fc082f1d"
+    },
+    {
+      "file": "sections/v27/07_typed_raw_strong_transition.tex",
+      "git_blob": "6dc7e4c7aa452b179e95cc502b4daf4d2b6592d9"
+    },
+    {
+      "file": "sections/v27/10_typed_unary_terms_return.tex",
+      "git_blob": "7edb9833681c84ab9e15918a004137d7f2c47258"
+    },
+    {
+      "file": "sections/v27/13_actual_hidden_sap_readings.tex",
+      "git_blob": "9b01d7ebe43b4df87823c1127f101de49c2738c5"
+    },
+    {
+      "file": "sections/v27/14_guarded_source_positive.tex",
+      "git_blob": "9936dcb306b2c10d87cd8038014fee019bb7cc53"
+    }
+  ],
+  "dependency_firewalls": [
+    {
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17"
+      ],
+      "forbid": [
+        "A05",
+        "A06",
+        "I08",
+        "I09",
+        "I10",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40",
+        "C41",
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46",
+        "C47",
+        "C48",
+        "C49",
+        "C50",
+        "C51",
+        "C52",
+        "C53",
+        "C54",
+        "C55",
+        "C56",
+        "C57",
+        "C58",
+        "C59",
+        "C60",
+        "C61"
+      ]
+    },
+    {
+      "claims": [
+        "C14",
+        "C17"
+      ],
+      "forbid": [
+        "I07",
+        "I08",
+        "I09",
+        "I10",
+        "C15",
+        "C16",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40",
+        "C41",
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46",
+        "C47",
+        "C48",
+        "C49",
+        "C50",
+        "C51",
+        "C52",
+        "C53",
+        "C54",
+        "C55",
+        "C56",
+        "C57",
+        "C58",
+        "C59",
+        "C60",
+        "C61"
+      ]
+    },
+    {
+      "claims": [
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22"
+      ],
+      "forbid": [
+        "A01",
+        "A02",
+        "A03",
+        "A04",
+        "A05",
+        "I01",
+        "I02",
+        "I03",
+        "I04",
+        "I05",
+        "I06",
+        "I07",
+        "I08",
+        "I09",
+        "I10",
+        "I11",
+        "I12",
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40",
+        "C41",
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46",
+        "C47",
+        "C48",
+        "C49",
+        "C50",
+        "C51",
+        "C52",
+        "C53",
+        "C54",
+        "C55",
+        "C56",
+        "C57",
+        "C58",
+        "C59",
+        "C60",
+        "C61"
+      ]
+    },
+    {
+      "claims": [
+        "C40",
+        "C41",
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46",
+        "C47",
+        "C48"
+      ],
+      "forbid": [
+        "A01",
+        "A02",
+        "A03",
+        "A04",
+        "A05",
+        "A06",
+        "I01",
+        "I02",
+        "I03",
+        "I04",
+        "I05",
+        "I06",
+        "I07",
+        "I08",
+        "I09",
+        "I10",
+        "I11",
+        "I12",
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C49",
+        "C50",
+        "C51",
+        "C52",
+        "C53",
+        "C54",
+        "C55",
+        "C56",
+        "C57",
+        "C58",
+        "C59",
+        "C60",
+        "C61"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "T01",
+      "name": "Admissible old support and positive comparisons",
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Retain actual unary-admissibility and complete induced local support tests. All profiles on one pair must come from ONE actually irreducible OLD endpoint support, with a directly constructed common fine atom before exact-domain recognition. No Helly/global completion in that step. Count positive TYPED prefix states and keep the real identity case separate. Every target atom in the menu must reflect ALL local term comparisons. Pure private graph cycles, negative Helly certificates and optional higher-support preservation stay separate."
+    },
+    {
+      "id": "T02",
+      "name": "One actual local common survivor",
+      "claims": [
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17"
+      ],
+      "depends_on": [
+        "T01"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Retain actual unary-admissibility and complete induced local support tests. All profiles on one pair must come from ONE actually irreducible OLD endpoint support, with a directly constructed common fine atom before exact-domain recognition. No Helly/global completion in that step. Count positive TYPED prefix states and keep the real identity case separate. Every target atom in the menu must reflect ALL local term comparisons. Pure private graph cycles, negative Helly certificates and optional higher-support preservation stay separate."
+    },
+    {
+      "id": "T03",
+      "name": "Pure private-theta graph cycles",
+      "claims": [
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Retain actual unary-admissibility and complete induced local support tests. All profiles on one pair must come from ONE actually irreducible OLD endpoint support, with a directly constructed common fine atom before exact-domain recognition. No Helly/global completion in that step. Count positive TYPED prefix states and keep the real identity case separate. Every target atom in the menu must reflect ALL local term comparisons. Pure private graph cycles, negative Helly certificates and optional higher-support preservation stay separate."
+    },
+    {
+      "id": "T04",
+      "name": "Uniform positive typed gadget bounds",
+      "claims": [
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30"
+      ],
+      "depends_on": [
+        "T01",
+        "T02"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Retain actual unary-admissibility and complete induced local support tests. All profiles on one pair must come from ONE actually irreducible OLD endpoint support, with a directly constructed common fine atom before exact-domain recognition. No Helly/global completion in that step. Count positive TYPED prefix states and keep the real identity case separate. Every target atom in the menu must reflect ALL local term comparisons. Pure private graph cycles, negative Helly certificates and optional higher-support preservation stay separate."
+    },
+    {
+      "id": "T05",
+      "name": "All-atom complete two-root reflection",
+      "claims": [
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38"
+      ],
+      "depends_on": [
+        "T01",
+        "T02"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Retain actual unary-admissibility and complete induced local support tests. All profiles on one pair must come from ONE actually irreducible OLD endpoint support, with a directly constructed common fine atom before exact-domain recognition. No Helly/global completion in that step. Count positive TYPED prefix states and keep the real identity case separate. Every target atom in the menu must reflect ALL local term comparisons. Pure private graph cycles, negative Helly certificates and optional higher-support preservation stay separate."
+    },
+    {
+      "id": "T06",
+      "name": "Finite-index positivity boundary",
+      "claims": [
+        "C40",
+        "C41",
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46",
+        "C47",
+        "C48"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Retain actual unary-admissibility and complete induced local support tests. All profiles on one pair must come from ONE actually irreducible OLD endpoint support, with a directly constructed common fine atom before exact-domain recognition. No Helly/global completion in that step. Count positive TYPED prefix states and keep the real identity case separate. Every target atom in the menu must reflect ALL local term comparisons. Pure private graph cycles, negative Helly certificates and optional higher-support preservation stay separate."
+    },
+    {
+      "id": "T07",
+      "name": "Guarded scope and diagnostic boundaries",
+      "claims": [
+        "C39",
+        "C49",
+        "C50",
+        "C51",
+        "C52",
+        "C53",
+        "C54",
+        "C55",
+        "C56",
+        "C57",
+        "C58",
+        "C59",
+        "C60",
+        "C61"
+      ],
+      "depends_on": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Retain actual unary-admissibility and complete induced local support tests. All profiles on one pair must come from ONE actually irreducible OLD endpoint support, with a directly constructed common fine atom before exact-domain recognition. No Helly/global completion in that step. Count positive TYPED prefix states and keep the real identity case separate. Every target atom in the menu must reflect ALL local term comparisons. Pure private graph cycles, negative Helly certificates and optional higher-support preservation stay separate."
+    }
+  ],
+  "controls": [
+    {
+      "id": "K01",
+      "check": "Actual coordinate-window all-term spectra/ANY-atom reflection and common local survivor, plus reducible descendant-join free-decomposition guard."
+    },
+    {
+      "id": "K02",
+      "check": "Private theta cycles, typed shortest positive profile words, direct-edge agreement and block/bit RAW/STRONG nonpositive diagonal diagnostics. Bounded controls are not unbounded completion/obstruction or Lean certificates."
+    }
+  ],
+  "overview_mermaid": [
+    "flowchart TD",
+    "  U[\"Actual unary-admissible closures\"] --> S[\"One irreducible OLD endpoint support\"]",
+    "  S --> W[\"One actual factor and distinct witnesses\"]",
+    "  P[\"Complete orbital positive pullbacks\"] --> W",
+    "  W --> D[\"One common atom in every profile\"]",
+    "  D --> T[\"Finite exact theta menu\"]",
+    "  T --> R[\"ANY atom gives complete local reflection\"]",
+    "  F[\"Finite positive typed prefix states\"] --> B[\"Uniform gadget size\"]",
+    "  T --> B",
+    "  G[\"Private interiors and OLD roots\"] --> C[\"Macro cycle endpoints stay OLD\"]"
+  ],
+  "overview_notes": [
+    "Four source14 results and finite-index G1 equation; no global guarded completion or hidden HN arrow prepared here.",
+    "Direct common-survivor and pure private-graph claims have independent firewalls: no Helly/provider completion is used for existence of each pair menu.",
+    "Only actual joined old endpoint supports undergo complete two-root reflection; related descendants do not justify filling a reducible ancestor pair.",
+    "The block/bit coarse-only hidden SAP example has no positive old diagonal profile and no FULL RAW exact coarse equivalence, retaining the full finite-index gate."
+  ],
+  "article_feedback": [
+    {
+      "id": "F01",
+      "kind": "SOURCE_SCOPE_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/v27/14_guarded_source_positive.tex",
+        "anchor": "Suppose some displayed datum"
+      },
+      "finding": "The reflection premise is governed by the explicit old-source endpoint restriction: S_bc itself is irreducible. A relation merely on descendants can lie in an irreducible proper subpiece while the ancestor two-root closure remains reducible.",
+      "proposed_article_change": "Repeat S_bc=cl_C{b,c} is actually irreducible in the reflection statement, matching the construction and final unjoined-pair exclusion.",
+      "caller_effect": "Clarifies the already explicit construction scope; no new assumption for the intended guarded lift.",
+      "proof_claims": [
+        "C05",
+        "C38",
+        "C59"
+      ]
+    },
+    {
+      "id": "F02",
+      "kind": "PROOF_STATE_DETAIL",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/v27/14_guarded_source_positive.tex",
+        "anchor": "shortest"
+      },
+      "finding": "Shortest positive typed word shortening must compare NONEMPTY prefix states including their endpoint sorts, with index i>=1. A logical real-Id state is not a positive profile.",
+      "proposed_article_change": "Spell out positive typed prefix states and merge repeated equal length-one theta branches.",
+      "caller_effect": "No theorem change; guards typing and graph representation of the finite bound.",
+      "proof_claims": [
+        "C25",
+        "C26",
+        "C49",
+        "C50"
+      ]
+    }
+  ],
+  "review": {
+    "date": "2026-10-29",
+    "source_unchanged": true,
+    "source_signature_repairs": 0,
+    "unexpanded_provider_labels": [],
+    "proof_status": "HUMAN_EXPANDED_NOT_LEAN; independent concrete source/module/notes audit and parent independent provider synthesis PASS. No new statement gap or external theorem; frozen source and all prior qualifications retained.",
+    "independent_reviews": [
+      "Blind source14 audit reconstructed one-factor common survivor, typed positive-prefix shortening and ALL-term local reflection; parent expansion retains precise endpoint restriction",
+      "Final concrete all-claim audit PASS; actual exact joint/unary lifting precedes hereditary SAP, positive orbital branch is CCO-free, common-survivor has no Helly/exact-recognition ancestry, private graph branch is combinatorial, ANY-atom reflection is restricted to actual joined old supports. Explicit finite covering frame and nontrivial restricted-prefix diagnostic retained."
+    ],
+    "boundaries": [
+      "Unary admissibility is substantive",
+      "Related descendants do not make the ancestor pair irreducible",
+      "No Helly needed for the direct common survivor",
+      "Hidden SAP alone does not imply G1 positivity",
+      "Binary pair reflection requires separate higher-support interface for arity>=3",
+      "No global hidden completion or HN local finiteness claimed"
+    ]
+  }
+}

@@ -1,0 +1,830 @@
+{
+  "schema_version": 1,
+  "id": "hereditary_hidden_orbits",
+  "index_title": "Original-group hereditary hidden orbit infinitude through fresh real frames",
+  "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+  "status": "HUMAN_EXPANDED_NOT_LEAN",
+  "scope": "Private B054: the ONE source12 orbit result and its named equation, with 30 human proof claims. Transfer actual ORIGINAL-group real-base infinitude to EVERY finite unary-closed hidden base using a fresh real frame. Full hidden acl=dcl=unary closure follows by subgroup orbit inclusion. Hidden homogeneity and hereditary SAP are NOT prerequisites or exports of this package. Source12 examples remain uncounted boundary diagnostics.",
+  "scope_vocabulary": [
+    "actual_unary",
+    "frame_transfer",
+    "original_group",
+    "full_hidden_group",
+    "boundary"
+  ],
+  "scope_explanation": "statement and proof. G=Aut(M) acts on the ACTUAL interpreted named sorts; Aut(H) may be larger. All bases and closures are literal actual subsets. No hidden homogeneity, arbitrary partial completion, or new imaginary sort is inferred.",
+  "control_script": "tools/check_hereditary_hidden_orbit_controls.py",
+  "assumptions": [
+    {
+      "id": "A01",
+      "name": "Actual interpreted unary terminal signature",
+      "statement": "H is the ACTUAL full hidden interpretation of the old typed source M, retaining original real sorts and exactly the named proper represented MI quotient sorts, projections, upward maps and quotient transitions. Named functions are unary and total on their specified sorts; identity terms are allowed and there are NO nullary generators. Relations are actual canonical interpreted relations, not arbitrary independently labelled partial diagrams."
+    },
+    {
+      "id": "A02",
+      "name": "Standing original terminal source",
+      "statement": "The original source is finite-complete binary, homogeneous in its full old language, with finitely many transitive named real sorts, symmetric same-sort pair orbitals, visible SAP and semantic HOM CCO. EVERY strict cover in each FULL original invariant-equivalence lattice has INFINITE relative index, as the literal standing terminal hypothesis A:cover. This implies all proper original relative indices are infinite by a finite cover chain. The source geometry and term/fresh-frame providers retain these original hypotheses; no hidden SAP or hidden homogeneity is assumed."
+    },
+    {
+      "id": "A03",
+      "name": "Orbit-theoretic closures and elementary group actions",
+      "statement": "For any automorphism group K acting on H, finite-orbit closure over T is {u:|K_T.u| finite}, and fixed-point closure is {u:K_T.u={u}}. The acl/dcl conclusions below use these orbit-theoretic closures for FULL Aut(H). Group orbit inclusion and finite unions are elementary; no equality G=Aut(H) or extension of arbitrary hidden partial maps is assumed."
+    }
+  ],
+  "imports": [
+    {
+      "id": "I01",
+      "name": "lem:typed-unary-closure-bound",
+      "provider_module": "unary_terms_return",
+      "source_label": "lem:typed-unary-closure-bound",
+      "provider_claims": [
+        "C13",
+        "C14"
+      ],
+      "statement": "Every actual singleton hidden unary closure has at most m_typ vertices. With only unary functions and no nullary generators this makes finite closures finite and cl(empty)=empty. Malformed arbitrary total-unary partial sources are excluded.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I02",
+      "name": "cor:typed-no-real-base-hidden-algebraicity",
+      "provider_module": "typed_orbit_frames",
+      "source_label": "cor:typed-no-real-base-hidden-algebraicity",
+      "provider_claims": [
+        "C21"
+      ],
+      "statement": "For EVERY finite COMPLETE original real D, the finite G_D-orbit vertices in actual H are EXACTLY cl(D), for the ORIGINAL group G=Aut(M); in particular every off-closure vertex has infinite G_D orbit. This retains full old coloured types and literal base alignment.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I03",
+      "name": "lem:typed-fresh-representatives",
+      "provider_module": "typed_orbit_frames",
+      "source_label": "lem:typed-fresh-representatives",
+      "provider_claims": [
+        "C51"
+      ],
+      "statement": "For ANY finite actual induced unary-closed A<=B, choose actual real representatives of all proper quotient vertices of A, with C=A_real, so D=C union X satisfies A subset cl(D) and cl(D) intersect B=A. The source verification retains named forced factors and all proper original relative indices infinite; orphan-only and mixed original-sort bases are included.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I04",
+      "name": "lem:foundational-real-frame-orbits",
+      "provider_module": "unary_fresh_frames",
+      "source_label": "lem:foundational-real-frame-orbits",
+      "provider_claims": [
+        "C04",
+        "C06"
+      ],
+      "statement": "With G<=Aut(H), real generation, finite unary closures, original real-base infinite G_D orbits, and fresh real-frame separation, every off-base vertex has infinite G_A orbit for EVERY finite unary-closed A. This generic forward transfer needs neither homogeneity nor SAP.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    }
+  ],
+  "definitions": [
+    {
+      "id": "D01",
+      "name": "Original induced hidden action",
+      "statement": "G is Aut of the WHOLE old source M, acting on old real points and actual quotient classes. It is viewed through its induced action as a subgroup of Aut(H); faithfulness is harmless because old real sorts are retained.",
+      "depends_on": [
+        "A01"
+      ],
+      "notes": "N01",
+      "source": {
+        "file": "sections/v27/12_abstract_hidden_sap.tex",
+        "anchor": "\\label{lem:typed-hereditary-hidden-orbits}"
+      }
+    },
+    {
+      "id": "D02",
+      "name": "Literal unary term closure",
+      "statement": "cl(T) is all named unary term values, INCLUDING real and hidden identity terms, on vertices of T. No nullary functions imply cl(empty)=empty. A<=H is an actual induced finite unary-closed subset.",
+      "depends_on": [
+        "A01"
+      ],
+      "notes": "N01",
+      "source": {
+        "file": "sections/v27/12_abstract_hidden_sap.tex",
+        "anchor": "\\label{lem:typed-hereditary-hidden-orbits}"
+      }
+    },
+    {
+      "id": "D03",
+      "name": "Fresh real frame",
+      "statement": "For finite actual closed A<=B, a finite old real D is fresh if A subset cl(D) and cl(D) intersect B=A. This concerns actual quotient representatives, not an abstract transport chart or generated-only common base.",
+      "depends_on": [
+        "D02"
+      ],
+      "notes": "N02",
+      "source": {
+        "file": "sections/v27/12_abstract_hidden_sap.tex",
+        "anchor": "\\label{lem:typed-hereditary-hidden-orbits}"
+      }
+    },
+    {
+      "id": "D04",
+      "name": "Two pointwise stabilizers",
+      "statement": "G_T fixes T in the original induced action. K_T for K=Aut(H) fixes T in the full hidden group. G_T<=K_T, and generally equality is not known or needed.",
+      "depends_on": [
+        "D01",
+        "A03"
+      ],
+      "notes": "N03",
+      "source": {
+        "file": "sections/v27/12_abstract_hidden_sap.tex",
+        "anchor": "\\label{lem:typed-hereditary-hidden-orbits}"
+      }
+    },
+    {
+      "id": "D05",
+      "name": "Orbit closures",
+      "statement": "acl_K(T) denotes finite K_T-orbit vertices and dcl_K(T) denotes K_T-fixed vertices. This is the precise orbit interpretation used below; full first-order identification would be a separate model-theoretic convention.",
+      "depends_on": [
+        "A03",
+        "D04"
+      ],
+      "notes": "N03",
+      "source": {
+        "file": "sections/v27/12_abstract_hidden_sap.tex",
+        "anchor": "\\label{lem:typed-hereditary-hidden-orbits}"
+      }
+    },
+    {
+      "id": "D06",
+      "name": "Boundary signatures",
+      "statement": "For source12 diagnostics compare the actual MI-only signature with an enlarged signature naming exact NON-MI cell quotient, and compare coarse-only Q_J with the extra fine quotient Q_K over a two-class cover. These are separate model signatures, not allowed new objects in A01.",
+      "depends_on": [
+        "A01"
+      ],
+      "notes": "N04",
+      "source": {
+        "file": "sections/v27/12_abstract_hidden_sap.tex",
+        "anchor": "\\label{ex:typed-exact-nonmi-hidden-sap-failure}"
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "name": "Old automorphisms preserve all actual hidden data",
+      "statement": "Every g in Aut(M) sends [x]_J to [gx]_J and preserves projections, upward maps, quotient transitions and actual interpreted relations. Therefore its induced action lies in Aut(H). No extension of an arbitrary hidden partial isomorphism is asserted.",
+      "depends_on": [
+        "A01",
+        "D01"
+      ],
+      "notes": "N01",
+      "scope": "actual_unary",
+      "source_labels": [
+        "lem:typed-hereditary-hidden-orbits"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C02",
+      "name": "All named hidden vertices have original real generators",
+      "statement": "Each real vertex is its own identity-term value, and each proper quotient vertex b has b=F_J(x) for an actual original representative x because quotient projections are onto. Hence the union of original real sorts generates H under named unary terms.",
+      "depends_on": [
+        "A01",
+        "D02"
+      ],
+      "notes": "N01",
+      "scope": "actual_unary",
+      "source_labels": [
+        "lem:typed-hereditary-hidden-orbits"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C03",
+      "name": "Finite term closure retains the empty case",
+      "statement": "I01 bounds every actual singleton closure. Since unary closure of T is the union of the singleton closures, finite T has finite closure. With no nullary generators cl(empty)=empty, and identity terms give T subset cl(T).",
+      "depends_on": [
+        "I01",
+        "D02"
+      ],
+      "notes": "N01",
+      "scope": "actual_unary",
+      "source_labels": [
+        "lem:typed-hereditary-hidden-orbits"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C04",
+      "name": "Term equivariance fixes the entire generated frame",
+      "statement": "Every g in G satisfies g cl(T)=cl(gT). If g fixes T pointwise, it fixes every term value tau(t) individually, so G_T=G_cl(T). These statements also hold for the full hidden automorphism group.",
+      "depends_on": [
+        "C01",
+        "D02"
+      ],
+      "notes": "N01",
+      "scope": "actual_unary",
+      "source_labels": [
+        "lem:typed-hereditary-hidden-orbits"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C05",
+      "name": "The original real-base orbit hypothesis is already supplied",
+      "statement": "For any finite old real D, use its COMPLETE induced old diagram, and I02 says every u outside cl(D) has infinite G_D orbit. No assumption about hidden homogeneity, orphan bases or subgroup equality is substituted.",
+      "depends_on": [
+        "A02",
+        "I02",
+        "D01"
+      ],
+      "notes": "N02",
+      "scope": "original_group",
+      "source_labels": [
+        "lem:typed-hereditary-hidden-orbits"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C06",
+      "name": "Fresh representatives supply exactly one finite real frame",
+      "statement": "For arbitrary finite actual closed A<=B, apply I03 to every proper quotient vertex of A and retain A_real. Their finite union D is old real, generates all of A, and cl(D) intersect B=A. This remains true when A has only orphan vertices or is empty.",
+      "depends_on": [
+        "A02",
+        "I03",
+        "D03"
+      ],
+      "notes": "N02",
+      "scope": "frame_transfer",
+      "source_labels": [
+        "lem:typed-hereditary-hidden-orbits"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C07",
+      "name": "The test extension around one hidden point is finite and closed",
+      "statement": "Given finite actual closed A and u outside A, let B=cl(A union {u}). C03 makes B finite, A<=B and u in B. The construction is within the ACTUAL hidden structure, not a partially specified source awaiting completion.",
+      "depends_on": [
+        "C03",
+        "D02"
+      ],
+      "notes": "N02",
+      "scope": "frame_transfer",
+      "source_labels": [
+        "lem:typed-hereditary-hidden-orbits"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C08",
+      "name": "The real frame excludes the specified off-base point",
+      "statement": "Apply C06 to the C07 extension. Since u lies in B but not A and cl(D) intersect B=A, necessarily u is outside cl(D), while A subset cl(D).",
+      "depends_on": [
+        "C06",
+        "C07"
+      ],
+      "notes": "N02",
+      "scope": "frame_transfer",
+      "source_labels": [
+        "lem:typed-hereditary-hidden-orbits"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C09",
+      "name": "Real-base infinitude applies to the same actual point",
+      "statement": "Use C05 on the literal finite old real D from C08 and the SAME hidden u. Its orbit G_D.u is infinite. No hidden or quotient SAP is invoked.",
+      "depends_on": [
+        "C05",
+        "C08"
+      ],
+      "notes": "N02",
+      "scope": "original_group",
+      "source_labels": [
+        "lem:typed-hereditary-hidden-orbits"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C10",
+      "name": "The frame stabilizer is contained in the hidden-base stabilizer",
+      "statement": "Every g fixing D fixes cl(D) pointwise by C04, hence fixes A subset cl(D). Thus G_D<=G_A. This is pointwise containment; setwise preservation of the frame would not suffice.",
+      "depends_on": [
+        "C04",
+        "C08",
+        "D04"
+      ],
+      "notes": "N02",
+      "scope": "original_group",
+      "source_labels": [
+        "lem:typed-hereditary-hidden-orbits"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C11",
+      "name": "Every arbitrary hidden closed-base original orbit is infinite",
+      "statement": "The infinite orbit G_D.u of C09 is contained in G_A.u by C10. Hence for EVERY finite induced unary-closed hidden A, including orphan-only A, and every u outside A, |G_A.u| is infinite. This proves the named HO equation in the stronger original group.",
+      "depends_on": [
+        "C09",
+        "C10"
+      ],
+      "notes": "N02",
+      "scope": "original_group",
+      "source_labels": [
+        "lem:typed-hereditary-hidden-orbits"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C12",
+      "name": "The generic frame theorem is applied with all inputs discharged",
+      "statement": "C01 gives the actual subgroup action, C02 real generation, C03 finite closures, C05 the real-base orbit input and C06 frame separation. These discharge I04 and recover C11; I04 is reused rather than a new abstract theorem assumed. The explicit C07-C11 proof records its forward argument.",
+      "depends_on": [
+        "C01",
+        "C02",
+        "C03",
+        "C05",
+        "C06",
+        "I04"
+      ],
+      "notes": "N02",
+      "scope": "frame_transfer",
+      "source_labels": [
+        "lem:typed-hereditary-hidden-orbits"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C13",
+      "name": "An arbitrary finite parameter set has an actual closed hull",
+      "statement": "For finite hidden T put A=cl(T), an actual finite induced unary-closed base by C03. The identity terms keep T in A, including T=empty.",
+      "depends_on": [
+        "C03",
+        "D02"
+      ],
+      "notes": "N03",
+      "scope": "frame_transfer",
+      "source_labels": [
+        "lem:typed-hereditary-hidden-orbits"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C14",
+      "name": "Original stabilizers of parameters and their hull agree",
+      "statement": "C04 gives G_T=G_A for A=cl(T), since fixing parameters fixes all named term values and T subset A gives the reverse stabilizer containment.",
+      "depends_on": [
+        "C04",
+        "C13"
+      ],
+      "notes": "N03",
+      "scope": "original_group",
+      "source_labels": [
+        "lem:typed-hereditary-hidden-orbits"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C15",
+      "name": "Every parameter term value is fixed in the original action",
+      "statement": "For u in cl(T), term equivariance and pointwise fixation of T imply g(u)=u for all g in G_T. Thus each such original orbit is a singleton.",
+      "depends_on": [
+        "C04",
+        "C13"
+      ],
+      "notes": "N03",
+      "scope": "original_group",
+      "source_labels": [
+        "lem:typed-hereditary-hidden-orbits"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C16",
+      "name": "Original finite-orbit closure is exactly the term hull",
+      "statement": "If u outside cl(T), C11 at A=cl(T) and C14 give infinite G_T orbit. If u inside, C15 gives a singleton. Thus the stronger original-group finite-orbit and fixed-point closures of T both equal cl(T).",
+      "depends_on": [
+        "C11",
+        "C14",
+        "C15",
+        "D05"
+      ],
+      "notes": "N03",
+      "scope": "original_group",
+      "source_labels": [
+        "lem:typed-hereditary-hidden-orbits"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C17",
+      "name": "Original parameter stabilizers are subgroups of full hidden ones",
+      "statement": "Because C01 maps the whole original group into Aut(H), each g in G_T is also in K_T for K=Aut(H). Hence G_T.u subset K_T.u for every actual hidden u. No equality or surjectivity of the groups is inferred.",
+      "depends_on": [
+        "C01",
+        "D04"
+      ],
+      "notes": "N03",
+      "scope": "full_hidden_group",
+      "source_labels": [
+        "lem:typed-hereditary-hidden-orbits"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C18",
+      "name": "Full hidden off-hull orbits are infinite",
+      "statement": "For u outside cl(T), the original orbit is infinite by C16 and is included in the full K_T orbit by C17. The latter is therefore infinite as well. A larger group cannot turn an infinite subgroup orbit into a finite orbit.",
+      "depends_on": [
+        "C16",
+        "C17"
+      ],
+      "notes": "N03",
+      "scope": "full_hidden_group",
+      "source_labels": [
+        "lem:typed-hereditary-hidden-orbits"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C19",
+      "name": "Named term values remain fixed by every full hidden automorphism",
+      "statement": "Every h in K_T preserves the named unary functions and fixes T, so h fixes every tau(t). Thus K_T.u is singleton for u in cl(T), independently of original-group surjectivity.",
+      "depends_on": [
+        "A01",
+        "C13",
+        "D04"
+      ],
+      "notes": "N03",
+      "scope": "full_hidden_group",
+      "source_labels": [
+        "lem:typed-hereditary-hidden-orbits"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C20",
+      "name": "Full hidden acl and dcl are the finite term closure",
+      "statement": "C18 excludes every off-hull vertex from orbit-theoretic acl_K(T) and therefore dcl_K(T). C19 places every term value in dcl_K(T) and acl_K(T). Hence acl_H(T)=dcl_H(T)=cl_H(T) for every finite hidden T.",
+      "depends_on": [
+        "C18",
+        "C19",
+        "D05"
+      ],
+      "notes": "N03",
+      "scope": "full_hidden_group",
+      "source_labels": [
+        "lem:typed-hereditary-hidden-orbits"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C21",
+      "name": "Selected source theorem retains the stronger old-group assertion",
+      "statement": "C11 proves HO for EVERY finite actual unary-closed hidden base in the original group, and C20 proves the stated full hidden closure equalities. The hypotheses were discharged using real-base orbits and literal fresh frames, without hidden homogeneity, hidden SAP or partially specified hidden completions.",
+      "depends_on": [
+        "C11",
+        "C12",
+        "C20"
+      ],
+      "notes": "N03",
+      "scope": "full_hidden_group",
+      "source_labels": [
+        "lem:typed-hereditary-hidden-orbits"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C22",
+      "name": "Hidden SAP requires a separate homogeneity step",
+      "statement": "C21 is an actual orbit result. Deriving hereditary age SAP via the generic homogeneous-unary criterion additionally requires homogeneity of the ACTUAL hidden structure. It is not a premise here and is not silently inferred from homogeneity of the original real reduct.",
+      "depends_on": [
+        "C21"
+      ],
+      "notes": "N04",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-hereditary-hidden-orbits"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C23",
+      "name": "An added non-MI cell coordinate is jointly determined outside unary closure",
+      "statement": "In the source12 row/column clone source, adjoining Q_L for L=R intersect C adds one cell vertex c over the orphan row a and column b. Its two upward values uniquely specify c. No named unary term on a or b can choose c, since fixing one coordinate allows movement of the other. Thus c is fixed over {a,b} but outside cl({a,b}).",
+      "depends_on": [
+        "D06"
+      ],
+      "notes": "N04",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-hereditary-hidden-orbits"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C24",
+      "name": "The same non-MI obstruction occurs over a real-generated base",
+      "statement": "Take real x in row r with column c0 and y in column c with row r0, with r!=r0 and c!=c0. Their full unary closure names cells (r,c0) and (r0,c), not cross-cell (r,c). A real z in that cross-cell generates a vertex uniquely determined by the original row of x and column of y, outside their closure. Thus the required original real-base orbit input itself fails in the enlarged signature.",
+      "depends_on": [
+        "C23",
+        "D06"
+      ],
+      "notes": "N04",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-hereditary-hidden-orbits"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C25",
+      "name": "Unique off-base meet coordinates forbid strong amalgamation",
+      "statement": "Two copies of the finite unary-closed extension adding the unique Q_L point over row a and column b cannot be strongly amalgamated over their common closed base: the two new points must have the same two upward values and hence be the same actual cell. This is a boundary for the enlarged signature, not a counterexample to A01.",
+      "depends_on": [
+        "C23"
+      ],
+      "notes": "N04",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-hereditary-hidden-orbits"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C26",
+      "name": "Naming a fine quotient can expose a finite algebraic fibre",
+      "statement": "In the block/bit/clone source let K be same block and bit, J same block. Adding both Q_K and Q_J exposes EXACTLY two Q_K vertices over any orphan b in Q_J. They form a finite set invariant under every automorphism fixing b; bit swap exchanges them, so neither is a unary term value of b. This violates the all-proper-indices-infinite input.",
+      "depends_on": [
+        "D06"
+      ],
+      "notes": "N04",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-hereditary-hidden-orbits"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C27",
+      "name": "A smaller named signature need not require all original NR2 cuts",
+      "statement": "The coarse-only Q_J signature has no Q_K term and its real identity is unforced with infinite J-fibre. The full original index [J:K]=2 is then invisible to its term-kernel criterion. Thus global infinite-cover terminal input is sufficient for this package, not a necessary criterion for every smaller hidden signature.",
+      "depends_on": [
+        "C26"
+      ],
+      "notes": "N04",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-hereditary-hidden-orbits"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C28",
+      "name": "Compatible hierarchical quotient incidence is allowed",
+      "statement": "The source12 parent/row/column MI-only example has named upward row/column maps to the parent. Orphan row and column classes from different parents are incompatible, yet compatible classes in one parent have infinite clone fibre. Non-Cartesian global incidence does not contradict C21; its proof uses actual fresh frames, not a Cartesian product axiom.",
+      "depends_on": [
+        "D06",
+        "C21"
+      ],
+      "notes": "N04",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-hereditary-hidden-orbits"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C29",
+      "name": "Empty hidden bases and parameters are literal",
+      "statement": "With no nullary generators cl(empty)=empty. C06 may choose D=empty when A=empty; C05 already gives infinite original-group orbit of EVERY hidden vertex over the empty real base. C11/C20 therefore assert no empty-base hidden algebraicity without selecting an arbitrary quotient representative or adding a constant.",
+      "depends_on": [
+        "C03",
+        "C05",
+        "C11",
+        "C20"
+      ],
+      "notes": "N03",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-hereditary-hidden-orbits"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C30",
+      "name": "Finite diagnostics do not prove orbit infinitude",
+      "statement": "A finite clone-window group has only finite orbits. Its controls can check frame intersection, stabilizer containment and the direction of original/full group inclusion, and can expose unique-cell and two-cover failures. The unbounded orbit assertions in C11/C20 use the human proof and named providers, not a finite test certificate.",
+      "depends_on": [
+        "C21",
+        "C23",
+        "C26"
+      ],
+      "notes": "N04",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-hereditary-hidden-orbits"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    }
+  ],
+  "source_result_files": [
+    "sections/v27/12_abstract_hidden_sap.tex"
+  ],
+  "additional_result_exports": [],
+  "exports": [
+    {
+      "source_label": "lem:typed-hereditary-hidden-orbits",
+      "claims": [
+        "C21"
+      ]
+    }
+  ],
+  "auxiliary_exports": [
+    {
+      "source_label": "eq:typed-hereditary-hidden-orbits",
+      "claims": [
+        "C11"
+      ],
+      "source": {
+        "file": "sections/v27/12_abstract_hidden_sap.tex",
+        "anchor": "\\label{eq:typed-hereditary-hidden-orbits}"
+      }
+    }
+  ],
+  "source_files": [
+    {
+      "file": "sections/unary_fresh_frame_sap.tex",
+      "git_blob": "7a05cbd11bb6a051541cdaa93694461a76357c53"
+    },
+    {
+      "file": "sections/v27/01_profiles_exact_cco.tex",
+      "git_blob": "db05cf3ab4a6cc493499b3a44b4a544abf41285f"
+    },
+    {
+      "file": "sections/v27/10_typed_unary_terms_return.tex",
+      "git_blob": "7edb9833681c84ab9e15918a004137d7f2c47258"
+    },
+    {
+      "file": "sections/v27/11_typed_orbits_frames.tex",
+      "git_blob": "9bd287329e85276d13dd4cc7a5bc852a125e9c70"
+    },
+    {
+      "file": "sections/v27/12_abstract_hidden_sap.tex",
+      "git_blob": "bff58bfaf1a3ec818cfcbc86655644ef5fa9505e"
+    }
+  ],
+  "dependency_firewalls": [
+    {
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21"
+      ],
+      "forbid": [
+        "D06",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "T01",
+      "name": "Actual unary action and real generation",
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Retain the actual original induced group, finite unary closure without nullary generators, literal frame/base intersection and subgroup orbit inclusion in the correct direction. No hidden homogeneity/SAP, added non-MI quotient, or finite-window infinitude may be substituted."
+    },
+    {
+      "id": "T02",
+      "name": "Original-group frame transfer over arbitrary closed bases",
+      "claims": [
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12"
+      ],
+      "depends_on": [
+        "T01"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Retain the actual original induced group, finite unary closure without nullary generators, literal frame/base intersection and subgroup orbit inclusion in the correct direction. No hidden homogeneity/SAP, added non-MI quotient, or finite-window infinitude may be substituted."
+    },
+    {
+      "id": "T03",
+      "name": "Finite parameters and full hidden acl/dcl",
+      "claims": [
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21"
+      ],
+      "depends_on": [
+        "T02"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Retain the actual original induced group, finite unary closure without nullary generators, literal frame/base intersection and subgroup orbit inclusion in the correct direction. No hidden homogeneity/SAP, added non-MI quotient, or finite-window infinitude may be substituted."
+    },
+    {
+      "id": "T04",
+      "name": "Signature and finite-control boundaries",
+      "claims": [
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30"
+      ],
+      "depends_on": [
+        "T03"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Retain the actual original induced group, finite unary closure without nullary generators, literal frame/base intersection and subgroup orbit inclusion in the correct direction. No hidden homogeneity/SAP, added non-MI quotient, or finite-window infinitude may be substituted."
+    }
+  ],
+  "controls": [
+    {
+      "id": "K01",
+      "check": "Finite clone-window actual group actions, literal fresh-frame intersections, stabilizer containment and original/full-group orbit inclusion; finite windows are diagnostics only, not infinite-orbit or SAP certificates."
+    },
+    {
+      "id": "K02",
+      "check": "Explicit non-MI cross-cell unique incidence and term-visible two-cover boundaries; unary closure misses jointly determined points and the finite quotient obstruction occurs only when the fine quotient is named."
+    }
+  ],
+  "overview_mermaid": [
+    "flowchart TD",
+    "  R[\"Original-group real-base infinite orbits\"] --> F[\"Fresh real frame over a hidden base\"]",
+    "  U[\"Actual finite unary closures\"] --> F",
+    "  Q[\"Actual fresh quotient representatives\"] --> F",
+    "  F --> G[\"Original hidden-base infinite orbits\"]",
+    "  G --> A[\"Full hidden acl and dcl equal unary closure\"]"
+  ],
+  "overview_notes": [
+    "The transfer uses the original group as a subgroup of the full hidden automorphism group, not equality of the groups.",
+    "Freshness is first established for actual induced closed bases, including orphan-only bases. It is then applied to B=cl(A union {u}).",
+    "Hidden homogeneity and hereditary hidden SAP belong to a later package. Naming an exact NON-MI meet quotient can invalidate the real-base/fresh-frame inputs."
+  ],
+  "article_feedback": [],
+  "review": {
+    "date": "2026-10-29",
+    "source_unchanged": true,
+    "source_signature_repairs": 0,
+    "unexpanded_provider_labels": [],
+    "proof_status": "HUMAN_EXPANDED_NOT_LEAN; independent concrete mathematical review and parent source/provider synthesis PASS. Source frozen and all prior qualifications retained.",
+    "independent_reviews": [
+      "Independent source11/source12 dependency audit; preserves literal standing infinite-cover input and the original/full hidden group distinction.",
+      "Final concrete module/notes/provider audit PASS; finite actual term-function support and complete export scope explicitly recorded, original-group orbit inclusion separate from full hidden group, no hidden homogeneity/SAP assumed."
+    ],
+    "boundaries": [
+      "No hidden SAP/homogeneity export",
+      "No non-MI added quotient theorem",
+      "No arbitrary partial hidden source theorem",
+      "Finite windows do not certify infinite orbits"
+    ]
+  }
+}

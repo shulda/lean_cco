@@ -87,11 +87,13 @@ class ExternalProviderTests(unittest.TestCase):
         _, manifest = handoff.collect(handoff.ROOT)
         providers = manifest['external_providers']
         unary = json.loads((module.ROOT / 'formalization/unary_hn/module.json').read_text())
+        forest = json.loads((module.ROOT / 'formalization/old_idempotent_forest/module.json').read_text())
         self.assertEqual(providers, [dict(module=ident, **p)
                                      for ident, config in [('hkn_reservoir', self.config),
-                                                           ('unary_hn', unary)]
+                                                           ('unary_hn', unary),
+                                                           ('old_idempotent_forest', forest)]
                                      for p in config['external_providers']])
-        self.assertEqual(len(providers), 5)
+        self.assertEqual(len(providers), 6)
         self.assertTrue(all(p['lean_reference']['bridge_status'] == 'NOT_BOUND_TO_CCO_ENCODING'
                             for p in providers if 'lean_reference' in p))
         self.assertTrue(all(p['status'] == 'PUBLISHED_THEOREM_LOCAL_BRIDGE_PENDING'

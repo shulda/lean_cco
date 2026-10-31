@@ -1,0 +1,887 @@
+\begin{lemma}[Typed guarded root forcing and lift equivalence]
+\label{lem:typed-guarded-lift-equivalence}
+Let \(C\) be as in \cref{con:typed-guarded-lift}, and suppose the
+construction reaches \(G_{\mathrm{typ}}(C)\) rather than stopping at a
+pairwise profile conflict.  Every visible completion of
+\(G_{\mathrm{typ}}(C)\) canonically realises all displayed positive typed
+hidden data and all transition-closed root identities.  Moreover,
+\(C\) has a hidden completion if and only if
+\(G_{\mathrm{typ}}(C)\) has a visible completion (with the distinguished
+old higher-support factors kept fixed in the support-normal finite-arity
+case).  In particular, hidden non-completion implies visible guarded-lift
+non-completion.
+\end{lemma}
+
+\begin{proof}
+Consider one constrained witness pair with exact domain
+\(D=\bigcap_iP_i\), and let \(c\) be its completed atomic pair type.  Every
+branch of its private theta bundle remains a specified path, so the typed
+path-profile observation gives \(c\in P_i\) for all \(i\), and hence
+\[
+ c\in D. \tag{TGR}\label{eq:typed-guarded-root-colour}
+\]
+Thus \(c\) lies in every positive profile imposed on this pair.  Membership
+in \(J\) forces a displayed projection equality, and membership in the target
+equivalence forces an upward quotient equality.  By
+\cref{lem:typed-cylinder-realisation}, membership in a named mixed cylinder
+forces precisely the displayed semantic-cylinder relation.
+By \cref{lem:typed-transition-cylinder}, membership in the
+IDENTITY-FREE positive profile
+\(J^\circ\starprod R\starprod(J^R)^\circ\)
+forces the NONTRIVIAL named transition
+equation for \(\pi_{R,J}\).
+Any identity-containing \(R\)
+has already reduced to an existing
+unary identity term by
+\cref{lem:typed-identity-transport-redundant}
+and does NOT create a separate
+strong theta constraint.
+A singleton profile preserves a specified old real pair
+type.
+
+It remains to check the additional root-signature equations.  If
+\(DD^{\smile}\subseteq J\), then the atom \(c\in D\), the exact
+relation \(D\), and every quotient-functional theta branch containing
+\(c\) induce the same quotient map from the source \(J\)-class, by the
+argument of \cref{lem:typed-transition-cylinder}.  Hence all direct and
+branch-forced transitions stored in the root signature hold in the actual
+quotient system.  Their compositions, inverses and upward consequences are
+literal identities of that quotient system.  This proves typed root forcing.
+
+Suppose first that \(C\) has a hidden completion.  Compose it with an embedding
+of its finite target into a full typed hidden expansion and apply
+\cref{lem:typed-real-sort-splitting}.  Use the resulting pairwise distinct
+real points as the real witnesses and designated representatives.  Every
+profile imposed in \cref{con:typed-guarded-lift} is then satisfied, hence the
+actual root pair type belongs to the corresponding exact intersection \(D\).
+Insert all private theta interiors by their path-profile realisation and
+repeated visible SAP over the already chosen roots.  Support-normality lets us
+keep the distinguished complete old higher-support factors fixed.  This gives
+a visible completion of \(G_{\mathrm{typ}}(C)\).
+
+Conversely, take a visible completion of \(G_{\mathrm{typ}}(C)\).  Send an
+old real vertex to its real witness and a vertex \(b\in B_{a,J}\) to the
+actual \(J\)-class of its designated witness.  The first part of the proof
+shows that every displayed projection, upward map, quotient transition,
+semantic cylinder and old real relation is preserved.
+
+We check reflection, including possible collisions
+of unary-term values. On one-generated
+functional closures it is exactly the
+bounded local diagram check from
+\cref{con:typed-guarded-lift}.
+For ANY two closures joined in an
+irreducible source piece,
+\cref{lem:typed-two-root-complete-reflection}
+proves that EVERY old atomic
+representative pair selected from
+their nonempty guarded exact menu
+interprets precisely the source's
+COMPLETE induced two-generated
+hidden type, including the
+absence of incompatible named
+cylinders and the distinctness
+of different term values when
+that irreducible join requires
+them to be distinct. This
+uses the source's full bounded
+local reflection check and the
+actual semantic-cylinder
+partition, not the unjustified
+claim that an arbitrary
+PARTIAL two-root diagram
+determines one unique orbit.
+For a support-\(\ge3\)
+joining tuple, the old
+distinguished complete factor
+fixes its canonical pair
+shadow, and the separate
+support-normal completion
+interface must preserve the
+higher-support tuples
+themselves.
+
+To pass from these bounded ONE-
+and TWO-generated checks
+to an ARBITRARY irreducible
+substructure of the original
+partial hidden source, apply
+\cref{lem:typed-binary-irreducible-local-cover}.
+In the BINARY/unary hidden
+signature, any two distinct
+vertices of an irreducible
+source piece lie together
+in some ACTUALLY displayed
+one- or two-generated
+functionally closed support;
+otherwise that piece
+admits a nontrivial free
+amalgamation decomposition.
+Every such bounded support
+is embedded inducedly by
+the just-verified complete
+old local checks. Therefore
+the map is injective and
+reflects ALL binary named
+relations on EVERY
+irreducible source
+substructure, not merely
+on the individual checked
+small pieces. It is a
+homomorphism-embedding
+and hence a hidden
+completion of \(C\).
+For arity at least three,
+the separate support-normal
+reflection contract is still
+required; pairwise closure
+alone is insufficient.
+\end{proof}
+
+We next repair factorisation compression.  Let
+\[
+ S_{\rm typ}=\{0\}\sqcup\bigsqcup_{a,b}\Rch^{ab}
+\]
+and multiply non-composable profiles to \(0\).  This is a finite semigroup, so
+Kufleitner's factorisation-forest theorem applies literally.  A nonzero idempotent belongs to some
+\(\Rch^{aa}\) and consists of same-sort
+\emph{diversity} atoms. Thus it is irreflexive
+as an actual binary relation. The assertion that
+the profile \(e\) itself is a reflexive equivalence
+would be FALSE. All same-sort atomic colours are
+symmetric, so define
+\[
+                 E_e=\Id_a\cup e.
+\tag{TF0}\label{eq:typed-idempotent-equivalence}
+\]
+This is reflexive and symmetric. For transitivity,
+if \(xE_eyE_ez\) and any two of \(x,y,z\)
+coincide, the conclusion is immediate; otherwise
+the two incident old diversity atoms are in \(e\),
+so the STRONG idempotence \(e\starprod e=e\)
+forces the diversity colour of \(xz\) into \(e\).
+Hence \(E_e\) is an invariant equivalence whose
+diversity palette is exactly \(e\).
+The following
+\cref{lem:typed-idempotent-raw-exact}
+strengthens this to a FULL RAW exact
+equivalence, making meet-irreducible
+reconstruction legal rather than merely
+assuming exactness.
+Whenever an idempotent profile below is called
+an equivalence, the actual relation meant is \(E_e\);
+the deleted word still has the strong off-diagonal
+profile \(e\), not logical identity.
+
+\begin{lemma}[Literal old-coordinate seams for successive macro sides]
+\label{lem:typed-old-seam-telescope}
+Let \(C\) be a functionally closed
+PARTIAL old hidden structure,
+and let \(b_0,\ldots,b_m\)
+be a sequence of ACTUAL OLD
+hidden source vertex occurrences
+with consecutive pairs
+\((b_{i-1},b_i)\) issuing
+source-supported guarded macro
+sides. For each side suppose
+\cref{lem:typed-old-source-branch-equation}
+provides a literal equation
+\[
+ \pi_i(\tau_{i-1}(b_{i-1}))
+       =\tau_i(b_i)
+\]
+between NAMED OLD unary-term
+values at represented quotient
+coordinates \(J_{i-1},J_i\).
+Here at a shared intermediate
+root \(b_i\) both incident sides
+must use the SAME represented
+\(J_i\)-coordinate readout,
+possibly written by two terms
+which are IDENTICALLY the same
+canonical quotient map in the
+actual hidden signature.
+
+Then their composite equation
+\[
+ (\pi_m\circ\cdots\circ\pi_1)
+    (\tau_0(b_0))=\tau_m(b_m)
+\tag{OSE}\label{eq:typed-old-seam-telescope}
+\]
+holds LITERALLY in \(C\),
+regardless of whether the
+complete irreducible OLD
+supports of two successive
+sides have any common REAL
+vertex. Their intersection may
+consist solely of proper
+quotient-coordinate vertices.
+
+The conclusion cannot be
+obtained merely because two
+DISTINCT OLD hidden source
+vertices \(q,q'\) happen to
+have EQUAL images in some
+homomorphism-embedding completion.
+They may be used as one seam
+only if their equality is
+already literal in \(C\), or
+an explicitly displayed NAMED
+unary transition in the OLD
+source connects their required
+coordinate values.
+\end{lemma}
+\begin{proof}
+Because \(C\) is closed under
+the named unary functions,
+each equation of a macro side
+is an equality of actual
+vertices of \(C\), not a
+constraint on separately
+chosen future representatives.
+At each intermediate vertex
+\(b_i\), both incident term
+values denote its same
+canonical \(J_i\)-coordinate.
+Their equality therefore
+holds in \(C\) as well;
+if the notations differ by a
+quotient transition, the
+stated hypothesis demands
+that this transition is one
+of the actual named unary
+maps with its equality already
+present in \(C\).
+Ordinary substitution and
+composition of unary-function
+equalities now give (OSE)
+by induction on \(m\).
+This argument requires no
+amalgamation of the distinct
+OLD irreducible supports and
+no equality of their real
+root positions.
+
+For the last assertion,
+a homomorphism-embedding of
+a reducible partial source
+need not be globally
+injective. Two distinct old
+vertices in different free
+amalgamation factors may
+acquire the same target image
+without being literally
+equal source vertices.
+Replacing them by one
+intermediate term would
+therefore add an unproved
+OLD equation. The path
+contracts through a common
+formal OLD root occurrence,
+not through an accidental
+coincidence of target images.
+\end{proof}
+
+\begin{lemma}[A strong idempotent has an exact RAW equivalence envelope]
+\label{lem:typed-idempotent-raw-exact}
+Let \(a\) be an actual named transitive
+sort of a finite complete homogeneous
+symmetric binary SAP+semantic-CCO
+source. Let \(e\in\Rch^{aa}\) be a
+NONEMPTY strong diversity profile
+of one positive typed atomic word
+\(w:a\to a\), and suppose
+\(e\starprod e=e\).
+Then
+\[
+                 E_e=\Id_a\cup e
+\]
+is not merely an invariant
+equivalence: it is an actual
+FULL RAW exact equivalence,
+represented by the equality-inclusive
+endpoint word \(ww\).
+Consequently, in the finite
+distributive lattice of represented
+full exact equivalences on \(a\),
+\[
+ E_e=\bigcap\{J:J\text{ is a represented
+ meet-irreducible equivalence and }
+                         J\supseteq E_e\}.
+\tag{TF1}\label{eq:typed-idempotent-MI-meet}
+\]
+The intersection of an empty family
+is the universal same-sort equivalence.
+Neither a synthetic equality-labelled
+diversity edge nor an unproved
+exactness of EVERY invariant
+equivalence is used.
+\end{lemma}
+\begin{proof}
+Let \(R_w\subseteq M_a^2\) be the
+ACTUAL equality-inclusive represented
+endpoint relation of the positive word
+\(w\). By typed SAP injectivisation
+\cref{lem:typed-injectivisation},
+its restriction to pairs of DISTINCT
+points is exactly the strong
+diversity palette \(e\).
+Therefore \(R_w\) is either
+\(e\) as an actual binary relation
+or \(\Id_a\cup e\), depending on
+whether the word also has a
+genuine equal-endpoint walk.
+
+All invariant a-to-a relations
+are unions of symmetric original
+same-sort atomic orbitals, hence
+\(R_w\) is symmetric. It has an
+actual distinct-endpoint witness
+because \(e\ne\varnothing\);
+by transitivity this gives a
+nontrivial \(R_w\)-neighbour for
+EVERY point of the sort.
+For each real point \(x\), choose
+\(y\ne x\) with \(xR_wy\).
+Symmetry gives \(yR_wx\), so
+\(\Id_a\subseteq R_w;R_w\).
+
+On DISTINCT endpoints, membership
+in \(R_w;R_w\) implies membership
+in the actual equivalence
+\(E_e\) (since \(R_w\subseteq E_e\)
+and \(E_e\) is transitive by
+the strong idempotence), so the
+off-diagonal output lies in \(e\).
+Conversely every atom of \(e\)
+occurs in \(e\starprod e=e\),
+hence has an actual two-step
+witness whose edges lie in
+\(R_w\); this puts that atom
+into \(R_w;R_w\). Thus
+\[
+                    R_w;R_w
+                       =\Id_a\cup e=E_e.
+\]
+But \(R_w;R_w\) is EXACTLY
+the represented RAW endpoint
+relation of the concatenated
+positive word \(ww\), including
+logical identity outputs.
+It is a singleton RAW word
+profile and therefore a full
+exact domain by definition.
+It is already an actual
+invariant equivalence, so an
+element of the represented
+full exact-equivalence lattice.
+
+The exact lattice is finite and
+distributive by the typed RAW
+exact/Helly and lattice criterion
+proved earlier in Part~I
+(\cref{thm:full-typed-exact-balls,thm:abstract-exact-crt}); every
+element of a finite distributive
+lattice equals the meet of all
+meet-irreducibles above it.
+This proves
+\eqref{eq:typed-idempotent-MI-meet},
+with the ordinary empty-meet
+convention when \(E_e=\Top_a\).
+\end{proof}
+
+\begin{remark}[Scope of the RAW exact idempotent envelope]
+\label{rem:typed-idempotent-envelope-scope}
+The preceding equation
+\(R_w;R_w=\Id\cup e\)
+uses only symmetric original
+pair orbitals, source transitivity,
+the STRONG endpoint identity
+\(e\starprod e=e\), and SAP
+injectivisation of RAW walks.
+It does NOT require the
+terminal no-finite-cover
+hypothesis or a priori
+exactness of every invariant
+equivalence. Its assertion
+that \(E_e\) is FULL RAW exact
+comes from the literal
+positive old word \(ww\).
+The subsequent representation
+of \(E_e\) as the meet of
+represented meet-irreducibles
+uses the separate FINITE
+DISTRIBUTIVE exact-lattice
+theorem from Part~I; this
+extra deduction must not
+be conflated with the direct
+word identity.
+\end{remark}
+
+\begin{lemma}[CCO-free idempotent lattice and its distributive CCO specialization]
+\label{lem:typed-strong-idempotent-lattice-monolith}
+Fix ONE original named TRANSITIVE sort $a$
+of a finite-complete homogeneous
+binary source whose same-sort old
+atom colours are SYMMETRIC.
+Assume visible SAP and FULL
+original invariant-equivalence NR2
+on that sort, but do NOT assume CCO.
+Let $\mathscr I_a$ be the set
+of all NONEMPTY same-sort
+STRONG POSITIVE REACHABLE
+word profiles
+$e\in\Rch^{aa}$ with
+$e\starprod e=e$.
+Then
+\[
+                  e\longmapsto
+                    E_e=\Id_a\cup e
+\]
+is an order-preserving BIJECTION
+from $\mathscr I_a$ onto the
+finite lattice of ALL original
+invariant equivalences
+on $a$ EXCLUDING $\Id_a$.
+In particular $\mathscr I_a$
+is a finite LATTICE with
+\[
+  e\wedge f=e\cap f\ne\varnothing,
+  \qquad
+  e\vee f=e\starprod f
+             =(E_e\vee E_f)^\circ .
+ \tag{IL}\label{eq:typed-strong-idempotent-lattice}
+\]
+It has a UNIQUE least nonzero
+idempotent $e_{0,a}=L_a^\circ$,
+where $L_a>\Id_a$ is the
+SAP-monolith, and
+\[
+       e_{0,a}\subseteq e,\qquad
+       e_{0,a}\starprod e
+                   =e\starprod e_{0,a}=e
+       \quad(e\in\mathscr I_a).
+\]
+If the original source ALSO has
+semantic HOMOMORPHIC CCO,
+this finite lattice is moreover
+DISTRIBUTIVE by original FULL
+RAW exact-ball Helly and CRT.
+Thus the BIJECTION, NONEMPTY
+MEETS and common monolith
+hold even in a symmetric
+SAP+NR2 source which is
+NOT CCO; only distributivity
+uses the additional CCO input.
+
+The element $e_{0,a}$ acts as
+a unit ONLY inside the
+idempotent lattice, NOT on
+arbitrary reachable profiles.
+This does NOT turn OLD G5
+idempotent interval certificates
+for the generally COARSER
+$E_e$ into an unsupported
+$L_a$-equality certificate.
+\end{lemma}
+\begin{proof}
+A nonempty strong idempotent
+$e$ gives the ACTUAL original
+invariant equivalence
+$E_e=\Id_a\cup e$:
+symmetry and reflexivity
+are immediate, and if
+$xE_eyE_ez$ with three
+DISTINCT points, the strong
+idempotence $e\starprod e=e$
+gives $xE_ez$; all coincident
+cases are trivial. Thus the
+map is injective and takes
+values ABOVE $\Id_a$,
+without using CCO.
+
+For surjectivity take any
+original invariant $E>\Id_a$.
+By \cref{lem:typed-all-invariant-equivalences-raw-word}, $E$ is
+represented by one old atomic RAW word: FULL NR2 supplies that lemma's
+weaker no-relative-index-two premise. Since $E>\Id_a$, the word is
+nonempty. This step uses symmetry and homogeneity, but neither SAP nor CCO.
+Visible SAP injectivisation
+\cref{lem:typed-injectivisation}
+turns its true DIVERSITY part
+$e=E^\circ$ into a STRONG
+positive reachable profile.
+Original SAP equivalence
+reproduction
+\cref{lem:typed-equivalence-reproduction}
+gives $e\starprod e=e$.
+Thus every $E>\Id_a$ occurs.
+
+For $e,f\in\mathscr I_a$
+put $E=E_e,F=E_f$.
+Old SAP's invariant monolith
+\cref{lem:rh-sap-invariant-monolith}
+ensures $E\cap F>\Id_a$.
+The NONEMPTY diversity part
+$e\cap f=(E\cap F)^\circ$
+is itself positive reachable
+and idempotent by the preceding
+surjectivity, giving the meet.
+
+For the join, apply the two-factor conclusion
+\eqref{eq:typed-equivalence-join-strong} of
+\cref{lem:typed-raw-strong-saturation} to the actual nonidentity
+equivalences $E,F$. Its SAP and same-sort symmetry hypotheses hold here,
+and it gives
+\[
+       E^\circ\starprod F^\circ=(E;F)^\circ=(E\vee F)^\circ.
+\]
+Thus the join calculation uses no CCO and introduces no STRONG identity atom.
+
+The original SAP-monolith
+$L_a>\Id_a$ is the unique
+least nonidentity invariant
+equivalence by
+\cref{lem:rh-sap-invariant-monolith}.
+Its positive diversity part
+$e_{0,a}=L_a^\circ$ therefore
+lies below EVERY strong
+idempotent. The product/join
+identity gives
+$e_{0,a}\starprod e
+=(L_a\vee E)^\circ=e$.
+Finally, if CCO is ALSO
+assumed, terminal full
+RAW exactness and the
+equivalence-class CRT
+\cref{lem:typed-terminal-all-equivalences-exact}
+make the FULL invariant
+equivalence lattice distributive.
+Its nonidentity part is
+meet-closed by SAP, so
+$\mathscr I_a$ is also
+distributive. No synthetic
+STRONG equality atom was
+ever used.
+\end{proof}
+
+\begin{lemma}[Quotient-functional branches are visible at their hidden roots]
+\label{lem:typed-branch-root-visibility}
+Let \(b,c\) be two distinct hidden root positions,
+each either a real root or a proper represented quotient
+root. Write \(H_b,H_c\) for the equivalence kernels
+of their designated real representatives:
+\(H_b=\Id\) for a real root and its original
+represented proper meet-irreducible for a quotient
+root; similarly for \(c\). Let \(D\) be the
+nonempty exact pair menu imposed by the
+complete locally valid two-root hidden pattern.
+Thus
+\[
+              H_b;D;H_c=D .
+\tag{TV1}\label{eq:typed-anchored-bisaturation}
+\]
+Suppose a positive typed branch profile \(P\)
+in a theta presentation contains \(D\), and
+\(P;P^\smile\subseteq J\) for a represented
+proper meet-irreducible \(J\) at its source.
+Let \(J^P\) be the transported target equivalence.
+Then
+\[
+                  H_b\le J,\qquad
+                  H_c\le J^P .
+\tag{TV2}\label{eq:typed-branch-visible-kernels}
+\]
+Consequently the quotient transition forced by
+\(P\) is an equality of named unary term values
+already in the finite functionally closed
+two-root hidden substructure; it does
+\emph{not} require naming the \(J\)-coordinate
+of an independently chosen, unconstrained
+auxiliary representative.
+\end{lemma}
+\begin{proof}
+For any \(xH_bx'\), choose \(y\) with
+\(xDy\), possible because \(D\) is nonempty,
+invariant, and the source sort is transitive.
+By left \(H_b\)-saturation also \(x'Dy\).
+Both pairs lie in \(P\), so
+\(x(P;P^\smile)x'\), and hence \(xJx'\).
+This proves \(H_b\le J\).
+
+The transported equivalence \(J^P\)
+contains \(P^\smile;P\), since \(J\)
+is reflexive. If \(yH_cy'\), choose
+\(xDy\); right \(H_c\)-saturation
+gives \(xDy'\). Both pairs lie in \(P\),
+so \(y(P^\smile;P)y'\) and hence
+\(yJ^Py'\). Therefore \(H_c\le J^P\).
+These are inclusions of actual equivalences
+and use no same-sort commutativity
+of mixed arrows.
+
+For a real root, the named projection
+\(F_J\) gives its \(J\)-coordinate.
+For a proper quotient root with
+\(H_b\le J\), the named upward quotient
+gives its source \(J\)-coordinate as
+a unary term of \(b\). By
+\cref{lem:typed-branch-atomic-transport},
+the quotient-functional STRONG branch
+\(P\) has the SAME quotient map as
+any one of its actual atomic
+diversity orbitals \(t\subseteq P\).
+Therefore that map, and its target
+\(J^P\)-coordinate of \(c\), are
+ALREADY named finite-language
+unary transition terms; no
+new branch-dependent quotient
+symbol has to be introduced.
+The relation \(D\subseteq P\)
+forces their quotient-transition equation
+in every actual full hidden expansion.
+Since the original induced two-root functional
+closure passed the bounded complete-pattern
+check of \cref{con:typed-guarded-lift},
+the same named term equation already holds
+there. Otherwise that two-root closure is
+itself a bounded malformed obstruction,
+so this branch is never reached.
+Thus the transition equation is supported
+on the old hidden roots, not on optional
+new representative choices.
+\end{proof}
+
+\begin{lemma}[Original-source equations for quotient-functional theta branches]
+\label{lem:typed-old-source-branch-equation}
+Let \((b,c)\) be one ACTUAL
+old hidden endpoint pair on which
+\cref{con:typed-guarded-lift}
+issues a nonempty exact visible
+root menu \(D_{bc}\). Let \(H_b,H_c\)
+be the original representative kernels.
+Suppose \(P\in\Rch^{ab}\) is a
+positive branch profile in its
+private theta presentation, with
+\(D_{bc}\subseteq P\), and let
+\(J\) be a represented proper
+meet-irreducible with
+\(P;P^\smile\subseteq J\).
+
+Then the \(J\)-coordinate of
+\(b\) and the transported \(J^P\)
+coordinate of \(c\) are NAMED
+unary terms of the OLD source
+vertices, and the equation
+\[
+  \pi_{P,J}(\tau_J(b))
+           =\tau_{J^P}(c)
+\tag{TOE}\label{eq:typed-old-source-branch-equation}
+\]
+already holds as a LITERAL
+unary-term identity in the
+original functionally closed
+partial hidden structure \(C\).
+Here \(\pi_{P,J}\) denotes the
+existing named atomic transition
+representing the quotient map
+of \(P\). The conclusion remains
+valid when \(D_{bc}\) is a MEET
+of several original profiles,
+none of which individually has
+\(J\)-functional fibres.
+
+The conclusion applies only to
+the source-supported root-pair
+gadgets specified in
+\cref{con:typed-guarded-lift}.
+No such equation is inferred
+from an arbitrarily selected
+new completion type on an
+UNJOINED pair of hidden roots.
+\end{lemma}
+\begin{proof}
+By \cref{lem:typed-private-theta-cycle},
+the two gadget endpoints are the
+witnesses for actual OLD source
+vertices \(b,c\), not artificial
+interior roots. By the construction
+their positive constraints come
+either from one checked
+one-generated unary closed
+support, or from the complete
+induced diagram on a genuinely
+irreducible, at most two-generated
+OLD source support. The latter
+is already a completed hidden
+diagram by the bounded check and
+\cref{lem:typed-joined-source-support}.
+An original higher-support tuple
+is treated within its distinguished
+complete OLD factor, not by
+postulated missing binary data.
+
+For the exact menu \(D_{bc}\),
+\cref{lem:typed-branch-root-visibility}
+gives
+\(H_b\le J\) and
+\(H_c\le J^P\).
+Thus \(\tau_J(b),\tau_{J^P}(c)\)
+are indeed values of NAMED
+unary terms in the source
+closed support; the quotient
+map \(\pi_{P,J}\) is a named
+atomic transition by
+\cref{lem:typed-branch-atomic-transport}.
+
+Take a realisation of that
+COMPLETE old one- or two-root
+support in a full hidden source.
+Choose distinct representative
+points for its old roots, by
+\cref{lem:typed-real-sort-splitting}.
+By
+\cref{lem:typed-one-source-support-per-guarded-pair},
+ALL positive spectra on
+this witness pair are
+pulled back from the SAME
+complete irreducible OLD
+closed source \(D_{bc}\),
+not from separately chosen
+local models. Thus its
+single actual representative
+pair atom \(t\) lies in
+EVERY imposed profile
+and hence their nonempty
+meet \(D_{bc}\).
+In particular \(t\in P\).
+Since \(P;P^\smile\subseteq J\),
+the quotient-transport lemma
+forces the displayed equation
+\eqref{eq:typed-old-source-branch-equation}
+in this realisation.
+
+Crucially, the map from the
+old closed source support to
+this full hidden realisation
+is an EMBEDDING, not merely
+a homomorphism; it reflects
+equality of the values of
+all named unary terms.
+The same equation therefore
+holds literally on the old
+source term values in \(C\).
+This last inference uses
+COMPLETENESS/IRREDUCIBILITY
+of the OLD support, rather
+than postulating a term equation
+from a new theta interior.
+It also uses only the total
+meet \(D_{bc}\subseteq P\),
+and nowhere requires any
+single intersected primitive
+profile to be quotient-functional.
+\end{proof}
+
+\begin{lemma}[Off-diagonal idempotent interval reinsertion]
+\label{lem:typed-idempotent-reinsert}
+Let \(w\) be a positive composable typed diversity word
+whose STRONG endpoint profile is a nonempty same-sort
+idempotent \(e=e\starprod e\). Let \(x,y\) be
+\emph{distinct actual real vertices} of its common endpoint
+sort. If \(xE_ey\), where \(E_e=\Id\cup e\) is
+the actual equivalence of
+\eqref{eq:typed-idempotent-equivalence}, then the
+entire word \(w\) can be realised between \(x,y\)
+with all path interiors new, preserving the
+already completed finite old structure on its roots.
+\end{lemma}
+\begin{proof}
+The roots are distinct, hence their actual old
+pair colour is a diversity atom. Membership in
+\(E_e\) therefore means precisely
+\(\col(x,y)\in e\), \emph{not} logical equality.
+Since \(e\) is the STRONG endpoint profile of
+\(w\), a path realisation with this prescribed
+fine endpoint atom exists with its formal path
+vertices distinct. Old pair homogeneity places
+its two endpoints at the specified pair \(x,y\).
+Visible SAP amalgamates the private interior of
+that complete finite path with the already
+completed finite old structure over their
+COMPLETE common two-point induced substructure.
+No return to the same real point or synthetic
+equality edge is assumed.
+\end{proof}
+
+\begin{lemma}[Simultaneous private word insertion over a complete old base]
+\label{lem:typed-simultaneous-word-insertion}
+Let \(A\) be a finite COMPLETE
+visible member of the original
+typed SAP+CCO age. Fix a finite
+list of old typed diversity
+atomic words \(w_i\), each
+with two specified DISTINCT
+endpoint vertices \(p_i,q_i\in A\)
+of the required endpoint sorts.
+Suppose
+\[
+ \col_A(p_i,q_i)\in\Prof(w_i)
+\]
+for every \(i\), where
+\(\Prof(w_i)\) is the genuine
+STRONG simple-path endpoint
+profile of that particular
+original atomic word.
+Then a single finite complete
+visible member \(B\supseteq A\)
+realises ALL words \(w_i\)
+between the prescribed endpoints,
+with every word's interior
+pairwise distinct and with
+interiors of different words
+disjoint from each other and
+from \(A\). Every originally
+specified atom on \(A\) is
+preserved literally. The
+endpoint pairs may overlap
+with each other inside \(A\).
+\end{lemma}
+\begin{proof}
+Proceed by finite induction
+on the list of obligations.
+For \(w_i\), membership
+\(\col_A(p_i,q_i)\in\Prof(w_i)\)
+means that there is a finite
+complete OLD visible structure
+\(W_i\) containing one
+simple realisation of
+the EXACT specified word
+\(w_i\) with its endpoints
+of the same original fine
+atomic pair type as
+\((p_i,q_i)\).
+By the homogeneous
+named-atomic pair type,
+identify the two endpoints
+of \(W_i\) with \(p_i,q_i\).
+Strongly amalgamate the
+already constructed complete
+base with \(W_i\) over
+their complete induced
+two-point substructure.
+SAP guarantees that all
+other vertices of \(W_i\)
+remain new, while the full
+old base, including every
+previously realised word,
+is embedded unchanged.
+Repeat for all \(i\).
+No condition on the NEW
+cross colours between
+different private interiors
+is imposed, so SAP applies
+regardless of overlap among
+the pinned endpoint pairs.
+\end{proof}
+

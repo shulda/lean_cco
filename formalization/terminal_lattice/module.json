@@ -1,0 +1,2360 @@
+{
+  "schema_version": 1,
+  "id": "terminal_lattice",
+  "index_title": "Modular invariant lattices, quotient powers, reset and positive cover layers",
+  "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+  "status": "HUMAN_EXPANDED_NOT_LEAN",
+  "scope": "Private B050: ELEVEN selected Ramsey I results (all nine terminal/reset results plus two independent quotient-semigroup/cover-layer results from the next source). Twelve definitions, 68 human claims, twelve auxiliary equations and nine tasks. Same-sort RAW commutation/modularity need no CCO/SAP; modular M3 extraction is expanded locally. Actual RAW word M3 yields an original CCO obstruction without SAP. Full quotient-cover powers use local non-index-two and SAP only. Reset and positive external layer use one global original CCO completion and internally proved narrow same-cut saturation, with no import from B049 and hence no module cycle.",
+  "scope_vocabulary": [
+    "commutation",
+    "modularity",
+    "M3",
+    "quotient_lift",
+    "cover_powers",
+    "relative_powers",
+    "saturation_support",
+    "cycle_guard",
+    "reset",
+    "layer",
+    "boundary"
+  ],
+  "scope_explanation": "statement and proof. Keep actual quotient diagonal separate from original STRONG diversity. FULL invariant covers, actual old ambient group orbitals, nonzero J and finite quotient-orbital uniformity are explicit. No arbitrary quotient CCO or hidden SAP. Only same-sort relations commute.",
+  "control_script": "tools/check_terminal_lattice_controls.py",
+  "assumptions": [
+    {
+      "id": "A01",
+      "name": "Independent actual symmetric homogeneous sort",
+      "statement": "One nonempty transitive original sort a of a homogeneous complete binary source with finitely many actual occurring SAME-SORT symmetric diversity pair orbitals, and logical diagonal. All invariance is under the FULL automorphism group G of the whole original named-sorted source, not a larger induced reduct group. Other named sorts and typed converses may exist."
+    },
+    {
+      "id": "A02",
+      "name": "Additional visible original SAP only where used",
+      "statement": "The actual finite old age has SAP, giving infinite off-base original real stabilizer orbits and arbitrary fresh representatives in any nontrivial original invariant-equivalence class. No CCO follows from this premise."
+    },
+    {
+      "id": "A03",
+      "name": "Additional original semantic HOM CCO only where used",
+      "statement": "Every finite old typed diversity partial diagram with individually homomorphic specified simple cycles has a homomorphism of the WHOLE diagram into the actual original source. Different cycle witnesses need not agree. Nonadjacent vertices may collide before separate SAP injectivisation."
+    },
+    {
+      "id": "A04",
+      "name": "Independent generic original SAP quotient",
+      "statement": "For generic Phi lifting, use any actual homogeneous complete binary source on an inhabited transitive original real sort, with visible SAP and an actual invariant equivalence J>Id; Q=M_a/J uses the induced ambient old automorphism action. Symmetry, a FULL cover, NR2, CCO and exactness are NOT assumed for the quotient-semigroup theorem. In later cover applications these hypotheses are supplied by the standing original source and nonzero J."
+    },
+    {
+      "id": "A05",
+      "name": "Optional terminal specialization",
+      "statement": "For the terminal corollaries the FULL invariant-equivalence lattice on the original sort has no relative-index-two interval (the source terminal no-finite-index condition is stronger). I02 then supplies actual RAW atomic words for ALL original invariant equivalences without CCO/SAP. The represented exact lattice and FULL invariant lattice therefore coincide; do not assume distributivity to prove the M3 diagnostic."
+    },
+    {
+      "id": "A06",
+      "name": "Explicit positivity for original reset/layer theorems",
+      "statement": "For the original reset, J^circ and K^circ have single positive OLD atomic-word STRONG endpoint presentations and [K:J]!=2. For the external-layer theorem only J^circ positivity is required; the index-two case is allowed and K^circ positivity for the other case is DERIVED from quotient powers. Word interiors may visit arbitrary old named sorts."
+    },
+    {
+      "id": "A07",
+      "name": "Separate theta-cycle guard input",
+      "statement": "For the independent cycle guard, K>Id is an actual invariant equivalence; nonempty positive STRONG menus T_i lie in K^circ and T_i^n=K^circ for all n>=N. Given private finite theta presentations, every atomic branch profile CONTAINS its assigned menu. A SIMPLE graph with r edge labels has girth>r(N-1)+1; bare top spokes specify no edge and are omitted. No global CCO premise is needed for this cycle-by-cycle assertion."
+    },
+    {
+      "id": "A08",
+      "name": "Independent exact M3 relation/word instance",
+      "statement": "For the M3 obstruction E1,E2,E3 are actual invariant equivalences with common pairwise meet L, pairwise join H, L<E_i<H, and each E_i has one ACTUAL equality-inclusive RAW old atomic word. These are original relations, not formal lattice points. No SAP, NR2 or CCO is assumed for constructing the obstruction."
+    },
+    {
+      "id": "A09",
+      "name": "Local FULL invariant cover for graph arguments",
+      "statement": "In the symmetric original source A01 with original SAP A02, Id<J<K is a COVER in the FULL original invariant-equivalence lattice. All quotient relations use the OLD ambient G-action. An external complete quotient orbital has full original diversity preimage T in K minus J, not a fine subset. This additional premise is not part of the generic Phi theorem."
+    }
+  ],
+  "imports": [
+    {
+      "id": "I01",
+      "name": "Binary homomorphism injectivisation with induced endpoint-pair support",
+      "provider_module": "relational_completion",
+      "source_label": "lem:collision-unfolding",
+      "provider_claims": [
+        "C14",
+        "C15"
+      ],
+      "statement": "In a pure binary atomic partial diagram every irreducible is a complete clique, and preserved irreflexive exclusive atoms make its colour map an induced embedding. Thus original SAP collision-unfolding applies. To pin two distinct old endpoints, retain their actual complete pair as a distinguished factor, preserve its image type, then align back by old pair homogeneity. No Set-Pasch theorem is imported. If the selected proof API uses a countable homogeneous realization, apply it to the countable Fraisse limit of the same finite SAP age; its finite output embeds into the actual original source, and original finite homogeneity aligns the pinned endpoint pair. Thus no extra countability assumption on the original source is needed.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I02",
+      "name": "lem:typed-all-invariant-equivalences-raw-word",
+      "provider_module": "real_closure",
+      "source_label": "lem:typed-all-invariant-equivalences-raw-word",
+      "provider_claims": [
+        "C25",
+        "C26",
+        "C27"
+      ],
+      "statement": "CCO- and SAP-free actual RAW word representation for every invariant equivalence under FULL original NR2. Exclude C28 distributivity; M3 diagnostic must not import its desired contradiction.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I03",
+      "name": "lem:sparse-labelled-graph",
+      "provider_module": "parity_hasse",
+      "source_label": "lem:sparse-labelled-graph",
+      "provider_claims": [
+        "C04"
+      ],
+      "statement": "Internal finite sparse labelled graph: for a specified finite vertex-colour palette and r edge labels, some ONE vertex colour has a monochromatic edge of EVERY label, with arbitrarily large finite girth. No CCO source input.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    }
+  ],
+  "definitions": [
+    {
+      "id": "D01",
+      "name": "Actual RAW same-sort multiplication",
+      "statement": "P;Q means actual relational composition including equal endpoints and any repeated intermediate point. Each invariant same-sort relation is a union of symmetric full G-pair orbitals.",
+      "depends_on": [],
+      "notes": "N01",
+      "source": {
+        "file": "sections/v27/08_typed_terminal_reset_equivalences.tex",
+        "anchor": "\\label{lem:typed-symmetric-orbital-commutation}"
+      }
+    },
+    {
+      "id": "D02",
+      "name": "Full invariant lattice",
+      "statement": "All original invariant equivalences on a, ordered by inclusion. Their meet is intersection; after commutation their join is represented product. Exactness is not part of this definition.",
+      "depends_on": [],
+      "notes": "N01",
+      "source": {
+        "file": "sections/v27/08_typed_terminal_reset_equivalences.tex",
+        "anchor": "\\label{lem:typed-invariant-equivalence-modularity}"
+      }
+    },
+    {
+      "id": "D03",
+      "name": "Normalized modular diamond",
+      "statement": "For a,b,c in a modular lattice put l=(a meet b) join (a meet c) join (b meet c), h=(a join b) meet (a join c) meet (b join c), and a_hat=(a join l) meet h, cyclically.",
+      "depends_on": [],
+      "notes": "N02",
+      "source": {
+        "file": "sections/v27/08_typed_terminal_reset_equivalences.tex",
+        "anchor": "\\label{cor:typed-terminal-nondistributive-noncco}"
+      }
+    },
+    {
+      "id": "D04",
+      "name": "Private M3 word diagram",
+      "statement": "Attach private word paths from root z to actual centre x for E1,E2 and to actual centre y for E3, retaining the complete fine pair xy. No root equality or arbitrary simultaneous ball realization is assumed.",
+      "depends_on": [],
+      "notes": "N02",
+      "source": {
+        "file": "sections/v27/08_typed_terminal_reset_equivalences.tex",
+        "anchor": "\\label{lem:typed-exact-m3-cco-obstruction}"
+      }
+    },
+    {
+      "id": "D05",
+      "name": "Original diversity quotient pullback",
+      "statement": "Phi(R) consists of distinct old endpoints whose J-classes satisfy quotient R. In particular Phi(Delta_Q)=J^circ, a NONEMPTY diversity palette when J>Id, not logical real identity.",
+      "depends_on": [],
+      "notes": "N03",
+      "source": {
+        "file": "sections/v27/09_typed_equivalence_and_profiles.tex",
+        "anchor": "\\label{lem:typed-quotient-strong-semigroup}"
+      }
+    },
+    {
+      "id": "D06",
+      "name": "Complete external quotient orbitals",
+      "statement": "C_i are the finitely many old G-orbitals in (K/J) minus quotient diagonal, and T_i=Phi(C_i). They partition K minus J and are full original preimages.",
+      "depends_on": [],
+      "notes": "N04",
+      "source": {
+        "file": "sections/v27/08_typed_terminal_reset_equivalences.tex",
+        "anchor": "\\label{lem:typed-quotient-full-cover-powers}"
+      }
+    },
+    {
+      "id": "D07",
+      "name": "Uniform quotient walk threshold",
+      "statement": "Choose one pair per finite quotient G-orbital inside K/J; equivariance transports its eventual walk threshold, and the maximum is uniform over ALL pairs, including quotient diagonal.",
+      "depends_on": [],
+      "notes": "N04",
+      "source": {
+        "file": "sections/v27/08_typed_terminal_reset_equivalences.tex",
+        "anchor": "\\label{lem:typed-quotient-full-cover-powers}"
+      }
+    },
+    {
+      "id": "D08",
+      "name": "Narrow same-cut saturation support",
+      "statement": "For old atom t and nonzero J on one original sort, (J;t;J)^circ=J^circ*{t}*J^circ. This special helper is proved HERE only for reset/layer support, not exported as the general B049 typed-saturation result.",
+      "depends_on": [],
+      "notes": "N05",
+      "source": {
+        "file": "sections/v27/08_typed_terminal_reset_equivalences.tex",
+        "anchor": "\\label{thm:typed-original-full-cover-reset-single-path}"
+      }
+    },
+    {
+      "id": "D09",
+      "name": "Private menu theta",
+      "statement": "Each branch is a positive old atomic path, interiors disjoint. Its spectrum contains the prescribed menu. A bare top presentation specifies no spoke; otherwise all specified branches are retained.",
+      "depends_on": [],
+      "notes": "N06",
+      "source": {
+        "file": "sections/v27/08_typed_terminal_reset_equivalences.tex",
+        "anchor": "\\label{lem:typed-relative-reset-cycle-guard}"
+      }
+    },
+    {
+      "id": "D10",
+      "name": "Original reset skeleton",
+      "statement": "One positive J-saturated T_i word replaces each labelled graph edge; one positive K^circ word joins a fresh centre to each graph root. All intermediate vertices are private and may use other original sorts.",
+      "depends_on": [],
+      "notes": "N07",
+      "source": {
+        "file": "sections/v27/08_typed_terminal_reset_equivalences.tex",
+        "anchor": "\\label{thm:typed-original-full-cover-reset-single-path}"
+      }
+    },
+    {
+      "id": "D11",
+      "name": "Finite quotient escape states",
+      "statement": "States are nonempty old G-invariant quotient relations R subset K/J with R disjoint from reset orbital M0. They may contain the quotient diagonal and need not be complete orbitals. Each has one positive old-word pullback.",
+      "depends_on": [],
+      "notes": "N08",
+      "source": {
+        "file": "sections/v27/09_typed_equivalence_and_profiles.tex",
+        "anchor": "\\label{thm:typed-original-full-cover-layer-word}"
+      }
+    },
+    {
+      "id": "D12",
+      "name": "Terminal full-versus-represented identification",
+      "statement": "FULL NR2 gives actual RAW words for all original invariant equivalences by I02; only then is an exact cover known to be a FULL cover. Original SAP converts nonzero RAW-word diversity slices to positive STRONG profiles.",
+      "depends_on": [],
+      "notes": "N09",
+      "source": {
+        "file": "sections/v27/08_typed_terminal_reset_equivalences.tex",
+        "anchor": "\\label{thm:typed-relative-reset}"
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "name": "Same-sort invariant RAW relations commute",
+      "statement": "Every invariant same-sort P,Q and also P;Q are symmetric, since each is a union of symmetric old pair orbitals. Therefore P;Q=(P;Q)^op=Q;P. Equivalently extend the induced endpoint swap. Equality cases are included; no CCO/SAP or mixed-sort commutation.",
+      "depends_on": [
+        "A01",
+        "D01"
+      ],
+      "notes": "N01",
+      "scope": "commutation",
+      "source_labels": [
+        "lem:typed-symmetric-orbital-commutation"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C02",
+      "name": "Commuting equivalences have represented-product joins",
+      "statement": "For invariant equivalences E,F, E;F is reflexive/symmetric and (EF)^2=E(FE)F=E^2F^2=EF. It contains E,F and every equivalence containing them contains EF. Thus E join F=E;F.",
+      "depends_on": [
+        "C01",
+        "D02"
+      ],
+      "notes": "N01",
+      "scope": "modularity",
+      "source_labels": [
+        "lem:typed-invariant-equivalence-modularity"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C03",
+      "name": "The full original invariant lattice is modular",
+      "statement": "For E<=G and x(E join F)y with xGy, choose z with xEzFy. Then xGz and xGy imply zGy, so z(F meet G)y and x(E join(F meet G))y. The reverse inclusion is monotonicity. No exactness/distributivity assumption.",
+      "depends_on": [
+        "C02"
+      ],
+      "notes": "N01",
+      "scope": "modularity",
+      "source_labels": [
+        "lem:typed-invariant-equivalence-modularity"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C04",
+      "name": "Normalize any modular nondistributivity witness",
+      "statement": "For D03, modularity gives (a join l) meet (b join l)=l: rewrite a join l=a join(b meet c), b join l=b join(a meet c), then apply Dedekind twice. Dually (a meet h) join(b meet h)=h. Also a_hat=(a meet h) join l; hence normalized pairwise meets are l and joins h.",
+      "depends_on": [
+        "C03",
+        "D03"
+      ],
+      "notes": "N02",
+      "scope": "modularity",
+      "source_labels": [
+        "cor:typed-terminal-nondistributive-noncco"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C05",
+      "name": "Failure of distributivity gives an actual M3 sublattice",
+      "statement": "Choose a meet(b join c)>(a meet b) join(a meet c). Then a meet h=a meet(b join c), whereas a meet l=(a meet b) join(a meet c). Thus l!=h. Since l<=h, C04 gives three distinct strictly intermediate normalized elements, with pairwise meet l and join h: a genuine M3. This supplies the finite modular criterion locally, not as a new theorem oracle.",
+      "depends_on": [
+        "C04"
+      ],
+      "notes": "N02",
+      "scope": "modularity",
+      "source_labels": [
+        "cor:typed-terminal-nondistributive-noncco"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C06",
+      "name": "The M3 class triple is pairwise intersecting with empty total meet",
+      "statement": "For A08 choose x E1 y but not xLy. Set A=E1[x],B=E2[x],C=E3[y]. x lies in A meet B, y in A meet C, and E2;E3=H gives B meet C nonempty. A meet B=L[x], A meet C=L[y], disjoint, so A meet B meet C empty.",
+      "depends_on": [
+        "A01",
+        "A08",
+        "C02"
+      ],
+      "notes": "N02",
+      "scope": "M3",
+      "source_labels": [
+        "lem:typed-exact-m3-cco-obstruction"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C07",
+      "name": "Private original word paths make every simple cycle feasible",
+      "statement": "Use actual RAW words for E1,E2,E3 in D04 and the actual fine centre pair xy. Delete genuine Id letters; no nonidentity E_i can have an empty reduced word. Every simple cycle uses exactly two private root-centre paths and either the common centre or the old xy edge. The three pairwise intersections C06 give its old word witnesses, aligned by centre-pair homogeneity. Homomorphisms may identify nonadjacent occurrences.",
+      "depends_on": [
+        "C06",
+        "D04"
+      ],
+      "notes": "N02",
+      "scope": "M3",
+      "source_labels": [
+        "lem:typed-exact-m3-cco-obstruction"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C08",
+      "name": "The whole original diagram has no homomorphism",
+      "statement": "Any global colour map preserves the complete xy pair, which old homogeneity aligns back to actual x,y. Its root must lie in all A,B,C, impossible by C06. Thus C07 is an explicit original simple-cycle CCO obstruction; SAP/NR2 is unnecessary.",
+      "depends_on": [
+        "C06",
+        "C07"
+      ],
+      "notes": "N02",
+      "scope": "M3",
+      "source_labels": [
+        "lem:typed-exact-m3-cco-obstruction"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C09",
+      "name": "NR2 plus nondistributivity diagnoses nonCCO",
+      "statement": "The full lattice is finite and modular by C03. If nondistributive, C05 supplies an M3. I02 gives one ACTUAL RAW word for each of its three equivalences under FULL NR2 without SAP/CCO. C08 then supplies a bad original partial network. A distributive lattice alone is not claimed sufficient for CCO.",
+      "depends_on": [
+        "A05",
+        "C03",
+        "C05",
+        "C08",
+        "I02"
+      ],
+      "notes": "N02",
+      "scope": "M3",
+      "source_labels": [
+        "cor:typed-terminal-nondistributive-noncco"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C10",
+      "name": "Nonzero original J-classes are infinite under SAP",
+      "statement": "For J>Id choose xJy with y!=x in the generic A04 source. Repeatedly strongly amalgamate copies of the complete pair {x,y} over the SAME anchor x; embed the finite targets into the actual old source and use homogeneity to align x. This gives arbitrarily many distinct J-neighbours, hence the original J-class is infinite. Transitivity gives this for every class. No symmetry, FULL cover, CCO or terminality is used.",
+      "depends_on": [
+        "A04"
+      ],
+      "notes": "N03",
+      "scope": "quotient_lift",
+      "source_labels": [
+        "lem:typed-quotient-strong-semigroup"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C11",
+      "name": "Phi is injective and preserves Boolean intersections/unions",
+      "statement": "Every quotient pair has DISTINCT old representatives: if the classes agree use C10. Full-preimage membership gives union/intersection preservation and detects every quotient pair, hence injectivity. Nonempty quotient R has nonempty diversity Phi(R), including the diagonal.",
+      "depends_on": [
+        "C10",
+        "D05"
+      ],
+      "notes": "N03",
+      "scope": "quotient_lift",
+      "source_labels": [
+        "lem:typed-quotient-strong-semigroup"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C12",
+      "name": "Exact strong quotient composition uses fresh representatives",
+      "statement": "Project any three-distinct old path to quotient classes for one inclusion. Conversely for q R r S s and any distinct x in q,z in s, choose y in infinite r outside {x,z}. The FULL-preimage definition realizes x Phi(R) y Phi(S) z. For longer walks choose all formal representatives successively fresh, with original endpoints pinned. Thus Phi(R)*Phi(S)=Phi(R;S), and finite concatenations too.",
+      "depends_on": [
+        "C10",
+        "C11",
+        "D05"
+      ],
+      "notes": "N03",
+      "scope": "quotient_lift",
+      "source_labels": [
+        "lem:typed-quotient-strong-semigroup"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C13",
+      "name": "A complete external quotient graph connects exactly K/J classes",
+      "statement": "The quotient orbital Theta is symmetric/irreflexive. Its connectedness pulls back to an original invariant equivalence H with J<H<=K; the FULL cover forces H=K. Thus its components are exactly the K/J classes.",
+      "depends_on": [
+        "A01",
+        "A04",
+        "D06",
+        "A09"
+      ],
+      "notes": "N04",
+      "scope": "cover_powers",
+      "source_labels": [
+        "lem:typed-quotient-full-cover-powers"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C14",
+      "name": "Bipartiteness of a component is exactly the local index-two case",
+      "statement": "Transitivity makes either all or no components bipartite. A bipartite component has two nonempty even-walk classes; their pullback E has J<=E<K. FULL cover forces E=J, so each parity class is one quotient vertex and [K:J]=2. Conversely two quotient vertices give precisely one symmetric external edge.",
+      "depends_on": [
+        "C13"
+      ],
+      "notes": "N04",
+      "scope": "cover_powers",
+      "source_labels": [
+        "lem:typed-quotient-full-cover-powers"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C15",
+      "name": "Index two yields alternating STRONG old powers",
+      "statement": "In C14 index-two components, odd quotient powers are Theta and positive even powers are the true quotient diagonal. C12 lifts them to odd T and even J^circ, choosing distinct old representatives at every occurrence. No old STRONG identity atom is introduced.",
+      "depends_on": [
+        "C12",
+        "C14"
+      ],
+      "notes": "N04",
+      "scope": "cover_powers",
+      "source_labels": [
+        "lem:typed-quotient-full-cover-powers"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C16",
+      "name": "Nonbipartite components have walks of every sufficiently large length",
+      "statement": "Outside the index-two case C14, every component is nonbipartite. For any q,r choose a route and an odd closed detour to change parity, then two-edge backtracks. This gives walks of every sufficiently large length, including q=r. Quotient loops are not invented.",
+      "depends_on": [
+        "C13",
+        "C14"
+      ],
+      "notes": "N04",
+      "scope": "cover_powers",
+      "source_labels": [
+        "lem:typed-quotient-full-cover-powers"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C17",
+      "name": "Finite OLD quotient orbitals make one global threshold",
+      "statement": "There are finitely many quotient G-pair orbitals because old fine pairs project surjectively/equivariantly. Choose one witness pair per orbital inside K/J; C16 gives its threshold and equivariance gives the same for every pair of that orbital. Take the finite maximum N_T, yielding Theta^n=K/J including diagonal for all n>=N_T.",
+      "depends_on": [
+        "A01",
+        "C16",
+        "D07"
+      ],
+      "notes": "N04",
+      "scope": "cover_powers",
+      "source_labels": [
+        "lem:typed-quotient-full-cover-powers"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C18",
+      "name": "Original STRONG powers follow with fixed fine endpoints",
+      "statement": "For any distinct old xKy and n>=N_T, use C17 to choose a quotient walk between their J-classes. Infinite original classes permit all intermediate representatives fresh from each other and the pinned endpoints. Full-preimage T preserves every edge, so EVERY fine atom in K^circ is in T^n. Reverse inclusion follows from T subset K.",
+      "depends_on": [
+        "C10",
+        "C12",
+        "C17"
+      ],
+      "notes": "N04",
+      "scope": "cover_powers",
+      "source_labels": [
+        "lem:typed-quotient-full-cover-powers"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C19",
+      "name": "CCO-free full-cover quotient-power dichotomy export",
+      "statement": "C15 and C18 give the two exhaustive alternatives. No global NR2, exact calculus, distributivity, Set-Pasch or mixed quotient transport is used. FULL cover, actual old G-orbital, nonzero J and infinite class representatives are retained.",
+      "depends_on": [
+        "C15",
+        "C18"
+      ],
+      "notes": "N04",
+      "scope": "cover_powers",
+      "source_labels": [
+        "lem:typed-quotient-full-cover-powers"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C20",
+      "name": "Terminal relative powers use RAW exactness only to identify the cover",
+      "statement": "I02 at FULL NR2 makes every invariant equivalence represented RAW exact; hence an exact cover J<K is a FULL cover. Its complete semantic cylinder is by definition the FULL diversity preimage of one quotient G-orbital, not an arbitrary subset. Local index two is excluded, so C19 gives the desired eventual K^circ powers. No circular invocation of the B049 cylinder theorem.",
+      "depends_on": [
+        "A05",
+        "A02",
+        "A03",
+        "C19",
+        "I02"
+      ],
+      "notes": "N04",
+      "scope": "relative_powers",
+      "source_labels": [
+        "lem:typed-relative-pure-power"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C21",
+      "name": "Narrow same-cut saturation can be proved internally",
+      "statement": "For (x,y) in (J;t;J)^circ take an old walk xJu t vJy. If x=u, choose a fresh J-anchor a avoiding all current points; SAP-duplicate x over the complete {a,v,y} base. Its new copy u1 remains in J[x], has t to v and differs from x. If v=y, similarly duplicate y over a fresh J-anchor and the other old points. Both duplications exclude the moved point from the pinned base.",
+      "depends_on": [
+        "A01",
+        "A02",
+        "C10",
+        "D08"
+      ],
+      "notes": "N05",
+      "scope": "saturation_support",
+      "source_labels": [
+        "thm:typed-original-full-cover-reset-single-path"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C22",
+      "name": "The narrow helper gives a genuine STRONG path",
+      "statement": "After C21 both exterior steps are diversity J^circ and the middle is t. Apply I01 with x,y pinned to separate all remaining nonconsecutive occurrences. This yields (J;t;J)^circ=J^circ*{t}*J^circ; reverse inclusion is immediate. This is local proof support, not a duplicate export/allocation of general typed B049 saturation.",
+      "depends_on": [
+        "C21",
+        "I01"
+      ],
+      "notes": "N05",
+      "scope": "saturation_support",
+      "source_labels": [
+        "thm:typed-original-full-cover-reset-single-path"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C23",
+      "name": "Complete quotient orbitals have positive word pullbacks",
+      "statement": "An old atom t in T_i projects onto the ENTIRE quotient orbital C_i by old pair homogeneity; its full J-bisaturation is exactly Phi(C_i). C22 gives T_i=J^circ*{t}*J^circ. A given single positive old word for J^circ, concatenated on both sides, gives one positive old word for each T_i, even if internal sorts vary.",
+      "depends_on": [
+        "A06",
+        "C11",
+        "C22",
+        "D06"
+      ],
+      "notes": "N05",
+      "scope": "saturation_support",
+      "source_labels": [
+        "thm:typed-original-full-cover-reset-single-path"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C24",
+      "name": "A nonzero equivalence diversity palette absorbs every nonempty subpalette",
+      "statement": "For distinct xKz and a fine atom d in nonempty D subset K^circ, old transitivity gives a d-neighbour of z in K[z]. Repeated strong copies of the complete d-pair over z, embedded and aligned by old homogeneity, supply infinitely many such neighbours; choose one avoiding x,z. Thus xK^circ yDz and K^circ*D=K^circ; reverse inclusion is K-transitivity. Symmetry gives right absorption too. No CCO or exactness is used.",
+      "depends_on": [
+        "A01",
+        "A02"
+      ],
+      "notes": "N06",
+      "scope": "cycle_guard",
+      "source_labels": [
+        "lem:typed-relative-reset-cycle-guard"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C25",
+      "name": "Actual same-sort STRONG positive products commute and associate",
+      "statement": "By I01, positive STRONG word profiles are the diversity slices of actual RAW word relations, keeping endpoint fine types pinned. C01 gives same-sort commutation. For associativity, glue witnessing old triangles for either parenthesization along the common fine pair by homogeneity. The resulting three-edge old walk has a pinned distinct endpoint pair; I01 separates any nonconsecutive collisions. Conversely any four-distinct-point walk realizes both parenthesizations. Thus both equal the actual three-edge STRONG path spectrum. No Set-Pasch, exact-product formula or mixed-sort commutation is used.",
+      "depends_on": [
+        "A01",
+        "A02",
+        "C01",
+        "I01"
+      ],
+      "notes": "N06",
+      "scope": "cycle_guard",
+      "source_labels": [
+        "lem:typed-relative-reset-cycle-guard"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C26",
+      "name": "Cycles inside one theta gadget are feasible",
+      "statement": "Every chosen atomic branch spectrum contains its assigned nonempty menu, so two branches have a common actual diversity endpoint atom. Realize both branches over that fine pair using old homogeneity/SAP as needed; this is a homomorphism of their cycle. Bare top spokes specify no graph edges and are omitted.",
+      "depends_on": [
+        "A07",
+        "A01",
+        "A02",
+        "I01",
+        "D09"
+      ],
+      "notes": "N06",
+      "scope": "cycle_guard",
+      "source_labels": [
+        "lem:typed-relative-reset-cycle-guard"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C27",
+      "name": "All other theta cycles contract to simple root-skeleton cycles",
+      "statement": "Private internal vertices have no exterior incidences. A simple cycle leaving a gadget must traverse one entire root-to-root branch. Using two branches of the same gadget would already close a cycle internally. Distinct formal roots remain distinct, so contraction gives a simple cycle in H plus the centre star.",
+      "depends_on": [
+        "A07",
+        "C26",
+        "D09"
+      ],
+      "notes": "N06",
+      "scope": "cycle_guard",
+      "source_labels": [
+        "lem:typed-relative-reset-cycle-guard"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C28",
+      "name": "Centre cycles have a common closing spoke output",
+      "statement": "A skeleton cycle through the centre uses two K^circ spokes and a nonempty H-path. Assigned menus on the path lie in K^circ. C24 absorption and C25 associativity make the complementary product contain K^circ; chosen branch spectra are supersets of their assigned menus. Hence it meets the closing spoke spectrum.",
+      "depends_on": [
+        "C24",
+        "C25",
+        "C27"
+      ],
+      "notes": "N06",
+      "scope": "cycle_guard",
+      "source_labels": [
+        "lem:typed-relative-reset-cycle-guard"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C29",
+      "name": "Long graph cycles retain enough copies of one label after closing",
+      "statement": "If m>r(N-1)+1, pigeonhole yields at least N occurrences of some label i. Close an edge of another label if possible; otherwise m-1>=N. The complementary ordered path still has N copies of i. C25 commuting/associating menu factors, T_i^N=K^circ and C24 absorption give complementary assigned-menu product K^circ. It meets the closing edge menu T_j.",
+      "depends_on": [
+        "A07",
+        "C24",
+        "C25",
+        "C27"
+      ],
+      "notes": "N06",
+      "scope": "cycle_guard",
+      "source_labels": [
+        "lem:typed-relative-reset-cycle-guard"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C30",
+      "name": "Cycle guard is only individual feasibility",
+      "statement": "For C28/C29 choose an actual common fine endpoint atom, realize the complementary and closing atomic paths over the SAME actual pair by pair homogeneity, allowing homomorphic collisions. C26 handles internal gadget cycles. Thus every specified cycle is feasible; no global realization, injectivity or simultaneous root-colour choice is concluded.",
+      "depends_on": [
+        "C26",
+        "C28",
+        "C29",
+        "I01"
+      ],
+      "notes": "N06",
+      "scope": "cycle_guard",
+      "source_labels": [
+        "lem:typed-relative-reset-cycle-guard"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C31",
+      "name": "Choose positive words and common cover-power threshold for reset",
+      "statement": "For A06 reset premises take all finite nonempty external C_i. C23 supplies ONE atomic word w_i with exact profile T_i; K^circ has its given word w_K. C19 at local [K:J]!=2 supplies a common N such that every T_i^n=K^circ for n>=N.",
+      "depends_on": [
+        "A06",
+        "C19",
+        "C23"
+      ],
+      "notes": "N07",
+      "scope": "reset",
+      "source_labels": [
+        "thm:typed-original-full-cover-reset-single-path"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C32",
+      "name": "Choose the labelled sparse graph and private one-word skeleton",
+      "statement": "Apply I03 with r external labels, vertex-colour palette the nonempty finite old atoms in K^circ, and girth>r(N-1)+1. Attach one private w_K path from a fresh same-sort centre to each graph root and one private w_i path along each i-edge. Interiors are disjoint, with the actual original intermediate sorts specified by each word.",
+      "depends_on": [
+        "C31",
+        "I03",
+        "D10"
+      ],
+      "notes": "N07",
+      "scope": "reset",
+      "source_labels": [
+        "thm:typed-original-full-cover-reset-single-path"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C33",
+      "name": "Every reset-network cycle is old homomorphic",
+      "statement": "For single positive word paths, every simple cycle traverses whole private paths and contracts to a simple cycle in the graph plus centre star. Centre cycles have two K^circ spokes and use C24 absorption; graph cycles use the C31 power threshold, the long-cycle label count and C25 commutation. Their complementary profile meets the closing word. Thus every cycle is old homomorphic directly, without a theta-presentation premise or simultaneous root colours.",
+      "depends_on": [
+        "C24",
+        "C25",
+        "C31",
+        "C32"
+      ],
+      "notes": "N07",
+      "scope": "reset",
+      "source_labels": [
+        "thm:typed-original-full-cover-reset-single-path"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C34",
+      "name": "ONE original CCO completion then SAP separates the whole network",
+      "statement": "A03 gives a single global old homomorphism of C32 because C33 checks each simple cycle. Apply I01 to make it injective on ALL formal vertices. Root fine colours d_v=col(o,v) now exist and lie in K^circ by the positive spokes. The palette colouring is read only after this one completion/injection.",
+      "depends_on": [
+        "A03",
+        "C32",
+        "C33",
+        "I01"
+      ],
+      "notes": "N07",
+      "scope": "reset",
+      "source_labels": [
+        "thm:typed-original-full-cover-reset-single-path"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C35",
+      "name": "One fine centre colour hits every external cylinder in a square",
+      "statement": "The sparse graph property gives ONE old atom d such that for EVERY i some i-edge vw has d_v=d_w=d. Its actual complete triangle yields (d*d) meet T_i nonempty. Since T_i is outside J, equivalence transitivity implies d is outside J.",
+      "depends_on": [
+        "C34",
+        "I03"
+      ],
+      "notes": "N07",
+      "scope": "reset",
+      "source_labels": [
+        "thm:typed-original-full-cover-reset-single-path"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C36",
+      "name": "Choose the complete quotient orbital of d and its saturated square",
+      "statement": "Let M0 be the external complete quotient orbital containing d and m=Phi(M0). By C22/C23, m=J^circ*d*J^circ. By C12, Phi(Delta)=J^circ acts as a unit on full quotient preimages, so J^circ*m=m=m*J^circ. Hence W=m*m is J^circ-bisaturated and contained in K^circ. This is NOT a unit for arbitrary unsaturated old palettes.",
+      "depends_on": [
+        "C12",
+        "C22",
+        "C23",
+        "C25",
+        "C35"
+      ],
+      "notes": "N07",
+      "scope": "reset",
+      "source_labels": [
+        "thm:typed-original-full-cover-reset-single-path"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C37",
+      "name": "The square contains all external complete cylinders",
+      "statement": "C35 gives W meet T_i nonempty for every i. Since W is invariant and fully J-bisaturated, it is a quotient relation pullback; each T_i is one complete quotient orbital pullback. A nonempty intersection therefore forces T_i subset W. Thus K minus J is contained in W.",
+      "depends_on": [
+        "C11",
+        "C35",
+        "C36"
+      ],
+      "notes": "N07",
+      "scope": "reset",
+      "source_labels": [
+        "thm:typed-original-full-cover-reset-single-path"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C38",
+      "name": "The square also contains the whole nonempty J diversity slice",
+      "statement": "Choose a d-edge xy and a fresh anchor a in J[x] excluding x,y. SAP-duplicate x in the COMPLETE triangle {a,x,y} over the COMPLETE pair {a,y}. The distinct x,x1 share their J-class and d-neighbour y. Thus c=col(x,x1) lies in J^circ meet(d*d), hence in W. Its whole J-saturation is Phi(Delta)=J^circ by C22 and quotient-diagonal completeness. Bisaturation of W gives J^circ subset W.",
+      "depends_on": [
+        "A02",
+        "C10",
+        "C22",
+        "C36",
+        "I01"
+      ],
+      "notes": "N07",
+      "scope": "reset",
+      "source_labels": [
+        "thm:typed-original-full-cover-reset-single-path"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C39",
+      "name": "The reset square is K in RAW and K diversity in STRONG",
+      "statement": "C37/C38 yield m*m=K^circ. The RAW square contains TRUE Id by symmetry and seriality of m; its diversity slice equals the STRONG square by I01. Therefore m;m=K as actual represented relations. The old STRONG statement never contains a synthetic diagonal edge.",
+      "depends_on": [
+        "C37",
+        "C38",
+        "I01"
+      ],
+      "notes": "N07",
+      "scope": "reset",
+      "source_labels": [
+        "thm:typed-original-full-cover-reset-single-path"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C40",
+      "name": "Original one-word-path reset export",
+      "statement": "C31-C39 construct one complete external semantic orbital m with both reset equations. Hypotheses are one actual FULL cover, J>Id, local non-index-two, old SAP/HOM CCO and positive J/K words. No typed exact-domain Helly, distributivity, arbitrary quotient CCO or hidden SAP is used.",
+      "depends_on": [
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39"
+      ],
+      "notes": "N07",
+      "scope": "reset",
+      "source_labels": [
+        "thm:typed-original-full-cover-reset-single-path"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C41",
+      "name": "Terminal typed reset is a specialization of the original reset",
+      "statement": "Under A05, I02 identifies represented exact J<K with a FULL cover and gives RAW words. Original SAP injectivisation makes their nonzero diversity slices positive words, and NR2 excludes the local index-two case. Apply C40 to obtain both STRONG and RAW equations, without importing B049 transitions or quotient-language closure.",
+      "depends_on": [
+        "A05",
+        "A02",
+        "A03",
+        "C40",
+        "I01",
+        "I02"
+      ],
+      "notes": "N09",
+      "scope": "relative_powers",
+      "source_labels": [
+        "thm:typed-relative-reset"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C42",
+      "name": "External layer with one complete orbital is already positive",
+      "statement": "For A06 layer premises let C_i be all external quotient orbitals. C23 makes all T_i positive. If r=1, U=K minus J=T1 is one old positive word. In particular this covers every index-two full cover, which is allowed in the layer theorem.",
+      "depends_on": [
+        "A06",
+        "C23"
+      ],
+      "notes": "N08",
+      "scope": "layer",
+      "source_labels": [
+        "thm:typed-original-full-cover-layer-word"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C43",
+      "name": "For at least two orbitals derive a complete quotient reset",
+      "statement": "If r>=2 then [K:J]!=2. C19 makes a high T1 power equal K^circ, deriving its single positive word. Hence the original reset premises C40 now hold and give m=Phi(M0) with m*m=K^circ. C11/C12 injectivity turns this into M0;M0=K/J on the quotient.",
+      "depends_on": [
+        "C11",
+        "C12",
+        "C19",
+        "C23",
+        "C40",
+        "C42"
+      ],
+      "notes": "N08",
+      "scope": "layer",
+      "source_labels": [
+        "thm:typed-original-full-cover-layer-word"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C44",
+      "name": "Quotient invariant relations commute, are symmetric and serial",
+      "statement": "Every quotient orbital is the image of an old same-sort fine pair orbit, hence symmetric. Every invariant quotient relation and every product is therefore symmetric; taking converses gives commutation. Nonempty invariant quotient relations are serial by transitivity of the OLD G quotient action. Do not enlarge G or assume quotient CCO.",
+      "depends_on": [
+        "A01",
+        "A04",
+        "D06"
+      ],
+      "notes": "N08",
+      "scope": "layer",
+      "source_labels": [
+        "thm:typed-original-full-cover-layer-word"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C45",
+      "name": "A nonempty product of external quotient orbitals cannot lie in diagonal",
+      "statement": "If nonempty symmetric serial invariant P,S satisfy P;S subset Delta, each neighbour choice forces the other relation to have exactly the inverse unique neighbour. Both are the same equivariant involution graph. If P is external, Delta union P is a nontrivial invariant two-class-per-component equivalence inside K/J; FULL cover makes it K/J, forcing [K:J]=2, contradiction in C43. Group any external product into its first orbital and remaining nonempty invariant product to obtain this no-return conclusion.",
+      "depends_on": [
+        "C13",
+        "C43",
+        "C44"
+      ],
+      "notes": "N08",
+      "scope": "layer",
+      "source_labels": [
+        "thm:typed-original-full-cover-layer-word"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C46",
+      "name": "Every non-diagonal invariant quotient subrelation has eventual full powers",
+      "statement": "For nonempty invariant W subset K/J not contained in Delta, connectedness is nontrivial and the FULL cover makes its components K/J classes. If W has a loop transitivity gives loops everywhere, so arbitrary padding is possible. Otherwise bipartiteness would force index two as C14, excluded by C43; use odd detours/backtracks. Finite old quotient orbitals then give W^n=K/J for every large n, exactly as C17.",
+      "depends_on": [
+        "C13",
+        "C14",
+        "C16",
+        "C17",
+        "C43",
+        "C44"
+      ],
+      "notes": "N08",
+      "scope": "layer",
+      "source_labels": [
+        "thm:typed-original-full-cover-layer-word"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C47",
+      "name": "Set up the contradiction family P_C=M0;C",
+      "statement": "Assume no two DISTINCT complete external orbitals C,D have C;D=Ubar=(K/J) minus Delta. For each external C put P_C=M0;C. Since C subset M0;M0, quotient Peirce gives P_C meet M0 nonempty. Invariance and completeness of the orbital give M0 subset P_C for every C.",
+      "depends_on": [
+        "C43",
+        "C44"
+      ],
+      "notes": "N08",
+      "scope": "layer",
+      "source_labels": [
+        "thm:typed-original-full-cover-layer-word"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C48",
+      "name": "The family intersection is exactly the reset orbital",
+      "statement": "Choose C!=M0, possible by r>=2; P_C has no diagonal since its two external orbitals are disjoint. Any external complete S meeting every P_C has by Peirce that M0;S meets every external C, hence contains Ubar. If S!=M0 it also has no diagonal, so M0;S=Ubar, contrary to C47 assumption. Thus S=M0, and meet_C P_C=M0.",
+      "depends_on": [
+        "C47"
+      ],
+      "notes": "N08",
+      "scope": "layer",
+      "source_labels": [
+        "thm:typed-original-full-cover-layer-word"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C49",
+      "name": "A positive escape state cannot meet all P_C",
+      "statement": "Take any nonempty invariant state R subset K/J disjoint from M0 with a positive old-word pullback. If R met every P_C, the finite family Phi(R) and all Phi(P_C) would be pairwise intersecting because all P_C contain M0, but have empty total meet by C48. C12 makes each P_C pullback a SINGLE positive old word; Direct positive-word 2-Helly contradicts this: attach private old atomic paths to two roots, merge agreeing one-edge branches; pairwise menu overlap makes every specified cycle homomorphic. Use original A03 CCO once, then I01 separates all formal vertices, and the root fine atom lies in every defining profile. This proves the needed Helly here without a Set-Pasch input. R may contain quotient diagonal; C11 still gives a nonempty ORIGINAL diversity palette.",
+      "depends_on": [
+        "A03",
+        "C11",
+        "C12",
+        "C23",
+        "C48",
+        "D11",
+        "I01"
+      ],
+      "notes": "N08",
+      "scope": "layer",
+      "source_labels": [
+        "thm:typed-original-full-cover-layer-word"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C50",
+      "name": "Escape transitions preserve the positive state class",
+      "statement": "C49 supplies C with R meet(M0;C) empty. Actual quotient Peirce rotates this to (R;C) meet M0 empty. R;C is nonempty invariant, remains inside K/J and its pullback is a positive concatenated word by C12. It need not remain a complete orbital or avoid the quotient diagonal.",
+      "depends_on": [
+        "C44",
+        "C49"
+      ],
+      "notes": "N08",
+      "scope": "layer",
+      "source_labels": [
+        "thm:typed-original-full-cover-layer-word"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C51",
+      "name": "A finite repeated state produces a nonempty external loop word",
+      "statement": "Start with one external complete R!=M0, whose pullback is positive by C23. Repeat C50, making any fixed finite choice rule. Only finitely many invariant quotient relations exist, so a state repeats. Their intervening NONEMPTY product W of complete external orbitals satisfies R;W=R for a nonempty state R disjoint from M0.",
+      "depends_on": [
+        "A01",
+        "C23",
+        "C50"
+      ],
+      "notes": "N08",
+      "scope": "layer",
+      "source_labels": [
+        "thm:typed-original-full-cover-layer-word"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C52",
+      "name": "No-return and eventual full powers contradict a repeated escape state",
+      "statement": "C45 makes W not contained in Delta. C46 yields W^n=K/J for large n. Iterating R;W=R gives R=R;(K/J)=K/J: seriality supplies a neighbour in the same K/J class from each point. This contradicts R disjoint from M0. Thus the assumption in C47 is false.",
+      "depends_on": [
+        "C44",
+        "C45",
+        "C46",
+        "C51"
+      ],
+      "notes": "N08",
+      "scope": "layer",
+      "source_labels": [
+        "thm:typed-original-full-cover-layer-word"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C53",
+      "name": "Two distinct quotient orbitals multiply to the whole external layer",
+      "statement": "C52 proves existence of distinct complete external C,D with C;D=Ubar. Their full original pullbacks are positive words by C23. C12 gives Phi(C)*Phi(D)=Phi(Ubar)=K minus J. Concatenate those old atomic words. Together with C42, the external layer is one positive old word in ALL full-cover cases.",
+      "depends_on": [
+        "C12",
+        "C23",
+        "C42",
+        "C52"
+      ],
+      "notes": "N08",
+      "scope": "layer",
+      "source_labels": [
+        "thm:typed-original-full-cover-layer-word"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C54",
+      "name": "The two standalone source09 exports precede B049 first-hit interpolation",
+      "statement": "C12 is the generic quotient strong-semigroup theorem and C53 the full-cover positive layer theorem. Their proofs import no B049 result: only the narrow same-J support C21-C22 is expanded here. Thus B049 may safely import them without a package-level or theorem-level cycle. This does not duplicate ownership of the generic typed saturation theorem.",
+      "depends_on": [
+        "C12",
+        "C22",
+        "C53"
+      ],
+      "notes": "N10",
+      "scope": "boundary",
+      "source_labels": [
+        "thm:typed-original-full-cover-layer-word"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C55",
+      "name": "M3 obstruction permits finite non-SAP sources",
+      "statement": "C08/C09 never use A02 or a STRONG word. A finite symmetric transitive original source with NR2 can therefore witness nondistributive nonCCO. Quotient class Helly is disproved via the actual old centre pair, not a theorem about an arbitrary abstract M3.",
+      "depends_on": [
+        "C08",
+        "C09"
+      ],
+      "notes": "N10",
+      "scope": "boundary",
+      "source_labels": [
+        "cor:typed-terminal-nondistributive-noncco"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C56",
+      "name": "The full-cover graph hypothesis cannot be weakened to arbitrary upper equivalence",
+      "statement": "A connected bipartite graph on six quotient vertices has nontrivial even-walk equivalence between Delta and its connectedness. Its top index is six, not two, yet powers keep alternating parity. This demonstrates exactly the missing intermediate invariant relation if FULL cover is omitted; it is a graph/action boundary, not a source satisfying A04.",
+      "depends_on": [
+        "C14"
+      ],
+      "notes": "N10",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-quotient-full-cover-powers"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C57",
+      "name": "Nonzero J is essential for STRONG quotient-diagonal returns",
+      "statement": "Phi(Delta)=J^circ is nonempty only because J>Id and old classes are infinite under SAP. At equality it would be empty, and a quotient closed walk could not be lifted between DISTINCT old representatives of the same singleton class. No bottom-cut reset or artificial unit is concluded.",
+      "depends_on": [
+        "C10",
+        "C11",
+        "C12"
+      ],
+      "notes": "N10",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-quotient-strong-semigroup"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C58",
+      "name": "Complete semantic cylinders are full original preimages",
+      "statement": "All powers/reset/layer claims use T_i=Phi(C_i) for complete OLD G quotient orbitals. A proper fine subset need not contain arbitrary representative pairs or allow the fresh class lifts. Nor is semantic-cylinder reachability assumed: positivity is separately built from the given J word via C22.",
+      "depends_on": [
+        "C11",
+        "C18",
+        "C23"
+      ],
+      "notes": "N10",
+      "scope": "boundary",
+      "source_labels": [
+        "thm:typed-original-full-cover-layer-word"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C59",
+      "name": "Bare top spokes create no specified edges",
+      "statement": "The theta-cycle guard permits a bare unconstrained K^circ-top presentation. Omit that spoke from the skeleton; no centre cycle can use it. The reset proof C32 instead uses its assumed POSITIVE w_K and adds every actual edge of that word. Neither proof invents a top edge or an identity edge.",
+      "depends_on": [
+        "C26",
+        "C32"
+      ],
+      "notes": "N10",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-relative-reset-cycle-guard"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C60",
+      "name": "Finite word interiors may use arbitrary named sorts",
+      "statement": "All commutation is of SAME-SORT root-endpoint relations, not individual cross-sort letters. The private old words w_i,w_K may pass through other old sorts, and every original graph edge keeps that actual typed colour; coarse root contraction alone is used for cycle analysis.",
+      "depends_on": [
+        "C25",
+        "C32",
+        "C33"
+      ],
+      "notes": "N10",
+      "scope": "boundary",
+      "source_labels": [
+        "thm:typed-original-full-cover-reset-single-path"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C61",
+      "name": "Finite diagnostics do not establish infinite freshness or source CCO",
+      "statement": "Bounded relation products, modular normalization, M3 graphs, quotient walks and small escape-state calculations test the constructions only. Finite clone windows provide enough representatives for the bounded tests, not unbounded SAP/CCO. No general Helly theorem, source gate, hidden SAP or Lean proof is certified.",
+      "depends_on": [
+        "C09",
+        "C19",
+        "C30",
+        "C40",
+        "C53"
+      ],
+      "notes": "N10",
+      "scope": "boundary",
+      "source_labels": [
+        "thm:typed-original-full-cover-layer-word"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C62",
+      "name": "The source exact M3 word paths require genuine positive reduced words",
+      "statement": "Since each E_i strictly contains L>=Id, it is nonidentity. A representing RAW word reduces to a positive old diversity word after deleting genuine logical Id letters. No nonidentity equivalence is a single diversity atom because it contains diagonal; duplicate direct paths are merged consistently if encountered. This validates all small private-path cases in C07.",
+      "depends_on": [
+        "A08",
+        "C07"
+      ],
+      "notes": "N02",
+      "scope": "M3",
+      "source_labels": [
+        "lem:typed-exact-m3-cco-obstruction"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C63",
+      "name": "Modular median extraction needs no finite lattice enumeration oracle",
+      "statement": "The explicit formulas C04-C05 are valid in any modular lattice. Finiteness is used only to recognize the invariant lattice as finite and, if desired, choose a finite nondistributivity witness. No separate external Birkhoff theorem is assumed by this module.",
+      "depends_on": [
+        "C04",
+        "C05"
+      ],
+      "notes": "N02",
+      "scope": "modularity",
+      "source_labels": [
+        "cor:typed-terminal-nondistributive-noncco"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C64",
+      "name": "RAW diagonal in the final reset is separately justified",
+      "statement": "The equation m*m=K^circ has no equality output. To derive m;m=K, prove the diagonal inclusion by actual m-neighbours and reverse symmetry and the off-diagonal equality by SAP injectivisation. Conversely no RAW identity edge is entered into any private atomic network.",
+      "depends_on": [
+        "C39"
+      ],
+      "notes": "N09",
+      "scope": "boundary",
+      "source_labels": [
+        "thm:typed-relative-reset"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C65",
+      "name": "Index-two cover is allowed in the positive-layer theorem",
+      "statement": "When [K:J]=2, there is just one complete external quotient orbital and its full pullback is J^circ*t*J^circ, directly positive. The reset theorem excludes this case because odd/even powers alternate; the layer theorem does not need its square to be full.",
+      "depends_on": [
+        "C15",
+        "C23",
+        "C42",
+        "C53"
+      ],
+      "notes": "N08",
+      "scope": "layer",
+      "source_labels": [
+        "thm:typed-original-full-cover-layer-word"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C66",
+      "name": "No CCO is used inside quotient power arguments",
+      "statement": "Connectedness/even-walk equivalences, FULL cover, finite quotient orbitals and original infinite representative classes prove C13-C19. Semantic CCO first enters the reset global network C34, and later positive-word Helly C49. Exactness/distributivity is absent from these power proofs.",
+      "depends_on": [
+        "C19"
+      ],
+      "notes": "N10",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-quotient-full-cover-powers"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C67",
+      "name": "No distributivity is assumed for the nondistributive diagnostic",
+      "statement": "C09 selects only I02 C25-C27 actual RAW reachability, whose ancestry excludes the CCO distributivity C28. Modularity/median extraction and the actual M3 word obstruction precede any semantic CCO premise, so the implication is a genuine nonCCO diagnostic.",
+      "depends_on": [
+        "C03",
+        "C05",
+        "C08",
+        "C09"
+      ],
+      "notes": "N10",
+      "scope": "boundary",
+      "source_labels": [
+        "cor:typed-terminal-nondistributive-noncco"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C68",
+      "name": "Terminal source status and provider bindings remain explicit",
+      "statement": "The terminal specializations C20/C41 inherit their explicit old SAP/HOM CCO/NR2 premises, while the more general original statements retain weaker local premises. No quotient CCO inheritance or new published provider is added. Existing five HN/HKN receiving bindings and overall source-relative EPPA remain unchanged.",
+      "depends_on": [
+        "C20",
+        "C41",
+        "C54",
+        "C61"
+      ],
+      "notes": "N10",
+      "scope": "boundary",
+      "source_labels": [
+        "thm:typed-relative-reset"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    }
+  ],
+  "source_result_files": [
+    "sections/v27/08_typed_terminal_reset_equivalences.tex"
+  ],
+  "additional_result_exports": [
+    "lem:typed-quotient-strong-semigroup",
+    "thm:typed-original-full-cover-layer-word"
+  ],
+  "exports": [
+    {
+      "source_label": "lem:typed-symmetric-orbital-commutation",
+      "claims": [
+        "C01"
+      ]
+    },
+    {
+      "source_label": "lem:typed-invariant-equivalence-modularity",
+      "claims": [
+        "C03"
+      ]
+    },
+    {
+      "source_label": "lem:typed-exact-m3-cco-obstruction",
+      "claims": [
+        "C08"
+      ]
+    },
+    {
+      "source_label": "cor:typed-terminal-nondistributive-noncco",
+      "claims": [
+        "C09"
+      ]
+    },
+    {
+      "source_label": "lem:typed-quotient-full-cover-powers",
+      "claims": [
+        "C19"
+      ]
+    },
+    {
+      "source_label": "lem:typed-relative-pure-power",
+      "claims": [
+        "C20"
+      ]
+    },
+    {
+      "source_label": "lem:typed-relative-reset-cycle-guard",
+      "claims": [
+        "C30"
+      ]
+    },
+    {
+      "source_label": "thm:typed-original-full-cover-reset-single-path",
+      "claims": [
+        "C40"
+      ]
+    },
+    {
+      "source_label": "thm:typed-relative-reset",
+      "claims": [
+        "C41"
+      ]
+    },
+    {
+      "source_label": "lem:typed-quotient-strong-semigroup",
+      "claims": [
+        "C11",
+        "C12"
+      ]
+    },
+    {
+      "source_label": "thm:typed-original-full-cover-layer-word",
+      "claims": [
+        "C53"
+      ]
+    }
+  ],
+  "auxiliary_exports": [
+    {
+      "source_label": "eq:typed-invariant-modularity",
+      "claims": [
+        "C03"
+      ],
+      "source": {
+        "file": "sections/v27/08_typed_terminal_reset_equivalences.tex",
+        "anchor": "\\label{eq:typed-invariant-modularity}"
+      }
+    },
+    {
+      "source_label": "eq:typed-quotient-full-cover-powers",
+      "claims": [
+        "C19"
+      ],
+      "source": {
+        "file": "sections/v27/08_typed_terminal_reset_equivalences.tex",
+        "anchor": "\\label{eq:typed-quotient-full-cover-powers}"
+      }
+    },
+    {
+      "source_label": "eq:typed-relative-pure-power",
+      "claims": [
+        "C20"
+      ],
+      "source": {
+        "file": "sections/v27/08_typed_terminal_reset_equivalences.tex",
+        "anchor": "\\label{eq:typed-relative-pure-power}"
+      }
+    },
+    {
+      "source_label": "eq:typed-original-full-cover-reset",
+      "claims": [
+        "C39",
+        "C40"
+      ],
+      "source": {
+        "file": "sections/v27/08_typed_terminal_reset_equivalences.tex",
+        "anchor": "\\label{eq:typed-original-full-cover-reset}"
+      }
+    },
+    {
+      "source_label": "eq:typed-old-reset-absorption",
+      "claims": [
+        "C24"
+      ],
+      "source": {
+        "file": "sections/v27/08_typed_terminal_reset_equivalences.tex",
+        "anchor": "\\label{eq:typed-old-reset-absorption}"
+      }
+    },
+    {
+      "source_label": "eq:typed-old-reset-triangle",
+      "claims": [
+        "C35"
+      ],
+      "source": {
+        "file": "sections/v27/08_typed_terminal_reset_equivalences.tex",
+        "anchor": "\\label{eq:typed-old-reset-triangle}"
+      }
+    },
+    {
+      "source_label": "eq:typed-relative-reset",
+      "claims": [
+        "C41"
+      ],
+      "source": {
+        "file": "sections/v27/08_typed_terminal_reset_equivalences.tex",
+        "anchor": "\\label{eq:typed-relative-reset}"
+      }
+    },
+    {
+      "source_label": "eq:typed-relative-reset-raw",
+      "claims": [
+        "C41",
+        "C64"
+      ],
+      "source": {
+        "file": "sections/v27/08_typed_terminal_reset_equivalences.tex",
+        "anchor": "\\label{eq:typed-relative-reset-raw}"
+      }
+    },
+    {
+      "source_label": "eq:typed-quotient-strong-semigroup",
+      "claims": [
+        "C12"
+      ],
+      "source": {
+        "file": "sections/v27/09_typed_equivalence_and_profiles.tex",
+        "anchor": "\\label{eq:typed-quotient-strong-semigroup}"
+      }
+    },
+    {
+      "source_label": "eq:typed-original-full-cover-layer-word",
+      "claims": [
+        "C53"
+      ],
+      "source": {
+        "file": "sections/v27/09_typed_equivalence_and_profiles.tex",
+        "anchor": "\\label{eq:typed-original-full-cover-layer-word}"
+      }
+    },
+    {
+      "source_label": "eq:typed-old-cover-quotient-powers",
+      "claims": [
+        "C46"
+      ],
+      "source": {
+        "file": "sections/v27/09_typed_equivalence_and_profiles.tex",
+        "anchor": "\\label{eq:typed-old-cover-quotient-powers}"
+      }
+    },
+    {
+      "source_label": "eq:typed-old-cover-intersection",
+      "claims": [
+        "C48"
+      ],
+      "source": {
+        "file": "sections/v27/09_typed_equivalence_and_profiles.tex",
+        "anchor": "\\label{eq:typed-old-cover-intersection}"
+      }
+    }
+  ],
+  "source_files": [
+    {
+      "file": "sections/foundational_sap_collision_unfolding.tex",
+      "git_blob": "f3ed62cf481b082ca6be793f45bf180db12a6468"
+    },
+    {
+      "file": "sections/sparse_labelled_graphs.tex",
+      "git_blob": "c7db0b7169dd8ff4dcd5642469ac8fa42c2ef530"
+    },
+    {
+      "file": "sections/terminal_invariant_raw_exact.tex",
+      "git_blob": "af0064c672f332049209e142a585bc62540954b4"
+    },
+    {
+      "file": "sections/v27/08_typed_terminal_reset_equivalences.tex",
+      "git_blob": "624a17bdab4758ac1ccf4ce406cdf32742375374"
+    },
+    {
+      "file": "sections/v27/09_typed_equivalence_and_profiles.tex",
+      "git_blob": "39d1678e6616140b50d6d9448b94f0de823f26d8"
+    }
+  ],
+  "dependency_firewalls": [
+    {
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C63"
+      ],
+      "forbid": [
+        "A02",
+        "A03",
+        "A04",
+        "A05",
+        "A06",
+        "A07",
+        "A08",
+        "I01",
+        "I02",
+        "I03",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40",
+        "C41",
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46",
+        "C47",
+        "C48",
+        "C49",
+        "C50",
+        "C51",
+        "C52",
+        "C53",
+        "C54",
+        "C55",
+        "C56",
+        "C57",
+        "C58",
+        "C59",
+        "C60",
+        "C61",
+        "C62",
+        "C64",
+        "C65",
+        "C66",
+        "C67",
+        "C68",
+        "A09"
+      ]
+    },
+    {
+      "claims": [
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C55",
+        "C62",
+        "C67"
+      ],
+      "forbid": [
+        "A02",
+        "A03",
+        "A04",
+        "A06",
+        "A07",
+        "I01",
+        "I03",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40",
+        "C41",
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46",
+        "C47",
+        "C48",
+        "C49",
+        "C50",
+        "C51",
+        "C52",
+        "C53",
+        "C54",
+        "C56",
+        "C57",
+        "C58",
+        "C59",
+        "C60",
+        "C61",
+        "C64",
+        "C65",
+        "C66",
+        "C68",
+        "A09"
+      ]
+    },
+    {
+      "claims": [
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C57",
+        "C66"
+      ],
+      "forbid": [
+        "A03",
+        "A05",
+        "A06",
+        "A07",
+        "A08",
+        "I02",
+        "I03",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40",
+        "C41",
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46",
+        "C47",
+        "C48",
+        "C49",
+        "C50",
+        "C51",
+        "C52",
+        "C53",
+        "C54",
+        "C55",
+        "C56",
+        "C58",
+        "C59",
+        "C60",
+        "C61",
+        "C62",
+        "C63",
+        "C64",
+        "C65",
+        "C67",
+        "C68"
+      ]
+    },
+    {
+      "claims": [
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25"
+      ],
+      "forbid": [
+        "A03",
+        "A05",
+        "A07",
+        "A08",
+        "I02",
+        "I03",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40",
+        "C41",
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46",
+        "C47",
+        "C48",
+        "C49",
+        "C50",
+        "C51",
+        "C52",
+        "C53",
+        "C54",
+        "C55",
+        "C56",
+        "C57",
+        "C58",
+        "C59",
+        "C60",
+        "C61",
+        "C62",
+        "C63",
+        "C64",
+        "C65",
+        "C66",
+        "C67",
+        "C68"
+      ]
+    },
+    {
+      "claims": [
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30"
+      ],
+      "forbid": [
+        "A03",
+        "A04",
+        "A05",
+        "A06",
+        "A08",
+        "I02",
+        "I03",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40",
+        "C41",
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46",
+        "C47",
+        "C48",
+        "C49",
+        "C50",
+        "C51",
+        "C52",
+        "C53",
+        "C54",
+        "C55",
+        "C56",
+        "C57",
+        "C58",
+        "C59",
+        "C60",
+        "C61",
+        "C62",
+        "C63",
+        "C64",
+        "C65",
+        "C66",
+        "C67",
+        "C68"
+      ]
+    },
+    {
+      "claims": [
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40",
+        "C41"
+      ],
+      "forbid": [
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46",
+        "C47",
+        "C48",
+        "C49",
+        "C50",
+        "C51",
+        "C52",
+        "C53",
+        "C54",
+        "C55",
+        "C56",
+        "C57",
+        "C58",
+        "C59",
+        "C60",
+        "C61",
+        "C62",
+        "C63",
+        "C64",
+        "C65",
+        "C66",
+        "C67",
+        "C68",
+        "A07"
+      ]
+    },
+    {
+      "claims": [
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46",
+        "C47",
+        "C48",
+        "C49",
+        "C50",
+        "C51",
+        "C52",
+        "C53",
+        "C65"
+      ],
+      "forbid": [
+        "A05",
+        "A07",
+        "A08",
+        "I02",
+        "C09",
+        "C20",
+        "C41",
+        "C55",
+        "C56",
+        "C59",
+        "C61",
+        "C62",
+        "C63",
+        "C64",
+        "C66",
+        "C67",
+        "C68"
+      ]
+    },
+    {
+      "claims": [
+        "C10",
+        "C11",
+        "C12"
+      ],
+      "forbid": [
+        "A01",
+        "A02",
+        "A03",
+        "A05",
+        "A06",
+        "A07",
+        "A08",
+        "A09",
+        "I01",
+        "I02",
+        "I03",
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40",
+        "C41",
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46",
+        "C47",
+        "C48",
+        "C49",
+        "C50",
+        "C51",
+        "C52",
+        "C53",
+        "C54",
+        "C55",
+        "C56",
+        "C57",
+        "C58",
+        "C59",
+        "C60",
+        "C61",
+        "C62",
+        "C63",
+        "C64",
+        "C65",
+        "C66",
+        "C67",
+        "C68"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "T01",
+      "name": "Actual commutation, modularity and internal diamond normalization",
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C63"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Use the FULL original invariant cover and ambient old G quotient orbitals. Keep quotient diagonal Phi(Delta)=Jdiv separate from old Id. No SAP/CCO in modularity or RAW-word M3 diagnostic; no CCO/NR2/exactness inside full-cover graph powers. Reset uses one actual global CCO completion then original SAP injectivisation. The positive-layer escape handles non-complete states possibly containing quotient diagonal. No import from B049, invented theta exactness, mixed-sort commutation or hidden SAP."
+    },
+    {
+      "id": "T02",
+      "name": "Original RAW-word M3 obstruction and NR2 diagnostic",
+      "claims": [
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C55",
+        "C62",
+        "C67"
+      ],
+      "depends_on": [
+        "T01"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Use the FULL original invariant cover and ambient old G quotient orbitals. Keep quotient diagonal Phi(Delta)=Jdiv separate from old Id. No SAP/CCO in modularity or RAW-word M3 diagnostic; no CCO/NR2/exactness inside full-cover graph powers. Reset uses one actual global CCO completion then original SAP injectivisation. The positive-layer escape handles non-complete states possibly containing quotient diagonal. No import from B049, invented theta exactness, mixed-sort commutation or hidden SAP."
+    },
+    {
+      "id": "T03",
+      "name": "Fresh-representative quotient semigroup and full-cover powers",
+      "claims": [
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C56",
+        "C57",
+        "C66"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Use the FULL original invariant cover and ambient old G quotient orbitals. Keep quotient diagonal Phi(Delta)=Jdiv separate from old Id. No SAP/CCO in modularity or RAW-word M3 diagnostic; no CCO/NR2/exactness inside full-cover graph powers. Reset uses one actual global CCO completion then original SAP injectivisation. The positive-layer escape handles non-complete states possibly containing quotient diagonal. No import from B049, invented theta exactness, mixed-sort commutation or hidden SAP."
+    },
+    {
+      "id": "T04",
+      "name": "Independent narrow same-cut saturation and positive orbital words",
+      "claims": [
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25"
+      ],
+      "depends_on": [
+        "T01",
+        "T03"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Use the FULL original invariant cover and ambient old G quotient orbitals. Keep quotient diagonal Phi(Delta)=Jdiv separate from old Id. No SAP/CCO in modularity or RAW-word M3 diagnostic; no CCO/NR2/exactness inside full-cover graph powers. Reset uses one actual global CCO completion then original SAP injectivisation. The positive-layer escape handles non-complete states possibly containing quotient diagonal. No import from B049, invented theta exactness, mixed-sort commutation or hidden SAP."
+    },
+    {
+      "id": "T05",
+      "name": "Individual theta-cycle guard",
+      "claims": [
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30"
+      ],
+      "depends_on": [
+        "T04"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Use the FULL original invariant cover and ambient old G quotient orbitals. Keep quotient diagonal Phi(Delta)=Jdiv separate from old Id. No SAP/CCO in modularity or RAW-word M3 diagnostic; no CCO/NR2/exactness inside full-cover graph powers. Reset uses one actual global CCO completion then original SAP injectivisation. The positive-layer escape handles non-complete states possibly containing quotient diagonal. No import from B049, invented theta exactness, mixed-sort commutation or hidden SAP."
+    },
+    {
+      "id": "T06",
+      "name": "One global CCO network, sparse graph reset and terminal specialization",
+      "claims": [
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40",
+        "C41",
+        "C64"
+      ],
+      "depends_on": [
+        "T04",
+        "T05"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Use the FULL original invariant cover and ambient old G quotient orbitals. Keep quotient diagonal Phi(Delta)=Jdiv separate from old Id. No SAP/CCO in modularity or RAW-word M3 diagnostic; no CCO/NR2/exactness inside full-cover graph powers. Reset uses one actual global CCO completion then original SAP injectivisation. The positive-layer escape handles non-complete states possibly containing quotient diagonal. No import from B049, invented theta exactness, mixed-sort commutation or hidden SAP."
+    },
+    {
+      "id": "T07",
+      "name": "Finite quotient escape and positive external cover layer",
+      "claims": [
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46",
+        "C47",
+        "C48",
+        "C49",
+        "C50",
+        "C51",
+        "C52",
+        "C53",
+        "C65"
+      ],
+      "depends_on": [
+        "T03",
+        "T06"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Use the FULL original invariant cover and ambient old G quotient orbitals. Keep quotient diagonal Phi(Delta)=Jdiv separate from old Id. No SAP/CCO in modularity or RAW-word M3 diagnostic; no CCO/NR2/exactness inside full-cover graph powers. Reset uses one actual global CCO completion then original SAP injectivisation. The positive-layer escape handles non-complete states possibly containing quotient diagonal. No import from B049, invented theta exactness, mixed-sort commutation or hidden SAP."
+    },
+    {
+      "id": "T08",
+      "name": "Acyclic provider contract for B049",
+      "claims": [
+        "C54",
+        "C58"
+      ],
+      "depends_on": [
+        "T07"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Use the FULL original invariant cover and ambient old G quotient orbitals. Keep quotient diagonal Phi(Delta)=Jdiv separate from old Id. No SAP/CCO in modularity or RAW-word M3 diagnostic; no CCO/NR2/exactness inside full-cover graph powers. Reset uses one actual global CCO completion then original SAP injectivisation. The positive-layer escape handles non-complete states possibly containing quotient diagonal. No import from B049, invented theta exactness, mixed-sort commutation or hidden SAP."
+    },
+    {
+      "id": "T09",
+      "name": "Finite controls and source boundaries",
+      "claims": [
+        "C61",
+        "C68",
+        "C59",
+        "C60"
+      ],
+      "depends_on": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Use the FULL original invariant cover and ambient old G quotient orbitals. Keep quotient diagonal Phi(Delta)=Jdiv separate from old Id. No SAP/CCO in modularity or RAW-word M3 diagnostic; no CCO/NR2/exactness inside full-cover graph powers. Reset uses one actual global CCO completion then original SAP injectivisation. The positive-layer escape handles non-complete states possibly containing quotient diagonal. No import from B049, invented theta exactness, mixed-sort commutation or hidden SAP."
+    }
+  ],
+  "controls": [
+    {
+      "id": "K01",
+      "check": "Finite actual symmetric groups/subspaces, modular median normalization and explicit nonSAP M3 original atomic network; no general theorem certificate."
+    },
+    {
+      "id": "K02",
+      "check": "Bounded quotient walks, clone representatives, reset/positive layer products and finite escape states, with local index-two/full-cover/nonzero guards."
+    }
+  ],
+  "overview_mermaid": [
+    "flowchart TD",
+    "  S[\"Symmetric original orbitals\"] --> M[\"Modular lattice and actual M3 obstruction\"]",
+    "  Q[\"FULL cover and infinite old J classes\"] --> P[\"Quotient power dichotomy\"]",
+    "  P --> R[\"Sparse one-word reset network\"]",
+    "  O[\"Original HOM CCO once\"] --> R",
+    "  R --> E[\"Finite quotient escape\"]",
+    "  E --> L[\"One positive old word for external layer\"]",
+    "  F[\"Fresh quotient representatives\"] --> L"
+  ],
+  "overview_notes": [
+    "All nine source08 results and two selected source09 results are prepared; no other source09 result is counted.",
+    "The original M3 obstruction is RAW and needs no SAP; modular M3 extraction is proved explicitly.",
+    "Power dichotomy is CCO-free and needs only LOCAL full-cover index not two.",
+    "Narrow same-J saturation is internal support, preventing a package cycle with B049 generic typed saturation.",
+    "Layer reachability includes the index-two case and requires only J positive; K positivity is derived when needed."
+  ],
+  "article_feedback": [
+    {
+      "id": "F01",
+      "kind": "PROOF_EXPANSION_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/v27/08_typed_terminal_reset_equivalences.tex",
+        "anchor": "\\label{cor:typed-terminal-nondistributive-noncco}"
+      },
+      "finding": "The modular nondistributive criterion can be discharged internally by explicit median normalization instead of leaving an unstated lattice theorem input.",
+      "proposed_article_change": "Optionally insert l/h/normalized-three-elements calculation. Keep all E_i actual RAW word relations and allow homomorphic private-path witnesses.",
+      "caller_effect": "No new source axiom or external theorem; finite diagnostics are separate from the general proof.",
+      "proof_claims": [
+        "C04",
+        "C05",
+        "C63"
+      ]
+    },
+    {
+      "id": "F02",
+      "kind": "PROOF_EXPANSION_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/v27/09_typed_equivalence_and_profiles.tex",
+        "anchor": "Repeat this escape for every new state"
+      },
+      "finding": "Escape states need not be complete orbitals and may contain the true quotient diagonal. Their positive old pullbacks, rather than off-diagonality, justify the Helly step.",
+      "proposed_article_change": "Retain this state invariant explicitly and choose a finite successor rule before taking a repeated state; use no-return only for the external loop word W.",
+      "caller_effect": "Expands the existing valid proof; no hidden quotient CCO, generic exact-domain theorem or B049 import.",
+      "proof_claims": [
+        "C49",
+        "C50",
+        "C51",
+        "C52"
+      ]
+    }
+  ],
+  "review": {
+    "date": "2026-10-29",
+    "source_unchanged": true,
+    "source_signature_repairs": 0,
+    "unexpanded_provider_labels": [],
+    "proof_status": "HUMAN_EXPANDED_NOT_LEAN; original/terminal contexts separated, generic quotient lifting excludes symmetry/full-cover assumptions, narrow local support removes the module cycle; independent final concrete review PASS.",
+    "independent_reviews": [
+      "Independent audit of all nine source08 results and two source09 prerequisites, including full quotient escape argument: PASS",
+      "Final concrete 68-claim module and proof-note review, including local modular normalization, generic Phi scope and reset/layer premise discharge: PASS",
+      "Parent reviewed all claim statements and complete proof notes, checking generic-vs-terminal premises, pinned SAP bases, actual quotient covers and the acyclic provider direction B050 to B049: PASS",
+      "Final parent proof synthesis PASS; preserve original versus terminal scopes, nonzero quotient guards, source B047 qualifications and the acyclic direction B050 to B049 to B051."
+    ],
+    "boundaries": [
+      "No mixed-sort commutation",
+      "No SAP in original M3 diagnostic",
+      "No CCO in quotient graph powers",
+      "No quotient CCO inheritance",
+      "Nonzero J and FULL cover retained",
+      "No B049 import"
+    ]
+  },
+  "application_contracts": [
+    {
+      "consumer": "C09",
+      "lemma": "C08",
+      "discharge": "C05 supplies the actual M3 and I02 supplies its three RAW words; A08 is instantiated, not an additional diagnostic hypothesis."
+    },
+    {
+      "consumer": "C43",
+      "lemma": "C40",
+      "discharge": "r>=2 implies local non-index-two, and C19 derives a positive Kdiv word; only the Jdiv word is a layer-theorem premise."
+    },
+    {
+      "consumer": "C18",
+      "lemma": "C12",
+      "discharge": "The local FULL-cover premises supply the generic nonzero-J/SAP quotient setting; no extra symmetry/full-cover premise belongs to the generic semigroup export."
+    }
+  ]
+}

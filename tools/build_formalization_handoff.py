@@ -18,7 +18,7 @@ import check_formalization_coordination as coordination
 
 
 ROOT = Path(__file__).resolve().parents[1]
-MODULES = ('raw_exact', 'strong_selectors', 'parity_hasse', 'exact_crt', 'canonical_hull', 'real_closure', 'finite_packets', 'rigid_groupoid', 'finite_kernel', 'owner_action', 'sir', 'owner_master', 'joint_owner', 'acl_owner_geometry', 'finite_lift', 'mi_geometry', 'owner_transversal', 'safe_readings', 'direct_owner_closure', 'hkn_reservoir', 'terminal_powers', 'full_rows', 'profile_helly', 'relative_mi', 'rank_induction', 'unary_support', 'full_code', 'reset_order', 'unary_hn', 'relational_completion', 'unary_fresh_frames', 'quotient_transport', 'simultaneous_quotients', 'finite_fibres', 'point_generated_sap', 'ap_character', 'clone_sap', 'orbital_cover_boundary', 'pair_safe_split', 'full_phase_lift')
+MODULES = ('raw_exact', 'strong_selectors', 'parity_hasse', 'exact_crt', 'canonical_hull', 'real_closure', 'finite_packets', 'rigid_groupoid', 'finite_kernel', 'owner_action', 'sir', 'owner_master', 'joint_owner', 'acl_owner_geometry', 'finite_lift', 'mi_geometry', 'owner_transversal', 'safe_readings', 'direct_owner_closure', 'hkn_reservoir', 'terminal_powers', 'full_rows', 'profile_helly', 'relative_mi', 'rank_induction', 'unary_support', 'full_code', 'reset_order', 'unary_hn', 'relational_completion', 'unary_fresh_frames', 'quotient_transport', 'simultaneous_quotients', 'finite_fibres', 'point_generated_sap', 'ap_character', 'clone_sap', 'orbital_cover_boundary', 'pair_safe_split', 'full_phase_lift', 'transition_closure', 'terminal_lattice', 'terminal_profiles', 'unary_terms_return', 'typed_orbit_frames', 'hereditary_hidden_orbits', 'hidden_sap_readings', 'guarded_two_root', 'guarded_old_seams', 'old_idempotent_forest', 'terminal_hidden_hn', 'clone_tuple_geometry', 'ap_ramsey_readout', 'exact_ep_geometry', 'automatic_ep_core', 'unfiltered_ep')
 MANIFEST = 'HANDOFF_MANIFEST.json'
 
 
@@ -26,9 +26,14 @@ def collect(root):
     declarations = json.loads((root / 'catalogue/declarations.json').read_text())
     paths = {'formalization/README.md', 'formalization/HANDOFF.md',
              'formalization/EXTERNAL_PROVIDER_BUILD_CACHE.md',
+             'formalization/FACTORIZATION_FOREST_PROVIDER.md',
+             'formalization/PREPARATION_COVERAGE.md',
+             'formalization/PREPARATION_COMPLETION_REVIEW.md',
+             'formalization/preparation_coverage.json',
              'catalogue/declarations.json', 'tools/build_formalization_module.py',
              'tools/build_formalization_handoff.py', 'tools/test_formalization_module.py',
              'tools/test_formalization_handoff.py', 'tools/test_external_provider_metadata.py',
+             'tools/test_prepared_release_metadata.py',
              'tools/check_formalization_coordination.py',
              'tools/prepare_formalization_launch.py',
              'tools/test_formalization_coordination.py', 'tools/coordination_queue.py',
@@ -75,28 +80,8 @@ def collect(root):
                           for path, data in files.items()],
                 'verification': ['python tools/build_formalization_handoff.py --verify .'] +
                                 [f'python tools/build_formalization_module.py --module {m} --check' for m in MODULES] +
-                                ['python tools/check_raw_exact_controls.py',
-                                 'python tools/check_strong_selector_controls.py',
-                                 'python tools/check_parity_hasse_controls.py',
-                                 'python tools/check_exact_crt_controls.py',
-                                 'python tools/check_canonical_hull_controls.py',
-                                 'python tools/check_real_closure_controls.py',
-                                 'python tools/check_finite_packet_controls.py',
-                                 'python tools/check_rigid_groupoid_controls.py',
-                                 'python tools/check_finite_kernel_controls.py',
-                                 'python tools/check_owner_action_controls.py',
-                                 'python tools/check_owner_master_controls.py',
-                                 'python tools/check_joint_owner_controls.py',
-                                 'python tools/check_acl_owner_controls.py',
-                                 'python tools/check_finite_lift_controls.py',
-                                 'python tools/check_mi_geometry_controls.py',
-                                 'python tools/check_owner_transversal_controls.py',
-                                 'python tools/check_safe_readings_controls.py',
-                                 'python tools/check_direct_owner_closure_controls.py',
-                                 'python tools/check_hkn_reservoir_controls.py',
-                                 'python tools/check_terminal_power_controls.py',
-                                 'python tools/check_sir_controls.py',
-                                 'python tools/check_formalization_coordination.py --check'],
+                                ['python ' + json.loads((root / 'formalization' / m / 'module.json').read_text()).get('control_script', 'tools/check_raw_exact_controls.py') for m in MODULES] +
+                                ['python tools/check_formalization_coordination.py --check'],
                 'external_providers': [dict(module=m['id'], **item) for m in modules
                                        for item in m['external_providers']],
                 'unexpanded_upstream': [dict(module=m['id'], **item) for m in modules

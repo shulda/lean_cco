@@ -1,0 +1,307 @@
+% Internally transcribed/source-preserved RAMSEY proof interface from V27.
+% The selected source spans are listed with checksums in SOURCE_PROVENANCE.
+% The included parts are now part of THIS source build; V27 is not a cited premise.
+\section{Standing SAP terminal assumptions for the Ramsey proof}
+\label{sec:internal-v27-premises}
+In this appendix $\K$ is a finite complete symmetric binary triangle
+class with SAP and semantic HOMOMORPHIC CCO, $L$ its finite diversity palette,
+and $\M$ its homogeneous limit. These are the input conditions on the
+SAP pure-clone cover, NOT additional assumptions on the original AP class.
+The appendix retains the historical V27 source labels while shared proofs
+have been consolidated in Part I. Its module order follows the preferred
+typed route; supplementary one-sort and representative constructions follow
+the terminal typed conclusion.
+
+
+% Begin historical V27 source lines 177--202
+\begin{assumption}[General hypotheses]\label{ass:general}
+Throughout the binary core of the paper, unless a stronger assumption is
+explicitly invoked, we assume the following.
+\begin{enumerate}[label=(A\arabic*)]
+\item \label{A:finite} $L$ is finite, the language is complete and symmetric,
+      and $\K$ is triangle constrained.
+\item \label{A:sap} $\K$ has the strong amalgamation property.
+\item \label{A:cco} $\K$ has semantic cycle constrainedness
+      $\mathrm{CCO}_{\mathrm{sem}}$: a finite atomic partial structure is
+      completable precisely when each of its specified simple cycles is
+      completable.  Equivalently, in the profile formulation developed in
+      \cref{sec:profiles}, the finite family of reachable path profiles is
+      $2$-Helly.
+\end{enumerate}
+\end{assumption}
+
+\begin{assumption}[Terminal infinite-cover hypothesis]\label{ass:standing}
+In addition to Assumption~\ref{ass:general}, assume
+\begin{enumerate}[label=(A\arabic*),start=4]
+\item \label{A:cover} every strict cover in the full lattice of
+      $0$-definable equivalence relations on $\M$, including covers whose
+      upper endpoint is the universal equivalence, has infinite relative
+      index.
+\end{enumerate}
+We call this the \emph{terminal} or \emph{sortwise infinite-cover branch}.
+\end{assumption}
+
+% Begin historical V27 source lines 315--2122
+\section{Profiles, cycle constrainedness and exact domains}
+\label{sec:profiles}
+
+\subsection{The profile semigroup}
+
+For colours \(a,b\in L\), put
+\[
+  a\starprod b=\set{c\in L:R(a,b,c)}.
+\]
+For non-empty \(A,B\subseteq L\), define
+\[
+  A\starprod B=\bigcup_{a\in A,\ b\in B}(a\starprod b).
+\]
+Strong amalgamation implies that every atomic fork is non-empty.
+
+\begin{lemma}[Associativity]\label{lem:associativity}
+The set product \(\starprod\) is commutative and associative on non-empty
+subsets of \(L\).
+\end{lemma}
+
+\begin{proof}
+The current one-original-sort strong product is the
+single-sort specialization of the already proved
+typed strong associativity identity
+\eqref{eq:strong-assoc} in Foundations
+(\cref{sec:typed-strong}).
+Commutativity additionally follows from the
+symmetry of the old atomic triangle table,
+including on all nonempty unions of colours.
+No RAW logical identity atom is used.
+\end{proof}
+
+\begin{lemma}[Set-Pasch]\label{lem:set-pasch}
+For non-empty colour sets \(A,B,C,D\subseteq L\),
+\[
+ (A\starprod B)\cap(C\starprod D)\neq\varnothing
+ \quad\Longrightarrow\quad
+ (A\starprod C)\cap(B\starprod D)\neq\varnothing.
+\]
+\end{lemma}
+
+\begin{proof}
+Apply the existing typed Set-Pasch lemma
+\cref{lem:typed-set-pasch} with all FOUR
+named endpoint sorts equal to the present
+one original sort. The converses in that
+lemma are then trivial because every fine
+same-sort diversity atom is symmetric;
+its conclusion is exactly the displayed
+\((A\starprod C)\cap(B\starprod D)\)
+nonemptiness. No extra CCO hypothesis is
+needed for this SAP implication.
+\end{proof}
+
+For a non-empty word \(w=a_1\cdots a_n\in L^+\), its \emph{endpoint
+profile} is
+\[
+  \Prof(w)=a_1\starprod\cdots\starprod a_n.
+\]
+By \cref{lem:associativity} this is unambiguous.  Let
+\(\Rch\) be the finite family of all non-empty reachable profiles.  It is a
+finite commutative semigroup under \(\starprod\).
+
+A specified path with edge word \(w\) can be realised with prescribed
+endpoint colour \(c\) precisely when \(c\in\Prof(w)\).  This elementary path
+profile observation will be used repeatedly.
+
+\subsection{The semantic CCO condition}
+
+\begin{definition}
+A finite \emph{atomic partial structure} is a finite graph in which some
+unordered pairs carry one specified colour and the other pairs are
+unspecified.  A specified simple cycle is \emph{completable} if the partial
+structure induced by its specified cycle edges has a completion in \(\K\).
+\end{definition}
+
+The semantic cycle condition in \cref{A:cco} can be expressed purely in the
+profile semigroup.
+
+\begin{proposition}[Profile Helly consequence]\label{prop:cco-helly}
+Every finite pairwise-intersecting family of reachable profiles has non-empty
+total intersection.
+\end{proposition}
+
+\begin{proof}
+This is the one-original-sort instance of the
+canonical typed STRONG positive theta/Helly theorem
+\cref{lem:typed-helly}, whose standing hypotheses
+are exactly SAP, complete symmetric diversity triangles
+and semantic homomorphic CCO in this source.
+The lemma already treats direct-edge branches, injective
+endpoint realization and arbitrary finite intersections;
+there is no RAW logical identity output here.
+\end{proof}
+
+\begin{lemma}[Profile Helly converse]\label{lem:helly-to-cco}
+Let a finite symmetric typed atomic palette have a total associative Peircean
+product.  Consider the FULL triangle-defined class of all complete atomic
+networks admitted by this table. If its reachable profiles are
+\(2\)-Helly, then this class satisfies semantic CCO. If, in
+addition, the required atomic forks are realisable by distinct
+vertices, then this full complete class has SAP.
+\end{lemma}
+
+\begin{proof}
+Let \(G\) be a finite atomic partial structure all of whose specified simple
+cycles are completable.  Fix two specified \(x\)-\(y\) paths.  Their endpoint
+profiles intersect.  Indeed, induct on the number of common internal vertices.
+If there is none, their union is one specified simple cycle.  Otherwise split
+at a common internal vertex and concatenate colours chosen from the two smaller
+profile intersections.  Thus all specified \(x\)-\(y\) path profiles are
+pairwise intersecting.  By \(2\)-Helly they have a common colour \(c\).
+Assign \(c\) to one previously unspecified pair \(xy\).  Every new specified
+cycle using this edge has complementary path profile containing \(c\), hence is
+completable.  Iterating over the finitely many missing pairs gives a complete
+allowed network.  This is semantic CCO.
+
+For SAP, take the free partial amalgam of two complete factors over their common
+complete base.  A specified simple cycle meeting both factors alternates
+between factor-side segments whose endpoints lie in the base.  Contract every
+maximal factor-side segment to the actual base-edge colour between its
+endpoints; that colour belongs to the segment profile.  The contracted cycle
+is realised in the common base, so the original specified cycle is
+completable. Now apply the EXPLICIT edge-filling algorithm proved
+in the first paragraph to this free partial amalgam, keeping its
+entire disjoint-outside-the-base VERTEX SET fixed. Each step assigns
+one diversity atom to an UNRECORDED cross pair, never identifies
+vertices, and preserves simple-cycle compatibility. The final
+complete atomic network therefore belongs to the FULL
+triangle-defined class and is a STRONG amalgam.
+Merely knowing that an arbitrary partial graph has some possibly
+NONINJECTIVE homomorphism into a homogeneous structure would
+NOT imply SAP; the fixed-vertex completion from associative
+strong profiles and $2$-Helly is the essential extra argument.
+\end{proof}
+
+\begin{lemma}[Universal diagonal colour]\label{lem:universal-diagonal}
+There is a colour \(d_\Delta\in L\) such that
+\[
+ d_\Delta\in a\starprod a
+ \qquad\text{for every }a\in L.
+\]
+In particular, \(R(a,a,d_\Delta)\) is allowed for every \(a\), and
+\(R(d_\Delta,d_\Delta,d_\Delta)\) is allowed.
+\end{lemma}
+
+\begin{proof}
+For colours \(a,b\in L\), choose an allowed triangle with the two incident
+colours \(a,b\); such a triangle exists because every atomic fork is
+realisable.  Regard its third vertex as a one-point extension of the opposite
+edge and strongly amalgamate two copies of this extension over that edge.
+The two new vertices are distinct.  Their mutual colour belongs to both
+\(a\starprod a\) and \(b\starprod b\).  Thus the reachable profiles
+\((a\starprod a)_{a\in L}\) are pairwise intersecting.  Apply
+\cref{prop:cco-helly}.  Taking \(a=d_\Delta\) gives the final assertion.
+\end{proof}
+
+\subsection{Exact path-consistency domains}
+
+Let \(G\) be an atomic partial structure.  Initially set
+\[
+  D^0_G(x,y)=
+  \begin{cases}
+     \set{a},&\text{if }xy\text{ is specified with colour }a,\\
+     L,&\text{if }xy\text{ is unspecified.}
+  \end{cases}
+\]
+Iterate the triangle update
+\[
+  D^{n+1}_G(x,y)=D^n_G(x,y)\cap
+  \bigcap_{z\in G\setminus\{x,y\}}\bigl(D^n_G(x,z)\starprod D^n_G(z,y)\bigr).
+\]
+Since \(L\) is finite, this stabilises.  Denote the fixed point by
+\(D_G^\infty(x,y)\).
+
+\begin{lemma}[Walk formula]\label{lem:walk-formula}
+Assume that no fixed-point domain is empty.  For distinct vertices \(x,y\),
+\[
+ D_G^\infty(x,y)=
+ \bigcap\set{\Prof(P): P\text{ is a specified simple }x\text{-}y\text{ path in }G},
+\]
+where the empty intersection is \(L\).  In the triangle update one may, and
+will, restrict to \(z\notin\{x,y\}\).
+\end{lemma}
+
+\begin{proof}
+This is the one-original-sort specialisation of
+the canonical typed strong PC walk formula
+\cref{lem:typed-PC-walk-formula}.
+The present $\starprod$ is the same supported
+STRONG diversity product; neither construction
+introduces a logical identity pair between
+distinct formal vertices.
+\end{proof}
+
+\begin{definition}
+The family of \emph{exact atomic domains} is
+\[
+ \Dat=\set{D_G^\infty(x,y):G\text{ is completable and }x\neq y}.
+\]
+A triple \((A,B,C)\in\Dat^3\) is \emph{support-consistent} if
+\[
+ A\subseteq B\starprod C,\qquad
+ B\subseteq A\starprod C,\qquad
+ C\subseteq A\starprod B.
+ \tag{SC}\label{eq:SC}
+\]
+\end{definition}
+
+\begin{theorem}[Exact-domain realisation]\label{thm:exact-domains}
+Under \cref{A:sap,A:cco},
+\[
+ \Dat=\set{\bigcap\mathcal F:\mathcal F\subseteq\Rch\text{ finite and }
+                    \bigcap\mathcal F\neq\varnothing}.
+ \tag{ED}\label{eq:ED}
+\]
+Moreover, a triple of exact domains occurs as
+\((D_G^\infty(x,y),D_G^\infty(y,z),D_G^\infty(z,x))\) in one completable
+partial structure if and only if it is support-consistent.
+\end{theorem}
+
+\begin{proof}
+Apply the canonical typed STRONG fixed-point theorem
+\cref{lem:typed-PC-fixedpoint-exact}
+with a single original named transitive sort.
+Its domain family $\Dat^{aa}$ is the present
+$\Dat$, its three rotated typed PC inclusions
+are precisely support consistency
+\eqref{eq:SC}, and SAP+CCO are the original
+assumptions \cref{A:sap,A:cco}.
+\end{proof}
+
+\begin{corollary}[Helly for exact domains]\label{cor:exact-domain-helly}
+Every finite pairwise-intersecting family of exact atomic domains has
+non-empty total intersection.
+\end{corollary}
+
+\begin{proof}
+Write each exact domain as a non-empty finite intersection of reachable
+profiles using \cref{thm:exact-domains}.  If \(P\) is a defining profile of
+\(D_i\) and \(Q\) one of \(D_j\), then \(P\cap Q\neq\varnothing\): for
+\(i\neq j\) it contains any element of \(D_i\cap D_j\), and for \(i=j\) it
+contains any element of \(D_i\).  Hence the union of all defining profile
+families is pairwise intersecting.  Apply \cref{prop:cco-helly}.
+\end{proof}
+
+\begin{corollary}[Finite selector interface]\label{cor:selector-interface}
+A conservative map
+\[
+ \chi:\Dat\longrightarrow L,
+ \qquad \chi(D)\in D,
+\]
+completes every non-empty exact fixed-point network coordinatewise if and only
+if it sends every support-consistent domain triple to an allowed colour
+triple.
+\end{corollary}
+
+\begin{proof}
+The reverse implication is checked on every triangle of the fixed-point
+network.  The forward implication follows from joint realisation in
+\cref{thm:exact-domains}.
+\end{proof}
+

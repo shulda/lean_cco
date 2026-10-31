@@ -1,0 +1,2257 @@
+{
+  "schema_version": 1,
+  "id": "old_idempotent_forest",
+  "index_title": "OLD idempotent boundary certificates, forest pruning and bounded hidden obstructions",
+  "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+  "status": "HUMAN_EXPANDED_NOT_LEAN",
+  "scope": "Private B058: all SIX source16 results, TWO equations, eleven definitions, 74 human claims and eight tasks. Literal OLD coordinate certificates survive deletion of idempotent gaps. A finite typed positive semigroup has no zero on actual composable intervals; a published factorisation-forest input bounds height. Keep first/last children and STOP recursion in deleted middle intervals, producing a disjoint partition of the ORIGINAL branch words. One complete old base and simultaneous whole-word insertion reconstruct the original simple bad cycle. Therefore UNARY-ADMISSIBLE noncompletable partial hidden inputs have bounded OLD closed obstructions. The forest theorem adds one explicit receiving obligation to the five existing HN/HKN bindings; no compiled provider is claimed.",
+  "scope_vocabulary": [
+    "nonzero",
+    "boundary",
+    "forest",
+    "partition",
+    "reconstruction",
+    "old_support",
+    "bounded_obstruction",
+    "scope"
+  ],
+  "scope_explanation": "statement and proof. OLD source terms remain literal after induced restriction; target coincidences are never source seams. Idempotent diversity e is not reflexive: its RAW envelope is E_e=Id union e. Actual distinct representatives are needed before extracting a fine atom in e.",
+  "control_script": "tools/check_old_idempotent_forest_controls.py",
+  "assumptions": [
+    {
+      "id": "A01",
+      "name": "Actual original typed source",
+      "statement": "M is countable homogeneous and complete in a finite binary relational language with transitive named real sorts, symmetric same-sort old atoms and paired typed converses. Every occurring old pair atom is an actual orbital, with true real equality separate from diversity.",
+      "depends_on": []
+    },
+    {
+      "id": "A02",
+      "name": "Original visible SAP",
+      "statement": "The old finite age has SAP over every COMPLETE old finite real base, including empty. It supplies genuine three-distinct forks and pinned positive-word insertion while keeping all chosen base colours fixed.",
+      "depends_on": []
+    },
+    {
+      "id": "A03",
+      "name": "Original semantic homomorphic CCO",
+      "statement": "An old typed atomic partial graph with individually homomorphically completable specified simple cycles has ONE whole old homomorphism. This is used in the bounded-obstruction bad-cycle extraction, not the purely combinatorial pruning or nonzero-fork branch.",
+      "depends_on": []
+    },
+    {
+      "id": "A04",
+      "name": "FULL terminal original index/lattice context",
+      "statement": "Every strict FULL invariant cover on every old real sort has infinite relative index, including Top covers. This supplies the terminal named proper-coordinate providers; exact MI reconstruction of an idempotent envelope retains its separately proved exactness/lattice premises.",
+      "depends_on": []
+    },
+    {
+      "id": "A05",
+      "name": "Actual hidden MI-only interpretation",
+      "statement": "Actual real and proper nonzero represented MI quotient sorts have the finite named unary projections, upward maps and quotient transitions/inverses and complete semantic cylinders. Functions are actual equivariant maps, with no quotient-to-real or nullary vertex generators. No extra non-MI quotient is added.",
+      "depends_on": []
+    },
+    {
+      "id": "A06",
+      "name": "Unary-admissible finite partial source",
+      "statement": "C is finite and functionally closed; every FULL one-generated induced diagram is an actual completed hidden member. Thus its singleton closures have the uniform m_typ bound and satisfy all actual unary identities. C as a whole need not be completable.",
+      "depends_on": []
+    },
+    {
+      "id": "A07",
+      "name": "Locally vetted OLD supported macro path",
+      "statement": "For the boundary/path applications, all actual joined irreducible one-/two-root source supports have passed the full local induced-pattern test. Old vertices b_0,...,b_n are pairwise distinct formal source roots, n>=1; each macro P_i is the positive STRONG profile of the EXACT original traversed branch word w_i, with its nonempty original pair menu D_i subset P_i. Only genuine OLD source endpoint pairs issue sides.",
+      "depends_on": []
+    },
+    {
+      "id": "A08",
+      "name": "Conditional reconstruction base and anchor",
+      "statement": "For reconstruction, A is one finite COMPLETE old base containing distinct chosen representatives of ALL retained old roots. Retained side atoms lie in their original P_i; every deleted-gap pair lies in E_e=Id union e. The fixed ORIGINAL anchor word has its endpoint atom in its OWN strong profile. This last condition is explicit, not inferred from unrelated retained sides.",
+      "depends_on": []
+    },
+    {
+      "id": "A09",
+      "name": "Given valid ordered forest for structural pruning",
+      "statement": "For the combinatorial partition branch a finite ordered tree has macro-letter leaves in their original order and contiguous interval nodes, no unary internal nodes; each internal node with at least three children has the SAME idempotent nonzero value on all its children. This is a supplied finite tree; its existence/height bound is a separate E01 application.",
+      "depends_on": []
+    },
+    {
+      "id": "A10",
+      "name": "Separate optional higher-support gate",
+      "statement": "All six results are prepared in the BINARY hidden setting. A finite-arity reading requires its separate support-normal complete frozen-factor completion/reflection interface. Binary SAP/word injection alone does not preserve old arity>=3 factor tuples.",
+      "depends_on": []
+    }
+  ],
+  "external_providers": [
+    {
+      "id": "E01",
+      "name": "Finite-semigroup factorisation forest height",
+      "status": "PUBLISHED_THEOREM_LOCAL_BRIDGE_PENDING",
+      "source_version": "Kufleitner, MFCS 2008, LNCS 5162, The Height of Factorization Forests",
+      "source_url": "https://link.springer.com/chapter/10.1007/978-3-540-85238-4_36",
+      "theorem": "Theorem 1; use the weaker height bound 3|S| proved explicitly",
+      "statement": "For any finite semigroup S and evaluation homomorphism from nonempty words, each word admits an ordered factorisation tree of height at most 3|S| (leaves at height zero). Internal nodes have at least two children; at arity at least three every child has the same idempotent image. The pinned existing Lean declaration supplies the stronger 3|S|-1 bound. Its independent receiving build/axiom audit and adapter to the finite typed positive semigroup remain pending; see formalization/FACTORIZATION_FOREST_PROVIDER.md.",
+      "depends_on": [],
+      "lean_reference": {
+        "repository": "ReemMelamed/algebraic-automata",
+        "commit": "0acb244aaa913c32eeeff48e939cb5df469a3f70",
+        "module": "AlgebraicAutomata.FactorizationForest.Tree",
+        "declarations": [
+          "factorization_forest_classical_bound"
+        ],
+        "bridge_status": "NOT_BOUND_TO_CCO_ENCODING",
+        "source_file": "AlgebraicAutomata/FactorizationForest/Tree.lean",
+        "lean_version": "v4.35.0-rc3",
+        "mathlib_commit": "2a885768dae569d938bb9ff3474da6a8753bb90a",
+        "verified_CI": "https://github.com/ReemMelamed/algebraic-automata/actions/runs/40362358302",
+        "representation": "General finite nonempty semigroup, arbitrary alphabet, nonempty-list multiplicative evaluation; ordered factorization tree with exact original yield, leaves height0, no unary nodes and wide common-idempotent children; height <= 3*card(S)-1.",
+        "verification_scope": "Read-only exact declaration and tree-definition inspection, scan of all20repositoryLeanfiles without sorry/admit/declaredaxiom/unsafe/implemented_by/sorryAx tokens, and successful exact-pin upstream CI. No independent local build, transitive compiled-axiom audit or CCO/toolchain adapter performed.",
+        "receiving_plan": "formalization/FACTORIZATION_FOREST_PROVIDER.md"
+      }
+    }
+  ],
+  "imports": [
+    {
+      "id": "I01",
+      "name": "lem:typed-set-pasch",
+      "provider_module": "strong_selectors",
+      "source_label": "lem:typed-set-pasch",
+      "provider_claims": [
+        "C02"
+      ],
+      "statement": "Only the proved associative compatible nonempty STRONG profile multiplication of C02 is used to build the finite zero-completed typed semigroup; no logical identity is added.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I02",
+      "name": "lem:typed-unary-closure-bound",
+      "provider_module": "unary_terms_return",
+      "source_label": "lem:typed-unary-closure-bound",
+      "provider_claims": [
+        "C13",
+        "C14"
+      ],
+      "statement": "Actual/unary-admissible singleton hidden closures have at most m_typ vertices; unary-only closure of finite B is their union. Arbitrary malformed partial total-unary cycles are excluded.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I03",
+      "name": "lem:typed-old-seam-telescope",
+      "provider_module": "guarded_old_seams",
+      "source_label": "lem:typed-old-seam-telescope",
+      "provider_claims": [
+        "C20"
+      ],
+      "statement": "Compatible successive OLD macro equations use the SAME canonical intermediate represented coordinate and compose literally inside C, even for orphan-only intersections. Completion coincidences are not seams.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I04",
+      "name": "lem:typed-idempotent-raw-exact",
+      "provider_module": "guarded_old_seams",
+      "source_label": "lem:typed-idempotent-raw-exact",
+      "provider_claims": [
+        "C30"
+      ],
+      "statement": "The actual RAW relation of ww for positive strong idempotent e is E_e=Id union e. It is FULL RAW exact, and equals the meet of represented exact proper MIs above it; empty meet is Top. Direct word identity and separate exact-lattice reconstruction retain different premises.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I05",
+      "name": "lem:typed-branch-root-visibility",
+      "provider_module": "guarded_old_seams",
+      "source_label": "lem:typed-branch-root-visibility",
+      "provider_claims": [
+        "C48"
+      ],
+      "statement": "For a locally complete OLD pair and its actual branch profile P, quotient functionality over J forces the actual root kernels below J and J^P, hence those coordinate readings are named OLD terms. The provider repairs RAW TV1 by restored full comparison versus guarded diversity saturation.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I06",
+      "name": "lem:typed-old-source-branch-equation",
+      "provider_module": "guarded_old_seams",
+      "source_label": "lem:typed-old-source-branch-equation",
+      "provider_claims": [
+        "C54"
+      ],
+      "statement": "The actual locally vetted OLD closed support reflects each quotient-functional branch equation as a LITERAL equality of named source term values, not merely an equation in a future target.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I07",
+      "name": "lem:typed-return-transport",
+      "provider_module": "unary_terms_return",
+      "source_label": "lem:typed-return-transport",
+      "provider_claims": [
+        "C36"
+      ],
+      "statement": "A nonempty composable actual RAW closed word inside J has canonical transported represented kernels, adjacent quotient maps and literal identity return holonomy; coarsenings and actual named proper coordinates retain their exact gates.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I08",
+      "name": "lem:typed-real-sort-splitting",
+      "provider_module": "hidden_sap_readings",
+      "source_label": "lem:typed-real-sort-splitting",
+      "provider_claims": [
+        "C34"
+      ],
+      "statement": "After a hidden HE completion, choose pairwise distinct old real images and designated real representatives for all retained proper quotient vertices inside a finite visible extension, preserving specified binary hidden data and literal term values.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I09",
+      "name": "lem:typed-one-source-support-per-guarded-pair",
+      "provider_module": "guarded_two_root",
+      "source_label": "lem:typed-one-source-support-per-guarded-pair",
+      "provider_claims": [
+        "C17"
+      ],
+      "statement": "Every guarded side on one old endpoint pair comes from its ONE actual irreducible closed support generated by those two endpoints, of size<=2m_typ. Its nonempty common menu is witnessed directly.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I10",
+      "name": "lem:typed-private-theta-cycle",
+      "provider_module": "guarded_two_root",
+      "source_label": "lem:typed-private-theta-cycle",
+      "provider_claims": [
+        "C22"
+      ],
+      "statement": "A cycle not confined to one private theta traverses whole original branches, with OLD source endpoint witnesses; interiors are private and direct duplicate edges merge. No new completion roots are manufactured.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I11",
+      "name": "lem:typed-two-root-complete-reflection",
+      "provider_module": "guarded_two_root",
+      "source_label": "lem:typed-two-root-complete-reflection",
+      "provider_claims": [
+        "C38"
+      ],
+      "statement": "ANY fine old atom in a guarded pair menu reflects the complete locally vetted joined two-root hidden diagram. Under HE completion the retained irreducible OLD endpoint support embeds; its ORIGINAL branch profile is therefore preserved.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I12",
+      "name": "lem:typed-idempotent-reinsert",
+      "provider_module": "guarded_old_seams",
+      "source_label": "lem:typed-idempotent-reinsert",
+      "provider_claims": [
+        "C58"
+      ],
+      "statement": "For a positive original atomic word with idempotent diversity profile e, distinct endpoints whose pair lies in E_e admit that SAME whole original word with new interiors; use E_e first and distinctness before extracting e.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I13",
+      "name": "lem:typed-simultaneous-word-insertion",
+      "provider_module": "guarded_old_seams",
+      "source_label": "lem:typed-simultaneous-word-insertion",
+      "provider_claims": [
+        "C63"
+      ],
+      "statement": "Given finitely many prescribed positive words with admissible endpoint atoms in ONE complete old base, visible SAP inserts all words simultaneously with pairwise disjoint fresh interiors, preserving every old base pair.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I14",
+      "name": "lem:typed-two-root-uniform-size",
+      "provider_module": "guarded_two_root",
+      "source_label": "lem:typed-two-root-uniform-size",
+      "provider_claims": [
+        "C30"
+      ],
+      "statement": "Locally admissible joined two-generated supports have uniformly bounded complete exact theta gadgets/root signatures; actual finite functions and positive typed words, not arbitrary syntax, are bounded.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I15",
+      "name": "lem:typed-strong-cycle-completion",
+      "provider_module": "strong_selectors",
+      "source_label": "lem:typed-strong-cycle-completion",
+      "provider_claims": [
+        "C06"
+      ],
+      "statement": "Original visible SAP upgrades semantic HOM CCO on genuine old diversity graphs to an injective completion criterion, so visible noncompletion yields one specified simple cycle with no old homomorphism.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I16",
+      "name": "lem:typed-guarded-lift-equivalence",
+      "provider_module": "guarded_old_seams",
+      "source_label": "lem:typed-guarded-lift-equivalence",
+      "provider_claims": [
+        "C14"
+      ],
+      "statement": "After the bounded actual source tests, C has a hidden HE completion iff its guarded visible lift has an injective visible completion. Binary irreducible localcover supplies reflection; higher support remains separately conditional.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I17",
+      "name": "lem:typed-joined-source-support",
+      "provider_module": "hidden_sap_readings",
+      "source_label": "lem:typed-joined-source-support",
+      "provider_claims": [
+        "C39"
+      ],
+      "statement": "A failed FULL pattern on an ACTUALLY irreducible closed source support generated by at most k old vertices is already a noncompletable source defect of size<=k*m_typ. Reducible ancestor pairs are excluded.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I18",
+      "name": "lem:typed-raw-strong-saturation",
+      "provider_module": "transition_closure",
+      "source_label": "lem:typed-raw-strong-saturation",
+      "provider_claims": [
+        "C05",
+        "C07",
+        "C08"
+      ],
+      "statement": "Old RAW/STRONG saturation and strict pinned original path injection support. Use C01 to flatten the ACTUAL macro branch words and identify the off-diagonal RAW product with their STRONG word profile.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "provider_support_claims": [
+        "C01"
+      ],
+      "provider_support_usage": "Use proved strict ancestor C01 for binary positive atomic path injectivisation with the actual endpoint fine pair frozen and aligned. This supports C07 whole-ORIGINAL-word readout, not a new exported theorem or an equality-labelled strong atom."
+    },
+    {
+      "id": "I19",
+      "name": "lem:typed-all-invariant-equivalences-raw-word",
+      "provider_module": "real_closure",
+      "source_label": "lem:typed-all-invariant-equivalences-raw-word",
+      "provider_claims": [
+        "C25",
+        "C26",
+        "C27"
+      ],
+      "statement": "Under FULL original terminal no-index-two, EVERY invariant equivalence is represented by one actual RAW word. Hence the represented exact-equivalence lattice equals the FULL invariant lattice, so its proper MIs above E_e>Id are precisely the nonzero named FULL MI coordinates used by return transport. This identification uses no distributivity.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    }
+  ],
+  "definitions": [
+    {
+      "id": "D01",
+      "name": "OLD composable macro path",
+      "statement": "P_i=Prof(w_i) is the STRONG profile of its EXACT original positive branch word, between distinct formal OLD roots. Menus D_i are attached to those literal source endpoints and satisfy D_i subset P_i.",
+      "depends_on": [],
+      "notes": "N01",
+      "source": {
+        "file": "sections/v27/16_old_idempotent_forest.tex",
+        "anchor": "\\label{lem:typed-old-gap-boundary-certificate}"
+      }
+    },
+    {
+      "id": "D02",
+      "name": "Zero-completed typed positive semigroup",
+      "statement": "S_typ is{0} disjoint union of all nonempty typed reachable profiles, retaining endpoint sort tags. Noncomposable factors multiply to zero; zero absorbs. No STRONG identity unit is adjoined.",
+      "depends_on": [],
+      "notes": "N01",
+      "source": {
+        "file": "sections/v27/16_old_idempotent_forest.tex",
+        "anchor": "\\label{lem:typed-composable-products-nonzero}"
+      }
+    },
+    {
+      "id": "D03",
+      "name": "Idempotent envelope",
+      "statement": "For nonempty same-sort e with e*e=e, E_e=Id union e is the FULL RAW exact envelope. e itself is irreflexive and is not an equivalence relation.",
+      "depends_on": [],
+      "notes": "N02",
+      "source": {
+        "file": "sections/v27/16_old_idempotent_forest.tex",
+        "anchor": "\\label{lem:typed-old-gap-boundary-certificate}"
+      }
+    },
+    {
+      "id": "D04",
+      "name": "Literal boundary certificate",
+      "statement": "For every represented proper MI J>=E_e, the two boundary OLD roots have equal named J-term values INSIDE C. These equal vertices remain in their unary-closed induced boundary support.",
+      "depends_on": [],
+      "notes": "N02",
+      "source": {
+        "file": "sections/v27/16_old_idempotent_forest.tex",
+        "anchor": "\\label{lem:typed-old-gap-boundary-certificate}"
+      }
+    },
+    {
+      "id": "D05",
+      "name": "Ordered interval forest",
+      "statement": "Leaves are original macro-letter indices. A node denotes a contiguous half-open leaf interval; child intervals partition it in order. Height counts edges from a root to a leaf; leaves have height0.",
+      "depends_on": [],
+      "notes": "N03",
+      "source": {
+        "file": "sections/v27/16_old_idempotent_forest.tex",
+        "anchor": "\\label{lem:typed-factor-path}"
+      }
+    },
+    {
+      "id": "D06",
+      "name": "Maximal stopped gap",
+      "statement": "At a node with>=3 common-idempotent children, keep first/last subtrees, record the ENTIRE intervening original interval once and STOP recursion inside it. Record its original words and boundary roots.",
+      "depends_on": [],
+      "notes": "N03",
+      "source": {
+        "file": "sections/v27/16_old_idempotent_forest.tex",
+        "anchor": "\\label{lem:typed-pruned-cycle-reconstruction}"
+      }
+    },
+    {
+      "id": "D07",
+      "name": "Retained OLD generator set",
+      "statement": "B consists of endpoints of retained original macro letters, with both old fixed-anchor endpoints added for a cycle. Deleted-gap boundary roots are already among those retained endpoints.",
+      "depends_on": [],
+      "notes": "N04",
+      "source": {
+        "file": "sections/v27/16_old_idempotent_forest.tex",
+        "anchor": "\\label{lem:typed-forest-old-anchor-bound}"
+      }
+    },
+    {
+      "id": "D08",
+      "name": "One complete old reconstruction base",
+      "statement": "A is the induced COMPLETE old visible structure on distinct selected representatives of all retained roots and any fixed old anchors. All insertion requests use this SAME A, not independently chosen root pair colours.",
+      "depends_on": [],
+      "notes": "N05",
+      "source": {
+        "file": "sections/v27/16_old_idempotent_forest.tex",
+        "anchor": "\\label{lem:typed-pruned-cycle-reconstruction}"
+      }
+    },
+    {
+      "id": "D09",
+      "name": "Fixed anchor word",
+      "statement": "One ORIGINAL whole atomic private branch of the bad cycle is retained separately. Its two OLD root endpoints and complete old pair support are retained; its exact word endpoint profile must be admissible in A.",
+      "depends_on": [],
+      "notes": "N05",
+      "source": {
+        "file": "sections/v27/16_old_idempotent_forest.tex",
+        "anchor": "\\label{lem:typed-pruned-cycle-reconstruction}"
+      }
+    },
+    {
+      "id": "D10",
+      "name": "Uniform source bounds",
+      "statement": "With s=|S_typ| and h=3s, the pruned tree has<=2^h leaves and<=2^{h+1}-1 nodes; retained roots<=2^{h+1}. A conservative cycle OLD closure bound is m_typ(2^{h+3}+4).",
+      "depends_on": [],
+      "notes": "N06",
+      "source": {
+        "file": "sections/v27/16_old_idempotent_forest.tex",
+        "anchor": "\\label{lem:typed-forest-old-anchor-bound}"
+      }
+    },
+    {
+      "id": "D11",
+      "name": "Unary-admissible bounded obstruction",
+      "statement": "An induced functionally closed OLD substructure of C which has no hidden HE completion, on at most one fixed language-dependent N_typ vertices. The conclusion is NOT for arbitrary partial total-unary inputs.",
+      "depends_on": [],
+      "notes": "N07",
+      "source": {
+        "file": "sections/v27/16_old_idempotent_forest.tex",
+        "anchor": "\\label{cor:typed-bounded-hidden}"
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "name": "Every nonempty invariant typed palette is serial and coserial",
+      "statement": "Move either endpoint of one actual palette witness by transitivity of its named sort. Thus every middle point has an incoming P and an outgoing Q witness, without assuming those two outer representatives distinct.",
+      "depends_on": [
+        "A01"
+      ],
+      "notes": "N01",
+      "scope": "nonzero",
+      "source_labels": [
+        "lem:typed-composable-products-nonzero"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C02",
+      "name": "Old SAP makes every compatible STRONG fork genuinely nonempty",
+      "statement": "Align complete old pairs xPy and yQz at their common actual y. Strongly amalgamate over that one-point complete base, keeping their outside points distinct. Diversity input pairs already separate each from y, so all three are distinct and col(x,z) lies in P*Q.",
+      "depends_on": [
+        "A01",
+        "A02",
+        "C01"
+      ],
+      "notes": "N01",
+      "scope": "nonzero",
+      "source_labels": [
+        "lem:typed-composable-products-nonzero"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C03",
+      "name": "Every contiguous actual composable interval is nonzero",
+      "statement": "Induct using C02 and compatible endpoint sorts: each partial product is an actual invariant nonempty diversity palette. Hence no subtree value of a composable positive macro word is zero. Only mismatched sort multiplication can invoke the adjoined zero.",
+      "depends_on": [
+        "I01",
+        "C02",
+        "D01",
+        "D02"
+      ],
+      "notes": "N01",
+      "scope": "nonzero",
+      "source_labels": [
+        "lem:typed-composable-products-nonzero"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C04",
+      "name": "The typed zero completion is a finite associative semigroup",
+      "statement": "Finite old palettes give finitely many typed reachable profiles. I01 gives associative compatible multiplication. For a triple with a type mismatch both groupings are zero; for a compatible triple old associativity applies. Zero is absorbing, so this is a genuine finite semigroup S_typ without needing an identity.",
+      "depends_on": [
+        "A01",
+        "I01",
+        "D02"
+      ],
+      "notes": "N01",
+      "scope": "forest",
+      "source_labels": [
+        "lem:typed-factor-path"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C05",
+      "name": "The published forest theorem is instantiated on THIS finite semigroup",
+      "statement": "Evaluate nonempty words in S_typ by C04. E01 yields an ordered factorisation tree for the actual macro word of height<=h=3|S_typ|. Leaf order, child contiguity and common idempotent values at arity>=3 are part of its contract. Receiving theorem/API adapter remains pending.",
+      "depends_on": [
+        "E01",
+        "C04",
+        "D05"
+      ],
+      "notes": "N03",
+      "scope": "forest",
+      "source_labels": [
+        "lem:typed-factor-path"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C06",
+      "name": "High-arity forest nodes have NONZERO same-sort idempotents",
+      "statement": "Every node denotes a nonempty contiguous composable interval, so C03 excludes zero. An idempotent nonzero typed state must have equal source/end sorts for e*e to compose; thus it is one actual same-sort diversity idempotent.",
+      "depends_on": [
+        "C03",
+        "C05"
+      ],
+      "notes": "N03",
+      "scope": "forest",
+      "source_labels": [
+        "lem:typed-factor-path"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C07",
+      "name": "Flatten exact branch words before passing from STRONG to RAW",
+      "statement": "For an idempotent interval concatenate its EXACT original atomic w_i. I18 C01 identifies its distinct-endpoint RAW relation with the strong product e by pinned original word injection. All remaining RAW outputs are true real equality, so the entire actual RAW relation lies in E_e=Id union e.",
+      "depends_on": [
+        "A01",
+        "A02",
+        "A07",
+        "I18",
+        "D01",
+        "D03"
+      ],
+      "notes": "N02",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-old-gap-boundary-certificate"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C08",
+      "name": "The envelope is exact before MI reconstruction is used",
+      "statement": "I04 proves E_e is FULL RAW exact from literal ww and separately gives its represented EXACT-lattice MI meet. Under A04, I19 identifies that exact-equivalence lattice with the FULL invariant lattice. Since E_e>Id, every proper MI above it is nonzero and is precisely an existing named A05 FULL MI coordinate. This explicit terminal identification is needed for the actual return/readout application; it is not inferred from I04 alone. Top has the empty-MI convention.",
+      "depends_on": [
+        "A04",
+        "A05",
+        "I04",
+        "I19",
+        "C07",
+        "D03"
+      ],
+      "notes": "N02",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-old-gap-boundary-certificate"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C09",
+      "name": "Canonical return transport yields compatible named kernels",
+      "statement": "Use as RAW macro factors the actual nonempty DIVERSITY relations P_i themselves. Each P_i is contained in the actual RAW relation of its original branch word w_i, so their RAW product is contained in the RAW relation of the whole original concatenation, hence in E_e by C07. For proper represented J>=E_e apply I07 to these SAME P_i factors. Obtain J_0=J,...,J_m=J, named adjacent quotient maps pi_i and composite identity on the SAME literal quotient. All factors are nonempty and actual.",
+      "depends_on": [
+        "A04",
+        "A05",
+        "I07",
+        "C07",
+        "C08"
+      ],
+      "notes": "N02",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-old-gap-boundary-certificate"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C10",
+      "name": "Each original source side supplies its OLD branch equation",
+      "statement": "I05 shows the root representative kernels lie below the transported J_i cuts; I06 then reflects the actual quotient-functional branch into a literal term equation on the ONE locally vetted OLD endpoint support. No new target representatives define the source equation.",
+      "depends_on": [
+        "A06",
+        "A07",
+        "I05",
+        "I06",
+        "C09"
+      ],
+      "notes": "N02",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-old-gap-boundary-certificate"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C11",
+      "name": "The same canonical intermediate coordinate is the actual seam",
+      "statement": "At shared OLD b_i, the incoming/outgoing readings in C10 denote the SAME J_i-coordinate term of that source vertex. Apply I03 to compose these literal equalities inside C, without amalgamating real supports or identifying accidental target images.",
+      "depends_on": [
+        "I03",
+        "C10"
+      ],
+      "notes": "N02",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-old-gap-boundary-certificate"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C12",
+      "name": "Identity holonomy already holds in a valid one-generated source",
+      "statement": "The composite pi_m...pi_1 in C09 is the actual identity function. Its equality to the identity is a finite named unary-term identity, so it already holds on the actual valid one-generated diagram at b_0 by A06. Substituting into C11 removes the composite.",
+      "depends_on": [
+        "A06",
+        "C09",
+        "C11"
+      ],
+      "notes": "N02",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-old-gap-boundary-certificate"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C13",
+      "name": "The OLD boundary certificate is literal before deletion",
+      "statement": "C12 gives tau_0J(b_0)=tau_mJ(b_m) as the SAME source vertex for EVERY represented proper MI J>=E_e, not merely equal target images. This is OGC.",
+      "depends_on": [
+        "C12",
+        "D04"
+      ],
+      "notes": "N02",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-old-gap-boundary-certificate"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C14",
+      "name": "Both boundary term values survive in the induced closed support",
+      "statement": "Each side of C13 is a unary term value on its OWN boundary root. Thus both remain in cl_C{b_0,b_m}; induced restriction retains their literal equality while all intermediate macro roots may be removed.",
+      "depends_on": [
+        "A05",
+        "C13",
+        "D04"
+      ],
+      "notes": "N02",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-old-gap-boundary-certificate"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C15",
+      "name": "Any hidden completion preserves those term equalities",
+      "statement": "A hidden homomorphism preserves named unary functions and literal equality. Its arbitrary actual representatives of the two retained root images therefore have equal J-classes for every J of C13. This is independent of their chosen fine pair atom.",
+      "depends_on": [
+        "C13",
+        "C14"
+      ],
+      "notes": "N02",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-old-gap-boundary-certificate"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C16",
+      "name": "The represented MI meet forces E_e in EVERY completion",
+      "statement": "I04/C08 identifies the meet of ALL these J with E_e. C15 therefore puts the real boundary pair in E_e. If there are no proper J above E_e, the exact finite lattice says E_e=Top, so the assertion is vacuous but correct.",
+      "depends_on": [
+        "C08",
+        "C15"
+      ],
+      "notes": "N02",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-old-gap-boundary-certificate"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C17",
+      "name": "Only distinct representatives turn E_e into a diversity atom in e",
+      "statement": "If the actual two boundary representatives are distinct, their fine atom cannot be logical real equality. Thus C16 membership in Id union e places it in e. Distinct formal roots alone do not give this without representative splitting.",
+      "depends_on": [
+        "A01",
+        "C16",
+        "D03"
+      ],
+      "notes": "N02",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-old-gap-boundary-certificate"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C18",
+      "name": "OLD gap boundary certificate source export",
+      "statement": "C07-C17 prove literal OGC, its survival on the two-boundary closed support and the full E_e/conditional-diversity completion conclusion. No completion coincidence or synthetic STRONG identity edge appears.",
+      "depends_on": [
+        "C13",
+        "C14",
+        "C16",
+        "C17"
+      ],
+      "notes": "N02",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-old-gap-boundary-certificate"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C19",
+      "name": "Each forest node has one contiguous ORIGINAL interval",
+      "statement": "Under A09, child intervals partition their parent in original leaf order. Every leaf remains its original macro-letter index and original branch word, not a substituted word of the same profile.",
+      "depends_on": [
+        "A09",
+        "D05"
+      ],
+      "notes": "N03",
+      "scope": "partition",
+      "source_labels": [
+        "lem:typed-pruned-cycle-reconstruction"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C20",
+      "name": "Binary nodes keep BOTH recursively pruned children",
+      "statement": "At a binary node concatenate the two child partitions at their shared OLD boundary root. Keeping both does not change the original order or omit any original macro edge.",
+      "depends_on": [
+        "C19"
+      ],
+      "notes": "N03",
+      "scope": "partition",
+      "source_labels": [
+        "lem:typed-pruned-cycle-reconstruction"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C21",
+      "name": "A high-arity node records one whole middle gap and stops there",
+      "statement": "For k>=3 common-idempotent children, recursively retain ONLY first and last children; record the one contiguous interval of children2 through k-1 and do not recurse inside it. Consequently no deletion record can be nested inside that discarded gap.",
+      "depends_on": [
+        "A09",
+        "C19",
+        "D06"
+      ],
+      "notes": "N03",
+      "scope": "partition",
+      "source_labels": [
+        "lem:typed-pruned-cycle-reconstruction"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C22",
+      "name": "Retained leaves and maximal gaps partition every macro edge once",
+      "statement": "Induct down the tree using leaves, C20 binary concatenation and C21 first/middle/last decomposition. Recorded intervals are pairwise disjoint, disjoint from retained leaves and together cover every original edge exactly once in order.",
+      "depends_on": [
+        "C19",
+        "C20",
+        "C21"
+      ],
+      "notes": "N03",
+      "scope": "partition",
+      "source_labels": [
+        "lem:typed-pruned-cycle-reconstruction"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C23",
+      "name": "Every deleted-gap boundary is an endpoint of a retained leaf",
+      "statement": "Both endpoints of every retained subtree persist recursively. At a wide node the left gap boundary is the last root of its first retained subtree and the right boundary is the first root of its last retained subtree. Hence they are OLD endpoints of retained original letters, with no extra completion-only vertex.",
+      "depends_on": [
+        "C20",
+        "C21"
+      ],
+      "notes": "N03",
+      "scope": "partition",
+      "source_labels": [
+        "lem:typed-pruned-cycle-reconstruction"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C24",
+      "name": "A positive number of common-idempotent children multiplies to e",
+      "statement": "At a k>=3 node, all child values equal one nonzero idempotent e. The deleted middle has k-2>=1 children, so its product is e by induction using e*e=e. No empty gap or logical identity is inserted.",
+      "depends_on": [
+        "A09",
+        "D06"
+      ],
+      "notes": "N03",
+      "scope": "partition",
+      "source_labels": [
+        "lem:typed-pruned-cycle-reconstruction"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C25",
+      "name": "The gap retains its WHOLE ORIGINAL atomic word",
+      "statement": "Associativity and P_i=Prof(w_i) show the concatenation of all ORIGINAL w_i in a C24 gap has profile e. Recording an unrelated word with the same value would lose the exact original specified cycle labels and is not the construction.",
+      "depends_on": [
+        "A07",
+        "I01",
+        "C22",
+        "C24",
+        "D01"
+      ],
+      "notes": "N03",
+      "scope": "partition",
+      "source_labels": [
+        "lem:typed-pruned-cycle-reconstruction"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C26",
+      "name": "Actual forest application supplies all structural pruning premises",
+      "statement": "The tree C05 is ordered/contiguous, has no unary internal nodes and has nonzero common idempotents by C06. It therefore discharges A09 for the actual macro word; the partition proof itself needs only the supplied finite tree, not the external existence theorem.",
+      "depends_on": [
+        "C05",
+        "C06"
+      ],
+      "notes": "N03",
+      "scope": "forest",
+      "source_labels": [
+        "lem:typed-factor-path"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C27",
+      "name": "The purely structural pruning conclusions are explicit",
+      "statement": "C22/C23/C25 give parts(i)/(ii) of pruned-cycle reconstruction for any supplied valid forest: disjoint original intervals, old boundaries and exact original word profiles. The visible reconstruction part is proved separately from these finite combinatorics.",
+      "depends_on": [
+        "C22",
+        "C23",
+        "C25"
+      ],
+      "notes": "N03",
+      "scope": "partition",
+      "source_labels": [
+        "lem:typed-pruned-cycle-reconstruction"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C28",
+      "name": "Pruning leaves a binary tree of the SAME bounded height",
+      "statement": "Each retained internal node has exactly two retained children, whether originally binary or high-arity. Its height is<=h from C05. By elementary binary-tree induction it has<=2^h leaves and<=2^{h+1}-1 nodes.",
+      "depends_on": [
+        "C05",
+        "C20",
+        "C21"
+      ],
+      "notes": "N04",
+      "scope": "forest",
+      "source_labels": [
+        "lem:typed-factor-path"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C29",
+      "name": "Twice the leaf count bounds the retained OLD path roots",
+      "statement": "Let B be endpoints of retained original macro letters. There are at most2*2^h=2^{h+1} roots. Gaps may separate retained letters, so leafcount+1 is not generally valid. C23 includes every gap boundary and also both original outer endpoints.",
+      "depends_on": [
+        "C23",
+        "C28",
+        "D07"
+      ],
+      "notes": "N04",
+      "scope": "old_support",
+      "source_labels": [
+        "lem:typed-factor-path"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C30",
+      "name": "Every retained letter support lies in the induced OLD closure",
+      "statement": "I09 says the complete locally vetted source support of each retained side is generated by its two OLD endpoints. Thus it lies in cl_C(B), retaining its complete induced data by restriction; no independently chosen representative adds an old generator.",
+      "depends_on": [
+        "A07",
+        "I09",
+        "C29"
+      ],
+      "notes": "N04",
+      "scope": "old_support",
+      "source_labels": [
+        "lem:typed-factor-path"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C31",
+      "name": "Every deleted gap retains its literal coordinate certificate",
+      "statement": "The gap is an actual positive source-supported interval of idempotent value by C24-C26. C18 supplies all its boundary MI-term equalities, and C23 puts both boundary roots in B. Their term values and identities therefore survive in cl_C(B).",
+      "depends_on": [
+        "A06",
+        "A07",
+        "C18",
+        "C23",
+        "C24",
+        "C26",
+        "C29"
+      ],
+      "notes": "N04",
+      "scope": "old_support",
+      "source_labels": [
+        "lem:typed-factor-path"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C32",
+      "name": "A hypothetical completion is split over ONE complete old base",
+      "statement": "Embed the finite actual target in the full hidden expansion of one finite old visible structure by choosing preimages of its finitely many proper quotient vertices. Apply I08 to the retained source completion. Choose distinct real representatives of all retained OLD roots, and take their complete old induced structure A as common base.",
+      "depends_on": [
+        "A01",
+        "A02",
+        "A05",
+        "I08",
+        "C29"
+      ],
+      "notes": "N05",
+      "scope": "reconstruction",
+      "source_labels": [
+        "lem:typed-factor-path"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C33",
+      "name": "Retained side atoms still lie in their ORIGINAL branch profiles",
+      "statement": "Their old irreducible supports remain by C30 and embed inducedly under any HE completion. I11 therefore reflects each complete guarded menu D_i, so its actual fine root atom is in D_i subset the ORIGINAL P_i. Splitting C32 preserves all those hidden readings.",
+      "depends_on": [
+        "I11",
+        "C30",
+        "C32"
+      ],
+      "notes": "N05",
+      "scope": "reconstruction",
+      "source_labels": [
+        "lem:typed-factor-path"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C34",
+      "name": "Gap boundaries have the admissible distinct atom required for reinsertion",
+      "statement": "C31 survives the hypothetical completion, so C16 gives E_e at each gap. C32 makes its boundary representatives distinct; C17 yields their fine atom in e. This step is invalid without both the literal OLD certificate and actual distinctness.",
+      "depends_on": [
+        "C16",
+        "C17",
+        "C31",
+        "C32"
+      ],
+      "notes": "N05",
+      "scope": "reconstruction",
+      "source_labels": [
+        "lem:typed-factor-path"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C35",
+      "name": "Insert the entire ORIGINAL retained and gap words simultaneously",
+      "statement": "Use I12 on each gap WHOLE original atomic word from C25, with C34 boundary atom. Retained w_i have C33 endpoint membership. Apply I13 ONCE to this finite list over the SAME complete A, preserving all base colours and making every new interior fresh and disjoint.",
+      "depends_on": [
+        "I12",
+        "I13",
+        "C25",
+        "C32",
+        "C33",
+        "C34"
+      ],
+      "notes": "N05",
+      "scope": "reconstruction",
+      "source_labels": [
+        "lem:typed-factor-path"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C36",
+      "name": "Compressed guarded macro path source export",
+      "statement": "C28-C35 give<=2^h retained letters,<=2^{h+1} OLD roots, their induced closure with retained supports/certificates and reconstruction of the ORIGINAL path in every completion. The closure has<=m_typ2^{h+1} vertices by I02.",
+      "depends_on": [
+        "I02",
+        "C29",
+        "C30",
+        "C31",
+        "C35"
+      ],
+      "notes": "N04",
+      "scope": "forest",
+      "source_labels": [
+        "lem:typed-factor-path"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C37",
+      "name": "The reconstruction anchor condition is a separate explicit premise",
+      "statement": "In the conditional cycle theorem A08 supplies the original fixed anchor endpoint atom in its OWN original word profile, in addition to retained P_i and gap E_e conditions. None of those latter conditions alone implies anchor admissibility.",
+      "depends_on": [
+        "A08",
+        "D08",
+        "D09"
+      ],
+      "notes": "N05",
+      "scope": "reconstruction",
+      "source_labels": [
+        "lem:typed-pruned-cycle-reconstruction"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C38",
+      "name": "One insertion list includes retained words, maximal gaps AND anchor",
+      "statement": "C27 partitions the complementary path. By A08 all retained words have their required atoms; distinct gap endpoints turn E_e into e by C17, and C37 handles the anchor. Apply I13 ONCE to this entire finite list over A; no separately picked base cross colours are reconciled later.",
+      "depends_on": [
+        "A02",
+        "A08",
+        "I13",
+        "C17",
+        "C27",
+        "C37"
+      ],
+      "notes": "N05",
+      "scope": "reconstruction",
+      "source_labels": [
+        "lem:typed-pruned-cycle-reconstruction"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C39",
+      "name": "The recreated atomic cycle is genuinely SIMPLE and has exact labels",
+      "statement": "The retained root points are pairwise distinct by A08. The C22 partition uses each original edge once, while all inserted interiors from C38 are new and mutually disjoint. Erased old macro roots reappear only as internal positions of ONE whole gap word. Thus the concatenation and anchor form the original specified SIMPLE atomic cycle with EXACT original sequential labels.",
+      "depends_on": [
+        "A08",
+        "C22",
+        "C23",
+        "C25",
+        "C38"
+      ],
+      "notes": "N05",
+      "scope": "reconstruction",
+      "source_labels": [
+        "lem:typed-pruned-cycle-reconstruction"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C40",
+      "name": "Partition and simultaneous cycle reconstruction source export",
+      "statement": "C27 proves parts(i)/(ii), and C37-C39 prove part(iii) under its explicit complete-base/anchor premise. Only the latter uses visible SAP. No condition is imposed on new fine cross colours between distinct word interiors.",
+      "depends_on": [
+        "C27",
+        "C37",
+        "C38",
+        "C39"
+      ],
+      "notes": "N05",
+      "scope": "reconstruction",
+      "source_labels": [
+        "lem:typed-pruned-cycle-reconstruction"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C41",
+      "name": "A noninternal bad cycle has OLD source macro endpoints",
+      "statement": "I10 contracts whole selected original private branches. Choose one whole original branch as fixed anchor; the complement has one designated witness per OLD hidden vertex, so simplicity makes its macro OLD roots pairwise distinct along that path.",
+      "depends_on": [
+        "A07",
+        "I10",
+        "D09"
+      ],
+      "notes": "N06",
+      "scope": "old_support",
+      "source_labels": [
+        "lem:typed-forest-old-anchor-bound"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C42",
+      "name": "Add only retained endpoint generators and fixed anchor roots",
+      "statement": "Take endpoints B of retained macro letters C29 and add both OLD anchor roots. C23 already covers every deleted interval boundary. A conservative bound2^{h+3}+4 allows all these root/node bookkeeping requests without introducing new old witnesses.",
+      "depends_on": [
+        "C23",
+        "C28",
+        "C29",
+        "C41",
+        "D07",
+        "D10"
+      ],
+      "notes": "N06",
+      "scope": "old_support",
+      "source_labels": [
+        "lem:typed-forest-old-anchor-bound"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C43",
+      "name": "Source supports and all term certificates are inside cl_C(B)",
+      "statement": "Each retained side support is generated by its endpoints C30; every deleted certificate is a unary term equality on its own two old boundary roots C31. Unary closure includes all these literal OLD values, even when supports share no real point.",
+      "depends_on": [
+        "C30",
+        "C31",
+        "C42"
+      ],
+      "notes": "N06",
+      "scope": "old_support",
+      "source_labels": [
+        "lem:typed-forest-old-anchor-bound"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C44",
+      "name": "Unary closure yields the stated uniform OLD anchor bound",
+      "statement": "By A06/I02, closure is the union of at most|B| singleton closures, each size<=m_typ. C42 gives |cl_C(B)|<=m_typ(2^{h+3}+4). The induced OLD support is not claimed complete or completable.",
+      "depends_on": [
+        "A06",
+        "I02",
+        "C42",
+        "C43"
+      ],
+      "notes": "N06",
+      "scope": "old_support",
+      "source_labels": [
+        "lem:typed-forest-old-anchor-bound"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C45",
+      "name": "Uniform original hidden anchor support source export",
+      "statement": "C41-C44 prove all anchor clauses and OAB: original roots, their complete retained supports, literal boundary equalities and uniform closed size. No term vertex created by a later visible completion counts as an OLD anchor.",
+      "depends_on": [
+        "C43",
+        "C44"
+      ],
+      "notes": "N06",
+      "scope": "old_support",
+      "source_labels": [
+        "lem:typed-forest-old-anchor-bound"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C46",
+      "name": "Unary admissibility supplies every singleton gate for the obstruction theorem",
+      "statement": "In arbitrary A06 C, every one-generated induced member is already actual and bounded by I02. Thus all actual unary identities hold from the start; there is no malformed one-root case assigned an unjustified uniform bound.",
+      "depends_on": [
+        "A06",
+        "I02"
+      ],
+      "notes": "N07",
+      "scope": "bounded_obstruction",
+      "source_labels": [
+        "cor:typed-bounded-hidden"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C47",
+      "name": "A failed local joined complete pattern is already a bounded obstruction",
+      "statement": "Use I17 on each actual displayed unary/binary joining support. It has at most2m_typ old vertices, and a failed full induced pattern rules out HE completion on that induced closed support. A fixed higher-arity case would use at most r*m_typ plus its separate A10 contract. Reducible ancestor supports are excluded.",
+      "depends_on": [
+        "I17",
+        "C46"
+      ],
+      "notes": "N07",
+      "scope": "bounded_obstruction",
+      "source_labels": [
+        "cor:typed-bounded-hidden"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C48",
+      "name": "After local tests, each reached pair menu is directly nonempty",
+      "statement": "For the remaining case all joined local checks pass, satisfying A07. I09 gives a common actual fine witness for all profiles on one old pair. If an implementation encounters a genuine incompatible pair menu, its bounded old endpoint support is already rejected by C47; no global completion is assumed.",
+      "depends_on": [
+        "I09",
+        "C47"
+      ],
+      "notes": "N07",
+      "scope": "bounded_obstruction",
+      "source_labels": [
+        "cor:typed-bounded-hidden"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C49",
+      "name": "Hidden noncompletion transfers to the guarded OLD visible lift",
+      "statement": "I16 gives completion equivalence after these source tests. Thus noncompletion of C implies no injective old visible completion of G_typ(C). The latter has only actual diversity atoms; duplicate same-pair direct edges agree by its nonempty menu and are merged. Root signature identities are positive-menu consequences, not extra equality edges.",
+      "depends_on": [
+        "A01",
+        "A06",
+        "I16",
+        "C48"
+      ],
+      "notes": "N07",
+      "scope": "bounded_obstruction",
+      "source_labels": [
+        "cor:typed-bounded-hidden"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C50",
+      "name": "Original HOM CCO plus SAP produces one genuinely bad simple cycle",
+      "statement": "Apply I15 in A01/A02/A03 to the genuine old diversity lift C49. If every specified simple cycle had a homomorphism, the whole lift would have an injective completion, contradiction. Hence some specified simple cycle has NO old homomorphism.",
+      "depends_on": [
+        "A01",
+        "A02",
+        "A03",
+        "I15",
+        "C49"
+      ],
+      "notes": "N07",
+      "scope": "bounded_obstruction",
+      "source_labels": [
+        "cor:typed-bounded-hidden"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C51",
+      "name": "An internal-template bad cycle has bounded OLD anchor support",
+      "statement": "A cycle confined to one fixed theta has old endpoints supported by their complete local joined diagram; I14 bounds its finite template/root data. Retain the corresponding bounded OLD closed source support. Any HE completion would preserve its exact pair menu and permit its same private branches by I13, contradicting the bad cycle.",
+      "depends_on": [
+        "I11",
+        "I13",
+        "I14",
+        "C47",
+        "C50"
+      ],
+      "notes": "N07",
+      "scope": "bounded_obstruction",
+      "source_labels": [
+        "cor:typed-bounded-hidden"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C52",
+      "name": "A noninternal bad cycle admits the bounded OLD forest support",
+      "statement": "For a noninternal cycle C41 gives its fixed anchor and actual composable complementary path. Instantiate C05 forest, prune and apply C45. Obtain an induced OLD closed support with size<=m_typ(2^{3|S_typ|+3}+4) retaining the relevant root supports and literal gap certificates.",
+      "depends_on": [
+        "C05",
+        "C41",
+        "C45",
+        "C50"
+      ],
+      "notes": "N07",
+      "scope": "bounded_obstruction",
+      "source_labels": [
+        "cor:typed-bounded-hidden"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C53",
+      "name": "A hypothetical retained hidden completion has one real covering target",
+      "statement": "Assume the bounded OLD support from C52 has a hidden HE completion. Its finite target can be embedded into a full finite old expansion by choosing finitely many real preimages. Apply I08 and retain one complete old base on its distinct representative roots, preserving all displayed old hidden readings and literal unary identities.",
+      "depends_on": [
+        "I08",
+        "C32",
+        "C52"
+      ],
+      "notes": "N07",
+      "scope": "bounded_obstruction",
+      "source_labels": [
+        "cor:typed-bounded-hidden"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C54",
+      "name": "The retained anchor support forces the ORIGINAL anchor profile",
+      "statement": "Both anchor endpoints are retained by C42. Their one actual complete irreducible OLD pair support, generated by those endpoints, lies in the induced closed support by I09. I11 reflects its exact menu under the hypothetical completion; that menu is contained in the fixed ORIGINAL anchor branch profile. Thus the explicit A08 anchor premise is discharged.",
+      "depends_on": [
+        "I09",
+        "I11",
+        "C42",
+        "C53"
+      ],
+      "notes": "N07",
+      "scope": "bounded_obstruction",
+      "source_labels": [
+        "cor:typed-bounded-hidden"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C55",
+      "name": "All retained and deleted conditions are forced in that SAME base",
+      "statement": "Retained side supports give their original P_i by C33. OLD certificates survived by C43 and force E_e by C16, then e by actual distinctness C53. C54 gives the fixed anchor. Thus every condition of A08 is discharged on one actual complete base, without selecting independent pair colours.",
+      "depends_on": [
+        "C16",
+        "C33",
+        "C43",
+        "C53",
+        "C54"
+      ],
+      "notes": "N07",
+      "scope": "bounded_obstruction",
+      "source_labels": [
+        "cor:typed-bounded-hidden"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C56",
+      "name": "Reconstruct the EXACT original forbidden cycle to get a contradiction",
+      "statement": "C40 applied to C55 inserts retained original words, maximal deleted whole words and the fixed anchor simultaneously. C39 gives the original SIMPLE cycle and its original atomic labels, now colour-preservingly realized, contradicting C50. Hence the retained induced OLD support had no hidden completion.",
+      "depends_on": [
+        "C39",
+        "C40",
+        "C50",
+        "C55"
+      ],
+      "notes": "N07",
+      "scope": "bounded_obstruction",
+      "source_labels": [
+        "cor:typed-bounded-hidden"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C57",
+      "name": "One fixed N_typ covers every obstruction branch",
+      "statement": "Take the maximum of the uniform local-pattern bound C47, the finite single-template bound C51 and the forest bound C52. All depend only on the fixed terminal language/profile semigroup, not the original C or bad-cycle length. C56 proves noncompletion for the long branch.",
+      "depends_on": [
+        "C47",
+        "C51",
+        "C52",
+        "C56",
+        "D11"
+      ],
+      "notes": "N07",
+      "scope": "bounded_obstruction",
+      "source_labels": [
+        "cor:typed-bounded-hidden"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C58",
+      "name": "Typed bounded hidden obstruction source export",
+      "statement": "Every noncompletable UNARY-ADMISSIBLE finite functionally closed partial C has an induced closed noncompletable OLD substructure of size<=N_typ by C46-C57. This is the binary theorem; the finite-arity variant remains separately conditional on A10.",
+      "depends_on": [
+        "C46",
+        "C47",
+        "C51",
+        "C56",
+        "C57"
+      ],
+      "notes": "N07",
+      "scope": "bounded_obstruction",
+      "source_labels": [
+        "cor:typed-bounded-hidden"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C59",
+      "name": "Completion coincidences cannot create a deleted-gap seam",
+      "statement": "A reducible source may identify two distinct old vertices in a HE target. Replacing them by a common intermediate term would add an OLD equation not present in C. C11-C14 compose only literal source terms and then restrict them; target equality plays no role.",
+      "depends_on": [
+        "C11",
+        "C14"
+      ],
+      "notes": "N08",
+      "scope": "scope",
+      "source_labels": [
+        "lem:typed-old-gap-boundary-certificate"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C60",
+      "name": "Do not replace an idempotent envelope by the SAP monolith",
+      "statement": "Even if e lies above the least strong idempotent, its valid gap certificate only forces E_e=Id union e. It does not force the generally finer monolith L. The reconstruction uses exactly E_e and e, never an unsupported L-equality.",
+      "depends_on": [
+        "D03",
+        "C16",
+        "C17"
+      ],
+      "notes": "N08",
+      "scope": "scope",
+      "source_labels": [
+        "lem:typed-old-gap-boundary-certificate"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C61",
+      "name": "A formal diversity palette is never a reflexive equivalence",
+      "statement": "Nonempty e consists of irreflexive same-sort atoms. The RAW envelope E_e separately includes actual Id; membership in it becomes a diversity atom in e ONLY after distinct representatives. Omitting this distinction would invalidate gap reconstruction.",
+      "depends_on": [
+        "D03",
+        "C08",
+        "C17"
+      ],
+      "notes": "N08",
+      "scope": "scope",
+      "source_labels": [
+        "lem:typed-old-gap-boundary-certificate"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C62",
+      "name": "Never recurse into a recorded deleted middle interval",
+      "statement": "If deletion were recorded both at a wide ancestor and inside its discarded child, the records would overlap and count original macro edges more than once. C21 explicitly stops recursion there, which is essential for C22 exact partition and C39 simple reconstruction.",
+      "depends_on": [
+        "C21",
+        "C22",
+        "C39"
+      ],
+      "notes": "N08",
+      "scope": "scope",
+      "source_labels": [
+        "lem:typed-pruned-cycle-reconstruction"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C63",
+      "name": "Retained root counts may be twice the leaf count",
+      "statement": "Deleted gaps can separate retained letters, so their endpoints need not form one consecutive path. Count at most two OLD roots per retained letter, including both gap boundaries; leafcount+1 can be too small. No completion vertex is introduced to close the count.",
+      "depends_on": [
+        "C23",
+        "C29"
+      ],
+      "notes": "N08",
+      "scope": "scope",
+      "source_labels": [
+        "lem:typed-factor-path"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C64",
+      "name": "The fixed anchor hypothesis cannot be dropped",
+      "statement": "Endpoint atoms allowed for the complementary retained path and deleted gaps may fail the fixed anchor profile. C37/C54 retain and discharge this independent requirement; C38 would not otherwise reconstruct the original bad cycle.",
+      "depends_on": [
+        "C37",
+        "C54"
+      ],
+      "notes": "N08",
+      "scope": "scope",
+      "source_labels": [
+        "lem:typed-pruned-cycle-reconstruction"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C65",
+      "name": "Whole ORIGINAL words are required, not interchangeable profiles",
+      "statement": "A profile can have several different atomic word presentations. Substituting another word with the same value might realize a different cycle and yield no contradiction to the original bad specified cycle. C25/C35 preserve exact original sequences.",
+      "depends_on": [
+        "C25",
+        "C35",
+        "C39"
+      ],
+      "notes": "N08",
+      "scope": "scope",
+      "source_labels": [
+        "lem:typed-pruned-cycle-reconstruction"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C66",
+      "name": "One common base is needed for all insertions",
+      "statement": "Independently chosen realizations could assign incompatible old pair colours or collide new interiors. I13/C38 use ONE already complete base and preserve all of it, while cross colours between newly inserted distinct interiors remain freely whatever the old SAP amalgam supplies.",
+      "depends_on": [
+        "I13",
+        "C35",
+        "C38"
+      ],
+      "notes": "N08",
+      "scope": "scope",
+      "source_labels": [
+        "lem:typed-pruned-cycle-reconstruction"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C67",
+      "name": "Arbitrary total-unary partial sources invalidate the uniform bound",
+      "statement": "Long malformed inverse-transition cycles are one-generated irreducible and noncompletable, with no proper nonempty closed substructure. They fail A06. Therefore no fixed N_typ can be claimed for all finite total-unary partial inputs.",
+      "depends_on": [
+        "C46",
+        "D11"
+      ],
+      "notes": "N08",
+      "scope": "scope",
+      "source_labels": [
+        "cor:typed-bounded-hidden"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C68",
+      "name": "The forest theorem is an exposed external receiving obligation",
+      "statement": "E01 is the precise published finite-semigroup height input already cited by the manuscript, newly made explicit in this package. No verified Lean declaration/encoding adapter is asserted. It adds ONE forest receiving obligation to the unchanged THREE HN and TWO HKN obligations; total six.",
+      "depends_on": [
+        "E01",
+        "C05"
+      ],
+      "notes": "N08",
+      "scope": "scope",
+      "source_labels": [
+        "lem:typed-factor-path"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C69",
+      "name": "The literal 2007 citation has a monoid/semigroup wording issue",
+      "statement": "The source bibliography cites arxiv0710.5130, whose abstract uses finite semigroups but displayed theorem says finite monoids. E01 uses the later2008 finite-SEMIGROUP Theorem1, retaining the needed weaker3|S| bound. The typed zero completion need not have a global unit, so blindly applying a monoid-only API would be invalid or change the bound.",
+      "depends_on": [
+        "E01",
+        "C04"
+      ],
+      "notes": "N08",
+      "scope": "scope",
+      "source_labels": [
+        "lem:typed-factor-path"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C70",
+      "name": "Finite diagnostics do not prove the published forest theorem",
+      "statement": "The controls enumerate bounded valid trees and small semigroup words, verify stopped-gap partition, exact original labels, OLD boundary persistence, source-term transport and finite simple-cycle assembly. They do not prove arbitrary forest existence/height or infinite SAP/CCO. E01 remains external.",
+      "depends_on": [
+        "C05",
+        "C22",
+        "C39",
+        "C58"
+      ],
+      "notes": "N08",
+      "scope": "scope",
+      "source_labels": [
+        "cor:typed-bounded-hidden"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C71",
+      "name": "Higher-support realization keeps its separate interface",
+      "statement": "Binary pair reflection and original SAP injection reconstruct only binary old diagrams. A conditional higher-arity conclusion must retain complete old higher-support factors and the separate support-normal preservation/reflection premise A10; it is not proved from pair shadows.",
+      "depends_on": [
+        "A10",
+        "C58"
+      ],
+      "notes": "N08",
+      "scope": "scope",
+      "source_labels": [
+        "cor:typed-bounded-hidden"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C72",
+      "name": "Empty represented MI families and short paths are covered",
+      "statement": "When E_e=Top, C16 uses an empty equality family. A one-letter macro path needs no deletion and a height0 leaf has retained endpoints. Binary forest nodes and wide nodes with k=3 (one middle child) satisfy the same partition induction. No empty original macro word is assumed.",
+      "depends_on": [
+        "C16",
+        "C21",
+        "C24",
+        "C28"
+      ],
+      "notes": "N08",
+      "scope": "scope",
+      "source_labels": [
+        "lem:typed-factor-path"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C73",
+      "name": "Induced OLD restriction is not itself a completion",
+      "statement": "The support C45 can remain partial and noncompletable; that is the intended conclusion C56. Its source literals persist under induced restriction, without filling absent relations or assuming global C has a completion to construct the certificate.",
+      "depends_on": [
+        "C14",
+        "C45",
+        "C56"
+      ],
+      "notes": "N08",
+      "scope": "scope",
+      "source_labels": [
+        "lem:typed-forest-old-anchor-bound"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C74",
+      "name": "Earlier source qualifications and public boundaries remain",
+      "statement": "All frozen TeX hashes remain unchanged; the TV1 guarded/RAW repair is retained in the B057 provider and no false full RAW equality for diversity D is used here. Earlier B047 actual/FULL-sector and B048 higher-support gates remain. This is private human preparation, not Lean/global certification, and public Work/CI/policy remain untouched.",
+      "depends_on": [
+        "C18",
+        "C58",
+        "C68",
+        "C71"
+      ],
+      "notes": "N08",
+      "scope": "scope",
+      "source_labels": [
+        "cor:typed-bounded-hidden"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    }
+  ],
+  "source_result_files": [
+    "sections/v27/16_old_idempotent_forest.tex"
+  ],
+  "exports": [
+    {
+      "source_label": "lem:typed-old-gap-boundary-certificate",
+      "claims": [
+        "C18"
+      ]
+    },
+    {
+      "source_label": "lem:typed-factor-path",
+      "claims": [
+        "C36"
+      ]
+    },
+    {
+      "source_label": "lem:typed-composable-products-nonzero",
+      "claims": [
+        "C03"
+      ]
+    },
+    {
+      "source_label": "lem:typed-pruned-cycle-reconstruction",
+      "claims": [
+        "C40"
+      ]
+    },
+    {
+      "source_label": "lem:typed-forest-old-anchor-bound",
+      "claims": [
+        "C45"
+      ]
+    },
+    {
+      "source_label": "cor:typed-bounded-hidden",
+      "claims": [
+        "C58"
+      ]
+    }
+  ],
+  "auxiliary_exports": [
+    {
+      "source_label": "eq:typed-old-gap-certificate",
+      "claims": [
+        "C13"
+      ],
+      "source": {
+        "file": "sections/v27/16_old_idempotent_forest.tex",
+        "anchor": "\\label{eq:typed-old-gap-certificate}"
+      }
+    },
+    {
+      "source_label": "eq:typed-forest-old-anchor-bound",
+      "claims": [
+        "C44"
+      ],
+      "source": {
+        "file": "sections/v27/16_old_idempotent_forest.tex",
+        "anchor": "\\label{eq:typed-forest-old-anchor-bound}"
+      }
+    }
+  ],
+  "source_files": [
+    {
+      "file": "main.tex",
+      "git_blob": "df7370f12a248732db9723c3b3c02d4a05ee0eec"
+    },
+    {
+      "file": "sections/terminal_invariant_raw_exact.tex",
+      "git_blob": "af0064c672f332049209e142a585bc62540954b4"
+    },
+    {
+      "file": "sections/typed_strong_domains.tex",
+      "git_blob": "75d584069ce802c62d66104a852a3649fc082f1d"
+    },
+    {
+      "file": "sections/v27/07_typed_raw_strong_transition.tex",
+      "git_blob": "6dc7e4c7aa452b179e95cc502b4daf4d2b6592d9"
+    },
+    {
+      "file": "sections/v27/10_typed_unary_terms_return.tex",
+      "git_blob": "7edb9833681c84ab9e15918a004137d7f2c47258"
+    },
+    {
+      "file": "sections/v27/13_actual_hidden_sap_readings.tex",
+      "git_blob": "9b01d7ebe43b4df87823c1127f101de49c2738c5"
+    },
+    {
+      "file": "sections/v27/14_guarded_source_positive.tex",
+      "git_blob": "9936dcb306b2c10d87cd8038014fee019bb7cc53"
+    },
+    {
+      "file": "sections/v27/15_guarded_reflection_old_seams.tex",
+      "git_blob": "15f208adcc2740bf5bb495164e012e9d9894a66f"
+    },
+    {
+      "file": "sections/v27/16_old_idempotent_forest.tex",
+      "git_blob": "b96c51e5f950dea05911438e6022d35e89f5695e"
+    }
+  ],
+  "dependency_firewalls": [
+    {
+      "claims": [
+        "C01",
+        "C02",
+        "C03"
+      ],
+      "forbid": [
+        "A03",
+        "A04",
+        "A05",
+        "A06",
+        "A07",
+        "A08",
+        "A09",
+        "A10",
+        "E01",
+        "I02",
+        "I03",
+        "I04",
+        "I05",
+        "I06",
+        "I07",
+        "I08",
+        "I09",
+        "I10",
+        "I11",
+        "I12",
+        "I13",
+        "I14",
+        "I15",
+        "I16",
+        "I17",
+        "I18",
+        "I19",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40",
+        "C41",
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46",
+        "C47",
+        "C48",
+        "C49",
+        "C50",
+        "C51",
+        "C52",
+        "C53",
+        "C54",
+        "C55",
+        "C56",
+        "C57",
+        "C58",
+        "C59",
+        "C60",
+        "C61",
+        "C62",
+        "C63",
+        "C64",
+        "C65",
+        "C66",
+        "C67",
+        "C68",
+        "C69",
+        "C70",
+        "C71",
+        "C72",
+        "C73",
+        "C74"
+      ]
+    },
+    {
+      "claims": [
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24"
+      ],
+      "forbid": [
+        "A01",
+        "A02",
+        "A03",
+        "A04",
+        "A05",
+        "A06",
+        "A07",
+        "A08",
+        "A10",
+        "E01",
+        "I01",
+        "I02",
+        "I03",
+        "I04",
+        "I05",
+        "I06",
+        "I07",
+        "I08",
+        "I09",
+        "I10",
+        "I11",
+        "I12",
+        "I13",
+        "I14",
+        "I15",
+        "I16",
+        "I17",
+        "I18",
+        "I19",
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40",
+        "C41",
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46",
+        "C47",
+        "C48",
+        "C49",
+        "C50",
+        "C51",
+        "C52",
+        "C53",
+        "C54",
+        "C55",
+        "C56",
+        "C57",
+        "C58",
+        "C59",
+        "C60",
+        "C61",
+        "C62",
+        "C63",
+        "C64",
+        "C65",
+        "C66",
+        "C67",
+        "C68",
+        "C69",
+        "C70",
+        "C71",
+        "C72",
+        "C73",
+        "C74"
+      ]
+    },
+    {
+      "claims": [
+        "C27"
+      ],
+      "forbid": [
+        "E01",
+        "C05",
+        "C06",
+        "C26"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "T01",
+      "name": "Positive typed nonzero algebra",
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Use literal OLD coordinate certificates, actual full RAW E_e envelopes and distinct representatives before inferring diversity e. Prune only first/last idempotent children and STOP inside each whole deleted middle interval; preserve a disjoint ordered partition of the EXACT ORIGINAL branch words. All insertions share ONE complete old base and the fixed anchor profile is explicit. Unary admissibility, actual irreducible supports and optional higher-support gates remain. The finite-semigroup forest theorem is an explicit sixth receiving obligation, not a proved local Lean API."
+    },
+    {
+      "id": "T02",
+      "name": "Literal OLD idempotent gap certificate",
+      "claims": [
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Use literal OLD coordinate certificates, actual full RAW E_e envelopes and distinct representatives before inferring diversity e. Prune only first/last idempotent children and STOP inside each whole deleted middle interval; preserve a disjoint ordered partition of the EXACT ORIGINAL branch words. All insertions share ONE complete old base and the fixed anchor profile is explicit. Unary admissibility, actual irreducible supports and optional higher-support gates remain. The finite-semigroup forest theorem is an explicit sixth receiving obligation, not a proved local Lean API."
+    },
+    {
+      "id": "T03",
+      "name": "External forest and stopped interval partition",
+      "claims": [
+        "C05",
+        "C06",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29"
+      ],
+      "depends_on": [
+        "T01"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Use literal OLD coordinate certificates, actual full RAW E_e envelopes and distinct representatives before inferring diversity e. Prune only first/last idempotent children and STOP inside each whole deleted middle interval; preserve a disjoint ordered partition of the EXACT ORIGINAL branch words. All insertions share ONE complete old base and the fixed anchor profile is explicit. Unary admissibility, actual irreducible supports and optional higher-support gates remain. The finite-semigroup forest theorem is an explicit sixth receiving obligation, not a proved local Lean API."
+    },
+    {
+      "id": "T04",
+      "name": "Retained source path and simultaneous original words",
+      "claims": [
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36"
+      ],
+      "depends_on": [
+        "T02",
+        "T03"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Use literal OLD coordinate certificates, actual full RAW E_e envelopes and distinct representatives before inferring diversity e. Prune only first/last idempotent children and STOP inside each whole deleted middle interval; preserve a disjoint ordered partition of the EXACT ORIGINAL branch words. All insertions share ONE complete old base and the fixed anchor profile is explicit. Unary admissibility, actual irreducible supports and optional higher-support gates remain. The finite-semigroup forest theorem is an explicit sixth receiving obligation, not a proved local Lean API."
+    },
+    {
+      "id": "T05",
+      "name": "Conditional simple-cycle reconstruction",
+      "claims": [
+        "C37",
+        "C38",
+        "C39",
+        "C40"
+      ],
+      "depends_on": [
+        "T02",
+        "T03"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Use literal OLD coordinate certificates, actual full RAW E_e envelopes and distinct representatives before inferring diversity e. Prune only first/last idempotent children and STOP inside each whole deleted middle interval; preserve a disjoint ordered partition of the EXACT ORIGINAL branch words. All insertions share ONE complete old base and the fixed anchor profile is explicit. Unary admissibility, actual irreducible supports and optional higher-support gates remain. The finite-semigroup forest theorem is an explicit sixth receiving obligation, not a proved local Lean API."
+    },
+    {
+      "id": "T06",
+      "name": "Uniform OLD anchor support",
+      "claims": [
+        "C41",
+        "C42",
+        "C43",
+        "C44",
+        "C45"
+      ],
+      "depends_on": [
+        "T02",
+        "T03",
+        "T04"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Use literal OLD coordinate certificates, actual full RAW E_e envelopes and distinct representatives before inferring diversity e. Prune only first/last idempotent children and STOP inside each whole deleted middle interval; preserve a disjoint ordered partition of the EXACT ORIGINAL branch words. All insertions share ONE complete old base and the fixed anchor profile is explicit. Unary admissibility, actual irreducible supports and optional higher-support gates remain. The finite-semigroup forest theorem is an explicit sixth receiving obligation, not a proved local Lean API."
+    },
+    {
+      "id": "T07",
+      "name": "Unary-admissible bounded hidden obstructions",
+      "claims": [
+        "C46",
+        "C47",
+        "C48",
+        "C49",
+        "C50",
+        "C51",
+        "C52",
+        "C53",
+        "C54",
+        "C55",
+        "C56",
+        "C57",
+        "C58"
+      ],
+      "depends_on": [
+        "T04",
+        "T05",
+        "T06"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Use literal OLD coordinate certificates, actual full RAW E_e envelopes and distinct representatives before inferring diversity e. Prune only first/last idempotent children and STOP inside each whole deleted middle interval; preserve a disjoint ordered partition of the EXACT ORIGINAL branch words. All insertions share ONE complete old base and the fixed anchor profile is explicit. Unary admissibility, actual irreducible supports and optional higher-support gates remain. The finite-semigroup forest theorem is an explicit sixth receiving obligation, not a proved local Lean API."
+    },
+    {
+      "id": "T08",
+      "name": "Boundary and receiving obligations",
+      "claims": [
+        "C59",
+        "C60",
+        "C61",
+        "C62",
+        "C63",
+        "C64",
+        "C65",
+        "C66",
+        "C67",
+        "C68",
+        "C69",
+        "C70",
+        "C71",
+        "C72",
+        "C73",
+        "C74"
+      ],
+      "depends_on": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Use literal OLD coordinate certificates, actual full RAW E_e envelopes and distinct representatives before inferring diversity e. Prune only first/last idempotent children and STOP inside each whole deleted middle interval; preserve a disjoint ordered partition of the EXACT ORIGINAL branch words. All insertions share ONE complete old base and the fixed anchor profile is explicit. Unary admissibility, actual irreducible supports and optional higher-support gates remain. The finite-semigroup forest theorem is an explicit sixth receiving obligation, not a proved local Lean API."
+    }
+  ],
+  "controls": [
+    {
+      "id": "K01",
+      "check": "Bounded valid ordered factorisation trees test maximal stopped-gap partition, exact old edge coverage, boundary persistence and binary leaf/node bounds; small typed semigroups exercise nonzero/zero guards."
+    },
+    {
+      "id": "K02",
+      "check": "Explicit old term transport and common complete-base cycle assembly test literal certificate survival, original-word labels, distinct representatives and fixed-anchor necessity. Malformed unary cycles and overlapping deletion records are negative controls, not unbounded source proofs."
+    }
+  ],
+  "overview_mermaid": [
+    "flowchart TD",
+    "  S[\"Original SAP nonzero forks\"] --> T[\"Finite typed positive semigroup\"]",
+    "  E[\"Published finite-semigroup forest input\"] --> F[\"Height-bounded ordered forest\"]",
+    "  T --> F",
+    "  O[\"OLD source branch equations and seams\"] --> B[\"Literal idempotent boundary certificate\"]",
+    "  F --> P[\"Disjoint maximal ORIGINAL gaps\"]",
+    "  P --> A[\"Uniform OLD closed anchor support\"]",
+    "  B --> A",
+    "  A --> R[\"One complete base and whole-word reconstruction\"]",
+    "  C[\"Old CCO bad simple cycle\"] --> N[\"Bounded hidden obstruction\"]",
+    "  R --> N"
+  ],
+  "overview_notes": [
+    "All six source16 results and both equations; factorisation-forest theorem is a newly explicit published-provider receiving obligation.",
+    "The full RAW E_e envelope is reconstructed from represented MI equalities before actual distinctness yields a diversity atom in e.",
+    "Maximal recorded gaps and retained letters partition every original macro edge exactly once; never recurse inside deleted middle subtrees.",
+    "The fixed original anchor profile and one complete reconstruction base remain explicit. Global theorem applies only to unary-admissible partial sources."
+  ],
+  "article_feedback": [
+    {
+      "id": "F01",
+      "kind": "EXTERNAL_PROVIDER_PRECISION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "main.tex",
+        "anchor": "\\bibitem{Kufleitner}"
+      },
+      "finding": "The cited2007 preprint abstract says finite semigroup while its displayed theorem says finite monoid. S_typ with typed zero need not have a global identity. The later2008 Theorem1 explicitly treats finite semigroups and proves the needed weaker height3|S|.",
+      "proposed_article_change": "Cite the2008 finite-semigroup Theorem1 explicitly or clarify the intended semigroup version of the2007 input. Keep h=3|S_typ| and the existing forest convention.",
+      "caller_effect": "No new mathematical hypothesis; exposes the already cited input with a precise finite-semigroup receiving obligation, increasing pending provider count from five HN/HKN to six total.",
+      "proof_claims": [
+        "C04",
+        "C05",
+        "C68",
+        "C69"
+      ]
+    }
+  ],
+  "review": {
+    "date": "2026-10-29",
+    "source_unchanged": true,
+    "source_signature_repairs": 0,
+    "unexpanded_provider_labels": [],
+    "proof_status": "HUMAN_EXPANDED_NOT_LEAN; independent concrete all-claim/notes audits and parent synthesis PASS. One TV1 proof-equation repair and six receiving obligations explicitly retained; frozen source and previous qualifications unchanged.",
+    "independent_reviews": [
+      "Independent reconstruction of source16 literal boundary transport, stopped forest pruning, original-word partition, shared-base reconstruction and unary-admissible obstruction argument"
+    ],
+    "boundaries": [
+      "New explicit finite-semigroup forest provider remains unbound",
+      "No RAW e asreflexiveequivalence",
+      "No accidental target-equality OLD seams",
+      "No overlapping nested gap records",
+      "Fixed anchor admissibility is separate",
+      "No uniform bound for malformed arbitrary unary partialsources",
+      "Higher-support clauses remain conditional"
+    ]
+  }
+}

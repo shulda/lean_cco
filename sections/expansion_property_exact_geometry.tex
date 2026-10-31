@@ -1,0 +1,727 @@
+% EP20--EP23. Written as an editable source-level proof, 19 October 2026.
+% Dependencies: represented full exact calculus; (T),(P), realised lifted
+% pair/triangle ages; joint exact quotient inheritance (A130/A131/A194).
+% Audit status: same-assistant source-relative, NOT formalised/refereed.
+\section{Exact trace geometry of safe unary towers}
+\label{sec:ep-exact-traces}
+
+Throughout this and the next two sections, \(M=M_0\) is one
+\emph{original} transitive homogeneous complete finite named symmetric
+binary source with AP and semantic homomorphic CCO.  An actual
+\emph{safe tower}
+\[
+  \mathcal K_0\longleftarrow\mathcal K_1
+  \longleftarrow\cdots\longleftarrow\mathcal K_m
+  \tag{ET}\label{eq:ep-tower}
+\]
+means a finite succession of \emph{maximal-exact-complement,
+full rigid-groupoid character} constructions, valid for
+AP+homomorphic-CCO sources by
+\cref{thm:ep-ap-marked-completion,cor:ep-ap-safe-splitting}.
+The SAP-specific V27
+\cref{thm:safe-exact-split} is a separate stronger source used
+for the hidden Ramsey provider; it must not be imposed on
+the AP-only exact quotients of the present induction.
+Each \(\mathcal K_j\) is the age of an actual
+homogeneous prefix \(M_j\); the reducts are identified with the
+preceding homogeneous sources using reasonableness.  We distinguish
+original old binary atom names from the unary types introduced in
+the tower.  Every current same-sort relation is symmetric.
+
+We use the following \emph{source contracts}, all in the represented,
+equality-inclusive convention. Exact domains are finite nonempty
+intersections of reachable endpoint profiles; they are closed under
+converse, represented product and nonempty meets. On a safe character
+step, write \(\mathsf A_{uv}\) for the mask of old atoms allowed
+between children \(u,v\).
+\begin{enumerate}[label=(\textup{\alph*}),leftmargin=*]
+\item[(T)] Every pair of compatible allowed lifted atomic edges has
+an allowed output atom of the required endpoint child types.
+\item[(P)] If reachable old profiles \(P_i\) have nonempty
+intersection and each meets \(\mathsf A_{uv}\), then
+\((\bigcap_iP_i)\cap\mathsf A_{uv}\ne\varnothing\).
+\item[(R)] A lifted complete pair/triangle is realised precisely
+when its old atoms and all its child phase masks are compatible.
+The full character construction is reasonable, reduct-surjective,
+and has a homogeneous realised age.
+\end{enumerate}
+The historical SAP-source form of (T),(P) is reproduced
+in the V27 appendix. Their AP-only derivation from the
+represented exact calculus, including the relative-\(K\)
+identity correction and \emph{actual} real marked AP/CCO
+completion, is proved in the supplementary source module
+\cref{lem:ep-ap-orbital-parity,lem:ep-ap-TP,thm:ep-ap-marked-completion}
+earlier in Part~I. The quotient assertions below
+additionally use the represented
+joint exact-axis homogeneity and CCO theorem from the exact
+geometry of Part~I.  We do not infer any of these contracts from
+formal associativity of an unspecified colouring algebra.
+
+For an old same- or mixed-typed relation \(D\), put
+\[
+   \operatorname{tr}_{uv}(D)
+   =D\cap(u\times v)
+\]
+as an \emph{actual} relation on real points of the designated
+current child sorts.  Its atomic palette is \(D\cap\mathsf A_{uv}\).
+In a composition of traces the middle point must lie in the
+displayed middle sort; this restriction is essential.
+
+\begin{lemma}[Primality on nonempty exact intersections]
+\label{lem:ep-exact-meet-prime}
+If old exact domains \(D_1,\ldots,D_r\) have nonempty intersection
+and all \(\operatorname{tr}_{uv}(D_i)\ne\varnothing\), then
+\[
+    \operatorname{tr}_{uv}\Bigl(\bigcap_iD_i\Bigr)
+            \ne\varnothing .
+\]
+The assertion is \emph{not} made for an empty old intersection.
+\end{lemma}
+\begin{proof}
+Write each \(D_i\) as a finite intersection of reachable profiles.
+Each constituent profile meets the allowed mask because \(D_i\)
+does. The complete flattened family has nonempty old intersection,
+so apply (P). The typed top represents the empty defining family
+and may be omitted.
+\end{proof}
+
+\begin{theorem}[Exact trace product]
+\label{thm:ep-trace-product}
+Let \(D:s\to t\) and \(E:t\to w\) be nonempty old exact domains.
+For children \(u,v,z\) over \(s,t,w\) suppose both
+\(\operatorname{tr}_{uv}(D)\) and
+\(\operatorname{tr}_{vz}(E)\) are nonempty. Then
+\[
+ \boxed{\ 
+ \operatorname{tr}_{uv}(D)\ ;
+ \operatorname{tr}_{vz}(E)
+   =\operatorname{tr}_{uz}(D;E).\
+ }\tag{TP}\label{eq:ep-tp}
+\]
+This is equality of actual relations, not just of nonempty
+endpoint colour sets.
+\end{theorem}
+\begin{proof}
+One inclusion is immediate. For the other, take an actual
+endpoint atom \(c\in D;E\) that is allowed between \(u,z\).
+Peircean transfer shows
+\(D\cap(\{c\};E^\smile)\ne\varnothing\).
+The first factor \(D\) meets \(\mathsf A_{uv}\) by hypothesis.
+So does the old exact domain
+\(F=\{c\};E^\smile\): choose
+\(b_0\in E\cap\mathsf A_{vz}\), and apply (T) to the allowed
+fork \(c,b_0^\smile\). By
+\cref{lem:ep-exact-meet-prime} choose
+\[
+ a\in D\cap(\{c\};E^\smile)\cap\mathsf A_{uv}.
+\]
+A second choice is needed; merely selecting \(a\) does not fix
+the phase of the other edge.  Put
+\(H=\{a\}^\smile;\{c\}\). By Peircean transfer,
+\(E\cap H\ne\varnothing\). The domain \(E\) meets
+\(\mathsf A_{vz}\) by hypothesis, and (T) on the fork
+\(a^\smile,c\) makes \(H\) meet it.
+A second application of
+\cref{lem:ep-exact-meet-prime} gives
+\[
+ b\in E\cap(\{a\}^\smile;\{c\})\cap\mathsf A_{vz}.
+\]
+The old triangle \(a,b,c\) is realised and all three prescribed
+lifted pair types are allowed. Contract (R) realises its lifted
+triangle. Homogeneity aligns its \(c\)-edge with any prescribed
+realised endpoint pair of child types \(u,z\), giving an actual
+middle vertex of type \(v\). If an input or output is logical
+identity, this is the corresponding equality/two-point
+degeneracy, \emph{not} an artificial equality-coloured edge
+joining distinct vertices.
+\end{proof}
+
+\begin{proposition}[Exact domains and equivalences are traces]
+\label{prop:ep-exact-trace-surj}
+Across any tower prefix, each nonempty trace of an original exact
+domain is current exact, and each current exact domain is the trace
+of an original exact domain. Equation~\eqref{eq:ep-tp} remains valid
+across arbitrary prefix sorts whenever both input traces are nonempty.
+For a realised current sort \(p\), restriction
+\[
+ \rho_p:\operatorname{ExEq}(M)\longrightarrow
+                  \operatorname{ExEq}(p),\qquad
+ H\longmapsto H|_{p^2}
+ \tag{E1}\label{eq:ep-rho}
+\]
+is a surjective lattice homomorphism.
+\end{proposition}
+\begin{proof}
+For a reachable old word profile \(P\) with a nonempty current
+trace, choose endpoints of that trace and realise the word
+between them in the old source. Read the actual intermediate
+child types from the current homogeneous prefix. Repeated
+\eqref{eq:ep-tp}, with these nonempty displayed input traces,
+gives the trace of \(P\) as one reachable lifted profile.
+Intersections give the assertion for old exact domains. Conversely,
+forgetting the child labels of a lifted word, and applying
+\eqref{eq:ep-tp}, shows that its endpoint domain is the trace of
+the old word profile. Finite nonempty intersections give
+surjectivity on exact domains. Iterate through the tower.
+
+Old equivalence traces are reflexive and exact.
+Meets commute with set restriction; joins are represented
+products of commuting exact equivalences and commute with
+restriction by \eqref{eq:ep-tp}, since the input traces contain
+the current identity. For surjectivity, express a current exact
+equivalence \(F\) on \(p\) as \(D|_{p^2}\) for original exact
+\(D\). Reflexivity and original transitivity give
+\(\Id\subseteq D\); original symmetry gives \(D=D^\smile\).
+The increasing represented powers \(D^n\) stabilise to an
+original full exact equivalence \(\langle D\rangle\).
+Their traces are \(F^n=F\), by
+\eqref{eq:ep-tp} with middle sort \(p\). Hence
+\(\rho_p(\langle D\rangle)=F\).
+\end{proof}
+
+Define the \emph{canonical largest old lift}
+\[
+ L_p(F)=
+ \bigvee\{H\in\operatorname{ExEq}(M):\rho_p(H)=F\}.
+ \tag{E2}\label{eq:ep-old-largest}
+\]
+Finiteness and join preservation make this well-defined and give
+\[
+  \rho_p(H)\le F
+     \quad\Longleftrightarrow\quad H\le L_p(F).
+ \tag{E3}\label{eq:ep-adjunction}
+\]
+Thus \(L_p\) is a right adjoint and preserves finite meets.
+It is important that we choose the \emph{largest} lift, not
+an arbitrary exact predecessor of \(F\).
+
+\begin{lemma}[Original bipartite pivot and maximal gate]
+\label{lem:ep-old-gate}
+If a current restriction \(c|_{p^2}\) is the odd pivot of a
+genuine safe step, then the original atom \(c\) is bipartite.
+Let \(Y_c<X_c\) be its original even-walk/connectivity interval,
+and \(K_p\) the chosen current maximal exact gate. Then
+\[
+  Y_{\mathrm{current}}=Y_c|_{p^2},\quad
+  O_{\mathrm{current}}=O_c|_{p^2},\quad
+  X_{\mathrm{current}}=X_c|_{p^2},
+ \tag{E4}\label{eq:ep-parity-trace}
+\]
+and \(L_p(K_p)\) is an \emph{original maximal exact complement}
+to \(Y_c<X_c\).
+\end{lemma}
+\begin{proof}
+A bipartite current pivot admits no odd closed \(c\)-walk
+inside \(p\). Were the original \(c\)-graph nonbipartite,
+some odd \(c^{2r+1}\) would contain the original identity
+orbital by transitivity. Repeating (TP) with every
+intermediate vertex restricted to \(p\) would put
+\(\Id_p\) in \((c|_{p^2})^{2r+1}\), a contradiction.
+Thus \(c\) was originally bipartite. Its stabilised even,
+odd and connectivity relations are represented old profiles;
+repeated (TP) yields \eqref{eq:ep-parity-trace},
+including nonemptiness of the odd trace.
+
+Put \(\widehat K=L_p(K_p)\). The adjunction gives
+\(Y_c\le\widehat K\). Since \([X_c:Y_c]=2\),
+the intersection \(\widehat K\cap X_c\) is either \(Y_c\)
+or \(X_c\). The latter would give a nonempty odd trace
+inside \(K_p\), contrary to the current complement property.
+Thus \(\widehat K\cap X_c=Y_c\).
+Any larger old exact complement would have a trace
+strictly above \(K_p\), since \(\widehat K\) is the largest
+lift, and would contradict current maximality.
+\end{proof}
+
+We next isolate the finite support relations on \emph{types}.
+Let \(T_j\) be all realised full unary prefix labels, and define
+for original invariant \(D\)
+\[
+   \Phi_j(D)=
+   \{(s,t)\in T_j^2:
+         \exists x\in s\,\exists y\in t\ (xDy)\},
+   \tag{E5}\label{eq:ep-Phi}
+\]
+using actual equality for \(\Phi_j(\Id)=\Id_{T_j}\).
+A loop in \(\Phi_j(a)\) for an old \emph{diversity} atom
+means a pair of \emph{distinct} points of the same unary type,
+never logical equality.
+
+\begin{lemma}[Finite type supports and exact meets]
+\label{lem:ep-phi-support}
+Every \(\Phi_j\) preserves union, converse, identity
+and represented relational composition. Its restriction to
+original exact equivalences also preserves finite meets.
+For every original invariant equivalence \(E\),
+\(\Phi_j(E)\) is an equivalence on \(T_j\).
+An actual \(E\)-class meeting type \(p\) meets
+\emph{exactly every} type in the \(\Phi_j(E)\)-class of \(p\).
+\end{lemma}
+\begin{proof}
+Only composition needs an argument. If
+\(s\,\Phi_j(D)\,t\) and
+\(t\,\Phi_j(F)\,u\), choose actual \(D\)- and
+\(F\)-pairs with their middle endpoints both of type \(t\).
+By homogeneity of \(M_j\), align those middle points with
+an automorphism; the resulting pair has an actual
+\(D;F\) witness. The converse inclusion is immediate.
+This proves that images of equivalences are equivalences.
+
+For exact \(D_i\) with nonempty original intersection,
+nonempty traces of all \(D_i\) on any chosen pair of
+current sorts have a common atom by repeated
+\cref{lem:ep-exact-meet-prime}. Induction over stages
+gives
+\[
+   \Phi_j\Bigl(\bigcap_iD_i\Bigr)
+       =\bigcap_i\Phi_j(D_i)
+       \qquad(\bigcap_iD_i\ne\varnothing).
+\]
+All exact equivalence intersections contain \(\Id\),
+so this applies to their meets. Do not extend it to an
+empty meet or arbitrary nonexact atomic supports.
+
+If one \(E\)-class \(X\) contains an \(s\)-point and
+\((s,t)\in\Phi_j(E)\), use a current automorphism sending
+the \(s\)-endpoint of a witnessing \(E\)-pair into \(X\).
+Its \(t\)-endpoint stays in \(X\). Conversely types
+in \(X\) are \(E\)-related, proving the occupancy assertion.
+\end{proof}
+
+\begin{lemma}[One original gate per connected step]
+\label{lem:ep-single-old-gate}
+For a fixed connected full rigid-groupoid character step,
+the canonical largest old lifts \(L_p(K_p)\) of the
+active current gates \(K_p\) are \emph{equal} for all
+active sorts \(p\). Write their common value \(G\).
+Every current full exact bridge in that component is a
+nonempty trace of an original full exact \(G\)-quotient
+functional correspondence; conversely any such original
+correspondence with nonempty trace is a current full bridge.
+\end{lemma}
+\begin{proof}
+For a current exact bridge \(R:p\to q\) with
+\(RR^\smile=K_p\), lift its trace to original full exact
+\(D\), by \cref{prop:ep-exact-trace-surj}.
+The trace product gives
+\((D^2)|_{p^2}=K_p\), so the stable original exact
+equivalence closure of \(D^2\) lies in
+\(G_p=L_p(K_p)\).
+Put \(C=G_p;D\). Original one-sort symmetry makes the
+old invariant relations commute. Since
+\(\Id\subseteq D^2\subseteq G_p\),
+we have \(C^2=G_p\); it is an original full exact
+functional \(G_p\)-quotient correspondence. Its trace
+between \(p,q\) is \(R\), and by TP its square trace
+on \(q\) is \(K_q\). Thus \(G_p\) is an old lift of
+\(K_q\), whence \(G_p\le G_q\). The reverse direction is
+symmetric. Connectedness gives one gate \(G\).
+
+The argument also lifts each bridge to \(C\).
+Conversely the nonempty trace of an original \(G\)-bridge
+has product with its converse \(G|_{p^2}=K_p\) and is
+current exact; fullness of the selected current groupoid
+includes it and its target.
+\end{proof}
+
+\begin{proposition}[The common exact kernel of the labels]
+\label{prop:ep-common-kernel}
+Let \(G_1,\ldots,G_m\) be the original gates given by
+\cref{lem:ep-single-old-gate}, with repetitions allowed.
+Put \(K_{\rm com}=\bigcap_{i=1}^mG_i\) (or \(\Top\)
+if \(m=0\)). This is the largest original full exact
+equivalence all of whose classes lie in single final
+unary type classes. In particular,
+\[
+  \Phi_m(K_{\rm com})=\Id_T,
+  \qquad \bigcap_{i=1}^m\Phi_m(G_i)=\Id_T.
+ \tag{E6}\label{eq:ep-common-kernel}
+\]
+\end{proposition}
+\begin{proof}
+If \(xK_{\rm com}y\), then their labels agree after
+each step: when they are in an active common parent \(p\),
+their \(G_i\)-relation lies inside its phase gate \(K_p\),
+so their new bits agree; inactive parents are unchanged.
+
+Conversely let original full exact \(E\) preserve
+every final label. It preserves every prefix.
+At an active parent \(p\) of step \(i\), both
+\(E_p=E|_{p^2}\) and \(K_p\) preserve the new bit,
+as does their exact represented join. If
+\(E_p\not\le K_p\), maximality of the gate would put
+the selected odd involution into that strict join,
+contradicting preservation of the new bit. Hence
+\(E_p\le K_p\) and \eqref{eq:ep-adjunction} gives
+\(E\le G_i\). This holds for all steps. Finally use
+the nonempty exact-meet preservation in
+\cref{lem:ep-phi-support}; the old intersection
+contains \(\Id\).
+\end{proof}
+
+\begin{theorem}[Exact quotient commutation for safe towers]
+\label{thm:ep-quotient-tower}
+Let \(E\) be an original full exact equivalence.
+Equip \(M/E\) with its actual saturated original quotient
+binary orbitals. At prefix \(j\), label an \(E\)-class
+by the \(\Phi_j(E)\)-class of the types which occur in it.
+These labels form \(T_j/\Phi_j(E)\).
+Up to renaming labels, the resulting sequence is itself a
+genuine safe maximal-character tower after removing exactly
+the steps \(i\) for which \(E\not\le G_i\). A kept step has
+canonical old gate \(G_i/E\), after a prescribed
+objectwise phase correction. The quotient tower has the
+\emph{full} admissible character age, not merely a selected
+orbit of markings. If the original tower is terminal,
+the quotient tower is terminal.
+\end{theorem}
+\begin{proof}
+We record the details needed for the diversity-rank induction.
+
+\emph{Actual quotient sources.}
+For each occupancy label \(C\in T_j/\Phi_j(E)\) choose
+a current type \(p_C\in C\).
+By \cref{lem:ep-phi-support}, every actual \(E\)-class
+of occupancy \(C\) meets \(p_C\), so that quotient sort
+is exactly \(p_C/(E|_{p_C^2})\).
+The joint exact-axis theorem of Part~I makes these
+sorts jointly homogeneous, AP and homomorphic CCO.
+Its binary pair orbitals are precisely the restrictions
+of original saturated relations:
+\[
+ (E|_{p_C^2});(a|_{p_C\times p_D});(E|_{p_D^2})
+   =(E;a;E)|_{p_C\times p_D},
+ \tag{E7}\label{eq:ep-sat-quotient}
+\]
+by trace-product. This calculation is restricted to realised old atomic
+traces \(a|_{p_C\times p_D}\ne\varnothing\); no claim
+of nonempty trace is made for an arbitrary old atom.
+Conversely, let an old quotient orbital
+\(b=E;a;E\) occur between occupancy classes \(C,D\).
+Choose representatives of its actual \(E\)-classes
+in \(p_C,p_D\). Their old pair has a realised
+atomic colour \(a'\), and the quotient orbital
+partition implies \(E;a';E=b\).
+Applying \eqref{eq:ep-sat-quotient} to this
+\emph{realised} \(a'\) shows that every such pair
+belongs to the same \(p_C/E_{p_C},p_D/E_{p_D}\)
+atomic orbital. Thus old quotient pair colours
+together with occupancy unary labels specify
+\emph{exactly} the binary orbitals of this
+current quotient; there is no hidden finer
+binary relation.
+In the original one-sort quotient,
+an \(E\)-bisaturated full exact old relation descends to
+a full exact quotient relation: if
+\(D=\bigcap_iP_i=E;D;E\) is exact, use the
+exact saturation-intersection lemma to obtain
+\(D=\bigcap_i(E;P_i;E)\), where each factor descends
+from the old defining word. This supplies the
+converse-to-pullback exactness used below.
+
+\emph{A discarded step.}
+Suppose \(E\not\le G_i\).
+For every active parent \(p\),
+\eqref{eq:ep-adjunction} gives \(E_p\not\le K_p\).
+Its join \(F_p=E_p\vee K_p\) is a strict
+current exact equivalence, hence contains the
+\emph{whole} selected phase-one \(K_p\)-quotient
+involution relation \(t_p\).
+In particular \emph{every actual \(E_p\)-class}
+meets both new children, not just some one class:
+given any \(x\in p\), choose \(z\) with
+\(x\,t_p\,z\). Then \(xF_pz\).
+The original same-sort symmetric invariant
+equivalences \(E_p,K_p\) commute, so
+\(F_p=E_p;K_p\). Consequently there is
+\(y\) with \(xE_pyK_pz\). The original
+\(K_p\)-gate preserves the new bit, while
+\(t_p\) reverses it; hence \(y\) is in
+the \(E_p\)-class of \(x\) and has the
+opposite bit. This proves the assertion
+for every \(x\), without moving
+a marked cross-phase pair by an automorphism
+of the unmarked parent (which would be invalid).
+Thus both children above each active
+\(p\) lie in the same new occupancy class.
+Occupancy connects all parents of an old
+\(\Phi(E)\)-class, and distinct old classes cannot merge.
+The quotient unary partition has not changed.
+
+\emph{A retained step.}
+Suppose \(E\le G_i\).
+Any old occupancy class \(C\) containing one active
+parent consists entirely of active parents, because
+its restricted old identity \(G_i\)-bridges belong to
+the \emph{full} connected current groupoid.
+For parents \(p,q\in C\) let
+\(I_{pq}=G_i|_{p\times q}\). This is a
+\emph{whole} current exact \(K_p,K_q\)-bridge:
+\(E\le G_i\) gives a nonempty trace, and
+\cref{lem:ep-single-old-gate,lem:ep-phi-support}
+give its functional bridge equations and occupancy.
+Its character satisfies
+\(\chi(I_{pq})+\chi(I_{qr})=\chi(I_{pr})\).
+Choose \(p_C\), put \(\gamma_p=\chi(I_{p_Cp})\), and
+define on an actual old \(E\)-class \(X\) of occupancy \(C\)
+\[
+  \zeta(X)=\operatorname{bit}(x)+\gamma_p,
+  \quad x\in X\cap p.
+ \tag{E8}\label{eq:ep-gamma}
+\]
+It is well defined: \(E|_{p\times q}\subseteq I_{pq}\)
+and \(E|_{p^2}\le K_p\).
+The two new occupancy classes are
+\[
+  C^b=\{p_{b+\gamma_p}:p\in C\},
+            \qquad b\in\mathbb F_2 .
+ \tag{E9}\label{eq:ep-graph-offsets}
+\]
+Both occur: the two children above \(p_C\)
+are nonempty and cannot meet the same \(E\)-class,
+since \(E|_{p_C^2}\le K_{p_C}\) preserves the phase.
+Every old \(E\)-class of occupancy \(C\) meets each
+parent \(p\in C\), so each refined class projects
+bijectively to \(C\). Inactive classes have one lift.
+
+\emph{The full groupoid and the full finite age.}
+Identify an active quotient sort \(C\) with
+\(p_C/E_{p_C}\), with proposed quotient gate
+\(K_{p_C}/E_{p_C}\).
+The old \(G_i/E\) is full exact in the
+\emph{original one-sort quotient} by the precise
+symmetric one-sort exact-descent lemma
+\cref{lem:one-original-sort-exact-descent}:
+commutation of old invariant orbitals with \(E\)
+turns an $E$-saturated full exact old relation
+into a quotient word-exact relation.
+Its nonempty current trace is the displayed
+\emph{full exact} gate by
+\cref{prop:ep-exact-trace-surj}, applied to
+the \emph{earlier quotient prefix already constructed
+by induction on the tower stages}. This invocation
+does not presuppose the current, not-yet-retained
+character step. (Such downward exact
+descent is not asserted for an arbitrary
+bisaturated word between independently
+quotiented original sorts.)
+Now \(E_p\le K_p\) for each active current
+parent \(p\). Apply the precise conditional
+bridge-descent/lifting lemma
+\cref{lem:foundational-rigid-quotient-bridge}
+to these actual named parent sorts: current
+\(K_p,K_q\)-bridges descend, and \emph{every}
+projected full exact bridge pulls back to
+an old full exact \(K_p,K_q\)-bridge.
+Thus the quotient contains the entire
+descended groupoid, not merely a selected
+family of transported arrows.
+Normalize a bridge \(R:p\to q\) by
+\[
+  \bar\chi(\bar R)=
+           \chi(R)+\gamma_p+\gamma_q .
+ \tag{E10}\label{eq:ep-projected-character}
+\]
+More explicitly, an arrow \(R:p\to q\)
+represented instead on \(p_C,p_D\) becomes
+\(I_{p_Cp};R;I_{qp_D}\). Its character is
+\(\gamma_p+\chi(R)+\gamma_q\), proving the
+displayed normalization is independent of
+the chosen parent representatives.
+This also makes every identity bridge between
+two parents of the \emph{same} occupancy class
+into the quotient identity of character zero.
+Because \(E_p\le K_p\), quotienting by \(E_p\)
+does not identify distinct \(K_p\)-classes.
+Different rigid arrows already act differently
+on those \(K_p\)-classes by freeness, so no two
+arrows collapse. This is a character on the
+\emph{full} descended groupoid and sends its
+selected involution to one.
+
+Old quotient orbital \(E;a;E\) retains its rigid
+versus nonrigid status with respect to the \emph{same
+transported \(K_p\)-groupoid}: a refinement of a rigid
+\(G_i\)-cylinder is rigid with its forced character,
+while a nonrigid pair has endpoints in different
+rigid-groupoid orbits and no forced phase. Here we
+use \(E_p\le K_p\) for every active parent, and
+the complete bridge-pullback assertion just proved;
+the statement is not a claim that arbitrary
+nonrigid correspondences stay nonfunctional after
+an unrelated quotient.
+
+We now prove the essential \emph{converse finite
+realisation}, without presupposing that arbitrary
+fine representatives already have compatible bits.
+Let \(P\) be an arbitrary finite \emph{pair-locally
+allowed} marked quotient diagram whose underlying
+old quotient binary diagram is legal. First realise
+its \emph{unmarked} old quotient diagram as actual
+\(E\)-classes \(X_v\) in the old homogeneous exact
+quotient \(M/E\), using the full exact quotient
+source theorem of Part~I. This fixes the entire
+old quotient pair diagram at once.
+
+For every vertex \(v\) in an \emph{active} occupancy
+class \(C_v\), choose an actual representative
+\(x_v\in X_v\cap p_{C_v}\), possible
+by \cref{lem:ep-phi-support}. Put
+\[
+ q_v=[x_v]_{K_{p_{C_v}}},\qquad
+ \epsilon_v=\zeta_P(X_v)+\gamma_{p_{C_v}} .
+\]
+These are actual \emph{current \(K\)-quotient points}
+in the rigid-groupoid component, with the desired
+unadjusted original bits. For different components we
+work componentwise. Inactive occupancy classes have a
+single predetermined child label and are not assigned
+a \(K_p\) or an \(\epsilon_v\); they impose no phase
+seed equation.
+
+Suppose \(q_v,q_w\) lie in the same rigid-groupoid
+orbit and let \(R:q_v\mapsto q_w\) be its unique
+rigid arrow. Since \(R\) is an \emph{invariant
+quotient orbital}, the actual old quotient pair
+orbital between \(X_v,X_w\), read in the
+representative parent sorts, is rigid and has
+character \(\chi(R)\). Pair-local admissibility
+of \(P\) under the projected phase rule
+\eqref{eq:ep-projected-character} says
+\[
+ \zeta_P(X_w)+\zeta_P(X_v)
+ =\chi(R)+\gamma_{p_{C_v}}+\gamma_{p_{C_w}} .
+\]
+Consequently
+\(\epsilon_w=\epsilon_v+\chi(R)\).
+This includes the case \(q_v=q_w\): here
+\(R=K_{p_{C_v}}\) is the identity arrow
+and \(\epsilon_v=\epsilon_w\).
+Thus if several distinct \(E\)-classes lead to
+the same \(K\)-quotient point, the proposed
+prescription descends to a \emph{function}
+on the finite set of distinct \(K\)-quotient
+points. It satisfies
+\emph{all} pairwise rigid constraints. The
+finite phase-extension lemma
+\cref{lem:foundational-finite-phase-extension}
+extends them to a single \emph{global} groupoid
+character marking on all current \(K\)-quotient
+points. On inactive sorts retain their unique fixed label.
+Pull the marking back to the actual old real
+source. Its legality follows directly from the
+full character orbit-seed construction, and it
+has not changed any old quotient point or old
+binary pair orbital. Because \(E_p\le K_p\)
+and the identity-bridge corrections \(\gamma_p\)
+are coherent, \eqref{eq:ep-gamma} assigns
+each \emph{active} \(X_v\) exactly its prescribed
+projected bit \(\zeta_P(X_v)\). Inactive \(X_v\)
+have their unique unchanged child label.
+
+Thus the quotient of this one globally marked
+old source actually contains the given finite
+marked diagram \(P\). The argument works for
+\emph{every} pair-locally allowed marked quotient
+diagram; no independently selected fine edge
+colours or SAP of \(M/E\) are required. This is
+the full-age assertion needed by the induction.
+
+\emph{Reachability, maximality and terminality.}
+At the representative current parent sort \(p\),
+let \(c\) be the selected old atomic odd pivot,
+\(Y<X\) its even-walk and connectivity equivalences,
+and \(K_p\) its maximal exact complement. Put
+\(e=E|_{p^2}\le K_p\). The quotient pivot
+\(\bar c=(e;c;e)/e\) is ONE quotient atom
+by \cref{lem:typed-simultaneous-blocks}, and
+is still a diversity atom, since
+\(c\subseteq X\setminus Y\) while
+\(e\le K_p\) and \(K_p\cap X=Y\).
+All current same-sort invariant relations on \(p\)
+commute. Thus its represented even and odd powers
+are respectively the images of \(e;c^{2r};e\)
+and \(e;c^{2r+1};e\). Upon stabilisation the
+quotient parity relations are
+\[
+  \bar Y=(e\vee Y)/e,\qquad
+  \bar O=(e;O;e)/e,\qquad
+  \bar X=(e\vee X)/e .
+  \tag{E11}\label{eq:ep-quotient-parity}
+\]
+The even and odd pieces remain disjoint:
+\(e\vee Y\le K_p\), whereas
+\(e;O;e\) is disjoint from \(K_p\)
+because \(K_p\cap O=\varnothing\).
+Also
+\(X\cap(e\vee Y)=Y\) and
+\((e\vee X)/(e\vee Y)\) still has
+index two by Dedekind transposition
+for the commuting equivalences.
+Thus the projected pivot is genuinely bipartite
+and reachable; its parity interval does not
+collapse into equality.
+
+The proposed quotient gate is
+\(\bar K=K_p/e\).
+The modular law, using \(e\le K_p\), gives
+\[
+  K_p\cap(e\vee X)=e\vee(K_p\cap X)
+                         =e\vee Y.
+\]
+Therefore \(\bar K\cap\bar X=\bar Y\).
+If some larger quotient full exact equivalence
+\(\bar K'>\bar K\) were also a complement,
+its inverse image \(K'>K_p\) would be
+full exact by \cref{lem:typed-simultaneous-blocks},
+and \(K'\cap X=Y\) by the displayed
+intersection and \(Y\le K_p\).
+This contradicts the original maximality of
+\(K_p\). Hence the projected complement is maximal.
+
+Finally \(G_i/E\) is an exact relation of the
+\emph{original one-sort} quotient, by
+\cref{lem:one-original-sort-exact-descent},
+and its trace on the already descended
+quotient prefix is exactly \(\bar K\).
+To verify that it is the \emph{largest original
+quotient lift}, take any original quotient
+full exact \(H_Q\) with \emph{this same trace}.
+Its old inverse image \(H\) is original full exact
+and satisfies \(H|_{p^2}=K_p\), since the current
+quotient sort is \(p/e\).
+The original largest-lift adjunction then gives
+\(H\le L_p(K_p)=G_i\), and consequently
+\(H_Q\le G_i/E\). Only the previously constructed
+quotient prefix is used when taking this trace,
+so the argument does not invoke the step
+being proved. Thus kept steps are genuinely
+maximal safe character steps and the induction
+is noncircular.
+
+A proper finite relative-index invariant equivalence
+interval in a final quotient sort would pull back
+to such an interval in its current representative
+parent \(p\), contradicting terminality. This last
+argument applies to \emph{all} invariant equivalences,
+not just exact ones.
+\end{proof}
+
+\begin{remark}[Rank, notation and false shortcuts]
+\label{rem:ep-trace-audit}
+If \(E>\Id\), the original quotient \(M/E\) has strictly
+fewer original diversity orbitals: each quotient
+orbital is the image of an old atom, and the diagonal
+absorbs some nonidentity old orbital. This is the
+strict induction parameter below. An arbitrary
+quotient of a Ramsey/EP expansion does \emph{not}
+inherit EP automatically; the full-age conclusion
+of \cref{thm:ep-quotient-tower} is the needed substitute.
+Trace products require \emph{both input traces
+nonempty}; \(\Phi\) preserves only nonempty old
+exact meets, not empty atomic meets.  Quotient
+identities pull back to the whole gate, not raw
+logical equality. The present theorem does not
+assume that every old \(G_i\)-class meets every
+current sort.
+\end{remark}

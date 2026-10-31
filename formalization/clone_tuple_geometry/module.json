@@ -1,0 +1,2315 @@
+{
+  "schema_version": 1,
+  "id": "clone_tuple_geometry",
+  "index_title": "Clone-stable terminalisation and compatible MI-tuple fine-colour geometry",
+  "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+  "status": "HUMAN_EXPANDED_NOT_LEAN",
+  "scope": "Private B060: FOUR selected Ramsey III geometry results, twelve definitions, 76 human proof claims, four auxiliary equations and nine tasks. Actual safe finite character splits preserve pure infinite clone fibres and leave every terminal owner unary type infinite. Proper actual MI coordinates above the clone kernel give quantifier-free compatible tuples; their complete mixed semantic spectra recover ONE original fine atom, including hidden-coordinate diagonal cases and visible tuple equality. This is human proof preparation, not Lean or a Ramsey/HN/EPPA certificate. A separately scoped auxiliary proof establishes all-finite-base owner algebraicity preservation and the original-F-MI one-coordinate branch, with no ancestry into any of the four selected exports.",
+  "scope_vocabulary": [
+    "clones",
+    "infinitude",
+    "coordinates",
+    "domain",
+    "strong_exact",
+    "singleton",
+    "boundary"
+  ],
+  "scope_explanation": "statement and proof. Original AP is upgraded only by the actual pure-clone source; terminalisation is the specific maximal-character marked age, not arbitrary unary labels. FULL represented clone kernels and STRONG diversity products are separate. No hidden cells, hidden SAP, readout or expansion property is proved here.",
+  "control_script": "tools/check_clone_tuple_geometry_finite.py",
+  "assumptions": [
+    {
+      "id": "A01",
+      "name": "Original countably infinite homogeneous AP+HOM CCO source",
+      "statement": "Q is countably infinite, transitive and homogeneous in a finite complete symmetric binary language with actual occurring diversity pair orbitals. Its finite age has ordinary AP and semantic homomorphic CCO. Logical equality is separate. No old SAP, finite-exact Ramsey lift, real-hull theorem or EPPA is assumed.",
+      "depends_on": []
+    },
+    {
+      "id": "A02",
+      "name": "Specific actual maximal-character safe split construction",
+      "statement": "At every stage use the genuine maximal-exact-character construction of the imported safe split theorem: its actual connected rigid groupoid gates, full character masks, age of finite restrictions of GLOBAL character-compatible markings and homogeneous marked Fraisse limit. Gate bits are pulled back from their actual quotient classes; inactive labels are fixed. This specifies the provider construction, not an extra theorem about arbitrary unary expansions.",
+      "depends_on": []
+    },
+    {
+      "id": "A03",
+      "name": "Independent terminal typed exact-domain input for the distributivity export",
+      "statement": "For the independent lem:ramsey-typed-distributivity branch, M can be ANY actual homogeneous finite complete named-sorted relational source with SAP and semantic HOM CCO, symmetric same-sort diversity atoms and paired typed converses. Nonempty STRONG exact domains have finite positive reachable-profile presentations; products and nonempty evaluated meets have compatible endpoint sorts. This abstract branch needs neither clones nor terminal NR2.",
+      "depends_on": []
+    },
+    {
+      "id": "A04",
+      "name": "OPTIONAL original greatest finite-class equivalence is proper MI",
+      "statement": "ONLY for the auxiliary MI-side conclusion, let F be the greatest actual finite-class invariant equivalence of the ORIGINAL Q; assume F is proper meet-irreducible in its FULL invariant lattice. F need not be exact, thin or equal to the later clone kernel. All four selected source exports remain independent of this assumption.",
+      "depends_on": [
+        "A01"
+      ]
+    }
+  ],
+  "imports": [
+    {
+      "id": "I01",
+      "name": "lem:cco-triangle-fullness",
+      "provider_module": "relational_completion",
+      "source_label": "lem:cco-triangle-fullness",
+      "provider_claims": [
+        "C27",
+        "C28",
+        "C29"
+      ],
+      "statement": "Actual hereditary complete binary AP+HOM CCO ages are triangle constrained, retaining actual unary/pair legality. This discharges the pure-clone source triangle premise from A01.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I02",
+      "name": "thm:internal-clone-sap",
+      "provider_module": "clone_sap",
+      "source_label": "thm:internal-clone-sap",
+      "provider_claims": [
+        "C26"
+      ],
+      "statement": "For the actual original AP+HOM CCO triangle-constrained Q, the pure cover Q x N is homogeneous SAP+HOM CCO with old owner quotient Q and represented clone kernel K=Id union c=c;c. The c;c product here is FULL, including possible equality OUTPUT.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I03",
+      "name": "thm:safe-exact-split",
+      "provider_module": "pair_safe_split",
+      "source_label": "thm:safe-exact-split",
+      "provider_claims": [
+        "C41",
+        "C43"
+      ],
+      "statement": "The SAME actual maximal-character split of a homogeneous SAP+HOM CCO source is a reasonable reduct-surjective finite unary expansion, with genuine homogeneous marked source, SAP and HOM CCO. Arbitrary abstract three-sector phase properties are insufficient.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I04",
+      "name": "thm:finite-cover-elimination",
+      "provider_module": "pair_safe_split",
+      "source_label": "thm:finite-cover-elimination",
+      "provider_claims": [
+        "C51"
+      ],
+      "statement": "Finitely many genuine safe splits give reasonable precompact unary terminalisation; every strict cover of the FULL original equivalence lattice on each current transitive sort has infinite relative index. This includes Top covers, and does not merely name a represented sublattice.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I05",
+      "name": "thm:ep-ap-marked-completion",
+      "provider_module": "ap_character",
+      "source_label": "thm:ep-ap-marked-completion",
+      "provider_claims": [
+        "C41",
+        "C42",
+        "C44"
+      ],
+      "statement": "Finite actual old complete objects with locally legal phase bits are exactly restrictions of global character-compatible markings. Their marked homogeneous limit has unchanged old reduct; reasonableness extends the SAME old embedding. An arbitrary single global marking need not be that homogeneous limit.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I06",
+      "name": "thm:foundational-rigid-character",
+      "provider_module": "rigid_groupoid",
+      "source_label": "thm:foundational-rigid-character",
+      "provider_claims": [
+        "C31"
+      ],
+      "statement": "The actual connected groupoid acts freely on quotient points. Each rigid graph is ONE whole original quotient orbital, its phase difference is chi(R), and a nonrigid quotient orbital has endpoints in different action orbits.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I07",
+      "name": "lem:foundational-finite-phase-extension",
+      "provider_module": "rigid_groupoid",
+      "source_label": "lem:foundational-finite-phase-extension",
+      "provider_claims": [
+        "C30"
+      ],
+      "statement": "On a finite set of actual quotient points, prescribed bits extend to one global character marking iff every pair in the same free action orbit has its required character difference. Independent action orbits have independent seed choices.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I08",
+      "name": "prop:lattice-interface",
+      "provider_module": "clone_sap",
+      "source_label": "prop:lattice-interface",
+      "provider_claims": [
+        "C28",
+        "C29",
+        "C31",
+        "C33"
+      ],
+      "statement": "On each actual homogeneous transitive symmetric named sort, FULL invariant equivalences form a finite lattice of actual orbital unions, with literal intersection as meet. No distributivity is needed for the finite MI separation argument.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I09",
+      "name": "lem:typed-terminal-all-equivalences-exact",
+      "provider_module": "real_closure",
+      "source_label": "lem:typed-terminal-all-equivalences-exact",
+      "provider_claims": [
+        "C27",
+        "C28"
+      ],
+      "statement": "FULL original no-index-two implies every invariant equivalence has one RAW atomic word; Id alone may need the empty word. With original CCO the exact and FULL invariant lattices coincide. Do not infer this from the represented lattice alone.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I10",
+      "name": "cor:rh-sap-infinite-exact-helly",
+      "provider_module": "real_closure",
+      "source_label": "cor:rh-sap-infinite-exact-helly",
+      "provider_claims": [
+        "C30"
+      ],
+      "statement": "In an infinite homogeneous symmetric SAP+HOM CCO source with FULL NR2, EVERY finite pairwise-intersecting family of actual nonidentity invariant-equivalence classes has nonempty common intersection. The family need not contain all MI coordinates.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I11",
+      "name": "lem:typed-exact-products",
+      "provider_module": "strong_selectors",
+      "source_label": "lem:typed-exact-products",
+      "provider_claims": [
+        "C08"
+      ],
+      "statement": "On ANY actual homogeneous typed SAP+HOM CCO source, nonempty STRONG exact products distribute over finite exact meets with NONEMPTY evaluation; factors and products have compatible original endpoint types. Empty-list Top conventions are handled by the provider.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I12",
+      "name": "lem:typed-set-pasch",
+      "provider_module": "strong_selectors",
+      "source_label": "lem:typed-set-pasch",
+      "provider_claims": [
+        "C02"
+      ],
+      "statement": "Actual homogeneous typed SAP sources have associative STRONG composition and the Peircean laws, with logical real equality excluded from all diversity palettes.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I13",
+      "name": "lem:typed-cylinder-realisation",
+      "provider_module": "transition_closure",
+      "source_label": "lem:typed-cylinder-realisation",
+      "provider_claims": [
+        "C42",
+        "C43"
+      ],
+      "statement": "On actual proper quotient sorts, complete mixed semantic spectra equal (J;a;L) restricted to old real diversity, equivalently J^circ*{a}*L^circ for nonzero exteriors. The off-diagonal named cylinder omits ONLY the diagonal of the SAME hidden sort.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I14",
+      "name": "lem:typed-raw-strong-saturation",
+      "provider_module": "transition_closure",
+      "source_label": "lem:typed-raw-strong-saturation",
+      "provider_claims": [
+        "C05",
+        "C07",
+        "C08"
+      ],
+      "statement": "Original relational SAP permits pinned diversity path support and gives RAW kernel saturation off the real diagonal equal to STRONG exterior products. True Id exteriors are omitted; they are never replaced by an empty diversity factor.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "provider_support_claims": [
+        "C01"
+      ],
+      "provider_support_usage": "Use the proved strict ancestor C01 ONLY to separate all positions of one nonempty RAW atomic word while pinning its already DISTINCT old endpoints. It proves positivity of J^circ from the RAW word; it introduces no new STRONG associativity assumption."
+    },
+    {
+      "id": "I15",
+      "name": "lem:typed-equivalence-reproduction",
+      "provider_module": "terminal_profiles",
+      "source_label": "lem:typed-equivalence-reproduction",
+      "provider_claims": [
+        "C04"
+      ],
+      "statement": "For an actual nonzero invariant equivalence J in an old SAP source, every nonempty old palette P contained in J^circ has J^circ*P*J^circ=J^circ. This supports the coincident-coordinate case, with no CCO/NR2 needed once P and J are given.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I16",
+      "name": "lem:packetinterval",
+      "provider_module": "finite_packets",
+      "source_label": "lem:packetinterval",
+      "provider_claims": [
+        "C03"
+      ],
+      "statement": "The original FULL finite commuting invariant lattice has its greatest finite-class equivalence F=Sigma(Id); actual uniform relative indices satisfy transposition/tower formulas, without exactness or distributivity.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "provider_support_claims": [
+        "C01",
+        "C02"
+      ],
+      "provider_support_usage": "Use precisely the strict proved ancestors C01/C02 of C03: actual full equivalence commutation, finite orbital lattice and uniform class-count index transposition/tower formulas. Do not import finite-exact normalization or packet naming."
+    },
+    {
+      "id": "I17",
+      "name": "lem:acf-canonical-coordinates",
+      "provider_module": "acl_owner_geometry",
+      "source_label": "lem:acf-canonical-coordinates",
+      "provider_claims": [
+        "C19"
+      ],
+      "statement": "Use ONLY the abstract-lattice C19 branch under its generic A10: a greatest finite-class F with a least strict coarsening in the finite commuting invariant lattice implies exactly one minimal infinite invariant equivalence. No normalized/exact-owner premises from the other source branches are used.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    },
+    {
+      "id": "I18",
+      "name": "lem:consolidated-unary-closure",
+      "provider_module": "direct_owner_closure",
+      "source_label": "lem:consolidated-unary-closure",
+      "provider_claims": [
+        "C07"
+      ],
+      "statement": "Use ONLY the original real-closure C07 branch: an infinite actual homogeneous symmetric AP+HOM CCO source with one minimal infinite invariant direction has acl_Q(A)=F[A] for EVERY finite real A including empty A. No thin-owner naming, normalization or EPPA conclusion is imported.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN"
+    }
+  ],
+  "definitions": [
+    {
+      "id": "D01",
+      "name": "Pure clone and owner projection",
+      "statement": "M=Q x N, pi(q,n)=q; c relates distinct points with the same owner, and K=ker(pi)=Id union c. Different-owner pair colours are the original Q atoms.",
+      "depends_on": [],
+      "notes": "N01",
+      "source": {
+        "file": "sections/ramsey_ap_from_clones.tex",
+        "anchor": "\\label{lem:ramsey-clone-stability}"
+      }
+    },
+    {
+      "id": "D02",
+      "name": "Clone-saturated unary type",
+      "statement": "A unary type is clone-saturated when it is pi^{-1}(U) for an owner type U; all independent permutations inside each whole N-fibre preserve it.",
+      "depends_on": [],
+      "notes": "N01",
+      "source": {
+        "file": "sections/ramsey_ap_from_clones.tex",
+        "anchor": "\\label{lem:ramsey-clone-stability}"
+      }
+    },
+    {
+      "id": "D03",
+      "name": "Actual split gates and character points",
+      "statement": "L_* is the source gate containing the finite-index lower endpoint Y; reached target gates are L_t=R^op R, with L_* R=R. Phase bits are actual gate-class bits in the same rigid character groupoid.",
+      "depends_on": [],
+      "notes": "N02",
+      "source": {
+        "file": "sections/ramsey_ap_from_clones.tex",
+        "anchor": "\\label{lem:ramsey-clone-stability}"
+      }
+    },
+    {
+      "id": "D04",
+      "name": "Monochromatic owner clique",
+      "statement": "An infinite subset of distinct current owners with all fine pair colours the same atom a outside K. It is taken from the ACTUAL infinite parent owner type, by infinite Ramsey on its finite symmetric pair palette.",
+      "depends_on": [],
+      "notes": "N03",
+      "source": {
+        "file": "sections/ramsey_ap_from_clones.tex",
+        "anchor": "\\label{lem:ramsey-clone-stability}"
+      }
+    },
+    {
+      "id": "D05",
+      "name": "Fixed MI coordinate symbol list",
+      "statement": "A fixed family of distinct proper FULL invariant MI equivalences J>=K_s is meet-representing if its meet is K_s. C24 proves that taking all such MI is one available choice; any meet-representing subfamily is permitted. Its list is fixed by symbols, not by choosing a representative for each point.",
+      "depends_on": [],
+      "notes": "N04",
+      "source": {
+        "file": "sections/ramsey_ap_from_clones.tex",
+        "anchor": "\\label{lem:ramsey-mi-domain}"
+      }
+    },
+    {
+      "id": "D06",
+      "name": "Actual representative spectrum with a diagonal clause",
+      "statement": "For actual quotient vertices b in M_s/J,d in M_t/L, Spec(b,d) is the set of old diversity atoms realized by DISTINCT representatives. For b=d in the SAME quotient sort, define it by the actual equality case Spec(b,b)=J^circ.",
+      "depends_on": [],
+      "notes": "N05",
+      "source": {
+        "file": "sections/ramsey_ap_from_clones.tex",
+        "anchor": "\\label{lem:ramsey-mi-domain}"
+      }
+    },
+    {
+      "id": "D07",
+      "name": "Compatible MI tuple domain",
+      "statement": "delta_s(b_1,...,b_r) consists of the correct fixed coordinate sort tags and c_s in Spec(b_i,b_j) for every i<j. Each such tuple is to represent ONE K_s-class.",
+      "depends_on": [],
+      "notes": "N05",
+      "source": {
+        "file": "sections/ramsey_ap_from_clones.tex",
+        "anchor": "\\label{lem:ramsey-mi-domain}"
+      }
+    },
+    {
+      "id": "D08",
+      "name": "Nonempty STRONG exact meet",
+      "statement": "A nonempty typed diversity domain is a finite intersection of positive reachable profiles. Products use original typed distinct formal path positions and never adjoin real equality as a diversity atom.",
+      "depends_on": [],
+      "notes": "N06",
+      "source": {
+        "file": "sections/ramsey_ap_from_clones.tex",
+        "anchor": "\\label{lem:ramsey-typed-distributivity}"
+      }
+    },
+    {
+      "id": "D09",
+      "name": "Owner coordinate map",
+      "statement": "eta_s(q)=([x]_J_i)_i for ANY clone x over owner q. Independence of x and injection are proved from the kernel meet, not a selected section.",
+      "depends_on": [],
+      "notes": "N04",
+      "source": {
+        "file": "sections/ramsey_ap_from_clones.tex",
+        "anchor": "\\label{lem:ramsey-mi-domain}"
+      }
+    },
+    {
+      "id": "D10",
+      "name": "Fine-colour or equality reconstruction",
+      "statement": "For compatible tuples u,v, intersect ALL actual spectra Spec(u_i,v_j), including equality clauses. A singleton original atom a represents fine colour; singleton c_s on equal visible tuples represents VISIBLE EQUALITY.",
+      "depends_on": [],
+      "notes": "N07",
+      "source": {
+        "file": "sections/ramsey_ap_from_clones.tex",
+        "anchor": "\\label{lem:ramsey-singleton-recovery}"
+      }
+    },
+    {
+      "id": "D11",
+      "name": "Real owner algebraic closure",
+      "statement": "For a finite actual owner base A in a homogeneous quotient source P, acl_P(A) is the set of owner points with finite orbit under the FULL actual Aut(P/A). Complete one-point types are actual orbits by quotient homogeneity.",
+      "depends_on": [],
+      "notes": "N09",
+      "source": {
+        "file": "sections/ramsey_ap_from_clones.tex",
+        "anchor": "phase splitting preserving quotient algebraicity"
+      }
+    },
+    {
+      "id": "D12",
+      "name": "Original finite packet restricted to one terminal sort",
+      "statement": "Fbar_s is the pullback of the ORIGINAL owner equivalence F restricted to terminal clone sort s. It contains K_s and each Fbar_s-class has at most |F-class| distinct owner K_s-classes; it is not assumed originally exact.",
+      "depends_on": [],
+      "notes": "N10",
+      "source": {
+        "file": "sections/ramsey_ap_from_clones.tex",
+        "anchor": "phase splitting preserving quotient algebraicity"
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "name": "Original AP+CCO supplies the clone source triangle premise",
+      "statement": "A01 and I01 give actual triangle fullness; I02 therefore applies without adding old SAP.",
+      "depends_on": [
+        "A01",
+        "I01",
+        "I02"
+      ],
+      "notes": "N01",
+      "scope": "clones",
+      "source_labels": [
+        "lem:ramsey-clone-stability"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C02",
+      "name": "Pure cover has the represented clone kernel",
+      "statement": "The actual cover has homogeneous SAP+HOM CCO and K=Id union c=c;c by I02/C01; its owner quotient is the original Q. FULL c;c includes equality outputs, unlike STRONG c*c.",
+      "depends_on": [
+        "C01",
+        "D01"
+      ],
+      "notes": "N01",
+      "scope": "clones",
+      "source_labels": [
+        "lem:ramsey-clone-stability"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C03",
+      "name": "Independent fibre permutations survive clone-saturated labels",
+      "statement": "Any finite or infinite permutation inside one N-fibre fixes its owner and all old fine colours; clone-saturated unary labels are also fixed. These independent permutations belong to the actual current automorphism group.",
+      "depends_on": [
+        "C02",
+        "D02"
+      ],
+      "notes": "N01",
+      "scope": "clones",
+      "source_labels": [
+        "lem:ramsey-clone-stability"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C04",
+      "name": "Current clone kernel is invariant",
+      "statement": "In each current clone-saturated transitive sort, K is an invariant equivalence and each of its classes is a full infinite clone fibre.",
+      "depends_on": [
+        "C03"
+      ],
+      "notes": "N01",
+      "scope": "clones",
+      "source_labels": [
+        "lem:ramsey-clone-stability"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C05",
+      "name": "K is the least nonidentity invariant equivalence",
+      "statement": "If an invariant E contains one distinct pair in a fibre, fibre permutations give all that fibre and transitivity gives K everywhere. If xEy have different owners, transpose x with another clone xprime while fixing y; E transitivity gives xExprime and the first case applies.",
+      "depends_on": [
+        "C03",
+        "C04"
+      ],
+      "notes": "N01",
+      "scope": "clones",
+      "source_labels": [
+        "lem:ramsey-clone-stability"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C06",
+      "name": "A finite-index lower endpoint cannot be real equality",
+      "statement": "For a proper finite-index interval Y<X, Y=Id would force X>=K by C05 and hence an infinite number of Id-classes inside every X-class, contradicting finite index. Thus Y>Id and K<=Y.",
+      "depends_on": [
+        "C04",
+        "C05"
+      ],
+      "notes": "N02",
+      "scope": "clones",
+      "source_labels": [
+        "lem:ramsey-clone-stability"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C07",
+      "name": "The source split gate contains clone classes",
+      "statement": "The actual source gate L_* contains Y by A02, so C06 gives K<=L_*; all source gate-class bits are constant on clone fibres.",
+      "depends_on": [
+        "A02",
+        "C06",
+        "D03"
+      ],
+      "notes": "N02",
+      "scope": "clones",
+      "source_labels": [
+        "lem:ramsey-clone-stability"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C08",
+      "name": "Every reached target gate contains its clone kernel",
+      "statement": "For yK_t yprime and xRy, choose a fresh source clone x0 distinct from y,yprime. Since K_s<=L_* and L_*R=R, x0Ry even if the original x equals y. Transposing y,yprime while fixing x0 gives x0Ryprime. Hence y(R^op R)yprime, so K_t<=L_t. This also handles coincident source/target sorts and old owners.",
+      "depends_on": [
+        "C03",
+        "C07",
+        "D03"
+      ],
+      "notes": "N02",
+      "scope": "clones",
+      "source_labels": [
+        "lem:ramsey-clone-stability"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C09",
+      "name": "All new labels are clone-saturated",
+      "statement": "C07/C08 make every active pulled-back character bit constant on its entire clone fibre; inactive labels are fixed. Repeating the argument at every actual split preserves all fibre permutations.",
+      "depends_on": [
+        "A02",
+        "C07",
+        "C08"
+      ],
+      "notes": "N02",
+      "scope": "clones",
+      "source_labels": [
+        "lem:ramsey-clone-stability"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C10",
+      "name": "The homogeneous marked source is again a pure cover",
+      "statement": "The legal finite marked class I05 has an equivalence K with uniform old colours between its classes and infinite fibres (every finite fibre extension is legal by C09). Its homogeneous limit is thus isomorphic over its owner quotient to Qnew x N with the SAME c rule.",
+      "depends_on": [
+        "C02",
+        "C09",
+        "I03",
+        "I05"
+      ],
+      "notes": "N02",
+      "scope": "clones",
+      "source_labels": [
+        "lem:ramsey-clone-stability"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C11",
+      "name": "The owner marked age is homogeneous and reasonable",
+      "statement": "Lift any finite owner partial isomorphism to arbitrary distinct actual clones in C10, extend by marked homogeneity, and project. For reasonableness lift a prescribed old owner embedding on one clone per point using I03/I05; fibre-constant marks descend. Thus the new owner age is a reasonable finite unary expansion of its parent.",
+      "depends_on": [
+        "C10",
+        "I03",
+        "I05"
+      ],
+      "notes": "N02",
+      "scope": "clones",
+      "source_labels": [
+        "lem:ramsey-clone-stability"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C12",
+      "name": "An infinite parent owner type has a looped atom outside K",
+      "statement": "Apply the ordinary infinite Ramsey theorem to the ACTUAL infinite complete symmetric finite-coloured owner graph in that parent unary type. An infinite monochromatic clique uses distinct owners, so its lifted fine atom a is outside K and occurs on an actual a,a,a triangle.",
+      "depends_on": [
+        "A01",
+        "C10",
+        "D04"
+      ],
+      "notes": "N03",
+      "scope": "infinitude",
+      "source_labels": [
+        "lem:ramsey-clone-stability"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C13",
+      "name": "A rigid looped atom has identity gate arrow",
+      "statement": "If the gate cylinder of a in C12 is a rigid graph R, an actual a,a,a triangle gives R squared(q)=R(q) at its first quotient point q. Invertibility gives R(q)=q; freeness of the actual groupoid action forces R to be the identity arrow, so its character is zero.",
+      "depends_on": [
+        "C12",
+        "I06"
+      ],
+      "notes": "N03",
+      "scope": "infinitude",
+      "source_labels": [
+        "lem:ramsey-clone-stability"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C14",
+      "name": "Nonrigid looped pairs have independent action seeds",
+      "statement": "If that gate cylinder is not rigid, I06 puts each pair of distinct quotient points in different free-action orbits; if two quotient points coincide they impose only identity phase zero. There is therefore no forced opposite phase on any such a-pair.",
+      "depends_on": [
+        "C12",
+        "I06"
+      ],
+      "notes": "N03",
+      "scope": "infinitude",
+      "source_labels": [
+        "lem:ramsey-clone-stability"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C15",
+      "name": "A constant desired child bit meets every finite pair test",
+      "statement": "On any finite part of the actual clique, assign the SAME desired active bit epsilon to all points. C13 gives zero difference on rigid pairs; C14 leaves distinct action-orbit seeds free. Coincident gate points also receive one consistent bit.",
+      "depends_on": [
+        "C13",
+        "C14"
+      ],
+      "notes": "N03",
+      "scope": "infinitude",
+      "source_labels": [
+        "lem:ramsey-clone-stability"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C16",
+      "name": "The whole clique prefix is globally markable at once",
+      "statement": "I07 extends all C15 prescriptions simultaneously to ONE global character marking on the old source. I05 then puts the entire finite marked clique in the genuine legal marked age, with all its original complete old pairs intact.",
+      "depends_on": [
+        "C15",
+        "I05",
+        "I07"
+      ],
+      "notes": "N03",
+      "scope": "infinitude",
+      "source_labels": [
+        "lem:ramsey-clone-stability"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C17",
+      "name": "Every nonempty child owner type remains infinite",
+      "statement": "For every n and every realized child bit epsilon, C16 yields n DISTINCT owners of that child in the marked age. An induced embedding into its homogeneous marked source cannot merge owners: the pair atom a is outside K. Thus the child owner sort is infinite. Inactive children retain their parent owner type.",
+      "depends_on": [
+        "C10",
+        "C16"
+      ],
+      "notes": "N03",
+      "scope": "infinitude",
+      "source_labels": [
+        "lem:ramsey-clone-stability"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C18",
+      "name": "Finite actual terminalisation preserves the owner product",
+      "statement": "Start from Q infinite; C09-C11 and C17 iterate along the finite sequence I04. All owner unary types remain infinite and the final actual source is Mdagger=Qdagger x N, with Qdagger a reasonable reduct-surjective precompact finite unary expansion of Q.",
+      "depends_on": [
+        "C11",
+        "C17",
+        "I04"
+      ],
+      "notes": "N03",
+      "scope": "infinitude",
+      "source_labels": [
+        "lem:ramsey-clone-stability"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C19",
+      "name": "Each terminal clone kernel is proper nonzero FULL exact",
+      "statement": "Each terminal owner sort is infinite by C18, so K_s<Top and c_s is nonempty. Full c_s;c_s=K_s survives unchanged inside each infinite fibre, proving exactness directly. I04 gives FULL terminal infinite-cover premises for later I09/I10 applications.",
+      "depends_on": [
+        "C02",
+        "C18",
+        "I04"
+      ],
+      "notes": "N03",
+      "scope": "clones",
+      "source_labels": [
+        "lem:ramsey-clone-stability"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C20",
+      "name": "Clone-stable terminalisation source export",
+      "statement": "C18/C19 prove lem:ramsey-clone-stability for the specific actual safe character construction, without asserting this for arbitrary unary labels or assuming any later Ramsey/EPPA result.",
+      "depends_on": [
+        "C18",
+        "C19"
+      ],
+      "notes": "N03",
+      "scope": "clones",
+      "source_labels": [
+        "lem:ramsey-clone-stability"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C21",
+      "name": "The actual terminal invariant lattice is finite",
+      "statement": "I08 identifies FULL invariant equivalences on each transitive terminal clone sort with finitely many actual orbital unions; meet is literal intersection. C19 gives Id<K_s<Top.",
+      "depends_on": [
+        "C19",
+        "I08"
+      ],
+      "notes": "N04",
+      "scope": "coordinates",
+      "source_labels": [
+        "lem:ramsey-mi-domain"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C22",
+      "name": "A finite lattice has a maximal separator above K",
+      "statement": "For any lattice element H>K, choose a maximal J>=K with H not<=J. It exists because K itself excludes H and the lattice is finite. This J is proper.",
+      "depends_on": [
+        "C21"
+      ],
+      "notes": "N04",
+      "scope": "coordinates",
+      "source_labels": [
+        "lem:ramsey-mi-domain"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C23",
+      "name": "Every maximal separator is meet-irreducible",
+      "statement": "If J=E meet F with E,F>J, maximality in C22 forces H<=E and H<=F, hence H<=J, contradiction. Thus J is proper MI.",
+      "depends_on": [
+        "C22"
+      ],
+      "notes": "N04",
+      "scope": "coordinates",
+      "source_labels": [
+        "lem:ramsey-mi-domain"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C24",
+      "name": "All proper MI elements above K meet exactly at K",
+      "statement": "Let T be their meet, with K<=T. If T>K, apply C22/C23 to H=T; the resulting selected MI J would satisfy T<=J and T not<=J. Therefore T=K. This uses only finite lattice separation, not distributivity.",
+      "depends_on": [
+        "C21",
+        "C22",
+        "C23",
+        "D05"
+      ],
+      "notes": "N04",
+      "scope": "coordinates",
+      "source_labels": [
+        "lem:ramsey-mi-domain"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C25",
+      "name": "A meet-representing coordinate list exists and is represented",
+      "statement": "C24 permits choosing ANY fixed family of distinct proper MI above K whose meet is K; taking all is one default. Every such family is nonempty since K<Top. All its elements are >Id and terminal FULL NR2/I09 make them RAW exact, so they are existing actual proper V27 quotient sorts. Subsequent calculations depend only on that meet equation.",
+      "depends_on": [
+        "C19",
+        "C22",
+        "C23",
+        "C24",
+        "I09"
+      ],
+      "notes": "N04",
+      "scope": "coordinates",
+      "source_labels": [
+        "lem:ramsey-mi-domain"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C26",
+      "name": "eta is independent of the chosen clone",
+      "statement": "Every chosen J_i contains K. Two clones over one owner therefore have the same J_i class for every i, proving eta is a canonical tuple without a section.",
+      "depends_on": [
+        "C24",
+        "C25",
+        "D09"
+      ],
+      "notes": "N04",
+      "scope": "coordinates",
+      "source_labels": [
+        "lem:ramsey-mi-domain"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C27",
+      "name": "eta is injective on old owners",
+      "statement": "Equal eta tuples put any two representatives in every J_i; C24 puts them in K, hence they have the same owner. Different owner unary sort tags are also distinct.",
+      "depends_on": [
+        "C24",
+        "C26"
+      ],
+      "notes": "N04",
+      "scope": "coordinates",
+      "source_labels": [
+        "lem:ramsey-mi-domain"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C28",
+      "name": "The diagonal representative spectrum is the full J diversity support",
+      "statement": "Every atom a inside J occurs in each actual J-class by old transitivity and invariance of J. Conversely any distinct pair of representatives in that class has atom inside J. Thus Spec(b,b)=J^circ; hidden equality is distinct from old real equality.",
+      "depends_on": [
+        "C18",
+        "D06"
+      ],
+      "notes": "N05",
+      "scope": "domain",
+      "source_labels": [
+        "lem:ramsey-mi-domain"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C29",
+      "name": "Two coordinate classes meet exactly when their spectrum contains c",
+      "statement": "If actual J,L classes meet, one common owner has two distinct clones belonging to BOTH since K<=J,L, yielding c in Spec. Conversely a c-pair has one owner and its full K-class lies in both J,L classes, so they meet.",
+      "depends_on": [
+        "C24",
+        "C25",
+        "D06"
+      ],
+      "notes": "N05",
+      "scope": "domain",
+      "source_labels": [
+        "lem:ramsey-mi-domain"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C30",
+      "name": "The tuple formula means pairwise class compatibility",
+      "statement": "By C29, all c-membership tests for i<j are exactly pairwise intersection of the chosen actual J_i classes. The r=1 formula has no pair test and every actual J_1 class is inhabited.",
+      "depends_on": [
+        "C25",
+        "C29",
+        "D07"
+      ],
+      "notes": "N05",
+      "scope": "domain",
+      "source_labels": [
+        "lem:ramsey-mi-domain"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C31",
+      "name": "Compatible coordinates have exactly one common owner",
+      "statement": "Apply I10 to the finite nonidentity actual J_i classes using the actual terminal homogeneous SAP+HOM CCO source from C18/C19 and FULL NR2 from I04. Their common intersection is nonempty; for a point x in it, the intersection is the class of meet_i J_i=K at x by C24. Thus there is precisely one owner.",
+      "depends_on": [
+        "C18",
+        "C19",
+        "C24",
+        "C30",
+        "I04",
+        "I10"
+      ],
+      "notes": "N05",
+      "scope": "domain",
+      "source_labels": [
+        "lem:ramsey-mi-domain"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C32",
+      "name": "The compatible domain is quantifier-free",
+      "statement": "Each c-membership test is a finite disjunction of the named complete mixed cylinder orbitals whose spectra contain c, with the actual same-hidden-sort equality clause C28 when applicable. Sort tags are finite unary conditions. No representative or point-dependent choice enters the formula.",
+      "depends_on": [
+        "C28",
+        "C30",
+        "I13"
+      ],
+      "notes": "N05",
+      "scope": "domain",
+      "source_labels": [
+        "lem:ramsey-mi-domain"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C33",
+      "name": "Orphan coordinates use the same actual formula",
+      "statement": "Every completed finite hidden object is induced in actual coordinate data, even if it lacks real witnesses or common-cell vertices. Realize the whole unordered finite object once; C29-C32 then apply to its actual coordinates simultaneously. Closure may omit the common owner, which is interpreted as a tuple rather than added to the hidden carrier.",
+      "depends_on": [
+        "C31",
+        "C32"
+      ],
+      "notes": "N05",
+      "scope": "domain",
+      "source_labels": [
+        "lem:ramsey-mi-domain"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C34",
+      "name": "Quantifier-free compatible MI domain source export",
+      "statement": "C26/C27 and C30-C33 prove lem:ramsey-mi-domain: eta identifies original owners exactly with compatible tuples in the actual coordinate universe, and the same finite formula defines valid tuples in any actual completed finite hidden member.",
+      "depends_on": [
+        "C26",
+        "C27",
+        "C30",
+        "C31",
+        "C32",
+        "C33"
+      ],
+      "notes": "N05",
+      "scope": "domain",
+      "source_labels": [
+        "lem:ramsey-mi-domain"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C35",
+      "name": "Nonempty diversity meet of the chosen kernels is the clone atom",
+      "statement": "Removing the common old real diagonal from the literal meet C24 gives meet_i J_i^circ=K^circ={c_s}. The coordinate list is nonempty by C25, and c_s is realized; no empty-palette or empty-list identity convention is used.",
+      "depends_on": [
+        "C19",
+        "C24",
+        "C25"
+      ],
+      "notes": "N06",
+      "scope": "strong_exact",
+      "source_labels": [
+        "lem:ramsey-typed-distributivity"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C36",
+      "name": "Every chosen J diversity support has a positive exact presentation",
+      "statement": "I09 gives a RAW atomic word for J>Id; deleting genuine Id letters leaves a nonempty word, since J contains the occurring c_s pair. Apply I14 strict C01 support to its distinct endpoint realizations: its STRONG profile is exactly J^circ. Thus each selected support is a positive reachable profile; singleton fine atoms are positive length-one profiles.",
+      "depends_on": [
+        "C25",
+        "I09",
+        "I14"
+      ],
+      "notes": "N06",
+      "scope": "strong_exact",
+      "source_labels": [
+        "lem:ramsey-typed-distributivity"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C37",
+      "name": "The abstract distributivity source is the correct actual one",
+      "statement": "Under independent A03, the hypotheses of I11 and I12 are exactly actual homogeneous named typed SAP+HOM CCO, nonempty strong exact factors and compatible endpoint tags. They require no primitivity, NR2, clones, safe splitting or hidden quotient SAP.",
+      "depends_on": [
+        "A03",
+        "I11",
+        "I12",
+        "D08"
+      ],
+      "notes": "N06",
+      "scope": "strong_exact",
+      "source_labels": [
+        "lem:ramsey-typed-distributivity"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C38",
+      "name": "Two-sided nonempty meet convolution holds",
+      "statement": "Instantiate I11 at the A03 source and the supplied positive exact presentations: (meet_i P_i)*(meet_j Q_j)=meet_{i,j}(P_i*Q_j), with every meet evaluation stipulated nonempty. Real equality is never part of a strong palette.",
+      "depends_on": [
+        "C37",
+        "I11"
+      ],
+      "notes": "N06",
+      "scope": "strong_exact",
+      "source_labels": [
+        "lem:ramsey-typed-distributivity"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C39",
+      "name": "Repeated products preserve eligible exact presentations",
+      "statement": "I11 closes nonempty exact factors under typed strong convolution. I12 gives associativity for multiple factors. Hence an application of C38 can be iterated whenever the actual evaluated factors/meets are nonempty; word concatenation retains a positive reachable-profile presentation.",
+      "depends_on": [
+        "C38",
+        "I11",
+        "I12"
+      ],
+      "notes": "N06",
+      "scope": "strong_exact",
+      "source_labels": [
+        "lem:ramsey-typed-distributivity"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C40",
+      "name": "The terminal clone application discharges the abstract source premises",
+      "statement": "C18/C19 supply an actual homogeneous SAP+HOM CCO terminal source; C36 supplies J^circ and singleton positive exact presentations, and C35 gives the nonempty kernel meet. Thus C38/C39 can be newly instantiated on this source, rather than identifying original Q AP multiplication with STRONG clone multiplication.",
+      "depends_on": [
+        "C18",
+        "C19",
+        "C35",
+        "C36",
+        "C38",
+        "C39"
+      ],
+      "notes": "N06",
+      "scope": "strong_exact",
+      "source_labels": [
+        "lem:ramsey-typed-distributivity"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C41",
+      "name": "Typed nonempty meet-product distributivity source export",
+      "statement": "C38/C39 prove the independently parameterized lem:ramsey-typed-distributivity under A03. C40 records its separate actual terminal clone application for the singleton argument.",
+      "depends_on": [
+        "C38",
+        "C39"
+      ],
+      "notes": "N06",
+      "scope": "strong_exact",
+      "source_labels": [
+        "lem:ramsey-typed-distributivity"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C42",
+      "name": "Distinct owners admit distinct clone representatives",
+      "statement": "Given q,r with q!=r, any lifted representatives x,y are distinct and have their literal old fine atom a. For q=r choose two distinct clones; their atom is c_s. This permits the same representative-spectrum calculation without inserting Id into any path.",
+      "depends_on": [
+        "C18",
+        "C19",
+        "D01"
+      ],
+      "notes": "N07",
+      "scope": "singleton",
+      "source_labels": [
+        "lem:ramsey-singleton-recovery"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C43",
+      "name": "Distinct-coordinate spectra are the actual strong kernel cylinders",
+      "statement": "For eta_s(q)_i and eta_t(r)_j distinct as hidden vertices, I13 and I14 identify their spectrum with J_si^circ*{a}*J_tj^circ. Both exterior kernels are nonzero. It is ONE complete actual cylinder, not an arbitrary union of output orbitals.",
+      "depends_on": [
+        "C25",
+        "C26",
+        "C42",
+        "I13",
+        "I14"
+      ],
+      "notes": "N07",
+      "scope": "singleton",
+      "source_labels": [
+        "lem:ramsey-singleton-recovery"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C44",
+      "name": "Coincident hidden coordinates satisfy the same formula",
+      "statement": "If the two coordinates are equal in one hidden quotient sort, their kernels are the SAME J and their distinct old representatives have a inside J^circ. I15 gives J^circ*{a}*J^circ=J^circ, exactly Spec(b,b) by C28. This covers both different owners sharing that coordinate and equal visible owners.",
+      "depends_on": [
+        "C28",
+        "C42",
+        "I15"
+      ],
+      "notes": "N07",
+      "scope": "singleton",
+      "source_labels": [
+        "lem:ramsey-singleton-recovery"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C45",
+      "name": "Every coordinate-pair spectrum has one uniform actual formula",
+      "statement": "C43 and C44 exhaust distinct versus equal hidden endpoints, yielding Spec(eta_s(q)_i,eta_t(r)_j)=J_si^circ*{a}*J_tj^circ for ALL i,j, with distinct real representatives as in C42.",
+      "depends_on": [
+        "C43",
+        "C44"
+      ],
+      "notes": "N07",
+      "scope": "singleton",
+      "source_labels": [
+        "lem:ramsey-singleton-recovery"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C46",
+      "name": "Intersecting all spectra leaves c_s*a*c_t",
+      "statement": "Use C40/I11 twice with the actual nonempty exact kernel families, the singleton {a}, and exact intermediate products; C45 contains a in every spectrum, ensuring the relevant final meet is nonempty. Associativity I12 gives meet_{i,j} Spec=(meet_i J_si^circ)*{a}*(meet_j J_tj^circ)={c_s}*{a}*{c_t}.",
+      "depends_on": [
+        "C35",
+        "C36",
+        "C40",
+        "C45",
+        "I11",
+        "I12"
+      ],
+      "notes": "N07",
+      "scope": "singleton",
+      "source_labels": [
+        "lem:ramsey-singleton-recovery"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C47",
+      "name": "Pure clone endpoint shifts fix the literal atom",
+      "statement": "Any c_s,a,c_t path keeps both exterior owners fixed, so its old output atom is a. Conversely choose fresh clones of the original two endpoint owners to realize all interior positions distinctly while preserving a. For a=c_s choose four distinct clones in one fibre. Hence {c_s}*{a}*{c_t}={a}.",
+      "depends_on": [
+        "C18",
+        "C19",
+        "C42"
+      ],
+      "notes": "N07",
+      "scope": "singleton",
+      "source_labels": [
+        "lem:ramsey-singleton-recovery"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C48",
+      "name": "Distinct visible owners have singleton original fine colour",
+      "statement": "For q!=r the atom a in C42 is an original old Qdagger typed fine atom, not c. C46/C47 give exactly the singleton {a} for the intersection of all coordinate spectra.",
+      "depends_on": [
+        "C46",
+        "C47"
+      ],
+      "notes": "N07",
+      "scope": "singleton",
+      "source_labels": [
+        "lem:ramsey-singleton-recovery"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C49",
+      "name": "Equal visible tuples return exactly the clone marker",
+      "statement": "For one owner q, use a=c_s and two distinct clones in C42. C46/C47 yield the singleton {c_s}. C27 shows equal tuples mean the same owner; thus the returned c_s is interpreted as VISIBLE EQUALITY, not as a visible diversity edge or logical real Id in a product.",
+      "depends_on": [
+        "C27",
+        "C46",
+        "C47"
+      ],
+      "notes": "N07",
+      "scope": "singleton",
+      "source_labels": [
+        "lem:ramsey-singleton-recovery"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C50",
+      "name": "Original fine relations are quantifier-free on valid tuples",
+      "statement": "For each old atom a, require visible tuple inequality plus a in every finite spectrum; C48 says this selects exactly old a. Spectrum memberships are finite disjunctions of complete cylinder/equality cases as C32. Same-source tuples are equal iff all coordinate entries agree; different owner sort tags cannot denote one owner.",
+      "depends_on": [
+        "C27",
+        "C32",
+        "C48",
+        "C49"
+      ],
+      "notes": "N07",
+      "scope": "singleton",
+      "source_labels": [
+        "lem:ramsey-singleton-recovery"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C51",
+      "name": "All compatible tuples coexist in one actual owner source",
+      "statement": "For ANY actual completed finite hidden D, realize its entire unordered structure once. C33 gives one actual owner per valid tuple, and C48-C50 fix every pair fine colour independently of the chosen realization. Thus reconstructing the finite visible object has no additional simultaneous-cell existence obligation.",
+      "depends_on": [
+        "C33",
+        "C48",
+        "C49",
+        "C50"
+      ],
+      "notes": "N07",
+      "scope": "singleton",
+      "source_labels": [
+        "lem:ramsey-singleton-recovery"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C52",
+      "name": "Singleton fine-colour source export",
+      "statement": "C48-C51 prove lem:ramsey-singleton-recovery, including hidden-coordinate diagonal cases, visible equality c_s and quantifier-free old fine-colour recovery. No Ramsey theorem or free ordering of deleted clone-real vertices is an input.",
+      "depends_on": [
+        "C48",
+        "C49",
+        "C50",
+        "C51"
+      ],
+      "notes": "N07",
+      "scope": "singleton",
+      "source_labels": [
+        "lem:ramsey-singleton-recovery"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C53",
+      "name": "Bare equivalence coordinates need not recover fine colours",
+      "statement": "In a homogeneous pure owner set with two possible additional fine pair colours (for example a two-coloured generic complete graph), the bare equality/Top equivalence reduct forgets those colours. More generally deleting complete mixed cylinders loses information even if a family of class intersections is recognized. The positive singleton proof uses the full mixed spectra and exact products.",
+      "depends_on": [
+        "C52"
+      ],
+      "notes": "N08",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:ramsey-singleton-recovery"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C54",
+      "name": "FULL c;c is not the strong product c*c",
+      "statement": "Inside one infinite clone fibre, FULL c;c contains equal endpoint pairs and equals K, whereas its STRONG diversity output is only {c}. Replacing K by Id as a strong unit or inserting equality among diversity atoms invalidates the typed calculation.",
+      "depends_on": [
+        "C02",
+        "C35"
+      ],
+      "notes": "N08",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:ramsey-singleton-recovery"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C55",
+      "name": "Arbitrary unary labels can destroy owner infinitude",
+      "statement": "On a pure infinite owner set, label exactly one owner by a new predicate and pull it back to clones. It is clone-saturated but its marked owner sort is finite. Thus C09 alone does not prove C17: the actual free-character pair constraints and global extension C13-C16 are essential.",
+      "depends_on": [
+        "C17"
+      ],
+      "notes": "N08",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:ramsey-singleton-recovery"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C56",
+      "name": "Finite windows are diagnostics rather than unbounded certification",
+      "statement": "Bounded coloured coordinate clone windows check actual spectra, whole represented/strong products, finite MI meets, tuple domains and reconstruction, and finite character constraints. They prove no infinite SAP/CCO theorem, generic marked-age theorem, HN bridge or Lean certification.",
+      "depends_on": [
+        "C52"
+      ],
+      "notes": "N08",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:ramsey-singleton-recovery"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C57",
+      "name": "No empty coordinate family is used in the owner reconstruction",
+      "statement": "C19 has K<Top and C25 has at least one proper MI above K. Therefore every visible sort has r_s>=1; an empty tuple family or empty intersection convention cannot accidentally identify infinitely many owners or produce a false clone unit.",
+      "depends_on": [
+        "C19",
+        "C25",
+        "C27"
+      ],
+      "notes": "N08",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:ramsey-singleton-recovery"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C58",
+      "name": "Nonalgebraic current parent owner types are infinite actual orbits",
+      "statement": "For any finite owner base A with all old unary labels, current quotient homogeneity C11 identifies each realized complete parent one-point type p outside acl_P(A) with an infinite Aut(P/A)-orbit X of distinct owners. Every actual spoke to A is fixed by that type.",
+      "depends_on": [
+        "C11",
+        "D11"
+      ],
+      "notes": "N09",
+      "scope": "infinitude",
+      "source_labels": [
+        "lem:ramsey-clone-stability"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C59",
+      "name": "The monochromatic clique argument works over that whole fixed base",
+      "statement": "Apply the explicit nested-infinite-tail/pigeonhole construction of N03 to X from C58. It yields an actual infinite a-clique outside A, with a outside K, and every point retains the SAME complete old one-point type over A.",
+      "depends_on": [
+        "C12",
+        "C58"
+      ],
+      "notes": "N09",
+      "scope": "infinitude",
+      "source_labels": [
+        "lem:ramsey-clone-stability"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C60",
+      "name": "A realized child type can be copied over the full marked base",
+      "statement": "Take a realized complete child type pplus over marked A, lying above the nonalgebraic p. Keep all marks on A, and give each of n actual clique points C59 the same new bit epsilon of pplus. Every anchor spoke has its actual p colour and the already legal pplus endpoint bits; all new-new pairs have zero-phase looped a by C13/C14. Thus ALL actual finite pair masks are simultaneously legal.",
+      "depends_on": [
+        "C13",
+        "C14",
+        "C59",
+        "I05"
+      ],
+      "notes": "N09",
+      "scope": "infinitude",
+      "source_labels": [
+        "lem:ramsey-clone-stability"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C61",
+      "name": "Simultaneous phase extension realizes arbitrarily many copies over A",
+      "statement": "I05/I07 extend the entire actual finite diagram C60 to one global marking; embed its marked finite restriction into the genuine homogeneous marked source and align its FULL marked A by an automorphism. The n new owners remain distinct by their nonclone pair atom a, and have exactly pplus over A.",
+      "depends_on": [
+        "C10",
+        "C11",
+        "C60",
+        "I05",
+        "I07"
+      ],
+      "notes": "N09",
+      "scope": "infinitude",
+      "source_labels": [
+        "lem:ramsey-clone-stability"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C62",
+      "name": "One actual safe split preserves real owner algebraic closure",
+      "statement": "A nonalgebraic parent orbit remains infinite by C61, for EVERY realized child type over A. Conversely an algebraic parent point stays algebraic because the expanded pointwise stabilizer is a subgroup of the parent stabilizer. Therefore acl_Pplus(A)=acl_P(A) for EVERY finite owner A, with all its actual labels, in the unchanged old reduct.",
+      "depends_on": [
+        "C58",
+        "C61"
+      ],
+      "notes": "N09",
+      "scope": "infinitude",
+      "source_labels": [
+        "lem:ramsey-clone-stability"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C63",
+      "name": "Finite safe terminalisation preserves all finite-base owner closure",
+      "statement": "Iterate C62 along the finite actual split sequence C18/I04. Quotient homogeneity and reasonableness hold at each step by C11, so acl_Qdagger(A)=acl_Q(A) for EVERY finite actual owner A, including empty A. This general preservation lemma requires no F-MI assumption.",
+      "depends_on": [
+        "C11",
+        "C18",
+        "C62",
+        "I04"
+      ],
+      "notes": "N09",
+      "scope": "infinitude",
+      "source_labels": [
+        "lem:ramsey-clone-stability"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C64",
+      "name": "Original proper MI F has a least strict coarsening",
+      "statement": "Under optional A04, I16 gives the finite FULL invariant lattice, actual commuting relations and greatest finite-class F. Proper MI in a finite lattice has exactly one cover D; every element >F contains D, so D is its least strict coarsening.",
+      "depends_on": [
+        "A04",
+        "I16"
+      ],
+      "notes": "N10",
+      "scope": "coordinates",
+      "source_labels": [
+        "lem:ramsey-clone-stability"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C65",
+      "name": "There is one minimal infinite original direction",
+      "statement": "Apply ONLY I17 C19 with the actual finite commuting lattice/indices from I16 and least D from C64. Its generic abstract A10 is discharged without assuming exactness, normalization or a safe palette. Thus original Q has exactly one minimal infinite invariant equivalence.",
+      "depends_on": [
+        "C64",
+        "I16",
+        "I17"
+      ],
+      "notes": "N10",
+      "scope": "coordinates",
+      "source_labels": [
+        "lem:ramsey-clone-stability"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C66",
+      "name": "Original owner closure is its finite F hull",
+      "statement": "Apply ONLY I18 C07 to actual A01 Q with the unique minimal infinite direction C65: acl_Q(A)=F[A] for EVERY finite A including empty A. No finite-exact normalization or owner naming enters.",
+      "depends_on": [
+        "A01",
+        "C65",
+        "I18"
+      ],
+      "notes": "N10",
+      "scope": "coordinates",
+      "source_labels": [
+        "lem:ramsey-clone-stability"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C67",
+      "name": "The terminal owner expansion keeps the original finite F hull",
+      "statement": "Combine the all-finite-base preservation C63 with C66: acl_Qdagger(A)=F[A] for EVERY finite owner A. Original F may meet several terminal unary sorts.",
+      "depends_on": [
+        "C63",
+        "C66"
+      ],
+      "notes": "N10",
+      "scope": "coordinates",
+      "source_labels": [
+        "lem:ramsey-clone-stability"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C68",
+      "name": "The original F restriction is a finite-index original relation above K",
+      "statement": "In each terminal clone sort s, Fbar_s is actual invariant (the expansion group is a subgroup of the old group), contains K_s and has finitely many K_s-classes per Fbar_s-class, bounded by the original finite F-class size.",
+      "depends_on": [
+        "C18",
+        "C19",
+        "I16",
+        "D12"
+      ],
+      "notes": "N10",
+      "scope": "coordinates",
+      "source_labels": [
+        "lem:ramsey-clone-stability"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C69",
+      "name": "Terminality forces Fbar_s=K_s",
+      "statement": "If Fbar_s>K_s, the finite FULL invariant lattice has a cover inside that interval; actual class indices there are finite by C68, contrary to terminal infinite covers from I04. Hence Fbar_s=K_s. This holds without the optional F-MI assumption.",
+      "depends_on": [
+        "C21",
+        "C68",
+        "I04"
+      ],
+      "notes": "N10",
+      "scope": "coordinates",
+      "source_labels": [
+        "lem:ramsey-clone-stability"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C70",
+      "name": "A terminal owner sort meets each original F packet at most once",
+      "statement": "C69 says that two owners in the SAME final sort and same original F-class have the same K_s class, hence are equal. This is at most one, not a claim every F-packet meets every sort; cross-sort finite algebraicity is retained.",
+      "depends_on": [
+        "C69"
+      ],
+      "notes": "N10",
+      "scope": "coordinates",
+      "source_labels": [
+        "lem:ramsey-clone-stability"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C71",
+      "name": "A meet-reducible K would descend to two transverse owner equivalences",
+      "statement": "Assume for contradiction K_s=U meet V with U,V>K_s in the FULL terminal invariant lattice. Because both contain K_s they descend to actual invariant owner equivalences Ubar,Vbar on Q_s, both nonidentity, with meet owner equality.",
+      "depends_on": [
+        "C19",
+        "C21",
+        "C26"
+      ],
+      "notes": "N10",
+      "scope": "coordinates",
+      "source_labels": [
+        "lem:ramsey-clone-stability"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C72",
+      "name": "Two other owners would uniquely define an off-base corner",
+      "statement": "Choose z and x!=z in Ubar[z], y!=z in Vbar[z] by nonidentity and transitivity. Then x!=y, since equality would put x,z in both equivalences. Ubar[x] intersect Vbar[y] contains z and at most one point because Ubar meet Vbar=Id, so equals {z}.",
+      "depends_on": [
+        "C71"
+      ],
+      "notes": "N10",
+      "scope": "coordinates",
+      "source_labels": [
+        "lem:ramsey-clone-stability"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C73",
+      "name": "The corner is definable in the actual final owner language",
+      "statement": "Upstairs FULL invariant U,V are finite unions of actual fine orbitals; containing K makes their definitions uniform on clone fibres. Current owner homogeneity C11 and the pure clone product C18 identify their descended relations with finite unions of full owner unary/pair types. Thus {z}=Ubar[x] intersect Vbar[y] is definable over x,y and z lies in dcl_Qdagger{x,y} subset acl_Qdagger{x,y}.",
+      "depends_on": [
+        "C11",
+        "C18",
+        "C21",
+        "C72"
+      ],
+      "notes": "N10",
+      "scope": "coordinates",
+      "source_labels": [
+        "lem:ramsey-clone-stability"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C74",
+      "name": "The corner contradicts preserved finite-packet closure",
+      "statement": "C67 places that z in F[{x,y}], while C70 and z distinct from both x,y in the SAME terminal sort put z outside both their original F-classes. This contradiction excludes the assumed meet reduction.",
+      "depends_on": [
+        "C67",
+        "C70",
+        "C73"
+      ],
+      "notes": "N10",
+      "scope": "coordinates",
+      "source_labels": [
+        "lem:ramsey-clone-stability"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C75",
+      "name": "Optional original MI branch permits one proper exact coordinate",
+      "statement": "By C19 and C74, K_s is proper represented FULL exact MI when original F is MI. One MAY CHOOSE the meet-representing coordinate family to be the singleton (K_s); repeating C26-C52 for that valid family gives r_s=1 and each owner is its literal existing coordinate B_s,K_s. The main four geometry exports did not need this optional conclusion.",
+      "depends_on": [
+        "C19",
+        "C24",
+        "C25",
+        "C52",
+        "C74"
+      ],
+      "notes": "N10",
+      "scope": "coordinates",
+      "source_labels": [
+        "lem:ramsey-clone-stability"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C76",
+      "name": "Terminality and preserved closure are both needed for the MI side branch",
+      "statement": "Original F being MI alone does not force the UNSPLIT clone kernel K to be MI: take an INFINITE homogeneous disjoint union of congruent four-point two-bit packets, with one external colour between packets. Within packets the two bit-coordinate invariant equivalences meet at owner Id; the greatest finite-class packet relation F is proper and has only Top above it, hence MI. Upstairs K is still meet-reducible. The auxiliary proof uses both C63 and C69, and asserts no arbitrary unary-expansion preservation theorem.",
+      "depends_on": [
+        "C63",
+        "C69",
+        "C75"
+      ],
+      "notes": "N10",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:ramsey-clone-stability"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    }
+  ],
+  "source_result_files": [],
+  "additional_result_exports": [
+    "lem:ramsey-clone-stability",
+    "lem:ramsey-mi-domain",
+    "lem:ramsey-typed-distributivity",
+    "lem:ramsey-singleton-recovery"
+  ],
+  "exports": [
+    {
+      "source_label": "lem:ramsey-clone-stability",
+      "claims": [
+        "C20"
+      ]
+    },
+    {
+      "source_label": "lem:ramsey-mi-domain",
+      "claims": [
+        "C34"
+      ]
+    },
+    {
+      "source_label": "lem:ramsey-typed-distributivity",
+      "claims": [
+        "C41"
+      ]
+    },
+    {
+      "source_label": "lem:ramsey-singleton-recovery",
+      "claims": [
+        "C52"
+      ]
+    }
+  ],
+  "auxiliary_exports": [
+    {
+      "source_label": "eq:ramsey-mi-meet",
+      "claims": [
+        "C24"
+      ],
+      "source": {
+        "file": "sections/ramsey_ap_from_clones.tex",
+        "anchor": "\\label{eq:ramsey-mi-meet}"
+      }
+    },
+    {
+      "source_label": "eq:ramsey-domain",
+      "claims": [
+        "C34"
+      ],
+      "source": {
+        "file": "sections/ramsey_ap_from_clones.tex",
+        "anchor": "\\label{eq:ramsey-domain}"
+      }
+    },
+    {
+      "source_label": "eq:ramsey-clone-diversity-meet",
+      "claims": [
+        "C35"
+      ],
+      "source": {
+        "file": "sections/ramsey_ap_from_clones.tex",
+        "anchor": "\\label{eq:ramsey-clone-diversity-meet}"
+      }
+    },
+    {
+      "source_label": "eq:ramsey-singleton",
+      "claims": [
+        "C48"
+      ],
+      "source": {
+        "file": "sections/ramsey_ap_from_clones.tex",
+        "anchor": "\\label{eq:ramsey-singleton}"
+      }
+    }
+  ],
+  "source_files": [
+    {
+      "file": "sections/direct_owner_closure.tex",
+      "git_blob": "a4249938c53d20cd208d68dcd013c5c6d12a5ffd"
+    },
+    {
+      "file": "sections/ep_safe_ap_character_completion.tex",
+      "git_blob": "42e7958c333f8e39a9a5268ec22d0213c72d715b"
+    },
+    {
+      "file": "sections/exact_foundations/01_full_raw_exact_helly.tex",
+      "git_blob": "7cb28c86b4b296ddf865b6aff518cda1215cd491"
+    },
+    {
+      "file": "sections/exact_foundations/02_exact_quotient_orbital_geometry.tex",
+      "git_blob": "d462f2bfffcd67c1fa712ac516972ab18e073d44"
+    },
+    {
+      "file": "sections/exact_foundations/03_joint_exact_sort_lifting.tex",
+      "git_blob": "394e0db063a476c5c069384b3d3fa2ffd3c7471d"
+    },
+    {
+      "file": "sections/exact_lattice_crt.tex",
+      "git_blob": "5ead1d021abbc99c255c8a36ec87585cba3fbdc3"
+    },
+    {
+      "file": "sections/finite_orbit_avoidance.tex",
+      "git_blob": "290ab3ae54ade87fc4693b0c17955a9e319efd9b"
+    },
+    {
+      "file": "sections/finite_packet_kernel_constraints.tex",
+      "git_blob": "e47d0d2de416e03dd0207dc56a581088da78b74c"
+    },
+    {
+      "file": "sections/finite_packets.tex",
+      "git_blob": "dd3e608f03e7c5b1b1854a45de462859f8355143"
+    },
+    {
+      "file": "sections/finite_relative_parity_exact_closure.tex",
+      "git_blob": "9f6983f96bae28d06466fcbf23f15e20a55f2686"
+    },
+    {
+      "file": "sections/foundational_sap_collision_unfolding.tex",
+      "git_blob": "f3ed62cf481b082ca6be793f45bf180db12a6468"
+    },
+    {
+      "file": "sections/global_correspondence.tex",
+      "git_blob": "e18ca9d9d14f275a660a6358c45394891a2f46c0"
+    },
+    {
+      "file": "sections/harmless_exact_owners.tex",
+      "git_blob": "f2259434387184b1fbf24edf099da5e12be33024"
+    },
+    {
+      "file": "sections/maximal_cores/01_maximal_hat_normalisation.tex",
+      "git_blob": "248cc19427c0ad7114022238ca086a9eccc47a3f"
+    },
+    {
+      "file": "sections/ramsey_ap_from_clones.tex",
+      "git_blob": "74c191ad2f16775194c5ef588c7fcbc6cf536a2f"
+    },
+    {
+      "file": "sections/ramsey_clone_sap.tex",
+      "git_blob": "2b14f19885e7109be548a0af73fba14c974dc636"
+    },
+    {
+      "file": "sections/ramsey_preferred_support.tex",
+      "git_blob": "a4213db90239937a525e6fa7b6ea36703a2900df"
+    },
+    {
+      "file": "sections/real_hull/02_global_finite_fibre_fixer.tex",
+      "git_blob": "61b51f223bb0bec1c0ae53c3f21d8c7336def669"
+    },
+    {
+      "file": "sections/real_hull/03_invariant_class_packets.tex",
+      "git_blob": "a0093ce4c6d0366a1060ae7678090be765884462"
+    },
+    {
+      "file": "sections/real_hull/05_even_walk_canonical_hull.tex",
+      "git_blob": "40c459c5d2582ad92811ab62dcffbcb4456a8826"
+    },
+    {
+      "file": "sections/real_hull/06_minimal_infinite_directions_acl.tex",
+      "git_blob": "4c01beca2f60acfa2d942714525173889bc5804f"
+    },
+    {
+      "file": "sections/real_hull/07_sap_mi_intersection_geometry.tex",
+      "git_blob": "7d681c9087c1d7f41ea65a834158daf456ee5fd2"
+    },
+    {
+      "file": "sections/rigid_exact_groupoid_foundations.tex",
+      "git_blob": "fb231ec107f8c18b550c87d20ea2da9d86a2d735"
+    },
+    {
+      "file": "sections/rooted_acf_geometry.tex",
+      "git_blob": "4910a41d44909e4b01d48c03a3e9a1116b37ea23"
+    },
+    {
+      "file": "sections/simultaneous_typed_exact_quotients.tex",
+      "git_blob": "078017a03e1d6f62088fb17fb6e31bce4f6e8ef6"
+    },
+    {
+      "file": "sections/terminal_invariant_raw_exact.tex",
+      "git_blob": "af0064c672f332049209e142a585bc62540954b4"
+    },
+    {
+      "file": "sections/terminal_strong_powers.tex",
+      "git_blob": "e76bcb91b465a9192fe51748e845e49d05c16a58"
+    },
+    {
+      "file": "sections/triangle_fullness.tex",
+      "git_blob": "d25f85dd267577d1af0c6ffb1245809892fe1dc0"
+    },
+    {
+      "file": "sections/typed_hereditary_selectors.tex",
+      "git_blob": "35b4013ad3c9886c7641f924202a1491464c126a"
+    },
+    {
+      "file": "sections/typed_invariant_quotient_transport.tex",
+      "git_blob": "3895b17d7d0176a74d6f69c39e4e22d9cdba5715"
+    },
+    {
+      "file": "sections/typed_pc_fixedpoint.tex",
+      "git_blob": "796c74460c724023281e2d916d9ddb2e9eb70f07"
+    },
+    {
+      "file": "sections/typed_strong_domains.tex",
+      "git_blob": "75d584069ce802c62d66104a852a3649fc082f1d"
+    },
+    {
+      "file": "sections/v27/06_legacy_finite_covers.tex",
+      "git_blob": "67eda024d68a41c2dab17bf99fe440d6a137af66"
+    },
+    {
+      "file": "sections/v27/07_typed_raw_strong_transition.tex",
+      "git_blob": "6dc7e4c7aa452b179e95cc502b4daf4d2b6592d9"
+    },
+    {
+      "file": "sections/v27/08_typed_terminal_reset_equivalences.tex",
+      "git_blob": "624a17bdab4758ac1ccf4ce406cdf32742375374"
+    },
+    {
+      "file": "sections/v27/09_typed_equivalence_and_profiles.tex",
+      "git_blob": "39d1678e6616140b50d6d9448b94f0de823f26d8"
+    }
+  ],
+  "dependency_firewalls": [
+    {
+      "claims": [
+        "C37",
+        "C38",
+        "C39",
+        "C41"
+      ],
+      "forbid": [
+        "A01",
+        "A02",
+        "I01",
+        "I02",
+        "I03",
+        "I04",
+        "I05",
+        "I06",
+        "I07",
+        "I08",
+        "I09",
+        "I10",
+        "I13",
+        "I14",
+        "I15",
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36"
+      ]
+    },
+    {
+      "claims": [
+        "C21",
+        "C22",
+        "C23",
+        "C24"
+      ],
+      "forbid": [
+        "I09",
+        "I10",
+        "I11",
+        "I12",
+        "I13",
+        "I14",
+        "I15"
+      ]
+    },
+    {
+      "claims": [
+        "C20",
+        "C34",
+        "C41",
+        "C52",
+        "C63"
+      ],
+      "forbid": [
+        "A04",
+        "I16",
+        "I17",
+        "I18",
+        "C64",
+        "C65",
+        "C66",
+        "C67",
+        "C68",
+        "C69",
+        "C70",
+        "C71",
+        "C72",
+        "C73",
+        "C74",
+        "C75",
+        "C76"
+      ]
+    },
+    {
+      "claims": [
+        "C64",
+        "C65",
+        "C66"
+      ],
+      "forbid": [
+        "I03",
+        "I04",
+        "I05",
+        "I06",
+        "I07",
+        "I09",
+        "I10",
+        "I11",
+        "I12",
+        "I13",
+        "I14",
+        "I15"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "T01",
+      "name": "Actual clone symmetry and transported gates",
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Retain actual source/provider hypotheses and all claim dependencies. Use full represented kernels before diversity restriction; no added equality atom, arbitrary local mark extension, hidden cell vertex or omitted same-root equality case. Formalize the finite phase-extension and actual coordinate realization steps, not only the final set equations."
+    },
+    {
+      "id": "T02",
+      "name": "Finite phase extension and infinite terminal owner types",
+      "claims": [
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20"
+      ],
+      "depends_on": [
+        "T01"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Retain actual source/provider hypotheses and all claim dependencies. Use full represented kernels before diversity restriction; no added equality atom, arbitrary local mark extension, hidden cell vertex or omitted same-root equality case. Formalize the finite phase-extension and actual coordinate realization steps, not only the final set equations."
+    },
+    {
+      "id": "T03",
+      "name": "Finite MI separation and owner coordinates",
+      "claims": [
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27"
+      ],
+      "depends_on": [
+        "T02"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Retain actual source/provider hypotheses and all claim dependencies. Use full represented kernels before diversity restriction; no added equality atom, arbitrary local mark extension, hidden cell vertex or omitted same-root equality case. Formalize the finite phase-extension and actual coordinate realization steps, not only the final set equations."
+    },
+    {
+      "id": "T04",
+      "name": "Actual compatible tuple domain including orphans",
+      "claims": [
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34"
+      ],
+      "depends_on": [
+        "T03"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Retain actual source/provider hypotheses and all claim dependencies. Use full represented kernels before diversity restriction; no added equality atom, arbitrary local mark extension, hidden cell vertex or omitted same-root equality case. Formalize the finite phase-extension and actual coordinate realization steps, not only the final set equations."
+    },
+    {
+      "id": "T05",
+      "name": "Independent typed exact convolution and its new-source application",
+      "claims": [
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40",
+        "C41"
+      ],
+      "depends_on": [
+        "T03"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Retain actual source/provider hypotheses and all claim dependencies. Use full represented kernels before diversity restriction; no added equality atom, arbitrary local mark extension, hidden cell vertex or omitted same-root equality case. Formalize the finite phase-extension and actual coordinate realization steps, not only the final set equations."
+    },
+    {
+      "id": "T06",
+      "name": "Mixed diagonal spectra and singleton fine-colour recovery",
+      "claims": [
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46",
+        "C47",
+        "C48",
+        "C49",
+        "C50",
+        "C51",
+        "C52"
+      ],
+      "depends_on": [
+        "T04",
+        "T05"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Retain actual source/provider hypotheses and all claim dependencies. Use full represented kernels before diversity restriction; no added equality atom, arbitrary local mark extension, hidden cell vertex or omitted same-root equality case. Formalize the finite phase-extension and actual coordinate realization steps, not only the final set equations."
+    },
+    {
+      "id": "T07",
+      "name": "Boundary examples and finite diagnostics",
+      "claims": [
+        "C53",
+        "C54",
+        "C55",
+        "C56",
+        "C57"
+      ],
+      "depends_on": [
+        "T06"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Retain actual source/provider hypotheses and all claim dependencies. Use full represented kernels before diversity restriction; no added equality atom, arbitrary local mark extension, hidden cell vertex or omitted same-root equality case. Formalize the finite phase-extension and actual coordinate realization steps, not only the final set equations."
+    },
+    {
+      "id": "T08",
+      "name": "All-finite-base owner algebraicity preserved by genuine safe phases",
+      "claims": [
+        "C58",
+        "C59",
+        "C60",
+        "C61",
+        "C62",
+        "C63"
+      ],
+      "depends_on": [
+        "T02"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Use an actual infinite parent orbit over the FULL marked finite base, keep all anchor bits, extend all new same-bit clique points simultaneously by the actual free-character pair test, then align the marked base in the homogeneous marked source. Reasonableness alone is insufficient."
+    },
+    {
+      "id": "T09",
+      "name": "Optional original F-MI branch and terminal corner contradiction",
+      "claims": [
+        "C64",
+        "C65",
+        "C66",
+        "C67",
+        "C68",
+        "C69",
+        "C70",
+        "C71",
+        "C72",
+        "C73",
+        "C74",
+        "C75",
+        "C76"
+      ],
+      "depends_on": [
+        "T03",
+        "T06",
+        "T08"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Import only the generic lattice/real-closure branches C19/C07. Use original F, terminal finite-index separation and actual finite pair-type definability. Preserve a firewall so no main four export has optional F-MI or real-hull ancestry."
+    }
+  ],
+  "controls": [
+    {
+      "id": "K01",
+      "check": "Two-tag finite row/column coordinate pure-clone windows compare actual representative spectra with independently multiplied STRONG kernels for every owner pair and every hidden diagonal; all valid MI tuples and singleton reconstructions are checked."
+    },
+    {
+      "id": "K02",
+      "check": "Enumerate finite reachable exact palette domains and check both-coordinate nonempty-meet distributivity under every compatible type triple. Check represented c;c versus strong c*c and actual quotient class intersections."
+    },
+    {
+      "id": "K03",
+      "check": "Finite elementary-abelian character actions check rigid idempotent loop constraints, finite same-phase seed extension and arbitrarily growing owner-clique prefixes in bounded windows. These are diagnostics only, not infinite SAP/CCO or Lean proofs."
+    }
+  ],
+  "overview_mermaid": [
+    "flowchart TD",
+    "  C[\"Actual pure clone source\"] --> G[\"Clone-saturated split gates\"]",
+    "  G --> P[\"Global finite phase extension\"]",
+    "  P --> T[\"Infinite terminal owner sorts\"]",
+    "  T --> M[\"Proper actual MI coordinates\"]",
+    "  M --> D[\"Quantifier-free compatible tuples\"]",
+    "  M --> X[\"Nonempty STRONG exact meets\"]",
+    "  X --> S[\"Singleton fine colour or visible equality\"]",
+    "  D --> S"
+  ],
+  "overview_notes": [
+    "Only four Ramsey III geometry results are selected; the AP Ramsey readout is a separate consumer.",
+    "Finite lattice MI separation needs no distributivity; class Helly separately uses actual FULL exact kernels.",
+    "The generic typed-distributivity export has no clone or terminality ancestry; its application is explicitly re-instantiated on the new terminal source.",
+    "Equal hidden coordinates have a full J diversity spectrum; equal visible tuples return c, interpreted as visible equality."
+  ],
+  "article_feedback": [
+    {
+      "id": "F01",
+      "kind": "PROOF_DETAIL_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/ramsey_ap_from_clones.tex",
+        "anchor": "proper finite-index interval"
+      },
+      "finding": "Minimality of K alone does not cover Y=Id in the finite-index interval sentence.",
+      "proposed_article_change": "First exclude Y=Id because X>=K has infinite clone fibres, then infer K<=Y from Y>Id.",
+      "caller_effect": "No theorem or extra hypothesis change.",
+      "proof_claims": [
+        "C05",
+        "C06"
+      ]
+    },
+    {
+      "id": "F02",
+      "kind": "PROOF_DETAIL_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/ramsey_ap_from_clones.tex",
+        "anchor": "Give arbitrarily many such points"
+      },
+      "finding": "The simultaneous same-bit marking of a whole actual clique deserves the global finite-seed test, rather than a suggestion that arbitrary unary labelling is allowed.",
+      "proposed_article_change": "State that a rigid looped-atom arrow is identity, nonrigid pairs have independent action seeds, and apply finite-phase-extension once on each actual finite clique prefix before passing to the marked age.",
+      "caller_effect": "No theorem or extra hypothesis change; makes use of the genuine safe-character construction explicit.",
+      "proof_claims": [
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17"
+      ]
+    },
+    {
+      "id": "F03",
+      "kind": "PROOF_SIGNATURE_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/ramsey_ap_from_clones.tex",
+        "anchor": "For coincident coordinates"
+      },
+      "finding": "The same-hidden-coordinate diagonal formula uses equivalence reproduction, while visible tuple equality uses a distinct old c-pair.",
+      "proposed_article_change": "Explicitly cite equivalence reproduction for Spec(b,b)=J^circ and retain c_s as visible equality only after singleton recovery.",
+      "caller_effect": "No source repair; preserves all existing RAW/STRONG and equality distinctions.",
+      "proof_claims": [
+        "C28",
+        "C44",
+        "C49"
+      ]
+    },
+    {
+      "id": "F04",
+      "kind": "PROOF_SOURCE_CLOSURE_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/ramsey_ap_from_clones.tex",
+        "anchor": "phase splitting preserving quotient algebraicity"
+      },
+      "finding": "The optional MI paragraph cites preservation of quotient algebraicity without displaying the stronger all-finite-base argument.",
+      "proposed_article_change": "Expand the actual nonalgebraic parent-type clique over a fixed marked base, extend its same-phase marks globally, then use original acl=F[A], terminal packet separation and the definable off-base corner contradiction to show K_s MI.",
+      "caller_effect": "No new theorem or external provider; the main AP Ramsey construction remains independent of original F being MI.",
+      "proof_claims": [
+        "C58",
+        "C59",
+        "C60",
+        "C61",
+        "C62",
+        "C63",
+        "C64",
+        "C65",
+        "C66",
+        "C67",
+        "C68",
+        "C69",
+        "C70",
+        "C71",
+        "C72",
+        "C73",
+        "C74",
+        "C75",
+        "C76"
+      ]
+    }
+  ],
+  "review": {
+    "date": "2026-10-29",
+    "source_unchanged": true,
+    "source_signature_repairs": 0,
+    "unexpanded_provider_labels": [],
+    "proof_status": "HUMAN_EXPANDED_NOT_LEAN; author concrete source audit, independent all-claim readout peer audit, independent focused MI/algebraicity peer audit and parent independent source/provider synthesis PASS. No new theorem gap or external research provider; frozen source unchanged.",
+    "boundaries": [
+      "Only the actual maximal-character safe marked age preserves owner infinitude",
+      "FULL clone kernel is not a diversity identity",
+      "Finite MI lattice separation does not supply class Helly",
+      "Complete actual mixed cylinder information is essential",
+      "No hidden cell vertices, arbitrary unary labelling theorem, Ramsey/HN or EPPA certification",
+      "All four main geometry exports are independent of original F-MI and the optional real-closure branch",
+      "All-finite-base owner algebraicity preservation concerns only the genuine actual free-character marked age",
+      "A singleton coordinate family may be chosen in the proved MI case; the all-MI default family need not itself have length one"
+    ],
+    "independent_reviews": [
+      "Independent B061 peer read all 76 claims, all ten notes, definitions and all precise provider/support contracts against actual source; genuine finite phase extension, homogeneous marked fibres, generic STRONG application and every hidden/visible diagonal case PASS. Finite control independently executed PASS.",
+      "Independent MI specialist reviewed C58-C76/N09-N10 and optional A04/I16-I18 against exact generic C19/C07 providers. All-finite-base preservation, terminal original-F packet separation, finite-type definable corner and may-choose singleton family PASS; ancestor firewalls independently checked. Finite control independently executed PASS.",
+      "Parent independently read all 76 claims, all definitions/imports/notes and actual strong_selectors C02/C08, rigid_groupoid C30/C31, marked C34/C41/C42/C44, real_closure C27/C28/C30 providers. Actual hypotheses, nonempty intermediates, RAW x=y gate saturation and optional MI corner PASS."
+    ]
+  },
+  "application_contracts": [
+    {
+      "consumer": "C40",
+      "lemma": "C38",
+      "discharge": "C18/C19 discharges the generic A03 source parameter at the NEW actual terminal clone source; C35/C36 discharge its nonempty exact-domain inputs. Original Q is only AP and is not the source of this STRONG application."
+    },
+    {
+      "consumer": "C65",
+      "lemma": "I17",
+      "discharge": "Instantiate ONLY provider acl_owner_geometry C19/A10 on the actual original FULL lattice, commuting equivalences and index laws from I16 plus the least strict coarsening C64. Other normalized-owner source hypotheses are not imported."
+    },
+    {
+      "consumer": "C66",
+      "lemma": "I18",
+      "discharge": "Instantiate ONLY direct_owner_closure C07 real-closure branch at original A01 Q, with C65 the unique minimal infinite direction; no other source branches or finite-exact normalization assumptions survive."
+    }
+  ]
+}

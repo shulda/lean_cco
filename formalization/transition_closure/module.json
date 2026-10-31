@@ -1,0 +1,2180 @@
+{
+  "schema_version": 1,
+  "id": "transition_closure",
+  "index_title": "Original RAW/STRONG saturation, cover interpolation and finite quotient-transition closure",
+  "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+  "status": "HUMAN_EXPANDED_NOT_LEAN",
+  "scope": "Private B049: TWELVE source07 results, fifteen auxiliary equations, twelve definitions, 62 claims and eight tasks. Separate SAP-only pinned RAW/STRONG saturation from CCO first-hit/MI-primality and terminal represented wrappers. Quotient transport/normal forms use actual invariant RAW relations; representation and no-real-collapse are separately discharged. Two source09 positive quotient-semigroup/cover-layer providers are selected from terminal_lattice with no reverse dependency on this module. No hidden SAP or arbitrary mixed-sort commutation is assumed.",
+  "scope_vocabulary": [
+    "saturation",
+    "exact_domains",
+    "positive_Helly",
+    "first_hit",
+    "prime",
+    "transport",
+    "real_SAP",
+    "identity",
+    "normal_forms",
+    "cylinders",
+    "atomic_branch",
+    "boundary"
+  ],
+  "scope_explanation": "statement and proof. Logical Id is a full diagonal, never a STRONG diversity factor. Nonzero equivalence means >Id. Exact named quotient membership needs terminal full NR2 in addition to generic invariant transport. Positive-word Helly is expanded directly from private paths and old SAP/CCO, not imported from Set-Pasch/exact-domain calculus.",
+  "control_script": "tools/check_transition_closure_controls.py",
+  "assumptions": [
+    {
+      "id": "A01",
+      "name": "Actual finite named-sorted symmetric binary source",
+      "statement": "M is homogeneous complete in a finite binary relational language with finitely many nonempty individually transitive named original sorts. Distinct pairs have actual occurring irreflexive canonical diversity atoms; same-sort atoms are symmetric, mixed-sort atoms have typed converses. All invariant binary relations are finite unions of original full-Aut pair orbitals, with logical equality separately named."
+    },
+    {
+      "id": "A02",
+      "name": "Visible original SAP",
+      "statement": "The finite ACTUAL old age has SAP. Complete old factors and fixed endpoint pair diagrams are induced. Nontrivial invariant equivalence means >Id, so its actual classes are infinite by repeated SAP. No SAP is inferred for a quotient or hidden age."
+    },
+    {
+      "id": "A03",
+      "name": "Additional semantic HOM CCO",
+      "statement": "Only the original positive-word Helly, first-hit and primality branches assume every finite old typed diversity partial graph with all specified simple cycles homomorphic into M has a whole homomorphism. Nonadjacent vertices may collide before old SAP injectivisation."
+    },
+    {
+      "id": "A04",
+      "name": "Independent positive FULL cover for original interpolation",
+      "statement": "On ONE original sort a, Id<J<K are FULL invariant equivalences; J is meet-irreducible and K its UNIQUE FULL cover. J^circ and K^circ each have one genuinely positive OLD STRONG atomic word presentation. P is a nonempty positive typed a-a old word profile, whose interiors may use any named old sorts. This is an explicit local cover premise, not terminality or a represented-exact-lattice assumption."
+    },
+    {
+      "id": "A05",
+      "name": "Terminal FULL NR2 only for represented wrappers and namedness",
+      "statement": "For represented typed interpolation/prime and finite named quotient membership, every current original named sort has no index-two interval in its FULL invariant-equivalence lattice. The separate real_closure theorem then makes every original invariant equivalence an actual FULL RAW atomic word relation. This is NOT assumed for original local-cover interpolation or generic transport/saturation."
+    },
+    {
+      "id": "A06",
+      "name": "Actual quotient transport data",
+      "statement": "For transport R:a->b use a NONEMPTY actual invariant RAW relation and invariant proper E on a with R;R^op subset E. For composition S:b->c its literal middle kernel is F=R^op;E;R and S;S^op subset F. Generic transport claims do not by themselves require SAP/CCO/NR2 or exactness; no unrelated quotient chart is substituted."
+    },
+    {
+      "id": "A07",
+      "name": "Actual represented coordinate language",
+      "statement": "Proper quotient objects B_(a,J) are indexed by represented proper meet-irreducibles on old sorts, with real sort a as equality coordinate only. Include upward maps, nonidentity-free quotient transitions and their canonical inverses/compositions as specified by actual transports. Distinct syntax may denote the SAME unary function. All hidden sorts and carrier objects are actual interpreted quotient classes. The finite original tuple-type naming is definitional and changes no embeddings."
+    }
+  ],
+  "imports": [
+    {
+      "id": "I01",
+      "name": "lem:collision-unfolding",
+      "provider_module": "relational_completion",
+      "source_label": "lem:collision-unfolding",
+      "statement": "Pure RELATIONAL original SAP injectivisation of homomorphism-embeddings, preserving designated COMPLETE factor image types. For binary atomic partial graphs any homomorphism is a HE on complete irreducible cliques. Pin a complete endpoint pair by preserving its full image type and then aligning by old two-point homogeneity; no Set-Pasch theorem is used. If the selected proof API uses a countable homogeneous realization, apply it to the countable Fraisse limit of the same finite SAP age; its finite output embeds into the actual original source, and original finite homogeneity aligns the pinned endpoint pair. Thus no extra countability assumption on the original source is needed.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "provider_claims": [
+        "C14",
+        "C15"
+      ]
+    },
+    {
+      "id": "I02",
+      "name": "lem:typed-PC-fixedpoint-exact",
+      "provider_module": "strong_selectors",
+      "source_label": "lem:typed-PC-fixedpoint-exact",
+      "statement": "Existing typed STRONG nonempty exact PC domains equal finite positive-profile meets, including empty-family diversity Top; support-consistent triples are realized. Use ONLY in exact-domain and represented-wrapper branches, not original first-hit/primality.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "provider_claims": [
+        "C13"
+      ]
+    },
+    {
+      "id": "I03",
+      "name": "lem:typed-quotient-transport",
+      "provider_module": "quotient_transport",
+      "source_label": "lem:typed-quotient-transport",
+      "statement": "Actual invariant quotient labels/bijections, full upper-interval transport, canonical composition and separately discharged first-order definability in the finite named orbital source. This alone supplies no named RAW exactness or SAP noncollapse.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "provider_claims": [
+        "C05",
+        "C08",
+        "C11",
+        "C13",
+        "C14"
+      ]
+    },
+    {
+      "id": "I04",
+      "name": "lem:typed-all-invariant-equivalences-raw-word",
+      "provider_module": "real_closure",
+      "source_label": "lem:typed-all-invariant-equivalences-raw-word",
+      "statement": "Under original FULL NR2, every invariant same-sort equivalence has one original equality-inclusive RAW word presentation, CCO-free. For a nonzero equivalence old SAP gives a positive STRONG diversity presentation; used only for represented wrappers/namedness.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "provider_claims": [
+        "C25",
+        "C26",
+        "C27"
+      ]
+    },
+    {
+      "id": "I05",
+      "name": "lem:typed-quotient-strong-semigroup",
+      "provider_module": "terminal_lattice",
+      "source_label": "lem:typed-quotient-strong-semigroup",
+      "statement": "For J>Id, diversity pullback Phi of actual quotient invariant relations is injective and preserves finite meets/unions; actual quotient composition lifts EXACTLY to STRONG products by fresh representatives of the infinite old J-classes. This is the source09 standalone theorem, not an assumption of quotient CCO.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "provider_claims": [
+        "C11",
+        "C12"
+      ]
+    },
+    {
+      "id": "I06",
+      "name": "thm:typed-original-full-cover-layer-word",
+      "provider_module": "terminal_lattice",
+      "source_label": "thm:typed-original-full-cover-layer-word",
+      "statement": "At a local FULL original cover Id<J<K with J^circ one positive word, U=K minus J itself has ONE positive OLD STRONG word. Index-two is allowed; no global NR2 or typed hidden geometry is needed. This earlier selected source09 proof has no dependency on the present first-hit/interpolation/cylinder results.",
+      "depends_on": [],
+      "status": "HUMAN_EXPANDED_NOT_LEAN",
+      "provider_claims": [
+        "C53"
+      ]
+    }
+  ],
+  "definitions": [
+    {
+      "id": "D01",
+      "name": "RAW versus STRONG factors",
+      "statement": "RAW composition uses actual existential witnesses and includes logical Id. A STRONG positive word uses diversity edges and distinct formal vertices. E^circ=E minus Id, and an identity-only exterior equivalence is OMITTED, not represented by an empty factor.",
+      "depends_on": [],
+      "notes": "N01",
+      "source": {
+        "file": "sections/v27/07_typed_raw_strong_transition.tex",
+        "anchor": "\\label{lem:typed-raw-strong-saturation}"
+      }
+    },
+    {
+      "id": "D02",
+      "name": "Nonzero equivalence class",
+      "statement": "Nonzero means E>Id, not merely nonempty. Every such E-class has a different mate at every point by source transitivity.",
+      "depends_on": [],
+      "notes": "N01",
+      "source": {
+        "file": "sections/v27/07_typed_raw_strong_transition.tex",
+        "anchor": "\\label{lem:typed-raw-strong-saturation}"
+      }
+    },
+    {
+      "id": "D03",
+      "name": "Positive path and theta presentations",
+      "statement": "One positive word is an old typed path with finitely many formal positions. Parallel private word paths with common roots form a theta graph; equal direct one-edge paths are deduplicated. No diagonal is specified as a diversity edge.",
+      "depends_on": [],
+      "notes": "N02",
+      "source": {
+        "file": "sections/v27/07_typed_raw_strong_transition.tex",
+        "anchor": "\\label{lem:typed-original-full-cover-interpolation}"
+      }
+    },
+    {
+      "id": "D04",
+      "name": "Exact PC domain",
+      "statement": "A nonempty STRONG fixed-point PC pair menu; I02 identifies these with finite nonempty intersections of positive profile menus, with empty intersection the full diversity palette.",
+      "depends_on": [],
+      "notes": "N02",
+      "source": {
+        "file": "sections/v27/07_typed_raw_strong_transition.tex",
+        "anchor": "\\label{lem:typed-exact-domain-calculus}"
+      }
+    },
+    {
+      "id": "D05",
+      "name": "Quotient diversity pullback",
+      "statement": "For J>Id on a and quotient relation V on a/J, Phi(V) consists of distinct old endpoints whose J-classes lie in V. In particular Phi(Delta)=J^circ, which is NONEMPTY, unlike old logical Id.",
+      "depends_on": [],
+      "notes": "N03",
+      "source": {
+        "file": "sections/v27/07_typed_raw_strong_transition.tex",
+        "anchor": "\\label{lem:typed-original-full-cover-interpolation}"
+      }
+    },
+    {
+      "id": "D06",
+      "name": "First-hit saturation",
+      "statement": "S=J^circ*P*J^circ is a positive OLD word profile and equals Phi(Sbar) for a full quotient invariant relation Sbar containing the quotient diagonal when P meets J^circ.",
+      "depends_on": [],
+      "notes": "N03",
+      "source": {
+        "file": "sections/v27/07_typed_raw_strong_transition.tex",
+        "anchor": "\\label{lem:typed-original-full-cover-interpolation}"
+      }
+    },
+    {
+      "id": "D07",
+      "name": "Canonical quotient labelling",
+      "statement": "For R;R^op subset E, lambda_(R,E)(y) is the unique E-class of any R-predecessor. F=ker lambda=R^op;E;R and q_(R,E) is the inverse induced quotient bijection.",
+      "depends_on": [],
+      "notes": "N05",
+      "source": {
+        "file": "sections/v27/07_typed_raw_strong_transition.tex",
+        "anchor": "\\label{lem:no-real-algebraic-transition}"
+      }
+    },
+    {
+      "id": "D08",
+      "name": "Finite invariant relation family",
+      "statement": "Rel^(ab) is the finite set of nonempty unions of actual old a-b pair orbitals, including Id when a=b. Products are actual RAW invariant relations, again in the appropriate finite family.",
+      "depends_on": [],
+      "notes": "N05",
+      "source": {
+        "file": "sections/v27/07_typed_raw_strong_transition.tex",
+        "anchor": "\\label{lem:typed-transition-composition-normal-form}"
+      }
+    },
+    {
+      "id": "D09",
+      "name": "Upward quotient map",
+      "statement": "u_(E,H) sends an E-class to its H-class for E<=H on one literal old sort. Its canonical source-side pullback through q_R is H0 in the FULL upper interval, not an arbitrary chart.",
+      "depends_on": [],
+      "notes": "N06",
+      "source": {
+        "file": "sections/v27/07_typed_raw_strong_transition.tex",
+        "anchor": "\\label{lem:typed-transition-composition-normal-form}"
+      }
+    },
+    {
+      "id": "D10",
+      "name": "Unary normal function",
+      "statement": "After rewriting all upward maps toward the source, a coordinate term is one initial real projection/upward map followed by at most one canonical q_(T,E), or identity, with T an actual old relation. Functions, not term strings, are counted.",
+      "depends_on": [],
+      "notes": "N06",
+      "source": {
+        "file": "sections/v27/07_typed_raw_strong_transition.tex",
+        "anchor": "\\label{lem:typed-transition-composition-normal-form}"
+      }
+    },
+    {
+      "id": "D11",
+      "name": "Representative cylinder",
+      "statement": "Cyl_(J,K)(t) is the distinct-old-endpoint spectrum of actual J,K-classes with a t representative. Nonzero exterior kernels use E^circ; equality-coordinate exteriors are omitted. Hidden quotient equality remains a separate logical test.",
+      "depends_on": [],
+      "notes": "N07",
+      "source": {
+        "file": "sections/v27/07_typed_raw_strong_transition.tex",
+        "anchor": "\\label{lem:typed-cylinder-realisation}"
+      }
+    },
+    {
+      "id": "D12",
+      "name": "Whole branch versus one atom",
+      "statement": "For nonempty invariant identity-free P and atom t subset P, the equality claimed is lambda_t=lambda_P, hence quotient kernels/maps agree; no equality P=t of fine old relations is asserted.",
+      "depends_on": [],
+      "notes": "N08",
+      "source": {
+        "file": "sections/v27/07_typed_raw_strong_transition.tex",
+        "anchor": "\\label{lem:typed-branch-atomic-transport}"
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "name": "Binary atomic homomorphisms admit pinned SAP injectivisation",
+      "statement": "Every irreducible subobject of a binary partial atomic graph is a COMPLETE clique; its preserved irreflexive/exclusive atoms make any homomorphism an induced embedding there. Thus I01 applies. For distinct designated endpoints add their actual complete pair type as a frozen factor, preserve its induced image type, then use old homogeneity to align that pair to the ORIGINAL endpoints. This proves the required pinned finite path injectivisation without a Set-Pasch input.",
+      "depends_on": [
+        "A01",
+        "A02",
+        "I01"
+      ],
+      "notes": "N01",
+      "scope": "saturation",
+      "source_labels": [
+        "lem:typed-raw-strong-saturation"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C02",
+      "name": "Nonzero old equivalence classes are infinite",
+      "statement": "For E>Id choose an actual distinct E-pair. Repeatedly strongly amalgamate copies over its anchor; old homogeneity embeds/alines their full finite target back over that anchor. Transitivity transports the conclusion to every E-class. The argument uses original SAP only.",
+      "depends_on": [
+        "A01",
+        "A02",
+        "D02"
+      ],
+      "notes": "N01",
+      "scope": "saturation",
+      "source_labels": [
+        "lem:typed-raw-strong-saturation"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C03",
+      "name": "Replace an equal left RAW exterior step using an anchor",
+      "statement": "For distinct endpoints x,y and RAW walk x J u t v K y, if x=u choose fresh a in J[x] avoiding all existing vertices using C02. Duplicate the complete old {a,x,v,y} over {a,v,y}. This base EXCLUDES x since t is diversity and x!=y. The new uprime differs from x, remains J-related via a, and keeps t to v. If x!=u no change is needed.",
+      "depends_on": [
+        "C02",
+        "A02",
+        "D01"
+      ],
+      "notes": "N01",
+      "scope": "saturation",
+      "source_labels": [
+        "lem:typed-raw-strong-saturation"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C04",
+      "name": "Replace an equal right step without cloning a base point",
+      "statement": "If v=y after C03, choose fresh b in K[y] and duplicate the complete old diagram containing y over its other vertices and b, fixing x,uprime. Since uprime t y and x!=y, that base EXCLUDES y. The new vprime is K^circ-related to y and retains t from uprime. Otherwise keep v. All three consecutive factors are now genuine diversity relations.",
+      "depends_on": [
+        "C02",
+        "C03",
+        "A02"
+      ],
+      "notes": "N01",
+      "scope": "saturation",
+      "source_labels": [
+        "lem:typed-raw-strong-saturation"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C05",
+      "name": "Pinned injectivisation proves the three-factor RAW/STRONG identity",
+      "statement": "Apply C01 with original endpoints x,y pinned to the diversity walk from C03/C04, separating remaining nonconsecutive coincidences. It gives a fully distinct path and preserves the endpoint fine atom. Hence every diversity output of J;t;K lies in J^circ*{t}*K^circ. The reverse inclusion is projection of an actual STRONG path. This proves TSC without CCO or terminality.",
+      "depends_on": [
+        "C01",
+        "C03",
+        "C04"
+      ],
+      "notes": "N01",
+      "scope": "saturation",
+      "source_labels": [
+        "lem:typed-raw-strong-saturation"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C06",
+      "name": "The two-factor join identity handles all three middle-witness cases",
+      "statement": "For x!=y and x J z K y, if z is off {x,y}, duplicate z over the complete pair {x,y}. If z=x, choose fresh a in J[x] outside {x,y}, duplicate x over {a,y}, and obtain zprime J a J x and zprime K y. If z=y use fresh b in K[y] and duplicate y over {x,b}. Every base excludes the point being copied. In all cases a distinct middle witness exists while the pinned endpoint fine atom is unchanged.",
+      "depends_on": [
+        "A02",
+        "C02",
+        "D01"
+      ],
+      "notes": "N01",
+      "scope": "saturation",
+      "source_labels": [
+        "lem:typed-raw-strong-saturation"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C07",
+      "name": "Symmetric invariant equivalences commute and their product is their join",
+      "statement": "On one actual old homogeneous symmetric sort, extend the induced swap of two distinct endpoints to an automorphism; or take converses of invariant symmetric products. Thus E;F=F;E. Their product is reflexive, symmetric and transitive by actual relation composition, contains both and is contained in every common upper equivalence. So E;F=E join F. With C06 this proves TSC2 on diversity.",
+      "depends_on": [
+        "A01",
+        "C06"
+      ],
+      "notes": "N01",
+      "scope": "saturation",
+      "source_labels": [
+        "lem:typed-raw-strong-saturation"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C08",
+      "name": "Identity exterior kernels must be omitted",
+      "statement": "For an exterior E=Id, the RAW step is equality and needs no auxiliary vertex. Omit its STRONG exterior factor. Do not multiply by E^circ=empty and do not add a synthetic diversity identity. C03-C05 apply only to the remaining nonzero exteriors, retaining the same endpoint atom.",
+      "depends_on": [
+        "C05",
+        "D01"
+      ],
+      "notes": "N01",
+      "scope": "identity",
+      "source_labels": [
+        "lem:typed-raw-strong-saturation"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C09",
+      "name": "Typed exact-domain theorem is a precisely reused STRONG provider",
+      "statement": "I02 gives the PC-domain/positive-profile meet equality, menu 2-Helly and simultaneous support-consistent triple realization in the current actual SAP+CCO source. Preserve actual endpoint sorts and diversity Top for the empty defining family. This exact-domain calculus is NOT used in the original first-hit proof below.",
+      "depends_on": [
+        "A01",
+        "A02",
+        "A03",
+        "I02",
+        "D04"
+      ],
+      "notes": "N02",
+      "scope": "exact_domains",
+      "source_labels": [
+        "lem:typed-exact-domain-calculus"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C10",
+      "name": "Positive-word 2-Helly has a direct old CCO/SAP proof",
+      "statement": "For finitely many pairwise-intersecting positive old typed profiles, draw private paths between two common roots. Duplicate one-edge paths agree by nonempty overlap and are merged. Every simple cycle uses two private paths, whose common diversity endpoint atom provides a homomorphism. Original CCO yields a global homomorphism; C01 (without pinning) injectivises it, so distinct roots have a colour in EVERY profile. Flatten defining families to obtain the same for finite intersections. No exact-product, distributivity or Set-Pasch theorem is imported.",
+      "depends_on": [
+        "A01",
+        "A02",
+        "A03",
+        "I01",
+        "C01",
+        "D03"
+      ],
+      "notes": "N02",
+      "scope": "positive_Helly",
+      "source_labels": [
+        "lem:typed-original-full-cover-interpolation"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C11",
+      "name": "Only two independent quotient-word prerequisites are selected",
+      "statement": "I05 supplies exact STRONG composition/injective pullback Phi at any J>Id, by fresh actual representatives. I06 gives the single OLD positive word for the external layer U=K minus J at a FULL cover, including index two. Their source09 proofs are standalone and do not use the present first-hit or typed-prime conclusions. No quotient SAP/CCO is assumed.",
+      "depends_on": [
+        "A01",
+        "A02",
+        "A03",
+        "A04",
+        "I05",
+        "I06",
+        "D05"
+      ],
+      "notes": "N03",
+      "scope": "first_hit",
+      "source_labels": [
+        "lem:typed-original-full-cover-interpolation"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C12",
+      "name": "Saturation gives a positive original pullback with quotient diagonal",
+      "statement": "For P in A04, C05 extends by union over its old atoms, and I05 gives S=J^circ*P*J^circ=Phi(Sbar). It is one positive old word by concatenating the given J words around P. Since P meets J^circ, its saturation fills the quotient diagonal; thus Delta_Q subset Sbar.",
+      "depends_on": [
+        "A04",
+        "C05",
+        "I05",
+        "D05",
+        "D06"
+      ],
+      "notes": "N03",
+      "scope": "first_hit",
+      "source_labels": [
+        "lem:typed-original-full-cover-interpolation"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C13",
+      "name": "The assumed missing cover layer survives saturation",
+      "statement": "Suppose P avoids K minus J but meets J^circ and exits J. Saturation by J cannot change K-relatedness of endpoint classes. Therefore Sbar intersect (K/J)=Delta_Q, and Sbar has a pair OUTSIDE K/J. This is a statement about the TRUE quotient diagonal, whose old diversity pullback is nonempty J^circ.",
+      "depends_on": [
+        "C12",
+        "A04"
+      ],
+      "notes": "N03",
+      "scope": "first_hit",
+      "source_labels": [
+        "lem:typed-original-full-cover-interpolation"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C14",
+      "name": "Unique FULL cover forces a first positive power to enter the layer",
+      "statement": "The connectedness equivalence of symmetric Sbar pulls back to an original invariant equivalence H>J. J has unique FULL cover K, so K<=H. Some Sbar-walk reaches Ubar=(K/J) minus Delta. Reflexivity makes powers increase; choose least n>=2 with Sbar^n meeting Ubar. This uses only actual quotient graph connectivity and FULL MI, not exact-domain operations.",
+      "depends_on": [
+        "C13",
+        "A01",
+        "A04"
+      ],
+      "notes": "N03",
+      "scope": "first_hit",
+      "source_labels": [
+        "lem:typed-original-full-cover-interpolation"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C15",
+      "name": "The first-hit A,T menus have complementary K/J intersections",
+      "statement": "Set Abar=Sbar^(n-1), Tbar=Sbar;Ubar. Minimality gives Abar intersect K/J=Delta. Since Sbar has no internal K/J edge except Delta, and Ubar stays in a K/J-component, Tbar intersect K/J=Ubar; reflexivity gives the reverse containment.",
+      "depends_on": [
+        "C13",
+        "C14",
+        "A04"
+      ],
+      "notes": "N03",
+      "scope": "first_hit",
+      "source_labels": [
+        "lem:typed-original-full-cover-interpolation"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C16",
+      "name": "An actual quotient triangle gives nonempty Abar intersect Tbar",
+      "statement": "The first hit says (Abar;Sbar) meets Ubar. Rotate that actual quotient triangle, using symmetric same-sort quotient orbitals inherited from old endpoint swaps, to obtain Abar intersect(Sbar;Ubar) nonempty. This is actual witness rotation, not an assumed typed Set-Pasch/exact distributivity theorem.",
+      "depends_on": [
+        "C14",
+        "C15",
+        "A01"
+      ],
+      "notes": "N03",
+      "scope": "first_hit",
+      "source_labels": [
+        "lem:typed-original-full-cover-interpolation"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C17",
+      "name": "All three first-hit pullbacks are single positive OLD profiles",
+      "statement": "I05 yields Phi(Abar)=S^(n-1) and Phi(Tbar)=S*U, where U has the ONE positive old word from I06. K^circ has its assumed positive word. Their pairwise intersections are nonempty: first with K^circ contains J^circ, second with K^circ contains U, and first with second comes from C16 and injectivity of Phi. Their triple intersection is empty because inside K/J the first two supports are disjoint Delta and Ubar.",
+      "depends_on": [
+        "C11",
+        "C12",
+        "C15",
+        "C16",
+        "I05",
+        "I06",
+        "A04"
+      ],
+      "notes": "N03",
+      "scope": "first_hit",
+      "source_labels": [
+        "lem:typed-original-full-cover-interpolation"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C18",
+      "name": "Positive-word Helly contradicts the assumed missed cover layer",
+      "statement": "Apply direct C10 to the three C17 positive OLD profiles. Pairwise overlap but empty total meet contradicts Helly. Thus every P in the original FULL-cover premise meets K minus J. This proves OWI including words through other original sorts, with no typed exact-domain or hidden-SAP assumption.",
+      "depends_on": [
+        "C10",
+        "C17"
+      ],
+      "notes": "N03",
+      "scope": "first_hit",
+      "source_labels": [
+        "lem:typed-original-full-cover-interpolation"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C19",
+      "name": "Represented typed cover interpolation discharges the terminal gates",
+      "statement": "Under A05, I04 makes every original invariant equivalence represented FULL RAW exact, so represented MI J and its cover K are actual FULL MI/cover. For J>Id their RAW word presentations become positive diversity words by C01, and C18 applies to P. If J=Id, a STRONG diversity profile cannot meet it and the premise is vacuous. This proves typed-cover-interpolation only in its standing terminal context.",
+      "depends_on": [
+        "A05",
+        "I04",
+        "C01",
+        "C18"
+      ],
+      "notes": "N04",
+      "scope": "first_hit",
+      "source_labels": [
+        "lem:typed-cover-interpolation"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C20",
+      "name": "Original MI-primality treats empty defining families separately",
+      "statement": "Let D1,D2 be nonempty finite intersections of positive OLD profiles, with nonempty common meet inside J^circ, in A04. If one defining family is empty, that Di is full diversity Top and the premise immediately puts the OTHER domain inside J^circ. Otherwise suppose both domains exit J and choose one common fine diversity atom c.",
+      "depends_on": [
+        "A04",
+        "D04"
+      ],
+      "notes": "N04",
+      "scope": "prime",
+      "source_labels": [
+        "lem:typed-original-strong-exact-prime"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C21",
+      "name": "Interpolate every defining profile and apply Helly twice",
+      "statement": "Every defining P_i contains c and exits J because its Di does. C18 makes it meet the positive layer U from I06. For each Di the family of its defining profiles plus U is pairwise intersecting, so C10 gives Di intersect U nonempty. Then flatten the definitions of D1,D2,U: cross defining words meet through D1 intersect D2, and words against U meet from the previous step. C10 gives D1 intersect D2 intersect U nonempty, contradiction.",
+      "depends_on": [
+        "C10",
+        "C18",
+        "C20",
+        "I06"
+      ],
+      "notes": "N04",
+      "scope": "prime",
+      "source_labels": [
+        "lem:typed-original-strong-exact-prime"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C22",
+      "name": "Original exact-prime export needs no typed product calculus",
+      "statement": "C20/C21 prove OWP for the two nonempty finite OLD positive-word intersections at the local FULL MI/cover. Only original positive-word Helly, quotient semigroup/layer positivity and first-hit interpolation enter. No exact-domain product formula, distributivity, Set-Pasch or hidden SAP is assumed.",
+      "depends_on": [
+        "C20",
+        "C21"
+      ],
+      "notes": "N04",
+      "scope": "prime",
+      "source_labels": [
+        "lem:typed-original-strong-exact-prime"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C23",
+      "name": "Typed prime intersection is the represented terminal wrapper",
+      "statement": "For represented MI J, I04/A05 identify FULL invariant MI and cover; positive diversity presentations follow from C01. I02/C09 identifies each typed PC exact domain with a finite positive-word intersection, so C22 applies. Empty families are handled by C20; J=Id is vacuous for a nonempty diversity intersection.",
+      "depends_on": [
+        "A05",
+        "I04",
+        "I02",
+        "C01",
+        "C09",
+        "C20",
+        "C22"
+      ],
+      "notes": "N04",
+      "scope": "prime",
+      "source_labels": [
+        "lem:typed-prime-intersection"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C24",
+      "name": "Nonempty invariant typed relations are serial and coserial",
+      "statement": "Choose an actual R-pair and move either endpoint by transitivity of its named sort. Invariance gives an R-successor to every source and predecessor to every target. Compatible finite RAW products are again nonempty invariant relations and lie in their finite Rel family. This needs no SAP/CCO.",
+      "depends_on": [
+        "A01",
+        "D08"
+      ],
+      "notes": "N05",
+      "scope": "transport",
+      "source_labels": [
+        "lem:no-real-algebraic-transition"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C25",
+      "name": "Generic transport gives canonical labels, proper quotient and full intervals",
+      "statement": "For A06, I03 gives lambda(y) as the unique predecessor E-class, onto and equivariant, F=R^op;E;R its actual invariant kernel, and q:a/E->b/F the inverse quotient bijection. It transports ALL invariant upper equivalences, including nonexact ones. Given old finite named pair orbitals, first-order definability is automatic.",
+      "depends_on": [
+        "A01",
+        "A06",
+        "I03",
+        "C24",
+        "D07"
+      ],
+      "notes": "N05",
+      "scope": "transport",
+      "source_labels": [
+        "lem:no-real-algebraic-transition"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C26",
+      "name": "Properness transfers by the actual quotient bijection",
+      "statement": "If E is proper (not Top), a/E has at least two classes. C25 bijects it with b/F, hence F is not Top either. This proves properness separately from the SAP-specific assertion F!=Id. Equality of old endpoints and quotient classes remains distinct.",
+      "depends_on": [
+        "C25",
+        "A06"
+      ],
+      "notes": "N05",
+      "scope": "transport",
+      "source_labels": [
+        "lem:no-real-algebraic-transition"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C27",
+      "name": "Visible SAP forces any total definable real function to be identity",
+      "statement": "If f(x)=y differs from x (including another named sort), strongly amalgamate two copies of the complete old two-point diagram {x,y} over input {x}. The y-images must be distinct by SAP but coincide by definable functionality, contradiction. Therefore every value equals its input and source/target named sorts agree; the function is literal identity.",
+      "depends_on": [
+        "A01",
+        "A02"
+      ],
+      "notes": "N05",
+      "scope": "real_SAP",
+      "source_labels": [
+        "lem:no-real-algebraic-transition"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C28",
+      "name": "A nonidentity source equivalence cannot transport to equality",
+      "statement": "If F=E^R were Id, every x has a unique R-successor because two successors are F-related. By C27, R would be literal old identity on the same sort. Its transported kernel is E, contradicting E>Id. Along with C26 this gives F proper and NONIDENTITY; no algebraic real quotient is introduced.",
+      "depends_on": [
+        "A02",
+        "A06",
+        "C25",
+        "C26",
+        "C27"
+      ],
+      "notes": "N05",
+      "scope": "real_SAP",
+      "source_labels": [
+        "lem:no-real-algebraic-transition"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C29",
+      "name": "RR-converse=Id is functionality in the CONVERSE direction",
+      "statement": "If R;R^op=Id_a, every target y has exactly one R-predecessor x by C24 and the inclusion. Thus R^op, not R, is a total definable function b->a. Apply C27 over the INPUT y to force same-sort literal identity, so R=Id_a. No claim that E^R=Id was used.",
+      "depends_on": [
+        "C24",
+        "C27",
+        "A01",
+        "A02"
+      ],
+      "notes": "N05",
+      "scope": "real_SAP",
+      "source_labels": [
+        "lem:no-real-algebraic-transition"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C30",
+      "name": "No-real-algebraic-transition source export",
+      "statement": "C26 proves ordinary properness, C28 rules out equality for E>Id, and C29 handles identity kernel in its correct converse orientation. These use visible OLD real SAP, not hidden SAP or abstract group-action algebra alone.",
+      "depends_on": [
+        "C26",
+        "C28",
+        "C29"
+      ],
+      "notes": "N05",
+      "scope": "real_SAP",
+      "source_labels": [
+        "lem:no-real-algebraic-transition"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C31",
+      "name": "An identity-containing relation must lie inside its base equivalence",
+      "statement": "For same-sort R containing logical Id and R;R^op subset J, one has R=Id;R subset R;R^op subset J, using symmetric old orbitals (or converse and Id directly). No SAP, CCO, exactness or terminality is needed.",
+      "depends_on": [
+        "A01",
+        "A06",
+        "D01"
+      ],
+      "notes": "N06",
+      "scope": "identity",
+      "source_labels": [
+        "lem:typed-identity-transport-redundant"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C32",
+      "name": "Identity-containing transport is the EXISTING quotient identity",
+      "statement": "From C31, R^op;J;R subset J;J;J=J, and Id subset R gives the reverse inclusion. Hence J^R=J. Every R-pair lies in J, so q_R fixes every J-class. This proves QT-Id for pure Id and mixtures of Id/diversity, without an artificial STRONG identity atom.",
+      "depends_on": [
+        "C31",
+        "C25"
+      ],
+      "notes": "N06",
+      "scope": "identity",
+      "source_labels": [
+        "lem:typed-identity-transport-redundant"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C33",
+      "name": "Composite RAW transport has the needed kernel bound",
+      "statement": "For R,S in A06 let T=R;S. If xTz and xprimeTz via y,yprime, then y (S;S^op) yprime, so y F yprime. The canonical quotient bijection for R says x E xprime. Thus T;T^op subset E. T is nonempty and invariant by C24.",
+      "depends_on": [
+        "A06",
+        "C24",
+        "C25"
+      ],
+      "notes": "N06",
+      "scope": "normal_forms",
+      "source_labels": [
+        "lem:typed-transition-composition-normal-form"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C34",
+      "name": "Kernels and canonical maps compose literally",
+      "statement": "Actual RAW associativity gives E^T=S^op;(R^op;E;R);S=F^S. For any witness xRySz, the two forward quotient maps send [x]_E to [y]_F to [z]_(F^S), exactly q_T. Seriality supplies a witness on every E-class. Thus q_T=q_S composed q_R; no independent charts or mixed-sort commutation is used.",
+      "depends_on": [
+        "A06",
+        "C25",
+        "C33",
+        "I03"
+      ],
+      "notes": "N06",
+      "scope": "normal_forms",
+      "source_labels": [
+        "lem:typed-transition-composition-normal-form"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C35",
+      "name": "Move an upward map to the source by full interval transport",
+      "statement": "For H>=F let H0 be its actual upper-interval pullback through q_R. I03 gives H0^R=H. Both u_(F,H) after q_(R,E) and q_(R,H0) after u_(E,H0) send each E-class to the SAME H-class of its R-neighbours, proving TQU pointwise.",
+      "depends_on": [
+        "A06",
+        "C25",
+        "I03",
+        "D09"
+      ],
+      "notes": "N06",
+      "scope": "normal_forms",
+      "source_labels": [
+        "lem:typed-transition-composition-normal-form"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C36",
+      "name": "Proper MI transfers in the FULL invariant lattice",
+      "statement": "The full upper-interval isomorphism preserves a proper unique cover. Since any equivalences meeting in H0 must contain H0>=E, upper-interval MI is the SAME as full-lattice MI. Thus proper H MI gives proper H0 MI, with no distributivity assumption.",
+      "depends_on": [
+        "C25",
+        "C35",
+        "I03"
+      ],
+      "notes": "N06",
+      "scope": "normal_forms",
+      "source_labels": [
+        "lem:typed-transition-composition-normal-form"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C37",
+      "name": "Represented named membership is a SEPARATE terminal step",
+      "statement": "C36 gives an invariant MI only. Under A05, I04 additionally makes H0 and every transported invariant kernel FULL RAW exact/represented. C28 prevents proper nonzero quotient coordinates from collapsing to equality. These, not generic interval transport alone, justify a named proper target coordinate B_(b,J^R).",
+      "depends_on": [
+        "A05",
+        "I04",
+        "C28",
+        "C36",
+        "A07"
+      ],
+      "notes": "N06",
+      "scope": "normal_forms",
+      "source_labels": [
+        "lem:typed-transition-composition-normal-form"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C38",
+      "name": "Transition-only composites have one actual old relation",
+      "statement": "Repeated C33/C34 replaces a finite transition-only term by q_(T,E) for the actual RAW product T of its original typed relations. It belongs to one of finitely many finite Rel^(ac) families by C24. If same-sort T contains Id, C32 makes this quotient map the existing identity, not an additional transition symbol.",
+      "depends_on": [
+        "C24",
+        "C32",
+        "C33",
+        "C34",
+        "D08"
+      ],
+      "notes": "N06",
+      "scope": "normal_forms",
+      "source_labels": [
+        "lem:typed-transition-composition-normal-form"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C39",
+      "name": "Upward rewrite leaves finitely many unary term FUNCTIONS",
+      "statement": "Use C35 repeatedly to move every upward quotient map toward the source; compose consecutive upward maps by transitivity of kernel inclusion. Each application reduces an inversion between a transition and a later upward map. Then C38 collapses all remaining transitions to one. Real starting terms have one initial projection, quotient starting terms one upward map (possibly identity). There are finitely many source/target sorts, represented quotient kernels and actual relations, so finitely many functions, not finitely many syntactic terms.",
+      "depends_on": [
+        "A07",
+        "C35",
+        "C37",
+        "C38",
+        "D10"
+      ],
+      "notes": "N06",
+      "scope": "normal_forms",
+      "source_labels": [
+        "lem:typed-transition-composition-normal-form"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C40",
+      "name": "Composition normal-form export includes the closed identity case",
+      "statement": "C33-C39 prove TQC/TQU and the finite-function conclusion in the declared finite named coordinate language. An identity-containing same-sort product acts as literal quotient identity by C32; this yields neither a visible new real point nor an equality-labelled STRONG edge.",
+      "depends_on": [
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39"
+      ],
+      "notes": "N06",
+      "scope": "normal_forms",
+      "source_labels": [
+        "lem:typed-transition-composition-normal-form"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C41",
+      "name": "RAW saturation is the complete old spectrum of a quotient pair",
+      "statement": "Fix actual q in a/J,r in b/K and one distinct representative pair x,y of fine atom t. Moving representatives in their classes puts every old fine type into (J;{t};K)^circ. Conversely any actual path witnessing a member has a middle t-pair; old two-point homogeneity aligns that pair to x,y, putting the exterior endpoints in q,r. This is actual orbit saturation, with equality exteriors allowed.",
+      "depends_on": [
+        "A01",
+        "A07",
+        "D11"
+      ],
+      "notes": "N07",
+      "scope": "cylinders",
+      "source_labels": [
+        "lem:typed-cylinder-realisation"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C42",
+      "name": "The four STRONG cylinder cases agree with the actual spectrum",
+      "statement": "Apply C05/C08 to C41: use J^circ or K^circ only for nonzero kernels, and OMIT an exterior for an equality coordinate. This gives exactly the displayed four-case Cyl formula. The spectrum is independent of the initial fine representative atom.",
+      "depends_on": [
+        "C05",
+        "C08",
+        "C41",
+        "D11"
+      ],
+      "notes": "N07",
+      "scope": "cylinders",
+      "source_labels": [
+        "lem:typed-cylinder-realisation"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C43",
+      "name": "Hidden cylinder relations partition compatible distinct vertex pairs",
+      "statement": "Each quotient position pair has a unique representative spectrum by C42. If two spectra overlap in an atom, actual old two-point homogeneity takes representatives of one class-pair to the other, making their spectra equal. Distinct spectra therefore define disjoint output pair types. Omit the output diagonal only for the SAME hidden sort; real equality and hidden equality are different tests.",
+      "depends_on": [
+        "C41",
+        "C42",
+        "A07"
+      ],
+      "notes": "N07",
+      "scope": "cylinders",
+      "source_labels": [
+        "lem:typed-cylinder-realisation"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C44",
+      "name": "Any atom inside a quotient-functional relation has the same lambda",
+      "statement": "For atom t subset R with R;R^op subset J, t is serial/coserial by C24. Given target y choose x t y. It is also an R-predecessor, so the unique source J-class assigned by lambda_t equals lambda_R on EVERY y. This uses the whole target sort, not one chosen representative.",
+      "depends_on": [
+        "A06",
+        "C24",
+        "C25"
+      ],
+      "notes": "N08",
+      "scope": "atomic_branch",
+      "source_labels": [
+        "lem:typed-transition-cylinder"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C45",
+      "name": "Atomic and whole transports have identical actual kernels and maps",
+      "statement": "The pointwise equality C44 gives J^t=ker lambda_t=ker lambda_R=J^R and identical inverse quotient bijections q_t=q_R. This does NOT assert equality of t and R as old fine binary relations.",
+      "depends_on": [
+        "C25",
+        "C44",
+        "D12"
+      ],
+      "notes": "N08",
+      "scope": "atomic_branch",
+      "source_labels": [
+        "lem:typed-transition-cylinder"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C46",
+      "name": "A matched quotient graph is one complete actual old-action orbital",
+      "statement": "Every matched pair of J,K-classes has an actual t-edge: choose x in the source class and a t-successor using C24, whose class is the canonical target by C45. Old two-point homogeneity sends any t-edge to any other, so all matched class-pairs form ONE full quotient pair orbital, even for different original sorts.",
+      "depends_on": [
+        "A01",
+        "C24",
+        "C45"
+      ],
+      "notes": "N08",
+      "scope": "cylinders",
+      "source_labels": [
+        "lem:typed-transition-cylinder"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C47",
+      "name": "The quotient graph has one cylinder independent of t in R",
+      "statement": "C41 applied to C46 gives the same whole diversity spectrum for every atom t subset R: (J;{t};K)^circ=(J;R;K)^circ. Under visible SAP, C28 makes target K nonzero and proper, so C05 converts it to J^circ*R*K^circ, equal to the one-atom product. This proves QT-Graph without treating a union R as an atomic word.",
+      "depends_on": [
+        "C05",
+        "C28",
+        "C41",
+        "C45",
+        "C46"
+      ],
+      "notes": "N08",
+      "scope": "cylinders",
+      "source_labels": [
+        "lem:typed-transition-cylinder"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C48",
+      "name": "Terminal positive kernels make graph cylinders genuinely reachable",
+      "statement": "Under A05/I04, nonzero J,K have single positive OLD words for their diversity palettes by C01. Substitute either given atom t subset R between these words. Its positive STRONG profile is precisely C47. Thus the whole graph has ONE reachable visible profile even if R itself is a union of many old atoms.",
+      "depends_on": [
+        "A05",
+        "I04",
+        "C01",
+        "C37",
+        "C47"
+      ],
+      "notes": "N08",
+      "scope": "cylinders",
+      "source_labels": [
+        "lem:typed-transition-cylinder"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C49",
+      "name": "The graph test uses old representatives and a separate hidden diagonal",
+      "statement": "Every matched quotient pair has the full spectrum C47, while any distinct old representative pair with an atom in that spectrum belongs to a matched pair by old two-point homogeneity. Nonzero J,K classes have enough distinct representatives by C02. If the HIDDEN vertices coincide, that coincidence is checked by unary equality, never an off-diagonal diversity identity.",
+      "depends_on": [
+        "C02",
+        "C43",
+        "C46",
+        "C47"
+      ],
+      "notes": "N08",
+      "scope": "cylinders",
+      "source_labels": [
+        "lem:typed-transition-cylinder"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C50",
+      "name": "A whole strong branch has the map of ANY chosen atomic subbranch",
+      "statement": "For nonempty identity-free positive P with P;P^op subset J, the same proof C44/C45 with t subset P gives J^t=J^P and q_t=q_P pointwise. It uses actual invariant P and surjectivity, not an exact-domain theorem or equality of P,t.",
+      "depends_on": [
+        "A01",
+        "A06",
+        "C24",
+        "C25",
+        "C44",
+        "C45",
+        "D12"
+      ],
+      "notes": "N08",
+      "scope": "atomic_branch",
+      "source_labels": [
+        "lem:typed-branch-atomic-transport"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C51",
+      "name": "A proper MI branch target is already a named proper MI coordinate",
+      "statement": "Full upper-interval transport gives J^P proper MI; C28 excludes equality under old SAP; A05/I04 separately give FULL RAW exact representation. Since chosen t is an old DIVERSITY atom, its identity-free transition symbol is in the original finite language, and C50 identifies it with the whole branch map.",
+      "depends_on": [
+        "A05",
+        "A07",
+        "I04",
+        "C28",
+        "C36",
+        "C37",
+        "C50"
+      ],
+      "notes": "N08",
+      "scope": "atomic_branch",
+      "source_labels": [
+        "lem:typed-branch-atomic-transport"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C52",
+      "name": "Finite transition closure creates no new visible real point",
+      "statement": "A transition from a nonidentity proper coordinate cannot enter equality by C28. If a real-equality coordinate starts a transport with R;R^op subset Id, C29 forces old identity, so no new real vertex/function is created there either. Finite term functions C39 only move among actual old quotient classes.",
+      "depends_on": [
+        "C28",
+        "C29",
+        "C39",
+        "A07"
+      ],
+      "notes": "N08",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-branch-atomic-transport"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C53",
+      "name": "The original first-hit/primality proof has a strict dependency firewall",
+      "statement": "C12-C22 use only old homogeneous/SAP/CCO path semantics, local FULL MI/cover positivity, direct C10 and the two standalone source09 providers. They do not use I02 exact PC calculus, I04 terminality, generic transport, lattice distributivity or hidden SAP. Terminal wrappers C19/C23 discharge their extra assumptions separately.",
+      "depends_on": [
+        "C10",
+        "C11",
+        "C18",
+        "C22"
+      ],
+      "notes": "N09",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-original-full-cover-interpolation"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C54",
+      "name": "SAP cannot be replaced by AP for saturation exteriors",
+      "statement": "In the actual old two-point one-colour complete source let J=K=Top and t the diversity edge. RAW J;t;K has diversity, while a four-distinct-vertex STRONG J^circ,t,K^circ path cannot exist. This is an AP but non-SAP boundary; it does not satisfy A02. With a two-point equivalence class, the two-factor middle replacement also fails in general.",
+      "depends_on": [
+        "D01"
+      ],
+      "notes": "N09",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-raw-strong-saturation"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C55",
+      "name": "An identity exterior is not an empty STRONG menu",
+      "statement": "On an infinite source with J=Id, RAW J;t;K can have nonempty diversity even though J^circ is empty. The correct theorem omits that exterior as C08, rather than multiplying by empty or adjoining a false identity diversity atom.",
+      "depends_on": [
+        "C08"
+      ],
+      "notes": "N09",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-raw-strong-saturation"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C56",
+      "name": "Generic interval transport does not create exact/named quotient objects",
+      "statement": "Without A05, C25/C36 prove actual invariant interval and MI statements, not terminal RAW word representation. In particular transporting an arbitrary nonexact invariant equivalence never proves it full RAW exact. The wrapper C37 records the necessary separate premise.",
+      "depends_on": [
+        "C25",
+        "C36",
+        "C37"
+      ],
+      "notes": "N09",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-transition-composition-normal-form"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C57",
+      "name": "Same-sort commutation is not a mixed-sort word reordering rule",
+      "statement": "C07 concerns one named sort only. First-hit paths may have mixed private interiors, but their endpoint quotient relations lie on one fixed a/J. Composition normal forms use literal typed products and canonical labels; no cross-sort factors are permuted.",
+      "depends_on": [
+        "C07",
+        "C14",
+        "C34"
+      ],
+      "notes": "N09",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-transition-composition-normal-form"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C58",
+      "name": "Function identities survive arbitrary term syntax",
+      "statement": "Repeated transition/upward cycles may yield infinitely many syntactic expressions. C39 bounds only the induced functions, via finite old relation families and canonical kernel objects. Source equality-containing composites reduce to already named identities; no group section or representative choice creates a new function.",
+      "depends_on": [
+        "C32",
+        "C39",
+        "C40"
+      ],
+      "notes": "N09",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-transition-composition-normal-form"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C59",
+      "name": "Canonical old tuple-type enrichment is definitional",
+      "statement": "There are finitely many old tuple patterns up to the finite maximum relation arity; name their realized complete qf types on compatible sorts. In a completed old visible structure these partition tuples. The expansion is definitional and preserves embeddings/partial automorphisms, so no arbitrary higher-support completion or hidden SAP is inferred.",
+      "depends_on": [
+        "A01",
+        "A07"
+      ],
+      "notes": "N09",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-branch-atomic-transport"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C60",
+      "name": "Empty bases and singleton old diagrams require actual admissibility",
+      "statement": "All endpoint named sorts are nonempty. Empty-family exact intersections use diversity Top, while a zeroth RAW word is logical Id and is not a positive STRONG word. A zero-diversity sort has no nonzero equivalence and none of the nontrivial saturation/interpolation instances applies. Small inputs retain actual unary/pair types.",
+      "depends_on": [
+        "A01",
+        "D01",
+        "D04"
+      ],
+      "notes": "N09",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-exact-domain-calculus"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C61",
+      "name": "Terminal wrappers retain FULL original invariance",
+      "statement": "A05 excludes index two in the FULL original invariant-equivalence lattice, not just a preselected exact sublattice. I04 identifies these lattices before using a represented MI/cover. Quotient graph arguments use actual G=Aut(M) orbitals and do not assert quotient homogeneity or SAP.",
+      "depends_on": [
+        "A05",
+        "I04",
+        "C19",
+        "C23",
+        "C37"
+      ],
+      "notes": "N09",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-cover-interpolation"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    },
+    {
+      "id": "C62",
+      "name": "Bounded controls are not unbounded quotient/CCO proof certificates",
+      "statement": "Finite relation products, anchor/pinning witnesses, quotient lambda identities, cylinder partitions and normalized term functions test concrete bounded models. They prove no infinite class freshness, general first-hit/cover-layer theorem, hidden SAP, published provider binding or compiled Lean result. The existing five HN/HKN receiving bindings remain pending.",
+      "depends_on": [
+        "C18",
+        "C23",
+        "C40",
+        "C43",
+        "C49",
+        "C51",
+        "C52"
+      ],
+      "notes": "N09",
+      "scope": "boundary",
+      "source_labels": [
+        "lem:typed-branch-atomic-transport"
+      ],
+      "status": "HUMAN_PROOF_EXPANDED"
+    }
+  ],
+  "source_result_files": [
+    "sections/v27/07_typed_raw_strong_transition.tex"
+  ],
+  "exports": [
+    {
+      "source_label": "lem:typed-raw-strong-saturation",
+      "claims": [
+        "C05",
+        "C07",
+        "C08"
+      ]
+    },
+    {
+      "source_label": "lem:typed-exact-domain-calculus",
+      "claims": [
+        "C09"
+      ]
+    },
+    {
+      "source_label": "lem:typed-original-full-cover-interpolation",
+      "claims": [
+        "C18"
+      ]
+    },
+    {
+      "source_label": "lem:typed-cover-interpolation",
+      "claims": [
+        "C19"
+      ]
+    },
+    {
+      "source_label": "lem:typed-original-strong-exact-prime",
+      "claims": [
+        "C22"
+      ]
+    },
+    {
+      "source_label": "lem:typed-prime-intersection",
+      "claims": [
+        "C23"
+      ]
+    },
+    {
+      "source_label": "lem:no-real-algebraic-transition",
+      "claims": [
+        "C30"
+      ]
+    },
+    {
+      "source_label": "lem:typed-identity-transport-redundant",
+      "claims": [
+        "C32"
+      ]
+    },
+    {
+      "source_label": "lem:typed-transition-composition-normal-form",
+      "claims": [
+        "C40"
+      ]
+    },
+    {
+      "source_label": "lem:typed-cylinder-realisation",
+      "claims": [
+        "C42",
+        "C43"
+      ]
+    },
+    {
+      "source_label": "lem:typed-transition-cylinder",
+      "claims": [
+        "C47",
+        "C48",
+        "C49"
+      ]
+    },
+    {
+      "source_label": "lem:typed-branch-atomic-transport",
+      "claims": [
+        "C50",
+        "C51"
+      ]
+    }
+  ],
+  "auxiliary_exports": [
+    {
+      "source_label": "eq:typed-raw-strong-saturation",
+      "claims": [
+        "C05"
+      ],
+      "source": {
+        "file": "sections/v27/07_typed_raw_strong_transition.tex",
+        "anchor": "\\label{eq:typed-raw-strong-saturation}"
+      }
+    },
+    {
+      "source_label": "eq:typed-equivalence-join-strong",
+      "claims": [
+        "C07"
+      ],
+      "source": {
+        "file": "sections/v27/07_typed_raw_strong_transition.tex",
+        "anchor": "\\label{eq:typed-equivalence-join-strong}"
+      }
+    },
+    {
+      "source_label": "eq:typed-exact-domains",
+      "claims": [
+        "C09"
+      ],
+      "source": {
+        "file": "sections/v27/07_typed_raw_strong_transition.tex",
+        "anchor": "\\label{eq:typed-exact-domains}"
+      }
+    },
+    {
+      "source_label": "eq:typed-original-full-cover-interpolation",
+      "claims": [
+        "C18"
+      ],
+      "source": {
+        "file": "sections/v27/07_typed_raw_strong_transition.tex",
+        "anchor": "\\label{eq:typed-original-full-cover-interpolation}"
+      }
+    },
+    {
+      "source_label": "eq:typed-old-interpolation-S",
+      "claims": [
+        "C13"
+      ],
+      "source": {
+        "file": "sections/v27/07_typed_raw_strong_transition.tex",
+        "anchor": "\\label{eq:typed-old-interpolation-S}"
+      }
+    },
+    {
+      "source_label": "eq:typed-old-interpolation-AT",
+      "claims": [
+        "C15"
+      ],
+      "source": {
+        "file": "sections/v27/07_typed_raw_strong_transition.tex",
+        "anchor": "\\label{eq:typed-old-interpolation-AT}"
+      }
+    },
+    {
+      "source_label": "eq:typed-old-interpolation-peirce",
+      "claims": [
+        "C16"
+      ],
+      "source": {
+        "file": "sections/v27/07_typed_raw_strong_transition.tex",
+        "anchor": "\\label{eq:typed-old-interpolation-peirce}"
+      }
+    },
+    {
+      "source_label": "eq:typed-original-strong-exact-prime",
+      "claims": [
+        "C22"
+      ],
+      "source": {
+        "file": "sections/v27/07_typed_raw_strong_transition.tex",
+        "anchor": "\\label{eq:typed-original-strong-exact-prime}"
+      }
+    },
+    {
+      "source_label": "eq:typed-identity-transport",
+      "claims": [
+        "C32"
+      ],
+      "source": {
+        "file": "sections/v27/07_typed_raw_strong_transition.tex",
+        "anchor": "\\label{eq:typed-identity-transport}"
+      }
+    },
+    {
+      "source_label": "eq:typed-transition-composition",
+      "claims": [
+        "C34"
+      ],
+      "source": {
+        "file": "sections/v27/07_typed_raw_strong_transition.tex",
+        "anchor": "\\label{eq:typed-transition-composition}"
+      }
+    },
+    {
+      "source_label": "eq:typed-upward-interchange",
+      "claims": [
+        "C35"
+      ],
+      "source": {
+        "file": "sections/v27/07_typed_raw_strong_transition.tex",
+        "anchor": "\\label{eq:typed-upward-interchange}"
+      }
+    },
+    {
+      "source_label": "eq:typed-transition-function",
+      "claims": [
+        "C37",
+        "C52"
+      ],
+      "source": {
+        "file": "sections/v27/07_typed_raw_strong_transition.tex",
+        "anchor": "\\label{eq:typed-transition-function}"
+      }
+    },
+    {
+      "source_label": "eq:typed-cylinder",
+      "claims": [
+        "C42"
+      ],
+      "source": {
+        "file": "sections/v27/07_typed_raw_strong_transition.tex",
+        "anchor": "\\label{eq:typed-cylinder}"
+      }
+    },
+    {
+      "source_label": "eq:typed-transition-cylinder",
+      "claims": [
+        "C47"
+      ],
+      "source": {
+        "file": "sections/v27/07_typed_raw_strong_transition.tex",
+        "anchor": "\\label{eq:typed-transition-cylinder}"
+      }
+    },
+    {
+      "source_label": "eq:typed-atomic-transport",
+      "claims": [
+        "C50"
+      ],
+      "source": {
+        "file": "sections/v27/07_typed_raw_strong_transition.tex",
+        "anchor": "\\label{eq:typed-atomic-transport}"
+      }
+    }
+  ],
+  "source_files": [
+    {
+      "file": "sections/foundational_sap_collision_unfolding.tex",
+      "git_blob": "f3ed62cf481b082ca6be793f45bf180db12a6468"
+    },
+    {
+      "file": "sections/terminal_invariant_raw_exact.tex",
+      "git_blob": "af0064c672f332049209e142a585bc62540954b4"
+    },
+    {
+      "file": "sections/typed_invariant_quotient_transport.tex",
+      "git_blob": "3895b17d7d0176a74d6f69c39e4e22d9cdba5715"
+    },
+    {
+      "file": "sections/typed_pc_fixedpoint.tex",
+      "git_blob": "796c74460c724023281e2d916d9ddb2e9eb70f07"
+    },
+    {
+      "file": "sections/v27/07_typed_raw_strong_transition.tex",
+      "git_blob": "6dc7e4c7aa452b179e95cc502b4daf4d2b6592d9"
+    },
+    {
+      "file": "sections/v27/09_typed_equivalence_and_profiles.tex",
+      "git_blob": "39d1678e6616140b50d6d9448b94f0de823f26d8"
+    }
+  ],
+  "dependency_firewalls": [
+    {
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08"
+      ],
+      "forbid": [
+        "A03",
+        "A04",
+        "A05",
+        "A06",
+        "A07",
+        "I02",
+        "I03",
+        "I04",
+        "I05",
+        "I06",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40",
+        "C41",
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46",
+        "C47",
+        "C48",
+        "C49",
+        "C50",
+        "C51",
+        "C52",
+        "C53",
+        "C54",
+        "C55",
+        "C56",
+        "C57",
+        "C58",
+        "C59",
+        "C60",
+        "C61",
+        "C62"
+      ]
+    },
+    {
+      "claims": [
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C20",
+        "C21",
+        "C22"
+      ],
+      "forbid": [
+        "A05",
+        "A06",
+        "A07",
+        "I02",
+        "I03",
+        "I04",
+        "C09",
+        "C19",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40",
+        "C41",
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46",
+        "C47",
+        "C48",
+        "C49",
+        "C50",
+        "C51",
+        "C52",
+        "C53",
+        "C54",
+        "C55",
+        "C56",
+        "C57",
+        "C58",
+        "C59",
+        "C60",
+        "C61",
+        "C62"
+      ]
+    },
+    {
+      "claims": [
+        "C24",
+        "C25",
+        "C26",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C38"
+      ],
+      "forbid": [
+        "A02",
+        "A03",
+        "A04",
+        "A05",
+        "A07",
+        "I01",
+        "I02",
+        "I04",
+        "I05",
+        "I06",
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C37",
+        "C39",
+        "C40",
+        "C41",
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46",
+        "C47",
+        "C48",
+        "C49",
+        "C50",
+        "C51",
+        "C52",
+        "C53",
+        "C54",
+        "C55",
+        "C56",
+        "C57",
+        "C58",
+        "C59",
+        "C60",
+        "C61",
+        "C62"
+      ]
+    },
+    {
+      "claims": [
+        "C27",
+        "C28",
+        "C29",
+        "C30"
+      ],
+      "forbid": [
+        "A03",
+        "A04",
+        "A05",
+        "A07",
+        "I01",
+        "I02",
+        "I04",
+        "I05",
+        "I06",
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40",
+        "C41",
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46",
+        "C47",
+        "C48",
+        "C49",
+        "C50",
+        "C51",
+        "C52",
+        "C53",
+        "C54",
+        "C55",
+        "C56",
+        "C57",
+        "C58",
+        "C59",
+        "C60",
+        "C61",
+        "C62"
+      ]
+    },
+    {
+      "claims": [
+        "C41",
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46",
+        "C47",
+        "C49",
+        "C50"
+      ],
+      "forbid": [
+        "A03",
+        "A04",
+        "A05",
+        "I02",
+        "I04",
+        "I05",
+        "I06",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C37",
+        "C38",
+        "C39",
+        "C40",
+        "C48",
+        "C51",
+        "C52",
+        "C53",
+        "C54",
+        "C55",
+        "C56",
+        "C57",
+        "C58",
+        "C59",
+        "C60",
+        "C61",
+        "C62"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "T01",
+      "name": "Pinned original RAW/STRONG saturation",
+      "claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Keep RAW equality and STRONG diversity separate; every SAP duplication base excludes the point copied, and original endpoint type stays pinned. First-hit/prime use direct positive-word Helly and source09 standalone providers, never terminal/exact-domain shortcuts. Generic transport provides invariant maps only; add original visible SAP for no-real-collapse and terminal FULL NR2 for named RAW exact membership. Count actual unary functions, not syntax. Whole-branch and atomic maps agree without equating fine relations or assuming quotient/hidden SAP."
+    },
+    {
+      "id": "T02",
+      "name": "Exact PC domains and independent positive-word Helly",
+      "claims": [
+        "C09",
+        "C10"
+      ],
+      "depends_on": [
+        "T01"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Keep RAW equality and STRONG diversity separate; every SAP duplication base excludes the point copied, and original endpoint type stays pinned. First-hit/prime use direct positive-word Helly and source09 standalone providers, never terminal/exact-domain shortcuts. Generic transport provides invariant maps only; add original visible SAP for no-real-collapse and terminal FULL NR2 for named RAW exact membership. Count actual unary functions, not syntax. Whole-branch and atomic maps agree without equating fine relations or assuming quotient/hidden SAP."
+    },
+    {
+      "id": "T03",
+      "name": "Original first-hit interpolation with selected quotient-word inputs",
+      "claims": [
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19"
+      ],
+      "depends_on": [
+        "T01",
+        "T02"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Keep RAW equality and STRONG diversity separate; every SAP duplication base excludes the point copied, and original endpoint type stays pinned. First-hit/prime use direct positive-word Helly and source09 standalone providers, never terminal/exact-domain shortcuts. Generic transport provides invariant maps only; add original visible SAP for no-real-collapse and terminal FULL NR2 for named RAW exact membership. Count actual unary functions, not syntax. Whole-branch and atomic maps agree without equating fine relations or assuming quotient/hidden SAP."
+    },
+    {
+      "id": "T04",
+      "name": "Original and represented MI-primality",
+      "claims": [
+        "C20",
+        "C21",
+        "C22",
+        "C23"
+      ],
+      "depends_on": [
+        "T03"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Keep RAW equality and STRONG diversity separate; every SAP duplication base excludes the point copied, and original endpoint type stays pinned. First-hit/prime use direct positive-word Helly and source09 standalone providers, never terminal/exact-domain shortcuts. Generic transport provides invariant maps only; add original visible SAP for no-real-collapse and terminal FULL NR2 for named RAW exact membership. Count actual unary functions, not syntax. Whole-branch and atomic maps agree without equating fine relations or assuming quotient/hidden SAP."
+    },
+    {
+      "id": "T05",
+      "name": "Generic quotient labels and SAP real noncollapse",
+      "claims": [
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30"
+      ],
+      "depends_on": [],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Keep RAW equality and STRONG diversity separate; every SAP duplication base excludes the point copied, and original endpoint type stays pinned. First-hit/prime use direct positive-word Helly and source09 standalone providers, never terminal/exact-domain shortcuts. Generic transport provides invariant maps only; add original visible SAP for no-real-collapse and terminal FULL NR2 for named RAW exact membership. Count actual unary functions, not syntax. Whole-branch and atomic maps agree without equating fine relations or assuming quotient/hidden SAP."
+    },
+    {
+      "id": "T06",
+      "name": "Identity transport, composition and finite term functions",
+      "claims": [
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35",
+        "C36",
+        "C37",
+        "C38",
+        "C39",
+        "C40"
+      ],
+      "depends_on": [
+        "T05"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Keep RAW equality and STRONG diversity separate; every SAP duplication base excludes the point copied, and original endpoint type stays pinned. First-hit/prime use direct positive-word Helly and source09 standalone providers, never terminal/exact-domain shortcuts. Generic transport provides invariant maps only; add original visible SAP for no-real-collapse and terminal FULL NR2 for named RAW exact membership. Count actual unary functions, not syntax. Whole-branch and atomic maps agree without equating fine relations or assuming quotient/hidden SAP."
+    },
+    {
+      "id": "T07",
+      "name": "Cylinder partitions and named atomic branch maps",
+      "claims": [
+        "C41",
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46",
+        "C47",
+        "C48",
+        "C49",
+        "C50",
+        "C51",
+        "C52"
+      ],
+      "depends_on": [
+        "T01",
+        "T05",
+        "T06"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Keep RAW equality and STRONG diversity separate; every SAP duplication base excludes the point copied, and original endpoint type stays pinned. First-hit/prime use direct positive-word Helly and source09 standalone providers, never terminal/exact-domain shortcuts. Generic transport provides invariant maps only; add original visible SAP for no-real-collapse and terminal FULL NR2 for named RAW exact membership. Count actual unary functions, not syntax. Whole-branch and atomic maps agree without equating fine relations or assuming quotient/hidden SAP."
+    },
+    {
+      "id": "T08",
+      "name": "Source gates, boundaries and bounded diagnostics",
+      "claims": [
+        "C53",
+        "C54",
+        "C55",
+        "C56",
+        "C57",
+        "C58",
+        "C59",
+        "C60",
+        "C61",
+        "C62"
+      ],
+      "depends_on": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07"
+      ],
+      "status": "NOT_STARTED_IN_LEAN",
+      "acceptance": "Keep RAW equality and STRONG diversity separate; every SAP duplication base excludes the point copied, and original endpoint type stays pinned. First-hit/prime use direct positive-word Helly and source09 standalone providers, never terminal/exact-domain shortcuts. Generic transport provides invariant maps only; add original visible SAP for no-real-collapse and terminal FULL NR2 for named RAW exact membership. Count actual unary functions, not syntax. Whole-branch and atomic maps agree without equating fine relations or assuming quotient/hidden SAP."
+    }
+  ],
+  "controls": [
+    {
+      "id": "K01",
+      "check": "Bounded finite clone-window RAW/STRONG saturation, all middle-witness cases, exact menu examples and explicit AP-not-SAP/identity-omission guards."
+    },
+    {
+      "id": "K02",
+      "check": "Actual invariant quotient labels, identity/composition/upward maps, finite normal term-function closure, cylinder partitions and atomic/whole-branch equivalence; no infinite theorem certification."
+    }
+  ],
+  "overview_mermaid": [
+    "flowchart TD",
+    "  S[\"Original SAP and pinned paths\"] --> R[\"RAW saturation equals STRONG diversity\"]",
+    "  Q[\"Independent quotient semigroup and layer words\"] --> F[\"Original first-hit interpolation\"]",
+    "  R --> F",
+    "  F --> P[\"Original MI-primality\"]",
+    "  N[\"Terminal FULL original NR2\"] --> T[\"Represented wrappers and named kernels\"]",
+    "  P --> T",
+    "  G[\"Canonical invariant quotient transport\"] --> C[\"Finite unary term functions\"]",
+    "  R --> Y[\"Actual cylinders and atomic branch naming\"]",
+    "  C --> Y",
+    "  T --> Y"
+  ],
+  "overview_notes": [
+    "Twelve source07 results and fifteen equations; source09 prerequisites are imported, not reallocated.",
+    "First-hit/interpolation and original primality use only original positive paths/CCO/SAP, with no typed exact product formula or Set-Pasch provider.",
+    "Generic transport, SAP noncollapse and terminal exact/named representation are three separate proof layers.",
+    "Equality exteriors are omitted; hidden quotient equality and old real diversity are not the same relation."
+  ],
+  "article_feedback": [
+    {
+      "id": "F01",
+      "kind": "PROOF_EXPANSION_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/v27/07_typed_raw_strong_transition.tex",
+        "anchor": "\\label{lem:typed-raw-strong-saturation}"
+      },
+      "finding": "The endpoint-collision RAW saturation argument needs complete duplication bases that exclude the copied point. The two-factor proof separately treats a middle witness equal to either endpoint, never cloning a point already in the base.",
+      "proposed_article_change": "Keep the explicit anchor and three-middle-case proof; state that identity exterior kernels are omitted and not replaced by empty STRONG factors. Add a direct pinned injectivisation proof contract preserving the endpoint fine atom.",
+      "caller_effect": "No new hypothesis; this is proof expansion under original SAP, with no CCO/terminality.",
+      "proof_claims": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08"
+      ]
+    },
+    {
+      "id": "F02",
+      "kind": "PROOF_CONTEXT_CLARIFICATION",
+      "status": "QUEUED_FOR_HUMAN_ARTICLE_PASS",
+      "source": {
+        "file": "sections/v27/07_typed_raw_strong_transition.tex",
+        "anchor": "\\label{lem:typed-transition-composition-normal-form}"
+      },
+      "finding": "Generic invariant interval transport does not prove RAW exactness or membership in the named coordinate language. Standing terminal FULL NR2 supplies this separately, and visible SAP excludes equality targets.",
+      "proposed_article_change": "Repeat the separate terminal representation gate at the normal-form/namedness application, while keeping generic map composition independent of it. State that finite normal forms count functions, not all term strings.",
+      "caller_effect": "No unrestricted exact descent or hidden SAP conclusion is added.",
+      "proof_claims": [
+        "C25",
+        "C36",
+        "C37",
+        "C39",
+        "C40",
+        "C51"
+      ]
+    }
+  ],
+  "review": {
+    "date": "2026-10-29",
+    "source_unchanged": true,
+    "source_signature_repairs": 0,
+    "unexpanded_provider_labels": [],
+    "proof_status": "HUMAN_EXPANDED_NOT_LEAN; twelve source07 results with independent provider branches and explicit terminal/namedness gates. Parent and independent provider review pending.",
+    "independent_reviews": [
+      "Independent reconstruction of pinned RAW/STRONG saturation, direct positive-word first-hit/prime proof, actual quotient labels and finite normal-function closure",
+      "Parent reviewed all claim statements and complete proof notes, checking generic-vs-terminal premises, pinned SAP bases, actual quotient covers and the acyclic provider direction B050 to B049: PASS",
+      "Final parent proof synthesis PASS; preserve original versus terminal scopes, nonzero quotient guards, source B047 qualifications and the acyclic direction B050 to B049 to B051."
+    ],
+    "boundaries": [
+      "No CCO/NR2 in saturation or generic transport",
+      "No exact-domain/Set-Pasch dependency in original interpolation",
+      "Terminal FULL NR2 separately discharges represented namedness",
+      "No hidden/quotient SAP inferred",
+      "Existing B047 actual-sector qualification and five HN/HKN receiving bindings unchanged"
+    ]
+  }
+}
