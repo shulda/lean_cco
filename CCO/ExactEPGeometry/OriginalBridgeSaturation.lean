@@ -115,7 +115,15 @@ theorem original_saturated_exact_square
     (D : TRel X i i) (hD : FullExact S D)
     (hSquare : ∀ x y, TRel.comp D D x y → K.rel x y) :
     TRel.comp (TRel.comp K.rel D) (TRel.comp K.rel D) = K.rel :=
-  (original_saturated_exact_arrow S H cco K D hD hSquare).source
+  by
+    let C := original_saturated_exact_arrow S H cco K D hD hSquare
+    have hSource := C.source
+    have hSym := C.exact.same_sort_converse S H
+    change TRel.comp (TRel.comp K.rel D)
+      (TRel.converse (TRel.comp K.rel D)) = K.rel at hSource
+    change TRel.converse (TRel.comp K.rel D) = TRel.comp K.rel D at hSym
+    rw [hSym] at hSource
+    exact hSource
 
 end
 end CCO.ExactEPGeometry
