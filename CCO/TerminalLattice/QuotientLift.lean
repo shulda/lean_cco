@@ -88,9 +88,17 @@ theorem quotientDiversity_injective (J : Setoid A)
       simp [h]
     have hp : quotientDiversity J R x y = quotientDiversity J T x y :=
       congrFun (congrFun h x) y
-    have heq : R (Quotient.mk J x) r = T (Quotient.mk J x) r := by
-      simpa only [quotientDiversity, hxy, true_and, hqr] using hp
-    rw [heq]
+    have hiff : R (Quotient.mk J x) (Quotient.mk J y) ↔
+        T (Quotient.mk J x) (Quotient.mk J y) := by
+      constructor
+      · intro hr
+        have hpt : quotientDiversity J T x y := Eq.mp hp ⟨hxy, hr⟩
+        exact hpt.2
+      · intro ht
+        have hpr : quotientDiversity J R x y := Eq.mp hp.symm ⟨hxy, ht⟩
+        exact hpr.2
+    rw [hqr] at hiff
+    exact hiff
 
 /-- The precise two-step positive quotient lifting: composition of
 the full OLD diversity pullbacks agrees with quotient RAW composition
