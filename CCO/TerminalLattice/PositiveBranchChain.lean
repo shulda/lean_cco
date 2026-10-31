@@ -35,7 +35,7 @@ def originalPositiveBranchChain {i : ι} :
   | word :: rest, x, y =>
       ∃ z : X i,
         PositiveWord.represented S word x z ∧
-        originalPositiveBranchChain S rest z y
+        originalPositiveBranchChain rest z y
 
 /-- An ordered list of true OLD branch relations is equivalent to the
 represented relation of the corresponding real left-associated positive
@@ -94,11 +94,11 @@ theorem original_saturated_positive_path_branch_values
     (D : S.Menu i i)
     (hD : D.Nonempty)
     (hDinside : D ⊆
-      ParityHasse.Original.originalEquivDiversityPalette S K)
+      originalEquivDiversityPalette S K)
     (hClosing : D ⊆ PositiveWord.profile S closing)
     (hPath : originalPositiveStrongPath S
         ((first :: remaining).map (PositiveWord.profile S)) =
-      some (ParityHasse.Original.originalEquivDiversityPalette S K)) :
+      some (originalEquivDiversityPalette S K)) :
     ∃ x y : X i,
       originalPositiveBranchChain S (first :: remaining) x y ∧
       PositiveWord.represented S closing x y := by
@@ -130,12 +130,12 @@ theorem original_centre_spokes_positive_branch_values
     (hK : (⊥ : ParityHasse.Original.ColourEq S i) < K)
     (spoke : PositiveWord S i i)
     (hSpoke : PositiveWord.profile S spoke =
-      ParityHasse.Original.originalEquivDiversityPalette S K)
+      originalEquivDiversityPalette S K)
     (pathWords : List (PositiveWord S i i))
     (hPath : ∀ P ∈ pathWords,
       (PositiveWord.profile S P).Nonempty ∧
       PositiveWord.profile S P ⊆
-        ParityHasse.Original.originalEquivDiversityPalette S K) :
+        originalEquivDiversityPalette S K) :
     ∃ x y : X i,
       originalPositiveBranchChain S (spoke :: pathWords) x y ∧
       PositiveWord.represented S spoke x y := by
