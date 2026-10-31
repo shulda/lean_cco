@@ -1672,6 +1672,7 @@ import CCO.TerminalLattice.CentreAbsorption
 import CCO.TerminalLattice.LongCycleCounting
 import CCO.TerminalLattice.PrivateBranchCycles
 import CCO.TerminalLattice.SparseCycleLabels
+import CCO.TerminalLattice.SparseCycleSpectrum
 import CCO.TerminalLattice.LabelledPathGrouping
 import CCO.TerminalLattice.PositivePathFold
 import CCO.TerminalLattice.StrongPathReordering
