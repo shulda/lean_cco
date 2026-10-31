@@ -31,7 +31,7 @@ represented relation level; only the finite-order completion is reused. -/
     (cco : SemanticCCO.{u,v,max u v,w} S)
     (i : ι) : CompleteLattice (ExactEq S i) := by
   letI : Fintype (ExactEq S i) := Fintype.ofFinite _
-  letI : Lattice (ExactEq S i) := ExactEq.lattice S H cco
+  letI : Lattice (ExactEq S i) := ExactEq.lattice H cco
   letI : BoundedOrder (ExactEq S i) :=
     { toOrderTop := inferInstance
       toOrderBot := inferInstance }
