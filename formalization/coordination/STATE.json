@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 397,
+  "revision": 398,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -4475,309 +4475,7 @@
       }
     }
   },
-  "integration_lock": {
-    "kind": "infrastructure",
-    "actor_id": "root",
-    "head_sha": "b8877da8b102bb8c6a174e76914d638bb864b2ae",
-    "base_main_sha": "700c12f7e6e8476eb0100a6be37d5f619ade3c0a",
-    "pr_number": 65,
-    "review": {
-      "actor_id": "reviewer_recovery_control",
-      "head_sha": "b8877da8b102bb8c6a174e76914d638bb864b2ae",
-      "approved": true,
-      "summary": "The actual registered non-author personally read the complete migration, broker, queue, policy, generated instructions and all repair deltas, found and closed R1/R2, and inspected successful exact-head CI with complete source/provider guards and the standard three-axiom audit. The proposed deployment preserves all 48 accepted package records and their history, introduces only fresh Chat identities, and binds the unchanged BOARD plus exact old/new policy under the sole integration lock.",
-      "independence": {
-        "identity": "/root/reviewer_recovery_control",
-        "non_author": true,
-        "summary": "I personally performed the full independent source and CI review without implementing, directing or supplying any migration code, tests, fixes, helpers or design. I am not an author of any part of this infrastructure change.",
-        "report_path": "formalization/coordination/reviews/chat-work-profiles.md"
-      }
-    },
-    "ci": {
-      "run_id": 41169876583,
-      "run_attempt": 1,
-      "head_sha": "b8877da8b102bb8c6a174e76914d638bb864b2ae",
-      "conclusion": "success",
-      "axiom_audit": "allowlist",
-      "job_id": 124445322368,
-      "tests": 183,
-      "declarations": 28723,
-      "guards": [
-        {
-          "parts": 1619,
-          "source": 1619
-        },
-        {
-          "parts": 1619,
-          "source": 1619
-        },
-        {
-          "parts": 1619,
-          "source": 1619
-        }
-      ],
-      "provider_guards": [
-        {
-          "parts": 269,
-          "source": 269,
-          "pin": "cd358cde844d5419fd43f30c441511927e09142f"
-        },
-        {
-          "parts": 269,
-          "source": 269,
-          "pin": "cd358cde844d5419fd43f30c441511927e09142f"
-        },
-        {
-          "parts": 269,
-          "source": 269,
-          "pin": "cd358cde844d5419fd43f30c441511927e09142f"
-        },
-        {
-          "parts": 269,
-          "source": 269,
-          "pin": "cd358cde844d5419fd43f30c441511927e09142f"
-        }
-      ],
-      "ramsey_guards": [
-        {
-          "parts": 106,
-          "source": 106,
-          "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
-        },
-        {
-          "parts": 106,
-          "source": 106,
-          "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
-        },
-        {
-          "parts": 106,
-          "source": 106,
-          "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
-        },
-        {
-          "parts": 106,
-          "source": 106,
-          "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
-        }
-      ],
-      "build_jobs": [
-        1330,
-        1182,
-        4293,
-        4293,
-        6
-      ],
-      "fresh_cco_modules": [],
-      "url": "https://github.com/shulda/lean_cco/actions/runs/41169876583"
-    },
-    "author_actor_ids": [
-      "root"
-    ],
-    "original_author_project_ids": [
-      3
-    ],
-    "profile_deployment": {
-      "previous_registry_sha256": "661173fcaa2fcbda1a54f7c8bf484d9b6ce480b8b1b65b4887c0c1942d7bfa8f",
-      "previous_policy_sha256": "83860e56213ee023c1fd7df3b5a8194a36342ebffb2b7542c03497f35e986be6",
-      "registry_sha256": "661173fcaa2fcbda1a54f7c8bf484d9b6ce480b8b1b65b4887c0c1942d7bfa8f",
-      "policy_sha256": "5a76a9dd1920abe37006047c8659ce4af808c887103da2209f7f62e8fa2d2561",
-      "new_policy": {
-        "protocol_version": 3,
-        "revision": 13,
-        "state_branch": "coordination",
-        "state_file": "formalization/coordination/STATE.json",
-        "registered_projects": [
-          1,
-          2,
-          3,
-          4,
-          5,
-          6
-        ],
-        "team_project_id": 3,
-        "team_name": "cco-work-team",
-        "default_active_batches": 2,
-        "maximum_active_batches": 3,
-        "released_packages": [
-          "B002",
-          "B003",
-          "B004",
-          "B005",
-          "B006",
-          "B007",
-          "B008",
-          "B009",
-          "B010",
-          "B011",
-          "B012",
-          "B013",
-          "B014",
-          "B015",
-          "B016",
-          "B017",
-          "B018",
-          "B019",
-          "B020",
-          "B021",
-          "B022",
-          "B029",
-          "B023",
-          "B025",
-          "B026",
-          "B031",
-          "B027",
-          "B032",
-          "B024",
-          "B033",
-          "B028",
-          "B030",
-          "B034",
-          "B035",
-          "B036",
-          "B037",
-          "B038",
-          "B039",
-          "B040",
-          "B041",
-          "B042",
-          "B043",
-          "B044",
-          "B045",
-          "B046",
-          "B047",
-          "B048"
-        ],
-        "coordinator_review_packages": [
-          "B001"
-        ],
-        "review_requires_non_author": true,
-        "submission_releases_implementation_slot": false,
-        "actors": {
-          "root": {
-            "identity": "/root",
-            "roles": [
-              "coordinate",
-              "implement",
-              "integrate"
-            ],
-            "historical_author_projects": []
-          },
-          "independent_review": {
-            "identity": "/root/independent_review",
-            "roles": [
-              "review",
-              "integrate"
-            ],
-            "historical_author_projects": []
-          },
-          "legacy-project-1": {
-            "identity": "stopped-original-formalization-project-1",
-            "roles": [],
-            "historical_author_projects": [
-              1
-            ]
-          },
-          "legacy-project-2": {
-            "identity": "stopped-original-formalization-project-2",
-            "roles": [],
-            "historical_author_projects": [
-              2
-            ]
-          },
-          "independent_review_recovery": {
-            "identity": "/root/independent_review_recovery",
-            "roles": [
-              "review",
-              "integrate"
-            ],
-            "historical_author_projects": []
-          },
-          "reviewer_recovery_control": {
-            "identity": "/root/reviewer_recovery_control",
-            "roles": [
-              "review",
-              "integrate"
-            ],
-            "historical_author_projects": []
-          },
-          "chat-1": {
-            "identity": "chat-project:cco-chat-1",
-            "roles": [
-              "coordinate",
-              "implement",
-              "review",
-              "integrate"
-            ],
-            "historical_author_projects": [
-              4
-            ]
-          },
-          "chat-2": {
-            "identity": "chat-project:cco-chat-2",
-            "roles": [
-              "coordinate",
-              "implement",
-              "review",
-              "integrate"
-            ],
-            "historical_author_projects": [
-              5
-            ]
-          },
-          "chat-3": {
-            "identity": "chat-project:cco-chat-3",
-            "roles": [
-              "coordinate",
-              "implement",
-              "review",
-              "integrate"
-            ],
-            "historical_author_projects": [
-              6
-            ]
-          }
-        },
-        "notes": [
-          "One Work team owns implementations; original project IDs are historical authorship, not extra workers.",
-          "Every unresolved claimed batch, including submission, review, integration, requested repair or blocker, occupies a team slot.",
-          "Two active batches are the default; a third requires a durable concrete independence exception and actual active work.",
-          "Repairs and completion have priority. Do not claim backups speculatively or build on unaccepted dependencies.",
-          "The reviewer must actually be a non-author of the complete package, including original implementation; role labels or a new ID do not establish independence.",
-          "After substantive independent exact-head approval, integrate automatically under the sole lock, with exact-head CI/audit and green resulting main CI/audit.",
-          "Existing v2 state is read-only except the authorized one-time handoff and infrastructure locking during deployment.",
-          "Work-specific historical notes above remain preserved; STATE.execution_mode selects execution_profiles. In chat mode each registered Chat project owns one unresolved batch and reviews only work it never authored."
-        ],
-        "legacy_accepted_records": {
-          "B001": "bd99297a86920f4719bc4f089858f8736dbd9324f28dcef7ff430a51799857c9"
-        },
-        "chat_project_actors": {
-          "4": "chat-1",
-          "5": "chat-2",
-          "6": "chat-3"
-        },
-        "execution_profiles": {
-          "work": {
-            "project_ids": [
-              3
-            ],
-            "default_active_batches": 2,
-            "maximum_active_batches": 3,
-            "per_project_limit": 3
-          },
-          "chat": {
-            "project_ids": [
-              4,
-              5,
-              6
-            ],
-            "default_active_batches": 3,
-            "maximum_active_batches": 3,
-            "per_project_limit": 1
-          }
-        }
-      }
-    }
-  },
+  "integration_lock": null,
   "history": [
     {
       "revision": 1,
@@ -15658,6 +15356,96 @@
           "url": "https://github.com/shulda/lean_cco/actions/runs/41169876583"
         }
       }
+    },
+    {
+      "revision": 398,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "promote_profiles",
+      "package_id": null,
+      "details": {
+        "actor_id": "root",
+        "head_sha": "b8877da8b102bb8c6a174e76914d638bb864b2ae",
+        "integration_commit": "269b1acc05c64aca74c2bc5f238b9c75fb3af223",
+        "main_ci": {
+          "run_id": 41170282492,
+          "run_attempt": 1,
+          "head_sha": "269b1acc05c64aca74c2bc5f238b9c75fb3af223",
+          "conclusion": "success",
+          "axiom_audit": "allowlist",
+          "job_id": 124446560617,
+          "tests": 183,
+          "declarations": 28723,
+          "guards": [
+            {
+              "parts": 1619,
+              "source": 1619
+            },
+            {
+              "parts": 1619,
+              "source": 1619
+            },
+            {
+              "parts": 1619,
+              "source": 1619
+            }
+          ],
+          "provider_guards": [
+            {
+              "parts": 269,
+              "source": 269,
+              "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+            },
+            {
+              "parts": 269,
+              "source": 269,
+              "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+            },
+            {
+              "parts": 269,
+              "source": 269,
+              "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+            },
+            {
+              "parts": 269,
+              "source": 269,
+              "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+            }
+          ],
+          "ramsey_guards": [
+            {
+              "parts": 106,
+              "source": 106,
+              "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+            },
+            {
+              "parts": 106,
+              "source": 106,
+              "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+            },
+            {
+              "parts": 106,
+              "source": 106,
+              "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+            },
+            {
+              "parts": 106,
+              "source": 106,
+              "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+            }
+          ],
+          "build_jobs": [
+            1330,
+            1182,
+            4293,
+            4293,
+            6
+          ],
+          "fresh_cco_modules": [],
+          "url": "https://github.com/shulda/lean_cco/actions/runs/41170282492"
+        },
+        "target_mode": "chat"
+      }
     }
   ],
   "infrastructure_integrations": [
@@ -16640,9 +16428,390 @@
         "fresh_cco_modules": [],
         "url": "https://github.com/shulda/lean_cco/actions/runs/41124306717"
       }
+    },
+    {
+      "kind": "infrastructure",
+      "actor_id": "root",
+      "head_sha": "b8877da8b102bb8c6a174e76914d638bb864b2ae",
+      "base_main_sha": "700c12f7e6e8476eb0100a6be37d5f619ade3c0a",
+      "pr_number": 65,
+      "review": {
+        "actor_id": "reviewer_recovery_control",
+        "head_sha": "b8877da8b102bb8c6a174e76914d638bb864b2ae",
+        "approved": true,
+        "summary": "The actual registered non-author personally read the complete migration, broker, queue, policy, generated instructions and all repair deltas, found and closed R1/R2, and inspected successful exact-head CI with complete source/provider guards and the standard three-axiom audit. The proposed deployment preserves all 48 accepted package records and their history, introduces only fresh Chat identities, and binds the unchanged BOARD plus exact old/new policy under the sole integration lock.",
+        "independence": {
+          "identity": "/root/reviewer_recovery_control",
+          "non_author": true,
+          "summary": "I personally performed the full independent source and CI review without implementing, directing or supplying any migration code, tests, fixes, helpers or design. I am not an author of any part of this infrastructure change.",
+          "report_path": "formalization/coordination/reviews/chat-work-profiles.md"
+        }
+      },
+      "ci": {
+        "run_id": 41169876583,
+        "run_attempt": 1,
+        "head_sha": "b8877da8b102bb8c6a174e76914d638bb864b2ae",
+        "conclusion": "success",
+        "axiom_audit": "allowlist",
+        "job_id": 124445322368,
+        "tests": 183,
+        "declarations": 28723,
+        "guards": [
+          {
+            "parts": 1619,
+            "source": 1619
+          },
+          {
+            "parts": 1619,
+            "source": 1619
+          },
+          {
+            "parts": 1619,
+            "source": 1619
+          }
+        ],
+        "provider_guards": [
+          {
+            "parts": 269,
+            "source": 269,
+            "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+          },
+          {
+            "parts": 269,
+            "source": 269,
+            "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+          },
+          {
+            "parts": 269,
+            "source": 269,
+            "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+          },
+          {
+            "parts": 269,
+            "source": 269,
+            "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+          }
+        ],
+        "ramsey_guards": [
+          {
+            "parts": 106,
+            "source": 106,
+            "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+          },
+          {
+            "parts": 106,
+            "source": 106,
+            "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+          },
+          {
+            "parts": 106,
+            "source": 106,
+            "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+          },
+          {
+            "parts": 106,
+            "source": 106,
+            "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+          }
+        ],
+        "build_jobs": [
+          1330,
+          1182,
+          4293,
+          4293,
+          6
+        ],
+        "fresh_cco_modules": [],
+        "url": "https://github.com/shulda/lean_cco/actions/runs/41169876583"
+      },
+      "author_actor_ids": [
+        "root"
+      ],
+      "original_author_project_ids": [
+        3
+      ],
+      "profile_deployment": {
+        "previous_registry_sha256": "661173fcaa2fcbda1a54f7c8bf484d9b6ce480b8b1b65b4887c0c1942d7bfa8f",
+        "previous_policy_sha256": "83860e56213ee023c1fd7df3b5a8194a36342ebffb2b7542c03497f35e986be6",
+        "registry_sha256": "661173fcaa2fcbda1a54f7c8bf484d9b6ce480b8b1b65b4887c0c1942d7bfa8f",
+        "policy_sha256": "5a76a9dd1920abe37006047c8659ce4af808c887103da2209f7f62e8fa2d2561",
+        "new_policy": {
+          "protocol_version": 3,
+          "revision": 13,
+          "state_branch": "coordination",
+          "state_file": "formalization/coordination/STATE.json",
+          "registered_projects": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "team_project_id": 3,
+          "team_name": "cco-work-team",
+          "default_active_batches": 2,
+          "maximum_active_batches": 3,
+          "released_packages": [
+            "B002",
+            "B003",
+            "B004",
+            "B005",
+            "B006",
+            "B007",
+            "B008",
+            "B009",
+            "B010",
+            "B011",
+            "B012",
+            "B013",
+            "B014",
+            "B015",
+            "B016",
+            "B017",
+            "B018",
+            "B019",
+            "B020",
+            "B021",
+            "B022",
+            "B029",
+            "B023",
+            "B025",
+            "B026",
+            "B031",
+            "B027",
+            "B032",
+            "B024",
+            "B033",
+            "B028",
+            "B030",
+            "B034",
+            "B035",
+            "B036",
+            "B037",
+            "B038",
+            "B039",
+            "B040",
+            "B041",
+            "B042",
+            "B043",
+            "B044",
+            "B045",
+            "B046",
+            "B047",
+            "B048"
+          ],
+          "coordinator_review_packages": [
+            "B001"
+          ],
+          "review_requires_non_author": true,
+          "submission_releases_implementation_slot": false,
+          "actors": {
+            "root": {
+              "identity": "/root",
+              "roles": [
+                "coordinate",
+                "implement",
+                "integrate"
+              ],
+              "historical_author_projects": []
+            },
+            "independent_review": {
+              "identity": "/root/independent_review",
+              "roles": [
+                "review",
+                "integrate"
+              ],
+              "historical_author_projects": []
+            },
+            "legacy-project-1": {
+              "identity": "stopped-original-formalization-project-1",
+              "roles": [],
+              "historical_author_projects": [
+                1
+              ]
+            },
+            "legacy-project-2": {
+              "identity": "stopped-original-formalization-project-2",
+              "roles": [],
+              "historical_author_projects": [
+                2
+              ]
+            },
+            "independent_review_recovery": {
+              "identity": "/root/independent_review_recovery",
+              "roles": [
+                "review",
+                "integrate"
+              ],
+              "historical_author_projects": []
+            },
+            "reviewer_recovery_control": {
+              "identity": "/root/reviewer_recovery_control",
+              "roles": [
+                "review",
+                "integrate"
+              ],
+              "historical_author_projects": []
+            },
+            "chat-1": {
+              "identity": "chat-project:cco-chat-1",
+              "roles": [
+                "coordinate",
+                "implement",
+                "review",
+                "integrate"
+              ],
+              "historical_author_projects": [
+                4
+              ]
+            },
+            "chat-2": {
+              "identity": "chat-project:cco-chat-2",
+              "roles": [
+                "coordinate",
+                "implement",
+                "review",
+                "integrate"
+              ],
+              "historical_author_projects": [
+                5
+              ]
+            },
+            "chat-3": {
+              "identity": "chat-project:cco-chat-3",
+              "roles": [
+                "coordinate",
+                "implement",
+                "review",
+                "integrate"
+              ],
+              "historical_author_projects": [
+                6
+              ]
+            }
+          },
+          "notes": [
+            "One Work team owns implementations; original project IDs are historical authorship, not extra workers.",
+            "Every unresolved claimed batch, including submission, review, integration, requested repair or blocker, occupies a team slot.",
+            "Two active batches are the default; a third requires a durable concrete independence exception and actual active work.",
+            "Repairs and completion have priority. Do not claim backups speculatively or build on unaccepted dependencies.",
+            "The reviewer must actually be a non-author of the complete package, including original implementation; role labels or a new ID do not establish independence.",
+            "After substantive independent exact-head approval, integrate automatically under the sole lock, with exact-head CI/audit and green resulting main CI/audit.",
+            "Existing v2 state is read-only except the authorized one-time handoff and infrastructure locking during deployment.",
+            "Work-specific historical notes above remain preserved; STATE.execution_mode selects execution_profiles. In chat mode each registered Chat project owns one unresolved batch and reviews only work it never authored."
+          ],
+          "legacy_accepted_records": {
+            "B001": "bd99297a86920f4719bc4f089858f8736dbd9324f28dcef7ff430a51799857c9"
+          },
+          "chat_project_actors": {
+            "4": "chat-1",
+            "5": "chat-2",
+            "6": "chat-3"
+          },
+          "execution_profiles": {
+            "work": {
+              "project_ids": [
+                3
+              ],
+              "default_active_batches": 2,
+              "maximum_active_batches": 3,
+              "per_project_limit": 3
+            },
+            "chat": {
+              "project_ids": [
+                4,
+                5,
+                6
+              ],
+              "default_active_batches": 3,
+              "maximum_active_batches": 3,
+              "per_project_limit": 1
+            }
+          }
+        }
+      },
+      "integration_commit": "269b1acc05c64aca74c2bc5f238b9c75fb3af223",
+      "main_ci": {
+        "run_id": 41170282492,
+        "run_attempt": 1,
+        "head_sha": "269b1acc05c64aca74c2bc5f238b9c75fb3af223",
+        "conclusion": "success",
+        "axiom_audit": "allowlist",
+        "job_id": 124446560617,
+        "tests": 183,
+        "declarations": 28723,
+        "guards": [
+          {
+            "parts": 1619,
+            "source": 1619
+          },
+          {
+            "parts": 1619,
+            "source": 1619
+          },
+          {
+            "parts": 1619,
+            "source": 1619
+          }
+        ],
+        "provider_guards": [
+          {
+            "parts": 269,
+            "source": 269,
+            "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+          },
+          {
+            "parts": 269,
+            "source": 269,
+            "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+          },
+          {
+            "parts": 269,
+            "source": 269,
+            "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+          },
+          {
+            "parts": 269,
+            "source": 269,
+            "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+          }
+        ],
+        "ramsey_guards": [
+          {
+            "parts": 106,
+            "source": 106,
+            "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+          },
+          {
+            "parts": 106,
+            "source": 106,
+            "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+          },
+          {
+            "parts": 106,
+            "source": 106,
+            "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+          },
+          {
+            "parts": 106,
+            "source": 106,
+            "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+          }
+        ],
+        "build_jobs": [
+          1330,
+          1182,
+          4293,
+          4293,
+          6
+        ],
+        "fresh_cco_modules": [],
+        "url": "https://github.com/shulda/lean_cco/actions/runs/41170282492"
+      }
     }
   ],
-  "policy_revision": 12,
+  "policy_revision": 13,
   "third_batch_exception": {
     "package_id": "B039",
     "independent_active_work": true,
@@ -16684,5 +16853,7 @@
       }
     ],
     "revision": 303
-  }
+  },
+  "execution_mode": "chat",
+  "claims_paused": false
 }
