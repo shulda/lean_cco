@@ -95,7 +95,10 @@ theorem oldSparseWordDiagram_projected_prior_spoke
     change B.vertices
         (Fin.cast hLength.symm (Fin.cast hLength p)) =
           oldSparseCentre W
-    simpa only [Fin.cast_cast, Fin.cast_refl] using hp
+    have hCast :
+        Fin.cast hLength.symm (Fin.cast hLength p) = p := Fin.ext rfl
+    rw [hCast]
+    exact hp
   have hn : 0 < n := by
     have hh := B.length_ge_three
     omega
