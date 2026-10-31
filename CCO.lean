@@ -1698,6 +1698,7 @@ import CCO.TerminalLattice.LabelledPathGrouping
 import CCO.TerminalLattice.PositivePathFold
 import CCO.TerminalLattice.CentrePathSpectrum
 import CCO.TerminalLattice.OriginalLabelListThreshold
+import CCO.TerminalLattice.SparseOrderedSpectrum
 import CCO.TerminalLattice.StrongPathReordering
 import CCO.TerminalLattice.QuotientSquareSaturation
 import CCO.TerminalLattice.QuotientSquareOrbitalClosure
