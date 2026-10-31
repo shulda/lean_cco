@@ -19,7 +19,7 @@ private theorem perm_front_across_replicate {α : Type*}
   | zero => simp
   | succ n ih =>
       simpa only [List.replicate_succ, List.cons_append] using
-        ((List.Perm.swap a b (List.replicate n b ++ tail)).trans
+        ((List.Perm.swap a b (List.replicate n b ++ tail)).symm.trans
           (List.Perm.cons b ih))
 
 /-- A list of genuine finite labels permutes to all occurrences of a
@@ -35,7 +35,7 @@ theorem label_list_perm_count {r : Nat}
   | cons a xs ih =>
       by_cases h : a = target
       · subst a
-        simpa using (List.Perm.cons target ih)
+        simpa [List.replicate_succ] using (List.Perm.cons target ih)
       · have hCons := List.Perm.cons a ih
         have hMove :=
           perm_front_across_replicate a target (xs.count target)
@@ -53,15 +53,15 @@ theorem label_list_perm_replicate {r : Nat}
       xs.Perm (List.replicate n target ++ remaining) := by
   refine ⟨List.replicate (xs.count target - n) target ++
       xs.filter (fun j => j != target), ?_⟩
-  calc
-    xs ~ List.replicate (xs.count target) target ++
-        xs.filter (fun j => j != target) :=
-      label_list_perm_count target xs
-    _ = List.replicate n target ++
-        (List.replicate (xs.count target - n) target ++
-          xs.filter (fun j => j != target)) := by
-      have hsize : n + (xs.count target - n) =
-          xs.count target := Nat.add_sub_of_le hn
-      rw [← hsize, List.replicate_add, List.append_assoc]
+  have hsize : n + (xs.count target - n) =
+      xs.count target := Nat.add_sub_of_le hn
+  have hrep : List.replicate (xs.count target) target ++
+      xs.filter (fun j => j != target) =
+    List.replicate n target ++
+      (List.replicate (xs.count target - n) target ++
+        xs.filter (fun j => j != target)) := by
+    rw [← hsize, List.replicate_add, List.append_assoc]
+  rw [← hrep]
+  exact label_list_perm_count target xs
 
 end CCO.TerminalLattice
