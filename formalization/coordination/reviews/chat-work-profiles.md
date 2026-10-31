@@ -204,3 +204,45 @@ headb8877da8, base/current main700c12f7, the same synthetic checkoute809062,
 and PR65 OPEN/unmerged. I explicitly confirmed the actual exact-head approval
 remained valid under this one public root-held lock. The deployment must retain
 that lock until green actual resulting-main CI/audit and atomic promotion.
+
+## Completed deployment and genuine broker health receipt
+
+I personally checked actual resulting main
+`269b1acc05c64aca74c2bc5f238b9c75fb3af223`: exact approved tree
+`56cdbffb57370600d14a47119366b1503d4f0a3e`, ordered parents old main700c12f7
+and approved public headb8877da8. Actual main CI41170282492/job124446560617
+completed successfully with every job step successful. I fetched its complete
+3,059,836-character log:183 tests,28723 audited declarations, three complete
+1619 project guards, four exact269 EPPA guards, four exact106 Ramsey guards
+and no error annotations. No build, test or audit was rerun by this reader.
+
+I personally fetched whole actual STATE398 at coordination
+`32578a4f5f7888ab488848942667ac5dfd1e91f0`. All48 package records equal the
+previous accepted records, the whole prior history is preserved, and the
+completed infrastructure receipt equals the exact reviewed lock plus actual
+main/CI. The manifest-bound promotion is complete: policy13, execution_modechat,
+claims_pausedfalse and no integration lock. No mathematical record was reset.
+
+The genuine request was root-only status/verify_ci, not simulated Chat activity:
+`coordination/requests/root/20261031_profiles_bootstrap_c2e79480.json` at request
+commit `8bbe8e3e65b11388250947ff6a24d8fc4e8f498a`, actual request blob
+`8b55cb24e2af28c10f80f3ff07070e08533279b7`. I checked successful health workflow
+41170531521/job124447325259 and personally fetched its complete11,580-character
+log. It checked out trusted accepted main269b1acc, ran the broker and processed
+exactly one request with statusno_change/revision398.
+
+The resulting receipt is public at coordination
+`27c00de8fc4cf686e273650be53736f2e3701e9f` under
+`formalization/coordination/requests/results/root/20261031_profiles_bootstrap_c2e79480.json`.
+I checked its exact request-blob binding, actual-main CI receipt, own-parent
+binding to32578a4f and state_view. The view's STATE blob
+`6a58c20f1629567bb68ca71e07211da9fba2c980` independently equals actual Git-tree
+metadata for the whole canonical STATE. Whole STATE remains exactly STATE398.
+The health commit has only32578a4f as parent and changes only its receipt and
+derivedSTATUS, with no STATE write. STATUS truthfully reports48accepted,
+no active/available batch, all three Chat projects waiting for preparation and
+root's Work profile inactive. No new claim or mathematical approval was made.
+
+Deployment and actual broker smoke check are complete. The user can start the
+three fresh projects with their generated identities/instructions; later mode
+changes still require the explicit user-authorized runtime protocol.
