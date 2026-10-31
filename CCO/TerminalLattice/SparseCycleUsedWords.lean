@@ -144,11 +144,11 @@ theorem oldSparseWordDiagram_projected_centre_step_word
         oldSparseCentre W := by
     rcases hIncident with hAt | hAfter
     · rcases B.endpoints k with ⟨hs,_⟩ | ⟨hs,_⟩
-      · exact False.elim (hNoLeft (hs.trans hAt))
-      · exact hs.trans hAt
+      · exact False.elim (hNoLeft (hs.symm.trans hAt))
+      · exact hs.symm.trans hAt
     · rcases B.endpoints k with ⟨_,he⟩ | ⟨_,he⟩
-      · exact he.trans hAfter
-      · exact False.elim (hNoLeft (he.trans hAfter))
+      · exact he.symm.trans hAfter
+      · exact False.elim (hNoLeft (he.symm.trans hAfter))
   have hCentre : (B.edges k).val.2.val = W.size := by
     have hv := congrArg Fin.val hRight
     simpa [CCO.RawExact.QuotientExpansion.right,oldSparseCentre] using hv
