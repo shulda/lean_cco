@@ -1662,3 +1662,4 @@ import CCO.TerminalLattice.FullCoverIndexTwo
 import CCO.TerminalLattice.FullCoverAlternation
 import CCO.TerminalLattice.FullCoverDichotomy
 import CCO.TerminalLattice.TerminalExactCover
+import CCO.TerminalLattice.OldAbsorption
