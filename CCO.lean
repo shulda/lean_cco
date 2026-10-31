@@ -1647,3 +1647,4 @@ import CCO.FullPhaseLift.Tower.SingleStep
 import CCO.ExactEPGeometry.TypeSupport
 import CCO.ExactEPGeometry.TracePrimality
 import CCO.ExactEPGeometry.MarkedPair
+import CCO.ExactEPGeometry.MarkedTrace
