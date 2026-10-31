@@ -5,6 +5,7 @@ import unittest
 from copy import deepcopy
 from unittest.mock import patch
 import urllib.error
+import http.client
 
 import coordination_broker as b
 import coordination_queue as q
@@ -155,6 +156,25 @@ class BrokerTests(unittest.TestCase):
         self.process()
         self.assertEqual([v['status'] for v in self.api.receipts.values()], ['rejected', 'rejected', 'applied'])
         self.assertEqual(len(q.active_packages(self.api.state)), 1)
+
+    def test_malformed_checkpoint_run_id_cannot_poison_later_workers(self):
+        self.api.state = q.transition(self.api.registry, self.api.policy, self.api.state, 4, 'claim',
+            {'actor_id': 'chat-1', 'package_id': 'B002', 'base_main_sha': self.api.main, 'base_ci': ci()})
+        before = deepcopy(self.api.state)
+        self.api.request(ident='bad_checkpoint', operation='event', event='checkpoint',
+            expected_revision=before['revision'], data={'package_id': 'B002', 'head_sha': 'b' * 40,
+                'pr_number': 70, 'observed_ci': {'head_sha': 'b' * 40,
+                    'run_id': {'bad': 1}, 'conclusion': 'failure'}})
+        self.api.request('chat-2', ident='later_worker', operation='status')
+        original = self.api.call
+        def call(path, *args):
+            if "{'bad': 1}" in path:
+                raise http.client.InvalidURL('Invalid URL contains a control character')
+            return original(path, *args)
+        self.api.call = call
+        self.assertEqual(self.process(), 2)
+        self.assertEqual(self.api.state, before)
+        self.assertEqual([v['status'] for v in self.api.receipts.values()], ['rejected', 'no_change'])
 
     def test_status_and_no_ready_package_write_no_state_event_or_speculative_claim(self):
         self.api.request(operation='status', data={'verify_ci': True})

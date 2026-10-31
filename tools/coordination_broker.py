@@ -261,7 +261,12 @@ def verify_evidence(api, snap, event, data):
                   'Publish the actual reader report, identity and full head before requesting review/decision')
     if event == 'checkpoint':
         observed = data.get('observed_ci', {})
-        run = api.call(f'/actions/runs/{observed.get("run_id", 0)}')
+        q.require(isinstance(observed, dict) and type(observed.get('run_id')) is int
+                  and observed['run_id'] > 0 and q.sha(data.get('head_sha'))
+                  and observed.get('head_sha') == data['head_sha']
+                  and observed.get('conclusion') in {'success', 'failure'},
+                  'Checkpoint needs a typed actual CI run ID, exact WIP head and completed conclusion')
+        run = api.call(f'/actions/runs/{observed["run_id"]}')
         q.require(run and run['head_sha'] == data.get('head_sha') and run['status'] == 'completed'
                   and run['conclusion'] == observed.get('conclusion')
                   and run['path'] == '.github/workflows/lean.yml', 'Read actual completed WIP CI')
