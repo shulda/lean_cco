@@ -63,6 +63,7 @@ theorem relPow_fullExact
 the full (TP) certificate. Both input traces are genuinely nonempty:
 a current serial first edge and a current serial n-step suffix.
 No arbitrary middle sort can replace the displayed sort p. -/
+include tp in
 theorem relPow_current_iff
     (R : A.Point (P.parent p) → A.Point (P.parent p) → Prop)
     (hExact : FullExact A.source R)
@@ -91,8 +92,9 @@ theorem relPow_current_iff
       exact ProjectedWords.point_eq_iff A.source B.source P x y
   | succ n ih =>
       intro x z
+      have hPowerExact := relPow_fullExact A B P R hExact n
       obtain ⟨D,hD⟩ := hExact
-      obtain ⟨E,hE⟩ := relPow_fullExact A B P R hExact n
+      obtain ⟨E,hE⟩ := hPowerExact
       let x₀ : B.Point p := Classical.choice (B.source.nonemptySort p)
       have hInputD :
           ∃ a b : B.Point p,
@@ -126,6 +128,7 @@ theorem relPow_current_iff
 
 /-- All even-length current walks, with true zero-length identity,
 are exactly the old even-walk equivalence restricted to p. -/
+include tp in
 theorem evenWalk_current_iff
     (R : A.Point (P.parent p) → A.Point (P.parent p) → Prop)
     (hExact : FullExact A.source R)
@@ -142,6 +145,7 @@ theorem evenWalk_current_iff
 
 /-- Original odd RAW profile has the SAME trace as the odd current
 profile. Nonempty input traces are retained at every TP induction. -/
+include tp in
 theorem oddWalk_current_iff
     (R : A.Point (P.parent p) → A.Point (P.parent p) → Prop)
     (hExact : FullExact A.source R)
@@ -158,6 +162,7 @@ theorem oddWalk_current_iff
 
 /-- The full connected component relation (not necessarily exact)
 also restricts precisely; this is the X-part of source E4. -/
+include tp in
 theorem connectedWalk_current_iff
     (R : A.Point (P.parent p) → A.Point (P.parent p) → Prop)
     (hExact : FullExact A.source R)
@@ -210,6 +215,7 @@ theorem current_atom_serial
 has no odd closed walks, the ORIGINAL atom cannot have any odd closed
 walk either. Original transitivity carries any old diagonal odd walk to
 an actual projected current point; full (TP) reflects it back. -/
+include tp in
 theorem original_atom_no_odd
     (c : A.source.Atom (P.parent p) (P.parent p))
     (hNE : TRel.Nonempty
@@ -242,6 +248,7 @@ theorem original_atom_no_odd
 /-- Source C38: a genuine nonempty bipartite current odd-pivot atom
 trace forces the ORIGINAL named atom graph to be bipartite. This uses
 the actual old graph and all odd closed walks, not just finite tests. -/
+include tp in
 theorem original_atom_bipartite
     (c : A.source.Atom (P.parent p) (P.parent p))
     (hNE : TRel.Nonempty
@@ -260,6 +267,7 @@ theorem original_atom_bipartite
 bipartiteness. The original FULL invariant interval has true relative
 index two; the original even/odd RAW exact profiles are real and nonempty.
 Original connectivity need not be RAW exact. -/
+include tp in
 theorem original_atom_parity
     (c : A.source.Atom (P.parent p) (P.parent p))
     (hNE : TRel.Nonempty
@@ -288,6 +296,7 @@ theorem original_atom_parity
 /-- Literal source equation E4, including the equality-containing
 even part and the NON-exact connectivity upper relation. All three
 parts use the SAME actual old c and displayed current parent p. -/
+include tp in
 theorem original_atom_E4
     (c : A.source.Atom (P.parent p) (P.parent p))
     (hNE : TRel.Nonempty
