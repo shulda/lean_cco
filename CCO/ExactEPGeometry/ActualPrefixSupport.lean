@@ -64,7 +64,7 @@ theorem globalRelation_prefix_invariant
     (P : UnaryReduct S T)
     (R : ∀ i j : ι, TRel X i j)
     (hInv : ∀ i j, TRel.Invariant (G := G) (R i j)) :
-    PrefixInvariant P (globalRelation R) := by
+    PrefixInvariant (K := K) P (globalRelation R) := by
   intro i j g x y hxy
   have hColour :
       S.colour (P.point i x) (P.point j y) =
@@ -133,7 +133,7 @@ theorem prefixSupport_comp
     {K : Type z} [Group K] [∀ i, MulAction K (Y i)]
     (P : UnaryReduct S T) (HT : HomogeneousSource T K)
     (R U : Sigma X → Sigma X → Prop)
-    (hU : PrefixInvariant P U) (i k : κ) :
+    (hU : PrefixInvariant (K := K) P U) (i k : κ) :
     prefixSupport P (RawSymmetric.compose R U) i k ↔
       ∃ j : κ, prefixSupport P R i j ∧ prefixSupport P U j k := by
   constructor
@@ -175,7 +175,7 @@ theorem prefixSupport_equivalence
     {K : Type z} [Group K] [∀ i, MulAction K (Y i)]
     (P : UnaryReduct S T) (HT : HomogeneousSource T K)
     (E : Sigma X → Sigma X → Prop) (hEq : RawSymmetric.EquivRel E)
-    (hInv : PrefixInvariant P E) :
+    (hInv : PrefixInvariant (K := K) P E) :
     RawSymmetric.EquivRel (prefixSupport P E) := by
   refine ⟨?_,?_,?_⟩
   · intro i
@@ -197,7 +197,7 @@ theorem prefixSupport_occupancy
     {K : Type z} [Group K] [∀ i, MulAction K (Y i)]
     (P : UnaryReduct S T) (HT : HomogeneousSource T K)
     (E : Sigma X → Sigma X → Prop)
-    (hInv : PrefixInvariant P E)
+    (hInv : PrefixInvariant (K := K) P E)
     (i j : κ) (x : Y i) :
     prefixSupport P E i j ↔
       ∃ y : Y j, E (P.project ⟨i,x⟩) (P.project ⟨j,y⟩) := by
