@@ -1673,3 +1673,4 @@ import CCO.ExactEPGeometry.ActualUnaryWordProfile
 import CCO.ExactEPGeometry.ActualUnaryExactFromOld
 import CCO.ExactEPGeometry.ExactTraceTransport
 import CCO.ExactEPGeometry.CanonicalStepExact
+import CCO.ExactEPGeometry.CanonicalHistoryExact
