@@ -1674,6 +1674,7 @@ import CCO.TerminalLattice.PrivateBranchCycles
 import CCO.TerminalLattice.SparseCycleLabels
 import CCO.TerminalLattice.SparseCycleSpectrum
 import CCO.TerminalLattice.PositiveBranchCycles
+import CCO.TerminalLattice.PositiveBranchChain
 import CCO.TerminalLattice.OriginalExternalLabels
 import CCO.TerminalLattice.OriginalExternalWords
 import CCO.TerminalLattice.SingletonExternalLayer
