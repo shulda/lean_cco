@@ -18,7 +18,7 @@ universe u v w t
 
 namespace CCO.ExactEPGeometry
 
-open APCharacter
+open APCharacter RigidGroupoid.Geometry RigidGroupoid.Phase
 
 noncomputable section
 
@@ -139,9 +139,9 @@ theorem global_marked_pair_in_limit
       ⟨fun b => hm.1 (point b), fun b c => hm.2 (point b) (point c)⟩
     obtain ⟨f, ho, hc⟩ := Age.embed_realized S H completion point bits hi legal
     refine ⟨f false, f true, ?_, ?_, ?_⟩
-    · simpa only [point, bits, ite_false] using ho false
-    · simpa only [point, bits, ite_true] using ho true
-    · simpa only [point, bits, ite_false, ite_true] using hc false true
+    · simpa [point, bits] using ho false
+    · simpa [point, bits] using ho true
+    · simpa [point, bits] using hc false true
 
 variable {S H completion}
 
