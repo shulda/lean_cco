@@ -1702,6 +1702,7 @@ import CCO.TerminalLattice.SparseOrderedSpectrum
 import CCO.TerminalLattice.SparseCentreFirstSpoke
 import CCO.TerminalLattice.SparseCentreCycleSpectrum
 import CCO.TerminalLattice.SparseNoCentreCycleSpectrum
+import CCO.TerminalLattice.SparseAllCycleHom
 import CCO.TerminalLattice.StrongPathReordering
 import CCO.TerminalLattice.QuotientSquareSaturation
 import CCO.TerminalLattice.QuotientSquareOrbitalClosure
