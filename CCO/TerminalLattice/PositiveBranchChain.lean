@@ -63,8 +63,14 @@ theorem originalPositiveBranchPath_represented_iff_chain
         (∃ z : X i, PositiveWord.represented S first x z ∧
           ∃ t : X i, PositiveWord.represented S word z t ∧
             originalPositiveBranchChain S rest t y)
-      rw [ih (PositiveWord.append S first word) x y,
-        PositiveWord.represented_append S first word]
+      rw [ih (PositiveWord.append S first word) x y]
+      change (∃ t : X i,
+          PositiveWord.represented S (PositiveWord.append S first word) x t ∧
+          originalPositiveBranchChain S rest t y) ↔
+        (∃ z : X i, PositiveWord.represented S first x z ∧
+          ∃ t : X i, PositiveWord.represented S word z t ∧
+            originalPositiveBranchChain S rest t y)
+      rw [PositiveWord.represented_append S first word]
       change (∃ t : X i,
           (∃ z : X i, PositiveWord.represented S first x z ∧
             PositiveWord.represented S word z t) ∧
