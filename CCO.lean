@@ -1675,3 +1675,4 @@ import CCO.ExactEPGeometry.ExactTraceTransport
 import CCO.ExactEPGeometry.CanonicalStepExact
 import CCO.ExactEPGeometry.CanonicalHistoryExact
 import CCO.ExactEPGeometry.PrefixExactEquivalenceLift
+import CCO.ExactEPGeometry.ExactEquivalenceLattice
