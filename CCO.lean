@@ -1669,3 +1669,4 @@ import CCO.TerminalLattice.CompleteOrbitalWord
 import CCO.TerminalLattice.OriginalStrongAlgebra
 import CCO.TerminalLattice.ResetSquareRAW
 import CCO.TerminalLattice.CentreAbsorption
+import CCO.TerminalLattice.LongCycleCounting
