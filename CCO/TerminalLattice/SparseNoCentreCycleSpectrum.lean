@@ -182,6 +182,6 @@ theorem oldSparseWordDiagram_centre_free_complement_saturates
       (fun k : Fin n => menus (labels k)) := by
     funext k
     exact hChosen k
-  simpa only [List.map_ofFn, hFun] using hSat
+  simpa only [List.map_ofFn, Function.comp_def, hFun] using hSat
 
 end CCO.TerminalLattice
