@@ -60,7 +60,15 @@ theorem label_list_perm_replicate {r : Nat}
     List.replicate n target ++
       (List.replicate (xs.count target - n) target ++
         xs.filter (fun j => j != target)) := by
-    rw [← hsize, List.replicate_add, List.append_assoc]
+    have hrepAdd (m k : Nat) :
+        List.replicate (m+k) target =
+          List.replicate m target ++ List.replicate k target := by
+      induction m with
+      | zero => rfl
+      | succ m ih =>
+          simpa only [Nat.succ_add, List.replicate_succ, List.cons_append] using
+            congrArg (List.cons target) ih
+    rw [← hsize, hrepAdd, List.append_assoc]
   rw [← hrep]
   exact label_list_perm_count target xs
 
