@@ -28,6 +28,7 @@ variable (H : HomogeneousSource S G)
 variable {C : ExactCalculus S} {r : ι} {A : Kernel S r}
 variable (P : APCharacter.SourcePhase S H C A)
 variable (cco : SemanticCCO.{u,v,max u v,w} S)
+include cco
 
 /-- The exact first auxiliary factor meets the actual allowed (ε,η) mask.
 The fixed output orbital is the ACTUAL c colour of x,z. The E-pair may
