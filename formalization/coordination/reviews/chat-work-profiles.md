@@ -188,3 +188,19 @@ atomic profile promotion. The initial target Chat mode may activate only then;
 no old package record, source contract, pin or acceptance is changed. The
 request workflow still needs its genuine post-deployment status-only smoke
 receipt; none of these review statements pretends that execution already ran.
+
+## Actual public pre-merge recheck
+
+My actual final approval report was published unaltered at coordination
+`c0a12547d13bc989fc68318f2720f132d5fceb80`. I personally fetched the whole
+actual public STATE397 at `906003afc9f0b8d2dfe0b6ad64b06610136b5883` and
+compared it with the approved candidate: the full lock and new event exactly
+match; all48 package records, every prior history entry and all other global
+fields equal STATE396, and policy_revision remains12. I fetched the published
+report and compared its entire text with my own final report: exactly equal.
+
+Fresh independent PR65/main reads before merge confirmed the approved final
+headb8877da8, base/current main700c12f7, the same synthetic checkoute809062,
+and PR65 OPEN/unmerged. I explicitly confirmed the actual exact-head approval
+remained valid under this one public root-held lock. The deployment must retain
+that lock until green actual resulting-main CI/audit and atomic promotion.
