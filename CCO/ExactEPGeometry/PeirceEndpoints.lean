@@ -23,10 +23,12 @@ variable (S : AtomicSource.{u,v,w} ι X)
 variable {G : Type t} [Group G] [∀ i : ι, MulAction G (X i)]
 variable (H : HomogeneousSource S G)
 
+section Transport
+include H
+
 /-- A single witnessed original pair brings its ENTIRE real fine orbital
 into an invariant RAW relation. Same sort, mixed sorts and the real
 diagonal are all covered by the original pair-homogeneity theorem. -/
-include H in
 theorem invariant_of_same_actual_colour
     {i j : ι} (R : TRel X i j)
     (hInv : TRel.Invariant (G := G) R)
@@ -39,7 +41,6 @@ theorem invariant_of_same_actual_colour
 
 /-- Every nonempty exact RAW word-intersection contains entire original
 pair orbitals, including the equality orbital at repeated endpoints. -/
-include H in
 theorem exact_of_same_actual_colour
     {i j : ι} (D : RawExact.NonemptyExact S i j)
     (x : X i) (y : X j)
@@ -55,7 +56,6 @@ theorem exact_of_same_actual_colour
 /-- A complete old fine-colour output pair carrying a represented
 composite transports its genuine middle witness along the original
 pair action. This does NOT impose any child phase or marked-age assumption. -/
-include H in
 theorem raw_comp_of_same_actual_colour
     {i j k : ι} (D : RawExact.NonemptyExact S i j)
     (E : RawExact.NonemptyExact S j k)
@@ -73,6 +73,8 @@ theorem raw_comp_of_same_actual_colour
       (RawExact.presentation_invariant_of_homogeneous S H D.words)
       (RawExact.presentation_invariant_of_homogeneous S H E.words))
     x z h x' z' hColour
+
+end Transport
 
 /-- The first genuinely represented Peirce intersection, before the
 first mask-primality choice. Its middle point is the ORIGINAL endpoint z
