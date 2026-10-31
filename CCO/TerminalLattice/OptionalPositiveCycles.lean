@@ -82,8 +82,12 @@ theorem oldOptionalPositiveDiagram_cycle_has_marked_projection
         (fun k : Fin (P e).length =>
           (⟨e,k⟩ : CCO.RawExact.QuotientExpansion.Occurrence S sort P))
         hpq
+    have hDifferent :
+        choice.first ≠ choice.second :=
+      CCO.RawExact.QuotientExpansion.TwoMarkChoices.occurrences_ne
+        S sort P hNE C choice
     exact False.elim
-      (choice.occurrences_ne
+      (hDifferent
         (hFiber choice.first choice.second
           choice.first_label choice.second_label))
   · exact hProjection
