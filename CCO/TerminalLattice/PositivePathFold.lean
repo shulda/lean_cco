@@ -79,7 +79,7 @@ theorem originalOptionStrongFold_perm
   | @swap a b xs =>
       have hc := originalOptionStrongStep_swap S H sap seed a b
       simpa only [List.foldl_cons] using
-        (congrArg (fun M => xs.foldl (originalOptionStrongStep S) M) hc)
+        (congrArg (fun M => xs.foldl (originalOptionStrongStep S) M) hc).symm
   | @trans xs ys zs hxy hyz ihxy ihyz =>
       exact (ihxy seed).trans (ihyz seed)
 
