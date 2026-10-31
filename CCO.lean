@@ -1645,3 +1645,4 @@ import CCO.FullPhaseLift.Tower.SingleStep
 
 -- B062 WIP: actual equality-inclusive trace and unary-type support algebra.
 import CCO.ExactEPGeometry.TypeSupport
+import CCO.ExactEPGeometry.TracePrimality
