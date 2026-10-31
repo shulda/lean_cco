@@ -194,4 +194,62 @@ theorem originalSparseGraph_cycle_positive_word_closure
     (hMenus (labels closing)).2
     hClosing hSpectrumWords
 
+
+/-- C30 centre-star counterpart: ONE genuine OLD positive K-diversity
+spoke, followed by ANY finite actual same-sort positive graph-branch
+words with nonempty K-diversity profiles, can be closed by the reverse
+of another genuine copy of that K-diversity word. In particular the
+cycle is realized by an original homomorphism of the entire concatenated
+RAW word, regardless of the intermediate sorts inside each branch.
+
+There is no fictitious identity factor and NO original CCO assumption.
+The remaining C27 graph/diagram lemma must show that each simple
+cycle through the centre reduces to such an actual ordered word cycle. -/
+theorem original_centre_spokes_positive_word_cycle
+    (H : HomogeneousSource S G) (sap : AgeSAP S)
+    {i : ι} (K : ColourEq S i)
+    (hK : (⊥ : ColourEq S i) < K)
+    (spoke : PositiveWord S i i)
+    (hSpoke : PositiveWord.profile S spoke =
+      originalEquivDiversityPalette S K)
+    (pathWords : List (PositiveWord S i i))
+    (hPath : ∀ P ∈ pathWords,
+      (PositiveWord.profile S P).Nonempty ∧
+      PositiveWord.profile S P ⊆ originalEquivDiversityPalette S K) :
+    ∃ x : X i,
+      RawWord.relation S
+        (RawWord.append S
+          (PositiveWord.toRawWord S
+            (originalPositiveBranchPath S spoke pathWords))
+          (RawWord.reverse S (PositiveWord.toRawWord S spoke))) x x := by
+  let ds : List (S.Menu i i) :=
+    pathWords.map (PositiveWord.profile S)
+  have hDs : ∀ D ∈ ds,
+      D.Nonempty ∧ D ⊆ originalEquivDiversityPalette S K := by
+    intro D hD
+    obtain ⟨P, hP, rfl⟩ := List.mem_map.mp hD
+    exact hPath P hP
+  have hAbs :
+      ds.foldl (fun A B => S.product A B)
+        (originalEquivDiversityPalette S K) =
+          originalEquivDiversityPalette S K := by
+    exact originalKSpokePath_absorbed S H sap K ds hDs
+  have hProfile : PositiveWord.profile S
+      (originalPositiveBranchPath S spoke pathWords) =
+        originalEquivDiversityPalette S K := by
+    rw [originalPositiveBranchPath_profile S H sap spoke pathWords, hSpoke]
+    exact hAbs
+  have hFirst : originalEquivDiversityPalette S K ⊆
+      PositiveWord.profile S
+        (originalPositiveBranchPath S spoke pathWords) := by
+    rw [hProfile]
+  have hSecond : originalEquivDiversityPalette S K ⊆
+      PositiveWord.profile S spoke := by
+    rw [hSpoke]
+  exact original_two_positive_branches_closed_walk S H sap
+    (originalEquivDiversityPalette S K)
+    (original_nonzero_Kdiv_nonempty S K hK)
+    (originalPositiveBranchPath S spoke pathWords)
+    spoke hFirst hSecond
+
 end CCO.TerminalLattice
