@@ -1655,3 +1655,4 @@ import CCO.TerminalLattice.QuotientOrbitals
 import CCO.TerminalLattice.FullCoverConnectivity
 import CCO.TerminalLattice.FullCoverParity
 import CCO.TerminalLattice.FullCoverAperiodicity
+import CCO.TerminalLattice.FullCoverUniformPowers
