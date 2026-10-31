@@ -130,8 +130,8 @@ theorem original_positive_branch_chain_cyclic_values
     have hRaw :=
       originalPositiveBranchChain_fin_values S
         (List.ofFn (fun t : Fin n => branches t.castSucc)) x y hChain
-    rw [List.length_ofFn] at hRaw
-    simpa [List.get_ofFn] using hRaw
+    simp only [List.get_ofFn] at hRaw
+    simpa [List.length_ofFn] using hRaw
   obtain ⟨values,hFirst,hLast,hEdges⟩ := hFinite
   refine ⟨values, ?_⟩
   intro k
