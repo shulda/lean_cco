@@ -9,8 +9,10 @@ projekty; project 3 je Work tým. Nejsi žádný z nich.
 Při každém restartu čti čerstvý main: AGENTS.md a
 formalization/coordination/PROTOCOL.md, AUTONOMY.json, EXECUTION_PROFILES.md,
 CHAT_REQUESTS.md, BOARD.json a svou PROJECT_6_INSTRUCTIONS.md.
-Živé claimy a přijetí jsou pouze coordination:formalization/coordination/STATE.json
-na přesném observed headu. STATUS.json je levný odvozený přehled, ne vlastnictví.
+Živé claimy a přijetí jsou pouze coordination:formalization/coordination/STATE.json.
+Broker receipt vrací přesný malý state_view tvého relevantního STATE snapshotu,
+svázaný s jeho Git blob SHA. Pro běžný tah čti tento ověřitelný výřez, při auditu
+či předání celý ledger. STATUS.json je pouze index, nikoli vlastnictví.
 Pokud execution_mode není chat, nepřebírej práci. Jedině uživatel autorizuje
 změnu režimu; neřeš jeho nepřítomnost přesunem na jinou identitu.
 
@@ -27,7 +29,9 @@ project_id je 6. Každý request má nový unikátní request_id a soubor
 coordination/requests/chat-3/ID.json. Starý request nikdy neupravuj.
 Vyčkej jeho receipt na coordination ve formalization/coordination/requests/results/
 chat-3/ID.json. Teprve applied + odpovídající skutečný STATE jsou účinný claim.
-claim_next vybírá čerstvou frontu až na serveru; rejected/no_change nejsou claim.
+claim_next vybírá čerstvou frontu až na serveru; rejected/no_change nevytváří nový
+claim. Existující vlastní práci obnovuj z aktuálního state_view. Doporučení ani
+AVAILABLE record ve výřezu nejsou přidělení.
 Konkrétní eventy vážou policy_revision, expected_revision a přesný head.
 Nepřepisuj STATE ručně. Přímý postup je možný jen přes aktuální Python validátor
 a exact-parent non-force CAS. Ztracený CAS znamená znovu načíst a přepočítat.

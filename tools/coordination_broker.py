@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import argparse
 import base64
+import hashlib
 from copy import deepcopy
 import json
 import os
@@ -31,6 +32,15 @@ ADMIN = {'promote_registry': q.promote_registry, 'promote_reviewer': q.promote_r
 
 class Collision(RuntimeError):
     pass
+
+
+def encoded_json(value):
+    return json.dumps(value, indent=2) + '\n'
+
+
+def blob_sha(content):
+    raw = content.encode()
+    return hashlib.sha1(b'blob ' + str(len(raw)).encode() + b'\0' + raw).hexdigest()
 
 
 class NoRedirect(urllib.request.HTTPRedirectHandler):
@@ -102,7 +112,7 @@ class GitHub:
         q.require(all(p == str(q.DIRECTORY / 'STATE.json') or p == STATUS or p.startswith(RESULTS)
                       for p in files), 'Broker cannot edit source, policy or BOARD')
         new_tree = self.call('/git/trees', 'POST', {'base_tree': tree, 'tree': [
-            {'path': p, 'mode': '100644', 'type': 'blob', 'content': json.dumps(v, indent=2) + '\n'}
+            {'path': p, 'mode': '100644', 'type': 'blob', 'content': encoded_json(v)}
             for p, v in files.items()]})
         commit = self.call('/git/commits', 'POST', {'message': message,
             'tree': new_tree['sha'], 'parents': [parent]})
@@ -126,7 +136,8 @@ class GitHub:
 
 def snapshot(api):
     coord, main = api.ref('coordination'), api.ref('main')
-    state = json.loads(api.file(str(q.DIRECTORY / 'STATE.json'), coord))
+    state_text = api.file(str(q.DIRECTORY / 'STATE.json'), coord)
+    state = json.loads(state_text)
     current_registry = json.loads(api.file(str(q.DIRECTORY / 'BOARD.json'), main))
     current_policy = json.loads(api.file(str(q.DIRECTORY / 'AUTONOMY.json'), main))
     registry, policy = current_registry, current_policy
@@ -139,6 +150,7 @@ def snapshot(api):
         policy = json.loads(api.file(str(q.DIRECTORY / 'AUTONOMY.json'), base))
     q.validate_state(registry, policy, state)
     return {'coord': coord, 'tree': api.commit(coord)['tree']['sha'], 'main': main,
+            'state_blob_sha': blob_sha(state_text),
             'state': state, 'registry': registry, 'policy': policy,
             'current_registry': current_registry, 'current_policy': current_policy}
 
@@ -352,6 +364,33 @@ def status(registry, policy, state, main):
                        for i, p in state['packages'].items() if p['state'] in q.ACTIVE}}
 
 
+def state_view(registry, policy, state, actor, sha, requested=None):
+    """Exact actor-relevant projection, bound to the authoritative STATE blob.
+
+    A receipt's applied event is the lease; this projection is only its small
+    readable STATE snapshot, never another allocation database.
+    """
+    role = policy['actors'].get(actor, {})
+    project = profiles.actor_project(policy, actor)
+    ids = {i for i, x in state['packages'].items() if x['state'] in q.ACTIVE and
+           (('implement' in role.get('roles', []) and x['owner_project_id'] == project)
+            or x.get('review', {}).get('actor_id') == actor)}
+    if role:
+        recommendation = q.next_action(registry, policy, state, project, actor)
+        ids.update(v for k, v in recommendation.items() if k in {
+            'package_id', 'optional_review_while_ci_pending', 'optional_repair_while_ci_pending'}
+            and isinstance(v, str) and v in state['packages'])
+    if requested in state['packages']:
+        ids.add(requested)
+    return {'authority': 'coordination:' + str(q.DIRECTORY / 'STATE.json'),
+            'state_blob_sha': sha, 'revision': state['revision'],
+            'policy_revision': state['policy_revision'], 'source_commit': state['source_commit'],
+            'execution_mode': profiles.mode(policy, state),
+            'claims_paused': state.get('claims_paused', False),
+            'integration_lock': deepcopy(state.get('integration_lock')),
+            'packages': {i: deepcopy(state['packages'][i]) for i in sorted(ids)}}
+
+
 def process(api):
     inbox = api.ref(INBOX)
     files = api.files(inbox)
@@ -387,6 +426,9 @@ def process(api):
             effective = proposed or snap['state']
             registry, policy = ((snap['current_registry'], snap['current_policy']) if
                 effective['policy_revision'] != snap['policy']['revision'] else (snap['registry'], snap['policy']))
+            receipt['state_view'] = state_view(registry, policy, effective, parts[0],
+                blob_sha(encoded_json(effective)) if proposed else snap['state_blob_sha'],
+                receipt.get('package_id'))
             updates = {receipt_path: receipt, STATUS: status(registry, policy, effective, snap['main'])}
             if proposed:
                 updates[str(q.DIRECTORY / 'STATE.json')] = proposed

@@ -16,7 +16,10 @@ roles, released IDs and execution_profiles. Top-level two/three capacity and
 historical Work notes describe the Work profile. Only the exact observed
 coordination:formalization/coordination/STATE.json is live ownership, review,
 execution_mode, claims_paused, integration lock and acceptance. STATUS.json
-is a derived index and gives no lease. Never reset STATE, copy a private
+is a derived index and gives no lease. Broker receipts expose a small exact
+actor-relevant state_view bound to the full STATE Git blob, so normal Chat
+work need not repeatedly import the entire historical ledger. Audits/handovers
+still read the whole canonical STATE; a view alone creates no claim. Never reset STATE, copy a private
 preparation BOARD over the public catalogue, or merge coordination into main.
 
 Use tools/coordination_queue.py for pure validated proposals. An effective

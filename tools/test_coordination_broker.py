@@ -139,6 +139,18 @@ class BrokerTests(unittest.TestCase):
         self.assertEqual(self.process(), 0)
         self.assertEqual((self.api.state, self.api.receipts, self.api.published), before)
 
+    def test_claim_receipt_contains_the_exact_assigned_record_bound_to_written_state(self):
+        self.api.request()
+        self.process()
+        receipt = next(iter(self.api.receipts.values()))
+        written = self.api.published[0][1][str(q.DIRECTORY / 'STATE.json')]
+        view = receipt['state_view']
+        self.assertEqual(view['state_blob_sha'], b.blob_sha(b.encoded_json(written)))
+        self.assertEqual(view['packages'], {'B002': written['packages']['B002']})
+        self.assertEqual(view['packages']['B002']['owner_project_id'], 4)
+        self.assertEqual(view['revision'], receipt['effective_revision'])
+        self.assertNotIn('B001', view['packages'])
+
     def test_cas_loser_recomputes_the_claim_not_just_its_parent(self):
         self.api.request()
         self.api.race = True
@@ -184,6 +196,8 @@ class BrokerTests(unittest.TestCase):
         self.assertNotIn(str(q.DIRECTORY / 'STATE.json'), self.api.published[0][1])
         self.assertTrue(self.api.published[0][1][b.STATUS]['not_an_ownership_lease'])
         self.assertEqual(next(iter(self.api.receipts.values()))['verified_main_ci']['declarations'], 7)
+        self.assertEqual(next(iter(self.api.receipts.values()))['state_view']['state_blob_sha'],
+                         b.blob_sha(json.dumps(original)))
 
     def test_specific_stale_events_are_rejected_without_mutating_claims(self):
         self.api.request(operation='event', event='block', expected_revision=0,

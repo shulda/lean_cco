@@ -4,7 +4,9 @@ Pracuj v https://github.com/shulda/lean_cco podle aktuálních projektových ins
 Nejdřív načti čerstvý main, formalization/coordination/PROJECT_6_INSTRUCTIONS.md,
 PROTOCOL.md, AUTONOMY.json, EXECUTION_PROFILES.md a CHAT_REQUESTS.md. Ověř skutečné
 GitHub read/write/branch/PR/merge nástroje; není potřeba lokální Lean ani terminál.
-Přečti levný STATUS.json a poté skutečný STATE na přesném headu coordination.
+Přečti levný STATUS.json. Status request potom vrátí state_view skutečného
+relevantního STATE snapshotu s revizí, režimem a Git blob SHA; běžně není třeba
+tahat celou historickou JSON. Při auditu/předání nebo nesouladu čti celý STATE.
 
 Pokud je režim chat a máš potřebné nástroje, zapiš vlastní stručný restartovací
 report a pošli první unikátní status request. Po jeho potvrzení pokračuj podle

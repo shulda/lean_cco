@@ -10,7 +10,10 @@ Kanonická autorita zůstává `coordination:formalization/coordination/STATE.js
 `STATUS.json` obsahuje jen malý odvozený přehled a `next_actions`. Jeho revize musí
 odpovídat skutečnému STATE; samotné doporučení nedává vlastnictví. GitHub request
 commit také není claim. Zápis je účinný až po validovaném exact-parent non-force
-CAS a ověřeném receipt. Přímé použití Python helperu/CAS zůstává možné ve Worku.
+CAS a ověřeném receipt. Receipt navíc vrací malý přesný `state_view`: actor-relevant
+package records, režim, pause, lock, revizi a Git blob SHA celého autoritativního
+STATE. Je to výřez stejného ověřeného snapshotu, ne další alokační databáze.
+Přímé použití Python helperu/CAS zůstává možné ve Worku.
 
 ## První test
 
@@ -41,8 +44,10 @@ Počkej na workflow a přečti na aktuálním headu coordination soubor
 `formalization/coordination/requests/results/chat-1/20261031_status_c8d46a2f.json`.
 Výsledek obsahuje request blob, skutečného rodiče coordination a odpověď:
 
-- `applied`: event je účinný na uvedené `effective_revision`; ověř ho ve STATE.
-- `no_change`: nic nebylo přidělené, přečti `next_action` (např. čekání na přípravu).
+- `applied`: event je účinný na uvedené `effective_revision`; ověř odpovídající
+  record v `state_view` téhož STATE (nebo v úplném ledgeru).
+- `no_change`: nevznikl nový claim, přečti `next_action` (např. čekání na přípravu);
+  existující vlastní claim můžeš obnovit z aktuálního `state_view`.
 - `rejected`: nic se nestalo; přečti důvod, obnov kontext a pošli nový request ID.
 
 Chybějící receipt znamená nedokončené zpracování, nikoli automatické přidělení.
@@ -61,7 +66,8 @@ validátor až na serveru, takže dva souběžní klienti nemusí oba prohrát n
 kapacitu, vlastnictví i priority oprav/review. Když `next_action` nedoporučuje
 claim, dostaneš `no_change`, nikoli jinou automaticky provedenou práci.
 
-Po `applied` zkontroluj skutečný STATE včetně claim revision, own project/actor,
+Po `applied` zkontroluj skutečný STATE z jeho přesného `state_view` včetně claim
+revision, own project/actor,
 base main/CI a `branch`, například `chat/chat-1/B049`. Teprve potom vytvoř
 tuto větev z přesného `base_main_sha`, přečti kontrakt/zdroj/notes a formalizuj.
 Při souběhu zápisů broker starou STATE proposal nikdy pouze nepřerodí na nový
@@ -69,7 +75,8 @@ rodič: načte čerstvý stav a znovu vybere práci/validuje. Žádná dependenc
 
 ## Ostatní eventy
 
-Načti skutečný STATE a jeho `revision`. Request má `operation: "event"`,
+Načti aktuální skutečný STATE snapshot (běžně ze status receipt `state_view`)
+a jeho `revision`. Request má `operation: "event"`,
 `expected_revision`, `event` a `data` podle [QUEUE_OPERATIONS.md](QUEUE_OPERATIONS.md):
 
 ```json
@@ -143,3 +150,13 @@ Pro jednorázový test serverových oprávnění lze u status requestu přidat
 run/job/log, zkontroluje všechny source/provider guards a audit a uloží jejich
 receipt. Nevytváří claim ani nový Lean build; běžné status requesty tento
 opakovaný rozsáhlejší CI read nepotřebují.
+
+`state_view.packages` zahrnuje vlastní aktivní claimy, vlastní cizí review lease,
+konkrétní doporučovaný package a právě zpracovaný package. AVAILABLE ve výřezu
+není claim. Nový claim vyžaduje `applied` claim event a správného vlastníka;
+`no_change` může jen potvrdit dřívější existující práci. Výřez nese skutečný Git
+STATE blob SHA: u zápisu hash přesně stejných bytes jako publikovaný STATE,
+u statusu původní raw blob včetně jeho skutečného formátování. Lze ho nezávisle
+porovnat s Git tree/STATE metadata daného commitu. Nevyžaduje kopírování stovek
+kB staré historie do každého Chat kontextu. Při nesouladu, auditu, rekonstrukci
+či úplném předání vždy použij celý kanonický ledger; source of truth se nemění.

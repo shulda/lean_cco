@@ -367,8 +367,10 @@ projekty; project 3 je Work tým. Nejsi žádný z nich.
 Při každém restartu čti čerstvý main: AGENTS.md a
 formalization/coordination/PROTOCOL.md, AUTONOMY.json, EXECUTION_PROFILES.md,
 CHAT_REQUESTS.md, BOARD.json a svou PROJECT_{project}_INSTRUCTIONS.md.
-Živé claimy a přijetí jsou pouze coordination:formalization/coordination/STATE.json
-na přesném observed headu. STATUS.json je levný odvozený přehled, ne vlastnictví.
+Živé claimy a přijetí jsou pouze coordination:formalization/coordination/STATE.json.
+Broker receipt vrací přesný malý state_view tvého relevantního STATE snapshotu,
+svázaný s jeho Git blob SHA. Pro běžný tah čti tento ověřitelný výřez, při auditu
+či předání celý ledger. STATUS.json je pouze index, nikoli vlastnictví.
 Pokud execution_mode není chat, nepřebírej práci. Jedině uživatel autorizuje
 změnu režimu; neřeš jeho nepřítomnost přesunem na jinou identitu.
 
@@ -385,7 +387,9 @@ project_id je {project}. Každý request má nový unikátní request_id a soubo
 coordination/requests/{actor}/ID.json. Starý request nikdy neupravuj.
 Vyčkej jeho receipt na coordination ve formalization/coordination/requests/results/
 {actor}/ID.json. Teprve applied + odpovídající skutečný STATE jsou účinný claim.
-claim_next vybírá čerstvou frontu až na serveru; rejected/no_change nejsou claim.
+claim_next vybírá čerstvou frontu až na serveru; rejected/no_change nevytváří nový
+claim. Existující vlastní práci obnovuj z aktuálního state_view. Doporučení ani
+AVAILABLE record ve výřezu nejsou přidělení.
 Konkrétní eventy vážou policy_revision, expected_revision a přesný head.
 Nepřepisuj STATE ručně. Přímý postup je možný jen přes aktuální Python validátor
 a exact-parent non-force CAS. Ztracený CAS znamená znovu načíst a přepočítat.
@@ -455,7 +459,9 @@ Pracuj v https://github.com/{repository} podle aktuálních projektových instru
 Nejdřív načti čerstvý main, formalization/coordination/PROJECT_{project}_INSTRUCTIONS.md,
 PROTOCOL.md, AUTONOMY.json, EXECUTION_PROFILES.md a CHAT_REQUESTS.md. Ověř skutečné
 GitHub read/write/branch/PR/merge nástroje; není potřeba lokální Lean ani terminál.
-Přečti levný STATUS.json a poté skutečný STATE na přesném headu coordination.
+Přečti levný STATUS.json. Status request potom vrátí state_view skutečného
+relevantního STATE snapshotu s revizí, režimem a Git blob SHA; běžně není třeba
+tahat celou historickou JSON. Při auditu/předání nebo nesouladu čti celý STATE.
 
 Pokud je režim chat a máš potřebné nástroje, zapiš vlastní stručný restartovací
 report a pošli první unikátní status request. Po jeho potvrzení pokračuj podle
