@@ -71,7 +71,7 @@ theorem oldSparseWordDiagram_oriented_profile_valid
       (oldSparseWordSelection S W spoke words) C B k
   rcases oldSparseWordDiagram_projected_exact_word
       S H sap W spoke words C B k with
-    ⟨_,hSpokeSelected⟩ | ⟨x,y,_,_,_,hGraphAdj,hGraphSelected⟩
+    ⟨_,hSpokeSelected⟩ | ⟨x,y,_,_,_,hGraphSelected⟩
   · have heq :
         oldProjectedCanonicalWord S H sap
           (oldSparseWordSelection S W spoke words) C B k = spoke :=
