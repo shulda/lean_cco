@@ -65,6 +65,8 @@ theorem realized_original_word_has_current_word
       ProjectedWords.forgetWord S (SourceAge.UnarySource.source I)
         (SourceAge.actualProjection I) V = W ∧
       TRel.Nonempty (RawWord.relation (SourceAge.UnarySource.source I) V) := by
+  rcases c with ⟨i,bc⟩
+  rcases d with ⟨j,bd⟩
   obtain ⟨a,b,hTrace⟩ := hTrace
   obtain ⟨x,hx⟩ :=
     ActualUnaryDecode.decode_child_of_bit I c a hTrace.1
@@ -80,19 +82,8 @@ theorem realized_original_word_has_current_word
     (real_child_trace_iff I (RawWord.relation S W)
       (RawExact.word_invariant_of_homogeneous S H W) x z).mp hInChild
   obtain ⟨V,hForgotten,hReal⟩ :=
-    lift_old_word_with_witness I W x.val z.val hOld
-  have hC : childOf I x.val = c := childOf_actual_point P cco I x
-  have hD : childOf I z.val = d := childOf_actual_point P cco I z
-  have hPackage :
-      ∃ V' : RawWord (SourceAge.UnarySource.source I)
-          (childOf I x.val) (childOf I z.val),
-        ProjectedWords.forgetWord S (SourceAge.UnarySource.source I)
-          (SourceAge.actualProjection I) V' = W ∧
-        TRel.Nonempty
-          (RawWord.relation (SourceAge.UnarySource.source I) V') :=
-    ⟨V,hForgotten,pointOf I x.val,pointOf I z.val,hReal⟩
-  rw [hC,hD] at hPackage
-  exact hPackage
+    lift_old_word_with_fixed_bits I W bc bd x z hOld
+  exact ⟨V,hForgotten,x,z,hReal⟩
 
 /-- Source C24 for one ACTUAL AP-only full-character step. A single
 labelled word represents the ENTIRE old word trace, with fixed original
