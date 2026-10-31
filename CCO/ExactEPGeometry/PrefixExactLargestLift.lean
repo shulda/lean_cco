@@ -125,5 +125,81 @@ theorem canonical_prefix_largest
     (CanonicalHistoryExact.canonical_history_transport h)
     (CanonicalHistoryExact.canonical_history_product h) p F
 
+
+/-- Literal source E2 formula: L_p(F) is exactly the join of ALL original
+RAW-exact equivalences with precisely the designated current trace.
+This is an exact finite fiber, not the lattice of arbitrary invariant
+equivalences. Since L_p(F) itself belongs to that fiber and dominates
+all its members, no unproved choice or abstract fiber completeness
+hypothesis remains. -/
+theorem largest_eq_fiber_sup
+    (A B : CurrentSource.{u,v,w,t})
+    (P : UnaryReduct A.source B.source)
+    (transport : ExactTraceTransport A.source B.source P)
+    (tp : ExactTraceProduct A.source B.source P)
+    (p : B.Sorts) (F : ExactEq B.source p) :
+    letI := ExactEq.completeLattice A.source A.homogeneous A.cco
+      (P.parent p)
+    largest A B P transport tp p F =
+      sSup {E : ExactEq A.source (P.parent p) |
+        rho A B P transport p E = F} := by
+  dsimp only
+  apply le_antisymm
+  · apply le_sSup
+    exact (largest_spec A B P transport tp p F).1
+  · apply sSup_le
+    intro E hE
+    exact largest_dominates A B P transport tp p F E hE
+
+/-- The right adjoint preserves the empty meet: the maximal original
+exact lift of current Top is ORIGINAL Top, not Id. -/
+theorem largest_top
+    (A B : CurrentSource.{u,v,w,t})
+    (P : UnaryReduct A.source B.source)
+    (transport : ExactTraceTransport A.source B.source P)
+    (tp : ExactTraceProduct A.source B.source P)
+    (p : B.Sorts) :
+    largest A B P transport tp p (⊤ : ExactEq B.source p) =
+      (⊤ : ExactEq A.source (P.parent p)) := by
+  apply top_unique
+  exact ((largest_spec A B P transport tp p ⊤).2 ⊤).mp le_top
+
+/-- E3 also gives preservation of the BINARY meet. Along with the
+proved Top case, this establishes ALL finite meets, including the
+empty one, at actual source strength. -/
+theorem largest_inf
+    (A B : CurrentSource.{u,v,w,t})
+    (P : UnaryReduct A.source B.source)
+    (transport : ExactTraceTransport A.source B.source P)
+    (tp : ExactTraceProduct A.source B.source P)
+    (p : B.Sorts) (F K : ExactEq B.source p) :
+    largest A B P transport tp p (F ⊓ K) =
+      largest A B P transport tp p F ⊓
+      largest A B P transport tp p K := by
+  apply le_antisymm
+  · apply le_inf
+    · apply ((largest_spec A B P transport tp p F).2 _).mp
+      exact (le_of_eq (largest_spec A B P transport tp p (F ⊓ K)).1).trans
+        inf_le_left
+    · apply ((largest_spec A B P transport tp p K).2 _).mp
+      exact (le_of_eq (largest_spec A B P transport tp p (F ⊓ K)).1).trans
+        inf_le_right
+  · apply ((largest_spec A B P transport tp p (F ⊓ K)).2 _).mp
+    apply le_inf
+    · have h := (rho_mono A B P transport p)
+          (inf_le_left :
+            largest A B P transport tp p F ⊓
+              largest A B P transport tp p K ≤
+                largest A B P transport tp p F)
+      rw [(largest_spec A B P transport tp p F).1] at h
+      exact h
+    · have h := (rho_mono A B P transport p)
+          (inf_le_right :
+            largest A B P transport tp p F ⊓
+              largest A B P transport tp p K ≤
+                largest A B P transport tp p K)
+      rw [(largest_spec A B P transport tp p K).1] at h
+      exact h
+
 end
 end CCO.ExactEPGeometry.PrefixExactLargestLift
