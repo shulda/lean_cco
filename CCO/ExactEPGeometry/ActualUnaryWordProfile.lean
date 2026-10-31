@@ -91,7 +91,8 @@ theorem realized_original_word_has_current_word
         TRel.Nonempty
           (RawWord.relation (SourceAge.UnarySource.source I) V') :=
     ⟨V,hForgotten,pointOf I x.val,pointOf I z.val,hReal⟩
-  simpa only [hC,hD] using hPackage
+  rw [hC,hD] at hPackage
+  exact hPackage
 
 /-- Source C24 for one ACTUAL AP-only full-character step. A single
 labelled word represents the ENTIRE old word trace, with fixed original
