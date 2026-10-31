@@ -67,6 +67,8 @@ theorem realized_original_word_has_current_word
       TRel.Nonempty (RawWord.relation (SourceAge.UnarySource.source I) V) := by
   rcases c with ⟨i,bc⟩
   rcases d with ⟨j,bd⟩
+  let c : Rank.Child (SourceAge.UnarySource.β I) := ⟨i,bc⟩
+  let d : Rank.Child (SourceAge.UnarySource.β I) := ⟨j,bd⟩
   obtain ⟨a,b,hTrace⟩ := hTrace
   obtain ⟨x,hx⟩ :=
     ActualUnaryDecode.decode_child_of_bit I c a hTrace.1
