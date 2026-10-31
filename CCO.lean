@@ -1663,3 +1663,4 @@ import CCO.TerminalLattice.FullCoverAlternation
 import CCO.TerminalLattice.FullCoverDichotomy
 import CCO.TerminalLattice.TerminalExactCover
 import CCO.TerminalLattice.OldAbsorption
+import CCO.TerminalLattice.SameJFibreMotion
