@@ -126,7 +126,7 @@ theorem oldSparseWordDiagram_projected_cycleHom
         CCO.cyclicNext (Nat.succ_pos n) (Fin.cast hLength k) := by
     apply Fin.ext
     change (k.val + 1) % B.length = (k.val + 1) % (n+1)
-    rw [hLength]
+    exact congrArg (fun m : Nat => (k.val+1) % m) hLength
   have hReal := hValues (Fin.cast hLength k)
   rw [← hSuccessor] at hReal
   change PositiveWord.represented S
