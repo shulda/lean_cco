@@ -116,8 +116,8 @@ theorem originalQuotient_noOdd_two_classes
         exact ⟨qa, hReverse, (relPow_one R qa qb).mpr hRoot⟩
       have hEvenBX : EvenWalk R (Quotient.mk J.val x) qb :=
         ⟨n+1, hnOdd.add_one, hNext⟩
-      exact Or.inr ((Quotient.exact
-        ((hEven (Quotient.mk J.val x) qb).mp hEvenBX)).symm)
+      exact Or.inr (J.val.symm (Quotient.exact
+        ((hEven (Quotient.mk J.val x) qb).mp hEvenBX)))
   · rintro (hJax | hJbx)
     · exact hJK.le hJax
     · exact K.val.trans hab (hJK.le hJbx)
@@ -137,7 +137,8 @@ theorem originalQuotient_noOdd_index_two
   let qb : Q := Quotient.mk _ ⟨b, hab⟩
   have hdiff : qa ≠ qb := by
     intro heq
-    exact hne (Quotient.exact heq)
+    have hJ := Quotient.exact heq
+    exact hne hJ
   apply Nat.card_eq_two_iff.mpr
   refine ⟨qa, qb, hdiff, ?_⟩
   apply Set.eq_univ_iff_forall.mpr
