@@ -29,6 +29,7 @@ variable (H : HomogeneousSource S G)
 variable {C : ExactCalculus S} {r : ι} {A : Kernel S r}
 variable (P : APCharacter.SourcePhase S H C A)
 variable (cco : SemanticCCO.{u,v,max u v,w} S)
+include cco
 
 /-- Two accepted AP-only exact domains, whose ACTUAL intersection is
 nonempty and which separately meet the SAME genuine character mask,
