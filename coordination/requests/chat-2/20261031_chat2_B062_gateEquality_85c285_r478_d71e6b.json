@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "request_id": "20261031_chat2_B062_gateEquality_85c285_r478_d71e6b",
+  "actor_id": "chat-2",
+  "project_id": 5,
+  "policy_revision": 14,
+  "operation": "event",
+  "expected_revision": 478,
+  "event": "checkpoint",
+  "data": {
+    "package_id": "B062",
+    "head_sha": "85c285fe570b469cde7d55eab88068b3e3a4ace5",
+    "pr_number": 68,
+    "observed_ci": {
+      "run_id": 41245353518,
+      "head_sha": "85c285fe570b469cde7d55eab88068b3e3a4ace5",
+      "conclusion": "success",
+      "axiom_audit": "allowlist"
+    }
+  }
+}
