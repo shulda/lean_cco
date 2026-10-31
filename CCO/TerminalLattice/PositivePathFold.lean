@@ -83,7 +83,7 @@ theorem originalOptionStrongFold_perm
   | @trans xs ys zs hxy hyz ihxy ihyz =>
       exact (ihxy seed).trans (ihyz seed)
 
-private theorem originalOptionStrongFold_some {i : ι}
+theorem originalOptionStrongFold_some {i : ι}
     (seed : S.Menu i i) (xs : List (S.Menu i i)) :
     xs.foldl (originalOptionStrongStep S) (some seed) =
       some (xs.foldl (fun A B => S.product A B) seed) := by
