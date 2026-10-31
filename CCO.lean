@@ -1678,6 +1678,7 @@ import CCO.TerminalLattice.OriginalExternalLabels
 import CCO.TerminalLattice.OriginalExternalWords
 import CCO.TerminalLattice.ExternalUniformPowers
 import CCO.TerminalLattice.OptionalPositiveNetwork
+import CCO.TerminalLattice.SparseWordNetwork
 import CCO.TerminalLattice.LabelledPathGrouping
 import CCO.TerminalLattice.PositivePathFold
 import CCO.TerminalLattice.StrongPathReordering
