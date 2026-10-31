@@ -143,7 +143,6 @@ theorem largest_eq_fiber_sup
     largest A B P transport tp p F =
       sSup {E : ExactEq A.source (P.parent p) |
         rho A B P transport p E = F} := by
-  dsimp only
   apply le_antisymm
   · apply le_sSup
     exact (largest_spec A B P transport tp p F).1
