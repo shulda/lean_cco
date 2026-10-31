@@ -1642,3 +1642,6 @@ import CCO.FullPhaseLift.Tower.Readout
 import CCO.FullPhaseLift.Tower.Reduct
 import CCO.FullPhaseLift.Tower.Selected
 import CCO.FullPhaseLift.Tower.SingleStep
+
+-- B062 WIP: actual equality-inclusive trace and unary-type support algebra.
+import CCO.ExactEPGeometry.TypeSupport
