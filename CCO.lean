@@ -1677,3 +1677,4 @@ import CCO.ExactEPGeometry.CanonicalHistoryExact
 import CCO.ExactEPGeometry.PrefixExactEquivalenceLift
 import CCO.ExactEPGeometry.ExactEquivalenceLattice
 import CCO.ExactEPGeometry.PrefixExactRestriction
+import CCO.ExactEPGeometry.PrefixExactRestrictionSurj
