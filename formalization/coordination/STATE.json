@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 398,
+  "revision": 399,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -4475,7 +4475,132 @@
       }
     }
   },
-  "integration_lock": null,
+  "integration_lock": {
+    "kind": "infrastructure",
+    "actor_id": "root",
+    "head_sha": "0ccc373bb554ffd6de13d03b1ec5b80bae41cdaa",
+    "base_main_sha": "269b1acc05c64aca74c2bc5f238b9c75fb3af223",
+    "pr_number": 66,
+    "review": {
+      "actor_id": "reviewer_recovery_control",
+      "head_sha": "0ccc373bb554ffd6de13d03b1ec5b80bae41cdaa",
+      "approved": true,
+      "summary": "The actual registered non-author personally read the entire prepared-contract publication and receiving tooling delta, verified all 122 source records and 57 frozen/preparation source fingerprints, all old/new snapshot digests, and successful exact-head CI including 187 tests and the standard-axiom audit of 28723 CCO declarations. The prospective sole lock preserves all 48 accepted records and complete history; activation must use only the manifest-bound atomic promotion after genuine resulting-main CI. The source publication is approved, without asserting proof of the 16 new Lean batches or discharge of the pending licensed forest adapter.",
+      "independence": {
+        "identity": "/root/reviewer_recovery_control",
+        "non_author": true,
+        "summary": "I personally reviewed this source publication and its exact-head evidence without implementing, directing or supplying any release code, test, fix, helper or implementation design. I am not an author of this receiving release.",
+        "report_path": "formalization/coordination/reviews/release-B049-B064.md"
+      }
+    },
+    "ci": {
+      "run_id": 41177115150,
+      "run_attempt": 1,
+      "head_sha": "0ccc373bb554ffd6de13d03b1ec5b80bae41cdaa",
+      "conclusion": "success",
+      "axiom_audit": "allowlist",
+      "job_id": 124466845080,
+      "tests": 187,
+      "declarations": 28723,
+      "guards": [
+        {
+          "parts": 1619,
+          "source": 1619
+        },
+        {
+          "parts": 1619,
+          "source": 1619
+        },
+        {
+          "parts": 1619,
+          "source": 1619
+        }
+      ],
+      "provider_guards": [
+        {
+          "parts": 269,
+          "source": 269,
+          "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+        },
+        {
+          "parts": 269,
+          "source": 269,
+          "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+        },
+        {
+          "parts": 269,
+          "source": 269,
+          "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+        },
+        {
+          "parts": 269,
+          "source": 269,
+          "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+        }
+      ],
+      "ramsey_guards": [
+        {
+          "parts": 106,
+          "source": 106,
+          "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+        },
+        {
+          "parts": 106,
+          "source": 106,
+          "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+        },
+        {
+          "parts": 106,
+          "source": 106,
+          "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+        },
+        {
+          "parts": 106,
+          "source": 106,
+          "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+        }
+      ],
+      "build_jobs": [
+        1330,
+        1182,
+        4293,
+        4293,
+        6
+      ],
+      "fresh_cco_modules": [],
+      "url": "https://github.com/shulda/lean_cco/actions/runs/41177115150"
+    },
+    "author_actor_ids": [
+      "root"
+    ],
+    "original_author_project_ids": [
+      3
+    ],
+    "registry_promotion": {
+      "package_ids": [
+        "B049",
+        "B050",
+        "B051",
+        "B052",
+        "B053",
+        "B054",
+        "B055",
+        "B056",
+        "B057",
+        "B058",
+        "B059",
+        "B060",
+        "B061",
+        "B062",
+        "B063",
+        "B064"
+      ],
+      "previous_registry_sha256": "661173fcaa2fcbda1a54f7c8bf484d9b6ce480b8b1b65b4887c0c1942d7bfa8f",
+      "previous_policy_sha256": "5a76a9dd1920abe37006047c8659ce4af808c887103da2209f7f62e8fa2d2561",
+      "registry_sha256": "80d48ab42c39147ee3099a1a983708c7a5cee9bd9521144c989a4c5449d76499",
+      "policy_sha256": "37f7b5c0d90a1a2cf6fd661d8b76493e06e4901b979f9f353b58a1694e55ef89"
+    }
+  },
   "history": [
     {
       "revision": 1,
@@ -15445,6 +15570,139 @@
           "url": "https://github.com/shulda/lean_cco/actions/runs/41170282492"
         },
         "target_mode": "chat"
+      }
+    },
+    {
+      "revision": 399,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "start_infrastructure",
+      "package_id": null,
+      "details": {
+        "actor_id": "root",
+        "head_sha": "0ccc373bb554ffd6de13d03b1ec5b80bae41cdaa",
+        "base_main_sha": "269b1acc05c64aca74c2bc5f238b9c75fb3af223",
+        "pr_number": 66,
+        "head_contains_main": true,
+        "author_actor_ids": [
+          "root"
+        ],
+        "original_author_project_ids": [
+          3
+        ],
+        "registry_promotion": {
+          "package_ids": [
+            "B049",
+            "B050",
+            "B051",
+            "B052",
+            "B053",
+            "B054",
+            "B055",
+            "B056",
+            "B057",
+            "B058",
+            "B059",
+            "B060",
+            "B061",
+            "B062",
+            "B063",
+            "B064"
+          ],
+          "previous_registry_sha256": "661173fcaa2fcbda1a54f7c8bf484d9b6ce480b8b1b65b4887c0c1942d7bfa8f",
+          "previous_policy_sha256": "5a76a9dd1920abe37006047c8659ce4af808c887103da2209f7f62e8fa2d2561",
+          "registry_sha256": "80d48ab42c39147ee3099a1a983708c7a5cee9bd9521144c989a4c5449d76499",
+          "policy_sha256": "37f7b5c0d90a1a2cf6fd661d8b76493e06e4901b979f9f353b58a1694e55ef89"
+        },
+        "review": {
+          "actor_id": "reviewer_recovery_control",
+          "head_sha": "0ccc373bb554ffd6de13d03b1ec5b80bae41cdaa",
+          "approved": true,
+          "summary": "The actual registered non-author personally read the entire prepared-contract publication and receiving tooling delta, verified all 122 source records and 57 frozen/preparation source fingerprints, all old/new snapshot digests, and successful exact-head CI including 187 tests and the standard-axiom audit of 28723 CCO declarations. The prospective sole lock preserves all 48 accepted records and complete history; activation must use only the manifest-bound atomic promotion after genuine resulting-main CI. The source publication is approved, without asserting proof of the 16 new Lean batches or discharge of the pending licensed forest adapter.",
+          "independence": {
+            "identity": "/root/reviewer_recovery_control",
+            "non_author": true,
+            "summary": "I personally reviewed this source publication and its exact-head evidence without implementing, directing or supplying any release code, test, fix, helper or implementation design. I am not an author of this receiving release.",
+            "report_path": "formalization/coordination/reviews/release-B049-B064.md"
+          }
+        },
+        "ci": {
+          "run_id": 41177115150,
+          "run_attempt": 1,
+          "head_sha": "0ccc373bb554ffd6de13d03b1ec5b80bae41cdaa",
+          "conclusion": "success",
+          "axiom_audit": "allowlist",
+          "job_id": 124466845080,
+          "tests": 187,
+          "declarations": 28723,
+          "guards": [
+            {
+              "parts": 1619,
+              "source": 1619
+            },
+            {
+              "parts": 1619,
+              "source": 1619
+            },
+            {
+              "parts": 1619,
+              "source": 1619
+            }
+          ],
+          "provider_guards": [
+            {
+              "parts": 269,
+              "source": 269,
+              "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+            },
+            {
+              "parts": 269,
+              "source": 269,
+              "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+            },
+            {
+              "parts": 269,
+              "source": 269,
+              "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+            },
+            {
+              "parts": 269,
+              "source": 269,
+              "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+            }
+          ],
+          "ramsey_guards": [
+            {
+              "parts": 106,
+              "source": 106,
+              "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+            },
+            {
+              "parts": 106,
+              "source": 106,
+              "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+            },
+            {
+              "parts": 106,
+              "source": 106,
+              "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+            },
+            {
+              "parts": 106,
+              "source": 106,
+              "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+            }
+          ],
+          "build_jobs": [
+            1330,
+            1182,
+            4293,
+            4293,
+            6
+          ],
+          "fresh_cco_modules": [],
+          "url": "https://github.com/shulda/lean_cco/actions/runs/41177115150"
+        }
       }
     }
   ],
