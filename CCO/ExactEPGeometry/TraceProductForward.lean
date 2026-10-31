@@ -24,6 +24,9 @@ variable (S : AtomicSource.{u,v,w} ι X)
 variable {G : Type t} [Group G] [∀ i : ι, MulAction G (X i)]
 variable (H : HomogeneousSource S G)
 
+section ActualTransport
+include H
+
 /-- Real old exactness is a UNION OF COMPLETE ORIGINAL ORBITALS.
 An arbitrary old chart pair with the same FULL tagged optional colour
 as a known exact-domain pair also belongs to that domain. The two sorts
@@ -48,6 +51,8 @@ theorem actual_exact_of_tagged_colour
   have hOld : S.colour a b = S.colour x y := by
     simpa only [taggedColour, Sigma.mk.injEq, heq_eq_eq, true_and] using hName
   exact ⟨a,b,rfl,rfl,exact_of_same_actual_colour S H D x y hD a b hOld⟩
+
+end ActualTransport
 
 variable {M : APCharacter.MaskData S}
 variable (completion : APCharacter.Age.CompletionProperty S M)
