@@ -28,6 +28,42 @@ open RigidGroupoid.Geometry
 
 noncomputable section
 
+variable {ι : Type u} {X : ι → Type v}
+
+/-- A genuine OLD exact presentation reindexed only along an ACTUAL
+equality of its second original sort, retaining all represented words,
+nonemptiness and the true old identity. This is NOT quotient descent. -/
+private def oldExactRightCast
+    (S : AtomicSource.{u,v,w} ι X) {i j : ι}
+    (h : i = j) (D : RawExact.NonemptyExact S i i) :
+    RawExact.NonemptyExact S i j := by
+  cases h
+  exact D
+
+private theorem oldExactRightCast_iff
+    (S : AtomicSource.{u,v,w} ι X) {i j : ι}
+    (h : i = j) (D : RawExact.NonemptyExact S i i)
+    (x : X i) (y : X j) :
+    RawExact.evaluate S (oldExactRightCast S h D).words x y ↔
+      RawExact.evaluate S D.words x (h.symm ▸ y) := by
+  cases h
+  exact Iff.rfl
+
+/-- A typed RAW composite commutes with the literal second-sort
+equality transport. Its middle position remains the ACTUAL old sort i. -/
+private theorem oldExactRightCast_comp_iff
+    (S : AtomicSource.{u,v,w} ι X) {i j : ι}
+    (h : i = j) (R : TRel X i i)
+    (D : RawExact.NonemptyExact S i i)
+    (x : X i) (y : X j) :
+    TRel.comp R (RawExact.evaluate S
+      (oldExactRightCast S h D).words) x y ↔
+      TRel.comp R (RawExact.evaluate S D.words)
+        x (h.symm ▸ y) := by
+  cases h
+  exact Iff.rfl
+
+
 /-- Source C55: the canonical ORIGINAL full exact saturated arrow
 really traces to the ENTIRE current cross-type full bridge, rather
 than merely containing it. The equality hSame concerns only the
@@ -46,11 +82,20 @@ theorem current_arrow_original_correspondence_trace
       ∀ x : B.Point p, ∀ y : B.Point q,
         C.rel (P.point p x) (hSame.symm ▸ P.point q y) ↔
           R.rel x y := by
-  cases hSame
   dsimp only
   obtain ⟨E,C,hER,hC⟩ :=
     current_arrow_has_original_correspondence
-      A B P transport tp rfl Kp Kq R
+      A B P transport tp hSame Kp Kq R
+  let E' : RawExact.NonemptyExact A.source
+      (P.parent p) (P.parent q) :=
+    oldExactRightCast A.source hSame E
+  have hERTyped (x : B.Point p) (y : B.Point q) :
+      R.rel x y ↔
+        RawExact.evaluate A.source E'.words
+          (P.point p x) (P.point q y) :=
+    (hER x y).trans
+      (oldExactRightCast_iff A.source hSame E
+        (P.point p x) (P.point q y)).symm
   let K := original_largest_gate_kernel A B P transport tp p Kp
   let F := current_kernel_exact_eq B Kp
   let G := PrefixExactLargestLift.largest A B P transport tp p F
@@ -76,17 +121,17 @@ theorem current_arrow_original_correspondence_trace
   obtain ⟨a₀,b₀,hab⟩ := R.exact.nonempty B.source
   have hEIn :
       ∃ x : B.Point p, ∃ y : B.Point q,
-        RawExact.evaluate A.source E.words
+        RawExact.evaluate A.source E'.words
           (P.point p x) (P.point q y) :=
-    ⟨a₀,b₀,(hER a₀ b₀).mp hab⟩
+    ⟨a₀,b₀,(hERTyped a₀ b₀).mp hab⟩
   refine ⟨C,?_⟩
   intro x y
-  have hTP := tp.product Q E hQIn hEIn x y
+  have hTP := tp.product Q E' hQIn hEIn x y
   have hCurrent :
       (∃ z : B.Point p,
         RawExact.evaluate A.source Q.words
           (P.point p x) (P.point p z) ∧
-        RawExact.evaluate A.source E.words
+        RawExact.evaluate A.source E'.words
           (P.point p z) (P.point q y)) ↔
         TRel.comp Kp.rel R.rel x y := by
     constructor
@@ -94,17 +139,26 @@ theorem current_arrow_original_correspondence_trace
       have hK : K.rel (P.point p x) (P.point p z) := by
         rw [← hQ]
         exact hxz
-      exact ⟨z,(hGate x z).mp hK,(hER z y).mpr hzy⟩
+      exact ⟨z,(hGate x z).mp hK,(hERTyped z y).mpr hzy⟩
     · rintro ⟨z,hxz,hzy⟩
-      refine ⟨z,?_,(hER z y).mp hzy⟩
+      refine ⟨z,?_,(hERTyped z y).mp hzy⟩
       rw [hQ]
       exact (hGate x z).mpr hxz
   have hOld :
-      C.rel (P.point p x) (P.point q y) ↔
+      C.rel (P.point p x) (hSame.symm ▸ P.point q y) ↔
         TRel.comp (RawExact.evaluate A.source Q.words)
-          (RawExact.evaluate A.source E.words)
+          (RawExact.evaluate A.source E'.words)
           (P.point p x) (P.point q y) := by
-    simpa only [hC,hQ]
+    have hBefore :
+        C.rel (P.point p x) (hSame.symm ▸ P.point q y) ↔
+          TRel.comp (RawExact.evaluate A.source Q.words)
+            (RawExact.evaluate A.source E.words)
+            (P.point p x) (hSame.symm ▸ P.point q y) := by
+      simpa only [hC,hQ]
+    exact hBefore.trans
+      (oldExactRightCast_comp_iff A.source hSame
+        (RawExact.evaluate A.source Q.words) E
+        (P.point p x) (P.point q y)).symm
   have hLeft : TRel.comp Kp.rel R.rel x y ↔ R.rel x y := by
     rw [R.left]
   exact hOld.trans (hTP.symm.trans (hCurrent.trans hLeft))
