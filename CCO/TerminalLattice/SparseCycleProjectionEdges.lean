@@ -49,8 +49,10 @@ theorem oldOptionalPositive_used_marked_edge_has_word
     change (CCO.RawExact.QuotientExpansion.cycleOccurrence
       S sort P hNE C k).1 = e at hk
     exact hk
-  have hSlot : o.2.val < (P o.1).length := o.2.isLt
-  rw [hEdge] at hSlot
+  have hBound : o.2.val < (P o.1).length := o.2.isLt
+  have hLength : (P o.1).length = (P e).length :=
+    congrArg (fun edge => (P edge).length) hEdge
+  have hSlot : o.2.val < (P e).length := by omega
   cases hWords : words e with
   | none =>
       have hZero : (P e).length = 0 := by
