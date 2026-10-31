@@ -85,7 +85,7 @@ theorem realized_original_word_has_current_word
   have hD : childOf I z.val = d := childOf_actual_point I z
   cases hC
   cases hD
-  exact ⟨V,hForgotten,pointOf I x,pointOf I z,hReal⟩
+  exact ⟨V,hForgotten,pointOf I x.val,pointOf I z.val,hReal⟩
 
 /-- Source C24 for one ACTUAL AP-only full-character step. A single
 labelled word represents the ENTIRE old word trace, with fixed original
