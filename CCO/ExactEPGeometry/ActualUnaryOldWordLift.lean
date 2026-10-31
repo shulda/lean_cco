@@ -95,5 +95,60 @@ theorem lift_old_word_with_witness :
       rw [hV]
       rfl
 
+
+/-- Lift an actual old RAW walk between the SPECIFIED current child endpoints.
+Unlike the canonical `childOf` version, this keeps the endpoint bits as
+indexed parameters throughout induction; no dependent equality transport of
+word indices or additional marking axiom is needed. -/
+theorem lift_old_word_with_fixed_bits :
+    ∀ {i j : ι} (W : RawWord S i j)
+      (bc : SourceAge.UnarySource.β I i)
+      (bd : SourceAge.UnarySource.β I j)
+      (x : Rank.Point (SourceAge.UnarySource.β I)
+        (SourceAge.UnarySource.tag I) ⟨i,bc⟩)
+      (z : Rank.Point (SourceAge.UnarySource.β I)
+        (SourceAge.UnarySource.tag I) ⟨j,bd⟩),
+      RawWord.relation S W x.val z.val →
+      ∃ V : RawWord (SourceAge.UnarySource.source I) ⟨i,bc⟩ ⟨j,bd⟩,
+        ProjectedWords.forgetWord S (SourceAge.UnarySource.source I)
+          (SourceAge.actualProjection I) V = W ∧
+        RawWord.relation (SourceAge.UnarySource.source I) V x z := by
+  intro i j W
+  induction W with
+  | nil i =>
+      intro bc bd x z hxz
+      have hBit : bc = bd := by
+        have ht := congrArg (SourceAge.UnarySource.tag I i) hxz
+        exact x.property.symm.trans (ht.trans z.property)
+      subst bd
+      exact ⟨.nil ⟨i,bc⟩,rfl,Subtype.ext hxz⟩
+  | identity tail ih =>
+      intro bc bd x z h
+      obtain ⟨V,hV,hw⟩ := ih bc bd x z h
+      refine ⟨.identity V, ?_, hw⟩
+      exact congrArg RawWord.identity hV
+  | @atom i j k a tail ih =>
+      intro bc bd x z h
+      obtain ⟨y,hxy,hyz⟩ := h
+      let byTag := SourceAge.UnarySource.tag I j y
+      let y' : Rank.Point (SourceAge.UnarySource.β I)
+          (SourceAge.UnarySource.tag I) ⟨j,byTag⟩ := ⟨y,rfl⟩
+      obtain ⟨V,hV,hWalk⟩ := ih byTag bd y' z hyz
+      let T := SourceAge.UnarySource.source I
+      let a' : T.Atom ⟨i,bc⟩ ⟨j,byTag⟩ :=
+        ⟨a,⟨x,y',hxy⟩⟩
+      have ha : T.atomRel a' x y' := by
+        change Rank.colour S (SourceAge.UnarySource.β I)
+          (SourceAge.UnarySource.tag I) x y' = some a'
+        exact (Rank.colour_some_iff S
+          (SourceAge.UnarySource.β I) (SourceAge.UnarySource.tag I)
+          x y' a').mpr hxy
+      refine ⟨.atom a' V, ?_, ⟨y',ha,hWalk⟩⟩
+      change RawWord.atom a
+        (ProjectedWords.forgetWord S T (SourceAge.actualProjection I) V) =
+          RawWord.atom a tail
+      rw [hV]
+      rfl
+
 end
 end CCO.ExactEPGeometry.ActualUnaryOldWordLift
