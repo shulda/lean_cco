@@ -41,7 +41,7 @@ theorem original_label_list_count_total {r : Nat} (labels : List (Fin r)) :
           simp [List.count_cons, hj, hne, beq_iff_eq]
       calc
         (∑ j : Fin r, (a :: tail).count j) =
-            ∑ j : Fin r, (if j = a then 1 else 0) + tail.count j := by
+            ∑ j : Fin r, ((if j = a then 1 else 0) + tail.count j) := by
               apply Finset.sum_congr rfl
               intro j _
               exact hOne j
