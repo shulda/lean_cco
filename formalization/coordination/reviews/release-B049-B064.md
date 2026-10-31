@@ -51,9 +51,61 @@ mathematical implementations.
 
 ## Decision pending
 
-This is a source/provenance checkpoint only, not approval. The final frozen
-publication diff, exact public tree/CI and real infrastructure lock have not
-yet been supplied. I will inspect them independently before any operational
-decision. B058 explicitly links the forest-provider plan; its inclusion in the
-frozen public release remains to be checked. No public STATE event or claim is
-authorized by this conditional report.
+The frozen publication was supplied as native
+`2a93994086e1bbf310302767b0986cdd248d8637`, tree
+`98232c90a02fd00b5553bd52858bc32d1c512e20`. I read the complete changed
+publication tooling/workflow/tests/instructions and release documents, and
+checked every imported payload disposition against the exact original data.
+The tiny later docstring-only delta was personally read at final native
+`1707317881f7ee1eaa2a0cece63725ec83e36d94`, public PR66 head
+`0ccc373bb554ffd6de13d03b1ec5b80bae41cdaa`, tree
+`6eb9502b7322e10dc36e2766a2f920db235fac38`. Its public parenta94e4f3 retains
+the first payload tree and baseline main parent; no source history was reset.
+
+Independent actual GitHub tree checks bind all122 final manifest records to
+private30ab. All97 exact public copies match original Git blobs, byte counts
+and SHA256; all16 contracts and two historical reports retain byte-exact
+original suffixes with only explicit receiving notices. Seven references are
+explicitly not copied. The forest plan is now included EXACTLY, resolving the
+earlier not-yet-frozen inclusion check. No external Lean provider code is imported.
+
+I independently fetched actual mathematical pin490c and its complete tree
+`f6ada75e928bafe5bd3e17f898976588ddd0f00e`. All57 required TeX records match
+the same exact blobs in BOTH that pinned tree and the actual30ab preparation
+tree. The fifteen appended absent source files retain those exact bytes.
+Existing source/code, CCO root, toolchain/manifest, provider/cache verifiers,
+coordination queue/broker/workflow and all previous modules remain protected.
+
+The old48 BOARD rows are an exact prefix; the new16 rows equal the original
+private rows, with no ownership/acceptance. Every other catalogue field remains
+equal except its one revision advance. Policy changes only one revision and
+appends the exact16 release IDs; all roles, identities, Chat/Work profiles,
+capacities and other permissions remain exactly equal. Saved complete old
+BOARD/policy bytes equal actual baseline main.
+
+The four canonical promotion digests independently match:
+
+| Snapshot | SHA256 |
+|---|---|
+| Previous BOARD | `661173fcaa2fcbda1a54f7c8bf484d9b6ce480b8b1b65b4887c0c1942d7bfa8f` |
+| New BOARD | `80d48ab42c39147ee3099a1a983708c7a5cee9bd9521144c989a4c5449d76499` |
+| Previous policy13 | `5a76a9dd1920abe37006047c8659ce4af808c887103da2209f7f62e8fa2d2561` |
+| New policy14 | `37f7b5c0d90a1a2cf6fd661d8b76493e06e4901b979f9f353b58a1694e55ef89` |
+
+The validator retains its stricter public provenance checks; exact catalogue
+IDs now resolve unlabelled results while ambiguous IDs/aliases are rejected.
+Only the precise pending forest citation gains its real global declaration
+name; HKN/HN arXiv/namespace/pin guards remain. The overview field type guard
+is stricter. I read the four new tests and the existing provider-manifest delta.
+All56 module allowlists and the actual one-control-per-module handoff remain;
+CI adds the finite diagnostic suffix without changing build/cache/audit steps.
+Finite diagnostics and unchanged original human data do not certify general
+mathematical correctness. No remaining publication source blocker found.
+
+Actual public baseline coordination
+`ef4513b61ec9e7e97f79f019532b1d65c506869d` was personally fetched in full:
+STATE398/policy13/chat,48ACCEPTED and no active claim or integration lock.
+Final PR66 CI41177115150/job124466845080 was in progress when inspected.
+Approval is withheld pending its successful exact-head log, fresh refs and
+the genuine actual prospective/public infrastructure lock. This conditional
+report authorizes no public STATE event, acceptance or claim.
