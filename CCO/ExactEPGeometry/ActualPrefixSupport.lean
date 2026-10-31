@@ -80,6 +80,8 @@ theorem globalRelation_prefix_invariant
     (P.point j y) (P.point j (g • y)) hColour
   have hOld := hInv (P.parent i) (P.parent j) h
     (P.point i x) (P.point j y) hxy
+  change R (P.parent i) (P.parent j)
+    (P.point i (g • x)) (P.point j (g • y))
   simpa only [hx,hy] using hOld
 
 /-- Phi preserves union of genuine binary relations, with real pair
@@ -140,8 +142,10 @@ theorem prefixSupport_comp
   · rintro ⟨x,z,y,hxy,hyz⟩
     obtain ⟨⟨j,b⟩,hb⟩ := P.bijective.2 y
     refine ⟨j,⟨x,b,?_⟩,⟨b,z,?_⟩⟩
-    · simpa only [hb] using hxy
-    · simpa only [hb] using hyz
+    · rw [hb]
+      exact hxy
+    · rw [hb]
+      exact hyz
   · rintro ⟨j,⟨x,y,hxy⟩,⟨y',z,hyz⟩⟩
     obtain ⟨g,hgy⟩ :=
       (T.original_sort_transitive_of_homogeneous HT j) y' y
