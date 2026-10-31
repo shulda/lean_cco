@@ -1654,3 +1654,4 @@ import CCO.ExactEPGeometry.PeirceChoices
 import CCO.ExactEPGeometry.MarkedTriples
 import CCO.ExactEPGeometry.MarkedPairGeometry
 import CCO.ExactEPGeometry.TraceProductForward
+import CCO.ExactEPGeometry.TraceProduct
