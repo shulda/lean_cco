@@ -27,7 +27,7 @@ open ParityHasse.Original
 /-- The actual original action on classes of a FULL invariant
 equivalence, derived from old `HomogeneousSource` rather than an
 independent quotient-action axiom. -/
-def originalQuotientAction (H : HomogeneousSource S G) {i : ι}
+@[instance_reducible] def originalQuotientAction (H : HomogeneousSource S G) {i : ι}
     (J : ColourEq S i) : MulAction G (Quotient J.val) := by
   letI : RawExact.CanonicalQuotients.Invariant G J.val :=
     ⟨colourInvariant_groupInvariant S H J.2⟩
@@ -84,6 +84,7 @@ theorem originalQuotientOrbital_invariant
     ∀ (g : G) q r,
       originalQuotientOrbital S (G := G) J a b q r →
       originalQuotientOrbital S (G := G) J a b (g • q) (g • r) := by
+  letI : MulAction G (Quotient J.val) := originalQuotientAction S H J
   intro g q r
   rintro ⟨k, hkq, hkr⟩
   refine ⟨g*k, ?_, ?_⟩
@@ -156,7 +157,7 @@ def originalQuotientEqToColour
   apply groupInvariant_colourInvariant S H
   intro g x y hxy
   have h := hE g (Quotient.mk J.val x) (Quotient.mk J.val y) hxy
-  simpa only [originalQuotient_mk_smul S H J] using h
+  simpa [Setoid.comap, originalQuotient_mk_smul S H J] using h
 
 /-- A FULL original cover has no intermediate G-invariant quotient
 equivalence: its old pullback is literally J or literally K.
@@ -175,21 +176,24 @@ theorem originalFullCover_quotient_eq_or_upper
     (∀ x y : X i,
       E (Quotient.mk J.val x) (Quotient.mk J.val y) ↔ K x y) := by
   let P : ColourEq S i := originalQuotientEqToColour S H J E hE
+  have hP (x y : X i) :
+      P x y ↔ E (Quotient.mk J.val x) (Quotient.mk J.val y) := by
+    simp [P, originalQuotientEqToColour, Setoid.comap]
   have hJP : J ≤ P := by
     intro x y hxy
-    change E (Quotient.mk J.val x) (Quotient.mk J.val y)
+    apply (hP x y).2
     exact Quotient.sound hxy ▸ E.refl _
   have hPK : P ≤ K := by
     intro x y hxy
-    exact hEK x y hxy
+    exact hEK x y ((hP x y).1 hxy)
   rcases hJK.eq_or_eq hJP hPK with hh | hh
   · left
     intro x y
     have hv : P x y ↔ J x y := by rw [hh]
-    exact hv
+    exact (hP x y).symm.trans hv
   · right
     intro x y
     have hv : P x y ↔ K x y := by rw [hh]
-    exact hv
+    exact (hP x y).symm.trans hv
 
 end CCO.TerminalLattice
