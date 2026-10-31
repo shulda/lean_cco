@@ -1684,3 +1684,4 @@ import CCO.ExactEPGeometry.PrefixExactLargestLift
 import CCO.ExactEPGeometry.OriginalPivotTrace
 import CCO.ExactEPGeometry.OldGateMaximality
 import CCO.ExactEPGeometry.OldGateActualProvider
+import CCO.ExactEPGeometry.OldGatePivotBridge
