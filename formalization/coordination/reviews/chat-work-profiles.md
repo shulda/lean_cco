@@ -75,7 +75,7 @@ accepted-dependency ancestry, single lock and exact PR/main CI, strict policy
 revision, manifest-bound deployment, explicit user-authorized reversible modes,
 complete stopped-worker WIP handover with old records/history preserved and
 effective approvals cleared. These source observations do not establish final
-approval while R1 and exact final-head evidence remain outstanding.
+approval while R2 and exact final-head evidence remain outstanding.
 
 ## Decision
 
