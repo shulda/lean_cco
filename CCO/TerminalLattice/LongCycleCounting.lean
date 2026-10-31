@@ -1,6 +1,5 @@
 import Mathlib.Data.Finset.Card
 import Mathlib.Data.Fintype.Basic
-import Mathlib.Tactic.Omega
 
 /-!
 # B050 C29: the sharp labelled-cycle closing-edge count
