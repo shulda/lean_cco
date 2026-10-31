@@ -3,18 +3,19 @@ import CCO.ExactEPGeometry.OriginalBridgeTrace
 /-!
 # B062 C55–C56: canonical ORIGINAL gate on the target of a full bridge
 
-For a genuinely realized current full exact Arrow R:p->q whose types
-come from ONE original source sort, the already proved original full
-saturated correspondence C has literal p,q trace R and C² = G_p.
+For a genuine current full exact Arrow R:p->q whose types come from
+ONE original source sort, the proved original full saturated
+correspondence C has literal p,q trace R and C²=G_p.
 
-Original same-sort symmetry Cᵒᵖ=C gives its q,p trace Rᵒᵖ. Two
-NONEMPTY real input traces and one application of the proved
-displayed-middle TP (now with the CURRENT middle sort p) give
-G_p|q² = Rᵒᵖ;R = K_q, the REAL target gate.
+Actual original same-sort symmetry Cᵒᵖ=C gives its q,p trace Rᵒᵖ.
+Two REAL nonempty input traces and the source displayed-middle (TP),
+now with CURRENT middle sort p, identify G_p|q² with
+Rᵒᵖ;R=K_q, the REAL target gate.
 
-This proves the actual source C55–C56 gate-transport equation, not a
-formal quotient-group action, source SAP, or a generic arbitrary
-mixed-sort reverse exactness theorem.
+The original parent indices are related by an ACTUAL equality and
+its two one-sided exact word transports. We do NOT eliminate the
+equality by an invalid dependent case split on P.parent q.
+No quotient SAP, group section or arbitrary mixed reverse descent.
 -/
 
 universe u v w t
@@ -26,10 +27,46 @@ open RigidGroupoid.Geometry
 
 noncomputable section
 
+variable {ι : Type u} {X : ι → Type v}
+
+/-- Reindex the FIRST endpoint of a real original RAW exact presentation
+along an ACTUAL equality of original source sorts; no new word or axiom. -/
+private def oldExactLeftCast
+    (S : AtomicSource.{u,v,w} ι X) {i j : ι}
+    (h : i = j) (D : RawExact.NonemptyExact S i i) :
+    RawExact.NonemptyExact S j i := by
+  cases h
+  exact D
+
+private theorem oldExactLeftCast_iff
+    (S : AtomicSource.{u,v,w} ι X) {i j : ι}
+    (h : i = j) (D : RawExact.NonemptyExact S i i)
+    (x : X j) (y : X i) :
+    RawExact.evaluate S (oldExactLeftCast S h D).words x y ↔
+      RawExact.evaluate S D.words (h.symm ▸ x) y := by
+  cases h
+  exact Iff.rfl
+
+/-- The two reindexed REAL exact factors still have their middle
+witness in the ORIGINAL i sort. This is an equality transport of
+represented RAW composition, not a quotient-action identity. -/
+private theorem oldExactTwoSidedComp_iff
+    (S : AtomicSource.{u,v,w} ι X) {i j : ι}
+    (h : i = j) (D : RawExact.NonemptyExact S i i)
+    (x y : X j) :
+    TRel.comp
+      (RawExact.evaluate S (oldExactLeftCast S h D).words)
+      (RawExact.evaluate S (oldExactRightCast S h D).words) x y ↔
+    TRel.comp (RawExact.evaluate S D.words)
+      (RawExact.evaluate S D.words)
+      (h.symm ▸ x) (h.symm ▸ y) := by
+  cases h
+  exact Iff.rfl
+
 /-- The canonical largest ORIGINAL full exact gate G_p of a real
-current bridge p->q has exactly the CURRENT gate K_q as its
-q,q-trace. The original-parent equality is explicit; the two
-CURRENT sorts can still be genuinely distinct and both occupied. -/
+current bridge p->q has exactly current K_q as its q,q trace. The
+equality hSame identifies only the two ORIGINAL source sort names,
+not the genuinely distinct current unary types. -/
 theorem current_arrow_original_gate_target_trace
     (A B : CurrentSource.{u,v,w,t})
     (P : UnaryReduct A.source B.source)
@@ -44,22 +81,45 @@ theorem current_arrow_original_gate_target_trace
       Kq.rel y z ↔
         K.rel (hSame.symm ▸ P.point q y)
           (hSame.symm ▸ P.point q z) := by
-  cases hSame
   dsimp only
   obtain ⟨C,hC⟩ :=
     current_arrow_original_correspondence_trace
-      A B P transport tp rfl Kp Kq R
+      A B P transport tp hSame Kp Kq R
   let K := original_largest_gate_kernel A B P transport tp p Kp
   obtain ⟨Q,hQ⟩ := C.exact
+  let Qqp : RawExact.NonemptyExact A.source
+      (P.parent q) (P.parent p) :=
+    oldExactLeftCast A.source hSame Q
+  let Qpq : RawExact.NonemptyExact A.source
+      (P.parent p) (P.parent q) :=
+    oldExactRightCast A.source hSame Q
+  have hQqp (y : B.Point q) (x : B.Point p) :
+      RawExact.evaluate A.source Qqp.words
+        (P.point q y) (P.point p x) ↔
+      C.rel (hSame.symm ▸ P.point q y) (P.point p x) := by
+    exact (oldExactLeftCast_iff A.source hSame Q
+      (P.point q y) (P.point p x)).trans
+        (Iff.of_eq (congrFun
+          (congrFun hQ (hSame.symm ▸ P.point q y)) (P.point p x)))
+  have hQpq (x : B.Point p) (y : B.Point q) :
+      RawExact.evaluate A.source Qpq.words
+        (P.point p x) (P.point q y) ↔
+      C.rel (P.point p x) (hSame.symm ▸ P.point q y) := by
+    exact (oldExactRightCast_iff A.source hSame Q
+      (P.point p x) (P.point q y)).trans
+        (Iff.of_eq (congrFun
+          (congrFun hQ (P.point p x)) (hSame.symm ▸ P.point q y)))
   have hSym : TRel.converse C.rel = C.rel :=
     C.exact.same_sort_converse A.source A.homogeneous
   have hReverse (y : B.Point q) (x : B.Point p) :
-      C.rel (P.point q y) (P.point p x) ↔ R.rel x y := by
+      C.rel (hSame.symm ▸ P.point q y) (P.point p x) ↔
+        R.rel x y := by
     have heq :
-        C.rel (P.point q y) (P.point p x) =
-          C.rel (P.point p x) (P.point q y) := by
-      have h := congrFun (congrFun hSym (P.point q y)) (P.point p x)
-      exact h.symm
+        C.rel (hSame.symm ▸ P.point q y) (P.point p x) =
+          C.rel (P.point p x) (hSame.symm ▸ P.point q y) := by
+      have hh := congrFun (congrFun hSym
+        (hSame.symm ▸ P.point q y)) (P.point p x)
+      exact hh.symm
     exact (Iff.of_eq heq).trans (hC x y)
   have hSquare : TRel.comp C.rel C.rel = K.rel := by
     calc
@@ -69,48 +129,49 @@ theorem current_arrow_original_gate_target_trace
   obtain ⟨x₀,y₀,hR₀⟩ := R.exact.nonempty B.source
   have hInputQP :
       ∃ y : B.Point q, ∃ x : B.Point p,
-        RawExact.evaluate A.source Q.words
+        RawExact.evaluate A.source Qqp.words
           (P.point q y) (P.point p x) := by
     refine ⟨y₀,x₀,?_⟩
-    rw [hQ]
-    exact (hReverse y₀ x₀).mpr hR₀
+    exact (hQqp y₀ x₀).mpr ((hReverse y₀ x₀).mpr hR₀)
   have hInputPQ :
       ∃ x : B.Point p, ∃ y : B.Point q,
-        RawExact.evaluate A.source Q.words
+        RawExact.evaluate A.source Qpq.words
           (P.point p x) (P.point q y) := by
     refine ⟨x₀,y₀,?_⟩
-    rw [hQ]
-    exact (hC x₀ y₀).mpr hR₀
+    exact (hQpq x₀ y₀).mpr ((hC x₀ y₀).mpr hR₀)
   intro y z
-  have hTP := tp.product Q Q hInputQP hInputPQ y z
+  have hTP := tp.product Qqp Qpq hInputQP hInputPQ y z
   have hCurrent :
       (∃ x : B.Point p,
-        RawExact.evaluate A.source Q.words
+        RawExact.evaluate A.source Qqp.words
           (P.point q y) (P.point p x) ∧
-        RawExact.evaluate A.source Q.words
+        RawExact.evaluate A.source Qpq.words
           (P.point p x) (P.point q z)) ↔
         TRel.comp (TRel.converse R.rel) R.rel y z := by
     constructor
     · rintro ⟨x,hYX,hXZ⟩
-      have hC1 : C.rel (P.point q y) (P.point p x) := by
-        rw [← hQ]
-        exact hYX
-      have hC2 : C.rel (P.point p x) (P.point q z) := by
-        rw [← hQ]
-        exact hXZ
-      exact ⟨x,(hReverse y x).mp hC1,(hC x z).mp hC2⟩
+      exact ⟨x,(hReverse y x).mp ((hQqp y x).mp hYX),
+        (hC x z).mp ((hQpq x z).mp hXZ)⟩
     · rintro ⟨x,hYX,hXZ⟩
-      refine ⟨x,?_,?_⟩
-      · rw [hQ]
-        exact (hReverse y x).mpr hYX
-      · rw [hQ]
-        exact (hC x z).mpr hXZ
+      exact ⟨x,(hQqp y x).mpr ((hReverse y x).mpr hYX),
+        (hQpq x z).mpr ((hC x z).mpr hXZ)⟩
   have hOld :
-      TRel.comp (RawExact.evaluate A.source Q.words)
-        (RawExact.evaluate A.source Q.words)
+      TRel.comp (RawExact.evaluate A.source Qqp.words)
+        (RawExact.evaluate A.source Qpq.words)
         (P.point q y) (P.point q z) ↔
-      K.rel (P.point q y) (P.point q z) := by
-    simpa only [hQ,hSquare]
+      K.rel (hSame.symm ▸ P.point q y)
+        (hSame.symm ▸ P.point q z) := by
+    have hCast := oldExactTwoSidedComp_iff A.source hSame
+      Q (P.point q y) (P.point q z)
+    have hSource :
+        TRel.comp (RawExact.evaluate A.source Q.words)
+          (RawExact.evaluate A.source Q.words)
+          (hSame.symm ▸ P.point q y)
+          (hSame.symm ▸ P.point q z) ↔
+        K.rel (hSame.symm ▸ P.point q y)
+          (hSame.symm ▸ P.point q z) := by
+      simpa only [hQ,hSquare]
+    exact hCast.trans hSource
   have hGate :
       Kq.rel y z ↔ TRel.comp (TRel.converse R.rel) R.rel y z := by
     rw [R.target]
