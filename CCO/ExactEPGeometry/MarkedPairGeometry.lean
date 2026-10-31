@@ -157,9 +157,14 @@ theorem marked_diagonal_of_owner
             T.colour (q 0) (q 0)) C.table_eq
   rcases hpoint : C.point (q 0) with ⟨j,x⟩
   have hj : j = i := by simpa [hpoint] using hsort
-  cases hj
   have hnone : S.colour x x = none := (S.colour_none_iff x x).mpr rfl
-  simpa [hpoint, taggedColour, hnone] using hName
+  have hTag : taggedColour S (C.point (q 0)) (C.point (q 0)) =
+      (⟨i,i,none⟩ : APCharacter.Age.Colour S) := by
+    rw [hpoint]
+    change (⟨j,j,S.colour x x⟩ : APCharacter.Age.Colour S) =
+      (⟨i,i,none⟩ : APCharacter.Age.Colour S)
+    rw [hj, hnone]
+  exact hName.trans (congrArg (APCharacter.Age.colourEquiv S) hTag)
 
 /-- A diagonal marked pair has some REAL original diagonal code, whose
 sort is its owner sort. Useful for equality-pattern reflection. -/
@@ -273,7 +278,7 @@ theorem marked_align_endpoints
   have hEqMap : ∀ i j, src i = src j ↔ tgt i = tgt j := by
     intro i j
     cases i <;> cases j
-    · exact Iff.rfl
+    · simp
     · simpa [src,tgt] using hEq
     · change (b = a ↔ d = c)
       constructor
@@ -281,7 +286,7 @@ theorem marked_align_endpoints
         exact (hEq.mp e.symm).symm
       · intro e
         exact (hEq.mpr e.symm).symm
-    · exact Iff.rfl
+    · simp
   have hOwner : ∀ i,
       (APCharacter.Age.limitCoding S H completion).table.owner (src i) =
       (APCharacter.Age.limitCoding S H completion).table.owner (tgt i) := by
