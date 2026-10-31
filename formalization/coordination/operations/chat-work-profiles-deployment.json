@@ -1,0 +1,285 @@
+{
+  "schema_version": 1,
+  "repository": "shulda/lean_cco",
+  "pr_number": 65,
+  "source_head": "b8877da8b102bb8c6a174e76914d638bb864b2ae",
+  "approved_tree": "56cdbffb57370600d14a47119366b1503d4f0a3e",
+  "previous_main": "700c12f7e6e8476eb0100a6be37d5f619ade3c0a",
+  "integration_commit": "269b1acc05c64aca74c2bc5f238b9c75fb3af223",
+  "source_ci": {
+    "run_id": 41169876583,
+    "run_attempt": 1,
+    "head_sha": "b8877da8b102bb8c6a174e76914d638bb864b2ae",
+    "conclusion": "success",
+    "axiom_audit": "allowlist",
+    "job_id": 124445322368,
+    "tests": 183,
+    "declarations": 28723,
+    "guards": [
+      {
+        "parts": 1619,
+        "source": 1619
+      },
+      {
+        "parts": 1619,
+        "source": 1619
+      },
+      {
+        "parts": 1619,
+        "source": 1619
+      }
+    ],
+    "provider_guards": [
+      {
+        "parts": 269,
+        "source": 269,
+        "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+      },
+      {
+        "parts": 269,
+        "source": 269,
+        "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+      },
+      {
+        "parts": 269,
+        "source": 269,
+        "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+      },
+      {
+        "parts": 269,
+        "source": 269,
+        "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+      }
+    ],
+    "ramsey_guards": [
+      {
+        "parts": 106,
+        "source": 106,
+        "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+      },
+      {
+        "parts": 106,
+        "source": 106,
+        "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+      },
+      {
+        "parts": 106,
+        "source": 106,
+        "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+      },
+      {
+        "parts": 106,
+        "source": 106,
+        "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+      }
+    ],
+    "build_jobs": [
+      1330,
+      1182,
+      4293,
+      4293,
+      6
+    ],
+    "fresh_cco_modules": [],
+    "url": "https://github.com/shulda/lean_cco/actions/runs/41169876583"
+  },
+  "source_review": {
+    "actual_actor": "reviewer_recovery_control",
+    "actual_identity": "/root/reviewer_recovery_control",
+    "native_report_commit": "9c23c6af2919ca9eebb8be3a4ae32a635f24d345",
+    "public_report_commit": "e88b06e08e23713de1773ba888b3998d0129f778",
+    "coordination_report_commit": "c0a12547d13bc989fc68318f2720f132d5fceb80",
+    "report_path": "formalization/coordination/reviews/chat-work-profiles.md",
+    "actually_approved": true,
+    "coord_public_lock_report": "772dfa2c94d7bb29026988d6370a5463e84866e8",
+    "final_native_report": "8174375f0ce0993cf6e14a2208a17d6b43c8519d",
+    "final_public_report": "ae7eef7cf5cbd5aefd7f1549de53e2a3f9d8ddac",
+    "final_coordination_report": "eca98470b28d67f86dcd7fbb33d4c05552aa5544"
+  },
+  "lock_commit": "906003afc9f0b8d2dfe0b6ad64b06610136b5883",
+  "source_pin": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+  "scope": "Infrastructure only. Every mathematical source, contract, pin and all 48 accepted package records are preserved. No Chat identity is impersonated by the deployment smoke test.",
+  "main_ci": {
+    "run_id": 41170282492,
+    "run_attempt": 1,
+    "head_sha": "269b1acc05c64aca74c2bc5f238b9c75fb3af223",
+    "conclusion": "success",
+    "axiom_audit": "allowlist",
+    "job_id": 124446560617,
+    "tests": 183,
+    "declarations": 28723,
+    "guards": [
+      {
+        "parts": 1619,
+        "source": 1619
+      },
+      {
+        "parts": 1619,
+        "source": 1619
+      },
+      {
+        "parts": 1619,
+        "source": 1619
+      }
+    ],
+    "provider_guards": [
+      {
+        "parts": 269,
+        "source": 269,
+        "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+      },
+      {
+        "parts": 269,
+        "source": 269,
+        "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+      },
+      {
+        "parts": 269,
+        "source": 269,
+        "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+      },
+      {
+        "parts": 269,
+        "source": 269,
+        "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+      }
+    ],
+    "ramsey_guards": [
+      {
+        "parts": 106,
+        "source": 106,
+        "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+      },
+      {
+        "parts": 106,
+        "source": 106,
+        "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+      },
+      {
+        "parts": 106,
+        "source": 106,
+        "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+      },
+      {
+        "parts": 106,
+        "source": 106,
+        "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+      }
+    ],
+    "build_jobs": [
+      1330,
+      1182,
+      4293,
+      4293,
+      6
+    ],
+    "fresh_cco_modules": [],
+    "url": "https://github.com/shulda/lean_cco/actions/runs/41170282492"
+  },
+  "activation": {
+    "coordination": "32578a4f5f7888ab488848942667ac5dfd1e91f0",
+    "revision": 398,
+    "policy_revision": 13,
+    "execution_mode": "chat",
+    "claims_paused": false,
+    "integration_lock": null,
+    "unchanged_accepted_packages": 48,
+    "complete_old_history_preserved": true
+  },
+  "health": {
+    "run_id": 41170531521,
+    "job_id": 124447325259,
+    "conclusion": "success",
+    "request_commit": "8bbe8e3e65b11388250947ff6a24d8fc4e8f498a",
+    "coordination_commit": "27c00de8fc4cf686e273650be53736f2e3701e9f",
+    "request_path": "coordination/requests/root/20261031_profiles_bootstrap_c2e79480.json",
+    "receipt_path": "formalization/coordination/requests/results/root/20261031_profiles_bootstrap_c2e79480.json",
+    "receipt": {
+      "request_blob_sha": "8b55cb24e2af28c10f80f3ff07070e08533279b7",
+      "request_path": "coordination/requests/root/20261031_profiles_bootstrap_c2e79480.json",
+      "coordination_parent": "32578a4f5f7888ab488848942667ac5dfd1e91f0",
+      "main_sha": "269b1acc05c64aca74c2bc5f238b9c75fb3af223",
+      "status": "no_change",
+      "next_action": {
+        "action": "wait",
+        "reason": "This execution profile is inactive for this project."
+      },
+      "verified_main_ci": {
+        "run_id": 41170282492,
+        "run_attempt": 1,
+        "head_sha": "269b1acc05c64aca74c2bc5f238b9c75fb3af223",
+        "conclusion": "success",
+        "axiom_audit": "allowlist",
+        "job_id": 124446560617,
+        "declarations": 28723,
+        "source_modules": 1619
+      },
+      "state_view": {
+        "authority": "coordination:formalization/coordination/STATE.json",
+        "state_blob_sha": "6a58c20f1629567bb68ca71e07211da9fba2c980",
+        "revision": 398,
+        "policy_revision": 13,
+        "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+        "execution_mode": "chat",
+        "claims_paused": false,
+        "integration_lock": null,
+        "packages": {}
+      }
+    },
+    "state_revision_unchanged": 398,
+    "actual_state_blob_sha": "6a58c20f1629567bb68ca71e07211da9fba2c980",
+    "actual_changed_files": [
+      "formalization/coordination/STATUS.json",
+      "formalization/coordination/requests/results/root/20261031_profiles_bootstrap_c2e79480.json"
+    ],
+    "trusted_main_checkout_verified": true,
+    "log_characters": 11580
+  },
+  "status": {
+    "not_an_ownership_lease": true,
+    "state_revision": 398,
+    "policy_revision": 13,
+    "execution_mode": "chat",
+    "claims_paused": false,
+    "main_sha": "269b1acc05c64aca74c2bc5f238b9c75fb3af223",
+    "accepted": 48,
+    "integration_lock": null,
+    "available": [],
+    "next_actions": {
+      "root": {
+        "action": "wait",
+        "reason": "This execution profile is inactive for this project."
+      },
+      "chat-1": {
+        "action": "wait",
+        "reason": "No eligible released batch; finish reviews or await preparation."
+      },
+      "chat-2": {
+        "action": "wait",
+        "reason": "No eligible released batch; finish reviews or await preparation."
+      },
+      "chat-3": {
+        "action": "wait",
+        "reason": "No eligible released batch; finish reviews or await preparation."
+      }
+    },
+    "active": {}
+  },
+  "native_source_head": "fca2f212f74a6ab10085249e2616de6cec9358fc",
+  "chat_clients": {
+    "registered": 3,
+    "project_ids": [
+      4,
+      5,
+      6
+    ],
+    "actor_ids": [
+      "chat-1",
+      "chat-2",
+      "chat-3"
+    ],
+    "actual_user_projects_not_created_by_this_deployment": true,
+    "first_prompt_checks_real_client_write_capabilities": true
+  },
+  "result": "DEPLOYED_AND_INDEPENDENTLY_REVIEWED"
+}
