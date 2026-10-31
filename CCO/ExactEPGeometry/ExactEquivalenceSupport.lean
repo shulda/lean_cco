@@ -81,7 +81,7 @@ theorem exactEq_family_support_iff
         ∀ f : F, R f a' b' := by
     refine ⟨a,b,?_⟩
     intro f
-    change E f a (hParent.symm ▸ b)
+    change E f a (hParent.symm ▸ (hParent ▸ a))
     rw [cast_back (X := X) hParent a]
     exact (E f).val.val.refl a
   change (∃ x : Y i, ∃ y : Y j,
