@@ -1674,6 +1674,7 @@ import CCO.TerminalLattice.PrivateBranchCycles
 import CCO.TerminalLattice.SparseCycleLabels
 import CCO.TerminalLattice.SparseCycleSpectrum
 import CCO.TerminalLattice.PositiveBranchCycles
+import CCO.TerminalLattice.OriginalExternalLabels
 import CCO.TerminalLattice.LabelledPathGrouping
 import CCO.TerminalLattice.PositivePathFold
 import CCO.TerminalLattice.StrongPathReordering
