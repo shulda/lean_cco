@@ -68,11 +68,11 @@ theorem markedChild_exact_comp_iff
   · rintro ⟨b,hAB,hBC⟩
     exact hTP.mp ⟨b.val,hAB,hBC⟩
 
-/-- The OLD full exact product is an equivalence and its universal
-original join, by original invariant pair flips, not a quotient action. -/
 section OriginalJoin
 include H
 
+/-- The OLD full exact product is an equivalence and its universal
+original join, by original invariant pair flips, not a quotient action. -/
 theorem original_exact_comp_join
     {i : ι} (D E : RawExact.NonemptyExact S i i)
     (hD : RawSymmetric.EquivRel (RawExact.evaluate S D.words))
