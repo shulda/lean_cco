@@ -1696,6 +1696,7 @@ import CCO.TerminalLattice.ProjectedOrientedWords
 import CCO.TerminalLattice.SparseWordMarkedEdges
 import CCO.TerminalLattice.LabelledPathGrouping
 import CCO.TerminalLattice.PositivePathFold
+import CCO.TerminalLattice.CentrePathSpectrum
 import CCO.TerminalLattice.StrongPathReordering
 import CCO.TerminalLattice.QuotientSquareSaturation
 import CCO.TerminalLattice.QuotientSquareOrbitalClosure
