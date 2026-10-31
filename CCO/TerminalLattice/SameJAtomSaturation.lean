@@ -57,11 +57,13 @@ theorem original_raw_J_atom_J_guard_eq_strong
       original_fresh_atom_endpoint_in_J S H sap J hJ tAtom
         u v hUV ({x,z,v} : Finset (X i))
     have hvu' : S.atomRel tAtom v u' := by
+      change S.colour v u' = some tAtom
       simpa only [S.symmetricLoop] using (S.colour_swap u' v tAtom).mp hu'v
     obtain ⟨v', hvAvoid, hJvv', hv'u'⟩ :=
       original_fresh_atom_endpoint_in_J S H sap J hJ tAtom
         v u' hvu' ({x,z,u'} : Finset (X i))
     have hu'v' : S.atomRel tAtom u' v' := by
+      change S.colour u' v' = some tAtom
       simpa only [S.symmetricLoop] using (S.colour_swap v' u' tAtom).mp hv'u'
     have hxu'Ne : x ≠ u' := by
       intro h
