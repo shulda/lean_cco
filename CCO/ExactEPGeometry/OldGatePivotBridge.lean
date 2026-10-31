@@ -135,13 +135,13 @@ theorem actual_pivot_and_selected_gate
       (rho A B P transport p Yold) x y
     rw [rho_iff A B P transport p Yold x y]
     change EvenWalk (B.source.atomRel c) x y ↔
-      EvenWalk (A.source.atomRel oldc) (P.point p x) (P.point p y)
+      (evenColourEq A.source A.homogeneous oldc) (P.point p x) (P.point p y)
     simpa only [hAtom] using (hE4.1 x y).symm
   have hUtrace : ∀ x y : B.Point p,
       Ucur x y ↔ Uold (P.point p x) (P.point p y) := by
     intro x y
     change ConnectedWalk (B.source.atomRel c) x y ↔
-      ConnectedWalk (A.source.atomRel oldc)
+      (connectivityColourEq A.source A.homogeneous oldc)
         (P.point p x) (P.point p y)
     simpa only [hAtom] using (hE4.2.2 x y).symm
   obtain ⟨EY,EO,hEY,hEO⟩ :=
