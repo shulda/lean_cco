@@ -132,7 +132,8 @@ theorem peirce_old_masked_triangle
     rw [hK]
     exact haux
   obtain ⟨b₂, c₂, hEb₂c₂, hKb₂c₂, hMaskBC⟩ :=
-    mask_two_exact S H P cco E K η θ hw hz hMeet2 hEmask hKmask
+    mask_two_exact S H P cco E K η θ hw hz hMeet2
+      ⟨y₀, z₀, hE₀, hMaskE₀⟩ hKmask
   rw [hK] at hKb₂c₂
   obtain ⟨a₂, hColourAB, hColourAC⟩ := hKb₂c₂
   have hDa₂b₂ : RawExact.evaluate S D.words a₂ b₂ :=
