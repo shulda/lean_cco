@@ -116,8 +116,8 @@ theorem current_arrow_original_correspondence_trace
         RawExact.evaluate A.source Q.words
           (P.point p x) (P.point p z) := by
     refine ⟨a,a,?_⟩
-    rw [hQ]
-    exact (hGate a a).mpr (Kp.setoid.refl a)
+    exact (Iff.of_eq (congrFun (congrFun hQ (P.point p a))
+      (P.point p a))).mpr ((hGate a a).mpr (Kp.setoid.refl a))
   obtain ⟨a₀,b₀,hab⟩ := R.exact.nonempty B.source
   have hEIn :
       ∃ x : B.Point p, ∃ y : B.Point q,
@@ -136,14 +136,14 @@ theorem current_arrow_original_correspondence_trace
         TRel.comp Kp.rel R.rel x y := by
     constructor
     · rintro ⟨z,hxz,hzy⟩
-      have hK : K.rel (P.point p x) (P.point p z) := by
-        rw [← hQ]
-        exact hxz
+      have hK : K.rel (P.point p x) (P.point p z) :=
+        (Iff.of_eq (congrFun (congrFun hQ (P.point p x))
+          (P.point p z))).mp hxz
       exact ⟨z,(hGate x z).mp hK,(hERTyped z y).mpr hzy⟩
     · rintro ⟨z,hxz,hzy⟩
       refine ⟨z,?_,(hERTyped z y).mp hzy⟩
-      rw [hQ]
-      exact (hGate x z).mpr hxz
+      exact (Iff.of_eq (congrFun (congrFun hQ (P.point p x))
+        (P.point p z))).mpr ((hGate x z).mpr hxz)
   have hOld :
       C.rel (P.point p x) (hSame.symm ▸ P.point q y) ↔
         TRel.comp (RawExact.evaluate A.source Q.words)
