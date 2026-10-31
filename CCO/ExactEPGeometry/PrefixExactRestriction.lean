@@ -53,8 +53,7 @@ def rho (E : ExactEq A.source (P.parent p)) : ExactEq B.source p := by
       ∃ a b : B.Point p,
         RawExact.evaluate A.source D.words (P.point p a) (P.point p b) := by
     refine ⟨x,x,?_⟩
-    rw [hD]
-    exact E.val.val.refl (P.point p x)
+    simpa only [hD] using E.val.val.refl (P.point p x)
   let hLift := transport.old_to_new D hReal
   let Q := Classical.choose hLift
   have hQ := Classical.choose_spec hLift
