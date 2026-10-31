@@ -30,6 +30,8 @@ variable {T : AtomicSource.{u,v,w} κ Y}
 variable (P : UnaryReduct S T)
 variable (hMeet : ExactMeetSupport S T P)
 
+include hMeet
+
 /-- C47–C50 actual finite-meet equation for FULL equality-inclusive
 exact relations. The only old nonemptiness premise is for the ENTIRE
 finite family, not independent nonemptiness of its factors. All
