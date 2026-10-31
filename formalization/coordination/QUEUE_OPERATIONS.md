@@ -1,6 +1,8 @@
 # Queue operations — protocol 3
 
 Read current main policy/catalogue/protocol/runbook and actual reports/PRs/CI.
+For Chat request files and real server-side CAS see CHAT_REQUESTS.md; for
+profile capacity/ownership and mode switching see EXECUTION_PROFILES.md.
 Fetch coordination head **S**, and STATE at that exact SHA. The Python helper
 is offline: a proposal is neither a claim nor certification of evidence.
 
@@ -27,8 +29,8 @@ record failure; it is not successful submission evidence.
 | Event | Required data in addition to actor/package | Meaning |
 |---|---|---|
 | `handoff` | `previous_projects_stopped: true`, `transfers` containing exactly B002/B003 with `previous_owner_project_id`, `branch`, `pr_number`, current `head_sha`, `observed_ci`, `last_green_checkpoint: {head_sha, ci}` | One-time v2→v3 atomic transfer after policy deployment; preserve original authors, existing claim/base/history and WIP. |
-| `claim` | `base_main_sha`, `base_ci` | Lowest released AVAILABLE package, every dependency ACCEPTED, capacity below two; no pending repairs. |
-| `claim_third` | claim fields plus `independent_active_work: true`, substantive `summary`, `implementation_actor_id`, `active_work_items`, `independence_report_path`, `existing_batches` | Exceptional third genuinely independent active batch; no fourth. |
+| `claim` | `base_main_sha`, `base_ci` | Lowest released AVAILABLE package, every dependency ACCEPTED, active-profile capacity (Chat: one own slot); no pending repairs. |
+| `claim_third` | claim fields plus `independent_active_work: true`, substantive `summary`, `implementation_actor_id`, `active_work_items`, `independence_report_path`, `existing_batches` | Work-only third genuinely independent active batch; no fourth Work batch. |
 | `repair` | `base_main_sha`, `base_ci` | Lowest requested repair, preserving authorship. |
 | `checkpoint` | Current `head_sha`, existing `pr_number`, `observed_ci` with exact head/run and `conclusion` success or failure | Owned unleased IN_PROGRESS work only; preserve state, claim, authorship, branch and last green checkpoint; update WIP tracking without submission or another claim. |
 | `record_authorship` | `author_actor_ids` | Append actual contributors; never erase original authors or use review-only actor to implement. |
@@ -147,3 +149,38 @@ and accepted history are preserved. `finish_infrastructure` cannot finish this
 lock. A failed main stays locked; only proven pre-merge non-merging permits
 `cancel_infrastructure`. New ordinary package reviews begin after this public
 promotion and use their own actual whole-package readers and reports.
+
+## Execution profiles and cross-project control
+
+Runtime mode lives only in STATE.execution_mode (missing in old snapshots means
+work). Chat project4/5/6 uses actorchat-1/2/3, respectively; mode policy, one own
+unresolved slot and actual non-authorship are validated. A new chat is not a
+new author identity. Old Work roles remain review-only or implement-only.
+Chat actors may implement one package and independently review a different one;
+contributors and historical project IDs exclude them from their own review.
+
+| Event | Fields / effect |
+|---|---|
+| pause_claims | coordinate actor, user_authorized:true, substantive summary; stop new claims only |
+| resume_claims | same actual user instruction plus base_main_sha/base_ci; no integration lock |
+| switch_mode | target_mode work/chat, actual user authorization/summary and green current base; no active claims or lock |
+| handover_mode | paused claims, previous_workers_stopped:true, actual user instruction, current green base, transfers covering EVERY active claim with matching previous/new owners, exact checkpointed head and unchanged branch/PR; no lock; effective review cleared, full old record preserved |
+| promote_profiles | reviewed head_sha, actual integration_commit/main_ci, optional target_mode (preserve current when active); explicit previous registry/policy paths |
+
+Profile deployment uses execution_profile_manifest(old_board,old_policy,new_board,
+new_policy), stored in profile_deployment of start_infrastructure. Use the new
+helper but OLD current snapshots to start the single lock. Initial deployment
+requires no active claim. Subsequent actor additions keep old roles/records/mode
+and permit current work to remain. After expected-head merge and actual-main
+CI/audit, promote_profiles with --previous-registry/--previous-policy and the
+deployed new snapshots finishes the same lock and advances policy revision in
+ONE CAS, without changing packages. Generic finish is rejected. During main/STATE
+policy deployment mismatch the request broker validates the still-old ledger
+against snapshots at the actual locked base; it never relaxes normal validation.
+Do not combine profile deployment, registry release and reviewer recovery.
+
+Mode switches do NOT change policy revision or require a new PR after profiles
+are installed. They are validated STATE events under exact-parent CAS. See
+RETURN_TO_WORK.md for actual stop acknowledgements and preservation of failing
+WIP/green checkpoints. Three transferred Work batches need the same genuine
+anchored third-slot plan as claim_third; no invented independence exemption.

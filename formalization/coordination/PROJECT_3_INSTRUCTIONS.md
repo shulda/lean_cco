@@ -1,42 +1,54 @@
-# Work team instructions — protocol 3 (historical project 3)
+# CCO Work project — project 3, actor root
 
-Repozitář: https://github.com/shulda/lean_cco. Původní projekty
-1 a 2 jsou zastavené; jejich ID a autorství zůstávají v historii. Jeden Work
-tým (project 3) koordinuje a dokončuje obě převzaté větve bez resetu WIP.
+Repozitář: https://github.com/shulda/lean_cco. Jsi jeden Work formalizační tým,
+project_id 3, actor_id root. Historické projekty 1/2 zůstávají zastavené;
+nové Chat projekty mají jiné identity. Oprávnění pokračovat neznamená
+oprávnění převzít jejich živé claimy bez řádného předání.
 
-Na začátku čti čerstvý main: PROTOCOL.md, AUTONOMY.json, BOARD.json, runbook,
-kontrakty, skutečný kód a reporty. Živé claimy/review/přijetí čti VÝHRADNĚ
-z přesného headu coordination:formalization/coordination/STATE.json.
-BOARD je katalog. Používej coordination_queue.py a QUEUE_OPERATIONS.md;
-zápisy jsou účinné až po non-force CAS nad přesně načteným rodičem.
+Na začátku každého tahu načti čerstvý main, AGENTS.md a
+formalization/coordination/PROTOCOL.md, AUTONOMY.json, BOARD.json,
+EXECUTION_PROFILES.md, QUEUE_OPERATIONS.md a COORDINATOR_RUNBOOK.md.
+Živý stav čti na přesném headu větve coordination ze STATE.json; STATUS.json
+je pouze odvozený přehled, nikoli claim. Zkontroluj skutečné PR heads a CI.
+Pokud execution_mode není work, nic si neclaimuj. Návrat smí proběhnout jen
+podle skutečného pokynu uživatele a RETURN_TO_WORK.md, bez resetu STATE.
 
-Standardně drž dva aktivní batche v celém týmu. SUBMITTED, REVIEWING,
-INTEGRATING, CHANGES_REQUESTED i BLOCKED stále zabírají slot. Opravy a dokončení
-mají přednost. Třetí batch potřebuje zaznamenanou konkrétní nezávislou aktivní
-práci; žádné předběžné hromadění záloh. Všechny závislosti musí být ACCEPTED.
+Používej tools/coordination_queue.py a exact-parent non-force CAS. Standard
+jsou dva neuzavřené batche za celý Work tým, třetí jen pro doloženou skutečně
+nezávislou aktivní práci. Submit/review/integrace/blocker stále zabírají slot.
+Opravy a dokončení mají přednost. Každá závislost musí být ACCEPTED na mainu.
+Původní větve, všechny WIP commity, skuteční autoři a claim historie zůstávají.
 
-Čti původní připnuté důkazy i skutečné Lean signatury. Zachovej přesné
-kvantifikátory, RAW/STRONG a AP/SAP/CCO. Podmíněný provider není source instance.
-Žádné sorry/admit, nové axiomy ani zesílení hypotéz. Veřejné moduly importuj
-do CCO.lean. Importuj konkrétní potřebné Mathlib moduly a taktiky; chybějící
-import patří konzumentovi. Používej připnutý toolchain/manifest, malé inkrementy
-a přesný transitive axiom audit. Ukládej commity a aktuální per-package report.
+Můžeš rozdělit nezávislé implementace mezi subagenty s oddělenými worktrees
+a build výstupy. Samostatný skutečně neautorský reader nesmí navrhovat ani
+psát implementaci kontrolovaného batchů. Eviduj všechny skutečné přispěvatele.
+Nový reader musí být zaregistrován pod svou skutečnou identitou; starou roli
+ani částečný report nepřejmenuj na nový souhlas. Při nedostupnosti původního
+readeru použij explicitní reviewer_recovery podle protokolu. Tři Chat projekty
+mohou vzájemně kontrolovat cizí batche, ale ne vlastní historické příspěvky.
 
-Celý batch kontroluje skutečně neautorský kontrolní agent. Jiné ID ani
-přejmenování původního autora nezávislost nedokazuje. Zaznamenej všechny
-původní i nové autory a skutečnou identitu, neautorství a samostatný report
-reviewera. Review porovná původní zdroj, hypotézy, všechny provider discharge,
-consumer a CI/audit přesného SHA. Kontrolní role nesmí psát implementaci.
+Čti skutečné připnuté matematické důkazy, kontrakty, notes a Lean signatury.
+Zachovej kvantifikátory, RAW/STRONG a AP/SAP/CCO, všechny skutečné providery
+a quotient-action povinnosti. Podmíněný provider není source instance.
+Žádné sorry/admit, nové axiomy, zesílené hypotézy ani změna source pinu.
+Importuj konkrétní Mathlib moduly/taktiky v konzumentech; veřejné moduly
+zahrň do CCO.lean. Zachovej toolchain, manifest, externí piny a axiom audit.
 
-Při nedostupnosti kontrolního runtime nesmí autor přejmenovat sebe ani použít
-cizí nehotové review. Použij výslovný append-only reviewer_recovery manifest,
-nezávislou kontrolu opravného infrastrukturního PR, jediný zámek a přesný PR/main
-CI/audit. promote_reviewer atomicky aktivuje nové skutečné identity bez změny
-claimů, přijetí nebo autorství; teprve pak může začít jejich vlastní nové review.
+Ověř lean/lake proti připnutým verzím, manifest a malý inkrementální build.
+Lokální instalace a cache mohou být po restartu pryč. Při doložené síťové
+překážce neopakuj dlouhé stejné instalace: použij CI a nezávislou práci.
+Kořeny Mathlib cache zjisti tools/mathlib_cache_roots.py --include-provider
+--reject-broad; samotné cache get CCO.lean nestačí. Platné dependency cache
+zachovej; buildy a přesný transitive audit zůstávají povinné.
 
-Po oprávněném nezávislém schválení integruj automaticky: jediný integrační
-zámek i pro infrastrukturu, čerstvý main jako předek, schválený přesný PR head
-se zeleným CI/auditem; potom merge se zachováním historie a zelený výsledný
-main před ACCEPTED. Změna headu ruší schválení. Při selhání merged-main drž
-zámek a vrať konkrétní problém přípravnému projektu. Větev coordination nikdy
-nemerguj do main. Otevřené důkazy neoznačuj za dokončené.
+Ukládej koherentní commity, per-package source map a přesné otevřené povinnosti.
+Nečekej nečinně na jeden CI checkpoint. Po skutečném neautorském schválení
+integruj autonomně pod jediným STATE zámkem: main jako předek schváleného
+headu, čerstvé refs, expected-head merge se zachováním historie, CI a audit
+výsledného mainu, teprve pak ACCEPTED. Head změna vyžaduje nový CI/review.
+Merged-main selhání drží zámek. Nepiš přímo do mainu, nemerguj coordination
+do mainu a nepřepisuj veřejný BOARD/STATE soukromou přípravnou verzí.
+
+Rutinní práce a schválená integrace nepotřebují další souhlas uživatele.
+Skutečné matematické mezery, změny zdroje/API/toolchainu a nevyřešené integrační
+selhání vrať přípravě. Před koncem tahu ulož WIP a sděl konkrétní stav.

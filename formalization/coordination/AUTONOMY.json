@@ -1,12 +1,15 @@
 {
   "protocol_version": 3,
-  "revision": 12,
+  "revision": 13,
   "state_branch": "coordination",
   "state_file": "formalization/coordination/STATE.json",
   "registered_projects": [
     1,
     2,
-    3
+    3,
+    4,
+    5,
+    6
   ],
   "team_project_id": 3,
   "team_name": "cco-work-team",
@@ -113,6 +116,42 @@
         "integrate"
       ],
       "historical_author_projects": []
+    },
+    "chat-1": {
+      "identity": "chat-project:cco-chat-1",
+      "roles": [
+        "coordinate",
+        "implement",
+        "review",
+        "integrate"
+      ],
+      "historical_author_projects": [
+        4
+      ]
+    },
+    "chat-2": {
+      "identity": "chat-project:cco-chat-2",
+      "roles": [
+        "coordinate",
+        "implement",
+        "review",
+        "integrate"
+      ],
+      "historical_author_projects": [
+        5
+      ]
+    },
+    "chat-3": {
+      "identity": "chat-project:cco-chat-3",
+      "roles": [
+        "coordinate",
+        "implement",
+        "review",
+        "integrate"
+      ],
+      "historical_author_projects": [
+        6
+      ]
     }
   },
   "notes": [
@@ -122,9 +161,35 @@
     "Repairs and completion have priority. Do not claim backups speculatively or build on unaccepted dependencies.",
     "The reviewer must actually be a non-author of the complete package, including original implementation; role labels or a new ID do not establish independence.",
     "After substantive independent exact-head approval, integrate automatically under the sole lock, with exact-head CI/audit and green resulting main CI/audit.",
-    "Existing v2 state is read-only except the authorized one-time handoff and infrastructure locking during deployment."
+    "Existing v2 state is read-only except the authorized one-time handoff and infrastructure locking during deployment.",
+    "Work-specific historical notes above remain preserved; STATE.execution_mode selects execution_profiles. In chat mode each registered Chat project owns one unresolved batch and reviews only work it never authored."
   ],
   "legacy_accepted_records": {
     "B001": "bd99297a86920f4719bc4f089858f8736dbd9324f28dcef7ff430a51799857c9"
+  },
+  "chat_project_actors": {
+    "4": "chat-1",
+    "5": "chat-2",
+    "6": "chat-3"
+  },
+  "execution_profiles": {
+    "work": {
+      "project_ids": [
+        3
+      ],
+      "default_active_batches": 2,
+      "maximum_active_batches": 3,
+      "per_project_limit": 3
+    },
+    "chat": {
+      "project_ids": [
+        4,
+        5,
+        6
+      ],
+      "default_active_batches": 3,
+      "maximum_active_batches": 3,
+      "per_project_limit": 1
+    }
   }
 }

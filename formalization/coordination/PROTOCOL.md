@@ -1,172 +1,168 @@
-# One Work team — protocol 3
+# CCO coordination — protocol 3, execution profiles
 
-The author confirmed both original formalization projects stopped and authorized
-this migration on 28 October 2026. One Work team (project 3, coordinator actor
-`root`) takes over completion of B002 and B003, preserving both branches,
-original authorship, history and all newer WIP. Original project IDs 1 and 2
-are historical identities; they are not independent active review workers.
-The preparation project continues to prepare mathematical batches.
+This public protocol supports one Work team and a pool of genuinely separate
+Chat projects. The author authorized the Chat/Work tooling transition on
+31 October 2026. Source remains `490c3f36d85db5a0b3ced0598e6c431825254ec5`;
+mathematical contracts, accepted APIs, toolchain and external provider pins
+are unchanged. Projects 1/2 are stopped historical authors. Work is project3;
+fresh Chat projects are registered in AUTONOMY, initially4/5/6, never aliases
+of those older projects. Existing package records/history are preserved.
 
-## Authority and deployment
+## Authority
 
-Current main `BOARD.json` is the mathematical catalogue: exact package claims,
-source pin, contracts and accepted-dependency DAG. Its allocation fields remain
-a historical bootstrap checkpoint. `AUTONOMY.json` defines the Work team,
-roles and limits. Only `coordination:formalization/coordination/STATE.json`
-is live ownership/review/acceptance. Read it at an exact observed ref. Never
-merge that branch into main or replace public BOARD/STATE from private templates.
+Main BOARD.json is the mathematical catalogue and accepted-dependency DAG,
+not live allocation. AUTONOMY.json registers immutable actor identities,
+roles, released IDs and execution_profiles. Top-level two/three capacity and
+historical Work notes describe the Work profile. Only the exact observed
+coordination:formalization/coordination/STATE.json is live ownership, review,
+execution_mode, claims_paused, integration lock and acceptance. STATUS.json
+is a derived index and gives no lease. Broker receipts expose a small exact
+actor-relevant state_view bound to the full STATE Git blob, so normal Chat
+work need not repeatedly import the entire historical ledger. Audits/handovers
+still read the whole canonical STATE; a view alone creates no claim. Never reset STATE, copy a private
+preparation BOARD over the public catalogue, or merge coordination into main.
 
-Source remains `490c3f36d85db5a0b3ced0598e6c431825254ec5`. This organizational
-migration changes no mathematical contract, accepted API, source or toolchain.
-The author's express authorization permits the coordinator to deploy it without
-another permission request. Existing v2 STATE remains readable, but allows only
-the authorized atomic handoff and infrastructure serialization until migrated.
-A fresh non-author reviewer checks the policy diff and tests before deployment.
+Use tools/coordination_queue.py for pure validated proposals. An effective
+transition requires a commit whose sole parent is the exact observed
+coordination head and a non-force ref update, followed by full readback.
+On a CAS collision reload and recompute; never force or reparent the same
+proposal. Manual transitions replace only STATE. The request broker may also
+write the matching request receipt and derived STATUS in the same commit;
+its path allowlist never permits source, policy or BOARD changes.
 
-Publish reviewed policy to main under the sole integration lock, validate its
-exact PR head and resulting main CI/audit, then atomically hand off BOTH live
-claims in one `handoff` event against the observed coordination parent. Keep
-claim revisions, bases, original authors, branch/PR/head, actual CI status,
-last green checkpoint and old history. A failing WIP head is preserved alongside
-its green checkpoint, never reset to it. The event is not a SUBMITTED assertion.
+## Profiles and work selection
 
-## Additive release of prepared packages
+In work mode, one project3 team owns implementations: default two unresolved
+batches total, at most three. Third-slot work must be actually independent,
+with a dedicated implementer, disjoint work items and a durable report bound
+to both existing exact heads. No speculative backup claim.
 
-A private preparation snapshot is not a live release. To promote concrete
-prepared contracts, the coordinator uses a reviewed infrastructure PR that
-appends catalogue rows and released IDs, preserving all old rows, metadata,
-source pin, roles and capacity rules. This operation requires no active
-claims. Do not copy a private catalogue, policy or STATE over the public ones.
+In chat mode, every fresh registered project owns at most one unresolved
+batch. The current profile initially has three projects/slots. SUBMITTED,
+REVIEWING, INTEGRATING, CHANGES_REQUESTED and BLOCKED all occupy the owner's
+slot. A Chat project's implementation and review capabilities are separated
+PER PACKAGE by actual complete authorship, stable identity and historical
+project provenance, rather than pretending a renamed author is independent.
+A new chat in the same project inherits that project's authorship.
 
-Read the old catalogue/policy at the actual integration base and the new
-pair at the reviewed head. `registry_promotion_manifest` binds both complete
-snapshot pairs and the added IDs by canonical SHA256 digests. Include that
-manifest in `start_infrastructure`, using the new helper with explicit OLD
-catalogue/policy paths; the single lock retains its exact-head independent
-review and successful CI/audit. Normal state validation remains strict.
+Choose the lowest released AVAILABLE package whose entire dependency DAG is
+ACCEPTED on actual main with successful actual-main build/audit. A green or
+approved unmerged sibling is not a dependency. Complete and repair first.
+Finish owned locks and leased reviews; repair your own work; perform eligible
+non-author review while waiting for CI; continue your own implementation;
+otherwise claim only the actual free slot. Do not repair another project's
+branch without a truthful formal handover. Claims do not expire on silence.
 
-After the expected-head history-preserving merge, require green CI/audit
-on the actual resulting main. Then `promote_registry` uses explicit old/new
-snapshots to finish this same lock AND append only unowned AVAILABLE records
-in one exact-parent non-force CAS. It advances the policy revision and keeps
-every previous claim, acceptance, author and history entry unchanged. Do not
-finish the infrastructure lock separately or start implementation before
-that public transition. During the catalogue/STATE deployment interval the
-lock remains held; ordinary operations reject mismatched registries.
+A stopped idle Chat project needs no policy deletion. It must first have no
+own claim, live review lease or integration lock. Registrations/authorship
+remain. Adding another genuine project uses the tested append-only profile
+proposal/generator; existing actor identities and Work limits never change.
+See EXECUTION_PROFILES.md and CHAT_PROJECTS.md for concrete instructions.
 
-## Recovery of an unavailable reviewer
+## Publication, proofs and control
 
-An unavailable review runtime does not authorize an author to review, an
-identity alias or reuse of an incomplete review. A coordinator may deploy a
-narrow append-only recovery PR under the same single infrastructure lock.
-Preserve every old actor, policy field, catalogue row, claim and acceptance;
-advance the policy revision once and add only one or two genuinely fresh
-review-only/integrator identities. Record the old actual identity, concrete
-failure and retry evidence in a durable report. Verify each new reader is a
-non-author of both this infrastructure and every active batch.
+Read actual pinned source proofs/notes/contracts, current code and exact Lean
+signatures, not only PR descriptions. Preserve exact quantifiers, RAW/STRONG,
+AP/SAP/CCO and real quotient actions. A conditional provider is unfinished
+until the required source instance is proved; source-conditional theorems
+keep their actual explicit hypotheses. No sorry/admit/sorryAx, new axiom,
+missing provider or disguised stronger premise may complete a contract.
+Every public module is imported from CCO.lean. Preserve the transitive
+propext/Classical.choice/Quot.sound allowlist audit.
 
-`reviewer_recovery_manifest` binds the unchanged complete old/new catalogue,
-both complete policies, unavailable actor and actual fresh infrastructure
-reader. It permits only this exact actor addition. During `start_infrastructure`,
-validate STATE against the OLD policy; the manifest reconstructs the sole
-prospective policy for checking the fresh reader's substantive exact-head
-review of this recovery PR. This is the narrowly scoped bootstrap exception
-to pre-existing reviewer registration. It confers no package approval and
-requires active batches to have no review lease or approval to transfer.
-Keep all normal validators strict and do not combine recovery with a release.
+Use specific Mathlib/tactic imports in their consumers, pinned toolchain and
+manifest, small increments and coherent source commits. Keep one publisher
+per PR branch and separate worktrees/build outputs for concurrent authors.
+Verify imports against affected consumers. Discover actual external Mathlib
+roots before targeted cache requests; cache get CCO.lean is insufficient.
+Document concrete network failures and use remote CI/independent work rather
+than repeating unchanged long installation attempts.
 
-After the expected-head history-preserving merge and green actual resulting
-main CI/audit, `promote_reviewer` validates explicit old/new snapshots against
-that same lock, advances the live policy revision and finishes the lock in
-one exact-parent CAS. Every package record remains exactly equal as parsed
-JSON; append only the deployment history/infrastructure receipt. A
-failed main keeps the lock. Only then may newly registered readers acquire
-ordinary fresh review leases with their actual identities and own whole-batch
-reports. An unavailable or partial old review never supplies their review.
+Keep every old and new contributor identity before submission, including
+historical projects. record_authorship appends, never erases. Preserve native
+history, newer WIP and green checkpoints. checkpoint records actual observed
+head/PR CI without claiming completion or freeing a slot. SUBMITTED requires
+all actual contract obligations, exact green PR build/audit and a durable
+submissions/Bxxx.md source-to-Lean map with actual hypotheses/providers.
 
-## Work selection and capacity
+The reviewer must personally read the whole package/source/providers/consumer
+and exact CI, be an actual non-author of all its history and design, and
+publish their own actual-identity/non-authorship report for that exact SHA.
+This is not proved by labels, project numbers, green CI or a borrowed report.
+A former author cannot review their own work under a new actor. Work uses a
+separate actual review-only agent. Chat projects may cross-review only
+packages they never authored or directed. If a reviewer writes repairs,
+record that authorship and obtain a genuinely different non-author reader.
+Head changes invalidate approval; reread true deltas and require fresh CI.
+Only pinned immutable legacy ACCEPTED records keep the old review format.
 
-The default is **two active batches for the whole Work team**. Every unresolved
-claimed batch counts, including IN_PROGRESS, SUBMITTED, REVIEWING, INTEGRATING,
-CHANGES_REQUESTED and BLOCKED. Submission does not release a batch slot.
-Repairs and completion take priority. Do not accumulate backup claims while
-waiting for one CI run; continue independent work inside current batches.
+After valid independent approval, integrate autonomously under the ONE STATE
+integration lock shared by packages and infrastructure. Current main must be
+an ancestor of the approved head; reread main/PR/lock immediately before the
+expected-head history-preserving merge. No squash/rebase. If refs move, update
+branch, review the resulting head, rerun CI and reacquire the lock. Cancel only
+with actual evidence the PR is unmerged. A merged-main failure keeps the lock
+and remains unaccepted. Only green build AND transitive audit on the ACTUAL
+resulting main SHA permits accept/finish and dependency release.
 
-A third active batch is exceptional: first verify every prerequisite ACCEPTED
-on current main, then record a concrete disjoint work plan, actual implementing
-actor, work items and why the work can be active independently of both current
-batches. `claim_third` records this durable evidence. A third slot is not an
-idle reservation. Four unresolved batches are never allowed. B006/B017 are
-backups only after this fresh eligibility/capacity check; do not preclaim them.
+## Chat request bridge
 
-New claims select the lowest released AVAILABLE dependency-ready number.
-Submitted, approved or green sibling branches never supply prerequisites.
-New implementations start from current green main after effective CAS claim.
-Existing handoff branches retain their history. Claims do not auto-expire.
-`tools/coordination_queue.py` validates proposals; it cannot verify truth of
-external evidence. An effective event requires exact-parent non-force CAS.
-On collision reload policy, state and actual heads, then recompute; never force,
-reparent an old proposal, overwrite history or speculate before ownership.
+Chat may append unique JSON files to coordination-requests. Trusted main code
+validates the latest full ledger and real CI/PR evidence, then publishes an
+exact-parent non-force CAS with a durable receipt. claim_next selects fresh
+work only at processing time. Specific events pin expected STATE revision;
+rejected/no_change/missing receipts are not claims. Request paths are immutable
+and replay is idempotent. Every workflow run drains the whole latest inbox,
+including requests whose pending GitHub run was replaced. The broker executes
+no inbox code and does no mathematical approval or source merge. Full protocol
+also remains usable with the offline Python helper. See CHAT_REQUESTS.md.
 
-## Proofs, reports and authorship
+## Runtime switches and WIP ownership
 
-Read actual pinned source proofs, notes, package contracts and Lean signatures.
-Keep exact quantifiers and RAW/STRONG, AP/SAP/CCO/NR2 and actual quotient-action
-distinctions. A conditional provider is not a discharged source instance.
-No sorry/admit/sorryAx, new mathematical axiom or disguised stronger premise
-may complete a contract. Import all public modules from CCO.lean; retain the
-transitive allowlist audit (propext, Classical.choice, Quot.sound).
+Only an actual user instruction authorizes mode changes. pause_claims stops
+new claims while existing proof/review/CI work can finish. With no active
+claim or integration lock, switch_mode changes only the execution profile,
+pause flag and appended event/history, preserving every package record.
 
-Use targeted Mathlib and tactic imports in consumers. Respect pinned toolchain
-and manifest. Build small increments; investigate actual external Mathlib roots
-before targeted cache requests. Record concrete network failures and use remote
-CI and independent work, without repeating unchanged long failed attempts.
+For WIP, pause first, publish/checkpoint ALL latest work including failing
+heads and actual last green information, obtain actual stop acknowledgement
+from all old workers, finish any integration lock, then handover_mode transfers
+EVERY active claim to permitted target owners in one CAS. Preserve branch,
+PR/head, original claim/base/CI, all old authors and entire old record/history.
+New owners are added conservatively to authorship. Clear effective review and
+approval and return to IN_PROGRESS; the old review remains only in history.
+Do not reset to an older green head. Chat targets get at most one claim each;
+three Work claims still need the genuine anchored third-slot plan. More claims
+must first drain to target capacity. See RETURN_TO_WORK.md for both directions.
 
-Keep resumable commits, current reports and per-package `submissions/Bxxx.md`:
-source-to-Lean map, actual hypotheses, every open provider, consumer, exact head,
-CI/audit and feedback. Publish moving owned IN_PROGRESS WIP heads and actual
-success/failure CI with `checkpoint`, preserving claim/provenance and the
-existing PR; this is not submission and releases no slot. Record every actual contributor with `record_authorship`
-before submission. Preserve legacy-project-1/2 authorship through handoff.
-SUBMITTED requires complete contract discharge and successful exact-head CI
-and audit; green alone never completes a batch. Refreshing a head clears review.
+## Reviewed policy deployments and catalogue releases
 
-## Separate non-author control and automatic integration
+Initial profile deployment is a reviewed infrastructure PR with no active
+claims. execution_profile_manifest binds unchanged complete BOARD and complete
+old/new policies; only fresh Chat actor/project pairs, their explicit profiles
+and a scope note may be appended. Preserve every old role/identity, source,
+release and Work rule. Later worker additions preserve live claims and mode.
+Use the NEW helper with OLD snapshots for start_infrastructure. After exact PR
+review/CI, expected-head merge and green actual main CI, promote_profiles with
+explicit old/new snapshots advances policy revision and ends the SAME lock
+atomically. It changes no package record; normal revision checks stay strict.
 
-Each registered review actor is a separate review-only agent with its actual
-identity recorded in AUTONOMY. The original `independent_review` identity is
-retained in policy and history when a fresh reader is added. Every reader must
-have written none of the complete batch,
-including earlier projects' implementation, and must not participate in its
-implementation decisions. Different IDs, agents or role labels alone do not
-establish this. A former project 2 author cannot review B003 by renaming itself.
-The checker compares contributor identities and original author projects, and
-requires a durable actual-identity/non-authorship report. These assertions must
-also be checked in reality; the validator cannot certify human provenance.
-If the reviewer contributes code, obtain a genuinely fresh non-author reviewer
-and update policy/provenance; do not erase authorship to reuse its approval.
-Only immutable previously ACCEPTED records retain their pre-v3 review format.
+Prepared-package release uses registry_promotion_manifest and promote_registry:
+no active claims, append only concrete new contracts/released IDs and AVAILABLE
+live records, preserve all old catalogue/policy/claim/acceptance/history data.
+A private preparation snapshot is never a public release. Keep the reviewed
+complete old/new snapshots and main CI in the sole infrastructure lock.
 
-Review the whole package against pinned source, real signatures, all provider
-discharge paths, imports, consumer and exact-head CI/audit. Record a substantive
-review and its report for that SHA. Reject missing providers; repairs take
-priority. A review-only agent may control either batch in the same Work team.
+Unavailable actual review runtimes use reviewer_recovery_manifest and
+promote_reviewer. Preserve old identities/partial reports, document actual
+failure/stop and retries, append only one/two genuine fresh non-author readers,
+and bind complete old/new policies plus unchanged BOARD. The narrow bootstrap
+allows that actual fresh reader to review ONLY its recovery PR before formal
+activation, never to provide a package approval. No active review lease or
+approval may transfer. Finish after actual resulting-main CI in one CAS.
 
-After valid independent approval, the coordinator performs routine integration
-automatically. Acquire the **single** STATE integration lock (packages and
-infrastructure share it), check current main is an ancestor of the approved
-exact head, and re-read both refs before merging with expected-head SHA and
-history preserved. If main/head moves, update branch, review the resulting
-head and rerun its CI; old green evidence cannot certify it. A pre-merge race
-may cancel the lock only with explicit evidence the PR was not merged.
-
-Wait for green build AND axiom audit on the actual resulting main SHA. Only
-then ACCEPTED releases dependencies and the lock. Infrastructure completion
-records the same main evidence. A merged-main failure keeps the lock and
-package unaccepted; checkpoint the precise failure and return it to the
-preparation project. Independent existing work continues. Never force-reset,
-roll back others' work or certify a failure to clear the queue.
-
-Mathematical gaps, source/toolchain changes, accepted breaking APIs and
-unresolved integration failure return to the preparation project. Ordinary
-implementation difficulty, repairs and approved integration are autonomous.
+These deployment kinds are mutually exclusive and generic finish cannot
+complete their locks. A failed main remains locked; no shortcut or revision
+mismatch is accepted. Genuine mathematical gaps, source/toolchain/accepted API
+changes and unresolved merged-main failure return to preparation. Routine
+implementation, repairs and valid integration need no extra user permission.

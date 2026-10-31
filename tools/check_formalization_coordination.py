@@ -189,6 +189,10 @@ def generated(board):
                 for p in board['packages']):
             path = DIRECTORY / f"PROJECT_{project['id']}_INSTRUCTIONS.md"
             files[str(path)] = render_instructions(board, project['id'])
+    if board.get('phase') == 'READY' and board.get('protocol_version') in {2, 3}:
+        import coordination_profiles
+        policy = json.loads((ROOT / DIRECTORY / 'AUTONOMY.json').read_text())
+        files.update(coordination_profiles.generated_files(policy, board['public_repository']))
     return files
 
 

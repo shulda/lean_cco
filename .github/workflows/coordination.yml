@@ -1,0 +1,32 @@
+name: Coordination requests
+
+on:
+  push:
+    branches: [coordination-requests]
+    paths: ['coordination/requests/**/*.json']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+  pull-requests: read
+
+# GitHub may replace a pending run with a newer one. Every run drains the
+# entire latest inbox, so each still-unreceipted request remains available.
+concurrency:
+  group: cco-coordination-requests
+  cancel-in-progress: false
+
+jobs:
+  coordinate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
+      - name: Apply validated requests with exact-parent non-force CAS
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 tools/coordination_broker.py
