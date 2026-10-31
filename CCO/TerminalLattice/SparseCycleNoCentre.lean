@@ -60,7 +60,7 @@ theorem oldSparseWordDiagram_centre_free_graph_cycle
     intro x y hxy
     apply B.vertices.injective
     apply Fin.ext
-    exact congrArg Fin.val hxy
+    simpa only [toGraph] using congrArg Fin.val hxy
   refine ⟨⟨toGraph, hInj⟩, ?_⟩
   intro k
   rcases oldSparseWordDiagram_projected_edges_star_or_graph
@@ -87,17 +87,17 @@ theorem oldSparseWordDiagram_centre_free_graph_cycle
     rcases B.endpoints k with ⟨hStart,hEnd⟩ | ⟨hStart,hEnd⟩
     · have hVstart : toGraph k = x := by
         apply Fin.ext
-        exact congrArg Fin.val (hStart.trans hLeft)
+        simpa [toGraph, oldSparseRoot] using congrArg Fin.val (hStart.trans hLeft)
       have hVend : toGraph (CCO.cyclicNext B.length_pos k) = y := by
         apply Fin.ext
-        exact congrArg Fin.val (hEnd.trans hRight)
+        simpa [toGraph, oldSparseRoot] using congrArg Fin.val (hEnd.trans hRight)
       simpa [hVstart,hVend] using hAdj
     · have hVstart : toGraph k = y := by
         apply Fin.ext
-        exact congrArg Fin.val (hStart.trans hRight)
+        simpa [toGraph, oldSparseRoot] using congrArg Fin.val (hStart.trans hRight)
       have hVend : toGraph (CCO.cyclicNext B.length_pos k) = x := by
         apply Fin.ext
-        exact congrArg Fin.val (hEnd.trans hLeft)
-      simpa [hVstart,hVend] using W.graph.symm hAdj
+        simpa [toGraph, oldSparseRoot] using congrArg Fin.val (hEnd.trans hLeft)
+      simpa [hVstart,hVend] using W.graph.adj_symm hAdj
 
 end CCO.TerminalLattice
