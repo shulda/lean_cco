@@ -154,3 +154,20 @@ personally recheck actual public STATE399 before expected-head preserving
 merge; actual resulting-main CI/audit must then pass before the single atomic
 manifest-bound `promote_registry` adds only16 unowned AVAILABLE records. All
 old acceptances/history, identities, Chat mode and source pin remain intact.
+
+## Actual public pre-merge recheck
+
+I personally fetched the whole public STATE399 at coordination
+`f33b39a3bb150ea59288e86766cb02aacfc730bd` after my actual approval report was
+published at`cc3f80b2a4be39e49237dc7d9c98e0147d912079`. The entire public lock
+and new event exactly equal the approved candidate; all48 records, the full
+old history prefix and every other global field equal STATE398, including
+Chat mode, while policy_revision remains13. I compared the published report's
+entire text with my own final committed report: exactly equal and unaltered.
+
+Fresh independent GitHub reads before merge confirmed PR66 OPEN/unmerged at
+approved head0ccc373b/base269b1acc, the same synthetic checkout37ffbeea, and
+actual main269b1acc unchanged. I expressly confirmed the actual approval
+remains valid for the expected-head preserving merge under this single lock.
+The lock must remain until green actual-main CI/audit and atomic promotion;
+no mathematical acceptance or dependency release was pre-asserted.
