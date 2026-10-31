@@ -105,6 +105,8 @@ noncomputable def original_saturated_exact_arrow
     target := by rw [hCSym]; exact hCC
   }
 
+include H cco
+
 /-- The represented source C^2 = G identity for the original full
 exact gate-correspondence C=G;D, without replacing the corresponding
 whole orbital by a function. -/
