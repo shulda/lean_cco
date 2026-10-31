@@ -98,15 +98,18 @@ theorem masked_three_point_legal
     · simpa using hz
   · intro n m
     fin_cases n <;> fin_cases m
-    · simpa using (M.identity i ε ε).mpr ⟨rfl, hv⟩
+    · have hd : S.colour a a = none := (S.colour_none_iff a a).mpr rfl
+      simpa [hd] using (M.identity i ε ε).mpr ⟨rfl, hv⟩
     · simpa using hab
     · simpa using hac
     · simpa using allowed_reverse_real S a b ε η hab
-    · simpa using (M.identity j η η).mpr ⟨rfl, hw⟩
+    · have hd : S.colour b b = none := (S.colour_none_iff b b).mpr rfl
+      simpa [hd] using (M.identity j η η).mpr ⟨rfl, hw⟩
     · simpa using hbc
     · simpa using allowed_reverse_real S a c ε θ hac
     · simpa using allowed_reverse_real S b c η θ hbc
-    · simpa using (M.identity k θ θ).mpr ⟨rfl, hz⟩
+    · have hd : S.colour c c = none := (S.colour_none_iff c c).mpr rfl
+      simpa [hd] using (M.identity k θ θ).mpr ⟨rfl, hz⟩
 
 /-- Full C20: one globally markable actual old triangle becomes a literal
 marked-limit triangle, with all colours and all phase names retained, and
