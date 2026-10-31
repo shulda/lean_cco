@@ -86,9 +86,10 @@ def validate_provider_support(provider, item, exported):
 def validate_external_providers(module):
     """Validate explicit pending external inputs, never compiled local proofs.
 
-    Only the published, versioned arXiv-provider shape currently needed by
-    B027 is supported. Activating a compiled adapter requires a separate
-    reviewed contract/implementation change, not a metadata status shortcut.
+    Published inputs retain either their versioned arXiv contract or the
+    precise identified factorization-forest citation. Activating a compiled
+    adapter requires a separate reviewed contract/implementation change,
+    not a metadata status shortcut.
     """
     providers = module.get('external_providers', [])
     if not isinstance(providers, list):
