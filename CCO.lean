@@ -1649,3 +1649,4 @@ import CCO.TerminalLattice.ModularDiamond
 import CCO.TerminalLattice.M3CCOObstruction
 import CCO.TerminalLattice.QuotientWalk
 import CCO.TerminalLattice.ModularNormalization
+import CCO.TerminalLattice.NonDistributive
