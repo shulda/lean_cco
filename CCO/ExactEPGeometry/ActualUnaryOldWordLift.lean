@@ -93,6 +93,7 @@ theorem lift_old_word_with_witness :
         (ProjectedWords.forgetWord S T (SourceAge.actualProjection I) V) =
           RawWord.atom a tail
       rw [hV]
+      rfl
 
 end
 end CCO.ExactEPGeometry.ActualUnaryOldWordLift
