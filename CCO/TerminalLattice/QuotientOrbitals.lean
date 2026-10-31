@@ -153,11 +153,15 @@ def originalQuotientEqToColour
     ColourEq S i := by
   letI : MulAction G (Quotient J.val) :=
     originalQuotientAction S H J
-  refine ⟨Setoid.comap (Quotient.mk J.val) E, ?_⟩
+  refine ⟨{
+    r := fun x y => E (Quotient.mk J.val x) (Quotient.mk J.val y)
+    iseqv := ⟨fun _ => E.refl _, fun h => E.symm h,
+      fun h k => E.trans h k⟩
+  }, ?_⟩
   apply groupInvariant_colourInvariant S H
   intro g x y hxy
   have h := hE g (Quotient.mk J.val x) (Quotient.mk J.val y) hxy
-  simpa [Setoid.comap, originalQuotient_mk_smul S H J] using h
+  simpa only [originalQuotient_mk_smul S H J] using h
 
 /-- A FULL original cover has no intermediate G-invariant quotient
 equivalence: its old pullback is literally J or literally K.
@@ -178,7 +182,7 @@ theorem originalFullCover_quotient_eq_or_upper
   let P : ColourEq S i := originalQuotientEqToColour S H J E hE
   have hP (x y : X i) :
       P x y ↔ E (Quotient.mk J.val x) (Quotient.mk J.val y) := by
-    simp [P, originalQuotientEqToColour, Setoid.comap]
+    rfl
   have hJP : J ≤ P := by
     intro x y hxy
     apply (hP x y).2
