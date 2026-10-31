@@ -42,6 +42,7 @@ theorem original_atom_neighbour_avoiding
   let w₀ : X i := g • p
   have hwz : S.atomRel d w₀ z := by
     have hmove := S.colourInvariant_of_homogeneous H g p q
+    change S.colour w₀ z = some d
     simpa only [w₀, hgq] using hmove.trans hpq
   have hwne : w₀ ≠ z := by
     intro h
@@ -81,6 +82,7 @@ theorem original_atom_neighbour_avoiding
       heq_eq_eq, true_and] using hkw
   have hyz : S.atomRel d y z := by
     have hm := S.colourInvariant_of_homogeneous H k w₀ z
+    change S.colour y z = some d
     simpa only [hkwy, hkz] using hm.trans hwz
   refine ⟨y, ?_, hyz⟩
   intro h
