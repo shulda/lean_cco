@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "request_id": "20261031_1347_chat2_B062_C30joins_green_91ac7b5f",
+  "actor_id": "chat-2",
+  "project_id": 5,
+  "policy_revision": 14,
+  "operation": "event",
+  "expected_revision": 425,
+  "event": "checkpoint",
+  "data": {
+    "package_id": "B062",
+    "head_sha": "4bcc6ee9a36b6f5d17f1e78d265b0f6c4ce3a912",
+    "pr_number": 68,
+    "observed_ci": {
+      "run_id": 41202338460,
+      "head_sha": "4bcc6ee9a36b6f5d17f1e78d265b0f6c4ce3a912",
+      "conclusion": "success",
+      "axiom_audit": "allowlist"
+    }
+  }
+}
