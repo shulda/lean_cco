@@ -1,0 +1,275 @@
+{
+  "schema_version": 1,
+  "pr_number": 66,
+  "repository": "shulda/lean_cco",
+  "source_head": "0ccc373bb554ffd6de13d03b1ec5b80bae41cdaa",
+  "native_source_head": "1707317881f7ee1eaa2a0cece63725ec83e36d94",
+  "approved_tree": "6eb9502b7322e10dc36e2766a2f920db235fac38",
+  "previous_main": "269b1acc05c64aca74c2bc5f238b9c75fb3af223",
+  "integration_commit": "f42f098e852b4cea8cb09b9ada6b1145a6138dd4",
+  "source_ci": {
+    "run_id": 41177115150,
+    "run_attempt": 1,
+    "head_sha": "0ccc373bb554ffd6de13d03b1ec5b80bae41cdaa",
+    "conclusion": "success",
+    "axiom_audit": "allowlist",
+    "job_id": 124466845080,
+    "tests": 187,
+    "declarations": 28723,
+    "guards": [
+      {
+        "parts": 1619,
+        "source": 1619
+      },
+      {
+        "parts": 1619,
+        "source": 1619
+      },
+      {
+        "parts": 1619,
+        "source": 1619
+      }
+    ],
+    "provider_guards": [
+      {
+        "parts": 269,
+        "source": 269,
+        "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+      },
+      {
+        "parts": 269,
+        "source": 269,
+        "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+      },
+      {
+        "parts": 269,
+        "source": 269,
+        "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+      },
+      {
+        "parts": 269,
+        "source": 269,
+        "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+      }
+    ],
+    "ramsey_guards": [
+      {
+        "parts": 106,
+        "source": 106,
+        "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+      },
+      {
+        "parts": 106,
+        "source": 106,
+        "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+      },
+      {
+        "parts": 106,
+        "source": 106,
+        "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+      },
+      {
+        "parts": 106,
+        "source": 106,
+        "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+      }
+    ],
+    "build_jobs": [
+      1330,
+      1182,
+      4293,
+      4293,
+      6
+    ],
+    "fresh_cco_modules": [],
+    "url": "https://github.com/shulda/lean_cco/actions/runs/41177115150"
+  },
+  "source_pin": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+  "preparation_commit": "30abcca888c0348f6b1ce5a32581b9250e5f7ae5",
+  "lock_commit": "f33b39a3bb150ea59288e86766cb02aacfc730bd",
+  "review": {
+    "actual_actor": "reviewer_recovery_control",
+    "actual_identity": "/root/reviewer_recovery_control",
+    "approved_report_native": "5a1635415c9d4c35754c145c326a3abf1ce664d0",
+    "approval_report_coord": "cc3f80b2a4be39e49237dc7d9c98e0147d912079",
+    "actual_premerge_report_native": "b5a5722061c0493573a9f308366e91470bd9c7f4",
+    "actual_premerge_report_coord": "944fca0058e66aeaba2467511cf5df178ad12d9b",
+    "final_native_report": "e16761f9aa21c811a1ee893b0fe386c25536fa6b",
+    "final_public_report": "337978d087ec111116a24291f2bd934fbff56159",
+    "final_coordination_report": "fc796e591f58934caa0f5f3f72de2210cc7910ee"
+  },
+  "not_a_mathematical_acceptance": true,
+  "main_ci": {
+    "run_id": 41177688044,
+    "run_attempt": 1,
+    "head_sha": "f42f098e852b4cea8cb09b9ada6b1145a6138dd4",
+    "conclusion": "success",
+    "axiom_audit": "allowlist",
+    "job_id": 124468532094,
+    "tests": 187,
+    "declarations": 28723,
+    "guards": [
+      {
+        "parts": 1619,
+        "source": 1619
+      },
+      {
+        "parts": 1619,
+        "source": 1619
+      },
+      {
+        "parts": 1619,
+        "source": 1619
+      }
+    ],
+    "provider_guards": [
+      {
+        "parts": 269,
+        "source": 269,
+        "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+      },
+      {
+        "parts": 269,
+        "source": 269,
+        "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+      },
+      {
+        "parts": 269,
+        "source": 269,
+        "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+      },
+      {
+        "parts": 269,
+        "source": 269,
+        "pin": "cd358cde844d5419fd43f30c441511927e09142f"
+      }
+    ],
+    "ramsey_guards": [
+      {
+        "parts": 106,
+        "source": 106,
+        "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+      },
+      {
+        "parts": 106,
+        "source": 106,
+        "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+      },
+      {
+        "parts": 106,
+        "source": 106,
+        "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+      },
+      {
+        "parts": 106,
+        "source": 106,
+        "subtree": "374241ce3751715c90b12c0b071f36026819ad4a"
+      }
+    ],
+    "build_jobs": [
+      1330,
+      1182,
+      4293,
+      4293,
+      6
+    ],
+    "fresh_cco_modules": [],
+    "url": "https://github.com/shulda/lean_cco/actions/runs/41177688044"
+  },
+  "activation": {
+    "coordination": "bcaa04c329066df5ca0381b6bfcea35148d16b36",
+    "revision": 400,
+    "policy_revision": 14,
+    "execution_mode": "chat",
+    "claims_paused": false,
+    "integration_lock": null,
+    "unchanged_accepted_records": 48,
+    "new_unowned_available_records": 16,
+    "all_old_history_preserved": true
+  },
+  "health": {
+    "run_id": 41177954505,
+    "job_id": 124469312158,
+    "conclusion": "success",
+    "request_commit": "c84192178e2d70e4c65bb899177b2444c2147011",
+    "coordination_commit": "50d2d278514151b23af31e5ce125a949ae441645",
+    "receipt_path": "formalization/coordination/requests/results/root/20261031_release64_bootstrap_e8643a2c.json",
+    "receipt": {
+      "request_blob_sha": "7dbf0e9f2a14031514b0db92873a8a2117397bf3",
+      "request_path": "coordination/requests/root/20261031_release64_bootstrap_e8643a2c.json",
+      "coordination_parent": "bcaa04c329066df5ca0381b6bfcea35148d16b36",
+      "main_sha": "f42f098e852b4cea8cb09b9ada6b1145a6138dd4",
+      "status": "no_change",
+      "next_action": {
+        "action": "wait",
+        "reason": "This execution profile is inactive for this project."
+      },
+      "verified_main_ci": {
+        "run_id": 41177688044,
+        "run_attempt": 1,
+        "head_sha": "f42f098e852b4cea8cb09b9ada6b1145a6138dd4",
+        "conclusion": "success",
+        "axiom_audit": "allowlist",
+        "job_id": 124468532094,
+        "declarations": 28723,
+        "source_modules": 1619
+      },
+      "state_view": {
+        "authority": "coordination:formalization/coordination/STATE.json",
+        "state_blob_sha": "4ce1751cdb4443d998d431beb3bf905ec44a5a0a",
+        "revision": 400,
+        "policy_revision": 14,
+        "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+        "execution_mode": "chat",
+        "claims_paused": false,
+        "integration_lock": null,
+        "packages": {}
+      }
+    },
+    "state_revision_unchanged": 400,
+    "actual_state_blob_sha": "4ce1751cdb4443d998d431beb3bf905ec44a5a0a",
+    "actual_changed_files": [
+      "formalization/coordination/STATUS.json",
+      "formalization/coordination/requests/results/root/20261031_release64_bootstrap_e8643a2c.json"
+    ],
+    "log_characters": 11576,
+    "trusted_main_checkout_verified": true
+  },
+  "status": {
+    "not_an_ownership_lease": true,
+    "state_revision": 400,
+    "policy_revision": 14,
+    "execution_mode": "chat",
+    "claims_paused": false,
+    "main_sha": "f42f098e852b4cea8cb09b9ada6b1145a6138dd4",
+    "accepted": 48,
+    "integration_lock": null,
+    "available": [
+      "B050",
+      "B062"
+    ],
+    "next_actions": {
+      "root": {
+        "action": "wait",
+        "reason": "This execution profile is inactive for this project."
+      },
+      "chat-1": {
+        "action": "claim",
+        "package_id": "B050"
+      },
+      "chat-2": {
+        "action": "claim",
+        "package_id": "B050"
+      },
+      "chat-3": {
+        "action": "claim",
+        "package_id": "B050"
+      }
+    },
+    "active": {}
+  },
+  "result": "RELEASED_AND_INDEPENDENTLY_REVIEWED_WITH_REAL_BROKER_CHECK",
+  "claims_created_by_deployment": 0,
+  "existing_lean_declarations_unchanged": true,
+  "forest_external_code_imported": false
+}
