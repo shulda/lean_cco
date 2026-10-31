@@ -121,7 +121,11 @@ theorem lift_old_word_with_fixed_bits :
         have ht := congrArg (SourceAge.UnarySource.tag I i) hxz
         exact x.property.symm.trans (ht.trans z.property)
       subst bd
-      exact ⟨.nil ⟨i,bc⟩,rfl,Subtype.ext hxz⟩
+      refine ⟨RawWord.nil (⟨i,bc⟩ :
+        Rank.Child (SourceAge.UnarySource.β I)), ?_, ?_⟩
+      · rfl
+      · change x = z
+        exact Subtype.ext hxz
   | identity tail ih =>
       intro bc bd x z h
       obtain ⟨V,hV,hw⟩ := ih bc bd x z h
