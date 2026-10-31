@@ -1659,3 +1659,4 @@ import CCO.ExactEPGeometry.MarkedSupports
 import CCO.ExactEPGeometry.LargestLift
 import CCO.ExactEPGeometry.ExactEquivalenceBasics
 import CCO.ExactEPGeometry.MarkedEquivalences
+import CCO.ExactEPGeometry.MarkedJoins
