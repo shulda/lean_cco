@@ -79,6 +79,17 @@ then verifies a new otherwise eligible worker claim remains rejected as paused.
 The small fixture extraction retains the prior live-worker-addition checks.
 R2 is closed on this repaired source; I did not rerun tests.
 
+The author subsequently found and reproduced a related empty-pool mode-change
+edge in a later worker addition. I personally read the complete two-file
+`+10/-2` delta and behavioral test at native
+`623933bd44fa4173c6914bf2780d9a20cf3eb272`, public
+`865119c5261601c6ef56b4db9a231ab824cc2bc4`, tree
+`ce7202ad7a4e92b53c8da74c0ef2cfaa88ea021e`. All later additions now retain
+the current mode even with no active claims; changing mode requires its
+explicit runtime event. Initial reviewed profile installation still may select
+its target. This related issue was found and repaired by the author, not by me;
+I only independently read its actual delta. No source blocker remains.
+
 Other reviewed invariants at this checkpoint are consistent: fresh Chat
 identities4/5/6, all old actors/roles preserved, one unresolved batch per Chat,
 real per-package and historical non-authorship, original Work capacity,
@@ -88,13 +99,28 @@ complete stopped-worker WIP handover with old records/history preserved and
 effective approvals cleared. These source observations do not establish final
 approval while exact final-head evidence remains outstanding.
 
+## Exact final CI
+
+I personally fetched successful final-head CI41169070408/job124442885428 and
+its complete 3,060,696-character log, then inspected actual checkout, tests,
+generators/controls, build/audit and complete source/provider evidence.
+Checkout `fabf3e0972f462c9efc8eca7a50faa3489b6e146` has the final approved-source
+tree `ce7202ad7a4e92b53c8da74c0ef2cfaa88ea021e` and ordered parents baseline
+main700c12f7 and public final head865119c5. All182 tests passed; project build
+and audit each completed4293 jobs. The transitive audit checked28723 CCO
+declarations with only propext/Classical.choice/Quot.sound. All three project
+guards checked1619 actual parts and1619 current sources; all four EPPA guards
+checked269 modules at pin`cd358cde844d5419fd43f30c441511927e09142f`, and all four
+Ramsey guards checked106 at subtree`374241ce3751715c90b12c0b071f36026819ad4a`.
+There were no error annotations and zero rebuilt CCO modules. Earlier-head
+green runs were preserved but do not provide approval evidence for this head.
+
 ## Decision
 
-The complete source review, including both actual repair deltas, is finished
-with R1 and R2 closed and no remaining source blocker. Operational approval is
-withheld pending successful exact final public-head CI and genuine proposed/
-published infrastructure lock inspection. Earlier-head CI cannot certify the
-final repaired head. No conditional statement in this report may
+The complete source review, including both actual repair deltas and the author's
+related guard, is finished with R1 and R2 closed and no remaining source or CI
+blocker. Operational approval is withheld pending genuine proposed/published
+infrastructure lock inspection and final fresh refs. No conditional statement in this report may
 be used as operational approval. Mathematical sources, contracts, provider pins,
 toolchain, original Lean workflow and caches have not been changed in the read
 migration scope.
