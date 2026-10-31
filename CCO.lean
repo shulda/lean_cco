@@ -1679,3 +1679,5 @@ import CCO.ExactEPGeometry.ExactEquivalenceLattice
 import CCO.ExactEPGeometry.PrefixExactRestriction
 import CCO.ExactEPGeometry.PrefixExactRestrictionSurj
 import CCO.ExactEPGeometry.PrefixExactRestrictionJoin
+import CCO.ExactEPGeometry.ExactEquivalenceComplete
+import CCO.ExactEPGeometry.PrefixExactLargestLift
