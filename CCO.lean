@@ -1664,3 +1664,4 @@ import CCO.ExactEPGeometry.OriginalPowers
 import CCO.ExactEPGeometry.MarkedPowerLifts
 import CCO.ExactEPGeometry.ProjectedWords
 import CCO.ExactEPGeometry.ProjectedHistory
+import CCO.ExactEPGeometry.ActualUnaryTrace
