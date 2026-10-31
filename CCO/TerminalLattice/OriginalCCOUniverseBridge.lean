@@ -38,7 +38,7 @@ private theorem originalULift_down_ne {V : Type}
     (x y : ULift.{max u v} V) (h : x ≠ y) :
     x.down ≠ y.down := by
   intro hdown
-  exact h (originalULift_down_injective S x y hdown)
+  exact h (originalULift_down_injective x y hdown)
 
 /-- Exact transport of a finite partial original OLD atomic diagram
 to the universe required by the accepted original CCO provider. -/
@@ -50,11 +50,11 @@ private noncomputable def originalULiftDiagram
     finite_type := inferInstance
     vertexSort := fun x => D.vertexSort x.down
     edge := fun x y h => D.edge x.down y.down
-      (originalULift_down_ne S x y h)
+      (originalULift_down_ne x y h)
     edge_reverse := ?_ }
   intro x y h a
   exact D.edge_reverse x.down y.down
-    (originalULift_down_ne S x y h) a
+    (originalULift_down_ne x y h) a
 
 /-- Every TRUE old specified simple cycle of the lifted diagram
 projects to a simple cycle of the concrete original finite diagram,
@@ -70,10 +70,10 @@ private noncomputable def originalULiftCycleDown
   vertices := ⟨fun k => (C.vertices k).down, by
     intro a b hab
     apply C.vertices.injective
-    exact originalULift_down_injective S _ _ hab⟩
+    exact originalULift_down_injective _ _ hab⟩
   next_ne := by
     intro k h
-    exact C.next_ne k (originalULift_down_injective S _ _ h)
+    exact C.next_ne k (originalULift_down_injective _ _ h)
   specified := by
     intro k
     exact C.specified k
@@ -118,7 +118,7 @@ theorem originalSemanticCCO_finite_universe_zero
       have hLiftEdge :
           lifted.edge (ULift.up x) (ULift.up y) hLiftNe = some a := by
         change D.edge x y
-          (originalULift_down_ne S (ULift.up x) (ULift.up y) hLiftNe) = some a
+          (originalULift_down_ne (ULift.up x) (ULift.up y) hLiftNe) = some a
         exact hEdge
       exact f.preserves_edge (ULift.up x) (ULift.up y) hLiftNe a hLiftEdge }
   exact ⟨result⟩
