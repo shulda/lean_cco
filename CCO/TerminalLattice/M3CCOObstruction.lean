@@ -49,8 +49,7 @@ private theorem originalEquivWordExact_evaluate {i : ι}
     (hw : RawWord.relation S word = E.val.r) :
     RawExact.evaluate S (originalEquivWordExact S E word hw).words = E.val.r := by
   change RawExact.evaluate S [word] = E.val.r
-  rw [RawExact.evaluate_single S]
-  exact hw
+  rw [RawExact.evaluate_single S, hw]
 
 /-- C07–C08: the actual three J-class constraints in an M₃ would
 have a common original real solution if the whole source had semantic
@@ -87,8 +86,10 @@ theorem original_m3_words_forbid_CCO
     originalEquivWordExact_evaluate S E₂ w₂ hw₂
   have hd₃ : RawExact.evaluate S d₃.words = E₃.val.r :=
     originalEquivWordExact_evaluate S E₃ w₃ hw₃
-  let d : Fin 3 → RawExact.NonemptyExact S i i := ![d₁, d₂, d₃]
-  let centre : Fin 3 → X i := ![x, x, y]
+  let d : Fin 3 → RawExact.NonemptyExact S i i :=
+    fun p => if p = 0 then d₁ else if p = 1 then d₂ else d₃
+  let centre : Fin 3 → X i :=
+    fun p => if p = 2 then y else x
   have h00 :
       (RawExact.ball E₁.val.r x ∩ RawExact.ball E₁.val.r x).Nonempty :=
     ⟨x, E₁.val.refl x, E₁.val.refl x⟩
