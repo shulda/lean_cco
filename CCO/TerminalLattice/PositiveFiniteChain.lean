@@ -67,12 +67,19 @@ theorem originalPositiveBranchChain_fin_values
         induction k using Fin.cases with
         | zero =>
             change PositiveWord.represented S w (values 0) (values 1)
-            simpa only [values, Fin.cons_zero, Fin.cons_succ] using
-              (show PositiveWord.represented S w x (tail 0) by
-                simpa only [← htail0] using hFirst)
+            have hOne : (1 : Fin (rest.length+2)) =
+                (0 : Fin (rest.length+1)).succ := Fin.ext rfl
+            rw [hOne]
+            change PositiveWord.represented S w x (tail 0)
+            rw [htail0]
+            exact hFirst
         | succ k =>
             change PositiveWord.represented S (rest.get k)
               (values k.succ.castSucc) (values k.succ.succ)
+            have hCast :
+                (k.succ.castSucc : Fin (rest.length+2)) =
+                  (k.castSucc).succ := Fin.ext rfl
+            rw [hCast]
             simpa only [values, Fin.cons_succ] using htailEdges k
 
 /-- For the actual finite cyclic numbering 0,...,n, the first n
@@ -112,9 +119,17 @@ theorem original_positive_branch_chain_cyclic_values
         PositiveWord.represented S (branches k)
           (values k)
           (values (CCO.cyclicNext (Nat.succ_pos n) k)) := by
-  obtain ⟨values,hFirst,hLast,hEdges⟩ :=
-    originalPositiveBranchChain_fin_values S
-      (List.ofFn (fun k : Fin n => branches k.castSucc)) x y hChain
+  have hFinite :
+      ∃ values : Fin (n+1) → X i,
+        values 0 = x ∧
+        values (Fin.last n) = y ∧
+        ∀ t : Fin n,
+          PositiveWord.represented S (branches t.castSucc)
+            (values t.castSucc) (values t.succ) := by
+    simpa [List.get_ofFn] using
+      (originalPositiveBranchChain_fin_values S
+        (List.ofFn (fun t : Fin n => branches t.castSucc)) x y hChain)
+  obtain ⟨values,hFirst,hLast,hEdges⟩ := hFinite
   refine ⟨values, ?_⟩
   intro k
   by_cases hkLast : k = Fin.last n
@@ -132,11 +147,7 @@ theorem original_positive_branch_chain_cyclic_values
         CCO.cyclicNext (Nat.succ_pos n) k = t.succ := by
       rw [← ht]
       exact original_cyclicNext_castSucc (by omega : 0 < n) t
-    have hWord :
-        (List.ofFn (fun p : Fin n => branches p.castSucc)).get t =
-          branches k := by
-      simp [ht]
     have hThis := hEdges t
-    simpa only [hWord, ht, hNext] using hThis
+    simpa only [ht, hNext] using hThis
 
 end CCO.TerminalLattice
