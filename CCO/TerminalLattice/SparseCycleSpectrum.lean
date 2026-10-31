@@ -48,7 +48,7 @@ theorem finiteLabelCount_eq_toList_count
               finiteLabelCount edges labels target := by
                 simp [finiteLabelCount, Finset.sum_insert ha]
         _ = (labels a :: edges.toList.map labels).count target := by
-          simp [ih, List.count_cons, beq_iff_eq]
+          simp [ih, List.count_cons, beq_iff_eq, Nat.add_comm]
         _ = ((insert a edges).toList.map labels).count target :=
           hCount.symm
 
@@ -121,10 +121,10 @@ theorem originalSparseGraph_complementary_strong_saturation
     have hMany' : N ≤ finiteLabelCount edges labels j := hMany
     rw [hEqual] at hMany'
     omega
-  change originalPositiveStrongPath S ((edgeOrder.map labels).map menus) =
-      some (originalEquivDiversityPalette S K)
-  exact original_labelled_strong_path_saturation
-    S H sap K menus (edgeOrder.map labels) j (N-1)
-    hCount (hPowers j) hMenus
+  have hFold :=
+    original_labelled_strong_path_saturation
+      S H sap K menus (edgeOrder.map labels) j (N-1)
+      hCount (hPowers j) hMenus
+  simpa only [List.map_map, Function.comp_def] using hFold
 
 end CCO.TerminalLattice
