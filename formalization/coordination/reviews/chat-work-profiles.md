@@ -136,13 +136,55 @@ for audit, mismatch or full handover. No mutation or ownership rule changes;
 no new source finding. This new head needs its own CI41169876583, not the
 earlier182-test run above.
 
-## Decision
+## Actual final-head evidence and prospective lock
 
-The complete source review, including both actual repair deltas, the author's
-related guard and the STATE projection delta, is finished with R1 and R2 closed
-and no remaining source blocker. Operational approval is withheld pending the
-current exact public-head CI, genuine proposed/published infrastructure lock
-inspection and final fresh refs. No conditional statement in this report may
-be used as operational approval. Mathematical sources, contracts, provider pins,
-toolchain, original Lean workflow and caches have not been changed in the read
-migration scope.
+I personally fetched completed successful final CI41169876583/job124445322368
+for public head`b8877da8b102bb8c6a174e76914d638bb864b2ae` and its complete
+3,060,809-character log. All183 tests, generators and finite controls passed;
+project build and audit each completed4293 jobs. The audit checked28723 CCO
+declarations against only propext/Classical.choice/Quot.sound. Three project
+guards checked1619 actual parts and current source modules; four EPPA269 and
+four Ramsey106 guards retained the exact pins above. No error annotations or
+rebuilt CCO modules occurred. Actual checkout
+`e809062be971aaaf6aaa2de30977dcffa12266f4` has the exact final native/public tree
+`56cdbffb57370600d14a47119366b1503d4f0a3e` and ordered parents baseline main
+`700c12f7e6e8476eb0100a6be37d5f619ade3c0a` and this exact final public head.
+
+I personally read actual `profiles-start-draft.json` and complete parsed
+`profiles-state397-candidate.json` generated from saved STATE396. All48 package
+records, every prior history entry and all other old global STATE fields are
+exactly preserved. The only additions are the root-held infrastructure lock,
+its event and revision397; policy_revision remains12 until verified promotion.
+The actual prospective lock binds this final head/base/PR65, true CI above,
+root authorship, my actual reviewer identity and the complete profile manifest.
+
+The complete old/new BOARD canonical digest is unchanged:
+`661173fcaa2fcbda1a54f7c8bf484d9b6ce480b8b1b65b4887c0c1942d7bfa8f`.
+Old policy12 digest is
+`83860e56213ee023c1fd7df3b5a8194a36342ebffb2b7542c03497f35e986be6`;
+new policy13 digest is
+`5a76a9dd1920abe37006047c8659ce4af808c887103da2209f7f62e8fa2d2561`.
+I checked these against actual complete snapshot bytes/objects, not a partial
+manifest or private replacement. Fresh GitHub reads confirmed main remains
+700c12f7, PR65 OPEN/unmerged at the final head, the same synthetic checkout,
+and coordination remains72103466/STATE396 with no lock.
+
+## Actual decision
+
+I, actual registered non-author `/root/reviewer_recovery_control`, approve
+exact PR65 head`b8877da8b102bb8c6a174e76914d638bb864b2ae` and the personally
+reviewed actual prospective deployment lock. I expressly endorse the proposed
+`review.summary` and `review.independence` text in `profiles-start-draft.json`
+as my own actual decision. Earlier conditional reports were not approvals.
+R1 and R2 are closed; the separately attributed author-found guard and complete
+projection delta were personally reviewed. No source, CI or policy blocker
+remains. I wrote no implementation, test, repair or design and ran no duplicate
+test, build or audit.
+
+Publish this actual report unaltered before CAS. I will personally recheck the
+whole actual public STATE397 lock before expected-head history-preserving
+merge. Actual resulting-main CI/audit must then pass before manifest-bound
+atomic profile promotion. The initial target Chat mode may activate only then;
+no old package record, source contract, pin or acceptance is changed. The
+request workflow still needs its genuine post-deployment status-only smoke
+receipt; none of these review statements pretends that execution already ran.
