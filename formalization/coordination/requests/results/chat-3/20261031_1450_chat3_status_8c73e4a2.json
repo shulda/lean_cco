@@ -1,0 +1,22 @@
+{
+  "request_blob_sha": "22eea02d50c327127c6ab1849736b905affca844",
+  "request_path": "coordination/requests/chat-3/20261031_1450_chat3_status_8c73e4a2.json",
+  "coordination_parent": "f2ec9ae6c2ca7cdc0cddab413e0e22fb081e7132",
+  "main_sha": "f42f098e852b4cea8cb09b9ada6b1145a6138dd4",
+  "status": "no_change",
+  "next_action": {
+    "action": "wait",
+    "reason": "No eligible released batch; finish reviews or await preparation."
+  },
+  "state_view": {
+    "authority": "coordination:formalization/coordination/STATE.json",
+    "state_blob_sha": "5135f8c736b4671c869249c1603469375b3ff3f9",
+    "revision": 433,
+    "policy_revision": 14,
+    "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+    "execution_mode": "chat",
+    "claims_paused": false,
+    "integration_lock": null,
+    "packages": {}
+  }
+}
