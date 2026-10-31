@@ -1699,3 +1699,4 @@ import CCO.ExactEPGeometry.CurrentBridgeOldSquare
 import CCO.ExactEPGeometry.CurrentBridgeOldGateBound
 import CCO.ExactEPGeometry.OriginalCommonGateArrow
 import CCO.ExactEPGeometry.OriginalBridgeTrace
+import CCO.ExactEPGeometry.OriginalGateTargetTrace
