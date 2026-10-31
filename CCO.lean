@@ -1680,6 +1680,7 @@ import CCO.TerminalLattice.ExternalUniformPowers
 import CCO.TerminalLattice.OptionalPositiveNetwork
 import CCO.TerminalLattice.SparseWordNetwork
 import CCO.TerminalLattice.OptionalPositiveCycles
+import CCO.TerminalLattice.ReversePositiveWord
 import CCO.TerminalLattice.LabelledPathGrouping
 import CCO.TerminalLattice.PositivePathFold
 import CCO.TerminalLattice.StrongPathReordering
