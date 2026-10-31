@@ -15,7 +15,7 @@ cycle-realization oracle. All source colours and original typed edge
 constraints remain LITERALLY the same.
 -/
 
-universe u v w
+universe u v w z
 
 namespace CCO.TerminalLattice
 
@@ -25,7 +25,7 @@ variable (S : AtomicSource.{u,v,w} ι X)
 /-- Actual downward map of an ULift is injective, regardless of the
 universe at which the original old-source diagram is represented. -/
 private theorem originalULift_down_injective {V : Type}
-    (x y : ULift.{max u v} V)
+    (x y : ULift.{z} V)
     (h : x.down = y.down) : x = y := by
   cases x with
   | up a =>
@@ -35,7 +35,7 @@ private theorem originalULift_down_injective {V : Type}
       rfl
 
 private theorem originalULift_down_ne {V : Type}
-    (x y : ULift.{max u v} V) (h : x ≠ y) :
+    (x y : ULift.{z} V) (h : x ≠ y) :
     x.down ≠ y.down := by
   intro hdown
   exact h (originalULift_down_injective x y hdown)
@@ -44,7 +44,7 @@ private theorem originalULift_down_ne {V : Type}
 to the universe required by the accepted original CCO provider. -/
 private noncomputable def originalULiftDiagram
     {V : Type} (D : PartialDiagram S V) :
-    PartialDiagram S (ULift.{max u v} V) := by
+    PartialDiagram S (ULift.{z} V) := by
   letI : Finite V := D.finite_type
   refine {
     finite_type := inferInstance
@@ -101,14 +101,14 @@ theorem originalSemanticCCO_finite_universe_zero
     (cco : SemanticCCO.{u,v,max u v,w} S) :
     SemanticCCO.{u,v,0,w} S := by
   intro V D hCycles
-  let lifted := originalULiftDiagram S D
+  let lifted : PartialDiagram S (ULift.{max u v} V) := originalULiftDiagram S D
   have hLiftCycles : ∀ C : SimpleCycle lifted, CycleHom C := by
     intro C
     exact originalULiftCycleHom S D C
       (hCycles (originalULiftCycleDown S D C))
   obtain ⟨f⟩ := cco (ULift.{max u v} V) lifted hLiftCycles
   let result : DiagramHom D := {
-    point := fun x => f.point (ULift.up x)
+    point := fun x => f.point (ULift.up x : ULift.{max u v} V)
     preserves_edge := by
       intro x y hxy a hEdge
       have hLiftNe :
