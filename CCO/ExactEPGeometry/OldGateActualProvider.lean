@@ -56,7 +56,7 @@ theorem lift_actual_maximal_gate
   let K : ExactEq B.source p := ⟨M.kernel,M.maximal.1.1⟩
   have hStrict : ¬ Ucur ≤ (rho A B P transport p Y).val := by
     rw [←hYcur]
-    exact hCurrentCover.not_ge
+    exact hCurrentCover.1.not_ge
   have hMax : Maximal
       (CurrentGateCandidate A B P transport p Y Ucur) K := by
     constructor
