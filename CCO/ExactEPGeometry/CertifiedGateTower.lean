@@ -103,9 +103,9 @@ def successor
   let T := SourceAge.SingleStep.successor s.current choice.phase
   let Q := SourceAge.SingleStep.projection s.current choice.phase
   let ht : ExactTraceTransport s.current.source T.source Q :=
-    CanonicalStepExact.canonical_step_exact_transport s.current choice.phase
+    canonical_step_exact_transport s.current choice.phase
   let hp : ExactTraceProduct s.current.source T.source Q :=
-    CanonicalStepProduct.canonical_step_exact_product s.current choice.phase
+    canonical_step_exact_product s.current choice.phase
   exact {
     current := T
     reduct := s.reduct.compose Q
