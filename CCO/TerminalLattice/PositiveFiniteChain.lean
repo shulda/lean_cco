@@ -126,9 +126,11 @@ theorem original_positive_branch_chain_cyclic_values
         ∀ t : Fin n,
           PositiveWord.represented S (branches t.castSucc)
             (values t.castSucc) (values t.succ) := by
-    simpa [List.length_ofFn, List.get_ofFn] using
-      (originalPositiveBranchChain_fin_values S
-        (List.ofFn (fun t : Fin n => branches t.castSucc)) x y hChain)
+    have hRaw :=
+      originalPositiveBranchChain_fin_values S
+        (List.ofFn (fun t : Fin n => branches t.castSucc)) x y hChain
+    rw [List.length_ofFn] at hRaw
+    simpa [List.get_ofFn] using hRaw
   obtain ⟨values,hFirst,hLast,hEdges⟩ := hFinite
   refine ⟨values, ?_⟩
   intro k
