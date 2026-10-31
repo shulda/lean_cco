@@ -142,10 +142,8 @@ theorem prefixSupport_comp
   · rintro ⟨x,z,y,hxy,hyz⟩
     obtain ⟨⟨j,b⟩,hb⟩ := P.bijective.2 y
     refine ⟨j,⟨x,b,?_⟩,⟨b,z,?_⟩⟩
-    · rw [hb]
-      exact hxy
-    · rw [hb]
-      exact hyz
+    · simpa only [← hb] using hxy
+    · simpa only [← hb] using hyz
   · rintro ⟨j,⟨x,y,hxy⟩,⟨y',z,hyz⟩⟩
     obtain ⟨g,hgy⟩ :=
       (T.original_sort_transitive_of_homogeneous HT j) y' y
