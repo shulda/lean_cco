@@ -1695,3 +1695,4 @@ import CCO.ExactEPGeometry.FullExactSupport
 import CCO.ExactEPGeometry.ExactEquivalenceSupport
 import CCO.ExactEPGeometry.OriginalBridgeSaturation
 import CCO.ExactEPGeometry.OldGateStableEnvelope
+import CCO.ExactEPGeometry.CurrentBridgeOldSquare
