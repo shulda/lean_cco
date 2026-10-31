@@ -163,8 +163,7 @@ theorem originalIndexedExternalOrbitalMenus_valid
   have hNotJpq : ¬ J p.val.1 p.val.2 := p.property.2.1
   have hpne : p.val.1 ≠ p.val.2 := by
     intro heq
-    subst heq
-    exact hNotJpq (J.val.refl _)
+    exact hNotJpq (heq ▸ J.val.refl p.val.1)
   have hTag : (⟨i,p.val.1⟩ : Sigma X) ≠ ⟨i,p.val.2⟩ := by
     intro heq
     have hh : p.val.1 = p.val.2 := by
