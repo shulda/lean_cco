@@ -1682,3 +1682,4 @@ import CCO.ExactEPGeometry.PrefixExactRestrictionJoin
 import CCO.ExactEPGeometry.ExactEquivalenceComplete
 import CCO.ExactEPGeometry.PrefixExactLargestLift
 import CCO.ExactEPGeometry.OriginalPivotTrace
+import CCO.ExactEPGeometry.OldGateMaximality
