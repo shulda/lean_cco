@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 468,
+  "revision": 469,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -4580,15 +4580,15 @@
         "declarations": 28723,
         "source_modules": 1619
       },
-      "head_sha": "21f8bbbde22b3c68670b15a24615c026bb872c58",
+      "head_sha": "7b2545f4407ad8dd7ac098c42e37ac1ee4734a3a",
       "pr_number": 68,
       "observed_ci": {
-        "run_id": 41230076764,
-        "head_sha": "21f8bbbde22b3c68670b15a24615c026bb872c58",
+        "run_id": 41230931407,
+        "head_sha": "7b2545f4407ad8dd7ac098c42e37ac1ee4734a3a",
         "conclusion": "success",
         "axiom_audit": "allowlist"
       },
-      "checkpoint_revision": 468
+      "checkpoint_revision": 469
     },
     "B063": {
       "state": "AVAILABLE",
@@ -17207,6 +17207,26 @@
         },
         "actor_id": "chat-2",
         "request_id": "chat-2/20261031_chat2_B062_typesupport_21f8bbb_r467_c7e941"
+      }
+    },
+    {
+      "revision": 469,
+      "project_id": 5,
+      "actor_id": "chat-2",
+      "event": "checkpoint",
+      "package_id": "B062",
+      "details": {
+        "package_id": "B062",
+        "head_sha": "7b2545f4407ad8dd7ac098c42e37ac1ee4734a3a",
+        "pr_number": 68,
+        "observed_ci": {
+          "run_id": 41230931407,
+          "head_sha": "7b2545f4407ad8dd7ac098c42e37ac1ee4734a3a",
+          "conclusion": "success",
+          "axiom_audit": "allowlist"
+        },
+        "actor_id": "chat-2",
+        "request_id": "chat-2/20261031_chat2_B062_onestepmeet_7b2545f_r468_ae93f8"
       }
     }
   ],
