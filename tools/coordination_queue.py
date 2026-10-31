@@ -14,6 +14,9 @@ import json
 import hashlib
 from pathlib import Path
 import re
+import sys
+
+import coordination_profiles as profiles
 
 ROOT = Path(__file__).resolve().parents[1]
 DIRECTORY = Path('formalization/coordination')
@@ -246,15 +249,19 @@ def validate_policy(registry, policy):
         require(isinstance(actor, str) and actor and isinstance(role.get('identity'), str)
                 and role['identity'], 'Actor must have a stable identity')
         require(set(role['roles']) <= {'coordinate', 'implement', 'review', 'integrate'}, 'Unknown role')
-        require(not ('review' in role['roles'] and 'implement' in role['roles']),
+        require(not ('review' in role['roles'] and 'implement' in role['roles'])
+                or actor in policy.get('chat_project_actors', {}).values(),
                 'Review role must be separate from implementation')
         require(set(role['historical_author_projects']) <= set(projects), 'Unknown historical author')
+    profiles.validate_policy(sys.modules[__name__], policy)
 
 
 def actor_role(policy, project, data, role):
     actor = data.get('actor_id')
     entry = policy['actors'].get(actor, {})
-    require(project in {0, policy['team_project_id']} and role in entry.get('roles', []),
+    assigned = profiles.actor_project(policy, actor)
+    require(project in ({0, assigned} if assigned == policy['team_project_id'] else {assigned})
+            and role in entry.get('roles', []),
             'Actor is not authorized for this role; old projects are stopped')
     return actor
 
@@ -311,7 +318,8 @@ def validate_state(registry, policy, state):
             validate_ci(item.get('main_ci', {}), item['accepted_commit'])
             if not pinned_legacy:
                 require(item.get('author_actor_ids') and item.get('original_author_project_ids')
-                        and owner == policy['team_project_id'], 'Acceptance needs preserved authorship')
+                        and owner in {policy['team_project_id'], *map(int, policy.get('chat_project_actors', {}))},
+                        'Acceptance needs preserved authorship')
                 require(item.get('review', {}).get('approved') is True
                         and item['review'].get('head_sha') == item.get('head_sha')
                         and len(item['review'].get('summary', '')) >= 80,
@@ -320,7 +328,6 @@ def validate_state(registry, policy, state):
                         and item['pr_number'] > 0, 'Acceptance needs exact reviewed PR head')
                 validate_ci(item.get('ci', {}), item['head_sha'])
         if state['protocol_version'] == 3 and status in ACTIVE:
-            require(owner == policy['team_project_id'], 'Active claim has not been handed to the Work team')
             require(item.get('author_actor_ids') and item.get('original_author_project_ids'),
                     'Active package needs preserved authorship provenance')
         review = item.get('review')
@@ -342,9 +349,9 @@ def validate_state(registry, policy, state):
                     and item['pr_number'] > 0, 'Submission needs PR and exact head')
             validate_ci(item.get('ci', {}), item['head_sha'])
     if state['protocol_version'] == 3:
+        profiles.validate_state(sys.modules[__name__], policy, state)
         count = len(active_packages(state))
-        require(count <= policy['maximum_active_batches'], 'Too many active batches')
-        if count > policy['default_active_batches']:
+        if profiles.mode(policy, state) == 'work' and count > policy['default_active_batches']:
             exception = state.get('third_batch_exception', {})
             require(exception.get('package_id') in active_packages(state)
                     and exception.get('independent_active_work') is True
@@ -375,6 +382,11 @@ def validate_state(registry, policy, state):
                     'Promotion lock must bind the current old catalogue and policy snapshots')
             require(not set(manifest['package_ids']) & set(records),
                     'Promotion lock may only name new package IDs')
+        if 'profile_deployment' in lock:
+            require('registry_promotion' not in lock and 'reviewer_recovery' not in lock,
+                    'Deploy profiles separately from registry/reviewer recovery')
+            profiles.validate_deployment_lock(sys.modules[__name__], registry, policy, state,
+                                             lock['profile_deployment'])
     else:
         require((not integrating and lock is None) or
                 (len(integrating) == 1 and lock is not None
@@ -403,8 +415,22 @@ def available(registry, policy, state):
                   and all(state['packages'][d]['state'] == 'ACCEPTED' for d in p['depends_on']))
 
 
+def eligible_reviews(policy, state, actor):
+    result = []
+    for ident, item in sorted(state['packages'].items()):
+        if item['state'] == 'SUBMITTED':
+            try:
+                check_actor_non_author(policy, item, actor)
+            except ValueError:
+                continue
+            result.append(ident)
+    return result
+
+
 def next_action(registry, policy, state, project, actor=None):
     validate_state(registry, policy, state)
+    if profiles.mode(policy, state) == 'chat' or project in map(int, policy.get('chat_project_actors', {})):
+        return profiles.next_action(sys.modules[__name__], registry, policy, state, project, actor)
     require(project == policy['team_project_id'], 'Project is not registered as the active Work team')
     if state['protocol_version'] == 2:
         return {'action': 'wait', 'reason': 'Deploy protocol 3 and atomically hand off both existing claims first.'}
@@ -415,9 +441,7 @@ def next_action(registry, policy, state, project, actor=None):
                            and p['state'] in {'REVIEWING', 'INTEGRATING'})
         if reviewing:
             return {'action': 'resume_review', 'package_id': reviewing[0]}
-        reviews = sorted(i for i, p in state['packages'].items() if p['state'] == 'SUBMITTED'
-                         and actor not in p.get('author_actor_ids', [])
-                         and not set(role['historical_author_projects']) & set(p.get('original_author_project_ids', [])))
+        reviews = eligible_reviews(policy, state, actor)
         if reviews:
             return {'action': 'review', 'package_id': reviews[0]}
         return {'action': 'wait', 'reason': 'No eligible non-author review.'}
@@ -429,11 +453,12 @@ def next_action(registry, policy, state, project, actor=None):
     if owned:
         result = {'action': 'resume', 'package_ids': owned, 'package_id': owned[0]}
         candidates = available(registry, policy, state)
-        if candidates and state.get('integration_lock') is None and len(active_packages(state)) < 2:
+        if (candidates and not state.get('claims_paused', False)
+                and state.get('integration_lock') is None and len(active_packages(state)) < 2):
             result['optional_second_claim'] = candidates[0]
         return result
     candidates = available(registry, policy, state)
-    if (candidates and state.get('integration_lock') is None
+    if (candidates and not state.get('claims_paused', False) and state.get('integration_lock') is None
             and len(active_packages(state)) < policy['default_active_batches']):
         return {'action': 'claim', 'package_id': candidates[0]}
     if (state.get('integration_lock') is None and not active_packages(state)
@@ -451,10 +476,14 @@ def transition(registry, policy, state, project, event, data):
     records = result['packages']
     package = records.get(ident)
     actor = data.get('actor_id')
+    profiles.authorize(sys.modules[__name__], policy, state, project, actor, event, package)
     require(state['protocol_version'] == 3 or event in
             {'handoff', 'start_infrastructure', 'finish_infrastructure', 'cancel_infrastructure'},
             'Old live state permits only authorized migration or infrastructure serialization')
-    if event == 'handoff':
+    if event in {'pause_claims', 'resume_claims', 'switch_mode', 'handover_mode'}:
+        result = profiles.apply_mode_event(sys.modules[__name__], registry, policy, state,
+                                           project, event, data)
+    elif event == 'handoff':
         actor_role(policy, project, data, 'coordinate')
         require(result.get('integration_lock') is None, 'Finish infrastructure integration before handoff')
         require(state['protocol_version'] == 2 and data.get('previous_projects_stopped') is True,
@@ -518,6 +547,9 @@ def transition(registry, policy, state, project, event, data):
                 actor_role(policy, project, data, 'coordinate')
                 result['integration_lock']['reviewer_recovery'] = deepcopy(data['reviewer_recovery'])
                 result['integration_lock']['unavailable_reviewer'] = deepcopy(data.get('unavailable_reviewer'))
+            if 'profile_deployment' in data:
+                actor_role(policy, project, data, 'coordinate')
+                result['integration_lock']['profile_deployment'] = deepcopy(data['profile_deployment'])
         else:
             lock = result.get('integration_lock') or {}
             require(lock.get('kind') == 'infrastructure' and lock.get('actor_id') == actor,
@@ -527,6 +559,8 @@ def transition(registry, policy, state, project, event, data):
                         'Finish a registry promotion atomically with promote_registry and both snapshot pairs')
                 require('reviewer_recovery' not in lock,
                         'Finish reviewer recovery atomically with promote_reviewer and both snapshot pairs')
+                require('profile_deployment' not in lock,
+                        'Finish profile deployment atomically with promote_profiles and both snapshot pairs')
                 require(sha(data.get('integration_commit')), 'Missing infrastructure integration commit')
                 validate_ci(data.get('main_ci', {}), data['integration_commit'])
                 result.setdefault('infrastructure_integrations', []).append({**lock,
@@ -536,46 +570,36 @@ def transition(registry, policy, state, project, event, data):
             result['integration_lock'] = None
     elif event in {'claim', 'claim_third', 'repair'}:
         actor_role(policy, project, data, 'implement')
-        require(result.get('integration_lock') is None, 'New claims wait for verified main under integration lock')
         if event == 'repair':
-            chosen = next_action(registry, policy, state, project, actor)
-            require(chosen.get('action') == 'repair' and chosen.get('package_id') == ident,
+            repairs = sorted(i for i, p in records.items() if p['state'] == 'CHANGES_REQUESTED'
+                             and p['owner_project_id'] == project)
+            require(repairs and repairs[0] == ident,
                     'Repair the lowest requested repair before continuing or claiming')
         else:
+            require(result.get('integration_lock') is None, 'New claims wait for verified main under integration lock')
+            require(not result.get('claims_paused', False), 'New claims are paused for handover')
             candidates = available(registry, policy, state)
             require(package and candidates and candidates[0] == ident, 'Claim the lowest dependency-ready available package')
             require(not any(p['state'] == 'CHANGES_REQUESTED' for p in records.values()), 'Repairs have priority')
             count = len(active_packages(state))
+            active_profile = profiles.profile(policy, state)
+            if profiles.mode(policy, state) == 'chat':
+                require(event == 'claim' and not any(records[i]['owner_project_id'] == project
+                        for i in active_packages(state)), 'Each Chat project may own only one unresolved batch')
+                require(count < active_profile['maximum_active_batches'], 'Chat implementation slots are full')
             if event == 'claim_third':
-                existing = data.get('existing_batches', [])
-                implementer = data.get('implementation_actor_id')
-                require(count == 2 and data.get('independent_active_work') is True
-                        and len(data.get('summary', '')) >= 80 and data.get('active_work_items')
-                        and isinstance(implementer, str) and implementer
-                        and implementer not in {r['identity'] for r in policy['actors'].values() if 'review' in r['roles']}
-                        and 'review' not in policy['actors'].get(implementer, {}).get('roles', [])
-                        and isinstance(data.get('independence_report_path'), str)
-                        and data['independence_report_path'].startswith(str(DIRECTORY / 'reports') + '/'),
-                        'Third batch needs concrete independent active work, owner and anchored report')
-                require(len(existing) == 2 and {e.get('package_id') for e in existing} == set(active_packages(state)),
-                        'Third-slot independence must cover both actual current active batches')
-                for e in existing:
-                    old = records[e['package_id']]
-                    require(e.get('head_sha') == old.get('head_sha', old.get('base_main_sha'))
-                            and sha(e.get('head_sha')) and e.get('work_items') and e.get('implementation_actor_ids'),
-                            'Anchor existing work allocations to actual current heads and implementers')
-                    require(not set(data['active_work_items']) & set(e['work_items'])
-                            and implementer not in e['implementation_actor_ids'],
-                            'Third batch overlaps existing work or lacks an independent active implementer')
-                result['third_batch_exception'] = {'package_id': ident, 'independent_active_work': True,
-                    'summary': data['summary'], 'active_work_items': data['active_work_items'],
-                    'implementation_actor_id': data['implementation_actor_id'],
-                    'independence_report_path': data['independence_report_path'],
-                    'existing_batches': deepcopy(existing), 'revision': state['revision'] + 1}
+                require(profiles.mode(policy, state) == 'work', 'claim_third is only a Work exception')
+                require(count == 2, 'Third batch needs two existing batches')
+                result['third_batch_exception'] = profiles.third_plan(
+                    sys.modules[__name__], policy, state, ident, data)
             else:
-                require(count < policy['default_active_batches'], 'Two active batches already occupy the team slots')
-            package.update(owner_project_id=policy['team_project_id'], author_actor_ids=[actor],
-                           original_author_project_ids=[policy['team_project_id']])
+                require(count < active_profile['default_active_batches'],
+                        'Two active batches already occupy the team slots' if profiles.mode(policy, state) == 'work'
+                        else 'Chat implementation slots are full')
+            package.update(owner_project_id=project, author_actor_ids=[actor],
+                           original_author_project_ids=[project])
+            if profiles.mode(policy, state) == 'chat':
+                package['branch'] = f'chat/{actor}/{ident}'
         require(sha(data.get('base_main_sha')), 'Claim must pin current green main')
         validate_ci(data.get('base_ci', {}), data['base_main_sha'])
         package.update(state='IN_PROGRESS', claim_revision=state['revision'] + 1,
@@ -601,7 +625,8 @@ def transition(registry, policy, state, project, event, data):
         require(package and package['state'] == 'IN_PROGRESS', 'Record contributors before submission')
         contributors = data.get('author_actor_ids', [])
         require(contributors and all(isinstance(x, str) and x for x in contributors), 'Missing actual contributor identities')
-        require(not any('review' in policy['actors'].get(x, {}).get('roles', []) for x in contributors),
+        require(not any('review' in policy['actors'].get(x, {}).get('roles', [])
+                        and 'implement' not in policy['actors'].get(x, {}).get('roles', []) for x in contributors),
                 'Independent review role cannot implement; replace the reviewer through a policy decision')
         package['author_actor_ids'] = sorted(set(package['author_actor_ids']) | set(contributors))
     elif event == 'submit':
@@ -619,8 +644,10 @@ def transition(registry, policy, state, project, event, data):
     elif event == 'review':
         actor_role(policy, project, data, 'review')
         require(package and package['state'] == 'SUBMITTED', 'Package is not submitted')
-        chosen = next_action(registry, policy, state, project, actor)
-        require(chosen.get('action') == 'review' and chosen.get('package_id') == ident,
+        eligible = eligible_reviews(policy, state, actor)
+        leased = any(p['state'] in {'REVIEWING', 'INTEGRATING'}
+                     and p.get('review', {}).get('actor_id') == actor for p in records.values())
+        require(not leased and eligible and eligible[0] == ident,
                 'Finish leased review, then review lowest eligible submission')
         require(data.get('head_sha') == package['head_sha'], 'Review head mismatch')
         check_independence(policy, package, actor, data.get('independence', {}))
@@ -753,6 +780,16 @@ def promote_reviewer(previous_registry, previous_policy, registry, policy, state
     return result
 
 
+def execution_profile_manifest(previous_registry, previous_policy, registry, policy):
+    return profiles.deployment_manifest(sys.modules[__name__], previous_registry, previous_policy,
+                                         registry, policy)
+
+
+def promote_profiles(previous_registry, previous_policy, registry, policy, state, project, data):
+    return profiles.promote(sys.modules[__name__], previous_registry, previous_policy,
+                            registry, policy, state, project, data)
+
+
 def compare_and_swap(current_head, expected_head, current, proposed):
     """Model the publication lease; the real guard is Git's non-force ref update."""
     require(current_head == expected_head, 'Stale coordination ref: reload and recompute')
@@ -761,49 +798,16 @@ def compare_and_swap(current_head, expected_head, current, proposed):
 
 
 def render_instructions(registry, project):
-    return f'''# Work team instructions — protocol 3 (historical project {project})
+    if project != 3:
+        return f'''# Historical project {project} — stopped
 
-Repozitář: https://github.com/{registry['public_repository']}. Původní projekty
-1 a 2 jsou zastavené; jejich ID a autorství zůstávají v historii. Jeden Work
-tým (project 3) koordinuje a dokončuje obě převzaté větve bez resetu WIP.
-
-Na začátku čti čerstvý main: PROTOCOL.md, AUTONOMY.json, BOARD.json, runbook,
-kontrakty, skutečný kód a reporty. Živé claimy/review/přijetí čti VÝHRADNĚ
-z přesného headu coordination:formalization/coordination/STATE.json.
-BOARD je katalog. Používej coordination_queue.py a QUEUE_OPERATIONS.md;
-zápisy jsou účinné až po non-force CAS nad přesně načteným rodičem.
-
-Standardně drž dva aktivní batche v celém týmu. SUBMITTED, REVIEWING,
-INTEGRATING, CHANGES_REQUESTED i BLOCKED stále zabírají slot. Opravy a dokončení
-mají přednost. Třetí batch potřebuje zaznamenanou konkrétní nezávislou aktivní
-práci; žádné předběžné hromadění záloh. Všechny závislosti musí být ACCEPTED.
-
-Čti původní připnuté důkazy i skutečné Lean signatury. Zachovej přesné
-kvantifikátory, RAW/STRONG a AP/SAP/CCO. Podmíněný provider není source instance.
-Žádné sorry/admit, nové axiomy ani zesílení hypotéz. Veřejné moduly importuj
-do CCO.lean. Importuj konkrétní potřebné Mathlib moduly a taktiky; chybějící
-import patří konzumentovi. Používej připnutý toolchain/manifest, malé inkrementy
-a přesný transitive axiom audit. Ukládej commity a aktuální per-package report.
-
-Celý batch kontroluje skutečně neautorský kontrolní agent. Jiné ID ani
-přejmenování původního autora nezávislost nedokazuje. Zaznamenej všechny
-původní i nové autory a skutečnou identitu, neautorství a samostatný report
-reviewera. Review porovná původní zdroj, hypotézy, všechny provider discharge,
-consumer a CI/audit přesného SHA. Kontrolní role nesmí psát implementaci.
-
-Při nedostupnosti kontrolního runtime nesmí autor přejmenovat sebe ani použít
-cizí nehotové review. Použij výslovný append-only reviewer_recovery manifest,
-nezávislou kontrolu opravného infrastrukturního PR, jediný zámek a přesný PR/main
-CI/audit. promote_reviewer atomicky aktivuje nové skutečné identity bez změny
-claimů, přijetí nebo autorství; teprve pak může začít jejich vlastní nové review.
-
-Po oprávněném nezávislém schválení integruj automaticky: jediný integrační
-zámek i pro infrastrukturu, čerstvý main jako předek, schválený přesný PR head
-se zeleným CI/auditem; potom merge se zachováním historie a zelený výsledný
-main před ACCEPTED. Změna headu ruší schválení. Při selhání merged-main drž
-zámek a vrať konkrétní problém přípravnému projektu. Větev coordination nikdy
-nemerguj do main. Otevřené důkazy neoznačuj za dokončené.
+Repository: https://github.com/{registry['public_repository']}.
+This original project is stopped. Preserve its identity, branches and authorship.
+Do not restart it as a fresh Chat worker. Read main EXECUTION_PROFILES.md and
+CHAT_PROJECTS.md for new project IDs. Live authority remains
+coordination:formalization/coordination/STATE.json. Do not reset or overwrite it.
 '''
+    return profiles.work_instructions(registry['public_repository'])
 
 
 def render_catalogue(registry):
@@ -835,7 +839,7 @@ def main():
     args = parser.parse_args()
     registry, policy, state = [json.loads(p.read_text())
                                for p in (args.registry, args.policy, args.state)]
-    if args.event in {'promote_registry', 'promote_reviewer'}:
+    if args.event in {'promote_registry', 'promote_reviewer', 'promote_profiles'}:
         require(args.previous_registry is not None and args.previous_policy is not None,
                 args.event + ' requires explicit previous public registry and policy snapshots')
         require(args.project is not None and args.data is not None and args.output is not None,
@@ -844,7 +848,8 @@ def main():
         previous_policy = json.loads(args.previous_policy.read_text())
         data = json.loads(args.data.read_text())
         data.setdefault('actor_id', args.actor)
-        promote = promote_registry if args.event == 'promote_registry' else promote_reviewer
+        promote = {'promote_registry': promote_registry, 'promote_reviewer': promote_reviewer,
+                   'promote_profiles': promote_profiles}[args.event]
         proposed = promote(previous_registry, previous_policy, registry, policy,
                            state, args.project, data)
         args.output.write_text(json.dumps(proposed, ensure_ascii=False, indent=2) + '\n')
@@ -852,7 +857,7 @@ def main():
                           'next_step': 'Commit only on coordination with expected parent/ref and force=false.'}))
         return
     require(args.previous_registry is None and args.previous_policy is None,
-            'Previous snapshots are only valid for promote_registry or promote_reviewer')
+            'Previous snapshots are only valid for promote_registry, promote_reviewer or promote_profiles')
     validate_state(registry, policy, state)
     if args.project is None:
         print(json.dumps({'valid': True, 'revision': state['revision'],

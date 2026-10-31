@@ -32,3 +32,13 @@ transitive axiom audit.
 
 Existing WIP branches may contain older broad imports. Remove them as part
 of their tested integration; this file does not certify those branches.
+
+## Execution profiles
+
+Read execution_mode in the actual coordination STATE before acting. Work
+project3 and fresh Chat projects have separate capacity/ownership rules in
+EXECUTION_PROFILES.md. Chat cross-review is per-package real non-authorship;
+never reuse a historical project or contributor under a new review label.
+The request bridge runs only trusted main code and returns a durable receipt;
+neither STATUS nor a request commit is an effective claim. No mode switch or
+WIP handover without the actual user instruction and published stop/checkpoints.
