@@ -36,8 +36,9 @@ theorem original_label_list_count_total {r : Nat} (labels : List (Fin r)) :
             (if j = a then 1 else 0) + tail.count j := by
         by_cases hj : j = a
         · subst j
-          simp [List.count_cons, beq_iff_eq, Nat.add_comm]
-        · simp [List.count_cons, beq_iff_eq, hj, eq_comm]
+          simp [List.count_cons, Nat.add_comm]
+        · have hne : a ≠ j := fun hh => hj hh.symm
+          simp [List.count_cons, hj, hne, beq_iff_eq]
       calc
         (∑ j : Fin r, (a :: tail).count j) =
             ∑ j : Fin r, (if j = a then 1 else 0) + tail.count j := by
