@@ -82,12 +82,14 @@ theorem actual_m3_classes
   rintro ⟨a, hE₁xa, hE₂xa, hE₃ya⟩
   have hLxa : L x a := by
     have h : (E₁ ⊓ E₂) x a := ⟨hE₁xa, hE₂xa⟩
-    simpa only [h12] using h
+    rw [h12] at h
+    exact h
   have hLya : L y a := by
     have hE₁ya : E₁ y a :=
       E₁.val.trans (E₁.val.symm hxy) hE₁xa
     have h : (E₁ ⊓ E₃) y a := ⟨hE₁ya, hE₃ya⟩
-    simpa only [h13] using h
+    rw [h13] at h
+    exact h
   exact hnotL (L.val.trans hLxa (L.val.symm hLya))
 
 end CCO.TerminalLattice
