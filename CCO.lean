@@ -1665,3 +1665,4 @@ import CCO.TerminalLattice.TerminalExactCover
 import CCO.TerminalLattice.OldAbsorption
 import CCO.TerminalLattice.SameJFibreMotion
 import CCO.TerminalLattice.SameJAtomSaturation
+import CCO.TerminalLattice.CompleteOrbitalWord
