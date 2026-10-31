@@ -1,0 +1,32 @@
+{
+  "request_blob_sha": "7dbf0e9f2a14031514b0db92873a8a2117397bf3",
+  "request_path": "coordination/requests/root/20261031_release64_bootstrap_e8643a2c.json",
+  "coordination_parent": "bcaa04c329066df5ca0381b6bfcea35148d16b36",
+  "main_sha": "f42f098e852b4cea8cb09b9ada6b1145a6138dd4",
+  "status": "no_change",
+  "next_action": {
+    "action": "wait",
+    "reason": "This execution profile is inactive for this project."
+  },
+  "verified_main_ci": {
+    "run_id": 41177688044,
+    "run_attempt": 1,
+    "head_sha": "f42f098e852b4cea8cb09b9ada6b1145a6138dd4",
+    "conclusion": "success",
+    "axiom_audit": "allowlist",
+    "job_id": 124468532094,
+    "declarations": 28723,
+    "source_modules": 1619
+  },
+  "state_view": {
+    "authority": "coordination:formalization/coordination/STATE.json",
+    "state_blob_sha": "4ce1751cdb4443d998d431beb3bf905ec44a5a0a",
+    "revision": 400,
+    "policy_revision": 14,
+    "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+    "execution_mode": "chat",
+    "claims_paused": false,
+    "integration_lock": null,
+    "packages": {}
+  }
+}

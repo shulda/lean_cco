@@ -1,29 +1,32 @@
 {
   "not_an_ownership_lease": true,
-  "state_revision": 398,
-  "policy_revision": 13,
+  "state_revision": 400,
+  "policy_revision": 14,
   "execution_mode": "chat",
   "claims_paused": false,
-  "main_sha": "269b1acc05c64aca74c2bc5f238b9c75fb3af223",
+  "main_sha": "f42f098e852b4cea8cb09b9ada6b1145a6138dd4",
   "accepted": 48,
   "integration_lock": null,
-  "available": [],
+  "available": [
+    "B050",
+    "B062"
+  ],
   "next_actions": {
     "root": {
       "action": "wait",
       "reason": "This execution profile is inactive for this project."
     },
     "chat-1": {
-      "action": "wait",
-      "reason": "No eligible released batch; finish reviews or await preparation."
+      "action": "claim",
+      "package_id": "B050"
     },
     "chat-2": {
-      "action": "wait",
-      "reason": "No eligible released batch; finish reviews or await preparation."
+      "action": "claim",
+      "package_id": "B050"
     },
     "chat-3": {
-      "action": "wait",
-      "reason": "No eligible released batch; finish reviews or await preparation."
+      "action": "claim",
+      "package_id": "B050"
     }
   },
   "active": {}
