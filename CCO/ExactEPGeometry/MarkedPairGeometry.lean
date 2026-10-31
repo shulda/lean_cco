@@ -18,6 +18,7 @@ universe u v w t
 namespace CCO.ExactEPGeometry
 
 open APCharacter
+open scoped FirstOrder
 
 noncomputable section
 
