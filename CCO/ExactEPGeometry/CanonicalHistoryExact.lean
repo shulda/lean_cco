@@ -1,4 +1,4 @@
-import CCO.ExactEPGeometry.CanonicalStepExact
+import CCO.ExactEPGeometry.CanonicalStepProduct
 import CCO.APCharacter.Towers.HistoryCoherence
 
 /-!
@@ -36,12 +36,13 @@ def CanonicalStep (A B : CurrentSource.{u,v,w,t}) : Prop :=
       (exactCalculus_of_homogeneous_CCO A.source A.homogeneous A.cco) K),
     B = SourceAge.SingleStep.successor A P
 
-/-- A genuinely sourced actual step together with a PROVED pair of RAW
-exact-trace transportation obligations for its literal unary reduct.
+/-- A genuinely sourced actual step together with PROVED two-way RAW
+exactness AND nonempty represented (TP) for its literal unary reduct.
 This is stronger than an arbitrary `ActualStep` and is not an axiom. -/
 def ExactStep (A B : CurrentSource.{u,v,w,t}) : Prop :=
   ∃ step : CurrentSource.ActualStep A B,
-    ExactTraceTransport A.source B.source step.reduct
+    ExactTraceTransport A.source B.source step.reduct ∧
+    ExactTraceProduct A.source B.source step.reduct
 
 /-- Every real canonical successor step has the proved exact certificate
 and the SAME actual source/finite-age transition from SingleStep. -/
@@ -50,7 +51,8 @@ theorem canonical_to_exact
     (s : CanonicalStep A B) : ExactStep A B := by
   rcases s with ⟨i,K,P,rfl⟩
   exact ⟨SourceAge.SingleStep.actualStep A P,
-    canonical_step_exact_transport A P⟩
+    canonical_step_exact_transport A P,
+    canonical_step_exact_product A P⟩
 
 /-- A canonical history retains all actual source-step certificates.
 No source name or intermediate actual witness is discarded. -/
@@ -74,7 +76,12 @@ def reduct (s : ExactStep A B) : UnaryReduct A.source B.source :=
 nonempty source-to-target and target-to-source RAW exactness directions. -/
 theorem transport (s : ExactStep A B) :
     ExactTraceTransport A.source B.source (reduct s) :=
-  Classical.choose_spec s
+  (Classical.choose_spec s).1
+
+/-- The identical actual witness discharges the typed (TP) equation. -/
+theorem product (s : ExactStep A B) :
+    ExactTraceProduct A.source B.source (reduct s) :=
+  (Classical.choose_spec s).2
 
 /-- The same selected witness also supplies the actual finite-age
 transition and exact forgetful functor of this concrete step. -/
@@ -109,6 +116,23 @@ theorem history_transport
         (ExactStep.reduct step) (historyReduct tail)
         (ExactStep.transport step) ih
 
+/-- The same actual finite tower also preserves the FULL (TP) equality
+with the displayed middle sort at every prefix, whenever BOTH original
+exact factor traces are nonempty. This induction uses the already proved
+two-way exact-domain source lifts to instantiate (TP) at the next step. -/
+theorem history_product
+    {A B : CurrentSource.{u,v,w,t}}
+    (h : History ExactStep A B) :
+    ExactTraceProduct A.source B.source (historyReduct h) := by
+  induction h with
+  | nil A =>
+      exact ExactTraceProduct.identity A.source
+  | cons step tail ih =>
+      exact ExactTraceProduct.compose
+        (ExactStep.reduct step) (historyReduct tail)
+        (ExactStep.transport step) (ExactStep.product step)
+        (history_transport tail) ih
+
 /-- The ACTUAL full-character history, rather than an arbitrary actual
 unary history, inherits the two-way exact RAW trace theorem at its
 composite old-reduct projection. This is the C28 iteration statement. -/
@@ -118,6 +142,16 @@ theorem canonical_history_transport
     ExactTraceTransport A.source B.source
       (historyReduct (exactHistory h)) :=
   history_transport (exactHistory h)
+
+/-- Source C28, (TP) half for the actual full-character history. This is
+NOT merely exactness of endpoints: it constructs the full current
+middle-typed real composite and equates it with the ORIGINAL product trace. -/
+theorem canonical_history_product
+    {A B : CurrentSource.{u,v,w,t}}
+    (h : History CanonicalStep A B) :
+    ExactTraceProduct A.source B.source
+      (historyReduct (exactHistory h)) :=
+  history_product (exactHistory h)
 
 /-- The source's genuine residual interval constructs a canonical exact
 successor from its ACTUAL maximal-character phase; this does not claim
@@ -152,6 +186,25 @@ theorem canonical_terminalisation_exact
       CurrentSource.Obstruction progress
       (fun {_ _} step => decreases step) initial
   exact ⟨terminal,h,ht,hbound,canonical_history_transport h⟩
+
+
+/-- The terminating ACTUAL canonical source tower has, at its exact
+composed original reduct, both source-to-current exact-domain surjectivity
+and the full nonempty-input (TP) equality for all three displayed sorts.
+Its phases are genuine AP-only full-character source phases at every step. -/
+theorem canonical_terminalisation_geometry
+    (initial : CurrentSource.{u,v,w,t}) :
+    ∃ terminal : CurrentSource.{u,v,w,t},
+      ∃ h : History CanonicalStep initial terminal,
+        terminal.Terminal ∧
+        h.length + terminal.potential ≤ initial.potential ∧
+        ExactTraceTransport initial.source terminal.source
+          (historyReduct (exactHistory h)) ∧
+        ExactTraceProduct initial.source terminal.source
+          (historyReduct (exactHistory h)) := by
+  obtain ⟨terminal,h,ht,hbound,hExact⟩ :=
+    canonical_terminalisation_exact initial
+  exact ⟨terminal,h,ht,hbound,hExact,canonical_history_product h⟩
 
 end
 end CCO.ExactEPGeometry.CanonicalHistoryExact
