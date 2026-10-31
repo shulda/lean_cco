@@ -72,12 +72,9 @@ theorem oldSparseWordSelection_graph
       (oldSparseGraphMarkedEdge W x y hxy) =
         some (words (W.label s(x,y))) := by
   classical
-  have hNoCentre :
-      (oldSparseGraphMarkedEdge W x y hxy).val.2.val ≠ W.size := by
-    change y.val ≠ W.size
-    exact Nat.ne_of_lt y.isLt
+  have hNotLast : y.val ≠ W.size := Nat.ne_of_lt y.isLt
   simp [oldSparseWordSelection, oldSparseGraphMarkedEdge,
-    oldSparseRoot, hNoCentre, hAdj]
+    oldSparseRoot, hNotLast, hAdj]
 
 /-- Absent W graph edges select NO old atomic word, proving directly
 that their binary constraints really are unprescribed. -/
@@ -91,11 +88,8 @@ theorem oldSparseWordSelection_nonedge
     oldSparseWordSelection S W spoke words
       (oldSparseGraphMarkedEdge W x y hxy) = none := by
   classical
-  have hNoCentre :
-      (oldSparseGraphMarkedEdge W x y hxy).val.2.val ≠ W.size := by
-    change y.val ≠ W.size
-    exact Nat.ne_of_lt y.isLt
+  have hNotLast : y.val ≠ W.size := Nat.ne_of_lt y.isLt
   simp [oldSparseWordSelection, oldSparseGraphMarkedEdge,
-    oldSparseRoot, hNoCentre, hNoAdj]
+    oldSparseRoot, hNotLast, hNoAdj]
 
 end CCO.TerminalLattice
