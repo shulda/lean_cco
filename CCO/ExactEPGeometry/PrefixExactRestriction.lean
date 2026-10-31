@@ -29,6 +29,8 @@ variable (P : UnaryReduct A.source B.source)
 variable (transport : ExactTraceTransport A.source B.source P)
 variable (p : B.Sorts)
 
+include transport
+
 /-- E1's ACTUAL restriction of an original exact equivalence.
 The current exact presentation is CONSTRUCTED using the already proved
 old-to-new RAW source transport, with the real diagonal as its required
@@ -42,7 +44,10 @@ def rho (E : ExactEq A.source (P.parent p)) : ExactEq B.source p := by
       trans := by intro x y z h k; exact E.val.val.trans h k
     }
   }
-  obtain ⟨D,hD⟩ := E.property
+  let D : RawExact.NonemptyExact A.source (P.parent p) (P.parent p) :=
+    Classical.choose E.property
+  have hD : RawExact.evaluate A.source D.words =
+      (fun x y => E.val x y) := Classical.choose_spec E.property
   let x : B.Point p := Classical.choice (B.source.nonemptySort p)
   have hReal :
       ∃ a b : B.Point p,
@@ -50,7 +55,9 @@ def rho (E : ExactEq A.source (P.parent p)) : ExactEq B.source p := by
     refine ⟨x,x,?_⟩
     rw [hD]
     exact E.val.val.refl (P.point p x)
-  obtain ⟨Q,hQ⟩ := transport.old_to_new D hReal
+  let hLift := transport.old_to_new D hReal
+  let Q := Classical.choose hLift
+  have hQ := Classical.choose_spec hLift
   have hCurrent : FullExact B.source
       (fun x y : B.Point p => R x y) := by
     refine ⟨Q,?_⟩
