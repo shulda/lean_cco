@@ -91,7 +91,7 @@ theorem originalKSpokePath_closed_by_K
   have hNe := original_nonzero_Kdiv_nonempty S K hK
   rw [hPath]
   exact original_equiv_diversity_absorbs S H sap K
-    (originalEquivDiversityPalette S K) hNe (Subset.rfl)
+    (originalEquivDiversityPalette S K) hNe (fun _ h => h)
 
 /-- The endpoint spectra of the two OLD K spokes and any intervening
 nonempty K-path have a genuine common OLD diversity atom. This is a
