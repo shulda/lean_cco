@@ -55,7 +55,7 @@ theorem original_strong_menu_fold_perm
           _ = S.product (S.product seed b) a :=
             (original_same_sort_strong_assoc S H sap seed b a).symm
       simpa only [List.foldl_cons] using
-        congrArg (fun M => xs.foldl (fun A B => S.product A B) M) hc
+        (congrArg (fun M => xs.foldl (fun A B => S.product A B) M) hc).symm
   | @trans xs ys zs hxy hyz ihxy ihyz =>
       exact (ihxy seed).trans (ihyz seed)
 
