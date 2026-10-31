@@ -93,7 +93,7 @@ theorem originalPower_comp {i : ι} (R : TRel X i i) (n m : ℕ) :
           (TRel.comp_assoc _ _ _).symm
         _ = TRel.comp (originalPower R (n+m+1)) R := by rw [ih]
         _ = originalPower R (n+m+1+1) := rfl
-        _ = originalPower R (n+(m+1)+1) := by congr 1; omega
+        _ = originalPower R (n+(m+1)+1) := by congr 1
 
 /-- Equalities of two separated powers in an increasing chain force
 an adjacent equality already at the earlier index. -/
@@ -139,7 +139,7 @@ theorem originalPower_stabilizes
     (hExact : FullExact S R) (hRefl : ∀ x, R x x) :
     ∃ n : ℕ, originalPower R n = originalPower R (n+1) := by
   letI : Finite {T : TRel X i i // FullExact S T} :=
-    S.finite_fullExact H i i
+    finite_fullExact S H i i
   let f : ℕ → {T : TRel X i i // FullExact S T} :=
     fun n => ⟨originalPower R n,originalPower_exact S C R hExact n⟩
   obtain ⟨n,m,hnm,heq⟩ := Finite.exists_ne_map_eq_of_infinite f
