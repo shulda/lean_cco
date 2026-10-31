@@ -226,8 +226,8 @@ def promote(q, previous_registry, previous_policy, registry, policy, state, proj
     q.validate_ci(data.get('main_ci', {}), data['integration_commit'])
     target = data.get('target_mode', state.get('execution_mode', 'work'))
     q.require(target in policy['execution_profiles'], 'Unknown target mode')
-    q.require(not q.active_packages(state) or target == mode(previous_policy, state),
-              'Adding a worker preserves active ownership; switch modes with an explicit handover')
+    q.require('execution_profiles' not in previous_policy or target == mode(previous_policy, state),
+              'Adding a worker preserves mode; use an explicit user-authorized runtime switch')
     result = deepcopy(state)
     result.update(policy_revision=policy['revision'], execution_mode=target,
                   claims_paused=state.get('claims_paused', False), integration_lock=None,

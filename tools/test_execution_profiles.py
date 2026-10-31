@@ -389,6 +389,14 @@ class ProfileDeploymentTests(unittest.TestCase):
             q.transition(self.registry, new, result, 6, 'claim', {'actor_id': 'chat-3',
                 'package_id': 'B003', 'base_main_sha': 'a' * 40, 'base_ci': ci()})
 
+    def test_idle_worker_addition_cannot_bypass_the_explicit_runtime_switch(self):
+        state = self.promote()
+        new, locked = self.addition(state)
+        with self.assertRaisesRegex(ValueError, 'mode'):
+            q.promote_profiles(self.registry, self.policy, self.registry, new, locked, 4,
+                {'actor_id': 'chat-1', 'head_sha': 'd' * 40, 'integration_commit': 'e' * 40,
+                 'main_ci': ci('e' * 40), 'target_mode': 'work'})
+
 
 if __name__ == '__main__':
     unittest.main()
