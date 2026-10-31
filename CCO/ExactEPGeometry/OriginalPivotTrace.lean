@@ -59,11 +59,11 @@ theorem relPow_fullExact
       exact (exactCalculus_of_homogeneous_CCO
         A.source A.homogeneous A.cco).comp hExact ih
 
+include tp in
 /-- Every original power is the ACTUAL typed current power under
 the full (TP) certificate. Both input traces are genuinely nonempty:
 a current serial first edge and a current serial n-step suffix.
 No arbitrary middle sort can replace the displayed sort p. -/
-include tp in
 theorem relPow_current_iff
     (R : A.Point (P.parent p) → A.Point (P.parent p) → Prop)
     (hExact : FullExact A.source R)
@@ -126,9 +126,9 @@ theorem relPow_current_iff
       · rintro ⟨m,hm,hNext⟩
         exact hTP.mp ⟨m,hm,(ih m z).mpr hNext⟩
 
+include tp in
 /-- All even-length current walks, with true zero-length identity,
 are exactly the old even-walk equivalence restricted to p. -/
-include tp in
 theorem evenWalk_current_iff
     (R : A.Point (P.parent p) → A.Point (P.parent p) → Prop)
     (hExact : FullExact A.source R)
@@ -143,9 +143,9 @@ theorem evenWalk_current_iff
   · rintro ⟨n,hn,hxy⟩
     exact ⟨n,hn,(relPow_current_iff A B P tp R hExact hSerial n x y).mpr hxy⟩
 
+include tp in
 /-- Original odd RAW profile has the SAME trace as the odd current
 profile. Nonempty input traces are retained at every TP induction. -/
-include tp in
 theorem oddWalk_current_iff
     (R : A.Point (P.parent p) → A.Point (P.parent p) → Prop)
     (hExact : FullExact A.source R)
@@ -160,9 +160,9 @@ theorem oddWalk_current_iff
   · rintro ⟨n,hn,hxy⟩
     exact ⟨n,hn,(relPow_current_iff A B P tp R hExact hSerial n x y).mpr hxy⟩
 
+include tp in
 /-- The full connected component relation (not necessarily exact)
 also restricts precisely; this is the X-part of source E4. -/
-include tp in
 theorem connectedWalk_current_iff
     (R : A.Point (P.parent p) → A.Point (P.parent p) → Prop)
     (hExact : FullExact A.source R)
@@ -211,11 +211,11 @@ theorem current_atom_serial
     (currentTrace A B P (A.source.atomRel c)) hNE
     (current_atom_invariant A B P c)
 
+include tp in
 /-- If the current nonempty trace of a real original diversity atom
 has no odd closed walks, the ORIGINAL atom cannot have any odd closed
 walk either. Original transitivity carries any old diagonal odd walk to
 an actual projected current point; full (TP) reflects it back. -/
-include tp in
 theorem original_atom_no_odd
     (c : A.source.Atom (P.parent p) (P.parent p))
     (hNE : TRel.Nonempty
@@ -245,10 +245,10 @@ theorem original_atom_no_odd
       (hEvery (P.point p x))
   exact hCurrentNoOdd x n hn hCur
 
+include tp in
 /-- Source C38: a genuine nonempty bipartite current odd-pivot atom
 trace forces the ORIGINAL named atom graph to be bipartite. This uses
 the actual old graph and all odd closed walks, not just finite tests. -/
-include tp in
 theorem original_atom_bipartite
     (c : A.source.Atom (P.parent p) (P.parent p))
     (hNE : TRel.Nonempty
@@ -263,11 +263,11 @@ theorem original_atom_bipartite
   exact hNo a q.length hOdd
     ((relPow_atom_iff_walk A.source c q.length a a).mpr ⟨q,rfl⟩)
 
+include tp in
 /-- C38–C40 source parity outputs after reflecting genuine current
 bipartiteness. The original FULL invariant interval has true relative
 index two; the original even/odd RAW exact profiles are real and nonempty.
 Original connectivity need not be RAW exact. -/
-include tp in
 theorem original_atom_parity
     (c : A.source.Atom (P.parent p) (P.parent p))
     (hNE : TRel.Nonempty
@@ -293,10 +293,10 @@ theorem original_atom_parity
     fun a => parity_seed_index_two A.source A.homogeneous c hNo a,
     parity_profiles_nonempty_exact A.source A.homogeneous c⟩
 
+include tp in
 /-- Literal source equation E4, including the equality-containing
 even part and the NON-exact connectivity upper relation. All three
 parts use the SAME actual old c and displayed current parent p. -/
-include tp in
 theorem original_atom_E4
     (c : A.source.Atom (P.parent p) (P.parent p))
     (hNE : TRel.Nonempty
