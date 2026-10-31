@@ -33,14 +33,14 @@ variable {ι : Type u} {X : ι → Type v}
 /-- A genuine OLD exact presentation reindexed only along an ACTUAL
 equality of its second original sort, retaining all represented words,
 nonemptiness and the true old identity. This is NOT quotient descent. -/
-private def oldExactRightCast
+def oldExactRightCast
     (S : AtomicSource.{u,v,w} ι X) {i j : ι}
     (h : i = j) (D : RawExact.NonemptyExact S i i) :
     RawExact.NonemptyExact S i j := by
   cases h
   exact D
 
-private theorem oldExactRightCast_iff
+theorem oldExactRightCast_iff
     (S : AtomicSource.{u,v,w} ι X) {i j : ι}
     (h : i = j) (D : RawExact.NonemptyExact S i i)
     (x : X i) (y : X j) :
@@ -51,7 +51,7 @@ private theorem oldExactRightCast_iff
 
 /-- A typed RAW composite commutes with the literal second-sort
 equality transport. Its middle position remains the ACTUAL old sort i. -/
-private theorem oldExactRightCast_comp_iff
+theorem oldExactRightCast_comp_iff
     (S : AtomicSource.{u,v,w} ι X) {i j : ι}
     (h : i = j) (R : TRel X i i)
     (D : RawExact.NonemptyExact S i i)
