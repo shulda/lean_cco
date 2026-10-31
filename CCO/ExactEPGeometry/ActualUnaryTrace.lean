@@ -1,5 +1,6 @@
 import CCO.ExactEPGeometry.ProjectedHistory
 import CCO.ExactEPGeometry.MarkedTrace
+import CCO.ExactEPGeometry.ExactEquivalenceBasics
 import CCO.ExactEPGeometry.PeirceEndpoints
 import CCO.APCharacter.SourceAge.UnaryTransition
 
@@ -175,4 +176,5 @@ theorem real_current_exact_forget
   exact ProjectedWords.forgetExact_forward S
     (SourceAge.UnarySource.source I) (SourceAge.actualProjection I) D x y hxy
 
+end
 end CCO.ExactEPGeometry.ActualUnaryTrace
