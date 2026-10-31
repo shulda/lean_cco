@@ -82,12 +82,12 @@ theorem modularLower_lt_normalized_of_nondistrib (a b c : L)
     intro hA
     have hB : B = h := by
       calc
-        B = l ⊔ B := (sup_of_le_left hleB).symm
+        B = l ⊔ B := (sup_of_le_right hleB).symm
         _ = A ⊔ B := by rw [hA]
         _ = h := hJoinAB
     have hC : C = h := by
       calc
-        C = l ⊔ C := (sup_of_le_left hleC).symm
+        C = l ⊔ C := (sup_of_le_right hleC).symm
         _ = A ⊔ C := by rw [hA]
         _ = h := hJoinAC
     have hEq : l = h := by
