@@ -201,4 +201,38 @@ theorem originalIndexedExternalOrbitalMenus_valid
       (Quotient.mk J.val x)) hOrbXY
 
 
+
+/-- The finite OLD external-label index set has POSITIVE cardinal
+whenever J⋖K is a genuine FULL original invariant cover. In
+particular the source sparse-labelled-graph theorem can use this
+number of labels without inventing a zero-label graph. No original
+CCO, SAP, NR2, terminality or quotient automorphism hypothesis. -/
+theorem originalExternalAtom_card_pos_of_full_cover
+    {i : ι} (J K : ColourEq S i) (hJK : J ⋖ K) :
+    0 < Fintype.card (OriginalExternalAtom S J K) := by
+  classical
+  have hNotKJ : ¬ K ≤ J := not_le_of_gt hJK.lt
+  have hExternalPair :
+      ∃ x y : X i, K x y ∧ ¬ J x y := by
+    by_contra hBad
+    apply hNotKJ
+    intro x y hKxy
+    by_contra hNotJxy
+    exact hBad ⟨x,y,hKxy,hNotJxy⟩
+  obtain ⟨x,y,hKxy,hNotJxy⟩ := hExternalPair
+  have hxy : x ≠ y := by
+    intro heq
+    subst y
+    exact hNotJxy (J.val.refl x)
+  have hTag : (⟨i,x⟩ : Sigma X) ≠ ⟨i,y⟩ := by
+    intro heq
+    have hh : x = y := by
+      simpa only [Sigma.mk.injEq, heq_eq_eq, true_and] using heq
+    exact hxy hh
+  obtain ⟨a, hCol⟩ := S.some_colour_of_ne x y hTag
+  have hNonempty : Nonempty (OriginalExternalAtom S J K) :=
+    ⟨⟨a, ⟨x,y,hKxy,hNotJxy,hCol⟩⟩⟩
+  exact Fintype.card_pos_iff.mpr hNonempty
+
+
 end CCO.TerminalLattice
