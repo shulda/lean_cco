@@ -64,11 +64,17 @@ theorem label_list_perm_replicate {r : Nat}
         List.replicate (m+k) target =
           List.replicate m target ++ List.replicate k target := by
       induction m with
-      | zero => rfl
+      | zero => simp
       | succ m ih =>
           simpa only [Nat.succ_add, List.replicate_succ, List.cons_append] using
             congrArg (List.cons target) ih
-    rw [← hsize, hrepAdd, List.append_assoc]
+    have hrepVal :
+        List.replicate (xs.count target) target =
+          List.replicate n target ++
+            List.replicate (xs.count target - n) target :=
+      (congrArg (fun k : Nat => List.replicate k target) hsize.symm).trans
+        (hrepAdd n (xs.count target - n))
+    rw [hrepVal, List.append_assoc]
   rw [← hrep]
   exact label_list_perm_count target xs
 
