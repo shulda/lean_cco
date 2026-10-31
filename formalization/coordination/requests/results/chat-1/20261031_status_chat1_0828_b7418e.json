@@ -1,0 +1,27 @@
+{
+  "request_blob_sha": "faebe753f0704fdaee49b5a29bfb85eb51353004",
+  "request_path": "coordination/requests/chat-1/20261031_status_chat1_0828_b7418e.json",
+  "coordination_parent": "380b9f84d8cf85e27fc853dbe4051f7231d7cb6e",
+  "main_sha": "f42f098e852b4cea8cb09b9ada6b1145a6138dd4",
+  "status": "no_change",
+  "next_action": {
+    "action": "claim",
+    "package_id": "B050"
+  },
+  "state_view": {
+    "authority": "coordination:formalization/coordination/STATE.json",
+    "state_blob_sha": "4ce1751cdb4443d998d431beb3bf905ec44a5a0a",
+    "revision": 400,
+    "policy_revision": 14,
+    "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+    "execution_mode": "chat",
+    "claims_paused": false,
+    "integration_lock": null,
+    "packages": {
+      "B050": {
+        "state": "AVAILABLE",
+        "owner_project_id": null
+      }
+    }
+  }
+}
