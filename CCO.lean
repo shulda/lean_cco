@@ -1651,3 +1651,4 @@ import CCO.TerminalLattice.QuotientWalk
 import CCO.TerminalLattice.ModularNormalization
 import CCO.TerminalLattice.NonDistributive
 import CCO.TerminalLattice.QuotientPowerSemigroup
+import CCO.TerminalLattice.QuotientOrbitals
