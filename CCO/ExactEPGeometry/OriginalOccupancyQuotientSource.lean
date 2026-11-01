@@ -86,6 +86,8 @@ noncomputable def originalExactSelectedQuotientCurrentSource
     (base : A.Sorts) (hOne : ∀ i : A.Sorts, base = i)
     (E : ExactEq A.source base) :
     CurrentSource.{u,v,v,t} := by
+  letI : Finite (OriginalOccupancy A B P base hOne E) :=
+    originalOccupancyFinite A B P base hOne E
   letI : Fintype (OriginalOccupancy A B P base hOne E) :=
     Fintype.ofFinite _
   let Q : CurrentSource.{u,v,v,t} :=
