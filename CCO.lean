@@ -1719,3 +1719,4 @@ import CCO.ExactEPGeometry.CertifiedFinalKernelSupport
 import CCO.ExactEPGeometry.CertifiedHistoryMaximality
 import CCO.ExactEPGeometry.OriginalExactOccupancy
 import CCO.ExactEPGeometry.OriginalOccupancyRepresentatives
+import CCO.ExactEPGeometry.OriginalCurrentTypedQuotients
