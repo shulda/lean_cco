@@ -88,6 +88,9 @@ theorem original_not_below_root_gate_all_active
     have hCast : E ≤ oldExactEqCast A.source hSame Gb := by
       have h :=
         oldExactEqCast_mono A.source hSame Eb Gb hEb
+      change oldExactEqCast A.source hSame
+          (oldExactEqCast A.source hSame.symm E) ≤
+        oldExactEqCast A.source hSame Gb at h
       simpa only [oldExactEqCast_cancel] using h
     have hOld : E ≤ Gr := by
       rw [hGate]
