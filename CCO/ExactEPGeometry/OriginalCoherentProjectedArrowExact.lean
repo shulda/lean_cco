@@ -120,8 +120,7 @@ theorem original_coherent_allparent_arrow_image_exact
       (CCO.ExactCRT.CanonicalTyped.projection
         (originalExactCurrentKernelFamily A B P transport base hOne E) j)
       R.rel
-  rw [← hD]
-  exact hF
+  simpa only [hD] using hF
 
 /-- Real C83 source application: on the ENTIRE FULL reached
 groupoid of the actual source phase, every current full Arrow
