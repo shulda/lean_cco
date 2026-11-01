@@ -139,6 +139,7 @@ theorem original_fresh_typed_atom_right_in_equiv
       S H sap K hK (S.conv a) v u hReverse forbidden
   have hForward : S.atomRel a u v' := by
     have hSwap := (S.colour_swap v' u (S.conv a)).mp hReverseAtom
+    change S.colour u v' = some a
     simpa only [S.conv_invol] using hSwap
   exact ⟨v',hAvoid,hClass,hForward⟩
 
