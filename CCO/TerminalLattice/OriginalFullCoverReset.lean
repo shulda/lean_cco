@@ -97,7 +97,7 @@ theorem original_full_cover_reset_single_path
       (T j).Nonempty ∧
       T j ⊆ originalEquivDiversityPalette S K := by
     intro j
-    exact (hValid j).1, (hValid j).2.1
+    exact ⟨(hValid j).1, (hValid j).2.1⟩
   have hExternal : ∀ j : Fin r, ∀ c ∈ T j,
       c ∉ originalEquivDiversityPalette S J := by
     intro j c hc
