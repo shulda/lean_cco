@@ -124,7 +124,7 @@ theorem transportArrow_surjective
               rw [D.transportRelation_actual_pair H x y]
               dsimp only [T]
               simp only [x,y,Equiv.apply_symm_apply]
-              rfl
+              all_goals rfl
       _ = U.rel := by
               have h := U.rectangular HT hab
               exact h.symm
