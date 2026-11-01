@@ -92,7 +92,7 @@ theorem originalExactAllCurrentPairBlock
         B.source B.homogeneous J W hRep)
       W hKer hColours x y
   have hApplied := congrFun (congrFun hBlock a) b
-  exact hApplied
+  exact Iff.of_eq hApplied
 
 /-- C68 on the ACTUAL one-parent-per-occupancy subsource. Its colours
 are literally those of the accepted all-parent quotient source at
