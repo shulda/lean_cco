@@ -1,0 +1,58 @@
+{
+  "request_blob_sha": "155b8b5c6002569f8c21e8f8013e62950490a3ba",
+  "request_path": "coordination/requests/chat-1/20261101_checkpoint_chat1_B050_final_f938931_r534_6c27.json",
+  "coordination_parent": "e2d277df40986626b32f1c7906bf9c5442ed3ce8",
+  "main_sha": "f42f098e852b4cea8cb09b9ada6b1145a6138dd4",
+  "status": "applied",
+  "event": "checkpoint",
+  "package_id": "B050",
+  "effective_revision": 535,
+  "state_view": {
+    "authority": "coordination:formalization/coordination/STATE.json",
+    "state_blob_sha": "82fd09e601d810a34543f44fc4cc9c3df6274cb3",
+    "revision": 535,
+    "policy_revision": 14,
+    "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+    "execution_mode": "chat",
+    "claims_paused": false,
+    "integration_lock": null,
+    "packages": {
+      "B050": {
+        "state": "IN_PROGRESS",
+        "owner_project_id": 4,
+        "author_actor_ids": [
+          "chat-1"
+        ],
+        "original_author_project_ids": [
+          4
+        ],
+        "branch": "chat/chat-1/B050",
+        "claim_revision": 401,
+        "base_main_sha": "f42f098e852b4cea8cb09b9ada6b1145a6138dd4",
+        "base_ci": {
+          "run_id": 41177688044,
+          "run_attempt": 1,
+          "head_sha": "f42f098e852b4cea8cb09b9ada6b1145a6138dd4",
+          "conclusion": "success",
+          "axiom_audit": "allowlist",
+          "job_id": 124468532094,
+          "declarations": 28723,
+          "source_modules": 1619
+        },
+        "head_sha": "f938931c0aba92310e96a302df8726bd826024d3",
+        "pr_number": 67,
+        "observed_ci": {
+          "run_id": 41311468691,
+          "run_attempt": 1,
+          "job_id": 124862623493,
+          "head_sha": "f938931c0aba92310e96a302df8726bd826024d3",
+          "conclusion": "success",
+          "axiom_audit": "allowlist",
+          "declarations": 29310,
+          "source_modules": 1724
+        },
+        "checkpoint_revision": 535
+      }
+    }
+  }
+}
