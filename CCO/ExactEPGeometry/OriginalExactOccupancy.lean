@@ -79,10 +79,16 @@ theorem originalExactGlobalRelation_prefix_invariant
       (originalExactGlobalRelation A base hOne E) := by
   have hTyped := originalExactGlobalRelation_typed_invariant
     A base hOne E
-  exact globalRelation_prefix_invariant
-    A.homogeneous B.homogeneous P
-    (fun i j x y => E ((hOne i).symm ▸ x) ((hOne j).symm ▸ y))
-    hTyped
+  have hGlobal : PrefixInvariant (K := B.G) P
+      (globalRelation
+        (fun (i j : A.Sorts) (x : A.Point i) (y : A.Point j) =>
+          E ((hOne i).symm ▸ x) ((hOne j).symm ▸ y))) :=
+    globalRelation_prefix_invariant
+      (G := A.G) (K := B.G)
+      A.homogeneous B.homogeneous P
+      (fun i j x y => E ((hOne i).symm ▸ x) ((hOne j).symm ▸ y))
+      hTyped
+  exact hGlobal
 
 /-- The real current full-carrier E relation, as a genuine setoid
 on the actual tagged current points. Its classes are literal E-classes,
@@ -98,8 +104,8 @@ def currentOriginalExactSetoid
       originalExactGlobalRelation A base hOne E (P.project a) (P.project b)
     iseqv := ⟨
       fun a => hEq.refl (P.project a),
-      fun a b hab => hEq.symm _ _ hab,
-      fun a b c hab hbc => hEq.trans _ _ _ hab hbc⟩
+      (by intro a b hab; exact hEq.symm _ _ hab),
+      (by intro a b c hab hbc; exact hEq.trans _ _ _ hab hbc)⟩
   }
 
 /-- The actual supported types of ORIGINAL exact E form a
