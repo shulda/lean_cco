@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "request_id": "20261101_chat3_B050_accept_636d6c_7a49d2",
+  "actor_id": "chat-3",
+  "project_id": 6,
+  "policy_revision": 14,
+  "operation": "event",
+  "expected_revision": 541,
+  "event": "accept",
+  "data": {
+    "package_id": "B050",
+    "integration_commit": "636d6c89afcb68fe4e0c633e561a0b174a4e9855",
+    "main_ci": {
+      "run_id": 41314218664,
+      "run_attempt": 1,
+      "job_id": 124870746450,
+      "head_sha": "636d6c89afcb68fe4e0c633e561a0b174a4e9855",
+      "conclusion": "success",
+      "axiom_audit": "allowlist",
+      "declarations": 29310,
+      "source_modules": 1724
+    }
+  }
+}
