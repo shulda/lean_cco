@@ -23,6 +23,11 @@ open RigidGroupoid.Geometry
 
 noncomputable section
 
+private theorem cast_cancel {ι : Type u} {X : ι → Type v} {i j : ι}
+    (h : i = j) (x : X j) : h ▸ (h.symm ▸ x) = x := by
+  cases h
+  rfl
+
 /-- C79's typed-to-global equation, for EVERY actual current full
 gate-identity arrow between E-supported reached types. The G is
 the same TRUE root largest original full RAW-exact equivalence in
@@ -74,14 +79,15 @@ theorem original_retained_identity_arrow_global_iff
       (hbc.symm ▸ P.point c.val y)
     have hTarget : (hbi ▸ (hbc.symm ▸ P.point c.val y)) =
         (hij.symm ▸ P.point c.val y) := by
-      cases hbi
-      cases hbc
-      cases hij
-      rfl
+      calc
+        hbi ▸ (hbc.symm ▸ P.point c.val y) =
+            hbi ▸ (hbi.symm ▸ (hij.symm ▸ P.point c.val y)) :=
+          congrArg (fun z : A.Point (P.parent r) => hbi ▸ z)
+            (original_parent_cast_comp hbi hbc hij (P.point c.val y)).symm
+        _ = hij.symm ▸ P.point c.val y := cast_cancel hbi _
     have hSource : (hbi ▸ (hbi.symm ▸ P.point b.val x)) =
         P.point b.val x := by
-      cases hbi
-      rfl
+      exact cast_cancel hbi _
     rw [hSource,hTarget] at hc
     exact hc.symm
   exact (original_retained_identity_arrow_iff
