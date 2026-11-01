@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "request_id": "20261101_chat1_B049_firstpower_bea19_r556_d24c",
+  "actor_id": "chat-1",
+  "project_id": 4,
+  "policy_revision": 14,
+  "operation": "event",
+  "expected_revision": 556,
+  "event": "checkpoint",
+  "data": {
+    "package_id": "B049",
+    "head_sha": "bea19ba79021f9626ce9a862a47ea8bf8c4dc887",
+    "pr_number": 69,
+    "observed_ci": {
+      "run_id": 41331401269,
+      "run_attempt": 1,
+      "job_id": 124922149348,
+      "head_sha": "bea19ba79021f9626ce9a862a47ea8bf8c4dc887",
+      "conclusion": "success",
+      "axiom_audit": "allowlist",
+      "declarations": 29354,
+      "source_modules": 1737
+    }
+  }
+}
