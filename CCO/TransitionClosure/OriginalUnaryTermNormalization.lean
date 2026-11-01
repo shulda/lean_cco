@@ -68,7 +68,7 @@ theorem OriginalOldUnaryWord.normal_relation
       intro x y hR
       change N.val.2.val.2.val.val x y at hR
       change Quot.mapRight hFL
-          (OriginalOldUnaryWord.eval S H w (Quotient.mk E.val x)) =
+          (OriginalOldUnaryWord.eval S H w (Quotient.mk _ x)) =
         Quotient.mk _ y
       rw [hEdge x y hR]
       rfl
@@ -108,7 +108,7 @@ theorem OriginalOldUnaryWord.normal_relation
       intro x z hR
       obtain ⟨y,hxy,hyz⟩ := hR
       change U.quotientEquiv
-          (OriginalOldUnaryWord.eval S H w (Quotient.mk E.val x)) =
+          (OriginalOldUnaryWord.eval S H w (Quotient.mk _ x)) =
         Quotient.mk _ z
       rw [hEdge x y hxy]
       exact U.quotientEquiv_edge hyz
