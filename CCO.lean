@@ -1707,6 +1707,7 @@ import CCO.TerminalLattice.OriginalCCOUniverseBridge
 import CCO.TerminalLattice.OriginalSparseCompletion
 import CCO.TerminalLattice.OriginalSparseRealizationReadout
 import CCO.TerminalLattice.OriginalSparseKFrame
+import CCO.TerminalLattice.OriginalFullCoverReset
 import CCO.TerminalLattice.StrongPathReordering
 import CCO.TerminalLattice.QuotientSquareSaturation
 import CCO.TerminalLattice.QuotientSquareOrbitalClosure
