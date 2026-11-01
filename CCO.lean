@@ -1781,3 +1781,4 @@ import CCO.TransitionClosure.OriginalFiniteCanonicalTransitions
 import CCO.TransitionClosure.OriginalFiniteUnaryNormals
 import CCO.TransitionClosure.OriginalUnaryNormalClosure
 import CCO.TransitionClosure.OriginalUnaryTermLanguage
+import CCO.TransitionClosure.OriginalUnaryTermNormalization
