@@ -1,0 +1,82 @@
+{
+  "request_blob_sha": "46441f89197648d447c361807f0b7a5412ef25d0",
+  "request_path": "coordination/requests/chat-3/20261101_1518_chat3_B050_approve_f938_7d3c21.json",
+  "coordination_parent": "a2272f4caa7090cce39be34d0f39bcc6f4be4f35",
+  "main_sha": "f42f098e852b4cea8cb09b9ada6b1145a6138dd4",
+  "status": "applied",
+  "event": "approve",
+  "package_id": "B050",
+  "effective_revision": 539,
+  "state_view": {
+    "authority": "coordination:formalization/coordination/STATE.json",
+    "state_blob_sha": "2d99ea7c181c48b619f0cfa8a0f936f8d7e96aca",
+    "revision": 539,
+    "policy_revision": 14,
+    "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+    "execution_mode": "chat",
+    "claims_paused": false,
+    "integration_lock": null,
+    "packages": {
+      "B050": {
+        "state": "REVIEWING",
+        "owner_project_id": 4,
+        "author_actor_ids": [
+          "chat-1"
+        ],
+        "original_author_project_ids": [
+          4
+        ],
+        "branch": "chat/chat-1/B050",
+        "claim_revision": 401,
+        "base_main_sha": "f42f098e852b4cea8cb09b9ada6b1145a6138dd4",
+        "base_ci": {
+          "run_id": 41177688044,
+          "run_attempt": 1,
+          "head_sha": "f42f098e852b4cea8cb09b9ada6b1145a6138dd4",
+          "conclusion": "success",
+          "axiom_audit": "allowlist",
+          "job_id": 124468532094,
+          "declarations": 28723,
+          "source_modules": 1619
+        },
+        "head_sha": "f938931c0aba92310e96a302df8726bd826024d3",
+        "pr_number": 67,
+        "observed_ci": {
+          "run_id": 41311468691,
+          "run_attempt": 1,
+          "job_id": 124862623493,
+          "head_sha": "f938931c0aba92310e96a302df8726bd826024d3",
+          "conclusion": "success",
+          "axiom_audit": "allowlist",
+          "declarations": 29310,
+          "source_modules": 1724
+        },
+        "checkpoint_revision": 535,
+        "ci": {
+          "run_id": 41311468691,
+          "run_attempt": 1,
+          "head_sha": "f938931c0aba92310e96a302df8726bd826024d3",
+          "conclusion": "success",
+          "axiom_audit": "allowlist",
+          "job_id": 124862623493,
+          "declarations": 29310,
+          "source_modules": 1724
+        },
+        "report_path": "formalization/coordination/submissions/B050.md",
+        "review": {
+          "project_id": 6,
+          "actor_id": "chat-3",
+          "head_sha": "f938931c0aba92310e96a302df8726bd826024d3",
+          "approved": true,
+          "independence": {
+            "identity": "chat-project:cco-chat-3",
+            "non_author": true,
+            "summary": "Independent project 6 has authored, designed and directed no B050 code or source proof in any chat; its previous actions only involved reading coordinator status and publishing separate chat-3 status reports, and it will review the complete source, providers, consumers and CI without modifying author files.",
+            "report_path": "formalization/coordination/reviews/B050-chat-3.md"
+          },
+          "summary": "Independent non-author chat-project:cco-chat-3 audited all 11 B050 source exports and the 68-claim, 12-equation, 9-task source mapping against frozen source08/source09, 105 actual Lean production modules and public root imports, accepted B001/B002/B006/B011/B038 providers and consumers, original SAP/CCO and RAW/STRONG/quotient action hypotheses. The complete exact PR job 124862623493 (run 41311468691) succeeded, verifying 1724 source modules and auditing 29310 declarations with only allowed standard axioms. No source gap, hidden conditional provider, stronger source premise or axiom was found. Reviewer wrote no B050 code; full independent report is coordination:formalization/coordination/reviews/B050-chat-3.md."
+        }
+      }
+    }
+  }
+}
