@@ -24,6 +24,13 @@ def sixCycleAdj (a b : Fin 6) : Prop :=
 def sixCycleEven (a b : Fin 6) : Prop :=
   a.val % 2 = b.val % 2
 
+private instance : DecidableRel sixCycleAdj :=
+  fun a b => inferInstanceAs
+    (Decidable (((a.val + 1) % 6 = b.val) ∨ ((b.val + 1) % 6 = a.val)))
+
+private instance : DecidableRel sixCycleEven :=
+  fun a b => inferInstanceAs (Decidable (a.val % 2 = b.val % 2))
+
 theorem sixCycleEven_equivalence : Equivalence sixCycleEven := by
   refine ⟨?_, ?_, ?_⟩
   · intro a
@@ -62,6 +69,18 @@ def sixCycleWalk : Nat → Fin 6 → Fin 6 → Prop
   | n + 1, a, b =>
       ∃ c : Fin 6, sixCycleAdj a c ∧ sixCycleWalk n c b
 
+private instance (n : Nat) : DecidableRel (sixCycleWalk n) := by
+  intro a b
+  induction n generalizing a b with
+  | zero =>
+      change Decidable (a = b)
+      infer_instance
+  | succ n ih =>
+      letI : DecidablePred (fun c : Fin 6 => sixCycleWalk n c b) :=
+        fun c => ih c b
+      change Decidable (∃ c : Fin 6, sixCycleAdj a c ∧ sixCycleWalk n c b)
+      infer_instance
+
 /-- All six vertices lie in ONE connected component: every ordered
 pair is joined by some actual walk of length at most five. The
 quantifier is over Fin 6, so this check is finite and kernel-reduced. -/
@@ -73,7 +92,7 @@ theorem sixCycle_connected :
 six vertices, not just an abstract two-colouring. -/
 theorem sixCycle_evenWalk_eq_parity :
     ∀ a b : Fin 6, sixCycleEven a b ↔
-      ∃ n : Fin 6, Even n.val ∧ sixCycleWalk n.val a b := by
+      ∃ n : Fin 6, n.val % 2 = 0 ∧ sixCycleWalk n.val a b := by
   decide
 
 /-- Every genuine length-n walk has parity difference equal to n.
