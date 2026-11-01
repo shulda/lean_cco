@@ -1701,6 +1701,7 @@ import CCO.TerminalLattice.OriginalThetaPresentations
 import CCO.TerminalLattice.OriginalSparseThetaNetwork
 import CCO.TerminalLattice.OriginalThetaSingleLabelCycle
 import CCO.TerminalLattice.OriginalThetaCycleMenuReadout
+import CCO.TerminalLattice.OriginalSparseThetaProjection
 import CCO.TerminalLattice.OriginalStrongMenuFiniteCycle
 import CCO.TerminalLattice.CentrePathSpectrum
 import CCO.TerminalLattice.OriginalLabelListThreshold
