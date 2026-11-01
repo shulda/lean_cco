@@ -63,11 +63,14 @@ theorem originalTheta_projected_edge_has_branch
     CCO.RawExact.QuotientExpansion.cycleOccurrence
       S (fun _ : Fin n => i) P hNE C step
   have hSame : o.1 = B.edges k := hStep
-  have hBound : o.2.val < (P o.1).length := o.2.isLt
+  have hPositive : 0 < (P o.1).length := by
+    have hBound := o.2.isLt
+    omega
   intro hEmpty
   have hZero : (P (B.edges k)).length = 0 := by
     simp [P, originalThetaPresentations, hEmpty]
-  rw [hSame, hZero] at hBound
+  have hLenEq : (P o.1).length = (P (B.edges k)).length :=
+    congrArg (fun edge => (P edge).length) hSame
   omega
 
 /-- Literal support of each present finite multi-theta family:
