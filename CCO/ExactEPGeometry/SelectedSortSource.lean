@@ -35,8 +35,8 @@ variable [Fintype κ] (σ : κ ↪ ι)
 
 /-- Actual tagged-point inclusion along an injective selection of
 named sorts, with precisely the same underlying real point. -/
-include S in
-def selectedSortPoint (p : Sigma (fun k : κ => X (σ k))) : Sigma X :=
+def selectedSortPoint (S : AtomicSource.{u,v,w} ι X)
+    (p : Sigma (fun k : κ => X (σ k))) : Sigma X :=
   ⟨σ p.1, p.2⟩
 
 theorem selectedSortPoint_injective :
@@ -51,7 +51,6 @@ theorem selectedSortPoint_injective :
 
 /-- Exact binary palette of the genuine selected named sorts:
 no additional colour distinction or fictitious diagonal. -/
-include S in
 def selectedSortAtomicSource :
     AtomicSource.{u,v,w} κ (fun k => X (σ k)) := by
   refine {
@@ -131,12 +130,23 @@ theorem selectedSortHomogeneous
     have hOld : ∀ a b, taggedColour S (left a) (left b) =
         taggedColour S (right a) (right b) := by
       intro a b
-      exact congrArg (selectedSortTaggedColour S σ) (hColour a b)
+      calc
+        taggedColour S (left a) (left b) =
+            selectedSortTaggedColour S σ
+              (taggedColour (selectedSortAtomicSource S σ) (source a) (source b)) :=
+          (selectedSortTaggedColour_spec S σ (source a) (source b)).symm
+        _ = selectedSortTaggedColour S σ
+              (taggedColour (selectedSortAtomicSource S σ) (target a) (target b)) :=
+          congrArg (selectedSortTaggedColour S σ) (hColour a b)
+        _ = taggedColour S (right a) (right b) :=
+          selectedSortTaggedColour_spec S σ (target a) (target b)
     obtain ⟨g,hg⟩ := H.extends_finite_diagram left right hOld
     refine ⟨g,?_⟩
     intro a
     apply selectedSortPoint_injective S σ
-    exact hg a
+    change selectedSortPoint S σ (g • source a) =
+      selectedSortPoint S σ (target a)
+    simpa only [selectedSortPoint, left, right] using hg a
 
 /-- Homomorphic simple-cycle completion is inherited by the ACTUAL
 selected sort sublanguage: the old diagram has the same formal
@@ -154,7 +164,15 @@ theorem selectedSortSemanticCCO
   }
   have hOldCycles : ∀ C : SimpleCycle Dold, CycleHom C := by
     intro C
-    exact hCycles C
+    let Cnew : SimpleCycle D := {
+      length := C.length
+      length_ge_three := C.length_ge_three
+      length_pos := C.length_pos
+      vertices := C.vertices
+      next_ne := C.next_ne
+      specified := C.specified
+    }
+    exact hCycles Cnew
   obtain ⟨f⟩ := cco V Dold hOldCycles
   exact ⟨{
     point := f.point
