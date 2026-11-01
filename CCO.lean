@@ -1768,3 +1768,4 @@ import CCO.TransitionClosure.OriginalStrongExactPrime
 import CCO.TransitionClosure.OriginalSAPFunctionalRigidity
 import CCO.TransitionClosure.OriginalIdentityTransport
 import CCO.TransitionClosure.OriginalSAPTransportNoncollapse
+import CCO.TransitionClosure.OriginalFiniteInvariantRelations
