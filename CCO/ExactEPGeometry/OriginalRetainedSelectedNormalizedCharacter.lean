@@ -104,7 +104,8 @@ theorem originalRetainedSelectedNormalized_character_value
         phase.character.value N := by
           change phase.character.value (e.symm (e N)) =
             phase.character.value N
-          rw [e.symm_apply_apply]
+          exact congrArg (fun W => phase.character.value W)
+            (e.symm_apply_apply N)
     _ = (originalReachedGlobalCharacter A B P transport tp
           hOne Kroot phase E hE).value R :=
       originalRetainedNormalizedArrow_corrected_value
