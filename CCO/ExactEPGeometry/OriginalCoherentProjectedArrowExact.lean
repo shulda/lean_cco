@@ -108,7 +108,20 @@ theorem original_coherent_allparent_arrow_image_exact
   obtain ⟨F,hF⟩ := original_coherent_current_exact_descent
     A B P transport tp base hOne E D hSatD
   refine ⟨F,?_⟩
-  simpa only [CCO.ExactCRT.quotientRelation, Quotient.image, hD] using hF
+  change RawExact.evaluate
+      (CCO.ExactCRT.CanonicalTyped.source B.source B.homogeneous
+        (originalExactCurrentKernelFamily A B P transport base hOne E)
+        (originalExactCurrentKernelWords A B P transport base hOne E)
+        (originalExactCurrentKernelWords_relation
+          A B P transport base hOne E)) F.words =
+    CCO.ExactCRT.quotientRelation
+      (CCO.ExactCRT.CanonicalTyped.projection
+        (originalExactCurrentKernelFamily A B P transport base hOne E) i)
+      (CCO.ExactCRT.CanonicalTyped.projection
+        (originalExactCurrentKernelFamily A B P transport base hOne E) j)
+      R.rel
+  rw [← hD]
+  exact hF
 
 /-- Real C83 source application: on the ENTIRE FULL reached
 groupoid of the actual source phase, every current full Arrow
