@@ -145,4 +145,48 @@ theorem original_SAP_transport_target_identity_edges
       ⟨a,a,hab,E.val.refl a,hac⟩
   · exact hR
 
+/-- Source07 C24-C30 actual old SAP *no-real-collapse*:
+a nontrivial original source E-class cannot transport along
+a genuine B040 serial/coserial invariant R to an equality
+target kernel. The target relation necessarily contains a
+pair of DISTINCT real target points.
+
+This is proved from real input/output SAP rigidity, not by
+assuming quotient fibre nonidentity, extra quotient homogeneity,
+SAP/CCO on the target quotient, or equality of foreign charts.
+The nontrivial original E is given by an actual distinct E-pair
+rather than an abstract nonempty relation. -/
+theorem original_SAP_transport_preserves_nonidentity
+    (H : HomogeneousSource S G) (sap : AgeSAP S)
+    {i j : ι} (E : QuotientTransport.InvEq G (X i))
+    (hNontrivial : ∃ x z : X i, E x z ∧ x ≠ z)
+    (R : QuotientTransport.Rel (X i) (X j))
+    (T : QuotientTransport.Transport E R) :
+    ∃ y z : X j, T.target y z ∧ y ≠ z := by
+  by_contra hNo
+  have hId : ∀ y z : X j, T.target y z → y = z := by
+    intro y z h
+    by_contra hneq
+    exact hNo ⟨y,z,h,hneq⟩
+  have hRigid :=
+    original_SAP_transport_target_identity_edges
+      S H sap E R T hId
+  obtain ⟨x,z,hExz,hxz⟩ := hNontrivial
+  obtain ⟨y,hxy⟩ := T.serial x
+  obtain ⟨w,hzw⟩ := T.serial z
+  have hXY : (⟨i,x⟩ : Sigma X) = ⟨j,y⟩ :=
+    hRigid x y hxy
+  have hZW : (⟨i,z⟩ : Sigma X) = ⟨j,w⟩ :=
+    hRigid z w hzw
+  have hYW : y = w := hId y w
+    ((T.target_iff y w).mpr ⟨x,z,hxy,hExz,hzw⟩)
+  have hTag : (⟨i,x⟩ : Sigma X) = ⟨i,z⟩ := by
+    calc
+      (⟨i,x⟩ : Sigma X) = ⟨j,y⟩ := hXY
+      _ = ⟨j,w⟩ := congrArg (fun a : X j => (⟨j,a⟩ : Sigma X)) hYW
+      _ = ⟨i,z⟩ := hZW.symm
+  have hEq : x = z := by
+    simpa only [Sigma.mk.injEq,heq_eq_eq,true_and] using hTag
+  exact hxz hEq
+
 end CCO.TransitionClosure
