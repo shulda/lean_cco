@@ -224,7 +224,9 @@ theorem original_saturated_strong_menu_cyclic_values
         exact hChain
       have hCloseRev : S.menuRel (menus (Fin.last n)) y x := by
         obtain ⟨a,ha,hcol⟩ := hClose
-        exact ⟨a,ha,(colour_symmetric S y x).trans hcol⟩
+        have hSwap : S.colour y x = some (S.conv a) :=
+          (S.colour_swap x y a).mp hcol
+        exact ⟨a,ha,by simpa only [S.symmetricLoop a] using hSwap⟩
       exact originalStrongMenuChain_cyclic_values
         S menus x y hChainActual hCloseRev
 
