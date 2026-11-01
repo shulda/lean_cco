@@ -1716,3 +1716,4 @@ import CCO.ExactEPGeometry.CertifiedHistoryLabels
 import CCO.ExactEPGeometry.ActualGateBitMaximality
 import CCO.ExactEPGeometry.OldGateBitMaximality
 import CCO.ExactEPGeometry.CertifiedFinalKernelSupport
+import CCO.ExactEPGeometry.CertifiedHistoryMaximality
