@@ -116,6 +116,30 @@ theorem original_fresh_typed_atom_left_in_equiv
     change S.colour u' v = some a
     simpa only [hgu,hgv] using hMove.trans huv
   refine ⟨u',?_,hJnew,hAtom⟩
-  simpa only [huTag] using hNotForbidden
+  simpa only [huTag, Finset.mem_coe] using hNotForbidden
+
+/-- The right-endpoint counterpart is obtained by ACTUALLY reversing
+the OLD typed fine atom and invoking the proved left-endpoint motion
+in the genuine target sort. Mixed-sort direction is reversed only via
+the source's typed converse and never by same-sort commutation. -/
+theorem original_fresh_typed_atom_right_in_equiv
+    (H : HomogeneousSource S G) (sap : AgeSAP S)
+    {i j : ι}
+    (K : ColourEq S j) (hK : (⊥ : ColourEq S j) < K)
+    (a : S.Atom i j) (u : X i) (v : X j)
+    (huv : S.atomRel a u v)
+    (forbidden : Finset (Sigma X)) :
+    ∃ v' : X j,
+      (⟨j,v'⟩ : Sigma X) ∉ forbidden ∧
+      K v v' ∧ S.atomRel a u v' := by
+  have hReverse : S.atomRel (S.conv a) v u :=
+    (S.colour_swap u v a).mp huv
+  obtain ⟨v',hAvoid,hClass,hReverseAtom⟩ :=
+    original_fresh_typed_atom_left_in_equiv
+      S H sap K hK (S.conv a) v u hReverse forbidden
+  have hForward : S.atomRel a u v' := by
+    have hSwap := (S.colour_swap v' u (S.conv a)).mp hReverseAtom
+    simpa only [S.conv_invol] using hSwap
+  exact ⟨v',hAvoid,hClass,hForward⟩
 
 end CCO.TransitionClosure
