@@ -94,8 +94,7 @@ theorem original_coherent_allparent_projected_gate_exact
     CCO.ExactCRT.quotientRelation
       (CCO.ExactCRT.CanonicalTyped.projection J p)
       (CCO.ExactCRT.CanonicalTyped.projection J p) K.rel
-  rw [← hD]
-  exact hF
+  simpa only [hD] using hF
 
 /-- C82 genuine source-application, with NO added quotient gate
 exactness premise: retained E <= original G and C56 together
