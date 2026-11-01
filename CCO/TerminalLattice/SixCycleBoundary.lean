@@ -46,7 +46,9 @@ theorem sixCycleEven_proper_intermediate :
 theorem sixCycleAdj_symm (a b : Fin 6) :
     sixCycleAdj a b → sixCycleAdj b a := by
   intro h
-  exact h.symm
+  rcases h with h | h
+  · exact Or.inr h
+  · exact Or.inl h
 
 /-- Every actual six-cycle edge flips parity; hence bipartiteness
 is an explicit finite theorem rather than a diagrammatic assertion. -/
@@ -102,7 +104,6 @@ theorem sixCycle_no_full_power (n : Nat) :
   intro hall
   have h00 := sixCycleWalk_parity n 0 0 (hall 0 0)
   have h01 := sixCycleWalk_parity n 0 1 (hall 0 1)
-  norm_num at h00 h01
   omega
 
 theorem sixCycle_no_eventual_full_powers :
