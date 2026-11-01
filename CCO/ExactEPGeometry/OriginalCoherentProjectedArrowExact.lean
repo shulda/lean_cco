@@ -108,26 +108,7 @@ theorem original_coherent_allparent_arrow_image_exact
   obtain ⟨F,hF⟩ := original_coherent_current_exact_descent
     A B P transport tp base hOne E D hSatD
   refine ⟨F,?_⟩
-  calc
-    RawExact.evaluate
-        (originalExactAllCurrentQuotientCurrentSource A B P
-          transport base hOne E).source F.words =
-      CCO.ExactCRT.quotientRelation
-        (CCO.ExactCRT.CanonicalTyped.projection
-          (originalExactCurrentKernelFamily
-            A B P transport base hOne E) i)
-        (CCO.ExactCRT.CanonicalTyped.projection
-          (originalExactCurrentKernelFamily
-            A B P transport base hOne E) j)
-        (RawExact.evaluate B.source D.words) := hF
-    _ = Quotient.image
-        (fun x : B.Point i => (Quotient.mk'' x :
-          (originalExactAllCurrentQuotientCurrentSource A B P
-            transport base hOne E).Point i))
-        (fun y : B.Point j => (Quotient.mk'' y :
-          (originalExactAllCurrentQuotientCurrentSource A B P
-            transport base hOne E).Point j))
-        R.rel := by rw [hD]; rfl
+  simpa only [CCO.ExactCRT.quotientRelation, Quotient.image, hD] using hF
 
 /-- Real C83 source application: on the ENTIRE FULL reached
 groupoid of the actual source phase, every current full Arrow
