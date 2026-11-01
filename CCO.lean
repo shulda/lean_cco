@@ -1698,6 +1698,7 @@ import CCO.TerminalLattice.LabelledPathGrouping
 import CCO.TerminalLattice.PositivePathFold
 import CCO.TerminalLattice.OriginalStrongMenuChain
 import CCO.TerminalLattice.OriginalThetaPresentations
+import CCO.TerminalLattice.OriginalStrongMenuFiniteCycle
 import CCO.TerminalLattice.CentrePathSpectrum
 import CCO.TerminalLattice.OriginalLabelListThreshold
 import CCO.TerminalLattice.SparseOrderedSpectrum
