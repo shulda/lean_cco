@@ -56,7 +56,7 @@ theorem originalJMenuQuotientState_contains_diagonal
       have hMovedColour : S.colour z (g • y) = some a := by
         have hMove := S.colourInvariant_of_homogeneous H g x y
         simpa only [hgx] using hMove.trans hxy
-      exact ⟨z, g • y, rfl, Quotient.sound hJzy,
+      exact ⟨z, g • y, rfl, Quotient.sound (J.val.symm hJzy),
         ⟨a,ha,hMovedColour⟩⟩
 
 /-- A genuine fine OLD atom outside J° is represented by an
