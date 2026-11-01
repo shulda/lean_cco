@@ -163,8 +163,8 @@ theorem originalRetainedAnchorClassBit_of_related
   have hZero :=
     original_retained_anchor_gamma_zero
       A B P transport tp hOne Kroot phase E hE a
-  rw [hZero,add_zero] at hCorrected
-  exact hCorrected.symm
+  rw [hZero] at hCorrected
+  simpa only [add_zero] using hCorrected.symm
 
 end
 end CCO.ExactEPGeometry
