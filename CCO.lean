@@ -1739,3 +1739,4 @@ import CCO.ExactEPGeometry.OriginalRetainedIdentityComposition
 import CCO.ExactEPGeometry.OriginalRetainedGamma
 import CCO.ExactEPGeometry.OriginalRetainedCorrectedBit
 import CCO.ExactEPGeometry.OriginalRetainedClassBit
+import CCO.ExactEPGeometry.OriginalRetainedChildOccupancy
