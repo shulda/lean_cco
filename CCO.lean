@@ -1866,3 +1866,4 @@ import CCO.ExactEPGeometry.SelectedSortArrowReverse
 import CCO.ExactEPGeometry.OriginalSelectedArrowCorrespondence
 import CCO.ExactEPGeometry.OriginalRetainedSelectedGroupoid
 import CCO.ExactEPGeometry.SelectedGaugeCharacter
+import CCO.ExactEPGeometry.OriginalRetainedAnchorGauge
