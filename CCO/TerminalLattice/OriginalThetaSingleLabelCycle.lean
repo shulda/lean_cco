@@ -70,8 +70,8 @@ theorem original_private_single_label_cycleHom
       exact (CCO.RawExact.QuotientExpansion.initial_label_of_path_witness
         S (fun _ : Fin n => i) P hNE C k o p q hpq hv hw).trans hf
     have hfe : f = e := hAll f hLabel
-    subst f
-    simpa only [hbLeft, hbRight] using hEval
+    have hActualEdge : o.1 = e := hf.trans hfe
+    simpa only [hActualEdge, hbLeft, hbRight] using hEval
   · exact hPositive
 
 /-- Concrete C26 source branch decomposition for the REAL original
