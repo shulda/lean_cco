@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "request_id": "20261101_checkpoint_chat1_B050_6515a_r504_peirce_68a7",
+  "actor_id": "chat-1",
+  "project_id": 4,
+  "policy_revision": 14,
+  "operation": "event",
+  "expected_revision": 504,
+  "event": "checkpoint",
+  "data": {
+    "package_id": "B050",
+    "head_sha": "6515a459bbbd37f166d8b58ace52618e0d2e88a5",
+    "pr_number": 67,
+    "observed_ci": {
+      "run_id": 41288406734,
+      "run_attempt": 1,
+      "job_id": 124794399774,
+      "head_sha": "6515a459bbbd37f166d8b58ace52618e0d2e88a5",
+      "conclusion": "success",
+      "axiom_audit": "allowlist",
+      "declarations": 29157,
+      "source_modules": 1700
+    }
+  }
+}
