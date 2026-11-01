@@ -138,9 +138,9 @@ private theta network has a colour-preserving homomorphism into
 the ORIGINAL homogeneous SAP source, and this construction invokes
 NO semantic CCO or global completion.
 
-hContained (T_j ⊆ K-diversity), hPowers (T_j raised to every n>=N)
-and the graph girth bound are the exact external mathematical
-hypotheses of the frozen source. Branch presentations only have to
+hContained (T_j ⊆ K-diversity), hPowers at n=N, and the actual
+graph girth bound suffice. The source-exact eventual-power hypothesis
+is bound in originalSparseTheta_cycle_guard_eventual below. Branch presentations only have to
 contain their assigned fine menu; bare spokes have no occurrences.
 -/
 theorem originalSparseTheta_cycle_guard
@@ -200,5 +200,39 @@ theorem originalSparseTheta_cycle_guard
         hContained C B hLength hSpectrum
     exact originalTheta_cycleHom_of_projected_guard_values
       S H sap selected guards hGuard C B values hValues
+
+
+/-- SOURCE-EXACT C30 wrapper: the frozen text assumes every positive
+power T_j^{star n} equals K-diversity for ALL n ≥ N. The internal
+finite-sparse-cycle proof only needs the instance n=N, so the
+stronger source hypothesis is discharged here explicitly rather
+than silently weakened or replaced by an extra provider.
+
+All old typed private theta paths, actual W graph edges, original
+homogeneous SAP, nonzero K, and the exact girth bound are retained.
+NO semantic CCO is used for this source-cycle claim. -/
+theorem originalSparseTheta_cycle_guard_eventual
+    (H : HomogeneousSource S G) (sap : AgeSAP S)
+    {i : ι} {q r g N : Nat}
+    (W : CCO.ParityHasse.Sparse.SparseLabelledGraph q r g)
+    (K : ParityHasse.Original.ColourEq S i)
+    (hK : (⊥ : ParityHasse.Original.ColourEq S i) < K)
+    (spokes : List (PositiveWord S i i))
+    (menus : Fin r → S.Menu i i)
+    (families : Fin r → List (PositiveWord S i i))
+    (hSpec : OriginalSparseThetaBranchSpec S K spokes menus families)
+    (hN : 0 < N) (hGirth : r * (N-1) + 1 ≤ g)
+    (hContained : ∀ j : Fin r,
+      menus j ⊆ originalEquivDiversityPalette S K)
+    (hPowers : ∀ (j : Fin r) (n : Nat), N ≤ n →
+      originalStrongPalettePower S (menus j) (n-1) =
+        originalEquivDiversityPalette S K)
+    (C : SimpleCycle
+      (originalSparseThetaDiagram
+        S H sap W K hK spokes menus families hSpec)) :
+    CycleHom C :=
+  originalSparseTheta_cycle_guard S H sap W K hK spokes
+    menus families hSpec hN hGirth hContained
+    (fun j => hPowers j N le_rfl) C
 
 end CCO.TerminalLattice
