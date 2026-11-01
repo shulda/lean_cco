@@ -134,12 +134,13 @@ theorem originalRetainedSelectedFiniteSeedExtension
     (E : ExactEq A.source (P.parent r))
     (hE : E ≤ PrefixExactLargestLift.largest A B P transport tp r
       (current_kernel_exact_eq B Kroot))
-    (s : Finset (Abstract.Point
-      (originalRetainedSelectedPointFunctor A B P transport tp
-        hOne Kroot E hE)))
-    (ε : s → ZMod 2) :
+    :
     letI := originalRetainedOccupancyGroupoid
       A B P transport tp hOne Kroot E hE
+    ∀ (s : Finset (Abstract.Point
+      (originalRetainedSelectedPointFunctor A B P transport tp
+        hOne Kroot E hE)))
+      (ε : s → ZMod 2),
     let F := originalRetainedSelectedPointFunctor
       A B P transport tp hOne Kroot E hE
     let chi := originalRetainedSelectedOccupancyCharacter
@@ -154,6 +155,7 @@ theorem originalRetainedSelectedFiniteSeedExtension
   letI : Groupoid Occ :=
     originalRetainedOccupancyGroupoid A B P transport tp
       hOne Kroot E hE
+  intro s ε
   let F := originalRetainedSelectedPointFunctor
     A B P transport tp hOne Kroot E hE
   let chi := originalRetainedSelectedOccupancyCharacter
