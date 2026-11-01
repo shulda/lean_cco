@@ -87,24 +87,7 @@ theorem original_coherent_allparent_projected_gate_exact
   obtain ⟨F,hF⟩ := original_coherent_current_exact_descent
     A B P transport tp base hOne E D hSatD
   refine ⟨F,?_⟩
-  calc
-    RawExact.evaluate
-        (originalExactAllCurrentQuotientCurrentSource
-          A B P transport base hOne E).source F.words =
-      CCO.ExactCRT.quotientRelation
-        (CCO.ExactCRT.CanonicalTyped.projection J p)
-        (CCO.ExactCRT.CanonicalTyped.projection J p)
-        (RawExact.evaluate B.source D.words) := hF
-    _ = Quotient.image
-      (fun x : B.Point p => (Quotient.mk'' x :
-        (originalExactAllCurrentQuotientCurrentSource
-          A B P transport base hOne E).Point p))
-      (fun y : B.Point p => (Quotient.mk'' y :
-        (originalExactAllCurrentQuotientCurrentSource
-          A B P transport base hOne E).Point p))
-      K.rel := by
-        rw [hD]
-        rfl
+  simpa only [CCO.ExactCRT.quotientRelation, Quotient.image, hD] using hF
 
 /-- C82 genuine source-application, with NO added quotient gate
 exactness premise: retained E <= original G and C56 together
