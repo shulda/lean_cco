@@ -44,7 +44,7 @@ structure SelectedRetyping where
 
 namespace SelectedRetyping
 
-variable {σ} (D : SelectedRetyping (X := X) σ (G := G))
+variable {S σ} (D : SelectedRetyping (X := X) σ (G := G))
 
 /-- Any two true B.G-orbitals are preserved and reflected by the
 two FULL equivariant point equivalences; the group element is
@@ -109,12 +109,12 @@ theorem atomWord_iff
     Classical.choose_spec (Classical.choose_spec (S.realized a))
   have hOld : S.rawAtomRel (S.colour x₀ y₀) =
       GroupActions.orbital (G := G) x₀ y₀ :=
-    S.actual_pair_orbital_of_homogeneous H x₀ y₀
+    RawExact.actual_pair_orbital_of_homogeneous S H x₀ y₀
   have hNew : T.rawAtomRel
         (T.colour (D.pointEquiv i x₀) (D.pointEquiv j y₀)) =
       GroupActions.orbital (G := G)
         (D.pointEquiv i x₀) (D.pointEquiv j y₀) :=
-    T.actual_pair_orbital_of_homogeneous HT
+    RawExact.actual_pair_orbital_of_homogeneous T HT
       (D.pointEquiv i x₀) (D.pointEquiv j y₀)
   calc
     S.atomRel a x y ↔
