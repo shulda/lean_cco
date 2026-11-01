@@ -53,29 +53,47 @@ theorem original_meet_irred_full_cover_le
 /-- The OLD quotient graph connectedness is pulled back to a
 genuine FULL invariant equivalence of the ACTUAL original sort.
 Original pair homogeneity, rather than arbitrary quotient
-homogeneity, certifies its original named-pair colour invariance. -/
+homogeneity, certifies its original named-pair colour invariance.
+
+The setoid relation is explicitly the lifted finite-walk relation;
+using a direct constructor keeps its real-point predicate transparent. -/
 def originalJMenuConnectedFullColourEq
     (H : HomogeneousSource S G)
     {i : ι} (J : ColourEq S i) (P : S.Menu i i) :
-    ColourEq S i := by
-  let C := originalJMenuQuotientConnected S H J P
-  let R : Setoid (X i) := {
-    r := fun x y => C (Quotient.mk J.val x) (Quotient.mk J.val y)
+    ColourEq S i :=
+  ⟨{
+    r := fun x y =>
+      originalJMenuQuotientConnected S H J P
+        (Quotient.mk J.val x) (Quotient.mk J.val y)
     iseqv := ⟨
-      fun x => C.refl (Quotient.mk J.val x),
-      fun {x y} h => C.symm h,
-      fun {x y z} h k => C.trans h k⟩
-  }
-  refine ⟨R, ?_⟩
-  apply groupInvariant_colourInvariant S H
-  intro g x y hxy
-  letI : MulAction G (Quotient J.val) :=
-    originalQuotientAction S H J
-  have hC :=
-    originalJMenuQuotientConnected_groupInvariant
-      S H J P g
-        (Quotient.mk J.val x) (Quotient.mk J.val y) hxy
-  simpa only [originalQuotient_mk_smul S H J] using hC
+      fun x => (originalJMenuQuotientConnected S H J P).refl
+        (Quotient.mk J.val x),
+      fun {x y} h =>
+        (originalJMenuQuotientConnected S H J P).symm h,
+      fun {x y z} h k =>
+        (originalJMenuQuotientConnected S H J P).trans h k⟩
+  }, by
+    apply groupInvariant_colourInvariant S H
+    intro g x y hxy
+    letI : MulAction G (Quotient J.val) :=
+      originalQuotientAction S H J
+    have hMoved :=
+      originalJMenuQuotientConnected_groupInvariant
+        S H J P g
+          (Quotient.mk J.val x) (Quotient.mk J.val y) hxy
+    simpa only [originalQuotient_mk_smul S H J] using hMoved⟩
+
+/-- Explicit interpretation of the FULL original invariant
+connectedness equivalence at any two ACTUAL old source points.
+This replaces all implicit quotient coercion manipulations. -/
+theorem originalJMenuConnectedFullColourEq_iff
+    (H : HomogeneousSource S G)
+    {i : ι} (J : ColourEq S i) (P : S.Menu i i)
+    (x y : X i) :
+    originalJMenuConnectedFullColourEq S H J P x y ↔
+      originalJMenuQuotientConnected S H J P
+        (Quotient.mk J.val x) (Quotient.mk J.val y) :=
+  Iff.rfl
 
 /-- J is actually contained in the lifted old connectedness:
 pairs of J-equivalent real points have EQUAL quotient images.
@@ -86,8 +104,7 @@ theorem originalJMenuConnectedFullColourEq_above_J
     {i : ι} (J : ColourEq S i) (P : S.Menu i i) :
     J ≤ originalJMenuConnectedFullColourEq S H J P := by
   intro x y hJxy
-  change originalJMenuQuotientConnected S H J P
-    (Quotient.mk J.val x) (Quotient.mk J.val y)
+  apply (originalJMenuConnectedFullColourEq_iff S H J P x y).2
   rw [Quotient.sound hJxy]
   all_goals exact (originalJMenuQuotientConnected S H J P).refl _
 
@@ -113,12 +130,11 @@ theorem originalJMenuConnectedFullColourEq_strict
   have hS : originalJMenuQuotientState S J P
         (Quotient.mk J.val x) (Quotient.mk J.val y) :=
     ⟨x,y,rfl,rfl,⟨a,ha,hcol⟩⟩
-  have hE : E x y := by
-    change originalJMenuQuotientConnected S H J P
-      (Quotient.mk J.val x) (Quotient.mk J.val y)
-    exact ⟨1,(relPow_one
-      (originalJMenuQuotientState S J P)
-      (Quotient.mk J.val x) (Quotient.mk J.val y)).mpr hS⟩
+  have hE : E x y :=
+    (originalJMenuConnectedFullColourEq_iff S H J P x y).2
+      ⟨1,(relPow_one
+        (originalJMenuQuotientState S J P)
+        (Quotient.mk J.val x) (Quotient.mk J.val y)).mpr hS⟩
   intro hEq
   have hJvia : J x y := by
     rw [hEq]
@@ -156,6 +172,6 @@ theorem originalJMenuQuotientConnected_contains_full_MI_cover
     | _ y =>
       have hKxy : K x y :=
         (originalUpperSetoid_mk S J K hJK.1.le x y).mp hUpper
-      exact hKE hKxy
+      exact (originalJMenuConnectedFullColourEq_iff S H J P x y).1 (hKE hKxy)
 
 end CCO.TransitionClosure
