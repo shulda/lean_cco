@@ -1852,3 +1852,4 @@ import CCO.ExactEPGeometry.OriginalCoherentAtomTI
 import CCO.ExactEPGeometry.OriginalCoherentWordTI
 import CCO.ExactEPGeometry.OriginalCoherentProjectedGateExact
 import CCO.ExactEPGeometry.OriginalCoherentProjectedArrowExact
+import CCO.ExactEPGeometry.OriginalCoherentAllparentGroupoid
