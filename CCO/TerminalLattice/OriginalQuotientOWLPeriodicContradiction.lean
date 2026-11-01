@@ -22,6 +22,8 @@ universe u v w t
 
 namespace CCO.TerminalLattice
 
+open ParityHasse.Original
+
 /-- Composing a genuine relation with TRUE equality on its
 carrier returns precisely the relation. This is equality of
 quotient relations, NOT an invented positive old atom. -/
