@@ -105,7 +105,7 @@ theorem originalSparseTheta_projected_cyclic_guard_values
   obtain ⟨raw, hRaw⟩ :=
     original_saturated_strong_menu_cyclic_values S H K hn
       chosenMenu (chosenMenu (Fin.last n))
-      hLast.1 hLast.2 (Set.Subset.rfl _) hSpectrum
+      hLast.1 hLast.2 (by intro x hx; exact hx) hSpectrum
   let values : Fin B.length → X i :=
     fun k => raw (Fin.cast hLength k)
   refine ⟨values, ?_⟩
