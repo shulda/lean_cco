@@ -47,7 +47,7 @@ noncomputable def originalSelectedSortRetyping
   let Q : CurrentSource.{u,v,v,t} :=
     originalExactAllCurrentQuotientCurrentSource
       A B P transport base hOne E
-  letI : ∀ i : B.Sorts, MulAction B.G (Q.Point i) := Q.action
+  letI : ∀ i : Q.Sorts, MulAction B.G (Q.Point i) := Q.action
   let C := OriginalOccupancy A B P base hOne E
   let σ : C ↪ B.Sorts :=
     originalOccupancyRepresentativeEmbedding A B P base hOne E
@@ -60,6 +60,7 @@ noncomputable def originalSelectedSortRetyping
     apply Quotient.exact
     exact (originalOccupancyRepresentative_class
       A B P base hOne E (Quotient.mk'' i : C)).symm
+  change SelectedRetyping (X := Q.Point) σ (G := B.G)
   exact {
     target := fun i => (Quotient.mk'' i : C)
     pointEquiv := fun i =>
