@@ -1854,3 +1854,4 @@ import CCO.ExactEPGeometry.OriginalCoherentProjectedGateExact
 import CCO.ExactEPGeometry.OriginalCoherentProjectedArrowExact
 import CCO.ExactEPGeometry.OriginalCoherentAllparentGroupoid
 import CCO.ExactEPGeometry.OriginalOccupancyClassTransport
+import CCO.ExactEPGeometry.OriginalOccupancyClassEquivariance
