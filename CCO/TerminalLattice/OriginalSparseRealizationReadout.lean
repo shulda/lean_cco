@@ -29,7 +29,7 @@ open ParityHasse.Original
 
 /-- The image of a literal old marked vertex of the ONE sparse
 private-word diagram. No choice of another realization is made. -/
-def originalSparseMarkedValue
+noncomputable def originalSparseMarkedValue
     (H : HomogeneousSource S G) (sap : AgeSAP S)
     {i : ι} {q r g : Nat}
     (W : CCO.ParityHasse.Sparse.SparseLabelledGraph q r g)
@@ -116,9 +116,9 @@ theorem originalSparseRealization_graph_profile
       (le_of_not_gt hxy) (by
         intro h
         subst y
-        exact W.graph.irrefl x hAdj)
+        exact W.graph.irrefl hAdj)
     have hRev := originalSparseRealization_graph_profile_ascending
-      S H sap W spoke words f hInj y x hyx (W.graph.symm hAdj)
+      S H sap W spoke words f hInj y x hyx hAdj.symm
     have hRev' : S.menuRel (PositiveWord.profile S (words (W.label s(x,y))))
         (originalSparseMarkedValue S H sap W spoke words f (oldSparseRoot W y))
         (originalSparseMarkedValue S H sap W spoke words f (oldSparseRoot W x)) := by
