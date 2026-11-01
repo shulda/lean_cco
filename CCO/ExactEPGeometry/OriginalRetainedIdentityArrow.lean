@@ -90,9 +90,15 @@ noncomputable def original_retained_identity_arrow
           (hij.symm ▸ P.point c.val z) ↔ Kc.rel y z :=
     (current_arrow_original_gate_target_trace
       A B P transport tp hij Kb Kc conn y z).symm
-  obtain ⟨x,y,hGroot⟩ :=
-    original_retained_original_gate_trace_nonempty
-      A B P transport tp hOne Kroot E hE b.val c.val hSupported
+  let hWitness := original_retained_original_gate_trace_nonempty
+    A B P transport tp hOne Kroot E hE b.val c.val hSupported
+  let x : B.Point b.val := Classical.choose hWitness
+  let y : B.Point c.val :=
+    Classical.choose (Classical.choose_spec hWitness)
+  have hGroot : Gr
+      (hbi.symm ▸ P.point b.val x)
+      (hbc.symm ▸ P.point c.val y) :=
+    Classical.choose_spec (Classical.choose_spec hWitness)
   have hReal : ∃ x : B.Point b.val, ∃ y : B.Point c.val,
       (Arrow.id G).rel (P.point b.val x)
         (hij.symm ▸ P.point c.val y) := by
