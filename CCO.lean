@@ -1775,3 +1775,4 @@ import CCO.TransitionClosure.OriginalTransportUpwardRewrite
 import CCO.TransitionClosure.OriginalTransportComposition
 import CCO.TransitionClosure.OriginalTypedCylinderSpectrum
 import CCO.TransitionClosure.OriginalTypedCylinderStrong
+import CCO.TransitionClosure.OriginalAtomicTransport
