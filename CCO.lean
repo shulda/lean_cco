@@ -1714,6 +1714,7 @@ import CCO.TerminalLattice.OriginalQuotientStatePowers
 import CCO.TerminalLattice.OriginalStrongWordHelly
 import CCO.TerminalLattice.OriginalQuotientPositiveHelly
 import CCO.TerminalLattice.OriginalQuotientNoReturn
+import CCO.TerminalLattice.OriginalQuotientInvariantFinite
 import CCO.TerminalLattice.StrongPathReordering
 import CCO.TerminalLattice.QuotientSquareSaturation
 import CCO.TerminalLattice.QuotientSquareOrbitalClosure
