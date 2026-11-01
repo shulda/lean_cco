@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "request_id": "20261101_chat2_B062_C83class_transport_ca43_r549_4a8bb3",
+  "actor_id": "chat-2",
+  "project_id": 5,
+  "policy_revision": 14,
+  "operation": "event",
+  "expected_revision": 549,
+  "event": "checkpoint",
+  "data": {
+    "package_id": "B062",
+    "head_sha": "ca43c3797f6db536ebdb378296866ee20fd44b3c",
+    "pr_number": 68,
+    "observed_ci": {
+      "run_id": 41325814535,
+      "head_sha": "ca43c3797f6db536ebdb378296866ee20fd44b3c",
+      "conclusion": "success",
+      "axiom_audit": "allowlist"
+    }
+  }
+}
