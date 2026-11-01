@@ -1714,3 +1714,4 @@ import CCO.ExactEPGeometry.CertifiedGateLabelStep
 import CCO.ExactEPGeometry.ActualLabelInduction
 import CCO.ExactEPGeometry.CertifiedHistoryLabels
 import CCO.ExactEPGeometry.ActualGateBitMaximality
+import CCO.ExactEPGeometry.OldGateBitMaximality
