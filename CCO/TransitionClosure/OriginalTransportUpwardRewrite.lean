@@ -45,9 +45,10 @@ theorem original_transport_upward_naturality
   induction q using Quotient.inductionOn with
   | _ x =>
       obtain ⟨y,hxy⟩ := T.serial x
-      rw [T.quotientEquiv_edge hxy,
-        (T.enlarge hEH).quotientEquiv_edge hxy]
-      rfl
+      rw [T.quotientEquiv_edge hxy]
+      change (Quotient.mk'' y : Quotient (T.push H hEH).val) =
+        (T.enlarge hEH).quotientEquiv (Quotient.mk'' x)
+      exact ((T.enlarge hEH).quotientEquiv_edge hxy).symm
 
 /-- Source07 exact TQU with the FULL invariant source-side
 inverse H0=pull_R(L) to any literal L≥F. The RHS is converted
@@ -66,9 +67,12 @@ theorem original_transport_upward_pull_rewrite
   induction q using Quotient.inductionOn with
   | _ x =>
       obtain ⟨y,hxy⟩ := T.serial x
-      rw [T.quotientEquiv_edge hxy,
-        (T.enlarge (T.source_le_pull L hFL)).quotientEquiv_edge hxy,
+      rw [T.quotientEquiv_edge hxy]
+      change (Quotient.mk'' y : Quotient L.val) =
+        InvEq.quotientCongr (T.push_pull L hFL)
+          ((T.enlarge (T.source_le_pull L hFL)).quotientEquiv
+            (Quotient.mk'' x))
+      rw [(T.enlarge (T.source_le_pull L hFL)).quotientEquiv_edge hxy,
         InvEq.quotientCongr_mk]
-      rfl
 
 end CCO.TransitionClosure
