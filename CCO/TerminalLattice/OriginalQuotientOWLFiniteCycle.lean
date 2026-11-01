@@ -94,7 +94,7 @@ theorem original_finite_labelled_run
   intro s n
   induction n generalizing s with
   | zero =>
-      simpa only [Function.iterate_one,
+      simpa only [Nat.zero_add, Function.iterate_one,
         original_finite_labelled_product] using hStep s
   | succ n ih =>
       calc
