@@ -59,8 +59,13 @@ def originalJMenuConnectedFullColourEq
     {i : ι} (J : ColourEq S i) (P : S.Menu i i) :
     ColourEq S i := by
   let C := originalJMenuQuotientConnected S H J P
-  let R : Setoid (X i) :=
-    Setoid.comap (fun x : X i => Quotient.mk J.val x) C
+  let R : Setoid (X i) := {
+    r := fun x y => C (Quotient.mk J.val x) (Quotient.mk J.val y)
+    iseqv := ⟨
+      fun x => C.refl (Quotient.mk J.val x),
+      fun {x y} h => C.symm h,
+      fun {x y z} h k => C.trans h k⟩
+  }
   refine ⟨R, ?_⟩
   apply groupInvariant_colourInvariant S H
   intro g x y hxy
@@ -70,7 +75,7 @@ def originalJMenuConnectedFullColourEq
     originalJMenuQuotientConnected_groupInvariant
       S H J P g
         (Quotient.mk J.val x) (Quotient.mk J.val y) hxy
-  simpa [R, C, Setoid.comap, originalQuotient_mk_smul S H J] using hC
+  simpa only [originalQuotient_mk_smul S H J] using hC
 
 /-- J is actually contained in the lifted old connectedness:
 pairs of J-equivalent real points have EQUAL quotient images.
@@ -81,11 +86,10 @@ theorem originalJMenuConnectedFullColourEq_above_J
     {i : ι} (J : ColourEq S i) (P : S.Menu i i) :
     J ≤ originalJMenuConnectedFullColourEq S H J P := by
   intro x y hJxy
-  have hQ : originalJMenuQuotientConnected S H J P
-      (Quotient.mk J.val x) (Quotient.mk J.val y) := by
-    rw [Quotient.sound hJxy]
-    exact (originalJMenuQuotientConnected S H J P).refl _
-  simpa [originalJMenuConnectedFullColourEq, Setoid.comap] using hQ
+  change originalJMenuQuotientConnected S H J P
+    (Quotient.mk J.val x) (Quotient.mk J.val y)
+  rw [Quotient.sound hJxy]
+  all_goals exact (originalJMenuQuotientConnected S H J P).refl _
 
 /-- The original P atom outside J gives a literal real pair in
 the lifted connectivity equivalence but outside J. Hence J<E
@@ -152,6 +156,6 @@ theorem originalJMenuQuotientConnected_contains_full_MI_cover
     | _ y =>
       have hKxy : K x y :=
         (originalUpperSetoid_mk S J K hJK.1.le x y).mp hUpper
-      simpa [E, originalJMenuConnectedFullColourEq, Setoid.comap] using (hKE hKxy)
+      exact hKE hKxy
 
 end CCO.TransitionClosure
