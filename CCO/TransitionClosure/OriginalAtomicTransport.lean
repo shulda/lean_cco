@@ -42,7 +42,7 @@ pair orbital, not just at one chosen representative. Original
 two-point homogeneity discharges the exact full-orbit condition. -/
 theorem original_invariant_raw_contains_full_atom
     (H : HomogeneousSource S G)
-    {i j : ι} (R : Rel (X i) (X j))
+    {i j : ι} (R : QuotientTransport.Rel (X i) (X j))
     (hInv : Invariant (G := G) R)
     (a : S.Atom i j)
     (hAtom : a ∈ S.diversityGuard R) :
@@ -70,7 +70,7 @@ that terminal RAW-represented quotient names are automatic.
 theorem original_atomic_transport_agrees_with_whole_raw
     (H : HomogeneousSource S G)
     {i j : ι} (J : ColourEq S i)
-    (R : Rel (X i) (X j))
+    (R : QuotientTransport.Rel (X i) (X j))
     (T : Transport (originalColourEqAsInvEq S H J) R)
     (a : S.Atom i j)
     (ha : a ∈ S.diversityGuard R) :
