@@ -1,12 +1,18 @@
 {
   "not_an_ownership_lease": true,
-  "state_revision": 539,
+  "state_revision": 540,
   "policy_revision": 14,
   "execution_mode": "chat",
   "claims_paused": false,
   "main_sha": "f42f098e852b4cea8cb09b9ada6b1145a6138dd4",
   "accepted": 48,
-  "integration_lock": null,
+  "integration_lock": {
+    "kind": "package",
+    "package_id": "B050",
+    "actor_id": "chat-3",
+    "base_main_sha": "f42f098e852b4cea8cb09b9ada6b1145a6138dd4",
+    "head_sha": "f938931c0aba92310e96a302df8726bd826024d3"
+  },
   "available": [],
   "next_actions": {
     "root": {
@@ -14,8 +20,9 @@
       "reason": "This execution profile is inactive for this project."
     },
     "chat-1": {
-      "action": "integrate",
-      "package_id": "B050"
+      "action": "wait_for_review",
+      "package_id": "B050",
+      "state": "INTEGRATING"
     },
     "chat-2": {
       "action": "resume",
@@ -23,13 +30,20 @@
       "state": "IN_PROGRESS"
     },
     "chat-3": {
-      "action": "integrate",
-      "package_id": "B050"
+      "action": "finish_integration",
+      "package_id": "B050",
+      "lock": {
+        "kind": "package",
+        "package_id": "B050",
+        "actor_id": "chat-3",
+        "base_main_sha": "f42f098e852b4cea8cb09b9ada6b1145a6138dd4",
+        "head_sha": "f938931c0aba92310e96a302df8726bd826024d3"
+      }
     }
   },
   "active": {
     "B050": {
-      "state": "REVIEWING",
+      "state": "INTEGRATING",
       "owner_project_id": 4,
       "head_sha": "f938931c0aba92310e96a302df8726bd826024d3",
       "pr_number": 67,
