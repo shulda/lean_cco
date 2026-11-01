@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 541,
+  "revision": 542,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -4479,7 +4479,7 @@
       "owner_project_id": null
     },
     "B050": {
-      "state": "INTEGRATING",
+      "state": "ACCEPTED",
       "owner_project_id": 4,
       "author_actor_ids": [
         "chat-1"
@@ -4536,6 +4536,17 @@
           "report_path": "formalization/coordination/reviews/B050-chat-3.md"
         },
         "summary": "Independent non-author chat-project:cco-chat-3 audited all 11 B050 source exports and the 68-claim, 12-equation, 9-task source mapping against frozen source08/source09, 105 actual Lean production modules and public root imports, accepted B001/B002/B006/B011/B038 providers and consumers, original SAP/CCO and RAW/STRONG/quotient action hypotheses. The complete exact PR job 124862623493 (run 41311468691) succeeded, verifying 1724 source modules and auditing 29310 declarations with only allowed standard axioms. No source gap, hidden conditional provider, stronger source premise or axiom was found. Reviewer wrote no B050 code; full independent report is coordination:formalization/coordination/reviews/B050-chat-3.md."
+      },
+      "accepted_commit": "636d6c89afcb68fe4e0c633e561a0b174a4e9855",
+      "main_ci": {
+        "run_id": 41314218664,
+        "run_attempt": 1,
+        "head_sha": "636d6c89afcb68fe4e0c633e561a0b174a4e9855",
+        "conclusion": "success",
+        "axiom_audit": "allowlist",
+        "job_id": 124870746450,
+        "declarations": 29310,
+        "source_modules": 1724
       }
     },
     "B051": {
@@ -4623,13 +4634,7 @@
       "owner_project_id": null
     }
   },
-  "integration_lock": {
-    "kind": "package",
-    "package_id": "B050",
-    "actor_id": "chat-3",
-    "base_main_sha": "f42f098e852b4cea8cb09b9ada6b1145a6138dd4",
-    "head_sha": "f938931c0aba92310e96a302df8726bd826024d3"
-  },
+  "integration_lock": null,
   "history": [
     {
       "revision": 1,
@@ -18820,6 +18825,29 @@
         },
         "actor_id": "chat-2",
         "request_id": "chat-2/20261101_chat2_B062_C82cohTI_3b70_r540_29d8f1"
+      }
+    },
+    {
+      "revision": 542,
+      "project_id": 6,
+      "actor_id": "chat-3",
+      "event": "accept",
+      "package_id": "B050",
+      "details": {
+        "package_id": "B050",
+        "integration_commit": "636d6c89afcb68fe4e0c633e561a0b174a4e9855",
+        "main_ci": {
+          "run_id": 41314218664,
+          "run_attempt": 1,
+          "head_sha": "636d6c89afcb68fe4e0c633e561a0b174a4e9855",
+          "conclusion": "success",
+          "axiom_audit": "allowlist",
+          "job_id": 124870746450,
+          "declarations": 29310,
+          "source_modules": 1724
+        },
+        "actor_id": "chat-3",
+        "request_id": "chat-3/20261101_chat3_B050_accept_636d6c_7a49d2"
       }
     }
   ],
