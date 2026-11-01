@@ -107,8 +107,14 @@ noncomputable def original_arrow_trace_to_current_arrow
   have hRExact : FullExact B.source R :=
     original_arrow_nonempty_current_trace_exact
       A B P transport hSame G C hReal
-  obtain ⟨W,hW⟩ := C.exact
-  obtain ⟨D,hD⟩ := G.exact
+  let W : RawExact.NonemptyExact A.source (P.parent p) (P.parent p) :=
+    Classical.choose C.exact
+  have hW : RawExact.evaluate A.source W.words = C.rel :=
+    Classical.choose_spec C.exact
+  let D : RawExact.NonemptyExact A.source (P.parent p) (P.parent p) :=
+    Classical.choose G.exact
+  have hD : RawExact.evaluate A.source D.words = G.rel :=
+    Classical.choose_spec G.exact
   let Wpq : RawExact.NonemptyExact A.source
       (P.parent p) (P.parent q) :=
     oldExactRightCast A.source hSame W
@@ -155,15 +161,16 @@ noncomputable def original_arrow_trace_to_current_arrow
         (hSame.symm ▸ P.point q y))
         (hSame.symm ▸ P.point q z))).trans
         (hGateQ y z))
-  obtain ⟨x₀,y₀,hxy₀⟩ := hReal
   have hInPQ : ∃ x : B.Point p, ∃ y : B.Point q,
       RawExact.evaluate A.source Wpq.words
-        (P.point p x) (P.point q y) :=
-    ⟨x₀,y₀,(hWpq x₀ y₀).mpr hxy₀⟩
+        (P.point p x) (P.point q y) := by
+    obtain ⟨x₀,y₀,hxy₀⟩ := hReal
+    exact ⟨x₀,y₀,(hWpq x₀ y₀).mpr hxy₀⟩
   have hInQP : ∃ y : B.Point q, ∃ x : B.Point p,
       RawExact.evaluate A.source Wqp.words
-        (P.point q y) (P.point p x) :=
-    ⟨y₀,x₀,(hWqp y₀ x₀).mpr hxy₀⟩
+        (P.point q y) (P.point p x) := by
+    obtain ⟨x₀,y₀,hxy₀⟩ := hReal
+    exact ⟨y₀,x₀,(hWqp y₀ x₀).mpr hxy₀⟩
   let a : B.Point p := Classical.choice (B.source.nonemptySort p)
   let b : B.Point q := Classical.choice (B.source.nonemptySort q)
   have hInGpp : ∃ x z : B.Point p,
