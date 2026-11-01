@@ -73,7 +73,7 @@ theorem originalExactGateMeet_le_member
   | nil => cases hE
   | cons F tail ih =>
       rcases List.mem_cons.mp hE with rfl | hMem
-      · change F ⊓ originalExactGateMeet S i tail ≤ F
+      · change E ⊓ originalExactGateMeet S i tail ≤ E
         exact inf_le_left
       · change F ⊓ originalExactGateMeet S i tail ≤ E
         exact le_trans inf_le_right (ih hMem)
