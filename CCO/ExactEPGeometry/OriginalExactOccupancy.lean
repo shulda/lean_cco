@@ -88,7 +88,8 @@ theorem originalExactGlobalRelation_prefix_invariant
       A.homogeneous B.homogeneous P
       (fun i j x y => E ((hOne i).symm ▸ x) ((hOne j).symm ▸ y))
       hTyped
-  exact hGlobal
+  intro i j g x y hxy
+  exact hGlobal (i := i) (j := j) g x y hxy
 
 /-- The real current full-carrier E relation, as a genuine setoid
 on the actual tagged current points. Its classes are literal E-classes,
