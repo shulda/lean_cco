@@ -1730,3 +1730,4 @@ import CCO.ExactEPGeometry.ActualDiscardedBit
 import CCO.ExactEPGeometry.OriginalDiscardedGateBit
 import CCO.ExactEPGeometry.OriginalDiscardedChildOccupancy
 import CCO.ExactEPGeometry.OriginalDiscardedOccupancy
+import CCO.ExactEPGeometry.OriginalRetainedOccupancy
