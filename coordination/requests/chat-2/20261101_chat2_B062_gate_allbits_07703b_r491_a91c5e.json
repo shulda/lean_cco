@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "request_id": "20261101_chat2_B062_gate_allbits_07703b_r491_a91c5e",
+  "actor_id": "chat-2",
+  "project_id": 5,
+  "policy_revision": 14,
+  "operation": "event",
+  "expected_revision": 491,
+  "event": "checkpoint",
+  "data": {
+    "package_id": "B062",
+    "head_sha": "07703bbb124d3d60a45bac396c9e664b893ac4dc",
+    "pr_number": 68,
+    "observed_ci": {
+      "run_id": 41284350620,
+      "head_sha": "07703bbb124d3d60a45bac396c9e664b893ac4dc",
+      "conclusion": "success",
+      "axiom_audit": "allowlist"
+    }
+  }
+}
