@@ -69,14 +69,14 @@ theorem full_reached_original_bridge_correspondence
             ((hOriginalOne (P.parent b.val) (P.parent c.val)).symm ▸
               P.point c.val y)) := by
   dsimp only
-  let calc := exactCalculus_of_homogeneous_CCO
+  let calculus := exactCalculus_of_homogeneous_CCO
     B.source B.homogeneous B.cco
-  let Kb := Reached.kernel B.homogeneous calc b
-  let Kc := Reached.kernel B.homogeneous calc c
+  let Kb := Reached.kernel B.homogeneous calculus b
+  let Kc := Reached.kernel B.homogeneous calculus c
   let G := original_largest_gate_kernel A B P transport tp b.val Kb
   let hSame := hOriginalOne (P.parent b.val) (P.parent c.val)
   have hConnect : Arrow B.source Kb Kc :=
-    Reached.connectingArrow B.homogeneous calc b c
+    Reached.connectingArrow B.homogeneous calculus b c
   constructor
   · intro R
     exact current_arrow_original_correspondence_trace
