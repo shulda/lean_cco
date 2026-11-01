@@ -30,6 +30,7 @@ open APCharacter
 open APCharacter.SourceAge
 open APCharacter.Towers
 open RigidGroupoid.Geometry
+open CCO.ParityHasse.Original
 
 noncomputable section
 
@@ -84,7 +85,9 @@ theorem current_exact_preserving_phase_label_le_gate
   have hRoot : Reached.kernel B.homogeneous C b = K :=
     Reached.root_kernel B.homogeneous C (A := K)
   have hRootStrict : Reached.kernel B.homogeneous C b < L := by
-    simpa only [hRoot] using hStrict
+    change Reached.kernel B.homogeneous C (Reached.root K) < L
+    rw [Reached.root_kernel B.homogeneous C (A := K)]
+    exact hStrict
   have hDominant : Dominant
       (Reached.kernel B.homogeneous C b) T :=
     phase.atSort_dominant b
