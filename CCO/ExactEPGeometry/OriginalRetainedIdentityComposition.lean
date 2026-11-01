@@ -125,6 +125,9 @@ theorem original_retained_identity_character_cocycle
       (fun k => hOne (P.parent r) k) E).r b.val c.val)
     (hcd : (originalExactOccupancySetoid A B P (P.parent r)
       (fun k => hOne (P.parent r) k) E).r c.val d.val) :
+    letI := Reached.groupoid B.homogeneous
+      (exactCalculus_of_homogeneous_CCO
+        B.source B.homogeneous B.cco) (A := Kroot)
     phase.character.value
         (original_retained_identity_arrow
           A B P transport tp hOne Kroot E hE b c hbc) +
