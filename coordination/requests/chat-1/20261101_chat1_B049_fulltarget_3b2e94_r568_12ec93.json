@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "request_id": "20261101_chat1_B049_fulltarget_3b2e94_r568_12ec93",
+  "actor_id": "chat-1",
+  "project_id": 4,
+  "policy_revision": 14,
+  "operation": "event",
+  "expected_revision": 568,
+  "event": "checkpoint",
+  "data": {
+    "package_id": "B049",
+    "head_sha": "3b2e94c9584f32dd4b5b573f46ffcefc771cd596",
+    "pr_number": 69,
+    "observed_ci": {
+      "run_id": 41344091812,
+      "run_attempt": 1,
+      "job_id": 124960084644,
+      "head_sha": "3b2e94c9584f32dd4b5b573f46ffcefc771cd596",
+      "conclusion": "success",
+      "axiom_audit": "allowlist",
+      "declarations": 29430
+    }
+  }
+}
