@@ -164,6 +164,8 @@ theorem originalRetainedAnchorClassBit_of_related
     original_retained_anchor_gamma_zero
       A B P transport tp hOne Kroot phase E hE a
   rw [hZero] at hCorrected
+  rw [originalRetainedAnchorClassBit_mk
+    A B P transport tp hOne Kroot phase E hE a y]
   simpa only [add_zero] using hCorrected.symm
 
 end
