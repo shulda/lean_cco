@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "request_id": "20261101_chat2_B062_oldrootlabel_aa9a6a_r490_b18c42",
+  "actor_id": "chat-2",
+  "project_id": 5,
+  "policy_revision": 14,
+  "operation": "event",
+  "expected_revision": 490,
+  "event": "checkpoint",
+  "data": {
+    "package_id": "B062",
+    "head_sha": "aa9a6a4f467b3ad29c9ec161729b3836e7c3cbe5",
+    "pr_number": 68,
+    "observed_ci": {
+      "run_id": 41283713434,
+      "head_sha": "aa9a6a4f467b3ad29c9ec161729b3836e7c3cbe5",
+      "conclusion": "success",
+      "axiom_audit": "allowlist"
+    }
+  }
+}
