@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "request_id": "20261101_submit_chat1_B050_f938931_r535_91f3",
+  "actor_id": "chat-1",
+  "project_id": 4,
+  "policy_revision": 14,
+  "operation": "event",
+  "expected_revision": 535,
+  "event": "submit",
+  "data": {
+    "package_id": "B050",
+    "head_sha": "f938931c0aba92310e96a302df8726bd826024d3",
+    "pr_number": 67,
+    "ci": {
+      "run_id": 41311468691,
+      "run_attempt": 1,
+      "job_id": 124862623493,
+      "head_sha": "f938931c0aba92310e96a302df8726bd826024d3",
+      "conclusion": "success",
+      "axiom_audit": "allowlist",
+      "declarations": 29310,
+      "source_modules": 1724
+    },
+    "report_path": "formalization/coordination/submissions/B050.md"
+  }
+}
