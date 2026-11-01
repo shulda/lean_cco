@@ -158,6 +158,8 @@ theorem originalRetainedSelectedOdd_nonidentity
         hOne Kroot phase E hE) = 1 :=
     originalRetainedSelectedOdd_detected
       A B P transport tp hOne Kroot phase E hE
+  change originalRetainedSelectedOdd A B P transport tp
+    hOne Kroot phase E hE ≠ (𝟙 q)
   intro h
   have hEq := congrArg (fun R : q ⟶ q => chi.value R) h
   have hZero : chi.value (𝟙 q) = 0 := chi.map_id q
