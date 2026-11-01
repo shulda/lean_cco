@@ -57,6 +57,7 @@ theorem originalInvariantTypedRelCode_injective
       (originalInvariantTypedRelCode S (G := G)
         (i := i) (j := j)) := by
   intro R T hCodes
+  change S.rawSupport R.val = S.rawSupport T.val at hCodes
   apply Subtype.ext
   funext x y
   apply propext
@@ -140,7 +141,7 @@ def originalNonemptyInvariantTypedRel_comp
 /-- Real logical original identity belongs to the finite nonempty
 same-sort relation family. It is NOT a diversity STRONG atom and
 must be omitted (not multiplied by empty) for positive OLD words. -/
-def originalNonemptyInvariantTypedRel_ident
+noncomputable def originalNonemptyInvariantTypedRel_ident
     (i : ι) :
     OriginalNonemptyInvariantTypedRel (X := X) (G := G) i i := by
   let R : OriginalInvariantTypedRel (X := X) (G := G) i i :=
