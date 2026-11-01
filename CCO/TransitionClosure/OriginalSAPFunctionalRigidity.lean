@@ -53,7 +53,7 @@ theorem original_SAP_invariant_function_edge_is_identity
   have hOutputNot : output ∉ base.vertices := by
     intro h
     have hEq : output = anchor := by
-      simpa only [base,FiniteInduced.ofFinset, Finset.mem_singleton] using h
+      simpa [base, FiniteInduced.ofFinset] using h
     exact hDistinct hEq.symm
   let F : Set (Sigma X) := {output}
   obtain ⟨other,hOrbit,hAvoid⟩ :=
