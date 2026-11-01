@@ -52,7 +52,9 @@ noncomputable instance originalExternalQuotientState_finite
     Finite (OriginalExternalQuotientState S H J K) := by
   letI : Finite (OriginalInvariantQuotientState S H J) :=
     originalInvariantQuotientState_finite S H J
-  infer_instance
+  exact Finite.of_injective
+    (fun R : OriginalExternalQuotientState S H J K => R.val)
+    Subtype.val_injective
 
 /-- One ACTUAL old-real K-external pair gives one member of the exact
 finite complete quotient-orbital family. This is not a proper fine
