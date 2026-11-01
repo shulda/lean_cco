@@ -144,9 +144,12 @@ theorem selectedSortHomogeneous
     refine ⟨g,?_⟩
     intro a
     apply selectedSortPoint_injective (X := X) σ
-    change selectedSortPoint σ (g • source a) =
-      selectedSortPoint σ (target a)
-    simpa only [selectedSortPoint, left, right] using hg a
+    have hNaturality (p : Sigma (fun k : κ => X (σ k))) :
+        selectedSortPoint (X := X) σ (g • p) =
+          g • selectedSortPoint (X := X) σ p := by
+      cases p with
+      | mk k x => rfl
+    exact (hNaturality (source a)).trans (hg a)
 
 /-- Homomorphic simple-cycle completion is inherited by the ACTUAL
 selected sort sublanguage: the old diagram has the same formal
