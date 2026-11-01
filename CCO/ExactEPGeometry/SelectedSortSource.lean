@@ -40,7 +40,7 @@ def selectedSortPoint
   ⟨σ p.1, p.2⟩
 
 theorem selectedSortPoint_injective :
-    Function.Injective (selectedSortPoint σ) := by
+    Function.Injective (selectedSortPoint (X := X) σ) := by
   rintro ⟨k,x⟩ ⟨l,y⟩ h
   have hk : k = l := σ.injective (congrArg Sigma.fst h)
   subst l
@@ -143,7 +143,7 @@ theorem selectedSortHomogeneous
     obtain ⟨g,hg⟩ := H.extends_finite_diagram left right hOld
     refine ⟨g,?_⟩
     intro a
-    apply selectedSortPoint_injective σ
+    apply selectedSortPoint_injective (X := X) σ
     change selectedSortPoint σ (g • source a) =
       selectedSortPoint σ (target a)
     simpa only [selectedSortPoint, left, right] using hg a
