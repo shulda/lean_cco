@@ -1750,3 +1750,4 @@ import CCO.TerminalLattice.RealizedNetworkReset
 import CCO.TransitionClosure.TypedFreshAtomMotion
 import CCO.TransitionClosure.TypedRawStrongSaturation
 import CCO.TransitionClosure.OriginalEquivalenceJoinStrong
+import CCO.TransitionClosure.TypedIdentityExterior
