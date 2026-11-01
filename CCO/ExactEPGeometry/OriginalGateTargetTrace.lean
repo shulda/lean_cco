@@ -31,14 +31,14 @@ variable {ι : Type u} {X : ι → Type v}
 
 /-- Reindex the FIRST endpoint of a real original RAW exact presentation
 along an ACTUAL equality of original source sorts; no new word or axiom. -/
-private def oldExactLeftCast
+def oldExactLeftCast
     (S : AtomicSource.{u,v,w} ι X) {i j : ι}
     (h : i = j) (D : RawExact.NonemptyExact S i i) :
     RawExact.NonemptyExact S j i := by
   cases h
   exact D
 
-private theorem oldExactLeftCast_iff
+theorem oldExactLeftCast_iff
     (S : AtomicSource.{u,v,w} ι X) {i j : ι}
     (h : i = j) (D : RawExact.NonemptyExact S i i)
     (x : X j) (y : X i) :
@@ -50,7 +50,7 @@ private theorem oldExactLeftCast_iff
 /-- The two reindexed REAL exact factors still have their middle
 witness in the ORIGINAL i sort. This is an equality transport of
 represented RAW composition, not a quotient-action identity. -/
-private theorem oldExactTwoSidedComp_iff
+theorem oldExactTwoSidedComp_iff
     (S : AtomicSource.{u,v,w} ι X) {i j : ι}
     (h : i = j) (D : RawExact.NonemptyExact S i i)
     (x y : X j) :
