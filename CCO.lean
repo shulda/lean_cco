@@ -1862,3 +1862,4 @@ import CCO.ExactEPGeometry.OriginalSelectedSortRetyping
 import CCO.ExactEPGeometry.OriginalSelectedFullExact
 import CCO.ExactEPGeometry.OriginalSelectedProjectedExact
 import CCO.ExactEPGeometry.SelectedSortExactArrows
+import CCO.ExactEPGeometry.SelectedSortArrowReverse
