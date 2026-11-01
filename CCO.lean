@@ -1871,3 +1871,4 @@ import CCO.ExactEPGeometry.OriginalReachedOccupancyAnchors
 import CCO.ExactEPGeometry.OriginalReachedGlobalGauge
 import CCO.ExactEPGeometry.OriginalRetainedOccupancyGroupoid
 import CCO.ExactEPGeometry.OriginalRetainedNormalizedArrows
+import CCO.ExactEPGeometry.OriginalRetainedSelectedArrowFunctor
