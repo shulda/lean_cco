@@ -98,7 +98,7 @@ theorem original_retained_anchor_children_distinct_E_occupancy
     A B P transport tp hOne Kroot phase E hE a
   rw [hZero] at hBit
   have hContr : (1 : Bit) = 0 := by
-    simpa only [zero_add] using hBit
+    simpa only [originalRetainedActiveBit, zero_add] using hBit
   exact (by decide : (1 : Bit) ≠ 0) hContr
 
 /-- For EVERY ACTUAL successor child of b in the retained E-component,
