@@ -63,8 +63,10 @@ theorem originalJMenuQuotientState_groupInvariant
     originalQuotientAction S H J
   rintro g q r ⟨u,v,hu,hv,a,ha,hCol⟩
   refine ⟨g • u, g • v, ?_, ?_, ⟨a,ha,?_⟩⟩
-  · simpa only [originalQuotient_mk_smul S H J, hu]
-  · simpa only [originalQuotient_mk_smul S H J, hv]
+  · have hMove := congrArg (fun z : Quotient J.val => g • z) hu
+    simpa only [originalQuotient_mk_smul S H J] using hMove
+  · have hMove := congrArg (fun z : Quotient J.val => g • z) hv
+    simpa only [originalQuotient_mk_smul S H J] using hMove
   · exact (S.colourInvariant_of_homogeneous H g u v).trans hCol
 
 /-- The actual Sbar belongs to the finite B050 type of ALL
