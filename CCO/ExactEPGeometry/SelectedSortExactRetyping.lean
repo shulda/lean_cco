@@ -1,5 +1,6 @@
 import CCO.ExactEPGeometry.SelectedSortSource
 import CCO.ExactCRT.ProjectedWords
+import CCO.RawExact.ActualOrbitalExact
 
 /-!
 # B062 C82: first exact RAW retyping certificate for selected quotient sorts
@@ -43,7 +44,7 @@ structure SelectedRetyping where
 
 namespace SelectedRetyping
 
-variable {S σ} (D : SelectedRetyping S σ (G := G))
+variable {σ} (D : SelectedRetyping (X := X) σ (G := G))
 
 /-- Any two true B.G-orbitals are preserved and reflected by the
 two FULL equivariant point equivalences; the group element is
