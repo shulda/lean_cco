@@ -53,7 +53,7 @@ definability oracle or quotient homogeneity is assumed. -/
 theorem originalInvariantTypedRelCode_injective
     (H : HomogeneousSource S G) {i j : ι} :
     Function.Injective
-      (originalInvariantTypedRelCode S
+      (originalInvariantTypedRelCode S (G := G)
         (i := i) (j := j)) := by
   intro R T hCodes
   apply Subtype.ext
@@ -87,8 +87,8 @@ theorem originalInvariantTypedRel_finite
     (H : HomogeneousSource S G) {i j : ι} :
     Finite (OriginalInvariantTypedRel (X := X) (G := G) i j) := by
   classical
-  letI : Fintype (S.Atom i j) := S.finiteAtom i j
-  exact Finite.of_injective (originalInvariantTypedRelCode S)
+  letI := S.finiteAtom i j
+  exact Finite.of_injective (originalInvariantTypedRelCode S (G := G))
     (originalInvariantTypedRelCode_injective S H)
 
 /-- Only the genuine NONEMPTY old invariant typed RAW relations.
@@ -146,7 +146,8 @@ def originalNonemptyInvariantTypedRel_ident
     ⟨TRel.ident X i, by
       intro g x y h
       exact congrArg (fun a : X i => g • a) h⟩
-  obtain ⟨x⟩ := S.nonemptySort i
+  classical
+  let x : X i := Classical.choice (S.nonemptySort i)
   exact ⟨R, ⟨x,x,rfl⟩⟩
 
 end CCO.TransitionClosure
