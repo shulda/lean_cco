@@ -109,13 +109,13 @@ theorem atomWord_iff
     Classical.choose_spec (Classical.choose_spec (S.realized a))
   have hOld : S.rawAtomRel (S.colour x₀ y₀) =
       GroupActions.orbital (G := G) x₀ y₀ :=
-    RawExact.actual_pair_orbital_of_homogeneous S H x₀ y₀
+    (RawExact.actual_pair_orbital_of_homogeneous S H x₀ y₀).symm
   have hNew : T.rawAtomRel
         (T.colour (D.pointEquiv i x₀) (D.pointEquiv j y₀)) =
       GroupActions.orbital (G := G)
         (D.pointEquiv i x₀) (D.pointEquiv j y₀) :=
-    RawExact.actual_pair_orbital_of_homogeneous T HT
-      (D.pointEquiv i x₀) (D.pointEquiv j y₀)
+    (RawExact.actual_pair_orbital_of_homogeneous T HT
+      (D.pointEquiv i x₀) (D.pointEquiv j y₀)).symm
   calc
     S.atomRel a x y ↔
         S.rawAtomRel (S.colour x₀ y₀) x y := by
