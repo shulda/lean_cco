@@ -55,7 +55,7 @@ theorem original_current_atom_old_trace
         have hab : P.atom i j b = P.atom i j a := by
           simpa only [hcol, Option.map_some, Option.some.injEq] using h
         have hba : b = a := (P.atom_injective i j) hab
-        exact hcol.trans (congrArg some hba)
+        exact congrArg some hba
   · intro h
     rw [h]
     rfl
