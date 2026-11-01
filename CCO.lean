@@ -1857,3 +1857,4 @@ import CCO.ExactEPGeometry.OriginalOccupancyClassTransport
 import CCO.ExactEPGeometry.OriginalOccupancyClassEquivariance
 import CCO.ExactEPGeometry.OriginalOccupancyClassOrbitals
 import CCO.ExactEPGeometry.SelectedSortExactRetyping
+import CCO.ExactEPGeometry.SelectedSortExactWords
