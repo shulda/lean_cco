@@ -1,4 +1,5 @@
 import CCO.PairHomogeneity
+import CCO.ParityHasse.Original.Equivalences
 import CCO.RawOrbitals
 import Mathlib.Data.Fintype.Basic
 
