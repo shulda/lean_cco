@@ -1778,3 +1778,4 @@ import CCO.TransitionClosure.OriginalTypedCylinderStrong
 import CCO.TransitionClosure.OriginalAtomicTransport
 import CCO.TransitionClosure.OriginalTransportTargetFull
 import CCO.TransitionClosure.OriginalFiniteCanonicalTransitions
+import CCO.TransitionClosure.OriginalFiniteUnaryNormals
