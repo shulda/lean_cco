@@ -1704,3 +1704,4 @@ import CCO.ExactEPGeometry.OriginalCommonGateEquality
 import CCO.ExactEPGeometry.OriginalConnectedGate
 import CCO.ExactEPGeometry.OriginalArrowCurrentExact
 import CCO.ExactEPGeometry.OriginalArrowReverseBridge
+import CCO.ExactEPGeometry.FullReachedOriginalBridge
