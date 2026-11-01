@@ -118,7 +118,24 @@ theorem originalRetainedSelectedArrow_inv
     TRel.converse
       (D.transportRelation
         (Quotient.image (π b.val) (π c.val) R.rel))
-  rw [Quotient.image_converse, D.transportRelation_converse]
+  have hImage :
+      Quotient.image (π c.val) (π b.val)
+        (TRel.converse R.rel) =
+      TRel.converse
+        (Quotient.image (π b.val) (π c.val) R.rel) :=
+    Quotient.image_converse (π b.val) (π c.val) R.rel
+  calc
+    D.transportRelation
+        (Quotient.image (π c.val) (π b.val)
+          (TRel.converse R.rel)) =
+      D.transportRelation
+        (TRel.converse
+          (Quotient.image (π b.val) (π c.val) R.rel)) :=
+      congrArg (D.transportRelation) hImage
+    _ = TRel.converse
+          (D.transportRelation
+            (Quotient.image (π b.val) (π c.val) R.rel)) :=
+      D.transportRelation_converse _
 
 end
 end CCO.ExactEPGeometry
