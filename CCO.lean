@@ -1719,6 +1719,7 @@ import CCO.TerminalLattice.OriginalQuotientResetSquare
 import CCO.TerminalLattice.OriginalKPositiveFromExternal
 import CCO.TerminalLattice.OriginalQuotientPeirce
 import CCO.TerminalLattice.OriginalQuotientPeirceCover
+import CCO.TerminalLattice.OriginalQuotientOWLIntersection
 import CCO.TerminalLattice.StrongPathReordering
 import CCO.TerminalLattice.QuotientSquareSaturation
 import CCO.TerminalLattice.QuotientSquareOrbitalClosure
