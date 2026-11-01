@@ -72,7 +72,7 @@ theorem original_transport_upward_pull_rewrite
         InvEq.quotientCongr (T.push_pull L hFL)
           ((T.enlarge (T.source_le_pull L hFL)).quotientEquiv
             (Quotient.mk'' x))
-      rw [(T.enlarge (T.source_le_pull L hFL)).quotientEquiv_edge hxy,
-        InvEq.quotientCongr_mk]
+      rw [(T.enlarge (T.source_le_pull L hFL)).quotientEquiv_edge hxy]
+      exact (InvEq.quotientCongr_mk (T.push_pull L hFL) y).symm
 
 end CCO.TransitionClosure
