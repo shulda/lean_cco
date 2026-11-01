@@ -1,5 +1,4 @@
 import CCO.TerminalLattice.FullCoverParity
-import Mathlib.Tactic.Omega
 
 /-!
 # B050 C56: a genuine finite six-cycle shows why the FULL-cover hypothesis matters
