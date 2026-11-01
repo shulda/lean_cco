@@ -1716,6 +1716,7 @@ import CCO.TerminalLattice.OriginalQuotientPositiveHelly
 import CCO.TerminalLattice.OriginalQuotientNoReturn
 import CCO.TerminalLattice.OriginalQuotientInvariantFinite
 import CCO.TerminalLattice.OriginalQuotientResetSquare
+import CCO.TerminalLattice.OriginalKPositiveFromExternal
 import CCO.TerminalLattice.StrongPathReordering
 import CCO.TerminalLattice.QuotientSquareSaturation
 import CCO.TerminalLattice.QuotientSquareOrbitalClosure
