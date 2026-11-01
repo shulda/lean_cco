@@ -1710,3 +1710,4 @@ import CCO.ExactEPGeometry.CertifiedOriginalKernel
 import CCO.ExactEPGeometry.ActualGateBitPreservation
 import CCO.ExactEPGeometry.OriginalGateLabelStep
 import CCO.ExactEPGeometry.OriginalGateAllLabels
+import CCO.ExactEPGeometry.CertifiedGateLabelStep
