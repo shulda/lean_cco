@@ -1,4 +1,5 @@
 import CCO.ExactEPGeometry.SelectedSortExactRetyping
+import CCO.RigidGroupoid.Geometry.Basic
 
 /-!
 # B062 C82: actual selected-sort transport of ALL equality-inclusive RAW words
