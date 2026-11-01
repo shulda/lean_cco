@@ -40,7 +40,7 @@ noncomputable def originalSelectedSortRetyping
     (E : ExactEq A.source base) :
     let Q := originalExactAllCurrentQuotientCurrentSource
       A B P transport base hOne E
-    letI : ∀ i : B.Sorts, MulAction B.G (Q.Point i) := Q.action
+    letI : ∀ i : Q.Sorts, MulAction B.G (Q.Point i) := Q.action
     SelectedRetyping (X := Q.Point)
       (originalOccupancyRepresentativeEmbedding
         A B P base hOne E) (G := B.G) := by
@@ -60,17 +60,17 @@ noncomputable def originalSelectedSortRetyping
     apply Quotient.exact
     exact (originalOccupancyRepresentative_class
       A B P base hOne E (Quotient.mk'' i : C)).symm
-  refine {
+  exact {
     target := fun i => (Quotient.mk'' i : C)
     pointEquiv := fun i =>
       originalSupportedClassEquiv A B P transport base hOne E
         i (σ (Quotient.mk'' i : C)) (hSup i)
-    equivariant := ?_
+    equivariant := by
+      intro i g x
+      exact originalSupportedClassMap_equivariant
+        A B P transport base hOne E
+        i (σ (Quotient.mk'' i : C)) (hSup i) g x
   }
-  intro i g x
-  exact originalSupportedClassMap_equivariant
-    A B P transport base hOne E
-    i (σ (Quotient.mk'' i : C)) (hSup i) g x
 
 end
 end CCO.ExactEPGeometry
