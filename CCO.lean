@@ -1758,3 +1758,4 @@ import CCO.TransitionClosure.OriginalQuotientSaturation
 import CCO.TransitionClosure.OriginalFirstHitBase
 import CCO.TransitionClosure.OriginalPositiveSaturationWord
 import CCO.TransitionClosure.OriginalFirstHitConnectivity
+import CCO.TransitionClosure.OriginalFirstHitCoverConnected
