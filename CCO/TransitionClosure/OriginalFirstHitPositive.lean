@@ -125,11 +125,19 @@ theorem original_three_positive_quotient_states_helly
       S.menuRel (PositiveWord.profile S (words k)) =
         quotientDiversity J.val (states k) := by
     intro k
-    fin_cases k
-    · simpa [states, words] using hwR
-    · simpa [states, words] using hwT
-    · have hTwo : (2 : Fin 3) = Fin.succ (Fin.succ (0 : Fin 1)) := by decide
-      simpa only [hTwo, states, words, Fin.cons_succ, Fin.cons_zero] using hwU
+    induction k using Fin.cases with
+    | zero =>
+        simpa only [words, states, Fin.cons_zero] using hwR
+    | succ j =>
+        induction j using Fin.cases with
+        | zero =>
+            simpa only [words, states, Fin.cons_succ, Fin.cons_zero] using hwT
+        | succ z =>
+            induction z using Fin.cases with
+            | zero =>
+                simpa only [words, states, Fin.cons_succ, Fin.cons_zero] using hwU
+            | succ impossible =>
+                exact Fin.elim0 impossible
   obtain ⟨qRT,rRT,hRrt,hTrt⟩ := hRT
   obtain ⟨qRU,rRU,hRru,hUru⟩ := hRU
   obtain ⟨qTU,rTU,hTtu,hUtu⟩ := hTU
