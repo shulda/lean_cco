@@ -102,12 +102,12 @@ theorem original_retained_class_corrected_phase_invariant
     (UnarySource.global_marking I).2
       (⟨b.val,x⟩ : Sigma B.Point)
       (⟨c.val,y⟩ : Sigma B.Point)
+  have hRead := (phase.rigid_mask_iff b c Ibc x y hR
+    (UnarySource.mark I ⟨b.val,x⟩)
+    (UnarySource.mark I ⟨c.val,y⟩)).mp hLegal
   have hMark : UnarySource.mark I ⟨c.val,y⟩ =
       UnarySource.mark I ⟨b.val,x⟩ +
-        phase.character.value Ibc :=
-    (phase.rigid_mask_iff b c Ibc x y hR
-      (UnarySource.mark I ⟨b.val,x⟩)
-      (UnarySource.mark I ⟨c.val,y⟩)).mp hLegal |>.2.2
+        phase.character.value Ibc := hRead.2.2
   have hGamma : phase.character.value Ibc =
       phase.character.value Iba + phase.character.value Ica :=
     original_retained_gamma_add
