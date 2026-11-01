@@ -1737,3 +1737,4 @@ import CCO.ExactEPGeometry.OriginalRetainedGlobalTrace
 import CCO.ExactEPGeometry.OriginalRetainedIdentityComposition
 
 import CCO.ExactEPGeometry.OriginalRetainedGamma
+import CCO.ExactEPGeometry.OriginalRetainedCorrectedBit
