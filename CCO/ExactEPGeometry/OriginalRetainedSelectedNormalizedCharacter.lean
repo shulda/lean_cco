@@ -60,6 +60,9 @@ theorem originalRetainedSelectedNormalized_character_value
           B.source B.homogeneous B.cco) c)) :
     let Occ := OriginalReachedOccupancy A B P (P.parent r)
       (fun i => hOne (P.parent r) i) E Kroot
+    letI := Reached.groupoid B.homogeneous
+      (exactCalculus_of_homogeneous_CCO
+        B.source B.homogeneous B.cco) (A := Kroot)
     letI := originalRetainedOccupancyGroupoid A B P transport tp
       hOne Kroot E hE
     let ab := originalReachedOccupancyAnchor A B P
