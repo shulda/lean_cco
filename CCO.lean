@@ -1757,3 +1757,4 @@ import CCO.TransitionClosure.OriginalMenuSaturation
 import CCO.TransitionClosure.OriginalQuotientSaturation
 import CCO.TransitionClosure.OriginalFirstHitBase
 import CCO.TransitionClosure.OriginalPositiveSaturationWord
+import CCO.TransitionClosure.OriginalFirstHitConnectivity
