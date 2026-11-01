@@ -89,7 +89,7 @@ theorem original_retained_children_offset_graph_iff
       A B P transport tp hOne Kroot phase E hE a b c hba hca
   have hChild := original_retained_children_occupancy_iff
     A B P transport tp hOne Kroot phase E hE b c hbc ε η
-  have hDouble (z : ZMod 2) : z + z = 0 := by decide
+  have hDouble : ∀ z : ZMod 2, z + z = 0 := by decide
   constructor
   · intro hOcc
     have hBit : η.val = ε.val + (γb + γc) := by
