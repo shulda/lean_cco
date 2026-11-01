@@ -1747,3 +1747,4 @@ import CCO.TerminalLattice.QuotientSquareSaturation
 import CCO.TerminalLattice.QuotientSquareOrbitalClosure
 import CCO.TerminalLattice.ResetFromOrbitalHits
 import CCO.TerminalLattice.RealizedNetworkReset
+import CCO.TransitionClosure.TypedFreshAtomMotion
