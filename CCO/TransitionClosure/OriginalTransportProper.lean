@@ -38,7 +38,8 @@ theorem original_transport_target_proper
   apply InvEq.ext
   intro x x'
   constructor
-  · intro _; trivial
+  · intro _
+    exact (InvEq.top_apply x x').mpr trivial
   · intro _
     obtain ⟨y,hy⟩ := T.serial x
     obtain ⟨y',hy'⟩ := T.serial x'
