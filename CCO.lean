@@ -1733,3 +1733,4 @@ import CCO.ExactEPGeometry.OriginalDiscardedOccupancy
 import CCO.ExactEPGeometry.OriginalRetainedOccupancy
 import CCO.ExactEPGeometry.OriginalRetainedBridge
 import CCO.ExactEPGeometry.OriginalRetainedIdentityArrow
+import CCO.ExactEPGeometry.OriginalRetainedGlobalTrace
