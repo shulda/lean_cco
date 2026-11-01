@@ -94,3 +94,60 @@ count actual unary FUNCTIONS rather than expression syntax.
 
 No additional author, accepted provider API, frozen paper, toolchain,
 main source, or other project's branch has been changed.
+
+
+## 2026-11-01 continuation: C09–C14 original PC/Helly and real quotient OWI-S
+
+Owner remains immutable `chat-1` project 4, one unresolved B049 claim,
+draft PR #69 `chat/chat-1/B049`. Original source 07 frozen at
+`490c3f36d85db5a0b3ced0598e6c431825254ec5`,
+actual accepted main base `636d6c89afcb68fe4e0c633e561a0b174a4e9855`.
+All accepted B003/B011/B038/B040/B050 dependencies are unchanged.
+
+**Green exact-head C09–C11 checkpoint:** code
+`5463d38c11369ab185ccbedc8fe368cca390c6fb`,
+GitHub Lean CI run **41325530754**, job **124904557831**,
+4,406 build jobs, 1,732 matching CCO source modules,
+transitive 29,331-declaration audit restricted to
+`propext`, `Classical.choice`, `Quot.sound`.
+Canonical checkpoint applied at STATE rev **549**
+(receipt `20261101_chat1_B049_C09C11_5463d_r548_42a985`).
+
+**Newer exact-green C11 code:** `4411ca11629ade42855cf52f366f993606eafeb4`,
+GitHub CI **41326363851**, job **124907028469**,
+4,408 build jobs, 1,734 source modules, 29,337 declarations,
+same pinned provider caches/source and original axiom allowlist.
+An append-only coordinator checkpoint request was submitted; verify
+its actual receipt before relying on that as STATE.
+
+Actual proved code: `TypedExactPCDomains` gives both the precise
+B003 old canonical PC iff exact positive-typed-profile meet and its
+real three-root support-consistency theorem. `OriginalPositiveWordHelly`
+gives genuinely original HOM+SAP/CCO positive-word 2-Helly
+via ACCEPTED real B003/B038 theta source proofs, plus full exact-menu
+finite Helly, without inferring first-hit from exact PC products.
+`OriginalMenuSaturation` proves the real RAW `J;P;J`
+diversity equals STRONG `J°*P*J°` for arbitrary P; `OriginalQuotientSaturation`
+constructs its exact full quotient diversity relation, retaining true
+quotient diagonal states. `OriginalFirstHitBase` proves real
+J-diagonal inclusion, P-offdiagonal exit and exclusion of any K/J
+offdiagonal when P avoids `K°\\J°`.
+`OriginalPositiveSaturationWord` explicitly presents this entire
+saturated old menu with ONE genuine positive typed old atomic word.
+
+**Newest WIP after green:** `OriginalFirstHitConnectivity` gives the
+real Sbar state under the original ambient-G quotient action,
+symmetry, true finite-walk connectivity and an offdiagonal pair;
+this branch head and the report-only commits require their own
+exact remote CI. This is NOT the complete original first-hit theorem.
+The remaining mathematical bottleneck is the FULL MI unique-cover
+step `K/J ≤ connectivity(Sbar)`, then a least quotient-power hit,
+the OWI-S/OWI-ST/OWI-P Peirce identities and a three-profile
+positive-Helly contradiction. Terminal wrappers and generic B040
+transport/cylinder/normal functions remain OPEN.
+
+Complete precise source-to-Lean WIP map, with all source gates and
+not-yet-discharged proofs: `formalization/coordination/submissions/B049.md`.
+No sorry/admit, extra axiom, hidden quotient SAP/CCO, altered pin/source
+or another actor's branch modification. No submit, review, integration
+or acceptance is authorized by these WIP proofs.
