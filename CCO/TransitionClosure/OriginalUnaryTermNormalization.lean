@@ -51,7 +51,7 @@ theorem OriginalOldUnaryWord.normal_relation
           OriginalOldUnaryWord.eval S H w (Quotient.mk E.val x) =
             Quotient.mk F.val y := by
   induction w with
-  | ident i E =>
+  | ident E =>
       refine ⟨originalCanonicalUnaryNormalDatum_ident S H E,
         rfl, originalCanonicalUnaryNormalDatum_ident_target S H E, ?_⟩
       intro x y hR
