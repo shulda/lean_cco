@@ -111,7 +111,9 @@ theorem original_retained_current_E_below_full_gate
     exact h
   have hCast : oldExactEqCast A.source hSame.symm E ≤ Gb := by
     have h : E ≤ oldExactEqCast A.source hSame Gb := by
-      simpa only [hRootGate] using hE
+      calc
+        E ≤ Gr := hE
+        _ = oldExactEqCast A.source hSame Gb := hRootGate
     have hCast := oldExactEqCast_mono
       A.source hSame.symm E (oldExactEqCast A.source hSame Gb) h
     simpa only [oldExactEqCast_cancel] using hCast
