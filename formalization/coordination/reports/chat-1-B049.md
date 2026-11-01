@@ -151,3 +151,19 @@ not-yet-discharged proofs: `formalization/coordination/submissions/B049.md`.
 No sorry/admit, extra axiom, hidden quotient SAP/CCO, altered pin/source
 or another actor's branch modification. No submit, review, integration
 or acceptance is authorized by these WIP proofs.
+
+
+## 2026-11-01 continuation: complete green OWI first-hit interpolation and original STRONG exact MI primality
+
+The actual currently owned original B049 claim remains IN_PROGRESS in draft PR #69 `chat/chat-1/B049`. This report supersedes the earlier C12–C23 descriptions of incomplete first-hit or MI-primality; those proofs have now been implemented with genuine original source hypotheses. Main/dependencies/source remain unchanged.
+
+**Verified source-code head** `204c3746404b858aee9fe7eb055378d85cc351b9`, GitHub Actions **41335123504**, job **124933259163**, success: pinned Lean full build, full real CCO source closure and independent external EPPA/Ramsey provider cache guards, transitive axiom audit, and final audited project artifact check. Earlier green C15 geometry `d8547394a83b48ae381d4e78d0ee7ce0f0440d59`, CI **41333419151**, job **124928147379**. Intermediate red CI **41333935252** and **41334352694** were temporary `Fin 3` enumeration elaboration issues; repaired by structural `Fin.cases`, not by axioms or weakened mathematical hypotheses. Full positive Helly+interpolation green code checkpoint `3a7f9818afcebd3c342b868718aaf278e9e0abf9`, CI **41334673887**, job **124931852360**.
+
+**Actual newly proved original-source results:**
+
+- `OriginalFirstHitPeirce`: Sbar^(n-1)∩(K/J)=true diagonal; (Sbar;Ubar)∩(K/J)=Ubar; genuine positive first-hit walk rotates to intersection Sbar^(n-1)∩(Sbar;Ubar). Original FULL MI J⋖K, old quotient J, P avoidance and genuine full-power minimality are retained.
+- `OriginalFirstHitPositive`: J-positive + P-positive REAL old typed word wJ;wP;wJ presents exact whole saturated old quotient state, including OLD diversity representing TRUE quotient diagonal. Every positive quotient power is represented by an ACTUAL positive old word using ACCEPTED B050 source-derived SAP semigroup. A 3-state finite Helly helper instantiates B050's proved old positive-word Helly.
+- `OriginalFullCoverInterpolation.original_full_cover_positive_word_interpolation`: complete pinned original OWI first-hit interpolation; all three quotient profiles are genuinely positive old words, pairwise meet but cannot share a quotient pair because K/J diagonal and true external layer are disjoint. No Set-Pasch, hidden quotient SAP/CCO, artificial STRONG unit, positive K provider assumption added beyond the source's explicitly given wK.
+- `OriginalStrongExactPrime.original_full_MI_strong_exact_prime`: complete pinned original OWP at full original MI J⋖K; for nonempty old strong-exact A,B with nonempty A∩B⊆J°, one lies in J°. Finite positive-word presentation lists MAY BE EMPTY (actual diversity Top); common J atom and external witnesses trigger the original OWI for every defining word, then old CCO/SAP word Helly produces the forbidden common external fine atom.
+
+All new Lean modules are imported by public `CCO.lean` root. The precise source-to-Lean map and open providers are in `formalization/coordination/submissions/B049.md`. STILL OPEN: terminal represented OWI/OWP wrappers through ACCEPTED B011, source C24–C62 B040 old RAW quotient algebraic noncollapse, finite transition function naming, cylinders, atomic transport, the remaining exact contract equations/definitions/tasks. Not submitted, reviewed, integrated or accepted. Reports changed the branch head AFTER the green code CI, so a fresh exact-HEAD green build/audit and append-only broker checkpoint are required before updating the authoritative WIP ledger.
