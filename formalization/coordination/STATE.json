@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 556,
+  "revision": 557,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -4496,19 +4496,19 @@
         "declarations": 29310,
         "source_modules": 1724
       },
-      "head_sha": "149de41dacc4172945f39f1300b13f6586227d29",
+      "head_sha": "bea19ba79021f9626ce9a862a47ea8bf8c4dc887",
       "pr_number": 69,
       "observed_ci": {
-        "run_id": 41330983400,
+        "run_id": 41331401269,
         "run_attempt": 1,
-        "job_id": 124920831971,
-        "head_sha": "149de41dacc4172945f39f1300b13f6586227d29",
+        "job_id": 124922149348,
+        "head_sha": "bea19ba79021f9626ce9a862a47ea8bf8c4dc887",
         "conclusion": "success",
         "axiom_audit": "allowlist",
-        "declarations": 29351,
-        "source_modules": 1736
+        "declarations": 29354,
+        "source_modules": 1737
       },
-      "checkpoint_revision": 556
+      "checkpoint_revision": 557
     },
     "B050": {
       "state": "ACCEPTED",
@@ -19191,6 +19191,30 @@
         },
         "actor_id": "chat-1",
         "request_id": "chat-1/20261101_chat1_B049_MIcover_149de_r555_f81b"
+      }
+    },
+    {
+      "revision": 557,
+      "project_id": 4,
+      "actor_id": "chat-1",
+      "event": "checkpoint",
+      "package_id": "B049",
+      "details": {
+        "package_id": "B049",
+        "head_sha": "bea19ba79021f9626ce9a862a47ea8bf8c4dc887",
+        "pr_number": 69,
+        "observed_ci": {
+          "run_id": 41331401269,
+          "run_attempt": 1,
+          "job_id": 124922149348,
+          "head_sha": "bea19ba79021f9626ce9a862a47ea8bf8c4dc887",
+          "conclusion": "success",
+          "axiom_audit": "allowlist",
+          "declarations": 29354,
+          "source_modules": 1737
+        },
+        "actor_id": "chat-1",
+        "request_id": "chat-1/20261101_chat1_B049_firstpower_bea19_r556_d24c"
       }
     }
   ],
