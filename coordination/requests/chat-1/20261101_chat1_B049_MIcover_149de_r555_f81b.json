@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "request_id": "20261101_chat1_B049_MIcover_149de_r555_f81b",
+  "actor_id": "chat-1",
+  "project_id": 4,
+  "policy_revision": 14,
+  "operation": "event",
+  "expected_revision": 555,
+  "event": "checkpoint",
+  "data": {
+    "package_id": "B049",
+    "head_sha": "149de41dacc4172945f39f1300b13f6586227d29",
+    "pr_number": 69,
+    "observed_ci": {
+      "run_id": 41330983400,
+      "run_attempt": 1,
+      "job_id": 124920831971,
+      "head_sha": "149de41dacc4172945f39f1300b13f6586227d29",
+      "conclusion": "success",
+      "axiom_audit": "allowlist",
+      "declarations": 29351,
+      "source_modules": 1736
+    }
+  }
+}
