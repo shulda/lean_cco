@@ -149,6 +149,11 @@ theorem transportArrow_injective (H : HomogeneousSource S G)
   funext x y
   have hxy := congrFun (congrFun hrel (D.pointEquiv i x))
     (D.pointEquiv j y)
+  change D.transportRelation R.rel (D.pointEquiv i x)
+      (D.pointEquiv j y) =
+    D.transportRelation U.rel (D.pointEquiv i x)
+      (D.pointEquiv j y) at hxy
+  change R.rel x y = U.rel x y
   simpa only [transportRelation, Equiv.symm_apply_apply] using hxy
 
 end SelectedRetyping
