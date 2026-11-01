@@ -114,7 +114,6 @@ theorem originalSupportedClassMap_equivariant
         (g • q) =
       g • originalSupportedClassMap
         A B P transport base hOne E i j hSup q := by
-  dsimp only
   letI : ∀ k : B.Sorts, MulAction B.G
       (OriginalSelectedClass A B P transport base hOne E k) :=
     CCO.SimultaneousQuotients.action B.source B.homogeneous
