@@ -1742,3 +1742,4 @@ import CCO.ExactEPGeometry.OriginalRetainedClassBit
 import CCO.ExactEPGeometry.OriginalRetainedChildOccupancy
 import CCO.ExactEPGeometry.OriginalRetainedOffsetGraph
 import CCO.ExactEPGeometry.OriginalRetainedBothGraphs
+import CCO.ExactEPGeometry.OriginalRetainedInactiveGraph
