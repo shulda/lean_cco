@@ -113,6 +113,9 @@ theorem original_atomic_transport_agrees_with_whole_raw
   induction q using Quotient.inductionOn with
   | _ x =>
       obtain ⟨y,hxy⟩ := Ta.serial x
+      change InvEq.quotientCongr hKernels
+        (Ta.quotientEquiv (Quotient.mk'' x)) =
+          T.quotientEquiv (Quotient.mk'' x)
       rw [Ta.quotientEquiv_edge hxy,
         T.quotientEquiv_edge (hInside x y hxy),
         InvEq.quotientCongr_mk]
