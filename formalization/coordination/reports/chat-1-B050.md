@@ -57,3 +57,60 @@ Stable actor `chat-1`, identity `chat-project:cco-chat-1`, project 4, one active
 No `sorry`, `admit`, axiom, new original source assumption or hidden quotient SAP appears. B050 is still `IN_PROGRESS`; the conditional C35 receiving theorem is not the source reset.
 
 Detailed source-to-Lean mapping and earlier CI checkpoints: `formalization/coordination/submissions/B050.md`.
+
+
+## 2026-11-01 current continuation and final author-side scope map
+
+This newest section **supersedes the older open-work predictions above**.
+Identity remains `chat-project:cco-chat-1`, B050 owner project 4,
+actor `chat-1`, own WIP branch `chat/chat-1/B050`, draft PR #67.
+Original source `490c3f36d85db5a0b3ced0598e6c431825254ec5` and accepted
+main `f42f098e852b4cea8cb09b9ada6b1145a6138dd4` remain pinned.
+The actual last applied STATE checkpoint is revision **532** at SHA
+`4eb4655aaf9fc6031d1774f13bf57b498c343aa8`.
+
+**Last observed exact-green CODE proof head** (newer than applied STATE):
+`8f04720d82b7da11e0c2f5a166ebfc198b65f2d7`, Lean CI
+**41311012278**, job **124861190948**: all **4398** project build jobs,
+**1724** CCO source modules, transitive axiom audit **29310**
+declarations, only `propext`, `Classical.choice`, `Quot.sound`.
+This includes:
+
+- Exact source08 C30 `originalSparseTheta_cycle_guard_eventual`:
+  source-exact full quantifiers for all n >= N, actual original multiple
+  positive typed private branches, only assigned menu inclusions,
+  true B002 compressed original graph/star cycles, original W girth,
+  actual same-sort STRONG menu saturation, and full original
+  `CycleHom` for EVERY specified simple cycle without CCO.
+- Source08 C34 `originalSparseTheta_strongCompletion_of_original_CCO`
+  and `originalSparseTheta_injective_hom_of_original_CCO`, using
+  original CCO once on ONE complete finite diagram and old SAP
+  injection. Source08 C40 and terminal C41 are the independently
+  proved unconditional original reset and terminal specialization
+  from the real sparse **single-word** network.
+- Source09 C53 `original_full_cover_external_layer_positive_word`:
+  one original J-positive word input, full external old-G orbital
+  readout, permitted index two, internally derived K-positive
+  reset otherwise, true positive-state finite escape and exact
+  quotient-diagonal handling, with no B049 circular import.
+- Real finite C56 `SixCycleBoundary`: connected six-cycle,
+  proper parity equivalence and failure of eventual full powers,
+  proved for all n (not a finite numerical test).
+
+**Complete author-side receiving audit** in
+`formalization/coordination/submissions/B050.md` now maps ALL
+11 selected exports, 68 claims C01–C68, 12 definitions D01–D12,
+12 labelled source equations, nine tasks, all actually imported
+accepted B006/B011/B038/B001 provider bridges, and the CCO/SAP/NR2
+and FULL/original-G/RAW-versus-STRONG boundaries.
+Original mathematical and tooling pins have not changed; no sorry,
+admit, added axiom or disguised source instance. The current report
+commits are NOT GREEN until their exact-head CI/audit finishes.
+
+**Still needed, not claimed completed:** recheck the new report-only
+exact head with full Lean CI and transitive audit, write its canonical
+coordination checkpoint, then make `submit` only with verified full
+contract and exact PR SHA. Genuinely independent non-author
+whole-package review, valid sole integration lock, history-preserving
+expected-head merge, actual main CI/audit and final `accept` remain
+strict protocol obligations. No review lease or integration is active.
