@@ -1707,3 +1707,4 @@ import CCO.ExactEPGeometry.OriginalArrowReverseBridge
 import CCO.ExactEPGeometry.FullReachedOriginalBridge
 import CCO.ExactEPGeometry.OriginalGateKernelMeet
 import CCO.ExactEPGeometry.CertifiedOriginalKernel
+import CCO.ExactEPGeometry.ActualGateBitPreservation
