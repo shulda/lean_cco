@@ -1744,3 +1744,4 @@ import CCO.ExactEPGeometry.OriginalRetainedOffsetGraph
 import CCO.ExactEPGeometry.OriginalRetainedBothGraphs
 import CCO.ExactEPGeometry.OriginalRetainedInactiveGraph
 import CCO.ExactEPGeometry.OriginalRetainedProjectedGateBase
+import CCO.ExactEPGeometry.OriginalCoherentAtomTI
