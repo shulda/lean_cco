@@ -40,8 +40,8 @@ def originalReachedOccupancySetoid
     r := fun b c => J.r b.val c.val
     iseqv := ⟨
       (fun b => J.refl b.val),
-      (fun _ _ h => J.symm h),
-      (fun _ _ _ h h' => J.trans h h')⟩
+      (fun h => J.symm h),
+      (fun h h' => J.trans h h')⟩
   }
 
 /-- Every original E-occupancy component of actual Reached objects
