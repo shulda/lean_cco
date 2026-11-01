@@ -171,8 +171,9 @@ theorem originalRetainedNormalizedArrow_character
           phase.character.value Icd :=
       phase.character.map_comp (Iab.comp C R) Icd
     _ = (phase.character.value Iab + phase.character.value R) +
-          phase.character.value Icd := by
-      rw [phase.character.map_comp Iab R]
+          phase.character.value Icd :=
+      congrArg (fun z : ZMod 2 => z + phase.character.value Icd)
+        (phase.character.map_comp Iab R)
     _ = gamma b + phase.character.value R + gamma c := by
       rw [hIab,hIcd]
 
@@ -208,6 +209,9 @@ theorem originalRetainedNormalizedArrow_corrected_value
         A B P transport tp hOne Kroot E hE b c R) =
       (originalReachedGlobalCharacter A B P transport tp
         hOne Kroot phase E hE).value R := by
+  let C := exactCalculus_of_homogeneous_CCO
+    B.source B.homogeneous B.cco
+  letI := Reached.groupoid B.homogeneous C (A := Kroot)
   change phase.character.value
       (originalRetainedNormalizedArrow
         A B P transport tp hOne Kroot E hE b c R) =
