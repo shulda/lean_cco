@@ -128,7 +128,8 @@ theorem original_three_positive_quotient_states_helly
     fin_cases k
     · simpa [states, words] using hwR
     · simpa [states, words] using hwT
-    · simpa [states, words] using hwU
+    · have hTwo : (2 : Fin 3) = Fin.succ (Fin.succ (0 : Fin 1)) := by decide
+      simpa only [hTwo, states, words, Fin.cons_succ, Fin.cons_zero] using hwU
   obtain ⟨qRT,rRT,hRrt,hTrt⟩ := hRT
   obtain ⟨qRU,rRU,hRru,hUru⟩ := hRU
   obtain ⟨qTU,rTU,hTtu,hUtu⟩ := hTU
@@ -165,6 +166,7 @@ theorem original_three_positive_quotient_states_helly
   refine ⟨q,r,?_,?_,?_⟩
   · simpa [states] using hAll 0
   · simpa [states] using hAll 1
-  · simpa [states] using hAll 2
+  · have hTwo : (2 : Fin 3) = Fin.succ (Fin.succ (0 : Fin 1)) := by decide
+    simpa only [hTwo, states, Fin.cons_succ, Fin.cons_zero] using hAll 2
 
 end CCO.TransitionClosure
