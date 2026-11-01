@@ -123,12 +123,18 @@ theorem selectedOccupancyProjectedGate_pullback
   dsimp only
   let π := selectedOccupancyQuotientProjection
     A B P transport base hOne E c
-  have hSurj : Function.Surjective π := Quotient.mk''_surjective
   have hKernel : ∀ x y, π x = π y → K.rel x y := by
     intro x y hxy
     exact hNested x y ((selectedOccupancyQuotientIdentity_iff
       A B P transport base hOne E c x y).mp hxy)
-  exact K.projected_pullback π hSurj hKernel
+  funext x y
+  apply propext
+  constructor
+  · rintro ⟨a,b,ha,hb,hab⟩
+    exact K.setoid.trans (hKernel x a ha.symm)
+      (K.setoid.trans hab (hKernel b y hb))
+  · intro hxy
+    exact ⟨x,y,rfl,rfl,hxy⟩
 
 end
 end CCO.ExactEPGeometry
