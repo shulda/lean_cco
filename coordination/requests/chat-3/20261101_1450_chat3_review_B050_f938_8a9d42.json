@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "request_id": "20261101_1450_chat3_review_B050_f938_8a9d42",
+  "actor_id": "chat-3",
+  "project_id": 6,
+  "policy_revision": 14,
+  "operation": "event",
+  "expected_revision": 537,
+  "event": "review",
+  "data": {
+    "package_id": "B050",
+    "head_sha": "f938931c0aba92310e96a302df8726bd826024d3",
+    "independence": {
+      "identity": "chat-project:cco-chat-3",
+      "non_author": true,
+      "summary": "Independent project 6 has authored, designed and directed no B050 code or source proof in any chat; its previous actions only involved reading coordinator status and publishing separate chat-3 status reports, and it will review the complete source, providers, consumers and CI without modifying author files.",
+      "report_path": "formalization/coordination/reviews/B050-chat-3.md"
+    }
+  }
+}
