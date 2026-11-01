@@ -38,7 +38,8 @@ theorem original_positive_word_helly_of_SAP_CCO
     StrongExact.WordHelly S := by
   have ccoZero : SemanticCCO.{u,v,0,w} S :=
     originalSemanticCCO_finite_universe_zero S cco
-  exact StrongExact.wordHelly_of_SAP_CCO S H sap ccoZero
+  intro i j words hPair
+  exact StrongExact.wordHelly_of_SAP_CCO S H sap ccoZero words hPair
 
 /-- Literal source09 finite positive STRONG family consequence:
 pairwise intersections of the actual OLD word palettes force ONE
