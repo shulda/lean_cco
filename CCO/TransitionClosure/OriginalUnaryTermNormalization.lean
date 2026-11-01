@@ -60,12 +60,8 @@ theorem OriginalOldUnaryWord.normal_relation
       rfl
   | up w hFL ih =>
       obtain ⟨N,hSource,hTarget,hEdge⟩ := ih
-      have hFL' :
-          originalTransportTargetColourEq S H N.val.2.val.1
-            (originalCanonicalRawTransitionDatum_transport S H N.val.2) ≤
-              _ := by
-        rw [hTarget]
-        exact hFL
+      have hFL' := hFL
+      rw [← hTarget] at hFL'
       let N' := originalCanonicalUnaryNormalDatum_after_up S H N _ hFL'
       refine ⟨N', hSource,
         originalCanonicalUnaryNormalDatum_after_up_target S H N _ hFL', ?_⟩
