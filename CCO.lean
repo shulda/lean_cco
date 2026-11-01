@@ -1760,3 +1760,4 @@ import CCO.TransitionClosure.OriginalPositiveSaturationWord
 import CCO.TransitionClosure.OriginalFirstHitConnectivity
 import CCO.TransitionClosure.OriginalFirstHitCoverConnected
 import CCO.TransitionClosure.OriginalFirstHitPowerExistence
+import CCO.TransitionClosure.OriginalFirstHitMinimum
