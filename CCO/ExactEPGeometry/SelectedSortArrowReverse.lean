@@ -1,4 +1,5 @@
 import CCO.ExactEPGeometry.SelectedSortExactArrows
+import CCO.RigidGroupoid.Geometry.QuotientBijection
 
 /-!
 # B062 C83: FULL reverse transport of the genuine selected-sort groupoid
@@ -121,24 +122,32 @@ theorem transportArrow_surjective
               (T.rawAtomRel (T.colour a b)))
             (D.transportKernel H Kq).rel := by
               rw [D.transportRelation_actual_pair H x y]
+              dsimp only [T]
               simp only [x,y,Equiv.apply_symm_apply]
+              rfl
       _ = U.rel := by
               have h := U.rectangular HT hab
               exact h.symm
   have hLeft : TRel.comp Kp.rel R = R := by
     apply D.transportRelation_injective
+    change D.transportRelation (TRel.comp Kp.rel R) =
+      D.transportRelation R
     rw [D.transportRelation_comp]
     change TRel.comp (D.transportKernel H Kp).rel
       (D.transportRelation R) = D.transportRelation R
     rw [hTransport, U.left]
   have hRight : TRel.comp R Kq.rel = R := by
     apply D.transportRelation_injective
+    change D.transportRelation (TRel.comp R Kq.rel) =
+      D.transportRelation R
     rw [D.transportRelation_comp]
     change TRel.comp (D.transportRelation R)
       (D.transportKernel H Kq).rel = D.transportRelation R
     rw [hTransport, U.right]
   have hSource : TRel.comp R (TRel.converse R) = Kp.rel := by
     apply D.transportRelation_injective
+    change D.transportRelation (TRel.comp R (TRel.converse R)) =
+      D.transportRelation Kp.rel
     rw [D.transportRelation_comp, D.transportRelation_converse]
     change TRel.comp (D.transportRelation R)
       (TRel.converse (D.transportRelation R)) =
@@ -146,6 +155,8 @@ theorem transportArrow_surjective
     rw [hTransport, U.source]
   have hTarget : TRel.comp (TRel.converse R) R = Kq.rel := by
     apply D.transportRelation_injective
+    change D.transportRelation (TRel.comp (TRel.converse R) R) =
+      D.transportRelation Kq.rel
     rw [D.transportRelation_comp, D.transportRelation_converse]
     change TRel.comp (TRel.converse (D.transportRelation R))
       (D.transportRelation R) =
