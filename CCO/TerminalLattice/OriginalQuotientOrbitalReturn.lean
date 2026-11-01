@@ -95,7 +95,9 @@ theorem originalQuotientOrbital_eq_of_overlap
     (Quotient.mk J.val a) (Quotient.mk J.val b)
     (Quotient.mk J.val c) (Quotient.mk J.val d)
     q r hFirst' hSecond'
-  simpa only [originalQuotientOrbital,originalQuotient_mk_smul S H J] using hEq
+  change originalQuotientOrbital S (G := G) J a b =
+    originalQuotientOrbital S (G := G) J c d at hEq
+  exact hEq
 
 /-- SOURCE C45 exact complete-orbital quotient two-return test:
 a two-step quotient closed walk using two complete old-G orbitals
