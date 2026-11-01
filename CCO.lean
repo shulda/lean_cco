@@ -1727,6 +1727,7 @@ import CCO.TerminalLattice.OriginalQuotientOWLFiniteCycle
 import CCO.TerminalLattice.OriginalQuotientOWLPeriodicContradiction
 import CCO.TerminalLattice.OriginalQuotientOWLPathProduct
 import CCO.TerminalLattice.OriginalQuotientOWLFiniteEscape
+import CCO.TerminalLattice.OriginalQuotientExternalLayerSemantics
 import CCO.TerminalLattice.StrongPathReordering
 import CCO.TerminalLattice.QuotientSquareSaturation
 import CCO.TerminalLattice.QuotientSquareOrbitalClosure
