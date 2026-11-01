@@ -1773,3 +1773,5 @@ import CCO.TransitionClosure.OriginalConverseIdentity
 import CCO.TransitionClosure.OriginalTransportProper
 import CCO.TransitionClosure.OriginalTransportUpwardRewrite
 import CCO.TransitionClosure.OriginalTransportComposition
+import CCO.TransitionClosure.OriginalTypedCylinderSpectrum
+import CCO.TransitionClosure.OriginalTypedCylinderStrong
