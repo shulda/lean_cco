@@ -35,12 +35,12 @@ variable [Fintype κ] (σ : κ ↪ ι)
 
 /-- Actual tagged-point inclusion along an injective selection of
 named sorts, with precisely the same underlying real point. -/
-def selectedSortPoint (S : AtomicSource.{u,v,w} ι X)
+def selectedSortPoint
     (p : Sigma (fun k : κ => X (σ k))) : Sigma X :=
   ⟨σ p.1, p.2⟩
 
 theorem selectedSortPoint_injective :
-    Function.Injective (selectedSortPoint S σ) := by
+    Function.Injective (selectedSortPoint σ) := by
   rintro ⟨k,x⟩ ⟨l,y⟩ h
   have hk : k = l := σ.injective (congrArg Sigma.fst h)
   subst l
@@ -78,7 +78,7 @@ def selectedSortAtomicSource :
       exact congrArg (Sigma.mk k) hxy
     · intro h
       have hOld : (⟨σ k,x⟩ : Sigma X) = ⟨σ l,y⟩ :=
-        congrArg (selectedSortPoint S σ) h
+        congrArg (selectedSortPoint σ) h
       exact (S.colour_none_iff x y).mpr hOld
   · intro k l x y a
     exact S.colour_swap x y a
@@ -97,8 +97,8 @@ theorem selectedSortTaggedColour_spec
     (p q : Sigma (fun k : κ => X (σ k))) :
     selectedSortTaggedColour S σ
       (taggedColour (selectedSortAtomicSource S σ) p q) =
-      taggedColour S (selectedSortPoint S σ p)
-        (selectedSortPoint S σ q) := rfl
+      taggedColour S (selectedSortPoint σ p)
+        (selectedSortPoint σ q) := rfl
 
 /-- The ACTUAL original group still gives finite tuple homogeneity on
 the selected named-sort family. The proof lifts real tagged tuples into
@@ -124,9 +124,9 @@ theorem selectedSortHomogeneous
         rw [h]
   · intro V _ source target hColour
     let left : V → Sigma X :=
-      fun a => selectedSortPoint S σ (source a)
+      fun a => selectedSortPoint σ (source a)
     let right : V → Sigma X :=
-      fun a => selectedSortPoint S σ (target a)
+      fun a => selectedSortPoint σ (target a)
     have hOld : ∀ a b, taggedColour S (left a) (left b) =
         taggedColour S (right a) (right b) := by
       intro a b
@@ -143,9 +143,9 @@ theorem selectedSortHomogeneous
     obtain ⟨g,hg⟩ := H.extends_finite_diagram left right hOld
     refine ⟨g,?_⟩
     intro a
-    apply selectedSortPoint_injective S σ
-    change selectedSortPoint S σ (g • source a) =
-      selectedSortPoint S σ (target a)
+    apply selectedSortPoint_injective σ
+    change selectedSortPoint σ (g • source a) =
+      selectedSortPoint σ (target a)
     simpa only [selectedSortPoint, left, right] using hg a
 
 /-- Homomorphic simple-cycle completion is inherited by the ACTUAL
