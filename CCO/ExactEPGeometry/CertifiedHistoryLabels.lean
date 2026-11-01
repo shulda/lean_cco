@@ -35,6 +35,8 @@ open RigidGroupoid.Geometry
 
 noncomputable section
 
+variable {ι : Type u} {X : ι → Type v}
+
 /-- The actual unary relation of an ORIGINAL full RAW exact
 equivalence on the unique original carrier, including both old
 tagged endpoints. The equality proof to the fixed original sort
@@ -99,7 +101,7 @@ theorem certifiedStep_original_exact_preserves_labels
   let choice : CertifiedGateTower.GateChoice s := Classical.choose step
   have hNext : next = CertifiedGateTower.successor s choice :=
     Classical.choose_spec step
-  subst next
+  rw [hNext]
   let hBase : base = s.reduct.parent choice.p :=
     hOne (s.reduct.parent choice.p)
   let Eold : ExactEq A.source (s.reduct.parent choice.p) :=
