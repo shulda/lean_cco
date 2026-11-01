@@ -110,7 +110,7 @@ theorem originalTransportTargetColourEq_proper_nonzero
     obtain ⟨y,z,hF,hne⟩ :=
       original_SAP_transport_preserves_nonidentity S H sap
         (originalColourEqAsInvEq S H J)
-        (actual_nontrivial_equiv_pair S J hJbot) R T
+        (CCO.TerminalLattice.actual_nontrivial_equiv_pair S J hJbot) R T
     exact ⟨y,z,hF,hne⟩
   have hNotBot : F ≠ ⊥ := by
     intro hEq
@@ -134,8 +134,8 @@ theorem originalTransportTargetColourEq_proper_nonzero
         exact (ColourEq.top_apply S j y z).mpr trivial
       exact hF
   constructor
-  · exact lt_of_le_of_ne bot_le hNotBot
-  · exact lt_of_le_of_ne le_top hNotTop.symm
+  · exact lt_of_le_of_ne bot_le hNotBot.symm
+  · exact lt_of_le_of_ne le_top hNotTop
 
 /-- SOURCE07 separate C37 terminal represented-membership gate:
 under the source's ACTUAL full original no-index-two condition
