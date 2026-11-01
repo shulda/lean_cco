@@ -35,6 +35,7 @@ variable [Fintype κ] (σ : κ ↪ ι)
 
 /-- Actual tagged-point inclusion along an injective selection of
 named sorts, with precisely the same underlying real point. -/
+include S in
 def selectedSortPoint (p : Sigma (fun k : κ => X (σ k))) : Sigma X :=
   ⟨σ p.1, p.2⟩
 
@@ -50,6 +51,7 @@ theorem selectedSortPoint_injective :
 
 /-- Exact binary palette of the genuine selected named sorts:
 no additional colour distinction or fictitious diagonal. -/
+include S in
 def selectedSortAtomicSource :
     AtomicSource.{u,v,w} κ (fun k => X (σ k)) := by
   refine {
@@ -60,7 +62,7 @@ def selectedSortAtomicSource :
     conv := fun a => S.conv a
     conv_invol := fun a => S.conv_invol a
     symmetricLoop := fun a => S.symmetricLoop a
-    colour := fun _ _ x y => S.colour x y
+    colour := fun x y => S.colour x y
     colour_none_iff := ?_
     colour_swap := ?_
     realized := ?_
