@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "request_id": "20261101_chat2_B062_C62oldlift_ea0358_r500_d03b6a",
+  "actor_id": "chat-2",
+  "project_id": 5,
+  "policy_revision": 14,
+  "operation": "event",
+  "expected_revision": 500,
+  "event": "checkpoint",
+  "data": {
+    "package_id": "B062",
+    "head_sha": "ea03587a3f12087add249d494b7a282b9b9d9224",
+    "pr_number": 68,
+    "observed_ci": {
+      "run_id": 41286706552,
+      "head_sha": "ea03587a3f12087add249d494b7a282b9b9d9224",
+      "conclusion": "success",
+      "axiom_audit": "allowlist"
+    }
+  }
+}
