@@ -1769,3 +1769,4 @@ import CCO.TransitionClosure.OriginalSAPFunctionalRigidity
 import CCO.TransitionClosure.OriginalIdentityTransport
 import CCO.TransitionClosure.OriginalSAPTransportNoncollapse
 import CCO.TransitionClosure.OriginalFiniteInvariantRelations
+import CCO.TransitionClosure.OriginalConverseIdentity
