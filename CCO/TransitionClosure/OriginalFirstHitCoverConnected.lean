@@ -45,8 +45,9 @@ theorem original_meet_irred_full_cover_le
   · have hJInf : J < K ⊓ E :=
       lt_of_le_of_ne hInf (Ne.symm hEq)
     rcases eq_or_lt_of_le (inf_le_left : K ⊓ E ≤ K) with hK | hK
-    · rw [hK] at *
-      exact inf_le_right
+    · calc
+        K = K ⊓ E := hK.symm
+        _ ≤ E := inf_le_right
     · exact False.elim ((hJK.2 hJInf) hK)
 
 /-- The OLD quotient graph connectedness is pulled back to a
@@ -69,7 +70,7 @@ def originalJMenuConnectedFullColourEq
     originalJMenuQuotientConnected_groupInvariant
       S H J P g
         (Quotient.mk J.val x) (Quotient.mk J.val y) hxy
-  simpa only [originalQuotient_mk_smul S H J] using hC
+  simpa [R, C, Setoid.comap, originalQuotient_mk_smul S H J] using hC
 
 /-- J is actually contained in the lifted old connectedness:
 pairs of J-equivalent real points have EQUAL quotient images.
@@ -80,10 +81,11 @@ theorem originalJMenuConnectedFullColourEq_above_J
     {i : ι} (J : ColourEq S i) (P : S.Menu i i) :
     J ≤ originalJMenuConnectedFullColourEq S H J P := by
   intro x y hJxy
-  change originalJMenuQuotientConnected S H J P
-    (Quotient.mk J.val x) (Quotient.mk J.val y)
-  rw [Quotient.sound hJxy]
-  exact (originalJMenuQuotientConnected S H J P).refl _
+  have hQ : originalJMenuQuotientConnected S H J P
+      (Quotient.mk J.val x) (Quotient.mk J.val y) := by
+    rw [Quotient.sound hJxy]
+    exact (originalJMenuQuotientConnected S H J P).refl _
+  simpa [originalJMenuConnectedFullColourEq, Setoid.comap] using hQ
 
 /-- The original P atom outside J gives a literal real pair in
 the lifted connectivity equivalence but outside J. Hence J<E
@@ -98,7 +100,7 @@ theorem originalJMenuConnectedFullColourEq_strict
   let E := originalJMenuConnectedFullColourEq S H J P
   have hJE : J ≤ E :=
     originalJMenuConnectedFullColourEq_above_J S H J P
-  apply lt_of_le_not_le hJE
+  apply lt_of_le_of_ne hJE
   obtain ⟨a,ha,hNotJ⟩ := hExit
   obtain ⟨x,y,hcol⟩ := S.realized a
   have hJxy : ¬ J x y := by
@@ -113,8 +115,11 @@ theorem originalJMenuConnectedFullColourEq_strict
     exact ⟨1,(relPow_one
       (originalJMenuQuotientState S J P)
       (Quotient.mk J.val x) (Quotient.mk J.val y)).mpr hS⟩
-  intro hEJ
-  exact hJxy (hEJ hE)
+  intro hEq
+  have hJvia : J x y := by
+    rw [hEq]
+    exact hE
+  exact hJxy hJvia
 
 /-- Source07 C13-C14: for a FULL original meet-irreducible
 J with its genuine FULL cover K, ANY original menu P exiting J
@@ -147,6 +152,6 @@ theorem originalJMenuQuotientConnected_contains_full_MI_cover
     | _ y =>
       have hKxy : K x y :=
         (originalUpperSetoid_mk S J K hJK.1.le x y).mp hUpper
-      exact hKE hKxy
+      simpa [E, originalJMenuConnectedFullColourEq, Setoid.comap] using (hKE hKxy)
 
 end CCO.TransitionClosure
