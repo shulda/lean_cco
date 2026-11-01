@@ -87,7 +87,15 @@ theorem original_coherent_allparent_projected_gate_exact
   obtain ⟨F,hF⟩ := original_coherent_current_exact_descent
     A B P transport tp base hOne E D hSatD
   refine ⟨F,?_⟩
-  simpa only [CCO.ExactCRT.quotientRelation, Quotient.image, hD] using hF
+  change RawExact.evaluate
+      (CCO.ExactCRT.CanonicalTyped.source B.source B.homogeneous
+        J W (originalExactCurrentKernelWords_relation
+          A B P transport base hOne E)) F.words =
+    CCO.ExactCRT.quotientRelation
+      (CCO.ExactCRT.CanonicalTyped.projection J p)
+      (CCO.ExactCRT.CanonicalTyped.projection J p) K.rel
+  rw [← hD]
+  exact hF
 
 /-- C82 genuine source-application, with NO added quotient gate
 exactness premise: retained E <= original G and C56 together
