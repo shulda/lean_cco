@@ -48,6 +48,7 @@ noncomputable def originalRetainedAnchorOffset
     (hE : E ≤ PrefixExactLargestLift.largest A B P transport tp r
       (current_kernel_exact_eq B Kroot))
     (a b : Reached B.source Kroot) : ZMod 2 := by
+  classical
   let C := exactCalculus_of_homogeneous_CCO
     B.source B.homogeneous B.cco
   letI := Reached.groupoid B.homogeneous C (A := Kroot)
@@ -85,7 +86,7 @@ theorem originalRetainedAnchorOffset_supported
     phase.character.value
       (original_retained_identity_arrow
         A B P transport tp hOne Kroot E hE b a hba) := by
-  dsimp only
+  classical
   unfold originalRetainedAnchorOffset
   simp only [dif_pos hba]
 
