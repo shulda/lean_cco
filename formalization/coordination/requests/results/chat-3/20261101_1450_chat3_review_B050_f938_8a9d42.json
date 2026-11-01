@@ -1,0 +1,81 @@
+{
+  "request_blob_sha": "0fa7db7ea53558f4dde7145a568b6394c25fbcfb",
+  "request_path": "coordination/requests/chat-3/20261101_1450_chat3_review_B050_f938_8a9d42.json",
+  "coordination_parent": "ac728150eafda440c4b752ee736782e89b9b201d",
+  "main_sha": "f42f098e852b4cea8cb09b9ada6b1145a6138dd4",
+  "status": "applied",
+  "event": "review",
+  "package_id": "B050",
+  "effective_revision": 538,
+  "state_view": {
+    "authority": "coordination:formalization/coordination/STATE.json",
+    "state_blob_sha": "d1cbe83bb0c4bd49b9c222a0cc1c05c2d9e7bd58",
+    "revision": 538,
+    "policy_revision": 14,
+    "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+    "execution_mode": "chat",
+    "claims_paused": false,
+    "integration_lock": null,
+    "packages": {
+      "B050": {
+        "state": "REVIEWING",
+        "owner_project_id": 4,
+        "author_actor_ids": [
+          "chat-1"
+        ],
+        "original_author_project_ids": [
+          4
+        ],
+        "branch": "chat/chat-1/B050",
+        "claim_revision": 401,
+        "base_main_sha": "f42f098e852b4cea8cb09b9ada6b1145a6138dd4",
+        "base_ci": {
+          "run_id": 41177688044,
+          "run_attempt": 1,
+          "head_sha": "f42f098e852b4cea8cb09b9ada6b1145a6138dd4",
+          "conclusion": "success",
+          "axiom_audit": "allowlist",
+          "job_id": 124468532094,
+          "declarations": 28723,
+          "source_modules": 1619
+        },
+        "head_sha": "f938931c0aba92310e96a302df8726bd826024d3",
+        "pr_number": 67,
+        "observed_ci": {
+          "run_id": 41311468691,
+          "run_attempt": 1,
+          "job_id": 124862623493,
+          "head_sha": "f938931c0aba92310e96a302df8726bd826024d3",
+          "conclusion": "success",
+          "axiom_audit": "allowlist",
+          "declarations": 29310,
+          "source_modules": 1724
+        },
+        "checkpoint_revision": 535,
+        "ci": {
+          "run_id": 41311468691,
+          "run_attempt": 1,
+          "head_sha": "f938931c0aba92310e96a302df8726bd826024d3",
+          "conclusion": "success",
+          "axiom_audit": "allowlist",
+          "job_id": 124862623493,
+          "declarations": 29310,
+          "source_modules": 1724
+        },
+        "report_path": "formalization/coordination/submissions/B050.md",
+        "review": {
+          "project_id": 6,
+          "actor_id": "chat-3",
+          "head_sha": "f938931c0aba92310e96a302df8726bd826024d3",
+          "approved": false,
+          "independence": {
+            "identity": "chat-project:cco-chat-3",
+            "non_author": true,
+            "summary": "Independent project 6 has authored, designed and directed no B050 code or source proof in any chat; its previous actions only involved reading coordinator status and publishing separate chat-3 status reports, and it will review the complete source, providers, consumers and CI without modifying author files.",
+            "report_path": "formalization/coordination/reviews/B050-chat-3.md"
+          }
+        }
+      }
+    }
+  }
+}
