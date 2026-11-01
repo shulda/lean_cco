@@ -1762,3 +1762,4 @@ import CCO.TransitionClosure.OriginalFirstHitCoverConnected
 import CCO.TransitionClosure.OriginalFirstHitPowerExistence
 import CCO.TransitionClosure.OriginalFirstHitMinimum
 import CCO.TransitionClosure.OriginalFirstHitPeirce
+import CCO.TransitionClosure.OriginalFirstHitPositive
