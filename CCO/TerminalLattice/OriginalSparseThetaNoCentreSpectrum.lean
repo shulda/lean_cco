@@ -148,7 +148,7 @@ theorem originalSparseTheta_noCentre_complement_spectrum
           (fun k : Fin n => menus (labels k)) := by
       funext k
       exact hLabel k
-    simpa only [List.map_ofFn] using congrArg List.ofFn hFunction
+    simpa only [List.map_ofFn, Function.comp_def] using congrArg List.ofFn hFunction
   have hGenuineLength : g < B.length :=
     originalSparseTheta_projected_noCentre_long S H sap
       W K hK spokes menus families hSpec C B hNoCentre
