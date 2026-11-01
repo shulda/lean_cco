@@ -135,7 +135,10 @@ theorem atomWord_iff
     _ ↔ RawWord.relation T (D.atomWord a)
           (D.pointEquiv i x) (D.pointEquiv j y) := by
       unfold atomWord
-      simpa only [actualPairWord_relation]
+      have hh := actualPairWord_relation T
+        (D.pointEquiv i x₀) (D.pointEquiv j y₀)
+      exact (Iff.of_eq (congrFun (congrFun hh
+        (D.pointEquiv i x)) (D.pointEquiv j y))).symm
 
 end SelectedRetyping
 end
