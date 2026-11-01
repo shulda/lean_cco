@@ -1753,3 +1753,4 @@ import CCO.TransitionClosure.OriginalEquivalenceJoinStrong
 import CCO.TransitionClosure.TypedIdentityExterior
 import CCO.TransitionClosure.TypedExactPCDomains
 import CCO.TransitionClosure.OriginalPositiveWordHelly
+import CCO.TransitionClosure.OriginalMenuSaturation
