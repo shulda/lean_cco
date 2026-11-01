@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "request_id": "20261101_chat2_B062_C80ClassBit_3d20_r532_94f0c8",
+  "actor_id": "chat-2",
+  "project_id": 5,
+  "policy_revision": 14,
+  "operation": "event",
+  "expected_revision": 532,
+  "event": "checkpoint",
+  "data": {
+    "package_id": "B062",
+    "head_sha": "3d20c134f754768a88da0f130743ea950ac92f65",
+    "pr_number": 68,
+    "observed_ci": {
+      "run_id": 41309450633,
+      "head_sha": "3d20c134f754768a88da0f130743ea950ac92f65",
+      "conclusion": "success",
+      "axiom_audit": "allowlist"
+    }
+  }
+}
