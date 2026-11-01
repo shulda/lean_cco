@@ -48,10 +48,10 @@ noncomputable def retypeWord {i j : ι} :
     RawWord S i j →
       RawWord (selectedSortAtomicSource S σ) (D.target i) (D.target j)
   | .nil i => .nil (D.target i)
-  | .identity tail => .identity (D.retypeWord tail)
+  | .identity tail => .identity (retypeWord tail)
   | .atom a tail =>
       RawWord.append (selectedSortAtomicSource S σ)
-        (D.atomWord a) (D.retypeWord tail)
+        (D.atomWord a) (retypeWord tail)
 
 /-- The entire relation of EVERY original equality-inclusive RAW
 word is preserved and reflected by literal REAL point equivalences
@@ -73,7 +73,8 @@ theorem retypeWord_iff
       · intro h
         subst z
         rfl
-      · exact (D.pointEquiv i).injective
+      · intro h
+        exact (D.pointEquiv i).injective h
   | identity tail ih =>
       intro x z
       exact ih x z
