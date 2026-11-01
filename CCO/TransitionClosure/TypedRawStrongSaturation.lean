@@ -78,7 +78,7 @@ theorem original_raw_typed_J_atom_K_guard_eq_strong
       intro h
       exact huAvoid (by simp [forbiddenLeft,h])
     let forbiddenRight : Finset (Sigma X) :=
-      {⟨j,y⟩,⟨i,u'⟩}
+      {⟨j,y⟩,⟨i,u'⟩,⟨i,x⟩}
     obtain ⟨v',hvAvoid,hKvv',hu'v'⟩ :=
       original_fresh_typed_atom_right_in_equiv
         S H sap K hK a u' v hu'v forbiddenRight
