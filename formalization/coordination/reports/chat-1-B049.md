@@ -39,3 +39,58 @@ head Lean build+source-cache/axiom audit, independent non-author review,
 valid one-at-a-time integration lock, history-preserving expected-head
 merge, green actual main CI and final broker acceptance. Current B049 is
 IN_PROGRESS: **not submitted, approved, integrated or accepted**.
+
+
+## 2026-11-01 typed TSC/TSC2 accepted source-strength Lean checkpoint
+
+**GREEN WIP source code SHA** `e496eec6bd6a497897e6e6d2763719aa97df6497`,
+actual remote CI **41318245937**, job **124882785122**: entire
+4401-job Lean build, full current-source/cache verification of
+1727 CCO modules, and transitive audit of 29317 declarations using
+ONLY `propext`, `Classical.choice`, `Quot.sound`.
+Broker checkpoint `20261101_chat1_B049_TSC_e496eec_r543_c7ab42fd`
+applied at actual STATE **rev 544**, original B049 claim maintained.
+The independent old-G homo/SAP, full typed atom, positive STRONG
+versus equality-inclusive RAW distinction are preserved; no
+hypothetical typed product or artificial unit was added.
+
+**Compiled declarations:**
+- `TransitionClosure.TypedFreshAtomMotion.original_fresh_typed_atom_left_in_equiv`
+  and `original_fresh_typed_atom_right_in_equiv`: real exact typed
+  old atom can move either endpoint inside its original nonzero
+  equivalence class, preserving the opposite endpoint, original atom
+  and avoiding any finite set of original tagged points. Proven from
+  actual full-source stabilizer SAP; this is NOT hidden/quotient SAP.
+- `TransitionClosure.TypedRawStrongSaturation.original_raw_typed_J_atom_K_guard_eq_strong`:
+  `(J ; {t} ; K)° = J° * {t} * K°` with different sorts i,j allowed,
+  both J,K original nonzero equivalences. Real source atom profiles
+  and endpoint pairs remain pinned, no CCO/NR2.
+- `TransitionClosure.OriginalEquivalenceJoinStrong.original_raw_equiv_equiv_guard_eq_strong`
+  and `original_raw_equiv_join_guard_eq_strong`:
+  `(J ; K)° = J° * K° = (J∨K)°` with actual old FULL invariant
+  `ColourEq.join`, real SAP, no fake STRONG equality step.
+
+**Newer WIP:** `TransitionClosure.TypedIdentityExterior` explicitly
+handles all THREE omitted-identity-exterior source cases with original
+nonzero J, nonzero K, or neither; the initial remote CI error was a
+local reversal of negated equality (`¬u=x`), corrected in
+`09772353e9cf98c98771c330e875908326b16b73`. Source appendix
+and this progress report are subsequent report-only commits, so
+they require their OWN exact-head CI before any next checkpoint.
+This work is not submitted or accepted; current slot remains B049.
+
+**Next mathematical branch:** B049 C09 typed strong PC exact domain
+from B003, with exact original CCO and finite support-consistent
+triangles; then C10 directly constructed old positive-word 2-Helly
+without exact-PC shortcuts, then original FULL meet-irreducible
+J⋖K first-hit interpolation using now ACCEPTED B050 source09
+full quotient STRONG semigroup and positive external cover layer.
+The older source preparation explicitly forbids Set-Pasch shortcuts,
+unproved quotient SAP, source weakening, or mixing same-sort
+commutation with typed letters. Subsequent transport normal forms
+must remain on original invariant RAW quotient relations, distinguish
+real-point SAP noncollapse from merely invariant transport, and
+count actual unary FUNCTIONS rather than expression syntax.
+
+No additional author, accepted provider API, frozen paper, toolchain,
+main source, or other project's branch has been changed.
