@@ -1724,6 +1724,7 @@ import CCO.TerminalLattice.OriginalExternalQuotientStates
 import CCO.TerminalLattice.OriginalQuotientHellyEscape
 import CCO.TerminalLattice.OriginalQuotientOWLEscapeStep
 import CCO.TerminalLattice.OriginalQuotientOWLFiniteCycle
+import CCO.TerminalLattice.OriginalQuotientOWLPeriodicContradiction
 import CCO.TerminalLattice.StrongPathReordering
 import CCO.TerminalLattice.QuotientSquareSaturation
 import CCO.TerminalLattice.QuotientSquareOrbitalClosure
