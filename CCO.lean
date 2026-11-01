@@ -1746,3 +1746,4 @@ import CCO.ExactEPGeometry.OriginalRetainedInactiveGraph
 import CCO.ExactEPGeometry.OriginalRetainedProjectedGateBase
 import CCO.ExactEPGeometry.OriginalCoherentAtomTI
 import CCO.ExactEPGeometry.OriginalCoherentWordTI
+import CCO.ExactEPGeometry.OriginalCoherentProjectedGateExact
