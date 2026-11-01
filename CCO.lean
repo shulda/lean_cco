@@ -1710,6 +1710,7 @@ import CCO.TerminalLattice.OriginalSparseKFrame
 import CCO.TerminalLattice.OriginalFullCoverReset
 import CCO.TerminalLattice.OriginalTerminalReset
 import CCO.TerminalLattice.OriginalQuotientOrbitalReturn
+import CCO.TerminalLattice.OriginalQuotientStatePowers
 import CCO.TerminalLattice.StrongPathReordering
 import CCO.TerminalLattice.QuotientSquareSaturation
 import CCO.TerminalLattice.QuotientSquareOrbitalClosure
