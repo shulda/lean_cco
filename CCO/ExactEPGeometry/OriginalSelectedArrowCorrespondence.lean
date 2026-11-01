@@ -55,6 +55,9 @@ noncomputable def originalCoherentSelectedArrowEquiv
     let Q := originalExactAllCurrentQuotientCurrentSource
       A B P transport base hOne E
     letI : ∀ i : Q.Sorts, MulAction B.G (Q.Point i) := Q.action
+    let C := OriginalOccupancy A B P base hOne E
+    letI : Finite C := originalOccupancyFinite A B P base hOne E
+    letI : Fintype C := Fintype.ofFinite C
     let D := originalSelectedSortRetyping A B P transport base hOne E
     Arrow B.source Kp Kq ≃
       Arrow (originalExactSelectedQuotientCurrentSource
