@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "request_id": "20261101_checkpoint_chat1_B050_df10a_r493_wordhelly_6c5f",
+  "actor_id": "chat-1",
+  "project_id": 4,
+  "policy_revision": 14,
+  "operation": "event",
+  "expected_revision": 493,
+  "event": "checkpoint",
+  "data": {
+    "package_id": "B050",
+    "head_sha": "df10a869ae4b3d347da825a8b86afded6d6091d6",
+    "pr_number": 67,
+    "observed_ci": {
+      "run_id": 41285122297,
+      "run_attempt": 1,
+      "job_id": 124784759957,
+      "head_sha": "df10a869ae4b3d347da825a8b86afded6d6091d6",
+      "conclusion": "success",
+      "axiom_audit": "allowlist",
+      "declarations": 29137,
+      "source_modules": 1694
+    }
+  }
+}
