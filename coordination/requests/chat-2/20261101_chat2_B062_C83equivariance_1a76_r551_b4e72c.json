@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "request_id": "20261101_chat2_B062_C83equivariance_1a76_r551_b4e72c",
+  "actor_id": "chat-2",
+  "project_id": 5,
+  "policy_revision": 14,
+  "operation": "event",
+  "expected_revision": 551,
+  "event": "checkpoint",
+  "data": {
+    "package_id": "B062",
+    "head_sha": "1a76d14545663219c688e693329e9e0419b11ed8",
+    "pr_number": 68,
+    "observed_ci": {
+      "run_id": 41326573561,
+      "head_sha": "1a76d14545663219c688e693329e9e0419b11ed8",
+      "conclusion": "success",
+      "axiom_audit": "allowlist"
+    }
+  }
+}
