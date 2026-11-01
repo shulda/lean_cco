@@ -93,7 +93,7 @@ noncomputable def originalCanonicalUnaryNormalDatum_ident
       change x = y at hxy
       change z = y at hzy
       have hxz : x = z := hxy.trans hzy.symm
-      subst z
+      cases hxz
       exact E.val.refl x⟩
   exact ⟨⟨E,D⟩,le_refl E⟩
 
