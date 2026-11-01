@@ -123,7 +123,7 @@ theorem originalSparseTheta_projected_cyclic_guard_values
         CCO.cyclicNext (Nat.succ_pos n) k' := by
     apply Fin.ext
     change (k.val+1) % B.length = (k.val+1) % (n+1)
-    rw [hLength]
+    exact congrArg (fun m : Nat => (k.val+1) % m) hLength
   have hActual := hRaw k'
   change S.menuRel
       (originalSparseThetaGuard S W K menus (B.edges k))
