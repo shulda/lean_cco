@@ -59,7 +59,7 @@ theorem original_raw_typed_left_exterior_guard_eq_strong
           intro h
           exact hAvoid (by simp [h])
         exact ⟨u',hxne,hJu',hAtom⟩
-      · exact ⟨u,hux.symm,hJxu,hUY⟩
+      · exact ⟨u,(fun h => hux h.symm),hJxu,hUY⟩
     obtain ⟨u',hxne,hJxu',hAtom⟩ := hMiddle
     have hxTag : (⟨i,x⟩ : Sigma X) ≠ ⟨i,u'⟩ := by
       intro h
