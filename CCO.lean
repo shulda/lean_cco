@@ -1868,3 +1868,4 @@ import CCO.ExactEPGeometry.OriginalRetainedSelectedGroupoid
 import CCO.ExactEPGeometry.SelectedGaugeCharacter
 import CCO.ExactEPGeometry.OriginalRetainedAnchorGauge
 import CCO.ExactEPGeometry.OriginalReachedOccupancyAnchors
+import CCO.ExactEPGeometry.OriginalReachedGlobalGauge
