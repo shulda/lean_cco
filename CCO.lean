@@ -1874,3 +1874,4 @@ import CCO.ExactEPGeometry.OriginalRetainedNormalizedArrows
 import CCO.ExactEPGeometry.OriginalRetainedSelectedArrowFunctor
 import CCO.ExactEPGeometry.OriginalRetainedSelectedArrowUnits
 import CCO.ExactEPGeometry.OriginalRetainedSelectedOccupancyCharacter
+import CCO.ExactEPGeometry.OriginalRetainedSelectedNormalizedCharacter
