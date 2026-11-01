@@ -63,10 +63,10 @@ def originalFullColourEqInvEqOrderIso
 /-- The true source-named FULL invariant target
 equivalence on the original sort j associated with
 B040's canonical RAW quotient transition. -/
-def originalTransportTargetColourEq
+noncomputable def originalTransportTargetColourEq
     (H : HomogeneousSource S G)
     {i j : ι} (J : ColourEq S i)
-    {R : Rel (X i) (X j)}
+    {R : QuotientTransport.Rel (X i) (X j)}
     (T : Transport (originalColourEqAsInvEq S H J) R) :
     ColourEq S j :=
   (originalFullColourEqInvEqOrderIso S H).symm T.target
@@ -79,7 +79,7 @@ menu or an unrelated quotient kernel, is the target.
 theorem originalTransportTargetColourEq_iff
     (H : HomogeneousSource S G)
     {i j : ι} (J : ColourEq S i)
-    {R : Rel (X i) (X j)}
+    {R : QuotientTransport.Rel (X i) (X j)}
     (T : Transport (originalColourEqAsInvEq S H J) R)
     (y z : X j) :
     originalTransportTargetColourEq S H J T y z ↔
@@ -101,7 +101,7 @@ theorem originalTransportTargetColourEq_proper_nonzero
     {i j : ι} (J : ColourEq S i)
     (hJbot : (⊥ : ColourEq S i) < J)
     (hJtop : J < (⊤ : ColourEq S i))
-    {R : Rel (X i) (X j)}
+    {R : QuotientTransport.Rel (X i) (X j)}
     (T : Transport (originalColourEqAsInvEq S H J) R) :
     (⊥ : ColourEq S j) < originalTransportTargetColourEq S H J T ∧
       originalTransportTargetColourEq S H J T < (⊤ : ColourEq S j) := by
@@ -148,7 +148,7 @@ theorem originalTransportTargetColourEq_raw_word_of_NR2
     (H : HomogeneousSource S G)
     (nr2 : Selectors.OriginalNR2 S)
     {i j : ι} (J : ColourEq S i)
-    {R : Rel (X i) (X j)}
+    {R : QuotientTransport.Rel (X i) (X j)}
     (T : Transport (originalColourEqAsInvEq S H J) R) :
     ∃ word : RawWord S j j,
       RawWord.relation S word =
