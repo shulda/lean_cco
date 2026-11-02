@@ -1907,3 +1907,4 @@ import CCO.ExactEPGeometry.OriginalSelectedFullMarkToOld
 import CCO.ExactEPGeometry.OriginalAnchorGaugeZero
 import CCO.ExactEPGeometry.OriginalRetainedGateClassPointReadout
 import CCO.ExactEPGeometry.OriginalSelectedReachedPointLifts
+import CCO.ExactEPGeometry.OriginalSelectedAnchorActionReadout
