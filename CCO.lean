@@ -1785,3 +1785,4 @@ import CCO.TransitionClosure.OriginalUnaryTermNormalization
 import CCO.TransitionClosure.OriginalUnaryTermFiniteFunctions
 import CCO.TransitionClosure.OriginalFullMITransport
 import CCO.TransitionClosure.OriginalTerminalRepresentedWrappers
+import CCO.TransitionClosure.OriginalTransitionGraphSpectrum
