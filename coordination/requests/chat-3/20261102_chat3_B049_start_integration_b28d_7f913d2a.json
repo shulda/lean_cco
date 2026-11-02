@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "request_id": "20261102_chat3_B049_start_integration_b28d_7f913d2a",
+  "actor_id": "chat-3",
+  "project_id": 6,
+  "policy_revision": 14,
+  "operation": "event",
+  "expected_revision": 591,
+  "event": "start_integration",
+  "data": {
+    "package_id": "B049",
+    "head_sha": "b28d78956bbff6bf71ebf51d4a3a379380585dd7",
+    "base_main_sha": "636d6c89afcb68fe4e0c633e561a0b174a4e9855",
+    "head_contains_main": true,
+    "ci": {
+      "run_id": 41479351188
+    }
+  }
+}
