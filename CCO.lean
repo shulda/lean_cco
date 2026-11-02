@@ -1910,3 +1910,5 @@ import CCO.ExactEPGeometry.OriginalSelectedReachedPointLifts
 import CCO.ExactEPGeometry.OriginalSelectedAnchorActionReadout
 import CCO.ExactEPGeometry.OriginalSelectedFiniteAnchorBits
 import CCO.ExactEPGeometry.OriginalSelectedFiniteOrbitalOldMark
+import CCO.ExactEPGeometry.OriginalSelectedFiniteReachedInjectivity
+import CCO.ExactEPGeometry.OriginalSelectedFiniteMarkedWitness
