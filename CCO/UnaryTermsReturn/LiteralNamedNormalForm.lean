@@ -74,9 +74,14 @@ theorem original_named_hidden_term_literal_normal_form
         F.val y z
       rw [hF]
     rw [T0.target_iff] at hNF
+    change (∃ x x', N.val.2.val.2.val.val x y ∧
+      N.val.2.val.1 x x' ∧ N.val.2.val.2.val.val x' z) ↔
+        F.val y z at hNF
     change T.target y z ↔ F.val y z
     rw [T.target_iff]
-    simpa only [hK] using hNF
+    change (∃ x x', R.val.val x y ∧ K.val x x' ∧
+      R.val.val x' z) ↔ F.val y z
+    simpa only [R, hK] using hNF
   obtain ⟨theta,hTheta⟩ :=
     original_named_raw_transport_has_named_expression
       S H sap nr2 K F R T hTTarget
