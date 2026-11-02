@@ -1803,3 +1803,4 @@ import CCO.UnaryTermsReturn.TermValues
 import CCO.UnaryTermsReturn.GenericReturn
 import CCO.UnaryTermsReturn.NamedIntermediate
 import CCO.UnaryTermsReturn.NormalizedKernels
+import CCO.UnaryTermsReturn.RealSourceKernel
