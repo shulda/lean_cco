@@ -80,11 +80,14 @@ theorem original_transport_graph_iff_atom_in_pair_spectrum
           hTxy.symm.trans hqr
         exact ⟨x,y,rfl,hr,hay⟩
   · rintro ⟨x,y,hqx,hry,hxy⟩
-    calc
-      T.quotientEquiv q =
-          T.quotientEquiv (Quotient.mk'' x) := by rw [hqx]
-      _ = Quotient.mk'' y := T.quotientEquiv_edge (hInside x y hxy)
-      _ = r := hry
+    have hq :
+        T.quotientEquiv (Quotient.mk'' x) = T.quotientEquiv q :=
+      congrArg T.quotientEquiv hqx
+    have hy :
+        T.quotientEquiv (Quotient.mk'' x) =
+          (Quotient.mk'' y : Quotient T.target.val) :=
+      T.quotientEquiv_edge (hInside x y hxy)
+    exact hq.symm.trans (hy.trans hry)
 
 /-- Every matched true original quotient-transition graph pair has
 the complete old diversity spectrum (J;{a};K)°, independent of its
