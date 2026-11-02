@@ -65,13 +65,15 @@ def commonBlockOriginalAtomicSource :
     · have hr : (⟨j,y⟩ : Sigma CommonBlockReal) = ⟨i,x⟩ :=
         h.symm
       simp only [commonBlockOldColour, if_pos h, if_pos hr]
-      exact Iff.rfl
     · have hr : (⟨j,y⟩ : Sigma CommonBlockReal) ≠ ⟨i,x⟩ :=
         fun hz => h hz.symm
       simp only [commonBlockOldColour, if_neg h, if_neg hr,
         Option.some.injEq]
-      have hs : decide (x.1 = y.1) = decide (y.1 = x.1) :=
-        congrArg decide (propext (eq_comm : x.1 = y.1 ↔ y.1 = x.1))
+      have hs : decide (x.1 = y.1) = decide (y.1 = x.1) := by
+        by_cases hxy : x.1 = y.1
+        · simp [hxy, hxy.symm]
+        · have hyx : y.1 ≠ x.1 := fun e => hxy e.symm
+          simp [hxy, hyx]
       rw [hs]
   realized := by
     intro i j a
