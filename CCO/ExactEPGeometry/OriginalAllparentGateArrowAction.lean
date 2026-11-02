@@ -91,15 +91,29 @@ theorem originalAllparentGateClass_arrow_natural
       U.quotientMap Q.homogeneous
         (projectedGateClassMap Kp (pi p) Quotient.mk''_surjective hNp x)
   intro x
-  have hn := projectedGateClassMap_arrow_natural
-    B.homogeneous Q.homogeneous Kp Kq
-      (pi p) (pi q) Quotient.mk''_surjective Quotient.mk''_surjective
-      hNp hNq hExactP hExactQ R U hImage x
-  change projectedGateClassMap Kq (pi q) Quotient.mk''_surjective hNq
-      (R.quotientMap B.homogeneous x) =
-    U.quotientMap Q.homogeneous
-      (projectedGateClassMap Kp (pi p) Quotient.mk''_surjective hNp x)
-  exact hn
+  induction x using Quotient.inductionOn with
+  | _ x =>
+    let y := R.pointImage B.homogeneous x
+    have hr : R.rel x y := R.pointImage_spec B.homogeneous x
+    have hu : U.rel (pi p x) (pi q y) := hImage x y hr
+    have hq :
+        U.quotientMap Q.homogeneous
+          ((Kp.projectedKernel Q.source (pi p)
+            Quotient.mk''_surjective hNp hExactP).project (pi p x)) =
+        (Kq.projectedKernel Q.source (pi q)
+          Quotient.mk''_surjective hNq hExactQ).project (pi q y) :=
+      (U.quotientMap_eq_iff Q.homogeneous (pi p x) (pi q y)).mpr hu
+    change U.quotientMap Q.homogeneous (Quotient.mk'' (pi p x)) =
+      Quotient.mk'' (pi q y) at hq
+    change projectedGateClassMap Kq (pi q) Quotient.mk''_surjective hNq
+        (R.quotientMap B.homogeneous (Kp.project x)) =
+      U.quotientMap Q.homogeneous
+        (projectedGateClassMap Kp (pi p) Quotient.mk''_surjective hNp
+          (Kp.project x))
+    rw [R.quotientMap_project B.homogeneous x]
+    change Quotient.mk'' (pi q y) =
+      U.quotientMap Q.homogeneous (Quotient.mk'' (pi p x))
+    exact hq.symm
 
 end
 end CCO.ExactEPGeometry
