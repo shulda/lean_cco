@@ -70,7 +70,8 @@ theorem preservesLiteralEquality
     (x y : source) :
     (e.toEquiv x = e.toEquiv y) ↔ x = y := by
   constructor
-  · exact e.toEquiv.injective
+  · intro h
+    exact e.toEquiv.injective h
   · intro h
     exact congrArg e.toEquiv h
 
