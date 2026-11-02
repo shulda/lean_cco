@@ -1799,3 +1799,5 @@ import CCO.TransitionClosure.OriginalSourceBoundaries
 import CCO.TransitionClosure.OriginalWholeGraphPairTest
 import CCO.TransitionClosure.OriginalFiniteCylinderPartition
 import CCO.TransitionClosure.OriginalCylinderAdmissiblePairs
+import CCO.UnaryTermsReturn.TermValues
+import CCO.UnaryTermsReturn.GenericReturn
