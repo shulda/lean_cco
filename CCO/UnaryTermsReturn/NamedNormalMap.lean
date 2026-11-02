@@ -50,10 +50,12 @@ theorem original_named_raw_transport_has_named_expression
     (T : Transport (originalColourEqAsInvEq S H K.val) R.val.val)
     (hF : originalTransportTargetColourEq S H K.val T = F.val) :
     ∃ theta : OriginalNamedRawUnaryTerm S H sap nr2 K F,
-      ∀ (x : X i) (y : X j), R.val.val x y →
+      (∀ (x : X i) (y : X j), R.val.val x y →
         OriginalNamedRawUnaryTerm.eval S H sap nr2 theta
           (Quotient.mk K.val.val x) =
-            Quotient.mk F.val.val y := by
+            Quotient.mk F.val.val y) ∧
+      Function.Injective
+        (OriginalNamedRawUnaryTerm.eval S H sap nr2 theta) := by
   classical
   by_cases hDiagonal : ∃ x : X i, ∃ y : X j,
       R.val.val x y ∧ (⟨i,x⟩ : Sigma X) = ⟨j,y⟩
@@ -78,11 +80,13 @@ theorem original_named_raw_transport_has_named_expression
       rw [hEqTarget]
       exact Iff.rfl
     cases hFName
-    refine ⟨.ident K, ?_⟩
-    intro a b hab
-    change (Quotient.mk K.val.val a) = Quotient.mk K.val.val b
-    exact Quotient.sound
-      (original_identity_included_transport_le_source T hAll a b hab)
+    refine ⟨.ident K, ?_, ?_⟩
+    · intro a b hab
+      change (Quotient.mk K.val.val a) = Quotient.mk K.val.val b
+      exact Quotient.sound
+        (original_identity_included_transport_le_source T hAll a b hab)
+    · intro a b hab
+      exact hab
   · have hNoIdentity : ∀ x : X i, ∀ y : X j,
         R.val.val x y → (⟨i,x⟩ : Sigma X) ≠ ⟨j,y⟩ := by
       intro x y hxy heq
@@ -110,12 +114,15 @@ theorem original_named_raw_transport_has_named_expression
       rw [hTransport,hTargetInvEq]
       exact Iff.rfl
     cases hTargetName
-    refine ⟨.transition d (.ident K), ?_⟩
-    intro x y hxy
-    change Td.quotientEquiv (Quotient.mk K.val.val x) =
-      Quotient.mk
-        (originalNamedRawTransitionSymbol_target S H sap nr2 d).val.val y
-    rw [hTransport]
-    exact T.quotientEquiv_edge hxy
+    refine ⟨.transition d (.ident K), ?_, ?_⟩
+    · intro x y hxy
+      change Td.quotientEquiv (Quotient.mk K.val.val x) =
+        Quotient.mk
+          (originalNamedRawTransitionSymbol_target S H sap nr2 d).val.val y
+      rw [hTransport]
+      exact T.quotientEquiv_edge hxy
+    · intro a b hab
+      change Td.quotientEquiv a = Td.quotientEquiv b at hab
+      exact Td.quotientEquiv.injective hab
 
 end CCO.UnaryTermsReturn
