@@ -216,4 +216,26 @@ theorem originalNamedHiddenOffDiagonalCylinder_diagonal_empty
   rintro ⟨h,_⟩
   exact h rfl
 
+/-- Full C43 on ACTUAL DISTINCT hidden vertices of ONE literal
+represented original quotient sort. Exactly one of the finitely
+many interpreted positive cylinder labels holds on each such
+pair, while the genuine hidden equality diagonal is excluded.
+
+The earlier all-pairs representative-spectrum partition supplies
+uniqueness; the q != r guard is the source's crucial final
+hidden-language diagonal firewall. No hidden quotient SAP/CCO
+is assumed and no positive STRONG identity atom is introduced. -/
+theorem originalNamedHiddenOffDiagonalCylinder_unique
+    (H : HomogeneousSource S G) (sap : AgeSAP S)
+    {i : ι} (D : OriginalNamedHiddenCoordinate S H i)
+    (q r : Quotient D.val.val) (hne : q ≠ r) :
+    ∃! P : S.Menu i i,
+      P ∈ originalTypedCylinderNames S D.val D.val ∧
+        originalNamedHiddenOffDiagonalCylinder S H D P q r := by
+  obtain ⟨P,hP,hUnique⟩ :=
+    original_named_hidden_pair_cylinder_unique S H sap D D q r
+  refine ⟨P, ⟨hP.1, ⟨hne, hP.2⟩⟩, ?_⟩
+  intro Q hQ
+  exact hUnique Q ⟨hQ.1,hQ.2.2⟩
+
 end CCO.TransitionClosure
