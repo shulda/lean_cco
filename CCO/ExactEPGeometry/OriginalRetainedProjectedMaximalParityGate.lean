@@ -123,12 +123,10 @@ theorem originalRetainedProjectedGate_maximalParityComplement
     change Z.rel (pi a) (pi u)
     have heq : pi a = pi u := Quotient.sound hau
     rw [heq]
-    exact Z.setoid.refl (pi u)
   have hVZ : Zpre.r v z := by
     change Z.rel (pi v) (pi z)
     have heq : pi v = pi z := Quotient.sound hvz
     rw [heq]
-    exact Z.setoid.refl (pi z)
   have hAZ : Zpre.r a z := Zpre.trans hAU (Zpre.trans hUV hVZ)
   have hZ : Z.rel (pi a) (pi z) := hAZ
   have hConnected : ConnectedWalk (Q.source.atomRel d) (pi a) (pi z) :=
