@@ -75,7 +75,10 @@ theorem original_real_to_hidden_named_values_finite
     S H sap nr2 i j =>
       evaluate (originalNamedRawUnaryTermDatum_function
         S H sap nr2 d))).Finite
-  simpa only [Set.image_range, Function.comp_def] using hValues
+  apply hValues.subset
+  rintro z ⟨d, rfl⟩
+  exact ⟨originalNamedRawUnaryTermDatum_function S H sap nr2 d,
+    ⟨d, rfl⟩, rfl⟩
 
 /-- A term starting at one LITERAL original hidden coordinate D.
 The target is another represented original FULL quotient, with
