@@ -1815,3 +1815,4 @@ import CCO.UnaryTermsReturn.NamedNormalMap
 import CCO.UnaryTermsReturn.LiteralNamedNormalForm
 import CCO.UnaryTermsReturn.FullAdmissibleTransfer
 import CCO.UnaryTermsReturn.LiteralRealFactorization
+import CCO.UnaryTermsReturn.NamedReturnFactors
