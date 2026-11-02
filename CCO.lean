@@ -1787,3 +1787,4 @@ import CCO.TransitionClosure.OriginalFullMITransport
 import CCO.TransitionClosure.OriginalTerminalRepresentedWrappers
 import CCO.TransitionClosure.OriginalTransitionGraphSpectrum
 import CCO.TransitionClosure.OriginalWholeTransitionCylinder
+import CCO.TransitionClosure.OriginalNamedHiddenCoordinates
