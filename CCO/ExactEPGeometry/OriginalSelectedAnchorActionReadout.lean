@@ -65,7 +65,7 @@ private theorem originalGateIdentityClassTransport_of_eq
           Arrow.id Ka :=
     original_retained_identity_arrow_self
       A B P transport tp hOne Kroot E hE a
-  apply HEq.of_eq
+  apply heq_of_eq
   change (originalRetainedSelectedGateClassEquiv
       A B P transport tp hOne Kroot E hE a)
       ((original_retained_identity_arrow
@@ -98,7 +98,8 @@ theorem originalReachedSelectedActionPoint_anchor_heq
       (originalReachedSelectedActionPoint
         A B P transport tp hOne Kroot E hE a q)
       (originalRetainedSelectedGateClassEquiv
-        A B P transport tp hOne Kroot E hE a q) := by  let base := P.parent r
+        A B P transport tp hOne Kroot E hE a q) := by
+  let base := P.parent r
   let hBase : ∀ i : A.Sorts, base = i := fun i => hOne base i
   let a := originalReachedOccupancyAnchor A B P base hBase E Kroot o
   have hFixed : originalReachedOccupancyAnchorOf
