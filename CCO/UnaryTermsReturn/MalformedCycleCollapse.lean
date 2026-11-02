@@ -1,7 +1,7 @@
 import Mathlib.GroupTheory.Perm.Fin
 import Mathlib.GroupTheory.Perm.Cycle.Basic
 import Mathlib.Data.Fintype.Card
-import Mathlib.Tactic.Omega
+import Lean.Elab.Tactic.Omega
 
 /-!
 # B052 source10 C17–C21: malformed long unary transition cycles
