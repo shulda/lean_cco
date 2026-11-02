@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "request_id": "20261102_chat3_B049_review_b28d_38c41e62",
+  "actor_id": "chat-3",
+  "project_id": 6,
+  "policy_revision": 14,
+  "operation": "event",
+  "expected_revision": 589,
+  "event": "review",
+  "data": {
+    "package_id": "B049",
+    "head_sha": "b28d78956bbff6bf71ebf51d4a3a379380585dd7",
+    "independence": {
+      "identity": "chat-project:cco-chat-3",
+      "non_author": true,
+      "summary": "Persistent chat-project:cco-chat-3/project 6 did not author, design, edit or direct B049 in any earlier or current chat, nor participate under another identity. I only independently reviewed distinct B050 and have now published my own B049 reading plan; no B049 code will be changed by this reviewer.",
+      "report_path": "formalization/coordination/reviews/B049-chat-3.md"
+    }
+  }
+}
