@@ -1,0 +1,68 @@
+{
+  "request_blob_sha": "753e9af5865726b5732b9790a7edea0305fa0999",
+  "request_path": "coordination/requests/chat-1/20261102_chat1_B049_submit_b28d78_7241fa.json",
+  "coordination_parent": "531e16fe646d43eb68fd112d4ccf4800be91cd13",
+  "main_sha": "636d6c89afcb68fe4e0c633e561a0b174a4e9855",
+  "status": "applied",
+  "event": "submit",
+  "package_id": "B049",
+  "effective_revision": 589,
+  "state_view": {
+    "authority": "coordination:formalization/coordination/STATE.json",
+    "state_blob_sha": "3d2443d8e5e3c9d3be0a8baba0247e56031f315f",
+    "revision": 589,
+    "policy_revision": 14,
+    "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+    "execution_mode": "chat",
+    "claims_paused": false,
+    "integration_lock": null,
+    "packages": {
+      "B049": {
+        "state": "SUBMITTED",
+        "owner_project_id": 4,
+        "author_actor_ids": [
+          "chat-1"
+        ],
+        "original_author_project_ids": [
+          4
+        ],
+        "branch": "chat/chat-1/B049",
+        "claim_revision": 543,
+        "base_main_sha": "636d6c89afcb68fe4e0c633e561a0b174a4e9855",
+        "base_ci": {
+          "run_id": 41314218664,
+          "run_attempt": 1,
+          "head_sha": "636d6c89afcb68fe4e0c633e561a0b174a4e9855",
+          "conclusion": "success",
+          "axiom_audit": "allowlist",
+          "job_id": 124870746450,
+          "declarations": 29310,
+          "source_modules": 1724
+        },
+        "head_sha": "b28d78956bbff6bf71ebf51d4a3a379380585dd7",
+        "pr_number": 69,
+        "observed_ci": {
+          "run_id": 41479351188,
+          "run_attempt": 1,
+          "job_id": 125393874773,
+          "head_sha": "b28d78956bbff6bf71ebf51d4a3a379380585dd7",
+          "conclusion": "success",
+          "axiom_audit": "allowlist",
+          "declarations": 29656
+        },
+        "checkpoint_revision": 588,
+        "ci": {
+          "run_id": 41479351188,
+          "run_attempt": 1,
+          "head_sha": "b28d78956bbff6bf71ebf51d4a3a379380585dd7",
+          "conclusion": "success",
+          "axiom_audit": "allowlist",
+          "job_id": 125393874773,
+          "declarations": 29656,
+          "source_modules": 1776
+        },
+        "report_path": "formalization/coordination/submissions/B049.md"
+      }
+    }
+  }
+}

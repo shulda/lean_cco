@@ -1,6 +1,6 @@
 {
   "not_an_ownership_lease": true,
-  "state_revision": 588,
+  "state_revision": 589,
   "policy_revision": 14,
   "execution_mode": "chat",
   "claims_paused": false,
@@ -14,23 +14,22 @@
       "reason": "This execution profile is inactive for this project."
     },
     "chat-1": {
-      "action": "resume",
+      "action": "wait_for_review",
       "package_id": "B049",
-      "state": "IN_PROGRESS"
+      "state": "SUBMITTED"
     },
     "chat-2": {
-      "action": "resume",
-      "package_id": "B062",
-      "state": "IN_PROGRESS"
+      "action": "review",
+      "package_id": "B049"
     },
     "chat-3": {
-      "action": "wait",
-      "reason": "No eligible released batch; finish reviews or await preparation."
+      "action": "review",
+      "package_id": "B049"
     }
   },
   "active": {
     "B049": {
-      "state": "IN_PROGRESS",
+      "state": "SUBMITTED",
       "owner_project_id": 4,
       "head_sha": "b28d78956bbff6bf71ebf51d4a3a379380585dd7",
       "pr_number": 69,
