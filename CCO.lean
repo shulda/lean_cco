@@ -1802,3 +1802,4 @@ import CCO.TransitionClosure.OriginalCylinderAdmissiblePairs
 import CCO.TerminalProfiles.OriginalEquivalenceReproduction
 import CCO.TerminalProfiles.OriginalTerminalCoverLayer
 import CCO.TerminalProfiles.OriginalCompleteCylinderReturn
+import CCO.TerminalProfiles.OriginalQuotientDiagonalInvolution
