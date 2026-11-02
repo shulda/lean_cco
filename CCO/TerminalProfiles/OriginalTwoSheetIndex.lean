@@ -192,7 +192,7 @@ theorem original_equivariant_quotient_involution_identity
           Quotient.mk J.val y = f (Quotient.mk J.val x)
         exact Or.inr hy
       have hJxy : J x y := hKJ hK
-      exact hMove ((Quotient.sound hJxy).symm.trans hy).symm
+      exact hMove ((Quotient.sound hJxy).trans hy).symm
   have hJKstrict : J < K := lt_of_le_of_ne hJK (by
     intro hEq
     apply hNotKJ
