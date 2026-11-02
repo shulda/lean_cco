@@ -141,7 +141,7 @@ theorem originalNamedRawTransitionSymbol_converse_target_name
   change
     (originalNamedRawTransitionSymbol_transport S H
       (originalNamedRawTransitionSymbol_converse S H sap nr2 d)).target x z ↔
-        d.val.1 x z
+        d.val.1.val x z
   rw [hTarget]
   exact Iff.rfl
 
@@ -164,11 +164,17 @@ theorem originalNamedRawTransitionSymbol_converse_quotient_inverse
   let T := originalNamedRawTransitionSymbol_transport S H d
   let U := originalNamedRawTransitionSymbol_transport S H
     (originalNamedRawTransitionSymbol_converse S H sap nr2 d)
+  change InvEq.quotientCongr
+    (originalNamedRawTransitionSymbol_converse_target_eq_source S H sap nr2 d)
+      (U.quotientEquiv (T.quotientEquiv q)) = q
   induction q using Quotient.inductionOn with
   | _ x =>
       obtain ⟨y,hxy⟩ := T.serial x
+      have hyx : (originalNamedRawTransitionSymbol_converse S H sap nr2 d).val.2.val.val y x := by
+        change d.val.2.val.val x y
+        exact hxy
       rw [T.quotientEquiv_edge hxy,
-        U.quotientEquiv_edge hxy,
+        U.quotientEquiv_edge hyx,
         InvEq.quotientCongr_mk]
 
 /-- An actual TERM for the inverse of ANY named primitive RAW
