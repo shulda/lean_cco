@@ -1916,3 +1916,4 @@ import CCO.ExactEPGeometry.ProjectedSaturatedPivotOutsideGate
 import CCO.ExactEPGeometry.ProjectedNestedGateModularity
 import CCO.ExactEPGeometry.OriginalRetainedProjectedPivotOutsideGate
 import CCO.ExactEPGeometry.OriginalRetainedAllparentOddOutsideGate
+import CCO.ExactEPGeometry.OriginalRetainedProjectedGateModularity
