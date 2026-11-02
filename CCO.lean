@@ -1790,5 +1790,6 @@ import CCO.TransitionClosure.OriginalTransitionGraphSpectrum
 import CCO.TransitionClosure.OriginalWholeTransitionCylinder
 import CCO.TransitionClosure.OriginalStrongWholeTransitionGraph
 import CCO.TransitionClosure.OriginalNamedHiddenCoordinates
+import CCO.TransitionClosure.OriginalNamedAtomicBranch
 import CCO.TransitionClosure.OriginalFiniteCylinderPartition
 import CCO.TransitionClosure.OriginalCylinderAdmissiblePairs
