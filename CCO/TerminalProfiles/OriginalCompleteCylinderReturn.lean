@@ -84,6 +84,7 @@ theorem original_complete_J_cylinders_return_iff_eq
     change originalQuotientOrbitalPalette S (G := G) J a b =
       originalQuotientOrbitalPalette S (G := G) J c d
     rw [originalQuotientOrbitalPalette, hOrbitEq]
+    rfl
   · intro hTU
     have hMenus : S.menuRel T = S.menuRel U :=
       congrArg (fun M : S.Menu i i => S.menuRel M) hTU
