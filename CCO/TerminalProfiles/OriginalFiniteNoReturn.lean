@@ -93,10 +93,12 @@ theorem original_finite_no_return_of_local_no_two
       obtain ⟨hSecond, hTail⟩ := ih second hPair.2
       refine ⟨hPair.1, ?_⟩
       intro w hw
-      rcases hw with h | h
+      have hMember : w = second ∨ w ∈ tail := by
+        simpa only [List.mem_cons] using hw
+      rcases hMember with hEq | hMem
       · subst w
         exact hSecond
-      · exact hTail w h
+      · exact hTail w hMem
 
 /-- Actual terminal FULL original NR2 is an instantiation of the
 LOCAL cut hypothesis, not a substitute for a real no-return proof. -/
