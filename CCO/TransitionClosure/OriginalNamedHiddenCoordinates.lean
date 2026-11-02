@@ -87,12 +87,14 @@ noncomputable def original_named_hidden_transport_target
     {i j : ι} (D : OriginalNamedHiddenCoordinate S H i)
     {R : QuotientTransport.Rel (X i) (X j)}
     (T : Transport (originalColourEqAsInvEq S H D.val) R) :
-    OriginalNamedHiddenCoordinate S H j := by
-  obtain ⟨hMI,hBot,_hTop,hRaw⟩ :=
-    originalTransportTargetColourEq_properMI_named_NR2
-      S H sap nr2 D.val D.property.1 D.property.2.1 T
-  exact ⟨originalTransportTargetColourEq S H D.val T,
-    hBot,hMI,hRaw⟩
+    OriginalNamedHiddenCoordinate S H j :=
+  ⟨originalTransportTargetColourEq S H D.val T,
+    (originalTransportTargetColourEq_properMI_named_NR2
+      S H sap nr2 D.val D.property.1 D.property.2.1 T).2.1,
+    (originalTransportTargetColourEq_properMI_named_NR2
+      S H sap nr2 D.val D.property.1 D.property.2.1 T).1,
+    (originalTransportTargetColourEq_properMI_named_NR2
+      S H sap nr2 D.val D.property.1 D.property.2.1 T).2.2.2⟩
 
 /-- The actual original quotient-transition unary FUNCTION
 between the above named hidden carriers, using the literal
