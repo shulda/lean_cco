@@ -1981,3 +1981,5 @@ import CCO.ExactEPGeometry.OriginalPhaseOddWalkParity
 import CCO.ExactEPGeometry.OriginalRetainedQuotientParityTwo
 import CCO.ExactEPGeometry.QuotientParityProfiles
 import CCO.ExactEPGeometry.OriginalRetainedQuotientParityProfiles
+import CCO.ExactEPGeometry.OriginalPhaseEvenWalkGate
+import CCO.ExactEPGeometry.OriginalRetainedProjectedParityComplement
