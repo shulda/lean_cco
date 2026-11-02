@@ -125,7 +125,7 @@ theorem original_named_hidden_transport_function_edge
         (Quotient.mk D.val.val x) =
       Quotient.mk
         (original_named_hidden_transport_target S H sap nr2 D T).val.val y := by
-  simpa only [original_named_hidden_transport_function] using
+  simpa [original_named_hidden_transport_function] using
     (T.quotientEquiv_edge hxy)
 
 /-- An actual OLD generated unary term whose source and target
