@@ -140,9 +140,12 @@ theorem originalReachedCorrectedMarking_toOriginal
   let F := Reached.pointFunctor B.homogeneous C Kroot
   let gamma := originalReachedGlobalOffset A B P transport tp
     hOne Kroot phase E hE
+  change ∀ (mark : Abstract.Point F → ZMod 2),
+    Abstract.IsMarking F (gaugeCharacter phase.character gamma) mark →
+      Abstract.IsMarking F phase.character
+        (gaugeMarking F gamma mark)
   intro mark hmark
-  apply gaugeMarking_reverse F phase.character gamma mark
-  exact hmark
+  exact gaugeMarking_reverse F phase.character gamma mark hmark
 
 end
 end CCO.ExactEPGeometry
