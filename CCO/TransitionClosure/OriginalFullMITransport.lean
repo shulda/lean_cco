@@ -100,14 +100,14 @@ theorem originalFullTransportPullColourEq_properMI_iff
   exact hMI
 
 
-/-- Covers of two equivalences above a fixed original kernel are
+/-- QuotientTransport.Transport.Covers of two equivalences above a fixed original kernel are
 exactly their covers in the whole order, since all intermediate
 equivalences also lie above that kernel. -/
 private theorem covers_upper_interval_iff
     {α : Type*} [PartialOrder α] (E L K : α)
     (hEL : E ≤ L) (hEK : E ≤ K) :
-    Covers (⟨L, hEL⟩ : {F : α // E ≤ F})
-      (⟨K, hEK⟩ : {F : α // E ≤ F}) ↔ Covers L K := by
+    QuotientTransport.Transport.Covers (⟨L, hEL⟩ : {F : α // E ≤ F})
+      (⟨K, hEK⟩ : {F : α // E ≤ F}) ↔ QuotientTransport.Transport.Covers L K := by
   constructor
   · rintro ⟨hlt, hgap⟩
     refine ⟨hlt, ?_⟩
@@ -127,7 +127,7 @@ underlying orders; no distributivity or quotient SAP is used. -/
 private theorem covers_orderIso_iff
     {α β : Type*} [PartialOrder α] [PartialOrder β]
     (e : α ≃o β) (L K : α) :
-    Covers (e L) (e K) ↔ Covers L K := by
+    QuotientTransport.Transport.Covers (e L) (e K) ↔ QuotientTransport.Transport.Covers L K := by
   constructor
   · rintro ⟨hlt, hgap⟩
     refine ⟨(e.lt_iff_lt).mp hlt, ?_⟩
@@ -152,7 +152,7 @@ private theorem original_transport_pull_full_covers_iff
     (T : Transport E R)
     (L K : InvEq G (X j))
     (hFL : T.target ≤ L) (hFK : T.target ≤ K) :
-    Covers L K ↔ Covers (T.pull L hFL) (T.pull K hFK) := by
+    QuotientTransport.Transport.Covers L K ↔ QuotientTransport.Transport.Covers (T.pull L hFL) (T.pull K hFK) := by
   have hL : T.intervalIso
       ⟨T.pull L hFL, T.source_le_pull L hFL⟩ =
       (⟨L, hFL⟩ : {P : InvEq G (X j) // T.target ≤ P}) := by
@@ -191,8 +191,8 @@ theorem originalFullTransportPullColourEq_covers_iff
     (L K : ColourEq S j)
     (hFL : originalTransportTargetColourEq S H J T ≤ L)
     (hFK : originalTransportTargetColourEq S H J T ≤ K) :
-    Covers L K ↔
-      Covers (originalFullTransportPullColourEq S H J T L hFL)
+    QuotientTransport.Transport.Covers L K ↔
+      QuotientTransport.Transport.Covers (originalFullTransportPullColourEq S H J T L hFL)
         (originalFullTransportPullColourEq S H J T K hFK) := by
   let LV : InvEq G (X j) := originalColourEqAsInvEq S H L
   let KV : InvEq G (X j) := originalColourEqAsInvEq S H K
@@ -213,12 +213,12 @@ theorem originalFullTransportPullColourEq_covers_iff
           T.pull KV hTK :=
     (originalFullColourEqInvEqOrderIso S H).apply_symm_apply (T.pull KV hTK)
   calc
-    Covers L K ↔ Covers LV KV :=
+    QuotientTransport.Transport.Covers L K ↔ QuotientTransport.Transport.Covers LV KV :=
       (covers_orderIso_iff (originalFullColourEqInvEqOrderIso S H) L K).symm
-    _ ↔ Covers (T.pull LV hTL) (T.pull KV hTK) :=
-      original_transport_pull_full_covers_iff S
+    _ ↔ QuotientTransport.Transport.Covers (T.pull LV hTL) (T.pull KV hTK) :=
+      original_transport_pull_full_covers_iff
         (originalColourEqAsInvEq S H J) T LV KV hTL hTK
-    _ ↔ Covers (originalFullTransportPullColourEq S H J T L hFL)
+    _ ↔ QuotientTransport.Transport.Covers (originalFullTransportPullColourEq S H J T L hFL)
           (originalFullTransportPullColourEq S H J T K hFK) := by
         rw [← hIsoL, ← hIsoK]
         exact covers_orderIso_iff (originalFullColourEqInvEqOrderIso S H)
