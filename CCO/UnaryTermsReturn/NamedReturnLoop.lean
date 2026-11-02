@@ -182,4 +182,56 @@ theorem original_named_raw_closed_word_has_identity_term
         (originalReturnSortTransitivity S H)
         word hWord y
 
+/-- C32/C34–C36 simultaneous source10 NAMED return upgrade.
+For EVERY genuinely represented proper FULL original J above
+the SAME original E0, the ENTIRE given nonempty typed RAW word
+is interpreted by its genuine named factor transitions; their
+actual composite has the canonical B040 old-quotient label,
+and is identity on the starting J-class.
+
+The independent generic invariant-G coarsening premise E0<=J
+does NOT itself name J: original SAP and FULL NR2 are used in
+the named factor construction. No new hidden SAP/CCO or
+independently selected intermediate quotient charts are assumed. -/
+theorem original_named_raw_all_coarser_return_terms
+    (H : HomogeneousSource S G) (sap : AgeSAP S)
+    (nr2 : Selectors.OriginalNR2 S)
+    {a : ι} (E0 : InvEq G (X a))
+    (word : Word G X a a)
+    (hWord : Return.Bound E0 (.nil a) word)
+    (D : OriginalNamedHiddenCoordinate S H a)
+    (hEJ : E0 ≤ originalColourEqAsInvEq S H D.val) :
+    let hCoarse := Return.coarser_bound E0 hEJ (.nil a) word hWord
+    ∃ theta : OriginalNamedRawUnaryTerm S H sap nr2 D D,
+      (∀ x : X a,
+        OriginalNamedRawUnaryTerm.eval S H sap nr2 theta
+          (Quotient.mk D.val.val x) =
+        (Return.prefixTransport
+          (originalColourEqAsInvEq S H D.val)
+          (originalReturnSortTransitivity S H)
+          (.nil a) word hCoarse).label x) ∧
+      OriginalNamedRawUnaryTerm.eval S H sap nr2 theta = id := by
+  let hCoarse := Return.coarser_bound E0 hEJ (.nil a) word hWord
+  have hStart :
+      originalNamedReturnPrefixCoordinate
+        S H sap nr2 D (.nil a) word hCoarse = D :=
+    original_named_return_empty_prefix_coordinate_eq
+      S H sap nr2 D word hCoarse
+  have hSuffix :=
+    original_named_return_suffix_literal_term
+      S H sap nr2 D (.nil a) word hCoarse
+  rw [hStart] at hSuffix
+  obtain ⟨theta,he⟩ := hSuffix
+  refine ⟨theta,he,?_⟩
+  funext q
+  induction q using Quotient.inductionOn with
+  | _ x =>
+      change OriginalNamedRawUnaryTerm.eval S H sap nr2 theta
+        (Quotient.mk D.val.val x) = Quotient.mk D.val.val x
+      rw [he x]
+      exact Return.initial_label
+        (originalColourEqAsInvEq S H D.val)
+        (originalReturnSortTransitivity S H)
+        word hCoarse x
+
 end CCO.UnaryTermsReturn
