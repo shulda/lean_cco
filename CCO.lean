@@ -1913,3 +1913,4 @@ import CCO.ExactEPGeometry.OriginalSelectedFiniteOrbitalOldMark
 import CCO.ExactEPGeometry.OriginalSelectedFiniteReachedInjectivity
 import CCO.ExactEPGeometry.OriginalSelectedFiniteMarkedWitness
 import CCO.ExactEPGeometry.ProjectedSaturatedPivotOutsideGate
+import CCO.ExactEPGeometry.ProjectedNestedGateModularity
