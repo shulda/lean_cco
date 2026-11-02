@@ -44,11 +44,18 @@ noncomputable def originalSelectedFiniteOldChart
         A B P transport base hOne E).Point) :
     APCharacter.Age.Chart B.source
       (APCharacter.Age.zeroMask B.source) :=
-  APCharacter.Age.oldChart B.source
-    (fun v => originalSelectedTaggedRepresentative
-      A B P transport base hOne E (points v))
-    (originalSelectedFiniteRepresentative_injective
-      A B P transport base hOne E points)
+by
+  classical
+  -- The old-age chart interface uses a small finite vertex type.
+  -- Relabel an arbitrary universe-polymorphic finite family by Fin n.
+  letI : Fintype V := Fintype.ofFinite V
+  let e : Fin (Fintype.card V) ≃ V := (Fintype.equivFin V).symm
+  exact APCharacter.Age.oldChart B.source
+    (fun v : Fin (Fintype.card V) =>
+      originalSelectedTaggedRepresentative
+        A B P transport base hOne E (points (e v)))
+    ((originalSelectedFiniteRepresentative_injective
+      A B P transport base hOne E points).comp e.injective)
 
 /-- Reprojecting the ACTUAL chosen old points recovers the
 precise selected quotient colour of the original two points.
