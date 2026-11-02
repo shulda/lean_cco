@@ -1812,3 +1812,4 @@ import CCO.UnaryTermsReturn.NormalCodeCoverage
 import CCO.UnaryTermsReturn.SharedAtomTransitions
 import CCO.UnaryTermsReturn.ActualGeneratedClosures
 import CCO.UnaryTermsReturn.NamedNormalMap
+import CCO.UnaryTermsReturn.LiteralNamedNormalForm
