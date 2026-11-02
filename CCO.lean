@@ -1793,6 +1793,7 @@ import CCO.TransitionClosure.OriginalNamedHiddenCoordinates
 import CCO.TransitionClosure.OriginalNamedAtomicBranch
 import CCO.TransitionClosure.OriginalFullGroupGraphOrbital
 import CCO.TransitionClosure.OriginalNamedRawUnaryLanguage
+import CCO.TransitionClosure.OriginalNamedRawInverse
 import CCO.TransitionClosure.OriginalWholeGraphPairTest
 import CCO.TransitionClosure.OriginalFiniteCylinderPartition
 import CCO.TransitionClosure.OriginalCylinderAdmissiblePairs
