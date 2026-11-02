@@ -89,7 +89,7 @@ theorem originalSelectedRepresentatives_separate_E
       (Quotient.mk'' (Quotient.out y) :
         (originalExactSelectedQuotientCurrentSource
           A B P transport base hOne E).Point c) := Quotient.sound h
-  exact hxy ((Quotient.out_eq x).symm.trans (hh.trans (Quotient.out_eq y)))
+  exact (Quotient.out_eq x).symm.trans (hh.trans (Quotient.out_eq y))
 
 /-- The real chosen representatives distinguish ALL selected
 quotient points, including points in different occupancy named
