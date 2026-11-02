@@ -79,7 +79,7 @@ theorem original_nonzero_equiv_positive_word_of_terminalNR2
   · rw [hGuard] at hEmpty
     obtain ⟨a,ha⟩ := hPalette
     rw [hEmpty] at ha
-    exact False.elim (Set.not_mem_empty a ha)
+    simp at ha
   · exact ⟨p,hProfile.symm.trans hGuard⟩
 
 /-- The exact represented version of the pinned C19 cover
@@ -112,9 +112,9 @@ theorem original_terminal_represented_cover_interpolation
   · subst J
     rw [originalEquivDiversityPalette_bot S] at hMeet
     obtain ⟨a,_,ha⟩ := hMeet
-    exact False.elim (Set.not_mem_empty a ha)
+    simp at ha
   · have hJ : (⊥ : ColourEq S i) < J :=
-      lt_of_le_of_ne bot_le hZero.symm
+      lt_of_le_of_ne bot_le (Ne.symm hZero)
     have hK : (⊥ : ColourEq S i) < K :=
       lt_of_lt_of_le hJ hJK.1.le
     obtain ⟨wJ,hwJ⟩ :=
@@ -156,9 +156,9 @@ theorem original_terminal_represented_prime_intersection
   · subst J
     rw [originalEquivDiversityPalette_bot S] at hInside
     obtain ⟨a,ha⟩ := hAB
-    exact False.elim (Set.not_mem_empty a (hInside ha))
+    simp at hInside ha
   · have hJ : (⊥ : ColourEq S i) < J :=
-      lt_of_le_of_ne bot_le hZero.symm
+      lt_of_le_of_ne bot_le (Ne.symm hZero)
     have hK : (⊥ : ColourEq S i) < K :=
       lt_of_lt_of_le hJ hJK.1.le
     obtain ⟨wJ,hwJ⟩ :=
