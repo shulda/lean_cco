@@ -186,13 +186,14 @@ theorem original_named_whole_transport_has_atomic_symbol
     (T : Transport (originalColourEqAsInvEq S H D.val) R)
     (a : S.Atom i j) (ha : a ∈ S.diversityGuard R) :
     ∃ d : OriginalNamedAtomicTransitionSymbol S H i j,
-      d.val.1 = D ∧ d.val.2 = a ∧
+      ∃ hd : d.val.1 = D,
+        d.val.2 = a ∧
       ∃ hK :
           (originalNamedAtomicTransitionSymbol_transport S H d).target =
             T.target,
         ∀ q : Quotient D.val.val,
           InvEq.quotientCongr hK
-            ((originalNamedAtomicTransitionSymbol_transport S H d).quotientEquiv q) =
+            ((originalNamedAtomicTransitionSymbol_transport S H d).quotientEquiv (hd.symm ▸ q)) =
               original_named_hidden_transport_function S H sap nr2 D T q := by
   have hInside : ∀ x : X i, ∀ y : X j,
       S.atomRel a x y → R x y :=
@@ -228,14 +229,15 @@ theorem original_named_positive_branch_has_atomic_symbol
         S.menuRel (PositiveWord.profile S p) z y) → D.val x z)
     (a : S.Atom i j) (ha : a ∈ PositiveWord.profile S p) :
     ∃ d : OriginalNamedAtomicTransitionSymbol S H i j,
-      d.val.1 = D ∧ d.val.2 = a ∧
+      ∃ hd : d.val.1 = D,
+        d.val.2 = a ∧
       ∃ hK :
         (originalNamedAtomicTransitionSymbol_transport S H d).target =
           (originalPositiveStrongBranch_transport
             S H sap D.val p hKernel).target,
         ∀ q : Quotient D.val.val,
           InvEq.quotientCongr hK
-            ((originalNamedAtomicTransitionSymbol_transport S H d).quotientEquiv q) =
+            ((originalNamedAtomicTransitionSymbol_transport S H d).quotientEquiv (hd.symm ▸ q)) =
               original_named_hidden_transport_function S H sap nr2 D
                 (originalPositiveStrongBranch_transport
                   S H sap D.val p hKernel) q := by
