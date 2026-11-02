@@ -1978,3 +1978,4 @@ import CCO.ExactEPGeometry.QuotientSaturatedWalkPowers
 import CCO.ExactEPGeometry.OriginalQuotientOrbitalWalkPowers
 import CCO.ExactEPGeometry.OriginalRetainedOddQuotientPowers
 import CCO.ExactEPGeometry.OriginalPhaseOddWalkParity
+import CCO.ExactEPGeometry.OriginalRetainedQuotientParityTwo
