@@ -32,7 +32,7 @@ of output quotient classes of two source real points is exactly
 the SOURCE input invariant equivalence, because the canonical
 transport quotient map is an actual bijection. -/
 theorem generic_transport_quotient_exact_kernel
-    {E : InvEq G A} {R : Rel A B}
+    {E : InvEq G A} {R : CCO.QuotientTransport.Rel A B}
     (T : Transport E R) (x y : A) :
     T.quotientEquiv (Quotient.mk E.val x) =
       T.quotientEquiv (Quotient.mk E.val y) ↔ E x y := by
@@ -47,7 +47,7 @@ and its canonical transported quotient value agree. This
 uses true G-equivariance of B040, not an assumed action on
 arbitrary hidden partial isomorphisms. -/
 theorem generic_transport_quotient_stabilizer
-    {E : InvEq G A} {R : Rel A B}
+    {E : InvEq G A} {R : CCO.QuotientTransport.Rel A B}
     (T : Transport E R) (g : G) (q : Quotient E.val) :
     T.target.act g (T.quotientEquiv q) = T.quotientEquiv q ↔
       E.act g q = q := by
@@ -76,7 +76,7 @@ original source/target sorts without identifying their points. -/
 theorem original_raw_transport_real_kernel
     (H : HomogeneousSource S G)
     {i j : ι} (J : ParityHasse.Original.ColourEq S i)
-    {R : Rel (X i) (X j)}
+    {R : CCO.QuotientTransport.Rel (X i) (X j)}
     (T : Transport
       (TransitionClosure.originalColourEqAsInvEq S H J) R)
     (x y : X i) :
