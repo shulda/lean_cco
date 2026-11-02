@@ -100,6 +100,8 @@ theorem originalExactAllCurrentOrbitalPositivePowers_pullback
   have hSurj : Function.Surjective pi := Quotient.mk''_surjective
   have hPow := quotientPullback_positiveRelPow pi hSurj D n
   rw [hPull] at hPow
+  change ∀ (a b : B.Point i),
+    relPow D (n+1) (pi a) (pi b) ↔ relPow R (n+1) a b
   intro a b
   exact Iff.of_eq (congrFun (congrFun hPow a) b)
 
