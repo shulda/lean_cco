@@ -107,6 +107,9 @@ theorem originalExactAllCurrentOrbitalRelPow_bisaturated_pullback
   have hSurj : Function.Surjective pi := Quotient.mk''_surjective
   have hPow := quotientRelPow_bisaturated_pullback pi hSurj
     e hKernel R hComm D hPull n
+  change ∀ (a b : B.Point i),
+    relPow D n (pi a) (pi b) ↔
+      setoidBiSaturation e (relPow R n) a b
   intro a b
   exact Iff.of_eq (congrFun (congrFun hPow a) b)
 
