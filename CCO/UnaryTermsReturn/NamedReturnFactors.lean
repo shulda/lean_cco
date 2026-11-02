@@ -119,7 +119,6 @@ theorem original_named_return_factor_term
     change after.target y z ↔
       (originalColourEqAsInvEq S H K1.val) y z
     rw [h1]
-    exact Iff.rfl
   exact original_named_raw_transport_has_named_expression
     S H sap nr2 K0 K1 R T hF
 
