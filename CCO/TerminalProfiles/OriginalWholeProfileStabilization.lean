@@ -1,7 +1,6 @@
 import CCO.TerminalProfiles.OriginalWholeProfileOddLoops
 import CCO.TerminalProfiles.OriginalWholeProfileWordPowers
 import CCO.TerminalLattice.StrongPaletteBridge
-import Mathlib.Tactic.Omega
 
 /-!
 # B051 TWP: all large STRONG powers of an arbitrary typed old word
