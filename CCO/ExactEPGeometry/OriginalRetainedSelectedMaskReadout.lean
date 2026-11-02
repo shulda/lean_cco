@@ -74,6 +74,10 @@ theorem originalRetainedSelectedRigidDifference
     A B P transport tp hOne Kroot E hE
   let chi := originalRetainedSelectedOccupancyCharacter
     A B P transport tp hOne Kroot phase E hE
+  change ∀ (mark : Abstract.Point F → ZMod 2)
+    (hm : Abstract.IsMarking F chi mark) {a b : Occ}
+    (R : a ⟶ b) (q : F.obj a),
+      mark ⟨b,F.map R q⟩ - mark ⟨a,q⟩ = chi.value R
   intro mark hm a b R q
   exact Abstract.rigid_difference F chi hm R q
 
@@ -116,6 +120,10 @@ theorem originalRetainedSelectedNonrigidBothDifferences
     A B P transport tp hOne Kroot E hE
   let chi := originalRetainedSelectedOccupancyCharacter
     A B P transport tp hOne Kroot phase E hE
+  change ∀ (p q : Abstract.Point F),
+    ¬ Abstract.Orbit F p q → ∀ delta : ZMod 2,
+      ∃ mark, Abstract.IsMarking F chi mark ∧
+        mark q = mark p + delta
   intro p q hNonrigid delta
   exact Abstract.different_orbits_both_differences F
     (originalRetainedSelectedPointFunctor_free
@@ -161,6 +169,11 @@ theorem originalRetainedSelectedDuplicateBit
     A B P transport tp hOne Kroot E hE
   let chi := originalRetainedSelectedOccupancyCharacter
     A B P transport tp hOne Kroot phase E hE
+  change ∀ (p q : Abstract.Point F) (x y : ZMod 2),
+    p = q →
+      (∀ R : p.1 ⟶ q.1,
+        F.map R p.2 = q.2 → y = x + chi.value R) →
+      x = y
   intro p q x y hpq hLocal
   subst q
   have h := hLocal (𝟙 p.1) (F.map_id_apply p.1 p.2)
