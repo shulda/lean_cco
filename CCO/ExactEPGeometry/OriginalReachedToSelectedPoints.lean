@@ -1,5 +1,6 @@
 import CCO.ExactEPGeometry.OriginalRetainedSelectedGateClasses
 import CCO.ExactEPGeometry.OriginalRetainedIdentityArrow
+import CCO.ExactEPGeometry.OriginalReachedOccupancyAnchors
 
 /-!
 # B062 C84/C93: every old reached K-class has a canonical selected anchor image
