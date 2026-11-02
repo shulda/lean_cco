@@ -1805,3 +1805,4 @@ import CCO.TerminalProfiles.OriginalCompleteCylinderReturn
 import CCO.TerminalProfiles.OriginalQuotientDiagonalInvolution
 import CCO.TerminalProfiles.OriginalTwoSheetIndex
 import CCO.TerminalProfiles.OriginalQuotientMenuReturn
+import CCO.TerminalProfiles.OriginalTerminalNoReturn
