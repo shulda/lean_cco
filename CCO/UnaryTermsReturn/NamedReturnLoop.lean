@@ -136,29 +136,15 @@ theorem original_named_return_suffix_literal_term
         (serial_coserial_of_invariant
           P.relation P.invariant P.nonempty
           (trans i) (trans j)).1 y
-      calc
-        OriginalNamedRawUnaryTerm.eval S H sap nr2
-          (originalNamedRawUnaryTerm_prepend
-            S H sap nr2 theta0 theta1)
+      change OriginalNamedRawUnaryTerm.eval S H sap nr2
+          (originalNamedRawUnaryTerm_prepend S H sap nr2 theta0 theta1)
           (Quotient.mk
             (originalNamedReturnPrefixCoordinate
               S H sap nr2 D p (.cons P tail) h).val.val y) =
-            OriginalNamedRawUnaryTerm.eval S H sap nr2 theta1
-              (OriginalNamedRawUnaryTerm.eval S H sap nr2 theta0
-                (Quotient.mk
-                  (originalNamedReturnPrefixCoordinate
-                    S H sap nr2 D p (.cons P tail) h).val.val y)) :=
-              originalNamedRawUnaryTerm_prepend_eval
-                S H sap nr2 theta0 theta1 _
-        _ = OriginalNamedRawUnaryTerm.eval S H sap nr2 theta1
-            (Quotient.mk
-              (originalNamedReturnPrefixCoordinate S H sap nr2
-                D (p.extend P) tail hn).val.val z) := by
-              rw [hEdge y z hyz]
-        _ = (Return.prefixTransport E trans (p.extend P) tail hn).label z :=
-              hSuffix z
-        _ = (Return.prefixTransport E trans p (.cons P tail) h).label y :=
-          (Return.edge_label E trans p P tail h hyz).symm
+          (Return.prefixTransport E trans p (.cons P tail) h).label y
+      rw [originalNamedRawUnaryTerm_prepend_eval,
+        hEdge y z hyz, hSuffix z]
+      exact (Return.edge_label E trans p P tail h hyz).symm
 
 /-- FULL source10 named-loop conclusion: there is an ACTUAL B049
 named syntax word on the original terminal represented coordinate
