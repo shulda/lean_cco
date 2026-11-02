@@ -337,15 +337,14 @@ no assertion of a positive STRONG presentation, quotient SAP/CCO
 or choice of a fake target equivalence is made.
 
 The source is explicitly nonidentity J and proper FULL MI.
-The redundant upper bound J<Top is exposed to the underlying
-original SAP noncollapse API; the source's proper-MI hypothesis
-entails it in the complete FULL lattice. -/
+The upper bound J<Top is DERIVED here from the proper FULL
+meet-irreducibility hypothesis; it is NOT an extra premise.
+The old SAP noncollapse API then consumes this consequence. -/
 theorem originalTransportTargetColourEq_properMI_named_NR2
     (H : HomogeneousSource S G) (sap : AgeSAP S)
     (nr2 : Selectors.OriginalNR2 S)
     {i j : ι} (J : ColourEq S i)
     (hJbot : (⊥ : ColourEq S i) < J)
-    (hJtop : J < (⊤ : ColourEq S i))
     (hJMI : ProperMeetIrreducible (originalColourEqAsInvEq S H J))
     {R : QuotientTransport.Rel (X i) (X j)}
     (T : Transport (originalColourEqAsInvEq S H J) R) :
@@ -357,6 +356,21 @@ theorem originalTransportTargetColourEq_properMI_named_NR2
       ∃ word : RawWord S j j,
         RawWord.relation S word =
           (originalTransportTargetColourEq S H J T).val.r := by
+  have hJnotTop : J ≠ (⊤ : ColourEq S i) := by
+    intro hJE
+    apply hJMI.1
+    apply InvEq.ext
+    intro x y
+    constructor
+    · intro _
+      exact (InvEq.top_apply x y).mpr trivial
+    · intro _
+      have hxy : J x y := by
+        rw [hJE]
+        exact (ColourEq.top_apply S i x y).mpr trivial
+      exact hxy
+  have hJtop : J < (⊤ : ColourEq S i) :=
+    lt_of_le_of_ne le_top hJnotTop
   obtain ⟨hBot,hTop⟩ :=
     originalTransportTargetColourEq_proper_nonzero
       S H sap J hJbot hJtop T
