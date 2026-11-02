@@ -61,7 +61,8 @@ theorem originalRetainedOddAtomicBlock_imageQuotientDiversity
       (d : Q.source.Atom b.val b.val),
       (∃ x y : B.Point b.val, B.source.atomRel c x y) ∧
       (∀ x y : B.Point b.val,
-        B.source.atomRel c x y → ¬ K.rel x y) ∧
+        B.source.atomRel c x y →
+          (phase.atSort b).rel x y ∧ ¬ K.rel x y) ∧
       (∃ p q : Q.Point b.val, Q.source.atomRel d p q) ∧
       (∀ p q : Q.Point b.val,
         Quotient.image
@@ -110,7 +111,7 @@ theorem originalRetainedOddAtomicBlock_imageQuotientDiversity
   | some d =>
       have hD : Q.source.atomRel d qx qy := hc
       refine ⟨c,d,⟨x,y,hAtom⟩,
-        (fun a z ha => (hAtomOut a z ha).2),⟨qx,qy,hD⟩,?_,?_⟩
+        hAtomOut,⟨qx,qy,hD⟩,?_,?_⟩
       · intro p q
         have hBlock := originalExactAllCurrentPairBlock_image
           A B P transport base hBase E x y p q
