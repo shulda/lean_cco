@@ -54,7 +54,7 @@ def originalTypedCylinderNames
 theorem originalTypedCylinderNames_finite
     {i j : ι} (J : ColourEq S i) (K : ColourEq S j) :
     (originalTypedCylinderNames S J K).Finite := by
-  letI : Finite (S.Atom i j) := S.finiteAtom i j
+  letI : Fintype (S.Atom i j) := S.finiteAtom i j
   exact Set.finite_range _
 
 /-- Every realized fine old atom belongs to the cylinder it
