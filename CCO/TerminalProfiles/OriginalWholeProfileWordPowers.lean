@@ -50,8 +50,8 @@ theorem originalRepeatedPositiveWord_represented
       apply propext
       exact (relPow_one (PositiveWord.represented S word) x y).symm
   | succ n ih =>
-      change TRel.comp (PositiveWord.represented S word)
-          (PositiveWord.represented S (originalRepeatedPositiveWord S word n)) =
+      change PositiveWord.represented S
+          (PositiveWord.append S word (originalRepeatedPositiveWord S word n)) =
         relPow (PositiveWord.represented S word) ((n+1)+1)
       rw [PositiveWord.represented_append S word
         (originalRepeatedPositiveWord S word n), ih]
