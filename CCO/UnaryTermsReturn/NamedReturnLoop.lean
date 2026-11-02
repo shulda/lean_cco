@@ -102,7 +102,7 @@ theorem original_named_return_suffix_literal_term
           (originalColourEqAsInvEq S H D.val)
           (originalReturnSortTransitivity S H)
           p s h).label y := by
-  induction s generalizing p with
+  induction s with
   | nil a =>
       have hK : originalNamedReturnPrefixCoordinate
           S H sap nr2 D p (.nil a) h = D :=
@@ -128,7 +128,7 @@ theorem original_named_return_suffix_literal_term
       obtain ⟨theta0,hEdge,_⟩ :=
         original_named_return_factor_term
           S H sap nr2 D p P tail h
-      obtain ⟨theta1,hSuffix⟩ := ih (p.extend P) hn
+      obtain ⟨theta1,hSuffix⟩ := ih D (p.extend P) hn
       refine ⟨originalNamedRawUnaryTerm_prepend
           S H sap nr2 theta0 theta1, ?_⟩
       intro y
@@ -180,10 +180,10 @@ theorem original_named_raw_closed_word_has_identity_term
       D (.nil a) word hWord = D :=
     original_named_return_empty_prefix_coordinate_eq
       S H sap nr2 D word hWord
-  obtain ⟨theta,hTheta⟩ :=
-    original_named_return_suffix_literal_term
-      S H sap nr2 D (.nil a) word hWord
-  rw [hK] at theta hTheta
+  have hSuffix := original_named_return_suffix_literal_term
+    S H sap nr2 D (.nil a) word hWord
+  rw [hK] at hSuffix
+  obtain ⟨theta,hTheta⟩ := hSuffix
   refine ⟨theta, ?_⟩
   funext q
   induction q using Quotient.inductionOn with
