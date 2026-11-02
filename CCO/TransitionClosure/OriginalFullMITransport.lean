@@ -252,8 +252,9 @@ private theorem original_full_properMI_cover_unique
     · exact False.elim ((ne_of_lt hVK.1) h)
     · exact False.elim ((ne_of_lt hVL.1) h)
   · have hKL : KV ≤ LV := by
-      rw [← hK]
-      exact inf_le_right
+      calc
+        KV = KV ⊓ LV := hK.symm
+        _ ≤ LV := inf_le_right
     rcases hVL.2 KV hVK.1.le hKL with h | h
     · exact False.elim ((ne_of_gt hVK.1) h)
     · exact e.injective h
