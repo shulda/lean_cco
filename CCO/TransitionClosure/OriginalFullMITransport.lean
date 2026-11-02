@@ -99,4 +99,130 @@ theorem originalFullTransportPullColourEq_properMI_iff
   rw [hIso]
   exact hMI
 
+
+/-- Covers of two equivalences above a fixed original kernel are
+exactly their covers in the whole order, since all intermediate
+equivalences also lie above that kernel. -/
+private theorem covers_upper_interval_iff
+    {α : Type*} [PartialOrder α] (E L K : α)
+    (hEL : E ≤ L) (hEK : E ≤ K) :
+    Covers (⟨L, hEL⟩ : {F : α // E ≤ F})
+      (⟨K, hEK⟩ : {F : α // E ≤ F}) ↔ Covers L K := by
+  constructor
+  · rintro ⟨hlt, hgap⟩
+    refine ⟨hlt, ?_⟩
+    intro F hLF hFK
+    rcases hgap ⟨F, hEL.trans hLF⟩ hLF hFK with h | h
+    · exact Or.inl (congrArg Subtype.val h)
+    · exact Or.inr (congrArg Subtype.val h)
+  · rintro ⟨hlt, hgap⟩
+    refine ⟨hlt, ?_⟩
+    intro F hLF hFK
+    rcases hgap F.val hLF hFK with h | h
+    · exact Or.inl (Subtype.ext h)
+    · exact Or.inr (Subtype.ext h)
+
+/-- An order isomorphism identifies covers in the complete
+underlying orders; no distributivity or quotient SAP is used. -/
+private theorem covers_orderIso_iff
+    {α β : Type*} [PartialOrder α] [PartialOrder β]
+    (e : α ≃o β) (L K : α) :
+    Covers (e L) (e K) ↔ Covers L K := by
+  constructor
+  · rintro ⟨hlt, hgap⟩
+    refine ⟨(e.lt_iff_lt).mp hlt, ?_⟩
+    intro F hLF hFK
+    rcases hgap (e F) (e.monotone hLF) (e.monotone hFK) with h | h
+    · exact Or.inl (e.injective h)
+    · exact Or.inr (e.injective h)
+  · rintro ⟨hlt, hgap⟩
+    refine ⟨(e.lt_iff_lt).mpr hlt, ?_⟩
+    intro F hLF hFK
+    rcases hgap (e.symm F)
+        (by simpa using e.symm.monotone hLF)
+        (by simpa using e.symm.monotone hFK) with h | h
+    · exact Or.inl (by simpa using congrArg e h)
+    · exact Or.inr (by simpa using congrArg e h)
+
+/-- B040's actual interval isomorphism preserves the WHOLE
+invariant-equivalence cover relation on its two full upper cones. -/
+private theorem original_transport_pull_full_covers_iff
+    {i j : ι} (E : InvEq G (X i))
+    {R : QuotientTransport.Rel (X i) (X j)}
+    (T : Transport E R)
+    (L K : InvEq G (X j))
+    (hFL : T.target ≤ L) (hFK : T.target ≤ K) :
+    Covers L K ↔ Covers (T.pull L hFL) (T.pull K hFK) := by
+  have hL : T.intervalIso
+      ⟨T.pull L hFL, T.source_le_pull L hFL⟩ =
+      (⟨L, hFL⟩ : {P : InvEq G (X j) // T.target ≤ P}) := by
+    apply Subtype.ext
+    exact T.push_pull L hFL
+  have hK : T.intervalIso
+      ⟨T.pull K hFK, T.source_le_pull K hFK⟩ =
+      (⟨K, hFK⟩ : {P : InvEq G (X j) // T.target ≤ P}) := by
+    apply Subtype.ext
+    exact T.push_pull K hFK
+  have hCov := T.intervalIso_covers
+    (⟨T.pull L hFL, T.source_le_pull L hFL⟩ :
+      {P : InvEq G (X i) // E ≤ P})
+    (⟨T.pull K hFK, T.source_le_pull K hFK⟩ :
+      {P : InvEq G (X i) // E ≤ P})
+  rw [hL, hK] at hCov
+  exact (covers_upper_interval_iff T.target L K hFL hFK).symm.trans
+    (hCov.trans
+      (covers_upper_interval_iff E (T.pull L hFL) (T.pull K hFK)
+        (T.source_le_pull L hFL) (T.source_le_pull K hFK)))
+
+/-- SOURCE07 C36: genuine FULL original unique-cover geometry is
+preserved by actual B040 quotient transport. For target FULL old
+equivalences L,K above the literal target kernel F, being a
+cover in the whole original colour-invariant lattice is equivalent
+to the pulled source FULL equivalences forming a cover.
+
+The order intervals are the full original lattices, not the
+represented/exact or quotient-age lattices. In particular this
+conclusion does NOT require quotient SAP, CCO or NR2. -/
+theorem originalFullTransportPullColourEq_covers_iff
+    (H : HomogeneousSource S G)
+    {i j : ι} (J : ColourEq S i)
+    {R : QuotientTransport.Rel (X i) (X j)}
+    (T : Transport (originalColourEqAsInvEq S H J) R)
+    (L K : ColourEq S j)
+    (hFL : originalTransportTargetColourEq S H J T ≤ L)
+    (hFK : originalTransportTargetColourEq S H J T ≤ K) :
+    Covers L K ↔
+      Covers (originalFullTransportPullColourEq S H J T L hFL)
+        (originalFullTransportPullColourEq S H J T K hFK) := by
+  let LV : InvEq G (X j) := originalColourEqAsInvEq S H L
+  let KV : InvEq G (X j) := originalColourEqAsInvEq S H K
+  have hTL : T.target ≤ LV := by
+    intro y z hyz
+    exact hFL hyz
+  have hTK : T.target ≤ KV := by
+    intro y z hyz
+    exact hFK hyz
+  have hIsoL :
+      originalColourEqAsInvEq S H
+        (originalFullTransportPullColourEq S H J T L hFL) =
+          T.pull LV hTL :=
+    (originalFullColourEqInvEqOrderIso S H).apply_symm_apply (T.pull LV hTL)
+  have hIsoK :
+      originalColourEqAsInvEq S H
+        (originalFullTransportPullColourEq S H J T K hFK) =
+          T.pull KV hTK :=
+    (originalFullColourEqInvEqOrderIso S H).apply_symm_apply (T.pull KV hTK)
+  calc
+    Covers L K ↔ Covers LV KV :=
+      (covers_orderIso_iff (originalFullColourEqInvEqOrderIso S H) L K).symm
+    _ ↔ Covers (T.pull LV hTL) (T.pull KV hTK) :=
+      original_transport_pull_full_covers_iff S
+        (originalColourEqAsInvEq S H J) T LV KV hTL hTK
+    _ ↔ Covers (originalFullTransportPullColourEq S H J T L hFL)
+          (originalFullTransportPullColourEq S H J T K hFK) := by
+        rw [← hIsoL, ← hIsoK]
+        exact covers_orderIso_iff (originalFullColourEqInvEqOrderIso S H)
+          (originalFullTransportPullColourEq S H J T L hFL)
+          (originalFullTransportPullColourEq S H J T K hFK)
+
 end CCO.TransitionClosure
