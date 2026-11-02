@@ -84,6 +84,9 @@ theorem originalRetainedAnchorIdentity_cancel
       _ = Arrow.id Kb :=
         original_retained_identity_arrow_self
           A B P transport tp hOne Kroot E hE b
+  change ∀ q : Kb.Class,
+    Iab.quotientMap B.homogeneous
+      (Iba.quotientMap B.homogeneous q) = q
   intro q
   have hComp :=
     Arrow.quotientMap_comp B.homogeneous CB Iba Iab q
@@ -158,6 +161,11 @@ theorem originalRetainedNormalizedArrow_anchor_action
     A B P transport tp hOne Kroot E hE a b (J.symm hba)
   let Icd := original_retained_identity_arrow
     A B P transport tp hOne Kroot E hE c d hcd
+  change ∀ q : (Reached.kernel B.homogeneous CB b).Class,
+    (originalRetainedNormalizedArrow
+      A B P transport tp hOne Kroot E hE b c R).quotientMap
+        B.homogeneous (Iba.quotientMap B.homogeneous q) =
+    Icd.quotientMap B.homogeneous (R.quotientMap B.homogeneous q)
   intro q
   change ((Iab.comp CB R).comp CB Icd).quotientMap B.homogeneous
       (Iba.quotientMap B.homogeneous q) =

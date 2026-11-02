@@ -55,7 +55,7 @@ theorem originalAllparentGateClass_arrow_natural
   let Q : CurrentSource.{u,v,v,t} :=
     originalExactAllCurrentQuotientCurrentSource
       A B P transport base hOne E
-  letI : ∀ i : Q.Sorts, MulAction B.G (Q.Point i) := Q.action
+  letI : ∀ i : Q.Sorts, MulAction Q.G (Q.Point i) := Q.action
   let pi : ∀ i : B.Sorts, B.Point i → Q.Point i :=
     fun _ x => Quotient.mk'' x
   have hNp : ∀ x y, pi p x = pi p y → Kp.rel x y := by
@@ -85,6 +85,11 @@ theorem originalAllparentGateClass_arrow_natural
     intro x y hr
     change Quotient.image (pi p) (pi q) R.rel (pi p x) (pi q y)
     exact ⟨x,y,rfl,rfl,hr⟩
+  change ∀ x : Kp.Class,
+    projectedGateClassMap Kq (pi q) Quotient.mk''_surjective hNq
+        (R.quotientMap B.homogeneous x) =
+      U.quotientMap Q.homogeneous
+        (projectedGateClassMap Kp (pi p) Quotient.mk''_surjective hNp x)
   intro x
   have hn := projectedGateClassMap_arrow_natural
     B.homogeneous Q.homogeneous Kp Kq
