@@ -116,9 +116,11 @@ theorem originalRetainedOddAtomicBlock_imageQuotientDiversity
           A B P transport base hBase E x y p q
         have hOldColour : B.source.colour x y = some c := hAtom
         have hQuotColour :
-            Q.source.colour (Quotient.mk'' x : Q.Point b.val)
-              (Quotient.mk'' y : Q.Point b.val) = some d := hc
-        simpa only [hOldColour,hQuotColour] using hBlock
+            (originalExactAllCurrentQuotientCurrentSource
+              A B P transport base hBase E).source.colour
+              (Quotient.mk'' x) (Quotient.mk'' y) = some d := hc
+        rw [hOldColour,hQuotColour] at hBlock
+        exact hBlock
       · intro p q hAtomPQ hGate
         have hColour : Q.source.colour p q = Q.source.colour qx qy :=
           hAtomPQ.trans hc.symm
