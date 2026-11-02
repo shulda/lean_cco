@@ -71,7 +71,20 @@ theorem originalReachedSelectedActionPoint_anchor_heq
   have hAct : Iaa.quotientMap B.homogeneous q = q := by
     rw [hId]
     exact Arrow.quotientMap_id B.homogeneous q
-  cases hFixed
+  change HEq
+    ((((original_retained_identity_arrow
+      A B P transport tp hOne Kroot E hE a
+        (originalReachedOccupancyAnchorOf
+          A B P base hBase E Kroot a)
+        (originalReachedOccupancyAnchorOf_supported
+          A B P base hBase E Kroot a)).quotientEquiv B.homogeneous).trans
+      (originalRetainedSelectedGateClassEquiv
+        A B P transport tp hOne Kroot E hE
+        (originalReachedOccupancyAnchorOf
+          A B P base hBase E Kroot a))) q)
+    ((originalRetainedSelectedGateClassEquiv
+      A B P transport tp hOne Kroot E hE a) q)
+  rw [hFixed]
   change HEq
     (((Iaa.quotientEquiv B.homogeneous).trans
       (originalRetainedSelectedGateClassEquiv
