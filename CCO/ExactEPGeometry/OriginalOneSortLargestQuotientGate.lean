@@ -32,6 +32,7 @@ namespace CCO.ExactEPGeometry
 
 open APCharacter.Towers
 open RigidGroupoid.Geometry
+open CCO.ParityHasse.Original
 
 noncomputable section
 
