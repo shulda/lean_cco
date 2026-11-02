@@ -1,4 +1,4 @@
-import CCO.TransitionClosure.TypedExactPCDomains
+import CCO.TerminalLattice.OriginalCCOUniverseBridge
 import CCO.StrongExact.SourceExactCalculus
 import CCO.StrongExact.ThetaCycleHom
 
