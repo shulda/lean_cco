@@ -101,15 +101,13 @@ theorem originalRetainedQuotientFullParityProfiles
   have hOddOutside : ∀ p q : Q.Point b.val,
       OddWalk (Q.source.atomRel d) p q → ¬ Kq.rel p q := by
     intro p q hOdd hGate
-    obtain ⟨a,ha⟩ := Quotient.mk''_surjective p
-    obtain ⟨z,hz⟩ := Quotient.mk''_surjective q
-    have hOddAZ : OddWalk (Q.source.atomRel d) (pi a) (pi z) := by
-      simpa only [ha,hz] using hOdd
+    obtain ⟨a,rfl⟩ := Quotient.mk''_surjective p
+    obtain ⟨z,rfl⟩ := Quotient.mk''_surjective q
+    have hOddAZ : OddWalk (Q.source.atomRel d) (pi a) (pi z) := hOdd
     obtain ⟨n,hn,hPath⟩ := hOddAZ
     obtain ⟨u,v,hau,hUV,hvz⟩ := (hPowers n a z).mp hPath
-    have hKAZ : K.rel a z := by
-      apply (Iff.of_eq (congrFun (congrFun hOldGatePull a) z)).mp
-      simpa only [ha,hz] using hGate
+    have hKAZ : K.rel a z :=
+      (Iff.of_eq (congrFun (congrFun hOldGatePull a) z)).mp hGate
     have hKUA : K.rel u a := hNested (e.symm hau)
     have hKZV : K.rel z v := hNested (e.symm hvz)
     have hKUV : K.rel u v := K.setoid.trans hKUA
