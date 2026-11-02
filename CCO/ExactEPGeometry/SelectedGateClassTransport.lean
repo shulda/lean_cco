@@ -1,4 +1,5 @@
 import CCO.ExactEPGeometry.SelectedSortExactArrows
+import CCO.RigidGroupoid.Geometry.QuotientBijection
 
 /-!
 # B062 C83/C93: actual class transport along equivariant selected sorts
