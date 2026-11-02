@@ -298,4 +298,70 @@ theorem originalFullTransportPullColourEq_unique_full_cover
     V (originalFullTransportPullColourEq S H J T K hFK)
     hMI hV hCover
 
+
+/-- SOURCE07 C36-C37: a proper FULL meet-irreducible on the
+original source sort transports to a proper FULL meet-irreducible
+on the original target sort. This is the B040 interval
+isomorphism on the WHOLE original-G invariant lattice:
+the target is the LITERAL Rᵒᵖ;J;R kernel, not an independently
+chosen represented quotient chart. No SAP, CCO or NR2 here. -/
+theorem originalTransportTargetColourEq_full_properMI
+    (H : HomogeneousSource S G)
+    {i j : ι} (J : ColourEq S i)
+    (hJMI : ProperMeetIrreducible (originalColourEqAsInvEq S H J))
+    {R : QuotientTransport.Rel (X i) (X j)}
+    (T : Transport (originalColourEqAsInvEq S H J) R) :
+    ProperMeetIrreducible
+      (originalColourEqAsInvEq S H
+        (originalTransportTargetColourEq S H J T)) := by
+  let E : InvEq G (X i) := originalColourEqAsInvEq S H J
+  have hPush : T.push E le_rfl = T.target := by
+    apply InvEq.ext
+    intro y z
+    exact (T.push_iff E le_rfl y z).trans (T.target_iff y z).symm
+  have hTarget : ProperMeetIrreducible T.target := by
+    rw [← hPush]
+    exact (T.push_meetIrreducible E le_rfl).mpr hJMI
+  have hNamed : originalColourEqAsInvEq S H
+      (originalTransportTargetColourEq S H J T) = T.target :=
+    (originalFullColourEqInvEqOrderIso S H).apply_symm_apply T.target
+  rw [hNamed]
+  exact hTarget
+
+/-- SOURCE07 C37, kept distinct from generic interval transport:
+under the original old SAP and explicit original terminal FULL NR2,
+the true transported kernel is a NONIDENTITY, proper FULL
+meet-irreducible and possesses a SINGLE ACTUAL equality-inclusive
+original RAW atomic word. This justifies represented membership;
+no assertion of a positive STRONG presentation, quotient SAP/CCO
+or choice of a fake target equivalence is made.
+
+The source is explicitly nonidentity J and proper FULL MI.
+The redundant upper bound J<Top is exposed to the underlying
+original SAP noncollapse API; the source's proper-MI hypothesis
+entails it in the complete FULL lattice. -/
+theorem originalTransportTargetColourEq_properMI_named_NR2
+    (H : HomogeneousSource S G) (sap : AgeSAP S)
+    (nr2 : Selectors.OriginalNR2 S)
+    {i j : ι} (J : ColourEq S i)
+    (hJbot : (⊥ : ColourEq S i) < J)
+    (hJtop : J < (⊤ : ColourEq S i))
+    (hJMI : ProperMeetIrreducible (originalColourEqAsInvEq S H J))
+    {R : QuotientTransport.Rel (X i) (X j)}
+    (T : Transport (originalColourEqAsInvEq S H J) R) :
+    ProperMeetIrreducible
+        (originalColourEqAsInvEq S H
+          (originalTransportTargetColourEq S H J T)) ∧
+      (⊥ : ColourEq S j) < originalTransportTargetColourEq S H J T ∧
+      originalTransportTargetColourEq S H J T < (⊤ : ColourEq S j) ∧
+      ∃ word : RawWord S j j,
+        RawWord.relation S word =
+          (originalTransportTargetColourEq S H J T).val.r := by
+  obtain ⟨hBot,hTop⟩ :=
+    originalTransportTargetColourEq_proper_nonzero
+      S H sap J hJbot hJtop T
+  exact ⟨originalTransportTargetColourEq_full_properMI
+      S H J hJMI T, hBot, hTop,
+    originalTransportTargetColourEq_raw_word_of_NR2 S H nr2 J T⟩
+
 end CCO.TransitionClosure
