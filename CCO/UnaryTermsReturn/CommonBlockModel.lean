@@ -64,10 +64,15 @@ def commonBlockOriginalAtomicSource :
     by_cases h : (⟨i,x⟩ : Sigma CommonBlockReal) = ⟨j,y⟩
     · have hr : (⟨j,y⟩ : Sigma CommonBlockReal) = ⟨i,x⟩ :=
         h.symm
-      simp [commonBlockOldColour,h,hr]
+      simp only [commonBlockOldColour, if_pos h, if_pos hr]
+      exact Iff.rfl
     · have hr : (⟨j,y⟩ : Sigma CommonBlockReal) ≠ ⟨i,x⟩ :=
         fun hz => h hz.symm
-      simp [commonBlockOldColour,h,hr,eq_comm]
+      simp only [commonBlockOldColour, if_neg h, if_neg hr,
+        Option.some.injEq]
+      have hs : decide (x.1 = y.1) = decide (y.1 = x.1) :=
+        congrArg decide (propext (eq_comm : x.1 = y.1 ↔ y.1 = x.1))
+      rw [hs]
   realized := by
     intro i j a
     cases a with
@@ -119,9 +124,9 @@ theorem commonBlockMixedReturnB
         (commonBlockOldSetoid true).r x y := by
   constructor
   · rintro ⟨z,hxz,hyz⟩
-    exact hxz.trans hyz.symm
+    exact hxz.symm.trans hyz
   · intro hxy
-    exact ⟨(x.1,0),rfl,hxy.symm⟩
+    exact ⟨(x.1,0),rfl,hxy⟩
 
 /-- The literal actual original mixed quotient map A/E_A→B/E_B:
 the underlying common block label determines the target class.
