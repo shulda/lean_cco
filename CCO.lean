@@ -1783,3 +1783,4 @@ import CCO.TransitionClosure.OriginalUnaryNormalClosure
 import CCO.TransitionClosure.OriginalUnaryTermLanguage
 import CCO.TransitionClosure.OriginalUnaryTermNormalization
 import CCO.TransitionClosure.OriginalUnaryTermFiniteFunctions
+import CCO.TransitionClosure.OriginalFullMITransport
