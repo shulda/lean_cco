@@ -69,11 +69,14 @@ noncomputable def originalNamedRawTransitionSymbol_converse
   constructor
   · intro y z h
     obtain ⟨x,hxy,hxz⟩ := h
+    change d.val.2.val.val x y at hxy
+    change d.val.2.val.val x z at hxz
     have hK : T.target y z :=
       (T.target_iff y z).mpr
         ⟨x,x,hxy,(originalColourEqAsInvEq S H d.val.1.val).val.refl x,hxz⟩
     exact hK
   · intro y x hyx heq
+    change d.val.2.val.val x y at hyx
     exact d.property.2 x y hyx heq.symm
 
 /-- The REAL target kernel of the converse B040 transport is
@@ -96,20 +99,28 @@ theorem originalNamedRawTransitionSymbol_converse_target_eq_source
   rw [U.target_iff]
   constructor
   · rintro ⟨y,y',hxy,hKyy',hzy'⟩
-    have hLabelY : T.label y = Quotient.mk'' x := T.label_edge hxy
-    have hLabelY' : T.label y' = Quotient.mk'' z := T.label_edge hzy'
-    have hLabelEq : T.label y = T.label y' := hKyy'
-    have hEq : (Quotient.mk'' x :
-      Quotient (originalColourEqAsInvEq S H d.val.1.val).val) =
-        Quotient.mk'' z :=
-      hLabelY.symm.trans (hLabelEq.trans hLabelY')
-    exact Quotient.exact hEq
+    change d.val.2.val.val x y at hxy
+    change d.val.2.val.val z y' at hzy'
+    have hKyy' : T.target y y' := by
+      change T.target y y' at hKyy'
+      exact hKyy'
+    obtain ⟨u,v,huy,hJuv,hvy'⟩ := (T.target_iff y y').mp hKyy'
+    exact (originalColourEqAsInvEq S H d.val.1.val).val.trans
+      (T.kernel x u y hxy huy)
+      ((originalColourEqAsInvEq S H d.val.1.val).val.trans
+        hJuv (T.kernel v z y' hvy' hzy'))
   · intro hJxz
     obtain ⟨y,hxy⟩ := T.serial x
     obtain ⟨y',hzy'⟩ := T.serial z
     have hKyy' : T.target y y' :=
       (T.target_iff y y').mpr ⟨x,z,hxy,hJxz,hzy'⟩
-    exact ⟨y,y',hxy,hKyy',hzy'⟩
+    have hyx : (originalNamedRawTransitionSymbol_converse S H sap nr2 d).val.2.val.val y x := by
+      change d.val.2.val.val x y
+      exact hxy
+    have hy'z : (originalNamedRawTransitionSymbol_converse S H sap nr2 d).val.2.val.val y' z := by
+      change d.val.2.val.val z y'
+      exact hzy'
+    exact ⟨y,y',hyx,hKyy',hy'z⟩
 
 /-- The converse primitive's ACTUALLY NAMED target is exactly
 the source named full proper MI D itself. This equality uses
