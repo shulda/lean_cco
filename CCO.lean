@@ -1801,3 +1801,4 @@ import CCO.TransitionClosure.OriginalFiniteCylinderPartition
 import CCO.TransitionClosure.OriginalCylinderAdmissiblePairs
 import CCO.UnaryTermsReturn.TermValues
 import CCO.UnaryTermsReturn.GenericReturn
+import CCO.UnaryTermsReturn.NamedIntermediate
