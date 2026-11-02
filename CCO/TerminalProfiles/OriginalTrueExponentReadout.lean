@@ -22,6 +22,9 @@ universe u v w t
 
 namespace CCO.TerminalProfiles
 
+open CCO.TerminalLattice
+open CCO.ParityHasse.Original
+
 variable {ι : Type u} {X : ι → Type v}
 variable (S : AtomicSource.{u,v,w} ι X)
 variable {G : Type t} [Group G] [∀ i : ι, MulAction G (X i)]
@@ -46,10 +49,12 @@ theorem original_terminal_whole_profile_true_exponents
     original_whole_positive_profile_powers_stabilize S H sap nr2 word
   refine ⟨⟨N+1, Nat.succ_pos N⟩, ?_⟩
   intro n hn
+  change N+1 ≤ n.val at hn
+  have hIndex : N ≤ n.val - 1 := by omega
   calc
     originalStrongPalettePower S (PositiveWord.profile S word) (n.val-1) =
         originalWholeProfileConnectedPalette S word :=
-      hStable (n.val-1) (by omega)
+      hStable (n.val-1) hIndex
     _ = S.diversityGuard
           (fun x y : X i => ∃ k : Nat,
             relPow (S.menuRel (PositiveWord.profile S word)) k x y) :=
