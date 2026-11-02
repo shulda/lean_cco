@@ -1,0 +1,79 @@
+{
+  "request_blob_sha": "e3af8d4189dd868713bcbd2b9e356ac463e57d95",
+  "request_path": "coordination/requests/chat-3/20261102_chat3_B049_start_integration_b28d_7f913d2a.json",
+  "coordination_parent": "3f3f06fe58bbdaf13c866b0ee60be3df08d4e4d3",
+  "main_sha": "636d6c89afcb68fe4e0c633e561a0b174a4e9855",
+  "status": "rejected",
+  "reason": "Specific events require the exact observed STATE revision; reload on conflict",
+  "state_view": {
+    "authority": "coordination:formalization/coordination/STATE.json",
+    "state_blob_sha": "61893ed79f4e0db1f2ed6727663e96b9db2662f9",
+    "revision": 592,
+    "policy_revision": 14,
+    "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+    "execution_mode": "chat",
+    "claims_paused": false,
+    "integration_lock": null,
+    "packages": {
+      "B049": {
+        "state": "REVIEWING",
+        "owner_project_id": 4,
+        "author_actor_ids": [
+          "chat-1"
+        ],
+        "original_author_project_ids": [
+          4
+        ],
+        "branch": "chat/chat-1/B049",
+        "claim_revision": 543,
+        "base_main_sha": "636d6c89afcb68fe4e0c633e561a0b174a4e9855",
+        "base_ci": {
+          "run_id": 41314218664,
+          "run_attempt": 1,
+          "head_sha": "636d6c89afcb68fe4e0c633e561a0b174a4e9855",
+          "conclusion": "success",
+          "axiom_audit": "allowlist",
+          "job_id": 124870746450,
+          "declarations": 29310,
+          "source_modules": 1724
+        },
+        "head_sha": "b28d78956bbff6bf71ebf51d4a3a379380585dd7",
+        "pr_number": 69,
+        "observed_ci": {
+          "run_id": 41479351188,
+          "run_attempt": 1,
+          "job_id": 125393874773,
+          "head_sha": "b28d78956bbff6bf71ebf51d4a3a379380585dd7",
+          "conclusion": "success",
+          "axiom_audit": "allowlist",
+          "declarations": 29656
+        },
+        "checkpoint_revision": 588,
+        "ci": {
+          "run_id": 41479351188,
+          "run_attempt": 1,
+          "head_sha": "b28d78956bbff6bf71ebf51d4a3a379380585dd7",
+          "conclusion": "success",
+          "axiom_audit": "allowlist",
+          "job_id": 125393874773,
+          "declarations": 29656,
+          "source_modules": 1776
+        },
+        "report_path": "formalization/coordination/submissions/B049.md",
+        "review": {
+          "project_id": 6,
+          "actor_id": "chat-3",
+          "head_sha": "b28d78956bbff6bf71ebf51d4a3a379380585dd7",
+          "approved": true,
+          "independence": {
+            "identity": "chat-project:cco-chat-3",
+            "non_author": true,
+            "summary": "Persistent chat-project:cco-chat-3/project 6 did not author, design, edit or direct B049 in any earlier or current chat, nor participate under another identity. I only independently reviewed distinct B050 and have now published my own B049 reading plan; no B049 code will be changed by this reviewer.",
+            "report_path": "formalization/coordination/reviews/B049-chat-3.md"
+          },
+          "summary": "Independently read frozen 1137-line source07, all 52 exact-head B049 production Lean modules, original SAP/CCO/NR2 provider gates and accepted B002/B003/B011/B038/B040/B050 dependencies, all public CCO.lean imports and exact-head GitHub CI build+axiom logs. Verified RAW/STRONG identities, full first-hit/prime, canonical original-G quotient transport and unary semantic finiteness, whole cylinders, atomic graph, true equality/identity cases, and bounded-test limitations. No source gap, circular provider, new axiom or hidden SAP. Report on coordination: formalization/coordination/reviews/B049-chat-3.md."
+        }
+      }
+    }
+  }
+}
