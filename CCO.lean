@@ -1890,3 +1890,6 @@ import CCO.ExactEPGeometry.OriginalRetainedAnyMarkCorrection
 import CCO.ExactEPGeometry.OriginalSelectedFiniteLocalMarkedAge
 import CCO.ExactEPGeometry.OriginalGlobalMarkReachedConverse
 import CCO.ExactEPGeometry.ProjectedGateClassEquiv
+import CCO.ExactEPGeometry.OriginalGaugeMarkingTransfer
+import CCO.ExactEPGeometry.ProjectedGateArrowNaturality
+import CCO.ExactEPGeometry.OriginalAllparentGateClasses
