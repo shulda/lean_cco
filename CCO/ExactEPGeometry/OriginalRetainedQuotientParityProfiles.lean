@@ -61,6 +61,8 @@ theorem originalRetainedQuotientFullParityProfiles
           A B P transport tp hOne Kroot E hE b)
     ∃ (c : B.source.Atom b.val b.val)
       (d : Q.source.Atom b.val b.val),
+      (∀ x y : B.Point b.val,
+        B.source.atomRel c x y → (phase.atSort b).rel x y) ∧
       (∀ p q : Q.Point b.val,
         Q.source.atomRel d p q → ¬ Kq.rel p q) ∧
       (∀ p q : Q.Point b.val,
@@ -124,7 +126,7 @@ theorem originalRetainedQuotientFullParityProfiles
         (connectivityColourEq Q.source Q.homogeneous d).val p = 2 := by
     intro p
     exact parity_seed_index_two Q.source Q.homogeneous d hNoOdd p
-  refine ⟨c,d,hOutside,hOddOutside,hIndex,?_⟩
+  refine ⟨c,d,hContained,hOutside,hOddOutside,hIndex,?_⟩
   intro a z
   exact ⟨
     quotientEvenWalk_bisaturation_iff pi e
