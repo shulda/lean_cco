@@ -78,6 +78,7 @@ theorem original_equiv_diversity_reproduction_right
     have hyx : S.atomRel c y x := by
       have hSwap : S.colour y x = some (S.conv c) :=
         (S.colour_swap x y c).mp hxy
+      change S.colour y x = some c
       simpa only [S.symmetricLoop c] using hSwap
     exact ⟨c, hc, d, hdE, y, x, z, hyx, hxz, hyz⟩
 
