@@ -51,11 +51,13 @@ theorem original_named_hidden_term_literal_normal_form
     ∃ K : OriginalNamedHiddenCoordinate S H i,
       D.val ≤ K.val ∧
       ∃ theta : OriginalNamedRawUnaryTerm S H sap nr2 K F,
-        ∀ x : X i,
+        (∀ x : X i,
           OriginalNamedRawUnaryTerm.eval S H sap nr2 w
             (Quotient.mk D.val.val x) =
           OriginalNamedRawUnaryTerm.eval S H sap nr2 theta
-            (Quotient.mk K.val.val x) := by
+            (Quotient.mk K.val.val x)) ∧
+        Function.Injective
+          (OriginalNamedRawUnaryTerm.eval S H sap nr2 theta) := by
   obtain ⟨N,hSource,hF,⟨K,hK,hDK⟩,hEdge⟩ :=
     original_named_hidden_term_has_named_normal_middle
       S H sap nr2 D F w
@@ -82,10 +84,10 @@ theorem original_named_hidden_term_literal_normal_form
     change (∃ x x', R.val.val x y ∧ K.val x x' ∧
       R.val.val x' z) ↔ F.val y z
     simpa only [R, hK] using hNF
-  obtain ⟨theta,hTheta⟩ :=
+  obtain ⟨theta,hTheta,hThetaInj⟩ :=
     original_named_raw_transport_has_named_expression
       S H sap nr2 K F R T hTTarget
-  refine ⟨K,hDK,theta,?_⟩
+  refine ⟨K,hDK,theta,?_,hThetaInj⟩
   intro x
   obtain ⟨y,hxy⟩ := T.serial x
   have hW :
