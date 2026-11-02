@@ -1,5 +1,6 @@
 import CCO.ExactEPGeometry.OriginalReachedToSelectedPoints
 import CCO.ExactEPGeometry.OriginalRetainedSelectedNormalizedCharacter
+import CCO.ExactEPGeometry.OriginalRetainedSelectedPointAction
 
 /-!
 # B062 C84/C93: the ACTUAL original reached action maps into selected occupancy
@@ -131,6 +132,9 @@ theorem originalReachedSelectedActionArrow_character
       (Reached.kernel B.homogeneous
         (exactCalculus_of_homogeneous_CCO
           B.source B.homogeneous B.cco) c)) :
+    letI := Reached.groupoid B.homogeneous
+      (exactCalculus_of_homogeneous_CCO
+        B.source B.homogeneous B.cco) (A := Kroot)
     letI := originalRetainedOccupancyGroupoid
       A B P transport tp hOne Kroot E hE
     (originalRetainedSelectedOccupancyCharacter
