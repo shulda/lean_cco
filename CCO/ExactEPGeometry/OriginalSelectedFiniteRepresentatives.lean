@@ -82,12 +82,14 @@ theorem originalSelectedRepresentatives_separate_E
       (Quotient.out x) (Quotient.out y) := by
   intro h
   apply hxy
-  have hh : Quotient.mk'' (Quotient.out x) =
-      Quotient.mk'' (Quotient.out y) := Quotient.sound h
-  calc
-    x = Quotient.mk'' (Quotient.out x) := (Quotient.out_eq x).symm
-    _ = Quotient.mk'' (Quotient.out y) := hh
-    _ = y := Quotient.out_eq y
+  have hh :
+      (Quotient.mk'' (Quotient.out x) :
+        (originalExactSelectedQuotientCurrentSource
+          A B P transport base hOne E).Point c) =
+      (Quotient.mk'' (Quotient.out y) :
+        (originalExactSelectedQuotientCurrentSource
+          A B P transport base hOne E).Point c) := Quotient.sound h
+  exact hxy (by simpa only [Quotient.out_eq] using hh)
 
 /-- The real chosen representatives distinguish ALL selected
 quotient points, including points in different occupancy named
@@ -113,10 +115,18 @@ theorem originalSelectedTaggedRepresentative_injective
       ⟨sigma c, Quotient.out y⟩ at hpq
     simpa only [Sigma.mk.injEq, heq_eq_eq, true_and] using hpq
   have hclass : x = y := by
-    calc
-      x = Quotient.mk'' (Quotient.out x) := (Quotient.out_eq x).symm
-      _ = Quotient.mk'' (Quotient.out y) := congrArg Quotient.mk'' hxy
-      _ = y := Quotient.out_eq y
+    have hh :
+        (Quotient.mk'' (Quotient.out x) :
+          (originalExactSelectedQuotientCurrentSource
+            A B P transport base hOne E).Point c) =
+        (Quotient.mk'' (Quotient.out y) :
+          (originalExactSelectedQuotientCurrentSource
+            A B P transport base hOne E).Point c) :=
+      congrArg (fun a : B.Point (sigma c) =>
+        (Quotient.mk'' a :
+          (originalExactSelectedQuotientCurrentSource
+            A B P transport base hOne E).Point c)) hxy
+    simpa only [Quotient.out_eq] using hh
   exact congrArg (Sigma.mk c) hclass
 
 /-- From ANY finite family of already REALIZED selected quotient
