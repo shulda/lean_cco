@@ -1,4 +1,5 @@
 import CCO.PairHomogeneity
+import Mathlib.Data.Fintype.Option
 
 /-!
 # B049 source07 C59: literal canonical old qf tuple-type definitional enrichment
