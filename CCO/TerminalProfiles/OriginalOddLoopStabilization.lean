@@ -1,5 +1,4 @@
 import CCO.ParityHasse.Original.ParityPowers
-import Mathlib.Tactic.Omega
 
 /-!
 # B051 TWP: actual invariant RAW relation powers with odd loops
