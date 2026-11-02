@@ -99,9 +99,10 @@ theorem originalRetainedAllparentOdd_hasQuotientDiversityAtom
     exact hNoGate (heq ▸ Kq.setoid.refl qx)
   cases hc : Q.source.colour qx qy with
   | none =>
+      have hTagged := (Q.source.colour_none_iff qx qy).mp hc
       have heq : qx = qy := by
-        simpa only [Sigma.mk.injEq,heq_eq_eq,true_and] using
-          (Q.source.colour_none_iff qx qy).mp hc
+        cases hTagged
+        rfl
       exact False.elim (hNE heq)
   | some c =>
       have hAtom : Q.source.atomRel c qx qy := hc
