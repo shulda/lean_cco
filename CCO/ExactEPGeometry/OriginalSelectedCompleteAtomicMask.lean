@@ -68,7 +68,7 @@ theorem originalSelectedCompleteAtomicMask_iff_at_pair
   · intro h x' y' hc R hR'
     obtain ⟨g,hgx,hgy⟩ :=
       (Q.source.pair_homogeneous_of_homogeneous Q.homogeneous)
-        x' x y' y hc.symm
+        x' x y' y hc
     have hR : R.rel x y := by
       simpa only [hgx,hgy] using
         R.exact.invariant Q.source Q.homogeneous g x' y' hR'
