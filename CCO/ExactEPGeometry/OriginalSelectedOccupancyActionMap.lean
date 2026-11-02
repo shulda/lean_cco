@@ -105,8 +105,8 @@ noncomputable def originalReachedSelectedActionPoint
     (originalRetainedSelectedKernel
       A B P transport tp hOne Kroot E hE
       (originalReachedOccupancyAnchorOf A B P base hBase E Kroot b)).Class
-  exact originalReachedSelectedPointEquiv
-    A B P transport tp hOne Kroot E hE b
+  exact (originalReachedSelectedPointEquiv
+    A B P transport tp hOne Kroot E hE b).toFun
 
 /-- Exact complete C84 character correction on EVERY original old
 source Arrow, after true E-occupancy normalization. The source
