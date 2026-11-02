@@ -32,9 +32,9 @@ def setoidBiSaturation {X : Type*} (E : Setoid X)
 No hypothesis on whether R is itself an equivalence is used. -/
 theorem setoidBiSaturation_comp_power
     {X : Type*} (E : Setoid X) (R : X → X → Prop)
-    (hComm : TRel.comp R E.r = TRel.comp E.r R)
+    (hComm : RawSymmetric.compose R E.r = RawSymmetric.compose E.r R)
     (n : Nat) :
-    TRel.comp (setoidBiSaturation E R)
+    RawSymmetric.compose (setoidBiSaturation E R)
       (setoidBiSaturation E (relPow R n)) =
       setoidBiSaturation E (relPow R (n+1)) := by
   funext x y
@@ -42,8 +42,8 @@ theorem setoidBiSaturation_comp_power
   constructor
   · rintro ⟨z, ⟨a,b,hxa,hab,hbz⟩, ⟨c,d,hzc,hcd,hdy⟩⟩
     have hbc : E.r b c := E.trans hbz hzc
-    have hRE : TRel.comp R E.r a c := ⟨b,hab,hbc⟩
-    have hER : TRel.comp E.r R a c := by
+    have hRE : RawSymmetric.compose R E.r a c := ⟨b,hab,hbc⟩
+    have hER : RawSymmetric.compose E.r R a c := by
       rw [←hComm]
       exact hRE
     obtain ⟨t,hat,htc⟩ := hER
@@ -56,7 +56,7 @@ theorem setoidBiSaturation_comp_power
 E-saturation of an actual R-walk of precisely that length. -/
 theorem setoidBiSaturation_positiveRelPow
     {X : Type*} (E : Setoid X) (R : X → X → Prop)
-    (hComm : TRel.comp R E.r = TRel.comp E.r R)
+    (hComm : RawSymmetric.compose R E.r = RawSymmetric.compose E.r R)
     (n : Nat) :
     relPow (setoidBiSaturation E R) (n+1) =
       setoidBiSaturation E (relPow R (n+1)) := by
@@ -75,9 +75,9 @@ theorem setoidBiSaturation_positiveRelPow
   | succ n ih =>
       calc
         relPow (setoidBiSaturation E R) ((n+1)+1) =
-            TRel.comp (setoidBiSaturation E R)
+            RawSymmetric.compose (setoidBiSaturation E R)
               (relPow (setoidBiSaturation E R) (n+1)) := rfl
-        _ = TRel.comp (setoidBiSaturation E R)
+        _ = RawSymmetric.compose (setoidBiSaturation E R)
               (setoidBiSaturation E (relPow R (n+1))) := by rw [ih]
         _ = setoidBiSaturation E (relPow R ((n+1)+1)) :=
           setoidBiSaturation_comp_power E R hComm (n+1)
@@ -90,7 +90,7 @@ theorem quotientRelPow_bisaturated_pullback
     {X Q : Type*} (pi : X → Q) (hsurj : Function.Surjective pi)
     (E : Setoid X) (hKernel : ∀ x y, pi x = pi y ↔ E.r x y)
     (R : X → X → Prop)
-    (hComm : TRel.comp R E.r = TRel.comp E.r R)
+    (hComm : RawSymmetric.compose R E.r = RawSymmetric.compose E.r R)
     (D : Q → Q → Prop)
     (hPull : GroupActions.pullback pi pi D = setoidBiSaturation E R)
     (n : Nat) :
