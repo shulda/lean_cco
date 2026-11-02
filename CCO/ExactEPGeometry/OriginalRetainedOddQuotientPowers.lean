@@ -66,6 +66,8 @@ theorem originalRetainedOddQuotientPowers
     ∃ (c : B.source.Atom b.val b.val)
       (d : Q.source.Atom b.val b.val),
       (∃ x y : B.Point b.val, B.source.atomRel c x y) ∧
+      (∀ x y : B.Point b.val,
+        B.source.atomRel c x y → (phase.atSort b).rel x y) ∧
       (∀ p q : Q.Point b.val,
         Q.source.atomRel d p q → ¬ Kq.rel p q) ∧
       ∀ (n : Nat) (a z : B.Point b.val),
@@ -89,7 +91,7 @@ theorem originalRetainedOddQuotientPowers
     A B P transport tp hOne Kroot E hE b
   let Kq := originalCoherentAllparentProjectedKernel
     A B P transport tp base hBase E b.val K hNested
-  obtain ⟨c,d,⟨x,y,hxy⟩,_hOldOut,_hQuotNonempty,hImage,hOutside⟩ :=
+  obtain ⟨c,d,⟨x,y,hxy⟩,hOldOddOut,_hQuotNonempty,hImage,hOutside⟩ :=
     originalRetainedOddAtomicBlock_imageQuotientDiversity
       A B P transport tp hOne Kroot phase E hE b
   have hSelfColour : Q.source.rawAtomRel
@@ -111,7 +113,8 @@ theorem originalRetainedOddQuotientPowers
       (originalExactAllCurrentQuotientCurrentSource
         A B P transport base hBase E).source.colour
           (Quotient.mk'' x) (Quotient.mk'' y) = some d := hQuotAtom
-  refine ⟨c,d,⟨x,y,hxy⟩,hOutside,?_⟩
+  refine ⟨c,d,⟨x,y,hxy⟩,
+    (fun a z haz => (hOldOddOut a z haz).1),hOutside,?_⟩
   intro n a z
   have hPow := originalExactAllCurrentOrbitalRelPow_bisaturated_pullback
     A B P transport base hBase E x y n a z
