@@ -1821,3 +1821,4 @@ import CCO.UnaryTermsReturn.MalformedCycleCollapse
 import CCO.UnaryTermsReturn.NamedReturnLoop
 import CCO.UnaryTermsReturn.GeneratedClosureWords
 import CCO.UnaryTermsReturn.CommonBlockModel
+import CCO.UnaryTermsReturn.CommonBlockMalformed
