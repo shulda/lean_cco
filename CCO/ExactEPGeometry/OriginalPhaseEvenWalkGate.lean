@@ -60,8 +60,9 @@ theorem evenWalk_subset_gate_of_twoStep
           exact ⟨s,hms,hsq⟩
         exact K.trans (ih a m ham) (hTwo m z hmz2)
   intro a z hEven
-  obtain ⟨k,rfl⟩ := even_iff_exists_two_mul.mp hEven.2.1
-  exact hAll k a z hEven.2.2
+  obtain ⟨n,hn,hWalk⟩ := hEven
+  obtain ⟨k,rfl⟩ := even_iff_exists_two_mul.mp hn
+  exact hAll k a z hWalk
 
 /-- On the true reached original kernel K_b, all even walks of ANY
 actual atom contained in the source-certified odd Arrow are K_b-related.
