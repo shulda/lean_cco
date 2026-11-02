@@ -27,6 +27,54 @@ open RigidGroupoid.Geometry
 
 noncomputable section
 
+/-- Eliminate equality for an independent endpoint, whose support
+proof depends on that endpoint. The whole exact identity Arrow, rather
+than logical equality, is used after substitution. -/
+private theorem originalGateIdentityClassTransport_of_eq
+    (A B : CurrentSource.{u,v,w,t})
+    (P : UnaryReduct A.source B.source)
+    (transport : ExactTraceTransport A.source B.source P)
+    (tp : ExactTraceProduct A.source B.source P)
+    (hOne : ∀ i j : A.Sorts, i = j)
+    {r : B.Sorts} (Kroot : Kernel B.source r)
+    (E : ExactEq A.source (P.parent r))
+    (hE : E ≤ PrefixExactLargestLift.largest A B P transport tp r
+      (current_kernel_exact_eq B Kroot))
+    (a b : Reached B.source Kroot)
+    (hSup : (originalExactOccupancySetoid A B P (P.parent r)
+      (fun k => hOne (P.parent r) k) E).r a.val b.val)
+    (hab : b = a)
+    (q : (Reached.kernel B.homogeneous
+      (exactCalculus_of_homogeneous_CCO
+        B.source B.homogeneous B.cco) a).Class) :
+    HEq
+      (((original_retained_identity_arrow
+        A B P transport tp hOne Kroot E hE a b hSup).quotientEquiv
+        B.homogeneous).trans
+        (originalRetainedSelectedGateClassEquiv
+          A B P transport tp hOne Kroot E hE b) q)
+      ((originalRetainedSelectedGateClassEquiv
+        A B P transport tp hOne Kroot E hE a) q) := by
+  cases hab
+  let CB := exactCalculus_of_homogeneous_CCO
+    B.source B.homogeneous B.cco
+  let Ka := Reached.kernel B.homogeneous CB a
+  have hId :
+      original_retained_identity_arrow
+        A B P transport tp hOne Kroot E hE a a hSup =
+          Arrow.id Ka :=
+    original_retained_identity_arrow_self
+      A B P transport tp hOne Kroot E hE a
+  apply HEq.of_eq
+  change (originalRetainedSelectedGateClassEquiv
+      A B P transport tp hOne Kroot E hE a)
+      ((original_retained_identity_arrow
+        A B P transport tp hOne Kroot E hE a a hSup).quotientMap
+        B.homogeneous q) =
+    (originalRetainedSelectedGateClassEquiv
+      A B P transport tp hOne Kroot E hE a) q
+  rw [hId, Arrow.quotientMap_id B.homogeneous q]
+
 theorem originalReachedSelectedActionPoint_anchor_heq
     (A B : CurrentSource.{u,v,w,t})
     (P : UnaryReduct A.source B.source)
@@ -50,54 +98,33 @@ theorem originalReachedSelectedActionPoint_anchor_heq
       (originalReachedSelectedActionPoint
         A B P transport tp hOne Kroot E hE a q)
       (originalRetainedSelectedGateClassEquiv
-        A B P transport tp hOne Kroot E hE a q) := by
-  let base := P.parent r
+        A B P transport tp hOne Kroot E hE a q) := by  let base := P.parent r
   let hBase : ∀ i : A.Sorts, base = i := fun i => hOne base i
   let a := originalReachedOccupancyAnchor A B P base hBase E Kroot o
-  let CB := exactCalculus_of_homogeneous_CCO
-    B.source B.homogeneous B.cco
-  let Ka := Reached.kernel B.homogeneous CB a
   have hFixed : originalReachedOccupancyAnchorOf
       A B P base hBase E Kroot a = a :=
     originalReachedOccupancyAnchor_idempotent
       A B P base hBase E Kroot o
-  let J := originalExactOccupancySetoid A B P base hBase E
-  let Iaa := original_retained_identity_arrow
-    A B P transport tp hOne Kroot E hE
-      a a (J.refl a.val)
-  have hId : Iaa = Arrow.id Ka :=
-    original_retained_identity_arrow_self
-      A B P transport tp hOne Kroot E hE a
-  have hAct : Iaa.quotientMap B.homogeneous q = q := by
-    rw [hId]
-    exact Arrow.quotientMap_id B.homogeneous q
   change HEq
-    ((((original_retained_identity_arrow
-      A B P transport tp hOne Kroot E hE a
+    (((original_retained_identity_arrow
+        A B P transport tp hOne Kroot E hE a
         (originalReachedOccupancyAnchorOf
           A B P base hBase E Kroot a)
         (originalReachedOccupancyAnchorOf_supported
-          A B P base hBase E Kroot a)).quotientEquiv B.homogeneous).trans
-      (originalRetainedSelectedGateClassEquiv
-        A B P transport tp hOne Kroot E hE
-        (originalReachedOccupancyAnchorOf
-          A B P base hBase E Kroot a))) q)
+          A B P base hBase E Kroot a)).quotientEquiv
+        B.homogeneous).trans
+        (originalRetainedSelectedGateClassEquiv
+          A B P transport tp hOne Kroot E hE
+          (originalReachedOccupancyAnchorOf
+            A B P base hBase E Kroot a)) q)
     ((originalRetainedSelectedGateClassEquiv
       A B P transport tp hOne Kroot E hE a) q)
-  rw [hFixed]
-  change HEq
-    (((Iaa.quotientEquiv B.homogeneous).trans
-      (originalRetainedSelectedGateClassEquiv
-        A B P transport tp hOne Kroot E hE a)) q)
-    ((originalRetainedSelectedGateClassEquiv
-      A B P transport tp hOne Kroot E hE a) q)
-  exact HEq.of_eq (by
-    change (originalRetainedSelectedGateClassEquiv
-      A B P transport tp hOne Kroot E hE a)
-        (Iaa.quotientMap B.homogeneous q) =
-      (originalRetainedSelectedGateClassEquiv
-        A B P transport tp hOne Kroot E hE a) q
-    rw [hAct])
+  exact originalGateIdentityClassTransport_of_eq
+    A B P transport tp hOne Kroot E hE a
+      (originalReachedOccupancyAnchorOf A B P base hBase E Kroot a)
+      (originalReachedOccupancyAnchorOf_supported
+        A B P base hBase E Kroot a)
+      hFixed q
 
 end
 end CCO.ExactEPGeometry
