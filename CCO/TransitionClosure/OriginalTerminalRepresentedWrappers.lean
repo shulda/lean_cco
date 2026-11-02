@@ -156,7 +156,7 @@ theorem original_terminal_represented_prime_intersection
   · subst J
     rw [originalEquivDiversityPalette_bot S] at hInside
     obtain ⟨a,ha⟩ := hAB
-    simp at hInside ha
+    exact False.elim (by simpa using (hInside ha))
   · have hJ : (⊥ : ColourEq S i) < J :=
       lt_of_le_of_ne bot_le (Ne.symm hZero)
     have hK : (⊥ : ColourEq S i) < K :=
