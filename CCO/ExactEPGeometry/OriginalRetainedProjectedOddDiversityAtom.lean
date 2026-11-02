@@ -103,7 +103,7 @@ theorem originalRetainedAllparentOdd_hasQuotientDiversityAtom
       have heq : qx = qy := by
         have hTyped : (⟨b.val,qx⟩ : Sigma Q.Point) =
             (⟨b.val,qy⟩ : Sigma Q.Point) := hTagged
-        have hh : HEq qx qy := (Sigma.mk.injEq.mp hTyped).2
+        have hh : HEq qx qy := ((Sigma.mk.inj_iff).mp hTyped).2
         exact eq_of_heq hh
       exact False.elim (hNE heq)
   | some c =>
