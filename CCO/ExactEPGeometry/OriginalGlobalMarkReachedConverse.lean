@@ -61,7 +61,10 @@ theorem originalGlobalMarkReachedGateConstant
   have hBit : mark ⟨b.val,y⟩ =
       mark ⟨b.val,x⟩ + phase.character.value (Arrow.id K) :=
     hRead.2.2
-  rw [phase.character.map_id b,add_zero] at hBit
+  have hZero : phase.character.value (Arrow.id K) = 0 := by
+    change phase.character.value (𝟙 b) = 0
+    exact phase.character.map_id b
+  rw [hZero,add_zero] at hBit
   exact hBit.symm
 
 /-- The bit of an actual original global marking on the literal
