@@ -106,13 +106,12 @@ theorem originalSelectedReachedEclassRepresentative_spec
     originalSelectedSortRetyping A B P transport base hBase E
   change D.pointEquiv b.val
     (Quotient.mk'' (Quotient.out ((D.pointEquiv b.val).symm q))) = q
-  calc
-    D.pointEquiv b.val
-        (Quotient.mk'' (Quotient.out ((D.pointEquiv b.val).symm q))) =
-      D.pointEquiv b.val ((D.pointEquiv b.val).symm q) :=
-        congrArg (D.pointEquiv b.val)
-          (Quotient.out_eq ((D.pointEquiv b.val).symm q))
-    _ = q := (D.pointEquiv b.val).apply_symm_apply q
+  have hout :
+      (Quotient.mk'' (Quotient.out ((D.pointEquiv b.val).symm q)) :
+        Qall.Point b.val) = (D.pointEquiv b.val).symm q :=
+    Quotient.out_eq ((D.pointEquiv b.val).symm q)
+  rw [hout]
+  exact (D.pointEquiv b.val).apply_symm_apply q
 
 /-- The SAME chosen old E-class representative has the required
 complete old-K to selected-K/E gate-point image, with NO replacement
