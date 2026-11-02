@@ -76,7 +76,7 @@ theorem originalExactAllCurrentOrbitalRelPow_bisaturated_pullback
   have hInvR : TRel.Invariant (G := B.G) R :=
     B.source.rawAtomRel_invariant (B.source.colour x y)
       (B.source.colourInvariant_of_homogeneous B.homogeneous)
-  have hComm : TRel.comp R e.r = TRel.comp e.r R :=
+  have hComm : RawSymmetric.compose R e.r = RawSymmetric.compose e.r R :=
     RawSymmetric.invariant_commute R e.r hInvR hInvE
       (B.source.pair_flip_of_homogeneous B.homogeneous)
   have hKernel : ∀ a b, pi a = pi b ↔ e.r a b := by
