@@ -31,6 +31,7 @@ variable (S : AtomicSource.{u,v,w} ι X)
 variable {G : Type t} [Group G] [∀ s : ι, MulAction G (X s)]
 
 open ParityHasse.Original
+open CCO.TerminalLattice
 
 /-- Every proper meet-irreducible of the ACTUAL original FULL
 finite colour-invariant lattice has exactly one FULL cover.
@@ -49,8 +50,13 @@ theorem original_full_infIrred_exists_unique_cover
         (letI : Lattice (ColourEq S i) :=
           ColourEq.lattice S H (i := i); J ⋖ L) → L = K := by
   letI : Lattice (ColourEq S i) := ColourEq.lattice S H (i := i)
+  have hJnotTop : J ≠ (⊤ : ColourEq S i) := by
+    intro heq
+    apply hMI.1
+    rw [heq]
+    exact isMax_top
   have hJtop : J < (⊤ : ColourEq S i) :=
-    lt_of_le_of_ne le_top hMI.1
+    lt_of_le_of_ne le_top hJnotTop
   obtain ⟨K,hJK,_⟩ := hJtop.exists_covby_le
   refine ⟨K,hJK,?_⟩
   intro L hJL
