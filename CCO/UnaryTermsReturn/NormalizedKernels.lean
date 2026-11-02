@@ -1,4 +1,5 @@
 import CCO.UnaryTermsReturn.NamedIntermediate
+import CCO.TransitionClosure.OriginalNamedRawUnaryLanguage
 import CCO.TransitionClosure.OriginalUnaryTermNormalization
 import CCO.TransitionClosure.OriginalFullMITransport
 
@@ -133,7 +134,7 @@ theorem original_named_hidden_term_has_named_normal_middle
     original_normal_middle_named S H nr2 N
       hSourceNonzero hTargetMI
   refine ⟨N, hSource, hTarget, ⟨K, hKernel, ?_⟩, ?_⟩
-  · exact hSource.symm ▸ hDK
+  · exact hSource ▸ hDK
   · intro x y hRel
     exact hEdge x y hRel
 
