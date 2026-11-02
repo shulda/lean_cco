@@ -64,8 +64,12 @@ private theorem quotientInvolutionSetoid_relativeIndexTwo
     (f : Quotient J → Quotient J)
     (hf : ∀ q, f (f q) = q)
     (hFree : ∀ q, f q ≠ q) :
-    CCO.Selectors.RelativeIndexTwo J
-      (quotientInvolutionSetoid (A := A) J f hf) := by
+    (∀ (x y : A), J x y →
+      (quotientInvolutionSetoid (A := A) J f hf) x y) ∧
+    ∀ x : A, ∃ y : A,
+      (quotientInvolutionSetoid (A := A) J f hf) x y ∧ ¬ J x y ∧
+      ∀ z : A, (quotientInvolutionSetoid (A := A) J f hf) x z ↔
+        J x z ∨ J y z := by
   constructor
   · intro x y hxy
     change Quotient.mk J y = Quotient.mk J x ∨
@@ -197,8 +201,12 @@ theorem original_equivariant_quotient_involution_identity
     intro hEq
     apply hNotKJ
     exact le_of_eq hEq.symm)
-  have hTwo : CCO.Selectors.RelativeIndexTwo J.val K.val :=
-    quotientInvolutionSetoid_relativeIndexTwo (A := X i) J.val f hInv hFree
+  have hTwo : CCO.Selectors.RelativeIndexTwo J.val K.val := by
+    change (∀ x y : X i, J x y → K x y) ∧
+      ∀ x : X i, ∃ y : X i, K x y ∧ ¬ J x y ∧
+        ∀ z : X i, K x z ↔ J x z ∨ J y z
+    exact quotientInvolutionSetoid_relativeIndexTwo
+      (A := X i) J.val f hInv hFree
   exact hNoTwo K hJKstrict hTwo
 
 end CCO.TerminalProfiles
