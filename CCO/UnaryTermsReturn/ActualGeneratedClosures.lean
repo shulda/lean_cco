@@ -1,4 +1,5 @@
 import CCO.UnaryTermsReturn.NormalCodeCoverage
+import CCO.UnaryTermsReturn.TermValues
 import Mathlib.Data.Set.Card
 
 /-!
@@ -264,7 +265,10 @@ theorem original_real_one_generated_named_values_uniform
            Set ((Sigma X) ⊕ OriginalNormalCodeTargetValue S)).ncard +
           (Sum.inr '' values).ncard := Set.ncard_union_le _ _
     _ ≤ 1 + values.ncard := by
-      have hh := Set.ncard_image_le (f := Sum.inr) (s := values) hFinite
+      have hh := Set.ncard_image_le
+        (f := (Sum.inr : OriginalNormalCodeTargetValue S →
+          ((Sigma X) ⊕ OriginalNormalCodeTargetValue S)))
+        (s := values) hFinite
       simpa only [Set.ncard_singleton] using Nat.add_le_add_left hh 1
     _ ≤ 1 + Nat.card (OriginalAllNormalCodes S (G := G)) :=
       Nat.add_le_add_left hRangeBound 1
