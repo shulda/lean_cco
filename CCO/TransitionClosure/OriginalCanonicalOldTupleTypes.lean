@@ -124,4 +124,67 @@ theorem originalOldRealizedPairTypePredicate_preservation_iff
     have hh := (h (originalOldRealizedPairType_of_pair S x y) x y).mpr rfl
     exact hh
 
+/-- C59 partial-domain version. A sort-preserving map whose
+domain is ANY chosen subset of each old named sort preserves
+the existing canonical fine OLD pair colour on every specified
+domain pair iff it preserves EVERY newly named realised complete
+qf pair-type predicate ON THOSE SAME PAIRS.
+
+There is no extension to the full old carrier, no loss of source
+pinning, no assumption on injectivity, no name for an unrealised
+old type and no hidden-quotient SAP. For an injective typed
+partial map this is exactly preservation/reflection of the
+binary relational diagram needed for a partial embedding. -/
+theorem originalOldRealizedPairTypePredicate_partial_preservation_iff
+    {i j : ι} (A : Set (X i)) (B : Set (X j))
+    (f : A → X i) (g : B → X j) :
+    (∀ (x : A) (y : B),
+       S.colour (f x) (g y) = S.colour x.val y.val) ↔
+      (∀ (c : OriginalOldRealizedPairType S i j)
+          (x : A) (y : B),
+        originalOldRealizedPairTypePredicate S c (f x) (g y) ↔
+          originalOldRealizedPairTypePredicate S c x.val y.val) := by
+  constructor
+  · intro h c x y
+    change S.colour (f x) (g y) = c.val ↔
+      S.colour x.val y.val = c.val
+    rw [h x y]
+  · intro h x y
+    have hh :=
+      (h (originalOldRealizedPairType_of_pair S x.val y.val) x y).mpr rfl
+    exact hh
+
+/-- C59 for the ENTIRE many-sorted original old binary
+language, simultaneously across all compatible sort pairs.
+A partial map has an arbitrary domain predicate D_i on EACH
+literal source sort i; the equivalence holds for EVERY
+chosen family of typed partial maps, with NO further
+hypotheses and NO ambient-domain extension.
+
+In particular, restricting to injections proves that the
+new old qf tuple-predicate names do not alter the original
+partial embeddings or partial automorphisms. The actual
+original sort labels are already part of the dependent
+types, so this checks cross-sort pairs too. -/
+theorem originalOldRealizedPairTypePredicate_allSorts_partial_iff
+    (D : ∀ i : ι, Set (X i))
+    (f : ∀ i : ι, D i → X i) :
+    (∀ (i j : ι) (x : D i) (y : D j),
+      S.colour (f i x) (f j y) = S.colour x.val y.val) ↔
+      (∀ (i j : ι) (c : OriginalOldRealizedPairType S i j)
+           (x : D i) (y : D j),
+        originalOldRealizedPairTypePredicate S c (f i x) (f j y) ↔
+          originalOldRealizedPairTypePredicate S c x.val y.val) := by
+  constructor
+  · intro h i j c x y
+    exact
+      (originalOldRealizedPairTypePredicate_partial_preservation_iff
+        S (D i) (D j) (f i) (f j)).mp
+          (fun u v => h i j u v) c x y
+  · intro h i j x y
+    exact
+      (originalOldRealizedPairTypePredicate_partial_preservation_iff
+        S (D i) (D j) (f i) (f j)).mpr
+          (fun c u v => h i j c u v) x y
+
 end CCO.TransitionClosure
