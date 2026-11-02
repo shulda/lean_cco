@@ -107,10 +107,8 @@ noncomputable def original_named_hidden_transport_function
     (T : Transport (originalColourEqAsInvEq S H D.val) R) :
     Quotient D.val.val →
       Quotient (original_named_hidden_transport_target
-        S H sap nr2 D T).val.val := by
-  change Quotient (originalColourEqAsInvEq S H D.val).val →
-    Quotient T.target.val
-  exact fun q => T.quotientEquiv q
+        S H sap nr2 D T).val.val :=
+  fun q => T.quotientEquiv q
 
 /-- C37 genuine semantic interpretation of a named hidden
 transition on an actual original RAW R-edge. -/
@@ -125,8 +123,7 @@ theorem original_named_hidden_transport_function_edge
         (Quotient.mk D.val.val x) =
       Quotient.mk
         (original_named_hidden_transport_target S H sap nr2 D T).val.val y := by
-  simpa [original_named_hidden_transport_function] using
-    (T.quotientEquiv_edge hxy)
+  exact T.quotientEquiv_edge hxy
 
 /-- An actual OLD generated unary term whose source and target
 are both named represented hidden coordinates. Its internal
