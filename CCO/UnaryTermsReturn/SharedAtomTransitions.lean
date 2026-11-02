@@ -74,6 +74,9 @@ theorem original_shared_atom_raw_transports_agree
   induction q using Quotient.inductionOn with
   | _ x =>
       obtain ⟨y,hxy⟩ := Ta.serial x
+      change InvEq.quotientCongr hTarget
+        (T.quotientEquiv (Quotient.mk'' x)) =
+        U.quotientEquiv (Quotient.mk'' x)
       rw [T.quotientEquiv_edge (hInsideR x y hxy),
         U.quotientEquiv_edge (hInsideQ x y hxy),
         InvEq.quotientCongr_mk]
