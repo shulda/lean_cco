@@ -79,4 +79,62 @@ theorem original_raw_one_diagonal_implies_all
   have hMoved := R.val.property g x x hxx
   simpa only [hg] using hMoved
 
+/-- The no-diversity same-sort case supplies the whole original
+diagonal, using REAL B040 seriality. The relation is literally
+old equality, not an empty relation or a positive STRONG unit. -/
+theorem original_raw_no_diversity_transport_relation_eq_ident
+    (H : HomogeneousSource S G)
+    {i : ι} (J : ColourEq S i)
+    (R : OriginalNonemptyInvariantTypedRel
+      (X := X) (G := G) i i)
+    (T : CCO.QuotientTransport.Transport
+      (originalColourEqAsInvEq S H J) R.val.val)
+    (hNo : ¬ (S.diversityGuard R.val.val).Nonempty) :
+    R.val.val = (fun x y : X i => x = y) := by
+  funext x y
+  apply propext
+  constructor
+  · intro hR
+    have hTag :=
+      original_raw_no_diversity_edges_are_real_identity
+        S R hNo x y hR
+    simpa only [Sigma.mk.injEq, heq_eq_eq, true_and] using hTag
+  · intro hxy
+    subst y
+    obtain ⟨z,hxz⟩ := T.serial x
+    have hTag :=
+      original_raw_no_diversity_edges_are_real_identity
+        S R hNo x z hxz
+    have hxzEq : x = z := by
+      simpa only [Sigma.mk.injEq, heq_eq_eq, true_and] using hTag
+    rwa [← hxzEq] at hxz
+
+/-- C10 exact pre-existing quotient identity for the
+same-sort no-diversity branch. B049's actual RAW
+identity-included transport theorem proves the true target
+setoid and the pointwise transported map; no new unary
+symbol or STRONG identity is introduced. -/
+theorem original_raw_no_diversity_transport_is_named_identity
+    (H : HomogeneousSource S G)
+    {i : ι} (J : ColourEq S i)
+    (R : OriginalNonemptyInvariantTypedRel
+      (X := X) (G := G) i i)
+    (T : CCO.QuotientTransport.Transport
+      (originalColourEqAsInvEq S H J) R.val.val)
+    (hNo : ¬ (S.diversityGuard R.val.val).Nonempty) :
+    ∃ hTarget : T.target = originalColourEqAsInvEq S H J,
+      ∀ q : Quotient J.val,
+        CCO.QuotientTransport.InvEq.quotientCongr hTarget
+          (T.quotientEquiv q) = q := by
+  have hR :=
+    original_raw_no_diversity_transport_relation_eq_ident
+      S H J R T hNo
+  have hId : ∀ x : X i, R.val.val x x := by
+    intro x
+    rw [hR]
+  let hTarget :=
+    original_identity_included_transport_target_eq_source T hId
+  exact ⟨hTarget,
+    original_identity_included_transport_quotient_eq_id T hId⟩
+
 end CCO.UnaryTermsReturn
