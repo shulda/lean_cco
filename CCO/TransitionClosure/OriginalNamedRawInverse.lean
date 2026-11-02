@@ -177,9 +177,15 @@ theorem originalNamedRawTransitionSymbol_converse_quotient_inverse
           (originalNamedRawTransitionSymbol_converse_target_eq_source S H sap nr2 d)
           (U.quotientEquiv (T.quotientEquiv (Quotient.mk'' x))) =
             Quotient.mk'' x
-      rw [T.quotientEquiv_edge hxy,
-        U.quotientEquiv_edge hyx,
-        InvEq.quotientCongr_mk]
+      rw [T.quotientEquiv_edge hxy]
+      exact (congrArg
+        (InvEq.quotientCongr
+          (originalNamedRawTransitionSymbol_converse_target_eq_source
+            S H sap nr2 d))
+          (U.quotientEquiv_edge hyx)).trans
+        (InvEq.quotientCongr_mk
+          (originalNamedRawTransitionSymbol_converse_target_eq_source
+            S H sap nr2 d) x)
 
 /-- An actual TERM for the inverse of ANY named primitive RAW
 quotient transition is already present in the original source07
