@@ -1889,3 +1889,4 @@ import CCO.ExactEPGeometry.OriginalSelectedFiniteMarkedOldChart
 import CCO.ExactEPGeometry.OriginalRetainedAnyMarkCorrection
 import CCO.ExactEPGeometry.OriginalSelectedFiniteLocalMarkedAge
 import CCO.ExactEPGeometry.OriginalGlobalMarkReachedConverse
+import CCO.ExactEPGeometry.ProjectedGateClassEquiv
