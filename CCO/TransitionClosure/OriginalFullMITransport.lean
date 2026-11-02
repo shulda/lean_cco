@@ -225,4 +225,76 @@ theorem originalFullTransportPullColourEq_covers_iff
           (originalFullTransportPullColourEq S H J T L hFL)
           (originalFullTransportPullColourEq S H J T K hFK)
 
+
+/-- A proper FULL invariant meet-irreducible has at most one cover.
+The proof uses the full meet and the cover gap, not any modularity,
+distributivity, exactness or quotient finiteness hypothesis. -/
+private theorem original_full_properMI_cover_unique
+    (H : HomogeneousSource S G)
+    {i : ι} (J K L : ColourEq S i)
+    (hMI : ProperMeetIrreducible (originalColourEqAsInvEq S H J))
+    (hJK : QuotientTransport.Transport.Covers J K)
+    (hJL : QuotientTransport.Transport.Covers J L) :
+    K = L := by
+  let e := originalFullColourEqInvEqOrderIso S H (i := i)
+  have hVK : QuotientTransport.Transport.Covers
+      (originalColourEqAsInvEq S H J) (originalColourEqAsInvEq S H K) :=
+    (covers_orderIso_iff e J K).mpr hJK
+  have hVL : QuotientTransport.Transport.Covers
+      (originalColourEqAsInvEq S H J) (originalColourEqAsInvEq S H L) :=
+    (covers_orderIso_iff e J L).mpr hJL
+  let JV : InvEq G (X i) := originalColourEqAsInvEq S H J
+  let KV : InvEq G (X i) := originalColourEqAsInvEq S H K
+  let LV : InvEq G (X i) := originalColourEqAsInvEq S H L
+  have hMeet : JV ≤ KV ⊓ LV := le_inf hVK.1.le hVL.1.le
+  rcases hVK.2 (KV ⊓ LV) hMeet inf_le_left with hJ | hK
+  · rcases hMI.2 KV LV hJ.symm with h | h
+    · exact False.elim ((ne_of_lt hVK.1) h)
+    · exact False.elim ((ne_of_lt hVL.1) h)
+  · have hKL : KV ≤ LV := by
+      rw [← hK]
+      exact inf_le_right
+    rcases hVL.2 KV hVK.1.le hKL with h | h
+    · exact False.elim ((ne_of_gt hVK.1) h)
+    · exact e.injective h
+
+/-- SOURCE07 C36, including the UNIQUE FULL cover:
+if a target FULL original equivalence L is proper MI and K
+covers L, their precise full B040 pullbacks form a cover,
+which is the ONLY cover above the pulled-back L anywhere
+in the entire original source FULL equivalence lattice.
+
+This is a statement about the two original homogeneous
+sorts and genuine full orbit-invariant lattices. The
+terminal FULL NR2 represented-name gate is independent. -/
+theorem originalFullTransportPullColourEq_unique_full_cover
+    (H : HomogeneousSource S G)
+    {i j : ι} (J : ColourEq S i)
+    {R : QuotientTransport.Rel (X i) (X j)}
+    (T : Transport (originalColourEqAsInvEq S H J) R)
+    (L K : ColourEq S j)
+    (hFL : originalTransportTargetColourEq S H J T ≤ L)
+    (hFK : originalTransportTargetColourEq S H J T ≤ K)
+    (hLMI : ProperMeetIrreducible (originalColourEqAsInvEq S H L))
+    (hLK : QuotientTransport.Transport.Covers L K) :
+    QuotientTransport.Transport.Covers
+        (originalFullTransportPullColourEq S H J T L hFL)
+        (originalFullTransportPullColourEq S H J T K hFK) ∧
+      ∀ V : ColourEq S i,
+        QuotientTransport.Transport.Covers
+            (originalFullTransportPullColourEq S H J T L hFL) V →
+          V = originalFullTransportPullColourEq S H J T K hFK := by
+  have hCover :=
+    (originalFullTransportPullColourEq_covers_iff
+      S H J T L K hFL hFK).mp hLK
+  have hMI :=
+    (originalFullTransportPullColourEq_properMI_iff
+      S H J T L hFL).mp hLMI
+  refine ⟨hCover, ?_⟩
+  intro V hV
+  exact original_full_properMI_cover_unique S H
+    (originalFullTransportPullColourEq S H J T L hFL)
+    V (originalFullTransportPullColourEq S H J T K hFK)
+    hMI hV hCover
+
 end CCO.TransitionClosure
