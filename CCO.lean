@@ -1989,3 +1989,4 @@ import CCO.ExactEPGeometry.OriginalRetainedProjectedMaximalParityGate
 import CCO.ExactEPGeometry.OriginalRetainedProjectedParityJoins
 import CCO.ExactEPGeometry.OriginalOneSortLargestQuotientGate
 import CCO.ExactEPGeometry.OriginalOneSortLargestQuotientTrace
+import CCO.ExactEPGeometry.OriginalRetainedReachedOriginalQuotientGate
