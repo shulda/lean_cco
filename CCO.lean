@@ -1896,3 +1896,6 @@ import CCO.ExactEPGeometry.OriginalAllparentGateClasses
 import CCO.ExactEPGeometry.SelectedGateClassTransport
 import CCO.ExactEPGeometry.OriginalCorrectedMarkToSource
 import CCO.ExactEPGeometry.SelectedMarkingPullback
+import CCO.ExactEPGeometry.OriginalAllparentGateArrowAction
+import CCO.ExactEPGeometry.OriginalRetainedSelectedGateClasses
+import CCO.ExactEPGeometry.OriginalNormalizedAnchorPointAction
