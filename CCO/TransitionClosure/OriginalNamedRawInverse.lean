@@ -173,6 +173,10 @@ theorem originalNamedRawTransitionSymbol_converse_quotient_inverse
       have hyx : (originalNamedRawTransitionSymbol_converse S H sap nr2 d).val.2.val.val y x := by
         change d.val.2.val.val x y
         exact hxy
+      change InvEq.quotientCongr
+          (originalNamedRawTransitionSymbol_converse_target_eq_source S H sap nr2 d)
+          (U.quotientEquiv (T.quotientEquiv (Quotient.mk'' x))) =
+            Quotient.mk'' x
       rw [T.quotientEquiv_edge hxy,
         U.quotientEquiv_edge hyx,
         InvEq.quotientCongr_mk]
