@@ -136,9 +136,11 @@ theorem originalSelectedFullMarkToOldSource
   let oldMark := originalMarking B.source B.homogeneous CB Kroot groupMark
   refine ⟨oldMark,phase.original_global_marking groupMark hGroup,?_⟩
   intro b x
-  rw [originalMarking_reached B.source B.homogeneous CB Kroot
-    groupMark b x]
-  rfl
+  change originalMarking B.source B.homogeneous CB Kroot
+      groupMark ⟨b.val,x⟩ =
+    groupMark ⟨b,(Reached.kernel B.homogeneous CB b).project x⟩
+  exact originalMarking_reached
+    B.source B.homogeneous CB Kroot groupMark b x
 
 end
 end CCO.ExactEPGeometry
