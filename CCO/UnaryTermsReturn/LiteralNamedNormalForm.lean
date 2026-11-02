@@ -67,8 +67,16 @@ theorem original_named_hidden_term_literal_normal_form
     exact T0
   have hTTarget :
       originalTransportTargetColourEq S H K.val T = F.val := by
-    rw [hK]
-    exact hF
+    apply ColourEq.ext
+    intro y z
+    have hNF : T0.target y z ↔ F.val y z := by
+      change originalTransportTargetColourEq S H N.val.2.val.1 T0 y z ↔
+        F.val y z
+      rw [hF]
+    rw [T0.target_iff] at hNF
+    change T.target y z ↔ F.val y z
+    rw [T.target_iff]
+    simpa only [hK] using hNF
   obtain ⟨theta,hTheta⟩ :=
     original_named_raw_transport_has_named_expression
       S H sap nr2 K F R T hTTarget
