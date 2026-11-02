@@ -1809,3 +1809,5 @@ import CCO.TerminalProfiles.OriginalTerminalNoReturn
 import CCO.TerminalProfiles.OriginalFiniteNoReturn
 import CCO.TerminalProfiles.OriginalWholeProfileWordPowers
 import CCO.TerminalProfiles.OriginalOddLoopStabilization
+import CCO.TerminalProfiles.OriginalWholeProfileOddLoops
+import CCO.TerminalProfiles.OriginalWholeProfileStabilization
