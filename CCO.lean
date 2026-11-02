@@ -1921,3 +1921,4 @@ import CCO.ExactEPGeometry.OriginalRetainedOddAtomicPivot
 import CCO.ExactEPGeometry.OriginalRetainedProjectedOddDiversityAtom
 import CCO.ExactEPGeometry.OriginalAllCurrentAtomicBlockImage
 import CCO.ExactEPGeometry.OriginalRetainedOddAtomicBlockImage
+import CCO.ExactEPGeometry.ProjectedOrbitalPowers
