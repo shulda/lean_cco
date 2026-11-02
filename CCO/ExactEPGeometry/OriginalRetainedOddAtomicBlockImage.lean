@@ -60,6 +60,9 @@ theorem originalRetainedOddAtomicBlock_imageQuotientDiversity
     ∃ (c : B.source.Atom b.val b.val)
       (d : Q.source.Atom b.val b.val),
       (∃ x y : B.Point b.val, B.source.atomRel c x y) ∧
+      (∀ x y : B.Point b.val,
+        B.source.atomRel c x y → ¬ K.rel x y) ∧
+      (∃ p q : Q.Point b.val, Q.source.atomRel d p q) ∧
       (∀ p q : Q.Point b.val,
         Quotient.image
           (fun z : B.Point b.val => (Quotient.mk'' z : Q.Point b.val))
@@ -98,16 +101,24 @@ theorem originalRetainedOddAtomicBlock_imageQuotientDiversity
   cases hc : Q.source.colour qx qy with
   | none =>
       have hTagged := (Q.source.colour_none_iff qx qy).mp hc
+      have hTyped : (⟨b.val,qx⟩ : Sigma Q.Point) =
+          (⟨b.val,qy⟩ : Sigma Q.Point) := hTagged
       have heq : qx = qy := by
-        simpa only [Sigma.mk.injEq,heq_eq_eq,true_and] using hTagged
+        have hh : HEq qx qy := ((Sigma.mk.inj_iff).mp hTyped).2
+        exact eq_of_heq hh
       exact False.elim (hNE heq)
   | some d =>
       have hD : Q.source.atomRel d qx qy := hc
-      refine ⟨c,d,⟨x,y,hAtom⟩,?_,?_⟩
+      refine ⟨c,d,⟨x,y,hAtom⟩,
+        (fun a z ha => (hAtomOut a z ha).2),⟨qx,qy,hD⟩,?_,?_⟩
       · intro p q
         have hBlock := originalExactAllCurrentPairBlock_image
           A B P transport base hBase E x y p q
-        simpa only [hAtom,hc] using hBlock
+        have hOldColour : B.source.colour x y = some c := hAtom
+        have hQuotColour :
+            Q.source.colour (Quotient.mk'' x : Q.Point b.val)
+              (Quotient.mk'' y : Q.Point b.val) = some d := hc
+        simpa only [hOldColour,hQuotColour] using hBlock
       · intro p q hAtomPQ hGate
         have hColour : Q.source.colour p q = Q.source.colour qx qy :=
           hAtomPQ.trans hc.symm
