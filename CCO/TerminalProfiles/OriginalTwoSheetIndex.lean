@@ -65,7 +65,7 @@ private theorem quotientInvolutionSetoid_relativeIndexTwo
     (hf : ∀ q, f (f q) = q)
     (hFree : ∀ q, f q ≠ q) :
     CCO.Selectors.RelativeIndexTwo J
-      (quotientInvolutionSetoid J f hf) := by
+      (quotientInvolutionSetoid (A := A) J f hf) := by
   constructor
   · intro x y hxy
     change Quotient.mk J y = Quotient.mk J x ∨
@@ -75,7 +75,7 @@ private theorem quotientInvolutionSetoid_relativeIndexTwo
     obtain ⟨y, hy⟩ := Quotient.exists_rep (f (Quotient.mk J x))
     have hxy : Quotient.mk J y = f (Quotient.mk J x) := by
       simpa only [hy]
-    have hK : (quotientInvolutionSetoid J f hf) x y :=
+    have hK : (quotientInvolutionSetoid (A := A) J f hf) x y :=
       Or.inr hxy
     have hNe : ¬ J x y := by
       intro hxyJ
@@ -149,7 +149,7 @@ theorem original_equivariant_quotient_involution_identity
         _ = q := hFix
         _ = g • p := hg.symm
     exact hMove (MulAction.injective g hMoveEq)
-  let Kset : Setoid (X i) := quotientInvolutionSetoid J.val f hInv
+  let Kset : Setoid (X i) := quotientInvolutionSetoid (A := X i) J.val f hInv
   have hKInv : ∀ (g : G) (x y : X i),
       Kset x y → Kset (g • x) (g • y) := by
     intro g x y hxy
@@ -198,7 +198,7 @@ theorem original_equivariant_quotient_involution_identity
     apply hNotKJ
     exact le_of_eq hEq.symm)
   have hTwo : CCO.Selectors.RelativeIndexTwo J.val K.val :=
-    quotientInvolutionSetoid_relativeIndexTwo J.val f hInv hFree
+    quotientInvolutionSetoid_relativeIndexTwo (A := X i) J.val f hInv hFree
   exact hNoTwo K hJKstrict hTwo
 
 end CCO.TerminalProfiles
