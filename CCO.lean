@@ -1809,3 +1809,4 @@ import CCO.UnaryTermsReturn.FiniteNormalCodes
 import CCO.UnaryTermsReturn.StabilizerTransport
 import CCO.UnaryTermsReturn.RawIdentityClassification
 import CCO.UnaryTermsReturn.NormalCodeCoverage
+import CCO.UnaryTermsReturn.SharedAtomTransitions
