@@ -1817,3 +1817,4 @@ import CCO.UnaryTermsReturn.FullAdmissibleTransfer
 import CCO.UnaryTermsReturn.LiteralRealFactorization
 import CCO.UnaryTermsReturn.NamedReturnFactors
 import CCO.UnaryTermsReturn.AnyAutomorphismStabilizer
+import CCO.UnaryTermsReturn.MalformedCycleCollapse
