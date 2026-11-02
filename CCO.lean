@@ -1790,3 +1790,4 @@ import CCO.TransitionClosure.OriginalTransitionGraphSpectrum
 import CCO.TransitionClosure.OriginalWholeTransitionCylinder
 import CCO.TransitionClosure.OriginalNamedHiddenCoordinates
 import CCO.TransitionClosure.OriginalFiniteCylinderPartition
+import CCO.TransitionClosure.OriginalCylinderAdmissiblePairs
