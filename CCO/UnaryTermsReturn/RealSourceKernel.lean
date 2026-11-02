@@ -58,50 +58,48 @@ theorem original_real_named_term_exact_kernel
       S H sap nr2 D F w
   let J : ColourEq S i := N.val.2.val.1
   let T := originalCanonicalRawTransitionDatum_transport S H N.val.2
-  have hAt : ∀ x : X i,
-      OriginalNamedRawUnaryTerm.eval S H sap nr2 w
-          (Quotient.mk D.val.val x) =
-        T.quotientEquiv (Quotient.mk J.val x) := by
-    intro x
-    obtain ⟨y,hxy⟩ := T.serial x
-    have hTerm := hEdge x y hxy
-    have hMap :
-        T.quotientEquiv (Quotient.mk J.val x) =
-          (Quotient.mk
-            (originalTransportTargetColourEq S H J T).val y) :=
-      T.quotientEquiv_edge hxy
-    rw [← hTarget] at hTerm
-    exact hTerm.trans hMap.symm
   refine ⟨K, ?_⟩
   intro x x'
+  obtain ⟨y,hxy⟩ := T.serial x
+  obtain ⟨y',hx'y'⟩ := T.serial x'
+  have hEvalX :
+      OriginalNamedRawUnaryTerm.eval S H sap nr2 w
+          (Quotient.mk D.val.val x) =
+        Quotient.mk F.val.val y :=
+    hEdge x y hxy
+  have hEvalX' :
+      OriginalNamedRawUnaryTerm.eval S H sap nr2 w
+          (Quotient.mk D.val.val x') =
+        Quotient.mk F.val.val y' :=
+    hEdge x' y' hx'y'
+  have hYiff : F.val y y' ↔ J x x' := by
+    rw [← hTarget]
+    change T.target y y' ↔ J x x'
+    constructor
+    · intro hT
+      obtain ⟨z,z',hzy,hJzz',hz'y'⟩ :=
+        (T.target_iff y y').mp hT
+      exact J.val.trans (T.kernel x z y hxy hzy)
+        (J.val.trans hJzz' (T.kernel z' x' y' hz'y' hx'y'))
+    · intro hJ
+      exact (T.target_iff y y').mpr ⟨x,x',hxy,hJ,hx'y'⟩
+  have hKJ : K.val x x' ↔ J x x' := by
+    rw [hKernel]
   constructor
   · intro heq
-    have hMapEq :
-        T.quotientEquiv (Quotient.mk J.val x) =
-          T.quotientEquiv (Quotient.mk J.val x') := by
-      calc
-        T.quotientEquiv (Quotient.mk J.val x) =
-            OriginalNamedRawUnaryTerm.eval S H sap nr2 w
-              (Quotient.mk D.val.val x) := (hAt x).symm
-        _ = OriginalNamedRawUnaryTerm.eval S H sap nr2 w
-              (Quotient.mk D.val.val x') := heq
-        _ = T.quotientEquiv (Quotient.mk J.val x') := hAt x'
-    have hJ : J x x' :=
-      Quotient.exact (T.quotientEquiv.injective hMapEq)
-    simpa only [hKernel] using hJ
+    have hYeq :
+        (Quotient.mk F.val.val y) = Quotient.mk F.val.val y' :=
+      hEvalX.symm.trans (heq.trans hEvalX')
+    exact hKJ.mpr (hYiff.mp (Quotient.exact hYeq))
   · intro hK
-    have hJ : J x x' := by simpa only [hKernel] using hK
-    have hQuot :
-        (Quotient.mk J.val x) = Quotient.mk J.val x' :=
-      Quotient.sound hJ
+    have hYrel : F.val y y' := hYiff.mpr (hKJ.mp hK)
     calc
       OriginalNamedRawUnaryTerm.eval S H sap nr2 w
           (Quotient.mk D.val.val x) =
-          T.quotientEquiv (Quotient.mk J.val x) := hAt x
-      _ = T.quotientEquiv (Quotient.mk J.val x') :=
-        congrArg T.quotientEquiv hQuot
+            Quotient.mk F.val.val y := hEvalX
+      _ = Quotient.mk F.val.val y' := Quotient.sound hYrel
       _ = OriginalNamedRawUnaryTerm.eval S H sap nr2 w
-          (Quotient.mk D.val.val x') := (hAt x').symm
+          (Quotient.mk D.val.val x') := hEvalX'.symm
 
 /-- The ONLY real-valued real-source term in this language is
 the actual real identity. Its kernel is literally equality,
