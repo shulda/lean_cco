@@ -47,8 +47,9 @@ def originalNonemptyInvariantTypedRel_converse
     ⟨fun y x => R.val.val x y, by
       intro g y x hxy
       exact R.val.property g x y hxy⟩
+  refine ⟨Q, ?_⟩
   obtain ⟨x,y,hxy⟩ := R.property
-  exact ⟨Q,⟨y,x,hxy⟩⟩
+  exact ⟨y,x,hxy⟩
 
 /-- SOURCE07 source-tight inverse SYMBOL: Rᵒᵖ is a genuine
 OLD nonempty invariant RAW relation, with no actual identity
@@ -63,7 +64,7 @@ noncomputable def originalNamedRawTransitionSymbol_converse
     OriginalNamedRawTransitionSymbol S H j i := by
   let T := originalNamedRawTransitionSymbol_transport S H d
   let K := originalNamedRawTransitionSymbol_target S H sap nr2 d
-  let Q := originalNonemptyInvariantTypedRel_converse S d.val.2
+  let Q := originalNonemptyInvariantTypedRel_converse d.val.2
   refine ⟨⟨K,Q⟩, ?_⟩
   constructor
   · intro y z h
