@@ -1,15 +1,13 @@
 {
   "not_an_ownership_lease": true,
-  "state_revision": 595,
+  "state_revision": 596,
   "policy_revision": 14,
   "execution_mode": "chat",
   "claims_paused": false,
   "main_sha": "7eb679b2465dac8fd37f723496583b2994516322",
   "accepted": 50,
   "integration_lock": null,
-  "available": [
-    "B052"
-  ],
+  "available": [],
   "next_actions": {
     "root": {
       "action": "wait",
@@ -26,8 +24,9 @@
       "state": "IN_PROGRESS"
     },
     "chat-3": {
-      "action": "claim",
-      "package_id": "B052"
+      "action": "resume",
+      "package_id": "B052",
+      "state": "IN_PROGRESS"
     }
   },
   "active": {
@@ -37,6 +36,14 @@
       "head_sha": "7eb679b2465dac8fd37f723496583b2994516322",
       "pr_number": null,
       "branch": "chat/chat-1/B051",
+      "reviewer": null
+    },
+    "B052": {
+      "state": "IN_PROGRESS",
+      "owner_project_id": 6,
+      "head_sha": "7eb679b2465dac8fd37f723496583b2994516322",
+      "pr_number": null,
+      "branch": "chat/chat-3/B052",
       "reviewer": null
     },
     "B062": {
