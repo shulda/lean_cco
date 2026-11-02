@@ -73,12 +73,29 @@ theorem originalNamedReturnPrefixCoordinate_kernel
           (originalReturnSortTransitivity S H)
           p s hWord) := rfl
 
+/-- B040 closed-word membership at the ORIGINAL source is
+the same equality-inclusive RAW membership when viewed with
+the complete word as prefix and an empty identity suffix.
+The empty WORD here is an actual RAW identity, never a
+fabricated STRONG diversity letter. -/
+theorem originalReturnFinalBound_of_initialBound
+    {a : ι} (E : InvEq G (X a))
+    (word : Word G X a a)
+    (hWord : Return.Bound E (.nil a) word) :
+    Return.Bound E word (.nil a) := by
+  rintro x z ⟨y,hxy,hyz⟩
+  change y = z at hyz
+  subst z
+  exact hWord x y ⟨x,rfl,hxy⟩
+
 /-- At the literal FINAL original sort the named transported
 quotient kernel is not just equivalent to the source coordinate:
-it is the SAME original FULL equivalence D, and hence the SAME
-named hidden coordinate object by proof irrelevance.
-This uses B040 Return.final_target and the true old-G full
-ColourEq/InvEq identification. -/
+it is the SAME original FULL equivalence D, hence the SAME
+named hidden object by proof irrelevance.
+
+The input is the source10 original closed-word bound (nil prefix,
+entire word suffix). The required final-prefix bound is DERIVED,
+not added as a separate source hypothesis. -/
 theorem originalNamedReturnFinalCoordinate_eq
     (H : HomogeneousSource S G) (sap : AgeSAP S)
     (nr2 : Selectors.OriginalNR2 S)
@@ -87,12 +104,15 @@ theorem originalNamedReturnFinalCoordinate_eq
     (hWord : Return.Bound
       (originalColourEqAsInvEq S H D.val) (.nil a) word) :
     originalNamedReturnPrefixCoordinate S H sap nr2
-      D word (.nil a) hWord = D := by
+      D word (.nil a)
+      (originalReturnFinalBound_of_initialBound
+        (originalColourEqAsInvEq S H D.val) word hWord) = D := by
   let E : InvEq G (X a) := originalColourEqAsInvEq S H D.val
   let trans := originalReturnSortTransitivity S H
-  let T := Return.prefixTransport E trans word (.nil a) hWord
+  let hFinal := originalReturnFinalBound_of_initialBound E word hWord
+  let T := Return.prefixTransport E trans word (.nil a) hFinal
   have hTarget : T.target = E :=
-    Return.final_target E trans word hWord
+    Return.final_target E trans word hFinal
   apply Subtype.ext
   apply ColourEq.ext
   intro x y
