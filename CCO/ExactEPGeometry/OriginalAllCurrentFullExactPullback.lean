@@ -38,10 +38,10 @@ theorem originalExactAllCurrentFullExact_pullback
     (E : ExactEq A.source base)
     {p : B.Sorts}
     (D : let Q := originalExactAllCurrentQuotientCurrentSource
-      A B P transport base hOne E
+      A B P transport base hOne E;
       Q.Point p → Q.Point p → Prop)
     (hExact : let Q := originalExactAllCurrentQuotientCurrentSource
-      A B P transport base hOne E
+      A B P transport base hOne E;
       FullExact Q.source D) :
     let Q := originalExactAllCurrentQuotientCurrentSource
       A B P transport base hOne E
