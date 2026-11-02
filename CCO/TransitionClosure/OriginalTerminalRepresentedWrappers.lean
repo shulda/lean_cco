@@ -1,4 +1,5 @@
 import CCO.TransitionClosure.OriginalStrongExactPrime
+import CCO.TransitionClosure.TypedExactPCDomains
 import CCO.RealClosure.Bounds.TerminalNR2
 import CCO.TerminalLattice.FibreSAP
 
