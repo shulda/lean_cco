@@ -62,6 +62,8 @@ theorem originalRetainedProjectedGate_maximalParityComplement
       A B P transport tp base hBase E b.val K
         (original_retained_current_E_below_full_gate
           A B P transport tp hOne Kroot E hE b)
+    letI : PartialOrder (Kernel Q.source b.val) :=
+      kernelPartialOrder Q.source b.val
     ∃ (c : B.source.Atom b.val b.val)
       (d : Q.source.Atom b.val b.val),
       (∀ p q : Q.Point b.val,
@@ -81,6 +83,10 @@ theorem originalRetainedProjectedGate_maximalParityComplement
   let hBase : ∀ i : A.Sorts, base = i := fun i => hOne base i
   let Q := originalExactAllCurrentQuotientCurrentSource
     A B P transport base hBase E
+  letI : PartialOrder (Kernel Q.source b.val) :=
+    kernelPartialOrder Q.source b.val
+  letI : PartialOrder (Kernel B.source b.val) :=
+    kernelPartialOrder B.source b.val
   let e := originalExactCurrentKernelFamily
     A B P transport base hBase E b.val
   let K := Reached.kernel B.homogeneous
