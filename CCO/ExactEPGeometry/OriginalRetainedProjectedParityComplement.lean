@@ -64,6 +64,16 @@ theorem originalRetainedProjectedGate_parityComplement
           A B P transport tp hOne Kroot E hE b)
     ∃ (c : B.source.Atom b.val b.val)
       (d : Q.source.Atom b.val b.val),
+      (∀ x y : B.Point b.val,
+        B.source.atomRel c x y → (phase.atSort b).rel x y) ∧
+      (∀ a z : B.Point b.val,
+        OddWalk (Q.source.atomRel d)
+            (Quotient.mk'' a : Q.Point b.val)
+            (Quotient.mk'' z : Q.Point b.val) ↔
+          setoidBiSaturation
+            (originalExactCurrentKernelFamily
+              A B P transport base hBase E b.val)
+            (OddWalk (B.source.atomRel c)) a z) ∧
       (∀ p q : Q.Point b.val,
         Q.source.atomRel d p q → ¬ Kq.rel p q) ∧
       (∀ p q : Q.Point b.val,
@@ -104,7 +114,7 @@ theorem originalRetainedProjectedGate_parityComplement
     have hKAZ : K.rel a z := K.setoid.trans (hNested hau)
       (K.setoid.trans hKUV (hNested hvz))
     exact (Iff.of_eq (congrFun (congrFun hGatePull a) z)).mpr hKAZ
-  refine ⟨c,d,hAtomOutside,?_,hIndex⟩
+  refine ⟨c,d,hContained,(fun a z => (hProfiles a z).2.1),hAtomOutside,?_,hIndex⟩
   intro p q
   constructor
   · rintro ⟨hGate,hConn⟩
