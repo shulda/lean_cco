@@ -76,6 +76,7 @@ theorem original_named_raw_transport_has_named_expression
       rw [← hF]
       change T.target a b ↔ K.val a b
       rw [hEqTarget]
+      exact Iff.rfl
     cases hFName
     refine ⟨.ident K, ?_⟩
     intro a b hab
@@ -107,6 +108,7 @@ theorem original_named_raw_transport_has_named_expression
       intro a b
       change Td.target a b ↔ F.val a b
       rw [hTransport,hTargetInvEq]
+      exact Iff.rfl
     cases hTargetName
     refine ⟨.transition d (.ident K), ?_⟩
     intro x y hxy
