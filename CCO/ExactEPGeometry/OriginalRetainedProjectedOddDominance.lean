@@ -57,6 +57,8 @@ theorem originalRetainedProjectedOdd_dominatesStrictGate
       A B P transport tp base hBase E b.val K
         (original_retained_current_E_below_full_gate
           A B P transport tp hOne Kroot E hE b)
+    letI : PartialOrder (Kernel Q.source b.val) :=
+      kernelPartialOrder Q.source b.val
     ∀ (Z : Kernel Q.source b.val), Kq < Z →
       ∀ a z : B.Point b.val,
         (phase.atSort b).rel a z →
@@ -66,6 +68,10 @@ theorem originalRetainedProjectedOdd_dominatesStrictGate
   let hBase : ∀ i : A.Sorts, base = i := fun i => hOne base i
   let Q := originalExactAllCurrentQuotientCurrentSource
     A B P transport base hBase E
+  letI : PartialOrder (Kernel Q.source b.val) :=
+    kernelPartialOrder Q.source b.val
+  letI : PartialOrder (Kernel B.source b.val) :=
+    kernelPartialOrder B.source b.val
   let K := Reached.kernel B.homogeneous
     (exactCalculus_of_homogeneous_CCO
       B.source B.homogeneous B.cco) b
