@@ -80,8 +80,10 @@ theorem OriginalOldUnaryWord.normal_relation
             (originalTransportTargetColourEq S H N.val.2.val.1 T) =
               T.target :=
         (originalFullColourEqInvEqOrderIso S H).apply_symm_apply T.target
-      have U' : Transport T.target Q.val.val := by
+      have hT : T.target = originalColourEqAsInvEq S H F := by
         rw [← hIso, hTarget]
+      have U' : Transport T.target Q.val.val := by
+        rw [hT]
         exact U
       let N' := originalCanonicalUnaryNormalDatum_after_transition S H N Q U'
       let T' := originalCanonicalRawTransitionDatum_transport S H N'.val.2
@@ -93,11 +95,10 @@ theorem OriginalOldUnaryWord.normal_relation
       have hUTarget : U'.target = U.target := by
         apply InvEq.ext
         intro z z'
-        rw [U'.target_iff, U.target_iff]
-        simp only [← hIso, hTarget]
+        rw [U'.target_iff, U.target_iff, hT]
       have hNewTarget :
           originalTransportTargetColourEq S H N'.val.2.val.1 T' =
-            F := by
+            originalTransportTargetColourEq S H F U := by
         apply ColourEq.ext
         intro z z'
         change T'.target z z' ↔ U.target z z'
