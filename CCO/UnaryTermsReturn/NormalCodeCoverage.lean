@@ -57,6 +57,9 @@ theorem original_real_named_term_value_has_normal_code
     originalCanonicalUnaryNormalDatum_real_edge S H N x y hxy
   have hWord :=
     hEdge x y hxy
+  change OriginalNamedRawUnaryTerm.eval S H sap nr2 w
+      (Quotient.mk D.val.val x) =
+        Quotient.mk F.val.val y at hWord
   refine ⟨⟨j,N⟩, ?_⟩
   change
     (⟨j,⟨originalTransportTargetColourEq S H N.val.2.val.1 T,
