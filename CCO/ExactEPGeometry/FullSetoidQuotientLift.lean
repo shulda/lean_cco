@@ -96,7 +96,9 @@ theorem fullSetoidProjection_comap_inverse
   · intro hqr
     obtain ⟨x,hx⟩ := onto q
     obtain ⟨y,hy⟩ := onto r
-    exact ⟨x,y,hx,hy,(by simpa only [hx,hy] using hqr)⟩
+    refine ⟨x,y,hx,hy,?_⟩
+    change F (pi x) (pi y)
+    simpa only [hx,hy] using hqr
 
 /-- Projected FULL equivalences preserve inclusion, provided both
 really contain the fibre kernel. No RAW exactness enters. -/
