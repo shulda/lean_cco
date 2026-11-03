@@ -163,6 +163,16 @@ theorem unary_closed_finite_subtype_closure_bound
     (hBound : (unaryClosureValues action x.val).ncard ≤ m) :
     (unaryClosureValues
       (unaryClosedSubtypeAction action C hClosed) x).ncard ≤ m := by
+  have hFiniteSub :
+      (unaryClosureValues
+        (unaryClosedSubtypeAction action C hClosed) x).Finite :=
+    Set.finite_univ.subset (Set.subset_univ _)
+  have hTargetFinite :
+      (unaryClosureValues action x.val).Finite := by
+    rw [← unary_closed_subtype_closure_image action C hClosed x]
+    exact hFiniteSub.image Subtype.val
+  letI : Finite ↥(unaryClosureValues action x.val) :=
+    hTargetFinite.to_subtype
   have hCard :
       (unaryClosureValues
         (unaryClosedSubtypeAction action C hClosed) x).ncard ≤
