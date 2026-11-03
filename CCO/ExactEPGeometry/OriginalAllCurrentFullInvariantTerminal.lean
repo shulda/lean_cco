@@ -60,8 +60,8 @@ theorem originalAllCurrentFullInvariantPullback_strict
     A B P transport base hOne E V
   have hLE : EU ≤ EV := by
     intro x y h
-    change U (π x) (π y) at h
-    change V (π x) (π y)
+    change U.val.r (π x) (π y) at h
+    change V.val.r (π x) (π y)
     exact hUV.le h
   have hNE : EU ≠ EV := by
     intro heq
@@ -70,10 +70,10 @@ theorem originalAllCurrentFullInvariantPullback_strict
       obtain ⟨x,hx⟩ := Quotient.mk''_surjective q
       obtain ⟨y,hy⟩ := Quotient.mk''_surjective r
       have hv : EV x y := by
-        change V (π x) (π y)
+        change V.val.r (π x) (π y)
         simpa only [hx,hy] using h
       rw [← heq] at hv
-      have hu : U (π x) (π y) := hv
+      have hu : U.val.r (π x) (π y) := hv
       simpa only [hx,hy] using hu
     exact hUV.ne (le_antisymm hUV.le hVU)
   exact lt_of_le_of_ne hLE hNE
@@ -107,11 +107,13 @@ theorem originalAllCurrentQuotient_terminal
     originalAllCurrentFullInvariantPullback_strict
       A B P transport base hOne E U V hUV
   letI : Finite (RelativeClass U.val V.val (π x)) := by
-    simpa only [hx] using hFinite
+    change Finite (RelativeClass U.val V.val ((Quotient.mk'' x) : Q.Point p))
+    rw [hx]
+    exact hFinite
   have hEu : ∀ a b : B.Point p,
-      EU a b ↔ U (π a) (π b) := fun _ _ => Iff.rfl
+      EU.val.r a b ↔ U.val.r (π a) (π b) := fun _ _ => Iff.rfl
   have hEv : ∀ a b : B.Point p,
-      EV a b ↔ V (π a) (π b) := fun _ _ => Iff.rfl
+      EV.val.r a b ↔ V.val.r (π a) (π b) := fun _ _ => Iff.rfl
   let e := relativeClassEquiv_of_surjective_pullback
     π Quotient.mk''_surjective EU.val EV.val
       U.val V.val hEu hEv x
