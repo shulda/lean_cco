@@ -147,4 +147,36 @@ theorem unary_closed_subtype_closure_image
       (unaryClosedSubtypeAction action C hClosed) x w, ⟨w,rfl⟩, ?_⟩
     exact unary_closed_subtype_eval action C hClosed x w
 
+
+/-- The actual one-generator closure of a FINITE completed
+unary-closed induced member has at most as many points as
+its ambient term-value closure. In particular, an established
+ambient `m_typ` bound transfers without adding fictitious
+real representatives to an orphan quotient member. This
+uses the genuine restricted ambient unary action above. -/
+theorem unary_closed_finite_subtype_closure_bound
+    {U : Type u} {A : Type v}
+    (action : U → A → A) (C : Set A)
+    [Finite C]
+    (hClosed : ∀ f : U, ∀ y : A, y ∈ C → action f y ∈ C)
+    (x : C) (m : ℕ)
+    (hBound : (unaryClosureValues action x.val).ncard ≤ m) :
+    (unaryClosureValues
+      (unaryClosedSubtypeAction action C hClosed) x).ncard ≤ m := by
+  have hCard :
+      (unaryClosureValues
+        (unaryClosedSubtypeAction action C hClosed) x).ncard ≤
+      (unaryClosureValues action x.val).ncard := by
+    apply Set.ncard_le_ncard_of_injOn
+      (s := unaryClosureValues
+        (unaryClosedSubtypeAction action C hClosed) x)
+      (t := unaryClosureValues action x.val)
+      (fun y : C => y.val)
+    · intro y hy
+      rw [← unary_closed_subtype_closure_image action C hClosed x]
+      exact ⟨y, hy, rfl⟩
+    · intro y _ z _ heq
+      exact Subtype.ext heq
+  exact hCard.trans hBound
+
 end CCO.UnaryTermsReturn
