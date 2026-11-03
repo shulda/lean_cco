@@ -120,6 +120,41 @@ theorem originalRetainedArbitraryMarkedTriangleAge
     A B P transport tp hOne Kroot E hE (anchor o)
   let chi := originalRetainedSelectedOccupancyCharacter
     A B P transport tp hOne Kroot phase E hE
+  change ∀ (n : Nat) (owners : Fin n → Occ)
+      (rel : ∀ i j : Fin n,
+        Q.Point (Quotient.mk'' (anchor (owners i)).val) →
+        Q.Point (Quotient.mk'' (anchor (owners j)).val) → Prop)
+      (bits : Fin n → ZMod 2),
+      (∀ i j : Fin n, ∃ x y,
+        rel i j = GroupActions.orbital (G := B.G) x y) →
+      (∀ i j : Fin n, ∀ x y, rel i j x y ↔ rel j i y x) →
+      (∀ i : Fin n, ∀ x y, rel i i x y ↔ x = y) →
+      (∀ i j : Fin n, i ≠ j → ∀ x y, rel i j x y →
+        (⟨(Quotient.mk'' (anchor (owners i)).val : Q.Sorts),x⟩ :
+          Sigma Q.Point) ≠
+        (⟨(Quotient.mk'' (anchor (owners j)).val : Q.Sorts),y⟩ :
+          Sigma Q.Point)) →
+      (∀ i j k : Fin n, ∃ x y z,
+        rel i j x y ∧ rel i k x z ∧ rel j k y z) →
+      (∀ i j : Fin n, ∀ x y, rel i j x y →
+        originalSelectedCompleteAtomicMask Q
+          (K (owners i)) (K (owners j))
+          (fun (R : owners i ⟶ owners j) => chi.value R)
+          (Q.source.colour x y) (bits i) (bits j)) →
+      ∃ point : ∀ i : Fin n,
+          Q.Point (Quotient.mk'' (anchor (owners i)).val),
+        (∀ i j : Fin n, rel i j (point i) (point j)) ∧
+        let old : Fin n → Sigma B.Point := fun i =>
+          ⟨(anchor (owners i)).val,
+            originalSelectedReachedEclassRepresentative
+              A B P transport hOne Kroot E
+                (anchor (owners i)) (point i)⟩
+        ∃ f : Fin n ↪ phase.MarkedLimit B.cco,
+          (∀ i, (phase.markedCoding B.cco).table.owner (f i) =
+            APCharacter.Age.ownerEquiv B.source ((old i).1,bits i)) ∧
+          ∀ i j, (phase.markedCoding B.cco).table.colour (f i) (f j) =
+            APCharacter.Age.colourEquiv B.source
+              (taggedColour B.source (old i) (old j))
   intro n owners rel bits hActual hReverse hDiagonal hSeparate hTriangles hMasks
   let D : ActualOrbitalDiagram B.G Q.Point (Fin n) := {
     sort := sort owners
