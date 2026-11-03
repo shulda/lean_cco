@@ -159,6 +159,13 @@ theorem original_completed_real_generated_values_uniform
     {i : ι} (x : X i) :
     (originalCompletedRealGeneratedValues S H sap nr2 x).ncard ≤
       originalSourceUniformNormalCodeBudget S H := by
+  have hTargetFinite :
+      (originalRealOneGeneratedNamedValues S H sap nr2 x).Finite := by
+    unfold originalRealOneGeneratedNamedValues
+    exact (Set.finite_singleton _).union
+      ((original_real_named_term_values_finite S H sap nr2 x).image Sum.inr)
+  letI : Finite ↥(originalRealOneGeneratedNamedValues
+      S H sap nr2 x) := hTargetFinite.to_subtype
   have hSmall :
       (originalCompletedRealGeneratedValues S H sap nr2 x).ncard ≤
       (originalRealOneGeneratedNamedValues S H sap nr2 x).ncard := by
@@ -191,6 +198,13 @@ theorem original_completed_hidden_generated_values_uniform
     (q : Quotient D.val.val) :
     (originalCompletedHiddenGeneratedValues S H sap nr2 D q).ncard ≤
       originalSourceUniformNormalCodeBudget S H := by
+  have hTargetFinite :
+      (originalHiddenOneGeneratedNamedValues S H sap nr2 D q).Finite := by
+    unfold originalHiddenOneGeneratedNamedValues
+    exact (original_hidden_named_term_values_finite
+      S H sap nr2 D q).image Sum.inr
+  letI : Finite ↥(originalHiddenOneGeneratedNamedValues
+      S H sap nr2 D q) := hTargetFinite.to_subtype
   have hSmall :
       (originalCompletedHiddenGeneratedValues S H sap nr2 D q).ncard ≤
       (originalHiddenOneGeneratedNamedValues S H sap nr2 D q).ncard := by
