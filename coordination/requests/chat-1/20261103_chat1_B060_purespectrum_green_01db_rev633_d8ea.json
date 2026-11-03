@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "request_id": "20261103_chat1_B060_purespectrum_green_01db_rev633_d8ea",
+  "actor_id": "chat-1",
+  "project_id": 4,
+  "policy_revision": 14,
+  "operation": "event",
+  "expected_revision": 633,
+  "event": "checkpoint",
+  "data": {
+    "package_id": "B060",
+    "head_sha": "01dbbe328a7711c88eaaede54c7cf6813d9ab419",
+    "pr_number": 72,
+    "observed_ci": {
+      "run_id": 41626337462,
+      "head_sha": "01dbbe328a7711c88eaaede54c7cf6813d9ab419",
+      "conclusion": "success",
+      "axiom_audit": "allowlist"
+    }
+  }
+}
