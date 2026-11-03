@@ -69,9 +69,13 @@ theorem originalExactSelectedQuotient_arbitraryTriangleAge
   have hSurj : ∀ c : Occ, Function.Surjective (pi c) := by
     intro c
     exact Quotient.mk''_surjective
-  have hEquiv : ∀ (c : Occ) (g : B.G) (x : B.Point (f c)),
-      pi c (g • x) = g • pi c x := by
-    intro c g x
+  have hEquiv : ∀ (c : Occ),
+      letI : MulAction B.G (Q.Point c) := Q.action c
+      ∀ (g : B.G) (x : B.Point (f c)),
+        pi c (g • x) = g • pi c x := by
+    intro c
+    letI : MulAction B.G (Q.Point c) := Q.action c
+    intro g x
     rfl
   have hKer : ∀ c : Occ,
       GroupActions.kernel (pi c) =
