@@ -59,10 +59,10 @@ def ownerChildTag
     (i : ι) (q : X i) : UnarySource.β (completion := P.completion_property (CloneSAP.CCO.cco_forward S cco)) I i :=
   UnarySource.tag (completion := P.completion_property (CloneSAP.CCO.cco_forward S cco)) I i (q,0)
 
+include ap in
 /-- In the actual homogeneous marked limit, child tags are independent
 of the clone index. This uses the TRUE global masks inherited from its
 finite marked age and the proved reachable-gate clone saturation. -/
-include ap in
 theorem marked_child_tag_fibre
     (I : CloneMarkedIdentification S H C P cco)
     (i : ι) (q : X i) (n : ℕ) :
@@ -77,11 +77,11 @@ abbrev OwnerChild
     (c : APCharacter.Rank.Child (UnarySource.β (completion := P.completion_property (CloneSAP.CCO.cco_forward S cco)) I)) :=
   {q : X c.1 // ownerChildTag S H C P cco I c.1 q = c.2}
 
+include ap in
 /-- The literal marked-limit child carrier is the owner child
 times the unchanged infinite clone index. This is a concrete
 bijection of the REAL successor's points, not a conditional
 claim that arbitrary unary splits preserve clone fibres. -/
-include ap in
 noncomputable def marked_child_equiv
     (I : CloneMarkedIdentification S H C P cco)
     (c : APCharacter.Rank.Child (UnarySource.β (completion := P.completion_property (CloneSAP.CCO.cco_forward S cco)) I)) :
@@ -104,9 +104,9 @@ noncomputable def marked_child_equiv
       rfl
     · rfl
 
+include ap in
 /-- Every owner-side child sort of the ACTUAL homogeneous marked
 successor is inhabited, derived from its actual singleton chart. -/
-include ap in
 theorem owner_child_nonempty
     (I : CloneMarkedIdentification S H C P cco)
     (c : APCharacter.Rank.Child (UnarySource.β (completion := P.completion_property (CloneSAP.CCO.cco_forward S cco)) I)) :
@@ -114,16 +114,16 @@ theorem owner_child_nonempty
   obtain ⟨x⟩ := UnarySource.inhabited (completion := P.completion_property (CloneSAP.CCO.cco_forward S cco)) I c
   exact ⟨(marked_child_equiv S H ap C P cco I c x).1⟩
 
+include ap in
 /-- The actual finite atomic owner-side reduct of the marked successor
 has all its colours realized, rather than invented empty child sorts. -/
-include ap in
 noncomputable def owner_child_source
     (I : CloneMarkedIdentification S H C P cco) :
     AtomicSource (APCharacter.Rank.Child (UnarySource.β (completion := P.completion_property (CloneSAP.CCO.cco_forward S cco)) I))
       (OwnerChild S H C P cco I) := by
-  letI : ∀ i : ι, Fintype (UnarySource.β (completion := P.completion_property (CloneSAP.CCO.cco_forward S cco)) I i) := by
-    intro i
-    infer_instance
+  classical
+  letI : ∀ i : ι, Fintype (UnarySource.β (completion := P.completion_property (CloneSAP.CCO.cco_forward S cco)) I i) :=
+    fun i => UnarySource.betaFintype (completion := P.completion_property (CloneSAP.CCO.cco_forward S cco)) I i
   exact APCharacter.Rank.source S (UnarySource.β (completion := P.completion_property (CloneSAP.CCO.cco_forward S cco)) I)
     (ownerChildTag S H C P cco I)
     (owner_child_nonempty S H ap C P cco I)
@@ -139,12 +139,17 @@ theorem marked_child_original_colour
     (y : APCharacter.Rank.Point (UnarySource.β (completion := P.completion_property (CloneSAP.CCO.cco_forward S cco)) I) (UnarySource.tag (completion := P.completion_property (CloneSAP.CCO.cco_forward S cco)) I) b) :
     (((UnarySource.source (completion := P.completion_property (CloneSAP.CCO.cco_forward S cco)) I).colour x y).map Subtype.val).bind
         (CloneSAP.eraseAtom S) = S.colour x.val.1 y.val.1 := by
+  change ((APCharacter.Rank.colour (CloneSAP.source S)
+    (UnarySource.β (completion := P.completion_property (CloneSAP.CCO.cco_forward S cco)) I)
+    (UnarySource.tag (completion := P.completion_property (CloneSAP.CCO.cco_forward S cco)) I)
+    x y).map Subtype.val).bind (CloneSAP.eraseAtom S) =
+      S.colour x.val.1 y.val.1
   rw [APCharacter.Rank.colour_map]
   exact CloneSAP.colour_erase S x.val y.val
 
+include ap in
 /-- A concrete source identification and the genuine child-carrier
 product equivalences, together in ONE actual source instance. -/
-include ap in
 theorem actual_marked_clone_child_products
     [∀ i, Countable (X i)] :
     ∃ I : CloneMarkedIdentification S H C P cco,
