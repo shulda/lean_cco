@@ -119,7 +119,7 @@ theorem pure_clone_all_MI_diversity_meet
         ((p,0) : CloneSAP.Carrier X i) (p,1) =
           some (Sum.inr ⟨rfl⟩) := by
       apply (CloneSAP.source_clone_iff S (p,0) (p,1)).mpr
-      exact ⟨rfl, by decide⟩
+      exact ⟨rfl, by change (0 : ℕ) ≠ 1; decide⟩
     exact ⟨(p,0),(p,1),hJ,hc⟩
 
 end CCO.CloneTupleGeometry
