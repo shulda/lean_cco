@@ -56,34 +56,36 @@ evaluated at a literal clone indexed zero, and its independence from
 the clone index is proved below. -/
 def ownerChildTag
     (I : CloneMarkedIdentification S H C P cco)
-    (i : ι) (q : X i) : UnarySource.β I i :=
-  UnarySource.tag I i (q,0)
+    (i : ι) (q : X i) : UnarySource.β (completion := P.completion_property (CloneSAP.CCO.cco_forward S cco)) I i :=
+  UnarySource.tag (completion := P.completion_property (CloneSAP.CCO.cco_forward S cco)) I i (q,0)
 
 /-- In the actual homogeneous marked limit, child tags are independent
 of the clone index. This uses the TRUE global masks inherited from its
 finite marked age and the proved reachable-gate clone saturation. -/
+include ap in
 theorem marked_child_tag_fibre
     (I : CloneMarkedIdentification S H C P cco)
     (i : ι) (q : X i) (n : ℕ) :
-    UnarySource.tag I i (q,n) = ownerChildTag S H C P cco I i q := by
+    UnarySource.tag (completion := P.completion_property (CloneSAP.CCO.cco_forward S cco)) I i (q,n) = ownerChildTag S H C P cco I i q := by
   apply Subtype.ext
   exact pure_clone_character_marking_fibre_const S H ap C P
-    (UnarySource.mark I) (UnarySource.global_marking I) i q n 0
+    (UnarySource.mark (completion := P.completion_property (CloneSAP.CCO.cco_forward S cco)) I) (UnarySource.global_marking (completion := P.completion_property (CloneSAP.CCO.cco_forward S cco)) I) i q n 0
 
 /-- Owner part of the REAL source's actual child type. -/
 abbrev OwnerChild
     (I : CloneMarkedIdentification S H C P cco)
-    (c : APCharacter.Rank.Child (UnarySource.β I)) :=
+    (c : APCharacter.Rank.Child (UnarySource.β (completion := P.completion_property (CloneSAP.CCO.cco_forward S cco)) I)) :=
   {q : X c.1 // ownerChildTag S H C P cco I c.1 q = c.2}
 
 /-- The literal marked-limit child carrier is the owner child
 times the unchanged infinite clone index. This is a concrete
 bijection of the REAL successor's points, not a conditional
 claim that arbitrary unary splits preserve clone fibres. -/
+include ap in
 noncomputable def marked_child_equiv
     (I : CloneMarkedIdentification S H C P cco)
-    (c : APCharacter.Rank.Child (UnarySource.β I)) :
-    APCharacter.Rank.Point (UnarySource.β I) (UnarySource.tag I) c ≃
+    (c : APCharacter.Rank.Child (UnarySource.β (completion := P.completion_property (CloneSAP.CCO.cco_forward S cco)) I)) :
+    APCharacter.Rank.Point (UnarySource.β (completion := P.completion_property (CloneSAP.CCO.cco_forward S cco)) I) (UnarySource.tag (completion := P.completion_property (CloneSAP.CCO.cco_forward S cco)) I) c ≃
       OwnerChild S H C P cco I c × ℕ where
   toFun x :=
     (⟨x.val.1, (marked_child_tag_fibre S H ap C P cco I c.1 x.val.1 x.val.2).symm.trans
@@ -104,23 +106,25 @@ noncomputable def marked_child_equiv
 
 /-- Every owner-side child sort of the ACTUAL homogeneous marked
 successor is inhabited, derived from its actual singleton chart. -/
+include ap in
 theorem owner_child_nonempty
     (I : CloneMarkedIdentification S H C P cco)
-    (c : APCharacter.Rank.Child (UnarySource.β I)) :
+    (c : APCharacter.Rank.Child (UnarySource.β (completion := P.completion_property (CloneSAP.CCO.cco_forward S cco)) I)) :
     Nonempty (OwnerChild S H C P cco I c) := by
-  obtain ⟨x⟩ := UnarySource.inhabited I c
+  obtain ⟨x⟩ := UnarySource.inhabited (completion := P.completion_property (CloneSAP.CCO.cco_forward S cco)) I c
   exact ⟨(marked_child_equiv S H ap C P cco I c x).1⟩
 
 /-- The actual finite atomic owner-side reduct of the marked successor
 has all its colours realized, rather than invented empty child sorts. -/
+include ap in
 noncomputable def owner_child_source
     (I : CloneMarkedIdentification S H C P cco) :
-    AtomicSource (APCharacter.Rank.Child (UnarySource.β I))
+    AtomicSource (APCharacter.Rank.Child (UnarySource.β (completion := P.completion_property (CloneSAP.CCO.cco_forward S cco)) I))
       (OwnerChild S H C P cco I) := by
-  letI : ∀ i : ι, Fintype (UnarySource.β I i) := by
+  letI : ∀ i : ι, Fintype (UnarySource.β (completion := P.completion_property (CloneSAP.CCO.cco_forward S cco)) I i) := by
     intro i
     infer_instance
-  exact APCharacter.Rank.source S (UnarySource.β I)
+  exact APCharacter.Rank.source S (UnarySource.β (completion := P.completion_property (CloneSAP.CCO.cco_forward S cco)) I)
     (ownerChildTag S H C P cco I)
     (owner_child_nonempty S H ap C P cco I)
 
@@ -130,22 +134,23 @@ the child-colour subtype and erase the pure-clone marker.
 This includes mixed named sorts and real diagonal equality. -/
 theorem marked_child_original_colour
     (I : CloneMarkedIdentification S H C P cco)
-    {a b : APCharacter.Rank.Child (UnarySource.β I)}
-    (x : APCharacter.Rank.Point (UnarySource.β I) (UnarySource.tag I) a)
-    (y : APCharacter.Rank.Point (UnarySource.β I) (UnarySource.tag I) b) :
-    (((UnarySource.source I).colour x y).map Subtype.val).bind
+    {a b : APCharacter.Rank.Child (UnarySource.β (completion := P.completion_property (CloneSAP.CCO.cco_forward S cco)) I)}
+    (x : APCharacter.Rank.Point (UnarySource.β (completion := P.completion_property (CloneSAP.CCO.cco_forward S cco)) I) (UnarySource.tag (completion := P.completion_property (CloneSAP.CCO.cco_forward S cco)) I) a)
+    (y : APCharacter.Rank.Point (UnarySource.β (completion := P.completion_property (CloneSAP.CCO.cco_forward S cco)) I) (UnarySource.tag (completion := P.completion_property (CloneSAP.CCO.cco_forward S cco)) I) b) :
+    (((UnarySource.source (completion := P.completion_property (CloneSAP.CCO.cco_forward S cco)) I).colour x y).map Subtype.val).bind
         (CloneSAP.eraseAtom S) = S.colour x.val.1 y.val.1 := by
   rw [APCharacter.Rank.colour_map]
   exact CloneSAP.colour_erase S x.val y.val
 
 /-- A concrete source identification and the genuine child-carrier
 product equivalences, together in ONE actual source instance. -/
+include ap in
 theorem actual_marked_clone_child_products
     [∀ i, Countable (X i)] :
     ∃ I : CloneMarkedIdentification S H C P cco,
-      ∀ c : APCharacter.Rank.Child (UnarySource.β I),
-        Nonempty (APCharacter.Rank.Point (UnarySource.β I)
-          (UnarySource.tag I) c ≃ OwnerChild S H C P cco I c × ℕ) := by
+      ∀ c : APCharacter.Rank.Child (UnarySource.β (completion := P.completion_property (CloneSAP.CCO.cco_forward S cco)) I),
+        Nonempty (APCharacter.Rank.Point (UnarySource.β (completion := P.completion_property (CloneSAP.CCO.cco_forward S cco)) I)
+          (UnarySource.tag (completion := P.completion_property (CloneSAP.CCO.cco_forward S cco)) I) c ≃ OwnerChild S H C P cco I c × ℕ) := by
   let I := actualCloneIdentification S H C P cco
   exact ⟨I,fun c => ⟨marked_child_equiv S H ap C P cco I c⟩⟩
 
