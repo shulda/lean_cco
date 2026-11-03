@@ -98,7 +98,10 @@ theorem originalSelectedFiniteMixedMarkedOldAge_names
     by_cases hi : Nonempty (Bridge B.source Kroot (old i).1)
     · by_cases hj : Nonempty (Bridge B.source Kroot (old j).1)
       · have h := hMark.2 (old i) (old j)
-        simpa only [hActive i hi,hActive j hj] using h
+        have ha : mark (old i) = bits i := hActive i hi
+        have hb : mark (old j) = bits j := hActive j hj
+        rw [ha,hb] at h
+        exact h
       · exact phase.inactive_masks_full
           (bits i) (bits j) (hValid i) (hValid j)
           (Or.inr hj) (B.source.colour (old i).2 (old j).2)
