@@ -56,7 +56,9 @@ noncomputable def relativeClassEquiv_of_surjective_pullback
         apply Quotient.sound
         change (Quotient.mk _ (lift x) : RelativeClass U V (pi a)) =
           Quotient.mk _ (lift y) at hqr
-        have h : U (pi x.val) (pi y.val) := Quotient.exact hqr
+        have h : (Setoid.comap (fun z : {b : B // V (pi a) b} => z.val) U)
+            (lift x) (lift y) := Quotient.exact hqr
+        change U (pi x.val) (pi y.val) at h
         exact (hE x.val y.val).mpr h
   have hSurjective : Function.Surjective f := by
     intro q
