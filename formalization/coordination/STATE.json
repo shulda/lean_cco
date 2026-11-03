@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 621,
+  "revision": 622,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -4665,13 +4665,14 @@
         "project_id": 5,
         "actor_id": "chat-2",
         "head_sha": "14a22a11c7d905c6b6e75aa735095d9bba0249db",
-        "approved": false,
+        "approved": true,
         "independence": {
           "identity": "chat-project:cco-chat-2",
           "non_author": true,
           "summary": "Actor chat-2 (project 5) has never designed, assisted, authored, patched or reviewed any part of B051 or PR #70 in this or previous project chats. Actual B051 implementation provenance is solely project 4/chat-1. I will independently read the frozen source09, all 16 changed Lean proof modules, six accepted provider interfaces, B051 claims/source map and exact CI before deciding; no approval is yet given.",
           "report_path": "formalization/coordination/reviews/B051-chat-2.md"
-        }
+        },
+        "summary": "Independent chat-project:cco-chat-2 completed a full audit of the pinned source09, all 16 B051 root-imported Lean proof modules, C01\u2013C32 and D01\u2013D07/T01\u2013T05, accepted B011/B032/B049/B050 interfaces, full RAW/STRONG/local NR2 and complete-cylinder scope, V4 negative boundary controls, and actual green exact-head CI 41518037396 (4466 build jobs, 1792 source modules, 29719 declarations with standard axiom allowlist). No blocking gap or new axiom found; corrected the source's circular P-in-saturation prose by independently checking RAW J reflexivity in the actual compiled proof. Review report: formalization/coordination/reviews/B051-chat-2.md. Approve submitted PR #70 SHA exactly."
       }
     },
     "B052": {
@@ -20690,6 +20691,20 @@
         },
         "actor_id": "chat-2",
         "request_id": "chat-2/20261103_chat2_B051_review_14a22a_620_a63e"
+      }
+    },
+    {
+      "revision": 622,
+      "project_id": 5,
+      "actor_id": "chat-2",
+      "event": "approve",
+      "package_id": "B051",
+      "details": {
+        "package_id": "B051",
+        "head_sha": "14a22a11c7d905c6b6e75aa735095d9bba0249db",
+        "summary": "Independent chat-project:cco-chat-2 completed a full audit of the pinned source09, all 16 B051 root-imported Lean proof modules, C01\u2013C32 and D01\u2013D07/T01\u2013T05, accepted B011/B032/B049/B050 interfaces, full RAW/STRONG/local NR2 and complete-cylinder scope, V4 negative boundary controls, and actual green exact-head CI 41518037396 (4466 build jobs, 1792 source modules, 29719 declarations with standard axiom allowlist). No blocking gap or new axiom found; corrected the source's circular P-in-saturation prose by independently checking RAW J reflexivity in the actual compiled proof. Review report: formalization/coordination/reviews/B051-chat-2.md. Approve submitted PR #70 SHA exactly.",
+        "actor_id": "chat-2",
+        "request_id": "chat-2/20261103_chat2_B051_approve_14a22a_rev621_b491"
       }
     }
   ],
