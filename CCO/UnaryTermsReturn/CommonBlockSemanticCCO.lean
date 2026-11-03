@@ -29,19 +29,22 @@ theorem commonBlockEqReader_value
     {i j : Bool} (x : CommonBlockReal i)
     (y : CommonBlockReal j) (a : Bool)
     (ha : commonBlockOriginalAtomicSource.colour x y = some a) :
-    (x.1 = y.1 ↔ commonBlockEqReader a = true) := by
+    (x.1 = y.1 ↔ a = true) := by
   change commonBlockOldColour i j x y = some a at ha
-  unfold commonBlockOldColour at ha
-  split_ifs at ha with hTag
-  · cases ha
-  · have hDecide : decide (x.1 = y.1) = a :=
-      Option.some.inj ha
-    change x.1 = y.1 ↔ a = true
-    constructor
-    · intro hxy
-      exact hDecide.symm.trans (decide_eq_true_eq.mpr hxy)
-    · intro hTrue
-      exact decide_eq_true_eq.mp (hDecide.trans hTrue)
+  have hTaggedNe : (⟨i,x⟩ : Sigma CommonBlockReal) ≠ ⟨j,y⟩ := by
+    intro hTagged
+    have hn : commonBlockOldColour i j x y = none := by
+      simp only [commonBlockOldColour, if_pos hTagged]
+    rw [hn] at ha
+    cases ha
+  have hDecide : decide (x.1 = y.1) = a := by
+    simpa only [commonBlockOldColour, if_neg hTaggedNe,
+      Option.some.injEq] using ha
+  constructor
+  · intro hxy
+    exact hDecide.symm.trans (decide_eq_true_eq.mpr hxy)
+  · intro hTrue
+    exact decide_eq_true_eq.mp (hDecide.trans hTrue)
 
 /-- True original CCO for the concrete two-sorted common-block
 atomic source. Every finite partial diagram whose actual specified
@@ -77,7 +80,7 @@ theorem commonBlockOriginalSemanticCCO :
   }⟩
   intro x y hxy a ha
   have hRead : label x = label y ↔ a = true := by
-    simpa only [commonBlockEqReader] using hLabel x y hxy a ha
+    exact hLabel x y hxy a ha
   have hBool : decide (label x = label y) = a := by
     cases a with
     | false =>
@@ -99,7 +102,8 @@ theorem commonBlockOriginalSemanticCCO :
   change commonBlockOldColour
     (D.vertexSort x) (D.vertexSort y)
     (label x,code x) (label y,code y) = some a
-  simpa only [commonBlockOldColour, if_neg hTaggedNe,
-    Option.some.injEq] using hBool
+  unfold commonBlockOldColour
+  rw [if_neg hTaggedNe]
+  exact congrArg Option.some hBool
 
 end CCO.UnaryTermsReturn
