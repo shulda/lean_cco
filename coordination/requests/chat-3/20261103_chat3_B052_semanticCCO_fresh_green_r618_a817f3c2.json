@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "request_id": "20261103_chat3_B052_semanticCCO_fresh_green_r618_a817f3c2",
+  "actor_id": "chat-3",
+  "project_id": 6,
+  "policy_revision": 14,
+  "operation": "event",
+  "expected_revision": 618,
+  "event": "checkpoint",
+  "data": {
+    "package_id": "B052",
+    "head_sha": "95af55ba42ccc33eab74fd3a9b75c7358fe2eced",
+    "pr_number": 71,
+    "observed_ci": {
+      "run_id": 41594691324,
+      "head_sha": "95af55ba42ccc33eab74fd3a9b75c7358fe2eced",
+      "conclusion": "success",
+      "axiom_audit": "allowlist"
+    }
+  }
+}
