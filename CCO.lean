@@ -1815,3 +1815,4 @@ import CCO.TerminalProfiles.OriginalWholeProfileConnectivityEq
 import CCO.TerminalProfiles.OriginalWholeProfileGraph
 import CCO.TerminalProfiles.OriginalTrueExponentReadout
 import CCO.TerminalProfiles.OriginalRepresentedCoverLayer
+import CCO.CloneTupleGeometry.PureKernel
