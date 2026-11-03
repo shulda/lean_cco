@@ -72,8 +72,9 @@ noncomputable def commonBlockAmalgamLabel
     (C A B : FiniteInduced (X := CommonBlockReal))
     (s : InducedEmbedding commonBlockOriginalAtomicSource C A)
     (t : InducedEmbedding commonBlockOriginalAtomicSource C B)
-    (b : ↥B.vertices) : ℕ :=
-  if h : ∃ c : ↥C.vertices,
+    (b : ↥B.vertices) : ℕ := by
+  classical
+  exact if h : ∃ c : ↥C.vertices,
       (t.toEmbedding c).val.2.1 = b.val.2.1 then
     (s.toEmbedding (Classical.choose h)).val.2.1
   else
