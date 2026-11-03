@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "request_id": "20261103_chat1_B060_diagonal_and_phase_green_a2f22_rev636_c987",
+  "actor_id": "chat-1",
+  "project_id": 4,
+  "policy_revision": 14,
+  "operation": "event",
+  "expected_revision": 636,
+  "event": "checkpoint",
+  "data": {
+    "package_id": "B060",
+    "head_sha": "a2f22a0e36e16b9eead15873a94914d90f7d15c2",
+    "pr_number": 72,
+    "observed_ci": {
+      "run_id": 41708484932,
+      "head_sha": "a2f22a0e36e16b9eead15873a94914d90f7d15c2",
+      "conclusion": "success",
+      "axiom_audit": "allowlist"
+    }
+  }
+}
