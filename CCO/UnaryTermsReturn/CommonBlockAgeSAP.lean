@@ -55,8 +55,10 @@ theorem commonBlockTaggedColour_of_sort_eq_block_eq
   dsimp at hpr hqs
   cases hpr
   cases hqs
-  change commonBlockOldColour i j x y =
-    commonBlockOldColour i j x' y'
+  suffices hColour : commonBlockOldColour i j x y =
+      commonBlockOldColour i j x' y' by
+    exact congrArg (fun c : Option Bool =>
+      (⟨i, j, c⟩ : Σ i : Bool, Σ j : Bool, Option Bool)) hColour
   by_cases hxy : (⟨i,x⟩ : Sigma CommonBlockReal) = ⟨j,y⟩
   · have hxy' : (⟨i,x'⟩ : Sigma CommonBlockReal) =
         ⟨j,y'⟩ := heq.mp hxy
