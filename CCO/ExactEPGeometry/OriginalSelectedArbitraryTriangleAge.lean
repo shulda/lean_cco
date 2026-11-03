@@ -43,6 +43,7 @@ theorem originalExactSelectedQuotient_arbitraryTriangleAge
     (E : ExactEq A.source base) :
     let Q := originalExactSelectedQuotientCurrentSource
       A B P transport base hOne E
+    letI : ∀ c : Q.Sorts, MulAction B.G (Q.Point c) := Q.action
     ∀ {V : Type z} [Finite V]
       (D : ActualOrbitalDiagram B.G Q.Point V),
       D.TrianglesLegal →
@@ -52,6 +53,7 @@ theorem originalExactSelectedQuotient_arbitraryTriangleAge
           (fun p : V => (⟨D.sort p, point p⟩ : Sigma Q.Point)) := by
   let Q := originalExactSelectedQuotientCurrentSource
     A B P transport base hOne E
+  letI : ∀ c : Q.Sorts, MulAction B.G (Q.Point c) := Q.action
   let Occ := OriginalOccupancy A B P base hOne E
   let f := originalOccupancyRepresentativeEmbedding
     A B P base hOne E
