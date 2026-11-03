@@ -1818,3 +1818,4 @@ import CCO.TerminalProfiles.OriginalRepresentedCoverLayer
 import CCO.CloneTupleGeometry.PureKernel
 import CCO.CloneTupleGeometry.TypedExact
 import CCO.CloneTupleGeometry.StrongClone
+import CCO.CloneTupleGeometry.FullKernelMI
