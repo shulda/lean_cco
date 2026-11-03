@@ -33,3 +33,7 @@ The direct GitHub PR head is currently newer than the last green checkpoint; rec
 At this stage there are no deliberate `sorry`, `admit`, `axiom`, `opaque`, source pin, Mathlib pin or accepted-provider changes in the author's new Lean files. This statement is descriptive only, not an exact-head axiom audit. Old SAP is a **candidate derived theorem**, not an added premise or established provider.
 
 One PR publisher: chat-3, project 6. Review of B052 must be genuinely non-author. No coordination STATE hand edits or other-project implementation branches were touched.
+
+## 2026-11-03: restart and exact-head CI request
+
+Re-read current main protocol/policy, live coordination STATE rev. 624, accepted B051 on main `f33fb4dec07bcae7f14ed8436a331c73f095b473`, and own active B052 PR #71. The latest branch code head before this journal commit was `475abf055875c22addf3bc7c1326713e178f0f9c`; checkpoint `7acb76bd69e14a548a0b5c3884ca7ecab62a4a52` remained the last broker-confirmed green exact-head build. Inspected failed CI `41617127668` at older head: all reported errors were in `ReturnDefinability.lean` lines 93–94 (mixed typed carrier passed to a fixed-sort predicate), and that file has newer author repairs. Re-trigger branch CI through this journal-only commit to test **current actual code**, including unverified `CommonBlockAgeSAP`; report is still WIP and implies no submit/approval.
