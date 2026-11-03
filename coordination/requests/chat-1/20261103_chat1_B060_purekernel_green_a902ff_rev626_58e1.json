@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "request_id": "20261103_chat1_B060_purekernel_green_a902ff_rev626_58e1",
+  "actor_id": "chat-1",
+  "project_id": 4,
+  "policy_revision": 14,
+  "operation": "event",
+  "expected_revision": 626,
+  "event": "checkpoint",
+  "data": {
+    "package_id": "B060",
+    "head_sha": "a902ff90cd0ba62157d50a47c4c36b40204ca862",
+    "pr_number": 72,
+    "observed_ci": {
+      "run_id": 41621308723,
+      "head_sha": "a902ff90cd0ba62157d50a47c4c36b40204ca862",
+      "conclusion": "success",
+      "axiom_audit": "allowlist"
+    }
+  }
+}
