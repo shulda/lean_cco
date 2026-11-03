@@ -167,10 +167,15 @@ theorem commonBlockAmalgamPoint_right_sort
   classical
   by_cases hb : b ∈ Set.range t.toEmbedding
   · obtain ⟨c,rfl⟩ := hb
+    change (commonBlockAmalgamPoint C A B s t
+      (FiniteUnion.rightFun s.toEmbedding t.toEmbedding
+        (t.toEmbedding c))).1 = (t.toEmbedding c).val.1
     rw [FiniteUnion.right_base]
     change (s.toEmbedding c).val.1 = (t.toEmbedding c).val.1
     exact (s.preserves_sort c).trans (t.preserves_sort c).symm
-  · rw [FiniteUnion.right_off s.toEmbedding t.toEmbedding b hb]
+  · change (commonBlockAmalgamPoint C A B s t
+      (FiniteUnion.rightFun s.toEmbedding t.toEmbedding b)).1 = b.val.1
+    rw [FiniteUnion.right_off s.toEmbedding t.toEmbedding b hb]
     rfl
 
 /-- The B copy has its exact compatible block label,
@@ -186,10 +191,17 @@ theorem commonBlockAmalgamPoint_right_block
   classical
   by_cases hb : b ∈ Set.range t.toEmbedding
   · obtain ⟨c,rfl⟩ := hb
+    change (commonBlockAmalgamPoint C A B s t
+      (FiniteUnion.rightFun s.toEmbedding t.toEmbedding
+        (t.toEmbedding c))).2.1 =
+          commonBlockAmalgamLabel C A B s t (t.toEmbedding c)
     rw [FiniteUnion.right_base]
     exact (commonBlockAmalgamLabel_base C A B s t
       (t.toEmbedding c) c rfl).symm
-  · rw [FiniteUnion.right_off s.toEmbedding t.toEmbedding b hb]
+  · change (commonBlockAmalgamPoint C A B s t
+      (FiniteUnion.rightFun s.toEmbedding t.toEmbedding b)).2.1 =
+        commonBlockAmalgamLabel C A B s t b
+    rw [FiniteUnion.right_off s.toEmbedding t.toEmbedding b hb]
     rfl
 
 /-- The resulting old B pair relation for block equality
