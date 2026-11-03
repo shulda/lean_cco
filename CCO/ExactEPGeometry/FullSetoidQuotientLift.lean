@@ -31,7 +31,7 @@ noncomputable def fullSetoidProjection
     (pi : X → Y) (onto : Function.Surjective pi)
     (F : Setoid X)
     (hKernel : ∀ x y, pi x = pi y → F x y) : Setoid Y where
-  r := Quotient.image pi pi F.r
+  r := CCO.RigidGroupoid.Geometry.Quotient.image pi pi F.r
   iseqv := ⟨
     (by
       intro q
@@ -86,8 +86,7 @@ theorem fullSetoidProjection_comap_inverse
     fullSetoidProjection pi onto (Setoid.comap pi F)
       (fun x y h => by
         change F (pi x) (pi y)
-        rw [h]
-        exact F.refl (pi y)) = F := by
+        rw [h]) = F := by
   apply Setoid.ext
   intro q r
   constructor
