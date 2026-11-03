@@ -93,8 +93,10 @@ theorem commonBlockOriginalAgeSAP :
     exact Finite.of_injective
       (fun b : FiniteUnion.OffBase t => b.val)
       (fun _ _ h => Subtype.ext h)
-  letI : Finite U := by
-    change Finite (↥A.vertices ⊕ FiniteUnion.OffBase t)
+  letI : Fintype ↥A.vertices := Fintype.ofFinite _
+  letI : Fintype (FiniteUnion.OffBase t) := Fintype.ofFinite _
+  letI : Fintype U := by
+    change Fintype (↥A.vertices ⊕ FiniteUnion.OffBase t)
     infer_instance
   let h : U ↪ Sigma CommonBlockReal := {
     toFun := commonBlockAmalgamPoint C A B eCA eCB
