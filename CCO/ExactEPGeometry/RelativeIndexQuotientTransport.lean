@@ -54,6 +54,8 @@ noncomputable def relativeClassEquiv_of_surjective_pullback
       induction r using Quotient.inductionOn with
       | _ y =>
         apply Quotient.sound
+        change (Quotient.mk _ (lift x) : RelativeClass U V (pi a)) =
+          Quotient.mk _ (lift y) at hqr
         have h : U (pi x.val) (pi y.val) := Quotient.exact hqr
         exact (hE x.val y.val).mpr h
   have hSurjective : Function.Surjective f := by
@@ -65,8 +67,7 @@ noncomputable def relativeClassEquiv_of_surjective_pullback
       refine ⟨Quotient.mk _ (⟨x,hFx⟩ : {z : A // F a z}), ?_⟩
       apply Quotient.sound
       change U (pi x) y.val
-      rw [hx]
-      exact U.refl y.val
+      simpa only [hx] using (U.refl y.val)
   exact Equiv.ofBijective f ⟨hInjective,hSurjective⟩
 
 /-- C105's numerical transport ingredient for EVERY original and
