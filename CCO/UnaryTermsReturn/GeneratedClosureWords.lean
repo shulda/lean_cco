@@ -94,4 +94,57 @@ theorem unary_closure_eq_term_values
       (unary_closure_values_closed action x)
   · exact unary_closure_values_minimal action x C hx hC
 
+
+/-- Restrict an ACTUAL total unary action to one genuinely
+unary-closed induced member. This action is not constructed
+from an arbitrary partial diagram: all existing ambient
+operations are preserved literally. -/
+def unaryClosedSubtypeAction
+    {U : Type u} {A : Type v}
+    (action : U → A → A) (C : Set A)
+    (hClosed : ∀ f : U, ∀ y : A, y ∈ C → action f y ∈ C) :
+    U → C → C :=
+  fun f y => ⟨action f y.val, hClosed f y.val y.property⟩
+
+/-- Every finite unary term evaluated inside an ACTUAL
+unary-closed induced member has exactly the SAME value
+as evaluation in its ambient source. Thus passing to a
+completed finite member cannot invent new unary term values. -/
+theorem unary_closed_subtype_eval
+    {U : Type u} {A : Type v}
+    (action : U → A → A) (C : Set A)
+    (hClosed : ∀ f : U, ∀ y : A, y ∈ C → action f y ∈ C)
+    (x : C) (w : UnaryClosureWord U) :
+    (UnaryClosureWord.eval
+      (unaryClosedSubtypeAction action C hClosed) x w).val =
+        UnaryClosureWord.eval action x.val w := by
+  induction w with
+  | ident => rfl
+  | thenApply f tail ih =>
+      change action f ((UnaryClosureWord.eval
+        (unaryClosedSubtypeAction action C hClosed) x tail).val) =
+        action f (UnaryClosureWord.eval action x.val tail)
+      exact congrArg (action f) ih
+
+/-- Source10 C13–C15: the entire one-generated unary closure
+of an ACTUAL completed induced member, mapped to its literal
+ambient carrier, IS the ambient one-generator term-value set.
+It is neither just an equicardinality statement nor a claim
+for an arbitrary non-completed partial source. -/
+theorem unary_closed_subtype_closure_image
+    {U : Type u} {A : Type v}
+    (action : U → A → A) (C : Set A)
+    (hClosed : ∀ f : U, ∀ y : A, y ∈ C → action f y ∈ C)
+    (x : C) :
+    Subtype.val '' unaryClosureValues
+      (unaryClosedSubtypeAction action C hClosed) x =
+      unaryClosureValues action x.val := by
+  apply Set.Subset.antisymm
+  · rintro z ⟨y, ⟨w, rfl⟩, rfl⟩
+    exact ⟨w, (unary_closed_subtype_eval action C hClosed x w).symm⟩
+  · rintro z ⟨w, rfl⟩
+    refine ⟨UnaryClosureWord.eval
+      (unaryClosedSubtypeAction action C hClosed) x w, ⟨w,rfl⟩, ?_⟩
+    exact unary_closed_subtype_eval action C hClosed x w
+
 end CCO.UnaryTermsReturn
