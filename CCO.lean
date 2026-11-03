@@ -1918,6 +1918,7 @@ import CCO.ExactEPGeometry.SelectedSortArrowReverse
 import CCO.ExactEPGeometry.OriginalSelectedArrowCorrespondence
 import CCO.ExactEPGeometry.OriginalRetainedSelectedGroupoid
 import CCO.ExactEPGeometry.OriginalRetainedSelectedArrowRealPair
+import CCO.ExactEPGeometry.OriginalRetainedSelectedOldMarkMask
 import CCO.ExactEPGeometry.SelectedGaugeCharacter
 import CCO.ExactEPGeometry.OriginalRetainedAnchorGauge
 import CCO.ExactEPGeometry.OriginalReachedOccupancyAnchors
