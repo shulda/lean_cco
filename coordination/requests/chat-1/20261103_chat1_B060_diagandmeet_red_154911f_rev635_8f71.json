@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "request_id": "20261103_chat1_B060_diagandmeet_red_154911f_rev635_8f71",
+  "actor_id": "chat-1",
+  "project_id": 4,
+  "policy_revision": 14,
+  "operation": "event",
+  "expected_revision": 635,
+  "event": "checkpoint",
+  "data": {
+    "package_id": "B060",
+    "head_sha": "154911f71798197c467098260f7268a56a07bd2e",
+    "pr_number": 72,
+    "observed_ci": {
+      "run_id": 41694452563,
+      "head_sha": "154911f71798197c467098260f7268a56a07bd2e",
+      "conclusion": "failure"
+    }
+  }
+}
