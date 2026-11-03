@@ -2017,3 +2017,8 @@ import CCO.ExactEPGeometry.OriginalAllCurrentFullInvariantQuotient
 import CCO.ExactEPGeometry.OriginalAllCurrentFullInvariantTerminal
 import CCO.ExactEPGeometry.SelectedSortTerminal
 import CCO.ExactEPGeometry.OriginalSelectedQuotientTerminal
+import CCO.ExactEPGeometry.OriginalRetainedMixedOldPairMasks
+import CCO.ExactEPGeometry.OriginalSelectedFiniteMixedMarkedAge
+import CCO.ExactEPGeometry.OriginalDiversityRank
+import CCO.ExactEPGeometry.OriginalOneSortDiversityRank
+import CCO.ExactEPGeometry.OriginalEmptyTraceBoundary
