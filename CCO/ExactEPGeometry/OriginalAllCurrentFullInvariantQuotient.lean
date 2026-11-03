@@ -50,6 +50,7 @@ noncomputable def originalAllCurrentFullInvariantProjection
     originalExactAllCurrentQuotientCurrentSource
       A B P transport base hOne E
   letI : ∀ i : Q.Sorts, MulAction B.G (Q.Point i) := Q.action
+  letI : MulAction B.G (Q.Point p) := Q.action p
   let pi : B.Point p → Q.Point p := fun x => Quotient.mk'' x
   have hKernel : ∀ x y, pi x = pi y → F x y := by
     intro x y h
@@ -93,6 +94,7 @@ noncomputable def originalAllCurrentFullInvariantPullback
     originalExactAllCurrentQuotientCurrentSource
       A B P transport base hOne E
   letI : ∀ i : Q.Sorts, MulAction B.G (Q.Point i) := Q.action
+  letI : MulAction B.G (Q.Point p) := Q.action p
   let pi : B.Point p → Q.Point p := fun x => Quotient.mk'' x
   let T : Setoid (B.Point p) := Setoid.comap pi U.val
   have equivPi : ∀ (g : B.G) (x : B.Point p),
@@ -100,13 +102,13 @@ noncomputable def originalAllCurrentFullInvariantPullback
     intro g x
     rfl
   have hNew : ∀ (g : B.G) (x y : Q.Point p),
-      U x y → U (g • x) (g • y) :=
+      U.val.r x y → U.val.r (g • x) (g • y) :=
     colourInvariant_groupInvariant Q.source Q.homogeneous U.2
   have hOld : ∀ (g : B.G) (x y : B.Point p),
       T x y → T (g • x) (g • y) := by
     intro g x y h
-    change U (pi x) (pi y) at h
-    change U (pi (g • x)) (pi (g • y))
+    change U.val.r (pi x) (pi y) at h
+    change U.val.r (pi (g • x)) (pi (g • y))
     rw [equivPi g x,equivPi g y]
     exact hNew g (pi x) (pi y) h
   exact ⟨T,groupInvariant_colourInvariant B.source B.homogeneous hOld⟩
