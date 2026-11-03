@@ -56,7 +56,8 @@ noncomputable def commonBlockFreshBPoint
     (t : InducedEmbedding commonBlockOriginalAtomicSource C B)
     (b : ↥B.vertices) : Sigma CommonBlockReal := by
   classical
-  letI : Fintype ↥B.vertices := Fintype.ofFinite B.vertices B.finite_vertices.to_subtype
+  letI : Finite ↥B.vertices := B.finite_vertices.to_subtype
+  letI : Fintype ↥B.vertices := Fintype.ofFinite _
   exact ⟨b.val.1,
     (commonBlockAmalgamLabel C A B s t b,
      commonBlockFiniteMaxClone A + 1 + ((Fintype.equivFin ↥B.vertices) b).val)⟩
@@ -69,7 +70,8 @@ theorem commonBlockFreshBPoint_injective
     (t : InducedEmbedding commonBlockOriginalAtomicSource C B) :
     Function.Injective (commonBlockFreshBPoint C A B s t) := by
   classical
-  letI : Fintype ↥B.vertices := Fintype.ofFinite B.vertices B.finite_vertices.to_subtype
+  letI : Finite ↥B.vertices := B.finite_vertices.to_subtype
+  letI : Fintype ↥B.vertices := Fintype.ofFinite _
   intro b b' h
   have hClone := congrArg
     (fun p : Sigma CommonBlockReal => p.2.2) h
@@ -92,7 +94,8 @@ theorem commonBlockFreshBPoint_disjoint_A
     (a : ↥A.vertices) (b : ↥B.vertices) :
     a.val ≠ commonBlockFreshBPoint C A B s t b := by
   classical
-  letI : Fintype ↥B.vertices := Fintype.ofFinite B.vertices B.finite_vertices.to_subtype
+  letI : Finite ↥B.vertices := B.finite_vertices.to_subtype
+  letI : Fintype ↥B.vertices := Fintype.ofFinite _
   intro heq
   have hClone := congrArg
     (fun p : Sigma CommonBlockReal => p.2.2) heq
