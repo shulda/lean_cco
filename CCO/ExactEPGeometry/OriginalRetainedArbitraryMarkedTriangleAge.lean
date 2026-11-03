@@ -75,8 +75,14 @@ theorem originalRetainedArbitraryMarkedTriangleAge
         Q.Point (Quotient.mk'' (anchor (owners i)).val) →
         Q.Point (Quotient.mk'' (anchor (owners j)).val) → Prop)
       (bits : Fin n → ZMod 2),
-      (∀ i j : Fin n, ∃ x y,
-        rel i j = GroupActions.orbital (G := B.G) x y) →
+      (∀ i j : Fin n,
+        letI : MulAction B.G
+            (Q.Point (Quotient.mk'' (anchor (owners i)).val)) :=
+          Q.action (Quotient.mk'' (anchor (owners i)).val)
+        letI : MulAction B.G
+            (Q.Point (Quotient.mk'' (anchor (owners j)).val)) :=
+          Q.action (Quotient.mk'' (anchor (owners j)).val)
+        ∃ x y, rel i j = GroupActions.orbital (G := B.G) x y) →
       (∀ i j : Fin n, ∀ x y, rel i j x y ↔ rel j i y x) →
       (∀ i : Fin n, ∀ x y, rel i i x y ↔ x = y) →
       (∀ i j : Fin n, i ≠ j → ∀ x y, rel i j x y →
@@ -125,8 +131,14 @@ theorem originalRetainedArbitraryMarkedTriangleAge
         Q.Point (Quotient.mk'' (anchor (owners i)).val) →
         Q.Point (Quotient.mk'' (anchor (owners j)).val) → Prop)
       (bits : Fin n → ZMod 2),
-      (∀ i j : Fin n, ∃ x y,
-        rel i j = GroupActions.orbital (G := B.G) x y) →
+      (∀ i j : Fin n,
+        letI : MulAction B.G
+            (Q.Point (Quotient.mk'' (anchor (owners i)).val)) :=
+          Q.action (Quotient.mk'' (anchor (owners i)).val)
+        letI : MulAction B.G
+            (Q.Point (Quotient.mk'' (anchor (owners j)).val)) :=
+          Q.action (Quotient.mk'' (anchor (owners j)).val)
+        ∃ x y, rel i j = GroupActions.orbital (G := B.G) x y) →
       (∀ i j : Fin n, ∀ x y, rel i j x y ↔ rel j i y x) →
       (∀ i : Fin n, ∀ x y, rel i i x y ↔ x = y) →
       (∀ i j : Fin n, i ≠ j → ∀ x y, rel i j x y →
