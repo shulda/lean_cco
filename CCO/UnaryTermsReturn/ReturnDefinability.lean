@@ -85,13 +85,19 @@ theorem original_return_prefix_kernel_has_original_formula
       (TRel.comp (TRel.converse p.eval)
         (TRel.comp E.val.r p.eval)) :=
     typed_transport_has_formula hp hJ
-  obtain ⟨φ,hφ⟩ := hRel
-  refine ⟨φ,?_⟩
-  intro y z
-  exact (hφ y z).trans (by
-    change
-      (∃ x x', p.eval x y ∧ E x x' ∧ p.eval x' z) ↔
-        T.target y z
-    exact (T.target_iff y z).symm)
+  have hExact :
+      (TRel.comp (TRel.converse p.eval)
+        (TRel.comp E.val.r p.eval)) =
+          (fun y z : X i => T.target y z) := by
+    funext y z
+    apply propext
+    constructor
+    · rintro ⟨x,hxy,x',hxx',hx'z⟩
+      exact (T.target_iff y z).mpr ⟨x,x',hxy,hxx',hx'z⟩
+    · intro ht
+      obtain ⟨x,x',hxy,hxx',hx'z⟩ := (T.target_iff y z).mp ht
+      exact ⟨x,hxy,x',hxx',hx'z⟩
+  rw [hExact] at hRel
+  exact hRel
 
 end CCO.UnaryTermsReturn
