@@ -136,7 +136,9 @@ theorem originalRetainedSelectedOldGlobalMark_atomicMask
   have hSelected : (e R).rel
       (D.pointEquiv (anchor a).val (Quotient.mk'' x))
       (D.pointEquiv (anchor b).val (Quotient.mk'' y)) := by
-    simpa only [Equiv.apply_symm_apply] using hT
+    have heq : e R = T := e.apply_symm_apply T
+    rw [heq]
+    exact hT
   have hOld : R.rel x y :=
     (originalRetainedSelectedArrow_real_pair_iff
       A B P transport tp hOne Kroot E hE
