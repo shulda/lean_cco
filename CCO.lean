@@ -1822,3 +1822,4 @@ import CCO.CloneTupleGeometry.FullKernelMI
 import CCO.CloneTupleGeometry.FullKernelTuple
 import CCO.CloneTupleGeometry.PureSpectrum
 import CCO.CloneTupleGeometry.DiagonalAndMeet
+import CCO.CloneTupleGeometry.CharacterCloneGates
