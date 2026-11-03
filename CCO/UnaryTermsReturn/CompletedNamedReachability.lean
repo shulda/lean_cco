@@ -57,7 +57,7 @@ theorem original_completed_named_reachable_trans
     (hyz : OriginalCompletedNamedReachable S H sap nr2 y z) :
     OriginalCompletedNamedReachable S H sap nr2 x z := by
   induction hyz with
-  | refl _ => exact hxy
+  | refl => exact hxy
   | step h e ih => exact .step ih e
 
 /-- EVERY B049 genuine named hidden unary term evaluates through
@@ -76,7 +76,7 @@ theorem original_completed_named_word_reachable
       (originalCompletedNamedHiddenNode S H D q)
       (originalCompletedNamedHiddenNode S H E
         (OriginalNamedRawUnaryTerm.eval S H sap nr2 word q)) := by
-  induction word generalizing q with
+  induction word with
   | ident D =>
       exact .refl _
   | up word hEF ih =>
