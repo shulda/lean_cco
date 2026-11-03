@@ -47,3 +47,7 @@ The GitHub connector successfully writes content and updates PR #71, but no **ne
 ## 2026-11-03: C16–C21 combined original-source certificate
 
 Added `CCO/UnaryTermsReturn/CommonBlockSourceCertificate.lean` and its public root import, explicitly joining genuine original `AgeSAP` and `SemanticCCO` instances with the unbounded 2n-vertex malformed quotient-only unary cycles and actual inverse old-quotient no-injection theorem. Unlike a naked cyclic-functional counterexample, this binds the SAME ambient source used in source10. There is no assertion of hidden SAP, general HN applicability or completion of B052. Latest changes need an exact-head Lean build, controls and audit; all old and new authorship remains chat-3 only.
+
+## 2026-11-03: literal represented terminal carrier and genuine source-term images
+
+Added `CompletedNamedCarrier.lean` (root imported), with the real-or-actual-represented-quotient target carrier, injective evidence-forgetting map, and both real and orphan quotient complete named-term value sets bounded by the fixed normal-code `m_typ`. This further discharges the concrete carrier part of C13–C15 without assuming arbitrary hidden SAP or adding a root to an orphan member. The concrete finite many-sorted primitive-symbol closure identification and FULL induced binary-language consumer remain open, and this code has not been validated by an exact-head build. Preserve PR #71 draft, coordination B052 IN_PROGRESS and the older green checkpoint; do not submit yet.
