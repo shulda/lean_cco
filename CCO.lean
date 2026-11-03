@@ -1799,6 +1799,22 @@ import CCO.TransitionClosure.OriginalSourceBoundaries
 import CCO.TransitionClosure.OriginalWholeGraphPairTest
 import CCO.TransitionClosure.OriginalFiniteCylinderPartition
 import CCO.TransitionClosure.OriginalCylinderAdmissiblePairs
+import CCO.TerminalProfiles.OriginalEquivalenceReproduction
+import CCO.TerminalProfiles.OriginalTerminalCoverLayer
+import CCO.TerminalProfiles.OriginalCompleteCylinderReturn
+import CCO.TerminalProfiles.OriginalQuotientDiagonalInvolution
+import CCO.TerminalProfiles.OriginalTwoSheetIndex
+import CCO.TerminalProfiles.OriginalQuotientMenuReturn
+import CCO.TerminalProfiles.OriginalTerminalNoReturn
+import CCO.TerminalProfiles.OriginalFiniteNoReturn
+import CCO.TerminalProfiles.OriginalWholeProfileWordPowers
+import CCO.TerminalProfiles.OriginalOddLoopStabilization
+import CCO.TerminalProfiles.OriginalWholeProfileOddLoops
+import CCO.TerminalProfiles.OriginalWholeProfileStabilization
+import CCO.TerminalProfiles.OriginalWholeProfileConnectivityEq
+import CCO.TerminalProfiles.OriginalWholeProfileGraph
+import CCO.TerminalProfiles.OriginalTrueExponentReadout
+import CCO.TerminalProfiles.OriginalRepresentedCoverLayer
 
 -- B062: exact source/current trace geometry and AP-only quotient safe tower (own author branch).
 import CCO.ExactEPGeometry.TypeSupport
