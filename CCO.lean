@@ -1820,3 +1820,4 @@ import CCO.CloneTupleGeometry.TypedExact
 import CCO.CloneTupleGeometry.StrongClone
 import CCO.CloneTupleGeometry.FullKernelMI
 import CCO.CloneTupleGeometry.FullKernelTuple
+import CCO.CloneTupleGeometry.PureSpectrum
