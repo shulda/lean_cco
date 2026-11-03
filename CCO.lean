@@ -2011,3 +2011,5 @@ import CCO.ExactEPGeometry.OriginalOneSortLargestQuotientTrace
 import CCO.ExactEPGeometry.OriginalRetainedReachedOriginalQuotientGate
 import CCO.ExactEPGeometry.OriginalSelectedArbitraryTriangleAge
 import CCO.ExactEPGeometry.OriginalRetainedArbitraryMarkedTriangleAge
+import CCO.ExactEPGeometry.RelativeIndexQuotientTransport
+import CCO.ExactEPGeometry.FullSetoidQuotientLift
