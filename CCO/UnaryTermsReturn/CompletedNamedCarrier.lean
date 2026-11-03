@@ -55,6 +55,18 @@ abbrev OriginalCompletedNamedCarrier
     (H : HomogeneousSource S G) :=
   (Sigma X) ⊕ OriginalCompletedNamedHiddenValue S H
 
+
+/-- Embed ONE genuinely named original hidden coordinate class
+into the complete real-or-represented-quotient carrier. This
+is an actual class, not a choice of a representative or a new
+independent quotient chart. -/
+def originalCompletedNamedHiddenNode
+    (H : HomogeneousSource S G)
+    {i : ι} (D : OriginalNamedHiddenCoordinate S H i)
+    (q : Quotient D.val.val) :
+    OriginalCompletedNamedCarrier S H :=
+  Sum.inr ⟨⟨i,⟨D.val,q⟩⟩,⟨D,rfl⟩⟩
+
 /-- Forget only representedness evidence. This does not
 forget the real-sort, full original quotient kernel,
 or actual quotient-class value. -/
