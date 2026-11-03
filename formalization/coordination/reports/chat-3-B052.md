@@ -15,3 +15,21 @@ Published new modules:
 Next: create an early draft PR; read exact Lean CI and repair its concrete errors. Continue with full uniform finite `m_typ` closure, named normal-form kernels and forced factorization, counterexample, then named typed return. No `sorry`, `admit`, axioms or change to source/toolchain/pins.
 
 The first code checkpoint has NOT YET received a green exact-head Lean CI. The active claim remains open; no submit/review/accept is claimed.
+
+## 2026-11-03: C16 full old amalgam and formula/root gates (unverified latest head)
+
+The canonical live STATE still records project 6/chat-3 as owner of IN_PROGRESS B052, with draft PR #71 on `chat/chat-3/B052`. B051 has become ACCEPTED and `main` advanced independently; the B052 worktree/branch was **not reset or rebased**. The last **broker-verified** green B052 head remains `7acb76bd69e14a548a0b5c3884ca7ecab62a4a52` (run `41595331677`, checkpoint rev. 620), NOT the new work described here.
+
+Read the actual frozen source10 and PROOF_NOTES and verified exact source10 C16's old SAP+CCO requirement. New authored/committed Lean files and dependencies:
+- `RootSignature.lean`: actual old-G named B040 quotient equation on every root edge, compatible with entire genuine named unary functional closure; shared-fine-atom branch map agreement. This already compiled in the previous failing CI, independent of unrelated later errors.
+- `ReturnDefinability.lean`: source10 supplied-formula and definability boundary; actual finite old full-Aut orbital formulas for all nonempty RAW prefixes and transported kernels. Fixed a typed/ambient tagged relation mismatch from CI run `41617127668`, whose old head failed.
+- `CommonBlockAmalgamBlocks.lean`: candidate total B-side block assignment anchored by displayed C, with fresh labels for all unanchored B blocks, preserving/reflection of block equality.
+- `CommonBlockAmalgamPoints.lean`: candidate injective real-point realization of the canonical finite union, with fresh B real clone indices and strict strong intersection outside C.
+- `CommonBlockAgeSAP.lean`: candidate theorem `commonBlockOriginalAgeSAP : AgeSAP commonBlockOriginalAtomicSource` with actual finite induced D, colour-preserving A/B embeddings and exact strong intersection. This uses already compiled `CommonBlockSemanticCCO` for the other, separately established original CCO requirement; it assumes neither old SAP nor hidden SAP.
+- All five source-facing modules imported by the public `CCO.lean`. Finite B carrier instances were made explicit in the clone construction.
+
+The direct GitHub PR head is currently newer than the last green checkpoint; recent pushes have not yet yielded an exact-head Lean CI run in the visible Actions readback. An attempted automatic PR event refresh through the app failed internally with no state change: follow-up readback confirmed PR #71 remained OPEN/DRAFT on the same head. Therefore **DO NOT** call this SAP completed or submit B052. The concrete next task is an exact-head build/audit, correction of all compiler/type errors, source-to-Lean inspection of the resulting genuine C16 old SAP+CCO pair, then the remaining FULL completed-hidden-diagram and root-signature packaging duties.
+
+At this stage there are no deliberate `sorry`, `admit`, `axiom`, `opaque`, source pin, Mathlib pin or accepted-provider changes in the author's new Lean files. This statement is descriptive only, not an exact-head axiom audit. Old SAP is a **candidate derived theorem**, not an added premise or established provider.
+
+One PR publisher: chat-3, project 6. Review of B052 must be genuinely non-author. No coordination STATE hand edits or other-project implementation branches were touched.
