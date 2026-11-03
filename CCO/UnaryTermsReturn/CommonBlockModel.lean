@@ -71,7 +71,7 @@ def commonBlockOriginalAtomicSource :
         Option.some.injEq]
       have hs : decide (x.1 = y.1) = decide (y.1 = x.1) := by
         by_cases hxy : x.1 = y.1
-        · simp [hxy, hxy.symm]
+        · simp only [hxy, hxy.symm, decide_True]
         · have hyx : y.1 ≠ x.1 := fun e => hxy e.symm
           simp [hxy, hyx]
       rw [hs]
