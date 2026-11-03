@@ -1828,3 +1828,4 @@ import CCO.UnaryTermsReturn.CommonBlockEmbeddingBlocks
 import CCO.UnaryTermsReturn.RootSignature
 import CCO.UnaryTermsReturn.ReturnDefinability
 import CCO.UnaryTermsReturn.CommonBlockAmalgamBlocks
+import CCO.UnaryTermsReturn.CommonBlockAmalgamPoints
