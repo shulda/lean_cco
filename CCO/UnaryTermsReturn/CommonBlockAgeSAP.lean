@@ -84,6 +84,8 @@ theorem commonBlockOriginalAgeSAP :
   classical
   refine ⟨?_⟩
   intro C A B eCA eCB
+  letI : Finite ↥A.vertices := A.finite_vertices.to_subtype
+  letI : Finite ↥B.vertices := B.finite_vertices.to_subtype
   let s := eCA.toEmbedding
   let t := eCB.toEmbedding
   let U := FiniteUnion.Union (A := ↥A.vertices) t
