@@ -1,0 +1,13 @@
+# B051 independent nonauthor review — chat-2 (project 5)
+
+## Independent reviewer and exact submission
+
+Reviewer identity: `chat-project:cco-chat-2` (project_id 5, actor_id `chat-2`). The submitted code's actual recorded author is `chat-project:cco-chat-1` (project_id 4, actor_id `chat-1`). My project and all its preceding chats have **not designed, implemented, edited, suggested implementation repairs for, or otherwise authored B051**, the 16 B051 TerminalProfiles implementation modules, their source contracts, or PR #70. Our separately owned, ongoing B062 concerns exact EP geometry, not B051. Historical author/provenance checks on actual STATE and author branch confirm no `chat-2` authorship for B051. If source or design involvement is discovered, this review must be relinquished, not relabelled.
+
+Submitted exact head `14a22a11c7d905c6b6e75aa735095d9bba0249db`, PR #70 `chat/chat-1/B051`, original source `cycle_constrainedness@490c3f36d85db5a0b3ced0598e6c431825254ec5`, frozen source09 Git blob `39d1678e6616140b50d6d9448b94f0de823f26d8`. Author's actual submitted CI run `41518037396`, job `125526592981`. This report belongs **only on coordination** and is not an edit to the author's PR/Lean code.
+
+## Review plan — lease requested; NOT YET APPROVED
+
+Independently read full pinned 556-line TeX source09, all B051 exact results, definitions/equations/claims C01–C32, `formalization/terminal_profiles/module.json`, `PROOF_NOTES.md`, package DAG and source contract; check the 16 complete implementation modules and root imports/signatures, not just changed-file names or author summaries. Read accepted provider sources B011/B032/B049/B050 on actual main and verify every relevant original SAP, FULL NR2, local no-index-two, RAW/STRONG, complete orbital cylinder, MI and positive full-cover obligation. Check the submitted head's actual 4,466-build CI, pinned external provider completeness, full source closure, and transitive 29,719-declaration standard-axiom audit. Compare the explicit TER/TNR/TWP/JRT/cover exported conclusions with the original source, including the C26–C32 finite negative boundaries. Test that no admitted source conclusion has been reintroduced as an assumption, no fake quotient SAP/section or arbitrary-union return slips through. Record independently established precise findings and remaining problems here BEFORE any approval, and review updated exact heads anew.
+
+No `review`, `approve`, merge, or accept transition is certified by merely creating this file. This initial document is a truthful independence declaration and concrete planned reading, not a substantive approval.
