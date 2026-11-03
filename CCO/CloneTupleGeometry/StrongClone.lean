@@ -50,8 +50,8 @@ theorem pure_clone_strong_left {i j : ι} (a : S.Atom i j) :
     let p : CloneSAP.Carrier X i := (x, 0)
     let q : CloneSAP.Carrier X i := (x, 1)
     let r : CloneSAP.Carrier X j := (y, 0)
-    refine ⟨Sum.inr ⟨rfl⟩, by simp, Sum.inl a, by simp, p, q, r, ?_, ?_, ?_⟩
-    · exact (CloneSAP.source_clone_iff S p q).mpr ⟨rfl, by decide⟩
+    refine ⟨Sum.inr ⟨rfl⟩, by rfl, Sum.inl a, by rfl, p, q, r, ?_, ?_, ?_⟩
+    · exact (CloneSAP.source_clone_iff S p q).mpr ⟨rfl, by change (0 : ℕ) ≠ 1; decide⟩
     · exact (CloneSAP.colour_old_iff S q r a).mpr hcol
     · exact (CloneSAP.colour_old_iff S p r a).mpr hcol
 
@@ -85,9 +85,9 @@ theorem pure_clone_strong_right {i j : ι} (a : S.Atom i j) :
     let p : CloneSAP.Carrier X i := (x, 0)
     let q : CloneSAP.Carrier X j := (y, 0)
     let r : CloneSAP.Carrier X j := (y, 1)
-    refine ⟨Sum.inl a, by simp, Sum.inr ⟨rfl⟩, by simp, p, q, r, ?_, ?_, ?_⟩
+    refine ⟨Sum.inl a, by rfl, Sum.inr ⟨rfl⟩, by rfl, p, q, r, ?_, ?_, ?_⟩
     · exact (CloneSAP.colour_old_iff S p q a).mpr hcol
-    · exact (CloneSAP.source_clone_iff S q r).mpr ⟨rfl, by decide⟩
+    · exact (CloneSAP.source_clone_iff S q r).mpr ⟨rfl, by change (0 : ℕ) ≠ 1; decide⟩
     · exact (CloneSAP.colour_old_iff S p r a).mpr hcol
 
 /-- The genuine STRONG diversity-only square is the singleton clone
@@ -116,6 +116,7 @@ theorem pure_clone_strong_square (i : ι) :
       subst z
       have hnone : (CloneSAP.source S).colour x x = none :=
         ((CloneSAP.source S).colour_none_iff x x).mpr rfl
+      change (CloneSAP.source S).colour x x = some a at hxz
       rw [hnone] at hxz
       cases hxz
     have hClone : (CloneSAP.source S).colour x z =
@@ -129,11 +130,11 @@ theorem pure_clone_strong_square (i : ι) :
     let x : CloneSAP.Carrier X i := (p, 0)
     let y : CloneSAP.Carrier X i := (p, 1)
     let z : CloneSAP.Carrier X i := (p, 2)
-    refine ⟨Sum.inr ⟨rfl⟩, by simp, Sum.inr ⟨rfl⟩, by simp,
+    refine ⟨Sum.inr ⟨rfl⟩, by rfl, Sum.inr ⟨rfl⟩, by rfl,
       x, y, z, ?_, ?_, ?_⟩
-    · exact (CloneSAP.source_clone_iff S x y).mpr ⟨rfl, by decide⟩
-    · exact (CloneSAP.source_clone_iff S y z).mpr ⟨rfl, by decide⟩
-    · exact (CloneSAP.source_clone_iff S x z).mpr ⟨rfl, by decide⟩
+    · exact (CloneSAP.source_clone_iff S x y).mpr ⟨rfl, by change (0 : ℕ) ≠ 1; decide⟩
+    · exact (CloneSAP.source_clone_iff S y z).mpr ⟨rfl, by change (1 : ℕ) ≠ 2; decide⟩
+    · exact (CloneSAP.source_clone_iff S x z).mpr ⟨rfl, by change (0 : ℕ) ≠ 2; decide⟩
 
 /-- The literal two-sided clone cylinder around every old fine atom is
 exactly its old fine atom, with no hidden quotient or abstract exactness
