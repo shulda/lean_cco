@@ -275,4 +275,51 @@ theorem original_real_one_generated_named_values_uniform
     _ = originalSourceUniformNormalCodeBudget S H := by
       simp only [originalSourceUniformNormalCodeBudget, Nat.add_comm]
 
+
+/-- The complete ACTUAL hidden-source one-generated term-VALUE set,
+embedded in the same real-or-quotient tagged ambient carrier used for
+real generators. An orphan quotient generator contributes NO real points:
+choosing an old real representative in a proof never inserts it here. -/
+def originalHiddenOneGeneratedNamedValues
+    (H : HomogeneousSource S G) (sap : AgeSAP S)
+    (nr2 : Selectors.OriginalNR2 S)
+    {i : ι} (D : OriginalNamedHiddenCoordinate S H i)
+    (q : Quotient D.val.val) :
+    Set ((Sigma X) ⊕ OriginalNormalCodeTargetValue S) :=
+  Sum.inr '' Set.range
+    (originalHiddenNamedTermChoiceValue S H sap nr2 D q)
+
+/-- The SAME fixed global m_typ controls genuine orphan quotient
+one-generator values on the complete tagged real/hidden carrier.
+The bound is on interpreted named term FUNCTIONS, not on words;
+no extra source real vertex is added to a quotient-only member. -/
+theorem original_hidden_one_generated_named_values_uniform
+    (H : HomogeneousSource S G) (sap : AgeSAP S)
+    (nr2 : Selectors.OriginalNR2 S)
+    {i : ι} (D : OriginalNamedHiddenCoordinate S H i)
+    (q : Quotient D.val.val) :
+    (originalHiddenOneGeneratedNamedValues S H sap nr2 D q).ncard ≤
+      originalSourceUniformNormalCodeBudget S H := by
+  let values := Set.range
+    (originalHiddenNamedTermChoiceValue S H sap nr2 D q)
+  have hFinite : values.Finite :=
+    original_hidden_named_term_values_finite S H sap nr2 D q
+  have hBound :
+      values.ncard ≤ Nat.card (OriginalAllNormalCodes S (G := G)) :=
+    original_hidden_named_term_values_ncard_uniform S H sap nr2 D q
+  calc
+    (originalHiddenOneGeneratedNamedValues S H sap nr2 D q).ncard =
+        (Sum.inr '' values :
+          Set ((Sigma X) ⊕ OriginalNormalCodeTargetValue S)).ncard := rfl
+    _ ≤ values.ncard :=
+      Set.ncard_image_le
+        (f := (Sum.inr : OriginalNormalCodeTargetValue S →
+          ((Sigma X) ⊕ OriginalNormalCodeTargetValue S)))
+        (s := values) hFinite
+    _ ≤ Nat.card (OriginalAllNormalCodes S (G := G)) := hBound
+    _ ≤ originalSourceUniformNormalCodeBudget S H := by
+      change Nat.card (OriginalAllNormalCodes S (G := G)) ≤
+        Nat.card (OriginalAllNormalCodes S (G := G)) + 1
+      exact Nat.le_add_right _ _
+
 end CCO.UnaryTermsReturn
