@@ -70,11 +70,13 @@ theorem originalAllCurrentFullInvariantPullback_strict
       obtain ⟨x,hx⟩ := Quotient.mk''_surjective q
       obtain ⟨y,hy⟩ := Quotient.mk''_surjective r
       have hv : EV x y := by
-        change V.val.r (π x) (π y)
-        simpa only [hx,hy] using h
+        change V.val.r ((Quotient.mk'' x) : Q.Point p) (Quotient.mk'' y)
+        rw [hx,hy]
+        exact h
       rw [← heq] at hv
-      have hu : U.val.r (π x) (π y) := hv
-      simpa only [hx,hy] using hu
+      have hu : U.val.r ((Quotient.mk'' x) : Q.Point p) (Quotient.mk'' y) := hv
+      rw [hx,hy] at hu
+      exact hu
     exact hUV.ne (le_antisymm hUV.le hVU)
   exact lt_of_le_of_ne hLE hNE
 
