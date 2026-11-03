@@ -89,8 +89,12 @@ theorem commonBlockOriginalAgeSAP :
   let s := eCA.toEmbedding
   let t := eCB.toEmbedding
   let U := FiniteUnion.Union (A := ↥A.vertices) t
+  letI : Finite (FiniteUnion.OffBase t) := by
+    exact Finite.of_injective
+      (fun b : FiniteUnion.OffBase t => b.val)
+      (fun _ _ h => Subtype.ext h)
   letI : Finite U := by
-    dsimp [U, FiniteUnion.Union, FiniteUnion.OffBase]
+    change Finite (↥A.vertices ⊕ FiniteUnion.OffBase t)
     infer_instance
   let h : U ↪ Sigma CommonBlockReal := {
     toFun := commonBlockAmalgamPoint C A B eCA eCB
