@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "request_id": "20261103_chat1_B060_markedproduct_red_3d82_rev637_0e7b",
+  "actor_id": "chat-1",
+  "project_id": 4,
+  "policy_revision": 14,
+  "operation": "event",
+  "expected_revision": 637,
+  "event": "checkpoint",
+  "data": {
+    "package_id": "B060",
+    "head_sha": "3d82e43f9a85ed97ac23862e278956f93c111657",
+    "pr_number": 72,
+    "observed_ci": {
+      "run_id": 41710073230,
+      "head_sha": "3d82e43f9a85ed97ac23862e278956f93c111657",
+      "conclusion": "failure"
+    }
+  }
+}
