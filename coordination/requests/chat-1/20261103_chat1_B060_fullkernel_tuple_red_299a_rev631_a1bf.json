@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "request_id": "20261103_chat1_B060_fullkernel_tuple_red_299a_rev631_a1bf",
+  "actor_id": "chat-1",
+  "project_id": 4,
+  "policy_revision": 14,
+  "operation": "event",
+  "expected_revision": 631,
+  "event": "checkpoint",
+  "data": {
+    "package_id": "B060",
+    "head_sha": "299a8ba5613d7b954d2c5b60ac2c4c2d3cf42e32",
+    "pr_number": 72,
+    "observed_ci": {
+      "run_id": 41625012022,
+      "head_sha": "299a8ba5613d7b954d2c5b60ac2c4c2d3cf42e32",
+      "conclusion": "failure"
+    }
+  }
+}
