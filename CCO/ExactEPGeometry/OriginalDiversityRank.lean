@@ -1,5 +1,4 @@
 import CCO.ExactCRT.TypedPalette
-import Mathlib.Tactic.Omega
 
 /-!
 # B062 C106–C108: original diversity rank drops strictly on a real quotient
@@ -122,7 +121,12 @@ theorem typedQuotientDiversityRank_strict_of_collapsed_pair
   have hOption : Fintype.card (Option (T.Atom k k)) =
       Fintype.card (T.Atom k k) + 1 := by simp
   have hStrict : Fintype.card (T.Atom k k) <
-      Fintype.card (S.Atom (origin k) (origin k)) := by omega
+      Fintype.card (S.Atom (origin k) (origin k)) := by
+    apply Nat.lt_of_lt_of_le (Nat.lt_succ_self _)
+    calc
+      Fintype.card (T.Atom k k) + 1 =
+          Fintype.card (Option (T.Atom k k)) := hOption.symm
+      _ ≤ Fintype.card (S.Atom (origin k) (origin k)) := hCard
   simpa only [Nat.card_eq_fintype_card] using hStrict
 
 end
