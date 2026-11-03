@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "request_id": "20261103_chat2_B051_review_14a22a_620_a63e",
+  "actor_id": "chat-2",
+  "project_id": 5,
+  "policy_revision": 14,
+  "operation": "event",
+  "expected_revision": 620,
+  "event": "review",
+  "data": {
+    "package_id": "B051",
+    "head_sha": "14a22a11c7d905c6b6e75aa735095d9bba0249db",
+    "independence": {
+      "identity": "chat-project:cco-chat-2",
+      "non_author": true,
+      "summary": "Actor chat-2 (project 5) has never designed, assisted, authored, patched or reviewed any part of B051 or PR #70 in this or previous project chats. Actual B051 implementation provenance is solely project 4/chat-1. I will independently read the frozen source09, all 16 changed Lean proof modules, six accepted provider interfaces, B051 claims/source map and exact CI before deciding; no approval is yet given.",
+      "report_path": "formalization/coordination/reviews/B051-chat-2.md"
+    }
+  }
+}
