@@ -27,10 +27,21 @@ private def z : Bool → Prop := fun x => x = false
 private def D : Bool → Bool → Prop := fun x y => x = y
 private def E : Bool → Bool → Prop := fun _ _ => True
 
+/-- The actual equality-inclusive TRel family on the one real Bool sort. -/
+private abbrev boolCarrier : Unit → Type := fun _ => Bool
+
+/-- A fully typed old relational product; specifying the actual sole
+sort prevents Lean from guessing independent implicit sort families. -/
+private def typedBoolComp (R S : Bool → Bool → Prop) : Bool → Bool → Prop :=
+  TRel.comp (X := boolCarrier) (i := ()) (j := ()) (k := ()) R S
+
+private def typedBoolNonempty (R : Bool → Bool → Prop) : Prop :=
+  TRel.Nonempty (X := boolCarrier) (i := ()) (j := ()) R
+
 /-- The first OLD input trace D|u×v is genuinely empty, even though
 the second E|v×z is realized and the full old D;E reaches u×z. -/
 theorem originalC109_firstInputTrace_empty :
-    ¬ TRel.Nonempty (singletonTrace D u v) := by
+    ¬ typedBoolNonempty (singletonTrace D u v) := by
   rintro ⟨x,y,hx,hy,hxy⟩
   have hBad : false = true := by
     calc
@@ -42,7 +53,7 @@ theorem originalC109_firstInputTrace_empty :
 /-- The LHS trace-first product cannot reach the point (false,false)
 because any intermediate v point is true, while D requires equality. -/
 theorem originalC109_traceFirst_false :
-    ¬ TRel.comp (singletonTrace D u v)
+    ¬ typedBoolComp (singletonTrace D u v)
         (singletonTrace E v z) false false := by
   rintro ⟨y,hy,_⟩
   have hBad : false = true := hy.2.2.trans hy.2.1
@@ -51,7 +62,7 @@ theorem originalC109_traceFirst_false :
 /-- The full old product D;E DOES contain the real (false,false)
 pair, since its intermediate witness can be the old point false. -/
 theorem originalC109_fullProduct_true :
-    singletonTrace (TRel.comp D E) u z false false := by
+    singletonTrace (typedBoolComp D E) u z false false := by
   refine ⟨rfl,rfl,?_⟩
   exact ⟨false,rfl,trivial⟩
 
@@ -59,9 +70,9 @@ theorem originalC109_fullProduct_true :
 source (TP) theorem is invalid. Here the first input trace is empty
 but the full old product has nonempty u×z trace. -/
 theorem originalC109_nonemptyInput_guard_necessary :
-    TRel.comp (singletonTrace D u v)
+    typedBoolComp (singletonTrace D u v)
       (singletonTrace E v z) ≠
-    singletonTrace (TRel.comp D E) u z := by
+    singletonTrace (typedBoolComp D E) u z := by
   intro h
   apply originalC109_traceFirst_false
   rw [h]
@@ -71,7 +82,7 @@ theorem originalC109_nonemptyInput_guard_necessary :
 /-- The dual boundary has a genuinely empty SECOND input trace:
 the old identity relation cannot connect true in v to false in z. -/
 theorem originalC109_secondInputTrace_empty :
-    ¬ TRel.Nonempty (singletonTrace D v z) := by
+    ¬ typedBoolNonempty (singletonTrace D v z) := by
   rintro ⟨x,y,hx,hy,hxy⟩
   have hBad : true = false := by
     calc
@@ -83,7 +94,7 @@ theorem originalC109_secondInputTrace_empty :
 /-- The dual composition Top;Id provides the second failure: the first
 trace is realized, but the second is empty, so its product is empty. -/
 theorem originalC109_secondTraceFirst_false :
-    ¬ TRel.comp (singletonTrace E u v)
+    ¬ typedBoolComp (singletonTrace E u v)
         (singletonTrace D v z) false false := by
   rintro ⟨m,_,hm⟩
   have hBad : true = false := hm.1.symm.trans hm.2.2
@@ -91,16 +102,16 @@ theorem originalC109_secondTraceFirst_false :
 
 /-- The FULL old Top;Id product is still nonempty on u×z. -/
 theorem originalC109_secondFullProduct_true :
-    singletonTrace (TRel.comp E D) u z false false := by
+    singletonTrace (typedBoolComp E D) u z false false := by
   refine ⟨rfl,rfl,?_⟩
   exact ⟨false,trivial,rfl⟩
 
 /-- The second nonempty-input hypothesis also cannot be removed,
 independently of the first-input boundary. -/
 theorem originalC109_secondInput_guard_necessary :
-    TRel.comp (singletonTrace E u v)
+    typedBoolComp (singletonTrace E u v)
       (singletonTrace D v z) ≠
-    singletonTrace (TRel.comp E D) u z := by
+    singletonTrace (typedBoolComp E D) u z := by
   intro h
   apply originalC109_secondTraceFirst_false
   rw [h]
