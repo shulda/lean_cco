@@ -55,8 +55,8 @@ theorem fullCloneMIKernel_eq_fullCloneKernel :
       ((fullCloneKernel_mi_iff S i J).mp ⟨hKJ, hMI⟩).1
     exact hxy ⟨J, hne, hMI⟩
   · intro x y hxy J
-    exact fullCloneKernel_le_nonidentity S i J.val
-      J.property.1 x y hxy
+    exact (fullCloneKernel_le_nonidentity S i J.val
+      J.property.1) hxy
 
 /-- The literal compatible MI quotient tuple (not an artificial
 new multi-parent hidden cell). Its coordinate list is a FINITE
@@ -82,8 +82,8 @@ theorem fullCloneMITuple_eq_iff (x y : CloneSAP.Carrier X i) :
   · intro howner
     funext J
     apply Quotient.sound
-    exact fullCloneKernel_le_nonidentity S i J.val
-      J.property.1 x y howner
+    exact (fullCloneKernel_le_nonidentity S i J.val
+      J.property.1) howner
 
 /-- The canonical original-owner tuple, defined on all owners by
 selecting the literal clone index zero, not a section of a quotient. -/
