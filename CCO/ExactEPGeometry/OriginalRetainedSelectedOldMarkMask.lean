@@ -97,12 +97,14 @@ theorem originalRetainedSelectedOldGlobalMark_atomicMask
   letI : Groupoid Occ :=
     originalRetainedOccupancyGroupoid
       A B P transport tp hOne Kroot E hE
-  letI : Finite Occ := originalReachedOccupancyFinite
-    A B P base hBase E Kroot
-  letI : Fintype Occ := Fintype.ofFinite Occ
-  let sigma : Occ ↪ B.Sorts := by
-    exact originalOccupancyRepresentativeEmbedding A B P base hBase E
-  let D := originalSelectedSortRetyping A B P transport base hBase E
+  let SelOcc := OriginalOccupancy A B P base hBase E
+  letI : Finite SelOcc := originalOccupancyFinite
+    A B P base hBase E
+  letI : Fintype SelOcc := Fintype.ofFinite SelOcc
+  let sigma : SelOcc ↪ B.Sorts :=
+    originalOccupancyRepresentativeEmbedding A B P base hBase E
+  let D : SelectedRetyping (X := Qall.Point) sigma (G := B.G) :=
+    originalSelectedSortRetyping A B P transport base hBase E
   let Q := originalExactSelectedQuotientCurrentSource
     A B P transport base hBase E
   let anchor := originalReachedOccupancyAnchor
