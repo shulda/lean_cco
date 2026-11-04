@@ -68,13 +68,14 @@ def originalChordRightShortCycle
           (CCO.cyclicNext
             (by have hc := cut.right_nontrivial; omega :
               0 < C.length - k + 1) p))) _ = some a
-      rw [hindex]
-      exact C.specified (originalChordRightIndex cut p)
+      simpa only [hindex] using
+        (C.specified (originalChordRightIndex cut p))
     · have hval := p.isLt
       have hpLast :
           p = (⟨C.length - k, by omega⟩ :
             Fin (C.length - k + 1)) := by
         apply Fin.ext
+        change p.val = C.length - k
         omega
       rw [hpLast]
       change ∃ a, D.edge
@@ -87,14 +88,23 @@ def originalChordRightShortCycle
               0 < C.length - k + 1)
             (⟨C.length - k, by omega⟩ :
               Fin (C.length - k + 1))))) _ = some a
-      rw [original_chord_right_last cut,
-        original_chord_right_closing_next cut]
       obtain ⟨a,ha⟩ := hChord
-      refine ⟨S.conv a, ?_⟩
-      exact (D.edge_reverse
-        (C.vertices (originalChordOldK cut))
-        (C.vertices (originalChordOldZero cut))
-        (C.vertices.injective.ne
-          (original_chord_old_K_ne_zero cut)) a).mp ha
+      have hreverse : D.edge
+          (C.vertices (originalChordOldZero cut))
+          (C.vertices (originalChordOldK cut))
+          (C.vertices.injective.ne
+            (original_chord_old_K_ne_zero cut)).symm =
+            some (S.conv a) :=
+        (D.edge_reverse
+          (C.vertices (originalChordOldK cut))
+          (C.vertices (originalChordOldZero cut))
+          (C.vertices.injective.ne
+            (original_chord_old_K_ne_zero cut)) a).mp ha
+      simpa only [original_chord_right_last cut,
+        original_chord_right_closing_next cut] using
+        (show ∃ c, D.edge
+          (C.vertices (originalChordOldZero cut))
+          (C.vertices (originalChordOldK cut)) _ = some c
+          from ⟨S.conv a,hreverse⟩)
 
 end CCO.TypedOrbitFrames
