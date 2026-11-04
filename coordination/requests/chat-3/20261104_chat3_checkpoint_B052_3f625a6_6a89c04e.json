@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "request_id": "20261104_chat3_checkpoint_B052_3f625a6_6a89c04e",
+  "actor_id": "chat-3",
+  "project_id": 6,
+  "policy_revision": 14,
+  "operation": "event",
+  "expected_revision": 660,
+  "event": "checkpoint",
+  "data": {
+    "package_id": "B052",
+    "head_sha": "3f625a6179ec5c3c2a2b7ad060caaa55f3cccb7b",
+    "pr_number": 71,
+    "observed_ci": {
+      "run_id": 41797723292,
+      "run_attempt": 1,
+      "head_sha": "3f625a6179ec5c3c2a2b7ad060caaa55f3cccb7b",
+      "conclusion": "success"
+    }
+  }
+}
