@@ -52,10 +52,9 @@ theorem original_actual_family_fibre_eq_meet_class
 
 /-- For the EMPTY family the actual incidence fibre is all reals,
 not an artificial singleton or a nullary named coordinate. -/
-theorem original_actual_empty_class_fibre :
-    originalActualClassFibre S
-      (fun j : Fin 0 => Fin.elim0 j)
-      (fun j : Fin 0 => Fin.elim0 j) = Set.univ := by
+theorem original_actual_empty_class_fibre
+    (E : Fin 0 → ColourEq S i) (c : Fin 0 → X i) :
+    originalActualClassFibre S E c = (Set.univ : Set (X i)) := by
   ext y
   simp [originalActualClassFibre]
 
