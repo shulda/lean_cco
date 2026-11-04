@@ -16,7 +16,7 @@ theorem original_completed_named_node_heq
     (r : Quotient E.val.val)
     (h : originalCompletedNamedHiddenNode S H D q =
       originalCompletedNamedHiddenNode S H E r) :
-    HEq D E ∧ HEq q r := by
+    ∃ hSort : i = j, HEq D E ∧ HEq q r := by
   have hv : (⟨i,⟨D.val,q⟩⟩ : OriginalNormalCodeTargetValue S) =
       ⟨j,⟨E.val,r⟩⟩ := by
     exact Sum.inr.inj
@@ -31,6 +31,6 @@ theorem original_completed_named_node_heq
   have hqr : q = r := by
     simpa only [Sigma.mk.injEq, heq_eq_eq, true_and] using hp
   cases hqr
-  exact ⟨HEq.rfl, HEq.rfl⟩
+  exact ⟨rfl, HEq.rfl, HEq.rfl⟩
 
 end CCO.UnaryTermsReturn
