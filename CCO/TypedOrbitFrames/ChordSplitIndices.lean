@@ -68,19 +68,30 @@ theorem original_chord_right_injective {n k : Nat}
     Function.Injective (originalChordRightIndex cut) := by
   intro a b h
   apply Fin.ext
-  have hv := congrArg Fin.val h
+  have hv : (originalChordRightIndex cut a).val =
+      (originalChordRightIndex cut b).val := congrArg Fin.val h
   have ha := a.isLt
   have hb := b.isLt
+  have hsmall := cut.left_nontrivial
   have hcut := cut.right_nontrivial
-  simp only [originalChordRightIndex, Fin.val_mk] at hv
   by_cases hA : a.val < n - k
-  · by_cases hB : b.val < n - k
-    · simp [hA,hB] at hv
+  · have h1 : (originalChordRightIndex cut a).val = k + a.val := by
+      simp [originalChordRightIndex, hA]
+    by_cases hB : b.val < n - k
+    · have h2 : (originalChordRightIndex cut b).val = k + b.val := by
+        simp [originalChordRightIndex, hB]
+      rw [h1,h2] at hv
       omega
-    · simp [hA,hB] at hv
+    · have h2 : (originalChordRightIndex cut b).val = 0 := by
+        simp [originalChordRightIndex, hB]
+      rw [h1,h2] at hv
       omega
-  · by_cases hB : b.val < n - k
-    · simp [hA,hB] at hv
+  · have h1 : (originalChordRightIndex cut a).val = 0 := by
+      simp [originalChordRightIndex, hA]
+    by_cases hB : b.val < n - k
+    · have h2 : (originalChordRightIndex cut b).val = k + b.val := by
+        simp [originalChordRightIndex, hB]
+      rw [h1,h2] at hv
       omega
     · omega
 
