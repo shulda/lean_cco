@@ -53,7 +53,7 @@ theorem original_completed_hidden_value_has_named_witness
   rcases D with ⟨J, hJ⟩
   change J = F at hD
   cases hD
-  exact ⟨i, ⟨J, hJ⟩, q, rfl⟩
+  exact ⟨i, ⟨F, hJ⟩, q, rfl⟩
 
 /-- The ACTUAL one-generated closure under the original
 represented terminal primitive edge graph. The empty word
