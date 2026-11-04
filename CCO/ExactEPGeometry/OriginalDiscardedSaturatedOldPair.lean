@@ -16,7 +16,7 @@ quotient SAP, group-action section, pointwise surjectivity or
 additional source/provider axiom.
 -/
 
-universe u v w t
+universe u v w t z
 
 namespace CCO.ExactEPGeometry
 
@@ -164,6 +164,99 @@ theorem originalDiscardedSaturatedOldPair_iff
     exact (setoidSaturation_congr S D hx hy).mp h
   · rintro ⟨xx,yy,hx,hy,hD⟩
     exact (setoidSaturation_congr S D hx hy).mpr hD
+
+
+/-- Source C103, finite-diagram strength (indeed valid for any indexed
+family): choose a REAL marked child representative in the SAME
+original E-class of EVERY old point, simultaneously. All prescribed
+original E;D_ij;E pair predicates and original E-class equality/inequality
+are preserved ON THE WHOLE DIAGRAM, including repeated classes.
+There is no claim about the new marked atomic orbital palette or
+the full quotient source finite-age converse; this result uses only
+the genuine C76 every-class child occupancy. -/
+theorem originalDiscardedWholeOldSaturatedDiagram
+    (A B : CurrentSource.{u,v,w,t})
+    (P : UnaryReduct A.source B.source)
+    (transport : ExactTraceTransport A.source B.source P)
+    (tp : ExactTraceProduct A.source B.source P)
+    (hOne : ∀ i j : A.Sorts, i = j)
+    {r : B.Sorts} (Kroot : Kernel B.source r)
+    (phase : SourcePhase B.source B.homogeneous
+      (exactCalculus_of_homogeneous_CCO
+        B.source B.homogeneous B.cco) Kroot)
+    (E : ExactEq A.source (P.parent r))
+    (hNot : ¬ E ≤ PrefixExactLargestLift.largest
+      A B P transport tp r (current_kernel_exact_eq B Kroot))
+    {V : Type z}
+    (child : V → (SingleStep.successor B phase).Sorts)
+    (oldPoint : ∀ i : V, B.Point (child i).1)
+    (D : V → V → Sigma A.Point → Sigma A.Point → Prop) :
+    let base := P.parent r
+    let hBase : ∀ i : A.Sorts, base = i := fun i => hOne base i
+    let S := originalExactGlobalSetoid A base hBase E
+    let PP := P.compose (SingleStep.projection B phase)
+    ∃ newPoint : ∀ i : V,
+        (SingleStep.successor B phase).Point (child i),
+      (∀ i : V,
+        S.r (P.project ⟨(child i).1,oldPoint i⟩)
+          (PP.project ⟨child i,newPoint i⟩)) ∧
+      (∀ i j : V,
+        setoidSaturation S (D i j)
+          (P.project ⟨(child i).1,oldPoint i⟩)
+          (P.project ⟨(child j).1,oldPoint j⟩) ↔
+        setoidSaturation S (D i j)
+          (PP.project ⟨child i,newPoint i⟩)
+          (PP.project ⟨child j,newPoint j⟩)) ∧
+      (∀ i j : V,
+        S.r (P.project ⟨(child i).1,oldPoint i⟩)
+          (P.project ⟨(child j).1,oldPoint j⟩) ↔
+        S.r (PP.project ⟨child i,newPoint i⟩)
+          (PP.project ⟨child j,newPoint j⟩)) := by
+  let base := P.parent r
+  let hBase : ∀ i : A.Sorts, base = i := fun i => hOne base i
+  let S := originalExactGlobalSetoid A base hBase E
+  let PP := P.compose (SingleStep.projection B phase)
+  change ∃ newPoint : ∀ i : V,
+        (SingleStep.successor B phase).Point (child i),
+      (∀ i : V,
+        S.r (P.project ⟨(child i).1,oldPoint i⟩)
+          (PP.project ⟨child i,newPoint i⟩)) ∧
+      (∀ i j : V,
+        setoidSaturation S (D i j)
+          (P.project ⟨(child i).1,oldPoint i⟩)
+          (P.project ⟨(child j).1,oldPoint j⟩) ↔
+        setoidSaturation S (D i j)
+          (PP.project ⟨child i,newPoint i⟩)
+          (PP.project ⟨child j,newPoint j⟩)) ∧
+      (∀ i j : V,
+        S.r (P.project ⟨(child i).1,oldPoint i⟩)
+          (P.project ⟨(child j).1,oldPoint j⟩) ↔
+        S.r (PP.project ⟨child i,newPoint i⟩)
+          (PP.project ⟨child j,newPoint j⟩))
+  classical
+  let witness (i : V) :
+      ∃ p : (SingleStep.successor B phase).Point (child i),
+        S.r (P.project ⟨(child i).1,oldPoint i⟩)
+          (PP.project ⟨child i,p⟩) :=
+    originalDiscardedEachParentClassHitsChosenChild
+      A B P transport tp hOne Kroot phase E hNot
+        (child i) (oldPoint i)
+  let newPoint (i : V) :
+      (SingleStep.successor B phase).Point (child i) :=
+    Classical.choose (witness i)
+  have hEach (i : V) :
+      S.r (P.project ⟨(child i).1,oldPoint i⟩)
+        (PP.project ⟨child i,newPoint i⟩) :=
+    Classical.choose_spec (witness i)
+  refine ⟨newPoint,hEach,?_,?_⟩
+  · intro i j
+    exact setoidSaturation_congr S (D i j) (hEach i) (hEach j)
+  · intro i j
+    constructor
+    · intro hij
+      exact S.trans (S.trans (S.symm (hEach i)) hij) (hEach j)
+    · intro hij
+      exact S.trans (S.trans (hEach i) hij) (S.symm (hEach j))
 
 end
 end CCO.ExactEPGeometry
