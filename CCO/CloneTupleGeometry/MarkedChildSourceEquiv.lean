@@ -115,7 +115,8 @@ noncomputable def actual_marked_owner_clone_source_equiv
                 (CloneSAP.source (owner_child_source S H ap C P cco I)).colour x y with
             | none => simp only [hcol, Option.map_none]
             | some a =>
-                simpa only [hcol, Option.map_some] using (hfun a).symm
+                simpa only [hcol, Option.map_some] using
+                  congrArg some (hfun a).symm
 
 end
 end CCO.CloneTupleGeometry
