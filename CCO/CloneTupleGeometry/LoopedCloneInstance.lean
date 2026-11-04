@@ -1,5 +1,6 @@
 import CCO.CloneTupleGeometry.LoopedPhaseMarkedAge
 import CCO.CloneSAP.CCO.Cycles
+import CCO.CloneSAP.Homogeneity
 
 /-!
 # B060 N03: actual pure-clone instance of looped old-atom marked cliques
