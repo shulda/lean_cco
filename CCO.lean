@@ -1888,3 +1888,4 @@ import CCO.CloneTupleGeometry.OwnerChildInfinitude
 import CCO.CloneTupleGeometry.MarkedChildPalette
 import CCO.CloneTupleGeometry.MarkedChildAtomEquiv
 import CCO.CloneTupleGeometry.MarkedChildColourReadout
+import CCO.CloneTupleGeometry.MarkedChildFullColour
