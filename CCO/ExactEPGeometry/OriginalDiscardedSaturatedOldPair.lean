@@ -54,7 +54,9 @@ def originalExactGlobalSetoid
   let h := originalExactGlobalRelation_equiv A base hOne E
   exact {
     r := originalExactGlobalRelation A base hOne E
-    iseqv := ⟨h.refl, h.symm, h.trans⟩
+    iseqv := ⟨h.refl,
+      (by intro x y hxy; exact h.symm x y hxy),
+      (by intro x y z hxy hyz; exact h.trans x y z hxy hyz)⟩
   }
 
 /-- C103, source strength: every original E-class of a real old
@@ -99,10 +101,6 @@ theorem originalDiscardedEachParentClassHitsChosenChild
     ((P.compose (SingleStep.projection B phase)).project ⟨d,z⟩)
     ((P.compose (SingleStep.projection B phase)).project ⟨c,y⟩)
     at hYZ
-  change (originalExactGlobalRelation A (P.parent r)
-    (fun i => hOne (P.parent r) i) E)
-    (P.project ⟨c.1,x⟩)
-    ((P.compose (SingleStep.projection B phase)).project ⟨c,y⟩)
   exact hYZ
 
 /-- C103: an arbitrary ORIGINAL binary relation, saturated on both
