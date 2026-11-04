@@ -2025,3 +2025,5 @@ import CCO.ExactEPGeometry.OriginalEmptyTraceBoundary
 import CCO.ExactEPGeometry.OriginalRetainedMixedActiveMarkedChart
 import CCO.ExactEPGeometry.OriginalEmptyMeetBoundary
 import CCO.ExactEPGeometry.OriginalProjectedGateNotIdentity
+import CCO.ExactEPGeometry.DiscardedQuotientClassEquiv
+import CCO.ExactEPGeometry.OriginalDiscardedChildOriginalEclass
