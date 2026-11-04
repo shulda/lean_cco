@@ -54,17 +54,18 @@ theorem originalSelectedTaggedRepresentative_globalE_injective
       A B P base hOne E).r (sigma c) (sigma d) := by
     exact ⟨Quotient.out x,Quotient.out y,hE⟩
   have hcd : c = d := by
-    calc
-      c = (Quotient.mk'' (sigma c) :
+    have hc : (Quotient.mk'' (sigma c) :
+        OriginalOccupancy A B P base hOne E) = c :=
+      originalOccupancyRepresentative_class A B P base hOne E c
+    have hd : (Quotient.mk'' (sigma d) :
+        OriginalOccupancy A B P base hOne E) = d :=
+      originalOccupancyRepresentative_class A B P base hOne E d
+    have heq : (Quotient.mk'' (sigma c) :
+        OriginalOccupancy A B P base hOne E) =
+        (Quotient.mk'' (sigma d) :
           OriginalOccupancy A B P base hOne E) :=
-            (originalOccupancyRepresentative_class
-              A B P base hOne E c).symm
-      _ = (Quotient.mk'' (sigma d) :
-          OriginalOccupancy A B P base hOne E) :=
-            Quotient.sound hSupport
-      _ = d :=
-            originalOccupancyRepresentative_class
-              A B P base hOne E d
+      Quotient.sound hSupport
+    exact hc.symm.trans (heq.trans hd)
   subst d
   have hLocal :
       originalExactOnCurrentSort
@@ -74,16 +75,22 @@ theorem originalSelectedTaggedRepresentative_globalE_injective
       A B P transport base hOne E (sigma c)
         (Quotient.out x) (Quotient.out y)).mpr hE
   have hxy : x = y := by
-    calc
-      x = (Quotient.mk'' (Quotient.out x) :
+    have hx : (Quotient.mk'' (Quotient.out x) :
+        (originalExactSelectedQuotientCurrentSource
+          A B P transport base hOne E).Point c) = x :=
+      Quotient.out_eq x
+    have hy : (Quotient.mk'' (Quotient.out y) :
+        (originalExactSelectedQuotientCurrentSource
+          A B P transport base hOne E).Point c) = y :=
+      Quotient.out_eq y
+    have heq : (Quotient.mk'' (Quotient.out x) :
+        (originalExactSelectedQuotientCurrentSource
+          A B P transport base hOne E).Point c) =
+        (Quotient.mk'' (Quotient.out y) :
           (originalExactSelectedQuotientCurrentSource
             A B P transport base hOne E).Point c) :=
-            (Quotient.out_eq x).symm
-      _ = (Quotient.mk'' (Quotient.out y) :
-          (originalExactSelectedQuotientCurrentSource
-            A B P transport base hOne E).Point c) :=
-            Quotient.sound hLocal
-      _ = y := Quotient.out_eq y
+      Quotient.sound hLocal
+    exact hx.symm.trans (heq.trans hy)
   exact congrArg (Sigma.mk c) hxy
 
 end
