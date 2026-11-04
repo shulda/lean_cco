@@ -144,8 +144,9 @@ theorem originalRetainedMixedSelectedOld_injective
     have hNotReached : ¬Nonempty (Bridge B.source Kroot
         (inactive j).1) := hInactive j
     exact hNotReached (hOwners ▸ hReached)
-  exact injective_sum_of_disjoint active inactive
-    hActiveOld hInactiveOld hDisjoint
+  simpa only [active,inactive] using
+    (injective_sum_of_disjoint active inactive
+      hActiveOld hInactiveOld hDisjoint)
 
 end
 end CCO.ExactEPGeometry
