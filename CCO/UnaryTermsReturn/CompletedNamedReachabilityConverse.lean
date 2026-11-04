@@ -52,13 +52,15 @@ theorem original_completed_hidden_reachable_has_named_word
   | refl =>
       exact ⟨i,D,.ident D,rfl⟩
   | step h e ih =>
-      obtain ⟨j,F,word,rfl⟩ := ih
+      obtain ⟨j,F,word,hw⟩ := ih
       cases e with
       | projection E x =>
-          contradiction
+          cases hw
       | upward E K hEK q' =>
+          cases hw
           exact ⟨_,K,.up word hEK,rfl⟩
       | rawTransition a q' =>
+          cases hw
           exact ⟨_,
             originalNamedRawTransitionSymbol_target S H sap nr2 a,
             .transition a word,rfl⟩
