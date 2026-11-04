@@ -119,11 +119,12 @@ def originalChordLeftShortCycle
         (C.vertices (originalChordLeftIndex cut
           (CCO.cyclicNext (by omega : 0 < k + 1) p))) _ =
             some a
-      rw [hindex]
-      exact C.specified (originalChordLeftIndex cut p)
+      simpa only [hindex] using
+        (C.specified (originalChordLeftIndex cut p))
     · have hval := p.isLt
       have hpK : p = (⟨k, by omega⟩ : Fin (k + 1)) := by
         apply Fin.ext
+        change p.val = k
         omega
       rw [hpK]
       change ∃ a, D.edge
@@ -133,8 +134,8 @@ def originalChordLeftShortCycle
           (CCO.cyclicNext (by omega : 0 < k + 1)
             (⟨k, by omega⟩ : Fin (k + 1))))) _ =
           some a
-      rw [original_chord_left_last cut,
-        original_chord_left_closing_next cut]
-      exact hChord
+      simpa only [original_chord_left_last cut,
+        original_chord_left_closing_next cut,
+        OriginalNormalizedSpecifiedChord] using hChord
 
 end CCO.TypedOrbitFrames
