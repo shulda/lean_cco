@@ -102,7 +102,20 @@ noncomputable def actual_marked_owner_clone_source_equiv
     have hc := marked_full_colour_transport S H ap C P cco I
       ((marked_child_equiv S H ap C P cco I c).symm x)
       ((marked_child_equiv S H ap C P cco I d).symm y)
-    simpa only [Equiv.apply_symm_apply] using hc
+    have hfun (a : OwnerCloneChildAtom S H ap C P cco I c d) :
+        (actualMarkedCloneAtomEquiv S H ap C P cco I c d) a =
+          ownerCloneAtomToMarked S H ap C P cco I a := rfl
+    calc
+      _ = ((CloneSAP.source (owner_child_source S H ap C P cco I)).colour x y).map
+          (ownerCloneAtomToMarked S H ap C P cco I) := by
+            simpa only [Equiv.apply_symm_apply] using hc
+      _ = ((CloneSAP.source (owner_child_source S H ap C P cco I)).colour x y).map
+          (actualMarkedCloneAtomEquiv S H ap C P cco I c d) := by
+            cases hcol :
+                (CloneSAP.source (owner_child_source S H ap C P cco I)).colour x y with
+            | none => simp only [hcol, Option.map_none]
+            | some a =>
+                simpa only [hcol, Option.map_some] using (hfun a).symm
 
 end
 end CCO.CloneTupleGeometry
