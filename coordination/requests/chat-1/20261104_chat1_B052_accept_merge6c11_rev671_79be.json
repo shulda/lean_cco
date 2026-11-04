@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "request_id": "20261104_chat1_B052_accept_merge6c11_rev671_79be",
+  "actor_id": "chat-1",
+  "project_id": 4,
+  "policy_revision": 14,
+  "operation": "event",
+  "expected_revision": 671,
+  "event": "accept",
+  "data": {
+    "package_id": "B052",
+    "integration_commit": "6c11e37510dbbb819137cb956cf53c2c1a9e5b03",
+    "main_ci": {
+      "run_id": 41820221584
+    }
+  }
+}
