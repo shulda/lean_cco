@@ -18,6 +18,13 @@ variable {ι : Type u} {X : ι → Type v}
 variable (S : AtomicSource.{u,v,w} ι X)
 variable {V : Type z}
 
+/-- Explicit dependent Sigma transport along equality of old sort labels. -/
+private theorem sigma_mk_transport_eta {a b : ι} (hab : a = b) (x : X a) :
+    (⟨b, Eq.mp (congrArg X hab) x⟩ : Sigma X) =
+      (⟨a,x⟩ : Sigma X) := by
+  cases hab
+  rfl
+
 /-- The full old pair-colour reading of the specified side at p,
 including both original sort tags; its atom is guaranteed present
 by the actual SimpleCycle.specified field. -/
@@ -49,9 +56,12 @@ theorem original_coloured_side_reading_is_cycle_hom
   have htag (p : Fin C.length) :
       (⟨D.vertexSort (C.vertices p),pt p⟩ : Sigma X) = f p := by
     dsimp [pt]
-    cases hs p
-    cases f p
-    rfl
+    calc
+      (⟨D.vertexSort (C.vertices p),
+        Eq.mp (congrArg X (hs p)) (f p).2⟩ : Sigma X) =
+          (⟨(f p).1,(f p).2⟩ : Sigma X) :=
+            sigma_mk_transport_eta (hs p) (f p).2
+      _ = f p := by cases f p; rfl
   refine ⟨pt, ?_⟩
   intro p a ha
   have hc := hf p
