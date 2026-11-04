@@ -80,7 +80,8 @@ theorem marked_full_colour_some_iff
   | inr h =>
       cases h.down
       have hcode :=
-        ownerCloneAtomToMarked_code S H ap C P cco I (Sum.inr ⟨rfl⟩)
+        ownerCloneAtomToMarked_code S H ap C P cco I
+          (c := c) (d := c) (Sum.inr (⟨rfl⟩ : PLift (c = c)))
       have hrel :=
         marked_child_clone_pair_colour_iff S H ap C P cco I x y
       constructor
