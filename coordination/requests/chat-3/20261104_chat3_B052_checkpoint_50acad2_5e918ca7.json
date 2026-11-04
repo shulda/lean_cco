@@ -1,0 +1,15 @@
+{
+"schema_version":1,
+"request_id":"20261104_chat3_B052_checkpoint_50acad2_5e918ca7",
+"actor_id":"chat-3",
+"project_id":6,
+"policy_revision":14,
+"operation":"event",
+"expected_revision":656,
+"event":"checkpoint",
+"data":{"package_id":"B052",
+"head_sha":"50acad2038658d0adc5426c3cce1fb74612b5440",
+"pr_number":71,
+"observed_ci":{"run_id":41795838375,"run_attempt":1,
+"head_sha":"50acad2038658d0adc5426c3cce1fb74612b5440","conclusion":"success"}}
+}
