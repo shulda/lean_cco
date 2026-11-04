@@ -1878,3 +1878,4 @@ import CCO.TypedOrbitFrames.ChordSplitEdges
 import CCO.TypedOrbitFrames.ChordSplitSideReading
 import CCO.TypedOrbitFrames.OldTupleSAP
 import CCO.TypedOrbitFrames.ChordCycleStep
+import CCO.TypedOrbitFrames.ChordRotation
