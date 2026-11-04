@@ -58,22 +58,31 @@ theorem original_completed_hidden_reachable_has_named_word
       | projection E x =>
           cases hw
       | upward E K hEK q' =>
-          obtain ⟨hFE,hq⟩ := original_completed_named_node_heq
+          obtain ⟨hSort,hFE,hq⟩ := original_completed_named_node_heq
             S H F (OriginalNamedRawUnaryTerm.eval S H sap nr2 word q)
             E q' hw.symm
-          cases hFE
-          cases hq
+          cases hSort
+          have hCoord : F = E := eq_of_heq hFE
+          cases hCoord
+          have hValue : OriginalNamedRawUnaryTerm.eval S H sap nr2 word q =
+              q' := eq_of_heq hq
+          cases hValue
           exact ⟨_,K,.up word hEK,rfl⟩
       | rawTransition a q' =>
           rcases a with ⟨⟨E,R⟩,hR⟩
-          obtain ⟨hFE,hq⟩ := original_completed_named_node_heq
+          let a' : OriginalNamedRawTransitionSymbol S H _ _ :=
+            ⟨⟨E,R⟩,hR⟩
+          obtain ⟨hSort,hFE,hq⟩ := original_completed_named_node_heq
             S H F (OriginalNamedRawUnaryTerm.eval S H sap nr2 word q)
             E q' hw.symm
-          cases hFE
-          cases hq
+          cases hSort
+          have hCoord : F = E := eq_of_heq hFE
+          cases hCoord
+          have hValue : OriginalNamedRawUnaryTerm.eval S H sap nr2 word q =
+              q' := eq_of_heq hq
+          cases hValue
           exact ⟨_,
-            originalNamedRawTransitionSymbol_target S H sap nr2
-              ⟨⟨F,R⟩,hR⟩,
-            .transition ⟨⟨F,R⟩,hR⟩ word,rfl⟩
+            originalNamedRawTransitionSymbol_target S H sap nr2 a',
+            .transition a' word,rfl⟩
 
 end CCO.UnaryTermsReturn
