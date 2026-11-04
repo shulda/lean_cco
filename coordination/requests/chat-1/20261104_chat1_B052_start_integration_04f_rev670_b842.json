@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "request_id": "20261104_chat1_B052_start_integration_04f_rev670_b842",
+  "actor_id": "chat-1",
+  "project_id": 4,
+  "policy_revision": 14,
+  "operation": "event",
+  "expected_revision": 670,
+  "event": "start_integration",
+  "data": {
+    "package_id": "B052",
+    "head_sha": "04f43219bd6cec4815ecebafae3333f455f03ad7",
+    "base_main_sha": "f33fb4dec07bcae7f14ed8436a331c73f095b473",
+    "head_contains_main": true,
+    "ci": {
+      "run_id": 41816362946
+    }
+  }
+}
