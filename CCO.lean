@@ -1879,3 +1879,6 @@ import CCO.TypedOrbitFrames.ChordSplitSideReading
 import CCO.TypedOrbitFrames.OldTupleSAP
 import CCO.TypedOrbitFrames.ChordCycleStep
 import CCO.TypedOrbitFrames.ChordRotation
+import CCO.TypedOrbitFrames.CycleHomReading
+import CCO.TypedOrbitFrames.OriginalClassFibre
+import CCO.TypedOrbitFrames.FullCoverInfinite
