@@ -1,0 +1,65 @@
+{
+  "request_blob_sha": "eeca95b16544107a40aa5c0f196a5e8b4aeea488",
+  "request_path": "coordination/requests/chat-3/20261104_chat3_B052_submit_04f43219_4db731c2.json",
+  "coordination_parent": "5124dbfcf56455c7c8b4f7d1e5499696c6a0fcf5",
+  "main_sha": "f33fb4dec07bcae7f14ed8436a331c73f095b473",
+  "status": "applied",
+  "event": "submit",
+  "package_id": "B052",
+  "effective_revision": 667,
+  "state_view": {
+    "authority": "coordination:formalization/coordination/STATE.json",
+    "state_blob_sha": "4016adf745336bdb4bfc12ec1b7693bf724c6b45",
+    "revision": 667,
+    "policy_revision": 14,
+    "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+    "execution_mode": "chat",
+    "claims_paused": false,
+    "integration_lock": null,
+    "packages": {
+      "B052": {
+        "state": "SUBMITTED",
+        "owner_project_id": 6,
+        "author_actor_ids": [
+          "chat-3"
+        ],
+        "original_author_project_ids": [
+          6
+        ],
+        "branch": "chat/chat-3/B052",
+        "claim_revision": 596,
+        "base_main_sha": "7eb679b2465dac8fd37f723496583b2994516322",
+        "base_ci": {
+          "run_id": 41483201040,
+          "run_attempt": 1,
+          "head_sha": "7eb679b2465dac8fd37f723496583b2994516322",
+          "conclusion": "success",
+          "axiom_audit": "allowlist",
+          "job_id": 125406608369,
+          "declarations": 29656,
+          "source_modules": 1776
+        },
+        "head_sha": "04f43219bd6cec4815ecebafae3333f455f03ad7",
+        "pr_number": 71,
+        "observed_ci": {
+          "run_id": 41815125157,
+          "run_attempt": 1,
+          "head_sha": "79233d2d51e16de8bc582cdb5dcd68258d88c4a0",
+          "conclusion": "success"
+        },
+        "checkpoint_revision": 666,
+        "ci": {
+          "run_id": 41816362946,
+          "run_attempt": 1,
+          "head_sha": "04f43219bd6cec4815ecebafae3333f455f03ad7",
+          "conclusion": "success",
+          "axiom_audit": "allowlist",
+          "job_id": 126527997559,
+          "declarations": 30216,
+          "source_modules": 1842
+        },
+        "report_path": "formalization/coordination/submissions/B052.md"
+      }
+    }
+  }
+}
