@@ -116,8 +116,10 @@ variable (P : SourcePhase (CloneSAP.source S) (CloneSAP.homogeneous S H) C A)
 variable (cco : SemanticCCO.{u,v,max u v,w} S)
 
 -- The one concrete dependent FullAut group has a large reducible index family.
--- This only adjusts elaboration of its existing inferred instance, not the theorem.
+-- These strictly local options change elaboration only, not hypotheses or axioms.
+set_option backward.isDefEq.respectTransparency.types false
 set_option synthInstance.maxHeartbeats 250000
+set_option maxHeartbeats 900000
 
 include ap in
 /-- Actual B047 marked-limit homogeneity transported along the
