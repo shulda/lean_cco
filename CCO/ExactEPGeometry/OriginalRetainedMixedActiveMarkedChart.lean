@@ -115,6 +115,38 @@ theorem originalRetainedMixedActiveMasks_oldMarkedChart
     A B P transport tp hOne Kroot E hE (anchor o)
   let chi := originalRetainedSelectedOccupancyCharacter
     A B P transport tp hOne Kroot phase E hE
+  change ∀ (n m : Nat)
+      (owners : Fin n → Occ)
+      (points : ∀ i : Fin n,
+        Q.Point (Quotient.mk'' (anchor (owners i)).val))
+      (bits : Fin n → ZMod 2),
+      (∀ i j : Fin n,
+        originalSelectedCompleteAtomicMask Q
+          (K (owners i)) (K (owners j))
+          (fun (R : owners i ⟶ owners j) => chi.value R)
+          (Q.source.colour (points i) (points j))
+          (bits i) (bits j)) →
+      ∀ (old : Sum (Fin n) (Fin m) → Sigma B.Point),
+        (∀ i : Fin n,
+          old (Sum.inl i) =
+            ⟨(anchor (owners i)).val,
+              originalSelectedReachedEclassRepresentative
+                A B P transport hOne Kroot E
+                  (anchor (owners i)) (points i)⟩) →
+        (∀ j : Fin m,
+          ¬Nonempty (Bridge B.source Kroot (old (Sum.inr j)).1)) →
+        Function.Injective old →
+        let allBits : Sum (Fin n) (Fin m) → ZMod 2 :=
+          fun v => match v with
+            | Sum.inl i => bits i
+            | Sum.inr _ => 0
+        ∃ f : Sum (Fin n) (Fin m) ↪ phase.MarkedLimit B.cco,
+          (∀ v, (phase.markedCoding B.cco).table.owner (f v) =
+            APCharacter.Age.ownerEquiv B.source
+              ((old v).1,allBits v)) ∧
+          ∀ v w, (phase.markedCoding B.cco).table.colour (f v) (f w) =
+            APCharacter.Age.colourEquiv B.source
+              (taggedColour B.source (old v) (old w))
   intro n m owners points bits hMasks old hOldAnchor hInactive hInjective
   let allBits : Sum (Fin n) (Fin m) → ZMod 2 :=
     fun v => match v with
