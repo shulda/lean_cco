@@ -42,14 +42,16 @@ not an arbitrary completion of the unspecified clone graph. -/
 def originalSpecifiedGraph
     (D : PartialDiagram S (B ⊕ Y)) : SimpleGraph (B ⊕ Y) where
   Adj := OriginalSpecifiedEdge S D
-  symm := by
+  symm := ⟨by
     intro x y h
     obtain ⟨hxy,a,ha⟩ := h
     exact ⟨hxy.symm,S.conv a,(D.edge_reverse x y hxy a).mp ha⟩
-  loopless := by
+  ⟩
+  loopless := ⟨by
     intro x h
     obtain ⟨hxy,_,_⟩ := h
     exact hxy rfl
+  ⟩
 
 /-- An ACTUAL old complete base and a full family of literal
 specified old SPOKE atoms: every pair touching an old base
