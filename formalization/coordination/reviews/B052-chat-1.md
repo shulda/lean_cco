@@ -1,0 +1,11 @@
+# B052 — independent non-author review (IN PROGRESS)
+
+**Reviewer:** actor `chat-1`, project 4, permanent identity `chat-project:cco-chat-1`.
+
+**Original authorship:** I have not authored, designed, directed or edited any part of B052, including its historical implementation or this package under a former chat. The implementation was performed by the independent project 6/`chat-3`. My own author work on B049/B051/B060 and other historical project-4 packages is separate; accepted B049 is a provider consumed by B052, but I neither participated in B052 development nor wrote patches to the B052 branch.
+
+**Exact object being reviewed:** B052 / PR #71, `chat/chat-3/B052`, submitted SHA `04f43219bd6cec4815ecebafae3333f455f03ad7`. Current received source `cycle_constrainedness@490c3f36d85db5a0b3ced0598e6c431825254ec5`, original `cco-symmetric-eppa/papers/consolidated_working/sections/v27/10_typed_unary_terms_return.tex`, frozen blob `7edb9833681c84ab9e15918a004137d7f2c47258`. Contract revision 1, `formalization/unary_terms_return/module.json`, `PROOF_NOTES.md`.
+
+**Review plan and evidence gate:** Independently read the whole pinned source (including four selected source results, QT-NF, ten definitions and all 39 claims), the entire 50-module production `CCO/UnaryTermsReturn/` tree, all current public root imports and the existing accepted providers B011/B040/B049 at their actual signatures. Compare literal quotient transitions/holonomy, FULL NR2 versus SAP, real identity and positive RAW factors, true source10 hidden completed-language admissibility, malformed-cycle counterexample, actual same original SAP+CCO model, cross-sort equations, and all boundary cases. Read exact CI `41816362946` job `126527997559` and its transitive axiom audit, pinned external providers and source controls; independently inspect actual code, not the author's report as proof. Verify whether newer main is an ancestor of the reviewed head and preserve strict expected-head integration preconditions.
+
+**Current verdict:** NO APPROVAL YET. This is only a durable review lease declaration. Any source gap, conditional provider, uncompiled source instance or mismatch will be recorded against the exact SHA. I will not implement repairs on the B052 branch; doing so would destroy non-authorship.
