@@ -71,10 +71,11 @@ private structure InfiniteColourStep {α : Type u} {β : Type v}
 private noncomputable def chooseInfiniteStep
     {α : Type u} {β : Type v} [Finite β]
     (colour : α → α → β) (D : InfiniteCarrier α) :
-    InfiniteColourStep colour D.carrier := by
-  obtain ⟨x,hx,b,t,ht,hsub,hc⟩ :=
-    infinite_colour_tail colour D.infinite
-  exact ⟨x,b,⟨t,ht⟩,hx,hsub,hc⟩
+    InfiniteColourStep colour D.carrier :=
+  Classical.choice (show Nonempty (InfiniteColourStep colour D.carrier) from by
+    obtain ⟨x,hx,b,t,ht,hsub,hc⟩ :=
+      infinite_colour_tail colour D.infinite
+    exact ⟨⟨x,b,⟨t,ht⟩,hx,hsub,hc⟩⟩)
 
 /-- Infinite Ramsey for pairs in a finite symmetric palette, proved
 from infinite pigeonhole without assuming any pre-existing Ramsey theorem.
@@ -119,16 +120,19 @@ theorem infinite_monochromatic_pairs
     by_contra hij
     rcases lt_or_gt_of_ne hij with hij' | hji'
     · have hnot : pivot j ≠ pivot i :=
-        (Set.mem_diff.mp ((hNext i) (hLater i j hij'))).2
+        (Set.mem_sdiff.mp ((hNext i) (hLater i j hij'))).2
       exact hnot he.symm
     · have hnot : pivot i ≠ pivot j :=
         (Set.mem_diff.mp ((hNext j) (hLater j i hji'))).2
       exact hnot he
   obtain ⟨b,hFibre⟩ := Finite.exists_infinite_fiber selected
   let fibre : Set ℕ := selected ⁻¹' {b}
-  have hfibre : fibre.Infinite := Set.infinite_coe_iff.mpr hFibre
+  have hfibre : fibre.Infinite := Set.infinite_coe_iff.mp hFibre
   let e : ℕ ↪ fibre := hfibre.natEmbedding fibre
-  let indices : ℕ ↪ ℕ := e.trans (Embedding.subtype fibre)
+  let indices : ℕ ↪ ℕ :=
+    ⟨fun n => (e n).val, by
+      intro i j he
+      exact e.injective (Subtype.ext he)⟩
   have hIndex (n : ℕ) : selected (indices n) = b := by
     have h := (e n).property
     simpa only [fibre, indices, Set.mem_preimage,
