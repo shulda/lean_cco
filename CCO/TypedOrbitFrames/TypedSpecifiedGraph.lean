@@ -89,4 +89,24 @@ theorem original_typed_complete_base_chordless_clone_only
     (original_specified_graph_complete_base_spokes S D hBase)
     f hNo
 
+
+/-- A genuine source11 old PARTIAL typed diagram with its complete
+base and all prescribed spokes has only TRIANGULAR chordless
+simple cycles that meet the base. The proof keeps old colour data
+in PartialDiagram and uses only the actual specified-edge graph.
+Clone-only chordless cycles still require the separate old
+STRONG pure-power/girth argument. -/
+theorem original_typed_base_meeting_chordless_cycle_triangle
+    {n : Nat} [NeZero n] (hn : 3 ≤ n)
+    (D : PartialDiagram S (B ⊕ Y))
+    (hBase : OriginalCompleteBaseSpokes S D)
+    (f : CycleCode (B ⊕ Y) n)
+    (hNo : NoTwoStepChords (originalSpecifiedGraph S D) f)
+    (hTouches : ∃ i : ZMod n, ∃ d : B, f i = Sum.inl d) :
+    n = 3 := by
+  exact complete_base_chordless_meeting_base_is_triangle
+    hn (originalSpecifiedGraph S D)
+    (original_specified_graph_complete_base_spokes S D hBase)
+    f hNo hTouches
+
 end CCO.TypedOrbitFrames
