@@ -1855,3 +1855,5 @@ import CCO.UnaryTermsReturn.CommonBlockMalformedObstruction
 import CCO.UnaryTermsReturn.RootSignatureBundle
 import CCO.UnaryTermsReturn.CompletedNamedReachabilityConverse
 import CCO.UnaryTermsReturn.CompletedNamedNodeEquality
+import CCO.UnaryTermsReturn.CompletedNamedHiddenBound
+import CCO.UnaryTermsReturn.CompletedRealFirstProjection
