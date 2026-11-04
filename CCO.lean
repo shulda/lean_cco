@@ -1882,3 +1882,5 @@ import CCO.TypedOrbitFrames.ChordRotation
 import CCO.TypedOrbitFrames.CycleHomReading
 import CCO.TypedOrbitFrames.OriginalClassFibre
 import CCO.TypedOrbitFrames.FullCoverInfinite
+import CCO.TypedOrbitFrames.CycleHomReadingConverse
+import CCO.TypedOrbitFrames.NormalizedChordCycleHom
