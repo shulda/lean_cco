@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "request_id": "20261104_chat1_B060_ramsey_red_4f42_rev663_17e6",
+  "actor_id": "chat-1",
+  "project_id": 4,
+  "policy_revision": 14,
+  "operation": "event",
+  "expected_revision": 663,
+  "event": "checkpoint",
+  "data": {
+    "package_id": "B060",
+    "head_sha": "4f42dce6e4199a634022f3bd7b289049923f5807",
+    "pr_number": 72,
+    "observed_ci": {
+      "run_id": 41812062003,
+      "head_sha": "4f42dce6e4199a634022f3bd7b289049923f5807",
+      "conclusion": "failure"
+    }
+  }
+}
