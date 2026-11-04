@@ -29,7 +29,7 @@ structure OriginalChordCut (n k : Nat) : Prop where
 /-- Left cycle arc: vertices 0,1,...,k. The chord closes k→0. -/
 def originalChordLeftIndex {n k : Nat}
     (cut : OriginalChordCut n k) (a : Fin (k + 1)) : Fin n :=
-  ⟨a.val, by have := a.isLt; omega⟩
+  ⟨a.val, by have := a.isLt; have := cut.right_nontrivial; omega⟩
 
 /-- Right cycle arc: vertices k,k+1,...,n-1,0. The chord closes 0→k.
 The last index wraps to the ACTUAL original 0; it is not a duplicate
@@ -46,6 +46,8 @@ This is the exact well-founded measure used by source11 C04. -/
 theorem original_chord_both_cycles_shorter {n k : Nat}
     (cut : OriginalChordCut n k) :
     k + 1 < n ∧ n - k + 1 < n := by
+  have hsmall := cut.left_nontrivial
+  have hbound := cut.right_nontrivial
   constructor
   · omega
   · omega
@@ -69,27 +71,38 @@ theorem original_chord_right_injective {n k : Nat}
   have hv := congrArg Fin.val h
   have ha := a.isLt
   have hb := b.isLt
-  unfold originalChordRightIndex at hv
-  split_ifs at hv <;> simp only [Fin.val_mk] at hv <;> omega
+  have hcut := cut.right_nontrivial
+  simp only [originalChordRightIndex, Fin.val_mk] at hv
+  by_cases hA : a.val < n - k
+  · by_cases hB : b.val < n - k
+    · simp [hA,hB] at hv
+      omega
+    · simp [hA,hB] at hv
+      omega
+  · by_cases hB : b.val < n - k
+    · simp [hA,hB] at hv
+      omega
+    · omega
 
 /-- The old zero index is the first left endpoint. -/
 theorem original_chord_left_zero {n k : Nat}
     (cut : OriginalChordCut n k) :
     originalChordLeftIndex cut ⟨0, by omega⟩ =
-      (⟨0, by omega⟩ : Fin n) := rfl
+      (⟨0, by have := cut.right_nontrivial; omega⟩ : Fin n) := rfl
 
 /-- The old k index is the last left endpoint. -/
 theorem original_chord_left_last {n k : Nat}
     (cut : OriginalChordCut n k) :
     originalChordLeftIndex cut ⟨k, by omega⟩ =
-      (⟨k, by omega⟩ : Fin n) := rfl
+      (⟨k, by have := cut.right_nontrivial; omega⟩ : Fin n) := rfl
 
 /-- The old k index is the first right endpoint. -/
 theorem original_chord_right_zero {n k : Nat}
     (cut : OriginalChordCut n k) :
-    originalChordRightIndex cut ⟨0, by omega⟩ =
-      (⟨k, by omega⟩ : Fin n) := by
+    originalChordRightIndex cut ⟨0, by have := cut.right_nontrivial; omega⟩ =
+      (⟨k, by have := cut.right_nontrivial; omega⟩ : Fin n) := by
   apply Fin.ext
+  have hcut := cut.right_nontrivial
   have h : 0 < n - k := by omega
   simp [originalChordRightIndex, h]
 
@@ -98,7 +111,7 @@ the opposite chord orientation to the left arc. -/
 theorem original_chord_right_last {n k : Nat}
     (cut : OriginalChordCut n k) :
     originalChordRightIndex cut ⟨n - k, by omega⟩ =
-      (⟨0, by omega⟩ : Fin n) := by
+      (⟨0, by have := cut.right_nontrivial; omega⟩ : Fin n) := by
   apply Fin.ext
   simp [originalChordRightIndex]
 
@@ -108,6 +121,8 @@ theorem original_chord_arc_cover {n k : Nat}
     (cut : OriginalChordCut n k) (j : Fin n) :
     (∃ a : Fin (k + 1), originalChordLeftIndex cut a = j) ∨
     (∃ b : Fin (n - k + 1), originalChordRightIndex cut b = j) := by
+  have hcut := cut.right_nontrivial
+  have hjlt := j.isLt
   by_cases hj : j.val ≤ k
   · left
     refine ⟨⟨j.val, by omega⟩, ?_⟩
@@ -135,6 +150,7 @@ theorem original_chord_arc_intersection_endpoints {n k : Nat}
     (originalChordLeftIndex cut a).val = 0 ∨
       (originalChordLeftIndex cut a).val = k := by
   have hv := congrArg Fin.val hab
+  have hcut := cut.right_nontrivial
   by_cases hb : b.val < n - k
   · right
     simp only [originalChordLeftIndex,
