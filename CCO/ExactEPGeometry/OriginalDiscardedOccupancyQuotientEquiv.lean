@@ -79,7 +79,6 @@ noncomputable def originalDiscardedOccupancySortClassEquiv
     obtain ⟨c,hc⟩ := hSurj i
     refine ⟨c,?_⟩
     rw [hc]
-    exact T.refl i
   exact quotientClassEquiv_of_classwiseSurjective
     S T f hPull hClassSurj
 
