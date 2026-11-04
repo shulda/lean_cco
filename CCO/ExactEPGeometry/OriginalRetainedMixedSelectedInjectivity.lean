@@ -148,8 +148,16 @@ theorem originalRetainedMixedSelectedOld_injective
     match v with
     | Sum.inl i => active i
     | Sum.inr j => inactive j)
-  exact injective_sum_of_disjoint active inactive
-    hActiveOld hInactiveOld hDisjoint
+  intro v w hvw
+  cases v with
+  | inl i =>
+    cases w with
+    | inl j => exact congrArg Sum.inl (hActiveOld hvw)
+    | inr j => exact False.elim (hDisjoint i j hvw)
+  | inr i =>
+    cases w with
+    | inl j => exact False.elim (hDisjoint j i hvw.symm)
+    | inr j => exact congrArg Sum.inr (hInactiveOld hvw)
 
 end
 end CCO.ExactEPGeometry
