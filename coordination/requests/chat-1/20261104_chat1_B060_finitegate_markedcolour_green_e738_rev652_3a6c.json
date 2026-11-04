@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "request_id": "20261104_chat1_B060_finitegate_markedcolour_green_e738_rev652_3a6c",
+  "actor_id": "chat-1",
+  "project_id": 4,
+  "policy_revision": 14,
+  "operation": "event",
+  "expected_revision": 652,
+  "event": "checkpoint",
+  "data": {
+    "package_id": "B060",
+    "head_sha": "e738855f7b90ad0a398ba32e44ef67411e7defd1",
+    "pr_number": 72,
+    "observed_ci": {
+      "run_id": 41794444275,
+      "head_sha": "e738855f7b90ad0a398ba32e44ef67411e7defd1",
+      "conclusion": "success",
+      "axiom_audit": "allowlist"
+    }
+  }
+}
