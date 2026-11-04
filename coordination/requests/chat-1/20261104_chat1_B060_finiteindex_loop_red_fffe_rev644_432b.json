@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "request_id": "20261104_chat1_B060_finiteindex_loop_red_fffe_rev644_432b",
+  "actor_id": "chat-1",
+  "project_id": 4,
+  "policy_revision": 14,
+  "operation": "event",
+  "expected_revision": 644,
+  "event": "checkpoint",
+  "data": {
+    "package_id": "B060",
+    "head_sha": "fffe721aec1d8bcc3376c61201e22708d77e9bef",
+    "pr_number": 72,
+    "observed_ci": {
+      "run_id": 41787605861,
+      "head_sha": "fffe721aec1d8bcc3376c61201e22708d77e9bef",
+      "conclusion": "failure"
+    }
+  }
+}
