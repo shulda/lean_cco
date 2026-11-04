@@ -152,6 +152,7 @@ theorem originalRetainedArbitraryMixedMarkedTriangleAge
     match v with
     | Sum.inl i => Quotient.mk'' (anchor (owners i)).val
     | Sum.inr j => inactiveSort j
+  dsimp only
   intro rel bits hActual hReverse hDiagonal hSeparate hTriangles hMasks hInactive
   letI : Finite (Sum (Fin n) (Fin m)) := inferInstance
   let D : ActualOrbitalDiagram B.G Q.Point (Sum (Fin n) (Fin m)) := {
