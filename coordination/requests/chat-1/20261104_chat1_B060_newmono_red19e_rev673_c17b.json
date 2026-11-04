@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "request_id": "20261104_chat1_B060_newmono_red19e_rev673_c17b",
+  "actor_id": "chat-1",
+  "project_id": 4,
+  "policy_revision": 14,
+  "operation": "event",
+  "expected_revision": 673,
+  "event": "checkpoint",
+  "data": {
+    "package_id": "B060",
+    "head_sha": "19e662406cfac9d234f3f4d1e82e6cee5542e6ac",
+    "pr_number": 72,
+    "observed_ci": {
+      "run_id": 41821375109,
+      "head_sha": "19e662406cfac9d234f3f4d1e82e6cee5542e6ac",
+      "conclusion": "failure"
+    }
+  }
+}
