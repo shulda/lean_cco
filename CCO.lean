@@ -1886,3 +1886,4 @@ import CCO.CloneTupleGeometry.ActualOldMonoClique
 import CCO.CloneTupleGeometry.MarkedOwnerLimit
 import CCO.CloneTupleGeometry.OwnerChildInfinitude
 import CCO.CloneTupleGeometry.MarkedChildPalette
+import CCO.CloneTupleGeometry.MarkedChildAtomEquiv
