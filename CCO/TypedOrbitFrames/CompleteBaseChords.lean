@@ -90,7 +90,7 @@ theorem complete_base_chordless_cycle_clone_only
         (hNo hn i (complete_base_forces_two_step_chord
           hn G hBase f i d h))
   | inr x =>
-      exact ⟨x, h⟩
+      exact ⟨x, rfl⟩
 
 
 /-- Source11 C01/C02 in exactly the long-vs-triangle form:
