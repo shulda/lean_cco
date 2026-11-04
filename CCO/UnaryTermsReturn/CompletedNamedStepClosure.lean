@@ -50,8 +50,10 @@ theorem original_completed_hidden_value_has_named_witness
       (Sum.inr v : OriginalCompletedNamedCarrier S H) =
         originalCompletedNamedHiddenNode S H D q := by
   rcases v with ⟨⟨i, ⟨F, q⟩⟩, ⟨D, hD⟩⟩
-  cases hD
-  exact ⟨i, D, q, rfl⟩
+  rcases D with ⟨J, hJ⟩
+  change J = F at hD
+  subst F
+  exact ⟨i, ⟨J, hJ⟩, q, rfl⟩
 
 /-- The ACTUAL one-generated closure under the original
 represented terminal primitive edge graph. The empty word
@@ -168,11 +170,11 @@ theorem original_completed_restricted_reachable_complete
       OriginalCompletedNamedRestrictedReachable S H sap nr2 C x v := by
   induction h with
   | refl => exact ⟨x,rfl,.refl x⟩
-  | @step a b c h e ih =>
+  | step h e ih =>
       obtain ⟨v,hv,hvReach⟩ := ih
-      have e' : OriginalCompletedNamedStep S H sap nr2 v.val c := by
+      have e' : OriginalCompletedNamedStep S H sap nr2 v.val _ := by
         simpa only [hv] using e
-      let z : C := ⟨c,hClosed v.property e'⟩
+      let z : C := ⟨_,hClosed v.property e'⟩
       exact ⟨z,rfl,.step hvReach e'⟩
 
 /-- Exact source10 completed-substructure clause: the image of
