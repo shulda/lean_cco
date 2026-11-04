@@ -1864,3 +1864,4 @@ import CCO.UnaryTermsReturn.CompletedNamedFullAdmissible
 import CCO.UnaryTermsReturn.RootSignatureThetaBundle
 import CCO.UnaryTermsReturn.CompletedNamedBinaryCylinders
 import CCO.UnaryTermsReturn.CompletedNamedBinaryCoverage
+import CCO.UnaryTermsReturn.NormalizationInversions
