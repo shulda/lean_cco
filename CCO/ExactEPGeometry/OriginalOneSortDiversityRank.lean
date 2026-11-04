@@ -42,6 +42,7 @@ theorem originalOneSortExactQuotientDiversityRank_strict
   let W := originalExactSourceKernelWords A base hOne E
   let hW := originalExactSourceKernelWords_relation A base hOne E
   let Q := fun i : A.Sorts => Quotient (J i)
+  letI : Fintype A.Sorts := A.source.finiteSort
   letI : ∀ i : A.Sorts, MulAction A.G (Q i) :=
     CCO.ExactCRT.CanonicalTyped.action A.source A.homogeneous J W hW
   have hExist : ∃ x y : A.Point base, E x y ∧ x ≠ y := by
