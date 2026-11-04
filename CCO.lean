@@ -1869,3 +1869,5 @@ import CCO.TypedOrbitFrames.CompleteBaseChords
 import CCO.TypedOrbitFrames.TypedSpecifiedGraph
 import CCO.TypedOrbitFrames.ChordPairAlignment
 import CCO.TypedOrbitFrames.ChordImageSAP
+import CCO.TypedOrbitFrames.ChordCompletePair
+import CCO.TypedOrbitFrames.ChordHomGlue
