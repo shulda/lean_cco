@@ -2034,3 +2034,4 @@ import CCO.ExactEPGeometry.OriginalGlobalEclassHistoryPairs
 import CCO.ExactEPGeometry.OriginalRetainedMixedSelectedInjectivity
 import CCO.ExactEPGeometry.OriginalRetainedMixedSelectedChart
 import CCO.ExactEPGeometry.OriginalRetainedArbitraryMixedMarkedTriangleAge
+import CCO.ExactEPGeometry.OriginalCurrentExactColourInvariance
