@@ -47,9 +47,10 @@ theorem malformed_cycle_proper_closed_empty
   by_contra h
   have hNonempty : A.Nonempty ∨ B.Nonempty := by
     by_contra hEmpty
-    push_neg at hEmpty
-    have ha : A = ∅ := Set.not_nonempty_iff_eq_empty.mp hEmpty.1
-    have hb : B = ∅ := Set.not_nonempty_iff_eq_empty.mp hEmpty.2
+    have ha : A = ∅ :=
+      Set.not_nonempty_iff_eq_empty.mp (fun ha => hEmpty (Or.inl ha))
+    have hb : B = ∅ :=
+      Set.not_nonempty_iff_eq_empty.mp (fun hb => hEmpty (Or.inr hb))
     exact h ⟨ha,hb⟩
   obtain ⟨ha,hb⟩ :=
     malformed_cycle_closed_nonempty_is_full hn A B hClosed hNonempty
@@ -96,9 +97,11 @@ theorem commonBlockMalformed_no_uniform_closed_obstruction
         rw [ha,hb]
         simp [Set.ncard_univ, Nat.two_mul]
       omega
-    · push_neg at hEmpty
-      exact ⟨Set.not_nonempty_iff_eq_empty.mp hEmpty.1,
-        Set.not_nonempty_iff_eq_empty.mp hEmpty.2⟩
+    · have ha : A = ∅ :=
+        Set.not_nonempty_iff_eq_empty.mp (fun ha => hEmpty (Or.inl ha))
+      have hb : B = ∅ :=
+        Set.not_nonempty_iff_eq_empty.mp (fun hb => hEmpty (Or.inr hb))
+      exact ⟨ha,hb⟩
   · intro imageA imageB hf hg
     exact common_block_malformed_cycle_no_injective_realization
       hn imageA imageB hf hg
