@@ -66,14 +66,14 @@ theorem original_chord_glue_right
   by_cases hb : b.val < n - k
   · by_cases hz : b.val = 0
     · have hbb : b = ⟨0, by omega⟩ := Fin.ext hz
-      subst b
+      rw [hbb]
       simpa [originalChordGlue, originalChordRightIndex,
         show 0 < n - k by omega] using hK
     · have hnot : ¬ (k + b.val ≤ k) := by omega
       simp [originalChordGlue, originalChordRightIndex, hb, hnot]
   · have hlast : b.val = n - k := by omega
     have hbb : b = ⟨n - k, by omega⟩ := Fin.ext hlast
-    subst b
+    rw [hbb]
     simpa [originalChordGlue, originalChordRightIndex] using h0
 
 /-- The pair of real old-image maps from a proper chord split
