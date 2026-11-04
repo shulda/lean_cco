@@ -48,14 +48,15 @@ theorem marked_clone_atom_forces_same_child
     c = d := by
   obtain ⟨t,ht⟩ := h
   obtain ⟨x,y,hxy⟩ := e.property
-  have hc : (CloneSAP.source S).colour x.val y.val = some (Sum.inr t) := by
-    simpa only [ht] using hxy
+  have hc : (CloneSAP.source S).colour x.val y.val = some (Sum.inr t) :=
+    hxy.trans (congrArg some ht)
   have howner :
       (⟨c.1,x.val.1⟩ : Sigma X) = ⟨d.1,y.val.1⟩ :=
     ((CloneSAP.colour_clone_iff S x.val y.val t).mp hc).1
   rcases c with ⟨i,ε⟩
   rcases d with ⟨j,η⟩
   rcases t with ⟨hij⟩
+  change i = j at hij
   subst j
   have hsame : x.val.1 = y.val.1 := by
     simpa only [Sigma.mk.injEq, heq_eq_eq, true_and] using howner
@@ -115,11 +116,11 @@ theorem marked_child_full_atom_classification
         simpa only [h] using e.property
       have howner := (marked_old_atom_occurs_iff
         S H ap C P cco I c d u).mp hold
-      exact ⟨⟨u,howner⟩,h⟩
+      exact ⟨⟨u,howner⟩,rfl⟩
   | inr t =>
       right
       exact ⟨marked_clone_atom_forces_same_child
-        S H ap C P cco I e ⟨t,h⟩,t,h⟩
+        S H ap C P cco I e ⟨t,rfl⟩,t,rfl⟩
 
 include ap in
 /-- Conversely, every actually occurring original owner-child atom
