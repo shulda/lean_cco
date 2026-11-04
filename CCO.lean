@@ -2022,3 +2022,6 @@ import CCO.ExactEPGeometry.OriginalSelectedFiniteMixedMarkedAge
 import CCO.ExactEPGeometry.OriginalDiversityRank
 import CCO.ExactEPGeometry.OriginalOneSortDiversityRank
 import CCO.ExactEPGeometry.OriginalEmptyTraceBoundary
+import CCO.ExactEPGeometry.OriginalRetainedMixedActiveMarkedChart
+import CCO.ExactEPGeometry.OriginalEmptyMeetBoundary
+import CCO.ExactEPGeometry.OriginalProjectedGateNotIdentity
