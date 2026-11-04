@@ -1,4 +1,5 @@
 import CCO.TypedOrbitFrames.ChordSplitIndices
+import CCO.ParityHasse.Sparse.Cycles
 import Mathlib.Data.ZMod.Basic
 import Mathlib.Tactic.Abel
 import Lean.Elab.Tactic.Omega
@@ -34,7 +35,9 @@ theorem original_zmod_proper_chord_has_cut
     have hlast : (t - s).val = n - 1 := by omega
     have hsucc : (n - 1).succ = n := by omega
     have hneg : (-1 : ZMod n).val = n - 1 := by
-      simpa only [hsucc] using (ZMod.val_neg_one (n - 1))
+      have hstep := ZMod.val_neg_one (n - 1)
+      rw [hsucc] at hstep
+      exact hstep
     have hd : t - s = -1 :=
       (ZMod.val_injective n) (hlast.trans hneg.symm)
     apply hbackward
