@@ -125,6 +125,7 @@ theorem originalRetainedMixedSelectedMasks_oldMarkedChart
     A B P transport tp hOne Kroot E hE (anchor o)
   let chi := originalRetainedSelectedOccupancyCharacter
     A B P transport tp hOne Kroot phase E hE
+  dsimp only
   intro n m owners points bits hMasks inactivePoints hSelected hInactive
   let old : Sum (Fin n) (Fin m) → Sigma B.Point :=
     fun v => match v with
