@@ -74,26 +74,31 @@ theorem original_chord_right_internal_next
       (by have := cut.right_nontrivial; omega : 0 < n - k + 1) p).val =
         p.val + 1 := by
     simp [CCO.cyclicNext, Nat.mod_eq_of_lt hnextSmall]
+  have hcyclic :
+      (CCO.cyclicNext
+        (by have := cut.right_nontrivial; omega : 0 < n)
+        (originalChordRightIndex cut p)).val =
+        (k + p.val + 1) % n := by
+    change ((originalChordRightIndex cut p).val + 1) % n =
+      (k + p.val + 1) % n
+    rw [hcurr]
   apply Fin.ext
+  rw [hcyclic]
   by_cases hmore : p.val + 1 < n - k
   · have hnextReal :
         (originalChordRightIndex cut
           (CCO.cyclicNext
             (by have := cut.right_nontrivial; omega : 0 < n - k + 1) p)).val =
           k + p.val + 1 := by
-      simp [originalChordRightIndex, hnext, hmore]
-    rw [hnextReal]
-    change k + p.val + 1 = (k + p.val + 1) % n
-    rw [Nat.mod_eq_of_lt (by omega : k + p.val + 1 < n)]
+      simp [originalChordRightIndex, hnext, hmore, Nat.add_assoc]
+    rw [hnextReal, Nat.mod_eq_of_lt (by omega : k + p.val + 1 < n)]
   · have heq : k + p.val + 1 = n := by omega
     have hnextReal :
         (originalChordRightIndex cut
           (CCO.cyclicNext
             (by have := cut.right_nontrivial; omega : 0 < n - k + 1) p)).val = 0 := by
       simp [originalChordRightIndex, hnext, hmore]
-    rw [hnextReal]
-    change 0 = (k + p.val + 1) % n
-    rw [heq]
+    rw [hnextReal, heq]
     simp
 
 /-- The last RIGHT subcycle vertex is the original 0,
