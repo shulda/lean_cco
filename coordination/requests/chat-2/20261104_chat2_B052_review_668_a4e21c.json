@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "request_id": "20261104_chat2_B052_review_668_a4e21c",
+  "actor_id": "chat-2",
+  "project_id": 5,
+  "policy_revision": 14,
+  "operation": "event",
+  "expected_revision": 668,
+  "event": "review",
+  "data": {
+    "package_id": "B052",
+    "head_sha": "04f43219bd6cec4815ecebafae3333f455f03ad7",
+    "independence": {
+      "identity": "chat-project:cco-chat-2",
+      "non_author": true,
+      "summary": "Independent project 5 reviewer has never implemented, designed, directed or contributed to project 6 batch B052 or any of its history; will independently read pinned source, whole implementation, providers, consumers and exact-head Lean CI before deciding.",
+      "report_path": "formalization/coordination/reviews/B052-chat-2.md"
+    }
+  }
+}
