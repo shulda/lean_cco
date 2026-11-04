@@ -1871,3 +1871,4 @@ import CCO.TypedOrbitFrames.ChordPairAlignment
 import CCO.TypedOrbitFrames.ChordImageSAP
 import CCO.TypedOrbitFrames.ChordCompletePair
 import CCO.TypedOrbitFrames.ChordHomGlue
+import CCO.TypedOrbitFrames.RealBaseClosure
