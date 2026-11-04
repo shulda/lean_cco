@@ -1857,3 +1857,4 @@ import CCO.UnaryTermsReturn.CompletedNamedReachabilityConverse
 import CCO.UnaryTermsReturn.CompletedNamedNodeEquality
 import CCO.UnaryTermsReturn.CompletedNamedHiddenBound
 import CCO.UnaryTermsReturn.CompletedRealFirstProjection
+import CCO.UnaryTermsReturn.CompletedNamedFullClosureBound
