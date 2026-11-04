@@ -1890,3 +1890,4 @@ import CCO.CloneTupleGeometry.MarkedChildAtomEquiv
 import CCO.CloneTupleGeometry.MarkedChildColourReadout
 import CCO.CloneTupleGeometry.MarkedChildFullColour
 import CCO.CloneTupleGeometry.MarkedChildSourceEquiv
+import CCO.CloneTupleGeometry.TypedSourceMap
