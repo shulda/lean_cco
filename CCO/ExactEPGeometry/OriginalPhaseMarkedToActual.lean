@@ -43,5 +43,36 @@ theorem originalPhaseMarkedToActual_projection
       I.equiv.symm p
   exact (UnarySource.oldEquiv I).apply_symm_apply _
 
+
+/-- Every actual successor point pair has the SAME complete fine
+old-current orbital code as its marked-limit counterpart. This
+includes the genuine old diagonal and all mixed named sorts.
+The comparison uses the actual back-and-forth identification. -/
+theorem originalPhaseMarkedToActual_colours
+    (B : CurrentSource.{u,v,w,t})
+    {r : B.Sorts} (Kroot : Kernel B.source r)
+    (phase : SourcePhase B.source B.homogeneous
+      (exactCalculus_of_homogeneous_CCO
+        B.source B.homogeneous B.cco) Kroot)
+    (p q : phase.MarkedLimit B.cco) :
+    (phase.markedCoding B.cco).table.colour p q =
+      Age.colourEquiv B.source
+        (taggedColour B.source
+          ((SingleStep.projection B phase).project
+            (originalPhaseMarkedToActual B Kroot phase p))
+          ((SingleStep.projection B phase).project
+            (originalPhaseMarkedToActual B Kroot phase q))) := by
+  let I := SingleStep.identification B phase
+  rw [originalPhaseMarkedToActual_projection B Kroot phase p,
+      originalPhaseMarkedToActual_projection B Kroot phase q]
+  have h := UnarySource.colour_eq I (I.equiv.symm p) (I.equiv.symm q)
+  change (phase.markedCoding B.cco).table.colour
+      (I.equiv (I.equiv.symm p)) (I.equiv (I.equiv.symm q)) =
+    Age.colourEquiv B.source
+      (taggedColour B.source (I.equiv.symm p) (I.equiv.symm q))
+    at h
+  rw [I.equiv.apply_symm_apply,I.equiv.apply_symm_apply] at h
+  exact h
+
 end
 end CCO.ExactEPGeometry
