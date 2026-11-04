@@ -27,28 +27,6 @@ open RigidGroupoid.Geometry
 
 noncomputable section
 
-/-- Combine two injective real-point families with disjoint images. -/
-private theorem injective_sum_of_disjoint
-    {X : Type u} {Y : Type v} {Z : Type w}
-    (f : X → Z) (g : Y → Z)
-    (hf : Function.Injective f)
-    (hg : Function.Injective g)
-    (hfg : ∀ x y, f x ≠ g y) :
-    Function.Injective (fun x : Sum X Y =>
-      match x with
-      | Sum.inl a => f a
-      | Sum.inr b => g b) := by
-  intro x y h
-  cases x with
-  | inl a =>
-    cases y with
-    | inl b => exact congrArg Sum.inl (hf h)
-    | inr b => exact False.elim (hfg a b h)
-  | inr a =>
-    cases y with
-    | inl b => exact False.elim (hfg b a h.symm)
-    | inr b => exact congrArg Sum.inr (hg h)
-
 /-- Every finite family of pairwise distinct REAL selected original-E
 quotient points, split into reached anchor objects and actually
 inactive selected sorts, admits a jointly injective fine-old
