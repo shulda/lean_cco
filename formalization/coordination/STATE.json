@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 670,
+  "revision": 671,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -4687,7 +4687,7 @@
       }
     },
     "B052": {
-      "state": "REVIEWING",
+      "state": "INTEGRATING",
       "owner_project_id": 6,
       "author_actor_ids": [
         "chat-3"
@@ -4847,7 +4847,13 @@
       "owner_project_id": null
     }
   },
-  "integration_lock": null,
+  "integration_lock": {
+    "kind": "package",
+    "package_id": "B052",
+    "actor_id": "chat-1",
+    "base_main_sha": "f33fb4dec07bcae7f14ed8436a331c73f095b473",
+    "head_sha": "04f43219bd6cec4815ecebafae3333f455f03ad7"
+  },
   "history": [
     {
       "revision": 1,
@@ -21729,6 +21735,31 @@
         "summary": "Independent source-to-Lean and provider/consumer review of all 50 B052 modules against the pinned source10 and exact green CI 41816362946 completed. True old SAP/FULL NR2, named RAW quotient functions, closure and C14 full-diagram cardinality transfer, malformed cycles, all coarser named returns and all boundary cases reviewed. Approve exact head; detailed findings in coordination review report.",
         "actor_id": "chat-1",
         "request_id": "chat-1/20261104_chat1_B052_approve_04f_rev669_91dc"
+      }
+    },
+    {
+      "revision": 671,
+      "project_id": 4,
+      "actor_id": "chat-1",
+      "event": "start_integration",
+      "package_id": "B052",
+      "details": {
+        "package_id": "B052",
+        "head_sha": "04f43219bd6cec4815ecebafae3333f455f03ad7",
+        "base_main_sha": "f33fb4dec07bcae7f14ed8436a331c73f095b473",
+        "head_contains_main": true,
+        "ci": {
+          "run_id": 41816362946,
+          "run_attempt": 1,
+          "head_sha": "04f43219bd6cec4815ecebafae3333f455f03ad7",
+          "conclusion": "success",
+          "axiom_audit": "allowlist",
+          "job_id": 126527997559,
+          "declarations": 30216,
+          "source_modules": 1842
+        },
+        "actor_id": "chat-1",
+        "request_id": "chat-1/20261104_chat1_B052_start_integration_04f_rev670_b842"
       }
     }
   ],
