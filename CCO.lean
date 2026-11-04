@@ -1874,3 +1874,4 @@ import CCO.TypedOrbitFrames.ChordHomGlue
 import CCO.TypedOrbitFrames.RealBaseClosure
 import CCO.TypedOrbitFrames.ChordSplitIndices
 import CCO.TypedOrbitFrames.ChordSplitGluing
+import CCO.TypedOrbitFrames.ChordSplitEdges
