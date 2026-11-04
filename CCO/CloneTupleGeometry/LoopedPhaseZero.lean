@@ -62,6 +62,7 @@ theorem phase_rigid_triangle_zero
 any actual B047 rigid bridge relation, by genuine old
 pair-homogeneity and the bridge's original exact invariance. -/
 private theorem arrow_rel_of_same_colour
+    (H : HomogeneousSource S G)
     {i : ι} {K : Kernel S i} (R : Arrow S K K)
     (x y u v : X i)
     (hxy : R.rel x y)
