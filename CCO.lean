@@ -1859,3 +1859,5 @@ import CCO.UnaryTermsReturn.CompletedNamedHiddenBound
 import CCO.UnaryTermsReturn.CompletedRealFirstProjection
 import CCO.UnaryTermsReturn.CompletedNamedFullClosureBound
 import CCO.UnaryTermsReturn.CompletedNamedRealBound
+import CCO.UnaryTermsReturn.CompletedNamedLabelledSignature
+import CCO.UnaryTermsReturn.CompletedNamedFullAdmissible
