@@ -16,7 +16,7 @@ a new projected orbital palette, a quotient SAP provider, or a full
 marked quotient age.
 -/
 
-universe u v w t
+universe u v w t z
 
 namespace CCO.ExactEPGeometry
 
@@ -63,6 +63,60 @@ theorem originalCurrentExactE_pairColour_iff
       (originalExactGlobalRelation_prefix_invariant
         A B P base hOne E) g x' y' hxy
     simpa only [hgx,hgy] using hMoved
+
+
+/-- True old E-class equality is determined by the COMPLETE TAGGED
+current pair colour, not just by an untyped colour name. This
+includes mixed old named sorts and the genuine logical diagonal. -/
+theorem originalCurrentExactE_taggedColour_iff
+    (A B : CurrentSource.{u,v,w,t})
+    (P : UnaryReduct A.source B.source)
+    (base : A.Sorts) (hOne : ∀ i : A.Sorts, base = i)
+    (E : ExactEq A.source base)
+    (p q p' q' : Sigma B.Point)
+    (hColour : taggedColour B.source p q =
+      taggedColour B.source p' q') :
+    (currentOriginalExactSetoid A B P base hOne E).r p q ↔
+      (currentOriginalExactSetoid A B P base hOne E).r p' q' := by
+  rcases p with ⟨i,x⟩
+  rcases q with ⟨j,y⟩
+  rcases p' with ⟨k,x'⟩
+  rcases q' with ⟨l,y'⟩
+  have hi : i = k :=
+    congrArg (fun a : Σ i : B.Sorts,
+      Σ j : B.Sorts, Option (B.source.Atom i j) => a.1) hColour
+  have hj : j = l :=
+    congrArg (fun a : Σ i : B.Sorts,
+      Σ j : B.Sorts, Option (B.source.Atom i j) => a.2.1) hColour
+  cases hi
+  cases hj
+  have hc : B.source.colour x y = B.source.colour x' y' := by
+    simpa only [taggedColour,Sigma.mk.injEq,heq_eq_eq,true_and]
+      using hColour
+  exact originalCurrentExactE_pairColour_iff
+    A B P base hOne E i j x x' y y' hc
+
+/-- Any indexed fine old pair-colour chart, simultaneously on ALL
+its vertex pairs, preserves and reflects original E-class equality.
+In particular it preserves inequality of distinct original E-classes.
+No quotient SAP or new quotient orbital naming is used. -/
+theorem originalCurrentExactE_fullColourChart_iff
+    (A B : CurrentSource.{u,v,w,t})
+    (P : UnaryReduct A.source B.source)
+    (base : A.Sorts) (hOne : ∀ i : A.Sorts, base = i)
+    (E : ExactEq A.source base)
+    {V : Type z} (old new : V → Sigma B.Point)
+    (hColours : ∀ i j : V, taggedColour B.source (old i) (old j) =
+      taggedColour B.source (new i) (new j)) :
+    ∀ i j : V,
+      (currentOriginalExactSetoid A B P base hOne E).r
+        (old i) (old j) ↔
+      (currentOriginalExactSetoid A B P base hOne E).r
+        (new i) (new j) := by
+  intro i j
+  exact originalCurrentExactE_taggedColour_iff
+    A B P base hOne E (old i) (old j)
+      (new i) (new j) (hColours i j)
 
 end
 end CCO.ExactEPGeometry
