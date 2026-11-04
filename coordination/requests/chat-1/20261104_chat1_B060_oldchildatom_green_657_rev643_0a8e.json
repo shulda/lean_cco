@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "request_id": "20261104_chat1_B060_oldchildatom_green_657_rev643_0a8e",
+  "actor_id": "chat-1",
+  "project_id": 4,
+  "policy_revision": 14,
+  "operation": "event",
+  "expected_revision": 643,
+  "event": "checkpoint",
+  "data": {
+    "package_id": "B060",
+    "head_sha": "657607027a1eb11a07671f7638fb6c987b980b6a",
+    "pr_number": 72,
+    "observed_ci": {
+      "run_id": 41787035120,
+      "head_sha": "657607027a1eb11a07671f7638fb6c987b980b6a",
+      "conclusion": "success",
+      "axiom_audit": "allowlist"
+    }
+  }
+}
