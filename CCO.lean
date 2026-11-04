@@ -1865,3 +1865,4 @@ import CCO.UnaryTermsReturn.RootSignatureThetaBundle
 import CCO.UnaryTermsReturn.CompletedNamedBinaryCylinders
 import CCO.UnaryTermsReturn.CompletedNamedBinaryCoverage
 import CCO.UnaryTermsReturn.NormalizationInversions
+import CCO.TypedOrbitFrames.CompleteBaseChords
