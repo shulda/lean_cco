@@ -28,12 +28,15 @@ theorem original_chord_every_old_cycle_side_in_an_arc
       a.val + 1 = b.val ∧
       originalChordLeftIndex cut a = i ∧
       originalChordLeftIndex cut b =
-        CCO.cyclicNext (by omega : 0 < n) i) ∨
+        CCO.cyclicNext (by have := cut.right_nontrivial; omega : 0 < n) i) ∨
     (∃ a b : Fin (n - k + 1),
       a.val + 1 = b.val ∧
       originalChordRightIndex cut a = i ∧
       originalChordRightIndex cut b =
-        CCO.cyclicNext (by omega : 0 < n) i) := by
+        CCO.cyclicNext (by have := cut.right_nontrivial; omega : 0 < n) i) := by
+  have hcut := cut.right_nontrivial
+  have hsmall := cut.left_nontrivial
+  have hiBound := i.isLt
   by_cases hi : i.val < k
   · left
     let a : Fin (k + 1) := ⟨i.val, by omega⟩
