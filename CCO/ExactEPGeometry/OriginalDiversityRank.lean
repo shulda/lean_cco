@@ -1,4 +1,5 @@
 import CCO.ExactCRT.TypedPalette
+import Mathlib.SetTheory.Cardinal.Finite
 
 /-!
 # B062 C106–C108: original diversity rank drops strictly on a real quotient
@@ -117,7 +118,8 @@ theorem typedQuotientDiversityRank_strict_of_collapsed_pair
   letI : Fintype (T.Atom k k) := T.finiteAtom k k
   have hCard : Fintype.card (Option (T.Atom k k)) ≤
       Fintype.card (S.Atom (origin k) (origin k)) :=
-    Fintype.card_le_card_of_surjective f hSurj
+    (by simpa only [Nat.card_eq_fintype_card] using
+      (Nat.card_le_card_of_surjective f hSurj))
   have hOption : Fintype.card (Option (T.Atom k k)) =
       Fintype.card (T.Atom k k) + 1 := by simp
   have hStrict : Fintype.card (T.Atom k k) <
