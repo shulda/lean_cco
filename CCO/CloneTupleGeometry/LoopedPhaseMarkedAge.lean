@@ -50,7 +50,7 @@ theorem phase_loop_mono_marked_age_embeds
           (b.val,ε)) ∧
       (∀ x y : Fin n,
         (Age.limitCoding S H (P.completion_property cco)).table.colour (f x) (f y) =
-          Age.colourEquiv S (Age.taggedColour S
+          Age.colourEquiv S (taggedColour S
             (⟨b.val,points x⟩ : Sigma X)
             (⟨b.val,points y⟩ : Sigma X))) := by
   let old : Fin n → Sigma X := fun i => ⟨b.val,points i⟩
