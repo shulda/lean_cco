@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "request_id": "20261104_chat1_B060_loopseed_green_820_rev655_22b4",
+  "actor_id": "chat-1",
+  "project_id": 4,
+  "policy_revision": 14,
+  "operation": "event",
+  "expected_revision": 655,
+  "event": "checkpoint",
+  "data": {
+    "package_id": "B060",
+    "head_sha": "82004dee95b8124cfdefcee7f46de7b037898063",
+    "pr_number": 72,
+    "observed_ci": {
+      "run_id": 41795110105,
+      "head_sha": "82004dee95b8124cfdefcee7f46de7b037898063",
+      "conclusion": "success",
+      "axiom_audit": "allowlist"
+    }
+  }
+}
