@@ -39,7 +39,7 @@ length at least four: no edge may connect positions two apart.
 The stronger all-chords-free condition implies this predicate. -/
 def NoTwoStepChords {n : Nat} [NeZero n]
     (G : SimpleGraph (D ⊕ X)) (f : CycleCode (D ⊕ X) n) : Prop :=
-  ∀ i : ZMod n, ¬ G.Adj (f i) (f (i + 2))
+  4 ≤ n → ∀ i : ZMod n, ¬ G.Adj (f i) (f (i + 2))
 
 /-- Positions i and i+2 are distinct on every cycle with n≥4.
 In particular a distance-two edge is a genuine chord, not an
@@ -87,9 +87,32 @@ theorem complete_base_chordless_cycle_clone_only
   cases h : f i with
   | inl d =>
       exact False.elim
-        (hNo i (complete_base_forces_two_step_chord
+        (hNo hn i (complete_base_forces_two_step_chord
           hn G hBase f i d h))
   | inr x =>
       exact ⟨x, h⟩
+
+
+/-- Source11 C01/C02 in exactly the long-vs-triangle form:
+if a specified simple cycle of length at least three meets
+the old complete base and has NO chords, then it has length
+exactly three. The weakened test only excludes distance-two
+chords for length at least four; for an actual triangle it is
+vacuously satisfied, since its distance-two edge is a SIDE,
+not a chord. -/
+theorem complete_base_chordless_meeting_base_is_triangle
+    {n : Nat} [NeZero n]
+    (hn : 3 ≤ n)
+    (G : SimpleGraph (D ⊕ X))
+    (hBase : CompleteBaseSpokes G)
+    (f : CycleCode (D ⊕ X) n)
+    (hNo : NoTwoStepChords G f)
+    (hTouches : ∃ i : ZMod n, ∃ d : D, f i = Sum.inl d) :
+    n = 3 := by
+  by_contra hneq
+  have h4 : 4 ≤ n := by omega
+  obtain ⟨i, d, hi⟩ := hTouches
+  exact hNo h4 i
+    (complete_base_forces_two_step_chord h4 G hBase f i d hi)
 
 end CCO.TypedOrbitFrames
