@@ -29,7 +29,7 @@ on the pair (including the converse and real diagonal) is inherited. -/
 def originalOldChordPair {i j : ι} (x : X i) (y : X j) :
     FiniteInduced (X := X) where
   vertices := { (⟨i,x⟩ : Sigma X), (⟨j,y⟩ : Sigma X) }
-  finite_vertices := Set.finite_pair _ _
+  finite_vertices := (Set.finite_singleton (⟨j,y⟩ : Sigma X)).insert (⟨i,x⟩ : Sigma X)
 
 /-- A genuine original-group element restricting to an old finite
 induced C has an induced image embedding into any finite old A
