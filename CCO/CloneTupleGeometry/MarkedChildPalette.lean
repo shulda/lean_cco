@@ -120,7 +120,7 @@ theorem marked_child_full_atom_classification
   | inr t =>
       right
       exact ⟨marked_clone_atom_forces_same_child
-        S H ap C P cco I e ⟨t,rfl⟩,t,rfl⟩
+        S H ap C P cco I e ⟨t,h⟩,t,rfl⟩
 
 include ap in
 /-- Conversely, every actually occurring original owner-child atom
