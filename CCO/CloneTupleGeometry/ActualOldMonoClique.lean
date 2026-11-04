@@ -46,7 +46,7 @@ theorem actual_infinite_old_mono_atom
       | some a =>
           have hs : S.colour y x = some (S.conv a) :=
             (S.colour_swap x y a).mp hc
-          rw [hc, hs, S.symmetricLoop a]
+          rw [hs, S.symmetricLoop a]
   obtain ⟨c, f, hf⟩ :=
     infinite_monochromatic_pairs
       (fun x y : X i => S.colour x y) hsym
