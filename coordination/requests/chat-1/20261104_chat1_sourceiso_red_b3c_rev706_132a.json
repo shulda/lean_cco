@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "request_id": "20261104_chat1_sourceiso_red_b3c_rev706_132a",
+  "actor_id": "chat-1",
+  "project_id": 4,
+  "policy_revision": 14,
+  "operation": "event",
+  "expected_revision": 706,
+  "event": "checkpoint",
+  "data": {
+    "package_id": "B060",
+    "head_sha": "b3cfffca9d69241ac39bc57f861b108683d01f7a",
+    "pr_number": 72,
+    "observed_ci": {
+      "run_id": 41897429623,
+      "head_sha": "b3cfffca9d69241ac39bc57f861b108683d01f7a",
+      "conclusion": "failure"
+    }
+  }
+}
