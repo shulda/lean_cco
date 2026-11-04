@@ -42,6 +42,7 @@ witnessed by two different real points, not a fictitious diagonal. -/
 theorem originalC110_oldDiversityHasSameTypeLoop :
     typeSupport clonedOneType cloneOldDiversity () () := by
   refine ⟨false,true,rfl,rfl,?_⟩
+  change false ≠ true
   decide
 
 /-- C110: finite type support cannot preserve this empty old meet:
