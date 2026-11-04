@@ -103,6 +103,7 @@ theorem originalRetainedMixedSelectedOld_injective
     A B P transport base hBase E
   let anchor := originalReachedOccupancyAnchor
     A B P base hBase E Kroot
+  dsimp only
   intro n m owners points inactivePoints hSelected hInactive
   let active : Fin n → Sigma B.Point := fun i =>
     ⟨(anchor (owners i)).val,
