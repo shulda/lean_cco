@@ -152,7 +152,61 @@ theorem originalRetainedArbitraryMixedMarkedTriangleAge
     match v with
     | Sum.inl i => Quotient.mk'' (anchor (owners i)).val
     | Sum.inr j => inactiveSort j
-  dsimp only
+  change ∀ (rel : ∀ v w : Sum (Fin n) (Fin m),
+          Q.Point (sort v) → Q.Point (sort w) → Prop)
+        (bits : Fin n → ZMod 2),
+        (∀ v w : Sum (Fin n) (Fin m),
+          letI : MulAction B.G (Q.Point (sort v)) :=
+            Q.action (sort v)
+          letI : MulAction B.G (Q.Point (sort w)) :=
+            Q.action (sort w)
+          ∃ x y, rel v w = GroupActions.orbital (G := B.G) x y) →
+        (∀ v w : Sum (Fin n) (Fin m), ∀ x y,
+          rel v w x y ↔ rel w v y x) →
+        (∀ v : Sum (Fin n) (Fin m), ∀ x y,
+          rel v v x y ↔ x = y) →
+        (∀ v w : Sum (Fin n) (Fin m), v ≠ w → ∀ x y,
+          rel v w x y →
+          (⟨sort v,x⟩ : Sigma Q.Point) ≠
+            (⟨sort w,y⟩ : Sigma Q.Point)) →
+        (∀ v w z : Sum (Fin n) (Fin m), ∃ x y q,
+          rel v w x y ∧ rel v z x q ∧ rel w z y q) →
+        (∀ i j : Fin n, ∀ x y,
+          rel (Sum.inl i) (Sum.inl j) x y →
+          originalSelectedCompleteAtomicMask Q
+            (K (owners i)) (K (owners j))
+            (fun (R : owners i ⟶ owners j) => chi.value R)
+            (Q.source.colour x y) (bits i) (bits j)) →
+        (∀ j : Fin m,
+          ¬Nonempty (Bridge B.source Kroot
+            (originalOccupancyRepresentative
+              A B P base hBase E (inactiveSort j)))) →
+        ∃ point : ∀ v : Sum (Fin n) (Fin m), Q.Point (sort v),
+          (∀ v w, rel v w (point v) (point w)) ∧
+          Function.Injective
+            (fun v => (⟨sort v,point v⟩ : Sigma Q.Point)) ∧
+          let old : Sum (Fin n) (Fin m) → Sigma B.Point :=
+            fun v => match v with
+            | Sum.inl i =>
+                ⟨(anchor (owners i)).val,
+                  originalSelectedReachedEclassRepresentative
+                    A B P transport hOne Kroot E
+                      (anchor (owners i)) (point (Sum.inl i))⟩
+            | Sum.inr j =>
+                originalSelectedTaggedRepresentative
+                  A B P transport base hBase E
+                    ⟨inactiveSort j,point (Sum.inr j)⟩
+          let allBits : Sum (Fin n) (Fin m) → ZMod 2 :=
+            fun v => match v with
+            | Sum.inl i => bits i
+            | Sum.inr _ => 0
+          ∃ f : Sum (Fin n) (Fin m) ↪ phase.MarkedLimit B.cco,
+            (∀ v, (phase.markedCoding B.cco).table.owner (f v) =
+              APCharacter.Age.ownerEquiv B.source
+                ((old v).1,allBits v)) ∧
+            ∀ v w, (phase.markedCoding B.cco).table.colour (f v) (f w) =
+              APCharacter.Age.colourEquiv B.source
+                (taggedColour B.source (old v) (old w))
   intro rel bits hActual hReverse hDiagonal hSeparate hTriangles hMasks hInactive
   letI : Finite (Sum (Fin n) (Fin m)) := inferInstance
   let D : ActualOrbitalDiagram B.G Q.Point (Sum (Fin n) (Fin m)) := {
