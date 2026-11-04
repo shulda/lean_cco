@@ -1887,3 +1887,5 @@ import CCO.TypedOrbitFrames.NormalizedChordCycleHom
 import CCO.TypedOrbitFrames.OldPartialPullback
 import CCO.TypedOrbitFrames.OriginalFibreMotion
 import CCO.TypedOrbitFrames.ChordArcSuccessor
+import CCO.TypedOrbitFrames.ChordShortLeft
+import CCO.TypedOrbitFrames.ChordShortRight
