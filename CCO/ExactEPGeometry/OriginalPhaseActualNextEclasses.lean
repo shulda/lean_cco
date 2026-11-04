@@ -20,6 +20,7 @@ namespace CCO.ExactEPGeometry
 
 open APCharacter
 open APCharacter.Towers
+open APCharacter.SourceAge
 open RigidGroupoid.Geometry
 
 noncomputable section
