@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "request_id": "20261104_chat1_B060_TypedMap_green108_rev710_fce0",
+  "actor_id": "chat-1",
+  "project_id": 4,
+  "policy_revision": 14,
+  "operation": "event",
+  "expected_revision": 710,
+  "event": "checkpoint",
+  "data": {
+    "package_id": "B060",
+    "head_sha": "10804910f6e5b954ed6ff4790b93ff3e0ce93bdd",
+    "pr_number": 72,
+    "observed_ci": {
+      "run_id": 41902885911,
+      "head_sha": "10804910f6e5b954ed6ff4790b93ff3e0ce93bdd",
+      "conclusion": "success",
+      "axiom_audit": "allowlist"
+    }
+  }
+}
