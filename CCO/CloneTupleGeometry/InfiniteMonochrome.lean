@@ -104,7 +104,7 @@ theorem infinite_monochromatic_pairs
     induction hij with
     | refl => exact Set.Subset.rfl
     | @step j _ ih =>
-        exact ((hNext j).trans Set.diff_subset).trans ih
+        exact ((hNext j).trans Set.sdiff_subset).trans ih
   have hLater (i j : ℕ) (hij : i < j) :
       pivot j ∈ (chooseInfiniteStep colour (states i)).rest.carrier := by
     have hj : pivot j ∈ (states j).carrier :=
@@ -119,30 +119,32 @@ theorem infinite_monochromatic_pairs
     intro i j he
     by_contra hij
     rcases lt_or_gt_of_ne hij with hij' | hji'
-    · have hnot : pivot j ≠ pivot i :=
-        (Set.mem_sdiff.mp ((hNext i) (hLater i j hij'))).2
+    · have hnot : pivot j ≠ pivot i := by
+        have hm := (hNext i) (hLater i j hij')
+        simpa only [Set.mem_sdiff, Set.mem_singleton_iff] using hm.2
       exact hnot he.symm
-    · have hnot : pivot i ≠ pivot j :=
-        (Set.mem_diff.mp ((hNext j) (hLater j i hji'))).2
+    · have hnot : pivot i ≠ pivot j := by
+        have hm := (hNext j) (hLater j i hji')
+        simpa only [Set.mem_sdiff, Set.mem_singleton_iff] using hm.2
       exact hnot he
   obtain ⟨b,hFibre⟩ := Finite.exists_infinite_fiber selected
   let fibre : Set ℕ := selected ⁻¹' {b}
   have hfibre : fibre.Infinite := Set.infinite_coe_iff.mp hFibre
   let e : ℕ ↪ fibre := hfibre.natEmbedding fibre
-  let indices : ℕ ↪ ℕ :=
-    ⟨fun n => (e n).val, by
-      intro i j he
-      exact e.injective (Subtype.ext he)⟩
+  let indices : ℕ → ℕ := fun n => (e n).val
+  have hIndices : Function.Injective indices := by
+    intro i j he
+    exact e.injective (Subtype.ext he)
   have hIndex (n : ℕ) : selected (indices n) = b := by
+    change selected (e n).val = b
     have h := (e n).property
-    simpa only [fibre, indices, Set.mem_preimage,
-      Set.mem_singleton_iff] using h
+    simpa only [fibre, Set.mem_preimage, Set.mem_singleton_iff] using h
   let f : ℕ ↪ α :=
-    ⟨fun n => pivot (indices n), fun i j he => indices.injective (hPivots he)⟩
+    ⟨fun n => pivot (indices n), fun i j he => hIndices (hPivots he)⟩
   refine ⟨b,f,?_⟩
   intro i j hij
   change colour (pivot (indices i)) (pivot (indices j)) = b
-  have hne : indices i ≠ indices j := indices.injective.ne hij
+  have hne : indices i ≠ indices j := hIndices.ne hij
   rcases lt_or_gt_of_ne hne with hlt | hgt
   · exact (hForward (indices i) (indices j) hlt).trans (hIndex i)
   · calc
