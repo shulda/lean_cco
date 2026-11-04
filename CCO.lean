@@ -1867,3 +1867,5 @@ import CCO.UnaryTermsReturn.CompletedNamedBinaryCoverage
 import CCO.UnaryTermsReturn.NormalizationInversions
 import CCO.TypedOrbitFrames.CompleteBaseChords
 import CCO.TypedOrbitFrames.TypedSpecifiedGraph
+import CCO.TypedOrbitFrames.ChordPairAlignment
+import CCO.TypedOrbitFrames.ChordImageSAP
