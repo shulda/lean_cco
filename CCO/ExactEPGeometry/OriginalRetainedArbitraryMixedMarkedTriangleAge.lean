@@ -146,6 +146,7 @@ theorem originalRetainedArbitraryMixedMarkedTriangleAge
     A B P transport tp hOne Kroot E hE (anchor o)
   let chi := originalRetainedSelectedOccupancyCharacter
     A B P transport tp hOne Kroot phase E hE
+  dsimp only
   intro n m owners inactiveSort
   let sort : Sum (Fin n) (Fin m) → Q.Sorts := fun v =>
     match v with
