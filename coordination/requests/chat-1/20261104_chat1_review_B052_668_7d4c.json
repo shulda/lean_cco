@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "request_id": "20261104_chat1_review_B052_668_7d4c",
+  "actor_id": "chat-1",
+  "project_id": 4,
+  "policy_revision": 14,
+  "operation": "event",
+  "expected_revision": 668,
+  "event": "review",
+  "data": {
+    "package_id": "B052",
+    "head_sha": "04f43219bd6cec4815ecebafae3333f455f03ad7",
+    "independence": {
+      "identity": "chat-project:cco-chat-1",
+      "non_author": true,
+      "summary": "Independent project-4 review of project-6 B052: I never authored, designed, edited or directed B052 in any chat, and will personally compare the pinned source, all modules, true provider interfaces and exact CI.",
+      "report_path": "formalization/coordination/reviews/B052-chat-1.md"
+    }
+  }
+}
