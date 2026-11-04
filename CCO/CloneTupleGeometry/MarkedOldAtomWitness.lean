@@ -60,6 +60,59 @@ theorem marked_old_atom_occurs_iff
     change (CloneSAP.source S).colour (x.val,0) (y.val,0) = some (Sum.inl u)
     exact (CloneSAP.colour_old_iff S (x.val,0) (y.val,0) u).mpr hxy
 
+
+/-- B060 N02: at two TRUE child points (including mixed named sorts),
+the source's old-tagged occurring atom is present exactly when their
+original owners have that fine atom. Uses the actual B047 child
+subtypes and B045 literal colours; no extra semantic assumptions. -/
+theorem marked_child_old_colour_iff
+    (I : CloneMarkedIdentification S H C P cco)
+    {a b : APCharacter.Rank.Child
+      (UnarySource.β (completion := P.completion_property
+        (CloneSAP.CCO.cco_forward S cco)) I)}
+    (x : APCharacter.Rank.Point
+      (UnarySource.β (completion := P.completion_property
+        (CloneSAP.CCO.cco_forward S cco)) I)
+      (UnarySource.tag (completion := P.completion_property
+        (CloneSAP.CCO.cco_forward S cco)) I) a)
+    (y : APCharacter.Rank.Point
+      (UnarySource.β (completion := P.completion_property
+        (CloneSAP.CCO.cco_forward S cco)) I)
+      (UnarySource.tag (completion := P.completion_property
+        (CloneSAP.CCO.cco_forward S cco)) I) b)
+    (u : S.Atom a.1 b.1) :
+    (∃ e : (UnarySource.source
+        (completion := P.completion_property (CloneSAP.CCO.cco_forward S cco)) I).Atom a b,
+      e.val = Sum.inl u ∧
+        (UnarySource.source
+          (completion := P.completion_property (CloneSAP.CCO.cco_forward S cco)) I).colour x y =
+          some e) ↔
+      S.colour x.val.1 y.val.1 = some u := by
+  constructor
+  · rintro ⟨e,he,hxy⟩
+    have hc : (CloneSAP.source S).colour x.val y.val = some e.val :=
+      (APCharacter.Rank.colour_some_iff
+        (CloneSAP.source S)
+        (UnarySource.β (completion := P.completion_property
+          (CloneSAP.CCO.cco_forward S cco)) I)
+        (UnarySource.tag (completion := P.completion_property
+          (CloneSAP.CCO.cco_forward S cco)) I) x y e).mp hxy
+    rw [he] at hc
+    exact (CloneSAP.colour_old_iff S x.val y.val u).mp hc
+  · intro hxy
+    have hc : (CloneSAP.source S).colour x.val y.val = some (Sum.inl u) :=
+      (CloneSAP.colour_old_iff S x.val y.val u).mpr hxy
+    let e : (UnarySource.source
+      (completion := P.completion_property (CloneSAP.CCO.cco_forward S cco)) I).Atom a b :=
+      ⟨Sum.inl u, ⟨x,y,hc⟩⟩
+    refine ⟨e,rfl,?_⟩
+    exact (APCharacter.Rank.colour_some_iff
+      (CloneSAP.source S)
+      (UnarySource.β (completion := P.completion_property
+        (CloneSAP.CCO.cco_forward S cco)) I)
+      (UnarySource.tag (completion := P.completion_property
+        (CloneSAP.CCO.cco_forward S cco)) I) x y e).mpr hc
+
 include ap in
 /-- Equality of original owners forces the marked child labels
 to be identical. The proof works for same-sort descendants with

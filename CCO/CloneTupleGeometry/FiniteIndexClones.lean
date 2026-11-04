@@ -51,4 +51,16 @@ theorem pure_clone_finite_interval_lower_ne_bot
   have hfinite : (Set.range f).Finite := Set.toFinite _
   exact (Set.infinite_range_of_injective hf) hfinite
 
+/-- B060 N02 C06, actual complete lower-gate consequence. A finite-index
+proper FULL interval E<F in the real clone source has the ENTIRE infinite
+clone kernel below E; no quotient or source-SAP premise is added. -/
+theorem pure_clone_finite_interval_kernel_le
+    (E F : ColourEq (CloneSAP.source S) i)
+    (hEF : E < F)
+    (a : CloneSAP.Carrier X i)
+    [Finite (RelativeClass E.val F.val a)] :
+    fullCloneKernel S i ≤ E := by
+  exact fullCloneKernel_le_nonidentity S i E
+    (pure_clone_finite_interval_lower_ne_bot S E F hEF a)
+
 end CCO.CloneTupleGeometry
