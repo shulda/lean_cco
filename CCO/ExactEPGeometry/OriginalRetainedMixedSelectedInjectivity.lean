@@ -144,7 +144,7 @@ theorem originalRetainedMixedSelectedOld_injective
     have hNotReached : ¬Nonempty (Bridge B.source Kroot
         (inactive j).1) := hInactive j
     exact hNotReached (hOwners ▸ hReached)
-  simpa only [active,inactive] using
+  simpa only [active,inactive,anchor,base,hBase] using
     (injective_sum_of_disjoint active inactive
       hActiveOld hInactiveOld hDisjoint)
 
