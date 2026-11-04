@@ -1,6 +1,7 @@
 import CCO.TypedOrbitFrames.ChordPairAlignment
 import CCO.SAPHelpers
 import CCO.FiniteHelpers
+import Mathlib.Data.Set.Card
 
 /-!
 # B053 C03: SAP gluing of ACTUAL finite induced OLD image structures
