@@ -1,7 +1,6 @@
 import CCO.TypedOrbitFrames.ChordPairAlignment
 import CCO.SAPHelpers
 import CCO.FiniteHelpers
-import Mathlib.Data.Set.Card
 
 /-!
 # B053 C03: SAP gluing of ACTUAL finite induced OLD image structures
@@ -38,7 +37,9 @@ def originalHomFiniteInducedImage
     {V : Type z} (D : PartialDiagram S V)
     (f : DiagramHom D) : FiniteInduced (X := X) := by
   letI : Finite V := D.finite_type
-  exact ⟨Set.range f.image, Set.finite_range _⟩
+  refine ⟨Set.range f.image, ?_⟩
+  simpa only [Set.image_univ] using
+    ((Set.finite_univ : (Set.univ : Set V).Finite).image f.image)
 
 /-- Every formal vertex belongs to the actual old induced image.
 No injectivity of the formal diagram homomorphism is used. -/
