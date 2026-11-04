@@ -1,5 +1,6 @@
 import CCO.UnaryTermsReturn.CompletedNamedStepClosure
 import CCO.UnaryTermsReturn.TermComposition
+import CCO.UnaryTermsReturn.CompletedNamedNodeEquality
 
 /-!
 # B052 C13–C15: reverse actual primitive reachability to named unary words
@@ -57,12 +58,22 @@ theorem original_completed_hidden_reachable_has_named_word
       | projection E x =>
           cases hw
       | upward E K hEK q' =>
-          cases hw
+          obtain ⟨hFE,hq⟩ := original_completed_named_node_heq
+            S H F (OriginalNamedRawUnaryTerm.eval S H sap nr2 word q)
+            E q' hw.symm
+          cases hFE
+          cases hq
           exact ⟨_,K,.up word hEK,rfl⟩
       | rawTransition a q' =>
-          cases hw
+          rcases a with ⟨⟨E,R⟩,hR⟩
+          obtain ⟨hFE,hq⟩ := original_completed_named_node_heq
+            S H F (OriginalNamedRawUnaryTerm.eval S H sap nr2 word q)
+            E q' hw.symm
+          cases hFE
+          cases hq
           exact ⟨_,
-            originalNamedRawTransitionSymbol_target S H sap nr2 a,
-            .transition a word,rfl⟩
+            originalNamedRawTransitionSymbol_target S H sap nr2
+              ⟨⟨F,R⟩,hR⟩,
+            .transition ⟨⟨F,R⟩,hR⟩ word,rfl⟩
 
 end CCO.UnaryTermsReturn
