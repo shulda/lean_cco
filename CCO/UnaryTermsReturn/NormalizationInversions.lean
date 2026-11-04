@@ -48,14 +48,14 @@ def originalUnaryTransitionUpwardInversions :
 /-- Swapping adjacent transition/upward symbols preserves the total
 number of upward maps in ANY surrounding prefix and suffix. -/
 theorem original_unary_upward_count_swap
-    (prefix suffix : List OriginalUnaryNormalizationOp) :
+    (initialOps suffix : List OriginalUnaryNormalizationOp) :
     originalUnaryUpwardCount
-        (prefix ++ .transition :: .upward :: suffix) =
+        (initialOps ++ .transition :: .upward :: suffix) =
       originalUnaryUpwardCount
-        (prefix ++ .upward :: .transition :: suffix) := by
-  induction prefix with
+        (initialOps ++ .upward :: .transition :: suffix) := by
+  induction initialOps with
   | nil => rfl
-  | cons head prefix ih =>
+  | cons head initialOps ih =>
       cases head with
       | upward =>
           simp only [List.cons_append, originalUnaryUpwardCount]
@@ -67,17 +67,17 @@ theorem original_unary_upward_count_swap
 nonnegative potential EXACTLY by one. B049 supplies independently
 the equality of the two genuine typed quotient functions. -/
 theorem original_unary_transition_upward_inversions_swap
-    (prefix suffix : List OriginalUnaryNormalizationOp) :
+    (initialOps suffix : List OriginalUnaryNormalizationOp) :
     originalUnaryTransitionUpwardInversions
-        (prefix ++ .transition :: .upward :: suffix) =
+        (initialOps ++ .transition :: .upward :: suffix) =
       originalUnaryTransitionUpwardInversions
-        (prefix ++ .upward :: .transition :: suffix) + 1 := by
-  induction prefix with
+        (initialOps ++ .upward :: .transition :: suffix) + 1 := by
+  induction initialOps with
   | nil =>
       simp [originalUnaryTransitionUpwardInversions,
         originalUnaryUpwardCount, Nat.add_assoc, Nat.add_comm,
         Nat.add_left_comm]
-  | cons head prefix ih =>
+  | cons head initialOps ih =>
       cases head with
       | upward =>
           simpa only [List.cons_append,
@@ -85,18 +85,18 @@ theorem original_unary_transition_upward_inversions_swap
       | transition =>
           simp only [List.cons_append,
             originalUnaryTransitionUpwardInversions]
-          rw [original_unary_upward_count_swap prefix suffix, ih]
+          rw [original_unary_upward_count_swap initialOps suffix, ih]
           omega
 
 /-- Source10 C07 strict descent for every adjacent inversion
 rewrite, with arbitrary context and with unchanged old type order
 recorded separately by the accepted B049 interchange theorem. -/
 theorem original_unary_transition_upward_swap_decreases
-    (prefix suffix : List OriginalUnaryNormalizationOp) :
+    (initialOps suffix : List OriginalUnaryNormalizationOp) :
     originalUnaryTransitionUpwardInversions
-        (prefix ++ .upward :: .transition :: suffix) <
+        (initialOps ++ .upward :: .transition :: suffix) <
       originalUnaryTransitionUpwardInversions
-        (prefix ++ .transition :: .upward :: suffix) := by
+        (initialOps ++ .transition :: .upward :: suffix) := by
   rw [original_unary_transition_upward_inversions_swap]
   omega
 
@@ -106,10 +106,10 @@ quotient types remain those of the genuine accepted B049 term. -/
 inductive OriginalUnaryNormalizationSwap :
     List OriginalUnaryNormalizationOp →
     List OriginalUnaryNormalizationOp → Prop where
-  | adjacent (prefix suffix : List OriginalUnaryNormalizationOp) :
+  | adjacent (initialOps suffix : List OriginalUnaryNormalizationOp) :
       OriginalUnaryNormalizationSwap
-        (prefix ++ .transition :: .upward :: suffix)
-        (prefix ++ .upward :: .transition :: suffix)
+        (initialOps ++ .transition :: .upward :: suffix)
+        (initialOps ++ .upward :: .transition :: suffix)
 
 /-- Every local swap descends a natural-number measure; hence there
 cannot be infinitely many adjacent swaps in a genuine finite term.
@@ -120,7 +120,7 @@ theorem original_unary_normalization_swap_strict
     originalUnaryTransitionUpwardInversions newWord <
       originalUnaryTransitionUpwardInversions oldWord := by
   cases h with
-  | adjacent prefix suffix =>
-      exact original_unary_transition_upward_swap_decreases prefix suffix
+  | adjacent initialOps suffix =>
+      exact original_unary_transition_upward_swap_decreases initialOps suffix
 
 end CCO.UnaryTermsReturn
