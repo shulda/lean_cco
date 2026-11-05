@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 739,
+  "revision": 740,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -4757,6 +4757,7 @@
       "state": "IN_PROGRESS",
       "owner_project_id": 3,
       "author_actor_ids": [
+        "/root/b053_work",
         "chat-3",
         "root"
       ],
@@ -23350,6 +23351,20 @@
             }
           ]
         }
+      }
+    },
+    {
+      "revision": 740,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "record_authorship",
+      "package_id": "B053",
+      "details": {
+        "actor_id": "root",
+        "package_id": "B053",
+        "author_actor_ids": [
+          "/root/b053_work"
+        ]
       }
     }
   ],
