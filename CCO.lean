@@ -1890,3 +1890,4 @@ import CCO.TypedOrbitFrames.ChordArcSuccessor
 import CCO.TypedOrbitFrames.ChordShortLeft
 import CCO.TypedOrbitFrames.ChordShortRight
 import CCO.TypedOrbitFrames.ChordRotationFin
+import CCO.TypedOrbitFrames.RotateOldSimpleCycle
