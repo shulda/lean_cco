@@ -21,6 +21,7 @@ namespace CCO.CloneTupleGeometry
 open APCharacter
 open APCharacter.SourceAge
 open RigidGroupoid.Geometry
+open TerminalPowers
 noncomputable section
 
 variable {ι : Type u} {X : ι → Type v}
@@ -67,6 +68,25 @@ theorem actual_marked_owner_clone_ageSAP
   exact CloneSAP.strong_amalgamation
     (owner_child_source S H ap C P cco I)
     (actual_marked_owner_ageAP S H ap C P cco I)
+
+include ap in
+/-- The original countable source hypotheses construct the actual
+marked identification and discharge all next-owner homogeneity/AP/CCO
+properties together. No abstract next-source provider is supplied.
+SAP is concluded only for that owner's genuine infinite pure clone. -/
+theorem actual_clone_marked_owner_source
+    [∀ i : ι, Countable (X i)] :
+    ∃ I : CloneMarkedIdentification S H C P cco,
+      HomogeneousSource (owner_child_source S H ap C P cco I)
+        (FullAut (owner_child_source S H ap C P cco I)) ∧
+      AgeAP (owner_child_source S H ap C P cco I) ∧
+      SemanticCCO.{u,v,z,w} (owner_child_source S H ap C P cco I) ∧
+      AgeSAP (CloneSAP.source (owner_child_source S H ap C P cco I)) := by
+  let I := actualCloneIdentification S H C P cco
+  exact ⟨I,actual_marked_owner_homogeneous S H ap C P cco I,
+    actual_marked_owner_ageAP S H ap C P cco I,
+    actual_marked_owner_semanticCCO S H ap C P cco I,
+    actual_marked_owner_clone_ageSAP S H ap C P cco I⟩
 
 end
 end CCO.CloneTupleGeometry

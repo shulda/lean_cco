@@ -9,8 +9,9 @@ marked limit, not an arbitrary unary expansion. The actual marked source
 was already identified with its infinite pure clone source. Apply the
 proved clone-to-owner finite-diagram descent to this exact identification.
 
-This closes the homogeneity/AP part of C11. Reasonableness, owner CCO,
-finite safe-tower iteration and the four final B060 exports remain separate.
+This closes the homogeneity/AP part of C11. Owner CCO is transported in
+the separate `OwnerSourceCCO` module. Reasonableness, finite safe-tower
+iteration and the four final B060 exports remain separate obligations.
 -/
 
 universe u v w t
