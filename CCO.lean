@@ -1897,3 +1897,4 @@ import CCO.TypedOrbitFrames.RotateSpecifiedChord
 import CCO.TypedOrbitFrames.ShortCycleSideReading
 import CCO.TypedOrbitFrames.ChordCycleStrongInduction
 import CCO.TypedOrbitFrames.InfiniteUnforcedClasses
+import CCO.TypedOrbitFrames.TaggedChordSAP
