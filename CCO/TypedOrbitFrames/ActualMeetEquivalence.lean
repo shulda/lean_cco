@@ -59,9 +59,9 @@ theorem original_actual_meet_equivalence_is_glb
     K ≤ originalActualMeetEquivalence S E ↔ ∀ j, K ≤ E j := by
   constructor
   · intro h j x y hxy
-    exact (h x y hxy) j
+    exact (h hxy) j
   · intro h x y hxy j
-    exact h j x y hxy
+    exact h j hxy
 
 /-- Once an actual real witness is supplied, the class
 intersection is exactly ONE genuine original full-meet class. -/
