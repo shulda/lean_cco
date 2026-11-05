@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "request_id": "20261105_chat1_B060_workstop_bbc535_42107588221",
+  "actor_id": "chat-1",
+  "project_id": 4,
+  "policy_revision": 14,
+  "operation": "event",
+  "expected_revision": 735,
+  "event": "checkpoint",
+  "data": {
+    "package_id": "B060",
+    "head_sha": "bbc535fe646bfe958b21612c04e62100bdb23d8b",
+    "pr_number": 72,
+    "observed_ci": {
+      "run_id": 42107588221,
+      "head_sha": "bbc535fe646bfe958b21612c04e62100bdb23d8b",
+      "conclusion": "success",
+      "axiom_audit": "allowlist"
+    }
+  }
+}
