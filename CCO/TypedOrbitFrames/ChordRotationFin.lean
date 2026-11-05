@@ -47,9 +47,7 @@ theorem original_cycle_rotate_zero {n : Nat} [NeZero n]
     (hn : 0 < n) (s : ZMod n) :
     originalCycleRotateIndex s (⟨0, hn⟩ : Fin n) =
       zmodFinCode n s := by
-  apply Fin.ext
-  change (s + (0 : ZMod n)).val = s.val
-  simp
+  simp [originalCycleRotateIndex]
 
 /-- After rotating by s, the old point at t is at the
 new exact position k=(t-s).val, with no wrap ambiguity. -/
