@@ -55,7 +55,7 @@ theorem original_rotate_old_cycle_hom_iff
           taggedColour S
             (f (originalCycleRotateIndex (-s) p))
             (f (CCO.cyclicNext C.length_pos
-              (originalCycleRotateIndex (-s) p))) := by rw [hn]
+              (originalCycleRotateIndex (-s) p))) := by rw [hn] <;> rfl
       _ = originalSpecifiedCycleSideReading S
           (originalRotateOldSimpleCycle S C s)
           (originalCycleRotateIndex (-s) p) :=
@@ -76,7 +76,7 @@ theorem original_rotate_old_cycle_hom_iff
           taggedColour S
             (f (originalCycleRotateIndex s p))
             (f (CCO.cyclicNext C.length_pos
-              (originalCycleRotateIndex s p))) := by rw [hn]
+              (originalCycleRotateIndex s p))) := by rw [hn] <;> rfl
       _ = originalSpecifiedCycleSideReading S C
           (originalCycleRotateIndex s p) :=
             hf (originalCycleRotateIndex s p)
