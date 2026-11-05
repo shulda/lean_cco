@@ -116,7 +116,8 @@ theorem original_short_cycles_same_full_chord_reading
     calc
       taggedColour S (left lK) (left l0) =
           taggedColour S (left lK)
-            (left (CCO.cyclicNext L.length_pos lK)) := by rw [hLN]
+            (left (CCO.cyclicNext L.length_pos lK)) :=
+        congrArg (fun p : Fin (k+1) => taggedColour S (left lK) (left p)) hLN.symm
       _ = originalSpecifiedCycleSideReading S L lK := hLeftRead lK
       _ = originalTypedPairReading S D hcNe := hSourceL
   have hR :
@@ -125,7 +126,10 @@ theorem original_short_cycles_same_full_chord_reading
     calc
       taggedColour S (right rLast) (right r0) =
           taggedColour S (right rLast)
-            (right (CCO.cyclicNext R.length_pos rLast)) := by rw [hRN]
+            (right (CCO.cyclicNext R.length_pos rLast)) :=
+        congrArg
+          (fun p : Fin (C.length-k+1) => taggedColour S (right rLast) (right p))
+          hRN.symm
       _ = originalSpecifiedCycleSideReading S R rLast := hRightRead rLast
       _ = originalTypedPairReading S D hcNe.symm := hSourceR
   have hSame :
@@ -146,16 +150,18 @@ theorem original_short_cycles_same_full_chord_reading
   have hNe : left lK ≠ left l0 := by
     obtain ⟨a,ha⟩ := hChord
     have hsome :
-        (taggedColour S (left lK) (left l0)).2.2 = some a := by
-      rw [hL]
-      exact ha
+        (taggedColour S (left lK) (left l0)).2.2.isSome = true := by
+      have htag := congrArg
+        (fun q : Σ i : ι, Σ j : ι, Option (S.Atom i j) => q.2.2.isSome) hL
+      simpa only [originalTypedPairReading, ha, Option.isSome_some] using htag
     intro he
     rw [he] at hsome
     have hdiag :
-        (taggedColour S (left l0) (left l0)).2.2 = none := by
+        (taggedColour S (left l0) (left l0)).2.2.isSome = false := by
       cases h : left l0 with
       | mk sort point =>
-          exact (S.colour_none_iff point point).mpr rfl
+          simp only [taggedColour,
+            (S.colour_none_iff point point).mpr rfl, Option.isSome_none]
     rw [hdiag] at hsome
     cases hsome
   exact ⟨hSame,hNe⟩

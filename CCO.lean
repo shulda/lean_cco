@@ -1903,3 +1903,7 @@ import CCO.TypedOrbitFrames.ActualPairwiseHelly
 import CCO.TypedOrbitFrames.OriginalPairReadings
 import CCO.TypedOrbitFrames.ShortChordPairMatch
 import CCO.TypedOrbitFrames.ChordGlueFromActualShortCycles
+import CCO.TypedOrbitFrames.TypedChordlessBase
+import CCO.TypedOrbitFrames.CompleteBaseCycleReduction
+import CCO.TypedOrbitFrames.FullMIMeetPrime
+import CCO.TypedOrbitFrames.CommonFibreAvoidance

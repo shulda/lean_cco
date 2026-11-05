@@ -71,7 +71,7 @@ theorem original_typed_pair_reading_converse
             rw [hyx] at hbad
             cases hbad
     | some a =>
-        simpa only [hyx, Option.map_some] using
+        simpa only [Option.map_some] using
           (D.edge_reverse y x h.symm a).mp hyx
   change (⟨D.vertexSort x,D.vertexSort y,D.edge x y h⟩ :
       Σ i : ι, Σ j : ι, Option (S.Atom i j)) =
@@ -89,8 +89,9 @@ theorem original_actual_tagged_colour_converse
   | mk i x =>
     cases y with
     | mk j y =>
-      change S.colour x y =
-        (S.colour y x).map (fun a => S.conv a)
-      exact S.colour_reverse y x
+      exact congrArg
+        (fun colour : Option (S.Atom i j) =>
+          (⟨i, j, colour⟩ : Σ a : ι, Σ b : ι, Option (S.Atom a b)))
+        (S.colour_reverse y x)
 
 end CCO.TypedOrbitFrames
