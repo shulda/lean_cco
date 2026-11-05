@@ -87,6 +87,23 @@ theorem original_short_cycle_next_ne
     rw [he, Nat.mod_self] at hv
     omega
 
+/-- Transport a genuine specified OLD edge witness when one changes
+the formal source endpoints by proved equalities. The old atom's
+dependent source and target sorts, and the proof-indexed edge
+value, are transported TOGETHER. No new typed atom is chosen. -/
+private theorem original_old_specified_edge_witness_congr
+    {D : PartialDiagram S V}
+    {x x' y y' : V}
+    (hxx : x = x') (hyy : y = y')
+    (hne : x ≠ y) (hne' : x' ≠ y')
+    (h : ∃ a : S.Atom (D.vertexSort x) (D.vertexSort y),
+      D.edge x y hne = some a) :
+    ∃ a : S.Atom (D.vertexSort x') (D.vertexSort y'),
+      D.edge x' y' hne' = some a := by
+  cases hxx
+  cases hyy
+  exact h
+
 /-- Source11 C04 proper left STRICT shorter cycle in the SAME
 original PartialDiagram D. Its consecutive old sides are
 exactly the original ones, and its closing edge is the given
@@ -119,7 +136,16 @@ def originalChordLeftShortCycle
         (C.vertices (originalChordLeftIndex cut
           (CCO.cyclicNext (by omega : 0 < k + 1) p))) _ =
             some a
-      simpa only [← hindex] using
+      have hy : C.vertices
+          (CCO.cyclicNext C.length_pos
+            (originalChordLeftIndex cut p)) =
+          C.vertices (originalChordLeftIndex cut
+            (CCO.cyclicNext (by omega : 0 < k + 1) p)) :=
+        congrArg C.vertices hindex.symm
+      exact original_old_specified_edge_witness_congr S
+        rfl hy
+        (C.next_ne (originalChordLeftIndex cut p))
+        (e.injective.ne (original_short_cycle_next_ne hm p))
         (C.specified (originalChordLeftIndex cut p))
     · have hval := p.isLt
       have hpK : p = (⟨k, by omega⟩ : Fin (k + 1)) := by
@@ -134,8 +160,24 @@ def originalChordLeftShortCycle
           (CCO.cyclicNext (by omega : 0 < k + 1)
             (⟨k, by omega⟩ : Fin (k + 1))))) _ =
           some a
-      simpa [OriginalNormalizedSpecifiedChord,
-        originalChordOldK, originalChordOldZero,
-        originalChordLeftIndex, CCO.cyclicNext] using hChord
+      have hx :
+          originalChordOldK cut =
+          originalChordLeftIndex cut
+            (⟨k, by omega⟩ : Fin (k + 1)) :=
+        (original_chord_left_last cut).symm
+      have hy :
+          originalChordOldZero cut =
+          originalChordLeftIndex cut
+            (CCO.cyclicNext (by omega : 0 < k + 1)
+              (⟨k, by omega⟩ : Fin (k + 1))) :=
+        (original_chord_left_closing_next cut).symm
+      exact original_old_specified_edge_witness_congr S
+        (congrArg C.vertices hx)
+        (congrArg C.vertices hy)
+        (C.vertices.injective.ne (original_chord_old_K_ne_zero cut))
+        (e.injective.ne
+          (original_short_cycle_next_ne hm
+            (⟨k, by omega⟩ : Fin (k + 1))))
+        hChord
 
 end CCO.TypedOrbitFrames
