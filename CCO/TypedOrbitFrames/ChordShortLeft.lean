@@ -91,7 +91,7 @@ theorem original_short_cycle_next_ne
 the formal source endpoints by proved equalities. The old atom's
 dependent source and target sorts, and the proof-indexed edge
 value, are transported TOGETHER. No new typed atom is chosen. -/
-private theorem original_old_specified_edge_witness_congr
+theorem original_old_specified_edge_witness_congr
     {D : PartialDiagram S V}
     {x x' y y' : V}
     (hxx : x = x') (hyy : y = y')
