@@ -45,16 +45,16 @@ theorem original_zmod_two_step_is_proper_chord
     intro h
     have hv := congrArg ZMod.val h
     have ha : (2 : ZMod n).val = 2 :=
-      ZMod.val_natCast_of_lt (by omega)
-    have hb : (1 : ZMod n).val = 1 :=
-      ZMod.val_natCast_of_lt (by omega)
+      ZMod.val_natCast_of_lt (n := n) (a := 2) (by omega)
+    have hb : (1 : ZMod n).val = 1 := by
+      rw [ZMod.val_one_eq_one_mod, Nat.mod_eq_of_lt (by omega : 1 < n)]
     rw [ha,hb] at hv
     omega
   have h3 : (3 : ZMod n) ≠ 0 := by
     intro h
     have hv := congrArg ZMod.val h
     have ha : (3 : ZMod n).val = 3 :=
-      ZMod.val_natCast_of_lt (by omega)
+      ZMod.val_natCast_of_lt (n := n) (a := 3) (by omega)
     rw [ha, ZMod.val_zero] at hv
     omega
   refine ⟨?_,?_,?_⟩
@@ -69,7 +69,8 @@ theorem original_zmod_two_step_is_proper_chord
     apply h3
     have h' : s + (3 : ZMod n) = s + 0 := by
       calc
-        s + (3 : ZMod n) = (s + 2) + 1 := by abel
+        s + (3 : ZMod n) = (s + 2) + 1 := by
+          rw [add_assoc, two_add_one_eq_three]
         _ = s := h.symm
         _ = s + 0 := by simp
     exact add_left_cancel h'
@@ -100,7 +101,7 @@ theorem original_typed_chordless_implies_no_two_step
       (originalSpecifiedGraph S D).Adj
         (C.vertices (zmodFinCode C.length (s+2)))
         (C.vertices (zmodFinCode C.length s)) :=
-      (originalSpecifiedGraph S D).symm hadj
+      (originalSpecifiedGraph S D).adj_symm hadj
     exact hadj'
   exact hNo s (s+2) hProp hEdge
 
@@ -153,6 +154,6 @@ theorem original_typed_complete_base_chordless_cases
       intro p
       cases hv : C.vertices p with
       | inl d => exact False.elim (hTouches ⟨p,d,hv⟩)
-      | inr y => exact ⟨y,hv⟩
+      | inr y => exact ⟨y,rfl⟩
 
 end CCO.TypedOrbitFrames

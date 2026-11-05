@@ -72,13 +72,14 @@ theorem original_normalized_chord_glue_actual_short_homs
     have hNext : b = CCO.cyclicNext L.length_pos a := by
       apply Fin.ext
       change b.val = (a.val + 1) % (k+1)
-      rw [← hab, Nat.mod_eq_of_lt b.isLt]
+      rw [hab, Nat.mod_eq_of_lt b.isLt]
     have ha : a.val < k := by have hb := b.isLt; omega
     calc
       taggedColour S (fl a) (fl b) =
           taggedColour S (left a) (left b) := hColL a b
       _ = taggedColour S (left a)
-          (left (CCO.cyclicNext L.length_pos a)) := by rw [← hNext]
+          (left (CCO.cyclicNext L.length_pos a)) :=
+        congrArg (fun p : Fin (k+1) => taggedColour S (left a) (left p)) hNext
       _ = originalSpecifiedCycleSideReading S L a := hReadL a
       _ = originalSpecifiedCycleSideReading S C
           (originalChordLeftIndex cut a) :=
@@ -93,7 +94,7 @@ theorem original_normalized_chord_glue_actual_short_homs
     have hNext : b = CCO.cyclicNext R.length_pos a := by
       apply Fin.ext
       change b.val = (a.val + 1) % (C.length-k+1)
-      rw [← hab, Nat.mod_eq_of_lt b.isLt]
+      rw [hab, Nat.mod_eq_of_lt b.isLt]
     have ha : a.val < C.length-k := by
       have hb := b.isLt
       omega
@@ -101,7 +102,10 @@ theorem original_normalized_chord_glue_actual_short_homs
       taggedColour S (gr a) (gr b) =
           taggedColour S (right a) (right b) := hColR a b
       _ = taggedColour S (right a)
-          (right (CCO.cyclicNext R.length_pos a)) := by rw [← hNext]
+          (right (CCO.cyclicNext R.length_pos a)) :=
+        congrArg
+          (fun p : Fin (C.length-k+1) => taggedColour S (right a) (right p))
+          hNext
       _ = originalSpecifiedCycleSideReading S R a := hReadR a
       _ = originalSpecifiedCycleSideReading S C
           (originalChordRightIndex cut a) :=
@@ -134,8 +138,9 @@ theorem original_all_typed_cycles_of_old_chordless_cases
     ∀ {D : PartialDiagram S V} (C : SimpleCycle D), CycleHom C := by
   exact original_all_typed_cycles_from_proper_chord_induction
     S hTriangles hChordless
-    (fun C cut hChord hL hR =>
-      original_normalized_chord_glue_actual_short_homs
+    (by
+      intro D C k cut hChord hL hR
+      exact original_normalized_chord_glue_actual_short_homs
         S H sap C cut hChord hL hR)
 
 end CCO.TypedOrbitFrames

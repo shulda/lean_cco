@@ -136,7 +136,7 @@ theorem original_complete_base_cycle_hom_of_local_tests
       intro p
       cases hv : C.vertices p with
       | inl d => exact False.elim (hTouches ⟨p,d,hv⟩)
-      | inr y => exact ⟨y,hv⟩
+      | inr y => exact ⟨y,rfl⟩
   · intro C h4 hNo
     exact hCloneChordless C hNo
       (original_typed_complete_base_chordless_only_clones S D hBase C h4 hNo)

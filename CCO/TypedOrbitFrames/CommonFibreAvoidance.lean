@@ -20,6 +20,7 @@ section is assumed. Exact fine one-point spoke colours are not controlled.
 namespace CCO.TypedOrbitFrames
 
 open CCO.ParityHasse.Original
+open CCO.RealClosure.Bounds
 
 universe u v w r
 variable {ι : Type u} {X : ι → Type v}
@@ -78,7 +79,7 @@ theorem original_actual_common_fibre_simultaneous_avoidance
     have hEmbed : Function.Injective embed := by
       intro q r h
       apply Subtype.ext
-      simpa only [embed, Sigma.mk.injEq, heq_eq_eq, true_and] using h
+      simpa only [embed, Q, Sigma.mk.injEq, heq_eq_eq, true_and] using h
     apply Set.infinite_of_injective_forall_mem hEmbed
     intro q
     obtain ⟨y,hy,hq⟩ := q.property
@@ -104,7 +105,7 @@ theorem original_actual_common_fibre_simultaneous_avoidance
     intro a b hab
     have htag := hle a b (Quotient.sound hab)
     have hq : Quotient.mk (J k).val a = Quotient.mk (J k).val b := by
-      simpa only [output, Sigma.mk.injEq, heq_eq_eq, true_and] using htag
+      simpa only [output, Q, Sigma.mk.injEq, heq_eq_eq, true_and] using htag
     exact Quotient.exact hq
   apply hAvoid (output k) ⟨k,rfl⟩ hKernel
   exact Finset.mem_biUnion.mpr
