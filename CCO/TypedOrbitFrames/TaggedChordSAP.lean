@@ -52,28 +52,29 @@ theorem original_old_tuples_matching_tagged_chord_sap
       | mk i' x' =>
         cases hgv₁ : g v₁ with
         | mk j' y' =>
-          have hSort₀ : i = i' := by
-            exact congrArg Sigma.fst
-              (show (⟨i, ⟨j, S.colour x y⟩⟩ :
-                Σ m : ι, Σ n : ι, Option (S.Atom m n)) =
-                  ⟨i', ⟨j', S.colour x' y'⟩⟩ by
-                simpa only [taggedColour, hfu₀, hfu₁,
-                  hgv₀, hgv₁] using hSame)
+          have hPair : (⟨i, ⟨j, S.colour x y⟩⟩ :
+              Σ m : ι, Σ n : ι, Option (S.Atom m n)) =
+                ⟨i', ⟨j', S.colour x' y'⟩⟩ := by
+            calc
+              (⟨i, ⟨j, S.colour x y⟩⟩ :
+                  Σ m : ι, Σ n : ι, Option (S.Atom m n)) =
+                  taggedColour S (f u₀) (f u₁) := by
+                    rw [hfu₀, hfu₁]
+                    rfl
+              _ = taggedColour S (g v₀) (g v₁) := hSame
+              _ = ⟨i', ⟨j', S.colour x' y'⟩⟩ := by
+                rw [hgv₀, hgv₁]
+                rfl
+          have hSort₀ : i = i' := congrArg Sigma.fst hPair
           cases hSort₀
           have hSort₁ : j = j' :=
             congrArg
               (fun q : Σ m : ι, Σ n : ι, Option (S.Atom m n) => q.2.1)
-              (by simpa only [taggedColour, hfu₀, hfu₁,
-                hgv₀, hgv₁] using hSame)
+              hPair
           cases hSort₁
           have hColours : S.colour x y = S.colour x' y' := by
-            have ht : (⟨i, ⟨j, S.colour x y⟩⟩ :
-                Σ m : ι, Σ n : ι, Option (S.Atom m n)) =
-                  ⟨i, ⟨j, S.colour x' y'⟩⟩ := by
-              simpa only [taggedColour, hfu₀, hfu₁,
-                hgv₀, hgv₁] using hSame
             simpa only [Sigma.mk.injEq, heq_eq_eq, true_and]
-              using ht
+              using hPair
           have hneq : (⟨i,x⟩ : Sigma X) ≠ ⟨j,y⟩ := by
             simpa only [hfu₀,hfu₁] using hNonDiag
           have hsome : S.colour x y ≠ none := by
