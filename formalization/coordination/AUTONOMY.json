@@ -1,6 +1,6 @@
 {
   "protocol_version": 3,
-  "revision": 14,
+  "revision": 15,
   "state_branch": "coordination",
   "state_file": "formalization/coordination/STATE.json",
   "registered_projects": [
@@ -168,6 +168,14 @@
       "historical_author_projects": [
         6
       ]
+    },
+    "work_control_20261105b": {
+      "identity": "/root/work_control_20261105b",
+      "roles": [
+        "review",
+        "integrate"
+      ],
+      "historical_author_projects": []
     }
   },
   "notes": [
