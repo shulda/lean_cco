@@ -69,3 +69,181 @@ B060 receiving code; do not use this identity as a nonauthor reviewer.
 
 - **2026-11-04 exact GREEN PR head:** `657607027a1eb11a07671f7638fb6c987b980b6a`, run `41787035120` job `126431433464`, 4,477 Lean jobs, 29,777 audited declarations and 1,803 source modules with both pinned provider guards. Applied coordination checkpoint requested as `20261104_chat1_B060_oldchildatom_green_657_rev643_0a8e` (receipt verification separate). Genuine old fine-atom occurrence iff owner-child occurrence and same-owner child-bit equality now compile.
 - **Next WIP two independent source lemmas:** `FiniteIndexClones.lean` (source N02: proper finite index lower bound above equality, by injected infinite actual clone fibre, directly on FULL invariant lattice) and `LoopedPhaseZero.lean` (N03: genuine complete monochromatic triangle forces zero rigid character and legal equal bits, no arbitrary marking hypothesis). Both staged blobs from earlier drafts, source pins unchanged, new exact-head CI pending. This does not complete clone-stable terminalization or infinite child owner sorts.
+
+
+## 2026-11-05 — RETURN_TO_WORK WIP preservation / author stop report
+
+**Identity / ownership:** this is the actual continuing work of project 4, actor `chat-1`
+(identity `chat-project:cco-chat-1`), batch B060, original branch
+`chat/chat-1/B060`, draft PR #72. Claim revision 625, original accepted
+base `f33fb4dec07bcae7f14ed8436a331c73f095b473`, base main CI
+41617306137 (success). The transition was user requested on
+2026-11-05; canonical coordination STATE revision 735 was
+`execution_mode=chat`, `claims_paused=true`. This report does NOT
+transfer ownership, submit, review, integrate or release the claim.
+
+**Complete published source checkpoint BEFORE this report-only commit:**
+`89b7f70b0ff9ac106e28871f6d04aa54394e564b`, exact PR Lean CI
+**41905820327 SUCCESS**, build job **126840780967**. Actual jobs completed:
+pinned toolchain, external EPPA/Ramsey facades, complete Lean build,
+current-source closure before and after audit, and the axiom audit.
+All 25 current `CCO/CloneTupleGeometry/*.lean` source modules are on
+the PR branch and imported through the public `CCO.lean` root;
+the newest source is `TypedSourceHomogeneity.lean`. The last
+**previously effective GREEN ledger checkpoint** is
+`10804910f6e5b954ed6ff4790b93ff3e0ce93bdd`, run **41902885911**,
+STATE rev **711**. Preserve that historical checkpoint. Failed WIP at
+`1b6cc61de2a6a8ac8d88541f341232f3cbf67e50` / run
+**41903693752** and `649c14a1bd5e4029dc57d3044190737ef6302d76` /
+run **41904649596** were both genuinely RED and applied in ledger
+revisions 713 and 715. The targeted local instance/transparency
+repair is present at the newer successful source head; no reset,
+rebase or omission of failures. A report-only follow-up commit will
+change the branch SHA without changing Lean code; the authoritative
+exact-head handover CI is to be recorded in a NEW validated broker
+checkpoint after its run, never inferred from this earlier green run.
+
+### What is actually Lean-proved on the published source head
+
+- **N01 / clone kernel (C01–C05):** `PureKernel`,
+  `FullKernelMI`, `FullKernelTuple`, `FiniteIndexClones`
+  give the actual FULL invariant clone kernel, containment in each
+  nonidentity FULL invariant equivalence, finite proper MI-coordinate
+  meet equal to K and injective real owner encoding. They also
+  force K below the bottom of each proper finite-relative-index
+  FULL interval. No terminal exact/hidden coordinate theorem follows
+  automatically.
+- **N02 / genuine ONE B047 safe phase (C06–C11):**
+  `CharacterCloneGates` identifies actual reached rigid gates and
+  forces genuine global phase masks to be constant on clone fibres;
+  `MarkedChildProduct`, `MarkedCloneColours`,
+  `MarkedOldAtomWitness`, `MarkedChildPalette`,
+  `MarkedChildAtomEquiv`, `MarkedChildColourReadout`,
+  `MarkedChildFullColour`, `MarkedChildSourceEquiv` establish
+  the full typed atomic source equivalence between the actual B047
+  marked child and the B045 pure clone of the actual owner-child
+  source. This includes real old pair colours, the real clone colour,
+  converse, all mixed sorts and true logical equality, not just
+  bijection of sets. Exact green source-isomorphism head
+  `0eb59560a9b1fad3e0d7d9b594cada40bc50c84e` /
+  CI 41898354545.
+- **N03 / infinitude for one actual phase (C12–C20):**
+  `LoopedPhaseZero`, `LoopedPhaseSeed`,
+  `LoopedPhaseMarkedAge`, `InfiniteMonochrome`,
+  `ActualOldMonoClique`, `LoopedCloneInstance`,
+  `MarkedOwnerLimit`, `OwnerChildInfinitude` establish
+  actual finite phase-marked monochromatic embeddings and
+  infinitely many distinct OWNER children for each real successor
+  type, assuming the actual old named sorts are infinite
+  (plus the explicit original countability where used).
+  These are source-level one-step theorems, not terminal iteration.
+- **Whole-source homogeneity transport, newly GREEN:**
+  `TypedSourceMap` proves dependent complete finite-diagram
+  transport, `TypedSourceHomogeneity` proves full-automorphism
+  conjugation and `homogeneous_pullback`, and the actual theorem
+  `actual_marked_owner_clone_homogeneous` gives
+  `HomogeneousSource (CloneSAP.source (owner_child_source ...))
+  (FullAut (CloneSAP.source (owner_child_source ...)))`.
+  The previous two actual CI failures concerned synthesis/definitional
+  equality of the concrete dependent `FullAut` instance.
+  Source head 89b7f70, CI 41905820327 establishes that this
+  concrete theorem now compiles with its ORIGINAL hypotheses;
+  it does **not** establish homogeneity of the uncloned owner child.
+- **N04–N06, source-conditional local pieces:** `PureSpectrum`,
+  `DiagonalAndMeet` prove actual same-hidden-sort diagonal
+  spectrum and clone kernel/MI diversity meet at the pure source;
+  `StrongClone` proves genuine diversity-only c/a multiplication
+  (never FULL c;c = STRONG c*c); `TypedExact` proves the
+  two-sided typed STRONG exact product/finite nonempty meet
+  identity for an **explicitly homogeneous SAP+HOM CCO source**.
+  These are real Lean theorems under their stated original
+  hypotheses, but the required final terminal/hidden source
+  instantiations are NOT discharged.
+
+### Exact remaining mathematical obligations (not achieved by green CI)
+
+1. **N02 → iteration / T01–T02:** descend the established homogeneous
+   pure-clone owner child to homogeneity of the ACTUAL owner child.
+   Show that full automorphisms of its clone source induce owner
+   automorphisms via the preserved real clone-kernel fibres; lift
+   finite owner diagrams with a fixed clone index and use the
+   verified source homogeneity. Then establish the actual owner
+   AP/SAP and HOM CCO conditions needed to reapply the SAME
+   maximal-character B047 split (not an arbitrary unary expansion).
+   Prove each next genuine child is again a pure infinite clone,
+   and iterate through the actual FINITE safe-split tower; prove
+   terminal finite relative-index cover elimination and finish
+   `lem:ramsey-clone-stability`. The one-step proofs are NOT
+   a theorem about the full terminal tower.
+2. **N03 and N09 / T02, T08:** carry the actual infinity of every
+   owner child sort through all reached stages, including inactive
+   labels; then prove preservation of non-algebraic owner types
+   over EVERY finite marked base A using simultaneous genuine
+   character-compatible extensions. Establish
+   `acl_{Q^{dagger}}(A)=acl_Q(A)` only after that argument.
+3. **N04–N05 / T03–T04:** in the final REAL terminal source
+   identify the complete FULL invariant lattice with represented
+   RAW exact equivalences; prove actual finite MI coordinates,
+   uniform nonempty positive STRONG presentations, final
+   homogeneous SAP+HOM CCO/NR2 and the *real* class-Helly theorem.
+   Produce the quantifier-free compatible hidden tuple domain
+   using the true pair spectra (including equal hidden quotient
+   points, orphan-only completed objects and distinct sorts).
+   Pure-clone MI injection does not by itself prove this.
+4. **N06–N07 / T05–T06:** instantiate generic typed exact
+   distributivity on that final source, prove all ACTUAL mixed
+   J° * {a} * L° cylinder spectra and their same-coordinate
+   diagonal cases, the nonempty finite-meet multiplication, and
+   the singleton output `{a}`. Recover fine colours and
+   visible equality separately; finish
+   `lem:ramsey-mi-domain`,
+   `lem:ramsey-typed-distributivity` with its proper generic scope,
+   and `lem:ramsey-singleton-recovery`.
+5. **T07 and T09:** reconcile real source diagnostics and six
+   external receiving obligations and all original source
+   application contracts; the OPTIONAL original-F-MI one-coordinate
+   branch (N10 / C64–C76) requires the independent all-finite-base
+   acl proof and finite-packet separation. It must NOT be an
+   ancestor or a hidden premise of the four selected source exports.
+   Four selected source results, 76 human claims, four auxiliary
+   equations and nine tasks are not globally discharged. No
+   submission, independent review or integration is authorized.
+
+### Preserve pending/staged mathematical draft plans
+
+These are **proposals**, not completed Lean theorems and not
+replacement providers. Preserve them for the receiving Work team:
+(A) prove clone→owner automorphism descent by quotienting each
+real complete clone-atom fibre and check FULL old pair-colour
+well-definedness, injectivity, and finite-diagram extension;
+(B) source-level uniform successor operation on the finite
+list of actual B047 `SourcePhase` splits and a finite decreasing
+FULL cover measure; (C) terminal MI finite relative-index separation
+and class Helly before interpreting hidden coordinates;
+(D) the complete `Spec(q,q)=J°`, orphan-only domain and
+J° * {a} * L° diagonal/non-diagonal fine-colour reconstruction;
+(E) finite-base character-compatible owner-clique gluing,
+and separately the optional original F-MI packet argument.
+Earlier staged clone-atom and looped-character-zero proposals
+are ALREADY represented by actual compiled modules
+`MarkedCloneColours.lean` and `LoopedPhaseZero.lean`;
+do not mistake the old draft status for the current source status.
+
+**Staging provenance limitation:** this new Chat runtime does not
+have a local Git worktree, index or untracked file store from the
+preceding chat session. Therefore no unseen bytes can honestly be
+certified as staged/published. All reachable WIP commits and their
+historical failed and successful heads are intact on the original
+GitHub branch, and all *known* uncommitted mathematical ideas are
+recorded above. Receiving Work must NOT discard additional local
+staged/untracked material if it actually has any.
+
+**Immediate first implementation step after explicit Work takeover:**
+write and prove the genuine source-level
+`HomogeneousSource (owner_child_source ...)` descent from
+`actual_marked_owner_clone_homogeneous`, with actual typed FULL
+clone automorphism fibres, then verify the AP/CCO provider hypotheses
+needed for the next actual B047 phase. Build the exact new head and
+run the complete audit before any source-export completion claim.
+No code, source pin, theorem statement, axiom, toolchain or provider
+was altered as part of this handover documentation.
