@@ -34,6 +34,13 @@ def originalCycleRotateIndex {n : Nat} [NeZero n]
     simpa only [ZMod.val_natCast_of_lt p.isLt,
       ZMod.val_natCast_of_lt q.isLt] using hv
 
+/-- Definitionally the actual cyclic translation is the pinned
+ZMod-to-Fin injection applied to the translated group position. -/
+@[simp] theorem originalCycleRotateIndex_apply {n : Nat} [NeZero n]
+    (s : ZMod n) (p : Fin n) :
+    originalCycleRotateIndex s p =
+      zmodFinCode n (s + (p.val : ZMod n)) := rfl
+
 /-- Every old Fin position is recovered from its genuine
 finite cyclic coordinate; no modulo-index selection is guessed. -/
 theorem original_zmod_fin_back {n : Nat} [NeZero n]
@@ -47,7 +54,8 @@ theorem original_cycle_rotate_zero {n : Nat} [NeZero n]
     (hn : 0 < n) (s : ZMod n) :
     originalCycleRotateIndex s (⟨0, hn⟩ : Fin n) =
       zmodFinCode n s := by
-  simp [originalCycleRotateIndex]
+  rw [originalCycleRotateIndex_apply]
+  simp
 
 /-- After rotating by s, the old point at t is at the
 new exact position k=(t-s).val, with no wrap ambiguity. -/
