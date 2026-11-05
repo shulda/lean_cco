@@ -60,6 +60,21 @@ theorem original_cycle_rotate_index_surjective
   exact ⟨originalCycleRotateIndex (-s) p,
     original_cycle_rotate_inverse_index s p⟩
 
+/-- OLD typed edge equality under equalities of VARIABLE formal
+endpoints. Eliminate these variable equalities together with the
+dependent atom type and edge certificate; this avoids rewriting
+inside a proof-indexed edge term with an ill-typed motive. -/
+private theorem original_typed_edge_pair_congr
+    {D : PartialDiagram S V}
+    {x x' y y' : V} (hx : x = x') (hy : y = y')
+    (hne : x ≠ y) (hne' : x' ≠ y') :
+    (⟨D.vertexSort x, D.vertexSort y, D.edge x y hne⟩ :
+      Σ i : ι, Σ j : ι, Option (S.Atom i j)) =
+      ⟨D.vertexSort x', D.vertexSort y', D.edge x' y' hne'⟩ := by
+  cases hx
+  cases hy
+  rfl
+
 /-- The full typed side reading depends only on the TWO actual
 formal endpoints of that side, not on its proof of inequality.
 In particular a source-edge dependent certificate may be
@@ -74,10 +89,8 @@ theorem original_cycle_side_reading_congr
         C'.vertices (CCO.cyclicNext C'.length_pos q)) :
     originalSpecifiedCycleSideReading S C p =
       originalSpecifiedCycleSideReading S C' q := by
-  dsimp only [originalSpecifiedCycleSideReading]
-  cases hFirst
-  cases hSecond
-  rfl
+  exact original_typed_edge_pair_congr S hFirst hSecond
+    (C.next_ne p) (C'.next_ne q)
 
 /-- TRUE source11 old typed side colours on the rotated source
 cycle are exactly the original colours at the translated index.
