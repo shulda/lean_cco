@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 743,
+  "revision": 744,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -4777,15 +4777,16 @@
         "declarations": 30216,
         "source_modules": 1842
       },
-      "head_sha": "2626f17b99691660c9bc9e42b913604b2ec27bd5",
+      "head_sha": "d5ef9ee1f74c63652418839cb4cf20300937f970",
       "pr_number": 73,
       "observed_ci": {
-        "run_id": 42107488861,
-        "run_attempt": 1,
-        "head_sha": "2626f17b99691660c9bc9e42b913604b2ec27bd5",
-        "conclusion": "failure"
+        "run_id": 42114016855,
+        "head_sha": "d5ef9ee1f74c63652418839cb4cf20300937f970",
+        "conclusion": "failure",
+        "axiom_audit": "not_run_after_build_failure",
+        "job_id": 127548721669
       },
-      "checkpoint_revision": 737,
+      "checkpoint_revision": 744,
       "handover_history": [
         {
           "revision": 739,
@@ -23520,6 +23521,26 @@
           "identity": "/root/independent_review_recovery",
           "reason": "The registered reader belongs to a historical Work session absent from the actual live collaboration tree; a direct unchanged-identity resume attempt returned live agent path /root/independent_review_recovery not found. This fresh reader is registered without impersonating that stopped session or inheriting its approval.",
           "report_path": "formalization/coordination/reports/work-reviewer-registration-20261105.md"
+        }
+      }
+    },
+    {
+      "revision": 744,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "checkpoint",
+      "package_id": "B053",
+      "details": {
+        "actor_id": "root",
+        "package_id": "B053",
+        "head_sha": "d5ef9ee1f74c63652418839cb4cf20300937f970",
+        "pr_number": 73,
+        "observed_ci": {
+          "run_id": 42114016855,
+          "head_sha": "d5ef9ee1f74c63652418839cb4cf20300937f970",
+          "conclusion": "failure",
+          "axiom_audit": "not_run_after_build_failure",
+          "job_id": 127548721669
         }
       }
     }
