@@ -75,7 +75,9 @@ theorem original_cycle_side_reading_congr
     originalSpecifiedCycleSideReading S C p =
       originalSpecifiedCycleSideReading S C' q := by
   dsimp only [originalSpecifiedCycleSideReading]
-  rw [hFirst, hSecond]
+  cases hFirst
+  cases hSecond
+  rfl
 
 /-- TRUE source11 old typed side colours on the rotated source
 cycle are exactly the original colours at the translated index.
@@ -83,6 +85,7 @@ Nothing is required from a completed diagram or from an HN
 theorem: both sides are the actual old partial diagram edges. -/
 theorem original_rotated_old_cycle_side_reading
     {D : PartialDiagram S V} (C : SimpleCycle D)
+    [NeZero C.length]
     (s : ZMod C.length) (p : Fin C.length) :
     originalSpecifiedCycleSideReading S
       (originalRotateOldSimpleCycle S C s) p =
