@@ -1892,3 +1892,6 @@ import CCO.TypedOrbitFrames.ChordShortRight
 import CCO.TypedOrbitFrames.ChordRotationFin
 import CCO.TypedOrbitFrames.RotateOldSimpleCycle
 import CCO.TypedOrbitFrames.RotateOldSideReading
+import CCO.TypedOrbitFrames.RotateOldCycleHom
+import CCO.TypedOrbitFrames.RotateSpecifiedChord
+import CCO.TypedOrbitFrames.ShortCycleSideReading
