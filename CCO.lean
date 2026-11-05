@@ -1892,3 +1892,7 @@ import CCO.CloneTupleGeometry.MarkedChildFullColour
 import CCO.CloneTupleGeometry.MarkedChildSourceEquiv
 import CCO.CloneTupleGeometry.TypedSourceMap
 import CCO.CloneTupleGeometry.TypedSourceHomogeneity
+import CCO.CloneTupleGeometry.OwnerHomogeneity
+import CCO.CloneTupleGeometry.OwnerSourceHomogeneity
+import CCO.CloneTupleGeometry.TypedSourceCCO
+import CCO.CloneTupleGeometry.OwnerSourceCCO
