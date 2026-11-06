@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "request_id": "20261106_b056_typed_bounds_42268605221",
+  "actor_id": "root",
+  "project_id": 3,
+  "policy_revision": 17,
+  "operation": "event",
+  "expected_revision": 830,
+  "event": "checkpoint",
+  "data": {
+    "package_id": "B056",
+    "head_sha": "9050f357867162971e7166580d7a594827f1adfe",
+    "pr_number": 82,
+    "observed_ci": {
+      "run_id": 42268605221,
+      "head_sha": "9050f357867162971e7166580d7a594827f1adfe",
+      "conclusion": "success",
+      "axiom_audit": "allowlist",
+      "source_modules": 2299,
+      "declarations": 34566
+    }
+  }
+}
