@@ -395,3 +395,24 @@ Exact predecessor `132bb2eb04eaf9253d968ae2026d0e0107fc25b1` / CI42251390610 pas
 root modules and 35018 allowlisted declarations. This added compiler
 candidate needs its own fresh exact-head build/audit; no review,
 submission, or complete source theorem is claimed.
+
+## C25 actual prescribed-original-type return from a lower-rank source — compiler candidate
+
+`CCO/AutomaticEPCore/QuotientOriginalSeparator.lean` receives the real
+canonical E-quotient bipartite edge at selected sorts `Quotient.mk'' s/t`
+and uses the ACTUAL chosen current E-occupancy parent sorts. The proven
+`originalOccupancyRepresentative_class` gives actual prefix support from
+those selected parents to exactly s,t. The proved full E-class
+`selectedOriginalClassEquiv_apply` identifies the canonical edge with
+an old pair of actual representatives. The accepted C25 quotient-atom
+pullback then produces one ORIGINAL bipartite atom at the specified s,t.
+Its second theorem composes this with the genuine smaller-source induction
+step, requiring only the mathematical `smaller` strong-induction hypothesis
+on the real quotient. There is NO quotient SAP, old section, extra
+semantically stronger premise or shortcut to the outer rank theorem.
+
+At parent `53fee82c8ea46a5a2eaebfb5afef1754ee34e73b`, exact CI42269584242 is green: 2319 source
+modules, 35019 transitive allowlisted declarations. This new module is
+**not yet compiler-green** and demands a new exact full build/audit.
+Identity-gate/same-F assembly and complete strong-induction/core exports
+remain open, as does genuine independent full-source review.
