@@ -1,4 +1,5 @@
 import CCO.GuardedTwoRoot.TypedPrefixStates
+import Mathlib.Data.Fintype.Card
 
 /-! A shortest POSITIVE presentation has distinct nonempty typed prefix
 states, hence at most card(State) letters. Return-loop deletion retains
@@ -39,13 +40,16 @@ theorem shortest_trace_nodup {i j : ι} (word : PositiveWord S i j)
   obtain ⟨k,a,hFirst⟩ := trace_first S H sap word
   obtain ⟨out,hOut,hLength⟩ := word_of_chain S H sap a (finalState S H sap word) nodes hChain
     (hHead.trans hFirst) (hLast.trans (trace_last S H sap word))
-  have hBound := hShortest out hOut
-  rwa [hLength,← trace_length S H sap word] at hBound
+  calc
+    (trace S H sap word).length = length S word := trace_length S H sap word
+    _ ≤ length S out := hShortest out hOut
+    _ = nodes.length := hLength
 
 /-- C26: both initial and current endpoint-sort tags occur in State.
 Only positive profiles are counted; no real-Id state is adjoined. -/
-theorem shortest_length_le_card_states {i j : ι} (word : PositiveWord S i j)
-    (hShortest : Shortest S word) : length S word ≤ Nat.card (State S) := by
+theorem shortest_length_le_card_states {i j : ι}
+    (H : HomogeneousSource S G) (sap : AgeSAP S)
+    (word : PositiveWord S i j) (hShortest : Shortest S word) : length S word ≤ Nat.card (State S) := by
   let nodes := trace S H sap word
   let f : Fin nodes.length → State S := fun k => ⟨i,nodes.get k⟩
   have hf : Function.Injective f := by
@@ -55,8 +59,9 @@ theorem shortest_length_le_card_states {i j : ι} (word : PositiveWord S i j)
   have hCard := Nat.card_le_card_of_injective f hf
   simpa only [Nat.card_fin,trace_length] using hCard
 
-theorem bounded_positive_presentation {i j : ι} (P : S.Menu i j)
-    (hReachable : ∃ word : PositiveWord S i j, PositiveWord.profile S word = P) :
+theorem bounded_positive_presentation {i j : ι}
+    (H : HomogeneousSource S G) (sap : AgeSAP S)
+    (P : S.Menu i j) (hReachable : ∃ word : PositiveWord S i j, PositiveWord.profile S word = P) :
     ∃ word : PositiveWord S i j,
       PositiveWord.profile S word = P ∧ Shortest S word ∧
       length S word ≤ Nat.card (State S) := by
@@ -73,14 +78,17 @@ instance reachableState_finite : Finite (ReachableState S) := inferInstance
 
 /-- Choose ONCE for each profile, independent of any partial source or
 chosen real representative. Unbounded unary syntax does not enter. -/
-def fixedWord (p : ReachableState S) : PositiveWord S p.val.1 p.val.2.1 :=
+noncomputable def fixedWord (H : HomogeneousSource S G) (sap : AgeSAP S)
+    (p : ReachableState S) : PositiveWord S p.val.1 p.val.2.1 :=
   (bounded_positive_presentation S H sap p.val.2.2.val p.property).choose
 
-theorem fixedWord_profile (p : ReachableState S) :
+theorem fixedWord_profile (H : HomogeneousSource S G) (sap : AgeSAP S)
+    (p : ReachableState S) :
     PositiveWord.profile S (fixedWord S H sap p) = p.val.2.2.val :=
   (bounded_positive_presentation S H sap p.val.2.2.val p.property).choose_spec.1
 
-theorem fixedWord_length (p : ReachableState S) :
+theorem fixedWord_length (H : HomogeneousSource S G) (sap : AgeSAP S)
+    (p : ReachableState S) :
     length S (fixedWord S H sap p) ≤ Nat.card (State S) :=
   (bounded_positive_presentation S H sap p.val.2.2.val p.property).choose_spec.2.2
 

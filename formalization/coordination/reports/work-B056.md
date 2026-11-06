@@ -149,3 +149,19 @@ imports the now-green `TypedPrefixStates.lean` on parent head
 34555 allowlist declarations). The new head is **compiler candidate**
 until its own Lean full build plus audit; hidden positive presentations,
 full B056 kernel reflection and FG1 hidden duties remain open.
+
+## Typed shortest bound exact CI failure and source-only repairs
+
+Run [42250263624](https://github.com/shulda/lean_cco/actions/runs/42250263624)
+failed at new module `TypedPrefixBounds.lean` on exact PR82 head
+`2001e421903673838e5864680c246e2d08ad603e`: missing targeted `Mathlib.Data.Fintype.Card` import
+(`Nat.card`), local source `H/sap` binder omission in the shortest-size,
+bounded-presentation and fixed-witness theorem statements, and a brittle
+`rwa` in the non-repeating shortest-chain proof. The repair adds the
+import to its **consumer**, passes the ACTUAL HomogeneousSource/AgeSAP
+variables explicitly (no extra source hypothesis), uses a direct
+three-step `calc` for the length estimate, and correctly declares
+`fixedWord` noncomputable because it makes a real classical witness
+choice. Earlier verified `TypedPrefixStates` remains green at
+`47cdffbbcac3c79dce00ea29ed68ed4d5a5602fc` / CI42249488952.
+The next head requires its own complete CI/audit, not an inferred success.
