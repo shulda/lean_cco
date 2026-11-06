@@ -347,3 +347,17 @@ proof of the complete outer-rank or identity-gate cases. The predecessor
 readback at head `8336d7e6c10c7fbde234cdf98b3c23fa58ce6dda` is green in run 42247940821
 (2316 project modules; 35016 audited declarations). This new head
 requires a fresh Lean build/audit; compiler errors remain WIP.
+
+## Exact CI failure and heterogenous Sigma equality repair
+
+Public [run 42249262081](https://github.com/shulda/lean_cco/actions/runs/42249262081)
+at `18f22cd55f91c3359a39f0681e8cf66880281bb8` FAILED with ONE compiler error at
+`QuotientAtomTransport.lean:52`: a generic simplification did not extract
+old point equality from equality of two tagged `Sigma` constructors.
+All other declarations in that new module passed elaboration to that point.
+The next patch extracts the dependent second-component HEq by the
+`Sigma.mk.inj` constructor equality theorem and converts it to Eq at
+this fixed original sort; it changes neither theorem statement nor source
+hypotheses. CI/audit of the new exact head is required. The last green
+B063 readback remains `8336d7e6c10c7fbde234cdf98b3c23fa58ce6dda`,
+run 42247940821, STATE827. This failed attempt is NOT a submission.

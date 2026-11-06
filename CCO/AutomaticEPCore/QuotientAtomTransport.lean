@@ -49,7 +49,7 @@ theorem initial_selected_bipartite_atom_to_original_quotient
   have hneE : (⟨base,e x⟩ : Sigma U.Point) ≠ ⟨base,e y⟩ := by
     intro h
     have same : e x = e y := by
-      simpa only [Sigma.mk.injEq,heq_eq_eq,true_and] using h
+      exact eq_of_heq (Sigma.mk.inj h).2
     exact hne (e.injective same)
   obtain ⟨a,ha⟩ := U.source.some_colour_of_ne (e x) (e y) hneE
   have readback (p q : Q.current.Point i) :
