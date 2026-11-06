@@ -149,8 +149,9 @@ theorem fixedTheta_vertices_le (D : ExactMenu S) :
   change Nat.card (thetaVertices S (fixedTheta S H sap D)) ≤
     (Finset.univ : Finset (ExactMenu S)).sup
       (fun E : ExactMenu S => Nat.card (thetaVertices S (fixedTheta S H sap E)))
-  apply Finset.le_sup
-  exact Finset.mem_univ D
+  exact Finset.le_sup (s := (Finset.univ : Finset (ExactMenu S)))
+    (f := fun E : ExactMenu S => Nat.card (thetaVertices S (fixedTheta S H sap E)))
+    (b := D) (Finset.mem_univ D)
 
 /-- The pair bound includes either the direct bounded comparison list
 or its fixed exact-menu presentation, plus the actual root anchor budget. -/

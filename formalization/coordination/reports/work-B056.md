@@ -253,3 +253,16 @@ explicitly Nat and the proof invokes `apply Finset.le_sup` before
 supplying its actual membership `Finset.mem_univ D`. The source
 mathematics and source/API/toolchain remain identical; this newer
 head is WIP until its complete exact CI/audit is green.
+
+## UniformTheta exact finite supremum type-argument repair
+
+Run [42271862061](https://github.com/shulda/lean_cco/actions/runs/42271862061)
+on head `6f470cadc90d10b5feee0de984c1dd1e532355be` failed at the SAME only remaining theorem
+`fixedTheta_vertices_le`. The compiler prints the true declaration:
+`Finset.le_sup : ∀ {α β} [SemilatticeSup α] [OrderBot α]
+{s : Finset β} {f : β → α} {b}, b ∈ s → f b ≤ s.sup f`.
+The bare tactic could not infer higher-order `f` before typeclasses;
+all three binder values `s=univ : Finset (ExactMenu S)`, explicit
+`f : ExactMenu S → Nat`, and `b=D` are now supplied by NAME.
+All other exact uniform theta source lemmas/limits compiled in this
+run. This is still unaccepted WIP pending fresh CI and audit.
