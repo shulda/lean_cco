@@ -134,3 +134,18 @@ source hypotheses and preserve all statements after the existing section's
 variable inclusion; no new axiom or stronger source requirement.
 Next public head must pass Lean plus full audit; previous GREEN G1CCO
 at c47352119eb147aa556cbedee9a094a615ca3e7c remains preserved.
+
+## Shortest strictly-positive typed-word state bound candidate
+
+`TypedPrefixBounds.lean` is now the exact preserved source draft for
+the ACTUAL finite-state positive-profile size estimate. It argues that a
+shortest positive word has a nonrepeating sequence of NONEMPTY typed
+prefix states, then bounds its length by `Nat.card (TypedPrefix.State S)`.
+The construction deliberately retains both original initial and current
+endpoint sorts, never adds a real identity or an empty-word state, and
+chooses one bounded word per actual reachable profile. This module
+imports the now-green `TypedPrefixStates.lean` on parent head
+`47cdffbbcac3c79dce00ea29ed68ed4d5a5602fc` (CI42249488952, 2298 verified root source modules,
+34555 allowlist declarations). The new head is **compiler candidate**
+until its own Lean full build plus audit; hidden positive presentations,
+full B056 kernel reflection and FG1 hidden duties remain open.
