@@ -58,7 +58,9 @@ theorem shortest_length_le_card_states {i j : ι}
     have hv : nodes.get a = nodes.get b := sigma_mk_injective he
     exact (shortest_trace_nodup S H sap word hShortest).injective_get hv
   have hCard := Nat.card_le_card_of_injective f hf
-  simpa only [Nat.card_fin,trace_length] using hCard
+  calc
+    length S word = nodes.length := (trace_length S H sap word).symm
+    _ ≤ Nat.card (State S) := by simpa only [Nat.card_fin] using hCard
 
 theorem bounded_positive_presentation {i j : ι}
     (H : HomogeneousSource S G) (sap : AgeSAP S)

@@ -178,3 +178,16 @@ imports define `Nat.card`. The exact consumer now imports THAT specific
 file, without changing shared foundational modules, source statements,
 assumptions, axioms or toolchain. The new exact head requires fresh full CI
 and audit before being a proven finite-state length bound.
+
+## CI pinpoint repair: shortest prefix state bound, 6 November
+
+The exact public WIP head `5a8db3b09b7d6bf6bbb6d4415eb56dcb98dc0210` failed CI run 42252072291 solely at
+`TypedPrefixBounds.lean:61`: the previous `simpa only [Nat.card_fin,trace_length]`
+did not rewrite the locally abbreviated `nodes.length` to `length S word`.
+The original mathematical inequality and all finite-state hypotheses are unchanged.
+The patch uses an explicit `calc` with the proved `trace_length` equality,
+followed by `Nat.card_le_card_of_injective`. The pinned Mathlib NatCard
+import added in the preserved parent already resolved every other issue.
+This new head requires its own exact build and transitive audit; B056 remains
+IN_PROGRESS with source-record assembly, private cycles, G1 hidden/RAW and
+complete reflection still open.
