@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 811,
+  "revision": 812,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -4949,7 +4949,7 @@
       }
     },
     "B055": {
-      "state": "IN_PROGRESS",
+      "state": "SUBMITTED",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b062_resume",
@@ -4974,7 +4974,7 @@
         "source_modules": 2263,
         "build_jobs": 4937
       },
-      "head_sha": "67f075cdac39b7df59fef80ab770fdff9101f067",
+      "head_sha": "f582726033c31c913b1b1a525dfc9e483372de6c",
       "pr_number": 81,
       "observed_ci": {
         "run_id": 42212941248,
@@ -4988,7 +4988,20 @@
         "source_modules": 2273,
         "build_jobs": 4947
       },
-      "checkpoint_revision": 811
+      "checkpoint_revision": 811,
+      "ci": {
+        "run_id": 42217717527,
+        "run_attempt": 1,
+        "head_sha": "f582726033c31c913b1b1a525dfc9e483372de6c",
+        "conclusion": "success",
+        "axiom_audit": "allowlist",
+        "job_id": 127891787021,
+        "tests": 187,
+        "declarations": 34189,
+        "source_modules": 2284,
+        "build_jobs": 4958
+      },
+      "report_path": "formalization/coordination/submissions/B055.md"
     },
     "B056": {
       "state": "AVAILABLE",
@@ -25344,6 +25357,32 @@
           "build_jobs": 4947
         },
         "summary": "Actual10module B055 publicWIP passes exactremote fullroot4947jobs/2273complete currentmodules/33785standardallowlist and all269/106exactguards. Actual homogeneity/SAP,rigidity,pullback/support branches inspected as WIP; anchors/collisions,FULL-original-one-g provenance/wrappers,C44/boundary/fullsource-map/review remain genuineOPEN. No completion/submission/approval inferred. Sameactualauthors resumed newproofs."
+      }
+    },
+    {
+      "revision": 812,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "submit",
+      "package_id": "B055",
+      "details": {
+        "actor_id": "root",
+        "package_id": "B055",
+        "head_sha": "f582726033c31c913b1b1a525dfc9e483372de6c",
+        "pr_number": 81,
+        "ci": {
+          "run_id": 42217717527,
+          "run_attempt": 1,
+          "head_sha": "f582726033c31c913b1b1a525dfc9e483372de6c",
+          "conclusion": "success",
+          "axiom_audit": "allowlist",
+          "job_id": 127891787021,
+          "tests": 187,
+          "declarations": 34189,
+          "source_modules": 2284,
+          "build_jobs": 4958
+        },
+        "report_path": "formalization/coordination/submissions/B055.md"
       }
     }
   ],
