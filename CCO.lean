@@ -2199,3 +2199,6 @@ import CCO.ExactEPGeometry.OriginalQuotientTower
 import CCO.ExactEPGeometry.CodedCurrentSource
 import CCO.ExactEPGeometry.OriginalQuotientRootPredicates
 import CCO.ExactEPGeometry.OriginalCodedQuotientSafeHistory
+import CCO.ExactEPGeometry.ExactTraceProduct
+import CCO.ExactEPGeometry.CanonicalStepProduct
+import CCO.ExactEPGeometry.OriginalQuotientHistoryProvenance

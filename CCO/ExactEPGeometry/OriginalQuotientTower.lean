@@ -1,6 +1,7 @@
 import CCO.ExactEPGeometry.OriginalSelectedQuotientTerminal
 import CCO.ExactEPGeometry.CertifiedGateTower
 import CCO.ExactEPGeometry.OriginalCodedQuotientSafeHistory
+import CCO.ExactEPGeometry.OriginalQuotientHistoryProvenance
 import CCO.ParityHasse.Original.RelativeIndices
 import Lean.Elab.Tactic.Omega
 
@@ -128,6 +129,65 @@ theorem originalExactQuotientSafeTower_exists
   obtain ⟨projected,hCount,hLength,hFinal⟩ :=
     originalExactQuotientSafeTower A base hOne E history
   refine ⟨terminal,history,hTerminal,hBound,projected,hCount,?_,?_⟩
+  · omega
+  · exact hFinal ((terminal_iff_fullInvariantCoverInfinite terminal.current).mp hTerminal)
+
+/-- The full source export WITH original-stage provenance. Every retained
+edge is the prescribed corrected phase of its own original indexed step;
+its witness retains the whole fixed-code age isomorphism and canonical old
+G_i/E with exact trace and universal largest-lift property. Every discarded
+stage retains its actual whole-source isomorphism. The projected history
+here is the flattening of THAT SAME trace, rather than an unrelated safe
+history with only the same endpoints or length. -/
+theorem originalExactQuotientSafeTower_aligned
+    (A : CurrentSource.{u,v,w,t})
+    (base : A.Sorts) (hOne : ∀ i : A.Sorts, base = i)
+    (E : ExactEq A.source base)
+    {s next : CertifiedGateTower.ExactPrefix A}
+    (history : History CertifiedGateTower.Step s next) :
+    ∃ trace : QuotientHistoryProvenance.Alignment A base hOne E history,
+      trace.indices = QuotientHistoryProvenance.retainedIndices A base hOne E history ∧
+      trace.gates = (certifiedHistoryOriginalGates A base hOne history).filter
+        (fun G => decide (E ≤ G)) ∧
+      trace.projected.length =
+        (certifiedHistoryOriginalGates A base hOne history).countP
+          (fun G => decide (E ≤ G)) ∧
+      trace.projected.length ≤ history.length ∧
+      (FullInvariantCoverInfinite next.current →
+        (quotient A base hOne E next).Terminal) := by
+  obtain ⟨trace⟩ := QuotientHistoryProvenance.alignment A base hOne E history
+  refine ⟨trace,trace.indices_eq,trace.gates_eq_filter,trace.projected_count,?_,?_⟩
+  · rw [trace.projected_count, ← certifiedHistoryOriginalGates_length A base hOne history]
+    exact List.countP_le_length
+  · exact originalExactSelectedQuotient_terminal_of_fullInvariantCovers
+      A next.current next.reduct next.transport base hOne E
+
+/-- Source construction of a terminal quotient tower with the WHOLE
+original stage/kernel/phase alignment, also for zero stages and E=Id/Top.
+There is no additional provenance or source-provider premise. -/
+theorem originalExactQuotientSafeTower_exists_aligned
+    (A : CurrentSource.{u,v,w,t})
+    (base : A.Sorts) (hOne : ∀ i : A.Sorts, base = i)
+    (E : ExactEq A.source base) :
+    ∃ terminal : CertifiedGateTower.ExactPrefix A,
+      ∃ history : History CertifiedGateTower.Step
+          (CertifiedGateTower.initial A) terminal,
+        terminal.current.Terminal ∧
+        history.length + terminal.current.potential ≤ A.potential ∧
+        ∃ trace : QuotientHistoryProvenance.Alignment A base hOne E history,
+          trace.indices = QuotientHistoryProvenance.retainedIndices A base hOne E history ∧
+          trace.gates = (certifiedHistoryOriginalGates A base hOne history).filter
+            (fun G => decide (E ≤ G)) ∧
+          trace.projected.length =
+            (certifiedHistoryOriginalGates A base hOne history).countP
+              (fun G => decide (E ≤ G)) ∧
+          trace.projected.length ≤ A.potential ∧
+          (quotient A base hOne E terminal).Terminal := by
+  obtain ⟨terminal,history,hTerminal,hBound,_,_⟩ :=
+    CertifiedGateTower.terminalisation A
+  obtain ⟨trace,hIndices,hGates,hCount,hLength,hFinal⟩ :=
+    originalExactQuotientSafeTower_aligned A base hOne E history
+  refine ⟨terminal,history,hTerminal,hBound,trace,hIndices,hGates,hCount,?_,?_⟩
   · omega
   · exact hFinal ((terminal_iff_fullInvariantCoverInfinite terminal.current).mp hTerminal)
 
