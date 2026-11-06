@@ -1,6 +1,7 @@
 import CCO.TypedOrbitFrames.OrbitDiagram
 import CCO.TypedOrbitFrames.OrbitCloneCycles
 import CCO.StrongExact.PrescribedBaseGeneral
+import CCO.RawExact.DiagramReindex
 
 /-!
 # Source11 T02: actual old orbit-diagram completion over the whole real base
@@ -60,10 +61,8 @@ theorem original_orbit_clone_cycle_graph
   refine ⟨f,hy,?_⟩
   intro p
   obtain ⟨a,ha⟩ := C.specified p
-  have hv := hy p
-  have hw := hy (cyclicNext C.length_pos p)
-  simp only [hv,hw,originalOrbitDiagram,originalOrbitSort] at a ha
-  exact ((original_orbit_clone_edge_iff S base q K e _ _ _ a).mp ha).1
+  exact (original_orbit_clone_edge_reading S base q K e
+    (hy p) (hy (cyclicNext C.length_pos p)) (C.next_ne p) a ha).1
 
 /-- The actual source pure-power threshold discharges the clone-cycle
 test for this one concrete orbit diagram. -/
@@ -84,11 +83,8 @@ theorem original_orbit_clone_cycle_hom
     rw [hf p]
     rfl
   · intro p a ha
-    have hv := hf p
-    have hw := hf (cyclicNext C.length_pos p)
-    simp only [hv,hw,originalOrbitDiagram,originalOrbitSort] at a ha
-    have he := ((original_orbit_clone_edge_iff S base q K e _ _ _ a).mp ha).2
-    exact he.symm.heq
+    exact (original_orbit_clone_edge_reading S base q K e
+      (hf p) (hf (cyclicNext C.length_pos p)) (C.next_ne p) a ha).2
   · exact hN C.length hLong
 
 /-- Source11's whole finite old graph is completed over the ACTUAL whole

@@ -160,3 +160,30 @@ jobs:
           python3 tools/verify_project_cache.py --require-complete
           python3 tools/verify_external_provider.py --require-complete
           python3 tools/verify_ramsey_provider.py --require-complete
+
+      # Export only after the full build, audit and final guards above. The
+      # archive is a local-build seed, never proof or a replacement for guards.
+      # Main supplies the shared accepted baseline; ordinary WIP PRs skip it.
+      - name: Package verified build outputs for local recovery
+        if: github.event_name != 'pull_request' || startsWith(github.head_ref, 'work/cache-export-')
+        shell: bash
+        run: |
+          set -euo pipefail
+          bundle="$RUNNER_TEMP/cco-verified-build"
+          mkdir -p "$bundle"
+          git rev-parse HEAD > "$bundle/checkout-sha.txt"
+          sha256sum lean-toolchain lake-manifest.json lakefile.toml CCO.lean > "$bundle/input-sha256.txt"
+          tar -czf "$bundle/build.tar.gz" -- \
+            .lake/build \
+            .lake/packages/AllThoseEPPA/.lake/build \
+            vendor/ramsey/.lake/build
+
+      - name: Upload verified build recovery archive
+        if: github.event_name != 'pull_request' || startsWith(github.head_ref, 'work/cache-export-')
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: verified-cco-build-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/cco-verified-build/
+          retention-days: 1
+          compression-level: 0
+          if-no-files-found: error

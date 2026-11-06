@@ -1,5 +1,6 @@
 import CCO.TypedOrbitFrames.OrbitCompletion
 import CCO.ParityHasse.Sparse.Existence
+import CCO.TerminalLattice.StrongPaletteBridge
 
 /-!
 # Source11 T02: high-chromatic counting for the exact old one-point type
@@ -63,8 +64,11 @@ theorem original_exact_type_classes_infinite_of_external_fork_atom
   let κ : Fin W.size → Fin n := fun v =>
     Fin.castLE (by dsimp [n]; omega) (Fintype.equivFin ↥classes (c v))
   obtain ⟨v,w,hvw,hκ⟩ := W.monochromatic κ
-  have hc : c v = c w := (Fintype.equivFin ↥classes).injective
-    (Fin.ext (congrArg Fin.val hκ))
+  have hValues : ((Fintype.equivFin ↥classes) (c v)).val =
+      ((Fintype.equivFin ↥classes) (c w)).val := by
+    change (κ v).val = (κ w).val
+    exact congrArg Fin.val hκ
+  have hc : c v = c w := (Fintype.equivFin ↥classes).injective (Fin.ext hValues)
   have hJ : J (f.point (.inr v)) (f.point (.inr w)) :=
     Quotient.exact (congrArg Subtype.val hc)
   have hcol : S.colour (f.point (.inr v)) (f.point (.inr w)) = some e := by

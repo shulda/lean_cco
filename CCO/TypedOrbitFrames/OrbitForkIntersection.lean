@@ -41,8 +41,9 @@ theorem original_common_spoke_fork_atom_exists
         cases y with
         | inl d => exact ha
         | inr c =>
-          change (if (⊥ : SimpleGraph Bool).Adj b c then some auxiliary else none) = some a at ha
-          simp only [SimpleGraph.bot_adj, if_false, reduceCtorEq] at ha }
+          have hAdj := ((original_orbit_clone_edge_iff S base q
+            (⊥ : SimpleGraph Bool) auxiliary b c hxy a).mp ha).1
+          exact False.elim hAdj }
   obtain ⟨g,hg,_,_⟩ := DiagramHom.injectivize_of_SAP H sap f
     (∅ : Set (B ⊕ Bool)) (by simp)
     (∅ : Set (Sigma X)) Set.finite_empty

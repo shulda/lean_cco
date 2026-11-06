@@ -9,7 +9,20 @@ publishes the existing PR73 branch. Work resumes from public green
 `1c6b21e6` merged as local `3ebbd860`; policy/report changes only.
 The live claim remains Work project3, IN_PROGRESS after STATE750.
 
-## Current T02 source proof checkpoint — compilation pending
+## Current T02 source proof checkpoint — full root compilation and audit PASS
+
+Immutable tested source checkpoint: `bab96aa7b10f6d30e8c3c511025c7ea9073d0c72`,
+followed by the actual accepted-main `c7a6d326` infrastructure/report merge
+as local `04ab06091abebd7312d73f736420fb002e7fe593`. At that exact local
+head the FULL root `lake --rehash build` passes **4566 jobs**, all project
+source guards pass (**1892** current CCO modules, **269** exact EPPA and
+**106** exact Ramsey), and the full root transitive audit passes **30627**
+declarations with only `propext`, `Classical.choice`, `Quot.sound`.
+The same three guards pass again after the audit. Logs are
+`b053-full-root-build.log`, `b053-full-root-audit.json` and
+`b053-full-final-guards.log` in scratch. A guarded accepted-main cache was
+overlaid only while the private builder was stopped; own repair and actual
+rehash preceded verification. No WIP sibling artifacts were used.
 
 Eight new root-imported production modules implement the complete original
 source11 T02 proof chain, not a replacement completion/orbit provider:
@@ -39,23 +52,39 @@ source11 T02 proof chain, not a replacement completion/orbit provider:
   full terminal NR2, a genuinely named proper FULL MI and its actual
   coordinate outside the full completed unary closure of the old base.
 
-**This new T02 implementation is not yet certified.** The exact pinned
-compiler and stable exact-manifest dependency facades were restored into a
-private build directory. A cold targeted build is still running in
-`b053-orbit-first-build.log`. It exposed routine draft elaboration errors
-in `OrbitCloneCycles` (PNat arithmetic) and `OrbitDiagram` (concrete imports,
-Sum finiteness, graph symmetry API, dependent Fin-three function). Repairs
-are written but need the next compiler pass. Further consumer errors may
-remain. No new source proof is claimed as complete until successful local
-consumer compilation and exact-head remote root CI/transitive audit.
+**Current local validation:** the complete source-facing T02 target
+`CCO.TypedOrbitFrames.ExactColouredOrbit` passes with **2487 jobs**, pinned
+Lean4.34.1, final `b053-orbit-eleventh-build.log`. This compiles ALL eight
+new modules and the complete actual provider/consumer closure. The first
+cold pass restored all true accepted dependencies privately; successive
+passes repaired concrete draft API/import/dependent-transport/Fin-three
+elaboration issues. No mathematical premise was added during repair.
+
+The actual follow-up `#print axioms` audit of ALL **32** newly public
+definitions/theorems passes: each uses no axioms or only `propext`,
+`Classical.choice`, `Quot.sound`. This includes the final source export,
+QT4 named inverse, FULL prime intersection and whole-base completion.
+The target audit script/log are `b053-orbit-target-axioms.lean/.log` in
+scratch. Source controls pass (8 definitions/62 claims/7 exports/7 tasks;
+5663 cycles/8302 splits and remaining fixed diagnostics). `git diff --check`
+passes. Exact new remote root CI/full transitive audit and fresh actual
+nonauthor review remain outstanding; the full local root result is above.
+
+Successful exact command in this private worktree:
+
+```bash
+LAKE_RESTORE_ARTIFACTS=true LAKE_ARTIFACT_CACHE=false lake --rehash build \
+  +CCO.TypedOrbitFrames.ExactColouredOrbit
+lake env lean /workspace/scratch/e67502cd723c/b053-orbit-target-axioms.lean
+```
 
 No source/API/toolchain/pin changes, broad imports, sorry/admit or new axioms.
 All new modules are root imported. No sibling WIP is a dependency.
 
 ## Remaining actual work
 
-Compile/repair the entire T02 chain and audit its transitive axioms first.
-Then source T03 actual hidden-versus-real original-base orbit dichotomy and
+Obtain exact-head remote root CI/full audit for this tested T02 snapshot.
+Source T03 actual hidden-versus-real original-base orbit dichotomy and
 point-generated SAP, the full T04 infinite common actual class theorem,
 T05 named forced-term compatible single frames, T06 arbitrary mixed/orphan
 fresh representatives with real identity freshness, and T07 full scope and

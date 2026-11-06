@@ -1,7 +1,7 @@
 import CCO.TypedOrbitFrames.CompleteBaseCycleReduction
 import CCO.PairHomogeneity
 import CCO.StrongGeometry
-import Mathlib.Data.Finite.Sum
+import Mathlib.Basic.Finite.Sum
 import Mathlib.Tactic.FinCases
 
 /-!
@@ -56,14 +56,11 @@ noncomputable def originalOrbitDiagram : PartialDiagram S (B ⊕ Y) where
         change (if K.Adj b c then some e else none) = some a ↔
           (if K.Adj c b then some e else none) = some (S.conv a)
         by_cases he : K.Adj b c
-        · simp only [if_pos he, if_pos (K.adj_symm he), Option.some.injEq]
-          constructor
-          · rintro rfl
-            exact (S.symmetricLoop e).symm
-          · intro ha
-            exact (S.symmetricLoop a).symm.trans ha.symm
+        · simp only [ite_eq_left he, ite_eq_left (K.adj_symm he)]
+          rw [show S.conv a = a from S.symmetricLoop (i := i) a]
+          rfl
         · have hr : ¬ K.Adj c b := fun hh => he (K.adj_symm hh)
-          simp only [if_neg he, if_neg hr, reduceCtorEq]
+          simp only [ite_eq_right he, ite_eq_right hr, reduceCtorEq]
 
 /-- Each clone has the actual original realised complete one-point type. -/
 def originalOrbitTarget : ∀ x : B ⊕ Y,
@@ -104,6 +101,20 @@ theorem original_orbit_clone_edge_iff (x y : Y)
   classical
   change (if K.Adj x y then some e else none) = some a ↔ _
   by_cases h : K.Adj x y <;> simp [h]
+
+/-- Endpoint transport is done on the WHOLE dependent old edge, so its
+atom and both sort tags move together. -/
+theorem original_orbit_clone_edge_reading
+    {x y : B ⊕ Y} {v w : Y} (hx : x = Sum.inr v) (hy : y = Sum.inr w)
+    (hne : x ≠ y)
+    (a : S.Atom ((originalOrbitDiagram S base q K e).vertexSort x)
+      ((originalOrbitDiagram S base q K e).vertexSort y))
+    (ha : (originalOrbitDiagram S base q K e).edge x y hne = some a) :
+    K.Adj v w ∧ HEq a e := by
+  subst x
+  subst y
+  obtain ⟨hadj,he⟩ := (original_orbit_clone_edge_iff S base q K e v w hne a).mp ha
+  exact ⟨hadj,heq_of_eq he.symm⟩
 
 private theorem fork_reverse_colour {j : ι} {x : X i} {y : X j}
     {d : X j} (h : S.colour x y = S.colour q d) :
@@ -189,7 +200,9 @@ theorem original_triangle_cycle_hom_of_triangle
     htri (vs 0) (vs 1) (vs 2) (hne 0) (hne 1) h02
       a b (S.conv c) ha hb h02c
   let point : ∀ p : Fin 3, X (D.vertexSort (vs p)) :=
-    Fin.cases x (Fin.cases y (Fin.cases z Fin.elim0))
+    Fin.cases x (Fin.cases y (Fin.cases z (fun p => Fin.elim0 p)))
+  have hp0 : point 0 = x := rfl
+  have hp2 : point 2 = z := by rfl
   refine ⟨point,?_⟩
   intro p atom hatom
   fin_cases p
@@ -201,7 +214,9 @@ theorem original_triangle_cycle_hom_of_triangle
     exact hyz
   · have he : atom = c := Option.some.inj (hatom.symm.trans hc)
     subst atom
-    simpa only [point,Fin.cases_zero,Fin.cases_succ,AtomicSource.atomRel, S.conv_invol] using
-      (S.colour_swap x z (S.conv c)).mp hxz
+    have hh : S.colour z x = some c :=
+      ((S.colour_swap x z (S.conv c)).mp hxz).trans
+        (congrArg some (S.conv_invol c))
+    simpa [cyclicNext,hp0,hp2] using hh
 
 end CCO.TypedOrbitFrames

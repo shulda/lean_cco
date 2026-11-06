@@ -69,8 +69,8 @@ theorem original_unforced_exact_type_external_fork_atom
   have hq := original_unforced_projection_root_outside_real_base
     S H sap nr2 (Set.range base) J q hunforced
   have hProper := original_named_hidden_full_proper S H J
-  obtain ⟨auxiliary,_⟩ := exists_atom_difference S J.val ⊤
-    (lt_top_iff_ne_top.mpr hProper)
+  obtain ⟨auxiliary,_,_⟩ := Set.not_subset.mp
+    (original_proper_equivalence_diversity_top_exits S J.val hProper)
   obtain ⟨e₀,he₀⟩ := original_common_spoke_fork_atom_exists
     S base q H sap hq auxiliary
   letI : Fintype B := Fintype.ofFinite B
@@ -118,7 +118,8 @@ theorem original_unforced_exact_type_external_fork_atom
   apply he (originalSpokeForkMenu S q (base d).2)
   apply List.mem_ofFn.mpr
   refine ⟨index.symm d,?_⟩
-  simp only [index.apply_symm_apply]
+  exact congrArg (fun d : B => originalSpokeForkMenu S q (base d).2)
+    (index.apply_symm_apply d)
 
 /-- `lem:typed-exact-orbit-infinitude`: the realisations of the EXACT
 complete old atomic one-point type over a finite COMPLETE original base
