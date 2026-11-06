@@ -165,3 +165,16 @@ three-step `calc` for the length estimate, and correctly declares
 choice. Earlier verified `TypedPrefixStates` remains green at
 `47cdffbbcac3c79dce00ea29ed68ed4d5a5602fc` / CI42249488952.
 The next head requires its own complete CI/audit, not an inferred success.
+
+## Pinned Mathlib targeted-import repair — 6 November 2026
+
+Public exact-head run [42251016723](https://github.com/shulda/lean_cco/actions/runs/42251016723)
+on `9d7ff463cdd0658da42ac30e158eb55000408631` FAILED only because Lean could not find `Nat.card`
+and `Nat.card_le_card_of_injective` in the consumer import closure;
+other prior elaboration errors were resolved. Verified the pinned Mathlib
+commit `d13f23b723b8a846827a245b89c10fc7d3f11612` contains the
+latter lemma in `Mathlib/SetTheory/Cardinal/NatCard.lean`, whose transitive
+imports define `Nat.card`. The exact consumer now imports THAT specific
+file, without changing shared foundational modules, source statements,
+assumptions, axioms or toolchain. The new exact head requires fresh full CI
+and audit before being a proven finite-state length bound.

@@ -1,5 +1,6 @@
 import CCO.GuardedTwoRoot.TypedPrefixStates
 import Mathlib.Data.Fintype.Card
+import Mathlib.SetTheory.Cardinal.NatCard
 
 /-! A shortest POSITIVE presentation has distinct nonempty typed prefix
 states, hence at most card(State) letters. Return-loop deletion retains
