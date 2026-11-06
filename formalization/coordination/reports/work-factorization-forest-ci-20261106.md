@@ -149,3 +149,22 @@ actual source obstruction export. This work adds no typed adapter or hidden
 forest premise and makes none of those duties appear complete.
 
 No mathematical, source, license, accepted-API or toolchain conflict was found.
+
+## Public exact-head CI timeout checkpoint — 6 November 2026
+
+Run [42221088125](https://github.com/shulda/lean_cco/actions/runs/42221088125)
+on public PR #78 head `3995e7269fbe761a8501f6f706b963057b06db0a` ended **cancelled**, not successful.
+Its build job `127903278617` completed source-allocation checks,
+targeted Mathlib cache, EPPA/Ramsey/finite-forest provider builds and guards,
+and project cache repair successfully. During `lake --rehash build` it reached
+4875/4973 targets; the existing workflow's explicit 30-minute job limit
+then cancelled the operation. Full CCO/forest audits and post-build guards were
+skipped, so this run does NOT certify the public head or integration.
+
+The follow-up changes **only** the GitHub Actions build-job timeout from
+30 to 60 minutes and appends this checkpoint. It does not change mathematical
+source, provider proofs, licenses, toolchain, manifest, source pins, audit
+commands or dependency-cache guards. This is a cold-CI timing correction,
+not a theorem or acceptance claim. The NEW public head requires its own
+successful complete build, both transitive audits and independent final-delta
+review before any sole-lock integration. B058's typed adapter is still open.
