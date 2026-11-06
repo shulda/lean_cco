@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "request_id": "20261106_b063_source_core_42272439790",
+  "actor_id": "root",
+  "project_id": 3,
+  "policy_revision": 17,
+  "operation": "event",
+  "expected_revision": 834,
+  "event": "checkpoint",
+  "data": {
+    "package_id": "B063",
+    "head_sha": "2b8b37405628c7095ca7521130f27faea5e9be22",
+    "pr_number": 80,
+    "observed_ci": {
+      "run_id": 42272439790,
+      "head_sha": "2b8b37405628c7095ca7521130f27faea5e9be22",
+      "conclusion": "success",
+      "axiom_audit": "allowlist",
+      "source_modules": 2322,
+      "declarations": 35026
+    }
+  }
+}
