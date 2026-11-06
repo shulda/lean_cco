@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 770,
+  "revision": 771,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -5082,7 +5082,67 @@
       "owner_project_id": null
     }
   },
-  "integration_lock": null,
+  "integration_lock": {
+    "kind": "infrastructure",
+    "actor_id": "root",
+    "head_sha": "0654089839217cfe1d95daba351b1eac307a7ee0",
+    "base_main_sha": "f330bd43e796eba2e7b1f8104bc1a6282719b08d",
+    "pr_number": 76,
+    "review": {
+      "actor_id": "work_control_20261106c",
+      "head_sha": "0654089839217cfe1d95daba351b1eac307a7ee0",
+      "approved": true,
+      "summary": "I, actual genuinely fresh nonauthor /root/work_control_20261106c, personally approve only recovery infrastructure at exact public0654089839217cfe1d95daba351b1eac307a7ee0/treeef99d2721d913c5b1f7ce475be43d9f74ba8d23b. I independently read complete old/new policy and BOARD, exact full diff, runtime evidence, protocol and actual manifest/recovery validators; policy15-to16 appends exactly my actual review/integrate identity with no historical authorship and preserves every old actor, complete BOARD, all package records, capacities, contracts, pins and root nonreview role. I authored none of policy or B053/B062; the only extra final delta is my own verbatim report, personally fetched and cmp-checked. Existing queue23tests and diffcheck independently pass. I personally fetched successful exact-head CI42184033387/job127780138952 and its actual full logs:187tests,4574full-rootjobs,1900current source modules, exact EPPA269/Ramsey106 guards pre/post and31221 transitive CCO declarations within only propext/Classical.choice/Quot.sound. Actual CI synthetic checkout9a383691bb9ae68a5a981b5c4432ba1589945dd4 has the identical whole reviewed tree. Latest observed STATE770 has policy15, B053/B062 IN_PROGRESS without review leases and no lock. Bootstrap grants no package approval or activation; actual resulting-main CI plus manifest-bound promote_reviewer remains necessary.",
+      "independence": {
+        "identity": "/root/work_control_20261106c",
+        "non_author": true,
+        "summary": "I am a genuinely new review-only reader; I personally authored, designed, implemented, repaired or directed none of this policy/infrastructure or any active B053/B062 code, tests or design. I wrote only my independent review evidence, and I inherited no earlier actual reader approval.",
+        "report_path": "formalization/coordination/reviews/work-reviewer-recovery-20261106.md"
+      }
+    },
+    "ci": {
+      "run_id": 42184033387,
+      "run_attempt": 1,
+      "head_sha": "0654089839217cfe1d95daba351b1eac307a7ee0",
+      "conclusion": "success",
+      "axiom_audit": "allowlist",
+      "job_id": 127780138952,
+      "tests": 187,
+      "declarations": 31221,
+      "source_modules": 1900,
+      "build_jobs": 4574
+    },
+    "author_actor_ids": [
+      "root"
+    ],
+    "original_author_project_ids": [
+      3
+    ],
+    "reviewer_recovery": {
+      "unavailable_actor_id": "work_control_20261105b",
+      "bootstrap_actor_id": "work_control_20261106c",
+      "new_actors": {
+        "work_control_20261106c": {
+          "identity": "/root/work_control_20261106c",
+          "roles": [
+            "review",
+            "integrate"
+          ],
+          "historical_author_projects": []
+        }
+      },
+      "previous_registry_sha256": "80d48ab42c39147ee3099a1a983708c7a5cee9bd9521144c989a4c5449d76499",
+      "previous_policy_sha256": "1bc116792df758eceef62526d5da38222f9a19d568d93353746dcc051d97dbae",
+      "registry_sha256": "80d48ab42c39147ee3099a1a983708c7a5cee9bd9521144c989a4c5449d76499",
+      "policy_sha256": "d99482e69f2f0ed2b19cc190aa29c7ac0634b6d34e3fbd8ce296cf664bccaa57"
+    },
+    "unavailable_reviewer": {
+      "actor_id": "work_control_20261105b",
+      "identity": "/root/work_control_20261105b",
+      "reason": "The actual collaboration inventory after restart contained only root; the old actual reviewer runtime is unavailable. A newly spawned same-path instance personally checked the explicit restart rule, declined to impersonate it and stopped without approval. The genuinely new reader has its own separate identity and whole personal review.",
+      "report_path": "formalization/coordination/reports/work-reviewer-recovery-20261106.md"
+    }
+  },
   "history": [
     {
       "revision": 1,
@@ -24117,6 +24177,74 @@
           "build_jobs": 4651
         },
         "summary": "Complete actual typed frames and infinite boundary examples pass exact remote full root and standard-allowlist axiom audit. Fresh registered nonauthor approval and final report/current-main head are still required before submission."
+      }
+    },
+    {
+      "revision": 771,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "start_infrastructure",
+      "package_id": null,
+      "details": {
+        "actor_id": "root",
+        "pr_number": 76,
+        "head_sha": "0654089839217cfe1d95daba351b1eac307a7ee0",
+        "base_main_sha": "f330bd43e796eba2e7b1f8104bc1a6282719b08d",
+        "head_contains_main": true,
+        "ci": {
+          "run_id": 42184033387,
+          "run_attempt": 1,
+          "head_sha": "0654089839217cfe1d95daba351b1eac307a7ee0",
+          "conclusion": "success",
+          "axiom_audit": "allowlist",
+          "job_id": 127780138952,
+          "tests": 187,
+          "declarations": 31221,
+          "source_modules": 1900,
+          "build_jobs": 4574
+        },
+        "author_actor_ids": [
+          "root"
+        ],
+        "original_author_project_ids": [
+          3
+        ],
+        "review": {
+          "actor_id": "work_control_20261106c",
+          "head_sha": "0654089839217cfe1d95daba351b1eac307a7ee0",
+          "approved": true,
+          "summary": "I, actual genuinely fresh nonauthor /root/work_control_20261106c, personally approve only recovery infrastructure at exact public0654089839217cfe1d95daba351b1eac307a7ee0/treeef99d2721d913c5b1f7ce475be43d9f74ba8d23b. I independently read complete old/new policy and BOARD, exact full diff, runtime evidence, protocol and actual manifest/recovery validators; policy15-to16 appends exactly my actual review/integrate identity with no historical authorship and preserves every old actor, complete BOARD, all package records, capacities, contracts, pins and root nonreview role. I authored none of policy or B053/B062; the only extra final delta is my own verbatim report, personally fetched and cmp-checked. Existing queue23tests and diffcheck independently pass. I personally fetched successful exact-head CI42184033387/job127780138952 and its actual full logs:187tests,4574full-rootjobs,1900current source modules, exact EPPA269/Ramsey106 guards pre/post and31221 transitive CCO declarations within only propext/Classical.choice/Quot.sound. Actual CI synthetic checkout9a383691bb9ae68a5a981b5c4432ba1589945dd4 has the identical whole reviewed tree. Latest observed STATE770 has policy15, B053/B062 IN_PROGRESS without review leases and no lock. Bootstrap grants no package approval or activation; actual resulting-main CI plus manifest-bound promote_reviewer remains necessary.",
+          "independence": {
+            "identity": "/root/work_control_20261106c",
+            "non_author": true,
+            "summary": "I am a genuinely new review-only reader; I personally authored, designed, implemented, repaired or directed none of this policy/infrastructure or any active B053/B062 code, tests or design. I wrote only my independent review evidence, and I inherited no earlier actual reader approval.",
+            "report_path": "formalization/coordination/reviews/work-reviewer-recovery-20261106.md"
+          }
+        },
+        "reviewer_recovery": {
+          "unavailable_actor_id": "work_control_20261105b",
+          "bootstrap_actor_id": "work_control_20261106c",
+          "new_actors": {
+            "work_control_20261106c": {
+              "identity": "/root/work_control_20261106c",
+              "roles": [
+                "review",
+                "integrate"
+              ],
+              "historical_author_projects": []
+            }
+          },
+          "previous_registry_sha256": "80d48ab42c39147ee3099a1a983708c7a5cee9bd9521144c989a4c5449d76499",
+          "previous_policy_sha256": "1bc116792df758eceef62526d5da38222f9a19d568d93353746dcc051d97dbae",
+          "registry_sha256": "80d48ab42c39147ee3099a1a983708c7a5cee9bd9521144c989a4c5449d76499",
+          "policy_sha256": "d99482e69f2f0ed2b19cc190aa29c7ac0634b6d34e3fbd8ce296cf664bccaa57"
+        },
+        "unavailable_reviewer": {
+          "actor_id": "work_control_20261105b",
+          "identity": "/root/work_control_20261105b",
+          "reason": "The actual collaboration inventory after restart contained only root; the old actual reviewer runtime is unavailable. A newly spawned same-path instance personally checked the explicit restart rule, declined to impersonate it and stopped without approval. The genuinely new reader has its own separate identity and whole personal review.",
+          "report_path": "formalization/coordination/reports/work-reviewer-recovery-20261106.md"
+        }
       }
     }
   ],
