@@ -87,3 +87,18 @@ cross-block r constraints, applies the independently proved Phase.semanticCCO,
 and joins the two labels with distinct clone codes. No provider is added
 or new assumption imposed. The earlier uncompiled draft is preserved as
 historical evidence; all exact G1 hidden/RAW/FG1 duties remain open.
+
+## Typed-positive-prefix state proof candidate
+
+An independent typed-bound component is now compiled from its preserved
+`TypedPrefixStates.lean.txt` draft into
+`CCO/GuardedTwoRoot/TypedPrefixStates.lean` and explicitly root-imported.
+The draft states and traces NONEMPTY positive paths, endpoint-sort-indexed
+nonempty menus, the actual SAP-derived product associativity, chain
+realization and fixed initial/last states. No empty prefix or unit is assumed.
+The exact public CI must check elaboration and imports before this counts as
+proved; `TypedPrefixBounds` and `UniformTheta` remain separate uncompiled
+snapshots until explicitly built. The G1CCO module at parent
+`c47352119eb147aa556cbedee9a094a615ca3e7c` is already verified by
+run 42247156680 / job 127992264482, root 2297 source modules, transitive
+audit 34507 allowlisted declarations. This subsequent head requires its OWN CI.
