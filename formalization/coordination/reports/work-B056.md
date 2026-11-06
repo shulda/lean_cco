@@ -241,3 +241,15 @@ exposes the actual Nat `Finset.sup` goal in `fixedTheta_vertices_le`
 to resolve the previous `OrderBot` metavariable. All other source
 proofs elaborated without errors. Full exact-head CI/audit is still
 mandatory; current B056 remains IN_PROGRESS with untouched source/API.
+
+## UniformTheta third exact compiler correction
+
+Run [42270889096](https://github.com/shulda/lean_cco/actions/runs/42270889096)
+on head `6733fe19f6eb41caee89043192be9ad018a6b483` compiled every new theta cardinality, comparison
+and finite-menu lemma, then stopped at the **single** final
+`fixedTheta_vertices_le` application of `Finset.le_sup` due to an
+underspecified initial `OrderBot` metavariable. The target is now
+explicitly Nat and the proof invokes `apply Finset.le_sup` before
+supplying its actual membership `Finset.mem_univ D`. The source
+mathematics and source/API/toolchain remain identical; this newer
+head is WIP until its complete exact CI/audit is green.
