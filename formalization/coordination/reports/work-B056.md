@@ -191,3 +191,24 @@ import added in the preserved parent already resolved every other issue.
 This new head requires its own exact build and transitive audit; B056 remains
 IN_PROGRESS with source-record assembly, private cycles, G1 hidden/RAW and
 complete reflection still open.
+
+## Uniform positive theta-size module candidate — exact source scope
+
+The preserved `reports/wip/B056/UniformTheta.lean.txt` was promoted to
+`CCO/GuardedTwoRoot/UniformTheta.lean`, with direct root import, atop the
+actual green shortest positive-word bound `9050f357867162971e7166580d7a594827f1adfe` /
+CI42268605221 (2299 root modules, 34566 allowlisted declarations, STATE831).
+This is a **new compiler candidate** requiring fresh exact-source CI/audit.
+It attempts the literal B003 theta-carrier counts, strict interior
+positions, uniform comparison-record counts and the fixed positive theta
+presentations for **all actual nonempty exact menus**. Its final bound
+retains an explicit finite anchor budget; it does not claim that B056's
+still-missing source-term assembly has already supplied the consumer's
+u/R/anchor counts. Proactively added narrow local cardinal/powerset imports
+and an explicit finite menu instance; no hidden unit/Helly/completion
+premise, new axiom, or source theorem is introduced.
+
+Remaining WIP: exact one-factor comparison assembly, post-witness root
+signatures, full old-atom reflection, private theta cycle classification,
+G1 coarse hidden/RAW obstruction, proper supported-gadget consumers and
+full source map/review.
