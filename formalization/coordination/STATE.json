@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 782,
+  "revision": 783,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -5099,75 +5099,7 @@
       "owner_project_id": null
     }
   },
-  "integration_lock": {
-    "kind": "infrastructure",
-    "actor_id": "root",
-    "head_sha": "4bac71654043d1c43cc6c89f302b5de3675b5c00",
-    "base_main_sha": "1efbcb40673dc40e8d5343b445dea8c572b600e3",
-    "pr_number": 77,
-    "review": {
-      "actor_id": "work_control_20261106d",
-      "head_sha": "4bac71654043d1c43cc6c89f302b5de3675b5c00",
-      "approved": true,
-      "summary": "Actual genuinely fresh nonauthor personally checked complete old/new policy and unchanged BOARD, exact full registration diff and runtime evidence, queue manifest/recovery validators, final report-only delta and exact successful CI42203714655/job127845212130 with187 tests,4574 root jobs,1900 current modules, complete EPPA269/Ramsey106 pre/post guards and31221 standard-allowlist declarations. The actual synthetic checkout has the identical whole reviewed tree. This bootstrap approval confers no package approval or activation; sole lock, expected-head history-preserving merge, actual resulting-main green CI/audit and manifest-bound promote_reviewer remain required.",
-      "independence": {
-        "identity": "/root/b053_fresh_review",
-        "non_author": true,
-        "summary": "I am a genuinely fresh review-only runtime and personally authored, implemented, designed, repaired or directed none of this registration or either active B053/B062 package, including their historical work. My only authored output is my own personal review evidence; no old reader's identity, source reading or approval is reused.",
-        "report_path": "formalization/coordination/reviews/work-reviewer-recovery-20261106de.md"
-      }
-    },
-    "ci": {
-      "run_id": 42203714655,
-      "run_attempt": 1,
-      "head_sha": "4bac71654043d1c43cc6c89f302b5de3675b5c00",
-      "conclusion": "success",
-      "axiom_audit": "allowlist",
-      "job_id": 127845212130,
-      "tests": 187,
-      "declarations": 31221,
-      "source_modules": 1900,
-      "build_jobs": 4574
-    },
-    "author_actor_ids": [
-      "root"
-    ],
-    "original_author_project_ids": [
-      3
-    ],
-    "reviewer_recovery": {
-      "unavailable_actor_id": "work_control_20261106c",
-      "bootstrap_actor_id": "work_control_20261106d",
-      "new_actors": {
-        "work_control_20261106d": {
-          "identity": "/root/b053_fresh_review",
-          "roles": [
-            "review",
-            "integrate"
-          ],
-          "historical_author_projects": []
-        },
-        "work_control_20261106e": {
-          "identity": "/root/b062_fresh_review",
-          "roles": [
-            "review",
-            "integrate"
-          ],
-          "historical_author_projects": []
-        }
-      },
-      "previous_registry_sha256": "80d48ab42c39147ee3099a1a983708c7a5cee9bd9521144c989a4c5449d76499",
-      "previous_policy_sha256": "d99482e69f2f0ed2b19cc190aa29c7ac0634b6d34e3fbd8ce296cf664bccaa57",
-      "registry_sha256": "80d48ab42c39147ee3099a1a983708c7a5cee9bd9521144c989a4c5449d76499",
-      "policy_sha256": "4e1f303a986d5f385972ade36ba03f619b1a3c1916efda2070703811b4b3f392"
-    },
-    "unavailable_reviewer": {
-      "actor_id": "work_control_20261106c",
-      "identity": "/root/work_control_20261106c",
-      "reason": "The original actual reviewer runtime is absent after the broken chat. A direct followup_task retry at its exact identity /root/work_control_20261106c returned live agent path not found. Two actual new review-only runtimes have their own identities and whole personal reading; no historical approval or lease is inherited.",
-      "report_path": "formalization/coordination/reports/work-reviewer-recovery-20261106de.md"
-    }
-  },
+  "integration_lock": null,
   "history": [
     {
       "revision": 1,
@@ -24563,6 +24495,56 @@
           "report_path": "formalization/coordination/reports/work-reviewer-recovery-20261106de.md"
         }
       }
+    },
+    {
+      "revision": 783,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "promote_reviewer",
+      "package_id": null,
+      "details": {
+        "actor_id": "root",
+        "head_sha": "4bac71654043d1c43cc6c89f302b5de3675b5c00",
+        "integration_commit": "68faa81d1d2af95ad58f6937afdd1afd97bb49ad",
+        "main_ci": {
+          "run_id": 42204394942,
+          "run_attempt": 1,
+          "head_sha": "68faa81d1d2af95ad58f6937afdd1afd97bb49ad",
+          "conclusion": "success",
+          "axiom_audit": "allowlist",
+          "job_id": 127847292237,
+          "tests": 187,
+          "declarations": 31221,
+          "source_modules": 1900,
+          "build_jobs": 4574
+        },
+        "reviewer_recovery": {
+          "unavailable_actor_id": "work_control_20261106c",
+          "bootstrap_actor_id": "work_control_20261106d",
+          "new_actors": {
+            "work_control_20261106d": {
+              "identity": "/root/b053_fresh_review",
+              "roles": [
+                "review",
+                "integrate"
+              ],
+              "historical_author_projects": []
+            },
+            "work_control_20261106e": {
+              "identity": "/root/b062_fresh_review",
+              "roles": [
+                "review",
+                "integrate"
+              ],
+              "historical_author_projects": []
+            }
+          },
+          "previous_registry_sha256": "80d48ab42c39147ee3099a1a983708c7a5cee9bd9521144c989a4c5449d76499",
+          "previous_policy_sha256": "d99482e69f2f0ed2b19cc190aa29c7ac0634b6d34e3fbd8ce296cf664bccaa57",
+          "registry_sha256": "80d48ab42c39147ee3099a1a983708c7a5cee9bd9521144c989a4c5449d76499",
+          "policy_sha256": "4e1f303a986d5f385972ade36ba03f619b1a3c1916efda2070703811b4b3f392"
+        }
+      }
     }
   ],
   "infrastructure_integrations": [
@@ -26328,9 +26310,91 @@
         "source_modules": 1900,
         "build_jobs": 4574
       }
+    },
+    {
+      "kind": "infrastructure",
+      "actor_id": "root",
+      "head_sha": "4bac71654043d1c43cc6c89f302b5de3675b5c00",
+      "base_main_sha": "1efbcb40673dc40e8d5343b445dea8c572b600e3",
+      "pr_number": 77,
+      "review": {
+        "actor_id": "work_control_20261106d",
+        "head_sha": "4bac71654043d1c43cc6c89f302b5de3675b5c00",
+        "approved": true,
+        "summary": "Actual genuinely fresh nonauthor personally checked complete old/new policy and unchanged BOARD, exact full registration diff and runtime evidence, queue manifest/recovery validators, final report-only delta and exact successful CI42203714655/job127845212130 with187 tests,4574 root jobs,1900 current modules, complete EPPA269/Ramsey106 pre/post guards and31221 standard-allowlist declarations. The actual synthetic checkout has the identical whole reviewed tree. This bootstrap approval confers no package approval or activation; sole lock, expected-head history-preserving merge, actual resulting-main green CI/audit and manifest-bound promote_reviewer remain required.",
+        "independence": {
+          "identity": "/root/b053_fresh_review",
+          "non_author": true,
+          "summary": "I am a genuinely fresh review-only runtime and personally authored, implemented, designed, repaired or directed none of this registration or either active B053/B062 package, including their historical work. My only authored output is my own personal review evidence; no old reader's identity, source reading or approval is reused.",
+          "report_path": "formalization/coordination/reviews/work-reviewer-recovery-20261106de.md"
+        }
+      },
+      "ci": {
+        "run_id": 42203714655,
+        "run_attempt": 1,
+        "head_sha": "4bac71654043d1c43cc6c89f302b5de3675b5c00",
+        "conclusion": "success",
+        "axiom_audit": "allowlist",
+        "job_id": 127845212130,
+        "tests": 187,
+        "declarations": 31221,
+        "source_modules": 1900,
+        "build_jobs": 4574
+      },
+      "author_actor_ids": [
+        "root"
+      ],
+      "original_author_project_ids": [
+        3
+      ],
+      "reviewer_recovery": {
+        "unavailable_actor_id": "work_control_20261106c",
+        "bootstrap_actor_id": "work_control_20261106d",
+        "new_actors": {
+          "work_control_20261106d": {
+            "identity": "/root/b053_fresh_review",
+            "roles": [
+              "review",
+              "integrate"
+            ],
+            "historical_author_projects": []
+          },
+          "work_control_20261106e": {
+            "identity": "/root/b062_fresh_review",
+            "roles": [
+              "review",
+              "integrate"
+            ],
+            "historical_author_projects": []
+          }
+        },
+        "previous_registry_sha256": "80d48ab42c39147ee3099a1a983708c7a5cee9bd9521144c989a4c5449d76499",
+        "previous_policy_sha256": "d99482e69f2f0ed2b19cc190aa29c7ac0634b6d34e3fbd8ce296cf664bccaa57",
+        "registry_sha256": "80d48ab42c39147ee3099a1a983708c7a5cee9bd9521144c989a4c5449d76499",
+        "policy_sha256": "4e1f303a986d5f385972ade36ba03f619b1a3c1916efda2070703811b4b3f392"
+      },
+      "unavailable_reviewer": {
+        "actor_id": "work_control_20261106c",
+        "identity": "/root/work_control_20261106c",
+        "reason": "The original actual reviewer runtime is absent after the broken chat. A direct followup_task retry at its exact identity /root/work_control_20261106c returned live agent path not found. Two actual new review-only runtimes have their own identities and whole personal reading; no historical approval or lease is inherited.",
+        "report_path": "formalization/coordination/reports/work-reviewer-recovery-20261106de.md"
+      },
+      "integration_commit": "68faa81d1d2af95ad58f6937afdd1afd97bb49ad",
+      "main_ci": {
+        "run_id": 42204394942,
+        "run_attempt": 1,
+        "head_sha": "68faa81d1d2af95ad58f6937afdd1afd97bb49ad",
+        "conclusion": "success",
+        "axiom_audit": "allowlist",
+        "job_id": 127847292237,
+        "tests": 187,
+        "declarations": 31221,
+        "source_modules": 1900,
+        "build_jobs": 4574
+      }
     }
   ],
-  "policy_revision": 16,
+  "policy_revision": 17,
   "third_batch_exception": {
     "package_id": "B062",
     "independent_active_work": true,
