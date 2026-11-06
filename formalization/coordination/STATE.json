@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 829,
+  "revision": 830,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -5359,17 +5359,17 @@
         "source_modules": 2258,
         "build_jobs": 4932
       },
-      "head_sha": "42806dedb5d162c39336c84050cac1cab4be50e7",
+      "head_sha": "132bb2eb04eaf9253d968ae2026d0e0107fc25b1",
       "pr_number": 80,
       "observed_ci": {
-        "run_id": 42250044020,
-        "head_sha": "42806dedb5d162c39336c84050cac1cab4be50e7",
+        "run_id": 42251390610,
+        "head_sha": "132bb2eb04eaf9253d968ae2026d0e0107fc25b1",
         "conclusion": "success",
         "axiom_audit": "allowlist",
-        "source_modules": 2317,
-        "declarations": 35017
+        "source_modules": 2318,
+        "declarations": 35018
       },
-      "checkpoint_revision": 829
+      "checkpoint_revision": 830
     },
     "B064": {
       "state": "AVAILABLE",
@@ -25782,6 +25782,28 @@
         },
         "actor_id": "root",
         "request_id": "root/20261106_b063_bipartite_atom_transport_42250044020"
+      }
+    },
+    {
+      "revision": 830,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "checkpoint",
+      "package_id": "B063",
+      "details": {
+        "package_id": "B063",
+        "head_sha": "132bb2eb04eaf9253d968ae2026d0e0107fc25b1",
+        "pr_number": 80,
+        "observed_ci": {
+          "run_id": 42251390610,
+          "head_sha": "132bb2eb04eaf9253d968ae2026d0e0107fc25b1",
+          "conclusion": "success",
+          "axiom_audit": "allowlist",
+          "source_modules": 2318,
+          "declarations": 35018
+        },
+        "actor_id": "root",
+        "request_id": "root/20261106_b063_code_edge_42251390610"
       }
     }
   ],
