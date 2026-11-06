@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "request_id": "20261106_b063_bipartite_atom_transport_42250044020",
+  "actor_id": "root",
+  "project_id": 3,
+  "policy_revision": 17,
+  "operation": "event",
+  "expected_revision": 828,
+  "event": "checkpoint",
+  "data": {
+    "package_id": "B063",
+    "head_sha": "42806dedb5d162c39336c84050cac1cab4be50e7",
+    "pr_number": 80,
+    "observed_ci": {
+      "run_id": 42250044020,
+      "head_sha": "42806dedb5d162c39336c84050cac1cab4be50e7",
+      "conclusion": "success",
+      "axiom_audit": "allowlist",
+      "source_modules": 2317,
+      "declarations": 35017
+    }
+  }
+}
