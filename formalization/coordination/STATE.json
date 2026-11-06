@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 776,
+  "revision": 777,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -4757,6 +4757,7 @@
       "state": "IN_PROGRESS",
       "owner_project_id": 3,
       "author_actor_ids": [
+        "/root/b053_finalize",
         "/root/b053_work",
         "/root/b053_work/orbit_api_read",
         "chat-3",
@@ -24319,6 +24320,21 @@
           "build_jobs": 4574
         },
         "reason": "Actual independent reviewer found missing compiled FULL-cover infinite to OriginalNR2 source discharge. Repair only adds this source consequence and unconditional source-facing exports; all source assumptions and previous proof history remain unchanged."
+      }
+    },
+    {
+      "revision": 777,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "record_authorship",
+      "package_id": "B053",
+      "details": {
+        "actor_id": "root",
+        "package_id": "B053",
+        "author_actor_ids": [
+          "/root/b053_finalize"
+        ],
+        "reason": "Actual fresh implementer after restart writes the missing FULL invariant-cover to OriginalNR2 source bridge and all seven source-facing exports, with no stronger premise; retained as author and never a B053 reviewer."
       }
     }
   ],
