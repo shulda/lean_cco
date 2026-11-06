@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "request_id": "20261106_b063_canonical_quotient_edge_42269584242",
+  "actor_id": "root",
+  "project_id": 3,
+  "policy_revision": 17,
+  "operation": "event",
+  "expected_revision": 831,
+  "event": "checkpoint",
+  "data": {
+    "package_id": "B063",
+    "head_sha": "53fee82c8ea46a5a2eaebfb5afef1754ee34e73b",
+    "pr_number": 80,
+    "observed_ci": {
+      "run_id": 42269584242,
+      "head_sha": "53fee82c8ea46a5a2eaebfb5afef1754ee34e73b",
+      "conclusion": "success",
+      "axiom_audit": "allowlist",
+      "source_modules": 2319,
+      "declarations": 35019
+    }
+  }
+}
