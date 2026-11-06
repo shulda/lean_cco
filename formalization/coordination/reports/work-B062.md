@@ -4,6 +4,61 @@ Actual implementer: `/root/b062_work`; publisher/coordinator: `root`, project 3.
 Worktree: `/workspace/scratch/e67502cd723c/work-b062`.
 Original branch/PR: `chat/chat-2/B062`, PR 68. Original Chat authorship is retained.
 
+## Latest tested actual retained source-age checkpoint
+
+The previous local `2d5e1c32e0c308c1eb8b64371d05c156b53d79b2`
+(tree `41d6dc99a480d9becaf168a5b6856f5459da3245`) is public
+`f00eaad3d567070140dc7da00018a999d064ed5e`. Root inspected its exact
+GREEN CI42181282996/job127771256447:4777 root jobs,2103 actual source
+modules,31524 audited declarations; both provider guards pass. This is
+CI evidence for that prior immutable tree, not for subsequent changes.
+
+SEVEN further root-imported modules now prove the actual retained source
+comparison code and one WHOLE finite-age direction:
+
+- `NamedTableMotions` and `OriginalRetainedComparisonTables/Motions`:
+  complete common child-owner/old-pair-colour tables of the actual NEW
+  selected quotient and the actual selected SourcePhase successor. Their
+  full palette iff theorems retain BOTH endpoint child names and logical
+  identity. ALL finite tuple motions use the respective actual homogeneous
+  source groups, rather than a caller-supplied source provider.
+- `OriginalPhaseSelectedProjectionReadout`: the true selected E-point map
+  intertwines the actual old group action, preserves complete pair-colour
+  equality, and commutes with the genuine whole successor unary reduct.
+- `OriginalRetainedGlobalCorrectedMark`: the canonical old mark plus its
+  genuine full identity-arrow offset is constant on the ENTIRE global
+  original E-class, even across named parents. Literal quotient descent
+  gives an actual selected mark, with exact corrected actual child readout.
+- `OriginalRetainedSelectedCorrectedMarkLegal`: every active selected point
+  is represented at its true reached occupancy anchor; there its bit is the
+  old canonical mark. The complete actual selected SourcePhase masks follow
+  from the old full-arrow masks; every inactive bit is precisely zero.
+- `OriginalRetainedQuotientToSuccessorAge`: EVERY finite distinct actual
+  NEW selected quotient tuple embeds into the actual retained selected
+  successor, with the SAME complete common code, using true AP-only marked
+  age realization. Empty/mixed tuples and logical equality are included.
+
+Actual source authors: parent `/root/b062_work` wrote corrected-mark descent
+and its actual global legality. Child `/root/b062_work/retained_child_names`
+wrote the comparison code/motions, projection readout and forward age
+consumer; parent inspected these and repaired only ordinary dependent
+elaboration where needed, and is the sole local builder/committer.
+
+Pinned Lean4.34.1 targeted builds pass:2796 jobs for actual comparison motions,
+2803 jobs for corrected global legality, whole forward age and projection
+readout. All25 new public named declarations have transitive axiom sets
+contained in propext / Classical.choice / Quot.sound. Private cache guard
+PASS:586 olean parts/2110 current source modules; diff check PASS. No pin,
+source, stronger mathematical hypothesis or quotient SAP/action section.
+
+The reverse WHOLE age inclusion is being implemented from the actual C96
+mixed-age iff, using the entire active/inactive partition. The actual
+retained whole source AtomicIso still awaits that inclusion and accepted
+homogeneous back-and-forth. The genuine C103 maximal-gate certificate and
+C104–C105 actual quotient tower/export are OPEN. B062 remains IN_PROGRESS /
+NOT SUBMITTED; fresh exact-head whole-root CI and independent full-contract
+review are required. Root remains sole publisher and STATE writer.
+
 ## Current 6 November continuation — tested source checkpoint
 
 Same actual implementer `/root/b062_work`; no new or renamed author.
