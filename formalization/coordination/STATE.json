@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 763,
+  "revision": 764,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -4863,7 +4863,7 @@
       "owner_project_id": null
     },
     "B060": {
-      "state": "REVIEWING",
+      "state": "INTEGRATING",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b060_work",
@@ -5067,7 +5067,13 @@
       "owner_project_id": null
     }
   },
-  "integration_lock": null,
+  "integration_lock": {
+    "kind": "package",
+    "package_id": "B060",
+    "actor_id": "root",
+    "base_main_sha": "c7a6d3265a2f3bc75a28c777ce28b62071506d40",
+    "head_sha": "9d6302214b8ed7ae575fbc5f1e299c941630bbd7"
+  },
   "history": [
     {
       "revision": 1,
@@ -23951,6 +23957,30 @@
         "package_id": "B060",
         "head_sha": "9d6302214b8ed7ae575fbc5f1e299c941630bbd7",
         "summary": "I, actual registered nonauthor /root/work_control_20261105b, approve complete B060 at exact public head9d6302214b8ed7ae575fbc5f1e299c941630bbd7/tree4419b9adda2757189518dd04c876bdda1bfce0d1 after personally reading all58 production modules, the full pinned original proof/N01-N10, all76 claims/12definitions/9tasks and actual accepted provider signatures, discharges and complete consumer usage. The actual safe character source/history, SAME reasonable owner embedding, infinite children and FULL terminal indices, represented proper FULL MI coordinates, arbitrary fixed distinct meet-K families, tagged QF domains and ONE-whole-hidden-member reconstruction are proved without stronger source premises. Generic STRONG distribution remains independent; RAW equality and clone diversity stay separate. N09 covers EVERY finite marked base including empty; the optional ORIGINAL-F-MI genericC19/directC07 branch, actual chosen singletonK whole consumer and infinite homogeneous unsplit V4 boundary are complete and fenced from all main exports. My prior F1/F2 findings are closed by actual code and receiving use, not report claims. I verified the public delta adds only my own verbatim report to reviewed05d5, preserves all source/pins/history, and passes the complete diff check. I personally fetched successful exact-head CI42179500243/job127765567635:187tests,4574full-rootjobs,1900current modules, complete pre/post EPPA269 and Ramsey106 exact-pin guards,31221transitiveCCO declarations within only propext/Classical.choice/Quot.sound. Actual CIcheckout949dc5c6 has the identical whole reviewed tree. I independently verified effective STATE759 own review lease and replayed757-to758-to759 exactly; all other package records/authorship and accepted dependencies are preserved. This is my own exact-SHA whole-package approval; any head change requires renewed personal review/CI, and actual resulting-main CI/audit remains required before ACCEPTED."
+      }
+    },
+    {
+      "revision": 764,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "start_integration",
+      "package_id": "B060",
+      "details": {
+        "actor_id": "root",
+        "package_id": "B060",
+        "head_sha": "9d6302214b8ed7ae575fbc5f1e299c941630bbd7",
+        "base_main_sha": "c7a6d3265a2f3bc75a28c777ce28b62071506d40",
+        "head_contains_main": true,
+        "ci": {
+          "run_id": 42179500243,
+          "run_attempt": 1,
+          "head_sha": "9d6302214b8ed7ae575fbc5f1e299c941630bbd7",
+          "conclusion": "success",
+          "axiom_audit": "allowlist",
+          "job_id": 127765567635,
+          "declarations": 31221,
+          "source_modules": 1900
+        }
       }
     }
   ],
