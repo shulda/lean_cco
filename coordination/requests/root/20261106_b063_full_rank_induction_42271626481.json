@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "request_id": "20261106_b063_full_rank_induction_42271626481",
+  "actor_id": "root",
+  "project_id": 3,
+  "policy_revision": 17,
+  "operation": "event",
+  "expected_revision": 833,
+  "event": "checkpoint",
+  "data": {
+    "package_id": "B063",
+    "head_sha": "b13e2c5de37a397792ce8b358cf2e8db321af29b",
+    "pr_number": 80,
+    "observed_ci": {
+      "run_id": 42271626481,
+      "head_sha": "b13e2c5de37a397792ce8b358cf2e8db321af29b",
+      "conclusion": "success",
+      "axiom_audit": "allowlist",
+      "source_modules": 2321,
+      "declarations": 35024
+    }
+  }
+}
