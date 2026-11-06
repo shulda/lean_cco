@@ -212,3 +212,17 @@ Remaining WIP: exact one-factor comparison assembly, post-witness root
 signatures, full old-atom reflection, private theta cycle classification,
 G1 coarse hidden/RAW obstruction, proper supported-gadget consumers and
 full source map/review.
+
+## UniformTheta first exact CI failure and targeted corrections
+
+Run [42269382393](https://github.com/shulda/lean_cco/actions/runs/42269382393)
+on head `9c6a2fb205f3a8ea2a70f7a7ec538211c8b31742` failed ONLY the new `UniformTheta` module during
+Lean elaboration. The archived draft used non-existing `Nat.card_bool`
+and `Nat.card_option` names (replaced with actual `Fintype.card_bool`,
+`Fintype.card_option` under `Nat.card_eq_fintype_card`), omitted a
+`Fintype` instance for the explicit word-interior subtype and left
+its final `max` comparison type underdetermined. The revised proof
+spells out real local instances, performs the length-step equality by
+an actual `congrArg`, and annotates both intended Nat maximum bounds.
+No source assumption, menu/identity/vertex definition or proof obligation
+has been weakened; this is a compiler-repair WIP requiring new CI/audit.

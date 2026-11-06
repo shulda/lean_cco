@@ -20,18 +20,24 @@ variable {ι : Type u} {X : ι → Type v} (S : AtomicSource.{u,v,w} ι X)
 theorem word_positions_card {i j : ι} (word : PositiveWord S i j) :
     Nat.card (wordPositions S word) = TypedPrefix.length S word + 1 := by
   induction word with
-  | single a => simp only [wordPositions,TypedPrefix.length,Nat.card_bool]
-  | cons a rest ih =>
-    letI := finite_wordPositions S rest
-    simp only [wordPositions,Nat.card_option,TypedPrefix.length,ih]
+  | single a =>
+    simp only [wordPositions, TypedPrefix.length, Nat.card_eq_fintype_card,
+      Fintype.card_bool]
     omega
+  | cons a rest ih =>
+    letI : Finite (wordPositions S rest) := finite_wordPositions S rest
+    letI : Fintype (wordPositions S rest) := Fintype.ofFinite _
+    simpa only [wordPositions, TypedPrefix.length, Nat.card_eq_fintype_card,
+      Fintype.card_option] using congrArg (fun n : ℕ => n + 1) ih
 
 /-- A positive line has exactly length−1 STRICT private positions. -/
 theorem word_interior_card {i j : ι} (word : PositiveWord S i j) :
     Nat.card (wordInterior S word) = TypedPrefix.length S word - 1 := by
   classical
-  letI := finite_wordPositions S word
+  letI : Finite (wordPositions S word) := finite_wordPositions S word
   letI : Fintype (wordPositions S word) := Fintype.ofFinite _
+  letI : Finite (wordInterior S word) := finite_wordInterior S word
+  letI : Fintype (wordInterior S word) := Fintype.ofFinite _
   have hEnds := Fintype.card_subtype_eq_or_eq_of_ne (wordSource_ne_target S word)
   have hCompl := Fintype.card_subtype_compl
     (fun p : wordPositions S word => p = wordSource S word ∨ p = wordTarget S word)
@@ -50,7 +56,7 @@ theorem theta_vertices_card {i j : ι} (words : List (PositiveWord S i j)) :
   letI (k : Fin words.length) := finite_wordInterior S (words.get k)
   change Nat.card (Bool ⊕ (Σ k : Fin words.length, wordInterior S (words.get k))) = _
   rw [Nat.card_sum,Nat.card_sigma]
-  simp only [Nat.card_bool,word_interior_card]
+  simp only [Nat.card_eq_fintype_card, Fintype.card_bool, word_interior_card]
 
 /-- C28's explicit path-vertex bound. Direct words contribute zero
 interior vertices, and the two formal roots always remain distinct. -/
@@ -156,8 +162,15 @@ theorem uniform_pair_gadget_bound {i j : ι} (words : List (PositiveWord S i j))
       Nat.card (thetaVertices S (fixedTheta S H sap D)) + anchors ≤
         pairBudget S H sap u R anchorBudget := by
   constructor
-  · exact Nat.add_le_add ((theta_vertices_le S words _ _ hCount hLength).trans (le_max_left _ _)) hAnchors
-  · exact Nat.add_le_add ((fixedTheta_vertices_le S H sap D).trans (le_max_right _ _)) hAnchors
+  · have hFirst := theta_vertices_le S words _ _ hCount hLength
+    have hMax : 2 + comparisonBound u R * (Nat.card (TypedPrefix.State S) - 1) ≤
+        max (2 + comparisonBound u R * (Nat.card (TypedPrefix.State S) - 1))
+          (canonicalThetaBudget S H sap) := le_max_left _ _
+    exact Nat.add_le_add (hFirst.trans hMax) hAnchors
+  · have hMax : canonicalThetaBudget S H sap ≤
+        max (2 + comparisonBound u R * (Nat.card (TypedPrefix.State S) - 1))
+          (canonicalThetaBudget S H sap) := le_max_right _ _
+    exact Nat.add_le_add ((fixedTheta_vertices_le S H sap D).trans hMax) hAnchors
 
 end Source
 end
