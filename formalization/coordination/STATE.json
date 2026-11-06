@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 750,
+  "revision": 751,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -4758,6 +4758,7 @@
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b053_work",
+        "/root/b053_work/orbit_api_read",
         "chat-3",
         "root"
       ],
@@ -23652,6 +23653,20 @@
           "source_modules": 2075,
           "build_jobs": 4749
         }
+      }
+    },
+    {
+      "revision": 751,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "record_authorship",
+      "package_id": "B053",
+      "details": {
+        "actor_id": "root",
+        "package_id": "B053",
+        "author_actor_ids": [
+          "/root/b053_work/orbit_api_read"
+        ]
       }
     }
   ],
