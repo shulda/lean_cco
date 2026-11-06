@@ -220,16 +220,15 @@ def partialTarget {L : Language.{u}} [Finite L.Sorts]
     sort := A.sort
     func F x := if A.sort x = L.input F then {A.func F x} else ∅
     functional F x y z hy hz := by
-      split at hy
-      · have hy' : y = A.func F x := hy
-        have hz' : z = A.func F x := by simpa only [if_pos ‹_›] using hz
-        exact hy'.trans hz'.symm
-      · exact False.elim hy
+      by_cases hs : A.sort x = L.input F
+      · simp only [if_pos hs,Set.mem_singleton_iff] at hy hz
+        exact hy.trans hz.symm
+      · simp only [if_neg hs,Set.mem_empty_iff_false] at hy
     func_sorted F x y hy := by
-      split at hy
-      · have he : y = A.func F x := hy
-        exact ⟨‹_›,he ▸ A.func_sort F x ‹_›⟩
-      · exact False.elim hy
+      by_cases hs : A.sort x = L.input F
+      · simp only [if_pos hs,Set.mem_singleton_iff] at hy
+        exact ⟨hs,hy ▸ A.func_sort F x hs⟩
+      · simp only [if_neg hs,Set.mem_empty_iff_false] at hy
     rel := A.rel
     rel_sorted := A.rel_sort }
 

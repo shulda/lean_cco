@@ -55,18 +55,20 @@ theorem semantic_cylinder_is_one_orbital {i j : ι}
     (P : S.Menu i j) (hP : P ∈ originalTypedCylinderNames S J K)
     (q : Quotient J.val) (r : Quotient K.val)
     (h : originalTypedCylinderSemanticRelation S J K P q r) :
-    letI := (originalColourEqAsInvEq S H J).quotientAction
-    letI := (originalColourEqAsInvEq S H K).quotientAction
+    letI : MulAction G (Quotient J.val) := (originalColourEqAsInvEq S H J).quotientAction
+    letI : MulAction G (Quotient K.val) := (originalColourEqAsInvEq S H K).quotientAction
     originalTypedCylinderSemanticRelation S J K P = orbital (G := G) q r := by
-  letI := (originalColourEqAsInvEq S H J).quotientAction
-  letI := (originalColourEqAsInvEq S H K).quotientAction
+  letI : MulAction G (Quotient J.val) := (originalColourEqAsInvEq S H J).quotientAction
+  letI : MulAction G (Quotient K.val) := (originalColourEqAsInvEq S H K).quotientAction
   funext q' r'
   apply propext
   constructor
   · intro h'
     exact same_cylinder_motion S H J K P hP q q' r r' h h'
   · rintro ⟨g,rfl,rfl⟩
-    change P = originalTypedQuotientPairSpectrum S J K _ _
+    change P = originalTypedQuotientPairSpectrum S J K
+      ((originalColourEqAsInvEq S H J).act g q)
+      ((originalColourEqAsInvEq S H K).act g r)
     rw [original_typed_cylinder_spectrum_equivariant S H g]
     exact h
 
@@ -96,6 +98,7 @@ theorem comparisonSpectrum_orbital
     obtain ⟨g,hgx,hgy⟩ := S.pair_homogeneous_of_homogeneous H x x' y y'
       (hxy.trans hxy'.symm)
     have h := output_orbital_pullback_invariant τ σ equivτ equivσ q r g hOutput
+    change orbital (G := G) q r (τ (g • x)) (σ (g • y)) at h
     simpa only [hgx,hgy] using h
 
 /-- C55–56 / TOP: after verifying the comparison is ONE orbital,
