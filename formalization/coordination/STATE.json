@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 780,
+  "revision": 781,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -4758,6 +4758,7 @@
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b053_finalize",
+        "/root/b053_resume",
         "/root/b053_work",
         "/root/b053_work/orbit_api_read",
         "chat-3",
@@ -24402,6 +24403,21 @@
           "build_jobs": 4653
         },
         "summary": "Recovered latest complete published repair of FULL-cover to OriginalNR2/SortNR2 source exports, exact full CI/guards/allowlist audit verified. Fresh whole-source reading is ongoing; possible frozen C26-C34 I16 dependency firewall duty is being independently investigated by author. No completion or approval is inferred."
+      }
+    },
+    {
+      "revision": 781,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "record_authorship",
+      "package_id": "B053",
+      "details": {
+        "actor_id": "root",
+        "package_id": "B053",
+        "author_actor_ids": [
+          "/root/b053_resume"
+        ],
+        "reason": "Actual continuing implementation agent /root/b053_resume confirmed and repairs the frozen C26-C34 dependency firewall violation, replacing the I16 proof dependency by a direct permitted I14 finite-action argument, with unchanged source and public hypotheses."
       }
     }
   ],
