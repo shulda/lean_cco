@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 800,
+  "revision": 801,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -4882,7 +4882,7 @@
       }
     },
     "B054": {
-      "state": "IN_PROGRESS",
+      "state": "SUBMITTED",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b062_resume",
@@ -4905,7 +4905,22 @@
         "declarations": 31933,
         "source_modules": 1979,
         "build_jobs": 4653
-      }
+      },
+      "head_sha": "2888c164be1d05f5f066842f0ba115bb72890f4d",
+      "pr_number": 79,
+      "ci": {
+        "run_id": 42208233078,
+        "run_attempt": 1,
+        "head_sha": "2888c164be1d05f5f066842f0ba115bb72890f4d",
+        "conclusion": "success",
+        "axiom_audit": "allowlist",
+        "job_id": 127860123382,
+        "tests": 187,
+        "declarations": 33627,
+        "source_modules": 2263,
+        "build_jobs": 4937
+      },
+      "report_path": "formalization/coordination/submissions/B054.md"
     },
     "B055": {
       "state": "AVAILABLE",
@@ -25007,6 +25022,32 @@
           "/root/b053_resume/b063_boundary"
         ],
         "reason": "Actual B063 owner delegates three disjoint files with precise source interfaces: FunctionalOriginal C09-C13, TerminalLoopless C01-C08 and concrete nonmaximal boundary C60, while parent owns source/tower/quotient/rank/root/compiler. Helpers do not mutate shared builds/root/reports and are actual authors, never B063 reviewers. Root is sole public publisher."
+      }
+    },
+    {
+      "revision": 801,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "submit",
+      "package_id": "B054",
+      "details": {
+        "actor_id": "root",
+        "package_id": "B054",
+        "head_sha": "2888c164be1d05f5f066842f0ba115bb72890f4d",
+        "pr_number": 79,
+        "ci": {
+          "run_id": 42208233078,
+          "run_attempt": 1,
+          "head_sha": "2888c164be1d05f5f066842f0ba115bb72890f4d",
+          "conclusion": "success",
+          "axiom_audit": "allowlist",
+          "job_id": 127860123382,
+          "tests": 187,
+          "declarations": 33627,
+          "source_modules": 2263,
+          "build_jobs": 4937
+        },
+        "report_path": "formalization/coordination/submissions/B054.md"
       }
     }
   ],
