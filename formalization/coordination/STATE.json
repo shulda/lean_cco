@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 821,
+  "revision": 822,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -5347,21 +5347,21 @@
         "source_modules": 2258,
         "build_jobs": 4932
       },
-      "head_sha": "5b60910f31ae32f49122e8d04607ccce20404094",
+      "head_sha": "e6b15c6cf21259f3c5c75ad2e07c31835598c289",
       "pr_number": 80,
       "observed_ci": {
-        "run_id": 42218003531,
+        "run_id": 42220335737,
         "run_attempt": 1,
-        "head_sha": "5b60910f31ae32f49122e8d04607ccce20404094",
+        "head_sha": "e6b15c6cf21259f3c5c75ad2e07c31835598c289",
         "conclusion": "success",
         "axiom_audit": "allowlist",
-        "job_id": 127892746915,
+        "job_id": 127900491482,
         "tests": 187,
-        "declarations": 34320,
-        "source_modules": 2285,
-        "build_jobs": 4959
+        "declarations": 35007,
+        "source_modules": 2315,
+        "build_jobs": 4989
       },
-      "checkpoint_revision": 816
+      "checkpoint_revision": 822
     },
     "B064": {
       "state": "AVAILABLE",
@@ -25604,6 +25604,31 @@
         "author_actor_ids": [
           "/root/b062_resume/orbital_pullback"
         ]
+      }
+    },
+    {
+      "revision": 822,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "checkpoint",
+      "package_id": "B063",
+      "details": {
+        "actor_id": "root",
+        "package_id": "B063",
+        "head_sha": "e6b15c6cf21259f3c5c75ad2e07c31835598c289",
+        "pr_number": 80,
+        "observed_ci": {
+          "run_id": 42220335737,
+          "run_attempt": 1,
+          "head_sha": "e6b15c6cf21259f3c5c75ad2e07c31835598c289",
+          "conclusion": "success",
+          "axiom_audit": "allowlist",
+          "job_id": 127900491482,
+          "tests": 187,
+          "declarations": 35007,
+          "source_modules": 2315,
+          "build_jobs": 4989
+        }
       }
     }
   ],
