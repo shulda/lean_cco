@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 764,
+  "revision": 765,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -4979,6 +4979,7 @@
       "author_actor_ids": [
         "/root/b062_work",
         "/root/b062_work/retained_child_names",
+        "/root/b062_work/retained_tower",
         "chat-2",
         "root"
       ],
@@ -23981,6 +23982,21 @@
           "declarations": 31221,
           "source_modules": 1900
         }
+      }
+    },
+    {
+      "revision": 765,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "record_authorship",
+      "package_id": "B062",
+      "details": {
+        "actor_id": "root",
+        "package_id": "B062",
+        "author_actor_ids": [
+          "/root/b062_work/retained_tower"
+        ],
+        "reason": "Actual helper reads pinned C103-C105 and accepted APIs for implementation interface planning, then owns only disjoint new safe-step/tower modules; no compiler or publishing. This actual design/code contributor cannot review B062."
       }
     }
   ],
