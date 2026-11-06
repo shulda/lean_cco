@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 753,
+  "revision": 754,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -4778,20 +4778,16 @@
         "declarations": 30216,
         "source_modules": 1842
       },
-      "head_sha": "5b0b5026d1c72133b0e7a7a53b364fea2f70c02b",
+      "head_sha": "2d3df4331786501b65b3d9a0f7ca278745748510",
       "pr_number": 73,
       "observed_ci": {
-        "run_id": 42115110122,
-        "run_attempt": 1,
-        "head_sha": "5b0b5026d1c72133b0e7a7a53b364fea2f70c02b",
-        "conclusion": "success",
-        "axiom_audit": "allowlist",
-        "job_id": 127552568609,
-        "declarations": 30579,
-        "source_modules": 1884,
-        "build_jobs": 4558
+        "run_id": 42172723347,
+        "head_sha": "2d3df4331786501b65b3d9a0f7ca278745748510",
+        "conclusion": "failure",
+        "axiom_audit": "not_run_after_build_failure",
+        "job_id": 127744062320
       },
-      "checkpoint_revision": 748,
+      "checkpoint_revision": 754,
       "handover_history": [
         {
           "revision": 739,
@@ -23767,6 +23763,26 @@
             "summary": "I am the actual existing registered read-only reader. I authored, implemented, repaired, directed or designed none of this infrastructure workflow, its author report, helpers or any active mathematical batch. My sole contribution is my own independent review evidence; I did not inherit another reader's identity or approval.",
             "report_path": "formalization/coordination/reviews/verified-build-export-20261106.md"
           }
+        }
+      }
+    },
+    {
+      "revision": 754,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "checkpoint",
+      "package_id": "B053",
+      "details": {
+        "actor_id": "root",
+        "package_id": "B053",
+        "head_sha": "2d3df4331786501b65b3d9a0f7ca278745748510",
+        "pr_number": 73,
+        "observed_ci": {
+          "run_id": 42172723347,
+          "head_sha": "2d3df4331786501b65b3d9a0f7ca278745748510",
+          "conclusion": "failure",
+          "axiom_audit": "not_run_after_build_failure",
+          "job_id": 127744062320
         }
       }
     }
