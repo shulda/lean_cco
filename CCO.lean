@@ -1896,3 +1896,8 @@ import CCO.CloneTupleGeometry.OwnerHomogeneity
 import CCO.CloneTupleGeometry.OwnerSourceHomogeneity
 import CCO.CloneTupleGeometry.TypedSourceCCO
 import CCO.CloneTupleGeometry.OwnerSourceCCO
+import CCO.CloneTupleGeometry.OwnerReasonableness
+import CCO.CloneTupleGeometry.OwnerRankDrop
+import CCO.CloneTupleGeometry.OwnerSafeTower
+import CCO.CloneTupleGeometry.OwnerTerminalGeometry
+import CCO.CloneTupleGeometry.TerminalTupleDomain

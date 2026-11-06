@@ -140,3 +140,52 @@ age extension and descending the fibre-constant labels. Full terminality,
 proper K and the selected clone-stability export follow only after all
 those steps are discharged. This paragraph records a continuation route,
 not a formalised terminal tower.
+
+## Resumed actual implementation — 6 November 2026
+
+The SAME actual implementer `/root/b060_work` resumed after STATE 750.
+The preserved public checkpoint is
+`ab79585bfae6016c6c6526cdc48854b37b089ceb` (green exact root CI and audit,
+recorded by the coordinator), now with accepted main `1c6b21e6` merged as
+local `5d7fb0ce`. The temporary compiler/cache was rebuilt with the unchanged
+pinned Lean/manifest, and the separately guarded EPPA 269/269 and Ramsey
+106/106 outputs copied into this worktree's private build directories.
+
+The following coherent NEW source is WIP and initially PENDING Lean/CI:
+
+- `OwnerReasonableness.lean`: actual owner unary projection; lift the SAME
+  prescribed finite owner embedding on one clone per owner, use genuine
+  B047 `actual_extension` with `P.finite_seed_extension`, then descend through
+  the proved literal owner-by-clone carrier. FULL old names prevent owner
+  identifications. The SAME projection's transition gives reasonableness,
+  reduct surjectivity and precompactness (C11/N02).
+- `OwnerRankDrop.lean`: exact `Nat.card` transport by the complete actual
+  marked/owner-clone atom bijection, followed by the already accepted
+  actual character rank drop. No palette/provider premise is added.
+- `OwnerSafeTower.lean`: canonical owner stages retain homogeneity, ordinary
+  owner AP, HOM CCO and ORIGINAL per-sort countable infinitude. Every edge
+  stores an actual `SourcePhase` and has exactly its constructed successor;
+  arbitrary reasonable unary labellings cannot enter the finite history.
+  The actual finite descent retains a literal owner reduct and the SAME
+  reasonable/reduct-surjective/precompact composite functor. SAP occurs
+  only on the canonical pure clone.
+- `OwnerTerminalGeometry.lean`: proposed source instances for terminal FULL
+  NR2, all FULL-equivalence RAW exactness, proper clone K from OWNER
+  infinity, and nonempty finite proper-MI coordinate families.
+- `TerminalTupleDomain.lean`: proposed actual terminal class-Helly discharge
+  and unique owner realization of every compatible complete-spectrum tuple.
+  Repeated hidden coordinate values retain their real diagonal spectra.
+
+All five public modules are root-imported. No new source, toolchain,
+provider or mathematical premise is proposed. These files are NOT yet
+claimed kernel-checked in this checkpoint. A private targeted compile of
+`+CCO.CloneTupleGeometry.OwnerTerminalGeometry` is running; the tuple consumer,
+axiom queries, exact remote root CI and complete audit remain pending.
+This is still IN_PROGRESS, not a submission or a completion claim.
+
+Remaining after the proposed terminal-domain milestone: prove the finite
+named quantifier-free domain/readout formulas and their whole finite hidden
+realization consumer; discharge positive STRONG presentations of the actual
+terminal MI kernels and both-sided singleton spectrum reconstruction; finish
+all selected export signatures. N09 all-finite-base algebraicity and the
+separately fenced N10 optional original-F-MI branch remain open.
