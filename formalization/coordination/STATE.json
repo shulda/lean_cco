@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 809,
+  "revision": 810,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -5270,21 +5270,21 @@
         "source_modules": 2258,
         "build_jobs": 4932
       },
-      "head_sha": "eca5d6c801efc01c7752088c5d9a58e699a347d1",
+      "head_sha": "087ec0cab79577c19d3ad8acbc26a13a3db30981",
       "pr_number": 80,
       "observed_ci": {
-        "run_id": 42210804573,
+        "run_id": 42212403081,
         "run_attempt": 1,
-        "head_sha": "eca5d6c801efc01c7752088c5d9a58e699a347d1",
+        "head_sha": "087ec0cab79577c19d3ad8acbc26a13a3db30981",
         "conclusion": "success",
         "axiom_audit": "allowlist",
-        "job_id": 127868676487,
+        "job_id": 127874059590,
         "tests": 187,
-        "declarations": 33686,
-        "source_modules": 2268,
-        "build_jobs": 4942
+        "declarations": 34029,
+        "source_modules": 2276,
+        "build_jobs": 4950
       },
-      "checkpoint_revision": 809
+      "checkpoint_revision": 810
     },
     "B064": {
       "state": "AVAILABLE",
@@ -25275,6 +25275,33 @@
           "build_jobs": 4942
         },
         "summary": "Actual partial B063 source checkpoint passes exact remote fullroot4942jobs/2268complete modules/33686standard-allowlist audit and exact269/106guards. Only current firstfive module duties are certified; actual source separation/strongoriginal-rank/leastF/prefix-action/fullcore assembly remain open. Newer local sourceproof modules are being saved as nextWIP, not inferred complete from this green checkpoint. Detailed current report and explicit helper snapshots preserved in PR80."
+      }
+    },
+    {
+      "revision": 810,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "checkpoint",
+      "package_id": "B063",
+      "details": {
+        "actor_id": "root",
+        "package_id": "B063",
+        "branch": "work/B063",
+        "head_sha": "087ec0cab79577c19d3ad8acbc26a13a3db30981",
+        "pr_number": 80,
+        "observed_ci": {
+          "run_id": 42212403081,
+          "run_attempt": 1,
+          "head_sha": "087ec0cab79577c19d3ad8acbc26a13a3db30981",
+          "conclusion": "success",
+          "axiom_audit": "allowlist",
+          "job_id": 127874059590,
+          "tests": 187,
+          "declarations": 34029,
+          "source_modules": 2276,
+          "build_jobs": 4950
+        },
+        "summary": "Actual13module B063 publicWIP passes exactremote fullroot4950jobs/2276complete currentmodules/34029standardallowlist and all269/106 exactguards. Currentroot/provider/sourcepins inspected. Strongoriginalrank/source-tower,prefixH_F/actualphaseodd,separation/core and exactC60sourceinterface remain OPEN; no completion,submission or approval. Sameactualauthors resumed. This preserves newerWIP and earliergreen in history."
       }
     }
   ],
