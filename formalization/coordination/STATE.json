@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 752,
+  "revision": 753,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -5048,7 +5048,45 @@
       "owner_project_id": null
     }
   },
-  "integration_lock": null,
+  "integration_lock": {
+    "kind": "infrastructure",
+    "actor_id": "root",
+    "head_sha": "5c8410717cdd2ea640e5f2e9de4b6beec1bb5179",
+    "base_main_sha": "1c6b21e63b0c8382ea13adaaeb5903440c59c334",
+    "pr_number": 75,
+    "review": {
+      "actor_id": "work_control_20261105b",
+      "head_sha": "5c8410717cdd2ea640e5f2e9de4b6beec1bb5179",
+      "approved": true,
+      "summary": "I personally reviewed the complete narrow export infrastructure source, actual workflow and official immutable action pin, verified that the final public tree changes the reviewed implementation only by adding my own verbatim review report, and inspected successful exact-head CI42171760411/job127740981590. Its actual PR merge checkout has the identical full reviewed tree, all187 tests and4516 root jobs passed,1842 current modules and complete EPPA269/Ramsey106 guards passed,30216 declarations used only the standard three-axiom allowlist, and packaging plus upload of artifact13481592728 succeeded after the final guards. I approve only this infrastructure at exact head5c8410717cdd2ea640e5f2e9de4b6beec1bb5179; any source-head change requires renewed review/CI, and actual resulting-main CI remains required.",
+      "independence": {
+        "identity": "/root/work_control_20261105b",
+        "non_author": true,
+        "summary": "I am the actual existing registered read-only reader. I authored, implemented, repaired, directed or designed none of this infrastructure workflow, its author report, helpers or any active mathematical batch. My sole contribution is my own independent review evidence; I did not inherit another reader's identity or approval.",
+        "report_path": "formalization/coordination/reviews/verified-build-export-20261106.md"
+      }
+    },
+    "ci": {
+      "run_id": 42171760411,
+      "run_attempt": 1,
+      "head_sha": "5c8410717cdd2ea640e5f2e9de4b6beec1bb5179",
+      "conclusion": "success",
+      "axiom_audit": "allowlist",
+      "job_id": 127740981590,
+      "tests": 187,
+      "declarations": 30216,
+      "source_modules": 1842,
+      "build_jobs": 4516,
+      "artifact_id": 13481592728,
+      "artifact_sha256": "c73a0fec85133fe8d570d1b1d127eb7898f7d9560caffd9847d958b26fd4ddc0"
+    },
+    "author_actor_ids": [
+      "root"
+    ],
+    "original_author_project_ids": [
+      3
+    ]
+  },
   "history": [
     {
       "revision": 1,
@@ -23684,6 +23722,52 @@
           "/root/b060_work/finite_base_acl",
           "/root/b060_work/qf_source"
         ]
+      }
+    },
+    {
+      "revision": 753,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "start_infrastructure",
+      "package_id": null,
+      "details": {
+        "actor_id": "root",
+        "pr_number": 75,
+        "head_sha": "5c8410717cdd2ea640e5f2e9de4b6beec1bb5179",
+        "base_main_sha": "1c6b21e63b0c8382ea13adaaeb5903440c59c334",
+        "head_contains_main": true,
+        "ci": {
+          "run_id": 42171760411,
+          "run_attempt": 1,
+          "head_sha": "5c8410717cdd2ea640e5f2e9de4b6beec1bb5179",
+          "conclusion": "success",
+          "axiom_audit": "allowlist",
+          "job_id": 127740981590,
+          "tests": 187,
+          "declarations": 30216,
+          "source_modules": 1842,
+          "build_jobs": 4516,
+          "artifact_id": 13481592728,
+          "artifact_sha256": "c73a0fec85133fe8d570d1b1d127eb7898f7d9560caffd9847d958b26fd4ddc0"
+        },
+        "author_actor_ids": [
+          "root"
+        ],
+        "original_author_project_ids": [
+          3
+        ],
+        "review": {
+          "actor_id": "work_control_20261105b",
+          "head_sha": "5c8410717cdd2ea640e5f2e9de4b6beec1bb5179",
+          "approved": true,
+          "summary": "I personally reviewed the complete narrow export infrastructure source, actual workflow and official immutable action pin, verified that the final public tree changes the reviewed implementation only by adding my own verbatim review report, and inspected successful exact-head CI42171760411/job127740981590. Its actual PR merge checkout has the identical full reviewed tree, all187 tests and4516 root jobs passed,1842 current modules and complete EPPA269/Ramsey106 guards passed,30216 declarations used only the standard three-axiom allowlist, and packaging plus upload of artifact13481592728 succeeded after the final guards. I approve only this infrastructure at exact head5c8410717cdd2ea640e5f2e9de4b6beec1bb5179; any source-head change requires renewed review/CI, and actual resulting-main CI remains required.",
+          "independence": {
+            "identity": "/root/work_control_20261105b",
+            "non_author": true,
+            "summary": "I am the actual existing registered read-only reader. I authored, implemented, repaired, directed or designed none of this infrastructure workflow, its author report, helpers or any active mathematical batch. My sole contribution is my own independent review evidence; I did not inherit another reader's identity or approval.",
+            "report_path": "formalization/coordination/reviews/verified-build-export-20261106.md"
+          }
+        }
       }
     }
   ],
