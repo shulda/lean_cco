@@ -333,3 +333,17 @@ AP/HOM-CCO source or introducing an unproved quotient provider. This head
 has not yet passed its own exact CI and audit, so neither the helper nor
 B063 is submitted/completed. The earlier 31-module source checkpoint at
 `e6b15c6cf21259f3c5c75ad2e07c31835598c289` has green run 42220335737, 35,007 audited declarations.
+
+## Additional initial-atom bipartite transport candidate
+
+`CCO/AutomaticEPCore/QuotientAtomTransport.lean` now attempts the
+next exact-source reduction: a source-atom witness in the REAL initial
+selected quotient is carried by the proved E-class equivalence to one
+canonical original-quotient atom. Full PAIR-colour readback proves both
+directions of edge preservation. A graph homomorphism along the inverse
+bijection pulls a valid bipartition back, with no quotient SAP or hidden
+choice of representatives. This is a local induction adapter and NOT
+proof of the complete outer-rank or identity-gate cases. The predecessor
+readback at head `8336d7e6c10c7fbde234cdf98b3c23fa58ce6dda` is green in run 42247940821
+(2316 project modules; 35016 audited declarations). This new head
+requires a fresh Lean build/audit; compiler errors remain WIP.
