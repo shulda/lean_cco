@@ -1,0 +1,204 @@
+{
+  "status": "isolated advance preparation; not an accepted CCO dependency and not B058 completion",
+  "repository": "https://github.com/ReemMelamed/algebraic-automata",
+  "commit": "0acb244aaa913c32eeeff48e939cb5df469a3f70",
+  "root_module": "AlgebraicAutomata.FactorizationForest.Tree",
+  "upstream_toolchain": "leanprover/lean4:v4.35.0-rc3",
+  "upstream_mathlib": "2a885768dae569d938bb9ff3474da6a8753bb90a",
+  "receiving_base_main": "68faa81d1d2af95ad58f6937afdd1afd97bb49ad",
+  "receiving_toolchain": "leanprover/lean4:v4.34.1",
+  "receiving_mathlib": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+  "notice_search": "No upstream NOTICE path exists at the exact pin. Every included Lean source retains its own original Apache-2.0 header.",
+  "files": [
+    {
+      "module": "AlgebraicAutomata.FactorizationForest.Basic",
+      "path": "AlgebraicAutomata/FactorizationForest/Basic.lean",
+      "upstream_git_blob": "ef7a2e8b5f7be0e3627463616354c154f61ba4cb",
+      "upstream_sha256": "c4b0f3fa03053da03b8d3306083aaa8d237fe7032e81e2747e0ae9a983d7f55b",
+      "upstream_bytes": 21130,
+      "original_license": "Apache-2.0",
+      "copyright": "2026 Re'em Melamed-Katz",
+      "compatibility_changes": [
+        "Added prominent CCO compatibility-port modification notice; original header retained."
+      ],
+      "ported_sha256": "bf6de8345997118ed7ebbe892e019a2b54667035df4764c1e7c9a8ab0ba2b9c1"
+    },
+    {
+      "module": "AlgebraicAutomata.FactorizationForest.Combine",
+      "path": "AlgebraicAutomata/FactorizationForest/Combine.lean",
+      "upstream_git_blob": "350fb96afff81cf33ab19731ae0f091a25753b1e",
+      "upstream_sha256": "7c8b19b80019c14c0ac0ffe2842082343d0e384ede74522138970e3f40a836b4",
+      "upstream_bytes": 33953,
+      "original_license": "Apache-2.0",
+      "copyright": "2026 Re'em Melamed-Katz",
+      "compatibility_changes": [
+        "Added prominent CCO compatibility-port modification notice; original header retained."
+      ],
+      "ported_sha256": "1c21393e2a2fff6f9d3d944c43a6ff4220762421a70ef7f657f266e0a2292186"
+    },
+    {
+      "module": "AlgebraicAutomata.FactorizationForest.Irregular",
+      "path": "AlgebraicAutomata/FactorizationForest/Irregular.lean",
+      "upstream_git_blob": "b77fb07a593e8660b8326c8dcf236be6d5938acd",
+      "upstream_sha256": "bce9d3af27c47d1a7368f565c38a9b8e4542108bdc542f03aeb2efa4f48cbb45",
+      "upstream_bytes": 9024,
+      "original_license": "Apache-2.0",
+      "copyright": "2026 Re'em Melamed-Katz",
+      "compatibility_changes": [
+        "Added prominent CCO compatibility-port modification notice; original header retained."
+      ],
+      "ported_sha256": "8f68978dd50ae535cb334908a43beaba1b0bdae490c2e709995640ec8dc7b01a"
+    },
+    {
+      "module": "AlgebraicAutomata.FactorizationForest.Regular",
+      "path": "AlgebraicAutomata/FactorizationForest/Regular.lean",
+      "upstream_git_blob": "e5e2d307cd344563bf0742a02094b265455e3fb9",
+      "upstream_sha256": "07afc09f4809b3a3624626504b96110f2179699df79fd05ec455c879136e03d3",
+      "upstream_bytes": 28378,
+      "original_license": "Apache-2.0",
+      "copyright": "2026 Re'em Melamed-Katz",
+      "compatibility_changes": [
+        "Added prominent CCO compatibility-port modification notice; original header retained."
+      ],
+      "ported_sha256": "4d13723eeae5fe45a696fa7e934789d0f77e5b61123dadbc24b15e79e5719e27"
+    },
+    {
+      "module": "AlgebraicAutomata.FactorizationForest.Split",
+      "path": "AlgebraicAutomata/FactorizationForest/Split.lean",
+      "upstream_git_blob": "f395a92a90ef0d004b3c095d95197994b02b8ec2",
+      "upstream_sha256": "e3255e8b803729f129a6a52745b8856311c635abcd94caea4669ab7e5e13a498",
+      "upstream_bytes": 4098,
+      "original_license": "Apache-2.0",
+      "copyright": "2026 Re'em Melamed-Katz",
+      "compatibility_changes": [
+        "Added prominent CCO compatibility-port modification notice; original header retained."
+      ],
+      "ported_sha256": "530a1b59fe9364ac11550a6d608d2d980c294f2cd7e0d0457d189db18acbd409"
+    },
+    {
+      "module": "AlgebraicAutomata.FactorizationForest.Tree",
+      "path": "AlgebraicAutomata/FactorizationForest/Tree.lean",
+      "upstream_git_blob": "91d4d2759364a7a592e1a93abcc0b8ab2811ed37",
+      "upstream_sha256": "48e1a35b426118b17049acda8eb5c72ae1151ddba1f2a04a461e007e4410aee8",
+      "upstream_bytes": 29958,
+      "original_license": "Apache-2.0",
+      "copyright": "2026 Re'em Melamed-Katz",
+      "compatibility_changes": [
+        "Added prominent CCO compatibility-port modification notice; original header retained.",
+        "Replaced five unsupported lia [facts] forms by explicit local facts / simp only and omega; unchanged theorem statements and definitions."
+      ],
+      "ported_sha256": "b3ff295e28f6a8d28d6ea1dcc8df01baff66460f1014f591ef5668299f232cf6"
+    },
+    {
+      "module": "AlgebraicAutomata.ForMathlib.Algebra.Group.Opposite",
+      "path": "AlgebraicAutomata/ForMathlib/Algebra/Group/Opposite.lean",
+      "upstream_git_blob": "c8b27562d0017083c5c58950c165f843062a6ef7",
+      "upstream_sha256": "f57f98c22804b9088c91e47ad150a2f5d3eff86add3c407cc2940283e44f09c2",
+      "upstream_bytes": 559,
+      "original_license": "Apache-2.0",
+      "copyright": "2026 Re'em Melamed-Katz",
+      "compatibility_changes": [
+        "Added prominent CCO compatibility-port modification notice; original header retained.",
+        "Normalized the original trailing blank line for the receiving whitespace check; no declaration change."
+      ],
+      "ported_sha256": "760ad87ba1079321b1e06550b68b33e327b1aa3efe82cb99ffd2e9cb3afd6f1d"
+    },
+    {
+      "module": "AlgebraicAutomata.ForMathlib.Data.List.SemigroupProd",
+      "path": "AlgebraicAutomata/ForMathlib/Data/List/SemigroupProd.lean",
+      "upstream_git_blob": "4d30252e80c13eb701f5056a8ee790fc25020062",
+      "upstream_sha256": "d8c2c98ed6558e53dee786e463991967352dde1326ab60bde6e616f9e4cd63e7",
+      "upstream_bytes": 4358,
+      "original_license": "Apache-2.0",
+      "copyright": "2026 Re'em Melamed-Katz",
+      "compatibility_changes": [
+        "Added prominent CCO compatibility-port modification notice; original header retained."
+      ],
+      "ported_sha256": "be7c399e7c6c80deb7767a3735d1b5f8ecb9dbdc7ceb5997b3f1d642746dac5f"
+    },
+    {
+      "module": "AlgebraicAutomata.ForMathlib.Data.List.Slice",
+      "path": "AlgebraicAutomata/ForMathlib/Data/List/Slice.lean",
+      "upstream_git_blob": "6fe7347ab7de313e9a5d15302228d77e92bba7c8",
+      "upstream_sha256": "716e181a7d8731b960f1d8836c78909f03165ffc4e8cb33e51ae13286001a232",
+      "upstream_bytes": 2314,
+      "original_license": "Apache-2.0",
+      "copyright": "2026 Re'em Melamed-Katz",
+      "compatibility_changes": [
+        "Added prominent CCO compatibility-port modification notice; original header retained."
+      ],
+      "ported_sha256": "2091c9b58cc8c04f94c82a01646cb92435dbcb3fbfa1e999234c57a31887846d"
+    },
+    {
+      "module": "AlgebraicAutomata.GreensRelations.Basic",
+      "path": "AlgebraicAutomata/GreensRelations/Basic.lean",
+      "upstream_git_blob": "1d0114cafdda8ff368c9c99672c5166d3416cdf0",
+      "upstream_sha256": "1faaf167f7b3c61d765aa77c6c28dcb61093109e5a1b3ab0a34a30597e1c32f6",
+      "upstream_bytes": 20098,
+      "original_license": "Apache-2.0",
+      "copyright": "2026 Re'em Melamed-Katz",
+      "compatibility_changes": [
+        "Added prominent CCO compatibility-port modification notice; original header retained.",
+        "Replaced unavailable opposite-divisibility API by explicit transported witnesses / receiving rightDvd_iff_op_dvd_op; unchanged theorem statements.",
+        "Used WithOne.recOneCoe instead of WithOne.cases_on for the receiving recursor branch names."
+      ],
+      "ported_sha256": "7cd6ef462e4054662b91fa1c920c44969a6cba1f033788bd09ca4d8760291ca8"
+    },
+    {
+      "module": "AlgebraicAutomata.GreensRelations.Finite",
+      "path": "AlgebraicAutomata/GreensRelations/Finite.lean",
+      "upstream_git_blob": "0c4e8a78345ebbac0f69d012ad8d76d494c14014",
+      "upstream_sha256": "620c7f7f906e18a27486499cebee59f8c203bc0eb9f21b2deac7681b0ff9427a",
+      "upstream_bytes": 12234,
+      "original_license": "Apache-2.0",
+      "copyright": "2026 Re'em Melamed-Katz",
+      "compatibility_changes": [
+        "Added prominent CCO compatibility-port modification notice; original header retained."
+      ],
+      "ported_sha256": "b7d710182c3dd72ff8ed135e3ad0bb366c714dc6d89d5bb5ab9e828446b796a7"
+    },
+    {
+      "module": "AlgebraicAutomata.GreensRelations.Green",
+      "path": "AlgebraicAutomata/GreensRelations/Green.lean",
+      "upstream_git_blob": "7b68773a5b0eb955e639c8dd657ee5c0921a8ea4",
+      "upstream_sha256": "3c6666ff900ed5127634b7704d2b4e1a8af3d19d8de82cf4da35d5e03d79e137",
+      "upstream_bytes": 6863,
+      "original_license": "Apache-2.0",
+      "copyright": "2026 Re'em Melamed-Katz",
+      "compatibility_changes": [
+        "Added prominent CCO compatibility-port modification notice; original header retained."
+      ],
+      "ported_sha256": "e254d859fd52f763fe39afd70e98f28229740b6f5bdfb1963252a0e271658916"
+    },
+    {
+      "module": "AlgebraicAutomata.GreensRelations.MulSeq",
+      "path": "AlgebraicAutomata/GreensRelations/MulSeq.lean",
+      "upstream_git_blob": "175426cd3d29456750d7d839b222b70f0c58a508",
+      "upstream_sha256": "051be8987d4861f3ff430342a78798b0231a5cfcd362dd0b5851ceb0bfb829d9",
+      "upstream_bytes": 8245,
+      "original_license": "Apache-2.0",
+      "copyright": "2026 Re'em Melamed-Katz",
+      "compatibility_changes": [
+        "Added prominent CCO compatibility-port modification notice; original header retained."
+      ],
+      "ported_sha256": "391913a2e35f1e9251114052112729eff33bfc9e32eb15f5baa19725ab5e2a63"
+    },
+    {
+      "module": "AlgebraicAutomata.GreensRelations.Order",
+      "path": "AlgebraicAutomata/GreensRelations/Order.lean",
+      "upstream_git_blob": "1ed617e6d51cdbd10f50ae9abcfe2413e927c285",
+      "upstream_sha256": "bdc30e92b13c698e5767046058982254fa01b792c97c8d18e9486e3d62ba2808",
+      "upstream_bytes": 3296,
+      "original_license": "Apache-2.0",
+      "copyright": "2026 Re'em Melamed-Katz",
+      "compatibility_changes": [
+        "Added prominent CCO compatibility-port modification notice; original header retained."
+      ],
+      "ported_sha256": "75f893688bea66e066aba45e34f99bea60edc0f1d17ab3701241b30902ca08dd"
+    }
+  ],
+  "license_git_blob": "b38682e47cb82a3693392fb4583a22ea0974e34e",
+  "license_sha256": "765f364be5808dea0db7c84eb1ef084b994b29fb731cd4ea667f8b6aef759b2d",
+  "upstream_manifest_sha256": "4cacf5ca8b61dfa9a8175ce87d2998251a0f51132a7fa0ad069a47b394ddb430",
+  "receiving_manifest_sha256": "10ef8853491d829f6157f278f55d5d1bd98a4573663eaf9006838e4fde97bb3c"
+}

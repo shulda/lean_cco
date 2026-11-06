@@ -1,0 +1,19 @@
+{
+  "os": "Linux",
+  "architecture": "x86_64",
+  "receiving_base_main": "68faa81d1d2af95ad58f6937afdd1afd97bb49ad",
+  "upstream_source": "0acb244aaa913c32eeeff48e939cb5df469a3f70",
+  "read_only_dependency_packages": "/workspace/scratch/e67502cd723c/work-runtime/.lake/packages",
+  "local_provider_outputs": "vendor/factorization-forest/.lake/build",
+  "redistribution": "No compiled outputs included; any later standalone cache must include LICENSE, applicable author/modification notices and provenance.",
+  "lakefile.toml_sha256": "1eecb7e502afb11d0e59a2cb30fef9fdd3f2b26734394a40eeeed095b9aab154",
+  "lake-manifest.json_sha256": "10ef8853491d829f6157f278f55d5d1bd98a4573663eaf9006838e4fde97bb3c",
+  "lean-toolchain_sha256": "d5edba4e4b8faad9c1baeadb265716d20d03be4d1a2647dc5e35b0c0325bea7b",
+  "compatibility.patch_sha256": "017d1c2802a4bac2728a32d757e7f9db14794816e0d92d6e290f700f57e711a5",
+  "tools/build_readonly.py_sha256": "0e3215fb5a7c6f09fd4d2c5e33982fedfc0a08d410b6e67a9caf118f2425f3ac",
+  "Tests/Consumer.lean_sha256": "71cee055a2babfd4b0d484fc9f6e3fb3416e325b392b23bfbd355ddf9aa4c686",
+  "receiving_audit_Main.lean_sha256": "de22f8dffed64104660e3326b969b29f21348fe5f15eb800f47d113b99ee5739",
+  "receiving_audit_AxiomAudit.lean_sha256": "4dfb9411b9b0671689e29bcf1c0f09d02b11cc44c033386d127d2c6873b4416b",
+  "receiving_audit_.lake_build_bin_axiom-audit_sha256": "40c3eccf14c35af9c1da12eac283aea23698147a9282e6d53af855f3a56f9eb1",
+  "compatibility_patch_check": "PASS git apply --check --unidiff-zero against clean exact pinned upstream"
+}

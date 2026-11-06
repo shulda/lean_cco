@@ -1,0 +1,47 @@
+{
+  "provider_commit": "0acb244aaa913c32eeeff48e939cb5df469a3f70",
+  "compiler": "Lean (version 4.34.1, x86_64-unknown-linux-gnu, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)",
+  "lean_options": [
+    "-Dpp.unicode.fun=true",
+    "-DautoImplicit=false",
+    "-DrelaxedAutoImplicit=false",
+    "-Dweak.linter.mathlibStandardSet=true",
+    "-DmaxSynthPendingDepth=3"
+  ],
+  "receiving_manifest_sha256": "10ef8853491d829f6157f278f55d5d1bd98a4573663eaf9006838e4fde97bb3c",
+  "source_modules": [
+    "AlgebraicAutomata.GreensRelations.Basic",
+    "AlgebraicAutomata.ForMathlib.Algebra.Group.Opposite",
+    "AlgebraicAutomata.GreensRelations.MulSeq",
+    "AlgebraicAutomata.GreensRelations.Green",
+    "AlgebraicAutomata.GreensRelations.Finite",
+    "AlgebraicAutomata.GreensRelations.Order",
+    "AlgebraicAutomata.ForMathlib.Data.List.Slice",
+    "AlgebraicAutomata.FactorizationForest.Basic",
+    "AlgebraicAutomata.FactorizationForest.Combine",
+    "AlgebraicAutomata.FactorizationForest.Regular",
+    "AlgebraicAutomata.FactorizationForest.Irregular",
+    "AlgebraicAutomata.FactorizationForest.Split",
+    "AlgebraicAutomata.ForMathlib.Data.List.SemigroupProd",
+    "AlgebraicAutomata.FactorizationForest.Tree"
+  ],
+  "consumer": "Tests.Consumer",
+  "source_sha256": {
+    "AlgebraicAutomata/FactorizationForest/Basic.lean": "bf6de8345997118ed7ebbe892e019a2b54667035df4764c1e7c9a8ab0ba2b9c1",
+    "AlgebraicAutomata/FactorizationForest/Combine.lean": "1c21393e2a2fff6f9d3d944c43a6ff4220762421a70ef7f657f266e0a2292186",
+    "AlgebraicAutomata/FactorizationForest/Irregular.lean": "8f68978dd50ae535cb334908a43beaba1b0bdae490c2e709995640ec8dc7b01a",
+    "AlgebraicAutomata/FactorizationForest/Regular.lean": "4d13723eeae5fe45a696fa7e934789d0f77e5b61123dadbc24b15e79e5719e27",
+    "AlgebraicAutomata/FactorizationForest/Split.lean": "530a1b59fe9364ac11550a6d608d2d980c294f2cd7e0d0457d189db18acbd409",
+    "AlgebraicAutomata/FactorizationForest/Tree.lean": "b3ff295e28f6a8d28d6ea1dcc8df01baff66460f1014f591ef5668299f232cf6",
+    "AlgebraicAutomata/ForMathlib/Algebra/Group/Opposite.lean": "760ad87ba1079321b1e06550b68b33e327b1aa3efe82cb99ffd2e9cb3afd6f1d",
+    "AlgebraicAutomata/ForMathlib/Data/List/SemigroupProd.lean": "be7c399e7c6c80deb7767a3735d1b5f8ecb9dbdc7ceb5997b3f1d642746dac5f",
+    "AlgebraicAutomata/ForMathlib/Data/List/Slice.lean": "2091c9b58cc8c04f94c82a01646cb92435dbcb3fbfa1e999234c57a31887846d",
+    "AlgebraicAutomata/GreensRelations/Basic.lean": "7cd6ef462e4054662b91fa1c920c44969a6cba1f033788bd09ca4d8760291ca8",
+    "AlgebraicAutomata/GreensRelations/Finite.lean": "b7d710182c3dd72ff8ed135e3ad0bb366c714dc6d89d5bb5ab9e828446b796a7",
+    "AlgebraicAutomata/GreensRelations/Green.lean": "e254d859fd52f763fe39afd70e98f28229740b6f5bdfb1963252a0e271658916",
+    "AlgebraicAutomata/GreensRelations/MulSeq.lean": "391913a2e35f1e9251114052112729eff33bfc9e32eb15f5baa19725ab5e2a63",
+    "AlgebraicAutomata/GreensRelations/Order.lean": "75f893688bea66e066aba45e34f99bea60edc0f1d17ab3701241b30902ca08dd"
+  },
+  "dependency_builds_read_only": true,
+  "status": "isolated provider preparation; not a B058 adapter or accepted dependency"
+}

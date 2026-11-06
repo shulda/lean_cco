@@ -1,0 +1,43 @@
+COMPILING AlgebraicAutomata.GreensRelations.Basic
+PASS AlgebraicAutomata.GreensRelations.Basic
+COMPILING AlgebraicAutomata.ForMathlib.Algebra.Group.Opposite
+PASS AlgebraicAutomata.ForMathlib.Algebra.Group.Opposite
+COMPILING AlgebraicAutomata.GreensRelations.MulSeq
+PASS AlgebraicAutomata.GreensRelations.MulSeq
+COMPILING AlgebraicAutomata.GreensRelations.Green
+PASS AlgebraicAutomata.GreensRelations.Green
+COMPILING AlgebraicAutomata.GreensRelations.Finite
+PASS AlgebraicAutomata.GreensRelations.Finite
+COMPILING AlgebraicAutomata.GreensRelations.Order
+PASS AlgebraicAutomata.GreensRelations.Order
+COMPILING AlgebraicAutomata.ForMathlib.Data.List.Slice
+PASS AlgebraicAutomata.ForMathlib.Data.List.Slice
+COMPILING AlgebraicAutomata.FactorizationForest.Basic
+PASS AlgebraicAutomata.FactorizationForest.Basic
+COMPILING AlgebraicAutomata.FactorizationForest.Combine
+PASS AlgebraicAutomata.FactorizationForest.Combine
+COMPILING AlgebraicAutomata.FactorizationForest.Regular
+PASS AlgebraicAutomata.FactorizationForest.Regular
+COMPILING AlgebraicAutomata.FactorizationForest.Irregular
+PASS AlgebraicAutomata.FactorizationForest.Irregular
+COMPILING AlgebraicAutomata.FactorizationForest.Split
+PASS AlgebraicAutomata.FactorizationForest.Split
+COMPILING AlgebraicAutomata.ForMathlib.Data.List.SemigroupProd
+PASS AlgebraicAutomata.ForMathlib.Data.List.SemigroupProd
+COMPILING AlgebraicAutomata.FactorizationForest.Tree
+PASS AlgebraicAutomata.FactorizationForest.Tree
+COMPILING Tests.Consumer
+factorization_forest_classical_bound.{u_1, u_2} {A : Type u_1} {S : Type u_2} [Semigroup S] [Fintype S] [Nonempty S]
+  (eval : List A → S) (hmul : ∀ (u v : List A), u ≠ [] → v ≠ [] → eval (u ++ v) = eval u * eval v) (u : List A)
+  (hu : u ≠ []) : ∃ t, t.value = u ∧ FactorizationTree.IsRamsey eval t ∧ t.height ≤ 3 * Fintype.card S - 1
+'factorization_forest_classical_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+FactorizationTree.tree_value_ne_nil.{u_1, u_2} {A : Type u_1} {S : Type u_2} [Semigroup S] {eval : List A → S}
+  (t : FactorizationTree A) (ht : FactorizationTree.IsRamsey eval t) : t.value ≠ []
+FactorizationTree.isRamsey_idempotent.{u_1, u_2} {A : Type u_1} {S : Type u_2} [Semigroup S] (eval : List A → S)
+  (children : List (FactorizationTree A)) :
+  FactorizationTree.IsRamsey eval (FactorizationTree.idempotent children) ↔
+    2 ≤ children.length ∧
+      FactorizationTree.listIsRamsey eval children ∧ ∃ e, IsIdempotentElem e ∧ ∀ t ∈ children, eval t.value = e
+PASS Tests.Consumer
+{"allowed":["propext","Classical.choice","Quot.sound"],"audited":791,"axiomsUsed":["propext","Classical.choice","Quot.sound"],"ok":true,"root":"AlgebraicAutomata","violations":[]}
+PASS finite provider replay and consumer; shared dependency builds read only.

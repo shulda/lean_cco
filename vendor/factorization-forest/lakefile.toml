@@ -1,0 +1,21 @@
+# CCO isolated compatibility port, 6 November 2026.
+# Source theorem and original authorship: see PROVENANCE.json and LICENSE.
+name = "CCOFactorizationForest"
+version = "0.1.0"
+defaultTargets = ["AlgebraicAutomata"]
+
+[leanOptions]
+pp.unicode.fun = true
+autoImplicit = false
+relaxedAutoImplicit = false
+weak.linter.mathlibStandardSet = true
+maxSynthPendingDepth = 3
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4.git"
+rev = "d13f23b723b8a846827a245b89c10fc7d3f11612"
+
+[[lean_lib]]
+name = "AlgebraicAutomata"
+roots = ["AlgebraicAutomata.FactorizationForest.Tree"]
