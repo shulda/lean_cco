@@ -1907,3 +1907,11 @@ import CCO.TypedOrbitFrames.TypedChordlessBase
 import CCO.TypedOrbitFrames.CompleteBaseCycleReduction
 import CCO.TypedOrbitFrames.FullMIMeetPrime
 import CCO.TypedOrbitFrames.CommonFibreAvoidance
+import CCO.TypedOrbitFrames.OrbitDiagram
+import CCO.TypedOrbitFrames.OrbitCloneCycles
+import CCO.TypedOrbitFrames.OrbitCompletion
+import CCO.TypedOrbitFrames.OrbitClassCounting
+import CCO.TypedOrbitFrames.OrbitForkIntersection
+import CCO.TypedOrbitFrames.OrbitUnforcedSpokes
+import CCO.TypedOrbitFrames.OrbitPrimeIntersection
+import CCO.TypedOrbitFrames.ExactColouredOrbit
