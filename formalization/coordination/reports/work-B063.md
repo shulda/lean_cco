@@ -1,107 +1,117 @@
-# B063 — current author implementation checkpoint
+# B063 — CURRENT author checkpoint
 
-## CURRENT: partial compiled source work; not submitted
+## State, publication and scope
 
-Owned by Work project3/root at effective claim STATE798, coordination commit
-`65ad01cc357eb30f73450ca32a87e696f80767a5`. Accepted source base is
-`17162bfc8bf4e707e84ad767b84b1f4a0518fc6b`, exact-main CI42207082705,
-job127856319033. Branch `work/B063`; root is the only publisher. No B054
-or factorization-forest preparation is consumed as a dependency.
+B063 is **IN_PROGRESS / NOT SUBMITTED**. The strong-original-rank automatic
+separation theorem and its complete source core export remain open. This
+checkpoint adds actual proved source modules, not an assumed tower/core provider.
+
+Effective claim: Work project3/root, STATE798, coordination
+`65ad01cc357eb30f73450ca32a87e696f80767a5`; branch `work/B063`, sole publisher
+root. Original accepted base:
+`17162bfc8bf4e707e84ad767b84b1f4a0518fc6b` (main CI42207082705 /
+job127856319033). Actual accepted main
+`7935bb2205e5c0e5701ab89148d47bb85bcd37c2` is preserved by merge
+`b0d1f93783b376b160c67a28ed8670e925e0cc70`. Its only conflict was CCO.lean,
+resolved as exact main imports followed by the unique B063 imports. B054
+is not a mathematical dependency of this work.
+
+The preceding public WIP `eca5d6c8` / PR80 has actual green CI42210804573,
+job127868676487:4942 root jobs,2268 complete current modules, EPPA269,
+Ramsey106 and33686 standard-allowlist audited declarations. That is the
+preserved **last green public checkpoint**, not CI for this newer source.
 Frozen mathematical source remains `490c3f36d85db5a0b3ced0598e6c431825254ec5`,
-`sections/expansion_property_automatic_core.tex`, full published B063 contract.
+`sections/expansion_property_automatic_core.tex`, published B063 contract.
+No source, accepted API, toolchain, manifest, policy or provider pin changed.
 
-B063 is **IN_PROGRESS**. The automatic complete-separation/core theorem,
-rank/tower induction and full nonmaximal-source boundary are NOT complete.
-No conditional provider or generic finite-table result is a substitute.
+## Actual receiving map now implemented
 
-## Implemented and checked now
+All names below are in `CCO.AutomaticEPCore` unless stated otherwise.
+All **13 current public modules** are directly imported from CCO.lean.
 
-All five public modules below are directly imported by `CCO.lean`.
-
-| Source duty | Actual compiled receiving declaration and scope |
+| Source duty | Actual current proof and precise limit |
 |---|---|
-| D01–D04, C07 | `originalPointEquiv` (all names are in `CCO.AutomaticEPCore`), `originalDiversityRank`, `originalRelation`, `originalAtomTable`, `original_identity_support`, `original_atom_table_diversity`, `prefixOriginalPointEquiv`; literal one-original-sort equality, actual global reduct bijection, all realized labels and equality/diversity distinction. The equality support proof is direct, without the forbidden I01 support theorem. |
-| C01–C04 | `terminal_full_interval_infinite`, actual even/connectivity `ColourEq`, `invariant_graph_positive_parity_stabilization`, `invariant_bipartite_parity_index_two`, `invariant_bipartite_parity_cover`; FULL actual lattice, graph may be a union of current atoms; no exactness, AP/SAP/CCO or later quotient/phase provider. |
-| C05–C08 | `terminal_invariant_bipartite_graph_empty`, `terminal_bipartite_restriction_empty`, `terminal_atom_not_bipartite`; `original_bipartite_table_loopless` applies the result to the literal original old-atom table of an ACTUAL current homogeneous prefix. Its current invariance is proved directly from `UnaryReduct.colour`, not assumed as a loopless provider. No I01 preservation theorem is used. |
-| C09–C13 | `originalFunctionalGroup` / `OriginalFunctionalGroup` is the full centralizer of the given original action inside real permutations; evaluation injectivity, one actual old orbital per graph, no fixed point off identity, involutivity, square-one, inverse-equals-self, commutativity, finiteness and an actual `atomGraph` bipartition. The final full-original-Aut instantiation is still to be connected below. No AP/SAP/CCO or I01–I08 source provider is used in this part. |
-| C56–C57 generic finite step | `TableEndomorphism`, `TableAutomorphism`, `table_endomorphism_injective_of_separation`, `finite_table_endomorphism_automorphism`, `finite_table_core_of_separation`. Finite relation carriers prove reflection, so there is no invalid inference from an infinite bijective endomorphism. The actual source separation input is NOT yet discharged. No unary predicates naming new labels are inserted. |
+| D01–D04, C07 | OriginalTypes: `originalPointEquiv`, `originalDiversityRank`, `originalRelation`, `originalAtomTable`, literal equality support, distinct original endpoints of every diversity support, actual total-carrier reduct bijection. Equality support is proved directly without the forbidden I01 preservation theorem. |
+| C01–C04 | TerminalLoopless: FULL strict interval infinitude; actual even/connectivity ColourEq; positive RAW parity stabilization; exact relative-index-two FULL cover for any nonempty invariant bipartite graph. No AP/SAP/CCO, exactness or phase/quotient theorem. |
+| C05–C08 | `terminal_invariant_bipartite_graph_empty`, original restriction theorem and `original_bipartite_table_loopless`. SourceLoopless derives the actual current invariance from UnaryReduct.colour and applies FULL terminality to EVERY realized final sort. No looplessness provider is assumed. |
+| C09–C13 | FunctionalOriginal constructs the full equivariant permutation subgroup, graph equals one old orbital, fixed-point-free off identity, involutive/square-one, inverse=itself, commutativity, finiteness, actual old atomGraph bipartition. No AP/SAP/CCO or I01–I08 provider. |
+| D05, C14–C20 | FunctionalTypes proves actual support invariance, totality, symmetry and squareId; constructs the unique type permutation and genuine group action; proves exact graph/support and all-real-point image equations, actual child-parent equivariance and terminal freeness. It never asserts an old map preserves marked predicates. FullOriginalGroup proves the presenting-action centralizer is LITERALLY the same permutation subgroup as the full old Aut(M) centralizer; the full-original-group receiving seam is discharged. |
+| C21–C25 conditional geometric source lemma | QuotientSeparator aligns the ENTIRE original atom under old pair homogeneity and pulls back a genuine bipartition. SourceQuotientLift instantiates the ACTUAL original canonical full-exact quotient, its real action/equivariance, old E-kernel containment and quotient-atom invariance. Actual B062 occupancy selects endpoints of the EXACT requested s,t in the SAME original E-classes. Only D06's actual quotient bipartite-edge witness remains input; no section, quotient SAP or assumed source projection is added. The later rank induction must still supply that witness from its actual projected tower. |
+| C26 | QuotientRank invokes the actual source strict original diversity-rank quotient theorem; rank counts old diversity atoms and excludes true equality. No tower-length rank, quotient SAP or caller-supplied cardinal drop. |
+| C28 | RankZero proves an actual original zero-diversity carrier is subsingleton and any actual realized unary refinement has at most one type. OriginalTypes handles literal zero-step type uniqueness. Finite original sources are included without infinite proper-MI charts. |
+| C32–C38 algebraic part | IdentityGate derives from the SAME certifiedStepOriginalGate=Id and actual choice.maximal_old its old pivot squareId and a constructed nontrivial original functional involution. Its graph lies in EVERY positive FULL EXACT E. The canonical finite least-positive-exact meet F, literal intersection equation, positivity, leastness, uniform identity-step containment, nontrivial H_F, normality and gateId-or-Fbelow are proved. The actual phase-character-one selected element for C46/C48 remains separate; see below. |
+| C56–C57 generic finite step | FiniteCore proves endomorphism injectivity from genuine loopless separation, and finite injective relation preservation implies reflection using finite relation carriers. No unary names for new labels and no invalid infinite-bijection claim. The actual source separation premise is NOT discharged yet. |
+| D10/C60 substantial actual model, still partial contract | NonmaximalBoundary gives the literal four-atom countably infinite I×F2×N source; actual original and marked-prefix homogeneity/AP/SAP/HOM-CCO; complete original FULL and EXACT equivalence classification, RAW K=c;c and S=r;r, B not exact, exact complements K or S; exact four-label supports/proper idempotent retraction; two-label table injection; and actual every-final-sort FULL terminality via all-invariant-equivalence trichotomy/infinite strict relative quotients. Precise parity-pivot/gate API and complete-character/groupoid identification of the two concrete phase steps are NOT yet packaged. It uses no C58/I01–I08 shortcut. |
 
-Actual authors: `/root/b053_resume` writes OriginalTypes, SourceLoopless,
-FiniteCore and assembly/report; `/root/b053_resume/b063_loopless` writes
-TerminalLoopless; `/root/b053_resume/b063_functional` writes FunctionalOriginal
-and is now implementing the all-prefix support action in a separate file;
-`/root/b053_resume/b063_boundary` is implementing the explicit nonmaximal
-four-atom infinite-source boundary. These are implementation authors, never
-independent reviewers of B063. No original source/provider authorship is erased.
+Actual authors are preserved:
 
-## Validation and exact limits
+- `/root/b053_resume`: OriginalTypes, SourceLoopless, FiniteCore,
+  FullOriginalGroup, QuotientSeparator, QuotientRank, SourceQuotientLift,
+  RankZero, assembly/root/report.
+- `/root/b053_resume/b063_loopless`: TerminalLoopless and IdentityGate.
+- `/root/b053_resume/b063_functional`: FunctionalOriginal and FunctionalTypes.
+- `/root/b053_resume/b063_boundary`: NonmaximalBoundary.
 
-Pinned Lean4.34.1 / original manifest retained. Private copied build outputs
-were repaired/validated against actual accepted-main source:2258 modules.
-Each worker has disjoint source files; only this parent owns the real build
-outputs. Helpers used direct compilation into their private temporary outputs.
-No concurrent builders share the root project output.
+Every one is an implementation author, not an independent B063 reviewer.
+Their own detailed proof/API maps are saved verbatim as implementation notes
+under `formalization/coordination/wip/work/B063/author-notes/`.
 
-The actual targeted closure build of all five current modules succeeds:
-**2228 jobs PASS** (`b063-first-targets-fixed.log`). Both helper files also
-pass their own pinned strict-implicit compiler checks and standard-allowlist
-signature/axiom readback. The FunctionalOriginal proof/type dependency check
-visits45 CCO constants and finds no forbidden source provider; helper notes
-are retained in the current scratch work and will be incorporated into the
-complete receiving map. The preceding exact compiled checkpoint `6e91eab8488bbded99f347363115d79b4c7390ca`
-now also has a successful full root build: **4937 jobs /2263 current modules**,
-complete EPPA269/Ramsey106 guards, and full root audit **33593 declarations**,
-only the standard three axioms and zero violations.
+## Compiler/audit evidence and WIP preservation
 
-The current checkpoint preserves accepted main
-`7935bb2205e5c0e5701ab89148d47bb85bcd37c2` by an actual merge. Its ONLY
-conflict was CCO.lean, resolved as the exact main prefix plus all five unique
-B063 imports; no B063 proof body changed and B054 is not a mathematical
-dependency. This refreshed exact source checkpoint `b0d1f93783b376b160c67a28ed8670e925e0cc70`
-passes its own full root build **4942 jobs**, complete-source/cache guards
-**2268 CCO /269 EPPA /106 Ramsey**, and full transitive audit **33686
-declarations**, standard three axioms, zero violations. Its exact remote
-CI is still pending; the report-only checkpoint adds no proof change.
-Two mutable helper drafts are preserved verbatim as explicit UNCOMPILED
-snapshots under `formalization/coordination/wip/work/B063/`, with exact
-SHA256 and original helper identities; neither is falsely root-imported.
-No exact-head remote CI or complete independent B063 review is claimed.
+Pinned Lean4.34.1 and exact manifest; one private project build owned by this
+parent, helpers used separate temporary direct compiler outputs. The initial
+copied build was source-checked against accepted main2258 modules. All13
+current production modules have actual successful target compiler checks;
+new closures include FunctionalTypes/FullOriginalGroup/QuotientSeparator
+2732 jobs, SourceQuotientLift2709, IdentityGate2735 (its paired RankZero
+failure was subsequently fixed), RankZero2210 and boundary1164. No admission,
+new axiom or broad Mathlib import is introduced. Metadata and required finite
+controls pass; finite diagnostics are not infinite source proofs.
 
-Routine failed local elaboration attempts were fixed before this compiled
-checkpoint. Source/API/toolchain changes, new mathematical axioms, `sorry`,
-`admit`, broad Mathlib imports and hypothetical source providers are absent.
+The preceding local five-module source checkpoint has full root4942,
+complete guards2268/269/106 and full audit33686 with zero violations.
+The NEW13-module root/full audit and exact public-head CI remain pending at
+this source commit. No independent whole-source B063 review or approval is
+claimed. Failed local elaboration attempts were ordinary implementation
+errors and were repaired before the listed successful target checks.
 
-## Concrete open duties and next work
+Historical UNCOMPILED helper snapshots from b0d1f937 remain preserved under
+`formalization/coordination/wip/work/B063/`, with exact source hashes. They
+are explicitly historical; FunctionalTypes and NonmaximalBoundary have now
+advanced into compiled production modules. There is no newer uncompiled
+helper code at this coherent checkpoint; no WIP was reset to an older green.
 
-1. Finish C14–C20: actual full-prefix functional support permutations,
-   composition/group action, child-parent equivariance, terminal freeness,
-   and genuine full old-Aut instantiation without pretending that old
-   equivariant maps preserve individual marked predicates.
-2. Receive C21–C26: exact original endpoint occupancy in the real quotient
-   separator lift and strict ORIGINAL diversity-rank loss. The actual
-   accepted B041/B062 quotient signatures have been read; they are not yet
-   replaced by assumed source providers.
-3. Bind strong induction over ALL one-original-sort homogeneous AP+HOM-CCO
-   sources, including finite/non-SAP exact quotients and rank-zero/zero-step
-   cases. Apply actual B062 aligned quotient histories, canonical maximal
-   G_i/E and complete corrected marked-age data; do not merely assume a
-   terminal quotient tower.
-4. Prove C32–C51: identity-gate pivot, uniform membership of every selected
-   step-specific involution in the SAME least positive FULL EXACT F,
-   subgroup H_F and full two-case prefix transitivity. The same original
-   odd u must control every active parent of its fixed step. This cannot
-   be replaced by a formal action axiom or a shorter tower-length induction.
-5. Discharge the actual original bipartite separation for every unequal
-   terminal label, then apply the generic finite-core result; receive all
-   four source results and five equations explicitly.
-6. Finish the independent actual nonmaximal boundary: four-atom original
-   I×F2×N source, complete infinite homogeneity/SAP/HOM-CCO, exact/full lattice,
-   maximal/nonmaximal gates, actual marked terminal source and precise
-   four-/two-label tables. The helper has a compiling partial real-source
-   model, not a completed contract boundary yet. Preserve C60's firewall.
-7. Complete source-to-Lean map, all public root imports, finite controls,
-   affected-consumer/full-root build, transitive axiom audit and independent
-   whole-source exact-head review before submission.
+## Exact remaining proof duties and next step
 
-There is no known mathematical/source/API exception yet. These are genuine
-remaining implementation/receiving proof obligations, not completed results.
+1. Bind strong ORIGINAL-diversity-rank induction over ALL permitted one-sort
+   homogeneous AP+HOM-CCO sources and ALL genuine maximal-character towers,
+   including finite and non-SAP exact quotients. Receive the actual B062
+   aligned safe quotient histories/full marked ages, original intermediate
+   indices and canonical G_i/E, rather than assuming a tower provider.
+2. Establish the all-nonidentity-gate branch from actual common-kernel support
+   identity and actual exact-meet support, apply the lower-rank source theorem
+   on the genuine quotient, and feed its actual bipartite witness into C25.
+3. Prove full C39–C51 H_F prefix transitivity. Nonidentity-gate steps use
+   the actual objectwise-offset bijective lifts and equivariant projection;
+   identity-gate steps use the single discarded quotient occupancy class.
+   A SourcePhase has its OWN dominant odd Arrow/detects=1. GateChoice.c need
+   not be that odd Arrow's selected atom; do NOT assert character-one for it.
+   Reconstruct the step-specific selected original u from the ACTUAL phase
+   odd/full original correspondence (the accepted actualPhaseAtSort maximal
+   gate theorem retains containment), keeping the SAME u over all active
+   parents of its fixed step and every selected u in the SAME F.
+4. Complete same/different F-occupancy terminal separation, assemble the two
+   cases of the strong induction, then apply the generic finite-core result.
+   Supply all four source exports and all five equations, not only an abstract
+   finite table theorem or conditional separation provider.
+5. Complete C60's exact original b-parity readback/maximal-gate package,
+   entire first K-quotient functional group/character and next full groupoid
+   common-bit character; identify the positive first-maximal S split with
+   the actual two-label source. Existing real homogeneity/CCO/terminality
+   or correct support tables alone do not close these character duties.
+6. Finish the complete source-to-Lean map, proof-dependency firewalls,
+   all affected consumers/full-root build, transitive axiom audit and genuine
+   independent WHOLE-source exact-head review before any submission.
+
+No mathematical/source/API exception is known. These remain actual open
+implementation/source-application proofs; none is marked complete by this WIP.

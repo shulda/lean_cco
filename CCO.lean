@@ -2291,3 +2291,11 @@ import CCO.AutomaticEPCore.FunctionalOriginal
 import CCO.AutomaticEPCore.OriginalTypes
 import CCO.AutomaticEPCore.SourceLoopless
 import CCO.AutomaticEPCore.TerminalLoopless
+import CCO.AutomaticEPCore.FullOriginalGroup
+import CCO.AutomaticEPCore.FunctionalTypes
+import CCO.AutomaticEPCore.IdentityGate
+import CCO.AutomaticEPCore.NonmaximalBoundary
+import CCO.AutomaticEPCore.QuotientRank
+import CCO.AutomaticEPCore.QuotientSeparator
+import CCO.AutomaticEPCore.RankZero
+import CCO.AutomaticEPCore.SourceQuotientLift
