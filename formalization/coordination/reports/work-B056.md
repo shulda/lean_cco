@@ -74,3 +74,16 @@ mandatory controls/fullroot/guards/transitive axiom audit/fresh review.
 No mathematical/source/API exception is established. No B056 export, fullroot,
 audit, CI success, approval or completion is claimed. All remaining work stays
 under the effective claim and the pinned accepted base above.
+
+## Next compiler checkpoint: G1 semantic cycle CCO candidate (not yet green)
+
+The frozen six-kilobyte G1CCO proof draft from `reports/wip/B056/G1CCO.lean.txt`
+is now reproduced as `CCO/GuardedTwoRoot/G1CCO.lean` and imported
+explicitly in the root. This is an IMPLEMENTATION CANDIDATE, not a proven
+source instance until this exact branch head passes Lean and the full audit.
+It derives common block labels via actual old-source simple-cycle homomorphisms,
+constructs an auxiliary Boolean parity partial diagram that discards only
+cross-block r constraints, applies the independently proved Phase.semanticCCO,
+and joins the two labels with distinct clone codes. No provider is added
+or new assumption imposed. The earlier uncompiled draft is preserved as
+historical evidence; all exact G1 hidden/RAW/FG1 duties remain open.
