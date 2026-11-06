@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 798,
+  "revision": 799,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -5183,6 +5183,7 @@
       "state": "IN_PROGRESS",
       "owner_project_id": 3,
       "author_actor_ids": [
+        "/root/b053_resume",
         "root"
       ],
       "original_author_project_ids": [
@@ -24971,6 +24972,21 @@
           "source_modules": 2258,
           "build_jobs": 4932
         }
+      }
+    },
+    {
+      "revision": 799,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "record_authorship",
+      "package_id": "B063",
+      "details": {
+        "actor_id": "root",
+        "package_id": "B063",
+        "author_actor_ids": [
+          "/root/b053_resume"
+        ],
+        "reason": "Actual continuing implementation agent /root/b053_resume implements newly dependency-ready B063 in its own worktree/work-B063 branch with isolated builds, only after B062 accepted at STATE797. Root remains sole publisher; existing source, pins, capacities and all historical authors remain unchanged. This actual implementer never reviews B063."
       }
     }
   ],
