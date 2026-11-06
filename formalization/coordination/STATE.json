@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 807,
+  "revision": 808,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -4953,6 +4953,8 @@
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b062_resume",
+        "/root/b062_resume/orbital_pullback",
+        "/root/b062_resume/source_support",
         "root"
       ],
       "original_author_project_ids": [
@@ -25215,6 +25217,22 @@
           "/root/b062_resume"
         ],
         "reason": "Actual dedicated continuing implementer /root/b062_resume starts newly dependency-ready B055 in separate worktree/work-B055 branch and isolated build outputs after B054 accepted at STATE805. It reads actual source/provider contracts and records recoverable proof/report checkpoints. Root sole publisher; actor is author and never B055 reviewer."
+      }
+    },
+    {
+      "revision": 808,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "record_authorship",
+      "package_id": "B055",
+      "details": {
+        "actor_id": "root",
+        "package_id": "B055",
+        "author_actor_ids": [
+          "/root/b062_resume/orbital_pullback",
+          "/root/b062_resume/source_support"
+        ],
+        "reason": "Actual B055 owner now delegates two precise disjoint source branches to real helpers: C40-C60 Orbital files and C35-C39/C61-C68 SourceSupport/Boundaries. Parent owns compiler/root/reports; helpers do not share build writes or mutate git/coordination/public refs. These actual helpers are authors, never B055 reviewers; independent source reader remains nonauthor."
       }
     }
   ],
