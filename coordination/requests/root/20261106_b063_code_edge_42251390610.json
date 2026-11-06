@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "request_id": "20261106_b063_code_edge_42251390610",
+  "actor_id": "root",
+  "project_id": 3,
+  "policy_revision": 17,
+  "operation": "event",
+  "expected_revision": 829,
+  "event": "checkpoint",
+  "data": {
+    "package_id": "B063",
+    "head_sha": "132bb2eb04eaf9253d968ae2026d0e0107fc25b1",
+    "pr_number": 80,
+    "observed_ci": {
+      "run_id": 42251390610,
+      "head_sha": "132bb2eb04eaf9253d968ae2026d0e0107fc25b1",
+      "conclusion": "success",
+      "axiom_audit": "allowlist",
+      "source_modules": 2318,
+      "declarations": 35018
+    }
+  }
+}
