@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 793,
+  "revision": 794,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -5050,7 +5050,7 @@
       "owner_project_id": null
     },
     "B062": {
-      "state": "SUBMITTED",
+      "state": "REVIEWING",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b062_continue",
@@ -5151,7 +5151,19 @@
         "source_modules": 2258,
         "build_jobs": 4932
       },
-      "report_path": "formalization/coordination/submissions/B062.md"
+      "report_path": "formalization/coordination/submissions/B062.md",
+      "review": {
+        "project_id": 3,
+        "actor_id": "work_control_20261106e",
+        "head_sha": "3e9780949d258266e4cad22a052f137948a7f926",
+        "approved": false,
+        "independence": {
+          "identity": "/root/b062_fresh_review",
+          "non_author": true,
+          "summary": "I am the actual fresh review-only reader and personally read all279 B062 production modules, the entire pinned proof and contract, all real provider signatures/discharges, source map and consumers. I authored, designed, implemented, repaired or directed none of B062's original Chat or current Work implementation, including the F3 alignment and root-import repairs. My sole authored output is my own independent review evidence; no former reader's identity or approval is reused.",
+          "report_path": "formalization/coordination/reviews/B062-complete-20261106e.md"
+        }
+      }
     },
     "B063": {
       "state": "AVAILABLE",
@@ -24820,6 +24832,24 @@
           "build_jobs": 4932
         },
         "report_path": "formalization/coordination/submissions/B062.md"
+      }
+    },
+    {
+      "revision": 794,
+      "project_id": 3,
+      "actor_id": "work_control_20261106e",
+      "event": "review",
+      "package_id": "B062",
+      "details": {
+        "actor_id": "work_control_20261106e",
+        "package_id": "B062",
+        "head_sha": "3e9780949d258266e4cad22a052f137948a7f926",
+        "independence": {
+          "identity": "/root/b062_fresh_review",
+          "non_author": true,
+          "summary": "I am the actual fresh review-only reader and personally read all279 B062 production modules, the entire pinned proof and contract, all real provider signatures/discharges, source map and consumers. I authored, designed, implemented, repaired or directed none of B062's original Chat or current Work implementation, including the F3 alignment and root-import repairs. My sole authored output is my own independent review evidence; no former reader's identity or approval is reused.",
+          "report_path": "formalization/coordination/reviews/B062-complete-20261106e.md"
+        }
       }
     }
   ],
