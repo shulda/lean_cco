@@ -1,0 +1,331 @@
+import CCO.UnarySupport.LocalEmbeddings
+import CCO.UnarySupport.HNDiagrams
+import CCO.TypedOrbitFrames.CompletedSignature
+import CCO.HereditaryHiddenOrbits.ActualSource
+import Mathlib.SetTheory.Cardinal.Finite
+import Mathlib.Data.Fintype.BigOperators
+import Mathlib.Algebra.Order.BigOperators.Group.Finset
+
+/-!
+# Source13: defects on actual irreducible CLOSED old source supports
+
+The source may have partial unary graphs and omitted binary tuples. The
+completion map is required to be induced on every genuinely irreducible
+closed source subobject. Its restriction to such a subobject has a closed
+induced image, including all function domains, and therefore gives a full
+completed pattern. The size bound concerns only the stated generators.
+-/
+
+universe u v w z
+namespace CCO.HiddenSAPReadings.SourceSupport
+open CCO.UnarySupport
+open CCO.UnarySupport.Structure
+
+variable {L : Signature.{u}} {V : Type v} {W : Type w}
+
+/-- The reused HE encoding is exactly an induced embedding on the
+closed source subobject. Its function clause reflects the whole actual
+domain and value, as an induced closed subobject requires. -/
+theorem embeddingOn_iff_closed_induced {C : Structure L V} {A : Structure L W}
+    (f : Hom C A) (D : Set V) (hD : C.IsClosed D) :
+    f.EmbeddingOn D ↔
+      ∃ e : Embedding (C.induce D hD) A, ∀ x, e.point x = f.point x.val := by
+  constructor
+  · intro h
+    exact ⟨f.restrictionEmbedding hD h,fun _ => rfl⟩
+  · rintro ⟨e,he⟩
+    refine ⟨?_,?_,?_⟩
+    · intro x hx y hy hxy
+      have hxye : e.point ⟨x,hx⟩ = e.point ⟨y,hy⟩ := by rw [he,he,hxy]
+      exact congrArg Subtype.val (e.injective hxye)
+    · intro R xs hxs
+      let ys : Fin (L.arity R) → D := fun i => ⟨xs i,hxs i⟩
+      have hmap : e.point ∘ ys = f.point ∘ xs := funext (fun i => he (ys i))
+      constructor
+      · intro hr
+        exact e.reflect_rel R ys (hmap.symm ▸ hr)
+      · exact f.map_rel R xs
+    · intro F x hx y hy
+      have hy' : y ∈ A.func F (e.point ⟨x,hx⟩) := by rwa [he]
+      obtain ⟨z,hz,hzy⟩ := e.reflect_func F ⟨x,hx⟩ y hy'
+      exact ⟨z.val,z.property,hz,(he z).symm.trans hzy⟩
+
+/-- A displayed tuple makes the closure of its ACTUAL endpoints
+irreducible. A tuple on descendants does not replace these endpoints. -/
+theorem displayed_tuple_closure_irreducible (C : Structure L V)
+    (R : L.Rel) (xs : Fin (L.arity R) → V) (hr : C.rel R xs) :
+    (C.closureStructure (Set.range xs)).Irreducible := by
+  constructor
+  intro d
+  let ts : Fin (L.arity R) → C.closure (Set.range xs) :=
+    fun i => ⟨xs i,C.subset_closure _ ⟨i,rfl⟩⟩
+  have ht : (C.closureStructure (Set.range xs)).rel R ts := hr
+  have all_side (P : Set (C.closure (Set.range xs)))
+      (hP : (C.closureStructure (Set.range xs)).IsClosed P)
+      (hxs : ∀ i, ts i ∈ P) : P = Set.univ := by
+    apply Set.eq_univ_of_forall
+    intro y
+    have hclosed : C.IsClosed (Subtype.val '' P) :=
+      C.isClosed_image (C.isClosed_closure _) hP
+    have hgenerators : Set.range xs ⊆ Subtype.val '' P := by
+      rintro _ ⟨i,rfl⟩
+      exact ⟨ts i,hxs i,rfl⟩
+    obtain ⟨p,hp,hpy⟩ := C.closure_minimal hclosed hgenerators y.property
+    have he : p = y := Subtype.ext hpy
+    exact he ▸ hp
+  rcases d.rel_local R ts ht with hl | hr
+  · exact d.left_proper (all_side d.left d.left_closed hl)
+  · exact d.right_proper (all_side d.right d.right_closed hr)
+
+/-- The entire image of a domain-reflecting unary embedding is closed. -/
+theorem embedding_range_closed {C : Structure L V} {A : Structure L W}
+    (e : Embedding C A) : A.IsClosed (Set.range e.point) := by
+  rintro F _ ⟨x,rfl⟩ y hy
+  obtain ⟨z,_,hz⟩ := e.reflect_func F x y hy
+  exact ⟨z,hz⟩
+
+/-- An induced embedding gives a literal full-diagram isomorphism onto
+its closed image. This includes source sorts and every unary domain. -/
+noncomputable def embedding_image_iso {C : Structure L V} {A : Structure L W}
+    (e : Embedding C A) :
+    DiagramIso C (A.induce (Set.range e.point) (embedding_range_closed e)) where
+  equiv := Equiv.ofInjective e.point e.injective
+  sort_eq x := e.sort_eq x
+  func_iff F x y := by
+    change e.point y ∈ A.func F (e.point x) ↔ y ∈ C.func F x
+    constructor
+    · intro hy
+      obtain ⟨z,hz,he⟩ := e.reflect_func F x (e.point y) hy
+      exact e.injective he ▸ hz
+    · exact e.map_func F x y
+  rel_iff R xs := ⟨e.reflect_rel R xs,e.map_rel R xs⟩
+
+/-- C35/C36: the source HE convention supplies a FULL induced image of
+every actual irreducible closed support, with no global completion claim. -/
+theorem irreducible_closed_image {C : Structure L V} {A : Structure L W}
+    (f : Hom C A) (hf : f.HomEmbedding) (D : Set V)
+    (hD : C.IsClosed D) (hirr : (C.induce D hD).Irreducible) :
+    ∃ (e : Embedding (C.induce D hD) A),
+      (∀ x, e.point x = f.point x.val) ∧
+      A.IsClosed (Set.range e.point) ∧
+      Nonempty (DiagramIso (C.induce D hD)
+        (A.induce (Set.range e.point) (embedding_range_closed e))) := by
+  let e := f.restrictionEmbedding hD (hf D hD hirr)
+  exact ⟨e,fun _ => rfl,embedding_range_closed e,⟨embedding_image_iso e⟩⟩
+
+/-- C37: a mandatory target relation missing on an irreducible source
+support obstructs every HE completion into that ACTUAL target. -/
+theorem missing_relation_no_completion {C : Structure L V} {A : Structure L W}
+    (D : Set V) (hD : C.IsClosed D) (hirr : (C.induce D hD).Irreducible)
+    (R : L.Rel) (xs : Fin (L.arity R) → V) (hxs : ∀ i, xs i ∈ D)
+    (hmissing : ¬ C.rel R xs)
+    (hmandatory : ∀ f : Hom C A, A.rel R (f.point ∘ xs)) :
+    ¬ ∃ f : Hom C A, f.HomEmbedding := by
+  rintro ⟨f,hf⟩
+  exact hmissing (((hf D hD hirr).2.1 R xs hxs).mp (hmandatory f))
+
+/-- A forced identification of DISTINCT source vertices in an actual
+irreducible support is the corresponding literal-identity defect. -/
+theorem forced_identity_no_completion {C : Structure L V} {A : Structure L W}
+    (D : Set V) (hD : C.IsClosed D) (hirr : (C.induce D hD).Irreducible)
+    {x y : V} (hx : x ∈ D) (hy : y ∈ D) (hne : x ≠ y)
+    (hforced : ∀ f : Hom C A, f.point x = f.point y) :
+    ¬ ∃ f : Hom C A, f.HomEmbedding := by
+  rintro ⟨f,hf⟩
+  exact hne ((hf D hD hirr).1 hx hy (hforced f))
+
+/-- Missing source functional data also obstruct an induced completion;
+all possible target values are reflected inside the CLOSED support. -/
+theorem missing_function_no_completion {C : Structure L V} {A : Structure L W}
+    (D : Set V) (hD : C.IsClosed D) (hirr : (C.induce D hD).Irreducible)
+    (F : L.Func) {x y : V} (hx : x ∈ D) (hy : y ∈ D)
+    (hmissing : y ∉ C.func F x)
+    (hmandatory : ∀ f : Hom C A, f.point y ∈ A.func F (f.point x)) :
+    ¬ ∃ f : Hom C A, f.HomEmbedding := by
+  rintro ⟨f,hf⟩
+  obtain ⟨z,hzD,hz,hzy⟩ := (hf D hD hirr).2.2 F x hx (f.point y) (hmandatory f)
+  exact hmissing ((hf D hD hirr).1 hzD hy hzy ▸ hz)
+
+/-- The unary union bound uses ONLY the singleton bounds at the chosen
+old generators. It is not a uniformity assertion for arbitrary sources. -/
+theorem generated_support_card [Finite V] (C : Structure L V)
+    (B : Finset V) {k m : ℕ} (hB : B.card ≤ k)
+    (hm : ∀ b ∈ B, Nat.card (C.closureAt b) ≤ m) :
+    Nat.card (C.closure (B : Set V)) ≤ k * m := by
+  classical
+  letI : Fintype (C.closure (B : Set V)) := Fintype.ofFinite _
+  letI (b : ↥B) : Fintype (C.closureAt b.val) := Fintype.ofFinite _
+  have hcover (y : C.closure (B : Set V)) : ∃ b : ↥B, y.val ∈ C.closureAt b.val := by
+    obtain ⟨x,hx,hxy⟩ := y.property
+    exact ⟨⟨x,hx⟩,x,rfl,hxy⟩
+  let e : C.closure (B : Set V) → Σ b : ↥B, C.closureAt b.val :=
+    fun y => ⟨(hcover y).choose,⟨y.val,(hcover y).choose_spec⟩⟩
+  have he : Function.Injective e := by
+    intro x y h
+    exact Subtype.ext (congrArg (fun z : Σ b : ↥B, C.closureAt b.val => z.2.val) h)
+  have hcard := Fintype.card_le_of_injective e he
+  rw [Fintype.card_sigma] at hcard
+  calc
+    Nat.card (C.closure (B : Set V)) = Fintype.card (C.closure (B : Set V)) := Nat.card_eq_fintype_card
+    _ ≤ ∑ b : ↥B, Fintype.card (C.closureAt b.val) := hcard
+    _ ≤ ∑ _b : ↥B, m := Finset.sum_le_sum (fun b _ => by
+      simpa only [Nat.card_eq_fintype_card] using hm b.val b.property)
+    _ = B.card * m := by simp
+    _ ≤ k * m := Nat.mul_le_mul_right m hB
+
+/-- C39: source13's bounded complete-pattern theorem, retaining the
+actual irreducibility and singleton-bound hypotheses. -/
+theorem typed_joined_source_support [Finite V]
+    {C : Structure L V} {A : Structure L W}
+    (B : Finset V) {k m : ℕ} (hB : B.card ≤ k)
+    (hm : ∀ b ∈ B, Nat.card (C.closureAt b) ≤ m)
+    (hirr : (C.closureStructure (B : Set V)).Irreducible)
+    (f : Hom C A) (hf : f.HomEmbedding) :
+    Nat.card (C.closure (B : Set V)) ≤ k * m ∧
+    ∃ (e : Embedding (C.closureStructure (B : Set V)) A),
+      (∀ x, e.point x = f.point x.val) ∧
+      A.IsClosed (Set.range e.point) ∧
+      Nonempty (DiagramIso (C.closureStructure (B : Set V))
+        (A.induce (Set.range e.point) (embedding_range_closed e))) :=
+  ⟨generated_support_card C B hB hm,
+    irreducible_closed_image f hf _ (C.isClosed_closure _) hirr⟩
+
+end CCO.HiddenSAPReadings.SourceSupport
+
+namespace CCO.HiddenSAPReadings
+open CCO.UnaryFreshFrames
+noncomputable section
+
+/-- Preserve the actual typed function domains when viewing a completed
+total named structure as a partial-source target. Off-sort identity
+bookkeeping from the total API is not a displayed graph. -/
+def partialSignature (L : Language.{u}) [Finite L.Sorts]
+    [Finite L.Func] [Finite L.Rel] : CCO.UnarySupport.Signature.{u} where
+  Sorts := L.Sorts
+  Func := L.Func
+  Rel := L.Rel
+  input := L.input
+  output := L.output
+  arity := L.arity
+  argument := L.argument
+  finiteSort := inferInstance
+  finiteFunc := inferInstance
+  finiteRel := inferInstance
+
+def partialTarget {L : Language.{u}} [Finite L.Sorts]
+    [Finite L.Func] [Finite L.Rel] {V : Type v} (A : Structure L V) :
+    CCO.UnarySupport.Structure (partialSignature L) V := by
+  classical
+  exact {
+    sort := A.sort
+    func F x := if A.sort x = L.input F then {A.func F x} else ∅
+    functional F x y z hy hz := by
+      split at hy
+      · have hy' : y = A.func F x := hy
+        have hz' : z = A.func F x := by simpa only [if_pos ‹_›] using hz
+        exact hy'.trans hz'.symm
+      · exact False.elim hy
+    func_sorted F x y hy := by
+      split at hy
+      · have he : y = A.func F x := hy
+        exact ⟨‹_›,he ▸ A.func_sort F x ‹_›⟩
+      · exact False.elim hy
+    rel := A.rel
+    rel_sorted := A.rel_sort }
+
+theorem partialTarget_closed_iff {L : Language.{u}} [Finite L.Sorts]
+    [Finite L.Func] [Finite L.Rel] {V : Type v} (A : Structure L V)
+    (D : Set V) : (partialTarget A).IsClosed D ↔ A.Closed D := by
+  classical
+  constructor
+  · intro h F x hx
+    by_cases hs : A.sort x = L.input F
+    · apply h F x hx
+      simp only [partialTarget,if_pos hs,Set.mem_singleton_iff]
+    · rw [A.func_offsort F x hs]
+      exact hx
+  · intro h F x hx y hy
+    dsimp only [partialTarget] at hy
+    split at hy
+    · have he : y = A.func F x := hy
+      exact he ▸ h F x hx
+    · exact False.elim hy
+
+end
+end CCO.HiddenSAPReadings
+
+namespace CCO.HiddenSAPReadings
+open CCO.ParityHasse.Original CCO.TransitionClosure CCO.UnaryTermsReturn
+open CCO.TypedOrbitFrames CCO.UnaryFreshFrames
+noncomputable section
+universe r
+variable {ι : Type u} {X : ι → Type v} (S : AtomicSource.{u,v,w} ι X)
+variable {G : Type r} [Group G] [∀ i : ι, MulAction G (X i)]
+variable (H : HomogeneousSource S G) (sap : AgeSAP S)
+
+instance completedSortsFinite (nr2 : Selectors.OriginalNR2 S) :
+    Finite (originalCompletedLanguage S H sap nr2).Sorts := by
+  letI : Fintype ι := S.finiteSort
+  letI (i : ι) : Finite (OriginalNamedHiddenCoordinate S H i) :=
+    original_named_hidden_coordinates_finite S H
+  change Finite (ULift.{w} (OriginalCompletedCoordinateCode S H))
+  infer_instance
+
+instance completedFunctionsFinite (nr2 : Selectors.OriginalNR2 S) :
+    Finite (originalCompletedLanguage S H sap nr2).Func := by
+  letI : Finite (OriginalCompletedPrimitiveSymbol S H) :=
+    original_completed_primitive_symbols_finite S H
+  change Finite (ULift.{w} (OriginalCompletedPrimitiveSymbol S H))
+  infer_instance
+
+instance completedRelationsFinite (nr2 : Selectors.OriginalNR2 S) :
+    Finite (originalCompletedLanguage S H sap nr2).Rel :=
+  original_completed_cylinder_binary_names_finite S H
+
+/-- No unary graph, cylinder or sort is changed by this source encoding. -/
+def originalPartialSignature (nr2 : Selectors.OriginalNR2 S) :
+    CCO.UnarySupport.Signature.{max u v w} :=
+  partialSignature (originalCompletedLanguage S H sap nr2)
+
+def originalPartialTarget (nr2 : Selectors.OriginalNR2 S) :
+    CCO.UnarySupport.Structure (originalPartialSignature S H sap nr2)
+      (OriginalCompletedNamedCarrier S H) :=
+  partialTarget (originalCompletedStructure S H sap nr2)
+
+/-- C35–39 source instance. The target is the ACTUAL completed hidden
+interpretation; its finite image is closed in that very interpretation.
+FULL NR2 is derived from the standing original FULL-cover hypothesis.
+There is no completion-existence or hidden SAP/homogeneity premise. -/
+theorem typed_joined_source_support_actual
+    (hCover : ∀ i : ι, OriginalAllFullCoversInfinite S (i := i))
+    {P : Type z} [Finite P]
+    (C : CCO.UnarySupport.Structure
+      (originalPartialSignature S H sap
+        (CCO.HereditaryHiddenOrbits.terminalNR2 S hCover)) P)
+    (B : Finset P) {k m : ℕ} (hB : B.card ≤ k)
+    (hm : ∀ b ∈ B, Nat.card (C.closureAt b) ≤ m)
+    (hirr : (C.closureStructure (B : Set P)).Irreducible)
+    (f : CCO.UnarySupport.Structure.Hom C
+      (originalPartialTarget S H sap
+        (CCO.HereditaryHiddenOrbits.terminalNR2 S hCover)))
+    (hf : f.HomEmbedding) :
+    Nat.card (C.closure (B : Set P)) ≤ k * m ∧
+    ∃ e : CCO.UnarySupport.Structure.Embedding
+        (C.closureStructure (B : Set P))
+        (originalPartialTarget S H sap
+          (CCO.HereditaryHiddenOrbits.terminalNR2 S hCover)),
+      (∀ x, e.point x = f.point x.val) ∧
+      (Set.range e.point).Finite ∧
+      (CCO.HereditaryHiddenOrbits.hidden S H sap hCover).Closed (Set.range e.point) ∧
+      Nonempty (CCO.UnarySupport.Structure.DiagramIso
+        (C.closureStructure (B : Set P))
+        ((originalPartialTarget S H sap
+          (CCO.HereditaryHiddenOrbits.terminalNR2 S hCover)).induce
+          (Set.range e.point) (SourceSupport.embedding_range_closed e))) := by
+  obtain ⟨hcard,e,he,hclosed,hiso⟩ :=
+    SourceSupport.typed_joined_source_support B hB hm hirr f hf
+  refine ⟨hcard,e,he,Set.finite_range _,?_,hiso⟩
+  exact (partialTarget_closed_iff _ _).mp hclosed
+
+end
+end CCO.HiddenSAPReadings

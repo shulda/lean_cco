@@ -36,3 +36,54 @@ parallel source branches will be assigned when genuine capacity is available.
 Validation: none yet for new Lean code. Base already has 2263 guarded
 project modules, 4937 build jobs and 33627 audited declarations; these are
 base metrics, not a B055 result.
+
+## First compiled mathematical WIP
+
+Five production files are individually target-green and have explicit root
+imports: PairOrbitals, Coordinates, Rigidity, OrbitalPullback and
+OrbitalPartition in `CCO/HiddenSAPReadings`. PairOrbitals proves that the
+accepted COMPLETE semantic-cylinder predicate is ONE actual original-group
+pair orbital, using common actual old fine representatives. Coordinates is
+a bijective reorganization of the SAME completed vertices into their exact
+quotient sorts, with real Id retained literally, and constructs each full
+exact kernel from the accepted terminal RAW-word theorem. Rigidity derives
+injection and full binary/function-graph reflection for completed
+homomorphisms; its optional canonical tuple-type clause is separate.
+
+OrbitalPullback/OrbitalPartition prove actual arbitrary equivariant-map
+kernels in the FULL original lattice, FULL pullback before diversity, the
+precise unique real-identity exception, and positive whole-RAW-word to STRONG
+readout under original SAP and full-cover indices. Their theorem signatures
+have no CCO/hidden homogeneity/hidden SAP hypothesis. All four genuine-Id
+exterior cases and the old fine-atom partition are retained.
+
+Target logs: B055-rigidity.log (2511 jobs), B055-coordinates.log (2510 jobs),
+B055-checkpoint-targets.log (OrbitalPullback/OrbitalPartition compiled at
+2514-job combined target; that earlier run also included a then-failing
+Coordinates target, subsequently repaired and separately green). No full-root
+build, project guards, B055 axiom audit or remote CI is claimed yet.
+Module metadata (10 definitions/68 claims/9 exports/8 tasks) and required
+finite diagnostic control pass; these diagnostics are not infinite proofs.
+
+Live helper drafts remain open and have UNCOMPILED recoverable text snapshots
+in `reports/wip/B055`. SourceSupport snapshot has a routine elaboration error
+in the partial-target function encoding; it is not a compiled theorem. The
+OrbitalReadout snapshot is compile-unchecked. Neither snapshot is a Lean root
+module or a completion claim. Live files remain available to their owners.
+
+SourceSupport reuses ACCEPTED B034 generic partial-unary definitions as
+encoding infrastructure only, with root's explicit routine-encoding decision.
+It may not consume B034 HN/local-completion results as new mathematical
+providers. Its explicit encoding bridge must verify that domain-reflecting
+function embeddings equal the actual induced closed-subobject convention;
+no new stronger caller hypothesis is permitted. The B055 contract and BOARD
+are unchanged.
+
+Additional actual authors are `/root/b062_resume/orbital_pullback`
+(Orbital* files) and `/root/b062_resume/source_support` (SourceSupport and
+Boundaries files). Main compiler/root/report owner remains
+`/root/b062_resume`. Open work includes actual joint-lift homogeneity and
+unary enrichment, hereditary SAP source discharge, anchored real collision
+splitting, actual named-term readout, support/boundary completion, full source
+map, full-root/guards/audit and independent exact-head review. There is no
+known established mathematical/source/API gap at this checkpoint.

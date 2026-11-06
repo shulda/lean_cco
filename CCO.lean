@@ -2286,3 +2286,8 @@ import CCO.HereditaryHiddenOrbits.Transfer
 import CCO.HereditaryHiddenOrbits.FullHidden
 import CCO.HereditaryHiddenOrbits.SourceExports
 import CCO.HereditaryHiddenOrbits.Boundaries
+import CCO.HiddenSAPReadings.PairOrbitals
+import CCO.HiddenSAPReadings.Coordinates
+import CCO.HiddenSAPReadings.Rigidity
+import CCO.HiddenSAPReadings.OrbitalPullback
+import CCO.HiddenSAPReadings.OrbitalPartition
