@@ -1,8 +1,56 @@
-# B062 Work continuation — 5 November 2026
+# B062 Work continuation — 6 November 2026
 
 Actual implementer: `/root/b062_work`; publisher/coordinator: `root`, project 3.
 Worktree: `/workspace/scratch/e67502cd723c/work-b062`.
 Original branch/PR: `chat/chat-2/B062`, PR 68. Original Chat authorship is retained.
+
+## Current 6 November continuation — uncompiled WIP
+
+Same actual implementer `/root/b062_work`; no new or renamed author.
+Root reports live STATE750, Work/project3 ownership. After the transient
+workspace disappeared, root restored the latest public GREEN checkpoint
+`08e8c36ac6bbf8a22a4224daa0cf9a19b8605929`, including the fifth next-tag
+lemma and all prior proofs, and merged accepted main `1c6b21e6` (policy and
+reports only) as local `381fe32e`. The earlier public history is preserved.
+This continuation does not modify STATE or publish its own branch.
+
+The next source C96 seam now has four new WIP modules, all root imported:
+
+- `OriginalRetainedActualNextSaturatedColour`: actual fixed-child E-witness
+  lifting; the precise NEW saturated optional-atom block equals the OLD
+  projected block at fixed actual endpoint children. Its factorization on
+  arbitrary endpoints and on literal global E-classes includes BOTH actual
+  child-occupancy conditions. These unary conditions are never erased.
+- `OriginalActualNextQuotientChart`: concrete finite actual point/chart data,
+  preserving names, old fine colours and distinct global E-classes. Every
+  such witness gives reverse old local legality directly from SingleStep's
+  true marking; at a retained step every NEW block on every chart pair is
+  classified by actual child occupancies and its entire OLD block.
+- `OriginalRetainedMixedActualNextAgeIff`: both mask/actual-chart directions
+  for an arbitrary finite realized selected tuple, reached plus inactive.
+  Reverse legality is extended by the actual SourcePhase finite-seed theorem,
+  then all quotient masks follow from the existing full Arrow-mask theorem.
+- `OriginalRetainedArbitraryActualNextAgeIff`: the unmarked input is an
+  ARBITRARY complete genuine old quotient orbital diagram. Its triangle
+  legality plus corrected masks are equivalent to a realized tuple with a
+  true next chart. Forward uses the actual old quotient triangle-age theorem;
+  reverse uses actual chart legality and constancy on each real old orbital.
+
+Status at this immutable WIP publication: `git diff --check` passes. Private
+dependency copies and the exact restored Lean4.34.1 compiler are in place;
+the targeted cold build is still compiling the accepted prerequisite closure.
+NONE of the four new modules has yet been kernel checked at this point.
+No new exact-head green/audit, independent review or package submission is
+claimed. Root is the sole publisher and may start warm remote CI on this WIP.
+The earlier tested sections below remain historical validation of their
+precise old checkpoints only.
+
+The C96 theorems still need successful compilation and source/provider review.
+Their concrete chart/palette output must then be connected to the exact new
+occupancy-selected quotient CurrentSource and the genuine retained C103 safe
+step. Discarded full-age comparison, whole finite tower and terminal source
+exports C103–C105 remain OPEN. No additional provider, quotient SAP, action
+section, source/toolchain change or mathematical premise has been added.
 
 ## Ownership and preserved checkpoint
 
