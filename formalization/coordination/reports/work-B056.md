@@ -39,9 +39,38 @@ One compiler owner and this worktree's private copied .lake/build; packages
 read-only exact. Root is sole publisher/PR/CAS/integrator; authors do not push,
 fetch shared refs or edit B055. Fresh nonauthor review remains root-managed.
 
-All substantive obligations are open at this initial report. No genuine
-mathematical/source/API gap is established; ordinary source-instance and
-encoding construction remains implementation work. No new build/CI/audit or
-submission/approval is claimed. Concrete preimplementation plan is preserved
-at /workspace/scratch/d821f7d92465/B056-author-plan.md and will be maintained
-as source-to-Lean map once actual targets are compiled.
+## First mathematical checkpoint (WIP)
+
+Twelve production modules have passed actual pinned target compilation and
+are direct root imports. This is NOT a full B056 completion or root/audit claim.
+
+| Files | Actual current result |
+| --- | --- |
+| UnarySource | FULL domain-reflecting singleton/irreducible witnesses; exact partial/total closure bridge; actual all-generator budget transfer; displayed-endpoint irreducibility and pair bound. |
+| RepresentativeTerms | Canonical real identity/F_J root term and composition; actual whole-function one-value determination by original transitivity; finite semantic function family and actual normal-code budget. |
+| LocalRepresentatives | ONE finite vetted-factor map is split by accepted B055; ALL real/proper positions have injective, mutually disjoint designated original representatives in ONE finite old world. |
+| CommonSurvivor | Actual named binary/equality/unary-graph records; literal universal old pullbacks; one jointly satisfying distinct real pair gives ONE atom in ALL records; every surviving atom reads ALL records. No exact/Helly/partition premise. The actual source-term record assembly remains open. |
+| PrivateBranches, PrivateCycles | Pure private graph interface, interior continuation, whole-branch propagation and old-endpoint macro sides. Additional exact whole-cycle classification remains helper WIP. |
+| TypedPrefixChains | Pure finite-chain repeated-state deletion retaining first and final states; concrete positive-word consumer remains WIP. |
+| NegativeHelly | Separate incompatible-family two-word/two-exact-menu certificate, unused by the positive witness branch. |
+| G1Model, G1Actions, G1Orbits, G1OldSAP | Literal block/bit/clone p/q/r source, actual full colour group and finite homogeneity, arbitrary finite old-base clone motions, actual old SAP via ancestral B039 and explicit finite-age bridge. |
+
+Successful outputs are private `.lake/build/lib/lean/CCO/GuardedTwoRoot/*.olean`.
+Main logs B056-main-targets8.log and B056-targets9.log preserve actual checks;
+combined runs honestly also report unfinished helper targets. G1CCO currently
+has two routine proof/elaboration errors; concrete typed-prefix states/bounds
+remain uncompiled. Their exact current snapshots are in reports/wip/B056,
+explicitly UNCOMPILED; live helper source is left untouched. No sorry/admit/new
+axiom occurs in production or these snapshots.
+
+Open: source-term/record assembly and genuine full C17 instantiation; post-witness
+exact menus and ALL-kernel canonical old-root signatures; ANY-surviving-atom
+complete reflection onto the joined closed old source image; actual typed
+shortest-positive-word and language-only gadget bound; final pure cycle
+classification; G1 actual CCO/coarse hidden hereditary SAP/word RAW obstruction
+and FG1; firewalls/higher-support scope wrappers; complete source map and
+mandatory controls/fullroot/guards/transitive axiom audit/fresh review.
+
+No mathematical/source/API exception is established. No B056 export, fullroot,
+audit, CI success, approval or completion is claimed. All remaining work stays
+under the effective claim and the pinned accepted base above.

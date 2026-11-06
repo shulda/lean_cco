@@ -2307,3 +2307,16 @@ import CCO.HiddenSAPReadings.SourceExports
 import CCO.HiddenSAPReadings.C44IdentityDefect
 import CCO.HiddenSAPReadings.FrozenFactors
 import CCO.HiddenSAPReadings.Boundaries
+
+import CCO.GuardedTwoRoot.UnarySource
+import CCO.GuardedTwoRoot.RepresentativeTerms
+import CCO.GuardedTwoRoot.LocalRepresentatives
+import CCO.GuardedTwoRoot.CommonSurvivor
+import CCO.GuardedTwoRoot.PrivateBranches
+import CCO.GuardedTwoRoot.PrivateCycles
+import CCO.GuardedTwoRoot.TypedPrefixChains
+import CCO.GuardedTwoRoot.NegativeHelly
+import CCO.GuardedTwoRoot.G1Model
+import CCO.GuardedTwoRoot.G1Actions
+import CCO.GuardedTwoRoot.G1Orbits
+import CCO.GuardedTwoRoot.G1OldSAP
