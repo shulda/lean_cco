@@ -361,3 +361,20 @@ this fixed original sort; it changes neither theorem statement nor source
 hypotheses. CI/audit of the new exact head is required. The last green
 B063 readback remains `8336d7e6c10c7fbde234cdf98b3c23fa58ce6dda`,
 run 42247940821, STATE827. This failed attempt is NOT a submission.
+
+## Original fixed-code canonical bipartite edge candidate
+
+The new `CCO/AutomaticEPCore/QuotientCodeEdge.lean` is a deliberately
+CONDITIONAL source-facing bridge. It starts from an ACTUAL initial
+bipartite quotient atom b, its realized pair and its literal fixed root
+predicate code, plus a target selected-prefix pair recognized by that
+SAME code. It uses the GREEN original class readback and GREEN inverse
+atom/bipartition transport to prove that the target E-classes realize
+ONE canonical original quotient bipartite atom. The hypotheses are exact
+proof obligations exported from the genuine lower-rank source, not a
+new provider of quotient separation or a hidden CI/assertion of the
+whole rank induction. The predecessor at
+`42806dedb5d162c39336c84050cac1cab4be50e7` has full green CI42250044020 (2317 source modules,
+35017 standard-allowlist declarations), independently from its missing
+full-batch review. The new module/CCO root CI is PENDING; source
+C25's prescribed endpoint-type occupancy lift remains to discharge.
