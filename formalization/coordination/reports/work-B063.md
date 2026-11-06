@@ -378,3 +378,20 @@ whole rank induction. The predecessor at
 35017 standard-allowlist declarations), independently from its missing
 full-batch review. The new module/CCO root CI is PENDING; source
 C25's prescribed endpoint-type occupancy lift remains to discharge.
+
+## B063 genuine lower-rank separator to canonical E-quotient edge — WIP
+
+A new exact-root module `QuotientCanonicalSeparator.lean` composes the
+previously compiled real lower-rank receiving step (source/actual tower,
+terminality and exact target occupancies) with the actual original
+E-class/bipartite root-code readback. Its `smaller` hypothesis is the
+**strong ORIGINAL-diversity induction hypothesis** on the actual
+finite-or-possibly-non-SAP smaller source, not a new source property.
+The result returns an actual canonical original E-quotient bipartite
+atom and real selected endpoints carrying the prescribed E-occupancy
+names `Quotient.mk'' s`, `Quotient.mk'' t`. The final original-type
+C25 occupancy lift and full strong-induction assembly remain OPEN.
+Exact predecessor `132bb2eb04eaf9253d968ae2026d0e0107fc25b1` / CI42251390610 passed all 2318
+root modules and 35018 allowlisted declarations. This added compiler
+candidate needs its own fresh exact-head build/audit; no review,
+submission, or complete source theorem is claimed.
