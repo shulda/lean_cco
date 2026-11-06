@@ -1,5 +1,87 @@
 # B063 — CURRENT author checkpoint
 
+## Current twenty-two-module source checkpoint
+
+**IN_PROGRESS, NOT SUBMITTED.** All22 public B063 modules are directly
+root imported and locally FULL GREEN:4959 root jobs; complete current
+source guards2285 CCO /269 EPPA /106 Ramsey;34320 transitive declarations,
+only propext/Classical.choice/Quot.sound, zero violations. Pinned4.34.1,
+exact manifest/pins/policy retained. Metadata validates10 definitions,
+62 claims/4 exports/8 tasks; automatic_ep_core finite control PASS
+(bounded diagnostics only). Logs: b063-twentytwo-root.log,
+b063-twentytwo-guards.log, b063-twentytwo-audit.json. New public exact-head
+CI and genuine independent whole-source review are still required.
+
+New proof duties discharged beyond ac143546:
+
+| Source duty | Actual receiving proof |
+|---|---|
+| C44–C48, same actual phase odd | PhaseActiveAction lifts full connecting arrows to original functional maps, proves the SAME selected h has the whole phase.atSort trace at EVERY reached parent, fixes every active parent, has actual character1, and swaps both realized children. Full active set iff actual original H-orbit and active/inactive occupancy invariance are proved. No equality of choice.c with phase.odd. |
+| C39–C43/C49–C50 one-step | Actual E-occupancy invariant; real retained child projection injectivity and bound H_E transitivity; identity-step transitivity uses actual discarded occupancy and the SAME selected h correction, or unique inactive child. Fixed-original-carrier wrappers retain base/hOne/E. |
+| C39–C51 complete inner history | PrefixTransitivity proves least-exact F transitivity at EVERY given actual certified prefix, including initial and both step branches. Any real identity member in the actual gate list discharges F positivity. FunctionalSeparation constructs an actual original bipartite orbital between every distinct pair in one final F-occupancy class. No terminal orbit or phase provider premise remains for this branch. |
+| Outer source receiving bridge | NamedIsoReduct constructs a real UnaryReduct from ANY whole named-source isomorphism, proves per-fibre point and atom bijections, BOTH represented RAW exact directions, actual displayed-middle TP, and reindexes an ExactPrefix retaining all proofs. This is the proved iso bridge for the actual coded safe history; the entire outer recursion is still open. |
+| Actual smaller original source | QuotientSource constructs originalCoreQuotientCurrentSource on literal canonical original E-classes, discharges its full ordinary AP/countable/HOM-CCO source instance, identifies the zero-prefix all-parent quotient literally, and proves strict ORIGINAL diversity rank. No finite/non-SAP quotient is excluded. |
+| C60 concrete phase/groupoid receiving duties | NonmaximalPhase supplies literal b parity and FULL Candidate/maximal-gate API Knonmax/Smax; ALL first-K quotient equivariant permutations and full character/lambda readback; complete next-S groupoid on all reached lambda parents and every actual homset/bijection, common-bit character/mu readback, literal s parity/maxgate; actual positive first-maximal S unary refinement, exact two-label supports/core and FULL terminality. This is an author result pending fresh source review, not an independent approval. |
+
+PhaseActiveAction is frozen at SHA256
+283455e2446ba9ccbe009dc8df521339d798fb7efac2b68fa32ae45435ac89ff;
+NonmaximalPhase at
+5ce79b61f33a8aed9a4e88f496da767633266d70f25374c6eeaef79213d7eabc.
+Both actual authors finished naturally; full receiving notes are preserved
+in author-notes/PhaseActiveAction.md and author-notes/NonmaximalPhase.md.
+Root remains sole publisher. No live uncompiled draft is omitted from this
+checkpoint; historical UNCOMPILED snapshots remain explicitly historical.
+Target PASS: PhaseActiveAction/PrefixTransitivity/FunctionalSeparation2740,
+NonmaximalPhase1572, NamedIsoReduct2547, QuotientSource2713.
+
+Actual new authors: parent /root/b053_resume owns NamedIsoReduct,
+QuotientSource, PrefixTransitivity, FunctionalSeparation and assembly;
+SAME /root/b053_resume/b063_loopless owns PhaseActiveAction; SAME
+/root/b053_resume/b063_boundary owns NonmaximalPhase. None is a reviewer.
+
+## Prior three-file interim checkpoint
+
+The public PR80 checkpoint `087ec0cab79577c19d3ad8acbc26a13a3db30981`
+has green exact-head CI42212403081 (root verifies/preserves its evidence).
+The new mathematical files below are target-compiler GREEN on the pinned
+Lean4.34.1, above private base `1d5ac759` / source `0ed0d803`; full-root
+and audit for these new files are pending. They are authored by
+`/root/b053_resume` and directly root imported. No submission/approval.
+
+- IdentityArrows: `identity_arrow_functional` constructs a genuine
+  ORIGINAL equivariant permutation from ANY full exact arrow over the
+  real original identity kernel, with exact graph/nonidentity clauses.
+  Target1315 jobs PASS, `b063-identity-arrows.log`.
+- PhaseIdentityFunctional: `identity_original_gate_dominant_functional`
+  lifts the actual full current arrow, and actual dominance plus the
+  largest-lift right adjunction proves its graph lies in EVERY positive
+  original full-exact equivalence. `actual_phase_identity_functional`
+  applies this to the SAME `phase.atSort b`, producing h!=1 and its exact
+  current trace, with h in the SAME canonical least-positive-exact F.
+  It makes no equation between GateChoice.c and phase.odd. Target2575
+  jobs PASS, `b063-phase-identity.log`.
+- SeparatingGate: guarded genuine finite full-exact meet support and
+  common-kernel identity produce an actual selected original gate
+  separating ANY prescribed distinct final names. If all original gates
+  are positive, `positive_separating_gate_with_aligned_quotient` provides
+  that positive gate, its strict ORIGINAL quotient rank drop, and the
+  SAME B062 Alignment with exact original retained indices/gates and
+  full-terminal implication. No recursive quotient separation conclusion
+  or source/tower provider is assumed. Target2879 jobs PASS,
+  `b063-separating-gate.log`.
+
+The same actual authors continue disjoint files: b063_loopless now owns
+PhaseActiveAction (uniform SAME selected h, actual character-one child
+flip, then inner prefix duty); b063_boundary owns NonmaximalPhase (exact
+C60 parity/full groupoids/positive split). Their live files are not part
+of this three-file checkpoint until delivered. Parent retains the outer
+strong ORIGINAL-rank/source-tower recursion and final separation/core.
+The aligned quotient history is a fixed-root-predicate CODED safe history
+up to whole source isomorphism, not definitionally a fresh certified
+literal-reduct history; this receiving bridge must be proved, never
+silently assumed. Finite/non-SAP sources remain included. No known
+mathematical/source/API exception; these are open implementation duties.
+
 ## Exact local verification of the thirteen-module checkpoint
 
 Mathematical source native `0ed0d8034998bb3c0cb40df6d22bc213cea75ebe`,
@@ -107,24 +189,17 @@ helper code at this coherent checkpoint; no WIP was reset to an older green.
 2. Establish the all-nonidentity-gate branch from actual common-kernel support
    identity and actual exact-meet support, apply the lower-rank source theorem
    on the genuine quotient, and feed its actual bipartite witness into C25.
-3. Prove full C39–C51 H_F prefix transitivity. Nonidentity-gate steps use
-   the actual objectwise-offset bijective lifts and equivariant projection;
-   identity-gate steps use the single discarded quotient occupancy class.
-   A SourcePhase has its OWN dominant odd Arrow/detects=1. GateChoice.c need
-   not be that odd Arrow's selected atom; do NOT assert character-one for it.
-   Reconstruct the step-specific selected original u from the ACTUAL phase
-   odd/full original correspondence (the accepted actualPhaseAtSort maximal
-   gate theorem retains containment), keeping the SAME u over all active
-   parents of its fixed step and every selected u in the SAME F.
-4. Complete same/different F-occupancy terminal separation, assemble the two
+3. Complete the different-F-occupancy terminal quotient/rank branch; the
+   SAME-F branch, actual phase uniformity and all-prefix H_F transitivity
+   are now discharged by the source proofs listed at the current top.
+   GateChoice.c is never substituted for phase.odd.
+4. Assemble the two
    cases of the strong induction, then apply the generic finite-core result.
    Supply all four source exports and all five equations, not only an abstract
    finite table theorem or conditional separation provider.
-5. Complete C60's exact original b-parity readback/maximal-gate package,
-   entire first K-quotient functional group/character and next full groupoid
-   common-bit character; identify the positive first-maximal S split with
-   the actual two-label source. Existing real homogeneity/CCO/terminality
-   or correct support tables alone do not close these character duties.
+5. C60's exact character/groupoid and positive-source receiving duties are
+   now author-complete in NonmaximalPhase; obtain genuine fresh whole-source
+   review of this exact source along with the eventual complete batch.
 6. Finish the complete source-to-Lean map, proof-dependency firewalls,
    all affected consumers/full-root build, transitive axiom audit and genuine
    independent WHOLE-source exact-head review before any submission.

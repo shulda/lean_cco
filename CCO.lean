@@ -2299,3 +2299,12 @@ import CCO.AutomaticEPCore.QuotientRank
 import CCO.AutomaticEPCore.QuotientSeparator
 import CCO.AutomaticEPCore.RankZero
 import CCO.AutomaticEPCore.SourceQuotientLift
+import CCO.AutomaticEPCore.IdentityArrows
+import CCO.AutomaticEPCore.PhaseIdentityFunctional
+import CCO.AutomaticEPCore.SeparatingGate
+import CCO.AutomaticEPCore.NamedIsoReduct
+import CCO.AutomaticEPCore.NonmaximalPhase
+import CCO.AutomaticEPCore.PhaseActiveAction
+import CCO.AutomaticEPCore.PrefixTransitivity
+import CCO.AutomaticEPCore.FunctionalSeparation
+import CCO.AutomaticEPCore.QuotientSource
