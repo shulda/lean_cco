@@ -2281,3 +2281,8 @@ import CCO.ExactEPGeometry.OriginalCodedQuotientSafeHistory
 import CCO.ExactEPGeometry.ExactTraceProduct
 import CCO.ExactEPGeometry.CanonicalStepProduct
 import CCO.ExactEPGeometry.OriginalQuotientHistoryProvenance
+import CCO.AutomaticEPCore.FiniteCore
+import CCO.AutomaticEPCore.FunctionalOriginal
+import CCO.AutomaticEPCore.OriginalTypes
+import CCO.AutomaticEPCore.SourceLoopless
+import CCO.AutomaticEPCore.TerminalLoopless
