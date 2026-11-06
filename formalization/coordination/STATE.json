@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 768,
+  "revision": 769,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -4988,6 +4988,8 @@
       "state": "IN_PROGRESS",
       "owner_project_id": 3,
       "author_actor_ids": [
+        "/root/b062_continue",
+        "/root/b062_tower_helper",
         "/root/b062_work",
         "/root/b062_work/retained_child_names",
         "/root/b062_work/retained_tower",
@@ -24073,6 +24075,22 @@
           "source_modules": 1900
         },
         "summary": "Actual resulting-main full4574jobs,1900/269/106 complete pin guards before/after audit31221 standard axioms only. Exact approved whole tree4419 preserved in merge f330; original history and source contracts retained."
+      }
+    },
+    {
+      "revision": 769,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "record_authorship",
+      "package_id": "B062",
+      "details": {
+        "actor_id": "root",
+        "package_id": "B062",
+        "author_actor_ids": [
+          "/root/b062_continue",
+          "/root/b062_tower_helper"
+        ],
+        "reason": "Actual fresh implementers after restart author the disjoint complete safe-history and projected tower/terminality source proofs; both are authors, never reviewers."
       }
     }
   ],
