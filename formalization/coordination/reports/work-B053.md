@@ -1,6 +1,83 @@
 # B053 Work continuation — 6 November 2026
 
-## Final author checkpoint — T01–T07 implemented, full local root/audit PASS
+## Current author checkpoint — F2 source-provider repair verified locally
+
+The actual fresh nonauthor reviewer identified a missing standing-provider
+seam in the preceding author completion proposal: the frozen source assumes
+infinite relative index for EVERY strict cover in each FULL original
+invariant-equivalence lattice, whereas the preceding final APIs still
+requested `Selectors.OriginalNR2 S` separately. The mathematical implication
+was valid but had not been received by a compiled source adapter. The prior
+claim that the complete source-input discharge was finished is superseded.
+
+`FullCoverNR2` now proves the actual implication. For a literal
+`RelativeIndexTwo R T`, every actual relative class quotient is a
+surjective image of Bool via its two specified classes and is therefore
+finite. The endpoints form a strict FULL `ColourEq` interval. The proved
+`original_all_strict_full_indices_infinite` makes the SAME quotient
+infinite from the literal A04 premise, a contradiction. Thus
+`original_nr2_of_all_full_covers_infinite` derives FULL OriginalNR2;
+`original_sort_nr2_of_all_full_covers_infinite` discharges numerical
+SortNR2 through the accepted original-to-sort adapter. No additional
+hypothesis, Hasse theorem, source/API/pin change or new axiom is used.
+
+All seven final SOURCE entry points are now in
+`CCO.TypedOrbitFrames.Source` in `FullCoverSourceExports`. Their standing
+input is `hCover : ∀ i, OriginalAllFullCoversInfinite S (i := i)`; NONE
+accepts a separate NR2 proof. Each actual named structure/closure uses
+exactly the NR2 proof derived from that same input. The old explicitly
+NR2-conditional APIs remain unchanged as implementation helpers.
+
+| Source result | Final source-facing entry point and precise scope |
+|---|---|
+| Complete-base chords | `Source.complete_base_chords`; literal typed diagram, complete spokes, actual SimpleCycle and no proper specified chord. This stronger combinatorial result needs neither infinite covers nor NR2; the original `original_complete_base_cycle_hom_of_local_tests` already supplies the full old-SAP reduction without NR2. |
+| Exact-coloured orbit infinitude | `Source.exact_coloured_orbit_infinitude`; old H, SAP, semantic HOM CCO, all-sort FULL infinite covers, actual finite complete base/type, proper named J and actual unforced projection. |
+| Real-base hidden algebraicity | `Source.real_base_algebraic_closure_eq`; same old H/SAP/CCO and literal all-sort covers, EVERY finite original real D, entire actual hidden carrier. This is PG-ACL. |
+| Point-generated coordinate SAP | `Source.point_generated_coordinate_sap`; same source inputs, full old Aut and its homogeneity constructed from old H; ONLY the full point-generated category, with no hidden homogeneity/SAP premise. |
+| Actual MI-fibre dichotomy | `Source.mi_fibre_infinite_dichotomy`; old H/semantic CCO and all-sort covers, actual finite pairwise-intersecting FULL E-classes, proper FULL MI J; numerical SortNR2 is derived. |
+| Compatible single real frame | `Source.compatible_single_real_frame`; old H/SAP/CCO, all-sort covers, actual same-sort pairwise-compatible named proper MI family and finite B containing its named closure; literal CMF and SAME-move real identity freshness. |
+| Arbitrary fresh representatives | `Source.fresh_representatives`; old H/SAP and all-sort covers, EVERY actual finite closed A, arbitrary finite B,F and A⊆B; all actual requests, injection, named forced factors, ALL unforced outputs and literal final intersection are retained. No CCO provider is assumed by this stronger final avoidance step. |
+
+`Source.outside_real_base_orbit_infinite` additionally exposes the TOS
+equation with the same derived provider. `Source.fresh_real_frame` exposes
+the already proved actual source frame in the generic unary-structure
+form for subsequent consumers. These are receiving forms of the existing
+results, not new source results or new premise APIs. QT4 and the entire
+D01–D08/C01–C62 implementation map below are retained; their old conditional
+helper references now feed these genuinely discharged source exports.
+
+Validation on the repaired mathematical source tree, based on local
+`2a18fa82` (which retains accepted main `1efbcb40`), is complete:
+
+- Targeted source-export build: **2562 jobs PASS**.
+- Full `lake --rehash build`: **4653 jobs PASS**.
+- All **1979 CCO / 269 EPPA / 106 Ramsey** exact source/cache guards PASS
+  before AND after the full root audit.
+- Full transitive root audit: **31933 declarations**, only `propext`,
+  `Classical.choice`, `Quot.sound`, zero violations.
+- All **79 B053 modules** are root imported, including both repair modules.
+- Frozen module check and bounded controls PASS (5663 cycles, 8302 chord
+  splits, 6400 term-kernel checks); `git diff --check` PASS.
+- Compiled signature readback confirms all seven final entry points and
+  the derived-provider bridge; target axiom readback has the same allowlist.
+
+Logs: `b053-fullcover-exports-build.log`, `b053-fullcover-root-build.log`,
+`b053-fullcover-guards.log`, `b053-fullcover-root-audit.json`,
+`b053-fullcover-source-api.log`. The repair author is the actual new
+`/root/b053_finalize`; the earlier authors, source history, immutable
+pre-repair snapshot and independent finding remain preserved. The helper
+`/root/b053_finalize/source_map_check` supplied read-only API discovery
+only. Author checks are not independent approval.
+
+The pre-repair public snapshot is
+`2fc4ac4472e94dbfec486bff68a13dfce71fdad8`; its earlier CI cannot certify
+this changed source. Root must publish the new immutable repair head,
+obtain its own exact remote CI/audit and receive the nonauthor reviewer's
+personal delta approval before integration. The reviewer owns their own
+report; this author report neither edits it nor transfers old approval.
+Older checkpoints below are HISTORICAL and superseded by this section.
+
+## Historical author checkpoint before the F2 source-provider repair
 
 The complete source11 mathematical receiving map is now implemented in
 **77 root-imported B053 modules**. This is an AUTHOR completion proposal,
