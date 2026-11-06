@@ -315,3 +315,21 @@ helper code at this coherent checkpoint; no WIP was reset to an older green.
 
 No mathematical/source/API exception is known. These remain actual open
 implementation/source-application proofs; none is marked complete by this WIP.
+
+## Whole-source canonical quotient colour readback — compiler candidate
+
+Source snapshot `formalization/coordination/wip/work/B063/QuotientAtomReadback.UNCOMPILED.lean.txt`
+(8,981 bytes) is now preserved unchanged as the production-candidate
+`CCO/AutomaticEPCore/QuotientAtomReadback.lean` and directly imported by
+the root. This supports the unfinished source-level ORIGINAL quotient-rank
+induction, but cannot close it by itself. The candidate compares an actual
+selected quotient point with its literal canonical original E-class; proves
+the exact common root-predicate code transfers quotient pair orbital equality;
+and identifies the FULL initial selected quotient pair-colour partition with
+canonical quotient colours, including the logical diagonal.
+
+Compiler errors, if any, MUST be repaired without strengthening the original
+AP/HOM-CCO source or introducing an unproved quotient provider. This head
+has not yet passed its own exact CI and audit, so neither the helper nor
+B063 is submitted/completed. The earlier 31-module source checkpoint at
+`e6b15c6cf21259f3c5c75ad2e07c31835598c289` has green run 42220335737, 35,007 audited declarations.
