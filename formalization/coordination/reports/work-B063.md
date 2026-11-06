@@ -1,6 +1,115 @@
 # B063 — CURRENT author checkpoint
 
-## Current twenty-two-module source checkpoint
+## Current thirty-one-module source checkpoint
+
+**IN_PROGRESS, NOT SUBMITTED.** All31 delivered modules are directly
+root imported and target-compiler GREEN. Full root4968 PASS at pinned4.34.1;
+root audit is recorded with this checkpoint. The previous complete live
+source guard/audit is the26-module465d06d8 result below. A32nd helper module
+QuotientAtomReadback is still in development and NOT in the production
+root closure: its explicitly UNCOMPILED byte snapshot/hash is preserved
+under coordination/wip/work/B063 while the actual helper continues its
+live file. The complete live-source guard is pending that receiving
+module; this checkpoint must not claim whole-live-worktree completion.
+Logs: b063-thirtyone-root.log and b063-thirtyone-audit.json. New exact-head
+public CI and genuine independent whole-source review remain required.
+
+New parent source proof steps above465d06d8:
+
+- IsoGatePrefixInvariants2905 PASS: actual exact-meet support, common
+  ORIGINAL kernel support=Id, and SAME leastF transitivity over every
+  explicit whole-source rename and every actual certified split. No
+  source/transport/terminal orbit provider is added.
+- IsoGateSeparation2912 PASS: finite original exact gate-meet support;
+  an actual selected separating gate for every pair of distinct final
+  names; F positivity from an identity member of that actual gate list;
+  actual original BP separator for same-F-occupancy pairs, in the entire
+  quotient-receiving category.
+- QuotientRootCode2889 PASS: at the literal initial selected quotient,
+  code-value equality iff the COMPLETE actual original quotient colour;
+  EVERY original quotient atom has exactly one fixed predicate-code value,
+  recognized on every actual original quotient pair, including sort casts.
+- NamedIsoEndTransfer2894 PASS (SAME actual functional author): whole
+  FULL ColourEq order/relative-class equivalences and terminality iff;
+  exact finite code-table/support transfer at the prescribed target names
+  with real endpoint witnesses and the SAME root predicate values.
+  Frozen SHA2563a0c90759d4ce269a7f978b704ea2c75da75ebe4650d6e56b7846c7531cb68bb;
+  exact notes in author-notes/NamedIsoEndTransfer.md.
+- QuotientRankStep2918 PASS: the explicit lower-rank induction assertion
+  on the ACTUAL initial selected quotient yields a real original quotient
+  BP atom/code and support at the EXACT target occupancy names. Actual
+  quotient history, full source, terminality, whole endpoint isomorphism
+  and root-code transport are discharged. The smaller-source separation
+  premise is the mathematical induction hypothesis, not a completed
+  final source theorem or an extra source provider.
+
+Remaining OPEN: final canonical quotient-atom/BP/code readback and C25
+consumer (same loopless author), then bind actual Nat strong induction on
+ORIGINAL diversity and finish different-F/all-positive branches, source
+core and all exports/equations. The induction can first be proved for
+atom universe v (closed under these actual quotients), then arbitrary
+original atom universe w uses that proved v-level quotient theorem at
+its first layer; this retains ALL original-source quantifiers and adds
+no retyping/source premise. No mathematical/source/API exception known.
+
+Actual main8d009339/B055 has been fetched by root; this snapshot has not
+yet merged it. The eventual final B063 head must include its ancestry
+and the exact union of all root imports, with new root verification.
+
+## Previous twenty-six-module source checkpoint
+
+**IN_PROGRESS, NOT SUBMITTED.** Current26 public modules are directly
+root imported. FULL local root4963 PASS; complete guards2289 CCO /269 EPPA
+/106 Ramsey PASS; transitive audit34394 declarations, only standard3,
+zero violations. Metadata10defs/62claims/4exports/8tasks and bounded finite
+control PASS. Logs: b063-twentysix-root.log, b063-twentysix-guards.log,
+b063-twentysix-audit.json. Source/policy/API/toolchain/manifest unchanged.
+New public exact-head CI/independent whole-source review remain required.
+
+Beyond the frozen22-module source `7d5e5654eeb07b00d0749e8a1ccb515980ed55df`:
+
+- QuotientSource now proves one original sort and the strict ORIGINAL
+  diversity rank for the LITERAL INITIAL SELECTED quotient source used
+  at the start of the B062 projected tower. Its all-parent source is
+  literally the canonical original E-quotient, not an assumed age/source
+  equivalence. Target2713 PASS.
+- ActualPhaseGateChoice constructs original old Y/U and proves maximality
+  for a SPECIFIED real current maximal gate. An EXISTING SourcePhase at
+  any actual exact prefix yields a certified GateChoice with equality of
+  the ENTIRE successor ExactPrefix (real reduct, RAW and TP included).
+  The same full character/phase is retained through its actual kernel
+  equality; no unrelated phase is substituted. Target2736 PASS.
+- CodedTowerReceiving receives EVERY actual CodedSafeSourceStep history
+  into actual exact prefixes. IsoGateTower.Step records explicit whole
+  source renamings and actual certified split steps. Actual code values
+  are preserved literally; all RAW/TP/source/phase obligations are proved,
+  not added as provider premises. Target2743 PASS.
+- NamedIsoQuotient constructs the full ACTUAL coded selected quotient
+  isomorphism for a source renaming: occupancy names, entire point set,
+  owner map, all pair colours, literal original saturated predicate code.
+  Actual author is SAME /root/b053_resume/b063_functional, not a reviewer.
+  Frozen SHA256 d68092dcb4e0cb7c7835b82b4fd1ef7cedc4f99c4a5f26a7f3e4f1c09655f2ec;
+  complete notes preserved in author-notes/NamedIsoQuotient.md.
+- IsoGateQuotientTower proves actual quotient closure of this receiving
+  category, including zero steps and arbitrary whole source renamings.
+  Source isos and discarded stages are erased by proved fixed-code source
+  isomorphisms; retained stages use their genuine B062 phases. The exact
+  projected length is the count of selected original gates containing E.
+  Parent targets CodedTowerReceiving/NamedIsoQuotient2866 and quotient
+  closure2875 PASS. No hypothetical recursive separator is assumed.
+
+The outer strong ORIGINAL-rank argument is still OPEN. Specifically extend
+the already proved exact-meet/common-kernel/least-F history invariants over
+the explicit source renaming steps (their RAW/TP/source instances are now
+proved), transfer the terminal/table predicate through the receiving end
+isomorphism, and bind/apply the actual smaller-rank source theorem to the
+constructed quotient tower. Complete different-F-occupancy/all-positive
+gate separation and final core/four source exports/five equations. Retain
+all universe and finite/non-SAP source cases. This checkpoint closes the
+actual source/tower receiving seams, not the final recursion. No known
+mathematical/source/API exception. No live uncompiled draft remains.
+
+## Previous twenty-two-module source checkpoint
 
 **IN_PROGRESS, NOT SUBMITTED.** All22 public B063 modules are directly
 root imported and locally FULL GREEN:4959 root jobs; complete current

@@ -2,6 +2,7 @@ import CCO.AutomaticEPCore.SourceQuotientLift
 import CCO.AutomaticEPCore.QuotientRank
 import CCO.SimultaneousQuotients.Exports
 import CCO.ExactEPGeometry.OriginalAllCurrentQuotientSource
+import CCO.ExactEPGeometry.OriginalOccupancyQuotientSource
 
 /-! The source to which the outer ORIGINAL diversity induction applies
 is an actual CurrentSource on literal original E-classes. All AP/HOM-CCO
@@ -75,6 +76,42 @@ theorem originalCoreQuotientCurrentSource_rank_lt
       originalDiversityRank A base := by
   rw [originalDiversityRank_eq_natCard (originalCoreQuotientCurrentSource A base hOne E) base]
   exact original_exact_quotient_rank_lt A base hOne E positive
+
+/-- The genuine initial selected quotient has ONE original occupancy
+sort. Its source includes the finite and zero-step cases. -/
+theorem original_initial_selected_quotient_one_sort
+    (A : CurrentSource.{u,v,w,t}) (base : A.Sorts)
+    (hOne : ∀ i : A.Sorts, base = i) (E : ExactEq A.source base)
+    (c : OriginalOccupancy A A (UnaryReduct.identity A.source) base hOne E) :
+    (Quotient.mk'' base : OriginalOccupancy A A
+      (UnaryReduct.identity A.source) base hOne E) = c := by
+  induction c using Quotient.inductionOn with
+  | _ i => exact congrArg Quotient.mk'' (hOne i)
+
+/-- The strict ORIGINAL rank drop applies to the LITERAL initial
+selected source used by the B062 aligned quotient tower. No replacement
+tower, quotient source or cardinal-drop provider is supplied. -/
+theorem original_initial_selected_quotient_rank_lt
+    (A : CurrentSource.{u,v,w,t}) (base : A.Sorts)
+    (hOne : ∀ i : A.Sorts, base = i) (E : ExactEq A.source base)
+    (positive : (⊥ : ExactEq A.source base) < E) :
+    originalDiversityRank
+      (originalExactSelectedQuotientCurrentSource A A (UnaryReduct.identity A.source)
+        (ExactTraceTransport.identity A.source) base hOne E)
+      (Quotient.mk'' base) < originalDiversityRank A base := by
+  rw [originalDiversityRank_eq_natCard
+    (originalExactSelectedQuotientCurrentSource A A (UnaryReduct.identity A.source)
+      (ExactTraceTransport.identity A.source) base hOne E) (Quotient.mk'' base)]
+  let rep := originalOccupancyRepresentative A A (UnaryReduct.identity A.source)
+    base hOne E (Quotient.mk'' base)
+  change Nat.card ((originalCoreQuotient A base hOne E).Atom rep rep) < originalDiversityRank A base
+  calc
+    Nat.card ((originalCoreQuotientCurrentSource A base hOne E).source.Atom rep rep) =
+        Nat.card ((originalCoreQuotientCurrentSource A base hOne E).source.Atom base base) :=
+      congrArg (fun i : A.Sorts =>
+        Nat.card ((originalCoreQuotientCurrentSource A base hOne E).source.Atom i i))
+        (hOne rep).symm
+    _ < originalDiversityRank A base := original_exact_quotient_rank_lt A base hOne E positive
 
 end
 end CCO.AutomaticEPCore
