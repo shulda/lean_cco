@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 792,
+  "revision": 793,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -5050,7 +5050,7 @@
       "owner_project_id": null
     },
     "B062": {
-      "state": "IN_PROGRESS",
+      "state": "SUBMITTED",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b062_continue",
@@ -5078,7 +5078,7 @@
         "declarations": 28723,
         "source_modules": 1619
       },
-      "head_sha": "e441a6a37f1376b30e6a7d09190682f16dbd59eb",
+      "head_sha": "3e9780949d258266e4cad22a052f137948a7f926",
       "pr_number": 68,
       "observed_ci": {
         "run_id": 42204587927,
@@ -5138,7 +5138,20 @@
           },
           "coordinator": "root"
         }
-      ]
+      ],
+      "ci": {
+        "run_id": 42205740048,
+        "run_attempt": 1,
+        "head_sha": "3e9780949d258266e4cad22a052f137948a7f926",
+        "conclusion": "success",
+        "axiom_audit": "allowlist",
+        "job_id": 127852299632,
+        "tests": 187,
+        "declarations": 33534,
+        "source_modules": 2258,
+        "build_jobs": 4932
+      },
+      "report_path": "formalization/coordination/submissions/B062.md"
     },
     "B063": {
       "state": "AVAILABLE",
@@ -24781,6 +24794,32 @@
           "/root/b062_resume/boundaries"
         ],
         "reason": "Actual B054 implementer delegated only disjoint source-boundary module to its real helper /root/b062_resume/boundaries. This helper is a B054 author, not a reviewer, and shares no writing files/build outputs with other authors. Original source claims and all prior authors remain preserved."
+      }
+    },
+    {
+      "revision": 793,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "submit",
+      "package_id": "B062",
+      "details": {
+        "actor_id": "root",
+        "package_id": "B062",
+        "head_sha": "3e9780949d258266e4cad22a052f137948a7f926",
+        "pr_number": 68,
+        "ci": {
+          "run_id": 42205740048,
+          "run_attempt": 1,
+          "head_sha": "3e9780949d258266e4cad22a052f137948a7f926",
+          "conclusion": "success",
+          "axiom_audit": "allowlist",
+          "job_id": 127852299632,
+          "tests": 187,
+          "declarations": 33534,
+          "source_modules": 2258,
+          "build_jobs": 4932
+        },
+        "report_path": "formalization/coordination/submissions/B062.md"
       }
     }
   ],
