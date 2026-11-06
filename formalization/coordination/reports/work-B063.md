@@ -1,5 +1,21 @@
 # B063 — CURRENT author checkpoint
 
+## Exact local verification of the thirteen-module checkpoint
+
+Mathematical source native `0ed0d8034998bb3c0cb40df6d22bc213cea75ebe`,
+whole tree `5e884df2937f3d14496b807a2fe3547617a5dd7f`, is locally FULL GREEN:
+4950 root jobs; complete source guards 2276 CCO /269 EPPA /106 Ramsey;
+34029 transitive declarations, only propext/Classical.choice/Quot.sound,
+zero violations. Metadata and required finite controls pass. All thirteen
+public modules are directly root imported. This exact-source result
+supersedes the pending-local-root sentence below; this report-only update
+does not alter mathematics. Logs: b063-thirteen-root.log,
+b063-thirteen-guards.log, b063-thirteen-audit.json. New public exact-head
+remote CI remains required. The last earlier public green remains
+`eca5d6c801efc01c7752088c5d9a58e699a347d1` / CI42210804573, preserved at
+STATE809. The strong-rank/tower/prefix-action/separation/core and exact C60
+receiving duties listed below remain OPEN; no submission or approval.
+
 ## State, publication and scope
 
 B063 is **IN_PROGRESS / NOT SUBMITTED**. The strong-original-rank automatic
