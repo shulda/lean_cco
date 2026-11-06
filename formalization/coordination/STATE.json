@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 789,
+  "revision": 790,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -4882,8 +4882,28 @@
       }
     },
     "B054": {
-      "state": "AVAILABLE",
-      "owner_project_id": null
+      "state": "IN_PROGRESS",
+      "owner_project_id": 3,
+      "author_actor_ids": [
+        "root"
+      ],
+      "original_author_project_ids": [
+        3
+      ],
+      "claim_revision": 790,
+      "base_main_sha": "ba71c0d1253ba78ca69a5cc68074212e26a92e04",
+      "base_ci": {
+        "run_id": 42205385254,
+        "run_attempt": 1,
+        "head_sha": "ba71c0d1253ba78ca69a5cc68074212e26a92e04",
+        "conclusion": "success",
+        "axiom_audit": "allowlist",
+        "job_id": 127850587142,
+        "tests": 187,
+        "declarations": 31933,
+        "source_modules": 1979,
+        "build_jobs": 4653
+      }
     },
     "B055": {
       "state": "AVAILABLE",
@@ -24694,6 +24714,30 @@
         "package_id": "B053",
         "integration_commit": "ba71c0d1253ba78ca69a5cc68074212e26a92e04",
         "main_ci": {
+          "run_id": 42205385254,
+          "run_attempt": 1,
+          "head_sha": "ba71c0d1253ba78ca69a5cc68074212e26a92e04",
+          "conclusion": "success",
+          "axiom_audit": "allowlist",
+          "job_id": 127850587142,
+          "tests": 187,
+          "declarations": 31933,
+          "source_modules": 1979,
+          "build_jobs": 4653
+        }
+      }
+    },
+    {
+      "revision": 790,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "claim",
+      "package_id": "B054",
+      "details": {
+        "actor_id": "root",
+        "package_id": "B054",
+        "base_main_sha": "ba71c0d1253ba78ca69a5cc68074212e26a92e04",
+        "base_ci": {
           "run_id": 42205385254,
           "run_attempt": 1,
           "head_sha": "ba71c0d1253ba78ca69a5cc68074212e26a92e04",
