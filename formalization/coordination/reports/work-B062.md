@@ -1,5 +1,35 @@
 # B062 Work checkpoint — 6 November 2026
 
+## Current main integration and actual whole-source review — 6 November
+
+The current candidate incorporates actual source main
+`ba71c0d1253ba78ca69a5cc68074212e26a92e04`. Its B053 merge is governed by
+its separate live integration lock and resulting-main CI; B062 does not
+consume B053 as a mathematical dependency. No B062 production proof changed
+in this refresh. The sole root-import conflict was resolved by retaining the
+exact unique union of both parent import sets (2257 imports, no duplicates),
+including all 279 public B062 modules.
+
+The actual new nonauthor `/root/b062_fresh_review`, actor
+`work_control_20261106e`, personally read all 279 package modules and the
+entire pinned source, source map, actual provider signatures/discharges and
+consumers. Its own complete report is
+`formalization/coordination/reviews/B062-complete-20261106e.md`. F3 and the
+two direct-root-import findings are resolved; the whole source review found
+no remaining mathematical or receiving-contract duty. The report expressly
+withholds formal approval until the effective exact-head lease, final delta
+review and successful exact-head CI/audit.
+
+The preceding public F3 source checkpoint
+`e441a6a37f1376b30e6a7d09190682f16dbd59eb` passed CI `42204587927`, job
+`127847925924`: 187 tests, 4853 root jobs, 2179 complete current source
+modules, full EPPA269/Ramsey106 exact guards and 32822 standard-allowlist
+transitive declarations. That is preserved checkpoint evidence, not CI for
+this changed root/report head. The final refreshed head needs fresh full CI,
+its own actual-reader approval, the sole integration lock, expected-head
+history-preserving merge and green actual resulting-main build/audit before
+ACCEPTED. All source, API, toolchain, manifest and provider pins are unchanged.
+
 Status: implementation-complete candidate; IN_PROGRESS / NOT SUBMITTED until
 exact public-head CI/audit and independent full-source review. No acceptance
 or independent whole-package approval is asserted.
