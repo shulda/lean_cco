@@ -81,6 +81,16 @@ theorem originalCurrentToSelectedPoint_taggedColour_of_eq
   have hPres := Q.homogeneous.preserves_colours g (π ⟨i,x'⟩) (π ⟨j,y'⟩)
   exact ((congrArg₂ (taggedColour Q.source) hMoveX hMoveY).symm.trans hPres).symm
 
+/-- The true canonical selected representative maps to its SAME literal
+selected original-E point, on active and inactive sorts alike. -/
+theorem originalCurrentToSelectedPoint_representative
+    (q : Sigma (originalExactSelectedQuotientCurrentSource A B P transport base hBase E).Point) :
+    originalCurrentToSelectedPoint A B P transport base hBase E
+      (originalSelectedTaggedRepresentative A B P transport base hBase E q) = q := by
+  apply (originalSelectedGlobalEClassEquiv A B P transport base hBase E).injective
+  exact originalCurrentToSelectedPoint_globalE A B P transport base hBase E
+    (originalSelectedTaggedRepresentative A B P transport base hBase E q)
+
 variable {r : B.Sorts} (Kroot : Kernel B.source r)
 variable (phase : SourcePhase B.source B.homogeneous
   (exactCalculus_of_homogeneous_CCO B.source B.homogeneous B.cco) Kroot)

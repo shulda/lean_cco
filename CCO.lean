@@ -2189,3 +2189,13 @@ import CCO.CloneTupleGeometry.BoundaryExamples
 import CCO.CloneTupleGeometry.SelectedMIFamily
 import CCO.CloneTupleGeometry.SelectedFamilyQF
 import CCO.CloneTupleGeometry.InfinitePacketBoundary
+import CCO.ExactEPGeometry.ActualPhaseMaximalGate
+import CCO.ExactEPGeometry.OriginalRetainedActualSelectedGate
+import CCO.ExactEPGeometry.OriginalRetainedSuccessorToQuotientAge
+import CCO.ExactEPGeometry.OriginalRetainedSelectedSourceIso
+import CCO.ExactEPGeometry.NamedCurrentSourceIso
+import CCO.ExactEPGeometry.OriginalQuotientSafeHistory
+import CCO.ExactEPGeometry.OriginalQuotientTower
+import CCO.ExactEPGeometry.CodedCurrentSource
+import CCO.ExactEPGeometry.OriginalQuotientRootPredicates
+import CCO.ExactEPGeometry.OriginalCodedQuotientSafeHistory
