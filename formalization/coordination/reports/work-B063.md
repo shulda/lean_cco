@@ -416,3 +416,29 @@ modules, 35019 transitive allowlisted declarations. This new module is
 **not yet compiler-green** and demands a new exact full build/audit.
 Identity-gate/same-F assembly and complete strong-induction/core exports
 remain open, as does genuine independent full-source review.
+
+## C52–C58 outer ORIGINAL-diversity-rank induction candidate
+
+A new root module `CCO/AutomaticEPCore/OriginalRankInduction.lean`
+assembles the entire SOURCE separation induction from actual proved
+lemmas. Its only recursive premise is `ActualTowerSeparation` on
+**ALL genuinely smaller original-diversity-rank current sources**, not
+on the original source itself or a hypothetical supplied quotient tower.
+It constructs the literal initial selected full-exact quotient, uses
+`original_initial_selected_quotient_rank_lt`, and the proved C25
+separation return at the same prescribed source labels. If an actual
+identity gate occurs, it uses the proved least-positive FULL EXACT F;
+the same-F occupancy case uses the actual functional H_F action, while
+different F occupancies invoke the smaller genuine quotient source.
+Otherwise the proved full finite-gate meet selects a separating positive
+original gate. A Nat strong induction is first proved at the quotient's
+own universe v, then applied to every original atom universe w.
+Original SAP, quotient SAP, Ramsey, EP, invented quotient section and
+new proof axioms remain absent. Finite and zero-step source cases remain
+quantified. This is a **compiler candidate**, not yet a verified theorem
+or complete B063 submission. The predecessor full original C25 lift at
+`d37a0d2543877ec6e590e79835de6fda59c8a754` passed exact CI42270498831 (2320 root source modules,
+35021 transitive allowlisted declarations). This new head requires its
+own exact CI/audit and independent source review. Final table core,
+C60 scope/equations/source-map and all four source result exports are
+still separate obligations.
