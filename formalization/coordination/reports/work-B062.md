@@ -56,7 +56,7 @@ Validation of this source checkpoint:
   arbitrary-diagram iff and current/original atomic saturation:2802 jobs.
   Only ordinary style suggestions remain in the new finite-age wrappers.
 - `#print axioms` on all TWELVE new named theorems passed: each transitive
-  set is contained in propext/Classical.choice/Quot.sound.
+  set is contained in propext / Classical.choice / Quot.sound.
 - Frozen module metadata check PASS:14 definitions,112 claims,8 exports,
   12 tasks. Bounded finite controls PASS, including3158592 quotient phase
   functions and106896 nonempty trace products. These finite controls and
@@ -72,12 +72,10 @@ elaboration in the first new file. The current private targeted build also
 repairs the finite-age wrapper's iff/implication parentheses. This is routine
 implementation repair; no stronger source hypothesis was introduced.
 
-The tested concrete chart/palette output must next be connected to the exact new
-occupancy-selected quotient CurrentSource and the genuine retained C103 safe
-step. For discarded steps, E7 now gives the needed complete binary-block
-comparison, but the actual selected-source sort/point/colour isomorphism and
-its full-age consequence still need construction. Whole finite quotient
-tower/export C103–C105 remain OPEN; the already proved conditional selected
+The tested retained chart/palette output must next be connected to the exact
+new occupancy-selected quotient CurrentSource and the genuine retained C103
+safe step. The subsequent discarded source isomorphism/full-age construction
+is recorded below. Whole finite quotient tower/export C103–C105 remain OPEN; the already proved conditional selected
 quotient terminality must be applied only after that tower is built. No
 additional provider, quotient SAP, action section, source/toolchain change or
 mathematical premise has been added. B062 remains IN_PROGRESS / NOT SUBMITTED.
@@ -108,10 +106,155 @@ followed by accepted-main CI/docs-only merge
 No Lean sources or pins came from that infrastructure merge. Full exact-head
 remote root CI/audit and independent source/provider review are still pending.
 
-The remaining C103 task is to assemble the true selected quotient CurrentSource
-sort/point/colour equivalence and its full finite age, and the retained actual
-safe step; C104–C105 then require the actual quotient tower and terminal export.
-No conditional receiver is labelled as that source instance. IN_PROGRESS only.
+This atomic-block checkpoint supplies the genuine NEW input to the subsequent
+selected-source construction below. The retained actual safe step and the
+C104–C105 actual quotient tower/terminal export remain open. IN_PROGRESS only.
+
+## Subsequent tested C103 actual discarded source isomorphism / FULL age
+
+Five further root-imported modules now complete this DISCARDED source instance:
+
+- `OriginalSelectedGlobalAtomicBlock`: actual selected quotient colour equality
+  is exactly full global E-block membership at the fixed occupancy names.
+  Complete tagged colours explicitly retain BOTH owners. The seed-congruence
+  theorem proves independence of the realized seed representatives inside
+  their true global E-classes, including different current named parents;
+  its proof uses genuine current pair homogeneity and original-E invariance.
+- `OriginalPhaseSelectedPointEquiv`: canonical selected-point bijection via
+  literal global E-classes, with actual successor transport composed inside
+  the definition. Its discarded owner theorem proves this exact point map
+  lies over the actual occupancy-sort equivalence, not an invented renaming.
+- `OriginalDiscardedSelectedPalette`: preservation AND reflection of every
+  actual complete NEW selected quotient pair colour through that point map,
+  using the previous actual-new atomic-block theorem, seed congruence and
+  endpoint class congruence. Logical equality is retained throughout.
+- `NamedSourceIso`: restrict a tagged-point bijection to its precise fibres,
+  use the accepted realized-atom constructor for ALL diversity atom bijections,
+  and transfer whole induced diagrams in both directions. This generic helper
+  is immediately instantiated on the actual sources in the next file.
+- `OriginalDiscardedSelectedSourceIso`: `originalDiscardedSelectedAtomicIso`
+  is the genuine AtomicIso of the TRUE selected successor quotient with the
+  TRUE old selected quotient after reindexing by the PROVED occupancy sort
+  equivalence. No orbit, age, source, exactness or group-lift provider is
+  supplied by the caller. `originalDiscardedSelectedFullAge_iff` transfers
+  EVERY entire induced diagram in both directions, with its specified full
+  optional colours and injectivity into the actual old tagged carrier.
+  It applies to all finite vertex sets, including the empty diagram; this
+  is stronger than a local triangle test or one already-realized seed.
+
+Strongest actual discarded source target passed 2731 private pinned-Lake jobs.
+The combined retained arbitrary-diagram/current discarded source closure then
+passed 2811 jobs, covering all twelve new modules. Frozen metadata and diff
+checks also pass; the local cache guard covers the materialized target closure
+only, not the complete root build.
+All FIFTEEN new public theorem/definition transitive axiom sets are contained
+in propext / Classical.choice / Quot.sound (the basic fibre equivalence uses only
+propext/Quot.sound). Full new-head remote root CI/audit and independent review
+remain pending; root remains the sole publisher. The preceding seven-module
+checkpoint is immutable local `4c193e799b7c9cd1184e0a97ce813dc5a8f869b2`, tree
+`8945d0d2433a7b86ffd7dd6cda7a2504b9031b26`.
+
+OPEN next source target: assemble the ACTUAL retained quotient safe step. The
+corrected occupancy character already exists on its real reached quotient
+arrows; connect it to the complete selected quotient groupoid, use the proved
+C96 arbitrary mixed-diagram iff to identify the real next selected source,
+and discharge projected odd dominance/maximal-complement/largest-original-lift
+for that same prefix. Then build the whole retained/discarded quotient history
+and apply the actual terminal selected-quotient theorem. This report does not
+claim C103–C105 tower completion or submission.
+
+## Further tested C103 genuine retained SourcePhase
+
+The actual retained selected quotient now has a TRUE `SourcePhase`, without
+any additional phase, character, Reached, exactness or dominance provider:
+
+- `KernelArrowTransport`: literal endpoint-kernel equality transports ALL
+  Arrow values, preserving their actual relations, identity, composition and
+  all-original-exact dominance.
+- `OriginalRetainedSelectedReachedFunctor`: a fully faithful genuine functor
+  from the complete old reached-occupancy groupoid to the FULL actual selected
+  Reached groupoid. Its object function is the already proved entire bijection.
+- `CharacterObjectTransport`: strict inverse object transport uses only literal
+  equality arrows. The full supplied character is preserved on EVERY forward
+  Hom, so no arbitrary connecting-arrow choice introduces another coboundary.
+- `OriginalRetainedActualSelectedCharacter`: the corrected character is on
+  precisely the actual SourcePhase Reached type. The theorem identifies its
+  value on EVERY whole previous occupancy-arrow with the existing corrected
+  full character, not merely one selected odd loop.
+- `OriginalRetainedSelectedArrowDominance`: ALL genuinely larger full RAW
+  selected gate equivalences pull back to strictly larger old current gates;
+  actual local projection surjectivity proves strictness. Every dominant
+  whole old loop therefore projects to an actual dominant selected loop.
+- `OriginalRetainedActualSelectedPhase`: project the genuine old phase odd
+  at a real reached occupancy anchor, read character ONE, and transport the
+  actual nonidentity dominant loop to the actual selected root. Its complete
+  `SourcePhase` record uses EXACTLY the preceding corrected full character.
+
+Private strongest phase target passed2763 jobs. The combined phase / retained
+arbitrary actual-age iff / discarded full source-isomorphism union passed2823
+jobs. All17 new named declaration axiom checks pass within the standard
+propext / Classical.choice / Quot.sound allowlist. Public root imports include
+all six modules. Exact new-head full-root remote CI/audit and independent
+source/provider review remain pending; root is the sole publisher.
+
+The preceding actual-Reached checkpoint is local
+`071590766fd822cdb52a9405f286661fdd8ed50a`, tree
+`fb5b5540fea2f69020724aad6e16114c8355cf09`. This phase checkpoint is still
+IN_PROGRESS: connect its ACTUAL SourcePhase masks to the already proved C96
+complete corrected orbital masks, identify the actual marked successor with
+the retained original-E quotient successor using both finite ages and proper
+child occupancy names, then assemble the full retained/discarded quotient
+history and terminal source export C103–C105. No open tower is submitted.
+
+## Further tested complete NEW selected palette / actual masks / child names
+
+Four more public-root-imported modules connect the true phase and NEW palette:
+
+- `OriginalRetainedActualSelectedMasks`: the actual SourcePhase `validBit`
+  agrees with original full reachability on EVERY named parent; its complete
+  active `allows` mask is EXACTLY the corrected whole-Hom mask used in C96.
+  The converse quantifies over ALL actual selected arrows via full faithfulness.
+- `OriginalRetainedActualSelectedMixedAgeIff`: actual SourcePhase legality on
+  every mixed finite quotient tuple, active plus genuinely inactive, is
+  equivalent to the corrected active masks. Both directions are then composed
+  with the true C96 actual-next chart iff, including its complete NEW palette.
+- `OriginalPhaseSelectedPalette`: at ANY actual character step, the ENTIRE
+  selected NEW tagged-colour equality is precisely BOTH new occupancy names
+  and the complete actual OLD selected colour through the literal global-E
+  class bijection. This uses real E7 on fixed true children and internally
+  composed successor transport. Retained child labels are never erased, and
+  every actual pair, mixed type and logical equality is covered.
+- `OriginalRetainedOccupancyChildEquiv`: true sort equivalence between the
+  original-E occupancy quotient of the real old successor and actual child
+  sorts of the actual selected SourcePhase successor. The concrete map is
+  `(j,epsilon) -> ([j],epsilon+gamma_j)`, with the prescribed inactive zero.
+  Both equality/reflection and surjectivity use the actual corrected-offset
+  graph and inactive graph; the parent is proved to be the literal quotient
+  of the true unary reduct parent map.
+
+Actual child-map implementation author is
+`/root/b062_work/retained_child_names`; `/root/b062_work` reviewed the source,
+repaired two ordinary elaboration details and is the sole private builder.
+No shared-writer build or source/pin/API change occurred. The generic palette
+and the other three files are implemented by `/root/b062_work`.
+
+Private strongest combined target build passed2831 jobs, including all four
+new modules and existing retained arbitrary-age/discarded whole source-iso
+consumers. All23 new named declaration axiom checks PASS within allowlist3.
+Public imports, own cache guard and diff checks PASS. Full new-head remote
+root CI/audit and independent review remain pending. Prior exact SourcePhase
+checkpoint is local `403d9bcc44621206c3f648b4498dd1868ad309b2`, tree
+`f0fcd6836ef9c7bf2cb5b06dab11c45ba4098940`.
+
+The remaining retained source identification must compare TWO independently
+constructed canonical markings. The old global-E class point bijection need
+NOT preserve these markings. Next form a common actual owner/OLD-colour
+code using the proved child-sort equivalence and full palette, prove both
+finite ages using C96 and the true old marking descent, and apply accepted
+countable same-age/full-homogeneity back-and-forth. Only then obtain the true
+retained source AtomicIso, finish safe-step gate certificates and assemble the
+whole C103–C105 history/terminal export. These obligations remain OPEN;
+B062 remains IN_PROGRESS / NOT SUBMITTED.
 
 ## Ownership and preserved checkpoint
 
@@ -175,7 +318,7 @@ group-action section or stronger mathematical premise was introduced.
   subsequent 2798-job combined closure. All five new modules compiled without
   proof errors; only ordinary style suggestions occur in the chart proofs.
 - `#print axioms` was run on all SIX new named theorems; each transitive set
-  is contained in propext/Classical.choice/Quot.sound.
+  is contained in propext / Classical.choice / Quot.sound.
 - Frozen module checker passed:14 definitions,112 claims,8 exports,12 tasks;
   this validates metadata, not mathematical completion.
 - Local commit `834bc8d749c919c456c7e317cfacee1f8aee15be` (first four modules)
@@ -199,6 +342,47 @@ B062 remains IN_PROGRESS / PR draft. Next complete the compiled finite
 witness, then identify new quotient pair orbitals from old saturated
 orbital names plus complete new occupancy/phase labels, and prove both
 finite-age directions without quotient SAP or an action section.
+
+## Further tested C103 actual Reached / all-parent FULL bridge checkpoint
+
+Six additional public-root-imported modules identify ALL genuinely reached
+selected-source sorts and their actual gates, including arbitrary old parents:
+
+- `SelectedSortRawInclusion`: literal selected RAW words, including logical
+  identity and empty-word top, include into the actual full source with every
+  intermediate sort retained; no reverse sort-deletion exactness is asserted.
+- `OriginalSelectedFullExactPullback`: every actual selected FULL exact mixed
+  relation pulls back to a genuine old current RAW presentation at canonical
+  parents, then every complete Kernel and Bridge pulls back as well.
+- `SelectedRetypingExactPullback`: a real equivariant endpoint-bijection graph
+  is an actual full atom by transitivity and pair homogeneity. Composition
+  with these exact graphs gives the all-parent pullback; no source assumption
+  is added for this auxiliary calculus.
+- `OriginalSelectedParentPullback`: the true canonical selected local map on
+  ANY old parent is onto, and every actual selected FullExact/Kernel/Bridge
+  pulls back along these genuine local maps. Typed original quotient I10 and
+  the actual selected retyping are discharged inside these declarations.
+- `OriginalRetainedSelectedReached`: an actual projected selected object is
+  Reached iff its old named parent is Reached. The forward direction reflects
+  ANY complete selected bridge and identifies its actual pulled-back root
+  gate; the reverse projects a real full old connecting arrow.
+- `OriginalRetainedSelectedReachedEquiv`: an actual bijection between the
+  entire selected Reached type and old reached E-occupancy objects. Its gates
+  are proved equal to the true earlier selected anchor kernels by uniqueness
+  of complete bridge targets, so ALL Hom types can next be identified.
+
+The exact private union target build passed2817 jobs, including the existing
+retained arbitrary-diagram iff and discarded actual source-isomorphism/full-age
+targets. All22 new named declarations have transitive axiom sets contained in
+propext / Classical.choice / Quot.sound. No stronger mathematical premise,
+quotient SAP, group section, pin or toolchain change. Root remains sole publisher;
+new exact-head full-root CI/audit and independent review remain pending.
+
+This closes the previous actual-Reached coverage gap, but does not yet construct
+the actual retained SourcePhase: its corrected character must be transported
+to the now identified FULL actual groupoid, with the actual distinguished odd
+arrow and all-original-exact dominance. Retained actual safe-source/full-age
+identification and the complete C103–C105 quotient tower are still OPEN.
 
 ## Historical 5 November next palette checkpoint (now implemented above)
 
