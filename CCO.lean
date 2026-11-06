@@ -2002,3 +2002,5 @@ import CCO.CloneTupleGeometry.BoundaryExamples
 import CCO.CloneTupleGeometry.SelectedMIFamily
 import CCO.CloneTupleGeometry.SelectedFamilyQF
 import CCO.CloneTupleGeometry.InfinitePacketBoundary
+import CCO.HereditaryHiddenOrbits.ActualSource
+import CCO.HereditaryHiddenOrbits.Transfer
