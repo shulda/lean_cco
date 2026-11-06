@@ -1,7 +1,7 @@
 import CCO.TypedOrbitFrames.ActualPairwiseHelly
 import CCO.TypedOrbitFrames.OriginalFibreMotion
 import CCO.RawExact.CanonicalQuotients
-import CCO.UnaryFreshFrames.Quotient.Avoidance
+import CCO.AclOwners.Avoidance
 
 /-!
 # Source11 C34: one actual original action avoids all quotient lists
@@ -39,7 +39,8 @@ source's proved colour invariance, for any FULL original invariant kernel. -/
 /-- Once one real point of the class incidence fibre is fixed, one common
 representative avoids every finite forbidden list on finitely many unforced
 actual quotient outputs simultaneously. Even an empty coordinate list is
-allowed. This is a source instance of the accepted CCO-free fibre theorem. -/
+allowed. The single common motion uses only the accepted I14 finite-action
+avoidance theorem, not the separate I16 quotient-fibre provider. -/
 theorem original_actual_common_fibre_simultaneous_avoidance
     (H : HomogeneousSource S G)
     {i : ι} (hCover : OriginalAllFullCoversInfinite S (i := i))
@@ -56,20 +57,11 @@ theorem original_actual_common_fibre_simultaneous_avoidance
   letI : ∀ k : Fin n, MulAction G (Quotient (J k).val) :=
     fun k => originalColourEqQuotientAction S H (J k)
   let Q := Sigma (fun k : Fin n => Quotient (J k).val)
-  let p : X i → Quotient K.val := Quotient.mk K.val
-  let output : Fin n → (X i → Q) :=
-    fun k x => ⟨k, Quotient.mk (J k).val x⟩
-  let T : Set (X i → Q) := Set.range output
-  have hp : UnaryFreshFrames.Quotient.Equivariant (G := G) p := by
-    intro g x
-    rfl
-  have hT : ∀ f ∈ T, UnaryFreshFrames.Quotient.Equivariant (G := G) f := by
-    rintro f ⟨k,rfl⟩ g x
-    rfl
-  have hfinite : ((fun f : X i → Q => f x₀) '' T).Finite :=
-    (Set.finite_range output).image _
-  have hInfinite (k : Fin n) :
-      (UnaryFreshFrames.Quotient.FibreValues p (output k) (p x₀)).Infinite := by
+  let stabilizer := MulAction.stabilizer G (Quotient.mk K.val x₀)
+  let output : Fin n → Q := fun k => ⟨k, Quotient.mk (J k).val x₀⟩
+  let moving : Finset Q := Finset.univ.image output
+  have hOrbit (k : Fin n) :
+      (MulAction.orbit stabilizer (output k)).Infinite := by
     let C := {q : Quotient (J k).val //
       q ∈ originalJClassesWithinHClass S K (J k) x₀}
     letI : Infinite C :=
@@ -83,33 +75,35 @@ theorem original_actual_common_fibre_simultaneous_avoidance
     apply Set.infinite_of_injective_forall_mem hEmbed
     intro q
     obtain ⟨y,hy,hq⟩ := q.property
-    refine ⟨y, ?_, ?_⟩
-    · exact Quotient.sound (K.val.symm hy)
-    · exact congrArg (fun a : Quotient (J k).val => (⟨k,a⟩ : Q)) hq
+    obtain ⟨g,hg⟩ := S.original_sort_transitive_of_homogeneous H i x₀ y
+    have hFix : g ∈ stabilizer := by
+      change Quotient.mk K.val (g • x₀) = Quotient.mk K.val x₀
+      rw [hg]
+      exact Quotient.sound (K.val.symm hy)
+    refine ⟨⟨g,hFix⟩,?_⟩
+    change (⟨k,Quotient.mk (J k).val (g • x₀)⟩ : Q) = ⟨k,q.val⟩
+    rw [hg]
+    exact congrArg (fun a : Quotient (J k).val => (⟨k,a⟩ : Q)) hq
   let Z : Finset Q := Finset.univ.biUnion fun k =>
     (forbidden k).image (fun a => (⟨k,a⟩ : Q))
-  obtain ⟨x,hpx,hAvoid⟩ :=
-    UnaryFreshFrames.Quotient.common_fibre_avoidance
-      (G := G) (S.original_sort_transitive_of_homogeneous H i)
-      p hp T hT x₀ hfinite
-      (by rintro f ⟨k,rfl⟩ _; exact hInfinite k) Z
-  have hK : K x₀ x := K.val.symm (Quotient.exact hpx)
+  obtain ⟨g,hAvoid⟩ := AclOwners.finite_action_avoidance
+    (G := stabilizer) moving Z (by
+      intro q hq
+      obtain ⟨k,_,rfl⟩ := Finset.mem_image.mp hq
+      exact hOrbit k)
+  let x : X i := (g : G) • x₀
+  have hK : K x₀ x := K.val.symm (Quotient.exact g.property)
   have hx : x ∈ originalActualClassFibre S E c := by
     rw [original_actual_class_fibre_eq_full_meet_class S E c x₀ hx₀]
     exact hK
   refine ⟨x,hx,?_⟩
   intro k hk
-  have hKernel : ¬ UnaryFreshFrames.Quotient.KernelLe p (output k) := by
-    intro hle
-    apply hUnforced k
-    intro a b hab
-    have htag := hle a b (Quotient.sound hab)
-    have hq : Quotient.mk (J k).val a = Quotient.mk (J k).val b := by
-      simpa only [output, Q, Sigma.mk.injEq, heq_eq_eq, true_and] using htag
-    exact Quotient.exact hq
-  apply hAvoid (output k) ⟨k,rfl⟩ hKernel
-  exact Finset.mem_biUnion.mpr
-    ⟨k, Finset.mem_univ k, Finset.mem_image.mpr ⟨_,hk,rfl⟩⟩
+  have hMoving : output k ∈ moving :=
+    Finset.mem_image.mpr ⟨k,Finset.mem_univ k,rfl⟩
+  have hForbidden : (⟨k,Quotient.mk (J k).val x⟩ : Q) ∈ Z :=
+    Finset.mem_biUnion.mpr
+      ⟨k,Finset.mem_univ k,Finset.mem_image.mpr ⟨_,hk,rfl⟩⟩
+  exact hAvoid (output k) hMoving _ hForbidden rfl
 
 /-- Terminal source C34: genuine original exact-ball Helly supplies the one
 common real fibre, then the one-action theorem avoids all unforced lists.

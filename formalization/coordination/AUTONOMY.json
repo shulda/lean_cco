@@ -1,6 +1,6 @@
 {
   "protocol_version": 3,
-  "revision": 16,
+  "revision": 17,
   "state_branch": "coordination",
   "state_file": "formalization/coordination/STATE.json",
   "registered_projects": [
@@ -179,6 +179,22 @@
     },
     "work_control_20261106c": {
       "identity": "/root/work_control_20261106c",
+      "roles": [
+        "review",
+        "integrate"
+      ],
+      "historical_author_projects": []
+    },
+    "work_control_20261106d": {
+      "identity": "/root/b053_fresh_review",
+      "roles": [
+        "review",
+        "integrate"
+      ],
+      "historical_author_projects": []
+    },
+    "work_control_20261106e": {
+      "identity": "/root/b062_fresh_review",
       "roles": [
         "review",
         "integrate"
