@@ -1,0 +1,100 @@
+{
+  "request_blob_sha": "aee744ef5da0c8e490f9b3cef3b0c6fea7bddd20",
+  "request_path": "coordination/requests/root/20261106_b063_source_core_42272439790.json",
+  "coordination_parent": "85f75ea2944113222a086520b56b437088ce1d0b",
+  "main_sha": "8d009339dd8b8b7e4a1094d046bdc2ee565d2fd0",
+  "status": "applied",
+  "event": "checkpoint",
+  "package_id": "B063",
+  "effective_revision": 835,
+  "state_view": {
+    "authority": "coordination:formalization/coordination/STATE.json",
+    "state_blob_sha": "bc093accb19bb035e90066fb37796d66c4355e58",
+    "revision": 835,
+    "policy_revision": 17,
+    "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+    "execution_mode": "work",
+    "claims_paused": false,
+    "integration_lock": null,
+    "packages": {
+      "B056": {
+        "state": "IN_PROGRESS",
+        "owner_project_id": 3,
+        "author_actor_ids": [
+          "/root/b053_resume",
+          "/root/b062_resume",
+          "/root/b062_resume/orbital_pullback",
+          "/root/b062_resume/source_support",
+          "root"
+        ],
+        "original_author_project_ids": [
+          3
+        ],
+        "claim_revision": 818,
+        "base_main_sha": "8d009339dd8b8b7e4a1094d046bdc2ee565d2fd0",
+        "base_ci": {
+          "run_id": 42219796070,
+          "run_attempt": 1,
+          "head_sha": "8d009339dd8b8b7e4a1094d046bdc2ee565d2fd0",
+          "conclusion": "success",
+          "axiom_audit": "allowlist",
+          "job_id": 127898705697,
+          "tests": 187,
+          "declarations": 34189,
+          "source_modules": 2284,
+          "build_jobs": 4958
+        },
+        "head_sha": "9050f357867162971e7166580d7a594827f1adfe",
+        "pr_number": 82,
+        "observed_ci": {
+          "run_id": 42268605221,
+          "head_sha": "9050f357867162971e7166580d7a594827f1adfe",
+          "conclusion": "success",
+          "axiom_audit": "allowlist",
+          "source_modules": 2299,
+          "declarations": 34566
+        },
+        "checkpoint_revision": 831
+      },
+      "B063": {
+        "state": "IN_PROGRESS",
+        "owner_project_id": 3,
+        "author_actor_ids": [
+          "/root/b053_resume",
+          "/root/b053_resume/b063_boundary",
+          "/root/b053_resume/b063_functional",
+          "/root/b053_resume/b063_loopless",
+          "root"
+        ],
+        "original_author_project_ids": [
+          3
+        ],
+        "claim_revision": 798,
+        "base_main_sha": "17162bfc8bf4e707e84ad767b84b1f4a0518fc6b",
+        "base_ci": {
+          "run_id": 42207082705,
+          "run_attempt": 1,
+          "head_sha": "17162bfc8bf4e707e84ad767b84b1f4a0518fc6b",
+          "conclusion": "success",
+          "axiom_audit": "allowlist",
+          "job_id": 127856319033,
+          "tests": 187,
+          "declarations": 33534,
+          "source_modules": 2258,
+          "build_jobs": 4932
+        },
+        "head_sha": "2b8b37405628c7095ca7521130f27faea5e9be22",
+        "pr_number": 80,
+        "observed_ci": {
+          "run_id": 42272439790,
+          "head_sha": "2b8b37405628c7095ca7521130f27faea5e9be22",
+          "conclusion": "success",
+          "axiom_audit": "allowlist",
+          "source_modules": 2322,
+          "declarations": 35026
+        },
+        "checkpoint_revision": 835
+      }
+    }
+  }
+}
