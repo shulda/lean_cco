@@ -32,12 +32,16 @@ abbrev RowState (i : ι) := Σ j : ι, {P : S.Menu i j // P.Nonempty}
 abbrev State := Σ i : ι, RowState S i
 
 instance rowState_finite (i : ι) : Finite (RowState S i) := by
+  classical
   letI : Fintype ι := S.finiteSort
   letI (j : ι) : Fintype (S.Atom i j) := S.finiteAtom i j
+  letI (j : ι) : Fintype (S.Menu i j) := Fintype.ofFinite _
   infer_instance
 
 instance state_finite : Finite (State S) := by
+  classical
   letI : Fintype ι := S.finiteSort
+  letI (i : ι) : Fintype (RowState S i) := Fintype.ofFinite _
   infer_instance
 
 def Step {i : ι} (p q : RowState S i) : Prop :=
@@ -64,7 +68,7 @@ theorem trace_length {i j : ι} (word : PositiveWord S i j) :
   | cons a rest ih => simp only [trace,List.length_cons,List.length_map,length,ih]
 
 theorem trace_ne_nil {i j : ι} (word : PositiveWord S i j) : trace S H sap word ≠ [] := by
-  cases word <;> simp only [trace,List.cons_ne_self,List.cons_ne_nil,not_false_eq_true]
+  cases word <;> simp [trace]
 
 theorem step_shift {i j : ι} (a : S.Atom i j) {p q : RowState S j}
     (h : Step S p q) : Step S (shift S H sap a p) (shift S H sap a q) := by
@@ -93,8 +97,11 @@ theorem trace_last {i j : ι} (word : PositiveWord S i j) :
   | single a => rfl
   | cons a rest ih =>
     change (singletonState S a :: (trace S H sap rest).map (shift S H sap a)).getLast? = _
-    rw [List.getLast?_cons_of_ne_nil (by simpa only [List.map_eq_nil_iff] using trace_ne_nil S H sap rest),
-      List.getLast?_map,ih]
+    have hMap : (trace S H sap rest).map (shift S H sap a) ≠ [] := by
+      cases hTrace : trace S H sap rest with
+      | nil => exact False.elim (trace_ne_nil S H sap rest hTrace)
+      | cons b bs => simp
+    rw [List.getLast?_cons_of_ne_nil hMap, List.getLast?_map,ih]
     rfl
 
 theorem trace_first {i j : ι} (word : PositiveWord S i j) :
@@ -105,6 +112,8 @@ theorem trace_first {i j : ι} (word : PositiveWord S i j) :
 
 /-- Reconstruct an actual positive word along a directed profile trace.
 The starting word is retained, so even a zero-step suffix stays positive. -/
+include H sap
+
 theorem realise_chain {i : ι} (target : RowState S i) (tail : List (RowState S i)) :
     ∀ (p : RowState S i) (word : PositiveWord S i p.1),
       PositiveWord.profile S word = p.2.val →
@@ -116,7 +125,7 @@ theorem realise_chain {i : ι} (target : RowState S i) (tail : List (RowState S 
     intro p word hWord hChain hLast
     have he : p = target := Option.some.inj hLast
     cases he
-    exact ⟨word,hWord,by omega⟩
+    exact ⟨word,hWord,by simp⟩
   | cons q tail ih =>
     intro p word hWord hChain hLast
     obtain ⟨a,ha⟩ := (List.isChain_cons_cons.mp hChain).1

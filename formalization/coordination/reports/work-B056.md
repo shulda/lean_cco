@@ -102,3 +102,21 @@ snapshots until explicitly built. The G1CCO module at parent
 `c47352119eb147aa556cbedee9a094a615ca3e7c` is already verified by
 run 42247156680 / job 127992264482, root 2297 source modules, transitive
 audit 34507 allowlisted declarations. This subsequent head requires its OWN CI.
+
+## Exact compiler feedback / targeted repairs for TypedPrefixStates
+
+Run [42247788408](https://github.com/shulda/lean_cco/actions/runs/42247788408)
+on public head `6cb40a85c7d9cf5f69ad0c70e82704b218e52885` FAILED during the fresh actual Lean build of
+`TypedPrefixStates`. This does not alter the prior GREEN G1CCO source at
+`c47352119eb147aa556cbedee9a094a615ca3e7c`.
+Compiler locations 37/41 were missing explicit finite powerset/menu instance
+search; 66 was a list-nonempty simplification; 96 was missing the mapped
+nonempty fact; 119 was an unnecessary omega use for an empty suffix;
+125/146 omitted the existing original HomogeneousSource/AgeSAP section
+variables from theorem signatures. The new patch addresses only these
+seven proof/elaboration duties with explicit local finite instances,
+list case analysis, definitional simplification and `include H sap`.
+No new mathematical hypothesis is introduced (H/sap were already the actual
+source assumptions throughout the section), and the next public CI must
+verify the repaired exact head. The previous failed head remains recoverable
+in Git ancestry.
