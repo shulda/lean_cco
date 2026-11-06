@@ -4,7 +4,7 @@ Actual implementer: `/root/b062_work`; publisher/coordinator: `root`, project 3.
 Worktree: `/workspace/scratch/e67502cd723c/work-b062`.
 Original branch/PR: `chat/chat-2/B062`, PR 68. Original Chat authorship is retained.
 
-## Current 6 November continuation — uncompiled WIP
+## Current 6 November continuation — tested source checkpoint
 
 Same actual implementer `/root/b062_work`; no new or renamed author.
 Root reports live STATE750, Work/project3 ownership. After the transient
@@ -14,7 +14,8 @@ lemma and all prior proofs, and merged accepted main `1c6b21e6` (policy and
 reports only) as local `381fe32e`. The earlier public history is preserved.
 This continuation does not modify STATE or publish its own branch.
 
-The next source C96 seam now has four new WIP modules, all root imported:
+The C96 seam and its E7 prerequisite now have SIX new public modules, all
+root imported:
 
 - `OriginalRetainedActualNextSaturatedColour`: actual fixed-child E-witness
   lifting; the precise NEW saturated optional-atom block equals the OLD
@@ -35,22 +36,82 @@ The next source C96 seam now has four new WIP modules, all root imported:
   legality plus corrected masks are equivalent to a realized tuple with a
   true next chart. Forward uses the actual old quotient triangle-age theorem;
   reverse uses actual chart legality and constancy on each real old orbital.
+- `OriginalRealizedAtomicSaturation`: source E7, with two actual (TP)
+  applications. The nonempty input traces and the intermediate convolution
+  trace are witnessed by the displayed realized current pair and reflexive
+  exact endpoints. Both endpoint equivalences are actual original full
+  RAW-exact equivalences; the optional diagonal is retained.
+- `OriginalCurrentAtomicSaturation`: specialize that calculation to the
+  actual single-original-E relation, including its real parent casts.
+  On arbitrary current endpoints every genuinely realized current atomic
+  block is exactly its two current occupancies plus its ORIGINAL saturated
+  atom. This discharges the E7 comparison explicitly left separate in
+  `OriginalOccupancyOrbitals`; no arbitrary atom is assumed to occur.
 
-Status at this immutable WIP publication: `git diff --check` passes. Private
-dependency copies and the exact restored Lean4.34.1 compiler are in place;
-the targeted cold build is still compiling the accepted prerequisite closure.
-NONE of the four new modules has yet been kernel checked at this point.
-No new exact-head green/audit, independent review or package submission is
-claimed. Root is the sole publisher and may start warm remote CI on this WIP.
-The earlier tested sections below remain historical validation of their
-precise old checkpoints only.
+Validation of this source checkpoint:
 
-The C96 theorems still need successful compilation and source/provider review.
-Their concrete chart/palette output must then be connected to the exact new
+- Private exact Lean4.34.1, unchanged manifest/provider pins. Stable dependencies
+  were privately copied; no shared writable outputs or sibling sources.
+- All SIX new modules passed `lake --rehash build` targeting the strongest
+  arbitrary-diagram iff and current/original atomic saturation:2802 jobs.
+  Only ordinary style suggestions remain in the new finite-age wrappers.
+- `#print axioms` on all TWELVE new named theorems passed: each transitive
+  set is contained in propext/Classical.choice/Quot.sound.
+- Frozen module metadata check PASS:14 definitions,112 claims,8 exports,
+  12 tasks. Bounded finite controls PASS, including3158592 quotient phase
+  functions and106896 nonempty trace products. These finite controls and
+  metadata do not certify the unbounded source theorem.
+- `git diff --check` PASS. Full new-head remote root CI/audit and independent
+  source/provider review remain pending. Root is the sole publisher.
+
+The initial UNCOMPILED WIP local `67dc90d67fdca8236f65cd985d1b73b993bde4b4`
+was published by root as `9c14fe74fc8c18c566980924cb760e7d13f2f317`, exact
+tree `d1a97b54c4188adb3abd4538bb1a77b8f5a1420b`. Its remote compile failure
+matches the subsequently repaired proof-only binders and dependent sigma
+elaboration in the first new file. The current private targeted build also
+repairs the finite-age wrapper's iff/implication parentheses. This is routine
+implementation repair; no stronger source hypothesis was introduced.
+
+The tested concrete chart/palette output must next be connected to the exact new
 occupancy-selected quotient CurrentSource and the genuine retained C103 safe
-step. Discarded full-age comparison, whole finite tower and terminal source
-exports C103–C105 remain OPEN. No additional provider, quotient SAP, action
-section, source/toolchain change or mathematical premise has been added.
+step. For discarded steps, E7 now gives the needed complete binary-block
+comparison, but the actual selected-source sort/point/colour isomorphism and
+its full-age consequence still need construction. Whole finite quotient
+tower/export C103–C105 remain OPEN; the already proved conditional selected
+quotient terminality must be applied only after that tower is built. No
+additional provider, quotient SAP, action section, source/toolchain change or
+mathematical premise has been added. B062 remains IN_PROGRESS / NOT SUBMITTED.
+
+## Subsequent tested C103 discarded NEW-palette checkpoint
+
+`OriginalActualNextAtomicSaturation` is now root imported and kernel checked.
+Its FIVE theorems prove, with no additional source provider:
+
+- At any true SingleStep and every genuinely realized next atom, fixed-child
+  saturation equals its OLD projected atom saturation. Both current-to-original
+  E7 instances use the internally composed exact transport and trace product.
+- When E is discarded, its class meets a chosen actual child exactly when
+  its old class meets that child's parent. The existing actual classwise
+  opposite-child theorem supplies the reverse witness.
+- On ALL actual next endpoints, every genuinely realized NEW atomic block is
+  exactly the pulled-back OLD projected block. This also holds on the literal
+  global E-class quotients through the actual reduct class equivalence.
+- Conversely EVERY OLD atomic block is hit by an actual NEW pair via the
+  real whole-reduct bijection. Thus both palette directions are covered,
+  including logical identity; this is not merely an old predicate table.
+
+The new module passed the private exact `lake --rehash build`:2721 jobs.
+All FIVE new theorem axiom sets are within the standard three-axiom allowlist.
+The preceding six-module checkpoint is local `da6aa8d8a1fc9d8dc8eca36d659fb287b9da203a`,
+followed by accepted-main CI/docs-only merge
+`eae2328c3c59e3d4d4c287dfec6d8acee8977a5c` (second parent `c7a6d326`).
+No Lean sources or pins came from that infrastructure merge. Full exact-head
+remote root CI/audit and independent source/provider review are still pending.
+
+The remaining C103 task is to assemble the true selected quotient CurrentSource
+sort/point/colour equivalence and its full finite age, and the retained actual
+safe step; C104–C105 then require the actual quotient tower and terminal export.
+No conditional receiver is labelled as that source instance. IN_PROGRESS only.
 
 ## Ownership and preserved checkpoint
 
@@ -139,7 +200,7 @@ witness, then identify new quotient pair orbitals from old saturated
 orbital names plus complete new occupancy/phase labels, and prove both
 finite-age directions without quotient SAP or an action section.
 
-## Exact next palette checkpoint
+## Historical 5 November next palette checkpoint (now implemented above)
 
 Let N be the TRUE `SingleStep.successor B phase` and R its literal unary
 projection to B. At a RETAINED E≤G step, fix actual child sorts c,d of N,
@@ -162,5 +223,6 @@ classification, not a group section. Whole selected new occupancy labels,
 exhaustiveness of its complete palette, BOTH finite-age directions and the
 source C103–C105 tower still need their exact subsequent proofs.
 
-Coordinator requested a coherent migration checkpoint here. No further
-palette implementation was started; these notes record the next target.
+Coordinator requested a coherent migration checkpoint there. The 6 November
+continuation above implements and tests this target; safe-source integration
+and the whole quotient tower remain the exact next obligations.

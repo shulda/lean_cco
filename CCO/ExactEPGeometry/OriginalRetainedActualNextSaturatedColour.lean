@@ -38,6 +38,8 @@ variable (E : ExactEq A.source (P.parent r))
 variable (hE : E ≤ PrefixExactLargestLift.largest A B P transport tp r
   (current_kernel_exact_eq B Kroot))
 
+include transport tp hE
+
 /-- EVERY old E-witness in the same parent as an actual child point lifts
 to that SAME actual child, with its literal old point unchanged. This is
 the restriction of the true reduct bijection to the prescribed E-class. -/
@@ -90,11 +92,11 @@ theorem originalRetainedActualNextSaturatedColour_iff
     subst i
     subst j
     have hAtom : N.source.colour u v = a := by
-      simpa only [taggedColour,Sigma.mk.injEq,heq_eq_eq,true_and] using hColour
+      exact eq_of_heq (Sigma.mk.inj (eq_of_heq (Sigma.mk.inj hColour).2)).2
     refine ⟨R.project ⟨c,u⟩,R.project ⟨d,v⟩,hxu,?_,hvy⟩
-    change (⟨c.1,d.1,B.source.colour (R.point c u) (R.point d v)⟩ :
-      Age.Colour B.source) = _
-    rw [R.colour c d u v,hAtom]
+    exact congrArg (fun b =>
+      (⟨R.parent c,R.parent d,b⟩ : Age.Colour B.source))
+      ((R.colour c d u v).trans (congrArg (Option.map (R.atom c d)) hAtom))
   · rintro ⟨⟨i,u⟩,⟨j,v⟩,hxu,hColour,hvy⟩
     have hi : i = c.1 := congrArg Sigma.fst hColour
     have hj : j = d.1 :=
@@ -106,7 +108,7 @@ theorem originalRetainedActualNextSaturatedColour_iff
     obtain ⟨vv,hvv⟩ := originalRetainedActualChild_lift_E_witness
       A B P transport tp hOne Kroot phase E hE d y v (T.symm hvy)
     have hAtom : B.source.colour u v = a.map (R.atom c d) := by
-      simpa only [taggedColour,Sigma.mk.injEq,heq_eq_eq,true_and] using hColour
+      exact eq_of_heq (Sigma.mk.inj (eq_of_heq (Sigma.mk.inj hColour).2)).2
     have hNew : N.source.colour uu vv = a := by
       apply Option.map_injective (R.atom_injective c d)
       rw [← R.colour c d uu vv,huu,hvv]
@@ -148,6 +150,8 @@ theorem originalRetainedActualNextSaturatedColour_factorization
   let Dnew := fun u v : Sigma N.Point => taggedColour N.source u v = ⟨c,d,a⟩
   let Dold := fun u v : Sigma B.Point =>
     taggedColour B.source u v = ⟨c.1,d.1,a.map (R.atom c d)⟩
+  have hPull (u v : Sigma N.Point) : S.r u v ↔ T.r (R.project u) (R.project v) :=
+    Iff.rfl
   change setoidSaturation S Dnew p q ↔
     (∃ x : N.Point c, S.r p ⟨c,x⟩) ∧
     (∃ y : N.Point d, S.r q ⟨d,y⟩) ∧
@@ -163,9 +167,11 @@ theorem originalRetainedActualNextSaturatedColour_factorization
     have hOld := (originalRetainedActualNextSaturatedColour_iff
       A B P transport tp hOne Kroot phase E hE c d a x y).mp hFixed
     exact ⟨⟨x,hpx⟩,⟨y,S.symm hyq⟩,
-      (setoidSaturation_congr T Dold hpx (S.symm hyq)).mpr hOld⟩
+      (setoidSaturation_congr T Dold
+        ((hPull _ _).mp hpx) ((hPull _ _).mp (S.symm hyq))).mpr hOld⟩
   · rintro ⟨⟨x,hpx⟩,⟨y,hqy⟩,hOld⟩
-    have hOldFixed := (setoidSaturation_congr T Dold hpx hqy).mp hOld
+    have hOldFixed := (setoidSaturation_congr T Dold
+      ((hPull _ _).mp hpx) ((hPull _ _).mp hqy)).mp hOld
     have hFixed := (originalRetainedActualNextSaturatedColour_iff
       A B P transport tp hOne Kroot phase E hE c d a x y).mpr hOldFixed
     exact (setoidSaturation_congr S Dnew hpx hqy).mpr hFixed
@@ -202,6 +208,7 @@ theorem originalRetainedActualNextQuotientAtomicBlock_iff
   let Dnew := fun u v : Sigma N.Point => taggedColour N.source u v = ⟨c,d,a⟩
   let Dold := fun u v : Sigma B.Point =>
     taggedColour B.source u v = ⟨c.1,d.1,a.map (R.atom c d)⟩
+  dsimp only
   intro q s
   induction q using Quotient.inductionOn with
   | _ p =>

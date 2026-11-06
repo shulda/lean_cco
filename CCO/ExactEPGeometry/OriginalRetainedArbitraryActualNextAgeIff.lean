@@ -92,7 +92,7 @@ theorem originalRetainedArbitraryMixedDiagram_iff_actualNextAge
         (⟨sort v,x⟩ : Sigma Q.Point) ≠ (⟨sort w,y⟩ : Sigma Q.Point)) →
       (∀ j : Fin m, ¬Nonempty (Bridge B.source Kroot
         (originalOccupancyRepresentative A B P base hBase E (inactiveSort j)))) →
-      ((∀ v w z : Sum (Fin n) (Fin m), ∃ x y q,
+      (((∀ v w z : Sum (Fin n) (Fin m), ∃ x y q,
           rel v w x y ∧ rel v z x q ∧ rel w z y q) ∧
         (∀ i j : Fin n, ∀ x y, rel (Sum.inl i) (Sum.inl j) x y →
           originalSelectedCompleteAtomicMask Q (K (owners i)) (K (owners j))
@@ -111,7 +111,7 @@ theorem originalRetainedArbitraryMixedDiagram_iff_actualNextAge
         let allBits : Sum (Fin n) (Fin m) → ZMod 2 := fun v =>
           match v with | Sum.inl i => bits i | Sum.inr _ => 0
         Nonempty (OriginalActualNextQuotientChart
-          A B P base hBase E Kroot phase old allBits) := by
+          A B P base hBase E Kroot phase old allBits)) := by
   let base := P.parent r
   let hBase : ∀ i : A.Sorts, base = i := fun i => hOne base i
   let Occ := OriginalReachedOccupancy A B P base hBase E Kroot

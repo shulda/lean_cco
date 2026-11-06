@@ -72,11 +72,16 @@ theorem OriginalActualNextQuotientChart.oldLegal
     constructor
     · intro v
       have h := hMark.1 (R.project (C.point v))
-      rw [hBits] at h
+      change phase.masks.validBit (R.project (C.point v)).1
+        (mark (R.project (C.point v))) at h
+      rw [hBits v] at h
       exact h
     · intro v w
       have h := hMark.2 (R.project (C.point v)) (R.project (C.point w))
-      rw [hBits,hBits] at h
+      change phase.masks.allowed
+        (B.source.colour (R.project (C.point v)).2 (R.project (C.point w)).2)
+        (mark (R.project (C.point v))) (mark (R.project (C.point w))) at h
+      rw [hBits v,hBits w] at h
       exact h
   exact Age.legal_of_names B.source phase.masks hLegal
     (fun v w => (C.fine v w).symm)
