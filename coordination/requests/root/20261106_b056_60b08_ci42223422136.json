@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "request_id": "20261106_b056_60b08_ci42223422136",
+  "actor_id": "root",
+  "project_id": 3,
+  "policy_revision": 17,
+  "operation": "event",
+  "expected_revision": 824,
+  "event": "checkpoint",
+  "data": {
+    "package_id": "B056",
+    "head_sha": "60b08ba7b4e9c00a150dda978a3fb852aaa23c1d",
+    "pr_number": 82,
+    "observed_ci": {
+      "run_id": 42223422136,
+      "head_sha": "60b08ba7b4e9c00a150dda978a3fb852aaa23c1d",
+      "conclusion": "success",
+      "axiom_audit": "allowlist"
+    }
+  }
+}
