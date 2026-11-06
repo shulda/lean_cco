@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 806,
+  "revision": 807,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -4952,6 +4952,7 @@
       "state": "IN_PROGRESS",
       "owner_project_id": 3,
       "author_actor_ids": [
+        "/root/b062_resume",
         "root"
       ],
       "original_author_project_ids": [
@@ -25199,6 +25200,21 @@
           "source_modules": 2263,
           "build_jobs": 4937
         }
+      }
+    },
+    {
+      "revision": 807,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "record_authorship",
+      "package_id": "B055",
+      "details": {
+        "actor_id": "root",
+        "package_id": "B055",
+        "author_actor_ids": [
+          "/root/b062_resume"
+        ],
+        "reason": "Actual dedicated continuing implementer /root/b062_resume starts newly dependency-ready B055 in separate worktree/work-B055 branch and isolated build outputs after B054 accepted at STATE805. It reads actual source/provider contracts and records recoverable proof/report checkpoints. Root sole publisher; actor is author and never B055 reviewer."
       }
     }
   ],
