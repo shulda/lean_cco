@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 765,
+  "revision": 768,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -4778,19 +4778,19 @@
         "declarations": 30216,
         "source_modules": 1842
       },
-      "head_sha": "304537281d9272f071ed1eedd363196a184572f9",
+      "head_sha": "12bcd9e71f4a9460b3d492e7aa72cd00a95d9728",
       "pr_number": 73,
       "observed_ci": {
-        "run_id": 42174628546,
+        "run_id": 42181278004,
         "run_attempt": 1,
-        "head_sha": "304537281d9272f071ed1eedd363196a184572f9",
+        "head_sha": "12bcd9e71f4a9460b3d492e7aa72cd00a95d9728",
         "conclusion": "success",
         "axiom_audit": "allowlist",
-        "job_id": 127750142909,
-        "declarations": 30627,
-        "source_modules": 1892
+        "job_id": 127771243001,
+        "declarations": 30814,
+        "source_modules": 1916
       },
-      "checkpoint_revision": 761,
+      "checkpoint_revision": 766,
       "handover_history": [
         {
           "revision": 739,
@@ -4863,7 +4863,7 @@
       "owner_project_id": null
     },
     "B060": {
-      "state": "INTEGRATING",
+      "state": "ACCEPTED",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b060_work",
@@ -4967,6 +4967,17 @@
           "report_path": "formalization/coordination/reviews/B060-complete-20261106.md"
         },
         "summary": "I, actual registered nonauthor /root/work_control_20261105b, approve complete B060 at exact public head9d6302214b8ed7ae575fbc5f1e299c941630bbd7/tree4419b9adda2757189518dd04c876bdda1bfce0d1 after personally reading all58 production modules, the full pinned original proof/N01-N10, all76 claims/12definitions/9tasks and actual accepted provider signatures, discharges and complete consumer usage. The actual safe character source/history, SAME reasonable owner embedding, infinite children and FULL terminal indices, represented proper FULL MI coordinates, arbitrary fixed distinct meet-K families, tagged QF domains and ONE-whole-hidden-member reconstruction are proved without stronger source premises. Generic STRONG distribution remains independent; RAW equality and clone diversity stay separate. N09 covers EVERY finite marked base including empty; the optional ORIGINAL-F-MI genericC19/directC07 branch, actual chosen singletonK whole consumer and infinite homogeneous unsplit V4 boundary are complete and fenced from all main exports. My prior F1/F2 findings are closed by actual code and receiving use, not report claims. I verified the public delta adds only my own verbatim report to reviewed05d5, preserves all source/pins/history, and passes the complete diff check. I personally fetched successful exact-head CI42179500243/job127765567635:187tests,4574full-rootjobs,1900current modules, complete pre/post EPPA269 and Ramsey106 exact-pin guards,31221transitiveCCO declarations within only propext/Classical.choice/Quot.sound. Actual CIcheckout949dc5c6 has the identical whole reviewed tree. I independently verified effective STATE759 own review lease and replayed757-to758-to759 exactly; all other package records/authorship and accepted dependencies are preserved. This is my own exact-SHA whole-package approval; any head change requires renewed personal review/CI, and actual resulting-main CI/audit remains required before ACCEPTED."
+      },
+      "accepted_commit": "f330bd43e796eba2e7b1f8104bc1a6282719b08d",
+      "main_ci": {
+        "run_id": 42181392775,
+        "run_attempt": 1,
+        "head_sha": "f330bd43e796eba2e7b1f8104bc1a6282719b08d",
+        "conclusion": "success",
+        "axiom_audit": "allowlist",
+        "job_id": 127771592292,
+        "declarations": 31221,
+        "source_modules": 1900
       }
     },
     "B061": {
@@ -4999,19 +5010,19 @@
         "declarations": 28723,
         "source_modules": 1619
       },
-      "head_sha": "71d7c639940536f370ad4ab44fa8a208e2a9db2b",
+      "head_sha": "f00eaad3d567070140dc7da00018a999d064ed5e",
       "pr_number": 68,
       "observed_ci": {
-        "run_id": 42174647581,
+        "run_id": 42181282996,
         "run_attempt": 1,
-        "head_sha": "71d7c639940536f370ad4ab44fa8a208e2a9db2b",
+        "head_sha": "f00eaad3d567070140dc7da00018a999d064ed5e",
         "conclusion": "success",
         "axiom_audit": "allowlist",
-        "job_id": 127750203963,
-        "declarations": 31373,
-        "source_modules": 2082
+        "job_id": 127771256447,
+        "declarations": 31524,
+        "source_modules": 2103
       },
-      "checkpoint_revision": 762,
+      "checkpoint_revision": 767,
       "handover_history": [
         {
           "revision": 739,
@@ -5068,13 +5079,7 @@
       "owner_project_id": null
     }
   },
-  "integration_lock": {
-    "kind": "package",
-    "package_id": "B060",
-    "actor_id": "root",
-    "base_main_sha": "c7a6d3265a2f3bc75a28c777ce28b62071506d40",
-    "head_sha": "9d6302214b8ed7ae575fbc5f1e299c941630bbd7"
-  },
+  "integration_lock": null,
   "history": [
     {
       "revision": 1,
@@ -23997,6 +24002,77 @@
           "/root/b062_work/retained_tower"
         ],
         "reason": "Actual helper reads pinned C103-C105 and accepted APIs for implementation interface planning, then owns only disjoint new safe-step/tower modules; no compiler or publishing. This actual design/code contributor cannot review B062."
+      }
+    },
+    {
+      "revision": 766,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "checkpoint",
+      "package_id": "B053",
+      "details": {
+        "actor_id": "root",
+        "package_id": "B053",
+        "head_sha": "12bcd9e71f4a9460b3d492e7aa72cd00a95d9728",
+        "pr_number": 73,
+        "observed_ci": {
+          "run_id": 42181278004,
+          "run_attempt": 1,
+          "head_sha": "12bcd9e71f4a9460b3d492e7aa72cd00a95d9728",
+          "conclusion": "success",
+          "axiom_audit": "allowlist",
+          "job_id": 127771243001,
+          "declarations": 30814,
+          "source_modules": 1916
+        },
+        "summary": "Actual T01-T06 coherent source checkpoint exact tree7a3, full4590jobs; T07 boundary code continues separately. Whole batch not submitted."
+      }
+    },
+    {
+      "revision": 767,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "checkpoint",
+      "package_id": "B062",
+      "details": {
+        "actor_id": "root",
+        "package_id": "B062",
+        "head_sha": "f00eaad3d567070140dc7da00018a999d064ed5e",
+        "pr_number": 68,
+        "observed_ci": {
+          "run_id": 42181282996,
+          "run_attempt": 1,
+          "head_sha": "f00eaad3d567070140dc7da00018a999d064ed5e",
+          "conclusion": "success",
+          "axiom_audit": "allowlist",
+          "job_id": 127771256447,
+          "declarations": 31524,
+          "source_modules": 2103
+        },
+        "summary": "Actual discarded sourceiso, full retained character/masks/palette and childsort checkpoint, full4777jobs. Retained actual sourceiso and whole safe tower remain open."
+      }
+    },
+    {
+      "revision": 768,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "accept",
+      "package_id": "B060",
+      "details": {
+        "actor_id": "root",
+        "package_id": "B060",
+        "integration_commit": "f330bd43e796eba2e7b1f8104bc1a6282719b08d",
+        "main_ci": {
+          "run_id": 42181392775,
+          "run_attempt": 1,
+          "head_sha": "f330bd43e796eba2e7b1f8104bc1a6282719b08d",
+          "conclusion": "success",
+          "axiom_audit": "allowlist",
+          "job_id": 127771592292,
+          "declarations": 31221,
+          "source_modules": 1900
+        },
+        "summary": "Actual resulting-main full4574jobs,1900/269/106 complete pin guards before/after audit31221 standard axioms only. Exact approved whole tree4419 preserved in merge f330; original history and source contracts retained."
       }
     }
   ],
