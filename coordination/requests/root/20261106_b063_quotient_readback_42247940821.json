@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "request_id": "20261106_b063_quotient_readback_42247940821",
+  "actor_id": "root",
+  "project_id": 3,
+  "policy_revision": 17,
+  "operation": "event",
+  "expected_revision": 826,
+  "event": "checkpoint",
+  "data": {
+    "package_id": "B063",
+    "head_sha": "8336d7e6c10c7fbde234cdf98b3c23fa58ce6dda",
+    "pr_number": 80,
+    "observed_ci": {
+      "run_id": 42247940821,
+      "head_sha": "8336d7e6c10c7fbde234cdf98b3c23fa58ce6dda",
+      "conclusion": "success",
+      "axiom_audit": "allowlist",
+      "source_modules": 2316,
+      "declarations": 35016
+    }
+  }
+}
