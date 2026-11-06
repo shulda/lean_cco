@@ -442,3 +442,22 @@ or complete B063 submission. The predecessor full original C25 lift at
 own exact CI/audit and independent source review. Final table core,
 C60 scope/equations/source-map and all four source result exports are
 still separate obligations.
+
+## Original terminal old-atom table finite core — compiler candidate
+
+`CCO/AutomaticEPCore/SourceCore.lean` receives the full ORIGINAL-rank
+separation theorem from `OriginalRankInduction` and the independently
+proved FULL terminal bipartite-looplessness. The actual final source
+Terminal (no finite strict FULL invariant interval) discharges each
+`FullCoverTerminal`, with Top covers and finite source cases included.
+The genuine finite old-atom name table, WITHOUT predicates naming each
+new terminal label, then satisfies the proved finite-table core lemma:
+EVERY endomorphism preserving original atom predicates is bijective and
+reflects the entire old binary table. No quotient SAP, stronger source,
+new axiom, hypothetical external core result, or false infinite
+surjectivity is used. This is still a fresh compiler candidate and a
+**partial** B063 source export until precise API/source/equation scope
+and independent whole-package review are checked.
+The preceding complete ORIGINAL-diversity separation proof at
+`b13e2c5de37a397792ce8b358cf2e8db321af29b` has exact green CI42271626481 (2321 source modules,
+35024 standard-allowlist declarations, STATE checkpoint requested).
