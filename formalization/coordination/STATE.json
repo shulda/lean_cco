@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 774,
+  "revision": 775,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -4754,7 +4754,7 @@
       }
     },
     "B053": {
-      "state": "REVIEWING",
+      "state": "CHANGES_REQUESTED",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b053_work",
@@ -4860,7 +4860,8 @@
           "non_author": true,
           "summary": "The actual newly registered review-only reader personally read the entire pinned B053 source, all 77 modules, actual receiving providers and consumers. It authored, implemented, designed, repaired or directed none of the original Chat or current Work package; its only authored work is its own independent review report, without reusing the unavailable reader's inspection.",
           "report_path": "formalization/coordination/reviews/B053-complete-20261106c.md"
-        }
+        },
+        "summary": "F2 OPEN: personal whole-package review of the pinned source, all 77 production modules and actual provider/consumer chain found that the complete source exports still take Selectors.OriginalNR2 as a separate premise, although frozen standing A:cover assumes only infinite relative classes at every FULL strict cover. OriginalNR2 is not an extra source assumption. FullCoverInfinite.original_all_strict_full_indices_infinite already proves every strict FULL relative class infinite, but no compiled all-FULL-covers-to-OriginalNR2/SortNR2 adapter and no final wrapper actually supplying the derived provider exists. The author independently confirmed this absence. Request changes: derive these actual receiving providers from the original standing premise and expose all complete source exports through that discharge, retaining exact source quantifiers, RAW/STRONG and PG SAP scope, root import and transitive audit. This is routine missing implementation, not permission to strengthen source assumptions. No approval is issued; the repaired exact head requires my personal delta review and successful exact CI/audit. Evidence: formalization/coordination/reviews/B053-complete-20261106c.md."
       }
     },
     "B054": {
@@ -24293,6 +24294,19 @@
           "summary": "The actual newly registered review-only reader personally read the entire pinned B053 source, all 77 modules, actual receiving providers and consumers. It authored, implemented, designed, repaired or directed none of the original Chat or current Work package; its only authored work is its own independent review report, without reusing the unavailable reader's inspection.",
           "report_path": "formalization/coordination/reviews/B053-complete-20261106c.md"
         }
+      }
+    },
+    {
+      "revision": 775,
+      "project_id": 3,
+      "actor_id": "work_control_20261106c",
+      "event": "request_changes",
+      "package_id": "B053",
+      "details": {
+        "actor_id": "work_control_20261106c",
+        "package_id": "B053",
+        "head_sha": "76a956a1e5f53dcdecc63047e6455c70e275c119",
+        "summary": "F2 OPEN: personal whole-package review of the pinned source, all 77 production modules and actual provider/consumer chain found that the complete source exports still take Selectors.OriginalNR2 as a separate premise, although frozen standing A:cover assumes only infinite relative classes at every FULL strict cover. OriginalNR2 is not an extra source assumption. FullCoverInfinite.original_all_strict_full_indices_infinite already proves every strict FULL relative class infinite, but no compiled all-FULL-covers-to-OriginalNR2/SortNR2 adapter and no final wrapper actually supplying the derived provider exists. The author independently confirmed this absence. Request changes: derive these actual receiving providers from the original standing premise and expose all complete source exports through that discharge, retaining exact source quantifiers, RAW/STRONG and PG SAP scope, root import and transitive audit. This is routine missing implementation, not permission to strengthen source assumptions. No approval is issued; the repaired exact head requires my personal delta review and successful exact CI/audit. Evidence: formalization/coordination/reviews/B053-complete-20261106c.md."
       }
     }
   ],
