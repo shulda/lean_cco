@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 759,
+  "revision": 762,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -4778,16 +4778,19 @@
         "declarations": 30216,
         "source_modules": 1842
       },
-      "head_sha": "2d3df4331786501b65b3d9a0f7ca278745748510",
+      "head_sha": "304537281d9272f071ed1eedd363196a184572f9",
       "pr_number": 73,
       "observed_ci": {
-        "run_id": 42172723347,
-        "head_sha": "2d3df4331786501b65b3d9a0f7ca278745748510",
-        "conclusion": "failure",
-        "axiom_audit": "not_run_after_build_failure",
-        "job_id": 127744062320
+        "run_id": 42174628546,
+        "run_attempt": 1,
+        "head_sha": "304537281d9272f071ed1eedd363196a184572f9",
+        "conclusion": "success",
+        "axiom_audit": "allowlist",
+        "job_id": 127750142909,
+        "declarations": 30627,
+        "source_modules": 1892
       },
-      "checkpoint_revision": 754,
+      "checkpoint_revision": 761,
       "handover_history": [
         {
           "revision": 739,
@@ -4974,6 +4977,7 @@
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b062_work",
+        "/root/b062_work/retained_child_names",
         "chat-2",
         "root"
       ],
@@ -4993,16 +4997,19 @@
         "declarations": 28723,
         "source_modules": 1619
       },
-      "head_sha": "9c14fe74fc8c18c566980924cb760e7d13f2f317",
+      "head_sha": "71d7c639940536f370ad4ab44fa8a208e2a9db2b",
       "pr_number": 68,
       "observed_ci": {
-        "run_id": 42172225180,
-        "head_sha": "9c14fe74fc8c18c566980924cb760e7d13f2f317",
-        "conclusion": "failure",
-        "axiom_audit": "not_run_after_build_failure",
-        "job_id": 127742466842
+        "run_id": 42174647581,
+        "run_attempt": 1,
+        "head_sha": "71d7c639940536f370ad4ab44fa8a208e2a9db2b",
+        "conclusion": "success",
+        "axiom_audit": "allowlist",
+        "job_id": 127750203963,
+        "declarations": 31373,
+        "source_modules": 2082
       },
-      "checkpoint_revision": 756,
+      "checkpoint_revision": 762,
       "handover_history": [
         {
           "revision": 739,
@@ -23867,6 +23874,69 @@
           "summary": "I am the actual registered review-only reader and personally reviewed the complete B060 source, pinned proofs, full contract, actual providers and consumers. I authored, implemented, designed, repaired or directed none of its original Chat work or current Work implementation, including the contributions of chat-1, /root/b060_work, /root/b060_work/qf_source, /root/b060_work/finite_base_acl and root. My only authored contribution is my own independent review evidence; no other reader identity or approval is reused.",
           "report_path": "formalization/coordination/reviews/B060-complete-20261106.md"
         }
+      }
+    },
+    {
+      "revision": 760,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "record_authorship",
+      "package_id": "B062",
+      "details": {
+        "actor_id": "root",
+        "package_id": "B062",
+        "author_actor_ids": [
+          "/root/b062_work/retained_child_names"
+        ],
+        "reason": "Actual child authored source child-sort quotient equivalence code and design; parent source-reviewed, repaired elaboration and compiled. Neither may review B062."
+      }
+    },
+    {
+      "revision": 761,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "checkpoint",
+      "package_id": "B053",
+      "details": {
+        "actor_id": "root",
+        "package_id": "B053",
+        "head_sha": "304537281d9272f071ed1eedd363196a184572f9",
+        "pr_number": 73,
+        "observed_ci": {
+          "run_id": 42174628546,
+          "run_attempt": 1,
+          "head_sha": "304537281d9272f071ed1eedd363196a184572f9",
+          "conclusion": "success",
+          "axiom_audit": "allowlist",
+          "job_id": 127750142909,
+          "declarations": 30627,
+          "source_modules": 1892
+        },
+        "summary": "Actual T02 source orbit infinitude checkpoint only; subsequent coherent T03-T06 proof work preserved locally for separate publication. Whole batch IN_PROGRESS."
+      }
+    },
+    {
+      "revision": 762,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "checkpoint",
+      "package_id": "B062",
+      "details": {
+        "actor_id": "root",
+        "package_id": "B062",
+        "head_sha": "71d7c639940536f370ad4ab44fa8a208e2a9db2b",
+        "pr_number": 68,
+        "observed_ci": {
+          "run_id": 42174647581,
+          "run_attempt": 1,
+          "head_sha": "71d7c639940536f370ad4ab44fa8a208e2a9db2b",
+          "conclusion": "success",
+          "axiom_audit": "allowlist",
+          "job_id": 127750203963,
+          "declarations": 31373,
+          "source_modules": 2082
+        },
+        "summary": "Actual source retained/discarded age and E7 checkpoint only. Later full discarded source and retained phase work locally preserved; actual retained successor and whole tower remain open."
       }
     }
   ],
