@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 803,
+  "revision": 804,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -4882,7 +4882,7 @@
       }
     },
     "B054": {
-      "state": "REVIEWING",
+      "state": "INTEGRATING",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b062_resume",
@@ -5240,7 +5240,13 @@
       "owner_project_id": null
     }
   },
-  "integration_lock": null,
+  "integration_lock": {
+    "kind": "package",
+    "package_id": "B054",
+    "actor_id": "root",
+    "base_main_sha": "17162bfc8bf4e707e84ad767b84b1f4a0518fc6b",
+    "head_sha": "2888c164be1d05f5f066842f0ba115bb72890f4d"
+  },
   "history": [
     {
       "revision": 1,
@@ -25092,6 +25098,32 @@
         "package_id": "B054",
         "head_sha": "2888c164be1d05f5f066842f0ba115bb72890f4d",
         "summary": "I, actual independent nonauthor /root/b053_fresh_review, actor work_control_20261106d, approve B054 ONLY at exact head2888c164be1d05f5f066842f0ba115bb72890f4d/treee68f475ac99e21b39b63e41b0edc634651333a2c. I personally read complete original source12, all5productionmodules, full30claim/6definition/4task contract, actual B039/B052/B053 provider signatures/discharges, consumers and concrete signature boundaries. Original FULL Aut(M), actual arbitrary closed/orphan/empty bases, finite-parameter full-hidden acl=dcl=term closure, correct original-to-full orbit inclusion and dependency firewall are preserved. I authored, designed, implemented, repaired or directed none of B054 or root/helper contributions. No mathematical or receiving-contract duty remains. Entire finaldelta personally checked: unchanged mathematics/pins, exact actualmain byte-prefix+5imports(2262unique),own report byteidentity. Exact CI42208233078/job127860123382 full logs personally fetched/inspected:187tests,4937rootjobs,all5newmodules freshly Built,2263complete current-source guards,exact EPPA269/Ramsey106pre/postguards,33627 transitive declarations onlypropext,Classical.choice,Quot.sound,zero violations. Actual syntheticcheckout5a82afccabbe79b7a34be69cf0c6e599cef43451 entiretree identical. Effective STATE802/policy17 assigns me exact-head lease; dependencies accepted with green actualmainCI and currentmain17162 ancestor. Own whole-source report formalization/coordination/reviews/B054-complete-20261106d.md plus this subsequent formalverdict. Changedhead needs renewed review/CI; acceptance requires solelock,expected-head history-preserving merge and green actual resulting-mainCI/audit."
+      }
+    },
+    {
+      "revision": 804,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "start_integration",
+      "package_id": "B054",
+      "details": {
+        "actor_id": "root",
+        "package_id": "B054",
+        "head_sha": "2888c164be1d05f5f066842f0ba115bb72890f4d",
+        "base_main_sha": "17162bfc8bf4e707e84ad767b84b1f4a0518fc6b",
+        "head_contains_main": true,
+        "ci": {
+          "run_id": 42208233078,
+          "run_attempt": 1,
+          "head_sha": "2888c164be1d05f5f066842f0ba115bb72890f4d",
+          "conclusion": "success",
+          "axiom_audit": "allowlist",
+          "job_id": 127860123382,
+          "tests": 187,
+          "declarations": 33627,
+          "source_modules": 2263,
+          "build_jobs": 4937
+        }
       }
     }
   ],
