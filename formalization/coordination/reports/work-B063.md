@@ -20,9 +20,9 @@ All five public modules below are directly imported by `CCO.lean`.
 
 | Source duty | Actual compiled receiving declaration and scope |
 |---|---|
-| D01–D04, C07 | `OriginalTypes.originalPointEquiv` (names are in `CCO.AutomaticEPCore`, not nested by filename), `originalDiversityRank`, `originalRelation`, `originalAtomTable`, `original_identity_support`, `original_atom_table_diversity`, `prefixOriginalPointEquiv`; literal one-original-sort equality, actual global reduct bijection, all realized labels and equality/diversity distinction. The equality support proof is direct, without the forbidden I01 support theorem. |
+| D01–D04, C07 | `originalPointEquiv` (all names are in `CCO.AutomaticEPCore`), `originalDiversityRank`, `originalRelation`, `originalAtomTable`, `original_identity_support`, `original_atom_table_diversity`, `prefixOriginalPointEquiv`; literal one-original-sort equality, actual global reduct bijection, all realized labels and equality/diversity distinction. The equality support proof is direct, without the forbidden I01 support theorem. |
 | C01–C04 | `terminal_full_interval_infinite`, actual even/connectivity `ColourEq`, `invariant_graph_positive_parity_stabilization`, `invariant_bipartite_parity_index_two`, `invariant_bipartite_parity_cover`; FULL actual lattice, graph may be a union of current atoms; no exactness, AP/SAP/CCO or later quotient/phase provider. |
-| C05–C08 | `terminal_invariant_bipartite_graph_empty`, `terminal_bipartite_restriction_empty`, `terminal_atom_not_bipartite`; `SourceLoopless.original_bipartite_table_loopless` applies the result to the literal original old-atom table of an ACTUAL current homogeneous prefix. Its current invariance is proved directly from `UnaryReduct.colour`, not assumed as a loopless provider. No I01 preservation theorem is used. |
+| C05–C08 | `terminal_invariant_bipartite_graph_empty`, `terminal_bipartite_restriction_empty`, `terminal_atom_not_bipartite`; `original_bipartite_table_loopless` applies the result to the literal original old-atom table of an ACTUAL current homogeneous prefix. Its current invariance is proved directly from `UnaryReduct.colour`, not assumed as a loopless provider. No I01 preservation theorem is used. |
 | C09–C13 | `originalFunctionalGroup` / `OriginalFunctionalGroup` is the full centralizer of the given original action inside real permutations; evaluation injectivity, one actual old orbital per graph, no fixed point off identity, involutivity, square-one, inverse-equals-self, commutativity, finiteness and an actual `atomGraph` bipartition. The final full-original-Aut instantiation is still to be connected below. No AP/SAP/CCO or I01–I08 source provider is used in this part. |
 | C56–C57 generic finite step | `TableEndomorphism`, `TableAutomorphism`, `table_endomorphism_injective_of_separation`, `finite_table_endomorphism_automorphism`, `finite_table_core_of_separation`. Finite relation carriers prove reflection, so there is no invalid inference from an infinite bijective endomorphism. The actual source separation input is NOT yet discharged. No unary predicates naming new labels are inserted. |
 
@@ -48,9 +48,24 @@ pass their own pinned strict-implicit compiler checks and standard-allowlist
 signature/axiom readback. The FunctionalOriginal proof/type dependency check
 visits45 CCO constants and finds no forbidden source provider; helper notes
 are retained in the current scratch work and will be incorporated into the
-complete receiving map. Root-import/full-root build and full transitive audit
-of this new source head remain to be run; no exact-head remote CI or complete
-independent B063 review is claimed at this early checkpoint.
+complete receiving map. The preceding exact compiled checkpoint `6e91eab8488bbded99f347363115d79b4c7390ca`
+now also has a successful full root build: **4937 jobs /2263 current modules**,
+complete EPPA269/Ramsey106 guards, and full root audit **33593 declarations**,
+only the standard three axioms and zero violations.
+
+The current checkpoint preserves accepted main
+`7935bb2205e5c0e5701ab89148d47bb85bcd37c2` by an actual merge. Its ONLY
+conflict was CCO.lean, resolved as the exact main prefix plus all five unique
+B063 imports; no B063 proof body changed and B054 is not a mathematical
+dependency. This refreshed exact source checkpoint `b0d1f93783b376b160c67a28ed8670e925e0cc70`
+passes its own full root build **4942 jobs**, complete-source/cache guards
+**2268 CCO /269 EPPA /106 Ramsey**, and full transitive audit **33686
+declarations**, standard three axioms, zero violations. Its exact remote
+CI is still pending; the report-only checkpoint adds no proof change.
+Two mutable helper drafts are preserved verbatim as explicit UNCOMPILED
+snapshots under `formalization/coordination/wip/work/B063/`, with exact
+SHA256 and original helper identities; neither is falsely root-imported.
+No exact-head remote CI or complete independent B063 review is claimed.
 
 Routine failed local elaboration attempts were fixed before this compiled
 checkpoint. Source/API/toolchain changes, new mathematical axioms, `sorry`,

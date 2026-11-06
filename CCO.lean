@@ -2281,6 +2281,11 @@ import CCO.ExactEPGeometry.OriginalCodedQuotientSafeHistory
 import CCO.ExactEPGeometry.ExactTraceProduct
 import CCO.ExactEPGeometry.CanonicalStepProduct
 import CCO.ExactEPGeometry.OriginalQuotientHistoryProvenance
+import CCO.HereditaryHiddenOrbits.ActualSource
+import CCO.HereditaryHiddenOrbits.Transfer
+import CCO.HereditaryHiddenOrbits.FullHidden
+import CCO.HereditaryHiddenOrbits.SourceExports
+import CCO.HereditaryHiddenOrbits.Boundaries
 import CCO.AutomaticEPCore.FiniteCore
 import CCO.AutomaticEPCore.FunctionalOriginal
 import CCO.AutomaticEPCore.OriginalTypes
