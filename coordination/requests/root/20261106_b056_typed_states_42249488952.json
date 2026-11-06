@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "request_id": "20261106_b056_typed_states_42249488952",
+  "actor_id": "root",
+  "project_id": 3,
+  "policy_revision": 17,
+  "operation": "event",
+  "expected_revision": 827,
+  "event": "checkpoint",
+  "data": {
+    "package_id": "B056",
+    "head_sha": "47cdffbbcac3c79dce00ea29ed68ed4d5a5602fc",
+    "pr_number": 82,
+    "observed_ci": {
+      "run_id": 42249488952,
+      "head_sha": "47cdffbbcac3c79dce00ea29ed68ed4d5a5602fc",
+      "conclusion": "success",
+      "axiom_audit": "allowlist",
+      "source_modules": 2298,
+      "declarations": 34555
+    }
+  }
+}
