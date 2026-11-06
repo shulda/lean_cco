@@ -120,3 +120,17 @@ No new mathematical hypothesis is introduced (H/sap were already the actual
 source assumptions throughout the section), and the next public CI must
 verify the repaired exact head. The previous failed head remains recoverable
 in Git ancestry.
+
+## Compiler parser correction in typed source
+
+Exact-head run [42248675404](https://github.com/shulda/lean_cco/actions/runs/42248675404)
+FAILED at first parse, line 114: plain `include H sap` is not legal in
+this location after a documentation comment. No subsequent elaboration was
+performed, so earlier substantive repairs are not yet verified. Replaced
+the unsupported section directive with explicit theorem-local
+`(H : HomogeneousSource S G) (sap : AgeSAP S)` binders in both
+chain realization and word reconstruction. These are the precise original
+source hypotheses and preserve all statements after the existing section's
+variable inclusion; no new axiom or stronger source requirement.
+Next public head must pass Lean plus full audit; previous GREEN G1CCO
+at c47352119eb147aa556cbedee9a094a615ca3e7c remains preserved.

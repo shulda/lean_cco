@@ -112,9 +112,8 @@ theorem trace_first {i j : ι} (word : PositiveWord S i j) :
 
 /-- Reconstruct an actual positive word along a directed profile trace.
 The starting word is retained, so even a zero-step suffix stays positive. -/
-include H sap
-
-theorem realise_chain {i : ι} (target : RowState S i) (tail : List (RowState S i)) :
+theorem realise_chain {i : ι} (H : HomogeneousSource S G) (sap : AgeSAP S)
+    (target : RowState S i) (tail : List (RowState S i)) :
     ∀ (p : RowState S i) (word : PositiveWord S i p.1),
       PositiveWord.profile S word = p.2.val →
       (p :: tail).IsChain (Step S) → (p :: tail).getLast? = some target →
@@ -142,7 +141,8 @@ theorem realise_chain {i : ι} (target : RowState S i) (tail : List (RowState S 
 
 /-- A state-chain with the same first positive letter and last state
 gives a positive presentation whose letter count is its state count. -/
-theorem word_of_chain {i j : ι} (a : S.Atom i j) (target : RowState S i)
+theorem word_of_chain {i j : ι} (H : HomogeneousSource S G) (sap : AgeSAP S)
+    (a : S.Atom i j) (target : RowState S i)
     (nodes : List (RowState S i)) (hChain : nodes.IsChain (Step S))
     (hHead : nodes.head? = some (singletonState S a)) (hLast : nodes.getLast? = some target) :
     ∃ word : PositiveWord S i target.1,
