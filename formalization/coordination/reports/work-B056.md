@@ -226,3 +226,18 @@ spells out real local instances, performs the length-step equality by
 an actual `congrArg`, and annotates both intended Nat maximum bounds.
 No source assumption, menu/identity/vertex definition or proof obligation
 has been weakened; this is a compiler-repair WIP requiring new CI/audit.
+
+## UniformTheta second exact CI feedback
+
+Public run [42270129409](https://github.com/shulda/lean_cco/actions/runs/42270129409)
+on head `6995ea8abbe698a9d55c38592187e0ac324e674d` FAILED in `UniformTheta` only. The finite
+Bool branch fully closed after cardinal simplification, so the
+remaining `omega` was an error from a completed goal. The subtype
+complement cardinal computation had a **data-level** Fintype-instance
+mismatch: `Fintype.ofFinite` for `wordInterior` is not definitionally
+the `Subtype.fintype` used by `Fintype.card_subtype_compl`.
+The next patch uses the exact canonical subtype Fintype locally and
+exposes the actual Nat `Finset.sup` goal in `fixedTheta_vertices_le`
+to resolve the previous `OrderBot` metavariable. All other source
+proofs elaborated without errors. Full exact-head CI/audit is still
+mandatory; current B056 remains IN_PROGRESS with untouched source/API.

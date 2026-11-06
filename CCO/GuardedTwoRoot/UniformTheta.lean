@@ -23,7 +23,6 @@ theorem word_positions_card {i j : ι} (word : PositiveWord S i j) :
   | single a =>
     simp only [wordPositions, TypedPrefix.length, Nat.card_eq_fintype_card,
       Fintype.card_bool]
-    omega
   | cons a rest ih =>
     letI : Finite (wordPositions S rest) := finite_wordPositions S rest
     letI : Fintype (wordPositions S rest) := Fintype.ofFinite _
@@ -37,7 +36,9 @@ theorem word_interior_card {i j : ι} (word : PositiveWord S i j) :
   letI : Finite (wordPositions S word) := finite_wordPositions S word
   letI : Fintype (wordPositions S word) := Fintype.ofFinite _
   letI : Finite (wordInterior S word) := finite_wordInterior S word
-  letI : Fintype (wordInterior S word) := Fintype.ofFinite _
+  letI : Fintype (wordInterior S word) := by
+    dsimp only [wordInterior]
+    infer_instance
   have hEnds := Fintype.card_subtype_eq_or_eq_of_ne (wordSource_ne_target S word)
   have hCompl := Fintype.card_subtype_compl
     (fun p : wordPositions S word => p = wordSource S word ∨ p = wordTarget S word)
@@ -145,6 +146,9 @@ theorem fixedTheta_vertices_le (D : ExactMenu S) :
     Nat.card (thetaVertices S (fixedTheta S H sap D)) ≤ canonicalThetaBudget S H sap := by
   classical
   letI : Fintype (ExactMenu S) := Fintype.ofFinite _
+  change Nat.card (thetaVertices S (fixedTheta S H sap D)) ≤
+    (Finset.univ : Finset (ExactMenu S)).sup
+      (fun E : ExactMenu S => Nat.card (thetaVertices S (fixedTheta S H sap E)))
   exact Finset.le_sup (Finset.mem_univ D)
 
 /-- The pair bound includes either the direct bounded comparison list
