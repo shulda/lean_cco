@@ -20,15 +20,18 @@ from clear_project_cache import clear_project_artifacts
 DESCRIPTOR = re.compile(r'([0-9a-f]{16})\.(olean(?:\.(?:server|private))?)\Z')
 
 
-def inspect_metadata(build: Path, source_traces: Iterable[Path] = ()) -> tuple[dict[Path, str], set[Path]]:
+def inspect_metadata(build: Path, source_traces: Iterable[Path] = (),
+                     namespaces: Iterable[str] = ('CCO',)) -> tuple[dict[Path, str], set[Path]]:
     lib = build / 'lib/lean'
     # rglob deliberately does not follow directory symlinks. Include exact
     # paths from the finite canonical source closure, avoiding both omissions
     # behind aliases and unbounded recursive traversal through symlink loops.
-    traces = set((lib / 'CCO').rglob('*.trace'))
+    traces = {trace for namespace in namespaces
+              for trace in (lib / namespace).rglob('*.trace')}
     traces.update(trace for trace in source_traces if trace.is_file())
-    if (lib / 'CCO.trace').is_file():
-        traces.add(lib / 'CCO.trace')
+    for namespace in namespaces:
+        if (lib / (namespace + '.trace')).is_file():
+            traces.add(lib / (namespace + '.trace'))
     expected: dict[Path, str] = {}
     invalid: set[Path] = set()
     for trace in sorted(traces):

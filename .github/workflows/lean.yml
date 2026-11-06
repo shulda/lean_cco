@@ -69,6 +69,10 @@ jobs:
         id: ramsey_key
         run: python3 tools/verify_ramsey_provider.py --cache-key --github-output --os "${{ runner.os }}" --arch "${{ runner.arch }}"
 
+      - name: Bind finite factorization forest dependency cache identity
+        id: forest_key
+        run: python3 tools/verify_factorization_forest_provider.py --cache-key --github-output --os "${{ runner.os }}" --arch "${{ runner.arch }}"
+
       # Follow all CCO edges first. The pinned Mathlib cache command filters
       # CCO imports, so `cache get CCO.lean` cannot discover these roots.
       - name: Download targeted Mathlib cache
@@ -108,15 +112,39 @@ jobs:
           lake --rehash build +CCORamsey
           python3 tools/verify_ramsey_provider.py --require-complete
 
+      # The provider is a second lean_lib in this package. Cache only its
+      # namespace outputs, together with the full licensed source distribution.
+      - name: Cache compiled finite factorization forest provider
+        uses: actions/cache@v5
+        with:
+          path: |
+            .lake/build/lib/lean/AlgebraicAutomata
+            .lake/build/ir/AlgebraicAutomata
+            .lake/factorization-forest-distribution
+          key: ${{ steps.forest_key.outputs.key }}
+
+      - name: Build and verify finite factorization forest provider
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 tools/verify_factorization_forest_provider.py --repair
+          lake --rehash build +AlgebraicAutomata.FactorizationForest.Tree
+          python3 tools/verify_factorization_forest_provider.py --prepare-distribution
+          python3 tools/verify_factorization_forest_provider.py --require-complete
+
       # Reuse project artifacts only. Lake checks source/dependency traces;
       # a restored cache never replaces the build or the transitive audit.
       - name: Cache incremental CCO build
         uses: actions/cache@v5
         with:
-          path: .lake/build
-          key: cco-project-build-v1-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('lean-toolchain', 'lake-manifest.json', 'lakefile.toml') }}-${{ github.sha }}
+          path: |
+            .lake/build/lib/lean/CCO
+            .lake/build/lib/lean/CCO.*
+            .lake/build/ir/CCO
+            .lake/build/ir/CCO.*
+          key: cco-project-build-v2-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('lean-toolchain', 'lake-manifest.json', 'lakefile.toml') }}-${{ github.sha }}
           restore-keys: |
-            cco-project-build-v1-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('lean-toolchain', 'lake-manifest.json', 'lakefile.toml') }}-
+            cco-project-build-v2-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('lean-toolchain', 'lake-manifest.json', 'lakefile.toml') }}-
 
       # Detect inconsistent manual/cached snapshots by hashing actual CCO
       # olean bytes, source inputs and compiled import headers. Preserve valid children.
@@ -139,6 +167,7 @@ jobs:
           fi
           python3 tools/verify_external_provider.py --require-complete
           python3 tools/verify_ramsey_provider.py --require-complete
+          python3 tools/verify_factorization_forest_provider.py --require-complete
 
       - name: Audit the verified current source closure
         uses: leanprover/lean-action@f061402b660e0c34644504b324e830f2991d4865 # v1.6.1
@@ -153,6 +182,24 @@ jobs:
           axiom-audit-root: CCO
           axiom-audit-allow: propext,Classical.choice,Quot.sound
 
+      # The existing CCO audit traverses the facade's proof dependencies.
+      # Audit all defining-module provider declarations as well, including
+      # globals outside an AlgebraicAutomata declaration-name namespace.
+      - name: Audit all 791 finite forest provider declarations
+        shell: bash
+        run: |
+          set -euo pipefail
+          audit_dir="$(mktemp -d "$RUNNER_TEMP/cco-forest-audit.XXXXXX")"
+          trap 'rm -rf "$audit_dir"' EXIT
+          git clone --depth 1 --branch v0.1.2 https://github.com/leanprover-community/axiom-audit.git "$audit_dir"
+          test "$(git -C "$audit_dir" rev-parse HEAD)" = 46024e005996495c65ef609368e11ab39c4222e3
+          cp lean-toolchain "$audit_dir/"
+          (
+            cd "$audit_dir"
+            lake build
+          )
+          python3 tools/audit_factorization_forest.py --audit "$audit_dir/.lake/build/bin/axiom-audit"
+
       # The pinned audit script also calls `lake build`. Check again after it
       # so the final job cannot pass with a changed or older root closure.
       - name: Verify final audited project artifacts
@@ -160,6 +207,7 @@ jobs:
           python3 tools/verify_project_cache.py --require-complete
           python3 tools/verify_external_provider.py --require-complete
           python3 tools/verify_ramsey_provider.py --require-complete
+          python3 tools/verify_factorization_forest_provider.py --require-complete
 
       # Export only after the full build, audit and final guards above. The
       # archive is a local-build seed, never proof or a replacement for guards.
@@ -169,14 +217,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          bundle="$RUNNER_TEMP/cco-verified-build"
-          mkdir -p "$bundle"
-          git rev-parse HEAD > "$bundle/checkout-sha.txt"
-          sha256sum lean-toolchain lake-manifest.json lakefile.toml CCO.lean > "$bundle/input-sha256.txt"
-          tar -czf "$bundle/build.tar.gz" -- \
-            .lake/build \
-            .lake/packages/AllThoseEPPA/.lake/build \
-            vendor/ramsey/.lake/build
+          python3 tools/package_verified_build.py --bundle "$RUNNER_TEMP/cco-verified-build"
 
       - name: Upload verified build recovery archive
         if: github.event_name != 'pull_request' || startsWith(github.head_ref, 'work/cache-export-')
