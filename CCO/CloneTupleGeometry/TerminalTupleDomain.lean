@@ -7,6 +7,9 @@ RAW exactness discharges class Helly on the new clone source. Every
 compatible tuple therefore represents exactly one actual owner, including
 the one-coordinate case and repeated hidden coordinate values. -/
 
+set_option backward.isDefEq.respectTransparency.types false
+set_option synthInstance.maxHeartbeats 250000
+set_option maxHeartbeats 900000
 universe u v w
 namespace CCO.CloneTupleGeometry.OwnerStage
 open ParityHasse.Original TransitionClosure ExactCRT
@@ -31,7 +34,7 @@ theorem compatible_tuple_realized (ht : B.Terminal)
     ∃ x : B.Point i, originalOwnerMITuple B.source i x = q := by
   classical
   let E : FullCloneProperMI B.source i →
-      ExactEq (CloneSAP.source B.source) B.cloneCurrent.homogeneous B.cloneCurrent.cco i :=
+      ExactEq (CloneSAP.source B.source) (CloneSAP.homogeneous B.source B.homogeneous) (CloneSAP.CCO.cco_forward B.source B.cco) i :=
     fun J => ⟨J.val.val,B.terminal_MI_exact ht i J⟩
   let centre : FullCloneProperMI B.source i → CloneSAP.Carrier B.Point i :=
     fun J => (q J).out
@@ -46,7 +49,7 @@ theorem compatible_tuple_realized (ht : B.Terminal)
     exact ⟨x,Quotient.exact ((hc J).trans hJ.symm),
       Quotient.exact ((hc L).trans hL.symm)⟩
   obtain ⟨x,hx⟩ := exactEq_classHelly (CloneSAP.source B.source)
-    B.cloneCurrent.homogeneous B.cloneCurrent.cco E centre hp
+    (CloneSAP.homogeneous B.source B.homogeneous) (CloneSAP.CCO.cco_forward B.source B.cco) E centre hp
   refine ⟨x.1,?_⟩
   calc
     originalOwnerMITuple B.source i x.1 = fullCloneMITuple B.source i x :=

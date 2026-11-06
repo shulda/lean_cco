@@ -70,7 +70,7 @@ def identification : CloneMarkedIdentification B.source B.homogeneous
 /-- The next state is the actual marked source's owner quotient, whose
 canonical pure clone is completely isomorphic to that marked source. -/
 def successor : OwnerStage.{u,v,w} where
-  Sorts := Rank.Child (UnarySource.β (B.identification P))
+  Sorts := Rank.Child (UnarySource.β (completion := P.completion_property B.cloneCurrent.cco) (B.identification P))
   Point := OwnerChild B.source B.homogeneous _ P B.cco (B.identification P)
   source := owner_child_source B.source B.homogeneous B.ap _ P B.cco (B.identification P)
   homogeneous := actual_marked_owner_homogeneous B.source B.homogeneous B.ap _ P B.cco (B.identification P)
@@ -109,11 +109,11 @@ inductive SafeStep : OwnerStage.{u,v,w} → OwnerStage.{u,v,w} → Type _
 namespace SafeStep
 def reduct {B D : OwnerStage.{u,v,w}} (s : SafeStep B D) : UnaryReduct B.source D.source := by
   cases s with
-  | phase B P => exact B.successorReduct P
+  | phase P => exact B.successorReduct P
 
 def unary {B D : OwnerStage.{u,v,w}} (s : SafeStep B D) : UnaryTransition B.finiteAge D.finiteAge := by
   cases s with
-  | phase B P => exact B.successorUnary P
+  | phase P => exact B.successorUnary P
 
 theorem forget_eq {B D : OwnerStage.{u,v,w}} (s : SafeStep B D) :
     s.unary.forget = s.reduct.forget := by
@@ -122,7 +122,7 @@ theorem forget_eq {B D : OwnerStage.{u,v,w}} (s : SafeStep B D) :
 
 theorem potential_lt {B D : OwnerStage.{u,v,w}} (s : SafeStep B D) : D.potential < B.potential := by
   cases s with
-  | phase B P => exact B.successor_potential_lt P
+  | phase P => exact B.successor_potential_lt P
 end SafeStep
 
 abbrev Next (B D : OwnerStage.{u,v,w}) := Nonempty (SafeStep B D)

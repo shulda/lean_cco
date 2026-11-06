@@ -39,12 +39,12 @@ def ownerProjection : Towers.UnaryReduct S (owner_child_source S H ap C P cco I)
 
 /-- Choose one actual clone of each prescribed owner child. -/
 def markedOwnerLift (q : Sigma (OwnerChild S H C P cco I)) :
-    Sigma (Rank.Point (UnarySource.β I) (UnarySource.tag I)) :=
+    Sigma (Rank.Point (UnarySource.β (completion := P.completion_property (CloneSAP.CCO.cco_forward S cco)) I) (UnarySource.tag (completion := P.completion_property (CloneSAP.CCO.cco_forward S cco)) I)) :=
   ⟨q.1,⟨(q.2.val,0),
     (marked_child_tag_fibre S H ap C P cco I q.1.1 q.2.val 0).trans q.2.property⟩⟩
 
 /-- The marked source's literal clone product descends back to an owner. -/
-def markedOwnerDrop (q : Sigma (Rank.Point (UnarySource.β I) (UnarySource.tag I))) :
+def markedOwnerDrop (q : Sigma (Rank.Point (UnarySource.β (completion := P.completion_property (CloneSAP.CCO.cco_forward S cco)) I) (UnarySource.tag (completion := P.completion_property (CloneSAP.CCO.cco_forward S cco)) I))) :
     Sigma (OwnerChild S H C P cco I) :=
   ⟨q.1,(marked_child_equiv S H ap C P cco I q.1 q.2).1⟩
 
@@ -58,13 +58,13 @@ theorem markedOwnerLift_injective : Function.Injective (markedOwnerLift S H ap C
   simpa only [markedOwnerDrop_lift] using congrArg (markedOwnerDrop S H ap C P cco I) h
 
 @[simp] theorem markedOwnerLift_project (q : Sigma (OwnerChild S H C P cco I)) :
-    (actualProjection I).project (markedOwnerLift S H ap C P cco I q) =
+    (actualProjection (completion := P.completion_property (CloneSAP.CCO.cco_forward S cco)) I).project (markedOwnerLift S H ap C P cco I q) =
       zeroClonePoint ((ownerProjection S H ap C P cco I).project q) := rfl
 
 @[simp] theorem markedOwnerDrop_project
-    (q : Sigma (Rank.Point (UnarySource.β I) (UnarySource.tag I))) :
+    (q : Sigma (Rank.Point (UnarySource.β (completion := P.completion_property (CloneSAP.CCO.cco_forward S cco)) I) (UnarySource.tag (completion := P.completion_property (CloneSAP.CCO.cco_forward S cco)) I))) :
     (ownerProjection S H ap C P cco I).project (markedOwnerDrop S H ap C P cco I q) =
-      CloneSAP.owner ((actualProjection I).project q) := rfl
+      CloneSAP.owner ((actualProjection (completion := P.completion_property (CloneSAP.CCO.cco_forward S cco)) I).project q) := rfl
 
 /-- Extend the SAME finite old owner diagram and its prescribed child
 embedding, using the actual global-character marked-age extension. -/
@@ -76,10 +76,10 @@ theorem owner_actual_extension :
     p.trans ⟨zeroClonePoint,zeroClonePoint_injective⟩
   let qM := q.trans ⟨markedOwnerLift S H ap C P cco I,
     markedOwnerLift_injective S H ap C P cco I⟩
-  have ho : ∀ x, (actualProjection I).projectedTable.owner (qM x) =
+  have ho : ∀ x, (actualProjection (completion := P.completion_property (CloneSAP.CCO.cco_forward S cco)) I).projectedTable.owner (qM x) =
       (Towers.UnaryReduct.originalTable (S := CloneSAP.source S)).owner (pC (j x)) :=
     h.1
-  have hc : ∀ x y, (actualProjection I).projectedTable.colour (qM x) (qM y) =
+  have hc : ∀ x y, (actualProjection (completion := P.completion_property (CloneSAP.CCO.cco_forward S cco)) I).projectedTable.colour (qM x) (qM y) =
       (Towers.UnaryReduct.originalTable (S := CloneSAP.source S)).colour
         (pC (j x)) (pC (j y)) := by
     intro x y
@@ -88,7 +88,7 @@ theorem owner_actual_extension :
       (zeroClonePoint ((ownerProjection S H ap C P cco I).project (q y))) =
       taggedColour (CloneSAP.source S) (zeroClonePoint (p (j x))) (zeroClonePoint (p (j y)))
     exact zeroClonePoint_tagged S (h.2 x y)
-  obtain ⟨rr,hrO,hrC,hr⟩ := actual_extension I P.finite_seed_extension n m j pC qM ⟨ho,hc⟩
+  obtain ⟨rr,hrO,hrC,hr⟩ := actual_extension (completion := P.completion_property (CloneSAP.CCO.cco_forward S cco)) I P.finite_seed_extension n m j pC qM ⟨ho,hc⟩
   let out : Fin m → Sigma (OwnerChild S H C P cco I) :=
     fun x => markedOwnerDrop S H ap C P cco I (rr x)
   have hnames (x y : Fin m) :

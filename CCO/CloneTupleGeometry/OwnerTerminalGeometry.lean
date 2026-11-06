@@ -9,6 +9,9 @@ identifies it with all full-automorphism invariant equivalences. Every such
 equivalence has a genuine RAW word. The clone kernel is nonzero and proper,
 so the fixed finite family of proper MI coordinates is nonempty. -/
 
+set_option backward.isDefEq.respectTransparency.types false
+set_option synthInstance.maxHeartbeats 250000
+set_option maxHeartbeats 900000
 universe u v w
 namespace CCO.CloneTupleGeometry.OwnerStage
 open APCharacter APCharacter.Towers ParityHasse.Original
@@ -43,7 +46,7 @@ theorem terminal_sortNR2 (ht : B.Terminal) (i : B.Sorts) :
 named equivalences, satisfy terminal NR2. -/
 theorem terminal_fullSortNR2 (ht : B.Terminal) (i : B.Sorts) :
     FullSortNR2 (CloneSAP.source B.source) i :=
-  (fullSortNR2_iff (CloneSAP.source B.source) B.cloneCurrent.homogeneous i).mpr
+  (fullSortNR2_iff (CloneSAP.source B.source) (CloneSAP.homogeneous B.source B.homogeneous) i).mpr
     (B.terminal_sortNR2 ht i)
 
 /-- The actual terminal clone discharges the RAW presentation provider
@@ -51,7 +54,7 @@ for every FULL invariant equivalence on every final named sort. -/
 theorem terminal_all_equivalences_exact (ht : B.Terminal) {i : B.Sorts}
     (E : ColourEq (CloneSAP.source B.source) i) :
     ExactCRT.IsExactEq (CloneSAP.source B.source) E.val :=
-  terminal_all_exact (CloneSAP.source B.source) B.cloneCurrent.homogeneous
+  terminal_all_exact (CloneSAP.source B.source) (CloneSAP.homogeneous B.source B.homogeneous)
     (B.terminal_sortNR2 ht i) E
 
 /-- Infinite OWNER types make K proper; infinite clone fibres alone would
