@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 820,
+  "revision": 821,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -5034,6 +5034,7 @@
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b062_resume",
+        "/root/b062_resume/orbital_pullback",
         "/root/b062_resume/source_support",
         "root"
       ],
@@ -25588,6 +25589,20 @@
         "package_id": "B056",
         "author_actor_ids": [
           "/root/b062_resume/source_support"
+        ]
+      }
+    },
+    {
+      "revision": 821,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "record_authorship",
+      "package_id": "B056",
+      "details": {
+        "actor_id": "root",
+        "package_id": "B056",
+        "author_actor_ids": [
+          "/root/b062_resume/orbital_pullback"
         ]
       }
     }
