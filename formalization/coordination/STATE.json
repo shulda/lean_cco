@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 769,
+  "revision": 770,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -4778,19 +4778,20 @@
         "declarations": 30216,
         "source_modules": 1842
       },
-      "head_sha": "12bcd9e71f4a9460b3d492e7aa72cd00a95d9728",
+      "head_sha": "2fc4ac4472e94dbfec486bff68a13dfce71fdad8",
       "pr_number": 73,
       "observed_ci": {
-        "run_id": 42181278004,
+        "run_id": 42183778574,
         "run_attempt": 1,
-        "head_sha": "12bcd9e71f4a9460b3d492e7aa72cd00a95d9728",
+        "head_sha": "2fc4ac4472e94dbfec486bff68a13dfce71fdad8",
         "conclusion": "success",
         "axiom_audit": "allowlist",
-        "job_id": 127771243001,
-        "declarations": 30814,
-        "source_modules": 1916
+        "job_id": 127779198962,
+        "declarations": 31918,
+        "source_modules": 1977,
+        "build_jobs": 4651
       },
-      "checkpoint_revision": 766,
+      "checkpoint_revision": 770,
       "handover_history": [
         {
           "revision": 739,
@@ -24091,6 +24092,31 @@
           "/root/b062_tower_helper"
         ],
         "reason": "Actual fresh implementers after restart author the disjoint complete safe-history and projected tower/terminality source proofs; both are authors, never reviewers."
+      }
+    },
+    {
+      "revision": 770,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "checkpoint",
+      "package_id": "B053",
+      "details": {
+        "actor_id": "root",
+        "package_id": "B053",
+        "head_sha": "2fc4ac4472e94dbfec486bff68a13dfce71fdad8",
+        "pr_number": 73,
+        "observed_ci": {
+          "run_id": 42183778574,
+          "run_attempt": 1,
+          "head_sha": "2fc4ac4472e94dbfec486bff68a13dfce71fdad8",
+          "conclusion": "success",
+          "axiom_audit": "allowlist",
+          "job_id": 127779198962,
+          "declarations": 31918,
+          "source_modules": 1977,
+          "build_jobs": 4651
+        },
+        "summary": "Complete actual typed frames and infinite boundary examples pass exact remote full root and standard-allowlist axiom audit. Fresh registered nonauthor approval and final report/current-main head are still required before submission."
       }
     }
   ],
