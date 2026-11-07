@@ -130,3 +130,27 @@ all 2,420 current project modules/artifacts consistent; exact external,
 Ramsey and forest source/artifact guards passed; root transitive axiom audit
 37,760 declarations passed with standard three only, separate forest 791
 passed; both prescribed B058 controls passed. No source/API/toolchain change.
+
+## Actual one-base request consumer and reconstruction preparation
+
+`ReconstructionRequests` is compiled and source-instantiated: from ANY Hom
+of the actual retained old closure it constructs one `OldBaseRealization`
+and invokes simultaneous original-word insertion ONCE on every canonical
+piece plus the fixed original anchor. Kept-side, maximal-gap and anchor
+profile requirements are all proved internally. It retains the exact
+FreshWordLine family, one complete finite old base and full old colours.
+
+`SourceBounds` fixes the uniform language budget max(2m,long OAB), discharges
+the actual failed-local-test branch and transports genuine finite hidden
+completions of a retained support to its actual ambient Hom. Its long-branch
+no-Hom packaging remains conditional infrastructure, awaiting the concrete
+original-cycle reconstruction contradiction; it is not the final source N
+theorem. `SourceBoundaries` proves that an actual idempotent positive word w
+and literal ww have equal profiles but different original lengths.
+
+Generic `CycleReconstructionArrays` and `CycleReconstructionSimple` glue
+exact cyclic position arrays and turn a genuine original cycle walk into an
+injective realization over one complete old base, preserving pins/old colours
+and making all unpinned vertices fresh. The ACTUAL SupportedCycle and
+SourceReconstructionRequests-to-cycle instances remain the source gates.
+All 38 current public modules pass the pinned root build (5,112 jobs).

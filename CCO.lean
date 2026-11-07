@@ -2444,3 +2444,8 @@ import CCO.OldIdempotentForest.CycleContractionBranch
 import CCO.OldIdempotentForest.CycleContractionCuts
 import CCO.OldIdempotentForest.CycleContractionSequence
 import CCO.OldIdempotentForest.CycleContractionRotation
+import CCO.OldIdempotentForest.ReconstructionRequests
+import CCO.OldIdempotentForest.SourceBounds
+import CCO.OldIdempotentForest.SourceBoundaries
+import CCO.OldIdempotentForest.CycleReconstructionArrays
+import CCO.OldIdempotentForest.CycleReconstructionSimple
