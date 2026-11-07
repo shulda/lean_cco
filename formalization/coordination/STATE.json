@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 860,
+  "revision": 861,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -5100,7 +5100,7 @@
       }
     },
     "B057": {
-      "state": "IN_PROGRESS",
+      "state": "SUBMITTED",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b057_idempotents",
@@ -5123,7 +5123,7 @@
         "conclusion": "success",
         "axiom_audit": "allowlist"
       },
-      "head_sha": "36b6063719396320bd3a8d1c948d777a2aa4d66d",
+      "head_sha": "6912682cdf4d107e6a93976a1b0e4ea1cd2fa51e",
       "pr_number": 84,
       "observed_ci": {
         "run_id": 42347844638,
@@ -5132,7 +5132,15 @@
         "axiom_audit": "allowlist",
         "job_id": 128329354992
       },
-      "checkpoint_revision": 859
+      "checkpoint_revision": 859,
+      "ci": {
+        "run_id": 42348636934,
+        "head_sha": "6912682cdf4d107e6a93976a1b0e4ea1cd2fa51e",
+        "conclusion": "success",
+        "axiom_audit": "allowlist",
+        "job_id": 128331791764
+      },
+      "report_path": "formalization/coordination/submissions/B057.md"
     },
     "B058": {
       "state": "AVAILABLE",
@@ -26532,6 +26540,27 @@
         "author_actor_ids": [
           "/root/b057_seams/lift_graph_vertices"
         ]
+      }
+    },
+    {
+      "revision": 861,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "submit",
+      "package_id": "B057",
+      "details": {
+        "package_id": "B057",
+        "actor_id": "root",
+        "head_sha": "6912682cdf4d107e6a93976a1b0e4ea1cd2fa51e",
+        "pr_number": 84,
+        "ci": {
+          "run_id": 42348636934,
+          "head_sha": "6912682cdf4d107e6a93976a1b0e4ea1cd2fa51e",
+          "conclusion": "success",
+          "axiom_audit": "allowlist",
+          "job_id": 128331791764
+        },
+        "report_path": "formalization/coordination/submissions/B057.md"
       }
     }
   ],
