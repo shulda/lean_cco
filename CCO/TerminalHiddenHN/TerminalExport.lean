@@ -1,4 +1,4 @@
-import CCO.TerminalHiddenHN.ReadoutExpansion
+import CCO.TerminalHiddenHN.ReadoutTransfer
 import CCO.TerminalHiddenHN.ActualInterpretation
 import CCO.TerminalHiddenHN.RamseyBridge
 

@@ -1,4 +1,4 @@
-import CCO.TerminalHiddenHN.ReadoutRamsey
+import CCO.TerminalHiddenHN.ReadoutComparisons
 import CCO.TerminalHiddenHN.RealExpansion
 
 /-! The finite comparison language is a concrete relational expansion of
@@ -76,38 +76,6 @@ theorem readoutToRelational_comp {A B C : CCO.FiniteInduced (X := X)}
       (D.readoutToRelational H g).comp (D.readoutToRelational H f) := by
   ext x
   rfl
-
-/-- The actual hidden Ramsey input is discharged separately by the
-terminal HN theorem. The readout transfer itself assumes only that input
-on the SAME whole age, including arbitrary orphan-bearing hosts. -/
-theorem readoutExpansion_ramsey
-    (ramsey : CCO.FullCode.HasHiddenRamsey D.orderedAge) :
-    (D.readoutExpansion H).Ramsey := by
-  intro A B a b n hn
-  obtain ⟨C,c,hC⟩ := D.readout_ramsey H ramsey A B a b n hn
-  refine ⟨C,c,?_⟩
-  intro colour
-  obtain ⟨g,shade,hg⟩ := hC (fun f => colour (D.readoutToRelational H f))
-  refine ⟨D.readoutToRelational H g,?_⟩
-  intro f₁ f₂
-  have h₁ := hg (D.relationalToReadout H f₁)
-  have h₂ := hg (D.relationalToReadout H f₂)
-  have eq₁ : D.readoutToRelational H (g.comp H (D.relationalToReadout H f₁)) =
-      (D.readoutToRelational H g).comp f₁ := by
-    ext x
-    rfl
-  have eq₂ : D.readoutToRelational H (g.comp H (D.relationalToReadout H f₂)) =
-      (D.readoutToRelational H g).comp f₂ := by
-    ext x
-    rfl
-  exact (congrArg colour eq₁).symm.trans (h₁.trans (h₂.symm.trans (congrArg colour eq₂)))
-
-/-- Standalone source readout theorem: finite relationality and literal
-precompact reasonableness use only A01/A02; Ramsey uses exactly A05. -/
-theorem hasFiniteRelationalRamseyExpansion_of_hiddenRamsey
-    (ramsey : CCO.FullCode.HasHiddenRamsey D.orderedAge) :
-    CCO.TerminalHiddenHN.HasFiniteRelationalRamseyExpansion S :=
-  ⟨D.readoutExpansion H,D.readoutExpansion_reasonable H,D.readoutExpansion_ramsey H ramsey⟩
 
 end
 end CCO.TerminalHiddenHN.RealInterpretation
