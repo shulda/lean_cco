@@ -2324,3 +2324,5 @@ import CCO.GuardedTwoRoot.G1CCO
 import CCO.GuardedTwoRoot.TypedPrefixStates
 import CCO.GuardedTwoRoot.TypedPrefixBounds
 import CCO.GuardedTwoRoot.UniformTheta
+import CCO.GuardedTwoRoot.JoinedFactorComparisons
+import CCO.GuardedTwoRoot.G1WordObstruction
