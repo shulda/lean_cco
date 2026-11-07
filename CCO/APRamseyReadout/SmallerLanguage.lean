@@ -1,6 +1,7 @@
 import CCO.APRamseyReadout.SortBlockNormalizer
 import CCO.APRamseyReadout.ProperHiddenAge
 import CCO.APRamseyReadout.CoordinateBridge
+import CCO.APRamseyReadout.TupleReadout
 import CCO.TerminalHiddenHN.FiniteOrderExtension
 import CCO.FullCode.Consumer
 import Mathlib.Basic.Finite.Sum
@@ -11,7 +12,7 @@ import Mathlib.Basic.Finite.Sigma
 visible tags are irrelevant to this criterion. The omitted comparisons
 are reconstructed from actual presentation domains and fixed sort priority. -/
 
-universe u v w a b
+universe u v w a b r l k
 namespace CCO.APRamseyReadout
 open CCO.FullCode
 noncomputable section
@@ -418,4 +419,82 @@ theorem proper_block_ordered_ramsey (priority : LinearOrder (CoordinateLanguage 
     exact (congrArg color he).trans (hg (f.reduct (coordinateBlockReduct B ht)))
 
 end Actual
+
+namespace TupleInterpretation
+noncomputable section
+variable {ι : Type u} {X : ι → Type v}
+variable {G : Type r} [Group G] [∀ i, MulAction G (X i)]
+variable {L : Language.{l}} {Y : Type k} {C : Structure L Y} {scheme : RootScheme L}
+variable {S : CCO.AtomicSource.{u,v,w} ι X}
+variable (D : TupleInterpretation (G := G) S C scheme) (priority : LinearOrder L.Sorts)
+
+/-- No arbitrary non-order bits: the datum is exactly one block order
+on the entire selected root-generated support. -/
+def BlockReadoutOn (A : CCO.FiniteInduced (X := X)) :=
+  {a : D.ReadoutOn A // sortBlockOrder (D.supportStructure A).sort priority a.order = a.order}
+
+def restrictBlockReadout (H : CCO.HomogeneousSource S G)
+    {A B : CCO.FiniteInduced (X := X)} (e : CCO.InducedEmbedding S A B)
+    (b : D.BlockReadoutOn priority B) : D.BlockReadoutOn priority A := by
+  refine ⟨D.restrictReadout H e b.val,?_⟩
+  apply LinearOrder.ext_lt
+  intro x y
+  have h := sortBlockOrder_map_iff (D.supportStructure A).sort (D.supportStructure B).sort priority
+    (D.restrictReadout H e b.val).order b.val.order (D.supportEmbedding H e).point
+      (D.supportEmbedding H e).sort_eq (fun _ _ => Iff.rfl) x y
+  exact h.symm.trans (Iff.of_eq (congrArg (fun o : LinearOrder (D.support B) =>
+    @LT.lt _ o.toLT ((D.supportEmbedding H e).point x) ((D.supportEmbedding H e).point y)) b.property))
+
+def restrictBlockReadoutEmbedding (H : CCO.HomogeneousSource S G)
+    {A B : CCO.FiniteInduced (X := X)} (e : CCO.InducedEmbedding S A B)
+    (b : D.BlockReadoutOn priority B) :
+    D.ReadoutEmbedding H (D.restrictBlockReadout priority H e b).val b.val :=
+  D.restrictReadoutEmbedding H e b.val
+
+theorem restrictBlockReadout_id (H : CCO.HomogeneousSource S G)
+    {A : CCO.FiniteInduced (X := X)} (a : D.BlockReadoutOn priority A) :
+    D.restrictBlockReadout priority H (oldId A) a = a :=
+  Subtype.ext (D.restrictReadout_id H a.val)
+
+theorem restrictBlockReadout_comp (H : CCO.HomogeneousSource S G)
+    {A B E : CCO.FiniteInduced (X := X)} (g : CCO.InducedEmbedding S B E)
+    (f : CCO.InducedEmbedding S A B) (c : D.BlockReadoutOn priority E) :
+    D.restrictBlockReadout priority H (oldComp g f) c =
+      D.restrictBlockReadout priority H f (D.restrictBlockReadout priority H g c) :=
+  Subtype.ext (D.restrictReadout_comp H g f c.val)
+
+theorem block_readout_nonempty (A : CCO.FiniteInduced (X := X)) : Nonempty (D.BlockReadoutOn priority A) := by
+  let a := Classical.choice (D.readout_nonempty A)
+  exact ⟨⟨⟨sortBlockOrder (D.supportStructure A).sort priority a.order⟩,
+    sortBlockOrder_idempotent _ _ _⟩⟩
+
+theorem block_readout_precompact (A : CCO.FiniteInduced (X := X)) : Finite (D.BlockReadoutOn priority A) := by
+  letI : Finite (D.ReadoutOn A) := D.readout_precompact A
+  exact inferInstanceAs (Finite {a : D.ReadoutOn A // sortBlockOrder (D.supportStructure A).sort priority a.order = a.order})
+
+/-- C55 extends each prescribed within-sort order through the SAME
+old map. Both the chosen source order and all its marked data persist. -/
+theorem block_readout_reasonable (H : CCO.HomogeneousSource S G)
+    {A B : CCO.FiniteInduced (X := X)} (e : CCO.InducedEmbedding S A B)
+    (a : D.BlockReadoutOn priority A) :
+    ∃ b : D.BlockReadoutOn priority B, D.restrictBlockReadout priority H e b = a := by
+  obtain ⟨o,hfixed,ho⟩ := block_order_extension priority (D.supportStructure A).sort
+    (D.supportStructure B).sort a.val.order a.property
+      (D.supportEmbedding H e).point (D.supportEmbedding H e).injective (D.supportEmbedding H e).sort_eq
+  refine ⟨⟨⟨o⟩,hfixed⟩,Subtype.ext ?_⟩
+  apply ReadoutOn.ext
+  apply LinearOrder.ext_lt
+  exact ho
+
+theorem block_readout_reasonable_lift (H : CCO.HomogeneousSource S G)
+    {A B : CCO.FiniteInduced (X := X)} (e : CCO.InducedEmbedding S A B)
+    (a : D.BlockReadoutOn priority A) :
+    ∃ (b : D.BlockReadoutOn priority B) (f : D.ReadoutEmbedding H a.val b.val), f.old = e := by
+  obtain ⟨b,hb⟩ := D.block_readout_reasonable priority H e a
+  subst a
+  exact ⟨b,D.restrictBlockReadoutEmbedding priority H e b,rfl⟩
+
+end
+end TupleInterpretation
+
 end CCO.APRamseyReadout
