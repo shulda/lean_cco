@@ -66,3 +66,10 @@ not inferred from this report. No user decision/source exception identified.
 - A finite ranking selects one orientation per actual root pair for the forthcoming simple visible graph. It adds no hidden relation or order.
 - The hidden target can be the exact finite unary-closed actual image. `LiftFinite` proves equivalence with completion into a finite induced piece of the actual target; global injectivity is never assumed.
 - Full root `CCO` (the initial 15 public modules) built on the pinned toolchain. Both required B057 Python controls pass. Whole-batch transitive audit and the concrete private-word graph remain pending; literal old branch-equation syntax is undergoing targeted compilation.
+
+## Visibility and literal old equation
+
+- `FullPullback`, `Visibility`, and `BranchEquation` are compiled. The full representative pullback is literally saturated by the actual root kernels; its diversity guard is exactly the B056 pair menu. The source projection counterexample disproves the printed unguarded RAW formula.
+- Fresh actual old SAP neighbours give both branch kernel inclusions. Canonical projection/upward terms read both anchors from the old roots. The branch atomic target equals the whole positive branch target as an actual named coordinate.
+- `old_branch_atomic_equation` uses one same-support induced embedding and actual atomic named transition syntax. It reflects both term evaluations to one literal OLD source vertex; `LiteralOldEquation.of_closed_support` carries that equality to the ambient old source by its inclusion alone.
+- Initial public root transitive axiom audit passed: 36,270 declarations, only `propext`, `Classical.choice`, `Quot.sound`. The all-artifact cache guard encountered the previously failed uncommitted BranchEquation trace before its final successful rebuild; final guard/audit will be repeated after the complete source facade is imported.
