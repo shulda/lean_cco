@@ -114,6 +114,24 @@ theorem represented_colourInvariant {i : ι} (word : PositiveWord S i i) :
   groupInvariant_colourInvariant S H
     (PositiveWord.represented_invariant_of_homogeneous S H word)
 
+theorem represented_symmetric {i : ι} (word : PositiveWord S i i) :
+    Symmetric (PositiveWord.represented S word) :=
+  colourInvariant_symmetric S (represented_colourInvariant S H word)
+
+/-- The true RAW diagonal is all or empty, by ORIGINAL transitivity. -/
+theorem represented_diagonal_all_or_none {i : ι} (word : PositiveWord S i i) :
+    (∀ x, PositiveWord.represented S word x x) ∨
+      (∀ x, ¬PositiveWord.represented S word x x) := by
+  classical
+  by_cases h : ∃ x, PositiveWord.represented S word x x
+  · obtain ⟨x,hx⟩ := h
+    left
+    intro y
+    obtain ⟨g,hg⟩ := S.original_sort_transitive_of_homogeneous H i x y
+    simpa only [hg] using
+      PositiveWord.represented_invariant_of_homogeneous S H word g x x hx
+  · exact Or.inr (fun x hx => h ⟨x,hx⟩)
+
 include sap
 
 /-- Exact actual endpoints, retaining the diagonal distinction. -/
@@ -133,6 +151,37 @@ theorem positive_profile_pair_iff {i : ι} (word : PositiveWord S i i) (x y : X 
     obtain ⟨a,ha⟩ := S.some_colour_of_ne x y hTag
     exact ⟨a,(StrongExact.positive_profile_iff_represented S H sap word a).mpr
       ⟨x,y,hxy,ha⟩,ha⟩
+
+/-- C22's literal alternative: RAW w is its diversity or that diversity
+with ALL of real equality restored. -/
+theorem represented_eq_diversity_or_restore {i : ι} (word : PositiveWord S i i) :
+    PositiveWord.represented S word = S.menuRel (PositiveWord.profile S word) ∨
+    PositiveWord.represented S word =
+      (fun x y => x = y ∨ S.menuRel (PositiveWord.profile S word) x y) := by
+  classical
+  rcases represented_diagonal_all_or_none S H word with hall | hnone
+  · right
+    funext x y
+    apply propext
+    constructor
+    · intro hxy
+      by_cases hEq : x = y
+      · exact Or.inl hEq
+      · exact Or.inr ((positive_profile_pair_iff S H sap word x y).mpr ⟨hEq,hxy⟩)
+    · rintro (rfl | hxy)
+      · exact hall x
+      · exact ((positive_profile_pair_iff S H sap word x y).mp hxy).2
+  · left
+    funext x y
+    apply propext
+    constructor
+    · intro hxy
+      apply (positive_profile_pair_iff S H sap word x y).mpr
+      refine ⟨?_,hxy⟩
+      rintro rfl
+      exact hnone x hxy
+    · intro hxy
+      exact ((positive_profile_pair_iff S H sap word x y).mp hxy).2
 
 /-- C23: nonempty genuine strong words have DISTINCT RAW neighbours
 at every original point. This uses only actual old transitivity. -/
