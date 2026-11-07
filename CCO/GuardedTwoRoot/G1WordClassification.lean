@@ -96,7 +96,7 @@ def ContainsR {i j : Unit} : PositiveWord source i j → Prop
   | .single a => a = r
   | .cons a rest => a = r ∨ ContainsR rest
 
-/-- Source14 C45: exact singleton profile, not merely an upper bound
+/-- Source14 C44: exact singleton profile, not merely an upper bound
 or failure of the two-element coarse menu. All positive lengths occur. -/
 theorem rfree_profile_exact {i j : Unit} (word : PositiveWord source i j)
     (hFree : RFree word) :
@@ -162,7 +162,7 @@ private theorem triangle_any_r_r_actual {i j k : Unit} (a : Atom) :
       by dsimp only [AtomicSource.atomRel,source]; decide,
       by dsimp only [AtomicSource.atomRel,source]; decide⟩
 
-/-- Source14 C44: a word with an actual r letter always has an r
+/-- Source14 C45: a word with an actual r letter always has an r
 endpoint in its STRONG profile. The endpoints therefore leave J. -/
 theorem r_mem_profile_of_containsR {i j : Unit} (word : PositiveWord source i j)
     (hR : ContainsR word) : r ∈ PositiveWord.profile source word := by

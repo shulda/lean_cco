@@ -2338,3 +2338,9 @@ import CCO.GuardedTwoRoot.BoundedSourcePair
 import CCO.GuardedTwoRoot.G1WordClassification
 import CCO.GuardedTwoRoot.G1FiniteIndex
 import CCO.FactorizationForest.Provider
+import CCO.GuardedTwoRoot.PrivateTwoBranchClosure
+import CCO.GuardedTwoRoot.SourceAnchorSupport
+import CCO.GuardedTwoRoot.MergedPrivateBranches
+import CCO.GuardedTwoRoot.SourceExports
+import CCO.GuardedTwoRoot.FiniteComparisons
+import CCO.GuardedTwoRoot.SourceJoins
