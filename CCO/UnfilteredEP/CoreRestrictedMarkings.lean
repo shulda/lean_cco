@@ -11,12 +11,6 @@ namespace CCO.UnfilteredEP.FiniteAge
 variable {OldSort : Type u} {Atom : Type v} {Label : Type p}
 variable (K : FiniteAge.{u,v,w,z} OldSort Atom) (T : FiniteTemplate OldSort Atom Label)
 
-/-- Every prescribed old induced embedding lifts while preserving the
-entire marking already specified on its source. -/
-def Reasonable : Prop :=
-  ∀ {A B : K.Obj} (f : K.Embedding A B) (a : K.Marking T A),
-    ∃ b : K.Marking T B, ∀ x, b.label (f.toFun x) = a.label x
-
 /-- Forget only membership proofs of the retained labels. -/
 def includeMarking {U : Set Label} {A : K.Obj}
     (a : K.Marking (T.induced U) A) : K.Marking T A where
