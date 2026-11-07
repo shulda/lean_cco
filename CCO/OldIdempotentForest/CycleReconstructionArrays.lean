@@ -23,6 +23,11 @@ abbrev ChainPoints := ∀ k : Fin (n+1), X (gapSort S H sap nr2 F (C.root k))
 def ChainFixedAt (actual fixed : ChainPoints C) (i : Nat) : Prop :=
   ∀ hi : i < n+1, actual ⟨i,hi⟩ = fixed ⟨i,hi⟩
 
+theorem ChainFixedAt.congr {actual fixed : ChainPoints C} {i j : Nat}
+    (h : i = j) (hf : ChainFixedAt C actual fixed i) : ChainFixedAt C actual fixed j := by
+  cases h
+  exact hf
+
 def ChainSideWalks (point : ChainPoints C) (lo hi : Nat) : Prop :=
   ∀ k : Fin n, lo ≤ k.val → k.val < hi →
     PositiveWord.represented S (C.side k).word (point k.castSucc) (point k.succ)
