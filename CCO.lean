@@ -2345,3 +2345,5 @@ import CCO.AutomaticEPCore.QuotientCanonicalSeparator
 import CCO.AutomaticEPCore.QuotientOriginalSeparator
 import CCO.AutomaticEPCore.OriginalRankInduction
 import CCO.AutomaticEPCore.SourceCore
+import CCO.AutomaticEPCore.SourceExports
+import CCO.AutomaticEPCore.NonmaximalCore
