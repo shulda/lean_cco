@@ -1,6 +1,8 @@
 import CCO.OldIdempotentForest.BoundedHidden
 import CCO.OldIdempotentForest.CycleReconstructionSourceSimple
 import CCO.OldIdempotentForest.PathReconstructionRequests
+import CCO.OldIdempotentForest.PlainBaseRequests
+import CCO.OldIdempotentForest.CycleReconstructionAnyBaseSource
 import CCO.OldIdempotentForest.SourceBoundaries
 import CCO.OldIdempotentForest.ForestBoundaries
 import CCO.OldIdempotentForest.PruningBoundaries
@@ -14,6 +16,9 @@ original occurrence-indexed words. Every maximal deleted interval is kept
 whole. The RAW idempotent envelope is used before diversity is extracted
 at distinct actual representatives. All piece words and the separate fixed
 original anchor share one complete old induced base.
+The conditional reconstruction accepts any supplied complete base and
+retained representatives with the separate kept-word, RAW gap-envelope and
+anchor-profile gates. Its one insertion packet is constructed internally.
 The accepted SAP finalization chooses an injective realization of that
 original cycle over the same base, fixes retained OLD generator pins and
 preserves every original fine edge, with all unpinned positions fresh.
@@ -38,6 +43,7 @@ export CCO.OldIdempotentForest
    source_reconstruction_requests_of_hom
    PathReconstructionRequests path_reconstruction_requests_of_hom
    source_macro_path_compression pruned_finite_completion_has_hom
+   PlainBaseRoots PlainKeptProfiles PlainGapEnvelopes PlainBaseRequests plain_base_requests
    SupportedSpecifiedCycle supported_specified_cycle_exists
    exact_simple_cycle_over_complete_base
    typedObstructionBudget typed_bounded_hidden typed_bounded_hidden_uniform
@@ -56,10 +62,14 @@ export CCO.OldIdempotentForest.SourcePrunedForest
 
 export CCO.OldIdempotentForest.SupportedSpecifiedCycle
   (reconstruct_cycle_hom retainedPins reconstructionPoint
-   reconstruct_simple_cycle reconstructed_retained_image)
+   reconstruct_simple_cycle reconstructed_retained_image
+   AnyBaseCycleReconstruction reconstruct_simple_cycle_over_any_base)
 
 export CCO.OldIdempotentForest.PathReconstructionRequests
   (whole_original_path reconstruct_macro_path)
+
+export CCO.OldIdempotentForest.PlainBaseRoots
+  (of_retained of_retained_point)
 
 export CCO.OldIdempotentForest.Prunes
   (exact_partition located_slice exact_original_payload uniform_bounds

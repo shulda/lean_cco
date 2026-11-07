@@ -1,4 +1,4 @@
-# B058 source checkpoint — arbitrary-base reconstruction open
+# B058 complete source candidate
 
 Effective claim STATE866, owner project3/root. The canonical coordination
 register records every actual author, helper and publication. Accepted base:
@@ -13,8 +13,8 @@ No mathematical source/API exception or user decision is needed.
 
 ## Current concrete source result
 
-All 51 public B058 modules (7,454 source lines) are imported by `CCO.lean`.
-The pinned full root build passes 5,125 jobs. `BoundedHidden.typed_bounded_hidden` and
+All 56 public B058 modules (8,162 source lines) are imported by `CCO.lean`.
+The pinned full root build passes 5,130 jobs. `BoundedHidden.typed_bounded_hidden` and
 `typed_bounded_hidden_uniform` compile against the ACTUAL original hidden
 signature. Given one original semantic CCO, visible SAP, the terminal FULL
 cover gate and unary admissibility, every finite noncompletable source has
@@ -38,10 +38,10 @@ cycle, a contradiction. No test, certificate, holonomy, forest-existence,
 completion or reconstruction callback is a final extra hypothesis. The
 accepted `semanticCCO_change_universe` transports the same CCO premise.
 
-The actual-source instances and the uniform obstruction theorem are
-integrated and compiled. A final exact-quantifier check identified an
-open generic C40(iii) duty, described below; this is not yet a complete
-six-result contract candidate.
+The actual-source instances, uniform obstruction theorem, standalone
+anchor-free path and universal complete-base reconstruction are integrated
+and compiled. All six source-result interfaces are now concrete; exact-head
+independent review and public candidate CI remain procedural gates.
 `SupportedSpecifiedCycle.reconstruct_simple_cycle` applies accepted original
 SAP injectivization to the exact reconstructed original walk. Its pin set
 is exactly original occurrences of retained OLD generators, with the same
@@ -58,26 +58,33 @@ retained-root pin and the whole exact original RAW interval. A finite hidden
 completion supplies that Hom by `pruned_finite_completion_has_hom`.
 
 Independent exact-head review, public candidate CI and canonical acceptance
-remain pending. The valid ad101 compiled-code guards/audits are recorded
-below; they do not discharge the newly identified generic quantifier gap.
+remain pending. Current compiled-code guards/audits are recorded below.
 
-## Open generic C40(iii) quantifier
+## Generic C40(iii): ANY supplied complete base
 
-Frozen source16 allows ANY complete finite old base A with pairwise distinct
-retained root representatives, retained-side original-profile membership,
-gap RAW envelope membership and the separate exact original anchor profile.
-The existing actual-source reconstruction packet additionally contains an
-OldBaseRealization/Hom of the full retained closure. That extra Hom is
-proved internally in the valid C58/uniform-N application, but is stronger
-than the standalone generic C40 premise.
+The final generic quantifier gap is now implemented. `PlainBaseRoots`
+accepts the caller's arbitrary complete finite base A and constrains ONLY
+retained original root positions. `of_retained` and `of_retained_point`
+extend a genuinely retained-only assignment with literal retained readback;
+deleted positions acquire no prescribed points or injectivity obligation.
+The kept gate uses its ORIGINAL side word, with `plain_kept_interval_word`
+proving the literal singleton equality. The gap gate is only its RAW
+Id-union-e envelope; actual distinct retained boundary points give diversity
+in that same entire original gap word. The fixed original anchor has its
+separate OWN profile gate.
 
-The gap author is implementing a plain arbitrary-base endpoint-gated packet
-with ONE insertion list. The cycle author is implementing exact original
-cycle and SIMPLE retained-pin reconstruction over that SAME supplied A.
-Neither adapter may require a source Hom, reconstructed base, CCO or a
-completion/provider callback beyond the frozen source hypotheses. Final
-whole-head verification and review will follow those actual compiled
-instances. No source/API/toolchain exception or user decision is needed.
+`SupportedSpecifiedCycle.reconstruct_simple_cycle_over_any_base` takes
+exactly A, those roots and the kept/gap/anchor gates. It INTERNALLY constructs
+ONE simultaneous insertion using `plain_base_requests`, reads the actual
+original piece/anchor lines and exact cyclic geometry, and applies accepted
+SAP injectivization. Its `AnyBaseCycleReconstruction` retains the literal
+input A with all its induced colours, fixes the SAME supplied retained
+points, preserves every original sequential fine label, and makes every
+unpinned occurrence fresh from the entire A. Its public old_embedding and
+unpinned_fresh accessors expose those conclusions. There is no source Hom,
+OldBaseRealization, CCO, supplied insertion packet or reconstruction callback
+as an extra final hypothesis. The unchanged uniform-N theorem retains its
+original standing source hypotheses.
 
 ## Source-to-Lean connections
 
@@ -89,7 +96,8 @@ instances. No source/API/toolchain exception or user decision is needed.
 | RAW envelope before diversity | `GapConsumers`, `ForestAdapterSource`: ANY Hom of actual retained OLD closure preserves those named equations; reconstruct FULL RAW Id-union-e first; actual tagged distinctness then gives the exact original gap word profile. |
 | Stopped factor path | `Intervals`, `StoppedPruning*`, `PruningBounds/Boundaries`, `PathReconstructionRequests`: keep first/last, STOP in whole original middle; exact ordered disjoint occurrence/payload partition, canonical intervals, all piece boundaries retained and anchor-free original-path reconstruction. |
 | Actual G_typ cycle contraction | `WordIndex`, `Visible*`, `CycleContraction*`, `SupportedCycle`: exact original positions, colour edges and cyclic order; ALL actual OLD cuts; original whole branch in its actual orientation and SAME source pair model. Constructor applies to every specified simple cycle. |
-| Actual-source one-base reconstruction; generic ANY-base adapter OPEN | `RetainedSides`, `RealBase`, `ReconstructionRequests`, `CycleReconstruction*`: all retained/gap and separate anchor profiles proved internally, ONE split Hom/base, all exact original whole-word requests; original fine-edge cycle Hom and actual SIMPLE reconstruction over that same base, fixing precisely retained generator pins. |
+| Actual-source one-base reconstruction | `RetainedSides`, `RealBase`, `ReconstructionRequests`, `CycleReconstruction*`: all retained/gap and separate anchor profiles proved internally, ONE split Hom/base, all exact original whole-word requests; original fine-edge cycle Hom and actual SIMPLE reconstruction over that same base, fixing precisely retained generator pins. |
+| Generic ANY-A conditional reconstruction / C40(iii) | `PlainBaseRequests`, `CycleReconstructionAnyBase*`: the caller supplies only its complete A, retained root assignment, original kept profiles, RAW gap envelopes and own anchor profile. The actual one-list insertion and exact SIMPLE same-base cycle with literal retained readback are constructed internally. |
 | OLD anchor bound / OAB | `SourcePrunedForest.old_anchor_bound`: actual old generators only, all piece boundaries and original anchor endpoints included; unary admissibility derives closure size, with the stronger m*2^(3s+1) implying displayed conservative OAB. |
 | Uniform bounded hidden obstruction | `SourceBounds`, `BoundedHidden`, `SourceExports`: both actual induced-source branches and one language-dependent N; original finite HE implies retained Hom internally. |
 
@@ -131,24 +139,29 @@ Native author commits are preserved by no-ff merges, including source core
 `96f34765314b262d45e0904fe06862955c02c3f4` and qualified boundary
 `4d5d423b376910027bf4d2846066b39d77c04969`, actual SIMPLE wrapper
 `d5ae3724f635f8d04f60297cc23985c93dbfcebe`, and anchor-free path wrapper
-`dafba86672b3df9702fb75ade4e9980f510f2060`. This source checkpoint advances the public WIP native DAG, including the
+`dafba86672b3df9702fb75ade4e9980f510f2060`, arbitrary-base packet
+`a530221da7543e941aab92da55b20b01865afdb2` and direct generic cycle consumer
+`f7bea67f3fa8f33c213681a47bff82f5232abf85`. This complete candidate advances
+the public WIP native DAG, including the
 actual uniform-N checkpoint `f898ae10066d1957654eceb9b47bcd94c12e5873`.
 Exact public head, CI, submission, independent review and eventual acceptance
 are recorded only by root in the live canonical register.
 
-Evidence for frozen ad101 compiled code: 51-module pinned root build passes 5,125 jobs;
-actual complete source facade/standalone path leaf build passes 2,773 jobs.
-Direct printed types of both bounded-hidden theorems have only the standing
-source hypotheses, unary admissibility and input noncompletion. Direct
-printed axioms of the source N and actual SIMPLE reconstruction are exactly
-propext, Classical.choice and Quot.sound. All public root imports are present;
-source scan and diff whitespace check pass, with no broad Mathlib imports,
-sorry/admit or new axiom. Verification on that exact compiled-code freeze passes: 203 Python unit tests; all 2,438
-current project modules/artifacts; exact external provider269, Ramsey106 and
+Current evidence: full 56-module pinned root build passes 5,130 jobs;
+actual ANY-base source/facade leaf build passes 2,778 jobs. Direct printed
+types of both bounded-hidden theorems have only standing source hypotheses,
+unary admissibility and input noncompletion. The direct ANY-base theorem's
+printed type has only A, retained roots and the three frozen endpoint gates;
+its printed body internally discharges actual insertion. Direct printed
+axioms are exactly propext, Classical.choice and Quot.sound. All 56 public
+root imports, targeted Mathlib imports, source scan and diff whitespace
+check pass, with no sorry/admit or new axiom.
+
+Fresh current-code checks pass: 203 Python unit tests; all 2,443 current
+project modules/artifacts; exact external provider269, Ramsey106 and
 forest98 compiled outputs/14 source modules; reject-broad Mathlib roots;
-root transitive axiom audit38,398 and separate forest defining-module
-audit791, each with only the standard three and no violations. The complete
-B058 module contract validates all11 definitions/74 claims/6 exports/8 tasks.
-Both prescribed B058 controls pass (finite diagnostics only). Final
-after-audit source/artifact guards also pass. No source/API/toolchain or
-external pin changed.
+complete B058 module contract11 definitions/74 claims/6 exports/8 tasks and
+both prescribed B058 controls (finite diagnostics only). Current transitive CCO audit38,565 and separate forest defining-module
+audit791 pass, each with only propext/Classical.choice/Quot.sound and no
+violations. Final after-audit current-source and exact provider artifact
+guards also pass. No source/API/toolchain or external pin changed.
