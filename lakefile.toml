@@ -23,3 +23,12 @@ path = "vendor/ramsey"
 
 [[lean_lib]]
 name = "CCO"
+
+# Finite upstream proof closure, with its original receiving compiler options.
+# This is a library in this package: the receiving manifest is unchanged.
+[[lean_lib]]
+name = "AlgebraicAutomata"
+srcDir = "vendor/factorization-forest"
+roots = ["AlgebraicAutomata.FactorizationForest.Tree"]
+globs = ["AlgebraicAutomata.+"]
+leanOptions = {pp.unicode.fun = true, autoImplicit = false, relaxedAutoImplicit = false, weak.linter.mathlibStandardSet = true, maxSynthPendingDepth = 3}

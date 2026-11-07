@@ -2337,3 +2337,4 @@ import CCO.GuardedTwoRoot.SourceRootSignature
 import CCO.GuardedTwoRoot.BoundedSourcePair
 import CCO.GuardedTwoRoot.G1WordClassification
 import CCO.GuardedTwoRoot.G1FiniteIndex
+import CCO.FactorizationForest.Provider

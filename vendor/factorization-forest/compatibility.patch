@@ -1,0 +1,187 @@
+--- a/AlgebraicAutomata/FactorizationForest/Basic.lean
++++ b/AlgebraicAutomata/FactorizationForest/Basic.lean
+@@ -5,0 +6,7 @@
++
++/- CCO compatibility port, 6 November 2026.
++Adapted from ReemMelamed/algebraic-automata at
++0acb244aaa913c32eeeff48e939cb5df469a3f70 for the receiving
++Lean 4.34.1 / Mathlib v4.34.1 environment. Original notices retained.
++Compatibility modifications are recorded in PROVENANCE.json and PORT_REPORT.md. -/
++
+--- a/AlgebraicAutomata/FactorizationForest/Combine.lean
++++ b/AlgebraicAutomata/FactorizationForest/Combine.lean
+@@ -5,0 +6,7 @@
++
++/- CCO compatibility port, 6 November 2026.
++Adapted from ReemMelamed/algebraic-automata at
++0acb244aaa913c32eeeff48e939cb5df469a3f70 for the receiving
++Lean 4.34.1 / Mathlib v4.34.1 environment. Original notices retained.
++Compatibility modifications are recorded in PROVENANCE.json and PORT_REPORT.md. -/
++
+--- a/AlgebraicAutomata/FactorizationForest/Irregular.lean
++++ b/AlgebraicAutomata/FactorizationForest/Irregular.lean
+@@ -5,0 +6,7 @@
++
++/- CCO compatibility port, 6 November 2026.
++Adapted from ReemMelamed/algebraic-automata at
++0acb244aaa913c32eeeff48e939cb5df469a3f70 for the receiving
++Lean 4.34.1 / Mathlib v4.34.1 environment. Original notices retained.
++Compatibility modifications are recorded in PROVENANCE.json and PORT_REPORT.md. -/
++
+--- a/AlgebraicAutomata/FactorizationForest/Regular.lean
++++ b/AlgebraicAutomata/FactorizationForest/Regular.lean
+@@ -5,0 +6,7 @@
++
++/- CCO compatibility port, 6 November 2026.
++Adapted from ReemMelamed/algebraic-automata at
++0acb244aaa913c32eeeff48e939cb5df469a3f70 for the receiving
++Lean 4.34.1 / Mathlib v4.34.1 environment. Original notices retained.
++Compatibility modifications are recorded in PROVENANCE.json and PORT_REPORT.md. -/
++
+--- a/AlgebraicAutomata/FactorizationForest/Split.lean
++++ b/AlgebraicAutomata/FactorizationForest/Split.lean
+@@ -5,0 +6,7 @@
++
++/- CCO compatibility port, 6 November 2026.
++Adapted from ReemMelamed/algebraic-automata at
++0acb244aaa913c32eeeff48e939cb5df469a3f70 for the receiving
++Lean 4.34.1 / Mathlib v4.34.1 environment. Original notices retained.
++Compatibility modifications are recorded in PROVENANCE.json and PORT_REPORT.md. -/
++
+--- a/AlgebraicAutomata/FactorizationForest/Tree.lean
++++ b/AlgebraicAutomata/FactorizationForest/Tree.lean
+@@ -5,0 +6,7 @@
++
++/- CCO compatibility port, 6 November 2026.
++Adapted from ReemMelamed/algebraic-automata at
++0acb244aaa913c32eeeff48e939cb5df469a3f70 for the receiving
++Lean 4.34.1 / Mathlib v4.34.1 environment. Original notices retained.
++Compatibility modifications are recorded in PROVENANCE.json and PORT_REPORT.md. -/
++
+@@ -167 +174,3 @@
+-  lia [height_idempotent, height_le_listHeight hc]
++  have h := height_le_listHeight hc
++  simp only [height_idempotent]
++  omega
+@@ -171 +180,3 @@
+-    l.height + 1 ≤ (binary l r).height := by lia [height_binary]
++    l.height + 1 ≤ (binary l r).height := by
++  simp only [height_binary]
++  omega
+@@ -175 +186,3 @@
+-    r.height + 1 ≤ (binary l r).height := by lia [height_binary]
++    r.height + 1 ≤ (binary l r).height := by
++  simp only [height_binary]
++  omega
+@@ -357 +370,2 @@
+-          lia [h_between z hz1 (hz2.trans hkj)]
++          have h := h_between z hz1 (hz2.trans hkj)
++          omega
+@@ -361 +375,2 @@
+-          lia [h_between z (hik.trans hz1) hz2]
++          have h := h_between z (hik.trans hz1) hz2
++          omega
+--- a/AlgebraicAutomata/ForMathlib/Algebra/Group/Opposite.lean
++++ b/AlgebraicAutomata/ForMathlib/Algebra/Group/Opposite.lean
+@@ -5,0 +6,7 @@
++
++/- CCO compatibility port, 6 November 2026.
++Adapted from ReemMelamed/algebraic-automata at
++0acb244aaa913c32eeeff48e939cb5df469a3f70 for the receiving
++Lean 4.34.1 / Mathlib v4.34.1 environment. Original notices retained.
++Compatibility modifications are recorded in PROVENANCE.json and PORT_REPORT.md. -/
++
+@@ -27 +33,0 @@
+-
+--- a/AlgebraicAutomata/ForMathlib/Data/List/SemigroupProd.lean
++++ b/AlgebraicAutomata/ForMathlib/Data/List/SemigroupProd.lean
+@@ -5,0 +6,7 @@
++
++/- CCO compatibility port, 6 November 2026.
++Adapted from ReemMelamed/algebraic-automata at
++0acb244aaa913c32eeeff48e939cb5df469a3f70 for the receiving
++Lean 4.34.1 / Mathlib v4.34.1 environment. Original notices retained.
++Compatibility modifications are recorded in PROVENANCE.json and PORT_REPORT.md. -/
++
+--- a/AlgebraicAutomata/ForMathlib/Data/List/Slice.lean
++++ b/AlgebraicAutomata/ForMathlib/Data/List/Slice.lean
+@@ -5,0 +6,7 @@
++
++/- CCO compatibility port, 6 November 2026.
++Adapted from ReemMelamed/algebraic-automata at
++0acb244aaa913c32eeeff48e939cb5df469a3f70 for the receiving
++Lean 4.34.1 / Mathlib v4.34.1 environment. Original notices retained.
++Compatibility modifications are recorded in PROVENANCE.json and PORT_REPORT.md. -/
++
+--- a/AlgebraicAutomata/GreensRelations/Basic.lean
++++ b/AlgebraicAutomata/GreensRelations/Basic.lean
+@@ -5,0 +6,7 @@
++
++/- CCO compatibility port, 6 November 2026.
++Adapted from ReemMelamed/algebraic-automata at
++0acb244aaa913c32eeeff48e939cb5df469a3f70 for the receiving
++Lean 4.34.1 / Mathlib v4.34.1 environment. Original notices retained.
++Compatibility modifications are recorded in PROVENANCE.json and PORT_REPORT.md. -/
++
+@@ -75 +82,8 @@
+-  or_congr op_inj.symm op_rightDvd_op_iff.symm
++  by
++    have hDual : b ∣ a ↔ RightDvd (op b) (op a) := by
++      constructor
++      · rintro ⟨c,hc⟩
++        exact ⟨op c, by simpa using congrArg op hc⟩
++      · rintro ⟨c,hc⟩
++        exact ⟨unop c, by simpa using congrArg unop hc⟩
++    exact or_congr op_inj.symm hDual
+@@ -81 +95 @@
+-  or_congr op_inj.symm op_dvd_op_iff.symm
++  or_congr op_inj.symm rightDvd_iff_op_dvd_op
+@@ -203 +217 @@
+-    induction u using WithOne.cases_on with
++    induction u using WithOne.recOneCoe with
+@@ -205 +219 @@
+-      induction v using WithOne.cases_on with
++      induction v using WithOne.recOneCoe with
+@@ -211 +225 @@
+-      induction v using WithOne.cases_on with
++      induction v using WithOne.recOneCoe with
+--- a/AlgebraicAutomata/GreensRelations/Finite.lean
++++ b/AlgebraicAutomata/GreensRelations/Finite.lean
+@@ -5,0 +6,7 @@
++
++/- CCO compatibility port, 6 November 2026.
++Adapted from ReemMelamed/algebraic-automata at
++0acb244aaa913c32eeeff48e939cb5df469a3f70 for the receiving
++Lean 4.34.1 / Mathlib v4.34.1 environment. Original notices retained.
++Compatibility modifications are recorded in PROVENANCE.json and PORT_REPORT.md. -/
++
+--- a/AlgebraicAutomata/GreensRelations/Green.lean
++++ b/AlgebraicAutomata/GreensRelations/Green.lean
+@@ -5,0 +6,7 @@
++
++/- CCO compatibility port, 6 November 2026.
++Adapted from ReemMelamed/algebraic-automata at
++0acb244aaa913c32eeeff48e939cb5df469a3f70 for the receiving
++Lean 4.34.1 / Mathlib v4.34.1 environment. Original notices retained.
++Compatibility modifications are recorded in PROVENANCE.json and PORT_REPORT.md. -/
++
+--- a/AlgebraicAutomata/GreensRelations/MulSeq.lean
++++ b/AlgebraicAutomata/GreensRelations/MulSeq.lean
+@@ -5,0 +6,7 @@
++
++/- CCO compatibility port, 6 November 2026.
++Adapted from ReemMelamed/algebraic-automata at
++0acb244aaa913c32eeeff48e939cb5df469a3f70 for the receiving
++Lean 4.34.1 / Mathlib v4.34.1 environment. Original notices retained.
++Compatibility modifications are recorded in PROVENANCE.json and PORT_REPORT.md. -/
++
+--- a/AlgebraicAutomata/GreensRelations/Order.lean
++++ b/AlgebraicAutomata/GreensRelations/Order.lean
+@@ -5,0 +6,7 @@
++
++/- CCO compatibility port, 6 November 2026.
++Adapted from ReemMelamed/algebraic-automata at
++0acb244aaa913c32eeeff48e939cb5df469a3f70 for the receiving
++Lean 4.34.1 / Mathlib v4.34.1 environment. Original notices retained.
++Compatibility modifications are recorded in PROVENANCE.json and PORT_REPORT.md. -/
++

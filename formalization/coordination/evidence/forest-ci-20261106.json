@@ -1,0 +1,206 @@
+{
+  "date": "2026-11-06",
+  "author": "/root/forest_ci",
+  "scope": "advance provider plumbing; no B058 claim or accepted dependency",
+  "source_implementation_head": "10f1a5b613d71945488c13243e8ff59e10bbb824",
+  "validation_source_tooling_head": "25299a81ba9c766946bc345c9cffa09c93938a94",
+  "native_provider_preparation": "a90f3a43fa119d6e06723e40f2626519ecf6d916",
+  "upstream": "0acb244aaa913c32eeeff48e939cb5df469a3f70",
+  "provider_subtree": "ee892229b9f4be545bfce74d7b53ac9136616dc2",
+  "compiler": "Lean (version 4.34.1, x86_64-unknown-linux-gnu, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)",
+  "input_sha256": {
+    "lean-toolchain": "d5edba4e4b8faad9c1baeadb265716d20d03be4d1a2647dc5e35b0c0325bea7b",
+    "lakefile.toml": "eabc90722fc6968a1f444c0799cff3bab402d9932507456e9f01f3014cb19d59",
+    "lake-manifest.json": "740aed1eb25fe64004f1b860865c0c9c362080aef71e76d9bfe4697a779d4cb1",
+    "CCO.lean": "32e37d68b6417441f1a7a20e19bc9208e4e786075eeebc2c55601939c4222fea",
+    "tools/factorization_forest_provider.json": "cca2483c1a01afecc1088126ce4275a1ba6fb3f688c5ef817c58bf85a41fe8f9"
+  },
+  "actual_dependency_git_pins": {
+    "mathlib": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+    "plausible": "118aa17ee84656b8bd727fef7c458ee8c833385c",
+    "LeanSearchClient": "ddf04cf3949fa556442341e87d47f9f6e6074707",
+    "importGraph": "e928b72544873815af278d38681b31c0293588e3",
+    "proofwidgets": "106ff4fafc74ef4ac99d81dbf3ab399118f497a5",
+    "aesop": "355695d523e41d0554926416cba2a2b3544fbbc9",
+    "Qq": "6a489d9af5d0c47e5b259e2e8bcdfc1811b5a259",
+    "batteries": "f2effa3d803fda822b1f97b806c47cf2adfbcbc2",
+    "Cli": "e92c9f15fdfacc8536f31cfb3b7ad26c3c8cd204",
+    "AllThoseEPPA": "cd358cde844d5419fd43f30c441511927e09142f"
+  },
+  "provider_provenance_sha256": "a3de66400ebc17a3be0f3f36f093ebcf747954de0485113e17fd24aa04f25578",
+  "cold_provider_and_facade_build": {
+    "ok": true,
+    "jobs": 974,
+    "provider_modules": 14,
+    "original_five_options": true
+  },
+  "complete_guards": {
+    "CCO_modules": 2285,
+    "EPPA_modules": 269,
+    "Ramsey_modules": 106,
+    "forest_modules": 14,
+    "forest_olean_partitions": 42,
+    "forest_C_IR_editor_outputs": 56,
+    "summary": [
+      "Project cache consistent: 2285 olean part(s), 2285 current source module(s) checked.",
+      "External provider cache consistent: 269 olean part(s), 269 current source module(s) checked; exact pin cd358cde844d5419fd43f30c441511927e09142f.",
+      "Ramsey provider cache consistent: 106 olean part(s), 106 current source module(s) checked; exact subtree 374241ce3751715c90b12c0b071f36026819ad4a.",
+      "Forest provider cache consistent: 98 compiled output(s), 14 current source module(s); exact port subtree ee892229b9f4be545bfce74d7b53ac9136616dc2."
+    ]
+  },
+  "provider_audit": {
+    "allowed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "audited": 791,
+    "axiomsUsed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ok": true,
+    "root": "AlgebraicAutomata",
+    "violations": []
+  },
+  "CCO_transitive_audit": {
+    "allowed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "audited": 34190,
+    "axiomsUsed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ok": true,
+    "root": "CCO",
+    "violations": []
+  },
+  "audit_tool": {
+    "commit": "46024e005996495c65ef609368e11ab39c4222e3",
+    "binary_sha256": "40c3eccf14c35af9c1da12eac283aea23698147a9282e6d53af855f3a56f9eb1"
+  },
+  "python_tests": {
+    "passed": 203,
+    "dedicated_forest_tests": 16
+  },
+  "corruption_rejections": {
+    "actual_native_C_bytes": true,
+    "actual_original_compiler_option_trace": true,
+    "exact_original_bytes_restored": true
+  },
+  "mathlib_roots": {
+    "provider_specific": 16,
+    "complete_project_and_registered_providers": 244
+  },
+  "full_local_archive": {
+    "source_head": "10f1a5b613d71945488c13243e8ff59e10bbb824",
+    "successful_full_restore_at": "06cf5d363cf04a21d2884213763b969361834209",
+    "tar_bytes": 301340940,
+    "tar_sha256": "b0145c0957479facee9ead2cca624aa8c030efacb1009f0825004bbaf590a7e8",
+    "ZIP_sha256": "760132842143fd8d04fd2db2588336190f8fbde9c86bc82580a902be0e4ad92d",
+    "members": 21675,
+    "regular_bytes": 3099060636,
+    "licensed_distribution_files": 34,
+    "restored": true,
+    "private_roots": [
+      ".lake/build",
+      ".lake/packages/AllThoseEPPA/.lake/build",
+      "vendor/ramsey/.lake/build",
+      ".lake/factorization-forest-distribution"
+    ],
+    "rollback_outputs_retained": true,
+    "final_exporter_compression_level": 1,
+    "initial_real_archive_compression_level": 9,
+    "final_exporter_restore_fixtures_pass": true,
+    "historical_only": true,
+    "eligible_for_strict_restore_at_current_root": false,
+    "archived_input_sha256": {
+      "lean-toolchain": "d5edba4e4b8faad9c1baeadb265716d20d03be4d1a2647dc5e35b0c0325bea7b",
+      "lake-manifest.json": "740aed1eb25fe64004f1b860865c0c9c362080aef71e76d9bfe4697a779d4cb1",
+      "lakefile.toml": "eabc90722fc6968a1f444c0799cff3bab402d9932507456e9f01f3014cb19d59",
+      "CCO.lean": "9cc0f1c8b8e14bf32d348181fb4658751f825c4d95fc2dc3aa32b25904fededa"
+    },
+    "current_input_changes": {
+      "CCO.lean": {
+        "archived": "9cc0f1c8b8e14bf32d348181fb4658751f825c4d95fc2dc3aa32b25904fededa",
+        "current": "32e37d68b6417441f1a7a20e19bc9208e4e786075eeebc2c55601939c4222fea"
+      }
+    },
+    "scope": "Actual export and full restore passed only at the recorded historical heads; current CCO root hash changed after B055 merge. No B055 content or current-root archive verification is claimed."
+  },
+  "preserved": {
+    "all_fourteen_provider_proof_files": true,
+    "entire_provider_preparation_subtree": true,
+    "accepted_toolchain_and_root_manifest": true,
+    "shared_builds_written": false
+  },
+  "local_log_sha256": {
+    "forest-build.log": "143141616a86cdbd9cd83915694e97ea11eacf0fc17722776881d6b0cc1fee8f",
+    "full-build.log": "9e74a6a10d351b83835678b6de0781b90a2e9815629e27c0fe1370bddf133f74",
+    "exact-head-warm-build.log": "c189d2fc184224b893869898516fe141423343c14a7c658f5e5bd936c009806d",
+    "native-corruption-rejected.log": "92141942ff265aada09fe20d2862e930f50b92ea98df0bfdab6a6737035f0497",
+    "option-corruption-rejected.log": "4272d171c51d497720fb7fa9b3208bb523903eed8aa24978edd8468b870eb03c",
+    "final-prebuild-guards.log": "25bd85fdd56494fcea2585172bfbe73eafcbcf157766759a504fb4dff46ac7c4",
+    "final-restored-root-build.log": "250f0481009c2c1f510c5a64203aa2cd94f622a36ed84b608fa6a0ce0e6e0cd2",
+    "final-complete-guards.log": "4a7c0aaf25222d9c89ce5ab349dec3486353886d3990c723cb2c95085ecb7cef",
+    "final-provider-audit.log": "6aa7e9aea737ba76820f7a7a49a0be5c35f125d1fe0c5652358772414f213758",
+    "final-cco-audit.json": "6c0bb21dbb69458e0c51a2b9cae027584565560797e4e7b34cef8c3818c8b2ef",
+    "final-python-tests.log": "c43ac412b1e47cc38493ea8548e927bbbf5bf68367ecf29be2629eea57a8731b",
+    "exact-head-export.log": "a659506ff527343d428b5be5efeeb7a21754766e40f4c0819b6e7eb8c52393c4",
+    "real-export-restored.json": "6f2b1785ee5cec522c172202eef66e9b45d982b96cd08ee7042b3f25c78c37cf",
+    "b055-main-prebuild-guards.log": "84362f7747db16cd47fe997c92684f69b477c1959cf31e5913c636929b054248",
+    "b055-main-full-root-build.log": "baaea784181761bc23f115b3b9446a2ca5d3f2483c5d19c48bc88ee15ec54927",
+    "b055-main-complete-guards.log": "cabb57a81bc7760337856ab20aedfe2a61a3b7a3c9e7499a97bbf5e2aa6146b5",
+    "b055-main-provider-audit.log": "6aa7e9aea737ba76820f7a7a49a0be5c35f125d1fe0c5652358772414f213758",
+    "b055-main-cco-audit.json": "75b3f5ba9e468f64798d1b70fb1d687d51a6ec31cb1ec9decfb896a72b752766",
+    "b055-main-python-tests.log": "bd5b1aa58d12b3626505834c3e1f76789c47c4a7a3d88035f4ea408a5eb8d05e",
+    "b055-main-mathlib-roots.json": "4b4f4ac8f7800b11c9ca5919b15aadd4cead63e53184e091b44a9017bc173b5d",
+    "b055-main-coordination.log": "6dab52513b130ec20c38c354bb2fee7045501a74779d1b3674ae94b6b6bef9ea",
+    "b055-main-source-contract.log": "f8a278d4228619a0deb32e34eb5b4a6cc435db3cd53c458c18469c29f3282c55",
+    "b055-frozen-root-build.log": "50c5c5b9fe077fb053fe26b7a20911141dd9fcb5d4de3ad1ff6b19c1f9366071",
+    "b055-frozen-complete-guards.log": "cabb57a81bc7760337856ab20aedfe2a61a3b7a3c9e7499a97bbf5e2aa6146b5",
+    "b055-frozen-provider-audit.log": "6aa7e9aea737ba76820f7a7a49a0be5c35f125d1fe0c5652358772414f213758",
+    "b055-frozen-cco-audit.json": "75b3f5ba9e468f64798d1b70fb1d687d51a6ec31cb1ec9decfb896a72b752766",
+    "b055-frozen-python-tests.log": "bebf062da56bec73a19166f4f4de3ade0caf5684df5664a6ece3cf846b1479cc"
+  },
+  "remote_CI": "not run or claimed by implementation author; root publisher must obtain exact-head CI/review and resulting-main verification",
+  "remaining": [
+    "true complete nonauthor exact-head review",
+    "root-owned publication/CI/integration under sole lock",
+    "green resulting-main build and both audits",
+    "separate B058 typed zero-semigroup, append law, ordered interval conversion and nonzero interval discharge"
+  ],
+  "previous_complete_evidence_commit": "9bbe93cdaf99bf538f60fb67be141b7c7e79e776",
+  "historical_accepted_main_base": "7935bb2205e5c0e5701ab89148d47bb85bcd37c2",
+  "historical_restored_full_root_build": {
+    "ok": true,
+    "jobs": 4952,
+    "provider_or_facade_rebuilds": 0
+  },
+  "validation_tree": "fe3aa25e758019c2230c931a3291ad60a67bd32d",
+  "CCO_source_subtree": "14c6806167bf0481d749631bceb7bd0737bbf897",
+  "main_base": "8d009339dd8b8b7e4a1094d046bdc2ee565d2fd0",
+  "main_status_at_merge": "B055 merged to actual main; root retained sole lock pending actual-main CI; no acceptance claimed by implementation author",
+  "preserved_ancestry": [
+    "9bbe93cdaf99bf538f60fb67be141b7c7e79e776",
+    "a90f3a43fa119d6e06723e40f2626519ecf6d916",
+    "d83ecfefa3922b8b35d0e27845ed323ef1c53c47",
+    "8d009339dd8b8b7e4a1094d046bdc2ee565d2fd0"
+  ],
+  "current_combined_full_root_build": {
+    "ok": true,
+    "jobs": 4973,
+    "CCO_source_modules": 2285,
+    "B055_modules_added": 21,
+    "frozen_head": "25299a81ba9c766946bc345c9cffa09c93938a94",
+    "frozen_tree": "fe3aa25e758019c2230c931a3291ad60a67bd32d",
+    "provider_or_facade_rebuilds_in_frozen_warm_check": 0
+  },
+  "current_root_resolution": "Exact byte content of new actual main CCO.lean plus one appended CCO.FactorizationForest.Provider import; every existing import and all 21 B055 modules preserved.",
+  "merge_checkpoint_scope": "Intermediate local merge62a5af76 retained conflict markers after a failed overstrict blank-line assertion; corrected64df2e24 before compilation/publication. Frozen25299 has the corrected identical tree and additionally preserves public PR78 ancestry."
+}
