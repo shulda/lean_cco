@@ -8,7 +8,7 @@ no original owner SAP or terminality is assumed. Fixed charts enumerate
 symbols once, independently of points, and do not restrict the proper
 hidden age to only those selected coordinates. -/
 
-universe u v w p z
+universe u v w p z r
 namespace CCO.APRamseyReadout
 open CCO.CloneTupleGeometry CCO.CloneTupleGeometry.OwnerStage
 noncomputable section
@@ -83,5 +83,37 @@ theorem chartSymbol_kernel_le (i : B.Sorts) (k : Fin (chartArity F i)) :
     fullCloneKernel B.source i ≤ (chartSymbol F i k).val :=
   (F i).kernel_le _
 
+variable (B)
+
+/-- The main source application may choose every proper MI symbol;
+the parameterized template results still allow arbitrary fixed charts. -/
+def defaultCharts : Charts.{u,v,w,v} B :=
+  fun i => SelectedMIFamily.all B i
+
+section Original
+variable {ι : Type u} {X : ι → Type v} (S : AtomicSource.{u,v,w} ι X)
+variable {G : Type r} [Group G] [∀ i, MulAction G (X i)]
+
+/-- Original AP, rather than SAP, constructs the NEW actual safe owner
+endpoint. The retained unary transition is the SAME reduct functor along
+the actual finite history, not an independently supplied label provider. -/
+theorem terminal_clone_source_exists
+    (H : HomogeneousSource S G) (ap : AgeAP S)
+    (cco : SemanticCCO.{u,v,max u v,w} S)
+    (countable : ∀ i, Countable (X i)) (infinite : ∀ i, Infinite (X i)) :
+    ∃ B : OwnerStage.{u,v,w},
+      ∃ history : APCharacter.Towers.History OwnerStage.Next
+        (initialOwnerStage S H ap cco countable infinite) B,
+        B.Terminal ∧
+        history.length + B.potential ≤ (initialOwnerStage S H ap cco countable infinite).potential ∧
+        ∃ reduct : APCharacter.Towers.UnaryReduct S B.source,
+          ∃ unary : APCharacter.Towers.UnaryTransition
+            (initialOwnerStage S H ap cco countable infinite).finiteAge B.finiteAge,
+            unary.forget = reduct.forget := by
+  obtain ⟨D,history,ht,hbound,reduct,unary,hforget,_⟩ :=
+    CloneTupleGeometry.ramsey_clone_stability S H ap cco countable infinite
+  exact ⟨D,history,ht,hbound,reduct,unary,hforget⟩
+
+end Original
 end
 end CCO.APRamseyReadout
