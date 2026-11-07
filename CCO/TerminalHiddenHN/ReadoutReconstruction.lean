@@ -45,7 +45,11 @@ def readoutCoordinateClass {A : CCO.FiniteInduced (X := X)} (x : A.vertices) :
 theorem readoutQuotient_coordinate {A : CCO.FiniteInduced (X := X)} (x : A.vertices) :
     D.readoutQuotientEquiv H A (D.readoutCoordinateClass H x) = D.closurePoint x := by
   apply Subtype.ext
-  exact congrArg Subtype.val
+  change
+    ((D.realObject A).presentationQuotientEquiv (D.normalForms H) (D.normalForms_valid H)
+      ((D.realObject A).coordinateClass (D.normalForms H) (D.normalForms_valid H) x 0)).val =
+        D.realPoint x.val
+  exact congrArg (fun y : (D.realObject A).support => y.val)
     ((D.realObject A).quotient_coordinate (D.normalForms H) (D.normalForms_valid H) x 0)
 
 abbrev readoutQuotientStructure (A : CCO.FiniteInduced (X := X)) :
