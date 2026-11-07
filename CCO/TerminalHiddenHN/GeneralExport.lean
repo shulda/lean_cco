@@ -33,7 +33,7 @@ theorem general_finite_relational_ramsey_expansion
   have hReasonable : CCO.APCharacter.Towers.Reasonable red.forget := by
     rw [← hforget]
     exact unary.reasonable
-  exact hasFiniteRelationalRamseyExpansion_of_unaryReduct red hReasonable hTerminal
+  exact UnaryLift.hasFiniteRelationalRamseyExpansion_of_unaryReduct red hReasonable hTerminal
 
 end
 end CCO.TerminalHiddenHN
