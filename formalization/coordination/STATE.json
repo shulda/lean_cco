@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 855,
+  "revision": 856,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -5030,7 +5030,7 @@
       }
     },
     "B056": {
-      "state": "INTEGRATING",
+      "state": "ACCEPTED",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b053_resume",
@@ -5090,6 +5090,13 @@
           "report_path": "formalization/coordination/reviews/B056-20261107.md"
         },
         "summary": "Actual registered fresh nonauthor /root/recovery_control personally approves exact8db after all35modules5156lines/all61frozenclaims, actual provider discharges, exact boundedLOCAL support test, EVERY-atom fullclosedimage, SAMEe/T oldanchorpreimages+fullclosurecount, actualgraph-preserving directmerge+C19, genuine infiniteG1duties/firewalls/B057consumer. Finaldelta ONLY acceptedB063source+40rootimports+ownverbatimreport+opnote; allB056proofbytesunchanged. ExactCI42343671193/job128316655083 passes203tests5048jobs2360sources35913CCO+791forest std3audits allguards, syntheticsourcetreeequalshead. ActualSTATE853lease personallyverified; no source finding or borrowed approval."
+      },
+      "accepted_commit": "141c040cd33e2f922b3e5efaac6a62ce290ada19",
+      "main_ci": {
+        "run_id": 42344185157,
+        "head_sha": "141c040cd33e2f922b3e5efaac6a62ce290ada19",
+        "conclusion": "success",
+        "axiom_audit": "allowlist"
       }
     },
     "B057": {
@@ -5429,13 +5436,7 @@
       "owner_project_id": null
     }
   },
-  "integration_lock": {
-    "kind": "package",
-    "package_id": "B056",
-    "actor_id": "root",
-    "base_main_sha": "34e7027272c1e5028716ee6641a114f9dc63740f",
-    "head_sha": "8db9579dd39182f650cff8656d9f8d773fb23fc0"
-  },
+  "integration_lock": null,
   "history": [
     {
       "revision": 1,
@@ -26407,6 +26408,24 @@
         "ci": {
           "run_id": 42343671193,
           "head_sha": "8db9579dd39182f650cff8656d9f8d773fb23fc0",
+          "conclusion": "success",
+          "axiom_audit": "allowlist"
+        },
+        "actor_id": "root"
+      }
+    },
+    {
+      "revision": 856,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "accept",
+      "package_id": "B056",
+      "details": {
+        "package_id": "B056",
+        "integration_commit": "141c040cd33e2f922b3e5efaac6a62ce290ada19",
+        "main_ci": {
+          "run_id": 42344185157,
+          "head_sha": "141c040cd33e2f922b3e5efaac6a62ce290ada19",
           "conclusion": "success",
           "axiom_audit": "allowlist"
         },
