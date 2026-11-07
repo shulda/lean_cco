@@ -1,6 +1,7 @@
 import CCO.FullCode.Terms
 import Lean.Elab.Tactic.Omega
 import CCO.UnarySupport.TypedTerms
+import CCO.UnaryHN.RawEncoding.Basic
 import CCO.HiddenSAPReadings.SourceSupport
 
 /-! Faithful binary views of the original partial unary language.
@@ -65,6 +66,92 @@ def binaryStructure {V : Type v} (C : CCO.UnarySupport.Structure L V) :
   binary_sorted R x y h := by
     exact ⟨by simpa using C.rel_sorted R _ h (binaryFirst L hbin R),
       by simpa using C.rel_sorted R _ h (binarySecond L hbin R)⟩
+
+/-- Every original arity-two tuple is retained, including repeated inputs. -/
+theorem binaryStructure_rel_iff {V : Type v} (C : CCO.UnarySupport.Structure L V)
+    (R : L.Rel) (xs : Fin (L.arity R) → V) :
+    (binaryStructure L hbin C).binary R (xs (binaryFirst L hbin R))
+      (xs (binarySecond L hbin R)) ↔ C.rel R xs := by
+  change C.rel R (binaryTuple L R _ _) ↔ C.rel R xs
+  rw [binaryTuple_eta]
+
+theorem binaryTuple_map {V : Type v} {W : Type w} (R : L.Rel)
+    (f : V → W) (x y : V) :
+    binaryTuple L R (f x) (f y) = f ∘ binaryTuple L R x y := by
+  funext i
+  by_cases hi : i.val = 0 <;> simp [binaryTuple,hi,Function.comp_apply]
+
+/-- The actual induced embedding uses literally the SAME vertex map and
+reflects every partial domain, value and original binary relation. -/
+def binaryEmbedding {V : Type v} {W : Type w}
+    {C : CCO.UnarySupport.Structure L V} {D : CCO.UnarySupport.Structure L W}
+    (e : CCO.UnarySupport.Structure.Embedding C D) :
+    CCO.FullCode.Structure.Embedding (binaryStructure L hbin C) (binaryStructure L hbin D) where
+  point := e.point
+  injective := e.injective
+  sort_eq := e.sort_eq
+  map_func := e.map_func
+  reflect_func := e.reflect_func
+  unary_iff U := PEmpty.elim U
+  binary_iff R x y := by
+    change D.rel R (binaryTuple L R (e.point x) (e.point y)) ↔ C.rel R (binaryTuple L R x y)
+    rw [binaryTuple_map]
+    exact ⟨e.reflect_rel R _,e.map_rel R _⟩
+
+def binaryEmbeddingInverse {V : Type v} {W : Type w}
+    {C : CCO.UnarySupport.Structure L V} {D : CCO.UnarySupport.Structure L W}
+    (e : CCO.FullCode.Structure.Embedding (binaryStructure L hbin C) (binaryStructure L hbin D)) :
+    CCO.UnarySupport.Structure.Embedding C D where
+  point := e.point
+  injective := e.injective
+  sort_eq := e.sort_eq
+  map_func := e.map_func
+  reflect_func := e.reflect_func
+  map_rel R xs hx :=
+    (binaryStructure_rel_iff L hbin D R (e.point ∘ xs)).mp
+      ((e.binary_iff R (xs (binaryFirst L hbin R)) (xs (binarySecond L hbin R))).mpr
+        ((binaryStructure_rel_iff L hbin C R xs).mpr hx))
+  reflect_rel R xs hx :=
+    (binaryStructure_rel_iff L hbin C R xs).mp
+      ((e.binary_iff R (xs (binaryFirst L hbin R)) (xs (binarySecond L hbin R))).mp
+        ((binaryStructure_rel_iff L hbin D R (e.point ∘ xs)).mpr hx))
+
+def binaryEmbeddingEquiv {V : Type v} {W : Type w}
+    (C : CCO.UnarySupport.Structure L V) (D : CCO.UnarySupport.Structure L W) :
+    CCO.UnarySupport.Structure.Embedding C D ≃
+      CCO.FullCode.Structure.Embedding (binaryStructure L hbin C) (binaryStructure L hbin D) where
+  toFun := binaryEmbedding L hbin
+  invFun := binaryEmbeddingInverse L hbin
+  left_inv e := by
+    apply (CCO.UnaryHN.Raw.embeddingEquiv C D).injective
+    apply StructuralRamsey.Structure.Embedding.ext
+    intro x
+    rfl
+  right_inv e := by
+    apply CCO.FullCode.Structure.Embedding.ext
+    intro x
+    rfl
+
+/-- Composition is the accepted typed embedding composition, with its
+literal composite point map. -/
+def typedEmbeddingComp {Z : Type*} {V : Type v} {W : Type w}
+    {C : CCO.UnarySupport.Structure L V} {D : CCO.UnarySupport.Structure L W}
+    {E : CCO.UnarySupport.Structure L Z}
+    (g : CCO.UnarySupport.Structure.Embedding D E)
+    (f : CCO.UnarySupport.Structure.Embedding C D) : CCO.UnarySupport.Structure.Embedding C E :=
+  CCO.UnaryHN.Raw.decodeEmbedding
+    ((CCO.UnaryHN.Raw.encodeEmbedding g).comp (CCO.UnaryHN.Raw.encodeEmbedding f))
+
+theorem binaryEmbedding_comp {Z : Type*} {V : Type v} {W : Type w}
+    {C : CCO.UnarySupport.Structure L V} {D : CCO.UnarySupport.Structure L W}
+    {E : CCO.UnarySupport.Structure L Z}
+    (g : CCO.UnarySupport.Structure.Embedding D E)
+    (f : CCO.UnarySupport.Structure.Embedding C D) :
+    binaryEmbedding L hbin (typedEmbeddingComp L g f) =
+      (binaryEmbedding L hbin g).comp (binaryEmbedding L hbin f) := by
+  apply CCO.FullCode.Structure.Embedding.ext
+  intro x
+  rfl
 
 def supportTermToFull {s t : L.Sorts}
     (q : CCO.UnarySupport.Structure.Term L s t) :
