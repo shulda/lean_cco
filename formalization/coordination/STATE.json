@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 890,
+  "revision": 891,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -5230,7 +5230,7 @@
       }
     },
     "B059": {
-      "state": "SUBMITTED",
+      "state": "REVIEWING",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b057_idempotents",
@@ -5271,7 +5271,19 @@
         "conclusion": "success",
         "axiom_audit": "allowlist"
       },
-      "report_path": "formalization/coordination/submissions/B059.md"
+      "report_path": "formalization/coordination/submissions/B059.md",
+      "review": {
+        "project_id": 3,
+        "actor_id": "work_control_20261107",
+        "head_sha": "2f39a571fad8c7cce6a939d04c2780c78108f68b",
+        "approved": false,
+        "independence": {
+          "identity": "/root/recovery_control",
+          "non_author": true,
+          "report_path": "formalization/coordination/reviews/B059-20261107.md",
+          "summary": "I am the actual preserved registered /root/recovery_control (work_control_20261107), not a renamed author. I never implemented, repaired, designed, authored or selected B059 proof/interfaces or its original implementation and have no historical author project. I personally read the complete original frozen source17/source18, notes/contracts, all 38 modules/5326 lines, all 52 duties, actual provider discharges and B061 consumer scopes. My work was read-only inspection and my own scratch review records; no production, root, repository report, source/contract, build or publisher contribution. The actual recorded source authors are root, b057_lift/its irreducibility helper, b057_idempotents/gap_coordinates, b057_seams, b059_equivariant_functions and author inventory b058_source_map; I am none of them. Own published whole-source report is VERBATIM SHA25615eabf868acd8e7893f33872c4e5fabe5859fbeacf24c8a5815b637a46e17b75. I independently verified final docs-only tree7801703b/public2f39 and complete exact CI42363921840/job128377854533 success before taking this lease."
+        }
+      }
     },
     "B060": {
       "state": "ACCEPTED",
@@ -27199,6 +27211,24 @@
           "axiom_audit": "allowlist"
         },
         "report_path": "formalization/coordination/submissions/B059.md"
+      }
+    },
+    {
+      "revision": 891,
+      "project_id": 3,
+      "actor_id": "work_control_20261107",
+      "event": "review",
+      "package_id": "B059",
+      "details": {
+        "actor_id": "work_control_20261107",
+        "package_id": "B059",
+        "head_sha": "2f39a571fad8c7cce6a939d04c2780c78108f68b",
+        "independence": {
+          "identity": "/root/recovery_control",
+          "non_author": true,
+          "report_path": "formalization/coordination/reviews/B059-20261107.md",
+          "summary": "I am the actual preserved registered /root/recovery_control (work_control_20261107), not a renamed author. I never implemented, repaired, designed, authored or selected B059 proof/interfaces or its original implementation and have no historical author project. I personally read the complete original frozen source17/source18, notes/contracts, all 38 modules/5326 lines, all 52 duties, actual provider discharges and B061 consumer scopes. My work was read-only inspection and my own scratch review records; no production, root, repository report, source/contract, build or publisher contribution. The actual recorded source authors are root, b057_lift/its irreducibility helper, b057_idempotents/gap_coordinates, b057_seams, b059_equivariant_functions and author inventory b058_source_map; I am none of them. Own published whole-source report is VERBATIM SHA25615eabf868acd8e7893f33872c4e5fabe5859fbeacf24c8a5815b637a46e17b75. I independently verified final docs-only tree7801703b/public2f39 and complete exact CI42363921840/job128377854533 success before taking this lease."
+        }
       }
     }
   ],
