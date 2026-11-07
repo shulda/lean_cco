@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 843,
+  "revision": 844,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -5036,6 +5036,7 @@
         "/root/b053_resume",
         "/root/b056_continue",
         "/root/b056_continue/g1_hidden_raw",
+        "/root/b056_continue/private_cycle_finish",
         "/root/b062_resume",
         "/root/b062_resume/orbital_pullback",
         "/root/b062_resume/source_support",
@@ -26184,6 +26185,20 @@
           "source_modules": 2324,
           "declarations": 35037
         },
+        "actor_id": "root"
+      }
+    },
+    {
+      "revision": 844,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "record_authorship",
+      "package_id": "B056",
+      "details": {
+        "package_id": "B056",
+        "author_actor_ids": [
+          "/root/b056_continue/private_cycle_finish"
+        ],
         "actor_id": "root"
       }
     }
