@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 892,
+  "revision": 893,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -5230,7 +5230,7 @@
       }
     },
     "B059": {
-      "state": "REVIEWING",
+      "state": "INTEGRATING",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b057_idempotents",
@@ -5611,7 +5611,13 @@
       "owner_project_id": null
     }
   },
-  "integration_lock": null,
+  "integration_lock": {
+    "kind": "package",
+    "package_id": "B059",
+    "actor_id": "root",
+    "base_main_sha": "0ba966827f890a20251ba69869d2c657361db822",
+    "head_sha": "2f39a571fad8c7cce6a939d04c2780c78108f68b"
+  },
   "history": [
     {
       "revision": 1,
@@ -27243,6 +27249,27 @@
         "package_id": "B059",
         "head_sha": "2f39a571fad8c7cce6a939d04c2780c78108f68b",
         "summary": "APPROVED by actual nonauthor /root/recovery_control, registered work_control_20261107, for EXACT PR86 head2f39a571fad8c7cce6a939d04c2780c78108f68b/tree7801703bc8323619119a25e07a8fb7b4d099f597. I personally reviewed all original frozen source17/source18/245 notes, all52 duties/10defs/5results/2eq/7tasks, all38 modules/5326 lines, exact hypotheses, all13 provider discharges and B061 C30/C36 receiving use. Generic C08 closure/cofinality and C23 full marked readout keep SAP/covers/CCO/HN firewalls, actual function finiteness before normal forms, full partial domains and ALL same-root/cross-root comparisons. Standalone C28 uses actual full cylinders, original SAP and explicit NR2 only. Actual entire-age SAP/JEP and HN include empty/orphan copies, arbitrary carrier universes, ALL global orders/embeddings and restricted actual singleton admission before independent B058 N/max1 cutoff; all four HN inputs are discharged internally. C39 supplies same-model hidden Ramsey; C45 actually terminalises a NEW source and retains terminal unary labels through concrete legal-table SAME-old-map reasonableness and natural ALL-embedding Ramsey transport. No original terminality/provider callback, fake E*, EP/coherentEPPA/section, arbitrary-total-unary or higher-arity assertion. All11 pinned source blobs/contracts/dependency/provider/toolchain bytes unchanged. All38 final production hashes+root exactly match personally reviewed06609/8ed; ONLY delta from42c603 is final author map c8a34cbf193037350b4b8a7440a422e68cc03df2979a0b61f70dc9e57b511167 and my VERBATIM complete report15eabf868acd8e7893f33872c4e5fabe5859fbeacf24c8a5815b637a46e17b75 at formalization/coordination/reviews/B059-20261107.md. I personally read complete final author map/all52rows/all38hashes, both GitHub blobs and exact metadata/tree; acceptedmain0ba is an ancestor. Personally inspected COMPLETE finalCI42363921840/job128377854533 SUCCESS, checkoutsynthetic1d6dace exactsame tree7801703b with parents0ba+2f39;203tests/B059controls/reject-broad PASS, root5169/current2481, CCO39470+forest791 onlypropext/Classical.choice/Quot.sound/zeroviolations, all final post-audit project/external269/Ramsey106/forest98outputs14sources guards PASS; no errors. No source/API/math gap or user decision. Actual own lease891 verified; this exact-head approval permits normal sole-lock integration, with actual resulting-main green CI/audit still required before ACCEPTED."
+      }
+    },
+    {
+      "revision": 893,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "start_integration",
+      "package_id": "B059",
+      "details": {
+        "actor_id": "root",
+        "package_id": "B059",
+        "head_sha": "2f39a571fad8c7cce6a939d04c2780c78108f68b",
+        "base_main_sha": "0ba966827f890a20251ba69869d2c657361db822",
+        "head_contains_main": true,
+        "ci": {
+          "run_id": 42363921840,
+          "job_id": 128377854533,
+          "head_sha": "2f39a571fad8c7cce6a939d04c2780c78108f68b",
+          "conclusion": "success",
+          "axiom_audit": "allowlist"
+        }
       }
     }
   ],
