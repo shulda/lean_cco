@@ -1,7 +1,6 @@
 import CCO.TerminalHiddenHN.ActualAge
 import CCO.HiddenSAPReadings.OrbitalNamedTerms
 import CCO.TypedOrbitFrames.ActualSemanticFunctions
-import Mathlib.Data.Fintype.EquivFin
 
 /-! Finite actual term FUNCTIONS at every hidden input sort. The original
 motion group is transitive on both real and proper quotient carriers.
