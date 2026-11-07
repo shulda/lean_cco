@@ -18,7 +18,12 @@ def finiteWhole (X : ι → Type v) [Finite (Sigma X)] : FiniteInduced (X := X) 
 
 def finitePointInclusion (S : AtomicSource.{u,v,w} ι X) [Finite (Sigma X)]
     (A : FiniteInduced (X := X)) : InducedEmbedding S A (finiteWhole X) where
-  toEmbedding := ⟨fun x => ⟨x.val,Set.mem_univ _⟩,fun _ _ h => Subtype.ext (congrArg Subtype.val h)⟩
+  toEmbedding := {
+    toFun x := ⟨x.val,Set.mem_univ _⟩
+    inj' := by
+      intro x y h
+      apply Subtype.ext
+      exact congrArg (fun z : (finiteWhole X).vertices => z.val) h }
   preserves_sort _ := rfl
   preserves_colours _ _ := rfl
 
@@ -111,7 +116,8 @@ theorem finiteLabelExpansion_reasonable (S : AtomicSource.{u,v,w} ι X) [Finite 
       toFun y := ⟨g • y.val,Set.mem_univ _⟩
       inj' := by
         intro y z h
-        exact Subtype.ext (MulAction.injective g (congrArg Subtype.val h)) }
+        exact Subtype.ext (MulAction.injective g
+          (congrArg (fun z : (finiteWhole X).vertices => z.val) h)) }
     preserves_sort y := H.preserves_sort g y.val
     preserves_colours y z := (H.preserves_colours g y.val z.val).symm }
   refine ⟨b,?_⟩
