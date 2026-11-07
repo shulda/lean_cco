@@ -12,6 +12,8 @@ from pathlib import Path
 import re
 
 from external_provider import materialized_provider
+from factorization_forest_provider import NAMESPACE as FOREST_NAMESPACE
+from factorization_forest_provider import materialized_provider as materialized_forest_provider
 from ramsey_provider import NAMESPACES as RAMSEY_NAMESPACES
 from ramsey_provider import materialized_provider as materialized_ramsey_provider
 
@@ -78,6 +80,7 @@ def cache_roots(project: Path, root: str = 'CCO', include_provider: bool = False
     pending = [root]
     provider = None
     ramsey = None
+    forest = None
     if include_provider:
         config, provider = materialized_provider(project)
         pending.append(config['module'])
@@ -85,6 +88,9 @@ def cache_roots(project: Path, root: str = 'CCO', include_provider: bool = False
         # EPPA-only fixtures/projects. Its source identity is checked first.
         if (project / 'tools/ramsey_provider.json').is_file():
             config, ramsey = materialized_ramsey_provider(project)
+            pending.append(config['module'])
+        if (project / 'tools/factorization_forest_provider.json').is_file():
+            config, forest = materialized_forest_provider(project)
             pending.append(config['module'])
     while pending:
         module = pending.pop()
@@ -96,6 +102,10 @@ def cache_roots(project: Path, root: str = 'CCO', include_provider: bool = False
             if provider is None:
                 _, provider = materialized_provider(project)
             path = provider.joinpath(*module.split('.')).with_suffix('.lean')
+        elif namespace == FOREST_NAMESPACE:
+            if forest is None:
+                _, forest = materialized_forest_provider(project)
+            path = forest.joinpath(*module.split('.')).with_suffix('.lean')
         elif namespace in RAMSEY_NAMESPACES:
             if ramsey is None:
                 _, ramsey = materialized_ramsey_provider(project)
@@ -106,7 +116,7 @@ def cache_roots(project: Path, root: str = 'CCO', include_provider: bool = False
             raise ValueError(f'missing project module {module}: {path}')
         for imported in imports(path.read_text(encoding='utf-8')):
             namespace = imported.split('.')[0]
-            if namespace in {'CCO', 'AllThoseEPPA', *RAMSEY_NAMESPACES}:
+            if namespace in {'CCO', 'AllThoseEPPA', FOREST_NAMESPACE, *RAMSEY_NAMESPACES}:
                 pending.append(imported)
             elif namespace in CACHE_NAMESPACES:
                 external.add(imported)
@@ -122,7 +132,7 @@ def main() -> None:
     parser.add_argument('--json', action='store_true')
     parser.add_argument('--reject-broad', action='store_true')
     parser.add_argument('--include-provider', action='store_true',
-                        help='include the explicitly built pinned EPPA facade target')
+                        help='include all explicitly registered pinned provider targets')
     args = parser.parse_args()
     try:
         roots, modules = cache_roots(args.project, args.root, args.include_provider)

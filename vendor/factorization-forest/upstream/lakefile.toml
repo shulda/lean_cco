@@ -1,0 +1,19 @@
+name = "AlgebraicAutomata"
+version = "0.1.0"
+keywords = ["math", "semigroups", "automata", "combinatorics"]
+defaultTargets = ["AlgebraicAutomata"]
+
+[leanOptions]
+pp.unicode.fun = true                 # pretty-prints `fun a ↦ b`
+autoImplicit = false
+relaxedAutoImplicit = false
+weak.linter.mathlibStandardSet = true
+maxSynthPendingDepth = 3
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "2a885768dae569d938bb9ff3474da6a8753bb90a"
+
+[[lean_lib]]
+name = "AlgebraicAutomata"
