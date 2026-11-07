@@ -2334,3 +2334,6 @@ import CCO.GuardedTwoRoot.JoinedClosedImage
 import CCO.GuardedTwoRoot.PrivateCycleClassification
 import CCO.GuardedTwoRoot.G1HiddenOrbitals
 import CCO.GuardedTwoRoot.SourceRootSignature
+import CCO.GuardedTwoRoot.BoundedSourcePair
+import CCO.GuardedTwoRoot.G1WordClassification
+import CCO.GuardedTwoRoot.G1FiniteIndex
