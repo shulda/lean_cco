@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 878,
+  "revision": 879,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -5164,7 +5164,7 @@
       }
     },
     "B058": {
-      "state": "REVIEWING",
+      "state": "INTEGRATING",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b057_idempotents",
@@ -5550,7 +5550,13 @@
       "owner_project_id": null
     }
   },
-  "integration_lock": null,
+  "integration_lock": {
+    "kind": "package",
+    "package_id": "B058",
+    "actor_id": "root",
+    "base_main_sha": "92e3675e511bb2209042d47391e42c541a354c34",
+    "head_sha": "4733965898e0eddff428e54a8a76120a377371ce"
+  },
   "history": [
     {
       "revision": 1,
@@ -26931,6 +26937,27 @@
         "package_id": "B058",
         "head_sha": "4733965898e0eddff428e54a8a76120a377371ce",
         "summary": "APPROVE exact public4733965898e0eddff428e54a8a76120a377371ce/tree3b8205ed24a459286fa6b22427f304a1870dd40f after my actual own registered lease877. I personally reviewed the WHOLE56modules/8162lines, all11definitions/74claims/6results/2equations/8tasks, original pinned source16/notes, all19 actual accepted providers/E01 and literal B059I10/C32 receiving use. Original words/OLD equations, FULL RAW envelopes before actual distinctness, STOP intervals/twice-leaf roots, SAME models/anchor/base, anchor-free C36 and genuinely ANY supplied complete A C40 with internally constructed ONE insertion and exact SIMPLE labels/pins/freshness are proved. Final C58 chooses source-only fixedN before arbitrary finite P/F, internally discharges bounded tests/noHom and uses ONE accepted CCO universe transport; no completion/reconstruction/provider gate hides a source duty. C67 is explicitly the qualified two-transition reduct; higherarity/HN/EP remain separate. All56 proof/root bytes match my frozen9c8183 review, both final docs alone added and own report68768597 plus author map49c9a573 are verbatim, current acceptedmain92e ancestor, PRready unchanged. I personally inspected COMPLETE exactCI42355981140/job128354053058 SUCCESS:203tests/root5131/current2443/CCO38565+forest791 standard3/zero violations, targeted imports and ALL final exact provider guards; synthetic5351af937 fulltree equals final head. No remaining mathematical/source/API/toolchain exception or changes requested. Actual resulting-main green build/audits/guards still required before ACCEPTED."
+      }
+    },
+    {
+      "revision": 879,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "start_integration",
+      "package_id": "B058",
+      "details": {
+        "actor_id": "root",
+        "package_id": "B058",
+        "head_sha": "4733965898e0eddff428e54a8a76120a377371ce",
+        "base_main_sha": "92e3675e511bb2209042d47391e42c541a354c34",
+        "head_contains_main": true,
+        "ci": {
+          "run_id": 42355981140,
+          "job_id": 128354053058,
+          "head_sha": "4733965898e0eddff428e54a8a76120a377371ce",
+          "conclusion": "success",
+          "axiom_audit": "allowlist"
+        }
       }
     }
   ],
