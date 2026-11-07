@@ -237,6 +237,26 @@ def withinFullCodeEmbeddingEquiv {A : Type a} {B : Type b}
     ((withinTargetEmbeddingEquiv priority N O P fixedC fixedD).trans (O.codeEmbeddingEquiv N P))
 
 
+
+/-- Fixedness of the actual ordered structure is equivalent to fixedness
+of its global order; the comparison symbol for EVERY sort pair is used. -/
+theorem blockNormalize_order_iff (K : Structure L V) (o : LinearOrder V) :
+    blockNormalize L priority (blockStructure L K o) = blockStructure L K o ↔
+      sortBlockOrder K.sort priority o = o := by
+  constructor
+  · intro h
+    have he := (blockNormalize_structure L priority K o).symm.trans h
+    apply LinearOrder.ext_lt
+    intro x y
+    have hb := congrArg (fun M : Structure (blockLanguage L) V =>
+      M.binary (.inr (K.sort x,K.sort y)) x y) he
+    change (K.sort x = K.sort x ∧ K.sort y = K.sort y ∧
+      @LT.lt _ (sortBlockOrder K.sort priority o).toLT x y) =
+      (K.sort x = K.sort x ∧ K.sort y = K.sort y ∧ @LT.lt _ o.toLT x y) at hb
+    simpa only [true_and] using Iff.of_eq hb
+  · intro h
+    exact (blockNormalize_structure L priority K o).trans (congrArg (blockStructure L K) h)
+
 /-- Extend every prescribed within-sort order on the SAME old image,
 then concatenate. Normalizing an arbitrary global extension preserves
 each such within-sort extension and fixes the old block source exactly. -/
@@ -420,6 +440,31 @@ theorem proper_block_ordered_ramsey (priority : LinearOrder (CoordinateLanguage 
       Structure.Embedding.ext (fun _ => rfl)
     exact (congrArg color he).trans (hg (f.reduct (coordinateBlockReduct B ht)))
 
+
+/-- Extract the exact block order from a proper normalized host. -/
+theorem coordinateBlock_fixed_order {Y : Type a}
+    (K : CCO.UnarySupport.Structure (Sig B ht) Y) (o : LinearOrder Y)
+    (priority : LinearOrder (CoordinateLanguage B ht).Sorts)
+    (fixed : blockNormalize (CoordinateLanguage B ht) priority
+      ((@OrderedCoordinateModel B ht Y K o).reduct (coordinateBlockReduct B ht)) =
+        (@OrderedCoordinateModel B ht Y K o).reduct (coordinateBlockReduct B ht)) :
+    sortBlockOrder K.sort priority o = o := by
+  have he := coordinateBlock_structure B ht K o
+  have hh := (congrArg (blockNormalize (CoordinateLanguage B ht) priority) he).symm.trans (fixed.trans he)
+  exact (blockNormalize_order_iff priority (CoordinateModel B ht K) o).mp hh
+
+/-- Build the fixed actual hidden model from the prescribed block order. -/
+theorem coordinateBlock_order_fixed {Y : Type a}
+    (K : CCO.UnarySupport.Structure (Sig B ht) Y) (o : LinearOrder Y)
+    (priority : LinearOrder (CoordinateLanguage B ht).Sorts)
+    (fixed : sortBlockOrder K.sort priority o = o) :
+    blockNormalize (CoordinateLanguage B ht) priority
+      ((@OrderedCoordinateModel B ht Y K o).reduct (coordinateBlockReduct B ht)) =
+        (@OrderedCoordinateModel B ht Y K o).reduct (coordinateBlockReduct B ht) := by
+  have he := coordinateBlock_structure B ht K o
+  exact (congrArg (blockNormalize (CoordinateLanguage B ht) priority) he).trans
+    (((blockNormalize_order_iff priority (CoordinateModel B ht K) o).mpr fixed).trans he.symm)
+
 end Actual
 
 namespace TupleInterpretation
@@ -580,6 +625,127 @@ def readoutEmbedding_of_withinTermOrders (H : CCO.HomogeneousSource S G)
       (definedness_diagonal D.normal _ q).symm.trans
         (((D.codeEmbedding H e).equality_iff y y q q).trans (definedness_diagonal D.normal _ q))
     exact and_congr hp (and_congr hq Iff.rfl)
+
+
+abbrev SmallBinaryName := Σ i : ι, Σ j : ι, D.WithinComparisonName
+
+def smallBinary {A : CCO.FiniteInduced (X := X)} (a : D.BlockReadoutOn priority A)
+    (q : D.SmallBinaryName) (x y : A.vertices) : Prop :=
+  x.val.1 = q.1 ∧ y.val.1 = q.2.1 ∧ D.WithinTermOrder priority a q.2.2 x y
+
+private theorem smallBinary_embedding (H : CCO.HomogeneousSource S G)
+    {A B : CCO.FiniteInduced (X := X)} {a : D.BlockReadoutOn priority A} {b : D.BlockReadoutOn priority B}
+    (f : D.ReadoutEmbedding H a.val b.val) (q : D.SmallBinaryName) (x y : A.vertices) :
+    D.smallBinary priority b q (f.old.toEmbedding x) (f.old.toEmbedding y) ↔ D.smallBinary priority a q x y := by
+  change ((f.old.toEmbedding x).val.1 = q.1 ∧ (f.old.toEmbedding y).val.1 = q.2.1 ∧ _) ↔ _
+  rw [f.old.preserves_sort x,f.old.preserves_sort y]
+  exact and_congr Iff.rfl (and_congr Iff.rfl (D.withinTermOrder_embedding priority H f q.2.2 x y))
+
+/-- The actual smaller added signature has NO non-order predicates.
+Original fine colours and safe sort labels are retained by the old map;
+only equal-HIDDEN-output-sort term comparisons are added. -/
+def smallReadoutExpansion (H : CCO.HomogeneousSource S G) :
+    CCO.TerminalHiddenHN.RealExpansionData.{u,v,w,max u l,k} S where
+  Unary := PEmpty
+  Binary := D.SmallBinaryName
+  finiteUnary := inferInstance
+  finiteBinary := by
+    letI := S.finiteSort
+    infer_instance
+  unarySort U := PEmpty.elim U
+  leftSort q := q.1
+  rightSort q := q.2.1
+  Expansion := D.BlockReadoutOn priority
+  nonempty := D.block_readout_nonempty priority
+  unary _ U := PEmpty.elim U
+  binary := D.smallBinary priority
+  unary_sorted _ U := PEmpty.elim U
+  binary_sorted _ _ _ _ h := ⟨h.1,h.2.1⟩
+  faithful a b _hu hb := by
+    apply D.block_readout_faithful priority a b
+    intro pq x y
+    have hh := hb ⟨x.val.1,y.val.1,pq⟩ x y
+    exact ⟨fun hp => (hh.mp ⟨rfl,rfl,hp⟩).2.2,fun hp => (hh.mpr ⟨rfl,rfl,hp⟩).2.2⟩
+  restrict e b := D.restrictBlockReadout priority H e b
+  restrict_unary _ _ U := PEmpty.elim U
+  restrict_binary e b q x y :=
+    (D.smallBinary_embedding priority H (D.restrictBlockReadoutEmbedding priority H e b) q x y).symm
+
+theorem smallReadoutExpansion_precompact (H : CCO.HomogeneousSource S G) (A : CCO.FiniteInduced (X := X)) :
+    Finite ((D.smallReadoutExpansion priority H).Expansion A) :=
+  (D.smallReadoutExpansion priority H).finite_expansions A
+
+theorem smallReadoutExpansion_reasonable (H : CCO.HomogeneousSource S G) :
+    (D.smallReadoutExpansion priority H).Reasonable := by
+  intro A B e a
+  exact D.block_readout_reasonable priority H e a
+
+def relationalToSmallReadout (H : CCO.HomogeneousSource S G)
+    {A B : CCO.FiniteInduced (X := X)} {a : D.BlockReadoutOn priority A} {b : D.BlockReadoutOn priority B}
+    (e : (D.smallReadoutExpansion priority H).Embedding a b) : D.ReadoutEmbedding H a.val b.val :=
+  D.readoutEmbedding_of_withinTermOrders priority H (a := a) (b := b) e.old (by
+    intro pq x y
+    have hh := e.binary_iff ⟨x.val.1,y.val.1,pq⟩ x y
+    exact ⟨fun hp => (hh.mp ⟨e.old.preserves_sort x,e.old.preserves_sort y,hp⟩).2.2,
+      fun hp => (hh.mpr ⟨rfl,rfl,hp⟩).2.2⟩)
+
+def smallReadoutToRelational (H : CCO.HomogeneousSource S G)
+    {A B : CCO.FiniteInduced (X := X)} {a : D.BlockReadoutOn priority A} {b : D.BlockReadoutOn priority B}
+    (f : D.ReadoutEmbedding H a.val b.val) : (D.smallReadoutExpansion priority H).Embedding a b where
+  old := f.old
+  unary_iff U := PEmpty.elim U
+  binary_iff q x y := D.smallBinary_embedding priority H f q x y
+
+def smallRelationalReadoutEquiv (H : CCO.HomogeneousSource S G)
+    {A B : CCO.FiniteInduced (X := X)} (a : D.BlockReadoutOn priority A) (b : D.BlockReadoutOn priority B) :
+    (D.smallReadoutExpansion priority H).Embedding a b ≃ D.ReadoutEmbedding H a.val b.val where
+  toFun := D.relationalToSmallReadout priority H
+  invFun := D.smallReadoutToRelational priority H
+  left_inv f := CCO.TerminalHiddenHN.RealExpansionData.Embedding.ext (fun _ => rfl)
+  right_inv f := ReadoutEmbedding.ext H (fun _ => rfl)
+
+/-- Actual finite-table non-order deletion and unequal-target deletion
+change NO induced embedding map in either direction. -/
+def fullSmallReadoutEmbeddingEquiv (H : CCO.HomogeneousSource S G)
+    {A B : CCO.FiniteInduced (X := X)} (a : D.BlockReadoutOn priority A) (b : D.BlockReadoutOn priority B) :
+    (D.fullReadoutExpansion H).Embedding a.val b.val ≃ (D.smallReadoutExpansion priority H).Embedding a b :=
+  (D.relationalReadoutEquiv H a.val b.val).trans (D.smallRelationalReadoutEquiv priority H a b).symm
+
+theorem smallReadoutToRelational_comp (H : CCO.HomogeneousSource S G)
+    {A B E : CCO.FiniteInduced (X := X)} {a : D.BlockReadoutOn priority A}
+    {b : D.BlockReadoutOn priority B} {c : D.BlockReadoutOn priority E}
+    (g : D.ReadoutEmbedding H b.val c.val) (f : D.ReadoutEmbedding H a.val b.val) :
+    D.smallReadoutToRelational priority H (g.comp H f) =
+      (D.smallReadoutToRelational priority H g).comp (D.smallReadoutToRelational priority H f) :=
+  CCO.TerminalHiddenHN.RealExpansionData.Embedding.ext (fun _ => rfl)
+
+/-- Semantic block-readout arrows. The actual source theorem supplies
+these from the SAME proper block hidden Ramsey class, never as a new
+assumption in the final AP source export. -/
+def BlockReadoutRamsey (H : CCO.HomogeneousSource S G) : Prop :=
+  ∀ (A B : CCO.FiniteInduced (X := X)) (a : D.BlockReadoutOn priority A) (b : D.BlockReadoutOn priority B)
+    (n : ℕ), 0 < n → ∃ E : CCO.FiniteInduced (X := X), ∃ c : D.BlockReadoutOn priority E,
+      ∀ color : D.ReadoutEmbedding H a.val c.val → Fin n,
+        ∃ g : D.ReadoutEmbedding H b.val c.val, ∃ shade : Fin n,
+          ∀ f : D.ReadoutEmbedding H a.val b.val, color (g.comp H f) = shade
+
+/-- Exact change of finite embedding interfaces; this adapter does not
+supply the source's hidden Ramsey instance. -/
+theorem smallReadoutExpansion_ramsey (H : CCO.HomogeneousSource S G)
+    (ramsey : D.BlockReadoutRamsey priority H) : (D.smallReadoutExpansion priority H).Ramsey := by
+  intro A B a b n hn
+  obtain ⟨E,c,arrow⟩ := ramsey A B a b n hn
+  refine ⟨E,c,?_⟩
+  intro color
+  obtain ⟨g,shade,hg⟩ := arrow (fun f => color (D.smallReadoutToRelational priority H f))
+  refine ⟨D.smallReadoutToRelational priority H g,?_⟩
+  have mono (f : (D.smallReadoutExpansion priority H).Embedding a b) :
+      color ((D.smallReadoutToRelational priority H g).comp f) = shade := by
+    have he : (D.smallReadoutToRelational priority H g).comp f =
+        D.smallReadoutToRelational priority H (g.comp H (D.relationalToSmallReadout priority H f)) :=
+      CCO.TerminalHiddenHN.RealExpansionData.Embedding.ext (fun _ => rfl)
+    exact (congrArg color he).trans (hg (D.relationalToSmallReadout priority H f))
+  exact fun f g => (mono f).trans (mono g).symm
 
 end
 end TupleInterpretation
