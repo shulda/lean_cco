@@ -50,7 +50,6 @@ theorem le_quotientCyclicFullEq (f : QuotientFunctionalGroup S H J) :
   change MulAction.orbitRel (QuotientCyclicGroup S H J f) (Quotient J.val)
     (Quotient.mk J.val x) (Quotient.mk J.val y)
   rw [Quotient.sound hxy]
-  exact Setoid.refl _ _
 
 def cyclicRelativeToOrbit (f : QuotientFunctionalGroup S H J) (a : X i) :
     RelativeClass J.val (quotientCyclicFullEq S H J f).val a →
@@ -69,7 +68,9 @@ theorem cyclicRelativeToOrbit_injective (f : QuotientFunctionalGroup S H J) (a :
   refine Quotient.inductionOn₂ q t ?_
   intro x y h
   apply Quotient.sound
-  exact Quotient.exact (congrArg Subtype.val h)
+  have hv := congrArg Subtype.val h
+  change Quotient.mk J.val x.val = Quotient.mk J.val y.val at hv
+  exact (Quotient.exact hv : J.val x.val y.val)
 
 theorem quotientCyclicFullEq_finite_relative (f : QuotientFunctionalGroup S H J) (a : X i) :
     Finite (RelativeClass J.val (quotientCyclicFullEq S H J f).val a) := by
