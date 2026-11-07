@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 837,
+  "revision": 838,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -5342,6 +5342,8 @@
         "/root/b053_resume/b063_boundary",
         "/root/b053_resume/b063_functional",
         "/root/b053_resume/b063_loopless",
+        "/root/b063_continue",
+        "/root/b063_continue/source_map",
         "root"
       ],
       "original_author_project_ids": [
@@ -25950,6 +25952,21 @@
         "author_actor_ids": [
           "/root/b056_continue",
           "/root/b056_continue/g1_hidden_raw"
+        ],
+        "actor_id": "root"
+      }
+    },
+    {
+      "revision": 838,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "record_authorship",
+      "package_id": "B063",
+      "details": {
+        "package_id": "B063",
+        "author_actor_ids": [
+          "/root/b063_continue",
+          "/root/b063_continue/source_map"
         ],
         "actor_id": "root"
       }
