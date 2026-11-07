@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 861,
+  "revision": 862,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -5100,7 +5100,7 @@
       }
     },
     "B057": {
-      "state": "SUBMITTED",
+      "state": "REVIEWING",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b057_idempotents",
@@ -5140,7 +5140,19 @@
         "axiom_audit": "allowlist",
         "job_id": 128331791764
       },
-      "report_path": "formalization/coordination/submissions/B057.md"
+      "report_path": "formalization/coordination/submissions/B057.md",
+      "review": {
+        "project_id": 3,
+        "actor_id": "work_control_20261107",
+        "head_sha": "6912682cdf4d107e6a93976a1b0e4ea1cd2fa51e",
+        "approved": false,
+        "independence": {
+          "identity": "/root/recovery_control",
+          "non_author": true,
+          "summary": "Actual preserved review-only nonauthor personally read all27 B057 production proof bodies, complete frozen887line source15 and362line notes, all72claims/11definitions/8results/8equations/9tasks, actual accepted provider discharges and B058 receiving uses. It authored, designed, directed, implemented and repaired none of B057 or its dependencies, including all original project3 work. Only its own independent read-only review evidence was authored; supplementary nonauthor corroboration does not substitute for whole personal review.",
+          "report_path": "formalization/coordination/reviews/B057-20261107.md"
+        }
+      }
     },
     "B058": {
       "state": "AVAILABLE",
@@ -26561,6 +26573,24 @@
           "job_id": 128331791764
         },
         "report_path": "formalization/coordination/submissions/B057.md"
+      }
+    },
+    {
+      "revision": 862,
+      "project_id": 3,
+      "actor_id": "work_control_20261107",
+      "event": "review",
+      "package_id": "B057",
+      "details": {
+        "actor_id": "work_control_20261107",
+        "package_id": "B057",
+        "head_sha": "6912682cdf4d107e6a93976a1b0e4ea1cd2fa51e",
+        "independence": {
+          "identity": "/root/recovery_control",
+          "non_author": true,
+          "summary": "Actual preserved review-only nonauthor personally read all27 B057 production proof bodies, complete frozen887line source15 and362line notes, all72claims/11definitions/8results/8equations/9tasks, actual accepted provider discharges and B058 receiving uses. It authored, designed, directed, implemented and repaired none of B057 or its dependencies, including all original project3 work. Only its own independent read-only review evidence was authored; supplementary nonauthor corroboration does not substitute for whole personal review.",
+          "report_path": "formalization/coordination/reviews/B057-20261107.md"
+        }
       }
     }
   ],
