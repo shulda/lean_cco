@@ -1,4 +1,79 @@
-# B056 current author checkpoint
+# B056 current author checkpoint — 7 November 2026
+
+**IN_PROGRESS. Two new source obligations are proved locally; the whole B056
+contract remains incomplete and is not submitted or approved.**
+
+Current implementation checkpoint `1d79c9df64f274ec004530063f9b84b37ef6b743`, tree `ac121b4155b3955bdb18bdea5809c36aff5bdb16`,
+based on original public branch `work/B056` head
+`ea0e03158fbdfb17f434731bb80b0ac2cb088d2e`. The following report-only
+commit adds no Lean change. Root is the sole public publisher/PR/STATE owner.
+Effective B056 ownership is Work project3/root, reaffirmed at STATE836;
+accepted source/API base remains main `8d009339dd8b8b7e4a1094d046bdc2ee565d2fd0`.
+No source, policy, manifest or toolchain pin changed.
+
+## Current proved delta
+
+`JoinedFactorComparisons.lean` supplies the previously missing direct
+source-record assembly. It defines each comparison on the ACTUAL hidden
+root sorts and composes it with the literal real identity or F_J root
+projection. `factorRecords` is selected from ONE actual old factor BEFORE
+splitting. ONE split assignment and ONE original pair motion transport
+ALL of that factor's named term comparisons simultaneously. Distinct actual
+real representatives give a fine atom in every record. The source-facing
+`joined_pair_records_nonempty` applies the complete-pattern test only to
+the ACTUALLY irreducible old closure of the displayed endpoints; no
+completion of the ambient partial source is assumed. Every surviving atom
+at every original pair reads all records; only after that witness exists
+is each profile certified positive by the accepted named TOP theorem.
+
+`G1WordObstruction.lean` proves the exact FG1 diversity-slice equation for
+the actual block/bit/clone source. It proves that no positive STRONG word
+has profile {p,q}, and that the actual coarse same-block equivalence is
+not ANY finite FULL RAW word-intersection presentation. True identity
+letters, the all-identity word, actual original triangle witnesses,
+pair-homogeneous readback and the empty presentation are included. This
+uses the accepted actual old SAP/homogeneity instance and supplies no
+new positivity, completion or hidden-SAP premise.
+
+Actual new authors: `/root/b056_continue` (source-record assembly and
+compiler repairs), `/root/b056_continue/g1_hidden_raw` (G1 word proof),
+and `root` (both direct public root imports and coordination). All prior
+B056 authors remain in the live provenance. Neither new author is a reviewer.
+The B056 worktree has its own physical dependency/build trees and a single
+Lake builder, `/root/b056_continue`; no other branch build directory was used.
+
+## Exact local validation and remaining remote gate
+
+Pinned Lean/Lake 4.34.1 compiled the complete current `CCO` root in 4,976 jobs.
+Project guard verified 2,302 current source modules and olean parts; EPPA
+guard verified 269 at the unchanged exact pin; Ramsey guard verified 106
+at the unchanged subtree. The pinned transitive audit binary (same upstream
+commit as CI, `46024e005996495c65ef609368e11ab39c4222e3`) audited 34,650
+declarations with exactly propext/Classical.choice/Quot.sound and no
+violations. All five public joined-factor bridge proofs were separately
+printed with the same three axioms. Both new modules are direct CCO.lean
+imports. B056 bounded controls and frozen module validation passed; those
+finite controls are not infinite-source proofs. `git diff --check` passed.
+The exact public checkpoint still requires its own remote CI/audit; the
+prior green ea0e head does not certify this new implementation.
+
+## Concrete open B056 work
+
+The full syntax family in `factorRecords` has not yet been reduced to the
+finite semantic-function/complete-comparison presentation consumed by the
+fixed theta and root-signature interfaces. Derive that presentation after
+the common survivor, prove canonical root-signature consistency, and build
+complete local two-generated isomorphism/reflection for ANY surviving atom.
+The current universal readback alone is not that whole diagram isomorphism.
+Finish source-level singleton/anchor counts and uniform gadget consumers;
+finish the pure private-cycle classification where needed; construct actual
+G1 coarse hidden hereditary SAP (the FG1/RAW obstruction is now proved).
+Retain the separate higher-support gate and full source map. Whole-contract
+controls, fresh truly nonauthor review, exact public CI and normal integration
+remain mandatory. No mathematical/source/API exception is currently established.
+
+## Earlier checkpoints (historical evidence)
+
 
 **WIP / IN_PROGRESS; no B056 theorem yet claimed complete.**
 Effective claim STATE818, coordination47654c026b5a3d035b83ebe01a4f388f77d7d67b,
