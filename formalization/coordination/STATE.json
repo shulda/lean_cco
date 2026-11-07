@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 852,
+  "revision": 853,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -5030,7 +5030,7 @@
       }
     },
     "B056": {
-      "state": "SUBMITTED",
+      "state": "REVIEWING",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b053_resume",
@@ -5077,7 +5077,19 @@
         "conclusion": "success",
         "axiom_audit": "allowlist"
       },
-      "report_path": "formalization/coordination/submissions/B056.md"
+      "report_path": "formalization/coordination/submissions/B056.md",
+      "review": {
+        "project_id": 3,
+        "actor_id": "work_control_20261107",
+        "head_sha": "8db9579dd39182f650cff8656d9f8d773fb23fc0",
+        "approved": false,
+        "independence": {
+          "identity": "/root/recovery_control",
+          "non_author": true,
+          "summary": "Actual registered genuinely fresh review-only reader personally read all35B056modules5156lines, complete frozen source and61claim map, each actual source/provider application, oldanchor/count/SAMEe/T source preimages, private normalized cycles, genuineG1 and B057consumer. It authored, designed, directed, implemented or repaired NONE of B056 history or dependencies; own independent read-only reports only.",
+          "report_path": "formalization/coordination/reviews/B056-20261107.md"
+        }
+      }
     },
     "B057": {
       "state": "AVAILABLE",
@@ -26341,6 +26353,24 @@
         },
         "report_path": "formalization/coordination/submissions/B056.md",
         "actor_id": "root"
+      }
+    },
+    {
+      "revision": 853,
+      "project_id": 3,
+      "actor_id": "work_control_20261107",
+      "event": "review",
+      "package_id": "B056",
+      "details": {
+        "actor_id": "work_control_20261107",
+        "package_id": "B056",
+        "head_sha": "8db9579dd39182f650cff8656d9f8d773fb23fc0",
+        "independence": {
+          "identity": "/root/recovery_control",
+          "non_author": true,
+          "summary": "Actual registered genuinely fresh review-only reader personally read all35B056modules5156lines, complete frozen source and61claim map, each actual source/provider application, oldanchor/count/SAMEe/T source preimages, private normalized cycles, genuineG1 and B057consumer. It authored, designed, directed, implemented or repaired NONE of B056 history or dependencies; own independent read-only reports only.",
+          "report_path": "formalization/coordination/reviews/B056-20261107.md"
+        }
       }
     }
   ],
