@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 847,
+  "revision": 848,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -5337,7 +5337,7 @@
       }
     },
     "B063": {
-      "state": "SUBMITTED",
+      "state": "REVIEWING",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b053_resume",
@@ -5382,7 +5382,19 @@
         "conclusion": "success",
         "axiom_audit": "allowlist"
       },
-      "report_path": "formalization/coordination/submissions/B063.md"
+      "report_path": "formalization/coordination/submissions/B063.md",
+      "review": {
+        "project_id": 3,
+        "actor_id": "work_control_20261107",
+        "head_sha": "9ebfd2ddede16a7067a674eb646b69c664444470",
+        "approved": false,
+        "independence": {
+          "identity": "/root/recovery_control",
+          "non_author": true,
+          "summary": "Actual registered fresh review-only reader personally read all forty B063 modules, complete frozen source/contract/sixty-two-claim map and all six actual provider applications, concrete C60 and B064 consumer. It authored, designed, directed, implemented or repaired none of B063 history or its dependencies; only its own actual independent read-only review evidence was written.",
+          "report_path": "formalization/coordination/reviews/B063-20261107.md"
+        }
+      }
     },
     "B064": {
       "state": "AVAILABLE",
@@ -26225,6 +26237,24 @@
         },
         "report_path": "formalization/coordination/submissions/B063.md",
         "actor_id": "root"
+      }
+    },
+    {
+      "revision": 848,
+      "project_id": 3,
+      "actor_id": "work_control_20261107",
+      "event": "review",
+      "package_id": "B063",
+      "details": {
+        "actor_id": "work_control_20261107",
+        "package_id": "B063",
+        "head_sha": "9ebfd2ddede16a7067a674eb646b69c664444470",
+        "independence": {
+          "identity": "/root/recovery_control",
+          "non_author": true,
+          "summary": "Actual registered fresh review-only reader personally read all forty B063 modules, complete frozen source/contract/sixty-two-claim map and all six actual provider applications, concrete C60 and B064 consumer. It authored, designed, directed, implemented or repaired none of B063 history or its dependencies; only its own actual independent read-only review evidence was written.",
+          "report_path": "formalization/coordination/reviews/B063-20261107.md"
+        }
       }
     }
   ],
