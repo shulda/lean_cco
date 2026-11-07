@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 905,
+  "revision": 906,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -5706,7 +5706,62 @@
       }
     }
   },
-  "integration_lock": null,
+  "integration_lock": {
+    "kind": "infrastructure",
+    "actor_id": "root",
+    "head_sha": "1219a42df86a4da09e8dd3b26f9c8613e026d152",
+    "base_main_sha": "36d080210802807ae579163817e9a1ac57f708cb",
+    "pr_number": 88,
+    "review": {
+      "actor_id": "work_control_20261107b",
+      "head_sha": "1219a42df86a4da09e8dd3b26f9c8613e026d152",
+      "approved": true,
+      "summary": "Actual fresh nonauthor /root/b064_control personally read complete old/new policy, unchanged BOARD, narrow source and recovery code/tests. Final delta is only its verbatim report; complete final exact CI42375392144/job128411810543 passed203 tests,5202 rootjobs,2514 current modules,40584 CCO+791 forest standard-three audits and all final cache guards. Actual synthetic2a3d7295 has identical whole reviewed tree. Approval covers narrow recovery only, not B064. Actual resulting-main CI and manifest-bound promote_reviewer remain required.",
+      "independence": {
+        "identity": "/root/b064_control",
+        "non_author": true,
+        "summary": "Actual genuinely fresh read-only agent authored, designed, directed, implemented and repaired none of this registration, helpers/tests or B064 mathematical source. It personally inspected complete source and final actual CI, and wrote only its own independent review evidence; no old identity or approval is reused.",
+        "report_path": "formalization/coordination/reviews/work-reviewer-recovery-20261107b.md"
+      }
+    },
+    "ci": {
+      "run_id": 42375392144,
+      "job_id": 128411810543,
+      "head_sha": "1219a42df86a4da09e8dd3b26f9c8613e026d152",
+      "conclusion": "success",
+      "axiom_audit": "allowlist"
+    },
+    "author_actor_ids": [
+      "root"
+    ],
+    "original_author_project_ids": [
+      3
+    ],
+    "reviewer_recovery": {
+      "unavailable_actor_id": "work_control_20261107",
+      "bootstrap_actor_id": "work_control_20261107b",
+      "new_actors": {
+        "work_control_20261107b": {
+          "identity": "/root/b064_control",
+          "roles": [
+            "review",
+            "integrate"
+          ],
+          "historical_author_projects": []
+        }
+      },
+      "previous_registry_sha256": "80d48ab42c39147ee3099a1a983708c7a5cee9bd9521144c989a4c5449d76499",
+      "previous_policy_sha256": "c83a836d560f54eeabd49b2c8b98872ff65dd082679008d4fd6bb5d71dd0e1d4",
+      "registry_sha256": "80d48ab42c39147ee3099a1a983708c7a5cee9bd9521144c989a4c5449d76499",
+      "policy_sha256": "cf480ffe8aea513157941c49fd75a3a7ec420bc5139b93964dd3ffae15b25434"
+    },
+    "unavailable_reviewer": {
+      "actor_id": "work_control_20261107",
+      "identity": "/root/recovery_control",
+      "reason": "Original actual registered reviewer runtime is unavailable after the interrupted chat. A direct unchanged-identity followup_task retry returned live agent path /root/recovery_control not found. Prior identity, personal reports, acceptance history and all old records are preserved, with no lease or approval transferred.",
+      "report_path": "formalization/coordination/reports/work-reviewer-recovery-20261107b.md"
+    }
+  },
   "history": [
     {
       "revision": 1,
@@ -27586,6 +27641,69 @@
           "/root/b064_finite",
           "/root/b064_coverage"
         ],
+        "actor_id": "root"
+      }
+    },
+    {
+      "revision": 906,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "start_infrastructure",
+      "package_id": null,
+      "details": {
+        "pr_number": 88,
+        "head_sha": "1219a42df86a4da09e8dd3b26f9c8613e026d152",
+        "base_main_sha": "36d080210802807ae579163817e9a1ac57f708cb",
+        "head_contains_main": true,
+        "ci": {
+          "run_id": 42375392144,
+          "job_id": 128411810543,
+          "head_sha": "1219a42df86a4da09e8dd3b26f9c8613e026d152",
+          "conclusion": "success",
+          "axiom_audit": "allowlist"
+        },
+        "author_actor_ids": [
+          "root"
+        ],
+        "original_author_project_ids": [
+          3
+        ],
+        "review": {
+          "actor_id": "work_control_20261107b",
+          "head_sha": "1219a42df86a4da09e8dd3b26f9c8613e026d152",
+          "approved": true,
+          "summary": "Actual fresh nonauthor /root/b064_control personally read complete old/new policy, unchanged BOARD, narrow source and recovery code/tests. Final delta is only its verbatim report; complete final exact CI42375392144/job128411810543 passed203 tests,5202 rootjobs,2514 current modules,40584 CCO+791 forest standard-three audits and all final cache guards. Actual synthetic2a3d7295 has identical whole reviewed tree. Approval covers narrow recovery only, not B064. Actual resulting-main CI and manifest-bound promote_reviewer remain required.",
+          "independence": {
+            "identity": "/root/b064_control",
+            "non_author": true,
+            "summary": "Actual genuinely fresh read-only agent authored, designed, directed, implemented and repaired none of this registration, helpers/tests or B064 mathematical source. It personally inspected complete source and final actual CI, and wrote only its own independent review evidence; no old identity or approval is reused.",
+            "report_path": "formalization/coordination/reviews/work-reviewer-recovery-20261107b.md"
+          }
+        },
+        "reviewer_recovery": {
+          "unavailable_actor_id": "work_control_20261107",
+          "bootstrap_actor_id": "work_control_20261107b",
+          "new_actors": {
+            "work_control_20261107b": {
+              "identity": "/root/b064_control",
+              "roles": [
+                "review",
+                "integrate"
+              ],
+              "historical_author_projects": []
+            }
+          },
+          "previous_registry_sha256": "80d48ab42c39147ee3099a1a983708c7a5cee9bd9521144c989a4c5449d76499",
+          "previous_policy_sha256": "c83a836d560f54eeabd49b2c8b98872ff65dd082679008d4fd6bb5d71dd0e1d4",
+          "registry_sha256": "80d48ab42c39147ee3099a1a983708c7a5cee9bd9521144c989a4c5449d76499",
+          "policy_sha256": "cf480ffe8aea513157941c49fd75a3a7ec420bc5139b93964dd3ffae15b25434"
+        },
+        "unavailable_reviewer": {
+          "actor_id": "work_control_20261107",
+          "identity": "/root/recovery_control",
+          "reason": "Original actual registered reviewer runtime is unavailable after the interrupted chat. A direct unchanged-identity followup_task retry returned live agent path /root/recovery_control not found. Prior identity, personal reports, acceptance history and all old records are preserved, with no lease or approval transferred.",
+          "report_path": "formalization/coordination/reports/work-reviewer-recovery-20261107b.md"
+        },
         "actor_id": "root"
       }
     }
