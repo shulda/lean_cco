@@ -580,6 +580,40 @@ theorem block_termOrder_different {A : CCO.FiniteInduced (X := X)} (a : D.BlockR
     have he := congrArg (fun o : LinearOrder (D.support A) => @LT.lt _ o.toLT u v) a.property
     exact ⟨u,v,hz,hw,(Iff.of_eq he).mp hn⟩
 
+/-- A literal finite old-type formula for the applicability gates and
+fixed priority of an omitted cross-target comparison. No order bits
+are stored in this formula, including on repeated-root inputs. -/
+def omittedComparisonFormula (i j : ι) (p q : Presentation D.normal scheme) : OldPairFormula S i j :=
+  nonOrderPairDefinition S (fun x y =>
+    ((D.eta ⟨i,x⟩).presentation D.normal p).Nonempty ∧
+    ((D.eta ⟨j,y⟩).presentation D.normal q).Nonempty ∧ @LT.lt _ priority.toLT p.2.1 q.2.1)
+
+theorem omittedComparisonFormula_eval (H : CCO.HomogeneousSource S G)
+    {i j : ι} (p q : Presentation D.normal scheme) (x : X i) (y : X j) :
+    (D.omittedComparisonFormula priority i j p q).eval x y ↔
+      ((D.eta ⟨i,x⟩).presentation D.normal p).Nonempty ∧
+      ((D.eta ⟨j,y⟩).presentation D.normal q).Nonempty ∧ @LT.lt _ priority.toLT p.2.1 q.2.1 := by
+  apply invariant_nonOrderPairDefinition S H
+  intro g a b
+  have gates (z : Sigma X) (t : Presentation D.normal scheme) :
+      ((D.eta (g • z)).presentation D.normal t).Nonempty ↔
+        ((D.eta z).presentation D.normal t).Nonempty := by
+    have h := equalityCode_map D.normal (D.motion g) (D.eta z) (D.eta z) t t
+    rw [D.eta_equivariant] at h
+    exact (definedness_diagonal D.normal _ t).symm.trans
+      (h.trans (definedness_diagonal D.normal _ t))
+  exact and_congr (gates ⟨i,a⟩ p) (and_congr (gates ⟨j,b⟩ q) Iff.rfl)
+
+/-- Actual qf definitional deletion of every unequal-HIDDEN-target
+comparison, with undefined and wrong-tag presentations still false. -/
+theorem block_omitted_termOrder_qf (H : CCO.HomogeneousSource S G)
+    {A : CCO.FiniteInduced (X := X)} (a : D.BlockReadoutOn priority A)
+    (x y : A.vertices) (p q : Presentation D.normal scheme) (hne : p.2.1 ≠ q.2.1) :
+    (D.omittedComparisonFormula priority x.val.1 y.val.1 p q).eval x.val.2 y.val.2 ↔
+      D.TermOrder a.val x y p q :=
+  (D.omittedComparisonFormula_eval priority H p q x.val.2 y.val.2).trans
+    (D.block_termOrder_different priority a x y p q hne).symm
+
 theorem withinTermOrder_embedding (H : CCO.HomogeneousSource S G)
     {A B : CCO.FiniteInduced (X := X)} {a : D.BlockReadoutOn priority A} {b : D.BlockReadoutOn priority B}
     (f : D.ReadoutEmbedding H a.val b.val) (pq : D.WithinComparisonName) (x y : A.vertices) :
