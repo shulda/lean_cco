@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 911,
+  "revision": 912,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -5675,7 +5675,7 @@
       }
     },
     "B064": {
-      "state": "SUBMITTED",
+      "state": "REVIEWING",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b057_idempotents",
@@ -5719,7 +5719,19 @@
         "conclusion": "success",
         "axiom_audit": "allowlist"
       },
-      "report_path": "formalization/coordination/submissions/B064.md"
+      "report_path": "formalization/coordination/submissions/B064.md",
+      "review": {
+        "project_id": 3,
+        "actor_id": "work_control_20261107b",
+        "head_sha": "04f2163006b808088bd746c118fb0026bd51d347",
+        "approved": false,
+        "independence": {
+          "identity": "/root/b064_control",
+          "non_author": true,
+          "summary": "I am the actual registered fresh reader /root/b064_control, actor work_control_20261107b. I authored, implemented, designed, directed and repaired none of B064, its historical source work or its proof/helper code. I personally compared the complete frozen source and contracts, all 145 actual final modules, all providers and final consumers, the complete author map and exact public source. My participation is read-only source/specification review and my own independent evidence; no prior identity, report or approval is inherited.",
+          "report_path": "formalization/coordination/reviews/B064-work-control-20261107b.md"
+        }
+      }
     }
   },
   "integration_lock": null,
@@ -27782,6 +27794,24 @@
         },
         "report_path": "formalization/coordination/submissions/B064.md",
         "actor_id": "root"
+      }
+    },
+    {
+      "revision": 912,
+      "project_id": 3,
+      "actor_id": "work_control_20261107b",
+      "event": "review",
+      "package_id": "B064",
+      "details": {
+        "package_id": "B064",
+        "head_sha": "04f2163006b808088bd746c118fb0026bd51d347",
+        "independence": {
+          "identity": "/root/b064_control",
+          "non_author": true,
+          "summary": "I am the actual registered fresh reader /root/b064_control, actor work_control_20261107b. I authored, implemented, designed, directed and repaired none of B064, its historical source work or its proof/helper code. I personally compared the complete frozen source and contracts, all 145 actual final modules, all providers and final consumers, the complete author map and exact public source. My participation is read-only source/specification review and my own independent evidence; no prior identity, report or approval is inherited.",
+          "report_path": "formalization/coordination/reviews/B064-work-control-20261107b.md"
+        },
+        "actor_id": "work_control_20261107b"
       }
     }
   ],
