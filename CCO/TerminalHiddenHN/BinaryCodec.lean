@@ -196,6 +196,21 @@ def binaryDecode {V : Type v} (M : CCO.FullCode.Structure (binaryLanguage L hbin
       subst i
       exact hb.2
 
+def binaryDecodeEmbedding {V : Type v} {W : Type w}
+    {M : CCO.FullCode.Structure (binaryLanguage L hbin) V}
+    {N : CCO.FullCode.Structure (binaryLanguage L hbin) W}
+    (e : CCO.FullCode.Structure.Embedding M N) :
+    CCO.UnarySupport.Structure.Embedding (binaryDecode L hbin M) (binaryDecode L hbin N) where
+  point := e.point
+  injective := e.injective
+  sort_eq := e.sort_eq
+  map_func := e.map_func
+  reflect_func := e.reflect_func
+  map_rel R xs hx := (e.binary_iff R (xs (binaryFirst L hbin R))
+    (xs (binarySecond L hbin R))).mpr hx
+  reflect_rel R xs hx := (e.binary_iff R (xs (binaryFirst L hbin R))
+    (xs (binarySecond L hbin R))).mp hx
+
 theorem binaryStructure_binaryDecode {V : Type v}
     (M : CCO.FullCode.Structure (binaryLanguage L hbin) V) :
     binaryStructure L hbin (binaryDecode L hbin M) = M := by
