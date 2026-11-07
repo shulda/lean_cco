@@ -1,114 +1,146 @@
-# B061 active source implementation checkpoint
+# B061 complete source candidate, awaiting independent review and exact-head CI
 
-Effective claim STATE895, append-only authorship STATE896, owner project3/root.
-Accepted dependency base is actual main
-`5f9fd56051dd14ae701b56d96f9365632453e45e`, B059 ACCEPTED at STATE894 after
-push CI42364579172/job128379834763 SUCCESS (203 tests, 5,169 jobs,
-2,481 current modules, 39,470 CCO +791 forest declarations, standard three
-axioms and complete provider guards). B060 and all other dependencies are
-accepted; B059 was not treated as accepted during read-only preparation.
-B061 remains IN_PROGRESS; no completion, approval or acceptance is claimed.
+Effective claim STATE895 and append-only authorship STATE896; root/project3 is
+sole remote publisher and coordination CAS owner. The accepted dependency base
+is actual main `5f9fd56051dd14ae701b56d96f9365632453e45e`, B059 ACCEPTED894 after
+push CI42364579172/job128379834763 SUCCESS. B060 and all other dependencies are
+accepted. B061 is not approved, submitted or accepted by this implementation
+report. The first public WIP is PR87; final exact-head CI/review is a separate
+remaining integration gate.
 
-Frozen source490c3f36d85db5a0b3ced0598e6c431825254ec5, the entire
-387-line original Ramsey-clone source, all433 proof-note lines, the exact
-11 definitions/62 claims/5 results/8 tasks, source applications and dependency
-firewalls were read. Toolchain/manifest, article hashes and external pins
-are unchanged. No actual mathematical/source/API exception is identified.
+Production source is frozen at native
+`a7338df53dd1c3bf6a15d6ed283e307d48c5964b`, tree
+`8a3a30f8a4190ed466403ff85a2fc0dd857708fe`. The later report-only commit does
+not change its proof bytes. There are 33 public B061 modules /5,797 lines, all
+33 directly imported in `CCO.lean`. Native authorship and merge parents are
+preserved; no squash, rebase or cherry-pick was used.
 
-## Shared actual source and current compiled scope
+The complete frozen source490c3f36d85db5a0b3ced0598e6c431825254ec5, original
+387-line Ramsey-clone proof, all433 proof-note lines, 11 definitions/62 claims/
+5 results/8 tasks and dependency firewalls were read. Toolchain, manifests,
+article hashes, global external manifest and every provider pin are unchanged.
+No actual mathematical/source/API exception or unresolved provider callback is
+identified in this source candidate.
 
-`ActualSource` fixes ONE terminal `B : OwnerStage`, `ht : B.Terminal`,
-cloneSource=CloneSAP.source B.source, its actual clone homogeneity/SAP/CCO,
-FULL infinite covers including Top, and canonical B059 HF/Lang/Values/
-Hidden/Sig/Target/ActualAge/OrderedAge. Arbitrary fixed SelectedMIFamily
-charts are retained; only their finite symbol indices are enumerated once.
-ALL proper hidden sorts remain available, not only selected chart positions.
-The actual finite safe history and SAME reasonable unary reduct arise from
-original AP+HOM CCO; no original SAP or terminality is assumed.
+## Five source anchors
 
-`OwnerAction` gives the genuine owner→clone→entire-hidden group homomorphism,
-literal canonical named-node action and evaluation equivariance for every
-actual term/proper input/output. It does not add an imaginary-action callback.
-`ProperHiddenAge` proves actual output-sort closure and consumes strict B059
-whole-age C30/C36 before any real readout. The actual proper ALL-orders Ramsey
-age is obtained through accepted B036 sort restriction and the exact codec,
-including orphan members and arbitrary carrier presentations. `ProperHiddenJEP`
-uses actual whole-age strong amalgamation over EMPTY to get disjoint images,
-extends BOTH supplied global orders and then applies the same proper-sort
-restriction. It does not assume compatible orders or hidden JEP.
+`CCO.APRamseyReadout.SourceExports` exposes these exact quantified interfaces:
 
-`Templates/TemplateBounds/CoordinateCompletion` prove marked I04 quotient
-reconstruction, the natural bijection of ALL visible/hidden embeddings,
-literal same-ambient support equality, strict completion idempotence,
-selected-root containment, natural map extension and both size bounds.
-These are generic proofs with no Ramsey, cofinality, EP or original AP input.
-Concrete application to the actual fixed-chart root scheme is still OPEN.
+| Result | Concrete public source anchor |
+| --- | --- |
+| General AP Ramsey expansion, C34 | `Source.general_ap_ramsey_expansion` |
+| Marked ALL-embedding templates, C17 | `Source.actual_template_embeddings` |
+| Same-host coordinate completion, C40 | `Source.actual_coordinate_completion`, `actualCompletionMap` and selected-root/empty controls |
+| Independent A04 block normalization, C46 | `Source.sort_block_normalization` |
+| Smaller finite reasonable Ramsey language, C56 | `Source.terminal_small_readout_expansion`, `actualSmallReadoutData` and `actual_small_readout_ramsey` |
 
-`ResetCodecs` supplies faithful FullCode↔both ResetOrder record languages,
-including full partial domains, identical point maps, finite objects, heredity,
-positive-colour conventions and actual sort-restriction Ramsey/JEP consumers.
-`SortBlockOrder/SortBlockNormalizer` construct the independent A04 legal
-same-map strict idempotent lexicographic block operation and instantiate the
-accepted generic normalizer. No clone/SAP/CCO/term-normal-form assumption
-enters that generic theorem; its concrete imaginary-age application remains
-OPEN.
+The parameterized APIs retain ANY genuine terminal `B`, its actual terminality,
+ANY fixed distinct meet-K charts and a fixed priority of HIDDEN sort symbols.
+This includes B064's receiving use for arbitrary genuine safe terminal towers.
+The general AP theorem separately constructs one actual NEW safe terminal
+clone endpoint and applies these interfaces there.
 
-`FiniteSourceExpansion` proves the separate finite-source C59 branch using
-actual point labels, every induced realization, unique expanded embedding
-maps and original homogeneity for SAME-map reasonableness. It has no infinite,
-clone, CCO or SAP premise. `VisibleAmalgamation` is the direct two-colour
-ordinary AP-from-Ramsey+JEP lemma for actual expanded embeddings; its concrete
-expanded-age JEP caller remains OPEN. Neither result supplies original SAP.
+## Actual providers and exact map scopes
 
-## Concrete open duties
+`ActualSource/OwnerAction/OwnerCodeAction` fix ONE canonical clone source,
+B059 HF/Sig/Target and genuine owner action on its ENTIRE hidden target. FULL
+covers include Top. `CoordinateBridge/TupleScheme` prove literal named kernels,
+canonical quotient nodes, the actual finite QF tuple domain, the owner-root
+bijection and its action, with one enumeration per fixed chart. Every proper
+hidden sort remains, including sorts absent from chart positions.
 
-`CoordinateBridge` now compiles the canonical HF named coordinates, literal
-kernels, named nodes/sorts/injectivity, injective proper-carrier forgetting
-and exact off-diagonal cylinder semantics. The selected-chart QF tuple
-scheme and actual eta/root action are under implementation. Their
-arbitrary-host realization must use ONE full actual embedding, with every
-unary domain reflected; the relational shadow alone is not promoted to full
-actual-age membership. The actual fine reduct, finite reasonable readout
-and original AP theorem remain OPEN until these instances are wired into
-the SAME marked code class. Proper-age Ramsey and JEP themselves are proved.
+`ProperHiddenAge/ProperHiddenJEP` apply strict accepted B059 whole-age C30/C36
+on this SAME terminal clone, then the faithful B036 unary-closed proper-sort
+restriction. JEP over empty base extends BOTH prescribed global orders.
+Neither original SAP nor hidden JEP/Ramsey is an extra source premise.
+Arbitrary finite carrier copies and orphan-only hosts are retained.
 
-The smaller language still needs actual owner-orbit definitions for every
-omitted non-order code, the same-map reduced/full embedding equivalence,
-within-HIDDEN-target comparisons and explicit whole-source block
-reasonableness. Different visible tags do not justify deleting a comparison.
-The generic block theorem and coordinate completion remain separately
-scoped. No F-MI/real-hull hypothesis, root-generated cofinality, original
-SAP, expansion property or EPPA claim is introduced.
+`Templates/TemplateBounds/CoordinateCompletion` instantiate actual all-input
+term-function normal forms, marked presentation reconstruction, full domain
+reflection, unique extensions, literal support equality, strict same-host
+idempotence, natural maps and both explicit size bounds. This standalone
+branch has no Ramsey/cofinality/EP/original AP premise. A general target is
+ALL valid host roots; selected-root Object maps are retained between two
+selected objects. No unrestricted hidden-to-selected-root inverse is asserted.
 
-## Ownership and verification
+`TupleSupport/TupleReadout/TuplePredicates/ReasonableExpansion/ActualReadout`
+construct the canonical SAME-map support embedding using owner homogeneity,
+all marked equalities/domains/non-order codes and diagonal/cross-root term
+comparisons. Finite tables are faithful, precompact and hereditary along
+EVERY old induced map. Reasonableness extends the ENTIRE prescribed support
+order along that exact map.
 
-b057_lift owns ActualSource/OwnerAction/ProperHiddenAge/JEP, final reasonable
-assembly, facade, root imports, report, serial main compiler and local Git.
-Its recorded actual helper b059_irreducibility writes only allocated
-OwnerAction and ProperHiddenJEP without compiler/Git. b057_idempotents and
-its recorded bounds helper own concrete coordinate bridges/scheme and generic
-templates/completion/bounds in one physically separate builder. b057_seams
-owns Reset codecs, block normalization and smaller language in another
-physical builder. Root owns independent finite-source/visible-AP files in a
-source-only tree and is sole remote publisher/STATE/PR/integration operator.
-The inventory author and all production authors are not independent reviewers.
-All native authorship and merge parents are retained.
+`HostReadout/FineReadout/ReadoutHiddenMaps/RamseyReadout` close the actual
+arbitrary-host consumer. ONE whole hidden embedding realizes ALL host tuples
+in the SAME owner structure. ALL mixed spectra recover the original fine
+colours; marked-coordinate uniqueness identifies the entire hidden support
+map. Composition is literal on the supplied original map. Full and block
+Ramsey arrows are discharged from the actual proper hidden ages, without a
+new callback, selected-root fixed-point condition or orphan deletion.
 
-The first coherent scope contains 13 public modules and 2,031 source lines,
-all directly imported in CCO.lean. Fresh complete root build passes5,181jobs;
-current-source guards cover2,494 modules/artifacts. All203 Python tests,
-exact external269/Ramsey106/forest98outputs14sources and reject-broad guards
-pass. B06111D/62C/5R/8T metadata checks and bounded diagnostics pass (including
-3,808 embedding bijections,1,260 actual embedding maps,1,224 orphan-host
-cases,136 selected-root completions and12,696 closed block restrictions).
-These finite controls do not certify any unbounded Ramsey/HN/CCO theorem.
-The full transitive CCO audit covers39,836 declarations, and the separate
-forest defining-module audit791, only propext/Classical.choice/Quot.sound,
-zero violations. Final after-audit project/external/Ramsey/forest guards
-pass. The exact current source has no missing root import, sorry/admit,
-new axiom or broad Mathlib import. Logs are /tmp/b061-first-*.
+`VisibleJEP/VisibleRigidity` give actual full/smaller expanded-age JEP and
+rigidity. The rigidity wrappers invoke the already proved finite ordered-code
+result on the SAME actual template. `SourceExports` applies the direct
+`VisibleAmalgamation` two-colour argument to get ordinary full/smaller AP of
+that SAME expanded age. No strong-intersection conclusion is asserted.
 
-This is an honest WIP snapshot for durable publication, not whole-package
-completion or approval. The remaining actual binding and readout duties
-above remain OPEN; the same-source generic APIs are retained for B064's
-arbitrary genuine terminal-history consumer.
+`ResetCodecs/SortBlockOrder/SortBlockNormalizer` keep the independent A04
+scope: legal same-point block order, SAME vertex maps, category laws and strict
+idempotence, with the accepted normalizer instantiated internally. Their
+standalone theorem requires no clone, SAP, CCO or term-function input.
+`NonOrderDefinitions/SmallerLanguage` provide literal finite original-pair
+formulas for every omitted non-order code and every unequal-HIDDEN-target
+comparison, including true diagonals and undefined terms. Same-target
+comparisons remain even across different visible tags. The two-way embedding
+equivalence preserves every original point map. Block reasonableness and the
+actual source smaller Ramsey theorem are proved, not supplied as assumptions.
+
+`GeneralExpansion` obtains the actual safe terminal history from original
+homogeneity, ordinary AP, semantic HOM CCO, countability and infinitude. It
+pulls the concrete full/smaller terminal expansion through the SAME actual
+reasonable unary reduct using accepted UnaryLift. It assumes no original SAP,
+FULL cover, F-MI/real-hull, algebraic closure, cofinality, EP or EPPA gate.
+`FiniteSourceExpansion` separately proves C59 by actual finite point labels
+and original homogeneity; it has no infinity/clone/CCO/SAP premise.
+`OrderCodeBoundary` retains the qualified diagonal/shared-coordinate and
+same-HIDDEN-target diagnostics. The ancillary MI branch stays owned by B060.
+No expansion-property, equality-minimality or EPPA conclusion is claimed.
+
+## Fresh current-source verification
+
+- Full pinned root build: PASS5,201 jobs; `/tmp/b061-complete-root2.log`.
+- Complete current-source cache: PASS2,514 modules/artifacts.
+- External provider: PASS269, exact cd358cde844d5419fd43f30c441511927e09142f.
+- Ramsey provider: PASS106, exact subtree374241ce3751715c90b12c0b071f36026819ad4a.
+- Forest provider: PASS98 outputs/14 current sources, exact port subtree
+  ee892229b9f4be545bfce74d7b53ac9136616dc2.
+- Targeted-import/reject-broad, missing-root-import, diff and token guards PASS.
+- All203 Python tests PASS; module11D/62C/5R/8T validation PASS.
+- Bounded controls PASS:3,808 code bijections,1,260 actual maps,1,590 block maps,
+  1,224 orphan-host cases,136 selected-root completions,64 natural completion
+  compositions,12,696 closed block restrictions and all boundary diagnostics.
+  These finite controls do not prove any unbounded Ramsey/HN/CCO theorem.
+- Full transitive CCO audit PASS40,584 declarations and independent defining
+  forest audit PASS791: only propext/Classical.choice/Quot.sound, zero violations.
+- Final after-audit project/external/Ramsey/forest guards and exact source-anchor
+  type/axiom checks PASS. Logs are `/tmp/b061-complete-*`.
+
+## Ownership and remaining integration gates
+
+b057_lift owns the main source assembly, facade/root/report, serial main compiler
+and local Git. Its recorded b059_irreducibility helper authored only allocated
+OwnerAction/ProperHiddenJEP/TupleSupport/TupleReadout/TuplePredicates/
+ReadoutHiddenMaps/GeneralExpansion without compiler/Git. b057_idempotents owns
+coordinate/template/completion and host/JEP/rigidity files with its separate
+builder; its already recorded gap_coordinates helper authored TemplateBounds
+and FineReadout, parent sole emitter. b057_seams owns Reset/block/non-order/
+smaller-language files in a third physical builder. Root authored independent
+finite-source/visible-AP files in its source-only tree and is sole publisher.
+The source-map author and all production contributors are not independent
+reviewers. Each native DAG and actual contributor identity is retained.
+
+No production proof or source-instance gate is known open. Independent
+source-to-contract review for the EXACT final public SHA, exact public CI,
+registered submission, unique integration lock, final-main CI and canonical
+ACCEPTED remain root/control duties; this report does not preempt them. The
+working tree and report are recoverable without chat history.
