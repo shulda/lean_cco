@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 839,
+  "revision": 840,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -5380,61 +5380,7 @@
       "owner_project_id": null
     }
   },
-  "integration_lock": {
-    "kind": "infrastructure",
-    "actor_id": "root",
-    "head_sha": "1e4ad5450d6760c53732892ef81ced0ff9168a0c",
-    "base_main_sha": "8d009339dd8b8b7e4a1094d046bdc2ee565d2fd0",
-    "pr_number": 83,
-    "review": {
-      "actor_id": "work_control_20261107",
-      "head_sha": "1e4ad5450d6760c53732892ef81ced0ff9168a0c",
-      "approved": true,
-      "summary": "Actual fresh nonauthor /root/recovery_control personally read entire narrow recovery, complete old/new snapshots and unchanged BOARD, actual failed runtime retries, full recovery code and14tests PASS. Exactly one review/integrate identity and revision17to18, all prior identities/pins/capacities/package histories unchanged. Finaldelta ONLY its verbatim report. ExactCI42339681022/job128304398290 passed187tests4958jobs2284sourceguards34189standard3audit plus provider guards; synthetic fulltree equals finalhead. No borrowed approval or mathematical completion.",
-      "independence": {
-        "identity": "/root/recovery_control",
-        "non_author": true,
-        "summary": "Actual genuinely fresh review-only agent personally read the whole registration and exact CI. It authored, designed, directed, implemented and repaired none of this recovery, queue helpers/tests, active B056/B063 or forest provider PR78; only its own independent read-only reports were authored.",
-        "report_path": "formalization/coordination/reviews/work-reviewer-recovery-20261107.md"
-      }
-    },
-    "ci": {
-      "run_id": 42339681022,
-      "head_sha": "1e4ad5450d6760c53732892ef81ced0ff9168a0c",
-      "conclusion": "success",
-      "axiom_audit": "allowlist"
-    },
-    "author_actor_ids": [
-      "root"
-    ],
-    "original_author_project_ids": [
-      3
-    ],
-    "reviewer_recovery": {
-      "unavailable_actor_id": "work_control_20261106e",
-      "bootstrap_actor_id": "work_control_20261107",
-      "new_actors": {
-        "work_control_20261107": {
-          "identity": "/root/recovery_control",
-          "roles": [
-            "review",
-            "integrate"
-          ],
-          "historical_author_projects": []
-        }
-      },
-      "previous_registry_sha256": "80d48ab42c39147ee3099a1a983708c7a5cee9bd9521144c989a4c5449d76499",
-      "previous_policy_sha256": "4e1f303a986d5f385972ade36ba03f619b1a3c1916efda2070703811b4b3f392",
-      "registry_sha256": "80d48ab42c39147ee3099a1a983708c7a5cee9bd9521144c989a4c5449d76499",
-      "policy_sha256": "c83a836d560f54eeabd49b2c8b98872ff65dd082679008d4fd6bb5d71dd0e1d4"
-    },
-    "unavailable_reviewer": {
-      "actor_id": "work_control_20261106e",
-      "identity": "/root/b062_fresh_review",
-      "reason": "The original actual registered reviewer is absent after runtime restart. An unchanged-identity followup_task retry on /root/b062_fresh_review returned live agent path not found; the prior reviewer and its historical reports are preserved, and no approval transfers to a renamed identity.",
-      "report_path": "formalization/coordination/reports/work-reviewer-recovery-20261107.md"
-    }
-  },
+  "integration_lock": null,
   "history": [
     {
       "revision": 1,
@@ -26086,6 +26032,42 @@
         },
         "actor_id": "root"
       }
+    },
+    {
+      "revision": 840,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "promote_reviewer",
+      "package_id": null,
+      "details": {
+        "head_sha": "1e4ad5450d6760c53732892ef81ced0ff9168a0c",
+        "integration_commit": "a8f358af94ed07d5bf909a0f6e199aa450c3ae75",
+        "main_ci": {
+          "run_id": 42340001443,
+          "head_sha": "a8f358af94ed07d5bf909a0f6e199aa450c3ae75",
+          "conclusion": "success",
+          "axiom_audit": "allowlist"
+        },
+        "actor_id": "root",
+        "reviewer_recovery": {
+          "unavailable_actor_id": "work_control_20261106e",
+          "bootstrap_actor_id": "work_control_20261107",
+          "new_actors": {
+            "work_control_20261107": {
+              "identity": "/root/recovery_control",
+              "roles": [
+                "review",
+                "integrate"
+              ],
+              "historical_author_projects": []
+            }
+          },
+          "previous_registry_sha256": "80d48ab42c39147ee3099a1a983708c7a5cee9bd9521144c989a4c5449d76499",
+          "previous_policy_sha256": "4e1f303a986d5f385972ade36ba03f619b1a3c1916efda2070703811b4b3f392",
+          "registry_sha256": "80d48ab42c39147ee3099a1a983708c7a5cee9bd9521144c989a4c5449d76499",
+          "policy_sha256": "c83a836d560f54eeabd49b2c8b98872ff65dd082679008d4fd6bb5d71dd0e1d4"
+        }
+      }
     }
   ],
   "infrastructure_integrations": [
@@ -27933,9 +27915,71 @@
         "source_modules": 1900,
         "build_jobs": 4574
       }
+    },
+    {
+      "kind": "infrastructure",
+      "actor_id": "root",
+      "head_sha": "1e4ad5450d6760c53732892ef81ced0ff9168a0c",
+      "base_main_sha": "8d009339dd8b8b7e4a1094d046bdc2ee565d2fd0",
+      "pr_number": 83,
+      "review": {
+        "actor_id": "work_control_20261107",
+        "head_sha": "1e4ad5450d6760c53732892ef81ced0ff9168a0c",
+        "approved": true,
+        "summary": "Actual fresh nonauthor /root/recovery_control personally read entire narrow recovery, complete old/new snapshots and unchanged BOARD, actual failed runtime retries, full recovery code and14tests PASS. Exactly one review/integrate identity and revision17to18, all prior identities/pins/capacities/package histories unchanged. Finaldelta ONLY its verbatim report. ExactCI42339681022/job128304398290 passed187tests4958jobs2284sourceguards34189standard3audit plus provider guards; synthetic fulltree equals finalhead. No borrowed approval or mathematical completion.",
+        "independence": {
+          "identity": "/root/recovery_control",
+          "non_author": true,
+          "summary": "Actual genuinely fresh review-only agent personally read the whole registration and exact CI. It authored, designed, directed, implemented and repaired none of this recovery, queue helpers/tests, active B056/B063 or forest provider PR78; only its own independent read-only reports were authored.",
+          "report_path": "formalization/coordination/reviews/work-reviewer-recovery-20261107.md"
+        }
+      },
+      "ci": {
+        "run_id": 42339681022,
+        "head_sha": "1e4ad5450d6760c53732892ef81ced0ff9168a0c",
+        "conclusion": "success",
+        "axiom_audit": "allowlist"
+      },
+      "author_actor_ids": [
+        "root"
+      ],
+      "original_author_project_ids": [
+        3
+      ],
+      "reviewer_recovery": {
+        "unavailable_actor_id": "work_control_20261106e",
+        "bootstrap_actor_id": "work_control_20261107",
+        "new_actors": {
+          "work_control_20261107": {
+            "identity": "/root/recovery_control",
+            "roles": [
+              "review",
+              "integrate"
+            ],
+            "historical_author_projects": []
+          }
+        },
+        "previous_registry_sha256": "80d48ab42c39147ee3099a1a983708c7a5cee9bd9521144c989a4c5449d76499",
+        "previous_policy_sha256": "4e1f303a986d5f385972ade36ba03f619b1a3c1916efda2070703811b4b3f392",
+        "registry_sha256": "80d48ab42c39147ee3099a1a983708c7a5cee9bd9521144c989a4c5449d76499",
+        "policy_sha256": "c83a836d560f54eeabd49b2c8b98872ff65dd082679008d4fd6bb5d71dd0e1d4"
+      },
+      "unavailable_reviewer": {
+        "actor_id": "work_control_20261106e",
+        "identity": "/root/b062_fresh_review",
+        "reason": "The original actual registered reviewer is absent after runtime restart. An unchanged-identity followup_task retry on /root/b062_fresh_review returned live agent path not found; the prior reviewer and its historical reports are preserved, and no approval transfers to a renamed identity.",
+        "report_path": "formalization/coordination/reports/work-reviewer-recovery-20261107.md"
+      },
+      "integration_commit": "a8f358af94ed07d5bf909a0f6e199aa450c3ae75",
+      "main_ci": {
+        "run_id": 42340001443,
+        "head_sha": "a8f358af94ed07d5bf909a0f6e199aa450c3ae75",
+        "conclusion": "success",
+        "axiom_audit": "allowlist"
+      }
     }
   ],
-  "policy_revision": 17,
+  "policy_revision": 18,
   "third_batch_exception": {
     "package_id": "B062",
     "independent_active_work": true,
