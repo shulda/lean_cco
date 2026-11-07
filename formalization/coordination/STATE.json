@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 867,
+  "revision": 868,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -5170,6 +5170,7 @@
         "/root/b057_idempotents",
         "/root/b057_lift",
         "/root/b057_seams",
+        "/root/b057_seams/lift_graph_vertices",
         "/root/b058_source_map",
         "root"
       ],
@@ -26707,6 +26708,20 @@
           "/root/b057_idempotents",
           "/root/b057_seams",
           "/root/b058_source_map"
+        ]
+      }
+    },
+    {
+      "revision": 868,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "record_authorship",
+      "package_id": "B058",
+      "details": {
+        "package_id": "B058",
+        "actor_id": "root",
+        "author_actor_ids": [
+          "/root/b057_seams/lift_graph_vertices"
         ]
       }
     }
