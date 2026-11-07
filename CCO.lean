@@ -2467,3 +2467,14 @@ import CCO.OldIdempotentForest.CycleReconstructionAnyBaseArrays
 import CCO.OldIdempotentForest.CycleReconstructionAnyBaseGeometry
 import CCO.OldIdempotentForest.CycleReconstructionAnyBaseSimple
 import CCO.OldIdempotentForest.CycleReconstructionAnyBaseSource
+import CCO.TerminalHiddenHN.ActualAge
+import CCO.TerminalHiddenHN.Admissibility
+import CCO.TerminalHiddenHN.BinaryCodec
+import CCO.TerminalHiddenHN.CompletionBridge
+import CCO.TerminalHiddenHN.HEBridge
+import CCO.TerminalHiddenHN.Irreducibility
+import CCO.TerminalHiddenHN.NormalForms
+import CCO.TerminalHiddenHN.ObstructionBinding
+import CCO.TerminalHiddenHN.OrderedCodec
+import CCO.TerminalHiddenHN.SemanticFunctions
+import CCO.TerminalHiddenHN.TermNormalizer
