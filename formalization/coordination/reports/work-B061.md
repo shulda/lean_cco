@@ -9,8 +9,8 @@ report. The first public WIP is PR87; final exact-head CI/review is a separate
 remaining integration gate.
 
 Production source is frozen at native
-`a7338df53dd1c3bf6a15d6ed283e307d48c5964b`, tree
-`8a3a30f8a4190ed466403ff85a2fc0dd857708fe`. The later report-only commit does
+`6af34a60235855536464d218502e03d723ee0fd6`, tree
+`e243caf4be8bf6f877fd61804f00eecccb963658`. The later report-only commit does
 not change its proof bytes. There are 33 public B061 modules /5,797 lines, all
 33 directly imported in `CCO.lean`. Native authorship and merge parents are
 preserved; no squash, rebase or cherry-pick was used.
@@ -39,6 +39,12 @@ ANY fixed distinct meet-K charts and a fixed priority of HIDDEN sort symbols.
 This includes B064's receiving use for arbitrary genuine safe terminal towers.
 The general AP theorem separately constructs one actual NEW safe terminal
 clone endpoint and applies these interfaces there.
+The narrow source-map C34 anchor finding is corrected in this freeze:
+`general_ap_ramsey_expansion` aliases the full proof directly, independently
+of A04/block normalization. The explicit smaller theorem and all parameterized
+C56/B064 interfaces remain unchanged. Relative to10e567b3, the ONLY Lean delta
+is this one theorem-alias body and its adjacent three-line explanation;
+the theorem type and all mathematical hypotheses are unchanged.
 
 ## Actual providers and exact map scopes
 
@@ -108,14 +114,16 @@ No expansion-property, equality-minimality or EPPA conclusion is claimed.
 
 ## Fresh current-source verification
 
-- Full pinned root build: PASS5,201 jobs; `/tmp/b061-complete-root2.log`.
+- Direct GeneralExpansion/SourceExports and full pinned root rebuild:
+  PASS5,201 jobs; `/tmp/b061-alias-root.log`.
 - Complete current-source cache: PASS2,514 modules/artifacts.
 - External provider: PASS269, exact cd358cde844d5419fd43f30c441511927e09142f.
 - Ramsey provider: PASS106, exact subtree374241ce3751715c90b12c0b071f36026819ad4a.
 - Forest provider: PASS98 outputs/14 current sources, exact port subtree
   ee892229b9f4be545bfce74d7b53ac9136616dc2.
 - Targeted-import/reject-broad, missing-root-import, diff and token guards PASS.
-- All203 Python tests PASS; module11D/62C/5R/8T validation PASS.
+- All203 Python tests and module11D/62C/5R/8T validation passed at10e567b3;
+  their code, inputs and bounded-model diagnostics are unchanged by the alias.
 - Bounded controls PASS:3,808 code bijections,1,260 actual maps,1,590 block maps,
   1,224 orphan-host cases,136 selected-root completions,64 natural completion
   compositions,12,696 closed block restrictions and all boundary diagnostics.
@@ -123,7 +131,9 @@ No expansion-property, equality-minimality or EPPA conclusion is claimed.
 - Full transitive CCO audit PASS40,584 declarations and independent defining
   forest audit PASS791: only propext/Classical.choice/Quot.sound, zero violations.
 - Final after-audit project/external/Ramsey/forest guards and exact source-anchor
-  type/axiom checks PASS. Logs are `/tmp/b061-complete-*`.
+  type/axiom checks PASS. Fresh alias root/guard/audit logs are
+  `/tmp/b061-alias-*`; unchanged Python/control evidence is
+  `/tmp/b061-complete-*`.
 
 ## Ownership and remaining integration gates
 
