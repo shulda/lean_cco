@@ -1,75 +1,76 @@
-# B064 — recovered complete main theorem candidate, generic firewall repair pending
+# B064 — complete source implementation candidate
 
-Owner project3 / coordinator and sole publisher root. Canonical STATE909
-records B064 IN_PROGRESS, all original and actual author identities, policy19,
-no review lease or integration lock.63/64 catalog batches are ACCEPTED.
-The actual fresh reader is /root/b064_control, actorwork_control_20261107b;
-it is not an author and no WIP is independently approved.
+Coordinator/sole publisher root, ownerproject3. All historical and actual
+implementation authors remain in canonical STATE. The same genuinely fresh
+nonauthor reader is /root/b064_control, actorwork_control_20261107b. This is
+an author completion report, not that reader's approval or acceptance.
+Frozen proof/API/toolchain/manifest/provider pins remain unchanged.
 
-## Actual mathematical progress
+## Completed source scope
 
-The current source includes actual normalized full-task EP and the literal
-same-function finite I14 composition, actual full normalized hidden EP,
-all four concrete SAME-HOST tuple contracts, ANY supplied genuine-history
-unfiltered unary/relational EP, separate genuine finite-tag/zero-chart EP,
-and the original countable source theorem combining finite and infinite
-branches. SourceExports.countable_original_unfiltered_expansion has only
-original homogeneity, ordinary AP, semantic HOM CCO, one original sort and
-countability. It assumes no original SAP, terminality, core, hidden class,
-Ramsey or EP provider. Its full variant retains the SAME expansion for
-reasonableness, Ramsey, EP, reduct-surjectivity and precompactness.
+All16 definitions,112 human claims,8 selected results,3 equations and14 tasks
+are mapped in submissions/B064.md, with actual provider discharges and
+whole-consumer scopes. There are145 public UnfilteredEP modules/13,890lines,
+all directly imported by CCO.lean. No sorry/admit/new mathematical axiom,
+broad Mathlib import or stronger original-source assumption is introduced.
 
-Original local SourceExports4149 and combined root5344 PASS receipts survived.
-The ANY-history and actual hidden/task results have standard-three axiom
-print receipts. These receipts do not validate a newer recovered head.
-The extra normalized visible JEP has a separate explicit actual same-host
-proof, not an inference from Ramsey.
+| Source | Actual complete result |
+| --- | --- |
+| Independent finite criterion | Actual distinct-vertex pair witnesses, unique actual singleton shapes, simultaneous singleton arrows, exact unaryEP iff Core, independent of concrete CCO. |
+| Independent equivariant coordinates | Equal kernels/involution and explicit FULL relative finite interval; uniqueness only with the exact generic no-finite-interval hypothesis. |
+| Actual singleton/holonomy | Actual FULL block Ramsey/JEP and singleton maps before core/EP; FULL quotient return holonomy and arbitrary same-target term uniqueness. |
+| Generic complete edge | SynchronizedPairType.complete_relative_orbital_pointed_type: ANY complete external orbital, explicit A04 path-in-parent/fixed-priority laws, actual motion and WHOLE DiagramIso with BOTH marks and EVERY comparison. Its1243-constant type/value closure excludes I10/I11, Ramsey/EP and midpoint providers. |
+| Actual hierarchy/reset tasks | Full lattices/coarser keys, named inverse paths, same-map normalized full Ramsey/JEP class, exact relative reversal, actual reset menu with BOTH RAW/STRONG products, freshness over ENTIRE old members, every literal I12 field and complete pointed template. |
+| Actual hidden EP | Exact unchanged-function finite I14 task tower, every full final competitor on one fixed old host, actual_normalized_hidden_EP without provider callback. |
+| SAME-HOST tuple EP | Canonical full generated supports, actual FULL MI cofinality/orphan coverage, EVERY full competitor reconstructed on the SAME E, ALL-map/fine recovery, concrete actual_normalized_full_code_EP. |
+| Genuine unary labels | ANY supplied genuine owner history, exact whole pairlocal marked age, B063 automatic core with diagonal clone atom, actual full singleton provider, unfiltered unaryEP; no label filtering. |
+| Actual main | genuine_owner_unfiltered_expansion combines unary/relational EP on the SAME history/old host; SourceExports constructs the infinite original recipe and combines it with the separate genuine finite singleton-tag/zero-chart case. |
+| Countable original source | countable_original_unfiltered_expansion / _full: original homogeneous one-sort atomic source, ordinary AP, semantic HOM CCO and countability only; SAME finite relational E is reasonable, Ramsey, EP, reduct-surjective and precompact. No original SAP/terminality/core/hiddenEP/Ramsey input. |
+| Ancillary fallback/boundaries | Genuine minimum-rank idempotent core retract and retained-provider EP with explicit actual A08 induced-label closedness gate; free two-label EP failure, FULL/RAW/STRONG/finite-zero-chart boundaries retained. |
 
-The independent reader caught one remaining exact source-scope obligation:
-generic C37–C42 forbids using I10 normalization as a proof provider. The
-concrete BareCompleteEdge theorem removes the reset-square premise but
-still uses concrete normalizer comparison laws, so it is a valid concrete
-corollary and is not counted as the generic anchor. A separate generic
-SynchronizedPairType theorem uses exactly A04's explicit fixed-sort priority
-and within-parent path-comparison laws. That strict generic module remains
-to be compiled, audited and personally read before complete submission.
-All actual I12 chosen-menu code remains valid on its concrete normalized age.
-No source-contract or mathematical-hypothesis relaxation is requested.
+The earlier I10 generic-edge issue is repaired by a distinct source theorem,
+not a contract relaxation. The actual normalization laws are discharged
+separately in SynchronizedHierarchyContext; they do not enter the generic
+proof dependency. The old BareCompleteEdge theorem remains a valid concrete
+corollary. Concrete chosen-menu full task templates remain the actual I12
+instance. No open mathematical or implementation proof remains in this
+candidate; independent exact-head source review and remote CI still apply.
 
-## Exact environment recovery and validation boundary
+## Actual local validation of this candidate
 
-The older transient common Git/runtime/package directories disappeared during
-active work. Full current142-module source survived and matched every blob
-of the independent reader's exact nativee458 manifest, zero mismatches.
-The complete current source was copied into a new standalone checkout atop
-the unchanged latest public29db head, with all available public ancestry.
-This is a new recovered WIP snapshot; irrecoverable private native commits
-are not claimed to have been reconstructed. No source reset/force/rebase/
-squash was performed. All actual authors and surviving historical native
+Pinned Lean4.34.1 complete root PASS5347jobs; all2659 current project modules/
+artifacts pass before/after audit. Transitive CCO audit42494 declarations,
+only propext/Classical.choice/Quot.sound, zero violations; separate defining
+forest audit791 declarations, same allowlist. Complete external269 exactpin,
+Ramsey106 exactsubtree and forest98outputs/14sources exactport guards pass.
+All145 public modules are directly root-imported; narrow-import/diff/forbidden
+proof-token guards pass. Unchanged203 Python tests PASS. Generic metadata
+check16D/112C/8exports/14tasks and bounded finite controls PASS; they are not
+claimed to prove the Lean/source theorems. The direct strict generic/context
+axiom checks and1243-constant dependency closure also PASS. Exact new public
+CI is a separate gate, never inferred from local or historical success.
+
+## Recovery and publication history
+
+During active work an environment cleanup removed older transient Git/runtime
+roots. All current142 assembled modules survived and matched every exact
+pre-loss blob personally read by the independent reviewer; no source was
+reset. The new standalone recovered snapshot retained the full available
+public ancestry atop29db. Irrecoverable private native objects are explicitly
+not claimed to have been reconstructed. All actual authors and saved native
 provenance remain recorded. See B064-environment-recovery-20261107.md.
+Exact Lean/runtime and all10 manifest pins were restored and verification
+repeated. The recovered143-module public46d453012c0907d0a78599b39355687cc7141ac7
+has exactCI42381849548/job128430958491 SUCCESS,5345rootjobs/2657modules/
+42450CCO declarations plus791forest; STATE910 records it. That run does not
+certify the two newer strict generic/context modules or this final map.
 
-Exact Lean4.34.1/runtime and all10 manifest git pins are restored. Existing
-physical project outputs are only seeds; fresh actual build, complete
-current-source/provider guards and transitive standard-axiom audit are
-required again. The fresh whole-root recovered build is in progress.
+## Final acceptance gates
 
-Last published green checkpoint remains PR89 head
-29dbd5673bb53cafc76bca4905303499ebe11937, native9f6708854befac0c282c1b24f61a64c6eb4f132c,
-whole tree42290422d91bb1a23765b9f5b2275105efc50473, exactCI42378740236 /
-job128421671583 SUCCESS:89modules/8789lines,5291rootjobs,2603current artifacts,
-41947CCO declarations and791forest declarations, only standard allowed3.
-STATE909 retains this green evidence. Newer recovered source is not covered
-by that old run. Exact newer public head/run will be checkpointed only after
-its actual CI is observed.
-
-## Remaining acceptance work
-
-Compile and review the strict generic synchronized-context anchor; assemble
-the full16D/112C/8results/3equations/14tasks author map and exact final source
-closure. Run the unchanged complete guards/audit. Then submit the complete
-contract, obtain actual nonauthor exact-head review and exact green PR CI,
-take the sole lock, perform the expected-head history-preserving merge and
-verify actual resulting-main CI before ACCEPTED. No conditional helper or
-bounded diagnostic is treated as completion. No known mathematical/source/
-API exception is identified; the generic proof dependency is an ordinary
-implementation correction within the unchanged source contract.
+Publish this complete candidate, inspect exact actual CI, submit the full
+contract and obtain the same actual nonauthor reader's complete exact-head
+approval. Any report-only head addition still receives exact-head CI and
+renewed review. Acquire the sole integration lock, re-read actual main/PR,
+merge with expected head preserving available history, and require successful
+actual resulting-main CI/audit before ACCEPTED. Until those gates pass the
+catalog remains63/64ACCEPTED; this report itself changes no live state.

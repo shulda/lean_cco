@@ -2691,3 +2691,6 @@ import CCO.UnfilteredEP.ActualTaskEP
 import CCO.UnfilteredEP.SourceExports
 import CCO.UnfilteredEP.UnfilteredOwnerMain
 import CCO.UnfilteredEP.NormalizedReadoutJEP
+
+import CCO.UnfilteredEP.SynchronizedHierarchyContext
+import CCO.UnfilteredEP.SynchronizedPairType

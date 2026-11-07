@@ -1,6 +1,6 @@
 # B064 environment recovery — current source preserved, fresh verification required
 
-At approximately2026-11-07T15:20Z the environment removed older transient
+At approximately2026-11-07T14:20Z the environment removed older transient
 scratch directories during active work. The old common CCO Git object
 store and runtime/shared package directory disappeared. Both root and
 all live authors independently observed the missing actual paths; the
