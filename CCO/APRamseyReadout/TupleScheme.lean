@@ -1,6 +1,8 @@
 import CCO.APRamseyReadout.CoordinateBridge
+import CCO.APRamseyReadout.OwnerAction
 import CCO.FullCode.LanguageExpansion
 import CCO.TypedOrbitFrames.ActualProjectionSystem
+import Mathlib.Tactic.Choose
 
 /-! Fixed nonempty selected-MI charts are literal tagged finite tuples.
 Their qf domain is the existing clone-marker membership formula, rendered
@@ -161,6 +163,52 @@ theorem ownerRoot_injective : Function.Injective (ownerRoot B ht F) := by
   have hxy := (F i).ownerTuple_injective he
   cases hxy
   rfl
+
+@[simp] theorem ownerRoot_coordinate (i : B.Sorts) (x : B.Point i)
+    (k : Fin (chartArity F i)) :
+    (ownerRoot B ht F ⟨i,x⟩).coordinate k =
+      namedNode B (chartCoordinate B ht F i k)
+        ((F i).ownerTuple x ((chartEnumeration F i).symm k)) := rfl
+
+/-- The canonical owner action moves every marked coordinate by the
+same actual imaginary action; no automorphism section is selected. -/
+theorem ownerRoot_coordinate_smul (g : CCO.TerminalPowers.FullAut B.source)
+    (i : B.Sorts) (x : B.Point i) (k : Fin (chartArity F i)) :
+    ownerHiddenHom B ht g • (ownerRoot B ht F ⟨i,x⟩).coordinate k =
+      (ownerRoot B ht F ⟨i,g • x⟩).coordinate k := rfl
+
+/-- Every actual valid tuple is the tuple of one owner. Coordinate
+decoding recovers existing quotient VALUES, never representatives. -/
+theorem ownerRoot_surjective : Function.Surjective (ownerRoot B ht F) := by
+  intro r
+  rcases r with ⟨⟨i⟩,xs,hs,hv⟩
+  have hnode (a : (F i).Index) :
+      ∃ q : Quotient ((F i).symbol a).val.val,
+        xs ((chartEnumeration F i) a) =
+          namedNode B (namedCoordinateHF B ht i ((F i).symbol a)) q := by
+    obtain ⟨k,rfl⟩ := (chartEnumeration F i).symm.surjective a
+    rw [Equiv.apply_symm_apply]
+    exact original_completed_hidden_carrier_exists (cloneSource B) (HF B) (cloneSAP B)
+      (CCO.TerminalHiddenHN.NR2 (cloneSource B) (fullCovers B ht))
+      (chartCoordinate B ht F i k) ⟨xs k,hs k⟩
+  choose q hq using hnode
+  have hcoords : tupleNodes B ht F i q = xs := by
+    funext k
+    have h := hq ((chartEnumeration F i).symm k)
+    simpa only [tupleNodes, coordinateNode, chartCoordinate, chartSymbol, Equiv.apply_symm_apply] using h.symm
+  have hvalid : (tupleDomain B ht F i).eval (CoordinateTarget B ht) (tupleNodes B ht F i q) := by
+    rw [hcoords]
+    exact hv
+  obtain ⟨x,hx⟩ := (F i).compatible_realized ht q
+    ((tupleDomain_target_eval B ht F i q).mp hvalid)
+  refine ⟨⟨i,x⟩,?_⟩
+  refine Root.ext_coordinates (r := ownerRoot B ht F ⟨i,x⟩)
+    (s := ⟨⟨i⟩,xs,hs,hv⟩) rfl ?_
+  intro k
+  exact (congrFun (congrArg (tupleNodes B ht F i) hx) k).trans (congrFun hcoords k)
+
+def ownerRootEquiv : Sigma B.Point ≃ Root (CoordinateTarget B ht) (tupleScheme B ht F) :=
+  Equiv.ofBijective (ownerRoot B ht F) ⟨ownerRoot_injective B ht F,ownerRoot_surjective B ht F⟩
 
 end
 end CCO.APRamseyReadout
