@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 869,
+  "revision": 870,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -5171,6 +5171,7 @@
         "/root/b057_idempotents/gap_coordinates",
         "/root/b057_lift",
         "/root/b057_seams",
+        "/root/b057_seams/cycle_rotation",
         "/root/b057_seams/lift_graph_vertices",
         "/root/b058_source_map",
         "root"
@@ -26737,6 +26738,20 @@
         "actor_id": "root",
         "author_actor_ids": [
           "/root/b057_idempotents/gap_coordinates"
+        ]
+      }
+    },
+    {
+      "revision": 870,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "record_authorship",
+      "package_id": "B058",
+      "details": {
+        "package_id": "B058",
+        "actor_id": "root",
+        "author_actor_ids": [
+          "/root/b057_seams/cycle_rotation"
         ]
       }
     }
