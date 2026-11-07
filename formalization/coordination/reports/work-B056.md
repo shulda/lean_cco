@@ -1,3 +1,16 @@
+## Forest-main reconciliation, 7 November 2026
+
+Root preserved native proof checkpoint `0eb02227f2d4211eb9fef8004dca822d5a9f1e68`
+and merged actual forest main `e2703913bb34272f2176fc10d5619e10e6b57682`
+without rebasing or dropping any WIP. The sole root-import conflict retained
+every verified B056 export and the forest facade. No B056 proof changed.
+The reconciled local full root passed 5,002 jobs; complete guards checked
+2,314 CCO, 269 EPPA, 106 Ramsey and 14 forest modules / 98 outputs.
+Transitive audits passed 34,939 CCO and 791 forest declarations, standard
+three axioms only. Fresh exact public CI is required after publication.
+The subsequent unimported anchor/C19 drafts remain separate unverified WIP;
+their existence does not complete this checkpoint or the batch.
+
 # B056 current verified checkpoint — exact bounded source gate
 
 **IN_PROGRESS; whole-contract review/submission remains open.**
