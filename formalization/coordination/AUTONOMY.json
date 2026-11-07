@@ -1,6 +1,6 @@
 {
   "protocol_version": 3,
-  "revision": 18,
+  "revision": 19,
   "state_branch": "coordination",
   "state_file": "formalization/coordination/STATE.json",
   "registered_projects": [
@@ -203,6 +203,14 @@
     },
     "work_control_20261107": {
       "identity": "/root/recovery_control",
+      "roles": [
+        "review",
+        "integrate"
+      ],
+      "historical_author_projects": []
+    },
+    "work_control_20261107b": {
+      "identity": "/root/b064_control",
       "roles": [
         "review",
         "integrate"
