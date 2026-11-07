@@ -52,14 +52,14 @@ the finite comparison predicates recover the entire hidden order. -/
 def relationalToReadout {A B : CCO.FiniteInduced (X := X)}
     {a : D.ReadoutOn A} {b : D.ReadoutOn B}
     (e : (D.readoutExpansion H).Embedding a b) : D.ReadoutEmbedding H a b :=
-  D.readoutEmbedding_of_comparisons H e.old e.binary_iff
+  D.readoutEmbedding_of_comparisons H e.old (fun q x y => (e.binary_iff q x y).symm)
 
 def readoutToRelational {A B : CCO.FiniteInduced (X := X)}
     {a : D.ReadoutOn A} {b : D.ReadoutOn B}
     (e : D.ReadoutEmbedding H a b) : (D.readoutExpansion H).Embedding a b where
   old := e.old
   unary_iff q := PEmpty.elim q
-  binary_iff q x y := (D.comparison_embedding_iff H e.old).mp e.lt_iff q x y
+  binary_iff q x y := (D.comparison_readoutEmbedding H e q x y).symm
 
 def relationalReadoutEquiv {A B : CCO.FiniteInduced (X := X)}
     (a : D.ReadoutOn A) (b : D.ReadoutOn B) :
