@@ -2478,3 +2478,8 @@ import CCO.TerminalHiddenHN.ObstructionBinding
 import CCO.TerminalHiddenHN.OrderedCodec
 import CCO.TerminalHiddenHN.SemanticFunctions
 import CCO.TerminalHiddenHN.TermNormalizer
+import CCO.TerminalHiddenHN.ActualSAP
+import CCO.TerminalHiddenHN.EquivariantFunctions
+import CCO.TerminalHiddenHN.HNBinding
+import CCO.TerminalHiddenHN.OrderedAge
+import CCO.TerminalHiddenHN.RamseyBridge

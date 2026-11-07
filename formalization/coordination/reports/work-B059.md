@@ -33,19 +33,20 @@ concrete `actualAge_completed`. Off-sort identity bookkeeping is not a
 partial function edge. The original shared baseline native5623833 remains
 in the full native DAG; its signature/target aliases have not changed.
 
-## Current eleven-module proof scope
+## Current sixteen-module proof scope
 
-All eleven public modules in this checkpoint are compiled and directly
+All sixteen public modules (2,134 source lines) in this checkpoint are compiled and directly
 imported by `CCO.lean`; unfinished source duties below are not inferred from
 these facts.
 
 - `Irreducibility`: actual full named positive binary cylinders cover EVERY
   distinct completed hidden pair, including real/proper and orphan cases.
   Full member embeddings reflect that coverage. `actual_hidden_irreducible`
-  and `actualAge_allIrreducible` prove the terminal-specialized actual class
-  conclusion without CCO, hidden SAP, HN or an artificial E* relation. The
-  canonical signature still uses hCover-derived NR2; the more general
-  standalone C28 export with explicit NR2 and no FULL-cover premise is OPEN. The C48 example is explicitly a sort-only
+  and `actualAge_allIrreducible` prove the actual class conclusion. Standalone
+  `original_hidden_irreducible_of_embedding` and
+  `original_hidden_closed_irreducible` use explicit original NR2, H and visible
+  SAP, with NO FULL-cover/CCO/hidden-SAP/HN premise. Canonical age wrappers
+  specialize this generic C28 proof; no E* is added. The C48 example is explicitly a sort-only
   two-point reduct with a closed free split, not the full actual signature.
 - `Admissibility/HEBridge`: subset-tested and carrier-tested HE mean the
   SAME map, with all closed irreducible subobjects, full function-domain
@@ -69,31 +70,49 @@ these facts.
   equality of functions. FullCode forms are valid in the actual ambient,
   every actual closed member, and every global order, without a prechosen
   ambient order embedding.
+- `EquivariantFunctions`: finiteness of ALL equivariant maps between
+  arbitrary equivariant surjective images of original real sorts uses only
+  H and finite optional pair colours, INCLUDING equality. It has no SAP,
+  NR2, covers or CCO input. This is a proved input to the still-open generic
+  A02 source framework, not the complete standalone readout theorem.
+- `ActualSAP`: actual-subset B055 SAP is internally transported through
+  the SAME full closed images of arbitrary finite carrier spans. The proof
+  preserves partial domains, canonical off-sort identity, agreement and
+  exact intersection; only the output carrier is reindexed through ULiftFin.
+  `actualAge_finiteHereditarySAP` / `actual_hidden_age_sap` and standalone
+  `actual_hidden_age_jep` concern the SAME entire age, with empty/orphan
+  cases. No subset-SAP/provider or point-generated restriction is an extra
+  final input.
+- `HNBinding`: the concrete direct theorem discharges completed/irreducible/
+  hereditary-SAP/actual-N hypotheses internally. Standalone C35/C36 exports
+  prove uniform local finiteness and Ramsey for the SAME WHOLE hidden age
+  with ALL global orders. Its strong local completion accepts the original
+  arbitrary finite ordered ambient C0; no Hom to the fixed actual target is
+  assumed for that HN candidate.
 - `BinaryCodec/OrderedCodec`: preserve actual sorts/functions and every
   binary cylinder, with literal partial graph semantics. The binary full
-  embedding equivalence/naturality is compiled. Global order has symbols
-  for ALL ordered hidden-sort pairs and typed term translations/evaluation;
-  the ordered all-embedding and Ramsey class adapter is still in progress.
+  embedding equivalence/naturality is compiled in BOTH languages. Global
+  order has symbols for ALL ordered hidden-sort pairs. `OrderedActualAge`
+  includes ALL carrier presentations/global orders and orphans; heredity,
+  invariance under arbitrary full induced embeddings and all-input normal
+  validity are proved. `actual_hidden_fullcode_ramsey` calls the concrete
+  HN theorem internally. The explicit color shade also handles empty
+  embedding sets; no root-generated class or Ramsey callback is substituted.
 
 ## Concrete open source duties
 
 The standalone source firewalls are explicit: C01–08 and C09–23 forbid
-visible SAP/FULL covers/CCO, while C24–28 permits visible SAP but forbids
-FULL covers/CCO. Terminal-specialized infrastructure below those gate-fixed
-model definitions does not by itself discharge these general exports. Root
-owns generic A02 closure/cofinality/readout/normal forms; the same structural
-helper will add generic C28 with explicit original NR2.
+visible SAP/FULL covers/CCO. Terminal-specialized normal-form infrastructure
+under those gate-fixed model definitions does not by itself discharge these
+general exports. Root owns generic A02 closure/cofinality/readout/normal
+forms. Generic standalone C24–28 with explicit NR2, allowing visible SAP but
+without FULL covers or CCO, is now proved.
 
-Whole-age C30 is OPEN: convert accepted actual-subset hidden AgeSAP to
-carrier-polymorphic Raw.FiniteHereditarySAP on this SAME entire ActualAge,
-including orphan/empty spans and exact intersection, with finite output
-reindexed into the caller universe. An ActualSAP draft is not certified by
-this checkpoint. Standalone whole-age SAP/JEP exports are required by B061.
-
-The direct HN application/C36 still awaits that structural source instance;
-its actual completed/irreducible/N premises above are compiled. The result
-must be ALL-global-orders Ramsey on the SAME whole age, not a root-generated
-subclass or a new Ramsey provider premise.
+Whole-age source C30 (SAP/JEP) and C36 (ALL global orders Ramsey) are now
+proved, with direct public exports before real-root readout. The concrete
+FullCode Ramsey premise on that SAME entire actual ordered age is also
+internally discharged. These source gates do not prove the remaining
+readout/terminal/general results by themselves.
 
 The complete old-type-determined non-order code, exact real-root closure,
 literal real cofinality, presentation quotient, all diagonal comparisons,
@@ -112,20 +131,24 @@ builds or commits. b057_idempotents and its recorded gap_coordinates helper
 own HE/admission/completion/N/HN in a physical private builder. b057_seams
 owns the codecs/ordered age/Ramsey bridge in another physical builder.
 Root owns semantic forms/readout/terminalisation in a source-only private
-tree and is the sole remote publisher/STATE/PR/integration operator. Source
+tree and is the sole remote publisher/STATE/PR/integration operator. The
+recorded actual author `/root/b059_equivariant_functions` wrote only the
+standalone EquivariantFunctions file, without builds or Git operations. Source
 inventory authors are not independent reviewers. Native history is merged
 without squash/rebase/cherry-pick. No broad Mathlib imports or new axioms.
 
-Verification of this exact eleven-module WIP: full pinned root5,141jobs,
-2,454 current modules/artifacts,203Python tests, exactexternal269/Ramsey106/
-forest98outputs14sources, reject-broad roots, B05910D/52C/5R/7T and bounded
-controls all pass. CCO transitive audit38,774 plus separate forestaudit791
-pass with only propext/Classical.choice/Quot.sound and no violations. Final
-after-audit current-source/provider guards pass. No source/API/toolchain
-change.
-
-The shared leaf passed 2,575 jobs; completed age properties 2,613; exhaustive
-irreducibility/static order codec 2,631; semantic actual-member normal forms
-2,643. Those leaf results and the full current verification above concern only
-this actual eleven-module WIP scope. All unfinished
-source instances remain explicitly open regardless of finite diagnostics.
+The previous immutable eleven-module WIP is native
+`1c966680b34a345e9e6730827aa1e8a197295a1b`; its root5,141/cache2,454,
+203tests, provider guards, audit38,774+791 and controls passed. This source
+checkpoint preserves all native branches, including whole-age SAP eaf29,
+generic C28 2133756, actual HN014997, full-code Ramsey dc5691 and independent
+equivariant-function lemma76907. No uncompiled draft is root-imported or
+counted complete. Current sixteen-module root build passes 5,146 jobs;
+fresh current-source checks2,459 modules/artifacts,203Python tests, exact
+external269/Ramsey106/forest98outputs14sources and reject-broad roots pass.
+B05910D/52C/5R/7T metadata and both bounded controls pass. CCO transitive
+audit38,871 and separate forest defining-module audit791 pass with only
+propext/Classical.choice/Quot.sound and zero violations. Final after-audit
+current-source/provider guards pass.
+All remaining source instances above remain explicitly open regardless of
+finite diagnostics. No source/API/toolchain or external pin changed.
