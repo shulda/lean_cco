@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 904,
+  "revision": 905,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -5684,7 +5684,12 @@
         "/root/b057_lift/b059_irreducibility",
         "/root/b057_seams",
         "/root/b058_source_map",
+        "/root/b064_core",
+        "/root/b064_coverage",
+        "/root/b064_finite",
         "/root/b064_finite_original",
+        "/root/b064_orders",
+        "/root/b064_transfer",
         "root"
       ],
       "original_author_project_ids": [
@@ -27561,6 +27566,25 @@
           "/root/b057_seams",
           "/root/b058_source_map",
           "/root/b064_finite_original"
+        ],
+        "actor_id": "root"
+      }
+    },
+    {
+      "revision": 905,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "record_authorship",
+      "package_id": "B064",
+      "details": {
+        "package_id": "B064",
+        "author_actor_ids": [
+          "root",
+          "/root/b064_core",
+          "/root/b064_orders",
+          "/root/b064_transfer",
+          "/root/b064_finite",
+          "/root/b064_coverage"
         ],
         "actor_id": "root"
       }
