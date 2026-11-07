@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 874,
+  "revision": 875,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -5189,16 +5189,16 @@
         "axiom_audit": "allowlist",
         "job_id": 128333387654
       },
-      "head_sha": "113b89e1547652becd0b86d7a0926ef68e50a054",
+      "head_sha": "fbfa813d13e419514cbd0dfe8e42fce6c59958ce",
       "pr_number": 85,
       "observed_ci": {
-        "run_id": 42353102435,
-        "head_sha": "113b89e1547652becd0b86d7a0926ef68e50a054",
+        "run_id": 42354788088,
+        "job_id": 128350375176,
+        "head_sha": "fbfa813d13e419514cbd0dfe8e42fce6c59958ce",
         "conclusion": "success",
-        "axiom_audit": "allowlist",
-        "job_id": 128345251643
+        "axiom_audit": "allowlist"
       },
-      "checkpoint_revision": 874
+      "checkpoint_revision": 875
     },
     "B059": {
       "state": "AVAILABLE",
@@ -26837,6 +26837,26 @@
           "conclusion": "success",
           "axiom_audit": "allowlist",
           "job_id": 128345251643
+        }
+      }
+    },
+    {
+      "revision": 875,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "checkpoint",
+      "package_id": "B058",
+      "details": {
+        "actor_id": "root",
+        "package_id": "B058",
+        "head_sha": "fbfa813d13e419514cbd0dfe8e42fce6c59958ce",
+        "pr_number": 85,
+        "observed_ci": {
+          "run_id": 42354788088,
+          "job_id": 128350375176,
+          "head_sha": "fbfa813d13e419514cbd0dfe8e42fce6c59958ce",
+          "conclusion": "success",
+          "axiom_audit": "allowlist"
         }
       }
     }
