@@ -15,6 +15,30 @@ open CCO.TypedOrbitFrames CCO.QuotientTransport
 noncomputable section
 variable (B : OwnerStage.{u,v,w})
 
+abbrev CoordinateLanguage (ht : B.Terminal) :=
+  CCO.TerminalHiddenHN.binaryLanguage (Sig B ht)
+    (CCO.TerminalHiddenHN.sig_binary (cloneSource B) (cloneHomogeneous B)
+      (cloneSAP B) (fullCovers B ht))
+
+abbrev CoordinateModel (ht : B.Terminal) {V : Type z}
+    (C : CCO.UnarySupport.Structure (Sig B ht) V) :=
+  CCO.TerminalHiddenHN.binaryStructure (Sig B ht)
+    (CCO.TerminalHiddenHN.sig_binary (cloneSource B) (cloneHomogeneous B)
+      (cloneSAP B) (fullCovers B ht)) C
+
+abbrev CoordinateTarget (ht : B.Terminal) := CoordinateModel B ht (Target B ht)
+
+abbrev OrderedCoordinateLanguage (ht : B.Terminal) :=
+  CCO.TerminalHiddenHN.orderedLanguage (Sig B ht)
+    (CCO.TerminalHiddenHN.sig_binary (cloneSource B) (cloneHomogeneous B)
+      (cloneSAP B) (fullCovers B ht))
+
+abbrev OrderedCoordinateModel (ht : B.Terminal) {V : Type z}
+    (C : CCO.UnarySupport.Structure (Sig B ht) V) [LinearOrder V] :=
+  CCO.TerminalHiddenHN.orderedStructure (Sig B ht)
+    (CCO.TerminalHiddenHN.sig_binary (cloneSource B) (cloneHomogeneous B)
+      (cloneSAP B) (fullCovers B ht)) C
+
 abbrev NamedCoordinate (i : B.Sorts) :=
   OriginalNamedHiddenCoordinate (cloneSource B) (HF B) i
 
@@ -63,6 +87,17 @@ def coordinateNode (ht : B.Terminal) {i : B.Sorts}
 theorem namedNode_injective {i : B.Sorts} (D : NamedCoordinate B i) :
     Function.Injective (namedNode B D) :=
   original_completed_hidden_node_injective (cloneSource B) (HF B) D
+
+theorem namedNode_eq_iff {i j : B.Sorts} (D : NamedCoordinate B i)
+    (E : NamedCoordinate B j) (q : Quotient D.val.val) (r : Quotient E.val.val) :
+    namedNode B D q = namedNode B E r ↔
+      QuotientPairQF.HiddenEqual (cloneSource B) D.val E.val q r := by
+  constructor
+  · intro h
+    exact Sum.inr.inj (congrArg
+      (originalCompletedCarrierForget (cloneSource B) (HF B)) h)
+  · intro h
+    exact congrArg Sum.inr (Subtype.ext h)
 
 abbrev ProperValue (ht : B.Terminal) :=
   {x : Values B // ProperSort B ht ((Hidden B ht).sort x)}
@@ -139,14 +174,7 @@ theorem namedBinary_semantics (ht : B.Terminal) {i j : B.Sorts}
       OriginalCompletedCoordinateReading (cloneSource B) (HF B)
         (namedNode B E r) ⟨j,.inr E⟩ r' ∧
       originalTypedCylinderSemanticRelation (cloneSource B) D.val E.val R.val q' r') ↔ _
-  have heq : namedNode B D q = namedNode B E r ↔
-      QuotientPairQF.HiddenEqual (cloneSource B) D.val E.val q r := by
-    constructor
-    · intro h
-      exact Sum.inr.inj (congrArg
-        (originalCompletedCarrierForget (cloneSource B) (HF B)) h)
-    · intro h
-      exact congrArg Sum.inr (Subtype.ext h)
+  have heq := namedNode_eq_iff B D E q r
   constructor
   · rintro ⟨hne,q',r',hq,hr,hR⟩
     have hq' : q = q' := namedNode_injective B D ((hiddenReading_iff B D _ q').mp hq)
@@ -154,6 +182,50 @@ theorem namedBinary_semantics (ht : B.Terminal) {i j : B.Sorts}
     exact ⟨fun h => hne (heq.mpr h),by simpa only [hq',hr'] using hR⟩
   · rintro ⟨hne,hR⟩
     exact ⟨fun h => hne (heq.mp h),q,r,.hidden D q,.hidden E r,hR⟩
+
+/-- The existing finite equality/cylinder syntax on arbitrary displayed
+vertices of the canonical full language. This retains both equality cases. -/
+def pairEval (ht : B.Terminal) {i j : B.Sorts} (D : NamedCoordinate B i)
+    (E : NamedCoordinate B j) {V : Type z}
+    (M : CCO.FullCode.Structure (CoordinateLanguage B ht) V) (x y : V) :
+    QuotientPairQF.Formula (cloneSource B) D.val E.val → Prop
+  | .falsum => False
+  | .truth => True
+  | .equal => x = y
+  | .named R => M.binary (namedBinary B ht D E R) x y
+  | .neg p => ¬pairEval ht D E M x y p
+  | .conj p q => pairEval ht D E M x y p ∧ pairEval ht D E M x y q
+  | .disj p q => pairEval ht D E M x y p ∨ pairEval ht D E M x y q
+
+theorem pairEval_target (ht : B.Terminal) {i j : B.Sorts} (D : NamedCoordinate B i)
+    (E : NamedCoordinate B j) (q : Quotient D.val.val) (r : Quotient E.val.val)
+    (test : QuotientPairQF.Formula (cloneSource B) D.val E.val) :
+    pairEval B ht D E (CoordinateTarget B ht) (namedNode B D q) (namedNode B E r) test ↔
+      test.eval q r := by
+  induction test with
+  | falsum => exact Iff.rfl
+  | truth => exact Iff.rfl
+  | equal => exact namedNode_eq_iff B D E q r
+  | named R => exact namedBinary_semantics B ht D E R q r
+  | neg p ih => exact not_congr ih
+  | conj p q hp hq => exact and_congr hp hq
+  | disj p q hp hq => exact or_congr hp hq
+
+theorem pairEval_transport (ht : B.Terminal) {i j : B.Sorts} (D : NamedCoordinate B i)
+    (E : NamedCoordinate B j) {V : Type z} {W : Type p}
+    {M : CCO.FullCode.Structure (CoordinateLanguage B ht) V}
+    {N : CCO.FullCode.Structure (CoordinateLanguage B ht) W}
+    (f : CCO.FullCode.Structure.Embedding M N) (x y : V)
+    (test : QuotientPairQF.Formula (cloneSource B) D.val E.val) :
+    pairEval B ht D E N (f.point x) (f.point y) test ↔ pairEval B ht D E M x y test := by
+  induction test with
+  | falsum => exact Iff.rfl
+  | truth => exact Iff.rfl
+  | equal => exact f.injective.eq_iff
+  | named R => exact f.binary_iff (namedBinary B ht D E R) x y
+  | neg p ih => exact not_congr ih
+  | conj p q hp hq => exact and_congr hp hq
+  | disj p q hp hq => exact or_congr hp hq
 
 end
 end CCO.APRamseyReadout
