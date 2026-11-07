@@ -57,3 +57,12 @@ with exact native-to-public source-tree mappings. The independent actual
 registered reader is /root/recovery_control (policy18); its pre-read is no
 source-head approval. Public head and actual CI are authoritative in PR/STATE,
 not inferred from this report. No user decision/source exception identified.
+
+## Actual bounded lift core checkpoint
+
+- `LiftMenus.lean`, `LiftSplitting.lean`, `LiftOrdered.lean` and `LiftFinite.lean` are compiled. The selected input gate is only `BoundedPairTest` at `2 * originalSourceUniformNormalCodeBudget`, on each actual irreducible old pair closure. One fixed induced embedding defines all comparisons on that pair.
+- Every surviving fine atom gives the full same-support induced image at the canonical hidden root readings. Singleton transitivity and agreement on actual unary closures produce the canonical homomorphism; the accepted positive binary local cover proves HE on every irreducible, including the empty-source gate.
+- Conversely one actual source homomorphism is split simultaneously over all finite old positions, including orphan proper positions. A single actual binary orbital moves both roots of each previously selected local factor; all its menu comparisons survive. This proves guarded root-menu realization iff actual hidden HE.
+- A finite ranking selects one orientation per actual root pair for the forthcoming simple visible graph. It adds no hidden relation or order.
+- The hidden target can be the exact finite unary-closed actual image. `LiftFinite` proves equivalence with completion into a finite induced piece of the actual target; global injectivity is never assumed.
+- Full root `CCO` (the initial 15 public modules) built on the pinned toolchain. Both required B057 Python controls pass. Whole-batch transitive audit and the concrete private-word graph remain pending; literal old branch-equation syntax is undergoing targeted compilation.
