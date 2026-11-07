@@ -16,6 +16,8 @@ variable (H : CCO.HomogeneousSource S G) (sap : CCO.AgeSAP S)
 variable (hCover : ∀ i, CCO.TypedOrbitFrames.OriginalAllFullCoversInfinite S (i := i))
 variable [∀ i, Countable (X i)]
 
+include H sap hCover
+
 /-- Source `thm:internal-ramsey-terminal`, with FULL original infinite
 covers, including Top covers. Every actual hidden/provider duty is
 discharged internally; the added finite comparison predicates include

@@ -16,6 +16,8 @@ variable {G : Type r} [Group G] [∀ i, MulAction G (X i)]
 variable (H : CCO.HomogeneousSource S G) (sap : CCO.AgeSAP S)
 variable [∀ i, Countable (X i)]
 
+include H sap
+
 /-- Source `thm:internal-v27-general-ramsey`. All terminal source
 premises are discharged on the NEW source produced by actual finite
 cover elimination. The original source need not have infinite covers.

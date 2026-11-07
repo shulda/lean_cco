@@ -67,7 +67,10 @@ def relationalReadoutEquiv {A B : CCO.FiniteInduced (X := X)}
     (D.readoutExpansion H).Embedding a b ≃ D.ReadoutEmbedding H a b where
   toFun := D.relationalToReadout H
   invFun := D.readoutToRelational H
-  left_inv e := by ext x; rfl
+  left_inv e := by
+    apply RealExpansionData.Embedding.ext
+    intro x
+    rfl
   right_inv e := by apply ReadoutEmbedding.ext H; rfl
 
 theorem readoutToRelational_comp {A B C : CCO.FiniteInduced (X := X)}
@@ -75,7 +78,8 @@ theorem readoutToRelational_comp {A B C : CCO.FiniteInduced (X := X)}
     (g : D.ReadoutEmbedding H b c) (f : D.ReadoutEmbedding H a b) :
     D.readoutToRelational H (g.comp H f) =
       (D.readoutToRelational H g).comp (D.readoutToRelational H f) := by
-  ext x
+  apply RealExpansionData.Embedding.ext
+  intro x
   rfl
 
 end

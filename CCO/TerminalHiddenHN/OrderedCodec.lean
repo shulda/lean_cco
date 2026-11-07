@@ -45,6 +45,100 @@ def orderedStructure {V : Type v} (C : CCO.UnarySupport.Structure L V) [LinearOr
     | inl R => exact (binaryStructure L hbin C).binary_sorted R x y h
     | inr p => exact ⟨h.1,h.2.1⟩
 
+def orderedBinaryReduct {V : Type v}
+    (M : CCO.FullCode.Structure (orderedLanguage L hbin) V) :
+    CCO.FullCode.Structure (binaryLanguage L hbin) V where
+  sort := M.sort
+  func := M.func
+  functional := M.functional
+  func_sorted := M.func_sorted
+  unary := PEmpty.elim
+  unary_sorted U := PEmpty.elim U
+  binary R := M.binary (.inl R)
+  binary_sorted R := M.binary_sorted (.inl R)
+
+def orderedReductEmbedding {V : Type v} {W : Type w}
+    {M : CCO.FullCode.Structure (orderedLanguage L hbin) V}
+    {N : CCO.FullCode.Structure (orderedLanguage L hbin) W}
+    (e : CCO.FullCode.Structure.Embedding M N) :
+    CCO.FullCode.Structure.Embedding (orderedBinaryReduct L hbin M) (orderedBinaryReduct L hbin N) where
+  point := e.point
+  injective := e.injective
+  sort_eq := e.sort_eq
+  map_func := e.map_func
+  reflect_func := e.reflect_func
+  unary_iff U := PEmpty.elim U
+  binary_iff R := e.binary_iff (.inl R)
+
+/-- Forget only the order comparisons; every original unary domain and
+binary cylinder remains on the SAME point map. -/
+def orderedBinaryEmbedding {V : Type v} {W : Type w}
+    {C : CCO.UnarySupport.Structure L V} {D : CCO.UnarySupport.Structure L W}
+    [LinearOrder V] [LinearOrder W]
+    (e : CCO.FullCode.Structure.Embedding (orderedStructure L hbin C) (orderedStructure L hbin D)) :
+    CCO.FullCode.Structure.Embedding (binaryStructure L hbin C) (binaryStructure L hbin D) where
+  point := e.point
+  injective := e.injective
+  sort_eq := e.sort_eq
+  map_func := e.map_func
+  reflect_func := e.reflect_func
+  unary_iff U := PEmpty.elim U
+  binary_iff R := e.binary_iff (.inl R)
+
+def orderedEmbedding {V : Type v} {W : Type w}
+    {C : CCO.UnarySupport.Structure L V} {D : CCO.UnarySupport.Structure L W}
+    [LinearOrder V] [LinearOrder W] (e : CCO.UnaryHN.Raw.OrderedEmbedding C D) :
+    CCO.FullCode.Structure.Embedding (orderedStructure L hbin C) (orderedStructure L hbin D) where
+  point := e.point
+  injective := e.injective
+  sort_eq := e.sort_eq
+  map_func := e.map_func
+  reflect_func := e.reflect_func
+  unary_iff U := PEmpty.elim U
+  binary_iff R x y := by
+    cases R with
+    | inl R => exact (binaryEmbedding L hbin e.toEmbedding).binary_iff R x y
+    | inr p =>
+      change (D.sort (e.point x) = p.1 ∧ D.sort (e.point y) = p.2 ∧ e.point x < e.point y) ↔
+        (C.sort x = p.1 ∧ C.sort y = p.2 ∧ x < y)
+      rw [e.sort_eq x,e.sort_eq y,e.order_iff x y]
+
+def orderedEmbeddingInverse {V : Type v} {W : Type w}
+    {C : CCO.UnarySupport.Structure L V} {D : CCO.UnarySupport.Structure L W}
+    [LinearOrder V] [LinearOrder W]
+    (e : CCO.FullCode.Structure.Embedding (orderedStructure L hbin C) (orderedStructure L hbin D)) :
+    CCO.UnaryHN.Raw.OrderedEmbedding C D where
+  toEmbedding := binaryEmbeddingInverse L hbin (orderedBinaryEmbedding L hbin e)
+  order_iff x y := by
+    have h := e.binary_iff (.inr (C.sort x,C.sort y)) x y
+    have hx : D.sort (e.point x) = C.sort x := e.sort_eq x
+    have hy : D.sort (e.point y) = C.sort y := e.sort_eq y
+    change (D.sort (e.point x) = C.sort x ∧ D.sort (e.point y) = C.sort y ∧ e.point x < e.point y) ↔
+      (C.sort x = C.sort x ∧ C.sort y = C.sort y ∧ x < y) at h
+    change e.point x < e.point y ↔ x < y
+    simpa only [hx,hy,true_and] using h
+
+def orderedEmbeddingEquiv {V : Type v} {W : Type w}
+    (C : CCO.UnarySupport.Structure L V) (D : CCO.UnarySupport.Structure L W)
+    [LinearOrder V] [LinearOrder W] :
+    CCO.UnaryHN.Raw.OrderedEmbedding C D ≃
+      CCO.FullCode.Structure.Embedding (orderedStructure L hbin C) (orderedStructure L hbin D) where
+  toFun := orderedEmbedding L hbin
+  invFun := orderedEmbeddingInverse L hbin
+  left_inv e := by apply CCO.UnaryHN.Raw.OrderedEmbedding.ext; rfl
+  right_inv e := by apply CCO.FullCode.Structure.Embedding.ext; intro x; rfl
+
+theorem orderedEmbedding_comp {Z : Type*} {V : Type v} {W : Type w}
+    {C : CCO.UnarySupport.Structure L V} {D : CCO.UnarySupport.Structure L W}
+    {E : CCO.UnarySupport.Structure L Z}
+    [LinearOrder V] [LinearOrder W] [LinearOrder Z]
+    (g : CCO.UnaryHN.Raw.OrderedEmbedding D E) (f : CCO.UnaryHN.Raw.OrderedEmbedding C D) :
+    orderedEmbedding L hbin (g.compose f) =
+      (orderedEmbedding L hbin g).comp (orderedEmbedding L hbin f) := by
+  apply CCO.FullCode.Structure.Embedding.ext
+  intro x
+  rfl
+
 def baseTermToOrdered : {s t : L.Sorts} →
     CCO.FullCode.Term (binaryLanguage L hbin) s t → CCO.FullCode.Term (orderedLanguage L hbin) s t
   | _, _, .id s => CCO.FullCode.Term.id (L := orderedLanguage L hbin) s

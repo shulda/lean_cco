@@ -18,7 +18,7 @@ variable (D : RealInterpretation (G := G) S U P) (H : CCO.HomogeneousSource S G)
 terminal HN theorem. The readout transfer itself assumes only that input
 on the SAME whole age, including arbitrary orphan-bearing hosts. -/
 theorem readoutExpansion_ramsey
-    (ramsey : CCO.FullCode.HasHiddenRamsey D.orderedAge) :
+    (ramsey : CCO.FullCode.HasHiddenRamsey.{max u l,k} D.orderedAge) :
     (D.readoutExpansion H).Ramsey := by
   intro A B a b n hn
   obtain ⟨C,c,hC⟩ := D.readout_ramsey H ramsey A B a b n hn
@@ -31,19 +31,23 @@ theorem readoutExpansion_ramsey
   have h₂ := hg (D.relationalToReadout H f₂)
   have eq₁ : D.readoutToRelational H (g.comp H (D.relationalToReadout H f₁)) =
       (D.readoutToRelational H g).comp f₁ := by
-    ext x
+    apply RealExpansionData.Embedding.ext
+    intro x
     rfl
   have eq₂ : D.readoutToRelational H (g.comp H (D.relationalToReadout H f₂)) =
       (D.readoutToRelational H g).comp f₂ := by
-    ext x
+    apply RealExpansionData.Embedding.ext
+    intro x
     rfl
   exact (congrArg colour eq₁).symm.trans (h₁.trans (h₂.symm.trans (congrArg colour eq₂)))
+
+include H
 
 /-- Standalone source readout theorem: finite relationality and literal
 precompact reasonableness use only A01/A02; Ramsey uses exactly A05. -/
 theorem hasFiniteRelationalRamseyExpansion_of_hiddenRamsey
-    (ramsey : CCO.FullCode.HasHiddenRamsey D.orderedAge) :
-    CCO.TerminalHiddenHN.HasFiniteRelationalRamseyExpansion S :=
+    (ramsey : CCO.FullCode.HasHiddenRamsey.{max u l,k} D.orderedAge) :
+    CCO.TerminalHiddenHN.HasFiniteRelationalRamseyExpansion.{u,v,w,max u l,k} S :=
   ⟨D.readoutExpansion H,D.readoutExpansion_reasonable H,D.readoutExpansion_ramsey H ramsey⟩
 
 
