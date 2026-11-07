@@ -1,6 +1,6 @@
 import CCO.TerminalHiddenHN.EquivariantFunctions
 import CCO.UnaryFreshFrames.Quotient.Named
-import CCO.TerminalHiddenHN.BinaryCodec
+import CCO.TerminalHiddenHN.OrderedCodec
 
 /-! The structural data of a finite binary equivariant unary
 interpretation on the original real sorts. These are the literal A02
@@ -75,7 +75,7 @@ theorem realPoint_surjective_on_sort (i : ι) (x : V)
   obtain ⟨a,ha⟩ := (D.root_bijective i).2 ⟨x,hx⟩
   exact ⟨a,congrArg Subtype.val ha⟩
 
-noncomputable def signature : CCO.UnarySupport.Signature.{max u l} := by
+def signature : CCO.UnarySupport.Signature.{max u l} := by
   letI := D.finiteSorts
   letI := D.finiteFuncs
   letI := D.finiteRels
@@ -92,6 +92,17 @@ abbrev codeLanguage : CCO.FullCode.Language.{max u l} :=
 
 noncomputable def codeModel : CCO.FullCode.Structure D.codeLanguage V :=
   binaryStructure D.signature D.binary D.partialModel
+
+abbrev partialSig := D.signature
+abbrev binaryLanguage := D.codeLanguage
+noncomputable abbrev binaryModel := D.codeModel
+
+abbrev orderedLanguage : CCO.FullCode.Language.{max u l} :=
+  CCO.TerminalHiddenHN.orderedLanguage D.signature D.binary
+
+noncomputable def orderedModel [LinearOrder V] :
+    CCO.FullCode.Structure D.orderedLanguage V :=
+  CCO.TerminalHiddenHN.orderedStructure D.signature D.binary D.partialModel
 
 end RealInterpretation
 
