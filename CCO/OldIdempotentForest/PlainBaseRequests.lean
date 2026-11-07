@@ -60,6 +60,18 @@ def of_retained
     rw [hpoint i hi]
     exact hin ⟨i,hi⟩
 
+theorem of_retained_point
+    (point : ∀ i : {i : Fin (n+1) // i.val ∈ R.pruning.retainedRoots 0},
+      X (gapSort S H sap nr2 F (C.root i.val)))
+    (hinj : Function.Injective (fun i =>
+      (⟨gapSort S H sap nr2 F (C.root i.val),point i⟩ : Sigma X)))
+    (hin : ∀ i, (⟨gapSort S H sap nr2 F (C.root i.val),point i⟩ : Sigma X) ∈ A.vertices)
+    (i : Fin (n+1)) (hi : i.val ∈ R.pruning.retainedRoots 0) :
+    (of_retained point hinj hin).point i = point ⟨i,hi⟩ :=
+  extendTypedRootPoints_at S (fun i => gapSort S H sap nr2 F (C.root i))
+    (⟨Subtype.val,Subtype.val_injective⟩ :
+      {i : Fin (n+1) // i.val ∈ R.pruning.retainedRoots 0} ↪ Fin (n+1)) point ⟨i,hi⟩
+
 variable (roots : PlainBaseRoots S H sap nr2 F C R A)
 
 theorem piece_ne (q : LocatedPiece (Fin n)) (hq : q ∈ locate 0 R.pruning.pieces) :
@@ -100,6 +112,20 @@ theorem plain_last_retained : (Fin.last n).val ∈ R.pruning.retainedRoots 0 := 
   change n ∈ R.pruning.retainedRoots 0
   have h := R.pruning.last_root_mem 0
   simpa only [R.prunes.word,R.forest.original_yield,List.length_finRange,Nat.zero_add] using h
+
+/-- The kept-profile endpoint condition is literally the ORIGINAL
+singleton side word at this old occurrence, not a replacement word. -/
+theorem plain_kept_interval_word (start : ℕ) (i : Fin n)
+    (hq : (⟨start,.kept i⟩ : LocatedPiece (Fin n)) ∈ locate 0 R.pruning.pieces) :
+    (R.piecePath ⟨start,.kept i⟩ hq).flatten =
+      (C.side ⟨start,by
+        have hb := R.locatedBounds hq
+        simp only [LocatedPiece.stop,Piece.word,List.length_singleton] at hb
+        omega⟩).word := by
+  exact C.intervalPath_flatten_single start (by
+    have hb := R.locatedBounds hq
+    simp only [LocatedPiece.stop,Piece.word,List.length_singleton] at hb
+    omega)
 
 end SourcePrunedForest
 
