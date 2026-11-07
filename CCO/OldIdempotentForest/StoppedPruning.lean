@@ -161,4 +161,18 @@ theorem Prunes.exact_partition {A : Type u} {t : FactorizationTree A} {p : Pruni
   refine ⟨p.pieces_word.trans h.word,?_,locate_ordered _ _⟩
   rw [locate_indices,p.pieces_word,h.word]
 
+theorem Prunes.located_bounds {A : Type u} {t : FactorizationTree A} {p : PruningTree A}
+    (h : Prunes t p) {q : LocatedPiece A} (hq : q ∈ locate 0 p.pieces) :
+    q.start < q.stop ∧ q.stop ≤ t.value.length := by
+  have hb := locate_bounds hq
+  rw [p.pieces_word,h.word] at hb
+  simpa using hb.2
+
+theorem Prunes.located_slice {A : Type u} {t : FactorizationTree A} {p : PruningTree A}
+    (h : Prunes t p) {q : LocatedPiece A} (hq : q ∈ locate 0 p.pieces) :
+    (t.value.drop q.start).take (q.stop - q.start) = q.piece.word := by
+  have hs := locate_canonical_slice hq
+  rw [p.pieces_word,h.word] at hs
+  exact hs
+
 end CCO.OldIdempotentForest

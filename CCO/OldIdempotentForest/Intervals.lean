@@ -113,4 +113,22 @@ theorem locate_disjoint {A : Type u} (start : Nat) (ps : List (Piece A)) :
   intro p q hpq i hpi hip hqi
   omega
 
+theorem locate_piece_mem {A : Type u} {start : Nat} {ps : List (Piece A)}
+    {p : LocatedPiece A} (hp : p ∈ locate start ps) : p.piece ∈ ps := by
+  induction ps generalizing start with
+  | nil => simp [locate] at hp
+  | cons q qs ih =>
+    simp only [locate,List.mem_cons] at hp
+    rcases hp with rfl | hp
+    · exact List.mem_cons_self
+    · exact List.mem_cons_of_mem _ (ih hp)
+
+/-- Cumulative positions name the canonical ORIGINAL interval slice. -/
+theorem locate_canonical_slice {A : Type u} {ps : List (Piece A)}
+    {p : LocatedPiece A} (hp : p ∈ locate 0 ps) :
+    ((piecesWord ps).drop p.start).take (p.stop - p.start) = p.piece.word := by
+  obtain ⟨before,after,heq,hstart⟩ := locate_original_split hp
+  simp only [LocatedPiece.stop,Nat.add_sub_cancel_left]
+  simp [heq,hstart]
+
 end CCO.OldIdempotentForest
