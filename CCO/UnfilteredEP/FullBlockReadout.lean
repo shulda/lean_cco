@@ -28,8 +28,8 @@ deleted before the singleton Ramsey criterion is applied. -/
 def fullBlockReadoutExpansion : CCO.TerminalHiddenHN.RealExpansionData.{u,v,w,max u l,k} S where
   Unary := D.FullUnaryName
   Binary := D.FullBinaryName
-  finiteUnary := by letI := S.finiteSort; infer_instance
-  finiteBinary := by letI := S.finiteSort; infer_instance
+  finiteUnary := by let := S.finiteSort; infer_instance
+  finiteBinary := by let := S.finiteSort; infer_instance
   unarySort q := q.1
   leftSort q := q.1
   rightSort q := q.2.1
@@ -79,8 +79,8 @@ def fullBlockReadoutEmbeddingEquiv
       D.ReadoutEmbedding H a.val b.val where
   toFun := fullBlockToReadout D H priority
   invFun := readoutToFullBlock D H priority
-  left_inv f := CCO.TerminalHiddenHN.RealExpansionData.Embedding.ext (fun _ => rfl)
-  right_inv f := TupleInterpretation.ReadoutEmbedding.ext H (fun _ => rfl)
+  left_inv _ := CCO.TerminalHiddenHN.RealExpansionData.Embedding.ext (fun _ => rfl)
+  right_inv _ := TupleInterpretation.ReadoutEmbedding.ext H (fun _ => rfl)
 
 theorem fullBlockReadoutExpansion_reasonable :
     (fullBlockReadoutExpansion D H priority).Reasonable := by

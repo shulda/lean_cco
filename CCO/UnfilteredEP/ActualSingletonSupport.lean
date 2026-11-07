@@ -107,7 +107,7 @@ theorem actual_singleton_support_sort_injective
 
 /-- The actual full block-code singleton has exactly one expansion.
 This is proved before unary EP, order EP and automatic core are applied. -/
-def actual_singleton_block_readout_unique
+@[instance_reducible] def actual_singleton_block_readout_unique
     (priority : LinearOrder (CoordinateLanguage B ht).Sorts)
     (A : FiniteInduced (X := B.Point)) (point : Sigma B.Point)
     (singleton : ∀ x : A.vertices, x.val = point) :

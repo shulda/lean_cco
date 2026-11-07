@@ -1,79 +1,75 @@
-# B064 — expanded compiled source checkpoint (IN_PROGRESS)
+# B064 — recovered complete main theorem candidate, generic firewall repair pending
 
-Owner/project3, coordinator and sole remote publisher root. Effective claim
-STATE903 and current append-only actual authorship STATE905 preserve every
-historical contributor. This continuation's actual authors are root,
-/root/b064_core, /root/b064_orders, /root/b064_transfer, /root/b064_finite and
-/root/b064_coverage. Each writer has its own worktree and physical build.
-The genuinely fresh review-only /root/b064_control is registered separately
-as work_control_20261107b after exact PR88 and actual-main CI, STATE907.
-It is not an author and no historical review transfers to it.
+Owner project3 / coordinator and sole publisher root. Canonical STATE909
+records B064 IN_PROGRESS, all original and actual author identities, policy19,
+no review lease or integration lock.63/64 catalog batches are ACCEPTED.
+The actual fresh reader is /root/b064_control, actorwork_control_20261107b;
+it is not an author and no WIP is independently approved.
 
-This is an author WIP report, NOT a submission, complete source certificate,
-independent package approval or acceptance. All source/API/provider/toolchain
-pins and the entire mathematical contract remain unchanged. The accepted
-base now includes actual main0c50fac628c63d5460390b698336687055675ee6
-(policy-only recovery), green actual pushCI42375854942/job128413152417.
+## Actual mathematical progress
 
-## Prior public checkpoint and current expanded source
+The current source includes actual normalized full-task EP and the literal
+same-function finite I14 composition, actual full normalized hidden EP,
+all four concrete SAME-HOST tuple contracts, ANY supplied genuine-history
+unfiltered unary/relational EP, separate genuine finite-tag/zero-chart EP,
+and the original countable source theorem combining finite and infinite
+branches. SourceExports.countable_original_unfiltered_expansion has only
+original homogeneity, ordinary AP, semantic HOM CCO, one original sort and
+countability. It assumes no original SAP, terminality, core, hidden class,
+Ramsey or EP provider. Its full variant retains the SAME expansion for
+reasonableness, Ramsey, EP, reduct-surjectivity and precompactness.
 
-PR89 first public head230492257f3dc867d4c30b961ee52707bad5f5c8
-(native038a721a9cf7bb99ba0c7f57d6834b13a245682e,33modules/3527lines) has
-actual exactCI42376675122/job128415566210 SUCCESS and canonical checkpoint
-STATE908. This remains historical green evidence, not validation of newer code.
+Original local SourceExports4149 and combined root5344 PASS receipts survived.
+The ANY-history and actual hidden/task results have standard-three axiom
+print receipts. These receipts do not validate a newer recovered head.
+The extra normalized visible JEP has a separate explicit actual same-host
+proof, not an inference from Ramsey.
 
-The current expanded source has89 new public UnfilteredEP modules /8789lines,
-all directly imported from CCO.lean. Its assembled native proof parent is
-4b19eb1f108d07e0add5d6e29b8161b9cff29a8a.
-This commit adds the complete updated root import list and current report.
-Native implementation commits and merges are retained without squash/rebase
-or cherry-picking. Precise public head and observed remote CI are checkpointed
-in canonical STATE after actual publication/verification.
+The independent reader caught one remaining exact source-scope obligation:
+generic C37–C42 forbids using I10 normalization as a proof provider. The
+concrete BareCompleteEdge theorem removes the reset-square premise but
+still uses concrete normalizer comparison laws, so it is a valid concrete
+corollary and is not counted as the generic anchor. A separate generic
+SynchronizedPairType theorem uses exactly A04's explicit fixed-sort priority
+and within-parent path-comparison laws. That strict generic module remains
+to be compiled, audited and personally read before complete submission.
+All actual I12 chosen-menu code remains valid on its concrete normalized age.
+No source-contract or mathematical-hypothesis relaxation is requested.
 
-| Source scope | Compiled actual result in this checkpoint |
-| --- | --- |
-| C01–C13, N01 | Independent finite pair-local template, finite relation reflection, simultaneous ordinary singleton arrows, stored inverse-target/all-label/all-pair witnesses, and exact unary EP iff Core. Repeated labels have distinct-vertex pair witnesses. No concrete CCO source imports. |
-| C14–C20, N02 | Independent equivariant surjections: equal kernels, actual quotient involution, strict invariant source interval with literal relative cardinality2, conditional equality of maps under ALL-invariant-setoid finite-interval exclusion. |
-| C21–C26, N03 | Actual terminal clone source discharges symmetric invariants, ALL-setoid finite-interval gate, proper target transitivity/term surjectivity, singleton one-value-per-sort support and full block-order embedding identity. The actual FULL block Ramsey/JEP/singleton provider is instantiated before core/EP, with all same-map embedding correspondences. |
-| C27–C33, N04–N05 | Actual proper hidden SAP/finite semantic terms; finite original invariant quotient relations and equivariant permutation group; finite order before terminality; actual FULL cyclic orbit interval and terminal holonomy identity. |
-| C34–C42, partial | Every quotient term has the actual represented kernel above its input; all bijective quotient terms have genuine named inverse paths, while coarser terms are constant on parent pairs. Unexpanded pointed complete reset edges have one actual whole-source automorphism. The ordered complete pointed edge code remains OPEN. |
-| C43–C49, partial | Actual FULL distributive lattice/parent-key geometry, equivariant quotient upper-interval/rank/parent transport, ALL RAW primitive paths and arbitrary bijective-term inverses, actual hierarchy charting, same-carrier strict idempotent normalizer, same-map induced-map preservation and normalized proper class are constructed. Final same-class provider/reasonableness packaging and relative-reversal exports remain OPEN in this immutable public snapshot. |
-| C50–C71, partial | Actual complete named terminal reset menu has BOTH RAW and STRONG square identities; reset witness is fresh over the WHOLE generated pair closure. Actual all-order and normalized proper strong amalgamation, whole-base order extension and normalized representative midpoint insertion are proved. The final actual prescribed-member reset midpoint/cylinder assembly, per-task ResetSetting/I12 application and unchanged-function finite tower remain OPEN in this snapshot. |
-| C72 | Exact independent four-contract tuple-EP implication, with every provider premise retained. |
-| C73–C84, partial | Actual FULL MI root coverage/cofinality includes all proper ambient points/orphans. Canonical old-code validity, SAME-existing-host full competitor lifts and ALL-map full support transport are proved. Actual relative full readout EP and finite normalized relational data are constructed on the supplied normalized ExpansionAges, with explicit exact old-age/proper-membership/hiddenEP premises. The final actual class/hiddenEP discharge remains OPEN. |
-| C85–C89 | ANY supplied genuine owner history is received into the actual B063 certified history preserving all original predicates. Prefix induction proves the ENTIRE pair-local marked age, not just necessary pair masks. The clone relation is exactly diagonal and the SAME original-atom template is core. FULL block-code Ramsey/JEP/singletons and distinct-point pair witnesses discharge the actual finite criterion, yielding unfiltered unary EP and its exact UnaryLift-unit interface, plus same-map reasonableness. |
-| C90–C95, partial | Generic unaryLift_EP composes actual unary EP and relative relational EP on ONE fixed old host. OwnerNormalizedExpansion binds ANY supplied genuine history, all labels, actual core and tuple contracts. Its only remaining order inputs are the exact normalized hidden ExpansionAges/old-age/proper identification, Ramsey and HiddenEP; no final infinite source theorem is claimed until those are discharged. |
-| C96–C103 | Separate finite owner stage with no infinitude field; SAME supplied genuine finite tower, actual unique terminal tags, K=Top/no proper MI, empty hidden support and zero-coordinate roots, exact pair-local marked age, all-competitor fixed-full-Q EP, Ramsey/JEP/reasonableness/precompactness. |
-| C104 | Final countable assembly also requires the still-open infinite C95; C104 remains OPEN. |
-| C105–C110, N13 | Genuine minimum-rank positive idempotent power, induced image Core, SAME-map retained marking extensions, explicit ancillary A08 induced closed-label restriction, derived retained-provider Ramsey/JEP/singletons/surjectivity and EP, actual free two-label failure. The A08 gate is explicit and applies only to this optional fallback. |
-| C111–C112 | Scope boundaries are retained in the actual types and comments. Whole-batch source mapping and audit of all final applications are not yet complete. |
+## Exact environment recovery and validation boundary
 
-## Verification of this expanded WIP
+The older transient common Git/runtime/package directories disappeared during
+active work. Full current142-module source survived and matched every blob
+of the independent reader's exact nativee458 manifest, zero mismatches.
+The complete current source was copied into a new standalone checkout atop
+the unchanged latest public29db head, with all available public ancestry.
+This is a new recovered WIP snapshot; irrecoverable private native commits
+are not claimed to have been reconstructed. No source reset/force/rebase/
+squash was performed. All actual authors and surviving historical native
+provenance remain recorded. See B064-environment-recovery-20261107.md.
 
-Pinned Lean4.34.1/original manifest complete root: PASS5291 jobs. Current-source
-cache PASS2603 artifacts/modules. Transitive CCO audit PASS41947 declarations,
-only propext/Classical.choice/Quot.sound, zero violations. External269/Ramsey106/
-forest98outputs14sources guards retain their exact pins; forest defining audit
-has791 standard-allowlist declarations. All33 historical and all56 added public
-modules are root-imported; targeted-import/reject-broad, diff and forbidden-token
-guards pass. Generic16D/112C/8exports/14tasks metadata and bounded diagnostics
-are unchanged from the green first checkpoint. New exact remote CI is a separate
-remaining checkpoint, not inferred from historical/local green.
+Exact Lean4.34.1/runtime and all10 manifest git pins are restored. Existing
+physical project outputs are only seeds; fresh actual build, complete
+current-source/provider guards and transitive standard-axiom audit are
+required again. The fresh whole-root recovered build is in progress.
 
-## Next implementation and control
+Last published green checkpoint remains PR89 head
+29dbd5673bb53cafc76bca4905303499ebe11937, native9f6708854befac0c282c1b24f61a64c6eb4f132c,
+whole tree42290422d91bb1a23765b9f5b2275105efc50473, exactCI42378740236 /
+job128421671583 SUCCESS:89modules/8789lines,5291rootjobs,2603current artifacts,
+41947CCO declarations and791forest declarations, only standard allowed3.
+STATE909 retains this green evidence. Newer recovered source is not covered
+by that old run. Exact newer public head/run will be checkpointed only after
+its actual CI is observed.
 
-Continue the actual hierarchy/parent-transport/path adapter, complete normalized
-pointed reset edge and ordered midpoint extension over the full closure. Bind
-all relative reset tasks to ONE actual full Ramsey provider and compose with
-unchanged unary functions. Discharge concrete same-host tuple EP on that SAME
-normalized age. Finish ANY-genuine-history pairlocal template/provider/core
-assembly and then combine the separate finite branch for the literal countable
-source theorem. Preserve all seven dependency firewalls. A genuinely nonauthor
-full source/provider/consumer review for the exact final public head, exact PR
-CI/audit, sole lock and green actual-main CI are still required before acceptance.
+## Remaining acceptance work
 
-No actual mathematical/source/API exception is identified at this checkpoint;
-remaining source proofs are ordinary open implementation obligations. No sorry,
-admit, new mathematical axiom, extra SAP premise or replacement terminal tower
-is used. This report and native/public source histories permit recovery without
-chat history.
+Compile and review the strict generic synchronized-context anchor; assemble
+the full16D/112C/8results/3equations/14tasks author map and exact final source
+closure. Run the unchanged complete guards/audit. Then submit the complete
+contract, obtain actual nonauthor exact-head review and exact green PR CI,
+take the sole lock, perform the expected-head history-preserving merge and
+verify actual resulting-main CI before ACCEPTED. No conditional helper or
+bounded diagnostic is treated as completion. No known mathematical/source/
+API exception is identified; the generic proof dependency is an ordinary
+implementation correction within the unchanged source contract.

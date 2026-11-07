@@ -58,7 +58,7 @@ theorem actual_owner_template_core (terminal : D.Terminal) :
       (preserve.2 ⟨base,base,a⟩ s t
         ((owner_template_base_atom_iff base one history a s t).mpr pair))
   have oldAuto := owner_terminal_old_atom_core base one history terminal f oldEnd
-  letI := D.source.finiteSort
+  let := D.source.finiteSort
   exact (ownerTemplate history).automorphism_of_injective f preserve oldAuto.1.1
 
 end

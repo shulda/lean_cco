@@ -60,7 +60,7 @@ theorem blockReadout_subsingleton_of_sort_injective
 
 /-- Existence is independent of the uniqueness argument: take any
 finite support order and concatenate its sort blocks. -/
-def blockReadout_unique_of_sort_injective
+@[instance_reducible] def blockReadout_unique_of_sort_injective
     (A : CCO.FiniteInduced (X := X))
     (injective : Function.Injective (D.supportStructure A).sort) :
     Unique (D.BlockReadoutOn priority A) := by

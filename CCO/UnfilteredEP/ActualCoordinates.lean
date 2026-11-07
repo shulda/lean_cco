@@ -54,7 +54,7 @@ theorem actual_no_finite_interval_above
   intro F invariant strict x
   let F' : ColourEq S i := ⟨F,groupInvariant_colourInvariant S H invariant⟩
   have strict' : E < F' := strict
-  letI : Infinite (RelativeClass E.val F'.val x) := terminal i E F' strict' x
+  let : Infinite (RelativeClass E.val F'.val x) := terminal i E F' strict' x
   have zero : Nat.card (RelativeClasses (Setoid.ker tau) F x) = 0 := by
     change Nat.card (RelativeClass E.val F'.val x) = 0
     exact Nat.card_eq_zero_of_infinite
@@ -96,8 +96,8 @@ theorem actual_hidden_carrier_transitive (s : (L).Sorts) :
     ∀ x y : (M).Carrier s, ∃ g : G, g • x = y := by
   rcases s with ⟨i,kind⟩
   cases kind with
-  | inl unit =>
-      cases unit
+  | inl tag =>
+      cases tag
       intro x y
       obtain ⟨a,ha⟩ := original_completed_real_carrier_exists S H sap nr2 x
       obtain ⟨b,hb⟩ := original_completed_real_carrier_exists S H sap nr2 y
