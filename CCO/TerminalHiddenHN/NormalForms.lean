@@ -1,5 +1,6 @@
 import CCO.TerminalHiddenHN.TermNormalizer
 import CCO.TerminalHiddenHN.OrderedCodec
+import CCO.FullCode.EmbeddingBijection
 
 /-! Actual finite term normal forms for both faithful FullCode languages.
 The forms are valid at EVERY hidden input. Adding a global order changes
@@ -36,7 +37,15 @@ theorem binary_actual_term_eval
   have h := freshTermToFull_eval (Lang S H sap hCover) (sig_binary S H sap hCover)
     (Hidden S H sap hCover)
     (fullTermToFresh (Lang S H sap hCover) (sig_binary S H sap hCover) q) x y hx
-  simpa only [freshTermToFull_fullTermToFresh] using h
+  have he := freshTermToFull_fullTermToFresh (Lang S H sap hCover)
+    (sig_binary S H sap hCover) q
+  have hm := Iff.of_eq (congrArg
+    (fun a : CCO.FullCode.Term
+      (binaryLanguage (Sig S H sap hCover) (sig_binary S H sap hCover)) s t =>
+      y ∈ a.eval
+        (binaryStructure (Sig S H sap hCover) (sig_binary S H sap hCover)
+          (Target S H sap hCover)) x) he)
+  exact hm.symm.trans h
 
 theorem binaryNormalForms_valid :
     (binaryNormalForms S H sap hCover).Valid
@@ -90,6 +99,28 @@ theorem orderedNormalForms_valid_of_binary
   rw [orderedTermToBase_eval,baseTermToOrdered_eval]
   exact hC s t
     (orderedTermToBase (Sig S H sap hCover) (sig_binary S H sap hCover) q) x hx
+
+/-- Actual class membership discharges normal-form validity on the
+ENTIRE hidden input carrier, through its full domain-reflecting embedding. -/
+theorem binaryNormalForms_valid_of_actualAge
+    {V : Type z} (C : CCO.UnarySupport.Structure (Sig S H sap hCover) V)
+    (hC : ActualAge S H sap hCover C) :
+    (binaryNormalForms S H sap hCover).Valid
+      (binaryStructure (Sig S H sap hCover) (sig_binary S H sap hCover) C) := by
+  obtain ⟨e⟩ := hC.2
+  exact CCO.FullCode.NormalForms.valid_of_embedding (binaryNormalForms S H sap hCover)
+    (binaryEmbedding (Sig S H sap hCover) (sig_binary S H sap hCover) e)
+    (binaryNormalForms_valid S H sap hCover)
+
+/-- In particular EVERY arbitrary global order on EVERY actual finite
+hidden member has these same finite term forms, including orphan inputs. -/
+theorem orderedNormalForms_valid_of_actualAge
+    {V : Type z} (C : CCO.UnarySupport.Structure (Sig S H sap hCover) V)
+    [LinearOrder V] (hC : ActualAge S H sap hCover C) :
+    (orderedNormalForms S H sap hCover).Valid
+      (orderedStructure (Sig S H sap hCover) (sig_binary S H sap hCover) C) :=
+  orderedNormalForms_valid_of_binary S H sap hCover C
+    (binaryNormalForms_valid_of_actualAge S H sap hCover C hC)
 
 end
 end CCO.TerminalHiddenHN
