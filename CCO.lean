@@ -2392,6 +2392,10 @@ import CCO.GuardedOldSeams.IdempotentLattice
 import CCO.GuardedOldSeams.IdempotentMI
 import CCO.GuardedOldSeams.IdempotentMonolith
 import CCO.GuardedOldSeams.LiftLocal
+import CCO.GuardedOldSeams.LiftMenus
+import CCO.GuardedOldSeams.LiftSplitting
+import CCO.GuardedOldSeams.LiftOrdered
+import CCO.GuardedOldSeams.LiftFinite
 import CCO.GuardedOldSeams.OldSeams
 import CCO.GuardedOldSeams.SeamBoundary
 import CCO.GuardedOldSeams.Simultaneous
@@ -2399,3 +2403,11 @@ import CCO.GuardedOldSeams.Visibility
 import CCO.GuardedOldSeams.WordInsertion
 import CCO.GuardedOldSeams.WordInsertionBoundary
 import CCO.GuardedOldSeams.WordInsertionIdempotent
+import CCO.GuardedOldSeams.BranchEquation
+import CCO.GuardedOldSeams.BranchSource
+import CCO.GuardedOldSeams.LiftGraphVertices
+import CCO.GuardedOldSeams.LiftGraphGluing
+import CCO.GuardedOldSeams.LiftGraphTheta
+import CCO.GuardedOldSeams.LiftGraphSemantics
+import CCO.GuardedOldSeams.LiftSource
+import CCO.GuardedOldSeams.SourceExports
