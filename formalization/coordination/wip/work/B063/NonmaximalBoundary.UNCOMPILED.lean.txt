@@ -1,0 +1,1039 @@
+import CCO.Finite
+import CCO.SIR.Positive.Direct.Homogeneity
+import CCO.StrongExact.AgeAP
+import CCO.APCharacter.Rank.Source
+import Mathlib.Data.Finset.Lattice.Fold
+import Lean.Elab.Tactic.Omega
+import CCO.RealClosure.Bounds.Examples.CycleConsistency
+import Mathlib.Data.Fintype.Prod
+import Mathlib.Data.Fintype.EquivFin
+import Mathlib.Data.Set.Countable
+import Mathlib.Logic.Encodable.Basic
+
+/-! B063 D10/C60: the literal four-atom countably infinite source and its
+actual four-label support table. This module proves the concrete table
+obstruction directly; no automatic-core or maximal-character theorem is
+used to certify a deliberately nonmaximal orientation. -/
+
+universe z
+namespace CCO.AutomaticEPCore.NonmaximalBoundary
+open CCO.RealClosure.Bounds.Examples
+
+abbrev Block := Nat × Bool
+abbrev Atom := Bool × Bool
+abbrev Label := Bool × Bool
+
+structure Point where
+  block : Block
+  bit : Bool
+  clone : Nat
+  deriving DecidableEq
+
+instance : Inhabited Point := ⟨⟨(0,false),false,0⟩⟩
+instance : Countable Point := Function.Injective.countable
+  (f := fun x : Point => (x.block,x.bit,x.clone)) (by
+    intro x y h
+    cases x; cases y
+    simpa only [Prod.mk.injEq,Point.mk.injEq] using h)
+instance : Infinite Point := Infinite.of_injective
+  (fun n : Nat => (⟨(0,false),false,n⟩ : Point)) (by
+    intro m n h
+    exact congrArg Point.clone h)
+
+/-- The atom records same-block incidence and the actual global bit gain.
+`(true,false)` is genuine clone diversity, never logical equality. -/
+def pattern (x y : Point) : Atom := (decide (x.block = y.block),x.bit ^^ y.bit)
+
+def colour (x y : Point) : Option Atom :=
+  if x = y then none else some (pattern x y)
+
+@[simp] theorem colour_none (x y : Point) : colour x y = none ↔ x = y := by
+  simp [colour]
+
+@[simp] theorem colour_some (x y : Point) (a : Atom) :
+    colour x y = some a ↔ x ≠ y ∧ pattern x y = a := by
+  by_cases h : x = y <;> simp [colour,h]
+
+theorem colour_symm (x y : Point) : colour x y = colour y x := by
+  simp only [colour,pattern,eq_comm,Bool.xor_comm]
+
+/-- The actual source has precisely c,b,r,s, with occurring diversity pairs. -/
+def source : AtomicSource Unit (fun _ => Point) where
+  Atom := fun _ _ => Atom
+  finiteSort := inferInstance
+  finiteAtom := fun _ _ => inferInstance
+  nonemptySort := fun _ => inferInstance
+  conv := id
+  conv_invol := fun _ => rfl
+  symmetricLoop := fun _ => rfl
+  colour := colour
+  colour_none_iff := by
+    intro i j x y
+    cases i; cases j
+    simpa using colour_none x y
+  colour_swap := by
+    intro i j x y a
+    exact congrArg (· = some a) (colour_symm x y) |>.to_iff
+  realized := by
+    intro i j a
+    let x : Point := ⟨(0,false),false,0⟩
+    let y : Point := ⟨(if a.1 then 0 else 1,false),a.2,1⟩
+    refine ⟨x,y,(colour_some x y a).mpr ⟨?_,?_⟩⟩
+    · intro h
+      have hh := congrArg Point.clone h
+      change 0 = 1 at hh
+      cases hh
+    · rcases a with ⟨e,d⟩
+      cases e <;> cases d <;> rfl
+
+@[simp] theorem source_colour {i j : Unit} (x y : Point) :
+    source.colour (i := i) (j := j) x y = colour x y := rfl
+
+theorem atom_card : Fintype.card Atom = 4 := by decide
+
+
+abbrev owner (x : Point) : Block × Bool := (x.block,x.bit)
+
+theorem point_eq_iff (x y : Point) :
+    x = y ↔ x.block = y.block ∧ x.bit = y.bit ∧ x.clone = y.clone := by
+  cases x; cases y
+  simp only [Point.mk.injEq]
+
+theorem pattern_of_colour {x y x' y' : Point}
+    (h : colour x y = colour x' y') : pattern x y = pattern x' y' := by
+  cases hc : colour x y with
+  | none =>
+    have he := (colour_none x y).mp hc
+    have he' := (colour_none x' y').mp (h.symm.trans hc)
+    subst y; subst y'
+    simp [pattern]
+  | some a =>
+    exact ((colour_some x y a).mp hc).2.trans
+      ((colour_some x' y' a).mp (h.symm.trans hc)).2.symm
+
+theorem block_bit_of_colour_eq {x y x' y' : Point}
+    (h : colour x y = colour x' y') :
+    (x.block = y.block ↔ x'.block = y'.block) ∧
+      (x.bit ^^ y.bit) = (x'.bit ^^ y'.bit) := by
+  have hp := pattern_of_colour h
+  exact ⟨decide_eq_decide.mp (congrArg Prod.fst hp),congrArg Prod.snd hp⟩
+
+def autGroup : Subgroup (Equiv.Perm Point) where
+  carrier := {g | ∀ x y, colour (g x) (g y) = colour x y}
+  one_mem' := by intro x y; rfl
+  mul_mem' := by intro g h hg hh x y; exact (hg (h x) (h y)).trans (hh x y)
+  inv_mem' := by
+    intro g hg x y
+    have h := hg (g⁻¹ x) (g⁻¹ y)
+    simpa using h.symm
+
+abbrev Aut := autGroup
+
+@[simp] theorem aut_colour (g : Aut) (x y : Point) :
+    colour (g • x) (g • y) = colour x y := g.property x y
+
+/-- Original automorphisms may independently permute clone fibres but use
+ONE common bit flip on the whole original source. -/
+def motionPerm (π : Equiv.Perm Block) (d : Bool)
+    (τ : (Block × Bool) → Equiv.Perm Nat) : Equiv.Perm Point where
+  toFun x := ⟨π x.block,d ^^ x.bit,τ (owner x) x.clone⟩
+  invFun x := ⟨π.symm x.block,d ^^ x.bit,
+    (τ (π.symm x.block,d ^^ x.bit)).symm x.clone⟩
+  left_inv := by
+    rintro ⟨b,p,n⟩
+    cases d <;> cases p <;> simp [owner]
+  right_inv := by
+    rintro ⟨b,p,n⟩
+    cases d <;> cases p <;> simp [owner]
+
+theorem motionPerm_pattern (π : Equiv.Perm Block) (d : Bool)
+    (τ : (Block × Bool) → Equiv.Perm Nat) (x y : Point) :
+    pattern (motionPerm π d τ x) (motionPerm π d τ y) = pattern x y := by
+  simp only [pattern,motionPerm,Equiv.coe_fn_mk,π.injective.eq_iff]
+  cases d <;> cases x.bit <;> cases y.bit <;> rfl
+
+theorem motionPerm_colour (π : Equiv.Perm Block) (d : Bool)
+    (τ : (Block × Bool) → Equiv.Perm Nat) (x y : Point) :
+    colour (motionPerm π d τ x) (motionPerm π d τ y) = colour x y := by
+  simp only [colour,(motionPerm π d τ).injective.eq_iff,motionPerm_pattern]
+
+def motion (π : Equiv.Perm Block) (d : Bool)
+    (τ : (Block × Bool) → Equiv.Perm Nat) : Aut :=
+  ⟨motionPerm π d τ,motionPerm_colour π d τ⟩
+
+/-- Every actual complete finite original partial isomorphism extends in
+this infinite four-atom model, including tuples with repeated points. -/
+theorem finite_extension {V : Type*} [Finite V] (f h : V → Point)
+    (hc : ∀ v w, colour (f v) (f w) = colour (h v) (h w)) :
+    ∃ g : Aut, ∀ v, g • f v = h v := by
+  classical
+  have coords := fun v w => block_bit_of_colour_eq (hc v w)
+  obtain ⟨π,hπ⟩ := SIR.Positive.Direct.exists_perm_of_kernel
+    (fun v => (f v).block) (fun v => (h v).block) (fun v w => (coords v w).1)
+  by_cases hv : Nonempty V
+  · let v₀ := Classical.choice hv
+    let d := (h v₀).bit ^^ (f v₀).bit
+    have hd (v : V) : (d ^^ (f v).bit) = (h v).bit := by
+      have hh := (coords v v₀).2
+      dsimp only [d]
+      cases hfv : (f v).bit <;> cases hhv : (h v).bit <;>
+        cases hf₀ : (f v₀).bit <;> cases hh₀ : (h v₀).bit <;> simp_all
+    have hτ : ∀ a : Block × Bool, ∃ τ : Equiv.Perm Nat,
+        ∀ v : {v // owner (f v) = a}, τ (f v).clone = (h v).clone := by
+      intro a
+      apply SIR.Positive.Direct.exists_perm_of_kernel
+      intro v w
+      have ho : owner (f v) = owner (f w) := v.property.trans w.property.symm
+      have hb : (f v).block = (f w).block := congrArg Prod.fst ho
+      have hp : (f v).bit = (f w).bit := congrArg Prod.snd ho
+      have hb' : (h v).block = (h w).block := (coords v w).1.mp hb
+      have hp' : (h v).bit = (h w).bit := by rw [← hd v,← hd w,hp]
+      have hi : f v = f w ↔ h v = h w := by
+        have he := congrArg (· = none) (hc v w) |>.to_iff
+        simpa only [colour_none] using he
+      constructor
+      · intro hn
+        exact congrArg Point.clone (hi.mp ((point_eq_iff _ _).mpr ⟨hb,hp,hn⟩))
+      · intro hn
+        exact congrArg Point.clone (hi.mpr ((point_eq_iff _ _).mpr ⟨hb',hp',hn⟩))
+    choose τ ht using hτ
+    refine ⟨motion π d τ,fun v => ?_⟩
+    apply (point_eq_iff _ _).mpr
+    exact ⟨hπ v,hd v,ht (owner (f v)) ⟨v,rfl⟩⟩
+  · exact ⟨1,fun v => False.elim (hv ⟨v⟩)⟩
+
+theorem homogeneous : HomogeneousSource source Aut where
+  preserves_sort := by intro g p; rcases p with ⟨i,x⟩; cases i; rfl
+  preserves_colours := by
+    intro g p q
+    rcases p with ⟨i,x⟩; rcases q with ⟨j,y⟩
+    cases i; cases j
+    simp only [taggedColour,Sigma.smul_mk,source_colour,aut_colour]
+  extends_finite_diagram := by
+    intro V _ f h hc
+    have hh : ∀ v w, colour (f v).2 (f w).2 = colour (h v).2 (h w).2 := by
+      intro v w
+      exact congrArg (fun z : Σ _ : Unit, Σ _ : Unit, Option Atom => z.2.2) (hc v w)
+    obtain ⟨g,hg⟩ := finite_extension (fun v => (f v).2) (fun v => (h v).2) hh
+    exact ⟨g,fun v => Sigma.ext (Subsingleton.elim _ _) (heq_of_eq (hg v))⟩
+
+theorem ageAP : AgeAP source := source.ageAP_of_homogeneous homogeneous
+
+def pointEquiv : Point ≃ (Block × Bool) × Nat where
+  toFun x := (owner x,x.clone)
+  invFun x := ⟨x.1.1,x.1.2,x.2⟩
+  left_inv := by intro x; rfl
+  right_inv := by intro x; rfl
+
+abbrev TaggedPoint := Sigma (fun _ : Unit => Point)
+def tag (x : Point) : TaggedPoint := ⟨(),x⟩
+@[simp] theorem tag_val (p : TaggedPoint) : tag p.2 = p := by
+  rcases p with ⟨i,p⟩; cases i; rfl
+
+@[simp] theorem tagged_colour_eq (p q r s : TaggedPoint) :
+    taggedColour source p q = taggedColour source r s ↔ colour p.2 q.2 = colour r.2 s.2 := by
+  rcases p with ⟨i,p⟩; rcases q with ⟨j,q⟩
+  rcases r with ⟨k,r⟩; rcases s with ⟨l,s⟩
+  cases i; cases j; cases k; cases l
+  simp only [taggedColour, source_colour, Sigma.mk.injEq, heq_eq_eq, true_and]
+  constructor
+  · exact fun h => congrArg (fun z : Σ _ : Unit, Option Atom => z.2) h
+  · exact fun h => congrArg (fun c : Option Atom => (⟨(),c⟩ : Σ _ : Unit, Option Atom)) h
+
+noncomputable def points (A : FiniteInduced (X := fun _ : Unit => Point)) : Finset Point :=
+  A.finite_vertices.toFinset.image Sigma.snd
+
+@[simp] theorem mem_points (A : FiniteInduced (X := fun _ : Unit => Point)) (x : Point) :
+    x ∈ points A ↔ tag x ∈ A.vertices := by
+  classical
+  simp only [points, Finset.mem_image, Set.Finite.mem_toFinset]
+  constructor
+  · rintro ⟨p,hp,rfl⟩; simpa only [tag_val] using hp
+  · intro h; exact ⟨tag x,h,rfl⟩
+
+noncomputable def indexBound (B C : Finset Point) : ℕ := (B ∪ C).sup Point.clone + 1
+
+theorem index_lt_bound {B C : Finset Point} {x : Point} (hx : x ∈ B ∪ C) :
+    x.clone < indexBound B C := Nat.lt_succ_of_le (Finset.le_sup hx)
+
+noncomputable def freshen (B C : Finset Point) (x : Point) : Point := by
+  classical
+  exact if x ∈ C then x else { x with clone := indexBound B C + x.clone }
+
+@[simp] theorem freshen_fixed {B C : Finset Point} {x : Point} (hx : x ∈ C) :
+    freshen B C x = x := by
+  classical
+  simp [freshen,hx]
+@[simp] theorem freshen_owner (B C : Finset Point) (x : Point) :
+    owner (freshen B C x) = owner x := by
+  classical
+  unfold freshen
+  split_ifs <;> rfl
+theorem freshen_clone {B C : Finset Point} {x : Point} (hx : x ∉ C) :
+    (freshen B C x).clone = indexBound B C + x.clone := by
+  classical
+  simp [freshen,hx]
+
+theorem freshen_injective (B C : Finset Point) : Function.Injective (freshen B C) := by
+  classical
+  intro x y h
+  by_cases hx : x ∈ C <;> by_cases hy : y ∈ C
+  · simpa only [freshen_fixed hx, freshen_fixed hy] using h
+  · have hi := congrArg Point.clone h
+    rw [freshen_fixed hx, freshen_clone hy] at hi
+    have hl := index_lt_bound (B := B) (C := C) (Finset.mem_union_right B hx)
+    omega
+  · have hi := congrArg Point.clone h
+    rw [freshen_clone hx, freshen_fixed hy] at hi
+    have hl := index_lt_bound (B := B) (C := C) (Finset.mem_union_right B hy)
+    omega
+  · apply pointEquiv.injective
+    have ho := congrArg owner h
+    simp only [freshen_owner] at ho
+    have hn := congrArg Point.clone h
+    rw [freshen_clone hx, freshen_clone hy] at hn
+    exact Prod.ext ho (Nat.add_left_cancel hn)
+
+theorem pattern_of_owner {x y x' y' : Point} (hx : owner x = owner x')
+    (hy : owner y = owner y') : pattern x y = pattern x' y' := by
+  have hb := congrArg Prod.fst hx
+  have hp := congrArg Prod.snd hx
+  have hb' := congrArg Prod.fst hy
+  have hp' := congrArg Prod.snd hy
+  dsimp only [owner] at hb hp hb' hp'
+  simp only [pattern,hb,hp,hb',hp']
+
+theorem freshen_colour (B C : Finset Point) (x y : Point) :
+    colour (freshen B C x) (freshen B C y) = colour x y := by
+  unfold colour
+  simp only [(freshen_injective B C).eq_iff,
+    pattern_of_owner (freshen_owner B C x) (freshen_owner B C y)]
+
+theorem freshen_mem_right {B C : Finset Point} {x : Point}
+    (h : freshen B C x ∈ B) : x ∈ C := by
+  classical
+  by_contra hx
+  have hl := index_lt_bound (B := B) (C := C) (Finset.mem_union_left C h)
+  rw [freshen_clone hx] at hl
+  omega
+
+/-- Strong amalgamation in the actual infinite source, using ordinary
+homogeneous alignment followed by fresh original clone indices. -/
+theorem strongAmalgamation : AgeSAP source where
+  strong_amalgamate := by
+    classical
+    intro C A B eCA eCB
+    letI : Finite ↥C.vertices := C.finite_vertices.to_subtype
+    letI : Finite ↥A.vertices := A.finite_vertices.to_subtype
+    letI : Fintype ↥C.vertices := Fintype.ofFinite _
+    have hc : ∀ c d : ↥C.vertices,
+        colour (eCA.toEmbedding c).val.2 (eCA.toEmbedding d).val.2 =
+          colour (eCB.toEmbedding c).val.2 (eCB.toEmbedding d).val.2 := by
+      intro c d
+      exact (tagged_colour_eq _ _ _ _).mp
+        ((eCA.preserves_colours c d).symm.trans (eCB.preserves_colours c d))
+    obtain ⟨g,hg⟩ := finite_extension
+      (fun c : ↥C.vertices => (eCA.toEmbedding c).val.2)
+      (fun c => (eCB.toEmbedding c).val.2) hc
+    let base : Finset Point := Finset.univ.image (fun c : ↥C.vertices => (eCB.toEmbedding c).val.2)
+    let move (x : Point) := freshen (points B) base (g • x)
+    have hmove : Function.Injective move := (freshen_injective _ _).comp (MulAction.injective g)
+    have hbase (c : ↥C.vertices) : move (eCA.toEmbedding c).val.2 =
+        (eCB.toEmbedding c).val.2 := by
+      dsimp only [move]
+      rw [hg c, freshen_fixed (Finset.mem_image.mpr ⟨c,Finset.mem_univ c,rfl⟩)]
+    let fa : ↥A.vertices → TaggedPoint := fun a => tag (move a.val.2)
+    let D : FiniteInduced (X := fun _ : Unit => Point) :=
+      ⟨Set.range fa ∪ B.vertices, (Set.finite_range fa).union B.finite_vertices⟩
+    let eAD : InducedEmbedding source A D := {
+      toEmbedding := {
+        toFun := fun a => ⟨fa a,Or.inl ⟨a,rfl⟩⟩
+        inj' := by
+          intro a b h
+          have hv := congrArg (fun p : ↥D.vertices => p.val.2) h
+          apply Subtype.ext
+          exact (tag_val a.val).symm.trans ((congrArg tag (hmove hv)).trans (tag_val b.val)) }
+      preserves_sort := by intro a; exact Subsingleton.elim _ _
+      preserves_colours := by
+        intro a b
+        apply (tagged_colour_eq _ _ _ _).mpr
+        exact ((freshen_colour _ _ _ _).trans (aut_colour g a.val.2 b.val.2)).symm }
+    let eBD : InducedEmbedding source B D := {
+      toEmbedding := {
+        toFun := fun b => ⟨b.val,Or.inr b.2⟩
+        inj' := by
+          intro a b h
+          apply Subtype.ext
+          exact congrArg (fun p : ↥D.vertices => p.val) h }
+      preserves_sort := by intro b; rfl
+      preserves_colours := by intro a b; rfl }
+    refine ⟨D,eAD,eBD,?_,?_⟩
+    · intro c
+      apply Subtype.ext
+      exact (congrArg tag (hbase c)).trans (tag_val _)
+    · intro a b hab
+      have he : move a.val.2 = b.val.2 := congrArg (fun p : ↥D.vertices => p.val.2) hab
+      have hb : move a.val.2 ∈ points B := by
+        rw [he]
+        exact (mem_points B _).mpr (by simpa only [tag_val] using b.2)
+      have hc' : g • a.val.2 ∈ base := freshen_mem_right hb
+      rcases Finset.mem_image.mp hc' with ⟨c,_,hc'⟩
+      have hm : move a.val.2 = g • a.val.2 := freshen_fixed (Finset.mem_image.mpr ⟨c,Finset.mem_univ c,hc'⟩)
+      refine ⟨c,?_,?_⟩
+      · apply Subtype.ext
+        have hh : g • (eCA.toEmbedding c).val.2 = g • a.val.2 := (hg c).trans hc'
+        exact (tag_val _).symm.trans ((congrArg tag (MulAction.injective g hh)).trans (tag_val _))
+      · apply Subtype.ext
+        exact (tag_val _).symm.trans ((congrArg tag (hc'.trans (hm.symm.trans he))).trans (tag_val _))
+
+
+/-- Direct actual HOM-CCO construction. Finite equality components receive
+fresh block numbers; global bit gains are integrated from the specified
+cycle witnesses; distinct clone indices separate every formal vertex. -/
+theorem semanticCCO_injective (V : Type z) (D : PartialDiagram source V)
+    (hcycles : ∀ C : SimpleCycle D, CycleHom C) :
+    ∃ f : DiagramHom D, f.IsInjective := by
+  classical
+  have hReadBlock {i j : Unit} (x y : Point) (a : source.Atom i j)
+      (ha : source.colour x y = some a) :
+      (Encodable.encode x.block = Encodable.encode y.block ↔ a.1 = true) := by
+    have hp := congrArg Prod.fst ((colour_some x y a).mp ha).2
+    change decide (x.block = y.block) = a.1 at hp
+    rw [← hp]
+    simp only [decide_eq_true_eq]
+    exact Encodable.encode_injective.eq_iff
+  have hReadBit {i j : Unit} (x y : Point) (a : source.Atom i j)
+      (ha : source.colour x y = some a) : (x.bit ^^ y.bit) = a.2 :=
+    congrArg Prod.snd ((colour_some x y a).mp ha).2
+  obtain ⟨blocks,hblocks⟩ := CycleConsistency.coordinate_labels source D
+    (fun a => a.1) (fun _ => rfl) (fun _ x => Encodable.encode x.block)
+    (fun x y a ha => hReadBlock x y a ha) hcycles
+  obtain ⟨bits,hbits⟩ := CycleConsistency.phase_labels source D
+    (fun a => a.2) (fun _ => rfl) (fun _ x => x.bit)
+    (fun x y a ha => hReadBit x y a ha) hcycles
+  letI : Finite V := D.finite_type
+  letI : Fintype V := Fintype.ofFinite _
+  let code : V → Nat := fun x => (Fintype.equivFin V x).val
+  have hCode : Function.Injective code :=
+    Fin.val_injective.comp (Fintype.equivFin V).injective
+  let f : DiagramHom D := {
+    point := fun x => ⟨(blocks x,false),bits x,code x⟩
+    preserves_edge := by
+      intro x y h a ha
+      apply (colour_some _ _ a).mpr
+      refine ⟨?_,Prod.ext ?_ (hbits x y h a ha)⟩
+      · intro he
+        exact h (hCode (congrArg Point.clone he))
+      · change decide ((blocks x,false) = (blocks y,false)) = a.1
+        have hh := hblocks x y h a ha
+        cases hab : a.1 <;> simp_all
+  }
+  refine ⟨f,?_⟩
+  intro x y he
+  exact hCode (congrArg (fun p : Sigma (fun _ : Unit => Point) => p.2.clone) he)
+
+theorem semanticCCO : SemanticCCO.{0,0,z,0} source := by
+  intro V D hcycles
+  exact ⟨(semanticCCO_injective V D hcycles).choose⟩
+
+/-- The first deliberately nonmaximal marking and the next sheet marking. -/
+def label (x : Point) : Label := (x.bit ^^ x.block.2,x.bit)
+
+
+/-- A block motion with exactly the seed flip required by a global old bit
+flip. Each of the two infinite seed classes is permuted independently. -/
+def seededBlockPerm (κ : Bool → Equiv.Perm Nat) (d : Bool) : Equiv.Perm Block where
+  toFun x := (κ x.2 x.1,d ^^ x.2)
+  invFun x := ((κ (d ^^ x.2)).symm x.1,d ^^ x.2)
+  left_inv := by rintro ⟨n,b⟩; cases d <;> cases b <;> simp
+  right_inv := by rintro ⟨n,b⟩; cases d <;> cases b <;> simp
+
+private theorem extend_coordinates {V : Type*} [Finite V] (f h : V → Point)
+    (hc : ∀ v w, colour (f v) (f w) = colour (h v) (h w))
+    (π : Equiv.Perm Block) (d : Bool)
+    (hπ : ∀ v, π (f v).block = (h v).block)
+    (hd : ∀ v, (d ^^ (f v).bit) = (h v).bit) :
+    ∃ τ : (Block × Bool) → Equiv.Perm Nat, ∀ v, motion π d τ • f v = h v := by
+  classical
+  have coords := fun v w => block_bit_of_colour_eq (hc v w)
+  have hτ : ∀ a : Block × Bool, ∃ τ : Equiv.Perm Nat,
+      ∀ v : {v // owner (f v) = a}, τ (f v).clone = (h v).clone := by
+    intro a
+    apply SIR.Positive.Direct.exists_perm_of_kernel
+    intro v w
+    have ho : owner (f v) = owner (f w) := v.property.trans w.property.symm
+    have hb : (f v).block = (f w).block := congrArg Prod.fst ho
+    have hp : (f v).bit = (f w).bit := congrArg Prod.snd ho
+    have hb' : (h v).block = (h w).block := (coords v w).1.mp hb
+    have hp' : (h v).bit = (h w).bit := by rw [← hd v,← hd w,hp]
+    have hi : f v = f w ↔ h v = h w := by
+      have he := congrArg (· = none) (hc v w) |>.to_iff
+      simpa only [colour_none] using he
+    constructor
+    · intro hn
+      exact congrArg Point.clone (hi.mp ((point_eq_iff _ _).mpr ⟨hb,hp,hn⟩))
+    · intro hn
+      exact congrArg Point.clone (hi.mpr ((point_eq_iff _ _).mpr ⟨hb',hp',hn⟩))
+  choose τ ht using hτ
+  refine ⟨τ,fun v => (point_eq_iff _ _).mpr ?_⟩
+  exact ⟨hπ v,hd v,ht (owner (f v)) ⟨v,rfl⟩⟩
+
+/-- Actual original automorphisms extending every finite isomorphism that
+preserves lambda, and additionally mu when requested. The chosen old block
+motion has the SAME global flip as the old bit; it preserves lambda on all
+points, rather than only on the finite tuple. -/
+theorem finite_extension_marked {V : Type*} [Finite V] (f h : V → Point)
+    (hc : ∀ v w, colour (f v) (f w) = colour (h v) (h w))
+    (hLambda : ∀ v, (label (f v)).1 = (label (h v)).1)
+    (keepMu : Bool) (hMu : keepMu = true → ∀ v, (f v).bit = (h v).bit) :
+    ∃ g : Aut, (∀ v, g • f v = h v) ∧
+      (∀ x : Point, (label (g • x)).1 = (label x).1) ∧
+      (keepMu = true → ∀ x : Point, (g • x).bit = x.bit) := by
+  classical
+  by_cases hv : Nonempty V
+  · let v₀ := Classical.choice hv
+    let d := (h v₀).bit ^^ (f v₀).bit
+    have coords := fun v w => block_bit_of_colour_eq (hc v w)
+    have hd (v : V) : (d ^^ (f v).bit) = (h v).bit := by
+      have hh := (coords v v₀).2
+      dsimp only [d]
+      cases hfv : (f v).bit <;> cases hhv : (h v).bit <;>
+        cases hf₀ : (f v₀).bit <;> cases hh₀ : (h v₀).bit <;> simp_all
+    have hSeed (v : V) : (h v).block.2 = (d ^^ (f v).block.2) := by
+      have shift : ∀ (d p q s t : Bool), (p ^^ s) = (q ^^ t) →
+          (d ^^ p) = q → t = (d ^^ s) := by decide
+      exact shift d (f v).bit (h v).bit (f v).block.2 (h v).block.2 (hLambda v) (hd v)
+    have hκ : ∀ b : Bool, ∃ κ : Equiv.Perm Nat,
+        ∀ v : {v // (f v).block.2 = b}, κ (f v).block.1 = (h v).block.1 := by
+      intro b
+      apply SIR.Positive.Direct.exists_perm_of_kernel
+      intro v w
+      have hs : (f v).block.2 = (f w).block.2 := v.property.trans w.property.symm
+      have ht : (h v).block.2 = (h w).block.2 := by rw [hSeed v,hSeed w,hs]
+      constructor
+      · intro hh
+        exact congrArg Prod.fst ((coords v w).1.mp (Prod.ext hh hs))
+      · intro hh
+        exact congrArg Prod.fst ((coords v w).1.mpr (Prod.ext hh ht))
+    choose κ hκ using hκ
+    let π := seededBlockPerm κ d
+    have hπ (v : V) : π (f v).block = (h v).block :=
+      Prod.ext (hκ (f v).block.2 ⟨v,rfl⟩) (hSeed v).symm
+    obtain ⟨τ,hτ⟩ := extend_coordinates f h hc π d hπ hd
+    refine ⟨motion π d τ,hτ,?_,?_⟩
+    · intro x
+      change ((d ^^ x.bit) ^^ (d ^^ x.block.2)) = (x.bit ^^ x.block.2)
+      cases d <;> cases x.bit <;> cases x.block.2 <;> rfl
+    · intro hk x
+      have hh : d = false := by
+        dsimp only [d]
+        rw [hMu hk v₀,Bool.xor_self]
+      change (d ^^ x.bit) = x.bit
+      rw [hh]
+      exact Bool.false_xor x.bit
+  · exact ⟨1,fun v => False.elim (hv ⟨v⟩),fun _ => rfl,fun _ _ => rfl⟩
+
+/-- The literal old-atom support formula, with no singleton label names. -/
+def table (a : Atom) (p q : Label) : Prop :=
+  (if a.1 then (p.1 ^^ q.1) = a.2 else True) ∧ (p.2 ^^ q.2) = a.2
+
+private def leftWitness (p : Label) : Point :=
+  ⟨(0,p.1 ^^ p.2),p.2,0⟩
+
+private def rightWitness (a : Atom) (q : Label) : Point :=
+  ⟨(if a.1 then 0 else 1,q.1 ^^ q.2),q.2,1⟩
+
+private theorem label_left (p : Label) : label (leftWitness p) = p := by
+  rcases p with ⟨l,m⟩
+  cases l <;> cases m <;> rfl
+
+private theorem label_right (a : Atom) (q : Label) : label (rightWitness a q) = q := by
+  rcases q with ⟨l,m⟩
+  cases l <;> cases m <;> rfl
+
+private theorem witness_colour (a : Atom) (p q : Label) (h : table a p q) :
+    colour (leftWitness p) (rightWitness a q) = some a := by
+  rcases a with ⟨e,d⟩
+  rcases p with ⟨l,m⟩
+  rcases q with ⟨l',m'⟩
+  cases e <;> cases d <;> cases l <;> cases m <;> cases l' <;> cases m' <;>
+    simp_all [table,colour,pattern,leftWitness,rightWitness]
+
+private theorem table_of_colour (x y : Point) (a : Atom)
+    (h : colour x y = some a) : table a (label x) (label y) := by
+  obtain ⟨_,rfl⟩ := (colour_some x y a).mp h
+  by_cases hb : x.block = y.block
+  · have hs : x.block.2 = y.block.2 := congrArg Prod.snd hb
+    simp only [table,pattern,label,hb,decide_true,ite_true]
+    cases x.bit <;> cases y.bit <;> cases y.block.2 <;> decide
+  · simp [table,pattern,hb,label]
+
+/-- Actual realizations, not a finite model approximation: all four labels
+occur and these are exactly their old-atom support relations. -/
+theorem table_iff_actual (a : Atom) (p q : Label) :
+    table a p q ↔ ∃ x y : Point, label x = p ∧ label y = q ∧ colour x y = some a := by
+  constructor
+  · intro h
+    exact ⟨leftWitness p,rightWitness a q,label_left p,label_right a q,
+      witness_colour a p q h⟩
+  · rintro ⟨x,y,rfl,rfl,h⟩
+    exact table_of_colour x y a h
+
+theorem all_four_labels_realized : Function.Surjective label := by
+  intro p
+  exact ⟨leftWitness p,label_left p⟩
+
+/-- The source's proper old-atom-table retraction. -/
+def retract (p : Label) : Label := (p.2,p.2)
+
+theorem retract_preserves (a : Atom) (p q : Label) (h : table a p q) :
+    table a (retract p) (retract q) := by
+  rcases a with ⟨e,d⟩
+  cases e <;> simpa [table,retract] using h.2
+
+theorem retract_idempotent (p : Label) : retract (retract p) = retract p := rfl
+
+theorem retract_not_injective : ¬ Function.Injective retract := by
+  intro h
+  have hh := h (show retract (false,false) = retract (true,false) from rfl)
+  have hb : false = true := congrArg Prod.fst hh
+  cases hb
+
+/-- The actual first-maximal support table has only the old global bit. -/
+def maximalTable (a : Atom) (p q : Bool) : Prop := (p ^^ q) = a.2
+
+theorem maximal_endomorphism_injective (f : Bool → Bool)
+    (hf : ∀ a p q, maximalTable a p q → maximalTable a (f p) (f q)) :
+    Function.Injective f := by
+  intro p q hpq
+  by_contra hne
+  have hEdge : maximalTable (true,true) p q := by
+    cases p <;> cases q <;> simp_all [maximalTable]
+  have hImage := hf (true,true) p q hEdge
+  simp only [maximalTable,hpq,Bool.xor_self] at hImage
+  cases hImage
+
+
+/-- Direct unbounded realization with a prescribed lambda on all vertices
+and, optionally, prescribed mu. Only actual specified atom compatibility
+and the literal old cycle homomorphisms are used. -/
+theorem realize_prescribed (V : Type z) (D : PartialDiagram source V)
+    (hcycles : ∀ C : SimpleCycle D, CycleHom C)
+    (P : V → Bool) (Q : Option (V → Bool))
+    (hP : ∀ x y (h : x ≠ y) (a : source.Atom (D.vertexSort x) (D.vertexSort y)),
+      D.edge x y h = some a → a.1 = true → (P x ^^ P y) = a.2)
+    (hQ : ∀ q, Q = some q → ∀ x y (h : x ≠ y)
+      (a : source.Atom (D.vertexSort x) (D.vertexSort y)),
+      D.edge x y h = some a → (q x ^^ q y) = a.2) :
+    ∃ f : DiagramHom D, f.IsInjective ∧
+      (∀ x, (label (f.point x)).1 = P x) ∧
+      (∀ q, Q = some q → ∀ x, (f.point x).bit = q x) := by
+  classical
+  have hReadBlock {i j : Unit} (x y : Point) (a : source.Atom i j)
+      (ha : source.colour x y = some a) :
+      (Encodable.encode x.block = Encodable.encode y.block ↔ a.1 = true) := by
+    have hp := congrArg Prod.fst ((colour_some x y a).mp ha).2
+    change decide (x.block = y.block) = a.1 at hp
+    rw [← hp]
+    simp only [decide_eq_true_eq]
+    exact Encodable.encode_injective.eq_iff
+  have hReadBit {i j : Unit} (x y : Point) (a : source.Atom i j)
+      (ha : source.colour x y = some a) : (x.bit ^^ y.bit) = a.2 :=
+    congrArg Prod.snd ((colour_some x y a).mp ha).2
+  obtain ⟨blocks,hblocks⟩ := CycleConsistency.coordinate_labels source D
+    (fun a => a.1) (fun _ => rfl) (fun _ x => Encodable.encode x.block)
+    (fun x y a ha => hReadBlock x y a ha) hcycles
+  obtain ⟨bits,hbits,hfixed⟩ : ∃ bits : V → Bool,
+      (∀ x y (h : x ≠ y) (a : source.Atom (D.vertexSort x) (D.vertexSort y)),
+        D.edge x y h = some a → (bits x ^^ bits y) = a.2) ∧
+      (∀ q, Q = some q → bits = q) := by
+    cases hQval : Q with
+    | none =>
+      obtain ⟨bits,hbits⟩ := CycleConsistency.phase_labels source D
+        (fun a => a.2) (fun _ => rfl) (fun _ x => x.bit)
+        (fun x y a ha => hReadBit x y a ha) hcycles
+      refine ⟨bits,hbits,?_⟩
+      intro q hq
+      cases hq
+    | some fixed =>
+      refine ⟨fixed,hQ fixed hQval,?_⟩
+      intro q hq
+      exact Option.some.inj hq
+  letI : Finite V := D.finite_type
+  letI : Fintype V := Fintype.ofFinite _
+  let code : V → Nat := fun x => (Fintype.equivFin V x).val
+  have hCode : Function.Injective code :=
+    Fin.val_injective.comp (Fintype.equivFin V).injective
+  let f : DiagramHom D := {
+    point := fun x => ⟨(blocks x,P x ^^ bits x),bits x,code x⟩
+    preserves_edge := by
+      intro x y h a ha
+      apply (colour_some _ _ a).mpr
+      refine ⟨?_,Prod.ext ?_ (hbits x y h a ha)⟩
+      · intro he
+        exact h (hCode (congrArg Point.clone he))
+      · change decide ((blocks x,P x ^^ bits x) = (blocks y,P y ^^ bits y)) = a.1
+        have hh := hblocks x y h a ha
+        cases hab : a.1 with
+        | false =>
+          have hn : blocks x ≠ blocks y := by simpa only [hab,Bool.false_eq_true,iff_false] using hh
+          simp [hn]
+        | true =>
+          have hb : blocks x = blocks y := hh.mpr hab
+          have hs : (P x ^^ bits x) = (P y ^^ bits y) := by
+            have exchange : ∀ p q b c : Bool, (p ^^ q) = (b ^^ c) →
+                (p ^^ b) = (q ^^ c) := by decide
+            exact exchange _ _ _ _ ((hP x y h a ha hab).trans (hbits x y h a ha).symm)
+          exact decide_eq_true (Prod.ext hb hs)
+  }
+  refine ⟨f,?_,?_,?_⟩
+  · intro x y he
+    exact hCode (congrArg (fun p : Sigma (fun _ : Unit => Point) => p.2.clone) he)
+  · intro x
+    change (bits x ^^ (P x ^^ bits x)) = P x
+    cases P x <;> cases bits x <;> rfl
+  · intro q hq x
+    exact congrFun (hfixed q hq) x
+
+
+namespace Prefix
+
+inductive Stage | first | both
+  deriving DecidableEq
+
+def Label : Stage → Type
+  | .first => Bool
+  | .both => NonmaximalBoundary.Label
+instance (k : Stage) : Fintype (Label k) := by cases k <;> dsimp [Label] <;> infer_instance
+instance (k : Stage) : DecidableEq (Label k) := by cases k <;> dsimp [Label] <;> infer_instance
+
+def mark : (k : Stage) → Point → Label k
+  | .first, x => (label x).1
+  | .both, x => label x
+
+abbrev β (k : Stage) (_ : Unit) := Label k
+abbrev child (k : Stage) := APCharacter.Rank.Child (β k)
+abbrev carrier (k : Stage) := APCharacter.Rank.Point (β k) (fun _ => mark k)
+
+theorem inhabited (k : Stage) (c : child k) : Nonempty (carrier k c) := by
+  rcases c with ⟨i,b⟩
+  cases i
+  cases k with
+  | first => exact ⟨⟨⟨(0,b),false,0⟩,by cases b <;> rfl⟩⟩
+  | both => exact ⟨⟨leftWitness b,label_left b⟩⟩
+
+noncomputable def source (k : Stage) : AtomicSource (child k) (carrier k) :=
+  APCharacter.Rank.source NonmaximalBoundary.source (β k) (fun _ => mark k) (inhabited k)
+
+def erase (k : Stage) (x : Sigma (carrier k)) : Point := x.2.val
+
+theorem erase_injective (k : Stage) : Function.Injective (erase k) := by
+  intro x y h
+  apply APCharacter.Rank.forget_injective (β k) (fun _ => mark k)
+  exact Sigma.ext (Subsingleton.elim _ _) (heq_of_eq h)
+
+def oldEquiv (k : Stage) : Sigma (carrier k) ≃ Point where
+  toFun := erase k
+  invFun x := ⟨⟨(),mark k x⟩,⟨x,rfl⟩⟩
+  left_inv := by intro x; apply erase_injective k; rfl
+  right_inv := by intro x; rfl
+
+theorem colour_map (k : Stage) {c d : child k} (x : carrier k c) (y : carrier k d) :
+    ((source k).colour x y).map Subtype.val = colour x.val y.val :=
+  APCharacter.Rank.colour_map NonmaximalBoundary.source (β k) (fun _ => mark k) x y
+
+theorem colour_some (k : Stage) {c d : child k} (x : carrier k c) (y : carrier k d)
+    (a : (source k).Atom c d) :
+    (source k).colour x y = some a ↔ colour x.val y.val = some a.val :=
+  APCharacter.Rank.colour_some_iff NonmaximalBoundary.source (β k) (fun _ => mark k) x y a
+
+theorem finite_extension (k : Stage) {V : Type*} [Finite V] (f h : V → Point)
+    (hc : ∀ v w, colour (f v) (f w) = colour (h v) (h w))
+    (hm : ∀ v, mark k (f v) = mark k (h v)) :
+    ∃ g : Aut, (∀ v, g • f v = h v) ∧ ∀ x, mark k (g • x) = mark k x := by
+  cases k with
+  | first =>
+    obtain ⟨g,hg,hl,_⟩ := finite_extension_marked f h hc hm false
+      (fun h => Bool.noConfusion h)
+    exact ⟨g,hg,hl⟩
+  | both =>
+    obtain ⟨g,hg,hl,hp⟩ := finite_extension_marked f h hc
+      (fun v => congrArg Prod.fst (hm v)) true
+      (fun _ v => congrArg Prod.snd (hm v))
+    exact ⟨g,hg,fun x => Prod.ext (hl x) (hp rfl x)⟩
+
+def autGroup (k : Stage) : Subgroup Aut where
+  carrier := {g | ∀ x, mark k (g • x) = mark k x}
+  one_mem' := by intro x; rfl
+  mul_mem' := by intro g h hg hh x; exact (hg (h • x)).trans (hh x)
+  inv_mem' := by
+    intro g hg x
+    have hh := hg (g⁻¹ • x)
+    simpa using hh.symm
+abbrev FullGroup (k : Stage) := autGroup k
+
+instance (k : Stage) (c : child k) : MulAction (FullGroup k) (carrier k c) where
+  smul g x := ⟨g.val • x.val, (g.property x.val).trans x.property⟩
+  one_smul x := by apply Subtype.ext; exact one_smul Aut x.val
+  mul_smul g h x := by apply Subtype.ext; exact mul_smul g.val h.val x.val
+
+theorem action_colours (k : Stage) (g : FullGroup k) (p q : Sigma (carrier k)) :
+    taggedColour (source k) (g • p) (g • q) = taggedColour (source k) p q := by
+  rcases p with ⟨c,x⟩
+  rcases q with ⟨d,y⟩
+  change (⟨c,d,(source k).colour (g • x) (g • y)⟩ : Σ c, Σ d, Option ((source k).Atom c d)) =
+    ⟨c,d,(source k).colour x y⟩
+  apply congrArg (fun a => (⟨c,d,a⟩ : Σ c, Σ d, Option ((source k).Atom c d)))
+  apply Option.map_injective Subtype.val_injective
+  rw [colour_map,colour_map]
+  exact aut_colour g.val x.val y.val
+
+theorem homogeneous (k : Stage) : HomogeneousSource (source k) (FullGroup k) where
+  preserves_sort := by intro g p; cases p; rfl
+  preserves_colours := action_colours k
+  extends_finite_diagram := by
+    intro V _ f h hc
+    have hs (v : V) : (f v).1 = (h v).1 :=
+      congrArg (fun a : Σ c, Σ d, Option ((source k).Atom c d) => a.1) (hc v v)
+    have hm (v : V) : mark k (erase k (f v)) = mark k (erase k (h v)) :=
+      (f v).2.property.trans ((congrArg Sigma.snd (hs v)).trans (h v).2.property.symm)
+    have hcol : ∀ v w, colour (erase k (f v)) (erase k (f w)) =
+        colour (erase k (h v)) (erase k (h w)) := by
+      intro v w
+      have hh := hc v w
+      let read : (Σ c, Σ d, Option ((source k).Atom c d)) → Option Atom :=
+        fun a => a.2.2.map Subtype.val
+      have he := congrArg read hh
+      exact (colour_map k (f v).2 (f w).2).symm.trans
+        (he.trans (colour_map k (h v).2 (h w).2))
+    obtain ⟨g,hg,hmark⟩ := finite_extension k (fun v => erase k (f v)) (fun v => erase k (h v)) hcol hm
+    refine ⟨⟨g,hmark⟩,fun v => ?_⟩
+    apply erase_injective k
+    exact hg v
+
+def pLabel (k : Stage) (c : child k) : Bool :=
+  match k with
+  | .first => c.2
+  | .both => c.2.1
+def qLabel (c : child .both) : Bool := c.2.2
+
+theorem point_p (k : Stage) {c : child k} (x : carrier k c) : (label x.val).1 = pLabel k c := by
+  cases k with
+  | first => exact x.property
+  | both => exact congrArg Prod.fst x.property
+theorem point_q {c : child .both} (x : carrier .both c) : x.val.bit = qLabel c :=
+  congrArg Prod.snd x.property
+
+def oldDiagram (k : Stage) {V : Type z} (D : PartialDiagram (source k) V) :
+    PartialDiagram NonmaximalBoundary.source V where
+  finite_type := D.finite_type
+  vertexSort _ := ()
+  edge x y h := (D.edge x y h).map Subtype.val
+  edge_reverse := by
+    intro x y h a
+    constructor
+    · intro ha
+      obtain ⟨b,hb,rfl⟩ := Option.map_eq_some_iff.mp ha
+      rw [(D.edge_reverse x y h b).mp hb]
+      rfl
+    · intro ha
+      obtain ⟨b,hb,he⟩ := Option.map_eq_some_iff.mp ha
+      rw [(D.edge_reverse y x h.symm b).mp hb]
+      change some b.val = some a
+      exact congrArg some he
+
+def newCycle (k : Stage) {V : Type z} (D : PartialDiagram (source k) V)
+    (C : SimpleCycle (oldDiagram k D)) : SimpleCycle D where
+  length := C.length
+  length_ge_three := C.length_ge_three
+  length_pos := C.length_pos
+  vertices := C.vertices
+  next_ne := C.next_ne
+  specified := by
+    intro p
+    obtain ⟨a,ha⟩ := C.specified p
+    obtain ⟨b,hb,_⟩ := Option.map_eq_some_iff.mp ha
+    exact ⟨b,hb⟩
+
+theorem old_cycle_hom (k : Stage) {V : Type z} (D : PartialDiagram (source k) V)
+    (cycles : ∀ C : SimpleCycle D, CycleHom C) (C : SimpleCycle (oldDiagram k D)) :
+    CycleHom C := by
+  obtain ⟨p,hp⟩ := cycles (newCycle k D C)
+  refine ⟨fun i => (p i).val,?_⟩
+  intro i a ha
+  obtain ⟨b,hb,rfl⟩ := Option.map_eq_some_iff.mp ha
+  have hh := congrArg (Option.map Subtype.val) (hp i b hb)
+  exact (colour_map k (p i) (p (cyclicNext C.length_pos i))).symm.trans hh
+
+theorem atom_p (k : Stage) {c d : child k} (a : (source k).Atom c d)
+    (ha : a.val.1 = true) : (pLabel k c ^^ pLabel k d) = a.val.2 := by
+  obtain ⟨x,y,hxy⟩ := a.property
+  have hh := (table_of_colour x.val y.val a.val hxy).1
+  change (if a.val.1 then ((label x.val).1 ^^ (label y.val).1) = a.val.2 else True) at hh
+  simpa only [ha,ite_true,point_p] using hh
+
+theorem atom_q {c d : child .both} (a : (source .both).Atom c d) :
+    (qLabel c ^^ qLabel d) = a.val.2 := by
+  obtain ⟨x,y,hxy⟩ := a.property
+  have hh := congrArg Prod.snd ((NonmaximalBoundary.colour_some x.val y.val a.val).mp hxy).2
+  change (x.val.bit ^^ y.val.bit) = a.val.2 at hh
+  simpa only [point_q] using hh
+
+def qPrescription (k : Stage) {V : Type z} (D : PartialDiagram (source k) V) :
+    Option (V → Bool) := match k with
+  | .first => none
+  | .both => some (fun x => qLabel (D.vertexSort x))
+
+/-- Both deliberately chosen prefixes have actual HOM-CCO, proved directly
+from cycle compatibility, with all named lambda/mu predicates retained. -/
+theorem semanticCCO (k : Stage) : SemanticCCO.{0,0,z,0} (source k) := by
+  intro V D cycles
+  let P : V → Bool := fun x => pLabel k (D.vertexSort x)
+  have hP : ∀ x y (h : x ≠ y)
+      (a : NonmaximalBoundary.source.Atom ((oldDiagram k D).vertexSort x) ((oldDiagram k D).vertexSort y)),
+      (oldDiagram k D).edge x y h = some a → a.1 = true → (P x ^^ P y) = a.2 := by
+    intro x y h a ha hb
+    obtain ⟨c,hc,rfl⟩ := Option.map_eq_some_iff.mp ha
+    exact atom_p k c hb
+  have hQ : ∀ q, qPrescription k D = some q → ∀ x y (h : x ≠ y)
+      (a : NonmaximalBoundary.source.Atom ((oldDiagram k D).vertexSort x) ((oldDiagram k D).vertexSort y)),
+      (oldDiagram k D).edge x y h = some a → (q x ^^ q y) = a.2 := by
+    cases k with
+    | first => intro q hq; cases hq
+    | both =>
+      intro q hq x y h a ha
+      have he : (fun x => qLabel (D.vertexSort x)) = q := Option.some.inj hq
+      subst q
+      obtain ⟨c,hc,rfl⟩ := Option.map_eq_some_iff.mp ha
+      exact atom_q c
+  obtain ⟨f,hfi,hfp,hfq⟩ := realize_prescribed V (oldDiagram k D)
+    (old_cycle_hom k D cycles) P (qPrescription k D) hP hQ
+  have hm (x : V) : mark k (f.point x) = (D.vertexSort x).2 := by
+    cases k with
+    | first => exact hfp x
+    | both => exact Prod.ext (hfp x) (hfq (fun x => qLabel (D.vertexSort x)) rfl x)
+  refine ⟨{
+    point := fun x => ⟨f.point x,hm x⟩
+    preserves_edge := ?_
+  }⟩
+  intro x y h a ha
+  apply (colour_some k _ _ a).mpr
+  apply f.preserves_edge x y h a.val
+  change (D.edge x y h).map Subtype.val = some a.val
+  rw [ha]
+  rfl
+
+noncomputable section
+
+def freshen (k : Stage) (B C : Finset (Sigma (carrier k))) (x : Sigma (carrier k)) :
+    Sigma (carrier k) := by
+  classical
+  let y := NonmaximalBoundary.freshen (B.image (erase k)) (C.image (erase k)) (erase k x)
+  have hm : mark k y = mark k (erase k x) := by
+    have ho := NonmaximalBoundary.freshen_owner (B.image (erase k)) (C.image (erase k)) (erase k x)
+    have hl : label y = label (erase k x) := by
+      apply Prod.ext
+      · exact congrArg (fun o : Block × Bool => o.2 ^^ o.1.2) ho
+      · exact congrArg (fun o : Block × Bool => o.2) ho
+    cases k with
+    | first => exact congrArg Prod.fst hl
+    | both => exact hl
+  exact ⟨x.1,⟨y,hm.trans x.2.property⟩⟩
+
+@[simp] theorem freshen_sort (k : Stage) (B C : Finset (Sigma (carrier k)))
+    (x : Sigma (carrier k)) : (freshen k B C x).1 = x.1 := rfl
+
+@[simp] theorem erase_freshen (k : Stage) (B C : Finset (Sigma (carrier k)))
+    (x : Sigma (carrier k)) :
+    erase k (freshen k B C x) = NonmaximalBoundary.freshen (B.image (erase k)) (C.image (erase k)) (erase k x) := rfl
+
+theorem freshen_injective (k : Stage) (B C : Finset (Sigma (carrier k))) :
+    Function.Injective (freshen k B C) := by
+  intro x y h
+  apply erase_injective k
+  exact NonmaximalBoundary.freshen_injective _ _ (congrArg (erase k) h)
+
+theorem freshen_fixed (k : Stage) {B C : Finset (Sigma (carrier k))}
+    {x : Sigma (carrier k)} (hx : x ∈ C) : freshen k B C x = x := by
+  classical
+  apply erase_injective k
+  exact NonmaximalBoundary.freshen_fixed (Finset.mem_image.mpr ⟨x,hx,rfl⟩)
+
+theorem freshen_mem_right (k : Stage) {B C : Finset (Sigma (carrier k))}
+    {x : Sigma (carrier k)} (hx : freshen k B C x ∈ B) : x ∈ C := by
+  classical
+  have hh : NonmaximalBoundary.freshen (B.image (erase k)) (C.image (erase k)) (erase k x) ∈
+      B.image (erase k) := Finset.mem_image.mpr ⟨freshen k B C x,hx,rfl⟩
+  obtain ⟨c,hc,he⟩ := Finset.mem_image.mp (NonmaximalBoundary.freshen_mem_right hh)
+  exact erase_injective k he ▸ hc
+
+theorem freshen_colours (k : Stage) (B C : Finset (Sigma (carrier k)))
+    (x y : Sigma (carrier k)) :
+    taggedColour (source k) (freshen k B C x) (freshen k B C y) =
+      taggedColour (source k) x y := by
+  rcases x with ⟨c,x⟩
+  rcases y with ⟨d,y⟩
+  apply congrArg (fun a => (⟨c,d,a⟩ : Σ c, Σ d, Option ((source k).Atom c d)))
+  apply Option.map_injective Subtype.val_injective
+  exact (colour_map k _ _).trans
+    ((NonmaximalBoundary.freshen_colour _ _ _ _).trans (colour_map k x y).symm)
+
+/-- Both concrete unary prefixes have genuine SAP. All named predicates
+are retained while the original infinite clone index separates the legs. -/
+theorem strongAmalgamation (k : Stage) : AgeSAP (source k) where
+  strong_amalgamate := by
+    classical
+    intro C A B eCA eCB
+    letI : Finite ↥C.vertices := C.finite_vertices.to_subtype
+    letI : Finite ↥A.vertices := A.finite_vertices.to_subtype
+    letI : Fintype ↥C.vertices := Fintype.ofFinite _
+    obtain ⟨g,hg⟩ := (homogeneous k).extends_finite_diagram
+      (fun c : ↥C.vertices => (eCA.toEmbedding c).val)
+      (fun c => (eCB.toEmbedding c).val)
+      (fun c d => (eCA.preserves_colours c d).symm.trans (eCB.preserves_colours c d))
+    let base : Finset (Sigma (carrier k)) :=
+      Finset.univ.image (fun c : ↥C.vertices => (eCB.toEmbedding c).val)
+    let move (x : Sigma (carrier k)) := freshen k B.finite_vertices.toFinset base (g • x)
+    have hmove : Function.Injective move := (freshen_injective k _ _).comp (MulAction.injective g)
+    have hbase (c : ↥C.vertices) : move (eCA.toEmbedding c).val = (eCB.toEmbedding c).val := by
+      dsimp only [move]
+      rw [hg c, freshen_fixed k (Finset.mem_image.mpr ⟨c,Finset.mem_univ c,rfl⟩)]
+    let fa : ↥A.vertices → Sigma (carrier k) := fun a => move a.val
+    let D : FiniteInduced (X := carrier k) :=
+      ⟨Set.range fa ∪ B.vertices, (Set.finite_range fa).union B.finite_vertices⟩
+    let eAD : InducedEmbedding (source k) A D := {
+      toEmbedding := {
+        toFun := fun a => ⟨fa a,Or.inl ⟨a,rfl⟩⟩
+        inj' := by
+          intro a b h
+          exact Subtype.ext (hmove (congrArg (fun p : ↥D.vertices => p.val) h)) }
+      preserves_sort := fun a => (homogeneous k).preserves_sort g a.val
+      preserves_colours := by
+        intro a b
+        exact ((freshen_colours k _ _ _ _).trans
+          ((homogeneous k).preserves_colours g a.val b.val)).symm }
+    let eBD : InducedEmbedding (source k) B D := {
+      toEmbedding := {
+        toFun := fun b => ⟨b.val,Or.inr b.2⟩
+        inj' := fun a b h => Subtype.ext (congrArg (fun p : ↥D.vertices => p.val) h) }
+      preserves_sort := fun _ => rfl
+      preserves_colours := fun _ _ => rfl }
+    refine ⟨D,eAD,eBD,?_,?_⟩
+    · intro c
+      exact Subtype.ext (hbase c)
+    · intro a b hab
+      have he : move a.val = b.val := congrArg (fun p : ↥D.vertices => p.val) hab
+      have hb : move a.val ∈ B.finite_vertices.toFinset :=
+        B.finite_vertices.mem_toFinset.mpr (he.symm ▸ b.property)
+      have hc : g • a.val ∈ base := freshen_mem_right k hb
+      obtain ⟨c,_,hc⟩ := Finset.mem_image.mp hc
+      have hm : move a.val = g • a.val :=
+        freshen_fixed k (Finset.mem_image.mpr ⟨c,Finset.mem_univ c,hc⟩)
+      refine ⟨c,?_,?_⟩
+      · exact Subtype.ext (MulAction.injective g ((hg c).trans hc))
+      · exact Subtype.ext (hc.trans (hm.symm.trans he))
+
+end
+end Prefix
+
+end CCO.AutomaticEPCore.NonmaximalBoundary
