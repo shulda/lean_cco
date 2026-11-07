@@ -1,3 +1,82 @@
+# B056 current verified checkpoint — exact bounded source gate
+
+**IN_PROGRESS; whole-contract review/submission remains open.**
+
+Current native implementation `9210c36a1439e2a9ee7c88e572a84a6dfae696c2`, tree `0e9e52c8a2c2f3875c41a25a9b3d7d4b778d7045`.
+This following report-only commit changes no Lean code. All previous native
+work through c19058be is preserved. Public publication and exact-head CI
+remain root-managed. The baseline source tree is accepted main8d009;
+forest-main integration is pending routine root import reconciliation, not
+mathematical dependency usage. Pins and approved source statements unchanged.
+
+## Current three-module delta
+
+`BoundedSourcePair.lean` discharges the fresh reader's exact source-quantifier
+finding. It proves the actual partial target singleton budget for EVERY real
+or proper hidden generator, then derives |cl_F{b,c}|≤2m_typ from ACTUAL
+UnaryAdmissible singleton diagrams. `BoundedPairTest` requests a completed
+induced witness ONLY for the selected actual irreducible old endpoint support
+at that bound. It does not quantify over arbitrary larger irreducibles.
+`bounded_pair_source_factor` constructs its simultaneous fine survivor, and
+`bounded_pair_every_atom_complete_image` gives EVERY surviving atom's full
+DiagramIso onto EXACTLY the canonical target two-root closure. Neither theorem
+assumes global JoinedAdmissible or ambient hidden completion. Older stronger
+JoinedAdmissible wrappers remain intermediate helpers only; these are the
+source-scope conclusions to use for final exports.
+
+`G1WordClassification.lean` proves source C44/C45 themselves: every r-free
+positive STRONG word has EXACT singleton profile p/q according to its actual
+q-count parity, and EVERY word containing r has r in its actual endpoint
+profile. Literal actual triangles establish the p/q product table and original
+SAP supplies the witnesses. No multiplication-table provider is assumed.
+
+`G1FiniteIndex.lean` constructs the actual FULL old equivalences K=same block
+and bit, J=same block. For EVERY original a it gives RelativeClass K J a≃Bool,
+proves that class finite and its relativeIndex exactly2, establishes
+Id<K<J<Top and proves K⋖J in the FULL invariant-equivalence poset. Together
+with the earlier genuine G1 hidden SAP, FG1 and RAW obstruction this supplies
+the complete actual finite-index diagnostic rather than a finite-window test.
+
+Actual authors: `/root/b056_continue` (bounded source gate),
+`/root/b056_continue/private_cycle_finish` (G1 classification/index), root
+(all direct CCO.lean imports). Previous complete authorship is retained;
+none is an independent reviewer.
+
+## Exact validation and handoff
+
+Full pinned root PASSED4,987 jobs; project guard2,313 current CCO source modules
+and olean parts; EPPA269; Ramsey106. Pinned transitive audit34,938 declarations,
+only propext/Classical.choice/Quot.sound, ZERO violations. B056 finite controls,
+frozen10definition/61claim/4export/7task validation and whitespace check passed.
+These finite diagnostics do not replace infinite source proofs or review.
+Logs: B056-third-fullroot.log/B056-third-audit.json in the current workspace.
+All THREE new modules are direct root imports. New public exact-head CI and
+resulting merged-main guards/audit have not yet occurred for this code.
+
+After this checkpoint the B056 implementation/compiler owner stops writes to
+all existing production files and all emitting builds. Root owns reconciliation
+with current forest main, full build/audit and public publishing. Two helpers
+may continue ONLY new, unimported isolated files without emitting builds:
+SourceAnchorSupport.lean and PrivateTwoBranchClosure.lean. Their future work
+is not part of this verified checkpoint and must be separately validated.
+
+## Exact remaining work
+
+- OLD root-signature anchor support/kernel inclusion and its uniform anchor
+  count remain OPEN. All actual-real direct/branch equations and continuations
+  are already proved, but this does not locate their classes in old root hulls.
+- Source C19 remains OPEN in its literal strength: two genuinely distinct
+  same-theta branches traversed by one simple cycle force ENTIRE cycle
+  containment. The current contained-or-traversal certificate is weaker.
+  Duplicate direct branch descriptions need the source's explicit merge
+  qualification; no false theorem may follow from just distinct IDs.
+- Finish the complete61-claim source-to-Lean map, exact final four result
+  packaging, higher-support scope separation, all contract controls and fresh
+  real nonauthor review for the final source SHA. No claim of global hidden
+  completion, HN local finiteness, higher tuple reflection, or batch acceptance.
+
+## Earlier checkpoints (historical evidence)
+
 # B056 current verified checkpoint — 7 November 2026
 
 **IN_PROGRESS. No whole-contract submission, approval or acceptance.**
