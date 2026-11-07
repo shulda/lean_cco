@@ -1,5 +1,7 @@
 import CCO.PairHomogeneity
 import CCO.APRamseyReadout.OwnerAction
+import CCO.APRamseyReadout.TupleScheme
+import CCO.FullCode.CodeTransport
 import Mathlib.Data.Finset.Image
 import Mathlib.Data.Fintype.Option
 
@@ -8,7 +10,7 @@ one/two-point types. Logical equality is included as its true diagonal.
 The generic syntax leaf uses only original homogeneity; source-specific
 owner imaginary codes must discharge invariance with their genuine action. -/
 
-universe u v w r
+universe u v w r z
 namespace CCO.APRamseyReadout
 open CCO
 noncomputable section
@@ -190,6 +192,84 @@ theorem binary_qf (R : (Lang B ht).Rel) (x : B.Point i) (y : B.Point j) :
   invariant_nonOrderPairDefinition B.source B.homogeneous _ (binaryCode_invariant B ht D E q p R) x y
 
 end OwnerNonOrderCode
+
+
+namespace OwnerRootNonOrder
+open CCO.CloneTupleGeometry CCO.TerminalPowers CCO.UnaryTermsReturn CCO.TransitionClosure
+open CCO.UnaryFreshFrames CCO.FullCode
+variable (B : OwnerStage.{u,v,w}) (ht : B.Terminal)
+
+private theorem target_func_iff (F : (Sig B ht).Func) (x y : Values B) :
+    y ∈ (Target B ht).func F x ↔
+      (Hidden B ht).sort x = (Lang B ht).input F ∧ y = (Hidden B ht).func F x := by
+  classical
+  change y ∈ (if (Hidden B ht).sort x = (Lang B ht).input F then {(Hidden B ht).func F x} else ∅) ↔ _
+  by_cases hs : (Hidden B ht).sort x = (Lang B ht).input F <;> simp [hs]
+
+def ownerTargetEmbedding (g : FullAut B.source) :
+    CCO.UnarySupport.Structure.Embedding (Target B ht) (Target B ht) where
+  point x := ownerHiddenHom B ht g • x
+  injective := MulAction.injective (ownerHiddenHom B ht g)
+  sort_eq x := (Hidden B ht).aut_sort (ownerHiddenHom B ht g) x
+  map_func F x y hy := by
+    obtain ⟨hs,hv⟩ := (target_func_iff B ht F x y).mp hy
+    exact (target_func_iff B ht F _ _).mpr
+      ⟨((Hidden B ht).aut_sort (ownerHiddenHom B ht g) x).trans hs,
+        (congrArg (fun z => ownerHiddenHom B ht g • z) hv).trans (ownerHidden_func B ht g F x)⟩
+  reflect_func F x y hy := by
+    obtain ⟨hs,hv⟩ := (target_func_iff B ht F _ y).mp hy
+    refine ⟨(Hidden B ht).func F x,(target_func_iff B ht F _ _).mpr ⟨?_,rfl⟩,?_⟩
+    · exact ((Hidden B ht).aut_sort (ownerHiddenHom B ht g) x).symm.trans hs
+    · exact (ownerHidden_func B ht g F x).trans hv.symm
+  map_rel R xs h := (ownerHidden_rel B ht g R xs).mpr h
+  reflect_rel R xs h := (ownerHidden_rel B ht g R xs).mp h
+
+def ownerCoordinateEmbedding (g : FullAut B.source) :
+    CCO.FullCode.Structure.Embedding (CoordinateTarget B ht) (CoordinateTarget B ht) :=
+  TerminalHiddenHN.binaryEmbedding (Sig B ht)
+    (TerminalHiddenHN.sig_binary (cloneSource B) (cloneHomogeneous B) (cloneSAP B) (fullCovers B ht))
+      (ownerTargetEmbedding B ht g)
+
+variable (F : Charts.{u,v,w,z} B)
+
+/-- Equivariance of the actual MULTI-coordinate root, not an arity-one
+real interpretation. This is over every marked coordinate simultaneously. -/
+theorem ownerRoot_equivariant (g : FullAut B.source) (x : Sigma B.Point) :
+    (ownerRoot B ht F x).map (ownerCoordinateEmbedding B ht g) = ownerRoot B ht F (g • x) := by
+  rcases x with ⟨i,x⟩
+  apply Root.ext_coordinates rfl
+  intro k
+  exact ownerHidden_named_node B ht g (chartCoordinate B ht F i k) x 0
+
+variable (N : NormalForms (CoordinateLanguage B ht))
+variable {i j : B.Sorts}
+variable (p q : Presentation N (tupleScheme B ht F))
+
+/-- The actual complete full-code equality predicate is an explicit
+finite old-type qf union, including mismatched tags and repeated roots. -/
+theorem equality_qf (x : B.Point i) (y : B.Point j) :
+    (nonOrderPairDefinition B.source (fun a b => EqualityCode N
+      (ownerRoot B ht F ⟨i,a⟩) (ownerRoot B ht F ⟨j,b⟩) p q)).eval x y ↔
+      EqualityCode N (ownerRoot B ht F ⟨i,x⟩) (ownerRoot B ht F ⟨j,y⟩) p q := by
+  apply invariant_nonOrderPairDefinition B.source B.homogeneous
+  intro g a b
+  have h := equalityCode_map N (ownerCoordinateEmbedding B ht g)
+    (ownerRoot B ht F ⟨i,a⟩) (ownerRoot B ht F ⟨j,b⟩) p q
+  rw [ownerRoot_equivariant,ownerRoot_equivariant] at h
+  exact h
+
+theorem binary_qf (R : (CoordinateLanguage B ht).Binary) (x : B.Point i) (y : B.Point j) :
+    (nonOrderPairDefinition B.source (fun a b => BinaryCode N R
+      (ownerRoot B ht F ⟨i,a⟩) (ownerRoot B ht F ⟨j,b⟩) p q)).eval x y ↔
+      BinaryCode N R (ownerRoot B ht F ⟨i,x⟩) (ownerRoot B ht F ⟨j,y⟩) p q := by
+  apply invariant_nonOrderPairDefinition B.source B.homogeneous
+  intro g a b
+  have h := binaryCode_map N (ownerCoordinateEmbedding B ht g) R
+    (ownerRoot B ht F ⟨i,a⟩) (ownerRoot B ht F ⟨j,b⟩) p q
+  rw [ownerRoot_equivariant,ownerRoot_equivariant] at h
+  exact h
+
+end OwnerRootNonOrder
 
 end
 end CCO.APRamseyReadout
