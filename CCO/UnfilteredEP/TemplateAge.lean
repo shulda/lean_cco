@@ -55,7 +55,13 @@ structure Marking (A : K.Obj) where
   pairs : ∀ x y a, K.colour A x y = some a → T.rel a (label x) (label y)
 
 namespace Marking
-variable {K T} {A : K.Obj}
+variable {K T} {A B : K.Obj}
+
+/-- The exact old embedding restricts every allowed pair-local marking. -/
+def restrict (e : K.Embedding A B) (b : K.Marking T B) : K.Marking T A where
+  label := b.label ∘ e.toFun
+  sorted x := (b.sorted _).trans (e.sorted x)
+  pairs x y r h := b.pairs _ _ r ((e.colours x y).trans h)
 
 def postcompose (a : K.Marking T A) (f : Label → Label) (hf : T.Endomorphism f) :
     K.Marking T A where
@@ -101,6 +107,13 @@ def AllPairsRealized : Prop :=
   ∀ a s t, T.rel a s t →
     ∃ (A : K.Obj) (m : K.Marking T A) (x y : K.Point A),
       x ≠ y ∧ K.colour A x y = some a ∧ m.label x = s ∧ m.label y = t
+
+/-- Reasonableness extends a prescribed legal marking along the SAME
+old induced embedding. This property is not needed for the independent
+core criterion, but is retained for the core-retract fallback. -/
+def Reasonable : Prop :=
+  ∀ {A B : K.Obj} (e : K.Embedding A B) (a : K.Marking T A),
+    ∃ b : K.Marking T B, ∀ x, b.label (e.toFun x) = a.label x
 
 /-- Reduct-surjectivity of the unary expansion. -/
 def ReductSurjective : Prop := ∀ A : K.Obj, Nonempty (K.Marking T A)
@@ -195,7 +208,7 @@ theorem joint_finite {I : Type r} [Finite I] (jep : P.JEP)
     (base : P.Obj) (objects : I → P.Obj) :
     ∃ D : P.Obj, ∀ i, Nonempty (P.Embedding (objects i) D) := by
   classical
-  letI := Fintype.ofFinite I
+  let _ := Fintype.ofFinite I
   obtain ⟨D,hD⟩ := P.joint_list jep base ((Finset.univ.toList).map objects)
   exact ⟨D,fun i => hD (objects i) (List.mem_map.mpr ⟨i,by simp,rfl⟩)⟩
 
