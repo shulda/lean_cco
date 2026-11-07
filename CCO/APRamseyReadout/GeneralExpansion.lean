@@ -78,15 +78,15 @@ theorem general_ap_small_ramsey_expansion
   exact UnaryLift.hasFiniteRelationalRamseyExpansion_of_unaryReduct
     reduct hReasonable hTerminal
 
-/-- The general AP source export, choosing the smaller actual language.
-Reasonableness, literal precompactness and Ramsey on ALL expanded maps
-are part of the displayed accepted finite-expansion interface. -/
+/-- The general AP source export uses the full readout proof, independently
+of block normalization. The smaller-language corollary remains a separate
+source export with the same original AP hypotheses. -/
 theorem general_ap_ramsey_expansion
     (H : CCO.HomogeneousSource S G) (ap : CCO.AgeAP S)
     (cco : CCO.SemanticCCO.{u,v,max u v,w} S)
     (countable : ∀ i, Countable (X i)) (infinite : ∀ i, Infinite (X i)) :
     HasFiniteRelationalRamseyExpansion.{u,v,w,max u v w,max u v w} S :=
-  general_ap_small_ramsey_expansion S H ap cco countable infinite
+  general_ap_full_ramsey_expansion S H ap cco countable infinite
 
 end Original
 end
