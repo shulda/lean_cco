@@ -56,6 +56,15 @@ theorem automorphism_of_injective [Finite Label] (f : Label → Label)
     simpa only [hs,ht] using p.property
   · exact fun h => hf.2 a s t h
 
+/-- C01: for an endomorphism of a finite table, surjectivity is exactly
+being an automorphism of the full original-sort/atom structure. -/
+theorem automorphism_iff_surjective [Finite Label] (f : Label → Label)
+    (hf : T.Endomorphism f) : T.Automorphism f ↔ Function.Surjective f := by
+  constructor
+  · exact fun h => h.1.2
+  · intro h
+    exact T.automorphism_of_injective f hf (Finite.injective_iff_surjective.mpr h)
+
 theorem Automorphism.endomorphism {f : Label → Label} (hf : T.Automorphism f) :
     T.Endomorphism f := ⟨hf.2.1,fun a s t h => (hf.2.2 a s t).mpr h⟩
 
