@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 903,
+  "revision": 904,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -5678,6 +5678,13 @@
       "state": "IN_PROGRESS",
       "owner_project_id": 3,
       "author_actor_ids": [
+        "/root/b057_idempotents",
+        "/root/b057_idempotents/gap_coordinates",
+        "/root/b057_lift",
+        "/root/b057_lift/b059_irreducibility",
+        "/root/b057_seams",
+        "/root/b058_source_map",
+        "/root/b064_finite_original",
         "root"
       ],
       "original_author_project_ids": [
@@ -27534,6 +27541,27 @@
           "conclusion": "success",
           "axiom_audit": "allowlist"
         },
+        "actor_id": "root"
+      }
+    },
+    {
+      "revision": 904,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "record_authorship",
+      "package_id": "B064",
+      "details": {
+        "package_id": "B064",
+        "author_actor_ids": [
+          "root",
+          "/root/b057_lift",
+          "/root/b057_lift/b059_irreducibility",
+          "/root/b057_idempotents",
+          "/root/b057_idempotents/gap_coordinates",
+          "/root/b057_seams",
+          "/root/b058_source_map",
+          "/root/b064_finite_original"
+        ],
         "actor_id": "root"
       }
     }
