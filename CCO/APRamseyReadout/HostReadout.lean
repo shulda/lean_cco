@@ -1,4 +1,5 @@
 import CCO.APRamseyReadout.ActualTupleSupport
+import CCO.APRamseyReadout.FineReadout
 import CCO.APRamseyReadout.TupleReadout
 import CCO.FullCode.Cofinality
 import CCO.FullCode.StructureTransport
@@ -128,6 +129,58 @@ def actualHostReadout (C : CCO.UnarySupport.Structure (Sig B ht) W) [LinearOrder
     (hC : ActualAge B ht C) : HostReadout B ht F C := by
   letI : Finite W := hC.1
   exact hostReadoutOfEmbedding B ht F (Classical.choice hC.2)
+
+
+namespace HostReadout
+variable [LinearOrder W] (R : HostReadout B ht F C)
+
+/-- The full marked code on the actual owner image is the complete code
+of ALL host roots. This is constructed from the genuine support embedding,
+not by assuming preservation of the visible predicates. -/
+def codeToHost : Object.Embedding (actualTupleInterpretation B ht F).normal
+    ((actualTupleInterpretation B ht F).object R.old)
+    (Object.full (CoordinateModel B ht C) (tupleScheme B ht F)) :=
+  (Object.rootEmbedding (actualTupleInterpretation B ht F).normal
+    ((actualTupleInterpretation B ht F).object R.old).markedObject R.support).comp
+      (Object.marking (actualTupleInterpretation B ht F).normal
+        ((actualTupleInterpretation B ht F).object R.old))
+
+@[simp] theorem codeToHost_point (a : R.old.vertices) :
+    (codeToHost B ht F R).point a = R.roots.symm a := by
+  change (((actualTupleInterpretation B ht F).object R.old).markedRoot a).map R.support = _
+  simpa only [Equiv.apply_symm_apply] using R.support_root (R.roots.symm a)
+
+theorem codeToHost_surjective : Function.Surjective (codeToHost B ht F R).point := by
+  intro r
+  refine ⟨R.roots r,?_⟩
+  rw [codeToHost_point,Equiv.symm_apply_apply]
+
+/-- C19 on the actual finite owner image: a full visible code map gives
+an original induced map into the SAME packet, at exactly its image roots.
+Fine-colour reflection is discharged by all actual mixed spectrum tests. -/
+def fineEmbedding {A : CCO.FiniteInduced (X := B.Point)}
+    (f : Object.Embedding (actualTupleInterpretation B ht F).normal
+      ((actualTupleInterpretation B ht F).object A)
+      (Object.full (CoordinateModel B ht C) (tupleScheme B ht F))) :
+    CCO.InducedEmbedding B.source A R.old where
+  toEmbedding := ⟨fun a => R.roots (f.point a),R.roots.injective.comp f.injective⟩
+  preserves_sort a :=
+    (congrArg Sigma.fst (R.roots_owner (f.point a))).trans
+      ((hostOwner_tag B ht F R.embedding (f.point a)).trans
+        (congrArg ULift.down (f.tag_eq a)))
+  preserves_colours a b := by
+    change CCO.taggedColour B.source a.val b.val =
+      CCO.taggedColour B.source (R.roots (f.point a)).val (R.roots (f.point b)).val
+    rw [R.roots_owner,R.roots_owner]
+    exact hostFineReadout_preserves_colours B ht F R.embedding f a b
+
+@[simp] theorem fineEmbedding_point {A : CCO.FiniteInduced (X := B.Point)}
+    (f : Object.Embedding (actualTupleInterpretation B ht F).normal
+      ((actualTupleInterpretation B ht F).object A)
+      (Object.full (CoordinateModel B ht C) (tupleScheme B ht F))) (a : A.vertices) :
+    (fineEmbedding B ht F R f).toEmbedding a = R.roots (f.point a) := rfl
+
+end HostReadout
 
 end
 end CCO.APRamseyReadout
