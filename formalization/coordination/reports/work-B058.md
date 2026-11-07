@@ -1,156 +1,108 @@
-# B058 active implementation checkpoint
+# B058 source implementation checkpoint
 
-Effective claim STATE866, owner project3/root; actual authorship is appended
-in STATE867/868. Accepted dependency base is main
-`92e3675e511bb2209042d47391e42c541a354c34`, actual-mainCI42349162687,
-job128333387654 SUCCESS:203tests,5075jobs,2387currentCCO sources,
-36621CCO and791forest declarations within the standard-three allowlist,
-all final source/provider guards and recovery export successful. B057 is
-ACCEPTED in STATE865. No unaccepted branch is used as an accepted dependency.
+Effective claim STATE866, owner project3/root. The canonical coordination
+register records every actual author, helper and publication. Accepted base:
+`92e3675e511bb2209042d47391e42c541a354c34`; B057 is ACCEPTED at STATE865 after
+actual-main CI42349162687/job128333387654. B058 remains IN_PROGRESS;
+compiled source results are not independent review or acceptance.
 
-Frozen source/toolchain/manifest and provider pins are unchanged. Root and
-the three implementers have read the complete source16, full notes, contract
-and actual receiving APIs. All9 frozen source-file hashes match actual bytes.
-The accepted general finite-semigroup forest facade is already compiled and
-audited; the actual typed zero-semigroup adapter is now compiled in this checkpoint.
+Frozen source `490c3f36d85db5a0b3ced0598e6c431825254ec5`, toolchain,
+manifest and all external-provider pins are unchanged. Authors read the
+complete 937-line source16, full notes, contract and actual accepted APIs.
+No mathematical source/API exception or user decision is needed.
 
-## Disjoint work
+## Current concrete source result
 
-- b057_lift: actual finite typed reachable-profile zero semigroup, genuine
-  nonzero composable intervals, exact occurrence forest adapter; main
-  source integration and serial master compiler.
-- b057_idempotents: Gap*.lean, literal OLD idempotent-gap certificate,
-  terminal represented-MI to FULL named coordinate adapter, SAME actual
-  Return-factor holonomy and literal source telescope, boundary restriction,
-  arbitrary-completion RAW envelope before distinctness.
-- b057_seams: ordered original intervals, stopped middle pruning, exact
-  disjoint partition, endpoint persistence and retained binary size bounds;
-  physically private compiler and branch.
-- root: local-pattern obstruction/source consumer wrappers and subsequent
-  exact whole-cycle reconstruction integration, root imports and sole
-  remote publisher/PR/STATE operator. Root does not run a competing build
-  in the main author's directory.
-- b058_source_map: full11D/74C/6result/2equation/8task/19import inventory,
-  actual provider/firewall/consumer map; no compiler or production writes.
-- recovery_control: actual independent registered whole-package reader,
-  no authorship/design/source edits. Its source pre-read is not approval.
+All 49 current public B058 modules are imported by `CCO.lean`. The pinned
+full root build passes 5,123 jobs. `BoundedHidden.typed_bounded_hidden` and
+`typed_bounded_hidden_uniform` compile against the ACTUAL original hidden
+signature. Given one original semantic CCO, visible SAP, the terminal FULL
+cover gate and unary admissibility, every finite noncompletable source has
+an induced unary-closed noncompletable OLD subset of size at most
 
-Each writer owns disjoint files or a private worktree/build directory. Main
-ForestAdapter helper drafts only its own file; the lead alone emits there.
-Every actual helper is appended to canonical authorship. Native history
-will be merged without rebasing or cherry-picking; root is sole publisher.
+`max (2*m) (m*(2^(3*s+3)+4))`,
 
-## Open duties and honest status
+where `m = originalSourceUniformNormalCodeBudget S H` and
+`s = Nat.card (TypedProfileState S)`. The constant is independent of the
+input carrier, cycle length and representative choices.
 
-This is IN_PROGRESS, not complete/submitted/approved/accepted. The actual
-source theorem still requires the genuine canonical OLD gap certificate,
-source application of the STOPPED exact original-word partition, one
-complete-base exact simple-cycle reconstruction, actual OLD closure bound
-and full unary-admissible bounded hidden-obstruction source instance.
-No generic conditional reconstruction/holonomy/certificate provider counts
-as source completion. No global completion of C, strengthened local tests,
-hidden SAP, substituted word, artificial STRONG unit or higher-arity binary
-shortcut may discharge these duties. The anchor profile remains explicit.
+Local joined tests are split internally. Failure gives its actual complete
+irreducible OLD support of size at most 2m. In the passing branch original
+CCO+SAP extracts a genuinely specified no-Hom cycle of the actual `G_typ`.
+Its computed ordered original traversals produce the actual supported
+chain and separate exact original anchor. The received forest and STOP
+pruning produce an OLD retained closure. ANY Hom of that closure yields
+ONE real base and ONE simultaneous insertion of all exact original pieces
+and anchor; the actual reconstruction gives a Hom of the specified original
+cycle, a contradiction. No test, certificate, holonomy, forest-existence,
+completion or reconstruction callback is a final extra hypothesis. The
+accepted `semanticCCO_change_universe` transports the same CCO premise.
 
-Publication, exact public head/PR and actual CI are recorded in the live
-canonical register; this report records local proof evidence only.
-No mathematical source/API exception or user decision has been identified.
+The standalone actual SIMPLE-cycle/pin/freshness source wrapper is still
+being compiled privately and must be integrated before whole-batch
+submission. The final candidate root/audits/guards and independent exact-head
+review remain pending. The current Hom contradiction already proves the
+uniform source N theorem; the pending stronger wrapper discharges the full
+source reconstruction result rather than strengthening that theorem.
 
-## First coherent compiled source checkpoint
+## Source-to-Lean connections
 
-Fifteen public B058 modules are now imported by `CCO.lean`:
+| Source duty | Actual implementation |
+| --- | --- |
+| Finite typed nonzero algebra, C01–06 | `ProfileSemigroup`, `MacroIntervals`: exactly zero plus NONEMPTY REACHABLE typed profiles, both endpoint tags; actual H+SAP fork and associativity; every positive contiguous interval nonzero. No identity unit. |
+| Accepted forest receiving | `ForestAdapter*`: actual profile semigroup, original `Fin n` occurrence alphabet, literal `List.finRange n` yield, actual Ramsey tree, height at most 3s; inherited subtree infix/nonzero and common same-sort idempotent. |
+| Literal OLD gap certificate / OGC | `GapPath/Coordinates/Return/Suffix/Closed/TermSupport`: SAME local support/model, actual Return factors, literal source telescope and valid singleton identity BEFORE deletion; complete represented-MI to FULL named-coordinate identification. |
+| RAW envelope before diversity | `GapConsumers`, `ForestAdapterSource`: ANY Hom of actual retained OLD closure preserves those named equations; reconstruct FULL RAW Id-union-e first; actual tagged distinctness then gives the exact original gap word profile. |
+| Stopped factor path | `Intervals`, `StoppedPruning*`, `PruningBounds/Boundaries`: keep first/last, STOP in whole original middle; exact ordered disjoint occurrence/payload partition, canonical intervals and all piece boundaries retained. |
+| Actual G_typ cycle contraction | `WordIndex`, `Visible*`, `CycleContraction*`, `SupportedCycle`: exact original positions, colour edges and cyclic order; ALL actual OLD cuts; original whole branch in its actual orientation and SAME source pair model. Constructor applies to every specified simple cycle. |
+| One-base source reconstruction | `RetainedSides`, `RealBase`, `ReconstructionRequests`, `CycleReconstruction*`: all retained/gap and separate anchor profiles proved internally, ONE split Hom/base, all exact original whole-word requests; original fine-edge cycle Hom. |
+| OLD anchor bound / OAB | `SourcePrunedForest.old_anchor_bound`: actual old generators only, all piece boundaries and original anchor endpoints included; unary admissibility derives closure size, with the stronger m*2^(3s+1) implying displayed conservative OAB. |
+| Uniform bounded hidden obstruction | `SourceBounds`, `BoundedHidden`, `SourceExports`: both actual induced-source branches and one language-dependent N; original finite HE implies retained Hom internally. |
 
-- Actual `ProfileSemigroup`: exactly one zero plus `TypedPrefix.ReachableState`, exact cardinal, source-H/SAP serial/coserial palettes, genuine nonempty compatible strong forks, actual reachable multiplication and associativity. No identity instance or equality atom is introduced.
-- `MacroIntervals` and `MacroIntervalsSource`: nonempty append multiplicativity, every positive contiguous composable interval nonzero, actual indexed original macro words, literal SourceMacroPath flatten/profile evaluation. A nonzero idempotent is extracted as an actual same-sort nonempty reachable strong idempotent.
-- `ForestAdapter` and `ForestAdapterComposable`: the accepted finite-semigroup theorem is instantiated on this actual semigroup, alphabet `Fin n` and exact original occurrence list `List.finRange n`; original yield, Ramsey structure and height `3 * card` are preserved. No forest callback or new theorem assumption remains.
-- Native merged pruning units `Intervals`, `StoppedPruning`, `StoppedPruningAlgebra`, `PruningBounds`, `PruningBoundaries`: exact disjoint original occurrence/payload partition, STOP inside the entire middle, gap-idempotent evaluation and retained binary bounds. Structural proofs consume an actual supplied Ramsey tree; their source geometric application is still open.
-- Native merged `GapPath`/`GapCoordinates`: same-support original source macro sides and literal exact-word flatten, RAW containment, and actual terminal represented-MI→FULL named coordinates/envelope reconstruction. The canonical Return/OLD gap certificate is still under construction.
-- `LocalObstruction`: an actually failed bounded joined support yields its own finite closed noncompletable old induced witness of size at most `2m`; actual unary-admissible closure-size bound. No global source completion is assumed.
-- `WordIndex`/`VisibleBranches`: exact original word positions indexed by `Fin(length+1)` and actual root/private branch geometry. The colour-diagram graph bridge and whole-cycle contraction remain open.
+`VisibleInternal` independently proves that an actual no-Hom cycle cannot
+lie inside one seeded theta. The final N proof also handles that short case
+uniformly through the unconditional source cycle constructor and n>=1.
 
-The disjoint `ForestAdapterSubtrees` draft is intentionally excluded from this checkpoint pending targeted compilation. No unfinished source-instance callback is counted as completed B058. The remaining full six-result geometric source theorem is not yet claimed.
+## Boundaries and exact scope
 
-First-scope verification: pinned full root build passed (5,089 jobs), current
-project cache passed (2,402 source modules/artifact sets), transitive root
-axiom audit passed (37,161 declarations; only propext/Classical.choice/Quot.sound),
-and both prescribed B058 controls passed. Those finite diagnostics do not
-certify the still-open six-result source theorem. Native pruning/gap authorship
-and history are preserved by no-ff merges.
+`ForestBoundaries`, `PruningBoundaries` and `SourceBoundaries` prove the
+required finite boundary controls: strict finer cuts fail on actual envelope
+diversity; Id restores RAW diagonals; a fixed original anchor has its own
+profile condition; nested middles STOP, two-child nodes create no gap,
+three children create one positive gap, height-zero/single-letter cases and
+twice-leaf root count; exact original payload is preserved; literal w and
+ww can have the same idempotent profile and different lengths.
 
-## Second coherent compiled source checkpoint
+The malformed total-unary control is explicitly the TWO-TRANSITION REDUCT
+of the accepted actual common-block family. It is Total and irreducible,
+has no small nonempty closed subset and no HE, and fails unary admissibility.
+It is not presented as a new full originalPartialSignature model. The
+positive obstruction result concerns the actual unary-admissible original
+source. Binary SAP does not establish higher-arity frozen-factor preservation.
 
-All 33 public B058 modules are now root-imported. This remains an unfinished
-whole batch; the new concrete source connections are:
+## Ownership, native history and verification
 
-- `ForestAdapterSubtrees`: every actual received subtree has a nonempty
-  original contiguous yield, hence nonzero evaluation; common child
-  idempotents are actual same-sort nonempty reachable diversity profiles.
-- `SupportedMacroChain` retains literal OLD indexed roots and each SAME
-  complete source side/model/word. Its canonical nonempty `intervalPath`
-  has exactly the original tagged side slice. `intervalPath_flatten_append`
-  recombines adjacent intervals as EQUALITY OF ORIGINAL WORDS.
-- `ForestAdapterSource`: received forest existence and STOP pruning are
-  instantiated on an actual supported source chain. Every maximal gap is
-  its canonical exact old subpath with actual same-sort idempotent profile.
-  `gap_old_coordinate_certificates` derives all OLD certificates before
-  deletion; `gap_boundary_original_profile` uses them on ANY homomorphism
-  of the actual retained old closure, then actual representative diversity.
-  No certificate/holonomy/reflected-menu callback is an input.
-- `GapReturn/Suffix/TermSupport/Closed/Reverse/Consumers`: the source OGC
-  proof uses actual canonical Return factors, the selected atomic OLD side
-  equations, exact named seam identification, and a valid one-generated
-  source diagram for the finite return identity. The terminal named-MI
-  family then gives the FULL RAW envelope under ANY retained-boundary Hom;
-  only actual distinct representatives extract the original word profile.
-- `RetainedSides` gives the actual same-model original profile under ANY
-  retained-source Hom, for kept sides and the fixed original anchor.
-  `RealBase` splits all positions simultaneously and chooses ONE actual
-  complete old finite base containing their distinct real representatives.
-- `VisibleDiagram/BadCycle/Internal` transfer the actual G_typ colour
-  diagram to its literal private graph, extract a specified no-Hom cycle
-  from original CCO+SAP and hidden noncompletion, and prove such a bad cycle
-  is never confined to one actual theta, using its actual seed homomorphism.
-- Native `CycleContraction*` constructs all old-root cuts of the ACTUAL
-  specified cycle. Ordered arcs retain original cyclic enumeration,
-  original branch orientation/length/every position and exact coverage.
-- `SourcePrunedForest.oldGenerators` contains only actual old source roots,
-  all kept/gap boundaries and original path endpoints. Its complete old
-  pair closures are retained. `old_anchor_bound` proves the stipulated OAB
-  bound, via the stronger m*2^(3s+1), without claiming that partial old
-  support is already completable.
+Lead b057_lift owns the actual profile/interval/forest/source facade and is
+the sole emitting compiler/local Git owner in the main tree. b057_idempotents
+and its recorded gap_coordinates helper own source OLD certificates,
+consumers/requests and boundaries in a physically private tree. b057_seams
+and recorded cycle_rotation helper own stopped pruning and actual whole-cycle
+geometry/reconstruction in another private tree. The recorded
+lift_graph_vertices helper drafted disjoint forest adapters. Root authored
+local obstruction/visible bridges and remains the sole remote publisher,
+PR/STATE/integration operator. b058_source_map is an author inventory, not an
+independent reviewer. recovery_control has no authorship/design/source edits.
 
-Remaining source gates: actual contraction→SupportedMacroChain+fixed anchor;
-all canonical piece/anchor WordRequests on the same RealBase; exact original
-simple-cycle reconstruction and contradiction; the final unconditional
-unary-admissible bounded hidden-obstruction source instance/facade. The
-existing structural or source-chain theorems do not replace those instances.
+Native author commits are preserved by no-ff merges, including source core
+`96f34765314b262d45e0904fe06862955c02c3f4` and qualified boundary
+`4d5d423b376910027bf4d2846066b39d77c04969`. The last public 38-module WIP is
+`113b89e1547652becd0b86d7a0926ef68e50a054`, native26c6e9df, with CI tracked
+canonically. This local checkpoint advances that exact source DAG.
 
-Verification on this checkpoint: pinned full root build 5,107 jobs passed;
-all 2,420 current project modules/artifacts consistent; exact external,
-Ramsey and forest source/artifact guards passed; root transitive axiom audit
-37,760 declarations passed with standard three only, separate forest 791
-passed; both prescribed B058 controls passed. No source/API/toolchain change.
-
-## Actual one-base request consumer and reconstruction preparation
-
-`ReconstructionRequests` is compiled and source-instantiated: from ANY Hom
-of the actual retained old closure it constructs one `OldBaseRealization`
-and invokes simultaneous original-word insertion ONCE on every canonical
-piece plus the fixed original anchor. Kept-side, maximal-gap and anchor
-profile requirements are all proved internally. It retains the exact
-FreshWordLine family, one complete finite old base and full old colours.
-
-`SourceBounds` fixes the uniform language budget max(2m,long OAB), discharges
-the actual failed-local-test branch and transports genuine finite hidden
-completions of a retained support to its actual ambient Hom. Its long-branch
-no-Hom packaging remains conditional infrastructure, awaiting the concrete
-original-cycle reconstruction contradiction; it is not the final source N
-theorem. `SourceBoundaries` proves that an actual idempotent positive word w
-and literal ww have equal profiles but different original lengths.
-
-Generic `CycleReconstructionArrays` and `CycleReconstructionSimple` glue
-exact cyclic position arrays and turn a genuine original cycle walk into an
-injective realization over one complete old base, preserving pins/old colours
-and making all unpinned vertices fresh. The ACTUAL SupportedCycle and
-SourceReconstructionRequests-to-cycle instances remain the source gates.
-All 38 current public modules pass the pinned root build (5,112 jobs).
+Current evidence: actual final N/facade leaf build 2,771 jobs and full root
+5,123 jobs pass. Prior immutable 33-module checkpoint58c982 passed all
+provider/cache guards, 2,420 project artifacts, transitive root audit37,760
+standard-three declarations and separate forest audit791; both B058 control
+scripts passed. Final current-head audits/guards will be recorded after the
+pending actual SIMPLE source wrapper. No source/API/toolchain change,
+`speculative` acceptance, broad Mathlib import, sorry/admit or new axiom.
