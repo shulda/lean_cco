@@ -20,7 +20,7 @@ theorem owner_template_reasonable {B D : OwnerStage.{u,v,w}}
   intro A E f a
   obtain ⟨L,hL⟩ := owner_marking_lift history A a
   let old := ownerEmbeddingToInduced B f
-  obtain ⟨M,g,hg⟩ := UnaryLift.lift_reasonable (OwnerStage.historyReduct history)
+  obtain ⟨M,g,hg⟩ := UnaryLift.lift_reasonable (P := OwnerStage.historyReduct history)
     (OwnerStage.historyTransition history).reasonable L old
   refine ⟨reductMarkingOfLift (OwnerStage.historyReduct history) M,?_⟩
   intro x
