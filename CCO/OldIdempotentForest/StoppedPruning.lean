@@ -175,4 +175,14 @@ theorem Prunes.located_slice {A : Type u} {t : FactorizationTree A} {p : Pruning
   rw [p.pieces_word,h.word] at hs
   exact hs
 
+/-- Expanding each occurrence by its own ORIGINAL atomic payload recovers
+the exact original sequential labels, even if different occurrences have
+the same profile. No replacement presentation is selected. -/
+theorem Prunes.exact_original_payload {A : Type u} {B : Type v}
+    {t : FactorizationTree A} {p : PruningTree A} (h : Prunes t p)
+    (payload : A → List B) :
+    p.pieces.flatMap (fun q => q.word.flatMap payload) = t.value.flatMap payload := by
+  have heq := congrArg (List.flatMap payload) (p.pieces_word.trans h.word)
+  simpa only [piecesWord,List.flatMap_assoc] using heq
+
 end CCO.OldIdempotentForest
