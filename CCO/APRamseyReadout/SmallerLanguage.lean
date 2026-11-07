@@ -1,4 +1,7 @@
 import CCO.APRamseyReadout.SortBlockNormalizer
+import CCO.APRamseyReadout.ProperHiddenAge
+import CCO.APRamseyReadout.CoordinateBridge
+import CCO.TerminalHiddenHN.FiniteOrderExtension
 import CCO.FullCode.Consumer
 import Mathlib.Basic.Finite.Sum
 import Mathlib.Basic.Finite.Prod
@@ -230,5 +233,189 @@ def withinFullCodeEmbeddingEquiv {A : Type a} {B : Type b}
   (withinCodeEmbeddingEquiv priority N O P).symm.trans
     ((withinTargetEmbeddingEquiv priority N O P fixedC fixedD).trans (O.codeEmbeddingEquiv N P))
 
+
+/-- Extend every prescribed within-sort order on the SAME old image,
+then concatenate. Normalizing an arbitrary global extension preserves
+each such within-sort extension and fixes the old block source exactly. -/
+theorem block_order_extension {I : Type u} {X : Type v} {Y : Type w} [Finite Y]
+    (priority : LinearOrder I) (sortX : X → I) (sortY : Y → I) (old : LinearOrder X)
+    (fixed : sortBlockOrder sortX priority old = old) (f : X → Y) (hf : Function.Injective f)
+    (hs : ∀ x, sortY (f x) = sortX x) :
+    ∃ o : LinearOrder Y, sortBlockOrder sortY priority o = o ∧
+      ∀ x y, @LT.lt _ o.toLT (f x) (f y) ↔ @LT.lt _ old.toLT x y := by
+  letI := old
+  obtain ⟨o,ho⟩ := CCO.TerminalHiddenHN.finite_linearOrder_extension f hf
+  refine ⟨sortBlockOrder sortY priority o,sortBlockOrder_idempotent _ _ _,?_⟩
+  intro x y
+  have h := sortBlockOrder_map_iff sortX sortY priority old o f hs ho x y
+  exact h.trans (Iff.of_eq (congrArg (fun a : LinearOrder X => @LT.lt _ a.toLT x y) fixed))
+
 end
+
+section Actual
+open CCO.CloneTupleGeometry
+variable (B : OwnerStage.{u,v,w}) (ht : B.Terminal)
+
+/-- The two alphabets have literally the same symbols and point maps.
+Only definitional presentations of their sort-field functions differ. -/
+def coordinateBlockReduct : Reduct (blockLanguage (CoordinateLanguage B ht)) (OrderedCoordinateLanguage B ht) where
+  sortMap s := s
+  funcMap F := F
+  unaryMap U := U
+  binaryMap R := R
+  input_eq _ := rfl
+  output_eq _ := rfl
+  unary_eq U := PEmpty.elim U
+  left_eq R := by cases R <;> rfl
+  right_eq R := by cases R <;> rfl
+
+def coordinateOrderedReduct : Reduct (OrderedCoordinateLanguage B ht) (blockLanguage (CoordinateLanguage B ht)) where
+  sortMap s := s
+  funcMap F := F
+  unaryMap U := U
+  binaryMap R := R
+  input_eq _ := rfl
+  output_eq _ := rfl
+  unary_eq U := PEmpty.elim U
+  left_eq R := by cases R <;> rfl
+  right_eq R := by cases R <;> rfl
+
+@[simp] theorem coordinateOrdered_block {Y : Type a} (C : Structure (OrderedCoordinateLanguage B ht) Y) :
+    (C.reduct (coordinateBlockReduct B ht)).reduct (coordinateOrderedReduct B ht) = C := by cases C; rfl
+
+@[simp] theorem coordinateBlock_ordered {Y : Type a} (C : Structure (blockLanguage (CoordinateLanguage B ht)) Y) :
+    (C.reduct (coordinateOrderedReduct B ht)).reduct (coordinateBlockReduct B ht) = C := by cases C; rfl
+
+private theorem coordinateOrdered_structure {Y : Type a}
+    (C : CCO.UnarySupport.Structure (Sig B ht) Y) (o : LinearOrder Y) :
+    (blockStructure (CoordinateLanguage B ht) (CoordinateModel B ht C) o).reduct (coordinateOrderedReduct B ht) =
+      @OrderedCoordinateModel B ht Y C o := by
+  refine TerminalHiddenHN.fullStructure_ext
+    (C := (blockStructure (CoordinateLanguage B ht) (CoordinateModel B ht C) o).reduct
+      (coordinateOrderedReduct B ht)) (D := @OrderedCoordinateModel B ht Y C o) rfl rfl ?_ ?_
+  · funext U
+    exact PEmpty.elim U
+  · funext R x y
+    cases R <;> rfl
+
+private theorem coordinateBlock_structure {Y : Type a}
+    (C : CCO.UnarySupport.Structure (Sig B ht) Y) (o : LinearOrder Y) :
+    (@OrderedCoordinateModel B ht Y C o).reduct (coordinateBlockReduct B ht) =
+      blockStructure (CoordinateLanguage B ht) (CoordinateModel B ht C) o :=
+  (congrArg (fun M => M.reduct (coordinateBlockReduct B ht))
+    (coordinateOrdered_structure B ht C o)).symm
+
+abbrev ProperCoordinateAge (D : FiniteHidden.{max u v w,a} (CoordinateLanguage B ht)) : Prop :=
+  ActualAge B ht (TerminalHiddenHN.binaryDecode (Sig B ht)
+    (TerminalHiddenHN.sig_binary (cloneSource B) (cloneHomogeneous B) (cloneSAP B) (fullCovers B ht)) D.model) ∧
+      ∀ x, ProperSort B ht (D.model.sort x)
+
+def ProjectedProperBlockAge (A : FiniteHidden.{max u v w,a} (blockLanguage (CoordinateLanguage B ht))) : Prop :=
+  ProperOrderedAge B ht ⟨A.Carrier,A.model.reduct (coordinateOrderedReduct B ht),A.finite⟩
+
+/-- Exact all-carrier class identity, retaining EVERY proper hidden sort
+and EVERY global order, through the same-symbol record bridge. -/
+theorem allBlockOrders_proper :
+    allBlockOrders (CoordinateLanguage B ht) (ProperCoordinateAge B ht) = ProjectedProperBlockAge.{u,v,w,a} B ht := by
+  funext A
+  apply propext
+  constructor
+  · rintro ⟨C,o,⟨hC,hproper⟩,he⟩
+    let raw := TerminalHiddenHN.binaryDecode (Sig B ht)
+      (TerminalHiddenHN.sig_binary (cloneSource B) (cloneHomogeneous B) (cloneSAP B) (fullCovers B ht)) C
+    refine ⟨⟨raw,o,hC,?_⟩,?_⟩
+    · have hc := TerminalHiddenHN.binaryStructure_binaryDecode (Sig B ht)
+        (TerminalHiddenHN.sig_binary (cloneSource B) (cloneHomogeneous B) (cloneSAP B) (fullCovers B ht)) C
+      exact (congrArg (fun M => M.reduct (coordinateOrderedReduct B ht)) he).trans
+        ((congrArg (fun M => (blockStructure (CoordinateLanguage B ht) M o).reduct (coordinateOrderedReduct B ht)) hc.symm).trans
+          (coordinateOrdered_structure B ht raw o))
+    · intro x
+      have hx := congrArg (fun M => M.sort x) he
+      exact hx.symm ▸ hproper x
+  · rintro ⟨⟨C,o,hC,he⟩,hproper⟩
+    refine ⟨CoordinateModel B ht C,o,⟨?_,?_⟩,?_⟩
+    · exact (TerminalHiddenHN.binaryDecode_binaryStructure (Sig B ht)
+        (TerminalHiddenHN.sig_binary (cloneSource B) (cloneHomogeneous B) (cloneSAP B) (fullCovers B ht)) C).symm ▸ hC
+    · intro x
+      have hx := congrArg (fun M => M.sort x) he
+      exact hx ▸ hproper x
+    · have hh := congrArg (fun M => M.reduct (coordinateBlockReduct B ht)) he
+      exact (coordinateBlock_ordered B ht A.model).symm.trans
+        (hh.trans (coordinateBlock_structure B ht C o))
+
+private theorem projected_proper_ramsey : HasHiddenRamsey (ProjectedProperBlockAge.{u,v,w,a} B ht) := by
+  intro A D hA hD n hn
+  let Ao : FiniteHidden (OrderedCoordinateLanguage B ht) :=
+    ⟨A.Carrier,A.model.reduct (coordinateOrderedReduct B ht),A.finite⟩
+  let Do : FiniteHidden (OrderedCoordinateLanguage B ht) :=
+    ⟨D.Carrier,D.model.reduct (coordinateOrderedReduct B ht),D.finite⟩
+  obtain ⟨E,hE,arrow⟩ := proper_ordered_ramsey B ht Ao Do hA hD n hn
+  refine ⟨⟨E.Carrier,E.model.reduct (coordinateBlockReduct B ht),E.finite⟩,?_,?_⟩
+  · change ProperOrderedAge B ht ⟨E.Carrier,_,E.finite⟩
+    rw [coordinateOrdered_block]
+    exact hE
+  · intro color
+    obtain ⟨g,shade,hg⟩ := arrow (fun f => color (f.reduct (coordinateBlockReduct B ht)))
+    refine ⟨g.reduct (coordinateBlockReduct B ht),shade,?_⟩
+    intro f
+    have he : (g.reduct (coordinateBlockReduct B ht)).comp f =
+        (g.comp (f.reduct (coordinateOrderedReduct B ht))).reduct (coordinateBlockReduct B ht) :=
+      Structure.Embedding.ext (fun _ => rfl)
+    exact (congrArg color he).trans (hg (f.reduct (coordinateOrderedReduct B ht)))
+
+def ProperBlockOrderedAge (priority : LinearOrder (CoordinateLanguage B ht).Sorts)
+    (A : FiniteHidden.{max u v w,a} (OrderedCoordinateLanguage B ht)) : Prop :=
+  ProperOrderedAge B ht A ∧ blockNormalize (CoordinateLanguage B ht) priority
+    (A.model.reduct (coordinateBlockReduct B ht)) = A.model.reduct (coordinateBlockReduct B ht)
+
+/-- Actual C50: every A04 field is supplied by the SAME whole proper
+ordered age. The source output keeps its original ordered alphabet. -/
+theorem proper_block_ordered_ramsey (priority : LinearOrder (CoordinateLanguage B ht).Sorts) :
+    HasHiddenRamsey (ProperBlockOrderedAge.{u,v,w,a} B ht priority) := by
+  have hh : FullHereditary (blockLanguage (CoordinateLanguage B ht))
+      (allBlockOrders (CoordinateLanguage B ht) (ProperCoordinateAge.{u,v,w,a} B ht)) := by
+    rw [allBlockOrders_proper B ht]
+    intro A D hD e
+    exact proper_ordered_of_embedding B ht hD (e.reduct (coordinateOrderedReduct B ht))
+  have hr : HasHiddenRamsey (allBlockOrders (CoordinateLanguage B ht) (ProperCoordinateAge.{u,v,w,a} B ht)) := by
+    rw [allBlockOrders_proper B ht]
+    exact projected_proper_ramsey B ht
+  have out := (sort_block_normalization (CoordinateLanguage B ht) priority
+    (ProperCoordinateAge.{u,v,w,a} B ht) hh hr).2
+  intro A D hA hD n hn
+  let Ab : FiniteHidden (blockLanguage (CoordinateLanguage B ht)) :=
+    ⟨A.Carrier,A.model.reduct (coordinateBlockReduct B ht),A.finite⟩
+  let Db : FiniteHidden (blockLanguage (CoordinateLanguage B ht)) :=
+    ⟨D.Carrier,D.model.reduct (coordinateBlockReduct B ht),D.finite⟩
+  have hAb : blockFixedAge (CoordinateLanguage B ht) priority (ProperCoordinateAge B ht) Ab := by
+    constructor
+    · rw [allBlockOrders_proper B ht]
+      change ProperOrderedAge B ht ⟨A.Carrier,_,A.finite⟩
+      rw [coordinateOrdered_block]
+      exact hA.1
+    · exact hA.2
+  have hDb : blockFixedAge (CoordinateLanguage B ht) priority (ProperCoordinateAge B ht) Db := by
+    constructor
+    · rw [allBlockOrders_proper B ht]
+      change ProperOrderedAge B ht ⟨D.Carrier,_,D.finite⟩
+      rw [coordinateOrdered_block]
+      exact hD.1
+    · exact hD.2
+  obtain ⟨E,hE,arrow⟩ := out Ab Db hAb hDb n hn
+  refine ⟨⟨E.Carrier,E.model.reduct (coordinateOrderedReduct B ht),E.finite⟩,?_,?_⟩
+  · constructor
+    · have hp := hE.1
+      rw [allBlockOrders_proper B ht] at hp
+      exact hp
+    · exact hE.2
+  · intro color
+    obtain ⟨g,shade,hg⟩ := arrow (fun f => color (f.reduct (coordinateOrderedReduct B ht)))
+    refine ⟨g.reduct (coordinateOrderedReduct B ht),shade,?_⟩
+    intro f
+    have he : (g.reduct (coordinateOrderedReduct B ht)).comp f =
+        (g.comp (f.reduct (coordinateBlockReduct B ht))).reduct (coordinateOrderedReduct B ht) :=
+      Structure.Embedding.ext (fun _ => rfl)
+    exact (congrArg color he).trans (hg (f.reduct (coordinateBlockReduct B ht)))
+
+end Actual
 end CCO.APRamseyReadout
