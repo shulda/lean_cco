@@ -1,3 +1,109 @@
+# B056 current verified checkpoint — 7 November 2026
+
+**IN_PROGRESS. No whole-contract submission, approval or acceptance.**
+
+Current native implementation `9b55ad5beaab04144b007b948d90d0f64c7e9b6a`, tree `4620eb369ff063586e49c6a525180dbb833af53e`.
+The following report-only commit changes no Lean source. Previous private
+checkpoint4c2f653a was published exactly as public
+`a5db0ae4abdcd820b8db63cd224bf336533cc6fd`; actual CI42340178567 succeeded.
+That success does not certify this new code. Original branch/claim/provenance
+are preserved. Root alone publishes and updates PR82/STATE. The current code
+base is accepted main8d009; source, accepted APIs, manifest and Lean4.34.1
+pins are unchanged.
+
+## New actual proofs
+
+Eight new modules (all direct CCO.lean imports) add:
+
+- `SourceExactMenu`: all actual old factor-record profiles are deduplicated
+  over the finite endpoint palette. Positive words are chosen only AFTER the
+  earlier concrete common atom. The FULL record menu has an actual finite
+  exact presentation, with at most2^|old endpoint atoms| words. Canonical
+  theta menu equality, vertex bound and positive word-length bound are
+  discharged for the actual finite factor.
+- `CompletePairReadback`: for EVERY atom in the full source menu and EVERY
+  real pair of that atom, each ordered source term pair has one actual
+  original motion to its target interpretation. Consequently every complete
+  named binary/equality/unary-graph comparison is preserved AND reflected.
+- `JoinedClosedImage`: applying that result to identity root terms yields
+  ONE original motion on BOTH roots. Postcomposition of the genuine local
+  source embedding supplies a full DiagramIso onto its induced CLOSED
+  target image, reflecting domains, functions, relations and equality.
+  For the actual pair support its image is EXACTLY the closure of the two
+  canonical target-root readings. This is an actual isomorphism, not a
+  supplied reflection provider. See the source-gate limitation below.
+- `SourceRootSignature`: constructs actual direct full-menu and positive
+  branch relations on ALL old real pairs. It prepends one shortened ACTUAL
+  mandatory source record to fixedTheta, so even an empty canonical Top
+  presentation cannot accidentally add logical equality. Every branch is
+  literal positive diversity; direct=intersection is proved on all real
+  pairs. ALL represented proper FULL functional kernels' direct/branch
+  equations and ALL named continuations hold by actual B052 quotient maps.
+  The added source branch costs at most(states−1) interior vertices beyond
+  the fixed canonical theta budget. OLD-anchor location is still open.
+- `PrivateCycleClassification`: actual cycle-edge branch certificates,
+  whole traversals, changes only at shared OLD roots, injective old root
+  occurrences, and single-theta/traversal classification. Direct-edge and
+  root-only cycles are covered with no completion or semantic hypotheses.
+- `G1HiddenModel`, `G1HiddenSAP`, `G1HiddenOrbitals`: the TRUE p/q/r old
+  block/bit/clone source with its coarse block quotient/projection and all
+  actual mixed/quotient orbitals. Arbitrary finite closed hidden maps extend,
+  including orphan quotient parameters. Infinite full-Aut off-base orbits
+  over EVERY finite closed base give genuine hereditary AgeSAP. Every
+  distinct hidden pair has a named relation and each name is ONE actual
+  original wreath orbital. No empty-relation toy is substituted.
+
+Actual authors remain `/root/b056_continue` (exact presentation, readback,
+closed image), `/root/b056_continue/g1_hidden_raw` (G1 hidden instance and
+source root-signature package), `/root/b056_continue/private_cycle_finish`
+(private-cycle certificate), and `root` (all direct root imports/publishing).
+Earlier authors remain recorded. None of these authors supplies independent
+review. One private B056 Lake builder owns physical private output trees.
+
+## Exact checks
+
+Full root build PASSED4,984 jobs. Current-source guard checked2,310 CCO
+modules/olean parts; exact EPPA guard269; Ramsey guard106. The pinned
+transitive audit checked34,870 declarations, used only
+propext/Classical.choice/Quot.sound, and reported ZERO violations.
+B056 bounded controls, frozen module validation and diff whitespace check
+passed. These controls do not prove infinite source claims. Actual source
+logs are B056-second-fullroot.log and B056-second-audit.json in the current
+workspace. New public exact-head CI/audit is still required.
+
+## Precise open obligations (including independent scope finding)
+
+1. The published helper predicate `JoinedAdmissible` quantifies ALL closed
+   irreducible substructures. That is STRONGER than A03's bounded local tests
+   on the supports actually used. Intermediate wrappers consuming this
+   predicate DO NOT certify the final source scope. Final source exports must
+   instead discharge the ACTUAL two-root support bound from unary
+   admissibility and use only that support's bounded complete-pattern test.
+   The one-factor embedding/motion/isomorphism proofs already require only
+   the chosen actual local factor; the exact bounded source packaging is next.
+2. Root-signature consistency and all-kernel quantifiers are proved, but
+   OLD-anchor support is NOT: for a proper root kernel J0, establish that
+   every functional signature kernel lies above J0 (and dually at target),
+   so its class is an actual named upward term of the OLD endpoint. Discharge
+   the resulting language-only anchor bound. Actual-real equations alone
+   do not locate those anchors in the old partial source.
+3. Complete the separate stronger G1 C44/C45 word classification (r-free
+   exact parity singleton; any-r actual witness) and exact finite-index cut
+   presentation. The earlier FG1/positive/FULL RAW obstruction is already
+   proved. Current helper draft G1WordClassification.lean is NOT in this
+   compiled/public checkpoint and is not claimed verified here.
+4. Finish the full61-claim source-to-Lean map, source result packaging and
+   separate higher-support scope wrapper. Reconcile any remaining C19/direct
+   duplicate-branch qualification with the explicit pure graph interface.
+   No global hidden completion or higher-tuple reflection follows here.
+5. Complete final contract-wide controls, actual fresh nonauthor whole-source
+   review for the exact final SHA, exact CI, normal sole-lock integration and
+   green resulting main before acceptance. No source/API exception is
+   established; the source-gate quantifier correction is routine exact
+   implementation, not authority to strengthen the approved source premise.
+
+## Earlier verified checkpoints (historical evidence)
+
 # B056 current author checkpoint — 7 November 2026
 
 **IN_PROGRESS. Two new source obligations are proved locally; the whole B056
