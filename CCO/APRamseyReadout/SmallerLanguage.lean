@@ -1,5 +1,8 @@
 import CCO.APRamseyReadout.SortBlockNormalizer
 import CCO.FullCode.Consumer
+import Mathlib.Basic.Finite.Sum
+import Mathlib.Basic.Finite.Prod
+import Mathlib.Basic.Finite.Sigma
 
 /-! Block codes retain within-HIDDEN-target comparisons. Different
 visible tags are irrelevant to this criterion. The omitted comparisons
@@ -120,6 +123,112 @@ def withinTargetEmbeddingEquiv {A : Type a} {B : Type b}
   invFun := WithinTargetEmbedding.ofFull
   left_inv _ := WithinTargetEmbedding.ext (fun _ => rfl)
   right_inv _ := Object.Embedding.ext (fun _ => rfl)
+
+
+abbrev WithinPresentationPair := {pq : Presentation N S × Presentation N S // pq.1.2.1 = pq.2.2.1}
+
+/-- A literal finite relational code, retaining non-order tests and
+ONLY comparisons whose presentation OUTPUT sorts agree. -/
+def withinCodeLanguage : Language.{u} where
+  Sorts := PUnit
+  Func := PEmpty
+  Unary := (codeLanguage N S).Unary
+  Binary := (Presentation N S × Presentation N S) ⊕
+    (L.Binary × Presentation N S × Presentation N S) ⊕ WithinPresentationPair N (S := S)
+  input F := PEmpty.elim F
+  output F := PEmpty.elim F
+  unarySort _ := PUnit.unit
+  leftSort _ := PUnit.unit
+  rightSort _ := PUnit.unit
+  finiteSort := inferInstance
+  finiteFunc := inferInstance
+  finiteUnary := inferInstance
+  finiteBinary := inferInstance
+
+def withinCodeStructure {A : Type a} (O : Object C S A) : Structure (withinCodeLanguage N (S := S)) A where
+  sort _ := PUnit.unit
+  func F := PEmpty.elim F
+  functional F := PEmpty.elim F
+  func_sorted F := PEmpty.elim F
+  unary := (O.codeStructure N).unary
+  unary_sorted _ _ _ := rfl
+  binary R x y := match R with
+    | .inl pq => EqualityCode N (O.root x) (O.root y) pq.1 pq.2
+    | .inr (.inl rpq) => BinaryCode N (.inl rpq.1) (O.root x) (O.root y) rpq.2.1 rpq.2.2
+    | .inr (.inr pq) => BinaryCode N (.inr (pq.val.1.2.1,pq.val.1.2.1))
+      (O.root x) (O.root y) pq.val.1 pq.val.2
+  binary_sorted _ _ _ _ := ⟨rfl,rfl⟩
+
+namespace WithinTargetEmbedding
+variable {N} {A : Type a} {B : Type b} {O : Object C S A} {P : Object D S B}
+
+def asCodeEmbedding (f : WithinTargetEmbedding N O P) :
+    Structure.Embedding (withinCodeStructure N O) (withinCodeStructure N P) where
+  point := f.point
+  injective := f.injective
+  sort_eq _ := rfl
+  map_func F := PEmpty.elim F
+  reflect_func F := PEmpty.elim F
+  unary_iff U x := by
+    cases U with
+    | inl tag =>
+      change (P.root (f.point x)).tag = tag ↔ (O.root x).tag = tag
+      rw [f.tag_eq]
+    | inr Up => exact f.unary_iff Up.1 x Up.2
+  binary_iff R x y := by
+    cases R with
+    | inl pq => exact f.equality_iff x y pq.1 pq.2
+    | inr R =>
+      cases R with
+      | inl rpq => exact f.old_binary_iff rpq.1 x y rpq.2.1 rpq.2.2
+      | inr pq => exact f.within_iff pq.val.1.2.1 x y pq.val.1 pq.val.2
+
+end WithinTargetEmbedding
+
+def withinEmbeddingOfCode {A : Type a} {B : Type b} {O : Object C S A} {P : Object D S B}
+    (f : Structure.Embedding (withinCodeStructure N O) (withinCodeStructure N P)) :
+    WithinTargetEmbedding N O P where
+  point := f.point
+  injective := f.injective
+  tag_eq x := (f.unary_iff (.inl (O.root x).tag) x).mpr rfl
+  equality_iff x y p q := f.binary_iff (.inl (p,q)) x y
+  unary_iff U x p := f.unary_iff (.inr (U,p)) x
+  old_binary_iff R x y p q := f.binary_iff (.inr (.inl (R,p,q))) x y
+  within_iff i x y p q := by
+    by_cases hp : p.2.1 = i
+    · by_cases hq : q.2.1 = i
+      · let pair : WithinPresentationPair N (S := S) := ⟨(p,q),hp.trans hq.symm⟩
+        have hh := f.binary_iff (.inr (.inr pair)) x y
+        change BinaryCode N (.inr (p.2.1,p.2.1)) (P.root (f.point x)) (P.root (f.point y)) p q ↔
+          BinaryCode N (.inr (p.2.1,p.2.1)) (O.root x) (O.root y) p q at hh
+        simpa only [hp] using hh
+      · constructor
+        · intro h
+          exact False.elim (hq (blockOrderCode_sorts N _ _ p q i i h).2)
+        · intro h
+          exact False.elim (hq (blockOrderCode_sorts N _ _ p q i i h).2)
+    · constructor
+      · intro h
+        exact False.elim (hp (blockOrderCode_sorts N _ _ p q i i h).1)
+      · intro h
+        exact False.elim (hp (blockOrderCode_sorts N _ _ p q i i h).1)
+
+def withinCodeEmbeddingEquiv {A : Type a} {B : Type b} (O : Object C S A) (P : Object D S B) :
+    WithinTargetEmbedding N O P ≃ Structure.Embedding (withinCodeStructure N O) (withinCodeStructure N P) where
+  toFun := WithinTargetEmbedding.asCodeEmbedding
+  invFun := withinEmbeddingOfCode priority N
+  left_inv _ := WithinTargetEmbedding.ext (fun _ => rfl)
+  right_inv _ := Structure.Embedding.ext (fun _ => rfl)
+
+/-- The finite same-target language and the full block language have
+EXACTLY the same induced embedding maps on fixed block objects. -/
+def withinFullCodeEmbeddingEquiv {A : Type a} {B : Type b}
+    (O : Object C S A) (P : Object D S B)
+    (fixedC : blockNormalize L priority C = C) (fixedD : blockNormalize L priority D = D) :
+    Structure.Embedding (withinCodeStructure N O) (withinCodeStructure N P) ≃
+      Structure.Embedding (O.codeStructure N) (P.codeStructure N) :=
+  (withinCodeEmbeddingEquiv priority N O P).symm.trans
+    ((withinTargetEmbeddingEquiv priority N O P fixedC fixedD).trans (O.codeEmbeddingEquiv N P))
 
 end
 end CCO.APRamseyReadout
