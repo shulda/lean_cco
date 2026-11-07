@@ -1,6 +1,7 @@
 import CCO.TerminalHiddenHN.RealRoots
 import CCO.TerminalHiddenHN.OldTypeCodes
 import CCO.TerminalHiddenHN.GenericCofinality
+import CCO.TerminalHiddenHN.OrderedAge
 
 /-! Readout orders live on the literal original real-generated closure.
 The old induced map has a unique extension to that closure, obtained from
@@ -188,6 +189,117 @@ theorem readout_precompact (H : CCO.HomogeneousSource S G) (A : CCO.FiniteInduce
       apply LinearOrder.ext_lt
       intro x y
       exact iff_of_eq (congrFun (congrFun h x) y)
+
+
+def oldEmbeddingId (A : CCO.FiniteInduced (X := X)) : CCO.InducedEmbedding S A A :=
+  ⟨Function.Embedding.refl _,fun _ => rfl,fun _ _ => rfl⟩
+
+def oldEmbeddingComp {A B C : CCO.FiniteInduced (X := X)}
+    (g : CCO.InducedEmbedding S B C) (f : CCO.InducedEmbedding S A B) :
+    CCO.InducedEmbedding S A C where
+  toEmbedding := ⟨g.toEmbedding ∘ f.toEmbedding,g.toEmbedding.injective.comp f.toEmbedding.injective⟩
+  preserves_sort x := (g.preserves_sort _).trans (f.preserves_sort x)
+  preserves_colours x y := (f.preserves_colours x y).trans (g.preserves_colours _ _)
+
+@[simp] theorem closureMap_id (H : CCO.HomogeneousSource S G)
+    (A : CCO.FiniteInduced (X := X)) (x : D.realClosure A) :
+    D.closureMap H (oldEmbeddingId A) x = x := by
+  let f : D.ClosureLift H (oldEmbeddingId A) :=
+    ⟨Structure.Piece.Embedding.identity _,fun _ => rfl⟩
+  exact Subtype.ext (congrArg (fun h => h.embedding.point x)
+    (D.closureLift_unique H (D.closureLift H _) f))
+
+@[simp] theorem closureMap_comp (H : CCO.HomogeneousSource S G)
+    {A B C : CCO.FiniteInduced (X := X)}
+    (g : CCO.InducedEmbedding S B C) (f : CCO.InducedEmbedding S A B) (x : D.realClosure A) :
+    D.closureMap H (oldEmbeddingComp g f) x =
+      D.closureMap H g (D.closureMap H f x) := by
+  let fg : D.ClosureLift H (oldEmbeddingComp g f) := {
+    embedding := (D.closureLift H g).embedding.comp (D.closureLift H f).embedding
+    root_eq := by
+      intro a
+      change (D.closureLift H g).embedding.point (D.closureMap H f (D.closurePoint a)) = _
+      rw [D.closureMap_root]
+      exact (D.closureLift H g).root_eq _ }
+  exact Subtype.ext (congrArg (fun h => h.embedding.point x)
+    (D.closureLift_unique H (D.closureLift H _) fg))
+
+namespace ReadoutEmbedding
+variable {D}
+
+def id (H : CCO.HomogeneousSource S G) {A : CCO.FiniteInduced (X := X)} (a : D.ReadoutOn A) :
+    D.ReadoutEmbedding H a a :=
+  ⟨oldEmbeddingId A,by intro x y; rw [D.closureMap_id,D.closureMap_id]⟩
+
+def comp (H : CCO.HomogeneousSource S G) {A B C : CCO.FiniteInduced (X := X)}
+    {a : D.ReadoutOn A} {b : D.ReadoutOn B} {c : D.ReadoutOn C}
+    (g : D.ReadoutEmbedding H b c) (f : D.ReadoutEmbedding H a b) :
+    D.ReadoutEmbedding H a c :=
+  ⟨oldEmbeddingComp g.old f.old,by
+    intro x y
+    rw [D.closureMap_comp,D.closureMap_comp]
+    exact (g.lt_iff _ _).trans (f.lt_iff x y)⟩
+
+@[ext] theorem ext (H : CCO.HomogeneousSource S G)
+    {A B : CCO.FiniteInduced (X := X)} {a : D.ReadoutOn A} {b : D.ReadoutOn B}
+    {f g : D.ReadoutEmbedding H a b} (h : f.old = g.old) : f = g := by
+  cases f; cases g; cases h; rfl
+
+end ReadoutEmbedding
+
+/-- The underlying partial model retains every original cylinder and
+function domain on the literal closure; only the order is added. -/
+def readoutPartialModel (A : CCO.FiniteInduced (X := X)) :
+    CCO.UnarySupport.Structure D.signature (D.realClosure A) :=
+  D.partialModel.induce (D.realClosure A) ((D.codeModel_closed_iff _).mpr (P.closure_closed _))
+
+def readoutModel {A : CCO.FiniteInduced (X := X)} (a : D.ReadoutOn A) :
+    CCO.FullCode.Structure D.orderedLanguage (D.realClosure A) :=
+  @CCO.TerminalHiddenHN.orderedStructure D.signature D.binary _ (D.readoutPartialModel A) a.order
+
+private theorem code_func_iff (F : U.Func) (x y : V) :
+    y ∈ D.partialModel.func F x ↔ P.sort x = U.input F ∧ y = P.func F x := by
+  classical
+  letI := D.finiteSorts
+  letI := D.finiteFuncs
+  letI := D.finiteRels
+  change y ∈ (if P.sort x = U.input F then {P.func F x} else ∅) ↔ _
+  by_cases hs : P.sort x = U.input F <;> simp [hs]
+
+/-- Literal inducedness includes reflection of the whole partial domain. -/
+def closurePartialEmbedding (H : CCO.HomogeneousSource S G)
+    {A B : CCO.FiniteInduced (X := X)} (e : CCO.InducedEmbedding S A B) :
+    CCO.UnarySupport.Structure.Embedding (D.readoutPartialModel A) (D.readoutPartialModel B) where
+  point := D.closureMap H e
+  injective := (D.closureMap H e).injective
+  sort_eq x := (D.closureLift H e).embedding.sort_eq x
+  map_func F x y hy := by
+    have hh := (D.code_func_iff F x.val y.val).mp hy
+    apply (D.code_func_iff F _ _).mpr
+    refine ⟨((D.closureLift H e).embedding.sort_eq x).trans hh.1,?_⟩
+    have hm := (D.closureLift H e).embedding.func_eq F x
+    have he : y = (D.realClosurePiece H A).func F x := Subtype.ext hh.2
+    exact (congrArg (D.closureLift H e).embedding.point he).trans hm
+  reflect_func F x y hy := by
+    have hh := (D.code_func_iff F _ _).mp hy
+    let z := (D.realClosurePiece H A).func F x
+    refine ⟨z,(D.code_func_iff F x.val z.val).mpr ⟨?_,rfl⟩,?_⟩
+    · exact ((D.closureLift H e).embedding.sort_eq x).symm.trans hh.1
+    · apply Subtype.ext
+      exact ((D.closureLift H e).embedding.func_eq F x).trans hh.2.symm
+  map_rel R xs h := ((D.closureLift H e).embedding.rel_iff R xs).mpr h
+  reflect_rel R xs h := ((D.closureLift H e).embedding.rel_iff R xs).mp h
+
+/-- The ordered hidden extension uses exactly the old map's unique
+closure extension and the same order comparisons. -/
+def ReadoutEmbedding.toHidden (H : CCO.HomogeneousSource S G)
+    {A B : CCO.FiniteInduced (X := X)} {a : D.ReadoutOn A} {b : D.ReadoutOn B}
+    (e : D.ReadoutEmbedding H a b) :
+    CCO.FullCode.Structure.Embedding (D.readoutModel a) (D.readoutModel b) := by
+  letI : LinearOrder (D.realClosure A) := a.order
+  letI : LinearOrder (D.realClosure B) := b.order
+  exact CCO.TerminalHiddenHN.orderedEmbedding D.signature D.binary
+    ⟨D.closurePartialEmbedding H e.old,e.lt_iff⟩
 
 end
 end CCO.TerminalHiddenHN.RealInterpretation
