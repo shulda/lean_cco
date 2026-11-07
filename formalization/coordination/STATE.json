@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 876,
+  "revision": 877,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -5164,7 +5164,7 @@
       }
     },
     "B058": {
-      "state": "SUBMITTED",
+      "state": "REVIEWING",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b057_idempotents",
@@ -5206,7 +5206,19 @@
         "conclusion": "success",
         "axiom_audit": "allowlist"
       },
-      "report_path": "formalization/coordination/submissions/B058.md"
+      "report_path": "formalization/coordination/submissions/B058.md",
+      "review": {
+        "project_id": 3,
+        "actor_id": "work_control_20261107",
+        "head_sha": "4733965898e0eddff428e54a8a76120a377371ce",
+        "approved": false,
+        "independence": {
+          "identity": "/root/recovery_control",
+          "non_author": true,
+          "summary": "I am the actual preserved registered nonauthor /root/recovery_control, not a renamed B058 author. I implemented, designed and edited none of its source or proof repairs and directed no implementation. I personally read all 56 modules/8162 lines, frozen source16/notes/contracts/all74claims, actual providers and B059 consumer; checked all immutable final bytes, standalone ANY-A C40 and actual uniform C58. My own published report SHA256687685972264d39f610c1cd2ee0c1c857b1c51ec3d91632a5cbe1ca8883a0af5 is verbatim. Final public4733965898 differs only by two verified docs from my exact source freeze; I personally inspected exact CI42355981140/job128354053058 SUCCESS and synthetic full-tree equality. No author report or supplementary reader substitutes for my whole review.",
+          "report_path": "formalization/coordination/reviews/B058-20261107.md"
+        }
+      }
     },
     "B059": {
       "state": "AVAILABLE",
@@ -26887,6 +26899,24 @@
           "axiom_audit": "allowlist"
         },
         "report_path": "formalization/coordination/submissions/B058.md"
+      }
+    },
+    {
+      "revision": 877,
+      "project_id": 3,
+      "actor_id": "work_control_20261107",
+      "event": "review",
+      "package_id": "B058",
+      "details": {
+        "actor_id": "work_control_20261107",
+        "package_id": "B058",
+        "head_sha": "4733965898e0eddff428e54a8a76120a377371ce",
+        "independence": {
+          "identity": "/root/recovery_control",
+          "non_author": true,
+          "summary": "I am the actual preserved registered nonauthor /root/recovery_control, not a renamed B058 author. I implemented, designed and edited none of its source or proof repairs and directed no implementation. I personally read all 56 modules/8162 lines, frozen source16/notes/contracts/all74claims, actual providers and B059 consumer; checked all immutable final bytes, standalone ANY-A C40 and actual uniform C58. My own published report SHA256687685972264d39f610c1cd2ee0c1c857b1c51ec3d91632a5cbe1ca8883a0af5 is verbatim. Final public4733965898 differs only by two verified docs from my exact source freeze; I personally inspected exact CI42355981140/job128354053058 SUCCESS and synthetic full-tree equality. No author report or supplementary reader substitutes for my whole review.",
+          "report_path": "formalization/coordination/reviews/B058-20261107.md"
+        }
       }
     }
   ],
