@@ -257,7 +257,7 @@ def readoutModel {A : CCO.FiniteInduced (X := X)} (a : D.ReadoutOn A) :
     CCO.FullCode.Structure D.orderedLanguage (D.realClosure A) :=
   @CCO.TerminalHiddenHN.orderedStructure D.signature D.binary _ (D.readoutPartialModel A) a.order
 
-private theorem code_func_iff (F : U.Func) (x y : V) :
+theorem code_func_iff (F : U.Func) (x y : V) :
     y ∈ D.partialModel.func F x ↔ P.sort x = U.input F ∧ y = P.func F x := by
   classical
   letI := D.finiteSorts
