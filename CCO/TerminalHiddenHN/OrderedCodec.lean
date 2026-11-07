@@ -45,6 +45,31 @@ def orderedStructure {V : Type v} (C : CCO.UnarySupport.Structure L V) [LinearOr
     | inl R => exact (binaryStructure L hbin C).binary_sorted R x y h
     | inr p => exact ⟨h.1,h.2.1⟩
 
+def orderedBinaryReduct {V : Type v}
+    (M : CCO.FullCode.Structure (orderedLanguage L hbin) V) :
+    CCO.FullCode.Structure (binaryLanguage L hbin) V where
+  sort := M.sort
+  func := M.func
+  functional := M.functional
+  func_sorted := M.func_sorted
+  unary := PEmpty.elim
+  unary_sorted U := PEmpty.elim U
+  binary R := M.binary (.inl R)
+  binary_sorted R := M.binary_sorted (.inl R)
+
+def orderedReductEmbedding {V : Type v} {W : Type w}
+    {M : CCO.FullCode.Structure (orderedLanguage L hbin) V}
+    {N : CCO.FullCode.Structure (orderedLanguage L hbin) W}
+    (e : CCO.FullCode.Structure.Embedding M N) :
+    CCO.FullCode.Structure.Embedding (orderedBinaryReduct L hbin M) (orderedBinaryReduct L hbin N) where
+  point := e.point
+  injective := e.injective
+  sort_eq := e.sort_eq
+  map_func := e.map_func
+  reflect_func := e.reflect_func
+  unary_iff U := PEmpty.elim U
+  binary_iff R := e.binary_iff (.inl R)
+
 /-- Forget only the order comparisons; every original unary domain and
 binary cylinder remains on the SAME point map. -/
 def orderedBinaryEmbedding {V : Type v} {W : Type w}
