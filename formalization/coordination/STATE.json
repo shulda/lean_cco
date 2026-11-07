@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 840,
+  "revision": 841,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -5380,7 +5380,41 @@
       "owner_project_id": null
     }
   },
-  "integration_lock": null,
+  "integration_lock": {
+    "kind": "infrastructure",
+    "actor_id": "root",
+    "head_sha": "7fc55dfa9e41d79635a81ed3d4e5fba024739a54",
+    "base_main_sha": "a8f358af94ed07d5bf909a0f6e199aa450c3ae75",
+    "pr_number": 78,
+    "review": {
+      "actor_id": "work_control_20261107",
+      "head_sha": "7fc55dfa9e41d79635a81ed3d4e5fba024739a54",
+      "approved": true,
+      "summary": "Actual registered fresh nonauthor personally read all14proofmodules, actual original/ported source+license/patch, facade+consumer, allsource/cache/compiled/audit/workflow/exportrestore tools/tests and reused helpers. Direct15upstreamblob verification and exactpatchreplay PASS; unchanged original hypotheses/yield/IsRamsey/3cardS-1.203regressions PASS. Finaldelta ONLY currentgreenmain recovery and ownreport. ExactCI42340074510/job128305577753 passes4973jobs2285sources34190CCO+791providerstandard3audits allguards; syntheticfulltreeequals head. B058typedadapter stays open.",
+      "independence": {
+        "identity": "/root/recovery_control",
+        "non_author": true,
+        "summary": "Actual fresh review-only reader personally read complete source/tooling/provenance/contracts/consumer and actual CI. It authored, designed, directed, implemented and repaired none of upstream provider, compatibility port, facade, cache/audit/export/restore tooling, tests or implementation reports; only its own independent read-only review evidence.",
+        "report_path": "formalization/coordination/reviews/factorization-forest-20261107.md"
+      }
+    },
+    "ci": {
+      "run_id": 42340074510,
+      "head_sha": "7fc55dfa9e41d79635a81ed3d4e5fba024739a54",
+      "conclusion": "success",
+      "axiom_audit": "allowlist"
+    },
+    "author_actor_ids": [
+      "root",
+      "/root/b053_resume",
+      "/root/b053_resume/forest_inventory",
+      "/root/forest_ci",
+      "upstream:ReemMelamed/algebraic-automata@0acb244aaa913c32eeeff48e939cb5df469a3f70"
+    ],
+    "original_author_project_ids": [
+      3
+    ]
+  },
   "history": [
     {
       "revision": 1,
@@ -26067,6 +26101,48 @@
           "registry_sha256": "80d48ab42c39147ee3099a1a983708c7a5cee9bd9521144c989a4c5449d76499",
           "policy_sha256": "c83a836d560f54eeabd49b2c8b98872ff65dd082679008d4fd6bb5d71dd0e1d4"
         }
+      }
+    },
+    {
+      "revision": 841,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "start_infrastructure",
+      "package_id": null,
+      "details": {
+        "pr_number": 78,
+        "head_sha": "7fc55dfa9e41d79635a81ed3d4e5fba024739a54",
+        "base_main_sha": "a8f358af94ed07d5bf909a0f6e199aa450c3ae75",
+        "head_contains_main": true,
+        "ci": {
+          "run_id": 42340074510,
+          "head_sha": "7fc55dfa9e41d79635a81ed3d4e5fba024739a54",
+          "conclusion": "success",
+          "axiom_audit": "allowlist"
+        },
+        "author_actor_ids": [
+          "root",
+          "/root/b053_resume",
+          "/root/b053_resume/forest_inventory",
+          "/root/forest_ci",
+          "upstream:ReemMelamed/algebraic-automata@0acb244aaa913c32eeeff48e939cb5df469a3f70"
+        ],
+        "original_author_project_ids": [
+          3
+        ],
+        "review": {
+          "actor_id": "work_control_20261107",
+          "head_sha": "7fc55dfa9e41d79635a81ed3d4e5fba024739a54",
+          "approved": true,
+          "summary": "Actual registered fresh nonauthor personally read all14proofmodules, actual original/ported source+license/patch, facade+consumer, allsource/cache/compiled/audit/workflow/exportrestore tools/tests and reused helpers. Direct15upstreamblob verification and exactpatchreplay PASS; unchanged original hypotheses/yield/IsRamsey/3cardS-1.203regressions PASS. Finaldelta ONLY currentgreenmain recovery and ownreport. ExactCI42340074510/job128305577753 passes4973jobs2285sources34190CCO+791providerstandard3audits allguards; syntheticfulltreeequals head. B058typedadapter stays open.",
+          "independence": {
+            "identity": "/root/recovery_control",
+            "non_author": true,
+            "summary": "Actual fresh review-only reader personally read complete source/tooling/provenance/contracts/consumer and actual CI. It authored, designed, directed, implemented and repaired none of upstream provider, compatibility port, facade, cache/audit/export/restore tooling, tests or implementation reports; only its own independent read-only review evidence.",
+            "report_path": "formalization/coordination/reviews/factorization-forest-20261107.md"
+          }
+        },
+        "actor_id": "root"
       }
     }
   ],
