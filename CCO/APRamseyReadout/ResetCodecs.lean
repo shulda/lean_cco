@@ -404,5 +404,67 @@ theorem fullCode_sort_restriction_ramsey (I : Set L.Sorts)
   exact CCO.ResetOrder.Unary.restriction_ramsey (L := resetUnarySignature L) (I := I) hI (resetUnaryAge_hereditary L hK)
     (resetUnaryRamsey_of_fullCode L ramsey)
 
+
+/-- Positive finite colours are reindexed explicitly at the generic
+normalizer boundary, whose convention is `Fin (k+1)`. -/
+theorem resetRamsey_of_fullCode {K : FiniteHidden.{u,v} L → Prop} (ramsey : HasHiddenRamsey K) :
+    CCO.ResetOrder.Generic.Ramsey (resetLanguage L) (resetAge L K) := by
+  intro A B hA hB n
+  obtain ⟨C,hC,arrow⟩ := ramsey (resetDecodeObject L A) (resetDecodeObject L B) hA hB
+    (n+1) (Nat.zero_lt_succ n)
+  refine ⟨resetObject L C,hC,?_⟩
+  intro color
+  obtain ⟨g,shade,hg⟩ := arrow (fun f => color (resetEmbeddingOfDecode L f))
+  refine ⟨resetEmbeddingOfDecode L g,shade,?_⟩
+  intro f
+  have he : (resetEmbeddingOfDecode L (C := B.data) (D := (resetObject L C).data) g).compose f =
+      resetEmbeddingOfDecode L (C := A.data) (D := (resetObject L C).data)
+        (g.comp (resetDecodeEmbedding L f)) := by
+    apply CCO.ResetOrder.Generic.Structure.Embedding.ext
+    funext x
+    exact (congrFun (resetEmbeddingOfDecode_point L (C := B.data) (D := (resetObject L C).data) g) (f.point x)).trans
+      (congrFun (resetEmbeddingOfDecode_point L (C := A.data) (D := (resetObject L C).data)
+        (g.comp (resetDecodeEmbedding L f))) x).symm
+  exact (congrArg color he).trans (hg (resetDecodeEmbedding L f))
+
+theorem fullCodeRamsey_of_reset {K : FiniteHidden.{u,v} L → Prop}
+    (ramsey : CCO.ResetOrder.Generic.Ramsey (resetLanguage L) (resetAge L K)) : HasHiddenRamsey K := by
+  intro A B hA hB n hn
+  obtain ⟨m,hm⟩ := Nat.exists_eq_succ_of_ne_zero (ne_of_gt hn)
+  subst n
+  obtain ⟨C,hC,arrow⟩ := ramsey (resetObject L A) (resetObject L B) hA hB m
+  refine ⟨resetDecodeObject L C,hC,?_⟩
+  intro color
+  obtain ⟨g,shade,hg⟩ := arrow (fun f => color (resetDecodeEmbedding L f))
+  refine ⟨resetDecodeEmbedding L g,shade,?_⟩
+  intro f
+  have he : (resetDecodeEmbedding L g).comp f =
+      resetDecodeEmbedding L (g.compose (resetEmbedding L f)) := Structure.Embedding.ext (fun _ => rfl)
+  exact (congrArg color he).trans (hg (resetEmbedding L f))
+
+def FullJointEmbedding (K : FiniteHidden.{u,v} L → Prop) : Prop :=
+  ∀ A B, K A → K B → ∃ C, K C ∧
+    Nonempty (Structure.Embedding A.model C.model) ∧ Nonempty (Structure.Embedding B.model C.model)
+
+theorem resetUnaryJEP_of_fullCode {K : FiniteHidden.{u,v} L → Prop} (jep : FullJointEmbedding L K) :
+    CCO.ResetOrder.Unary.JEP (resetUnaryAge L K) := by
+  intro A B hA hB
+  obtain ⟨C,hC,⟨f⟩,⟨g⟩⟩ := jep (resetUnaryDecodeObject L A) (resetUnaryDecodeObject L B) hA hB
+  exact ⟨resetUnaryObject L C,hC,⟨resetUnaryEmbeddingOfDecode L f⟩,⟨resetUnaryEmbeddingOfDecode L g⟩⟩
+
+theorem fullCodeJEP_of_resetUnary {K : FiniteHidden.{u,v} L → Prop}
+    (jep : CCO.ResetOrder.Unary.JEP (resetUnaryAge L K)) : FullJointEmbedding L K := by
+  intro A B hA hB
+  obtain ⟨C,hC,⟨f⟩,⟨g⟩⟩ := jep (resetUnaryObject L A) (resetUnaryObject L B) hA hB
+  exact ⟨resetUnaryDecodeObject L C,hC,⟨resetUnaryDecodeEmbedding L f⟩,⟨resetUnaryDecodeEmbedding L g⟩⟩
+
+theorem fullCode_sort_restriction_jep (I : Set L.Sorts)
+    (hI : ∀ F, L.input F ∈ I → L.output F ∈ I)
+    {K : FiniteHidden.{u,v} L → Prop} (hK : FullHereditary L K) (jep : FullJointEmbedding L K) :
+    FullJointEmbedding L (fun A => K A ∧ ∀ x, A.model.sort x ∈ I) := by
+  apply fullCodeJEP_of_resetUnary L
+  exact CCO.ResetOrder.Unary.restriction_jep (L := resetUnarySignature L) (I := I) hI
+    (resetUnaryAge_hereditary L hK) (resetUnaryJEP_of_fullCode L jep)
+
 end
 end CCO.APRamseyReadout
