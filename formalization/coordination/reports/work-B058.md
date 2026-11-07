@@ -76,3 +76,57 @@ axiom audit passed (37,161 declarations; only propext/Classical.choice/Quot.soun
 and both prescribed B058 controls passed. Those finite diagnostics do not
 certify the still-open six-result source theorem. Native pruning/gap authorship
 and history are preserved by no-ff merges.
+
+## Second coherent compiled source checkpoint
+
+All 33 public B058 modules are now root-imported. This remains an unfinished
+whole batch; the new concrete source connections are:
+
+- `ForestAdapterSubtrees`: every actual received subtree has a nonempty
+  original contiguous yield, hence nonzero evaluation; common child
+  idempotents are actual same-sort nonempty reachable diversity profiles.
+- `SupportedMacroChain` retains literal OLD indexed roots and each SAME
+  complete source side/model/word. Its canonical nonempty `intervalPath`
+  has exactly the original tagged side slice. `intervalPath_flatten_append`
+  recombines adjacent intervals as EQUALITY OF ORIGINAL WORDS.
+- `ForestAdapterSource`: received forest existence and STOP pruning are
+  instantiated on an actual supported source chain. Every maximal gap is
+  its canonical exact old subpath with actual same-sort idempotent profile.
+  `gap_old_coordinate_certificates` derives all OLD certificates before
+  deletion; `gap_boundary_original_profile` uses them on ANY homomorphism
+  of the actual retained old closure, then actual representative diversity.
+  No certificate/holonomy/reflected-menu callback is an input.
+- `GapReturn/Suffix/TermSupport/Closed/Reverse/Consumers`: the source OGC
+  proof uses actual canonical Return factors, the selected atomic OLD side
+  equations, exact named seam identification, and a valid one-generated
+  source diagram for the finite return identity. The terminal named-MI
+  family then gives the FULL RAW envelope under ANY retained-boundary Hom;
+  only actual distinct representatives extract the original word profile.
+- `RetainedSides` gives the actual same-model original profile under ANY
+  retained-source Hom, for kept sides and the fixed original anchor.
+  `RealBase` splits all positions simultaneously and chooses ONE actual
+  complete old finite base containing their distinct real representatives.
+- `VisibleDiagram/BadCycle/Internal` transfer the actual G_typ colour
+  diagram to its literal private graph, extract a specified no-Hom cycle
+  from original CCO+SAP and hidden noncompletion, and prove such a bad cycle
+  is never confined to one actual theta, using its actual seed homomorphism.
+- Native `CycleContraction*` constructs all old-root cuts of the ACTUAL
+  specified cycle. Ordered arcs retain original cyclic enumeration,
+  original branch orientation/length/every position and exact coverage.
+- `SourcePrunedForest.oldGenerators` contains only actual old source roots,
+  all kept/gap boundaries and original path endpoints. Its complete old
+  pair closures are retained. `old_anchor_bound` proves the stipulated OAB
+  bound, via the stronger m*2^(3s+1), without claiming that partial old
+  support is already completable.
+
+Remaining source gates: actual contraction→SupportedMacroChain+fixed anchor;
+all canonical piece/anchor WordRequests on the same RealBase; exact original
+simple-cycle reconstruction and contradiction; the final unconditional
+unary-admissible bounded hidden-obstruction source instance/facade. The
+existing structural or source-chain theorems do not replace those instances.
+
+Verification on this checkpoint: pinned full root build 5,107 jobs passed;
+all 2,420 current project modules/artifacts consistent; exact external,
+Ramsey and forest source/artifact guards passed; root transitive axiom audit
+37,760 declarations passed with standard three only, separate forest 791
+passed; both prescribed B058 controls passed. No source/API/toolchain change.
