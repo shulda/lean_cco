@@ -153,6 +153,84 @@ theorem binaryEmbedding_comp {Z : Type*} {V : Type v} {W : Type w}
   intro x
   rfl
 
+theorem fullStructure_ext {K : CCO.FullCode.Language.{u}} {V : Type v}
+    {C D : CCO.FullCode.Structure K V}
+    (hs : C.sort = D.sort) (hf : C.func = D.func)
+    (hu : C.unary = D.unary) (hb : C.binary = D.binary) : C = D := by
+  cases C
+  cases D
+  cases hs
+  cases hf
+  cases hu
+  cases hb
+  rfl
+
+theorem partialStructure_ext {V : Type v}
+    {C D : CCO.UnarySupport.Structure L V}
+    (hs : C.sort = D.sort) (hf : C.func = D.func) (hr : C.rel = D.rel) : C = D := by
+  cases C
+  cases D
+  cases hs
+  cases hf
+  cases hr
+  rfl
+
+/-- The inverse binary view retains all original tuples and unary graphs. -/
+def binaryDecode {V : Type v} (M : CCO.FullCode.Structure (binaryLanguage L hbin) V) :
+    CCO.UnarySupport.Structure L V where
+  sort := M.sort
+  func := M.func
+  functional := M.functional
+  func_sorted := M.func_sorted
+  rel R xs := M.binary R (xs (binaryFirst L hbin R)) (xs (binarySecond L hbin R))
+  rel_sorted R xs h i := by
+    have hb := M.binary_sorted R (xs (binaryFirst L hbin R)) (xs (binarySecond L hbin R)) h
+    have hi := i.isLt
+    have hn := hbin R
+    have hv : i.val = 0 ∨ i.val = 1 := by omega
+    rcases hv with hv | hv
+    · have he : i = binaryFirst L hbin R := Fin.ext hv
+      subst i
+      exact hb.1
+    · have he : i = binarySecond L hbin R := Fin.ext hv
+      subst i
+      exact hb.2
+
+theorem binaryStructure_binaryDecode {V : Type v}
+    (M : CCO.FullCode.Structure (binaryLanguage L hbin) V) :
+    binaryStructure L hbin (binaryDecode L hbin M) = M := by
+  refine fullStructure_ext (C := binaryStructure L hbin (binaryDecode L hbin M))
+    (D := M) rfl rfl ?_ ?_
+  · funext U
+    exact PEmpty.elim U
+  · funext R x y
+    change M.binary R (binaryTuple L R x y (binaryFirst L hbin R))
+      (binaryTuple L R x y (binarySecond L hbin R)) = M.binary R x y
+    rw [binaryTuple_first,binaryTuple_second]
+
+theorem binaryDecode_binaryStructure {V : Type v} (C : CCO.UnarySupport.Structure L V) :
+    binaryDecode L hbin (binaryStructure L hbin C) = C := by
+  have hr : (binaryDecode L hbin (binaryStructure L hbin C)).rel = C.rel := by
+    funext R xs
+    change C.rel R (binaryTuple L R (xs (binaryFirst L hbin R)) (xs (binarySecond L hbin R))) = C.rel R xs
+    exact congrArg (C.rel R) (binaryTuple_eta L hbin R xs)
+  exact partialStructure_ext L
+    (C := binaryDecode L hbin (binaryStructure L hbin C)) (D := C) rfl rfl hr
+
+theorem binaryStructure_induce {V : Type v} (C : CCO.UnarySupport.Structure L V)
+    (T : Set V) (hT : C.IsClosed T) :
+    binaryStructure L hbin (C.induce T hT) =
+      (binaryStructure L hbin C).induce T hT := by
+  refine fullStructure_ext
+    (C := binaryStructure L hbin (C.induce T hT))
+    (D := (binaryStructure L hbin C).induce T hT) rfl rfl ?_ ?_
+  · funext U
+    exact PEmpty.elim U
+  · funext R x y
+    change C.rel R (Subtype.val ∘ binaryTuple L R x y) =
+      C.rel R (binaryTuple L R x.val y.val)
+    exact congrArg (C.rel R) (binaryTuple_map L R Subtype.val x y).symm
+
 def supportTermToFull {s t : L.Sorts}
     (q : CCO.UnarySupport.Structure.Term L s t) :
     CCO.FullCode.Term (binaryLanguage L hbin) s t :=
