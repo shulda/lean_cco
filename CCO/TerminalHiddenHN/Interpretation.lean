@@ -1,5 +1,6 @@
 import CCO.TerminalHiddenHN.EquivariantFunctions
 import CCO.UnaryFreshFrames.Quotient.Named
+import CCO.TerminalHiddenHN.OrderedCodec
 
 /-! The structural data of a finite binary equivariant unary
 interpretation on the original real sorts. These are the literal A02
@@ -40,5 +41,69 @@ structure RealInterpretation
     P.rel (atom a)
       (fun n => if n.val = 0 then (root i x).val else (root j y).val) ↔
       S.atomRel a x y
+
+namespace RealInterpretation
+variable {S}
+variable {U : CCO.UnaryFreshFrames.Language.{max u l}} {V : Type k}
+variable {P : CCO.UnaryFreshFrames.Structure U V}
+variable (D : RealInterpretation (G := G) S U P)
+
+def realPoint (p : Sigma X) : V := (D.root p.1 p.2).val
+
+theorem sort_realPoint (p : Sigma X) : P.sort (D.realPoint p) = D.realSort p.1 :=
+  (D.root p.1 p.2).property
+
+theorem realPoint_injective : Function.Injective D.realPoint := by
+  rintro ⟨i,x⟩ ⟨j,y⟩ h
+  have hs : D.realSort i = D.realSort j :=
+    (D.sort_realPoint ⟨i,x⟩).symm.trans
+      ((congrArg P.sort h).trans (D.sort_realPoint ⟨j,y⟩))
+  have hij := D.realSort.injective hs
+  subst j
+  have he : D.root i x = D.root i y := Subtype.ext h
+  have hxy := (D.root_bijective i).1 he
+  cases hxy
+  rfl
+
+theorem realPoint_smul (g : G) (p : Sigma X) :
+    D.realPoint (g • p) = (D.motion g) • D.realPoint p := by
+  cases p with
+  | mk i x => exact (D.root_equivariant g i x).symm
+
+theorem realPoint_surjective_on_sort (i : ι) (x : V)
+    (hx : P.sort x = D.realSort i) : ∃ a : X i, D.realPoint ⟨i,a⟩ = x := by
+  obtain ⟨a,ha⟩ := (D.root_bijective i).2 ⟨x,hx⟩
+  exact ⟨a,congrArg Subtype.val ha⟩
+
+def signature : CCO.UnarySupport.Signature.{max u l} := by
+  letI := D.finiteSorts
+  letI := D.finiteFuncs
+  letI := D.finiteRels
+  exact CCO.HiddenSAPReadings.partialSignature U
+
+noncomputable def partialModel : CCO.UnarySupport.Structure D.signature V := by
+  letI := D.finiteSorts
+  letI := D.finiteFuncs
+  letI := D.finiteRels
+  exact CCO.HiddenSAPReadings.partialTarget P
+
+abbrev codeLanguage : CCO.FullCode.Language.{max u l} :=
+  binaryLanguage D.signature D.binary
+
+noncomputable def codeModel : CCO.FullCode.Structure D.codeLanguage V :=
+  binaryStructure D.signature D.binary D.partialModel
+
+abbrev partialSig := D.signature
+abbrev binaryLanguage := D.codeLanguage
+noncomputable abbrev binaryModel := D.codeModel
+
+abbrev orderedLanguage : CCO.FullCode.Language.{max u l} :=
+  CCO.TerminalHiddenHN.orderedLanguage D.signature D.binary
+
+noncomputable def orderedModel [LinearOrder V] :
+    CCO.FullCode.Structure D.orderedLanguage V :=
+  CCO.TerminalHiddenHN.orderedStructure D.signature D.binary D.partialModel
+
+end RealInterpretation
 
 end CCO.TerminalHiddenHN
