@@ -1,4 +1,5 @@
 import CCO.TerminalHiddenHN.ReadoutComparisons
+import CCO.TerminalHiddenHN.ReadoutReconstruction
 import CCO.TerminalHiddenHN.RealExpansion
 
 /-! The finite comparison language is a concrete relational expansion of
