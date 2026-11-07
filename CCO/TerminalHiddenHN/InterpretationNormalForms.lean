@@ -168,8 +168,13 @@ theorem orderedNormalForms_valid_of_binary (D : RealInterpretation (G := G) S U 
       ((D.normalForms H).form s t
         ((D.normalForms H).normalize (orderedTermToBase D.partialSig D.binary q)))).eval
       (orderedStructure D.partialSig D.binary C) x
-  rw [orderedTermToBase_eval,baseTermToOrdered_eval]
-  exact hC s t (orderedTermToBase D.partialSig D.binary q) x hx
+  let hbin : ∀ R : D.partialSig.Rel, D.partialSig.arity R = 2 := D.binary
+  have hleft := orderedTermToBase_eval D.partialSig hbin C q x
+  have hmiddle := hC s t (orderedTermToBase D.partialSig hbin q) x hx
+  have hright := baseTermToOrdered_eval D.partialSig hbin C
+    ((D.normalForms H).form s t
+      ((D.normalForms H).normalize (orderedTermToBase D.partialSig hbin q))) x
+  exact hleft.trans (hmiddle.trans hright.symm)
 
 /-- Full induced embedding reflects the complete partial function
 domains, so the actual finite forms inherit to any underlying member. -/
