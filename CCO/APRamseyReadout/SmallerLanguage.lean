@@ -2,6 +2,8 @@ import CCO.APRamseyReadout.SortBlockNormalizer
 import CCO.APRamseyReadout.ProperHiddenAge
 import CCO.APRamseyReadout.CoordinateBridge
 import CCO.APRamseyReadout.TupleReadout
+import CCO.APRamseyReadout.ReasonableExpansion
+import CCO.APRamseyReadout.NonOrderDefinitions
 import CCO.TerminalHiddenHN.FiniteOrderExtension
 import CCO.FullCode.Consumer
 import Mathlib.Basic.Finite.Sum
@@ -493,6 +495,91 @@ theorem block_readout_reasonable_lift (H : CCO.HomogeneousSource S G)
   obtain ⟨b,hb⟩ := D.block_readout_reasonable priority H e a
   subst a
   exact ⟨b,D.restrictBlockReadoutEmbedding priority H e b,rfl⟩
+
+
+abbrev WithinComparisonName :=
+  {pq : Presentation D.normal scheme × Presentation D.normal scheme // pq.1.2.1 = pq.2.2.1}
+
+def WithinTermOrder {A : CCO.FiniteInduced (X := X)} (a : D.BlockReadoutOn priority A)
+    (pq : D.WithinComparisonName) (x y : A.vertices) : Prop :=
+  D.TermOrder a.val x y pq.val.1 pq.val.2
+
+/-- Every dropped cross-target table is its actual definedness gates
+and fixed priority. Wrong-tag or undefined presentations remain false. -/
+theorem block_termOrder_different {A : CCO.FiniteInduced (X := X)} (a : D.BlockReadoutOn priority A)
+    (x y : A.vertices) (p q : Presentation D.normal scheme) (hne : p.2.1 ≠ q.2.1) :
+    D.TermOrder a.val x y p q ↔
+      ((D.eta x.val).presentation D.normal p).Nonempty ∧
+        ((D.eta y.val).presentation D.normal q).Nonempty ∧ @LT.lt _ priority.toLT p.2.1 q.2.1 := by
+  constructor
+  · rintro ⟨u,v,hu,hv,hlt⟩
+    have hsu : (D.supportStructure A).sort u = p.2.1 := (D.eta x.val).presentation_sorted D.normal p hu
+    have hsv : (D.supportStructure A).sort v = q.2.1 := (D.eta y.val).presentation_sorted D.normal q hv
+    have hdiff : (D.supportStructure A).sort u ≠ (D.supportStructure A).sort v := by
+      intro h
+      exact hne (hsu.symm.trans (h.trans hsv))
+    have he := congrArg (fun o : LinearOrder (D.support A) => @LT.lt _ o.toLT u v) a.property
+    have hn := (Iff.of_eq he).mpr hlt
+    have hp := (sortBlockOrder_different (D.supportStructure A).sort priority a.val.order hdiff).mp hn
+    exact ⟨⟨u.val,hu⟩,⟨v.val,hv⟩,by simpa only [hsu,hsv] using hp⟩
+  · rintro ⟨⟨z,hz⟩,⟨w,hw⟩,hpriority⟩
+    let u : D.support A := ⟨z,(D.object A).presentation_mem_support D.normal x p hz⟩
+    let v : D.support A := ⟨w,(D.object A).presentation_mem_support D.normal y q hw⟩
+    have hsu : (D.supportStructure A).sort u = p.2.1 := (D.eta x.val).presentation_sorted D.normal p hz
+    have hsv : (D.supportStructure A).sort v = q.2.1 := (D.eta y.val).presentation_sorted D.normal q hw
+    have hdiff : (D.supportStructure A).sort u ≠ (D.supportStructure A).sort v := by
+      intro h
+      exact hne (hsu.symm.trans (h.trans hsv))
+    have hn := (sortBlockOrder_different (D.supportStructure A).sort priority a.val.order hdiff).mpr
+      (by simpa only [hsu,hsv] using hpriority)
+    have he := congrArg (fun o : LinearOrder (D.support A) => @LT.lt _ o.toLT u v) a.property
+    exact ⟨u,v,hz,hw,(Iff.of_eq he).mp hn⟩
+
+theorem withinTermOrder_embedding (H : CCO.HomogeneousSource S G)
+    {A B : CCO.FiniteInduced (X := X)} {a : D.BlockReadoutOn priority A} {b : D.BlockReadoutOn priority B}
+    (f : D.ReadoutEmbedding H a.val b.val) (pq : D.WithinComparisonName) (x y : A.vertices) :
+    D.WithinTermOrder priority b pq (f.old.toEmbedding x) (f.old.toEmbedding y) ↔
+      D.WithinTermOrder priority a pq x y :=
+  D.termOrder_embedding H f x y pq.val.1 pq.val.2
+
+theorem withinTermOrder_restrict (H : CCO.HomogeneousSource S G)
+    {A B : CCO.FiniteInduced (X := X)} (e : CCO.InducedEmbedding S A B) (b : D.BlockReadoutOn priority B)
+    (pq : D.WithinComparisonName) (x y : A.vertices) :
+    D.WithinTermOrder priority (D.restrictBlockReadout priority H e b) pq x y ↔
+      D.WithinTermOrder priority b pq (e.toEmbedding x) (e.toEmbedding y) :=
+  D.termOrder_restrict H e b.val x y pq.val.1 pq.val.2
+
+theorem block_readout_faithful {A : CCO.FiniteInduced (X := X)} (a b : D.BlockReadoutOn priority A)
+    (h : ∀ pq x y, D.WithinTermOrder priority a pq x y ↔ D.WithinTermOrder priority b pq x y) : a = b := by
+  apply Subtype.ext
+  apply D.termOrder_faithful a.val b.val
+  intro x y p q
+  by_cases he : p.2.1 = q.2.1
+  · exact h ⟨(p,q),he⟩ x y
+  · rw [D.block_termOrder_different priority a x y p q he,D.block_termOrder_different priority b x y p q he]
+
+/-- Original fine-colour/label preservation and the remaining finite
+within-target tables restore the ENTIRE prescribed support order. -/
+def readoutEmbedding_of_withinTermOrders (H : CCO.HomogeneousSource S G)
+    {A B : CCO.FiniteInduced (X := X)} {a : D.BlockReadoutOn priority A} {b : D.BlockReadoutOn priority B}
+    (e : CCO.InducedEmbedding S A B)
+    (h : ∀ pq x y, D.WithinTermOrder priority b pq (e.toEmbedding x) (e.toEmbedding y) ↔
+      D.WithinTermOrder priority a pq x y) : D.ReadoutEmbedding H a.val b.val := by
+  apply D.readoutEmbedding_of_termOrders H e
+  intro x y p q
+  by_cases he : p.2.1 = q.2.1
+  · exact h ⟨(p,q),he⟩ x y
+  · rw [D.block_termOrder_different priority b (e.toEmbedding x) (e.toEmbedding y) p q he,
+      D.block_termOrder_different priority a x y p q he]
+    have hp : ((D.eta (e.toEmbedding x).val).presentation D.normal p).Nonempty ↔
+        ((D.eta x.val).presentation D.normal p).Nonempty :=
+      (definedness_diagonal D.normal _ p).symm.trans
+        (((D.codeEmbedding H e).equality_iff x x p p).trans (definedness_diagonal D.normal _ p))
+    have hq : ((D.eta (e.toEmbedding y).val).presentation D.normal q).Nonempty ↔
+        ((D.eta y.val).presentation D.normal q).Nonempty :=
+      (definedness_diagonal D.normal _ q).symm.trans
+        (((D.codeEmbedding H e).equality_iff y y q q).trans (definedness_diagonal D.normal _ q))
+    exact and_congr hp (and_congr hq Iff.rfl)
 
 end
 end TupleInterpretation
