@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 914,
+  "revision": 915,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -5675,7 +5675,7 @@
       }
     },
     "B064": {
-      "state": "REVIEWING",
+      "state": "INTEGRATING",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b057_idempotents",
@@ -5736,7 +5736,13 @@
       }
     }
   },
-  "integration_lock": null,
+  "integration_lock": {
+    "kind": "package",
+    "package_id": "B064",
+    "actor_id": "root",
+    "base_main_sha": "0c50fac628c63d5460390b698336687055675ee6",
+    "head_sha": "b7bd5fd0f75b389ccbbb796155de0fb8b2053577"
+  },
   "history": [
     {
       "revision": 1,
@@ -27846,6 +27852,27 @@
         "head_sha": "b7bd5fd0f75b389ccbbb796155de0fb8b2053577",
         "summary": "Actual independent nonauthor /root/b064_control personally reviewed all 145 source modules, complete frozen source/112 claims/30 providers/seven firewalls/14 tasks and final consumers, recorded in the verbatim published personal report. I personally fetched final b7bd5, verified its only delta from reviewed04 is my exact report SHA256499b4b7e300ed0bac26732122981813dbefa33d8021241cdc50d9589f03dd515 plus the accurate eight-line ten-field erratum; all Lean/root bytes are unchanged. I personally inspected exact CI42383454790/job128435758431 complete49225-line log:203 tests,5347 root jobs,2659 current modules,42494 CCO+791forest standard-three audits, all final exact provider guards, zero error markers. I fetched actual synthetic7d50a77c202ebc4d0630196194817d59132c66ca: parents0c50+b7, identical whole tree707e80639e0d28cf9171361e0f4dda7ea7ead6a2. The strict generic edge blocker is resolved at the actual public bytes and independently reproduced1243-constant type/value closure, no forbidden provider/missing declaration. Final exact head b7bd5 is APPROVED. Sole integration lock, expected-head history-preserving merge and green actual resulting-main CI/audit remain mandatory before ACCEPTED.",
         "actor_id": "work_control_20261107b"
+      }
+    },
+    {
+      "revision": 915,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "start_integration",
+      "package_id": "B064",
+      "details": {
+        "package_id": "B064",
+        "head_sha": "b7bd5fd0f75b389ccbbb796155de0fb8b2053577",
+        "base_main_sha": "0c50fac628c63d5460390b698336687055675ee6",
+        "head_contains_main": true,
+        "ci": {
+          "run_id": 42383454790,
+          "job_id": 128435758431,
+          "head_sha": "b7bd5fd0f75b389ccbbb796155de0fb8b2053577",
+          "conclusion": "success",
+          "axiom_audit": "allowlist"
+        },
+        "actor_id": "root"
       }
     }
   ],
