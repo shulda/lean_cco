@@ -209,7 +209,7 @@ theorem malformed_transition_no_HE {n : ℕ} (hn : 2 ≤ n)
 /-- C67 on the SAME accepted original common-block SAP+CCO source.
 The exact displayed malformed cycles form an unbounded total-unary,
 one-generated irreducible reduct family. They are not unary-admissible,
-admit no homomorphism-embedding into the actual inverse-transition
+have no homomorphism-embedding into the actual inverse-transition
 target reduct, and have no nonempty bounded closed obstruction. -/
 theorem forest_commonBlock_unbounded_malformed (N : ℕ) :
     AgeSAP commonBlockOriginalAtomicSource ∧
