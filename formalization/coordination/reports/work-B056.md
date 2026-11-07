@@ -1,3 +1,18 @@
+## Final current-main reconciliation, 7 November 2026
+
+The complete candidate now contains actual B063 main
+`34e7027272c1e5028716ee6641a114f9dc63740f` by a history-preserving merge.
+All 35 B056 production modules are byte-unchanged from the independently
+read complete candidate `b33d5ceea96d4e30905114f53e281f3c6b40d235`.
+The root-import merge preserved every B056 and all 40 B063 public modules.
+The actual reader's full report is preserved verbatim at
+`formalization/coordination/reviews/B056-20261107.md`.
+Local reconciled fullroot passed 5,048 jobs; complete guards checked
+2,360 CCO, 269 EPPA, 106 Ramsey and 14 forest modules / 98 outputs.
+Both audits passed: 35,913 CCO and 791 forest declarations, standard three
+axioms only. Fresh public exact-head CI, formal review lease/approval and
+green actual resulting-main verification remain required before ACCEPTED.
+
 # B056 complete candidate — current checkpoint
 
 **All mathematical/source obligations are implemented and locally verified
