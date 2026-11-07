@@ -1,4 +1,6 @@
 import CCO.FullCode.Presentations
+import CCO.APRamseyReadout.TupleScheme
+import CCO.TerminalHiddenHN.NormalForms
 import Mathlib.Basic.Finite.Prod
 import Mathlib.Data.Fintype.Pi
 import Mathlib.SetTheory.Cardinal.Finite
@@ -69,5 +71,59 @@ theorem root_card_bound {L : Language.{u}} {V : Type v} [Finite V]
     _ = ∑ s : S.Tag, Nat.card V ^ S.arity s := by
       simp only [Nat.card_fun,Nat.card_fin]
     _ = rootTupleBound S (Nat.card V) := rfl
+
+universe w p z
+
+section Actual
+open CCO.CloneTupleGeometry
+noncomputable section
+variable (B : OwnerStage.{u,v,w}) (ht : B.Terminal) (F : Charts.{u,v,w,p} B)
+
+/-- The finite forms are actual functions on EVERY canonical hidden
+input; the list is independent of the selected visible chart. -/
+abbrev tupleNormalForms : NormalForms (CoordinateLanguage B ht) :=
+  CCO.TerminalHiddenHN.binaryNormalForms (cloneSource B) (cloneHomogeneous B)
+    (cloneSAP B) (fullCovers B ht)
+
+/-- Actual finite-age membership supplies full partial-domain validity,
+including proper orphan inputs, without a caller-supplied normalizer. -/
+theorem tupleNormalForms_valid_of_actualAge {V : Type z}
+    (C : CCO.UnarySupport.Structure (Sig B ht) V) (hC : ActualAge B ht C) :
+    (tupleNormalForms B ht).Valid (CoordinateModel B ht C) :=
+  CCO.TerminalHiddenHN.binaryNormalForms_valid_of_actualAge
+    (cloneSource B) (cloneHomogeneous B) (cloneSAP B) (fullCovers B ht) C hC
+
+def tuplePresentationBudget : ℕ :=
+  Nat.card (Presentation (tupleNormalForms B ht) (tupleScheme B ht F))
+
+/-- Source C39's first bound for the canonical fixed-chart tuples.
+All normal-form hypotheses are discharged on the actual host. -/
+theorem actual_template_card_bound {V : Type z} {A : Type a} [Finite A]
+    (C : CCO.UnarySupport.Structure (Sig B ht) V) (hC : ActualAge B ht C)
+    (O : Object (CoordinateModel B ht C) (tupleScheme B ht F) A) :
+    Nat.card O.support ≤ tuplePresentationBudget B ht F * Nat.card A :=
+  template_card_bound (tupleNormalForms B ht) O
+    (tupleNormalForms_valid_of_actualAge B ht C hC)
+
+/-- Source C39's second bound counts every actual tagged tuple using
+exactly the fixed chart arities; validity only reduces that number. -/
+theorem actual_root_card_bound {V : Type z}
+    (C : CCO.UnarySupport.Structure (Sig B ht) V) (hC : ActualAge B ht C) :
+    Nat.card (Root (CoordinateModel B ht C) (tupleScheme B ht F)) ≤
+      rootTupleBound (tupleScheme B ht F) (Nat.card V) := by
+  letI : Finite V := hC.1
+  exact root_card_bound (CoordinateModel B ht C) (tupleScheme B ht F)
+
+/-- Every actual selected chart has a coordinate, so an empty hidden
+carrier has zero possible tuples; no empty-coordinate root is inserted. -/
+theorem tuple_rootTupleBound_zero : rootTupleBound (tupleScheme B ht F) 0 = 0 := by
+  classical
+  unfold rootTupleBound
+  apply Finset.sum_eq_zero
+  intro s _
+  exact zero_pow (ne_of_gt (tupleScheme_positive B ht F s))
+
+end
+end Actual
 
 end CCO.APRamseyReadout
