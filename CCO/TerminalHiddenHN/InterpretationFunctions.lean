@@ -15,7 +15,7 @@ variable {G : Type r} [Group G] [∀ i, MulAction G (X i)]
 variable (H : HomogeneousSource S G)
 variable {U : CCO.UnaryFreshFrames.Language.{max u l}} {V : Type k}
 variable {P : CCO.UnaryFreshFrames.Structure U V}
-variable (D : RealInterpretation S U P)
+variable (D : RealInterpretation (G := G) S U P)
 
 /-- The ORIGINAL group acts on each typed interpretation carrier through
 the actual named-structure automorphisms specified by A02. -/
@@ -48,6 +48,8 @@ theorem projection_equivariant (i : ι) {s : U.Sorts}
     (D.motion g) • P.eval q (D.root i x).val
   rw [← D.root_equivariant g i x]
   exact (P.aut_eval (D.motion g) q (D.root i x).val).symm
+
+include S H D
 
 /-- Fixed input/output sorts retain the entire actual typed function
 family. Finiteness is derived before any syntactic representatives are
