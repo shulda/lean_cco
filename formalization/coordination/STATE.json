@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 863,
+  "revision": 864,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -5100,7 +5100,7 @@
       }
     },
     "B057": {
-      "state": "REVIEWING",
+      "state": "INTEGRATING",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b057_idempotents",
@@ -5488,7 +5488,13 @@
       "owner_project_id": null
     }
   },
-  "integration_lock": null,
+  "integration_lock": {
+    "kind": "package",
+    "package_id": "B057",
+    "actor_id": "root",
+    "base_main_sha": "141c040cd33e2f922b3e5efaac6a62ce290ada19",
+    "head_sha": "6912682cdf4d107e6a93976a1b0e4ea1cd2fa51e"
+  },
   "history": [
     {
       "revision": 1,
@@ -26605,6 +26611,27 @@
         "package_id": "B057",
         "head_sha": "6912682cdf4d107e6a93976a1b0e4ea1cd2fa51e",
         "summary": "Actual registered nonauthor /root/recovery_control personally approves exact public 6912682cdf4d107e6a93976a1b0e4ea1cd2fa51e, tree 4ab8896753668e2e7553ef7ff6eb1bef748be446. Read all 27 production proof bodies, full frozen source15/notes, all 72 claims, actual providers and B058 receiving uses. Actual bounded same-support menus discharge the whole visible graph iff finite hidden HE and full root signatures; selected closed-support atomic OLD equations reflect literally into ambient source. Direct literal ww is H+SAP only; FULL lattice/monolith is CCO-free with FULL NR2; MI/distributivity separately retain CCO; authorized FULL/guarded TV1 and exact original-word/one-base private insertion boundaries hold. All read bytes match native536df649; final delta only coherent map/work report and own verbatim report cd66859775e2fe938512e69d0b4b968e4f90ae1504940658689e540794b8c7c2. Personally checked final CI42348636934/job128331791764 success: 203 tests, 5075 jobs, 2387 sources, 36621 CCO plus 791 forest declarations standard-three audits and all final guards. Synthetic bd6bbbfb full tree equals final head; current accepted141c is ancestor. Own effective lease862 verified; no source/API gap or implementation participation."
+      }
+    },
+    {
+      "revision": 864,
+      "project_id": 3,
+      "actor_id": "root",
+      "event": "start_integration",
+      "package_id": "B057",
+      "details": {
+        "package_id": "B057",
+        "actor_id": "root",
+        "head_sha": "6912682cdf4d107e6a93976a1b0e4ea1cd2fa51e",
+        "base_main_sha": "141c040cd33e2f922b3e5efaac6a62ce290ada19",
+        "head_contains_main": true,
+        "ci": {
+          "run_id": 42348636934,
+          "head_sha": "6912682cdf4d107e6a93976a1b0e4ea1cd2fa51e",
+          "conclusion": "success",
+          "axiom_audit": "allowlist",
+          "job_id": 128331791764
+        }
       }
     }
   ],
