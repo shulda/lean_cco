@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 898,
+  "revision": 899,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -5413,7 +5413,7 @@
       }
     },
     "B061": {
-      "state": "SUBMITTED",
+      "state": "REVIEWING",
       "owner_project_id": 3,
       "author_actor_ids": [
         "/root/b057_idempotents",
@@ -5453,7 +5453,19 @@
         "conclusion": "success",
         "axiom_audit": "allowlist"
       },
-      "report_path": "formalization/coordination/submissions/B061.md"
+      "report_path": "formalization/coordination/submissions/B061.md",
+      "review": {
+        "project_id": 3,
+        "actor_id": "work_control_20261107",
+        "head_sha": "d1e677915e16c814bb6642a9ad1514374affb783",
+        "approved": false,
+        "independence": {
+          "identity": "/root/recovery_control",
+          "non_author": true,
+          "summary": "I am the same actual preserved nonauthor reader /root/recovery_control, registered work_control_20261107 under policy18 with no historical author projects. I have never implemented, designed or repaired B061 proofs or production interfaces and made no production/compiler contribution; all seven actual source contributors are separately recorded authors. My read-only corroborator examined initial scope only and supplied no implementation or substitute final review. I personally read the entire frozen article and notes, all11 definitions/62 source duties, all33 final modules and corrected alias delta, five anchors,13 actual provider discharges,4 firewalls,3 applications and B064 I03/I29/C85 receiving uses. The real initial C34 small-route anchor miss is acknowledged in my corrected report; the final primary anchor now follows the independently proved FULL route, with small/ANY-tower APIs preserved. My own durable report is VERBATIM SHA25698153c7028278f30af46e4e4daa66885a062e0db0bf9dc2982f587997a2b30e9; I personally read final author mapf8dc80e114cf265ffc670da2dbfa9ae0ecf0a0e1e4f6c4fca15a60565c28e161 and verified its actual manifest. Only these two documents differ from corrected freeze c188; all proof/root bytes match my read. Personally inspected exact final CI42371824740/job128401372807 complete log and synthetic268347 tree45194b identical to exact d1e candidate,203tests,5202jobs,2514current sources,40584CCO+791forest std3 zero violations and all final after-audit provider guards. No author pass is used as independent approval.",
+          "report_path": "formalization/coordination/reviews/B061-20261107.md"
+        }
+      }
     },
     "B062": {
       "state": "ACCEPTED",
@@ -27409,6 +27421,24 @@
           "axiom_audit": "allowlist"
         },
         "report_path": "formalization/coordination/submissions/B061.md"
+      }
+    },
+    {
+      "revision": 899,
+      "project_id": 3,
+      "actor_id": "work_control_20261107",
+      "event": "review",
+      "package_id": "B061",
+      "details": {
+        "actor_id": "work_control_20261107",
+        "package_id": "B061",
+        "head_sha": "d1e677915e16c814bb6642a9ad1514374affb783",
+        "independence": {
+          "identity": "/root/recovery_control",
+          "non_author": true,
+          "summary": "I am the same actual preserved nonauthor reader /root/recovery_control, registered work_control_20261107 under policy18 with no historical author projects. I have never implemented, designed or repaired B061 proofs or production interfaces and made no production/compiler contribution; all seven actual source contributors are separately recorded authors. My read-only corroborator examined initial scope only and supplied no implementation or substitute final review. I personally read the entire frozen article and notes, all11 definitions/62 source duties, all33 final modules and corrected alias delta, five anchors,13 actual provider discharges,4 firewalls,3 applications and B064 I03/I29/C85 receiving uses. The real initial C34 small-route anchor miss is acknowledged in my corrected report; the final primary anchor now follows the independently proved FULL route, with small/ANY-tower APIs preserved. My own durable report is VERBATIM SHA25698153c7028278f30af46e4e4daa66885a062e0db0bf9dc2982f587997a2b30e9; I personally read final author mapf8dc80e114cf265ffc670da2dbfa9ae0ecf0a0e1e4f6c4fca15a60565c28e161 and verified its actual manifest. Only these two documents differ from corrected freeze c188; all proof/root bytes match my read. Personally inspected exact final CI42371824740/job128401372807 complete log and synthetic268347 tree45194b identical to exact d1e candidate,203tests,5202jobs,2514current sources,40584CCO+791forest std3 zero violations and all final after-audit provider guards. No author pass is used as independent approval.",
+          "report_path": "formalization/coordination/reviews/B061-20261107.md"
+        }
       }
     }
   ],
