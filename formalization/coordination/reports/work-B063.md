@@ -1,3 +1,17 @@
+## Current-main integration check, 7 November 2026
+
+The same mathematical candidate now contains actual forest main
+`e2703913bb34272f2176fc10d5619e10e6b57682` by a history-preserving merge.
+The sole root-import conflict retained every B063 import and added the forest
+facade. No B063 theorem, assumption or provider discharge changed. Local
+merged-tree build passed 5,013 jobs; guards verified 2,325 CCO modules,
+269 EPPA, 106 Ramsey and 14 forest modules / 98 outputs. Transitive audits
+passed 35,038 CCO and 791 forest declarations, standard three axioms only.
+The fresh actual nonauthor's complete personal source review is preserved
+verbatim at `formalization/coordination/reviews/B063-20261107.md`.
+Refreshed public exact-head CI, formal review lease/approval and green actual
+resulting-main verification remain required before ACCEPTED.
+
 # B063 — complete source implementation awaiting exact-head verification and review
 
 **IN_PROGRESS / NOT SUBMITTED / NOT APPROVED.** The full original-diversity
