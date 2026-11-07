@@ -1,4 +1,6 @@
 import CCO.OldIdempotentForest.BoundedHidden
+import CCO.OldIdempotentForest.CycleReconstructionSourceSimple
+import CCO.OldIdempotentForest.PathReconstructionRequests
 import CCO.OldIdempotentForest.SourceBoundaries
 import CCO.OldIdempotentForest.ForestBoundaries
 import CCO.OldIdempotentForest.PruningBoundaries
@@ -34,6 +36,8 @@ export CCO.OldIdempotentForest
    sourcePrunedForest_exists old_gap_coordinate_equation
    old_gap_boundary_envelope old_gap_boundary_diversity_of_tagged
    source_reconstruction_requests_of_hom
+   PathReconstructionRequests path_reconstruction_requests_of_hom
+   source_macro_path_compression pruned_finite_completion_has_hom
    SupportedSpecifiedCycle supported_specified_cycle_exists
    exact_simple_cycle_over_complete_base
    typedObstructionBudget typed_bounded_hidden typed_bounded_hidden_uniform
@@ -51,7 +55,11 @@ export CCO.OldIdempotentForest.SourcePrunedForest
    gap_boundary_original_profile old_anchor_bound)
 
 export CCO.OldIdempotentForest.SupportedSpecifiedCycle
-  (reconstruct_cycle_hom)
+  (reconstruct_cycle_hom retainedPins reconstructionPoint
+   reconstruct_simple_cycle reconstructed_retained_image)
+
+export CCO.OldIdempotentForest.PathReconstructionRequests
+  (whole_original_path reconstruct_macro_path)
 
 export CCO.OldIdempotentForest.Prunes
   (exact_partition located_slice exact_original_payload uniform_bounds

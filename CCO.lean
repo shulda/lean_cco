@@ -2460,3 +2460,5 @@ import CCO.OldIdempotentForest.CycleReconstructionWordLines
 import CCO.OldIdempotentForest.ForestBoundaries
 import CCO.OldIdempotentForest.SourceExports
 import CCO.OldIdempotentForest.SupportedCycle
+import CCO.OldIdempotentForest.CycleReconstructionSourceSimple
+import CCO.OldIdempotentForest.PathReconstructionRequests

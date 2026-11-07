@@ -1,4 +1,4 @@
-# B058 source implementation checkpoint
+# B058 complete source candidate
 
 Effective claim STATE866, owner project3/root. The canonical coordination
 register records every actual author, helper and publication. Accepted base:
@@ -13,8 +13,8 @@ No mathematical source/API exception or user decision is needed.
 
 ## Current concrete source result
 
-All 49 current public B058 modules are imported by `CCO.lean`. The pinned
-full root build passes 5,123 jobs. `BoundedHidden.typed_bounded_hidden` and
+All 51 public B058 modules (7,454 source lines) are imported by `CCO.lean`.
+The pinned full root build passes 5,125 jobs. `BoundedHidden.typed_bounded_hidden` and
 `typed_bounded_hidden_uniform` compile against the ACTUAL original hidden
 signature. Given one original semantic CCO, visible SAP, the terminal FULL
 cover gate and unary admissibility, every finite noncompletable source has
@@ -38,12 +38,24 @@ cycle, a contradiction. No test, certificate, holonomy, forest-existence,
 completion or reconstruction callback is a final extra hypothesis. The
 accepted `semanticCCO_change_universe` transports the same CCO premise.
 
-The standalone actual SIMPLE-cycle/pin/freshness source wrapper is still
-being compiled privately and must be integrated before whole-batch
-submission. The final candidate root/audits/guards and independent exact-head
-review remain pending. The current Hom contradiction already proves the
-uniform source N theorem; the pending stronger wrapper discharges the full
-source reconstruction result rather than strengthening that theorem.
+All six source-result instances are now integrated and compiled.
+`SupportedSpecifiedCycle.reconstruct_simple_cycle` applies accepted original
+SAP injectivization to the exact reconstructed original walk. Its pin set
+is exactly original occurrences of retained OLD generators, with the same
+previously selected representatives; erased macro roots are unpinned. Every
+original fine label is preserved, the complete base remains a literal
+induced substructure, and all unpinned positions are fresh from that entire
+base. This final SAP step may choose fresh points for the original walk.
+
+Standalone `source_macro_path_compression` has NO closing-anchor hypothesis.
+For an actual supported positive original path it constructs the received
+forest, retained OLD source and bounds, and sends ANY retained-source Hom
+to one anchor-free simultaneous insertion, every original side word, every
+retained-root pin and the whole exact original RAW interval. A finite hidden
+completion supplies that Hom by `pruned_finite_completion_has_hom`.
+
+Independent exact-head review, public candidate CI and canonical acceptance
+remain pending. The final current-source guards/audits are recorded below.
 
 ## Source-to-Lean connections
 
@@ -53,9 +65,9 @@ source reconstruction result rather than strengthening that theorem.
 | Accepted forest receiving | `ForestAdapter*`: actual profile semigroup, original `Fin n` occurrence alphabet, literal `List.finRange n` yield, actual Ramsey tree, height at most 3s; inherited subtree infix/nonzero and common same-sort idempotent. |
 | Literal OLD gap certificate / OGC | `GapPath/Coordinates/Return/Suffix/Closed/TermSupport`: SAME local support/model, actual Return factors, literal source telescope and valid singleton identity BEFORE deletion; complete represented-MI to FULL named-coordinate identification. |
 | RAW envelope before diversity | `GapConsumers`, `ForestAdapterSource`: ANY Hom of actual retained OLD closure preserves those named equations; reconstruct FULL RAW Id-union-e first; actual tagged distinctness then gives the exact original gap word profile. |
-| Stopped factor path | `Intervals`, `StoppedPruning*`, `PruningBounds/Boundaries`: keep first/last, STOP in whole original middle; exact ordered disjoint occurrence/payload partition, canonical intervals and all piece boundaries retained. |
+| Stopped factor path | `Intervals`, `StoppedPruning*`, `PruningBounds/Boundaries`, `PathReconstructionRequests`: keep first/last, STOP in whole original middle; exact ordered disjoint occurrence/payload partition, canonical intervals, all piece boundaries retained and anchor-free original-path reconstruction. |
 | Actual G_typ cycle contraction | `WordIndex`, `Visible*`, `CycleContraction*`, `SupportedCycle`: exact original positions, colour edges and cyclic order; ALL actual OLD cuts; original whole branch in its actual orientation and SAME source pair model. Constructor applies to every specified simple cycle. |
-| One-base source reconstruction | `RetainedSides`, `RealBase`, `ReconstructionRequests`, `CycleReconstruction*`: all retained/gap and separate anchor profiles proved internally, ONE split Hom/base, all exact original whole-word requests; original fine-edge cycle Hom. |
+| One-base source reconstruction | `RetainedSides`, `RealBase`, `ReconstructionRequests`, `CycleReconstruction*`: all retained/gap and separate anchor profiles proved internally, ONE split Hom/base, all exact original whole-word requests; original fine-edge cycle Hom and actual SIMPLE reconstruction over that same base, fixing precisely retained generator pins. |
 | OLD anchor bound / OAB | `SourcePrunedForest.old_anchor_bound`: actual old generators only, all piece boundaries and original anchor endpoints included; unary admissibility derives closure size, with the stronger m*2^(3s+1) implying displayed conservative OAB. |
 | Uniform bounded hidden obstruction | `SourceBounds`, `BoundedHidden`, `SourceExports`: both actual induced-source branches and one language-dependent N; original finite HE implies retained Hom internally. |
 
@@ -95,14 +107,26 @@ independent reviewer. recovery_control has no authorship/design/source edits.
 
 Native author commits are preserved by no-ff merges, including source core
 `96f34765314b262d45e0904fe06862955c02c3f4` and qualified boundary
-`4d5d423b376910027bf4d2846066b39d77c04969`. The last public 38-module WIP is
-`113b89e1547652becd0b86d7a0926ef68e50a054`, native26c6e9df, with CI tracked
-canonically. This local checkpoint advances that exact source DAG.
+`4d5d423b376910027bf4d2846066b39d77c04969`, actual SIMPLE wrapper
+`d5ae3724f635f8d04f60297cc23985c93dbfcebe`, and anchor-free path wrapper
+`dafba86672b3df9702fb75ade4e9980f510f2060`. This complete candidate advances the public WIP native DAG, including the
+actual uniform-N checkpoint `f898ae10066d1957654eceb9b47bcd94c12e5873`.
+Exact public head, CI, submission, independent review and eventual acceptance
+are recorded only by root in the live canonical register.
 
-Current evidence: actual final N/facade leaf build 2,771 jobs and full root
-5,123 jobs pass. Prior immutable 33-module checkpoint58c982 passed all
-provider/cache guards, 2,420 project artifacts, transitive root audit37,760
-standard-three declarations and separate forest audit791; both B058 control
-scripts passed. Final current-head audits/guards will be recorded after the
-pending actual SIMPLE source wrapper. No source/API/toolchain change,
-`speculative` acceptance, broad Mathlib import, sorry/admit or new axiom.
+Current evidence: final 51-module pinned root build passes 5,125 jobs;
+actual complete source facade/standalone path leaf build passes 2,773 jobs.
+Direct printed types of both bounded-hidden theorems have only the standing
+source hypotheses, unary admissibility and input noncompletion. Direct
+printed axioms of the source N and actual SIMPLE reconstruction are exactly
+propext, Classical.choice and Quot.sound. All public root imports are present;
+source scan and diff whitespace check pass, with no broad Mathlib imports,
+sorry/admit or new axiom. Full current-head verification passes: 203 Python unit tests; all 2,438
+current project modules/artifacts; exact external provider269, Ramsey106 and
+forest98 compiled outputs/14 source modules; reject-broad Mathlib roots;
+root transitive axiom audit38,398 and separate forest defining-module
+audit791, each with only the standard three and no violations. The complete
+B058 module contract validates all11 definitions/74 claims/6 exports/8 tasks.
+Both prescribed B058 controls pass (finite diagnostics only). Final
+after-audit source/artifact guards also pass. No source/API/toolchain or
+external pin changed.
