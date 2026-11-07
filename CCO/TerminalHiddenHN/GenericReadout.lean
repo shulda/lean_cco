@@ -257,7 +257,7 @@ def readoutModel {A : CCO.FiniteInduced (X := X)} (a : D.ReadoutOn A) :
     CCO.FullCode.Structure D.orderedLanguage (D.realClosure A) :=
   @CCO.TerminalHiddenHN.orderedStructure D.signature D.binary _ (D.readoutPartialModel A) a.order
 
-private theorem code_func_iff (F : U.Func) (x y : V) :
+theorem code_func_iff (F : U.Func) (x y : V) :
     y ∈ D.partialModel.func F x ↔ P.sort x = U.input F ∧ y = P.func F x := by
   classical
   letI := D.finiteSorts
@@ -290,9 +290,12 @@ def closurePartialEmbedding (H : CCO.HomogeneousSource S G)
   map_rel R xs h := ((D.closureLift H e).embedding.rel_iff R xs).mpr h
   reflect_rel R xs h := ((D.closureLift H e).embedding.rel_iff R xs).mp h
 
+namespace ReadoutEmbedding
+variable {D}
+
 /-- The ordered hidden extension uses exactly the old map's unique
 closure extension and the same order comparisons. -/
-def ReadoutEmbedding.toHidden (H : CCO.HomogeneousSource S G)
+def toHidden (H : CCO.HomogeneousSource S G)
     {A B : CCO.FiniteInduced (X := X)} {a : D.ReadoutOn A} {b : D.ReadoutOn B}
     (e : D.ReadoutEmbedding H a b) :
     CCO.FullCode.Structure.Embedding (D.readoutModel a) (D.readoutModel b) := by
@@ -300,6 +303,203 @@ def ReadoutEmbedding.toHidden (H : CCO.HomogeneousSource S G)
   letI : LinearOrder (D.realClosure B) := b.order
   exact CCO.TerminalHiddenHN.orderedEmbedding D.signature D.binary
     ⟨D.closurePartialEmbedding H e.old,e.lt_iff⟩
+
+end ReadoutEmbedding
+
+
+/-- Every named real point of the literal closure is one UNIQUE old
+marked root. Erased or duplicate real roots are not introduced. -/
+theorem realClosure_original (A : CCO.FiniteInduced (X := X))
+    (x : D.realClosure A) {i : ι} (hi : P.sort x.val = D.realSort i) :
+    ∃! a : A.vertices, D.closurePoint a = x := by
+  obtain ⟨z,hz⟩ := D.realPoint_surjective_on_sort i x.val hi
+  have hmem : (⟨i,z⟩ : Sigma X) ∈ A.vertices :=
+    (D.realClosure_real_iff A ⟨i,z⟩).mp (hz.symm ▸ x.property)
+  refine ⟨⟨⟨i,z⟩,hmem⟩,Subtype.ext hz,?_⟩
+  intro b hb
+  apply Subtype.ext
+  exact D.realPoint_injective ((congrArg Subtype.val hb).trans hz.symm)
+
+private theorem hidden_real_sort {A B : CCO.FiniteInduced (X := X)}
+    {a : D.ReadoutOn A} {b : D.ReadoutOn B}
+    (f : CCO.FullCode.Structure.Embedding (D.readoutModel a) (D.readoutModel b)) (x : A.vertices) :
+    P.sort (f.point (D.closurePoint x)).val = D.realSort x.val.1 :=
+  (f.sort_eq _).trans (D.sort_realPoint x.val)
+
+def hiddenOldPoint {A B : CCO.FiniteInduced (X := X)}
+    {a : D.ReadoutOn A} {b : D.ReadoutOn B}
+    (f : CCO.FullCode.Structure.Embedding (D.readoutModel a) (D.readoutModel b)) (x : A.vertices) :
+    B.vertices := Classical.choose (D.realClosure_original B _ (D.hidden_real_sort f x))
+
+@[simp] theorem hiddenOldPoint_spec {A B : CCO.FiniteInduced (X := X)}
+    {a : D.ReadoutOn A} {b : D.ReadoutOn B}
+    (f : CCO.FullCode.Structure.Embedding (D.readoutModel a) (D.readoutModel b)) (x : A.vertices) :
+    D.closurePoint (D.hiddenOldPoint f x) = f.point (D.closurePoint x) :=
+  (Classical.choose_spec (D.realClosure_original B _ (D.hidden_real_sort f x))).1
+
+theorem hiddenOldPoint_sort {A B : CCO.FiniteInduced (X := X)}
+    {a : D.ReadoutOn A} {b : D.ReadoutOn B}
+    (f : CCO.FullCode.Structure.Embedding (D.readoutModel a) (D.readoutModel b)) (x : A.vertices) :
+    (D.hiddenOldPoint f x).val.1 = x.val.1 := by
+  apply D.realSort.injective
+  exact (D.sort_realPoint _).symm.trans
+    ((congrArg (fun z : D.realClosure B => P.sort z.val) (D.hiddenOldPoint_spec f x)).trans
+      (D.hidden_real_sort f x))
+
+theorem hiddenOldPoint_injective {A B : CCO.FiniteInduced (X := X)}
+    {a : D.ReadoutOn A} {b : D.ReadoutOn B}
+    (f : CCO.FullCode.Structure.Embedding (D.readoutModel a) (D.readoutModel b)) :
+    Function.Injective (D.hiddenOldPoint f) := by
+  intro x y h
+  have he := (D.hiddenOldPoint_spec f x).symm.trans
+    ((congrArg D.closurePoint h).trans (D.hiddenOldPoint_spec f y))
+  have hr := congrArg Subtype.val (f.injective he)
+  exact Subtype.ext (D.realPoint_injective hr)
+
+private theorem hiddenOld_rel_iff {A B : CCO.FiniteInduced (X := X)}
+    {a : D.ReadoutOn A} {b : D.ReadoutOn B}
+    (f : CCO.FullCode.Structure.Embedding (D.readoutModel a) (D.readoutModel b))
+    (R : U.Rel) (xs : Fin (U.arity R) → A.vertices) :
+    P.rel R (fun n => D.realPoint (D.hiddenOldPoint f (xs n)).val) ↔
+      P.rel R (fun n => D.realPoint (xs n).val) := by
+  letI : LinearOrder (D.realClosure A) := a.order
+  letI : LinearOrder (D.realClosure B) := b.order
+  let e := CCO.TerminalHiddenHN.orderedEmbeddingInverse D.signature D.binary f
+  have he : (fun n => D.realPoint (D.hiddenOldPoint f (xs n)).val) =
+      fun n => (f.point (D.closurePoint (xs n))).val := by
+    funext n
+    exact congrArg Subtype.val (D.hiddenOldPoint_spec f (xs n))
+  rw [he]
+  exact ⟨e.reflect_rel R (fun n => D.closurePoint (xs n)),
+    e.map_rel R (fun n => D.closurePoint (xs n))⟩
+
+private theorem taggedColour_of_binary_codes (p q p' q' : Sigma X)
+    (hp : p'.1 = p.1) (hq : q'.1 = q.1)
+    (hr : ∀ R : U.Rel,
+      P.rel R (fun n => if n.val = 0 then D.realPoint p' else D.realPoint q') ↔
+        P.rel R (fun n => if n.val = 0 then D.realPoint p else D.realPoint q)) :
+    CCO.taggedColour S p q = CCO.taggedColour S p' q' := by
+  rcases p with ⟨i,x⟩; rcases q with ⟨j,y⟩
+  rcases p' with ⟨i',x'⟩; rcases q' with ⟨j',y'⟩
+  change i' = i at hp
+  change j' = j at hq
+  subst i'; subst j'
+  have hc : ∀ aa : S.Atom i j, S.colour x' y' = some aa ↔ S.colour x y = some aa := by
+    intro aa
+    exact (D.atom_iff aa x' y').symm.trans ((hr (D.atom aa)).trans (D.atom_iff aa x y))
+  have hh : S.colour x y = S.colour x' y' := by
+    cases hxy : S.colour x y with
+    | some aa => exact ((hc aa).mpr hxy).symm
+    | none =>
+      cases hxy' : S.colour x' y' with
+      | none => rfl
+      | some aa =>
+        have bad := (hc aa).mp hxy'
+        rw [hxy] at bad
+        cases bad
+  exact congrArg (fun o => (⟨i,j,o⟩ : Σ i, Σ j, Option (S.Atom i j))) hh
+
+def hiddenOldEmbedding {A B : CCO.FiniteInduced (X := X)}
+    {a : D.ReadoutOn A} {b : D.ReadoutOn B}
+    (f : CCO.FullCode.Structure.Embedding (D.readoutModel a) (D.readoutModel b)) :
+    CCO.InducedEmbedding S A B where
+  toEmbedding := ⟨D.hiddenOldPoint f,D.hiddenOldPoint_injective f⟩
+  preserves_sort := D.hiddenOldPoint_sort f
+  preserves_colours x y := by
+    change CCO.taggedColour S x.val y.val =
+      CCO.taggedColour S (D.hiddenOldPoint f x).val (D.hiddenOldPoint f y).val
+    apply D.taggedColour_of_binary_codes _ _ _ _
+      (D.hiddenOldPoint_sort f x) (D.hiddenOldPoint_sort f y)
+    intro R
+    simpa only [apply_ite] using D.hiddenOld_rel_iff f R (fun n => if n.val = 0 then x else y)
+
+
+private theorem hidden_func_eq {A B : CCO.FiniteInduced (X := X)}
+    {a : D.ReadoutOn A} {b : D.ReadoutOn B}
+    (f : CCO.FullCode.Structure.Embedding (D.readoutModel a) (D.readoutModel b))
+    (F : U.Func) (x : D.realClosure A) :
+    (f.point ⟨P.func F x.val,(P.closure_closed _) F x.val x.property⟩).val =
+      P.func F (f.point x).val := by
+  classical
+  by_cases hs : P.sort x.val = U.input F
+  · have hmem := (D.code_func_iff F x.val (P.func F x.val)).mpr ⟨hs,rfl⟩
+    exact (D.code_func_iff F _ _).mp (f.map_func F x
+      ⟨P.func F x.val,(P.closure_closed _) F x.val x.property⟩ hmem) |>.2
+  · have ht : P.sort (f.point x).val ≠ U.input F := by
+      intro he; exact hs ((f.sort_eq x).symm.trans he)
+    have hh : (⟨P.func F x.val,(P.closure_closed _) F x.val x.property⟩ : D.realClosure A) = x :=
+      Subtype.ext (P.func_offsort F x.val hs)
+    rw [hh,P.func_offsort F _ ht]
+
+private def hiddenClosureLift (H : CCO.HomogeneousSource S G)
+    {A B : CCO.FiniteInduced (X := X)} {a : D.ReadoutOn A} {b : D.ReadoutOn B}
+    (f : CCO.FullCode.Structure.Embedding (D.readoutModel a) (D.readoutModel b)) :
+    D.ClosureLift H (D.hiddenOldEmbedding f) := by
+  letI : LinearOrder (D.realClosure A) := a.order
+  letI : LinearOrder (D.realClosure B) := b.order
+  let e := CCO.TerminalHiddenHN.orderedEmbeddingInverse D.signature D.binary f
+  exact {
+    embedding := {
+      point x := (f.point x).val
+      mem_point x := (f.point x).property
+      injective := fun x y h => f.injective (Subtype.ext h)
+      sort_eq := f.sort_eq
+      func_eq := D.hidden_func_eq f
+      rel_iff R xs := ⟨e.reflect_rel R xs,e.map_rel R xs⟩ }
+    root_eq x := (congrArg Subtype.val (D.hiddenOldPoint_spec f x)).symm }
+
+theorem hidden_point_eq_closureMap (H : CCO.HomogeneousSource S G)
+    {A B : CCO.FiniteInduced (X := X)} {a : D.ReadoutOn A} {b : D.ReadoutOn B}
+    (f : CCO.FullCode.Structure.Embedding (D.readoutModel a) (D.readoutModel b)) (x : D.realClosure A) :
+    f.point x = D.closureMap H (D.hiddenOldEmbedding f) x :=
+  Subtype.ext (congrArg (fun h => h.embedding.point x)
+    (D.closureLift_unique H (D.hiddenClosureLift H f) (D.closureLift H _)))
+
+def readoutEmbedding_of_hidden (H : CCO.HomogeneousSource S G)
+    {A B : CCO.FiniteInduced (X := X)} {a : D.ReadoutOn A} {b : D.ReadoutOn B}
+    (f : CCO.FullCode.Structure.Embedding (D.readoutModel a) (D.readoutModel b)) :
+    D.ReadoutEmbedding H a b := by
+  letI : LinearOrder (D.realClosure A) := a.order
+  letI : LinearOrder (D.realClosure B) := b.order
+  let e := CCO.TerminalHiddenHN.orderedEmbeddingInverse D.signature D.binary f
+  refine ⟨D.hiddenOldEmbedding f,?_⟩
+  intro x y
+  rw [← D.hidden_point_eq_closureMap H f x,← D.hidden_point_eq_closureMap H f y]
+  exact e.order_iff x y
+
+@[ext] theorem oldEmbedding_ext {A B : CCO.FiniteInduced (X := X)}
+    {e f : CCO.InducedEmbedding S A B} (h : ∀ x, e.toEmbedding x = f.toEmbedding x) : e = f := by
+  have he : e.toEmbedding = f.toEmbedding := Function.Embedding.ext h
+  cases e; cases f; cases he; rfl
+
+/-- Marked hidden extensions and readout embeddings are bijective on the
+SAME point maps, without choosing a different actual real presentation. -/
+def readoutHiddenEquiv (H : CCO.HomogeneousSource S G)
+    {A B : CCO.FiniteInduced (X := X)} (a : D.ReadoutOn A) (b : D.ReadoutOn B) :
+    D.ReadoutEmbedding H a b ≃
+      CCO.FullCode.Structure.Embedding (D.readoutModel a) (D.readoutModel b) where
+  toFun e := e.toHidden H
+  invFun := D.readoutEmbedding_of_hidden H
+  left_inv e := by
+    apply ReadoutEmbedding.ext
+    apply oldEmbedding_ext
+    intro x
+    apply Subtype.ext
+    apply D.realPoint_injective
+    exact (congrArg Subtype.val (D.hiddenOldPoint_spec (e.toHidden H) x)).trans
+      (congrArg Subtype.val (D.closureMap_root H e.old x))
+  right_inv f := by
+    apply CCO.FullCode.Structure.Embedding.ext
+    intro x
+    exact (D.hidden_point_eq_closureMap H f x).symm
+
+theorem readout_toHidden_comp (H : CCO.HomogeneousSource S G)
+    {A B C : CCO.FiniteInduced (X := X)}
+    {a : D.ReadoutOn A} {b : D.ReadoutOn B} {c : D.ReadoutOn C}
+    (g : D.ReadoutEmbedding H b c) (f : D.ReadoutEmbedding H a b) :
+    (g.comp H f).toHidden H = (g.toHidden H).comp (f.toHidden H) := by
+  apply CCO.FullCode.Structure.Embedding.ext
+  exact D.closureMap_comp H g.old f.old
 
 end
 end CCO.TerminalHiddenHN.RealInterpretation
