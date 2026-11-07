@@ -53,6 +53,29 @@ theorem quotient_singleton_closure_same_sort {i : ι}
       ⟨originalCompletedNamedHiddenNode S H D q,rfl⟩)
   exact hterm.symm.trans hret
 
+/-- Any actual quotient singleton generates at most ONE value in EACH
+named target, including unselected partners and coarser coordinates. -/
+theorem quotient_singleton_closure_target_unique {i : ι}
+    (D : CCO.TransitionClosure.OriginalNamedHiddenCoordinate S H i)
+    (q : Quotient D.val.val) (y z : OriginalCompletedNamedCarrier S H)
+    (hy : y ∈ (M).closureAt (originalCompletedNamedHiddenNode S H D q))
+    (hz : z ∈ (M).closureAt (originalCompletedNamedHiddenNode S H D q))
+    (hsort : (M).sort y = (M).sort z) : y = z := by
+  obtain ⟨a,ha,s,left,hleft⟩ := hy
+  obtain ⟨b,hb,t,right,hright⟩ := hz
+  change a = originalCompletedNamedHiddenNode S H D q at ha
+  change b = originalCompletedNamedHiddenNode S H D q at hb
+  subst a
+  subst b
+  have hst : s = t := ((M).eval_sort left rfl).symm.trans
+    ((congrArg (M).sort hleft).trans
+      (hsort.trans ((congrArg (M).sort hright).symm.trans ((M).eval_sort right rfl))))
+  cases hst
+  have he := congrArg Subtype.val (congrFun
+    (actual_quotient_terms_eq S H sap nr2 terminal D left right)
+      ⟨originalCompletedNamedHiddenNode S H D q,rfl⟩)
+  exact hleft.symm.trans (he.trans hright)
+
 /-- Includes every proper term value, not merely displayed coordinate
 positions or the two bare endpoints. -/
 theorem quotient_pair_closure_same_sort {i : ι}

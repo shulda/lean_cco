@@ -11,6 +11,23 @@ open CCO.APRamseyReadout CCO.CloneTupleGeometry CCO.UnaryTermsReturn
 noncomputable section
 variable (B : OwnerStage.{u,v,w}) (ht : B.Terminal)
 
+theorem proper_triple_closure_eq_pair_union (x y z : Values B) :
+    (Target B ht).closure {x,y,z} =
+      (Target B ht).closure {x,y} ∪ (Target B ht).closureAt z := by
+  have hs : ({x,y,z} : Set (Values B)) = {x,y} ∪ {z} := by
+    ext p
+    simp only [Set.mem_insert_iff,Set.mem_singleton_iff,Set.mem_union]
+    exact or_assoc.symm
+  rw [hs,(Target B ht).closure_union]
+  rfl
+
+theorem proper_triple_new_in_singleton {x y z a : Values B}
+    (ha : a ∈ (Target B ht).closure {x,y,z})
+    (hnot : a ∉ (Target B ht).closure {x,y}) :
+    a ∈ (Target B ht).closureAt z := by
+  rw [proper_triple_closure_eq_pair_union] at ha
+  exact ha.resolve_left hnot
+
 theorem proper_target_finite_closure (A : Set (Values B)) (hA : A.Finite) :
     ((Target B ht).closure A).Finite := by
   rw [actual_partial_closure_eq]
