@@ -1,11 +1,13 @@
 import CCO.FullCode.Consumer
+import CCO.APRamseyReadout.TemplateBounds
 import CCO.FullCode.Reconstruction
 import CCO.FullCode.Naturality
 
 /-! C13--C17: marked templates and ALL full-code embeddings.
 These are the actual constructed FullCode maps. Every hidden function
 domain/value and all same-root/cross-root codes are retained. This branch
-uses no Ramsey, cofinality, EP, clone source or fine-colour recovery. -/
+uses no Ramsey, cofinality, EP or fine-colour recovery. The concrete
+fixed-chart bindings below discharge normal forms on actual whole hosts. -/
 
 universe u v w z a b c
 namespace CCO.APRamseyReadout
@@ -94,5 +96,72 @@ theorem templateSupportMap_comp (N : NormalForms L)
   change (Object.embeddingOfCode _).onSupport hC hE = _
   rw [he]
   exact Object.onSupport_comp (Object.embeddingOfCode f) (Object.embeddingOfCode g) hC hD hE
+
+
+universe p
+section Actual
+noncomputable section
+variable (B₀ : CCO.CloneTupleGeometry.OwnerStage.{u,v,w}) (ht : B₀.Terminal)
+variable (F : Charts.{u,v,w,p} B₀)
+
+abbrev orderedTupleNormalForms : NormalForms (OrderedCoordinateLanguage B₀ ht) :=
+  CCO.TerminalHiddenHN.orderedNormalForms (cloneSource B₀) (cloneHomogeneous B₀)
+    (cloneSAP B₀) (fullCovers B₀ ht)
+
+theorem orderedTupleNormalForms_valid_of_actualAge {V₀ : Type z}
+    (C₀ : CCO.UnarySupport.Structure (Sig B₀ ht) V₀) [LinearOrder V₀]
+    (hC : ActualAge B₀ ht C₀) :
+    (orderedTupleNormalForms B₀ ht).Valid (OrderedCoordinateModel B₀ ht C₀) :=
+  CCO.TerminalHiddenHN.orderedNormalForms_valid_of_actualAge
+    (cloneSource B₀) (cloneHomogeneous B₀) (cloneSAP B₀) (fullCovers B₀ ht) C₀ hC
+
+/-- Concrete source C17: ALL actual full-code maps correspond to ALL
+hidden induced embeddings, on arbitrary whole actual ordered hosts.
+No selected-root generation condition is imposed on the target. -/
+def actual_template_embeddings {V₀ : Type z} {W₀ : Type b} {A₀ : Type a}
+    (C₀ : CCO.UnarySupport.Structure (Sig B₀ ht) V₀)
+    (D₀ : CCO.UnarySupport.Structure (Sig B₀ ht) W₀)
+    [LinearOrder V₀] [LinearOrder W₀]
+    (hC : ActualAge B₀ ht C₀) (hD : ActualAge B₀ ht D₀)
+    (O : Object (OrderedCoordinateModel B₀ ht C₀) (orderedTupleScheme B₀ ht F) A₀) :
+    Structure.Embedding (O.codeStructure (orderedTupleNormalForms B₀ ht))
+        ((Object.full (OrderedCoordinateModel B₀ ht D₀)
+          (orderedTupleScheme B₀ ht F)).codeStructure (orderedTupleNormalForms B₀ ht)) ≃
+      Structure.Embedding O.supportStructure (OrderedCoordinateModel B₀ ht D₀) :=
+  templateEmbeddingEquiv (orderedTupleNormalForms B₀ ht) O
+    (orderedTupleNormalForms_valid_of_actualAge B₀ ht C₀ hC)
+    (orderedTupleNormalForms_valid_of_actualAge B₀ ht D₀ hD)
+
+/-- The concrete marked-presentation quotient reconstructs every
+unary-generated point of the SAME actual ordered template. -/
+def actual_template_presentations {V₀ : Type z} {A₀ : Type a}
+    (C₀ : CCO.UnarySupport.Structure (Sig B₀ ht) V₀) [LinearOrder V₀]
+    (hC : ActualAge B₀ ht C₀)
+    (O : Object (OrderedCoordinateModel B₀ ht C₀) (orderedTupleScheme B₀ ht F) A₀) :
+    Quotient (O.presentationSetoid (orderedTupleNormalForms B₀ ht)) ≃ O.support :=
+  templatePresentationEquiv (orderedTupleNormalForms B₀ ht) O
+    (orderedTupleNormalForms_valid_of_actualAge B₀ ht C₀ hC)
+
+/-- The full visible map has a unique actual hidden extension and that
+extension reflects every original partial function domain. -/
+theorem actual_template_extension_unique {V₀ : Type z} {W₀ : Type b} {A₀ : Type a}
+    (C₀ : CCO.UnarySupport.Structure (Sig B₀ ht) V₀)
+    (D₀ : CCO.UnarySupport.Structure (Sig B₀ ht) W₀)
+    [LinearOrder V₀] [LinearOrder W₀]
+    (hC : ActualAge B₀ ht C₀) (hD : ActualAge B₀ ht D₀)
+    (O : Object (OrderedCoordinateModel B₀ ht C₀) (orderedTupleScheme B₀ ht F) A₀)
+    (f : Structure.Embedding (O.codeStructure (orderedTupleNormalForms B₀ ht))
+        ((Object.full (OrderedCoordinateModel B₀ ht D₀)
+          (orderedTupleScheme B₀ ht F)).codeStructure (orderedTupleNormalForms B₀ ht))) :
+    ∃! g : Structure.Embedding O.supportStructure (OrderedCoordinateModel B₀ ht D₀),
+      (Object.fromHidden (orderedTupleNormalForms B₀ ht) O g).asCodeEmbedding = f ∧
+        ∀ Q x, ((OrderedCoordinateModel B₀ ht D₀).func Q (g.point x)).Nonempty ↔
+          (O.supportStructure.func Q x).Nonempty :=
+  template_embedding_unique (orderedTupleNormalForms B₀ ht) O
+    (orderedTupleNormalForms_valid_of_actualAge B₀ ht C₀ hC)
+    (orderedTupleNormalForms_valid_of_actualAge B₀ ht D₀ hD) f
+
+end
+end Actual
 
 end CCO.APRamseyReadout

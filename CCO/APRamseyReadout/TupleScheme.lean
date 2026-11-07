@@ -210,5 +210,86 @@ theorem ownerRoot_surjective : Function.Surjective (ownerRoot B ht F) := by
 def ownerRootEquiv : Sigma B.Point ≃ Root (CoordinateTarget B ht) (tupleScheme B ht F) :=
   Equiv.ofBijective (ownerRoot B ht F) ⟨ownerRoot_injective B ht F,ownerRoot_surjective B ht F⟩
 
+
+/-- The ordinary expansion only adds comparisons; every old symbol,
+partial domain and coordinate sort has its literal interpretation. -/
+def coordinateOrderExpansion :
+    LanguageExpansion (CoordinateLanguage B ht) (OrderedCoordinateLanguage B ht) where
+  sortMap := id
+  funcMap := id
+  unaryMap := id
+  binaryMap := Sum.inl
+  input_eq _ := rfl
+  output_eq _ := rfl
+  unary_eq U := PEmpty.elim U
+  left_eq _ := rfl
+  right_eq _ := rfl
+  sortEquiv := Equiv.refl _
+  sort_eq _ := rfl
+
+abbrev orderedTupleScheme : RootScheme (OrderedCoordinateLanguage B ht) :=
+  (tupleScheme B ht F).lift (coordinateOrderExpansion B ht)
+
+theorem orderedTupleScheme_positive (tag : (orderedTupleScheme B ht F).Tag) :
+    0 < (orderedTupleScheme B ht F).arity tag := chartArity_pos F tag.down
+
+/-- Forgetting the added order keeps the entire literal root tuple. -/
+abbrev orderedRootEquiv {V : Type z}
+    (C : CCO.UnarySupport.Structure (Sig B ht) V) [LinearOrder V] :
+    Root (OrderedCoordinateModel B ht C) (orderedTupleScheme B ht F) ≃
+      Root (CoordinateModel B ht C) (tupleScheme B ht F) :=
+  Root.expansionEquiv (coordinateOrderExpansion B ht)
+    (OrderedCoordinateModel B ht C) (tupleScheme B ht F)
+
+@[simp] theorem orderedRootEquiv_coordinate {V : Type z}
+    (C : CCO.UnarySupport.Structure (Sig B ht) V) [LinearOrder V]
+    (r : Root (OrderedCoordinateModel B ht C) (orderedTupleScheme B ht F))
+    (j : Fin ((tupleScheme B ht F).arity r.tag)) :
+    (orderedRootEquiv B ht F C r).coordinate j = r.coordinate j := rfl
+
+/-- One actual induced embedding of the WHOLE host realizes all of its
+valid roots simultaneously in the fixed owner structure. Orphan hidden
+inputs are allowed; no generation premise is used. -/
+def hostOwner {V : Type z} {C : CCO.UnarySupport.Structure (Sig B ht) V}
+    (e : C.Embedding (Target B ht))
+    (r : Root (CoordinateModel B ht C) (tupleScheme B ht F)) : Sigma B.Point :=
+  (ownerRootEquiv B ht F).symm
+    (r.map (CCO.TerminalHiddenHN.binaryEmbedding (Sig B ht)
+      (CCO.TerminalHiddenHN.sig_binary (cloneSource B) (cloneHomogeneous B)
+        (cloneSAP B) (fullCovers B ht)) e))
+
+@[simp] theorem ownerRoot_hostOwner {V : Type z}
+    {C : CCO.UnarySupport.Structure (Sig B ht) V}
+    (e : C.Embedding (Target B ht))
+    (r : Root (CoordinateModel B ht C) (tupleScheme B ht F)) :
+    ownerRoot B ht F (hostOwner B ht F e r) =
+      r.map (CCO.TerminalHiddenHN.binaryEmbedding (Sig B ht)
+        (CCO.TerminalHiddenHN.sig_binary (cloneSource B) (cloneHomogeneous B)
+          (cloneSAP B) (fullCovers B ht)) e) :=
+  (ownerRootEquiv B ht F).apply_symm_apply _
+
+theorem hostOwner_injective {V : Type z}
+    {C : CCO.UnarySupport.Structure (Sig B ht) V}
+    (e : C.Embedding (Target B ht)) : Function.Injective (hostOwner B ht F e) :=
+  (ownerRootEquiv B ht F).symm.injective.comp (Root.map_injective _)
+
+theorem hostOwner_tag {V : Type z}
+    {C : CCO.UnarySupport.Structure (Sig B ht) V}
+    (e : C.Embedding (Target B ht))
+    (r : Root (CoordinateModel B ht C) (tupleScheme B ht F)) :
+    (hostOwner B ht F e r).1 = r.tag.down := by
+  exact congrArg ULift.down (congrArg Root.tag (ownerRoot_hostOwner B ht F e r))
+
+/-- Actual age membership supplies the whole-host embedding internally. -/
+def actualHostOwner {V : Type z}
+    (C : CCO.UnarySupport.Structure (Sig B ht) V) (hC : ActualAge B ht C) :
+    Root (CoordinateModel B ht C) (tupleScheme B ht F) → Sigma B.Point :=
+  hostOwner B ht F (Classical.choice hC.2)
+
+theorem actualHostOwner_injective {V : Type z}
+    (C : CCO.UnarySupport.Structure (Sig B ht) V) (hC : ActualAge B ht C) :
+    Function.Injective (actualHostOwner B ht F C hC) :=
+  hostOwner_injective B ht F (Classical.choice hC.2)
+
 end
 end CCO.APRamseyReadout

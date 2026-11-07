@@ -193,6 +193,35 @@ theorem completionCodeEmbedding_selected (N : NormalForms L)
       selectedRoot P (f.point x) :=
   completionEmbedding_selected (Object.embeddingOfCode f) hC hD x
 
+theorem completionCodeEmbedding_id (N : NormalForms L)
+    (O : Object C S A) (hC : N.Valid C) :
+    completionCodeEmbedding N O O hC hC (Structure.Embedding.id (O.codeStructure N)) =
+      Structure.Embedding.id ((completionObject O).codeStructure N) := by
+  have he : Object.embeddingOfCode (Structure.Embedding.id (O.codeStructure N)) =
+      Object.Embedding.id N O := Object.Embedding.ext (fun _ => rfl)
+  apply Structure.Embedding.ext
+  intro r
+  change (completionEmbedding (Object.embeddingOfCode _) hC hC).point r = r
+  rw [he,completionEmbedding_id]
+  rfl
+
+theorem completionCodeEmbedding_comp (N : NormalForms L)
+    (O : Object C S A) (P : Object D S B) (Q : Object E S K)
+    (hC : N.Valid C) (hD : N.Valid D) (hE : N.Valid E)
+    (f : Structure.Embedding (O.codeStructure N) (P.codeStructure N))
+    (g : Structure.Embedding (P.codeStructure N) (Q.codeStructure N)) :
+    completionCodeEmbedding N O Q hC hE (g.comp f) =
+      (completionCodeEmbedding N P Q hD hE g).comp
+        (completionCodeEmbedding N O P hC hD f) := by
+  have he : Object.embeddingOfCode (g.comp f) =
+      (Object.embeddingOfCode g).comp (Object.embeddingOfCode f) :=
+    Object.Embedding.ext (fun _ => rfl)
+  apply Structure.Embedding.ext
+  intro r
+  change (completionEmbedding (Object.embeddingOfCode _) hC hE).point r = _
+  rw [he,completionEmbedding_comp]
+  rfl
+
 theorem completion_size_bounds (N : NormalForms L) (O : Object C S A) [Finite A]
     (hC : N.Valid C) :
     Nat.card O.support ≤ Nat.card (Presentation N S) * Nat.card A ∧
@@ -227,5 +256,78 @@ theorem completion_empty_of_positive (O : Object C S A) [IsEmpty A]
   · intro h
     exact False.elim h
 
+
 end
+
+universe p
+section Actual
+noncomputable section
+variable (B₀ : CCO.CloneTupleGeometry.OwnerStage.{u,v,w}) (ht : B₀.Terminal)
+variable (F : Charts.{u,v,w,p} B₀)
+
+/-- A uniform presentation budget determined by the fixed symbols and
+fixed chart arities, independently of any visible or hidden host. -/
+def orderedTuplePresentationBudget : ℕ :=
+  Nat.card (Presentation (orderedTupleNormalForms B₀ ht) (orderedTupleScheme B₀ ht F))
+
+/-- Source C35--C40 on the actual canonical fixed-chart interpretation.
+The completion consists of literal valid tuples of the SAME ambient
+host; its generated support is literally unchanged, as is the second
+completion root set. Both explicit bounds use actual discharged forms. -/
+theorem actual_coordinate_completion {V₀ : Type z} {A₀ : Type a} [Finite A₀]
+    (C₀ : CCO.UnarySupport.Structure (Sig B₀ ht) V₀) [LinearOrder V₀]
+    (hC : ActualAge B₀ ht C₀)
+    (O : Object (OrderedCoordinateModel B₀ ht C₀) (orderedTupleScheme B₀ ht F) A₀) :
+    (completionObject O).support = O.support ∧
+      completionRoots (completionObject O) = completionRoots O ∧
+      Nat.card O.support ≤ orderedTuplePresentationBudget B₀ ht F * Nat.card A₀ ∧
+      Nat.card (completionRoots O) ≤
+        rootTupleBound (orderedTupleScheme B₀ ht F) (Nat.card O.support) := by
+  have hforms := orderedTupleNormalForms_valid_of_actualAge B₀ ht C₀ hC
+  exact ⟨completion_support O,completion_idempotent O,
+    completion_size_bounds (orderedTupleNormalForms B₀ ht) O hforms⟩
+
+/-- Every actual full visible embedding has its canonical extension to
+all completed tuples, through its UNIQUE hidden term extension. -/
+def actualCompletionMap {V₀ : Type z} {W₀ : Type b} {A₀ : Type a} {A₁ : Type c}
+    (C₀ : CCO.UnarySupport.Structure (Sig B₀ ht) V₀)
+    (D₀ : CCO.UnarySupport.Structure (Sig B₀ ht) W₀)
+    [LinearOrder V₀] [LinearOrder W₀]
+    (hC : ActualAge B₀ ht C₀) (hD : ActualAge B₀ ht D₀)
+    (O : Object (OrderedCoordinateModel B₀ ht C₀) (orderedTupleScheme B₀ ht F) A₀)
+    (P : Object (OrderedCoordinateModel B₀ ht D₀) (orderedTupleScheme B₀ ht F) A₁)
+    (f : Structure.Embedding (O.codeStructure (orderedTupleNormalForms B₀ ht))
+      (P.codeStructure (orderedTupleNormalForms B₀ ht))) :
+    Structure.Embedding ((completionObject O).codeStructure (orderedTupleNormalForms B₀ ht))
+      ((completionObject P).codeStructure (orderedTupleNormalForms B₀ ht)) :=
+  completionCodeEmbedding (orderedTupleNormalForms B₀ ht) O P
+    (orderedTupleNormalForms_valid_of_actualAge B₀ ht C₀ hC)
+    (orderedTupleNormalForms_valid_of_actualAge B₀ ht D₀ hD) f
+
+theorem actualCompletionMap_selected {V₀ : Type z} {W₀ : Type b}
+    {A₀ : Type a} {A₁ : Type c}
+    (C₀ : CCO.UnarySupport.Structure (Sig B₀ ht) V₀)
+    (D₀ : CCO.UnarySupport.Structure (Sig B₀ ht) W₀)
+    [LinearOrder V₀] [LinearOrder W₀]
+    (hC : ActualAge B₀ ht C₀) (hD : ActualAge B₀ ht D₀)
+    (O : Object (OrderedCoordinateModel B₀ ht C₀) (orderedTupleScheme B₀ ht F) A₀)
+    (P : Object (OrderedCoordinateModel B₀ ht D₀) (orderedTupleScheme B₀ ht F) A₁)
+    (f : Structure.Embedding (O.codeStructure (orderedTupleNormalForms B₀ ht))
+      (P.codeStructure (orderedTupleNormalForms B₀ ht))) (x : A₀) :
+    (actualCompletionMap B₀ ht F C₀ D₀ hC hD O P f).point (selectedRoot O x) =
+      selectedRoot P (f.point x) :=
+  completionCodeEmbedding_selected (orderedTupleNormalForms B₀ ht) O P
+    (orderedTupleNormalForms_valid_of_actualAge B₀ ht C₀ hC)
+    (orderedTupleNormalForms_valid_of_actualAge B₀ ht D₀ hD) f x
+
+/-- Nonempty selected MI families rule out an empty-coordinate root
+in the concrete source, so completion also preserves the empty object. -/
+theorem actual_completion_empty {V₀ : Type z} {A₀ : Type a} [IsEmpty A₀]
+    (C₀ : CCO.UnarySupport.Structure (Sig B₀ ht) V₀) [LinearOrder V₀]
+    (O : Object (OrderedCoordinateModel B₀ ht C₀) (orderedTupleScheme B₀ ht F) A₀) :
+    completionRoots O = ∅ :=
+  completion_empty_of_positive O (orderedTupleScheme_positive B₀ ht F)
+
+end
+end Actual
 end CCO.APRamseyReadout
