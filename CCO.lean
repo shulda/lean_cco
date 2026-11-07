@@ -2326,3 +2326,11 @@ import CCO.GuardedTwoRoot.TypedPrefixBounds
 import CCO.GuardedTwoRoot.UniformTheta
 import CCO.GuardedTwoRoot.JoinedFactorComparisons
 import CCO.GuardedTwoRoot.G1WordObstruction
+import CCO.GuardedTwoRoot.SourceExactMenu
+import CCO.GuardedTwoRoot.CompletePairReadback
+import CCO.GuardedTwoRoot.G1HiddenModel
+import CCO.GuardedTwoRoot.G1HiddenSAP
+import CCO.GuardedTwoRoot.JoinedClosedImage
+import CCO.GuardedTwoRoot.PrivateCycleClassification
+import CCO.GuardedTwoRoot.G1HiddenOrbitals
+import CCO.GuardedTwoRoot.SourceRootSignature
