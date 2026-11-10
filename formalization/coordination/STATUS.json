@@ -1,12 +1,55 @@
 {
   "not_an_ownership_lease": true,
-  "state_revision": 917,
+  "state_revision": 918,
   "policy_revision": 19,
   "execution_mode": "chat",
   "claims_paused": false,
   "main_sha": "496d0720bd17489e43e5f968436fcae662999649",
   "accepted": 64,
-  "integration_lock": null,
+  "integration_lock": {
+    "kind": "infrastructure",
+    "actor_id": "chat-1",
+    "head_sha": "400c3f12f10ee18ed3e44391532d81e13c7f927f",
+    "base_main_sha": "496d0720bd17489e43e5f968436fcae662999649",
+    "pr_number": 92,
+    "review": {
+      "actor_id": "chat-2",
+      "head_sha": "400c3f12f10ee18ed3e44391532d81e13c7f927f",
+      "approved": true,
+      "summary": "Actual independent Chat 2 (project 5) reviewed the complete eleven-file B065 registration PR #92 at its exact 400c3f12 source head, the independently pinned human FG/LEX proof, complete immutable old/new BOARD and policy snapshots, four canonical registry promotion hashes, and real exact-head CI run 42854278315 including transitive axiom audit. The fresh nonauthor report records full source/protocol/consumer findings, and native GitHub comment review explains why shared transport account prevents a native APPROVE. Reviewer authored none of this publication.",
+      "independence": {
+        "identity": "chat-project:cco-chat-2",
+        "non_author": true,
+        "summary": "This is a genuinely separate formalization Chat project (Chat 2, ID 5); it authored, designed, proposed and repaired none of the eleven registration/infrastructure files, source contracts or mathematical code. It performed an independent complete source, policy, manifest and CI audit and wrote its own signed review report; Chat 1 alone performed the original publication.",
+        "report_path": "formalization/coordination/reviews/B065-registry-chat-2-PR92.md"
+      }
+    },
+    "ci": {
+      "run_id": 42854278315,
+      "run_attempt": 1,
+      "head_sha": "400c3f12f10ee18ed3e44391532d81e13c7f927f",
+      "conclusion": "success",
+      "axiom_audit": "allowlist",
+      "job_id": 129962965231,
+      "declarations": 42494,
+      "source_modules": 2659
+    },
+    "author_actor_ids": [
+      "chat-1"
+    ],
+    "original_author_project_ids": [
+      4
+    ],
+    "registry_promotion": {
+      "package_ids": [
+        "B065"
+      ],
+      "previous_registry_sha256": "80d48ab42c39147ee3099a1a983708c7a5cee9bd9521144c989a4c5449d76499",
+      "previous_policy_sha256": "cf480ffe8aea513157941c49fd75a3a7ec420bc5139b93964dd3ffae15b25434",
+      "registry_sha256": "0b1b5e095d9d449b010bac554d0541d0e8d3f0d73375a3f78e7b1158312b5931",
+      "policy_sha256": "0a0b076cd4b4484af6713668c979f2b84403659274d532a7d6d5a22eac7729fc"
+    }
+  },
   "available": [],
   "next_actions": {
     "root": {
@@ -14,8 +57,52 @@
       "reason": "This execution profile is inactive for this project."
     },
     "chat-1": {
-      "action": "wait",
-      "reason": "No eligible released batch; finish reviews or await preparation."
+      "action": "finish_integration",
+      "package_id": null,
+      "lock": {
+        "kind": "infrastructure",
+        "actor_id": "chat-1",
+        "head_sha": "400c3f12f10ee18ed3e44391532d81e13c7f927f",
+        "base_main_sha": "496d0720bd17489e43e5f968436fcae662999649",
+        "pr_number": 92,
+        "review": {
+          "actor_id": "chat-2",
+          "head_sha": "400c3f12f10ee18ed3e44391532d81e13c7f927f",
+          "approved": true,
+          "summary": "Actual independent Chat 2 (project 5) reviewed the complete eleven-file B065 registration PR #92 at its exact 400c3f12 source head, the independently pinned human FG/LEX proof, complete immutable old/new BOARD and policy snapshots, four canonical registry promotion hashes, and real exact-head CI run 42854278315 including transitive axiom audit. The fresh nonauthor report records full source/protocol/consumer findings, and native GitHub comment review explains why shared transport account prevents a native APPROVE. Reviewer authored none of this publication.",
+          "independence": {
+            "identity": "chat-project:cco-chat-2",
+            "non_author": true,
+            "summary": "This is a genuinely separate formalization Chat project (Chat 2, ID 5); it authored, designed, proposed and repaired none of the eleven registration/infrastructure files, source contracts or mathematical code. It performed an independent complete source, policy, manifest and CI audit and wrote its own signed review report; Chat 1 alone performed the original publication.",
+            "report_path": "formalization/coordination/reviews/B065-registry-chat-2-PR92.md"
+          }
+        },
+        "ci": {
+          "run_id": 42854278315,
+          "run_attempt": 1,
+          "head_sha": "400c3f12f10ee18ed3e44391532d81e13c7f927f",
+          "conclusion": "success",
+          "axiom_audit": "allowlist",
+          "job_id": 129962965231,
+          "declarations": 42494,
+          "source_modules": 2659
+        },
+        "author_actor_ids": [
+          "chat-1"
+        ],
+        "original_author_project_ids": [
+          4
+        ],
+        "registry_promotion": {
+          "package_ids": [
+            "B065"
+          ],
+          "previous_registry_sha256": "80d48ab42c39147ee3099a1a983708c7a5cee9bd9521144c989a4c5449d76499",
+          "previous_policy_sha256": "cf480ffe8aea513157941c49fd75a3a7ec420bc5139b93964dd3ffae15b25434",
+          "registry_sha256": "0b1b5e095d9d449b010bac554d0541d0e8d3f0d73375a3f78e7b1158312b5931",
+          "policy_sha256": "0a0b076cd4b4484af6713668c979f2b84403659274d532a7d6d5a22eac7729fc"
+        }
+      }
     },
     "chat-2": {
       "action": "wait",
