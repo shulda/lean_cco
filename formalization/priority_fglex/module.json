@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "id": "priority_fglex",
+  "kind": "supplementary_source_addendum",
+  "title": "Global filter-gate lexicographic priorities for the original exact selector",
+  "source_repository": "shulda/cycle_constrainedness",
+  "source_branch": "cco-sym/human-consolidation-20261028",
+  "source_commit": "e4426e22e649bb8774e88fc15e2c626a9d254aa4",
+  "source_file": "cco-symmetric-eppa/papers/consolidated_working/sections/typed_hereditary_selectors.tex",
+  "source_blob": "9df581aa567cc0789623c84167329eb9314981d8",
+  "legacy_source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+  "prior_accepted_batch": "B004",
+  "claims": [
+    {
+      "id": "C01",
+      "name": "FG: global incidence score equals gate argmax",
+      "source_label": "lem:typed-gate-incidence"
+    },
+    {
+      "id": "C02",
+      "name": "LEX: fixed finite chain equals lexicographic maximum",
+      "source_label": "lem:typed-gate-lex"
+    },
+    {
+      "id": "C03",
+      "name": "Priority-HS: compatible total priority orders",
+      "source_label": "cor:typed-priority-HS"
+    }
+  ],
+  "production_exports": [
+    "CCO.Selectors.gate_eq_incidence_argmax",
+    "CCO.Selectors.descentScore_argmax",
+    "CCO.Selectors.exists_priority_selector_of_SAP_CCO_NR2"
+  ],
+  "assumptions": "Exactly the existing C27 hypotheses: finite typed symmetric AtomicSource, HomogeneousSource, AgeSAP, SemanticCCO, OriginalNR2. Global same-family filter gates, original strong exact menus, converse compatibility; no RAW equality or arbitrary hereditary selector linearization.",
+  "audit": "Unchanged pinned toolchain and manifest; all new Lean exports imported in CCO.lean; no sorry/admit/axioms; full transitive allowlist and exact PR/main CI."
+}
