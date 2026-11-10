@@ -76,7 +76,7 @@ theorem terminal_priority_minimum (A : PureTagAction S Λ N)
     {i j : ι} (D : S.Menu i j) (hD : StrongExact.Exact S D)
     (b : S.Atom i j) (hb : b ∈ D) :
     @LE.le (S.Atom i j) (priorityOrder S A chain i j).toLE
-      (selectorOfTerminal S hTerm (DescentChain.composite chain)).choose D hD b := by
+      ((selectorOfTerminal S hTerm (DescentChain.composite chain)).choose D hD) b := by
   let h := selectorOfTerminal S hTerm (DescentChain.composite chain)
   let a := h.choose D hD
   by_cases heq : b = a
