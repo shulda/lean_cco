@@ -100,12 +100,12 @@ theorem symmetricScore_strict_of_gate (F : Family S) (hF : FilterFamily S F)
   omega
 
 /-- Select one single global filter, uniformly for all menus in this stage. -/
-private noncomputable def stageFilter (A : PureTagAction S Λ N)
+noncomputable def stageFilter (A : PureTagAction S Λ N)
     {J K : Family S}
     (R : {R : Contraction S J K // IsVisibleGate S A R}) : Family S :=
   Classical.choose R.property.actual_gate
 
-private theorem stageFilter_sound (A : PureTagAction S Λ N)
+theorem stageFilter_sound (A : PureTagAction S Λ N)
     {J K : Family S} (R : {R : Contraction S J K // IsVisibleGate S A R}) :
     FilterFamily S (stageFilter S A R) ∧
       ∀ {i j} (D : S.Menu i j), R.val.toFun D = gate S (stageFilter S A R) D := by
