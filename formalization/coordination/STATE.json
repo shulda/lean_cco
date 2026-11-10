@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 919,
+  "revision": 920,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -5744,8 +5744,27 @@
       }
     },
     "B065": {
-      "state": "AVAILABLE",
-      "owner_project_id": null
+      "state": "IN_PROGRESS",
+      "owner_project_id": 4,
+      "author_actor_ids": [
+        "chat-1"
+      ],
+      "original_author_project_ids": [
+        4
+      ],
+      "branch": "chat/chat-1/B065",
+      "claim_revision": 920,
+      "base_main_sha": "62a635e138acd89ba6b17a9b33be5d6079155aee",
+      "base_ci": {
+        "run_id": 42861697580,
+        "run_attempt": 1,
+        "head_sha": "62a635e138acd89ba6b17a9b33be5d6079155aee",
+        "conclusion": "success",
+        "axiom_audit": "allowlist",
+        "job_id": 129989237902,
+        "declarations": 42494,
+        "source_modules": 2659
+      }
     }
   },
   "integration_lock": null,
@@ -28009,6 +28028,29 @@
           "previous_policy_sha256": "cf480ffe8aea513157941c49fd75a3a7ec420bc5139b93964dd3ffae15b25434",
           "registry_sha256": "0b1b5e095d9d449b010bac554d0541d0e8d3f0d73375a3f78e7b1158312b5931",
           "policy_sha256": "0a0b076cd4b4484af6713668c979f2b84403659274d532a7d6d5a22eac7729fc"
+        }
+      }
+    },
+    {
+      "revision": 920,
+      "project_id": 4,
+      "actor_id": "chat-1",
+      "event": "claim",
+      "package_id": "B065",
+      "details": {
+        "actor_id": "chat-1",
+        "request_id": "chat-1/20261110_chat1_claim_B065_after_promotion_1815",
+        "package_id": "B065",
+        "base_main_sha": "62a635e138acd89ba6b17a9b33be5d6079155aee",
+        "base_ci": {
+          "run_id": 42861697580,
+          "run_attempt": 1,
+          "head_sha": "62a635e138acd89ba6b17a9b33be5d6079155aee",
+          "conclusion": "success",
+          "axiom_audit": "allowlist",
+          "job_id": 129989237902,
+          "declarations": 42494,
+          "source_modules": 2659
         }
       }
     }
