@@ -1,5 +1,5 @@
 import CCO.Selectors.PriorityTie
-import Mathlib.Order.Prod.Lex.Basic
+import Mathlib.Data.Prod.Lex
 import Mathlib.Order.Basic
 
 /-!
