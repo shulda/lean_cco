@@ -49,6 +49,10 @@ def collect(root):
     paths.update(str(path.relative_to(root)) for path in
                  (root / coordination.DIRECTORY).rglob('*')
                  if path.is_file() and path.suffix in {'.json', '.md'})
+    # Keep the old pinned source modules intact; carry the separately
+    # pinned FG/LEX addendum into prepared-launch test fixtures.
+    paths.update({'formalization/priority_fglex/module.json',
+                  'formalization/priority_fglex/PROOF_NOTES.md'})
     paths.update(item['file'] for item in board['source_files'])
     modules = []
     for ident in MODULES:

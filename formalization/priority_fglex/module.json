@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "id": "priority_fglex",
+  "title": "FG/LEX priority addendum",
+  "status": "PREPARED_NOT_LEAN_ACCEPTED",
+  "scope": "Additive FG/LEX result, independent of all earlier frozen source pins: globally selected original-atom filter incidence scores, genuine finite stage-chain lex argmax, converse-compatible total priorities, and original strong SAP+homomorphic CCO+full sortwise original NR2 priority selector with joint PC/heredity/opposite. No general linearization of arbitrary selectors, equality-aware RAW, SH meet, finite-index exclusion, or shortest-path POCS.",
+  "accepted_foundations": {
+    "package": "B004",
+    "original_source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+    "lean_module": "CCO.Selectors.SourceSelectors",
+    "export": "exists_hereditary_selector_of_SAP_CCO_NR2"
+  },
+  "additive_source": {
+    "repository": "shulda/cycle_constrainedness",
+    "commit": "e4426e22e649bb8774e88fc15e2c626a9d254aa4",
+    "file": "cco-symmetric-eppa/papers/consolidated_working/sections/typed_hereditary_selectors.tex",
+    "git_blob": "9df581aa567cc0789623c84167329eb9314981d8",
+    "labels": [
+      "lem:typed-gate-incidence",
+      "lem:typed-gate-lex",
+      "cor:typed-priority-HS"
+    ],
+    "note": "cco-foundations/notes/FILTER_GATE_LEX_PRIORITY_2026-11-10.md"
+  },
+  "claims": [
+    {
+      "id": "C01",
+      "name": "Fixed global incidence weights on original atoms"
+    },
+    {
+      "id": "C02",
+      "name": "Nonempty filter gate equals its incidence argmax"
+    },
+    {
+      "id": "C03",
+      "name": "Exact global finite gate-chain lexicographic maximizers"
+    },
+    {
+      "id": "C04",
+      "name": "Converse-compatible total orders via invariant orbit ties"
+    },
+    {
+      "id": "C05",
+      "name": "Original C27 hypotheses yield a priority and real PC-triangle consumer"
+    }
+  ]
+}
