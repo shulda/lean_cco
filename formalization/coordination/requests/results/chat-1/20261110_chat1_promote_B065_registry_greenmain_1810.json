@@ -1,0 +1,26 @@
+{
+  "request_blob_sha": "bb6b7f8985fec6bcda864c98e07590ab145feff2",
+  "request_path": "coordination/requests/chat-1/20261110_chat1_promote_B065_registry_greenmain_1810.json",
+  "coordination_parent": "52541feffb4b25bde43af4f5b7d1a1c4080ff8a4",
+  "main_sha": "62a635e138acd89ba6b17a9b33be5d6079155aee",
+  "status": "applied",
+  "event": "promote_registry",
+  "package_id": null,
+  "effective_revision": 919,
+  "state_view": {
+    "authority": "coordination:formalization/coordination/STATE.json",
+    "state_blob_sha": "ee4431d17b610ef791e2b207aac02f7cc0891f3a",
+    "revision": 919,
+    "policy_revision": 20,
+    "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+    "execution_mode": "chat",
+    "claims_paused": false,
+    "integration_lock": null,
+    "packages": {
+      "B065": {
+        "state": "AVAILABLE",
+        "owner_project_id": null
+      }
+    }
+  }
+}

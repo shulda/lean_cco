@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 918,
+  "revision": 919,
   "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
   "packages": {
     "B001": {
@@ -5742,52 +5742,13 @@
         "conclusion": "success",
         "axiom_audit": "allowlist"
       }
+    },
+    "B065": {
+      "state": "AVAILABLE",
+      "owner_project_id": null
     }
   },
-  "integration_lock": {
-    "kind": "infrastructure",
-    "actor_id": "chat-1",
-    "head_sha": "400c3f12f10ee18ed3e44391532d81e13c7f927f",
-    "base_main_sha": "496d0720bd17489e43e5f968436fcae662999649",
-    "pr_number": 92,
-    "review": {
-      "actor_id": "chat-2",
-      "head_sha": "400c3f12f10ee18ed3e44391532d81e13c7f927f",
-      "approved": true,
-      "summary": "Actual independent Chat 2 (project 5) reviewed the complete eleven-file B065 registration PR #92 at its exact 400c3f12 source head, the independently pinned human FG/LEX proof, complete immutable old/new BOARD and policy snapshots, four canonical registry promotion hashes, and real exact-head CI run 42854278315 including transitive axiom audit. The fresh nonauthor report records full source/protocol/consumer findings, and native GitHub comment review explains why shared transport account prevents a native APPROVE. Reviewer authored none of this publication.",
-      "independence": {
-        "identity": "chat-project:cco-chat-2",
-        "non_author": true,
-        "summary": "This is a genuinely separate formalization Chat project (Chat 2, ID 5); it authored, designed, proposed and repaired none of the eleven registration/infrastructure files, source contracts or mathematical code. It performed an independent complete source, policy, manifest and CI audit and wrote its own signed review report; Chat 1 alone performed the original publication.",
-        "report_path": "formalization/coordination/reviews/B065-registry-chat-2-PR92.md"
-      }
-    },
-    "ci": {
-      "run_id": 42854278315,
-      "run_attempt": 1,
-      "head_sha": "400c3f12f10ee18ed3e44391532d81e13c7f927f",
-      "conclusion": "success",
-      "axiom_audit": "allowlist",
-      "job_id": 129962965231,
-      "declarations": 42494,
-      "source_modules": 2659
-    },
-    "author_actor_ids": [
-      "chat-1"
-    ],
-    "original_author_project_ids": [
-      4
-    ],
-    "registry_promotion": {
-      "package_ids": [
-        "B065"
-      ],
-      "previous_registry_sha256": "80d48ab42c39147ee3099a1a983708c7a5cee9bd9521144c989a4c5449d76499",
-      "previous_policy_sha256": "cf480ffe8aea513157941c49fd75a3a7ec420bc5139b93964dd3ffae15b25434",
-      "registry_sha256": "0b1b5e095d9d449b010bac554d0541d0e8d3f0d73375a3f78e7b1158312b5931",
-      "policy_sha256": "0a0b076cd4b4484af6713668c979f2b84403659274d532a7d6d5a22eac7729fc"
-    }
-  },
+  "integration_lock": null,
   "history": [
     {
       "revision": 1,
@@ -28015,6 +27976,41 @@
         "request_id": "chat-1/20261110_chat1_B065_registry_lock_after_chat2_review_1805",
         "head_contains_main": true
       }
+    },
+    {
+      "revision": 919,
+      "project_id": 4,
+      "actor_id": "chat-1",
+      "event": "promote_registry",
+      "package_id": null,
+      "details": {
+        "head_sha": "400c3f12f10ee18ed3e44391532d81e13c7f927f",
+        "package_ids": [
+          "B065"
+        ],
+        "integration_commit": "62a635e138acd89ba6b17a9b33be5d6079155aee",
+        "main_ci": {
+          "run_id": 42861697580,
+          "run_attempt": 1,
+          "head_sha": "62a635e138acd89ba6b17a9b33be5d6079155aee",
+          "conclusion": "success",
+          "axiom_audit": "allowlist",
+          "job_id": 129989237902,
+          "declarations": 42494,
+          "source_modules": 2659
+        },
+        "actor_id": "chat-1",
+        "request_id": "chat-1/20261110_chat1_promote_B065_registry_greenmain_1810",
+        "registry_promotion": {
+          "package_ids": [
+            "B065"
+          ],
+          "previous_registry_sha256": "80d48ab42c39147ee3099a1a983708c7a5cee9bd9521144c989a4c5449d76499",
+          "previous_policy_sha256": "cf480ffe8aea513157941c49fd75a3a7ec420bc5139b93964dd3ffae15b25434",
+          "registry_sha256": "0b1b5e095d9d449b010bac554d0541d0e8d3f0d73375a3f78e7b1158312b5931",
+          "policy_sha256": "0a0b076cd4b4484af6713668c979f2b84403659274d532a7d6d5a22eac7729fc"
+        }
+      }
     }
   ],
   "infrastructure_integrations": [
@@ -30030,9 +30026,64 @@
         "conclusion": "success",
         "axiom_audit": "allowlist"
       }
+    },
+    {
+      "kind": "infrastructure",
+      "actor_id": "chat-1",
+      "head_sha": "400c3f12f10ee18ed3e44391532d81e13c7f927f",
+      "base_main_sha": "496d0720bd17489e43e5f968436fcae662999649",
+      "pr_number": 92,
+      "review": {
+        "actor_id": "chat-2",
+        "head_sha": "400c3f12f10ee18ed3e44391532d81e13c7f927f",
+        "approved": true,
+        "summary": "Actual independent Chat 2 (project 5) reviewed the complete eleven-file B065 registration PR #92 at its exact 400c3f12 source head, the independently pinned human FG/LEX proof, complete immutable old/new BOARD and policy snapshots, four canonical registry promotion hashes, and real exact-head CI run 42854278315 including transitive axiom audit. The fresh nonauthor report records full source/protocol/consumer findings, and native GitHub comment review explains why shared transport account prevents a native APPROVE. Reviewer authored none of this publication.",
+        "independence": {
+          "identity": "chat-project:cco-chat-2",
+          "non_author": true,
+          "summary": "This is a genuinely separate formalization Chat project (Chat 2, ID 5); it authored, designed, proposed and repaired none of the eleven registration/infrastructure files, source contracts or mathematical code. It performed an independent complete source, policy, manifest and CI audit and wrote its own signed review report; Chat 1 alone performed the original publication.",
+          "report_path": "formalization/coordination/reviews/B065-registry-chat-2-PR92.md"
+        }
+      },
+      "ci": {
+        "run_id": 42854278315,
+        "run_attempt": 1,
+        "head_sha": "400c3f12f10ee18ed3e44391532d81e13c7f927f",
+        "conclusion": "success",
+        "axiom_audit": "allowlist",
+        "job_id": 129962965231,
+        "declarations": 42494,
+        "source_modules": 2659
+      },
+      "author_actor_ids": [
+        "chat-1"
+      ],
+      "original_author_project_ids": [
+        4
+      ],
+      "registry_promotion": {
+        "package_ids": [
+          "B065"
+        ],
+        "previous_registry_sha256": "80d48ab42c39147ee3099a1a983708c7a5cee9bd9521144c989a4c5449d76499",
+        "previous_policy_sha256": "cf480ffe8aea513157941c49fd75a3a7ec420bc5139b93964dd3ffae15b25434",
+        "registry_sha256": "0b1b5e095d9d449b010bac554d0541d0e8d3f0d73375a3f78e7b1158312b5931",
+        "policy_sha256": "0a0b076cd4b4484af6713668c979f2b84403659274d532a7d6d5a22eac7729fc"
+      },
+      "integration_commit": "62a635e138acd89ba6b17a9b33be5d6079155aee",
+      "main_ci": {
+        "run_id": 42861697580,
+        "run_attempt": 1,
+        "head_sha": "62a635e138acd89ba6b17a9b33be5d6079155aee",
+        "conclusion": "success",
+        "axiom_audit": "allowlist",
+        "job_id": 129989237902,
+        "declarations": 42494,
+        "source_modules": 2659
+      }
     }
   ],
-  "policy_revision": 19,
+  "policy_revision": 20,
   "execution_mode": "chat",
   "claims_paused": false
 }
