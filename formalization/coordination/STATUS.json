@@ -1,51 +1,30 @@
 {
   "not_an_ownership_lease": true,
-  "state_revision": 835,
-  "policy_revision": 17,
-  "execution_mode": "work",
+  "state_revision": 917,
+  "policy_revision": 19,
+  "execution_mode": "chat",
   "claims_paused": false,
-  "main_sha": "8d009339dd8b8b7e4a1094d046bdc2ee565d2fd0",
-  "accepted": 57,
+  "main_sha": "496d0720bd17489e43e5f968436fcae662999649",
+  "accepted": 64,
   "integration_lock": null,
   "available": [],
   "next_actions": {
     "root": {
-      "action": "resume",
-      "package_ids": [
-        "B056",
-        "B063"
-      ],
-      "package_id": "B056"
+      "action": "wait",
+      "reason": "This execution profile is inactive for this project."
     },
     "chat-1": {
       "action": "wait",
-      "reason": "This execution profile is inactive for this project."
+      "reason": "No eligible released batch; finish reviews or await preparation."
     },
     "chat-2": {
       "action": "wait",
-      "reason": "This execution profile is inactive for this project."
+      "reason": "No eligible released batch; finish reviews or await preparation."
     },
     "chat-3": {
       "action": "wait",
-      "reason": "This execution profile is inactive for this project."
+      "reason": "No eligible released batch; finish reviews or await preparation."
     }
   },
-  "active": {
-    "B056": {
-      "state": "IN_PROGRESS",
-      "owner_project_id": 3,
-      "head_sha": "9050f357867162971e7166580d7a594827f1adfe",
-      "pr_number": 82,
-      "branch": null,
-      "reviewer": null
-    },
-    "B063": {
-      "state": "IN_PROGRESS",
-      "owner_project_id": 3,
-      "head_sha": "2b8b37405628c7095ca7521130f27faea5e9be22",
-      "pr_number": 80,
-      "branch": null,
-      "reviewer": null
-    }
-  }
+  "active": {}
 }

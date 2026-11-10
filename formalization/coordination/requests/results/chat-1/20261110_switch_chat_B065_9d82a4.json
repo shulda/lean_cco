@@ -1,0 +1,21 @@
+{
+  "request_blob_sha": "a9af26180146e716287f93ea7aa7af02cddd3e91",
+  "request_path": "coordination/requests/chat-1/20261110_switch_chat_B065_9d82a4.json",
+  "coordination_parent": "d44868c6bf19a21f46952adb76434034024727d7",
+  "main_sha": "496d0720bd17489e43e5f968436fcae662999649",
+  "status": "applied",
+  "event": "switch_mode",
+  "package_id": null,
+  "effective_revision": 917,
+  "state_view": {
+    "authority": "coordination:formalization/coordination/STATE.json",
+    "state_blob_sha": "f731735efcf5d3e413a241fbc1f1f62c56177dcb",
+    "revision": 917,
+    "policy_revision": 19,
+    "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+    "execution_mode": "chat",
+    "claims_paused": false,
+    "integration_lock": null,
+    "packages": {}
+  }
+}
