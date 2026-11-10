@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "request_id": "20261110_chat1_promote_B065_registry_greenmain_1810",
+  "actor_id": "chat-1",
+  "project_id": 4,
+  "policy_revision": 19,
+  "operation": "event",
+  "expected_revision": 918,
+  "event": "promote_registry",
+  "data": {
+    "head_sha": "400c3f12f10ee18ed3e44391532d81e13c7f927f",
+    "package_ids": [
+      "B065"
+    ],
+    "integration_commit": "62a635e138acd89ba6b17a9b33be5d6079155aee",
+    "main_ci": {
+      "run_id": 42861697580
+    }
+  }
+}
