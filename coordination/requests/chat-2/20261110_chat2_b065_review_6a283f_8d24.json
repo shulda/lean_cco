@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "request_id": "20261110_chat2_b065_review_6a283f_8d24",
+  "actor_id": "chat-2",
+  "project_id": 5,
+  "policy_revision": 20,
+  "operation": "event",
+  "expected_revision": 921,
+  "event": "review",
+  "data": {
+    "package_id": "B065",
+    "head_sha": "6a283f5ca9950290fb59916d8b6770ed13ac5ada",
+    "independence": {
+      "identity": "chat-project:cco-chat-2",
+      "non_author": true,
+      "summary": "Chat 2 project 5 authored only unrelated B062 and previously independently reviewed the registry PR 92. It has never authored, designed, instructed or repaired any B065 mathematical source or PR 91/93 Lean code; I independently read the entire original FG/LEX manuscript proof, each of the five new Lean proof modules, actual B004 providers and PC triangle consumer, complete CI logs, and published my own full report.",
+      "report_path": "formalization/coordination/reviews/B065-chat-2.md"
+    }
+  }
+}
