@@ -335,6 +335,7 @@ import CCO.Selectors.Priority
 import CCO.Selectors.PriorityChain
 import CCO.Selectors.PriorityLex
 import CCO.Selectors.PriorityTie
+import CCO.Selectors.PriorityOrders
 import CCO.Selectors.TrivialEngine
 import CCO.ParityHasse.Original.Transposition
 import CCO.ParityHasse.Original.HasseInduction
