@@ -1,6 +1,6 @@
 {
   "not_an_ownership_lease": true,
-  "state_revision": 922,
+  "state_revision": 923,
   "policy_revision": 20,
   "execution_mode": "chat",
   "claims_paused": false,
@@ -14,12 +14,11 @@
       "reason": "This execution profile is inactive for this project."
     },
     "chat-1": {
-      "action": "wait_for_review",
-      "package_id": "B065",
-      "state": "REVIEWING"
+      "action": "integrate",
+      "package_id": "B065"
     },
     "chat-2": {
-      "action": "resume_review",
+      "action": "integrate",
       "package_id": "B065"
     },
     "chat-3": {
