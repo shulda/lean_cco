@@ -15,7 +15,7 @@ import build_formalization_module as modules
 
 ROOT = Path(__file__).resolve().parents[1]
 DIRECTORY = Path('formalization/coordination')
-MODULES = ('raw_exact', 'strong_selectors', 'parity_hasse', 'exact_crt', 'canonical_hull', 'real_closure', 'finite_packets', 'rigid_groupoid', 'finite_kernel', 'owner_action', 'sir', 'owner_master', 'joint_owner', 'acl_owner_geometry', 'finite_lift', 'mi_geometry', 'owner_transversal', 'safe_readings', 'direct_owner_closure', 'hkn_reservoir', 'terminal_powers', 'full_rows', 'profile_helly', 'relative_mi', 'rank_induction', 'unary_support', 'full_code', 'reset_order', 'unary_hn', 'relational_completion', 'unary_fresh_frames', 'quotient_transport', 'simultaneous_quotients', 'finite_fibres', 'point_generated_sap', 'ap_character', 'clone_sap', 'orbital_cover_boundary', 'pair_safe_split', 'full_phase_lift', 'transition_closure', 'terminal_lattice', 'terminal_profiles', 'unary_terms_return', 'typed_orbit_frames', 'hereditary_hidden_orbits', 'hidden_sap_readings', 'guarded_two_root', 'guarded_old_seams', 'old_idempotent_forest', 'terminal_hidden_hn', 'clone_tuple_geometry', 'ap_ramsey_readout', 'exact_ep_geometry', 'automatic_ep_core', 'unfiltered_ep')
+MODULES = ('raw_exact', 'strong_selectors', 'parity_hasse', 'exact_crt', 'canonical_hull', 'real_closure', 'finite_packets', 'rigid_groupoid', 'finite_kernel', 'owner_action', 'sir', 'owner_master', 'joint_owner', 'acl_owner_geometry', 'finite_lift', 'mi_geometry', 'owner_transversal', 'safe_readings', 'direct_owner_closure', 'hkn_reservoir', 'terminal_powers', 'full_rows', 'profile_helly', 'relative_mi', 'rank_induction', 'unary_support', 'full_code', 'reset_order', 'unary_hn', 'relational_completion', 'unary_fresh_frames', 'quotient_transport', 'simultaneous_quotients', 'finite_fibres', 'point_generated_sap', 'ap_character', 'clone_sap', 'orbital_cover_boundary', 'pair_safe_split', 'full_phase_lift', 'transition_closure', 'terminal_lattice', 'terminal_profiles', 'unary_terms_return', 'typed_orbit_frames', 'hereditary_hidden_orbits', 'hidden_sap_readings', 'guarded_two_root', 'guarded_old_seams', 'old_idempotent_forest', 'terminal_hidden_hn', 'clone_tuple_geometry', 'ap_ramsey_readout', 'exact_ep_geometry', 'automatic_ep_core', 'unfiltered_ep', 'priority_fglex')
 STATES = {'PLANNED', 'PREPARED', 'ASSIGNED', 'BLOCKED', 'SUBMITTED', 'ACCEPTED'}
 CURRENT = STATES - {'PLANNED', 'ACCEPTED'}
 
@@ -64,6 +64,27 @@ def validate(root, board, require_launch=False):
     for ident in MODULES:
         config = json.loads((root / 'formalization' / ident / 'module.json').read_text())
         known_claims[ident] = {c['id'] for c in config['claims']}
+        if ident == 'priority_fglex':
+            # A separate additive human-source pin. Never replace the original
+            # frozen B004 module source or weaken the complete old catalogue.
+            expected = {
+                'kind': 'supplementary_source_addendum',
+                'source_repository': 'shulda/cycle_constrainedness',
+                'source_branch': 'cco-sym/human-consolidation-20261028',
+                'source_commit': 'e4426e22e649bb8774e88fc15e2c626a9d254aa4',
+                'source_file': 'cco-symmetric-eppa/papers/consolidated_working/sections/typed_hereditary_selectors.tex',
+                'source_blob': '9df581aa567cc0789623c84167329eb9314981d8',
+                'legacy_source_commit': board['source_commit'],
+                'prior_accepted_batch': 'B004',
+            }
+            if any(config.get(k) != v for k, v in expected.items()):
+                raise ValueError('Changed B065 additive human-source pin')
+            if [(c.get('id'), c.get('source_label')) for c in config['claims']] != [
+                ('C01', 'lem:typed-gate-incidence'),
+                ('C02', 'lem:typed-gate-lex'),
+                ('C03', 'cor:typed-priority-HS'),
+            ]:
+                raise ValueError('B065 claims no longer match three exact new source labels')
     covered = set()
     for package in packages:
         if package['state'] not in STATES:
