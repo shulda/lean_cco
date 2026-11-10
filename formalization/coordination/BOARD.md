@@ -70,6 +70,7 @@ mathematical catalogue/initial checkpoint, not current ownership.
 | B062: Exact trace geometry, canonical old gates and AP-only quotient safe towers | B002, B006, B007, B015, B016, B041, B044, B045 | [B062](../../formalization/coordination/packages/B062.md) |
 | B063: Original bipartite separation and the automatic terminal label core | B041, B045, B062 | [B063](../../formalization/coordination/packages/B063.md) |
 | B064: Unfiltered phase labels, synchronized terminal orders and same-host tuple expansion property | B008, B011, B035, B036, B038, B044, B045, B047, B049, B050, B052, B059, B060, B061, B063 | [B064](../../formalization/coordination/packages/B064.md) |
+| B065: FG/LEX priority selectors from global strong filter gates | B004 | [B065](../../formalization/coordination/packages/B065.md) |
 
 Autonomous release permissions are in [AUTONOMY.json](AUTONOMY.json).
 Use [QUEUE_OPERATIONS.md](QUEUE_OPERATIONS.md) to claim or review work.

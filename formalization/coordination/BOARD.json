@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_version": 3,
-  "revision": 20,
+  "revision": 21,
   "date": "2026-10-28",
   "phase": "READY",
   "public_repository": "shulda/lean_cco",
@@ -78,7 +78,7 @@
     {
       "id": "B002",
       "name": "RAW exact geometry and lifting",
-      "scope": "RAW C06\u2013C28, all remaining current RAW claims",
+      "scope": "RAW C06–C28, all remaining current RAW claims",
       "contract_revision": 1,
       "state": "PLANNED",
       "owner_project_id": null,
@@ -119,7 +119,7 @@
     {
       "id": "B003",
       "name": "STRONG exact calculus and PC",
-      "scope": "STRONG C06\u2013C13 plus independent AP+CCO triangle fullness",
+      "scope": "STRONG C06–C13 plus independent AP+CCO triangle fullness",
       "contract_revision": 1,
       "state": "PLANNED",
       "owner_project_id": null,
@@ -147,7 +147,7 @@
     {
       "id": "B004",
       "name": "Gates, NR2 and selectors",
-      "scope": "STRONG C14\u2013C27; exact calculus prerequisite, no PC fixed-point theorem dependency",
+      "scope": "STRONG C14–C27; exact calculus prerequisite, no PC fixed-point theorem dependency",
       "contract_revision": 1,
       "state": "PLANNED",
       "owner_project_id": null,
@@ -179,7 +179,7 @@
     {
       "id": "B005",
       "name": "Positive SIR and direct relative example",
-      "scope": "SIR C01\u2013C14 and C20\u2013C25; constructor/instance and direct model kept separate",
+      "scope": "SIR C01–C14 and C20–C25; constructor/instance and direct model kept separate",
       "contract_revision": 1,
       "state": "PLANNED",
       "owner_project_id": null,
@@ -218,7 +218,7 @@
     {
       "id": "B006",
       "name": "Parity/Hasse and finite-global obstruction",
-      "scope": "Sparse graphs, original parity/Hasse and SIR C15\u2013C19; human proof preparation expanded, Lean work unassigned",
+      "scope": "Sparse graphs, original parity/Hasse and SIR C15–C19; human proof preparation expanded, Lean work unassigned",
       "contract_revision": 1,
       "state": "PLANNED",
       "owner_project_id": null,
@@ -257,7 +257,7 @@
     {
       "id": "B007",
       "name": "Exact closure separation and maximal gates",
-      "scope": "Parity module C15\u2013C26; RAW exact consumers independent of Hasse theorem",
+      "scope": "Parity module C15–C26; RAW exact consumers independent of Hasse theorem",
       "contract_revision": 1,
       "state": "PLANNED",
       "owner_project_id": null,
@@ -288,7 +288,7 @@
     {
       "id": "B008",
       "name": "Exact CRT, lattice coordinates and guarded descent",
-      "scope": "Exact CRT C01\u2013C24, with abstract order/CRT independent of the actual RAW instance; five results and two auxiliary equations",
+      "scope": "Exact CRT C01–C24, with abstract order/CRT independent of the actual RAW instance; five results and two auxiliary equations",
       "contract_revision": 1,
       "state": "PLANNED",
       "owner_project_id": null,
@@ -330,7 +330,7 @@
     {
       "id": "B009",
       "name": "Actual finite fibres and invariant classes",
-      "scope": "Canonical hull C01\u2013C24: elementary source geometry, direct finite-fibre globalisation and full class intervals",
+      "scope": "Canonical hull C01–C24: elementary source geometry, direct finite-fibre globalisation and full class intervals",
       "contract_revision": 1,
       "state": "PLANNED",
       "owner_project_id": null,
@@ -373,7 +373,7 @@
     {
       "id": "B010",
       "name": "Looped carrier and canonical real hull",
-      "scope": "Canonical hull C25\u2013C36: pseudocomplement, carrier/looped Helly, Ramsey finiteness and two-power bounds",
+      "scope": "Canonical hull C25–C36: pseudocomplement, carrier/looped Helly, Ramsey finiteness and two-power bounds",
       "contract_revision": 1,
       "state": "PLANNED",
       "owner_project_id": null,
@@ -403,7 +403,7 @@
     {
       "id": "B011",
       "name": "Real closure bounds and terminal RAW words",
-      "scope": "Real closure C01\u2013C18, C25\u2013C28 and C32\u2013C34: palette cost via actual CRT, polynomial finite-packet bounds, CCO-free terminal word presentations and independent examples",
+      "scope": "Real closure C01–C18, C25–C28 and C32–C34: palette cost via actual CRT, polynomial finite-packet bounds, CCO-free terminal word presentations and independent examples",
       "contract_revision": 1,
       "state": "PLANNED",
       "owner_project_id": null,
@@ -447,7 +447,7 @@
     {
       "id": "B012",
       "name": "SAP monolith and infinite real MI incidence",
-      "scope": "Real closure C19\u2013C24 and C29\u2013C31: nonsymmetric SAP geometry, full nondistributive MI reconstruction and the exact/terminal Helly consumers",
+      "scope": "Real closure C19–C24 and C29–C31: nonsymmetric SAP geometry, full nondistributive MI reconstruction and the exact/terminal Helly consumers",
       "contract_revision": 1,
       "state": "PLANNED",
       "owner_project_id": null,
@@ -476,7 +476,7 @@
     {
       "id": "B013",
       "name": "Finite-index packets and minimal-cut crossings",
-      "scope": "Finite packets C01\u2013C18: actual index algebra, Sigma/core intervals, minimal infinite exact cut and separate quotient-source instance",
+      "scope": "Finite packets C01–C18: actual index algebra, Sigma/core intervals, minimal infinite exact cut and separate quotient-source instance",
       "contract_revision": 1,
       "state": "PLANNED",
       "owner_project_id": null,
@@ -513,7 +513,7 @@
     {
       "id": "B014",
       "name": "Finite exact normalization and thin translation groups",
-      "scope": "Finite packets C19\u2013C31: square regularization, palette-decreasing exact-source normalization, thin transport group, lower subgroup interval and twin-cell countercontrol",
+      "scope": "Finite packets C19–C31: square regularization, palette-decreasing exact-source normalization, thin transport group, lower subgroup interval and twin-cell countercontrol",
       "contract_revision": 1,
       "state": "PLANNED",
       "owner_project_id": null,
@@ -544,7 +544,7 @@
     {
       "id": "B015",
       "name": "Actual typed quotient blocks and rigid bridge geometry",
-      "scope": "Rigid groupoid C01\u2013C18: full exact quotient blocks/words, kernel-unique finite rigid groupoid, dominant transport and explicit projected-gate bridge correspondence",
+      "scope": "Rigid groupoid C01–C18: full exact quotient blocks/words, kernel-unique finite rigid groupoid, dominant transport and explicit projected-gate bridge correspondence",
       "contract_revision": 1,
       "state": "PLANNED",
       "owner_project_id": null,
@@ -580,7 +580,7 @@
     {
       "id": "B016",
       "name": "Affine rigid slices, product factorisation and finite phase seeds",
-      "scope": "Rigid groupoid C19\u2013C31: independent affine translate-Helly, exact rigid cosets, rigid factorisation, abstract characters/seeds and actual source phase instance",
+      "scope": "Rigid groupoid C19–C31: independent affine translate-Helly, exact rigid cosets, rigid factorisation, abstract characters/seeds and actual source phase instance",
       "contract_revision": 1,
       "state": "PLANNED",
       "owner_project_id": null,
@@ -611,7 +611,7 @@
     {
       "id": "B017",
       "name": "Finite-fibre kernels, hidden projections and entire named axes",
-      "scope": "Finite kernel C01\u2013C22: actual binary patching, countable compact projection, intrinsic/actual motion groups, exact dual width-two criterion, entire named-axis Goursat/rank consumers and genuine countermodels",
+      "scope": "Finite kernel C01–C22: actual binary patching, countable compact projection, intrinsic/actual motion groups, exact dual width-two criterion, entire named-axis Goursat/rank consumers and genuine countermodels",
       "contract_revision": 1,
       "state": "PLANNED",
       "owner_project_id": null,
@@ -718,7 +718,7 @@
     {
       "id": "B020",
       "name": "Simultaneous finite exact-owner master",
-      "scope": "owner_master C01\u2013C26; coherent onto upset diagrams, all-family CRT and conditional actual M1\u2013M4 source assembly",
+      "scope": "owner_master C01–C26; coherent onto upset diagrams, all-family CRT and conditional actual M1–M4 source assembly",
       "contract_revision": 1,
       "state": "PLANNED",
       "owner_project_id": null,
@@ -764,7 +764,7 @@
     {
       "id": "B021",
       "name": "Joint-owner full tuple actions and sparse EPPA",
-      "scope": "joint_owner C01\u2013C27; actual full finite tuple/group assembly, independent sparse EPPA and conditional given-exceptional-map support",
+      "scope": "joint_owner C01–C27; actual full finite tuple/group assembly, independent sparse EPPA and conditional given-exceptional-map support",
       "contract_revision": 1,
       "state": "PLANNED",
       "owner_project_id": null,
@@ -810,7 +810,7 @@
     {
       "id": "B022",
       "name": "Real closure, harmless owners and correspondence coordinates",
-      "scope": "acl_owner_geometry C01\u2013C35; complete pinned source exports with branch-specific hypotheses and internal milestones",
+      "scope": "acl_owner_geometry C01–C35; complete pinned source exports with branch-specific hypotheses and internal milestones",
       "contract_revision": 1,
       "state": "PLANNED",
       "owner_project_id": null,
@@ -914,7 +914,7 @@
     {
       "id": "B023",
       "name": "Maximal exact MI factors and one-sided full-support safety",
-      "scope": "mi_geometry C01\u2013C31; complete pinned source exports with branch-specific hypotheses and internal milestones",
+      "scope": "mi_geometry C01–C31; complete pinned source exports with branch-specific hypotheses and internal milestones",
       "contract_revision": 1,
       "state": "PLANNED",
       "owner_project_id": null,
@@ -963,7 +963,7 @@
     {
       "id": "B025",
       "name": "Anchored owner completion and full-owner primitive transversal",
-      "scope": "owner_transversal C01\u2013C47; 12 full source exports, optional SAP and conditional EPPA branches explicit; internal countable construction",
+      "scope": "owner_transversal C01–C47; 12 full source exports, optional SAP and conditional EPPA branches explicit; internal countable construction",
       "contract_revision": 1,
       "state": "PLANNED",
       "owner_project_id": null,
@@ -1028,7 +1028,7 @@
     {
       "id": "B026",
       "name": "Safe traces, covariant selectors and rectangular moving readings",
-      "scope": "safe_readings C01\u2013C40; twelve source results, explicit augmented finite-menu gates, independent readings and only the first two finite-locality providers",
+      "scope": "safe_readings C01–C40; twelve source results, explicit augmented finite-menu gates, independent readings and only the first two finite-locality providers",
       "contract_revision": 1,
       "state": "PLANNED",
       "owner_project_id": null,
@@ -1226,7 +1226,7 @@
     {
       "id": "B024",
       "name": "One fixed R07 full-row decoder and rooted packet controls",
-      "scope": "full_rows C01\u2013C33; eleven local source expansions, all named constructor providers expanded in B025\u2013B027; published HKN/local Lean bridge remain explicit upstream obligations",
+      "scope": "full_rows C01–C33; eleven local source expansions, all named constructor providers expanded in B025–B027; published HKN/local Lean bridge remain explicit upstream obligations",
       "contract_revision": 4,
       "state": "PLANNED",
       "owner_project_id": null,
@@ -3878,6 +3878,29 @@
           "C110",
           "C111",
           "C112"
+        ]
+      },
+      "additional_source_exports": [],
+      "accepted_commit": null
+    },
+    {
+      "id": "B065",
+      "name": "FG/LEX priority selectors from global strong filter gates",
+      "scope": "Additive FG/LEX result, independent of all earlier frozen source pins: globally selected original-atom filter incidence scores, genuine finite stage-chain lex argmax, converse-compatible total priorities, and original strong SAP+homomorphic CCO+full sortwise original NR2 priority selector with joint PC/heredity/opposite. No general linearization of arbitrary selectors, equality-aware RAW, SH meet, finite-index exclusion, or shortest-path POCS.",
+      "contract_revision": 1,
+      "state": "PLANNED",
+      "owner_project_id": null,
+      "depends_on": [
+        "B004"
+      ],
+      "spec_file": "formalization/coordination/packages/B065.md",
+      "claims": {
+        "priority_fglex": [
+          "C01",
+          "C02",
+          "C03",
+          "C04",
+          "C05"
         ]
       },
       "additional_source_exports": [],
