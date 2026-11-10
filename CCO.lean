@@ -331,6 +331,7 @@ import CCO.Selectors.PureAction
 import CCO.Selectors.PureCovariance
 import CCO.Selectors.SourceCalculus
 import CCO.Selectors.SourceSelectors
+import CCO.Selectors.Priority
 import CCO.Selectors.TrivialEngine
 import CCO.ParityHasse.Original.Transposition
 import CCO.ParityHasse.Original.HasseInduction
