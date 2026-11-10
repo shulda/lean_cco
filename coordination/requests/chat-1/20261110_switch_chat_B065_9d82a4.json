@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "request_id": "20261110_switch_chat_B065_9d82a4",
+  "actor_id": "chat-1",
+  "project_id": 4,
+  "policy_revision": 19,
+  "operation": "event",
+  "expected_revision": 916,
+  "event": "switch_mode",
+  "data": {
+    "user_authorized": true,
+    "target_mode": "chat",
+    "base_main_sha": "496d0720bd17489e43e5f968436fcae662999649",
+    "summary": "The user explicitly authorized continuing the new FG/LEX formalization as one Chat, with no parallel implementation. All 64 prior batches are ACCEPTED, all past Chat/Work workers are inactive, no active claim or reviewer lease remains, and the sole integration lock is clear. The persistent historical identities and independent review requirement are preserved."
+  }
+}
