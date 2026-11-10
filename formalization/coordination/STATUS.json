@@ -1,18 +1,12 @@
 {
   "not_an_ownership_lease": true,
-  "state_revision": 924,
+  "state_revision": 925,
   "policy_revision": 20,
   "execution_mode": "chat",
   "claims_paused": false,
-  "main_sha": "62a635e138acd89ba6b17a9b33be5d6079155aee",
-  "accepted": 64,
-  "integration_lock": {
-    "kind": "package",
-    "package_id": "B065",
-    "actor_id": "chat-2",
-    "base_main_sha": "62a635e138acd89ba6b17a9b33be5d6079155aee",
-    "head_sha": "6a283f5ca9950290fb59916d8b6770ed13ac5ada"
-  },
+  "main_sha": "48a6f3d8bf02bb0dfeb30f69bec8e9d0afa764e6",
+  "accepted": 65,
+  "integration_lock": null,
   "available": [],
   "next_actions": {
     "root": {
@@ -20,34 +14,17 @@
       "reason": "This execution profile is inactive for this project."
     },
     "chat-1": {
-      "action": "wait_for_review",
-      "package_id": "B065",
-      "state": "INTEGRATING"
+      "action": "wait",
+      "reason": "No eligible released batch; finish reviews or await preparation."
     },
     "chat-2": {
-      "action": "finish_integration",
-      "package_id": "B065",
-      "lock": {
-        "kind": "package",
-        "package_id": "B065",
-        "actor_id": "chat-2",
-        "base_main_sha": "62a635e138acd89ba6b17a9b33be5d6079155aee",
-        "head_sha": "6a283f5ca9950290fb59916d8b6770ed13ac5ada"
-      }
+      "action": "wait",
+      "reason": "No eligible released batch; finish reviews or await preparation."
     },
     "chat-3": {
       "action": "wait",
       "reason": "No eligible released batch; finish reviews or await preparation."
     }
   },
-  "active": {
-    "B065": {
-      "state": "INTEGRATING",
-      "owner_project_id": 4,
-      "head_sha": "6a283f5ca9950290fb59916d8b6770ed13ac5ada",
-      "pr_number": 93,
-      "branch": "chat/chat-1/B065",
-      "reviewer": "chat-2"
-    }
-  }
+  "active": {}
 }

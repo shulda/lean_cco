@@ -1,0 +1,82 @@
+{
+  "request_blob_sha": "ac59af8879ae2ede976680016f0fe0684aff9233",
+  "request_path": "coordination/requests/chat-2/20261110_chat2_b065_accept_main48a6_green_3f80.json",
+  "coordination_parent": "479acbea36eb30c820758ac65720ca8cd9869726",
+  "main_sha": "48a6f3d8bf02bb0dfeb30f69bec8e9d0afa764e6",
+  "status": "applied",
+  "event": "accept",
+  "package_id": "B065",
+  "effective_revision": 925,
+  "state_view": {
+    "authority": "coordination:formalization/coordination/STATE.json",
+    "state_blob_sha": "9c0999310b194bd0de55c327507f6f23786e6217",
+    "revision": 925,
+    "policy_revision": 20,
+    "source_commit": "490c3f36d85db5a0b3ced0598e6c431825254ec5",
+    "execution_mode": "chat",
+    "claims_paused": false,
+    "integration_lock": null,
+    "packages": {
+      "B065": {
+        "state": "ACCEPTED",
+        "owner_project_id": 4,
+        "author_actor_ids": [
+          "chat-1"
+        ],
+        "original_author_project_ids": [
+          4
+        ],
+        "branch": "chat/chat-1/B065",
+        "claim_revision": 920,
+        "base_main_sha": "62a635e138acd89ba6b17a9b33be5d6079155aee",
+        "base_ci": {
+          "run_id": 42861697580,
+          "run_attempt": 1,
+          "head_sha": "62a635e138acd89ba6b17a9b33be5d6079155aee",
+          "conclusion": "success",
+          "axiom_audit": "allowlist",
+          "job_id": 129989237902,
+          "declarations": 42494,
+          "source_modules": 2659
+        },
+        "head_sha": "6a283f5ca9950290fb59916d8b6770ed13ac5ada",
+        "pr_number": 93,
+        "ci": {
+          "run_id": 42863349502,
+          "run_attempt": 1,
+          "head_sha": "6a283f5ca9950290fb59916d8b6770ed13ac5ada",
+          "conclusion": "success",
+          "axiom_audit": "allowlist",
+          "job_id": 129995069805,
+          "declarations": 42588,
+          "source_modules": 2664
+        },
+        "report_path": "formalization/coordination/submissions/B065.md",
+        "review": {
+          "project_id": 5,
+          "actor_id": "chat-2",
+          "head_sha": "6a283f5ca9950290fb59916d8b6770ed13ac5ada",
+          "approved": true,
+          "independence": {
+            "identity": "chat-project:cco-chat-2",
+            "non_author": true,
+            "summary": "Chat 2 project 5 authored only unrelated B062 and previously independently reviewed the registry PR 92. It has never authored, designed, instructed or repaired any B065 mathematical source or PR 91/93 Lean code; I independently read the entire original FG/LEX manuscript proof, each of the five new Lean proof modules, actual B004 providers and PC triangle consumer, complete CI logs, and published my own full report.",
+            "report_path": "formalization/coordination/reviews/B065-chat-2.md"
+          },
+          "summary": "Independent non-author Chat2 review of all 587 pinned human source lines, the original C27 B004 API and its concrete no-return/finite-gate providers, all five Lean proof bodies and 9 PR diff files, actual converse-invariant order and strict terminal argmax proof, actual PC triangle consumer, root imports and finite diagnostic completed at exact SHA 6a283f5ca9950290fb59916d8b6770ed13ac5ada. CI42863349502/job129995069805 fully successful on identical synthetic tree, 203 tests, 5347 jobs, 2664 project modules, 42588 CCO and 791 forest allowlisted audits. No missing source provider, altered SAP/CCO/NR2 hypothesis, axiom, sorry or proof gap. My independent complete mathematical findings and non-authorship are in formalization/coordination/reviews/B065-chat-2.md; APPROVE this exact head."
+        },
+        "accepted_commit": "48a6f3d8bf02bb0dfeb30f69bec8e9d0afa764e6",
+        "main_ci": {
+          "run_id": 42867876319,
+          "run_attempt": 1,
+          "head_sha": "48a6f3d8bf02bb0dfeb30f69bec8e9d0afa764e6",
+          "conclusion": "success",
+          "axiom_audit": "allowlist",
+          "job_id": 130010972236,
+          "declarations": 42588,
+          "source_modules": 2664
+        }
+      }
+    }
+  }
+}
