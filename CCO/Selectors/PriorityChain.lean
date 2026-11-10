@@ -45,7 +45,7 @@ theorem scoreBase_pos (i j : ι) : 0 < scoreBase S i j := by
 
 theorem scoreBase_reverse (i j : ι) :
     scoreBase S j i = scoreBase S i j := by
-  simp only [scoreBase, Nat.add_comm, Nat.add_left_comm, Nat.add_assoc]
+  simp only [scoreBase, Nat.add_comm]
 
 theorem symmetricScore_lt_base (F : Family S)
     {i j : ι} (a : S.Atom i j) :
@@ -114,7 +114,8 @@ private theorem stageFilter_sound (A : PureTagAction S Λ N)
 
 /-- A bounded-base encoding of the ordered sequence of gate scores.
 The empty sequence is the constant score zero. -/
-noncomputable def descentScore (A : PureTagAction S Λ N)
+noncomputable def descentScore (S : AtomicSource.{u,v,w} ι X)
+    (A : PureTagAction S Λ N)
     {J K : Family S} {n : Nat}
     (chain : DescentChain S (IsVisibleGate S A) J K n)
     {i j : ι} (a : S.Atom i j) : Nat :=
